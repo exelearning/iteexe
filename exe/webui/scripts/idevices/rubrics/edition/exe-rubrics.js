@@ -7,9 +7,6 @@
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 
-// To do:
-// Try to use eXe's confirm messages
-
 var $exeDevice = {
 	
 	// i18n
@@ -124,22 +121,22 @@ var $exeDevice = {
 		
 		var field = $("#activeIdevice textarea").eq(0);
 		
-		// Create the edition form (#yyyRubricEditor)
+		// Create the edition form (#ri_RubricEditor)
 		// All the form will be created each time a default rubric is loaded or when editing an existing rubric
-		// The editable table and the "Rubric information" fieldset will be in #yyyRubricEditor
+		// The editable table and the "Rubric information" fieldset will be in #ri_RubricEditor
 		var html = '\
 			<div class="exe-idevice-info">'+_("Complete the table to define a scoring guide. Define the score or value of each descriptor.")+'</div>\
-			<div id="yyyRubricEditor"></div>\
-			<div id="yyyPreviousContent"></div>\
+			<div id="ri_RubricEditor"></div>\
+			<div id="ri_PreviousContent"></div>\
 		';
 		field.before(html);	
 	
-		// Get original data (the iDevice content) and put it in #yyyPreviousContent
+		// Get original data (the iDevice content) and put it in #ri_PreviousContent
 		var originalHTML = field.val();
-		$("#yyyPreviousContent").html(originalHTML);
+		$("#ri_PreviousContent").html(originalHTML);
 		
 		// Save the content in a JSON object (the Rubric information won't be in it yet)
-		var data = this.tableToJSON("yyyPreviousContent");
+		var data = this.tableToJSON("ri_PreviousContent");
 		
 		this.resetForm(true);
 		
@@ -154,7 +151,7 @@ var $exeDevice = {
 			}
 			
 			// Rubric information
-			var div = $("#yyyPreviousContent");
+			var div = $("#ri_PreviousContent");
 			var author = "";
 			var authorURL = "";
 			var license = "";
@@ -231,12 +228,12 @@ var $exeDevice = {
 	
 	// Enable the FIELDSETs Toggler (see authoring.js)
 	enableFieldsetToggle : function(){
-		$("#yyyRubricInformation legend a").click(function(){
-			$("#yyyRubricInformation").toggleClass("exe-fieldset-closed");
+		$("#ri_RubricInformation legend a").click(function(){
+			$("#ri_RubricInformation").toggleClass("exe-fieldset-closed");
 			return false;
 		});
-		$("#yyyRubricIntro legend a").click(function(){
-			$("#yyyRubricIntro").toggleClass("exe-fieldset-closed");
+		$("#ri_RubricIntro legend a").click(function(){
+			$("#ri_RubricIntro").toggleClass("exe-fieldset-closed");
 			return false;
 		});	
 	},
@@ -251,32 +248,32 @@ var $exeDevice = {
 		// The SELECT will be hidden until CEDEC's rubrics are loaded
 		var html = '\
 			<p>\
-				<input type="button" value="'+_("New rubric")+'" id="yyyCreateNewRubric" /> \
-				<span id="yyyNewTableOptions">\
-					<label for="yyyNewTable">'+_("New rubric: ")+'\
-					<select id="yyyNewTable">\
+				<input type="button" value="'+_("New rubric")+'" id="ri_CreateNewRubric" /> \
+				<span id="ri_NewTableOptions">\
+					<label for="ri_NewTable">'+_("New rubric: ")+'\
+					<select id="ri_NewTable">\
 						<option value=""></option>\
 						'+$exeDevice.options+'\
 					</select>\
 					</label>\
 				</span>\
-				<input type="button" value="'+_("Load CEDEC's rubrics (in Spanish)")+'" id="yyyLoadCEDECRubrics" /> \
+				<input type="button" value="'+_("Load CEDEC's rubrics (in Spanish)")+'" id="ri_LoadCEDECRubrics" /> \
 			</p>\
 		';
 		
 		// Insert the form in the rubric editor
-		var ed = $("#yyyRubricEditor");
+		var ed = $("#ri_RubricEditor");
 			ed.html(html);
 			
 		// Events
-		$("#yyyCreateNewRubric").click(function(){
+		$("#ri_CreateNewRubric").click(function(){
 			var data = $exeDevice.translateRubric($exeDevice.rubrics[0]);
 			$exeDevice.jsonToTable(data,"edition");
 			$exeDevice.enableFieldsetToggle();
 			$exeDevice.setEditionFocus();
 			return false;
 		});
-		$("#yyyNewTable").change(function(){
+		$("#ri_NewTable").change(function(){
 			var rubric = this.value;
 			if (rubric=="") {
 				$exeDevice.alert(_("Please select a template"));
@@ -297,9 +294,9 @@ var $exeDevice = {
 		
 		// Link to load CEDEC's rubrics if onLine and if those rubrics are not loaded yet
 		if (navigator && navigator.onLine && typeof($exeDevice.cedecRubrics)=='undefined') {
-			var lnk = $("#yyyLoadCEDECRubrics");
-			$("#yyyLoadCEDECRubrics").click(function(){
-				$("#yyyRubricEditor").addClass("loading");
+			var lnk = $("#ri_LoadCEDECRubrics");
+			$("#ri_LoadCEDECRubrics").click(function(){
+				$("#ri_RubricEditor").addClass("loading");
 				var timestamp = "";
 				try {
 					timestamp = Date.now();
@@ -310,13 +307,13 @@ var $exeDevice = {
 					url: "http://gros.es/tests/cedec/cedec.json?version="+timestamp,
 					dataType: 'json',
 					success: function(res){
-						$("#yyyRubricEditor").removeClass("loading");
+						$("#ri_RubricEditor").removeClass("loading");
 						$exeDevice.cedecRubrics = res;
 						$exeDevice.completeRubricModels();
 					},
 					error: function(){
 						$exeDevice.alert(_("Could not retrieve data (Core error)"));
-						$("#yyyRubricEditor").removeClass("loading");
+						$("#ri_RubricEditor").removeClass("loading");
 					}
 				});					
 				return false;
@@ -324,7 +321,7 @@ var $exeDevice = {
 		}			
 		
 		// The first time the form is created, we add the table editor right after it
-		if (createEditor==true) ed.after('<div id="yyyTableEditor"></div>');
+		if (createEditor==true) ed.after('<div id="ri_TableEditor"></div>');
 
 	},
 	
@@ -377,14 +374,14 @@ var $exeDevice = {
 		
 		$exeDevice.resetForm();
 		
-		$("#yyyCreateNewRubric").remove();
-		$("#yyyNewTableOptions").show();
+		$("#ri_CreateNewRubric").remove();
+		$("#ri_NewTableOptions").show();
 		
 	},
 	
 	// After adding a new table, change the focus to the first visible INPUT so the user knows what to do
 	setEditionFocus : function(){
-		$("#yyyCell-2").select();
+		$("#ri_Cell-2").select();
 	},
 	
 	// Get the table of #id and return it as a JSON object
@@ -434,9 +431,9 @@ var $exeDevice = {
 		return data;			
 	},
 	
-	// Add the scores of the first level and show the result in #yyyMaxScore
+	// Add the scores of the first level and show the result in #ri_MaxScore
 	setMaxScore : function(){
-		var trs = $("#yyyTableEditor tbody tr");
+		var trs = $("#ri_TableEditor tbody tr");
 		var nums = [];
 		trs.each(function(){
 			var val = $("td input",this).eq(1).val();
@@ -451,7 +448,7 @@ var $exeDevice = {
 			res += parseFloat(nums[i]);
 		}
 		res = Math.round( res * 10 ) / 10;
-		$("#yyyMaxScore").val(res);
+		$("#ri_MaxScore").val(res);
 	},
 	
 	// Transform a JSON object into an HTML table
@@ -496,16 +493,16 @@ var $exeDevice = {
 		if (mode=="normal") {
 			
 			var intro = "";
-			var instructions = $("#yyyRubricInstructions").val();
+			var instructions = $("#ri_RubricInstructions").val();
 			if (instructions!="") intro = '<p class="exe-rubric-instructions">'+instructions+'</p>';
 			
 			var info = "";
-			var author = $("#yyyRubricAuthor").val();
-			var authorURL = $("#yyyRubricAuthorURL").val();
-			var license = $("#yyyRubricLicense").val();
+			var author = $("#ri_RubricAuthor").val();
+			var authorURL = $("#ri_RubricAuthorURL").val();
+			var license = $("#ri_RubricLicense").val();
 			
 			var visibility = " sr-av";
-			if ($("#yyyShowRubricInfo").prop("checked")) visibility = "";
+			if ($("#ri_ShowRubricInfo").prop("checked")) visibility = "";
 			if (author!="" || authorURL!="" || license!="") {
 				var info = '<p class="exe-rubric-authorship'+visibility+'">';
 				if (author!="") {
@@ -543,12 +540,12 @@ var $exeDevice = {
 			var instructions = "";
 			if (data.instructions) instructions = data.instructions;			
 			html += '\
-				<fieldset id="yyyRubricIntro" class="exe-fieldset exe-feedback-fieldset exe-fieldset-closed">\
+				<fieldset id="ri_RubricIntro" class="exe-fieldset exe-feedback-fieldset exe-fieldset-closed">\
 					<legend><a href="#">'+_("Instructions")+'</a></legend>\
 					<div>\
 						<p class="exe-text-field">\
-							<label for="yyyRubricInstructions">'+_("Rubric use instructions (optional)")+': </label>\
-							<input type="text" id="yyyRubricInstructions" value="'+instructions+'" />\
+							<label for="ri_RubricInstructions">'+_("Rubric use instructions (optional)")+': </label>\
+							<input type="text" id="ri_RubricInstructions" value="'+instructions+'" />\
 						</p>\
 					</div>\
 				</fieldset>';
@@ -557,10 +554,10 @@ var $exeDevice = {
 			
 			// Max score + Buttons (reset, add row, add column)
 			html += '<p>\
-				<label for="yyyMaxScore">'+_("Maximum score:")+'</label> <input type="text" id="yyyMaxScore" readonly="readonly" value="" /> <span id="yyyMaxScoreInstructions">'+_("The result of adding the scores of the first level.")+'</span>\
-				<input type="button" id="yyyAppendCol" value="'+_("New column")+'" />\
-				<input type="button" id="yyyAppendRow" value="'+_("New row")+'" />\
-				<input type="button" id="yyyReset" value="'+_("Reset")+'" />\
+				<label for="ri_MaxScore">'+_("Maximum score:")+'</label> <input type="text" id="ri_MaxScore" readonly="readonly" value="" /> <span id="ri_MaxScoreInstructions">'+_("The result of adding the scores of the first level.")+'</span>\
+				<input type="button" id="ri_AppendCol" value="'+_("New column")+'" />\
+				<input type="button" id="ri_AppendRow" value="'+_("New row")+'" />\
+				<input type="button" id="ri_Reset" value="'+_("Reset")+'" />\
 			</p>';
 			
 			// Rubric information
@@ -571,15 +568,15 @@ var $exeDevice = {
 			if (data['author-url']) authorLink = data['author-url'];
 			if (data.license) license = data.license;
 			html += '\
-				<fieldset id="yyyRubricInformation" class="exe-fieldset exe-feedback-fieldset exe-fieldset-closed">\
+				<fieldset id="ri_RubricInformation" class="exe-fieldset exe-feedback-fieldset exe-fieldset-closed">\
 					<legend><a href="#">'+_("Rubric information")+'</a></legend>\
 					<div>\
-						<p><label for="yyyShowRubricInfo"><input type="checkbox" id="yyyShowRubricInfo" /> '+_("Show rubric information")+'</label></p>\
+						<p><label for="ri_ShowRubricInfo"><input type="checkbox" id="ri_ShowRubricInfo" /> '+_("Show rubric information")+'</label></p>\
 						<p>\
-							<label for="yyyRubricAuthor">'+_("Source/Author")+':</label> <input type="text" id="yyyRubricAuthor" value="'+author+'" /> \
-							<label for="yyyRubricAuthorURL">'+_("Source/Author Link")+':</label> <input type="text" id="yyyRubricAuthorURL" value="'+authorLink+'" /> \
-							<label for="yyyRubricLicense">'+_("License")+'</label>\
-							<select id="yyyRubricLicense">\
+							<label for="ri_RubricAuthor">'+_("Source/Author")+':</label> <input type="text" id="ri_RubricAuthor" value="'+author+'" /> \
+							<label for="ri_RubricAuthorURL">'+_("Source/Author Link")+':</label> <input type="text" id="ri_RubricAuthorURL" value="'+authorLink+'" /> \
+							<label for="ri_RubricLicense">'+_("License")+'</label>\
+							<select id="ri_RubricLicense">\
 								<option value="">&nbsp;</option>\
 								<option value="pd">'+_("Public Domain")+'</option>\
 								<option value="gnu-gpl">GNU/GPL</option>\
@@ -600,7 +597,7 @@ var $exeDevice = {
 			// Language tab (i18n)
 			html += $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n);
 		
-		var ed = $("#yyyTableEditor");
+		var ed = $("#ri_TableEditor");
 		this.editor = ed;
 		ed.html(html);
 		
@@ -613,37 +610,38 @@ var $exeDevice = {
 		}
 		
 		// Enable the tabs
-		$exeAuthoring.iDevice.tabs.init("yyyTableEditor");
+		$exeAuthoring.iDevice.tabs.init("ri_TableEditor");
 		
 		// Buttons (events)
-		$("#yyyReset").click(function(){
+		$("#ri_Reset").click(function(){
 			Ext.Msg.confirm(_("Atention"), _("Revert all changes? This can't be undone."), function(button) {
 				if (button == "yes") {
 					if (typeof($exeDevice.originalData)!='undefined') {
 						$exeDevice.jsonToTable($exeDevice.originalData,"edition");
 						$exeDevice.enableFieldsetToggle();
 					} else {
-						$("#yyyTableEditor").html("");
+						$("#ri_TableEditor").html("");
 					}
 				}
 			});
 		});				
-		$("#yyyAppendRow").click(function(){
+		$("#ri_AppendRow").click(function(){
 			$exeDevice.dom.addRow("end");
 		});
-		$("#yyyAppendCol").click(function(){
+		$("#ri_AppendCol").click(function(){
 			$exeDevice.dom.addCol();
 		});			
 		
 		// Should the rubric information be visible?
-		var showRubricInfo = data["visible-info"] || true;
-		$("#yyyShowRubricInfo").prop("checked",showRubricInfo);
+		var showRubricInfo = true;
+		if (data["visible-info"]==false) showRubricInfo = false;
+		$("#ri_ShowRubricInfo").prop("checked",showRubricInfo);
 		
 		// Select the right license
-		$("#yyyRubricLicense").val(license);
+		$("#ri_RubricLicense").val(license);
 		
 		// Add an ID to the table
-		$("table",ed).attr("id","yyyTable");
+		$("table",ed).attr("id","ri_Table");
 		
 		// Make the table editable
 		this.makeEditable();
@@ -655,7 +653,7 @@ var $exeDevice = {
 		addRow : function(position){
 			// We always add the row at the end, but you could add it at the beggining too.
 			$exeDevice.makeNormal();
-			var trs = $("#yyyTable tbody tr");
+			var trs = $("#ri_Table tbody tr");
 			// Copy the last row and paste it at the end with no data
 			var tr = trs.eq(trs.length-1);
 			var newTR = tr.clone();
@@ -667,12 +665,12 @@ var $exeDevice = {
 					else this.innerHTML = "X <span>(X)</span>";
 				});
 				if (position=="end") tr.after(tmp.html());
-				else if (position=="start") $("#yyyTable tbody").prepend(tmp.html());
+				else if (position=="start") $("#ri_Table tbody").prepend(tmp.html());
 			$exeDevice.makeEditable();
 		},
 		addCol : function() {
 			$exeDevice.makeNormal();
-			$("#yyyTable tr").each(function(i){
+			$("#ri_Table tr").each(function(i){
 				var td, newTD;
 				if (i==0) {
 					td = $("th",this);
@@ -698,7 +696,7 @@ var $exeDevice = {
 		
 		// Validate (and remove any HTML tags)
 		
-		var table = $("#yyyTableEditor table");
+		var table = $("#ri_TableEditor table");
 		
 		// No rubric
 		if (table.length==0) {
@@ -707,7 +705,7 @@ var $exeDevice = {
 		}
 		
 		// Caption
-		var c0 = $("#yyyCell-0",table);
+		var c0 = $("#ri_Cell-0",table);
 			c0.val($exeDevice.removeTags(c0.val()));
 		if (c0.val()=="") {
 			this.alert(_("Please write the rubric title."));
@@ -758,19 +756,19 @@ var $exeDevice = {
 		// Make the table normal
 		this.makeNormal();	
 		
-		var data = this.tableToJSON("yyyTableEditor");
+		var data = this.tableToJSON("ri_TableEditor");
 		
 		// Get the rubic instructions and add the to the data
-		var instructions = $("#yyyRubricInstructions").val();
+		var instructions = $("#ri_RubricInstructions").val();
 		if (instructions!="") data.instructions = instructions;
 		
 		// Get the rubric information and add it to data
-		data["visible-info"] = $("#yyyShowRubricInfo").prop("checked");
-		var author = $("#yyyRubricAuthor").val();
+		data["visible-info"] = $("#ri_ShowRubricInfo").prop("checked");
+		var author = $("#ri_RubricAuthor").val();
 		if (author!="") data.author = author;
-		var authorURL = $("#yyyRubricAuthorURL").val();
+		var authorURL = $("#ri_RubricAuthorURL").val();
 		if (authorURL!="") data["author-url"] = authorURL;
-		var license = $("#yyyRubricLicense").val();			
+		var license = $("#ri_RubricLicense").val();			
 		if (license!="") data.license = license;
 
 		// Get the custom strings
@@ -801,7 +799,7 @@ var $exeDevice = {
 			var extra = ""
 			// The text INPUT of the first cell should be hidden
 			if (isTopCell) extra = 'style="visibility:hidden" '
-			this.innerHTML = '<input type="text" '+extra+'id="yyyCell-'+i+'" value="'+html[0]+'" />';
+			this.innerHTML = '<input type="text" '+extra+'id="ri_Cell-'+i+'" value="'+html[0]+'" />';
 			if ($(this).prop("tagName")=='TD') {
 				if (html.length=="2") {
 					try {
@@ -813,24 +811,24 @@ var $exeDevice = {
 				} else {
 					html = "";
 				}
-				this.innerHTML += '<span><label>'+_("Score")+': </label><input type="text" id="yyyCell-'+i+'-weight" class="yyyWeight" value="'+html+'" title="'+_("Score (include a number)")+'" /></span>';
+				this.innerHTML += '<span><label>'+_("Score")+': </label><input type="text" id="ri_Cell-'+i+'-weight" class="ri_Weight" value="'+html+'" title="'+_("Score (include a number)")+'" /></span>';
 			}
 		});
 		
 		// Add row buttons (move up, mode down, delete row)
-		var trActions = '<span class="yyyActions">\
-				<a href="#" class="yyyMoveTRUp" title="'+_("Up")+'"><span class="sr-av">&#8593;</span></a> \
-				<a href="#" class="yyyMoveTRDown" title="'+_("Down")+'"><span class="sr-av">&#8595;</span></a> \
-				<a href="#" class="yyyDeleteTR" title="'+_("Delete")+'"><span class="sr-av">&#120;</span></a> \
+		var trActions = '<span class="ri_Actions">\
+				<a href="#" class="ri_MoveTRUp" title="'+_("Up")+'"><span class="sr-av">&#8593;</span></a> \
+				<a href="#" class="ri_MoveTRDown" title="'+_("Down")+'"><span class="sr-av">&#8595;</span></a> \
+				<a href="#" class="ri_DeleteTR" title="'+_("Delete")+'"><span class="sr-av">&#120;</span></a> \
 			</span>';
 		$("tbody tr",this.editor).each(function(){
 			$(this.firstChild).prepend(trActions);
 		});
 		// Events:
 			// Move up or down
-			$(".yyyMoveTRUp,.yyyMoveTRDown").click(function(){
+			$(".ri_MoveTRUp,.ri_MoveTRDown").click(function(){
 				var row = $(this).parents("tr:first");
-				if ($(this).is(".yyyMoveTRUp")) {
+				if ($(this).is(".ri_MoveTRUp")) {
 					row.insertBefore(row.prev());
 				} else {
 					row.insertAfter(row.next());
@@ -838,7 +836,7 @@ var $exeDevice = {
 				return false;
 			});
 			// Delete row
-			$(".yyyDeleteTR").click(function(){
+			$(".ri_DeleteTR").click(function(){
 				$exeDevice.tmp = $(this).parents("tr:first");
 				Ext.Msg.confirm("", _("Delete the row?"), function(button) {
 					if (button == "yes") {
@@ -849,41 +847,41 @@ var $exeDevice = {
 			});		
 		
 		// Add column buttons (move left, move right, delete)
-		var thActions = '<span class="yyyActions">\
-				<a href="#" class="yyyMoveTRToTheLeft" title="'+_("Left")+'"><span class="sr-av">&#8592;</span></a> \
-				<a href="#" class="yyyMoveTRToTheRight" title="'+_("Right")+'"><span class="sr-av">&#8594;</span></a> \
-				<a href="#" class="yyyDeleteColumn" title="'+_("Delete")+'"><span class="sr-av">&#120;</span></a> \
+		var thActions = '<span class="ri_Actions">\
+				<a href="#" class="ri_MoveTRToTheLeft" title="'+_("Left")+'"><span class="sr-av">&#8592;</span></a> \
+				<a href="#" class="ri_MoveTRToTheRight" title="'+_("Right")+'"><span class="sr-av">&#8594;</span></a> \
+				<a href="#" class="ri_DeleteColumn" title="'+_("Delete")+'"><span class="sr-av">&#120;</span></a> \
 			</span>';
 		$("thead th",this.editor).each(function(){
 			$(this).prepend(thActions);
 		});		
 		// Events: 
 			// Move left
-			$(".yyyMoveTRToTheLeft").click(function(){
+			$(".ri_MoveTRToTheLeft").click(function(){
 				var colnum = $(this).closest("th").prevAll("th").length;
-				jQuery.each($("#yyyTable tr"), function() { 
+				jQuery.each($("#ri_Table tr"), function() { 
 					$(this).children(":eq("+colnum+")").after($(this).children(":eq("+(colnum-1)+")"));
 				});
 				return false;                    
 			}); 
 			// Move right
-			$(".yyyMoveTRToTheRight").click(function(){
+			$(".ri_MoveTRToTheRight").click(function(){
 				var colnum = $(this).closest("th").prevAll("th").length;
-				jQuery.each($("#yyyTable tr"), function() { 
+				jQuery.each($("#ri_Table tr"), function() { 
 					$(this).children(":eq("+(colnum+1)+")").after($(this).children(":eq("+(colnum)+")"));
 				});
 				return false;                    
 			});
 			// Delete column
-			$(".yyyDeleteColumn").click(function(){
-				if ($("#yyyTable thead th").length==2) {
+			$(".ri_DeleteColumn").click(function(){
+				if ($("#ri_Table thead th").length==2) {
 					$exeDevice.alert(_("There should be at least one level."));
 					return false;
 				}
 				$exeDevice.tmp = $(this).closest("th").prevAll("th").length;
 				Ext.Msg.confirm("", _("Delete the column?"), function(button) {
 					if (button == "yes") {
-						$("#yyyTable tr").each(function(){
+						$("#ri_Table tr").each(function(){
 							$("th,td",this).each(function(i){
 								if (i==$exeDevice.tmp) $(this).remove();
 							});
@@ -894,7 +892,7 @@ var $exeDevice = {
 			});		
 		
 		// Set the maximum score
-		$(".yyyWeight").keyup(function(){
+		$(".ri_Weight").keyup(function(){
 			$exeDevice.setMaxScore();	
 		}).blur(function(){
 			$exeDevice.setMaxScore();	
