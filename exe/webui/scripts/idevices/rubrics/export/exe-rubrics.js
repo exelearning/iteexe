@@ -7,9 +7,6 @@
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 
-// To do:
-// i18n: Actividad, Nombre, Fecha, Nota, Reset, Print, Observaciones
-
 var $rubricIdevice = {
 	
 	// Default strings
@@ -40,9 +37,13 @@ var $rubricIdevice = {
 				});
 			}
 			
-			$("caption",table).append('<a href="#" class="exe-rubric-print" id="print-'+this.id+'"><span>'+$exe_i18n.print+'</span></a>');
+			$("caption",table).append(' <a href="#" class="exe-rubric-print" id="print-'+this.id+'"><span>'+$exe_i18n.print+'</span></a>');
 			
 			$("#print-"+this.id).click(function(){
+				if (typeof($exeAuthoring)!="undefined" && typeof(eXe)!="undefined") {
+					eXe.app.alert(_("Go to Tools - Preview to see this working"));
+					return false;
+				}				
 				$rubricIdevice.printRubric($("caption",table).text(),table.html())
 				return false;
 			});
