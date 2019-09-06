@@ -217,6 +217,8 @@ var $exeDevice = {
 			this.originalData = data; 
 		}
 	},
+	
+	// Translate the default rubrics (CECED's won't be translated)
 	translateRubric : function(data) {
 		data = JSON.stringify(data);
 		data = data.replace(/Example rubric/g,_("Example rubric"));
@@ -226,11 +228,9 @@ var $exeDevice = {
 		data = JSON.parse(data);
 		return data;
 	},
-	confirm : function(str) {
-		return confirm(str);
-	},
+	
+	// Enable the FIELDSETs Toggler (see authoring.js)
 	enableFieldsetToggle : function(){
-		// Enable the FIELDSETs Toggler (see authoring.js)
 		$("#yyyRubricInformation legend a").click(function(){
 			$("#yyyRubricInformation").toggleClass("exe-fieldset-closed");
 			return false;
@@ -830,10 +830,12 @@ var $exeDevice = {
 			});
 			// Delete row
 			$(".yyyDeleteTR").click(function(){
-				var confirm = $exeDevice.confirm(_("Delete the row?"));
-				if (confirm==false) return false;
-				var row = $(this).parents("tr:first");
-					row.remove();
+				$exeDevice.tmp = $(this).parents("tr:first");
+				Ext.Msg.confirm("", _("Delete the row?"), function(button) {
+					if (button == "yes") {
+						$exeDevice.tmp.remove();
+					}
+				});
 				return false;
 			});		
 		
@@ -868,14 +870,16 @@ var $exeDevice = {
 				if ($("#yyyTable thead th").length==2) {
 					$exeDevice.alert(_("There should be at least one level."));
 					return false;
-				}				
-				var confirm = $exeDevice.confirm(_("Delete the column?"));
-				if (confirm==false) return false;
-				var colnum = $(this).closest("th").prevAll("th").length;
-				$("#yyyTable tr").each(function(){
-					$("th,td",this).each(function(i){
-						if (i==colnum) $(this).remove();
-					});
+				}
+				$exeDevice.tmp = $(this).closest("th").prevAll("th").length;
+				Ext.Msg.confirm("", _("Delete the column?"), function(button) {
+					if (button == "yes") {
+						$("#yyyTable tr").each(function(){
+							$("th,td",this).each(function(i){
+								if (i==$exeDevice.tmp) $(this).remove();
+							});
+						});
+					}
 				});
 				return false;
 			});		
