@@ -9,13 +9,16 @@
 #yyyTable .xxxWeight{color:#666;width:auto}
 #yyyTable th input{font-weight:bold}
 #yyyTable tr:nth-child(2n-1) td input,#yyyTable tbody tr:nth-child(2n-1) th input{border-color:#F4F4F4}	
+
 #yyyTable > thead > tr > th:first-child .yyyMoveTRToTheLeft,
 #yyyTable > thead > tr > th:last-child .yyyMoveTRToTheRight,
 #yyyTable > tbody > tr:first-child .yyyMoveTRUp,
 #yyyTable > tbody > tr:last-child .yyyMoveTRDown,
-#yyyTable.with-categories > thead > tr > th:first-child .yyyMoveTRToTheRight,
-#yyyTable.with-categories > thead > tr > th:nth-child(2) .yyyMoveTRToTheLeft,
-#yyyTable.with-categories > thead > tr > th:first-child .yyyDeleteColumn,
+
+#yyyTable > thead > tr > th:first-child .yyyMoveTRToTheRight,
+#yyyTable > thead > tr > th:nth-child(2) .yyyMoveTRToTheLeft,
+#yyyTable > thead > tr > th:first-child .yyyDeleteColumn,
+
 #yyyTable > tbody > tr:only-child .yyyDeleteTR
 {display:none}
 

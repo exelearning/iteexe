@@ -9,7 +9,6 @@
 
 // To do:
 // Try to use eXe's confirm messages
-// Remove the hasCategories option
 // Add validation (see what happens when trying to save it empty)
 
 var $exeDevice = {
@@ -386,7 +385,7 @@ var $exeDevice = {
 	
 	// Get the table of #id and return it as a JSON object
 	tableToJSON : function(id){
-		var i, z, t = $("#"+id+" table"), hasCategories = false;
+		var i, z, t = $("#"+id+" table");
 		if (t.length!=1) return;
 		var data = {};
 			data.title = $("caption",t).html();
@@ -397,7 +396,6 @@ var $exeDevice = {
 		for (i=0;i<trs.length;i++) {
 			var tdH = $("th",trs[i]);
 			if (tdH.length==1) {
-				hasCategories = true;
 				data.categories.push(tdH.html());
 			}
 			var tds = $("td",trs[i]);
@@ -426,8 +424,7 @@ var $exeDevice = {
 		}
 		var ths = $("thead th",t);
 		for (i=0;i<ths.length;i++) {
-			if (!(hasCategories && i==0)) data.scores.push(ths[i].innerHTML);
-			
+			if (i!=0) data.scores.push(ths[i].innerHTML);
 		}	
 		if (data.categories.length==0) delete data.categories;
 		return data;			
@@ -454,12 +451,12 @@ var $exeDevice = {
 	},
 	
 	// Transform a JSON object into an HTML table
-	getTableHTML : function(data,hasCategories) {
+	getTableHTML : function(data) {
 		var html = "<table class='exe-table'>";
 			html += "<caption>"+data.title+"</caption>";
 			html += "<thead>";
 			html += "<tr>";
-				if (hasCategories) html += "<th>&nbsp;</th>";
+				html += "<th>&nbsp;</th>";
 				for (i=0;i<data.scores.length;i++) {
 					html += "<th>"+data.scores[i]+"</th>";
 				}
@@ -469,7 +466,7 @@ var $exeDevice = {
 				for (i=0;i<data.descriptions.length;i++){
 					c = data.descriptions[i];
 					html += "<tr>";
-						if (hasCategories) html += "<th>"+data.categories[i]+"</th>";
+						html += "<th>"+data.categories[i]+"</th>";
 						for (z=0;z<data.scores.length;z++) {
 							html += "<td>"+c[z].text;
 							if (c[z].weight!="") html+= " <span>("+c[z].weight+")</span>";
@@ -489,9 +486,7 @@ var $exeDevice = {
 	// If mode is "edition": Instructions (fieldset) + A table + The max score input + The buttons to reset and add rows and columns + The "Rubric information" fieldset + The i18n tab
 	jsonToTable : function(data,mode){
 		
-		var hasCategories = true;
-		if (!data.categories || data.categories.length==0) hasCategories = false;
-		var table = $exeDevice.getTableHTML(data,hasCategories);
+		var table = $exeDevice.getTableHTML(data);
 		
 		// Create the iDevice content
 		if (mode=="normal") {
@@ -643,11 +638,8 @@ var $exeDevice = {
 		// Select the right license
 		$("#yyyRubricLicense").val(license);
 		
-		// Add the "with-categories" css class if needed (to review)
+		// Add an ID to the table
 		$("table",ed).attr("id","yyyTable");
-		if (hasCategories) {
-			$("table",ed).addClass("with-categories");
-		}
 		
 		// Make the table editable
 		this.makeEditable();
@@ -820,7 +812,6 @@ var $exeDevice = {
 				var confirm = $exeDevice.confirm(_("Delete the column?"));
 				if (confirm==false) return false;
 				var colnum = $(this).closest("th").prevAll("th").length;
-				if (colnum==0) $("#yyyTable").removeClass("with-categories");
 				$("#yyyTable tr").each(function(){
 					$("th,td",this).each(function(i){
 						if (i==colnum) $(this).remove();
