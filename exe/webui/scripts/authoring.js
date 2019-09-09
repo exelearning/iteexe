@@ -1007,7 +1007,7 @@ var $exeAuthoring = {
                 getTab : function(){
                     return '\
                              <div class="exe-form-tab" title="' + _('Itinerary') + '">\
-                                <div class="exe-idevice-info">'+_("Use these keys to create an itinerary of challenges: It would not be possible to access a new challenge until you get the key or the solution to a problem. May be necessary to enter a password to access this game. May also show a message or password when reaching a presestablished percentage of hits.")+'</div>\
+                                <div class="exe-idevice-info">'+_("You might create an itinerary of challenges where players won't be able to access a new game or challenge until they get a key in a previous activity. For this purpose, you might establish an access code as well as a message that may be displayed to players when they get a fixed percentage of hits, and be used as a password to a new challenge or a following activity.")+'</div>\
                                 <p align="left">\
                                     <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess" >' +_("Access code is required")+'</label>\
                                 </p>\
@@ -1205,7 +1205,7 @@ var $exeAuthoring = {
             },
             share : {
                 getTab : function(){
-                    var msg = _("You can export this game so you can later use it in an iDevice of the same type. You can also use it in %s and you can import games from %s and use then here.");
+                    var msg = _("You can export this game so you can later use it in another iDevice of the same type. You can also use it in %s and you can import games from %s and use them here.");
                         msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
                     var html = '\
                             <div class="exe-form-tab" title="' + _('Share') + '">\

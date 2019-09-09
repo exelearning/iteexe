@@ -8,7 +8,7 @@
  */
 var $exeDevice = {
     i18n : {
-		name : _('Discover')
+		name : _('Word Guessing')
 	},
     iDevicePath: "/scripts/idevices/adivina-activity/edition/",
     msgs: {},
@@ -21,11 +21,11 @@ var $exeDevice = {
         "msgSubmit": _("Submit"),
         "msgEnterCode": _("Enter the access code"),
         "msgErrorCode": _("The access code is not correct"),
-        "msgGameOver": _("The game is over!"),
+        "msgGameOver": _("Game Over!"),
         "msgIndicateWord": _("Provide a word or phrase"),
         "msgClue": _("Cool! The clue is:"),
         "msgNewGame": _("Click here for a new game"),
-        "msgYouHas": ("You have got %1 correct and %2 uncorrect"),
+        "msgYouHas": ("You have got %1 hits and %2 misses"),
         "msgCodeAccess": _("Access code"),
         "msgPlayAgain": _("Play Again"),
         "msgRequiredAccessKey": _("Access code required"),
@@ -51,10 +51,10 @@ var $exeDevice = {
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
         "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
-        "msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
+        "msgWrote": _("Write the correct word and click on reply. If you hesitate, click on move on"),
         "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
-        "msgEndGameScore": _("Please start this activity before saving your score!"),
-        "msgScoreScorm": _("Only the score obtained in an SCORM export can be saved"),
+        "msgEndGameScore": _("Must start game before saving your score!"),
+        "msgScoreScorm": _("Only the score obtained can be saved in an SCORM export"),
         "msgQuestion": _("Question"),
 		"msgAnswer": _("Answer"),
 		"msgOnlySaveScore": _("You can only save the score once!"),
@@ -68,7 +68,7 @@ var $exeDevice = {
         "msgSeveralScore": _("You can save the score as many times as you want"),
         "msgYouLastScore" :_("The last score saved is"),
         "msgActityComply":_("You have already done this activity."),
-        "msgPlaySeveralTimes":_("You can do this activity as many times as you wan")
+        "msgPlaySeveralTimes":_("You can do this activity as many times as you want")
     },
     init: function () {
         this.setMessagesInfo();
@@ -79,7 +79,7 @@ var $exeDevice = {
         var msgs = this.msgs;
         msgs.msgEProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
-        msgs.msgEURLValid = _("You must indicate the valid URL of an image");
+        msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
         msgs.msgEProvideWord = _("You must provide one word or phrase");
         msgs.msgEOneQuestion = _("You must provide at least one question");
 
@@ -88,12 +88,12 @@ var $exeDevice = {
         var html = '\
 			<div id="adivinaIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing the words.")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
                             <p>\
-                                <label for="adivinaTimeQuestion">' + _("Time per question (seconds)") + '</label>\
+                                <label for="adivinaTimeQuestion">' + _("Time to answer(seconds)") + '</label>\
                                 <input type="number" name="adivinaTimeQuestion" id="adivinaTimeQuestion" value="30" min="10" max="600" step="10" />\
                             </p>\
 							<p>\

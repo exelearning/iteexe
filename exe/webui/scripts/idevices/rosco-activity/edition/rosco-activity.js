@@ -19,15 +19,15 @@ var $exeDevice = {
 		"msgSubmit": _("Submit"),
 		"msgEnterCode": _("Enter the access code"),
 		"msgErrorCode": _("The access code is not correct"),
-		"msgGameOver": _("The game is over!"),
+		"msgGameOver": _("Game Over!"),
 		"msgNewWord": _("New word"),
 		"msgStartWith": _("Start with %1"),
 		"msgContaint": _("Contain letter %1"),
-		"msgPass": _("You move on to next word"),
+		"msgPass": _("Move on to the next word"),
 		"msgIndicateWord": _("Provide a word"),
 		"msgClue": _("Cool! The clue is:"),
 		"msgNewGame": _("Click here for a new game"),
-		"msgYouHas": _("You have got %1 correct and %2 uncorrect"),
+		"msgYouHas": _("You have got %1 hits and %2 misses"),
 		"msgCodeAccess": _("Access code"),
 		"msgPlayAgain": _("Play Again"),
 		"msgRequiredAccessKey": _("Access code required"),
@@ -42,14 +42,14 @@ var $exeDevice = {
 		"msgTowRounds": _("Two rounds"),
 		"msgImage": _("Image"),
 		"msgNoImage": _("No image"),
-		"msgWrote": _("Write the correct word and click on reply. If you doubt, click on move on"),
-		"msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
+		"msgWrote": _("Write the correct word and click on reply. If you hesitate, click on move on"),
+		"msgNotNetwork": _("You can only play this game with internet connection. Check out your connection"),
 		"msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
 		"msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
-		"msgEndGameScore": _("Please start this activity before saving your score!"),
-		"msgScoreScorm": _("Only the score obtained in an SCORM export can be saved"),
-		"msgShowRoulette": _("Show roulette"),
-		"msgHideRoulette": _("Hide roulette"),
+		"msgEndGameScore": _("Must start game before saving your score!"),
+		"msgScoreScorm": _("Only the score obtained can be saved in an SCORM export"),
+		"msgShowRoulette": _("Show word wheel"),
+		"msgHideRoulette": _("Hide word wheel"),
 		"msgQuestion": _("Question"),
 		"msgAnswer": _("Answer"),
 		"msgOnlySaveScore": _("You can only save the score once!"),
@@ -62,7 +62,7 @@ var $exeDevice = {
         "msgSeveralScore": _("You can save the score as many times as you want"),
         "msgYouLastScore" :_("The last score saved is"),
         "msgActityComply":_("You have already done this activity."),
-        "msgPlaySeveralTimes":_("You can do this activity as many times as you wan")
+        "msgPlaySeveralTimes":_("You can do this activity as many times as you want")
 
 	},
 	colors: {
@@ -87,7 +87,7 @@ var $exeDevice = {
 		msgs.msgProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
 		msgs.msgGame = _("Game");
 		msgs.msgSelectFile = _("The selected file does not contain a valid game");
-		msgs.msgURLValid = _("You must indicate the valid URL of an image");
+		msgs.msgURLValid = _("You must upload or indicate the valid URL of an image");
 		msgs.msgOneWord = _("You must provide at least one word");
 		msgs.msgProvideTimeSolution = _("You must provide the time to view the solution");
 
@@ -99,7 +99,7 @@ var $exeDevice = {
 		var html = '\
 			<div id="roscoIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                    ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing the words.")) + '\
+                    ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
 						<div>\
@@ -398,7 +398,7 @@ var $exeDevice = {
 				<div class="roscoWordMutimediaEdition">\
 					<div class="roscoFileWordEdition">\
 						<h3 class="roscoLetterEdition">' + letter + '</h3>\
-						<a href="#" class="roscoLinkStart" title="' + _("Start/Contain letter") + '"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
+						<a href="#" class="roscoLinkStart" title="' + _("Click here to toggle between Word starts … and Word contains") + '"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
 						<label class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
 						<label class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
 						<a href="#" class="roscoLinkSelectImage" title="' + _("Show/Hide image") + '"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
