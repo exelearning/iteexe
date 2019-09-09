@@ -602,7 +602,7 @@
     background: url(exeQuextIcons.png) no-repeat -26px -52px;
 }
 .exeQuextIcons-RoscoCanvas{
-    background: url(exeQuextIcons.png) no-repeat -52px -42px;
+    background: url(exeQuextIcons.png) no-repeat -52px -52px;
 }
 .exeQuextIcons-RoscoCanvas,  .exeQuextIcons-RoscoRows, .exeQuextIcons-FullScreenExit, .exeQuextIcons-FullScreen, .exeQuextIcons-Minimize{
     -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
