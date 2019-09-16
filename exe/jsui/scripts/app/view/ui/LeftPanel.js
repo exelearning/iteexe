@@ -108,12 +108,12 @@ Ext.define('eXe.view.ui.LeftPanel', {
              	        {
              	        	cls: 'exe-advanced',
 							xtype: 'button',
-             	        	text: _('Edit iDevices'),
+             	        	text: _('Available iDevices'),
              	        	handler: function(button) {
              	        		var panel = button.up("#idevice_panel"),
 	             	        		leftpanel = panel.up("leftpanel"),
 	          	        			gbutton = button.prev("button");
-	          	        		if (button.getText() == _('Edit iDevices')) {
+	          	        		if (button.getText() == _('Available iDevices')) {
              	        			button.leftPanelSize = leftpanel.getWidth();
              	        			if (button.leftPanelSize < 350)
              	        				leftpanel.setWidth(350);
@@ -131,7 +131,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
 	         	        				panel.columns[1].hide();
 	         	        				panel.columns[2].hide();
 	         	        				leftpanel.setWidth(button.leftPanelSize);
-	         	        				button.setText(_('Edit iDevices'));
+	         	        				button.setText(_('Available iDevices'));
 	         	        				gbutton.enable();
 	         	        				if (gbutton.getText() == _('Ungroup iDevices'))
 	         	        					panel.view.features[0].enable();
