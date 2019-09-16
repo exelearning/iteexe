@@ -69,7 +69,9 @@ var $exe = {
 		// No inline JavaScript (see issue #258)
 		// Common feedback
 		$('.feedbackbutton.feedback-toggler').click(function(){
-			$exe.toggleFeedback(this,false);
+			var changeText = false;
+			if (this.value==$exe_i18n.showFeedback) changeText = true;
+			$exe.toggleFeedback(this,changeText);
 		});
 		// Text and Tasks
 		$(".textIdevice,.pblIdevice").each(function(i){
