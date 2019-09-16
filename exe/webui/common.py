@@ -735,6 +735,12 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
         html += u'disabled="disabled" '
     html += u'style=\"width:100%"'
     html += u'cols="%s" rows="%s" class="%s">' %(cols, rows, cssClass)
+    # to counter TinyMCE's ampersand-processing:
+    safe_value = value.replace('&','&amp;')
+    if (cssClass=="jsContentEditor"):
+        if safe_value != value:
+            value = safe_value
+            log.debug(u"jsContentEditor pre-processed value to: %s" % value)    
     html += value
     html += u'</textarea>'
     
