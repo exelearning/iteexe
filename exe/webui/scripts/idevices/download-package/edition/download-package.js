@@ -144,8 +144,14 @@ var $exeDevice = {
 		}
 
 		if (data1=='-' && data2=='-' && data3=='-' && data4=='-') {
-			field.before($exeDevice.warningMessage);
-			return false;
+			var hasContents = false;
+			if (field.val().indexOf("exe-package:elp")!=-1) hasContents = true;			
+			if (hasContents==false) {
+				field.before($exeDevice.warningMessage);
+				return false;
+			} else {
+				eXe.app.alert(_("Please don't forget to check the Properties tab: Title, language, license, author, description..."));
+			}
 		}
 		
 		var defaultContent = '\
