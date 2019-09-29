@@ -43,7 +43,7 @@ var $exeDevice = {
 		"msgImage": _("Image"),
 		"msgNoImage": _("No image"),
 		"msgWrote": _("Write the correct word and click on reply. If you hesitate, click on move on"),
-		"msgNotNetwork": _("You can only play this game with internet connection. Check out your connection"),
+		"msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
 		"msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
 		"msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
 		"msgEndGameScore": _("Must start game before saving your score!"),

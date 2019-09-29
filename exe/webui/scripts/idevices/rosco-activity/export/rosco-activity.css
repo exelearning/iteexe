@@ -20,7 +20,7 @@
   }
 
 .rosco-GameMinimize a:link, .rosco-GameMinimize a:link, .rosco-GameMinimize a:visited, .rosco-GameMinimize a:focus {
-    color: #f05565;
+    color: #b3092f;
     text-decoration: none;
     outline: 0;
     border: none;
@@ -33,7 +33,7 @@
 }
 .rosco-ShowClue p{
     font-size:12px;
-    color:#009245;
+    color:#00a300;
     font-weight: bold;
     margin: 5px auto;
     text-align: center;
@@ -48,7 +48,7 @@
     align-items: center;
 }
 .rosco-RepeatActivity{
-    color: #ff0000;
+    color: #b3092f;
     font-size:12px;
     font-weight: bold;
     text-align: center;
@@ -121,7 +121,7 @@
 .rosco-MessageMaximize {
     width: 100%;
     text-align: left;
-    color: #f05565;
+    color: #b3092f;
     font-weight: bold;
     font-size: 13pt;
     margin: 10px auto;
@@ -135,7 +135,7 @@
 }
 
 .rosco-MessageMaximize:hover {
-    color: #8697cb;
+    color: #5877c6;
 }
 
 .rosco-GameContainer {
@@ -273,7 +273,7 @@
     height: 35px;
     line-height: 35px;
     border: none;
-    background-color: #0099cc;
+    background-color: #5877c6;
     color: white;
     text-align: center;
     text-decoration: none;
@@ -358,7 +358,7 @@
 .rosco-TypeDefinition p a {
     font-weight: bold;
     font-size: 20px;
-    color: #ff0000
+    color: #b3092f
 }
 
 .rosco-Definition {
@@ -391,7 +391,7 @@
     width: 90px;
     height: 30px;
     background: transparent;
-    border: 2px solid #0099cc;
+    border: 2px solid #5877c6;
     border-radius: 6px;
     font-size: 12px;
     color: #1c1b1b;
@@ -409,7 +409,7 @@
  
 }
 .rosco-AnswerButtons input[type=button]:hover, .rosco-CodeAccess input[type=button]:hover, .rosco-GetScore input[type=button]:hover {
-    background-color: #0099cc;
+    background-color: #5877c6;
     color: white;
     border: 1px solid #000;
     font-weight: bold;
@@ -421,17 +421,17 @@
 }
 
 .rosco-LetterBlue {
-    background-color: #0099cc;
+    background-color: #5877c6;
     color: white;
 }
 
 .rosco-LetterRed {
-    background-color: #ff0000;
+    background-color: #b3092f;
     color: white;
 }
 
 .rosco-LetraGreen {
-    background-color: #009245;
+    background-color: #00a300;
     color: white;
 }
 

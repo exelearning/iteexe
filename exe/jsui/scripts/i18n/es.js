@@ -3125,17 +3125,17 @@ translations = {
  "Word\/Phrase": "Palabra\/Frase",
  "Words\/Phrases": "Palabras\/Frases",
  "Write the correct word and click on reply. If you hesitate, click on move on": "Escribe la palabra correcta y pulsa sobre Responder. Si tienes dudas, haz clic en Pasar",
- "You can do this activity as many times as you wan": "Puedes realizar esta actividad las veces que desees",
+ "You can do this activity as many times as you want": "Puedes realizar esta actividad las veces que desees",
  "You can export this game so you can later use it in another iDevice of the same type. You can also use it in %s and you can import games from %s and use them here." : "Puedes exportar este juego para usarlo posteriormente en otro iDevice del mismo tipo. Tambi\u00e9n puedes usarlo en %s y puedes importar juegos desde %s y usarlos aqu\u00ed.",
- "You can only play this game with internet connection. Check out your connection": "Solo puedes jugar a este juego con conexi\u00f3n a internet. Revisa su conexi\u00f3n",
+ "You can only play this game with internet connection. Check out your conecctivity": "Solo puedes jugar a este juego con conexi\u00f3n a internet. Revisa su conexi\u00f3n",
  "You can only save once": "Solo puedes guardar una vez",
  "You can only save the score once!": "Solo puedes guardar tu calificaci\u00f3n  una vez",
  "You can save the score as many times as you want": "Puedes guardar la calificación todas las veces que desees",
  "Move on to the next word": "Pasas a la palabra siguiente",
- "You have already done this activity.": "Ya has realizado esta actividad.",
+ "You have already done this activity.": "Ya has realizado esta actividad",
  "You have got %1 hits and %2 misses":"Has tenido %1 aciertos y %2 errores",
  "You must upload or indicate the valid URL of an image": "Debes cargar una imagen o indicar la URL v\u00e1lida de una",
- "You must provide at least one question": "Debes escribir al menos una pregunta.",
+ "You must provide at least one question": "Debes escribir al menos una pregunta",
  "You must provide at least one word": "Debes escribir al menos una palabra",
  "You must provide how to obtain the code to play this game":"Debes proporcionar c\u00f3mo obtener el c\u00f3digo para jugar a este juego.",
  "You must provide one word or phrase": "Indica una palabra o frase",
@@ -3144,7 +3144,9 @@ translations = {
  "You must provide the time to view the solution": "Debes indicar el tiempo que se mostrar\u00e1 la soluci\u00f3n",
  "You must write a clue":"Debes escribir una pista",
  "Your score": "Tu calificaci\u00f3n ",
- "Your score will be automatically saved after each question.": "La calificaci\u00f3n se guardar\u00e1 despu\u00e9s de cada pregunta.",
- "Your score will be saved after each question. You can only play once!": "La calificaci\u00f3n se guardar\u00e1 despu\u00e9s de cada pregunta. \u00a1Solo puedes realizarla una vez!"
+ "Your score will be automatically saved after each question.": "La calificaci\u00f3n se guardar\u00e1 despu\u00e9s de cada pregunta",
+ "Your score will be saved after each question. You can only play once!": "La calificaci\u00f3n se guardar\u00e1 despu\u00e9s de cada pregunta. \u00a1Solo puedes realizarla una vez!",
+ "Access code required":"C\u00f3digo de acceso requerido",
+ "No image":"Sin imagen"
 };
 

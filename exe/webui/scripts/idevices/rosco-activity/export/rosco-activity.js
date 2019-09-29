@@ -18,9 +18,9 @@ var $eXeRosco = {
 	},
 	colors: {
 		black: "#1c1b1b",
-		blue: '#0099cc',
-		green: '#009245',
-		red: '#ff0000',
+		blue: '#5877c6',
+		green: '#00a300',
+		red: '#b3092f',
 		white: '#ffffff',
 		yellow: '#f3d55a'
 	},

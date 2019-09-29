@@ -13,9 +13,9 @@ var $eXeAdivina = {
     idevicePath: "",
     borderColors: {
         black: "#1c1b1b",
-        blue: '#8697cb',
-        green: '#3abca7',
-        red: '#f05565',
+        blue: '#5877c6',
+        green: '#2a9315',
+        red: '#ff0000',
         white: '#ffffff',
         yellow: '#f3d55a'
     },

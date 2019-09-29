@@ -1,5 +1,5 @@
 .adivina-GameMinimize a:link, .adivina-GameMinimize a:link, .adivina-GameMinimize a:visited, .adivina-GameMinimize a:focus {
-    color: #f05565;
+    color: #ff0000;
 }
 
 .adivina-MainContainer a:link, .adivina-MainContainer a:link, .adivina-MainContainer a:visited, .adivina-MainContainer a:focus {
@@ -30,7 +30,7 @@
 .adivina-MessageMaximize {
     width: 100%;
     text-align: left;
-    color: #f05565;
+    color: #ff0000;
     font-weight: bold;
     font-size: 13pt;
     margin: 10px auto;
@@ -120,15 +120,15 @@
 }
 
 .adivina-Letter.blue {
-    color: #8697cb;
+    color: #5877c6;
 }
 
 .adivina-Letter.green {
-    color: #3abca7;
+    color: #2a9315;
 }
 
 .adivina-Letter.red {
-    color: #f05565;
+    color: #ff0000;
 }
 
 .adivina-MainContainer {
@@ -329,7 +329,7 @@
     margin: 10px auto;
     text-align: center;
     margin-bottom: 10px;
-    color: #f05565;
+    color: #ff0000;
     font-size: 16px;
     font-weight: bold;
 }
@@ -349,7 +349,7 @@
 }
 .adivina-ShowClue p{
     font-size: 14px;
-    color:#8697cb;
+    color:#5877c6;
     font-weight: bold;
     margin: 5px auto;
     text-align: center;
@@ -364,7 +364,7 @@
     height: 30px;
 
     background: white;
-    border: 2px solid #8697cb;
+    border: 2px solid #5877c6;
     border-radius: 6px;
     font-size: 14px;
     -webkit-transition-duration: 0.4s;
@@ -381,7 +381,7 @@
    
 }
 .adivina-GameContainer input[type=button]:hover, .adivina-GetScore input[type=button]:hover {
-    background-color: #8697cb;
+    background-color: #5877c6;
     color: white;
     border: 1px solid #000;
 }
@@ -416,7 +416,7 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #3abca7;
+    color: #2a9315;
 }
 
 .adivina-HistGGame, .adivina-LostGGame {
