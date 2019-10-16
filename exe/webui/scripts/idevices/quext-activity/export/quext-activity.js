@@ -1207,7 +1207,7 @@ var $eXeQuExt = {
         var mOptions = $eXeQuExt.options[instance],
             colors = [$eXeQuExt.colors.red, $eXeQuExt.colors.blue, $eXeQuExt.colors.green, $eXeQuExt.colors.yellow],
             bordeColors = [$eXeQuExt.borderColors.red, $eXeQuExt.borderColors.blue, $eXeQuExt.borderColors.green, $eXeQuExt.borderColors.yellow];
-        $('.quext-Options').each(function (index) {
+        $('#quextOptionsDiv-' + instance + '>.quext-Options').each(function (index) {
             var option = mOptions.question.options[index]
             $(this).css({
                 'border-color': bordeColors[index],
@@ -1225,7 +1225,7 @@ var $eXeQuExt = {
         var mOptions = $eXeQuExt.options[instance],
             colors = [$eXeQuExt.colors.red, $eXeQuExt.colors.blue, $eXeQuExt.colors.green, $eXeQuExt.colors.yellow],
             bordeColors = [$eXeQuExt.borderColors.red, $eXeQuExt.borderColors.blue, $eXeQuExt.borderColors.green, $eXeQuExt.borderColors.yellow];
-        $('#quextOptionsDiv-' + instance + ' .quext-Options').each(function (index) {
+        $('#quextOptionsDiv-' + instance + '>.quext-Options').each(function (index) {
             if (index === mOptions.question.solution) {
                 $(this).css({
                     'border-color': bordeColors[index],
@@ -1244,7 +1244,7 @@ var $eXeQuExt = {
     clearQuestions: function (instance) {
         var colors = [$eXeQuExt.colors.red, $eXeQuExt.colors.blue, $eXeQuExt.colors.green, $eXeQuExt.colors.yellow];
         var bordeColors = [$eXeQuExt.borderColors.red, $eXeQuExt.borderColors.blue, $eXeQuExt.borderColors.green, $eXeQuExt.borderColors.yellow];
-        $('#quextOptionsDiv-' + instance + ' .quext-Options').each(function (index) {
+        $('#quextOptionsDiv-' + instance + '>.quext-Options').each(function (index) {
             $(this).css({
                 'border-color': bordeColors[index],
                 'background-color': colors[index],
