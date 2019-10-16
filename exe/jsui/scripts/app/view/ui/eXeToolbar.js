@@ -388,7 +388,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     ]
                                 }
                             },
-                            {
+                            /*{
                                 cls: 'exe-advanced',
                                 xtype: 'accesskey_menuitem',
                                 text: _('Publish') + getSRhelp(),
@@ -406,7 +406,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                     ]
                                 },
-                            },                            
+                            },*/                            
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
