@@ -3147,6 +3147,26 @@ translations = {
  "Your score will be automatically saved after each question.": "La calificaci\u00f3n se guardar\u00e1 despu\u00e9s de cada pregunta",
  "Your score will be saved after each question. You can only play once!": "La calificaci\u00f3n se guardar\u00e1 despu\u00e9s de cada pregunta. \u00a1Solo puedes realizarla una vez!",
  "Access code required":"C\u00f3digo de acceso requerido",
- "No image":"Sin imagen"
+ "No image":"Sin imagen",
+ "Questions":"Preguntas", 
+"Multimedia type":"Tipo de Multimedia", 
+"Number of options":"N\u00famero de Opciones", 
+"Time question":"Tiempo",
+"Introduction video":"V\u00eddeo de introducci\u00f3n",
+"You must complete the question":"Debes completar la pregunta",
+"You must complete all the chosen options":"Debes completar todas las opciones seleccionadas",
+"Select the correct answer":"Selecciona la respuesta correcta",
+"Type the correct url of the YouTube video":"Introduce la URL v\u00e1lida de un v\u00eddeo de Youtube",
+"The start value of the video must be less than the end value":"El valor del fin del v\u00eddeo debe ser mayor que el de inicio",
+"This video is currently unavailable":"Este v\u00eddeo no esta actualmente disponible",
+"You must indicate the beginning and end of the life interval you want to show":"Debes indicar el inicio y fin del intervalo de v\u00eddo que quieres mostrar",
+"The start value of the video must be less than the end value":"El valor de inicio del v\u00eddeo debe ser inferior al valor fin",
+"You must write some text in the editor":"Debes escribir algn\u00fan texto en el editor",
+"Question number":"Pregunta n\u00famero: ",
+"First question":"Primera pregunta",
+"Previous question":"Pregunta anterior",
+"Next question":"Pr\u00f3xima pregunta",
+"Last question":"\u00faltima pregunta",
+"Cut question":"Cortar pregunta"
 };
 

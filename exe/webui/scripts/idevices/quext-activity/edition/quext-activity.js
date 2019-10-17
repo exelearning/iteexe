@@ -95,9 +95,17 @@ var $exeDevice = {
         var msgs = this.msgs;
         msgs.msgEProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
-        msgs.msgEURLValid = _("You must indicate the valid URL of an image");
+        msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
         msgs.msgEProvideWord = _("You must provide one word or phrase");
         msgs.msgEOneQuestion = _("You must provide at least one question");
+        msgs.msgEUnavailableVideo = _("This video is currently unavailable")
+        msgs.msgECompleteQuestion = _("You must complete the question");
+        msgs.msgECompleteAllOptions = _("You must complete all the chosen options");
+        msgs.msgESelectSolution = _("Select the correct answer");
+        msgs.msgECompleteURLYoutube = _("Type the correct url of the YouTube video");
+        msgs.msgEStartEndVideo = _("You must indicate the beginning and end of the life interval you want to show");
+        msgs.msgEStartEndIncorrect = _("The start value of the video must be less than the end value");
+        msgs.msgWriteText = _("You must write some text in the editor");
 
     },
     loadYoutubeApi: function () {
@@ -253,7 +261,7 @@ var $exeDevice = {
     },
     removeQuestion: function (num) {
         if ($exeDevice.questionsGame.length < 2) {
-            $exeDevice.showMessage(_('El juego debe tener al menos una pregunta'));
+            $exeDevice.showMessage(msgs.msgEOneQuestion);
             return;
         } else {
             $exeDevice.questionsGame.splice($exeDevice.active, 1);
@@ -367,7 +375,7 @@ var $exeDevice = {
             $exeDevice.showImage(p.url, p.x, p.y, p.alt);
         } else if (p.type == 2) {
             $('#quextECheckSoundVideo').prop('checked', p.soundVideo == 1);
-            $('#quextECheckImageVideo').prop('checked', p.imageVideo== 1);
+            $('#quextECheckImageVideo').prop('checked', p.imageVideo == 1);
             console.log('showQuestion', p.soundVideo, p.imageVideo);
             $('#quextEURLYoutube').val(p.url);
             $('#quextEInitVideo').val($exeDevice.secondsToHour(p.iVideo));
@@ -406,7 +414,7 @@ var $exeDevice = {
             }
         } else {
 
-            $exeDevice.showMessage(_("Este vídeo no esta actualmente disponible"));
+            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
             $('#quextENoVideo').show();
         }
     },
@@ -418,7 +426,7 @@ var $exeDevice = {
             url = $('#quextEURLYoutube').val().trim(),
             id = $exeDevice.getIDYoutube(url);
         if (fVideo <= iVideo) fVideo = 36000;
-        console.log('showVideoQuestion',soundVideo,imageVideo);
+        console.log('showVideoQuestion', soundVideo, imageVideo);
         $('#quextENoImageVideo').hide();
         $('#quextENoVideo').show();
         $('#quextEVideo').hide();
@@ -460,7 +468,7 @@ var $exeDevice = {
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                     if (type == 1) {
-                        $exeDevice.showMessage(_('URL no válida'));
+                        $exeDevice.showMessage(msgs.msgEURLValid);
                     }
                     return false;
                 } else {
@@ -473,7 +481,7 @@ var $exeDevice = {
                 }
             }).on('error', function () {
                 if (type == 1) {
-                    $exeDevice.showMessage(_('URL no válida'));
+                    $exeDevice.showMessage(msgs.msgEURLValid);
                 }
                 return false;
             });
@@ -619,7 +627,7 @@ var $exeDevice = {
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Selecciona la respuesta correcta.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
-                        <legend><a href="#">' + _("Opciones") + '</a></legend>\
+                        <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
                             <p>\
                                 <label for="quextEShowMinimize"><input type="checkbox" id="quextEShowMinimize">' + _("Show minimized.") + '</label>\
@@ -637,28 +645,28 @@ var $exeDevice = {
                                 <label for="quextETimeShowSolution">' + _("Show solution time(seconds)") + ' <input type="number" name="quextETimeShowSolution" id="quextETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                             <p>\
-                                <label for="quextEVideoIntro">' + _("Vídeo de introducción") + '<input type="text" id="quextEVideoIntro" /></label>\
+                                <label for="quextEVideoIntro">' + _("Introduction video") + '<input type="text" id="quextEVideoIntro" /></label>\
                                 <a href="#" id="quextEVideoIntroPlay" class="quext-ENavigationButton quext-EPlayVideoIntro"  title="Play video intro"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
                             </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
-                        <legend><a href="#">' + _("Cuestiones") + '</a></legend>\
+                        <legend><a href="#">' + _("Questions") + '</a></legend>\
                         <div class="quext-EPanel" id="quextEPanel">\
                             <div class="quext-EOptionsMedia">\
                                 <div class="quext-EOptionsGame">\
-                                    <span>' + _("Tipo de Multimedia") + ':</span>\
+                                    <span>' + _("Multimedia type") + ':</span>\
                                     <div class="quext-EInputMedias">\
                                         <input class="quext-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="quext-MediaNormal">Ninguno</label>\
+                                        <label for="quext-MediaNormal">' + _("None") + '</label>\
                                         <input class="quext-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
-                                        <label for="mediaImagen">Imagen</label>\
+                                        <label for="mediaImagen">' + _("Image") + '</label>\
                                         <input class="quext-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
-                                        <label for="mediaVideo">Vídeo</label>\
+                                        <label for="mediaVideo">' + _("Video") + '</label>\
                                         <input class="quext-Type"  id="quextMediaText" type="radio" name="qxtype" value="3" disabled />\
-                                        <label for="mediaTexto">Texto</label>\
+                                        <label for="mediaTexto">' + _("Text") + '</label>\
                                     </div>\
-                                    <span>' + _("Número de Opciones") + ':</span>\
+                                    <span>' + _("Number of options") + ':</span>\
                                     <div class="quext-EInputNumbers">\
                                         <input class="quext-Number" id="numQ2" type="radio" name="qxnumber" value="2" />\
                                         <label for="numQ2">2</label>\
@@ -667,7 +675,7 @@ var $exeDevice = {
                                         <input class="quext-Number" id="numQ4" type="radio" name="qxnumber" value="4" checked="checked" />\
                                         <label for="numQ4">4</label>\
                                     </div>\
-                                    <span>' + _("Tiempo") + ':</span>\
+                                    <span>' + _("Time question") + ':</span>\
                                     <div class="quext-EInputTimes">\
                                         <input class="quext-Times" checked="checked" id="q15s" type="radio" name="qxtime" value="0" />\
                                         <label for="q15s">15s</label>\
@@ -682,9 +690,9 @@ var $exeDevice = {
                                         <input class="quext-Times" id="q10m" type="radio" name="qxtime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
-                                    <span class="quext-ETitleImage" id="quextETitleImage">URL Imagen</span>\
+                                    <span class="quext-ETitleImage" id="quextETitleImage">' + _("URL Imagen") + '</span>\
                                     <div class="quext-EInputImage" id="quextEInputImage">\
-                                        <label for="quextEURLImage"></label>\
+                                        <label class="sr-av" for="quextEURLImage">' + _("URL Imagen") + '</label>\
                                         <input type="text" class="exe-file-picker quext-EURLImage"  id="quextEURLImage"/>\
                                     </div>\
                                     <div class="quext-EInputOptionsImage" id="quextInputOptionsImage">\
@@ -695,34 +703,34 @@ var $exeDevice = {
                                             <input id="quextEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <span class="quext-ETitleVideo" id="quextETitleVideo">URL Youtube</span>\
+                                    <span class="quext-ETitleVideo" id="quextETitleVideo">' + _("URL Youtube") + '</span>\
                                     <div class="quext-EInputVideo" id="quextEInputVideo">\
-                                        <label for="quextEURLYoutube"></label>\
+                                        <label class="sr-av" for="quextEURLYoutube">' + _("URL Youtube") + '</label>\
                                         <input id="quextEURLYoutube" type="text" />\
-                                        <a href="#" id="quextEPlayVideo" class="quext-ENavigationButton quext-EPlayVideo" title="Play video"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
+                                        <a href="#" id="quextEPlayVideo" class="quext-ENavigationButton quext-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div class="quext-EInputOptionsVideo" id="quextEInputOptionsVideo">\
                                         <div>\
-                                            <label for="quextEInitVideo">Inicio:</label>\
+                                            <label for="quextEInitVideo">' + _("Start") + ':</label>\
                                             <input id="quextEInitVideo" type="text" value="00:00:00" readonly />\
-                                            <label for="quextEEndVideo">Fin:</label>\
+                                            <label for="quextEEndVideo">' + _("End") + ':</label>\
                                             <input id="quextEEndVideo" type="text" value="00:00:00" readonly />\
                                             <button class="quext-EVideoTime" id="quextEVideoTime" type="button">00:00:00</button>\
                                         </div>\
                                         <div>\
-                                            <label for="quextECheckSoundVideo">Audio:</label>\
+                                            <label for="quextECheckSoundVideo">' + _("Audio") + ':</label>\
                                             <input id="quextECheckSoundVideo" type="checkbox" checked="checked" />\
-                                            <label for="quextECheckImageVideo">Imagen:</label>\
+                                            <label for="quextECheckImageVideo">' + _("Image") + ':</label>\
                                             <input id="quextECheckImageVideo" type="checkbox" checked="checked" />\
                                         </div>\
                                     </div>\
                                     <div class="quext-EAuthorAlt" id="quextEAuthorAlt">\
                                         <div class="quext-EInputAuthor" id="quextInputAuthor">\
-                                            <label for="quextEAuthor">Autor</label>\
+                                            <label for="quextEAuthor">' + _("Author") + '</label>\
                                             <input id="quextEAuthor" type="text" />\
                                         </div>\
                                         <div class="quext-EInputAlt" id="quextInputAlt">\
-                                            <label for="quextEAlt">Texto alternativo</label>\
+                                            <label for="quextEAlt">' + _("Alternative text") + '</label>\
                                             <input id="quextEAlt" type="text" />\
                                         </div>\
                                     </div>\
@@ -735,45 +743,45 @@ var $exeDevice = {
                                         <div class="quext-EVideo" id="quextEVideo"></div>\
                                         <img class="quext-ENoImageVideo" src="' + path + "quextENoImageVideo.png" + '" id="quextENoImageVideo" alt="" />\
                                         <img class="quext-ENoVideo" src="' + path + "quextENoVideo.png" + '" id="quextENoVideo" alt="" />\
-                                        <img class="quext-ECursor" src="' + path + "quextCursor.gif" + '" id="quextECursor" alt="Puntero" />\
-                                        <img class="quext-ECover" src="' + path + "quextECover.png" + '" id="quextECover" alt="Sin imagen" />\
+                                        <img class="quext-ECursor" src="' + path + "quextCursor.gif" + '" id="quextECursor" alt="Cursor" />\
+                                        <img class="quext-ECover" src="' + path + "quextECover.png" + '" id="quextECover" alt="' + _("No image") + '" />\
                                     </div>\
                                 </div>\
                             </div>\
                             <div class="quext-EContents">\
                                    <div class="quext-EQuestionDiv">\
-                                        <input type="text" class="quext-EQuestion" id="quextEQuestion">\
+                                        <label class="sr-av">' + _("Question") + ':</label><input type="text" class="quext-EQuestion" id="quextEQuestion">\
                                    </div>\
                                    <div class="quext-EAnswers">\
                                     <div class="quext-EOptionDiv">\
-                                        <input type="radio" class="quext-ESolution" name="qxsolution" id="quextESolution0" value="0" checked="checked" />\
-                                        <input type="text" class="quext-EOption0 quext-EAnwersOptions" id="quextEOption0">\
+                                        <label class="sr-av">' + _("Solution") + ' A:</label><input type="radio" class="quext-ESolution" name="qxsolution" id="quextESolution0" value="0" checked="checked" />\
+                                        <label class="sr-av">' + _("Option") + ' A:</label><input type="text" class="quext-EOption0 quext-EAnwersOptions" id="quextEOption0">\
                                     </div>\
                                     <div class="quext-EOptionDiv">\
-                                    <input type="radio" class="quext-ESolution" name="qxsolution" id="quextESolution1" value="1" />\
-                                    <input type="text" class="quext-EOption1 quext-EAnwersOptions"  id="quextEOption1">\
+                                        <label class="sr-av">' + _("Solution") + ' B:</label><input type="radio" class="quext-ESolution" name="qxsolution" id="quextESolution1" value="1" />\
+                                        <label class="sr-av">' + _("Option") + ' B:</label><input type="text" class="quext-EOption1 quext-EAnwersOptions"  id="quextEOption1">\
                                     </div>\
                                     <div class="quext-EOptionDiv">\
-                                        <input type="radio" class="quext-ESolution" name="qxsolution" id="quextESolution2" value="2" />\
-                                        <input type="text" class="quext-EOption2 quext-EAnwersOptions"  id="quextEOption2">\
+                                        <label class="sr-av">' + _("Solution") + ' C:</label><input type="radio" class="quext-ESolution" name="qxsolution" id="quextESolution2" value="2" />\
+                                        <label class="sr-av">' + _("Option") + ' C:</label><input type="text" class="quext-EOption2 quext-EAnwersOptions"  id="quextEOption2">\
                                     </div>\
                                     <div class="quext-EOptionDiv">\
-                                        <input type="radio"  class="quext-ESolution" name="qxsolution" id="quextESolution3" value="3" />\
-                                        <input type="text" class="quext-EOption3 quext-EAnwersOptions"  id="quextEOption3">\
+                                        <label class="sr-av">' + _("Solution") + ' D:</label><input type="radio"  class="quext-ESolution" name="qxsolution" id="quextESolution3" value="3" />\
+                                        <label class="sr-av">' + _("Option") + ' D:</label><input type="text" class="quext-EOption3 quext-EAnwersOptions"  id="quextEOption3">\
                                     </div>\
                                 </div>\
                             </div>\
                             <div class="quext-ENavigationButtons">\
-                                <a href="#" id="quextEAdd" class="quext-ENavigationButton" title="Add question"><img src="' + path + "quextAdd.png" + '"  alt="" class="quext-EButtonImage b-add" /></a>\
-                                <a href="#" id="quextEFirst" class="quext-ENavigationButton"  title="First question"><img src="' + path + "quextFirst.png" + '"  alt="" class="quext-EButtonImage b-first" /></a>\
-                                <a href="#" id="quextEPrevious" class="quext-ENavigationButton" title="Prev question"><img src="' + path + "quextPrev.png" + '"  alt="" class="quext-EButtonImage b-prev" /></a>\
-                                <span class="quext-NumberQuestion" id="quextNumberQuestion">1</span>\
-                                <a href="#" id="quextENext" class="quext-ENavigationButton"  title="Next question"><img src="' + path + "quextNext.png" + '"  alt="" class="quext-EButtonImage b-next" /></a>\
-                                <a href="#" id="quextELast" class="quext-ENavigationButton"  title="Last question"><img src="' + path + "quext-last.png" + '"  alt="" class="quext-EButtonImage b-last" /></a>\
-                                <a href="#" id="quextEDelete" class="quext-ENavigationButton" title="Delete question"><img src="' + path + "quextDelete.png" + '"  alt="" class="quext-EButtonImage b-delete" /></a>\
-                                <a href="#" id="quextECopy" class="quext-ENavigationButton" title="Copy question"><img src="' + path + "quextCopy.png" + '"   alt="" class="quext-EButtonImage b-copy" /></a>\
-                                <a href="#" id="quextECut" class="quext-ENavigationButton" title="Cut question"><img src="' + path + "quextCut.png" + '"  alt=""  class="quext-EButtonImage b-cut" /></a>\
-                                <a href="#" id="quextEPaste" class="quext-ENavigationButton"  title="Paste question"><img src="' + path + "quextPaste.png" + '"  alt="" class="quext-EButtonImage b-paste" /></a>\
+                                <a href="#" id="quextEAdd" class="quext-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextAdd.png" + '"  alt="" class="quext-EButtonImage b-add" /></a>\
+                                <a href="#" id="quextEFirst" class="quext-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextFirst.png" + '"  alt="" class="quext-EButtonImage b-first" /></a>\
+                                <a href="#" id="quextEPrevious" class="quext-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextPrev.png" + '"  alt="" class="quext-EButtonImage b-prev" /></a>\
+                                <span class="sr-av">' + _("Question number:") + '</span><span class="quext-NumberQuestion" id="quextNumberQuestion">1</span>\
+                                <a href="#" id="quextENext" class="quext-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextNext.png" + '"  alt="" class="quext-EButtonImage b-next" /></a>\
+                                <a href="#" id="quextELast" class="quext-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quext-last.png" + '"  alt="" class="quext-EButtonImage b-last" /></a>\
+                                <a href="#" id="quextEDelete" class="quext-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextDelete.png" + '"  alt="" class="quext-EButtonImage b-delete" /></a>\
+                                <a href="#" id="quextECopy" class="quext-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextCopy.png" + '"   alt="" class="quext-EButtonImage b-copy" /></a>\
+                                <a href="#" id="quextECut" class="quext-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextCut.png" + '"  alt=""  class="quext-EButtonImage b-cut" /></a>\
+                                <a href="#" id="quextEPaste" class="quext-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextPaste.png" + '"  alt="" class="quext-EButtonImage b-paste" /></a>\
                             </div>\
                             <div class="quext-EVIDiv" id="quextEVIDiv">\
                                 <div class="quext-EVIV">\
@@ -783,19 +791,19 @@ var $exeDevice = {
                                     </div>\
                                 </div>\
                                 <div class="quext-EVIOptions">\
-                                    <label for="quextEVIURL">URL Youtube:</label>\
+                                    <label for="quextEVIURL">' + _("URL YouTube") + ':</label>\
                                     <input id="quextEVIURL" type="text" />\
-                                    <a href="#" id="quextEVIPlayI" class="quext-ENavigationButton quext-EPlayVideo" title="Play video intro"><img src="' + path + "quextPlay.png" + '" alt="" class="quext-EButtonImage b-playintro" /></a>\
-                                    <label for="quextEVIStart">Inicio:</label>\
+                                    <a href="#" id="quextEVIPlayI" class="quext-ENavigationButton quext-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '" alt="" class="quext-EButtonImage b-playintro" /></a>\
+                                    <label for="quextEVIStart">' + _("Start") + ':</label>\
                                     <input id="quextEVIStart" type="text" value="00:00:00" readonly />\
-                                    <label for="quextEVIEnd">Fin:</label>\
+                                    <label for="quextEVIEnd">' + _("End") + ':</label>\
                                     <input id="quextEVIEnd" type="text" value="00:00:00" readonly />\
                                     <button class="quext-EVideoTime" id="quextEVITime" type="button">00:00:00</button>\
                                 </div>\
-                                <input type="button" class="quext-EVIClose" id="quextEVIClose" value="Cerrar" />\
+                                <input type="button" class="quext-EVIClose" id="quextEVIClose" value="' + _("Close") + '" />\
                             </div>\
                             <div class="quext-ENumQuestionDiv" id="quextENumQuestionDiv">\
-                               <div class="quext-ENumQ"></div>\ <span class="quext-ENumQuestions" id="quextENumQuestions">0</span>\
+                               <div class="quext-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="quext-ENumQuestions" id="quextENumQuestions">0</span>\
                             </div>\
                         </div>\
                     </fieldset>\
@@ -831,9 +839,6 @@ var $exeDevice = {
                 });
             }
         });
-
-        //var titleField = $("#activeIdevice input[type='text']").eq(0);
-        //if (titleField.val()==_('QuExt')) titleField.val("").focus();   
 
     },
 
@@ -900,7 +905,7 @@ var $exeDevice = {
             var instructions = $(".quext-instructions", wrapper);
             if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
             $exeDevice.updateFieldGame(dataGame);
-        
+
         }
     },
     updateFieldGame: function (game) {
@@ -963,7 +968,7 @@ var $exeDevice = {
         dataGame.msgs = i18n;
         var json = JSON.stringify(dataGame),
             divContent = "";
-        var instructions =tinyMCE.get('eXeGameInstructions').getContent();
+        var instructions = tinyMCE.get('eXeGameInstructions').getContent();
         if (instructions != "") divContent = '<div class="quext-instructions">' + instructions + '</div>';
         var linksImages = $exeDevice.createlinksImage(dataGame.questionsGame);
         var html = '<div class="quext-IDevice">';
@@ -974,8 +979,9 @@ var $exeDevice = {
         return html;
     },
     validateQuestion: function () {
-        var message = '';
-        var p = new Object();
+        var message = '',
+            msgs = $exeDevice.msgs,
+            p = new Object();
         p.type = parseInt($('input[name=qxtype]:checked').val());
         p.time = parseInt($('input[name=qxtime]:checked').val());
         p.numberOptions = parseInt($('input[name=qxnumber]:checked').val());
@@ -1006,20 +1012,21 @@ var $exeDevice = {
             p.options.push(option);
         });
         if (p.quextion.length == 0) {
-            message = _('Debes completar la pregunta');
+            message = msgs.msgECompleteQuestion;
         } else if (optionEmpy) {
-            message = _('Debes completar todas las opciones elegidas');
+            message = msgs.msgECompleteAllOptions
         } else if (p.type == 1 && p.url.length < 5) {
-            message = _('Debes seleccionar o indicar la url de la imagen');
+            message = msgs.msgEURLValid;
         } else if (p.type == 2 && p.url.length == 0) {
-            message = _('Escribe la url correcta del vídeo de YouTube');
+            message = msgs.msgECompleteURLYoutube;
         } else if (p.type == 2 && (p.iVideo.length == 0 || p.fVideo.length == 0)) {
-            message = _('Debes indicar el inicio y fin del intervalo de vído que quieres mostrar');
+            message = msgs.msgEStartEndVideo;
         } else if (p.type == 2 && p.iVideo >= p.fVideo) {
-            message = _('El valor de inicio del vídeo debe ser inferior al valor fin');
+            message = msgs.msgEStartEndIncorrect;
         } else if (p.type == 3 && p.eText.length == 0) {
-            message = _('Debes escribir algún texto en el editor');
+            message = msgs.msgWriteText;
         }
+
         if (message.length == 0) {
             $exeDevice.questionsGame[$exeDevice.active] = p;
             message = true;
@@ -1091,15 +1098,15 @@ var $exeDevice = {
             }
         }
         $exeDevice.updateFieldGame(game);
-        var instructions=game.instructionsExe || game.instructions ;
+        var instructions = game.instructionsExe || game.instructions;
         tinymce.editors[0].setContent(unescape(instructions));
         $('.exe-form-tabs li:first-child a').click();
     },
     validateData: function () {
         var clear = $exeDevice.removeTags,
-         // instructions = escape($("#eXeGameInstructions").html())
+            // instructions = escape($("#eXeGameInstructions").html())
             instructions = $('#eXeGameInstructions').text();
-            instructionsExe = escape(tinyMCE.get('eXeGameInstructions').getContent()),
+        instructionsExe = escape(tinyMCE.get('eXeGameInstructions').getContent()),
             showMinimize = $('#quextEShowMinimize').is(':checked'),
             optionsRamdon = $('#quextEQuestionsRamdon').is(':checked'),
             answersRamdon = $('#quextEAnswersRamdon').is(':checked'),
@@ -1120,13 +1127,13 @@ var $exeDevice = {
         for (var i = 0; i < questionsGame.length; i++) {
             mquestion = questionsGame[i]
             if (mquestion.quextion.length == 0) {
-                $exeDevice.showMessage(_("Indica una cuestión"));
+                $exeDevice.showMessage($exeDevice.msgECompleteQuestion);
                 return false;
             } else if ((mquestion.type == 1) && (mquestion.url.length < 10)) {
-                $exeDevice.showMessage(_("Indica una url válida"));
+                $exeDevice.showMessage($exeDevice.msgEURLValid);
                 return false;
             } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url))) {
-                $exeDevice.showMessage(_("Indica una url de youtube válida"));
+                $exeDevice.showMessage($exeDevice.msgECompleteURLYoutube);
                 return false;
             }
             var completAnswer = true;
@@ -1136,7 +1143,7 @@ var $exeDevice = {
                 }
             }
             if (!completAnswer) {
-                $exeDevice.showMessage(_("Debes completar todas las opciones seleccionadas"));
+                $exeDevice.showMessage($exeDevice.msgECompleteAllOptions);
                 return false;
             }
         }
@@ -1165,7 +1172,7 @@ var $exeDevice = {
             'endVideo': endVideo,
             'idVideo': idVideo,
             'startVideo': startVideo,
-            'instructionsExe':instructionsExe,
+            'instructionsExe': instructionsExe,
             'instructions': instructions,
             'showMinimize': showMinimize,
             'optionsRamdon': optionsRamdon,
@@ -1306,7 +1313,7 @@ var $exeDevice = {
             this.value = this.value > 9 ? 9 : this.value;
             this.value = this.value < 1 ? 1 : this.value;
         });
- 
+
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             $('#eXeGameExportImport').show();
@@ -1404,7 +1411,7 @@ var $exeDevice = {
             } else {
                 $('#quextEVINo').show();
                 $('#quextEVI').hide();
-                $exeDevice.showMessage(_("Introduce la URL válida de un vídeo de Youtube"));
+                $exeDevice.showMessage($exeDevice.msgECompleteURLYoutube);
             }
         });
         $('#quextEVIPlayI').on('click', function (e) {
@@ -1414,12 +1421,12 @@ var $exeDevice = {
                 var iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
                 if (fVI <= iVI) {
-                    $exeDevice.showMessage(_('El valor del fin del video debe ser mayor que el de inicio'));
+                    $exeDevice.showMessage($exeDevice.msgEStartEndIncorrect);
                     return;
                 }
                 $exeDevice.startVideoIntro(idv, iVI, fVI);
             } else {
-                $exeDevice.showMessage(_("Introduce la URL válida de un vídeo de Youtube"))
+                $exeDevice.showMessage($exeDevice.msgECompleteQuestion)
             }
         });
         $('#quextEVIClose').on('click', function (e) {
