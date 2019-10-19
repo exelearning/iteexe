@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-10-19 12:38+0200\n"
-"PO-Revision-Date: 2019-05-21 19:47+0200\n"
+"PO-Revision-Date: 2019-10-19 12:47+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -2427,7 +2427,7 @@ msgid ""
 "<p>Optional: Write other words to complete the dropdown activity.<br "
 "/>Use | (vertical bar ) to separate words.<br />This field can be left "
 "blank. </p>"
-msgstr ""
+msgstr "<p>Opcional: puede escribir otras palabras para completar la actividad desplegable.<br /> Use la barra vertical | para separar las palabras.<br />Este campo puede quedar en blanco. </p>"
 
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
 #: exe/engine/locationbuttons.py:37
@@ -6268,7 +6268,7 @@ msgstr "Desagrupar los iDevices"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:116
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:134
 msgid "Available iDevices"
-msgstr ""
+msgstr "iDevices disponibles"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:124
 msgid "Save iDevices"
@@ -9925,7 +9925,7 @@ msgstr ""
 msgid ""
 "Please don't forget to check the Properties tab: Title, language, "
 "license, author, description..."
-msgstr ""
+msgstr "No olvide comprobar el contenido de la pestaña Propiedades: título, idioma, licencia, autor, descripción..."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:159
 msgid "General information about this educational resource"
@@ -16030,26 +16030,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid ""
-#~ "<p>Optional: Write other words to "
-#~ "complete the dropdown activity.</br>Use | "
-#~ "(vertical bar ) to separate "
-#~ "words.</br>This field can be left blank."
-#~ " </p>"
-#~ msgstr ""
-#~ "<p>Opcional: escriba otras palabras para "
-#~ "completar la actividad desplegable.<br/>Use la"
-#~ " barra vertical | para separar las"
-#~ " palabras.<br/>Este campo puede dejarse en"
-#~ " blanco.</p>"
-
-#~ msgid "Edit iDevices"
-#~ msgstr "Editar los iDevices"
-
-#~ msgid "Publish"
-#~ msgstr "Publicar"
-
-#~ msgid "Procomún"
-#~ msgstr "Procomún"
-

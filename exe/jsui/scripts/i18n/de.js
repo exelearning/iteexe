@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.4\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-05-21 19:44+0200\nPO-Revision-Date: 2019-05-24 12:51+0200\nLast-Translator: Heike Koch <info@hei-ke-koch.de>\nLanguage: de\nLanguage-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, lernmodule.net gGmbH <rh@dialoge.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-10-19 12:38+0200\nPO-Revision-Date: 2019-05-24 12:51+0200\nLast-Translator: Heike Koch <info@hei-ke-koch.de>\nLanguage: de\nLanguage-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, lernmodule.net gGmbH <rh@dialoge.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "DropDown Activity": "DropDown Aktivit\u00e4t", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Geben Sie die Fallsituation ein. Eine gute Fallstudie\nbeschreibt ein Szenario, eine Kontroverse oder verschiedene\nCharaktere. Es sollte m\u00f6glich sein, mit der Fallstudie \neine gut l\u00f6sbare Aufgabenstellung zu verbinden.", 
  "Xhosa ": "Xhosa", 
@@ -424,7 +424,6 @@ translations = {
  "public domain": "public domain", 
  "Tswana; Setswana ": "Tswana; Setswana", 
  "educational level": "Ausbildungsniveau", 
- "<p>Optional: Write other words to complete the dropdown activity.<\/br>Use | (vertical bar ) to separate words.<\/br>This field can be left blank. <\/p>": "<p>Optional: Geben Sie weitere m\u00f6gliche L\u00f6sungsw\u00f6rter ein.<\/br>Verwenden Sie einen vertikalen Strich (|), um die Worte zu trennen.<\/br>Dieses Feld ist optional, d.h. Sie m\u00fcssen hier nichts angeben. <\/p>", 
  "Orange": "Orange", 
  "Red": "Rot", 
  "Definition Term ": "Definitionsterminus", 
@@ -487,7 +486,6 @@ translations = {
  "Height of game area (in pixels)": "H\u00f6he des Spielfelds (in Pixeln)", 
  "Shown over game when wrong answer is given": "Wird eingeblendet, wenn eine falsche Stelle angeklickt wurde.", 
  "License": "Lizenz", 
- "Edit iDevices": "iDevices bearbeiten", 
  "Select a Template": "Ein Template ausw\u00e4hlen ", 
  "Text for Check Button": "Text f\u00fcr Check-Button", 
  "produce": "produzieren", 
