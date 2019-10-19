@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
-"POT-Creation-Date: 2019-10-19 12:38+0200\n"
+"POT-Creation-Date: 2019-10-19 13:22+0200\n"
 "PO-Revision-Date: 2018-12-02 17:16+0100\n"
 "Last-Translator: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
@@ -1927,8 +1927,8 @@ msgstr "اقرأ الفقرة أدناه واملأ الكلمات المفقو�
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the dropdown activity.<br "
-"/>Use | (vertical bar ) to separate words.<br />This field can be left "
+"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
+"Use | (vertical bar) to separate words.<br / > This field can be left "
 "blank. </p>"
 msgstr ""
 
@@ -15130,5 +15130,13 @@ msgstr ""
 #~ msgstr "نشر"
 
 #~ msgid "Procomún"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the dropdown activity.<br />Use "
+#~ "| (vertical bar ) to separate "
+#~ "words.<br />This field can be left "
+#~ "blank. </p>"
 #~ msgstr ""
 

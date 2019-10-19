@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2019-10-19 12:38+0200\n"
+"POT-Creation-Date: 2019-10-19 13:22+0200\n"
 "PO-Revision-Date: 2019-05-12 17:31+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_TW\n"
@@ -2039,8 +2039,8 @@ msgstr "閱讀底下的段落，並選取正確的單字"
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the dropdown activity.<br "
-"/>Use | (vertical bar ) to separate words.<br />This field can be left "
+"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
+"Use | (vertical bar) to separate words.<br / > This field can be left "
 "blank. </p>"
 msgstr ""
 
@@ -15130,4 +15130,12 @@ msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。�
 
 #~ msgid "Procomún"
 #~ msgstr "Procomún"
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the dropdown activity.<br />Use "
+#~ "| (vertical bar ) to separate "
+#~ "words.<br />This field can be left "
+#~ "blank. </p>"
+#~ msgstr ""
 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2019-10-19 12:38+0200\nPO-Revision-Date: 2019-10-19 12:47+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage: es\nLanguage-Team: Spanish <jrfern@telefonica.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2019-10-19 13:22+0200\nPO-Revision-Date: 2019-10-19 13:26+0200\nLast-Translator: Juan Rafael Fern\u00e1ndez <jrfern@telefonica.net>\nLanguage: es\nLanguage-Team: Spanish <jrfern@telefonica.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Toggle Full Screen Mode": "Cambiar a modo Pantalla Completa", 
  "DropDown Activity": "Actividad desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cree el caso pr\u00e1ctico. Un buen caso es aquel \nque describe una controversia o propone una escena describiendo los personajes \ninvolucrados y la situaci\u00f3n. Tambi\u00e9n debe permitir que se realicen acciones \npara obtener la resoluci\u00f3n de la situaci\u00f3n.", 
@@ -545,6 +545,7 @@ translations = {
  "Cannot delete the current style.": "El presente estilo no se puede borrar.", 
  "Console": "Consola", 
  "Message:": "Mensaje:", 
+ "<p>Optional: Write other words to complete the Dropdown activity.<br \/ > Use | (vertical bar) to separate words.<br \/ > This field can be left blank. <\/p>": "<p>Opcional: puede escribir otras palabras para completar la Actividad desplegable.<br \/ > Use la barra vertical | para separar las palabras.<br \/ >Este campo puede quedar en blanco. <\/p>", 
  "Naming standard for exported content": "Est\u00e1ndar de nombrado para el contenido exportado", 
  "Click for completion instructions": "Pulse para recibir instrucciones sobre c\u00f3mo completar la actividad", 
  "Download Information": "Descargar informaci\u00f3n", 
@@ -606,7 +607,6 @@ translations = {
  "\"Permissive\" will allow any markup. \"Strict\" will allow only valid markup: It will remove any invalid code, even HTML5 tags (except VIDEO and AUDIO) when using XHTML format.": "\"Permisivo\" admitir\u00e1 cualquier etiqueta. \"Estricto\" s\u00f3lo permitir\u00e1 marcado v\u00e1lido: eliminar\u00e1 el c\u00f3digo inv\u00e1lido, incluidas las etiquetas HTML5 (excepto VIDEO  y AUDIO) cuando se use el formato XHTML.", 
  "The tooltip will show the content of the Free Text iDevice.": "El bocadillo mostrar\u00e1 el contenido del iDevice de Texto libre.", 
  "Front page": "Portada", 
- "<p>Optional: Write other words to complete the dropdown activity.<br \/>Use | (vertical bar ) to separate words.<br \/>This field can be left blank. <\/p>": "<p>Opcional: puede escribir otras palabras para completar la actividad desplegable.<br \/> Use la barra vertical | para separar las palabras.<br \/>Este campo puede quedar en blanco. <\/p>", 
  "Highlighted is an iDevice that emphasizes text to catch the student's attention.": "Destacado es un iDevice que permite resaltar texto para llamar la atenci\u00f3n del alumnado.", 
  "Gray": "Gris", 
  "The RSS iDevice is used \nto provide new content to an individual users machine. Using this\niDevice you can provide links from a feed you select for learners to view.": "El iDevice RSS se usa \npara recopilar contenido nuevo en la maquina de un usuario individual. \nUsando este iDevice puede proporcionar enlaces a un canal RSS para que los alumnos lo vean.", 

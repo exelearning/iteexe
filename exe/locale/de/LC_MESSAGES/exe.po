@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-19 12:38+0200\n"
+"POT-Creation-Date: 2019-10-19 13:22+0200\n"
 "PO-Revision-Date: 2019-05-24 12:51+0200\n"
 "Last-Translator: Heike Koch <info@hei-ke-koch.de>\n"
 "Language: de\n"
@@ -2355,8 +2355,8 @@ msgstr "Lese den folgenden Abschnitt und wähle die richtig Wörter."
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the dropdown activity.<br "
-"/>Use | (vertical bar ) to separate words.<br />This field can be left "
+"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
+"Use | (vertical bar) to separate words.<br / > This field can be left "
 "blank. </p>"
 msgstr ""
 
@@ -15780,5 +15780,13 @@ msgstr ""
 #~ msgstr "Herausgeber"
 
 #~ msgid "Procomún"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the dropdown activity.<br />Use "
+#~ "| (vertical bar ) to separate "
+#~ "words.<br />This field can be left "
+#~ "blank. </p>"
 #~ msgstr ""
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-10-19 12:38+0200\n"
+"POT-Creation-Date: 2019-10-19 13:22+0200\n"
 "PO-Revision-Date: 2014-05-13 17:47+0330\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fa\n"
@@ -1930,8 +1930,8 @@ msgstr ""
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the dropdown activity.<br "
-"/>Use | (vertical bar ) to separate words.<br />This field can be left "
+"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
+"Use | (vertical bar) to separate words.<br / > This field can be left "
 "blank. </p>"
 msgstr ""
 
@@ -15054,5 +15054,13 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Procomún"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the dropdown activity.<br />Use "
+#~ "| (vertical bar ) to separate "
+#~ "words.<br />This field can be left "
+#~ "blank. </p>"
 #~ msgstr ""
 
