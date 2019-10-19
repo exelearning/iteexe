@@ -348,7 +348,7 @@ class ListaField(FieldWithResources):
         self._setVersion2Attributes()
         self.otras = ''
         self.otrasInstruc = \
-            x_(u"<p>Optional: Write other words to complete the dropdown activity.<br />Use | (vertical bar ) to separate words.<br />This field can be left blank. </p>")
+            x_(u"<p>Optional: Write other words to complete the Dropdown activity.<br / > Use | (vertical bar) to separate words.<br / > This field can be left blank. </p>")
      
 
     def _setVersion2Attributes(self):
