@@ -99,7 +99,7 @@ class NotaBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html = u'<div class="classnote">\n'
+        html = u'<div class="iDevice_wrapper classnote">\n'
         if  self.commentElement.field.content:
             html += '<div class="notetitleex" onclick="jQuery(\'#fb%s\').toggle()" title="%s">' % (self.id , _(u"Show/Hide"))
         else:
