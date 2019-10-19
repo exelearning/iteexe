@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.4\n"
+"Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-21 19:44+0200\n"
+"POT-Creation-Date: 2019-10-19 13:22+0200\n"
 "PO-Revision-Date: 2019-01-13 20:09+0100\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
@@ -217,7 +217,7 @@ msgstr "Attachment %s has no parentNode"
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:29
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:573
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:577
 #: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
 msgstr "图像"
@@ -370,7 +370,7 @@ msgstr "按照地图上的提示依序点击。"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:167
 #: exe/webui/content_template/strings.py:496 exe/webui/galleryblock.py:216
 #: exe/webui/jsblock.py:82
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:156
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:162
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:23
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -632,8 +632,9 @@ msgstr " "
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:1001
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:1049
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:54
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:56
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:25
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exeeffects/langs/en.js:4
@@ -682,7 +683,7 @@ msgstr "输入填空练习的内容. 双击所要隐藏的字, 然后点击<i>�
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:908 exe/webui/common.py:918
+#: exe/webui/common.py:956 exe/webui/common.py:966
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2485 exe/webui/element.py:2620
 #: exe/webui/element.py:2735 exe/webui/element.py:2936
@@ -745,15 +746,15 @@ msgstr "填空题语言"
 msgid "Text and Tasks"
 msgstr ""
 
-#: exe/engine/config.py:100 exe/engine/config.py:105 exe/engine/config.py:127
-#: exe/engine/config.py:128 exe/engine/config.py:129 exe/engine/config.py:131
-#: exe/engine/config.py:137
+#: exe/engine/config.py:100 exe/engine/config.py:101 exe/engine/config.py:105
+#: exe/engine/config.py:127 exe/engine/config.py:128 exe/engine/config.py:129
+#: exe/engine/config.py:131 exe/engine/config.py:137
 msgid "Interactive Activities"
 msgstr "互动活动"
 
-#: exe/engine/config.py:101 exe/engine/config.py:102 exe/engine/config.py:123
-#: exe/engine/config.py:124 exe/engine/config.py:125 exe/engine/config.py:132
-#: exe/engine/config.py:133 exe/engine/config.py:139
+#: exe/engine/config.py:102 exe/engine/config.py:123 exe/engine/config.py:124
+#: exe/engine/config.py:125 exe/engine/config.py:132 exe/engine/config.py:133
+#: exe/engine/config.py:139
 msgid "Other Contents"
 msgstr ""
 
@@ -1041,7 +1042,7 @@ msgstr "上载"
 #: exe/engine/extendedfieldengine.py:317
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:102
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:133
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:372
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:379
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
 #: exe/webui/style/INTEF/_intef_js.js:121
 msgid "File"
@@ -1331,7 +1332,7 @@ msgstr "输入有关文档的描述."
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:304
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:349
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:194
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:160
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:166
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/template/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:85
@@ -1675,7 +1676,7 @@ msgstr "这个栏目是可灵活使用的. 可用它来提供所涉及阅读资�
 
 #: exe/engine/idevicestore.py:696 exe/engine/idevicestore.py:705
 #: exe/engine/idevicestore.py:803 exe/engine/idevicestore.py:812
-#: exe/engine/package.py:723 exe/engine/package.py:734
+#: exe/engine/package.py:722 exe/engine/package.py:733
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:218
 msgid "Objectives"
 msgstr "目的"
@@ -1693,7 +1694,7 @@ msgstr "学习此课的目的"
 
 #: exe/engine/idevicestore.py:709 exe/engine/idevicestore.py:719
 #: exe/engine/idevicestore.py:816 exe/engine/idevicestore.py:826
-#: exe/engine/package.py:753 exe/engine/package.py:764
+#: exe/engine/package.py:752 exe/engine/package.py:763
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:233
 msgid "Preknowledge"
 msgstr "预备知识"
@@ -1957,10 +1958,10 @@ msgstr "阅读以下段落并选择正确的单词"
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the dropdown activity.</br>Use"
-" | (vertical bar ) to separate words.</br>This field can be left blank. "
-"</p>"
-msgstr "<p>可选：写下其他单词以完成下拉活动。 </br>使用| （竖条）分隔单词。 </br>该字段可以留空。 </p>"
+"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
+"Use | (vertical bar) to separate words.<br / > This field can be left "
+"blank. </p>"
+msgstr ""
 
 #: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
 #: exe/engine/locationbuttons.py:37
@@ -2310,15 +2311,15 @@ msgstr "单元"
 msgid "Home"
 msgstr "首页"
 
-#: exe/engine/package.py:573
+#: exe/engine/package.py:572
 msgid "Metadata creation date"
 msgstr "元数据创建日期"
 
-#: exe/engine/package.py:1191
+#: exe/engine/package.py:1190
 msgid "?????"
 msgstr "?????"
 
-#: exe/engine/package.py:1230 exe/engine/package.py:1237
+#: exe/engine/package.py:1234 exe/engine/package.py:1241
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -2327,16 +2328,16 @@ msgstr ""
 "保存失败!\n"
 "最后一次成功的存档是%s."
 
-#: exe/engine/package.py:1691 exe/jsui/scripts/app/controller/Toolbar.js:528
+#: exe/engine/package.py:1661 exe/jsui/scripts/app/controller/Toolbar.js:528
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:493
 msgid "iDevice Editor"
 msgstr "iDevice 编辑器"
 
-#: exe/engine/package.py:1885
+#: exe/engine/package.py:1854
 msgid "My Catalog"
 msgstr "我的目录"
 
-#: exe/engine/package.py:1892
+#: exe/engine/package.py:1861
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:258
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -3155,7 +3156,7 @@ msgid ""
 msgstr "这是用户自创教学组件插件的例子."
 
 #: exe/idevices/exampleidevice.py:44
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:61
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:65
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:140
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:145
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:20
@@ -3613,7 +3614,7 @@ msgstr "错误"
 #: exe/jsui/scripts/app/controller/Outline.js:204
 #: exe/jsui/scripts/app/controller/Toolbar.js:537
 #: exe/webui/scripts/editor.js:54
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:337
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:338
 #: exe/webui/tools/style-designer/langs/all.js:120
 msgid "Confirm"
 msgstr "确认"
@@ -3780,7 +3781,7 @@ msgid "Export"
 msgstr "导出"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:538
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:338
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:339
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -4264,8 +4265,8 @@ msgstr "类型包括描述内容的一般类别，功能或类型的术语。建
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:555
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:236
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:243
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:241
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:248
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:179
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:230
@@ -4306,7 +4307,7 @@ msgstr "对从中派生当前资源的资源的引用。"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:123
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:489
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:181
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:72
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:169
@@ -4540,7 +4541,7 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:65
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:404
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:564
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:583
 #: exe/webui/tools/style-designer/langs/all.js:11
 msgid "General"
@@ -4784,8 +4785,8 @@ msgid "Time"
 msgstr "时间"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:233
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:372
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:238
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:379
 msgid "Required"
 msgstr "必需的"
 
@@ -4971,7 +4972,7 @@ msgstr "预备知识"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:249
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:433
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:437
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:170
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
@@ -4987,14 +4988,14 @@ msgstr "资源的主要作者。"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:442
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:168
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:174
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:10
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:18
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:362
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:851
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1031
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1051
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:870
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1050
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1070
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:431
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:886
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1025
@@ -5156,7 +5157,7 @@ msgid "Update Tree"
 msgstr "更新树"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:631
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:69
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:74
 msgid "Advanced Options"
 msgstr "高级选项"
 
@@ -5175,7 +5176,7 @@ msgid "Select Browser"
 msgstr "选择浏览器"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:39
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:58
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:61
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/xhtmlxtras/langs/en_dlg.js:1
 msgid "General Settings"
 msgstr "常规设置"
@@ -5230,7 +5231,7 @@ msgid "Editor version"
 msgstr "编辑器版本"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:207
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:576
 msgid "recommended"
 msgstr "推荐"
 
@@ -5383,10 +5384,10 @@ msgid "Import style from custom URL"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:518
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:60
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:233
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:236
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:243
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:64
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:238
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:241
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:248
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:138
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:143
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
@@ -5498,8 +5499,8 @@ msgstr "取消组合 iDevices"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:111
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:116
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:134
-msgid "Edit iDevices"
-msgstr "编辑 iDevices"
+msgid "Available iDevices"
+msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:124
 msgid "Save iDevices"
@@ -5574,23 +5575,23 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
-msgid "Promote node up in hierarchy"
-msgstr "在层次结构中提升节点"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:46
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:47
-msgid "Demote node down in hierarchy"
-msgstr "在层次结构中降级节点"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:54
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:55
 msgid "Move node up"
 msgstr "节点上移"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:62
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:63
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:46
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:47
 msgid "Move node down"
 msgstr "节点下移"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:54
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:55
+msgid "Promote node up in hierarchy"
+msgstr "在层次结构中提升节点"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:62
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:63
+msgid "Demote node down in hierarchy"
+msgstr "在层次结构中降级节点"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:94
 msgid "use the right arrow key"
@@ -5706,14 +5707,6 @@ msgstr ""
 msgid "XLIFF File"
 msgstr "XLIFF文件"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:394
-msgid "Publish"
-msgstr "发布"
-
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:403
-msgid "Procomún"
-msgstr "Procomún"
-
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416 exe/webui/common.py:635
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
@@ -5764,7 +5757,7 @@ msgstr "样式"
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:6
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:625
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:629
 msgid "Help"
 msgstr "帮助"
 
@@ -5784,7 +5777,7 @@ msgid "eXe Web Site"
 msgstr "exe 网站"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:617
-#: exe/webui/scripts/authoring.js:907 exe/webui/tools/assistant/langs/all.js:74
+#: exe/webui/scripts/authoring.js:908 exe/webui/tools/assistant/langs/all.js:74
 msgid "Report an Issue"
 msgstr "报告问题"
 
@@ -5841,7 +5834,7 @@ msgstr "成功"
 msgid "Load Error"
 msgstr "加载出错"
 
-#: exe/jsui/scripts/exe.js:255
+#: exe/jsui/scripts/exe.js:256
 msgid ""
 "A new version of eXeLearning (%) is available. Would you like to download"
 " it now?"
@@ -5849,29 +5842,29 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:825 exe/jsui/scripts/exe.js:258
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:825 exe/jsui/scripts/exe.js:259
 msgid "Warning!"
 msgstr "警告！"
 
-#: exe/jsui/scripts/exe.js:306
+#: exe/jsui/scripts/exe.js:307
 msgid ""
 "If you leave this page eXe application continues to run. Please use the "
 "menu File->Quit if you really want to exit the application."
 msgstr "如果您离开此页面，eXe应用程序将继续运行。如果您确实要退出应用程序，请使用菜单File-&gt; Quit。"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:100 exe/jsui/scripts/exe.js:337
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:100 exe/jsui/scripts/exe.js:338
 msgid "Group iDevices"
 msgstr "将 iDevices 分组"
 
-#: exe/jsui/scripts/exe.js:364 exe/jsui/scripts/exe.js:372
+#: exe/jsui/scripts/exe.js:365 exe/jsui/scripts/exe.js:376
 msgid "Show panel"
 msgstr ""
 
-#: exe/jsui/scripts/exe.js:395
+#: exe/jsui/scripts/exe.js:399
 msgid "Click on the elements of the left panel to add content."
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:909 exe/jsui/scripts/exe.js:396
+#: exe/jsui/scripts/app/controller/Toolbar.js:909 exe/jsui/scripts/exe.js:400
 msgid "Don't show this warning again"
 msgstr "不再显示本警告"
 
@@ -7552,7 +7545,7 @@ msgstr "文件名:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:106
 #: exe/webui/scripts/authoring.js:367 exe/webui/scripts/authoring.js:376
-#: exe/webui/scripts/authoring.js:964 exe/webui/scripts/editor.js:81
+#: exe/webui/scripts/authoring.js:965 exe/webui/scripts/editor.js:81
 #: exe/webui/scripts/editor.js:108
 msgid "Select a file"
 msgstr "选择文档"
@@ -7566,7 +7559,7 @@ msgstr "标签:"
 msgid "Warning: %s"
 msgstr "警告: %s"
 
-#: exe/webui/block.py:184 exe/webui/scripts/authoring.js:899
+#: exe/webui/block.py:184 exe/webui/scripts/authoring.js:900
 msgid "IDevice broken"
 msgstr "IDevice broken"
 
@@ -7771,7 +7764,7 @@ msgstr "本地版本"
 msgid "Enable JavaScript"
 msgstr "启用 JavaScript"
 
-#: exe/webui/common.py:624 exe/webui/common.py:883 exe/webui/element.py:1547
+#: exe/webui/common.py:624 exe/webui/common.py:931 exe/webui/element.py:1547
 #: exe/webui/element.py:2477 exe/webui/listablock.py:274
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:43
 #: exe/webui/scripts/idevices/text/edition/text.js:28
@@ -7912,7 +7905,7 @@ msgstr "点击“另一个字”继续。"
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe:  elearning XHTML 编辑器"
 
-#: exe/webui/common.py:1007 exe/webui/common.py:1010
+#: exe/webui/common.py:1055 exe/webui/common.py:1058
 msgid "Click for completion instructions"
 msgstr "点击看完成说明."
 
@@ -8326,7 +8319,7 @@ msgstr "按钮标签:"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:206
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:916
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:935
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/all.js:18
@@ -8344,7 +8337,7 @@ msgstr "左"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:200
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:917
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:936
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/tools/style-designer/langs/all.js:80
@@ -8714,12 +8707,12 @@ msgstr "<strong>标题：</strong> <br/>"
 msgid "Add Another File Attachment"
 msgstr "添加另一个文件附件"
 
-#: exe/webui/fileattachblock.py:143
+#: exe/webui/fileattachblock.py:146
 msgid "File List (this list shows only in preview mode):"
 msgstr "文件列表 (此列表仅在预览模式下显示):"
 
-#: exe/webui/fileattachblock.py:158
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:254
+#: exe/webui/fileattachblock.py:159
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:259
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:51
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:129
 msgid "New Window"
@@ -9008,11 +9001,11 @@ msgstr "选择MP3 文档"
 msgid "Select a package"
 msgstr "选择一个包"
 
-#: exe/webui/scripts/authoring.js:661
+#: exe/webui/scripts/authoring.js:662
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:45
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:71
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:960
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:979
 msgid ""
 "Are you sure you want to continue without including an Image Description?"
 " Without it the image may not be accessible to some users with "
@@ -9020,25 +9013,25 @@ msgid ""
 "images turned off."
 msgstr "确实要在不包括图像说明的情况下继续吗？没有它, 某些残疾用户或使用文本浏览器的用户或在关闭图像的情况下浏览 web 的用户可能无法访问该图像。"
 
-#: exe/webui/scripts/authoring.js:668 exe/webui/scripts/authoring.js:685
+#: exe/webui/scripts/authoring.js:669 exe/webui/scripts/authoring.js:686
 msgid "Image description"
 msgstr "图片描述"
 
-#: exe/webui/scripts/authoring.js:669 exe/webui/scripts/authoring.js:686
+#: exe/webui/scripts/authoring.js:670 exe/webui/scripts/authoring.js:687
 msgid "Please provide an image description (alternative text):"
 msgstr "请提供图像说明 (备选文本):"
 
-#: exe/webui/scripts/authoring.js:868
+#: exe/webui/scripts/authoring.js:869
 msgid ""
 "Embed images shouldn't be pasted directly into the editor. Please use "
 "Insert/Edit Image."
 msgstr "嵌入图像不应直接粘贴到编辑器中。请使用插入/编辑图像。"
 
-#: exe/webui/scripts/authoring.js:868
+#: exe/webui/scripts/authoring.js:869
 msgid "This change will be undone."
 msgstr "此更改将被撤消。"
 
-#: exe/webui/scripts/authoring.js:1089
+#: exe/webui/scripts/authoring.js:1105
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js:77
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
 msgid "Go to Tools - Preview to see this working"
@@ -9072,40 +9065,46 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:153
+msgid ""
+"Please don't forget to check the Properties tab: Title, language, "
+"license, author, description..."
+msgstr ""
+
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:159
 msgid "General information about this educational resource"
 msgstr ""
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:173
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:179
 msgid ""
 "This content was created with eXeLearning, your free and open source "
 "editor to create educational resources."
 msgstr ""
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:177
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:183
 msgid ""
 "This block will create a link to download the elp file. Write some use "
 "instructions and customize your download link."
 msgstr ""
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:180
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:186
 msgid "Download link"
 msgstr ""
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:182
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:188
 msgid "Download elp file"
 msgstr ""
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:182
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:188
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:39
 msgid "Button text:"
 msgstr "按钮文字："
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:183
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:189
 #: exe/webui/tools/style-designer/langs/all.js:82
 msgid "Font size"
 msgstr "字体大小"
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:194
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:200
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
@@ -9114,16 +9113,16 @@ msgstr "字体大小"
 msgid "Background Color"
 msgstr "背景颜色"
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:195
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:201
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/fullpage/langs/en_dlg.js:1
 msgid "Text Color"
 msgstr "文字颜色"
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:271
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:277
 msgid "Please provide some instructions or information about the resource."
 msgstr ""
 
-#: exe/webui/scripts/idevices/download-package/edition/download-package.js:282
+#: exe/webui/scripts/idevices/download-package/edition/download-package.js:288
 #: exe/webui/scripts/idevices/example-idevice/edition/example-idevice.js:95
 msgid "You should write the button text."
 msgstr "你应该写下按钮文字。"
@@ -9209,7 +9208,7 @@ msgid ""
 " connection."
 msgstr "从www.geogebra.org插入GeoGebra活动。它需要Internet连接。"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:64
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:68
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -9223,7 +9222,7 @@ msgstr "从www.geogebra.org插入GeoGebra活动。它需要Internet连接。"
 msgid "Width"
 msgstr "宽度"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:65
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:69
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advhr/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advlink/langs/en_dlg.js:1
@@ -9237,49 +9236,49 @@ msgstr "宽度"
 msgid "Height"
 msgstr "高度"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:73
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:78
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:170
 #: exe/webui/tools/style-designer/langs/all.js:21
 msgid "Border color"
 msgstr "边框颜色"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:82
 msgid "Save score button"
 msgstr "保存分数按钮"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:79
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:84
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:30
 #: exe/webui/tools/style-designer/langs/all.js:66
 msgid "Button text"
 msgstr "按钮文本"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:80
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
 msgid "Save score"
 msgstr "保存分数"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:85
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:90
 msgid ""
 "The button will only be displayed when exporting as SCORM and while "
 "editing in eXeLearning."
 msgstr "只有在导出为SCORM和在eXeLearning中编辑时才会显示该按钮。"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:86
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:91
 msgid ""
 "Include only one GeoGebra activity with a \"Save score\" button in the "
 "page."
 msgstr "仅包含一个GeoGebra活动，并在页面中显示“保存分数”按钮。"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:87
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:92
 msgid ""
 "The activity with button has to be the last GeoGebra activity on the page"
 " (or it won't work)."
 msgstr "带按钮的活动必须是页面上的最后一个GeoGebra活动（或者它不起作用）。"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:88
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:93
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
 msgstr "不要在同一页面中包含“SCORM Quiz”iDevice。"
 
-#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:261
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:266
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:150
 msgid "Please write the button text."
 msgstr "请写下按钮文字。"
@@ -9709,7 +9708,7 @@ msgid "Mediateca"
 msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:135
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:377
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:384
 msgid "Supported formats"
 msgstr ""
 
@@ -9741,8 +9740,8 @@ msgstr ""
 msgid "Recommended type"
 msgstr "推荐类型"
 
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:387
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:397
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:394
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:404
 msgid "Wrong URL. Expected format:"
 msgstr ""
 
@@ -10163,7 +10162,7 @@ msgstr "显示/隐藏块元素"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:169
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:907
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:926
 #: exe/webui/tools/style-designer/langs/all.js:79
 msgid "Alignment"
 msgstr "对齐"
@@ -10252,7 +10251,7 @@ msgstr "保留断行"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/langs/en.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/pastecode/langs/en.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:909
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:928
 msgid "-- Not Set --"
 msgstr "-- 未設定 --"
 
@@ -10628,14 +10627,14 @@ msgstr "图像列表"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:30
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:915
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:934
 msgid "Text Bottom"
 msgstr "文本底部"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:31
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:914
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:933
 msgid "Text Top"
 msgstr "文本顶部"
 
@@ -10646,7 +10645,7 @@ msgstr "文本顶部"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:197
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:913
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:932
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Bottom"
@@ -10656,7 +10655,7 @@ msgstr "底端"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:33
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:192
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:912
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:931
 msgid "Middle"
 msgstr "中间"
 
@@ -10667,7 +10666,7 @@ msgstr "中间"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:187
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:911
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:930
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Top"
@@ -10676,7 +10675,7 @@ msgstr "顶端"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:35
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:910
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:929
 msgid "Baseline"
 msgstr "基线"
 
@@ -10789,7 +10788,7 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:4
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:946
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:965
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:556
 msgid "Title and Attribution"
 msgstr "标题和属性"
@@ -10799,7 +10798,7 @@ msgstr "标题和属性"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/table/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:813
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:832
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:393
 #: exe/webui/tools/style-designer/langs/all.js:72
 msgid "Header"
@@ -10807,34 +10806,34 @@ msgstr "页首"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:6
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:98
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:824
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:843
 msgid "Image Title"
 msgstr "图片标题"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:7
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:15
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:830
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:849
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:410
 msgid "Title Link"
 msgstr "标题链接"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:8
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:16
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:836
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:855
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:416
 msgid "Source/Author"
 msgstr "来源/作者"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:9
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:17
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:842
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:861
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:422
 msgid "Source/Author Link"
 msgstr "来源/作者链接"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:11
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:19
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:853
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:872
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:433
 msgid "Choose a license..."
 msgstr "选择授权条款..."
@@ -10842,9 +10841,9 @@ msgstr "选择授权条款..."
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:12
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:20
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:346
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:854
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:856
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1047
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:873
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:875
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1066
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:434
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:436
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:870
@@ -10855,8 +10854,8 @@ msgstr "公有领域"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/advimage/langs/en_dlg.js:13
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/media/langs/en_dlg.js:21
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:352
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:863
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1051
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:882
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1070
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:443
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:876
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1045
@@ -11706,7 +11705,7 @@ msgid "Create the image by clicking \"Preview\" before saving"
 msgstr "保存前单击“预览”创建图像"
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/exemath/langs/en.js:70
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:129
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:130
 msgid "No source code found."
 msgstr "找不到源代码。"
 
@@ -12855,7 +12854,7 @@ msgid "Create a Page with a Free Text iDevice."
 msgstr ""
 
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/plugins/tooltip/langs/en.js:12
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:161
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:163
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:573
 msgid "No selection and not in link"
 msgstr "没有选择，没有链接"
@@ -13685,24 +13684,24 @@ msgstr "效果"
 msgid "Please select the image to edit it"
 msgstr "请选择要编辑的图像"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:820
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:839
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:400
 msgid "Footer caption"
 msgstr "页脚标题"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:864
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:874
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:883
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:893
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:444
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:454
 msgid "Custom license"
 msgstr "自定义许可文本"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1056
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1075
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1050
 msgid "Please check the \"License\" field"
 msgstr "请检查“许可证”字段"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:866
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:889
 msgid "Please don't forget to write the file size."
 msgstr ""
 
@@ -13778,154 +13777,154 @@ msgstr ""
 "您正在使用QuickTime。\n"
 "我们建议您使用以下任何格式：\n"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:84
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:85
 msgid "Please write the Content"
 msgstr "请写下内容"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:166
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:219
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:231
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:168
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:221
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:233
 msgid "Dialog Window"
 msgstr "对话框窗口"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:170
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:172
 msgid "Dialog title (the title of the link)"
 msgstr "对话标题（链接标题）"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:186
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:188
 msgid ""
 "Write the content of the dialog. You may use HTML and edit it in the "
 "editor."
 msgstr "写下对话框的内容。您可以使用HTML并在编辑器中对其进行编辑。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:93
 msgid "That image was created using the old formula editor."
 msgstr "该图像是使用旧的公式编辑器创建的。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:92
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:93
 msgid "Make it compatible with the new editor?"
 msgstr "使其与新编辑器兼容？"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:124
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:128
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:125
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:129
 msgid "Done! You can now edit your image."
 msgstr "完成！您现在可以编辑图像。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:202
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:203
 msgid "You should save a copy of the code before continuing."
 msgstr "您应该在继续之前保存代码的副本。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:204
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:205
 msgid "Click on the Editor's Save button when you finish editing."
 msgstr "完成编辑后，单击编辑器的“保存”按钮。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:213
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:214
 msgid "Equation Editor"
 msgstr "公式编辑器 "
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:337
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:339
 msgid "Error (missing function):"
 msgstr "错误 (缺少函数):"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:405
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:407
 msgid "The image could not be created. Insert the code without alternative image?"
 msgstr "无法创建图像。插入没有替代图像的代码？"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:451
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:455
 msgid "Please write the code"
 msgstr "请写代码"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:471
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:475
 msgid ""
 "Continue without a title? Some users might see an image instead of the "
 "rendered code. Without the title the image may not be accessible to them."
 msgstr "继续没有标题？某些用户可能会看到图像而不是呈现的代码。没有标题，图像可能无法访问。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:556
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:705
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:717
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:560
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:709
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:721
 msgid "Paste mathematical markup"
 msgstr "粘贴数学标记"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:570
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:574
 msgid "Choose what to use:"
 msgstr "选择要使用哪个："
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:584
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:588
 msgid "Use MathJax from mathjax.org (online only) or your own copy"
 msgstr "使用mathjax.org中的MathJax（仅限在线）或您自己的副本"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:591
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:595
 msgid "Include alternative image (recommended)"
 msgstr "包括替代图像（推荐）"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:600
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:604
 msgid "Image title (alternative text):"
 msgstr "图片标题（替代文字）："
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:610
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:614
 msgid ""
 "Paste (CTRL+V) the code (LaTeX...) from your favorite editor or use "
 "eXeMathEditor"
 msgstr "从您喜欢的编辑器粘贴（CTRL + V）代码（LaTeX ...）或使用eXe数学编辑器"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:634
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 msgid "Paste your code (LaTeX...)."
 msgstr "粘贴你的代码（LaTeX ...）。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:635
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
 msgid "Choose if you want to show the code or an image."
 msgstr "选择是否要显示代码或图像。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:636
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
 msgid "If you show the code (recommended):"
 msgstr "如果您显示代码（推荐）："
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:642
 msgid ""
 "You can use MathJax for high-quality display of mathematical symbols in "
 "web browsers (it will work online only)."
 msgstr "您可以使用MathJax在Web浏览器中高质量地显示数学符号（它只能在线工作）。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:639
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
 msgid ""
 "You can include an alternative image. In that case you'll have to provide"
 " a descriptive text for it."
 msgstr "您可以包含替代图像。在这种情况下，您必须为其提供描述性文本。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:640
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
 msgstr "没有图像也没有MathJax，一些用户可能无法看到公式。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:643
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
 msgid ""
 "If you prefer to show the image, the code will be there, but it won't be "
 "visible."
 msgstr "如果您希望显示图像，代码将在那里，但它将不可见。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:644
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:648
 msgid ""
 "If JavaScript is enabled links to the code and the image will be "
 "automatically created."
 msgstr "如果启用了JavaScript，则会自动创建指向代码和图像的链接。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:645
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:649
 msgid "If JavaScript is disabled, both (code and image) will be visible."
 msgstr "如果禁用JavaScript，则两者（代码和图像）都将可见。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:647
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:651
 msgid "Remember that..."
 msgstr "记住..."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:649
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:653
 msgid ""
 "You can use your favorite formula editor or use the one included in eXe "
 "(eXeMathEditor)."
 msgstr "您可以使用自己喜欢的公式编辑器或使用eXe（eXe数学编辑器）中包含的编辑器。"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:650
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:654
 msgid ""
 "You can replace the generated image with another one using the "
 "\"Insert/Edit Image\" option."
@@ -13997,7 +13996,7 @@ msgstr "下标"
 #: exe/webui/scripts/tinymce_3.5.11/jscripts/tiny_mce/themes/advanced/langs/en.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:535
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:572
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:576
 #: exe/webui/scripts/tinymce_4_settings.js:195
 msgid "Code"
 msgstr "代码"
@@ -15061,5 +15060,30 @@ msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是�
 #~ msgstr "切换回“创作”选项卡。"
 
 #~ msgid "Elements (it the right order)"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the dropdown activity.</br>Use | "
+#~ "(vertical bar ) to separate "
+#~ "words.</br>This field can be left blank."
+#~ " </p>"
+#~ msgstr "<p>可选：写下其他单词以完成下拉活动。 </br>使用| （竖条）分隔单词。 </br>该字段可以留空。 </p>"
+
+#~ msgid "Edit iDevices"
+#~ msgstr "编辑 iDevices"
+
+#~ msgid "Publish"
+#~ msgstr "发布"
+
+#~ msgid "Procomún"
+#~ msgstr "Procomún"
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the dropdown activity.<br />Use "
+#~ "| (vertical bar ) to separate "
+#~ "words.<br />This field can be left "
+#~ "blank. </p>"
 #~ msgstr ""
 
