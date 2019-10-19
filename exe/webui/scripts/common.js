@@ -278,7 +278,7 @@ var $exe = {
 			
 			// Remove the nested nodes (children nodes)
 			$("instance",div).each(function(){
-				if ($(this).attr("class")=="exe.engine.node.Node") {
+				if ($(this).attr("class")=="exe.engine.node.Node" || $(this).attr("class")=="exe.engine.notaidevice.NotaIdevice") {
 					$(this).remove();
 				}
 			});
