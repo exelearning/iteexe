@@ -86,12 +86,15 @@
 # 2019-05-21
 #    * 2.3.2 has been skipped, getting ready for 2.4 (JRF)
 #
+# 2019-10-19
+#    * Getting ready for 2.4.3 (JRF)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.4"
+version="2.4.3"
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"
