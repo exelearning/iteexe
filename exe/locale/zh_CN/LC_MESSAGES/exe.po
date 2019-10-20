@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-19 13:22+0200\n"
+"POT-Creation-Date: 2019-10-20 19:56+0200\n"
 "PO-Revision-Date: 2019-01-13 20:09+0100\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
@@ -1958,8 +1958,8 @@ msgstr "阅读以下段落并选择正确的单词"
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
-"Use | (vertical bar) to separate words.<br / > This field can be left "
+"<p>Optional: Write other words to complete the Dropdown activity.<br/> "
+"Use | (the vertical bar) to separate words.<br/> This field can be left "
 "blank. </p>"
 msgstr ""
 
@@ -15085,5 +15085,13 @@ msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是�
 #~ "| (vertical bar ) to separate "
 #~ "words.<br />This field can be left "
 #~ "blank. </p>"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "<p>Optional: Write other words to "
+#~ "complete the Dropdown activity.<br / >"
+#~ " Use | (vertical bar) to separate "
+#~ "words.<br / > This field can be"
+#~ " left blank. </p>"
 #~ msgstr ""
 
