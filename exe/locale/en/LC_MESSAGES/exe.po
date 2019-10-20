@@ -1,6 +1,6 @@
 # EXELearning English PO file.
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2013 EXELearning.net
+# Copyright (C) 2001-2019 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>, 2008.
 # Juan Rafael Fernández <jrfern@gmail.com>, 2013.
@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-19 13:22+0200\n"
-"PO-Revision-Date: 2013-11-10 19:17+0100\n"
+"POT-Creation-Date: 2019-10-20 19:56+0200\n"
+"PO-Revision-Date: 2019-10-20 20:24+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "Language: en\n"
 "Language-Team: EXE Team <jrfern@gmail.com>\n"
@@ -1921,8 +1921,8 @@ msgstr ""
 
 #: exe/engine/listaidevice.py:351
 msgid ""
-"<p>Optional: Write other words to complete the Dropdown activity.<br / > "
-"Use | (vertical bar) to separate words.<br / > This field can be left "
+"<p>Optional: Write other words to complete the Dropdown activity.<br/> "
+"Use | (the vertical bar) to separate words.<br/> This field can be left "
 "blank. </p>"
 msgstr ""
 
@@ -14885,120 +14885,3 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
-#~ msgid "Insert Package"
-#~ msgstr ""
-
-#~ msgid "Extract Package"
-#~ msgstr ""
-
-#~ msgid "Merging"
-#~ msgstr ""
-
-#~ msgid "Anchors and nodes"
-#~ msgstr ""
-
-#~ msgid "Non-Interactive Activities"
-#~ msgstr ""
-
-#~ msgid "Non-Textual Information"
-#~ msgstr ""
-
-#~ msgid "Textual Information"
-#~ msgstr ""
-
-#~ msgid "PBL Tasks"
-#~ msgstr ""
-
-#~ msgid "Provide information of the project or this part of the project."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The Learning Diary is focused on "
-#~ "the student's reflection and reasoning "
-#~ "to construct their own learning. Please"
-#~ " write some instructions."
-#~ msgstr ""
-
-#~ msgid "Write the title, select an icon and choose a type..."
-#~ msgstr ""
-
-#~ msgid "Text (optional feedback)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Sorry, only styles created with the "
-#~ "Editor can be edited. eXe's Styles "
-#~ "are not editable"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "That's one of eXe's default Styles, and it cannot be edited.\n"
-#~ "\n"
-#~ "Please choose a different style or create a new one."
-#~ msgstr ""
-
-#~ msgid "Your Style could not be saved because an unknown error occurred."
-#~ msgstr ""
-
-#~ msgid "HTML Course"
-#~ msgstr ""
-
-#~ msgid "Create new Style"
-#~ msgstr ""
-
-#~ msgid "Remove slide %?"
-#~ msgstr ""
-
-#~ msgid "Click on % to get the video current time."
-#~ msgstr ""
-
-#~ msgid "Ony one interactive video per page."
-#~ msgstr ""
-
-#~ msgid "Create package compatible with old eXe versions?"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Checking this option, the saved package"
-#~ " may be opened with eXe >= "
-#~ "0.20.4"
-#~ msgstr ""
-
-#~ msgid "Authoring"
-#~ msgstr ""
-
-#~ msgid "Icon"
-#~ msgstr ""
-
-#~ msgid "Switch back to the \"Authoring\" tab."
-#~ msgstr ""
-
-#~ msgid "Elements (it the right order)"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<p>Optional: Write other words to "
-#~ "complete the dropdown activity.</br>Use | "
-#~ "(vertical bar ) to separate "
-#~ "words.</br>This field can be left blank."
-#~ " </p>"
-#~ msgstr ""
-
-#~ msgid "Edit iDevices"
-#~ msgstr ""
-
-#~ msgid "Publish"
-#~ msgstr ""
-
-#~ msgid "Procomún"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "<p>Optional: Write other words to "
-#~ "complete the dropdown activity.<br />Use "
-#~ "| (vertical bar ) to separate "
-#~ "words.<br />This field can be left "
-#~ "blank. </p>"
-#~ msgstr ""
-
