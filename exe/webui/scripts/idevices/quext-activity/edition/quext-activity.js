@@ -45,7 +45,7 @@ var $exeDevice = {
         "msgScore": _("Score"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
-        "msgTime": _("Time"),
+        "msgTime": _("Time question"),
         "msgLive": _("Life"),
         "msgFullScreen": _("Full Screen"),
         "msgExitFullScreen": _("Exit Full Screen"),
@@ -76,6 +76,13 @@ var $exeDevice = {
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
+        "msgVideoIntro":_("Video Intro"),
+        "msgClose":_("Close"),
+        "msgOption":_("Option"),
+        "msgRickText":_("Rich Text"),
+        "msgUseFulInformation":_("and information that will be very useful"),
+        "msgLoading": _("Loading. Wait, please"),
+        "mgsPoints":_("points")
 
     },
 
@@ -98,14 +105,14 @@ var $exeDevice = {
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
         msgs.msgEProvideWord = _("You must provide one word or phrase");
         msgs.msgEOneQuestion = _("You must provide at least one question");
-        msgs.msgEUnavailableVideo = _("This video is currently unavailable")
-        msgs.msgECompleteQuestion = _("You must complete the question");
-        msgs.msgECompleteAllOptions = _("You must complete all the chosen options");
-        msgs.msgESelectSolution = _("Select the correct answer");
+        msgs.msgEUnavailableVideo = _("This video is not currently available")
+        msgs.msgECompleteQuestion = _("You have to complete the question");
+        msgs.msgECompleteAllOptions = _("You have to complete all the options selected");
+        msgs.msgESelectSolution = _("Choose the right answer");
         msgs.msgECompleteURLYoutube = _("Type the correct url of the YouTube video");
-        msgs.msgEStartEndVideo = _("You must indicate the beginning and end of the life interval you want to show");
-        msgs.msgEStartEndIncorrect = _("The start value of the video must be less than the end value");
-        msgs.msgWriteText = _("You must write some text in the editor");
+        msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
+        msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
+        msgs.msgWriteText = _("You have to type a text in the word processor");
 
     },
     loadYoutubeApi: function () {
@@ -605,7 +612,7 @@ var $exeDevice = {
             $(this).show();
             if (i >= number) {
                 $(this).hide();
-                //$exeDevice.showSolution(0);
+                $exeDevice.showSolution(0);
             }
 
         });
@@ -625,7 +632,7 @@ var $exeDevice = {
             html = '\
 			<div id="quextIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Selecciona la respuesta correcta.")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Choose the right answer")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -638,16 +645,16 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="quextEQuestionsRamdon"><input type="checkbox" id="quextEQuestionsRamdon">' + _("Random questions") + '</label>\
-                                <label for="quextEAnswersRamdon"><input type="checkbox" id="quextEAnswersRamdon">' + _("Opciones aleatorias") + '</label>\
+                                <label for="quextEAnswersRamdon"><input type="checkbox" id="quextEAnswersRamdon">' + _("Random options") + '</label>\
                             </p>\
                             <p>\
                                 <label for="quextEShowSolution"><input type="checkbox" checked id="quextEShowSolution">' + _("Show solutions") + '. </label>\
                                 <label for="quextETimeShowSolution">' + _("Show solution time(seconds)") + ' <input type="number" name="quextETimeShowSolution" id="quextETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
-                            <p>\
-                                <label for="quextEVideoIntro">' + _("Introduction video") + '<input type="text" id="quextEVideoIntro" /></label>\
-                                <a href="#" id="quextEVideoIntroPlay" class="quext-ENavigationButton quext-EPlayVideoIntro"  title="Play video intro"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
-                            </p>\
+                            <div class="quext-EVideoIntroData">\
+                                <label for="quextEVideoIntro">' + _("Video Intro") + '<input type="text" id="quextEVideoIntro" /></label>\
+                                <a href="#" id="quextEVideoIntroPlay" class="quext-tEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
+                            </div>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -655,10 +662,10 @@ var $exeDevice = {
                         <div class="quext-EPanel" id="quextEPanel">\
                             <div class="quext-EOptionsMedia">\
                                 <div class="quext-EOptionsGame">\
-                                    <span>' + _("Multimedia type") + ':</span>\
+                                    <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="quext-EInputMedias">\
                                         <input class="quext-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="quext-MediaNormal">' + _("None") + '</label>\
+                                        <label for="quext-MediaNormal">' + _("Nothing") + '</label>\
                                         <input class="quext-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
                                         <label for="mediaImagen">' + _("Image") + '</label>\
                                         <input class="quext-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
@@ -666,7 +673,7 @@ var $exeDevice = {
                                         <input class="quext-Type"  id="quextMediaText" type="radio" name="qxtype" value="3" disabled />\
                                         <label for="mediaTexto">' + _("Text") + '</label>\
                                     </div>\
-                                    <span>' + _("Number of options") + ':</span>\
+                                    <span>' + _("Options Number") + ':</span>\
                                     <div class="quext-EInputNumbers">\
                                         <input class="quext-Number" id="numQ2" type="radio" name="qxnumber" value="2" />\
                                         <label for="numQ2">2</label>\
@@ -738,8 +745,8 @@ var $exeDevice = {
                                 <div class="quext-EMultiMediaOption">\
                                     <div class="quext-EMultimedia" id="quextEMultimedia">\
                                         <textarea id="quextEText"></textarea>\
-                                        <img class="quext-EImage" src="' + path + "quextEImage.png" + '" id="quextEImage" alt="" />\
-                                        <img class="quext-ENoImage" src="' + path + "quextEImage.png" + '" id="quextENoImage" alt="" />\
+                                        <img class="quext-EImage" src="' + path + "quextEImage.png" + '" id="quextEImage" alt="' + _("Image") + '" />\
+                                        <img class="quext-ENoImage" src="' + path + "quextEImage.png" + '" id="quextENoImage" alt="' + _("No image") + '" />\
                                         <div class="quext-EVideo" id="quextEVideo"></div>\
                                         <img class="quext-ENoImageVideo" src="' + path + "quextENoImageVideo.png" + '" id="quextENoImageVideo" alt="" />\
                                         <img class="quext-ENoVideo" src="' + path + "quextENoVideo.png" + '" id="quextENoVideo" alt="" />\
@@ -1269,27 +1276,6 @@ var $exeDevice = {
             $exeDevice.showVideoQuestion();
         });
 
-        $('.quext-Cuestiones').on('mouseenter', 'label, img', function () {
-
-            var texto = $exeDevice.getTextToolTip(this);
-            if (!texto) return;
-            $('<p class="tooltip"></p>')
-                .text(texto)
-                .css('background-color', "black")
-                .appendTo('body')
-                .fadeIn('slow');
-        });
-        $('.quext-Cuestiones').on('mouseleave', 'label, img', function () {
-            $('.tooltip').remove();
-        })
-        $('.quext-Cuestiones').on('mousemove', 'label, img', function (e) {
-            var ratonX = e.pageX,
-                ratonY = e.pageY;
-            $('.tooltip').css({
-                top: ratonY,
-                left: ratonX
-            });
-        });
 
         $('#quextENumberLives').on('keyup', function () {
             var v = this.value;
@@ -1458,49 +1444,6 @@ var $exeDevice = {
             'z-index': 3000
         });
         $cursor.show();
-    },
-    getTextToolTip: function (label) {
-        var tooltip = "";
-        var clases = $(label).attr("class");
-        if (clases.indexOf('media-normal') != -1) {
-            tooltip = "Sin media";
-        } else if (clases.indexOf('media-imagen') != -1) {
-            tooltip = "Imagen";
-        } else if (clases.indexOf('media-video') != -1) {
-            tooltip = "Vídeo";
-        } else if (clases.indexOf('media-texto') != -1) {
-            tooltip = "Texto";
-        } else if (clases.indexOf('num-Q2') != -1) {
-            tooltip = "Dos opciones";
-        } else if (clases.indexOf('num-Q3') != -1) {
-            tooltip = "Tres opciones";
-        } else if (clases.indexOf('num-Q4') != -1) {
-            tooltip = "Cuatro opciones";
-        } else if (clases.indexOf('time-15s') != -1) {
-            tooltip = "15 segundos";
-        } else if (clases.indexOf('time-30s') != -1) {
-            tooltip = "30 segundos";
-        } else if (clases.indexOf('time-1m') != -1) {
-            tooltip = "1 minituo";
-        } else if (clases.indexOf('time-3m') != -1) {
-            tooltip = "3 minutos";
-        } else if (clases.indexOf('time-5m') != -1) {
-            tooltip = "5 minutos";
-        } else if (clases.indexOf('time-10m') != -1) {
-            tooltip = "10 minutos";
-        } else if (clases.indexOf('b-copy') != -1) {
-            tooltip = "Hacer una copia de esta cuestión";
-        } else if (clases.indexOf('b-add') != -1) {
-            tooltip = "Crear nueva cuestión";
-        } else if (clases.indexOf('b-drop') != -1) {
-            tooltip = "Mover cuestión";
-        } else if (clases.indexOf('b-up') != -1) {
-            tooltip = "Mostrar/ocultar cuestión";
-        } else if (clases.indexOf('b-delete') != -1) {
-            tooltip = "Eliminar cuestión";
-        }
-        return tooltip;
-
     },
     placeImageWindows: function (image, naturalWidth, naturalHeight) {
         var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,

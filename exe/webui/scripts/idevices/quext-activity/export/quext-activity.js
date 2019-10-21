@@ -32,68 +32,7 @@ var $eXeQuExt = {
     scorm: '',
     previousScore: '',
     initialScore: '',
-    msgs: {
-        "mgsAllQuestions": "Has completado todas las cuestiones",
-        "msgAnswer": "Respuesta",
-        "msgAuthor": "Autor",
-        "msgClue": "¡Excelente! La pista es:",
-        "msgCodeAccess": "Clave de acceso",
-        "msgCool": "Cool!",
-        "msgCool": "¡Genial!",
-        "msgEndGameScore": "Por favor, comienza esta actividad antes de guardar tu calificación",
-        "msgEnterCode": "Introduce el código de acceso",
-        "msgErrorCode": "El código de acceso no es correcto",
-        "msgErrors": "Errores",
-        "msgExitFullScreen": "Salir de pantalla completa",
-        "msgFailures": "¡No era eso! | ¡Mal! | ¡Incorrecto! | ¡Lo siento! | ¡Error!",
-        "msgFullScreen": "Pantalla completa",
-        "msgGameOver": "¡E! juego ha terminado",
-        "msgHappen": "Pasar",
-        "msgHits": "Aciertos",
-        "msgImage": "Imagen",
-        "msgImage": "Imagen",
-        "msgIndicateWord": "Escribe una frase o palabra",
-        "msgInformation": "Information",
-        "msgInformationLooking": "La información que buscabas: ",
-        "msgLive": "Live",
-        "msgLoseLive": "Pierdes una vida",
-        "msgLoseT": "Pierdes 330 puntos",
-        "msgLostLives": "¡Pierdes todas tus vidas!",
-        "msgMaximize": "Maximizar",
-        "msgMinimize": "Minimizar",
-        "msgMoveOne": "Pasar",
-        "msgNewGame": "Pulsa aquí para nuevo juego",
-        "msgNewWord": "Nueva palabra",
-        "msgNoImage": "Sin imagen",
-        "msgNotNetwork": "Solo puedes jugar este juego con conexión a internet. Revisa tu conectividad",
-        "msgNumQuestions": "Número de preguntas",
-        "msgOnlySaveAuto": "La calificación de esta actividad se guardará automáticamante después de cada pregunta. ¡Sólo puedes jugar una vez!",
-        "msgOnlySaveScore": "¡Solo puedes guardar la calificación de esta actividad una vez!",
-        "msgOnlySave": "Sólo puedes guardar la calificación de esta actividad una vez",
-        "msgPass": "Has pasado palabra",
-        "msgPlayAgain": "Volver a jugar",
-        "msgPlayStart": "Pulsa aquí para jugar",
-        "msgQuestion": "Pregunta",
-        "msgReady": "¿Preparado?",
-        "msgReply": "Responder",
-        "msgRequiredAccessKey": "Clave de acceso necesaria",
-        "msgSaveAuto": "La calificación  es esta actividad se guardará automáticamante después de cada pregunta.",
-        "msgScore": "Puntuación",
-        "msgStartGame": "Haz clic aquí para comenzar",
-        "msgSubmit": "Enviar",
-        "msgSuccesses": "Correcto! | ¡Excelente! | ¡Genial! | ¡Muy bien! | ¡Perfecto!",
-        "msgTime": "Tiempo",
-        "msgTryAgain": "Debes tener el %s% de las respuestas correctas para obtener la información que necesitas. ¡Inténtalo de nuevo!",
-        "msgWrote": "Escribe la palabra o frase correcta y haz clic en responder. Si tienes dudas, haz click en mover.",
-        "msgYouHas": "Has obtenido %1 aciertos y %2 errores",
-        "msgYouScore": "Tu calificación",
-        "msgSeveralScore": "Puedes guardar la calificación de esta actividad todas las veces que desees",
-        "msgYouLastScore": "La última calificación guardada de esta actividad es",
-        "msgActityComply": "Ya ha realizado esta actividad.",
-        "msgPlaySeveralTimes": "Puedes realizar esta actividad las veces que desees",
-        "msgSaveScoreButton": "Tu última calificación guardada es",
-        "msgLoadInterface": "Cargando interfaz. Por favor, espere unos segundos"
-    },
+    msgs:'',
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
@@ -245,122 +184,127 @@ var $eXeQuExt = {
             msgs = $eXeQuExt.options[instance].msgs;
         html += '<div class="quext-MainContainer">\
         <div class="quext-GameMinimize" id="quextGameMinimize-' + instance + '">\
-            <a href="#" class="quext-LinkMaximize" id="quextLinkMaximize-' + instance + '" title="Ver actividad"><img src="' + path + 'quextIcon.png" class="quext-Icons quext-IconMinimize" alt="Mostrar actividad">\
-                <div class="quext-MessageMaximize" id="quextMessageMaximize-' + instance + '">Haz clic aquí para comenzar </div>\
+            <a href="#" class="quext-LinkMaximize" id="quextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'quextIcon.png" class="quext-Icons quext-IconMinimize" alt="Mostrar actividad">\
+                <div class="quext-MessageMaximize" id="quextMessageMaximize-' + instance + '"></div>\
             </a>\
         </div>\
         <div class="quext-GameContainer" id="quextGameContainer-' + instance + '">\
             <div class="quext-GameScoreBoard">\
                 <div class="quext-GameScores">\
                     <a href="#" class="quext-LinkMinimize" id="quextLinkMinimize-' + instance + '" title="Minimizar">\
-                        <strong><span class="sr-av">Minimizar:</span></strong>\
+                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                         <div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
                     </a>\
                     <div class="exeQuext-ResultGame">\
-                        <strong><span class="sr-av">Aciertos:</span></strong>\
+                        <strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
                         <div class="exeQuextIcons exeQuextIcons-Hit"></div>\
                         <p id="quextPHits-' + instance + '">0</p>\
                     </div>\
                     <div class="exeQuext-ResultGame">\
-                        <strong><span class="sr-av">Errores:</span></strong>\
+                        <strong><span class="sr-av">' + msgs.msgErrors + ':</span></strong>\
                         <div class="exeQuextIcons  exeQuextIcons-Error"></div>\
                         <p id="quextPErrors-' + instance + '">0</p>\
                     </div>\
                     <div class="exeQuext-ResultGame">\
-                        <strong><span class="sr-av">Puntuación:</span></strong>\
+                        <strong><span class="sr-av">' + msgs.msgScore + ':</span></strong>\
                         <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
                         <p id="quextPScore-' + instance + '">0</p>\
                     </div>\
                 </div>\
                 <div class="quext-LifesGame" id="quextLifesGame-' + instance + '">\
-                    <strong><span class="sr-av">Vida:</span></strong>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">Vida:</span></strong>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">Vida:</span></strong>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">Vida:</span></strong>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">Vida:</span></strong>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                 </div>\
                 <div class="quext-NumberLifesGame" id="quextNumberLivesGame-' + instance + '">\
-                    <strong><span class="sr-av">Vida:</span></strong>\
+                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="quextPLifes-' + instance + '">0</p>\
                 </div>\
                 <div class="quext-TimeNumber">\
                     <div class="quext-TimeQuestion">\
-                        <strong><span class="sr-av">Tiempo:</span></strong>\
+                        <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
                         <div class="exeQuextIcons  exeQuextIcons-Time"></div>\
                         <p id="quextPTime-' + instance + '">00:00</p>\
                     </div>\
                     <div class="exeQuext-ResultGame">\
-                        <strong><span class="sr-av">Número de preguntas:</span></strong>\
+                        <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
                         <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
                         <p id="quextPNumber-' + instance + '">0</p>\
                     </div>\
-                    	<a href="#" class="quext-LinkFullScreen" id="quextLinkFullScreen-' + instance + '" title="Pantalla completa">\
-                        <strong><span class="sr-av">Pantalla completa:</span></strong>\
+                    	<a href="#" class="quext-LinkFullScreen" id="quextLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+                        <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
                         <div class="exeQuextIcons exeQuextIcons-FullScreen" id="quextFullScreen-' + instance + '">\
                         </div>\
                     </a>\
                 </div>\
             </div>\
             <div class="quext-ShowClue" id="quextShowClue-' + instance + '">\
-                <div class="sr-av">Pista:</div>\
+                <div class="sr-av">' + msgs.msgClue + ':</div>\
                 <p class="quext-PShowClue" id="quextPShowClue-' + instance + '"></p>\
             </div>\
             <div class="quext-Multimedia" id="quextMultimedia-' + instance + '">\
-                <img class="quext-Cursor" id="quextCursor-' + instance + '" src="' + path + 'quextCursor.gif" alt="" />\
-                <img  src="" class="quext-Images" id="quextImagen-' + instance + '" alt="" />\
+                <img class="quext-Cursor" id="quextCursor-' + instance + '" src="' + path + 'quextCursor.gif" alt="Cursor" />\
+                <img  src="" class="quext-Images" id="quextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="quext-EText" id="quextEText-' + instance + '"></div>\
-                <img src="' + path + 'quextHome.png" class="quext-Images" id="quextCover-' + instance + '" alt="" />\
+                <img src="' + path + 'quextHome.png" class="quext-Images" id="quextCover-' + instance + '" alt="' + msgs.msImage + '" />\
                 <div class="quext-Video" id="quextVideo-' + instance + '"></div>\
                 <div class="quext-Protector" id="quextProtector-' + instance + '"></div>\
                 <div class="quext-GameOver" id="quextGamerOver-' + instance + '">\
                     <div class="quext-TextClueGGame" id="quextTextClueGGame-' + instance + '"></div>\
                     <div class="quext-DataImageGameOver">\
-                        <img src="' + path + 'quextGameWon.png" class="quext-HistGGame" id="quextHistGGame-' + instance + '"                              alt="Has completado todas las preguntas" />\
-                        <img src="' + path + 'quextGameLost.png" class="quext-LostGGame" id="quextLostGGame-' + instance + '"                             alt="Has perdido todas las vidas" />\
+                        <img src="' + path + 'quextGameWon.png" class="quext-HistGGame" id="quextHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '" />\
+                        <img src="' + path + 'quextGameLost.png" class="quext-LostGGame" id="quextLostGGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
                         <div class="quext-DataGame" id="quextDataGame-' + instance + '">\
-                            <p id="quextOverScore-' + instance + '">Puntuación: 0</p>\
-                            <p id="quextOverHits-' + instance + '">Aciertos: 0</p>\
-                            <p id="quextOverErrors-' + instance + '">¡Errores: 0</p>\
+                            <p id="quextOverScore-' + instance + '">Score: 0</p>\
+                            <p id="quextOverHits-' + instance + '">Hits: 0</p>\
+                            <p id="quextOverErrors-' + instance + '">Errors: 0</p>\
                         </div>\
                     </div>\
                 </div>\
             </div>\
             <div class="quext-AutorLicence" id="quextAutorLicence-' + instance + '">\
-                <div class="sr-av">Autor:</div>\
+                <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="quextPAuthor-' + instance + '"></p>\
             </div>\
             <div class="quext-CodeAccessDiv" id="quextCodeAccessDiv-' + instance + '">\
                 <div class="quext-MessageCodeAccessE" id="quextMesajeAccesCodeE-' + instance + '"></div>\
                 <div class="quext-DataCodeAccessE">\
-                    <label>Clave:</label><input type="text" class="quext-CodeAccessE"  id="quextCodeAccessE-' + instance + '">\
-                    <input type="button" class="quext-CodeAccessButton" id="quextCodeAccessButton-' + instance + '"   value="Enviar" />\
+                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="quext-CodeAccessE"  id="quextCodeAccessE-' + instance + '">\
+                    <input type="button" class="quext-CodeAccessButton" id="quextCodeAccessButton-' + instance + '"   value="' + msgs.msgSubmit + '" />\
                 </div>\
             </div>\
             <div class="quext-QuestionDiv" id="quextQuestionDiv-' + instance + '">\
+                <div class="sr-av">' + msgs.msgQuestion + ':</div>\
                 <div class="quext-Question" id="quextQuestion-' + instance + '">\
                 </div>\
                 <div class="quext-OptionsDiv" id="quextOptionsDiv-' + instance + '">\
+                    <div class="sr-av">' + msgs.msgOption + ' A:</div>\
                     <div class="quext-Option1 quext-Options" id="quextOption1-' + instance + '"></div>\
+                    <div class="sr-av">' + msgs.msgOption + ' B:</div>\
                     <div class="quext-Option2 quext-Options" id="quextOption2-' + instance + '"></div>\
+                    <div class="sr-av">' + msgs.msgOption + ' C:</div>\
                     <div class="quext-Option3 quext-Options" id="quextOption3-' + instance + '"></div>\
+                    <div class="sr-av">' + msgs.msgOption + ' D:</div>\
                     <div class="quext-Option4 quext-Options" id="quextOption4-' + instance + '"></div>\
                 </div>\
             </div>\
             <div class="quext-VideoIntroContainer" id="quextVideoIntroContainer-' + instance + '">\
-                <a href="#" class="quext-LinkVideoIntroShow" id="quextLinkVideoIntroShow-' + instance + '" title="Ver vídeo introducción">\
-                    <strong><span class="sr-av">Ver vídeo introducción:</span></strong>\
+                <a href="#" class="quext-LinkVideoIntroShow" id="quextLinkVideoIntroShow-' + instance + '" title="' + msgs.msgVideoIntro + '">\
+                    <strong><span class="sr-av">' + msgs.msgVideoIntro + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Video"></div>\
                 </a>\
             </div>\
             <div class="quext-VideoIntroDiv" id="quextVideoIntroDiv-' + instance + '">\
                 <div class="quext-VideoIntro" id="quextVideoIntro-' + instance + '"></div>\
-                <input type="button" class="quext-VideoIntroClose" id="quextVideoIntroClose-' + instance + '" value="Cerrar" />\
+                <input type="button" class="quext-VideoIntroClose" id="quextVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '" />\
             </div>\
         </div>\
     </div>\
@@ -575,7 +519,7 @@ var $eXeQuExt = {
 
             }
         });
-        $('#quextQuestion-' + instance).text('Cargardo.. Por favor, espere');
+        $('#quextQuestion-' + instance).text(mOptions.msgs.msgLoading);
         $('#quextQuestion-' + instance).css({
             'color': $eXeQuExt.borderColors.blue,
             'text-align': 'center',
@@ -691,7 +635,7 @@ var $eXeQuExt = {
         $("#quextCover-" + instance).prop('src', $eXeQuExt.idevicePath + 'quextHome.png')
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    console.log('Error al cargar imagen');
+                    console.log('Error loading iamge');
                 } else {
                     var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                     $eXeQuExt.drawImage(this, mData);
@@ -766,7 +710,7 @@ var $eXeQuExt = {
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
                         message = msgs.mgsAllQuestions;
-                        $quextTextClueGGame.text("Información: " + mOptions.itinerary.clueGame);
+                        $quextTextClueGGame.text(msgs.mgsInformation+": " + mOptions.itinerary.clueGame);
                         $quextTextClueGGame.show();
                     } else {
                         $quextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -775,11 +719,11 @@ var $eXeQuExt = {
                 }
                 break;
             case 1:
-                message = 'El juego ha terminado. Has perdido todas tus vidas';
+                message = msgs.msgLostLives;
                 $quextLostGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $quextTextClueGGame.text("Información: " + mOptions.itinerary.clueGame);
+                        $quextTextClueGGame.text(msgs.mgsInformation+": " + mOptions.itinerary.clueGame);
                         $quextTextClueGGame.show();
                     } else {
                         $quextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -894,13 +838,13 @@ var $eXeQuExt = {
         $('#quextEText-' + instance).hide();
         $('#quextCursor-' + instance).hide();
         $('#quextCover-' + instance).hide();
-        var message = type === 0 ? '¡El juego ha finalizado! Has obtenido ' + mOptions.score + ' puntos' : '¡Has perdido todas tus vidas! Has obtenido ' + mOptions.score + ' puntos';
+        var message = type === 0 ? mOptions.msgs.mgsAllQuestions : mOptions.msgs.msgLostLives;
         $eXeQuExt.showMessage(2, message, instance);
         $eXeQuExt.showScoreGame(type, instance);
         $eXeQuExt.clearQuestions(instance);
         $eXeQuExt.uptateTime(0, instance);
         $('#quextPNumber-' + instance).text('0');
-        $('#quextQuestion-' + instance).text('Pulsa aquí para nueva partida');
+        $('#quextQuestion-' + instance).text(mOptions.msgs.msgNewGame);
         $('#quextQuestion-' + instance).css({
             'color': $eXeQuExt.borderColors.blue,
             'cursor': 'pointer',
@@ -1096,17 +1040,17 @@ var $eXeQuExt = {
                 realTime = mOptions.counter > realTime ? realTime : mOptions.counter
                 obtainedPoints = 1000 + realTime * 10;
             }
-            message = $eXeQuExt.getRetroFeedMessages(true) + ' ' + obtainedPoints + ' puntos';
+            message = $eXeQuExt.getRetroFeedMessages(true) + ' ' + obtainedPoints + ' ' +mOptions.msgs.msgPoints;
             type = 2;
         } else {
             mOptions.errors++;
             if (mOptions.useLives) {
                 mOptions.livesLeft--;
                 $eXeQuExt.updateLives(instance);
-                message = $eXeQuExt.getRetroFeedMessages(false) + ' Pierdes una vida';
+                message = $eXeQuExt.getRetroFeedMessages(false)+ ' ' +mOptions.msgs.msgLoseLive;
             } else {
                 obtainedPoints = -330;
-                message = $eXeQuExt.getRetroFeedMessages(false) + ' Pierdes 330 puntos';
+                message = $eXeQuExt.getRetroFeedMessages(false) + + ' ' +mOptions.msgs.msgLoseT;
             }
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
@@ -1122,9 +1066,9 @@ var $eXeQuExt = {
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
                 timeShowSolution = 5000;
-                message += " y una información que te resultará muy útil.";
+                message += " "+mOptions.msgs.msgUseFulInformation;
                 $('#quextShowClue-' + instance).show();
-                $('#quextPShowClue-' + instance).text("Información: " + mOptions.itinerary.clueGame);
+                $('#quextPShowClue-' + instance).text(mOptions.msgs.msgInformation+": " + mOptions.itinerary.clueGame);
                 mOptions.obtainedClue = true;
             }
         }

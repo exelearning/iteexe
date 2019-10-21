@@ -254,6 +254,12 @@
     min-width: 24px;
     margin: 0 5px;
   }
+   #quextIdeviceForm .quext-tEVideoIntroPlay {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    margin:0;
+  }
 
   #quextIdeviceForm .quextWordMutimediaEdition a:focus, #quextIdeviceForm .quextWordMutimediaEdition a:link, #quextIdeviceForm .quextWordMutimediaEdition a:visited, #quextIdeviceForm .quextWordMutimediaEdition a:active {
     outline: 0;
@@ -456,8 +462,8 @@
     background-color: transparent;
     position: absolute;
     flex-wrap: wrap;
-    left: 0;
-    bottom: 10px;
+    left: 7px;
+    bottom: 5px;
   }
 
   #quextIdeviceForm .quext-EVIOptions * {
@@ -489,9 +495,7 @@
     right: 5px;
   }
 
-  #quextIdeviceForm input#quextEVideoIntro {
-    width: 40%;
-  }
+
 
   #quextIdeviceForm .quext-EQuestionDiv {
     width: 97%;
@@ -516,6 +520,15 @@
     color: #000000;
     font-weight: bold;
     text-align: center;
+  }
+  #quextIdeviceForm .quext-EVideoIntroData{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+  }
+  #quextIdeviceForm input#quextEVideoIntro {
+    width:50%;
   }
 
   #quextIdeviceForm .quext-EInputOptionsVideo, #quextIdeviceForm .quext-ETitleImage, #quextIdeviceForm .quext-ETitleVideo, #quextIdeviceForm .quext-EInputVideo, #quextIdeviceForm .quext-EAuthorAlt {
