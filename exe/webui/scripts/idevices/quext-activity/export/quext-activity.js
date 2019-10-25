@@ -1,3 +1,12 @@
+/**
+ * QuExt Activity iDevice (export code)
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Manuel Narváez Martínez
+ * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
+ * Testers: Ricardo Málaga Floriano, Francisco Muñoz de la Peña
+ * Translator: Antonio Juan Delgado García
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ */
 var $eXeQuExt = {
     idevicePath: "",
     borderColors: {
@@ -519,7 +528,7 @@ var $eXeQuExt = {
 
             }
         });
-        $('#quextQuestion-' + instance).text(mOptions.msgs.msgLoading);
+        $('#quextQuestion-' + instance).text(mOptions.msgs.msgPlayStart);
         $('#quextQuestion-' + instance).css({
             'color': $eXeQuExt.borderColors.blue,
             'text-align': 'center',
@@ -649,7 +658,7 @@ var $eXeQuExt = {
             $("#quextImagen-" + instance).prop('src', mQuextion.url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = $eXeQuExt.msgs.msgNoImage;
+                        alt = mOptions.msgs.msgNoImage;
                         $('#quextAuthor-' + instance).text('');
                     } else {
                         var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
@@ -686,7 +695,7 @@ var $eXeQuExt = {
     },
     showScoreGame: function (type, instance) {
         var mOptions = $eXeQuExt.options[instance],
-            msgs = $eXeQuExt.msgs,
+            msgs = mOptions.msgs,
             $quextHistGGame = $('#quextHistGGame-' + instance),
             $quextLostGGame = $('#quextLostGGame-' + instance),
             $quextClueGGame = $('#quextClueGGame-' + instance),
@@ -900,7 +909,7 @@ var $eXeQuExt = {
             $("#quextImagen-" + instance).prop('src', mQuextion.url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                        alt = $eXeQuExt.msgs.msgNoImage;
+                        alt = mOptions.msgs.msgNoImage;
                         $('#quextAuthor-' + instance).text('');
                     } else {
                         var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
@@ -1014,8 +1023,9 @@ var $eXeQuExt = {
         mOptions.activeQuestion = numActiveQuestion;
         return numActiveQuestion;
     },
-    getRetroFeedMessages: function (iHit) {
-        var sMessages = iHit ? $eXeQuExt.msgs.msgSuccesses : $eXeQuExt.msgs.msgFailures;
+    getRetroFeedMessages: function (iHit, instance) {
+        var msgs = $eXeQuExt.options[instance].msgs;
+        var sMessages = iHit ? msgs.msgSuccesses : msgs.msgFailures;
         sMessages = sMessages.split('|');
         return sMessages[Math.floor(Math.random() * sMessages.length)];
     },
@@ -1026,8 +1036,8 @@ var $eXeQuExt = {
         }
         mOptions.gameActived = false;
         var message = "";
-        var solution = $.trim(mOptions.question.options[mOptions.question.solution]).toUpperCase();
-        var answord = $.trim(respuesta.toUpperCase());
+        var solution = $.trim(mOptions.question.options[mOptions.question.solution])
+        var answord = $.trim(respuesta);
         mOptions.activeCounter = false;
         var obtainedPoints = 0;
         var type = 1;
@@ -1040,17 +1050,17 @@ var $eXeQuExt = {
                 realTime = mOptions.counter > realTime ? realTime : mOptions.counter
                 obtainedPoints = 1000 + realTime * 10;
             }
-            message = $eXeQuExt.getRetroFeedMessages(true) + ' ' + obtainedPoints + ' ' +mOptions.msgs.msgPoints;
+            message = $eXeQuExt.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' '+mOptions.msgs.mgsPoints;
             type = 2;
         } else {
             mOptions.errors++;
             if (mOptions.useLives) {
                 mOptions.livesLeft--;
                 $eXeQuExt.updateLives(instance);
-                message = $eXeQuExt.getRetroFeedMessages(false)+ ' ' +mOptions.msgs.msgLoseLive;
+                message = $eXeQuExt.getRetroFeedMessages(false, instance)+ ' ' +mOptions.msgs.msgLoseLive;
             } else {
                 obtainedPoints = -330;
-                message = $eXeQuExt.getRetroFeedMessages(false) + + ' ' +mOptions.msgs.msgLoseT;
+                message = $eXeQuExt.getRetroFeedMessages(false, instance) + + ' ' +mOptions.msgs.msgLoseT;
             }
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;

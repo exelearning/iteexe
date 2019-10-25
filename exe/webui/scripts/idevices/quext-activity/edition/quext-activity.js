@@ -1,9 +1,10 @@
 /**
  * QuExt Activity iDevice (edition code)
- *
  * Released under Attribution-ShareAlike 4.0 International License.
- * Author: Manuel Narvaez Martinez
- * Author: Ricardo Malaga Floriano
+ * Author: Manuel Narváez Martínez
+ * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
+ * Testers: Ricardo Málaga Floriano, Francisco Muñoz de la Peña
+ * Translator: Antonio Juan Delgado García
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 var $exeDevice = {
@@ -89,8 +90,6 @@ var $exeDevice = {
     init: function () {
         this.setMessagesInfo();
         this.createForm();
-
-
     },
     enableForm: function (field) {
 
@@ -109,10 +108,10 @@ var $exeDevice = {
         msgs.msgECompleteQuestion = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the options selected");
         msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the correct url of the YouTube video");
+        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
-        msgs.msgWriteText = _("You have to type a text in the word processor");
+        msgs.msgWriteText  = _("You have to type a text in the word processor");
 
     },
     loadYoutubeApi: function () {
@@ -383,7 +382,6 @@ var $exeDevice = {
         } else if (p.type == 2) {
             $('#quextECheckSoundVideo').prop('checked', p.soundVideo == 1);
             $('#quextECheckImageVideo').prop('checked', p.imageVideo == 1);
-            console.log('showQuestion', p.soundVideo, p.imageVideo);
             $('#quextEURLYoutube').val(p.url);
             $('#quextEInitVideo').val($exeDevice.secondsToHour(p.iVideo));
             $('#quextEEndVideo').val($exeDevice.secondsToHour(p.fVideo));
@@ -433,7 +431,6 @@ var $exeDevice = {
             url = $('#quextEURLYoutube').val().trim(),
             id = $exeDevice.getIDYoutube(url);
         if (fVideo <= iVideo) fVideo = 36000;
-        console.log('showVideoQuestion', soundVideo, imageVideo);
         $('#quextENoImageVideo').hide();
         $('#quextENoVideo').show();
         $('#quextEVideo').hide();
@@ -836,7 +833,8 @@ var $exeDevice = {
             ],
             paste_as_text: true,
             entity_encoding: "raw",
-            toolbar: 'undo redo | fontselect | formatselect |  bold italic underline |  alignleft aligncenter alignright alignjustify | forecolor backcolor ',
+            toolbar: 'undo redo | removeformat | fontselect | formatselect | fontsizeselect |  bold italic underline |  alignleft aligncenter alignright alignjustify | forecolor backcolor ',
+            fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
             menubar: false,
             statusbar: false,
             content_css: "css/tinymce.css",
@@ -934,6 +932,8 @@ var $exeDevice = {
         $('#quextEVIStart').val($exeDevice.secondsToHour(game.startVideo));
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showQuestion($exeDevice.active);
+
+
     },
     isJsonString: function (str) {
         try {
@@ -1134,13 +1134,13 @@ var $exeDevice = {
         for (var i = 0; i < questionsGame.length; i++) {
             mquestion = questionsGame[i]
             if (mquestion.quextion.length == 0) {
-                $exeDevice.showMessage($exeDevice.msgECompleteQuestion);
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteQuestion);
                 return false;
             } else if ((mquestion.type == 1) && (mquestion.url.length < 10)) {
-                $exeDevice.showMessage($exeDevice.msgEURLValid);
+                $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                 return false;
             } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url))) {
-                $exeDevice.showMessage($exeDevice.msgECompleteURLYoutube);
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return false;
             }
             var completAnswer = true;
@@ -1150,7 +1150,7 @@ var $exeDevice = {
                 }
             }
             if (!completAnswer) {
-                $exeDevice.showMessage($exeDevice.msgECompleteAllOptions);
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteAllOptions);
                 return false;
             }
         }
@@ -1384,10 +1384,12 @@ var $exeDevice = {
         });
         $('#quextEVideoIntroPlay').on('click', function (e) {
             e.preventDefault();
+            console.log('video', $('#quextEVIURL').val());
             var idv = $exeDevice.getIDYoutube($('#quextEVideoIntro').val());
             if (idv) {
+                console.log('inicio video',$('#quextEVIStart').val());
                 var iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
-                    fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEEndtVI').val()) : 9000;
+                    fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
                 $('#quextEVIURL').val($('#quextEVideoIntro').val());
                 $('#quextEVIDiv').show();
                 $('#quextEVI').show();
@@ -1397,7 +1399,7 @@ var $exeDevice = {
             } else {
                 $('#quextEVINo').show();
                 $('#quextEVI').hide();
-                $exeDevice.showMessage($exeDevice.msgECompleteURLYoutube);
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             }
         });
         $('#quextEVIPlayI').on('click', function (e) {
@@ -1407,12 +1409,12 @@ var $exeDevice = {
                 var iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
                 if (fVI <= iVI) {
-                    $exeDevice.showMessage($exeDevice.msgEStartEndIncorrect);
+                    $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
                     return;
                 }
                 $exeDevice.startVideoIntro(idv, iVI, fVI);
             } else {
-                $exeDevice.showMessage($exeDevice.msgECompleteQuestion)
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteQuestion)
             }
         });
         $('#quextEVIClose').on('click', function (e) {
