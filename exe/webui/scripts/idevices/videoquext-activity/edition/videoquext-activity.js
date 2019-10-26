@@ -106,6 +106,9 @@ var $exeDevice = {
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the word processor");
+        msgs.msgEPoiIncorrect = _("El punto del vídeo para mostrar la pregunta debe estar comprendido entre el inicio y fin del mismo");
+        msgs.msgEPointExist = _("Ya existe una pregunta en este punto del vídeo");
+
 
     },
     loadYoutubeApi: function () {
@@ -133,9 +136,18 @@ var $exeDevice = {
                 'onError': $exeDevice.onPlayerError
             }
         });
+        
     },
     onPlayerReady: function (event) {
         $exeDevice.youtubeLoaded = true;
+        var idV=$exeDevice.getIDYoutube($('#vquextEVIURL').val());
+        if(idV){
+            $('#vquextEVideo').show();
+            $('#vquextENoImageVideo').hide();
+            $('#vquextECover').hide();
+            $('#vquextENoVideo').hide();
+            $exeDevice.startVideo(idV,0,1);
+        }
     },
     updateTimerDisplay: function () {
         if ($exeDevice.player) {
@@ -261,9 +273,11 @@ var $exeDevice = {
         }
     },
     showQuestion: function (i) {
+        
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.questionsGame.length ? $exeDevice.questionsGame.length - 1 : num;
         p = $exeDevice.questionsGame[num];
+        console.log(p);
 
         var numOptions = 0;
         $('.vquext-EAnwersOptions').each(function (j) {
@@ -278,12 +292,9 @@ var $exeDevice = {
         $exeDevice.showOptions(p.numberOptions);
         $('#vquextEQuestion').val(p.quextion);
         $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
-        if (p.type == 2) {
-            $('#vquextECheckSoundVideo').prop('checked', p.soundVideo == 1);
-            $('#vquextECheckImageVideo').prop('checked', p.imageVideo == 1);
-            $('#vquextPoint').val($exeDevice.secondsToHour(p.pointVideo));
-            //$exeDevice.showVideoQuestion();
-        }
+        $('#vquextECheckSoundVideo').prop('checked', p.soundVideo == 1);
+        $('#vquextECheckImageVideo').prop('checked', p.imageVideo == 1);
+        $('#vquextPoint').val($exeDevice.secondsToHour(p.pointVideo));
         $('.vquext-EAnwersOptions').each(function (j) {
             var option = j < p.numOptions ? p.options[j] : '';
             $(this).val(option);
@@ -431,7 +442,7 @@ var $exeDevice = {
                         <div class="vquext-EPanel" id="vquextEPanel">\
                             <span>' + _("Video YouTube") + ':</span>\
                             <div class="vquext-EVIOptions">\
-                                <label for="vquextEVIURL">' + _("URL") + ':</label>\
+                                <label for="vquextEVIURL"  class="sr-av">' + _("URL") + ':</label>\
                                 <input id="vquextEVIURL" type="text" />\
                                 <a href="#" id="vquextEVIPlayI" class="vquext-ENavigationButton vquext-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '" alt="" class="quext-EButtonImage b-playintro" /></a>\
                                 <label for="vquextEVIStart">' + _("Start") + ':</label>\
@@ -603,7 +614,6 @@ var $exeDevice = {
         }
     },
     updateFieldGame: function (game) {
-
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.answersRamdon = game.answersRamdon || false;
         $('#vquextEShowMinimize').prop('checked', game.showMinimize);
@@ -620,8 +630,6 @@ var $exeDevice = {
         $('#vquextEVIEnd').val($exeDevice.secondsToHour(game.endVideo));
         $('#vquextEVIStart').val($exeDevice.secondsToHour(game.startVideo));
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
-        $exeDevice.showQuestion($exeDevice.active);
-
     },
     isJsonString: function (str) {
         try {
@@ -676,9 +684,19 @@ var $exeDevice = {
     validateQuestion: function () {
         var message = '',
             msgs = $exeDevice.msgs,
-            p = new Object();
+            p = new Object(),
+            idVideo = $('#vquextEVIURL').val(),
+            initVideo = $exeDevice.hourToSeconds($('#vquextEVIStart').val()),
+            endVideo = $exeDevice.hourToSeconds($('#vquextEVIEnd').val());
+        if (!$exeDevice.getIDYoutube(idVideo)) {
+            $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+            return;
+        } else if (initVideo >= endVideo) {
+            $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+            return;
+        }
         p.type = 2
-        p.pointVideo = $exeDevice.hourToSeconds($('#vquextPoint').val())
+        p.pointVideo = $exeDevice.hourToSeconds($('#vquextPoint').val());
         p.time = parseInt($('input[name=vqxtime]:checked').val());
         p.numberOptions = parseInt($('input[name=vqxnumber]:checked').val());
         p.x = 0
@@ -702,7 +720,15 @@ var $exeDevice = {
             }
             p.options.push(option);
         });
-        if (p.quextion.length == 0) {
+        var existPoint=false;
+        for (var i=0;i<$exeDevice.questionsGame.length;i++ ){
+            if(p.pointVideo==$exeDevice.questionsGame[i].pointVideo){
+                existPoint=true;
+            }
+        }
+        if (p.pointVideo <= initVideo || p.pointVideo >= endVideo) {
+            message = msgs.msgEPoiIncorrect;
+        }else if (p.quextion.length == 0) {
             message = msgs.msgECompleteQuestion;
         } else if (optionEmpy) {
             message = msgs.msgECompleteAllOptions
@@ -783,9 +809,8 @@ var $exeDevice = {
         $('.exe-form-tabs li:first-child a').click();
     },
     validateData: function () {
-        var clear = $exeDevice.removeTags,
-            // instructions = escape($("#eXeGameInstructions").html())
-            instructions = $('#eXeGameInstructions').text(),
+        var clear = $exeDevice.removeTags
+        instructions = $('#eXeGameInstructions').text(),
             instructionsExe = escape(tinyMCE.get('eXeGameInstructions').getContent()),
             showMinimize = $('#vquextEShowMinimize').is(':checked'),
             optionsRamdon = $('#vquextEQuestionsRamdon').is(':checked'),
@@ -802,6 +827,12 @@ var $exeDevice = {
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
             return false;
+        } else if (!$exeDevice.getIDYoutube(idVideo)) {
+            $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+            return;
+        } else if (startVideo >= endVideo) {
+            $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+            return;
         }
         var questionsGame = $exeDevice.questionsGame;
         for (var i = 0; i < questionsGame.length; i++) {
@@ -996,26 +1027,6 @@ var $exeDevice = {
             var marcado = $(this).is(':checked');
             $('#vquextTimeShowSolution').prop('disabled', !marcado);
         });
-        $('#vquextEVideoIntroPlay').on('click', function (e) {
-            e.preventDefault();
-            console.log('video', $('#vquextEVIURL').val());
-            var idv = $exeDevice.getIDYoutube($('#vquextEVideoIntro').val());
-            if (idv) {
-                console.log('inicio video', $('#vquextEVIStart').val());
-                var iVI = $exeDevice.hourToSeconds($('#vquextEVIStart').val()),
-                    fVI = $exeDevice.hourToSeconds($('#vquextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#vquextEVIEnd').val()) : 9000;
-                $('#vquextEVIURL').val($('#vquextEVideoIntro').val());
-                $('#vquextEVIDiv').show();
-                $('#vquextEVI').show();
-                $('#vquextEVINo').hide();
-                $('#vquextENumQuestionDiv').hide();
-                $exeDevice.startVideoIntro(idv, iVI, fVI);
-            } else {
-                $('#vquextEVINo').show();
-                $('#vquextEVI').hide();
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-            }
-        });
         $('#vquextEVIPlayI').on('click', function (e) {
             e.preventDefault();
             var idv = $exeDevice.getIDYoutube($('#vquextEVIURL').val());
@@ -1026,6 +1037,10 @@ var $exeDevice = {
                     $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
                     return;
                 }
+                $('#vquextEVideo').show();
+                $('#vquextENoImageVideo').hide();
+                $('#vquextECover').hide();
+                $('#vquextENoVideo').hide();
                 $exeDevice.startVideo(idv, iVI, fVI);
             } else {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube)
@@ -1037,6 +1052,17 @@ var $exeDevice = {
             $('#vquextEVIDiv').hide();
             $('#vquextENumQuestionDiv').show();
             $exeDevice.stopVideo();
+        });
+        $('#vquextEVIURL').on('change', function (e) {
+            e.preventDefault();
+            var id=$exeDevice.getIDYoutube($(this).val());
+            if(id){
+                $('#vquextEVideo').show();
+                $('#vquextENoImageVideo').hide();
+                $('#vquextECover').hide();
+                $('#vquextENoVideo').hide();
+                $exeDevice.startVideo(id,0,1);
+            }
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
