@@ -302,6 +302,7 @@
     position: relative;
     margin: 0px auto 3px auto;
     z-index: 1;
+    border-radius:10px;
 }
 
 .rosco-NoImage {
@@ -323,6 +324,7 @@
 
 .rosco-HomeImage {
     position: absolute;
+    border-radius:10px;
 }
 
 .rosco-Solution {

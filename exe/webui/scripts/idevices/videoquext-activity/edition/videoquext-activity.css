@@ -197,6 +197,7 @@
     max-width: 500px;
     width: 100%;
     position: relative;
+
   }
 
   #vquextIdeviceForm .vquext-EMultimedia {
@@ -206,6 +207,8 @@
     margin-top: 10px;
     position: relative;
     background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
   }
   #vquextIdeviceForm .vquext-EMultimediaData {
     width: 400px;

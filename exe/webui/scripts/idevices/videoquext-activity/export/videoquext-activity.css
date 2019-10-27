@@ -44,7 +44,6 @@
     margin: 5px;
     justify-content: flex-end;
     align-items: center;
-    display: none;
 }
 .vquext-VideoIntroDiv{
     width: 100%;
@@ -57,7 +56,6 @@
     display: none;
     z-index: 20000;
     overflow: hidden;
-    
 
 }
 
@@ -397,41 +395,7 @@
     margin-left: 5px;
 }
 
-.vquext-AutorLicence {
-    width: 100%;
-    height: 12px;
-}
-.vquext-InterBar{
-    position: absolute;
-    margin:0;
-    padding: 0;
-    top:0;
-    left:0;
-    height: 5px;
-    background-color: red;
-    width:0px;
-}
-.vquext-ProgressBar{
-    position:relative;
-    width: 560px;
-    height: 5px;
-    margin:0;
-    padding: 0;
-    background-color: black;
-    margin: 5px auto;
-    display: none;
-}
-.vquext-PointBar{
-    position: absolute;
-    margin:0;
-    padding: 0;
-    top:0;
-    left:0;
-    height: 5px;
-    width: 5px;
-    background-color:#5877c6;
-    z-index: 900;
-}
+
 .vquext-AutorLicence p {
     width: 100%;
     height: 12px;
@@ -482,7 +446,8 @@
     margin: 5px auto;
     position: relative;
     background-color: transparent;
-    overflow: auto;
+    overflow: hidden;
+    border-radius:10px;
 }
 
 .vquext-Protector {
@@ -502,6 +467,7 @@
     position: absolute;
     left: 0;
     top: 0;
+    border-radius:10px;
 }
 
 .vquext-QuestionDiv {
@@ -632,7 +598,37 @@
     border: 1px solid #000;
     font-weight: bold;
 }
-
+.vquext-InterBar{
+    position: absolute;
+    margin:0;
+    padding: 0;
+    top:0;
+    left:0;
+    height: 5px;
+    background-color: red;
+    width:0px;
+}
+.vquext-ProgressBar{
+    position:relative;
+    width: 560px;
+    height: 5px;
+    margin:0;
+    padding: 0;
+    background-color: black;
+    margin: 5px auto;
+    display: none;
+}
+.vquext-PointBar{
+    position: absolute;
+    margin:0;
+    padding: 0;
+    top:0;
+    left:0;
+    height: 5px;
+    width: 5px;
+    background-color:#8697cb;
+    z-index: 900;
+}
 
 @media (max-width: 560px) {
     .vquext-GameContainer {

@@ -168,6 +168,10 @@ var $exeDevice = {
             $('#vquextENoVideo').hide();
             $exeDevice.startVideo(idV, 0, 1);
         }
+        clearInterval($exeDevice.timeUpdateInterval);
+        $exeDevice.timeUpdateInterval = setInterval(function () {
+            $exeDevice.updateTimerDisplay();
+        }, 1000);
     },
     updateTimerDisplay: function () {
         if ($exeDevice.player) {
@@ -204,7 +208,6 @@ var $exeDevice = {
     stopVideo: function () {
 
         if ($exeDevice.player) {
-            clearInterval($exeDevice.timeUpdateInterval);
             if (typeof $exeDevice.player.pauseVideo === "function") {
                 $exeDevice.player.pauseVideo();
             }
@@ -521,7 +524,7 @@ var $exeDevice = {
                                         <div class="vquext-EVideo" id="vquextEVideo"></div>\
                                         <img class="vquext-ENoImageVideo" src="' + path + "quextENoImageVideo.png" + '" id="vquextENoImageVideo" alt="" />\
                                         <img class="vquext-ENoVideo" src="' + path + "quextENoVideo.png" + '" id="vquextENoVideo" alt="" />\
-                                        <img class="vquext-ECover" src="' + path + "quextECover.png" + '" id="vquextECover" alt="' + _("No image") + '" />\
+                                        <img class="vquext-ECover" src="' + path + "vquextECover.png" + '" id="vquextECover" alt="' + _("No image") + '" />\
                                     </div>\
                                     <div class="vquext-ProgressBar" id="vquextProgressBar">\
                                         <div class="vquext-InterBar" id="vquextInterBar"></div>\

@@ -12,6 +12,10 @@
     margin-top: 0;
     margin-bottom: 0;
     font-weight: bold;
+    border-radius:4px;
+    border:1px solid #071717;
+    height:24px;
+    padding: 2px;
   }
 
   #quextIdeviceForm .quextIdevice {
@@ -176,6 +180,7 @@
     margin-top: 60px;
     position: relative;
     background-color: #fff;
+    border-radius:8px;
   }
 
   #quextIdeviceForm .quext-EContents {
@@ -303,6 +308,7 @@
     left: 0;
     top: 0;
     border: 1px solid #cccccc;
+    
   }
 
   #quextIdeviceForm #quextEText {
@@ -314,7 +320,8 @@
     height: 100%;
     position: absolute;
     left: 0;
-    top: 0
+    top: 0;
+    border-radius:8px;
   }
 
   #quextIdeviceForm .quext-ECursor {

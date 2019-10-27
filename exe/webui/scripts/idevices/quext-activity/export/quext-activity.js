@@ -44,6 +44,7 @@ var $eXeQuExt = {
     msgs:'',
     youtubeLoaded: false,
     hasSCORMbutton: false,
+    fontSize:'13px',
     isInExe: false,
     init: function () {
         this.activities = $('.quext-IDevice');
@@ -608,8 +609,8 @@ var $eXeQuExt = {
                 "width": "560px",
                 "margin": "auto"
             },
-            hQ = 45,
-            fs = "13px";
+            hQ = 45;
+            $eXeQuExt.fontSize="13px";
 
         if (maximize) {
             var h = window.innerHeight - 365 > 750 ? 750 : window.innerHeight - 365;
@@ -623,16 +624,16 @@ var $eXeQuExt = {
             };
             p = p > 1.5 ? 1.5 : p;
             hQ = 45 * p;
-            fs = "13px";
+            $eXeQuExt.fontSize="16px";
         }
         $('#quextQuestion-' + instance).css({
             "height": hQ + "px",
-            "font-size": fs,
+            "font-size": $eXeQuExt.fontSize,
             "font-weight": "bold"
         });
         $('#quextOptionsDiv-' + instance + '>.quext-Options').css({
             "height": hQ + "px",
-            "font-size": fs,
+            "font-size": $eXeQuExt.fontSize,
             "font-weight": "bold"
         });
         $('#quextMultimedia-' + instance).css(css);
@@ -720,7 +721,7 @@ var $eXeQuExt = {
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
                         message = msgs.mgsAllQuestions;
-                        $quextTextClueGGame.text(msgs.mgsInformation+": " + mOptions.itinerary.clueGame);
+                        $quextTextClueGGame.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
                         $quextTextClueGGame.show();
                     } else {
                         $quextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -733,7 +734,7 @@ var $eXeQuExt = {
                 $quextLostGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $quextTextClueGGame.text(msgs.mgsInformation+": " + mOptions.itinerary.clueGame);
+                        $quextTextClueGGame.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
                         $quextTextClueGGame.show();
                     } else {
                         $quextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -780,7 +781,7 @@ var $eXeQuExt = {
             'vertical-align': 'middle',
             'cursor': 'default',
             'font-weight': 'bold',
-            'font-size': '13px'
+            'font-size': $eXeQuExt.fontSize
         });
         $('#quextQuestion-' + instance).text('');
         mOptions.hits = 0;
@@ -1105,7 +1106,8 @@ var $eXeQuExt = {
         $("#quextPAuthor-" + instance).text(message);
         $("#quextPAuthor-" + instance).css({
             'color': color,
-            'font-weight': weight
+            'font-weight': weight,
+            'font-size':$eXeQuExt.fontSize
         });
     },
     drawImage: function (image, mData) {

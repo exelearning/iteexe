@@ -3177,6 +3177,6 @@ translations = {
  "Random options":"Opciones aleatorias",
  "Loading. Wait, please": "Cargando. Espere, por favor",
  "and information that will be very useful":"y una informaci\u00f3n que te resultar\u00e1 muy \u00fatil",
- "Alternative text": "Texto alternativo",
+ "Alternative text": "Descripci\u00f3n imagen",
 };
 

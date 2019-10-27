@@ -45,6 +45,7 @@ var $eXeVideoQuExt = {
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
+    fontSize:'13px',
     init: function () {
         this.activities = $('.vquext-IDevice');
         if (this.activities.length == 0) return;
@@ -205,7 +206,7 @@ var $eXeVideoQuExt = {
             msgs = $eXeVideoQuExt.options[instance].msgs;
         html += '<div class="vquext-MainContainer">\
         <div class="vquext-GameMinimize" id="vquextGameMinimize-' + instance + '">\
-            <a href="#" class="vquext-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'quextIcon.png" class="vquext-Icons vquext-IconMinimize" alt="Mostrar actividad">\
+            <a href="#" class="vquext-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'vquextIcon.png" class="vquext-Icons vquext-IconMinimize" alt="Mostrar actividad">\
                 <div class="vquext-MessageMaximize" id="vquextMessageMaximize-' + instance + '"></div>\
             </a>\
         </div>\
@@ -273,7 +274,7 @@ var $eXeVideoQuExt = {
             </div>\
             <div class="vquext-Multimedia" id="vquextMultimedia-' + instance + '">\
                 <img  src="" class="vquext-Images" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
-                <img src="' + path + 'quextHome.png" class="vquext-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
+                <img src="' + path + 'vquextHome.png" class="vquext-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
                 <div class="vquext-Video" id="vquextVideo-' + instance + '"></div>\
                 <div class="vquext-Protector" id="vquextProtector-' + instance + '"></div>\
                 <div class="vquext-GameOver" id="vquextGamerOver-' + instance + '">\
@@ -484,7 +485,7 @@ var $eXeVideoQuExt = {
         $('#vquextImagen-' + instance).hide();
         $('#vquextCursor-' + instance).hide();
         $('#vquextCover-' + instance).show();
-        $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'quextHome.png')
+        $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'vquextHome.png')
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
                     console.log('Error al cargar imagen');
@@ -570,8 +571,8 @@ var $eXeVideoQuExt = {
                 "width": "560px",
                 "margin": "auto"
             },
-            hQ = 45,
-            fs = "13px";
+            hQ = 45;
+            $eXeVideoQuExt.fontSize="13px";
 
         if (maximize) {
             var h = window.innerHeight - 365 > 750 ? 750 : window.innerHeight - 365;
@@ -585,65 +586,35 @@ var $eXeVideoQuExt = {
             };
             p = p > 1.5 ? 1.5 : p;
             hQ = 45 * p;
-            fs = "13px";
+            $eXeVideoQuExt.fontSize="16px";
         }
         $('#vquextQuestion-' + instance).css({
             "height": hQ + "px",
-            "font-size": fs,
+            "font-size": $eXeVideoQuExt.fontSize,
             "font-weight": "bold"
         });
         $('#vquextOptionsDiv-' + instance + '>.vquext-Options').css({
             "height": hQ + "px",
-            "font-size": fs,
+            "font-size": $eXeVideoQuExt.fontSize,
             "font-weight": "bold"
+        });
+        $('#vquextPAuthor-' + instance).css({
+            'font-size':$eXeVideoQuExt.fontSize
         });
         $('#vquextMultimedia-' + instance).css(css);
         $eXeVideoQuExt.refreshImageActive(instance);
     },
     refreshImageActive: function (instance) {
-        var mOptions = $eXeVideoQuExt.options[instance],
-            mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
-            author = '';
-        $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'quextHome.png')
+        $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'vquextHome.png')
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    console.log('Error loading iamge');
+                    console.log('Error loading image');
                 } else {
                     var mData = $eXeVideoQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                     $eXeVideoQuExt.drawImage(this, mData);
 
                 }
             });
-        if (typeof mQuextion == "undefined") {
-            return;
-        }
-        if (mQuextion.type === 1) {
-            $("#vquextImagen-" + instance).prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#vquextAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeVideoQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeVideoQuExt.drawImage(this, mData);
-                        $('#vquextImagen-' + instance).show();
-                        $('#vquextCover-' + instance).hide();
-                        alt = mQuextion.alt;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#vquextCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            author = mQuextion.author;
-                            $('#vquextCursor-' + instance).show();
-                        }
-                    }
-                    $eXeVideoQuExt.showMessage(0, author, instance);
-                });
-            $('#vquextImagen-' + instance).attr('alt', mQuextion.alt);
-        }
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -682,7 +653,7 @@ var $eXeVideoQuExt = {
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
                         message = msgs.mgsAllQuestions;
-                        $vquextTextClueGGame.text(msgs.mgsInformation + ": " + mOptions.itinerary.clueGame);
+                        $vquextTextClueGGame.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
                         $vquextTextClueGGame.show();
                     } else {
                         $vquextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -695,7 +666,7 @@ var $eXeVideoQuExt = {
                 $vquextLostGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $vquextTextClueGGame.text(msgs.mgsInformation + ": " + mOptions.itinerary.clueGame);
+                        $vquextTextClueGGame.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
                         $vquextTextClueGGame.show();
                     } else {
                         $vquextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -704,7 +675,7 @@ var $eXeVideoQuExt = {
                 }
                 break;
             case 2:
-                message = msgs.msgInformationLooking
+                message = msgs.msgInformation;
                 $vquextOverPoint.hide();
                 $vquextOverHits.hide();
                 $vquextOverErrors.hide();
@@ -725,7 +696,7 @@ var $eXeVideoQuExt = {
     startGame: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (!$eXeVideoQuExt.youtubeLoaded) {
-            $eXeVideoQuExt.showMessage(1, 'Cargando interfaz. Por favor, espere unos segundos',instance)
+            $eXeVideoQuExt.showMessage(1,  mOptions.msgs.msgLoadInterface,instance)
             return;
         }
         if (mOptions.gameStarted) {
@@ -739,6 +710,8 @@ var $eXeVideoQuExt = {
             'text-align': 'center',
             'vertical-align': 'middle',
             'cursor': 'default',
+            'font-weight': 'bold',
+            'font-size': $eXeVideoQuExt.fontSize
         });
         $('#vquextQuestion-'+instance).text('');
         if (window.innerWidth > 560) {
@@ -774,7 +747,6 @@ var $eXeVideoQuExt = {
                         return;
                     }
                     if (timeVideo >= pointVideo) {
-
                         $eXeVideoQuExt.drawQuestions(instance);
                         mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
                         mOptions.stateReproduction = 1;
@@ -836,7 +808,7 @@ var $eXeVideoQuExt = {
 
     updataProgressBar: function (ntime, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
-            widthBar = $('#vProgressBar-' + instance).width(),
+            widthBar = $('#vquextProgressBar-' + instance).width(),
             duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
             timeRelative = ntime - mOptions.startVideoQuExt,
             widthIntBar = (timeRelative * widthBar) / duratioVideo;
@@ -962,7 +934,7 @@ var $eXeVideoQuExt = {
             mOptions.hits++
             color = $eXeVideoQuExt.colors.green;
             obtainedPoints = 1000 + mOptions.counter * 10;
-            message = $eXeVideoQuExt.getRetroFeedMessages(true) + ' ' + obtainedPoints + ' '+mOptions.msgs.mgsPoints;
+            message = $eXeVideoQuExt.getRetroFeedMessages(true,instance) + ' ' + obtainedPoints + ' '+mOptions.msgs.mgsPoints;
             type = 2;
         } else {
             mOptions.errors++;
@@ -986,10 +958,10 @@ var $eXeVideoQuExt = {
                 mOptions.obtainedClue = true;
                 message += " "+mOptions.msgs.msgUseFulInformation;
                 $('#vquextShowClue-' + instance).show();
-                $('#vquextPShowClue-' + instance).text(mOptions.msgs.msgInformation+": " + mOptions.itinerary.clueGame);
+                $('#vquextPShowClue-' + instance).text(mOptions.msgs.msgInformation +": " + mOptions.itinerary.clueGame);
             }
         }
-        $eXeVideoQuExt.options.counter = 1;
+        mOptions.counter = 1;
 
         if (mOptions.useLives && mOptions.livesLeft <= 0) {
             $eXeVideoQuExt.gameOver(1,instance);
@@ -1022,7 +994,8 @@ var $eXeVideoQuExt = {
         $('#vquextPAuthor-' + instance).text(message);
         $('#vquextPAuthor-' + instance).css({
             'color': color,
-            'font-weight': weight
+            'font-weight': weight,
+            'font-size':$eXeVideoQuExt.fontSize
         });
     },
     drawImage: function (image, mData) {
@@ -1127,6 +1100,8 @@ var $eXeVideoQuExt = {
                 'cursor': 'default'
             }).text('');
         });
+        $('#vquextQuestion-' + instance).text("");
+        $('#vquextPTime--' + instance).text("00:00");
     },
     exitFullscreen: function () {
         if (document.exitFullscreen) {
