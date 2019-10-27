@@ -21,7 +21,6 @@
     top:0;
     left:0;
     height: 5px;
-    background-color: red;
     width:0px;
 }
 #vquextIdeviceForm .vquext-ProgressBar{
@@ -102,10 +101,10 @@
   #vquextIdeviceForm .vquext-EOptionsMedia {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     margin-bottom: 10px;
-  }
+ }
 
   #vquextIdeviceForm .vquext-EOptionsGame {
     min-height: 300px;
@@ -119,7 +118,7 @@
     color: #035175;
   }
 
-  #vquextIdeviceForm .vquext-EPointDiv #vquextIdeviceForm .vquext-EInputNumbers, #vquextIdeviceForm .vquext-EInputVideo, #vquextIdeviceForm .vquext-EInputOptionsVideo, #vquextIdeviceForm .vquext-EInputTimes {
+  #vquextIdeviceForm .vquext-EPointDiv, #vquextIdeviceForm .vquext-EInputNumbers, #vquextIdeviceForm .vquext-EInputVideo, #vquextIdeviceForm .vquext-EInputOptionsVideo, #vquextIdeviceForm .vquext-EInputTimes {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -193,7 +192,7 @@
 
   #vquextIdeviceForm .vquext-EMultiMediaOption {
     background: transparent;
-    height: 350px;
+    height: 280px;
     min-width: 400px;
     max-width: 500px;
     width: 100%;
@@ -204,9 +203,19 @@
     width: 400px;
     height: 227px;
     margin: auto auto;
-    margin-top: 60px;
+    margin-top: 10px;
     position: relative;
     background-color: #fff;
+  }
+  #vquextIdeviceForm .vquext-EMultimediaData {
+    width: 400px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+
   }
 
   #vquextIdeviceForm .vquext-EContents {
@@ -324,16 +333,6 @@
     top: 0;
     opacity: .0001;
     z-index: 100000;
-  }
-
-  #vquextIdeviceForm .vquext-EText {
-    width: 100%;
-    height: 100%;
-    background: #f9f9f9;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 1px solid #cccccc;
   }
 
   #vquextIdeviceForm #vquextEText {
@@ -483,6 +482,18 @@
     top: 0;
     background-color: transparent;
   }
+  #vquextIdeviceForm .vquext-EVIOptions * {
+    margin:0;
+    margin-right: 5px;
+
+  }
+  #vquextIdeviceForm input {
+    height:24px;
+    margin-left:3px;
+
+  }
+
+
 
   #vquextIdeviceForm .vquext-EVIOptions {
     width: 100%;
@@ -490,38 +501,36 @@
     justify-content: flex-start;
     align-items: center;
     background-color: transparent;
-    flex-wrap: wrap;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+  #vquextIdeviceForm label {
+    display: block;
   }
 
-  #vquextIdeviceForm .vquext-EVIOptions * {
-    margin-left: 5px;
+  .vquext-EVIAudioLabel{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin:0;
+    padding: 0;
+    color:#035175;
   }
 
-  #vquextIdeviceForm #vquextEVIStart, #vquextIdeviceForm #vquextEVIEnd {
+  .vquext-EVILabel{
+    display:inline-block;
+    margin:0;
+    padding: 0;
+    color:#035175;
+  }
+
+
+  #vquextIdeviceForm #vquextEVIStart, #vquextIdeviceForm #vquextEVIEnd,  #vquextIdeviceForm #vquextPoint {
     width: 80px;
     text-align: center;
     font-size: 13px;
     font-weight: bold;
   }
-
-  #vquextIdeviceForm .vquext-EVideoIntroDiv {
-    width: 100%;
-    height: 100%;
-    width: 98%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: red;
-    border-radius: 10px;
-    z-index: 20000;
-  }
-
-  .vquext-EVIClose {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-
 
 
   #vquextIdeviceForm .vquext-EQuestionDiv {

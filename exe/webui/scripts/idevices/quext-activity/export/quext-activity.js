@@ -183,8 +183,9 @@ var $eXeQuExt = {
             }
             $('#quextMessageMaximize-' + i).text(msg);
             $eXeQuExt.addEvents(i);
-            $eXeQuExt.loadYoutubeApi();
+            
         });
+        $eXeQuExt.loadYoutubeApi();
 
     },
     createInterfaceQuExt: function (instance) {

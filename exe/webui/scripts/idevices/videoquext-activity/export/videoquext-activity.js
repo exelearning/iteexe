@@ -41,7 +41,7 @@ var $eXeVideoQuExt = {
     scorm: '',
     previousScore: '',
     initialScore: '',
-    msgs:'',
+    msgs: '',
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
@@ -165,8 +165,7 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.options = [];
         $eXeVideoQuExt.activities.each(function (i) {
             var dl = $(".vquext-DataGame", this),
-                imagesLink = $('.vquext-LinkImages', this),
-                mOption = $eXeVideoQuExt.loadDataGame(dl, imagesLink),
+                mOption = $eXeVideoQuExt.loadDataGame(dl),
                 msg = mOption.msgs.msgPlayStart;
 
             $eXeVideoQuExt.options.push(mOption);
@@ -183,9 +182,22 @@ var $eXeVideoQuExt = {
             }
             $('#vquextMessageMaximize-' + i).text(msg);
             $eXeVideoQuExt.addEvents(i);
-            $eXeVideoQuExt.loadYoutubeApi();
+            $eXeVideoQuExt.createPointsVideo(i);
         });
+        $eXeVideoQuExt.loadYoutubeApi();
 
+    },
+    createPointsVideo: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance],
+            widthBar = $('#vquextProgressBar-' + instance).width(),
+            duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
+            widthIntBar = 0;
+        $('#vquextProgressBar-' + instance + ' .vquext-PointBar').remove();
+        for (var i = 0; i < mOptions.questionsGame.length; i++) {
+            widthIntBar = ((mOptions.questionsGame[i].pointVideo - mOptions.startVideoQuExt) * widthBar) / duratioVideo;
+            $('#vquextProgressBar-' + instance).append('<div class="vquext-PointBar"></div>');
+            $('#vquextProgressBar-' + instance + ' .vquext-PointBar').last().css('left', widthIntBar + 'px');
+        }
     },
     createInterfaceVideoQuExt: function (instance) {
         var html = '',
@@ -260,9 +272,7 @@ var $eXeVideoQuExt = {
                 <p class="vquext-PShowClue" id="vquextPShowClue-' + instance + '"></p>\
             </div>\
             <div class="vquext-Multimedia" id="vquextMultimedia-' + instance + '">\
-                <img class="vquext-Cursor" id="vquextCursor-' + instance + '" src="' + path + 'quextCursor.gif" alt="Cursor" />\
                 <img  src="" class="vquext-Images" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
-                <div class="vquext-EText" id="vquextEText-' + instance + '"></div>\
                 <img src="' + path + 'quextHome.png" class="vquext-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
                 <div class="vquext-Video" id="vquextVideo-' + instance + '"></div>\
                 <div class="vquext-Protector" id="vquextProtector-' + instance + '"></div>\
@@ -278,6 +288,9 @@ var $eXeVideoQuExt = {
                         </div>\
                     </div>\
                 </div>\
+            </div>\
+            <div class="vquext-ProgressBar" id="vquextProgressBar-' + instance + '">\
+                <div class="vquext-InterBar" id="vquextInterBar-' + instance + '"></div>\
             </div>\
             <div class="vquext-AutorLicence" id="vquextAutorLicence-' + instance + '">\
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
@@ -349,13 +362,10 @@ var $eXeVideoQuExt = {
         fB = +'</div>';
         return butonScore;
     },
-    loadDataGame: function (data, imgsLink) {
+    loadDataGame: function (data) {
         var json = data.text(),
             mOptions = $eXeVideoQuExt.isJsonString(json);
         mOptions.gameOver = false;
-        imgsLink.each(function (index) {
-            mOptions.questionsGame[index].url = $(this).attr('href');
-        });
         mOptions.questionsGame = mOptions.optionsRamdon ? $eXeVideoQuExt.shuffleAds(mOptions.questionsGame) : mOptions.questionsGame;
         mOptions.numberQuestions = mOptions.questionsGame.length;
         return mOptions;
@@ -388,17 +398,6 @@ var $eXeVideoQuExt = {
                 events: {
                     'onReady': $eXeVideoQuExt.onPlayerReady,
                     'onError': $eXeVideoQuExt.onPlayerError
-                }
-            });
-
-            mOptions.playerIntro = new YT.Player('vquextVideoIntro-' + i, {
-                width: '100%',
-                height: '100%',
-                videoId: '',
-                playerVars: {
-                    'color': 'white',
-                    'autoplay': 0,
-                    'controls': 1
                 }
             });
             $('#vquextQuestion-' + i).text($eXeVideoQuExt.msgs.msgStartGame);
@@ -435,22 +434,6 @@ var $eXeVideoQuExt = {
                 'startSeconds': start,
                 'endSeconds': end
             });
-        }
-    },
-    startVideoIntro: function (id, start, end, instance) {
-        var mOptions = $eXeVideoQuExt.options[instance];
-        if (mOptions.playerIntro) {
-            mOptions.playerIntro.loadVideoById({
-                'videoId': id,
-                'startSeconds': start,
-                'endSeconds': end
-            });
-        }
-    },
-    stopVideoIntro: function (instance) {
-        var mOptions = $eXeVideoQuExt.options[instance];
-        if (mOptions.playerIntro) {
-            mOptions.playerIntro.pauseVideo();
         }
     },
     playVideo: function (instance) {
@@ -490,12 +473,10 @@ var $eXeVideoQuExt = {
             e.preventDefault();
             $("#vquextGameContainer-" + instance).hide();
             $("#vquextGameMinimize-" + instance).css('visibility', 'visible').show();
-            return true;
         });
         $('#vquextSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeVideoQuExt.sendScore(false, instance);
-            return true;
         });
         $('#vquextGamerOver-' + instance).hide();
         $('#vquextCodeAccessDiv-' + instance).hide();
@@ -542,8 +523,8 @@ var $eXeVideoQuExt = {
         })
         $("#vquextOptionsDiv-" + instance).on('click touchstart', function (e) {
             if ($(e.target).hasClass('vquext-Options')) {
-                var respuesta = $(e.target).text();
-                $eXeVideoQuExt.answerQuestion(respuesta, instance);
+                var answer = $(e.target).text();
+                $eXeVideoQuExt.answerQuestion(answer, instance);
             }
         });
         $("#vquextLinkFullScreen-" + instance).on('click touchstart', function (e) {
@@ -580,26 +561,8 @@ var $eXeVideoQuExt = {
         $('meta[name=author]').attr('content', mOptions.author);
         $('#vquextShowClue-' + instance).hide();
         mOptions.gameOver = false;
-        $('#vquextLinkVideoIntroShow-' + instance).hide();
-        if ($eXeVideoQuExt.getIDYoutube(mOptions.idVideo) !== '') {
-            $('#vquextVideoIntroContainer-' + instance).css('display', 'flex');
-            $('#vquextVideoIntroContainer-' + instance).show();
-            $('#vquextLinkVideoIntroShow-' + instance).show();
-        }
 
-        $('#vquextLinkVideoIntroShow-' + instance).on('click touchstart', function (e) {
-            e.preventDefault();
-            $('#vquextVideoIntroDiv-' + instance).show();
-            var idVideo = $eXeVideoQuExt.getIDYoutube(mOptions.idVideo);
-            mOptions.endVideo = mOptions.endVideo <= mOptions.startVideo ? 36000 : mOptions.endVideo;
-            $eXeVideoQuExt.startVideoIntro(idVideo, mOptions.startVideo, mOptions.endVideo, instance);
-        });
 
-        $('#vquextVideoIntroClose-' + instance).on('click touchstart', function (e) {
-            e.preventDefault();
-            $('#vquextVideoIntroDiv-' + instance).hide();
-            $eXeVideoQuExt.startVideoIntro('', 0, 0, instance);
-        });
     },
     maximizeMultimedia: function (maximize, instance) {
         var css = {
@@ -719,7 +682,7 @@ var $eXeVideoQuExt = {
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
                         message = msgs.mgsAllQuestions;
-                        $vquextTextClueGGame.text(msgs.mgsInformation+": " + mOptions.itinerary.clueGame);
+                        $vquextTextClueGGame.text(msgs.mgsInformation + ": " + mOptions.itinerary.clueGame);
                         $vquextTextClueGGame.show();
                     } else {
                         $vquextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -732,7 +695,7 @@ var $eXeVideoQuExt = {
                 $vquextLostGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $vquextTextClueGGame.text(msgs.mgsInformation+": " + mOptions.itinerary.clueGame);
+                        $vquextTextClueGGame.text(msgs.mgsInformation + ": " + mOptions.itinerary.clueGame);
                         $vquextTextClueGGame.show();
                     } else {
                         $vquextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -782,6 +745,9 @@ var $eXeVideoQuExt = {
             'font-size': '13px'
         });
         $('#vquextQuestion-' + instance).text('');
+        if (window.innerWidth > 560) {
+            $('#videoquextProgressBar-' + instance).show();
+        }
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -792,25 +758,69 @@ var $eXeVideoQuExt = {
         mOptions.gameStarted = false;
         mOptions.livesLeft = mOptions.numberLives;
         $eXeVideoQuExt.updateLives(instance);
+        mOptions.stateReproduction = 0;
+        mOptions.activeQuestion = 0;
+        $eXeVideoQuExt.startVideo(mOptions.idVideoQuExt, mOptions.startVideoQuExt, mOptions.endVideoQuExt,instance);
         $('#vquextPNumber-' + instance).text(mOptions.numberQuestions);
         mOptions.counterClock = setInterval(function () {
-            if (mOptions.gameStarted && mOptions.activeCounter) {
-                mOptions.counter--;
-                $eXeVideoQuExt.uptateTime(mOptions.counter, instance);
-                if (mOptions.counter <= 0) {
-                    mOptions.activeCounter = false;
-                    var timeShowSolution = 1000;
-                    if (mOptions.showSolution) {
-                        timeShowSolution = mOptions.timeShowSolution * 1000;
-                        $eXeVideoQuExt.drawSolution(instance);
+            switch (mOptions.stateReproduction) {
+                case 0:
+                    mOptions.gameActived = false;
+                    var timeVideo = mOptions.player.getCurrentTime();
+                    var pointVideo = timeVideo + 2;
+                    $eXeVideoQuExt.updataProgressBar(timeVideo, instance);
+                    if (mOptions.activeQuestion < mOptions.questionsGame.length) {
+                        pointVideo = mOptions.questionsGame[mOptions.activeQuestion].pointVideo;
                     }
-                    setTimeout(function () {
-                        $eXeVideoQuExt.newQuestion(instance)
-                    }, timeShowSolution);
-                    return;
-                }
-            }
+                    if (timeVideo >= mOptions.endVideoQuExt) {
+                        mOptions.stateReproduction = -1;
+                        $eXeVideoQuExt.gameOver(0, instance);
+                        return;
+                    }
+                    if (timeVideo >= pointVideo) {
 
+                        $eXeVideoQuExt.drawQuestions(instance);
+                        mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
+                        mOptions.stateReproduction = 1;
+                        $eXeVideoQuExt.stopVideo(instance);
+                        $eXeVideoQuExt.updataProgressBar(mOptions.questionsGame[mOptions.activeQuestion].pointVideo, instance);
+                        mOptions.gameActived = true;
+                    }
+                    break;
+                case 1:
+                    mOptions.gameActived = true;
+                    mOptions.counter--;
+                    $eXeVideoQuExt.uptateTime(mOptions.counter, instace);
+                    if (mOptions.counter <= 0) {
+                        mOptions.gameActived = false;
+                        if (mOptions.showSolution) {
+                            mOptions.counter = mOptions.timeShowSolution;
+                            $eXeVideoQuExt.drawSolution(instance);
+                            mOptions.stateReproduction = 2;
+                        } else {
+                            mOptions.stateReproduction = 3;
+                        }
+                    }
+                    break;
+                case 2:
+                    mOptions.counter--;
+                    if (mOptions.counter <= 0) {
+                        mOptions.stateReproduction = 3;
+                    }
+                    break;
+                case 3:
+                    $eXeVideoQuExt.clearQuestions();
+                    mOptions.activeQuestion++;
+                    if (mOptions.activeQuestion < mOptions.questionsGame.length) {
+                        $eXeVideoQuExt.showQuestion(mOptions.activeQuestion);
+                    }
+                    mOptions.stateReproduction = 0;
+                    $eXeVideoQuExt.playVideo();
+
+                    break;
+                default:
+                    break;
+            }
         }, 1000);
         $eXeVideoQuExt.uptateTime(0, instance);
         $('#vquextGamerOver-' + instance).hide();
@@ -819,10 +829,18 @@ var $eXeVideoQuExt = {
         $('#vquextPScore-' + instance).text(mOptions.score);
         $('vquextQuestion-' + instance).css('color', $eXeVideoQuExt.colors.black);
         mOptions.gameStarted = true;
-        $eXeVideoQuExt.newQuestion(instance);
+    },
+    updataProgressBar: function (ntime, instance) {
+        var mOptions = $eXeVideoQuExt.options[instance],
+            widthBar = $('#vProgressBar-' + instance).width(),
+            duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
+            timeRelative = ntime - mOptions.startVideoQuExt,
+            widthIntBar = (timeRelative * widthBar) / duratioVideo;
+        $('#vquextInterBar-' + instance).css("width", widthIntBar + "px");
+
     },
     uptateTime: function (tiempo, instance) {
-        var mOptions = $eXeVideoQuExt.options;
+        var mOptions = $eXeVideoQuExt.options[instance];
         var mTime = $eXeVideoQuExt.getTimeToString(tiempo);
         $('#vquextPTime-' + instance).text(mTime);
         if (mOptions.gameActived) {
@@ -838,13 +856,9 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance];
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
-
         clearInterval(mOptions.counterClock);
         $('#vquextVideo-' + instance).hide();
-        $eXeVideoQuExt.startVideo('', 0, 0, instance);
-        $eXeVideoQuExt.stopVideo(instance)
-        $('#vquextImagen-' + instance).hide();
-        $('#vquextEText-' + instance).hide();
+        $('#videoquextProgressBar-' + instance).hide();
         $('#vquextCursor-' + instance).hide();
         $('#vquextCover-' + instance).hide();
         var message = type === 0 ? mOptions.msgs.mgsAllQuestions : mOptions.msgs.msgLostLives;
@@ -860,11 +874,6 @@ var $eXeVideoQuExt = {
             'font-weight': 'bold',
             'font-size': '16px'
         });
-        if ($eXeVideoQuExt.getIDYoutube(mOptions.idVideo) !== '') {
-            $('#vquextVideoIntroContainer-' + instance).css('display', 'flex');
-            $('#vquextVideoIntroContainer-' + instance).show();
-            $('#vquextLinkVideoIntroShow-' + instance).show();
-        }
         if (mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeVideoQuExt.initialScore === '') {
                 var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
@@ -876,92 +885,25 @@ var $eXeVideoQuExt = {
         mOptions.gameOver = true;
     },
     drawText: function (texto, color) {},
-    showQuestion: function (i, instance) {
+    showQuestion: function (i,instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             mQuextion = mOptions.questionsGame[i];
-        mOptions.gameActived = true;
+        $('#vquextPNumber-' + instance).text(mOptions.numberQuestions - mOptions.activeQuestion)
         mOptions.question = mQuextion
-        if (mOptions.answersRamdon) {
-            $eXeVideoQuExt.ramdonOptions(instance);
-        }
-        var tiempo = $eXeVideoQuExt.getTimeToString($eXeVideoQuExt.getTimeSeconds(mQuextion.time)),
-            author = '',
-            alt = '';
-        $('#vquextPTime-' + instance).text(tiempo);
-        $('#vquextQuestion-' + instance).text(mQuextion.quextion);
-        $('#vquextImagen-' + instance).hide();
-        $('#vquextCover-' + instance).show();
-        $('#vquextEText-' + instance).hide();
-        $('#vquextVideo-' + instance).hide();
-        $eXeVideoQuExt.startVideo('', 0, 0, instance);
-        $eXeVideoQuExt.stopVideo(instance)
-        $('#vquextCursor-' + instance).hide();
-        $eXeVideoQuExt.showMessage(0, '', instance);
-        if (mOptions.isScorm === 1) {
-            if (mOptions.repeatActivity || $eXeVideoQuExt.initialScore === '') {
-                var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
-                $eXeVideoQuExt.sendScore(true, instance);
-                $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+        if (mQuextion.imageVideo === 0) {
+            $('#vquextVideo-' + instance).hide();
+            $('#vquextCover-' + instance).show();
 
-            }
-        }
-        if (mQuextion.type === 1) {
-            $("#vquextImagen-" + instance).prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#vquextAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeVideoQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeVideoQuExt.drawImage(this, mData);
-                        $('#vquextImagen-' + instance).show();
-                        $('#vquextCover-' + instance).hide();
-                        alt = mQuextion.alt;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#vquextCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            author = mQuextion.author;
-                            $('#vquextCursor-' + instance).show();
-                        }
-                    }
-                    $eXeVideoQuExt.showMessage(0, author, instance);
-                });
-            $('#vquextImagen-' + instance).attr('alt', alt);
-        } else if (mQuextion.type === 3) {
-            var text = unescape(mQuextion.eText);
-            if (window.innerWidth < 401) {
-                text = $eXeVideoQuExt.reduceText(texto);
-            }
-            $("#vquextEText-" + instance).html(text);
-            $('#vquextEText-' + instance).show();
-            $('#vquextCover-' + instance).hide();
-
-            $eXeVideoQuExt.showMessage(0, mQuextion.author, instance);
-
-        } else if (mQuextion.type === 2) {
+        } else {
             $('#vquextVideo-' + instance).show();
-            var idVideo = $eXeVideoQuExt.getIDYoutube(mQuextion.url);
-            $eXeVideoQuExt.startVideo(idVideo, mQuextion.iVideo, mQuextion.fVideo, instance);
-            $eXeVideoQuExt.showMessage(0, mQuextion.author, instance);
-            if (mQuextion.imageVideo === 0) {
-                $('#vquextVideo-' + instance).hide();
-                $('#vquextCover-' + instance).show();
-
-            } else {
-                $('#vquextVideo-' + instance).show();
-                $('#vquextCover-' + instance).hide();
-            }
-            if (mQuextion.soundVideo === 0) {
-                $eXeVideoQuExt.muteVideo(true, instance);
-            } else {
-                $eXeVideoQuExt.muteVideo(false, instance);
-            }
+            $('#vquextCover-' + instance).hide();
         }
-        $eXeVideoQuExt.drawQuestions(instance);
+        $eXeVideoQuExt.showMessage(0, mOptions.authorVideo, 0);
+        if (mQuextion.soundVideo === 0) {
+            $eXeVideoQuExt.muteVideo(true);
+        } else {
+            $eXeVideoQuExt.muteVideo(false);
+        } 
     },
     getIDYoutube: function (url) {
         var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
@@ -1029,63 +971,67 @@ var $eXeVideoQuExt = {
         sMessages = sMessages.split('|');
         return sMessages[Math.floor(Math.random() * sMessages.length)];
     },
-    answerQuestion: function (respuesta, instance) {
+    answerQuestion: function (answer,instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (!mOptions.gameActived) {
             return;
         }
+        if (mOptions.showSolution) {
+            $eXeVideoQuExt.drawSolution(instance);
+        } 
         mOptions.gameActived = false;
+
         var message = "";
-        var solution = $.trim(mOptions.question.options[mOptions.question.solution])
-        var answord = $.trim(respuesta);
-        mOptions.activeCounter = false;
+        var solution = $.trim(mOptions.question.options[mOptions.question.solution]).toUpperCase();
+        var answord = $.trim(answer.toUpperCase());
         var obtainedPoints = 0;
         var type = 1;
         if (solution === answord) {
             mOptions.hits++
             color = $eXeVideoQuExt.colors.green;
             obtainedPoints = 1000 + mOptions.counter * 10;
-            if (mOptions.questionsGame[mOptions.activeQuestion].type === 2) {
-                var realTime = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
-                realTime = mOptions.counter > realTime ? realTime : mOptions.counter
-                obtainedPoints = 1000 + realTime * 10;
-            }
-            message = $eXeVideoQuExt.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' '+mOptions.msgs.mgsPoints;
+            message = $eXeVideoQuExt.getRetroFeedMessages(true) + ' ' + obtainedPoints + ' '+mOptions.msgs.mgsPoints;
             type = 2;
         } else {
             mOptions.errors++;
             if (mOptions.useLives) {
                 mOptions.livesLeft--;
                 $eXeVideoQuExt.updateLives(instance);
-                message = $eXeVideoQuExt.getRetroFeedMessages(false, instance)+ ' ' +mOptions.msgs.msgLoseLive;
+                message = $eXeVideoQuExt.getRetroFeedMessages(false, instance) + ' ' +mOptions.msgs.msgLoseLive;
             } else {
                 obtainedPoints = -330;
-                message = $eXeVideoQuExt.getRetroFeedMessages(false, instance) + + ' ' +mOptions.msgs.msgLoseT;
+                message = $eXeVideoQuExt.getRetroFeedMessages(false, instance)  + ' ' +mOptions.msgs.msgLoseT;
             }
         }
+
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
         $('#vquextPScore-' + instance).text(mOptions.score);
-        var timeShowSolution = 1000;
-        if (mOptions.showSolution) {
-            timeShowSolution = mOptions.timeShowSolution * 1000;
-            $eXeVideoQuExt.drawSolution(instance);
-        }
         var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
-                timeShowSolution = 5000;
+                mOptions.obtainedClue = true;
                 message += " "+mOptions.msgs.msgUseFulInformation;
                 $('#vquextShowClue-' + instance).show();
                 $('#vquextPShowClue-' + instance).text(mOptions.msgs.msgInformation+": " + mOptions.itinerary.clueGame);
-                mOptions.obtainedClue = true;
             }
         }
-        $eXeVideoQuExt.showMessage(type, message, instance);
-        setTimeout(function () {
-            $eXeVideoQuExt.newQuestion(instance)
-        }, timeShowSolution);
+        $eXeVideoQuExt.options.counter = 1;
+
+        if (mOptions.useLives && mOptions.livesLeft <= 0) {
+            $eXeVideoQuExt.gameOver(1,instance);
+            return;
+        }
+        $eXeVideoQuExt.showMessage(type, message,instance);
+        if (mOptions.isScorm === 1) {
+            if (mOptions.repeatActivity || $eXeVideoQuExt.initialScore === '') {
+                var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
+                $eXeVideoQuExt.sendScore(true);
+                $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+
+            }
+        }
     },
     reduceText: function (text) {
         var rText = text;
@@ -1101,8 +1047,8 @@ var $eXeVideoQuExt = {
         var colors = ['#555555', $eXeVideoQuExt.borderColors.red, $eXeVideoQuExt.borderColors.green, $eXeVideoQuExt.borderColors.blue, $eXeVideoQuExt.borderColors.yellow];
         color = colors[type];
         var weight = type == 0 ? 'normal' : 'bold';
-        $("#vquextPAuthor-" + instance).text(message);
-        $("#vquextPAuthor-" + instance).css({
+        $('#vquextPAuthor-' + instance).text(message);
+        $('#vquextPAuthor-' + instance).css({
             'color': color,
             'font-weight': weight
         });
@@ -1159,10 +1105,14 @@ var $eXeVideoQuExt = {
     },
     drawQuestions: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
+            mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
             colors = [$eXeVideoQuExt.colors.red, $eXeVideoQuExt.colors.blue, $eXeVideoQuExt.colors.green, $eXeVideoQuExt.colors.yellow],
-            bordeColors = [$eXeVideoQuExt.borderColors.red, $eXeVideoQuExt.borderColors.blue, $eXeVideoQuExt.borderColors.green, $eXeVideoQuExt.borderColors.yellow];
-        $('#vquextOptionsDiv-' + instance + '>.vquext-Options').each(function (index) {
-            var option = mOptions.question.options[index]
+            bordeColors = [$eXeVideoQuExt.borderColors.red, $eXeVideoQuExt.borderColors.blue, $eXeVideoQuExt.borderColors.green, $eXeVideoQuExt.borderColors.yellow],
+            ntime = $eXeVideoQuExt.getTimeToString($eXeVideoQuExt.getTimeSeconds(mQuextion.time))
+        $('#vquextQuestion-' + instance).text(mQuextion.quextion).show();
+        $('#vquextPTime-' + instance).text(ntime);
+        $('#vquextOptionsDiv-' + instance+'>.videoquext-Options').each(function (index) {
+            var option = mQuextion.options[index]
             $(this).css({
                 'border-color': bordeColors[index],
                 'background-color': colors[index],

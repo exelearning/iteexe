@@ -111,6 +111,26 @@ var $exeDevice = {
 
 
     },
+    getId: function () {
+        var randomstring = Math.random().toString(36).slice(-8);
+        return randomstring;
+    },
+    randomizeQuestions: function (id) {
+        var active = 0
+        if ($exeDevice.questionsGame.length > 1) {
+            $exeDevice.questionsGame.sort(function (a, b) {
+                return parseFloat(a.pointVideo) - parseFloat(b.pointVideo);
+
+            });
+
+            for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
+                if ($exeDevice.questionsGame[i].id == id) {
+                    active = i;
+                }
+            }
+        }
+        return active;
+    },
     loadYoutubeApi: function () {
 
         onYouTubeIframeAPIReady = $exeDevice.youTubeReady;
@@ -136,17 +156,17 @@ var $exeDevice = {
                 'onError': $exeDevice.onPlayerError
             }
         });
-        
+
     },
     onPlayerReady: function (event) {
         $exeDevice.youtubeLoaded = true;
-        var idV=$exeDevice.getIDYoutube($('#vquextEVIURL').val());
-        if(idV){
+        var idV = $exeDevice.getIDYoutube($('#vquextEVIURL').val());
+        if (idV) {
             $('#vquextEVideo').show();
             $('#vquextENoImageVideo').hide();
             $('#vquextECover').hide();
             $('#vquextENoVideo').hide();
-            $exeDevice.startVideo(idV,0,1);
+            $exeDevice.startVideo(idV, 0, 1);
         }
     },
     updateTimerDisplay: function () {
@@ -210,8 +230,8 @@ var $exeDevice = {
         if ($exeDevice.validateQuestion() != false) {
             $exeDevice.clearQuestion();
             $exeDevice.questionsGame.push($exeDevice.getCuestionDefault());
-            $exeDevice.active++;
-            $('#vquextNumberQuestion').text($exeDevice.active + 1);
+            $exeDevice.active=$exeDevice.questionsGame.length-1;
+            $('#vquextNumberQuestion').text($exeDevice.questionsGame.length-1);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
         }
     },
@@ -241,44 +261,44 @@ var $exeDevice = {
     },
 
     nextQuestion: function () {
-        if ($exeDevice.validateQuestion() != false) {
-            if ($exeDevice.active < $exeDevice.questionsGame.length - 1) {
-                $exeDevice.active++;
-                $exeDevice.showQuestion($exeDevice.active);
-            }
+        if ($exeDevice.validateQuestion()) {
+            var id = $exeDevice.questionsGame[$exeDevice.active].id,
+                active = $exeDevice.randomizeQuestions(id);
+            $exeDevice.active = active < $exeDevice.questionsGame.length - 1 ? active+1 : $exeDevice.questionsGame.length - 1;
+            console.log(id,active,$exeDevice.active, $exeDevice.questionsGame);
+            $exeDevice.showQuestion($exeDevice.active);
         }
     },
     lastQuestion: function () {
-        if ($exeDevice.validateQuestion() != false) {
-            if ($exeDevice.active < $exeDevice.questionsGame.length - 1) {
-                $exeDevice.active = $exeDevice.questionsGame.length - 1;
-                $exeDevice.showQuestion($exeDevice.active);
-            }
+        if ($exeDevice.validateQuestion()) {
+            var id = $exeDevice.questionsGame[$exeDevice.active].id;
+            $exeDevice.randomizeQuestions(id);
+            $exeDevice.active = $exeDevice.questionsGame.length - 1;
+            $exeDevice.showQuestion($exeDevice.active);
         }
     },
     previousQuestion: function () {
-        if ($exeDevice.validateQuestion() != false) {
-            if ($exeDevice.active > 0) {
-                $exeDevice.active--;
-                $exeDevice.showQuestion($exeDevice.active);
-            }
+        
+        if ($exeDevice.validateQuestion()) {
+            var id = $exeDevice.questionsGame[$exeDevice.active].id,
+                active = $exeDevice.randomizeQuestions(id);
+            $exeDevice.active = active > 0 ? active-1 : 0;
+            $exeDevice.showQuestion($exeDevice.active);
+
         }
     },
     firstQuestion: function () {
-        if ($exeDevice.validateQuestion() != false) {
-            if ($exeDevice.active > 0) {
-                $exeDevice.active = 0;
-                $exeDevice.showQuestion($exeDevice.active);
-            }
+        if ($exeDevice.validateQuestion()) {
+            var id = $exeDevice.questionsGame[$exeDevice.active].id;
+            $exeDevice.randomizeQuestions(id);
+            $exeDevice.active = 0;
+            $exeDevice.showQuestion($exeDevice.active);
         }
     },
     showQuestion: function (i) {
-        
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.questionsGame.length ? $exeDevice.questionsGame.length - 1 : num;
         p = $exeDevice.questionsGame[num];
-        console.log(p);
-
         var numOptions = 0;
         $('.vquext-EAnwersOptions').each(function (j) {
             numOptions++;
@@ -363,6 +383,7 @@ var $exeDevice = {
         $exeDevice.showSolution(0);
         $('.vquext-Times')[0].checked = true;
         $('.vquext-Number')[2].checked = true;
+        $('#vquextPoint').val('00:00:00');
         $('#vquextEInitVideo').val('00:00:00');
         $('#vquextEEndVideo').val('00:00:00');
         $('#vquextECheckSoundVideo').prop('checked', true);
@@ -440,16 +461,19 @@ var $exeDevice = {
                     <fieldset class="exe-fieldset">\
                         <legend><a href="#">' + _("Questions") + '</a></legend>\
                         <div class="vquext-EPanel" id="vquextEPanel">\
-                            <span>' + _("Video YouTube") + ':</span>\
                             <div class="vquext-EVIOptions">\
-                                <label for="vquextEVIURL"  class="sr-av">' + _("URL") + ':</label>\
-                                <input id="vquextEVIURL" type="text" />\
-                                <a href="#" id="vquextEVIPlayI" class="vquext-ENavigationButton vquext-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '" alt="" class="quext-EButtonImage b-playintro" /></a>\
-                                <label for="vquextEVIStart">' + _("Start") + ':</label>\
-                                <input id="vquextEVIStart" type="text" value="00:00:00" readonly />\
-                                <label for="vquextEVIEnd">' + _("End") + ':</label>\
-                                <input id="vquextEVIEnd" type="text" value="00:00:00" readonly />\
-                                <button class="vquext-EVideoTime" id="vquextEVITime" type="button">00:00:00</button>\
+                                <div class="vquext-EVILabel" style="display:inline-block;">\
+                                    <label for="vquextEVIURL">' + _("URL YouTube") + ':</label>\
+                                    <input id="vquextEVIURL" type="text" />\
+                                </div>\
+                                <div class="vquext-EVILabel" style="display:inline-block;">\
+                                    <label for="vquextEVIStart">' + _("Start") + ':</label>\
+                                    <input id="vquextEVIStart" type="text" value="00:00:00" readonly />\
+                                </div>\
+                                <div class="vquext-EVILabel"style="display:inline-block;">\
+                                    <label for="vquextEVIEnd">' + _("End") + ':</label>\
+                                    <input id="vquextEVIEnd" type="text" value="00:00:00" readonly />\
+                                </div>\
                             </div>\
                             <div class="vquext-EOptionsMedia">\
                                 <div class="vquext-EOptionsGame">\
@@ -483,13 +507,13 @@ var $exeDevice = {
                                         <input class="vquext-Times" id="q10m" type="radio" name="vqxtime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
-                                    <div class="vquext-EInputOptionsVideo" id="vquextEInputOptionsVideo">\
-                                        <div>\
-                                            <label for="vquextECheckSoundVideo">' + _("Audio") + ':</label>\
-                                            <input id="vquextECheckSoundVideo" type="checkbox" checked="checked" />\
-                                            <label for="vquextECheckImageVideo">' + _("Image") + ':</label>\
-                                            <input id="vquextECheckImageVideo" type="checkbox" checked="checked" />\
-                                        </div>\
+                                    <div class="vquext-EVIAudioLabel">\
+                                        <label for="vquextECheckSoundVideo">' + _("Audio") + ':</label>\
+                                        <input id="vquextECheckSoundVideo" type="checkbox" checked="checked" />\
+                                    </div>\
+                                     <div class="vquext-EVIAudioLabel">\
+                                        <label for="vquextECheckImageVideo">' + _("Image") + ':</label>\
+                                        <input id="vquextECheckImageVideo" type="checkbox" checked="checked" />\
                                     </div>\
                                 </div>\
                                 <div class="vquext-EMultiMediaOption">\
@@ -501,6 +525,9 @@ var $exeDevice = {
                                     </div>\
                                     <div class="vquext-ProgressBar" id="vquextProgressBar">\
                                         <div class="vquext-InterBar" id="vquextInterBar"></div>\
+                                    </div>\
+                                    <div class="vquext-EMultimediaData" id="vquextEMultimediaData">\
+                                        <button class="vquext-EVideoTime" id="vquextEVITime" type="button">00:00:00</button>\
                                     </div>\
                                 </div>\
                             </div>\
@@ -535,6 +562,7 @@ var $exeDevice = {
                                 <a href="#" id="vquextENext" class="vquext-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextNext.png" + '"  alt="" class="vquext-EButtonImage b-next" /></a>\
                                 <a href="#" id="vquextELast" class="vquext-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quext-last.png" + '"  alt="" class="vquext-EButtonImage b-last" /></a>\
                                 <a href="#" id="vquextEDelete" class="vquext-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextDelete.png" + '"  alt="" class="vquext-EButtonImage b-delete" /></a>\
+                                <a href="#" id="vquextEVIPlayI" class="vquext-ENavigationButton vquext-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '" alt="" class="quext-EButtonImage b-playintro" /></a>\
                             </div>\
                             <div class="vquext-ENumQuestionDiv" id="vquextENumQuestionDiv">\
                                <div class="vquext-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="vquext-ENumQuestions" id="vquextENumQuestions">0</span>\
@@ -575,7 +603,8 @@ var $exeDevice = {
     },
     getCuestionDefault: function () {
         var p = new Object();
-        p.type = 2;
+        p.id = $exeDevice.getId();
+        p.type = 3;
         p.time = 0;
         p.numberOptions = 4;
         p.url = '';
@@ -607,10 +636,12 @@ var $exeDevice = {
             var dataGame = $exeDevice.isJsonString(json);
             $exeDevice.active = 0;
             $exeDevice.questionsGame = dataGame.questionsGame;
+            for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
+                $exeDevice.questionsGame[i].id = $exeDevice.getId();
+            }
             var instructions = $(".vquext-instructions", wrapper);
             //if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
             $exeDevice.updateFieldGame(dataGame);
-
         }
     },
     updateFieldGame: function (game) {
@@ -621,15 +652,21 @@ var $exeDevice = {
         $('#vquextEAnswersRamdon').prop('checked', game.answersRamdon);
         $('#vquextEUseLives').prop('checked', game.useLives);
         $('#vquextENumberLives').val(game.numberLives);
-        $('#vquextEVideoIntro').val(game.idVideo);
+        $('#vquextEVideoIntro').val(game.idVideoQuExt);
         $('#vquextShowSolutions').prop('checked', game.showSolution);
         $('#vquextTimeShowSolutions').val(game.timeShowSolution)
         $('#vquextETimeShowSolution').prop('disabled', !game.showSolution);
         $('#vquextENumberLives').prop('disabled', !game.useLives);
-        $('#vquextEVIURL').val(game.idVideo);
-        $('#vquextEVIEnd').val($exeDevice.secondsToHour(game.endVideo));
-        $('#vquextEVIStart').val($exeDevice.secondsToHour(game.startVideo));
+        $('#vquextEVIURL').val(game.idVideoQuExt);
+        $('#vquextEVIEnd').val($exeDevice.secondsToHour(game.endVideoQuExt));
+        $('#vquextEVIStart').val($exeDevice.secondsToHour(game.startVideoQuExt));
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
+        $exeDevice.showQuestion($exeDevice.active);
+        $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
+        $('#vquextNumberQuestion').text($exeDevice.active + 1);
+        $('#vquextEVIPlayI').click();
+
+
     },
     isJsonString: function (str) {
         try {
@@ -685,17 +722,18 @@ var $exeDevice = {
         var message = '',
             msgs = $exeDevice.msgs,
             p = new Object(),
-            idVideo = $('#vquextEVIURL').val(),
-            initVideo = $exeDevice.hourToSeconds($('#vquextEVIStart').val()),
-            endVideo = $exeDevice.hourToSeconds($('#vquextEVIEnd').val());
-        if (!$exeDevice.getIDYoutube(idVideo)) {
+            idVideoQuExt = $('#vquextEVIURL').val(),
+            startVideoQuExt = $exeDevice.hourToSeconds($('#vquextEVIStart').val()),
+            endVideoQuExt = $exeDevice.hourToSeconds($('#vquextEVIEnd').val());
+        if (!$exeDevice.getIDYoutube(idVideoQuExt)) {
             $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-            return;
-        } else if (initVideo >= endVideo) {
+            return false;
+        } else if (startVideoQuExt >= endVideoQuExt) {
             $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
-            return;
+            return false;
         }
-        p.type = 2
+        p.id = $exeDevice.questionsGame[$exeDevice.active].id;
+        p.type = 3
         p.pointVideo = $exeDevice.hourToSeconds($('#vquextPoint').val());
         p.time = parseInt($('input[name=vqxtime]:checked').val());
         p.numberOptions = parseInt($('input[name=vqxnumber]:checked').val());
@@ -720,15 +758,15 @@ var $exeDevice = {
             }
             p.options.push(option);
         });
-        var existPoint=false;
-        for (var i=0;i<$exeDevice.questionsGame.length;i++ ){
-            if(p.pointVideo==$exeDevice.questionsGame[i].pointVideo){
-                existPoint=true;
+        var existPoint = false;
+        for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
+            if (p.pointVideo == $exeDevice.questionsGame[i].pointVideo) {
+                existPoint = true;
             }
         }
-        if (p.pointVideo <= initVideo || p.pointVideo >= endVideo) {
+        if (p.pointVideo <= startVideoQuExt || p.pointVideo >= endVideoQuExt) {
             message = msgs.msgEPoiIncorrect;
-        }else if (p.quextion.length == 0) {
+        } else if (p.quextion.length == 0) {
             message = msgs.msgECompleteQuestion;
         } else if (optionEmpy) {
             message = msgs.msgECompleteAllOptions
@@ -790,11 +828,9 @@ var $exeDevice = {
         $exeDevice.active = 0;
         $exeDevice.questionsGame = game.questionsGame;
         for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
-            if (game.questionsGame[i].type == 3) {
-                game.questionsGame[i].eText = unescape(game.questionsGame[i].eText);
-            }
             var numOpt = 0,
                 options = $exeDevice.questionsGame[i].options;
+            $exeDevice.questionsGame[i].id = $exeDevice.getId();
             for (var j = 0; j < options.length; j++) {
                 if (options[j].trim().length == 0) {
                     $exeDevice.questionsGame[i].numberOptions = numOpt;
@@ -819,18 +855,18 @@ var $exeDevice = {
             timeShowSolution = parseInt(clear($('#vquextETimeShowSolution').val())),
             useLives = $('#vquextEUseLives').is(':checked'),
             numberLives = parseInt(clear($('#vquextENumberLives').val())),
-            idVideo = $('#vquextEVIURL').val(),
-            endVideo = $exeDevice.hourToSeconds($('#vquextEVIEnd').val()),
-            startVideo = $exeDevice.hourToSeconds($('#vquextEVIStart').val()),
+            idVideoQuExt = $('#vquextEVIURL').val(),
+            endVideoQuExt = $exeDevice.hourToSeconds($('#vquextEVIEnd').val()),
+            startVideoQuExt = $exeDevice.hourToSeconds($('#vquextEVIStart').val()),
             itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
         if (!itinerary) return false;
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
             return false;
-        } else if (!$exeDevice.getIDYoutube(idVideo)) {
+        } else if (!$exeDevice.getIDYoutube(idVideoQuExt)) {
             $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             return;
-        } else if (startVideo >= endVideo) {
+        } else if (startVideoQuExt >= endVideoQuExt) {
             $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
             return;
         }
@@ -858,9 +894,9 @@ var $exeDevice = {
             "author": '',
             'authorVideo': '',
             'typeGame': 'VideoQuExt',
-            'endVideo': endVideo,
-            'idVideo': idVideo,
-            'startVideo': startVideo,
+            'endVideoQuExt': endVideoQuExt,
+            'idVideoQuExt': idVideoQuExt,
+            'startVideoQuExt': startVideoQuExt,
             'instructionsExe': instructionsExe,
             'instructions': instructions,
             'showMinimize': showMinimize,
@@ -1055,13 +1091,13 @@ var $exeDevice = {
         });
         $('#vquextEVIURL').on('change', function (e) {
             e.preventDefault();
-            var id=$exeDevice.getIDYoutube($(this).val());
-            if(id){
+            var id = $exeDevice.getIDYoutube($(this).val());
+            if (id) {
                 $('#vquextEVideo').show();
                 $('#vquextENoImageVideo').hide();
                 $('#vquextECover').hide();
                 $('#vquextENoVideo').hide();
-                $exeDevice.startVideo(id,0,1);
+                $exeDevice.startVideo(id, 0, 1);
             }
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();

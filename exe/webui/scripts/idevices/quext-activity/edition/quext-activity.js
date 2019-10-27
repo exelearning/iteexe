@@ -258,8 +258,8 @@ var $exeDevice = {
         if ($exeDevice.validateQuestion() != false) {
             $exeDevice.clearQuestion();
             $exeDevice.questionsGame.push($exeDevice.getCuestionDefault());
-            $exeDevice.active++;
-            $('#quextNumberQuestion').text($exeDevice.active + 1);
+            $exeDevice.active=$exeDevice.questionsGame.length-1;
+            $('#quextNumberQuestion').text($exeDevice.active);
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
