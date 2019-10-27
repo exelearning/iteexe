@@ -366,7 +366,7 @@ var $eXeVideoQuExt = {
         var json = data.text(),
             mOptions = $eXeVideoQuExt.isJsonString(json);
         mOptions.gameOver = false;
-        mOptions.questionsGame = mOptions.optionsRamdon ? $eXeVideoQuExt.shuffleAds(mOptions.questionsGame) : mOptions.questionsGame;
+        mOptions.idVideoQuExt = $eXeVideoQuExt.getIDYoutube(mOptions.idVideoQuExt);
         mOptions.numberQuestions = mOptions.questionsGame.length;
         return mOptions;
     },
@@ -725,34 +725,29 @@ var $eXeVideoQuExt = {
     startGame: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (!$eXeVideoQuExt.youtubeLoaded) {
-            $eXeVideoQuExt.showMessage(1, mOptions.msgs.msgLoadInterface, instance)
+            $eXeVideoQuExt.showMessage(1, 'Cargando interfaz. Por favor, espere unos segundos',instance)
             return;
         }
         if (mOptions.gameStarted) {
             return;
         };
         mOptions.obtainedClue = false;
-        $('#vquextVideoIntroContainer-' + instance).hide();
-        $('#vquextLinkVideoIntroShow-' + instance).hide();
-        $('#vquextShowClue-' + instance).hide();
-        $('#vquextPShowClue-' + instance).text("");
-        $('#vquextQuestion-' + instance).css({
+        $('#vquextShowClue-'+instance).hide();
+        $('#vquextPShowClue-'+instance).text("");
+        $('#vquextQuestion-'+instance).css({
             'color': $eXeVideoQuExt.colors.black,
             'text-align': 'center',
             'vertical-align': 'middle',
             'cursor': 'default',
-            'font-weight': 'bold',
-            'font-size': '13px'
         });
-        $('#vquextQuestion-' + instance).text('');
+        $('#vquextQuestion-'+instance).text('');
         if (window.innerWidth > 560) {
-            $('#videoquextProgressBar-' + instance).show();
+            $('#vquextProgressBar-'+instance).show();
         }
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
         mOptions.gameActived = false;
-        mOptions.activeQuestion = -1;
         mOptions.validQuestions = mOptions.numberQuestions;
         mOptions.counter = 0;
         mOptions.gameStarted = false;
@@ -760,21 +755,22 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.updateLives(instance);
         mOptions.stateReproduction = 0;
         mOptions.activeQuestion = 0;
+        $eXeVideoQuExt.showQuestion(mOptions.activeQuestion,instance);
         $eXeVideoQuExt.startVideo(mOptions.idVideoQuExt, mOptions.startVideoQuExt, mOptions.endVideoQuExt,instance);
-        $('#vquextPNumber-' + instance).text(mOptions.numberQuestions);
+        $('#vquextPNumber-'+instance).text(mOptions.numberQuestions);
         mOptions.counterClock = setInterval(function () {
             switch (mOptions.stateReproduction) {
                 case 0:
                     mOptions.gameActived = false;
                     var timeVideo = mOptions.player.getCurrentTime();
                     var pointVideo = timeVideo + 2;
-                    $eXeVideoQuExt.updataProgressBar(timeVideo, instance);
+                    $eXeVideoQuExt.updataProgressBar(timeVideo,instance);
                     if (mOptions.activeQuestion < mOptions.questionsGame.length) {
                         pointVideo = mOptions.questionsGame[mOptions.activeQuestion].pointVideo;
                     }
                     if (timeVideo >= mOptions.endVideoQuExt) {
                         mOptions.stateReproduction = -1;
-                        $eXeVideoQuExt.gameOver(0, instance);
+                        $eXeVideoQuExt.gameOver(0,instance);
                         return;
                     }
                     if (timeVideo >= pointVideo) {
@@ -783,14 +779,14 @@ var $eXeVideoQuExt = {
                         mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
                         mOptions.stateReproduction = 1;
                         $eXeVideoQuExt.stopVideo(instance);
-                        $eXeVideoQuExt.updataProgressBar(mOptions.questionsGame[mOptions.activeQuestion].pointVideo, instance);
+                        $eXeVideoQuExt.updataProgressBar(mOptions.questionsGame[mOptions.activeQuestion].pointVideo,instance);
                         mOptions.gameActived = true;
                     }
                     break;
                 case 1:
                     mOptions.gameActived = true;
                     mOptions.counter--;
-                    $eXeVideoQuExt.uptateTime(mOptions.counter, instace);
+                    $eXeVideoQuExt.uptateTime(mOptions.counter,instance);
                     if (mOptions.counter <= 0) {
                         mOptions.gameActived = false;
                         if (mOptions.showSolution) {
@@ -809,27 +805,35 @@ var $eXeVideoQuExt = {
                     }
                     break;
                 case 3:
-                    $eXeVideoQuExt.clearQuestions();
+                    $eXeVideoQuExt.clearQuestions(instance);
                     mOptions.activeQuestion++;
                     if (mOptions.activeQuestion < mOptions.questionsGame.length) {
-                        $eXeVideoQuExt.showQuestion(mOptions.activeQuestion);
+                        $eXeVideoQuExt.showQuestion(mOptions.activeQuestion,instance);
                     }
                     mOptions.stateReproduction = 0;
-                    $eXeVideoQuExt.playVideo();
+                    $eXeVideoQuExt.playVideo(instance);
 
                     break;
                 default:
                     break;
             }
         }, 1000);
-        $eXeVideoQuExt.uptateTime(0, instance);
-        $('#vquextGamerOver-' + instance).hide();
-        $('#vquextPHits-' + instance).text(mOptions.hits);
-        $('#vquextPErrors-' + instance).text(mOptions.errors);
-        $('#vquextPScore-' + instance).text(mOptions.score);
-        $('vquextQuestion-' + instance).css('color', $eXeVideoQuExt.colors.black);
+        $eXeVideoQuExt.uptateTime(0,instance);
+        $('#vquextQuestion-'+instance).css({
+            'color': $eXeVideoQuExt.borderColors.black,
+            'text-align': 'center',
+            'cursor': 'default',
+            'font-weight': '600',
+            'vertical-align': 'middle',
+        });
+        $('#vquextGamerOver-'+instance).hide();
+        $('#vquextPHits-'+instance).text(mOptions.hits);
+        $('#vquextPErrors-'+instance).text(mOptions.errors);
+        $('#vquextPScore-'+instance).text(mOptions.score);
         mOptions.gameStarted = true;
+
     },
+
     updataProgressBar: function (ntime, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             widthBar = $('#vProgressBar-' + instance).width(),
@@ -858,7 +862,7 @@ var $eXeVideoQuExt = {
         mOptions.gameActived = false;
         clearInterval(mOptions.counterClock);
         $('#vquextVideo-' + instance).hide();
-        $('#videoquextProgressBar-' + instance).hide();
+        $('#vquextProgressBar-' + instance).hide();
         $('#vquextCursor-' + instance).hide();
         $('#vquextCover-' + instance).hide();
         var message = type === 0 ? mOptions.msgs.mgsAllQuestions : mOptions.msgs.msgLostLives;
@@ -898,11 +902,11 @@ var $eXeVideoQuExt = {
             $('#vquextVideo-' + instance).show();
             $('#vquextCover-' + instance).hide();
         }
-        $eXeVideoQuExt.showMessage(0, mOptions.authorVideo, 0);
+        $eXeVideoQuExt.showMessage(0, mOptions.authorVideo, instance);
         if (mQuextion.soundVideo === 0) {
-            $eXeVideoQuExt.muteVideo(true);
+            $eXeVideoQuExt.muteVideo(true,instance);
         } else {
-            $eXeVideoQuExt.muteVideo(false);
+            $eXeVideoQuExt.muteVideo(false,instance);
         } 
     },
     getIDYoutube: function (url) {
@@ -928,43 +932,11 @@ var $eXeVideoQuExt = {
         });
     },
 
-    newQuestion: function (instance) {
-        var mOptions = $eXeVideoQuExt.options[instance];
-        if (mOptions.useLives && mOptions.livesLeft <= 0) {
-            $eXeVideoQuExt.gameOver(1, instance);
-            return;
-        }
-        var mActiveQuestion = $eXeVideoQuExt.updateNumberQuestion(mOptions.activeQuestion, instance);
-        if (mActiveQuestion === -10) {
-            $('vquextPNumber-' + instance).text('0');
-            $eXeVideoQuExt.gameOver(0, instance);
-            return;
-        } else {
-            mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mActiveQuestion].time);
-            if (mOptions.questionsGame[mActiveQuestion].type === 2) {
-                var durationVideo = mOptions.questionsGame[mActiveQuestion].fVideo - mOptions.questionsGame[mActiveQuestion].iVideo;
-                mOptions.counter += durationVideo;
-            }
-            $eXeVideoQuExt.showQuestion(mActiveQuestion, instance)
-            mOptions.activeCounter = true;
-            var numQ = mOptions.numberQuestions - mActiveQuestion;
-            $('#vquextPNumber-' + instance).text(numQ);
-        };
-    },
     getTimeSeconds: function (iT) {
         var times = [15, 30, 60, 180, 300, 600]
         return times[iT];
     },
-    updateNumberQuestion: function (numq, instance) {
-        var mOptions = $eXeVideoQuExt.options[instance],
-            numActiveQuestion = numq;
-        numActiveQuestion++;
-        if (numActiveQuestion >= mOptions.numberQuestions) {
-            return -10
-        }
-        mOptions.activeQuestion = numActiveQuestion;
-        return numActiveQuestion;
-    },
+
     getRetroFeedMessages: function (iHit, instance) {
         var msgs = $eXeVideoQuExt.options[instance].msgs;
         var sMessages = iHit ? msgs.msgSuccesses : msgs.msgFailures;
@@ -1111,7 +1083,7 @@ var $eXeVideoQuExt = {
             ntime = $eXeVideoQuExt.getTimeToString($eXeVideoQuExt.getTimeSeconds(mQuextion.time))
         $('#vquextQuestion-' + instance).text(mQuextion.quextion).show();
         $('#vquextPTime-' + instance).text(ntime);
-        $('#vquextOptionsDiv-' + instance+'>.videoquext-Options').each(function (index) {
+        $('#vquextOptionsDiv-' + instance+'>.vquext-Options').each(function (index) {
             var option = mQuextion.options[index]
             $(this).css({
                 'border-color': bordeColors[index],
@@ -1198,6 +1170,5 @@ var $eXeVideoQuExt = {
     },
 }
 $(function () {
-
     $eXeVideoQuExt.init();
 });

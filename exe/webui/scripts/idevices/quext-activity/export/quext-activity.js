@@ -1061,7 +1061,7 @@ var $eXeQuExt = {
                 message = $eXeQuExt.getRetroFeedMessages(false, instance)+ ' ' +mOptions.msgs.msgLoseLive;
             } else {
                 obtainedPoints = -330;
-                message = $eXeQuExt.getRetroFeedMessages(false, instance) + + ' ' +mOptions.msgs.msgLoseT;
+                message = $eXeQuExt.getRetroFeedMessages(false, instance)  + ' ' +mOptions.msgs.msgLoseT;
             }
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
