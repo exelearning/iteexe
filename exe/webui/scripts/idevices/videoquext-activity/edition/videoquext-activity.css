@@ -14,7 +14,7 @@
     font-weight: bold;
   }
 
-  #vquextIdeviceForm .vquext-InterBar{
+  #vquextIdeviceForm .vquext-EInterBar{
     position: absolute;
     margin:0;
     padding: 0;
@@ -23,16 +23,19 @@
     height: 5px;
     width:0px;
 }
-#vquextIdeviceForm .vquext-ProgressBar{
+#vquextIdeviceForm .vquext-EProgressBar{
     position:relative;
     width: 400px;
     height: 5px;
     margin:0;
+    margin: 5px auto;
     padding: 0;
     background-color: black;
-    margin: 5px auto;
+    display: none;
+    
+  
 }
-#vquextIdeviceForm .vquext-PointBar{
+#vquextIdeviceForm .vquext-EPointBar{
     position: absolute;
     margin:0;
     padding: 0;
@@ -118,7 +121,7 @@
     color: #035175;
   }
 
-  #vquextIdeviceForm .vquext-EPointDiv, #vquextIdeviceForm .vquext-EInputNumbers, #vquextIdeviceForm .vquext-EInputVideo, #vquextIdeviceForm .vquext-EInputOptionsVideo, #vquextIdeviceForm .vquext-EInputTimes {
+  #vquextIdeviceForm .vquext-EPointDiv, #vquextIdeviceForm .vquext-EInputNumbers, #vquextIdeviceForm .vquext-EInputOptionsVideo, #vquextIdeviceForm .vquext-EInputTimes {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -127,33 +130,37 @@
     margin-top: 5px 0;
   }
 
-  #vquextIdeviceForm .vquext-EPointDiv label, #vquextIdeviceForm .vquext-EInputNumbers label, #vquextIdeviceForm .vquext-EInputVideo label, #vquextIdeviceForm .vquext-EInputOptionsVideo label, #vquextIdeviceForm .vquext-EInputTimes label, #vquextIdeviceForm .vquext-EInputImage label {
+  #vquextIdeviceForm .vquext-EPointDiv label, #vquextIdeviceForm .vquext-EInputNumbers label,  #vquextIdeviceForm .vquext-EInputOptionsVideo label, #vquextIdeviceForm .vquext-EInputTimes label {
     display: inline;
     font-weight: normal;
     font-size: 13px;
     padding: 0;
     font-weight: bold;
+
+  }
+  #vquextIdeviceForm .vquext-EPointDiv label {
+    color:#035175;
   }
 
-  #vquextIdeviceForm .vquext-EInputOptionsVideo input[type=text], #vquextIdeviceForm .vquext-EInputOptionsImage input[type=text] {
-    width: 70px;
-    height: 20px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    color: #071717;
-    margin: 5px;
+  #vquextIdeviceForm input#numQ2,  #vquextIdeviceForm input#q15s  {
+    margin-left:0;
   }
 
   #vquextIdeviceForm input:-moz-read-only {
-    /* For Firefox */
-    background-color: white;
-    border-width: 1px;
+    background-color:#f1f1f1;
+    border:1px solid #071715;
+    border-radius: 4px;
   }
-
+  #vquextIdeviceForm #vquextEVIURL,   #vquextIdeviceForm #vquextPoint  {
+   border:1px solid #071715;
+   border-radius: 4px;
+   margin-left:0;
+  }
+ 
   #vquextIdeviceForm input:read-only {
-    background-color: white;
-    border-width: 1px;
+    background-color: #f1f1f1;
+    border:1px solid #071715;
+    border-radius: 4px;
   }
 
   #vquextIdeviceForm input[type=button] {
@@ -163,33 +170,11 @@
     cursor: pointer;
   }
 
-  #vquextIdeviceForm .vquext-EInputOptionsImage input[type=text], #vquextIdeviceForm .vquext-EInputOptionsImage label {
-    margin: 0;
-    padding: 0;
-    display: none;
-    justify-content: space-between;
-    align-content: center;
-  }
-
   #vquextIdeviceForm .vquext-EVideoTime {
     font-size: 13px;
     font-weight: bold;
-  }
-
-  #vquextIdeviceForm .vquext-EInputVideo input[type=text] {
-    width: 85%;
-    margin: 3px 0;
-  
-  }
-
-  #vquextIdeviceForm .vquext-EInputVideo {
     display: none;
   }
-
-  #vquextIdeviceForm .vquext-EInputImage {
-    display: none;
-  }
-
   #vquextIdeviceForm .vquext-EMultiMediaOption {
     background: transparent;
     height: 280px;
@@ -204,7 +189,7 @@
     width: 400px;
     height: 227px;
     margin: auto auto;
-    margin-top: 10px;
+    margin-top: 5px;
     position: relative;
     background-color: #fff;
     border-radius: 10px;
@@ -260,25 +245,21 @@
   }
 
   #vquextIdeviceForm .vquext-EOption0 {
-    background-color: #fbd2d6;
     background-color: #f9f9f9;
     border: 1px solid #ff0000;
   }
 
   #vquextIdeviceForm .vquext-EOption1 {
-    background-color: #dfe3f1;
     background-color: #f9f9f9;
     border: 1px solid #5877c6;
   }
 
   #vquextIdeviceForm .vquext-EOption2 {
-    background-color: #caede8;
     background-color: #f9f9f9;
     border: 1px solid #2a9315;
   }
 
   #vquextIdeviceForm .vquext-EOption3 {
-    background-color: #fcf4d3;
     background-color: #f9f9f9;
     border: 1px solid #f3d55a;
   }
@@ -296,12 +277,6 @@
     height: 24px;
     min-width: 24px;
     margin: 0 5px;
-  }
-   #vquextIdeviceForm .vquext-tEVideoIntroPlay {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    margin:0;
   }
 
   #vquextIdeviceForm .vquextWordMutimediaEdition a:focus, #vquextIdeviceForm .vquextWordMutimediaEdition a:link, #vquextIdeviceForm .vquextWordMutimediaEdition a:visited, #vquextIdeviceForm .vquextWordMutimediaEdition a:active {
@@ -336,10 +311,6 @@
     top: 0;
     opacity: .0001;
     z-index: 100000;
-  }
-
-  #vquextIdeviceForm #vquextEText {
-    display: none;
   }
 
   #vquextIdeviceForm .vquext-ECover, #vquextIdeviceForm .vquext-EImage, #vquextIdeviceForm .vquext-ENoImage, #vquextIdeviceForm .vquext-EVideo, #vquextIdeviceForm .vquext-ENoImageVideo, #vquextIdeviceForm .vquext-ENoVideo {
@@ -418,23 +389,6 @@
     color: #035175;
   }
 
-  #vquextIdeviceForm .vquext-EInputImage input[type=text] {
-    width: 50%;
-    margin-left: 0;
-  }
-
-  #vquextIdeviceForm .vquext-EVIDiv {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    z-index: 20000;
-    display: none;
-  }
-
   #vquextIdeviceForm .vquext-ENumQuestionDiv {
     width: 60px;
     height: 30px;
@@ -490,7 +444,7 @@
     margin-right: 5px;
 
   }
-  #vquextIdeviceForm input {
+  #vquextIdeviceForm input[type=text] {
     height:24px;
     margin-left:3px;
 
@@ -568,6 +522,13 @@
   }
   #vquextIdeviceForm input#vquextEVideoIntro {
     width:50%;
+  }
+  #vquextIdeviceForm label {
+    display: inline;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
   }
 
   @media screen and (max-width:720px) {
