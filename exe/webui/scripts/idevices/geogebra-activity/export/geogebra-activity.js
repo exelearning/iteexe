@@ -188,7 +188,7 @@ var $eXeAutoGeogebra = {
 			alert($exe_i18n.yourScoreIs+score);
 			scorm.SetScoreRaw(score+"" );
 			scorm.SetScoreMax("10");
-            scorm.save();
+            		scorm.save();
 		} else {
 			alert($exe_i18n.dataError);
 		}
