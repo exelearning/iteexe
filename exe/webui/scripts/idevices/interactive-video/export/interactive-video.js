@@ -312,7 +312,7 @@ var interaction = {
 		
 		if (this.type=='mediateca') {
 			
-			$exe.loadScript("http://mediateca.educa.madrid.org/includes/player/exelearning/jwplayer.js","interaction.ready()");
+			$exe.loadScript("https://mediateca.educa.madrid.org/includes/player/exelearning/jwplayer.js","interaction.ready()");
 			return;
 			
 		}

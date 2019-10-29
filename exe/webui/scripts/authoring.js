@@ -24,7 +24,6 @@
 // action and object fields so they can be used by submitLink
 
 // An array of js strings to evaluate on document load
-// $exeAuthoring.countBase64 and $exeAuthoring.compareBase64 will not be used if exe_editor_version == 4
 var Ext = parent.Ext;
 var eXe = parent.eXe;
 var onLoadHandlers = [clearHidden, setWmodeToFlash, loadAuthoringPluginObjects, 
@@ -109,9 +108,6 @@ function askUserForMedia(fn,win) {
         callback: function(fp) {
 			if (fp.status == parent.eXe.view.filepicker.FilePicker.returnOk) {
 				fn(fp.file.path);
-				if (typeof(win)!="undefined") {
-					if (exe_editor_version==3) win.document.forms[0].elements['href'].onchange();
-				}
 			} else {
 				fn("");
 			}
@@ -583,19 +579,33 @@ function loadKeymap() {
 
 // Common settings
 // Default editor
+
+/*
+    TinyMCE version
+    TinyMCE 3 was removed after eXe 2.4.2 was released
+    There's only one option now: TinyMCE 4
+    This code will let the user choose a different TinyMCE version:
+*/
+/*
 if (typeof(exe_editor_version)=='undefined') exe_editor_version=4;
 var eXeLearning_settings = {
 	wysiwyg_version : false, // Set to true to allow other versions
 	wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
 	wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
 }
-if (eXeLearning_settings.wysiwyg_version && exe_editor_version==3) {
+if (eXeLearning_settings.wysiwyg_version && exe_editor_version==X) {
 	eXeLearning_settings = {
-		wysiwyg_path : "/scripts/tinymce_3.5.11/jscripts/tiny_mce/tiny_mce.js",
-		wysiwyg_settings_path : "/scripts/tinymce_3.5.11_settings.js"
+		wysiwyg_path : "...",
+		wysiwyg_settings_path : "..."
 	}
 }
 if (eXeLearning_settings.wysiwyg_version == false) exe_editor_version = 4;
+*/
+exe_editor_version=4;
+var eXeLearning_settings = {
+	wysiwyg_path : "/scripts/tinymce_4/js/tinymce/tinymce.min.js",
+	wysiwyg_settings_path : "/scripts/tinymce_4_settings.js"
+}
 
 // browse the specified URL in system browser
 function browseURL(e,elm) {
@@ -752,30 +762,25 @@ var exe_tinymce = {
 
                 // PreviewImage is only available for images:
                 if (type == "image") {					
-					if (exe_editor_version==3) {
-						if (typeof(win.ImageDialog)!='undefined') win.ImageDialog.showPreviewImage(full_previewImage_url);
-					} else {
-						formField.value = full_previewImage_url;
-						// Set the image dimensions
-						var img = new Image() ;
-						img.src = full_previewImage_url;
-						img.onload = function() {
-							// We know field_name, but not the IDs of the fields to set the dimensions 
-							var fieldOrder = field_name;
-							fieldOrder = fieldOrder.split("-")[0];
-							fieldOrder = fieldOrder.split("_");
-							if (fieldOrder.length==2) {
-								fieldOrder = Number(fieldOrder[1]);
-								$("#mceu_"+(fieldOrder+3)).val(img.width);
-								$("#mceu_"+(fieldOrder+5)).val(img.height);
-								exe_tinymce.current_image_size = [ img.width, img.height ];
-							}
-						}
-					}
+					formField.value = full_previewImage_url;
+                    // Set the image dimensions
+                    var img = new Image() ;
+                    img.src = full_previewImage_url;
+                    img.onload = function() {
+                        // We know field_name, but not the IDs of the fields to set the dimensions 
+                        var fieldOrder = field_name;
+                        fieldOrder = fieldOrder.split("-")[0];
+                        fieldOrder = fieldOrder.split("_");
+                        if (fieldOrder.length==2) {
+                            fieldOrder = Number(fieldOrder[1]);
+                            $("#mceu_"+(fieldOrder+3)).val(img.width);
+                            $("#mceu_"+(fieldOrder+5)).val(img.height);
+                            exe_tinymce.current_image_size = [ img.width, img.height ];
+                        }
+                    }
                 }
                 else if (type == "media") {
-					if (exe_editor_version==3) win.window.Media.preview();
-					else formField.value = full_previewImage_url;
+					formField.value = full_previewImage_url;
                 }
 
                 // this onchange works, but it's dirty because it is hardcoding the
@@ -783,22 +788,12 @@ var exe_tinymce = {
                 // in tinyMCE, then this would be out of sync.
 
                 // and finally, be sure to update the tinyMCE window's image data:
-                if (exe_editor_version==3) {
-					if (win.getImageData) {
-						win.getImageData();
-					} else {
-						if (window.tinyMCE.getImageData) {
-							window.tinyMCE.getImageData();
-						}
-					}
-                } else {
-                    // See exeimage/plugin.min.js
-                    if (type == "image" && typeof(exeImageDialog)!="undefined") {
-                        try {
-                            exeImageDialog.updateImageDimensions(full_previewImage_url);
-                        } catch(e) {
-                            
-                        }
+                // See exeimage/plugin.min.js
+                if (type == "image" && typeof(exeImageDialog)!="undefined") {
+                    try {
+                        exeImageDialog.updateImageDimensions(full_previewImage_url);
+                    } catch(e) {
+                        
                     }
                 }
 
@@ -841,42 +836,11 @@ var exe_tinymce = {
 }
 
 var $exeAuthoring = {
-	countBase64 : function(ed){
-		var c = ed.getBody();
-		var n = 0;
-		var imgs = c.getElementsByTagName("IMG");
-		for (x=0;x<imgs.length;x++) {
-			if (imgs[x].src.indexOf("data:")==0) {
-				n += 1;
-			}
-		}
-		if (typeof(ed.base64originalImages)=='undefined') {
-			ed.base64originalImages = n;
-			ed.base64Warning = false; // To avoid too many alerts (no new alerts for 2 seconds)
-		}
-		return n;
-	},
-	compareBase64 : function(ed) {
-		setTimeout(function(){
-			var oN = ed.base64originalImages; // Original base64 images
-			var nN = $exeAuthoring.countBase64(ed);	
-			if (nN>oN) {
-				if (ed.base64Warning==false) {
-					ed.base64Warning = true;
-					setTimeout(function(){
-						ed.base64Warning = false;
-					},2000);
-					alert(_("Embed images shouldn't be pasted directly into the editor. Please use Insert/Edit Image.")+"\n\n"+_("This change will be undone."));
-				}
-				ed.undoManager.undo();
-			}
-		},500);
-	},
-    errorHandler : function(origin){
+	errorHandler : function(origin){
         
         // Could not transform LaTeX to image
         if (origin=="handleTinyMCEmath") {
-            if (exe_editor_version == 4) PasteMathDialog.preloader.hide();
+            PasteMathDialog.preloader.hide();
         }
         
         // Could not transform MathML to image
@@ -1351,8 +1315,7 @@ var $exeAuthoring = {
     },
     // Some iDevices (like Cloze Activity) have a button to select (underline) words
     toggleWordInEditor : function(id){
-        if (exe_editor_version==3) tinyMCE.execInstanceCommand(id, 'Underline', false);
-        else tinyMCE.activeEditor.getDoc().execCommand('Underline', false, false);
+        tinyMCE.activeEditor.getDoc().execCommand('Underline', false, false);
     },    
     changeFlowPlayerPathInIE : function(){
         var objs = document.getElementsByTagName("OBJECT");

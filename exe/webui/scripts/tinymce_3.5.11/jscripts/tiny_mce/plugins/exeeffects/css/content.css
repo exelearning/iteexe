@@ -1,5 +1,0 @@
-.exe-fx{padding:.5em 1em;border:1px solid #CCC;background:#F7F7F7 url(../img/exeeffects.png) no-repeat 5px 5px;border-radius:4px;overflow:hidden;box-shadow:0px 1px 3px rgba(0,0,0,0.25);border-radius:3px}
-.exe-fx h2{background:#222;color:#FFF;font-size:1.2em;padding:5px 15px;border-radius:2px}
-.exe-timeline h3{background:#444;color:#FFF;font-size:1.1em;padding:5px 15px;border-radius:2px}
-.exe-timeline h3:before{content:"— ";font-weight:normal;margin-right:.5em}
-.exe-fx:before{color:#666;font-size:.8em;font-style:italic;text-align:right;display:block}

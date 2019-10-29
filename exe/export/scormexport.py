@@ -426,11 +426,14 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.resStr += """href="%s">
     <file href="%s"/>
     <file href="base.css"/>
-    <file href="content.css"/>
     <file href="popup_bg.gif"/>
     <file href="exe_jquery.js"/>
     <file href="common_i18n.js"/>
     <file href="common.js"/>\n""" % (filename, filename)
+            my_style = G.application.config.styleStore.getStyle(page.node.package.style)   
+            for x in my_style.get_style_dir().files('*.*'):
+                fileStr += """    <file href="%s"/>\n""" % x.basename()
+                self.dependencies[x.basename()] = True    
             # CC export require content.* any place inside the manifest:
             if page.node.package.exportSource and page.depth == 1:
                 self.resStr += '    <file href="content.xsd"/>\n'

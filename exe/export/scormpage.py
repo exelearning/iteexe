@@ -135,7 +135,8 @@ class ScormPage(Page):
                 html += style.get_extra_head()        
             html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb
-            html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm\" "
+            html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm\">"
+            html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb            
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
@@ -144,11 +145,11 @@ class ScormPage(Page):
             html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb            
             html += u'<body id="exe-node-'+self.node.id+'" class=\"exe-scorm\" '
-        if common.hasQuizTest(self.node):
-            html += u'onunload="unloadPage(true)">'
-        else:
-            html += u'onunload="unloadPage()">'
-        html += u'<script type="text/javascript">document.body.className+=" js";jQuery(function(){loadPage()})</script>'+lb
+            if common.hasQuizTest(self.node):
+                html += u'onunload="unloadPage(true)">'
+            else:
+                html += u'onunload="unloadPage()">'
+            html += u'<script type="text/javascript">document.body.className+=" js";jQuery(function(){loadPage()})</script>'+lb
         html += u"<div id=\"outer\">"+lb
         html += u"<"+sectionTag+" id=\"main\">"+lb
         html += u"<"+headerTag+" id=\"nodeDecoration\">"

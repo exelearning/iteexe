@@ -186,6 +186,9 @@ var $eXeAutoGeogebra = {
 		if (typeof(ggbApplet)!='undefined' && typeof(ggbApplet.getValue)=='function') {
 			var score = ggbApplet.getValue("SCORMRawScore");
 			alert($exe_i18n.yourScoreIs+score);
+			scorm.SetScoreRaw(score+"" );
+			scorm.SetScoreMax("10");
+            		scorm.save();
 		} else {
 			alert($exe_i18n.dataError);
 		}
