@@ -40,22 +40,22 @@ var $exeDevice = {
         "msgScore": _("Score"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
-        "msgTime": _("Time question"),
+        "msgTime": _("Time per question"),
         "msgLive": _("Life"),
         "msgFullScreen": _("Full Screen"),
         "msgExitFullScreen": _("Exit Full Screen"),
         "msgNumQuestions": _("Number of questions"),
         "msgNoImage": _("No picture question"),
         "msgCool": _("Cool!"),
-        "msgLoseT": _("Lose 330 points"),
-        "msgLoseLive": _("Lose a life"),
-        "msgLostLives": _("Lost all your lives!"),
+        "msgLoseT": _("You lost 330 points"),
+        "msgLoseLive": _("You lost one life"),
+        "msgLostLives": _("You lost all your lives!"),
         "mgsAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
-        "msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
-        "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
-        "msgEndGameScore": _("Must start game before saving your score!"),
-        "msgScoreScorm": _("Only the score obtained can be saved in an SCORM export"),
+        "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
+        "msgNotNetwork": _("You can only play this game with internet connection."),
+        "msgEndGameScore": _("Please start the game before saving your score."),
+        "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
         "msgQuestion": _("Question"),
         "msgAnswer": _("Answer"),
         "msgOnlySaveScore": _("You can only save the score once!"),
@@ -63,22 +63,21 @@ var $exeDevice = {
         "msgInformation": _("Information"),
         "msgYouScore": _("Your score"),
         "msgAuthor": _("Author"),
-        "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once!"),
+        "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgYouScore": _("Your score"),
         "msgSeveralScore": _("You can save the score as many times as you want"),
         "msgYouLastScore": _("The last score saved is"),
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
-        "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
+        "msgTryAgain": _("You need at least %s% of correct answers to get the information. Please try again."),
         "msgVideoIntro": _("Video Intro"),
         "msgClose": _("Close"),
         "msgOption": _("Option"),
         "msgRickText": _("Rich Text"),
         "msgUseFulInformation": _("and information that will be very useful"),
-        "msgLoading": _("Loading. Wait, please"),
+        "msgLoading": _("Loading. Please wait..."),
         "mgsPoints": _("points")
-
     },
 
     init: function () {
@@ -93,21 +92,21 @@ var $exeDevice = {
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;
-        msgs.msgEProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
+        msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
-        msgs.msgEProvideWord = _("You must provide one word or phrase");
-        msgs.msgEOneQuestion = _("You must provide at least one question");
+        msgs.msgEProvideWord = _("Please provide one word or phrase");
+        msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgEUnavailableVideo = _("This video is not currently available")
         msgs.msgECompleteQuestion = _("You have to complete the question");
-        msgs.msgECompleteAllOptions = _("You have to complete all the options selected");
+        msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
         msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
-        msgs.msgWriteText = _("You have to type a text in the word processor");
-        msgs.msgEPoiIncorrect = _("El punto del vídeo para mostrar la pregunta debe estar comprendido entre el inicio y fin del mismo");
-        msgs.msgEPointExist = _("Ya existe una pregunta en este punto del vídeo");
+        msgs.msgWriteText = _("You have to type a text in the editor");
+        msgs.msgEPoiIncorrect = _("That second is not part of the video. Please check the video duration.");
+        msgs.msgEPointExist = _("There is already a question in that second.");
 
 
     },
@@ -358,7 +357,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-            $exeDevice.showMessage(_("Este vídeo no esta actualmente disponible"));
+            $exeDevice.showMessage(_("This video is not currently available"));
             $('#vquextENoVideo').show();
         }
     },
@@ -439,7 +438,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="vquextEShowSolution"><input type="checkbox" checked id="vquextEShowSolution">' + _("Show solutions") + '. </label>\
-                                <label for="vquextETimeShowSolution">' + _("Show solution time(seconds)") + ' <input type="number" name="vquextETimeShowSolution" id="vquextETimeShowSolution" value="3" min="1" max="9" /> </label>\
+                                <label for="vquextETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="vquextETimeShowSolution" id="vquextETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                         </div>\
                     </fieldset>\
@@ -448,7 +447,7 @@ var $exeDevice = {
                         <div class="vquext-EPanel" id="vquextEPanel">\
                             <div class="vquext-EVIOptions">\
                                 <div class="vquext-EVILabel" style="display:inline-block;">\
-                                    <label for="vquextEVIURL">' + _("URL YouTube") + ':</label>\
+                                    <label for="vquextEVIURL">' + _("Youtube URL") + ':</label>\
                                     <input id="vquextEVIURL" type="text" />\
                                 </div>\
                                 <div class="vquext-EVILabel" style="display:inline-block;">\
@@ -462,9 +461,9 @@ var $exeDevice = {
                             </div>\
                             <div class="vquext-EOptionsMedia">\
                                 <div class="vquext-EOptionsGame">\
-                                     <span>' + _("Point question") + ':</span>\
+                                     <span>' + _("Question point") + ':</span>\
                                     <div class="vquext-EPointDiv" id="vquextEPointDiv">\
-                                        <label class="sr-av" for="vquextPoint">' + _("Point question question ") + '</label>\
+                                        <label class="sr-av" for="vquextPoint">' + _("Question point") + ' </label>\
                                         <input id="vquextPoint" type="text" value="00:00:00" readonly />\
                                     </div>\
                                     <span>' + _("Options Number") + ':</span>\
@@ -476,7 +475,7 @@ var $exeDevice = {
                                         <input class="vquext-Number" id="numQ4" type="radio" name="vqxnumber" value="4" checked="checked" />\
                                         <label for="numQ4">4</label>\
                                     </div>\
-                                    <span>' + _("Time question") + ':</span>\
+                                    <span>' + _("Time per question") + ':</span>\
                                     <div class="vquext-EInputTimes">\
                                         <input class="vquext-Times" checked="checked" id="q15s" type="radio" name="vqxtime" value="0" />\
                                         <label for="q15s">15s</label>\
@@ -500,7 +499,7 @@ var $exeDevice = {
                                         <input id="vquextECheckImageVideo" type="checkbox" checked="checked" />\
                                     </div>\
                                     <div class="vquext-EPointDiv">\
-                                        <label>' + _("Previsulizar cuestión") + ':</label>\
+                                        <label>' + _("Preview question") + ':</label>\
                                         <a href="#" id="vquextEPlayVideo" class="vquext-ENavigationButton vquext-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextPlay.png" + '"  alt="" class="vquext-EButtonImage b-play" /></a>\
                                     </div>\
                                 </div>\

@@ -46,22 +46,22 @@ var $exeDevice = {
         "msgScore": _("Score"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
-        "msgTime": _("Time question"),
+        "msgTime": _("Time per question"),
         "msgLive": _("Life"),
         "msgFullScreen": _("Full Screen"),
         "msgExitFullScreen": _("Exit Full Screen"),
         "msgNumQuestions": _("Number of questions"),
         "msgNoImage": _("No picture question"),
         "msgCool": _("Cool!"),
-        "msgLoseT": _("Lose 330 points"),
-        "msgLoseLive": _("Lose a life"),
-        "msgLostLives": _("Lost all your lives!"),
+        "msgLoseT": _("You lost 330 points"),
+        "msgLoseLive": _("You lost one life"),
+        "msgLostLives": _("You lost all your lives!"),
         "mgsAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
-        "msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
-        "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
-        "msgEndGameScore": _("Must start game before saving your score!"),
-        "msgScoreScorm": _("Only the score obtained can be saved in an SCORM export"),
+        "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
+        "msgNotNetwork": _("You can only play this game with internet connection."),
+        "msgEndGameScore": _("Please start the game before saving your score."),
+        "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
         "msgQuestion": _("Question"),
         "msgAnswer": _("Answer"),
         "msgOnlySaveScore": _("You can only save the score once!"),
@@ -69,22 +69,21 @@ var $exeDevice = {
         "msgInformation": _("Information"),
         "msgYouScore": _("Your score"),
         "msgAuthor": _("Author"),
-        "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once!"),
+        "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgYouScore": _("Your score"),
         "msgSeveralScore": _("You can save the score as many times as you want"),
         "msgYouLastScore": _("The last score saved is"),
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
-        "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
+        "msgTryAgain": _("You need at least %s% of correct answers to get the information. Please try again."),
         "msgVideoIntro": _("Video Intro"),
         "msgClose": _("Close"),
         "msgOption": _("Option"),
         "msgRickText": _("Rich Text"),
         "msgUseFulInformation": _("and information that will be very useful"),
-        "msgLoading": _("Loading. Wait, please"),
+        "msgLoading": _("Loading. Please wait..."),
         "mgsPoints": _("points")
-
     },
 
     init: function () {
@@ -99,19 +98,19 @@ var $exeDevice = {
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;
-        msgs.msgEProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
+        msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
-        msgs.msgEProvideWord = _("You must provide one word or phrase");
-        msgs.msgEOneQuestion = _("You must provide at least one question");
+        msgs.msgEProvideWord = _("Please provide one word or phrase");
+        msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgEUnavailableVideo = _("This video is not currently available")
         msgs.msgECompleteQuestion = _("You have to complete the question");
-        msgs.msgECompleteAllOptions = _("You have to complete all the options selected");
+        msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
         msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
-        msgs.msgWriteText = _("You have to type a text in the word processor");
+        msgs.msgWriteText = _("You have to type a text in the editor");
 
     },
     loadYoutubeApi: function () {
@@ -449,7 +448,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-            $exeDevice.showMessage(_("Este vídeo no esta actualmente disponible"));
+            $exeDevice.showMessage(_("This video is not currently available"));
             $('#quextENoVideo').show();
         }
     },
@@ -647,7 +646,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="quextEShowSolution"><input type="checkbox" checked id="quextEShowSolution">' + _("Show solutions") + '. </label>\
-                                <label for="quextETimeShowSolution">' + _("Show solution time(seconds)") + ' <input type="number" name="quextETimeShowSolution" id="quextETimeShowSolution" value="3" min="1" max="9" /> </label>\
+                                <label for="quextETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="quextETimeShowSolution" id="quextETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                             <div class="quext-EVideoIntroData">\
                                 <label for="quextEVideoIntro">' + _("Video Intro") + '<input type="text" id="quextEVideoIntro" /></label>\
@@ -663,7 +662,7 @@ var $exeDevice = {
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="quext-EInputMedias">\
                                         <input class="quext-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="quext-MediaNormal">' + _("Nothing") + '</label>\
+                                        <label for="quext-MediaNormal">' + _("None") + '</label>\
                                         <input class="quext-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
                                         <label for="mediaImagen">' + _("Image") + '</label>\
                                         <input class="quext-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
@@ -680,7 +679,7 @@ var $exeDevice = {
                                         <input class="quext-Number" id="numQ4" type="radio" name="qxnumber" value="4" checked="checked" />\
                                         <label for="numQ4">4</label>\
                                     </div>\
-                                    <span>' + _("Time question") + ':</span>\
+                                    <span>' + _("Time per question") + ':</span>\
                                     <div class="quext-EInputTimes">\
                                         <input class="quext-Times" checked="checked" id="q15s" type="radio" name="qxtime" value="0" />\
                                         <label for="q15s">15s</label>\
@@ -695,9 +694,9 @@ var $exeDevice = {
                                         <input class="quext-Times" id="q10m" type="radio" name="qxtime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
-                                    <span class="quext-ETitleImage" id="quextETitleImage">' + _("URL Imagen") + '</span>\
+                                    <span class="quext-ETitleImage" id="quextETitleImage">' + _("Image URL") + '</span>\
                                     <div class="quext-EInputImage" id="quextEInputImage">\
-                                        <label class="sr-av" for="quextEURLImage">' + _("URL Imagen") + '</label>\
+                                        <label class="sr-av" for="quextEURLImage">' + _("Image URL") + '</label>\
                                         <input type="text" class="exe-file-picker quext-EURLImage"  id="quextEURLImage"/>\
                                     </div>\
                                     <div class="quext-EInputOptionsImage" id="quextInputOptionsImage">\
@@ -708,9 +707,9 @@ var $exeDevice = {
                                             <input id="quextEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <span class="quext-ETitleVideo" id="quextETitleVideo">' + _("URL Youtube") + '</span>\
+                                    <span class="quext-ETitleVideo" id="quextETitleVideo">' + _("Youtube URL") + '</span>\
                                     <div class="quext-EInputVideo" id="quextEInputVideo">\
-                                        <label class="sr-av" for="quextEURLYoutube">' + _("URL Youtube") + '</label>\
+                                        <label class="sr-av" for="quextEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="quextEURLYoutube" type="text" />\
                                         <a href="#" id="quextEPlayVideo" class="quext-ENavigationButton quext-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
                                     </div>\
@@ -796,7 +795,7 @@ var $exeDevice = {
                                     </div>\
                                 </div>\
                                 <div class="quext-EVIOptions">\
-                                    <label for="quextEVIURL">' + _("URL YouTube") + ':</label>\
+                                    <label for="quextEVIURL">' + _("Youtube URL") + ':</label>\
                                     <input id="quextEVIURL" type="text" />\
                                     <a href="#" id="quextEVIPlayI" class="quext-ENavigationButton quext-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '" alt="" class="quext-EButtonImage b-playintro" /></a>\
                                     <label for="quextEVIStart">' + _("Start") + ':</label>\
