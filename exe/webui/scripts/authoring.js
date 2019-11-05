@@ -1024,7 +1024,7 @@ var $exeAuthoring = {
                         return false;
                     }
                     if (showCodeAccess && messageCodeAccess.length == 0) {
-                        eXe.app.alert(_("You must provide how to obtain the code to play this game"));
+                        eXe.app.alert(_("Please explain how to obtain the code to play this game"));
                         return false;
                     }
                     var a={
