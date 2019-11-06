@@ -304,7 +304,8 @@ var $exeDevice = {
 					
 				}
 				$.ajax({
-					url: "http://gros.es/tests/cedec/cedec.json?version="+timestamp,
+					// url: "cedec.json?version="+timestamp,
+					url: "/scripts/idevices/rubrics/edition/cedec.json",
 					dataType: 'json',
 					success: function(res){
 						$("#ri_RubricEditor").removeClass("loading");

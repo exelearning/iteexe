@@ -1,0 +1,117 @@
+{
+	"rubrics" : [
+		
+		{
+			"title" : "Rúbrica de evaluación de un mapa mental",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Estructura",
+				"Contenido",
+				"Patrón organizativo",
+				"Elementos visuales",
+				"Corrección lingüística"
+			],
+			"scores" : [
+				"Nivel 4",
+				"Nivel 3",
+				"Nivel 2",
+				"Nivel 1"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "2.5",
+						"text" : "El mapa está muy bien estructurado, con una imagen central del tema elegida con mucho acierto desde la cual irradian los demás conceptos e ideas en forma de ramificaciones. Además, cada uno de estas ideas va acompañada de una imagen que refuerza aquello que se quiere expresar."
+					},
+					{
+						"weight" : "1.5",
+						"text" : "El mapa está bastante bien estructurado, con una imagen central del tema elegida con acierto y desde la cual irradian los demás conceptos e ideas en forma de ramificaciones. No obstante, no todas las ideas van acompañadas de una imagen y/o dicha imagen no guarda mucha relación con aquella idea que se quiere expresar."
+					},
+					{
+						"weight" : "0.75",
+						"text" : "El mapa no está bien estructurado porque falta una imagen central del tema y/o porque no estén presentadas las ideas de forma radial y/o porque la mayor parte de esas ideas no vayan acompañadas de una imagen y/o porque dicha imagen no se ajuste con claridad a la idea que se quiere transmitir."
+					},
+					{
+						"weight" : "0",
+						"text" : "El mapa mental no respeta la estructura propia de este tipo de textos (imagen central con ramificaciones y equilibrio entre el texto y la imagen). "
+					}
+				],
+				[
+					{
+						"weight" : "2.5",
+						"text" : "La imagen central aparece acompañada de un título adecuado en torno al cual se articulan entre cinco y siete ideas bien seleccionadas y expresadas de forma muy acertada. "
+					},
+					{
+						"weight" : "1.5",
+						"text" : "La imagen central aparece acompañada de un título adecuado en torno al cual se articulan entre cinco y siete ideas. No obstante, dichas ideas no están muy bien seleccionadas y/o expresadas. "
+					},
+					{
+						"weight" : "0.75",
+						"text" : "La imagen central aparece acompañada de un título bastante adecuado en torno al cual se articulan una serie de ideas. Sin embargo, el número de ideas o conceptos no cumple el mínimo establecido (entre cinco y siete) y/o no están bien seleccionadas o expresadas. "
+					},
+					{
+						"weight" : "0",
+						"text" : "La imagen central (si es que la hubiera) no aparece acompañadas de un título del que irradian ideas y/o no se respeta el número mínimo de ideas o conceptos requeridos. Además, ni la selección ni la redacción de dichas ideas es adecuada."
+					}
+				],
+				[
+					{
+						"weight" : "1",
+						"text" : "El patrón organizativo es muy claro y adecuado y se ha aprovechado bien todo el espacio físico para distribuir las ideas de una manera equilibrada."
+					},
+					{
+						"weight" : "0.75",
+						"text" : "Se han dispuesto los contenidos en función de un patrón organizativo bastante claro y adecuado. Además, se ha aprovechado bastante bien el espacio físico para distribuir las ideas de una manera equilibrada."
+					},
+					{
+						"weight" : "0.5",
+						"text" : "El patrón organizativo no es demasiado claro ni adecuado y/o no se ha aprovechado demasiado bien todo el espacio físico a la hora de distribuir las ideas. "
+					},
+					{
+						"weight" : "0",
+						"text" : "No existe un patrón organizativo claro y las ideas no están distribuidas de una manera equilibrada dentro del espacio físico en el que se ha desarrollado el mapa mental. "
+					}
+				],
+				[
+					{
+						"weight" : "2",
+						"text" : "El mapa es visualmente muy atractivo, con gran variedad de imágenes sencillas y claras que refuerzan el contenido que se quiere transmitir. Aparece, además, una gran variedad de elementos visuales (colores, contenedores, líneas, flechas, etc.) y tipografías que contribuyen a enriquecer el mapa de una manera clara y notoria."
+					},
+					{
+						"weight" : "1.5",
+						"text" : "El mapa mental es visualmente atractivo, con una amplia variedad de imágenes sencillas y claras que refuerzan el contenido que se quiere transmitir. Aparecen, además, otros elementos visuales (colores, contenedores, líneas, flechas, etc.) y tipografías que contribuyen a enriquecer el mapa."
+					},
+					{
+						"weight" : "0.5",
+						"text" : "El mapa no es visualmente muy atractivo: se echa en falta una mayor variedad y claridad en las imágenes. Tampoco los demás elementos visuales (colores, contenedores, líneas, flechas, etc.) y tipografías empleadas son lo suficientemente variados como para enriquecer el mapa desde el punto de vista visual. "
+					},
+					{
+						"weight" : "0",
+						"text" : "Existe muy poca variedad en los elementos visuales que componen el mapa (imágenes, colores, contenedores, líneas, flechas, etc.), así como en las tipografías empleadas, lo que hace que el mapa sea visualmente muy poco atractivo. "
+					}
+				],
+				[
+					{
+						"weight" : "2",
+						"text" : "El texto es correcto desde el punto de vista ortográfico, léxico y morfosintáctico. "
+					},
+					{
+						"weight" : "1.5",
+						"text" : "El texto contiene uno o dos errores ortográficos, léxicos o morfosintácticos."
+					},
+					{
+						"weight" : "0.5",
+						"text" : "El texto contiene de tres a cuatro errores ortográficos. léxicos o morfosintácticos."
+					},
+					{
+						"weight" : "0",
+						"text" : "El texto presenta más de cuatro errores ortográficos. léxicos o morfosintácticos."
+					}
+				]				
+			]
+		}			
+		
+	]
+}
