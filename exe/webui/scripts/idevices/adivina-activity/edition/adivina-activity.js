@@ -44,17 +44,17 @@ var $exeDevice = {
         "msgNumQuestions": _("Number of questions"),
         "msgNoImage": _("No picture question"),
         "msgCool": _("Cool!"),
-        "msgLoseT": _("Lose 330 points"),
-        "msgLoseLive": _("Lose a life"),
-        "msgLostLives": _("Lost all your lives!"),
+        "msgLoseT": _("You lost 330 points"),
+        "msgLoseLive": _("You lost one life"),
+        "msgLostLives": _("You lost all your lives!"),
         "mgsAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
-        "msgFailures": _("It was not that! | Not well! | Not correct! | Sorry! | Error!"),
-        "msgTryAgain": _("Must have %s% of correct answers to get the needed information. Try again!"),
-        "msgWrote": _("Write the correct word and click on reply. If you hesitate, click on move on"),
-        "msgNotNetwork": _("You can only play this game with internet connection. Check out your conecctivity"),
-        "msgEndGameScore": _("Must start game before saving your score!"),
-        "msgScoreScorm": _("Only the score obtained can be saved in an SCORM export"),
+        "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
+        "msgTryAgain": _("You need at least %s% of correct answers to get the information. Please try again."),
+        "msgWrote": _("Write the correct word and click on Reply. If you hesitate, click on Move on."),
+        "msgNotNetwork": _("You can only play this game with internet connection."),
+        "msgEndGameScore": _("Please start the game before saving your score."),
+        "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
         "msgQuestion": _("Question"),
 		"msgAnswer": _("Answer"),
 		"msgOnlySaveScore": _("You can only save the score once!"),
@@ -62,7 +62,7 @@ var $exeDevice = {
 		"msgInformation": _("Information"),
 		"msgYouScore": _("Your score"),
         "msgAuthor": _("Author"),
-		"msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once!"),
+		"msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgYouScore": _("Your score"),
         "msgSeveralScore": _("You can save the score as many times as you want"),
@@ -77,11 +77,11 @@ var $exeDevice = {
     },
     setMessagesInfo: function() {
         var msgs = this.msgs;
-        msgs.msgEProvideDefinition = _("You must provide the definition of the word or the valid URL of an image");
+        msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
-        msgs.msgEProvideWord = _("You must provide one word or phrase");
-        msgs.msgEOneQuestion = _("You must provide at least one question");
+        msgs.msgEProvideWord = _("Please provide one word or phrase");
+        msgs.msgEOneQuestion = _("Please provide at least one question");
 
     },
     createForm: function () {
@@ -109,7 +109,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
 								<label for="adivinaShowSolution"><input type="checkbox" checked id="adivinaShowSolution"> ' + _("Show solutions") + '. </label> \
-								<label for="adivinaTimeShowSolution">' + _("Show solution time(seconds)") + ': \
+								<label for="adivinaTimeShowSolution">' + _("Show solution time (seconds)") + ': \
 								<input type="number" name="adivinaTimeShowSolution" id="adivinaTimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                             <p>\

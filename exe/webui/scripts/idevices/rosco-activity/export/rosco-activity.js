@@ -39,7 +39,7 @@ var $eXeRosco = {
 		if (this.activities.length == 0) return;
 		if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
 			this.activities.hide();
-			if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Rosco') + '</p>');
+			if (typeof (_) != 'undefined') this.activities.before('<p>' + _('A-Z Quiz Game') + '</p>');
 			return;
 		}
 		$eXeRosco.angleSize = 2 * Math.PI / 27;
