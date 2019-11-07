@@ -9993,7 +9993,7 @@ msgstr "Ir a Utilidades - Visualización previa para ver el contenido del bocadi
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:11
 #: exe/webui/scripts/idevices/adivina-activity/export/adivina-activity.js:41
 msgid "Word Guessing"
-msgstr "Adivinar palabras"
+msgstr "Adivina"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:17
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:30
@@ -10013,7 +10013,7 @@ msgstr "Pulse aquí para empezar"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:35
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:17
 msgid "Move on"
-msgstr "Seguir"
+msgstr "Pasar"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:20
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:18
@@ -10050,7 +10050,7 @@ msgstr "Proporcione una palabra o expresión"
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:28
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:30
 msgid "Cool! The clue is:"
-msgstr "¡Bien! La pista es:"
+msgstr "¡Genial! La pista es:"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:27
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:37
@@ -10084,7 +10084,7 @@ msgstr "Es necesario el código de acceso"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:42
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:36
 msgid "Cool! The information you were looking for"
-msgstr "¡Bien! La información que estaba buscando"
+msgstr "¡Genial! La información que estaba buscando"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:33
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:43
@@ -10368,7 +10368,7 @@ msgstr "Observe las letras, identifique y rellene las palabras que faltan."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:96
 msgid "Time to answer(seconds)"
-msgstr "Tiempo para responder (en segundos)"
+msgstr "Tiempo por pregunta (en segundos)"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:100
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:637
@@ -10381,7 +10381,7 @@ msgstr "Mostrar minimizado."
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:640
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:433
 msgid "Use lives"
-msgstr "Usar vidas"
+msgstr "Utilizar las vidas"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:104
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:641
@@ -10405,7 +10405,7 @@ msgstr "Mostrar las soluciones"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:649
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:441
 msgid "Show solution time (seconds)"
-msgstr "Tiempo en dar las soluciones (en segundos)"
+msgstr "La solución se mostrará durante (segundos)"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:116
 msgid "Percentage of letters to show (%)"
@@ -10424,7 +10424,7 @@ msgstr "Partida"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:692
 msgid "Drag question"
-msgstr "Arrastar pregunta"
+msgstr "Ordenar preguntas"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:693
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:779
@@ -11228,7 +11228,7 @@ msgstr "Tiempo por pregunta"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:652
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:74
 msgid "Video Intro"
-msgstr "Intro de vídeo"
+msgstr "Vídeo de introducción"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:81
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:807
@@ -11311,7 +11311,7 @@ msgstr "Opciones al azar"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:653
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:800
 msgid "Play video intro"
-msgstr "Reproducir la intro de vídeo"
+msgstr "Reproducir el vídeo de introducción"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:658
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:446
@@ -11320,7 +11320,7 @@ msgstr "Preguntas"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:662
 msgid "Multimedia Type"
-msgstr "Tipo multimedia"
+msgstr "Tipo de multimedia"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:669
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:484
@@ -11330,7 +11330,7 @@ msgstr "Vídeo"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:673
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:469
 msgid "Options Number"
-msgstr "Número de las opciones"
+msgstr "Número de opciones"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:697
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:699
@@ -11357,7 +11357,7 @@ msgstr "Audio"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:737
 msgid "Alternative text"
-msgstr "Texto alternativo"
+msgstr "Texto alternativo de la imagen"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:780
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:546
@@ -11372,7 +11372,7 @@ msgstr "Pregunta previa"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:782
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:548
 msgid "Question number:"
-msgstr "Número de la pregunta:"
+msgstr "Pregunta número:"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:783
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:549
@@ -11386,11 +11386,11 @@ msgstr "Última pregunta"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:787
 msgid "Cut question"
-msgstr "Pregunta de tipo cortar"
+msgstr "Cortar pregunta"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:788
 msgid "Paste question"
-msgstr "Pregunta de tipo pegar"
+msgstr "Pegar pregunta"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:810
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:554
@@ -11404,7 +11404,7 @@ msgstr "QuExt"
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:11
 #: exe/webui/scripts/idevices/rosco-activity/export/rosco-activity.js:42
 msgid "A-Z Quiz Game"
-msgstr "Juego pasatiempos de la A a la Z"
+msgstr "Rosco"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:23
 msgid "New word"
@@ -11432,11 +11432,11 @@ msgstr "La información que estaba buscando"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:41
 msgid "One round"
-msgstr "Una ronda"
+msgstr "Una vuelta"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:42
 msgid "Two rounds"
-msgstr "Dos rondas"
+msgstr "Dos vueltas"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:51
 msgid "Show word wheel"
@@ -11480,7 +11480,7 @@ msgstr "Tiempo de juego (segundos)"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:113
 msgid "Number of rounds"
-msgstr "Número de rondas"
+msgstr "Número de vueltas"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:118
 msgid "Show solution in"
@@ -11519,7 +11519,7 @@ msgstr "Notas"
 msgid ""
 "Complete the table to define a scoring guide. Define the score or value "
 "of each descriptor."
-msgstr "Complete la tabla para definir una guía de puntuación. Defina la puntuación o el valor de cada descriptor."
+msgstr "Complete la tabla para definir una guía de calificación. Defina la puntuación o el valor de cada descriptor."
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:191
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:518
@@ -11596,11 +11596,11 @@ msgstr "Instrucciones de uso de la rúbrica (opcional)"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:558
 msgid "Maximum score:"
-msgstr "Puntuación máxima:"
+msgstr "Calificación máxima:"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:558
 msgid "The result of adding the scores of the first level."
-msgstr "Resultado de sumar las puntuaciones del primer nivel."
+msgstr "Resultado de sumar las calificaciones del primer nivel."
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:559
 msgid "New column"
