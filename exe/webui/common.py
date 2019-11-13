@@ -481,8 +481,12 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
 
-    if ((e.idevice.emphasis > 0) and (G.application.ideviceStore.isJs(e.idevice) == False)) or (
-        ((e.idevice.title != "") or (e.idevice.icon != "")) and (G.application.ideviceStore.isJs(e.idevice) == True)) :
+
+    if (((e.idevice.emphasis > 0) and
+        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == False))
+        or (
+        ((e.idevice.title != "") or (e.idevice.icon != "")) and
+        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == True))) :
 
         w2 = '<div class="iDevice_inner">'+lb
         w2 += '<div class="iDevice_content_wrapper">'+lb
@@ -564,8 +568,11 @@ def ideviceFooter(e, style, mode):
     themeHasXML = themeHasConfigXML(style)
     h = ''
 
-    if ((e.idevice.emphasis > 0) and (G.application.ideviceStore.isJs(e.idevice) == False)) or (
-        ((e.idevice.title != "") or (e.idevice.icon != "")) and (G.application.ideviceStore.isJs(e.idevice) == True)) :
+    if (((e.idevice.emphasis > 0) and
+        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == False))
+        or (
+        ((e.idevice.title != "") or (e.idevice.icon != "")) and
+        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == True))) :
 
         h = "</div>"+lb # Close iDevice_content_wrapper
         h += "</div>"+lb # Close iDevice_inner
@@ -740,14 +747,14 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
     if (cssClass=="jsContentEditor"):
         if safe_value != value:
             value = safe_value
-            log.debug(u"jsContentEditor pre-processed value to: %s" % value)    
+            log.debug(u"jsContentEditor pre-processed value to: %s" % value)
     html += value
     html += u'</textarea>'
-    
+
     html_js = ''
     # There's probably an editor in the JavaScript iDevice, so we add the nodes list (tinymce_anchors)
     if (cssClass=="jsContentEditor"):
-        html_js = '<script type="text/javascript">if (typeof(tinymce_anchors)=="undefined") var tinymce_anchors = [];'    
+        html_js = '<script type="text/javascript">if (typeof(tinymce_anchors)=="undefined") var tinymce_anchors = [];'
         ########
         # add exe_tmp_anchor tags
         # for ALL anchors available in the entire doc!
@@ -784,7 +791,7 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
         # FieldWithResources' ProcessPreviewed()
         ########
         html_js  += '</script>'
-    
+
     return html + html_js
 
 
