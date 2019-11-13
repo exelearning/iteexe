@@ -1079,7 +1079,7 @@ def formField(type_, package, caption, action, object_='', instruction='', \
     """
     tag = 'p'
     css = 'exe-text-field'
-    id = action+object_
+    idvalue = action+object_
 
     if type_ == 'select':
         css = 'exe-select-field'
@@ -1093,10 +1093,10 @@ def formField(type_, package, caption, action, object_='', instruction='', \
         css = 'exe-checkbox-field'
 
     html  = '<'+tag+' class="'+css+'">'
-    if caption!="" and type!='checkbox':
-        html += '<label for="'+id+'"'
+    if caption!="" and type_!='checkbox':
+        html += '<label for="'+idvalue+'"'
         if type_ == 'richTextArea':
-            html += ' id="'+id+'-editor-label"' # ID to create the Show/Hide Editor Link
+            html += ' id="'+idvalue+'-editor-label"' # ID to create the Show/Hide Editor Link
         html += '>%s</label>' % caption
     if instruction:
         html += elementInstruc(instruction)
@@ -1110,7 +1110,7 @@ def formField(type_, package, caption, action, object_='', instruction='', \
         html += textInput(action+object_, *args, **kwargs)
     elif type_ == 'checkbox':
         if caption!="":
-            html += '<label for="'+args+'">'
+            html += '<label for="'+idvalue+'">'
         html += checkbox(*args, **kwargs)
         if caption!="":
             html += caption
