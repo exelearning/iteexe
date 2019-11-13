@@ -39,9 +39,9 @@ class IdevicePane(Renderable, Resource):
     name = 'idevicePane'
 
     def __init__(self, parent):
-        """ 
+        """
         Initialize
-        """ 
+        """
         Renderable.__init__(self, parent)
         if parent:
             self.parent.putChild(self.name, self)
@@ -56,6 +56,7 @@ class IdevicePane(Renderable, Resource):
             if prototype.id in self.prototypes:
                 raise Exception("duplicated device id %s" % prototype.id)
             self.prototypes[prototype.id] = prototype
+        self.hiddenExperimentalIdevices()
 
     def translateOldHidingIdevicesMechanism(self):
         idevices = self.ideviceStore.getIdevices()
@@ -71,13 +72,24 @@ class IdevicePane(Renderable, Resource):
         if modified:
             self.ideviceStore.save()
 
+    def hiddenExperimentalIdevices(self):
+        """
+        Hidden Experimental iDevices:
+        add iDevices with the category 'Experimental' to 'hiddeniDevices'
+        """
+        prototypes = self.prototypes.values()
+        for prototype in prototypes:
+            lower_title =  prototype._title.lower()
+            if hasattr(prototype, 'ideviceCategory') and prototype.ideviceCategory == 'Experimental':
+                self.config.hiddeniDevices.append(lower_title)
+
     def process(self, request):
-        """ 
-        Process the request arguments to see if we're supposed to 
+        """
+        Process the request arguments to see if we're supposed to
         add an iDevice
         """
         log.debug("Process" + repr(request.args))
-        if ("action" in request.args and 
+        if ("action" in request.args and
             request.args["action"][0] == "AddIdevice"):
 
             self.package.isChanged = True
@@ -86,7 +98,7 @@ class IdevicePane(Renderable, Resource):
                 node = self.package.findNode(request.args["currentNode"][0])
                 node.addIdevice(prototype.clone())
 
-            
+
     def addIdevice(self, idevice):
         """
         Adds an iDevice to the pane
@@ -97,7 +109,7 @@ class IdevicePane(Renderable, Resource):
         self.prototypes[idevice.id] = idevice
         self.client.sendScript('eXe.app.getController("Idevice").reload()', filter_func=allSessionClients)
 
-        
+
     def delIdevice(self, idevice):
         """
         Delete an iDevice from the pane
@@ -135,7 +147,7 @@ class IdevicePane(Renderable, Resource):
             else:
                 lower_title = prototype._title.lower()
                 visible = lower_title not in self.config.hiddeniDevices
-                
+
                 if hasattr(prototype, 'ideviceCategory'):
                     prototypesToRender.append((prototype, prototype.ideviceCategory, visible))
                 else:
@@ -168,7 +180,7 @@ class IdevicePane(Renderable, Resource):
                     xml += self.__renderPrototype(prototype, category, visible)
         # Other categories
         # Keep these category names here so the tranlations are not lost even when there are no iDevices in those categories
-        experimentalCategoryName = _('Experimental') 
+        experimentalCategoryName = _('Experimental')
         gamificationCategoryName = _('Gamification')
         for prototype, category, visible in prototypesToRender:
             if (category!='Text and Tasks' and category!='Hidden'):
@@ -210,6 +222,6 @@ class IdevicePane(Renderable, Resource):
         xml += u"   <visible>" + str(visible).lower() + "</visible>\n"
         xml += u"  </idevice>\n"
         return xml
-        
-    
+
+
 # ===========================================================================
