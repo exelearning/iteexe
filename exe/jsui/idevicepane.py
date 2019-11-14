@@ -81,7 +81,11 @@ class IdevicePane(Renderable, Resource):
         for prototype in prototypes:
             lower_title =  prototype._title.lower()
             if hasattr(prototype, 'ideviceCategory') and prototype.ideviceCategory == 'Experimental':
-                self.config.hiddeniDevices.append(lower_title)
+                idevices_conf = self.config.configParser.idevices.items()
+                idevice_conf = [idv[1] for idv in idevices_conf if idv[0] == lower_title]
+                if not idevice_conf:
+                    self.config.hiddeniDevices.append(lower_title)
+                    self.config.configParser.set('idevices', lower_title, '0')
 
     def process(self, request):
         """
@@ -197,9 +201,15 @@ class IdevicePane(Renderable, Resource):
             prototype = self.prototypes[idevice['id']]
             visible = idevice['visible']
             lower_title = prototype._title.lower()
+            if 'category' in idevice.keys():
+                category = idevice['category']
+            else:
+                category = None
             try:
                 self.config.hiddeniDevices.remove(lower_title)
                 self.config.configParser.delete('idevices', lower_title)
+                if category == 'Experimental':
+                    self.config.configParser.set('idevices', lower_title, '1')
             except:
                 pass
             if not visible:
