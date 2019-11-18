@@ -1313,7 +1313,7 @@ translations = {
  "decide": "decideix", 
  "Failed to get properties": "Error en donar les propietats", 
  "integrated media": "media integrats", 
- "<p>Enter the text for the dropdown activity in to the dropdown field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to choose, double click on the word to select it and \nclick on the 'Hide\/Show' button below.<\/p>": "<p>Entreu el text per l'activitat desplegable al camp desplegable \nja sigui per enganxar text des d'una altra font o escrivint text directament al  \ncamp. <\/p><p> Per seleccionar les paraules a triar, feu doble clic a la paraula per seleccionar-la i \npremeu al bot\u00f3 \u00abAmaga\/Mostra\u00bb de sota. <\/ p>", 
+ "<p>Enter the text for the dropdown activity in to the dropdown field \nby either pasting text from another source or by typing text directly into the \nfield.<\/p><p> To select words to choose, double click on the word to select it and \nclick on the 'Hide\/Show' button below.<\/p>": "<p>Entreu el text per l'activitat desplegable al camp desplegable \nja sigui per enganxar text des d'una altra font o escrivint text directament al  \ncamp. <\/p><p> Per seleccionar les paraules a triar, feu doble clic a la paraula per seleccionar-la i \npremeu al bot\u00f3 \u00abAmaga\/Mostra\u00bb de sota.<\/p>", 
  "Common Cartridge": "Common Cartridge", 
  "EXPORT FAILED!": "Exportaci\u00f3 err\u00f2nia !", 
  "Now it's your turn": "Autoavaluaci\u00f3", 

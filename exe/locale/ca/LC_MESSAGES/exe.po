@@ -2359,7 +2359,7 @@ msgstr ""
 "directament al  \n"
 "camp. </p><p> Per seleccionar les paraules a triar, feu doble clic a la "
 "paraula per seleccionar-la i \n"
-"premeu al botó «Amaga/Mostra» de sota. </ p>"
+"premeu al botó «Amaga/Mostra» de sota.</p>"
 
 #: exe/engine/listaidevice.py:292
 msgid "Read the paragraph below and choose the correct words"
