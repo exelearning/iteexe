@@ -1058,7 +1058,7 @@ def elementInstruc(instruc, imageFile="help.gif", label=None):
         html = u''
     else:
         id_ = newId()
-        html  = u'<a href="javascript:void(o)" '
+        html  = u'<a href="javascript:void(0)" '
         html += u' title="%s" ' % _(u'Click for completion instructions')
         html += u'onclick="showMessageBox(\'%s\');" ' % id_
         html += u'style="cursor:help;margin-left:5px">'
