@@ -80,7 +80,9 @@ class IdevicePane(Renderable, Resource):
         prototypes = self.prototypes.values()
         for prototype in prototypes:
             lower_title =  prototype._title.lower()
-            if hasattr(prototype, 'ideviceCategory') and prototype.ideviceCategory == 'Experimental':
+            if (hasattr(prototype, 'ideviceCategory')
+            and prototype.ideviceCategory == 'Experimental'
+            and lower_title not in self.config.hiddeniDevices):
                 idevices_conf = self.config.configParser.idevices.items()
                 idevice_conf = [idv[1] for idv in idevices_conf if idv[0] == lower_title]
                 if not idevice_conf:
