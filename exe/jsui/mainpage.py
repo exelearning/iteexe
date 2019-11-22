@@ -274,9 +274,6 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleCreateDir, 'CreateDir')
         setUpHandler(self.handleOverwriteLocalStyle, 'overwriteLocalStyle')
 
-        setUpHandler(self.handleEditBasename, 'EditBasename')
-        setUpHandler(self.handleRemoveResourceFile, 'RemoveResourceFile')
-
         setUpHandler(self.handleSaveTemplate, 'saveTemplate')
         setUpHandler(self.handleLoadTemplate, 'loadTemplate')
 
@@ -1754,19 +1751,3 @@ class MainPage(RenderableLivePage):
             log.error(u'Traceback:\n%s' % traceback.format_exc())
             raise
         return package
-
-    def handleEditBasename(self, client, currentFile, newBasename):
-        basefile = Path(G.application.tempWebDir+currentFile)
-        try:
-            f = open(basefile, "w")
-            f.write("basename={}".format(newBasename))
-            f.close()
-        except:
-            log.error(u'Error editing basename file "%s"' % (basefile))
-
-    def handleRemoveResourceFile(self, client, currentFile):
-        pathfile = Path(G.application.resourceDir+"/"+currentFile)
-        try:
-            pathfile.remove()
-        except:
-            log.error(u'Error deleting resource file "%s"' % (pathfile))
