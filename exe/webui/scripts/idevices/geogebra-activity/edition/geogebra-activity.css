@@ -15,3 +15,5 @@ label[for=geogebraActivitySCORM]{font-weight:bold}
 #geogebraActivitySCORMinstructions{display:none;color:#777;margin:10px 0 0 25px}
 #geogebraActivitySCORMinstructions ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
 #geogebraActivitySCORMinstructions ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}
+#geogebraActivitySize.loading{background:url(../export/geogegra-activity-loading.gif) no-repeat 0 50%;background-size:24px 24px}
+#geogebraActivitySize.loading *{visibility:hidden}
