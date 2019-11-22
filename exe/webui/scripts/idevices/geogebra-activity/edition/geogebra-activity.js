@@ -136,16 +136,14 @@ var $exeDevice = {
 						} else {
 							$("#geogebraActivitySize").removeClass("loading");
 						}
+					} else {
+						$("#geogebraActivitySize").removeClass("loading");
 					}
 				},
 				error: function(){
 					$("#geogebraActivitySize").removeClass("loading");
 				}
 			});
-			// Hide the indicator after 5 seconds (in case anything fails)
-			setTimeout(function(){
-				$("#geogebraActivitySize").removeClass("loading");
-			},5000);
 		});
         
         $("#geogebraActivityWidth,#geogebraActivityHeight").keyup(function(){
