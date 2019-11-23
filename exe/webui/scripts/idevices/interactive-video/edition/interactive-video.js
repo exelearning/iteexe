@@ -228,10 +228,8 @@ var $exeDevice = {
 			if (typeof(InteractiveVideo)=='object' && typeof(InteractiveVideo.slides)=='object') {
 				top.interactiveVideoEditor.activityToSave = InteractiveVideo;
 				if (typeof(InteractiveVideo.i18n)=='object') {
-					for (var i in InteractiveVideo.i18n) {
-						var v = InteractiveVideo.i18n[i];
-						if (v!="") $("#ci18n_"+i).val(v);
-					}
+					// i18n
+					$exeAuthoring.iDevice.gamification.common.setLanguageTabValues(InteractiveVideo.i18n);
 				}
 			}
 			// Save the list of images and remove the wrapper

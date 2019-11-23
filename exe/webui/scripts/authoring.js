@@ -947,6 +947,12 @@ var $exeAuthoring = {
                         ' + html + '\
                     </div>'
                 },
+                setLanguageTabValues : function(obj) {
+					for (var i in obj) {
+						var v = obj[i];
+						if (v!="") $("#ci18n_"+i).val(v);
+					}
+                },
                 getGamificationTab : function(){
                     return '\
                     ' + $exeAuthoring.iDevice.gamification.itinerary.getItineraryTab() + '\
