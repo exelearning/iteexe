@@ -909,6 +909,8 @@ var $exeDevice = {
             $exeDevice.questionsGame = dataGame.questionsGame;
             var instructions = $(".quext-instructions", wrapper);
             if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
+            // i18n
+            $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
 
         }

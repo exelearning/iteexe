@@ -73,7 +73,7 @@ var $exeDevice = {
 		yellow: '#f3d55a',
 		grey:'#818181'
 	},
-	letters: "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+	letters:  _("abcdefghijklmnopqrstuvwxyz").toUpperCase() ,
 	init: function () {
 		this.setMessagesInfo();
 		this.createForm();
@@ -142,6 +142,7 @@ var $exeDevice = {
 		this.loadPreviousValues(field);
 	},
 	updateFieldGame: function (dataGame) {
+		$exeDevice.letters=dataGame.letters?dataGame.letters:_("abcdefghijklmnopqrstuvwxyz").toUpperCase();
 		$('#roscoDuration').val(dataGame.durationGame)
 		$('#roscoNumberTurns').val(dataGame.numberTurns);
 		$('#roscoShowSolution').prop("checked", dataGame.showSolution);
@@ -149,40 +150,51 @@ var $exeDevice = {
 		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
 
 		$('.roscoWordEdition').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].word);
+			var word=index<dataGame.wordsGame.length?dataGame.wordsGame[index].word:"";
+			$(this).val(word);
 		});
 		$('.roscoDefinitionEdition').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].definition);
+			var definition=index<dataGame.wordsGame.length?dataGame.wordsGame[index].definition:"";
+			$(this).val(definition);
 		});
 		$('.roscoAuthorEdition').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].author);
+			var author=index<dataGame.wordsGame.length?dataGame.wordsGame[index].author:"";
+			$(this).val(author);
 		});
 		$('.roscoAlt').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].alt);
+			var alt=index<dataGame.wordsGame.length?dataGame.wordsGame[index].alt:"";
+			$(this).val(alt);
 		});
 		$('.roscoURLImageEdition').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].url);
+			var url=index<dataGame.wordsGame.length?dataGame.wordsGame[index].url:"";
+			$(this).val(url);
 		});
 		$('.roscoXImageEdition').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].x);
+			var x=index<dataGame.wordsGame.length?dataGame.wordsGame[index].x:0; 
+			$(this).val(x);
 		});
 		$('.roscoYImageEdition').each(function (index) {
-			$(this).val(dataGame.wordsGame[index].y);
+			var y=index<dataGame.wordsGame.length?dataGame.wordsGame[index].y:0; 
+			$(this).val(y);
 		});
 		$('.roscoStartEdition').each(function (index) {
-			var imageStart = (dataGame.wordsGame[index].type == 1) ? "roscoContains.png" : "roscoStart.png";
+			var type=index<dataGame.wordsGame.length?dataGame.wordsGame[index].type:1;
+			var imageStart = (type) ? "roscoContains.png" : "roscoStart.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageStart);
 		});
 		$('.roscoSelectImageEdition').each(function (index) {
-			var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
+			var url=index<dataGame.wordsGame.length?dataGame.wordsGame[index].url:"";
+			var imageSelect = $.trim(url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
 		});
 		$('.imagesLink').each(function (index) {
-			var imageSelect = $.trim(dataGame.wordsGame[index].url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
+			var url=index<dataGame.wordsGame.length?dataGame.wordsGame[index].url:"";
+			var imageSelect = $.trim(url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
 		});
 		$('h3.roscoLetterEdition').each(function (index) {
-			var longitud = (dataGame.wordsGame[index].word).length;
+			var word=index<dataGame.wordsGame.length?dataGame.wordsGame[index].word:"";
+			var longitud = word.length;
 			var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.grey;
 			$(this).css('background-color', color);
 		});
@@ -560,7 +572,8 @@ var $exeDevice = {
 			'wordsGame': wordsGame,
 			'isScorm': scorm.isScorm,
 			'textButtonScorm': scorm.textButtonScorm,
-			'repeatActivity':scorm.repeatActivity
+			'repeatActivity':scorm.repeatActivity,
+			'letters':this.letters
 		}
 		return data;
 	},

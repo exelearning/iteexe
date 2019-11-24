@@ -24,7 +24,7 @@ var $eXeRosco = {
 		white: '#ffffff',
 		yellow: '#f3d55a'
 	},
-	letters: "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ",
+	letters: "",
 	angleSize: "",
 	radiusLetter: 16,
 	options: [],
@@ -118,6 +118,9 @@ var $eXeRosco = {
 			var imagesLink = $('.rosco-LinkImages', this);
 			var option = $eXeRosco.loadDataGame(dl, imagesLink);
 			$eXeRosco.options.push(option);
+			$eXeRosco.letters=option.letters;
+			$eXeRosco.radiusLetter=16+ Math.floor((27-option.letters.length)/3);
+			$eXeRosco.angleSize = 2 * Math.PI / option.letters.length;
 			var rosco = $eXeRosco.createInterfaceRosco(i);
 			dl.before(rosco).remove();
 			var msg = $eXeRosco.options[i].msgs.msgPlayStart;
@@ -758,7 +761,7 @@ var $eXeRosco = {
 			mOptions = $eXeRosco.options[instance];
 		while (end) {
 			numActiveWord++;
-			if (numActiveWord > 26) {
+			if (numActiveWord > $eXeRosco.letters.length-1) {
 				if (mOptions.activeGameSpin < mOptions.numberTurns) {
 					if (mOptions.answeredWords >= mOptions.validWords) {
 						end = false
@@ -936,14 +939,14 @@ var $eXeRosco = {
 					'color': mFontColor
 				});
 				var ctxt = mOptions.ctxt,
-					angle = ($eXeRosco.angleSize * (iNumber + 20)) % 27,
+					angle = ($eXeRosco.angleSize * (iNumber + $eXeRosco.letters.length -6)) % $eXeRosco.letters.length,
 					radiusLetter = $eXeRosco.radiusLetter,
 					xCenter = $eXeRosco.mcanvas.width / 2,
 					yCenter = $eXeRosco.mcanvas.height / 2,
 					radius = $eXeRosco.mcanvas.width / 2 - radiusLetter * 2,
 					yPoint = yCenter + radius * Math.sin(angle),
 					xPoint = xCenter + radius * Math.cos(angle),
-					font = ' bold 20px sans-serif ';
+					font = $eXeRosco.getFontSizeLetters();
 				ctxt.beginPath();
 				ctxt.strokeStyle = $eXeRosco.colors.white;
 				ctxt.arc(xPoint, yPoint, radiusLetter, 0, 2 * Math.PI);
@@ -1057,10 +1060,10 @@ var $eXeRosco = {
 			letter = "";
 		for (var i = 0; i < $eXeRosco.letters.length; i++) {
 			letter = $eXeRosco.letters.charAt(i);
-			var angle = ($eXeRosco.angleSize * (i + 20)) % 27,
+			var angle = ($eXeRosco.angleSize * (i + $eXeRosco.letters.length-6)) % $eXeRosco.letters.length,
 				yPoint = yCenter + radius * Math.sin(angle),
 				xPoint = xCenter + radius * Math.cos(angle),
-				font = ' bold 20px sans-serif ';
+				font = $eXeRosco.getFontSizeLetters();
 			ctxt.beginPath();
 			ctxt.lineWidth = 0;
 			ctxt.strokeStyle = $eXeRosco.colors.black;
@@ -1079,6 +1082,30 @@ var $eXeRosco = {
 			ctxt.fillText(letter, xPoint - whidthLetter / 2, yPoint + 2);
 			ctxt.closePath();
 		}
+	},
+	getFontSizeLetters: function(){
+		var mFont="20px",
+		fontS=' bold %1 sans-serif ';
+		if($eXeRosco.letters.length<18){
+			mFont="24px"
+		}if($eXeRosco.letters.length<24){
+			mFont="22px"
+		}else if($eXeRosco.letters.length<32){
+			mFont="20px"
+		}else if($eXeRosco.letters.length<36){
+			mFont="16px"
+		}else if($eXeRosco.letters.length<40){
+			mFont="14px"
+		}else if($eXeRosco.letters.length<44){
+			mFont="12px"
+		}else if($eXeRosco.letters.length<50){
+			mFont="10px"
+		}else if($eXeRosco.letters.length<100){
+			mFont="8px"
+		}
+		fontS= fontS.replace('%1', mFont);
+		return fontS;
+
 	},
 	drawRows: function (instance) {
 		var mOptions = $eXeRosco.options[instance],

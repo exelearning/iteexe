@@ -35,7 +35,7 @@
     
   
 }
-#vquextIdeviceForm .vquext-EPointBar{
+#vquextIdeviceForm .vquext-EPointBar, #vquextIdeviceForm .vquext-EPointStart, #vquextIdeviceForm .vquext-EPointEnd{
     position: absolute;
     margin:0;
     padding: 0;
@@ -45,6 +45,9 @@
     width: 5px;
     background-color:#8697cb;
     z-index: 900;
+}
+#vquextIdeviceForm .vquext-EPointStart, #vquextIdeviceForm .vquext-EPointEnd{
+  background-color:#0aa30a;
 }
 
   #vquextIdeviceForm .vquextIdevice {

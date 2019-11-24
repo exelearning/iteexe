@@ -170,6 +170,8 @@ var $exeDevice = {
             $exeDevice.updateFieldGame(dataGame);
             var instructions = $(".adivina-instructions", wrapper);
             if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
+            // i18n
+            $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
         }
     },
     save: function () {
