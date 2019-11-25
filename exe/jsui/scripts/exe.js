@@ -21,7 +21,11 @@ if (!window.translations)
     translations = {};
 
 function _(msg) {
-    return translations[msg] || msg;
+    return translations_app[msg] || msg;
+}
+
+function c_(msg) {
+    return translations_package[msg] || msg;
 }
 
 Ext.Loader.setConfig({
@@ -417,4 +421,3 @@ Ext.application({
     appFolder: "jsui/app"
 
 });
-

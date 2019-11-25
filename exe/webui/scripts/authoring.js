@@ -889,10 +889,10 @@ var $exeAuthoring = {
 				if (typeof($exeDevice.i18n)!="undefined") {
 					var lang = $("HTML").attr("lang");
 					if (typeof($exeDevice.i18n[lang])!="undefined") {
-						return top.translations[str] || $exeDevice.i18n[lang][str] || str;
+						return top.translations_app[str] || $exeDevice.i18n[lang][str] || str;
 					}
 				}
-				return top.translations[str] || str;
+				return top.translations_app[str] || str;
 			}
 			
 			// Enable the iDevice
@@ -939,7 +939,21 @@ var $exeAuthoring = {
                 getLanguageTab : function(fields){
                     var html = "";
                     for (var i in fields) {
-                        html += '<p class="ci18n"><label for="ci18n_' + i + '">' + fields[i] + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + fields[i] + '" /></p>'
+                        field =  fields[i]
+                        if (typeof field == "string") {
+                            label = field
+                            text = field
+                        } else {
+                            if (field.length == 2) {
+                                label = field[0]
+                                text = field[1]
+                            } else {
+                                label = field[0]
+                                text = field[0]
+                            }
+                        }
+                        html += '<p class="ci18n"><label for="ci18n_' + i + '">' + label + '</label> \
+                        <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + text + '" /></p>'
                     }
                     return '\
                     <div class="exe-form-tab" title="' + _('Language settings') + '">\

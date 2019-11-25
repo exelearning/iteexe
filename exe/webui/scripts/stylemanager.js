@@ -1,4 +1,5 @@
 _ = parent._;
+c_ = parent.c_;
 Ext = parent.Ext;
 eXe = parent.eXe;
 
@@ -91,4 +92,3 @@ function doDelete(styleDirname){
 		}
 	});
 }
-
