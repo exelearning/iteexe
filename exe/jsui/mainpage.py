@@ -319,10 +319,6 @@ class MainPage(RenderableLivePage):
     def render_jsuilang(self, ctx, data):
         return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
 
-    def render_cjsuilang(self, ctx, data):
-        ci18 = self.package.lang
-        return ctx.tag(src="../jsui/i18n/" + unicode(self.package.lang) + ".js")
-
     def render_extjslang(self, ctx, data):
         return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + unicode(G.application.config.locale) + ".js")
 
@@ -366,7 +362,7 @@ class MainPage(RenderableLivePage):
         if self.package.isTemplate and not self.package.isChanged:
             client.sendScript(ifTemplate)
         else:
-            client.sendScript(ifTemplate)
+            client.sendScript(ifNotTemplate)
 
     def handlePackageFileName(self, client, onDone, onDoneParam,export_type_name):
         """

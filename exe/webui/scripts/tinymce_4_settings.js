@@ -1,5 +1,4 @@
 _ = parent._;
-c_ = parent.c_;
 
 var $exeTinyMCE = {
 	
