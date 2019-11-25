@@ -835,6 +835,19 @@ var exe_tinymce = {
 	
 }
 
+c_ = function(str) {
+    var a = _(str);
+    var b = a;
+    if (typeof(translations)!='undefined') {
+        if (typeof(exe_elp_lang)!='undefined' && exe_elp_lang=="en") b = str;
+        else b = translations[str] || a;
+    }
+    return [
+        a,
+        b
+    ]
+}
+
 var $exeAuthoring = {
 	errorHandler : function(origin){
         
@@ -938,8 +951,22 @@ var $exeAuthoring = {
                 },
                 getLanguageTab : function(fields){
                     var html = "";
+                    var field, label, txt;
                     for (var i in fields) {
-                        html += '<p class="ci18n"><label for="ci18n_' + i + '">' + fields[i] + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + fields[i] + '" /></p>'
+                        field =  fields[i]
+                        if (typeof field == "string") {
+                            label = field
+                            txt = field
+                        } else {
+                            if (field.length == 2) {
+                                label = field[0]
+                                txt = field[1]
+                            } else {
+                                label = field[0]
+                                txt = field[0]
+                            }
+                        }
+                        html += '<p class="ci18n"><label for="ci18n_' + i + '">' + label + '</label> <input type="text" name="ci18n_' + i + '" id="ci18n_' + i + '" value="' + txt + '" /></p>'
                     }
                     return '\
                     <div class="exe-form-tab" title="' + _('Language settings') + '">\
@@ -948,11 +975,13 @@ var $exeAuthoring = {
                     </div>'
                 },
                 setLanguageTabValues : function(obj) {
-					for (var i in obj) {
-						var v = obj[i];
-						if (v!="") $("#ci18n_"+i).val(v);
-					}
-                },
+					if (typeof obj=="object") {
+                        for (var i in obj) {
+                            var v = obj[i];
+                            if (v!="") $("#ci18n_"+i).val(v);
+                        }
+                    }
+                },                
                 getGamificationTab : function(){
                     return '\
                     ' + $exeAuthoring.iDevice.gamification.itinerary.getItineraryTab() + '\

@@ -242,6 +242,14 @@ class AuthoringPage(RenderableResource):
         html += 'var exe_editor_version="'+myPreferencesPage.getEditorVersion()+'";'
         html += '</script>\n'        
         html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
+        htmlLang = G.application.config.locale
+        if self.package.dublinCore.language!="":
+            htmlLang = self.package.dublinCore.language
+        for subDir in G.application.config.localeDir.dirs():
+            if (subDir/'LC_MESSAGES'/'exe.mo').exists():
+                if  str(subDir.basename())==htmlLang and htmlLang!=myPreferencesPage.getSelectedLanguage():
+                    html += u'<script type="text/javascript" src="../jsui/i18n/'+htmlLang+'.js"></script>\n'
+                    html += u'<script type="text/javascript">var exe_elp_lang="'+htmlLang+'";</script>\n'
         html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_lightbox/exe_lightbox.js"></script>\n'
