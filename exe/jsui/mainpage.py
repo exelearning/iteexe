@@ -366,7 +366,7 @@ class MainPage(RenderableLivePage):
         if self.package.isTemplate and not self.package.isChanged:
             client.sendScript(ifTemplate)
         else:
-            client.sendScript(ifTemplate)
+            client.sendScript(ifNotTemplate)
 
     def handlePackageFileName(self, client, onDone, onDoneParam,export_type_name):
         """
