@@ -189,6 +189,7 @@ class Checker:
                         # This check is necessary to avoid duplication of resources
                         # when opening elp with JS iDevices
                         if ((hasattr(idevice, 'klass') and hasattr(idevice, 'resourcesUrl'))
+                        or (hasattr(idevice, 'fileAttachmentFields') and idevice.fileAttachmentFields)
                         or hasattr(idevice, '_idevice')):
                             try:
                                 resource = Resource(idevice, path)
@@ -209,6 +210,8 @@ class Checker:
                                     elif image._thumbnailResource.storageName == resource.storageName:
                                         image._thumbnailResource = resource
                                         break
+                        else:
+                            None
                 elif self.package._backgroundImg and path == self.package._backgroundImg.path:
                     self.package._backgroundImg = Resource(self.package, path)
         for check in dir(self):
