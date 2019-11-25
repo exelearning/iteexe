@@ -485,28 +485,15 @@ class IdeviceStore:
 
         self.factoryiDevices = self.__getFactoryExtendediDevices()
 
-        # Delete config/extended.data when updating the application
-        extdata_conf_reset = False
-
-        if self.config.configParser.has_section('user'):
-            useritems = self.config.configParser.user
-            label = u'extendedDataReset'
-            if label in useritems:
-                if useritems[label] == '0':
-                    extdata_conf_reset = True
-                    self.config.configParser.set('user', label, '1')
-            else:
-                extdata_conf_reset = True
-                self.config.configParser.set('user', label, '1')
-
+        # Temporarily (or not) we will make extended.data be rebuilt every time the application starts
+        rebuilt_extended = True
 
         # Check if path exist and and if necessary delete config/extended.data
-        if extendedPath.exists() and not extdata_conf_reset:
+        if extendedPath.exists() and not rebuilt_extended:
             self.extended = persist.decodeObject(extendedPath.bytes())
             self.__upgradeExtended()
         else:
             self.extended = copy.deepcopy(self.factoryiDevices)
-            #self.extended = self.factoryiDevices
             for idevice in self.__getIdevicesFPD():
                 self.delIdevice(idevice)
 
