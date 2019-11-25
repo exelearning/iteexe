@@ -398,7 +398,7 @@ var $exeDevice = {
 			for (var i in fields) {
 				var fVal = $("#ci18n_"+i).val();
 				if (fVal!="") i18n[i] = fVal;
-                else i18n[i] = fields[1];
+				else i18n[i] = fields[1];
 			}
 
 			top.interactiveVideoEditor.activityToSave.i18n = i18n;
