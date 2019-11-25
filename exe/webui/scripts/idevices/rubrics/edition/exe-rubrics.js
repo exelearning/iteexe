@@ -15,13 +15,13 @@ var $exeDevice = {
 	// Editable strings ("Language settings tab")
 	// See $rubricIdevice.ci18n too
 	ci18n : {
-		"activity" : _("Activity"),
-		"name" : _("Name"),
-		"date" : _("Date"),
-		"score" : _("Score"),
-		"notes" : _("Notes"),
-		"reset" : _("Reset"),
-		"print" : _("Print")
+		"activity" : c_("Activity"),
+		"name" : c_("Name"),
+		"date" : c_("Date"),
+		"score" : c_("Score"),
+		"notes" : c_("Notes"),
+		"reset" : c_("Reset"),
+		"print" : c_("Print")
 	},	
 	
 	// Default rubrics (just one for the moment)
@@ -777,6 +777,7 @@ var $exeDevice = {
 		var strings = data.i18n;
 		for (var i in strings) {
 			var field = $("#ci18n_"+i);
+			data.i18n[i] = strings[i][1];
 			if (field.length==1 && field.val()!="") {
 				data.i18n[i] = field.val();
 			}

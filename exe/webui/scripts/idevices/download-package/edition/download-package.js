@@ -154,29 +154,45 @@ var $exeDevice = {
 			}
 		}
 		
+		// i18n
+		var str1 = c_("General information about this educational resource");
+			str1 = str1[1];
+		var str2 = c_("Title");
+			str2 = str2[1];	
+		var str3 = c_("Description");
+			str3 = str3[1];
+		var str4 = c_("Author");
+			str4 = str4[1];
+		var str5 = c_("'License'");
+			str5 = str5[1];
+		var str6 = c_("This content was created with eXeLearning, your free and open source editor to create educational resources.");
+			str6 = str6[1];	
+		var str7 = c_("Download elp file");
+			str7 = str7[1];				
+		
 		var defaultContent = '\
 			<table class="exe-table">\
-				<caption>'+_("General information about this educational resource")+' </caption>\
+				<caption>'+str1+' </caption>\
 				<tbody>\
 					<tr>\
-						<th>'+_('Title')+' </th>\
+						<th>'+str2+' </th>\
 						<td>'+data1+' </td>\
 					</tr>\
 					<tr>\
-						<th>'+_('Description')+' </th>\
+						<th>'+str3+' </th>\
 						<td>'+data2+' </td>\
 					</tr>\
 					<tr>\
-						<th>'+_('Author')+' </th>\
+						<th>'+str4+' </th>\
 						<td>'+data3+' </td>\
 					</tr>\
 					<tr>\
-						<th>'+_('License')+' </th>\
+						<th>'+str5+' </th>\
 						<td>'+data4+' </td>\
 					</tr>\
 				</tbody>\
 			</table>\
-			<p style="text-align:center">'+_("This content was created with eXeLearning, your free and open source editor to create educational resources.").replace('eXeLearning','<a href="http://exelearning.net/">eXeLearning</a>')+'</p>';
+			<p style="text-align:center">'+str6.replace('eXeLearning','<a href="http://exelearning.net/">eXeLearning</a>')+'</p>';
 		
 		var html = '\
 			<div id="eXeDownloadPackageForm">\
@@ -185,7 +201,7 @@ var $exeDevice = {
 				<fieldset>\
 					<legend>'+_("Download link")+'</legend>\
 					<p>\
-						<label for="dpiButtonText">'+_("Button text:")+' </label><input type="text" id="dpiButtonText" value="'+_("Download elp file")+'" /> \
+						<label for="dpiButtonText">'+_("Button text:")+' </label><input type="text" id="dpiButtonText" value="'+str7+'" /> \
 						<label for="dpiButtonFontSize" class="dpi-label-col">'+_("Font size")+': </label>\
 						<select id="dpiButtonFontSize">\
 							<option value="1" selected="selected">100%</option>\

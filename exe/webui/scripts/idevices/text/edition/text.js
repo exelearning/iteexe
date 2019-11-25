@@ -15,6 +15,8 @@ var $exeDevice = {
 	
 	init : function(){
 		// Create the form
+		var a = c_("Show Feedback");
+			a = a[1];		
 		var html = "\
 			<div class='exe-textarea-field'>\
 				<label for='textIdeviceContent'>"+_('Text')+":</label>\
@@ -25,7 +27,7 @@ var $exeDevice = {
 				<div>\
                     <p class='exe-text-field-inline'>\
                         <label for='textIdeviceFeedbackButtonText'>"+_("Feedback button text")+":</label>\
-                        <input type='text' id='textIdeviceFeedbackButtonText' value='"+_("Show Feedback")+"' />\
+                        <input type='text' id='textIdeviceFeedbackButtonText' value='"+a+"' />\
                     </p>\
                     <p>\
 						<label for='textIdeviceFeedbackContent' class='sr-av'>"+_('Feedback')+":</label>\

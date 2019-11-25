@@ -52,9 +52,12 @@ var $exeDevice = {
 		
 		// Default values
 		var instructions = "";
-		var buttonText = _("Check");
-		var rightText = _("Right!");
-		var wrongText = _("Sorry... The right answer is:");		
+		var buttonText = c_("Check");
+			buttonText = buttonText[1];
+		var rightText = c_("Right!");
+			rightText = rightText[1];
+		var wrongText = c_("Sorry... The right answer is:");		
+			wrongText = wrongText[1];
 		
 		var originalHTML = field.val();
 		if (originalHTML != '') {

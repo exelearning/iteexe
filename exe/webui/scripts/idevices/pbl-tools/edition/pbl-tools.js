@@ -15,6 +15,12 @@ var $exeDevice = {
 	
 	init : function(){
 		// Add some instructions
+		var a = c_("Duration");
+			a = a[1];
+		var b = c_("Grouping");
+			b = b[1];
+		var c = c_("Show Feedback");
+			c = c[1];			
 		var html = "\
 			<fieldset id='pblTaskInfo' class='exe-fieldset'>\
 				<legend>"+_('Task information')+"</legend>\
@@ -22,13 +28,13 @@ var $exeDevice = {
 					<label for='pblTaskDuration'>"+_("Estimated duration")+":</label>\
 					<input type='text' id='pblTaskDuration' placeholder='00:00' />\
 					<label for='pblTaskDurationText'>"+_("Text to display")+":</label>\
-					<input type='text' id='pblTaskDurationText' value='"+_("Duration")+":' />\
+					<input type='text' id='pblTaskDurationText' value='"+a+":' />\
 				</p>\
 				<p>\
 					<label for='pblTaskParticipants'>"+_("Participants")+":</label>\
 					<input type='text' id='pblTaskParticipants' placeholder='"+_('Number or description')+"' />\
 					<label for='pblTaskParticipantsText'>"+_("Text to display")+":</label>\
-					<input type='text' id='pblTaskParticipantsText' value='"+_("Grouping")+":' />\
+					<input type='text' id='pblTaskParticipantsText' value='"+b+":' />\
 				</p>\
 			</fieldset>\
 			<div class='exe-textarea-field'>\
@@ -40,7 +46,7 @@ var $exeDevice = {
 				<div>\
 					<p class='exe-text-field-inline'>\
 						<label for='pblTaskFeedbackButtonText'>"+_("Feedback button text")+":</label>\
-						<input type='text' id='pblTaskFeedbackButtonText' value='"+_("Show Feedback")+"' />\
+						<input type='text' id='pblTaskFeedbackButtonText' value='"+c+"' />\
 					</p>\
 					<p>\
 						<label for='pblTaskFeedbackContent' class='sr-av'>"+_('Feedback')+":</label>\

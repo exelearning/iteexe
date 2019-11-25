@@ -47,6 +47,9 @@ var $exeDevice = {
 	
 	// Create the form to insert HTML in the TEXTAREA
 	createForm : function(){
+		// i18n
+		var str1 = c_("Save score");
+			str1 = str1[1];
 		var html = '\
 			<div id="eXeAutoGeogebraForm">\
 				<p class="exe-idevice-description">'+_("Insert a GeoGebra activity from www.geogebra.org. It requires an Internet connection.").replace(' www.geogebra.org',' <a href="https://www.geogebra.org/" target="_blank" rel="noopener noreferrer">www.geogebra.org</a>')+'</p>\
@@ -82,7 +85,7 @@ var $exeDevice = {
 							<label for="geogebraActivitySCORM"><input type="checkbox" name="geogebraActivitySCORM" id="geogebraActivitySCORM" /> '+_("Save score button")+'</label>\
 							<span id="geogebraActivitySCORMoptions">\
 								<label for="geogebraActivitySCORMbuttonText">'+_("Button text")+': </label>\
-								<input type="text" max="100" name="geogebraActivitySCORMbuttonText" id="geogebraActivitySCORMbuttonText" value="'+_("Save score")+'" /> \
+								<input type="text" max="100" name="geogebraActivitySCORMbuttonText" id="geogebraActivitySCORMbuttonText" value="'+str1+'" /> \
 							</span>\
 						</p>\
 						<div id="geogebraActivitySCORMinstructions">\
