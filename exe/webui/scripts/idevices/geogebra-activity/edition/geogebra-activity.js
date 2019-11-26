@@ -119,7 +119,7 @@ var $exeDevice = {
 			if (id=="") return;
 			// Remove all spaces
 			id = id.replace(/ /g,"");
-			var data={request:{"-api":"1.0.0",task:{"-type":"fetch",fields:{field:[{"-name":"url"},{"-name":"title"},{"-name":"author"},{"-name":"author_url"},{"-name":"ggbbase64"}]},filters:{field:[{"-name":"id","#text":id}]},order:{"-by":"timestamp","-type":"desc"},limit:{"-num":"1"}}}};
+			var data={request:{"-api":"1.0.0",task:{"-type":"fetch",fields:{field:[{"-name":"width"},{"-name":"height"}]},filters:{field:[{"-name":"id","#text":id}]},order:{"-by":"timestamp","-type":"desc"},limit:{"-num":"1"}}}};
 			$("#geogebraActivitySize").addClass("loading");
 			$.ajax({
 				type: "POST",
