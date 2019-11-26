@@ -294,9 +294,16 @@ var $exe = {
 					if (typeof currHTML=='string') currHTML = $exe.clientSearch.strip(currHTML);
 					if (currTit.indexOf(query)!=-1 || currHTML.toLowerCase().indexOf(query)!=-1) {
 						var a = as.eq(nodeNo);
+						// Test. Find a siteNav href by Title instead of nodeNo in case the titles do not match
+						a_by_title = $("#siteNav a:contains('"+sTitle+"')")
+						if (a.html() != sTitle && a_by_title) {
+							a = a_by_title;
+						}
 						if (a.length==1) {
 							if (currHTML=="") currHTML = "...";
-							else res += '<li><strong><a href="'+a.attr("href")+'" class="exe-client-search-result-link">'+sTitle+'</a> &rarr; </strong><span class="exe-client-search-result-detail">'+currHTML+"</span></li>";
+							else res += '<li><strong><a href="'+a.attr("href")+'" \
+							class="exe-client-search-result-link">'+sTitle+'</a> &rarr; </strong>\
+							<span class="exe-client-search-result-detail">'+currHTML+"</span></li>";
 						}					
 					}
 				}
