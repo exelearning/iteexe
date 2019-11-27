@@ -17,7 +17,8 @@ var $rubricIdevice = {
 		"score" : "Score",
 		"notes" : "Notes",
 		"reset" : "Reset",
-		"apply" : "Apply"
+		"apply" : "Apply",
+		"newWindow" : "New Window"
 	},
     
 	init : function(){
@@ -37,7 +38,9 @@ var $rubricIdevice = {
 				});
 			}
 			
-			$("caption",table).append(' <a href="#" class="exe-rubric-print" id="print-'+this.id+'"><span>'+$rubricIdevice.ci18n.apply+'</span></a>');
+			var i18n = $rubricIdevice.ci18n;
+			
+			$("caption",table).append(' <a href="#" class="exe-rubric-print" id="print-'+this.id+'" title="'+i18n.apply+' ('+i18n.newWindow.toLowerCase()+')"><span>'+i18n.apply+'</span></a>');
 			
 			$("#print-"+this.id).click(function(){
 				if (typeof($exeAuthoring)!="undefined" && typeof(eXe)!="undefined") {

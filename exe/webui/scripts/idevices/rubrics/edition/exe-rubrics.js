@@ -21,7 +21,8 @@ var $exeDevice = {
 		"score" : c_("Score"),
 		"notes" : c_("Notes"),
 		"reset" : c_("Reset"),
-		"apply" : c_("Apply")
+		"apply" : c_("Apply"),
+		"newWindow" : c_("New Window")
 	},	
 	
 	// Default rubrics (just one for the moment)
