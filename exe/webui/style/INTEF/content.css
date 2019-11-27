@@ -74,7 +74,7 @@ ol,ul{color:#3a4749}
 .iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:top;top:0;color:#007691;line-height:60px;padding-right:25px;letter-spacing:.5px}
 .hidden-idevice .iDeviceTitle{color:#526668}
 
-.iDevice_content{overflow:auto;text-align:justify}
+.iDevice_content{overflow:auto}
 /* iDevice content */
 .iDevice_inner{padding:10px 20px;background:#f5f7f8;box-shadow:rgba(0, 0, 0, 0.3) 3px 3px 4px}
 
