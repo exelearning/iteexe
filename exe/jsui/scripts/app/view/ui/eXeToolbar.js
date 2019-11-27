@@ -645,7 +645,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 					margin: '0 30 0 0',
 					items: [
                         {
-                            boxLabel: _('Advanced user'),
+                            boxLabel: _('Advanced mode'),
                             tooltip: _('Checking this option will show more elements in the menus (File, Tools...) and the Properties tab.'),
                             name: 'advanced_toggler',
                             inputValue: '1',
