@@ -3,9 +3,8 @@
 .exe-rubric-authorship{margin-top:-1.5em;text-align:center;font-size:.9em;margin-bottom:2em}
 .exe-rubric-strings{display:none!important}
 .RubricIdevice caption{font-size:1.05em}
-.RubricIdevice .exe-rubric-print{display:inline-block;width:16px;height:16px;background:url(exe-rubrics-printer.gif) no-repeat 0 0;opacity:.3;position:relative;margin-left:1em;vertical-align:middle}
+.RubricIdevice .exe-rubric-print{vertical-align:top;font-size:.8em;margin-left:.7em}
 .RubricIdevice .exe-rubric-print:hover,.RubricIdevice .exe-rubric-print:focus{opacity:1}
-.RubricIdevice .exe-rubric-print span{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0}
 .RubricIdevice td span{opacity:.8;margin-left:3px;font-size:.9em}
 /* Print version */
 body.exe-rubric{background:rgb(204,204,204);font-family:Arial,Helvetica,sans-serif;font-size:10pt;line-height:2em}

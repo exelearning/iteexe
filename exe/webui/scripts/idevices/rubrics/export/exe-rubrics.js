@@ -17,7 +17,7 @@ var $rubricIdevice = {
 		"score" : "Score",
 		"notes" : "Notes",
 		"reset" : "Reset",
-		"print" : "Print"
+		"apply" : "Apply"
 	},
     
 	init : function(){
@@ -37,7 +37,7 @@ var $rubricIdevice = {
 				});
 			}
 			
-			$("caption",table).append(' <a href="#" class="exe-rubric-print" id="print-'+this.id+'"><span>'+$exe_i18n.print+'</span></a>');
+			$("caption",table).append(' <a href="#" class="exe-rubric-print" id="print-'+this.id+'"><span>'+$rubricIdevice.ci18n.apply+'</span></a>');
 			
 			$("#print-"+this.id).click(function(){
 				if (typeof($exeAuthoring)!="undefined" && typeof(eXe)!="undefined") {
