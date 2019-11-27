@@ -508,7 +508,7 @@ For use with field_engine_check_delete
 
 """
 def field_engine_is_delete(element, request, fieldList):
-    if "action" in request.args and request.args["action"][0] == element.id:
+    if "action" in request.args and request.args["action"][0] == "delfile"+element.id:
         return True
     
     return False
@@ -541,7 +541,7 @@ def field_engine_check_delete_all(elementList, request, fieldList):
 Utility method to make a delete button for elements in an idevice to remove
 them from a list - works together with field_engine_check_delete
 """
-def field_engine_make_delete_button(element, imgAltText = "Delete Item", prefix = ""):
+def field_engine_make_delete_button(element, imgAltText = "Delete Item", prefix = "delfile"):
     html = ""
     html += common.submitImage(prefix + element.id, element.field.idevice.id, 
                                    "/images/stock-cancel.png",
@@ -609,8 +609,3 @@ def field_engine_get_template_absolute_path(templateFileName):
         templateLoadFileName = globals.application.config.webDir/"templates"/templateFileName
     
     return templateLoadFileName
-            
-
-
-
-
