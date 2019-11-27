@@ -85,6 +85,8 @@ var $rubricIdevice = {
 			});
 		});
 		
+		$rubricIdevice.getMaxScore();
+		
 		// Clear form button
 		$("#clear").click(function(){
 			$("input[type='checkbox']").prop("checked",false);
@@ -103,6 +105,26 @@ var $rubricIdevice = {
 		
 	},
 	
+	// Add the scores of the first level and show the result in #ri_MaxScore
+	getMaxScore : function(){
+		var trs = $("table tbody tr");
+		var nums = [];
+		trs.each(function(){
+			var val = $("td input",this).eq(0).val();
+				val = val.replace(/[^0-9.,]/g, "");
+				val = val.replace(/,/g, ".");
+			var isNumeric = true;
+			if (val=="" || isNaN(val)) isNumeric = false;
+			if (isNumeric) nums.push(val);
+		});
+		var res = 0;
+		for (var i=0;i<nums.length;i++){
+			res += parseFloat(nums[i]);
+		}
+		res = Math.round( res * 10 ) / 10;
+		this.maxScore = res;
+	},	
+	
 	// Check the score (just add the numeric values of the checked inputs)
 	checkScore : function(){
 		var res = 0;
@@ -110,6 +132,15 @@ var $rubricIdevice = {
 			res += parseFloat(this.value);
 		});
 		res = Math.round( res * 10 ) / 10;
+		if (isNaN(res)) res = "";
+		else {
+			// Show score out of 10
+			if (!isNaN(this.maxScore) && this.maxScore!=10) {
+				var dec = (res*10) / this.maxScore;
+					dec = Math.round( dec * 10 ) / 10;
+				res = dec + " ("+res+"/"+this.maxScore+")";	
+			}
+		}
 		$("#score").val(res);
 	},
 	
