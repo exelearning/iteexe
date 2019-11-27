@@ -50,8 +50,11 @@ except:
                 release = pkg_version[0:-42]
             else:
                 # Or we try to get it from Resources
-                pkg_version = open('../Resources/exe/version').readline()
-                release = pkg_version[0:-42]
+                try:
+                    pkg_version = open('../Resources/exe/version').readline()
+                    release = pkg_version[0:-42]
+                except:
+                    release = "unknown"
 
 # Try to get the Git information
 try:
