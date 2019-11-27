@@ -293,7 +293,8 @@ var $exeDevice = {
 		});
 		
 		// Link to load CEDEC's rubrics if onLine and if those rubrics are not loaded yet
-		if (navigator && navigator.onLine && typeof($exeDevice.cedecRubrics)=='undefined') {
+		// if (navigator && navigator.onLine && typeof($exeDevice.cedecRubrics)=='undefined') {
+		if (typeof($exeDevice.cedecRubrics)=='undefined') {
 			var lnk = $("#ri_LoadCEDECRubrics");
 			$("#ri_LoadCEDECRubrics").click(function(){
 				$("#ri_RubricEditor").addClass("loading");

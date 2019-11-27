@@ -642,65 +642,65 @@
 						"text" : "Faltan una o dos tareas del proyecto."
 					},
 					{
-						"weight" : "1.5",
+						"weight" : "2",
 						"text" : "Faltan tres o cuatro tareas del proyecto."
 					},
 					{
-						"weight" : "0",
+						"weight" : "1",
 						"text" : "Faltan más de cuatro tareas del proyecto."
 					}					
 				],
 				[
 					{
-						"weight" : "1.5",
+						"weight" : "4",
 						"text" : "Todas las tareas están ordenadas cronológicamente de manera adecuada y van acompañadas de un título adecuado."
 					},
 					{
-						"weight" : "1",
+						"weight" : "3",
 						"text" : "La mayor parte de las tareas están ordenadas cronológicamente y van acompañadas de un título adecuado."
 					},
 					{
-						"weight" : "0.5",
+						"weight" : "2",
 						"text" : "Hay bastantes tareas que no están ordenadas cronológicamente y/o no están acompañadas de título o este es inadecuado."
 					},
 					{
-						"weight" : "0",
+						"weight" : "1",
 						"text" : "La secuenciación de la mayor parte de las tareas es incorrecta y/o no aparecen títulos adecuados."
 					}					
 				],
 				[
 					{
-						"weight" : "1.5",
+						"weight" : "4",
 						"text" : "La presentación está muy cuidada: letra legible, márgenes correctos, ausencia de tachones…"
 					},
 					{
-						"weight" : "1",
+						"weight" : "3",
 						"text" : "En general, se ha cuidado la presentación: letra legible, márgenes correctos,, ausencia de tachones…"
 					},
 					{
-						"weight" : "0.5",
+						"weight" : "2",
 						"text" : "No se ha mostrado demasiado interés por la presentación: letra no demasiado legible, márgenes incorrectos, presencia de tachones…"
 					},
 					{
-						"weight" : "0",
+						"weight" : "1",
 						"text" : "La presentación está bastante descuidada (letra ilegible, márgenes incorrectos, presencia abundante de tachones…"
 					}					
 				],
 				[
 					{
-						"weight" : "3",
+						"weight" : "4",
 						"text" : "No aparecen errores ortográficos, morfosintácticos ni semánticos."
 					},
 					{
-						"weight" : "2",
+						"weight" : "3",
 						"text" : "Aparecen de uno o dos errores ortográficos, morfosintácticos o semánticos."
 					},
 					{
-						"weight" : "1",
+						"weight" : "2",
 						"text" : "Aparecen tres o cuatro errores ortográficos, morfosintácticos o semánticos."
 					},
 					{
-						"weight" : "0",
+						"weight" : "1",
 						"text" : "Aparecen más de cuatro errores ortográficos, morfosintácticos o semánticos."
 					}					
 				]				
