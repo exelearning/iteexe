@@ -48,6 +48,8 @@ from exe.importers.cmdlineimporter import CmdlineImporter
 from exe.engine.package import Package
 from exe.engine.path import Path, TempDirPath
 
+ENCODING = sys.stdout.encoding or "UTF-8"
+
 
 class CustomHelpFormatter(optparse.IndentedHelpFormatter):
     def format_usage(self, usage):
@@ -67,33 +69,33 @@ class CustomOptionParser(optparse.OptionParser):
 def prepareParser():
     usage = _(u"%prog, the commandline version of eXe.\n\
 Usage: %prog [options] input_file [output_file]\n\nTo show \
-help:\n%prog -h").encode(sys.stdout.encoding)
+help:\n%prog -h").encode(ENCODING)
     parser = CustomOptionParser(usage=usage, formatter=CustomHelpFormatter())
    
     parser.add_option("-a", "--append",
                       action="store_true",dest='a',
-                      help=_(u"Append  <input_file> elp package to <output_file> elp package").encode(sys.stdout.encoding))
+                      help=_(u"Append  <input_file> elp package to <output_file> elp package").encode(ENCODING))
     
  
     parser.add_option("-s", "--set",
                       action="store", type='string', dest='set_options', metavar='field=value,<field=value>...',
-                      help=_(u"Set ELP field values. Example: -s style=Default,root.title='Root Node'").encode(sys.stdout.encoding))
+                      help=_(u"Set ELP field values. Example: -s style=Default,root.title='Root Node'").encode(ENCODING))
 
     group = optparse.OptionGroup(parser,
-                     _(u"Set ELP field values options").encode(sys.stdout.encoding),
+                     _(u"Set ELP field values options").encode(ENCODING),
                      _(u"Once you have chosen Set ELP field values option using '-s <values>' or \
-    '--set <values>', it's possible to configure the following options:").encode(sys.stdout.encoding))
+    '--set <values>', it's possible to configure the following options:").encode(ENCODING))
 
     group.add_option("-w", "--write_package",
                     action="store_true", dest="set_options_write",
-                    help=_(u"Write field values to ELP").encode(sys.stdout.encoding))
+                    help=_(u"Write field values to ELP").encode(ENCODING))
 
     parser.add_option_group(group)
 
     parser.add_option("-r", "--report",
                       action="store_true", dest='report',
                       help=_(u"Generates resource info report to text <output_file> \
-from <input_file> elp package").encode(sys.stdout.encoding))
+from <input_file> elp package").encode(ENCODING))
 
     parser.add_option("-l", "--checker_logfile",
                       dest='checker_logfile',
@@ -106,63 +108,63 @@ from <input_file> elp package").encode(sys.stdout.encoding))
                            'xliff', 'epub3','text'],
                   help=_(u"Export <input_file> elp package to optional \
 <output_file> on one of the given formats: xml, scorm12, scorm2004, ims, \
-website, webzip, singlepage, xliff, text or epub3.").encode(sys.stdout.encoding))
+website, webzip, singlepage, xliff, text or epub3.").encode(ENCODING))
     parser.add_option("-i", "--import",
                   action="store", dest="i", metavar="format",
                   choices=['xml', 'xliff'],
                   help=_(u"Import to <output_file> elp package, <input_file> \
 in one of the given formats: xml or xliff.")\
-.encode(sys.stdout.encoding))
+.encode(ENCODING))
     parser.add_option("-f", "--force",
                   action="store_true", dest="f",
-                  help=_(u"Force overwrite of <output_file>").encode(sys.stdout.encoding))
+                  help=_(u"Force overwrite of <output_file>").encode(ENCODING))
     parser.add_option("--editable",
                      action="store_true",
                      dest="editable",
                      help=_(u"Add the required files to generate a export editable by \
-eXeLearning").encode(sys.stdout.encoding),
+eXeLearning").encode(ENCODING),
                      default=False)
 
     group = optparse.OptionGroup(parser,
-                        _(u"XLIFF export options").encode(sys.stdout.encoding),
+                        _(u"XLIFF export options").encode(ENCODING),
                         _(u"Once you have chosen XLIFF export option using '-x xliff' or \
-'--export xliff', it's possible to configure the following export options:").encode(sys.stdout.encoding))
+'--export xliff', it's possible to configure the following export options:").encode(ENCODING))
     group.add_option("--no-copy-source",
                      action="store_false",
                      dest="copy",
-                     help=_(u"Don't copy source in target").encode(sys.stdout.encoding),
+                     help=_(u"Don't copy source in target").encode(ENCODING),
                      default=True)
     group.add_option("--wrap-cdata",
                      action="store_true",
                      dest="wrap",
-                     help=_(u"Wrap fields in CDATA").encode(sys.stdout.encoding),
+                     help=_(u"Wrap fields in CDATA").encode(ENCODING),
                      default=False)
     parser.add_option_group(group)
 
     group = optparse.OptionGroup(parser,
-                        _(u"XLIFF import options").encode(sys.stdout.encoding),
+                        _(u"XLIFF import options").encode(ENCODING),
                         _(u"Once you have chosen XLIFF import option using  '-i xliff' \
-or '--import xliff', it's possible to configure the following import options:").encode(sys.stdout.encoding))
+or '--import xliff', it's possible to configure the following import options:").encode(ENCODING))
     group.add_option("--from-source",
                      action="store_true",
                      dest="from_source",
-                     help=_(u"Import from source language").encode(sys.stdout.encoding),
+                     help=_(u"Import from source language").encode(ENCODING),
                      default=False)
     parser.add_option_group(group)
 
     group = optparse.OptionGroup(parser,
-                        _(u"SCORM export options").encode(sys.stdout.encoding),
+                        _(u"SCORM export options").encode(ENCODING),
                         _(u"Once you have chosen one SCORM export option using '-x scorm12' or \
-'-x scorm2004' or 'x agrega', it's possible to configure the following export options:").encode(sys.stdout.encoding))
+'-x scorm2004' or 'x agrega', it's possible to configure the following export options:").encode(ENCODING))
     group.add_option("--single-page",
                      action="store_true",
                      dest="single",
-                     help=_(u"Include Single Page export file").encode(sys.stdout.encoding),
+                     help=_(u"Include Single Page export file").encode(ENCODING),
                      default=False)
     group.add_option("--website",
                      action="store_true",
                      dest="website",
-                     help=_(u"Include Web Site export files").encode(sys.stdout.encoding),
+                     help=_(u"Include Web Site export files").encode(ENCODING),
                      default=False)
     parser.add_option_group(group)
 
@@ -178,24 +180,24 @@ if __name__ == "__main__":
 
     if options.x and options.i:
         parser.error(_(u'Options --export and --import are mutually \
-exclusive.').encode(sys.stdout.encoding))
+exclusive.').encode(ENCODING))
     if options.x and options.a:
         parser.error(_(u'Options --export and --append are mutually \
-exclusive.').encode(sys.stdout.encoding))
+exclusive.').encode(ENCODING))
     if options.i and options.a:
         parser.error(_(u'Options --import and --append are mutually \
-exclusive.').encode(sys.stdout.encoding))
+exclusive.').encode(ENCODING))
         
     if not options.a and not options.x and not options.i and not options.set_options and not options.report:
         parser.error(_(u'No --append --export, --import, --set or --report option supplied.')\
-.encode(sys.stdout.encoding))
+.encode(ENCODING))
 
     if not args:
-        parser.error(_(u'No file input supplied.').encode(sys.stdout.encoding))
+        parser.error(_(u'No file input supplied.').encode(ENCODING))
 
     if options.a:          
             if len(args) != 2:
-                parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+                parser.error(_(u'Bad number of arguments supplied').encode(ENCODING))
                     
             try:                
                 pkg1 = Package.load(args[1],True,None,None)
@@ -216,7 +218,7 @@ exclusive.').encode(sys.stdout.encoding))
             outputf = None
     
         if len(args) > 2:
-            parser.error(_(u'Bad number of arguments supplied').encode(sys.stdout.encoding))
+            parser.error(_(u'Bad number of arguments supplied').encode(ENCODING))
     
         if options.checker_logfile:
             logfile = Path(options.checker_logfile)
@@ -234,7 +236,7 @@ exclusive.').encode(sys.stdout.encoding))
                 pkg = Package.load(inputf)
                 if not pkg:
                     error = _(u"Invalid input package")
-                    raise Exception(error.encode(sys.stdout.encoding))
+                    raise Exception(error.encode(ENCODING))
                 set_options = options.set_options.split(',')
                 for set_option in set_options:
                     name, value = set_option.split('=')
