@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2019-11-28 13:41+0100\n"
-"PO-Revision-Date: 2019-11-06 20:21+0100\n"
+"PO-Revision-Date: 2019-11-28 13:45+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -1940,6 +1940,17 @@ msgid ""
 " task\n"
 "based on the reading.</p>"
 msgstr ""
+"<p>La Actividad de lectura primeramente será usada \n"
+"para determinar el nivel de comprensión "
+"del estudiante de un texto dado. "
+"Esto puede ser hecho \n"
+"pidiéndole al estudiante que reflexione "
+"sobre el texto y responda a "
+"preguntas \n"
+"sobre lo leído, o haciéndoles "
+"completar otra actividad, quizás de "
+"carácter más físico, \n"
+"basada en la lectura.</p>"
 
 #: exe/engine/idevicestore.py:649
 msgid ""
@@ -1978,6 +1989,10 @@ msgid ""
 "referencing style used will depend on the preference of your faculty or\n"
 "department."
 msgstr ""
+"Introduzca los detalles de la lectura incluyendo las referencias. El \n"
+"estilo de referencia usado dependerá de "
+"las preferencias que tenga su facultad \n"
+"o departamento."
 
 #: exe/engine/idevicestore.py:688 exe/engine/idevicestore.py:727
 #: exe/engine/idevicestore.py:735 exe/engine/idevicestore.py:797
@@ -1992,6 +2007,10 @@ msgid ""
 "Describe the tasks related to the reading learners should undertake.\n"
 "This helps demonstrate relevance for learners."
 msgstr ""
+"Describa las tareas relacionadas con la"
+" lectura que los estudiantes deben "
+"llevar a cabo. \n"
+"Esto ayuda a mostrar lo importante a los estudiantes."
 
 #: exe/engine/idevicestore.py:693 exe/engine/idevicestore.py:802
 msgid ""
@@ -2000,6 +2019,13 @@ msgid ""
 "question\n"
 "or providing a statement to begin a debate."
 msgstr ""
+"Use comentarios para proporcionar "
+"un resumen de los puntos que serán"
+" cubiertos en la lectura  \n"
+"o como punto de partida para el"
+" análisis de la lectura, planteando "
+"una pregunta\n"
+"o proporcionando una declaración para iniciar el debate."
 
 #: exe/engine/idevicestore.py:699 exe/engine/idevicestore.py:708
 #: exe/engine/idevicestore.py:806 exe/engine/idevicestore.py:815
@@ -2083,6 +2109,16 @@ msgid ""
 "some\n"
 "reflective guidance.</p>"
 msgstr ""
+"<p>La Actividad de lectura, como su nombre sugiere, \n"
+"pide al estudiante que realice algún "
+"tipo de actividad. Esta actividad \n"
+"debería estar relacionada directamente con "
+"el texto que el estudiante haya "
+"debido leer. \n"
+"Comentarios sobre la actividad, donde sea"
+" apropiado, pueden proveer al estudiante"
+" alguna\n"
+"reflexión guiada.</p>"
 
 #: exe/engine/idevicestore.py:758
 msgid ""
@@ -6488,7 +6524,7 @@ msgstr "Acerca de eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:648
 msgid "Advanced mode"
-msgstr ""
+msgstr "Modo avanzado"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:649
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:673
@@ -10513,7 +10549,7 @@ msgstr "Información general sobre este recurso educativo"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:166
 msgid "'License'"
-msgstr ""
+msgstr "'Licencia'"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:168
 msgid ""
@@ -14780,4 +14816,3 @@ msgstr ""
 
 #~ msgid "Advanced user"
 #~ msgstr "Usuario avanzado"
-
