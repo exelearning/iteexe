@@ -17,6 +17,7 @@ var $rubricIdevice = {
 		"score" : "Score",
 		"notes" : "Notes",
 		"reset" : "Reset",
+		"print" : "Print",
 		"apply" : "Apply",
 		"newWindow" : "New Window"
 	},

@@ -21,6 +21,7 @@ var $exeDevice = {
 		"score" : c_("Score"),
 		"notes" : c_("Notes"),
 		"reset" : c_("Reset"),
+		"print" : c_("Print"),
 		"apply" : c_("Apply"),
 		"newWindow" : c_("New Window")
 	},	
