@@ -72,7 +72,12 @@ class Application:
     Main application class, pulls together everything and runs it.
     """
 
-    version = 1
+    # Responsible for the execution of the functions upgrade_to_version_x
+    # Upload version file to '2'
+    # It is necessary to edit the value in each update if we want it to execute 
+    #   the functions upgrade_to_version_x
+    # They also run, obviously, if the 'configDir/version' file does not exist
+    version = 2
 
     def __init__(self):
         """
@@ -158,8 +163,14 @@ class Application:
         for idevice in self.ideviceStore.getIdevices():
             lower_title = idevice._title.lower()
             if self.config.idevicesCategories.get(lower_title, '') == ['Experimental'] or lower_title in iDevicesToHide:
-                self.config.hiddeniDevices.append(lower_title)
-                self.config.configParser.set('idevices', lower_title, '0')
+                if lower_title not in self.config.hiddeniDevices:
+                    self.config.hiddeniDevices.append(lower_title)
+                    self.config.configParser.set('idevices', lower_title, '0')
+
+    def upgrade_to_version_2(self):
+        # In the update of version 2 we want to do the same as 'upgrade_to_version_1'
+        # Old iDevices must be hidden again 
+        self.upgrade_to_version_1()
 
     def processArgs(self):
         """
