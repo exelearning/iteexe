@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2019-11-28 13:41+0100\n"
+"POT-Creation-Date: 2019-11-29 20:41+0100\n"
 "PO-Revision-Date: 2019-11-28 13:45+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -21,14 +21,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: exe/application.py:221
+#: exe/application.py:232
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 "Se ha producido un error al cargar su configuración. Guardada copia de "
 "seguridad en %s"
 
-#: exe/application.py:239
+#: exe/application.py:250
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
@@ -37,7 +37,7 @@ msgstr ""
 "Se ha producido un error al cargar el almacén de iDevices. Guardada copia"
 " de seguridad en %s"
 
-#: exe/application.py:289
+#: exe/application.py:300
 #, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
@@ -1941,14 +1941,11 @@ msgid ""
 "based on the reading.</p>"
 msgstr ""
 "<p>La Actividad de lectura primeramente será usada \n"
-"para determinar el nivel de comprensión "
-"del estudiante de un texto dado. "
+"para determinar el nivel de comprensión del estudiante de un texto dado. "
 "Esto puede ser hecho \n"
-"pidiéndole al estudiante que reflexione "
-"sobre el texto y responda a "
+"pidiéndole al estudiante que reflexione sobre el texto y responda a "
 "preguntas \n"
-"sobre lo leído, o haciéndoles "
-"completar otra actividad, quizás de "
+"sobre lo leído, o haciéndoles completar otra actividad, quizás de "
 "carácter más físico, \n"
 "basada en la lectura.</p>"
 
@@ -1990,8 +1987,8 @@ msgid ""
 "department."
 msgstr ""
 "Introduzca los detalles de la lectura incluyendo las referencias. El \n"
-"estilo de referencia usado dependerá de "
-"las preferencias que tenga su facultad \n"
+"estilo de referencia usado dependerá de las preferencias que tenga su "
+"facultad \n"
 "o departamento."
 
 #: exe/engine/idevicestore.py:688 exe/engine/idevicestore.py:727
@@ -2007,9 +2004,8 @@ msgid ""
 "Describe the tasks related to the reading learners should undertake.\n"
 "This helps demonstrate relevance for learners."
 msgstr ""
-"Describa las tareas relacionadas con la"
-" lectura que los estudiantes deben "
-"llevar a cabo. \n"
+"Describa las tareas relacionadas con la lectura que los estudiantes deben"
+" llevar a cabo. \n"
 "Esto ayuda a mostrar lo importante a los estudiantes."
 
 #: exe/engine/idevicestore.py:693 exe/engine/idevicestore.py:802
@@ -2019,12 +2015,10 @@ msgid ""
 "question\n"
 "or providing a statement to begin a debate."
 msgstr ""
-"Use comentarios para proporcionar "
-"un resumen de los puntos que serán"
-" cubiertos en la lectura  \n"
-"o como punto de partida para el"
-" análisis de la lectura, planteando "
-"una pregunta\n"
+"Use comentarios para proporcionar un resumen de los puntos que serán "
+"cubiertos en la lectura  \n"
+"o como punto de partida para el análisis de la lectura, planteando una "
+"pregunta\n"
 "o proporcionando una declaración para iniciar el debate."
 
 #: exe/engine/idevicestore.py:699 exe/engine/idevicestore.py:708
@@ -2110,14 +2104,11 @@ msgid ""
 "reflective guidance.</p>"
 msgstr ""
 "<p>La Actividad de lectura, como su nombre sugiere, \n"
-"pide al estudiante que realice algún "
-"tipo de actividad. Esta actividad \n"
-"debería estar relacionada directamente con "
-"el texto que el estudiante haya "
-"debido leer. \n"
-"Comentarios sobre la actividad, donde sea"
-" apropiado, pueden proveer al estudiante"
-" alguna\n"
+"pide al estudiante que realice algún tipo de actividad. Esta actividad \n"
+"debería estar relacionada directamente con el texto que el estudiante "
+"haya debido leer. \n"
+"Comentarios sobre la actividad, donde sea apropiado, pueden proveer al "
+"estudiante alguna\n"
 "reflexión guiada.</p>"
 
 #: exe/engine/idevicestore.py:758
@@ -3147,14 +3138,14 @@ msgstr ""
 "proporcionar\n"
 "retroalimentación reflexiva)."
 
-#: exe/engine/resource.py:424
+#: exe/engine/resource.py:396
 #, python-format
 msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
 msgstr ""
 "Error al intentar convertir a ISO 9660 la extensión desconocida %s del "
 "fichero %s%s."
 
-#: exe/engine/resource.py:696
+#: exe/engine/resource.py:668
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -10239,11 +10230,9 @@ msgstr "¡No era eso! | ¡Incorrecto! | ¡No es correcto! | ¡Lo sentimos! | ¡E
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:74
 #, python-format
 msgid ""
-"You need at least %s% of correct answers to get the information. Please "
-"try again."
+"You need at least %s&percnt; of correct answers to get the information. "
+"Please try again."
 msgstr ""
-"Necesita al menos un %s% de respuestas correctas para conseguir la "
-"información. Vuelva a intentarlo."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:45
@@ -14816,3 +14805,13 @@ msgstr ""
 
 #~ msgid "Advanced user"
 #~ msgstr "Usuario avanzado"
+
+#~ msgid ""
+#~ "You need at least %s% of correct"
+#~ " answers to get the information. "
+#~ "Please try again."
+#~ msgstr ""
+#~ "Necesita al menos un %s% de "
+#~ "respuestas correctas para conseguir la "
+#~ "información. Vuelva a intentarlo."
+

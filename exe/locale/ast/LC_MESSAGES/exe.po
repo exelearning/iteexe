@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-11-28 13:41+0100\n"
+"POT-Creation-Date: 2019-11-29 20:41+0100\n"
 "PO-Revision-Date: 2013-03-09 22:04+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ast\n"
@@ -19,19 +19,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: exe/application.py:221
+#: exe/application.py:232
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 
-#: exe/application.py:239
+#: exe/application.py:250
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
 "at %s"
 msgstr ""
 
-#: exe/application.py:289
+#: exe/application.py:300
 #, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
@@ -2558,12 +2558,12 @@ msgid ""
 "reflective feedback)."
 msgstr ""
 
-#: exe/engine/resource.py:424
+#: exe/engine/resource.py:396
 #, python-format
 msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
 msgstr ""
 
-#: exe/engine/resource.py:696
+#: exe/engine/resource.py:668
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -9286,8 +9286,8 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:74
 #, python-format
 msgid ""
-"You need at least %s% of correct answers to get the information. Please "
-"try again."
+"You need at least %s&percnt; of correct answers to get the information. "
+"Please try again."
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54
@@ -15117,5 +15117,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Advanced user"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You need at least %s% of correct"
+#~ " answers to get the information. "
+#~ "Please try again."
 #~ msgstr ""
 
