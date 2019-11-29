@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2019-11-28 13:41+0100\nPO-Revision-Date: 2019-11-19 17:48+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage: ca\nLanguage-Team: Catalan <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2019-11-29 20:41+0100\nPO-Revision-Date: 2019-11-19 17:48+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\nLanguage: ca\nLanguage-Team: Catalan <info@softcatala.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Number of rounds": "Nombre de rondes", 
  "DropDown Activity": "Activitat desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creat el cas hist\u00f2ria. Un bon cas \u00e9s aquell \n que descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \n involucrats en la situaci\u00f3. Hauria de permetre les accions \n encaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -1252,7 +1252,6 @@ translations = {
  "New": "Nou", 
  "questionnaire": "q\u00fcestionari ", 
  "Go to Tools - Preview to see this working": "Ves a Eines - Visualitza per veure-ho funcionant", 
- "You need at least %s% of correct answers to get the information. Please try again.": "Per obtenir la informaci\u00f3, necessiteu almenys %s% de respostes correctes. Torna-ho a provar.", 
  "Permissive": "Permissiu ", 
  "Hint to Show for this item": "Pista a mostrar per a aquest element", 
  "Answers": "Respostes", 
