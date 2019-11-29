@@ -186,29 +186,25 @@ class Checker:
             for path in self.package.resourceDir.files():
                 if path in self.idevices:
                     for idevice in self.idevices[path]:
-                        # This check is necessary to avoid duplication of resources
-                        # when opening elp with JS iDevices
-                        if ((hasattr(idevice, 'klass') and hasattr(idevice, 'resourcesUrl'))
-                        or hasattr(idevice, '_idevice')):
-                            try:
-                                resource = Resource(idevice, path)
-                            except:
-                                msg = "%s referenced in idevice %s of node %s not exists" % (path, idevice.idevice.klass, idevice.parentNode.title)
-                                log.error('New inconsistency of type packageResourceNonExistant: %s' % (msg))
-                                continue
-                            if isinstance(idevice, FieldWithResources):
-                                galleryimage = GalleryImage(idevice, '', None, mkThumbnail=False)
-                                galleryimage._imageResource = resource
-                            if isinstance(idevice, Idevice) and idevice.klass == 'ImageMagnifierIdevice':
-                                idevice.imageMagnifier.imageResource = resource
-                            if isinstance(idevice, Idevice) and idevice.klass == 'GalleryIdevice':
-                                for image in idevice.images:
-                                    if image._imageResource.storageName == resource.storageName:
-                                        image._imageResource = resource
-                                        break
-                                    elif image._thumbnailResource.storageName == resource.storageName:
-                                        image._thumbnailResource = resource
-                                        break
+                        try:
+                            resource = Resource(idevice, path)
+                        except:
+                            msg = "%s referenced in idevice %s of node %s not exists" % (path, idevice.idevice.klass, idevice.parentNode.title)
+                            log.error('New inconsistency of type packageResourceNonExistant: %s' % (msg))
+                            continue
+                        if isinstance(idevice, FieldWithResources):
+                            galleryimage = GalleryImage(idevice, '', None, mkThumbnail=False)
+                            galleryimage._imageResource = resource
+                        if isinstance(idevice, Idevice) and idevice.klass == 'ImageMagnifierIdevice':
+                            idevice.imageMagnifier.imageResource = resource
+                        if isinstance(idevice, Idevice) and idevice.klass == 'GalleryIdevice':
+                            for image in idevice.images:
+                                if image._imageResource.storageName == resource.storageName:
+                                    image._imageResource = resource
+                                    break
+                                elif image._thumbnailResource.storageName == resource.storageName:
+                                    image._thumbnailResource = resource
+                                    break
                 elif self.package._backgroundImg and path == self.package._backgroundImg.path:
                     self.package._backgroundImg = Resource(self.package, path)
         for check in dir(self):
