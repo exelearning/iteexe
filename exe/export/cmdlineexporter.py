@@ -37,6 +37,8 @@ from exe.export.epub3subexport import Epub3SubExport
 
 LOG = logging.getLogger(__name__)
 
+ENCODING = sys.stdout.encoding or "UTF-8"
+
 
 class CmdlineExporter(object):
     extensions = {'xml': '.xml',
@@ -72,7 +74,7 @@ class CmdlineExporter(object):
             if outputfp.exists() and not self.options["overwrite"]:
                 error = _(u'"%s" already exists.\nPlease try again \
 with a different filename') % outputf
-                raise Exception(error.encode(sys.stdout.encoding))
+                raise Exception(error.encode(ENCODING))
             else:
                 if outputfp.exists() and self.options["overwrite"]:
                     if outputfp.isdir():
@@ -85,7 +87,7 @@ with a different filename') % outputf
                 LOG.debug("Package %s loaded" % (inputf))
                 if not pkg:
                     error = _(u"Invalid input package")
-                    raise Exception(error.encode(sys.stdout.encoding))
+                    raise Exception(error.encode(ENCODING))
                 self.styles_dir = self.config.stylesDir / pkg.style
                 LOG.debug("Styles dir: %s" % (self.styles_dir))
                 pkg.exportSource = self.options['editable']
@@ -93,7 +95,7 @@ with a different filename') % outputf
                 return outputf
         else:
             raise Exception(_(u"Export format not implemented")\
-.encode(sys.stdout.encoding))
+.encode(ENCODING))
 
 
     def export_xml(self, pkg, outputf):
@@ -158,4 +160,3 @@ with a different filename') % outputf
         textExport =TextExport(outputf)
         textExport.export(pkg)
         textExport.save(outputf)
-

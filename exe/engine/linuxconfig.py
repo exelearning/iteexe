@@ -52,6 +52,11 @@ class LinuxConfig(Config):
             self.localeDir = Path("/usr/share/locale")
 
             self.mediaProfilePath = Path("/usr/share/exe/mediaprofiles")
+        # In you don't have the application installed
+        elif Path("exe").isdir():
+            self.webDir     = Path("exe")
+        elif Path("../exe").isdir():
+            self.webDir     = Path("../exe")
 
         self.dataDir      = Path(os.environ['HOME'])
         self.configDir    = Path(self.dataDir)/'.exe'

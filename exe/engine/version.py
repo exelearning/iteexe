@@ -19,6 +19,8 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
+import os
+
 """
 Version Information
 """
@@ -26,46 +28,53 @@ Version Information
 # Result initialization
 project = "exe"
 pkg_version = None
+release = None
 
 # Try to read the version from the version file
-try:
+if os.path.isfile('version'):
     pkg_version = open('version').readline()
     release = pkg_version[0:-42]
-except:
-    # If it doesn't exist, we try to get it from debian/changelog
+elif os.path.isfile('debian/changelog'):
+# If it doesn't exist, we try to get it from debian/changelog
+    line = open('debian/changelog').readline()
+    release = line.split(':')[1].split(')')[0]
+
+if not release or not pkg_version:
+# If the changelog doesn't exist either, we try to use pkg_resources to get the version
     try:
-        line = open('debian/changelog').readline()
-        release = line.split(':')[1].split(')')[0]
-    except:
-        # If the changelog doesn't exist either, we try to use pkg_resources to get the version
-        try:
-            import pkg_resources
-            pkg_version = pkg_resources.require(project)[0].version
+        import pkg_resources
+        pkg_version = pkg_resources.require(project)[0].version
+        if not release:
             release = pkg_version[0:-42]
-        except:
-            # If everything else fails, it may be Windows fault
-            import sys
-            if sys.platform[:3] == "win":
-                pkg_version = open(sys.prefix + '/version').readline()
+    except:
+        # If everything else fails, it may be Windows fault
+        import sys
+        if sys.platform[:3] == "win":
+            pkg_version = open(sys.prefix + '/version').readline()
+            if not release:
                 release = pkg_version[0:-42]
-            else:
-                # Or we try to get it from Resources
-                try:
-                    pkg_version = open('../Resources/exe/version').readline()
+        else:
+            # Or we try to get it from Resources
+            try:
+                pkg_version = open('../Resources/exe/version').readline()
+                if not release:
                     release = pkg_version[0:-42]
-                except:
+            except:
+                if not release:
                     release = "unknown"
 
 # Try to get the Git information
 try:
     import git
-
     repo = git.Repo()
     revision = repo.head.commit.hexsha
 except:
     # If there isn't a Git repo, we try to get the revision from
     # the version file (if it exists)
-    revision = pkg_version[-40:] if pkg_version else ''
+    if pkg_version:
+        revision = pkg_version[-40:]
+    else:
+        revision = release
 
 # Compose version string
 version = release + "-r" + revision if revision else release

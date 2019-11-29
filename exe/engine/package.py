@@ -1498,6 +1498,10 @@ class Package(Persistable):
         if G.application.config.forceEditableExport == "1":
             newPackage.exportSource = True
 
+        # Update de eXe release when importing the package
+        # If the current version can import the package successfully the release should be changed to the current one
+        newPackage.release = release
+
         checker = Checker(newPackage)
         inconsistencies = checker.check()
         for inconsistency in inconsistencies:
@@ -2101,7 +2105,6 @@ class Package(Persistable):
             self._addSearchBox = False
         if not hasattr(self, '_exportElp'):
             self._exportElp = False
-
         if not hasattr(self, 'release'):
             self.release = release
 # ===========================================================================
