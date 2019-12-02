@@ -49,6 +49,7 @@ langNames = {
    'cs': 'Čeština, český jazyk',       # \xc4\x8cesky, Czech
    'da': 'Dansk',
    'de': 'Deutsch',                    # German
+   'dz': 'རྫོང་ཁ་',			# Dzongkha, or Bhutanese
    'ee': 'Eʋegbe',                     # Ewe
    'el': 'Ελληνικά',                    # \xce\x95\xce\xbb\xce\xbb\xce\xb7\xce\xbd\xce\xb9\xce\xba\xce\xac, Greek
    'en': 'English',
