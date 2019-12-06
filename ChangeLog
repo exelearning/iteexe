@@ -24,10 +24,13 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [Other] Fixed: Lightbox. Youtube start time was not respected.(#439)
 
   * Juan Rafael Fernández
-    - Fixed: Invalid HTML in CA translation.
-    - New full Spanish translation, including the new iDevices.
+    - Fixed: Invalid HTML both in source and in CA translation (with Carles Ferrando García's help). (#441)
+
+  * eXeLearning.net Translation Teams
+    - New full Spanish translation, by Juan Rafael Fernández.
     - New full Catalan translation, by Carles Ferrando García.
     - New full Galician translation, by Pablo Nimo.
+    - New full French translation, by Jesús Miguel Domínguez.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
