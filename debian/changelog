@@ -25,12 +25,14 @@ intef-exe (3:2.5) lucid; urgency=medium
 
   * Juan Rafael Fernández
     - Fixed: Invalid HTML both in source and in CA translation (with Carles Ferrando García's help). (#441)
+    - Added Dzongkha (Bhutanese) as a supported language.
 
   * eXeLearning.net Translation Teams
     - New full Spanish translation, by Juan Rafael Fernández.
     - New full Catalan translation, by Carles Ferrando García.
     - New full Galician translation, by Pablo Nimo.
     - New full French translation, by Jesús Miguel Domínguez.
+    - New partial Dzongkha translation, by Tandin Penjor.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
