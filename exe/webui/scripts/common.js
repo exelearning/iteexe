@@ -70,7 +70,7 @@ var $exe = {
 		// Common feedback
 		$('.feedbackbutton.feedback-toggler').click(function(){
 			var changeText = false;
-			if (this.value==$exe_i18n.showFeedback) changeText = true;
+			if (this.value==$exe_i18n.showFeedback || this.value==$exe_i18n.hideFeedback) changeText = true;
 			$exe.toggleFeedback(this,changeText);
 		});
 		// Text and Tasks
@@ -1031,12 +1031,12 @@ var $exe = {
         if (n) {
             if (n.className == "feedback js-feedback js-hidden") {
                 n.className = "feedback js-feedback";
-                if (b) e.value = $exe_i18n.hideFeedback;
-                else if (d) e.value = r[1]
+                if (d) e.value = r[1];
+                else if (b) e.value = $exe_i18n.hideFeedback;
             } else {
                 n.className = "feedback js-feedback js-hidden";
-                if (b) e.value = $exe_i18n.showFeedback;
-                else if (d) e.value = r[0]
+                if (d) e.value = r[0];
+                else if (b) e.value = $exe_i18n.showFeedback;
             }
         }
     },
