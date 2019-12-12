@@ -170,17 +170,16 @@ class Checker:
     
     def add_fileAttachmentFields(self,idevice):
         for fileattachment in idevice.fileAttachmentFields:
-            if hasattr(fileattachment, "fileResource") and  fileattachment.fileResource:
-                resource_name = fileattachment.fileResource.storageName
-                path = self.package.resourceDir / resource_name
-                if not path.exists():
-                    msg = "%s referenced in idevice %s not exists" % (resource_name, idevice.klass)
-                    self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
+            resource_name = fileattachment.fileResource.storageName
+            path = self.package.resourceDir / resource_name
+            if not path.exists():
+                msg = "%s referenced in idevice %s not exists" % (resource_name, idevice.klass)
+                self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
+            else:
+                if path in self.idevices:
+                    self.idevices[path].append(idevice)
                 else:
-                    if path in self.idevices:
-                        self.idevices[path].append(idevice)
-                    else:
-                        self.idevices[path] = [idevice]
+                    self.idevices[path] = [idevice]
 
     def add_userResources(self,idevice):
         for resource in idevice.userResources:
@@ -223,9 +222,8 @@ class Checker:
                             idevice.imageMagnifier.imageResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'FileAttachIdeviceInc':
                             for attachmentField in idevice.fileAttachmentFields:
-                                if attachmentField.fileResource:
-                                    if attachmentField.fileResource.checksum == resource.checksum:
-                                        attachmentField.fileResource = resource
+                                if attachmentField.fileResource.checksum == resource.checksum:
+                                    attachmentField.fileResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'GalleryIdevice':
                             for image in idevice.images:
                                 if image._imageResource.storageName == resource.storageName:
