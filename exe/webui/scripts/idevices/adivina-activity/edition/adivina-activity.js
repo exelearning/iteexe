@@ -50,7 +50,7 @@ var $exeDevice = {
         "mgsAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
-        "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
+        "msgTryAgain": _("You need at least %s percent of correct answers to get the information. Please try again."),
         "msgWrote": _("Write the correct word and click on Reply. If you hesitate, click on Move on."),
         "msgNotNetwork": _("You can only play this game with internet connection."),
         "msgEndGameScore": _("Please start the game before saving your score."),
