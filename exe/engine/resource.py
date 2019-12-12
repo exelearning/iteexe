@@ -257,8 +257,7 @@ class _Resource(Persistable):
                 self._storageName = str(Path(storageName).basename())
 
                 oldPath.copyfile(self.path)
-        if not self._package.resources.get(self.checksum, []) or self._package.isLoading:
-            # prevent doubling-up (as might occur when cleaning corrupt files)
+        if self.checksum or self._package.isLoading:
             siblings.append(self)
             
     #Create unique path for the images     

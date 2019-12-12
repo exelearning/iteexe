@@ -126,40 +126,37 @@ class Checker:
                 if idevice.parentNode != node:
                     log.error('Parent node of idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
                     idevice.parentNode = node
-                fields = idevice.getRichTextFields()
-                 # idevice with rich text fields and not ImageMagnifierIdevice class
-                if fields and idevice.klass != 'ImageMagnifierIdevice':
-                    for field in fields:
-                        if hasattr(field, 'parentNode'):
-                            if not field.parentNode:
-                                log.error('No parent node for field in idevice %s in node %s! Fixing...' % (idevice.klass, node.title))
-                                field.parentNode = node
-                            if field.parentNode != node:
-                                log.error('Parent node of field in idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
-                                field.parentNode = node
-                        for resource in field.ListActiveResources(field.content_w_resourcePaths):
-                            path = self.package.resourceDir / resource
-                            if not path.exists():
-                                msg = "%s referenced in idevice %s of node %s not exists" % (resource, idevice.klass, node.title)
-                                self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
-                            else:
-                                if path in self.idevices:
-                                    self.idevices[path].append(field)
-                                else:
-                                    self.idevices[path] = [field]
-                # idevice without rich text fields, ImageMagnifierIdevice class or with Resources
-                if not fields or idevice.klass == 'ImageMagnifierIdevice' or hasattr(idevice, 'userResources'):
-                    for resource in idevice.userResources:
-                        path = self.package.resourceDir / resource.storageName
-                        if not path.exists():
-                            msg = "%s referenced in idevice %s of node %s not exists" % (resource, idevice.klass, node.title)
-                            self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
-                        else:
-                            if path in self.idevices:
-                                self.idevices[path].append(idevice)
-                            else:
-                                self.idevices[path] = [idevice]
-
+                if idevice.klass != 'ImageMagnifierIdevice':
+                    fields = idevice.getRichTextFields()
+                    if fields:
+                        for field in fields:
+                            if hasattr(field, 'parentNode'):
+                                if not field.parentNode:
+                                    log.error('No parent node for field in idevice %s in node %s! Fixing...' % (idevice.klass, node.title))
+                                    field.parentNode = node
+                                if field.parentNode != node:
+                                    log.error('Parent node of field in idevice %s in node %s not match! Fixing...' % (idevice.klass, node.title))
+                                    field.parentNode = node
+                            ListActiveResources = field.ListActiveResources(field.content_w_resourcePaths)
+                            if ListActiveResources:
+                                for resource in field.ListActiveResources(field.content_w_resourcePaths):
+                                    path = self.package.resourceDir / resource
+                                    if not path.exists():
+                                        msg = "%s referenced in idevice %s of node %s not exists" % (resource, idevice.klass, node.title)
+                                        self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
+                                    else:
+                                        if path in self.idevices and idevice.klass != 'interactive-videoIdevice':
+                                            self.idevices[path].append(field)
+                                        else:
+                                            self.idevices[path] = [field]
+                        if idevice.klass == 'FileAttachIdeviceInc' and hasattr(idevice, 'fileAttachmentFields'):
+                                self.add_fileAttachmentFields(idevice)
+                    elif hasattr(idevice, 'userResources'):
+                        self.add_userResources(idevice)
+                else:
+                    if hasattr(idevice, 'userResources'):
+                        self.add_userResources(idevice)
+                    
         for idevice, node in duplicated_idevice_ids:
             log.error('Duplicated idevice id %s in node %s of type %s. Fixing...' % (idevice.id, node.title, idevice.klass))
             while idevice.id in idevice_ids:
@@ -170,6 +167,32 @@ class Checker:
         if Idevice.nextId <= max_idevice_id:
             log.error('Wrong idevice next id. Fixing...')
             Idevice.nextId = max_idevice_id + 1
+    
+    def add_fileAttachmentFields(self,idevice):
+        for fileattachment in idevice.fileAttachmentFields:
+            resource_name = fileattachment.fileResource.storageName
+            path = self.package.resourceDir / resource_name
+            if not path.exists():
+                msg = "%s referenced in idevice %s not exists" % (resource_name, idevice.klass)
+                self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
+            else:
+                if path in self.idevices:
+                    self.idevices[path].append(idevice)
+                else:
+                    self.idevices[path] = [idevice]
+
+    def add_userResources(self,idevice):
+        for resource in idevice.userResources:
+            resource_name = resource.storageName
+            path = self.package.resourceDir / resource_name
+            if not path.exists():
+                msg = "%s referenced in idevice %s not exists" % (resource_name, idevice.klass)
+                self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
+            else:
+                if path in self.idevices:
+                    self.idevices[path].append(idevice)
+                else:
+                    self.idevices[path] = [idevice]
 
     def clear_resourceReferences(self):
         self.package.resources = {}
@@ -197,6 +220,10 @@ class Checker:
                             galleryimage._imageResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'ImageMagnifierIdevice':
                             idevice.imageMagnifier.imageResource = resource
+                        if isinstance(idevice, Idevice) and idevice.klass == 'FileAttachIdeviceInc':
+                            for attachmentField in idevice.fileAttachmentFields:
+                                if attachmentField.fileResource.checksum == resource.checksum:
+                                    attachmentField.fileResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'GalleryIdevice':
                             for image in idevice.images:
                                 if image._imageResource.storageName == resource.storageName:
