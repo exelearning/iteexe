@@ -71,7 +71,7 @@ var $exeDevice = {
         "msgYouLastScore": _("The last score saved is"),
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
-        "msgTryAgain": _("You need at least %s percent of correct answers to get the information. Please try again."),
+        "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
         "msgVideoIntro": _("Video Intro"),
         "msgClose": _("Close"),
         "msgOption": _("Option"),
