@@ -71,6 +71,8 @@ var $exeDevice = {
         "msgPlaySeveralTimes":_("You can do this activity as many times as you want")
     },
     init: function () {
+        this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;","%"); // Avoid invalid HTML
+        this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percent;","%"); // To review (See issue 461)        
         this.setMessagesInfo();
         this.createForm();
         this.addEvents();
