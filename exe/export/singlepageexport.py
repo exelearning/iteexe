@@ -120,7 +120,7 @@ class SinglePageExport(object):
         my_style = G.application.config.styleStore.getStyle(package.style)
 
         # jQuery
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(self.outputDir/'exe_jquery.js')

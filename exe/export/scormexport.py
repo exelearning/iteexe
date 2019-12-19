@@ -373,7 +373,7 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             xmlStr += """    <file href="SCOFunctions.js"/>\n"""
             xmlStr += """    <file href="common.js"/>\n"""
             xmlStr += """    <file href="common_i18n.js"/>\n"""
-            if my_style.hasValidConfig:
+            if my_style.hasValidConfig():
                 if my_style.get_jquery() == True:
                     xmlStr += """    <file href="exe_jquery.js"/>\n"""
             else:
@@ -629,7 +629,7 @@ class ScormExport(object):
 
         # jQuery
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 #listFiles+=[self.scriptsDir/'exe_jquery.js']
                 #listOutFiles+=[outputDir/'exe_jquery.js']

@@ -119,7 +119,7 @@ class SinglePage(Page):
         
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             html += style.get_extra_body()
             
         # Close body and HTML tags
@@ -222,7 +222,7 @@ class SinglePage(Page):
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         
         # Add JS files
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             if style.get_jquery() == True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lineBreak
             else:
@@ -268,7 +268,7 @@ class SinglePage(Page):
             html += u'}' + lineBreak
             html += u'</script>' + lineBreak
             
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             html += style.get_extra_head()
             
         html += common.getExtraHeadContent(self.node.package)

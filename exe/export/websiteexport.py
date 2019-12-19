@@ -214,7 +214,7 @@ class WebsiteExport(object):
         # jQuery
         listFiles=[]
         listOutFiles=[]
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')

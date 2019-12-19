@@ -187,7 +187,7 @@ class AuthoringPage(RenderableResource):
         html += common.renderLicense(self.package.license,"authoring")
         html += common.renderFooter(self.package.footer)
         
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             html += style.get_edition_extra_body()
         html += '<script type="text/javascript">$exeAuthoring.ready()</script>\n'
         html += common.footer()
@@ -265,7 +265,7 @@ class AuthoringPage(RenderableResource):
         html += u'<meta http-equiv="content-type" content="text/html; '
         html += u' charset=UTF-8" />\n'
         style = G.application.config.styleStore.getStyle(self.package.style)
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             html += style.get_edition_extra_head()        
         html += common.getExtraHeadContent(self.package)
         html += u'</head>\n'

@@ -1579,8 +1579,8 @@ class Package(Persistable):
 
         newPackage.set_isTemplate(isTemplate)
         newPackage.isChanged = False
-        nstyle=Path(G.application.config.stylesDir/newPackage.style)
-        if not nstyle.isdir():
+        style = G.application.config.styleStore.getStyle(newPackage.style)
+        if not style:
             newPackage.style=G.application.config.defaultStyle
         newPackage.lang = newPackage._lang
 
