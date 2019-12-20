@@ -83,9 +83,6 @@ class JsIdevice(Idevice):
             if 'icon' in xmlValues:
                 self.icon = xmlValues['icon']
 
-            # Initialize resources list
-            self._editionResources = []
-            self._exportResources = []
 
             # Initialize field arrays
             self.fields  = []
@@ -96,7 +93,6 @@ class JsIdevice(Idevice):
 
             # Add default JS Idevice fields
             self.__addDefaultFields()
-            self.__getFolderResources()
 
 
     def __loadIdevice(self):
@@ -172,19 +168,6 @@ class JsIdevice(Idevice):
         """ A JS iDevice only has a Textarea with no instructions """
         self.addField(TextAreaField(""))
 
-    def __getFolderResources(self):
-        self._editionFolder = str(Path(self._iDeviceDir).basename() + '/edition/')
-
-        for editionFile in os.listdir(self._iDeviceDir + '/edition'):
-            self._editionResources.append(editionFile)
-
-        # Check if export directory exists
-        if (Path(self._iDeviceDir) / 'export').exists():
-            self._exportFolder = str(Path(self._iDeviceDir).basename() + '/export/')
-            for exportFile in os.listdir(self._iDeviceDir + '/export'):
-                self._exportResources.append(exportFile)
-        else:
-            self._exportFolder = None
 
 
     def addField(self, field):
@@ -352,19 +335,21 @@ class JsIdevice(Idevice):
         """ Get a list of the iDevice resources """
         resources = list()
 
-        # Check if not empty export resources
-        if self._exportResources:
-            for res in self._exportResources:
+        # Check export resources
+        export_resources_path = Path(self._iDeviceDir) / 'export'
+        if export_resources_path.exists():
+            for res in os.listdir(export_resources_path):
                 if appendPath:
-                    resources.append(str(self._exportFolder + res))
+                    resources.append(str(Path(self._iDeviceDir).basename() + '/export/' + res))
                 else:
                     resources.append(str(res))
 
-        # Edition resources
-        if(editMode):
-            for res in self._editionResources:
+        # Check edition resources
+        edition_resources_path = Path(self._iDeviceDir) / 'edition'
+        if(editMode) and edition_resources_path.exists():
+            for res in os.listdir(edition_resources_path):
                 if appendPath:
-                    resources.append(str(self._editionFolder + res))
+                    resources.append(str(Path(self._iDeviceDir).basename() + '/edition/' + res))
                 else:
                     resources.append(str(res))
 
