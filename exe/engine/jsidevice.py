@@ -360,7 +360,9 @@ class JsIdevice(Idevice):
         return resources
 
     def get_export_folder(self):
-        return self._exportFolder
+        export_folder = Path(self._iDeviceDir) / 'export'
+        if export_folder.exists():
+            return str(Path(self._iDeviceDir).basename() + '/export/')
 
     def get_dirname(self):
         return Path(self._iDeviceDir).basename()
