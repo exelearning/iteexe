@@ -1,15 +1,15 @@
 # eXeLearning Catalan PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2019 EXELearning.net
+# Copyright (C) 2011-2020 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXeLearning.net Project <admin@exelearning.net>
-# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2019.
+# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2020-01-07 16:41+0100\n"
-"PO-Revision-Date: 2019-12-02 20:00+0100\n"
+"PO-Revision-Date: 2020-01-07 17:13+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language: ca\n"
 "Language-Team: Catalan <info@softcatala.org>\n"
@@ -11594,7 +11594,7 @@ msgstr "Enllaç origen/autor"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
 msgid "Attention"
-msgstr ""
+msgstr "Atenció"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
 msgid "Revert all changes? This can't be undone."
@@ -14615,7 +14615,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
-#~ msgid "Atention"
-#~ msgstr "Atenció"
-
