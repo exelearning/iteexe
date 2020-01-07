@@ -9549,7 +9549,7 @@ msgstr "Non era iso! | Incorrecto! | Non é correcto! | Sentímolo! | Erro!"
 #, python-format
 msgid "You need at least %s&percnt; of correct answers to get the information. Please try again."
 msgstr ""
-"Necesita polo menos un %s&percent; de respostas correctas para conseguir a información. Volva a "
+"Necesita polo menos un %s&percnt; de respostas correctas para conseguir a información. Volva a "
 "intentalo."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54

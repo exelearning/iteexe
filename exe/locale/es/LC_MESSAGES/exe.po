@@ -10232,7 +10232,7 @@ msgstr "¡No era eso! | ¡Incorrecto! | ¡No es correcto! | ¡Lo sentimos! | ¡E
 msgid ""
 "You need at least %s&percnt; of correct answers to get the information. "
 "Please try again."
-msgstr "Necesita al menos un %s&percent; de respuestas correctas para conseguir la información. Vuelva a intentarlo."
+msgstr "Necesita al menos un %s&percnt; de respuestas correctas para conseguir la información. Vuelva a intentarlo."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:45
