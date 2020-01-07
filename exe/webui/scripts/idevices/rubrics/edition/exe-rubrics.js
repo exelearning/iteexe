@@ -618,7 +618,7 @@ var $exeDevice = {
 		
 		// Buttons (events)
 		$("#ri_Reset").click(function(){
-			Ext.Msg.confirm(_("Atention"), _("Revert all changes? This can't be undone."), function(button) {
+			Ext.Msg.confirm(_("Attention"), _("Revert all changes? This can't be undone."), function(button) {
 				if (button == "yes") {
 					if (typeof($exeDevice.originalData)!='undefined') {
 						$exeDevice.jsonToTable($exeDevice.originalData,"edition");
