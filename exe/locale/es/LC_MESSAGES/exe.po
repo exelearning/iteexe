@@ -1,17 +1,17 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2019 eXeLearning.net
+# Copyright (C) 2011-2020 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>, 2009.
-# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2019.
+# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2020-01-07 16:41+0100\n"
-"PO-Revision-Date: 2019-11-29 20:47+0100\n"
+"PO-Revision-Date: 2020-01-07 16:45+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -11674,7 +11674,7 @@ msgstr "Enlace origen/autor"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
 msgid "Attention"
-msgstr ""
+msgstr "Atención"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
 msgid "Revert all changes? This can't be undone."
@@ -14716,7 +14716,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "Atention"
-#~ msgstr "Atención"
-

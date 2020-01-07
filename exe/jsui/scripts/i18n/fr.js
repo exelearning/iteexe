@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-11-29 20:41+0100\nPO-Revision-Date: 2019-12-06 12:04+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage: fr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2020-01-07 16:41+0100\nPO-Revision-Date: 2019-12-06 12:04+0100\nLast-Translator: Jes\u00fas Miguel Dom\u00ednguez <miguelcaliban@gmail.com>\nLanguage: fr\nLanguage-Team: EXE Team <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Number of rounds": "Nombre de tours", 
  "DropDown Activity": "Activit\u00e9 Forum Question-R\u00e9ponse", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Cr\u00e9ez le sc\u00e9nario du \"cas d'\u00e9tude. Un bon \"cas d'\u00e9tude\" pr\u00e9sente une controverse ou expose un probl\u00e8me en d\u00e9crivant les \u00e9l\u00e9ments d'une probl\u00e9matique. Il peut \u00e9galement proposer diff\u00e9rentes actions qui permettraient de r\u00e9soudre le probl\u00e8me.", 
@@ -386,7 +386,6 @@ translations = {
  "Dublin Core Metadata": "Standard de m\u00e9tadonn\u00e9es (DCMI)", 
  "Dissemination of project activities.": "Diffusion des activit\u00e9s du projet.", 
  "Lingala ": "Lingala", 
- "Atention": "Attention", 
  "Image Options": "Options d'image", 
  "No picture question": "Question sans image", 
  "(Optional) Game Time Limit": "(Optionnel) Limite de temps de jeu", 

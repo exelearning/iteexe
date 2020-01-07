@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2019-11-29 20:41+0100\nPO-Revision-Date: 2020-01-07 11:21+0100\nLast-Translator: Chenggui Duan <chengguiduan@gmail.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.4.3\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2020-01-07 16:41+0100\nPO-Revision-Date: 2020-01-07 11:21+0100\nLast-Translator: Chenggui Duan <chengguiduan@gmail.com>\nLanguage: zh\nLanguage-Team: eXe <info@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.6.0\n", 
  "Number of rounds": "\u56de\u5408\u6570", 
  "DropDown Activity": "\u4e0b\u62c9\u83dc\u5355\u6d3b\u52a8", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u62df\u5199\u6848\u4f8b\u6545\u4e8b.\u4e00\u4e2a\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u6709\u4e89\u8bae\u6027\u7684,\u6216\u4e0d\u540c\u4eba\u7269\u548c\u73af\u5883\u7684\u60c5\u666f.\u5e76\u80fd\u91c7\u53d6\u67d0\u4e9b\u884c\u52a8\u6765\u89e3\u51b3\u95ee\u9898.", 
@@ -385,7 +385,6 @@ translations = {
  "Dublin Core Metadata": "Dublin Core \u5143\u6570\u636e", 
  "Dissemination of project activities.": "\u4f20\u64ad\u9879\u76ee\u6d3b\u52a8\u3002", 
  "Lingala ": "\u6797\u52a0\u62c9\u8bed", 
- "Atention": "\u6ce8\u610f", 
  "Image Options": "\u56fe\u50cf\u9009\u9879", 
  "No picture question": "\u6ca1\u6709\u56fe\u7247\u95ee\u9898", 
  "(Optional) Game Time Limit": "\uff08\u53ef\u9009\uff09\u6e38\u620f\u65f6\u95f4\u9650\u5236", 
