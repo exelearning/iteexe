@@ -2606,7 +2606,7 @@ translations = {
  "Emphasis": "Destacado", 
  "Success": "\u00c9xito", 
  "Right answer:": "Respuesta correcta:", 
- "You need at least %s&percnt; of correct answers to get the information. Please try again.": "Necesita al menos un %s&percent; de respuestas correctas para conseguir la informaci\u00f3n. Vuelva a intentarlo.", 
+ "You need at least %s&percnt; of correct answers to get the information. Please try again.": "Necesita al menos un %s&percnt; de respuestas correctas para conseguir la informaci\u00f3n. Vuelva a intentarlo.", 
  "Dark": "Oscuro", 
  "Currently not supported by your browser, use keyboard shortcuts instead.": "Su navegador no soporta las funciones de cortapapeles, use los accesos por teclado.", 
  "Unable to load RSS feed from %s <br\/>Please check the spelling and connection and try again.": "No se pudo cargar la subscripci\u00f3n RSS de %s <br\/> Por favor revise si la ha tecleado correctamente, y la conexi\u00f3n, e int\u00e9ntelo de nuevo.", 
