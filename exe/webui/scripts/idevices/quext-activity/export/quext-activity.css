@@ -1,5 +1,5 @@
 .quext-GameMinimize a:link, .quext-GameMinimize a:link, .quext-GameMinimize a:visited, .quext-GameMinimize a:focus {
-    color: #ff0000;
+    color: #b3092f;
 }
 .quext-LinkMaximize, .quext-LinkFullScreen, .quext-LinkVideoIntroShow {
     width: 26px;
@@ -121,7 +121,7 @@
     margin: 10px auto;
     text-align: center;
     margin-bottom: 10px;
-    color: #ff0000;
+    color: #b3092f;
     font-size: 16px;
     font-weight: bold;
 }
@@ -172,7 +172,7 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #2a9315;
+    color: #00a300;
 }
 
 .quext-HistGGame, .quext-LostGGame {
@@ -276,7 +276,7 @@
 }
 
 .quext-RepeatActivity{
-    color: #ff0000;
+    color: #b3092f;
     font-size:12px;
     font-weight: bold;
 }
@@ -356,9 +356,12 @@
 .exeQuextIcons-FullScreen{
     background: url(exeQuextIcons.png) no-repeat 0 -78px;
 }
-.exeQuextIcons-FullScreenExit{
-    background: url(exeQuextIcons.png) no-repeat -26px -78px;
-}
+/* Fullscreen */
+div:fullscreen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+div:-webkit-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+
+
 
 .exeQuextIcons-RoscoRows{
     background: url(exeQuextIcons.png) no-repeat -26px -52px;
@@ -575,10 +578,10 @@
 
 .quext-Option1 {
     background-color: #f7c4c4;
-    border: 2px solid #ff0000;
+    border: 2px solid #b3092f;
 }
 .quext-Option1:hover {
-    background-color: #ff0000;
+    background-color: #b3092f;
 }
 
 .quext-Option2 {
@@ -592,11 +595,11 @@
 
 .quext-Option3 {
     background-color: #cce1c8;
-    border: 2px solid #2a9315;
+    border: 2px solid #00a300;
 }
 
 .quext-Option3:hover {
-    background-color: #2a9315;
+    background-color: #00a300;
 }
 
 .quext-Option4 {

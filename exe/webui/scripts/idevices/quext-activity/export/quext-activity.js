@@ -12,8 +12,8 @@ var $eXeQuExt = {
     borderColors: {
         black: "#1c1b1b",
         blue: '#5877c6',
-        green: '#2a9315',
-        red: '#ff0000',
+        green: '#00a300',
+        red: '#b3092f',
         white: '#ffffff',
         yellow: '#f3d55a'
     },
@@ -403,9 +403,9 @@ var $eXeQuExt = {
                     'controls': 1
                 }
             });
-            $('#quextQuestion-' + i).text($eXeQuExt.msgs.msgStartGame);
+            $('#quextQuestion-' + i).text(mOptions.msgs.msgStartGame);
             $('#quextQuestion-' + i).css({
-                'color': $eXeQuExt.borderColors.blue,
+                'color': $eXeQuExt.borderColors.red,
                 'text-align': 'center',
                 'cursor': 'pointer',
                 'font-weight': 'bold',
@@ -525,11 +525,6 @@ var $eXeQuExt = {
             return true;
         });
         mOptions.livesLeft = mOptions.numberLives;
-        $(window).on('resize', function (params) {
-            if (mOptions.gameStarted) {
-
-            }
-        });
         $('#quextQuestion-' + instance).text(mOptions.msgs.msgPlayStart);
         $('#quextQuestion-' + instance).css({
             'color': $eXeQuExt.borderColors.blue,
@@ -539,7 +534,6 @@ var $eXeQuExt = {
             'font-size': '16px'
         });
         $('#quextQuestion-' + instance).on('click', function () {
-
             $eXeQuExt.startGame(instance);
         })
         $("#quextOptionsDiv-" + instance).on('click touchstart', function (e) {
@@ -602,6 +596,8 @@ var $eXeQuExt = {
             $('#quextVideoIntroDiv-' + instance).hide();
             $eXeQuExt.startVideoIntro('', 0, 0, instance);
         });
+        $('#quextQuestion-'+instance).text(mOptions.msgs.msgLoading);
+
     },
     maximizeMultimedia: function (maximize, instance) {
         var css = {
@@ -1232,23 +1228,14 @@ var $eXeQuExt = {
         }
     },
     toggleFullscreen: function (element, instance) {
-        var mOptions = $eXeQuExt.options[instance],
-            alt = mOptions.msgs.msgFullScreen;
-        element = element || document.documentElement;
-        if (!document.fullscreenElement && !document.mozFullScreenElement &&
-            !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            $('#quextFullScreen-' + instance).removeClass('exeQuextIcons-FullScreen');
-            $('#quextFullScreen-' + instance).addClass('exeQuextIcons-FullScreenExit');
-            alt = mOptions.msgs.msgExitFullScreen;
-            $eXeQuExt.getFullscreen(element);
-        } else {
-            $('#quextFullScreen-' + instance).addClass('exeQuextIcons-FullScreen');
-            $('#quextFullScreen-' + instance).removeClass('exeQuextIcons-FullScreenExit');
-            $eXeQuExt.exitFullscreen(element);
-        }
-        $('#quextLinkFullScreen-' + instance).find('span').text(alt + ':')
-        $('#quextLinkFullScreen-' + instance).attr('title', alt);
-    },
+		var element = element || document.documentElement;
+		if (!document.fullscreenElement && !document.mozFullScreenElement &&
+			!document.webkitFullscreenElement && !document.msFullscreenElement) {
+			$eXeQuExt.getFullscreen(element);
+		} else {
+			$eXeQuExt.exitFullscreen(element);
+		}
+	}
 }
 $(function () {
 

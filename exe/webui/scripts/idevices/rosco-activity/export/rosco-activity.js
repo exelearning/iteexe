@@ -251,6 +251,7 @@ var $eXeRosco = {
 		var html = message;
 		if (big) {
 			html = '<a href="#">' + message + '</a>';
+			$('#roscoAnswerButtons-' + instance).css("visibility","hidden");
 		}
 		$('#roscoPStartWith-' + instance).html(html);
 	},
@@ -483,6 +484,7 @@ var $eXeRosco = {
 		if (mOptions.gameStarted) {
 			return;
 		}
+		$('#roscoAnswerButtons-' + instance).css("visibility","visible");
 		mOptions.obtainedClue = false;
 		mOptions.hits = 0;
 		mOptions.solucion = '';

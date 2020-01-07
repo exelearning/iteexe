@@ -12,8 +12,8 @@ var $eXeVideoQuExt = {
     borderColors: {
         black: "#1c1b1b",
         blue: '#5877c6',
-        green: '#2a9315',
-        red: '#ff0000',
+        green: '#00a300',
+        red: '#b3092f',
         white: '#ffffff',
         yellow: '#f3d55a'
     },
@@ -185,7 +185,16 @@ var $eXeVideoQuExt = {
             $eXeVideoQuExt.addEvents(i);
             $eXeVideoQuExt.createPointsVideo(i);
         });
-        $eXeVideoQuExt.loadYoutubeApi();
+        setTimeout(function(){
+            if(typeof(YT)!=="undefined"){
+                $eXeVideoQuExt.youTubeReady();
+            }else{
+                $eXeVideoQuExt.loadYoutubeApi();
+                
+            }
+        },3000);
+
+        
 
     },
     createPointsVideo: function (instance) {
@@ -401,17 +410,15 @@ var $eXeVideoQuExt = {
                     'onError': $eXeVideoQuExt.onPlayerError
                 }
             });
-            $('#vquextQuestion-' + i).text($eXeVideoQuExt.msgs.msgStartGame);
+            $('#vquextQuestion-' + i).text(mOptions.msgs.msgStartGame);
             $('#vquextQuestion-' + i).css({
-                'color': $eXeVideoQuExt.borderColors.blue,
+                'color': $eXeVideoQuExt.borderColors.red,
                 'text-align': 'center',
                 'cursor': 'pointer',
                 'font-weight': 'bold',
                 'font-size': '16px'
             });
         }
-
-
     },
     loadYoutubeApi: function () {
         onYouTubeIframeAPIReady = $eXeVideoQuExt.youTubeReady;
@@ -505,11 +512,6 @@ var $eXeVideoQuExt = {
             return true;
         });
         mOptions.livesLeft = mOptions.numberLives;
-        $(window).on('resize', function (params) {
-            if (mOptions.gameStarted) {
-
-            }
-        });
         $('#vquextQuestion-' + instance).text(mOptions.msgs.msgPlayStart);
         $('#vquextQuestion-' + instance).css({
             'color': $eXeVideoQuExt.borderColors.blue,
@@ -562,6 +564,7 @@ var $eXeVideoQuExt = {
         $('meta[name=author]').attr('content', mOptions.author);
         $('#vquextShowClue-' + instance).hide();
         mOptions.gameOver = false;
+        $('#vquextQuestion-'+instance).text(mOptions.msgs.msgLoading);
 
 
     },
@@ -1126,23 +1129,14 @@ var $eXeVideoQuExt = {
         }
     },
     toggleFullscreen: function (element, instance) {
-        var mOptions = $eXeVideoQuExt.options[instance],
-            alt = mOptions.msgs.msgFullScreen;
-        element = element || document.documentElement;
-        if (!document.fullscreenElement && !document.mozFullScreenElement &&
-            !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            $('#vquextFullScreen-' + instance).removeClass('exeQuextIcons-FullScreen');
-            $('#vquextFullScreen-' + instance).addClass('exeQuextIcons-FullScreenExit');
-            alt = mOptions.msgs.msgExitFullScreen;
-            $eXeVideoQuExt.getFullscreen(element);
-        } else {
-            $('#vquextFullScreen-' + instance).addClass('exeQuextIcons-FullScreen');
-            $('#vquextFullScreen-' + instance).removeClass('exeQuextIcons-FullScreenExit');
-            $eXeVideoQuExt.exitFullscreen(element);
-        }
-        $('#vquextLinkFullScreen-' + instance).find('span').text(alt + ':')
-        $('#vquextLinkFullScreen-' + instance).attr('title', alt);
-    },
+		var element = element || document.documentElement;
+		if (!document.fullscreenElement && !document.mozFullScreenElement &&
+			!document.webkitFullscreenElement && !document.msFullscreenElement) {
+			$eXeVideoQuExt.getFullscreen(element);
+		} else {
+			$eXeVideoQuExt.exitFullscreen(element);
+		}
+	}
 }
 $(function () {
     $eXeVideoQuExt.init();

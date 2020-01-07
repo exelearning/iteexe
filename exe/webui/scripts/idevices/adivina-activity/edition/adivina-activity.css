@@ -79,6 +79,9 @@
   cursor: pointer;
   transition:all .3s ease-in-out;
 }
+#adivinaIdeviceForm .adivinaLinkDrop .adivinaButtonImage{
+  cursor:move
+}
 
 #adivinaIdeviceForm .adivinaButtonImage:hover {
   -webkit-transform:scale(1.05);transform:scale(1.05);

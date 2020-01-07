@@ -279,7 +279,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
-            $('#vquextNumberQuestion').text($exeDevice.active + 1);
+            $('#quextNumberQuestion').text($exeDevice.active + 1);
         }
 
     },

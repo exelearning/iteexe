@@ -3,6 +3,7 @@
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
+ * Author: Ignacio Gros
  * Ricardo Málaga Floriano
  * Ana María Zamora Moreno
  * Iconos_: Francisco Javier Pulido
@@ -14,8 +15,8 @@ var $eXeAdivina = {
     borderColors: {
         black: "#1c1b1b",
         blue: '#5877c6',
-        green: '#2a9315',
-        red: '#ff0000',
+        green: '#00a300',
+        red: '#b3092f',
         white: '#ffffff',
         yellow: '#f3d55a'
     },
@@ -413,24 +414,14 @@ var $eXeAdivina = {
         }
     },
     toggleFullscreen: function (element, instance) {
-        var mOptions = $eXeAdivina.options[instance],
-            alt = mOptions.msgs.msgFullScreen,
-            element = element || document.documentElement;
-        if (!document.fullscreenElement && !document.mozFullScreenElement &&
-            !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            $('#adivinaFullScreen-' + instance).removeClass('exeQuextIcons-FullScreen');
-            $('#adivinaFullScreen-' + instance).addClass('exeQuextIcons-FullScreenExit');
-            alt = mOptions.msgs.msgExitFullScreen;
-            $eXeAdivina.getFullscreen(element);
-        } else {
-            $('#adivinaFullScreen-' + instance).addClass('exeQuextIcons-FullScreen');
-            $('#adivinaFullScreen-' + instance).removeClass('exeQuextIcons-FullScreenExit');
-            $eXeAdivina.exitFullscreen(element);
-        }
-        $('#adivinaLinkFullScreen-' + instance).find('span').text(alt + ':')
-        $('#adivinaLinkFullScreen-' + instance).attr('title', alt);
-
-    },
+		var element = element || document.documentElement;
+		if (!document.fullscreenElement && !document.mozFullScreenElement &&
+			!document.webkitFullscreenElement && !document.msFullscreenElement) {
+			$eXeAdivina.getFullscreen(element);
+		} else {
+			$eXeAdivina.exitFullscreen(element);
+		}
+	},
     exitFullscreen: function () {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -454,7 +445,7 @@ var $eXeAdivina = {
             $("#adivinaGameContainer-" + instance).hide();
             $("#adivinaGameMinimize-" + instance).css('visibility', 'visible').show();
         });
-        $eXeAdivina.changeTextInit(true, mOptions.msgs.msgStartGame, instance);
+        $eXeAdivina.changeTextInit(true, mOptions.msgs.msgStartGame, instance, mOptions.msgs);
         $('#adivinaEdAnswer-' + instance).val("");
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
@@ -507,11 +498,6 @@ var $eXeAdivina = {
             return true;
         });
         $('#adivinaPNumber-' + instance).text(mOptions.numberQuestions);
-        $(window).on('resize', function (params) {
-            if (mOptions.gameStarted) {
-
-            }
-        });
         $(window).on('unload', function () {
             if (typeof ($eXeAdivina.mScorm) != "undefined") {
                 $eXeAdivina.endScorm();
@@ -548,6 +534,8 @@ var $eXeAdivina = {
         if (mOptions.gameStarted) {
             return;
         };
+        $("#adivinaDivResponder-" + instance).show();
+        $("#adivinaDivInstructions-"+instance).hide();
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -560,7 +548,7 @@ var $eXeAdivina = {
         mOptions.livesLeft = mOptions.numberLives;
         mOptions.wordsGame = mOptions.optionsRamdon ? $eXeAdivina.shuffleAds(mOptions.wordsGame) : mOptions.wordsGame;
         $eXeAdivina.updateLives(instance);
-        $eXeAdivina.changeTextInit(false, '', instance);
+        $eXeAdivina.changeTextInit(false, '', instance,mOptions.msgs);
         mOptions.obtainedClue = false;
         $('#adivinaPShowClue-' + instance).text('');
         $('#adivinaGamerOver-' + instance).hide();
@@ -616,7 +604,7 @@ var $eXeAdivina = {
         $('#adivina-Phrase-' + instance).find('.adivina-Word').hide();
         $('#adivinaEdAnswer-' + instance).val('');
         $eXeAdivina.showScoreGame(type, instance);
-        $eXeAdivina.changeTextInit(true, mOptions.msgs.msgNewGame, instance);
+        $eXeAdivina.changeTextInit(true, mOptions.msgs.msgNewGame, instance,mOptions.msgs);
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
@@ -639,7 +627,8 @@ var $eXeAdivina = {
             $adivinaOverErrors = $('#adivinaOverErrors-' + instance),
             $adivinaTextClueGGame = $('#adivinaTextClueGGame-' + instance),
             $adivinaGamerOver = $('#adivinaGamerOver-' + instance),
-            message = "";
+            message = "",
+            messageColor=1;
         $adivinaHistGGame.hide();
         $adivinaLostGGame.hide();
         $adivinaOverPoint.show();
@@ -649,6 +638,7 @@ var $eXeAdivina = {
         switch (parseInt(type)) {
             case 0:
                 message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
+                messageColor=2;
                 $adivinaHistGGame.show();
                 if (mOptions.itinerary.showClue) {
                     var text = $('#adivinaPShowClue-' + instance).text();
@@ -676,20 +666,32 @@ var $eXeAdivina = {
             default:
                 break;
         }
-        $eXeAdivina.showMessage(1, message, instance);
+        $eXeAdivina.showMessage(messageColor, message, instance);
         $adivinaOverPoint.text(msgs.msgScore + ': ' + mOptions.score);
         $adivinaOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
         $adivinaOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
         $adivinaGamerOver.show();
         $('#adivinaPShowClue-' + instance).text('');
     },
-    changeTextInit: function (big, message, instance) {
-        var html = message;
-        if (big) {
-            html = '<a href="#">' + message + '</a>';
-        }
-        $('#adivinaDefinition-' + instance).html(html);
-    },
+    changeTextInit: function (big, message, instance, msgs) {
+		var html = message;
+		if (big) {
+			var msg = '';
+			if (msgs) {
+				if (msgs.msgWrote && msgs.msgWrote!="") msg = msgs.msgWrote;
+			}
+			html = '<a href="#">' + message + '</a>';
+			var instructions = $("#adivinaDivInstructions-"+instance);
+			var answerForm = $("#adivinaDivResponder-" + instance);
+			if (instructions.length==0){
+				answerForm.before('<p class="adivinaDivInstructions" id="adivinaDivInstructions-'+instance+'">'+msg+'</p>').hide();
+			} else {
+				instructions.show();
+				answerForm.hide();
+			}
+		}
+		$('#adivinaDefinition-' + instance).html(html);
+	},
     shuffleAds: function (arr) {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
