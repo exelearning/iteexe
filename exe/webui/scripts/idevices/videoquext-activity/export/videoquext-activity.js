@@ -1080,8 +1080,8 @@ var $eXeVideoQuExt = {
         $('#vquextOptionsDiv-' + instance + '>.vquext-Options').each(function (index) {
             if (index === mOptions.question.solution) {
                 $(this).css({
-                    'border-color': bordeColors[index],
-                    'background-color': colors[index],
+                    'border-color': '#00ff00',
+                    'background-color': '#dcffdc',
                     'cursor': 'default'
                 });
             } else {

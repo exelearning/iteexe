@@ -234,7 +234,7 @@ var $eXeRosco = {
 					<div  class="rosco-CodeAccess"  id="roscoCodeAccess-' + instance + '">\
 						<label for="roscoEdCodeAccess-' + instance + '" id="labelMessageAccess">' + msgs.msgCodeAccess + '</label>\
 						<h3 class="sr-av">' + msgs.msgAnswer + ':</h3>\
-						<input type="text" class="rosco-AnswerEdit" id="roscoEdCodeAccess-' + instance + '">\
+						<input type="text" class="rosco-AnswerEdit" id="roscoEdCodeAccess-' + instance + '" autocomplete="false">\
 						<input type="button" value="' + msgs.msgSubmit + '" id="roscoBtnSubmitCodeAccess-' + instance + '">\
 					</div>\
 				</div>\

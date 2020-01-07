@@ -256,7 +256,7 @@ var $eXeAdivina = {
                 <div class="adivina-Definition" id="adivinaDefinition-' + instance + '"></div>\
                 <div class="adivina-DivReply" id="adivinaDivResponder-' + instance + '">\
                     <input type="button" class="adivina-Button" value="' + msgs.msgMoveOne + '" id="adivinaBtnMoveOn-' + instance + '">\
-                    <label class="sr-av">' + msgs.msgIndicateWord + ':</label><input type="text" value="" class="adivina-EdReply" id="adivinaEdAnswer-' + instance + '">\
+                    <label class="sr-av">' + msgs.msgIndicateWord + ':</label><input type="text" value="" class="adivina-EdReply" id="adivinaEdAnswer-' + instance + '" autocomplete="false">\
                     <input type="button" class="adivina-Button" value="' + msgs.msgReply + '" id="adivinaBtnReply-' + instance + '">\
                 </div>\
             </div>\
