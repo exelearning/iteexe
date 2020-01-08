@@ -196,7 +196,7 @@
 
 .vquext-MainContainer a:link, .vquext-MainContainer a:link, .vquext-MainContainer a:visited, .vquext-MainContainer a:focus {
     text-decoration: none !important;
-    border:0px !important;
+    border:0px;
     outline:none;
     border-width: 0px;
     outline-width:0px;
@@ -509,7 +509,25 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
     justify-content: center;
     background-color:transparent;
 }
+.vquext-StarGame {
+    width: 93%;
+    min-height: 45px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    color: #1c1b1b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
 .vquext-OptionsDiv {
     background-color: transparent;
     width: 100%;
@@ -541,38 +559,38 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
     justify-content: center;
 }
 
-.vquext-Option1 {
+.vquext-MainContainer a.vquext-Option1 {
     background-color: #f7c4c4;
     border: 2px solid #b3092f;
 }
-.vquext-Option1:hover {
+.vquext-MainContainer a.vquext-Option1:hover {
     background-color: #b3092f;
 }
 
-.vquext-Option2 {
+.vquext-MainContainer a.vquext-Option2 {
     background-color: #d5dcec;
     border: 2px solid #5877c6;
 }
 
-.vquext-Option2:hover {
+.vquext-MainContainer a.vquext-Option2:hover {
     background-color: #5877c6;
 }
 
-.vquext-Option3 {
+.vquext-MainContainer a.vquext-Option3 {
     background-color: #cce1c8;
     border: 2px solid #00a300;
 }
 
-.vquext-Option3:hover {
+.vquext-MainContainer a.vquext-Option3:hover {
     background-color: #00a300;
 }
 
-.vquext-Option4 {
+.vquext-MainContainer a.vquext-Option4 {
     background-color: #f5efd6;
     border: 2px solid #f3d55a;
 }
 
-.vquext-Option4:hover {
+.vquext-MainContainer a.vquext-Option4:hover {
     background-color: #f3d55a;
 }
 .vquext-NumerQuestion{
@@ -704,6 +722,15 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
         font-size: 12px;
         font-weight: normal;
     }
+    .vquext-StarGame {
+        width: 95%;
+        min-height: 30px;
+        margin: 7px auto;
+        border-radius: 0px;
+        padding: 7px;
+        font-size: 18px;
+        font-weight: normal;
+    }
     .vquext-AutorLicence {
         height: 12px;
         font-size:10px;
@@ -788,6 +815,14 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
         border-radius: 0px;
         padding: 3px;
         font-size: 12px;
+    }
+    .vquext-StarGame{
+        width: 95%;
+        min-height: 30px;
+        margin: 5px auto;
+        border-radius: 0px;
+        padding: 3px;
+        font-size: 18px;
     }
     .vquext-Icons {
         width: 14px;
