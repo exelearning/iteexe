@@ -83,7 +83,6 @@ var $exeDevice = {
 
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;","%"); // Avoid invalid HTML
-        this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percent;","%"); // To review (See issue 461)
         this.setMessagesInfo();
         this.createForm();
     },
