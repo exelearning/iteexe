@@ -190,11 +190,8 @@ var $eXeVideoQuExt = {
                 $eXeVideoQuExt.youTubeReady();
             }else{
                 $eXeVideoQuExt.loadYoutubeApi();
-                
             }
         },3000);
-
-        
 
     },
     createPointsVideo: function (instance) {
@@ -531,10 +528,15 @@ var $eXeVideoQuExt = {
         $('#vquextInstructions-' + instance).text(mOptions.instructions);
 
         $('#vquextPNumber-' + instance).text(mOptions.numberQuestions);
+        $('#vquextStarGame-' + instance).show();
+        $('#vquextStarGameSRAV-' + instance).show();
+        $('#vquextQuestionDiv-' + instance).hide();
         if (mOptions.itinerary.showCodeAccess) {
             $('#vquextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#vquextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#vquextCodeAccessDiv-' + instance).show();
+            $('#vquextStarGame-' + instance).hide();
+            $('#vquextStarGameSRAV-' + instance).hide();
             $('#vquextQuestionDiv-' + instance).hide();
 
         }
@@ -556,11 +558,6 @@ var $eXeVideoQuExt = {
         $('meta[name=author]').attr('content', mOptions.author);
         $('#vquextShowClue-' + instance).hide();
         mOptions.gameOver = false;
-        $('#vquextStarGame-' + instance).show();
-        $('#vquextStarGameSRAV-' + instance).show();
-        $('#vquextQuestionDiv-' + instance).hide();
-
-
     },
     maximizeMultimedia: function (maximize, instance) {
         var css = {
@@ -864,7 +861,10 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance],
             mQuextion = mOptions.questionsGame[i];
         $('#vquextPNumber-' + instance).text(mOptions.numberQuestions - mOptions.activeQuestion)
-        mOptions.question = mQuextion
+        mOptions.question = mQuextion;
+        if (mOptions.answersRamdon) {
+            $eXeVideoQuExt.ramdonOptions(instance);
+        }
         if (mQuextion.imageVideo === 0) {
             $('#vquextVideo-' + instance).hide();
             $('#vquextCover-' + instance).show();

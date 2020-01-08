@@ -542,11 +542,16 @@ var $eXeQuExt = {
         $('#quextInstructions-' + instance).text(mOptions.instructions);
 
         $('#quextPNumber-' + instance).text(mOptions.numberQuestions);
+        $('#quextStarGame-' + instance).show();
+        $('#quextStarGameSRAV-' + instance).show();
+        $('#quextQuestionDiv-' + instance).hide();
         if (mOptions.itinerary.showCodeAccess) {
             $('#quextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#quextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#quextCodeAccessDiv-' + instance).show();
-            $('#quextQuestionDiv-' + instance).hide();
+            $('#quextStarGame-' + instance).hide();
+            $('#quextStarGameSRAV-' + instance).hide();
+
 
         }
         $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", function (e) {
@@ -588,9 +593,7 @@ var $eXeQuExt = {
             $eXeQuExt.startVideoIntro('', 0, 0, instance);
         });
 
-        $('#quextStarGame-' + instance).show();
-        $('#quextStarGameSRAV-' + instance).show();
-        $('#quextQuestionDiv-' + instance).hide();
+       
         
 
     },
