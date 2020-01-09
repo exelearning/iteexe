@@ -33,6 +33,12 @@ intef-exe (3:2.5) lucid; urgency=medium
     - New full Galician translation, by Pablo Nimo.
     - New full French translation, by Jesús Miguel Domínguez.
     - New partial Dzongkha translation, by Tandin Penjor.
+    - New Simplified Chinese translation, by Chenggui Duan.
+    - New full Spanish translation.
+    - New full Galician translation.
+    - New full Catalan translation.
+    - New full Catalan translation.
+    - New full French translation.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
@@ -56,6 +62,10 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [Other] Fixed: Client search with nested pages problems. (#429)
     - [Other] Fixed: The extended.data file is generated when opening eXe so no new strings are missing. (#441)
     - [Other] Fixed: Prevent errors when getting the version.
+    - [Other] Fixed: Some packages do not open correctly.
+    - [iDevices] Fixed: Check JavaScript iDevice files.
+    - [Other] Fixed: Bug fixes in resource management (#396)
+    - [Other] Fixed: Fixed bug with too long resource filenames.
 
  -- eXeLearning <admin@exelearning.net>  Thu, 05 Dec 2019 10:00:00 +0200
 
