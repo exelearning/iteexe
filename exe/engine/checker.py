@@ -170,16 +170,17 @@ class Checker:
     
     def add_fileAttachmentFields(self,idevice):
         for fileattachment in idevice.fileAttachmentFields:
-            resource_name = fileattachment.fileResource.storageName
-            path = self.package.resourceDir / resource_name
-            if not path.exists():
-                msg = "%s referenced in idevice %s not exists" % (resource_name, idevice.klass)
-                self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
-            else:
-                if path in self.idevices:
-                    self.idevices[path].append(idevice)
+            if hasattr(fileattachment, "fileResource") and  fileattachment.fileResource:
+                resource_name = fileattachment.fileResource.storageName
+                path = self.package.resourceDir / resource_name
+                if not path.exists():
+                    msg = "%s referenced in idevice %s not exists" % (resource_name, idevice.klass)
+                    self.appendInconsistency(msg, 'contentResourceNonExistant', self.package, path)
                 else:
-                    self.idevices[path] = [idevice]
+                    if path in self.idevices:
+                        self.idevices[path].append(idevice)
+                    else:
+                        self.idevices[path] = [idevice]
 
     def add_userResources(self,idevice):
         for resource in idevice.userResources:
