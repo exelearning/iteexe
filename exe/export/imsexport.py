@@ -625,7 +625,7 @@ class IMSExport(object):
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
                 if hasattr(idevice, "_iDeviceDir"):
-                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+                    listIdevicesFiles.append((idevice.get_jsidevice_dir()/'export'))
 
             common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
 

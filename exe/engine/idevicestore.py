@@ -573,7 +573,7 @@ class IdeviceStore:
             for ideviceDir in os.listdir(iDevicesDir):
                 if os.path.isdir(iDevicesDir/ideviceDir):
                     try:
-                        idevice = JsIdevice(iDevicesDir/ideviceDir)
+                        idevice = JsIdevice(ideviceDir)
                         if (idevice.title!='Example iDevice' and idevice.isValid()):
                             self.jsIdevices.append(idevice)
                     except InvalidConfigJsIdevice as invalidconfigexception:
