@@ -39,6 +39,9 @@ intef-exe (3:2.5) lucid; urgency=medium
     - New full Catalan translation.
     - New full Catalan translation.
     - New full French translation.
+    - New full Russian translation, by Alexey Loginov.
+    - New Polish translation, coordinated by Alexey Loginov.
+    - New full simplified chinese translation, by Chenggui Duan.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
@@ -66,6 +69,7 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [iDevices] Fixed: Check JavaScript iDevice files.
     - [Other] Fixed: Bug fixes in resource management (#396)
     - [Other] Fixed: Fixed bug with too long resource filenames.
+    - [iDevices] Fixed: File Attachments iDevice. Could not edit elp when a file was missing.
 
  -- eXeLearning <admin@exelearning.net>  Thu, 05 Dec 2019 10:00:00 +0200
 
