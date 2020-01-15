@@ -71,7 +71,7 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [Other] Fixed: Fixed bug with too long resource filenames.
     - [iDevices] Fixed: File Attachments iDevice. Could not edit elp when a file was missing.
 
- -- eXeLearning <admin@exelearning.net>  Thu, 05 Dec 2019 10:00:00 +0200
+ -- eXeLearning <admin@exelearning.net>  Wed, 15 Jan 2020 14:00:00 +0200
 
 intef-exe (3:2.4.2) lucid; urgency=medium
 
