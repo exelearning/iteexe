@@ -721,7 +721,7 @@ pipwerks.SCORM.quit = pipwerks.SCORM.connection.terminate;
 ---------------------------------------------------------------------------- */
 
 pipwerks.UTILS.StringToBoolean = function(string){
-     if (!string) return false;
+     if (typeof(string)=='undefined') return false;
      string = string.toString();
      switch(string.toLowerCase()) {
           case "true": case "yes": case "1": return true;
