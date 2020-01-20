@@ -721,6 +721,8 @@ pipwerks.SCORM.quit = pipwerks.SCORM.connection.terminate;
 ---------------------------------------------------------------------------- */
 
 pipwerks.UTILS.StringToBoolean = function(string){
+     if (!string) return false;
+     string = string.toString();
      switch(string.toLowerCase()) {
           case "true": case "yes": case "1": return true;
           case "false": case "no": case "0": case null: return false; 
@@ -1513,7 +1515,7 @@ pipwerks.SCORM.GetSuccessStatus = function(){
 		
 	if(API){
 		switch(scorm.version){
-			case "1.2" : result = scorm.get("cmi.core.completion_status"); break; // cmi.success_status only exists in 2004
+			case "1.2" : result = scorm.get("cmi.core.lesson_status"); break; // cmi.success_status and cmi.completion_status only exist in 2004
 			case "2004": result = scorm.get("cmi.success_status"); break;
 		}
 	}
