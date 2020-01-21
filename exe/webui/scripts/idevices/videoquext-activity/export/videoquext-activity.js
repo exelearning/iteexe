@@ -780,6 +780,10 @@ var $eXeVideoQuExt = {
                     mOptions.activeQuestion++;
                     if (mOptions.activeQuestion < mOptions.questionsGame.length) {
                         $eXeVideoQuExt.showQuestion(mOptions.activeQuestion,instance);
+                    }else{
+                        $('#vquextVideo-' + instance).show();
+                        $('#vquextCover-' + instance).hide();
+                        $eXeVideoQuExt.muteVideo(false,instance);
                     }
                     mOptions.stateReproduction = 0;
                     $eXeVideoQuExt.playVideo(instance);
@@ -878,7 +882,7 @@ var $eXeVideoQuExt = {
             $eXeVideoQuExt.muteVideo(true,instance);
         } else {
             $eXeVideoQuExt.muteVideo(false,instance);
-        } 
+        }
     },
     getIDYoutube: function (url) {
         var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
