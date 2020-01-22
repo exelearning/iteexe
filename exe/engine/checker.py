@@ -223,8 +223,9 @@ class Checker:
                             idevice.imageMagnifier.imageResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'FileAttachIdeviceInc':
                             for attachmentField in idevice.fileAttachmentFields:
-                                if attachmentField.fileResource.checksum == resource.checksum:
-                                    attachmentField.fileResource = resource
+                                if attachmentField.fileResource:
+                                    if attachmentField.fileResource.checksum == resource.checksum:
+                                        attachmentField.fileResource = resource
                         if isinstance(idevice, Idevice) and idevice.klass == 'GalleryIdevice':
                             for image in idevice.images:
                                 if image._imageResource.storageName == resource.storageName:
