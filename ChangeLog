@@ -34,16 +34,11 @@ intef-exe (3:2.5) lucid; urgency=medium
     - New full Catalan translation, by Carles Ferrando García.
     - New full Galician translation, by Pablo Nimo.
     - New full French translation, by Jesús Miguel Domínguez.
-    - New partial Dzongkha translation, by Tandin Penjor.
-    - New Simplified Chinese translation, by Chenggui Duan.
-    - New full Spanish translation.
-    - New full Galician translation.
-    - New full Catalan translation.
-    - New full Catalan translation.
-    - New full French translation.
+    - New full Basque translation, by Joxemi Andonegi.
     - New full Russian translation, by Alexey Loginov.
-    - New Polish translation, coordinated by Alexey Loginov.
     - New full simplified chinese translation, by Chenggui Duan.
+    - New partial Dzongkha translation, by Tandin Penjor.
+    - New Polish translation, coordinated by Alexey Loginov.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
