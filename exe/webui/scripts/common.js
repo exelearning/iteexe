@@ -259,10 +259,26 @@ var $exe = {
 		},
 		
 		strip : function(html) {
+			html = html.trim();
+			var isGame = false;
+			var isVideo = false;
+			// Check if it's a game or a video (#468)
+			if (html.indexOf('<div class="adivina-IDevice')==0 || html.indexOf('<div class="quext-IDevice')==0 || html.indexOf('<div class="rosco-IDevice')==0 ||html.indexOf('<div class="vquext-IDevice')==0) {
+				isGame = true;
+			} else if (html.indexOf('<div class="exe-interactive-video')==0) {
+				isVideo = true;
+			}			
 			var regex = /(<([^>]+)>)/ig
 			html = html.replace(regex, "");
 			html = html.replace(/</g, "&lt;");
 			html = html.replace(/>/g, "&gt;");
+			if (isGame) {
+				html = html.split("{");
+				html = html[0];
+				if (html=="") html = '...';
+			} else if (isVideo) {
+				html = '...';
+			}
 			return html;
 		},		
 		
