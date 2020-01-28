@@ -148,8 +148,9 @@ class MainPage(RenderableLivePage):
             # Copy the nodes and update the root and current ones
             # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
             self.package._nodeIdDict = copy.copy(template._nodeIdDict)
-            self.package.root = self.package._nodeIdDict['0']
-            self.package.currentNode = self.package._nodeIdDict['0']
+            rootkey = [k for k,v in self.package._nodeIdDict.items() if not v.parent][0]
+            self.package.root = self.package._nodeIdDict[rootkey]
+            self.package.currentNode = self.package._nodeIdDict[rootkey]
 
             # Delete the template as we don't need it in memory anymore
             del template
