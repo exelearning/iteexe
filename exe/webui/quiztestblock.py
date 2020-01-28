@@ -240,10 +240,12 @@ class QuizTestBlock(Block):
         """
         scriptStr  = '<script type="text/javascript">\n'
         scriptStr += '<!-- //<![CDATA[\n'
+        scriptStr += 'scorm.SetInteractionValue("cmi.score.scaled", "0");\n'
         scriptStr += "var numQuestions = "
         scriptStr += unicode(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n"
         scriptStr += "var actualScore = 0;\n"
+
         answerStr  = """function getAnswer()
         {"""
         varStrs     = ""
@@ -323,20 +325,23 @@ class QuizTestBlock(Block):
         scriptStr += """  
           
            scorm.SetScoreRaw(actualScore+"" );
-           scorm.SetScoreMax("100");
+           scorm.SetScoreMax(100);
+           scorm.SetScoreMin(0);
           
            var mode = scorm.GetMode();
 
                if ( mode != "review"  &&  mode != "browse" ){
                  if ( actualScore < %s )
                  {
-                   scorm.SetCompletionStatus("incomplete");
+                   scorm.SetCompletionScormActivity("incomplete");
                    scorm.SetSuccessStatus("failed");
+                   scorm.SetInteractionValue("cmi.score.scaled", actualScore/100);
                  }
                  else
                  {
-                   scorm.SetCompletionStatus("completed");
+                   scorm.SetCompletionScormActivity("completed");
                    scorm.SetSuccessStatus("passed");
+                   scorm.SetInteractionValue("cmi.score.scaled", actualScore/100);
                  }
 
                  scorm.SetExit("");

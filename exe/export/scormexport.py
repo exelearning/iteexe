@@ -268,7 +268,7 @@ class Manifest(object):
             xmlStr += u'"> \n'
             xmlStr += u"<metadata> \n"
             xmlStr += u" <schema>ADL SCORM</schema> \n"
-            xmlStr += u" <schemaversion>2004 3rd Edition</schemaversion> \n"
+            xmlStr += u" <schemaversion>2004 4th Edition</schemaversion> \n"
             xmlStr += u" <adlcp:location>imslrm.xml"
             xmlStr += u"</adlcp:location> \n"
             xmlStr += u"</metadata> \n"
