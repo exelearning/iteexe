@@ -63,7 +63,7 @@ padding:5px 10px 5px 43px;background-repeat:no-repeat;background-position:0 50%;
 /* em */
 .iDevice_header .toggle-idevice{position:absolute;top:14px;right:14px}
 /* No em */
-.toggle-em0{position:relative;top:0;right:15px;margin-bottom:-36px}
+.toggle-em0{position:relative;top:0;right:15px;margin-bottom:-21px}
 .toggle-em0 + .iDevice .iDevice_content p:first-child{padding-right:50px} /* To review */
 .hidden-idevice .toggle-em0{margin-bottom:0}
 
