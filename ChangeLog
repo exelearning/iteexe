@@ -39,7 +39,7 @@ intef-exe (3:2.5) lucid; urgency=medium
     - New full Russian translation, by Alexey Loginov.
     - New full simplified chinese translation, by Chenggui Duan.
     - New partial Dzongkha translation, by Tandin Penjor.
-    - New Polish translation, coordinated by Alexey Loginov.
+    - New partial Polish translation, coordinated by Alexey Loginov.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
@@ -65,11 +65,14 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [Other] Fixed: Prevent errors when getting the version.
     - [Other] Fixed: Some packages do not open correctly.
     - [iDevices] Fixed: Check JavaScript iDevice files.
-    - [Other] Fixed: Bug fixes in resource management (#396)
+    - [Other] Fixed: Bug fixes in resource management. (#396)
     - [Other] Fixed: Fixed bug with too long resource filenames.
     - [iDevices] Fixed: File Attachments iDevice. Could not edit elp when a file was missing.
+    - [Other] Fixed: Error when opening some templates.
+    - [Other] Fixed: SCORM 2004 does not register activity. (#465)
+    - [Other] Fixed: Avoid SSL error on Mac when downloading styles from repository.
 
- -- eXeLearning <admin@exelearning.net>  Wed, 24 Jan 2020 13:00:00 +0200
+ -- eXeLearning <admin@exelearning.net>  Tue, 04 Feb 2020 09:00:00 +0200
 
 intef-exe (3:2.4.2) lucid; urgency=medium
 
