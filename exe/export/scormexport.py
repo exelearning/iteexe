@@ -379,6 +379,14 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             else:
                 xmlStr += """    <file href="exe_jquery.js"/>\n"""
 
+            # SCORM 1.2 and SCORM 2004:
+            # So that certain platforms do not delete the necessary files so that the resources can be editable
+            if page.node.package.exportSource:
+                xmlStr += """    <file href="content.xsd"/>\n"""
+                xmlStr += """    <file href="content.data"/>\n"""
+                xmlStr += """    <file href="contentv3.xml"/>\n"""
+                xmlStr += """    <file href="imslrm.xml"/>\n"""
+
             xmlStr += "  </resource>\n"
 
         # no more resources:
