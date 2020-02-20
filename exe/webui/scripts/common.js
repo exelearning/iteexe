@@ -381,7 +381,7 @@ var $exe = {
 				$(".exe-client-search-result-link",$exe.clientSearch.results).html(function(_, html) {
 					html = html.replace(/script_/g,"script");
 					var re = new RegExp('('+query+')',"gi");
-					return  html.replace(re, '<span class="exe-client-search-result">$1</span>');
+					return  html.replace(re, '<mark class="exe-client-search-result">$1</mark>');
 				});
 				$(".exe-client-search-result-detail",$exe.clientSearch.results).each(function(i){
 					// Add a "Read more" link if needed
@@ -403,7 +403,7 @@ var $exe = {
 					$(this).html(function(_, html) {
 						html = html.replace(/script_/g,"script");
 						var re = new RegExp('('+query+')',"gi");
-						return  html.replace(re, '<span class="exe-client-search-result">$1</span>');
+						return  html.replace(re, '<mark class="exe-client-search-result">$1</mark>');
 					});
 				});
 				// Make the "Read more" link work
