@@ -264,7 +264,8 @@ class Application:
             '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
             '.pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
             '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            '.elp': 'application/zip'
+            '.elp': 'application/zip',
+            '.webm': 'video/webm'
         })
 
     def serve(self):

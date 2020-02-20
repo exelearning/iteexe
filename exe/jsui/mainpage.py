@@ -263,6 +263,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
         setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
+        setUpHandler(self.handleAudioFileUpload, 'previewAudioFileUpload')        
 
         # For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -852,6 +853,66 @@ class MainPage(RenderableLivePage):
                     + "file to server prevew, error = " + str(e))
             raise
 
+    def handleAudioFileUpload(self, client, local_file, preview_filename):
+
+        server_filename = ""
+        errors = 0
+
+        webDir = Path(G.application.tempWebDir)
+        previewDir = webDir.joinpath('previews')
+
+        if not previewDir.exists():
+            log.debug("files previews directory does not yet exist; " \
+                    + "creating as %s " % previewDir)
+            previewDir.makedirs()
+        elif not previewDir.isdir():
+            client.alert(\
+                _(u'Preview directory %s is a file, cannot replace it') \
+                % previewDir)
+            log.error("Couldn't preview audio: " +
+                      "Preview dir %s is a file, cannot replace it" \
+                      % previewDir)
+            errors += 1
+        else:
+            shutil.rmtree(previewDir)
+            previewDir.makedirs()
+
+        if errors == 0:
+            log.debug('originally, local_file='
+                    + local_file)
+            log.debug('in unicode, local_file='
+                    + local_file)
+
+            localAudioPath = Path(local_file)
+            log.debug('after Path, localImagePath= '
+                    + localAudioPath)
+
+        try:
+            log.debug('URIencoded preview filename=' + preview_filename)
+
+            server_filename = previewDir.joinpath(preview_filename)
+
+            server_file = open(server_filename, 'wb')
+
+            local_file = local_file.replace('data:audio/webm;base64,', '')
+            server_file.write(base64.b64decode(local_file))
+            server_file.flush()
+            server_file.close()
+
+            sf = str(server_filename)
+
+            #convert webm to mp3
+            #webm_version = AudioSegment.from_file(sf,"webm")
+            #webm_version.export(server_filename.replace(".webm",".mp3"), format="mp3")
+
+            client.sendScript('eXe.app.fireEvent("previewAudioFileDone")')
+
+        except Exception, e:
+            client.alert(_('SAVE FAILED!\n%s') % str(e))
+            log.error("Unable to save audio "
+                    + "file to server prevew, error = " + str(e))
+            raise
+    
     def handleTinyMCEimageDragDrop(self, client, tinyMCEwin, tinyMCEwin_name, \
                               local_filename, preview_filename):
         server_filename = ""
