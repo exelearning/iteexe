@@ -18,7 +18,15 @@ var $exeTinyMCE = {
 		{ title: _("2 columns") + " 50% 50%", url: "/scripts/tinymce_templates/2-50-50.html" },
 		{ title: _("2 columns") + " 30% 70%", url: "/scripts/tinymce_templates/2-30-70.html" },
 		{ title: _("2 columns") + " 70% 30%", url: "/scripts/tinymce_templates/2-70-30.html" },
-		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" }
+		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" },
+		{ title: _("Image (left) + Text (right)"), url: "/scripts/tinymce_templates/img-txt.html" },
+		{ title: _("Text (left) + Image (right)"), url: "/scripts/tinymce_templates/txt-img.html" },
+		{ title: _("Table with column headers"), url: "/scripts/tinymce_templates/table-thead-th.html" },
+		{ title: _("Table with row headers"), url: "/scripts/tinymce_templates/table-tbody-th.html" },
+		{ title: _("Table with column and row headers"), url: "/scripts/tinymce_templates/table-th.html" },
+		{ title: _("2 videos"), url: "/scripts/tinymce_templates/2-videos.html" },
+		{ title: _("2 images"), url: "/scripts/tinymce_templates/2-images.html" },
+		{ title: _("3 images"), url: "/scripts/tinymce_templates/3-images.html" }
 	],
 	path_to_folder: "/scripts/tinymce_4/js/tinymce/",
 	menu: {

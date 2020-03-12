@@ -183,10 +183,15 @@ ol.auto-numbered{counter-reset:item}
 
 /* Responsive design */
 iframe,object,embed{max-width:100%}
-img,video{max-width:100%;height:auto} 
+img,video{max-width:100%;height:auto}
+@media all and (max-width: 992px) {
+	.exe-layout-3-cols .exe-col{float:none;width:100%;padding:0}   
+	.exe-layout-3-cols .exe-col .exe-figure{margin:2em auto}
+} 
 @media all and (max-width: 780px) {
 	.styled-qc{margin:1.5em .5em}
-	.exe-layout-2-cols .exe-col,.exe-layout-3-cols .exe-col{float:none;width:100%;padding:0}   
+	.exe-layout-2-cols .exe-col{float:none;width:100%;padding:0}
+	.exe-layout-2-cols .exe-col .exe-figure{margin:2em auto}
 }
 /* Search bar */
 #exe-client-search-form{text-align:right;margin-bottom:2em}
