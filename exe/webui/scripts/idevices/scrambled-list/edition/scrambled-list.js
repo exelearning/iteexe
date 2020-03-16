@@ -10,7 +10,10 @@ var $exeDevice = {
 	
 	// i18n
 	// We use eXe's _ function
-	name : _('Scrambled List'),	
+	name : _('Scrambled List'),
+
+	// Max number of items
+	items_no : 15,
 	
 	init : function(){
 		 this.createForm();
@@ -89,13 +92,13 @@ var $exeDevice = {
 		
 	},
 	
-	// Fields for the elements to order (up to 9)
+	// Fields for the elements to order (up to $exeDevice.items_no)
 	getListsFields : function(){
 		
 		var html = '<div id="sortableListFormList">';
 		html += '<p><strong>'+_("Write the elements in the right order:")+'</strong></p>';
 		html += '<ol>';
-		for (var i=0;i<9;i++) {
+		for (var i=0;i<$exeDevice.items_no;i++) {
 			html += '<li><label for="sortableListFormList'+i+'" class="sr-av">'+i+'</label><input type="text" name="sortableListFormList'+i+'" id="sortableListFormList'+i+'" /></p>'
 		}
 		html += '</ol>';
@@ -130,7 +133,7 @@ var $exeDevice = {
 			var options = "";
 			var counter = 0;
 			var currentFieldValue = "";
-			for (var i=0;i<9;i++) {
+			for (var i=0;i<$exeDevice.items_no;i++) {
 				currentFieldValue = $("#sortableListFormList"+i).val();
 				if (currentFieldValue!="") {
 					options += '<li>'+currentFieldValue+'</li>';
