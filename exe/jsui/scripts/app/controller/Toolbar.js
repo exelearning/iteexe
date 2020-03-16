@@ -350,7 +350,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
 
     fileNewWindow: function() {
-        window.open(location.href);
+        window.open("/");
     },
 
     assistantPage: function() {
