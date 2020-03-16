@@ -372,6 +372,10 @@ data is entered into this field."""))
                         myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".png")
                         if myIcon.exists():
                             iconExists = True
+                        else:
+                            myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/"icon_" + self.idevice.icon + ".svg")
+                            if myIcon.exists():
+                                iconExists = True
                     if iconExists:
                         html += '<img style="vertical-align:middle;max-width:60px;height:auto" '
                         html += 'src="/style/%s/icon_%s' % (self.style.get_dirname(), icon)
@@ -471,6 +475,11 @@ data is entered into this field."""))
                 if myIcon.exists():
                     iconExists = True 
                     iconExtension = "png"
+                else:
+                    myIcon = Path(G.application.config.stylesDir/self.style.get_dirname()/iconname + ".svg")
+                    if myIcon.exists():
+                        iconExists = True 
+                        iconExtension = "svg"               
             
             if iconExists:
                 filename = "/style/%s/%s.%s" % (self.style.get_dirname(), iconname, iconExtension)

@@ -158,6 +158,13 @@ class JsBlock(Block):
                     iconExtension = "png"
                     iconValue = icon+'.'+iconExtension
                     iconSrc = '/style/%s/icon_%s' % (style, iconValue)
+                else:
+                    myIcon = Path(G.application.config.stylesDir/style/iconname + ".svg")
+                    if myIcon.exists():
+                        iconExists = True 
+                        iconExtension = "svg"
+                        iconValue = icon+'.'+iconExtension
+                        iconSrc = '/style/%s/icon_%s' % (style, iconValue)
             
             if iconExists:
                 filename = "/style/%s/%s.%s" % (style, iconname, iconExtension)
