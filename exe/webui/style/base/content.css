@@ -106,16 +106,18 @@ background:#ededed;
 
 @media print {
     div.node{page-break-after:auto} /* base.css */
-    #main{margin-left:0} /* base.css */
     .iDevice{margin-bottom:20px}
 	html body{background:#fff;color:#000;font-size:11pt}
-	@page{margin:2cm}
+	@page{margin:1.5cm}
 	/* Uncomment this to print URL after links:
 	a{font-weight:bolder;text-decoration:none!important}
 	a[href^=http]:after{content:" <" attr(href) "> "}
 	*/
 	#main .iDeviceTitle{background:none;padding-left:0}
 	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none;padding:0}
+	body #headerContent{padding-top:40px}
+	#packageLicense.cc{padding-left:0;text-align:center}
+	.toggle-idevice{display:none}
 }
 
 /* eXeLearning Style Designer */

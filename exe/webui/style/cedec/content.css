@@ -241,6 +241,8 @@ dt.pbl-task-participants span{padding-left:32px;background:url(_cedec_pbl_partic
 	p.exe-block-warning,p.exe-block-alert,p.exe-block-danger,p.exe-block-info,p.exe-block-success{padding:1em}
 	#theme-iframe-text{display:block}
 	#theme-iframe-indicator,#theme-iframe{display:none!important}
+	#packageLicense.cc{padding-left:20px}
+	.toggle-idevice{display:none}	
 }
 
 .external-link-img{padding:0 .3em;vertical-align:middle}

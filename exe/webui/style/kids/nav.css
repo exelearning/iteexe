@@ -97,3 +97,10 @@ h1#nodeTitle{font-weight:700;color:#1B4D3B}
 	#exe-client-search-form{margin-top:1em}
 	.no-nav #exe-client-search-form{margin-top:0}
 }
+
+@media print{
+	#siteNav,#nav-toggler,.noprt{display:none}
+	body #main,body.no-nav #main{padding:20px 0}
+	body #content{background:#FFF}
+	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold;padding:0}
+}
