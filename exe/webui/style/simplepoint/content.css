@@ -89,7 +89,7 @@ li{list-style-position:outside}
 .fx-timeline-container a.fx-timeline-expand{padding:0 15px}
 .fx-timeline-event{padding-left:21px;color:#777!important;margin-top:1em;margin-bottom:1.5em}
 /* Licenses */
-#packageLicense{text-align:left;margin:0;background:#000;color:#fff;line-height:25px;font-size:.75em;padding:0 20px}
+#packageLicense{text-align:center;margin:0;background:#000;color:#fff;line-height:25px;font-size:.75em;padding:10px 20px}
 #packageLicense p{margin:0}
 #packageLicense a{color:#fff}
 /* Steps (use arrows) */
@@ -98,3 +98,15 @@ li{list-style-position:outside}
 #steps-instructions a{color:#BBB;text-decoration:underline;margin-left:.5em}
 #steps-instructions a:hover,#steps-instructions a:focus{text-decoration:none}
 .exe-web-site.js .presentation-slide{display:none}
+@media print {
+	div.node{page-break-after:auto} /* base.css */
+	html body{background:#fff;color:#000;font-size:11pt}
+	@page{margin:1.5cm}
+	a[href^=http]{font-weight:bold;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}
+	.iDevice{margin-bottom:20px}	
+	#main .iDevice_header{background:none;padding-left:0}
+	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;text-shadow:none;padding-left:0}
+	.toggle-idevice{display:none}
+	.textIdevice,.FreeTextIdevice{max-width:100%;font-size:1em;line-height:1.5em}
+}

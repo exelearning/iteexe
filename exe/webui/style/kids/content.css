@@ -160,3 +160,21 @@ text-shadow:0 1px 1px rgba(255, 255, 255, 0.75)
 .emphasis1 .exe-fx .fx-C2,.emphasis1 .exe-fx .fx-C2 a,.emphasis1 .fx-pagination a{background:#E7F8F2}
 /* Licenses */
 #packageLicense{font-size:.85em}
+
+@media print {
+    div.node{page-break-after:auto} /* base.css */
+    html body{background:#fff;color:#000;font-size:11pt}
+	@page{margin:1.5cm}
+	/* Uncomment this to print URL after links:
+	a{font-weight:bold;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}
+	*/
+	.iDevice{margin-bottom:20px}	
+	#main .iDeviceTitle{background:none;padding-left:0}
+	.iDevice_header{border-width:1px 1px 0 1px}
+	.iDevice_inner{border-width:0 1px 1px 1px}
+	.icon_wrapper{display:none}	
+	#header h1,#nodeDecoration h1{text-align:left}
+	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none;padding:0}
+	.toggle-idevice{display:none}
+}
