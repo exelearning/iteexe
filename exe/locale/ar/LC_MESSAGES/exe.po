@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.4.3\n"
 "Report-Msgid-Bugs-To: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
-"POT-Creation-Date: 2019-11-29 20:41+0100\n"
+"POT-Creation-Date: 2020-01-07 16:41+0100\n"
 "PO-Revision-Date: 2018-12-02 17:16+0100\n"
 "Last-Translator: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
@@ -207,14 +207,14 @@ msgstr "الملف المرفق %s لا يتضمن عقدة الأصل  "
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:709
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:711
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:29
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:667
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:727
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:745
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:669
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:729
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:747
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:43
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:426
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:539
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:541
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:577
 #: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
@@ -912,10 +912,10 @@ msgstr ""
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:58
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:47
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:65
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:757
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:759
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:53
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:60
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:564
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:566
 #: exe/webui/testquestionelement.py:151 exe/webui/truefalseelement.py:200
 #: exe/webui/truefalseelement.py:206
 msgid "Question"
@@ -1027,7 +1027,7 @@ msgstr "لا يوجد ملف محمل حاليًا"
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:665
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:667
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -1161,15 +1161,15 @@ msgstr ""
 #: exe/webui/element.py:2197 exe/webui/element.py:2252
 #: exe/webui/element.py:2584 exe/webui/element.py:2676
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:82
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:762
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:766
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:770
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:774
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:764
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:768
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:772
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:776
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:77
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:569
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:573
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:577
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:581
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:571
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:575
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:579
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:583
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "خيار"
@@ -1182,10 +1182,10 @@ msgid "Hint"
 msgstr "تلميح "
 
 #: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2389
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:93
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:634
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:95
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:636
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:103
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:468
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:470
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:238
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:521
 #: exe/webui/testquestionelement.py:110
@@ -1755,7 +1755,7 @@ msgstr "اختر صورة"
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:671
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:673
 #: exe/webui/scripts/idevices/text/edition/text.js:13
 #: exe/webui/scripts/idevices/text/edition/text.js:22
 #: exe/webui/scripts/idevices/text/edition/text.js:47
@@ -2568,12 +2568,12 @@ msgid ""
 "reflective feedback)."
 msgstr ""
 
-#: exe/engine/resource.py:396
+#: exe/engine/resource.py:414
 #, python-format
 msgid "Unknown extension %s of file %s%s can't be transformed to ISO 9660."
 msgstr ""
 
-#: exe/engine/resource.py:668
+#: exe/engine/resource.py:686
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
@@ -4907,7 +4907,7 @@ msgstr "المعرفة المسبقة"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:64
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:71
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:733
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:735
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:61
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:66
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
@@ -5504,23 +5504,23 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
-msgid "Move node up"
-msgstr "نقل العقدة إلى أعلى"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:46
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:47
-msgid "Move node down"
-msgstr "نقل العقدة إلى أسفل"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:54
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:55
 msgid "Promote node up in hierarchy"
 msgstr "ترقية العقدة إلى أعلى في التدرج الهرمي "
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:62
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:63
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:46
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:47
 msgid "Demote node down in hierarchy"
 msgstr "خفض العقدة إلى أسفل في التدرج الهرمي"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:54
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:55
+msgid "Move node up"
+msgstr "نقل العقدة إلى أعلى"
+
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:62
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:63
+msgid "Move node down"
+msgstr "نقل العقدة إلى أسفل"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:94
 msgid "use the right arrow key"
@@ -7728,14 +7728,14 @@ msgid "This activity does not work in ePub."
 msgstr ""
 
 #: exe/webui/common.py:641 exe/webui/element.py:2505 exe/webui/element.py:2948
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:761
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:765
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:769
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:773
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:568
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:572
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:576
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:580
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:763
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:767
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:771
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:775
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:570
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:574
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:578
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:582
 msgid "Solution"
 msgstr "حل"
 
@@ -8572,9 +8572,9 @@ msgstr "حذف خيار"
 
 #: exe/webui/element.py:2369 exe/webui/element.py:2824
 #: exe/webui/questionelement.py:121
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:697
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:785
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:592
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:699
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:787
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:594
 #: exe/webui/testquestionelement.py:104 exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "حذف سؤال"
@@ -8838,15 +8838,15 @@ msgstr ""
 msgid "Add Placable Object"
 msgstr ""
 
-#: exe/webui/preferencespage.py:159
+#: exe/webui/preferencespage.py:160
 msgid "Default browser in your system"
 msgstr "المتصفح الافتراضي في نظامك"
 
-#: exe/webui/preferencespage.py:204
+#: exe/webui/preferencespage.py:205
 msgid "Failed to get preferences"
 msgstr "فشل في الوصول إلى التفضيلات"
 
-#: exe/webui/preferencespage.py:274
+#: exe/webui/preferencespage.py:275
 msgid "Failed to save preferences"
 msgstr "فشل في حفظ التفضيلات "
 
@@ -9083,10 +9083,10 @@ msgid "Share"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:1217
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:419
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:421
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:92
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:334
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1375
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1377
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:607
 msgid "Supported formats"
 msgstr ""
@@ -9243,7 +9243,7 @@ msgid "Score"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:38
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:717
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:719
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:47
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:37
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:433
@@ -9444,131 +9444,131 @@ msgstr ""
 msgid "You can do this activity as many times as you want"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:80
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:101
-#: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:86
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:96
-msgid "Please provide the word definition or the valid URL of an image"
-msgstr ""
-
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:81
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:102
-#: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:88
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:97
-msgid "The selected file does not contain a valid game"
-msgstr ""
-
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:82
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:103
-#: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:89
+#: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:86
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:98
-msgid "You must upload or indicate the valid URL of an image"
+msgid "Please provide the word definition or the valid URL of an image"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:83
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:104
+#: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:88
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:99
-msgid "Please provide one word or phrase"
+msgid "The selected file does not contain a valid game"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:84
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:105
+#: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:89
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:100
+msgid "You must upload or indicate the valid URL of an image"
+msgstr ""
+
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:85
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:106
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:101
+msgid "Please provide one word or phrase"
+msgstr ""
+
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:86
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:102
 msgid "Please provide at least one question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:90
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:92
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:82
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:631
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:633
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:100
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:541
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:465
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:467
 #: exe/webui/tools/style-designer/langs/all.js:12
 #, fuzzy
 msgid "General settings"
 msgstr "الإعدادات العامة"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:91
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:93
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:101
 msgid "Observe the letters, identify and fill in the missing words."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:96
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:98
 msgid "Time to answer(seconds)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:100
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:637
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:102
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:639
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:106
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:471
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:473
 msgid "Show minimized."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:103
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:640
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:474
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:642
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:476
 msgid "Use lives"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:104
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:641
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:475
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:106
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:643
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:477
 msgid "Number of lives"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:108
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:644
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:110
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:646
 msgid "Random questions"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:111
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:648
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:113
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:650
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:117
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:481
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:483
 msgid "Show solutions"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:649
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:482
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:114
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:651
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:484
 msgid "Show solution time (seconds)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:116
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:118
 msgid "Percentage of letters to show (%)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:122
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:124
 msgid "Words/Phrases"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:558
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1076
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:560
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1078
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:87
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:856
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:858
 msgid "Game"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:694
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:696
 msgid "Drag question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:695
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:779
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:586
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:697
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:781
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:588
 msgid "Add question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:696
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:786
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:698
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:788
 msgid "Copy question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:698
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:700
 msgid "Word/Phrase"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:699
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:701
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:416
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:457
@@ -9580,41 +9580,41 @@ msgstr ""
 msgid "Definition"
 msgstr "عرض الوصف"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:700
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:702
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:417
 msgid "Show/Hide image"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:700
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:702
 #: exe/webui/tools/style-designer/langs/all.js:44
 #, fuzzy
 msgid "Select image"
 msgstr "حدد صورة"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:705
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:706
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:746
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:751
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:707
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:708
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:748
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:753
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:44
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:422
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:423
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:555
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:557
 msgid "No image"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:709
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:711
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:426
 msgid "Indicate a valid URL of an image or select one from your device"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:716
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:718
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:432
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:60
 #, fuzzy
 msgid "Authorship"
 msgstr "المؤلف"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:717
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:719
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:433
 msgid "Hide image"
 msgstr ""
@@ -10064,9 +10064,9 @@ msgid "Num."
 msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:720
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:803
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:499
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:722
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:805
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:501
 msgid "End"
 msgstr ""
 
@@ -10152,9 +10152,9 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:29
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:718
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:801
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:495
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:720
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:803
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:497
 msgid "Start"
 msgstr ""
 
@@ -10323,20 +10323,20 @@ msgid "QuExt Activity"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:49
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:682
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:684
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:44
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:519
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:521
 msgid "Time per question"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:80
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:652
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:654
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:75
 msgid "Video Intro"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:81
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:807
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:809
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:76
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:10
 msgid "Close"
@@ -10362,143 +10362,143 @@ msgstr ""
 msgid "points"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:106
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:451
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:101
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:372
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:108
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:453
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:103
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:374
 msgid "This video is not currently available"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:102
-msgid "You have to complete the question"
-msgstr ""
-
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:108
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:103
-msgid "You have to complete all the selected options"
-msgstr ""
-
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:109
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:632
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:104
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:466
-msgid "Choose the right answer"
+msgid "You have to complete the question"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:110
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:105
-msgid "Type the right URL of a Youtube video"
+msgid "You have to complete all the selected options"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:111
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:634
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:106
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:468
+msgid "Choose the right answer"
+msgstr ""
+
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:112
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:107
+msgid "Type the right URL of a Youtube video"
+msgstr ""
+
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:113
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:108
 msgid ""
 "You have to indicate the start and the end of the video that you want to "
 "show"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:112
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:107
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:114
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:109
 msgid "The video end value must be higher than the start one"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:113
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:108
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:115
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:110
 msgid "You have to type a text in the editor"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:645
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:478
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:647
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:480
 msgid "Random options"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:653
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:800
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:655
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:802
 msgid "Play video intro"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:658
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:487
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:660
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:489
 msgid "Questions"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:662
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:664
 msgid "Multimedia Type"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:669
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:671
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:484
 msgid "Video"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:673
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:510
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:675
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:512
 msgid "Options Number"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:697
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:699
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:701
 msgid "Image URL"
 msgstr "ملفات الصور"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:710
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:712
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:798
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:491
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:714
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:800
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:493
 msgid "Youtube URL"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:714
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:544
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:716
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:546
 msgid "Play video"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:725
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:535
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:727
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:537
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:485
 msgid "Audio"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:737
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:739
 msgid "Alternative text"
-msgstr ""
-
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:780
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:587
-msgid "First question"
-msgstr ""
-
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:781
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:588
-msgid "Previous question"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:782
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:589
-msgid "Question number:"
+msgid "First question"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:783
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:590
-msgid "Next question"
+msgid "Previous question"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:784
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:591
+msgid "Question number:"
+msgstr ""
+
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:785
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:592
+msgid "Next question"
+msgstr ""
+
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:786
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:593
 msgid "Last question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:787
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:789
 msgid "Cut question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:788
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:790
 msgid "Paste question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:810
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:595
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:812
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:597
 msgid "Number of questions:"
 msgstr ""
 
@@ -10743,7 +10743,7 @@ msgid "Source/Author Link"
 msgstr ""
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
-msgid "Atention"
+msgid "Attention"
 msgstr ""
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
@@ -10835,20 +10835,20 @@ msgstr ""
 msgid "VideoQuExt Activity"
 msgstr ""
 
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:109
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:111
 msgid "That second is not part of the video. Please check the video duration."
 msgstr ""
 
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:110
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:112
 msgid "There is already a question in that second."
 msgstr ""
 
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:505
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:507
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:509
 msgid "Question point"
 msgstr ""
 
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:543
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:545
 msgid "Preview question"
 msgstr ""
 
@@ -15245,5 +15245,8 @@ msgstr ""
 #~ "You need at least %s% of correct"
 #~ " answers to get the information. "
 #~ "Please try again."
+#~ msgstr ""
+
+#~ msgid "Atention"
 #~ msgstr ""
 

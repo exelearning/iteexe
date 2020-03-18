@@ -88,7 +88,6 @@ var $exeDevice = {
 
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;","%"); // Avoid invalid HTML
-        this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percent;","%"); // To review (See issue 461)        
         this.setMessagesInfo();
         this.createForm();
     },
@@ -279,7 +278,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
-            $('#vquextNumberQuestion').text($exeDevice.active + 1);
+            $('#quextNumberQuestion').text($exeDevice.active + 1);
         }
 
     },

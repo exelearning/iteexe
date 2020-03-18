@@ -64,9 +64,28 @@ class _Resource(Persistable):
         self._storageName = self._fn2ascii(resourceFile)
         # self._userName is the basename name originally given by the user
 
-        self._userName = resourceFile.encode('utf-8')
+        self._storageName = self._fn2ascii(resourceFile)
+
+        # Check if filename is too long
+        if len(self._storageName) > 100:
+            self._storageName = self._storageName[-100:]
+            reduce_filename = 1
+        else:
+            reduce_filename = 0
+        
+        # self._userName is the basename name originally given by the user
+        if reduce_filename:
+            _userName = resourceFile.dirname() / self._storageName
+            self._userName = _userName.encode('utf-8')
+        else:
+            self._userName = resourceFile.encode('utf-8')
 
         self._originalFile = resourceFile
+
+        if reduce_filename:
+            self._originalFile.copy(self._userName)
+            self._originalFile = Path(self._userName)
+
         try:
             self.checksum = resourceFile.md5
             from exe.engine.idevice   import Idevice 

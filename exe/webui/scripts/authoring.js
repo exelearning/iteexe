@@ -1416,6 +1416,36 @@ var $exeAuthoring = {
 				return false;
 			});
         }
+    },
+    // Upload sound file (the exeaudio TinyMCE plugin needs this)
+    fileUpload : function(field, blob) {
+		if (typeof(FileReader)=='undefined') {
+			return false;
+		}
+        var name = blob.name;
+        var type = blob.type;
+        var reader = new FileReader();
+
+        reader.addEventListener("loadend", function(e) {
+            var data = e.srcElement.result;
+            try {
+                window.parent.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, data, name);
+            } catch(e) {
+                eXe.app.alert(_("Error recovering data"));
+            }
+        });
+        reader.readAsDataURL(blob);
+        var previewSoundFileDone = function() {
+            try {
+				srcurl = "/previews/"+name;
+				field.controls = "controls";
+				field.src = srcurl;
+				field.type = type;				
+			} catch(e) {
+				eXe.app.alert(_("Error recovering data"));
+			}
+        }
+        eXe.app.on('previewAudioFileDone', previewSoundFileDone);
     }
 }
 // Access from the top window so it's easier to call some methods (like errorHandler)

@@ -532,6 +532,13 @@ def ideviceHeader(e, style, mode):
                     iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.png'
                     if mode=="view":
                         iconPath = 'icon_'+e.idevice.icon+'.png'
+                else:
+                    myIcon = themePath.joinpath("icon_" + e.idevice.icon + ".svg")
+                    if myIcon.exists():
+                        iconExists = True
+                        iconPath = '/style/'+style+'/icon_'+e.idevice.icon+'.svg'
+                        if mode=="view":
+                            iconPath = 'icon_'+e.idevice.icon+'.svg'
             if iconExists:
                 o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
             if (e.idevice.icon+"Idevice") != e.idevice.klass:

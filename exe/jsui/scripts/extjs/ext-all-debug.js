@@ -112744,6 +112744,13 @@ Ext.define('Ext.tree.Panel', {
             Ext.callback(callback, scope || me, [false, null]);
             return;
         }
+        
+        // Some nodes might have : in their title (issue #466)
+        var hasPoints = false;
+        if (field=="text" && separator==":" && path.indexOf(": ")!=-1) {
+            path = path.replace(/: /g,"~tmp~");
+            hasPoints = true;
+        }        
 
         keys = path.split(separator);
         if (current.get(field) != keys[1]) {
@@ -112757,6 +112764,10 @@ Ext.define('Ext.tree.Panel', {
                 Ext.callback(callback, scope || me, [true, current]);
                 return;
             }
+            
+            // #466
+            if (hasPoints==true) keys[index] = keys[index].replace(/~tmp~/g,": ");
+            
             var node = current.findChild(field, keys[index]);
             if (!node) {
                 Ext.callback(callback, scope || me, [false, current]);
@@ -112778,10 +112789,23 @@ Ext.define('Ext.tree.Panel', {
         field = field || me.getRootNode().idProperty;
         separator = separator || '/';
 
+        // Some nodes might have : in their title (issue #466)
+        var hasPoints = false;
+        if (field=="text" && separator==":" && path.indexOf(": ")!=-1) {
+            path = path.replace(/: /g,"~tmp~");
+            hasPoints = true;
+        }
+        
         keys = path.split(separator);
         last = keys.pop();
+        
+        // #466
+        if (hasPoints==true) last = last.replace(/~tmp~/g,": ");
+        
         if (keys.length > 1) {
-            me.expandPath(keys.join(separator), field, separator, function(success, node){
+            var url = keys.join(separator);
+            if (hasPoints==true) url = url.replace(/~tmp~/g,": ");
+            me.expandPath(url, field, separator, function(success, node){
                 var lastNode = node;
                 if (success && node) {
                     node = node.findChild(field, last);

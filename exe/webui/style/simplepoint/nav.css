@@ -14,7 +14,7 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 
 @media all and (min-width: 700px) {
     #packageLicense{position:fixed;bottom:50px;right:0;width:100%;padding:0;text-indent:20px}
-    #packageLicense.cc{width:80px;height:15px;padding:0;;right:10px;bottom:60px}
+    #packageLicense.cc{width:80px;height:15px;padding:0;right:10px;bottom:60px}
     #packageLicense.cc p{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
     #packageLicense.cc{background-image:url(_simplepoint_licenses.gif);background-repeat:no-repeat;background-position:0 0}
     #packageLicense.cc-by-sa{background-position:0 -100px}
@@ -103,4 +103,11 @@ html[xmlns] #content{display:block}
 	#nav-toggler a:focus{text-decoration:none}
 	#exe-client-search-form{margin-top:2em}
 	.exe-search-bar #siteNav{margin-bottom:0}
+}
+@media print{
+	#siteNav,#nav-toggler,.noprt{display:none}
+	body #main-wrapper,body.no-nav #main-wrapper{padding:20px 0}
+	#packageLicense{position:relative;bottom:auto;right:auto;text-indent:0}
+	#packageLicense.cc{width:auto;height:auto;padding:0;right:auto;bottom:auto}
+	#packageLicense.cc p{position:relative;overflow:auto;clip:auto;height:auto}
 }

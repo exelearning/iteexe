@@ -94,6 +94,7 @@ function loadPage()
 	{
 		// the student is now attempting the lesson
 		scorm.SetCompletionStatus("unknown");
+		scorm.SetSuccessStatus("unknown")
 	}
 
 	exitPageStatus = false;
@@ -150,6 +151,16 @@ function doContinue( status )
 	if ( mode != "review"  &&  mode != "browse" )
 	{ 
 		scorm.SetCompletionStatus(status);
+		var sucess_status = ""
+		switch(status) {
+			case "completed":
+				sucess_status = "passed";
+			case "incomplete":
+				sucess_status = "failed"
+			default:
+				success_status = status
+		}
+		scorm.SetSuccessStatus(success_status);
 	}
 
 	computeTime();
@@ -223,10 +234,12 @@ function unloadPage(isSCORM)
 			if(isSCORM==true)
 			{
 				scorm.SetCompletionStatus("incomplete");
+				scorm.SetSuccessStatus("failed")
 			}
 			else
 			{
 				scorm.SetCompletionStatus("completed");
+				scorm.SetSuccessStatus("passed")
 			}
 		}
 		doQuit();

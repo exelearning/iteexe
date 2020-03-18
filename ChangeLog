@@ -19,9 +19,11 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [UI] Change the icons to move a node (up, down, left, right). Ricardo Nutz,'s idea.
     - [UI] Change the text of the "Edit iDevices" button. Now "Available iDevices". Ricardo Nutz's idea.
     - [UI] The "Publish" option will be hidden until the process works.
+    - [UI] Disable menu close after clicking on menu item.
     - [Other] Always add the HTTPS to Youtube, Vimeo, G. Maps and Daily Motion.
     - [Other] Common feedback button default behaviour: Show the "Hide feedback" message when the feedback is visible.
     - [Other] Fixed: Lightbox. Youtube start time was not respected.(#439)
+    - [Other] Fixed: Could not save score in SCORM 1.2. (#464)
 
   * Juan Rafael Fernández
     - Fixed: Invalid HTML both in source and in CA translation (with Carles Ferrando García's help). (#441)
@@ -31,8 +33,13 @@ intef-exe (3:2.5) lucid; urgency=medium
     - New full Spanish translation, by Juan Rafael Fernández.
     - New full Catalan translation, by Carles Ferrando García.
     - New full Galician translation, by Pablo Nimo.
+    - New full Valencian translation, by Ricardo Nutz.
     - New full French translation, by Jesús Miguel Domínguez.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Russian translation, by Alexey Loginov.
+    - New full simplified chinese translation, by Chenggui Duan.
     - New partial Dzongkha translation, by Tandin Penjor.
+    - New partial Polish translation, coordinated by Alexey Loginov.
 
   * Manuel Narváez
     - [iDevices] New Word Guessing iDevice.
@@ -56,8 +63,16 @@ intef-exe (3:2.5) lucid; urgency=medium
     - [Other] Fixed: Client search with nested pages problems. (#429)
     - [Other] Fixed: The extended.data file is generated when opening eXe so no new strings are missing. (#441)
     - [Other] Fixed: Prevent errors when getting the version.
+    - [Other] Fixed: Some packages do not open correctly.
+    - [iDevices] Fixed: Check JavaScript iDevice files.
+    - [Other] Fixed: Bug fixes in resource management. (#396)
+    - [Other] Fixed: Fixed bug with too long resource filenames.
+    - [iDevices] Fixed: File Attachments iDevice. Could not edit elp when a file was missing.
+    - [Other] Fixed: Error when opening some templates.
+    - [Other] Fixed: SCORM 2004 does not register activity. (#465)
+    - [Other] Fixed: Avoid SSL error on Mac when downloading styles from repository.
 
- -- eXeLearning <admin@exelearning.net>  Thu, 05 Dec 2019 10:00:00 +0200
+ -- eXeLearning <admin@exelearning.net>  Tue, 04 Feb 2020 09:00:00 +0200
 
 intef-exe (3:2.4.2) lucid; urgency=medium
 

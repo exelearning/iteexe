@@ -1,5 +1,5 @@
 .quext-GameMinimize a:link, .quext-GameMinimize a:link, .quext-GameMinimize a:visited, .quext-GameMinimize a:focus {
-    color: #ff0000;
+    color: #b3092f;
 }
 .quext-LinkMaximize, .quext-LinkFullScreen, .quext-LinkVideoIntroShow {
     width: 26px;
@@ -121,7 +121,7 @@
     margin: 10px auto;
     text-align: center;
     margin-bottom: 10px;
-    color: #ff0000;
+    color: #b3092f;
     font-size: 16px;
     font-weight: bold;
 }
@@ -172,7 +172,7 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #2a9315;
+    color: #00a300;
 }
 
 .quext-HistGGame, .quext-LostGGame {
@@ -197,7 +197,7 @@
 
 .quext-MainContainer a:link, .quext-MainContainer a:link, .quext-MainContainer a:visited, .quext-MainContainer a:focus {
     text-decoration: none !important;
-    border:0px !important;
+    border:0px ;
     outline:none;
     border-width: 0px;
     outline-width:0px;
@@ -276,7 +276,7 @@
 }
 
 .quext-RepeatActivity{
-    color: #ff0000;
+    color: #b3092f;
     font-size:12px;
     font-weight: bold;
 }
@@ -356,9 +356,12 @@
 .exeQuextIcons-FullScreen{
     background: url(exeQuextIcons.png) no-repeat 0 -78px;
 }
-.exeQuextIcons-FullScreenExit{
-    background: url(exeQuextIcons.png) no-repeat -26px -78px;
-}
+/* Fullscreen */
+div:fullscreen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+div:-webkit-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+
+
 
 .exeQuextIcons-RoscoRows{
     background: url(exeQuextIcons.png) no-repeat -26px -52px;
@@ -535,13 +538,29 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     justify-content: center;
     background-color:transparent;
 }
 
+.quext-StarGame {
+    width: 93%;
+    min-height: 45px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    color: #1c1b1b;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 .quext-OptionsDiv {
     background-color: transparent;
     width: 100%;
@@ -573,43 +592,7 @@
     justify-content: center;
 }
 
-.quext-Option1 {
-    background-color: #f7c4c4;
-    border: 2px solid #ff0000;
-}
-.quext-Option1:hover {
-    background-color: #ff0000;
-}
 
-.quext-Option2 {
-    background-color: #d5dcec;
-    border: 2px solid #5877c6;
-}
-
-.quext-Option2:hover {
-    background-color: #5877c6;
-}
-
-.quext-Option3 {
-    background-color: #cce1c8;
-    border: 2px solid #2a9315;
-}
-
-.quext-Option3:hover {
-    background-color: #2a9315;
-}
-
-.quext-Option4 {
-    background-color: #f5efd6;
-    border: 2px solid #f3d55a;
-}
-
-.quext-Option4:hover {
-    background-color: #f3d55a;
-}
-.quext-NumerQuestion{
-    margin-right: 0px;
-}
 
 .quext-GameContainer input[type=button], .quext-GetScore input[type=button]  {
     min-width: 90px;
@@ -654,8 +637,6 @@
         overflow: hidden;
         z-index: 1;
        }
-  
-
     .quext-NumberLivesGame {
         display:none;
     }
@@ -704,6 +685,15 @@
         border-radius: 0px;
         padding: 7px;
         font-size: 12px;
+        font-weight: normal;
+    }
+    .quext-StarGame {
+        width: 95%;
+        min-height: 30px;
+        margin: 7px auto;
+        border-radius: 0px;
+        padding: 7px;
+        font-size: 18px;
         font-weight: normal;
     }
     .quext-AutorLicence {
@@ -791,6 +781,14 @@
         padding: 3px;
         font-size: 12px;
     }
+    .quext-StarGame{
+        width: 95%;
+        min-height: 30px;
+        margin: 5px auto;
+        border-radius: 0px;
+        padding: 3px;
+        font-size: 18px;
+    }
     .quext-Icons {
         width: 14px;
         height: 14px;
@@ -801,4 +799,37 @@
         font-size:13px;
     }
 
+}
+
+.quext-MainContainer a.quext-Option1 {
+    background-color: #f7c4c4;
+    border: 2px solid #b3092f ;
+}
+.quext-MainContainer a.quext-Option1:hover {
+    background-color: #b3092f;
+}
+.quext-MainContainer a.quext-Option2 {
+    background-color: #d5dcec;
+    border: 2px solid #5877c6 ;;
+}
+
+.quext-MainContainer a.quext-Option2:hover {
+    background-color: #5877c6;
+}
+.quext-MainContainer a.quext-Option3 {
+    background-color: #cce1c8;
+    border: 2px solid #00a300 ;;
+}
+.quext-MainContainer a.quext-Option3:hover {
+    background-color: #00a300;
+}
+.quext-MainContainer a.quext-Option4 {
+    background-color: #f5efd6;
+    border: 2px solid #f3d55a ;;
+}
+.quext-MainContainer a.quext-Option4:hover {
+    background-color: #f3d55a;
+}
+.quext-NumerQuestion{
+    margin-right: 0px;
 }

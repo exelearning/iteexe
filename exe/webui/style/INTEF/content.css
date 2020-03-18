@@ -133,7 +133,14 @@ li{list-style-position:outside}
 	#nodeDecoration,#header,#emptyHeader{color:#000;text-shadow:none;background:none;border:none;border-bottom:1px solid #E2E2E2;padding:20px 0}
 	#packageLicense,#packageLicense.cc{background:none;padding:0;border:none;box-shadow:none;text-align:center}
 	#packageLicense,#packageLicense a,#nodeTitle,.nodeTitle{color:#000}
+	.hidden-idevice .iDevice_header{box-shadow:none}
+	.iDevice_inner{box-shadow:none;padding:10px 0}
 	.iDevice_header{padding:5px 0}
+	.toggle-idevice{display:none}	
+	/* Uncomment this to print URL after links:
+	a[href^=http]{font-weight:bold;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}
+	*/	
 }
 
 /* Accordion */

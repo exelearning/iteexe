@@ -214,7 +214,7 @@ class WebsiteExport(object):
         # jQuery
         listFiles=[]
         listOutFiles=[]
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')
@@ -299,7 +299,7 @@ class WebsiteExport(object):
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
                 if hasattr(idevice, "_iDeviceDir"):
-                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+                    listIdevicesFiles.append((idevice.get_jsidevice_dir()/'export'))
 
             common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
 

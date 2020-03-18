@@ -29,6 +29,7 @@ from exe.engine.field                               import ImageField, Attachmen
 from exe.engine.path                                import Path
 from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
 from xml.dom                                        import minidom
+from exe                                            import globals as G
 import re
 import logging
 import os
@@ -83,9 +84,6 @@ class JsIdevice(Idevice):
             if 'icon' in xmlValues:
                 self.icon = xmlValues['icon']
 
-            # Initialize resources list
-            self._editionResources = []
-            self._exportResources = []
 
             # Initialize field arrays
             self.fields  = []
@@ -96,7 +94,6 @@ class JsIdevice(Idevice):
 
             # Add default JS Idevice fields
             self.__addDefaultFields()
-            self.__getFolderResources()
 
 
     def __loadIdevice(self):
@@ -106,7 +103,7 @@ class JsIdevice(Idevice):
         try:
             if self._valid:
                 # Check if the folder has a config.xml file
-                configFile = Path(self._iDeviceDir + '/config.xml')
+                configFile = self.get_jsidevice_dir() / 'config.xml'
                 if configFile.exists():
                     # Get config data
                     configData = open(configFile).read()
@@ -138,19 +135,19 @@ class JsIdevice(Idevice):
                         if 'title' in result and 'css-class' in result:
                             return result
                         else:
-                            raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'Mandatory fields not found.')
+                            raise InvalidConfigJsIdevice(Path(self.get_dirname()), 'Mandatory fields not found.')
                 else:
-                    raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), 'config.xml file doesn\'t exist.')
+                    raise InvalidConfigJsIdevice(Path(self.get_dirname()), 'config.xml file doesn\'t exist.')
         except IOError as ioerror:
             # If we can't load an iDevice, we simply continue with the rest (and log it)
-            log.debug("iDevice " + Path(self._iDeviceDir).basename() + " doesn't appear to have a valid \"config.xml\" file")
-            raise InvalidConfigJsIdevice(Path(self._iDeviceDir).basename(), ioerror.message)
+            log.debug("iDevice " + Path(self.get_dirname()) + " doesn't appear to have a valid \"config.xml\" file")
+            raise InvalidConfigJsIdevice(Path(self.get_dirname()), ioerror.message)
 
     def _checkValid(self):
-        config = Path(self._iDeviceDir)/'config.xml'
-        edition = Path(self._iDeviceDir)/'edition'
+        config = Path(self.get_jsidevice_dir())/'config.xml'
+        edition = Path(self.get_jsidevice_dir())/'edition'
 
-        if config.exists() and edition.exists() :
+        if config.exists() and edition.exists():
             self._valid = True
         else:
             self._valid = False
@@ -172,19 +169,6 @@ class JsIdevice(Idevice):
         """ A JS iDevice only has a Textarea with no instructions """
         self.addField(TextAreaField(""))
 
-    def __getFolderResources(self):
-        self._editionFolder = str(Path(self._iDeviceDir).basename() + '/edition/')
-
-        for editionFile in os.listdir(self._iDeviceDir + '/edition'):
-            self._editionResources.append(editionFile)
-
-        # Check if export directory exists
-        if (Path(self._iDeviceDir) / 'export').exists():
-            self._exportFolder = str(Path(self._iDeviceDir).basename() + '/export/')
-            for exportFile in os.listdir(self._iDeviceDir + '/export'):
-                self._exportResources.append(exportFile)
-        else:
-            self._exportFolder = None
 
 
     def addField(self, field):
@@ -352,19 +336,21 @@ class JsIdevice(Idevice):
         """ Get a list of the iDevice resources """
         resources = list()
 
-        # Check if not empty export resources
-        if self._exportResources:
-            for res in self._exportResources:
+        # Check export resources
+        export_resources_path = Path(self.get_jsidevice_dir()) / 'export'
+        if export_resources_path.exists():
+            for res in os.listdir(export_resources_path):
                 if appendPath:
-                    resources.append(str(self._exportFolder + res))
+                    resources.append(str(Path(self.get_jsidevice_dir()).basename() + '/export/' + res))
                 else:
                     resources.append(str(res))
 
-        # Edition resources
-        if(editMode):
-            for res in self._editionResources:
+        # Check edition resources
+        edition_resources_path = Path(self.get_jsidevice_dir()) / 'edition'
+        if(editMode) and edition_resources_path.exists():
+            for res in os.listdir(edition_resources_path):
                 if appendPath:
-                    resources.append(str(self._editionFolder + res))
+                    resources.append(str(Path(self.get_jsidevice_dir()).basename() + '/edition/' + res))
                 else:
                     resources.append(str(res))
 
@@ -375,13 +361,24 @@ class JsIdevice(Idevice):
         return resources
 
     def get_export_folder(self):
-        return self._exportFolder
+        export_folder = Path(self.get_jsidevice_dir()) / 'export'
+        if export_folder.exists():
+            return str(Path(self.get_dirname() + '/export/'))
 
     def get_dirname(self):
-        return Path(self._iDeviceDir).basename()
+        dirname = ""
+        if Path(self._iDeviceDir) == Path(self._iDeviceDir).basename():
+            if "\\" in self._iDeviceDir:
+                dirname = self._iDeviceDir.split("\\")[-1]
+            else:
+                dirname = str(Path(self._iDeviceDir).basename())
+        else:    
+            dirname = str(Path(self._iDeviceDir).basename())
+        self._iDeviceDir = dirname
+        return self._iDeviceDir
 
     def get_jsidevice_dir(self):
-        return Path(self._iDeviceDir)
+        return G.application.config.jsIdevicesDir / self.get_dirname()
 
     def renderProperties(self):
         properties = []

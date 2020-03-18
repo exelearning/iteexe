@@ -331,7 +331,7 @@ class Epub3Page(Page):
         style = G.application.config.styleStore.getStyle(self.node.package.style)
 
         # jQuery
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             if style.get_jquery() == True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lb
             else:
@@ -355,7 +355,7 @@ class Epub3Page(Page):
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lb
         # Some styles might have their own JavaScript files (see their config.xml file)
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             html += style.get_extra_head()
         html += common.getExtraHeadContent(self.node.package)
         html += u"</head>" + lb
@@ -393,7 +393,7 @@ class Epub3Page(Page):
         html += self.renderLicense()
         html += unicode(BeautifulSoup(self.renderFooter()))
         html += u"</div>" + lb  # /#outer
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             html += style.get_extra_body()
         html += u'</body></html>'
         html = html.encode('utf8')
@@ -646,7 +646,7 @@ class Epub3SubExport(object):
             pluginScripts.copyfiles(contentPages)
 
         my_style = G.application.config.styleStore.getStyle(package.style)
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir / 'exe_jquery.js')
                 jsFile.copyfile(contentPages / 'exe_jquery.js')

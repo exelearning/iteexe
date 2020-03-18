@@ -405,7 +405,7 @@ pipwerks.SCORM.data.get = function(parameter){
             //Double-check errorCode to make sure empty string
             //is really an error and not field value
             if(value !== "" && errorCode === 0){
-			   
+			   			
 				switch(parameter){
 					
 					case "cmi.core.lesson_status": 
@@ -721,6 +721,8 @@ pipwerks.SCORM.quit = pipwerks.SCORM.connection.terminate;
 ---------------------------------------------------------------------------- */
 
 pipwerks.UTILS.StringToBoolean = function(string){
+     if (typeof(string)=='undefined') return false;
+     string = string.toString();
      switch(string.toLowerCase()) {
           case "true": case "yes": case "1": return true;
           case "false": case "no": case "0": case null: return false; 
@@ -764,7 +766,7 @@ pipwerks.UTILS.convertTotalMiliSeconds = function(intTotalMilliseconds){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 
@@ -971,7 +973,7 @@ pipwerks.SCORM.GetDataModelVersion = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 			result = scorm.get("cmi._version");
@@ -1025,7 +1027,7 @@ pipwerks.SCORM.SetCompletionStatus = function(status){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		// Check the value
@@ -1040,6 +1042,38 @@ pipwerks.SCORM.SetCompletionStatus = function(status){
 		switch(scorm.version){
 			case "1.2" : result = scorm.set("cmi.core.lesson_status",status); break;
 			case "2004": result = scorm.set("cmi.completion_status",status); break;
+		}
+	}
+	else {
+	        trace("pipwerks.SCORM.SetCompletionStatus failed: API is null.");
+	}
+};
+
+
+/* --------------------------------------------------------------------------------
+// cmi.completion_status: Indicates whether the learner has completed the Activity SCORM
+/* --------------------------------------------------------------------------------
+   pipwerks.SCORM.SetCompletionScormActivity
+   Parameters: status (string)
+   Returns:    none
+----------------------------------------------------------------------------------- */
+
+pipwerks.SCORM.SetCompletionScormActivity = function(status){
+	var API = pipwerks.SCORM.API.getHandle(),
+		scorm = pipwerks.SCORM,
+		trace = pipwerks.UTILS.trace,
+		result = "";
+		
+	if(API){
+		switch(scorm.version){
+			case "1.2" : 
+				result = scorm.set("cmi.core.lesson_status",status); 
+				break;
+			case "2004":
+				// If we finish the activity it will be complete, even if it is incorrectly.
+				// To indicate if it is correct in scorm 2004 we have sucess_status.
+				result = scorm.set("cmi.completion_status","completed");
+				break;
 		}
 	}
 	else {
@@ -1064,7 +1098,7 @@ pipwerks.SCORM.GetExit = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1090,7 +1124,7 @@ pipwerks.SCORM.SetExit = function(exit){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		// Check the value
@@ -1154,7 +1188,7 @@ pipwerks.SCORM.SetInteractionValue = function(key,value){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1162,7 +1196,9 @@ pipwerks.SCORM.SetInteractionValue = function(key,value){
 			case "2004":
 				// Just replace 
 				key = key.replace("student","learner");
-				result = scorm.set(key,value); break;
+				if (value=="wrong") value = "incorrect";
+				result = scorm.set(key,value); 
+				break;
 		}
 	}
 	else {
@@ -1184,7 +1220,7 @@ pipwerks.SCORM.GetLearnerId = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1210,7 +1246,7 @@ pipwerks.SCORM.GetLearnerName = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1240,7 +1276,7 @@ pipwerks.SCORM.GetMode = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 
@@ -1267,7 +1303,7 @@ pipwerks.SCORM.SetMode = function(mode){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		// Check the value
@@ -1302,7 +1338,7 @@ pipwerks.SCORM.GetScoreMax = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 
@@ -1329,7 +1365,7 @@ pipwerks.SCORM.SetScoreMax = function(max_score){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1353,7 +1389,7 @@ pipwerks.SCORM.GetScoreMin = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 
@@ -1380,7 +1416,7 @@ pipwerks.SCORM.SetScoreMin = function(min_score){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1404,7 +1440,7 @@ pipwerks.SCORM.GetScoreRaw = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 
@@ -1431,7 +1467,7 @@ pipwerks.SCORM.SetScoreRaw = function(score){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
@@ -1457,7 +1493,7 @@ pipwerks.SCORM.GetSessionTime = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 	// Pending: check string format
 	if(API){
 
@@ -1484,7 +1520,7 @@ pipwerks.SCORM.SetSessionTime = function(time){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	// Pending: check string format
 	if(API){
@@ -1509,11 +1545,11 @@ pipwerks.SCORM.GetSuccessStatus = function(){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+        result = "";
 		
 	if(API){
 		switch(scorm.version){
-			case "1.2" : result = scorm.get("cmi.core.completion_status"); break; // cmi.success_status only exists in 2004
+			case "1.2" : result = scorm.get("cmi.core.lesson_status"); break; // cmi.success_status and cmi.completion_status only exist in 2004
 			case "2004": result = scorm.get("cmi.success_status"); break;
 		}
 	}
@@ -1535,19 +1571,34 @@ pipwerks.SCORM.SetSuccessStatus = function(status){
 	var API = pipwerks.SCORM.API.getHandle(),
 		scorm = pipwerks.SCORM,
 		trace = pipwerks.UTILS.trace,
-        	result = "";
+		result = "";
 		
 	if(API){
 		// Check the value
 		switch(status){
-			case "passed" :break;
-			case "failed" :break;
-			case "unknown" :break;
-			default: trace("pipwerks.SCORM.SetSuccessStatus failed: " + status + " value is not valid.");return;
+			case "passed" :
+				break;
+			case "failed" :
+				break;
+			case "unknown" :
+				break;
+			default: 
+				trace("pipwerks.SCORM.SetSuccessStatus failed: " + status + " value is not valid.");
+				return;
  		}
 		switch(scorm.version){
-			case "1.2" : result = scorm.set("cmi.core.lesson_status",status); break;
-			case "2004": result = scorm.set("cmi.success_status",status); break;
+			case "2004":
+				result = scorm.set("cmi.success_status",status);
+				/*
+				if (!scorm.get("cmi.score.scaled")) {
+					if (status == "passed") {
+						scorm.set("cmi.score.scaled", 1);
+					} else {
+						scorm.set("cmi.score.scaled", 0);
+					}
+				}
+				*/
+				break;
 		}
 	}
 	else {

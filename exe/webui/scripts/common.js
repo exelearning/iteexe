@@ -259,6 +259,19 @@ var $exe = {
 		},
 		
 		strip : function(html) {
+			html = html.trim();
+			var splitter = "~exe-activity-results~: ";
+			// Check if it's an activity with results (#468)
+			if (html.indexOf('<div class="adivina-IDevice')==0 || html.indexOf('<div class="quext-IDevice')==0 || html.indexOf('<div class="rosco-IDevice')==0 ||html.indexOf('<div class="vquext-IDevice')==0) {
+				html = html.replace('{',splitter+'{');
+			} else if (html.indexOf('<div class="exe-interactive-video')==0) {
+				html = splitter + html;
+			} else if (html.indexOf('<div class="exe-sortableList')==0) {
+				html = html.replace('<ul',splitter+'<ul');
+			} else if (html.indexOf('<u>')!=-1) {
+				// Dropdown activity, etc.
+				html = html.replace('<u>','...'+splitter+'<u>');
+			}
 			var regex = /(<([^>]+)>)/ig
 			html = html.replace(regex, "");
 			html = html.replace(/</g, "&lt;");
@@ -300,6 +313,9 @@ var $exe = {
 							a = a_by_title;
 						}
 						if (a.length==1) {
+							// Remove the results from the visible text (#468)
+							currHTML = currHTML.split("~exe-activity-results~: ");
+							currHTML = currHTML[0];
 							if (currHTML=="") currHTML = "...";
 							else res += '<li><strong><a href="'+a.attr("href")+'" \
 							class="exe-client-search-result-link">'+sTitle+'</a> &rarr; </strong>\
@@ -365,7 +381,7 @@ var $exe = {
 				$(".exe-client-search-result-link",$exe.clientSearch.results).html(function(_, html) {
 					html = html.replace(/script_/g,"script");
 					var re = new RegExp('('+query+')',"gi");
-					return  html.replace(re, '<span class="exe-client-search-result">$1</span>');
+					return  html.replace(re, '<mark class="exe-client-search-result">$1</mark>');
 				});
 				$(".exe-client-search-result-detail",$exe.clientSearch.results).each(function(i){
 					// Add a "Read more" link if needed
@@ -387,7 +403,7 @@ var $exe = {
 					$(this).html(function(_, html) {
 						html = html.replace(/script_/g,"script");
 						var re = new RegExp('('+query+')',"gi");
-						return  html.replace(re, '<span class="exe-client-search-result">$1</span>');
+						return  html.replace(re, '<mark class="exe-client-search-result">$1</mark>');
 					});
 				});
 				// Make the "Read more" link work

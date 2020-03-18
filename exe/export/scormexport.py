@@ -268,7 +268,7 @@ class Manifest(object):
             xmlStr += u'"> \n'
             xmlStr += u"<metadata> \n"
             xmlStr += u" <schema>ADL SCORM</schema> \n"
-            xmlStr += u" <schemaversion>2004 3rd Edition</schemaversion> \n"
+            xmlStr += u" <schemaversion>2004 4th Edition</schemaversion> \n"
             xmlStr += u" <adlcp:location>imslrm.xml"
             xmlStr += u"</adlcp:location> \n"
             xmlStr += u"</metadata> \n"
@@ -373,11 +373,19 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             xmlStr += """    <file href="SCOFunctions.js"/>\n"""
             xmlStr += """    <file href="common.js"/>\n"""
             xmlStr += """    <file href="common_i18n.js"/>\n"""
-            if my_style.hasValidConfig:
+            if my_style.hasValidConfig():
                 if my_style.get_jquery() == True:
                     xmlStr += """    <file href="exe_jquery.js"/>\n"""
             else:
                 xmlStr += """    <file href="exe_jquery.js"/>\n"""
+
+            # SCORM 1.2 and SCORM 2004:
+            # So that certain platforms do not delete the necessary files so that the resources can be editable
+            if page.node.package.exportSource:
+                xmlStr += """    <file href="content.xsd"/>\n"""
+                xmlStr += """    <file href="content.data"/>\n"""
+                xmlStr += """    <file href="contentv3.xml"/>\n"""
+                xmlStr += """    <file href="imslrm.xml"/>\n"""
 
             xmlStr += "  </resource>\n"
 
@@ -629,7 +637,7 @@ class ScormExport(object):
 
         # jQuery
         my_style = G.application.config.styleStore.getStyle(page.node.package.style)
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 #listFiles+=[self.scriptsDir/'exe_jquery.js']
                 #listOutFiles+=[outputDir/'exe_jquery.js']
@@ -751,7 +759,7 @@ class ScormExport(object):
                 if not hasABCMusic:
                     hasABCMusic = common.ideviceHasABCMusic(idevice)
                 if hasattr(idevice, "_iDeviceDir"):
-                    listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+                    listIdevicesFiles.append((idevice.get_jsidevice_dir()/'export'))
 
             common.exportJavaScriptIdevicesFiles(page.node.idevices, outputDir);
 

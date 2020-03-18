@@ -120,7 +120,7 @@ class SinglePageExport(object):
         my_style = G.application.config.styleStore.getStyle(package.style)
 
         # jQuery
-        if my_style.hasValidConfig:
+        if my_style.hasValidConfig():
             if my_style.get_jquery() == True:
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(self.outputDir/'exe_jquery.js')
@@ -216,7 +216,7 @@ class SinglePageExport(object):
             if not hasABCMusic:
                 hasABCMusic = common.ideviceHasABCMusic(idevice)
             if hasattr(idevice, "_iDeviceDir"):
-                listIdevicesFiles.append((Path(idevice._iDeviceDir)/'export'))
+                listIdevicesFiles.append((idevice.get_jsidevice_dir()/'export'))
 
         if hasFlowplayer:
             videofile = (self.templatesDir/'flowPlayer.swf')

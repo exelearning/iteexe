@@ -248,6 +248,12 @@ var $exeDevice = {
 		
 		// Create the "Create rubric" top form
 		// The SELECT will be hidden until CEDEC's rubrics are loaded
+		var toReview = _("Load CEDEC's rubrics (in Spanish)"); // To review (unused string)
+		var appLang = $("html").eq(0).attr("lang");
+		var lang = _("Spanish ");
+			lang = lang.trim();
+			lang = " ("+lang+")";
+			if (appLang=='es' || appLang=='eu' || appLang=='ca' || appLang=='gl' || appLang=='ca_ES@valencia') lang = "";
 		var html = '\
 			<p>\
 				<input type="button" value="'+_("New rubric")+'" id="ri_CreateNewRubric" /> \
@@ -259,7 +265,7 @@ var $exeDevice = {
 					</select>\
 					</label>\
 				</span>\
-				<input type="button" value="'+_("Load CEDEC's rubrics (in Spanish)")+'" id="ri_LoadCEDECRubrics" /> \
+				<input type="button" value="'+_("Example rubrics")+lang+'" id="ri_LoadCEDECRubrics" /> \
 			</p>\
 		';
 		
@@ -618,7 +624,7 @@ var $exeDevice = {
 		
 		// Buttons (events)
 		$("#ri_Reset").click(function(){
-			Ext.Msg.confirm(_("Atention"), _("Revert all changes? This can't be undone."), function(button) {
+			Ext.Msg.confirm(_("Attention"), _("Revert all changes? This can't be undone."), function(button) {
 				if (button == "yes") {
 					if (typeof($exeDevice.originalData)!='undefined') {
 						$exeDevice.jsonToTable($exeDevice.originalData,"edition");

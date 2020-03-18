@@ -1,5 +1,5 @@
 .adivina-GameMinimize a:link, .adivina-GameMinimize a:link, .adivina-GameMinimize a:visited, .adivina-GameMinimize a:focus {
-    color: #ff0000;
+    color: #b3092f;
 }
 
 .adivina-MainContainer a:link, .adivina-MainContainer a:link, .adivina-MainContainer a:visited, .adivina-MainContainer a:focus {
@@ -30,7 +30,7 @@
 .adivina-MessageMaximize {
     width: 100%;
     text-align: left;
-    color: #ff0000;
+    color: #b3092f;
     font-weight: bold;
     font-size: 13pt;
     margin: 10px auto;
@@ -103,7 +103,7 @@
 
 .adivina-Definition a {
     width: 100%;
-    color: red;
+    color: #b3092f;
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
@@ -124,11 +124,11 @@
 }
 
 .adivina-Letter.green {
-    color: #2a9315;
+    color: #00a300;
 }
 
 .adivina-Letter.red {
-    color: #ff0000;
+    color: #b3092f;
 }
 
 .adivina-MainContainer {
@@ -330,7 +330,7 @@
     margin: 10px auto;
     text-align: center;
     margin-bottom: 10px;
-    color: #ff0000;
+    color: #b3092f;
     font-size: 16px;
     font-weight: bold;
 }
@@ -396,7 +396,7 @@
     align-items: center;
 }
 .adivina-RepeatActivity{
-    color: #ff0000;
+    color: #b3092f;
     font-size:12px;
     font-weight: bold;
     text-align: center;
@@ -417,7 +417,7 @@
     font-size: 14px;
     font-weight: bold;
     text-align: center;
-    color: #2a9315;
+    color: #00a300;
 }
 
 .adivina-HistGGame, .adivina-LostGGame {
@@ -595,9 +595,13 @@
 .exeQuextIcons-FullScreen{
     background: url(exeQuextIcons.png) no-repeat 0 -78px;
 }
-.exeQuextIcons-FullScreenExit{
-    background: url(exeQuextIcons.png) no-repeat -26px -78px;
-}
+
+
+/* Fullscreen */
+div:fullscreen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+div:-webkit-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
+
 
 .exeQuextIcons-RoscoRows{
     background: url(exeQuextIcons.png) no-repeat -26px -52px;
@@ -740,3 +744,4 @@
         font-size: 10px;
     }
 }
+p.adivinaDivInstructions{margin:0;font-weight:bold;text-align:center;height:32px}

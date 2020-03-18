@@ -121,7 +121,7 @@ Ext.define('eXe.controller.Toolbar', {
             },
             // Advanced user
             '#file_export_scorm': {
-                click: { fn: this.processExportEvent, exportType: "scorm2004" }
+                click: { fn: this.processExportEvent, exportType: "scorm1.2" }
             },
             '#file_export_website_b': {
                 click: { fn: this.processExportEvent, exportType: "webSite" }
@@ -350,7 +350,7 @@ Ext.define('eXe.controller.Toolbar', {
     },
 
     fileNewWindow: function() {
-        window.open(location.href);
+        window.open("/");
     },
 
     assistantPage: function() {

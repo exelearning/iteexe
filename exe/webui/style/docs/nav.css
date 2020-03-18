@@ -74,7 +74,7 @@ body .pagination a,body #nav-toggler a{filter:alpha(opacity=100);opacity:1;outli
 @media print{
 	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
 	body #main,body.no-nav #main{padding:20px 0}
-	body #content{background:#FFF}
+	body #content{background:#FFF;box-shadow:none}
 	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold}
 }
 

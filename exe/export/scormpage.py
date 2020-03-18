@@ -104,7 +104,7 @@ class ScormPage(Page):
             html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         
         # jQuery
-        if style.hasValidConfig:
+        if style.hasValidConfig():
             if style.get_jquery() == True:
                 html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
             else:
@@ -131,7 +131,7 @@ class ScormPage(Page):
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         if self.scormType == 'commoncartridge':
-            if style.hasValidConfig:
+            if style.hasValidConfig():
                 html += style.get_extra_head()        
             html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb
@@ -140,7 +140,7 @@ class ScormPage(Page):
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
             html += u"<script type=\"text/javascript\" src=\"SCOFunctions.js\"></script>"+lb
-            if style.hasValidConfig:
+            if style.hasValidConfig():
                 html += style.get_extra_head()
             html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb            
@@ -183,7 +183,7 @@ class ScormPage(Page):
         if self.node.package.get_addPagination():
             html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self) + 1)+'</strong>','<strong>'+str(len(pages))+'</strong>')+ "</p>"+lb 
         if themeHasXML:
-        #if style.hasValidConfig:
+        #if style.hasValidConfig():
             html += self.renderLicense()
             html += self.renderFooter()
         html += u"</div>"+lb # /#outer
@@ -194,7 +194,7 @@ class ScormPage(Page):
             html += u'href="javascript:goForward();">%s</a>' % c_('Next')
             html += u'</'+sectionTag+'>'+lb
         if not themeHasXML:
-        #if not style.hasValidConfig:
+        #if not style.hasValidConfig():
             html += self.renderLicense()
             html += self.renderFooter()
         else:
