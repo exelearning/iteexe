@@ -943,6 +943,28 @@ var $exeAuthoring = {
             $exeAuthoring.iDevice.filePicker.init();
             
         },
+        // Common
+        common : {
+            // Get the "Text after" or the "Text before" fieldset
+            getTextFieldset : function(position){
+                if (typeof(position)!="string" || (position!="after" && position!="before")) return "";
+                var tit = _('Text after');
+                var id = "After";
+                if (position=="before") {
+                    tit = _('Text before');
+                    id = "Before";
+                }
+                return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
+                            <legend><a href='#'>"+tit+" ("+_('Optional').toLowerCase()+")</a></legend>\
+                            <div>\
+                                <p>\
+                                    <label for='eXeIdeviceText"+id+"' class='sr-av'>"+tit+":</label>\
+                                    <textarea id='eXeIdeviceText"+id+"' class='exe-html-editor'\></textarea>\
+                                </p>\
+                            <div>\
+                        </fieldset>";               
+            }
+        },
         // Gamification
         gamification : {
             common : {

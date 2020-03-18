@@ -21,12 +21,12 @@ var $exeDevice = {
 	
 	// Create the form to insert HTML in the TEXTAREA
 	createForm : function(){
-		
-		var html = '\
+        
+        var html = '\
 			<div id="sortableListForm">\
 				<p class="exe-text-field">\
 					<label for="sortableListFormInstructions">'+_("Instructions")+': </label>\
-					<input type="text" class="sortableListTextOption" name="sortableListFormInstructions" id="sortableListFormInstructions" />\
+					<textarea id="sortableListFormInstructions" class="exe-html-editor"\></textarea>\
 				</p>\
 				'+this.getListsFields()+'\
 				<p class="exe-text-field">\
@@ -41,6 +41,7 @@ var $exeDevice = {
 					<label for="sortableListWrongText">'+_("Wrong Answer Feedback Overlay")+': </label><input type="text" class="sortableListTextOption" name="sortableListWrongText" id="sortableListWrongText" onfocus="this.select()" />\
 					<span class="exe-field-instructions">'+_("The right answer will be shown after this text.")+'</span>\
                 </p>\
+                '+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
 			</div>\
 		';
 		
@@ -67,21 +68,41 @@ var $exeDevice = {
 		
 			field.after('<div id="sortableListValuesContainer">'+originalHTML+'</div>');
 			var container = $("#sortableListValuesContainer");
-			var paragraphs = $("P",container);
 			
-			// Save values
-			if (paragraphs.length==4) {
-				instructions = paragraphs.eq(0).text();
-				buttonText = paragraphs.eq(1).text();
-				rightText = paragraphs.eq(2).text();
-				wrongText = paragraphs.eq(3).text();
-			}
-			
-			// Load the values
-			$("#sortableListFormInstructions").val(instructions);
-			$("LI",container).each(function(i){
+            // Instructions
+            var instructions = $(".exe-sortableList-instructions",container);
+            if (instructions.length==1) {
+                instructions = instructions.html();
+                $("#sortableListFormInstructions").val(instructions);
+            }
+            
+            // Button text
+            var buttonTextContainer = $(".exe-sortableList-buttonText",container);
+            if (buttonTextContainer.length==1 && buttonTextContainer.text()!="") buttonText = buttonTextContainer.text();
+
+            // Right text
+            var rightTextContainer = $(".exe-sortableList-rightText",container);
+            if (rightTextContainer.length==1 && rightTextContainer.text()!="") {
+                rightText = rightTextContainer.text();
+            }
+
+            // Wrong text
+            var wrongTextContainer = $(".exe-sortableList-wrongText",container);
+            if (wrongTextContainer.length==1 && wrongTextContainer.text()!="") {
+                wrongText = wrongTextContainer.text();
+            }         
+            
+			// List
+			$(".exe-sortableList-list li",container).each(function(i){
 				$("#sortableListFormList"+i).val(this.innerHTML);
 			});
+            
+            // Text after
+            var textAfter = $(".exe-sortableList-textAfter",container);
+            if (textAfter.length==1) {
+                textAfter = textAfter.html();
+                $("#eXeIdeviceTextAfter").val(textAfter);
+            }            
 			
 		}
 		
@@ -122,12 +143,12 @@ var $exeDevice = {
 		var html = '<div class="exe-sortableList">';
 		
 			// Get the instructions
-			var instructions = $("#sortableListFormInstructions").val();
+			var instructions = tinymce.editors[0].getContent();
 			if (instructions=="") {
 				eXe.app.alert(_("Please write some instructions."));
 				return false;
 			}
-			html += '<p class="exe-sortableList-instructions">'+$exeDevice.removeTags(instructions)+'</p>';
+			html += '<div class="exe-sortableList-instructions">'+instructions+'</div>';
 			
 			// Get the elements to sort (at least 3)
 			var options = "";
@@ -175,6 +196,12 @@ var $exeDevice = {
 				html += '<p class="exe-sortableList-wrongText">'+$exeDevice.removeTags(wrongText)+'</p>';					
 			
 			html += '</div>';
+            
+			// Get the optional text
+			var textAfter = tinymce.editors[1].getContent();
+			if (textAfter!="") {
+                html += '<div class="exe-sortableList-textAfter">'+textAfter+'</div>';            
+            }
 		
 		html += '</div>';
 		
