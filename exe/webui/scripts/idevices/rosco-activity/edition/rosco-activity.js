@@ -128,6 +128,7 @@ var $exeDevice = {
 							' + this.getWords().join('') + '\
                         </div>\
 					</fieldset>\
+					'+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
 				</div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab()+ '\
@@ -219,6 +220,9 @@ var $exeDevice = {
 			if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
 			// i18n
 			$exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
+            // Text after
+            var textAfter = $(".rosco-extra-content",wrapper);
+            if (textAfter.length==1) $("#eXeIdeviceTextAfter").val(textAfter.html());			
 		}
 	},
 	clickImage: function (img, epx, epy) {
@@ -356,6 +360,11 @@ var $exeDevice = {
 		html += '<div class="rosco-DataGame">' + json + '</div>';
 		html += linksImages;
 		html += '</div>';
+		// Get the optional text
+		var textAfter = tinymce.editors[1].getContent();
+		if (textAfter!="") {
+			html += '<div class="rosco-extra-content">'+textAfter+'</div>';            
+		}		
 		return html;
 	},
 	createlinksImage: function (wordsGame) {

@@ -658,3 +658,9 @@
         font-size: 12px;
     }
 }
+.RoscoIdevice .rosco-instructions{
+	margin-bottom:1.5em;
+}
+.RoscoIdevice .rosco-extra-content{
+	margin-top:1.7em;
+}
