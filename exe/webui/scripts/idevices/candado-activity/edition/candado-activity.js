@@ -21,6 +21,8 @@ var $exeDevice = {
     candadoSolution: '',
     candadoShowMinimize:false,
     candadoReboot:false,
+    candadoAttemps:0,
+    candadoErrorMessage:'',
     ci18n: {
         "msgOk": _("Aceptar"),
         "msgMinimize": _("Minimize"),
@@ -55,6 +57,9 @@ var $exeDevice = {
         msgs.msgEREtroalimatacion = _("Feedback");
         msgs.msgEShowMinimize =_("Show minimized.");
         msgs.msgERebootActivity  =_("Repetir actividad.")
+        msgs.msgCustomMessage=_("Message");
+        msgs.msgNumFaildedAttemps=_("Nº errores para mensaje");
+        msgs.msgEnterCustomMessage=_("Indica el mensaje que se mostrará al cometer los errores indicados");
 
     },
     showMessage: function (msg) {
@@ -101,6 +106,10 @@ var $exeDevice = {
                                         <label for="candadoEShowMinimize"><input type="checkbox" id="candadoEShowMinimize"> ' + msgs.msgEShowMinimize + ' </label>\
                                         <label for="candadoEReboot"><input type="checkbox" id="candadoEReboot" checked> ' + msgs.msgERebootActivity + ' </label>\
                                 </div>\
+                                <div class="candado-EMessage">\
+                                        <label for="candadoEAttemps">' + msgs.msgNumFaildedAttemps + ':  <input type="number"  name="candadoEAttemps" id="candadoEAttemps" value="0" min="0" max="10" step="1" required /></label> \
+			                            <label for="candadoEErrorMessage">' + msgs.msgCustomMessage + ': </label><input type="text" disabled id="candadoEErrorMessage" />\
+                                </div>\
                             </div>\
                         </div>\
                 </div>\
@@ -137,14 +146,19 @@ var $exeDevice = {
             $exeDevice.candadoRetro=dataGame.candadoRetro;
             $exeDevice.candadoSolution=dataGame.candadoSolution;
             $exeDevice.candadoTime=dataGame.candadoTime;
+            $exeDevice.candadoAttemps=dataGame.candadoAttemps;
+            $exeDevice.candadoErrorMessage=dataGame.candadoErrorMessage;
             $exeDevice.candadoInstructions = $(".candado-instructions", wrapper).eq(0).html();
             $exeDevice.candadoRetro= $(".candado-retro", wrapper).eq(0).html();
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.typeActive=0;
-            $('#candadoEDSolution').val($exeDevice.candadoSolution);
-            $('#candadoEDTime').val($exeDevice.candadoTime);
+            $('#candadoEDSolution').val(dataGame.candadoSolution);
+            $('#candadoEDTime').val(dataGame.candadoTime);
             $('#candadoEShowMinimize').prop("checked", dataGame.candadoShowMinimize);
             $('#candadoEReboot').prop("checked", dataGame.candadoReboot);
+            $('#candadoEAttemps').val(dataGame.candadoAttemps);
+            $('#candadoEErrorMessage').val(dataGame.candadoErrorMessage);
+            $('#candadoEErrorMessage').prop("disabled",dataGame.candadoAttemps==0);
 
 
             if(tinyMCE.get('candadoEDescription')){
@@ -187,6 +201,9 @@ var $exeDevice = {
         $exeDevice.candadoSolution=$('#candadoEDSolution').val();
         $exeDevice.candadoShowMinimize = $('#candadoEShowMinimize').is(':checked');
         $exeDevice.candadoReboot = $('#candadoEReboot').is(':checked');
+        $exeDevice.candadoAttemps=$('#candadoEAttemps').val();
+        $exeDevice.candadoErrorMessage=$('#candadoEErrorMessage').val();
+        
         if($exeDevice.typeActive==0){
             $exeDevice.candadoInstructions=tinymce.editors[0].getContent();
         }else if($exeDevice.typeActive==1){
@@ -198,6 +215,8 @@ var $exeDevice = {
             message = $exeDevice.msgs.msgERetro;
         }else if ($exeDevice.candadoSolution.length == 0) {
             message = $exeDevice.msgs.msgEnterCodeAccess;
+        }else if($exeDevice.candadoAttemps>0 && $exeDevice.candadoErrorMessage.length==0){
+            message = $exeDevice.msgs.msgEnterCustomMessage;
         }
         if (message.length != 0) {
             $exeDevice.showMessage(message);
@@ -215,7 +234,9 @@ var $exeDevice = {
             'candadoInstructions': $exeDevice.candadoInstructions,
             'candadoRetro': $exeDevice.candadoRetro,
             'candadoShowMinimize': $exeDevice.candadoShowMinimize,
-            'candadoReboot': $exeDevice.candadoReboot
+            'candadoReboot': $exeDevice.candadoReboot,
+            'candadoAttemps': $exeDevice.candadoAttemps,
+            'candadoErrorMessage': $exeDevice.candadoErrorMessage
         }
         return data;
     },
@@ -226,14 +247,32 @@ var $exeDevice = {
     },
     addEvents: function () {
         $('#candadoERetro').on('click', function (e) {
-            $exeDevice.candadoInstructions=tinymce.editors[0].getContent();
-            tinymce.editors[0].setContent( $exeDevice.candadoRetro);
-            $exeDevice.typeActive=1;
+            if($exeDevice.typeActive==0){
+                $exeDevice.typeActive=1;
+                $exeDevice.candadoInstructions=tinymce.editors[0].getContent();
+                tinymce.editors[0].setContent( $exeDevice.candadoRetro);
+            }
         });
         $('#candadoECandado').on('click', function (e) {
-            $exeDevice.candadoRetro=tinymce.editors[0].getContent();
-            tinymce.editors[0].setContent( $exeDevice.candadoInstructions);
-            $exeDevice.typeActive=0;
+            if($exeDevice.typeActive==1){
+                $exeDevice.candadoRetro=tinymce.editors[0].getContent();
+                tinymce.editors[0].setContent( $exeDevice.candadoInstructions);
+                $exeDevice.typeActive=0;
+            }
+        });
+        
+        $('#candadoEAttemps').on('focusout', function () {
+			this.value = this.value.trim() == '' ? 0 : this.value;
+			this.value = this.value > 9 ? 9 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+            var d=this.value==0?true:false;
+            $('#candadoEErrorMessage').prop("disabled",d);
+          
+
+        });
+        $("#candadoEAttemps").bind('keyup mouseup', function () {
+            var d=this.value==0?true:false;
+            $('#candadoEErrorMessage').prop("disabled",d);
         });
 
 

@@ -11,10 +11,39 @@
       align-content: center;
       flex-wrap: wrap;
   }
+  #candadoIdeviceForm .candado-EMessage{
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    align-content: center;
 
+
+}
+
+.candado-EMessage label{
+  margin-left:5px;
+}
+
+label[for="candadoEErrorMessage"]{
+  margin-right: 2px;
+}
+input#candadoEErrorMessage{
+
+  height: 18px;
+  widows: auto;
+  flex:1;
+
+
+}
+input#candadoEAttemps{
+  width: 40px;
+  height: 18px;
+  font-size: 14px;
+}
 
   #candadoIdeviceForm .candadoIdevice {
     background: #fff;
+
     padding: 20px;
     border: 1px solid #000;
   }
@@ -164,8 +193,9 @@
           justify-content: flex-start;
   -webkit-box-align: stretch;
           align-items: stretch;
- 
+
 }
+
 .candadoToggle input {
   width: 0;
   height: 0;

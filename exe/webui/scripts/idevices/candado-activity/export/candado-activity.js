@@ -53,6 +53,7 @@ var $eXeCandado = {
             mOption.counter=mOption.candadoTime* 60;
             mOption.candadoStarted=false;
             mOption.candadoSolved=false;
+            mOption.candadoErrors=0;
             $eXeCandado.options.push(mOption);
             var candado = $eXeCandado.createInterfaceQuExt(i);
             dl.before(candado).remove();
@@ -142,7 +143,8 @@ var $eXeCandado = {
             'candadoSolved': mOptions.candadoSolved,
             'counter': tiempo,
             'candadoTime': mOptions.candadoTime,
-            'candadoReboot':mOptions.candadoReboot
+            'candadoReboot':mOptions.candadoReboot,
+            'candadoErrors':mOptions.candadoErrors
 
         }
         localStorage.setItem('dataCandado-' + instance, JSON.stringify(data));
@@ -278,6 +280,11 @@ var $eXeCandado = {
         } else {
             message = $eXeCandado.getRetroFeedMessages(false, instance) +  mOptions.msgs.msgErrorCode;
             typeMessage = 1;
+            mOptions.candadoErrors++;
+            if( mOptions.candadoAttemps>0 && mOptions.candadoErrorMessage.length>0 && mOptions.candadoErrors>=mOptions.candadoAttemps){
+                typeMessage = 0;
+                message=mOptions.candadoErrorMessage;
+            }
             $('#candadoSolution-' + instance).val('');
         }
 
