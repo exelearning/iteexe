@@ -9,14 +9,16 @@
     clip: rect(0, 0, 0, 0);
     height: 0
 }
-.candado-MessageMaximize{
-    margin-left: 5px;
 
+.candado-MessageMaximize {
+    margin-left: 5px;
 }
-.candado-SolutionDiv label{
+
+.candado-SolutionDiv label {
     color: #5877c6;
     font-weight: bold;
 }
+
 .candado-UpMinimizeImg {
     -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
@@ -32,8 +34,7 @@
     flex-wrap: wrap;
 }
 
-
-.candado-Solution{
+.candado-Solution {
     margin-right: 10px;
     margin-left: 5px;
     text-align: center;
@@ -41,7 +42,7 @@
     font-weight: bold;
 }
 
-.candado-Instructions{
+.candado-Instructions {
     max-width: 1000px;
     width: 90%;
     margin: 3px auto;
@@ -49,17 +50,19 @@
 
 .candado-MainContainer a:link, .candado-MainContainer a:link, .candado-MainContainer a:visited, .candado-MainContainer a:focus {
     text-decoration: none !important;
-    border:0px !important;
-    outline:none;
+    border: 0px !important;
+    outline: none;
     border-width: 0px;
-    outline-width:0px;
+    outline-width: 0px;
     border-bottom: none;
 }
-.candado-GameMinimize{
+
+.candado-GameMinimize {
     width: 500px;
-    margin:5px auto;
-    display:none;
+    margin: 5px auto;
+    display: none;
 }
+
 .candado-GameContainer {
     position: relative;
     max-width: 1000px;
@@ -74,9 +77,8 @@
     background-color: #ffffff;
     display: block;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    display:none;
+    display: none;
 }
-
 
 .candado-GameScoreBoard {
     width: 100%;
@@ -86,7 +88,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    margin-top:2px;
+    margin-top: 2px;
 }
 
 .candado-GameScoreBoard p {
@@ -118,32 +120,35 @@
     height: 34px;
     margin-right: 5px;
 }
-.exeQuextIcons34-Time{
+
+.exeQuextIcons34-Time {
     background: url(exeQuextIcons34.png) no-repeat 0 -34px;
 }
 
 .exeQuextIcons34-Minimize {
     background: url(exeQuextIcons34.png) no-repeat 0 -68px;
     margin-right: 5px;
-
 }
 
-.exeQuextIcons34-Minimize{
+.exeQuextIcons34-Minimize {
     -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
-.exeQuextIcons34-Minimize:hover{
+
+.exeQuextIcons34-Minimize:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -o-transform: scale(1.1);
     -ms-transform: scale(1.1);
     transform: scale(1.1);
 }
-.exeQuextIcons34-Time{
+
+.exeQuextIcons34-Time {
     margin: 0;
     margin-right: 6px;
 }
+
 .candado-LinkMinimize {
     width: 34px;
     height: 34px;
@@ -152,7 +157,7 @@
 
 .candado-MessageInfo {
     width: 98%;
-    margin:5px auto;
+    margin: 5px auto;
 }
 
 .candado-MessageInfo p {
@@ -160,9 +165,7 @@
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-
 }
-
 
 .candado-TimeNumber {
     width: 140px;
@@ -187,17 +190,16 @@
     text-align: left;
 }
 
-
-.candado-Instructions{
+.candado-Instructions {
     width: 97%;
     min-height: 100px;
     max-height: 2000px;
     overflow: hidden;
     z-index: 1;
-    margin:5px auto;
+    margin: 5px auto;
     padding: 6px;
-    border-radius:5px;
-   }
+    border-radius: 5px;
+}
 
 .candado-GameContainer input[type=button] {
     min-width: 70px;
@@ -214,12 +216,14 @@
     text-decoration: none;
     font-weight: bold;
 }
-.candado-GameContainer input[type=button]:hover{
+
+.candado-GameContainer input[type=button]:hover {
     background-color: #5877c6;
     color: white;
     border: 1px solid #000;
     font-weight: bold;
 }
+
 @media (max-width: 560px) {
     .candado-GameContainer {
         width: 95%;
@@ -228,7 +232,6 @@
         padding: 2px;
         border-radius: 7px;
     }
-
 }
 
 @media (max-width:401px) {
@@ -239,7 +242,7 @@
         padding: 0px;
         border-radius: 7px;
     }
-    label .labelSolution{
+    label .labelSolution {
         display: none;
     }
     .candado-GameScoreBoard, .candado-SolutionDiv {
@@ -248,10 +251,5 @@
         flex-direction: column;
         align-items: center;
         flex-wrap: nowrap;
-
     }
-
 }
-
-
-
