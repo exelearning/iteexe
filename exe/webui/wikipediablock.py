@@ -138,11 +138,33 @@ class WikipediaBlock(Block):
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
             this_package = self.idevice.parentNode.package
+        
+        wikipediaURL = self.idevice.site
+        
+        if (wikipediaURL=="http://en.wikipedia.org/" 
+        or wikipediaURL=="http://eu.wikipedia.org/" 
+        or wikipediaURL=="http://ca.wikipedia.org/" 
+        or wikipediaURL=="http://zh.wikipedia.org/" 
+        or wikipediaURL=="http://nl.wikipedia.org/" 
+        or wikipediaURL=="http://fr.wikipedia.org/" 
+        or wikipediaURL=="http://de.wikipedia.org/" 
+        or wikipediaURL=="http://gl.wikipedia.org/"  
+        or wikipediaURL=="http://el.wikipedia.org/" 
+        or wikipediaURL=="http://it.wikipedia.org/" 
+        or wikipediaURL=="http://ja.wikipedia.org/" 
+        or wikipediaURL=="http://hu.wikipedia.org/" 
+        or wikipediaURL=="http://pl.wikipedia.org/" 
+        or wikipediaURL=="http://pt.wikipedia.org/" 
+        or wikipediaURL=="http://sl.wikipedia.org/" 
+        or wikipediaURL=="http://es.wikipedia.org/" 
+        or wikipediaURL=="http://sv.wikipedia.org/"):
+            wikipediaURL = wikipediaURL+"wiki/"
+        
         html += common.formField('select', this_package, _('Site'),'s',
                                  'site'+self.id,
                                  self.idevice.langInstruc,
                                  sites,
-                                 self.idevice.site)
+                                 wikipediaURL)
 
         
         url = "none"
