@@ -945,16 +945,16 @@ var $exeAuthoring = {
         },
         // Common
         common : {
-            // Get the "Text after" or the "Text before" fieldset
+            // Get the "Content after" or the "Content before" fieldset
             getTextFieldset : function(position){
                 if (typeof(position)!="string" || (position!="after" && position!="before")) return "";
-                var tit = _('Text after');
+                var tit = _('Content after');
                 var id = "After";
                 if (position=="before") {
-                    tit = _('Text before');
+                    tit = _('Content before');
                     id = "Before";
                 }
-                return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
+                return "<fieldset class='exe-advanced exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
                             <legend><a href='#'>"+tit+" ("+_('Optional').toLowerCase()+")</a></legend>\
                             <div>\
                                 <p>\
