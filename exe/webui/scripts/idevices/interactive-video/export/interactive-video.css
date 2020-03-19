@@ -25,6 +25,7 @@ height:316px;margin:0 auto;overflow:auto;display:none}
 #start-activity a:hover{text-decoration:underline}
 
 #activity{border:1px solid #000;width:448px;max-height:356px;background:#FFF;margin:20px auto 0 auto;overflow:hidden}
+.exe-interactive-video-content-after{margin-top:20px}
 .active #activity{width:898px}
 @media screen and (min-width:100px) {
 	#activity{border:none;box-shadow:0 0 15px 0 #cccccc}
