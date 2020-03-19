@@ -66,7 +66,12 @@ var $eXeAutoGeogebra = {
 				if (instructions.length==1 && instructions.text()!="") {
 					intro = '<div class="auto-geogebra-instructions">'+instructions.html()+'</div>';
 				}
-				$(this).before(intro).wrap('<div class="auto-geogebra-wrapper"></div>').addClass("auto-geogebra-loading").css({
+				var outro = "";
+				var extra = $(".auto-geogebra-extra-content",this);
+				if (extra.length==1 && extra.text()!="") {
+					outro = '<div class="auto-geogebra-extra-content">'+extra.html()+'</div>';
+				}				
+				$(this).before(intro).after(outro).wrap('<div class="auto-geogebra-wrapper"></div>').addClass("auto-geogebra-loading").css({
 					"width":size[0]+"px",
 					"height":size[1]+"px"
 				}).html("");

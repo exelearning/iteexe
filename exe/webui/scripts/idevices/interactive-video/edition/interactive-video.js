@@ -80,6 +80,7 @@ var $exeDevice = {
 		html = '\
 			<div id="interactiveVideoIdeviceForm">\
 				<div class="exe-form-tab" title="'+_('General settings')+'">\
+					'+$exeAuthoring.iDevice.common.getTextFieldset("before")+'\
 					<p>\
 						<strong>'+_('Type')+':</strong> \
 						<label for="interactiveVideoType-local"><input type="radio" name="interactiveVideoType" id="interactiveVideoType-local" value="local" checked="checked" /> '+_('Local file')+'</label> \
@@ -107,8 +108,9 @@ var $exeDevice = {
 					<div id="interactiveVideoEditorOpener">\
 						<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
 					</div>\
+					'+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
 				</div>\
-                ' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
+				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
 			</div>\
 		';
 		
@@ -220,7 +222,19 @@ var $exeDevice = {
 					$("#interactiveVideoEditorOpener").fadeIn();
 					// Get the video URL and type
 					top.interactiveVideoEditor.videoURL = videoURL;
-					top.interactiveVideoEditor.videoType = type;					
+					top.interactiveVideoEditor.videoType = type;	
+					// Text before
+					var textBefore = $(".exe-interactive-video-content-before",wrapper);
+					if (textBefore.length==1) {
+						textBefore = textBefore.html();
+						$("#eXeIdeviceTextBefore").val(textBefore);
+					}					
+					// Text after
+					var textAfter = $(".exe-interactive-video-content-after",wrapper);
+					if (textAfter.length==1) {
+						textAfter = textAfter.html();
+						$("#eXeIdeviceTextAfter").val(textAfter);
+					} 
 				}
 			$('body').append(wrapper);
 			
@@ -228,7 +242,7 @@ var $exeDevice = {
 			if (typeof(InteractiveVideo)=='object' && typeof(InteractiveVideo.slides)=='object') {
 				top.interactiveVideoEditor.activityToSave = InteractiveVideo;
 				// i18n
-                $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(InteractiveVideo.i18n);
+				$exeAuthoring.iDevice.gamification.common.setLanguageTabValues(InteractiveVideo.i18n);
 			}
 			// Save the list of images and remove the wrapper
 			top.interactiveVideoEditor.imageList = $(".exe-interactive-video-img img",wrapper);
@@ -410,7 +424,23 @@ var $exeDevice = {
 		var extraCSS = "";
 		if ($("#interactiveVideoShowResults").is(":checked")==false) extraCSS = " exe-interactive-video-no-results";
 		
-		var html = '\
+		// Content before
+		var contentBefore = "";
+		var contentBefore = tinymce.editors[0].getContent();
+		if (contentBefore!="") {
+			contentBefore = '<div class="exe-interactive-video-content-before">'+contentBefore+'</div>';			
+		}
+
+		// Content after
+		var contentAfter = "";
+		var contentAfter = tinymce.editors[1].getContent();
+		if (contentAfter!="") {
+			contentAfter = '<div class="exe-interactive-video-content-after">'+contentAfter+'</div>';			
+		}  
+
+		var html = contentBefore;
+		
+		html += '\
 			<div class="exe-interactive-video'+extraCSS+'">\
 				<p id="exe-interactive-video-file" class="js-hidden">\
 					<a href="'+myVideo+'">'+myVideo.split('.').pop()+'</a>\
@@ -419,6 +449,8 @@ var $exeDevice = {
 					\nvar InteractiveVideo = '+contents+'\
 				//]]></script>\
 			</div>';
+			
+		html += contentAfter;	
 		
 		// Return the HTML to save
 		if (type=="local") {
