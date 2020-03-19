@@ -98,6 +98,7 @@ var $exeDevice = {
 						</div>\
 					</div>\
 				</fieldset>\
+				'+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
 			</div>\
 		';
 		
@@ -266,6 +267,10 @@ var $exeDevice = {
 			// Instructions
 			var instructions = $(".auto-geogebra-instructions",wrapper);
 			if (instructions.length==1) $("#geogebraActivityInstructions").val(instructions.html());
+			
+            // Text after
+            var textAfter = $(".auto-geogebra-extra-content",wrapper);
+            if (textAfter.length==1) $("#eXeIdeviceTextAfter").val(textAfter.html());
 		}		
 		
 	},
@@ -339,6 +344,12 @@ var $exeDevice = {
 			} else {
 				if (opts[i][1]==true) css += " "+i+"0";
 			}
+		}
+
+		// Get the optional text
+		var textAfter = tinymce.editors[1].getContent();
+		if (textAfter!="") {
+			divContent += '<div class="auto-geogebra-extra-content">'+textAfter+'</div>';            
 		}		
         
 		var html = '<div class="'+css+'">'+divContent+'</div>';
