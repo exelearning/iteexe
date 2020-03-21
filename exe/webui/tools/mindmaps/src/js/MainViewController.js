@@ -119,7 +119,7 @@ mindmaps.MainViewController = function(eventBus, mindmapModel, commandRegistry) 
       var doc = mindmaps.Document.fromJSON(result);
       mindmapModel.setDocument(doc);
     } catch (e) {
-      eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, "Could not read the file.");
+      eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, _("Could not read the file."));
       console.warn("Could not open the mind map via drag and drop.");
     }
   };
@@ -157,7 +157,7 @@ mindmaps.MainViewController = function(eventBus, mindmapModel, commandRegistry) 
     inspectorPresenter.go();
 
     var inspectorPanel = fpf
-        .create("Inspector", inspectorView.getContent());
+        .create(_("Inspector"), inspectorView.getContent());
     inspectorPanel.show();
     statusbarPresenter.addEntry(inspectorPanel);
 
@@ -167,7 +167,7 @@ mindmaps.MainViewController = function(eventBus, mindmapModel, commandRegistry) 
         canvasContainer, zoomController);
     naviPresenter.go();
 
-    var navigatorPanel = fpf.create("Navigator", naviView.getContent());
+    var navigatorPanel = fpf.create(_("Navigator"), naviView.getContent());
     navigatorPanel.show();
     statusbarPresenter.addEntry(navigatorPanel);
   };

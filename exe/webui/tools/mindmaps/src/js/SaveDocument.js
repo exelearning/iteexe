@@ -127,7 +127,7 @@ mindmaps.SaveDocumentPresenter = function(eventBus, mindmapModel, view, autosave
     if (success) {
       view.hideSaveDialog();
     } else {
-      eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, "Error while saving to local storage");
+      eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, _("Error while saving to local storage"));
     }
   };
 

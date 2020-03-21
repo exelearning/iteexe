@@ -94,6 +94,9 @@ mindmaps.FloatPanel = function(caption, $container, $content) {
     // hide button
     $panel.find(".ui-dialog-titlebar-close").click(function() {
       self.hide();
+	  // eXeLearning
+	  return false;
+	  // / eXeLearning
     });
 
     // add content panel

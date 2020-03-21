@@ -135,6 +135,9 @@ mindmaps.Notification = function(targetSelector, options) {
   if (options.closeButton) {
     $notification.find(".close-button").click(function() {
       self.close();
+      // eXeLearning
+      return false;
+      // / eXeLearning
     });
   }
 
@@ -176,7 +179,7 @@ mindmaps.Notification.prototype = {
  */
 mindmaps.Notification.Defaults = {
   title : null,
-  content : "New Notification",
+  content : _("New Notification"),
   position : "topLeft",
   padding : 10,
   expires : 0,

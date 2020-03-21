@@ -280,7 +280,7 @@ mindmaps.ToolBarPresenter = function(eventBus, commandRegistry, view,
   view.addButtonGroup(clipboardButtons, view.alignLeft);
 
   // file menu
-  var fileMenu = new mindmaps.ToolBarMenu("Mind map", "ui-icon-document");
+  var fileMenu = new mindmaps.ToolBarMenu(_("Mind map"), "ui-icon-document");
   var fileCommands = [ mindmaps.NewDocumentCommand,
       mindmaps.OpenDocumentCommand, mindmaps.SaveDocumentCommand,
       mindmaps.ExportCommand, mindmaps.PrintCommand,

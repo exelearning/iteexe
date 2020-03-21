@@ -1,0 +1,7 @@
+/* Mind mapping iDevice (custom CSS) */
+label[for=confirm-dialog-dismiss]{font-size:12px;margin-left:.5em}
+#confirm-dialog-dismiss{vertical-align:middle}
+.buttons-right .ui-button:first-child .ui-button-text{margin-right:2em}
+.buttons-right div .ui-button:first-child .ui-button-text{margin-right:auto}
+/* Footer */
+#statusbar-button-1 span{margin:0}

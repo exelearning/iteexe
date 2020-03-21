@@ -34,6 +34,7 @@ mindmaps.VERSION = "0.7.2";
 // experimental app cache invalidator. from:
 // http://www.html5rocks.com/en/tutorials/appcache/beginner/#toc-updating-cache/
 // Check if a new cache is available on page load.
+/* eXeLearning
 window.addEventListener('load', function(e) {
   window.applicationCache.addEventListener('updateready', function(e) {
     if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
@@ -49,13 +50,7 @@ window.addEventListener('load', function(e) {
   }, false);
 
 }, false)
-
-// manually redirect to mindmaps.app domain because app cache will keep serving the old index.html
-// even with the netlify redirects set up.
-if (window.location.hostname === 'drichard.org') {
-  window.onbeforeunload = null;
-  window.location.assign('https://www.mindmaps.app');
-}
+*/
 
 /**
  * Start up. This function is executed when the DOM is loaded.
@@ -104,7 +99,7 @@ function removeEventLayerXY() {
 */
 function addUnloadHook () {
   window.onbeforeunload = function (e) {
-    var msg = "Are you sure? Any unsaved progress will be lost."
+    var msg = _("Are you sure? Any unsaved progress will be lost.")
     e = e || window.event;
 
     // For IE and Firefox prior to version 4
