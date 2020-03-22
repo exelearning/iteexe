@@ -2,10 +2,13 @@
  * Mind mapping iDevice (edition code)
  *
  * It works with mindmaps (https://www.mindmaps.app/), by David Richard (http://drichard.org/), licensed under AGPL V3.
- * Released under AGPL V3.
+ * See /tools/mindmaps/LICENSE
+ *
+ * It includes Cropper (https://fengyuanchen.github.io/cropper) and jQuery Cropper (https://fengyuanchen.github.io/jquery-cropper), by Chen Fengyuan, under the MIT license.
+ *
+ * Released under the MIT license.
  * Author: Ignacio Gros (http://gros.es/) for http://exelearning.net/
  *
- * License: See /tools/mindmaps/LICENSE
  */
  
 var $exeDevice = {
@@ -32,7 +35,7 @@ var $exeDevice = {
 		
 		html = '\
 			<div id="mindmapsIdeviceForm">\
-				<p><a href="'+$exeDevice.iDevicePath+"editor/"+'" id="mindmapsOpenEditorLink">'+_("Edit")+'</a></p>\
+				<p style="text-align:center"><input type="button" id="mindmapsOpenEditorLink" value="'+_("Editor")+'" /></p>\
 				<div id="mindmapsIdeviceImg"></div>\
 				<div id="mindmapsIdeviceData"></div>\
 			</div>\
@@ -81,7 +84,7 @@ var $exeDevice = {
 	
 	editor : {
 		
-		start : function(e){
+		start : function(){
 			
 			var win = new Ext.Window({
 				height:Ext.getBody().getViewSize().height*.85,
@@ -93,7 +96,7 @@ var $exeDevice = {
 				title: _("Editor"),
 				items: {
 					xtype: 'uxiframe',
-					src: e.href,
+					src: $exeDevice.iDevicePath+"editor/",
 					height: '100%'
 				},
 				closable: true,

@@ -26,13 +26,13 @@ mindmaps.ToolBarPresenter = function(eventBus, commandRegistry, view, mindmapMod
 	var clipboardButtons = commandsToButtons(clipboardCommands);
 	view.addButtonGroup(clipboardButtons, view.alignLeft);
 
-	// Mediateca (file menu)
-	var fileMenu = new mindmaps.ToolBarMenu(_("Options..."), "ui-icon-document");
+	// eXeLearning (file menu)
+	var fileMenu = new mindmaps.ToolBarMenu(_("Tools"), "ui-icon-document");
 	var fileCommands = [ 
-		mindmaps.SaveDocumentInMediatecaExitCommand, // Save
+		// mindmaps.SaveDocumentAndExitCommand, // Save
 		mindmaps.OpenDocumentCommand, // Import
 		mindmaps.SaveDocumentCommand, // Export
-		mindmaps.ExportCommand, // Export as PNG
+		// mindmaps.ExportCommand, // Export as PNG
 		mindmaps.PrintCommand // Print
 		// mindmaps.CloseDocumentCommand // Finish
 	];
@@ -42,6 +42,11 @@ mindmaps.ToolBarPresenter = function(eventBus, commandRegistry, view, mindmapMod
 
 	// help button
 	view.addButton(commandToButton(mindmaps.HelpCommand), view.alignRight);
+	
+	// save button
+	var saveCommand = [ mindmaps.SaveDocumentAndExitCommand ];
+	var saveButton = commandsToButtons(saveCommand);
+	view.addButtonGroup(saveButton, view.alignRight);	
 
 	this.go = function() {
 		view.init();
@@ -68,7 +73,7 @@ mindmaps.ApplicationController = function() {
 	function doNewDocument() {
 		// close old document first
 		var doc = mindmapModel.getDocument();
-		doCloseDocument(false); // Mediateca: false
+		doCloseDocument(false); // eXeLearning: false
 		var presenter = new mindmaps.NewDocumentPresenter(eventBus, mindmapModel, new mindmaps.NewDocumentView());
 		presenter.go();
 	}
@@ -79,7 +84,7 @@ mindmaps.ApplicationController = function() {
 		presenter.go();
 	}
 	
-	// Mediateca
+	// eXeLearning
 	
 	// Export
 	function doSaveDocument() {
@@ -94,7 +99,7 @@ mindmaps.ApplicationController = function() {
 	}	
 	
 	// Open $mapCode (no menu option)
-	mindmaps.OpenMediatecaDocument = function(eventBus, mindmapModel, view) {
+	mindmaps.OpenIdeviceDocument = function(eventBus, mindmapModel, view) {
 
 		this.go = function() {
 			try {
@@ -108,10 +113,10 @@ mindmaps.ApplicationController = function() {
 
 	};
 
-	function openMediatecaDocument() {
+	function openIdeviceDocument() {
 		var doc = mindmapModel.getDocument();
 		doCloseDocument(false);
-		var presenter = new mindmaps.OpenMediatecaDocument(eventBus, mindmapModel, new mindmaps.NewDocumentView());
+		var presenter = new mindmaps.OpenIdeviceDocument(eventBus, mindmapModel, new mindmaps.NewDocumentView());
 		presenter.go();
 	}
 
@@ -125,27 +130,137 @@ mindmaps.ApplicationController = function() {
 		$(".ui-dialog").toggle();
 	}
 	
-	function doSaveDocumentInMediatecaExit(data) {
+	function doSaveDocumentAndExit(data) {
 		var renderer = new mindmaps.StaticCanvasRenderer();
 		var renderer = new mindmaps.StaticCanvasRenderer();
 		var $img = renderer.renderAsPNG(mindmapModel.getDocument());
 		var base64img = $img.attr("src");
 		
-		top.mindmapEditor.imgWrapper.html('<img src="'+base64img+'" alt="" />');
-		var result = JSON.stringify(data);
-			result = result.replace(/\\"/g,'"')
-			result = result.slice(1, -1);
-		top.mindmapEditor.dataWrapper.html(result);
-		top.mindmapEditor.closeConfirmed = true;
-		top.mindmapEditor.dialog.close();
+		if (!document.getElementById("cropper-options")) {
+			var btns = '\
+				<div id="cropper-buttons" class="buttons buttons-right">\
+						<span class="ui-buttonset">\
+							<button id="crop-and-finish" class="ui-button ui-widget ui-state-default ui-corner-left ui-button-text-icon-primary">\
+								<span class="ui-button-text">'+_("Crop and save")+'</span>\
+							</button>\
+							<button id="do-not-crop-and-finish" class="ui-button ui-widget ui-state-default ui-button-text-icon-primary">\
+								<span class="ui-button-text">'+_("Save without cropping")+'</span>\
+							</button>\
+							<button id="reset-cropper-canvas" class="ui-button ui-widget ui-state-default ui-corner-right ui-button-text-icon-primary">\
+								<span class="ui-button-text">'+_("Reset")+'</span>\
+							</button>\
+							<button id="hide-cropper" class="ui-button ui-widget ui-state-default ui-corner-right ui-button-text-icon-primary">\
+								<span class="ui-button-text">'+_("Cancel")+'</span>\
+							</button>\
+						</span>\
+				</div>\
+			'
+			$("#toolbar .buttons").before(btns);
+
+			var opts = '\
+				<div id="cropper-options" class="buttons">\
+					<p class="docs-toggles">\
+						<label for="aspectRatio0"><input type="radio" id="aspectRatio0" name="aspectRatio" value="1.7777777777777777"> 16:9</label>\
+						<label for="aspectRatio1"><input type="radio" id="aspectRatio1" name="aspectRatio" value="1.3333333333333333"> 4:3</label>\
+						<label for="aspectRatio2"><input type="radio" id="aspectRatio2" name="aspectRatio" value="1"> 1:1</label>\
+						<label for="aspectRatio3"><input type="radio" id="aspectRatio3" name="aspectRatio" value="0.6666666666666666">	2:3</label>\
+						<label for="aspectRatio4"><input type="radio" id="aspectRatio4" name="aspectRatio" value="NaN" checked="checked"> Free</label>\
+					</p>\
+				</div>\
+			'		
+			$("#statusbar .buttons").before(opts);	
+
+			$("#crop-and-finish").click(function(){
+				var $this = $(this);
+				var cropper = $image.data('cropper');
+				var cropped;
+				var result;
+				if (cropper) {
+					// data = $.extend({}, data); // Clone a new one
+					cropped = cropper.cropped;
+					result = $image.cropper("getCroppedCanvas", '{ "maxWidth": 4096, "maxHeight": 4096 }');
+					if (result) {
+						// To do (common function)
+						top.mindmapEditor.imgWrapper.html('<img src="'+result.toDataURL('image/png')+'" alt="" />');
+						var result = JSON.stringify(data);
+							result = result.replace(/\\"/g,'"')
+							result = result.slice(1, -1);
+						top.mindmapEditor.dataWrapper.html(result);
+						top.mindmapEditor.closeConfirmed = true;
+						top.mindmapEditor.dialog.close();						
+					}
+				}
+			});
+			
+			$("#do-not-crop-and-finish").click(function(){
+				// To do (common function)
+				top.mindmapEditor.imgWrapper.html('<img src="'+base64img+'" alt="" />');
+				var result = JSON.stringify(data);
+					result = result.replace(/\\"/g,'"')
+					result = result.slice(1, -1);
+				top.mindmapEditor.dataWrapper.html(result);
+				top.mindmapEditor.closeConfirmed = true;
+				top.mindmapEditor.dialog.close();				
+			});
+
+			$("#hide-cropper").click(function(){
+				$("body").removeClass("cropping")
+				$("#cropper-img").html("");
+			});		
+			
+			$("input[name='aspectRatio']").change(function(){
+				var $this = $(this);
+				if (!$image.data('cropper')) return;
+				$image.cropper('destroy').cropper({
+					aspectRatio: $this.val()
+				});
+				// Set the height
+				var h = $("#canvas-container").height();
+				if (!isNaN(h) && h>0) {
+					setTimeout(function(){
+						// $(".cropper-container.cropper-bg").css("min-height",h+"px")	
+					},100);
+				}			
+			});
+			
+			$("#reset-cropper-canvas").click(function(){
+				$image.cropper("reset");
+			});
+			
+		}
+		
+		$("#aspectRatio4").prop("checked","checked");
+		$("#cropper-img").html('<img id="cropper-image" src="'+base64img+'" alt="" />');
+				
+		
+		$("body").addClass("cropping");
+		
+		try {
+			$image.cropper('destroy')	
+		} catch (e) {}
+		
+		var $image = $('#cropper-image');
+		$image.cropper({aspectRatio: "NaN"});
+		
+		// Set the height
+		var h = $("#canvas-container").height();
+		if (!isNaN(h) && h>0) {
+			$("#cropper-wrapper").css("height",h+"px")
+			setTimeout(function(){
+				// $(".cropper-container.cropper-bg").css("min-height",h+"px")	
+			},100);
+		}		
+		
+		// Get the Cropper.js instance after initialized
+		var cropper = $image.data('cropper');
 	}	
 		
-	function saveDocumentInMediatecaExit() {			
+	function saveDocumentAndExit() {			
 			var content = mindmapModel.getDocument().prepareSave().serialize();
 			var renderer = new mindmaps.StaticCanvasRenderer();
 			var $img = renderer.renderAsPNG(mindmapModel.getDocument());
 			var base64img = $img.attr("src");
-			doSaveDocumentInMediatecaExit(content);
+			doSaveDocumentAndExit(content);
 	}
 
 	// Finish
@@ -158,7 +273,7 @@ mindmaps.ApplicationController = function() {
 		}
 	}
 	
-	// / Mediateca
+	// / eXeLearning
 
 	// Initializes the controller, registers for all commands and subscribes to event bus
 	this.init = function() {
@@ -171,15 +286,15 @@ mindmaps.ApplicationController = function() {
 		saveDocumentCommand.setHandler(doSaveDocument); 
 		
 		// Save and exit
-		var saveDocumentInMediatecaExitCommand = commandRegistry.get(mindmaps.SaveDocumentInMediatecaExitCommand);
-		saveDocumentInMediatecaExitCommand.setHandler(saveDocumentInMediatecaExit);
+		var SaveDocumentAndExitCommand = commandRegistry.get(mindmaps.SaveDocumentAndExitCommand);
+		SaveDocumentAndExitCommand.setHandler(saveDocumentAndExit);
 
 		var openInNewWindowCommand = commandRegistry.get(mindmaps.OpenInNewWindowCommand);
 		openInNewWindowCommand.setHandler(openMapInNewWindow);	
 
 		var toggleNavigatorCommand = commandRegistry.get(mindmaps.ToggleNavigatorCommand);
 		toggleNavigatorCommand.setHandler(toggleNavigator);			
-		// / Mediateca
+		// / eXeLearning
 
 		var closeDocumentCommand = commandRegistry.get(mindmaps.CloseDocumentCommand);
 		closeDocumentCommand.setHandler(doCloseDocument);
@@ -193,14 +308,14 @@ mindmaps.ApplicationController = function() {
 			exportCommand.setEnabled(false);
 		});
 
-		// Mediateca
+		// eXeLearning
 		var enable = true;
 		eventBus.subscribe(mindmaps.Event.DOCUMENT_OPENED, function() {
 			saveDocumentCommand.setEnabled(enable); // You can't save the JSON file if it's not an open document (with an open license)
 			closeDocumentCommand.setEnabled(true);
 			exportCommand.setEnabled(true);
 		});		
-		// / Mediateca
+		// / eXeLearning
 	};
 
 	// Launches the main view controller
@@ -208,11 +323,11 @@ mindmaps.ApplicationController = function() {
 		var viewController = new mindmaps.MainViewController(eventBus, mindmapModel, commandRegistry);
 		viewController.go();
 
-		// Mediateca
+		// eXeLearning
 		var hasData = top && top.mindmapEditor && top.mindmapEditor.dataWrapper && top.mindmapEditor.dataWrapper.html()!="";
-		if (hasData) openMediatecaDocument();
+		if (hasData) openIdeviceDocument();
 		else doNewDocument(); // Triggered when $mapCode == '{}'
-		// / Mediateca
+		// / eXeLearning
 	};
 
 	this.init();
@@ -222,11 +337,9 @@ mindmaps.ApplicationController = function() {
 // Import
 mindmaps.OpenDocumentCommand = function() {
 	this.id = "OPEN_DOCUMENT_COMMAND";
-	// Mediateca this.label = _("Open...");
 	this.label = _("Import");
 	this.shortcut = ["ctrl+o", "meta+o"];
 	this.icon = "ui-icon-folder-open";
-	// Mediateca this.description = _("Open an existing mind map");
 	this.description = _("Open an existing mind map from your disk");
 };
 mindmaps.OpenDocumentCommand.prototype = new mindmaps.Command();
@@ -243,25 +356,25 @@ mindmaps.SaveDocumentCommand = function() {
 mindmaps.SaveDocumentCommand.prototype = new mindmaps.Command();
 
 // Save
-mindmaps.SaveDocumentInMediatecaCommand = function() {
-	this.id = "SAVE_DOCUMENT_IN_MEDIATECA_COMMAND";
+mindmaps.saveDocumentInExeCommand = function() {
+	this.id = "SAVE_DOCUMENT_IN_EXE_COMMAND";
 	this.label = _("Save...");
 	this.enabled = true;
 	this.shortcut = ["ctrl+s", "meta+s"];
 	this.icon = "ui-icon-disk";
 	this.description = _("Save the mind map");
 };
-mindmaps.SaveDocumentInMediatecaCommand.prototype = new mindmaps.Command();
+mindmaps.saveDocumentInExeCommand.prototype = new mindmaps.Command();
 
-mindmaps.SaveDocumentInMediatecaExitCommand = function() {
-	this.id = "SAVE_DOCUMENT_IN_MEDIATECA_EXIT_COMMAND"; 
-	this.label = _("Save and exit");
+mindmaps.SaveDocumentAndExitCommand = function() {
+	this.id = "SAVE_DOCUMENT_AND_EXIT_COMMAND"; 
+	this.label = _("Save...");
 	this.enabled = true; 
 	this.shortcut = ["ctrl+s", "meta+s"];
 	this.icon = "ui-icon-disk";
 	this.description = "Salvar el mapa mental y salir";
 };
-mindmaps.SaveDocumentInMediatecaExitCommand.prototype = new mindmaps.Command();
+mindmaps.SaveDocumentAndExitCommand.prototype = new mindmaps.Command();
 
 // Fullscreen
 mindmaps.OpenInNewWindowCommand = function() {
@@ -286,10 +399,8 @@ mindmaps.ToggleNavigatorCommand.prototype = new mindmaps.Command();
 // Finish
 mindmaps.CloseDocumentCommand = function() {
 	this.id = "CLOSE_DOCUMENT_COMMAND";
-	// Mediateca this.label = _("Close");
 	this.label = _("Finish");
 	this.icon = "ui-icon-close";
-	// Mediateca this.description = _("Close the mind map");
 	this.description = _("Close the mind map editor");
 };
 mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();

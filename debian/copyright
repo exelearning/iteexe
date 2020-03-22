@@ -97,6 +97,10 @@ File: /usr/share/exe/webui/scripts/exe_html5.js (HTML5 Shiv)
 Copyright: Alexander Farkas
 License: MIT | GPL-2
 
+Files: exe/webui/scripts/idevices/mindmaps/editor/js/cropper.js and jquery-cropper.js (and the required CSS)
+Copyright: Chen Fengyuan
+License: MIT
+
 Files: exe/webui/tools/fMath/*
 Copyright: Ionel Alexandru
 License: Apache License 2.0
