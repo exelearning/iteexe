@@ -35,14 +35,16 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
 
     var helpMain, helpRoot;
     function start() {
-      helpMain = new mindmaps.Notification(
+	  var content = _("Hello there, it seems like you are new here! These bubbles will guide you through the app. Or they won't if you want to skip this tutorial and %click here%.");
+		  content = content.replace("%","<a class='skip-tutorial link'>");
+		  content = content.replace("%","</a>");
+	  helpMain = new mindmaps.Notification(
           "#toolbar",
           {
             position : "bottomMiddle",
             maxWidth : 550,
             title : _("Welcome to mindmaps"),
-            content : _("Hello there, it seems like you are new here! These bubbles ")
-                + _("will guide you through the app. Or they won't if you want to skip this tutorial and <a class='skip-tutorial link'>click here<a/>.")
+            content : content
           });
       notifications.push(helpMain);
       helpMain.$().find("a.skip-tutorial").click(function() {
@@ -63,7 +65,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             position : "bottomMiddle",
             closeButton : true,
             maxWidth : 350,
-            title : _("This is where you start - your main idea"),
+            title : _("This is where you start. Your main idea."),
             content : _("Double click the idea to change what it says. This will be the main topic of your mind map.")
           });
       notifications.push(helpRoot);
@@ -77,7 +79,6 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
     function theNub() {
       if (isTutorialDone())
         return;
-
       var helpNub = new mindmaps.Notification(
           ".node-caption.root",
           {
@@ -86,8 +87,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             maxWidth : 350,
             padding : 20,
             title : _("Creating new ideas"),
-            content : _("Now it's time to build your mind map.<br/> Move your mouse over the idea, click and then drag")
-                + _(" the <span style='color:red'>red circle</span> away from the root. This is how you create a new branch.")
+            content : _("Now it's time to build your mind map. Move your mouse over the idea, click and then drag the red circle away from the root. This is how you create a new branch.")
           });
       notifications.push(helpNub);
       eventBus.once(mindmaps.Event.NODE_CREATED, function() {
@@ -108,8 +108,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             closeButton : true,
             maxWidth : 350,
             title : _("Your first branch"),
-            content : _("Great! This is easy, right? The red circle is your most important tool. Now, you can move your idea")
-                + _(" around by dragging it or double click to change the text again.")
+            content : _("Great! This is easy, right? The red circle is your most important tool. Now, you can move your idea around by dragging it or double click to change the text again.")
           });
       notifications.push(helpNewNode);
       setTimeout(inspector, 2000);
@@ -152,8 +151,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             maxWidth : 350,
             padding : 20,
             title : _("Don't like the colors?"),
-            content : _("Use these controls to change the appearance of your ideas. ")
-                + _("Try clicking the icon in the upper right corner to minimize this panel.")
+            content : _("Use these controls to change the appearance of your ideas. Try clicking the icon in the upper right corner to minimize this panel.")
           });
       notifications.push(helpInspector);
     }
@@ -170,8 +168,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             maxWidth : 350,
             padding : 20,
             title : _("The tool bar"),
-            content : _("Those buttons do what they say. You can use them or work with keyboard shortcuts. ")
-                + _("Hover over the buttons for the key combinations.")
+            content : _("Those buttons do what they say. You can use them or work with keyboard shortcuts. Hover over the buttons for the key combinations.")
           });
       notifications.push(helpToolbar);
     }
@@ -187,8 +184,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             closeButton : true,
             maxWidth : 350,
             title : _("Save your work"),
-            content : _("The button to the right opens a menu where you can save your mind map or start working ")
-                + _("on another one if you like.")
+            content : _("You can import, export and save a mind map using the top buttons.")
           });
       notifications.push(helpMenu);
     }
@@ -234,8 +230,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             closeButton : true,
             maxWidth : 350,
             title : _("This is your main idea"),
-            content : _("Double click an idea to edit its text. Move the mouse over ")
-                + _("an idea and drag the red circle to create a new idea.")
+            content : _("Double click an idea to edit its text. Move the mouse over an idea and drag the red circle to create a new idea.")
           });
 
       var helpNavigator = new mindmaps.Notification(
@@ -246,8 +241,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             maxWidth : 350,
             padding : 20,
             title : _("This is the navigator"),
-            content : _("Use this panel to get an overview of your map. ")
-                + _("You can navigate around by dragging the red rectangle or change the zoom by clicking on the magnifier buttons.")
+            content : _("Use this panel to get an overview of your map. You can navigate around by dragging the red rectangle or change the zoom by clicking on the magnifier buttons.")
           });
 
       var helpInspector = new mindmaps.Notification(
@@ -258,8 +252,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             maxWidth : 350,
             padding : 20,
             title : _("This is the inspector"),
-            content : _("Use these controls to change the appearance of your ideas. ")
-                + _("Try clicking the icon in the upper right corner to minimize this panel.")
+            content : _("Use these controls to change the appearance of your ideas. Try clicking the icon in the upper right corner to minimize this panel.")
           });
 
       var helpToolbar = new mindmaps.Notification(
@@ -269,8 +262,7 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
             closeButton : true,
             maxWidth : 350,
             title : _("This is your toolbar"),
-            content : _("Those buttons do what they say. You can use them or work with keyboard shortcuts. ")
-                + _("Hover over the buttons for the key combinations.")
+            content : _("Those buttons do what they say. You can use them or work with keyboard shortcuts. Hover over the buttons for the key combinations.")
           });
 
       notifications.push(helpRoot, helpNavigator, helpInspector,

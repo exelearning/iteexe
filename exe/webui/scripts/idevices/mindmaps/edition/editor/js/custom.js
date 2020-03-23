@@ -404,3 +404,14 @@ mindmaps.CloseDocumentCommand = function() {
 	this.description = _("Close the mind map editor");
 };
 mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
+
+// i18n
+var eXeMindMaps = {
+	init : function(){
+		var footer = customStrings.footer;
+			footer = footer.replace("mindmaps",'<a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>');
+		$("#about").html(footer);
+		$("#print-placeholder").html(customStrings.printInstructions);
+	}
+}
+eXeMindMaps.init();

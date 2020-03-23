@@ -10,7 +10,25 @@
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="/tools/mindmaps/src/css/Aristo/jquery-ui-1.8.7.custom.css" />
 <link rel="stylesheet" href="/tools/mindmaps/src/css/minicolors/jquery.miniColors.css">
-<script>_ = top._</script>
+<script>
+_ = top._;
+var customStrings = {
+	openMap : _("Open map"),
+	openMapInstructions : _("Selecciona un mapa conceptual de tu disco duro (formato json)."),
+	saveMap : _("Save map"),
+	saveMapInstructions : _("Guarda el mapa conceptual en tu equipo (se guarda en formato json)."),
+	save : _("Save"),
+	size : _("Size"),
+	textStyle : _("Text style"),
+	textColor : _("Text color"),
+	branchColor : _("Line color"),
+	recursive : _("Recursive"),
+	"export" : _("Export"),
+	exportInstructions : _('Para descargar la imagen haz clic sobre el mapa con el botón derecho del ratón y elige "Guardar imagen como..."'),
+	printInstructions : _("Usa la opción para imprimir que hay en el menú."),
+	footer : _("It works with mindmaps")
+}
+</script>
 
 <script id="template-float-panel" type="text/x-jquery-tmpl">
 <div class="ui-widget ui-dialog ui-corner-all ui-widget-content float-panel no-select">
@@ -47,8 +65,8 @@
 
 <script id="template-open" type="text/x-jquery-tmpl">
 <div id="open-dialog" class="file-dialog" title="Abrir">
-  <h1>Abrir mapa</h1>
-  <p>Selecciona un mapa conceptual de tu disco duro (formato json).</p>
+  <h1>${customStrings.openMap}</h1>
+  <p>${customStrings.openMapInstructions}</p>
   <div class="file-chooser">
     <input type="file" />
   </div>
@@ -57,9 +75,9 @@
 
 <script id="template-save" type="text/x-jquery-tmpl">
 <div id="save-dialog" class="file-dialog" title="Guardar">
-  <h1>Guardar mapa</h1>
-  <p>Guarda el mapa conceptual en tu equipo (se guarda en formato json).</p>
-  <button id="button-save-hdd">Guardar</button>
+  <h1>${customStrings.saveMap}</h1>
+  <p>${customStrings.saveMapInstructions}</p>
+  <button id="button-save-hdd">${customStrings.save}</button>
 </div>
 </script>
 
@@ -90,7 +108,7 @@
   <div id="inspector-content">
     <table id="inspector-table">
       <tr>
-        <td>Tamaño:</td>
+        <td>${customStrings.size}:</td>
         <td><div
             class="buttonset buttons-very-small buttons-less-padding">
             <button id="inspector-button-font-size-decrease">A-</button>
@@ -98,7 +116,7 @@
           </div></td>
       </tr>
       <tr>
-        <td>Estilo texto:</td>
+        <td>${customStrings.textStyle}:</td>
         <td><div
             class="font-styles buttonset buttons-very-small buttons-less-padding">
             <input type="checkbox" id="inspector-checkbox-font-bold" /> 
@@ -122,15 +140,15 @@
         </td>
       </tr>
       <tr>
-        <td>Color texto:</td>
+        <td>${customStrings.textColor}:</td>
         <td><input type="hidden" id="inspector-font-color-picker"
           class="colorpicker" /></td>
       </tr>
       <tr>
-        <td>Color rama:</td>
+        <td>${customStrings.branchColor}:</td>
         <td><input type="hidden" id="inspector-branch-color-picker"
           class="colorpicker" />
-          <button id="inspector-button-branch-color-children" title="Aplicar el color a los nodos hijos" class="right buttons-small buttons-less-padding">Recursivo</button>
+          <button id="inspector-button-branch-color-children" title="Aplicar el color a los nodos hijos" class="right buttons-small buttons-less-padding">${customStrings.recursive}</button>
         </td>
       </tr>
     </table>
@@ -139,8 +157,8 @@
 </script>
 
 <script id="template-export-map" type="text/x-jquery-tmpl">
-<div id="export-map-dialog" title="Exportar">
-  <h2 class='image-description'>Para descargar la imagen haz clic sobre el mapa con el botón derecho del ratón y elige "Guardar imagen como..."</h2>
+<div id="export-map-dialog" title="${customStrings.export}">
+  <h2 class='image-description'>${customStrings.exportInstructions}</h2>
   <div id="export-preview"></div>
 </div>
 </script>
@@ -148,7 +166,7 @@
 </head>
 <body>
   <div id="print-area">
-    <p class="print-placeholder">Usa la opción para imprimir que hay en el menú.</p>
+    <p class="print-placeholder" id="print-placeholder">...</p>
   </div>
   <div id="container">
     <div id="topbar">
@@ -173,9 +191,7 @@
       <div id="drawing-area" class="no-select"></div>
     </div>
     <div id="bottombar">
-      <div id="about">
-        Funciona con <a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>.
-      </div>
+      <div id="about"></div>
       <div id="statusbar">
         <div
           class="buttons buttons-right buttons-small buttons-less-padding"></div>

@@ -96,7 +96,7 @@ EventEmitter.mixin(mindmaps.Command);
  */
 mindmaps.CreateNodeCommand = function() {
   this.id = "CREATE_NODE_COMMAND";
-  this.shortcut = _("tab");
+  this.shortcut = "tab";
   this.label = _("Add");
   this.icon = "ui-icon-plusthick";
   this.description = _("Creates a new node");
@@ -111,7 +111,7 @@ mindmaps.CreateNodeCommand.prototype = new mindmaps.Command();
  */
 mindmaps.CreateSiblingNodeCommand = function() {
   this.id = "CREATE_SIBLING_NODE_COMMAND";
-  this.shortcut = _("shift+tab");
+  this.shortcut = "shift+tab";
   this.label = _("Add");
   this.icon = "ui-icon-plusthick";
   this.description = _("Creates a new sibling node");
@@ -126,7 +126,7 @@ mindmaps.CreateSiblingNodeCommand.prototype = new mindmaps.Command();
  */
 mindmaps.DeleteNodeCommand = function() {
   this.id = "DELETE_NODE_COMMAND";
-  this.shortcut = [_("del"), _("backspace")];
+  this.shortcut = ["del", "backspace"];
   this.label = _("Delete");
   this.icon = "ui-icon-minusthick";
   this.description = _("Deletes a new node");
@@ -141,7 +141,7 @@ mindmaps.DeleteNodeCommand.prototype = new mindmaps.Command();
  */
 mindmaps.EditNodeCaptionCommand = function() {
   this.id = "EDIT_NODE_CAPTION_COMMAND";
-  this.shortcut = ["F2", _("return")];
+  this.shortcut = ["F2", "return"];
   this.label = _("Edit node caption");
   this.description = _("Edits the node text");
 };
@@ -155,7 +155,7 @@ mindmaps.EditNodeCaptionCommand.prototype = new mindmaps.Command();
  */
 mindmaps.ToggleNodeFoldedCommand = function() {
   this.id = "TOGGLE_NODE_FOLDED_COMMAND";
-  this.shortcut = _("space");
+  this.shortcut = "space";
   this.description = _("Show or hide the node's children");
 };
 mindmaps.ToggleNodeFoldedCommand.prototype = new mindmaps.Command();
@@ -346,6 +346,6 @@ mindmaps.ExportCommand = function() {
   this.id = "EXPORT_COMMAND";
   this.icon = "ui-icon-image";
   this.label = _("Save image");
-  this.description = _("Export the mind map");
+  this.description = _("Export the mind map as an image");
 };
 mindmaps.ExportCommand.prototype = new mindmaps.Command();
