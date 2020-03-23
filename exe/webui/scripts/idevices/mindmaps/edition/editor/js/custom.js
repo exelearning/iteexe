@@ -176,31 +176,16 @@ mindmaps.ApplicationController = function() {
 				var cropped;
 				var result;
 				if (cropper) {
-					// data = $.extend({}, data); // Clone a new one
 					cropped = cropper.cropped;
 					result = $image.cropper("getCroppedCanvas", '{ "maxWidth": 4096, "maxHeight": 4096 }');
 					if (result) {
-						// To do (common function)
-						top.mindmapEditor.imgWrapper.html('<img src="'+result.toDataURL('image/png')+'" alt="" />');
-						var result = JSON.stringify(data);
-							result = result.replace(/\\"/g,'"')
-							result = result.slice(1, -1);
-						top.mindmapEditor.dataWrapper.html(result);
-						top.mindmapEditor.closeConfirmed = true;
-						top.mindmapEditor.dialog.close();						
+						eXeMindMaps.save(result.toDataURL('image/png'),data);
 					}
 				}
 			});
 			
 			$("#do-not-crop-and-finish").click(function(){
-				// To do (common function)
-				top.mindmapEditor.imgWrapper.html('<img src="'+base64img+'" alt="" />');
-				var result = JSON.stringify(data);
-					result = result.replace(/\\"/g,'"')
-					result = result.slice(1, -1);
-				top.mindmapEditor.dataWrapper.html(result);
-				top.mindmapEditor.closeConfirmed = true;
-				top.mindmapEditor.dialog.close();				
+                eXeMindMaps.save(base64img,data);
 			});
 
 			$("#hide-cropper").click(function(){
@@ -214,13 +199,6 @@ mindmaps.ApplicationController = function() {
 				$image.cropper('destroy').cropper({
 					aspectRatio: $this.val()
 				});
-				// Set the height
-				var h = $("#canvas-container").height();
-				if (!isNaN(h) && h>0) {
-					setTimeout(function(){
-						// $(".cropper-container.cropper-bg").css("min-height",h+"px")	
-					},100);
-				}			
 			});
 			
 			$("#reset-cropper-canvas").click(function(){
@@ -245,10 +223,7 @@ mindmaps.ApplicationController = function() {
 		// Set the height
 		var h = $("#canvas-container").height();
 		if (!isNaN(h) && h>0) {
-			$("#cropper-wrapper").css("height",h+"px")
-			setTimeout(function(){
-				// $(".cropper-container.cropper-bg").css("min-height",h+"px")	
-			},100);
+			// To review $("#cropper-wrapper").css("height",h+"px");
 		}		
 		
 		// Get the Cropper.js instance after initialized
@@ -412,6 +387,31 @@ var eXeMindMaps = {
 			footer = footer.replace("mindmaps",'<a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>');
 		$("#about").html(footer);
 		$("#print-placeholder").html(customStrings.printInstructions);
-	}
+	},
+    save : function(base64img,data){
+        $("body").addClass("saving");
+        result = JSON.stringify(data);
+        result = result.replace(/\\"/g,'"')
+        result = result.slice(1, -1);						
+        var fileName = Math.random().toString(36).substring(2, 15)+".png";
+        top.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, base64img, fileName);
+        // To review (no AJAX should be required)
+        // Try eXe.app.on('previewAudioFileDone', previewSoundFileDone);
+        setTimeout(function(){
+            $.ajax({
+                url:"/previews/"+fileName,
+                type:'HEAD',
+                error: function(){
+                    
+                },
+                success: function(){
+                    top.mindmapEditor.imgWrapper.html('<img src="/previews/'+fileName+'" alt="" />');
+                    top.mindmapEditor.dataWrapper.html(result);
+                    top.mindmapEditor.closeConfirmed = true;
+                    top.mindmapEditor.dialog.close();
+                }
+            });
+        },2000);        
+    }
 }
 eXeMindMaps.init();
