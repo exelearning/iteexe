@@ -223,7 +223,7 @@ mindmaps.ApplicationController = function() {
 		// Set the height
 		var h = $("#canvas-container").height();
 		if (!isNaN(h) && h>0) {
-			// To review $("#cropper-wrapper").css("height",h+"px");
+			$("#cropper-wrapper").css("height",h+"px");
 		}		
 		
 		// Get the Cropper.js instance after initialized
