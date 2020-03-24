@@ -185,7 +185,7 @@ mindmaps.ApplicationController = function() {
 			});
 			
 			$("#do-not-crop-and-finish").click(function(){
-                eXeMindMaps.save(base64img,data);
+				eXeMindMaps.save(base64img,data);
 			});
 
 			$("#hide-cropper").click(function(){
@@ -224,7 +224,13 @@ mindmaps.ApplicationController = function() {
 		var h = $("#canvas-container").height();
 		if (!isNaN(h) && h>0) {
 			$("#cropper-wrapper").css("height",h+"px");
-		}		
+		}
+		$(window).resize(function(){
+			var h = $("#canvas-container").height();
+			if (!isNaN(h) && h>0) {
+				$("#cropper-wrapper").css("height",h+"px");
+			}
+		});
 		
 		// Get the Cropper.js instance after initialized
 		var cropper = $image.data('cropper');
@@ -382,36 +388,61 @@ mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
 
 // i18n
 var eXeMindMaps = {
+	uploadImage : true, // true to save a PNG file instead of a Base64 image
+	async : false,
 	init : function(){
 		var footer = customStrings.footer;
 			footer = footer.replace("mindmaps",'<a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>');
 		$("#about").html(footer);
 		$("#print-placeholder").html(customStrings.printInstructions);
 	},
-    save : function(base64img,data){
-        $("body").addClass("saving");
-        result = JSON.stringify(data);
-        result = result.replace(/\\"/g,'"')
-        result = result.slice(1, -1);						
-        var fileName = Math.random().toString(36).substring(2, 15)+".png";
-        top.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, base64img, fileName);
-        // To review (no AJAX should be required)
-        // Try eXe.app.on('previewAudioFileDone', previewSoundFileDone);
-        setTimeout(function(){
-            $.ajax({
-                url:"/previews/"+fileName,
-                type:'HEAD',
-                error: function(){
-                    
-                },
-                success: function(){
-                    top.mindmapEditor.imgWrapper.html('<img src="/previews/'+fileName+'" alt="" />');
-                    top.mindmapEditor.dataWrapper.html(result);
-                    top.mindmapEditor.closeConfirmed = true;
-                    top.mindmapEditor.dialog.close();
-                }
-            });
-        },2000);        
-    }
+	save : function(base64ToUpload,data){
+		$("body").addClass("saving");
+		result = JSON.stringify(data);
+		result = result.replace(/\\"/g,'"')
+		result = result.slice(1, -1);						
+		var fileName = Math.random().toString(36).substring(2, 15)+".png";
+		
+		if (eXeMindMaps.uploadImage) {
+			if (eXeMindMaps.async==false) {
+				// Provisional solution, because $exeAuthoring.fileUpload does not allways work
+				top.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, base64ToUpload, fileName);
+				setTimeout(function(){
+					var img = new Image();
+					img.onload = function() {
+						top.mindmapEditor.imgWrapper.html('<img src="/previews/'+fileName+'" alt="" width="'+this.width+'" height="'+this.height+'" />');
+						top.mindmapEditor.dataWrapper.html(result);
+						top.mindmapEditor.closeConfirmed = true;
+						top.mindmapEditor.dialog.close();
+					}  
+					img.src = "/previews/"+fileName;
+				},2000);
+			} else {
+				eXeMindMaps.data = {}
+				eXeMindMaps.data.code = result;
+				eXeMindMaps.data.imgSrc = fileName; 
+				// $exeAuthoring
+				top.mindmapEditor.authoringScript.fileUpload("base64",base64ToUpload,fileName,function(){
+					var img = new Image();
+					img.onload = function() {
+						top.mindmapEditor.imgWrapper.html('<img src="/previews/'+fileName+'" alt="" width="'+this.width+'" height="'+this.height+'" />');
+						top.mindmapEditor.dataWrapper.html(result);
+						top.mindmapEditor.closeConfirmed = true;
+						top.mindmapEditor.dialog.close();
+					}  
+					img.src = "/previews/"+fileName;
+				});   
+			}			
+		} else {
+			var img = new Image();
+			img.onload = function() {
+				top.mindmapEditor.imgWrapper.html('<img src="'+base64ToUpload+'" alt="" width="'+this.width+'" height="'+this.height+'" />');
+				top.mindmapEditor.dataWrapper.html(result);
+				top.mindmapEditor.closeConfirmed = true;
+				top.mindmapEditor.dialog.close();
+			}
+			img.src = base64ToUpload;
+		}	  
+	}
 }
 eXeMindMaps.init();

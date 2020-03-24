@@ -26,7 +26,7 @@ body.cropping #statusbar #cropper-options{display:block}
 #do-not-crop-and-finish,#reset-cropper-canvas{border-left:0}
 #toolbar #cropper-buttons button{margin-left:0}
 body .cropper-bg,body .cropper-modal{background:none}
-#cropper-wrapper{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC')}
+body.cropping{background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC')}
 
 body.saving .buttons{display:none!important}
 body.saving #cropper-wrapper{background:#fff url(../img/loading.gif) no-repeat 50% 50%}

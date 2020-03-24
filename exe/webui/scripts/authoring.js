@@ -1439,9 +1439,10 @@ var $exeAuthoring = {
 			});
         }
     },
-    // Upload sound file (the exeaudio TinyMCE plugin needs this)
-    fileUpload : function(type, content, target) {
+    // Upload a file (blob or Base64 file) to the server and execute a callback function
+    fileUpload : function(type, content, target, callback) {
 		if (type=="blob") {
+            // Upload sound file (the exeaudio TinyMCE plugin needs this)
             if (typeof(FileReader)=='undefined') {
                 return false;
             }
@@ -1468,8 +1469,17 @@ var $exeAuthoring = {
                     eXe.app.alert(_("Error recovering data"));
                 }
             }
-            eXe.app.on('previewAudioFileDone', previewSoundFileDone);
+        } else if (type=="base64") {
+            var previewSoundFileDone = function() {
+                if (callback) {
+                    try { 
+                        callback()
+                    } catch(e) { }
+                }
+            }            
+            window.parent.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, content, target);
         }
+        eXe.app.on('previewAudioFileDone', previewSoundFileDone);
     }
 }
 // Access from the top window so it's easier to call some methods (like errorHandler)

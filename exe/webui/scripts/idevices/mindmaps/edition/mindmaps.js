@@ -53,7 +53,8 @@ var $exeDevice = {
 			imgWrapper : $("#mindmapsIdeviceImg"),
 			dataWrapper : $("#mindmapsIdeviceData"),
 			win : null,
-			closeConfirmed : false			
+			closeConfirmed : false,
+			authoringScript : $exeAuthoring
 		};		
 		
 		this.loadPreviousValues(field);
