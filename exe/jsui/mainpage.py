@@ -894,7 +894,8 @@ class MainPage(RenderableLivePage):
 
             server_file = open(server_filename, 'wb')
 
-            local_file = local_file.replace('data:audio/webm;base64,', '')
+            local_file = local_file.split(";base64,",1)
+            local_file = local_file[1]
             server_file.write(base64.b64decode(local_file))
             server_file.flush()
             server_file.close()
