@@ -108,7 +108,7 @@ a.exe-enlarge:hover .exe-enlarge-icon,a.exe-enlarge:focus .exe-enlarge-icon{disp
 /* Autoclear */
 .exe-clear{overflow:auto}
 /* JavaScript on/offf */
-.toggle-idevice,.exe-hidden,.js-required,.js .js-hidden{display:none}
+.toggle-idevice,.exe-hidden,.js-required,.js .js-hidden,.exe-mindmap-code{display:none}
 .js .js-required{display:block}
 /* License */
 #packageLicense{text-align:center}

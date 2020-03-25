@@ -3,13 +3,13 @@ _ = parent._;
 var $exeTinyMCE = {
 	
 	// imagetools is disabled because it generates base64 images
-	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes advlist lists autolink exelink charmap print preview anchor tooltips modalwindow searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table colorpicker contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia exeaudio abcmusic abbr",
+	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes advlist lists autolink exelink charmap print preview anchor tooltips modalwindow searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table colorpicker contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia exeaudio exemindmap abcmusic abbr",
 	// These buttons will be visible when the others are hidden
 	buttons0 : "toggletoolbars | undo redo | bold italic | formatselect | alignleft aligncenter alignright alignjustify | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
 	// When buttons0 are hidden, 1, 2 and 3 are visible
 	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify | template clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
-	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia exeaudio abcmusic | codemagic | fullscreen",	
+	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia exemindmap exeaudio abcmusic | codemagic | fullscreen",	
 	// To add:
 		// buttons2 : "exemath"
 	content_css: "/css/extra.css," + exe_style,
