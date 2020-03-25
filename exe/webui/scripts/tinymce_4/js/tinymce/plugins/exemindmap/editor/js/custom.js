@@ -388,8 +388,6 @@ mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
 
 // i18n
 var eXeMindMaps = {
-	uploadImage : true, // true to save a PNG file instead of a Base64 image
-	async : false,
 	init : function(){
 		var footer = customStrings.footer;
 			footer = footer.replace("mindmaps",'<a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>');
@@ -397,67 +395,25 @@ var eXeMindMaps = {
 		$("#print-placeholder").html(customStrings.printInstructions);
 	},
 	save : function(base64ToUpload,data){
+		// Just save the image in Base64
+		// exe_tinymce.dragDropImage will do the rest
 		$("body").addClass("saving");
 		result = JSON.stringify(data);
 		result = result.replace(/\\"/g,'"')
-		result = result.slice(1, -1);						
-		var fileName = Math.random().toString(36).substring(2, 15)+".png";
-		
-		if (eXeMindMaps.uploadImage) {
-			if (eXeMindMaps.async==false) {
-				// Provisional solution, because $exeAuthoring.fileUpload does not allways work
-				top.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, base64ToUpload, fileName);
-				setTimeout(function(){
-					var img = new Image();
-					img.onload = function() {
-                        var win = top.mindmapEditor.pluginDialog;
-                            win.find("#mindmapImg")[0].value("/previews/"+fileName);
-                            win.find("#mindmapCode")[0].value(result);
-                            win.find("#originalWidth")[0].value(this.width);
-                            win.find("#originalHeight")[0].value(this.height);                        
-                            win.find("#width")[0].value(this.width);
-                            win.find("#height")[0].value(this.height);
-						top.mindmapEditor.closeConfirmed = true;
-						top.mindmapEditor.editor.close();
-					}  
-					img.src = "/previews/"+fileName;
-				},2000);
-			} else {
-				eXeMindMaps.data = {}
-				eXeMindMaps.data.code = result;
-				eXeMindMaps.data.imgSrc = fileName; 
-				// $exeAuthoring
-				top.mindmapEditor.authoringScript.fileUpload("base64",base64ToUpload,fileName,function(){
-					var img = new Image();
-					img.onload = function() {
-                        var win = top.mindmapEditor.pluginDialog;
-                            win.find("#mindmapImg")[0].value("/previews/"+fileName);
-                            win.find("#mindmapCode")[0].value(result);
-                            win.find("#originalWidth")[0].value(this.width);
-                            win.find("#originalHeight")[0].value(this.height);                        
-                            win.find("#width")[0].value(this.width);
-                            win.find("#height")[0].value(this.height);
-						top.mindmapEditor.closeConfirmed = true;
-						top.mindmapEditor.editor.close();
-					}  
-					img.src = "/previews/"+fileName;
-				});   
-			}			
-		} else {
-			var img = new Image();
-			img.onload = function() {
-                var win = top.mindmapEditor.pluginDialog;
-                    win.find("#mindmapImg")[0].value(base64ToUpload);
-                    win.find("#mindmapCode")[0].value(result);
-                    win.find("#originalWidth")[0].value(this.width);
-                    win.find("#originalHeight")[0].value(this.height);                        
-                    win.find("#width")[0].value(this.width);
-                    win.find("#height")[0].value(this.height);
-				top.mindmapEditor.closeConfirmed = true;
-				top.mindmapEditor.editor.close();
-			}
-			img.src = base64ToUpload;
-		}	  
+		result = result.slice(1, -1);
+		var img = new Image();
+		img.onload = function() {
+			var win = top.mindmapEditor.pluginDialog;
+				win.find("#mindmapImg")[0].value(base64ToUpload);
+				win.find("#mindmapCode")[0].value(result);
+				win.find("#originalWidth")[0].value(this.width);
+				win.find("#originalHeight")[0].value(this.height);						
+				win.find("#width")[0].value(this.width);
+				win.find("#height")[0].value(this.height);
+			top.mindmapEditor.closeConfirmed = true;
+			top.mindmapEditor.editor.close();
+		}
+		img.src = base64ToUpload;
 	}
 }
 eXeMindMaps.init();
