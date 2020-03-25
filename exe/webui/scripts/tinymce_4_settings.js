@@ -9,7 +9,7 @@ var $exeTinyMCE = {
 	// When buttons0 are hidden, 1, 2 and 3 are visible
 	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
 	buttons2 : "alignleft aligncenter alignright alignjustify | template clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
-	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia exemindmap exeaudio abcmusic | codemagic | fullscreen",	
+	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia | exemindmap exeaudio abcmusic | codemagic | fullscreen",	
 	// To add:
 		// buttons2 : "exemath"
 	content_css: "/css/extra.css," + exe_style,
