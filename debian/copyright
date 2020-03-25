@@ -97,8 +97,16 @@ File: /usr/share/exe/webui/scripts/exe_html5.js (HTML5 Shiv)
 Copyright: Alexander Farkas
 License: MIT | GPL-2
 
-Files: exe/webui/scripts/idevices/mindmaps/editor/js/cropper.js and jquery-cropper.js (and the required CSS)
+Files: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/cropper.js and jquery-cropper.js (and the required CSS)
 Copyright: Chen Fengyuan
+License: MIT
+
+Files: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/jquery.min.js
+Copyright: John Resig
+License: MIT
+
+Files: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/FileSaver.min.js
+Copyright: Eli Grey
 License: MIT
 
 Files: exe/webui/tools/fMath/*
