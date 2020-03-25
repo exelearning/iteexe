@@ -632,6 +632,8 @@ function getTinyMCELang(lang){
 
 //TinyMCE file_browser_callback
 var exe_tinymce = {
+    
+    forcePrompt : true,
 	
 	dragDropImage : function(theTarget, node, evalAfterDone, win, win_name,
 			blobName, blobBase64) {
@@ -691,13 +693,17 @@ var exe_tinymce = {
 				}
 			}
 
-			Ext.Msg
-					.prompt(
-							_('Image description'),
-							_('Please provide an image description (alternative text):'),
-							alternativeText);
-
-			eXe.app.un('previewTinyMCEDragDropImageDone',
+			if (exe_tinymce.forcePrompt==true) {
+                Ext.Msg
+                        .prompt(
+                                _('Image description'),
+                                _('Please provide an image description (alternative text):'),
+                                alternativeText);
+			} else {
+                exe_tinymce.forcePrompt = true;
+            }
+            
+            eXe.app.un('previewTinyMCEDragDropImageDone',
 					previewTinyMCEDragDropImageDone);
 		}
 		eXe.app.on('previewTinyMCEDragDropImageDone',
@@ -1470,6 +1476,8 @@ var $exeAuthoring = {
                 }
             }
         } else if (type=="base64") {
+            // Use this to upload Base64 files and execute a callback function when finishing
+            /*
             var previewSoundFileDone = function() {
                 if (callback) {
                     try { 
@@ -1478,6 +1486,7 @@ var $exeAuthoring = {
                 }
             }            
             window.parent.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, content, target);
+            */
         }
         eXe.app.on('previewAudioFileDone', previewSoundFileDone);
     }
