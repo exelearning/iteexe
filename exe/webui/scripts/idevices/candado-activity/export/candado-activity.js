@@ -41,7 +41,6 @@ var $eXeCandado = {
         this.idevicePath = this.isInExe ? "/scripts/idevices/candado-activity/export/" : "";
         $eXeCandado.loadGame();
     },
-
     loadGame: function () {
         $eXeCandado.options = [];
         $eXeCandado.activities.each(function (i) {
@@ -69,7 +68,6 @@ var $eXeCandado = {
             $('#candadoMessageMaximize-' + i).text(msg);
             $eXeCandado.addEvents(i);
         });
-
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
@@ -101,7 +99,7 @@ var $eXeCandado = {
                         <p id="candadoPInformation-' + instance + '"></p>\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoSolutionDiv-' + instance + '">\
-                        <label class="labelSolution">'+msgs.msgCodeAccess+':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
+                        <label for="candadoSolution-' + instance + '" class="labelSolution">'+msgs.msgCodeAccess+':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
                         <input type="button" class="candado-SolutionButton" id="candadoSolutionButton-' + instance + '"   value="' + msgs.msgOk + '" />\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoNavigator-' + instance + '">\
@@ -112,8 +110,6 @@ var $eXeCandado = {
             </div>'
         return html;
     },
-
-
     loadDataGame: function (data) {
         var json = data.text(),
             mOptions = $eXeCandado.isJsonString(json);
@@ -137,7 +133,6 @@ var $eXeCandado = {
     saveDataStorage: function (instance) {
         var mOptions = $eXeCandado.options[instance],
         tiempo=mOptions.counter<0?0:mOptions.counter;
-
         var data = {
             'candadoStarted': mOptions.candadoStarted,
             'candadoSolved': mOptions.candadoSolved,
@@ -145,7 +140,6 @@ var $eXeCandado = {
             'candadoTime': mOptions.candadoTime,
             'candadoReboot':mOptions.candadoReboot,
             'candadoErrors':mOptions.candadoErrors
-
         }
         localStorage.setItem('dataCandado-' + instance, JSON.stringify(data));
     },
@@ -174,7 +168,6 @@ var $eXeCandado = {
             $("#candadoGameContainer-" + instance).hide();
             $("#candadoGameMinimize-" + instance).css('visibility', 'visible').show();
         });
-
         $('#candadoSolution-' + instance).on("keydown", function (event) {
             if (event.which === 13 || event.keyCode === 13) {
                 $eXeCandado.answerActivity(instance);
@@ -187,17 +180,14 @@ var $eXeCandado = {
             $eXeCandado.answerActivity(instance);
         });
         $('#candadoShowIntro-' + instance).on('click touchstart', function (e) {
-            $('#candadoInstructions-' + instance).html(mOptions.candadoInstructions);
-            $('#candadoInstructions-' + instance).show();
+            $('#candadoInstructions-' + instance).html(mOptions.candadoInstructions).show();
             $('#candadoSolutionDiv-' + instance).hide();
         });
         $('#candadoShowRetro-' + instance).on('click touchstart', function (e) {
-            $('#candadoInstructions-' + instance).html(mOptions.candadoRetro);
-            $('#candadoInstructions-' + instance).show();
+            $('#candadoInstructions-' + instance).html(mOptions.candadoRetro).show();
             $('#candadoSolutionDiv-' + instance).hide();
         });
-        $('#candadoInstructions-' + instance).html(mOptions.candadoInstructions);
-        $('#candadoInstructions-' + instance).show();
+        $('#candadoInstructions-' + instance).html(mOptions.candadoInstructions).show();
         $('#candadoSolution-' + instance).focus();
         $('#candadoMessageInfo-'+ instance).show();
         $('#candadoNavigator-' + instance).hide();
@@ -209,17 +199,17 @@ var $eXeCandado = {
             $('#candadoTimeQuestion-'+ instance).hide();
             $('#candadoTimeNumber-' + instance).css('width','32px');
         }
-         var dataCandado = $eXeCandado.getDataStorage(instance);
-         mOptions.candadoSolved=false;
-         mOptions.counter=mOptions.candadoTime*60;
-         if (dataCandado) {
-             if(mOptions.candadoTime!=dataCandado.candadoTime || mOptions.candadoReboot!=dataCandado.candadoReboot  || (mOptions.candadoReboot && dataCandado.candadoSolved) ){
-                    localStorage.removeItem('dataCandado-' + instance);
-             }else{
-                 mOptions.candadoSolved=dataCandado.candadoSolved;
-                 mOptions.counter=dataCandado.counter;
-             }
-         }
+        var dataCandado = $eXeCandado.getDataStorage(instance);
+        mOptions.candadoSolved=false;
+        mOptions.counter=mOptions.candadoTime*60;
+        if (dataCandado) {
+            if(mOptions.candadoTime!=dataCandado.candadoTime || mOptions.candadoReboot!=dataCandado.candadoReboot  || (mOptions.candadoReboot && dataCandado.candadoSolved) ){
+                localStorage.removeItem('dataCandado-' + instance);
+            }else{
+                mOptions.candadoSolved=dataCandado.candadoSolved;
+                mOptions.counter=dataCandado.counter;
+            }
+        }
         if(!mOptions.candadoShowMinimize){
             $eXeCandado.startGame(instance);
         }
@@ -236,13 +226,12 @@ var $eXeCandado = {
             return;
        }
        $eXeCandado.uptateTime(0, instance);
-            mOptions.counterClock = setInterval(function () {
-                mOptions.counter--;
-                $eXeCandado.uptateTime(mOptions.counter, instance);
-                if (mOptions.counter <= 0 || mOptions.candadoSolved) {
-                    $eXeCandado.showFeedback(instance);
-                }
-
+        mOptions.counterClock = setInterval(function () {
+            mOptions.counter--;
+            $eXeCandado.uptateTime(mOptions.counter, instance);
+            if (mOptions.counter <= 0 || mOptions.candadoSolved) {
+                $eXeCandado.showFeedback(instance);
+            }
         }, 1000);
     },
     showFeedback:function(instance){
@@ -287,9 +276,7 @@ var $eXeCandado = {
             }
             $('#candadoSolution-' + instance).val('');
         }
-
         $eXeCandado.showMessage(typeMessage, message, instance);
-
     },
     checkWord: function (answord, solution) {
         var sSolution=$.trim(solution).replace(/\s+/g, " ").toUpperCase(),
@@ -323,9 +310,7 @@ var $eXeCandado = {
             'color': color,
             'font-weight': 'bold'
         });
-    },
-
-
+    }
 }
 $(function () {
     $eXeCandado.init();

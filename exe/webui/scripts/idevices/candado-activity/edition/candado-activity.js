@@ -24,10 +24,10 @@ var $exeDevice = {
     candadoAttemps:0,
     candadoErrorMessage:'',
     ci18n: {
-        "msgOk": _("Aceptar"),
+        "msgOk": _("Accept"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
-        "msgTime": _("Time per question"),
+        "msgTime": _("Max time"),
         "msgInstructions": _("Instructions"),
         "msgFeedback": _("Feedback"),
         "msgCodeAccess": _("Access code"),
@@ -36,9 +36,7 @@ var $exeDevice = {
         "msgRequiredAccessKey": _("Access code required"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
-        "msgEShowActivity" :_("Mostrar la actividad"),
-
-      
+        "msgEShowActivity" :_("Show activity")
     },
 
     init: function () {
@@ -48,18 +46,18 @@ var $exeDevice = {
     setMessagesInfo: function () {
         var msgs = this.msgs;
         msgs.msgEGeneralSettings = _("General settings");
-        msgs.msgEIntrucctions = _("Indica las instruciones de la actividad");
-        msgs.msgTime= _("Tiempo");
-        msgs.msgERetro= _("Escribe la retroalimentación de la actividad");
+        msgs.msgEIntrucctions = _("Please write some instructions.");
+        msgs.msgTime= _("Max time");
+        msgs.msgERetro= _("Please write the feedback.");
         msgs.msgCodeAccess=_("Access code"),
         msgs.msgEnterCodeAccess= _("Enter the access code");
         msgs.msgEInstructions = _("Instructions");
         msgs.msgEREtroalimatacion = _("Feedback");
         msgs.msgEShowMinimize =_("Show minimized.");
-        msgs.msgERebootActivity  =_("Repetir actividad.")
-        msgs.msgCustomMessage=_("Message");
-        msgs.msgNumFaildedAttemps=_("Nº errores para mensaje");
-        msgs.msgEnterCustomMessage=_("Indica el mensaje que se mostrará al cometer los errores indicados");
+        msgs.msgERebootActivity  =_("Repeat activity")
+        msgs.msgCustomMessage=_("Error message");
+        msgs.msgNumFaildedAttemps=_("Errors to display the message");
+        msgs.msgEnterCustomMessage=_("Please write the error message.");
 
     },
     showMessage: function (msg) {
@@ -73,14 +71,14 @@ var $exeDevice = {
 				<div class="exe-form-tab" title="' +  msgs.msgEGeneralSettings+ '">\
                         <div class="candado-EPanel" id="candadoEPanel">\
                             <div class="candadoToggle">\
-                                    <input class="candado-Type" checked="checked" id="candadoECandado" type="radio" name="dsfDesRet" value="0" />\
-                                    <label for="candadoECandado">' + msgs.msgEInstructions + '</label>\
-                                    <input class="candado-Type"  id="candadoERetro" type="radio" name="dsfDesRet" value="1" />\
-                                    <label for="candadoERetro">' +  msgs.msgEREtroalimatacion + '</label>\
+                                <input class="candado-Type" checked="checked" id="candadoECandado" type="radio" name="dsfDesRet" value="0" />\
+                                <label for="candadoECandado">' + msgs.msgEInstructions + '</label>\
+                                <input class="candado-Type"  id="candadoERetro" type="radio" name="dsfDesRet" value="1" />\
+                                <label for="candadoERetro">' +  msgs.msgEREtroalimatacion + '</label>\
                             </div>\
                             <div class="candado-EDAtaGame">\
                                 <div class="candado-ERadioDatos">\
-                                    <textarea id="candadoEDescription" class="exe-html-editor"\> </textarea>\
+                                    <textarea id="candadoEDescription" class="exe-html-editor"\></textarea>\
                                 </div>\
                                 <div class="candado-EOptions">\
                                         <label for="candadoEDSolution">' + msgs.msgCodeAccess + ': <input type="text" id="candadoEDSolution" /></label>\
@@ -101,7 +99,7 @@ var $exeDevice = {
                                             <option value="50">50m</option>\
                                             <option value="55">55m</option>\
                                             <option value="60">60m</option>\
-                                            </select>\
+                                        </select>\
                                         </label>\
                                         <label for="candadoEShowMinimize"><input type="checkbox" id="candadoEShowMinimize"> ' + msgs.msgEShowMinimize + ' </label>\
                                         <label for="candadoEReboot"><input type="checkbox" id="candadoEReboot" checked> ' + msgs.msgERebootActivity + ' </label>\
@@ -170,7 +168,6 @@ var $exeDevice = {
         }
     },
 
-
     save: function () {
         if(!$exeDevice.validateCandado()){
             return;
@@ -188,8 +185,8 @@ var $exeDevice = {
         dataGame.msgs = i18n;
         var json = JSON.stringify(dataGame);
         var html = '<div class="candado-IDevice">';
-        html += '<div class="candado-instructions sr-av">' + $exeDevice.candadoInstructions + '</div>';
-        html += '<div class="candado-retro  sr-av">' + $exeDevice.candadoRetro+ '</div>';
+        html += '<div class="candado-instructions js-hidden">' + $exeDevice.candadoInstructions + '</div>';
+        html += '<div class="candado-retro js-hidden">' + $exeDevice.candadoRetro+ '</div>';
         html += '<div class="candado-DataGame">' + json + '</div>';
         html += '</div>';
         return html;
@@ -211,11 +208,11 @@ var $exeDevice = {
         }
         if ($exeDevice.candadoInstructions.length==0){
             message = $exeDevice.msgs.msgEIntrucctions;
-        }else if ($exeDevice.candadoRetro.length==0){
+        } else if ($exeDevice.candadoRetro.length==0){
             message = $exeDevice.msgs.msgERetro;
-        }else if ($exeDevice.candadoSolution.length == 0) {
+        } else if ($exeDevice.candadoSolution.length == 0) {
             message = $exeDevice.msgs.msgEnterCodeAccess;
-        }else if($exeDevice.candadoAttemps>0 && $exeDevice.candadoErrorMessage.length==0){
+        } else if($exeDevice.candadoAttemps>0 && $exeDevice.candadoErrorMessage.length==0){
             message = $exeDevice.msgs.msgEnterCustomMessage;
         }
         if (message.length != 0) {
@@ -274,9 +271,5 @@ var $exeDevice = {
             var d=this.value==0?true:false;
             $('#candadoEErrorMessage').prop("disabled",d);
         });
-
-
-    },
-
-
+    }
 }

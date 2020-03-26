@@ -37,7 +37,6 @@
 .candado-Solution {
     margin-right: 10px;
     margin-left: 5px;
-    text-align: center;
     font-size: 12px;
     font-weight: bold;
 }
@@ -69,7 +68,7 @@
     min-height: 100px;
     background-color: white;
     width: 90%;
-    margin: 5px auto;
+    margin: 5px auto 20px auto;
     min-width: 200px;
     border: 1px solid black;
     padding: 5px;
