@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>QuExt</title><!--Prueba-->
+	<title>QuExt</title>
 	<css-class>QuExt</css-class>
-	<category>Experimental</category>	
+	<category>Gamification</category>	
 </idevice>
