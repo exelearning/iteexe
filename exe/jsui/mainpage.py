@@ -902,7 +902,7 @@ class MainPage(RenderableLivePage):
             descrip_file.flush()
             descrip_file.close()
 
-            client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone")')
+            client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone","'+preview_filename+'")')
 
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))

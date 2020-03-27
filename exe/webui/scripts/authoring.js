@@ -651,7 +651,7 @@ var exe_tinymce = {
 				ReplaceStr1);
 		var full_previewImage_url = "/previews/" + preview_imageName;
 
-		var previewTinyMCEDragDropImageDone = function() {
+		var previewTinyMCEDragDropImageDone = function(imgURL) {
 
 			var alternativeText = function(button, input_alt_value) {
 
@@ -660,7 +660,19 @@ var exe_tinymce = {
 
 				var n = imgs.length - 1;
 
+				// The last image in the editor (default image to update)
 				var img = imgs[n];
+
+				for (var i=0;i<imgs.length;i++) {
+					if (imgURL && imgURL!="") {
+						var currImg = imgs[i];
+						if (typeof(currImg.src)=='string' && jQuery(currImg).attr("src")=="/previews/"+imgURL) {
+							// The image to update (see issue 479)
+							img = currImg;
+						}
+					}
+				}
+                
 				img.setAttribute('width', img.width);
 				img.setAttribute('height', img.height);
 
