@@ -70,6 +70,16 @@ var myTheme = {
 	setNavHeight : function(){
 		var n = $("#siteNav");
 		var c = $("#main-wrapper");
+		if (typeof(myTheme.mediaWrapped)=='undefined') {
+			$("video.mediaelement",c).each(function(){
+				var h = this.height;
+				if (h && !isNaN(h) && h>0) {
+					// Issue #480
+					$(this).wrapp('<span style="height:'+h+'px"></span>');
+				}
+			});
+			myTheme.mediaWrapped = true;	
+		}
 		var nH = n.height();
 		var cH = c.height();
 		var isMobile = $("#siteNav").css("float")=="none";
