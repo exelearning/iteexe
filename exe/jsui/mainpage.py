@@ -873,9 +873,10 @@ class MainPage(RenderableLivePage):
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
             errors += 1
-        else:
-            shutil.rmtree(previewDir)
-            previewDir.makedirs()
+        # else:
+            # This will remove the directory content, but we might want to record more than one audio before saving
+            # shutil.rmtree(previewDir)
+            # previewDir.makedirs()
 
         if errors == 0:
             log.debug('originally, local_file='
