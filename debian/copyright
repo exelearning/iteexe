@@ -113,6 +113,14 @@ Files: exe/webui/tools/fMath/*
 Copyright: Ionel Alexandru
 License: Apache License 2.0
 
+Files: exe/webui/tools/image-compressor/js/compressor.min.js
+Copyright: Fengyuan Chen
+License: MIT
+
+Files: exe/webui/tools/image-compressor/js/vue.min.js
+Copyright: Evan You
+License: MIT
+
 Files: exe/webui/tools/mindmaps/*
 Copyright: David Richard
 License: AGPL V3 (included in eXeLearning with the developer's consent)
