@@ -58,7 +58,55 @@ function runFuncArray(handlers) {
 }
 
 // Asks the user for an image, returns the path or an empty string
-function askUserForImage(multiple, fn, filter) {
+function askUserForImage(multiple, fn, filter, targetWindow) {
+	
+	// Image optimizer
+	if (exe_tinymce.enableCompressor==true && !multiple) {
+		var showOptimizer = false;
+		var win = targetWindow.tinymce.activeEditor.windowManager.windows[0];
+		if (win) {
+			var optimizerOpt = win.find("#imageOptimizer");
+			if (optimizerOpt.length==1 && optimizerOpt.checked()) showOptimizer = true;
+		}
+		if (showOptimizer) {
+			var exe_img_compressor = new Ext.Window({
+				height:Ext.getBody().getViewSize().height*.85,
+				width:Ext.getBody().getViewSize().width*.95,
+				modal: true,
+				resizable: false,
+				maximizable: true,
+				id: 'interactiveVideoEditor',
+				title: _("Image optimizer"),
+				items: {
+					xtype: 'uxiframe',
+					src: "/tools/image-compressor/",
+					height: '100%'
+				},
+				closable: true				
+			});
+			// Save the requiered data so you can close it, etc.
+			top.imgCompressor = {
+				originalSrc : win.find("#src")[0].value(),
+				callback : function(data,width,height){
+					var field = win.find("#src");
+						field.on("change",function(){
+							exe_tinymce.forcePrompt = true;
+						});
+						field[0].value(data);
+					win.find("#constrain")[0].checked(false);	
+					win.find("#width")[0].value(width);	
+					win.find("#height")[0].value(height);	
+					exe_img_compressor.close();
+					exe_tinymce.forcePrompt = false;
+				}
+			};
+			// Open the window
+			exe_img_compressor.show();		
+			return false;
+		}
+	}
+	// / Image optimizer
+	
     var fp, mode;
     if (multiple)
         mode = parent.eXe.view.filepicker.FilePicker.modeOpenMultiple;
@@ -632,6 +680,8 @@ function getTinyMCELang(lang){
 
 //TinyMCE file_browser_callback
 var exe_tinymce = {
+	
+    enableCompressor : true,
     
     forcePrompt : true,
 	
@@ -828,7 +878,7 @@ var exe_tinymce = {
         }
 		// ask user for image or media, depending on type requested:
 		if (type == "image") {
-		   askUserForImage(false, fn);
+		   askUserForImage(false, fn, null, win);
 		} else if (type == "media") {
 		   askUserForMedia(fn);
 		} else if (type == "file") {
