@@ -263,7 +263,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleTestPrintMsg, 'testPrintMessage')
         setUpHandler(self.handleReload, 'reload')
         setUpHandler(self.handleSourcesDownload, 'sourcesDownload')
-        setUpHandler(self.handleAudioFileUpload, 'previewAudioFileUpload')        
+        setUpHandler(self.handleUploadFileToResources, 'uploadFileToResources')        
 
         # For the new ExtJS 4.0 interface
         setUpHandler(self.outlinePane.handleAddChild, 'AddChild')
@@ -853,7 +853,7 @@ class MainPage(RenderableLivePage):
                     + "file to server prevew, error = " + str(e))
             raise
 
-    def handleAudioFileUpload(self, client, local_file, preview_filename):
+    def handleUploadFileToResources(self, client, local_file, preview_filename):
 
         server_filename = ""
         errors = 0

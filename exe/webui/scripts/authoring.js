@@ -1521,7 +1521,7 @@ var $exeAuthoring = {
             reader.addEventListener("loadend", function(e) {
                 var data = e.srcElement.result;
                 try {
-                    window.parent.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, data, name);
+                    window.parent.nevow_clientToServerEventPOST('uploadFileToResources', this, true, false, data, name);
                 } catch(e) {
                     eXe.app.alert(_("Error recovering data"));
                 }
