@@ -869,12 +869,12 @@ class MainPage(RenderableLivePage):
             client.alert(\
                 _(u'Preview directory %s is a file, cannot replace it') \
                 % previewDir)
-            log.error("Couldn't preview audio: " +
+            log.error("Couldn't preview file: " +
                       "Preview dir %s is a file, cannot replace it" \
                       % previewDir)
             errors += 1
         # else:
-            # This will remove the directory content, but we might want to record more than one audio before saving
+            # This will remove the directory content, but we might want to record more than one file before saving
             # shutil.rmtree(previewDir)
             # previewDir.makedirs()
 
@@ -884,9 +884,9 @@ class MainPage(RenderableLivePage):
             log.debug('in unicode, local_file='
                     + local_file)
 
-            localAudioPath = Path(local_file)
+            localFilePath = Path(local_file)
             log.debug('after Path, localImagePath= '
-                    + localAudioPath)
+                    + localFilePath)
 
         try:
             log.debug('URIencoded preview filename=' + preview_filename)
@@ -903,15 +903,15 @@ class MainPage(RenderableLivePage):
 
             sf = str(server_filename)
 
-            #convert webm to mp3
-            #webm_version = AudioSegment.from_file(sf,"webm")
-            #webm_version.export(server_filename.replace(".webm",".mp3"), format="mp3")
+            # convert webm to mp3
+            # webm_version = AudioSegment.from_file(sf,"webm")
+            # webm_version.export(server_filename.replace(".webm",".mp3"), format="mp3")
 
-            client.sendScript('eXe.app.fireEvent("previewAudioFileDone")')
+            client.sendScript('eXe.app.fireEvent("uploadFileToResourcesDone")')
 
         except Exception, e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
-            log.error("Unable to save audio "
+            log.error("Unable to save file "
                     + "file to server prevew, error = " + str(e))
             raise
     

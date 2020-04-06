@@ -1527,7 +1527,7 @@ var $exeAuthoring = {
                 }
             });
             reader.readAsDataURL(content);
-            var previewSoundFileDone = function() {
+            var uploadFileToResourcesCallback = function() {
                 try {
                     srcurl = "/previews/"+name;
                     target.controls = "controls";
@@ -1540,7 +1540,7 @@ var $exeAuthoring = {
         } else if (type=="base64") {
             // Use this to upload Base64 files and execute a callback function when finishing
             /*
-            var previewSoundFileDone = function() {
+            var uploadFileToResourcesCallback = function() {
                 if (callback) {
                     try { 
                         callback()
@@ -1550,7 +1550,7 @@ var $exeAuthoring = {
             window.parent.nevow_clientToServerEventPOST('previewAudioFileUpload', this, true, false, content, target);
             */
         }
-        eXe.app.on('previewAudioFileDone', previewSoundFileDone);
+        eXe.app.on('uploadFileToResourcesDone', uploadFileToResourcesCallback);
     }
 }
 // Access from the top window so it's easier to call some methods (like errorHandler)
