@@ -98,7 +98,8 @@ function askUserForImage(multiple, fn, filter, targetWindow) {
 					win.find("#height")[0].value(height);	
 					exe_img_compressor.close();
 					exe_tinymce.forcePrompt = false;
-				}
+				},
+				editor : tinymce.activeEditor
 			};
 			// Open the window
 			exe_img_compressor.show();		
@@ -1545,10 +1546,10 @@ var $exeAuthoring = {
                         var width = this.width || "";
                         var height = this.height || "";
                         try {
-                            top.imgCompressor.callback("/previews/"+target+"?v="+Date.now(),width,height);
+                            top.imgCompressor.callback("/previews/"+top.imgCompressor.fileToSave+"?v="+Date.now(),width,height);
                         } catch(e) {}
                     }
-                    tmp.src = "/previews/"+target;
+                    tmp.src = "/previews/"+top.imgCompressor.fileToSave+"?v="+Date.now();
                 } catch(e) { }
             }            
             window.parent.nevow_clientToServerEventPOST('uploadFileToResources', this, true, false, content, target);

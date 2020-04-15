@@ -170,7 +170,12 @@ var eXeImageCompressor = {
 							ext = ext.toLowerCase();
 							if (ext=="jpeg") ext = "jpg";
 							if (ext=='png' || ext=='gif' || ext=='jpg') {
-								top.$exeAuthoring.fileUpload("uploadCompressedImage",src,Date.now()+"."+ext);
+								var editor = top.imgCompressor.editor.getBody();
+								var imgs = editor.getElementsByTagName("IMG");
+								var n = imgs.length;
+								var name = "img"+n+"."+ext;
+								top.imgCompressor.fileToSave = name;
+								top.$exeAuthoring.fileUpload("uploadCompressedImage",src,name);
 								return false;									
 							}
 						}
