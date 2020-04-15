@@ -150,12 +150,36 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 // eXeLearning
 var eXeImageCompressor = {
+	type : "base64", // base64 or file
 	init : function(){
 		this.i18n();
 		setTimeout(function(){
 			jQuery("#imageEditorSaveImg").click(function(){
+				
 				var img = jQuery("#imageEditorOutputImg")
-				var src = img.attr("src");			
+				var src = img.attr("src");					
+				
+				// This will upload the image before inserting it in TinyMCE
+				// You'll insert /previews/image_name.png instead of a Base64 image
+				if (eXeImageCompressor.type=="file") {
+					if (src.indexOf("data:image/")==0) {
+						var ext = src.replace("data:image/","");
+							ext = ext.split(";");
+							ext = ext[0];
+						if (ext!="") {
+							ext = ext.toLowerCase();
+							if (ext=="jpeg") ext = "jpg";
+							if (ext=='png' || ext=='gif' || ext=='jpg') {
+								top.$exeAuthoring.fileUpload("uploadCompressedImage",src,Date.now()+"."+ext);
+								return false;									
+							}
+						}
+					}	
+				}
+						
+				// This will return a base64 image
+				// previewTinyMCEimageDragDrop will do the rest
+				// But it will always be a PNG image...
 				var tmp = new Image();
 				tmp.onload = function() {
 					var width = this.width || "";
