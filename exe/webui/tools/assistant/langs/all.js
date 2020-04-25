@@ -77,8 +77,5 @@ var $i18n = {
     Release_Notes : _('Release Notes'),	
     Legal_Notes : _('Legal Notes'),
     eXe_Web_Site : _('eXe Web Site'),
-    eXe_Tutorial_lnk : _('http://exelearning.net/html_manual/exe20_en/'),
-    eXe_Forums_lnk : _('http://exelearning.net/forums/'),
-    eXe_Web_Site_lnk : _('http://exelearning.net/?lang=en'),
     New_window : _('Open Link in a New Window')
 }
