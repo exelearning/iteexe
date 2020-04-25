@@ -193,15 +193,8 @@ Ext.define('eXe.controller.Toolbar', {
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
-            // Task 1080. jrf
-            // '#help_tutorial': {
-            //    click: this.fileOpenTutorial
-            // },
-            // '#help_manual': {
-            //    click: { fn: this.processBrowseEvent, url: 'file://%s/docs/manual/Online_manual.html' }
-            // },
             '#help_tutorial': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/html_manual/exe20_en/').split(" ")[0] }
+                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/ayuda/' }
             },
             '#help_assistant': {
                 click: this.assistantPage
@@ -212,21 +205,17 @@ Ext.define('eXe.controller.Toolbar', {
             '#help_notes': {
                 click: { fn: this.releaseNotesPage }
             },
-	    // jrf - legal notes
             '#help_legal': {
                 click: this.legalPage
             },
             '#help_website': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/?lang=en') }
+                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/' }
             },
             '#help_issue': {
                 click: { fn: this.processBrowseEvent, url: 'https://github.com/exelearning/iteexe/issues' }
             },
             '#help_forums': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/forums/') }
-            },
-            '#help_last': {
-                click: { fn: this.processBrowseEvent, url: _('http://exelearning.net/downloads/') }
+                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/forums/' }
             },
             '#help_about': {
                 click: this.aboutPage
@@ -446,17 +435,31 @@ Ext.define('eXe.controller.Toolbar', {
 
     processBrowseEvent: function(menu, item, e, eOpts) {
         // this.browseURL(e.url)
+        var html = document.getElementsByTagName("HTML");
+            html = html[0];
+        if (typeof(html.lang)=='string') {
+            // Open eXeLearning.net in the right language
+            var websiteTranslations = [
+                'es',
+                'ca',
+                'eu',
+                'gl'
+            ];
+            if (websiteTranslations.indexOf(html.lang)!=-1) {
+                var helpLinks = [
+					'https://exelearning.net/en/ayuda/',
+					'https://exelearning.net/en/',
+					'https://exelearning.net/en/forums/'
+                ];	
+                if (helpLinks.indexOf(e.url)!=-1) {
+                    var url = e.url;
+                    url = url.replace("/en/","/"+html.lang+"/");
+                    e.url = url;
+                }
+            }
+        }        
         window.open(e.url)
     },
-
-    // Not used - Task 1080, jrf
-    // fileOpenTutorial: function() {
-    //    this.askDirty("eXe.app.getController('Toolbar').fileOpenTutorial2()");
-    // },
-
-    // fileOpenTutorial2: function() {
-    //     nevow_clientToServerEvent('loadTutorial', this, '');
-    // },
 
     toolsRefresh: function() {
         eXe.app.reload();
