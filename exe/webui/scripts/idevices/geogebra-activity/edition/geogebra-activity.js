@@ -92,8 +92,7 @@ var $exeDevice = {
 							<ul>\
 								<li>'+_("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.")+'</li>\
 								<li>'+_('Include only one GeoGebra activity with a "Save score" button in the page.')+'</li>\
-								<li>'+_("The activity with button has to be the last GeoGebra activity on the page (or it won't work).")+'</li>\
-								<li>'+_('Do not include a "SCORM Quiz" iDevice in the same page.')+'</li>\
+								<li>'+_('Do not include another SCORM iDevice in the same page.')+'</li>\
 							</ul>\
 						</div>\
 					</div>\
