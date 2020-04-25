@@ -1,6 +1,7 @@
 var eXeAssistant = {
     currentPos : 0,
     init : function(){
+        this.translateLinks();
         this.i18n();
         this.setupLinks();
         this.toggler.init();
@@ -10,6 +11,32 @@ var eXeAssistant = {
         function(m,key){
             return data.hasOwnProperty(key)?data[key]:"";
         });
+    },
+    translateLinks : function(){
+        var html = top.document.getElementsByTagName("HTML");
+            html = html[0];
+        if (typeof(html.lang)=='string') {
+            // Open eXeLearning.net in the right language
+            var websiteTranslations = [
+                'es',
+                'ca',
+                'eu',
+                'gl'
+            ];
+            if (websiteTranslations.indexOf(html.lang)!=-1) {
+                var lnks = [
+                    'eXe_Tutorial_lnk',
+                    'eXe_Forums_lnk',
+                    'eXe_Web_Site_lnk'
+                ];
+                for (var i=0;i<lnks.length;i++) {
+                    var lnk = $("#"+lnks[i]);
+                    var ref = lnk.attr("href");
+                        ref = ref.replace("/en/","/"+html.lang+"/");
+                    lnk.attr("href",ref);
+                }
+            }            
+        }
     },
     i18n : function(){
         document.title = _("Assistant");
