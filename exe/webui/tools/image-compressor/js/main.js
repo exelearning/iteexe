@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', function () {
 				reader.onloadend = function() {
 			var base64data = reader.result;                
 				vm.outputURL = base64data;
-			}			  
+			}
             console.log('Output: ', result);
 
             if (URL) {
@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
             vm.output = result;
-            vm.$refs.input.value = '';
+            //vm.$refs.input.value = '';
           },
           error: function (err) {
             window.alert(err.message);
@@ -150,13 +150,13 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 // eXeLearning
 var eXeImageCompressor = {
-	type : "base64", // base64 or file
+	type : "file", // base64 or filefinput
 	init : function(){
 		this.i18n();
 		setTimeout(function(){
 			jQuery("#imageEditorSaveImg").click(function(){
-				
-				var img = jQuery("#imageEditorOutputImg")
+      
+        var img = jQuery("#imageEditorOutputImg")
 				var src = img.attr("src");					
 				
 				// This will upload the image before inserting it in TinyMCE
@@ -199,7 +199,7 @@ var eXeImageCompressor = {
 		},1000);		
 	},
 	i18n : function(){
-		
+
 		document.title = $i18n.imageOptimizer;
 		var e = $("#imageEditorUploader p");
 		var html = $i18n.uploadInstructions;
@@ -214,8 +214,8 @@ var eXeImageCompressor = {
 		$("#imageEditorLabelName").html($i18n.name+":");
 		$("#imageEditorLabelOriginalSize").html($i18n.originalSize+":");
 		$("#imageEditorLabelResultSize").html($i18n.resultSize+":");	
-		$("#imageEditorSaveImg").html($i18n.finish);	
-		
+    $("#imageEditorSaveImg").html($i18n.finish);
+    
 	}	
 }
 jQuery(function(){

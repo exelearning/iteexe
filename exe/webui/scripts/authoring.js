@@ -1546,10 +1546,12 @@ var $exeAuthoring = {
                         var width = this.width || "";
                         var height = this.height || "";
                         try {
-                            top.imgCompressor.callback("/previews/"+top.imgCompressor.fileToSave+"?v="+Date.now(),width,height);
+                            //top.imgCompressor.callback("/previews/"+top.imgCompressor.fileToSave+"?v="+Date.now(),width,height);
+                            top.imgCompressor.callback("/previews/"+top.imgCompressor.fileToSave,width,height);
                         } catch(e) {}
                     }
-                    tmp.src = "/previews/"+top.imgCompressor.fileToSave+"?v="+Date.now();
+                    //tmp.src = "/previews/"+top.imgCompressor.fileToSave+"?v="+Date.now();
+                    tmp.src = "/previews/"+top.imgCompressor.fileToSave;
                 } catch(e) { }
             }            
             window.parent.nevow_clientToServerEventPOST('uploadFileToResources', this, true, false, content, target);
@@ -1566,8 +1568,8 @@ function magnifierImageChanged(event) {
     var image  = document.getElementById('img'+elementId);
     var width  = document.getElementById('width'+elementId);
     var height = document.getElementById('height'+elementId);
-	    image.removeAttribute('height');
-		image.removeAttribute('width');
+	image.removeAttribute('height');
+	image.removeAttribute('width');
 }
 function imageChanged(event) {
     var id = event.currentTarget.getAttribute('id');
