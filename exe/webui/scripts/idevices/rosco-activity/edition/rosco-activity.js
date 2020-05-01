@@ -364,7 +364,8 @@ var $exeDevice = {
 		var textAfter = tinymce.editors[1].getContent();
 		if (textAfter!="") {
 			html += '<div class="rosco-extra-content">'+textAfter+'</div>';            
-		}		
+		}
+		
 		return html;
 	},
 	createlinksImage: function (wordsGame) {
@@ -461,6 +462,7 @@ var $exeDevice = {
 		var clear = $exeDevice.removeTags,
 			msgs = $exeDevice.msgs,
 			instructions = tinymce.editors[0].getContent(),
+			textAfter = tinymce.editors[1].getContent(),
 			showMinimize = $('#roscoShowMinimize').is(':checked'),
 			showSolution = $('#roscoShowSolution').is(':checked'),
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
@@ -582,7 +584,8 @@ var $exeDevice = {
 			'isScorm': scorm.isScorm,
 			'textButtonScorm': scorm.textButtonScorm,
 			'repeatActivity':scorm.repeatActivity,
-			'letters':this.letters
+			'letters':this.letters,
+			'textAfter':escape(textAfter)
 		}
 		return data;
 	},
@@ -597,6 +600,8 @@ var $exeDevice = {
         }
 		$exeDevice.updateFieldGame(game);
 		tinymce.editors[0].setContent(game.instructions);
+		var tAfter=game.textAfter|| '';
+		tinymce.editors[1].setContent(unescape(tAfter));
 		$('.exe-form-tabs li:first-child a').click();
 	},
 	addEvents: function () {

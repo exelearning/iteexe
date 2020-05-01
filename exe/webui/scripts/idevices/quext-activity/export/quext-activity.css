@@ -141,7 +141,7 @@
 .quext-GameOver {
     width: 100%;
     height: 100%;
-    background: #f9f9f9;
+    background: #ffffff;
     position: absolute;
     left: 0;
     top: 0;
@@ -218,7 +218,7 @@
     border: 1px solid black;
     padding: 5px;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     display: block;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display:none;
@@ -833,3 +833,6 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
 .quext-NumerQuestion{
     margin-right: 0px;
 }
+.quext-extra-content{
+	margin-top:1.7em;
+} 

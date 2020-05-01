@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.vquext-VideoIntroContainer{
+.vquext-ReloadContainer{
     width: 98%;
     height: 26px;
     padding: 0;
@@ -32,10 +32,24 @@
     margin: 5px;
     justify-content: flex-end;
     align-items: center;
-    display: none;
+    display: flex;
 
 }
+.vquext-prevQuestP {
+    width: 95%;
+    margin: 0px auto;
+    color:#ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+.vquext-PreviewQuestionsTitle{
+    width: 95%;
+    margin: 15px auto;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
 
+}
 .vquext-BottonContainer{
     width: 98%;
     height: 26px;
@@ -45,13 +59,14 @@
     justify-content: flex-end;
     align-items: center;
 }
-.vquext-VideoIntroDiv{
+.vquext-previewQuestionsDiv{
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top:0;
-    background-color: white;
+    color:#ffffff;
+    background-color:#071717;
     border-radius: 10px;
     display: none;
     z-index: 20000;
@@ -64,9 +79,9 @@
     height: 26px;
 }
 
-.vquext-VideoIntroClose{
+.vquext-previewQuestionsClose{
     position: absolute;
-    top: 5px;
+    bottom: 5px;
     right: 5px;
 
 }
@@ -140,7 +155,7 @@
 .vquext-GameOver {
     width: 100%;
     height: 100%;
-    background: #f9f9f9;
+    background: #ffffff;
     position: absolute;
     left: 0;
     top: 0;
@@ -217,7 +232,7 @@
     border: 1px solid black;
     padding: 5px;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     display: block;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display:none;
@@ -344,6 +359,10 @@
  background: url(exeQuextIcons.png) no-repeat -26px -26px;
 }
 
+.exeQuextIcons-Preview {
+    background: url(exeQuextIcons.png) no-repeat -26px -26px;
+}
+
 .exeQuextIcons-Minimize {
     background: url(exeQuextIcons.png) no-repeat 0 -52px;
     margin-right: 5px;
@@ -354,6 +373,13 @@
 }
 .exeQuextIcons-FullScreen{
     background: url(exeQuextIcons.png) no-repeat 0 -78px;
+}
+
+.exeQuextIcons-PauseVideo{
+    background: url(exeQuextIcons.png) no-repeat -78px -78px;
+}
+.exeQuextIcons-PlayVideo{
+    background: url(exeQuextIcons.png) no-repeat -52px -78px;
 }
 
 /* Fullscreen */
@@ -371,12 +397,12 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
 .exeQuextIcons-RoscoCanvas{
     background: url(exeQuextIcons.png) no-repeat -52px -52px;
 }
-.exeQuextIcons-RoscoCanvas,  .exeQuextIcons-RoscoRows, .exeQuextIcons-FullScreenExit, .exeQuextIcons-FullScreen, .exeQuextIcons-Minimize{
+.exeQuextIcons-RoscoCanvas, .vquext-Reload, .exeQuextIcons-PauseVideo, .exeQuextIcons-PlayVideo, .exeQuextIcons-Preview,  .exeQuextIcons-RoscoRows, .exeQuextIcons-FullScreenExit, .exeQuextIcons-FullScreen, .exeQuextIcons-Minimize{
     -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
-.exeQuextIcons-RoscoRows:hover, .exeQuextIcons-RoscoCanvas:hover,.exeQuextIcons-Minimize:hover, .exeQuextIcons-FullScreenExit:hover, .exeQuextIcons-FullScreen:hover {
+.exeQuextIcons-RoscoRows:hover, .vquext-Reload:hover, .exeQuextIcons-Preview:hover, .exeQuextIcons-PauseVideo:hover, .exeQuextIcons-PlayVideo:hover,  .exeQuextIcons-RoscoCanvas:hover,.exeQuextIcons-Minimize:hover, .exeQuextIcons-FullScreenExit:hover, .exeQuextIcons-FullScreen:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -o-transform: scale(1.1);
@@ -834,4 +860,29 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
         font-size:13px;
     }
 
+}
+.vquext-extra-content{
+	margin-top:1.7em;
+} 
+.vquext-LinkReload, .vquext-LinkPreview,.vquext-LinkPauseVideo {
+    width: 24px;
+    height: 24px;
+    margin-left:5px;
+}
+
+.vquext-IconReload {
+    background: url(vquextReload.png) no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+
+.vquext-previewQuestions {
+    position: relative;
+    max-width: 1000px;
+    background-color: transparent;
+    width: 90%;
+    margin: 5px auto;
+    min-width: 300px;
+    display:none;
 }

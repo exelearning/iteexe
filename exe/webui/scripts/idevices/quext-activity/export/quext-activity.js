@@ -137,7 +137,7 @@ var $eXeQuExt = {
                     } else {
                         $eXeQuExt.previousScore = score;
                         $eXeQuExt.mScorm.set("cmi.core.score.raw", score);
-                        message = $eXeQuExt.userName !== '' ? $eXeQuExt.userName + ', tu puntuación es :' + score : 'Tu puntuación es : ' + score;
+                        message = $eXeQuExt.userName !== '' ? $eXeQuExt.userName + '. ' +mOptions.msgs.msgYouScore+ ': ' + score : mOptions.msgs.msgYouScore+ ': ' + score
                         if (!mOptions.repeatActivity) {
                             $('#quextSendScore-' + instance).hide();
                         }
@@ -148,7 +148,7 @@ var $eXeQuExt = {
                     $eXeQuExt.previousScore = score;
                     score = score === "" ? 0 : score;
                     $eXeQuExt.mScorm.set("cmi.core.score.raw", score);
-                    $('#quextRepeatActivity-' + instance).text('Tu puntuación es : ' + score)
+                    $('#quextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore+ ': ' + score)
                     $('#quextRepeatActivity-' + instance).show();
                     message = "";
                 }
@@ -184,9 +184,15 @@ var $eXeQuExt = {
             }
             $('#quextMessageMaximize-' + i).text(msg);
             $eXeQuExt.addEvents(i);
-            
         });
-        $eXeQuExt.loadYoutubeApi();
+       // $eXeQuExt.loadYoutubeApi();
+        setTimeout(function () {
+            if (typeof (YT) !== "undefined") {
+                $eXeQuExt.youTubeReady();
+            } else {
+                $eXeQuExt.loadYoutubeApi();
+            }
+        }, 2000);
 
     },
     createInterfaceQuExt: function (instance) {

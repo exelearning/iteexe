@@ -27,6 +27,22 @@
     align-items: center;
     text-decoration: none;
 }
+.adivina-MessageMaximize-classic {
+    width: 100%;
+    text-align: left;
+    color: #888888;
+    font-weight: bold;
+    font-size: 13pt;
+    margin: 10px auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
 .adivina-MessageMaximize {
     width: 100%;
     text-align: left;
@@ -97,13 +113,38 @@
     text-align: center;
     min-height: 40px;
     font-size: 16px;
-    color: #071717;
+    color: #3f3f3f;
+    font-weight: 600;
+}
+
+
+.adivina-Definition-classic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 7px auto;
+    text-align: center;
+    min-height: 40px;
+    font-size: 16px;
+    color: #3f3f3f;
     font-weight: 600;
 }
 
 .adivina-Definition a {
     width: 100%;
     color: #b3092f;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    z-index: 30000;
+    text-decoration: none;
+    text-align: center;
+}
+
+.adivina-Definition-classic a {
+    width: 100%;
+    color: #3f3f3f;
     cursor: pointer;
     font-weight: bold;
     font-size: 16px;
@@ -131,6 +172,16 @@
     color: #b3092f;
 }
 
+
+.adivina-GameContainer-classic .adivina-Letter.blue {
+    color: #5877c6;
+}
+
+.adivina-GameContainer .adivina-Letter.blue {
+    color: #071717;
+}
+
+
 .adivina-MainContainer {
     max-width: 800px;
     min-width: 300px;
@@ -152,10 +203,22 @@
     border: 1px solid black;
     padding: 5px;
     border-radius: 10px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     display: block;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+.adivina-GameContainer-classic {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    margin: 10px auto;
+    border: 0px solid black;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    display: block;
+}
+
 
 .adivina-GameScoreBoard {
     width: 100%;
@@ -295,7 +358,7 @@
 .adivina-GameOver {
     width: 100%;
     height: 100%;
-    background: #f9f9f9;
+    background: #ffffff;
     position: absolute;
     left: 0;
     top: 0;
@@ -331,6 +394,16 @@
     text-align: center;
     margin-bottom: 10px;
     color: #b3092f;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.adivina-MessageCodeAccessE-classic {
+    width: 90%;
+    margin: 10px auto;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #3f3f3f;
     font-size: 16px;
     font-weight: bold;
 }
@@ -597,6 +670,52 @@
 }
 
 
+.exeQuextIcons-classic-Hit {
+    background: url(exeQuextIcons-classic.png) no-repeat 0 0;
+}
+.exeQuextIcons-classic-Error {
+    background: url(exeQuextIcons-classic.png) no-repeat -26px 0;
+}
+.exeQuextIcons-classic-Score {
+    background: url(exeQuextIcons-classic.png) no-repeat -52px 0;
+ }
+
+.exeQuextIcons-classic-Time{
+    background: url(exeQuextIcons-classic.png) no-repeat 0 -26px;
+}
+.exeQuextIcons-classic-OneRound {
+    background: url(exeQuextIcons-classic.png) no-repeat -52px -26px;
+    margin-right: 3px;
+}
+.exeQuextIcons-classic-TwoRounds {
+    background: url(exeQuextIcons-classic.png) no-repeat -78px -26px;
+    margin-right: 3px;
+}
+
+.exeQuextIcons-classic-Life {
+ background: url(exeQuextIcons-classic.png) no-repeat -78px 0;
+}
+
+.exeQuextIcons-classic-Number {
+ background: url(exeQuextIcons-classic.png) no-repeat -26px -26px;
+}
+
+.exeQuextIcons-classic-Minimize {
+    background: url(exeQuextIcons-classic.png) no-repeat 0 -52px;
+    margin-right: 5px;
+
+}
+
+.exeQuextIcons-classic-Maximize{
+    background: url(exeQuextIcons-classic.png) no-repeat -216px 0;
+}
+
+.exeQuextIcons-classic-FullScreen{
+    background: url(exeQuextIcons-classic.png) no-repeat 0 -78px;
+}
+
+
+
 /* Fullscreen */
 div:fullscreen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
 div:-webkit-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png) no-repeat -26px -78px}
@@ -745,3 +864,6 @@ div:-moz-full-screen .exeQuextIcons-FullScreen{background:url(exeQuextIcons.png)
     }
 }
 p.adivinaDivInstructions{margin:0;font-weight:bold;text-align:center;height:32px}
+.adinaIdevice .adivina-extra-content{
+	margin-top:1.7em;
+} 

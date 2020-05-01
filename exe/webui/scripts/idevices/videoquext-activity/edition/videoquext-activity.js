@@ -22,6 +22,8 @@ var $exeDevice = {
     timeVideoFocus: 0,
     durationVideo:0,
     timeVIFocus:0,
+    changesSaved:false,
+    inEdition:true,
     ci18n: {
         "msgReady": _("Ready?"),
         "msgStartGame": _("Click here to start"),
@@ -67,7 +69,6 @@ var $exeDevice = {
         "msgAuthor": _("Author"),
         "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
-        "msgYouScore": _("Your score"),
         "msgSeveralScore": _("You can save the score as many times as you want"),
         "msgYouLastScore": _("The last score saved is"),
         "msgActityComply": _("You have already done this activity."),
@@ -248,7 +249,7 @@ var $exeDevice = {
             $exeDevice.questionsGame.push($exeDevice.getCuestionDefault());
             $exeDevice.active = $exeDevice.questionsGame.length - 1;
             $exeDevice.showVideoReproductor();
-            $('#vquextNumberQuestion').text($exeDevice.questionsGame.length - 1);
+            $('#vquextNumberQuestion').text($exeDevice.questionsGame.length);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
         }
     },
@@ -264,7 +265,6 @@ var $exeDevice = {
             $exeDevice.showQuestion($exeDevice.active);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
             $('#vquextNumberQuestion').text($exeDevice.active + 1);
-            
         }
 
     },
@@ -339,6 +339,8 @@ var $exeDevice = {
         $('#vquextNumberQuestion').text(i + 1);
         $("input.vquext-Number[name='vqxnumber'][value='" + p.numberOptions + "']").prop("checked", true)
         $("input.vquext-ESolution[name='vqxsolution'][value='" + p.solution + "']").prop("checked", true);
+        $("input.vquext-Times[name='vqxtime'][value='" + p.time + "']").prop("checked", true);
+
         //$exeDevice.createPointsVideo();
 
     },
@@ -488,6 +490,11 @@ var $exeDevice = {
                                 <label for="vquextEShowSolution"><input type="checkbox" checked id="vquextEShowSolution">' + _("Show solutions") + '. </label>\
                                 <label for="vquextETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="vquextETimeShowSolution" id="vquextETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
+                            <p>\
+                                <label for="vquextEReloadQuestion"><input type="checkbox" id="vquextEReloadQuestion">' + _("Reload question") + '. </label>\
+                                <label for="vquextEPreviewQuestions"><input type="checkbox" id="vquextEPreviewQuestions">' + _("Preview questions") + '. </label>\
+                                <label for="vquextEPauseVideo"><input type="checkbox" id="vquextEPauseVideo">' + _("Pause video") + '. </label>\
+                            </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -604,6 +611,7 @@ var $exeDevice = {
                             </div>\
                         </div>\
                     </fieldset>\
+                    '+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
                 </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
@@ -676,6 +684,8 @@ var $exeDevice = {
             if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
              // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
+            var textAfter = $(".vquext-extra-content",wrapper);
+            if (textAfter.length == 1)  $("#eXeIdeviceTextAfter").val(textAfter.html());
             $exeDevice.updateFieldGame(dataGame);
         }
     },
@@ -685,6 +695,9 @@ var $exeDevice = {
         $('#vquextEShowMinimize').prop('checked', game.showMinimize);
         $('#vquextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#vquextEAnswersRamdon').prop('checked', game.answersRamdon);
+        $('#vquextEReloadQuestion').prop('checked', game.reloadQuestion);
+        $('#vquextEPreviewQuestions').prop('checked', game.previewQuestions);
+        $('#vquextEPauseVideo').prop('checked', game.pauseVideo);
         $('#vquextEUseLives').prop('checked', game.useLives);
         $('#vquextENumberLives').val(game.numberLives);
         $('#vquextEVideoIntro').val(game.idVideoQuExt);
@@ -734,6 +747,7 @@ var $exeDevice = {
         if (!dataGame) {
             return false;
         }
+        $exeDevice.changesSaved=true;
         var fields = this.ci18n,
             i18n = fields;
         for (var i in fields) {
@@ -751,6 +765,12 @@ var $exeDevice = {
         html += '<div class="vquext-DataGame">' + json + '</div>';
         html += linksImages;
         html += '</div>';
+           // Get the optional text
+        var textAfter = tinymce.editors[1].getContent();
+        if (textAfter!="") {
+            html += '<div class="vquext-extra-content">'+textAfter+'</div>';
+        }
+    
         return html;
     },
     validateQuestion: function () {
@@ -871,14 +891,20 @@ var $exeDevice = {
         $exeDevice.updateFieldGame(game);
         var instructions = game.instructionsExe || game.instructions;
         tinymce.editors[0].setContent(unescape(instructions));
+        var textAfter = game.textAfter || '';
+        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(textAfter));
         $('.exe-form-tabs li:first-child a').click();
     },
     validateData: function () {
-        var clear = $exeDevice.removeTags
-        instructions = $('#eXeGameInstructions').text(),
+        var clear = $exeDevice.removeTags,
+            instructions = $('#eXeGameInstructions').text(),
             instructionsExe = escape(tinyMCE.get('eXeGameInstructions').getContent()),
+            textAfter = escape(tinyMCE.get('eXeIdeviceTextAfter').getContent()),
             showMinimize = $('#vquextEShowMinimize').is(':checked'),
             answersRamdon= $('#vquextEAnswersRamdon').is(':checked'),
+            reloadQuestion=$('#vquextEReloadQuestion').is(':checked'),
+            previewQuestions=$('#vquextEPreviewQuestions').is(':checked'),
+            pauseVideo=$('#vquextEPauseVideo').is(':checked'),
             optionsRamdon = false,
             showSolution = $('#vquextEShowSolution').is(':checked'),
             timeShowSolution = parseInt(clear($('#vquextETimeShowSolution').val())),
@@ -940,7 +966,11 @@ var $exeDevice = {
             'isScorm': scorm.isScorm,
             'textButtonScorm': scorm.textButtonScorm,
             'repeatActivity': scorm.repeatActivity,
-            'title': ''
+            'title': '',
+            'reloadQuestion':reloadQuestion,
+            'previewQuestions':previewQuestions,
+            'pauseVideo':pauseVideo,
+            'textAfter':textAfter
         }
         return data;
     },

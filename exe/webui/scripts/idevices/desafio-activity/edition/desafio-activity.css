@@ -1,13 +1,13 @@
-  #quextIdeviceForm {
+  #desafioIdeviceForm {
     margin-top: 2em;
   }
 
-  #quextIdeviceForm input[type=text] {
+  #desafioIdeviceForm input[type=text] {
     margin-top: 0;
     margin-bottom: 0;
   }
 
-  #quextIdeviceForm .quext-EOptionsGame input[type=text] {
+  #desafioIdeviceForm .desafio-EOptionsGame input[type=text] {
     font-size: 13px;
     margin-top: 0;
     margin-bottom: 0;
@@ -18,39 +18,38 @@
     padding: 2px;
   }
 
-  #quextIdeviceForm .quextIdevice {
+  #desafioIdeviceForm .desafioIdevice {
     background: #fff;
     padding: 20px;
     border: 1px solid #000;
   }
 
-  #quextIdeviceForm label {
+  #desafioIdeviceForm label {
     display: inline;
     font-weight: bold;
     font-size: 14px;
-    padding: 0;
-    margin: 0;
+
   }
 
-  #quextIdeviceForm label[for='quextEShowSolution'] {
+  #desafioIdeviceForm label[for='desafioEShowSolution'] {
     margin-right: .5em;
   }
 
-  #quextIdeviceForm input, #quextIdeviceForm select {
+  #desafioIdeviceForm input, #desafioIdeviceForm select {
     font-size: 14px;
   }
 
-  #quextIdeviceForm legend {
+  #desafioIdeviceForm legend {
     font-weight: bold;
     padding: 0 10px;
     font-size: 14px
   }
 
-  #quextIdeviceForm input[type="radio"], #quextIdeviceForm input[type="checkbox"] {
+  #desafioIdeviceForm input[type="radio"], #desafioIdeviceForm input[type="checkbox"] {
     cursor: pointer;
   }
 
-  #quextIdeviceForm .quext-EPanel {
+  #desafioIdeviceForm .desafio-EPanel {
     position: relative;
     width: 98%;
     max-width: 900px;
@@ -62,7 +61,7 @@
     padding: 10px;
   }
 
-  .quext-NumberQuestion {
+  .desafio-NumberQuestion {
     line-height: 24px;
     height: 24px;
     width: 40px;
@@ -72,7 +71,7 @@
     vertical-align: middle;
   }
 
-  #quextIdeviceForm .quext-EOptionsMedia {
+  #desafioIdeviceForm .desafio-EOptionsMedia {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -80,19 +79,19 @@
     margin-bottom: 10px;
   }
 
-  #quextIdeviceForm .quext-EOptionsGame {
+  #desafioIdeviceForm .desafio-EOptionsGame {
     min-height: 300px;
     width: 100%;
   }
 
-  #quextIdeviceForm .quext-EOptionsGame span {
+  #desafioIdeviceForm .desafio-EOptionsGame span {
     font-weight: bold;
     font-size: 14px;
     margin: 0;
     color: #035175;
   }
 
-  #quextIdeviceForm .quext-EInputMedias #quextIdeviceForm .quext-EInputNumbers, #quextIdeviceForm .quext-EInputVideo, #quextIdeviceForm .quext-EInputOptionsVideo, #quextIdeviceForm .quext-EInputTimes {
+  #desafioIdeviceForm .desafio-EInputMedias #desafioIdeviceForm .desafio-EInputNumbers, #desafioIdeviceForm .desafio-EInputVideo, #desafioIdeviceForm .desafio-EInputOptionsVideo, #desafioIdeviceForm .desafio-EInputTimes {
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -101,7 +100,7 @@
     margin-top: 5px 0;
   }
 
-  #quextIdeviceForm .quext-EInputMedias label, #quextIdeviceForm .quext-EInputNumbers label, #quextIdeviceForm .quext-EInputVideo label, #quextIdeviceForm .quext-EInputOptionsVideo label, #quextIdeviceForm .quext-EInputTimes label, #quextIdeviceForm .quext-EInputImage label {
+  #desafioIdeviceForm .desafio-EInputMedias label, #desafioIdeviceForm .desafio-EInputNumbers label, #desafioIdeviceForm .desafio-EInputVideo label, #desafioIdeviceForm .desafio-EInputOptionsVideo label, #desafioIdeviceForm .desafio-EInputTimes label, #desafioIdeviceForm .desafio-EInputImage label {
     display: inline;
     font-weight: normal;
     font-size: 13px;
@@ -109,7 +108,7 @@
     font-weight: bold;
   }
 
-  #quextIdeviceForm .quext-EInputOptionsVideo input[type=text], #quextIdeviceForm .quext-EInputOptionsImage input[type=text] {
+  #desafioIdeviceForm .desafio-EInputOptionsVideo input[type=text], #desafioIdeviceForm .desafio-EInputOptionsImage input[type=text] {
     width: 70px;
     height: 20px;
     text-align: center;
@@ -119,25 +118,25 @@
     margin: 5px;
   }
 
-  #quextIdeviceForm input:-moz-read-only {
+  #desafioIdeviceForm input:-moz-read-only {
     /* For Firefox */
     background-color: white;
     border-width: 1px;
   }
 
-  #quextIdeviceForm input:read-only {
+  #desafioIdeviceForm input:read-only {
     background-color: white;
     border-width: 1px;
   }
 
-  #quextIdeviceForm input[type=button] {
+  #desafioIdeviceForm input[type=button] {
     height: 27px;
     font-size: 13px;
     font-weight: bold;
     cursor: pointer;
   }
 
-  #quextIdeviceForm .quext-EInputOptionsImage input[type=text], #quextIdeviceForm .quext-EInputOptionsImage label {
+  #desafioIdeviceForm .desafio-EInputOptionsImage input[type=text], #desafioIdeviceForm .desafio-EInputOptionsImage label {
     margin: 0;
     padding: 0;
     display: none;
@@ -145,26 +144,26 @@
     align-content: center;
   }
 
-  #quextIdeviceForm .quext-EVideoTime {
+  #desafioIdeviceForm .desafio-EVideoTime {
     font-size: 13px;
     font-weight: bold;
   }
 
-  #quextIdeviceForm .quext-EInputVideo input[type=text] {
+  #desafioIdeviceForm .desafio-EInputVideo input[type=text] {
     width: 85%;
     margin: 3px 0;
   
   }
 
-  #quextIdeviceForm .quext-EInputVideo {
+  #desafioIdeviceForm .desafio-EInputVideo {
     display: none;
   }
 
-  #quextIdeviceForm .quext-EInputImage {
+  #desafioIdeviceForm .desafio-EInputImage {
     display: none;
   }
 
-  #quextIdeviceForm .quext-EMultiMediaOption {
+  #desafioIdeviceForm .desafio-EMultiMediaOption {
     background: transparent;
     height: 350px;
     min-width: 400px;
@@ -173,7 +172,7 @@
     position: relative;
   }
 
-  #quextIdeviceForm .quext-EMultimedia {
+  #desafioIdeviceForm .desafio-EMultimedia {
     width: 400px;
     height: 227px;
     margin: auto auto;
@@ -183,14 +182,14 @@
     border-radius:8px;
   }
 
-  #quextIdeviceForm .quext-EContents {
+  #desafioIdeviceForm .desafio-EContents {
     background: transparent;
     width: 100%;
     margin: 5px auto;
     padding: 0;
   }
 
-  #quextIdeviceForm .quext-EAnswers {
+  #desafioIdeviceForm .desafio-EAnswers {
     background-color: transparent;
     width: 100%;
     margin: 0 auto;
@@ -200,7 +199,7 @@
     background: transparent;
   }
 
-  #quextIdeviceForm .quext-EOptionDiv {
+  #desafioIdeviceForm .desafio-EOptionDiv {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,7 +208,7 @@
     margin: 3px 0;
   }
 
-  #quextIdeviceForm .quext-EAnwersOptions {
+  #desafioIdeviceForm .desafio-EAnwersOptions {
     width: 100%;
     height: 30px;
     background-color: transparent;
@@ -221,27 +220,31 @@
     text-align: center;
   }
 
-  #quextIdeviceForm .quext-EOption0 {
-    background-color: #ffffff;
+  #desafioIdeviceForm .desafio-EOption0 {
+    background-color: #fbd2d6;
+    background-color: #f9f9f9;
     border: 1px solid #ff0000;
   }
 
-  #quextIdeviceForm .quext-EOption1 {
-     background-color: #ffffff;
+  #desafioIdeviceForm .desafio-EOption1 {
+    background-color: #dfe3f1;
+    background-color: #f9f9f9;
     border: 1px solid #5877c6;
   }
 
-  #quextIdeviceForm .quext-EOption2 {
-    background-color: #ffffff;
+  #desafioIdeviceForm .desafio-EOption2 {
+    background-color: #caede8;
+    background-color: #f9f9f9;
     border: 1px solid #2a9315;
   }
 
-  #quextIdeviceForm .quext-EOption3 {
-    background-color: #ffffff;
+  #desafioIdeviceForm .desafio-EOption3 {
+    background-color: #fcf4d3;
+    background-color: #f9f9f9;
     border: 1px solid #f3d55a;
   }
 
-  #quextIdeviceForm .quext-ENavigationButtons {
+  #desafioIdeviceForm .desafio-ENavigationButtons {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -249,29 +252,29 @@
     margin-top: 15px;
   }
 
-  #quextIdeviceForm .quext-ENavigationButton {
+  #desafioIdeviceForm .desafio-ENavigationButton {
     width: 24px;
     height: 24px;
     min-width: 24px;
     margin: 0 5px;
   }
-   #quextIdeviceForm .quext-tEVideoIntroPlay {
+   #desafioIdeviceForm .desafio-tEVideoIntroPlay {
     width: 24px;
     height: 24px;
     min-width: 24px;
     margin:0;
   }
 
-  #quextIdeviceForm .quextWordMutimediaEdition a:focus, #quextIdeviceForm .quextWordMutimediaEdition a:link, #quextIdeviceForm .quextWordMutimediaEdition a:visited, #quextIdeviceForm .quextWordMutimediaEdition a:active {
+  #desafioIdeviceForm .desafioWordMutimediaEdition a:focus, #desafioIdeviceForm .desafioWordMutimediaEdition a:link, #desafioIdeviceForm .desafioWordMutimediaEdition a:visited, #desafioIdeviceForm .desafioWordMutimediaEdition a:active {
     outline: 0;
     border: none;
   }
 
-  #quextIdeviceForm #quextNumerLives {
+  #desafioIdeviceForm #desafioNumerLives {
     width: 30px;
   }
 
-  #quextIdeviceForm .quext-EButtonImage {
+  #desafioIdeviceForm .desafio-EButtonImage {
     width: 24px;
     height: 24px;
     min-width: 24px;
@@ -280,12 +283,12 @@
     transition: all .3s ease-in-out;
   }
 
-  #quextIdeviceForm .quext-EButtonImage:hover {
+  #desafioIdeviceForm .desafio-EButtonImage:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
   }
 
-  #quextIdeviceForm .quext-Protector {
+  #desafioIdeviceForm .desafio-Protector {
     width: 100%;
     height: 100%;
     background: #ffffff;
@@ -296,10 +299,10 @@
     z-index: 100000;
   }
 
-  #quextIdeviceForm .quext-EText {
+  #desafioIdeviceForm .desafio-EText {
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: #f9f9f9;
     position: absolute;
     left: 0;
     top: 0;
@@ -307,11 +310,11 @@
     
   }
 
-  #quextIdeviceForm #quextEText {
+  #desafioIdeviceForm #desafioEText {
     display: none;
   }
 
-  #quextIdeviceForm .quext-ECover, #quextIdeviceForm .quext-EImage, #quextIdeviceForm .quext-ENoImage, #quextIdeviceForm .quext-EVideo, #quextIdeviceForm .quext-ENoImageVideo, #quextIdeviceForm .quext-ENoVideo {
+  #desafioIdeviceForm .desafio-ECover, #desafioIdeviceForm .desafio-EImage, #desafioIdeviceForm .desafio-ENoImage, #desafioIdeviceForm .desafio-EVideo, #desafioIdeviceForm .desafio-ENoImageVideo, #desafioIdeviceForm .desafio-ENoVideo {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -320,45 +323,45 @@
     border-radius:8px;
   }
 
-  #quextIdeviceForm .quext-ECursor {
+  #desafioIdeviceForm .desafio-ECursor {
     position: absolute;
     left: 0;
     top: 0
   }
 
-  #quextIdeviceForm input[type=number] {
+  #desafioIdeviceForm input[type=number] {
     width: 40px;
   }
 
-  #quextIdeviceForm fieldset input {
+  #desafioIdeviceForm fieldset input {
     margin: 5px;
   }
 
   /* To review */
 
-  #quextIdeviceForm .exe-block-info img {
+  #desafioIdeviceForm .exe-block-info img {
     vertical-align: middle;
     margin-left: .2em
   }
 
-  #quextIdeviceFormTab3 * {
+  #desafioIdeviceFormTab3 * {
     font-size: 0.9em;
   }
 
-  #quextIdeviceFormTab3 p:first-child {
+  #desafioIdeviceFormTab3 p:first-child {
     margin-top: 0
   }
 
-  #quextIdeviceFormTab3 {
+  #desafioIdeviceFormTab3 {
     overflow: auto
   }
 
-  #quextIdeviceFormTab3 .ci18n {
+  #desafioIdeviceFormTab3 .ci18n {
     width: 50%;
     float: left
   }
 
-  #quextIdeviceForm .quext-EAuthorAlt {
+  #desafioIdeviceForm .desafio-EAuthorAlt {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -369,49 +372,49 @@
     color: #007ab3;
   }
 
-  #quextIdeviceForm .quext-EInputAuthor input[type=text], #quextIdeviceForm .quext-EInputAlt input[type=text] {
+  #desafioIdeviceForm .desafio-EInputAuthor input[type=text], #desafioIdeviceForm .desafio-EInputAlt input[type=text] {
     width: 90%;
     margin-left: 0;
     display: block;
   }
 
-  #quextIdeviceForm .quext-EInputAuthor {
+  #desafioIdeviceForm .desafio-EInputAuthor {
     width: 48%;
     margin-right: 5px;
   }
 
-  #quextIdeviceForm .quext-EInputAlt {
+  #desafioIdeviceForm .desafio-EInputAlt {
     width: 48%;
   }
 
-  #quextIdeviceForm .quext-EInputAuthor label, #quextIdeviceForm .quext-EInputAlt label {
+  #desafioIdeviceForm .desafio-EInputAuthor label, #desafioIdeviceForm .desafio-EInputAlt label {
     color: #035175;
   }
 
-  #quextIdeviceForm .quext-EInputImage input[type=text] {
+  #desafioIdeviceForm .desafio-EInputImage input[type=text] {
     width: 50%;
     margin-left: 0;
   }
 
-  #quextIdeviceForm .quext-EVIDiv {
+  #desafioIdeviceForm .desafio-EVIDiv {
     width: 100%;
     height: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 10px;
     z-index: 20000;
     display: none;
   }
 
-  #quextIdeviceForm .quext-ENumQuestionDiv {
+  #desafioIdeviceForm .desafio-ENumQuestionDiv {
     width: 60px;
     height: 30px;
     position: absolute;
     right: 0;
     top: 10px;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border-radius: 10px;
     z-index: 20000;
     display: flex;
@@ -419,14 +422,14 @@
     align-content: center;
   }
 
-  #quextIdeviceForm .quext-ENumQ {
+  #desafioIdeviceForm .desafio-ENumQ {
     width: 24px;
     height: 24px;
     margin-right: 0px;
     background: url(quextNumber.png);
   }
 
-  #quextIdeviceForm .quext-ENumQuestions {
+  #desafioIdeviceForm .desafio-ENumQuestions {
     width: 35px;
     height: 24px;
     font-size: 16px;
@@ -434,12 +437,12 @@
     text-align: center;
   }
 
-  #quextIdeviceForm .quext-EVIV {
+  #desafioIdeviceForm .desafio-EVIV {
     width: 100%;
     background-color: transparent;
   }
 
-  #quextIdeviceForm .quext-EMVI {
+  #desafioIdeviceForm .desafio-EMVI {
     position: relative;
     width: 560px;
     height: 315px;
@@ -447,7 +450,7 @@
     background-color: transparent;
   }
 
-  #quextIdeviceForm .quext-EVI, #quextIdeviceForm .quext-ENoVI {
+  #desafioIdeviceForm .desafio-EVI, #desafioIdeviceForm .desafio-ENoVI {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -456,7 +459,7 @@
     background-color: transparent;
   }
 
-  #quextIdeviceForm .quext-EVIOptions {
+  #desafioIdeviceForm .desafio-EVIOptions {
     width: 100%;
     height: 50px;
     display: flex;
@@ -469,18 +472,18 @@
     bottom: 5px;
   }
 
-  #quextIdeviceForm .quext-EVIOptions * {
+  #desafioIdeviceForm .desafio-EVIOptions * {
     margin-left: 5px;
   }
 
-  #quextIdeviceForm #quextEVIStart, #quextIdeviceForm #quextEVIEnd {
+  #desafioIdeviceForm #desafioEVIStart, #desafioIdeviceForm #desafioEVIEnd {
     width: 80px;
     text-align: center;
     font-size: 13px;
     font-weight: bold;
   }
 
-  #quextIdeviceForm .quext-EVideoIntroDiv {
+  #desafioIdeviceForm .desafio-EVideoIntroDiv {
     width: 100%;
     height: 100%;
     width: 98%;
@@ -492,7 +495,7 @@
     z-index: 20000;
   }
 
-  .quext-EVIClose {
+  .desafio-EVIClose {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -500,7 +503,7 @@
 
 
 
-  #quextIdeviceForm .quext-EQuestionDiv {
+  #desafioIdeviceForm .desafio-EQuestionDiv {
     width: 97%;
     height: 39px;
     margin: 10px auto;
@@ -508,13 +511,13 @@
     background: transparent;
   }
 
-  #quextIdeviceForm #quextEQuestion {
+  #desafioIdeviceForm #desafioEQuestion {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #f9f9f9;
     border: 1px solid #071717;
     margin: 0;
     padding: 0;
@@ -524,35 +527,35 @@
     font-weight: bold;
     text-align: center;
   }
-  #quextIdeviceForm .quext-EVideoIntroData{
+  #desafioIdeviceForm .desafio-EVideoIntroData{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width:100%;
   }
-  #quextIdeviceForm input#quextEVideoIntro {
+  #desafioIdeviceForm input#desafioEVideoIntro {
     width:50%;
   }
 
-  #quextIdeviceForm .quext-EInputOptionsVideo, #quextIdeviceForm .quext-ETitleImage, #quextIdeviceForm .quext-ETitleVideo, #quextIdeviceForm .quext-EInputVideo, #quextIdeviceForm .quext-EAuthorAlt {
+  #desafioIdeviceForm .desafio-EInputOptionsVideo, #desafioIdeviceForm .desafio-ETitleImage, #desafioIdeviceForm .desafio-ETitleVideo, #desafioIdeviceForm .desafio-EInputVideo, #desafioIdeviceForm .desafio-EAuthorAlt {
     display: none;
   }
 
   @media screen and (max-width:720px) {
-    #quextIdeviceForm #quextIdeviceFormTab3 .ci18n {
+    #desafioIdeviceForm #desafioIdeviceFormTab3 .ci18n {
       width: 100%;
       float: none
     }
   }
 
-  #quextIdeviceForm #quextIdeviceFormTab3 label {
+  #desafioIdeviceForm #desafioIdeviceFormTab3 label {
     display: block;
     font-weight: bold;
     margin-bottom: .2em;
     font-size: 0.9em
   }
 
-  #quextIdeviceForm #quextIdeviceFormTab3 input {
+  #desafioIdeviceForm #desafioIdeviceFormTab3 input {
     width: 300px;
     font-size: 0.9em
   }
@@ -601,41 +604,122 @@
     font-weight: 500
   }
 
-  #quextSCORMoptions {
+  #desafioSCORMoptions {
     visibility: hidden;
     margin-left: 1.5em
   }
 
-  label[for=quextActivitySCORM] {
+  label[for=desafioActivitySCORM] {
     font-weight: bold
   }
 
-  #quextSCORMinstructionsButton {
+  #desafioSCORMinstructionsButton {
     display: none;
     color: #777;
     margin: 10px 0 0 25px
   }
 
-  #quextSCORMinstructionsButton ul {
+  #desafioSCORMinstructionsButton ul {
     margin: 1.5em 0 .7em 0;
     padding: 0;
     list-style: none
   }
 
-  #quextSCORMinstructionsButton ul li {
+  #desafioSCORMinstructionsButton ul li {
     margin: 0 0 .5em 0;
     padding: 0;
     list-style-image: none
   }
 
-  #quextSCORMinstructionsAuto {
+  #desafioSCORMinstructionsAuto {
     display: none;
     color: #777;
     margin: 10px 0 0 25px
   }
 
-  #quextSCORMinstructionsAuto ul {
+  #desafioSCORMinstructionsAuto ul {
     margin: 1.5em 0 .7em 0;
     padding: 0;
     list-style: none
+  }
+
+  .desafioToggle {
+    margin: 0 0 10px;
+    box-sizing: border-box;
+    font-size: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+  }
+
+  .desafioToggle input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -9999px;
+  }
+
+  .desafioToggle input+label {
+    cursor: pointer;
+    margin: 0;
+    padding: .75rem 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    border: solid 1px #DDD;
+    background-color: #FFF;
+    font-size: 1.3rem;
+    line-height: 110%;
+    font-weight: 600;
+    text-align: center;
+    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    -webkit-transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+    transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+  }
+
+  .desafioToggle input+label:first-of-type {
+    border-radius: 6px 0 0 6px;
+    border-right: none;
+  }
+
+  .desafioToggle input+label:last-of-type {
+    border-radius: 0 6px 6px 0;
+    border-left: none;
+  }
+
+  .desafioToggle input:hover+label {
+    border-color: #213140;
+  }
+
+  .desafioToggle input:checked+label {
+    background-color: #CCC;
+    color: #213140;
+    border-color: #CCC;
+    z-index: 1;
+  }
+
+  .desafioToggle input:focus+label {
+    outline: dotted 1px #CCC;
+    outline-offset: .45rem;
+  }
+
+  @media (max-width: 400px) {
+    .desafioToggle input+label {
+      padding: .75rem .25rem;
+      -webkit-box-flex: 0;
+      flex: 0 0 50%;
+      display: -webkit-box;
+      display: flex;
+      -webkit-box-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   }

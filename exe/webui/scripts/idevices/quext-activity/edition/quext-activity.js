@@ -259,7 +259,7 @@ var $exeDevice = {
             $exeDevice.clearQuestion();
             $exeDevice.questionsGame.push($exeDevice.getCuestionDefault());
             $exeDevice.active=$exeDevice.questionsGame.length-1;
-            $('#quextNumberQuestion').text($exeDevice.active);
+            $('#quextNumberQuestion').text($exeDevice.questionsGame.length);
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
@@ -398,6 +398,7 @@ var $exeDevice = {
         $("input.quext-Number[name='qxnumber'][value='" + p.numberOptions + "']").prop("checked", true)
         $("input.quext-Type[name='qxtype'][value='" + p.type + "']").prop("checked", true);
         $("input.quext-ESolution[name='qxsolution'][value='" + p.solution + "']").prop("checked", true);
+        $("input.quext-Times[name='qxtime'][value='" + p.time + "']").prop("checked", true);
 
 
     },
@@ -812,6 +813,7 @@ var $exeDevice = {
                             </div>\
                         </div>\
                     </fieldset>\
+                    '+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
                 </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
@@ -912,6 +914,10 @@ var $exeDevice = {
             if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
             // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
+                         // Text after
+            var textAfter = $(".quext-extra-content",wrapper);
+            if (textAfter.length == 1) tinyMCE.get('eXeIdeviceTextAfter').setContent(textAfter.html());
+
             $exeDevice.updateFieldGame(dataGame);
 
         }
@@ -986,6 +992,12 @@ var $exeDevice = {
         html += '<div class="quext-DataGame">' + json + '</div>';
         html += linksImages;
         html += '</div>';
+
+        // Get the optional text
+        var textAfter = tinymce.editors[2].getContent();
+        if (textAfter!="") {
+			html += '<div class="quext-extra-content">'+textAfter+'</div>';
+        }
         return html;
     },
     validateQuestion: function () {
@@ -1110,6 +1122,8 @@ var $exeDevice = {
         $exeDevice.updateFieldGame(game);
         var instructions = game.instructionsExe || game.instructions;
         tinymce.editors[0].setContent(unescape(instructions));
+        var textAfter = game.textAfter || '';
+        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(textAfter));
         $('.exe-form-tabs li:first-child a').click();
     },
     validateData: function () {
@@ -1117,6 +1131,7 @@ var $exeDevice = {
             // instructions = escape($("#eXeGameInstructions").html())
             instructions = $('#eXeGameInstructions').text(),
             instructionsExe = escape(tinyMCE.get('eXeGameInstructions').getContent()),
+            textAfter = escape(tinyMCE.get('eXeIdeviceTextAfter').getContent()),
             showMinimize = $('#quextEShowMinimize').is(':checked'),
             optionsRamdon = $('#quextEQuestionsRamdon').is(':checked'),
             answersRamdon = $('#quextEAnswersRamdon').is(':checked'),
@@ -1196,7 +1211,8 @@ var $exeDevice = {
             'isScorm': scorm.isScorm,
             'textButtonScorm': scorm.textButtonScorm,
             'repeatActivity': scorm.repeatActivity,
-            'title': ''
+            'title': '',
+            'textAfter':textAfter
         }
         return data;
     },
