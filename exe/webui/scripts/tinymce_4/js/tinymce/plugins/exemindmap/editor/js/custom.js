@@ -404,7 +404,8 @@ var eXeMindMaps = {
 		var img = new Image();
 		img.onload = function() {
 			var win = top.mindmapEditor.pluginDialog;
-				win.find("#mindmapImg")[0].value(base64ToUpload);
+				win.find("#mindmapImgInstructions")[0].text(_("Saved changes!"));
+				win.find("#mindmapImgToSave")[0].value(base64ToUpload);
 				win.find("#mindmapCode")[0].value(result);
 				win.find("#originalWidth")[0].value(this.width);
 				win.find("#originalHeight")[0].value(this.height);						
