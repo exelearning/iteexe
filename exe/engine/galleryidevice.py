@@ -79,7 +79,7 @@ class GalleryImage(_ShowsResources):
     _parent       = None
     _caption       = None
     _id           = None
-    thumbnailSize = (128, 128)
+    thumbnailSize = (175, 175)
     size          = thumbnailSize
     bgColour      = 0x808080
 
