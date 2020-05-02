@@ -226,9 +226,9 @@ class GalleryBlock(Block):
                 ]
 
         if len(self.idevice.images) == 0:
-            html += [u'<div style="align:center center">',
-                     _(u'No Images Loaded'),
-                     u'</div>']
+            html += [u'<p class="exeImageGallery no-images">',
+                    _(u'No Images Loaded'),
+                    u'</p>']
         else:
             def genCell(image, i, id):
                 """Generates a single cell of our table"""
@@ -243,67 +243,62 @@ class GalleryBlock(Block):
                     params = "'%s', '%s', %s, true" % (re.escape(msg), method, self.id)
                     return "javascript:confirmThenSubmitLink(%s)" % params
                 changeGalleryImage = '\n'.join([
-                        u'           <a title="%s"' % _(u'Change Image'),
-                        u'              href="#" ',
-                        u'              onclick="changeGalleryImage(' +
+                        u'<a title="%s"' % _(u'Change Image'),
+                        u' href="#" ',
+                        u' onclick="changeGalleryImage(' +
                         u"'%s', '%s')" % (self.id, image.id) +
                         u'">'])
                 result = [changeGalleryImage,
-                          u'          <img class="submit"',
-                          u'           alt="%s"' % image.caption,
-                          u'           style="align:center top;"',
-                          u'           src="%s"/>' % image.thumbnailSrc,
-                          u'        </a>',
-                          u'        <span>',
-                          u'        <input id="caption%s" ' % image.id,
-                          u'               name="caption%s" ' % image.id,
-                          u'               value="%s" ' % image.caption,
-                          u'               style="align:center;width:98%;"/>',
+                          u'<img class="exeImageGallery-thumbnail"',
+                          u' alt="%s"' % image.caption,
+                          u' src="%s"/></a>' % image.thumbnailSrc,
+                          u'<span>',
+                          u'<input id="caption%s" ' % image.id,
+                          u' name="caption%s" ' % image.id,
+                          u' value="%s" ' % image.caption,
+                          u' />',
                           # Edit button
                           changeGalleryImage,
-                          u'          <img alt="%s"' % _(u'Change Image'),
-                          u'           class="submit" width="16" height="16"'
-                          u'           src="/images/stock-edit.png"/>'
-                          u'        </a>']
+                          u'<img alt="%s"' % _(u'Change Image'),
+                          u' class="submit" width="16" height="16"'
+                          u' src="/images/stock-edit.png"/>'
+                          u'</a> ']
                 # Move left button
                 if image.index > 0:
                     result += [
-                          u'        <a title="%s"' % _(u'Move Image Left'),
-                          u'           href="%s">' % submitLink('moveLeft'),
-                          u'        <img alt="%s"' % _(u'Go Back'),
-                          u'         class="submit" width="16" height="16"'
-                          u'         src="/images/stock-go-back.png"/>'
-                          u'        </a>',
+                          u'<a title="%s"' % _(u'Move Image Left'),
+                          u' href="%s">' % submitLink('moveLeft'),
+                          u'<img alt="%s"' % _(u'Go Back'),
+                          u' class="submit" width="16" height="16"'
+                          u' src="/images/stock-go-back.png"/>'
+                          u'</a> ',
                           ]
                 else:
                     result += [
-                          u'        <img class="submit" width="16" height="16"'
-                          u'         src="/images/stock-go-back-off.png"/>']
+                          u'<img class="submit" width="16" height="16"'
+                          u' src="/images/stock-go-back-off.png"/>']
                 # Move right button
                 if image.index < len(image.parent.images)-1:
                     result += [
-                          u'        <a title="%s"' % _(u'Move Image Right'),
-                          u'           href="%s">' % submitLink('moveRight'),
-                          u'        <img alt="%s"' % _(u'Go Forward'),
-                          u'         class="submit" width="16" height="16"'
-                          u'         src="/images/stock-go-forward.png"/>',
-                          u'        </a>',
+                          u' <a title="%s"' % _(u'Move Image Right'),
+                          u' href="%s">' % submitLink('moveRight'),
+                          u'<img alt="%s"' % _(u'Go Forward'),
+                          u' class="submit" width="16" height="16"'
+                          u' src="/images/stock-go-forward.png" /></a>',
                           ]
                 else:
                     result += [
-                          u'        ' + 
                           u'<img alt="%s" ' % _(u'Go Forward (Not Available)'),
                           u' class="submit" width="16" height="16"'
                           u' src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
-                          u'        <a title="%s"' % _(u'Delete Image'),
-                          u'           href="%s">' % (confirmThenSubmitLink(_('Delete this image?'), 'delete')),
-                          u'        <img class="submit" width="16" height="16" alt="%s" ' \
+                          u' <a title="%s"' % _(u'Delete Image'),
+                          u' href="%s">' % (confirmThenSubmitLink(_('Delete this image?'), 'delete')),
+                          u'<img class="submit" width="16" height="16" alt="%s" ' \
                                                         % _(u'Delete'),
-                          u'             src="/images/stock-delete.png"/>',
-                          u'        </a>',
-                          u'<a href="javascript:addGalleryImage(%s)"' % id,
+                          u' src="/images/stock-delete.png" /></a>',
+                          u' <a href="javascript:addGalleryImage(%s)"' % id,
                           u' title="%s"><img src="/images/stock-add.png"' % _(u"Add images"),
                           u' class="submit" width="16" height="16" alt="%s" /></a>' % _(u"Add images"),
                           u'      </span>']
