@@ -142,9 +142,13 @@ color: #000000;
  
 /* exe_lightbox.css */
 /* The New eXeLearning */
-.exeImageGallery{margin:1em 0 0 15px;padding:0;overflow:auto}
+.exeImageGallery{margin:0;padding:0;overflow:auto}
+.exeImageGallery.no-images{margin:1em 0}
 .exeImageGallery li{margin:0;padding:15px 15px 15px 0;display:block;float:left;list-style:none}
+.exeImageGallery-thumbnail{border:none;width:128px;height:128px}
 .exeImageGallery a img{border:none}
+.exeImageGallery img.submit{margin-right:4px}
+.exeImageGallery span input{width:95%;margin:2px 0 4px 0}
 .exeImageGallery .tit{display:none}
 /* prettyPhoto - Lightbox clone for jQuery - Author: Stephane Caron (http://www.no-margin-for-errors.com) - Version: 3.1.6 */
 div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top .pp_left,div.pp_default .pp_top .pp_right,div.pp_default .pp_bottom,div.pp_default .pp_bottom .pp_left,div.pp_default .pp_bottom .pp_middle,div.pp_default .pp_bottom .pp_right{height:13px}
