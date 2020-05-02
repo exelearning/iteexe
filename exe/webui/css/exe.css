@@ -148,6 +148,7 @@ color: #000000;
 .exeImageGallery a:hover{box-shadow:0 10px 7px -6px rgba(0,0,0,0.8)}
 .exeImageGallery a img{border:none}
 .exeImageGallery .tit{display:none}
+#activeIdevice .exeImageGallery a{display:inline;width:auto;height:auto;box-shadow:none!important}
 #activeIdevice .exeImageGallery{margin:0}
 #activeIdevice .exeImageGallery-thumbnail{border:none;width:128px;height:128px}
 #activeIdevice .exeImageGallery img.submit{margin-right:4px}
