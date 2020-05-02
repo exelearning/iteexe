@@ -142,14 +142,14 @@ color: #000000;
  
 /* exe_lightbox.css */
 /* The New eXeLearning */
-.exeImageGallery{margin:0;padding:0;overflow:auto}
-.exeImageGallery.no-images{margin:1em 0}
+.exeImageGallery{margin:0 0 0 15px;padding:0;overflow:auto}
 .exeImageGallery li{margin:0;padding:15px 15px 15px 0;display:block;float:left;list-style:none}
-.exeImageGallery-thumbnail{border:none;width:128px;height:128px}
 .exeImageGallery a img{border:none}
-.exeImageGallery img.submit{margin-right:4px}
-.exeImageGallery span input{width:95%;margin:2px 0 4px 0}
 .exeImageGallery .tit{display:none}
+#activeIdevice .exeImageGallery{margin:0}
+#activeIdevice .exeImageGallery-thumbnail{border:none;width:128px;height:128px}
+#activeIdevice .exeImageGallery img.submit{margin-right:4px}
+#activeIdevice .exeImageGallery span input{width:95%;margin:2px 0 4px 0}
 /* prettyPhoto - Lightbox clone for jQuery - Author: Stephane Caron (http://www.no-margin-for-errors.com) - Version: 3.1.6 */
 div.pp_default .pp_top,div.pp_default .pp_top .pp_middle,div.pp_default .pp_top .pp_left,div.pp_default .pp_top .pp_right,div.pp_default .pp_bottom,div.pp_default .pp_bottom .pp_left,div.pp_default .pp_bottom .pp_middle,div.pp_default .pp_bottom .pp_right{height:13px}
 div.pp_default .pp_top .pp_left{background:url(../scripts/exe_lightbox/exe_lightbox_sprite.png) -78px -93px no-repeat}
