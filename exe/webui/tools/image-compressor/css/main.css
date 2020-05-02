@@ -15,4 +15,4 @@ background:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW
 a,#imageEditorUploader label{color:rgb(0, 123, 255);text-decoration:none;cursor:pointer}
 a:hover,a:focus{text-decoration:underline}
 #imageEditorBackupMessage{float:right;margin-right:20px}
-#imageEditorSaveImg{background:#2276D2;color:#FFF;padding:7px 10px;text-decoration:none;float:right}
+#imageEditorSaveImg{background:#2276D2;color:#FFF;padding:7px 10px;text-decoration:none;float:right;display:none}

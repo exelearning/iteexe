@@ -154,9 +154,9 @@ var eXeImageCompressor = {
 	init : function(){
 		this.i18n();
 		setTimeout(function(){
-			jQuery("#imageEditorSaveImg").click(function(){
+			jQuery("#imageEditorSaveImg").fadeIn().click(function(){
       
-		var img = jQuery("#imageEditorOutputImg")
+				var img = jQuery("#imageEditorOutputImg")
 				var src = img.attr("src");					
 				
 				// This will upload the image before inserting it in TinyMCE
@@ -195,8 +195,10 @@ var eXeImageCompressor = {
 				}
 				tmp.src = src;			
 				return false;
+				
 			});
-		},1000);		
+		},1000);
+		
 	},
 	i18n : function(){
 
