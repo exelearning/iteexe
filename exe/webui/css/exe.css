@@ -142,8 +142,10 @@ color: #000000;
  
 /* exe_lightbox.css */
 /* The New eXeLearning */
-.exeImageGallery{margin:0 0 0 15px;padding:0;overflow:auto}
-.exeImageGallery li{margin:0;padding:15px 15px 15px 0;display:block;float:left;list-style:none}
+.exeImageGallery{margin:1em 0 0 15px;padding:0;overflow:auto}
+.exeImageGallery li{margin:0;padding:5px 15px 25px 15px;display:block;float:left;list-style:none}
+.exeImageGallery a{display:inline-block;width:128px;height:128px;background:#FFF;box-shadow:0 8px 6px -6px rgba(0,0,0,0.6);transition: all 0.5s cubic-bezier(.25,.8,.25,1)}
+.exeImageGallery a:hover{box-shadow:0 10px 7px -6px rgba(0,0,0,0.8)}
 .exeImageGallery a img{border:none}
 .exeImageGallery .tit{display:none}
 #activeIdevice .exeImageGallery{margin:0}
