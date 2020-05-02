@@ -115,7 +115,7 @@ input,select,textarea,.feedback{font-family:"Quicksand","Open Sans",​Arial,Hel
 #lbOuterContainer{border-color:#ddd}
 .ExternalUrlIdevice iframe{border:none}
 /* Lightbox */
-.exeImageGallery{width:100%}
+.exeImageGallery{width:100%;margin:5px 0 0 0}
 /* base.css */
 .block,.feedback{padding:0}
 li{list-style-position:outside}
