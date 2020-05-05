@@ -1346,8 +1346,10 @@ var $exeAuthoring = {
             // Check if the object and the required methods are defined
             if (typeof($exeDevice) != 'undefined' && typeof($exeDevice.init) != 'undefined' && typeof($exeDevice.save) == 'function') {
                 // Trigger the click event so the form is submitted
-                //$("#exe-submitButton a").trigger("click");
-                document.getElementById("exe-submitButton").children[0].click();
+                var html = $exeDevice.save();
+                if (html) {
+                    $("textarea.mceEditor, textarea.jsContentEditor").val(html);
+                }
             }
         },
         // iDevice tabs
