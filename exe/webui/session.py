@@ -87,6 +87,12 @@ class eXeRequest(appserver.NevowRequest):
         log.debug("Out Cookie's: %s" % self.cookies)
         return session
 
+    def getPackageName(self):
+        try:
+            return u''+self.getHeader('referer').split('/')[-1]
+        except:
+            return None
+
 class eXeSession(server.Session):
     def __init__(self, *args, **kwargs):
         server.Session.__init__(self, *args, **kwargs)
