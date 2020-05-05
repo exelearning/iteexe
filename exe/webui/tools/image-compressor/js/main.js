@@ -174,6 +174,15 @@ var eXeImageCompressor = {
 								var imgs = editor.getElementsByTagName("IMG");
 								var n = imgs.length;
 								var name = "img"+n+"."+ext;
+								
+								// Try to use the real name instead of imgX...
+								var realName = $("#imageEditorDataName").html();
+									realName = realName.split('.').slice(0,-1).join('.');
+									realName = realName.replace(/[^A-Z0-9]/ig, "_");
+									realName = realName.replace(/__/g,"_");
+									realName = realName.toLowerCase();
+									if (realName!="") name = realName+"."+ext;
+								
 								top.imgCompressor.fileToSave = name;
 								top.$exeAuthoring.fileUpload("uploadCompressedImage",src,name);
 								return false;									
