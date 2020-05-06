@@ -61,7 +61,7 @@ function runFuncArray(handlers) {
 function askUserForImage(multiple, fn, filter, targetWindow) {
 	
 	// Image optimizer
-	if (exe_tinymce.enableCompressor==true && !multiple) {
+	if (exe_tinymce.enableCompressor==true && !multiple && targetWindow) {
 		var showOptimizer = false;
 		var win = targetWindow.tinymce.activeEditor.windowManager.windows[0];
 		if (win) {
