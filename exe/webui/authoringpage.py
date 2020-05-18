@@ -256,6 +256,7 @@ class AuthoringPage(RenderableResource):
         html += u'<script type="text/javascript" src="/scripts/exe_effects/exe_effects.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_highlighter/exe_highlighter.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/exe_games/exe_games.js"></script>\n'
+        html += u'<script type="text/javascript" src="/scripts/fix_webm_duration/fix_webm_duration.js"></script>\n'
         html += u'<script type="text/javascript" src="/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js"></script>\n' #93 (to do)
         html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
