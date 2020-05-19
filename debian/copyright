@@ -20,6 +20,10 @@ License: GPL-3
  This version of Ext JS is licensed under the terms of the Open Source GPL 3.0 license.
  Commercial and OEM Licenses are available for an alternate download of Ext JS.
 
+Files: exe/scripts/fix_webm_duration/*
+Copyright: 2018 Yury Sitnikov
+License: MIT
+
 Files: /usr/share/exe/scripts/tinymce_3.5.11/*
 Copyright: Moxiecode Systems AB
 License: LGPL-2.1
