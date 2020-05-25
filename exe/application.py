@@ -89,6 +89,7 @@ class Application:
         self.webServer = None
         self.exeAppUri = None
         self.standalone = False  # Used for the ready to run exe
+        self.snap = False #  Used for the Snap package
         self.portable = False  # FM: portable mode
         self.persistNonPersistants = False
         self.tempWebDir = mkdtemp('.eXe')
@@ -177,8 +178,8 @@ class Application:
         Processes the command line arguments
         """
         try:
-            options, packages = getopt(sys.argv[1:],
-                                       "hV", ["help", "version", "standalone","portable"])
+            possibles_args = ["help", "version", "standalone", "portable", "snap"]
+            options, packages = getopt(sys.argv[1:], "hV", possibles_args)
         except GetoptError:
             self.usage()
             sys.exit(2)
@@ -203,6 +204,8 @@ class Application:
             elif option[0].lower() == '--portable':
                 self.standalone = True
                 self.portable = True
+            elif option[0].lower() == '--snap':
+                self.snap = True
 
 
     def loadConfiguration(self):
@@ -212,6 +215,9 @@ class Application:
         if self.standalone:
             from exe.engine.standaloneconfig import StandaloneConfig
             configKlass = StandaloneConfig
+        elif self.snap:
+            from exe.engine.snapconfig import SnapConfig
+            configKlass = SnapConfig
         elif sys.platform[:3] == "win":
             from exe.engine.winconfig import WinConfig
             configKlass = WinConfig
@@ -221,6 +227,7 @@ class Application:
         else:
             from exe.engine.linuxconfig import LinuxConfig
             configKlass = LinuxConfig
+            
         try:
             self.config = configKlass()
         except:

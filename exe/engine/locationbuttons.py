@@ -21,6 +21,7 @@
 import sys
 import os
 from exe.engine.path import Path
+from exe import globals as G
 
 
 class LocationButtons(object):
@@ -94,6 +95,12 @@ class LocationButtons(object):
             except:
                 if code == 'HOME':
                     path = os.environ['HOME']
-                else:
-                    raise
+                elif G.application.snap and code == 'DESKTOP':
+                    path = os.environ.get('XDG_DESKTOP_DIR')
+                    if not path:
+                        raise Exception
+                elif G.application.snap and code == 'DOCUMENTS':
+                    path = os.environ.get('XDG_DOCUMENTS_DIR')
+                    if not path:
+                        raise Exception
         return Path(path).abspath()

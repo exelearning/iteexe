@@ -26,6 +26,7 @@ from twisted.web.resource import Resource
 from exe.webui.renderable import Renderable
 from nevow                import rend, tags
 from exe.engine           import version
+from exe                  import globals as G
 
 import logging
 
@@ -52,8 +53,12 @@ class AboutPage(Renderable, rend.Page):
         return ctx.tag()[version.release]
 
     def render_revision(self, ctx, data):
+        if G.application.snap:
+            revstring = version.revision + ' SNAP'
+        else:
+            revstring = version.revision
         return ctx.tag()[tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, version.revision),
-                                target='_blank')[version.revision]
+                                target='_blank')[revstring]
                         ]
 
 # ===========================================================================

@@ -1,0 +1,32 @@
+name: exelearning
+title: eXeLearning
+version: '2.5'
+license: GPL-2.0
+icon: exe.png
+summary: eXelearning 2.5
+description: |
+  eXeLearning is a GPL2+ free tool for the educational community to create
+  and publish open educational resources. This authoring environment enables 
+  teachers and students to create and publish educational content without the
+  need to become proficient in HTML or XML markup
+grade: stable
+base: core18
+confinement: strict
+
+parts:
+  exelearning:
+    source: .
+    plugin: python
+    python-version: python2
+    requirements: [requirements.txt]
+
+apps:
+  exelearning:
+    environment:
+      PYTHONPATH: $SNAP/lib:$SNAP/usr/lib/:$SNAP/lib/python2.7/site-packages/usr/share/exe/:$PYTHONPATH
+      LANG: C.UTF-8
+      LC_ALL: C.UTF-8
+      HOME: /home/$USER
+      XDG_CONFIG_HOME: /home/$USER/.config
+    plugs: [home, network, network-bind, unity7, desktop, desktop-legacy, x11, removable-media]
+    command: exe --snap

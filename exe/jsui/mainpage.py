@@ -304,7 +304,8 @@ class MainPage(RenderableLivePage):
             'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
             'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
             'pathSep': os.path.sep,
-            'autosaveTime': float(G.application.config.autosaveTime)
+            'autosaveTime': float(G.application.config.autosaveTime),
+            'snap': G.application.snap
         }
 
         # When working with chinese, we need to add the full language string
@@ -329,10 +330,14 @@ class MainPage(RenderableLivePage):
         return ctx.tag(**attribs)
 
     def render_version(self, ctx, data):
+        if G.application.snap:
+            revstring = revision + ' SNAP'
+        else:
+            revstring = revision
         return [tags.p()["Version: %s" % release],
                 tags.p()["Revision: ",
                          tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, revision),
-                                target='_blank')[revision]
+                                target='_blank')[revstring]
                         ]
                ]
 
