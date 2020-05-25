@@ -1,0 +1,11 @@
+beautifulsoup4
+cssmin
+feedparser
+lxml
+requests-oauthlib
+rjsmin
+suds
+webassets
+zope-interface
+dateutils
+Pillow

@@ -23,6 +23,9 @@
 Version Information
 """
 
+import os
+from path import Path
+
 # Result initialization
 project = "exe"
 pkg_version = None
@@ -59,7 +62,6 @@ except:
 # Try to get the Git information
 try:
     import git
-
     repo = git.Repo()
     revision = repo.head.commit.hexsha
 except:
@@ -69,6 +71,19 @@ except:
 
 # Compose version string
 version = release + "-r" + revision if revision else release
+
+# SNAP version and release
+snap_environ = os.environ.get('SNAP')
+if snap_environ:
+    try:
+        snap_base_path = Path(snap_environ)
+        changelog_path = snap_base_path / 'lib'/ 'python2.7' / 'site-packages' / 'usr' / 'share' / 'exe' / 'ChangeLog'
+        line = open(changelog_path).readline()
+        release = line.split(':')[1].split(')')[0]
+        version = release
+        revision = release
+    except:
+        pass
 
 # If this file is executed directly, we print the project and version info
 if __name__ == '__main__':
