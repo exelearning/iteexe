@@ -1,9 +1,11 @@
 # Build SNAP Package
 The following instructions have been tested on Ubuntu 16.04, 18.04, 19.10.
+
 For more information you can visit the following website: https://snapcraft.io/docs.
 
 #### 1. Install snapcraft
 ```snap install snapcraft --classic```.
+
 Update path after install snapcraft: ```hash -r```.
 
 #### 2. Get started
