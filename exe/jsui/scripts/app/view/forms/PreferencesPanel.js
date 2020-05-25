@@ -67,7 +67,7 @@ Ext.define('eXe.view.forms.PreferencesPanel', {
 							//layout:'column',
 							border: 1,
 							margin: 10,
-							hidden: this.config.snap,
+							hidden: window.config.snap,
 							width: '94%',
 							items: [{
 									xtype: 'combobox',
