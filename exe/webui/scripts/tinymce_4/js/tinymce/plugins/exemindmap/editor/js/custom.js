@@ -388,6 +388,7 @@ mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
 
 // i18n
 var eXeMindMaps = {
+	type : "base64", // base64 or file	
 	init : function(){
 		var footer = customStrings.footer;
 			footer = footer.replace("mindmaps",'<a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>');
@@ -395,26 +396,40 @@ var eXeMindMaps = {
 		$("#print-placeholder").html(customStrings.printInstructions);
 	},
 	save : function(base64ToUpload,data){
-		// Just save the image in Base64
-		// exe_tinymce.dragDropImage will do the rest
-		$("body").addClass("saving");
-		result = JSON.stringify(data);
-		result = result.replace(/\\"/g,'"')
-		result = result.slice(1, -1);
-		var img = new Image();
-		img.onload = function() {
-			var win = top.mindmapEditor.pluginDialog;
-				win.find("#mindmapImgInstructions")[0].text(_("Saved changes!"));
-				win.find("#mindmapImgToSave")[0].value(base64ToUpload);
-				win.find("#mindmapCode")[0].value(result);
-				win.find("#originalWidth")[0].value(this.width);
-				win.find("#originalHeight")[0].value(this.height);						
-				win.find("#width")[0].value(this.width);
-				win.find("#height")[0].value(this.height);
-			top.mindmapEditor.closeConfirmed = true;
-			top.mindmapEditor.editor.close();
+		if (eXeMindMaps.type=="file") {
+			// This will upload the image before inserting it in TinyMCE
+			// You'll insert /previews/image_name.png instead of a Base64 image
+			if (base64ToUpload.indexOf("data:image/")==0) {
+				var editor = top.mindmapEditor.tinymce.getBody();
+				var imgs = editor.getElementsByTagName("IMG");
+				var n = imgs.length;
+				var name = "mindmap-"+n+".png";
+				top.mindmapEditor.fileToSave = name;
+				alert("To do: custom.js / 408");
+				// top.$exeAuthoring.fileUpload("uploadCompressedImage",base64ToUpload,name);
+			}			
+		} else {
+			// Just save the image in Base64
+			// exe_tinymce.dragDropImage will do the rest
+			$("body").addClass("saving");
+			result = JSON.stringify(data);
+			result = result.replace(/\\"/g,'"')
+			result = result.slice(1, -1);
+			var img = new Image();
+			img.onload = function() {
+				var win = top.mindmapEditor.pluginDialog;
+					win.find("#mindmapImgInstructions")[0].text(_("Saved changes!"));
+					win.find("#mindmapImgToSave")[0].value(base64ToUpload);
+					win.find("#mindmapCode")[0].value(result);
+					win.find("#originalWidth")[0].value(this.width);
+					win.find("#originalHeight")[0].value(this.height);						
+					win.find("#width")[0].value(this.width);
+					win.find("#height")[0].value(this.height);
+				top.mindmapEditor.closeConfirmed = true;
+				top.mindmapEditor.editor.close();
+			}
+			img.src = base64ToUpload;
 		}
-		img.src = base64ToUpload;
 	}
 }
 eXeMindMaps.init();
