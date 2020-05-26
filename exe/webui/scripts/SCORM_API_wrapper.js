@@ -71,13 +71,17 @@ pipwerks.SCORM.API.find = function(win){
 		trace = pipwerks.UTILS.trace,
 		scorm = pipwerks.SCORM;
 
-    while ((!win.API && !win.API_1484_11) &&
-           (win.parent) &&
-           (win.parent != win) &&
-           (findAttempts <= findAttemptLimit)){
+    try {
+        while ((!win.API && !win.API_1484_11) &&
+               (win.parent) &&
+               (win.parent != win) &&
+               (findAttempts <= findAttemptLimit)){
 
-                findAttempts++; 
-                win = win.parent;
+                    findAttempts++; 
+                    win = win.parent;
+        }
+    } catch(err) {
+        return false;
     }
 
 	if(scorm.version){											//If SCORM version is specified by user, look for specific API	
