@@ -408,10 +408,7 @@ var eXeMindMaps = {
 			// This will upload the image before inserting it in TinyMCE
 			// You'll insert /previews/image_name.png instead of a Base64 image
 			if (base64ToUpload.indexOf("data:image/")==0) {
-				var editor = top.mindmapEditor.tinymce.getBody();
-				var imgs = editor.getElementsByTagName("IMG");
-				var n = imgs.length;
-				var name = "mindmap-"+n+".png";
+				var name = "map_"+Date.now()+".png";
 				top.mindmapEditor.fileToSave = name;
 				top.mindmapEditor.codeToSave = result;
 				// Callback function
