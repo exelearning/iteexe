@@ -1556,7 +1556,22 @@ var $exeAuthoring = {
                 } catch(e) { }
             }            
             window.parent.nevow_clientToServerEventPOST('uploadFileToResources', this, true, false, content, target);
-        }
+        } else if (action=="uploadMindMap") {
+            var uploadFileToResourcesCallback = function() {
+                try { 
+                    var tmp = new Image();
+                    tmp.onload = function() {
+                        var width = this.width || "";
+                        var height = this.height || "";
+                        try {
+							top.mindmapEditor.callback("/previews/"+top.mindmapEditor.fileToSave,width,height);
+                        } catch(e) {}
+                    }
+                    tmp.src = "/previews/"+top.mindmapEditor.fileToSave;
+                } catch(e) { }
+            }            
+            window.parent.nevow_clientToServerEventPOST('uploadFileToResources', this, true, false, content, target);			
+		}
         eXe.app.on('uploadFileToResourcesDone', uploadFileToResourcesCallback);
     }
 }

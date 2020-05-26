@@ -388,14 +388,22 @@ mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
 
 // i18n
 var eXeMindMaps = {
-	type : "base64", // base64 or file	
+	type : "base64", // base64 (default) or file (GET param)
 	init : function(){
+		// eXeMindMaps.type (see uploadType in ../../plugin.min.js)
+		var ref = window.location.href;
+			ref = ref.split("editor/?mode=");
+			if (ref.length==2 && ref[1]=="file") eXeMindMaps.type = "file";
 		var footer = customStrings.footer;
 			footer = footer.replace("mindmaps",'<a href="https://github.com/drichard/mindmaps" target="_blank" hreflang="en">mindmaps</a>');
 		$("#about").html(footer);
 		$("#print-placeholder").html(customStrings.printInstructions);
 	},
 	save : function(base64ToUpload,data){
+		$("body").addClass("saving");
+		result = JSON.stringify(data);
+		result = result.replace(/\\"/g,'"')
+		result = result.slice(1, -1);		
 		if (eXeMindMaps.type=="file") {
 			// This will upload the image before inserting it in TinyMCE
 			// You'll insert /previews/image_name.png instead of a Base64 image
@@ -405,16 +413,27 @@ var eXeMindMaps = {
 				var n = imgs.length;
 				var name = "mindmap-"+n+".png";
 				top.mindmapEditor.fileToSave = name;
-				alert("To do: custom.js / 408");
-				// top.$exeAuthoring.fileUpload("uploadCompressedImage",base64ToUpload,name);
+				top.mindmapEditor.codeToSave = result;
+				// Callback function
+				top.mindmapEditor.callback = function(src,width,height){
+					try {
+						var win = top.mindmapEditor.pluginDialog;
+							win.find("#mindmapImgInstructions")[0].text(_("Saved changes!"));
+							win.find("#mindmapImgToSave")[0].value(src);
+							win.find("#mindmapCode")[0].value(top.mindmapEditor.codeToSave);
+							win.find("#originalWidth")[0].value(width);
+							win.find("#originalHeight")[0].value(height);						
+							win.find("#width")[0].value(width);
+							win.find("#height")[0].value(height);
+						top.mindmapEditor.closeConfirmed = true;
+						top.mindmapEditor.editor.close();							
+					} catch(e) { }
+				}
+				top.$exeAuthoring.fileUpload("uploadMindMap",base64ToUpload,name);
 			}			
 		} else {
 			// Just save the image in Base64
 			// exe_tinymce.dragDropImage will do the rest
-			$("body").addClass("saving");
-			result = JSON.stringify(data);
-			result = result.replace(/\\"/g,'"')
-			result = result.slice(1, -1);
 			var img = new Image();
 			img.onload = function() {
 				var win = top.mindmapEditor.pluginDialog;
