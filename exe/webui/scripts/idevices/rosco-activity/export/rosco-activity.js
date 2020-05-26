@@ -17,7 +17,7 @@ var $eXeRosco = {
 		height: 360
 	},
 	colors: {
-		black: "#1c1b1b",
+		black: "#f9f9f9",
 		blue: '#5877c6',
 		green: '#00a300',
 		red: '#b3092f',
