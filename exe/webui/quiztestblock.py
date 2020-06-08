@@ -335,13 +335,17 @@ class QuizTestBlock(Block):
                  {
                    scorm.SetCompletionScormActivity("incomplete");
                    scorm.SetSuccessStatus("failed");
-                   scorm.SetInteractionValue("cmi.score.scaled", actualScore/100);
+                   if (scorm.version == '2004') {
+                       scorm.SetInteractionValue("cmi.score.scaled", actualScore/100);
+                   }
                  }
                  else
                  {
                    scorm.SetCompletionScormActivity("completed");
                    scorm.SetSuccessStatus("passed");
-                   scorm.SetInteractionValue("cmi.score.scaled", actualScore/100);
+                   if (scorm.version == '2004') {
+                       scorm.SetInteractionValue("cmi.score.scaled", actualScore/100);
+                   }
                  }
 
                  scorm.SetExit("");
