@@ -35,9 +35,9 @@ mindmaps.HelpController = function(eventBus, commandRegistry) {
 
     var helpMain, helpRoot;
     function start() {
-	  var content = _("Hello there, it seems like you are new here! These bubbles will guide you through the app. Or they won't if you want to skip this tutorial and %click here%.");
-		  content = content.replace("%","<a class='skip-tutorial link'>");
-		  content = content.replace("%","</a>");
+	  var content = _("Hello there, it seems like you are new here! These bubbles will guide you through the app. Or they won't if you want to skip this tutorial and %sclick here%s.");
+		  content = content.replace("%s","<a class='skip-tutorial link'>");
+		  content = content.replace("%s","</a>");
 	  helpMain = new mindmaps.Notification(
           "#toolbar",
           {
