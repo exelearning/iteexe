@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-25 12:48+0200\n"
+"POT-Creation-Date: 2020-06-13 16:20+0200\n"
 "PO-Revision-Date: 2020-01-08 09:12+0800\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
@@ -20,7 +20,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: exe/application.py:239
 #, python-format
@@ -3365,7 +3365,7 @@ msgstr ""
 msgid "Template saved: %s"
 msgstr "保存的模板：%s"
 
-#: exe/jsui/mainpage.py:579 exe/webui/stylemanagerpage.py:400
+#: exe/jsui/mainpage.py:579 exe/webui/stylemanagerpage.py:424
 msgid "Downloading..."
 msgstr "正在下载…"
 
@@ -3577,7 +3577,7 @@ msgstr ""
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr "以下字段已被切割以满足SCORM 1.2标准: %s"
 
-#: exe/jsui/mainpage.py:1806 exe/webui/stylemanagerpage.py:253
+#: exe/jsui/mainpage.py:1806 exe/webui/stylemanagerpage.py:264
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "文档%s不存在或不可读."
@@ -3662,8 +3662,8 @@ msgstr "所有文件"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1046
 #: exe/jsui/scripts/app/controller/Toolbar.js:1066
 #: exe/jsui/scripts/app/controller/Toolbar.js:1100
-#: exe/webui/stylemanagerpage.py:287 exe/webui/stylemanagerpage.py:400
-#: exe/webui/stylemanagerpage.py:536
+#: exe/webui/stylemanagerpage.py:311 exe/webui/stylemanagerpage.py:424
+#: exe/webui/stylemanagerpage.py:560
 msgid "Please wait..."
 msgstr "请稍等…"
 
@@ -3699,12 +3699,12 @@ msgstr "设置已保存"
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
-#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:279
-#: exe/webui/stylemanagerpage.py:307 exe/webui/stylemanagerpage.py:331
-#: exe/webui/stylemanagerpage.py:374 exe/webui/stylemanagerpage.py:385
-#: exe/webui/stylemanagerpage.py:396 exe/webui/stylemanagerpage.py:440
-#: exe/webui/stylemanagerpage.py:447 exe/webui/stylemanagerpage.py:490
-#: exe/webui/stylemanagerpage.py:502 exe/webui/templatemanagerpage.py:130
+#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:303
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:355
+#: exe/webui/stylemanagerpage.py:398 exe/webui/stylemanagerpage.py:409
+#: exe/webui/stylemanagerpage.py:420 exe/webui/stylemanagerpage.py:464
+#: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:514
+#: exe/webui/stylemanagerpage.py:526 exe/webui/templatemanagerpage.py:130
 #: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
 #: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
 #: exe/webui/templatemanagerpage.py:297
@@ -3718,7 +3718,7 @@ msgstr "错误"
 #: exe/jsui/scripts/app/controller/Toolbar.js:540
 #: exe/webui/scripts/editor.js:54
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:302
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:73
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:75
 #: exe/webui/tools/style-designer/langs/all.js:120
 msgid "Confirm"
 msgstr "确认"
@@ -3872,7 +3872,7 @@ msgstr "导出"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:541
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:303
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:74
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:76
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -4334,9 +4334,9 @@ msgid ""
 "includes (among others) dates of the form YYYY-MM-DD."
 msgstr ""
 "通常，Date将与资源的创建或可用性相关联。编码日期值的推荐最佳实践在名为<em>ISO 8601</em> <a href=\"/docs"
-"/W3C-NOTE-datetime.html\" "
-"target=\"_blank\">W3C日期和时间格式</a>的配置文件中定义，并包括（以及其他）YYYY-MM-DD <a "
-"href=\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">格式的</a>日期。"
+"/W3C-NOTE-datetime.html\" target=\"_blank\">W3C日期和时间格式</a"
+">的配置文件中定义，并包括（以及其他）YYYY-MM-DD <a href=\"/docs/W3C-NOTE-datetime.html\" "
+"target=\"_blank\">格式的</a>日期。"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
@@ -5893,7 +5893,7 @@ msgid "Warning"
 msgstr "警告"
 
 #: exe/jsui/scripts/exe.js:219 exe/webui/stylemanagerpage.py:153
-#: exe/webui/stylemanagerpage.py:320 exe/webui/templatemanagerpage.py:126
+#: exe/webui/stylemanagerpage.py:344 exe/webui/templatemanagerpage.py:126
 msgid "Success"
 msgstr "成功"
 
@@ -7854,8 +7854,8 @@ msgid "Hide Feedback"
 msgstr "隐藏 评语"
 
 #: exe/webui/common.py:640 exe/webui/common.py:673 exe/webui/element.py:2280
-#: exe/webui/stylemanagerpage.py:305 exe/webui/stylemanagerpage.py:486
-#: exe/webui/stylemanagerpage.py:499 exe/webui/templatemanagerpage.py:238
+#: exe/webui/stylemanagerpage.py:329 exe/webui/stylemanagerpage.py:510
+#: exe/webui/stylemanagerpage.py:523 exe/webui/templatemanagerpage.py:238
 #: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "正确"
@@ -9021,12 +9021,12 @@ msgstr "你可以安全地关闭它。"
 msgid "Select pass rate: "
 msgstr "选择及格线"
 
-#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:376
+#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:380
 msgid "SUBMIT ANSWERS"
 msgstr "提交答案"
 
 #: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:323
-#: exe/webui/quiztestblock.py:380
+#: exe/webui/quiztestblock.py:384
 #, python-format
 msgid "Your score is %d%%"
 msgstr "你的分数是 %d%%"
@@ -10554,7 +10554,8 @@ msgid "The slide was created!"
 msgstr "幻灯片已创建！"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:407
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:418
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:437
 msgid "Saved changes!"
 msgstr "保存的更改！"
 
@@ -12573,41 +12574,41 @@ msgstr ""
 msgid "Close the mind map editor"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:30
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:306
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:32
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:314
 #: exe/webui/tools/mindmaps/src/js/ToolBar.js:283
 msgid "Mind map"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:37
 msgid "Use the editor to create a new mind map..."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:53
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:55
 msgid "Open the mind map editor"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:98
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:100
 msgid "Descriptive title"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:104
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:106
 msgid "Show the title under the image"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:110
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:113
 msgid "Link to full size image"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:148
 msgid "Please create a mind map."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:154
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:157
 msgid "Please provide a title."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:229
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:237
 msgid "You can edit the mind map..."
 msgstr ""
 
@@ -13217,7 +13218,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:109
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:287
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:62
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:64
 #: exe/webui/scripts/tinymce_4_settings.js:388
 msgid "Editor"
 msgstr "编辑器"
@@ -13261,7 +13262,7 @@ msgstr "样式名称已存在"
 msgid "Error saving style, style directory does not exist"
 msgstr "保存样式时出错，样式目录不存在"
 
-#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:351
+#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:375
 msgid "Style already exists. "
 msgstr "样式已经存在。"
 
@@ -13284,69 +13285,82 @@ msgstr "安装样式时出错：%s"
 msgid "Could not retrieve data (Core error)"
 msgstr "无法取得数据（核心错误）"
 
-#: exe/webui/stylemanagerpage.py:280
+#: exe/webui/stylemanagerpage.py:262
+#, python-format
+msgid "Files %s does not exist or are not readable."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:269
+msgid "Wrong config.xml file format."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:272
+msgid "An unknown error occurred while importing the style."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:304
 msgid "Error while getting styles list from the repository"
 msgstr "从存储库获取样式列表时出错"
 
-#: exe/webui/stylemanagerpage.py:305
+#: exe/webui/stylemanagerpage.py:329
 msgid "Style updated correctly"
 msgstr "样式已正确更新"
 
-#: exe/webui/stylemanagerpage.py:307 exe/webui/stylemanagerpage.py:502
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:526
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
 msgid "An unexpected error has occurred"
 msgstr "发生意外错误"
 
-#: exe/webui/stylemanagerpage.py:321
+#: exe/webui/stylemanagerpage.py:345
 msgid "Style successfully downloaded and installed"
 msgstr "样式已成功下载并安装"
 
-#: exe/webui/stylemanagerpage.py:331
+#: exe/webui/stylemanagerpage.py:355
 msgid "Error while installing style"
 msgstr "安装样式时出错"
 
-#: exe/webui/stylemanagerpage.py:349
+#: exe/webui/stylemanagerpage.py:373
 msgid "Overwrite local version of this style?"
 msgstr "覆盖这种风格的本地版本？"
 
-#: exe/webui/stylemanagerpage.py:352
+#: exe/webui/stylemanagerpage.py:376
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
 msgstr "导入此样式将覆盖本地样式，此操作无法撤消。"
 
-#: exe/webui/stylemanagerpage.py:353
+#: exe/webui/stylemanagerpage.py:377
 msgid "Are you sure you want to install remote style?. "
 msgstr "您确定要安装远程样式吗？"
 
-#: exe/webui/stylemanagerpage.py:375
+#: exe/webui/stylemanagerpage.py:399
 msgid "Error when downloading style from repository"
 msgstr "从存储库下载样式时出错"
 
-#: exe/webui/stylemanagerpage.py:385 exe/webui/stylemanagerpage.py:396
+#: exe/webui/stylemanagerpage.py:409 exe/webui/stylemanagerpage.py:420
 msgid "URL not valid. "
 msgstr "URL无效!"
 
-#: exe/webui/stylemanagerpage.py:440
+#: exe/webui/stylemanagerpage.py:464
 msgid "Style download URL not found"
 msgstr "找不到样式下载URL"
 
-#: exe/webui/stylemanagerpage.py:449
+#: exe/webui/stylemanagerpage.py:473
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
 msgstr "从存储库样式列表中获取样式URL时出错：%s"
 
-#: exe/webui/stylemanagerpage.py:487
+#: exe/webui/stylemanagerpage.py:511
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr "样式导出正确：%s"
 
-#: exe/webui/stylemanagerpage.py:491
+#: exe/webui/stylemanagerpage.py:515
 #, python-format
 msgid "Could not export style : %s"
 msgstr "无法导出样式：%s"
 
-#: exe/webui/stylemanagerpage.py:499
+#: exe/webui/stylemanagerpage.py:523
 msgid "Style deleted correctly"
 msgstr "样式已正确删除"
 
@@ -13841,7 +13855,7 @@ msgstr ""
 msgid ""
 "Hello there, it seems like you are new here! These bubbles will guide you"
 " through the app. Or they won't if you want to skip this tutorial and "
-"%click here%."
+"%sclick here%s."
 msgstr ""
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:46
@@ -15874,4 +15888,12 @@ msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是�
 #~ " the last GeoGebra activity on the"
 #~ " page (or it won't work)."
 #~ msgstr "带按钮的活动必须是页面上的最后一个GeoGebra活动（或者它不起作用）。"
+
+#~ msgid ""
+#~ "Hello there, it seems like you are"
+#~ " new here! These bubbles will guide"
+#~ " you through the app. Or they "
+#~ "won't if you want to skip this "
+#~ "tutorial and %click here%."
+#~ msgstr ""
 

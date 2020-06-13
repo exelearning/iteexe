@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-25 12:48+0200\n"
+"POT-Creation-Date: 2020-06-13 16:20+0200\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language: km\n"
@@ -18,7 +18,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: exe/application.py:239
 #, python-format
@@ -638,13 +638,10 @@ msgid ""
 msgstr ""
 "<p>លំហាត់ Cloze គឺ​ជា​អត្ថបទ "
 "ឬ​ប្រយោគ​ដែល​តម្រូវ​ឲ្យ​សិស្ស​បំពេញ​ពាក្យ​ដែល​បាត់ ។ ជា​ទូទៅ "
-"គេ​ប្រើ​វា​ក្នុង​គោល​បំណង​ដូចខាងក្រោម "
-"៖</p><ol><li>ដើម្បី​ពិនិត្យ​ចំណេះដឹង​អំពី​គោលគំនិត​ស្នូល "
-"(អាច​ជា​ការ​ពិនិត្យ​ជាមុន លំហាត់​បង្កើត ឬ​ការ​ពិនិត្យ​សរុប) "
-"។</li><li>ដើម្បី​ពិនិត្យ​ការ​យល់ដឹង​ក្នុងការ​អាន "
-"។</li><li>ដើម្បី​ពិនិត្យ​ចំណេះដឹង​ខាង​វាក្យស័ព្ទ "
-"។</li><li>ដើម្បី​ពិនិត្យ​ចំណេះ​ដឹង​ក្នុង​ការ​បង្កើត​ពាក្យ "
-"និង/​ឬ​វេយ្យាករណ៍ ។ </li></ol>"
+"គេ​ប្រើ​វា​ក្នុង​គោល​បំណង​ដូចខាងក្រោម ៖</p><ol><li>ដើម្បី​ពិនិត្យ​ចំណេះដឹង​អំពី​គោលគំនិត​ស្នូល"
+" (អាច​ជា​ការ​ពិនិត្យ​ជាមុន លំហាត់​បង្កើត "
+"ឬ​ការ​ពិនិត្យ​សរុប) ។</li><li>ដើម្បី​ពិនិត្យ​ការ​យល់ដឹង​ក្នុងការ​អាន ។</li><li>ដើម្បី​ពិនិត្យ​ចំណេះដឹង​ខាង​វាក្យស័ព្ទ ។</li><li>ដើម្បី​ពិនិត្យ​ចំណេះ​ដឹង​ក្នុង​ការ​បង្កើត​ពាក្យ"
+" និង/​ឬ​វេយ្យាករណ៍ ។ </li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -788,8 +785,8 @@ msgid ""
 "Enter any feedback you wish to provide the learner with-in the feedback "
 "field. This field can be left blank."
 msgstr ""
-"បញ្ចូល​មតិ​ព័ត៌មាន​ណាមួយ​ដែល​អ្នក​ចង់​ផ្ដល់​ឲ្យ​អ្នក​សិក្សា​នៅ​ក្នុង​វាល​មតិ​អ្នកប្រើ"
-" ។ វាល​នេះ​អាច​ទុក​នៅ​ទទេ​បាន ។"
+"បញ្ចូល​មតិ​ព័ត៌មាន​ណាមួយ​ដែល​អ្នក​ចង់​ផ្ដល់​ឲ្យ​អ្នក​សិក្សា​នៅ​ក្នុង​វាល​មតិ​អ្នកប្រើ ។"
+" វាល​នេះ​អាច​ទុក​នៅ​ទទេ​បាន ។"
 
 #: exe/engine/clozefpdidevice.py:278 exe/engine/clozeidevice.py:277
 #: exe/engine/clozelangfpdidevice.py:282 exe/engine/listaidevice.py:290
@@ -1279,14 +1276,14 @@ msgstr ""
 "<p>ប្រសិន​បើ​មិន​ធីក នោះ​កំហុស​អក្ខរាវិរុទ្ធ "
 "និង​ការ​សរសេរ​អក្សរ​ធំ​មួយ​ចំនួន​តូច គឺ​នឹង​ទទួល​យក ។ ប្រសិន​បើ​បាន​ធីក "
 "នោះ​គឺ​នឹង​ទទួល​យក​តែ​អក្ខរាវិរុទ្ធ "
-"និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ "
-"៖</strong> ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> "
-"នោះ​ពាក្យ <code>elephant</code> និង <code>Eliphant</code> "
+"និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ ៖</strong>"
+" ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> នោះ​ពាក្យ "
+"<code>elephant</code> និង <code>Eliphant</code> "
 "នឹង​ត្រូវកំណត់ថា<em>\"ជិត​ត្រូវ\"</em> ដោយ​ក្បួនដោះស្រាយ "
 "ព្រោះ​វា​មាន​តួអក្សរ​ដែល​ខុស​តែមួយ​ គឺ​ប្រសិន​បើ​ធីក "
-"\"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" "
-"។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ នោះ​ការ​សរសេរ​អក្សរតូច "
-"<code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ <code>eliphant</code> "
+"\"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" ។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ"
+" នោះ​ការ​សរសេរ​អក្សរតូច <code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ "
+"<code>eliphant</code> "
 "ក៏​នឹង​ត្រូវ​ទទួល​យកដែរ ។</p><p>ប្រសិន​បើបាន​កំណត់​ទាំង "
 "\"សម្គាល់​យ៉ាង​តឹងរឹង\" ទាំង \"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" "
 "នោះ​គឺ​ទទួល​យក​តែ​ចម្លើយ​ដែលត្រឹមត្រូវ​ទេ​គឺ \"Elephant\" ។ ប្រសិន​ធីកតែ "
@@ -1341,14 +1338,14 @@ msgstr ""
 "<p>ប្រសិន​បើ​មិន​ធីក នោះ​កំហុស​អក្ខរាវិរុទ្ធ "
 "និង​ការ​សរសេរ​អក្សរ​ធំ​មួយ​ចំនួន​តូច គឺ​នឹង​ទទួល​យក ។ ប្រសិន​បើ​បាន​ធីក "
 "នោះ​គឺ​នឹង​ទទួល​យក​តែ​អក្ខរាវិរុទ្ធ "
-"និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ "
-"៖</strong> ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> "
-"នោះ​ពាក្យ <code>elephant</code> និង <code>Eliphant</code> "
+"និង​ការ​សរសេរ​អក្សរ​ធំ​ដែលត្រឹមត្រូវ​តែ​ប៉ុណ្ណោះ ។</p><p><strong>ឧទាហរណ៍ ៖</strong>"
+" ប្រសិន​បើ​ចម្លើយ​ដែលត្រឹមត្រូវ​គឺ <code>Elephant</code> នោះ​ពាក្យ "
+"<code>elephant</code> និង <code>Eliphant</code> "
 "នឹង​ត្រូវកំណត់ថា<em>\"ជិត​ត្រូវ\"</em> ដោយ​ក្បួនដោះស្រាយ "
 "ព្រោះ​វា​មាន​តួអក្សរ​ដែល​ខុស​តែមួយ​ គឺ​ប្រសិន​បើ​ធីក "
-"\"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" "
-"។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ នោះ​ការ​សរសេរ​អក្សរតូច "
-"<code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ <code>eliphant</code> "
+"\"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" ។</p><p>ប្រសិន​បើ​បិទ​ការ​ពិនិត្យ​ការសរសេរ​អក្សរំ"
+" នោះ​ការ​សរសេរ​អក្សរតូច <code>e</code> គឺ​មិនគិត​ថាជា​កំហុស​ទេ ហើយ "
+"<code>eliphant</code> "
 "ក៏​នឹង​ត្រូវ​ទទួល​យកដែរ ។</p><p>ប្រសិន​បើបាន​កំណត់​ទាំង "
 "\"សម្គាល់​យ៉ាង​តឹងរឹង\" ទាំង \"ពិនិត្យ​ការ​សរសេរ​អក្សរ​ធំ\" "
 "នោះ​គឺ​ទទួល​យក​តែ​ចម្លើយ​ដែលត្រឹមត្រូវ​ទេ​គឺ \"Elephant\" ។ ប្រសិន​ធីកតែ "
@@ -1913,13 +1910,13 @@ msgstr ""
 "</p><ol><li>គិត​អំពី​ចំនួន​ប្រភេទ​សកម្មភាព​ផ្សេងគ្នា​ដែល​បាន​គ្រោង​សម្រាប់​ធនធាន​របស់​អ្នក"
 " ដែល​នឹង​ត្រូវបាន​ដាក់​ជា​សញ្ញា​នៅ​ក្នុង​មាតិកា ។ ជៀសវាង​ប្រើ​ប្រភេទ "
 "ឬ​ចំណាត់ថ្នាក់​សកម្មភាព​ខុសគ្នា​ច្រើន​ពេក ដែល​នាំឲ្យ​អ្នកសិក្សា​ច្រឡំ ។ "
-"ប្រភេទ​ខុសគ្នា​តែ ៣ ឬ ៤ គឺ​សមល្ម​ម​សម្រាប់ធនធន​បង្រៀន "
-"។</li><li>ពី​គំនិត​រចនា​មើលឃើញ សូម​ជៀសវាង​ការ​ដាក់ iDevices "
-"ពីរ​នៅ​ជាប់គ្នា​ ដោយ​គ្មានអត្ថបទ​នៅ​ចន្លោះ​ ។ "
-"បើ​វា​តម្រូវ​ឲ្យ​ដាក់​ដូច្នេះ គឺ​សូម​វេញ​សំណួរ ព្រឹត្តិការណ៍​ពីរ​ទៅ​ក្នុង"
-" iDevice មួយ​គឺ​ប្រសើរ​ជាង ។ </li><li>គិត​អំពី​សកម្មភាព "
-"ដែល​ផលប្រយោជន៍​នៃ​ការ​ធ្វើ​សកម្មភាព​នោះ សំខាន់ជាង​ពេលវេលា "
-"និងការ​ខំប្រឹងប្រែង ដើម្បី​បញ្ចប់​សកម្មភាព ។ </li></ol>"
+"ប្រភេទ​ខុសគ្នា​តែ ៣ ឬ ៤ "
+"គឺ​សមល្ម​ម​សម្រាប់ធនធន​បង្រៀន ។</li><li>ពី​គំនិត​រចនា​មើលឃើញ "
+"សូម​ជៀសវាង​ការ​ដាក់ iDevices ពីរ​នៅ​ជាប់គ្នា​ "
+"ដោយ​គ្មានអត្ថបទ​នៅ​ចន្លោះ​ ។ បើ​វា​តម្រូវ​ឲ្យ​ដាក់​ដូច្នេះ "
+"គឺ​សូម​វេញ​សំណួរ ព្រឹត្តិការណ៍​ពីរ​ទៅ​ក្នុង iDevice មួយ​គឺ​ប្រសើរ​ជាង ។ "
+"</li><li>គិត​អំពី​សកម្មភាព ដែល​ផលប្រយោជន៍​នៃ​ការ​ធ្វើ​សកម្មភាព​នោះ "
+"សំខាន់ជាង​ពេលវេលា និងការ​ខំប្រឹងប្រែង ដើម្បី​បញ្ចប់​សកម្មភាព ។ </li></ol>"
 
 #: exe/engine/idevicestore.py:684 exe/engine/idevicestore.py:793
 msgid "What to read"
@@ -2058,9 +2055,9 @@ msgstr ""
 "ឬ​ចំណាត់ថ្នាក់​សកម្មភាព​ខុសគ្នា​ច្រើន​ពេក "
 "ដែល​នាំឲ្យ​អ្នក​សិក្សា​មាន​ការ​ច្រឡំ ។ ជាទូទៅ ប្រភេទ​សកម្មភាព​ខុសគ្នា ៣ ឬ"
 " ៤ គឺ​សម​ល្មម​សម្រាប់​ការ​បង្រៀន​ធនធាន ។</li><li>ពី​គំនិត​រចនា​មើលឃើញ "
-"សូម​ជៀសវាង​​ការ​ដាក់ iDevices ពីរ​នៅ​ជាប់គ្នា​ ដោយ​គ្មានអត្ថបទ​នៅ​ចន្លោះ "
-"។ បើ​វា​តម្រូវ​ឲ្យ​ដាក់​ដូច្នេះ គឺ​សូម​វេញ​សំណួរ "
-"ព្រឹត្តិការណ៍​ពីរ​ទៅ​ក្នុង iDevice មួយ​គឺ​ប្រសើរ​ជាង ។ "
+"សូម​ជៀសវាង​​ការ​ដាក់ iDevices ពីរ​នៅ​ជាប់គ្នា​ "
+"ដោយ​គ្មានអត្ថបទ​នៅ​ចន្លោះ ។ បើ​វា​តម្រូវ​ឲ្យ​ដាក់​ដូច្នេះ "
+"គឺ​សូម​វេញ​សំណួរ ព្រឹត្តិការណ៍​ពីរ​ទៅ​ក្នុង iDevice មួយ​គឺ​ប្រសើរ​ជាង ។ "
 "</li><li>គិត​អំពី​សកម្មភាព ដែល​ផលប្រយោជន៍​នៃ​ការ​ធ្វើ​សកម្មភាព​នោះ "
 "សំខាន់ជាង​ពេលវេលា និងការ​ខំប្រឹងប្រែង ដើម្បី​បញ្ចប់​សកម្មភាព ។ </li></ol>"
 
@@ -2134,8 +2131,8 @@ msgid ""
 "image to display at its original size."
 msgstr ""
 "ជ្រើស​ទំហំ​រូបភាព​ដែល​អ្នក​ចង់​បង្ហាញ ។ \n"
-"ខ្នាត​រូបភាព​​គិត​ជា​ភីកសែល ។ ជាទូទៅ ១០០ ភីកសែល ប្រហែល​ជា​ស្មើ​នឹង ៣ ស.ម."
-" ។\n"
+"ខ្នាត​រូបភាព​​គិត​ជា​ភីកសែល ។ ជាទូទៅ ១០០ ភីកសែល ប្រហែល​ជា​ស្មើ​នឹង ៣ "
+"ស.ម. ។\n"
 "ប្រសិន​បើ​អ្នក​ចង់​បង្ហាញ​រូបភាព​តាម​ទំហំ​ដើម​របស់​វា "
 "គឺ​អ្នក​ត្រូវ​ទុកវាល​ទាំង​ពីរ\n"
 "​ឲ្យ​នៅ​ទទេ ។"
@@ -3057,8 +3054,8 @@ msgstr ""
 "មតិព័ត៌មាន​​ត្រូវបាន​កំណត់​អត្តសញ្ញាណ\n"
 "ដោយ​រូបតំណាង (ជា​ទូទៅ​គឺ​ដូច <img src=\"/images/feed-icon.png\" />) "
 "ឬ​អត្ថបទ \"RSS\" ។ ការ​ចុច​លើ \n"
-"រូបតំណាង ឬ​ស្លាក​អត្ថបទ នឹង​បង្ហាញមតិព័ត៌មាន RSS នៅ​ក្នុង​កម្មវិធី​រុករក "
-"។ អ្នក​អាច​ចម្លង ហើយ​បិទភ្ជាប់\n"
+"រូបតំណាង ឬ​ស្លាក​អត្ថបទ នឹង​បង្ហាញមតិព័ត៌មាន RSS "
+"នៅ​ក្នុង​កម្មវិធី​រុករក ។ អ្នក​អាច​ចម្លង ហើយ​បិទភ្ជាប់\n"
 "URL ទៅ​ក្នុង​វាល​នេះ​បាន ។ ប្ដូរ​មកវិញ ការ​ចុច​កណ្ដុរ​ខាងស្ដាំ​លើ​តំណ "
 "នឹង​បើក​ប្រអប់​ម៉ឺនុយ ។\n"
 "ចុច​លើ​ចម្លង​ទីតាំង​តំណ ឬ​ចម្លង​ផ្លូវកាត់ ។ ត្រឡប់​មក eXe វិញ បើក​ចំណាំ "
@@ -3318,8 +3315,8 @@ msgstr ""
 "ទាន់សម័យទេ នោះ​ច្បាប់ចម្លង​អត្ថបទ​ថ្មី នឹង​ត្រូវ​បាន​ជ្រើស ។ ដូចនេះ​ដែរ \n"
 "ការ​ផ្លាស់ប្ដូរ​ដែលបាន​ធ្វើ​នៅ​ក្នុង eXe "
 "នឹង​មិនត្រូវបាន​ធ្វើ​ឲ្យ​ទាន់សម័យ​នៅ​ក្នុង​វីគីភីឌៀ​​ទេ ។ \n"
-"</p> <p>មាតិកា​​វីគីភីឌៀ គឺ​ស្ថិត​នៅ​ក្រោម​អាជ្ញាបណ្ណ​ឯកសារ​សេរី​របស់ GNU"
-" ។</p>"
+"</p> <p>មាតិកា​​វីគីភីឌៀ គឺ​ស្ថិត​នៅ​ក្រោម​អាជ្ញាបណ្ណ​ឯកសារ​សេរី​របស់ "
+"GNU ។</p>"
 
 #: exe/engine/wikipediaidevice.py:67
 msgid "Article"
@@ -3724,7 +3721,7 @@ msgstr ""
 msgid "Template saved: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:579 exe/webui/stylemanagerpage.py:400
+#: exe/jsui/mainpage.py:579 exe/webui/stylemanagerpage.py:424
 msgid "Downloading..."
 msgstr ""
 
@@ -3930,7 +3927,7 @@ msgstr ""
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr ""
 
-#: exe/jsui/mainpage.py:1806 exe/webui/stylemanagerpage.py:253
+#: exe/jsui/mainpage.py:1806 exe/webui/stylemanagerpage.py:264
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "មិនមាន​ឯកសារ %s ឬ​មិនអាច​អានបាន ។"
@@ -4015,8 +4012,8 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:1046
 #: exe/jsui/scripts/app/controller/Toolbar.js:1066
 #: exe/jsui/scripts/app/controller/Toolbar.js:1100
-#: exe/webui/stylemanagerpage.py:287 exe/webui/stylemanagerpage.py:400
-#: exe/webui/stylemanagerpage.py:536
+#: exe/webui/stylemanagerpage.py:311 exe/webui/stylemanagerpage.py:424
+#: exe/webui/stylemanagerpage.py:560
 msgid "Please wait..."
 msgstr ""
 
@@ -4052,12 +4049,12 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
-#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:279
-#: exe/webui/stylemanagerpage.py:307 exe/webui/stylemanagerpage.py:331
-#: exe/webui/stylemanagerpage.py:374 exe/webui/stylemanagerpage.py:385
-#: exe/webui/stylemanagerpage.py:396 exe/webui/stylemanagerpage.py:440
-#: exe/webui/stylemanagerpage.py:447 exe/webui/stylemanagerpage.py:490
-#: exe/webui/stylemanagerpage.py:502 exe/webui/templatemanagerpage.py:130
+#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:303
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:355
+#: exe/webui/stylemanagerpage.py:398 exe/webui/stylemanagerpage.py:409
+#: exe/webui/stylemanagerpage.py:420 exe/webui/stylemanagerpage.py:464
+#: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:514
+#: exe/webui/stylemanagerpage.py:526 exe/webui/templatemanagerpage.py:130
 #: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
 #: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
 #: exe/webui/templatemanagerpage.py:297
@@ -4071,7 +4068,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:540
 #: exe/webui/scripts/editor.js:54
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:302
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:73
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:75
 #: exe/webui/tools/style-designer/langs/all.js:120
 msgid "Confirm"
 msgstr ""
@@ -4225,7 +4222,7 @@ msgstr "នាំចេញ"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:541
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:303
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:74
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:76
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -6245,7 +6242,7 @@ msgid "Warning"
 msgstr ""
 
 #: exe/jsui/scripts/exe.js:219 exe/webui/stylemanagerpage.py:153
-#: exe/webui/stylemanagerpage.py:320 exe/webui/templatemanagerpage.py:126
+#: exe/webui/stylemanagerpage.py:344 exe/webui/templatemanagerpage.py:126
 msgid "Success"
 msgstr ""
 
@@ -8194,8 +8191,8 @@ msgid "Hide Feedback"
 msgstr "លាក់​មតិ​អ្នក​ប្រើ"
 
 #: exe/webui/common.py:640 exe/webui/common.py:673 exe/webui/element.py:2280
-#: exe/webui/stylemanagerpage.py:305 exe/webui/stylemanagerpage.py:486
-#: exe/webui/stylemanagerpage.py:499 exe/webui/templatemanagerpage.py:238
+#: exe/webui/stylemanagerpage.py:329 exe/webui/stylemanagerpage.py:510
+#: exe/webui/stylemanagerpage.py:523 exe/webui/templatemanagerpage.py:238
 #: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "ត្រឹមត្រូវ"
@@ -9380,12 +9377,12 @@ msgstr ""
 msgid "Select pass rate: "
 msgstr "ជ្រើស​អត្រា​ដែល​ជាប់ ៖ "
 
-#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:376
+#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:380
 msgid "SUBMIT ANSWERS"
 msgstr "ដាក់ស្នើ​ចម្លើយ"
 
 #: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:323
-#: exe/webui/quiztestblock.py:380
+#: exe/webui/quiztestblock.py:384
 #, python-format
 msgid "Your score is %d%%"
 msgstr ""
@@ -10922,7 +10919,8 @@ msgid "The slide was created!"
 msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:407
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:418
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:437
 msgid "Saved changes!"
 msgstr ""
 
@@ -12944,41 +12942,41 @@ msgstr ""
 msgid "Close the mind map editor"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:30
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:306
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:32
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:314
 #: exe/webui/tools/mindmaps/src/js/ToolBar.js:283
 msgid "Mind map"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:37
 msgid "Use the editor to create a new mind map..."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:53
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:55
 msgid "Open the mind map editor"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:98
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:100
 msgid "Descriptive title"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:104
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:106
 msgid "Show the title under the image"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:110
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:113
 msgid "Link to full size image"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:148
 msgid "Please create a mind map."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:154
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:157
 msgid "Please provide a title."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:229
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:237
 msgid "You can edit the mind map..."
 msgstr ""
 
@@ -13596,7 +13594,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:109
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:287
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:62
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:64
 #: exe/webui/scripts/tinymce_4_settings.js:388
 #, fuzzy
 msgid "Editor"
@@ -13641,7 +13639,7 @@ msgstr ""
 msgid "Error saving style, style directory does not exist"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:351
+#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:375
 msgid "Style already exists. "
 msgstr ""
 
@@ -13664,69 +13662,82 @@ msgstr ""
 msgid "Could not retrieve data (Core error)"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:280
+#: exe/webui/stylemanagerpage.py:262
+#, python-format
+msgid "Files %s does not exist or are not readable."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:269
+msgid "Wrong config.xml file format."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:272
+msgid "An unknown error occurred while importing the style."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:304
 msgid "Error while getting styles list from the repository"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:305
+#: exe/webui/stylemanagerpage.py:329
 msgid "Style updated correctly"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:307 exe/webui/stylemanagerpage.py:502
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:526
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
 msgid "An unexpected error has occurred"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:321
+#: exe/webui/stylemanagerpage.py:345
 msgid "Style successfully downloaded and installed"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:331
+#: exe/webui/stylemanagerpage.py:355
 msgid "Error while installing style"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:349
+#: exe/webui/stylemanagerpage.py:373
 msgid "Overwrite local version of this style?"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:352
+#: exe/webui/stylemanagerpage.py:376
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:353
+#: exe/webui/stylemanagerpage.py:377
 msgid "Are you sure you want to install remote style?. "
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:375
+#: exe/webui/stylemanagerpage.py:399
 msgid "Error when downloading style from repository"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:385 exe/webui/stylemanagerpage.py:396
+#: exe/webui/stylemanagerpage.py:409 exe/webui/stylemanagerpage.py:420
 msgid "URL not valid. "
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:440
+#: exe/webui/stylemanagerpage.py:464
 msgid "Style download URL not found"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:449
+#: exe/webui/stylemanagerpage.py:473
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:487
+#: exe/webui/stylemanagerpage.py:511
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:491
+#: exe/webui/stylemanagerpage.py:515
 #, python-format
 msgid "Could not export style : %s"
 msgstr ""
 
-#: exe/webui/stylemanagerpage.py:499
+#: exe/webui/stylemanagerpage.py:523
 msgid "Style deleted correctly"
 msgstr ""
 
@@ -14222,7 +14233,7 @@ msgstr ""
 msgid ""
 "Hello there, it seems like you are new here! These bubbles will guide you"
 " through the app. Or they won't if you want to skip this tutorial and "
-"%click here%."
+"%sclick here%s."
 msgstr ""
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:46
@@ -16326,8 +16337,8 @@ msgstr ""
 #~ "based on the reading.</p>"
 #~ msgstr ""
 #~ "<p>សកម្មភាព​អាន នឹង​ត្រូវបាន​ប្រើ​ជាចម្បង \n"
-#~ "ដើម្បី​ពិនិត្យ​ការ​យល់ដឹង​របស់​អ្នកសិក្សា​អំពី​អត្ថបទ​ដែលបាន​ផ្ដល់ "
-#~ "។ អាច​ធ្វើ​ដូចនេះ​បាន​ដោយ \n"
+#~ "ដើម្បី​ពិនិត្យ​ការ​យល់ដឹង​របស់​អ្នកសិក្សា​អំពី​អត្ថបទ​ដែលបាន​ផ្ដល់ ។"
+#~ " អាច​ធ្វើ​ដូចនេះ​បាន​ដោយ \n"
 #~ "សួរ​អ្នកសិក្សា​ឲ្យ​ឆ្លើយតប​លើ​ការ​អាន "
 #~ "និង​ឆ្លើយ​សំណួរ​អំពី​ការ​អាន ឬ​ដោយឲ្យ​ពួកគេ​បំពេញ​ \n"
 #~ "កិច្ចការ​ធម្មតា​ដែល​អាច​ធ្វើបាន \n"
@@ -16383,8 +16394,8 @@ msgstr ""
 #~ "reflective guidance.</p>"
 #~ msgstr ""
 #~ "<p>សកម្មភាព​អាន ដូចឈ្មោះ​ដែល​ស្នើ \n"
-#~ "គួរតែ​ស្នើ​ឲ្យ​អ្នកសិក្សា​ធ្វើ​សំណុំបែបបទ​ណាមួយ​នៃ​សកម្មភាព ។"
-#~ " សកម្មភាព​នេះ \n"
+#~ "គួរតែ​ស្នើ​ឲ្យ​អ្នកសិក្សា​ធ្វើ​សំណុំបែបបទ​ណាមួយ​នៃ​សកម្មភាព ។ "
+#~ "សកម្មភាព​នេះ \n"
 #~ "គួរតែ​ភ្ជាប់​ទៅ​អត្ថបទ​ដែល​បាន​ស្នើ​ឲ្យ​អ្នកសិក្សា​អាន​ដោយ​ផ្ទាល់ ។ \n"
 #~ "ផ្ដល់​មតិអ្នកប្រើ​ចំពោះ​សកម្មភាព​ដែល​សមរម្យ "
 #~ "ដែលអាច​ផ្ដល់​ឲ្យ​អ្នកសិក្សា \n"
@@ -16418,5 +16429,13 @@ msgstr ""
 #~ "The activity with button has to be"
 #~ " the last GeoGebra activity on the"
 #~ " page (or it won't work)."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Hello there, it seems like you are"
+#~ " new here! These bubbles will guide"
+#~ " you through the app. Or they "
+#~ "won't if you want to skip this "
+#~ "tutorial and %click here%."
 #~ msgstr ""
 

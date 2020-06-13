@@ -5,6 +5,7 @@
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Asmoz fundazioa, 2009
+#
 # http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # 2012-2020 Joxemi Andonegi <jm.andonegi@gmail.com>
@@ -13,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2020-05-25 12:48+0200\n"
+"POT-Creation-Date: 2020-06-13 16:20+0200\n"
 "PO-Revision-Date: 2020-01-27 16:50+0100\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language: eu\n"
@@ -22,7 +23,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.8.0\n"
+"Generated-By: Babel 2.4.0\n"
 
 #: exe/application.py:239
 #, python-format
@@ -3800,7 +3801,7 @@ msgstr ""
 msgid "Template saved: %s"
 msgstr "Txantiloia gorde da: %s"
 
-#: exe/jsui/mainpage.py:579 exe/webui/stylemanagerpage.py:400
+#: exe/jsui/mainpage.py:579 exe/webui/stylemanagerpage.py:424
 msgid "Downloading..."
 msgstr "Jaisten..."
 
@@ -4022,7 +4023,7 @@ msgstr ""
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr "Ondoko eremuak moztu egin dira SCORM 1.2 estandarra betetzeko: %s"
 
-#: exe/jsui/mainpage.py:1806 exe/webui/stylemanagerpage.py:253
+#: exe/jsui/mainpage.py:1806 exe/webui/stylemanagerpage.py:264
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "%s fitxategia ez dago edo ezin da irakurri."
@@ -4109,8 +4110,8 @@ msgstr "Fitxategi guztiak"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1046
 #: exe/jsui/scripts/app/controller/Toolbar.js:1066
 #: exe/jsui/scripts/app/controller/Toolbar.js:1100
-#: exe/webui/stylemanagerpage.py:287 exe/webui/stylemanagerpage.py:400
-#: exe/webui/stylemanagerpage.py:536
+#: exe/webui/stylemanagerpage.py:311 exe/webui/stylemanagerpage.py:424
+#: exe/webui/stylemanagerpage.py:560
 msgid "Please wait..."
 msgstr "Itxaron mesedez..."
 
@@ -4146,12 +4147,12 @@ msgstr "Ezarpenak gorde dira"
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
-#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:279
-#: exe/webui/stylemanagerpage.py:307 exe/webui/stylemanagerpage.py:331
-#: exe/webui/stylemanagerpage.py:374 exe/webui/stylemanagerpage.py:385
-#: exe/webui/stylemanagerpage.py:396 exe/webui/stylemanagerpage.py:440
-#: exe/webui/stylemanagerpage.py:447 exe/webui/stylemanagerpage.py:490
-#: exe/webui/stylemanagerpage.py:502 exe/webui/templatemanagerpage.py:130
+#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:303
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:355
+#: exe/webui/stylemanagerpage.py:398 exe/webui/stylemanagerpage.py:409
+#: exe/webui/stylemanagerpage.py:420 exe/webui/stylemanagerpage.py:464
+#: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:514
+#: exe/webui/stylemanagerpage.py:526 exe/webui/templatemanagerpage.py:130
 #: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
 #: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
 #: exe/webui/templatemanagerpage.py:297
@@ -4165,7 +4166,7 @@ msgstr "Errorea"
 #: exe/jsui/scripts/app/controller/Toolbar.js:540
 #: exe/webui/scripts/editor.js:54
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:302
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:73
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:75
 #: exe/webui/tools/style-designer/langs/all.js:120
 msgid "Confirm"
 msgstr "Baieztatu"
@@ -4319,7 +4320,7 @@ msgstr "Esportatu"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:541
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:303
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:74
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:76
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
 "you really want to quit?"
@@ -6424,7 +6425,7 @@ msgid "Warning"
 msgstr "Kontuz"
 
 #: exe/jsui/scripts/exe.js:219 exe/webui/stylemanagerpage.py:153
-#: exe/webui/stylemanagerpage.py:320 exe/webui/templatemanagerpage.py:126
+#: exe/webui/stylemanagerpage.py:344 exe/webui/templatemanagerpage.py:126
 msgid "Success"
 msgstr "Ondo joan da"
 
@@ -8394,8 +8395,8 @@ msgid "Hide Feedback"
 msgstr "Ezkutatu feedbacka"
 
 #: exe/webui/common.py:640 exe/webui/common.py:673 exe/webui/element.py:2280
-#: exe/webui/stylemanagerpage.py:305 exe/webui/stylemanagerpage.py:486
-#: exe/webui/stylemanagerpage.py:499 exe/webui/templatemanagerpage.py:238
+#: exe/webui/stylemanagerpage.py:329 exe/webui/stylemanagerpage.py:510
+#: exe/webui/stylemanagerpage.py:523 exe/webui/templatemanagerpage.py:238
 #: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "Aukera zuzena"
@@ -9598,12 +9599,12 @@ msgstr "Arriskurik gabe itxi dezakezu."
 msgid "Select pass rate: "
 msgstr "Aukeratu gainditze-koefizientea: "
 
-#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:376
+#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:380
 msgid "SUBMIT ANSWERS"
 msgstr "BIDALI ERANTZUNAK"
 
 #: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:323
-#: exe/webui/quiztestblock.py:380
+#: exe/webui/quiztestblock.py:384
 #, python-format
 msgid "Your score is %d%%"
 msgstr "Zure puntu kopurua %d%% da"
@@ -11177,7 +11178,8 @@ msgid "The slide was created!"
 msgstr "Diapositiba sortu da!"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:91
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:407
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:418
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:437
 msgid "Saved changes!"
 msgstr "Gorde azalpenak!"
 
@@ -13233,41 +13235,41 @@ msgstr ""
 msgid "Close the mind map editor"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:30
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:306
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:32
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:314
 #: exe/webui/tools/mindmaps/src/js/ToolBar.js:283
 msgid "Mind map"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:37
 msgid "Use the editor to create a new mind map..."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:53
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:55
 msgid "Open the mind map editor"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:98
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:100
 msgid "Descriptive title"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:104
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:106
 msgid "Show the title under the image"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:110
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:113
 msgid "Link to full size image"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:148
 msgid "Please create a mind map."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:154
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:157
 msgid "Please provide a title."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:229
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:237
 msgid "You can edit the mind map..."
 msgstr ""
 
@@ -13900,7 +13902,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:109
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:287
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:62
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:64
 #: exe/webui/scripts/tinymce_4_settings.js:388
 msgid "Editor"
 msgstr "Editorea"
@@ -13944,7 +13946,7 @@ msgstr "Estiloaren izena badago lehenagotik"
 msgid "Error saving style, style directory does not exist"
 msgstr "Errorea estiloa gordetzerakoan, estiloaren direktorioa ez da existitzen"
 
-#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:351
+#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:375
 msgid "Style already exists. "
 msgstr "Estiloaren izena badago lehenagotik. "
 
@@ -13967,32 +13969,45 @@ msgstr "Errorea estiloa instalatzerakoan: %s"
 msgid "Could not retrieve data (Core error)"
 msgstr "Datuak ezin izan dira jaso (Core error)"
 
-#: exe/webui/stylemanagerpage.py:280
+#: exe/webui/stylemanagerpage.py:262
+#, python-format
+msgid "Files %s does not exist or are not readable."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:269
+msgid "Wrong config.xml file format."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:272
+msgid "An unknown error occurred while importing the style."
+msgstr ""
+
+#: exe/webui/stylemanagerpage.py:304
 msgid "Error while getting styles list from the repository"
 msgstr "Errorea biltegiko estilo- zerrenda irakurtzekoan"
 
-#: exe/webui/stylemanagerpage.py:305
+#: exe/webui/stylemanagerpage.py:329
 msgid "Style updated correctly"
 msgstr "Estiloa ondo eguneratu da"
 
-#: exe/webui/stylemanagerpage.py:307 exe/webui/stylemanagerpage.py:502
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:526
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
 msgid "An unexpected error has occurred"
 msgstr "Espero ez zen errorea gertatu da"
 
-#: exe/webui/stylemanagerpage.py:321
+#: exe/webui/stylemanagerpage.py:345
 msgid "Style successfully downloaded and installed"
 msgstr "Estiloa jaitsi eta instalatu da arazorik gabe"
 
-#: exe/webui/stylemanagerpage.py:331
+#: exe/webui/stylemanagerpage.py:355
 msgid "Error while installing style"
 msgstr "Errorea estiloa instalatzerakoan"
 
-#: exe/webui/stylemanagerpage.py:349
+#: exe/webui/stylemanagerpage.py:373
 msgid "Overwrite local version of this style?"
 msgstr "Estiloaren bertsio lokala gainidatzi nahi duzu?"
 
-#: exe/webui/stylemanagerpage.py:352
+#: exe/webui/stylemanagerpage.py:376
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
@@ -14000,38 +14015,38 @@ msgstr ""
 "Estilo honen inportazioak bertako estiloa gainidatziko du. Ekintza hau "
 "ezin da desegin. "
 
-#: exe/webui/stylemanagerpage.py:353
+#: exe/webui/stylemanagerpage.py:377
 msgid "Are you sure you want to install remote style?. "
 msgstr "Urrutiko estiloa instalatu nahi duzu? "
 
-#: exe/webui/stylemanagerpage.py:375
+#: exe/webui/stylemanagerpage.py:399
 msgid "Error when downloading style from repository"
 msgstr "Errorea estiloa biltegitik jaisterakoan"
 
-#: exe/webui/stylemanagerpage.py:385 exe/webui/stylemanagerpage.py:396
+#: exe/webui/stylemanagerpage.py:409 exe/webui/stylemanagerpage.py:420
 msgid "URL not valid. "
 msgstr "URL-ak ez du balio. "
 
-#: exe/webui/stylemanagerpage.py:440
+#: exe/webui/stylemanagerpage.py:464
 msgid "Style download URL not found"
 msgstr "Estiloa jaisteko URL-a ez da topatu"
 
-#: exe/webui/stylemanagerpage.py:449
+#: exe/webui/stylemanagerpage.py:473
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
 msgstr "Errorea estiloaren URL-a biltegiko estilo-zerrendatik lortzerakoan: %s"
 
-#: exe/webui/stylemanagerpage.py:487
+#: exe/webui/stylemanagerpage.py:511
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr "Estiloa ondo esportatu da: %s"
 
-#: exe/webui/stylemanagerpage.py:491
+#: exe/webui/stylemanagerpage.py:515
 #, python-format
 msgid "Could not export style : %s"
 msgstr "Ezin izan da esportatu estiloa: %s"
 
-#: exe/webui/stylemanagerpage.py:499
+#: exe/webui/stylemanagerpage.py:523
 msgid "Style deleted correctly"
 msgstr "Estiloa ondo ezabatu da"
 
@@ -14564,7 +14579,7 @@ msgstr ""
 msgid ""
 "Hello there, it seems like you are new here! These bubbles will guide you"
 " through the app. Or they won't if you want to skip this tutorial and "
-"%click here%."
+"%sclick here%s."
 msgstr ""
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:46
@@ -15207,4 +15222,12 @@ msgstr ""
 #~ "Orriko azken GeoGebra jarduerak izan "
 #~ "behar du botoia duena (bestela ez "
 #~ "du funtzionatuko)."
+
+#~ msgid ""
+#~ "Hello there, it seems like you are"
+#~ " new here! These bubbles will guide"
+#~ " you through the app. Or they "
+#~ "won't if you want to skip this "
+#~ "tutorial and %click here%."
+#~ msgstr ""
 
