@@ -11,6 +11,7 @@ var $exeDevice = {
     // i18n
     i18n: {
         name: _('QuExt Activity'),
+        alt: _('Fast Quiz') // To review
     },
     iDevicePath: "/scripts/idevices/quext-activity/edition/",
     msgs: {},
