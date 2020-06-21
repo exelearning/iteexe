@@ -1,5 +1,5 @@
 /**
- * desafio Activity iDevice (edition code)
+ * Challenge iDevice (edition code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -10,7 +10,7 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('desafio Activity'),
+        name: _('Challenge'),
     },
     iDevicePath: "/scripts/idevices/desafio-activity/edition/",
     msgs: {},
@@ -80,25 +80,25 @@ var $exeDevice = {
         "msgLoading": _("Loading. Please wait..."),
         "mgsPoints": _("points"),
         "msgPlay":_("Play"),
-        "msgDesafio":_("Desafío"),
-        "msgChallenge":_("Reto"),
-        "msgChallengesCompleted":_("Retos completados"),
-        "msgStartTime":_("Inicio desafio"),
-        "msgReadTime":_("Lee el desafío y, cuando estés listo, haz clic sobre un reto para jugar"),
-        "msgReadDesafio":_("Tu tiempo ha finalizado y no has resuelto el desafío. Pulsa sobre reiniciar para intentarlo de nuevo"),
-        "msgChallengesAllCompleted":_("¡Has resuelto todos los retos! ¡Completa ahora el desafío!"),
-        "msgDesafioSolved":_("¡Has resuelto este desafío! Pulsa reiniciar para nueva partida"),
-        "msgDesafioSolved1":_("¡Has resuelto este desafío!. Eres el mejor"),
-        "msgEndTime":_("!Lo siento! El tiempo ha finalizado.  Pulsa reiniciar para nueva partida"),
-        "msgSolutionError":_("La solución al desafío no es correcta"),
-        "msgSolutionCError":_("La solución no es correcta"),
-        "msgChallengeSolved":_("¡Has resuelto este reto! ¡Selecciona otro!"),
-        "msgDesafioReboot":_("Esto reiniciará el juego y modificará su hora de inicio. ¿Deseas continuar?"),
-        "msgCompleteAllChallenged":_("Debes completar todos los retos antes de resolver el desafío"),
-        "msgSolvedChallenge":_("Ya has completado este reto"),
-        "msgWriteChallenge":_("Completa este reto e indica su solución"),
-        "msgEndTimeRestart":_("Tu tiempo ha finalizado y no has resuelto el desafío. Pulsa sobre reiniciar para intentarlo de nuevo"),
-        "msgReboot":_("Reiniciar")
+        "msgDesafio":_("Challenge"),
+        "msgChallenge":_("Challenge"), // Reto in ES
+        "msgChallengesCompleted":_("Completed challenges"),
+        "msgStartTime":_("Starting time"),
+        "msgReadTime":_("Read the instructions and click on a challenge when you're ready to play."),
+        "msgReadDesafio":_("The time has expired now. Please restart to try again."),
+        "msgChallengesAllCompleted":_("You've completed all the challenges! You can now complete the game."),
+        "msgDesafioSolved":_("You made it! You can restart to play again."),
+        "msgDesafioSolved1":_("You solved the challenge! Congratulations!"),
+        "msgEndTime":_("Time Over. Please restart to try again."),
+        "msgSolutionError":_("Sorry. Wrong solution."),
+        "msgSolutionCError":_("Sorry. The solution is wrong."),
+        "msgChallengeSolved":_("You solved this challenge! Please select another one."),
+        "msgDesafioReboot":_("Restart the game and the starting time?"),
+        "msgCompleteAllChallenged":_("You must complete all the challenges to finish."),
+        "msgSolvedChallenge":_("You already completed this challenge."),
+        "msgWriteChallenge":_("Complete the challenge. Write the solution."),
+        "msgEndTimeRestart":_("Time Over. Please restart to try again."),
+        "msgReboot":_("Restart")
    },
 
     init: function () {
@@ -114,19 +114,19 @@ var $exeDevice = {
         msgs.msgEProvideWord = _("Please provide one word or phrase");
         msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgEUnavailableVideo = _("This video is not currently available")
-        msgs.msgECompleteQuestion = _("Debes completar un reto");
+        msgs.msgECompleteQuestion = _("You must complete a challenge.");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
         msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
-        msgs.msgTitleDesafio = _("Debes indicar un título para el desafío");
-        msgs.msgDescriptionDesafio = _("Debes escribir un descripción para el desafío");
-        msgs.msgSolutionDesafio = _("Debes indicar una solución para el desafio");
-        msgs.msgOneChallenge = _("El desafío tiene que tener al menos un reto");
-        msgs.msgTenChallenges = _("Solo puedes añadir diez retos a este desafío");
-        msgs.msgDataChanllenge = _("Debes indicar el título, solución y descripción de todos los retos");
+        msgs.msgTitleDesafio = _("Please write the challenge title.");
+        msgs.msgDescriptionDesafio = _("Please write the challenge description.");
+        msgs.msgSolutionDesafio = _("Please write the challenge solution.");
+        msgs.msgOneChallenge = _("Please add at least one challenge.");
+        msgs.msgTenChallenges = _("You can only add ten challenges.");
+        msgs.msgDataChanllenge = _("Please write the title, description and solution of all the challenges.");
 
     },
     showMessage: function (msg) {
@@ -294,7 +294,7 @@ var $exeDevice = {
             html = '\
 			<div id="desafioIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Para resolver este desafío debes completar antes todos sus retos")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete all the challenges to finish the activity.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -308,9 +308,9 @@ var $exeDevice = {
                         <div class="desafio-EPanel" id="desafioEPanel">\
                             <div class="desafioToggle">\
                                     <input class="desafio-Type" checked="checked" id="desafioEDesafio" type="radio" name="dsfDesRet" value="0" />\
-                                    <label for="desafioEDesafio">' + _("Desafío") + '</label>\
+                                    <label for="desafioEDesafio">' + _("Challenge") + '</label>\
                                     <input class="desafio-Type"  id="desafioEReto" type="radio" name="dsfDesRet" value="1" />\
-                                    <label for="desafioEReto">' + _("Retos") + '</label>\
+                                    <label for="desafioEReto">' + _("Challenges") + '</label>\
                             </div>\
                             <div class="desafio-EDAtaGame">\
                                 <div class="desafio-EVideoIntroData">\

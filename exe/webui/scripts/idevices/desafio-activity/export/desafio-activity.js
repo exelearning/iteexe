@@ -95,43 +95,43 @@ var $eXeDesafio = {
                                 <strong><span class="sr-av">' + msgs.msgDesafio + ':</span></strong>\
                                 <div class="desafio-GameDesafio"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="0" id="desafioLink0-' + instance + '" title="Reto 1">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="0" id="desafioLink0-' + instance + '" title="' + msgs.msgChallenge + ' 1">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C0"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="1" id="desafioLink1-' + instance + '" title="Reto 2">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="1" id="desafioLink1-' + instance + '" title="' + msgs.msgChallenge + ' 2">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C1"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="2" id="desafioLink2-' + instance + '" title="Reto 3">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="2" id="desafioLink2-' + instance + '" title="' + msgs.msgChallenge + ' 3">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C2"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="3" id="desafioLink3-' + instance + '" title="Reto 4">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="3" id="desafioLink3-' + instance + '" title="' + msgs.msgChallenge + ' 4">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C3"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="4"  id="desafioLink4-' + instance + '" title="Reto 5">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="4"  id="desafioLink4-' + instance + '" title="' + msgs.msgChallenge + ' 5">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C4"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="5"  id="desafioLink5-' + instance + '" title="Reto 6">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="5"  id="desafioLink5-' + instance + '" title="' + msgs.msgChallenge + ' 6">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C5"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="6" id="desafioLink6-' + instance + '" title="Reto 7">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="6" id="desafioLink6-' + instance + '" title="' + msgs.msgChallenge + ' 7">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C6"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="7"  id="desafioLink7-' + instance + '" title="Reto 8">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="7"  id="desafioLink7-' + instance + '" title="' + msgs.msgChallenge + ' 8">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C7"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="8" id="desafioLink8-' + instance + '" title="Reto 9">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="8" id="desafioLink8-' + instance + '" title="' + msgs.msgChallenge + ' 9">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C8"></div>\
                             </a>\
-                            <a href="#" class="desafio-LinkChallenge" data-number="9" id="desafioLink9-' + instance + '" title="Reto 10">\
+                            <a href="#" class="desafio-LinkChallenge" data-number="9" id="desafioLink9-' + instance + '" title="' + msgs.msgChallenge + ' 10">\
                                 <strong><span class="sr-av">' + msgs.msgChallenge + ':</span></strong>\
                                 <div class="exeQuextRetos exeQuextRetos-C9"></div>\
                             </a>\
