@@ -15,7 +15,8 @@ var $exeDevice = {
     iDevicePath: "/scripts/idevices/desafio-activity/edition/",
     msgs: {},
     active: 0,
-    typeActive:0,
+    numberId: 0,
+    typeActive: 0,
     challengesGame: [],
     desafioTitle: '',
     desafioTime: 40,
@@ -23,6 +24,8 @@ var $exeDevice = {
     desafioDescription: '',
     typeEdit: -1,
     numberCutCuestion: -1,
+    desafioFeedBacks: [],
+    desafioVersion:1,
     clipBoard: '',
     ci18n: {
         "msgReady": _("Ready?"),
@@ -51,17 +54,12 @@ var $exeDevice = {
         "msgNumQuestions": _("Number of questions"),
         "msgNoImage": _("No picture question"),
         "msgCool": _("Cool!"),
-        "msgLoseT": _("You lost 330 points"),
-        "msgLoseLive": _("You lost one life"),
-        "msgLostLives": _("You lost all your lives!"),
         "mgsAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
         "msgNotNetwork": _("You can only play this game with internet connection."),
         "msgEndGameScore": _("Please start the game before saving your score."),
         "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
-        "msgQuestion": _("Question"),
-        "msgAnswer": _("Answer"),
         "msgOnlySaveScore": _("You can only save the score once!"),
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
@@ -75,19 +73,38 @@ var $exeDevice = {
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
-        "msgVideoIntro": _("Video Intro"),
         "msgClose": _("Close"),
-        "msgOption": _("Option"),
-        "msgRickText": _("Rich Text"),
+        "mgsSolution":_("Solution"),
+        "msgDate":_("Date") ,
         "msgUseFulInformation": _("and information that will be very useful"),
         "msgLoading": _("Loading. Please wait..."),
-        "mgsPoints": _("points")
-    },
+        "mgsPoints": _("points"),
+        "msgPlay":_("Play"),
+        "msgDesafio":_("Desafío"),
+        "msgChallenge":_("Reto"),
+        "msgChallengesCompleted":_("Retos completados"),
+        "msgStartTime":_("Inicio desafio"),
+        "msgReadTime":_("Lee el desafío y, cuando estés listo, haz clic sobre un reto para jugar"),
+        "msgReadDesafio":_("Tu tiempo ha finalizado y no has resuelto el desafío. Pulsa sobre reiniciar para intentarlo de nuevo"),
+        "msgChallengesAllCompleted":_("¡Has resuelto todos los retos! ¡Completa ahora el desafío!"),
+        "msgDesafioSolved":_("¡Has resuelto este desafío! Pulsa reiniciar para nueva partida"),
+        "msgDesafioSolved1":_("¡Has resuelto este desafío!. Eres el mejor"),
+        "msgEndTime":_("!Lo siento! El tiempo ha finalizado.  Pulsa reiniciar para nueva partida"),
+        "msgSolutionError":_("La solución al desafío no es correcta"),
+        "msgSolutionCError":_("La solución no es correcta"),
+        "msgChallengeSolved":_("¡Has resuelto este reto! ¡Selecciona otro!"),
+        "msgDesafioReboot":_("Esto reiniciará el juego y modificará su hora de inicio. ¿Deseas continuar?"),
+        "msgCompleteAllChallenged":_("Debes completar todos los retos antes de resolver el desafío"),
+        "msgSolvedChallenge":_("Ya has completado este reto"),
+        "msgWriteChallenge":_("Completa este reto e indica su solución"),
+        "msgEndTimeRestart":_("Tu tiempo ha finalizado y no has resuelto el desafío. Pulsa sobre reiniciar para intentarlo de nuevo"),
+        "msgReboot":_("Reiniciar")
+   },
 
     init: function () {
         this.setMessagesInfo();
         this.createForm();
-        
+
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;
@@ -104,62 +121,86 @@ var $exeDevice = {
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
-        msgs.msgTitleChallenge = _("Debes indicar un título para el reto");
-        msgs.msgDescriptionChallenge = _("Debes escribir un descripción para el reto");
-        msgs.msgSolutionChallenge = _("Debes indicar un solución para el reto");
         msgs.msgTitleDesafio = _("Debes indicar un título para el desafío");
         msgs.msgDescriptionDesafio = _("Debes escribir un descripción para el desafío");
         msgs.msgSolutionDesafio = _("Debes indicar una solución para el desafio");
+        msgs.msgOneChallenge = _("El desafío tiene que tener al menos un reto");
+        msgs.msgTenChallenges = _("Solo puedes añadir diez retos a este desafío");
+        msgs.msgDataChanllenge = _("Debes indicar el título, solución y descripción de todos los retos");
 
     },
     showMessage: function (msg) {
-
         eXe.app.alert(msg);
     },
     addChallenge: function () {
-        $exeDevice.validateChallenge(false);
+        $exeDevice.saveChallenge();
+        if($exeDevice.challengesGame.length==9){
+            $exeDevice.showMessage($exeDevice.msgs.msgTenChallenges);
+            return;
+        }
+        $exeDevice.typeEdit = -1;
+        $exeDevice.numberId++;
         $exeDevice.clearChallenge();
         $exeDevice.challengesGame.push($exeDevice.getChallengeDefault());
         $exeDevice.active = $exeDevice.challengesGame.length - 1;
-        $('#desafioENumberChallenge').text($exeDevice.active+1);
-        $exeDevice.typeEdit = -1;
+        $('#desafioENumberChallenge').text($exeDevice.active + 1);
         $('#desafioEPaste').hide();
         $('#desafioENumChallenges').text($exeDevice.challengesGame.length);
+        $('.desafio-EDivFeebBack').hide();
+        $('#desafioEDivFeebBack-' + $exeDevice.active).show();
+        if (tinyMCE.get('desafioEChallenge-' + $exeDevice.active )) {
+            tinyMCE.get('desafioEChallenge-' + $exeDevice.active ).setContent('');
+        } else {
+            $('desafioEChallenge-' + $exeDevice.active ).val('');
+        }
     },
-    clearChallenge:function(){
-        $('#desafioEDTitle').val('');
-        $('#desafioEDSolution').val('');
-        tinymce.editors[1].setContent('');
-        $('#desafioEDPMessage').val('');
-        $('#desafioEDPTime').val(5);
+    clearChallenge: function () {
+        $('#desafioECTitle').val('');
+        $('#desafioECSolution').val('');
+        $('#desafioECMessage').val('');
+        $('#desafioECTime').val(5);
 
     },
-    removeChallenge: function (num) {
+    removeChallenge: function () {
         if ($exeDevice.challengesGame.length < 2) {
-            $exeDevice.showMessage(msgs.msgEOneQuestion);
+            $exeDevice.showMessage($exeDevice.msgs.msgOneChallenge);
             return;
         } else {
             $exeDevice.challengesGame.splice($exeDevice.active, 1);
             if ($exeDevice.active >= $exeDevice.challengesGame.length - 1) {
                 $exeDevice.active = $exeDevice.challengesGame.length - 1;
             }
-            $exeDevice.showChallenge($exeDevice.active);
             $exeDevice.typeEdit = -1;
             $('#desafioEPaste').hide();
             $('#desafioENumChallenges').text($exeDevice.challengesGame.length);
             $('#desafioENumberChallenge').text($exeDevice.active + 1);
+            $exeDevice.updateFeedBack();
+            $exeDevice.showChallenge($exeDevice.active);
         }
 
     },
+    updateFeedBack: function () {
+        for (var i = 0; i < 10; i++) {
+            var text = '';
+            if (i < $exeDevice.challengesGame.length) {
+                text = $exeDevice.challengesGame[i].description
+            }
+            if (tinyMCE.get('desafioEChallenge-' + i)) {
+                tinyMCE.get('desafioEChallenge-' + i).setContent(text);
+            } else {
+                $('desafioEChallenge-' + i).val(text);
+            }
+        }
+    },
     copyChallenge: function () {
-        $exeDevice.validateChallenge()
+        $exeDevice.saveChallenge();
         $exeDevice.typeEdit = 0;
         $exeDevice.clipBoard = $exeDevice.challengesGame[$exeDevice.active];
         $('#desafioEPaste').show();
 
     },
     cutChallenge: function () {
-        $exeDevice.validateChallenge(false);
+        $exeDevice.saveChallenge();
         $exeDevice.numberCutCuestion = $exeDevice.active;
         $exeDevice.typeEdit = 1;
         $('#desafioEPaste').show();
@@ -175,41 +216,49 @@ var $exeDevice = {
     },
 
     pasteChallenge: function () {
+        if($exeDevice.challengesGame.length>(9+$exeDevice.typeEdit)){
+            $('#desafioEPaste').hide();
+            $exeDevice.showMessage($exeDevice.msgs.msgTenChallenges);
+            return;
+        }
         if ($exeDevice.typeEdit == 0) {
             $exeDevice.active++;
             $exeDevice.challengesGame.splice($exeDevice.active, 0, $exeDevice.clipBoard);
+            $exeDevice.updateFeedBack();
             $exeDevice.showChallenge($exeDevice.active);
         } else if ($exeDevice.typeEdit == 1) {
             $('#desafioEPaste').hide();
             $exeDevice.typeEdit = -1;
             $exeDevice.arrayMove($exeDevice.challengesGame, $exeDevice.numberCutCuestion, $exeDevice.active);
+            $exeDevice.updateFeedBack();
             $exeDevice.showChallenge($exeDevice.active);
             $('#desafioENumChallenges').text($exeDevice.challengesGame.length);
         }
+
     },
     nextChallenge: function () {
-        $exeDevice.validateChallenge(false);
+        $exeDevice.saveChallenge();
         if ($exeDevice.active < $exeDevice.challengesGame.length - 1) {
             $exeDevice.active++;
             $exeDevice.showChallenge($exeDevice.active);
         }
     },
     lastChallenge: function () {
-        $exeDevice.validateChallenge(false);
+        $exeDevice.saveChallenge();
         if ($exeDevice.active < $exeDevice.challengesGame.length - 1) {
             $exeDevice.active = $exeDevice.challengesGame.length - 1;
             $exeDevice.showChallenge($exeDevice.active);
         }
     },
     previousChallenge: function () {
-        $exeDevice.validateChallenge(false);
+        $exeDevice.saveChallenge();
         if ($exeDevice.active > 0) {
             $exeDevice.active--;
             $exeDevice.showChallenge($exeDevice.active);
         }
     },
     firstChallenge: function () {
-        $exeDevice.validateChallenge(false);
+        $exeDevice.saveChallenge();
         if ($exeDevice.active > 0) {
             $exeDevice.active = 0;
             $exeDevice.showChallenge($exeDevice.active);
@@ -224,30 +273,28 @@ var $exeDevice = {
         $('#desafioEDTime').hide();
         $('#desafiolblEDType').hide();
         $('#desafioEDType').hide();
+        $('label[for=desafioEDSolution], #desafioEDSolution').hide();
+        $('label[for=desafioEDTitle], #desafioEDTitle').hide();
+        $('label[for=desafioECTitle], #desafioECTitle').show();
+        $('label[for=desafioECSolution], #desafioECSolution').show();
         $('#desafioENavigationButtons').show();
-        $('#desafioEClueTitle').show();
-        $('#desafioEClue').show();
-        var c=$exeDevice.challengesGame[num];
-        $('#desafioEDTitle').val(c.title);
-        $('#desafioEDSolution').val(c.solution);
-        if(tinyMCE.get('desafioEDescription')){
-            tinyMCE.get('desafioEDescription').setContent(c.description);
-        }else{
-            $('#desafioEDescription').val(c.description)
-        }
-        $('#desafioEDPMessage').val(c.clue);
-        $('#desafioEDPTime').val(c.clueTime);
+        var c = $exeDevice.challengesGame[num];
+        $('#desafioECTitle').val(c.title);
+        $('#desafioECSolution').val(c.solution);
+        $('#divDesafioEDescription').hide();
+        $('.desafio-EDivFeebBack').hide();
+        $('#desafioEDivFeebBack-' + i).show();
+        $('#desafioEChallenges').show();
         $('#desafioENumChallenges').text($exeDevice.challengesGame.length);
-        $('#desafioENumberChallenge').text($exeDevice.active+1);
+        $('#desafioENumberChallenge').text($exeDevice.active + 1);
     },
-
 
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="desafioIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Choose the right answer")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Para resolver este desafío debes completar antes todos sus retos")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -269,6 +316,8 @@ var $exeDevice = {
                                 <div class="desafio-EVideoIntroData">\
                                     <label for="desafioEDTitle">' + _("Title") + '<input type="text" id="desafioEDTitle" /></label>\
                                     <label for="desafioEDSolution">' + _("Solution") + '<input type="text" id="desafioEDSolution" /></label>\
+                                    <label for="desafioECTitle">' + _("Title") + '<input type="text" id="desafioECTitle" /></label>\
+                                    <label for="desafioECSolution">' + _("Solution") + '<input type="text" id="desafioECSolution" /></label>\
                                     <label id="desafiolblEDType" for="desafioEDType">' + _("Type") + ': </label>\
                                     <select id="desafioEDType">\
                                         <option value="0">Lineal</option>\
@@ -300,36 +349,13 @@ var $exeDevice = {
                                 </div>\
                                 <span>' + _("Description") + ':</span>\
                                 <div class="desafio-EInputMedias">\
-                                    <textarea id="desafioEDescription" class="exe-html-editor"\> </textarea>\
-                                </div>\
-                                <span id="desafioEClueTitle">' + _("Pista(Opcional)") + ':</span>\
-                                <div class="desafio-EInputMedias" id="desafioEClue">\
-                                <label for="desafioEDPMessage">' + _("Message") + '<input type="text" id="desafioEDPMessage" /></label>\
-                                <label for="desafioEDPTime">' + _("Time") + ': </label>\
-                                <select id="desafioEDPTime">\
-                                <option value="1">1</option>\
-                                <option value="3">3m</option>\
-                                <option value="5">5m</option>\
-                                <option value="10">10m</option>\
-                                <option value="15">15m</option>\
-                                <option value="20">20m</option>\
-                                <option value="25">25m</option>\
-                                <option value="30">30m</option>\
-                                <option value="35">35m</option>\
-                                <option value="40" selected>40m</option>\
-                                <option value="40">45m</option>\
-                                <option value="50">50m</option>\
-                                <option value="55">55m</option>\
-                                <option value="60">60m</option>\
-                                <option value="70">70m</option>\
-                                <option value="80">80m</option>\
-                                <option value="90">90m</option>\
-                                <option value="120">120m</option>\
-                                <option value="150">150</option>\
-                                <option value="180">180m</option>\
-                                <option value="210">210m</option>\
-                                <option value="240">240m</option>\
-                            </select>\
+                                    <div id="divDesafioEDescription">\
+                                        <label for="desafioEDescription" class="sr-av">' + _('Instructions') + '":</label>\
+                                        <textarea id="desafioEDescription" class="exe-html-editor"\></textarea>\
+                                    </div>\
+                                    <div id="desafioEChallenges">\
+                                    ' + this.getDivChallenges(10) + '\
+                                    </div>\
                                 </div>\
                             </div>\
                             <div class="desafio-ENavigationButtons" id="desafioENavigationButtons">\
@@ -351,10 +377,7 @@ var $exeDevice = {
                         </div>\
                     </fieldset>\
                 </div>\
-				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
-				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
-				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
-				' + $exeAuthoring.iDevice.gamification.share.getTab() + '\
+    			' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
 		    </div>\
 			';
         var field = $("textarea.jsContentEditor").eq(0)
@@ -362,17 +385,25 @@ var $exeDevice = {
         $exeAuthoring.iDevice.tabs.init("desafioIdeviceForm");
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
-        $exeAuthoring.iDevice.gamification.scorm.init();
+        $exeDevice.showDesafio();
 
-
+    },
+    getDivChallenges: function (num) {
+        var chs='';
+        for (var j=0;j<num;j++){
+            var ch = '<div class="desafio-EDivFeebBack" id="desafioEDivFeebBack-' + j + '">\
+            <label for="desafioEChallenge-' + j + '" class="sr-av">' + _('Feedback') + '":</label>\
+            <textarea id="desafioEChallenge-' + j + '" class="exe-html-editor desafio-EFeedBack"\></textarea>\
+            </div>'
+            chs+=ch;
+        }
+        return chs;
     },
     getChallengeDefault: function () {
         var p = new Object();
         p.title = '';
         p.solution = '';
         p.description = '';
-        p.clue = '';
-        p.clueTime = 5;
         return p;
     },
     loadPreviousValues: function (field) {
@@ -381,33 +412,78 @@ var $exeDevice = {
             $exeDevice.active = 0;
             var wrapper = $("<div></div>");
             wrapper.html(originalHTML);
-            var json = $('.desafio-DataGame', wrapper).text();
-            var dataGame = $exeDevice.isJsonString(json);
-            $exeDevice.desafioTitle=dataGame.desafioTitle;
-            $exeDevice.active = 0;
-            $exeDevice.desafioSolution=dataGame.desafioSolution;
-            $exeDevice.desafioDescription=(dataGame.desafioDescription);
-            $exeDevice.desafioType=dataGame.desafioType;
-            $exeDevice.desafioTime=dataGame.desafioTime;
-            for (var i = 0; i < dataGame.challengesGame.length; i++) {
-                 dataGame.challengesGame[i].description = (dataGame.challengesGame[i].description);
+            var json = $('.desafio-DataGame', wrapper).text(),
+                version=$('.desafio-version', wrapper).text();
+            if (version.length==1 || !json.startsWith('{')){
+                json=$exeDevice.Decrypt(json);
             }
-            $('.desafio-ChallengeDescription',wrapper).each(function(i){
+            var dataGame = $exeDevice.isJsonString(json);
+            $exeDevice.desafioTitle = dataGame.desafioTitle;
+            $exeDevice.active = 0;
+            $exeDevice.desafioSolution = dataGame.desafioSolution;
+            $exeDevice.desafioType = dataGame.desafioType;
+            $exeDevice.desafioTime = dataGame.desafioTime;
+            $exeDevice.desafioDescription = $('.desafio-EDescription', wrapper).html();
+            if (tinyMCE.get('desafioEDescription')) {
+                tinyMCE.get('desafioEDescription').setContent();
+            } else {
+                $('#desafioEDescription').val($('.desafio-EDescription', wrapper).html());
+            }
+            $('.desafio-ChallengeDescription', wrapper).each(function (i) {
                 dataGame.challengesGame[i].description = $(this).html();
+                if (tinyMCE.get('desafioEChallenge-' + i)) {
+                    tinyMCE.get('desafioEChallenge-' + i).setContent($(this).html());
+                } else {
+                    $('#desafioEChallenge-' + i).val($(this).html());
+                }
             });
             $exeDevice.challengesGame = dataGame.challengesGame;
+            var c = $exeDevice.challengesGame[0];
+            $('#desafioECTitle').val(c.title);
+            $('#desafioECSolution').val(c.solution);
             var instructions = $(".desafio-instructions", wrapper);
-            $exeDevice.desafioDescription = $(".desafio-Description", wrapper).eq(0).html();
             if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
-             // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
         }
     },
+    Encrypt :function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
+                pos += 1;
+            }
+            return escape(ostr);
+        } catch (ex) {
+            return '';
+        }
+    },
+
+    Decrypt: function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        str=unescape(str)
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
+                pos += 1;
+            }
+
+            return ostr;
+        } catch (ex) {
+            return '';
+        }
+    },
     updateFieldGame: function (game) {
-        $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         $('#desafioEShowMinimize').prop('checked', game.showMinimize);
-        $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showDesafio();
 
     },
@@ -422,12 +498,6 @@ var $exeDevice = {
     },
 
     save: function () {
-        if (!$exeDevice.validateChallenge(true)) {
-            return;
-        }
-        if(!$exeDevice.validateDesafio(true)){
-            return;
-        }
         var dataGame = this.validateData();
         if (!dataGame) {
             return false;
@@ -441,83 +511,56 @@ var $exeDevice = {
         dataGame.msgs = i18n;
         var json = JSON.stringify(dataGame),
             divContent = "";
-        var instructions = tinyMCE.get('eXeGameInstructions').getContent();
+        json=$exeDevice.Encrypt(json);
+        var instructions = tinyMCE.get('eXeGameInstructions').getContent(),
+            description = tinyMCE.get('desafioEDescription').getContent();
         if (instructions != "") divContent = '<div class="desafio-instructions">' + instructions + '</div>';
         var html = '<div class="desafio-IDevice">';
         html += divContent;
-        html += '<div class="desafio-Description  sr-av">' + $exeDevice.desafioDescription + '</div>';
-        for (var i=0;i<$exeDevice.challengesGame.length;i++){
-            html += '<div class="desafio-ChallengeDescription sr-av">' + $exeDevice.challengesGame[i].description + '</div>';
+        html += '<div class="desafio-version js-hidden">' + $exeDevice.desafioVersion + '</div>';
+        html += '<div class="desafio-EDescription">' + description+ '</div>';
+        for (var i = 0; i < $exeDevice.challengesGame.length; i++) {
+            var df=tinyMCE.get('desafioEChallenge-' + i).getContent();
+            html += '<div class="desafio-ChallengeDescription">' + df+ '</div>';
         }
         html += '<div class="desafio-DataGame">' + json + '</div>';
         html += '</div>';
         return html;
     },
-    validateChallenge: function (validate) {
-        var message = '',
-            p = new Object();
-        if($exeDevice.typeActive==1){
-            p.title=$('#desafioEDTitle').val();
-            p.solution=$('#desafioEDSolution').val();
-            p.description=tinymce.editors[1].getContent();
-            p.clue = $('#desafioEDPMessage').val();
-            p.clueTime = parseInt($('#desafioEDPTime option:selected').val());
-            if (p.title.length == 0) {
-                message = $exeDevice.msgs.msgTitleChallenge;
-            } else if (p.description.length == 0) {
-                message = $exeDevice.msgs.msgDescriptionChallenge;
-            } else if (p.solution.length == 0) {
-                message = $exeDevice.msgs.msgSolutionChallenge;
-            }
-            $exeDevice.challengesGame[$exeDevice.active] = p;
-       }
-        if (message.length == 0) {
-            message = true;
-        } else {
-            if(validate) $exeDevice.showMessage(message);
-            message = false;
-        }
 
+    saveChallenge: function () {
+        var message = '',
+            p = new Object(),
+            i = $exeDevice.active;
+        if (tinyMCE.get('desafioEChallenge-' + i)) {
+            p.description = tinyMCE.get('desafioEChallenge-' + i).getContent();
+        } else {
+            p.description = $('desafioEChallenge-' + i).val();
+        }
+        p.title = $('#desafioECTitle').val();
+        p.solution = $('#desafioECSolution').val();
+        p.clue = $('#desafioECMessage').val();
+        p.clueTime = parseInt($('#desafioECTime option:selected').val());
+        $exeDevice.challengesGame[i] = p;
         return message;
 
     },
-    validateDesafio: function (validate) {
-        var message = '';
-            p = new Object();
-        if($exeDevice.typeActive==0){
-            $exeDevice.desafioTitle=$('#desafioEDTitle').val();
-            $exeDevice.desafioSolution=$('#desafioEDSolution').val();
-            $exeDevice.desafioDescription=tinymce.editors[1].getContent();
-            $exeDevice.desafioType = parseInt($('#desafioEDType option:selected').val());
-            $exeDevice.desafioTime = parseInt($('#desafioEDTime option:selected').val());
 
-            if ($exeDevice.desafioTitle.length == 0) {
-                message = $exeDevice.msgs.msgTitleDesafio;
-            } else if ($exeDevice.desafioSolution.length == 0) {
-                message = $exeDevice.msgs.msgSolutionDesafio;
-            } else if ($exeDevice.desafioDescription ==0) {
-                message = $exeDevice.msgs.msgDescriptionDesafio;
-            }
-        }
-        if (message.length != 0) {
-            if(validate) $exeDevice.showMessage(message);
-            message = false;
+    saveDesafio: function () {
+        $exeDevice.desafioTitle = $('#desafioEDTitle').val();
+        $exeDevice.desafioSolution = $('#desafioEDSolution').val();
+        $exeDevice.desafioType = parseInt($('#desafioEDType option:selected').val());
+        $exeDevice.desafioTime = parseInt($('#desafioEDTime option:selected').val());
+        $exeDevice.desafioDescription = "";
+        if (tinyMCE.get('desafioEDescription')) {
+            $exeDevice.desafioDescription = tinyMCE.get('desafioEDescription').getContent();
         } else {
-            message=true;
+            $exeDevice.desafioDescription = $('#desafioEDescription').val();
         }
-        return message;
-
     },
 
     exportGame: function () {
-        var desafioValid=$exeDevice.validateDesafio(true);
-        if(!desafioValid){
-            return;
-        }
-        desafioValid=$exeDevice.validateChallenge(true);
-        if (!desafioValid) {
-            return;
-        }
+
         var dataGame = this.validateData();
         if (!dataGame) {
             return false;
@@ -551,13 +594,13 @@ var $exeDevice = {
             return;
         }
         $exeDevice.active = 0;
-        $exeDevice.desafioTitle=game.desafioTitle;
-        $exeDevice.desafioSolution=game.desafioSolution;
-        $exeDevice.desafioDescription=(game.desafioDescription);
-        $exeDevice.desafioType=game.desafioType;
-        $exeDevice.desafioTime=game.desafioTime;
+        $exeDevice.desafioTitle = game.desafioTitle;
+        $exeDevice.desafioSolution = game.desafioSolution;
+        $exeDevice.desafioDescription = (game.desafioDescription);
+        $exeDevice.desafioType = game.desafioType;
+        $exeDevice.desafioTime = game.desafioTime;
         for (var i = 0; i < $exeDevice.challengesGame.length; i++) {
-                game.challengesGame[i].description = (game.challengesGame[i].description);
+            game.challengesGame[i].description = (game.challengesGame[i].description);
         }
         $exeDevice.challengesGame = game.challengesGame;
         $exeDevice.updateFieldGame(game);
@@ -566,41 +609,29 @@ var $exeDevice = {
         $('.exe-form-tabs li:first-child a').click();
     },
     validateData: function () {
+        $exeDevice.saveDesafio();
+        $exeDevice.saveChallenge();
         var instructions = $('#eXeGameInstructions').text(),
             instructionsExe = (tinyMCE.get('eXeGameInstructions').getContent()),
-            showMinimize = $('#desafioEShowMinimize').is(':checked'),
-            itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
-        if (!itinerary) return false;
-        if ($exeDevice.desafioTitle.length == 0) {
+            showMinimize = $('#desafioEShowMinimize').is(':checked');
+         if ($exeDevice.desafioTitle.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgTitleDesafio);
             return false;
         } else if ($exeDevice.desafioSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgSolutionDesafio);
             return false;
-        } else if ($exeDevice.desafioDescription ==0) {
+        } else if ($exeDevice.desafioDescription == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgDescriptionDesafio);
             return false;
         }
         var challengesGame = $exeDevice.challengesGame;
         for (var i = 0; i < challengesGame.length; i++) {
             mChallenge = challengesGame[i]
-            if (mChallenge.title.length == 0) {
-                $exeDevice.showMessage($exeDevice.msgs.msgTitleChallenge);
-                return false;
-            } else if (mChallenge.solution.length == 0) {
-                $exeDevice.showMessage($exeDevice.msgs.msgDescriptionChallenge);
-                return false;
-            } else if (mChallenge.description.length == 0) {
-                $exeDevice.showMessage($exeDevice.msgs.msgSolutionChallenge);
+            if (mChallenge.title.length == 0 || mChallenge.solution.length == 0 || mChallenge.description.length == 0 ) {
+                $exeDevice.showMessage($exeDevice.msgs.msgDataChanllenge);
                 return false;
             }
-
         }
-        for (var i = 0; i < challengesGame.length; i++) {
-            var qt = challengesGame[i];
-            qt.description = (qt.description);
-        }
-        var scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
         var data = {
             'asignatura': '',
             "author": '',
@@ -609,16 +640,12 @@ var $exeDevice = {
             'desafioTime': $exeDevice.desafioTime,
             'desafioType': $exeDevice.desafioType,
             'desafioSolution': $exeDevice.desafioSolution,
-            'desafioSolved':false,
-            'desafioDescription': ($exeDevice.desafioDescription),
+            'desafioSolved': false,
+            'desafioDescription': $exeDevice.desafioDescription,
             'instructionsExe': instructionsExe,
             'instructions': instructions,
             'showMinimize': showMinimize,
-            'itinerary': itinerary,
             'challengesGame': challengesGame,
-            'isScorm': scorm.isScorm,
-            'textButtonScorm': scorm.textButtonScorm,
-            'repeatActivity': scorm.repeatActivity,
             'title': ''
         }
         return data;
@@ -629,14 +656,12 @@ var $exeDevice = {
         return wrapper.text();
     },
     addEvents: function () {
-        if($exeDevice.challengesGame.length==0){
-            var challenge=$exeDevice.getChallengeDefault();
-            $exeDevice.active=0,
+        if ($exeDevice.challengesGame.length == 0) {
+            var challenge = $exeDevice.getChallengeDefault();
+            $exeDevice.active = 0,
             $exeDevice.challengesGame.push(challenge);
         }
         $('#desafioENavigationButtons').hide();
-        $('#desafioEClueTitle').hide();
-        $('#desafioEClue').hide();
         $('#desafioEPaste').hide();
         $('#desafioENumQuestionDiv').hide();
         $('#desafioEUseLives').on('change', function () {
@@ -691,16 +716,20 @@ var $exeDevice = {
             $exeDevice.pasteChallenge()
         });
         $('#desafioEDesafio').on('click', function (e) {
-            $exeDevice.validateChallenge(false);
-            $exeDevice.typeActive=0;
-            $exeDevice.showDesafio();
+            if ($exeDevice.typeActive != 0) {
+                $exeDevice.typeActive = 0;
+                $exeDevice.saveChallenge();
+                $exeDevice.showDesafio();
+            }
+
         });
         $('#desafioEReto').on('click', function (e) {
-            $exeDevice.validateDesafio(false);
-            $exeDevice.typeActive=1;
-            $exeDevice.showChallenge($exeDevice.active);
+            if ($exeDevice.typeActive != 1) {
+                $exeDevice.typeActive = 1;
+                $exeDevice.saveDesafio();
+                $exeDevice.showChallenge($exeDevice.active);
+            }
         });
-
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             $('#eXeGameExportImport').show();
@@ -721,29 +750,27 @@ var $exeDevice = {
         } else {
             $('#eXeGameExportImport').hide();
         }
-        $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
 
-    showDesafio:function (){
-        $exeDevice.typeActive=0;
+    showDesafio: function () {
+        $exeDevice.typeActive = 0;
         $('#desafiolblEDTime').show();
         $('#desafioEDTime').show();
         $('#desafiolblEDType').show();
         $('#desafioEDType').show();
         $('#desafioENavigationButtons').hide();
-        $('#desafioEClueTitle').hide();
-        $('#desafioEClue').hide();
+        $('label[for=desafioECSolution], #desafioECSolution').hide();
+        $('label[for=desafioECTitle], #desafioECTitle').hide();
+        $('label[for=desafioEDTitle], #desafioEDTitle').show();
+        $('label[for=desafioEDSolution], #desafioEDSolution').show();
         $('#desafioENumQuestionDiv').hide();
         $('#desafioEDTitle').val($exeDevice.desafioTitle);
         $('#desafioEDSolution').val($exeDevice.desafioSolution);
         $('#desafioEDTime').val($exeDevice.desafioTime);
         $('#desafioEDType').val($exeDevice.desafioType);
-        if(tinyMCE.get('desafioEDescription')){
-            tinyMCE.get('desafioEDescription').setContent($exeDevice.desafioDescription);
-        }else{
-            $('#desafioEDescription').val($exeDevice.desafioDescription)
-        }
+        $('#divDesafioEDescription').show();
+        $("#desafioEChallenges").hide();
     },
 
 }

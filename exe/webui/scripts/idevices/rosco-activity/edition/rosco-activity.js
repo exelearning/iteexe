@@ -11,6 +11,7 @@ var $exeDevice = {
 	title: _("A-Z Quiz Game"),
 	iDevicePath: "/scripts/idevices/rosco-activity/edition/",
 	msgs: {},
+	roscoVersion: 1,
 	ci18n: {
 		"msgReady": _("Ready?"),
 		"msgStartGame": _("Click here to start"),
@@ -59,10 +60,10 @@ var $exeDevice = {
 		"msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
 		"msgSaveAuto": _("Your score will be automatically saved after each question."),
 		"msgAuthor": _("Author"),
-        "msgSeveralScore": _("You can save the score as many times as you want"),
-        "msgYouLastScore" :_("The last score saved is"),
-        "msgActityComply":_("You have already done this activity."),
-        "msgPlaySeveralTimes":_("You can do this activity as many times as you want")
+		"msgSeveralScore": _("You can save the score as many times as you want"),
+		"msgYouLastScore": _("The last score saved is"),
+		"msgActityComply": _("You have already done this activity."),
+		"msgPlaySeveralTimes": _("You can do this activity as many times as you want")
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -71,9 +72,9 @@ var $exeDevice = {
 		red: '#ff0000',
 		white: '#ffffff',
 		yellow: '#f3d55a',
-		grey:'#818181'
+		grey: '#818181'
 	},
-	letters:  _("abcdefghijklmnopqrstuvwxyz").toUpperCase() ,
+	letters: _("abcdefghijklmnopqrstuvwxyz").toUpperCase(),
 	init: function () {
 		this.setMessagesInfo();
 		this.createForm();
@@ -128,12 +129,12 @@ var $exeDevice = {
 							' + this.getWords().join('') + '\
                         </div>\
 					</fieldset>\
-					'+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
+					' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
 				</div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
-				' + $exeAuthoring.iDevice.gamification.scorm.getTab()+ '\
+				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
-				' + $exeAuthoring.iDevice.gamification.share.getTab()+ '\
+				' + $exeAuthoring.iDevice.gamification.share.getTab() + '\
 			</div>\
 			';
 		var field = $("textarea.jsContentEditor").eq(0);
@@ -143,7 +144,7 @@ var $exeDevice = {
 		this.loadPreviousValues(field);
 	},
 	updateFieldGame: function (dataGame) {
-		$exeDevice.letters=dataGame.letters?dataGame.letters:_("abcdefghijklmnopqrstuvwxyz").toUpperCase();
+		$exeDevice.letters = dataGame.letters ? dataGame.letters : _("abcdefghijklmnopqrstuvwxyz").toUpperCase();
 		$('#roscoDuration').val(dataGame.durationGame)
 		$('#roscoNumberTurns').val(dataGame.numberTurns);
 		$('#roscoShowSolution').prop("checked", dataGame.showSolution);
@@ -151,56 +152,56 @@ var $exeDevice = {
 		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
 
 		$('.roscoWordEdition').each(function (index) {
-			var word=index<dataGame.wordsGame.length?dataGame.wordsGame[index].word:"";
+			var word = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].word : "";
 			$(this).val(word);
 		});
 		$('.roscoDefinitionEdition').each(function (index) {
-			var definition=index<dataGame.wordsGame.length?dataGame.wordsGame[index].definition:"";
+			var definition = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].definition : "";
 			$(this).val(definition);
 		});
 		$('.roscoAuthorEdition').each(function (index) {
-			var author=index<dataGame.wordsGame.length?dataGame.wordsGame[index].author:"";
+			var author = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].author : "";
 			$(this).val(author);
 		});
 		$('.roscoAlt').each(function (index) {
-			var alt=index<dataGame.wordsGame.length?dataGame.wordsGame[index].alt:"";
+			var alt = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].alt : "";
 			$(this).val(alt);
 		});
 		$('.roscoURLImageEdition').each(function (index) {
-			var url=index<dataGame.wordsGame.length?dataGame.wordsGame[index].url:"";
+			var url = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].url : "";
 			$(this).val(url);
 		});
 		$('.roscoXImageEdition').each(function (index) {
-			var x=index<dataGame.wordsGame.length?dataGame.wordsGame[index].x:0; 
+			var x = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].x : 0;
 			$(this).val(x);
 		});
 		$('.roscoYImageEdition').each(function (index) {
-			var y=index<dataGame.wordsGame.length?dataGame.wordsGame[index].y:0; 
+			var y = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].y : 0;
 			$(this).val(y);
 		});
 		$('.roscoStartEdition').each(function (index) {
-			var type=index<dataGame.wordsGame.length?dataGame.wordsGame[index].type:1;
+			var type = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].type : 1;
 			var imageStart = (type) ? "roscoContains.png" : "roscoStart.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageStart);
 		});
 		$('.roscoSelectImageEdition').each(function (index) {
-			var url=index<dataGame.wordsGame.length?dataGame.wordsGame[index].url:"";
+			var url = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].url : "";
 			var imageSelect = $.trim(url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
 		});
 		$('.imagesLink').each(function (index) {
-			var url=index<dataGame.wordsGame.length?dataGame.wordsGame[index].url:"";
+			var url = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].url : "";
 			var imageSelect = $.trim(url).length > 0 ? "roscoSelectImage.png" : "roscoSelectImageInactive.png";
 			$(this).attr('src', $exeDevice.iDevicePath + imageSelect);
 		});
 		$('h3.roscoLetterEdition').each(function (index) {
-			var word=index<dataGame.wordsGame.length?dataGame.wordsGame[index].word:"";
+			var word = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].word : "";
 			var longitud = word.length;
 			var color = longitud > 0 ? $exeDevice.colors.blue : $exeDevice.colors.grey;
 			$(this).css('background-color', color);
 		});
 		$exeAuthoring.iDevice.gamification.itinerary.setValues(dataGame.itinerary);
-		$exeAuthoring.iDevice.gamification.scorm.setValues(dataGame.isScorm,dataGame.textButtonScorm,dataGame.repeatActivity);
+		$exeAuthoring.iDevice.gamification.scorm.setValues(dataGame.isScorm, dataGame.textButtonScorm, dataGame.repeatActivity);
 
 	},
 
@@ -209,27 +210,40 @@ var $exeDevice = {
 		if (originalHTML != '') {
 			var wrapper = $("<div></div>");
 			wrapper.html(originalHTML);
-			var json = $('.rosco-DataGame', wrapper).text();
+			var json = $('.rosco-DataGame', wrapper).text(),
+				version = $('.rosco-version', wrapper).text();
+			if (version.length == 1) {
+				json = $exeDevice.Decrypt(json);
+			}
 			var dataGame = $exeDevice.isJsonString(json);
 			var $imagesLink = $('.rosco-LinkImages', wrapper);
 			$imagesLink.each(function (index) {
 				dataGame.wordsGame[index].url = $(this).attr('href');
+				if (dataGame.wordsGame[index].url.length < 10) {
+					dataGame.wordsGame[index].url = "";
+				}
 			});
 			$exeDevice.updateFieldGame(dataGame);
 			var instructions = $(".rosco-instructions", wrapper);
 			if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
 			// i18n
 			$exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
-            // Text after
-            var textAfter = $(".rosco-extra-content",wrapper);
-            if (textAfter.length==1) $("#eXeIdeviceTextAfter").val(textAfter.html());			
+			// Text after
+			var textAfter = $(".rosco-extra-content", wrapper);
+			if (textAfter.length == 1) $("#eXeIdeviceTextAfter").val(textAfter.html());
 		}
 	},
 	clickImage: function (img, epx, epy) {
 		var $cursor = $(img).siblings('.roscoCursorEdition'),
 			$x = $(img).parent().siblings('.roscoBarEdition').find('.roscoXImageEdition'),
-			$y = $(img).parent().siblings('.roscoBarEdition').find('.roscoYImageEdition'),
-			posX = epx - $(img).offset().left,
+			$y = $(img).parent().siblings('.roscoBarEdition').find('.roscoYImageEdition');
+		if (epx == 0 && epy == 0) {
+			$x.val(0);
+			$y.val(0);
+			$cursor.hide();
+			return;
+		}
+		var posX = epx - $(img).offset().left,
 			posY = epy - $(img).offset().top,
 			wI = $(img).width() > 0 ? $(img).width() : 1,
 			hI = $(img).height() > 0 ? $(img).height() : 1,
@@ -339,6 +353,41 @@ var $exeDevice = {
 			'height': mData.h + 'px'
 		});
 	},
+	Encrypt: function (str) {
+		if (!str) str = "";
+		str = (str == "undefined" || str == "null") ? "" : str;
+		try {
+			var key = 146;
+			var pos = 0;
+			ostr = '';
+			while (pos < str.length) {
+				ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
+				pos += 1;
+			}
+			return escape(ostr);
+		} catch (ex) {
+			return '';
+		}
+	},
+
+	Decrypt: function (str) {
+		if (!str) str = "";
+		str = (str == "undefined" || str == "null") ? "" : str;
+		str = unescape(str)
+		try {
+			var key = 146;
+			var pos = 0;
+			ostr = '';
+			while (pos < str.length) {
+				ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
+				pos += 1;
+			}
+
+			return ostr;
+		} catch (ex) {
+			return '';
+		}
+	},
 	save: function () {
 		var dataGame = this.validateData();
 		if (!dataGame) {
@@ -353,25 +402,29 @@ var $exeDevice = {
 		dataGame.msgs = i18n;
 		var json = JSON.stringify(dataGame),
 			divContent = "";
+		json = $exeDevice.Encrypt(json);
 		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions">' + dataGame.instructions + '</div>';
 		var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame);
 		html = '<div class="rosco-IDevice">';
+		html += '<div class="rosco-version js-hidden">' + $exeDevice.roscoVersion + '</div>';
 		html += divContent;
 		html += '<div class="rosco-DataGame">' + json + '</div>';
 		html += linksImages;
 		html += '</div>';
 		// Get the optional text
 		var textAfter = tinymce.editors[1].getContent();
-		if (textAfter!="") {
-			html += '<div class="rosco-extra-content">'+textAfter+'</div>';            
+		if (textAfter != "") {
+			html += '<div class="rosco-extra-content">' + textAfter + '</div>';
 		}
-		
 		return html;
 	},
 	createlinksImage: function (wordsGame) {
 		var html = '';
 		for (var i = 0; i < wordsGame.length; i++) {
 			var linkImage = '<a href="' + wordsGame[i].url + '" class="js-hidden rosco-LinkImages">' + i + '</a>';
+			if (wordsGame[i].url.length == 0) {
+				linkImage = '<a href="#" class="js-hidden rosco-LinkImages">' + i + '</a>';
+			}
 			html += linkImage;
 		}
 		return html;
@@ -452,7 +505,7 @@ var $exeDevice = {
 		var rows = [];
 		for (var i = 0; i < this.letters.length; i++) {
 			var letter = this.letters.charAt(i),
-			 wordData  = this.getDataWord(letter);
+				wordData = this.getDataWord(letter);
 			rows.push(wordData);
 		}
 		return rows;
@@ -569,7 +622,7 @@ var $exeDevice = {
 			}
 			wordsGame.push(p);
 		}
-		var scorm=$exeAuthoring.iDevice.gamification.scorm.getValues();
+		var scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
 		var data = {
 			'typeGame': 'Rosco',
 			'instructions': instructions,
@@ -583,24 +636,24 @@ var $exeDevice = {
 			'wordsGame': wordsGame,
 			'isScorm': scorm.isScorm,
 			'textButtonScorm': scorm.textButtonScorm,
-			'repeatActivity':scorm.repeatActivity,
-			'letters':this.letters,
-			'textAfter':escape(textAfter)
+			'repeatActivity': scorm.repeatActivity,
+			'letters': this.letters,
+			'textAfter': escape(textAfter)
 		}
 		return data;
 	},
 	importGame: function (content) {
 		var game = $exeDevice.isJsonString(content);
-		if (!game || typeof game.typeGame=="undefined" ) {
+		if (!game || typeof game.typeGame == "undefined") {
 			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
-		}else if(game.typeGame!=='Rosco'){
+		} else if (game.typeGame !== 'Rosco') {
 			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
-        }
+		}
 		$exeDevice.updateFieldGame(game);
 		tinymce.editors[0].setContent(game.instructions);
-		var tAfter=game.textAfter|| '';
+		var tAfter = game.textAfter || '';
 		tinymce.editors[1].setContent(unescape(tAfter));
 		$('.exe-form-tabs li:first-child a').click();
 	},
@@ -650,7 +703,7 @@ var $exeDevice = {
 		$('#roscoDataWord .roscoWordEdition').on('focusout', function () {
 			var word = $(this).val().trim().toUpperCase(),
 				letter = $(this).siblings().filter(".roscoLetterEdition").text(),
-				color = $(this).val().trim() == "" ? $exeDevice.colors.grey: $exeDevice.colors.blue;
+				color = $(this).val().trim() == "" ? $exeDevice.colors.grey : $exeDevice.colors.blue;
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);
 			if (word.length > 0) {
 				var mType = $(this).parent().find('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
@@ -671,6 +724,9 @@ var $exeDevice = {
 		});
 		$('.roscoHomeImageEdition').on('click', function (e) {
 			$exeDevice.clickImage(this, e.pageX, e.pageY);
+		});
+		$('.roscoWordMutimediaEdition').on('dblclick', 'img.roscoHomeImageEdition', function () {
+			$exeDevice.clickImage(this, 0, 0);
 		});
 		$('#roscoDuration').on('keyup', function () {
 			var v = this.value;
@@ -730,9 +786,9 @@ var $exeDevice = {
 			return false;
 		}
 		var blob = JSON.stringify(dataGame),
-		 	newBlob = new Blob([blob], {
-			type: "text/plain"
-		});
+			newBlob = new Blob([blob], {
+				type: "text/plain"
+			});
 		if (window.navigator && window.navigator.msSaveOrOpenBlob) {
 			window.navigator.msSaveOrOpenBlob(newBlob);
 			return;

@@ -1,0 +1,1080 @@
+.selecciona-MainContainer a:link, .selecciona-MainContainer a:link, .selecciona-MainContainer a:visited, .selecciona-MainContainer a:focus {
+    text-decoration: none !important;
+    border: 0px;
+    outline: none;
+    border-width: 0px;
+    outline-width: 0px;
+    border-bottom: none;
+}
+
+.selecciona-LinkFullScreen, .selecciona-LinkVideoIntroShow {
+    width: 26px;
+    height: 26px;
+    margin-right: 5px;
+}
+
+.selecciona-GameContainer:-webkit-full-screen {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.selecciona-GameContainer:-moz-full-screen {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.selecciona-GameContainer:-ms-full-screen {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.selecciona-GameContainer:-o-full-screen {
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+
+.exeQuextIcons-Reload, .exeQuextIcons-Preview, .exeQuextIcons-PauseVideo, .exeQuextIcons-PlayVideo, .exeQuextIcons-FullScreenExit, .exeQuextIcons-FullScreen, .exeQuextIcons-Minimize {
+    -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
+    cursor: pointer;
+}
+
+.exeQuextIcons-Reload:hover, .exeQuextIcons-Preview:hover, .exeQuextIcons-PauseVideo:hover, .exeQuextIcons-PlayVideo:hover, .exeQuextIcons-Minimize:hover, .exeQuextIcons-FullScreenExit:hover, .exeQuextIcons-FullScreen:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.selecciona-MainContainer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sr-av {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    height: 0
+}
+
+.selecciona-GameContainer {
+    position: relative;
+    max-width: 750px;
+    width: 90%;
+    margin: 5px auto;
+    padding: 5px;
+}
+
+.selecciona-GameScoreBoard {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selecciona-GameScoreBoard p {
+    font-size: 1.1em;
+    width: 26px;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 3px;
+    font-weight: bold;
+}
+
+.selecciona-GameScores {
+    width: 250px;
+    margin: 0 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.selecciona-GameScores>p:last-child {
+    width: 50px;
+    text-align: left;
+    margin-left: 3px;
+}
+
+.selecciona-LifesGame {
+    width: 150%;
+    margin: 0 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selecciona-NumberLifesGame {
+    display: none;
+}
+
+.selecciona-TimeNumber {
+    width: 180px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.selecciona-TimeNumber .selecciona-PTime {
+    width: 50px;
+    margin-right: 3px;
+}
+
+.exeQuextIcons {
+    width: 26px;
+    height: 26px;
+    margin-right: 5px;
+    background-size: cover;
+}
+
+.exeQuextIcons-Minimize {
+    background: url(exequextmin.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Hit {
+    background: url(exequexthits.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-FullScreen {
+    background: url(exequextfull.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Error {
+    background: url(exequextrerrors.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Score {
+    background: url(exequextscore.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Time {
+    background: url(exequexttime.png);
+    background-size: cover;
+}
+
+.exeQuextIcons-Number {
+    background: url(exequextnumber.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Life {
+    background: url(exequextlive.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Preview {
+    background: url(exequextnumber.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-PauseVideo {
+    background: url(exequextpause.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-PlayVideo {
+    background: url(exequextplayvideo.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Reload {
+    background: url(exequextreload.png) no-repeat;
+    background-size: cover;
+}
+
+.exeQuextIcons-Video {
+    background: url(exequextvideo.png) no-repeat;
+    background-size: cover;
+}
+
+.selecciona-ShowClue {
+    width: 100%;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.selecciona-PShowClue {
+    font-size: 1em;
+    color: #5877c6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+}
+
+.selecciona-Multimedia {
+    width: 560px;
+    height: 315px;
+    margin: 5px auto;
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.selecciona-Images, .selecciona-Video, .selecciona-EText, .selecciona-Protector, .selecciona-GameOver {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.selecciona-EText {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.selecciona-Protector {
+    opacity: 0.00001;
+    z-index: 1000;
+    background-color: white;
+}
+
+.selecciona-GameOver {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10010;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.selecciona-DataImageGameOver {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selecciona-DataGame p {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.selecciona-HistGGame, .selecciona-LostGGame {
+    width: 45%;
+    height: 75%;
+    margin-right: 10px;
+}
+
+.selecciona-HistGGame {
+    display: none;
+}
+
+.selecciona-ProgressBar {
+    position: relative;
+    width: 560px;
+    height: 5px;
+    padding: 0;
+    background-color: black;
+    margin: 3px auto;
+    display: none;
+}
+
+.selecciona-InterBar {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background-color: #b3092f;
+    width: 0px;
+}
+
+.selecciona-AuthorLicence {
+    width: 100%;
+    height: 14px;
+    margin: 3px auto;
+}
+
+.selecciona-AuthorLicence p {
+    line-height: 100%;
+    width: 100%;
+    height: 100%;
+    font-size: 1em;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.selecciona-CodeAccessDiv {
+    width: 100%;
+    margin: 15px auto;
+}
+
+.selecciona-TextClueGGame {
+    width: 100%;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.selecciona-instructions {
+    width: 100%;
+    margin: 5px auto;
+}
+
+.selecciona-instructions p {
+    font-size: 1em;
+}
+
+.selecciona-MessageCodeAccessE {
+    width: 100%;
+    margin: 7px auto;
+    text-align: center;
+    font-size: 1em;
+    vertical-align: middle;
+}
+
+.selecciona-DataCodeAccessE {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selecciona-DataCodeAccessE label {
+    font-size: 0.9em;
+}
+
+.selecciona-CodeAccessE {
+    width: 50%;
+    height: 100%;
+    font-size: 1em;
+    text-align: center;
+    margin: 0 3px;
+}
+
+.exeQuextIcons-Submit {
+    background: url(exequextreply.png) no-repeat;
+    background-size: cover;
+    height: 26px;
+    width: 26px;
+}
+
+.selecciona-StartGame {
+    width: 100%;
+    margin: 15px auto;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.selecciona-QuestionDiv {
+    width: 100%;
+    margin: 5px auto;
+    display: none;
+}
+
+.selecciona-Question {
+    width: 95%;
+    min-height: 45px;
+    margin: 0 auto;
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 5px;
+    color: #071717;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center
+}
+
+.selecciona-DivReply {
+    margin: 5px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+}
+
+.selecciona-EdReply {
+    margin: 0 5px;
+    width: 50%;
+    max-width: 200px;
+    height: 30px;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 0;
+}
+
+.selecciona-OptionsDiv {
+    background-color: transparent;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.selecciona-Options {
+    min-height: 45px;
+    width: 48%;
+    margin: 3px;
+    background-color: transparent;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    color: #071707;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.selecciona-VideoIntroContainer {
+    width: 98%;
+    padding: 0;
+    display: flex;
+    margin: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    display: none;
+}
+
+.selecciona-VideoIntroDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    z-index: 20000;
+    overflow: hidden;
+}
+
+.selecciona-VideoIntroClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.selecciona-Cursor {
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 0;
+    position: absolute;
+    display: none;
+    z-index: 10000;
+}
+
+.selecciona-MainContainer a.selecciona-Option1 {
+    background-color: #f7c4c4;
+    border: 2px solid #b3092f;
+}
+
+.selecciona-MainContainer a.selecciona-Option1:hover {
+    background-color: #b3092f;
+}
+
+.selecciona-MainContainer a.selecciona-Option2 {
+    background-color: #d5dcec;
+    border: 2px solid #5877c6;
+}
+
+.selecciona-MainContainer a.selecciona-Option2:hover {
+    background-color: #5877c6;
+}
+
+.selecciona-MainContainer a.selecciona-Option3 {
+    background-color: #cce1c8;
+    border: 2px solid #00a300;
+}
+
+.selecciona-MainContainer a.selecciona-Option3:hover {
+    background-color: #00a300;
+}
+
+.selecciona-MainContainer a.selecciona-Option4 {
+    background-color: #f5efd6;
+    border: 2px solid #f3d55a;
+}
+
+.selecciona-MainContainer a.selecciona-Option4:hover {
+    background-color: #f3d55a;
+}
+
+.selecciona-ReloadContainer {
+    width: 98%;
+    padding: 0;
+    display: flex;
+    margin: 5px;
+    justify-content: flex-end;
+    align-items: center;
+    display: flex;
+}
+
+.selecciona-LinkReload, .selecciona-LinkPreview, .selecciona-LinkPauseVideo {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+}
+
+.selecciona-previewQuestions {
+    position: relative;
+    max-width: 750px;
+    background-color: transparent;
+    width: 90%;
+    margin: 5px auto;
+    min-width: 300px;
+    display: none;
+}
+
+.selecciona-previewQuestionsDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #ffffff;
+    background-color: #071717;
+    border-radius: 10px;
+    z-index: 20000;
+    display: none;
+}
+
+.selecciona-PreviewQuestionsTitle {
+    width: 95%;
+    margin: 8px auto;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.selecciona-previewQuestionsClose {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.selecciona-RepeatActivity {
+    padding: 0;
+    margin: 0;
+    font-size: 1em;
+}
+
+.selecciona-PointBar {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 5px;
+    background-color: #8697cb;
+    z-index: 900;
+}
+
+.selecciona-prevQuestP {
+    width: 95%;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 0.9em;
+}
+
+.selecciona-BottonContainerDiv {
+    width: 98%;
+    height: 26px;
+    padding: 0;
+    display: flex;
+    margin: 5px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.selecciona-BottonContainerDivEnd {
+    justify-content: flex-end;
+}
+
+.selecciona-GetScore input[type=button] {
+    font-size: 0.9em;
+    width: auto;
+}
+
+.selecciona-GetScore {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selecciona-GetScore p {
+    padding: 0;
+    margin: 0;
+}
+
+.selecciona-AnswersDiv {
+    width: 500px;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.selecciona-Answers {
+    width: 100px;
+    padding: 0;
+    display: flex;
+    margin: 5px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.selecciona-AnswersOptions {
+    height: 20px;
+    width: 20px;
+    margin: 5px 2px;
+    border-radius: 2px;
+}
+
+.selecciona-Answer1 {
+    background-color: #b3092f;
+    border: 2px solid #071707;
+    border-radius: 2px;
+}
+
+.selecciona-Answer2 {
+    background-color: #5877c6;
+    border: 2px solid #071707;
+    border-radius: 2px;
+}
+
+.selecciona-Answer3 {
+    background-color: #00a300;
+    border: 2px solid #071707;
+    border-radius: 2px;
+}
+
+.selecciona-Answer4 {
+    background-color: #f3d55a;
+    border: 2px solid #071707;
+    border-radius: 2px;
+}
+
+.selecciona-LinkMaximize {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selecciona-GameMinimize {
+    width: auto;
+    margin: 5px auto;
+    display: none;
+}
+
+.selecciona-IconMinimize {
+    width: 32px;
+    height: 32px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.selecciona-IconMinimize:hover {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.selecciona-NumerQuestion {
+    margin-right: 0px;
+}
+
+.selecciona-extra-content {
+    margin-top: 1.7em;
+}
+
+.selecciona-parpadea {
+    animation-name: quext-parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 5;
+    -webkit-animation-name: quext-parpadeo;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: 5;
+}
+
+@-moz-keyframes quext-parpadeo {
+    0% {
+        font-size: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes quext-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes quext-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .selecciona-Multimedia {
+        width: 470px;
+        height: 250px;
+    }
+    .selecciona-ProgressBar {
+        width: 470px;
+    }
+    .exeQuextIcons {
+        width: 20px;
+        height: 20px;
+        margin-right: 3px;
+    }
+    .selecciona-GameScoreBoard p {
+        width: 13px;
+        margin-right: 2px;
+    }
+    .selecciona-TimeNumber .selecciona-PTime {
+        width: 50px;
+        margin-right: 3px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .selecciona-GameScores>p:last-child {
+        width: 15px;
+        text-align: left;
+        margin-left: 3px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .selecciona-StartGame {
+        margin: 15px auto;
+    }
+    .selecciona-GameContainer {
+        font-size: 0.9em;
+    }
+    .selecciona-Multimedia {
+        width: 437px;
+        height: 246px;
+    }
+    .selecciona-ProgressBar {
+        width: 437px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .selecciona-GameContainer {
+        font-size: 0.9rem;
+    }
+    .selecciona-GameContainer input[type="text"] {
+        padding: 3px 2px;
+        display: inline-block;
+        box-sizing: border-box;
+        line-height: 18px;
+        font-size: 0.9em;
+        background: #fdfdfd;
+        border: 1px solid #828282;
+        border-radius: 4px;
+    }
+    .selecciona-GameContainer input[type="text"]:active, .selecciona-GameContainer input[type="text"]:focus {
+        background: #fdfdfd;
+        border: 1px solid #398ee7;
+        border-radius: 4px;
+    }
+    .selecciona-StartGame {
+        margin: 10px auto;
+    }
+    .selecciona-Multimedia {
+        width: 370px;
+        height: 207px;
+    }
+    .selecciona-TimeNumber {
+        width: 145px;
+        height: 100%;
+    }
+    .selecciona-ProgressBar {
+        width: 370px;
+    }
+    .selecciona-GameScoreBoard p {
+        width: 17px;
+        height: 17px;
+        line-height: 17px;
+        font-weight: normal;
+    }
+    .exeQuextIcons {
+        width: 17px;
+        height: 17px;
+        margin-right: 2px;
+    }
+    .selecciona-LifesGame {
+        display: none;
+    }
+    .selecciona-NumberLifesGame {
+        display: flex;
+        width: 52px;
+        justify-content: center;
+        align-items: center;
+    }
+    .selecciona-TimeNumber .selecciona-PTime {
+        width: 45px;
+        margin-right: 3px;
+    }
+    .selecciona-GameScores>p:last-child {
+        width: 30px;
+        margin-left: 3px;
+    }
+    .selecciona-Question {
+        min-height: 35px;
+        margin: 0 auto;
+        border-radius: 4px;
+    }
+    .selecciona-Options {
+        min-height: 35px;
+        width: 47%;
+        margin: 2px;
+        border-radius: 3px;
+    }
+    .selecciona-AuthorLicence {
+        height: 12px;
+        margin: 2px auto;
+    }
+    .selecciona-instructions {
+        margin: 2px auto;
+    }
+    .selecciona-instructions p {
+        margin: 0 auto;
+        font-size: 0.8em;
+    }
+    .selecciona-LinkMinimize, .selecciona-LinkFullScreen {
+        display: none;
+    }
+    .selecciona-GetScore {
+        margin: 1px auto;
+        padding: 0;
+    }
+    .selecciona-BottonContainer {
+        padding: 0;
+        margin: 1px;
+    }
+    .selecciona-HistGGame, .selecciona-LostGGame {
+        width: 30%;
+        height: 56%;
+        margin-right: 5px;
+    }
+    .selecciona-RepeatActivity, .selecciona-SendScore, .selecciona-GetScore input[type=button] {
+        font-size: 0.9em;
+    }
+    .exeQuextIcons-PlayVideo, .exeQuextIcons-Reload, .exeQuextIcons-Video, .exeQuextIcons-PauseVideo, .exeQuextIcons-Preview {
+        height: 20px;
+        width: 20px;
+    }
+    .selecciona-IconMinimize {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .selecciona-GameContainer {
+        font-size: 0.8rem;
+    }
+    .selecciona-StartGame {
+        margin: 15px auto;
+    }
+    .selecciona-Multimedia {
+        width: 269px;
+        height: 151px;
+    }
+    .selecciona-ProgressBar {
+        width: 269px;
+    }
+    .selecciona-CodeAccessDiv {
+        width: 100%;
+        margin: 3px auto;
+    }
+    .selecciona-MessageCodeAccessE {
+        width: 100%;
+        margin: 3px auto;
+    }
+    .selecciona-LinkFullScreen {
+        display: none;
+    }
+    .selecciona-RepeatActivity, .selecciona-SendScore, .selecciona-GetScore input[type=button] {
+        font-size: 0.8em;
+    }
+    .exeQuextIcons-PlayVideo, .exeQuextIcons-Reload, .exeQuextIcons-Video, .exeQuextIcons-PauseVideo, .exeQuextIcons-Preview {
+        height: 20px;
+        width: 20px;
+    }
+    .selecciona-Answers {
+        width: 100px;
+        padding: 0;
+        display: flex;
+        margin: 5px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .selecciona-AnswersOptions {
+        height: 15px;
+        width: 15px;
+        margin: 3px 2px;
+        border-radius: 2px;
+    }
+    .selecciona-IconMinimize {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width:370px) {
+    .selecciona-GameContainer {
+        font-size: 0.8rem;
+    }
+    .selecciona-GameScoreBoard p {
+        font-size: 0.9em;
+    }
+    .selecciona-GameScoreBoard p {
+        width: 12px;
+        line-height: 12px;
+        height: 12px;
+        margin-right: 1px;
+    }
+    .exeQuextIcons {
+        width: 12px;
+        height: 12px;
+        margin-right: 1px;
+    }
+    .selecciona-NumberLifesGame {
+        width: 28px;
+    }
+    .selecciona-TimeNumber .selecciona-PTime {
+        width: 32px;
+        margin-right: 2px;
+    }
+    .selecciona-GameScores>p:last-child {
+        width: 15px;
+        margin-left: 3px;
+    }
+    .selecciona-Multimedia {
+        width: 221px;
+        height: 134px;
+    }
+    .selecciona-ProgressBar {
+        width: 221px;
+    }
+    .selecciona-RepeatActivity, .selecciona-SendScore, .selecciona-GetScore input[type=button] {
+        font-size: 0.8em;
+    }
+    .exeQuextIcons-PlayVideo, .exeQuextIcons-Reload, .exeQuextIcons-Video, .exeQuextIcons-PauseVideo, .exeQuextIcons-Preview {
+        height: 20px;
+        width: 20px;
+    }
+    .selecciona-IconMinimize {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .selecciona-GameContainer {
+        font-size: 0.7rem;
+    }
+    .selecciona-Multimedia {
+        width: 180px;
+        height: 101px;
+    }
+    .selecciona-ProgressBar {
+        width: 224px;
+    }
+    .selecciona-LinkMinimize, .selecciona-LinkFullScreen, .exeQuextIcons-Time {
+        display: none;
+    }
+    .selecciona-RepeatActivity, .selecciona-SendScore, .selecciona-GetScore input[type=button] {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width:250px) {
+    .selecciona-GameContainer {
+        font-size: 0.6rem;
+    }
+    .selecciona-Multimedia {
+        width: 140px;
+        height: 76px;
+    }
+    .selecciona-ProgressBar {
+        width: 140px;
+    }
+    .selecciona-CodeAccessDiv {
+        width: 100%;
+        margin: 3px auto;
+    }
+    .selecciona-MessageCodeAccessE {
+        width: 100%;
+        margin: 3px auto;
+    }
+    .selecciona-RepeatActivity, .selecciona-SendScore, .selecciona-GetScore input[type=button] {
+        font-size: 0.6em;
+    }
+}

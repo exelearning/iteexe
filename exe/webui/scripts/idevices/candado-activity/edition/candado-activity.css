@@ -28,7 +28,7 @@
 
   input#candadoEErrorMessage {
     height: 18px;
-    widows: auto;
+    width: auto;
     flex: 1;
   }
 

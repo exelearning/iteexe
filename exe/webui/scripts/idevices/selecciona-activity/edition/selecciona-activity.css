@@ -1,0 +1,666 @@
+  #seleccionaIdeviceForm {
+    margin-top: 2em;
+  }
+
+  #seleccionaIdeviceForm input[type=text] {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOptionsGame input[type=text] {
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    border-radius:4px;
+    border:1px solid #071717;
+    height:24px;
+    padding: 2px;
+  }
+
+  #seleccionaIdeviceForm .seleccionaIdevice {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #000;
+  }
+
+  #seleccionaIdeviceForm label {
+    display: inline;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+  }
+
+  #seleccionaIdeviceForm label[for='seleccionaEShowSolution'] {
+    margin-right: .5em;
+  }
+
+  #seleccionaIdeviceForm input, #seleccionaIdeviceForm select {
+    font-size: 14px;
+  }
+
+  #seleccionaIdeviceForm legend {
+    font-weight: bold;
+    padding: 0 10px;
+    font-size: 14px
+  }
+
+  #seleccionaIdeviceForm input[type="radio"], #seleccionaIdeviceForm input[type="checkbox"] {
+    cursor: pointer;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EPanel {
+    position: relative;
+    width: 98%;
+    max-width: 900px;
+    margin: 10px auto;
+    border-radius: 7px;
+    background: #f7f7f7;
+    border: 1px solid #071717;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 10px;
+  }
+
+  .selecciona-NumberQuestion {
+    line-height: 24px;
+    height: 24px;
+    width: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOptionsMedia {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOptionsGame {
+    min-height: 300px;
+    width: 100%;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOptionsGame span {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+    color: #035175;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputType,  #seleccionaIdeviceForm .selecciona-EInputMedias, #seleccionaIdeviceForm .selecciona-EInputNumbers, #seleccionaIdeviceForm .selecciona-EInputVideo, #seleccionaIdeviceForm .selecciona-EInputOptionsVideo, #seleccionaIdeviceForm .selecciona-EInputTimes {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 5px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputType label,  #seleccionaIdeviceForm  .selecciona-EInputMedias label, #seleccionaIdeviceForm .selecciona-EInputNumbers label, #seleccionaIdeviceForm .selecciona-EInputVideo label, #seleccionaIdeviceForm .selecciona-EInputOptionsVideo label, #seleccionaIdeviceForm .selecciona-EInputTimes label, #seleccionaIdeviceForm .selecciona-EInputImage label {
+    display: inline;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputOptionsVideo input[type=text], #seleccionaIdeviceForm .selecciona-EInputOptionsImage input[type=text] {
+    width: 70px;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #071717;
+    margin: 5px;
+  }
+
+  #seleccionaIdeviceForm input:-moz-read-only {
+    /* For Firefox */
+    background-color: white;
+    border-width: 1px;
+  }
+
+  #seleccionaIdeviceForm input:read-only {
+    background-color: white;
+    border-width: 1px;
+  }
+
+  #seleccionaIdeviceForm input[type=button] {
+    height: 27px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputOptionsImage input[type=text], #seleccionaIdeviceForm .selecciona-EInputOptionsImage label {
+    margin: 0;
+    padding: 0;
+    display: none;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVideoTime {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputVideo input[type=text] {
+    width: 85%;
+    margin: 3px 0;
+  
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputVideo {
+    display: none;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputImage {
+    display: none;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EMultiMediaOption {
+    background: transparent;
+    height: 350px;
+    min-width: 400px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EMultimedia {
+    width: 400px;
+    height: 227px;
+    margin: auto auto;
+    margin-top: 60px;
+    position: relative;
+    background-color: #fff;
+    border-radius:8px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EContents{
+    background: transparent;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0;
+  }
+
+
+
+  #seleccionaIdeviceForm .selecciona-EAnswers {
+    background-color: transparent;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: transparent;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOptionDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 35px;
+    width: 49%;
+    margin: 3px 0;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EAnwersOptions {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 3px;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOption0 {
+    background-color: #ffffff;
+    border: 1px solid #ff0000;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOption1 {
+     background-color: #ffffff;
+    border: 1px solid #5877c6;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOption2 {
+    background-color: #ffffff;
+    border: 1px solid #2a9315;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EOption3 {
+    background-color: #ffffff;
+    border: 1px solid #f3d55a;
+  }
+
+  #seleccionaIdeviceForm .selecciona-ENavigationButtons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-ENavigationButton {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    margin: 0 5px;
+  }
+   #seleccionaIdeviceForm .selecciona-tEVideoIntroPlay {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    margin:0;
+  }
+
+  #seleccionaIdeviceForm .seleccionaWordMutimediaEdition a:focus, #seleccionaIdeviceForm .seleccionaWordMutimediaEdition a:link, #seleccionaIdeviceForm .seleccionaWordMutimediaEdition a:visited, #seleccionaIdeviceForm .seleccionaWordMutimediaEdition a:active {
+    outline: 0;
+    border: none;
+  }
+
+  #seleccionaIdeviceForm #seleccionaNumerLives {
+    width: 30px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EButtonImage {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    margin: 0 3px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EButtonImage:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  #seleccionaIdeviceForm .selecciona-Protector {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: .0001;
+    z-index: 100000;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EText {
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #cccccc;
+    
+  }
+
+  #seleccionaIdeviceForm #seleccionaEText {
+    display: none;
+  }
+
+  #seleccionaIdeviceForm .selecciona-ECover, #seleccionaIdeviceForm .selecciona-EImage, #seleccionaIdeviceForm .selecciona-ENoImage, #seleccionaIdeviceForm .selecciona-EVideo, #seleccionaIdeviceForm .selecciona-ENoImageVideo, #seleccionaIdeviceForm .selecciona-ENoVideo {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius:8px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-ECursor {
+    position: absolute;
+    left: 0;
+    top: 0
+  }
+
+  #seleccionaIdeviceForm input[type=number] {
+    width: 40px;
+  }
+
+  #seleccionaIdeviceForm fieldset input {
+    margin: 5px;
+  }
+
+  /* To review */
+
+  #seleccionaIdeviceForm .exe-block-info img {
+    vertical-align: middle;
+    margin-left: .2em
+  }
+
+  #seleccionaIdeviceFormTab3 * {
+    font-size: 0.9em;
+  }
+
+  #seleccionaIdeviceFormTab3 p:first-child {
+    margin-top: 0
+  }
+
+  #seleccionaIdeviceFormTab3 {
+    overflow: auto
+  }
+
+  #seleccionaIdeviceFormTab3 .ci18n {
+    width: 50%;
+    float: left
+  }
+
+  #seleccionaIdeviceForm .selecciona-EAuthorAlt {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    color: #007ab3;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputAuthor input[type=text], #seleccionaIdeviceForm .selecciona-EInputAlt input[type=text] {
+    width: 90%;
+    margin-left: 0;
+    display: block;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputAuthor {
+    width: 48%;
+    margin-right: 5px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputAlt {
+    width: 48%;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputAuthor label, #seleccionaIdeviceForm .selecciona-EInputAlt label {
+    color: #035175;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputImage input[type=text] {
+    width: 50%;
+    margin-left: 0;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVIDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    border-radius: 10px;
+    z-index: 20000;
+    display: none;
+  }
+
+  #seleccionaIdeviceForm .selecciona-ENumQuestionDiv {
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    z-index: 20000;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+  }
+
+  #seleccionaIdeviceForm .selecciona-ENumQ {
+    width: 24px;
+    height: 24px;
+    margin-right: 0px;
+    background: url(slcNumber.png);
+  }
+
+  #seleccionaIdeviceForm .selecciona-ENumQuestions {
+    width: 35px;
+    height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVIV {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EMVI {
+    position: relative;
+    width: 560px;
+    height: 315px;
+    margin: 70px auto;
+    background-color: transparent;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVI, #seleccionaIdeviceForm .selecciona-ENoVI {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVIOptions {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+    position: absolute;
+    flex-wrap: wrap;
+    left: 7px;
+    bottom: 5px;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVIOptions * {
+    margin-left: 5px;
+  }
+
+  #seleccionaIdeviceForm #seleccionaEVIStart, #seleccionaIdeviceForm #seleccionaEVIEnd {
+    width: 80px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVideoIntroDiv {
+    width: 100%;
+    height: 100%;
+    width: 98%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: red;
+    border-radius: 10px;
+    z-index: 20000;
+  }
+
+  .selecciona-EVIClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+
+
+  #seleccionaIdeviceForm .selecciona-EQuestionDiv{
+    width: 97%;
+    height: 39px;
+    margin: 10px auto;
+    padding: 0 3px;
+    background: transparent;
+  }
+ #seleccionaIdeviceForm .selecciona-ESolutionSelect{
+    width: 97%;
+    height: 20px;
+    margin: 10px auto;
+    padding: 0 3px;
+    background: transparent;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+  #seleccionaIdeviceForm .selecciona-ESolutionSelect p{
+    margin-right: 3px;
+    font-weight: bolder;
+  }
+
+
+
+  #seleccionaIdeviceForm #seleccionaEQuestion {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #071717;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #seleccionaIdeviceForm #seleccionaEScoreQuestion, #seleccionaIdeviceForm label[for=seleccionaEScoreQuestion]{
+    display: none;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EVideoIntroData{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width:100%;
+  }
+  #seleccionaIdeviceForm input#seleccionaEVideoIntro {
+    width:50%;
+  }
+
+  #seleccionaIdeviceForm .selecciona-EInputOptionsVideo, #seleccionaIdeviceForm .selecciona-ETitleImage, #seleccionaIdeviceForm .selecciona-ETitleVideo, #seleccionaIdeviceForm .selecciona-EInputVideo, #seleccionaIdeviceForm .selecciona-EAuthorAlt {
+    display: none;
+  }
+
+  @media screen and (max-width:720px) {
+    #seleccionaIdeviceForm #seleccionaIdeviceFormTab3 .ci18n {
+      width: 100%;
+      float: none
+    }
+  }
+
+  #seleccionaIdeviceForm #seleccionaIdeviceFormTab3 label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: .2em;
+    font-size: 0.9em
+  }
+
+  #seleccionaIdeviceForm #seleccionaIdeviceFormTab3 input {
+    width: 300px;
+    font-size: 0.9em
+  }
+
+  /* Tabs (this should be common) */
+
+  .exe-form-tabs {
+    margin: 0 0 1.5em 0;
+    padding: 0;
+    list-style: none
+  }
+
+  #main .exe-form-tabs li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none;
+    display: inline
+  }
+
+  .exe-form-tabs li:first-child a {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px
+  }
+
+  .exe-form-tabs li:last-child a {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px
+  }
+
+  .exe-form-tabs a {
+    display: inline-block;
+    padding: .5em 1em;
+    border: 1px solid #CCC;
+    background: #F9F9F9;
+    color: #666
+  }
+
+  .exe-form-tabs li:not(:last-child) a {
+    border-right: none;
+  }
+
+  .exe-form-tabs .exe-form-active-tab {
+    color: #000;
+    background: #FFF;
+    font-weight: 500
+  }
+
+  #seleccionaSCORMoptions {
+    visibility: hidden;
+    margin-left: 1.5em
+  }
+
+  label[for=seleccionaActivitySCORM] {
+    font-weight: bold
+  }
+
+  #seleccionaSCORMinstructionsButton {
+    display: none;
+    color: #777;
+    margin: 10px 0 0 25px
+  }
+
+  #seleccionaSCORMinstructionsButton ul {
+    margin: 1.5em 0 .7em 0;
+    padding: 0;
+    list-style: none
+  }
+
+  #seleccionaSCORMinstructionsButton ul li {
+    margin: 0 0 .5em 0;
+    padding: 0;
+    list-style-image: none
+  }
+
+  #seleccionaSCORMinstructionsAuto {
+    display: none;
+    color: #777;
+    margin: 10px 0 0 25px
+  }
+
+  #seleccionaSCORMinstructionsAuto ul {
+    margin: 1.5em 0 .7em 0;
+    padding: 0;
+    list-style: none
+  }

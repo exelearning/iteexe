@@ -21,11 +21,16 @@ var $exeDevice = {
     playerIntro: '',
     timeUpdateInterval: '',
     timeUpdateVIInterval: '',
-    timeVideoFocus: true,
+    timeVideoFocus: 0,
     timeVIFocus: true,
     typeEdit: -1,
     numberCutCuestion: -1,
     clipBoard: '',
+    activeSilent: false,
+    silentVideo: 0,
+    tSilentVideo: 0,
+    endSilent: 0,
+    quextVersion: 1,
     ci18n: {
         "msgReady": _("Ready?"),
         "msgStartGame": _("Click here to start"),
@@ -87,7 +92,7 @@ var $exeDevice = {
     },
 
     init: function () {
-        this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;","%"); // Avoid invalid HTML
+        this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
         this.setMessagesInfo();
         this.createForm();
     },
@@ -112,10 +117,12 @@ var $exeDevice = {
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
+        msgs.msgSilentPoint = _("El valor del punto de inicio del silencio debe ser mayor que el punto de inicio del vídeo y menor que el fin del mismo");
+        msgs.msgTimeFormat=_("Los tiempos deben tener el siguiente formato: hh:mm:ss");
+
 
     },
     loadYoutubeApi: function () {
-
         onYouTubeIframeAPIReady = $exeDevice.youTubeReady;
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -157,6 +164,7 @@ var $exeDevice = {
             if (typeof $exeDevice.player.getCurrentTime === "function") {
                 var time = $exeDevice.secondsToHour($exeDevice.player.getCurrentTime());
                 $('#quextEVideoTime').text(time);
+                $exeDevice.updateSoundVideo();
             }
         }
         //$('#duration').text(formatTime( player.getDuration() ));
@@ -170,11 +178,24 @@ var $exeDevice = {
         }
         //$('#duration').text(formatTime( player.getDuration() ));
     },
+
+    updateSoundVideo: function () {
+        if ($exeDevice.activeSilent) {
+            if ($exeDevice.player && typeof $exeDevice.player.getCurrentTime === "function") {
+                var time = Math.round($exeDevice.player.getCurrentTime());
+                if (time == $exeDevice.silentVideo) {
+                    $exeDevice.player.mute();
+                } else if (time == $exeDevice.endSilent) {
+                    $exeDevice.player.unMute();
+                }
+            }
+        }
+    },
     updateProgressBar: function () {
         $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
     },
     onPlayerError: function (event) {
-        //$exeDevice.showMessage("El video seleccionado no está disponible")
+        //$exeDevice.showMessage("El video  no está disponible")
 
     },
     startVideo: function (id, start, end) {
@@ -258,7 +279,7 @@ var $exeDevice = {
         if ($exeDevice.validateQuestion() != false) {
             $exeDevice.clearQuestion();
             $exeDevice.questionsGame.push($exeDevice.getCuestionDefault());
-            $exeDevice.active=$exeDevice.questionsGame.length-1;
+            $exeDevice.active = $exeDevice.questionsGame.length - 1;
             $('#quextNumberQuestion').text($exeDevice.questionsGame.length);
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
@@ -386,6 +407,12 @@ var $exeDevice = {
             $('#quextEURLYoutube').val(p.url);
             $('#quextEInitVideo').val($exeDevice.secondsToHour(p.iVideo));
             $('#quextEEndVideo').val($exeDevice.secondsToHour(p.fVideo));
+            $('#quextESilenceVideo').val($exeDevice.secondsToHour(p.silentVideo));
+            $('#quextETimeSilence').val(p.tSilentVideo);
+            $exeDevice.silentVideo = p.silentVideo;
+            $exeDevice.tSilentVideo = p.tSilentVideo;
+            $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
+            $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
             $exeDevice.showVideoQuestion();
         } else if (p.type == 3) {
             tinyMCE.get('quextEText').setContent(unescape(p.eText));
@@ -395,6 +422,10 @@ var $exeDevice = {
             $(this).val(option);
         });
         $('#quextNumberQuestion').text(i + 1);
+        $('#quextEScoreQuestion').val(1);
+        if (typeof (p.customScore) != "undefined") {
+            $('#quextEScoreQuestion').val(p.customScore);
+        }
         $("input.quext-Number[name='qxnumber'][value='" + p.numberOptions + "']").prop("checked", true)
         $("input.quext-Type[name='qxtype'][value='" + p.type + "']").prop("checked", true);
         $("input.quext-ESolution[name='qxsolution'][value='" + p.solution + "']").prop("checked", true);
@@ -432,6 +463,10 @@ var $exeDevice = {
             fVideo = $exeDevice.hourToSeconds($('#quextEEndVideo').val()),
             url = $('#quextEURLYoutube').val().trim(),
             id = $exeDevice.getIDYoutube(url);
+        $exeDevice.silentVideo = $exeDevice.hourToSeconds($('#quextESilenceVideo').val().trim());
+        $exeDevice.tSilentVideo = parseInt($('#quextETimeSilence').val());
+        $exeDevice.activeSilent = (soundVideo == 1) && ($exeDevice.tSilentVideo > 0) && ($exeDevice.silentVideo >= iVideo) && (iVideo < fVideo);
+        $exeDevice.endSilent = $exeDevice.silentVideo + $exeDevice.tSilentVideo;
         if (fVideo <= iVideo) fVideo = 36000;
         $('#quextENoImageVideo').hide();
         $('#quextENoVideo').show();
@@ -566,7 +601,6 @@ var $exeDevice = {
         if (tinyMCE.get('quextEText')) {
             tinyMCE.get('quextEText').hide();
         }
-
         $('#quextEText').hide();
         $('#quextEVideo').hide();
         $('#quextEImage').hide();
@@ -654,6 +688,9 @@ var $exeDevice = {
                                 <label for="quextEVideoIntro">' + _("Video Intro") + '<input type="text" id="quextEVideoIntro" /></label>\
                                 <a href="#" id="quextEVideoIntroPlay" class="quext-tEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
                             </div>\
+                            <p>\
+                                <label for="quextECustomScore"><input type="checkbox" id="quextECustomScore">' + _("Puntuación personalizada") + '. </label>\
+                            </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -664,7 +701,7 @@ var $exeDevice = {
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="quext-EInputMedias">\
                                         <input class="quext-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="quext-MediaNormal">' + _("None") + '</label>\
+                                        <label for="quext-MediaNormal">' + _("Ninguno") + '</label>\
                                         <input class="quext-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
                                         <label for="mediaImagen">' + _("Image") + '</label>\
                                         <input class="quext-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
@@ -718,10 +755,16 @@ var $exeDevice = {
                                     <div class="quext-EInputOptionsVideo" id="quextEInputOptionsVideo">\
                                         <div>\
                                             <label for="quextEInitVideo">' + _("Start") + ':</label>\
-                                            <input id="quextEInitVideo" type="text" value="00:00:00" readonly />\
+                                            <input id="quextEInitVideo" type="text" value="00:00:00"  maxlength="8"  />\
                                             <label for="quextEEndVideo">' + _("End") + ':</label>\
-                                            <input id="quextEEndVideo" type="text" value="00:00:00" readonly />\
+                                            <input id="quextEEndVideo" type="text" value="00:00:00"  maxlength="8" />\
                                             <button class="quext-EVideoTime" id="quextEVideoTime" type="button">00:00:00</button>\
+                                        </div>\
+                                        <div>\
+                                            <label for="quextESilenceVideo">' + _("Silence") + ':</label>\
+                                            <input id="quextESilenceVideo" type="text" value="00:00:00"  required="required"  maxlength="8" />\
+                                            <label for="quextETimeSilence">' + _("Time (s)") + ':</label>\
+                                            <input type="number" name="quextETimeSilence" id="quextETimeSilence" value="0" min="0" max="120" /> \
                                         </div>\
                                         <div>\
                                             <label for="quextECheckSoundVideo">' + _("Audio") + ':</label>\
@@ -736,10 +779,11 @@ var $exeDevice = {
                                             <input id="quextEAuthor" type="text" />\
                                         </div>\
                                         <div class="quext-EInputAlt" id="quextInputAlt">\
-                                            <label for="quextEAlt">' + _("Alternative text") + '</label>\
+                                            <label for="quextEAlt">' + _("texto alternativo") + '</label>\
                                             <input id="quextEAlt" type="text" />\
                                         </div>\
                                     </div>\
+                                    <div class="quext-ESolutionQuExt"> <label for="quextEScoreQuestion">' + _("Score") + ':<input type="number" name="quextEScoreQuestion" id="quextEScoreQuestion" value="1" min="0"  max="100" step="0.05"/></label></div>\
                                 </div>\
                                 <div class="quext-EMultiMediaOption">\
                                     <div class="quext-EMultimedia" id="quextEMultimedia">\
@@ -813,7 +857,7 @@ var $exeDevice = {
                             </div>\
                         </div>\
                     </fieldset>\
-                    '+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
+                    ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
                 </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
@@ -888,7 +932,13 @@ var $exeDevice = {
         p.options.push('');
         p.options.push('');
         p.solution = 0;
+        p.silentVideo = 0;
+        p.tSilentVideo = 0;
         return p;
+    },
+    validTime: function (time) {
+        var reg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/;
+        return (time.length == 8 && reg.test(time))
     },
     loadPreviousValues: function (field) {
 
@@ -897,11 +947,18 @@ var $exeDevice = {
             $exeDevice.active = 0;
             var wrapper = $("<div></div>");
             wrapper.html(originalHTML);
-            var json = $('.quext-DataGame', wrapper).text();
+            var json = $('.quext-DataGame', wrapper).text(),
+                version = $('.quext-version', wrapper).text();
+            if (version.length == 1) {
+                json = $exeDevice.Decrypt(json);
+            }
             var dataGame = $exeDevice.isJsonString(json),
                 $imagesLink = $('.quext-LinkImages', wrapper);
             $imagesLink.each(function (index) {
                 dataGame.questionsGame[index].url = $(this).attr('href');
+                if (dataGame.questionsGame[index].url.length < 10) {
+                    dataGame.questionsGame[index].url = "";
+                }
             });
             $exeDevice.active = 0;
             for (var i = 0; i < dataGame.questionsGame.length; i++) {
@@ -914,8 +971,8 @@ var $exeDevice = {
             if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
             // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
-                         // Text after
-            var textAfter = $(".quext-extra-content",wrapper);
+            // Text after
+            var textAfter = $(".quext-extra-content", wrapper);
             if (textAfter.length == 1) tinyMCE.get('eXeIdeviceTextAfter').setContent(textAfter.html());
 
             $exeDevice.updateFieldGame(dataGame);
@@ -932,13 +989,18 @@ var $exeDevice = {
         $('#quextEUseLives').prop('checked', game.useLives);
         $('#quextENumberLives').val(game.numberLives);
         $('#quextEVideoIntro').val(game.idVideo);
-        $('#quextShowSolutions').prop('checked', game.showSolution);
-        $('#quextTimeShowSolutions').val(game.timeShowSolution)
+        $('#quextEShowSolution').prop('checked', game.showSolution);
+        $('#quextETimeShowSolution').val(game.timeShowSolution)
         $('#quextETimeShowSolution').prop('disabled', !game.showSolution);
         $('#quextENumberLives').prop('disabled', !game.useLives);
         $('#quextEVIURL').val(game.idVideo);
         $('#quextEVIEnd').val($exeDevice.secondsToHour(game.endVideo));
         $('#quextEVIStart').val($exeDevice.secondsToHour(game.startVideo));
+        $('#quextECustomScore').prop('checked', game.customScore);
+        $('label[for=quextEScoreQuestion], input#quextEScoreQuestion').hide();
+        if (game.customScore) {
+            $('label[for=quextEScoreQuestion], input#quextEScoreQuestion').show();
+        }
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showQuestion($exeDevice.active);
 
@@ -989,16 +1051,53 @@ var $exeDevice = {
         var linksImages = $exeDevice.createlinksImage(dataGame.questionsGame);
         var html = '<div class="quext-IDevice">';
         html += divContent;
-        html += '<div class="quext-DataGame">' + json + '</div>';
+        html += '<div class="quext-version js-hidden">' + $exeDevice.quextVersion + '</div>';
+        html += '<div class="quext-DataGame">' + $exeDevice.Encrypt(json) + '</div>';
         html += linksImages;
         html += '</div>';
 
         // Get the optional text
         var textAfter = tinymce.editors[2].getContent();
-        if (textAfter!="") {
-			html += '<div class="quext-extra-content">'+textAfter+'</div>';
+        if (textAfter != "") {
+            html += '<div class="quext-extra-content">' + textAfter + '</div>';
         }
         return html;
+    },
+    Encrypt: function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
+                pos += 1;
+            }
+
+            return escape(ostr);
+        } catch (ex) {
+            return '';
+        }
+    },
+
+    Decrypt: function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        str = unescape(str)
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
+                pos += 1;
+            }
+
+            return ostr;
+        } catch (ex) {
+            return '';
+        }
     },
     validateQuestion: function () {
         var message = '',
@@ -1011,9 +1110,9 @@ var $exeDevice = {
         p.y = parseFloat($('#quextEYImage').val());;
         p.author = $('#quextEAuthor').val();
         p.alt = $('#quextEAlt').val();
-        if (p.type == 1) {
-            p.url = $('#quextEURLImage').val().trim();
-        } else if (p.type == 2) {
+        p.customScore = parseFloat($('#quextEScoreQuestion').val());
+        p.url = $('#quextEURLImage').val().trim();
+        if (p.type == 2) {
             p.url = $exeDevice.getIDYoutube($('#quextEURLYoutube').val().trim()) ? $('#quextEURLYoutube').val() : '';
 
         }
@@ -1021,6 +1120,8 @@ var $exeDevice = {
         p.imageVideo = $('#quextECheckImageVideo').is(':checked') ? 1 : 0;
         p.iVideo = $exeDevice.hourToSeconds($('#quextEInitVideo').val().trim());
         p.fVideo = $exeDevice.hourToSeconds($('#quextEEndVideo').val().trim());
+        p.silentVideo = $exeDevice.hourToSeconds($('#quextESilenceVideo').val().trim());
+        p.tSilentVideo = parseInt($('#quextETimeSilence').val());
         p.eText = tinyMCE.get('quextEText').getContent();
         p.quextion = $('#quextEQuestion').val().trim();
         p.options = [];
@@ -1033,6 +1134,7 @@ var $exeDevice = {
             }
             p.options.push(option);
         });
+
         if (p.quextion.length == 0) {
             message = msgs.msgECompleteQuestion;
         } else if (optionEmpy) {
@@ -1047,8 +1149,13 @@ var $exeDevice = {
             message = msgs.msgEStartEndIncorrect;
         } else if (p.type == 3 && p.eText.length == 0) {
             message = msgs.msgWriteText;
+        } else if (p.type == 2 && !$exeDevice.validTime($('#quextEInitVideo').val()) || !$exeDevice.validTime($('#quextEEndVideo').val())) {
+            message = $exeDevice.msgs.msgTimeFormat
+        }else if (p.type == 2 && p.tSilentVideo > 0 && !$exeDevice.validTime($('#quextESilenceVideo').val())) {
+            message = msgs.msgTimeFormat;
+        }else if (p.type == 2 && p.tSilentVideo > 0  && (p.silentVideo < p.iVideo || p.silentVideo >= p.fVideo)) {
+            message = msgs.msgSilentPoint;
         }
-
         if (message.length == 0) {
             $exeDevice.questionsGame[$exeDevice.active] = p;
             message = true;
@@ -1059,12 +1166,18 @@ var $exeDevice = {
         return message;
 
     },
+
     createlinksImage: function (questionsGame) {
         var html = '';
         for (var i = 0; i < questionsGame.length; i++) {
             var linkImage = '<a href="' + questionsGame[i].url + '" class="js-hidden quext-LinkImages">' + i + '</a>';
+
+            if (questionsGame[i].url.length < 10) {
+                linkImage = '<a href="#" class="js-hidden quext-LinkImages">' + i + '</a>';
+            }
             html += linkImage;
         }
+
         return html;
     },
     exportGame: function () {
@@ -1142,7 +1255,8 @@ var $exeDevice = {
             idVideo = $('#quextEVideoIntro').val(),
             endVideo = $exeDevice.hourToSeconds($('#quextEVIEnd').val()),
             startVideo = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
-            itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
+            itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
+            customScore = $('#quextECustomScore').is(':checked');
         if (!itinerary) return false;
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
@@ -1151,6 +1265,7 @@ var $exeDevice = {
         var questionsGame = $exeDevice.questionsGame;
         for (var i = 0; i < questionsGame.length; i++) {
             mquestion = questionsGame[i]
+            mquestion.customScore = typeof (mquestion.customScore) == "undefined" ? 1 : mquestion.customScore;
             if (mquestion.quextion.length == 0) {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteQuestion);
                 return false;
@@ -1212,7 +1327,8 @@ var $exeDevice = {
             'textButtonScorm': scorm.textButtonScorm,
             'repeatActivity': scorm.repeatActivity,
             'title': '',
-            'textAfter':textAfter
+            'customScore': customScore,
+            'textAfter': textAfter
         }
         return data;
     },
@@ -1227,9 +1343,20 @@ var $exeDevice = {
             var marcado = $(this).is(':checked');
             $('#quextENumberLives').prop('disabled', !marcado);
         });
-        $('#quextShowSolutions').on('change', function () {
-            var marcado = $(this).is(':checked');
-            $('#quextTimeShowSolutions').prop('disabled', !marcado);
+        $('#quextEInitVideo, #quextEEndVideo, #quextESilenceVideo').on('focusout', function () {
+            if (!$exeDevice.validTime(this.value)) {
+                $(this).css({
+                    'background-color': 'red',
+                    'color': 'white'
+                });
+            }
+        });
+        $('#quextEInitVideo, #quextEEndVideo, #quextESilenceVideo').on('click', function () {
+            $(this).css({
+                'background-color': 'white',
+                'color': '#2c6d2c'
+            });
+
         });
 
         $('#quextShowCodeAccess').on('change', function () {
@@ -1294,7 +1421,11 @@ var $exeDevice = {
         $('#quextECheckImageVideo').on('change', function () {
             $exeDevice.showVideoQuestion();
         });
-
+        $('#quextIdeviceForm').on('dblclick', '#quextEImage', function () {
+            $('#quextECursor').hide();
+            $('#quextEXImage').val(0);
+            $('#quextEYImage').val(0);
+        });
 
         $('#quextENumberLives').on('keyup', function () {
             var v = this.value;
@@ -1312,6 +1443,12 @@ var $exeDevice = {
             v = v.replace(/\D/g, '');
             v = v.substring(0, 1);
             this.value = v;
+        });
+
+        $('#quextEScoreQuestion').on('focusout', function () {
+            if (!$exeDevice.validateScoreQuestion($(this).val())) {
+                $(this).val(1);
+            }
         });
         $('#quextETimeShowSolution').on('focusout', function () {
             this.value = this.value.trim() == '' ? 3 : this.value;
@@ -1343,20 +1480,49 @@ var $exeDevice = {
         $('#quextEInitVideo').css('color', '#2c6d2c');
         $('#quextEInitVideo').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.timeVideoFocus = true;
+            $exeDevice.timeVideoFocus = 0;
             $('#quextEInitVideo').css('color', '#2c6d2c');
             $('#quextEEndVideo').css('color', '#000000');
+            $('#quextESilenceVideo').css('color', '#000000');
         });
         $('#quextEEndVideo').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.timeVideoFocus = false;
+            $exeDevice.timeVideoFocus = 1;
             $('#quextEEndVideo').css('color', '#2c6d2c');
             $('#quextEInitVideo').css('color', '#000000');
+            $('#quextESilenceVideo').css('color', '#000000');
+        });
+        $('#quextESilenceVideo').on('click', function (e) {
+            e.preventDefault();
+            $exeDevice.timeVideoFocus = 2;
+            $('#quextESilenceVideo').css('color', '#2c6d2c');
+            $('#quextEEndVideo').css('color', '#000000');
+            $('#quextEInitVideo').css('color', '#000000');
+        });
+        $('#quextETimeSilence').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 1);
+            this.value = v;
         });
         $('#quextEVideoTime').on('click', function (e) {
             e.preventDefault();
-            var $timeV = $exeDevice.timeVideoFocus ? $('#quextEInitVideo') : $('#quextEEndVideo');
+            var $timeV = '';
+            switch ($exeDevice.timeVideoFocus) {
+                case 0:
+                    $timeV = $('#quextEInitVideo');
+                    break;
+                case 1:
+                    $timeV = $('#quextEEndVideo');
+                    break;
+                case 2:
+                    $timeV = $('#quextESilenceVideo');
+                    break;
+                default:
+                    break;
+            }
             $timeV.val($('#quextEVideoTime').text());
+            $timeV.css({'background-color':'white','color':'#2c6d2c'});
         });
         $('#quextEVIStart').css('color', '#2c6d2c');
         $('#quextEVIStart').on('click', function (e) {
@@ -1380,9 +1546,16 @@ var $exeDevice = {
             var marcado = $(this).is(':checked');
             $('#quextNumberLives').prop('disabled', !marcado);
         });
-        $('#quextShowSolution').on('change', function () {
+        $('#quextEShowSolution').on('change', function () {
             var marcado = $(this).is(':checked');
-            $('#quextTimeShowSolution').prop('disabled', !marcado);
+            $('#quextETimeShowSolution').prop('disabled', !marcado);
+        });
+        $('#quextECustomScore').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('label[for=quextEScoreQuestion], input#quextEScoreQuestion').hide();
+            if (marcado) {
+                $('label[for=quextEScoreQuestion], input#quextEScoreQuestion').show();
+            }
         });
         $('#quextEURLImage').on('change', function () {
             var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'],
@@ -1403,10 +1576,8 @@ var $exeDevice = {
         });
         $('#quextEVideoIntroPlay').on('click', function (e) {
             e.preventDefault();
-            console.log('video', $('#quextEVIURL').val());
             var idv = $exeDevice.getIDYoutube($('#quextEVideoIntro').val());
             if (idv) {
-                console.log('inicio video', $('#quextEVIStart').val());
                 var iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
                 $('#quextEVIURL').val($('#quextEVideoIntro').val());
@@ -1498,5 +1669,9 @@ var $exeDevice = {
             'width': mData.w + 'px',
             'height': mData.h + 'px'
         });
+    },
+    validateScoreQuestion: function (text) {
+        var isValid = text.length > 0 && text !== '.' && text !== ',' && /^-?\d*[.,]?\d*$/.test(text);
+        return isValid;
     },
 }

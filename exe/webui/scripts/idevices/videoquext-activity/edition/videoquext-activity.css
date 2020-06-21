@@ -32,8 +32,7 @@
     padding: 0;
     background-color: black;
     display: none;
-    
-  
+
 }
 #vquextIdeviceForm .vquext-EPointBar, #vquextIdeviceForm .vquext-EPointStart, #vquextIdeviceForm .vquext-EPointEnd{
     position: absolute;
@@ -130,7 +129,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 5px 0;
+    margin: 5px 0;
   }
 
   #vquextIdeviceForm .vquext-EPointDiv label, #vquextIdeviceForm .vquext-EInputNumbers label,  #vquextIdeviceForm .vquext-EInputOptionsVideo label, #vquextIdeviceForm .vquext-EInputTimes label {
@@ -247,6 +246,27 @@
     text-align: center;
   }
 
+  #vquextIdeviceForm .vquext-SolutionWordDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 98%;
+    margin: 10px auto;
+  }
+
+#vquextIdeviceForm .vquext-ESolutionWord {
+    width: 100%;
+    height: 30px;
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 3px;
+    font-size: 13px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #5877c6;
+  }
+
   #vquextIdeviceForm .vquext-EOption0 {
     background-color: #ffffff;
     border: 1px solid #ff0000;
@@ -274,7 +294,12 @@
     align-items: center;
     margin-top: 15px;
   }
-
+  .vquext-Time{
+    width: 100px;
+    height: 24px;
+    border: 1px solid black;
+    border-radius: 3px;
+  }
   #vquextIdeviceForm .vquext-ENavigationButton {
     width: 24px;
     height: 24px;
@@ -490,6 +515,8 @@
     text-align: center;
     font-size: 13px;
     font-weight: bold;
+    border:1px solid #071715;
+    border-radius: 4px;
   }
 
 

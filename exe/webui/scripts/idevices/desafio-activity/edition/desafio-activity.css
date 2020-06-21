@@ -7,6 +7,9 @@
     margin-bottom: 0;
   }
 
+  #desafioIdeviceForm #desafioEChallenges{
+    display:none;
+  }
   #desafioIdeviceForm .desafio-EOptionsGame input[type=text] {
     font-size: 13px;
     margin-top: 0;
@@ -28,7 +31,6 @@
     display: inline;
     font-weight: bold;
     font-size: 14px;
-
   }
 
   #desafioIdeviceForm label[for='desafioEShowSolution'] {
@@ -48,7 +50,6 @@
   #desafioIdeviceForm input[type="radio"], #desafioIdeviceForm input[type="checkbox"] {
     cursor: pointer;
   }
-
   #desafioIdeviceForm .desafio-EPanel {
     position: relative;
     width: 98%;
@@ -60,7 +61,6 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 10px;
   }
-
   .desafio-NumberQuestion {
     line-height: 24px;
     height: 24px;
@@ -97,7 +97,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 5px 0;
+    margin: 5px 0;
   }
 
   #desafioIdeviceForm .desafio-EInputMedias label, #desafioIdeviceForm .desafio-EInputNumbers label, #desafioIdeviceForm .desafio-EInputVideo label, #desafioIdeviceForm .desafio-EInputOptionsVideo label, #desafioIdeviceForm .desafio-EInputTimes label, #desafioIdeviceForm .desafio-EInputImage label {
@@ -152,7 +152,6 @@
   #desafioIdeviceForm .desafio-EInputVideo input[type=text] {
     width: 85%;
     margin: 3px 0;
-  
   }
 
   #desafioIdeviceForm .desafio-EInputVideo {
@@ -344,19 +343,19 @@
     margin-left: .2em
   }
 
-  #desafioIdeviceFormTab3 * {
+  #desafioIdeviceFormTab1 * {
     font-size: 0.9em;
   }
 
-  #desafioIdeviceFormTab3 p:first-child {
+  #desafioIdeviceFormTab1 p:first-child {
     margin-top: 0
   }
 
-  #desafioIdeviceFormTab3 {
+  #desafioIdeviceFormTab1 {
     overflow: auto
   }
 
-  #desafioIdeviceFormTab3 .ci18n {
+  #desafioIdeviceFormTab1 .ci18n {
     width: 50%;
     float: left
   }
@@ -542,20 +541,20 @@
   }
 
   @media screen and (max-width:720px) {
-    #desafioIdeviceForm #desafioIdeviceFormTab3 .ci18n {
+    #desafioIdeviceForm #desafioIdeviceFormTab1 .ci18n {
       width: 100%;
       float: none
     }
   }
 
-  #desafioIdeviceForm #desafioIdeviceFormTab3 label {
+  #desafioIdeviceForm #desafioIdeviceFormTab1 label {
     display: block;
     font-weight: bold;
     margin-bottom: .2em;
     font-size: 0.9em
   }
 
-  #desafioIdeviceForm #desafioIdeviceFormTab3 input {
+  #desafioIdeviceForm #desafioIdeviceFormTab1 input {
     width: 300px;
     font-size: 0.9em
   }

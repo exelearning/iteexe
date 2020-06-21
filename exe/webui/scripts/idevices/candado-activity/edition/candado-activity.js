@@ -23,6 +23,7 @@ var $exeDevice = {
     candadoReboot:false,
     candadoAttemps:0,
     candadoErrorMessage:'',
+    candadoVersion:1,
     ci18n: {
         "msgOk": _("Accept"),
         "msgMinimize": _("Minimize"),
@@ -78,7 +79,14 @@ var $exeDevice = {
                             </div>\
                             <div class="candado-EDAtaGame">\
                                 <div class="candado-ERadioDatos">\
+                                     <div id="divCandadoInstructions">\
+                                    <label for="candadoEDescription" class="sr-av">'+_('Instructions')+'":</label>\
                                     <textarea id="candadoEDescription" class="exe-html-editor"\></textarea>\
+                                </div>\
+                                <div id="divCandadoFeebBack">\
+                                    <label for="candadoEFeedBack" class="sr-av">'+_('Feedback')+'":</label>\
+                                    <textarea  id="candadoEFeedBack" class="exe-html-editor"\></textarea>\
+                                </div>\
                                 </div>\
                                 <div class="candado-EOptions">\
                                         <label for="candadoEDSolution">' + msgs.msgCodeAccess + ': <input type="text" id="candadoEDSolution" /></label>\
@@ -116,11 +124,11 @@ var $exeDevice = {
 			';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
+        $('#divCandadoFeebBack').hide();
         $exeAuthoring.iDevice.tabs.init("candadoIdeviceForm");
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
         $exeAuthoring.iDevice.gamification.scorm.init();
-
 
     },
     isJsonString: function (str) {
@@ -133,21 +141,24 @@ var $exeDevice = {
         return false;
     },
     loadPreviousValues: function (field) {
-
-        var originalHTML = field.val();
+        var originalHTML = field.val(),
+        candadoInstructions='',
+        candadoRetro='';
         if (originalHTML != '') {
             var wrapper = $("<div></div>");
             wrapper.html(originalHTML);
-            var json = $('.candado-DataGame', wrapper).text();
+            var json = $('.candado-DataGame', wrapper).text(),
+                version=$('.candado-version', wrapper).text();
+            if (version.length==1 || !json.startsWith('{')){
+                json=$exeDevice.Decrypt(json);
+            }
             var dataGame = $exeDevice.isJsonString(json);
-            $exeDevice.candadoInstructions=dataGame.candadoInstructions;
-            $exeDevice.candadoRetro=dataGame.candadoRetro;
             $exeDevice.candadoSolution=dataGame.candadoSolution;
             $exeDevice.candadoTime=dataGame.candadoTime;
             $exeDevice.candadoAttemps=dataGame.candadoAttemps;
             $exeDevice.candadoErrorMessage=dataGame.candadoErrorMessage;
-            $exeDevice.candadoInstructions = $(".candado-instructions", wrapper).eq(0).html();
-            $exeDevice.candadoRetro= $(".candado-retro", wrapper).eq(0).html();
+            candadoInstructions = $(".candado-instructions", wrapper).eq(0).html();
+            candadoRetro= $(".candado-retro", wrapper).eq(0).html();
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.typeActive=0;
             $('#candadoEDSolution').val(dataGame.candadoSolution);
@@ -157,14 +168,51 @@ var $exeDevice = {
             $('#candadoEAttemps').val(dataGame.candadoAttemps);
             $('#candadoEErrorMessage').val(dataGame.candadoErrorMessage);
             $('#candadoEErrorMessage').prop("disabled",dataGame.candadoAttemps==0);
-
-
             if(tinyMCE.get('candadoEDescription')){
-                tinyMCE.get('candadoEDescription').setContent($exeDevice.candadoInstructions);
+                tinyMCE.get('candadoEDescription').setContent(candadoInstructions);
             }else{
-                $('#candadoEDescription').val($exeDevice.candadoInstructions)
+                $('#candadoEDescription').val(candadoInstructions)
+            }
+            if(tinyMCE.get('candadoEFeedBack')){
+                tinyMCE.get('candadoEFeedBack').setContent(candadoRetro);
+            }else{
+                $('#candadoEFeedBack').val(candadoRetro);
+            }
+        }
+    },
+    Encrypt :function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
+                pos += 1;
+            }
+            return escape(ostr);
+        } catch (ex) {
+            return '';
+        }
+    },
+
+    Decrypt: function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        str=unescape(str)
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
+                pos += 1;
             }
 
+            return ostr;
+        } catch (ex) {
+            return '';
         }
     },
 
@@ -184,31 +232,29 @@ var $exeDevice = {
         }
         dataGame.msgs = i18n;
         var json = JSON.stringify(dataGame);
+        json=$exeDevice.Encrypt(json);
         var html = '<div class="candado-IDevice">';
-        html += '<div class="candado-instructions js-hidden">' + $exeDevice.candadoInstructions + '</div>';
-        html += '<div class="candado-retro js-hidden">' + $exeDevice.candadoRetro+ '</div>';
-        html += '<div class="candado-DataGame">' + json + '</div>';
+        html += '<div class="candado-version js-hidden">' + $exeDevice.candadoVersion + '</div>';
+        html += '<div class="candado-instructions">' + tinymce.editors[0].getContent() + '</div>';
+        html += '<div class="candado-retro">' + tinymce.editors[1].getContent() + '</div>';
+        html += '<div class="candado-DataGame">' +  json + '</div>';
         html += '</div>';
         return html;
     },
 
     validateCandado: function () {
-        var message = '';
+        var message = '',
+        candadoInstructions=tinymce.editors[0].getContent(),
+        candadoRetro=tinymce.editors[1].getContent();
         $exeDevice.candadoTime = parseInt($('#candadoEDTime option:selected').val());
         $exeDevice.candadoSolution=$('#candadoEDSolution').val();
         $exeDevice.candadoShowMinimize = $('#candadoEShowMinimize').is(':checked');
         $exeDevice.candadoReboot = $('#candadoEReboot').is(':checked');
         $exeDevice.candadoAttemps=$('#candadoEAttemps').val();
         $exeDevice.candadoErrorMessage=$('#candadoEErrorMessage').val();
-        
-        if($exeDevice.typeActive==0){
-            $exeDevice.candadoInstructions=tinymce.editors[0].getContent();
-        }else if($exeDevice.typeActive==1){
-            $exeDevice.candadoRetro=tinymce.editors[0].getContent();
-        }
-        if ($exeDevice.candadoInstructions.length==0){
+        if (candadoInstructions.length==0){
             message = $exeDevice.msgs.msgEIntrucctions;
-        } else if ($exeDevice.candadoRetro.length==0){
+        } else if (candadoRetro.length==0){
             message = $exeDevice.msgs.msgERetro;
         } else if ($exeDevice.candadoSolution.length == 0) {
             message = $exeDevice.msgs.msgEnterCodeAccess;
@@ -223,13 +269,12 @@ var $exeDevice = {
         }
         return message;
     },
-
     validateData: function () {
            var data = {
             'candadoTime': $exeDevice.candadoTime,
             'candadoSolution': $exeDevice.candadoSolution,
-            'candadoInstructions': $exeDevice.candadoInstructions,
-            'candadoRetro': $exeDevice.candadoRetro,
+            'candadoInstructions': '',
+            'candadoRetro': '',
             'candadoShowMinimize': $exeDevice.candadoShowMinimize,
             'candadoReboot': $exeDevice.candadoReboot,
             'candadoAttemps': $exeDevice.candadoAttemps,
@@ -244,28 +289,19 @@ var $exeDevice = {
     },
     addEvents: function () {
         $('#candadoERetro').on('click', function (e) {
-            if($exeDevice.typeActive==0){
-                $exeDevice.typeActive=1;
-                $exeDevice.candadoInstructions=tinymce.editors[0].getContent();
-                tinymce.editors[0].setContent( $exeDevice.candadoRetro);
-            }
+            $('#divCandadoInstructions').hide();
+            $('#divCandadoFeebBack').show();
         });
         $('#candadoECandado').on('click', function (e) {
-            if($exeDevice.typeActive==1){
-                $exeDevice.candadoRetro=tinymce.editors[0].getContent();
-                tinymce.editors[0].setContent( $exeDevice.candadoInstructions);
-                $exeDevice.typeActive=0;
-            }
+            $('#divCandadoInstructions').show();
+            $('#divCandadoFeebBack').hide();
         });
-        
         $('#candadoEAttemps').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 0 : this.value;
 			this.value = this.value > 9 ? 9 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
             var d=this.value==0?true:false;
             $('#candadoEErrorMessage').prop("disabled",d);
-          
-
         });
         $("#candadoEAttemps").bind('keyup mouseup', function () {
             var d=this.value==0?true:false;

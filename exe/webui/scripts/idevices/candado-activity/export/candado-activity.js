@@ -44,11 +44,11 @@ var $eXeCandado = {
     loadGame: function () {
         $eXeCandado.options = [];
         $eXeCandado.activities.each(function (i) {
-            var dl = $(".candado-DataGame", this),
-                mOption = $eXeCandado.loadDataGame(dl),
+            var version=$(".candado-version", this).eq(0).text(),
+                dl = $(".candado-DataGame", this),
+                mOption = $eXeCandado.loadDataGame(dl,version),
                 msg = mOption.msgs.msgPlayStart;
             mOption.candadoInstructions= $(".candado-instructions", this).eq(0).html();
-            mOption.candadoRetro= $(".candado-retro", this).eq(0).html();
             mOption.counter=mOption.candadoTime* 60;
             mOption.candadoStarted=false;
             mOption.candadoSolved=false;
@@ -67,13 +67,15 @@ var $eXeCandado = {
             }
             $('#candadoMessageMaximize-' + i).text(msg);
             $eXeCandado.addEvents(i);
+            $( '#candadoInstructions-' + i).append($(".candado-instructions", this));
+            $( '#candadoFeedRetro-' + i).append($(".candado-retro", this));
         });
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
             path = $eXeCandado.idevicePath,
             msgs = $eXeCandado.options[instance].msgs;
-        html += '<div class="candado-MainContainer">\
+            html += '<div class="candado-MainContainer">\
                 <div class="candado-GameMinimize" id="candadoGameMinimize-' + instance + '">\
                     <a href="#" class="candado-LinkMaximize" id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize" alt="' + msgs.msgEShowActivity + '">\
                         <div class="candado-MessageMaximize" id="candadoMessageMaximize-' + instance + '">' + msgs.msgEShowActivity + '</div>\
@@ -82,38 +84,61 @@ var $eXeCandado = {
                 <div class="candado-GameContainer" id="candadoGameContainer-' + instance + '">\
                     <div class="candado-GameScoreBoard">\
                         <div class="candado-TimeNumber" id="candadoTimeNumber-' + instance + '">\
-                            <div class="candado-TimeQuestion" id="candadoTimeQuestion-' + instance + '">\
-                                <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-                                <div class="exeQuextIcons34  exeQuextIcons34-Time"></div>\
-                                <p id="candadoPTime-' + instance + '">00:00</p>\
-                            </div>\
-                            <a href="#" class="candado-LinkMinimize" id="candadoLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                        <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
+                        <div class="exeQuextIcons34  exeQuextIcons34-Time"></div>\
+                        <p id="candadoPTime-' + instance + '">00:00</p>\
+                        <a href="#" class="candado-LinkMinimize" id="candadoLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                                 <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                                 <div class="exeQuextIcons34 exeQuextIcons34-Minimize"></div>\
                             </a>\
                         </div>\
                     </div>\
-                    <div class="candado-Instructions" id="candadoInstructions-' + instance + '"></div>\
+                    <div class="candado-Instructiones exe-text" id="candadoInstructions-' + instance + '"></div>\
+                    <div class="candado-FeedRetro exe-text" id="candadoFeedRetro-' + instance + '"></div>\
                     <div class="candado-MessageInfo" id="candadoMessageInfo-' + instance + '">\
                     <div class="sr-av">'+msgs.msgInstructions+'</div>\
                         <p id="candadoPInformation-' + instance + '"></p>\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoSolutionDiv-' + instance + '">\
                         <label for="candadoSolution-' + instance + '" class="labelSolution">'+msgs.msgCodeAccess+':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
-                        <input type="button" class="candado-SolutionButton" id="candadoSolutionButton-' + instance + '"   value="' + msgs.msgOk + '" />\
+                        <a href="#" id="candadoSolutionButton-' + instance + '" title="' + msgs.msgSubmit + '">\
+                            <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
+                            <div class="exeQuextIcons-Submit"></div>\
+                        </a>\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoNavigator-' + instance + '">\
-                        <input type="button" class="candado-ShowIntro" id="candadoShowIntro-' + instance + '"   value="'+msgs.msgInstructions+'" />\
-                        <input type="button" class="candado-ShowRetro" id="candadoShowRetro-' + instance + '"   value="'+msgs.msgFeedback+'" />\
+                        <input type="button" class="candado-ShowIntro feedbackbutton" id="candadoShowIntro-' + instance + '"   value="'+msgs.msgInstructions+'" />\
+                        <input type="button" class="candado-ShowRetro feedbackbutton" id="candadoShowRetro-' + instance + '"   value="'+msgs.msgFeedback+'" />\
                     </div>\
                 </div>\
             </div>'
         return html;
     },
-    loadDataGame: function (data) {
-        var json = data.text(),
-            mOptions = $eXeCandado.isJsonString(json);
-            return mOptions;
+    Decrypt: function (str) {
+        if (!str) str = "";
+        str = (str == "undefined" || str == "null") ? "" : str;
+        str=unescape(str)
+        try {
+            var key = 146;
+            var pos = 0;
+            ostr = '';
+            while (pos < str.length) {
+                ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
+                pos += 1;
+            }
+
+            return ostr;
+        } catch (ex) {
+            return '';
+        }
+    },
+    loadDataGame: function (data, version) {
+        var json = data.text();
+        if (version==1 || !json.startsWith('{')){
+            json=$eXeCandado.Decrypt(json);
+        }
+        var mOptions = $eXeCandado.isJsonString(json);
+        return mOptions;
     },
     isJsonString: function (str) {
         try {
@@ -180,14 +205,15 @@ var $eXeCandado = {
             $eXeCandado.answerActivity(instance);
         });
         $('#candadoShowIntro-' + instance).on('click touchstart', function (e) {
-            $('#candadoInstructions-' + instance).html(mOptions.candadoInstructions).show();
+            $('#candadoInstructions-' + instance).show();
+            $('#candadoFeedRetro-' + instance).hide();
             $('#candadoSolutionDiv-' + instance).hide();
         });
         $('#candadoShowRetro-' + instance).on('click touchstart', function (e) {
-            $('#candadoInstructions-' + instance).html(mOptions.candadoRetro).show();
+            $('#candadoInstructions-' + instance).hide();
+            $('#candadoFeedRetro-' + instance).show();
             $('#candadoSolutionDiv-' + instance).hide();
         });
-        $('#candadoInstructions-' + instance).html(mOptions.candadoInstructions).show();
         $('#candadoSolution-' + instance).focus();
         $('#candadoMessageInfo-'+ instance).show();
         $('#candadoNavigator-' + instance).hide();
@@ -239,8 +265,8 @@ var $eXeCandado = {
         clearInterval(mOptions.counterClock);
         mOptions.candadoSolved=true;
         $eXeCandado.uptateTime(mOptions.counter, instance);
-        $('#candadoInstructions-' + instance).html(mOptions.candadoRetro);
-        $('#candadoInstructions-' + instance).show();
+        $('#candadoInstructions-' + instance).hide();
+         $('#candadoFeedRetro-' + instance).show();
         $('#candadoSolutionDiv-' + instance).hide();
         $('#candadoNavigator-' + instance).show();
         $('#candadoMessageInfo-' + instance).hide();
@@ -278,21 +304,23 @@ var $eXeCandado = {
         }
         $eXeCandado.showMessage(typeMessage, message, instance);
     },
-    checkWord: function (answord, solution) {
-        var sSolution=$.trim(solution).replace(/\s+/g, " ").toUpperCase(),
-            sAnsWord=$.trim(answord).replace(/\s+/g, " ").toUpperCase();
-		if (sSolution.indexOf('|') == -1) {
-			return  sSolution== sAnsWord;
-		}
-		var words = sSolution.split('|');
-		for (var i = 0; i < words.length; i++) {
-			if ($.trim(words[i]) == sAnsWord) {
-				return true;
+    checkWord: function (answord,word) {
+        var sWord = $.trim(word).replace(/\s+/g, " ").toUpperCase().replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, ""),
+            sAnsWord = $.trim(answord).replace(/\s+/g, " ").toUpperCase().replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, "");
+        sWord = $.trim(sWord);
+        sAnsWord = $.trim(sAnsWord);
+        if (sWord.indexOf('|') == -1) {
+            return sWord == sAnsWord;
+        }
+        var words = sWord.split('|');
+        for (var i = 0; i < words.length; i++) {
+            var mword = $.trim(words[i]).replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, "");
+            if (mword == sAnsWord) {
+                return true;
             }
-
-		}
-		return false;
-	},
+        }
+        return false;
+    },
     getRetroFeedMessages: function (iHit, instance) {
         var msgs = $eXeCandado.options[instance].msgs;
         var sMessages = iHit ? msgs.msgSuccesses : msgs.msgFailures;
