@@ -1,5 +1,5 @@
 /**
- * Selecciona Activity iDevice (export code)
+ * Select Activity iDevice (export code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -50,7 +50,7 @@ var $eXeSelecciona = {
         if (this.activities.length == 0) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Selecciona') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Select Activity') + '</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;

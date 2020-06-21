@@ -1,5 +1,5 @@
 /**
- * Selecciona Activity iDevice (edition code)
+ * Select Activity iDevice (edition code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -10,7 +10,8 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Selecciona Activity'),
+        name: _('Select Activity'),
+        alt: _('Fast Multiple Choice Quiz')
     },
     iDevicePath: "/scripts/idevices/selecciona-activity/edition/",
     msgs: {},
@@ -67,7 +68,7 @@ var $exeDevice = {
         "msgEndGameScore": _("Please start the game before saving your score."),
         "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
         "msgQuestion": _("Question"),
-        "msgAnswer": _("Answer"),
+        "msgAnswer": _("Check"),
         "msgOnlySaveScore": _("You can only save the score once!"),
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
@@ -88,7 +89,7 @@ var $exeDevice = {
         "msgUseFulInformation": _("and information that will be very useful"),
         "msgLoading": _("Loading. Please wait..."),
         "mgsPoints": _("points"),
-        "mgsOrders": _("Debes ordenar todas las respuestas"),
+        "mgsOrders": _("Please order the answers"),
 
 
     },
@@ -119,9 +120,9 @@ var $exeDevice = {
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
-        msgs.msgSilentPoint = _("El valor del punto de inicio del silencio debe ser mayor que el punto de inicio del vídeo y menor que el fin del mismo");
-        msgs.msgTypeChoose = _("En las preguntas tipo Ordena debes marcar todas las respuestas en el orden adecuado");
-        msgs.msgTimeFormat=_("Los tiempos deben tener el siguiente formato: hh:mm:ss");
+        msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
+        msgs.msgTypeChoose = _("Please check all the answers in the right order");
+        msgs.msgTimeFormat=_("Please check the time format: hh:mm:ss");
 
 
     },
@@ -687,7 +688,7 @@ var $exeDevice = {
             html = '\
 			<div id="seleccionaIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Elija las respuestas correctas y haga clic sobre el botón Responder")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Choose the right answers and click on the Check button.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -711,7 +712,7 @@ var $exeDevice = {
                                 <a href="#" id="seleccionaEVideoIntroPlay" class="selecciona-tEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "slcPlay.png" + '"  alt="" class="selecciona-EButtonImage b-play" /></a>\
                             </div>\
                             <p>\
-                                <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Puntuación personalizada") + '. </label>\
+                                <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
                             </p>\
                         </div>\
                     </fieldset>\
@@ -723,14 +724,14 @@ var $exeDevice = {
                                     <span>' + _("Type") + ':</span>\
                                     <div class="selecciona-EInputType">\
                                         <input class="selecciona-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
-                                        <label for="seleccionaTypeSelect">' + _("Selecciona") + '</label>\
+                                        <label for="seleccionaTypeSelect">' + _("Select") + '</label>\
                                         <input class="selecciona-TypeSelect"  id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="1"/>\
-                                        <label for="seleccionaTypeOrders">' + _("Ordena") + '</label>\
+                                        <label for="seleccionaTypeOrders">' + _("Order") + '</label>\
                                     </div>\
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="selecciona-EInputMedias">\
                                         <input class="selecciona-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
-                                        <label for="seleccionaMediaNormal">' + _("Ninguno") + '</label>\
+                                        <label for="seleccionaMediaNormal">' + _("None") + '</label>\
                                         <input class="selecciona-Type"  id="seleccionaMediaImage" type="radio" name="slcmediatype" value="1" disabled />\
                                         <label for="seleccionaMediaImage">' + _("Image") + '</label>\
                                         <input class="selecciona-Type"  id="seleccionaMediaVideo" type="radio" name="slcmediatype" value="2" disabled />\
@@ -808,7 +809,7 @@ var $exeDevice = {
                                             <input id="seleccionaEAuthor" type="text" />\
                                         </div>\
                                         <div class="selecciona-EInputAlt" id="seleccionaInputAlt">\
-                                            <label for="seleccionaEAlt">' + _("Texto alternativo") + '</label>\
+                                            <label for="seleccionaEAlt">' + _("Alternative text") + '</label>\
                                             <input id="seleccionaEAlt" type="text" />\
                                         </div>\
                                     </div>\
