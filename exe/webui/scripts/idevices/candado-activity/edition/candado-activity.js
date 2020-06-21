@@ -1,5 +1,5 @@
 /**
- * candado Activity iDevice (edition code)
+ * Lock Activity iDevice (edition code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -8,7 +8,7 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Candado Activity'),
+        name: _('Lock Activity'),
     },
     iDevicePath: "/scripts/idevices/candado-activity/edition/",
     msgs: {},

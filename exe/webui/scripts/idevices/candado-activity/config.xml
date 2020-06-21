@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>Candado</title>
+	<title>Lock Activity</title>
 	<css-class>candado</css-class>
 	<category>Gamification</category>	
 </idevice>

@@ -1,5 +1,5 @@
 /**
- * Candado Activity iDevice (export code)
+ * Lock Activity iDevice (export code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
