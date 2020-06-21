@@ -117,8 +117,8 @@ var $exeDevice = {
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
-        msgs.msgSilentPoint = _("El valor del punto de inicio del silencio debe ser mayor que el punto de inicio del vídeo y menor que el fin del mismo");
-        msgs.msgTimeFormat=_("Los tiempos deben tener el siguiente formato: hh:mm:ss");
+        msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
+        msgs.msgTimeFormat=_("Please check the time format: hh:mm:ss");
 
 
     },
@@ -689,7 +689,7 @@ var $exeDevice = {
                                 <a href="#" id="quextEVideoIntroPlay" class="quext-tEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextPlay.png" + '"  alt="" class="quext-EButtonImage b-play" /></a>\
                             </div>\
                             <p>\
-                                <label for="quextECustomScore"><input type="checkbox" id="quextECustomScore">' + _("Puntuación personalizada") + '. </label>\
+                                <label for="quextECustomScore"><input type="checkbox" id="quextECustomScore">' + _("Custom score") + '. </label>\
                             </p>\
                         </div>\
                     </fieldset>\
@@ -701,7 +701,7 @@ var $exeDevice = {
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="quext-EInputMedias">\
                                         <input class="quext-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="quext-MediaNormal">' + _("Ninguno") + '</label>\
+                                        <label for="quext-MediaNormal">' + _("None") + '</label>\
                                         <input class="quext-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
                                         <label for="mediaImagen">' + _("Image") + '</label>\
                                         <input class="quext-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
@@ -779,7 +779,7 @@ var $exeDevice = {
                                             <input id="quextEAuthor" type="text" />\
                                         </div>\
                                         <div class="quext-EInputAlt" id="quextInputAlt">\
-                                            <label for="quextEAlt">' + _("texto alternativo") + '</label>\
+                                            <label for="quextEAlt">' + _("Alternative text") + '</label>\
                                             <input id="quextEAlt" type="text" />\
                                         </div>\
                                     </div>\
