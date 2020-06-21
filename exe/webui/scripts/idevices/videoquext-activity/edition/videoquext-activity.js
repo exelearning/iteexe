@@ -11,6 +11,7 @@ var $exeDevice = {
     // i18n
     i18n: {
         name: _('VideoQuExt Activity'),
+        alt: _('Fast Video Quiz') // To review
     },
     iDevicePath: "/scripts/idevices/videoquext-activity/edition/",
     msgs: {},
@@ -84,12 +85,12 @@ var $exeDevice = {
         "mgsPoints": _("points"),
         "msgIndicateWord": _("Provide a word or phrase"),
         "msgReply": _("Reply"),
-        "msgPauseVideo": _("Pausar vídeo"),
-        "msgPreviewQuestions": _("Previsualizar preguntas"),
-        "msgReloadVideo": _("Recargar vídeo"),
-        "msgQuestions": _("Preguntas"),
-        "msgIndicateSolution": _("Escribe una palabra o frase en la respuesta"),
-        "msgIndicateSolution": _("Escribe una palabra o frase en el cuadro solución")
+        "msgPauseVideo": _("Pause video"),
+        "msgPreviewQuestions": _("Preview questions"),
+        "msgReloadVideo": _("Reload video"),
+        "msgQuestions": _("Questions"),
+        "msgIndicateSolution": _("Please write the answer or solution"),
+        "msgIndicateSolution": _("Please write the solution")
     },
 
     init: function () {
@@ -120,8 +121,8 @@ var $exeDevice = {
         msgs.msgWriteText = _("You have to type a text in the editor");
         msgs.msgEPoiIncorrect = _("That second is not part of the video. Please check the video duration.");
         msgs.msgEPointExist = _("There is already a question in that second.");
-        msgs.msgTimeFormat=_("Los tiempos deben tener el siguiente formato: hh:mm:ss");
-        msgs.msgProvideSolution= _("Escribe una palabra o frase en el cuadro solución");
+        msgs.msgTimeFormat=_("Please check the time format: hh:mm:ss");
+        msgs.msgProvideSolution= _("Please write the solution");
 
     },
     getId: function () {
@@ -518,9 +519,9 @@ var $exeDevice = {
                                 <label for="vquextETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="vquextETimeShowSolution" id="vquextETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                             <p>\
-                                <label for="vquextEReloadQuestion"><input type="checkbox" id="vquextEReloadQuestion">' + _("Recargar vídeo") + '. </label>\
-                                <label for="vquextEPreviewQuestions"><input type="checkbox" id="vquextEPreviewQuestions">' + _("Previsualizar cuestiones") + '. </label>\
-                                <label for="vquextEPauseVideo"><input type="checkbox" id="vquextEPauseVideo">' + _("Pausar vídeo") + '. </label>\
+                                <label for="vquextEReloadQuestion"><input type="checkbox" id="vquextEReloadQuestion">' + _("Reload video") + '. </label>\
+                                <label for="vquextEPreviewQuestions"><input type="checkbox" id="vquextEPreviewQuestions">' + _("Preview questions") + '. </label>\
+                                <label for="vquextEPauseVideo"><input type="checkbox" id="vquextEPauseVideo">' + _("Pause video") + '. </label>\
                             </p>\
                         </div>\
                     </fieldset>\
