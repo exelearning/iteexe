@@ -120,6 +120,9 @@ var $exeDevice = {
 									<input type="number" name="roscoTimeShowSolution" id="roscoTimeShowSolution" value="3" min="1" max="9" /> \
 								' + _("seconds") + '</label>\
 							</p>\
+							<p>\
+								<label for="roscoCaseSensitive"><input type="checkbox" id="roscoCaseSensitive"> ' + _("Case sensitive") + ' </label>\
+							</p>\
 						</div>\
 					</fieldset>\
 					<fieldset class="exe-fieldset">\
@@ -150,6 +153,9 @@ var $exeDevice = {
 		$('#roscoShowSolution').prop("checked", dataGame.showSolution);
 		$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
 		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
+		$('#roscoTimeShowSolution').prop('disabled', !dataGame.showSolution);
+
+		$('#roscoCaseSensitive').prop('checked', dataGame.caseSensitive);
 
 		$('.roscoWordEdition').each(function (index) {
 			var word = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].word : "";
@@ -522,6 +528,8 @@ var $exeDevice = {
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val())),
 			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
+			caseSensitive=$('#roscoCaseSensitive').is(':checked');
+			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
 		if (!itinerary) return false;
 		if (showSolution && timeShowSolution.length == 0) {
 			eXe.app.alert(msgs.msgProvideTimeSolution);
@@ -530,7 +538,7 @@ var $exeDevice = {
 		var words = [],
 			zr = true;
 		$('.roscoWordEdition').each(function () {
-			var word = clear($(this).val().toUpperCase().trim());
+			var word = clear($(this).val().trim());
 			words.push(word);
 			if (word.length > 0) zr = false;
 		});
@@ -573,7 +581,7 @@ var $exeDevice = {
 		});
 		for (var i = 0; i < this.letters.length; i++) {
 			var letter = this.letters.charAt(i),
-				word = $.trim(words[i]).toUpperCase(),
+				word = $.trim(words[i]),
 				definition = $.trim(definitions[i]),
 				url = $.trim(urls[i]),
 				mType = types[i];
@@ -598,7 +606,7 @@ var $exeDevice = {
 		for (var i = 0; i < this.letters.length; i++) {
 			var p = new Object();
 			p.letter = this.letters.charAt(i);
-			p.word = $.trim(words[i]).toUpperCase();
+			p.word = $.trim(words[i]);
 			p.definition = definitions[i];
 			p.type = types[i];
 			p.alt = alts[i];
@@ -638,7 +646,8 @@ var $exeDevice = {
 			'textButtonScorm': scorm.textButtonScorm,
 			'repeatActivity': scorm.repeatActivity,
 			'letters': this.letters,
-			'textAfter': escape(textAfter)
+			'textAfter': escape(textAfter),
+			'caseSensitive':caseSensitive
 		}
 		return data;
 	},
@@ -701,7 +710,7 @@ var $exeDevice = {
 			$(this).parents('.roscoImageBarEdition').slideUp();
 		});
 		$('#roscoDataWord .roscoWordEdition').on('focusout', function () {
-			var word = $(this).val().trim().toUpperCase(),
+			var word = $(this).val().trim(),
 				letter = $(this).siblings().filter(".roscoLetterEdition").text(),
 				color = $(this).val().trim() == "" ? $exeDevice.colors.grey : $exeDevice.colors.blue;
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);

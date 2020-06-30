@@ -256,19 +256,18 @@ var $eXeQuExt = {
                 <img class="quext-Cursor" id="quextCursor-' + instance + '" src="' + path + 'quextCursor.gif" alt="Cursor" />\
                 <img  src="" class="quext-Images" id="quextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="quext-EText" id="quextEText-' + instance + '"></div>\
-                <img src="' + path + 'quextHome.png" class="quext-Images" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <img src="' + path + 'quextHome.png" class="quext-Cover" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="quext-Video" id="quextVideo-' + instance + '"></div>\
                 <div class="quext-Protector" id="quextProtector-' + instance + '"></div>\
                 <div class="quext-GameOver" id="quextGamerOver-' + instance + '">\
-                    <div class="quext-TextClueGGame" id="quextTextClueGGame-' + instance + '"></div>\
-                    <div class="quext-DataImageGameOver">\
+                    <div class="quext-DataGameImage">\
                         <img src="' + path + 'quextGameWon.png" class="quext-HistGGame" id="quextHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '" />\
                         <img src="' + path + 'quextGameLost.png" class="quext-LostGGame" id="quextLostGGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
-                        <div class="quext-DataGame" id="quextDataGame-' + instance + '">\
-                            <p id="quextOverScore-' + instance + '">Score: 0</p>\
-                            <p id="quextOverHits-' + instance + '">Hits: 0</p>\
-                            <p id="quextOverErrors-' + instance + '">Errors: 0</p>\
-                        </div>\
+                    </div>\
+                    <div class="quext-DataGameScore" id="quextDataGame-' + instance + '">\
+                        <p id="quextOverScore-' + instance + '">Score: 0</p>\
+                        <p id="quextOverHits-' + instance + '">Hits: 0</p>\
+                        <p id="quextOverErrors-' + instance + '">Errors: 0</p>\
                     </div>\
                 </div>\
             </div>\
@@ -282,12 +281,12 @@ var $eXeQuExt = {
                     <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="quext-CodeAccessE"  id="quextCodeAccessE-' + instance + '">\
                     <a href="#" id="quextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
                         <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
-                        <div class="exeQuextIcons-Submit"></div>\
+                        <div class="exeQuextIcons exeQuextIcons-Submit"></div>\
                     </a>\
                 </div>\
             </div>\
-            <div class="sr-av" id="quextStarGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
-            <div class="quext-StartGame"><a href="#" id="quextStarGame-' + instance + '"></a></div>\
+            <div class="sr-av" id="quextStartGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
+            <div class="quext-StartGame"><a href="#" id="quextStartGame-' + instance + '"></a></div>\
             <div class="quext-QuestionDiv" id="quextQuestionDiv-' + instance + '">\
                 <div class="sr-av">' + msgs.msgQuestion + ':</div>\
                 <p class="quext-Question" id="quextQuestion-' + instance + '"></p>\
@@ -317,7 +316,6 @@ var $eXeQuExt = {
     ' + this.addButtonScore(instance);
         return html;
     },
-
     addButtonScore: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
         var butonScore = "";
@@ -441,7 +439,7 @@ var $eXeQuExt = {
                     'controls': 1
                 }
             });
-            $('#quextStarGame-' + i).text(mOptions.msgs.msgStartGame);
+            $('#quextStartGame-' + i).text(mOptions.msgs.msgStartGame);
         }
     },
     loadYoutubeApi: function () {
@@ -519,6 +517,7 @@ var $eXeQuExt = {
             e.preventDefault();
             $("#quextGameContainer-" + instance).show()
             $("#quextGameMinimize-" + instance).hide();
+            $eXeQuExt.refreshImageActive(instance);
         });
         $("#quextLinkMinimize-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -537,15 +536,6 @@ var $eXeQuExt = {
         $('#quextImagen-' + instance).hide();
         $('#quextCursor-' + instance).hide();
         $('#quextCover-' + instance).show();
-        $("#quextCover-" + instance).prop('src', $eXeQuExt.idevicePath + 'quextHome.png')
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    console.log('Error al cargar imagen');
-                } else {
-                    var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeQuExt.drawImage(this, mData);
-                }
-            });
         $('#quextCodeAccessButton-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $eXeQuExt.enterCodeAccess(instance);
@@ -558,8 +548,8 @@ var $eXeQuExt = {
             return true;
         });
         mOptions.livesLeft = mOptions.numberLives;
-        $('#quextStarGame-' + instance).text(mOptions.msgs.msgLoading);  
-        $('#quextStarGame-' + instance).on('click', function (e) {
+        $('#quextStartGame-' + instance).text(mOptions.msgs.msgLoading);
+        $('#quextStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
             $eXeQuExt.startGame(instance);
         })
@@ -592,7 +582,7 @@ var $eXeQuExt = {
                 document.msFullscreenElement ||
                 document.mozFullScreenElement ||
                 document.webkitFullscreenElement;
-            $eXeQuExt.maximizeMultimedia(typeof fullScreenElement != "undefined", instance);
+           
         });
         $('#quextInstruction-' + instance).text(mOptions.instructions);
         $('#quextSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -626,38 +616,6 @@ var $eXeQuExt = {
         });
 
     },
-    maximizeMultimedia: function (maximize, instance) {
-        var css = {
-                "height": "315px",
-                "width": "560px",
-                "margin": "auto"
-            },
-            hQ = 45;
-
-        if (maximize) {
-            var h = window.innerHeight - 365 > 750 ? 750 : window.innerHeight - 365;
-            h = window.innerHeight <= 768 ? window.innerHeight - 345 : h;
-            var p = (h / 315),
-                w = p * 560;
-            css = {
-                "height": h + 'px',
-                "width": w + 'px',
-                "margin": "auto"
-            };
-            p = p > 1.5 ? 1.5 : p;
-            hQ = 45 * p;
-        }
-        $('#quextQuestion-' + instance).css({
-            "height": hQ + "px",
-            'text-aling':'center'
-        });
-        $('#quextOptionsDiv-' + instance + '>.quext-Options').css({
-            "height": hQ + "px",
-            'text-aling':'center'
-        });
-        $('#quextMultimedia-' + instance).css(css);
-        $eXeQuExt.refreshImageActive(instance);
-    },
     refreshImageActive: function (instance) {
         var mOptions = $eXeQuExt.options[instance],
             mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
@@ -665,21 +623,11 @@ var $eXeQuExt = {
         if(mOptions.gameOver){
             return;
         }
-        $("#quextCover-" + instance).prop('src', $eXeQuExt.idevicePath + 'quextHome.png')
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    console.log('Error loading image');
-                } else {
-                    var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeQuExt.drawImage(this, mData);
-
-                }
-            });
         if (typeof mQuextion == "undefined") {
             return;
         }
         if (mQuextion.type === 1) {
-            $("#quextImagen-" + instance).prop('src', mQuextion.url)
+            $('#quextImagen-' + instance).prop('src', mQuextion.url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
                         alt = mOptions.msgs.msgNoImage;
@@ -722,21 +670,19 @@ var $eXeQuExt = {
             msgs = mOptions.msgs,
             $quextHistGGame = $('#quextHistGGame-' + instance),
             $quextLostGGame = $('#quextLostGGame-' + instance),
-            $quextClueGGame = $('#quextClueGGame-' + instance),
             $quextOverPoint = $('#quextOverScore-' + instance),
             $quextOverHits = $('#quextOverHits-' + instance),
             $quextOverErrors = $('#quextOverErrors-' + instance),
-            $quextTextClueGGame = $('#quextTextClueGGame-' + instance),
+            $quextPShowClue = $('#quextPShowClue-' + instance),
             $quextGamerOver = $('#quextGamerOver-' + instance),
             message = "",
             messageColor=2;
         $quextHistGGame.hide();
         $quextLostGGame.hide();
-        $quextClueGGame.hide();
         $quextOverPoint.show();
         $quextOverHits.show();
         $quextOverErrors.show();
-        $quextTextClueGGame.hide();
+        $quextPShowClue.hide();
         switch (parseInt(type)) {
             case 0:
                 message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
@@ -744,11 +690,11 @@ var $eXeQuExt = {
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
                         message = msgs.mgsAllQuestions;
-                        $quextTextClueGGame.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
-                        $quextTextClueGGame.show();
+                        $quextPShowClue.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
+                        $quextPShowClue.show();
                     } else {
-                        $quextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
-                        $quextTextClueGGame.show();
+                        $quextPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                        $quextPShowClue.show();
                     }
                 }
                 break;
@@ -758,11 +704,11 @@ var $eXeQuExt = {
                 $quextLostGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $quextTextClueGGame.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
-                        $quextTextClueGGame.show();
+                        $quextPShowClue.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
+                        $quextPShowClue.show();
                     } else {
-                        $quextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
-                        $quextTextClueGGame.show();
+                        $quextPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                        $quextPShowClue.show();
                     }
                 }
                 break;
@@ -771,14 +717,12 @@ var $eXeQuExt = {
                 $quextOverPoint.hide();
                 $quextOverHits.hide();
                 $quextOverErrors.hide();
-                $quextClueGGame.show();
-                $quextTextClueGGame.text(mOptions.itinerary.clueGame);
-                $quextTextClueGGame.show();
+                $quextPShowClue.text(mOptions.itinerary.clueGame);
+                $quextPShowClue.show();
                 break;
             default:
                 break;
         }
-        $('#quextPShowClue-' + instance).hide();
         $eXeQuExt.showMessage(messageColor, message, instance);
         $quextOverPoint.text(msgs.msgScore + ': ' + mOptions.score);
         $quextOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
@@ -884,7 +828,7 @@ var $eXeQuExt = {
         $eXeQuExt.clearQuestions(instance);
         $eXeQuExt.uptateTime(0, instance);
         $('#quextPNumber-' + instance).text('0');
-        $('#quextStarGame-' + instance).text(mOptions.msgs.msgNewGame);
+        $('#quextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
         $('#quextGameContainer-' + instance+' .quext-StartGame').show();
         $('#quextQuestionDiv-' + instance).hide();
         if ($eXeQuExt.getIDYoutube(mOptions.idVideo) !== '') {
@@ -921,6 +865,7 @@ var $eXeQuExt = {
         $('#quextCover-' + instance).show();
         $('#quextEText-' + instance).hide();
         $('#quextVideo-' + instance).hide();
+        $('#quextPAuthor-' + instance).text('');
         $eXeQuExt.startVideo('', 0, 0, instance);
         $eXeQuExt.stopVideo(instance)
         $('#quextCursor-' + instance).hide();
@@ -941,7 +886,7 @@ var $eXeQuExt = {
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         alt = mOptions.msgs.msgNoImage;
-                        $('#quextAuthor-' + instance).text('');
+                        $('#quextPAuthor-' + instance).text('');
                     } else {
                         var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                         $eXeQuExt.drawImage(this, mData);
@@ -971,12 +916,12 @@ var $eXeQuExt = {
             $("#quextEText-" + instance).html(text);
             $('#quextEText-' + instance).show();
             $('#quextCover-' + instance).hide();
-            $eXeQuExt.showMessage(0, mQuextion.author, instance);
+            $eXeQuExt.showMessage(0,'', instance);
         } else if (mQuextion.type === 2) {
             $('#quextVideo-' + instance).show();
             var idVideo = $eXeQuExt.getIDYoutube(mQuextion.url);
             $eXeQuExt.startVideo(idVideo, mQuextion.iVideo, mQuextion.fVideo, instance);
-            $eXeQuExt.showMessage(1, mQuextion.author, instance);
+            $eXeQuExt.showMessage(1, '', instance);
             if (mQuextion.imageVideo === 0) {
                 $('#quextVideo-' + instance).hide();
                 $('#quextCover-' + instance).show();
@@ -1200,7 +1145,8 @@ var $eXeQuExt = {
             $(this).css({
                 'border-color': bordeColors[index],
                 'background-color': colors[index],
-                'cursor': 'pointer'
+                'cursor': 'pointer',
+                'color':$eXeQuExt.colors.black
             }).text(option);
             if (option) {
                 $(this).show();
@@ -1218,6 +1164,7 @@ var $eXeQuExt = {
                     'border-color': '#00ff00',
                     'background-color': '#dcffdc',
                     'cursor': 'default'
+                    
                 });
             } else {
                 $(this).css({
@@ -1235,8 +1182,8 @@ var $eXeQuExt = {
             $(this).css({
                 'border-color': bordeColors[index],
                 'background-color': colors[index],
-                'cursor': 'default'
-            }).text('');
+                'cursor': 'default',
+             }).text('');
         });
     },
     exitFullscreen: function () {
@@ -1268,7 +1215,8 @@ var $eXeQuExt = {
 			$eXeQuExt.getFullscreen(element);
 		} else {
 			$eXeQuExt.exitFullscreen(element);
-		}
+        }
+        $eXeQuExt.refreshImageActive(instance);
 	}
 }
 $(function () {

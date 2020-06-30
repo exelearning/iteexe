@@ -291,15 +291,14 @@ var $eXeVideoQuExt = {
                 <div class="vquext-Video" id="vquextVideo-' + instance + '"></div>\
                 <div class="vquext-Protector" id="vquextProtector-' + instance + '"></div>\
                 <div class="vquext-GameOver" id="vquextGamerOver-' + instance + '">\
-                    <div class="vquext-TextClueGGame" id="vquextTextClueGGame-' + instance + '"></div>\
-                    <div class="vquext-DataImageGameOver">\
+                    <div class="vquext-DataGameImage">\
                         <img src="' + path + 'quextGameWon.png" class="vquext-HistGGame" id="vquextHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '" />\
                         <img src="' + path + 'quextGameLost.png" class="vquext-LostGGame" id="vquextLostGGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
-                        <div class="vquext-DataGame" id="vquextDataGame-' + instance + '">\
-                            <p id="vquextOverScore-' + instance + '">Score: 0</p>\
-                            <p id="vquextOverHits-' + instance + '">Hits: 0</p>\
-                            <p id="vquextOverErrors-' + instance + '">Errors: 0</p>\
-                        </div>\
+                    </div>\
+                    <div class="vquext-DataGameScore" id="vquextDataGame-' + instance + '">\
+                        <p id="vquextOverScore-' + instance + '">Score: 0</p>\
+                        <p id="vquextOverHits-' + instance + '">Hits: 0</p>\
+                        <p id="vquextOverErrors-' + instance + '">Errors: 0</p>\
                     </div>\
                 </div>\
             </div>\
@@ -327,7 +326,7 @@ var $eXeVideoQuExt = {
                 <div class="vquext-Question" id="vquextQuestion-' + instance + '">\
                 </div>\
                 <div class="vquext-DivReply" id="vquextDivReply-' + instance + '">\
-                    <label class="sr-av">' + msgs.msgIndicateSolution + ':</label><input type="text" value="" class="vquext-EdReply" id="vquextEdAnswer-' + instance + '" autocomplete="false">\
+                    <label class="sr-av">' + msgs.msgIndicateSolution + ':</label><input type="text" value="" class="vquext-EdReply" id="vquextEdAnswer-' + instance + '" autocomplete="off">\
                     <a href="#" id="vquextBtnReply-' + instance + '" title="' + msgs.msgReply + '">\
                         <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
                         <div class="exeQuextIcons-Submit"></div>\
@@ -361,7 +360,7 @@ var $eXeVideoQuExt = {
             <div class="vquext-previewQuestionsDiv" id="vquextpreviewQuestionsDiv-' + instance + '">\
                 <p class="vquext-PreviewQuestionsTitle">' + msgs.msgQuestions + '</p>\
                 <strong><span class="sr-av">' + msgs.msgQuestions + ':</span></strong>\
-                <input type="button" class="vquext-previewQuestionsClose feedbackbutton"  id="vquextpreviewQuestionsClose-' + instance + '" value="' + msgs.msgClose + '" />\
+                <input type="button" class="feedbackbutton vquext-previewQuestionsClose"  id="vquextpreviewQuestionsClose-' + instance + '" value="' + msgs.msgClose + '" />\
             </div>\
         </div>\
     </div>\
@@ -501,6 +500,7 @@ var $eXeVideoQuExt = {
             e.preventDefault();
             $("#vquextGameContainer-" + instance).show()
             $("#vquextGameMinimize-" + instance).hide();
+            $eXeVideoQuExt.refreshImageActive(instance);
         });
         $("#vquextLinkMinimize-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -561,15 +561,6 @@ var $eXeVideoQuExt = {
         $('#vquextImagen-' + instance).hide();
         $('#vquextCursor-' + instance).hide();
         $('#vquextCover-' + instance).show();
-        $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'vquextHome.png')
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    console.log('Error al cargar imagen');
-                } else {
-                    var mData = $eXeVideoQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeVideoQuExt.drawImage(this, mData);
-                }
-            });
         $('#vquextCodeAccessButton-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $eXeVideoQuExt.enterCodeAccess(instance);
@@ -613,14 +604,6 @@ var $eXeVideoQuExt = {
             $('#vquextQuestionDiv-' + instance).hide();
 
         }
-        $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", function (e) {
-            var fullScreenElement =
-                document.fullscreenElement ||
-                document.msFullscreenElement ||
-                document.mozFullScreenElement ||
-                document.webkitFullscreenElement;
-            $eXeVideoQuExt.maximizeMultimedia(typeof fullScreenElement != "undefined", instance);
-        });
         $('#vquextInstruction-' + instance).text(mOptions.instructions);
         $('#vquextSendScore-' + instance).attr('value', mOptions.textButtonScorm);
         $('#vquextSendScore-' + instance).hide();
@@ -632,7 +615,7 @@ var $eXeVideoQuExt = {
         $('#vquextPShowClue-' + instance).hide();
         mOptions.gameOver = false;
         window.addEventListener('resize', function () {
-            $eXeVideoQuExt.createPointsVideo(instance);
+
             $eXeVideoQuExt.refreshImageActive(instance);
         });
     },
@@ -678,37 +661,6 @@ var $eXeVideoQuExt = {
         mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
         $eXeVideoQuExt.uptateTime(0, instance);
     },
-    maximizeMultimedia: function (maximize, instance) {
-        var css = {
-                "height": "315px",
-                "width": "560px",
-                "margin": "auto"
-            },
-            hQ = 45;
-           if (maximize) {
-            var h = window.innerHeight - 365 > 750 ? 750 : window.innerHeight - 365;
-            h = window.innerHeight <= 768 ? window.innerHeight - 345 : h;
-            var p = (h / 315),
-                w = p * 560;
-            css = {
-                "height": h + 'px',
-                "width": w + 'px',
-                "margin": "auto"
-            };
-            p = p > 1.5 ? 1.5 : p;
-            hQ = 45 * p;
-        }
-        $('#vquextQuestion-' + instance).css({
-            "height": hQ + "px",
-            'text-aling':'center'
-        });
-        $('#vquextOptionsDiv-' + instance + '>.vquext-Options').css({
-            "height": hQ + "px",
-            'text-aling':'center'
-        });
-        $('#vquextMultimedia-' + instance).css(css);
-        $eXeVideoQuExt.refreshImageActive(instance);
-    },
     refreshImageActive: function (instance) {
         $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'vquextHome.png')
             .on('load', function () {
@@ -720,6 +672,7 @@ var $eXeVideoQuExt = {
 
                 }
             });
+            $eXeVideoQuExt.createPointsVideo(instance);
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -741,7 +694,7 @@ var $eXeVideoQuExt = {
             $vquextOverPoint = $('#vquextOverScore-' + instance),
             $vquextOverHits = $('#vquextOverHits-' + instance),
             $vquextOverErrors = $('#vquextOverErrors-' + instance),
-            $vquextTextClueGGame = $('#vquextTextClueGGame-' + instance),
+            $vquextPShowClue = $('#vquextPShowClue-' + instance),
             $vquextGamerOver = $('#vquextGamerOver-' + instance),
             message = "",
             messageColor = 2;
@@ -751,7 +704,7 @@ var $eXeVideoQuExt = {
         $vquextOverPoint.show();
         $vquextOverHits.show();
         $vquextOverErrors.show();
-        $vquextTextClueGGame.hide();
+        $vquextPShowClue.hide();
         switch (parseInt(type)) {
             case 0:
                 message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
@@ -759,11 +712,11 @@ var $eXeVideoQuExt = {
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
                         message = msgs.mgsAllQuestions;
-                        $vquextTextClueGGame.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
-                        $vquextTextClueGGame.show();
+                        $vquextPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                        $vquextPShowClue.show();
                     } else {
-                        $vquextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
-                        $vquextTextClueGGame.show();
+                        $vquextPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                        $vquextPShowClue.show();
                     }
                 }
                 break;
@@ -773,11 +726,11 @@ var $eXeVideoQuExt = {
                 $vquextLostGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $vquextTextClueGGame.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
-                        $vquextTextClueGGame.show();
+                        $vquextPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                        $vquextPShowClue.show();
                     } else {
-                        $vquextTextClueGGame.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
-                        $vquextTextClueGGame.show();
+                        $vquextPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                        $vquextPShowClue.show();
                     }
                 }
                 break;
@@ -787,13 +740,12 @@ var $eXeVideoQuExt = {
                 $vquextOverHits.hide();
                 $vquextOverErrors.hide();
                 $vquextClueGGame.show();
-                $vquextTextClueGGame.text(mOptions.itinerary.clueGame);
-                $vquextTextClueGGame.show();
+                $vquextPShowClue.text(mOptions.itinerary.clueGame);
+                $vquextPShowClue.show();
                 break;
             default:
                 break;
         }
-        $('#vquextPShowClue-' + instance).hide();
         $eXeVideoQuExt.showMessage(messageColor, message, instance);
         $vquextOverPoint.text(msgs.msgScore + ': ' + mOptions.score);
         $vquextOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
@@ -1071,7 +1023,7 @@ var $eXeVideoQuExt = {
             }
         }
         var tmsg=message;
-        if (mOptions.question.typeQuestion == 1) {
+        if (mOptions.question.typeQuestion == 1 && mOptions.showSolution) {
             tmsg = message + ': ' + mOptions.question.solutionQuestion;
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;

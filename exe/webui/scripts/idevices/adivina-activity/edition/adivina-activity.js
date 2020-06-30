@@ -118,6 +118,9 @@ var $exeDevice = {
                                 <label for="adivinaPercentageShow">' + _("Percentage of letters to show (%)") + ':\
                                 <input type="number" name="adivinaPercentageShow" id="adivinaPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
                             </p>\
+                            <p>\
+                                <label for="adivinaCaseSensitive"><input type="checkbox" id="adivinaCaseSensitive"> ' + _("Case sensitive") + ' </label>\
+                            </p>\
                          </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -276,6 +279,7 @@ var $exeDevice = {
                 timeQuestion = clear($.trim($('#adivinaTimeQuestion').val())),
                 percentageShow = parseInt(clear($('#adivinaPercentageShow').val())),
                 itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
+                caseSensitive=$('#adivinaCaseSensitive').is(':checked');
             if (!itinerary) return false;
             if (showSolution && timeShowSolution.length == 0) {
                 eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
@@ -283,7 +287,7 @@ var $exeDevice = {
             }
             var words = [];
             $('.adivinaWordEdition').each(function () {
-                words.push(clear($(this).val().toUpperCase().trim()));
+                words.push(clear($(this).val().trim()));
             })
             var definitions = [];
             $('.adivinaDefinitionEdition').each(function () {
@@ -315,7 +319,7 @@ var $exeDevice = {
             }
             var types = [];
             for (var i = 0; i < words.length; i++) {
-                var word = clear($.trim(words[i]).toUpperCase()),
+                var word = clear($.trim(words[i])),
                     definition = clear($.trim(definitions[i])),
                     url = $.trim(urls[i]),
                     mType = 0;
@@ -337,7 +341,7 @@ var $exeDevice = {
             var wordsGame = [];
             for (var i = 0; i < words.length; i++) {
                 var p = new Object();
-                p.word = $.trim(words[i]).toUpperCase();
+                p.word = $.trim(words[i]);
                 p.definition = definitions[i];
                 p.type = types[i];
                 p.author = authors[i];
@@ -378,7 +382,8 @@ var $exeDevice = {
                 'isScorm': scorm.isScorm,
                 'textButtonScorm': scorm.textButtonScorm,
                 'repeatActivity': scorm.repeatActivity,
-                'textAfter': escape(textAfter)
+                'textAfter': escape(textAfter),
+                'caseSensitive':caseSensitive
             }
             return data;
         },
@@ -598,6 +603,7 @@ var $exeDevice = {
             $('#adivinaNumberLives').prop('disabled', !game.useLives);
             $('#adivinaTimeQuestion').val(game.timeQuestion);
             $('#adivinaPercentageShow').val(game.percentageShow);
+            $('#adivinaCaseSensitive').prop('checked', game.caseSensitive);
             $('.adivinaWordMutimediaEdition').remove();
             $exeDevice.loadWords(game);
             $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);

@@ -750,7 +750,7 @@ var $exeDevice = {
         $('#vquextEUseLives').prop('checked', game.useLives);
         $('#vquextENumberLives').val(game.numberLives);
         $('#vquextEVideoIntro').val(game.idVideoQuExt);
-        $('#vquextShowSolutions').prop('checked', game.showSolution);
+        $('#vquextEShowSolution').prop('checked', game.showSolution);
         $('#vquextETimeShowSolution').val(game.timeShowSolution)
         $('#vquextETimeShowSolution').prop('disabled', !game.showSolution);
         $('#vquextENumberLives').prop('disabled', !game.useLives);
@@ -1079,7 +1079,7 @@ var $exeDevice = {
             var marcado = $(this).is(':checked');
             $('#vquextENumberLives').prop('disabled', !marcado);
         });
-        $('#vquextShowSolutions').on('change', function () {
+        $('#vquextEShowSolution').on('change', function () {
             var marcado = $(this).is(':checked');
             $('#vquextETimeShowSolution').prop('disabled', !marcado);
         });
@@ -1218,9 +1218,9 @@ var $exeDevice = {
             var marcado = $(this).is(':checked');
             $('#vquextNumberLives').prop('disabled', !marcado);
         });
-        $('#vquextShowSolution').on('change', function () {
+        $('#vquextEShowSolution').on('change', function () {
             var marcado = $(this).is(':checked');
-            $('#vquextTimeShowSolution').prop('disabled', !marcado);
+            $('#vquextETimeShowSolution').prop('disabled', !marcado);
         });
         $('#vquextEVIURL').on('change', function (e) {
             e.preventDefault();
