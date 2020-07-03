@@ -582,7 +582,7 @@ var $eXeQuExt = {
                 document.msFullscreenElement ||
                 document.mozFullScreenElement ||
                 document.webkitFullscreenElement;
-           
+                $eXeQuExt.refreshImageActive(instance);
         });
         $('#quextInstruction-' + instance).text(mOptions.instructions);
         $('#quextSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -911,7 +911,7 @@ var $eXeQuExt = {
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
             if (window.innerWidth < 401) {
-                text = $eXeQuExt.reduceText(text);
+                //text = $eXeQuExt.reduceText(text);
             }
             $("#quextEText-" + instance).html(text);
             $('#quextEText-' + instance).show();

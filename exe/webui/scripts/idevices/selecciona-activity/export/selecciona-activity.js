@@ -971,7 +971,7 @@ var $eXeSelecciona = {
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
             if (window.innerWidth < 401) {
-                text = $eXeSelecciona.reduceText(text);
+               //text = $eXeSelecciona.reduceText(text);
             }
             $('#seleccionaEText-'+instance).html(text);
             $('#seleccionaCover-'+instance).hide();

@@ -160,8 +160,8 @@
 
 .adivina-Multimedia {
     position: relative;
-    width: 65%;
-    position: relative;
+    width:65%;
+    max-width: 1024px;
     background-color: transparent;
     overflow: hidden;
     border-radius: 0.9em;
@@ -519,6 +519,21 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     background: url(exequextnormal.png) no-repeat;
 }
 
+div:fullscreen .adivina-Multimedia  {
+    width: 62%;
+    max-width: 1024px;
+}
+
+div:-webkit-full-screen .adivina-Multimedia {
+    width: 62%;
+    max-width: 1024px;
+}
+
+div:-moz-full-screen .adivina-Multimedia {
+    width: 62%;
+    max-width: 1024px;
+}
+
 /* Iconos */
 
 .adivina-GameContainer .exeQuextIcons {
@@ -677,6 +692,11 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     .adivina-GameContainer, .adivina-BottonContainer, .adivina-instructions {
         font-size: 0.8rem;
     }
+    .adivina-Multimedia {
+
+        width: 80%;
+    }
+    
     .adivina-LifesGame {
         display: none;
     }
@@ -782,5 +802,17 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     }
     .adivina-TimeNumber {
         width: 43%;
+    }
+}
+
+@media screen and ( min-width: 700px) and (max-height: 800px) {
+    div:fullscreen .adivina-Multimedia {
+        width: 50%;
+    }
+    div:-webkit-full-screen .adivina-Multimedia {
+        width: 50%;
+    }
+    div:-moz-full-screen .adivina-Multimedia {
+        width: 50%;
     }
 }

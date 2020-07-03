@@ -158,8 +158,8 @@
 /* Multimedia */
 
 .selecciona-Multimedia {
-    position: relative;
-    width: 65%;
+    width: 62%;
+    max-width: 1024px;
     position: relative;
     background-color: transparent;
     overflow: hidden;
@@ -197,6 +197,7 @@
     overflow-y: auto;
     z-index: 10001;
     border: none;
+    font-size: 1em;
 }
 
 .selecciona-Protector {
@@ -213,8 +214,6 @@
     z-index: 1000000;
     display: none;
 }
-
-
 
 /* Game Over */
 
@@ -395,33 +394,33 @@ a.selecciona-Options {
 }
 
 div:fullscreen .selecciona-Options {
-    font-size: 1.2em;
-    min-height: 4.2em;
+    font-size: 1.1em;
+    min-height: 3.3em;
 }
 
 div:-webkit-full-screen .selecciona-Options {
-    font-size: 1.2em;
-    min-height: 4.2em;
+    font-size: 1.1em;
+    min-height: 3.3em;
 }
 
 div:-moz-full-screen .selecciona-Options {
-    font-size: 1.2em;
-    min-height: 4.2em;
+    font-size: 1.1em;
+    min-height: 3.3em;
 }
 
 div:fullscreen .selecciona-Question {
-    font-size: 1.2em;
-    min-height: 3.9em;
+    font-size: 1.1em;
+    min-height: 2.5em
 }
 
 div:-webkit-full-screen .selecciona-Question {
-    font-size: 1.2em;
-    min-height: 3.9em
+    font-size: 1.1em;
+    min-height: 2.5em
 }
 
 div:-moz-full-screen .selecciona-Question {
-    font-size: 1.2em;
-    min-height: 3.9em;
+    font-size: 1.1em;
+    min-height: 2.5em
 }
 
 .selecciona-MainContainer a.selecciona-Option1 {
@@ -535,19 +534,18 @@ div:-moz-full-screen .selecciona-Question {
 
 input.selecciona-VideoIntroClose {
     position: absolute;
-    margin:0;
+    margin: 0;
     top: 0.2em;
     right: 0.2em;
     cursor: pointer;
 }
 
-
-.selecciona-BottonContainerDiv * ,.selecciona-BottonContainer * {
+.selecciona-BottonContainerDiv *, .selecciona-BottonContainer * {
     margin: 0;
     padding: 0;
 }
 
-.selecciona-BottonContainerDiv, .selecciona-BottonContainer  {
+.selecciona-BottonContainerDiv, .selecciona-BottonContainer {
     font-size: 1rem;
     width: 100%;
     padding: 0;
@@ -558,9 +556,9 @@ input.selecciona-VideoIntroClose {
 }
 
 .selecciona-AnswersOptions {
-    margin: 2px 1px;;
+    margin: 2px 1px;
+    ;
 }
-
 
 .selecciona-BottonContainerDivEnd {
     justify-content: flex-end;
@@ -586,33 +584,24 @@ input.selecciona-VideoIntroClose {
 
 .selecciona-GetScore input[type=button] {
     width: auto;
-    padding:0.3em;
+    padding: 0.3em;
 }
-
 
 /* Link */
 
 .exeQuextIcons-Submit {
     background: url(exequextreply.png) no-repeat;
     background-size: cover;
-    margin-left:0.1em;
+    margin-left: 0.1em;
 }
 
-.selecciona-GameContainer .exeQuextIcons-Video,
-.selecciona-GameContainer .exeQuextIcons-FullScreen,
-.selecciona-GameContainer .exeQuextIcons-FullScreenExit,
-.selecciona-GameContainer .exeQuextIcons-Submit,
-.selecciona-GameContainer .exeQuextIcons-Minimize {
+.selecciona-GameContainer .exeQuextIcons-Video, .selecciona-GameContainer .exeQuextIcons-FullScreen, .selecciona-GameContainer .exeQuextIcons-FullScreenExit, .selecciona-GameContainer .exeQuextIcons-Submit, .selecciona-GameContainer .exeQuextIcons-Minimize {
     -webkit-filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
     filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
     cursor: pointer;
 }
 
-.selecciona-GameContainer .exeQuextIcons-Video:hover,
-.selecciona-GameContainer .exeQuextIcons-Minimize:hover,
-.selecciona-GameContainer .exeQuextIcons-FullScreenExit:hover,
-.selecciona-GameContainer .exeQuextIcons-FullScreen:hover,
-.selecciona-GameContainer .exeQuextIcons-Submit:hover {
+.selecciona-GameContainer .exeQuextIcons-Video:hover, .selecciona-GameContainer .exeQuextIcons-Minimize:hover, .selecciona-GameContainer .exeQuextIcons-FullScreenExit:hover, .selecciona-GameContainer .exeQuextIcons-FullScreen:hover, .selecciona-GameContainer .exeQuextIcons-Submit:hover {
     -moz-transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -o-transform: scale(1.1);
@@ -645,8 +634,7 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     background-size: cover;
 }
 
-.selecciona-GameContainer .exeQuextIcons-Video,
-.selecciona-GameContainer .exeQuextIcons-Submit {
+.selecciona-GameContainer .exeQuextIcons-Video, .selecciona-GameContainer .exeQuextIcons-Submit {
     width: 1.7em;
     height: 1.7em;
 }
@@ -792,6 +780,9 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 }
 
 @media screen and (max-width:470px) {
+    .selecciona-Multimedia {
+        width: 95%;
+    }
     .selecciona-GameContainer, .selecciona-BottonContainerDiv, .selecciona-BottonContainer, .selecciona-BottonContainerDivEnd, .selecciona-instructions {
         font-size: 0.8rem;
     }
@@ -809,16 +800,15 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     .selecciona-DataCodeAccessE label {
         display: none;
     }
-    .selecciona-GameContainer .exeQuextIcons-Submit,.selecciona-GameContainer .exeQuextIcons-Video {
+    .selecciona-GameContainer .exeQuextIcons-Submit, .selecciona-GameContainer .exeQuextIcons-Video {
         width: 2em;
         height: 2em;
     }
-    .selecciona-OptionsDiv a, .selecciona-Question{
+    .selecciona-OptionsDiv a, .selecciona-Question {
         font-weight: bold;
         color: #071707;
         font-size: 0.9em;
     }
-
     .selecciona-Question {
         font-weight: bold;
         color: #071707;
@@ -859,7 +849,7 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     .selecciona-GameContainer, .selecciona-BottonContainerDiv, .selecciona-BottonContainer, .selecciona-BottonContainerDivEnd, .selecciona-instructions {
         font-size: 0.6rem;
     }
-    .selecciona-GameScoreBoard{
+    .selecciona-GameScoreBoard {
         justify-content: flex-start;
     }
     .selecciona-GameScores {
@@ -873,8 +863,8 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 @media screen and (max-width:265px) {
     .selecciona-GameScoreBoard p {
         font-weight: normal;
-        margin:2px;
-   }
+        margin: 2px;
+    }
     .selecciona-GameContainer, .selecciona-BottonContainerDiv, .selecciona-BottonContainer, .selecciona-BottonContainerDivEnd {
         font-size: 0.6rem;
     }
@@ -882,12 +872,12 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
         width: 1.1em;
         height: 1.1em;
     }
-    .selecciona-GameContainer .exeQuextIcons-Submit,.selecciona-GameContainer .exeQuextIcons-Video {
+    .selecciona-GameContainer .exeQuextIcons-Submit, .selecciona-GameContainer .exeQuextIcons-Video {
         width: 2em;
         height: 2em;
     }
     .selecciona-GameScores {
-        width:auto;
+        width: auto;
     }
     .selecciona-TimeNumber {
         width: auto;
@@ -904,5 +894,17 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     }
     .selecciona-TimeNumber {
         width: 43%;
+    }
+}
+
+@media screen and ( min-width: 700px) and (max-height: 800px) {
+    div:fullscreen .selecciona-Multimedia {
+        width: 50%;
+    }
+    div:-webkit-full-screen .selecciona-Multimedia {
+        width: 50%;
+    }
+    div:-moz-full-screen .selecciona-Multimedia {
+        width: 50%;
     }
 }

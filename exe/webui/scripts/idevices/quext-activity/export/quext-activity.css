@@ -159,7 +159,8 @@
 
 .quext-Multimedia {
     position: relative;
-    width: 65%;
+    width: 68%;
+    max-width: 1024px;
     position: relative;
     background-color: transparent;
     overflow: hidden;
@@ -197,6 +198,7 @@
     overflow-y: auto;
     z-index: 10001;
     border: none;
+    font-size:1em;
 }
 
 .quext-Protector {
@@ -394,34 +396,37 @@ a.quext-Options {
     color: #071707;
 }
 
+
+
+
 div:fullscreen .quext-Options {
-    font-size: 1.2em;
-    min-height: 4.2em;
+    font-size: 1.1em;
+    min-height: 3.5em;
 }
 
 div:-webkit-full-screen .quext-Options {
-    font-size: 1.2em;
-    min-height: 4.2em;
+    font-size: 1.1em;
+    min-height: 3.5em;
 }
 
 div:-moz-full-screen .quext-Options {
-    font-size: 1.2em;
-    min-height: 4.2em;
+    font-size: 1.1em;
+    min-height: 3.5em;
 }
 
 div:fullscreen .quext-Question {
-    font-size: 1.2em;
-    min-height: 3.9em;
+    font-size: 1.1em;
+    min-height:  2.8em
 }
 
 div:-webkit-full-screen .quext-Question {
-    font-size: 1.2em;
-    min-height: 3.9em
+    font-size: 1.1em;
+    min-height: 2.8em
 }
 
-div:-moz-full-screen .squext-Question {
-    font-size: 1.2em;
-    min-height: 3.9em;
+div:-moz-full-screen .quext-Question {
+    font-size: 1.1em;
+    min-height: 2.8em
 }
 
 .quext-MainContainer a.quext-Option1 {
@@ -654,7 +659,9 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 .quext-extra-content {
     margin-top: 1.7em;
 }
-
+.quext-EText{
+    padding-right: 0.7em;
+}
 .quext-parpadea {
     animation-name: quext-parpadeo;
     animation-duration: 1s;
@@ -709,6 +716,10 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 }
 
 @media screen and (max-width:550px) {
+    .quext-Question{
+        margin-bottom: 0.5em;
+    }
+
     .quext-LinkFullScreen {
         display: none;
     }
@@ -718,9 +729,15 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     .quext-instructions p {
         margin: 0 auto;
     }
+
 }
 
 @media screen and (max-width:470px) {
+
+    .quext-Multimedia {
+        width: 95%;
+
+    }
     .quext-GameContainer, .quext-BottonContainer, .quext-instructions {
         font-size: 0.8rem;
     }
@@ -829,5 +846,16 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
     }
     .quext-TimeNumber {
         width: 43%;
+    }
+}
+@media screen and ( min-width: 700px )  and (max-height: 800px){
+    div:fullscreen .quext-Multimedia  {
+        width: 55%;
+    }
+    div:-webkit-full-screen .quext-Multimedia {
+        width: 55%;
+    }
+    div:-moz-full-screen .quext-Multimedia {
+        width: 55%;
     }
 }
