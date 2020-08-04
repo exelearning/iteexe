@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-25 19:39+0200\n"
-"PO-Revision-Date: 2020-07-06 21:07+0200\n"
+"PO-Revision-Date: 2020-08-01 14:07+0200\n"
 "Last-Translator: Jan Joscha Finger <j.joscha.finger@educarex.es>\n"
 "Language: de\n"
 "Language-Team: Ralf Hilgenstock, DIALOGE Beratungsgesellschaft; Uwe Kohnle, "
@@ -23,14 +23,14 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.4.0\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 
 #: exe/application.py:239
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
-"Beim Laden Ihrer Konfiguration ist ein Fehler aufgetreten. Ein Backup is als %s "
-"gespeichert worden."
+"Beim Laden Ihrer Konfiguration ist ein Fehler aufgetreten. Ein Backup ist als %s "
+"gespeichert worden"
 
 # I'm not totally sure about the "iDevice-Modul" translation. Suggestions?
 #: exe/application.py:257
@@ -38,8 +38,8 @@ msgstr ""
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved at %s"
 msgstr ""
-"Beim Laden Ihres iDevice-Moduls ist ein Fehler aufgetreten. Ein Backup is als %s "
-"gespeichert worden."
+"Beim Laden Ihres iDevice Store ist ein Fehler aufgetreten. Ein Backup is als %s "
+"gespeichert worden"
 
 # I'm not at all sure what the paths might be in German-language Windows. Also, Win10 is missing completely.
 # => Paths need to be revised, Win10 must be included.
@@ -277,13 +277,15 @@ msgstr "Anhang %s hat keinen parentNode"
 msgid "Image"
 msgstr "Bild/Grafik"
 
+# Wäre es nicht besser "on completion of this question" als nach dem Beantworten der Frage zu übersetzen anstatt Abschluss der Frage?
 #: exe/engine/casestudyidevice.py:65 exe/engine/ejercicioresueltofpdidevice.py:65
+#, fuzzy
 msgid ""
 "Choose an optional image to be shown to the student on completion of this "
 "question"
 msgstr ""
-"Wählen Sie ein Bild aus, das den Teilnehmer/innen nach dem Abschluss der Frage "
-"gezeigt wird. "
+"Wählen Sie ein optionales Bild aus, das den TeilnehmerInnen nach dem Abschluss "
+"der Frage gezeigt wird"
 
 #: exe/engine/casestudyidevice.py:200
 msgid "Case Study"
@@ -354,9 +356,7 @@ msgstr ""
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr ""
-"Geben Sie passendes Feedback \n"
-"für die Situation. "
+msgstr "Passendes Feedback zur Situation geben."
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -386,7 +386,7 @@ msgstr ""
 #: exe/engine/orientacionestutoriafpdidevice.py:35
 #: exe/engine/parasabermasfpdidevice.py:35 exe/engine/recomendacionfpdidevice.py:35
 msgid "Enter the text that will appear on this iDevice"
-msgstr "Geben Sie den Text ein, der bei dieser iDevice erscheint. "
+msgstr "Geben Sie den Text ein, der auf diesem iDevice angezeigt wird"
 
 #: exe/engine/casopracticofpdidevice.py:38 exe/engine/casopracticofpdidevice.py:136
 msgid "Situation Text:"
@@ -453,11 +453,11 @@ msgstr "Einblendung bei gewonnenem Spiel"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Shown over when the game is won"
-msgstr "Wird eingeblendet, wenn das Spiel gewonnen ist. "
+msgstr "Wird eingeblendet, wenn das Spiel gewonnen ist"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Shown over game when correct answer given"
-msgstr "Wird eingeblendet, wenn die richtige Stelle gefunden wurde. "
+msgstr "Wird über das Spiel eingeblendet, wenn die richtige Antwort gegeben wurde"
 
 #: exe/engine/clickinorderidevice.py:63
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:37
@@ -466,7 +466,7 @@ msgstr "Einblendung bei richtiger Antwort"
 
 #: exe/engine/clickinorderidevice.py:64
 msgid "Shown over game when wrong answer is given"
-msgstr "Wird eingeblendet, wenn eine falsche Stelle angeklickt wurde. "
+msgstr "Wird über das Spiel eingeblendet, wenn eine falsche Anwort gegeben wurde"
 
 #: exe/engine/clickinorderidevice.py:64
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:41
@@ -479,7 +479,7 @@ msgstr "Bereich in dem das Spiel stattfindet"
 
 #: exe/engine/clickinorderidevice.py:65
 msgid "The Main Game Area on which to locate items"
-msgstr "Der Bereich, in dem die zu findenden Items platziert werden. "
+msgstr "Der Hauptspielbereich, in dem die zu findenden Items platziert werden"
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "Area shown before the game starts"
@@ -487,7 +487,7 @@ msgstr "Bereich der oberhalb des Spiels angezeigt wird"
 
 #: exe/engine/clickinorderidevice.py:66
 msgid "User will click on this to start the game"
-msgstr "Hier wird das Spiel per Klick gestartet. "
+msgstr "Hier wird das Spiel per Klick gestartet"
 
 #: exe/engine/clickinorderidevice.py:78
 msgid "Game Width"
@@ -513,7 +513,7 @@ msgstr "Stil des Hotspot-Zählers (CSS)"
 msgid "Use CSS to style element that counts number items found"
 msgstr ""
 "Verwenden Sie CSS um das Element zu gestalten, das die Anzahl der gefundenen "
-"Objekte zählt. "
+"Objekte zählt"
 
 #: exe/engine/clickinorderidevice.py:81
 msgid "Hint Width"
@@ -569,7 +569,7 @@ msgstr "Fragen in Zufallsreihenfolge"
 
 #: exe/engine/clickinorderidevice.py:107
 msgid "Randomize question order or not"
-msgstr "Zufallsauswahl der Fragen - ja oder nein? "
+msgstr "Fragen nach dem Zufallsprinzip anordnen oder nicht"
 
 #: exe/engine/clickinorderidevice.py:108
 msgid "Use a Timer"
@@ -621,7 +621,7 @@ msgstr "Zeit, nach der das aufgedeckte Element verschwindet (in Millisekunden)"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "After delay ms hide the content prev revealed"
-msgstr "Nach ... Millisekunden den vorher aufgedeckten Inhalt wieder verbergen. "
+msgstr "Nach ... Millisekunden den vorher aufgedeckten Inhalt wieder verbergen"
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "Hint to Show for this item"
@@ -629,9 +629,7 @@ msgstr "Hinweis zu diesem Item"
 
 #: exe/engine/clickinorderidevice.py:166
 msgid "The hint that will appear under the map for this item"
-msgstr ""
-"Hinweis, der sich auf dieses Item bezieht. Wird unterhalb des Spielfeldes "
-"angezeigt. "
+msgstr "Hinweis zu diesem Item, das unterhalb des Spielfeldes erscheinen wird"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "Item Revealed"
@@ -639,9 +637,7 @@ msgstr "Aufgedecktes Item"
 
 #: exe/engine/clickinorderidevice.py:167
 msgid "The Item that will be revealed in place"
-msgstr ""
-"Das Item, das aufgedeckt wird, wenn die richtige Stelle auf dem Spielfeld "
-"angeklickt wurde. "
+msgstr "Das Item, das an Ort und Stelle aufgedeckt wird"
 
 #: exe/engine/clozefpdidevice.py:50
 msgid "FPD - Cloze Activity"
@@ -802,12 +798,12 @@ msgstr "Anleitung für Teilnehmer/innen"
 #: exe/engine/clozefpdidevice.py:279 exe/engine/clozeidevice.py:278
 #: exe/engine/clozelangfpdidevice.py:283 exe/engine/listaidevice.py:291
 msgid "Put instructions for learners here"
-msgstr "Anweisung für Teilnehmer/innen hier einfügen. "
+msgstr "Anweisung für TeilnehmerInnen hier einfügen"
 
 #: exe/engine/clozefpdidevice.py:280 exe/engine/clozeidevice.py:279
 #: exe/engine/clozelangfpdidevice.py:284
 msgid "Read the paragraph below and fill in the missing words"
-msgstr "Lesen Sie den Abschnitt unten und tragen Sie die fehlenden Begriffe ein. "
+msgstr "Lesen Sie den Abschnitt unten und tragen Sie die fehlenden Begriffe ein"
 
 #: exe/engine/clozefpdidevice.py:291 exe/engine/clozeidevice.py:291
 #: exe/engine/clozelangfpdidevice.py:296
@@ -823,7 +819,7 @@ msgstr "Lücken-Aktivität"
 #: exe/engine/clozeidevice.py:123 exe/engine/truefalseidevice.py:394
 #: exe/engine/verdaderofalsofpdidevice.py:397
 msgid "Read the paragraph below and fill in the missing words."
-msgstr "Lesen Sie den Abschnitt unten und tragen Sie die fehlenden Begriffe ein.  "
+msgstr "Lesen Sie den Abschnitt unten und tragen Sie die fehlenden Begriffe ein."
 
 #: exe/engine/clozelangfpdidevice.py:50
 msgid "FPD - Cloze Activity (Modified)"
@@ -1180,7 +1176,7 @@ msgstr "Datei löschen"
 
 #: exe/engine/extendedfieldengine.py:325
 msgid "No File Uploaded Currently"
-msgstr "Noch keine Datei hochgeladen. "
+msgstr "Derzeit keine Datei hochgeladen"
 
 #: exe/engine/extendedfieldengine.py:357 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
@@ -1237,11 +1233,10 @@ msgid ""
 "Provide a caption for the \n"
 "MP3 file. This will appear in the players title bar as well."
 msgstr ""
-"Geben Sie eine Bezeichnung für die\n"
-"MP3-Datei ein. Sie wird im Titelverzeichnis angezeigt.  "
+"Geben Sie eine Beschriftung für die\n"
+"MP3-Datei ein. Sie wird auch in der Titelleiste der Spieler angezeigt."
 
 #: exe/engine/field.py:3138
-#, fuzzy
 msgid ""
 "<p>If left unchecked a small number of spelling and capitalization errors will "
 "be accepted. If checked only an exact match in spelling and capitalization will "
@@ -1255,19 +1250,20 @@ msgid ""
 "answer is \"Elephant\". If only \"Strict Marking\" is checked and \"Check "
 "Capitalization\" is not, \"elephant\" will also be accepted.</p>"
 msgstr ""
-"<p>Wenn die Funktion deaktiviert bleibt, werden kleinere Fehler bei der "
-"Bewertung nicht berücksichtigt. Wenn die Funktion aktiv ist, muss "
-"buchstabengetreu richtig geantwortet werden und Groß- und Kleinschreibung "
-"korrekt sein.</p><p><strong>Beispiel:</strong> Die richtige Antwort lautet "
-"<code>Elefant</code> und beide Ergebnisse <code>elefant</code> und "
-"<code>Elifant</code> werden richtig bewertet weil sie <em>\"nah genug\"</em> an "
-"der richtigen Lösung sind (nur ein Buchstabe ist jeweils falsch), sofern \"Groß-/"
-"Kleinschreibung\" aktiv ist.</p><p>Wenn Groß-/Kleinschreibung abgeschaltet ist "
-"wird die Kleinschreibung <code>e</code> nicht als Fehler gewertet und "
-"<code>elifant</code> wird ebenfalls akzeptiert.</p><p>Wenn sowohl \"Strenge "
-"Bewertung\" als auch \"Groß-/Kleinschreibung\" aktiviert sein, wird nur \"Elefant"
-"\" als richtig gewertet. Wenn nur \"Strenge Bewertung\" aktiv ist und \"Groß-/"
-"Keinschreibung\" nicht aktiv ist, wird \"elephant\" als richtig gewertet.</p>"
+"<p>Wenn die Funktion deaktiviert bleibt, werden kleinere Rechtschreib- und "
+"Großschreibungsfehler bei der Bewertung nicht berücksichtigt. Wenn die Funktion "
+"aktiv ist, muss buchstabengetreu richtig geantwortet werden und Groß- und "
+"Kleinschreibung korrekt sein.</p><p><strong>Beispiel:</strong> Die richtige "
+"Antwort lautet <code>Elefant</code> und beide Ergebnisse <code>elefant</code> "
+"und <code>Elifant</code> werden als richtig bewertet weil sie <em>\"nah genug\"</"
+"em> an der richtigen Lösung sind (nur ein Buchstabe ist jeweils falsch), sogar "
+"wenn \"Groß-/Kleinschreibung\" aktiv ist.</p><p>Wenn Groß-/Kleinschreibung "
+"abgeschaltet ist wird die Kleinschreibung <code>e</code> nicht als Fehler "
+"gewertet und <code>elifant</code> wird ebenfalls akzeptiert.</p><p>Wenn sowohl "
+"\"Strenge Bewertung\" als auch \"Groß-/Kleinschreibung\" aktiviert sein, wird "
+"nur \"Elefant\" als richtig gewertet. Wenn nur \"Strenge Bewertung\" aktiv ist "
+"und \"Groß-/Keinschreibung\" nicht aktiv ist, wird \"elefant\" auch als richtig "
+"gewertet.</p>"
 
 #: exe/engine/field.py:3159 exe/engine/field.py:3393
 msgid ""
@@ -1344,7 +1340,7 @@ msgstr ""
 
 #: exe/engine/field.py:3622
 msgid "Type a discussion topic here."
-msgstr "Diskussionsthema hier eingeben: "
+msgstr "Diskussionsthema hier eingeben."
 
 #: exe/engine/field.py:3651
 msgid ""
@@ -1411,7 +1407,7 @@ msgid ""
 msgstr ""
 "Geben Sie hier die Fragestellung ein.\n"
 "Die Frage sollte klar und eindeutig sein. Vermeiden Sie \n"
-"Verneinungen, weil sie missverstanden werden können.  "
+"Verneinungen, weil sie missverstanden werden können."
 
 #: exe/engine/field.py:3956 exe/engine/field.py:4037
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
@@ -1455,7 +1451,7 @@ msgstr ""
 #: exe/engine/reflectionfpdidevice.py:68 exe/engine/reflectionfpdidevice.py:203
 #: exe/engine/reflectionidevice.py:66 exe/engine/reflectionidevice.py:204
 msgid "Feedback:"
-msgstr "Feedback: "
+msgstr "Feedback:"
 
 #: exe/engine/fileattachidevice.py:37
 msgid "File Attachments"
@@ -1468,7 +1464,7 @@ msgstr "Toughra Technologies FZ LLC."
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
-msgstr "Datei-Anhänge "
+msgstr "IDevice Datei-Anhänge."
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
@@ -1510,11 +1506,12 @@ msgid ""
 msgstr ""
 "Dieses iDevice unterstützt nur Flash Video Filme (.FLV-Format) und akzeptiert "
 "keine \n"
-"anderen Video-Dateiformate. Andere Videoformate (z.B. mov, wmf, etc.) müssen \n"
-"in das FLV-Format konvertiert werden, bevor sie hier verwendet werden können.\n"
-"Nutzer müssen zunächst den Flash-Player 8 von Adobe herunterladen und "
-"installieren,\n"
-"bevor sie die Dateien sehen können. http://Adobe.com.  "
+"anderen Video-Dateiformate. Andere Videoformate (z.B. mov, wmf, etc.) können "
+"jedoch mit einem Codeumsetzer eines Dritten \n"
+"in das FLV-Format konvertiert werden. Diese Umsetzer sind mit eXe nicht "
+"ausgestattet.\n"
+"Nutzer müssen auch den Flash-Player 8 von http://macromedia.com herunterladen, "
+"um das Video abspielen zu können."
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -1662,7 +1659,7 @@ msgstr "Mit diesem iDevice können Sie verschiedene Bilder zeigen."
 
 #: exe/engine/galleryidevice.py:469
 msgid "Enter a title for the gallery"
-msgstr "Geben Sie einen Titel für die Galerie ein. "
+msgstr "Geben Sie einen Titel für die Galerie ein"
 
 #: exe/engine/galleryidevice.py:470
 msgid ""
@@ -1702,7 +1699,7 @@ msgstr "Buchstabenspiel \"Hangman\" mit anpassbarem Bild."
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
-msgstr "Spielanweisungen "
+msgstr "Spielanweisungen"
 
 #: exe/engine/hangmanidevice.py:76
 msgid "Alphabet to show players"
@@ -1946,7 +1943,10 @@ msgstr "Geben Sie die Lernziele für diesen Schritt an."
 msgid "Preknowledge"
 msgstr "Benötigtes Vorwissen"
 
+# The examples given here are not the same as in the original. However, I should leave it unchanged, as they are fully sufficient to drive the point home.
+#  Meanwhile, the English version makes refernce to "level 4 English" -this ought to be changed to, e.g., "level B1 French"
 #: exe/engine/idevicestore.py:715 exe/engine/idevicestore.py:822
+#, fuzzy
 msgid ""
 "Prerequisite knowledge refers to the knowledge learners should already\n"
 "have in order to be able to effectively complete the learning. Examples of\n"
@@ -3622,12 +3622,12 @@ msgstr "Inhalt des Ordners"
 #: exe/importers/scanresources.py:194
 #, python-format
 msgid "Analizing directory %d of %d: %s"
-msgstr "Verzeichnis %d of %d: %s wird überprüft"
+msgstr "Ordner %d of %d: %s wird überprüft"
 
 #: exe/importers/scanresources.py:255
 #, python-format
 msgid "Calculating relative paths to directory %d of %d: %s"
-msgstr "Relative Pfade zu Verzeichnis %d von %d werden berechnet: %s"
+msgstr "Relative Pfade zu Ordner %d von %d werden berechnet: %s"
 
 #: exe/importers/scanresources.py:275
 #, python-format
@@ -3667,7 +3667,7 @@ msgstr "Gamification"
 #: exe/jsui/mainpage.py:425 exe/jsui/mainpage.py:1302 exe/jsui/mainpage.py:1446
 #: exe/jsui/scripts/app/controller/TemplateManager.js:83
 msgid "Cannot access directory named "
-msgstr "Der Zugriff auf das angegebene Verzeichnis ist nicht möglich. "
+msgstr "Der Zugriff auf den angegebenen Ordner ist nicht möglich. "
 
 #: exe/jsui/mainpage.py:425 exe/jsui/mainpage.py:1304 exe/jsui/mainpage.py:1446
 msgid ". Please use ASCII names."
@@ -3721,7 +3721,7 @@ msgstr "Wird heruntergeladen..."
 
 #: exe/jsui/mainpage.py:587
 msgid "Connecting to classification sources repository..."
-msgstr "Verbindung zum Speicher für Klassifikationsquellen wird aufgebaut..."
+msgstr "Verbindung zum Archiv für Klassifikationsquellen wird aufgebaut..."
 
 #: exe/jsui/mainpage.py:587 exe/jsui/mainpage.py:593
 msgid "Sources Download"
@@ -3877,7 +3877,7 @@ msgstr "Paket nach %s entpackt"
 
 #: exe/jsui/mainpage.py:1486 exe/webui/stylemanagerpage.py:239
 msgid "Directory exists"
-msgstr "Verzeichnis existiert"
+msgstr "Ordner existiert"
 
 #: exe/jsui/mainpage.py:1500 exe/jsui/mainpage.py:1601 exe/jsui/mainpage.py:1624
 #: exe/jsui/mainpage.py:1642 exe/jsui/mainpage.py:1648 exe/jsui/mainpage.py:1672
@@ -3956,12 +3956,12 @@ msgstr "Sorry, falsches Dateiformat"
 
 #: exe/jsui/propertiespage.py:336
 msgid "Failed to get properties"
-msgstr "Laden der Eigenschaften fehlgeschlagen. "
+msgstr "Laden der Eigenschaften fehlgeschlagen."
 
 #: exe/jsui/propertiespage.py:391
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abbr/plugin.min.js:73
 msgid "Failed to save properties"
-msgstr "Speichern der Eigenschaften fehlgeschlagen. "
+msgstr "Speichern der Eigenschaften fehlgeschlagen."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:193
 #: exe/jsui/scripts/app/controller/MainTab.js:251
@@ -4246,7 +4246,7 @@ msgstr "Sile verwalten"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:584
 msgid "Template Manager"
-msgstr "Dokumentvorlagen verwalten"
+msgstr "Dokumentvorlagen-Manager"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:609
 msgid "Select package to insert"
@@ -4418,6 +4418,10 @@ msgid ""
 "close this dialogue, export as SCORM 2004 and upload the generated zip file to "
 "Procomún."
 msgstr ""
+"Falls beim publizieren Probleme auftreten oder wenn Sie das Katalogisieren "
+"später fortsetzen möchten, schließen Sie bitte diesen Dialog, exportieren Sie im "
+"SCORM 2004-Format und laden Sie die dadurch erstellte zip-Datei zu Procomún "
+"herauf."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1000
 msgid "Select the parent folder for export."
@@ -4434,7 +4438,7 @@ msgstr "Textdatei"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1040
 msgid "Save package resources report as"
-msgstr ""
+msgstr "Paket unter anderem Namen speichern"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1052
 msgid "CSV File"
@@ -4466,15 +4470,15 @@ msgstr "Common Cartridge exportieren unter"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1090
 msgid "INVALID VALUE PASSED TO exportPackage"
-msgstr ""
+msgstr "UNGÜLTIGER WERT ZU exportPackage ÜBERTRAGEN"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1106
 msgid "SCORM/IMS/ZipFile"
-msgstr ""
+msgstr "SCORM/IMS/ZipFile"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1202
 msgid "No templates available"
-msgstr ""
+msgstr "Keine Dokumentvorlagen gefunden"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1297
 msgid "Loading package..."
@@ -4506,11 +4510,11 @@ msgstr "Paket speichern unter: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1433
 msgid "Title for template:"
-msgstr ""
+msgstr "Name der Dokumentvorlage:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1434
 msgid "Enter the new name for template:"
-msgstr ""
+msgstr "Geben Sie den Namen der Dokumentvorlage ein:"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1455
 msgid "Save file"
@@ -4523,11 +4527,11 @@ msgstr "Paket wird gespeichert "
 #: exe/jsui/scripts/app/controller/filepicker/Directory.js:75
 #: exe/jsui/scripts/app/controller/filepicker/File.js:168
 msgid "You do not have the permissions to open folder"
-msgstr "Sie haben nicht die Berechtigung das Verzeichnis zu öffnen. "
+msgstr "Sie sind nicht berechtigt, diesen Order zu öffnen."
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:160
 msgid "You do not have the permissions to write into folder"
-msgstr "Sie haben keine Schreibrechte für das Verzeichnis. "
+msgstr "Sie haben keine Schreibrechte für diesen Ordner. "
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:170
 msgid "You do not have the permissions to open the file"
@@ -4535,7 +4539,7 @@ msgstr "Sie haben nicht die Berechtigung die Datei zu öffnen. "
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:336
 msgid "You do not have the permissions to  save into folder"
-msgstr "Sie haben nicht die Berechtigung in dem Verzeichnis zu speichern"
+msgstr "Sie sind nicht berechtigt, in diesem Ordner zu speichern"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:348
 msgid "Create Folder"
@@ -4543,7 +4547,7 @@ msgstr "Ordner anlegen"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:349
 msgid "Enter the new folder name:"
-msgstr "Geben Sie den neuen Verzeichnisnamen ein:"
+msgstr "Geben Sie den neuen Ordnernamen ein:"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:363
 msgid "You do not have the permissions to create a folder in folder"
@@ -4621,11 +4625,11 @@ msgstr "Speichern in:"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:87
 msgid "Folder"
-msgstr "Verzeichnis"
+msgstr "Ordner"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:88
 msgid "Select Folder"
-msgstr "Verzeichnis wählen"
+msgstr "Ordner wählen"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:35
 msgid "Dublin Core Metadata"
@@ -4660,6 +4664,10 @@ msgid ""
 "codes that describe a topic of the resource. Recommended best practice is to "
 "select a value from a controlled vocabulary or formal classification scheme."
 msgstr ""
+"Normalerweise wird das Thema durch es beschreibende Schlüsselbegriffe, "
+"Schlüsselphrasen oder Klassifizierungscodes ausgedrückt. Soweit möglich, sollten "
+"Sie einen Wert aus einer definierten Liste oder aus einem formellen "
+"Klassifizierungsschema wählen."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:71
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:204
@@ -4705,6 +4713,11 @@ msgid ""
 "\"_blank\">W3C Date and Time Formats</a> and includes (among others) dates of "
 "the form YYYY-MM-DD."
 msgstr ""
+"Typischerweise bezieht sich das Datum auf die Erstellung oder Verfügbarkeit der "
+"Ressource. Es wird empfohlen, das Datum entsprechend <em>ISO 8601</em> <a href="
+"\"/docs/W3C-NOTE-datetime.html\" target=\"_blank\">W3C Date and Time Formats</a> "
+"anzugeben; üblicherweise wird das Format JJJJ-MM-TT verwendet, aber andere "
+"Formate sind möglich."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:113
 msgid "The nature or genre of the content of the resource."
@@ -4717,6 +4730,11 @@ msgid ""
 "vocabulary or controlled classification scheme. To describe the physical or "
 "digital manifestation of the resource, use the FORMAT element."
 msgstr ""
+"\"Typ\" bezieht sich auf Begriffe wie allgemeine Kategoien, Funktionen, oder "
+"Genres im Inalt. Soweit möglich, sollten Sie einen Wert aus einer definierten "
+"Liste oder aus einem formellen Klassifizierungsschema wählen. Um physische oder "
+"digitale Eigenschaften der Ressource zu beschreiben, benutzen Sie bitte das "
+"Element FORMAT."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:121
 #: exe/jsui/scripts/app/view/forms/LomSections.js:95
@@ -4837,9 +4855,8 @@ msgstr "Löschen"
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:570
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:150
 #: exe/webui/tools/style-designer/langs/all.js:115
-#, fuzzy
 msgid "Reset"
-msgstr "repräsentieren"
+msgstr "Zurücksetzen"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:35
 msgid "Global Options"
@@ -4854,15 +4871,15 @@ msgstr "Metadaten Typ"
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:46
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:65
 msgid "Dublin Core"
-msgstr ""
+msgstr "Dublin Core"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:47
 msgid "LOM v1.0"
-msgstr ""
+msgstr "LOM v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:48
 msgid "LOM-ES v1.0"
-msgstr ""
+msgstr "LOM-ES v1.0"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:61
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
@@ -4880,19 +4897,25 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:74
 msgid "Export a copy of the elp"
-msgstr ""
+msgstr "Eine Kopie des *.elp exportieren"
 
+# I'm not totally happy with this, both in English and in German. Shouldn't this line make reference to the "Download ELP" iDevice?
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:78
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:81
+#, fuzzy
 msgid ""
 "The exported folder will include a copy of the elp file, even if your content "
 "doesn't have a link to it. If you want anyone to find your elp easily, consider "
 "adding a link to the elp in your content instead of using this option."
 msgstr ""
+"Der exportierte Order enthält eine Kopie der *.elp-Datei, selbst wenn Ihre "
+"Ressource keinen Link dazu enthält. Wenn Sie möchten, dass andere die *.elp-"
+"Datei leicht finden, fügen Sie bitte einen Link dazu ein statt diese Option zu "
+"wählen."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:87
 msgid "Add a search bar (editable Web Site export only)"
-msgstr ""
+msgstr "Eine Suchleiste einfügen (nur für Export als editierbare Webseite)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:91
 msgid ""
@@ -4900,16 +4923,21 @@ msgid ""
 "has to be checked too. It will only work if JavaScript is enabled, and only in "
 "modern browsers."
 msgstr ""
+"Diese Option fügt auf jeder Seite ein Suchfeld ein. Die Option \"%\" muss dafür "
+"ebenfalls gewählt werden. Diese Funktion benötigt JavaScript und funktioniert "
+"nur in modernen Browsern."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:94
 msgid ""
 "Checking this option, a search box will be added to every page. The \"%\" option "
 "has to be checked too. It will only work if JavaScript is enabled."
 msgstr ""
+"Diese Option fügt auf jeder Seite ein Suchfeld ein. Die Option \"%\" muss dafür "
+"ebenfalls gewählt werden. Diese Funktion benötigt JavaScript."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:100
 msgid "Add page counters in the footer and header of the export?"
-msgstr ""
+msgstr "Den Kopf- und Fußzeilen aller Seiten des Exports Seitenzahlen hinzufügen?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:104
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:107
@@ -4918,10 +4946,13 @@ msgid ""
 "exported content (except ePub's frontpage). This doesn't affect Single Page and "
 "Text File export files."
 msgstr ""
+"Diese Option fügt jeder Seite des exportierten Inhalts einen Text \"Seite X von Y"
+"\" hinzu, mit Ausnahme der Titelseite der *.ePub-Datei. Single-Page "
+"Exportdateien und Textdateien sind hiervon ausgeschlossen."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:113
 msgid "SCORM Options (1.2 and 2004)"
-msgstr ""
+msgstr "SCORM-Optionen (1.2 und 2004)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:121
 msgid "Add Previous/Next links within SCOs?"
@@ -4933,7 +4964,7 @@ msgid ""
 "pages within your SCO. The LMS will also still add this kind of functionality."
 msgstr ""
 "Wenn Sie diese Option wählen, wird eXe Vorwärts- und Rückwärtsverknüpfungen auf "
-"den einzelnen Seiten ihrer SCO erzeugenDas LMS wird aber auch noch diese "
+"den einzelnen Seiten ihrer SCO erzeugen. Das LMS wird aber auch noch diese "
 "Funktionalität bieten."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:128
@@ -4948,19 +4979,26 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:134
 msgid "Include Single Page export file?"
-msgstr ""
+msgstr "Single-Page Exportdatei einfügen?"
 
+# I find the original quite hard to understand, thence the somewhat strange-sounding translation.
+# Shouldn't "containing the result of exporting this eXe package as a single page." read, "containing a table of contents when exporting as a single page."?
+#  In that case, the German translation would be, "... diese enthält ein Inhaltsverzeichnis für Single-Page Seiten."
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:138
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:141
+#, fuzzy
 msgid ""
 "Checking this option the exported SCORM file will include a file named "
 "\"singlepage_index.html\" containing the result of exporting this eXe package as "
 "a single page."
 msgstr ""
+"Diese Option schließt eine Datei mit dem Namen \"singlepage_index.html\" im "
+"exportierten SCORM-Paket ein; diese Datei enthält die Resultate des Exports des "
+"eXe-Pakets im Single-Page-Format."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:147
 msgid "Include Web Site export files?"
-msgstr ""
+msgstr "Webseiten-Exportdateien einschließen?"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:151
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:154
@@ -4969,11 +5007,15 @@ msgid ""
 "exporting this eXe package as Web Site. All the html files will have the "
 "\"website_\" prefix to differentiate them from their SCORM equivalent."
 msgstr ""
+"Diese Option schließt beim Exportieren als SCORM die Resultate des Exports als "
+"Webseite ein. Alle HTML-Dateien werden mit dem Präfix \"website_\" versehen, um "
+"sie von ihren SCORM-Entsprechungen zu unterscheiden."
 
 #: exe/jsui/scripts/app/view/forms/LangContainer.js:53
 msgid "Language of the field"
 msgstr "Sprache des Feldes"
 
+# I've no idea what the word "taxon" stands for in this context.
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:163
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:164
 #: exe/jsui/scripts/app/view/forms/LomSections.js:179
@@ -4982,7 +5024,7 @@ msgstr "Sprache des Feldes"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:435
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:442
 msgid "Taxon"
-msgstr ""
+msgstr "Taxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
@@ -5006,7 +5048,7 @@ msgstr "Lebenszyklus"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:219
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:259
 msgid "Meta-Metadata"
-msgstr ""
+msgstr "Meta-Metadaten"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:220
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:260
@@ -5030,25 +5072,23 @@ msgstr "Klassifizierung"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:23
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
-#, fuzzy
 msgid "resources and integrated resources"
-msgstr "Referenz zu einem eingebundenen Material"
+msgstr "Ressourcen und eingebundenes Material"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:24
 #: exe/jsui/scripts/app/view/forms/LomSections.js:194
-#, fuzzy
 msgid "learning objects"
-msgstr "exelearning.net"
+msgstr "Lernobjekte"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:25
 #: exe/jsui/scripts/app/view/forms/LomSections.js:195
 msgid "teaching sequences"
-msgstr ""
+msgstr "Lernsequenzen"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:26
 #: exe/jsui/scripts/app/view/forms/LomSections.js:196
 msgid "training programmes, courses and plans"
-msgstr ""
+msgstr "Ausbildungsprogramme, Kurse und Pläne"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:44
 #: exe/jsui/scripts/app/view/forms/LomSections.js:76
@@ -5071,9 +5111,11 @@ msgstr "Schlüsselwort"
 msgid "Structure"
 msgstr "Struktur"
 
+# Spelling mistake in the original: it should be "Aggregation level", with a double-g.
 #: exe/jsui/scripts/app/view/forms/LomSections.js:54
+#, fuzzy
 msgid "Agregation Level"
-msgstr ""
+msgstr "Gruppierungsniveau"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:57
 msgid "Version"
@@ -5131,7 +5173,7 @@ msgstr "Installatsionshinweise"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:109
 msgid "Other Platform Requirements"
-msgstr ""
+msgstr "Andere Systemanforderungen"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:110
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:18
@@ -5148,7 +5190,7 @@ msgstr "Interaktivitäts-Typ"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:286
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:293
 msgid "Learning Resource Type"
-msgstr ""
+msgstr "Typ der Lernressource"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:115
 msgid "Interactivity Level"
@@ -5171,7 +5213,7 @@ msgstr "Kontext"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:119
 msgid "Typical Age Range"
-msgstr ""
+msgstr "Typische Altersgruppe"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:120
 msgid "Difficulty"
@@ -5179,7 +5221,7 @@ msgstr "Schwierigkeitsgrad"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:121
 msgid "Typical Learning Time"
-msgstr ""
+msgstr "Typische Lernzeit"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:126
 msgid "Cost"
@@ -5187,7 +5229,7 @@ msgstr "Kosten"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:127
 msgid "Copyright And Other Restrictions"
-msgstr ""
+msgstr "Urheberrecht und andere Beschränkungen"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:131
 msgid "Kind"
@@ -5196,11 +5238,11 @@ msgstr "Child"
 #: exe/jsui/scripts/app/view/forms/LomSections.js:132
 #: exe/jsui/scripts/app/view/forms/LomSections.js:144
 msgid "Resource"
-msgstr ""
+msgstr "Ressource"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:149
 msgid "Entity"
-msgstr ""
+msgstr "Körperschaft"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:275
 #: exe/webui/editorpane.py:405
@@ -5209,37 +5251,36 @@ msgstr "Zweck"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:166
 msgid "Download Classification Sources"
-msgstr ""
+msgstr "Klassifikationsquellen herunterladen"
 
+# In biology, "taxon" is "Taxon". In this context, I simply don't know what the word makes reference to.
 #: exe/jsui/scripts/app/view/forms/LomSections.js:169
 msgid "Taxon Path"
-msgstr ""
+msgstr "Pfad des Taxons"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:209
 msgid "Cognitive Process"
-msgstr ""
+msgstr "Kognitiver Prozess"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:210
 msgid "Access"
-msgstr ""
+msgstr "Zugriff"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:214
 msgid "Access Type"
-msgstr ""
+msgstr "Art des Zugriffs"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:22
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:104
-#, fuzzy
 msgid "Now"
-msgstr "Nein"
+msgstr "Jetzt"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:23
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:41
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:326
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:41
-#, fuzzy
 msgid "Time"
-msgstr "Zitrone"
+msgstr "Zeit"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:29
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:285
@@ -5257,10 +5298,14 @@ msgstr "Optional"
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:151
 msgid "You will loss all taxon config for this source. Would you like to continue?"
 msgstr ""
+"Sie sind im Begriff, sämtliche Taxon-Konfigurationsdaten für diese Quelle zu "
+"löschen. Bestätigen?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:182
 msgid "You will loss all taxon config in this section. Would you like to continue?"
 msgstr ""
+"Sie sind im Begriff, sämtliche Taxon-Konfigurationsdaten für diese Sektion zu "
+"löschen. Bestätigen?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:366
 msgid "Years"
@@ -5305,112 +5350,116 @@ msgstr "Abschnitt löschen"
 msgid "Notice"
 msgstr "Notiz"
 
+# In the original, shouldn't the sentence begin with "There"?
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:682
+#, fuzzy
 msgid "Should be at least one section of this type"
-msgstr ""
+msgstr "Es sollte mindestens eine Sektion dieses Typs geben."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:27
 msgid "void"
 msgstr "leer"
 
+# I didn't translate any of these Licenses.
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:63
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:21
+#, fuzzy
 msgid "creative commons: attribution 4.0"
-msgstr ""
+msgstr "creative commons attribution 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:67
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:25
 msgid "creative commons: attribution - non derived work 4.0"
-msgstr ""
+msgstr "creative commons: attribution - non derived work 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:71
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:29
 msgid "creative commons: attribution - non derived work - non commercial 4.0"
-msgstr ""
+msgstr "creative commons: attribution - non derived work - non commercial 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:75
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:33
 msgid "creative commons: attribution - non commercial 4.0"
-msgstr ""
+msgstr "creative commons: attribution - non commercial 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:79
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:37
 msgid "creative commons: attribution - non commercial - share alike 4.0"
-msgstr ""
+msgstr "creative commons: attribution - non commercial - share alike 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:83
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:41
 msgid "creative commons: attribution - share alike 4.0"
-msgstr ""
+msgstr "creative commons: attribution - share alike 4.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:87
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:45
 msgid "creative commons: attribution 3.0"
-msgstr ""
+msgstr "creative commons: attribution 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:91
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:49
 msgid "creative commons: attribution - non derived work 3.0"
-msgstr ""
+msgstr "creative commons: attribution - non derived work 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:95
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:53
 msgid "creative commons: attribution - non derived work - non commercial 3.0"
-msgstr ""
+msgstr "creative commons: attribution - non derived work - non commercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:99
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:57
 msgid "creative commons: attribution - non commercial 3.0"
-msgstr ""
+msgstr "creative commons: attribution - non commercial 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:103
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:61
 msgid "creative commons: attribution - non commercial - share alike 3.0"
-msgstr ""
+msgstr "creative commons: attribution - non commercial - share alike 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:107
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:65
 msgid "creative commons: attribution - share alike 3.0"
-msgstr ""
+msgstr "creative commons: attribution - share alike 3.0"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:111
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:69
 msgid "creative commons: attribution 2.5"
-msgstr ""
+msgstr "creative commons: attribution 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:115
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:73
 msgid "creative commons: attribution - non derived work 2.5"
-msgstr ""
+msgstr "creative commons: attribution - non derived work 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:119
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:77
 msgid "creative commons: attribution - non derived work - non commercial 2.5"
-msgstr ""
+msgstr "creative commons: attribution - non derived work - non commercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:123
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:81
 msgid "creative commons: attribution - non commercial 2.5"
-msgstr ""
+msgstr "creative commons: attribution - non commercial 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:127
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:85
 msgid "creative commons: attribution - non commercial - share alike 2.5"
-msgstr ""
+msgstr "creative commons: attribution - non commercial - share alike 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:131
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:89
 msgid "creative commons: attribution - share alike 2.5"
-msgstr ""
+msgstr "creative commons: attribution - share alike 2.5"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:154
 msgid "Cataloguing"
-msgstr ""
+msgstr "Katalogisierung"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:704
 msgid "General description"
-msgstr ""
+msgstr "Allgemeine Beschreibung"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:219
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:223
@@ -5438,7 +5487,7 @@ msgstr "Vorwissen "
 #: exe/webui/tools/assistant/langs/all.js:28
 #: exe/webui/tools/style-designer/langs/all.js:31
 msgid "Author"
-msgstr "Autor"
+msgstr "Autor/-in"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:251
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:254
@@ -5465,19 +5514,21 @@ msgstr "Lizenz"
 msgid "Select a license."
 msgstr "Wählen Sie eine Lizenz aus.  "
 
+# In the original, "one" is redundant.
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:273
 msgid "Select a license or write your own one."
-msgstr ""
+msgstr "Wählen Sie eine Lizenz oder schreiben Sie eine eigene."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:298
 msgid "Usage"
 msgstr "Gebrauch"
 
+# "Target Group" sounds better than "Intended End User"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:308
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:310
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:339
 msgid "Intended End User"
-msgstr "Zukünftiger Endnutzer"
+msgstr "Zielgruppe"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:315
 msgid "Ordinary Learner"
@@ -5515,19 +5566,19 @@ msgstr "Reelle Umgebung"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:437
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:466
 msgid "Modality"
-msgstr ""
+msgstr "Modalität"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:442
 msgid "Face to Face"
-msgstr ""
+msgstr "Präsenzial"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:450
 msgid "Blended"
-msgstr ""
+msgstr "Gemischt"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:457
 msgid "Distance"
-msgstr ""
+msgstr "Auf Entfernung"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:475
 msgid "Project Properties"
@@ -5539,7 +5590,7 @@ msgstr "Titel Hintergrund"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:493
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Hintergrundbild für einen Titel (empfohlen wird ein Bild von 100px Höhe)"
+msgstr "Hintergrundbild für Kopfzeile (empfohlen wird ein Bild von 100px Höhe)"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:511
 msgid "Load Image"
@@ -5557,73 +5608,78 @@ msgstr "Hintergrundbild als Kachel verwenden?"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:181
 #: exe/webui/tools/style-designer/langs/all.js:73
 msgid "Footer"
-msgstr ""
+msgstr "Fußzeile"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:546
 msgid "Web pages footer."
-msgstr ""
+msgstr "Fußzeile der Webseiten"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:564
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:570
 msgid "Doctype"
-msgstr ""
+msgstr "Dokumenttyp"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
 msgid "Save the changes of your iDevice before changing the DOCTYPE"
 msgstr ""
+"Speichern Sie die Änderungen in Ihrem iDevice, bevor Sie den Dokumenttyp ändern."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:587
 msgid ""
 "This overrides for this Package the \"Default format for the new documents\" set "
 "in Tools - Preferences"
 msgstr ""
+"Diese Option übergeht, für dieses Paket, das in \"Extras - Einstellungen\" "
+"voreingestellte Format neue Dokumente."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:594
 msgid "Taxonomy"
-msgstr ""
+msgstr "Taxonomie\t"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:603
 msgid "Level 1"
-msgstr ""
+msgstr "Niveau 1"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:604
 msgid "Default name for level 1 nodes"
-msgstr ""
+msgstr "Voreigestellter Name für Knoten im Niveau 1 "
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:610
 msgid "Level 2"
-msgstr ""
+msgstr "Niveau 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:611
 msgid "Default name for level 2 nodes"
-msgstr ""
+msgstr "Voreigestellter Name für Knoten im Niveau 2"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:617
 msgid "Level 3"
-msgstr ""
+msgstr "Niveau 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:618
 msgid "Default name for level 3 nodes"
-msgstr ""
+msgstr "Voreigestellter Name für Knoten im Niveau 3"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:623
 msgid "Update Tree"
-msgstr ""
+msgstr "Baumansicht aktualisieren"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:631
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:77
 msgid "Advanced Options"
-msgstr ""
+msgstr "Fortgeschrittene Optionen"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:642
 msgid "Custom HEAD"
-msgstr ""
+msgstr "Benutzerdefinierte Kopfzeile"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:643
 msgid ""
 "Any code you enter here (STYLE, META, SCRIPT...) will be added in the HEAD "
 "section to every page."
 msgstr ""
+"Hier eingegebener Code (STYLE, META, SCRIPT...) wird der HEAD-Sektion "
+"(Kopfzeile) jeder Seite hinzugefügt."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:25
 msgid "Select Browser"
@@ -5644,28 +5700,28 @@ msgstr "Sprache auswählen"
 msgid "Advanced"
 msgstr "Fortgeschritten"
 
+# English language point: The article "the" is redundant!
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:164
 msgid "Default format for the new documents"
-msgstr ""
+msgstr "Voreingestelltes Format für neue Dokumente"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:174
 msgid "The current document format can be modified in the Properties tab"
 msgstr ""
+"Das aktuelle Dokumentformat kann mittels des Tabs \"Eigenschaften\" modifiziert "
+"werden"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
-#, fuzzy
 msgid "Editor mode"
-msgstr "Editor"
+msgstr "Bearbeitungsmodus"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:186
-#, fuzzy
 msgid "Permissive"
-msgstr "Voraussetzungen"
+msgstr "Permissiv"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:187
-#, fuzzy
 msgid "Strict"
-msgstr "Neustart"
+msgstr "Streng"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:194
 msgid ""
@@ -5673,21 +5729,27 @@ msgid ""
 "It will remove any invalid code, even HTML5 tags (except VIDEO and AUDIO) when "
 "using XHTML format."
 msgstr ""
+"\"Permissiv\" lässt jeglichen Markup-Code zu; \"Streng\" erlaubt nur gültigen "
+"Code: Die \"Streng\"-Einstellung entfernt sämtlichen ungültigen Code, "
+"einschließlich HTML5-Tags (ausser VIDEO und AUDIO) wenn das XHTML-Format gewählt "
+"wird."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
 msgid "Editor version"
-msgstr ""
+msgstr "Version des Editors"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:208
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:576
 msgid "recommended"
-msgstr ""
+msgstr "empfohlen"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
 msgid ""
 "We recommend you to use the latest available version. An old one could be useful "
 "to edit some old contents."
 msgstr ""
+"Wir empfehlen Ihnen, die aktuellste verfügbare Version zu benutzen. Ältere "
+"Versionen können beim Bearbeiten älterer Inhalte nützlich sein."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:222
 msgid "Internal Linking (for Web Site Exports only)"
@@ -5707,7 +5769,7 @@ msgstr "Interne Verlinkung ausschalten"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:240
 msgid "Always force editable exports on package load"
-msgstr ""
+msgstr "Immer editierbare Exporte erzwingen, wenn das Paket geladen wird."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:247
 msgid ""
@@ -5715,10 +5777,13 @@ msgid ""
 "loaded. You will be able to disable it before exporting, but it will be reset "
 "every time you open the package."
 msgstr ""
+"Diese Option ignoriert beim Laden des Pakets die Paketeinstellung \"Editierbaren "
+"Export erzeugen?\" Sie kann vor dem Exportieren abgeschaltet werden, wird aber "
+"wiederhergestellt wenn Sie das Paket öffnen."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:257
 msgid "Naming standard for exported content"
-msgstr ""
+msgstr "Namensgebungs-Standard für exportierte Inhalte"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:264
 msgid ""
@@ -5726,28 +5791,37 @@ msgid ""
 "compliant with ISO 9660. Note: This option only works with SCORM and Web Site "
 "export types."
 msgstr ""
+"Wenn \"ISO 9660\" gewählt wird, werden die Dateinamen auf 8.3-Format "
+"geschnitten, um ISO 9660 zu entsprechen. Diese Option funktioniert nur mit SCORM "
+"und Webseiten-Exporttypen."
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Time to remind the user about saving (in minutes)"
-msgstr ""
+msgstr "Benutzer alle ... Minuten ans Speichern erinnern"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:276
 msgid "Never"
-msgstr ""
+msgstr "Nie"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:285
 msgid ""
 "By enabling this, a confirmation dialog will be shown after the selected amount "
 "of time to remind the user that he/she should save his/her work."
 msgstr ""
+"Wenn Sie diese Option wählen, wird nach der eingegebenen Zeit ein Dialogfeld "
+"angezeigt, das Sie daran erinnert, dass Sie speichern sollten."
 
+# The article in the English version is redundant
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:290
+#, fuzzy
 msgid "Default license for the new documents"
-msgstr ""
+msgstr "Voreingestellte Lizenz für neue Dokumente"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:317
 msgid "The current document license can be modified in the Properties tab."
 msgstr ""
+"Die aktuelle Dokumentlizenz kann mittels des Tabs \"Eigenschaften\" modifiziert "
+"werden"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:356
 msgid "Show this window on eXe start"
@@ -5755,83 +5829,81 @@ msgstr "Dieses Fenster beim Start von eXe anzeigen. "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:80
 msgid "Edit style: "
-msgstr ""
+msgstr "Stil bearbeiten:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:81
 msgid "Edit current Style"
-msgstr ""
+msgstr "Aktuellen Stil bearbeiten:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:102
 msgid "Export style: "
-msgstr ""
+msgstr "Stil exportieren:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:134
 msgid "Delete style: "
-msgstr ""
+msgstr "Stil löschen:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:152
 msgid "Show properties of style: "
-msgstr ""
+msgstr "Stileigenschaften anzeigen:"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:232
 #: exe/webui/tools/style-designer/langs/all.js:9
-#, fuzzy
 msgid "Style Designer"
-msgstr "Graphikdesginer"
+msgstr "Stildesigner"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:236
 #: exe/webui/tools/style-designer/js/app.js:1370
-#, fuzzy
 msgid "Create new style"
-msgstr "Stil löschen?"
+msgstr "Neuen Stil erzeugen"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:242
 msgid "Import style to the system "
-msgstr ""
+msgstr "Stil ins System importieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:246
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:470
 msgid "Import style"
-msgstr ""
+msgstr "Stil importieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:252
 msgid "Styles repository"
-msgstr ""
+msgstr "Stilarchiv"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:253
 msgid "Search and download new styles from the styles repository"
-msgstr ""
+msgstr "Neue Stile im Stilarchiv suchen und herunterladen"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:262
 msgid "List of styles in your system"
-msgstr ""
+msgstr "Liste der Stile auf Ihrem System"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:276
 msgid "Properties of style: "
-msgstr ""
+msgstr "Stileigenschaften: "
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:364
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:577
 msgid "Return to style manager"
-msgstr ""
+msgstr "Zum Stilmanager zurückkehren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:371
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:576
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:250
 msgid "Return"
-msgstr ""
+msgstr "Zurück"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:465
 msgid "Read more"
-msgstr ""
+msgstr "Lesen Sie mehr"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:471
 msgid "Download style from repository and import into system."
-msgstr ""
+msgstr "Neue Stile im Stilarchiv suchen und ins System importieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:503
 msgid "Import style from custom URL"
-msgstr ""
+msgstr "Stil von URL importieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:518
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:67
@@ -5841,25 +5913,24 @@ msgstr ""
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:96
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:101
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
-#, fuzzy
 msgid "URL"
-msgstr "Lila"
+msgstr "URL"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:519
 msgid "URL to download the style from."
-msgstr ""
+msgstr "URL, von der der Stil heruntergeladen soll"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:524
 msgid "Import Style from URL"
-msgstr ""
+msgstr "Stil von URL importieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:525
 msgid "Download style from URL and import into system."
-msgstr ""
+msgstr "Stil von URL herunterladen und importieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:553
 msgid "Check and install styles in the repository"
-msgstr ""
+msgstr "Stile aus dem Stilarchiv überprüfen und installieren"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630 exe/webui/common.py:645
 #: exe/webui/scripts/authoring.js:1530 exe/webui/scripts/authoring.js:1541
@@ -5868,63 +5939,67 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
 msgid "Error recovering data"
-msgstr ""
+msgstr "Fehler beim Wiederherstellen der Daten"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:22
 msgid "Export template: "
-msgstr ""
+msgstr "Dokumentvorlage exportieren:"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:51
 msgid "Delete template: "
-msgstr ""
+msgstr "Dokumentvorlage löschen:"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:65
 msgid "Show properties of template: "
-msgstr ""
+msgstr "Eigenschaften der Dokumentvorlage anzeigen:"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:79
 msgid "Edit template: "
-msgstr ""
+msgstr "Dokumentvorlage bearbeiten:"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:153
 msgid "Import template to the system "
-msgstr ""
+msgstr "Dokumentvorlage ins System importieren"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:157
 msgid "Import template"
-msgstr ""
+msgstr "Dokumentvorlage importieren"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:162
 msgid "List of templates in your system"
-msgstr ""
+msgstr "Liste der Dokumentvorlagen in Ihrem System"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:174
 msgid "Properties of template: "
-msgstr ""
+msgstr "Eigenschaften der Dokumentvorlage"
 
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:244
 msgid "Return to template manager"
-msgstr ""
+msgstr "Zum Dokumentvorlagen-Manager zurückkehren"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:45
 msgid ""
 "Some important information is missing in the \"Properties\" tab. You can "
 "complete it now."
 msgstr ""
+"Im Tab \"Eigenschaften\" fehlt wichtige Information. Sie können diese jetzt "
+"eingeben."
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:56
 msgid "Save and export"
-msgstr ""
+msgstr "Speichern und exportieren"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:94
 msgid "Export without changes"
-msgstr ""
+msgstr "Ohne Änderungen exportieren"
 
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:127
 msgid ""
 "The value selected for this field is not accepted by Procomún. Please select one "
 "of the values below:"
 msgstr ""
+"Der Wert in diesem Feld wird von Procomún nicht anerkannt. Bitte wählen Sie "
+"einen Wert aus dieser Liste:"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:54
 #: exe/webui/tools/assistant/langs/all.js:41
@@ -5945,13 +6020,13 @@ msgstr "Verbergen"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:104
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:136
 msgid "Ungroup iDevices"
-msgstr "iDevices nicht gruppieren "
+msgstr "iDevices ungruppieren"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:111
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:116
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:134
 msgid "Available iDevices"
-msgstr ""
+msgstr "Verfügbare iDevices"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:124
 msgid "Save iDevices"
@@ -5975,7 +6050,7 @@ msgstr "Inhalt"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:47
 msgid "Properties"
-msgstr "Projekteigenschaften"
+msgstr "Eigenschaften"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:712
@@ -5990,12 +6065,12 @@ msgstr "Metadaten"
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
 msgid "LOM"
-msgstr ""
+msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:77
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
 msgid "LOM-ES"
-msgstr ""
+msgstr "LOM-ES"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:31
 msgid "Add Page"
@@ -6022,7 +6097,7 @@ msgstr "Umbenennen"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56
 msgid "Minify this panel"
-msgstr ""
+msgstr "Dieses Paneel verkleinern"
 
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:38
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar2.js:39
@@ -6046,7 +6121,7 @@ msgstr "Abwärts"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:94
 msgid "use the right arrow key"
-msgstr ""
+msgstr "Benutzen Sie die Cursortaste \"Rechts\""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:110
 #: exe/webui/tools/color-picker/langs/all.js:6
@@ -6056,17 +6131,17 @@ msgstr "Neu"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
 msgid "Project"
-msgstr ""
+msgstr "Projekt"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:127
 msgid "Window"
-msgstr ""
+msgstr "Fenster"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:134
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:193
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:212
 msgid "Templates"
-msgstr "Templates"
+msgstr "Dokumentvorlagen"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:154
 msgid "Recent Projects..."
@@ -6082,7 +6157,7 @@ msgstr "Speichern als..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "Save as template"
-msgstr ""
+msgstr "Als Dokumentvorlage speichern"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:207
 msgid "Manage"
@@ -6177,7 +6252,7 @@ msgstr "Beenden"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:227
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:30
 msgid "Tools"
-msgstr "Werkzeuge"
+msgstr "Extras"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:461
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:734 exe/webui/editorpane.py:268
@@ -11672,7 +11747,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:287
 msgid "Please select a template"
-msgstr ""
+msgstr "Bitte wählen Sie eine Dokumentvorlage"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:374
 msgid "CEDEC's rubrics"
@@ -12491,11 +12566,11 @@ msgstr "Zellen verbinden"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:211
 msgid "Predefined Template Content"
-msgstr ""
+msgstr "Vordefinierter Inhalt der Dokumentvorlage"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:213
 msgid "Template"
-msgstr "Template"
+msgstr "Dokumentvorlage"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:214
 #: exe/webui/tools/style-designer/langs/all.js:43
@@ -14020,7 +14095,7 @@ msgstr ""
 
 #: exe/webui/stylemanagerpage.py:304
 msgid "Error while getting styles list from the repository"
-msgstr ""
+msgstr "Fehler beim Laden der Stilliste im Archiv"
 
 #: exe/webui/stylemanagerpage.py:329
 msgid "Style updated correctly"
@@ -14055,7 +14130,7 @@ msgstr "Sind Sie sicher, dass sie alle Inhalte löschen möchten? "
 
 #: exe/webui/stylemanagerpage.py:399
 msgid "Error when downloading style from repository"
-msgstr ""
+msgstr "Fehler beim Herunterladen des Stils vom Archiv"
 
 #: exe/webui/stylemanagerpage.py:409 exe/webui/stylemanagerpage.py:420
 msgid "URL not valid. "
@@ -14068,7 +14143,7 @@ msgstr ""
 #: exe/webui/stylemanagerpage.py:473
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
-msgstr ""
+msgstr "Fehler beim Finden der URL des Stils in der Stilliste des Archivs: %s"
 
 #: exe/webui/stylemanagerpage.py:511
 #, python-format
@@ -14086,35 +14161,36 @@ msgstr "Style korrekt gelöscht. "
 
 #: exe/webui/templatemanagerpage.py:127
 msgid "Successfully imported template"
-msgstr ""
+msgstr "Dokumentvorlage erfolgreich importiert"
 
 #: exe/webui/templatemanagerpage.py:131
 #, python-format
 msgid "Error while installing template: %s"
-msgstr ""
+msgstr "Fehler beim Installieren der Dokumentvorlage: %s"
 
 #: exe/webui/templatemanagerpage.py:230
 #, python-format
 msgid "SAVE FAILED! '%s' is not a valid name for a template"
 msgstr ""
+"SPEICHERN FEHLGESCHLAGEN: '%s' ist kein gültiger Name für eine Dokumentvorlage"
 
 #: exe/webui/templatemanagerpage.py:239
 #, python-format
 msgid "Template exported correctly: %s"
-msgstr ""
+msgstr "Dokumentvorlage korrekt exportiert: %s"
 
 #: exe/webui/templatemanagerpage.py:242
 #, python-format
 msgid "Could not export template : %s"
-msgstr ""
+msgstr "Dokumentvorlage konnte nicht exportiert werden: %s"
 
 #: exe/webui/templatemanagerpage.py:256
 msgid "It is not possible to delete an opened template."
-msgstr ""
+msgstr "Es ist nicht möglich, eine geöffnete Dokumentvorlage zu löschen."
 
 #: exe/webui/templatemanagerpage.py:260
 msgid "Template deleted correctly"
-msgstr ""
+msgstr "Dokumentvorlage korrekt gelöscht"
 
 #: exe/webui/tools/assistant/langs/all.js:13
 msgid "What is eXeLearning"
@@ -15206,4 +15282,4 @@ msgid ""
 msgstr ""
 "Die idevice/generic.data Datei oder das von Ihnen geladene Paket wurde mit einer "
 "aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie Ihre eXe Version "
-"und versuchen Sie es dann noch einmal. "
+"und versuchen Sie es dann noch einmal"
