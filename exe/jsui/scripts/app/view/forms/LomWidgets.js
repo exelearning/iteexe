@@ -679,7 +679,7 @@ Ext.define('eXe.view.forms.LomWidgets', {
 	                                    if (fieldset.checkboxToggle)
 	                                        fieldset.collapse();
 	                                    else
-	                                        Ext.Msg.alert(_('Notice'), _('Should be at least one section of this type'));
+	                                        Ext.Msg.alert(_('Notice'), _('There should be at least one section of this type'));
 	                                }
 	                            }
 	                        }
