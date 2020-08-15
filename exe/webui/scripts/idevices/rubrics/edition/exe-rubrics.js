@@ -127,7 +127,7 @@ var $exeDevice = {
 		// All the form will be created each time a default rubric is loaded or when editing an existing rubric
 		// The editable table and the "Rubric information" fieldset will be in #ri_RubricEditor
 		var html = '\
-			<div class="exe-idevice-info">'+_("Complete the table to define a scoring guide. Define the score or value of each descriptor.")+' <a href="https://youtu.be/T_QtGkH68EY?t=92" hreflang="es" rel="lightbox">'+_("Learn how to apply a rubric")+'</a>.</div>\
+			<div class="exe-idevice-info">'+_("Complete the table to define a scoring guide. Define the score or value of each descriptor.")+' <a href="https://youtu.be/T_QtGkH68EY?t=92" hreflang="es" rel="lightbox">'+_("Help")+'<span class="sr-av"> ('+_("Spanish")+')</span></a>.</div>\
 			<div id="ri_RubricEditor"></div>\
 			<div id="ri_PreviousContent"></div>\
 		';
