@@ -8,7 +8,7 @@ var $exeTinyMCE = {
 	buttons0 : "toggletoolbars | undo redo | bold italic | formatselect | alignleft aligncenter alignright alignjustify | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
 	// When buttons0 are hidden, 1, 2 and 3 are visible
 	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
-	buttons2 : "alignleft aligncenter alignright alignjustify | template clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
+	buttons2 : "alignleft aligncenter alignright alignjustify clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
 	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia abcmusic | codemagic | fullscreen",	
 	// To add:
 		// buttons2 : "exemath"
@@ -19,14 +19,14 @@ var $exeTinyMCE = {
 		{ title: _("2 columns") + " 30% 70%", url: "/scripts/tinymce_templates/2-30-70.html" },
 		{ title: _("2 columns") + " 70% 30%", url: "/scripts/tinymce_templates/2-70-30.html" },
 		{ title: _("3 columns"), url: "/scripts/tinymce_templates/3.html" },
-		{ title: _("Image (left) + Text (right)"), url: "/scripts/tinymce_templates/img-txt.html" },
-		{ title: _("Text (left) + Image (right)"), url: "/scripts/tinymce_templates/txt-img.html" },
-		{ title: _("Table with column headers"), url: "/scripts/tinymce_templates/table-thead-th.html" },
-		{ title: _("Table with row headers"), url: "/scripts/tinymce_templates/table-tbody-th.html" },
-		{ title: _("Table with column and row headers"), url: "/scripts/tinymce_templates/table-th.html" },
-		{ title: _("2 videos"), url: "/scripts/tinymce_templates/2-videos.html" },
-		{ title: _("2 images"), url: "/scripts/tinymce_templates/2-images.html" },
-		{ title: _("3 images"), url: "/scripts/tinymce_templates/3-images.html" }
+		{ title: _("Image") + " + " + _("Text"), url: "/scripts/tinymce_templates/img-txt.html" },
+		{ title: _("Text") + " + " + _("Image"), url: "/scripts/tinymce_templates/txt-img.html" },
+		{ title: _("Table") + " - " + _("Headers") + " (" + _("Columns") + ")", url: "/scripts/tinymce_templates/table-thead-th.html" }, // with column headers
+		{ title: _("Table") + " - " + _("Headers") + " (" + _("Rows") + ")", url: "/scripts/tinymce_templates/table-tbody-th.html" }, // with row headers
+		{ title: _("Table") + " - " + _("Headers") + " (" + _("Columns") + "/" + _("Rows") + ")", url: "/scripts/tinymce_templates/table-th.html" }, // with column and row headers
+		{ title: _("Video") + " (2x)", url: "/scripts/tinymce_templates/2-videos.html" },
+		{ title: _("Image") + " (2x)", url: "/scripts/tinymce_templates/2-images.html" },
+		{ title: _("Image") + " (3x)", url: "/scripts/tinymce_templates/3-images.html" }
 	],
 	path_to_folder: "/scripts/tinymce_4/js/tinymce/",
 	menu: {
