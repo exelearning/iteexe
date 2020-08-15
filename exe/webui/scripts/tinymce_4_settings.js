@@ -196,7 +196,8 @@ var $exeTinyMCE = {
 					// Deletion, Insertion and Cite are not part of the default list
 					{title: _('Deletion')+": <del>", inline: 'del'},
 					{title: _('Insertion')+": <ins>", inline: 'ins'},
-					{title: _('Cite')+": <cite>", inline: 'cite'}
+					{title: _('Cite')+": <cite>", inline: 'cite'},
+					{title: _('Highlighted Text:')+" <mark>", inline: 'mark'}
 				]},
 
 				{title: 'Blocks', items: [
