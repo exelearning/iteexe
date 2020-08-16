@@ -248,9 +248,33 @@ class StyleManagerPage(RenderableResource):
                     absoluteTargetDir.rmtree()
                     raise ImportStyleExistsError(style, absoluteTargetDir, _('The style name already exists'))
             else:
+                # Check missing files
+                cssFile = style.get_style_dir()/'content.css'
+                files_to_check = ['content.css']
+                missing_files = []
+                for f in files_to_check:
+                    if not (style.get_style_dir()/f).exists():
+                        missing_files.append(f)
+                if missing_files:
+                    # Missing files error
+                    missing_files_text = ', '.join(missing_files)
+                    if len(missing_files) > 1:
+                        style_error =  ImportStyleError(_('Error recovering data') % missing_files_text)
+                    else:
+                        style_error =  ImportStyleError(_('Error recovering data') % missing_files_text)
+                else:
+                    configStyle = style.get_style_dir()/'config.xml'
+                    if configStyle.exists():
+                        # We consider that if no file is missing the error is due to the format of config.xml
+                        style_error = ImportStyleError(_('Sorry, wrong file format.'))
+                    else:
+                        # Generic error
+                        style_error = ImportStyleError(_('An unknown error occurred.'))
+                # Remove the style
                 absoluteTargetDir.rmtree()
-                # content.css is missing
-                raise ImportStyleError(_('File %s does not exist or is not readable.') % 'content.css')
+                # Raise error
+                raise style_error
+                
 
         # If not error was thrown, style was successfully imported
         # Let the calling function inform the user as appropriate
