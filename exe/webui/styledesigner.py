@@ -29,6 +29,7 @@ import shutil
 import json
 import unicodedata
 import cgi
+import urllib
 
 try:
     import xml.etree.cElementTree as ET
@@ -126,6 +127,11 @@ class StyleDesigner(Renderable, Resource):
             if action == 'saveStyle':
                 # Style directory must has been explicitly set
                 style_dirname = request.args['style_dirname'][0]
+                try:
+                    # Replace %xx escapes by their single-character equivalent.
+                    style_dirname = urllib.unquote(style_dirname).decode('utf8')
+                except:
+                    pass
                 style = self.saveStyle(style_dirname, request.args)
                 response['style_dirname'] = style.get_dirname()
                 response['success'] = True
