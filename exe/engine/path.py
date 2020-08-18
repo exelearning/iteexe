@@ -82,6 +82,12 @@ class Path(unicode):
         """
         if encoding is None:
             encoding = Path.fileSystemEncoding
+
+        if os.name == 'nt' and len(filename) >= 256: # Fix MAX_PATH limit in windows
+            device_namespace_prefix = '\\\\?\\'
+            if filename[:4] != device_namespace_prefix:
+                filename = device_namespace_prefix+filename
+        
         return unicode.__new__(cls, toUnicode(filename, encoding))
 
     def __repr__(self):
@@ -1004,7 +1010,18 @@ class Path(unicode):
             return shutil.move(toUnicode(self), toUnicode(dst))
     def rmtree(self):
         """Wraps shutil.rmtree"""
-        return shutil.rmtree(toUnicode(self))
+        path = toUnicode(self)
+        if os.name == 'nt': # Fix MAX_PATH limit in windows
+            try:
+                device_namespace_prefix = '\\\\?\\'
+                if path[:4] != device_namespace_prefix:
+                    path = device_namespace_prefix+path
+                return shutil.rmtree(path)
+            except:
+                path = toUnicode(self)
+                return shutil.rmtree(path)
+        else:
+            return shutil.rmtree(path)
 
     # --- Special stuff from os
 

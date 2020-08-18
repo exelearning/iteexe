@@ -867,8 +867,12 @@ class ScormExport(object):
         outputlen = len(outputDir) + 1
         for base, dirs, files in os.walk(outputDir):
             for file in files:
-                fn = os.path.join(base, file)
-                zipped.write(fn, fn[outputlen:].encode('utf8'), ZIP_DEFLATED)
+                fn = Path(os.path.join(base, file))
+                if fn[:4] == '\\\\?\\': # device_namespace_prefix in windows
+                    filename = fn[5:][outputlen].encode('utf8')
+                else:
+                    filename = fn[outputlen:].encode('utf8')
+                zipped.write(fn, filename, ZIP_DEFLATED)
         #
         zipped.close()
 
