@@ -24,6 +24,7 @@ import logging
 import re
 import datetime
 import uuid
+import platform
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED, ZIP_STORED
 from exe.webui                     import common
@@ -333,7 +334,8 @@ class Epub3Page(Page):
         the filename will be the 'self.node.id'.html or 'index.html' if
         self.node is the root node. 'outputDirPage' must be a 'Path' instance
         """
-        out = open(outputDirPage / self.name + ".xhtml", "wb")
+        filename = outputDirPage / self.name + ".xhtml"
+        out = open(filename, "wb")
         out.write(self.render(pages))
         out.close()
 
@@ -561,21 +563,10 @@ class Epub3Export(object):
         # First do the export to a temporary directory
         outputDir = TempDirPath()
 
-        '''
-        fileDir = outputDir/"META-INF"
-        fileDir.mkdir()
-        fileDir = outputDir/"Content"
-        fileDir.mkdir()
-        '''
-
-        metainfPages = Path(outputDir.abspath() + '/META-INF')
-        # metainfPages = outputDir/'META-INF'
+        metainfPages = outputDir / 'META-INF'
         metainfPages.mkdir()
-        contentPages = Path(outputDir.abspath() + '/EPUB')
-        # contentPages = outputDir/'Content'
+        contentPages = outputDir / 'EPUB'
         contentPages.mkdir()
-        # print contentPages.abspath()
-        # print outputDir.abspath()
 
         # Export the package content
         self.pages = [Epub3Cover("cover", 1, package.root)]
@@ -590,12 +581,12 @@ class Epub3Export(object):
                 cover = page.cover
 
         # Create mimetype file
-        mimetypeFile = open(outputDir.abspath() + '/mimetype', "w")
+        mimetypeFile = open(outputDir / 'mimetype', "w")
         mimetypeFile.write('application/epub+zip')
         mimetypeFile.close()
 
         # Create common_i18n file
-        langFile = open(contentPages + '/common_i18n.js', "w")
+        langFile = open(contentPages / 'common_i18n.js', "w")
         langFile.write(common.getJavaScriptStrings(False))
         langFile.close()
 
@@ -707,7 +698,7 @@ class Epub3Export(object):
             exeGames = (self.scriptsDir / 'exe_games')
             exeGames.copyfiles(contentPages)
             # Add game js string to common_i18n
-            langGameFile = open(contentPages + '/common_i18n.js', "a")
+            langGameFile = open(contentPages / 'common_i18n.js', "a")
             langGameFile.write(common.getGamesJavaScriptStrings(False))
             langGameFile.close()
         if hasElpLink or package.get_exportElp():
@@ -724,7 +715,7 @@ class Epub3Export(object):
             exe_tooltips = (self.scriptsDir / 'exe_tooltips')
             exe_tooltips.copyfiles(contentPages)
         if hasABCMusic:
-            pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
+            pluginScripts = (self.scriptsDir/'tinymce_4'/'js'/'tinymce'/'plugins'/'abcmusic'/'export')
             pluginScripts.copyfiles(contentPages)
 
         my_style = G.application.config.styleStore.getStyle(package.style)
