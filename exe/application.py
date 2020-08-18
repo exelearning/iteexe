@@ -313,6 +313,6 @@ class Application:
   --portable       Run in portable mode
 Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or
 in Documents and Settings/<user name>/Application Data/exe on Windows XP or
-Users/<user name>/AppData/Roaming/exe on Windows 7""") % os.path.basename(sys.argv[0])
+Users/<user name>/AppData/Roaming/exe on Windows 7/8/10""") % os.path.basename(sys.argv[0])
 
 # ===========================================================================
