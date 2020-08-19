@@ -59,15 +59,8 @@ except:
                 except:
                     release = "unknown"
 
-# Try to get the Git information
-try:
-    import git
-    repo = git.Repo()
-    revision = repo.head.commit.hexsha
-except:
-    # If there isn't a Git repo, we try to get the revision from
-    # the version file (if it exists)
-    revision = pkg_version[-40:] if pkg_version else ''
+# We try to get the revision from the version file (if it exists)
+revision = pkg_version[-40:] if pkg_version else ''
 
 # Compose version string
 version = release + "-r" + revision if revision else release
