@@ -419,17 +419,23 @@ class MainPage(RenderableLivePage):
         (This is used where the user goes file|open when their
         package is changed and needs saving)
         """
-        filename = Path(filename, 'utf-8')
-        saveDir = filename.dirname()
-        if saveDir and not saveDir.isdir():
-            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
-            return
-        oldName = self.package.name
+        
+        try:
+            filename = Path(filename, 'utf-8')
+        except:
+            filename = None
+
         # If the script is not passing a filename to us,
         # Then use the last filename that the package was loaded from/saved to
         if not filename:
             filename = self.package.filename
             assert filename, 'Somehow save was called without a filename on a package that has no default filename.'
+
+        saveDir = filename.dirname()
+        if saveDir and not saveDir.isdir():
+            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
+            return
+        oldName = self.package.name
 
         extension = filename.splitext()[1]
         if extension == '.elt':
@@ -453,7 +459,7 @@ class MainPage(RenderableLivePage):
             self.package._name = self.package._name + '_1'
 
 
-        if export_type_name == None:
+        if not export_type_name:
             # Tell the user and continue
             if onDone:
                 client.alert(_(u'Package saved to: %s') % filename, onDone)
