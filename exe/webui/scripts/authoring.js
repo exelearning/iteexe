@@ -438,11 +438,15 @@ function execute_submitLink(action, object, changed, currentNode)
     if (theForm) {
 	    theForm.action.value    = action;
 	    theForm.object.value    = object;
-	    theForm.isChanged.value = changed;
+        theForm.isChanged.value = changed;
         if (currentNode)
             theForm.currentNode.value = currentNode;
         theForm.clientHandleId.value = top.nevow_clientHandleId;
-	    runFuncArray(beforeSubmitHandlers)
+        runFuncArray(beforeSubmitHandlers)
+
+        if (action == 'move' || action == 'movePrev' || action == 'moveNext') {
+            $exeAuthoring.iDevice.save();
+        }
 	
 	    theForm.submit();
     }
