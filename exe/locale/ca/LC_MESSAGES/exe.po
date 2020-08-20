@@ -6,9 +6,9 @@
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.4.3\n"
+"Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2020-01-07 16:41+0100\n"
+"POT-Creation-Date: 2020-08-20 18:31+0200\n"
 "PO-Revision-Date: 2020-01-07 17:13+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
 "Language: ca\n"
@@ -17,16 +17,16 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.6.0\n"
+"Generated-By: Babel 2.4.0\n"
 
-#: exe/application.py:232
+#: exe/application.py:239
 #, python-format
 msgid "An error has occurred when loading your config. A backup is saved at %s"
 msgstr ""
 "Ha succeït un error mentre es carregava el fitxer config. S'ha desat una "
 "copia de seguretat en  %s"
 
-#: exe/application.py:250
+#: exe/application.py:257
 #, python-format
 msgid ""
 "An error has occurred when loading your Idevice Store. A backup is saved "
@@ -35,7 +35,7 @@ msgstr ""
 "Ha succeït un error mentre es carregava el magatzem Idevice. S'ha desat "
 "un copia de seguretat en  %s"
 
-#: exe/application.py:300
+#: exe/application.py:307
 #, python-format
 msgid ""
 "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
@@ -47,18 +47,8 @@ msgid ""
 "Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or\n"
 "in Documents and Settings/<user name>/Application Data/exe on Windows XP "
 "or\n"
-"Users/<user name>/AppData/Roaming/exe on Windows 7"
+"Users/<user name>/AppData/Roaming/exe on Windows 7/8/10"
 msgstr ""
-"eXeLearning, l'eina d'autoria eLearning molt fàcil d'usar\n"
-"Utilització: %s [OPCIÓ] [PAQUET]\n"
-"  -V, --version    imprimeix la informació de la versió i surt\n"
-"  -h, --help        mostra aquesta ajuda i surt\n"
-"  --standalone     S'instal·la completament des de la carpeta actual\n"
-"  --portable         S'executa en mode portable \n"
-"La configuració es llegeix en exe.conf en $HOME/.exe en Linux/Unix/Mac OS"
-" o\n"
-"en El meus Documents/<user name>/Aplicacions/exe en Windows XP o\n"
-"Usuaris/<user name>/AppData/Roaming/exe en Windows 7"
 
 #: exe/engine/appletidevice.py:67
 msgid "Java Applet"
@@ -262,15 +252,19 @@ msgstr "Adjunció %s no té node pare"
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:711
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:710
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:29
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:669
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:729
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:747
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:668
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:728
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:746
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:43
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:426
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:541
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:547
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:577
+#: exe/webui/scripts/tinymce_4_settings.js:22
+#: exe/webui/scripts/tinymce_4_settings.js:23
+#: exe/webui/scripts/tinymce_4_settings.js:28
+#: exe/webui/scripts/tinymce_4_settings.js:29
 #: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
 msgstr "Imatge"
@@ -477,7 +471,7 @@ msgid "Shown over game when correct answer given"
 msgstr "Mostra per damunt del joc quan es contesti de forma correcta"
 
 #: exe/engine/clickinorderidevice.py:63
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:34
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:37
 msgid "Correct Answer Feedback Overlay"
 msgstr "Realimentació mostrant resposta correcta"
 
@@ -486,7 +480,7 @@ msgid "Shown over game when wrong answer is given"
 msgstr "Mostra per damunt quan es contesti una resposta no correcta"
 
 #: exe/engine/clickinorderidevice.py:64
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:38
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:41
 msgid "Wrong Answer Feedback Overlay"
 msgstr "Realimentació mostrant resposta incorrecta"
 
@@ -733,13 +727,13 @@ msgstr ""
 #: exe/engine/sortidevice.py:53 exe/engine/truefalseidevice.py:164
 #: exe/engine/truefalseidevice.py:391
 #: exe/engine/verdaderofalsofpdidevice.py:166
-#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:1056
-#: exe/webui/scripts/authoring.js:995 exe/webui/scripts/authoring.js:998
+#: exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:1063
+#: exe/webui/scripts/authoring.js:1011 exe/webui/scripts/authoring.js:1014
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:57
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:59
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:548
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:25
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:554
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:28
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:231
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:93
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:145
@@ -794,7 +788,7 @@ msgstr ""
 #: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
-#: exe/webui/common.py:963 exe/webui/common.py:973
+#: exe/webui/common.py:970 exe/webui/common.py:980
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
 #: exe/webui/element.py:2485 exe/webui/element.py:2620
 #: exe/webui/element.py:2735 exe/webui/element.py:2936
@@ -915,6 +909,7 @@ msgstr ""
 "l'estudiant."
 
 #: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
+#: exe/webui/scripts/tinymce_4_settings.js:208
 msgid "Highlighted Text:"
 msgstr "Text subratllat:"
 
@@ -1101,14 +1096,14 @@ msgstr ""
 #: exe/engine/multiselectidevice.py:82
 #: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
 #: exe/webui/element.py:2464 exe/webui/element.py:2913
-#: exe/webui/element.py:2917 exe/webui/scripts/authoring.js:1016
+#: exe/webui/element.py:2917 exe/webui/scripts/authoring.js:1032
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:58
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:47
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:65
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:759
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:758
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:53
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:60
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:566
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:61
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:572
 #: exe/webui/testquestionelement.py:151 exe/webui/truefalseelement.py:200
 #: exe/webui/truefalseelement.py:206
 msgid "Question"
@@ -1222,7 +1217,7 @@ msgstr "No hi ha cap fitxer carregat actualment"
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:667
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:666
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -1410,15 +1405,15 @@ msgstr ""
 #: exe/webui/element.py:2197 exe/webui/element.py:2252
 #: exe/webui/element.py:2584 exe/webui/element.py:2676
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:82
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:764
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:768
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:772
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:776
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:77
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:571
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:575
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:579
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:583
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:763
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:767
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:771
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:775
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:78
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:577
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:581
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:585
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:589
 #: exe/webui/testoptionelement.py:106 exe/webui/testoptionelement.py:168
 msgid "Option"
 msgstr "Opció"
@@ -1426,15 +1421,15 @@ msgstr "Opció"
 #: exe/engine/field.py:3805 exe/engine/field.py:3871
 #: exe/engine/truefalseidevice.py:53 exe/engine/truefalseidevice.py:128
 #: exe/engine/verdaderofalsofpdidevice.py:54
-#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:603
+#: exe/engine/verdaderofalsofpdidevice.py:129 exe/webui/common.py:610
 msgid "Hint"
 msgstr "Pista"
 
 #: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2389
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:95
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:636
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:94
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:635
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:103
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:470
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:475
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:238
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:521
 #: exe/webui/testquestionelement.py:110
@@ -1511,15 +1506,15 @@ msgstr "Fitxer adjunt."
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:241
-#: exe/webui/common.py:665 exe/webui/tools/style-designer/langs/all.js:60
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:242
+#: exe/webui/common.py:672 exe/webui/tools/style-designer/langs/all.js:60
 msgid "No"
 msgstr "No"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:242
-#: exe/webui/common.py:664 exe/webui/tools/style-designer/langs/all.js:59
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:243
+#: exe/webui/common.py:671 exe/webui/tools/style-designer/langs/all.js:59
 msgid "Yes"
 msgstr "Sí"
 
@@ -1736,7 +1731,7 @@ msgstr "Activitat de llegir 0.11"
 msgid "Reading Activity"
 msgstr "Activitat de llegir"
 
-#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:662
+#: exe/engine/hangmanidevice.py:51 exe/webui/common.py:669
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:168
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:434
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:441
@@ -1766,7 +1761,7 @@ msgstr "Alfabet per mostrar als jugadors"
 msgid "Alphabet to Select From"
 msgstr "Alfabet per seleccionar"
 
-#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:682
+#: exe/engine/hangmanidevice.py:77 exe/webui/common.py:689
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:76
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:145
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:75
@@ -1821,7 +1816,7 @@ msgstr "Text del botó reinicia nivell"
 msgid "Text for reset button"
 msgstr "Text del botó reinicia"
 
-#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:674
+#: exe/engine/hangmanidevice.py:101 exe/webui/common.py:681
 #: exe/webui/element.py:1557 exe/webui/element.py:1812
 msgid "Restart"
 msgstr "Reinicia"
@@ -2121,13 +2116,15 @@ msgstr "Trieu una imatge"
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:673
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:672
 #: exe/webui/scripts/idevices/text/edition/text.js:13
 #: exe/webui/scripts/idevices/text/edition/text.js:22
 #: exe/webui/scripts/idevices/text/edition/text.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:599
+#: exe/webui/scripts/tinymce_4_settings.js:22
+#: exe/webui/scripts/tinymce_4_settings.js:23
 #: exe/webui/tools/style-designer/langs/all.js:24
 msgid "Text"
 msgstr "Text"
@@ -2379,21 +2376,21 @@ msgstr ""
 "desplegable».<br/> Usa | (la barra vertical) per separar paraules.<br/> "
 "Aquest camp es pot deixar en blanc. </p>"
 
-#: exe/engine/locationbuttons.py:29 exe/engine/locationbuttons.py:33
-#: exe/engine/locationbuttons.py:37
+#: exe/engine/locationbuttons.py:30 exe/engine/locationbuttons.py:34
+#: exe/engine/locationbuttons.py:38
 msgid "Desktop"
 msgstr "Escriptori"
 
-#: exe/engine/locationbuttons.py:30
+#: exe/engine/locationbuttons.py:31
 msgid "My Documents"
 msgstr "Els meus documents"
 
-#: exe/engine/locationbuttons.py:31 exe/engine/locationbuttons.py:35
-#: exe/engine/locationbuttons.py:39
+#: exe/engine/locationbuttons.py:32 exe/engine/locationbuttons.py:36
+#: exe/engine/locationbuttons.py:40
 msgid "Home Folder"
 msgstr "Carpeta de l'usuari"
 
-#: exe/engine/locationbuttons.py:34 exe/engine/locationbuttons.py:38
+#: exe/engine/locationbuttons.py:35 exe/engine/locationbuttons.py:39
 msgid "Documents"
 msgstr "Documents"
 
@@ -2770,8 +2767,8 @@ msgstr ""
 "DESAT ERRONI ! \n"
 "Darrer èxit en desar és %s"
 
-#: exe/engine/package.py:1665 exe/jsui/scripts/app/controller/Toolbar.js:528
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:493
+#: exe/engine/package.py:1665 exe/jsui/scripts/app/controller/Toolbar.js:531
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:502
 msgid "iDevice Editor"
 msgstr "Editor d'iDevice"
 
@@ -2780,7 +2777,7 @@ msgid "My Catalog"
 msgstr "El meu catàleg "
 
 #: exe/engine/package.py:1865
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:258
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:259
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:56
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:163
 #: exe/webui/tools/style-designer/langs/all.js:77
@@ -2804,7 +2801,7 @@ msgstr ""
 msgid "A Step Ahead Text"
 msgstr "Text per saber més"
 
-#: exe/engine/path.py:642
+#: exe/engine/path.py:648
 #, python-format
 msgid ""
 "%s\n"
@@ -3224,7 +3221,7 @@ msgstr "Text per al botó comprovació"
 #: exe/engine/sortidevice.py:61 exe/webui/listablock.py:270
 #: exe/webui/listablock.py:272
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:50
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:55
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:58
 msgid "Check"
 msgstr "Comprova"
 
@@ -3535,7 +3532,7 @@ msgstr ""
 msgid "Don't copy source in target"
 msgstr "No copieu la font en destinació"
 
-#: exe/exe_do:140 exe/jsui/scripts/app/controller/Toolbar.js:825
+#: exe/exe_do:140 exe/jsui/scripts/app/controller/Toolbar.js:828
 msgid "Wrap fields in CDATA"
 msgstr "Embolcalla camps en CDATA"
 
@@ -3653,10 +3650,10 @@ msgstr ""
 "exe_do: error: No es pot importar '%s'.\n"
 "L'error ha estat:"
 
-#: exe/export/cmdlineexporter.py:75 exe/jsui/mainpage.py:390
-#: exe/jsui/mainpage.py:399 exe/jsui/mainpage.py:1385 exe/jsui/mainpage.py:1572
-#: exe/jsui/mainpage.py:1618 exe/jsui/mainpage.py:1663
-#: exe/jsui/mainpage.py:1684
+#: exe/export/cmdlineexporter.py:75 exe/jsui/mainpage.py:396
+#: exe/jsui/mainpage.py:405 exe/jsui/mainpage.py:1397 exe/jsui/mainpage.py:1584
+#: exe/jsui/mainpage.py:1630 exe/jsui/mainpage.py:1675
+#: exe/jsui/mainpage.py:1696
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -3669,14 +3666,14 @@ msgstr ""
 msgid "Export format not implemented"
 msgstr "Format d'exportació no implementat "
 
-#: exe/export/epub3export.py:467 exe/export/imsexport.py:434
+#: exe/export/epub3export.py:469 exe/export/imsexport.py:434
 #: exe/export/scormpage.py:184 exe/export/websitepage.py:368
 #, python-format
 msgid "Page %s of %s"
 msgstr "Pàgina  %s de %s"
 
-#: exe/export/epub3export.py:770 exe/export/epub3subexport.py:679
-#: exe/export/imsexport.py:692 exe/export/scormexport.py:840
+#: exe/export/epub3export.py:761 exe/export/epub3subexport.py:679
+#: exe/export/imsexport.py:692 exe/export/scormexport.py:848
 #: exe/export/websiteexport.py:103
 #, python-format
 msgid ""
@@ -3695,17 +3692,17 @@ msgid "educational description"
 msgstr "Descripció educativa"
 
 #: exe/export/scormpage.py:193 exe/export/websitepage.py:363
-#: exe/webui/common.py:627
+#: exe/webui/common.py:634
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:159
-#: exe/webui/tools/assistant/js/assistant.js:99
+#: exe/webui/tools/assistant/js/assistant.js:126
 #: exe/webui/tools/assistant/langs/all.js:10
 msgid "Previous"
 msgstr "Anterior"
 
 #: exe/export/scormpage.py:194 exe/export/websitepage.py:374
-#: exe/webui/common.py:628
+#: exe/webui/common.py:635
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:152
-#: exe/webui/tools/assistant/js/assistant.js:102
+#: exe/webui/tools/assistant/js/assistant.js:129
 #: exe/webui/tools/assistant/langs/all.js:11
 msgid "Next"
 msgstr "Següent"
@@ -3799,20 +3796,20 @@ msgstr "Experimental"
 msgid "Gamification"
 msgstr "Gamificació"
 
-#: exe/jsui/mainpage.py:418 exe/jsui/mainpage.py:1233 exe/jsui/mainpage.py:1377
+#: exe/jsui/mainpage.py:435 exe/jsui/mainpage.py:1245 exe/jsui/mainpage.py:1389
 #: exe/jsui/scripts/app/controller/TemplateManager.js:83
 msgid "Cannot access directory named "
 msgstr "No podeu accedir al directori anomenat"
 
-#: exe/jsui/mainpage.py:418 exe/jsui/mainpage.py:1235 exe/jsui/mainpage.py:1377
+#: exe/jsui/mainpage.py:435 exe/jsui/mainpage.py:1247 exe/jsui/mainpage.py:1389
 msgid ". Please use ASCII names."
 msgstr ". Empreu caràcters ASCII."
 
-#: exe/jsui/mainpage.py:431 exe/jsui/mainpage.py:474
+#: exe/jsui/mainpage.py:443 exe/jsui/mainpage.py:486
 msgid "SAVE FAILED!"
 msgstr "DESAT ERRONI ! "
 
-#: exe/jsui/mainpage.py:435
+#: exe/jsui/mainpage.py:447
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3821,8 +3818,8 @@ msgstr ""
 "ERRADA EN DESAR!\n"
 "«%s» no és un nom vàlid per al paquet"
 
-#: exe/jsui/mainpage.py:441 exe/jsui/mainpage.py:493 exe/jsui/mainpage.py:849
-#: exe/jsui/mainpage.py:907 exe/jsui/mainpage.py:1477
+#: exe/jsui/mainpage.py:453 exe/jsui/mainpage.py:505 exe/jsui/mainpage.py:861
+#: exe/jsui/mainpage.py:919 exe/jsui/mainpage.py:1489
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3831,12 +3828,12 @@ msgstr ""
 "ERROR EN DESAR!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:452 exe/jsui/mainpage.py:457 exe/jsui/mainpage.py:462
+#: exe/jsui/mainpage.py:464 exe/jsui/mainpage.py:469 exe/jsui/mainpage.py:474
 #, python-format
 msgid "Package saved to: %s"
 msgstr "Paquet desat a: %s"
 
-#: exe/jsui/mainpage.py:478
+#: exe/jsui/mainpage.py:490
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3845,24 +3842,24 @@ msgstr ""
 "ERRADA EN DESAR!\n"
 "«%s» no és un nom vàlid per a la plantilla"
 
-#: exe/jsui/mainpage.py:499
+#: exe/jsui/mainpage.py:511
 #, python-format
 msgid "Template saved: %s"
 msgstr "Plantilla desada: %s"
 
-#: exe/jsui/mainpage.py:572 exe/webui/stylemanagerpage.py:398
+#: exe/jsui/mainpage.py:584 exe/webui/stylemanagerpage.py:424
 msgid "Downloading..."
 msgstr "S'està descarregant..."
 
-#: exe/jsui/mainpage.py:580
+#: exe/jsui/mainpage.py:592
 msgid "Connecting to classification sources repository..."
 msgstr "S'està connectant amb el dipòsit de fonts de classificació..."
 
-#: exe/jsui/mainpage.py:580 exe/jsui/mainpage.py:586
+#: exe/jsui/mainpage.py:592 exe/jsui/mainpage.py:598
 msgid "Sources Download"
 msgstr "Fonts de baixada"
 
-#: exe/jsui/mainpage.py:586
+#: exe/jsui/mainpage.py:598
 msgid ""
 "There has been an error while trying to download classification sources. "
 "Please try again later."
@@ -3870,26 +3867,26 @@ msgstr ""
 "Ha hagut una errada mentre es baixaven les fonts baixada. Proveu-ho més "
 "tard."
 
-#: exe/jsui/mainpage.py:772 exe/jsui/mainpage.py:871 exe/jsui/mainpage.py:934
-#: exe/jsui/mainpage.py:1015
+#: exe/jsui/mainpage.py:784 exe/jsui/mainpage.py:883 exe/jsui/mainpage.py:946
+#: exe/jsui/mainpage.py:1027
 #, python-format
 msgid "Preview directory %s is a file, cannot replace it"
 msgstr "La carpeta de previsualització %s és un fitxer, no pot ser reemplaçat"
 
-#: exe/jsui/mainpage.py:791
+#: exe/jsui/mainpage.py:803
 #, python-format
 msgid "Local file %s is not found, cannot preview it"
 msgstr "El fitxer local %s no s'ha trobat, no es pot mostrar"
 
-#: exe/jsui/mainpage.py:974 exe/jsui/mainpage.py:1000 exe/jsui/mainpage.py:1043
+#: exe/jsui/mainpage.py:986 exe/jsui/mainpage.py:1012 exe/jsui/mainpage.py:1055
 msgid "Could not create the image"
 msgstr "No s'ha pogut crear la imatge"
 
-#: exe/jsui/mainpage.py:1081
+#: exe/jsui/mainpage.py:1093
 msgid "Importing HTML..."
 msgstr "S'està important HTML..."
 
-#: exe/jsui/mainpage.py:1087
+#: exe/jsui/mainpage.py:1099
 #, python-format
 msgid ""
 "LOM Metadata import FAILED!\n"
@@ -3898,28 +3895,28 @@ msgstr ""
 "Importació LOM Metadata ERRÒNIA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1090
+#: exe/jsui/mainpage.py:1102
 msgid "Error importing HTML:\n"
 msgstr "Error en importar HTML:\n"
 
-#: exe/jsui/mainpage.py:1126
+#: exe/jsui/mainpage.py:1138
 msgid "Exporting package as SCORM 1.2..."
 msgstr "S'està exportant el paquet com SCORM 1.2 ..."
 
-#: exe/jsui/mainpage.py:1145
+#: exe/jsui/mainpage.py:1157
 msgid "Uploading package to Procomún..."
 msgstr "S'està pujant el paquet a Procomún..."
 
-#: exe/jsui/mainpage.py:1169
+#: exe/jsui/mainpage.py:1181
 msgid "Unknown error when trying to upload package to Procomún."
 msgstr "Error desconegut mentre es tractava de pujar el paquet a Procomún."
 
-#: exe/jsui/mainpage.py:1169 exe/jsui/mainpage.py:1194
-#: exe/jsui/mainpage.py:1213 exe/jsui/scripts/app/controller/Toolbar.js:942
+#: exe/jsui/mainpage.py:1181 exe/jsui/mainpage.py:1206
+#: exe/jsui/mainpage.py:1225 exe/jsui/scripts/app/controller/Toolbar.js:945
 msgid "Publishing document to Procomún"
 msgstr "S'està publicant el document a Procomún"
 
-#: exe/jsui/mainpage.py:1188
+#: exe/jsui/mainpage.py:1200
 #, python-format
 msgid ""
 "Package exported to <a href=\"%s\" target=\"_blank\" title=\"Click to "
@@ -3928,7 +3925,7 @@ msgstr ""
 "Paquet exportat a <a href=\"%s\" target=\"_blank\" title=\"Click to view "
 "the exported package\">%s</a>."
 
-#: exe/jsui/mainpage.py:1191
+#: exe/jsui/mainpage.py:1203
 #, python-format
 msgid ""
 "<small>You can view and manage the uploaded package using <a href=\"%s\" "
@@ -3939,20 +3936,20 @@ msgstr ""
 "de <a href=\"%s\" target=\"_blank\" title=\"Procomún "
 "Home\">Procomún</a></small>"
 
-#: exe/jsui/mainpage.py:1200 exe/jsui/scripts/app/controller/Toolbar.js:983
+#: exe/jsui/mainpage.py:1212 exe/jsui/scripts/app/controller/Toolbar.js:986
 #, python-format
 msgid "Error exporting package \"%s\" to Procomún."
 msgstr "S'ha produït un error exportant el paquet «%s» a Procomún."
 
-#: exe/jsui/mainpage.py:1202
+#: exe/jsui/mainpage.py:1214
 msgid "The most common reasons for this are:"
 msgstr "Les raons més comuns per això són:"
 
-#: exe/jsui/mainpage.py:1204
+#: exe/jsui/mainpage.py:1216
 msgid "1. Package metadata is not properly filled."
 msgstr "1. Les metadades del paquet no estan degudament emplenades."
 
-#: exe/jsui/mainpage.py:1206
+#: exe/jsui/mainpage.py:1218
 msgid ""
 "2. There is a problem with you connection (or with Procomún servers), so "
 "you should just try again later."
@@ -3960,7 +3957,7 @@ msgstr ""
 "2. Hi ha un problema amb la connexió (o amb els servidors Procomún), per "
 "això cal tornar-ho a provar més tard."
 
-#: exe/jsui/mainpage.py:1208
+#: exe/jsui/mainpage.py:1220
 msgid ""
 "If you have problems publishing you can close this dialogue, export as "
 "SCORM 2004 and upload the generated zip file manually to Procomún."
@@ -3968,12 +3965,12 @@ msgstr ""
 "Si teniu problemes publicant, podeu tancar aquest diàleg, exporteu-ho com"
 " aSCORM 2004 i pugeu el fitxer zip generat manualment a Procomún."
 
-#: exe/jsui/mainpage.py:1210
+#: exe/jsui/mainpage.py:1222
 #, python-format
 msgid "The reported error we got from Procomún was: <pre>%s</pre>"
 msgstr "L'error informat a Procomún ha estat: <pre>%s</pre>"
 
-#: exe/jsui/mainpage.py:1240 exe/jsui/mainpage.py:1597
+#: exe/jsui/mainpage.py:1252 exe/jsui/mainpage.py:1609
 #, python-format
 msgid ""
 "SAVE FAILED!\n"
@@ -3982,24 +3979,24 @@ msgstr ""
 "ERRADA EN DESAR!\n"
 "«%s» no és un nom vàlid per  al fitxer"
 
-#: exe/jsui/mainpage.py:1261 exe/jsui/mainpage.py:1266
-#: exe/jsui/mainpage.py:1269 exe/jsui/mainpage.py:1272
-#: exe/jsui/mainpage.py:1275 exe/jsui/mainpage.py:1278
-#: exe/jsui/mainpage.py:1283 exe/jsui/mainpage.py:1547
-#: exe/jsui/mainpage.py:1644
+#: exe/jsui/mainpage.py:1273 exe/jsui/mainpage.py:1278
+#: exe/jsui/mainpage.py:1281 exe/jsui/mainpage.py:1284
+#: exe/jsui/mainpage.py:1287 exe/jsui/mainpage.py:1290
+#: exe/jsui/mainpage.py:1295 exe/jsui/mainpage.py:1559
+#: exe/jsui/mainpage.py:1656
 msgid "EXPORT FAILED!"
 msgstr "Exportació errònia !"
 
-#: exe/jsui/mainpage.py:1338
+#: exe/jsui/mainpage.py:1350
 msgid "Correct XLIFF import"
 msgstr "Importació XLIFF correcta"
 
-#: exe/jsui/mainpage.py:1341
+#: exe/jsui/mainpage.py:1353
 #, python-format
 msgid "Error importing XLIFF: %s"
 msgstr "Error en importar XLIFF: %s"
 
-#: exe/jsui/mainpage.py:1386 exe/jsui/mainpage.py:1403
+#: exe/jsui/mainpage.py:1398 exe/jsui/mainpage.py:1415
 #, python-format
 msgid ""
 "EXTRACT FAILED!\n"
@@ -4008,22 +4005,22 @@ msgstr ""
 "Extracció errònia!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1405
+#: exe/jsui/mainpage.py:1417
 #, python-format
 msgid "Package extracted to: %s"
 msgstr "Paquet extret a: %s"
 
-#: exe/jsui/mainpage.py:1417 exe/webui/stylemanagerpage.py:237
+#: exe/jsui/mainpage.py:1429 exe/webui/stylemanagerpage.py:239
 msgid "Directory exists"
 msgstr "La carpeta ja existeix"
 
-#: exe/jsui/mainpage.py:1431 exe/jsui/mainpage.py:1532
-#: exe/jsui/mainpage.py:1555 exe/jsui/mainpage.py:1573
-#: exe/jsui/mainpage.py:1579 exe/jsui/mainpage.py:1603
-#: exe/jsui/mainpage.py:1619 exe/jsui/mainpage.py:1629
-#: exe/jsui/mainpage.py:1649 exe/jsui/mainpage.py:1664
-#: exe/jsui/mainpage.py:1670 exe/jsui/mainpage.py:1685
-#: exe/jsui/mainpage.py:1695
+#: exe/jsui/mainpage.py:1443 exe/jsui/mainpage.py:1544
+#: exe/jsui/mainpage.py:1567 exe/jsui/mainpage.py:1585
+#: exe/jsui/mainpage.py:1591 exe/jsui/mainpage.py:1615
+#: exe/jsui/mainpage.py:1631 exe/jsui/mainpage.py:1641
+#: exe/jsui/mainpage.py:1661 exe/jsui/mainpage.py:1676
+#: exe/jsui/mainpage.py:1682 exe/jsui/mainpage.py:1697
+#: exe/jsui/mainpage.py:1707
 #, python-format
 msgid ""
 "EXPORT FAILED!\n"
@@ -4032,12 +4029,12 @@ msgstr ""
 "EXPORTACIÓ ERRÒNIA!\n"
 "%s"
 
-#: exe/jsui/mainpage.py:1459 exe/jsui/mainpage.py:1513
+#: exe/jsui/mainpage.py:1471 exe/jsui/mainpage.py:1525
 #, python-format
 msgid "Filename %s is a file, cannot replace it"
 msgstr "El fitxer anomenat %s és un fitxer, que no pot ser reemplaçat"
 
-#: exe/jsui/mainpage.py:1465 exe/jsui/mainpage.py:1520
+#: exe/jsui/mainpage.py:1477 exe/jsui/mainpage.py:1532
 #, python-format
 msgid ""
 "Folder name %s already exists. Please choose another one or delete "
@@ -4046,18 +4043,18 @@ msgstr ""
 "La carpeta nomenada %s realment existeix. Trieu-ne una altra  primer o "
 "esborreu-la primer si continueu endavant."
 
-#: exe/jsui/mainpage.py:1484 exe/jsui/mainpage.py:1536
-#: exe/jsui/mainpage.py:1559 exe/jsui/mainpage.py:1581
-#: exe/jsui/mainpage.py:1605 exe/jsui/mainpage.py:1635
-#: exe/jsui/mainpage.py:1651 exe/jsui/mainpage.py:1672
-#: exe/jsui/mainpage.py:1699
+#: exe/jsui/mainpage.py:1496 exe/jsui/mainpage.py:1548
+#: exe/jsui/mainpage.py:1571 exe/jsui/mainpage.py:1593
+#: exe/jsui/mainpage.py:1617 exe/jsui/mainpage.py:1647
+#: exe/jsui/mainpage.py:1663 exe/jsui/mainpage.py:1684
+#: exe/jsui/mainpage.py:1711
 #, python-format
 msgid "Exported to %s"
 msgstr "Exportat a %s"
 
-#: exe/jsui/mainpage.py:1486 exe/jsui/mainpage.py:1538
-#: exe/jsui/mainpage.py:1561 exe/jsui/mainpage.py:1637
-#: exe/jsui/mainpage.py:1701
+#: exe/jsui/mainpage.py:1498 exe/jsui/mainpage.py:1550
+#: exe/jsui/mainpage.py:1573 exe/jsui/mainpage.py:1649
+#: exe/jsui/mainpage.py:1713
 #, python-format
 msgid ""
 "Exported to %s.\n"
@@ -4068,23 +4065,23 @@ msgstr ""
 "Hi han algun recursos que no es poden reanomenar per compatibilitat amb "
 "ISO9660."
 
-#: exe/jsui/mainpage.py:1632
+#: exe/jsui/mainpage.py:1644
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
 msgstr "Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
 
-#: exe/jsui/mainpage.py:1737 exe/webui/stylemanagerpage.py:251
+#: exe/jsui/mainpage.py:1749
 #, python-format
 msgid "File %s does not exist or is not readable."
 msgstr "El fitxer %s no existeix o no es pot llegir."
 
-#: exe/jsui/mainpage.py:1744
+#: exe/jsui/mainpage.py:1756
 msgid "Couldn't load file, please email file to bugs@exelearning.org"
 msgstr ""
 "No es pot carregar el fitxer, si us plau envieu un correu a "
 "bugs@exelearning.org"
 
-#: exe/jsui/mainpage.py:1747
+#: exe/jsui/mainpage.py:1759
 #, python-format
 msgid ""
 "Sorry, wrong file format:\n"
@@ -4093,7 +4090,7 @@ msgstr ""
 "Disculpeu, format de fitxer dolent: \n"
 "%s"
 
-#: exe/jsui/mainpage.py:1749
+#: exe/jsui/mainpage.py:1761
 msgid "Sorry, wrong file format"
 msgstr "Disculpeu, format de fitxer dolent"
 
@@ -4133,19 +4130,19 @@ msgstr "Fitxers d'imatge"
 #: exe/jsui/scripts/app/controller/StyleManager.js:247
 #: exe/jsui/scripts/app/controller/TemplateManager.js:221
 #: exe/jsui/scripts/app/controller/TemplateManager.js:290
-#: exe/jsui/scripts/app/controller/Toolbar.js:618
-#: exe/jsui/scripts/app/controller/Toolbar.js:639
-#: exe/jsui/scripts/app/controller/Toolbar.js:674
-#: exe/jsui/scripts/app/controller/Toolbar.js:693
-#: exe/jsui/scripts/app/controller/Toolbar.js:762
-#: exe/jsui/scripts/app/controller/Toolbar.js:873
-#: exe/jsui/scripts/app/controller/Toolbar.js:1030
-#: exe/jsui/scripts/app/controller/Toolbar.js:1050
-#: exe/jsui/scripts/app/controller/Toolbar.js:1070
-#: exe/jsui/scripts/app/controller/Toolbar.js:1104
-#: exe/jsui/scripts/app/controller/Toolbar.js:1322
-#: exe/jsui/scripts/app/controller/Toolbar.js:1473
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:136
+#: exe/jsui/scripts/app/controller/Toolbar.js:621
+#: exe/jsui/scripts/app/controller/Toolbar.js:642
+#: exe/jsui/scripts/app/controller/Toolbar.js:677
+#: exe/jsui/scripts/app/controller/Toolbar.js:696
+#: exe/jsui/scripts/app/controller/Toolbar.js:765
+#: exe/jsui/scripts/app/controller/Toolbar.js:876
+#: exe/jsui/scripts/app/controller/Toolbar.js:1033
+#: exe/jsui/scripts/app/controller/Toolbar.js:1053
+#: exe/jsui/scripts/app/controller/Toolbar.js:1073
+#: exe/jsui/scripts/app/controller/Toolbar.js:1107
+#: exe/jsui/scripts/app/controller/Toolbar.js:1325
+#: exe/jsui/scripts/app/controller/Toolbar.js:1467
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:137
 #: exe/webui/scripts/authoring.js:95 exe/webui/scripts/authoring.js:117
 #: exe/webui/scripts/authoring.js:361 exe/webui/scripts/authoring.js:370
 #: exe/webui/scripts/authoring.js:378 exe/webui/scripts/authoring.js:399
@@ -4155,13 +4152,13 @@ msgid "All Files"
 msgstr "Tots els fitxers"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:275
-#: exe/jsui/scripts/app/controller/Toolbar.js:1003
-#: exe/jsui/scripts/app/controller/Toolbar.js:1023
-#: exe/jsui/scripts/app/controller/Toolbar.js:1043
-#: exe/jsui/scripts/app/controller/Toolbar.js:1063
-#: exe/jsui/scripts/app/controller/Toolbar.js:1097
-#: exe/webui/stylemanagerpage.py:285 exe/webui/stylemanagerpage.py:398
-#: exe/webui/stylemanagerpage.py:527
+#: exe/jsui/scripts/app/controller/Toolbar.js:1006
+#: exe/jsui/scripts/app/controller/Toolbar.js:1026
+#: exe/jsui/scripts/app/controller/Toolbar.js:1046
+#: exe/jsui/scripts/app/controller/Toolbar.js:1066
+#: exe/jsui/scripts/app/controller/Toolbar.js:1100
+#: exe/webui/stylemanagerpage.py:311 exe/webui/stylemanagerpage.py:424
+#: exe/webui/stylemanagerpage.py:560
 msgid "Please wait..."
 msgstr "Espereu..."
 
@@ -4189,20 +4186,20 @@ msgstr "S'ha desat la configuració"
 #: exe/jsui/scripts/app/controller/TemplateManager.js:279
 #: exe/jsui/scripts/app/controller/TemplateManager.js:338
 #: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:982
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:130
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:339
+#: exe/jsui/scripts/app/controller/Toolbar.js:985
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:131
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:340
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:382
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
-#: exe/webui/stylemanagerpage.py:155 exe/webui/stylemanagerpage.py:277
-#: exe/webui/stylemanagerpage.py:305 exe/webui/stylemanagerpage.py:329
-#: exe/webui/stylemanagerpage.py:372 exe/webui/stylemanagerpage.py:383
-#: exe/webui/stylemanagerpage.py:394 exe/webui/stylemanagerpage.py:431
-#: exe/webui/stylemanagerpage.py:438 exe/webui/stylemanagerpage.py:481
-#: exe/webui/stylemanagerpage.py:493 exe/webui/templatemanagerpage.py:130
+#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:303
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:355
+#: exe/webui/stylemanagerpage.py:398 exe/webui/stylemanagerpage.py:409
+#: exe/webui/stylemanagerpage.py:420 exe/webui/stylemanagerpage.py:464
+#: exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:514
+#: exe/webui/stylemanagerpage.py:526 exe/webui/templatemanagerpage.py:130
 #: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
 #: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
 #: exe/webui/templatemanagerpage.py:297
@@ -4213,7 +4210,7 @@ msgstr "Error"
 #: exe/jsui/scripts/app/controller/MainTab.js:308
 #: exe/jsui/scripts/app/controller/MainTab.js:361
 #: exe/jsui/scripts/app/controller/Outline.js:204
-#: exe/jsui/scripts/app/controller/Toolbar.js:537
+#: exe/jsui/scripts/app/controller/Toolbar.js:540
 #: exe/webui/scripts/editor.js:54
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:288
 #: exe/webui/tools/style-designer/langs/all.js:120
@@ -4263,6 +4260,7 @@ msgstr ""
 "d'estils»."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:75
+#: exe/webui/stylemanagerpage.py:272
 msgid "An unknown error occurred."
 msgstr "Ha succeït un error inesperat."
 
@@ -4275,7 +4273,7 @@ msgstr "No es pot suprimir l'estil actual."
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:62
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:69
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:57
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:64
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:65
 #: exe/webui/tools/style-designer/langs/all.js:129
 msgid "Information"
 msgstr "Informació"
@@ -4330,63 +4328,44 @@ msgstr "Voleu suprimir la plantilla?"
 msgid "Do you want to delete this template?"
 msgstr "Voleu suprimir aquesta plantilla?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:204
-#: exe/webui/tools/assistant/langs/all.js:80
-msgid "http://exelearning.net/html_manual/exe20_en/"
-msgstr "http://xn--gnuscultura-dbb.eu/eXe/"
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:220
-#: exe/webui/tools/assistant/langs/all.js:82
-msgid "http://exelearning.net/?lang=en"
-msgstr "http://exelearning.net/?lang=ca"
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:226
-#: exe/webui/tools/assistant/langs/all.js:81
-msgid "http://exelearning.net/forums/"
-msgstr "http://exelearning.net/forums/"
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:229
-msgid "http://exelearning.net/downloads/"
-msgstr "http://exelearning.net/descarregues/"
-
-#: exe/jsui/scripts/app/controller/Toolbar.js:368
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:568
-#: exe/webui/tools/assistant/js/assistant.js:15
+#: exe/jsui/scripts/app/controller/Toolbar.js:357
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:578
+#: exe/webui/tools/assistant/js/assistant.js:42
 #: exe/webui/tools/assistant/langs/all.js:8
 msgid "Assistant"
 msgstr "Assistent"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:398
+#: exe/jsui/scripts/app/controller/Toolbar.js:387
 msgid "About"
 msgstr "Quant a"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:415
+#: exe/jsui/scripts/app/controller/Toolbar.js:404
 msgid "Release notes"
 msgstr "Notes de la versió"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:433
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:600
+#: exe/jsui/scripts/app/controller/Toolbar.js:422
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:610
 #: exe/webui/tools/assistant/langs/all.js:78
 msgid "Legal Notes"
 msgstr "Notes legals"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:478
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:446
+#: exe/jsui/scripts/app/controller/Toolbar.js:481
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:455
 msgid "Preferences"
 msgstr "Preferències"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:498
+#: exe/jsui/scripts/app/controller/Toolbar.js:501
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:117
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:123
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:36
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:42
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:84
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:213
-#: exe/webui/scripts/authoring.js:1221
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:217
+#: exe/webui/scripts/authoring.js:1237
 msgid "Export"
 msgstr "Exporta"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:538
+#: exe/jsui/scripts/app/controller/Toolbar.js:541
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:289
 msgid ""
 "If you have made changes and have not saved them, they will be lost. Do "
@@ -4395,101 +4374,101 @@ msgstr ""
 "Si heu fet canvis i no els heu desat, es perdran. Voleu de veritat sortir"
 " ?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:564
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:534
+#: exe/jsui/scripts/app/controller/Toolbar.js:567
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:543
 msgid "Style Manager"
 msgstr "Gestor d'estils"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:581
+#: exe/jsui/scripts/app/controller/Toolbar.js:584
 msgid "Template Manager"
 msgstr "Gestor de plantilles"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:606
+#: exe/jsui/scripts/app/controller/Toolbar.js:609
 msgid "Select package to insert"
 msgstr "Selecciona el paquet a inserir"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:611
+#: exe/jsui/scripts/app/controller/Toolbar.js:614
 msgid "Inserting package: {filename}"
 msgstr "S'està inserint el paquet  {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:617
-#: exe/jsui/scripts/app/controller/Toolbar.js:638
-#: exe/jsui/scripts/app/controller/Toolbar.js:1321
-#: exe/jsui/scripts/app/controller/Toolbar.js:1472
+#: exe/jsui/scripts/app/controller/Toolbar.js:620
+#: exe/jsui/scripts/app/controller/Toolbar.js:641
+#: exe/jsui/scripts/app/controller/Toolbar.js:1324
+#: exe/jsui/scripts/app/controller/Toolbar.js:1466
 msgid "eXe Package Files"
 msgstr "Fitxers del paquet eXe"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:627
+#: exe/jsui/scripts/app/controller/Toolbar.js:630
 msgid "Save extracted package as"
 msgstr "Anomena i desa el paquet extret"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:632
+#: exe/jsui/scripts/app/controller/Toolbar.js:635
 msgid "Extracting package: {filename}"
 msgstr "S'està extraguent el paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:648
+#: exe/jsui/scripts/app/controller/Toolbar.js:651
 msgid "Select the parent folder for import."
 msgstr "Selecciona  la carpeta pare per importar."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:663
+#: exe/jsui/scripts/app/controller/Toolbar.js:666
 msgid "Select the entry point for import."
 msgstr "Selecciona el punt d'entrada per importar."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:673
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:358
+#: exe/jsui/scripts/app/controller/Toolbar.js:676
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:366
 msgid "HTML Files"
 msgstr "Fitxers HTML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:682
+#: exe/jsui/scripts/app/controller/Toolbar.js:685
 msgid "Select LOM Metadata file to import."
 msgstr "Selecciona el fitxer LOM Metadata  per  importar."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:692
+#: exe/jsui/scripts/app/controller/Toolbar.js:695
 msgid "XML Files"
 msgstr "Fitxers XML"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:707
+#: exe/jsui/scripts/app/controller/Toolbar.js:710
 msgid "Waiting progress..."
 msgstr "S'està espererant el progrés..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:715
+#: exe/jsui/scripts/app/controller/Toolbar.js:718
 msgid "Cancel Import?"
 msgstr "Cancel·leu la importació ?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:716
+#: exe/jsui/scripts/app/controller/Toolbar.js:719
 msgid "There is an ongoing import. Do you want to cancel?"
 msgstr "Hi ha una importació en curs. De veritat la voleu cancel·lar ?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:739
+#: exe/jsui/scripts/app/controller/Toolbar.js:742
 msgid "Select Xliff file to import"
 msgstr "Selecciona un fitxer Xliff per importar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:749
+#: exe/jsui/scripts/app/controller/Toolbar.js:752
 msgid "XLIFF Import Preferences"
 msgstr "Preferències d'importació XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:761
-#: exe/jsui/scripts/app/controller/Toolbar.js:872
+#: exe/jsui/scripts/app/controller/Toolbar.js:764
+#: exe/jsui/scripts/app/controller/Toolbar.js:875
 msgid "XLIFF Files"
 msgstr "Fitxers XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:771
+#: exe/jsui/scripts/app/controller/Toolbar.js:774
 msgid "Export to Xliff as"
 msgstr "Anomena i exporta com Xliff"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:791
+#: exe/jsui/scripts/app/controller/Toolbar.js:794
 msgid "Select source language"
 msgstr "Selecciona l'idioma origen"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:802
+#: exe/jsui/scripts/app/controller/Toolbar.js:805
 msgid "Select target language"
 msgstr "Selecciona l'idioma destinació"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:813
+#: exe/jsui/scripts/app/controller/Toolbar.js:816
 msgid "Copy source also in target"
 msgstr "Copieu la font també en destinació"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:816
+#: exe/jsui/scripts/app/controller/Toolbar.js:819
 msgid ""
 "If you don't choose this option, target field will be empty. Some "
 "Computer Aided Translation tools (e.g. OmegaT) just translate the content"
@@ -4501,7 +4480,7 @@ msgstr ""
 "del camp destinació. Si aneu a treballar amb eines d'aquest tipus us "
 "caldrà una còpia del camp origen."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:827
+#: exe/jsui/scripts/app/controller/Toolbar.js:830
 msgid ""
 "This option will wrap all the exported fields in CDATA sections. This "
 "kind of sections are not recommended by XLIFF standard but it could be a "
@@ -4513,7 +4492,7 @@ msgstr ""
 " poden ser una bona opció si aneu a preprocessar els camps (p.e.: amb "
 "Rainbow) abans d'utilitzar el programari de traducció."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:836
+#: exe/jsui/scripts/app/controller/Toolbar.js:839
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:51
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:103
 #: exe/webui/editorpane.py:273
@@ -4526,16 +4505,16 @@ msgstr ""
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:842
+#: exe/jsui/scripts/app/controller/Toolbar.js:845
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:36
 msgid "Ok"
 msgstr "D'acord"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:865
+#: exe/jsui/scripts/app/controller/Toolbar.js:868
 msgid "XLIFF Export Preferences"
 msgstr "Preferències d'exportació XLIFF"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:904
+#: exe/jsui/scripts/app/controller/Toolbar.js:907
 msgid ""
 "This package has metadata. You might be exporting incorrect information "
 "included by the original author. Go to Properties to edit it."
@@ -4543,15 +4522,15 @@ msgstr ""
 "Aquest paquet té metadades. És possible que estigueu exportant informació"
 " incorrectainclosa per l'autor original. Aneu a Propietats per editar-lo."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:906
+#: exe/jsui/scripts/app/controller/Toolbar.js:909
 msgid "Do you want to export the package with the current metadata?"
 msgstr "Voleu exportar el paquet amb les metadades actuals?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:943
+#: exe/jsui/scripts/app/controller/Toolbar.js:946
 msgid "Initializing Procomún export process..."
 msgstr "S'està inicialitzant el procés d'exportació a Procomún..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:955
+#: exe/jsui/scripts/app/controller/Toolbar.js:958
 msgid ""
 "You must authorize eXe Learning to publish content into your Procomún "
 "account"
@@ -4559,15 +4538,15 @@ msgstr ""
 "Cal que autoritzeu a eXe Learning a publicar contingut amb el vostre "
 "compte Procomún"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:956
+#: exe/jsui/scripts/app/controller/Toolbar.js:959
 msgid "Are you sure you want to start authorization process?"
 msgstr "Esteu segur que voleu iniciar el procés d'autorització."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:967
+#: exe/jsui/scripts/app/controller/Toolbar.js:970
 msgid "Procomún OAuth"
 msgstr "OAuth Procomún"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:985
+#: exe/jsui/scripts/app/controller/Toolbar.js:988
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:152
 msgid ""
 "If you have problems publishing or you want to complete your cataloguing "
@@ -4578,80 +4557,80 @@ msgstr ""
 "tard, tanqueu aquest diàleg, exporteu-ho com a SCORM 2004 i pugeu el "
 "fitxer zip generat a Procomún."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:997
+#: exe/jsui/scripts/app/controller/Toolbar.js:1000
 msgid "Select the parent folder for export."
 msgstr "Selecciona la carpeta pare per exportar"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1017
+#: exe/jsui/scripts/app/controller/Toolbar.js:1020
 msgid "Export text package as"
 msgstr "Anomena i exporta el paquet de text"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1029
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:285
+#: exe/jsui/scripts/app/controller/Toolbar.js:1032
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
 msgid "Text File"
 msgstr "Fitxer de text"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1037
+#: exe/jsui/scripts/app/controller/Toolbar.js:1040
 msgid "Save package resources report as"
 msgstr "Anomena i desa com a informe de recursos del paquet"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1049
+#: exe/jsui/scripts/app/controller/Toolbar.js:1052
 msgid "CSV File"
 msgstr "Fitxer CSV"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1057
+#: exe/jsui/scripts/app/controller/Toolbar.js:1060
 msgid "Export EPUB3 package as"
 msgstr "Anomena i exporta com a paquet EPUB3 "
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1069
+#: exe/jsui/scripts/app/controller/Toolbar.js:1072
 msgid "EPUB3 File"
 msgstr "Fitxer EPUB3"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1079
+#: exe/jsui/scripts/app/controller/Toolbar.js:1082
 msgid "Export SCORM package as"
 msgstr "Anomena i exporta com paquet SCORM"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1081
+#: exe/jsui/scripts/app/controller/Toolbar.js:1084
 msgid "Export IMS package as"
 msgstr "Anomena i exporta com paquet IMS"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1083
+#: exe/jsui/scripts/app/controller/Toolbar.js:1086
 msgid "Export Website package as"
 msgstr "Anomena i exporta com paquet HTMLZIP"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1085
+#: exe/jsui/scripts/app/controller/Toolbar.js:1088
 msgid "Export Common Cartridge as"
 msgstr "Anomena i exporta com Common Cartridge"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1087
+#: exe/jsui/scripts/app/controller/Toolbar.js:1090
 msgid "INVALID VALUE PASSED TO exportPackage"
 msgstr "S'ha PASSAT UN VALOR NO VÀLID al paquet exportat"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1103
+#: exe/jsui/scripts/app/controller/Toolbar.js:1106
 msgid "SCORM/IMS/ZipFile"
 msgstr "SCORM/IMS/HTMLZIP"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1199
+#: exe/jsui/scripts/app/controller/Toolbar.js:1202
 msgid "No templates available"
 msgstr "No hi ha plantilles disponibles"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1294
+#: exe/jsui/scripts/app/controller/Toolbar.js:1297
 msgid "Loading package..."
 msgstr "S'està carregant el paquet..."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1310
+#: exe/jsui/scripts/app/controller/Toolbar.js:1313
 msgid "Open File"
 msgstr "Obre el fitxer"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1315
+#: exe/jsui/scripts/app/controller/Toolbar.js:1318
 msgid "Loading package: {filename}"
 msgstr "S'està carregant el paquet:  {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1334
+#: exe/jsui/scripts/app/controller/Toolbar.js:1337
 msgid "Save Package first?"
 msgstr "Deseu el paquet primer ?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1335
+#: exe/jsui/scripts/app/controller/Toolbar.js:1338
 msgid ""
 "The current package has been modified and not yet saved. Would you like "
 "to save it?"
@@ -4659,23 +4638,23 @@ msgstr ""
 "El paquet actual ha estat modificat i encara no s'ha desat. Voleu desar-"
 "lo ?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1401
+#: exe/jsui/scripts/app/controller/Toolbar.js:1402
 msgid "Saving package to: {filename}"
 msgstr "S'està desant el paquet: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1430
+#: exe/jsui/scripts/app/controller/Toolbar.js:1424
 msgid "Title for template:"
 msgstr "Títol per a la plantilla:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1431
+#: exe/jsui/scripts/app/controller/Toolbar.js:1425
 msgid "Enter the new name for template:"
 msgstr "Entreu el nom nou per a la plantilla:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1452
+#: exe/jsui/scripts/app/controller/Toolbar.js:1446
 msgid "Save file"
 msgstr "Desa fitxer"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1458
+#: exe/jsui/scripts/app/controller/Toolbar.js:1452
 msgid "Saving package..."
 msgstr "S'està desant el paquet..."
 
@@ -4747,7 +4726,7 @@ msgid "Modified"
 msgstr "Modificat"
 
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:52
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:145
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:147
 msgid "Open"
 msgstr "Obre"
 
@@ -4757,8 +4736,8 @@ msgstr "Obre"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:228
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:268
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:651
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:330
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:174 exe/webui/editorpage.py:264
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:331
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:177 exe/webui/editorpage.py:264
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:4
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:149
 #: exe/webui/tools/assistant/langs/all.js:52
@@ -5003,7 +4982,7 @@ msgstr "Buida"
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:278
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:663
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:23
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:564
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:570
 #: exe/webui/tools/style-designer/langs/all.js:115
 msgid "Reset"
 msgstr "Reinicia "
@@ -5178,7 +5157,7 @@ msgstr "Tàxon"
 
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:217
 #: exe/jsui/scripts/app/view/forms/LomDataPanel.js:257
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:682
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:692
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:91
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:65
@@ -5269,7 +5248,7 @@ msgstr "Nivell d'agregació"
 msgid "Version"
 msgstr "Versió"
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:669
+#: exe/jsui/scripts/app/view/forms/LomSections.js:58 exe/webui/common.py:676
 msgid "Status"
 msgstr "Estat"
 
@@ -5393,7 +5372,7 @@ msgid "Entity"
 msgstr "Entitat"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:162 exe/webui/block.py:275
-#: exe/webui/editorpane.py:401
+#: exe/webui/editorpane.py:405
 msgid "Purpose"
 msgstr "Propòsit"
 
@@ -5602,7 +5581,7 @@ msgid "Cataloguing"
 msgstr "S'està catalogant"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:203
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:694
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:704
 msgid "General description"
 msgstr "Descripció general"
 
@@ -5622,9 +5601,9 @@ msgstr "Coneixements previs "
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:64
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:71
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:735
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:734
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:61
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:66
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:67
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:86
 #: exe/webui/tools/assistant/langs/all.js:28
 #: exe/webui/tools/style-designer/langs/all.js:31
@@ -5638,7 +5617,7 @@ msgstr "Autor principal del recurs."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:263
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:442
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:582
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:588
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:362
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:870
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1050
@@ -5833,33 +5812,33 @@ msgstr "Configuració general"
 msgid "Select Language"
 msgstr "Selecciona l'idioma"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:152
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:153
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:92
 #: exe/webui/tools/style-designer/langs/all.js:106
 msgid "Advanced"
 msgstr "Avançat"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:163
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:164
 msgid "Default format for the new documents"
 msgstr "Format per defecte als documents nous"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:173
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:174
 msgid "The current document format can be modified in the Properties tab"
 msgstr "El format actual del document es pot modificar a la pestanya «Propietats»"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:183
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:184
 msgid "Editor mode"
 msgstr "Mode de l'editor"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:185
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:186
 msgid "Permissive"
 msgstr "Permissiu "
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:186
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:187
 msgid "Strict"
 msgstr "Estricte "
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:193
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:194
 msgid ""
 "\"Permissive\" will allow any markup. \"Strict\" will allow only valid "
 "markup: It will remove any invalid code, even HTML5 tags (except VIDEO "
@@ -5869,16 +5848,16 @@ msgstr ""
 "etiquetatge vàlid: traurà qualsevol codi no vàlid quan s'usi el format "
 "XHTML, encara que siguin etiquetes HTML5 (excepte VIDEO i AUDIO). "
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:204
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:205
 msgid "Editor version"
 msgstr "Versió de l'editor"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:207
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:208
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:576
 msgid "recommended"
 msgstr "recomanada"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:214
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:215
 msgid ""
 "We recommend you to use the latest available version. An old one could be"
 " useful to edit some old contents."
@@ -5886,27 +5865,27 @@ msgstr ""
 "Us recomanem que utilitzeu la darrera versió de l'editor. Una versió "
 "antiga pot ser útil per editar alguns continguts antics."
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:221
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:222
 msgid "Internal Linking (for Web Site Exports only)"
 msgstr "Enllaç intern (sols per exportar a llocs web)"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:225
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:226
 msgid "Enable All Internal Linking"
 msgstr "Habilita tots els enllaços interns"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:226
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:227
 msgid "Disable Auto-Top Internal Linking"
 msgstr "Desactiva l'enllaçat intern d'Auto-Top"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:227
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:228
 msgid "Disable All Internal Linking"
 msgstr "Inhabilita tots els enllaços interns"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:239
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:240
 msgid "Always force editable exports on package load"
 msgstr "Força sempre exportacions editables en la càrrega del paquet"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:246
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:247
 msgid ""
 "This will ignore the package \"Create editable export?\" setting every "
 "time it's loaded. You will be able to disable it before exporting, but it"
@@ -5916,11 +5895,11 @@ msgstr ""
 "vegada que es carregui. Podeu deshabilitar-ho abans de l'exportació, però"
 " es reinicialitzarà cada vegada que obriu el paquet."
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:256
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:257
 msgid "Naming standard for exported content"
 msgstr "Nom estàndard del contingut exportat"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:263
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:264
 msgid ""
 "If \"ISO 9660\" is selected, file names will be cut to 8.3 format to be "
 "compliant with ISO 9660. Note: This option only works with SCORM and Web "
@@ -5930,15 +5909,15 @@ msgstr ""
 "tallaran al format 8.3 per complir amb la ISO 9660. Nota: Aquesta opció "
 "sols funciona amb les exportacions del tipus SCORM i Lloc web."
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:273
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:274
 msgid "Time to remind the user about saving (in minutes)"
 msgstr "Temps per a recordar a l'usuari que cal desar el fitxer (en minuts)"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:275
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:276
 msgid "Never"
 msgstr "Mai"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:284
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:285
 msgid ""
 "By enabling this, a confirmation dialog will be shown after the selected "
 "amount of time to remind the user that he/she should save his/her work."
@@ -5947,17 +5926,17 @@ msgstr ""
 "després del «temps per recordar» que l'usuari ell/ella hauria de desar el"
 " seu treball."
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:289
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:290
 msgid "Default license for the new documents"
 msgstr "Llicència per defecte als documents nous"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:316
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:317
 msgid "The current document license can be modified in the Properties tab."
 msgstr ""
 "La llicència actual del document es pot modificar a la pestanya "
 "«Propietats»"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:355
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:356
 msgid "Show this window on eXe start"
 msgstr "Mostra aquesta finestra a l'inici d'eXe"
 
@@ -6067,11 +6046,12 @@ msgid "Check and install styles in the repository"
 msgstr "Comprova i instal·la estils al diposit"
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
-#: exe/webui/common.py:638
+#: exe/webui/common.py:645
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:226
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:205
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:219
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:241
+#: exe/webui/stylemanagerpage.py:262 exe/webui/stylemanagerpage.py:264
 msgid "Error recovering data"
 msgstr "Errada mentre es recuperaven dades"
 
@@ -6140,12 +6120,12 @@ msgstr ""
 msgid "Outline"
 msgstr "Índex"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:629
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:636
 msgid "Show"
 msgstr "Mostra"
 
-#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:630
-#: exe/webui/scripts/authoring.js:927
+#: exe/jsui/scripts/app/view/ui/LeftPanel.js:80 exe/webui/common.py:637
+#: exe/webui/scripts/authoring.js:943
 msgid "Hide"
 msgstr "Amaga"
 
@@ -6187,22 +6167,22 @@ msgid "Properties"
 msgstr "Propietats"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:55
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:702
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:712
 msgid "Package"
 msgstr "Paquet"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:59
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:368
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:376
 msgid "Metadata"
 msgstr "Metadades"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:71
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:377
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:386
 msgid "LOM"
 msgstr "LOM"
 
 #: exe/jsui/scripts/app/view/ui/MainTabPanel.js:77
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:383
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:392
 msgid "LOM-ES"
 msgstr "LOM-ES"
 
@@ -6216,11 +6196,11 @@ msgstr "Afegeix pàgina"
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
 #: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
-#: exe/webui/galleryblock.py:303 exe/webui/jsblock.py:109
+#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:109
 #: exe/webui/jsblock.py:114 exe/webui/scripts/editor.js:23
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:827
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:858
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:833
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:864
 msgid "Delete"
 msgstr "Suprimeix"
 
@@ -6261,193 +6241,194 @@ msgstr "usa la tecla fletxa dreta"
 msgid "New"
 msgstr "Nou"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:118
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:119
 msgid "Project"
 msgstr "Projecte"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:126
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:127
 msgid "Window"
 msgstr "Finestra"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:133
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:190
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:134
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:193
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:212
 msgid "Templates"
 msgstr "Plantilles"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:152
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:154
 msgid "Recent Projects..."
 msgstr "Projectes recents..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:164
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:167
 msgid "Clear Recent Projects List"
 msgstr "Suprimiu la llista de projectes recents"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:181
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:184
 msgid "Save As..."
 msgstr "Anomena i desa..."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:197
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:201
 msgid "Save as template"
 msgstr "Anomena i desa com a plantilla"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:203
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:207
 msgid "Manage"
 msgstr "Gestiona"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:221
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:226
 msgid "Educational Standard"
 msgstr "Estàndard educatiu"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:228
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
 msgid "Common Cartridge"
 msgstr "Common Cartridge"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:234
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
 msgid "SCORM1.2"
 msgstr "SCORM 1.2"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:240
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
 msgid "SCORM2004"
 msgstr "SCORM 2004"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:246
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:252
 msgid "IMS Content Package"
 msgstr "Paquet de contingut IMS"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:256
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:299
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:262
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:306
 msgid "Web Site"
 msgstr "Lloc web"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:263
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:270
 msgid "Self-contained Folder"
 msgstr "Carpeta autodesplegable"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:269
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:276
 msgid "Zip File"
 msgstr "Fitxer Zip"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:275
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:306
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:282
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:313
 msgid "Single Page"
 msgstr "Pàgina única"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:292
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:299
 msgid "XLIFF"
 msgstr "XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:312
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:319
 msgid "EPUB3"
 msgstr "EPUB3"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:321
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:328
 msgid "Export the current page as elp"
 msgstr "Exporta la pàgina actual com a ELP"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:326
-#: exe/webui/scripts/authoring.js:1107
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
+#: exe/webui/scripts/authoring.js:1123
 msgid "SCORM"
 msgstr "SCORM"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:333
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:340
 msgid "IMS"
 msgstr "IMS"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:343
-#: exe/webui/scripts/authoring.js:1215
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:350
+#: exe/webui/scripts/authoring.js:1231
 msgid "Import"
 msgstr "Importa"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:352
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:360
 msgid "Insert elp in the current page"
 msgstr "Insereix el ELP a la pàgina actual"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:364
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:372
 msgid "XLIFF File"
 msgstr "Fitxer XLIFF"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:416 exe/webui/common.py:642
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:425 exe/webui/common.py:649
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:24
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:148
 #: exe/webui/style/INTEF/_intef_js.js:121
 msgid "Print"
 msgstr "Imprimeix"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:429 exe/webui/editorpage.py:273
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:438 exe/webui/editorpage.py:273
 msgid "Quit"
 msgstr "Surt"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:436
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:445
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:227
 msgid "Tools"
 msgstr "Eines"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:452
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:724 exe/webui/editorpane.py:268
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:461
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:734 exe/webui/editorpane.py:268
 #: exe/webui/element.py:2106
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:147
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:6
 msgid "Preview"
 msgstr "Previsualització"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:500
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:509
 msgid "Resources Report"
 msgstr "Informe dels recursos"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:506
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:515
 msgid "Refresh Display"
 msgstr "Refresca la visualització"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:514
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:525
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:538
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:523
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:534
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:547
 msgid "Styles"
 msgstr "Estils"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:551
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:558
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:561
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:568
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:6
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:130
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:629
 msgid "Help"
 msgstr "Ajuda"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:578
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:588
 #: exe/webui/tools/assistant/langs/all.js:71
 msgid "eXe Tutorial"
 msgstr "Tutorial d'eXe "
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:592
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:602
 #: exe/webui/tools/assistant/langs/all.js:77
 msgid "Release Notes"
 msgstr "Notes de la versió"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:610
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:620
 #: exe/webui/tools/assistant/langs/all.js:79
 msgid "eXe Web Site"
 msgstr "Lloc web d'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:617
-#: exe/webui/scripts/authoring.js:885 exe/webui/tools/assistant/langs/all.js:74
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:627
+#: exe/webui/scripts/authoring.js:901 exe/webui/tools/assistant/langs/all.js:74
 msgid "Report an Issue"
 msgstr "Informa d'un problema"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:624
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:634
 #: exe/webui/tools/assistant/langs/all.js:72
 msgid "eXe Forums"
 msgstr "Fòrums d'eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:634
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:644
 #: exe/webui/tools/assistant/langs/all.js:76
 msgid "About eXe"
 msgstr "Quant a eXe"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:648
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:658
 msgid "Advanced mode"
 msgstr "Mode avançat"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:649
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:673
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:659
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:683
 msgid ""
 "Checking this option will show more elements in the menus (File, "
 "Tools...) and the Properties tab."
@@ -6455,31 +6436,31 @@ msgstr ""
 "Si habiliteu aquesta opció es mostraran  més elements als menús (Fitxer, "
 "Eines,...) i a la pestanya de propietats."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:672 exe/webui/editorpage.py:250
-#: exe/webui/editorpane.py:397
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:682 exe/webui/editorpage.py:250
+#: exe/webui/editorpane.py:401
 msgid "Info"
 msgstr "Informació"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:844
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:854
 msgid "You've been working for a long time without saving."
 msgstr "Heu treballat un llarg període de temps sense desar res."
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:846
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:856
 msgid "Do you want to save now?"
 msgstr "Voleu desar ara el vostre treball?"
 
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:848
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:858
 msgid "Hide until the application is closed"
 msgstr "Amaga mentre l'aplicació està tancada"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:903
+#: exe/jsui/scripts/app/controller/Toolbar.js:906
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:580
 #: exe/jsui/scripts/exe.js:213
 msgid "Warning"
 msgstr "Avís!"
 
-#: exe/jsui/scripts/exe.js:219 exe/webui/stylemanagerpage.py:151
-#: exe/webui/stylemanagerpage.py:318 exe/webui/templatemanagerpage.py:126
+#: exe/jsui/scripts/exe.js:219 exe/webui/stylemanagerpage.py:153
+#: exe/webui/stylemanagerpage.py:344 exe/webui/templatemanagerpage.py:126
 msgid "Success"
 msgstr "Correcte"
 
@@ -6495,7 +6476,7 @@ msgstr "Hi ha una nova versió d'eXelearning (%). Voleu descarregar-la ara?"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:150
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:181
-#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:843 exe/jsui/scripts/exe.js:259
+#: exe/jsui/scripts/app/view/ui/eXeToolbar.js:853 exe/jsui/scripts/exe.js:259
 msgid "Warning!"
 msgstr "Advertiment!"
 
@@ -6519,7 +6500,7 @@ msgstr "Mostra el plafó"
 msgid "Click on the elements of the left panel to add content."
 msgstr "Premeu sobre els elements al plafó de l'esquerra per afegir contingut."
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:909 exe/jsui/scripts/exe.js:400
+#: exe/jsui/scripts/app/controller/Toolbar.js:912 exe/jsui/scripts/exe.js:400
 msgid "Don't show this warning again"
 msgstr "No torneu a mostrar aquest avís"
 
@@ -6652,6 +6633,7 @@ msgid "Esperanto "
 msgstr "Esperanto "
 
 #: exe/jsui/scripts/langs.js:132
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:253
 msgid "Spanish "
 msgstr "Castellà; Espanyol "
 
@@ -8208,7 +8190,7 @@ msgstr "Nom del fitxer:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:105
 #: exe/webui/scripts/authoring.js:363 exe/webui/scripts/authoring.js:372
-#: exe/webui/scripts/authoring.js:1238 exe/webui/scripts/editor.js:81
+#: exe/webui/scripts/authoring.js:1254 exe/webui/scripts/editor.js:81
 #: exe/webui/scripts/editor.js:108
 msgid "Select a file"
 msgstr "Selecciona un fitxer"
@@ -8222,7 +8204,7 @@ msgstr "Etiqueta:"
 msgid "Warning: %s"
 msgstr "Avís: %s"
 
-#: exe/webui/block.py:184 exe/webui/scripts/authoring.js:877
+#: exe/webui/block.py:184 exe/webui/scripts/authoring.js:893
 msgid "IDevice broken"
 msgstr "iDevice trencat"
 
@@ -8259,11 +8241,11 @@ msgstr "Moveu cap avall"
 msgid "---Move To---"
 msgstr "---Moveu cap a---"
 
-#: exe/webui/block.py:266 exe/webui/editorpane.py:394
+#: exe/webui/block.py:266 exe/webui/editorpane.py:398
 msgid "Pedagogical Help"
 msgstr "Ajuda Pedagògica"
 
-#: exe/webui/block.py:279 exe/webui/editorpane.py:404
+#: exe/webui/block.py:279 exe/webui/editorpane.py:408
 msgid "Tip:"
 msgstr "Suggeriment:"
 
@@ -8440,157 +8422,157 @@ msgstr "Versió local"
 msgid "Enable JavaScript"
 msgstr "Habilita el javascript"
 
-#: exe/webui/common.py:631 exe/webui/common.py:938 exe/webui/element.py:1547
+#: exe/webui/common.py:638 exe/webui/common.py:945 exe/webui/element.py:1547
 #: exe/webui/element.py:2477 exe/webui/listablock.py:274
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:22
 #: exe/webui/scripts/idevices/text/edition/text.js:18
 msgid "Show Feedback"
 msgstr "Mostra realimentació"
 
-#: exe/webui/common.py:632
+#: exe/webui/common.py:639
 msgid "Hide Feedback"
 msgstr "Amaga realimentació"
 
-#: exe/webui/common.py:633 exe/webui/common.py:666 exe/webui/element.py:2280
-#: exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:477
-#: exe/webui/stylemanagerpage.py:490 exe/webui/templatemanagerpage.py:238
+#: exe/webui/common.py:640 exe/webui/common.py:673 exe/webui/element.py:2280
+#: exe/webui/stylemanagerpage.py:329 exe/webui/stylemanagerpage.py:510
+#: exe/webui/stylemanagerpage.py:523 exe/webui/templatemanagerpage.py:238
 #: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "Correcte"
 
-#: exe/webui/common.py:634 exe/webui/element.py:2283
+#: exe/webui/common.py:641 exe/webui/element.py:2283
 msgid "Incorrect"
 msgstr "Incorrecte"
 
-#: exe/webui/common.py:635 exe/webui/tools/assistant/langs/all.js:9
+#: exe/webui/common.py:642 exe/webui/tools/assistant/langs/all.js:9
 msgid "Menu"
 msgstr "Menú"
 
-#: exe/webui/common.py:636
+#: exe/webui/common.py:643
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:10
 msgid "Download"
 msgstr "Descarrega"
 
-#: exe/webui/common.py:637
+#: exe/webui/common.py:644
 msgid "Your score is "
 msgstr "La seva puntuació és"
 
-#: exe/webui/common.py:639
+#: exe/webui/common.py:646
 msgid "This might not work in this ePub reader."
 msgstr "Pot ser que això no funcioni en aquest lector d'ePub."
 
-#: exe/webui/common.py:640
+#: exe/webui/common.py:647
 msgid "This activity does not work in ePub."
 msgstr "Aquesta activitat no funciona en ePub."
 
-#: exe/webui/common.py:641 exe/webui/element.py:2505 exe/webui/element.py:2948
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:763
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:767
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:771
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:775
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:570
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:574
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:578
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:582
+#: exe/webui/common.py:648 exe/webui/element.py:2505 exe/webui/element.py:2948
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:762
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:766
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:770
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:774
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:576
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:580
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:584
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:588
 msgid "Solution"
 msgstr "Solució"
 
-#: exe/webui/common.py:643
+#: exe/webui/common.py:650
 msgid "Search in all pages"
 msgstr "Cerca a totes les pàgines"
 
-#: exe/webui/common.py:644
+#: exe/webui/common.py:651
 msgid "No results for %"
 msgstr "No s'ha trobat cap resultat per a %"
 
-#: exe/webui/common.py:645
+#: exe/webui/common.py:652
 msgid "Search results for %"
 msgstr "Resultats de la cerca per a %"
 
-#: exe/webui/common.py:646
+#: exe/webui/common.py:653
 msgid "Hide results"
 msgstr "Amaga els resultats"
 
-#: exe/webui/common.py:647
+#: exe/webui/common.py:654
 msgid "More"
 msgstr "Més"
 
-#: exe/webui/common.py:648
+#: exe/webui/common.py:655
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:27
 msgid "Search"
 msgstr "Cerca"
 
-#: exe/webui/common.py:663
+#: exe/webui/common.py:670
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:92
 msgid "Accept"
 msgstr "Accepta"
 
-#: exe/webui/common.py:667 exe/webui/element.py:2716 exe/webui/element.py:2734
+#: exe/webui/common.py:674 exe/webui/element.py:2716 exe/webui/element.py:2734
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:44
 msgid "Wrong"
 msgstr "Incorrecte"
 
-#: exe/webui/common.py:668
+#: exe/webui/common.py:675
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:49
 msgid "Right answer"
 msgstr "Resposta correcta"
 
-#: exe/webui/common.py:670
+#: exe/webui/common.py:677
 msgid "Selected letters"
 msgstr "Selecciona lletres"
 
-#: exe/webui/common.py:671
+#: exe/webui/common.py:678
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:415
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:36
 msgid "Word"
 msgstr "Mot"
 
-#: exe/webui/common.py:672
+#: exe/webui/common.py:679
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:125
 msgid "Words"
 msgstr "Mots"
 
-#: exe/webui/common.py:673
+#: exe/webui/common.py:680
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:12
 msgid "Play"
 msgstr "Juga"
 
-#: exe/webui/common.py:675
+#: exe/webui/common.py:682
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:30
 msgid "Results"
 msgstr "Resultats"
 
-#: exe/webui/common.py:676
+#: exe/webui/common.py:683
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:34
 msgid "Total"
 msgstr "Total"
 
-#: exe/webui/common.py:677
+#: exe/webui/common.py:684
 msgid "Another word"
 msgstr "Un altre mot"
 
-#: exe/webui/common.py:678
+#: exe/webui/common.py:685
 msgid "Game over."
 msgstr "Final del joc."
 
-#: exe/webui/common.py:679
+#: exe/webui/common.py:686
 msgid "Reload the game?"
 msgstr "Vols tornar a carregar el joc?"
 
-#: exe/webui/common.py:680
+#: exe/webui/common.py:687
 msgid "Click on \"Play\" to start a new game."
 msgstr "Prem en  \"Juga\" per començar un joc nou."
 
-#: exe/webui/common.py:681
+#: exe/webui/common.py:688
 msgid "Click on \"Another word\" to continue."
 msgstr "Prem en  \"Un altre mot\" per continuar."
 
-#: exe/webui/common.py:706 exe/webui/editorpage.py:238
+#: exe/webui/common.py:713 exe/webui/editorpage.py:238
 #: exe/webui/xliffimportpreferencespage.py:67
 msgid "eXe : elearning XHTML editor"
 msgstr "eXe: editor XHTML per eLearning"
 
-#: exe/webui/common.py:1062 exe/webui/common.py:1065
+#: exe/webui/common.py:1069 exe/webui/common.py:1072
 msgid "Click for completion instructions"
 msgstr "Premeu per mirar les instruccions d'emplenat"
 
@@ -9005,7 +8987,7 @@ msgstr "Títol del botó"
 #: exe/webui/editorelement.py:223 exe/webui/flashmovieblock.py:81
 #: exe/webui/flashwithtextblock.py:81 exe/webui/imagemagnifierblock.py:107
 #: exe/webui/imagewithtextblock.py:81 exe/webui/multimediablock.py:85
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:856
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:862
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:206
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:935
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -9017,7 +8999,7 @@ msgstr "Esquerre"
 #: exe/webui/editorelement.py:224 exe/webui/flashmovieblock.py:82
 #: exe/webui/flashwithtextblock.py:82 exe/webui/imagemagnifierblock.py:108
 #: exe/webui/imagewithtextblock.py:82 exe/webui/multimediablock.py:86
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:857
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:863
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:200
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:936
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
@@ -9051,6 +9033,7 @@ msgid "Please enter an idevice name."
 msgstr "Poseu el nom de l'iDevice."
 
 #: exe/webui/editorpage.py:191 exe/webui/editorpage.py:203
+#: exe/webui/stylemanagerpage.py:269
 msgid "Sorry, wrong file format."
 msgstr "Disculpeu, format de fitxer roin."
 
@@ -9180,17 +9163,17 @@ msgid "Pedagogical Tip"
 msgstr "Consell pedagògic"
 
 #: exe/webui/editorpane.py:344 exe/webui/multimediablock.py:103
-#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:163
+#: exe/webui/rssblock.py:120 exe/webui/wikipediablock.py:185
 msgid "Emphasis"
 msgstr "Èmfasis"
 
 #: exe/webui/editorpane.py:347 exe/webui/multimediablock.py:100
-#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:160
+#: exe/webui/rssblock.py:114 exe/webui/wikipediablock.py:182
 msgid "No emphasis"
 msgstr "Sense èmfasis"
 
 #: exe/webui/editorpane.py:348 exe/webui/multimediablock.py:101
-#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:161
+#: exe/webui/rssblock.py:115 exe/webui/wikipediablock.py:183
 msgid "Some emphasis"
 msgstr "Algun èmfasi "
 
@@ -9198,7 +9181,7 @@ msgstr "Algun èmfasi "
 msgid "Select an icon"
 msgstr "Tria una icona"
 
-#: exe/webui/editorpane.py:381 exe/webui/jsblock.py:120
+#: exe/webui/editorpane.py:385 exe/webui/jsblock.py:120
 msgid "Icons"
 msgstr "Icones"
 
@@ -9286,7 +9269,7 @@ msgstr "Mostra/Amaga les respostes"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:21
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:32
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:19
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:27
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:28
 msgid "Submit"
 msgstr "Envia"
 
@@ -9347,9 +9330,9 @@ msgstr "Suprimeix opció"
 
 #: exe/webui/element.py:2369 exe/webui/element.py:2824
 #: exe/webui/questionelement.py:121
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:699
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:787
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:594
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:698
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:786
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:600
 #: exe/webui/testquestionelement.py:104 exe/webui/truefalseelement.py:130
 msgid "Delete question"
 msgstr "Suprimeix pregunta"
@@ -9429,44 +9412,44 @@ msgstr ""
 msgid "New Window"
 msgstr "Finestra nova"
 
-#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:307
-#: exe/webui/galleryblock.py:308
+#: exe/webui/galleryblock.py:223 exe/webui/galleryblock.py:302
+#: exe/webui/galleryblock.py:303
 msgid "Add images"
 msgstr "Afegeix imatges"
 
-#: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:332
+#: exe/webui/galleryblock.py:230 exe/webui/galleryblock.py:327
 msgid "No Images Loaded"
 msgstr "No hi ha imatges carregades"
 
-#: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:264
+#: exe/webui/galleryblock.py:246 exe/webui/galleryblock.py:262
 msgid "Change Image"
 msgstr "Canvia imatge"
 
-#: exe/webui/galleryblock.py:271
+#: exe/webui/galleryblock.py:269
 msgid "Move Image Left"
 msgstr "Moveu la imatge a l'esquerra"
 
-#: exe/webui/galleryblock.py:273
+#: exe/webui/galleryblock.py:271
 msgid "Go Back"
 msgstr "Torna enrere"
 
-#: exe/webui/galleryblock.py:285
+#: exe/webui/galleryblock.py:283
 msgid "Move Image Right"
 msgstr "Moveu la imatge a la dreta"
 
-#: exe/webui/galleryblock.py:287
+#: exe/webui/galleryblock.py:285
 msgid "Go Forward"
 msgstr "Ves endavant"
 
-#: exe/webui/galleryblock.py:295
+#: exe/webui/galleryblock.py:291
 msgid "Go Forward (Not Available)"
 msgstr "No està permès anar endavant"
 
-#: exe/webui/galleryblock.py:300
+#: exe/webui/galleryblock.py:296
 msgid "Delete Image"
 msgstr "Suprimeix Imatge"
 
-#: exe/webui/galleryblock.py:301
+#: exe/webui/galleryblock.py:297
 msgid "Delete this image?"
 msgstr "Voleu suprimir aquesta imatge ?"
 
@@ -9638,7 +9621,7 @@ msgstr "Navegador per defecte al vostre sistema operatiu "
 msgid "Failed to get preferences"
 msgstr "Error al obtenir les preferències"
 
-#: exe/webui/preferencespage.py:275
+#: exe/webui/preferencespage.py:282
 msgid "Failed to save preferences"
 msgstr "Error en desar les preferències"
 
@@ -9658,12 +9641,12 @@ msgstr "Podeu tancar de forma segura."
 msgid "Select pass rate: "
 msgstr "Seleccioneu el coeficient d'aprovat:"
 
-#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:371
+#: exe/webui/quiztestblock.py:145 exe/webui/quiztestblock.py:380
 msgid "SUBMIT ANSWERS"
 msgstr "ENVIA RESPOSTES"
 
-#: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:321
-#: exe/webui/quiztestblock.py:375
+#: exe/webui/quiztestblock.py:225 exe/webui/quiztestblock.py:323
+#: exe/webui/quiztestblock.py:384
 #, python-format
 msgid "Your score is %d%%"
 msgstr "La vostra puntuació és  %d%%"
@@ -9676,7 +9659,7 @@ msgstr "Recomanació"
 msgid "Think About It"
 msgstr "Reflexiona"
 
-#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:156
+#: exe/webui/rssblock.py:110 exe/webui/wikipediablock.py:178
 msgid "Load"
 msgstr "Carrega"
 
@@ -9726,7 +9709,7 @@ msgstr "Selecciona un fitxer mp3"
 msgid "Select a package"
 msgstr "Selecciona un paquet"
 
-#: exe/webui/scripts/authoring.js:672
+#: exe/webui/scripts/authoring.js:688
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:979
 msgid ""
 "Are you sure you want to continue without including an Image Description?"
@@ -9739,27 +9722,27 @@ msgstr ""
 "aquells que utilitzin navegadors de text o que naveguin amb les imatges "
 "desactivades."
 
-#: exe/webui/scripts/authoring.js:679 exe/webui/scripts/authoring.js:696
+#: exe/webui/scripts/authoring.js:695 exe/webui/scripts/authoring.js:712
 msgid "Image description"
 msgstr "Descripció de la imatge"
 
-#: exe/webui/scripts/authoring.js:680 exe/webui/scripts/authoring.js:697
+#: exe/webui/scripts/authoring.js:696 exe/webui/scripts/authoring.js:713
 msgid "Please provide an image description (alternative text):"
 msgstr "Proporcioneu una descripció de la imatge (text alternatiu):"
 
-#: exe/webui/scripts/authoring.js:972
+#: exe/webui/scripts/authoring.js:988
 msgid "Language settings"
 msgstr "Configuració de l'idioma"
 
-#: exe/webui/scripts/authoring.js:973
+#: exe/webui/scripts/authoring.js:989
 msgid "Custom texts (or use the default ones):"
 msgstr "Textos personalitzats (o utilitzeu els predeterminats):"
 
-#: exe/webui/scripts/authoring.js:1008
+#: exe/webui/scripts/authoring.js:1024
 msgid "Itinerary"
 msgstr "Itinerari"
 
-#: exe/webui/scripts/authoring.js:1009
+#: exe/webui/scripts/authoring.js:1025
 msgid ""
 "You might create an itinerary of challenges where players won't be able "
 "to access a new game or challenge until they get a key in a previous "
@@ -9775,71 +9758,71 @@ msgstr ""
 " fix d'encerts i que s'utilitzi com a contrasenya per a un nou repte o "
 "una activitat següent."
 
-#: exe/webui/scripts/authoring.js:1011
+#: exe/webui/scripts/authoring.js:1027
 msgid "Access code is required"
 msgstr "Es requereix el codi d'accés"
 
-#: exe/webui/scripts/authoring.js:1014
+#: exe/webui/scripts/authoring.js:1030
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:29
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:39
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:31
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:34
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:35
 msgid "Access code"
 msgstr "Codi d'accés"
 
-#: exe/webui/scripts/authoring.js:1020
+#: exe/webui/scripts/authoring.js:1036
 msgid "Show a message or password"
 msgstr "Mostra un missatge o contrasenya"
 
-#: exe/webui/scripts/authoring.js:1024
+#: exe/webui/scripts/authoring.js:1040
 msgid "Message"
 msgstr "Missatge"
 
-#: exe/webui/scripts/authoring.js:1028
+#: exe/webui/scripts/authoring.js:1044
 msgid "Percentage of hits needed to display the message"
 msgstr "Percentatge d'encerts necessari per mostrar el missatge"
 
-#: exe/webui/scripts/authoring.js:1054
+#: exe/webui/scripts/authoring.js:1070
 msgid "You must write a clue"
 msgstr "Cal escriure una pista"
 
-#: exe/webui/scripts/authoring.js:1058
+#: exe/webui/scripts/authoring.js:1074
 msgid "You must provide the code to play this game"
 msgstr "Cal que proporcioneu el codi per jugar a aquest joc"
 
-#: exe/webui/scripts/authoring.js:1062
+#: exe/webui/scripts/authoring.js:1078
 msgid "Please explain how to obtain the code to play this game"
 msgstr "Expliqueu com obtindre el codi per jugar a aquest joc"
 
-#: exe/webui/scripts/authoring.js:1102 exe/webui/scripts/authoring.js:1121
+#: exe/webui/scripts/authoring.js:1118 exe/webui/scripts/authoring.js:1137
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:51
 msgid "Save score"
 msgstr "Desa puntuació"
 
-#: exe/webui/scripts/authoring.js:1109
+#: exe/webui/scripts/authoring.js:1125
 msgid "Do not save the score"
 msgstr "No desis la puntució"
 
-#: exe/webui/scripts/authoring.js:1112
+#: exe/webui/scripts/authoring.js:1128
 msgid "Automatically save the score"
 msgstr "Desa la puntuació de forma automàtica"
 
-#: exe/webui/scripts/authoring.js:1114 exe/webui/scripts/authoring.js:1122
+#: exe/webui/scripts/authoring.js:1130 exe/webui/scripts/authoring.js:1138
 msgid "Repeat activity"
 msgstr "Repeteix l'activitat"
 
-#: exe/webui/scripts/authoring.js:1118
+#: exe/webui/scripts/authoring.js:1134
 msgid "Show a button to save the score"
 msgstr "Mostra un botó per desar la puntuació"
 
-#: exe/webui/scripts/authoring.js:1120
+#: exe/webui/scripts/authoring.js:1136
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:87
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:30
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:33
 #: exe/webui/tools/style-designer/langs/all.js:66
 msgid "Button text"
 msgstr "Text del botó"
 
-#: exe/webui/scripts/authoring.js:1127
+#: exe/webui/scripts/authoring.js:1143
 msgid ""
 "This will only work when exporting as SCORM and while editing in "
 "eXeLearning."
@@ -9847,7 +9830,7 @@ msgstr ""
 "Això sols funcionarà quan s'exporti com a SCORM i mentre s'editi en "
 "eXeLearning."
 
-#: exe/webui/scripts/authoring.js:1128
+#: exe/webui/scripts/authoring.js:1144
 msgid ""
 "The score will be automatically saved after answering each question and "
 "at the end of the game."
@@ -9855,16 +9838,16 @@ msgstr ""
 "La puntuació es desarà automàticament després de respondre a cada "
 "pregunta i al final del joc."
 
-#: exe/webui/scripts/authoring.js:1129 exe/webui/scripts/authoring.js:1137
+#: exe/webui/scripts/authoring.js:1145 exe/webui/scripts/authoring.js:1153
 msgid "Include only one game with score in the page (or it won't work)."
 msgstr "Inclou només un joc amb puntuació a la pàgina (o no funcionarà)."
 
-#: exe/webui/scripts/authoring.js:1130 exe/webui/scripts/authoring.js:1138
+#: exe/webui/scripts/authoring.js:1146 exe/webui/scripts/authoring.js:1154
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:96
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
 msgstr "No incloguis l'iDevice «Qüestionari amb SCORM» a la mateixa pàgina."
 
-#: exe/webui/scripts/authoring.js:1135
+#: exe/webui/scripts/authoring.js:1151
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:93
 msgid ""
 "The button will only be displayed when exporting as SCORM and while "
@@ -9873,11 +9856,11 @@ msgstr ""
 "El botó només es mostrarà quan s'exporta com a SCORM i mentre s'edita a "
 "eXeLearning."
 
-#: exe/webui/scripts/authoring.js:1136
+#: exe/webui/scripts/authoring.js:1152
 msgid "Include only one activity with a \"Save score\" button in the page."
 msgstr "Inclou sols una activitat amb el botó «Desa puntuació» a la pàgina."
 
-#: exe/webui/scripts/authoring.js:1207
+#: exe/webui/scripts/authoring.js:1223
 #, python-format
 msgid ""
 "You can export this game so you can later use it in another iDevice of "
@@ -9888,20 +9871,20 @@ msgstr ""
 "del mateix tipus. També podeu utilitzar-ho a %s i podeu importar jocs des"
 " de %s i utilitzar-los aquí."
 
-#: exe/webui/scripts/authoring.js:1210
+#: exe/webui/scripts/authoring.js:1226
 msgid "Share"
 msgstr "Comparteix"
 
-#: exe/webui/scripts/authoring.js:1217
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:421
+#: exe/webui/scripts/authoring.js:1233
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:420
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:92
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:334
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1377
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1376
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:607
 msgid "Supported formats"
 msgstr "Formats suportats"
 
-#: exe/webui/scripts/authoring.js:1415
+#: exe/webui/scripts/authoring.js:1434
 #: exe/webui/scripts/idevices/rubrics/export/exe-rubrics.js:48
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js:77
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:14
@@ -9928,21 +9911,21 @@ msgstr ""
 "de funció"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:11
-#: exe/webui/scripts/idevices/adivina-activity/export/adivina-activity.js:41
+#: exe/webui/scripts/idevices/adivina-activity/export/adivina-activity.js:42
 msgid "Word Guessing"
 msgstr "Paraula a endevinar"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:17
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:30
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:15
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:25
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:26
 msgid "Ready?"
 msgstr "A punt?"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:18
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:31
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:16
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:26
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:27
 msgid "Click here to start"
 msgstr "Prem aquí per començar"
 
@@ -9960,21 +9943,21 @@ msgstr "Respon"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:22
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:33
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:20
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:28
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:29
 msgid "Enter the access code"
 msgstr "Entra el codi d'accés"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:23
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:34
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:21
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:29
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:30
 msgid "The access code is not correct"
 msgstr "El codi d'accés no és correcte"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:24
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:35
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:22
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:30
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:31
 msgid "Game Over!"
 msgstr "Fi del joc!"
 
@@ -9985,62 +9968,62 @@ msgstr "Proporciona una paraula o frase"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:26
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:36
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:28
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:31
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:32
 msgid "Cool! The clue is:"
 msgstr "Genial. La pista és:"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:27
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:37
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:29
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:32
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:33
 msgid "Click here for a new game"
 msgstr "Prem aquí per una partida nova"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:28
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:38
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:30
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:33
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:34
 msgid "You have got %1 hits and %2 misses"
 msgstr "Heu obtingut %1 encerts  i %2 errades"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:30
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:40
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:32
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:35
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:36
 msgid "Play Again"
 msgstr "Juga de nou"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:31
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:41
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:33
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:36
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:37
 msgid "Access code required"
 msgstr "Requerit el codi d'accés"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:32
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:42
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:37
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:38
 msgid "Cool! The information you were looking for"
 msgstr "Genial! La informació que buscaves"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:33
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:43
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:35
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:38
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:39
 msgid "Click here to play"
 msgstr "Prem aquí per jugar"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:34
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:44
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:36
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:39
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:40
 msgid "Errors"
 msgstr "Errors"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:36
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:45
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:39
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:40
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:41
 msgid "Hits"
 msgstr "Encerts"
 
@@ -10048,36 +10031,36 @@ msgstr "Encerts"
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:32
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:46
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:21
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:819
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:41
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:825
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:42
 msgid "Score"
 msgstr "Puntuació"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:38
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:719
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:718
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:47
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:37
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:433
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:42
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:43
 msgid "Minimize"
 msgstr "Minimitza"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:39
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:48
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:38
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:43
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:44
 msgid "Maximize"
 msgstr "Maximitza"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:41
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:50
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:45
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:46
 msgid "Life"
 msgstr "Vida"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:42
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:51
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:46
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:87
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:33
 msgid "Full Screen"
@@ -10085,69 +10068,69 @@ msgstr "Pantalla completa"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:43
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:52
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:47
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:48
 msgid "Exit Full Screen"
 msgstr "Surt de la pantalla completa"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:44
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:53
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:48
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:49
 msgid "Number of questions"
 msgstr "Nombre de qüestions"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:45
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:54
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:49
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:50
 msgid "No picture question"
 msgstr "Qüestió sense imatges"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:46
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:55
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:50
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:51
 msgid "Cool!"
 msgstr "Genial!"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:47
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:56
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:51
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:52
 msgid "You lost 330 points"
 msgstr "Heu perdut 330 punts"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:48
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:57
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:52
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:53
 msgid "You lost one life"
 msgstr "Heu perdut una vida"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:49
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:58
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:53
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:54
 msgid "You lost all your lives!"
 msgstr "Heu perdut totes les vides!"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:50
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:59
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:54
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:55
 msgid "Questions completed!"
 msgstr "Qüestió completada!"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:51
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:60
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:47
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:55
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:56
 msgid "Right! | Excellent! | Great! | Very good! | Perfect!"
 msgstr "Bé! | Molt bé! | Genial! | Excel · lent! | Perfecte!"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:52
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:61
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:48
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:56
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:57
 msgid "It was not that! | Incorrect! | Not correct! | Sorry! | Error!"
 msgstr "No era així! | Incorrecte! | No correcte! | Ho sento! | Error!"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:53
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:79
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:74
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:75
 #, python-format
 msgid ""
 "You need at least %s&percnt; of correct answers to get the information. "
@@ -10168,21 +10151,21 @@ msgstr ""
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:55
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:62
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:46
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:57
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:58
 msgid "You can only play this game with internet connection."
 msgstr "Sols podeu jugar a aquest joc amb connexió a Internet."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:56
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:63
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:49
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:58
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:59
 msgid "Please start the game before saving your score."
 msgstr "Inicieu el joc abans de desar la puntuació."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:57
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:64
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:50
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:59
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:60
 msgid "The score can't be saved because this page is not part of a SCORM package."
 msgstr ""
 "La puntuació no es pot desar ja que aquesta pàgina no forma part de un "
@@ -10191,21 +10174,21 @@ msgstr ""
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:59
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:66
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:54
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:61
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:62
 msgid "Answer"
 msgstr "Resposta"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:60
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:67
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:55
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:62
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:63
 msgid "You can only save the score once!"
 msgstr "Sols podeu desar la puntuació una vegada!"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:61
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:68
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:56
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:63
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:64
 msgid "You can only save once"
 msgstr "Sols la podeu desar una vegada"
 
@@ -10214,15 +10197,15 @@ msgstr "Sols la podeu desar una vegada"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:70
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:74
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:58
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:65
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:69
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:66
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:70
 msgid "Your score"
 msgstr "La seva puntuació"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:65
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:72
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:59
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:67
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:68
 msgid "Your score will be saved after each question. You can only play once."
 msgstr ""
 "La puntuació es desarà després de cada pregunta. Només podeu  jugar una "
@@ -10231,162 +10214,162 @@ msgstr ""
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:66
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:73
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:60
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:68
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:69
 msgid "Your score will be automatically saved after each question."
 msgstr "La puntuació es desarà després de cada pregunta de forma automàtica."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:68
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:75
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:62
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:70
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:71
 msgid "You can save the score as many times as you want"
 msgstr "Podeu desar la puntuació tantes vegades com vulgueu"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:69
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:76
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:63
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:71
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:72
 msgid "The last score saved is"
 msgstr "La darrera puntuació desada és"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:70
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:77
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:64
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:72
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:73
 msgid "You have already done this activity."
 msgstr "Ja heu fet aquesta activitat. "
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:71
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:78
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:65
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:73
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:74
 msgid "You can do this activity as many times as you want"
 msgstr "Podeu fer aquesta activitat tantes vegades com vulgueu"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:82
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:103
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:81
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:102
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:86
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:98
 msgid "Please provide the word definition or the valid URL of an image"
 msgstr "Proporcioneu la definició de la paraula o la URL vàlida o una imatge"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:83
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:104
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:82
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:103
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:88
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:99
 msgid "The selected file does not contain a valid game"
 msgstr "El fitxer seleccionat no conté un joc vàlid"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:84
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:105
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:83
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:104
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:89
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:100
 msgid "You must upload or indicate the valid URL of an image"
 msgstr "Cal que pugeu  o indiqueu una URL vàlida o una imatge"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:85
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:106
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:84
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:105
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:101
 msgid "Please provide one word or phrase"
 msgstr "Proporcioneu una paraula o frase"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:86
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:85
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:106
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:102
 msgid "Please provide at least one question"
 msgstr "Proporcioneu almenys una pregunta"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:92
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:91
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:82
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:633
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:632
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:100
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:541
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:467
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:547
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:472
 #: exe/webui/tools/style-designer/langs/all.js:12
 msgid "General settings"
 msgstr "Configuració general"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:93
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:92
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:101
 msgid "Observe the letters, identify and fill in the missing words."
 msgstr "Observa les lletres, identifica i emplena les paraules que faltin."
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:98
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:97
 msgid "Time to answer(seconds)"
 msgstr "Temps per pregunta (segons)"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:102
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:639
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:101
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:638
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:106
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:473
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:478
 msgid "Show minimized."
 msgstr "Mostra minimitzat"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:642
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:476
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:104
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:641
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:481
 msgid "Use lives"
 msgstr "Usa vides"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:106
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:643
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:477
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:642
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:482
 msgid "Number of lives"
 msgstr "Nombre de vides"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:110
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:646
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:109
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:645
 msgid "Random questions"
 msgstr "Preguntes aleatòries"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:113
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:650
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:649
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:117
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:483
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:488
 msgid "Show solutions"
 msgstr "Mostra les solucions"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:114
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:651
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:484
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:113
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:650
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:489
 msgid "Show solution time (seconds)"
 msgstr "La solució es mostrarà durant (segons)"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:118
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:117
 msgid "Percentage of letters to show (%)"
 msgstr "Percentatge de lletres a mostrar (%)"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:124
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:123
 msgid "Words/Phrases"
 msgstr "Paraules/Frases"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:560
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1078
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:559
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1077
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:87
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:858
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:840
 msgid "Game"
 msgstr "Joc"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:696
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:695
 msgid "Drag question"
 msgstr "Arrossega la qüestió"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:697
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:781
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:588
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:696
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:780
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:594
 msgid "Add question"
 msgstr "Afegeix una qüestió"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:698
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:788
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:697
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:787
 msgid "Copy question"
 msgstr "Copia la qüestió"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:700
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:699
 msgid "Word/Phrase"
 msgstr "Paraula/Frase"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:701
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:700
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:416
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:457
@@ -10397,41 +10380,41 @@ msgstr "Paraula/Frase"
 msgid "Definition"
 msgstr "Definició"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:702
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:701
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:417
 msgid "Show/Hide image"
 msgstr "Mostra/Amaga una imatge"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:702
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:701
 #: exe/webui/tools/style-designer/langs/all.js:44
 msgid "Select image"
 msgstr "Selecciona una imatge"
 
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:706
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:707
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:708
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:748
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:753
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:747
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:752
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:44
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:422
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:423
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:557
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:563
 msgid "No image"
 msgstr "Cap imatge"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:711
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:710
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:426
 msgid "Indicate a valid URL of an image or select one from your device"
 msgstr ""
 "Indiqueu una URL vàlida d'una imatge o seleccioneu-ne  una des del vostre"
 " dispositiu"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:718
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:717
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:432
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:60
 msgid "Authorship"
 msgstr "Autoria"
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:719
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:718
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:433
 msgid "Hide image"
 msgstr "Amaga imatge"
@@ -10645,7 +10628,7 @@ msgstr ""
 "pàgina (o no funcionarà)."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:309
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:153
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:156
 msgid "Please write the button text."
 msgstr "Escriviu el text del botó."
 
@@ -10904,9 +10887,9 @@ msgid "Num."
 msgstr "Núm."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:722
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:805
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:501
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:721
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:804
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:507
 msgid "End"
 msgstr "Fi"
 
@@ -10994,9 +10977,9 @@ msgstr "Vídeo interactiu"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:29
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:720
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:803
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:497
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:719
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:802
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:503
 msgid "Start"
 msgstr "Inicia"
 
@@ -11038,7 +11021,7 @@ msgid "Exit the fullscreen mode (Esc) to see the current slide"
 msgstr "Surt del mode pantalla completa (ESC) per veure la diapositiva actual"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:43
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:57
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:60
 msgid "Right!"
 msgstr "Correcte!"
 
@@ -11167,182 +11150,178 @@ msgid "QuExt Activity"
 msgstr "Activitat QuExt"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:49
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:684
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:44
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:521
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:683
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:45
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:527
 msgid "Time per question"
 msgstr "Temps per pregunta"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:80
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:654
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:75
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:653
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:76
 msgid "Video Intro"
 msgstr "Vídeo introductori"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:81
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:809
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:76
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:808
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:77
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:10
 msgid "Close"
 msgstr "Tanca"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:83
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:78
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:79
 msgid "Rich Text"
 msgstr "Text enriquit"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:84
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:79
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:80
 msgid "and information that will be very useful"
 msgstr "i informació que serà molt útil"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:85
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:80
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:81
 msgid "Loading. Please wait..."
 msgstr "S'està carregant. Espereu..."
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:86
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:81
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:82
 msgid "points"
 msgstr "punts"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:108
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:453
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:452
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:103
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:374
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:373
 msgid "This video is not currently available"
 msgstr "Aquest vídeo no està disponible actualment"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:109
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:108
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:104
 msgid "You have to complete the question"
 msgstr "Cal que completeu la pregunta"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:110
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:109
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:105
 msgid "You have to complete all the selected options"
 msgstr "Cal que completeu totes les opcions seleccionades"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:111
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:634
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:110
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:633
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:106
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:468
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:473
 msgid "Choose the right answer"
 msgstr "Trieu la resposta correcta."
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:112
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:111
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:107
 msgid "Type the right URL of a Youtube video"
 msgstr "Escriviu la URL  d’un vídeo de Youtube"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:113
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:112
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:108
 msgid ""
 "You have to indicate the start and the end of the video that you want to "
 "show"
 msgstr "Cal que indiqueu el començament i el final del vídeo que voleu mostrar"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:114
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:113
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:109
 msgid "The video end value must be higher than the start one"
 msgstr "El valor de final del vídeo ha de ser superior al del començament"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:115
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:114
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:110
 msgid "You have to type a text in the editor"
 msgstr "Cal escriviu text amb l'editor"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:647
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:480
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:646
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:485
 msgid "Random options"
 msgstr "Opcions aleatòries"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:655
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:802
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:654
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:801
 msgid "Play video intro"
 msgstr "Engega el vídeo introductori"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:660
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:489
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:659
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:494
 msgid "Questions"
 msgstr "Preguntes"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:664
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:663
 msgid "Multimedia Type"
 msgstr "Tipus multimèdia"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:671
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:484
-msgid "Video"
-msgstr "Vídeo"
-
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:675
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:512
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:674
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:518
 msgid "Options Number"
 msgstr "Nombre d'opcions"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:699
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:701
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:698
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:700
 msgid "Image URL"
 msgstr "URL de la imatge"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:712
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:714
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:800
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:493
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:711
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:713
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:799
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:498
 msgid "Youtube URL"
 msgstr "URL de Youtube"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:716
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:546
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:715
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:501
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:552
 msgid "Play video"
 msgstr "Engega el vídeo"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:727
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:537
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:726
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:543
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:485
 msgid "Audio"
 msgstr "Àudio"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:739
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:738
 msgid "Alternative text"
 msgstr "Text alternatiu"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:782
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:589
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:781
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:595
 msgid "First question"
 msgstr "Primera qüestió"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:783
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:590
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:782
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:596
 msgid "Previous question"
 msgstr "Qüestió prèvia"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:784
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:591
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:783
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:597
 msgid "Question number:"
 msgstr "Qüestió número:"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:785
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:592
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:784
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:598
 msgid "Next question"
 msgstr "Següent qüestió"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:786
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:593
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:785
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:599
 msgid "Last question"
 msgstr "Última qüestió"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:789
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:788
 msgid "Cut question"
 msgstr "Talla la qüestió"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:790
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:789
 msgid "Paste question"
 msgstr "Enganxa la qüestió"
 
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:812
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:597
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:811
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:603
 msgid "Number of questions:"
 msgstr "Nombre de qüestions"
 
@@ -11483,9 +11462,13 @@ msgstr ""
 "Completeu la taula per definir una guia de puntuació. Definiu la "
 "puntuació o el valor de cada descriptor."
 
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:130
+msgid "Spanish"
+msgstr ""
+
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:193
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:521
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:593
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:527
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:599
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:352
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:882
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1070
@@ -11496,8 +11479,8 @@ msgid "All Rights Reserved"
 msgstr "Tots els drets reservats"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:194
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:522
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:585
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:528
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:591
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:346
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:873
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:875
@@ -11510,9 +11493,9 @@ msgid "Public Domain"
 msgstr "Domini públic"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:223
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:345
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:361
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:372
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:351
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:367
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:378
 msgid "Example rubric"
 msgstr "Rúbrica d'exemple"
 
@@ -11528,119 +11511,120 @@ msgstr "Criteri"
 msgid "Descriptor"
 msgstr "Descriptor"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:253
-msgid "New rubric"
-msgstr "Rúbrica nova"
-
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:255
-msgid "New rubric: "
-msgstr "Rúbrica nova:"
-
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:262
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:251
 msgid "Load CEDEC's rubrics (in Spanish)"
 msgstr "Carrega rúbriques del CEDEC (en castellà)"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:281
-msgid "Please select a template"
-msgstr "Seleccioneu una plantilla"
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:259
+msgid "New rubric"
+msgstr "Rúbrica nova"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:357
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:261
+msgid "New rubric: "
+msgstr "Rúbrica nova:"
+
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:268
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:363
 msgid "Example rubrics"
 msgstr "Rúbriques d'exemple"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:368
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:287
+msgid "Please select a template"
+msgstr "Seleccioneu una plantilla"
+
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:374
 msgid "CEDEC's rubrics"
 msgstr "Rúbriques del CEDEC"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:551
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:557
 msgid "Rubric use instructions (optional)"
 msgstr "Instruccions d'ús de la rúbrica (opcional)"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:561
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:567
 msgid "Maximum score:"
 msgstr "Puntuació màxima:"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:561
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:567
 msgid "The result of adding the scores of the first level."
 msgstr "El resultat d'afegir la puntuació al primer nivell."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:562
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:568
 msgid "New column"
 msgstr "Columna nova"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:563
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:569
 msgid "New row"
 msgstr "Fila nova"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:576
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:582
 msgid "Rubric information"
 msgstr "Informació de la rúbrica"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:578
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:584
 msgid "Show rubric information"
 msgstr "Mostra informació de la rúbrica"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:580
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:586
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:855
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:416
 msgid "Source/Author"
 msgstr "Origen/autor"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:581
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:587
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:861
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:422
 msgid "Source/Author Link"
 msgstr "Enllaç origen/autor"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:627
 msgid "Attention"
 msgstr "Atenció"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:621
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:627
 msgid "Revert all changes? This can't be undone."
 msgstr "Voleu revertir tots els canvis? Això no és pot desfer."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:707
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:713
 msgid "The rubric is empty..."
 msgstr "La rúbrica és buida..."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:715
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:721
 msgid "Please write the rubric title."
 msgstr "Ompliu el títol de la rúbrica."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:727
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:733
 msgid "Please write the level name in each column."
 msgstr "Escriviu el nom del nivell en cada columna."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:740
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:746
 msgid "Please write the criteria name in each row."
 msgstr "Escriviu el nom del criteri en cada columna."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:754
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:760
 msgid "Please write all the criteria descriptors."
 msgstr "Escriu tots els criteris descriptors."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:819
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:825
 msgid "Score (include a number)"
 msgstr "Puntuació (inclou un nombre)"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:825
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:831
 msgid "Up"
 msgstr "Amunt"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:826
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:832
 msgid "Down"
 msgstr "Avall"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:846
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:852
 msgid "Delete the row?"
 msgstr "Esborreu la fila?"
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:883
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:889
 msgid "There should be at least one level."
 msgstr "Hi hauria d’haver almenys un nivell."
 
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:887
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:893
 msgid "Delete the column?"
 msgstr "Esborreu la columna?"
 
@@ -11648,31 +11632,31 @@ msgstr "Esborreu la columna?"
 msgid "Scrambled List"
 msgstr "Llista mesclada"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:39
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:42
 msgid "The right answer will be shown after this text."
 msgstr "La resposta correcta es mostrarà després d'aquest text."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:59
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:62
 msgid "Sorry... The right answer is:"
 msgstr "Disculpeu... la resposta correcta és:"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:96
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:99
 msgid "Write the elements in the right order:"
 msgstr "Escriviu els elements en el ordre correcte:"
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:124
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:127
 msgid "Please write some instructions."
 msgstr "Escriviu algunes instruccions."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:141
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:144
 msgid "Add at least 3 elements."
 msgstr "Afegiu al menys 3 elements."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:161
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:164
 msgid "Please write the text to show when right."
 msgstr "Escriviu el text a mostrar quan sigui correcte."
 
-#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:169
+#: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:172
 msgid "Please write the text to show when wrong."
 msgstr "Escriviu el text a mostrar quan sigui incorrecte."
 
@@ -11693,12 +11677,12 @@ msgstr "Aquest segon no forma part del vídeo. Comproveu la durada del vídeo."
 msgid "There is already a question in that second."
 msgstr "Ja hi ha una pregunta en el segon."
 
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:507
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:509
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:513
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:515
 msgid "Question point"
 msgstr "Punt de pregunta"
 
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:545
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:551
 msgid "Preview question"
 msgstr "Qüestió prèvia"
 
@@ -11779,10 +11763,6 @@ msgstr "Augmenta el sagnat"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:20
 msgid "Formats"
 msgstr "Formats"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
-msgid "Headers"
-msgstr "Capçaleres"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:22
 msgid "Select All"
@@ -12130,10 +12110,6 @@ msgstr "Ignora el mot"
 msgid "Insert Row Before"
 msgstr "Insereix una fila abans"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:166
-msgid "Rows"
-msgstr "Files"
-
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:168
 msgid "Paste Row After"
 msgstr "Enganxa la fila a sota"
@@ -12260,10 +12236,6 @@ msgstr "Alineació vertical"
 msgid "Insert Column After"
 msgstr "Insereix una columna després"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:202
-msgid "Columns"
-msgstr "Columnes"
-
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:203
 msgid "Insert Row After"
 msgstr "Insereix una fila després"
@@ -12346,11 +12318,6 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:228
 msgid "View"
 msgstr "Mostra"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:229
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:231
-msgid "Table"
-msgstr "Taula"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:231
 msgid "Preformatted"
@@ -13525,67 +13492,100 @@ msgstr "2 columnes"
 msgid "3 columns"
 msgstr "3 columnes"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
+#: exe/webui/scripts/tinymce_4_settings.js:24
+#: exe/webui/scripts/tinymce_4_settings.js:25
+#: exe/webui/scripts/tinymce_4_settings.js:26
+msgid "Headers"
+msgstr "Capçaleres"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:229
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:231
+#: exe/webui/scripts/tinymce_4_settings.js:24
+#: exe/webui/scripts/tinymce_4_settings.js:25
+#: exe/webui/scripts/tinymce_4_settings.js:26
+msgid "Table"
+msgstr "Taula"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:202
+#: exe/webui/scripts/tinymce_4_settings.js:24
+#: exe/webui/scripts/tinymce_4_settings.js:26
+msgid "Columns"
+msgstr "Columnes"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:166
+#: exe/webui/scripts/tinymce_4_settings.js:25
+#: exe/webui/scripts/tinymce_4_settings.js:26
+msgid "Rows"
+msgstr "Files"
+
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:670
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:484
+#: exe/webui/scripts/tinymce_4_settings.js:27
+msgid "Video"
+msgstr "Vídeo"
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
-#: exe/webui/scripts/tinymce_4_settings.js:188
+#: exe/webui/scripts/tinymce_4_settings.js:196
 msgid "Inline"
 msgstr "inserit"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:37
-#: exe/webui/scripts/tinymce_4_settings.js:189
+#: exe/webui/scripts/tinymce_4_settings.js:197
 msgid "Bold"
 msgstr "Negreta"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:39
-#: exe/webui/scripts/tinymce_4_settings.js:190
+#: exe/webui/scripts/tinymce_4_settings.js:198
 msgid "Italic"
 msgstr "Cursiva"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:191
+#: exe/webui/scripts/tinymce_4_settings.js:199
 msgid "Underline"
 msgstr "subratllat"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:192
+#: exe/webui/scripts/tinymce_4_settings.js:200
 msgid "Strikethrough"
 msgstr "Barrat"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29
-#: exe/webui/scripts/tinymce_4_settings.js:193
+#: exe/webui/scripts/tinymce_4_settings.js:201
 msgid "Superscript"
 msgstr "Superíndex"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:32
-#: exe/webui/scripts/tinymce_4_settings.js:194
+#: exe/webui/scripts/tinymce_4_settings.js:202
 msgid "Subscript"
 msgstr "Subíndex"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:535
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:576
-#: exe/webui/scripts/tinymce_4_settings.js:195
+#: exe/webui/scripts/tinymce_4_settings.js:203
 msgid "Code"
 msgstr "Codi"
 
-#: exe/webui/scripts/tinymce_4_settings.js:197
+#: exe/webui/scripts/tinymce_4_settings.js:205
 msgid "Deletion"
 msgstr "Eliminació"
 
-#: exe/webui/scripts/tinymce_4_settings.js:198
+#: exe/webui/scripts/tinymce_4_settings.js:206
 msgid "Insertion"
 msgstr "Inserció"
 
-#: exe/webui/scripts/tinymce_4_settings.js:199
+#: exe/webui/scripts/tinymce_4_settings.js:207
 msgid "Cite"
 msgstr "Cita"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:108
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:273
-#: exe/webui/scripts/tinymce_4_settings.js:379
+#: exe/webui/scripts/tinymce_4_settings.js:388
 msgid "Editor"
 msgstr "Editor"
 
@@ -13593,90 +13593,90 @@ msgstr "Editor"
 msgid "Add Another Item to be Sorted"
 msgstr "Afegeix un altre element per ordenar"
 
-#: exe/webui/styledesigner.py:52
+#: exe/webui/styledesigner.py:53
 msgid "Error saving style. "
 msgstr "Errada en desar l'estil."
 
-#: exe/webui/styledesigner.py:60
+#: exe/webui/styledesigner.py:61
 msgid "Error creating style. "
 msgstr "Errada en crear l'estil."
 
-#: exe/webui/styledesigner.py:69
+#: exe/webui/styledesigner.py:70
 msgid "Error creating style, local style already exists. "
 msgstr "Errada en crear l'estil, l'estil local ja existeix."
 
-#: exe/webui/styledesigner.py:124
+#: exe/webui/styledesigner.py:125
 #, python-format
 msgid "Style %s successfully created!"
 msgstr "L'estil %s s'ha creat correctament!"
 
-#: exe/webui/styledesigner.py:132
+#: exe/webui/styledesigner.py:138
 #, python-format
 msgid "Style %s successfully saved!"
 msgstr "L'estil %s s'ha desat correctament!"
 
-#: exe/webui/styledesigner.py:204
+#: exe/webui/styledesigner.py:210
 #, python-format
 msgid "Style directory %s already exists"
 msgstr "El directori d'estils %s ja existeix"
 
-#: exe/webui/styledesigner.py:266 exe/webui/stylemanagerpage.py:247
+#: exe/webui/styledesigner.py:272 exe/webui/stylemanagerpage.py:249
 msgid "The style name already exists"
 msgstr "El nom de l'estil ja existeix"
 
-#: exe/webui/styledesigner.py:283
+#: exe/webui/styledesigner.py:289
 msgid "Error saving style, style directory does not exist"
 msgstr "Errada en desar l'estil, el directori estil no existeix"
 
-#: exe/webui/stylemanagerpage.py:56 exe/webui/stylemanagerpage.py:349
+#: exe/webui/stylemanagerpage.py:58 exe/webui/stylemanagerpage.py:375
 msgid "Style already exists. "
 msgstr "L'estil ja existeix."
 
-#: exe/webui/stylemanagerpage.py:152
+#: exe/webui/stylemanagerpage.py:154
 msgid "Successfully imported style"
 msgstr "Estil importat amb èxit."
 
-#: exe/webui/stylemanagerpage.py:156
+#: exe/webui/stylemanagerpage.py:158
 #, python-format
 msgid "Error while installing style: %s"
 msgstr "Errada mentre s'instal·lava l'estil: %s"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:94
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:57
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:319
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:325
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1114
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1166
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1230
-#: exe/webui/stylemanagerpage.py:234
+#: exe/webui/stylemanagerpage.py:236
 msgid "Could not retrieve data (Core error)"
 msgstr "No s'han pogut recuperar dades (Error al nucli)"
 
-#: exe/webui/stylemanagerpage.py:278
+#: exe/webui/stylemanagerpage.py:304
 msgid "Error while getting styles list from the repository"
 msgstr "Errada mentre s'obtenia la llista d'estils del dipòsit"
 
-#: exe/webui/stylemanagerpage.py:303
+#: exe/webui/stylemanagerpage.py:329
 msgid "Style updated correctly"
 msgstr "Estil actualitzat de forma correcta"
 
-#: exe/webui/stylemanagerpage.py:305 exe/webui/stylemanagerpage.py:493
+#: exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:526
 #: exe/webui/templatemanagerpage.py:263 exe/webui/templatemanagerpage.py:297
 msgid "An unexpected error has occurred"
 msgstr "Ha succeït un error inesperat "
 
-#: exe/webui/stylemanagerpage.py:319
+#: exe/webui/stylemanagerpage.py:345
 msgid "Style successfully downloaded and installed"
 msgstr "Estil descarregat i instal·lat amb èxit."
 
-#: exe/webui/stylemanagerpage.py:329
+#: exe/webui/stylemanagerpage.py:355
 msgid "Error while installing style"
 msgstr "Errada mentre s'instal·lava l'estil"
 
-#: exe/webui/stylemanagerpage.py:347
+#: exe/webui/stylemanagerpage.py:373
 msgid "Overwrite local version of this style?"
 msgstr "Vols sobreescriure la versió local d'aquest estil?"
 
-#: exe/webui/stylemanagerpage.py:350
+#: exe/webui/stylemanagerpage.py:376
 msgid ""
 "Importing this style will overwrite local style, this action cannot be "
 "undone. "
@@ -13684,40 +13684,40 @@ msgstr ""
 "Importar aquest estil sobreescriurà l'estil local, aquesta acció no es "
 "podrà desfer."
 
-#: exe/webui/stylemanagerpage.py:351
+#: exe/webui/stylemanagerpage.py:377
 msgid "Are you sure you want to install remote style?. "
 msgstr "Esteu segur que voleu instal·lar l'estil remot?"
 
-#: exe/webui/stylemanagerpage.py:373
+#: exe/webui/stylemanagerpage.py:399
 msgid "Error when downloading style from repository"
 msgstr "Errada mentre es descarregava l'estil del dipòsit"
 
-#: exe/webui/stylemanagerpage.py:383 exe/webui/stylemanagerpage.py:394
+#: exe/webui/stylemanagerpage.py:409 exe/webui/stylemanagerpage.py:420
 msgid "URL not valid. "
 msgstr "URL no vàlida"
 
-#: exe/webui/stylemanagerpage.py:431
+#: exe/webui/stylemanagerpage.py:464
 msgid "Style download URL not found"
 msgstr "No s'ha trobat la URL de descarrega d'estil"
 
-#: exe/webui/stylemanagerpage.py:440
+#: exe/webui/stylemanagerpage.py:473
 #, python-format
 msgid "Error when getting style URL from repository styles list: %s"
 msgstr ""
 "Errada mentre s'obtenia la URL d'estils des del dipòsit de la llista "
 "d'estils: %s"
 
-#: exe/webui/stylemanagerpage.py:478
+#: exe/webui/stylemanagerpage.py:511
 #, python-format
 msgid "Style exported correctly: %s"
 msgstr "Estil exportat de forma correcta: %s"
 
-#: exe/webui/stylemanagerpage.py:482
+#: exe/webui/stylemanagerpage.py:515
 #, python-format
 msgid "Could not export style : %s"
 msgstr "No es pot exportar l'estil: %s"
 
-#: exe/webui/stylemanagerpage.py:490
+#: exe/webui/stylemanagerpage.py:523
 msgid "Style deleted correctly"
 msgstr "Estil suprimit de forma correcta"
 
@@ -14034,7 +14034,7 @@ msgstr "(resoleu els dubtes)"
 msgid "Further information:"
 msgstr "Més informació:"
 
-#: exe/webui/tools/assistant/langs/all.js:83
+#: exe/webui/tools/assistant/langs/all.js:80
 msgid "Open Link in a New Window"
 msgstr "Obre l'enllaç a una finestra nova"
 
@@ -14564,11 +14564,11 @@ msgstr "Viccionari"
 msgid "Wikieducator Content"
 msgstr "Contingut Wikieducator"
 
-#: exe/webui/wikipediablock.py:141
+#: exe/webui/wikipediablock.py:163
 msgid "Site"
 msgstr "Lloc web"
 
-#: exe/webui/wikipediablock.py:151
+#: exe/webui/wikipediablock.py:173
 msgid "Own site"
 msgstr "Lloc propi"
 
@@ -14615,3 +14615,41 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
+
+#~ msgid ""
+#~ "eXeLearning, the EXtremely Easy to use eLearning authoring tool\n"
+#~ "   Usage: %s [OPTION] [PACKAGE]\n"
+#~ "  -V, --version    print version information and exit\n"
+#~ "  -h, --help       display this help and exit\n"
+#~ "  --standalone     Run totally from current directory\n"
+#~ "  --portable       Run in portable mode\n"
+#~ "Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or\n"
+#~ "in Documents and Settings/<user "
+#~ "name>/Application Data/exe on Windows XP "
+#~ "or\n"
+#~ "Users/<user name>/AppData/Roaming/exe on Windows 7"
+#~ msgstr ""
+#~ "eXeLearning, l'eina d'autoria eLearning molt fàcil d'usar\n"
+#~ "Utilització: %s [OPCIÓ] [PAQUET]\n"
+#~ "  -V, --version    imprimeix la informació de la versió i surt\n"
+#~ "  -h, --help        mostra aquesta ajuda i surt\n"
+#~ "  --standalone     S'instal·la completament des de la carpeta actual\n"
+#~ "  --portable         S'executa en mode portable \n"
+#~ "La configuració es llegeix en exe.conf"
+#~ " en $HOME/.exe en Linux/Unix/Mac OS o"
+#~ "\n"
+#~ "en El meus Documents/<user name>/Aplicacions/exe en Windows XP o\n"
+#~ "Usuaris/<user name>/AppData/Roaming/exe en Windows 7"
+
+#~ msgid "http://exelearning.net/html_manual/exe20_en/"
+#~ msgstr "http://xn--gnuscultura-dbb.eu/eXe/"
+
+#~ msgid "http://exelearning.net/?lang=en"
+#~ msgstr "http://exelearning.net/?lang=ca"
+
+#~ msgid "http://exelearning.net/forums/"
+#~ msgstr "http://exelearning.net/forums/"
+
+#~ msgid "http://exelearning.net/downloads/"
+#~ msgstr "http://exelearning.net/descarregues/"
+
