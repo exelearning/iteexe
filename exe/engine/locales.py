@@ -53,7 +53,7 @@ def chooseDefaultLocale(localeDir):
                     possibleDirs.append((points, sub.basename()))
         possibleDirs.sort()
         if possibleDirs:
-            return possibleDirs[-1][-1]
+            return str(possibleDirs[-1][-1])
     return 'en'
 
 def splitLocaleName(localeName):
