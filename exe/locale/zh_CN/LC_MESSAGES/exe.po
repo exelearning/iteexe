@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-22 11:49+0200\n"
+"POT-Creation-Date: 2020-09-11 18:19+0200\n"
 "PO-Revision-Date: 2020-01-08 09:12+0800\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
@@ -14801,7 +14801,7 @@ msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是�
 #~ msgstr "QuickTime（mov，mpeg）"
 
 #~ msgid "Insert HTML code as text"
-#~ msgstr "将HTML代码插入为文本"
+#~ msgstr ""
 
 #~ msgid "Paste HTML fragment (embed code)"
 #~ msgstr "粘贴HTML片段（嵌入代码）"

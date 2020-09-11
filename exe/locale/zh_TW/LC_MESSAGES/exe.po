@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2020-08-22 11:49+0200\n"
+"POT-Creation-Date: 2020-09-11 18:19+0200\n"
 "PO-Revision-Date: 2019-05-12 17:31+0200\n"
 "Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
 "Language: zh_Hant_TW\n"
@@ -14848,7 +14848,7 @@ msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。�
 #~ msgstr "QuickTime 影片檔 (mov, mpeg)"
 
 #~ msgid "Insert HTML code as text"
-#~ msgstr "將 HTML 程式碼貼成文字"
+#~ msgstr ""
 
 #~ msgid "Paste HTML fragment (embed code)"
 #~ msgstr "貼上 HTML 片段（嵌入碼）"

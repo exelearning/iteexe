@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2020-08-22 11:49+0200\n"
+"POT-Creation-Date: 2020-09-11 18:19+0200\n"
 "PO-Revision-Date: 2019-12-06 22:32+0600\n"
 "Last-Translator: Tandin Penjor <tpenjor.sce@rub.edu.bt>\n"
 "Language: dz\n"
@@ -13678,4 +13678,7 @@ msgstr ""
 
 #~ msgid "http://exelearning.net/downloads/"
 #~ msgstr "http://exelearning.net/downloads/"
+
+#~ msgid "Insert HTML code as text"
+#~ msgstr ""
 

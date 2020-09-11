@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2020-08-22 11:49+0200\n"
+"POT-Creation-Date: 2020-09-11 18:19+0200\n"
 "PO-Revision-Date: 2020-01-27 16:50+0100\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language: eu\n"
@@ -14568,4 +14568,7 @@ msgstr ""
 
 #~ msgid "http://exelearning.net/downloads/"
 #~ msgstr "http://exelearning.net/downloads/"
+
+#~ msgid "Insert HTML code as text"
+#~ msgstr ""
 
