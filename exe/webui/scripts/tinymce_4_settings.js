@@ -2,6 +2,21 @@ _ = parent._;
 
 var $exeTinyMCE = {
 	
+	// See issue #524 (to review)
+	// Some pybabel versions won't find these strings
+	// We just include them here so they are found
+	missingStrings: {
+		a : _('Back'),
+		b : _('C type'),
+		// c : _('Crop'),
+		d: _('Insert HTML code as text'),
+		e : _('Line highlight'),
+		f : _('Line numbers'),
+		g : _('Markup (HTML, etc.)'),
+		h : _('Markup language'),
+		i : _('Paste HTML fragment (embed code)')
+	},
+	
 	// imagetools is disabled because it generates base64 images
 	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes advlist lists autolink exelink charmap print preview anchor tooltips modalwindow searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table colorpicker contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia abcmusic abbr",
 	// These buttons will be visible when the others are hidden
