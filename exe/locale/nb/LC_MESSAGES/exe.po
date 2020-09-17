@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 13:28+0200\n"
+"POT-Creation-Date: 2020-09-17 13:53+0200\n"
 "PO-Revision-Date: 2018-10-15 18:40+0200\n"
 "Last-Translator: Per-Henrik Kvalnes <per-"
 "henrik.kvalnes@nordlandssykehuset.no>\n"
@@ -8924,6 +8924,15 @@ msgstr "Kunne ikke hente preferanser"
 #: exe/webui/preferencespage.py:282
 msgid "Failed to save preferences"
 msgstr "Feilet i å lagre preferanser"
+
+#: exe/webui/pybabel_test_that_fails.js:12
+#: exe/webui/pybabel_test_that_fails.js:24
+msgid "String to translate A"
+msgstr ""
+
+#: exe/webui/pybabel_test_that_works.js:10
+msgid "String to translate B"
+msgstr ""
 
 #: exe/webui/quitpage.py:45
 msgid "eXe Closed"

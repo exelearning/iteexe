@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 13:28+0200\n"
+"POT-Creation-Date: 2020-09-17 13:53+0200\n"
 "PO-Revision-Date: 2020-01-08 09:12+0800\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
@@ -8971,6 +8971,15 @@ msgstr "无法获得首选项"
 #: exe/webui/preferencespage.py:282
 msgid "Failed to save preferences"
 msgstr "无法保存首选项"
+
+#: exe/webui/pybabel_test_that_fails.js:12
+#: exe/webui/pybabel_test_that_fails.js:24
+msgid "String to translate A"
+msgstr ""
+
+#: exe/webui/pybabel_test_that_works.js:10
+msgid "String to translate B"
+msgstr ""
 
 #: exe/webui/quitpage.py:45
 msgid "eXe Closed"

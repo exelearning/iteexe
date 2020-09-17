@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-09-17 13:28+0200\n"
+"POT-Creation-Date: 2020-09-17 13:53+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -8791,6 +8791,15 @@ msgstr ""
 
 #: exe/webui/preferencespage.py:282
 msgid "Failed to save preferences"
+msgstr ""
+
+#: exe/webui/pybabel_test_that_fails.js:12
+#: exe/webui/pybabel_test_that_fails.js:24
+msgid "String to translate A"
+msgstr ""
+
+#: exe/webui/pybabel_test_that_works.js:10
+msgid "String to translate B"
 msgstr ""
 
 #: exe/webui/quitpage.py:45
