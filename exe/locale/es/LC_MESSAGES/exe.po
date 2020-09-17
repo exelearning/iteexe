@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2020-09-17 13:53+0200\n"
-"PO-Revision-Date: 2020-08-20 19:06+0200\n"
+"PO-Revision-Date: 2020-09-17 20:05+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -13595,35 +13595,35 @@ msgstr "Sombra"
 
 #: exe/webui/scripts/tinymce_4_settings.js:9
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #: exe/webui/scripts/tinymce_4_settings.js:10
 msgid "C type"
-msgstr ""
+msgstr "Tipo C"
 
 #: exe/webui/scripts/tinymce_4_settings.js:12
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Insertar HTML como texto"
 
 #: exe/webui/scripts/tinymce_4_settings.js:13
 msgid "Line highlight"
-msgstr ""
+msgstr "Destacar línea(s)"
 
 #: exe/webui/scripts/tinymce_4_settings.js:14
 msgid "Line numbers"
-msgstr ""
+msgstr "Numerar línea(s)"
 
 #: exe/webui/scripts/tinymce_4_settings.js:15
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Lenguaje (HTML, etc.)"
 
 #: exe/webui/scripts/tinymce_4_settings.js:16
 msgid "Markup language"
-msgstr ""
+msgstr "Lenguaje"
 
 #: exe/webui/scripts/tinymce_4_settings.js:17
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Pegar fragmento HTML (embeber código)"
 
 #: exe/webui/scripts/tinymce_4_settings.js:33
 #: exe/webui/scripts/tinymce_4_settings.js:34
@@ -14768,7 +14768,4 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr ""
 
