@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-11 18:19+0200\n"
+"POT-Creation-Date: 2020-09-17 13:28+0200\n"
 "PO-Revision-Date: 2006-07-28 15:40+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language: zu\n"
@@ -213,10 +213,10 @@ msgstr "Isinamathiselo %s asinawo umsuka"
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:426
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:547
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:577
-#: exe/webui/scripts/tinymce_4_settings.js:22
-#: exe/webui/scripts/tinymce_4_settings.js:23
-#: exe/webui/scripts/tinymce_4_settings.js:28
-#: exe/webui/scripts/tinymce_4_settings.js:29
+#: exe/webui/scripts/tinymce_4_settings.js:37
+#: exe/webui/scripts/tinymce_4_settings.js:38
+#: exe/webui/scripts/tinymce_4_settings.js:43
+#: exe/webui/scripts/tinymce_4_settings.js:44
 #: exe/webui/tools/style-designer/langs/all.js:46
 msgid "Image"
 msgstr "Isithombe"
@@ -860,7 +860,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
-#: exe/webui/scripts/tinymce_4_settings.js:208
+#: exe/webui/scripts/tinymce_4_settings.js:223
 msgid "Highlighted Text:"
 msgstr ""
 
@@ -2069,8 +2069,8 @@ msgstr "Khetha isithombe"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:599
-#: exe/webui/scripts/tinymce_4_settings.js:22
-#: exe/webui/scripts/tinymce_4_settings.js:23
+#: exe/webui/scripts/tinymce_4_settings.js:37
+#: exe/webui/scripts/tinymce_4_settings.js:38
 #: exe/webui/tools/style-designer/langs/all.js:24
 msgid "Text"
 msgstr "Okubhaliwe"
@@ -13035,110 +13035,142 @@ msgstr ""
 msgid "Shadow"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:18
-#: exe/webui/scripts/tinymce_4_settings.js:19
-#: exe/webui/scripts/tinymce_4_settings.js:20
+#: exe/webui/scripts/tinymce_4_settings.js:9
+msgid "Back"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:10
+msgid "C type"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:12
+msgid "Insert HTML code as text"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:13
+msgid "Line highlight"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:14
+msgid "Line numbers"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:15
+msgid "Markup (HTML, etc.)"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:16
+msgid "Markup language"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:17
+msgid "Paste HTML fragment (embed code)"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4_settings.js:33
+#: exe/webui/scripts/tinymce_4_settings.js:34
+#: exe/webui/scripts/tinymce_4_settings.js:35
 msgid "2 columns"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:21
+#: exe/webui/scripts/tinymce_4_settings.js:36
 msgid "3 columns"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:21
-#: exe/webui/scripts/tinymce_4_settings.js:24
-#: exe/webui/scripts/tinymce_4_settings.js:25
-#: exe/webui/scripts/tinymce_4_settings.js:26
+#: exe/webui/scripts/tinymce_4_settings.js:39
+#: exe/webui/scripts/tinymce_4_settings.js:40
+#: exe/webui/scripts/tinymce_4_settings.js:41
 msgid "Headers"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:229
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:231
-#: exe/webui/scripts/tinymce_4_settings.js:24
-#: exe/webui/scripts/tinymce_4_settings.js:25
-#: exe/webui/scripts/tinymce_4_settings.js:26
+#: exe/webui/scripts/tinymce_4_settings.js:39
+#: exe/webui/scripts/tinymce_4_settings.js:40
+#: exe/webui/scripts/tinymce_4_settings.js:41
 msgid "Table"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:202
-#: exe/webui/scripts/tinymce_4_settings.js:24
-#: exe/webui/scripts/tinymce_4_settings.js:26
+#: exe/webui/scripts/tinymce_4_settings.js:39
+#: exe/webui/scripts/tinymce_4_settings.js:41
 msgid "Columns"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:166
-#: exe/webui/scripts/tinymce_4_settings.js:25
-#: exe/webui/scripts/tinymce_4_settings.js:26
+#: exe/webui/scripts/tinymce_4_settings.js:40
+#: exe/webui/scripts/tinymce_4_settings.js:41
 msgid "Rows"
 msgstr ""
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:670
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:484
-#: exe/webui/scripts/tinymce_4_settings.js:27
+#: exe/webui/scripts/tinymce_4_settings.js:42
 msgid "Video"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
-#: exe/webui/scripts/tinymce_4_settings.js:196
+#: exe/webui/scripts/tinymce_4_settings.js:211
 msgid "Inline"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:37
-#: exe/webui/scripts/tinymce_4_settings.js:197
+#: exe/webui/scripts/tinymce_4_settings.js:212
 msgid "Bold"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:39
-#: exe/webui/scripts/tinymce_4_settings.js:198
+#: exe/webui/scripts/tinymce_4_settings.js:213
 msgid "Italic"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:47
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:199
+#: exe/webui/scripts/tinymce_4_settings.js:214
 msgid "Underline"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/scripts/tinymce_4_settings.js:200
+#: exe/webui/scripts/tinymce_4_settings.js:215
 msgid "Strikethrough"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:29
-#: exe/webui/scripts/tinymce_4_settings.js:201
+#: exe/webui/scripts/tinymce_4_settings.js:216
 msgid "Superscript"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:32
-#: exe/webui/scripts/tinymce_4_settings.js:202
+#: exe/webui/scripts/tinymce_4_settings.js:217
 msgid "Subscript"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:535
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:576
-#: exe/webui/scripts/tinymce_4_settings.js:203
+#: exe/webui/scripts/tinymce_4_settings.js:218
 msgid "Code"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:205
+#: exe/webui/scripts/tinymce_4_settings.js:220
 msgid "Deletion"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:206
+#: exe/webui/scripts/tinymce_4_settings.js:221
 msgid "Insertion"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4_settings.js:207
+#: exe/webui/scripts/tinymce_4_settings.js:222
 msgid "Cite"
 msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:108
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:273
-#: exe/webui/scripts/tinymce_4_settings.js:388
+#: exe/webui/scripts/tinymce_4_settings.js:403
 #, fuzzy
 msgid "Editor"
 msgstr "uMhleli we-iDevice"
