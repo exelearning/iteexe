@@ -1,16 +1,17 @@
 # Breton translations for eXeLearning.
-# Copyright (C) 2020 ORGANIZATION
+# Copyright (C) 2004-2011 EXELearning.org
+# Copyright (C) 2011-2020 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
-# project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+# package.
+# Jil Quillevere <jil.quillevere@gmail.com>, 2020
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2020-09-17 13:53+0200\n"
 "PO-Revision-Date: 2020-09-19 14:21+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Jil Quillevere <jil.quillevere@gmail.com>\n"
 "Language: br\n"
 "Language-Team: br <LL@li.org>\n"
 "Plural-Forms: nplurals=6; plural=(n==1 ? 0 : n%10==1 && n%100!=11 && "
