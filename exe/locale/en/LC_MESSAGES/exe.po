@@ -13167,9 +13167,6 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "This change will be undone."
 #~ msgstr ""
 

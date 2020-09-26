@@ -14227,9 +14227,6 @@ msgstr ""
 " creat amb una versió més nova de l'eXe. Actualitzeu l'eXe i torneu-ho a "
 "provar."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/html_manual/exe20_en/"
 

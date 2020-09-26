@@ -14128,9 +14128,6 @@ msgstr ""
 "Plik idevices/generic.data lub pakiet, który ładujesz został stworzony w "
 "nowszej wersji programu eXe. Zaktualizuj eXe i spróbuj ponownie."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/html_manual/exe20_en/"
 

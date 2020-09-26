@@ -14193,9 +14193,6 @@ msgstr ""
 "creado con unha versión máis recente de eXe.  Por favor actualice eXe e "
 "ténteo de novo."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/html_manual/exe20_es/"
 

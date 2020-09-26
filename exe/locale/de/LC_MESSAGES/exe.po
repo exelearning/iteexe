@@ -13970,9 +13970,6 @@ msgstr ""
 "mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie "
 "Ihre eXe Version und versuchen Sie es dann noch einmal. "
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Edit iDevices"
 #~ msgstr "iDevices bearbeiten"
 

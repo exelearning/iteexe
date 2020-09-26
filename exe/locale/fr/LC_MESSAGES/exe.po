@@ -14219,9 +14219,6 @@ msgstr ""
 "incorpore ont été créés avec une version d'Exe plus récente que celle que"
 " vous utilisez. SVP, faites une mise à jour d'Exelearning et réessayez."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/html_manual/exe20_en/ (en anglais)"
 

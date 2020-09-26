@@ -13709,9 +13709,6 @@ msgstr ""
 #~ msgid "Provide information of the project or this part of the project."
 #~ msgstr ""
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Write the title, select an icon and choose a type..."
 #~ msgstr ""
 

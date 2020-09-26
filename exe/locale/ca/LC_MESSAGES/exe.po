@@ -14183,9 +14183,6 @@ msgstr ""
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://xn--gnuscultura-dbb.eu/eXe/"
 

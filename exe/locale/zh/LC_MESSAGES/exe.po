@@ -13281,9 +13281,6 @@ msgstr "你所试图打开的课件, 或 idevices/generic.data 文档可能是�
 #~ msgid "Provide information of the project or this part of the project."
 #~ msgstr ""
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Write the title, select an icon and choose a type..."
 #~ msgstr ""
 

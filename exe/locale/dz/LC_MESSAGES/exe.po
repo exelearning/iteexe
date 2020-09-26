@@ -13230,9 +13230,6 @@ msgstr ""
 #~ msgid "Atention"
 #~ msgstr ""
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/html_manual/exe20_en/"
 

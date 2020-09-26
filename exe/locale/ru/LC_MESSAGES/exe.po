@@ -14215,9 +14215,6 @@ msgstr ""
 "создан с помощью новой версии eXe. Пожалуйста, обновите eXe и повторите "
 "попытку."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/html_manual/exe20_en/"
 

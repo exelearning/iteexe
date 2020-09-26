@@ -14098,9 +14098,6 @@ msgstr ""
 "bertsio berriago batekin sortuta dago. Mesedez, eguneratu zure eXe-a eta "
 "berriz saiatu."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "http://exelearning.net/html_manual/exe20_en/"
 #~ msgstr "http://exelearning.net/exe-learning-2-0-manual-tutorial/"
 
