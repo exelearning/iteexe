@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-25 10:43+0200\n"
-"PO-Revision-Date: 2020-09-27 10:35+0800\n"
+"PO-Revision-Date: 2020-10-01 16:06+0200\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
-"X-Generator: Poedit 2.4.1\n"
+"X-Generator: Poedit 1.7.3\n"
 
 #: exe/application.py:239
 #, python-format
@@ -58,7 +58,7 @@ msgstr ""
 
 #: exe/engine/appletidevice.py:67
 msgid "Java Applet"
-msgstr "Java Applet"
+msgstr "Java 小程序"
 
 #: exe/engine/appletidevice.py:68 exe/engine/attachmentidevice.py:45 exe/engine/casestudyidevice.py:201
 #: exe/engine/clozefpdidevice.py:51 exe/engine/clozeidevice.py:50 exe/engine/clozelangfpdidevice.py:51
@@ -71,7 +71,8 @@ msgstr "Java Applet"
 #: exe/engine/multiselectidevice.py:46 exe/engine/quiztestidevice.py:245 exe/engine/reflectionfpdidevice.py:48
 #: exe/engine/reflectionfpdmodifidevice.py:47 exe/engine/reflectionidevice.py:47
 #: exe/engine/seleccionmultiplefpdidevice.py:47 exe/engine/truefalseidevice.py:145
-#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:55 exe/idevices/exampleidevice.py:40
+#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:55
+#: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "奥克兰大学"
 
@@ -105,7 +106,7 @@ msgstr ""
 #: exe/engine/appletidevice.py:187
 #, python-format
 msgid "file %s has no parentNode"
-msgstr "file %s has no parentNode"
+msgstr "文件 %s 没有父节点"
 
 #: exe/engine/appletidevice.py:189 exe/engine/attachmentidevice.py:107
 #, python-format
@@ -150,8 +151,9 @@ msgid ""
 msgstr ""
 "<p>如果您要添加的小程序是通过此下拉列表中的某个程序生成的，请选择它，然后添加程序生成的数据或小程序文件。"
 
-#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:355 exe/engine/extendedfieldengine.py:357
-#: exe/webui/editorelement.py:328 exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/engine/attachmentidevice.py:44 exe/engine/extendedfieldengine.py:355
+#: exe/engine/extendedfieldengine.py:357 exe/webui/editorelement.py:328
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Attachment"
 msgstr "附件"
@@ -178,7 +180,7 @@ msgstr "描述:"
 
 #: exe/engine/attachmentidevice.py:69
 msgid "Click <strong>Select a file</strong>, browse to the file you want to attach and select it."
-msgstr "点击<strong>选择文档</strong>, 选择您要上载的文件. 注意:文件名不可含有中文字, 否则该软件不识别."
+msgstr "单击<strong>选择文件</strong>，浏览并选择要附加的文件。"
 
 #: exe/engine/attachmentidevice.py:72
 msgid ""
@@ -193,7 +195,7 @@ msgstr ""
 #: exe/engine/attachmentidevice.py:105
 #, python-format
 msgid "Attachment %s has no parentNode"
-msgstr "Attachment %s has no parentNode"
+msgstr "附件 %s 沒有父節點"
 
 #: exe/engine/casestudyidevice.py:64 exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
@@ -256,7 +258,7 @@ msgstr "拟写案例故事.一个好的案例描述有争议性的,或不同人�
 #: exe/engine/casestudyidevice.py:223 exe/engine/casestudyidevice.py:411
 #: exe/engine/ejercicioresueltofpdidevice.py:222 exe/engine/ejercicioresueltofpdidevice.py:409
 msgid "Story:"
-msgstr "事件:"
+msgstr "故事："
 
 #: exe/engine/casestudyidevice.py:228 exe/engine/ejercicioresueltofpdidevice.py:227
 msgid ""
@@ -264,13 +266,13 @@ msgid ""
 "to the case story provided. These could be in the form of questions or \n"
 "instructions for activity which may lead the learner to resolving a dilemma \n"
 "presented. "
-msgstr "描述学生应完成的阅读任务."
+msgstr "描述与案例故事相关的活动任务。这些可能是问题或活动的结构，这可能导致学习者解决两难问题。"
 
 #: exe/engine/casestudyidevice.py:232 exe/engine/ejercicioresueltofpdidevice.py:231
 msgid ""
 "Provide relevant feedback on the \n"
 "situation."
-msgstr "提供相关评语. "
+msgstr "提供与该情境相关的反馈。"
 
 #: exe/engine/casopracticofpdidevice.py:30
 msgid "FPD - Situation"
@@ -305,7 +307,7 @@ msgstr "FPD - 引用"
 
 #: exe/engine/citasparapensarfpdidevice.py:34
 msgid "Quotation is an iDevice that provides the students with quotations to reflect upon."
-msgstr "Quotation 是为学生提供引文进行反思的 iDevice。"
+msgstr "“引用”是为学生提供引文进行反思的 iDevice。"
 
 #: exe/engine/citasparapensarfpdidevice.py:40 exe/engine/citasparapensarfpdidevice.py:139
 msgid "Quotation Text:"
@@ -350,7 +352,7 @@ msgstr "游戏获胜的反馈"
 
 #: exe/engine/clickinorderidevice.py:62
 msgid "Shown over when the game is won"
-msgstr "赢得比赛时显示"
+msgstr "在游戏获胜时显示"
 
 #: exe/engine/clickinorderidevice.py:63
 msgid "Shown over game when correct answer given"
@@ -573,8 +575,8 @@ msgstr ""
 #: exe/engine/fileattachidevice.py:49 exe/engine/hangmanidevice.py:60 exe/engine/listaidevice.py:129
 #: exe/engine/memorymatchidevice.py:55 exe/engine/placetheobjectsidevice.py:52 exe/engine/sortidevice.py:53
 #: exe/engine/truefalseidevice.py:164 exe/engine/truefalseidevice.py:391
-#: exe/engine/verdaderofalsofpdidevice.py:166 exe/engine/verdaderofalsofpdidevice.py:394 exe/webui/common.py:1063
-#: exe/webui/scripts/authoring.js:1174 exe/webui/scripts/authoring.js:1177
+#: exe/engine/verdaderofalsofpdidevice.py:166 exe/engine/verdaderofalsofpdidevice.py:394
+#: exe/webui/common.py:1063 exe/webui/scripts/authoring.js:1174 exe/webui/scripts/authoring.js:1177
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:61
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:63
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:64
@@ -863,7 +865,7 @@ msgstr "问题"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:287 exe/engine/multichoiceidevice.py:285
 msgid "Enter a hint here. If you do not want to provide a hint, leave this field blank."
-msgstr "在此输入提示, 如果您不想提供提示, 就让此栏空白."
+msgstr "在此输入提示信息，如果您不想提供提示, 此处可以留空。"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
@@ -1091,8 +1093,9 @@ msgid ""
 msgstr "点击预览按钮显示数学符号."
 
 #: exe/engine/field.py:3727 exe/engine/field.py:3776 exe/engine/quiztestidevice.py:48
-#: exe/engine/quiztestidevice.py:98 exe/webui/element.py:2197 exe/webui/element.py:2252 exe/webui/element.py:2584
-#: exe/webui/element.py:2676 exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:83
+#: exe/engine/quiztestidevice.py:98 exe/webui/element.py:2197 exe/webui/element.py:2252
+#: exe/webui/element.py:2584 exe/webui/element.py:2676
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:83
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:769
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:773
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:777
@@ -1130,7 +1133,8 @@ msgstr "输入问题. 问题的陈述要清晰而不含糊."
 
 #: exe/engine/field.py:3956 exe/engine/field.py:4037 exe/engine/quiztestidevice.py:129
 #: exe/engine/quiztestidevice.py:221 exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
-#: exe/engine/verdaderofalsofpdidevice.py:47 exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2364
+#: exe/engine/verdaderofalsofpdidevice.py:47 exe/engine/verdaderofalsofpdidevice.py:123
+#: exe/webui/element.py:2364
 msgid "Question:"
 msgstr "问题:"
 
@@ -1296,15 +1300,15 @@ msgstr "这是一个自由文字栏域, 可输入一般的课程内容."
 
 #: exe/engine/galleryidevice.py:137 exe/engine/galleryidevice.py:188
 msgid "No Thumbnail Available. Could not load original image."
-msgstr "No Thumbnail Available. Could not load original image."
+msgstr "没有可用的缩略图。无法加载原始图像。"
 
 #: exe/engine/galleryidevice.py:145 exe/engine/galleryidevice.py:195
 msgid "No Thumbnail Available. Could not shrink original image."
-msgstr "No Thumbnail Available. Could not shrink image."
+msgstr "没有可用的缩略图。无法缩小原始图像。"
 
 #: exe/engine/galleryidevice.py:218
 msgid "No Thumbnail Available. Could not shrink image."
-msgstr "No Thumbnail Available. Could not shrink image."
+msgstr "没有可用的缩略图。无法缩小图像。"
 
 #: exe/engine/galleryidevice.py:455
 msgid "Image Gallery"
@@ -1671,7 +1675,7 @@ msgstr "文字"
 msgid ""
 "Enter the text you wish to \n"
 "associate with the file."
-msgstr "输入有关文档的描述."
+msgstr "输入有关文档的描述。"
 
 #: exe/engine/imagemagnifieridevice.py:60
 msgid ""
@@ -2086,7 +2090,7 @@ msgstr "MP3 iDevice可用于播放MP3音乐及附上相关的说明."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
-msgstr "选择MP3文档"
+msgstr "选择MP3文件"
 
 #: exe/engine/multimediaidevice.py:50
 msgid ""
@@ -2238,7 +2242,7 @@ msgstr "用户必须将各种对象放在正确的位置。"
 
 #: exe/engine/placetheobjectsidevice.py:53 exe/idevices/exampleidevice.py:45
 msgid "This is a free text field."
-msgstr "这是一个自由文字域."
+msgstr "这是一个自由文本字段。"
 
 #: exe/engine/placetheobjectsidevice.py:61
 msgid "Main Area"
@@ -2342,7 +2346,7 @@ msgstr "高度(像素)"
 
 #: exe/engine/placetheobjectsidevice.py:133
 msgid "Height of object"
-msgstr "對象高度"
+msgstr "对象高度"
 
 #: exe/engine/placetheobjectsidevice.py:136
 msgid "Tolerance (pixels)"
@@ -2414,20 +2418,23 @@ msgstr ""
 msgid ""
 "Enter a question for learners \n"
 "to reflect upon."
-msgstr "输入问题."
+msgstr "请输入学生需要思考的问题。"
 
 #: exe/engine/reflectionfpdidevice.py:59
 msgid ""
 "Describe how learners will assess how \n"
 "they have done in the exercise. (Rubrics are useful devices for providing \n"
 "reflective feedback.)"
-msgstr "描述学生应怎样评估和完成练习."
+msgstr ""
+"描述学员如何评估\n"
+"自己在练习中的表现。（Rubrics 是提供\n"
+"反馈的有用工具。"
 
 #: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63 exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
 msgid "Reflective question:"
-msgstr "问题:"
+msgstr "反思性问题："
 
 #: exe/engine/reflectionfpdmodifidevice.py:46
 msgid "FPD - Think About It (without Feedback)"
@@ -2435,7 +2442,7 @@ msgstr "FPD  - 考虑一下（没有反馈）"
 
 #: exe/engine/reflectionidevice.py:46
 msgid "Reflection"
-msgstr "问题与回答"
+msgstr "反思"
 
 #: exe/engine/reflectionidevice.py:57
 msgid ""
@@ -2964,7 +2971,8 @@ msgid ""
 "iDevice plugin."
 msgstr "这是用户自创教学组件插件的例子."
 
-#: exe/idevices/exampleidevice.py:44 exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:72
+#: exe/idevices/exampleidevice.py:44
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:72
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:102
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:107
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:424
@@ -3036,7 +3044,7 @@ msgstr "不能识别路径名称"
 
 #: exe/jsui/mainpage.py:435 exe/jsui/mainpage.py:1247 exe/jsui/mainpage.py:1389
 msgid ". Please use ASCII names."
-msgstr ". 请使用ASCII码, 如英文, 拼音等来命名路径, 包括其中所有的文件夾."
+msgstr ".请使用 ASCII 名称。"
 
 #: exe/jsui/mainpage.py:443 exe/jsui/mainpage.py:486
 msgid "SAVE FAILED!"
@@ -3064,7 +3072,7 @@ msgstr ""
 #: exe/jsui/mainpage.py:464 exe/jsui/mainpage.py:469 exe/jsui/mainpage.py:474
 #, python-format
 msgid "Package saved to: %s"
-msgstr "课件存至: %s"
+msgstr "包保存到： %s"
 
 #: exe/jsui/mainpage.py:490
 #, python-format
@@ -3216,13 +3224,13 @@ msgid ""
 "EXTRACT FAILED!\n"
 "%s"
 msgstr ""
-"引出失败!\n"
+"提取失败！\n"
 "%s"
 
 #: exe/jsui/mainpage.py:1417
 #, python-format
 msgid "Package extracted to: %s"
-msgstr "课件存至: %s"
+msgstr "包提取到: %s"
 
 #: exe/jsui/mainpage.py:1429 exe/webui/stylemanagerpage.py:239
 msgid "Directory exists"
@@ -3364,12 +3372,13 @@ msgstr "设置已保存"
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:661
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:280
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:106
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41 exe/webui/stylemanagerpage.py:157
-#: exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:331 exe/webui/stylemanagerpage.py:355
-#: exe/webui/stylemanagerpage.py:398 exe/webui/stylemanagerpage.py:409 exe/webui/stylemanagerpage.py:420
-#: exe/webui/stylemanagerpage.py:464 exe/webui/stylemanagerpage.py:471 exe/webui/stylemanagerpage.py:514
-#: exe/webui/stylemanagerpage.py:526 exe/webui/templatemanagerpage.py:130 exe/webui/templatemanagerpage.py:229
-#: exe/webui/templatemanagerpage.py:241 exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
+#: exe/webui/stylemanagerpage.py:157 exe/webui/stylemanagerpage.py:303 exe/webui/stylemanagerpage.py:331
+#: exe/webui/stylemanagerpage.py:355 exe/webui/stylemanagerpage.py:398 exe/webui/stylemanagerpage.py:409
+#: exe/webui/stylemanagerpage.py:420 exe/webui/stylemanagerpage.py:464 exe/webui/stylemanagerpage.py:471
+#: exe/webui/stylemanagerpage.py:514 exe/webui/stylemanagerpage.py:526 exe/webui/templatemanagerpage.py:130
+#: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
+#: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
 #: exe/webui/templatemanagerpage.py:297 exe/webui/tools/style-designer/langs/all.js:139
 msgid "Error"
 msgstr "错误"
@@ -3444,7 +3453,7 @@ msgstr "选择要导入的 zip 样式文件。"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:227 exe/webui/scripts/stylemanager.js:41
 msgid "ZIP Style"
-msgstr "ZIP风格"
+msgstr "ZIP 样式"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:258 exe/webui/scripts/stylemanager.js:53
 msgid "Export to ZIP Style as"
@@ -3460,7 +3469,7 @@ msgstr "删除样式"
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:304
 msgid "Do you want to delete this style?"
-msgstr "你想删除这个风格吗？"
+msgstr "你想删除这个样式吗？"
 
 #: exe/jsui/scripts/app/controller/TemplateManager.js:210
 msgid "Select ELT template file to import."
@@ -3982,24 +3991,24 @@ msgstr "原文"
 msgid "A Reference to a resource from which the present resource is derived."
 msgstr "对从中派生当前资源的资源的引用。"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166 exe/jsui/scripts/app/view/forms/LangContainer.js:69
-#: exe/jsui/scripts/app/view/forms/LomSections.js:67 exe/jsui/scripts/app/view/forms/LomSections.js:99
-#: exe/jsui/scripts/app/view/forms/LomSections.js:141 exe/jsui/scripts/app/view/forms/LomWidgets.js:516
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:199
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:166
+#: exe/jsui/scripts/app/view/forms/LangContainer.js:69 exe/jsui/scripts/app/view/forms/LomSections.js:67
+#: exe/jsui/scripts/app/view/forms/LomSections.js:99 exe/jsui/scripts/app/view/forms/LomSections.js:141
+#: exe/jsui/scripts/app/view/forms/LomWidgets.js:516 exe/jsui/scripts/app/view/forms/PackagePanel.js:199
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:84
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:178
 #: exe/webui/tools/assistant/langs/all.js:27
 msgid "Language"
 msgstr "语言"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:168 exe/jsui/scripts/app/view/forms/PackagePanel.js:201
-#: exe/jsui/scripts/app/view/forms/PackagePanel.js:208
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:168
+#: exe/jsui/scripts/app/view/forms/PackagePanel.js:201 exe/jsui/scripts/app/view/forms/PackagePanel.js:208
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:131
 msgid "Select a language."
 msgstr "选择语言"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:174 exe/jsui/scripts/app/view/forms/LomDataPanel.js:246
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:286
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:174
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:246 exe/jsui/scripts/app/view/forms/LomDataPanel.js:286
 msgid "Relation"
 msgstr "关系"
 
@@ -4015,8 +4024,8 @@ msgstr "范围"
 msgid "The extent or scope of the content of the resource."
 msgstr "资源内容的范围。"
 
-#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:190 exe/jsui/scripts/app/view/forms/LomDataPanel.js:245
-#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:285
+#: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:190
+#: exe/jsui/scripts/app/view/forms/LomDataPanel.js:245 exe/jsui/scripts/app/view/forms/LomDataPanel.js:285
 msgid "Rights"
 msgstr "权利"
 
@@ -4779,8 +4788,8 @@ msgstr "常规设置"
 msgid "Select Language"
 msgstr "选择语言"
 
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:176 exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:92
-#: exe/webui/tools/style-designer/langs/all.js:114
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:176
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:92 exe/webui/tools/style-designer/langs/all.js:114
 msgid "Advanced"
 msgstr "高级"
 
@@ -4798,7 +4807,7 @@ msgstr "编辑模式"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:212
 msgid "Permissive"
-msgstr "Permissive"
+msgstr "宽松"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:213
 msgid "Strict"
@@ -4809,8 +4818,8 @@ msgid ""
 "\"Permissive\" will allow any markup. \"Strict\" will allow only valid markup: It will remove any invalid "
 "code, even HTML5 tags (except VIDEO and AUDIO) when using XHTML format."
 msgstr ""
-"“Permissive”将允许任何标记。 “严格”只允许有效标记：使用XHTML格式时，它将删除任何无效代码，甚至是HTML5标记"
-"（VIDEO和AUDIO除外）。"
+"“宽松”将允许任何标记。 “严格”只允许有效标记：使用XHTML格式时，它将删除任何无效代码，甚至是HTML5标记（VIDEO和"
+"AUDIO除外）。"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:234
 msgid "Editor version"
@@ -5122,8 +5131,8 @@ msgstr "添加页面"
 #: exe/webui/editorelement.py:78 exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249 exe/webui/editorelement.py:289
 #: exe/webui/editorelement.py:332 exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
-#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:109 exe/webui/jsblock.py:114 exe/webui/scripts/editor.js:23
-#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
+#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:109 exe/webui/jsblock.py:114
+#: exe/webui/scripts/editor.js:23 exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:907
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:942
 msgid "Delete"
@@ -7035,7 +7044,7 @@ msgstr "其它"
 
 #: exe/webui/appletblock.py:135
 msgid "Applet Type"
-msgstr "Applet 类别"
+msgstr "小程式类型"
 
 #: exe/webui/appletblock.py:156 exe/webui/appletblock.py:166
 msgid "Add files"
@@ -7047,7 +7056,7 @@ msgstr "接受 URL"
 
 #: exe/webui/appletblock.py:172
 msgid "Applet Code:"
-msgstr "Applet Code:"
+msgstr "小程式代码："
 
 #: exe/webui/attachmentblock.py:87 exe/webui/element.py:1075
 msgid "Filename:"
@@ -7070,7 +7079,7 @@ msgstr "警告: %s"
 
 #: exe/webui/block.py:184 exe/webui/scripts/authoring.js:1043
 msgid "IDevice broken"
-msgstr "IDevice broken"
+msgstr "iDevice 损坏"
 
 #: exe/webui/block.py:227 exe/webui/editorpage.py:120
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:135
@@ -7115,7 +7124,7 @@ msgstr "提示:"
 
 #: exe/webui/block.py:326
 msgid "ERROR: Block.renderViewContent called directly"
-msgstr "ERROR: Block.renderViewContent called directly"
+msgstr "错误： Block.renderViewContent 直接调用"
 
 #: exe/webui/block.py:336 exe/webui/editorpage.py:290 exe/webui/editorpane.py:270
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:17
@@ -7622,17 +7631,17 @@ msgstr "添加问题"
 #: exe/webui/element.py:73
 #, python-format
 msgid "ERROR Element.process called directly with %s class"
-msgstr "ERROR Element.process called directly with %s class"
+msgstr "错误！%s 类直接调用了 Element.process"
 
 #: exe/webui/element.py:82
 #, python-format
 msgid "ERROR Element.renderEdit called directly with %s class"
-msgstr "ERROR Element.renderEdit called directly with %s class"
+msgstr "错误！%s 类直接调用了 Element.renderEdit"
 
 #: exe/webui/element.py:99
 #, python-format
 msgid "ERROR Element.renderView called directly with %s class"
-msgstr "ERROR Element.renderView called directly with %s class"
+msgstr "错误！%s 类直接调用了 Element.renderView"
 
 #: exe/webui/element.py:763 exe/webui/element.py:1184
 msgid "Add Image"
@@ -7809,7 +7818,8 @@ msgstr "添加另一个文件附件"
 msgid "File List (this list shows only in preview mode):"
 msgstr "文件列表 (此列表仅在预览模式下显示):"
 
-#: exe/webui/fileattachblock.py:159 exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:316
+#: exe/webui/fileattachblock.py:159
+#: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:316
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:54
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:29
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:129
@@ -8136,7 +8146,8 @@ msgstr ""
 msgid "Access code is required"
 msgstr "要求输入访问代码"
 
-#: exe/webui/scripts/authoring.js:1193 exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:29
+#: exe/webui/scripts/authoring.js:1193
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:29
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:40
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:31
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:36
@@ -10019,7 +10030,8 @@ msgstr "插入/删除编号列表"
 msgid "Heading 1"
 msgstr "标题 1"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18 exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:888
 #: exe/webui/tools/style-designer/langs/all.js:77
 msgid "Header"
@@ -10043,7 +10055,8 @@ msgstr "选择所有"
 msgid "Heading 3"
 msgstr "标题3"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:24 exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:250
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:24
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:250
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Block"
@@ -12602,11 +12615,11 @@ msgstr "Wikiversity"
 
 #: exe/webui/wikipediablock.py:134
 msgid "Wiktionary"
-msgstr "Wiktionary"
+msgstr "维基词典"
 
 #: exe/webui/wikipediablock.py:135
 msgid "Wikieducator Content"
-msgstr "Wikieducato 文章"
+msgstr "维基教育者内容"
 
 #: exe/webui/wikipediablock.py:163
 msgid "Site"
@@ -12632,7 +12645,7 @@ msgstr "OK"
 msgid ""
 "Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it "
 "into another package!"
-msgstr "套件版本过旧。在尝试将其插入另一个包之前，请先升级它（路径为：File..Open，然后是File..SaveAs）。"
+msgstr "包的版本过旧。在尝试将其插入另一个包之前，请先进行升级（路径为：File..Open，然后是File..SaveAs）。"
 
 #: twisted/persisted/styles.py:437
 msgid ""
