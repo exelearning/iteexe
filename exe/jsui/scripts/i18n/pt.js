@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.5.1\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2020-09-25 10:43+0200\nPO-Revision-Date: 2020-10-12 13:49+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.5.1\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2020-09-25 10:43+0200\nPO-Revision-Date: 2020-10-12 18:38+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Number of rounds": "N\u00famero de vezes", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.", 
@@ -2498,7 +2498,7 @@ translations = {
  "Quechua ": "Qu\u00e9chua ", 
  "eXe cannot access any scene inside the indicated website. Anyway you can access the desired scene in your regular browser, click with right mouse button on it and in config > codigo is its associated code. Copy and paste it directly into an Applet iDevice such as Other.": "eXe n\u00e3o consegue aceder a nenhuma cena no site indicado. De todas as maneiras, pode aceder \u00e0 cena desejada no seu navegador, clicar nela com o bot\u00e3o direito do rato e aceder ao seu c\u00f3digo associado em config > c\u00f3digo. Copie e cole o c\u00f3digo diretamente num iDevice de Applet com o tipo \"Outro\".", 
  "Delete Row": "Apagar linha", 
- "Question point": "Pontua\u00e7\u00e3o da pergunta", 
+ "Question point": "Localiza\u00e7\u00e3o da pergunta no v\u00eddeo", 
  "If you leave this page eXe application continues to run. Please use the menu File->Quit if you really want to exit the application.": "Se sair desta p\u00e1gina, a aplica\u00e7\u00e3o eXe ir\u00e1 continuar aberta. Por favor, utilize o menu Ficheiro->Sair se desejar mesmo fechar a aplica\u00e7\u00e3o.", 
  "Norwegian ": "Noruegu\u00eas ", 
  "Volap\u00fck; Volapuk ": "Volapuque ", 

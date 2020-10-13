@@ -4,14 +4,13 @@
 # This file is distributed under the same license as the EXE package.
 # Current translator:
 # - Dionisio Martínez Soler <dmsoler@edu.xunta.gal>, 2013-2020
-# TODO: Harmonizar terminologia interna e externamente; rever lista de nomes
-# de línguas.
+# TODO: Harmonizar terminologia interna e externamente.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
 "POT-Creation-Date: 2020-09-25 10:43+0200\n"
-"PO-Revision-Date: 2020-10-12 13:49+0200\n"
+"PO-Revision-Date: 2020-10-12 18:38+0200\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.gal>\n"
 "Language: pt\n"
 "Language-Team: Dionisio Martínez Soler <dmsoler@edu.xunta.gal>\n"
@@ -11074,7 +11073,7 @@ msgstr "Já há uma pergunta nesse segundo."
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:519
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:521
 msgid "Question point"
-msgstr "Pontuação da pergunta"
+msgstr "Localização da pergunta no vídeo"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:557
 msgid "Preview question"
