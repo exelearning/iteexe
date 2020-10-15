@@ -3,21 +3,22 @@
 # Copyright (C) 2011-2020 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXeLearning.net Project <admin@exelearning.net>
-# Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2020.
+# Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>, 2012-2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2020-09-25 10:43+0200\n"
-"PO-Revision-Date: 2020-01-07 17:13+0100\n"
-"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gmail.com>\n"
+"PO-Revision-Date: 2020-10-15 13:41+0200\n"
+"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Language: ca\n"
-"Language-Team: Catalan <info@softcatala.org>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+"X-Generator: Lokalize 20.08.2\n"
 
 #: exe/application.py:239
 #, python-format
@@ -49,6 +50,18 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7/8/10"
 msgstr ""
+"eXeLearning, la eina d'autoria educativa extramadament fàcil\n"
+"Ús: %s [OPCIÓ] [PAQUET]\n"
+"-V, --version   informa de la versió"
+"-h, --help      mostra aquest text d'ajuda\n\""
+"--standalone    S'executa des del directori actual de forma"
+"independent\n"
+"--portable      S'executa en mode portable\n"
+"La configuració es llegeix al fitxer exe.conf present a $HOME/.exe a"
+"GNU Linux/Unix/Mac,\n"
+"a Documents and Settings/<user name>/Application Data/exe a Windows XP,"
+"o a\n"
+"Usuaris/<user name>/AppData/Roaming/exe a Windows 7/8/10"
 
 #: exe/engine/appletidevice.py:67
 msgid "Java Applet"
@@ -413,7 +426,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -1741,7 +1755,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables."
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables."
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1846,7 +1861,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -4061,7 +4077,8 @@ msgstr ""
 #: exe/jsui/mainpage.py:1644
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
-msgstr "Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
+msgstr ""
+"Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
 
 #: exe/jsui/mainpage.py:1749
 #, python-format
@@ -5699,7 +5716,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:511
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:529
 msgid "Load Image"
@@ -5814,7 +5832,8 @@ msgstr "Format per defecte als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "The current document format can be modified in the Properties tab"
-msgstr "El format actual del document es pot modificar a la pestanya «Propietats»"
+msgstr ""
+"El format actual del document es pot modificar a la pestanya «Propietats»"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:210
 msgid "Editor mode"
@@ -7882,7 +7901,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:826
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -8339,11 +8359,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/webui/common.py:241
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/webui/common.py:247
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/webui/common.py:253
 msgid "GNU Free Documentation License"
@@ -8371,11 +8393,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/webui/common.py:344
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/webui/common.py:350
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/webui/common.py:356
 msgid "Creative Commons Attribution License 2.5"
@@ -8395,11 +8419,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/webui/common.py:380
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/webui/common.py:386
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/webui/common.py:418
 msgid "License:"
@@ -9083,7 +9109,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -9763,7 +9790,8 @@ msgstr "Inicieu el joc abans de desar la puntuació."
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:65
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:50
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:61
-msgid "The score can't be saved because this page is not part of a SCORM package."
+msgid ""
+"The score can't be saved because this page is not part of a SCORM package."
 msgstr ""
 "La puntuació no es pot desar ja que aquesta pàgina no forma part de un "
 "paquet SCORM."
@@ -10334,7 +10362,8 @@ msgid "Add an image with description (alternative text)."
 msgstr "Afegiu una imatge amb una descripció (text alternatiu)."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:42
-msgid "Write a question and some answers. Don't forget to choose the right one."
+msgid ""
+"Write a question and some answers. Don't forget to choose the right one."
 msgstr ""
 "Escriviu una pregunta i algunes respostes. No us oblideu de triar la "
 "correcta."
@@ -10379,7 +10408,8 @@ msgstr "Mostra el text a mostrar"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:56
 msgid "Strike through the words to complete. It's case sensitive."
-msgstr "Ratlleu les paraules a completar. Es distingeix majúscules de minúscules."
+msgstr ""
+"Ratlleu les paraules a completar. Es distingeix majúscules de minúscules."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
 msgid "Text to complete"
@@ -11064,7 +11094,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:137
 msgid "Spanish"
-msgstr ""
+msgstr "Castellà"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:207
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:569
@@ -11304,7 +11334,8 @@ msgid "Heading 2"
 msgstr "Encapçalament 2"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -12197,7 +12228,8 @@ msgstr "Insereix/edita atributs"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:32
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:91
-msgid "Collapsible content panels for presenting information in a limited space."
+msgid ""
+"Collapsible content panels for presenting information in a limited space."
 msgstr ""
 "Plafons de contingut col·lapsable per presentar informació en un espai "
 "limitat."
@@ -12269,7 +12301,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:115
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
+msgstr ""
+"Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:116
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:160
@@ -12337,7 +12370,8 @@ msgstr "Aquestos jocs requereixen javaScript."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:131
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr "Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
+msgstr ""
+"Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:138
 msgid "Please enable JavaScript to play this game."
@@ -12353,7 +12387,8 @@ msgstr "Escriu la llista de lletres i/o números per triar."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:159
 msgid "You may include capital letters or they can be automatically included."
-msgstr "Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
+msgstr ""
+"Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:160
 msgid "Choose if you want the game to be case sensitive."
@@ -12372,7 +12407,8 @@ msgid "Don't forget to check the Accessibility tab."
 msgstr "No oblideu comprovar la pestanya accessibilitat."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:277
-msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
+msgid ""
+"Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
 "Proporciona un avís als usuaris amb  JavaScript deshabilitat "
 "(accessibilitat)."
@@ -12475,7 +12511,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1202
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1272
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
+msgstr ""
+"Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1260
 msgid ""
@@ -12487,11 +12524,11 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Back"
-msgstr ""
+msgstr "Enrere"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Crop"
-msgstr ""
+msgstr "Retalla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:88
 msgid "Please write the Content"
@@ -12524,19 +12561,19 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:513
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:532
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Insereix codi HTML com a text pla"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:347
 msgid "Markup language"
-msgstr ""
+msgstr "Llenguatge de marques"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:357
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Marques (HTML, etc.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:359
 msgid "C type"
-msgstr ""
+msgstr "Tipus C"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:381
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
@@ -12555,17 +12592,17 @@ msgstr "Fosc"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:409
 msgid "Line numbers"
-msgstr ""
+msgstr "Nombres de línia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:413
 msgid "Line highlight"
-msgstr ""
+msgstr "Ressalta la línia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:480
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:525
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:540
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Enganxa el fragment HTML (codi d'incrustació)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -12601,7 +12638,8 @@ msgid "Error (missing function):"
 msgstr "Error (funció perduda):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:460
-msgid "The image could not be created. Insert the code without alternative image?"
+msgid ""
+"The image could not be created. Insert the code without alternative image?"
 msgstr ""
 "La imatge no s'ha pogut crear. Voleu inserir el codi sense una imatge "
 "alternativa?"
@@ -12681,7 +12719,8 @@ msgstr ""
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr "Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
+msgstr ""
+"Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:709
 msgid ""
@@ -12701,7 +12740,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:711
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr "Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
+msgstr ""
+"Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:713
 msgid "Remember that..."
@@ -13330,7 +13370,8 @@ msgstr "Què és eXeLearning?"
 
 #: exe/webui/tools/assistant/langs/all.js:15
 msgid "eXeLearning Is an open source program to create educational contents."
-msgstr "eXeLearning és un programa de codi obert per a crear continguts educatius."
+msgstr ""
+"eXeLearning és un programa de codi obert per a crear continguts educatius."
 
 #: exe/webui/tools/assistant/langs/all.js:16
 msgid "With eXeLearning you can:"
@@ -13956,7 +13997,8 @@ msgstr "Aquest codi es mostrarà al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:116
 msgid "content.css is included any time you export, and always after base.css."
-msgstr "content.css està inclòs sempre que exporteu, i sempre després de base.css"
+msgstr ""
+"content.css està inclòs sempre que exporteu, i sempre després de base.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:117
 msgid "This code will be included at the end of nav.css"
@@ -13980,7 +14022,8 @@ msgstr "Contingut de nav.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:121
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr "Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
+msgstr ""
+"Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/all.js:127
 #, python-format
@@ -14013,7 +14056,8 @@ msgstr "El vostre navegador no és compatible amb aquesta eina."
 
 #: exe/webui/tools/style-designer/langs/all.js:134
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr "L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils"
+msgstr ""
+"L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils"
 
 #: exe/webui/tools/style-designer/langs/all.js:135
 msgid ""
@@ -14182,370 +14226,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
-#~ msgid "http://exelearning.net/html_manual/exe20_en/"
-#~ msgstr "http://xn--gnuscultura-dbb.eu/eXe/"
-
-#~ msgid "http://exelearning.net/?lang=en"
-#~ msgstr "http://exelearning.net/?lang=ca"
-
-#~ msgid "http://exelearning.net/forums/"
-#~ msgstr "http://exelearning.net/forums/"
-
-#~ msgid "http://exelearning.net/downloads/"
-#~ msgstr "http://exelearning.net/descarregues/"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr ""
-
-#~ msgid "EDIA Project - PBL"
-#~ msgstr "Projecte EDIA - ABP (Aprenentatge Basat en Projectes)"
-
-#~ msgid ""
-#~ "National Centre for the Development of"
-#~ " the Educational Curriculum on Non-"
-#~ "Proprietary Systems (CEDEC)"
-#~ msgstr ""
-#~ "Centre Nacional de Desenvolupament Curricular"
-#~ " en Sistemes no Propietaris (CEDEC)"
-
-#~ msgid "Project's name"
-#~ msgstr "Nom del projecte"
-
-#~ msgid "Project's final goal."
-#~ msgstr "Objectiu final del projecte."
-
-#~ msgid "Point out what students are about to learn."
-#~ msgstr "Indiqueu el que els estudiants van a aprendre."
-
-#~ msgid ""
-#~ "Students need no preknowledge to "
-#~ "complete all these tasks because there"
-#~ " are materials enough to be "
-#~ "independent in their accomplishment. Students"
-#~ " also have the help and orientation"
-#~ " from their teacher."
-#~ msgstr ""
-#~ "Els estudiants no necessiten cap "
-#~ "coneixement previ per completar totes "
-#~ "aquestes tasques perquè hi ha materials"
-#~ " suficients per ser independents en "
-#~ "la seva realització. Els estudiants "
-#~ "també tenen l'ajuda i l'orientació del"
-#~ " seu professor."
-
-#~ msgid "Author's name"
-#~ msgstr "Nom de l'autor"
-
-#~ msgid "Front page"
-#~ msgstr "Pàgina inicial"
-
-#~ msgid "Creative Commons BY-SA"
-#~ msgstr "Creative Commons BY-SA (Reconeixement - Compartir Igual)"
-
-#~ msgid "Motivating inspiration."
-#~ msgstr "Motivant la inspiració."
-
-#~ msgid "Project / Final Challenge"
-#~ msgstr "Projecte / Desafiament final"
-
-#~ msgid "What to learn and how to learn."
-#~ msgstr "Què aprendre i com aprendre."
-
-#~ msgid "Motivation for the project development."
-#~ msgstr "Motivació per desenvolupar el projecte."
-
-#~ msgid "Breaking the ice"
-#~ msgstr "Trencant el gel"
-
-#~ msgid "Learning Diary"
-#~ msgstr "Diari d'aprenentatge"
-
-#~ msgid "First activity. Creation of the learning diary in the suggested format."
-#~ msgstr ""
-#~ "Primera activitat. Creació del diari "
-#~ "d'aprenentatge en el format suggerit."
-
-#~ msgid "Creation of the first post heading."
-#~ msgstr "Creació del títol de la primera entrada."
-
-#~ msgid "Writing the diary"
-#~ msgstr "Escriptura del diari"
-
-#~ msgid ""
-#~ "Script for writing the post. It "
-#~ "must lead the student to think "
-#~ "about and reflect:"
-#~ msgstr ""
-#~ "Guió per escriure la entrada. Ha "
-#~ "de conduir l'estudiant a pensar i "
-#~ "reflexionar:"
-
-#~ msgid "What the final challenge is"
-#~ msgstr "Quin és el desafiament final?"
-
-#~ msgid "What the assessment will be like"
-#~ msgstr "Com serà l'avaluació?"
-
-#~ msgid "What they will learn"
-#~ msgstr "Què aprendran?"
-
-#~ msgid "How class groups work"
-#~ msgstr "Com funcionen els grups de classe?"
-
-#~ msgid "Starting Activity"
-#~ msgstr "Iniciant l'activitat"
-
-#~ msgid "Introductory Activity to the project involving:"
-#~ msgstr "Activitat introductòria per al projecte que involucra:"
-
-#~ msgid "Team work"
-#~ msgstr "Equip de treball"
-
-#~ msgid "Reflection and motivation"
-#~ msgstr "Reflexió i motivació"
-
-#~ msgid "Expression of feelings."
-#~ msgstr "Expressió dels sentiments."
-
-#~ msgid "Steps for the suggested activity"
-#~ msgstr "Passos per a l'activitat suggerida"
-
-#~ msgid "Your project: General information"
-#~ msgstr "El vostre projecte: Informació general"
-
-#~ msgid "Explanation of the final challenge."
-#~ msgstr "Explicació del desafiament final."
-
-#~ msgid "Overview of suggested tasks."
-#~ msgstr "Resum de les tasques suggerides."
-
-#~ msgid "General information about:"
-#~ msgstr "Informació general sobre:"
-
-#~ msgid "Assessment"
-#~ msgstr "Avaluació"
-
-#~ msgid "Class team management"
-#~ msgstr "Gestió de l'equip de classe"
-
-#~ msgid "Learning diary and personal site."
-#~ msgstr "Diari d'aprenentatge i lloc web personal."
-
-#~ msgid "Dissemination of project activities."
-#~ msgstr "Difusió de les activitats del projecte."
-
-#~ msgid "Starting motivation"
-#~ msgstr "Motivació inicial"
-
-#~ msgid "Mission 1"
-#~ msgstr "Missió 1"
-
-#~ msgid "Guidelines to open a new post."
-#~ msgstr "Directrius per crear una entrada nova."
-
-#~ msgid "Questions or guidelines for students to revise and reflect:"
-#~ msgstr ""
-#~ "Questions o directrius adreçades als "
-#~ "estudiants per reflexionar i revisar:"
-
-#~ msgid "The task they have done"
-#~ msgstr "La tasca que han fet"
-
-#~ msgid "The resources they have checked"
-#~ msgstr "Els recursos que han comprovat"
-
-#~ msgid "Materials they have created"
-#~ msgstr "Els materials que han creat"
-
-#~ msgid "What they have learnt"
-#~ msgstr "Què han après"
-
-#~ msgid "Difficulties found."
-#~ msgstr "Dificultats trobades."
-
-#~ msgid "Remaining doubts"
-#~ msgstr "Dubtes que encara tenen"
-
-#~ msgid "Class team functioning"
-#~ msgstr "Funcionament de l'equip de classe"
-
-#~ msgid "Task (Mission)"
-#~ msgstr "Tasca (Missió)"
-
-#~ msgid "General introduction"
-#~ msgstr "Introducció general"
-
-#~ msgid "What the \"final mission\" will be and link to the assessment rubric."
-#~ msgstr "El que serà la «missió final» i si es vincula a la rubrica d'avaluació."
-
-#~ msgid "What learning objective this mission helps to achieve."
-#~ msgstr "Quin objectiu d'aprenentatge ajuda a aconseguir aquesta missió?"
-
-#~ msgid "Steps for your mission"
-#~ msgstr "Passos per la vostra missió"
-
-#~ msgid "What the final mission will be."
-#~ msgstr "Quina serà la missió final."
-
-#~ msgid "What sudents will learn about."
-#~ msgstr "El que els estudiants aprendran."
-
-#~ msgid "Starting activity"
-#~ msgstr "Activitat inicial"
-
-#~ msgid "Didactic guidelines"
-#~ msgstr "Directrius didàctiques"
-
-#~ msgid "Need any help?"
-#~ msgstr "Voleu alguna ajuda?"
-
-#~ msgid "ICT resources/apps/tools"
-#~ msgstr "Recursos/aplicacions/eines ICT"
-
-#~ msgid "Assessment and curricular references"
-#~ msgstr "Avaluació i referències curriculars"
-
-#~ msgid "Link to the final rubric of the project."
-#~ msgstr "Enllaç a la rubrica final del projecte."
-
-#~ msgid "Assessment recommendations / resources of each task."
-#~ msgstr "Recomanacions d'avaluació / recursos de cada tasca."
-
-#~ msgid "Assessment criteria and guidance on how to assess."
-#~ msgstr "Criteris d'avaluació i orientació sobre com avaluar."
-
-#~ msgid "Contents / learning standards and key competences."
-#~ msgstr "Continguts / estàndards d'aprenentatge i competències clau."
-
-#~ msgid "Learning Pathway and timing"
-#~ msgstr "Camí d'aprenentatge i temporització"
-
-#~ msgid "Steps"
-#~ msgstr "Passos"
-
-#~ msgid "Main aim"
-#~ msgstr "Objectiu principal"
-
-#~ msgid "Timing"
-#~ msgstr "Temporització"
-
-#~ msgid "Before you start"
-#~ msgstr "Abans de començar"
-
-#~ msgid "... sessions"
-#~ msgstr "... sessions"
-
-#~ msgid "(Mission 1)"
-#~ msgstr "(Missió 1)"
-
-#~ msgid "(Mission 2)"
-#~ msgstr "(Missió 2)"
-
-#~ msgid "(Mission 3)"
-#~ msgstr "(Missió 3)"
-
-#~ msgid "(Final Challenge)"
-#~ msgstr "(Desafiament final)"
-
-#~ msgid "Interdisciplinary nature"
-#~ msgstr "Natura interdisciplinària"
-
-#~ msgid "Recommendations to involve other subjects"
-#~ msgstr "Recomanacions per a involucrar altres assignatures"
-
-#~ msgid "Fact sheet"
-#~ msgstr "Fulla de fets"
-
-#~ msgid "Level / course"
-#~ msgstr "Nivell / Curs"
-
-#~ msgid "Final project"
-#~ msgstr "Projecte final"
-
-#~ msgid "Contents"
-#~ msgstr "Continguts"
-
-#~ msgid "General guidelines for teachers"
-#~ msgstr "Consells generals per als professors"
-
-#~ msgid "Resource structure"
-#~ msgstr "Estructura de recursos"
-
-#~ msgid "Types of tasks and activities"
-#~ msgstr "Tipus de tasques i activitats"
-
-#~ msgid "Methodological approach"
-#~ msgstr "Aproximació metodològica"
-
-#~ msgid "Use of the learning diary"
-#~ msgstr "Ús del diari d'aprenentatge"
-
-#~ msgid "Rubrics and other documents"
-#~ msgstr "Rubriques i altres documents"
-
-#~ msgid "You can download all the documents to print, share, reuse..."
-#~ msgstr ""
-#~ "Podeu descarregar tots els documents per"
-#~ " imprimir, compartir, reutilitzar ..."
-
-#~ msgid "Example image"
-#~ msgstr "Exemple imatge"
-
-#~ msgid "Base"
-#~ msgstr "Base"
-
-#~ msgid "String to translate A"
-#~ msgstr ""
-
-#~ msgid "String to translate B"
-#~ msgstr ""
-
-#~ msgid "Please select the media file to edit it"
-#~ msgstr "Seleccioneu el fitxer fitxer multimèdia per editar-lo"
-
-#~ msgid "Detect automatically"
-#~ msgstr "Detectat de forma automàtica"
-
-#~ msgid "iframe"
-#~ msgstr "iframe"
-
-#~ msgid "Use JavaScript player"
-#~ msgstr "Usa reproductor JavaScript"
-
-#~ msgid "Use Controls"
-#~ msgstr "Usa controls"
-
-#~ msgid "Use Autoplay"
-#~ msgstr "Usa reproducció automàtica"
-
-#~ msgid "Paste your embed code below:"
-#~ msgstr "Enganxa el  codi incrustat a sota:"
-
-#~ msgid "Please select the Source"
-#~ msgstr "Selecciona la font"
-
-#~ msgid "This format (%) is valid for audio and video."
-#~ msgstr "El format (%) no és vàlid per àudio i vídeo."
-
-#~ msgid "Cannot detect automatically. Please choose the right type."
-#~ msgstr "No es pot detectar de forma automàtica. Tria el tipus correcte."
-
-#~ msgid "Successfully updated, but please convert the video to another format:"
-#~ msgstr ""
-#~ "S'ha actualitzat amb èxit, però "
-#~ "conconvertiu el vídeo a un altre "
-#~ "format:"
-
-#~ msgid "Selected format: "
-#~ msgstr "Format seleccionat:"
-
-#~ msgid "Please use any of these formats or provide a link to the file itself: "
-#~ msgstr "Useu qualsevol d'aquests formats o proporcioneu un enllaç al fitxer:"
-
-#~ msgid "Please use any of these formats or provide a link to the file itself:"
-#~ msgstr "Useu qualsevol d'aquests formats o proporcioneu un enllaç al fitxer:"
-
-#~ msgid "'"
-#~ msgstr "'"
-
