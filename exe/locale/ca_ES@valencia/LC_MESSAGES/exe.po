@@ -1,6 +1,6 @@
 # eXeLearning Catalan (Valencia) PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2019 eXeLearning.net
+# Copyright (C) 2001-2020 eXeLearning.net
 # This file is distributed under the same license as the EXE package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.5.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2020-09-25 10:43+0200\n"
-"PO-Revision-Date: 2020-10-02 13:49+0200\n"
+"PO-Revision-Date: 2020-10-14 01:47+0200\n"
 "Last-Translator: Ricardo Nutz Ayala <<nutz_ric@gva.es>\n"
 "Language: ca_ES\n"
 "Language-Team: LliureX\n"
@@ -5319,7 +5319,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:101
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:43
 msgid "creative commons: attribution - share alike 4.0"
-msgstr "llicència creative commons 4.0 reconeixement-compartir igual"
+msgstr "llicència creative commons 4.0 reconeixement - compartir igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:105
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:47
@@ -5351,7 +5351,7 @@ msgstr "llicència creative commons 3.0 reconeixement-compartir igual"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:125
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:67
 msgid "creative commons: attribution - share alike 3.0"
-msgstr "llicència creative commons 3.0 reconeixement-compartir igual"
+msgstr "llicència creative commons 3.0 reconeixement - compartir igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:129
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:71
@@ -5383,7 +5383,7 @@ msgstr "llicència creative commons 2.5 reconeixement-compartir igual"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:149
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:91
 msgid "creative commons: attribution - share alike 2.5"
-msgstr "llicència creative commons 2.5 reconeixement-compartir igual"
+msgstr "llicència creative commons 2.5 reconeixement - compartir igual"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:172
 msgid "Cataloguing"
@@ -8135,7 +8135,7 @@ msgstr "Llicència Creative Commons 4.0 Reconeixement"
 
 #: exe/webui/common.py:223
 msgid "Creative Commons Attribution Share Alike License 4.0"
-msgstr "Llicència Creative Commons 3.0 Reconeixement-Compartir igual"
+msgstr "Llicència Creative Commons 4.0 Reconeixement-Compartir igual"
 
 #: exe/webui/common.py:229
 msgid "Creative Commons Attribution No Derivatives License 4.0"
@@ -8143,7 +8143,7 @@ msgstr "Llicència Creative Commons 4.0 Reconeixement-Sense Obres Derivades"
 
 #: exe/webui/common.py:235
 msgid "Creative Commons Attribution Non-commercial License 4.0"
-msgstr "Llicència Creative Commons 4.0 Reconeixement-No comercial."
+msgstr "Llicència Creative Commons 4.0 Reconeixement-No comercial"
 
 #: exe/webui/common.py:241
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
@@ -8152,7 +8152,7 @@ msgstr "Llicència Creative Commons 4.0 Reconeixement-No comercial-Compartir Igu
 #: exe/webui/common.py:247
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
 msgstr ""
-"Llicència Creative Commons 4.0 Reconeixement- No comercial-Sense obres derivades."
+"Llicència Creative Commons 4.0 Reconeixement- No comercial-Sense obres derivades"
 
 #: exe/webui/common.py:253
 msgid "GNU Free Documentation License"
@@ -8176,7 +8176,7 @@ msgstr "Llicència Creative Commons 3.0 Reconeixement-Sense Obres Derivades"
 
 #: exe/webui/common.py:338
 msgid "Creative Commons Attribution Non-commercial License 3.0"
-msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial."
+msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial"
 
 #: exe/webui/common.py:344
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
@@ -8185,7 +8185,7 @@ msgstr "Llicència Creative Commons 3.0 Reconeixement-No comercial-Compartir Igu
 #: exe/webui/common.py:350
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
 msgstr ""
-"Llicència Creative Commons 3.0 Reconeixement- No comercial-Sense obres derivades."
+"Llicència Creative Commons 3.0 Reconeixement- No comercial-Sense obres derivades"
 
 #: exe/webui/common.py:356
 msgid "Creative Commons Attribution License 2.5"
@@ -8201,7 +8201,7 @@ msgstr "Llicència Creative Commons 2.5 Reconeixement-Sense Obres Derivades"
 
 #: exe/webui/common.py:374
 msgid "Creative Commons Attribution Non-commercial License 2.5"
-msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial."
+msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial"
 
 #: exe/webui/common.py:380
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
@@ -8210,7 +8210,7 @@ msgstr "Llicència Creative Commons 2.5 Reconeixement-No comercial-Compartir Igu
 #: exe/webui/common.py:386
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
 msgstr ""
-"Llicència Creative Commons 2.5 Reconeixement- No comercial-Sense obres derivades."
+"Llicència Creative Commons 2.5 Reconeixement- No comercial-Sense obres derivades"
 
 #: exe/webui/common.py:418
 msgid "License:"
@@ -11166,7 +11166,7 @@ msgstr "Insereix / Suprimeix la llista de pics"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:30
 msgid "Remove Formatting"
-msgstr "Suprimeix la formatació"
+msgstr "Netejar format"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:31
 msgid "Font Size"
