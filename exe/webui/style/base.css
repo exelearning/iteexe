@@ -58,8 +58,10 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 /* Math */
 .exe-math{margin:2em 0}
 .exe-math,.MathJax_Display{text-align:left!important}
-.exe-math.position-center,.position-center .MathJax_Display{text-align:center!important}
-.exe-math.position-right,.position-right .MathJax_Display{text-align:right!important}
+.exe-math.position-center,.position-center .MathJax_Display,
+p[style*="text-align: center"] .MathJax_Display{text-align:center!important}
+.exe-math.position-right,.position-right .MathJax_Display,
+p[style*="text-align: right"] .MathJax_Display{text-align:right!important}
 .js .show-image .exe-math-code,.js .show-code .exe-math-img{display:none}
 .exe-math-links{font-size:.85em}
 
