@@ -1,3 +1,54 @@
+intef-exe (3:2.5.1) lucid; urgency=medium
+
+    * Ignacio Gros
+        - [UI] SCORM 1.2 is now the default SCORM export.
+        - [UI] Tools - New - Window will open a new project instead of the current one.
+        - [UI] About eXe and Legal notes revision.
+        - [UI] Fixed: Prevent tutorial link 404 error in some languages. (#491)
+        - [iDevices] Allow SVG iDevice icons.
+        - [iDevices] Scrambled List. You can add up to 15 items now.
+        - [iDevices] Fixed: Wikipedia iDevice. Default article language. (#478)
+        - [iDevices] Wikipedia iDevice. Basic CSS revision.
+        - [iDevices] Rubric iDevice. Help video tutorial (in Spanish).
+        - [iDevices] Image gallery. Bigger thumbnails and presentation revision.
+        - [Styles] Print CSS revision.
+        - [TinyMCE] New inline format: Highlighted text (<mark>).
+        - [TinyMCE] New content templates: Floated images, tables, images and videos.
+        - [TinyMCE] Fixed: Drag and drop image. Add the ALT text to the right image. (#479)
+        - [Other] Search results: Use MARK instead of SPAN.
+        - [Other] Predefined table design revision (better presentation of TBODY > TH).
+        - [Other] Fixed: Handle "Permission denied" JavaScript error in SCORM. (#472)
+        - [Other] Fixed: MediaElement player. No fullscreen button in G. Chrome. (#481)
+        - [Other] Fixed: MediaElement could not get the right content height.
+
+    * SDWeb
+        - [Export] Fixed: Missing references in the imsmanifest.xml file. (#473)
+        - [Export] Fixed: Windows problem. Could not export nodes with very long titles. (#503)
+        - [UI] Fixed: Custom error messages when importing a Style. (#475)
+        - [UI] Fixed: Strange characters when executing eXe for the first time. (#525)
+        - [Other] New Python3 translation tools.
+        - [Other] Requirements to generate a Snap package.
+        - [Other] Fixed: Missing files when the iDevice was submitted twice. (#485)
+        - [Other] Fixed: Change default elp language when changing eXe's language. (#495)
+        - [Other] Fixed: Resources management bugs. (#396)
+        - [Other] Fixed: Error when importing a Style (zip with a space in its name). (#511)
+        - [Other] Fixed: Do not use Git to get the revision. (#515)
+        - [Other] Fixed: exelearning -h returned old information. (#517)
+        - [Other] Fixed: Save the iDevice before moving it. (#520)
+        - [Other] Fixed: Avoid data loss when saving from the save warning message. (#521)
+        - [Other] Fixed: iDevice broken when the icon was empty. (#522)
+
+  * Juan Rafael Fernández
+    - String extraction process revision (pybabel tests). (#524)
+    - Breton (brezhoneg) added to the list of supported languages.
+    - Translations coordination.
+
+  * eXeLearning.net Translation Teams
+    - New full Spanish translation, by Juan Rafael Fernández.
+    - New full Simplified Chinese (zh_CN) translation, by Chenggui Duan. 
+    - New German translation, by Jan Joscha Finger
+    - New Greek translation, by Yannis Kaskamanidis	
+
 intef-exe (3:2.5) lucid; urgency=medium
 
   * Ignacio Gros
