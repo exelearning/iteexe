@@ -38,6 +38,7 @@ intef-exe (3:2.5.1) lucid; urgency=medium
         - [Other] Fixed: Save the iDevice before moving it. (#520)
         - [Other] Fixed: Avoid data loss when saving from the save warning message. (#521)
         - [Other] Fixed: iDevice broken when the icon was empty. (#522)
+        - [Other] Fixed: JavaScript error in SCORM 1.2 (invalid 1.2 property). (#509)
 
   * Juan Rafael Fernández
     - String extraction process revision (pybabel tests). (#524)
