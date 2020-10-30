@@ -15,6 +15,7 @@ intef-exe (3:2.5.1) lucid; urgency=medium
         - [TinyMCE] New inline format: Highlighted text (<mark>).
         - [TinyMCE] New content templates: Floated images, tables, images and videos.
         - [TinyMCE] Fixed: Drag and drop image. Add the ALT text to the right image. (#479)
+        - [TinyMCE] Fixed: "Add a paragraph at the end" plugin with more than one editor.
         - [Other] Search results: Use MARK instead of SPAN.
         - [Other] Predefined table design revision (better presentation of TBODY > TH).
         - [Other] Fixed: Handle "Permission denied" JavaScript error in SCORM. (#472)
