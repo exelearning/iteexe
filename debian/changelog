@@ -49,8 +49,8 @@ intef-exe (3:2.5.1) lucid; urgency=medium
   * eXeLearning.net Translation Teams
     - New full Spanish translation, by Juan Rafael Fernández.
     - New full Simplified Chinese (zh_CN) translation, by Chenggui Duan. 
-    - New German translation, by Jan Joscha Finger
-    - New Greek translation, by Yannis Kaskamanidis	
+    - New German translation, by Jan Joscha Finger.
+    - New Greek translation, by Yannis Kaskamanidis.
 
 intef-exe (3:2.5) lucid; urgency=medium
 
