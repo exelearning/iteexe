@@ -219,6 +219,12 @@ function doQuit()
 *******************************************************************************/
 function unloadPage(isSCORM)
 {
+	
+	if (parent && !parent.mod_scorm_is_window_closing){
+		// #505 Issue
+		parent.mod_scorm_is_window_closing = true
+	}
+	
 	if (typeof isSCORM == "undefined"){
 		isSCORM = false;
 	}
