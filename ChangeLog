@@ -21,6 +21,7 @@ intef-exe (3:2.5.1) lucid; urgency=medium
     - [Other] Fixed: Handle "Permission denied" JavaScript error in SCORM. (#472)
     - [Other] Fixed: MediaElement player. No fullscreen button in G. Chrome. (#481)
     - [Other] Fixed: MediaElement could not get the right content height.
+    - [Other] Fixed: MathJax formulas respect the text alignment.
 
   * SDWeb
     - [Export] Fixed: Missing references in the imsmanifest.xml file. (#473)
