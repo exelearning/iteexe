@@ -221,5 +221,11 @@ def exportMinFileCSS(list_files, output_dir):
         input_stream.seek(0)
 
         # Write the minified CSS to the output file and close it
-        output_stream.write(cssmin.cssmin(input_stream.read()))
+        
+        # To review (see issue 322)
+        res = cssmin.cssmin(input_stream.read())
+        res = res.replace('[style*="text-align:center"] .MathJax_Display','[style*="text-align: center"] .MathJax_Display')
+        res = res.replace('[style*="text-align:right"] .MathJax_Display','[style*="text-align: right"] .MathJax_Display')
+        
+        output_stream.write(res)
         output_stream.close()
