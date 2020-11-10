@@ -21,6 +21,7 @@ intef-exe (3:2.5.1) lucid; urgency=medium
     - [Other] Fixed: Handle "Permission denied" JavaScript error in SCORM. (#472)
     - [Other] Fixed: MediaElement player. No fullscreen button in G. Chrome. (#481)
     - [Other] Fixed: MediaElement could not get the right content height.
+    - [Other] Fixed: MathJax formulas respect the text alignment. (#322)
 
   * SDWeb
     - [Export] Fixed: Missing references in the imsmanifest.xml file. (#473)
@@ -31,7 +32,6 @@ intef-exe (3:2.5.1) lucid; urgency=medium
     - [Other] Requirements to generate a Snap package.
     - [Other] Fixed: Missing files when the iDevice was submitted twice. (#485)
     - [Other] Fixed: Change default elp language when changing eXe's language. (#495)
-    - [Other] Fixed: Resources management bugs. (#396)
     - [Other] Fixed: Error when importing a Style (zip with a space in its name). (#511)
     - [Other] Fixed: Do not use Git to get the revision. (#515)
     - [Other] Fixed: exelearning -h returned old information. (#517)
@@ -48,7 +48,14 @@ intef-exe (3:2.5.1) lucid; urgency=medium
 
   * eXeLearning.net Translation Teams
     - New full Spanish translation, by Juan Rafael Fernández.
-    - New full Simplified Chinese (zh_CN) translation, by Chenggui Duan.
+    - New full Catalan translation, by Carles Ferrando Garcia.
+    - New full Galician translation, by Pablo Nimo.
+    - New full Valencian translation, by Ricardo Nutz.
+    - New full Basque translation, by Joxemi Andonegi.
+    - New full Portuguese translation, by Dionisio Martínez.
+    - New full Italian translation, by Andrea Primiani.
+    - New full French translation, by Jesús Miguel Domínguez.
+    - Revised full Simplified Chinese (zh_CN) translation, by Chenggui Duan. 
     - New German translation, by Jan Joscha Finger.
     - New Greek translation, by Yannis Kaskamanidis.
 
