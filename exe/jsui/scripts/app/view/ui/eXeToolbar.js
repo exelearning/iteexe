@@ -330,7 +330,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         {
                                             cls: 'exe-simplified',
                                             xtype: 'accesskey_menuitem',
-                                            text: _('SCORM'),
+                                            text: _('SCORM1.2'),
                                             accesskey: 't',
                                             itemId: 'file_export_scorm'
                                         },
