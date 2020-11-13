@@ -66,8 +66,15 @@ class IdevicePane(Renderable, Resource):
             if idevice not in idevices:
                 modified = True
                 lower_title = idevice._title.lower()
-                self.config.hiddeniDevices.append(lower_title)
-                self.config.configParser.set('idevices', lower_title, '0')
+                try:
+                    visibility_config=self.config.configParser.get('idevices',lower_title)
+                except:
+                    visibility_config=None
+                tohide=False if visibility_config == '1' else True
+                if tohide:
+                    self.config.hiddeniDevices.append(lower_title)
+                    self.config.configParser.set('idevices', lower_title, '0')
+                    
                 self.ideviceStore.addIdevice(idevice)
         if modified:
             self.ideviceStore.save()
@@ -211,6 +218,8 @@ class IdevicePane(Renderable, Resource):
                 self.config.hiddeniDevices.remove(lower_title)
                 self.config.configParser.delete('idevices', lower_title)
                 if category == 'Experimental':
+                    self.config.configParser.set('idevices', lower_title, '1')
+                if category == 'FPD':
                     self.config.configParser.set('idevices', lower_title, '1')
             except:
                 pass
