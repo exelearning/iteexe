@@ -72,9 +72,10 @@ class IdevicePane(Renderable, Resource):
                     visibility_config=None
                 tohide=False if visibility_config == '1' else True
                 if tohide:
-                    self.config.hiddeniDevices.append(lower_title)
+                    if lower_title not in self.config.hiddeniDevices:
+                        self.config.hiddeniDevices.append(lower_title)
                     self.config.configParser.set('idevices', lower_title, '0')
-                    
+
                 self.ideviceStore.addIdevice(idevice)
         if modified:
             self.ideviceStore.save()
