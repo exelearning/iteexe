@@ -40,6 +40,7 @@ intef-exe (3:2.5.1) lucid; urgency=medium
     - [Other] Fixed: iDevice broken when the icon was empty. (#522)
     - [Other] Fixed: JavaScript error in SCORM 1.2 (invalid 1.2 property). (#509)
     - [Other] Fixed: Moodle + SCORM navigation problem. (#505)
+    - [Other] Fixed: FPD Available iDevices were not saved (#530)
 
   * Juan Rafael Fernández
     - String extraction process revision (pybabel tests). (#524)
