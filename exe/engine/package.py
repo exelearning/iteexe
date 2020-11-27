@@ -1330,7 +1330,10 @@ class Package(Persistable):
         try:
             xml = zippedFile.read(u"contentv3.xml")
         except:
-            pass
+            try:
+                xml = zippedFile.read(u"contentv2.xml")
+            except:
+                pass
 
         if not xml:
             try:
@@ -1383,7 +1386,10 @@ class Package(Persistable):
             if fromxml:
                 newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
-                xmlinfo = zippedFile.getinfo(u"contentv3.xml")
+                try:
+                    xmlinfo = zippedFile.getinfo(u"contentv3.xml")
+                except:
+                    xmlinfo = zippedFile.getinfo(u"contentv2.xml")
                 if u"content.data" not in zippedFile.NameToInfo:
                     newPackage, validxml = decodeObjectFromXML(xml)
                 else:
