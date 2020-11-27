@@ -76,7 +76,7 @@ Ext.define('eXe.controller.Toolbar', {
         	},
         	'#styles_button_advanced': {
         		beforerender: this.stylesRenderAdvanced
-        	},            
+        	},
         	'#templates_button': {
         		beforerender: this.templatesRender
         	},
@@ -88,7 +88,7 @@ Ext.define('eXe.controller.Toolbar', {
         	},
         	'#styles_menu_advanced > menuitem': {
         		click: this.stylesClickAdvanced
-        	},            
+        	},
         	'#templates_menu > menuitem': {
         		click: this.templatesClick
         	},
@@ -192,7 +192,7 @@ Ext.define('eXe.controller.Toolbar', {
             },
             '#tools_preview_button': {
                 click: { fn: this.processBrowseEvent, url: location.href + '/preview' }
-            },            
+            },
             '#tools_refresh': {
                 click: this.toolsRefresh
             },
@@ -331,13 +331,11 @@ Ext.define('eXe.controller.Toolbar', {
         ];
         var keymap = new Ext.util.KeyMap(Ext.getBody(), this.keymap_config);
     },
-    
+
     eXeUIversionCheck : function(){
-        console.log('Comprobando')
         nevow_clientToServerEvent('eXeUIVersionCheck',this)
     },
     exeUIsetInitialStatus : function(value){
-        console.log('Estado incial')
         if (value == 1 ){
             Ext.getCmp("advanced_toggler").setValue(true);
             Ext.select("BODY").removeCls('exe-simplified');
@@ -353,8 +351,8 @@ Ext.define('eXe.controller.Toolbar', {
 
     },
     eXeUIversionSetStatus : function(newValue){
-        let descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");				
-        let contentPanel = false; // The main content. It should always exist. 
+        let descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");
+        let contentPanel = false; // The main content. It should always exist.
         let iframe = document.getElementsByTagName('iframe');
         if (iframe.length==1) {
             iframe = iframe[0];
@@ -366,10 +364,10 @@ Ext.define('eXe.controller.Toolbar', {
 
         if (newValue == 0) {
             Ext.select("BODY").removeCls('exe-advanced');
-            Ext.select("BODY").addCls('exe-simplified'); 
-            // Remove the advanced CSS class from the content panel										
+            Ext.select("BODY").addCls('exe-simplified');
+            // Remove the advanced CSS class from the content panel
             if (contentPanel!=false) {
-                contentPanel.className = contentPanel.className.replace(" exe-advanced","");										
+                contentPanel.className = contentPanel.className.replace(" exe-advanced","");
                 // If the current iDevice is a JavaScript one and has tabs, show the first one:
                 if (typeof(iframe.contentWindow["$exeAuthoring"])!='undefined')  iframe.contentWindow.$exeAuthoring.iDevice.tabs.restart();
             }
@@ -386,7 +384,7 @@ Ext.define('eXe.controller.Toolbar', {
                     }
                 }
             }
-        } else {        
+        } else {
             // Ext.util.Cookies.set('eXeUIversion', 'advanced');
             Ext.select("BODY").removeCls('exe-simplified');
             Ext.select("BODY").addCls('exe-advanced');
@@ -521,14 +519,14 @@ Ext.define('eXe.controller.Toolbar', {
 					'https://exelearning.net/en/ayuda/',
 					'https://exelearning.net/en/',
 					'https://exelearning.net/en/forums/'
-                ];	
+                ];
                 if (helpLinks.indexOf(e.url)!=-1) {
                     var url = e.url;
                     url = url.replace("/en/","/"+html.lang+"/");
                     e.url = url;
                 }
             }
-        }        
+        }
         window.open(e.url)
     },
 
@@ -556,7 +554,7 @@ Ext.define('eXe.controller.Toolbar', {
               }],
               listeners:{
                 close: toolsPreferencesWasClosed
-              }           
+              }
 	        }),
             formpanel = preferences.down('form');
         formpanel.load({url: 'preferences', method: 'GET'});
@@ -951,12 +949,12 @@ Ext.define('eXe.controller.Toolbar', {
 
     processExportEvent: function(menu, item, e, eOpts) {
         this.saveWorkInProgress();
-        
+
         // Tools - Resources Report should have no validation
         if (e.exportType=="csvReport") {
             this.exportPackage(e.exportType, "");
             return;
-        }        
+        }
 
         // Check if we need to show a warning if the package has metadata
         nevow_clientToServerEvent('showMetadataWarning', this, '', e.exportType);
@@ -1241,7 +1239,7 @@ Ext.define('eXe.controller.Toolbar', {
     	})
     	return true;
     },
-    
+
     stylesRenderAdvanced: function(updateFromTheOtherMenu) {
         Ext.Ajax.request({
     		url: location.pathname + '/styleMenu',
@@ -1259,7 +1257,7 @@ Ext.define('eXe.controller.Toolbar', {
     		}
     	})
     	return true;
-    },    
+    },
 
     templatesRender: function() {
     	Ext.Ajax.request({
@@ -1307,15 +1305,15 @@ Ext.define('eXe.controller.Toolbar', {
 		item.setChecked(true);
 		item.parentMenu.hide();
 		item.parentMenu.hide();
-		
+
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);
-        
+
         // Update the advanced menu
         eXe.controller.Toolbar.prototype.stylesRenderAdvanced(true);
     },
-    
+
     executeStylesClickAdvanced: function(item) {
 		for (var i = item.parentMenu.items.length-1; i >= 0; i--) {
 			if (item.parentMenu.items.getAt(i) != item)
@@ -1324,14 +1322,14 @@ Ext.define('eXe.controller.Toolbar', {
 		item.setChecked(true);
 		item.parentMenu.hide();
 		item.parentMenu.parentMenu.hide();
-		
+
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring)
             authoring.submitLink("ChangeStyle", item.itemId, 1);
-        
+
         // Update the Styles menu
         eXe.controller.Toolbar.prototype.stylesRender(true);
-    },    
+    },
 
     stylesClick: function(item) {
         var ed = this.getTinyMCEFullScreen();
@@ -1342,7 +1340,7 @@ Ext.define('eXe.controller.Toolbar', {
             },500);
         } else this.executeStylesClick(item);
     },
-    
+
     stylesClickAdvanced: function(item) {
         var ed = this.getTinyMCEFullScreen();
         if(ed!="") {
@@ -1351,7 +1349,7 @@ Ext.define('eXe.controller.Toolbar', {
                 eXe.controller.Toolbar.prototype.executeStylesClick(item);
             },500);
         } else this.executeStylesClickAdvanced(item);
-    },    
+    },
 
     executeTemplatesClick: function(path) {
     	nevow_clientToServerEvent('loadTemplate', this, '', path)
