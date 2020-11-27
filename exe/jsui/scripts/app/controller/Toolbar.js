@@ -64,7 +64,10 @@ Ext.define('eXe.controller.Toolbar', {
             },
         	'#file_open': {
         		click: this.fileOpen
-        	},
+            },
+            '#advanced_toggler':{
+                render : this.eXeUIversionCheck
+            },
         	'#file_recent_menu': {
         		beforerender: this.recentRender
         	},
@@ -328,7 +331,75 @@ Ext.define('eXe.controller.Toolbar', {
         ];
         var keymap = new Ext.util.KeyMap(Ext.getBody(), this.keymap_config);
     },
+    
+    eXeUIversionCheck : function(){
+        console.log('Comprobando')
+        nevow_clientToServerEvent('eXeUIVersionCheck',this)
+    },
+    exeUIsetInitialStatus : function(value){
+        console.log('Estado incial')
+        if (value == 1 ){
+            Ext.getCmp("advanced_toggler").setValue(true);
+            Ext.select("BODY").removeCls('exe-simplified');
+            Ext.select("BODY").addCls('exe-advanced');
+        }
 
+    },
+    exeUIalert : function(){
+        Ext.Msg.alert(
+            _('Info'),
+            _('Checking this option will show more elements in the menus (File, Tools...) and the Properties tab.')
+        );
+
+    },
+    eXeUIversionSetStatus : function(newValue){
+        let descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");				
+        let contentPanel = false; // The main content. It should always exist. 
+        let iframe = document.getElementsByTagName('iframe');
+        if (iframe.length==1) {
+            iframe = iframe[0];
+            let doc = iframe.contentWindow.document;
+            if (doc.body && typeof(doc.body.className)=="string" && doc.body.className!="") {
+                contentPanel = doc.body;
+            }
+        }
+
+        if (newValue == 0) {
+            Ext.select("BODY").removeCls('exe-advanced');
+            Ext.select("BODY").addCls('exe-simplified'); 
+            // Remove the advanced CSS class from the content panel										
+            if (contentPanel!=false) {
+                contentPanel.className = contentPanel.className.replace(" exe-advanced","");										
+                // If the current iDevice is a JavaScript one and has tabs, show the first one:
+                if (typeof(iframe.contentWindow["$exeAuthoring"])!='undefined')  iframe.contentWindow.$exeAuthoring.iDevice.tabs.restart();
+            }
+            // Change some strings:
+            if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";
+            // Show Properties - Package
+            let e1 = document.getElementById("eXePropertiesTab");
+            if (e1) {
+                let e2 = e1.getElementsByTagName("button");
+                for (let i=0;i<e2.length;i++){
+                    if (e2[i].className=="x-tab-center") {
+                        let span = e2[i].getElementsByTagName("span");
+                        if (span.length==2 && span[0].innerHTML==_("Package")) e2[i].click();
+                    }
+                }
+            }
+        } else {        
+            // Ext.util.Cookies.set('eXeUIversion', 'advanced');
+            Ext.select("BODY").removeCls('exe-simplified');
+            Ext.select("BODY").addCls('exe-advanced');
+            // Add the advanced CSS class to the content panel
+            if (contentPanel!=false && contentPanel.className.indexOf(' exe-advanced')==-1) contentPanel.className += ' exe-advanced';
+            // Change some strings:
+            if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General") + ":";
+        }
+        // Refresh some components
+        try {
+            Ext.getCmp("exe-viewport").doLayout();
+        } catch(e) {}
+    },
     focusMenu: function(button) {
         button.menu.focus();
     },

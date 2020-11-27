@@ -32,7 +32,7 @@ class StandaloneConfig(Config):
     The StandaloneConfig overrides the Config class with ready-to-run specific
     configuration
     """
-    
+
     def _overrideDefaultVals(self):
         """
         Setup with our default settings
@@ -49,6 +49,7 @@ class StandaloneConfig(Config):
         self.templatesDir  = Path(exePath/'content_template').abspath()
         self.styles        = []
         self.lastDir       = exePath
+        self.eXeUIversion  = 2
 
     def _getConfigPathOptions(self):
         """

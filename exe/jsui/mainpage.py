@@ -234,6 +234,10 @@ class MainPage(RenderableLivePage):
             kwargs['identifier'] = name
             hndlr = handler(func, *args, **kwargs)
             hndlr(ctx, client)     # Stores it
+
+        setUpHandler(self.handleSaveEXeUIversion,'saveEXeUIversion')
+        setUpHandler(self.handleIsExeUIAdvanced,'eXeUIVersionCheck')
+
         setUpHandler(self.handleIsPackageDirty, 'isPackageDirty')
         setUpHandler(self.handleIsPackageTemplate, 'isPackageTemplate')
         setUpHandler(self.handlePackageFileName, 'getPackageFileName')
@@ -1383,6 +1387,17 @@ class MainPage(RenderableLivePage):
             reactor.callLater(2, reactor.stop)
         else:
             log.debug("Not quiting. %d clients alive." % len(self.clientHandleFactory.clientHandles))
+
+    def handleSaveEXeUIversion(self,client,status):
+        initial=G.application.config.configParser.get('user', 'eXeUIversion')
+        if initial == '2' :
+            client.call(u'eXe.app.getController("Toolbar").exeUIalert')
+        G.application.config.configParser.set('user', 'eXeUIversion', status)
+        client.call(u'eXe.app.getController("Toolbar").eXeUIversionSetStatus', status)
+
+    def handleIsExeUIAdvanced(self,client):
+        status=G.application.config.configParser.get('user', 'eXeUIversion') 
+        client.call(u'eXe.app.getController("Toolbar").exeUIsetInitialStatus', status)
 
     def handleBrowseURL(self, client, url):
         """

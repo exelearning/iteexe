@@ -81,6 +81,7 @@ class Config(object):
             'showPreferencesOnStart',
             'showNewVersionWarningOnStart',
             'defaultStyle',
+            'eXeUIversion',
             'showIdevicesGrouped',
             'docType',
             'editorMode',
@@ -312,7 +313,7 @@ class Config(object):
         of directories where the configDir should be in order of preference.
         If no config files can be found in these dirs, it will
         force creation of the config file in the top dir
-        """
+        """ 
         # If there's an EXECONF environment variable, use it
         self.configPath = None
         configFileOptions = map(Path, self._getConfigPathOptions())

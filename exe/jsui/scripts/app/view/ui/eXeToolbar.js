@@ -48,7 +48,7 @@ Ext.define('eXe.view.ui.menuitem', {
 
     beforeRender: function() {
         var me = this, pat, rep, key, keymap, html, parts, txt, instructions;
-		
+
 		html = me.text;
 		parts = html.split('<span ');
 		txt = parts[0];
@@ -215,7 +215,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             {
                                 xtype: 'accesskey_menuitem',
                                 text: _('Export') + getSRhelp(),
-                                hideOnClick: false,								
+                                hideOnClick: false,
                                 accesskey: 'e',
                                 menu: {
                                     xtype: 'menu',
@@ -326,7 +326,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             itemId: 'file_extract',
                                             accesskey: 'e',
                                             text: _('Export the current page as elp')
-                                        },                                        
+                                        },
                                         {
                                             cls: 'exe-simplified',
                                             xtype: 'accesskey_menuitem',
@@ -358,7 +358,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             itemId: 'file_insert',
                                             accesskey: 'i',
                                             text: _('Insert elp in the current page')
-                                        },                                    
+                                        },
                                         {
                                             xtype: 'accesskey_menuitem',
                                             itemId: 'file_import_html',
@@ -393,7 +393,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                                     }
                                                 ]
                                             }
-                                        }                                     
+                                        }
                                     ]
                                 }
                             },
@@ -415,7 +415,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         },
                                     ]
                                 },
-                            },*/                            
+                            },*/
                             {
                                 cls: 'exe-advanced',
                                 xtype: 'menuseparator'
@@ -551,10 +551,10 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                     xtype: 'menu',
                                     itemId: 'styles_menu_advanced'
                                 }
-                            }                            
-                        ]                        
+                            }
+                        ]
                     }
-                },                
+                },
                 {
                     cls: 'exe-simplified',
                     xtype: 'accesskey_button',
@@ -645,7 +645,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             }
                         ]
                     }
-                },               
+                },
                 // Advanced user and Preview button
                 '->',
                 // Advanced user
@@ -664,66 +664,15 @@ Ext.define('eXe.view.ui.eXeToolbar', {
 							listeners : {
                                 change: function(e, newValue) {
 
-									var descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");
-									
-									var contentPanel = false; // The main content. It should always exist. 
-									var iframe = document.getElementsByTagName('iframe');
-									if (iframe.length==1) {
-										iframe = iframe[0];
-										var doc = iframe.contentWindow.document;
-										if (doc.body && typeof(doc.body.className)=="string" && doc.body.className!="") {
-											contentPanel = doc.body;
-										}
-									}
-
-									if (newValue==true) {
-										if (!Ext.util.Cookies.get('eXeUIversion')) {
-											Ext.Msg.alert(
-												_('Info'),
-												_('Checking this option will show more elements in the menus (File, Tools...) and the Properties tab.')
-											);
-										}
-										Ext.util.Cookies.set('eXeUIversion', 'advanced');
-										Ext.select("BODY").removeCls('exe-simplified');
-										Ext.select("BODY").addCls('exe-advanced');
-										// Add the advanced CSS class to the content panel
-										if (contentPanel!=false && contentPanel.className.indexOf(' exe-advanced')==-1) contentPanel.className += ' exe-advanced';
-										// Change some strings:
-										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General") + ":";
-                                    } else {
-										Ext.util.Cookies.set('eXeUIversion', 'simplified');
-                                        Ext.select("BODY").removeCls('exe-advanced');
-										Ext.select("BODY").addCls('exe-simplified'); 
-										// Remove the advanced CSS class from the content panel										
-										if (contentPanel!=false) {
-                                            contentPanel.className = contentPanel.className.replace(" exe-advanced","");										
-                                            // If the current iDevice is a JavaScript one and has tabs, show the first one:
-                                            if (typeof(iframe.contentWindow["$exeAuthoring"])!='undefined')  iframe.contentWindow.$exeAuthoring.iDevice.tabs.restart();
-                                        }
-										// Change some strings:
-										if (descriptionLabel && descriptionLabel.length==1) descriptionLabel[0].innerHTML = _("General description") + ":";
-										// Show Properties - Package
-										var e1 = document.getElementById("eXePropertiesTab");
-										if (e1) {
-											var e2 = e1.getElementsByTagName("button");
-											for (var i=0;i<e2.length;i++){
-												if (e2[i].className=="x-tab-center") {
-													var span = e2[i].getElementsByTagName("span");
-													if (span.length==2 && span[0].innerHTML==_("Package")) e2[i].click();
-												}
-											}
-										}
-                                    }
-									// Refresh some components
-									try {
-										Ext.getCmp("exe-viewport").doLayout();
-									} catch(e) {}
+                                    let status=null
+                                    newValue ? status=1 : status = 0
+                                    nevow_clientToServerEvent('saveEXeUIversion',this,'',status)
                                 }
                             }
                         }
                     ]
                 },
-                // Preview button                
+                // Preview button
                 {
 					xtype: 'fieldcontainer',
 					defaultType: 'button',
@@ -735,22 +684,24 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                             itemId: 'tools_preview_button'
                         }
                     ]
-                }            
+                }
             ]
         });
 
         me.callParent(arguments);
 
-		// Advanced user
+        // Advanced user
 		// Get the cookie or set the default value (simplified)
-		var eXeUIversion = Ext.util.Cookies.get('eXeUIversion');
-		if (!eXeUIversion) eXeUIversion = 'simplified';
+		// var eXeUIversion = Ext.util.Cookies.get('eXeUIversion');
+		// if (!eXeUIversion) eXeUIversion = 'simplified';
 		// Check the Advanced option or add the simplified class to the BODY tag
-		if (eXeUIversion=='advanced') {
-			Ext.getCmp("advanced_toggler").setValue(true);
+        /*
+        if (eXeUIversion=='advanced') {
+		Ext.getCmp("advanced_toggler").setValue(true);
 		} else {
 			Ext.select("BODY").addCls('exe-simplified');
-		}
+        }
+        */
 		// / Advanced user
     }
 });
