@@ -33,7 +33,7 @@ pkg_version = None
 # Try to read the version from the version file
 try:
     pkg_version = open('version').readline()
-    release = pkg_version[0:-42]
+    release = pkg_version[0:].strip()
 except:
     # If it doesn't exist, we try to get it from debian/changelog
     try:
@@ -44,18 +44,18 @@ except:
         try:
             import pkg_resources
             pkg_version = pkg_resources.require(project)[0].version
-            release = pkg_version[0:-42]
+            release = pkg_version[0:].strip()
         except:
             # If everything else fails, it may be Windows fault
             import sys
             if sys.platform[:3] == "win":
                 pkg_version = open(sys.prefix + '/version').readline()
-                release = pkg_version[0:-42]
+                release = pkg_version[0:].strip()
             else:
                 # Or we try to get it from Resources
                 try:
                     pkg_version = open('../Resources/exe/version').readline()
-                    release = pkg_version[0:-42]
+                    release = pkg_version[0:].strip()
                 except:
                     release = "unknown"
 
