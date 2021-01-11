@@ -14,29 +14,26 @@ var $eXeVideoQuExt = {
         blue: '#5877c6',
         green: '#00a300',
         red: '#b3092f',
-        white: '#ffffff',
-        yellow: '#f3d55a'
+        white: '#f9f9f9',
+        yellow: '#f3d55a',
+        grey: '#777777',
+        incorrect: '#d9d9d9',
+        correct: '#00ff00'
+
     },
     colors: {
         black: "#1c1b1b",
-        blue: '#d5dcec',
-        green: '#cce1c8',
-        red: '#f7c4c4',
-        white: '#ffffff',
-        yellow: '#f5efd6'
+        blue: '#dfe3f1',
+        green: '#caede8',
+        red: '#fbd2d6',
+        white: '#f9f9f9',
+        yellow: '#fcf4d3',
+        correct: '#dcffdc'
     },
     image: '',
     widthImage: 0,
     heightImage: 0,
     options: {},
-    videos: [],
-    video: {
-        player: '',
-        duration: 0,
-        id: ''
-    },
-    player: '',
-    playerIntro: '',
     userName: '',
     scorm: '',
     previousScore: '',
@@ -164,9 +161,9 @@ var $eXeVideoQuExt = {
     loadGame: function () {
         $eXeVideoQuExt.options = [];
         $eXeVideoQuExt.activities.each(function (i) {
-            var version=$(".vquext-version", this).eq(0).text(),
+            var version = $(".vquext-version", this).eq(0).text(),
                 dl = $(".vquext-DataGame", this),
-                mOption = $eXeVideoQuExt.loadDataGame(dl,version),
+                mOption = $eXeVideoQuExt.loadDataGame(dl, version),
                 msg = mOption.msgs.msgPlayStart;
             $eXeVideoQuExt.options.push(mOption);
             var vquext = $eXeVideoQuExt.createInterfaceVideoQuExt(i);
@@ -181,22 +178,29 @@ var $eXeVideoQuExt = {
             $('#vquextMessageMaximize-' + i).text(msg);
             $('#vquextOptionsDiv-' + i).hide();
             $('#vquextDivReply-' + i).hide();
+            $('#vquextDivFeedBack-' + i).prepend($('.vquext-feedback-game', this));
+            $('#vquextDivFeedBack-' + i).hide();
+
             $eXeVideoQuExt.addEvents(i);
             $eXeVideoQuExt.createPointsVideo(i);
         });
-        setTimeout(function () {
-            if (typeof (YT) !== "undefined") {
-                $eXeVideoQuExt.youTubeReady();
-            } else {
-                $eXeVideoQuExt.loadYoutubeApi();
-            }
-        }, 3000);
+        if (typeof (MathJax) == "undefined") {
+            $eXeVideoQuExt.loadMathJax();
+        }
 
+    },
+    loadMathJax: function () {
+        var tag = document.createElement('script');
+        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
+        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+        tag.async = true;
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     },
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
-        str=unescape(str)
+        str = unescape(str)
         try {
             var key = 146;
             var pos = 0;
@@ -216,30 +220,29 @@ var $eXeVideoQuExt = {
             widthBar = $('#vquextProgressBar-' + instance).width(),
             duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
             widthIntBar = 0;
-        $('#vquextProgressBar-' + instance + ' .vquext-PointBar').remove();
+        $('#vquextProgressBar-' + instance + ' .gameQP-PointBar').remove();
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             widthIntBar = ((mOptions.questionsGame[i].pointVideo - mOptions.startVideoQuExt) * widthBar) / duratioVideo;
-            $('#vquextProgressBar-' + instance).append('<div class="vquext-PointBar"></div>');
-            $('#vquextProgressBar-' + instance + ' .vquext-PointBar').last().css('left', widthIntBar + 'px');
+            $('#vquextProgressBar-' + instance).append('<div class="gameQP-PointBar"></div>');
+            $('#vquextProgressBar-' + instance + ' .gameQP-PointBar').last().css('left', widthIntBar + 'px');
         }
     },
     createInterfaceVideoQuExt: function (instance) {
         var html = '',
             path = $eXeVideoQuExt.idevicePath,
             msgs = $eXeVideoQuExt.options[instance].msgs;
-        html += '<div class="vquext-MainContainer">\
-        <div class="vquext-GameMinimize" id="vquextGameMinimize-' + instance + '">\
-            <a href="#" class="vquext-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'vquextIcon.png" class="vquext-Icons vquext-IconMinimize" alt="Mostrar actividad">\
-                <div class="vquext-MessageMaximize" id="vquextMessageMaximize-' + instance + '"></div>\
+        html += '<div class="gameQP-MainContainer">\
+        <div class="gameQP-GameMinimize" id="vquextGameMinimize-' + instance + '">\
+            <a href="#" class="gameQP-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'vquextIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="' + msgs.msgMaximize + '">\
+                <div class="gameQP-MessageMaximize" id="vquextMessageMaximize-' + instance + '"></div>\
             </a>\
         </div>\
-        <div class="vquext-GameContainer" id="vquextGameContainer-' + instance + '">\
-            <div class="vquext-GameScoreBoard">\
-                <div class="vquext-GameScores">\
-                    <a href="#" class="vquext-LinkMinimize" id="vquextLinkMinimize-' + instance + '" title="Minimizar">\
-                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
-                    </a>\
+        <div class="gameQP-GameContainer" id="vquextGameContainer-' + instance + '">\
+            <div class="gameQP-GameScoreBoard">\
+                <div class="gameQP-GameScores">\
+                    <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
+                    <p id="vquextPNumber-' + instance + '">0</p>\
                     <strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Hit"></div>\
                     <p id="vquextPHits-' + instance + '">0</p>\
@@ -250,7 +253,7 @@ var $eXeVideoQuExt = {
                     <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
                     <p id="vquextPScore-' + instance + '">0</p>\
                 </div>\
-                <div class="vquext-LifesGame" id="vquextLifesGame-' + instance + '">\
+                <div class="gameQP-LifesGame" id="vquextLifesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
@@ -262,123 +265,127 @@ var $eXeVideoQuExt = {
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                 </div>\
-                <div class="vquext-NumberLifesGame" id="vquextNumberLivesGame-' + instance + '">\
+                <div class="gameQP-NumberLifesGame" id="vquextNumberLivesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="vquextPLifes-' + instance + '">0</p>\
                 </div>\
-                <div class="vquext-TimeNumber">\
+                <div class="gameQP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
                     <div class="exeQuextIcons  exeQuextIcons-Time"></div>\
-                    <p id="vquextPTime-' + instance + '" class="vquext-PTime">00:00</p>\
-                    <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
-                    <p id="vquextPNumber-' + instance + '">0</p>\
-                    <a href="#" class="vquext-LinkFullScreen" id="vquextLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+                    <p id="vquextPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
+                    <a href="#" class="gameQP-LinkMinimize" id="vquextLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
+                        <div class="exeQuextIcons exeQuextIcons-Minimize gameQP-Activo"></div>\
+                    </a>\
+                    <a href="#" class="gameQP-LinkFullScreen" id="vquextLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
                         <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-FullScreen" id="vquextFullScreen-' + instance + '">\
+                        <div class="exeQuextIcons exeQuextIcons-FullScreen gameQP-Activo" id="quextFullScreen-' + instance + '">\
                         </div>\
                     </a>\
                 </div>\
             </div>\
-            <div class="vquext-ShowClue" id="vquextShowClue-' + instance + '">\
+            <div class="gameQP-ShowClue" id="vquextShowClue-' + instance + '">\
                 <div class="sr-av">' + msgs.msgClue + ':</div>\
-                <p class="vquext-PShowClue vquext-parpadea" id="vquextPShowClue-' + instance + '"></p>\
+                <p class="gameQP-PShowClue gameQP-parpadea" id="vquextPShowClue-' + instance + '"></p>\
             </div>\
-            <div class="vquext-Multimedia" id="vquextMultimedia-' + instance + '">\
-                <img  src="" class="vquext-Images" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
-                <img src="' + path + 'vquextHome.png" class="vquext-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
-                <div class="vquext-Video" id="vquextVideo-' + instance + '"></div>\
-                <div class="vquext-Protector" id="vquextProtector-' + instance + '"></div>\
-                <div class="vquext-GameOver" id="vquextGamerOver-' + instance + '">\
-                    <div class="vquext-DataGameImage">\
-                        <img src="' + path + 'quextGameWon.png" class="vquext-HistGGame" id="vquextHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '" />\
-                        <img src="' + path + 'quextGameLost.png" class="vquext-LostGGame" id="vquextLostGGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
+            <div class="gameQP-Multimedia" id="vquextMultimedia-' + instance + '">\
+                <img  src="" class="gameQP-Images" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <img src="' + path + 'vquextHome.png" class="gameQP-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
+                <div class="gameQP-Video" id="vquextVideo-' + instance + '"></div>\
+                <div class="gameQP-Protector" id="vquextProtector-' + instance + '"></div>\
+                <div class="gameQP-GameOver" id="vquextGamerOver-' + instance + '">\
+                    <div class="gameQP-DataImage">\
+                        <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="vquextHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
+                        <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="vquextLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
                     </div>\
-                    <div class="vquext-DataGameScore" id="vquextDataGame-' + instance + '">\
+                    <div class="gameQP-DataScore">\
                         <p id="vquextOverScore-' + instance + '">Score: 0</p>\
                         <p id="vquextOverHits-' + instance + '">Hits: 0</p>\
                         <p id="vquextOverErrors-' + instance + '">Errors: 0</p>\
                     </div>\
                 </div>\
             </div>\
-            <div class="vquext-ProgressBar" id="vquextProgressBar-' + instance + '">\
-                <div class="vquext-InterBar" id="vquextInterBar-' + instance + '"></div>\
+            <div class="gameQP-ProgressBar" id="vquextProgressBar-' + instance + '">\
+                <div class="gameQP-InterBar" id="vquextInterBar-' + instance + '"></div>\
             </div>\
-            <div class="vquext-AuthorLicence" id="vquextAuthorLicence-' + instance + '">\
+            <div class="gameQP-AuthorLicence" id="vquextAuthorLicence-' + instance + '">\
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="vquextPAuthor-' + instance + '"></p>\
             </div>\
-            <div class="vquext-CodeAccessDiv" id="vquextCodeAccessDiv-' + instance + '">\
-                <p class="vquext-MessageCodeAccessE" id="vquextMesajeAccesCodeE-' + instance + '"></p>\
-                <div class="vquext-DataCodeAccessE">\
-                    <label for="vquextCodeAccessE">' + msgs.msgCodeAccess + ':</label><input type="text" class="vquext-CodeAccessE"  id="vquextCodeAccessE-' + instance + '" readonly>\
+            <div class="gameQP-CodeAccessDiv" id="vquextCodeAccessDiv-' + instance + '">\
+                <p class="gameQP-MessageCodeAccessE" id="vquextMesajeAccesCodeE-' + instance + '"></p>\
+                <div class="gameQP-DataCodeAccessE">\
+                    <label for="vquextCodeAccessE">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="vquextCodeAccessE-' + instance + '">\
                     <a href="#" id="vquextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
                         <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
-                        <div class="exeQuextIcons-Submit"></div>\
+                        <div class="exeQuextIcons-Submit gameQP-Activo "></div>\
                     </a>\
                 </div>\
             </div>\
-            <div class="sr-av" id="vquextStarGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
-            <div class="vquext-StartGame"><a href="#" id="vquextStarGame-' + instance + '"></a></div>\
-            <div class="vquext-QuestionDiv" id="vquextQuestionDiv-' + instance + '">\
+            <div class="sr-av">' + msgs.msgPlayStart + '</div>\
+            <div class="gameQP-StartGame"><a href="#" id="vquextStartGame-' + instance + '">' + msgs.msgPlayStart + '</a></div>\
+            <div class="gameQP-QuestionDiv" id="vquextQuestionDiv-' + instance + '">\
                 <div class="sr-av">' + msgs.msgQuestions + ':</div>\
-                <div class="vquext-Question" id="vquextQuestion-' + instance + '">\
+                <div class="gameQP-Question" id="vquextQuestion-' + instance + '">\
                 </div>\
-                <div class="vquext-DivReply" id="vquextDivReply-' + instance + '">\
-                    <label class="sr-av">' + msgs.msgIndicateSolution + ':</label><input type="text" value="" class="vquext-EdReply" id="vquextEdAnswer-' + instance + '" autocomplete="off">\
+                <div class="gameQP-DivReply" id="vquextDivReply-' + instance + '">\
+                    <label class="sr-av">' + msgs.msgIndicateSolution + ':</label><input type="text" value="" class="gameQP-EdReply" id="vquextEdAnswer-' + instance + '" autocomplete="off">\
                     <a href="#" id="vquextBtnReply-' + instance + '" title="' + msgs.msgReply + '">\
                         <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
                         <div class="exeQuextIcons-Submit"></div>\
                     </a>\
                 </div>\
-                <div class="vquext-OptionsDiv" id="vquextOptionsDiv-' + instance + '">\
+                <div class="gameQP-OptionsDiv" id="vquextOptionsDiv-' + instance + '">\
                     <div class="sr-av">' + msgs.msgOption + ' A:</div>\
-                    <a href="#"  class="vquext-Option1 vquext-Options" id="vquextOption1-' + instance + '"></a>\
+                    <a href="#"  class="gameQP-Option1 gameQP-Options" id="vquextOption1-' + instance + '" data-number="0"></a>\
                     <div class="sr-av">' + msgs.msgOption + ' B:</div>\
-                    <a href="#"  class="vquext-Option2 vquext-Options" id="vquextOption2-' + instance + '"></a>\
+                    <a href="#"  class="gameQP-Option2 gameQP-Options" id="vquextOption2-' + instance + '" data-number="1"></a>\
                     <div class="sr-av">' + msgs.msgOption + ' C:</div>\
-                    <a href="#"  class="vquext-Option3 vquext-Options" id="vquextOption3-' + instance + '"></a>\
+                    <a href="#"  class="gameQP-Option3 gameQP-Options" id="vquextOption3-' + instance + '" data-number="2"></a>\
                     <div class="sr-av">' + msgs.msgOption + ' D:</div>\
-                    <a href="#"  class="vquext-Option4 vquext-Options" id="vquextOption4-' + instance + '"></a>\
+                    <a href="#"  class="gameQP-Option4 gameQP-Options" id="vquextOption4-' + instance + '" data-number="3"></a>\
                 </div>\
             </div>\
-            <div class="vquext-ReloadContainer" id="vquextVideoReloadContainer-' + instance + '">\
-                <a href="#" class="vquext-LinkReload" id="vquextReeload-' + instance + '" title="' + msgs.msgReloadVideo + '">\
+            <div class="gameQP-ReloadContainer" id="vquextVideoReloadContainer-' + instance + '">\
+                <a href="#" class="gameQP-LinkReload" id="vquextReeload-' + instance + '" title="' + msgs.msgReloadVideo + '">\
                     <strong><span class="sr-av">' + msgs.msgReloadVideo + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Reload"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Reload gameQP-Activo"></div>\
                 </a>\
-                <a href="#" class="vquext-LinkPauseVideo" id="vquextPauseVideo-' + instance + '" title="' + msgs.msgPauseVideo + '">\
+                <a href="#" class="gameQP-LinkPauseVideo" id="vquextPauseVideo-' + instance + '" title="' + msgs.msgPauseVideo + '">\
                     <strong><span class="sr-av">' + msgs.msgPauseVideo + ':</span></strong>\
-                    <div class=" exeQuextIcons exeQuextIcons-PauseVideo"></div>\
+                    <div class=" exeQuextIcons exeQuextIcons-PauseVideo gameQP-Activo"></div>\
                 </a>\
-                <a href="#" class="vquext-LinkPreview" id="vquextPreview-' + instance + '" title="' + msgs.msgPreviewQuestions + '">\
+                <a href="#" class="gameQP-LinkPreview" id="vquextPreview-' + instance + '" title="' + msgs.msgPreviewQuestions + '">\
                     <strong><span class="sr-av">' + msgs.msgPreviewQuestions + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Preview"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Preview gameQP-Activo"></div>\
                 </a>\
             </div>\
-            <div class="vquext-previewQuestionsDiv" id="vquextpreviewQuestionsDiv-' + instance + '">\
-                <p class="vquext-PreviewQuestionsTitle">' + msgs.msgQuestions + '</p>\
+            <div class="gameQP-previewQuestionsDiv" id="vquextpreviewQuestionsDiv-' + instance + '">\
+                <p class="gameQP-PreviewQuestionsTitle">' + msgs.msgQuestions + '</p>\
                 <strong><span class="sr-av">' + msgs.msgQuestions + ':</span></strong>\
-                <input type="button" class="feedbackbutton vquext-previewQuestionsClose"  id="vquextpreviewQuestionsClose-' + instance + '" value="' + msgs.msgClose + '" />\
+                <input type="button" class="feedbackbutton gameQP-previewQuestionsClose"  id="vquextpreviewQuestionsClose-' + instance + '" value="' + msgs.msgClose + '" />\
+            </div>\
+            <div class="gameQP-DivFeedBack" id="vquextDivFeedBack-' + instance + '">\
+                <input type="button" id="vquextFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
             </div>\
         </div>\
     </div>\
-    ' + this.addButtonScore(instance)
+    ' + this.addButtonScore(instance);
         return html;
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         var butonScore = "";
-        var fB = '<div class="vquext-BottonContainer">';
+        var fB = '<div class="gameQP-BottonContainer">';
         if (mOptions.isScorm == 2) {
             var buttonText = mOptions.textButtonScorm;
             if (buttonText != "") {
                 if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                     this.hasSCORMbutton = true;
-                    fB += '<div class="vquext-GetScore">';
+                    fB += '<div class="gameQP-GetScore">';
                     if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
-                    fB += '<p><input type="button" id="vquextSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton vquext-SendScore" /> <span class="vquext-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
+                    fB += '<p><input type="button" id="vquextSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton gameQP-SendScore" /> <span class="gameQP-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
                     if (!this.isInExe) fB += '</form>';
                     fB += '</div>';
                     butonScore = fB;
@@ -387,8 +394,8 @@ var $eXeVideoQuExt = {
         } else if (mOptions.isScorm == 1) {
             if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                 this.hasSCORMbutton = true;
-                fB += '<div class="vquext-GetScore">';
-                fB += '<p><span class="vquext-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
+                fB += '<div class="gameQP-GetScore">';
+                fB += '<p><span class="gameQP-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
                 fB += '</div>';
                 butonScore = fB;
             }
@@ -396,13 +403,19 @@ var $eXeVideoQuExt = {
         fB = +'</div>';
         return butonScore;
     },
-    loadDataGame: function (data,version) {
+    loadDataGame: function (data, version) {
         var json = data.text();
-        if (version==1){
-            json=$eXeVideoQuExt.Decrypt(json);
+        if (version == 1) {
+            json = $eXeVideoQuExt.Decrypt(json);
         }
         var mOptions = $eXeVideoQuExt.isJsonString(json);
+        mOptions.waitStart = false;
+        mOptions.questionAnswer = false;
+        mOptions.gameMode = typeof mOptions.gameMode != 'undefined' ? mOptions.gameMode : 0;
+        mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
+        mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.gameOver = false;
+        mOptions.gameStarted = false;
         mOptions.idVideoQuExt = $eXeVideoQuExt.getIDYoutube(mOptions.idVideoQuExt);
         mOptions.numberQuestions = mOptions.questionsGame.length;
         return mOptions;
@@ -437,10 +450,38 @@ var $eXeVideoQuExt = {
                     'onError': $eXeVideoQuExt.onPlayerError
                 }
             });
-            $('#vquextStarGame-' + i).text(mOptions.msgs.msgStartGame);
-            $('#vquextCodeAccessE-' + i).prop("readonly", false);
 
-
+        }
+    },
+    youTubeReadyOne: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance];
+        mOptions.player = new YT.Player('vquextVideo-' + instance, {
+            width: '100%',
+            height: '100%',
+            videoId: '',
+            playerVars: {
+                'color': 'white',
+                'autoplay': 0,
+                'controls': 0
+            },
+            events: {
+                'onReady': $eXeVideoQuExt.onPlayerReady,
+                'onError': $eXeVideoQuExt.onPlayerError
+            }
+        });
+    },
+    getYTAPI: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance];
+        if ((typeof (mOptions.player) == "undefined")) {
+            $('#vquextStartGame-' + instance).text(mOptions.msgs.msgLoading);
+            mOptions.waitStart = true;
+            if (typeof (YT) !== "undefined") {
+                $eXeVideoQuExt.youTubeReadyOne(instance);
+            } else {
+                $eXeVideoQuExt.loadYoutubeApi();
+            }
+        } else {
+            $eXeVideoQuExt.startGame(instance);
         }
     },
     loadYoutubeApi: function () {
@@ -452,40 +493,60 @@ var $eXeVideoQuExt = {
 
     },
     onPlayerReady: function (event) {
-        $eXeVideoQuExt.youtubeLoaded = true;
+        var video = event.target.h.id;
+        video = video.split("-");
+        if (video.length == 2 && video[0] == "vquextVideo") {
+            var instance = parseInt(video[1]);
+            if (!isNaN(instance)) {
+                $eXeVideoQuExt.preloadGame(instance);
+            }
+
+        }
     },
     updateTimerDisplay: function () {},
     updateProgressBar: function () {},
     onPlayerError: function (event) {},
     startVideo: function (id, start, end, instance) {
-        var mOptions = $eXeVideoQuExt.options[instance];
+        var mOptions = $eXeVideoQuExt.options[instance],
+            mstart = start < 1 ? 0.1 : start;
         if (mOptions.player) {
-            mOptions.player.loadVideoById({
-                'videoId': id,
-                'startSeconds': start,
-                'endSeconds': end
-            });
+            if (typeof mOptions.player.loadVideoById == "function") {
+                mOptions.player.loadVideoById({
+                    'videoId': id,
+                    'startSeconds': mstart,
+                    'endSeconds': end
+                });
+            }
         }
     },
+
     playVideo: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.player) {
-            mOptions.player.playVideo();
+            if (typeof mOptions.player.playVideo == "function") {
+                mOptions.player.playVideo();
+            }
         }
     },
     stopVideo: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.player) {
-            mOptions.player.pauseVideo();
+            if (typeof mOptions.player.pauseVideo == "function") {
+                mOptions.player.pauseVideo();
+            }
         }
     },
     muteVideo: function (mute, instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.player) {
             if (mute) {
-                mOptions.player.mute();
+                if (typeof mOptions.player.mute == "function") {
+                    mOptions.player.mute();
+                }
             } else {
-                mOptions.player.unMute();
+                if (typeof mOptions.player.unMute == "function") {
+                    mOptions.player.unMute();
+                }
             }
         }
     },
@@ -573,17 +634,15 @@ var $eXeVideoQuExt = {
             return true;
         });
         mOptions.livesLeft = mOptions.numberLives;
-        $('#vquextStarGame-' + instance).text(mOptions.msgs.msgLoading);
-        $('#vquextStarGame-' + instance).on('click', function (e) {
+        $('#vquextStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
+        $('#vquextStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
-            $eXeVideoQuExt.startGame(instance);
+            $eXeVideoQuExt.getYTAPI(instance);
         })
-        $("#vquextOptionsDiv-" + instance).on('click touchstart', function (e) {
+        $("#vquextOptionsDiv-" + instance).on('click touchstart', '.gameQP-Options', function (e) {
             e.preventDefault();
-            if ($(e.target).hasClass('vquext-Options')) {
-                var answer = $(e.target).text();
-                $eXeVideoQuExt.answerQuestion(answer, instance);
-            }
+            var answer = $(this).data('number');
+            $eXeVideoQuExt.answerQuestion(answer, instance);
         });
         $("#vquextLinkFullScreen-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -594,13 +653,13 @@ var $eXeVideoQuExt = {
         $('#vquextInstructions-' + instance).text(mOptions.instructions);
 
         $('#vquextPNumber-' + instance).text(mOptions.numberQuestions);
-        $('#vquextGameContainer-' + instance+' .vquext-StartGame').show();
+        $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
         $('#vquextQuestionDiv-' + instance).hide();
         if (mOptions.itinerary.showCodeAccess) {
             $('#vquextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#vquextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#vquextCodeAccessDiv-' + instance).show();
-            $('#vquextGameContainer-' + instance+' .vquext-StartGame').hide();
+            $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').hide();
             $('#vquextQuestionDiv-' + instance).hide();
 
         }
@@ -615,9 +674,21 @@ var $eXeVideoQuExt = {
         $('#vquextPShowClue-' + instance).hide();
         mOptions.gameOver = false;
         window.addEventListener('resize', function () {
-
             $eXeVideoQuExt.refreshImageActive(instance);
         });
+        if (mOptions.gameMode == 2) {
+            $('#vquextGameContainer-' + instance).find('.exeQuextIcons-Hit').hide();
+            $('#vquextGameContainer-' + instance).find('.exeQuextIcons-Error').hide();
+            $('#vquextPErrors-' + instance).hide();
+            $('#vquextPHits-' + instance).hide();
+            $('#vquextGameContainer-' + instance).find('.exeQuextIcons-Score').hide();
+            $('#vquextPScore-' + instance).hide();
+        }
+        $('#vquextFeedBackClose-' + instance).on('click', function (e) {
+            $('#vquextDivFeedBack-' + instance).hide();
+        });
+
+
     },
     pauseVideoQuestion: function (instance, pause) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -635,9 +706,9 @@ var $eXeVideoQuExt = {
     },
     previewQuestions: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
-        $('#vquextpreviewQuestionsDiv-' + instance).find('.vquext-prevQuestP').remove();
+        $('#vquextpreviewQuestionsDiv-' + instance).find('.gameQP-prevQuestP').remove();
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
-            $('#vquextpreviewQuestionsDiv-' + instance).append('<p class="vquext-prevQuestP">' + (i + 1) + '.- ' + mOptions.questionsGame[i].quextion + '</p>');
+            $('#vquextpreviewQuestionsDiv-' + instance).append('<p class="gameQP-prevQuestP">' + (i + 1) + '.- ' + mOptions.questionsGame[i].quextion + '</p>');
         }
         $('#vquextpreviewQuestionsDiv-' + instance).slideToggle();
     },
@@ -645,7 +716,7 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.stateReproduction > 1) return;
         $eXeVideoQuExt.pauseVideoQuestion(instance, false);
-        pointVideo = mOptions.activeQuestion > 0 ? mOptions.questionsGame[mOptions.activeQuestion - 1].pointVideo : mOptions.startVideoQuExt;
+        var pointVideo = mOptions.activeQuestion > 0 ? mOptions.questionsGame[mOptions.activeQuestion - 1].pointVideo : mOptions.startVideoQuExt;
         mOptions.player.seekTo(pointVideo + 1);
         mOptions.stateReproduction = 0;
         $eXeVideoQuExt.clearQuestions(instance);
@@ -672,20 +743,19 @@ var $eXeVideoQuExt = {
 
                 }
             });
-            $eXeVideoQuExt.createPointsVideo(instance);
+        $eXeVideoQuExt.createPointsVideo(instance);
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.itinerary.codeAccess === $('#vquextCodeAccessE-' + instance).val()) {
-            $('#vquextQuestionDiv-' + instance).show();
             $('#vquextCodeAccessDiv-' + instance).hide();
-            $eXeVideoQuExt.startGame(instance);
+            $eXeVideoQuExt.getYTAPI(instance);
         } else {
             $('#vquextMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
             $('#vquextCodeAccessE-' + instance).val('');
         }
     },
-    showScoreGame: function (type, instance) {
+    showScoreGame1: function (type, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             msgs = mOptions.msgs,
             $vquextHistGGame = $('#vquextHistGGame-' + instance),
@@ -707,11 +777,11 @@ var $eXeVideoQuExt = {
         $vquextPShowClue.hide();
         switch (parseInt(type)) {
             case 0:
-                message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
+                message = msgs.msgCool + ' ' + msgs.msgAllQuestions;
                 $vquextHistGGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        message = msgs.mgsAllQuestions;
+                        message = msgs.msgAllQuestions;
                         $vquextPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
                         $vquextPShowClue.show();
                     } else {
@@ -752,19 +822,84 @@ var $eXeVideoQuExt = {
         $vquextOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
         $vquextGamerOver.show();
     },
+
+    showScoreGame: function (type, instance) {
+        var mOptions = $eXeVideoQuExt.options[instance],
+            msgs = mOptions.msgs,
+            $quextHistGame = $('#vquextHistGame-' + instance),
+            $quextLostGame = $('#vquextLostGame-' + instance),
+            $quextOverPoint = $('#vquextOverScore-' + instance),
+            $quextOverHits = $('#vquextOverHits-' + instance),
+            $quextOverErrors = $('#vquextOverErrors-' + instance),
+            $quextPShowClue = $('#vuextPShowClue-' + instance),
+            $quextGamerOver = $('#vquextGamerOver-' + instance),
+            message = "",
+            messageColor = 2;
+        $quextHistGame.hide();
+        $quextLostGame.hide();
+        $quextOverPoint.show();
+        $quextOverHits.show();
+        $quextOverErrors.show();
+        $quextPShowClue.hide();
+        switch (parseInt(type)) {
+            case 0:
+                message = msgs.msgCool + ' ' + msgs.msgAllQuestions;
+                $quextHistGame.show();
+                if (mOptions.itinerary.showClue) {
+                    if (mOptions.obtainedClue) {
+                        message = msgs.msgAllQuestions;
+                        $quextPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                        $quextPShowClue.show();
+                    } else {
+                        $quextPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                        $quextPShowClue.show();
+                    }
+                }
+                break;
+            case 1:
+                message = msgs.msgLostLives;
+                messageColor = 1;
+                $quextLostGame.show();
+                if (mOptions.itinerary.showClue) {
+                    if (mOptions.obtainedClue) {
+                        $quextPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                        $quextPShowClue.show();
+                    } else {
+                        $quextPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
+                        $quextPShowClue.show();
+                    }
+                }
+                break;
+            case 2:
+                message = msgs.msgInformationLooking
+                $quextOverPoint.hide();
+                $quextOverHits.hide();
+                $quextOverErrors.hide();
+                $quextPShowClue.text(mOptions.itinerary.clueGame);
+                $quextPShowClue.show();
+                break;
+            default:
+                break;
+        }
+        $eXeVideoQuExt.showMessage(messageColor, message, instance);
+        var msscore = mOptions.gameMode == 0 ? msgs.msgScore + ': ' + mOptions.score : msgs.msgScore + ': ' + mOptions.score.toFixed(2);
+        $quextOverPoint.text(msscore);
+        $quextOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
+        $quextOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
+        if (mOptions.gameMode == 2) {
+            $('#vquextGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
+        }
+        $quextGamerOver.show();
+    },
     startGame: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
-        if (!$eXeVideoQuExt.youtubeLoaded) {
-            $eXeVideoQuExt.showMessage(1, mOptions.msgs.msgLoadInterface, instance)
-            return;
-        }
         if (mOptions.gameStarted) {
             return;
         };
         mOptions.obtainedClue = false;
         $('#vquextPShowClue-' + instance).hide();
         $('#vquextPShowClue-' + instance).text("");
-        $('#vquextGameContainer-' + instance+' .vquext-StartGame').hide();
+        $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').hide();
         $('#vquextQuestionDiv-' + instance).show();
         $('#vquextQuestion-' + instance).text('');
         $('#vquextProgressBar-' + instance).show();
@@ -798,7 +933,10 @@ var $eXeVideoQuExt = {
             switch (mOptions.stateReproduction) {
                 case 0:
                     mOptions.gameActived = false;
-                    var timeVideo = mOptions.player.getCurrentTime();
+                    var timeVideo = 0;
+                    if (mOptions.player && typeof mOptions.player.getCurrentTime == "function") {
+                        timeVideo = mOptions.player.getCurrentTime();
+                    };
                     var pointVideo = timeVideo + 2;
                     $eXeVideoQuExt.updataProgressBar(timeVideo, instance);
                     if (mOptions.activeQuestion < mOptions.questionsGame.length) {
@@ -826,7 +964,7 @@ var $eXeVideoQuExt = {
                         mOptions.gameActived = false;
                         if (mOptions.showSolution) {
                             mOptions.counter = mOptions.timeShowSolution;
-                            $eXeVideoQuExt.drawSolution(instance, false);
+                            $eXeVideoQuExt.drawSolution(instance);
                             mOptions.stateReproduction = 2;
                         } else {
                             mOptions.stateReproduction = 3;
@@ -897,14 +1035,14 @@ var $eXeVideoQuExt = {
         $('#vquextProgressBar-' + instance).hide();
         $('#vquextCursor-' + instance).hide();
         $('#vquextCover-' + instance).hide();
-        var message = type === 0 ? mOptions.msgs.mgsAllQuestions : mOptions.msgs.msgLostLives;
+        var message = type === 0 ? mOptions.msgs.msgAllQuestions : mOptions.msgs.msgLostLives;
         $eXeVideoQuExt.showMessage(0, message, instance);
         $eXeVideoQuExt.showScoreGame(type, instance);
         $eXeVideoQuExt.clearQuestions(instance);
         $eXeVideoQuExt.uptateTime(0, instance);
         $('#vquextPNumber-' + instance).text('0');
-        $('#vquextStarGame-' + instance).text(mOptions.msgs.msgNewGame);
-        $('#vquextGameContainer-' + instance+' .vquext-StartGame').show();
+        $('#vquextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
+        $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
         $('#vquextQuestionDiv-' + instance).hide();
         mOptions.gameOver = true;
         if (mOptions.isScorm === 1) {
@@ -915,11 +1053,29 @@ var $eXeVideoQuExt = {
                 $eXeVideoQuExt.initialScore = score;
             }
         }
+        $eXeVideoQuExt.showFeedBack(instance);
+    },
+    showFeedBack: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance];
+        var puntos = mOptions.hits * 100 / mOptions.questionsGame.length;
+        if (mOptions.gameMode == 2 || mOptions.feedBack) {
+            $('#vquextHistGame-' + instance).hide();
+            $('#qvuextLostGame-' + instance).hide();
+            if (puntos >= mOptions.percentajeFB) {
+                $('#vquextDivFeedBack-' + instance).find('.vquext-feedback-game').show();
+                $('#vquextDivFeedBack-' + instance).show();
+                $('#vquextHistGame-' + instance).show();
+            } else {
+                $eXeVideoQuExt.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
+                $('#vquextLostGame-' + instance).show();
+            }
+        }
     },
     drawText: function (texto, color) {},
     showQuestion: function (i, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             mQuextion = mOptions.questionsGame[i];
+        mOptions.questionAnswer = false;
         $('#vquextPNumber-' + instance).text(mOptions.numberQuestions - mOptions.activeQuestion)
         mOptions.question = mQuextion;
         if (mOptions.answersRamdon) {
@@ -946,6 +1102,7 @@ var $eXeVideoQuExt = {
                 $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+
     },
     getIDYoutube: function (url) {
         var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
@@ -968,6 +1125,9 @@ var $eXeVideoQuExt = {
                 }
             }
         });
+        if (!mOptions.useLives) {
+            $('#vquextNumberLivesGame-' + instance).hide();
+        }
     },
 
     getTimeSeconds: function (iT) {
@@ -986,66 +1146,37 @@ var $eXeVideoQuExt = {
         if (!mOptions.gameActived) {
             return;
         }
-        var answord = $.trim(answer.toUpperCase());
-        if (mOptions.question.typeQuestion == 1 && answord.length == 0) {
-            $eXeAdivina.showMessage(1, mOptions.msgs.msgIndicateSolution, instance);
+        if (mOptions.question.typeQuestion == 1 && $.trim(answer).length == 0) {
+            $eXeVideoQuExt.showMessage(1, mOptions.msgs.msgIndicateSolution, instance);
             return;
         }
         mOptions.gameActived = false;
-        var message = "",
-            solution = $.trim(mOptions.question.options[mOptions.question.solution]).toUpperCase(),
-            valid = false;
+        var valid = false;
         if (mOptions.question.typeQuestion == 1) {
             valid = $eXeVideoQuExt.checkWord(mOptions.question.solutionQuestion, answer);
         } else {
-            valid = solution === answord;
+            valid = answer === mOptions.question.solution;
         }
+        mOptions.questionAnswer = true;
+        $eXeVideoQuExt.updateScore(valid, instance);
         if (mOptions.showSolution) {
             $eXeVideoQuExt.drawSolution(instance);
         }
-        var obtainedPoints = 0,
-            type = 1;
-        if (valid) {
-            mOptions.hits++
-            color = $eXeVideoQuExt.colors.green;
-            obtainedPoints = 1000 + mOptions.counter * 10;
-            message = $eXeVideoQuExt.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' ' + mOptions.msgs.mgsPoints;
-            type = 2;
-        } else {
-            mOptions.errors++;
-            if (mOptions.useLives) {
-                mOptions.livesLeft--;
-                $eXeVideoQuExt.updateLives(instance);
-                message = $eXeVideoQuExt.getRetroFeedMessages(false, instance) + ' ' + mOptions.msgs.msgLoseLive;
-            } else {
-                obtainedPoints = -330;
-                message = $eXeVideoQuExt.getRetroFeedMessages(false, instance) + ' ' + mOptions.msgs.msgLoseT;
-            }
-        }
-        var tmsg=message;
-        if (mOptions.question.typeQuestion == 1 && mOptions.showSolution) {
-            tmsg = message + ': ' + mOptions.question.solutionQuestion;
-        }
-        mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
-        $('#vquextPScore-' + instance).text(mOptions.score);
         var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
                 mOptions.obtainedClue = true;
-                tmsg=message + " " + mOptions.msgs.msgUseFulInformation;
                 $('#vquextPShowClue-' + instance).show();
                 $('#vquextPShowClue-' + instance).text(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
             }
         }
         mOptions.counter = 1;
-
         if (mOptions.useLives && mOptions.livesLeft <= 0) {
             $eXeVideoQuExt.gameOver(1, instance);
             return;
         }
-        $eXeVideoQuExt.showMessage(type, tmsg, instance);
         if (mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeVideoQuExt.initialScore === '') {
                 var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
@@ -1055,7 +1186,67 @@ var $eXeVideoQuExt = {
             }
         }
     },
+    preloadGame: function (instance) {
+        var x = instance,
+            mOptions = $eXeVideoQuExt.options[instance];
+        if (mOptions.waitStart) {
+            mOptions.waitStart = false;
+            $eXeVideoQuExt.startGame(x);
+        }
+    },
 
+    updateScore: function (correctAnswer, instance) {
+        var mOptions = $eXeVideoQuExt.options[instance],
+            message = "",
+            obtainedPoints = 0,
+            type = 1,
+            msgs = mOptions.msgs,
+            sscore = 0;
+        var pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (correctAnswer) {
+            mOptions.hits++
+            if (mOptions.gameMode == 0) {
+                var pointsTemp = mOptions.counter < 60 ? mOptions.counter * 10 : 600;
+                obtainedPoints = 1000 + pointsTemp;
+                message = $eXeVideoQuExt.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' ' + pts;
+
+            } else if (mOptions.gameMode == 1) {
+                obtainedPoints = ((10) / mOptions.questionsGame.length);
+                var points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
+                message = $eXeVideoQuExt.getRetroFeedMessages(true, instance) + ' ' + points + ' ' + pts;
+
+            } else if (mOptions.gameMode == 2) {
+                obtainedPoints = ((10) / mOptions.questionsGame.length);
+                message = $eXeVideoQuExt.getRetroFeedMessages(true, instance);
+            }
+            type = 2;
+
+        } else {
+            mOptions.errors++;
+            if (mOptions.gameMode != 0) {
+                message = "";
+            } else {
+                obtainedPoints = -330
+                message = ' ' + msgs.msgLoseT;
+                if (mOptions.useLives) {
+                    mOptions.livesLeft--;
+                    $eXeVideoQuExt.updateLives(instance);
+                    message = ' ' + msgs.msgLoseLive;
+                }
+            }
+            message = $eXeVideoQuExt.getRetroFeedMessages(obtainedPoints > 0, instance) + message;
+        }
+        mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
+        sscore = mOptions.score;
+        if (mOptions.gameMode != 0) {
+            sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
+        }
+        $('#vquextPScore-' + instance).text(sscore);
+        $('#vquextPHits-' + instance).text(mOptions.hits);
+        $('#vquextPErrors-' + instance).text(mOptions.errors);
+        $eXeVideoQuExt.showMessage(type, message, instance);
+
+    },
 
     checkWord: function (word, answord) {
         var sWord = $.trim(word).replace(/\s+/g, " ").toUpperCase().replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, ""),
@@ -1147,8 +1338,6 @@ var $eXeVideoQuExt = {
     drawQuestions: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
-            colors = [$eXeVideoQuExt.colors.red, $eXeVideoQuExt.colors.blue, $eXeVideoQuExt.colors.green, $eXeVideoQuExt.colors.yellow],
-            bordeColors = [$eXeVideoQuExt.borderColors.red, $eXeVideoQuExt.borderColors.blue, $eXeVideoQuExt.borderColors.green, $eXeVideoQuExt.borderColors.yellow],
             ntime = $eXeVideoQuExt.getTimeToString($eXeVideoQuExt.getTimeSeconds(mQuextion.time))
         $('#vquextQuestion-' + instance).text(mQuextion.quextion).show();
         $('#vquextPTime-' + instance).text(ntime);
@@ -1157,13 +1346,13 @@ var $eXeVideoQuExt = {
             $('#vquextOptionsDiv-' + instance).hide();
             $('#vquextSolutionWord').focus();
         } else {
-            $('#vquextOptionsDiv-' + instance + '>.vquext-Options').each(function (index) {
+            $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
                 var option = mQuextion.options[index]
                 $(this).css({
-                    'border-color': bordeColors[index],
-                    'background-color': colors[index],
+                    'border-color': $eXeVideoQuExt.borderColors.grey,
+                    'background-color': 'transparent',
                     'cursor': 'pointer',
-                    "text-aling":"center"
+                    "text-aling": "center"
                 }).text(option);
                 if (option) {
                     $(this).show();
@@ -1174,41 +1363,49 @@ var $eXeVideoQuExt = {
             $('#vquextOptionsDiv-' + instance).show();
             $('#vquextDivReply-' + instance).hide();
         }
+        if (typeof (MathJax) != "undefined") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#vquextGameContainer-' + instance]);
+        }
     },
-    drawSolution: function (instance, valid) {
-        var mOptions = $eXeVideoQuExt.options[instance];
-        if (mOptions.question.typeQuestion == 1) {
+    drawSolution: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance],
+            message = '';
+        if ((mOptions.question.typeQuestion == 1) && (mOptions.questionAnswer === false)) {
+            message = mOptions.msgs.msgSolution + ': ' + mOptions.question.solutionQuestion;
+            $eXeVideoQuExt.showMessage(1, message, instance);
+            $('#vquextDivReply-' + instance).hide();
 
         } else {
-            $('#vquextOptionsDiv-' + instance + '>.vquext-Options').each(function (index) {
+            $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
                 if (index === mOptions.question.solution) {
                     $(this).css({
-                        'border-color': '#00ff00',
-                        'background-color': '#dcffdc',
+                        'border-color': $eXeVideoQuExt.borderColors.correct,
+                        'background-color': $eXeVideoQuExt.colors.correct,
                         'cursor': 'default',
-                        "text-aling":"center"
+                        "text-aling": "center"
                     });
                 } else {
                     $(this).css({
-                        'border-color': '#cccccc',
+                        'border-color': $eXeVideoQuExt.borderColors.incorrect,
                         'background-color': 'transparent',
                         'cursor': 'default',
-                        "text-aling":"center"
+                        "text-aling": "center"
                     });
                 }
             });
         }
+        if (typeof (MathJax) != "undefined") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#vquextGameContainer-' + instance]);
+        }
 
     },
     clearQuestions: function (instance) {
-        var colors = [$eXeVideoQuExt.colors.red, $eXeVideoQuExt.colors.blue, $eXeVideoQuExt.colors.green, $eXeVideoQuExt.colors.yellow];
-        var bordeColors = [$eXeVideoQuExt.borderColors.red, $eXeVideoQuExt.borderColors.blue, $eXeVideoQuExt.borderColors.green, $eXeVideoQuExt.borderColors.yellow];
-        $('#vquextOptionsDiv-' + instance + '>.vquext-Options').each(function (index) {
+        $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
             $(this).css({
-                'border-color': bordeColors[index],
-                'background-color': colors[index],
+                'border-color': $eXeVideoQuExt.borderColors.grey,
+                'background-color': 'transparent',
                 'cursor': 'default',
-                'text-aling':'center'
+                'text-aling': 'center'
             }).text('');
         });
         $('#vquextQuestion-' + instance).text("");
