@@ -1,585 +1,489 @@
- .desafio-LinkFullScreen {
-     width: 34px;
-     height: 34px;
-     margin-right: 5px;
- }
-
- .sr-av {
-     position: absolute;
-     overflow: hidden;
-     clip: rect(0 0 0 0);
-     clip: rect(0, 0, 0, 0);
-     height: 0
- }
-
- .desafio-GameMinimize {
-     width: 350px;
-     margin: 5px auto;
-     display: none;
- }
-
- .desafio-GameContainer {
-     position: relative;
-     width: 95%;
-     margin: 5px auto;
-     min-width: 220px;
-     padding: 5px;
-     background-color: transparent;
-     display: none;
- }
-
- .desafio-GameScoreBoard {
-     width: 100%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     align-content: center;
-     margin-top: 2px;
- }
-
- .desafio-GameScoreBoard p {
-     font-size: 1.1em;
-     font-weight: bold;
-     text-align: center;
- }
-
- .desafio-TimeNumber {
-     width: 160px;
-     margin: 0;
-     display: flex;
-     justify-content: flex-end;
-     align-items: center;
- }
-
- .desafio-TimeNumber p {
-     text-align: left;
-     font-size: 1rem;
-     width: 70px;
-     margin: 0 5px;
- }
-
- .desafio-GameChallenges {
-     width: 500px;
-     margin: 0 3px;
-     display: flex;
-     justify-content: start;
-     align-items: center;
- }
-
- .desafio-DateDiv {
-     margin: 20px auto 5px auto;
-     width: 99%;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
- }
-
- .desafio-DateDiv p {
-     margin-right: 7px;
-     line-height: 24px;
-     color: #071717;
-     font-weight: bold;
-     font-size: 0.8em;
- }
-
- .desafio-UpMinimizeImg {
-     -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
-     cursor: pointer;
- }
-
- .desafio-SolutionDiv {
-     width: 100%;
-     margin-top: 10px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
-
- .desafio-Solution {
-     margin: 0 5px;
-     width: 50%;
-     max-width: 200px;
-     font-size: 1em;
-     text-align: center;
-     padding: 0;
- }
-
- .desafio-GameOver {
-     width: 100%;
-     height: 100%;
-     background: transparent;
-     position: absolute;
-     left: 0;
-     top: 0;
-     z-index: 10010;
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
-     display: none;
- }
-
- .desafio-DataImageGameOver {
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
-
- .desafio-SolvedChallenges {
-     width: 100%;
-     margin: 5px auto 5px auto;
- }
-
- .desafio-SolvedChallenges p {
-     width: 100%;
-     font-size: 1.1px;
-     text-align: center;
-     font-weight: bolder;
-     color: #00ab00;
- }
-
- .exeQuextIcons-Submit {
-     background: url(exequextreply.png) no-repeat;
-     background-size: cover;
-     height: 30px;
-     width: 30px;
- }
-
- .desafio-DataImageGameOver p {
-     font-size: 1.1em;
-     font-weight: bold;
- }
-
- .desafio-Instructions {
-     max-width: 1000px;
-     width: 90%;
-     margin: 3px auto;
-     text-align: center;
-     font-size: 1em;
- }
-
- .desafio-MainContainer a:link, .desafio-MainContainer a:link, .desafio-MainContainer a:visited, .desafio-MainContainer a:focus {
-     text-decoration: none !important;
-     border: 0px !important;
-     outline: none;
-     border-width: 0px;
-     outline-width: 0px;
-     border-bottom: none;
- }
-
- .desafio-LinkMaximize {
-     width: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
- }
-
- .desafio-GameMinimize {
-     width: auto;
-     margin: 5px auto;
-     display: none;
- }
-
- .desafio-IconMinimize {
-     width: 32px;
-     height: 32px;
-     margin-right: 5px;
-     cursor: pointer;
- }
-
- .desafio-IconMinimize:hover {
-     -moz-transform: scale(1.1);
-     -webkit-transform: scale(1.1);
-     -o-transform: scale(1.1);
-     -ms-transform: scale(1.1);
-     transform: scale(1.1);
- }
-
- .exeQuextIcons34 {
-     margin-right: 5px;
-     width: 34px;
-     height: 34px;
- }
-
- .exeQuextRetos {
-     width: 34px;
-     height: 34px;
-     margin-right: 5px;
- }
-
- .exeQuextIcons34-Time {
-     background: url(exequexttime.png) no-repeat;
-     background-size: cover;
- }
-
- .exeQuextIcons34-Minimize {
-     background: url(exequextmin.png) no-repeat;
-     background-size: cover;
-     margin-right: 5px;
- }
-
- .desafio-LinkReboot {
-     width: 24px;
-     height: 24px;
- }
-
- .exeDesafio-IconReboot {
-     background: url(exequextdesafioreboot.png) no-repeat;
-     background-size: cover;
-     width: 24px;
-     height: 24px;
- }
-
- .desafio-GameDesafio {
-     width: 40px;
-     height: 40px;
-     background: url(desafioicon2.png) no-repeat 0 0;
-     margin-right: 10px;
- }
-
- .exeQuextRetos-C0 {
-     background: url(exeRetosIcons.png) no-repeat 0 0;
- }
-
- .exeQuextRetos-C1 {
-     background: url(exeRetosIcons.png) no-repeat -34px 0;
- }
-
- .exeQuextRetos-C2 {
-     background: url(exeRetosIcons.png) no-repeat -68px 0;
- }
-
- .exeQuextRetos-C3 {
-     background: url(exeRetosIcons.png) no-repeat -102px 0;
- }
-
- .exeQuextRetos-C4 {
-     background: url(exeRetosIcons.png) no-repeat -136px 0;
- }
-
- .exeQuextRetos-C5 {
-     background: url(exeRetosIcons.png) no-repeat -170px 0;
- }
-
- .exeQuextRetos-C6 {
-     background: url(exeRetosIcons.png) no-repeat -204px 0;
- }
-
- .exeQuextRetos-C7 {
-     background: url(exeRetosIcons.png) no-repeat -238px 0;
- }
-
- .exeQuextRetos-C8 {
-     background: url(exeRetosIcons.png) no-repeat -272px 0;
- }
-
- .exeQuextRetos-C9 {
-     background: url(exeRetosIcons.png) no-repeat -306px 0;
- }
-
- .exeQuextIcons34-FullScreenExit, .exeQuextRetos-C0, .exeQuextRetos-C1, .exeQuextRetos-C2, .exeQuextRetos-C3, .exeQuextRetos-C4, .exeQuextRetos-C5, .exeQuextRetos-C6, .exeQuextRetos-C7, .exeQuextRetos-C8, .exeQuextRetos-C9, .desafio-GameDesafio, .desafio-RebootImg, .exeQuextIcons34-FullScreen, .exeQuextIcons34-Minimize, .exeQuextIcons34-Error {
-     -webkit-filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-     filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.5));
-     cursor: pointer;
- }
-
- .exeQuextIcons-RoscoRows:hover, .desafio-GameDesafio:hover, .exeQuextIcons-RoscoCanvas:hover, .exeQuextIcons34-Minimize:hover, .exeQuextIcons34-FullScreenExit:hover, .exeQuextIcons34-FullScreen:hover, .desafio-RebootImg:hover, .exeQuextRetos-C0:hover, .exeQuextRetos-C1:hover, .exeQuextRetos-C2:hover, .exeQuextRetos-C3:hover, .exeQuextRetos-C4:hover, .exeQuextRetos-C5:hover, .exeQuextRetos-C6:hover, .exeQuextRetos-C7:hover, .exeQuextRetos-C8:hover, .exeQuextRetos-C9:hover, .exeQuextIcons34-Error:hover {
-     -moz-transform: scale(1.1);
-     -webkit-transform: scale(1.1);
-     -o-transform: scale(1.1);
-     -ms-transform: scale(1.1);
-     transform: scale(1.1);
- }
-
- .desafio-LinkMinimize {
-     width: 34px;
-     height: 34px;
-     margin: 0;
-     margin-right: 7px;
- }
-
- .desafio-LinkChallenge {
-     width: 34px;
-     height: 34px;
-     margin-right: 5px;
- }
-
- .desafio-LinkDesafio {
-     width: 40px;
-     height: 40px;
-     margin-right: 5px;
- }
-
- .desafio-MessageInfo {
-     width: 100%;
-     margin: 5px auto;
- }
-
- .desafio-MessageInfo p {
-     width: 100%;
-     text-align: center;
-     font-size: 1em;
-     font-weight: bold;
-     color: #383838;
- }
-
- .desafio-TimeNumber .exeQuextIcons34-Time {
-     margin: 0;
- }
-
- .desafio-Multimedia {
-     width: 560px;
-     height: 315px;
-     margin: 5px auto;
-     position: relative;
-     background-color: transparent;
-     overflow: auto;
- }
-
- .desafio-HistGGame, .desafio-LostGGame {
-     width: 256px;
-     height: 256px;
- }
-
- .desafio-Description, .desafio-FeedBacks {
-     width: 97%;
-     min-height: 100px;
-     max-height: 2000px;
-     overflow: hidden;
-     z-index: 1;
-     margin: 5px auto;
-     padding: 6px;
-     display: none;
- }
-
- .desafio-Title {
-     width: 99%;
-     overflow: hidden;
-     z-index: 1;
-     background-color: transparent;
-     margin: 7px auto;
-     font-size: 1em;
-     text-align: center;
-     font-weight: bold;
-     display: none;
- }
-
- .desafio-StartGameDiv {
-     background-color: transparent;
-     width: 100%;
-     margin: 5px auto;
-     display: flex;
-     justify-content: center;
- }
-
- .desafio-Images {
-     width: 100%;
-     height: 100%;
-     position: absolute;
-     left: 0;
-     top: 0;
-     border-radius: 10px;
- }
-
- .desafio-StartGame {
-     width: 95%;
-     min-height: 38px;
-     margin: 7px auto;
-     padding: 7px;
-     font-size: 1.1em;
-     font-weight: bold;
-     text-align: center;
- }
-
- @media screen and (max-width: 800px) {
-     .desafio-GameContainer {
-         font-size: 0.9rem;
-     }
-     .desafio-Multimedia {
-         width: 470px;
-         height: 250px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 200px;
-         height: 200px;
-     }
-     .desafio-LinkDesafio, .desafio-LinkChallenge {
-         margin: 10px 5px 0px 0px;
-         width: 24px;
-         height: 24px;
-     }
-     .exeQuextIcons34, .desafio-LinkMinimize {
-         width: 24px;
-         height: 24px;
-         margin: 0px;
-     }
-     .desafio-TimeNumber {
-         width: 160px;
-         margin: 0;
-     }
-     .desafio-TimeNumber p {
-         text-align: left;
-         font-size: 0.9rem;
-         width: 60px;
-         margin: 0 5px;
-     }
-     .desafio-GameChallenges {
-         width: 400px;
-         margin: 0 5px;
-     }
-     .exeQuextIcons-Submit {
-         height: 24px;
-         width: 24px;
-     }
- }
-
- @media screen and (max-width:650px) {
-     .desafio-StartGame {
-         margin: 15px auto;
-     }
-     .desafio-Multimedia {
-         width: 437px;
-         height: 246px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 190px;
-         height: 190px;
-     }
-     .desafio-GameScoreBoard {
-         width: 100%;
-         display: flex;
-         flex-direction: column-reverse;
-         justify-content: center;
-         align-items: center;
-         margin-top: 2px;
-         flex-wrap: wrap;
-     }
-     .desafio-LinkDesafio, .desafio-LinkChallenge {
-         margin: 10px 5px 0px 0px;
-     }
-     .desafio-TimeNumber {
-         width: 100%;
-         margin: 0;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-     }
-     .desafio-GameChallenges {
-         width: 100%;
-         margin: 0 5px;
-         display: flex;
-         justify-content: center;
-         align-items: initial;
-         flex-wrap: wrap;
-         margin-top: 10px;
-     }
- }
-
- @media screen and (max-width:550px) {
-     .desafio-GameContainer {
-         font-size: 0.8rem;
-     }
-     .desafio-StartGame {
-         margin: 10px auto;
-     }
-     .desafio-Multimedia {
-         width: 370px;
-         height: 207px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 170px;
-         height: 170px;
-     }
-     .desafio-instructions {
-         margin: 2px auto;
-     }
-     .desafio-instructions p {
-         margin: 0 auto;
-         font-size: 0.8em;
-     }
-     .desafio-GameContainer input[type="text"] {
-         padding: 3px 2px;
-         display: inline-block;
-         box-sizing: border-box;
-         line-height: 18px;
-         font-size: 0.9em;
-         background: #fdfdfd;
-         border: 1px solid #828282;
-         border-radius: 4px;
-     }
-     .desafio-GameContainer input[type="text"]:active, .desafio-GameContainer input[type="text"]:focus {
-         background: #fdfdfd;
-         border: 1px solid #398ee7;
-         border-radius: 4px;
-     }
- }
-
- @media screen and (max-width:450px) {
-     .desafio-GameContainer {
-         font-size: 0.8rem;
-     }
-     .desafio-StartGame {
-         margin: 15px auto;
-     }
-     .desafio-Multimedia {
-         width: 269px;
-         height: 151px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 120px;
-         height: 120px;
-     }
- }
-
- @media screen and (max-width:370px) {
-     .desafio-GameContainer {
-         font-size: 0.8rem;
-     }
-     .desafio-Multimedia {
-         width: 221px;
-         height: 134px;
-     }
-     .desafio-LinkMinimize, .exeQuextIcons34 {
-         width: 24px;
-         height: 24px;
-     }
-     .desafio-LinkDesafio, .desafio-LinkChallenge {
-         margin-top: 15px;
-         width: 24px;
-         height: 24px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 100px;
-         height: 100px;
-     }
- }
-
- @media screen and (max-width:300px) {
-     .desafio-GameContainer {
-         font-size: 0.7rem;
-     }
-     .desafio-Multimedia {
-         width: 180px;
-         height: 101px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 80px;
-         height: 80px;
-     }
- }
-
- @media screen and (max-width:250px) {
-     .desafio-GameContainer {
-         font-size: 0.6rem;
-     }
-     .desafio-Multimedia {
-         width: 140px;
-         height: 76px;
-     }
-     .desafio-HistGGame, .desafio-LostGGame {
-         width: 50px;
-         height: 50px;
-     }
- }
+.desafio-MainContainer a:link, .desafio-MainContainer a:link, .desafio-MainContainer a:visited, .desafio-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	outline: none;
+	outline-width: 0;
+	text-decoration: none !important;
+}
+
+/* Contenedor */
+
+.desafio-MainContainer {
+	font-size: 1em;
+	margin: 0 auto;
+	max-width: 900px;
+	padding: 0;
+	width: 100%;
+}
+
+.desafio-MainContainer * {
+	box-sizing: border-box;
+}
+
+.desafio-MainContainer p {
+	margin: 0;
+	padding: 0;
+}
+
+/* Instrucciones */
+
+.desafio-instructions {
+	margin: 0.3em auto;
+	width: 100%;
+}
+
+.desafio-instructions p {
+	font-size: 1em;
+}
+
+/* Minimizado */
+
+.desafio-LinkMaximize {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.desafio-GameMinimize {
+	display: none;
+	margin: 0.3em auto;
+}
+
+.desafio-IconMinimize {
+	height: 2em;
+	margin-right: 0.3em;
+	width: 2em;
+}
+
+/* Juego */
+
+.desafio-GameContainer {
+	display: none;
+	margin: 0.5em auto;
+	min-width: 220px;
+	padding: 0.3em;
+	position: relative;
+	width: 100%;
+}
+
+/* barra superior */
+
+.desafio-GameScoreBoard {
+	align-content: center;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin: 0.4em auto;
+	margin-bottom: 1em;
+	width: 98%;
+}
+
+.desafio-GameChallenges {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	width: 70%;
+}
+
+.desafio-LinkDesafio, .desafio-LinkChallenge {
+	display: inline-block;
+	margin-right: 0.2em;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.desafio-GameDesafio {
+	background-image: url(desafioicon2.png);
+	background-size: 100% 100%;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+/* Reloj, Minimizar */
+
+.desafio-TimeNumber {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.desafio-LinkMinimize {
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.desafio-PTime {
+	font-size: 1em;
+	margin: auto 0.3em;
+	min-width: 5em;
+	text-align: center;
+}
+
+.exeQuextRetos, .exeQuextIcons34 {
+	height: 1.5em;
+	margin-right: .3em;
+	width: 1.5em;
+}
+
+.desafio-GameScoreBoard .exeQuextIcons34 {
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.desafio-GameScoreBoard .exeQuextIcons34-Time {
+	background-image: url(exequexttime.png);
+	background-size: 100% 100%;
+}
+
+.desafio-GameScoreBoard .exeQuextIcons34-Minimize {
+	background-image: url(exequextmin.png);
+	background-size: 100% 100%;
+}
+
+/* Multimedia */
+
+.desafio-Multimedia {
+	margin: 0.3em auto;
+	overflow: hidden;
+	position: relative;
+	width: 65%;
+}
+
+.desafio-Multimedia:before {
+	content: '';
+	display: block;
+	padding-top: 56%;
+}
+
+/* Game Over */
+
+.desafio-GameOver {
+	align-items: center;
+	display: none;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10010;
+}
+
+.desafio-SolvedChallenges {
+	height: 1.5em;
+	margin: 0.3em auto 0.3em auto;
+	width: 100%;
+}
+
+.desafio-SolvedChallenges p {
+	color: #00ab00;
+	height: 100%;
+	text-align: center;
+	width: 100%;
+}
+
+.desafio-DataImageGameOver {
+	height: 90%;
+	width: 100%;
+}
+
+.desafio-HistGGame {
+	background-image: url(exequextwon.png);
+	background-size: 100% 100%;
+}
+
+.desafio-LostGGame {
+	background-image: url(exequextlost.png);
+	background-size: 100% 100%;
+}
+
+.desafio-HistGGame, .desafio-LostGGame {
+	margin: 0.5em auto;
+	max-width: 250px;
+	width: 40%;
+}
+
+.desafio-HistGGame:before, .desafio-LostGGame:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
+/* Desafio y retos */
+
+.desafio-Title {
+	background-color: transparent;
+	display: none;
+	margin: 0.3em auto;
+	overflow: hidden;
+	text-align: center;
+	font-weight: bold;
+	width: 98%;
+	z-index: 1;
+}
+
+.desafio-Description, .desafio-FeedBacks {
+	display: none;
+	margin: 0.3em auto;
+	max-height: 2000px;
+	min-height: 100px;
+	overflow: hidden;
+	padding: 0.3em;
+	width: 98%;
+	z-index: 1;
+}
+
+.desafio-StartGameDiv {
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	margin: 0.3em auto;
+	width: 100%;
+}
+
+.desafio-Images {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+/* Botón inicio */
+
+.desafio-StartGame {
+	margin: 0.4em auto;
+	min-height: 2em;
+	padding: 0.4em;
+	text-align: center;
+	width: 98%;
+}
+
+/* Solucion */
+
+.desafio-SolutionDiv {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: .6em;
+	width: 100%;
+}
+
+.desafio-Solution {
+	margin: 0 .3em;
+	max-width: 350px;
+	padding: 0;
+	text-align: center;
+	width: 60%;
+}
+
+.desafio-SolutionDiv a {
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.desafio-SolutionDiv .exeQuextIcons-Submit {
+	background-image: url(exequextreply.png);
+	background-size: 100% 100%;
+	width: 100%;
+	height: 100%;
+}
+
+/* Mensaje */
+
+.desafio-MessageInfo {
+	margin: .3em auto;
+	width: 100%;
+}
+
+.desafio-MessageInfo p {
+	text-align: center;
+	width: 100%;
+}
+
+/* Fecha */
+
+.desafio-DateDiv {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin: 1.4em auto 0.3em auto;
+	width: 98%;
+}
+
+.desafio-DateDiv p {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	margin-right: 0.5em;
+	padding-left: 0;
+}
+
+/* Retos */
+
+.desafio-LinkReboot {
+	height: 24px;
+	width: 24px;
+	display: inline-block;
+}
+
+.exeDesafio-IconReboot {
+	background-image: url(exequextreload.png);
+	background-size: 100% 100%;
+	height: 100%;
+	width: 100%;
+}
+
+.exeQuextRetos-C0 {
+	background: url(exeRetosIcons.png) no-repeat 0 0;
+}
+
+.exeQuextRetos-C1 {
+	background: url(exeRetosIcons.png) no-repeat -24px 0;
+}
+
+.exeQuextRetos-C2 {
+	background: url(exeRetosIcons.png) no-repeat -48px 0;
+}
+
+.exeQuextRetos-C3 {
+	background: url(exeRetosIcons.png) no-repeat -72px 0;
+}
+
+.exeQuextRetos-C4 {
+	background: url(exeRetosIcons.png) no-repeat -96px 0;
+}
+
+.exeQuextRetos-C5 {
+	background: url(exeRetosIcons.png) no-repeat -120px 0;
+}
+
+.exeQuextRetos-C6 {
+	background: url(exeRetosIcons.png) no-repeat -144px 0;
+}
+
+.exeQuextRetos-C7 {
+	background: url(exeRetosIcons.png) no-repeat -168px 0;
+}
+
+.exeQuextRetos-C8 {
+	background: url(exeRetosIcons.png) no-repeat -192px 0;
+}
+
+.exeQuextRetos-C9 {
+	background: url(exeRetosIcons.png) no-repeat -216px 0;
+}
+
+.desafio-Activo {
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	cursor: pointer;
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-transition: transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.desafio-Activo:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+@media screen and (max-width: 800px) {
+	.desafio-GameContainer {
+		font-size: 0.9rem;
+	}
+	.desafio-LinkDesafio, .desafio-LinkMinimize, .exeQuextIcons-Submit {
+		height: 24px;
+		width: 24px;
+	}
+}
+
+@media screen and (max-width:650px) {
+	.desafio-StartGame {
+		margin: 1em auto;
+	}
+	.desafio-GameScoreBoard {
+		align-items: center;
+		display: flex;
+		flex-direction: column-reverse;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-top: 0.1em;
+		width: 100%;
+	}
+	.desafio-LinkDesafio, .desafio-LinkChallenge {
+		margin: .5em .3em 0 0;
+	}
+	.desafio-GameChallenges {
+		align-items: initial;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0 .3em;
+		margin-top: 0.6em;
+		width: 100%;
+	}
+	.desafio-HistGGame, .desafio-LostGGame {
+		margin: 0.2em auto;
+	}
+}
+
+@media screen and (max-width:550px) {
+	.desafio-GameContainer {
+		font-size: 0.8rem;
+	}
+	.desafio-StartGame {
+		margin: 0.6em auto;
+	}
+	.desafio-instructions {
+		margin: 0.1em auto;
+	}
+	.desafio-instructions p {
+		font-size: 0.8em;
+		margin: 0 auto;
+	}
+	.desafio-GameContainer input[type="text"] {
+		background: #fdfdfd;
+		border: 1px solid #828282;
+		border-radius: 0.1em;
+		box-sizing: border-box;
+		display: inline-block;
+		font-size: 0.9em;
+		line-height: 1.1em;
+		padding: 0.1em 0.1em;
+	}
+	.desafio-GameContainer input[type="text"]:active, .desafio-GameContainer input[type="text"]:focus {
+		background: #fdfdfd;
+		border: 1px solid #398ee7;
+		border-radius: 0.1em;
+	}
+}
+
+@media screen and (max-width:450px) {
+	.desafio-GameContainer {
+		font-size: 0.8rem;
+	}
+	.desafio-StartGame {
+		margin: 1em auto;
+	}
+}
+
+@media screen and (max-width:370px) {
+	.desafio-GameContainer {
+		font-size: 0.8rem;
+	}
+}
+
+@media screen and (max-width:250px) {
+	.desafio-GameContainer {
+		font-size: 0.6rem;
+	}
+}

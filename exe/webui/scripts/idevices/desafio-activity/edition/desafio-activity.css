@@ -1,724 +1,338 @@
-  #desafioIdeviceForm {
-    margin-top: 2em;
-  }
+#desafioIdeviceForm {
+  margin-top: 2em;
+}
 
-  #desafioIdeviceForm input[type=text] {
-    margin-top: 0;
-    margin-bottom: 0;
-  }
+#desafioIdeviceForm input[type=number] {
+  width: 3em;
+}
 
-  #desafioIdeviceForm #desafioEChallenges{
-    display:none;
-  }
-  #desafioIdeviceForm .desafio-EOptionsGame input[type=text] {
-    font-size: 13px;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-weight: bold;
-    border-radius:4px;
-    border:1px solid #071717;
-    height:24px;
-    padding: 2px;
-  }
+#desafioIdeviceForm label {
+  margin-right: .15em;
+}
 
-  #desafioIdeviceForm .desafioIdevice {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #000;
-  }
+#desafioIdeviceForm #desafioEChallenges {
+  display: none;
+}
 
-  #desafioIdeviceForm label {
-    display: inline;
-    font-weight: bold;
-    font-size: 14px;
-  }
+#desafioIdeviceForm input[type="radio"], #desafioIdeviceForm input[type="checkbox"], #desafioIdeviceForm input[type=button] {
+  cursor: pointer;
+}
 
-  #desafioIdeviceForm label[for='desafioEShowSolution'] {
-    margin-right: .5em;
-  }
+.desafio-EPanel {
+  margin: 0.7em auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
 
-  #desafioIdeviceForm input, #desafioIdeviceForm select {
-    font-size: 14px;
-  }
+.desafio-DataDesafio {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  #desafioIdeviceForm legend {
-    font-weight: bold;
-    padding: 0 10px;
-    font-size: 14px
-  }
+.desafio-DataDesafio input[type=text] {
+  width: 100%;
+  text-align: center;
+  min-width: 100px;
+  flex-grow: 1;
+}
 
-  #desafioIdeviceForm input[type="radio"], #desafioIdeviceForm input[type="checkbox"] {
-    cursor: pointer;
-  }
-  #desafioIdeviceForm .desafio-EPanel {
-    position: relative;
-    width: 98%;
-    max-width: 900px;
-    margin: 10px auto;
-    border-radius: 7px;
-    background: #f7f7f7;
-    border: 1px solid #071717;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-  }
-  .desafio-NumberQuestion {
-    line-height: 24px;
-    height: 24px;
-    width: 40px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 20px;
-    vertical-align: middle;
-  }
+.desafio-DataDesafio input[type=text]:nth-of-type(2n+1) {
+  margin-right: 0.3em;
+}
 
-  #desafioIdeviceForm .desafio-EOptionsMedia {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 10px;
-  }
+.desafio-EDataChallenger select {
+  width: 100px;
+}
 
-  #desafioIdeviceForm .desafio-EOptionsGame {
-    min-height: 300px;
-    width: 100%;
-  }
+/*Numero Preguntas */
 
-  #desafioIdeviceForm .desafio-EOptionsGame span {
-    font-weight: bold;
-    font-size: 14px;
-    margin: 0;
-    color: #035175;
-  }
+.desafio-ENumQuestionDiv {
+  align-items: center;
+  display: flex;
+  height: 1.5em;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: .3em;
+  width: 3em;
+  z-index: 20000;
+}
 
-  #desafioIdeviceForm .desafio-EInputMedias #desafioIdeviceForm .desafio-EInputNumbers, #desafioIdeviceForm .desafio-EInputVideo, #desafioIdeviceForm .desafio-EInputOptionsVideo, #desafioIdeviceForm .desafio-EInputTimes {
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+.desafio-ENumQ {
+  background-image: url(quextIENumber.png);
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 1.5em;
+  margin-right: 0px;
+  width: 1.5em;
+}
+
+.desafio-ENumQuestions {
+  font-weight: bold;
+  height: 1.5em;
+  text-align: center;
+  width: 2em;
+}
+
+/* Barra edición */
+
+.desafio-ENavigationButtons {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  width: 100%;
+}
+
+.desafio-ENavigationButton {
+  height: 1.5em;
+  margin: 0 .3em;
+  min-width: 1.5em;
+  width: 1.5em;
+  -moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-transition: transform 0.3s;
+	transition: transform 0.3s;
+ 
+}
+
+.desafio-EButtonImage {
+  height: 100%;
+  width: 100%;
+  cursor:pointer;
+
+}
+
+.desafio-ENavigationButton:hover {
+  -moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.desafio-NumberQuestion {
+  font-weight: bold;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  vertical-align: middle;
+  width: 2em;
+}
+
+@media screen and (max-width:500px) {
+  .desafio-DataDesafio {
     flex-wrap: wrap;
-    margin: 5px 0;
   }
-
-  #desafioIdeviceForm .desafio-EInputMedias label, #desafioIdeviceForm .desafio-EInputNumbers label, #desafioIdeviceForm .desafio-EInputVideo label, #desafioIdeviceForm .desafio-EInputOptionsVideo label, #desafioIdeviceForm .desafio-EInputTimes label, #desafioIdeviceForm .desafio-EInputImage label {
-    display: inline;
-    font-weight: normal;
-    font-size: 13px;
-    padding: 0;
-    font-weight: bold;
+  .desafio-DataDesafio input[type=text] {
+    margin-bottom: 0.3em;
   }
+}
 
-  #desafioIdeviceForm .desafio-EInputOptionsVideo input[type=text], #desafioIdeviceForm .desafio-EInputOptionsImage input[type=text] {
-    width: 70px;
-    height: 20px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-    color: #071717;
-    margin: 5px;
-  }
+/* To review */
 
-  #desafioIdeviceForm input:-moz-read-only {
-    /* For Firefox */
-    background-color: white;
-    border-width: 1px;
-  }
+.exe-block-info img {
+  vertical-align: middle;
+  margin-left: .2em
+}
 
-  #desafioIdeviceForm input:read-only {
-    background-color: white;
-    border-width: 1px;
-  }
+#desafioIdeviceFormTab1 * {
+  font-size: 0.9em;
+}
 
-  #desafioIdeviceForm input[type=button] {
-    height: 27px;
-    font-size: 13px;
-    font-weight: bold;
-    cursor: pointer;
-  }
+#desafioIdeviceFormTab1 p:first-child {
+  margin-top: 0
+}
 
-  #desafioIdeviceForm .desafio-EInputOptionsImage input[type=text], #desafioIdeviceForm .desafio-EInputOptionsImage label {
-    margin: 0;
-    padding: 0;
-    display: none;
-    justify-content: space-between;
-    align-content: center;
-  }
+#desafioIdeviceFormTab1 {
+  overflow: auto
+}
 
-  #desafioIdeviceForm .desafio-EVideoTime {
-    font-size: 13px;
-    font-weight: bold;
-  }
+#desafioIdeviceFormTab1 .ci18n {
+  width: 50%;
+  float: left
+}
 
-  #desafioIdeviceForm .desafio-EInputVideo input[type=text] {
-    width: 85%;
-    margin: 3px 0;
-  }
-
-  #desafioIdeviceForm .desafio-EInputVideo {
-    display: none;
-  }
-
-  #desafioIdeviceForm .desafio-EInputImage {
-    display: none;
-  }
-
-  #desafioIdeviceForm .desafio-EMultiMediaOption {
-    background: transparent;
-    height: 350px;
-    min-width: 400px;
-    max-width: 500px;
+@media screen and (max-width:720px) {
+  #desafioIdeviceForm #desafioIdeviceFormTab1 .ci18n {
     width: 100%;
-    position: relative;
-  }
-
-  #desafioIdeviceForm .desafio-EMultimedia {
-    width: 400px;
-    height: 227px;
-    margin: auto auto;
-    margin-top: 60px;
-    position: relative;
-    background-color: #fff;
-    border-radius:8px;
-  }
-
-  #desafioIdeviceForm .desafio-EContents {
-    background: transparent;
-    width: 100%;
-    margin: 5px auto;
-    padding: 0;
-  }
-
-  #desafioIdeviceForm .desafio-EAnswers {
-    background-color: transparent;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background: transparent;
-  }
-
-  #desafioIdeviceForm .desafio-EOptionDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 35px;
-    width: 49%;
-    margin: 3px 0;
-  }
-
-  #desafioIdeviceForm .desafio-EAnwersOptions {
-    width: 100%;
-    height: 30px;
-    background-color: transparent;
-    border-radius: 7px;
-    padding: 3px;
-    font-size: 13px;
-    color: #000000;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  #desafioIdeviceForm .desafio-EOption0 {
-    background-color: #fbd2d6;
-    background-color: #f9f9f9;
-    border: 1px solid #ff0000;
-  }
-
-  #desafioIdeviceForm .desafio-EOption1 {
-    background-color: #dfe3f1;
-    background-color: #f9f9f9;
-    border: 1px solid #5877c6;
-  }
-
-  #desafioIdeviceForm .desafio-EOption2 {
-    background-color: #caede8;
-    background-color: #f9f9f9;
-    border: 1px solid #2a9315;
-  }
-
-  #desafioIdeviceForm .desafio-EOption3 {
-    background-color: #fcf4d3;
-    background-color: #f9f9f9;
-    border: 1px solid #f3d55a;
-  }
-
-  #desafioIdeviceForm .desafio-ENavigationButtons {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-  }
-
-  #desafioIdeviceForm .desafio-ENavigationButton {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    margin: 0 5px;
-  }
-   #desafioIdeviceForm .desafio-tEVideoIntroPlay {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    margin:0;
-  }
-
-  #desafioIdeviceForm .desafioWordMutimediaEdition a:focus, #desafioIdeviceForm .desafioWordMutimediaEdition a:link, #desafioIdeviceForm .desafioWordMutimediaEdition a:visited, #desafioIdeviceForm .desafioWordMutimediaEdition a:active {
-    outline: 0;
-    border: none;
-  }
-
-  #desafioIdeviceForm #desafioNumerLives {
-    width: 30px;
-  }
-
-  #desafioIdeviceForm .desafio-EButtonImage {
-    width: 24px;
-    height: 24px;
-    min-width: 24px;
-    margin: 0 3px;
-    cursor: pointer;
-    transition: all .3s ease-in-out;
-  }
-
-  #desafioIdeviceForm .desafio-EButtonImage:hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-
-  #desafioIdeviceForm .desafio-Protector {
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: .0001;
-    z-index: 100000;
-  }
-
-  #desafioIdeviceForm .desafio-EText {
-    width: 100%;
-    height: 100%;
-    background: #f9f9f9;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border: 1px solid #cccccc;
-    
-  }
-
-  #desafioIdeviceForm #desafioEText {
-    display: none;
-  }
-
-  #desafioIdeviceForm .desafio-ECover, #desafioIdeviceForm .desafio-EImage, #desafioIdeviceForm .desafio-ENoImage, #desafioIdeviceForm .desafio-EVideo, #desafioIdeviceForm .desafio-ENoImageVideo, #desafioIdeviceForm .desafio-ENoVideo {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius:8px;
-  }
-
-  #desafioIdeviceForm .desafio-ECursor {
-    position: absolute;
-    left: 0;
-    top: 0
-  }
-
-  #desafioIdeviceForm input[type=number] {
-    width: 40px;
-  }
-
-  #desafioIdeviceForm fieldset input {
-    margin: 5px;
-  }
-
-  /* To review */
-
-  #desafioIdeviceForm .exe-block-info img {
-    vertical-align: middle;
-    margin-left: .2em
-  }
-
-  #desafioIdeviceFormTab1 * {
-    font-size: 0.9em;
-  }
-
-  #desafioIdeviceFormTab1 p:first-child {
-    margin-top: 0
-  }
-
-  #desafioIdeviceFormTab1 {
-    overflow: auto
-  }
-
-  #desafioIdeviceFormTab1 .ci18n {
-    width: 50%;
-    float: left
-  }
-
-  #desafioIdeviceForm .desafio-EAuthorAlt {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: center;
-    color: #007ab3;
-  }
-
-  #desafioIdeviceForm .desafio-EInputAuthor input[type=text], #desafioIdeviceForm .desafio-EInputAlt input[type=text] {
-    width: 90%;
-    margin-left: 0;
-    display: block;
-  }
-
-  #desafioIdeviceForm .desafio-EInputAuthor {
-    width: 48%;
-    margin-right: 5px;
-  }
-
-  #desafioIdeviceForm .desafio-EInputAlt {
-    width: 48%;
-  }
-
-  #desafioIdeviceForm .desafio-EInputAuthor label, #desafioIdeviceForm .desafio-EInputAlt label {
-    color: #035175;
-  }
-
-  #desafioIdeviceForm .desafio-EInputImage input[type=text] {
-    width: 50%;
-    margin-left: 0;
-  }
-
-  #desafioIdeviceForm .desafio-EVIDiv {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    z-index: 20000;
-    display: none;
-  }
-
-  #desafioIdeviceForm .desafio-ENumQuestionDiv {
-    width: 60px;
-    height: 30px;
-    position: absolute;
-    right: 0;
-    top: 10px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    z-index: 20000;
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-  }
-
-  #desafioIdeviceForm .desafio-ENumQ {
-    width: 24px;
-    height: 24px;
-    margin-right: 0px;
-    background: url(quextNumber.png);
-  }
-
-  #desafioIdeviceForm .desafio-ENumQuestions {
-    width: 35px;
-    height: 24px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  #desafioIdeviceForm .desafio-EVIV {
-    width: 100%;
-    background-color: transparent;
-  }
-
-  #desafioIdeviceForm .desafio-EMVI {
-    position: relative;
-    width: 560px;
-    height: 315px;
-    margin: 70px auto;
-    background-color: transparent;
-  }
-
-  #desafioIdeviceForm .desafio-EVI, #desafioIdeviceForm .desafio-ENoVI {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: transparent;
-  }
-
-  #desafioIdeviceForm .desafio-EVIOptions {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: transparent;
-    position: absolute;
-    flex-wrap: wrap;
-    left: 7px;
-    bottom: 5px;
-  }
-
-  #desafioIdeviceForm .desafio-EVIOptions * {
-    margin-left: 5px;
-  }
-
-  #desafioIdeviceForm #desafioEVIStart, #desafioIdeviceForm #desafioEVIEnd {
-    width: 80px;
-    text-align: center;
-    font-size: 13px;
-    font-weight: bold;
-  }
-
-  #desafioIdeviceForm .desafio-EVideoIntroDiv {
-    width: 100%;
-    height: 100%;
-    width: 98%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-color: red;
-    border-radius: 10px;
-    z-index: 20000;
-  }
-
-  .desafio-EVIClose {
-    position: absolute;
-    top: 5px;
-    right: 5px;
-  }
-
-
-
-  #desafioIdeviceForm .desafio-EQuestionDiv {
-    width: 97%;
-    height: 39px;
-    margin: 10px auto;
-    padding: 0 3px;
-    background: transparent;
-  }
-
-  #desafioIdeviceForm #desafioEQuestion {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    background-color: #f9f9f9;
-    border: 1px solid #071717;
-    margin: 0;
-    padding: 0;
-    border-radius: 5px;
-    font-size: 13px;
-    color: #000000;
-    font-weight: bold;
-    text-align: center;
-  }
-  #desafioIdeviceForm .desafio-EVideoIntroData{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width:100%;
-  }
-  #desafioIdeviceForm input#desafioEVideoIntro {
-    width:50%;
-  }
-
-  #desafioIdeviceForm .desafio-EInputOptionsVideo, #desafioIdeviceForm .desafio-ETitleImage, #desafioIdeviceForm .desafio-ETitleVideo, #desafioIdeviceForm .desafio-EInputVideo, #desafioIdeviceForm .desafio-EAuthorAlt {
-    display: none;
-  }
-
-  @media screen and (max-width:720px) {
-    #desafioIdeviceForm #desafioIdeviceFormTab1 .ci18n {
-      width: 100%;
-      float: none
-    }
-  }
-
-  #desafioIdeviceForm #desafioIdeviceFormTab1 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: .2em;
-    font-size: 0.9em
-  }
-
-  #desafioIdeviceForm #desafioIdeviceFormTab1 input {
-    width: 300px;
-    font-size: 0.9em
-  }
-
-  /* Tabs (this should be common) */
-
-  .exe-form-tabs {
-    margin: 0 0 1.5em 0;
-    padding: 0;
-    list-style: none
-  }
-
-  #main .exe-form-tabs li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    list-style-image: none;
-    display: inline
-  }
-
-  .exe-form-tabs li:first-child a {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px
-  }
-
-  .exe-form-tabs li:last-child a {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px
-  }
-
-  .exe-form-tabs a {
-    display: inline-block;
-    padding: .5em 1em;
-    border: 1px solid #CCC;
-    background: #F9F9F9;
-    color: #666
-  }
-
-  .exe-form-tabs li:not(:last-child) a {
-    border-right: none;
-  }
-
-  .exe-form-tabs .exe-form-active-tab {
-    color: #000;
-    background: #FFF;
-    font-weight: 500
-  }
-
-  #desafioSCORMoptions {
-    visibility: hidden;
-    margin-left: 1.5em
-  }
-
-  label[for=desafioActivitySCORM] {
-    font-weight: bold
-  }
-
-  #desafioSCORMinstructionsButton {
-    display: none;
-    color: #777;
-    margin: 10px 0 0 25px
-  }
-
-  #desafioSCORMinstructionsButton ul {
-    margin: 1.5em 0 .7em 0;
-    padding: 0;
-    list-style: none
-  }
-
-  #desafioSCORMinstructionsButton ul li {
-    margin: 0 0 .5em 0;
-    padding: 0;
-    list-style-image: none
-  }
-
-  #desafioSCORMinstructionsAuto {
-    display: none;
-    color: #777;
-    margin: 10px 0 0 25px
-  }
-
-  #desafioSCORMinstructionsAuto ul {
-    margin: 1.5em 0 .7em 0;
-    padding: 0;
-    list-style: none
-  }
-
-  .desafioToggle {
-    margin: 0 0 10px;
-    box-sizing: border-box;
-    font-size: 0;
+    float: none
+  }
+}
+
+#desafioIdeviceForm #desafioIdeviceFormTab1 label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .2em;
+  font-size: 0.9em
+}
+
+#desafioIdeviceForm #desafioIdeviceFormTab1 input {
+  width: 300px;
+  font-size: 0.9em
+}
+
+/* Tabs (this should be common) */
+
+.exe-form-tabs {
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  list-style: none
+}
+
+#main .exe-form-tabs li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+  display: inline
+}
+
+.exe-form-tabs li:first-child a {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+
+.exe-form-tabs li:last-child a {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px
+}
+
+.exe-form-tabs a {
+  display: inline-block;
+  padding: .5em 1em;
+  border: 1px solid #CCC;
+  background: #F9F9F9;
+  color: #666
+}
+
+.exe-form-tabs li:not(:last-child) a {
+  border-right: none;
+}
+
+.exe-form-tabs .exe-form-active-tab {
+  color: #000;
+  background: #FFF;
+  font-weight: 500
+}
+
+#desafioSCORMoptions {
+  visibility: hidden;
+  margin-left: 1.5em
+}
+
+label[for=desafioActivitySCORM] {
+  font-weight: bold
+}
+
+#desafioSCORMinstructionsButton {
+  display: none;
+  color: #777;
+  margin: 10px 0 0 25px
+}
+
+#desafioSCORMinstructionsButton ul {
+  margin: 1.5em 0 .7em 0;
+  padding: 0;
+  list-style: none
+}
+
+#desafioSCORMinstructionsButton ul li {
+  margin: 0 0 .5em 0;
+  padding: 0;
+  list-style-image: none
+}
+
+#desafioSCORMinstructionsAuto {
+  display: none;
+  color: #777;
+  margin: 10px 0 0 25px
+}
+
+#desafioSCORMinstructionsAuto ul {
+  margin: 1.5em 0 .7em 0;
+  padding: 0;
+  list-style: none
+}
+
+.desafioToggle {
+  margin: 0 0 10px;
+  box-sizing: border-box;
+  font-size: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+}
+
+.desafioToggle input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
+
+.desafioToggle input+label {
+  cursor: pointer;
+  margin: 0;
+  padding: .75rem 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  border: solid 1px #DDD;
+  background-color: #FFF;
+  font-size: 1rem;
+  line-height: 110%;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  -webkit-transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+  transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+}
+
+.desafioToggle input+label:first-of-type {
+  border-radius: 6px 0 0 6px;
+  border-right: none;
+}
+
+.desafioToggle input+label:last-of-type {
+  border-radius: 0 6px 6px 0;
+  border-left: none;
+}
+
+.desafioToggle input:hover+label {
+  border-color: #213140;
+}
+
+.desafioToggle input:checked+label {
+  background-color: #CCC;
+  color: #213140;
+  border-color: #CCC;
+  z-index: 1;
+}
+
+.desafioToggle input:focus+label {
+  outline: dotted 1px #CCC;
+  outline-offset: .45rem;
+}
+
+@media (max-width: 400px) {
+  .desafioToggle input+label {
+    padding: .75rem .25rem;
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
     display: -webkit-box;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-flow: row nowrap;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: stretch;
-    align-items: stretch;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
-
-  .desafioToggle input {
-    width: 0;
-    height: 0;
-    position: absolute;
-    left: -9999px;
-  }
-
-  .desafioToggle input+label {
-    cursor: pointer;
-    margin: 0;
-    padding: .75rem 1.5rem;
-    box-sizing: border-box;
-    position: relative;
-    display: inline-block;
-    border: solid 1px #DDD;
-    background-color: #FFF;
-    font-size: 1.3rem;
-    line-height: 110%;
-    font-weight: 600;
-    text-align: center;
-    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
-    -webkit-transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
-    transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
-  }
-
-  .desafioToggle input+label:first-of-type {
-    border-radius: 6px 0 0 6px;
-    border-right: none;
-  }
-
-  .desafioToggle input+label:last-of-type {
-    border-radius: 0 6px 6px 0;
-    border-left: none;
-  }
-
-  .desafioToggle input:hover+label {
-    border-color: #213140;
-  }
-
-  .desafioToggle input:checked+label {
-    background-color: #CCC;
-    color: #213140;
-    border-color: #CCC;
-    z-index: 1;
-  }
-
-  .desafioToggle input:focus+label {
-    outline: dotted 1px #CCC;
-    outline-offset: .45rem;
-  }
-
-  @media (max-width: 400px) {
-    .desafioToggle input+label {
-      padding: .75rem .25rem;
-      -webkit-box-flex: 0;
-      flex: 0 0 50%;
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-  }
+}

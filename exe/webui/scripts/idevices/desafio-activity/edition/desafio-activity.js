@@ -28,75 +28,35 @@ var $exeDevice = {
     desafioVersion:1,
     clipBoard: '',
     ci18n: {
-        "msgReady": _("Ready?"),
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
-        "msgEnterCode": _("Enter the access code"),
-        "msgErrorCode": _("The access code is not correct"),
-        "msgGameOver": _("Game Over!"),
-        "msgClue": _("Cool! The clue is:"),
-        "msgNewGame": _("Click here for a new game"),
-        "msgYouHas": _("You have got %1 hits and %2 misses"),
-        "msgCodeAccess": _("Access code"),
-        "msgPlayAgain": _("Play Again"),
-        "msgRequiredAccessKey": _("Access code required"),
         "msgInformationLooking": _("Cool! The information you were looking for"),
         "msgPlayStart": _("Click here to play"),
-        "msgErrors": _("Errors"),
-        "msgHits": _("Hits"),
-        "msgScore": _("Score"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
         "msgTime": _("Time per question"),
-        "msgLive": _("Life"),
-        "msgFullScreen": _("Full Screen"),
-        "msgExitFullScreen": _("Exit Full Screen"),
-        "msgNumQuestions": _("Number of questions"),
         "msgNoImage": _("No picture question"),
-        "msgCool": _("Cool!"),
-        "mgsAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
-        "msgNotNetwork": _("You can only play this game with internet connection."),
-        "msgEndGameScore": _("Please start the game before saving your score."),
-        "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
-        "msgOnlySaveScore": _("You can only save the score once!"),
-        "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
-        "msgYouScore": _("Your score"),
-        "msgAuthor": _("Author"),
-        "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
-        "msgSaveAuto": _("Your score will be automatically saved after each question."),
-        "msgYouScore": _("Your score"),
-        "msgSeveralScore": _("You can save the score as many times as you want"),
-        "msgYouLastScore": _("The last score saved is"),
-        "msgActityComply": _("You have already done this activity."),
-        "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
-        "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
-        "msgClose": _("Close"),
         "mgsSolution":_("Solution"),
         "msgDate":_("Date") ,
-        "msgUseFulInformation": _("and information that will be very useful"),
-        "msgLoading": _("Loading. Please wait..."),
-        "mgsPoints": _("points"),
-        "msgPlay":_("Play"),
-        "msgDesafio":_("Challenge"),
-        "msgChallenge":_("Challenge"), // Reto in ES
-        "msgChallengesCompleted":_("Completed challenges"),
+        "msgDesafio":_("Challenge"), // Desafío in ES
+        "msgChallenge":_("Trial"), // Reto in ES
+        "msgChallengesCompleted":_("Completed trials"),
         "msgStartTime":_("Starting time"),
-        "msgReadTime":_("Read the instructions and click on a challenge when you're ready to play."),
-        "msgReadDesafio":_("The time has expired now. Please restart to try again."),
-        "msgChallengesAllCompleted":_("You've completed all the challenges! You can now complete the game."),
+        "msgReadTime":_("Read the instructions and click on a trial when you're ready to play."),
+        "msgChallengesAllCompleted":_("You've completed all the trials! You can now complete the game."),
         "msgDesafioSolved":_("You made it! You can restart to play again."),
-        "msgDesafioSolved1":_("You solved the challenge! Congratulations!"),
+        "msgDesafioSolved1":_("You solved the trial! Congratulations!"),
         "msgEndTime":_("Time Over. Please restart to try again."),
         "msgSolutionError":_("Sorry. Wrong solution."),
         "msgSolutionCError":_("Sorry. The solution is wrong."),
-        "msgChallengeSolved":_("You solved this challenge! Please select another one."),
+        "msgChallengeSolved":_("You solved this trial! Please select another one."),
         "msgDesafioReboot":_("Restart the game and the starting time?"),
-        "msgCompleteAllChallenged":_("You must complete all the challenges to finish."),
-        "msgSolvedChallenge":_("You already completed this challenge."),
-        "msgWriteChallenge":_("Complete the challenge. Write the solution."),
+        "msgCompleteAllChallenged":_("You must complete all the trials to finish."),
+        "msgSolvedChallenge":_("You already completed this trial."),
+        "msgWriteChallenge":_("Complete the trial. Write the solution."),
         "msgEndTimeRestart":_("Time Over. Please restart to try again."),
         "msgReboot":_("Restart")
    },
@@ -108,25 +68,13 @@ var $exeDevice = {
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;
-        msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
-        msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
-        msgs.msgEProvideWord = _("Please provide one word or phrase");
-        msgs.msgEOneQuestion = _("Please provide at least one question");
-        msgs.msgEUnavailableVideo = _("This video is not currently available")
-        msgs.msgECompleteQuestion = _("You must complete a challenge.");
-        msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
-        msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
-        msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
-        msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
-        msgs.msgWriteText = _("You have to type a text in the editor");
         msgs.msgTitleDesafio = _("Please write the challenge title.");
         msgs.msgDescriptionDesafio = _("Please write the challenge description.");
         msgs.msgSolutionDesafio = _("Please write the challenge solution.");
-        msgs.msgOneChallenge = _("Please add at least one challenge.");
-        msgs.msgTenChallenges = _("You can only add ten challenges.");
-        msgs.msgDataChanllenge = _("Please write the title, description and solution of all the challenges.");
+        msgs.msgOneChallenge = _("Please add at least one trial.");
+        msgs.msgTenChallenges = _("You can only add ten trials.");
+        msgs.msgDataChanllenge = _("Please write the title, description and solution of all the trials.");
 
     },
     showMessage: function (msg) {
@@ -294,7 +242,7 @@ var $exeDevice = {
             html = '\
 			<div id="desafioIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete all the challenges to finish the activity.")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete all the trials to finish the activity.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -310,45 +258,49 @@ var $exeDevice = {
                                     <input class="desafio-Type" checked="checked" id="desafioEDesafio" type="radio" name="dsfDesRet" value="0" />\
                                     <label for="desafioEDesafio">' + _("Challenge") + '</label>\
                                     <input class="desafio-Type"  id="desafioEReto" type="radio" name="dsfDesRet" value="1" />\
-                                    <label for="desafioEReto">' + _("Challenges") + '</label>\
+                                    <label for="desafioEReto">' + _("Trials") + '</label>\
                             </div>\
                             <div class="desafio-EDAtaGame">\
-                                <div class="desafio-EVideoIntroData">\
-                                    <label for="desafioEDTitle">' + _("Title") + '<input type="text" id="desafioEDTitle" /></label>\
-                                    <label for="desafioEDSolution">' + _("Solution") + '<input type="text" id="desafioEDSolution" /></label>\
-                                    <label for="desafioECTitle">' + _("Title") + '<input type="text" id="desafioECTitle" /></label>\
-                                    <label for="desafioECSolution">' + _("Solution") + '<input type="text" id="desafioECSolution" /></label>\
-                                    <label id="desafiolblEDType" for="desafioEDType">' + _("Type") + ': </label>\
-                                    <select id="desafioEDType">\
-                                        <option value="0">Lineal</option>\
-                                        <option value="1">Libre</option>\
-                                    </select>\
-                                    <label id="desafiolblEDTime" for="desafioEDTime">' + _("Time") + ': </label>\
-                                    <select id="desafioEDTime">\
-                                    <option value="1">1m</option>\
-                                    <option value="10">10m</option>\
-                                    <option value="15">15m</option>\
-                                    <option value="20">20m</option>\
-                                    <option value="25">25m</option>\
-                                    <option value="30">30m</option>\
-                                    <option value="35">35m</option>\
-                                    <option value="40" selected>40m</option>\
-                                    <option value="40">45m</option>\
-                                    <option value="50">50m</option>\
-                                    <option value="55">55m</option>\
-                                    <option value="60">60m</option>\
-                                    <option value="70">70m</option>\
-                                    <option value="80">80m</option>\
-                                    <option value="90">90m</option>\
-                                    <option value="120">120m</option>\
-                                    <option value="150">150</option>\
-                                    <option value="180">180m</option>\
-                                    <option value="210">210m</option>\
-                                    <option value="240">240m</option>\
-                                </select>\
+                                <div class="desafio-EDataChallenger">\
+                                    <p class="desafio-DataDesafio">\
+                                        <label for="desafioEDTitle">' + _("Title") + ':</label><input type="text" id="desafioEDTitle" />\
+                                        <label for="desafioEDSolution">' + _("Solution") + ':</label><input type="text" id="desafioEDSolution" />\
+                                        <label for="desafioECTitle">' + _("Title") + ':</label><input type="text" id="desafioECTitle" />\
+                                        <label for="desafioECSolution">' + _("Solution") + ':</label><input type="text" id="desafioECSolution" />\
+                                    </p>\
+                                    <p>\
+                                        <label id="desafiolblEDType" for="desafioEDType">' + _("Type") + ': </label>\
+                                        <select id="desafioEDType">\
+                                            <option value="0">Lineal</option>\
+                                            <option value="1">Libre</option>\
+                                        </select>\
+                                        <label id="desafiolblEDTime" for="desafioEDTime">' + _("Time") + ': </label>\
+                                        <select id="desafioEDTime">\
+                                            <option value="1">1m</option>\
+                                            <option value="10">10m</option>\
+                                            <option value="15">15m</option>\
+                                            <option value="20">20m</option>\
+                                            <option value="25">25m</option>\
+                                            <option value="30">30m</option>\
+                                            <option value="35">35m</option>\
+                                            <option value="40" selected>40m</option>\
+                                            <option value="40">45m</option>\
+                                            <option value="50">50m</option>\
+                                            <option value="55">55m</option>\
+                                            <option value="60">60m</option>\
+                                            <option value="70">70m</option>\
+                                            <option value="80">80m</option>\
+                                            <option value="90">90m</option>\
+                                            <option value="120">120m</option>\
+                                            <option value="150">150</option>\
+                                            <option value="180">180m</option>\
+                                            <option value="210">210m</option>\
+                                            <option value="240">240m</option>\
+                                        </select>\
+                                     </p>\
                                 </div>\
-                                <span>' + _("Description") + ':</span>\
                                 <div class="desafio-EInputMedias">\
+                                    <span>' + _("Description") + ':</span>\
                                     <div id="divDesafioEDescription">\
                                         <label for="desafioEDescription" class="sr-av">' + _('Instructions') + '":</label>\
                                         <textarea id="desafioEDescription" class="exe-html-editor"\></textarea>\
@@ -359,16 +311,16 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="desafio-ENavigationButtons" id="desafioENavigationButtons">\
-                                <a href="#" id="desafioEAdd" class="desafio-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextAdd.png" + '"  alt="" class="desafio-EButtonImage b-add" /></a>\
-                                <a href="#" id="desafioEFirst" class="desafio-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextFirst.png" + '"  alt="" class="desafio-EButtonImage b-first" /></a>\
-                                <a href="#" id="desafioEPrevious" class="desafio-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextPrev.png" + '"  alt="" class="desafio-EButtonImage b-prev" /></a>\
+                                <a href="#" id="desafioEAdd" class="desafio-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="" class="desafio-EButtonImage b-add" /></a>\
+                                <a href="#" id="desafioEFirst" class="desafio-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="" class="desafio-EButtonImage b-first" /></a>\
+                                <a href="#" id="desafioEPrevious" class="desafio-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="" class="desafio-EButtonImage b-prev" /></a>\
                                 <span class="sr-av">' + _("Question number:") + '</span><span class="desafio-NumberQuestion" id="desafioENumberChallenge">1</span>\
-                                <a href="#" id="desafioENext" class="desafio-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextNext.png" + '"  alt="" class="desafio-EButtonImage b-next" /></a>\
-                                <a href="#" id="desafioELast" class="desafio-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quext-last.png" + '"  alt="" class="desafio-EButtonImage b-last" /></a>\
-                                <a href="#" id="desafioEDelete" class="desafio-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextDelete.png" + '"  alt="" class="desafio-EButtonImage b-delete" /></a>\
-                                <a href="#" id="desafioECopy" class="desafio-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextCopy.png" + '"   alt="" class="desafio-EButtonImage b-copy" /></a>\
-                                <a href="#" id="desafioECut" class="desafio-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextCut.png" + '"  alt=""  class="desafio-EButtonImage b-cut" /></a>\
-                                <a href="#" id="desafioEPaste" class="desafio-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextPaste.png" + '"  alt="" class="desafio-EButtonImage b-paste" /></a>\
+                                <a href="#" id="desafioENext" class="desafio-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="" class="desafio-EButtonImage b-next" /></a>\
+                                <a href="#" id="desafioELast" class="desafio-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="" class="desafio-EButtonImage b-last" /></a>\
+                                <a href="#" id="desafioEDelete" class="desafio-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="" class="desafio-EButtonImage b-delete" /></a>\
+                                <a href="#" id="desafioECopy" class="desafio-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="" class="desafio-EButtonImage b-copy" /></a>\
+                                <a href="#" id="desafioECut" class="desafio-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt=""  class="desafio-EButtonImage b-cut" /></a>\
+                                <a href="#" id="desafioEPaste" class="desafio-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextIEPaste.png" + '"  alt="" class="desafio-EButtonImage b-paste" /></a>\
                             </div>\
                             <div class="desafio-ENumQuestionDiv" id="desafioENumQuestionDiv">\
                                <div class="desafio-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\
