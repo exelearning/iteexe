@@ -77,21 +77,19 @@ var $eXeCandado = {
             msgs = $eXeCandado.options[instance].msgs;
             html += '<div class="candado-MainContainer">\
                 <div class="candado-GameMinimize" id="candadoGameMinimize-' + instance + '">\
-                    <a href="#" class="candado-LinkMaximize" id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize" alt="' + msgs.msgEShowActivity + '">\
-                        <div class="candado-MessageMaximize" id="candadoMessageMaximize-' + instance + '">' + msgs.msgEShowActivity + '</div>\
+                    <a href="#" class="candado-LinkMaximize " id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize candado-Activo" alt="' + msgs.msgEShowActivity + '">\
+                        <div class="candado-MessageMaximize " id="candadoMessageMaximize-' + instance + '">' + msgs.msgEShowActivity + '</div>\
                     </a>\
                 </div>\
                 <div class="candado-GameContainer" id="candadoGameContainer-' + instance + '">\
                     <div class="candado-GameScoreBoard">\
-                        <div class="candado-TimeNumber" id="candadoTimeNumber-' + instance + '">\
                         <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-                        <div class="exeQuextIcons34  exeQuextIcons34-Time"></div>\
-                        <p id="candadoPTime-' + instance + '">00:00</p>\
-                        <a href="#" class="candado-LinkMinimize" id="candadoLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
-                                <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
-                                <div class="exeQuextIcons34 exeQuextIcons34-Minimize"></div>\
-                            </a>\
-                        </div>\
+                        <div class="exeQuextIcons34-Time"></div>\
+                        <p id="candadoPTime-' + instance + '" class="candado-PTime">00:00</p>\
+                        <a href="#" class="candado-LinkMinimize candado-Activo" id="candadoLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                            <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
+                            <div class="exeQuextIcons34-Minimize"></div>\
+                        </a>\
                     </div>\
                     <div class="candado-Instructiones exe-text" id="candadoInstructions-' + instance + '"></div>\
                     <div class="candado-FeedRetro exe-text" id="candadoFeedRetro-' + instance + '"></div>\
@@ -101,7 +99,7 @@ var $eXeCandado = {
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoSolutionDiv-' + instance + '">\
                         <label for="candadoSolution-' + instance + '" class="labelSolution">'+msgs.msgCodeAccess+':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
-                        <a href="#" id="candadoSolutionButton-' + instance + '" title="' + msgs.msgSubmit + '">\
+                        <a href="#" id="candadoSolutionButton-' + instance + '" title="' + msgs.msgSubmit + '" class="candado-SolutionButton candado-Activo">\
                             <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
                             <div class="exeQuextIcons-Submit"></div>\
                         </a>\

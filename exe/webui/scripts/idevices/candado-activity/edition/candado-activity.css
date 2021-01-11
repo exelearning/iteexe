@@ -1,253 +1,221 @@
-  #candadoIdeviceForm {
-    margin-top: 2em;
-  }
+#candadoIdeviceForm {
+  margin-top: 2em;
+  padding: 1em;
+}
 
-  #candadoIdeviceForm .candado-EOptions {
+#candadoIdeviceForm input[type="radio"], #candadoIdeviceForm input[type="checkbox"], #candadoIdeviceForm select {
+  cursor: pointer;
+}
+
+ #candadoIdeviceForm select {
+  line-height: 1.8em;
+  height: 1.8em;
+  width: 4em;
+}
+#candadoIdeviceForm input[type=number] {
+  width: 3em;
+}
+
+
+#candadoIdeviceForm label {
+  margin-right: .15em;
+}
+
+.candado-EPanel {
+  margin: 0.7em auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.candado-EDataAccess{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+.candado-EDataAccess input[type=text]{
+  width: 100%;
+  text-align: center;
+  min-width: 50px;
+  flex-grow: 1;
+}
+.candado-EDataAccess label{
+  flex-shrink: 0;
+  margin-right: 0.15em;
+}
+
+.candado-EDataAccess input[type=text]:nth-of-type(2n+1),.candado-EDataAccess input[type=number]:nth-of-type(2n+1){
+  margin-right: 0.2em;
+}
+
+
+
+.exe-block-info img {
+  vertical-align: middle;
+  margin-left: .2em
+}
+
+#candadoIdeviceFormTab1 * {
+  font-size: 0.9em;
+}
+
+#candadoIdeviceFormTab1 p:first-child {
+  margin-top: 0
+}
+
+#candadoIdeviceFormTab1 {
+  overflow: auto
+}
+
+#candadoIdeviceFormTab1 .ci18n {
+  width: 50%;
+  float: left
+}
+
+@media screen and (max-width:720px) {
+  #candadoIdeviceFormTab1 .ci18n {
     width: 100%;
-    margin: 10px auto;
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
+    float: none
+  }
+  .candado-EDataAccess {
     flex-wrap: wrap;
   }
-
-  #candadoIdeviceForm .candado-EMessage {
-    width: 100%;
-    margin: 10px auto;
-    display: flex;
-    align-content: center;
+  .candado-EDataAccess input[type=text],   .candado-EDataAccess input[type=number],{
+    margin-bottom: 0.3em;
   }
+}
 
-  .candado-EMessage label {
-    margin-left: 5px;
-  }
+#candadoIdeviceFormTab1 label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: .2em;
+  font-size: 0.9em
+}
 
-  label[for="candadoEErrorMessage"] {
-    margin-right: 2px;
-  }
+#candadoIdeviceFormTab1 input {
+  width: 350px;
+  font-size: 0.9em
+}
 
-  input#candadoEErrorMessage {
-    height: 18px;
-    width: auto;
-    flex: 1;
-  }
+.exe-form-tabs {
+  margin: 0 0 1.5em 0;
+  padding: 0;
+  list-style: none
+}
 
-  input#candadoEAttemps {
-    width: 40px;
-    height: 18px;
-    font-size: 14px;
-  }
+#main .exe-form-tabs li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-image: none;
+  display: inline
+}
 
-  #candadoIdeviceForm .candadoIdevice {
-    background: #fff;
-    padding: 20px;
-    border: 1px solid #000;
-  }
+.exe-form-tabs li:first-child a {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px
+}
 
-  #candadoIdeviceForm input[type="radio"], #candadoIdeviceForm input[type="checkbox"] {
-    cursor: pointer;
-  }
+.exe-form-tabs li:last-child a {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px
+}
 
-  #candadoIdeviceForm label {
-    display: inline;
-    font-weight: bold;
-    font-size: 14px;
-  }
+.exe-form-tabs a {
+  display: inline-block;
+  padding: .5em 1em;
+  border: 1px solid #CCC;
+  background: #F9F9F9;
+  color: #666
+}
 
-  #candadoIdeviceForm .candado-ERadioDatos {
-    width: 100%;
-    margin: 5px 0 10px 0;
-  }
+.exe-form-tabs li:not(:last-child) a {
+  border-right: none;
+}
 
-  #candadoIdeviceForm .candado-ERadioDatos label {
-    display: inline;
-    font-weight: normal;
-    font-size: 16px;
-    padding: 0;
-    font-weight: bold;
-    margin-right: 10px;
-  }
+.exe-form-tabs .exe-form-active-tab {
+  color: #000;
+  background: #FFF;
+  font-weight: 500
+}
 
-  #candadoIdeviceForm input, #candadoIdeviceForm select {
-    font-size: 14px;
-  }
+.candadoToggle {
+  margin: 0 0 10px;
+  box-sizing: border-box;
+  font-size: 0;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+}
 
-  #candadoIdeviceForm .candado-EPanel {
-    position: relative;
-    width: 98%;
-    max-width: 900px;
-    margin: 10px auto;
-    border-radius: 7px;
-    background: #f7f7f7;
-    border: 1px solid #071717;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    padding: 10px;
-  }
+.candadoToggle input {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -9999px;
+}
 
-  #candadoIdeviceForm fieldset input {
-    margin: 5px;
-  }
+.candadoToggle input+label {
+  cursor: pointer;
+  margin: 0;
+  padding: .75rem 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  border: solid 1px #DDD;
+  background-color: #FFF;
+  font-size: 1rem;
+  line-height: 110%;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  -webkit-transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+  transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
+}
 
-  #candadoIdeviceForm .exe-block-info img {
-    vertical-align: middle;
-    margin-left: .2em
-  }
+.candadoToggle input+label:first-of-type {
+  border-radius: 6px 0 0 6px;
+  border-right: none;
+}
 
-  #candadoIdeviceFormTab1 * {
-    font-size: 0.9em;
-  }
+.candadoToggle input+label:last-of-type {
+  border-radius: 0 6px 6px 0;
+  border-left: none;
+}
 
-  #candadoIdeviceFormTab1 p:first-child {
-    margin-top: 0
-  }
+.candadoToggle input:hover+label {
+  border-color: #213140;
+}
 
-  #candadoIdeviceFormTab1 {
-    overflow: auto
-  }
+.candadoToggle input:checked+label {
+  background-color: #CCC;
+  color: #213140;
+  border-color: #CCC;
+  z-index: 1;
+}
 
-  #candadoIdeviceFormTab1 .ci18n {
-    width: 50%;
-    float: left
-  }
+.candadoToggle input:focus+label {
+  outline: dotted 1px #CCC;
+  outline-offset: .45rem;
+}
 
-  @media screen and (max-width:720px) {
-    #candadoIdeviceForm #candadoIdeviceFormTab1 .ci18n {
-      width: 100%;
-      float: none
-    }
-  }
-
-  #candadoIdeviceForm #candadoIdeviceFormTab1 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: .2em;
-    font-size: 0.9em
-  }
-
-  #candadoIdeviceForm #candadoIdeviceFormTab1 input {
-    width: 300px;
-    font-size: 0.9em
-  }
-
-  .exe-form-tabs {
-    margin: 0 0 1.5em 0;
-    padding: 0;
-    list-style: none
-  }
-
-  #main .exe-form-tabs li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    list-style-image: none;
-    display: inline
-  }
-
-  .exe-form-tabs li:first-child a {
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px
-  }
-
-  .exe-form-tabs li:last-child a {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px
-  }
-
-  .exe-form-tabs a {
-    display: inline-block;
-    padding: .5em 1em;
-    border: 1px solid #CCC;
-    background: #F9F9F9;
-    color: #666
-  }
-
-  .exe-form-tabs li:not(:last-child) a {
-    border-right: none;
-  }
-
-  .exe-form-tabs .exe-form-active-tab {
-    color: #000;
-    background: #FFF;
-    font-weight: 500
-  }
-
-  .candadoToggle {
-    margin: 0 0 10px;
-    box-sizing: border-box;
-    font-size: 0;
+@media (max-width: 400px) {
+  .candadoToggle input+label {
+    padding: .75rem .25rem;
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
     display: -webkit-box;
     display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    flex-flow: row nowrap;
-    -webkit-box-pack: start;
-    justify-content: flex-start;
-    -webkit-box-align: stretch;
-    align-items: stretch;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: wrap;
   }
-
-  .candadoToggle input {
-    width: 0;
-    height: 0;
-    position: absolute;
-    left: -9999px;
-  }
-
-  .candadoToggle input+label {
-    cursor: pointer;
-    margin: 0;
-    padding: .75rem 1.5rem;
-    box-sizing: border-box;
-    position: relative;
-    display: inline-block;
-    border: solid 1px #DDD;
-    background-color: #FFF;
-    font-size: 1.3rem;
-    line-height: 110%;
-    font-weight: 600;
-    text-align: center;
-    box-shadow: 0 0 0 rgba(255, 255, 255, 0);
-    -webkit-transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
-    transition: border-color .15s ease-out, color .25s ease-out, background-color .15s ease-out, box-shadow .15s ease-out;
-  }
-
-  .candadoToggle input+label:first-of-type {
-    border-radius: 6px 0 0 6px;
-    border-right: none;
-  }
-
-  .candadoToggle input+label:last-of-type {
-    border-radius: 0 6px 6px 0;
-    border-left: none;
-  }
-
-  .candadoToggle input:hover+label {
-    border-color: #213140;
-  }
-
-  .candadoToggle input:checked+label {
-    background-color: #CCC;
-    color: #213140;
-    border-color: #CCC;
-    z-index: 1;
-  }
-
-  .candadoToggle input:focus+label {
-    outline: dotted 1px #CCC;
-    outline-offset: .45rem;
-  }
-
-  @media (max-width: 400px) {
-    .candadoToggle input+label {
-      padding: .75rem .25rem;
-      -webkit-box-flex: 0;
-      flex: 0 0 50%;
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-  }
+}

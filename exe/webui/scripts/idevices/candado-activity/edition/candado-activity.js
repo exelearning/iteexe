@@ -68,59 +68,54 @@ var $exeDevice = {
     createForm: function () {
         var msgs=this.msgs;
         var html = '\
-			<div id="candadoIdeviceForm">\
-				<div class="exe-form-tab" title="' +  msgs.msgEGeneralSettings+ '">\
+			    <div id="candadoIdeviceForm">\
+				    <div class="exe-form-tab" title="' +  msgs.msgEGeneralSettings+ '">\
                         <div class="candado-EPanel" id="candadoEPanel">\
-                            <div class="candadoToggle">\
-                                <input class="candado-Type" checked="checked" id="candadoECandado" type="radio" name="dsfDesRet" value="0" />\
+                            <p class="candadoToggle">\
+                                <input checked id="candadoECandado" type="radio" name="dsfDesRet" value="0" />\
                                 <label for="candadoECandado">' + msgs.msgEInstructions + '</label>\
-                                <input class="candado-Type"  id="candadoERetro" type="radio" name="dsfDesRet" value="1" />\
+                                <input id="candadoERetro" type="radio" name="dsfDesRet" value="1" />\
                                 <label for="candadoERetro">' +  msgs.msgEREtroalimatacion + '</label>\
-                            </div>\
-                            <div class="candado-EDAtaGame">\
-                                <div class="candado-ERadioDatos">\
-                                     <div id="divCandadoInstructions">\
-                                    <label for="candadoEDescription" class="sr-av">'+_('Instructions')+'":</label>\
-                                    <textarea id="candadoEDescription" class="exe-html-editor"\></textarea>\
-                                </div>\
-                                <div id="divCandadoFeebBack">\
-                                    <label for="candadoEFeedBack" class="sr-av">'+_('Feedback')+'":</label>\
-                                    <textarea  id="candadoEFeedBack" class="exe-html-editor"\></textarea>\
-                                </div>\
-                                </div>\
-                                <div class="candado-EOptions">\
-                                        <label for="candadoEDSolution">' + msgs.msgCodeAccess + ': <input type="text" id="candadoEDSolution" /></label>\
-                                        <label id="candadolblEDTime" for="candadoEDTime">' + msgs.msgTime+ ':\
-                                        <select id="candadoEDTime">\
-                                            <option value="0"></option>\
-                                            <option value="1">1m</option>\
-                                            <option value="3">3m</option>\
-                                            <option value="5">5m</option>\
-                                            <option value="10" selected>10m</option>\
-                                            <option value="15">15m</option>\
-                                            <option value="20">20m</option>\
-                                            <option value="25">25m</option>\
-                                            <option value="30">30m</option>\
-                                            <option value="35">35m</option>\
-                                            <option value="40" >40m</option>\
-                                            <option value="40">45m</option>\
-                                            <option value="50">50m</option>\
-                                            <option value="55">55m</option>\
-                                            <option value="60">60m</option>\
-                                        </select>\
-                                        </label>\
-                                        <label for="candadoEShowMinimize"><input type="checkbox" id="candadoEShowMinimize"> ' + msgs.msgEShowMinimize + ' </label>\
-                                        <label for="candadoEReboot"><input type="checkbox" id="candadoEReboot" checked> ' + msgs.msgERebootActivity + ' </label>\
-                                </div>\
-                                <div class="candado-EMessage">\
-                                        <label for="candadoEAttemps">' + msgs.msgNumFaildedAttemps + ':  <input type="number"  name="candadoEAttemps" id="candadoEAttemps" value="0" min="0" max="10" step="1" required /></label> \
-			                            <label for="candadoEErrorMessage">' + msgs.msgCustomMessage + ': </label><input type="text" disabled id="candadoEErrorMessage" />\
-                                </div>\
-                            </div>\
+                            </p>\
+                            <p id="divCandadoInstructions">\
+                                <label for="candadoEDescription" class="sr-av">'+_('Instructions')+'":</label>\
+                                <textarea id="candadoEDescription" class="exe-html-editor"\></textarea>\
+                            </p>\
+                            <p id="divCandadoFeebBack">\
+                                <label for="candadoEFeedBack" class="sr-av">'+_('Feedback')+'":</label>\
+                                <textarea  id="candadoEFeedBack" class="exe-html-editor"\></textarea>\
+                            </p>\
+                            <p class="candado-EDataAccess">\
+                                <label for="candadoEDSolution">' + msgs.msgCodeAccess + ':</label><input type="text" id="candadoEDSolution"/>\
+                                <label id="candadolblEDTime" for="candadoEDTime">' + msgs.msgTime+ ':</label>\
+                                <select id="candadoEDTime">\
+                                    <option value="0"></option>\
+                                    <option value="1">1m</option>\
+                                    <option value="3">3m</option>\
+                                    <option value="5">5m</option>\
+                                    <option value="10" selected>10m</option>\
+                                    <option value="15">15m</option>\
+                                    <option value="20">20m</option>\
+                                    <option value="25">25m</option>\
+                                    <option value="30">30m</option>\
+                                    <option value="35">35m</option>\
+                                    <option value="40" >40m</option>\
+                                    <option value="40">45m</option>\
+                                    <option value="50">50m</option>\
+                                    <option value="55">55m</option>\
+                                    <option value="60">60m</option>\
+                                </select>\
+                                <input type="checkbox" id="candadoEShowMinimize"><label for="candadoEShowMinimize">' + msgs.msgEShowMinimize + ' </label>\
+                                <input type="checkbox" id="candadoEReboot" checked><label for="candadoEReboot">' + msgs.msgERebootActivity + ' </label>\
+                            </p>\
+                            <p class="candado-EDataAccess">\
+                                <label for="candadoEAttemps">' + msgs.msgNumFaildedAttemps + ':</label><input type="number"  name="candadoEAttemps" id="candadoEAttemps" value="0" min="0" max="10" step="1" required />\
+                                <label for="candadoEErrorMessage">' + msgs.msgCustomMessage + ':</label><input type="text" disabled id="candadoEErrorMessage" />\
+                            </p>\
                         </div>\
-                </div>\
+                    </div>\
 				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
-		    </div>\
+		      </div>\
 			';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
@@ -237,7 +232,7 @@ var $exeDevice = {
         html += '<div class="candado-version js-hidden">' + $exeDevice.candadoVersion + '</div>';
         html += '<div class="candado-instructions">' + tinymce.editors[0].getContent() + '</div>';
         html += '<div class="candado-retro">' + tinymce.editors[1].getContent() + '</div>';
-        html += '<div class="candado-DataGame">' +  json + '</div>';
+        html += '<div class="candado-DataGame" js-hidden>' +  json + '</div>';
         html += '</div>';
         return html;
     },
