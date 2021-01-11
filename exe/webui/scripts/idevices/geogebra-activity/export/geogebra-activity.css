@@ -4,3 +4,6 @@
 .auto-geogebra-loading{background:#FFF url(geogegra-activity-loading.gif) no-repeat 50% 50%;position:relative;overflow:hidden;width:565px;height:363px}
 .auto-geogebra-get-score{text-align:center;padding-top:.5em}
 .auto-geogebra .scorm-button-text{display:none}
+.auto-geogebra-extra-content {margin-top: 1.7em}
+.auto-geogebra-author {margin-top: 0.3em; width: 100%; text-align: center;}
+

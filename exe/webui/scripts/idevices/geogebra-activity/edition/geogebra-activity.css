@@ -1,11 +1,11 @@
 /* GeoGebra Activity iDevice (edition CSS) */
 #geogebraActivitySCORMoptions{visibility:hidden;margin-left:1.5em}
 #geogebraActivityInstructions{width:500px}
-#geogebraActivityURL,#geogebraActivityURLexample{width:250px;margin-right:1.5em}
+#geogebraActivityURL,#geogebraActivityURLexample{width:200px;margin-right:1.5em}
+#geogebraActivityURL{width:300px;margin-right:.2em}
 #geogebraActivityWidth,#geogebraActivityHeight,#geogebraActivityLang,#geogebraActivityBorderColor{width:70px}
 #geogebraActivityURLexample{background:#F0F0F0;color:#6d6d6d}
 label[for=geogebraActivityHeight]{margin-left:1.5em}
-label[for=geogebraActivitySCORM]{font-weight:bold}
 #eXeAutoGeogebraCheckOptions{overflow:auto;margin:1em 0 .5em 0}
 #eXeAutoGeogebraForm p{margin-bottom:1.5em}
 #eXeAutoGeogebraAdvancedOptions p{margin:.7em 0}
@@ -15,5 +15,12 @@ label[for=geogebraActivitySCORM]{font-weight:bold}
 #geogebraActivitySCORMinstructions{display:none;color:#777;margin:10px 0 0 25px}
 #geogebraActivitySCORMinstructions ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
 #geogebraActivitySCORMinstructions ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}
-#geogebraActivitySize.loading{background:url(../export/geogegra-activity-loading.gif) no-repeat 0 50%;background-size:24px 24px}
-#geogebraActivitySize.loading *{visibility:hidden}
+#geogebraActivityURL.loading{background:url(../export/geogegra-activity-loading.gif) no-repeat 0 50%;background-size:24px 24px}
+#geogebraActivityURL.loading *{visibility:hidden}
+#geogebraActivitySize{display:none}
+#geogebraActivityScale{width:55px;margin-right:1.5em}
+#geogebraActivityPlayButton{display:inline-block;;width:1.5em;height: 1.5em; background-image:url(geogegra-activity-playbutton.png); margin-right: 1em;  background-size:100% 100%}
+.exe-feedback-fieldset #eXeAutoGeogebraCheckOptions p:last-child {margin:0}
+#geogebraActivityURLS{display: flex; justify-content: flex-start; align-items: center;}
+#geogebraActivityURLS label{margin-right: 0.15em; }
+label[for=geogebraActivityScale]{margin-left:1.5em}
