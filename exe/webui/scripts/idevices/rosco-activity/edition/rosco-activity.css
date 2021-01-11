@@ -73,9 +73,9 @@
   margin-bottom: 5px;
 }
 
-#roscoIdeviceForm .roscoLinkStart, #roscoIdeviceForm .roscoLinkClose,
+#roscoIdeviceForm .roscoLinkStart, #roscoIdeviceForm .roscoLinkClose,  #roscoIdeviceForm .roscoPlayAudio,
 #roscoIdeviceForm .roscoLinkSelectImage,  #roscoIdeviceForm .roscoStartEdition,
-#roscoIdeviceForm .roscoSelectImageEdition,#roscoIdeviceForm .roscoCloseImage  {
+#roscoIdeviceForm .roscoSelectImageEdition,#roscoIdeviceForm .roscoCloseImage, #roscoIdeviceForm .roscoPlayAudio {
   width: 32px;
   height: 32px;
   min-width: 32px;
@@ -92,7 +92,7 @@
   margin: 0 3px;
 }
 
-#roscoIdeviceForm img { 
+#roscoIdeviceForm img {
   border-style: none;
 }
 
@@ -186,7 +186,7 @@
   display: none
 }
 
-#roscoIdeviceForm .roscoBarEdition, #roscoIdeviceForm .roscoMetaData {
+#roscoIdeviceForm .roscoBarEdition, #roscoIdeviceForm .roscoMetaData, #roscoIdeviceForm .roscoAudioDiv {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -204,7 +204,7 @@
   margin: 0 3px;
 }
 
-#roscoIdeviceForm .roscoURLImageEdition {
+#roscoIdeviceForm .roscoURLImageEdition, #roscoIdeviceForm .roscoURLAudioEdition   {
   width: 100%;
   margin: 0 3px;
 }
@@ -224,7 +224,7 @@
 #roscoIdeviceFormTab3{overflow:auto}
 #roscoIdeviceFormTab3 .ci18n{width:50%;float:left}
 @media screen and (max-width:720px) {
-	#roscoIdeviceFormTab3 .ci18n{width:100%;float:none}	
+	#roscoIdeviceFormTab3 .ci18n{width:100%;float:none}
 }
 #roscoIdeviceFormTab3 label{display:block;font-weight:bold;margin-bottom:.2em;font-size: 0.9em}
 #roscoIdeviceFormTab3 input{width:300px;font-size: 0.9em}

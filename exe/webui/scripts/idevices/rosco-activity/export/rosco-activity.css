@@ -275,6 +275,15 @@
     display: none;
 }
 
+.rosco-LinkAudio {
+	bottom: 3px;
+	display: none;
+	position: absolute;
+	right: 3px;
+	width: 2em;
+	z-index: 1005;
+}
+
 /* Author */
 
 .rosco-AuthorLicence {
@@ -581,6 +590,25 @@
 }
 
 
+.rosco-Activo {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	transition: transform 0.3s;
+}
+
+.rosco-Activo:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
 /* efecto */
 
 .rosco-parpadea {
@@ -593,6 +621,8 @@
     -webkit-animation-timing-function: linear;
     -webkit-animation-iteration-count: 5;
 }
+
+
 
 @-moz-keyframes rosco-parpadeo {
     0% {

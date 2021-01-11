@@ -11,7 +11,7 @@ var $exeDevice = {
 	title: _("A-Z Quiz Game"),
 	iDevicePath: "/scripts/idevices/rosco-activity/edition/",
 	msgs: {},
-	roscoVersion: 1,
+	roscoVersion: 2,
 	ci18n: {
 		"msgReady": _("Ready?"),
 		"msgStartGame": _("Click here to start"),
@@ -154,6 +154,9 @@ var $exeDevice = {
 		$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
 		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
 		$('#roscoTimeShowSolution').prop('disabled', !dataGame.showSolution);
+		for (var i = 0; i < dataGame.wordsGame[i].length; i++) {
+			dataGame.wordsGame[i].audio = typeof dataGame.wordsGame[i].audio == "undefined" ? '' : dataGame.wordsGame[i].audio;
+		}
 
 		$('#roscoCaseSensitive').prop('checked', dataGame.caseSensitive);
 
@@ -176,6 +179,10 @@ var $exeDevice = {
 		$('.roscoURLImageEdition').each(function (index) {
 			var url = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].url : "";
 			$(this).val(url);
+		});
+		$('.roscoURLAudioEdition').each(function (index) {
+			var audio = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].audio : "";
+			$(this).val(audio);
 		});
 		$('.roscoXImageEdition').each(function (index) {
 			var x = index < dataGame.wordsGame.length ? dataGame.wordsGame[index].x : 0;
@@ -221,14 +228,34 @@ var $exeDevice = {
 			if (version.length == 1) {
 				json = $exeDevice.Decrypt(json);
 			}
+
+
 			var dataGame = $exeDevice.isJsonString(json);
-			var $imagesLink = $('.rosco-LinkImages', wrapper);
+			version = version == '' || typeof version == 'undefined' ? 0 : parseInt(version);
+			for (var i = 0; i < dataGame.wordsGame.length; i++) {
+				if (version < 2) {
+					dataGame.wordsGame[i].audio = '';
+				}
+			}
+
+			var $imagesLink = $('.rosco-LinkImages', wrapper),
+				$audiosLink = $('.rosco-LinkAudios', wrapper);
+
 			$imagesLink.each(function (index) {
 				dataGame.wordsGame[index].url = $(this).attr('href');
-				if (dataGame.wordsGame[index].url.length < 10) {
+				if (dataGame.wordsGame[index].url.length < 4) {
 					dataGame.wordsGame[index].url = "";
 				}
 			});
+
+			$audiosLink.each(function (index) {
+				dataGame.wordsGame[index].audio = $(this).attr('href');
+				if (dataGame.wordsGame[index].audio.length < 4) {
+					dataGame.wordsGame[index].audio = "";
+				}
+			});
+
+
 			$exeDevice.updateFieldGame(dataGame);
 			var instructions = $(".rosco-instructions", wrapper);
 			if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
@@ -410,12 +437,15 @@ var $exeDevice = {
 			divContent = "";
 		json = $exeDevice.Encrypt(json);
 		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions">' + dataGame.instructions + '</div>';
-		var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame);
+		var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame),
+			linksAudios = $exeDevice.createlinksAudio(dataGame.wordsGame);
+
 		html = '<div class="rosco-IDevice">';
 		html += '<div class="rosco-version js-hidden">' + $exeDevice.roscoVersion + '</div>';
 		html += divContent;
 		html += '<div class="rosco-DataGame">' + json + '</div>';
 		html += linksImages;
+		html += linksAudios;
 		html += '</div>';
 		// Get the optional text
 		var textAfter = tinymce.editors[1].getContent();
@@ -432,6 +462,17 @@ var $exeDevice = {
 				linkImage = '<a href="#" class="js-hidden rosco-LinkImages">' + i + '</a>';
 			}
 			html += linkImage;
+		}
+		return html;
+	},
+	createlinksAudio: function (wordsGame) {
+		var html = '';
+		for (var i = 0; i < wordsGame.length; i++) {
+			var linkAudio = '<a href="' + wordsGame[i].audio + '" class="js-hidden rosco-LinkAudios">' + i + '</a>';
+			if (wordsGame[i].audio.length == 0) {
+				linkAudio = '<a href="#" class="js-hidden rosco-LinkAudios">' + i + '</a>';
+			}
+			html += linkAudio;
 		}
 		return html;
 	},
@@ -487,7 +528,7 @@ var $exeDevice = {
 					</div>\
 					<div class="roscoImageBarEdition">\
 						<div class="roscoImageEdition">\
-							<img src="' + path + 'roscoCursor.gif" class="roscoCursorEdition" alt="Cursor" /> \
+							<img src="' + path + 'quextIECursor.gif" class="roscoCursorEdition" alt="Cursor" /> \
 							<img src="" class="roscoHomeImageEdition" alt="' + _("No image") + '" /> \
 							<img src="' + path + 'roscoHomeImage.png" class="roscoNoImageEdition" alt="' + _("No image") + '" /> \
 						</div>\
@@ -498,7 +539,12 @@ var $exeDevice = {
 						</div>\
 						<div class="roscoMetaData">\
 							<label for="roscoAlt' + letter + '">Alt: </label><input type="text" id="roscoAlt' + letter + '" class="roscoAlt" />\
-                            <label for="roscoAuthorEdition' + letter + '">' + _("Authorship") + ': </label><input type="text" id="roscoAuthorEdition' + letter + '" class="roscoAuthorEdition" />\
+							<label for="roscoAuthorEdition' + letter + '">' + _("Authorship") + ': </label><input type="text" id="roscoAuthorEdition' + letter + '" class="roscoAuthorEdition" />\
+						</div>\
+						<div class="roscoAudioDiv">\
+							<label for="roscoEURLAudio' + letter + '">' + _("Audio") + ': </label>\
+							<input type="text" class="exe-file-picker roscoURLAudioEdition"  id="roscoEURLAudio' + letter + '"  placeholder="' + _("Indicate a valid URL of an audio or select one from your device") + '"/>\
+							<a href="#" class="roscoPlayAudio" title="' + _("Audio") + '" id="roscoPlayAudio' + letter + '" ><img src="' + path + "quextIEPlay.png" + '" alt="' + _("Play audio") + '" class="roscoIconoPlayAudio"/></a>\
 							<a href="#" class="roscoLinkClose" title="' + _("Hide image") + '"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize") + '" class="roscoCloseImage"/></a>\
 						</div>\
 						<hr class="roscoSeparation"/>\
@@ -527,8 +573,8 @@ var $exeDevice = {
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val())),
-			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
-			caseSensitive=$('#roscoCaseSensitive').is(':checked');
+			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
+			caseSensitive = $('#roscoCaseSensitive').is(':checked'),
 			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
 		if (!itinerary) return false;
 		if (showSolution && timeShowSolution.length == 0) {
@@ -564,6 +610,11 @@ var $exeDevice = {
 		var urls = [];
 		$('.roscoURLImageEdition').each(function () {
 			urls.push($(this).val());
+		});
+
+		var audios = [];
+		$('.roscoURLAudioEdition').each(function () {
+			audios.push($(this).val());
 		});
 		var xs = [];
 		$('.roscoXImageEdition').each(function () {
@@ -612,6 +663,7 @@ var $exeDevice = {
 			p.alt = alts[i];
 			p.author = authors[i];
 			p.url = urls[i];
+			p.audio = audios[i];
 			p.x = parseFloat(xs[i]);
 			p.y = parseFloat(ys[i]);
 			if (p.word.length == 0) {
@@ -647,7 +699,9 @@ var $exeDevice = {
 			'repeatActivity': scorm.repeatActivity,
 			'letters': this.letters,
 			'textAfter': escape(textAfter),
-			'caseSensitive':caseSensitive
+			'caseSensitive': caseSensitive,
+			'version': 2,
+
 		}
 		return data;
 	},
@@ -692,14 +746,42 @@ var $exeDevice = {
 			y = y ? y : 0;
 			$exeDevice.showImage(img, url, x, y, alt, 1);
 		});
+		$('#roscoDataWord input.roscoURLAudioEdition').on('change', function () {
+			var validExt = ['mp3', 'ogg', 'wav'],
+				selectedFile = $(this).val(),
+				ext = selectedFile.split('.').pop().toLowerCase();
+			if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
+				eXe.app.alert(_("Supported formats") + ": mp3', 'ogg', 'wav'");
+			} else {
+				if (selectedFile.length > 4) {
+					$exeDevice.playSound(selectedFile);
+				}
+			}
+		});
+
+		$('#roscoDataWord a.roscoPlayAudio').on('click', function (e) {
+			e.preventDefault();
+			var $audio = $(this).parent().find('.roscoURLAudioEdition').first(),
+				validExt = ['mp3', 'ogg', 'wav'],
+				selectedFile = $audio.val(),
+				ext = selectedFile.split('.').pop().toLowerCase();
+			if (selectedFile.length > 0 && validExt.indexOf(ext) == -1) {
+				eXe.app.alert(_("Supported formats") + ": mp3', 'ogg', 'wav'");
+			} else {
+				if (selectedFile.length > 4) {
+					$exeDevice.playSound(selectedFile);
+				}
+			}
+		});
+
 		$('#roscoDataWord a.roscoLinkSelectImage').on('click', function (e) {
 			e.preventDefault();
 			var $pater = $(this).parent().siblings('.roscoImageBarEdition'),
 				img = $pater.find('.roscoHomeImageEdition'),
 				url = $pater.find('.roscoURLImageEdition').val(),
 				alt = $pater.find('.roscoAlt').val(),
-				y = parseFloat($pater.find('.roscoYImageEdition').val());
-			x = parseFloat($pater.find('.roscoXImageEdition').val());
+				y = parseFloat($pater.find('.roscoYImageEdition').val()),
+				x = parseFloat($pater.find('.roscoXImageEdition').val());
 			x = x ? x : 0;
 			y = y ? y : 0;
 			$pater.slideToggle();
@@ -737,6 +819,16 @@ var $exeDevice = {
 		$('.roscoWordMutimediaEdition').on('dblclick', 'img.roscoHomeImageEdition', function () {
 			$exeDevice.clickImage(this, 0, 0);
 		});
+		$('.roscoWordMutimediaEdition').on('click', '.roscoCursorEdition', function (e) {
+			var $x = $(this).parent().siblings('.roscoBarEdition').find('.roscoXImageEdition'),
+				$y = $(this).parent().siblings('.roscoBarEdition').find('.roscoYImageEdition');
+			$x.val(0);
+			$y.val(0);
+			$(this).hide();
+
+		});
+
+
 		$('#roscoDuration').on('keyup', function () {
 			var v = this.value;
 			v = v.replace(/\D/g, '');
@@ -789,6 +881,20 @@ var $exeDevice = {
 		}
 		$exeAuthoring.iDevice.gamification.itinerary.addEvents();
 	},
+	playSound: function (selectedFile) {
+		$exeDevice.stopSound();
+		$exeDevice.playerAudio = new Audio(selectedFile);
+		$exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+			$exeDevice.playerAudio.play();
+		});
+	},
+
+	stopSound() {
+		if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
+			$exeDevice.playerAudio.pause();
+		}
+	},
+
 	exportGame: function () {
 		var dataGame = this.validateData();
 		if (!dataGame) {
