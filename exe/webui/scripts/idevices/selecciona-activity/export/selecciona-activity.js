@@ -14,16 +14,21 @@ var $eXeSelecciona = {
         blue: '#5877c6',
         green: '#00a300',
         red: '#b3092f',
-        white: '#ffffff',
-        yellow: '#f3d55a'
+        white: '#f9f9f9',
+        yellow: '#f3d55a',
+        grey: '#777777',
+        incorrect: '#d9d9d9',
+        correct: '#00ff00'
+
     },
     colors: {
-        black: "#071717",
-        blue: '#d5dcec',
-        green: '#cce1c8',
-        red: '#f7c4c4',
-        white: '#ffffff',
-        yellow: '#f5efd6'
+        black: "#1c1b1b",
+        blue: '#dfe3f1',
+        green: '#caede8',
+        red: '#fbd2d6',
+        white: '#f9f9f9',
+        yellow: '#fcf4d3',
+        correct: '#dcffdc'
     },
     image: '',
     widthImage: 0,
@@ -41,7 +46,7 @@ var $eXeSelecciona = {
     scorm: '',
     previousScore: '',
     initialScore: '',
-    msgs:'',
+    msgs: '',
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
@@ -76,19 +81,18 @@ var $eXeSelecciona = {
             $eXeSelecciona.initialScore = $eXeSelecciona.previousScore;
         }
     },
-    loadJSCSSFile: function (filename, filetype){
-        if (filetype=="js"){ //if filename is a external JavaScript file
-            var fileref=document.createElement('script')
-            fileref.setAttribute("type","text/javascript")
+    loadJSCSSFile: function (filename, filetype) {
+        if (filetype == "js") { //if filename is a external JavaScript file
+            var fileref = document.createElement('script')
+            fileref.setAttribute("type", "text/javascript")
             fileref.setAttribute("src", filename)
-        }
-        else if (filetype=="css"){ //if filename is an external CSS file
-            var fileref=document.createElement("link")
+        } else if (filetype == "css") { //if filename is an external CSS file
+            var fileref = document.createElement("link")
             fileref.setAttribute("rel", "stylesheet")
             fileref.setAttribute("type", "text/css")
             fileref.setAttribute("href", filename)
         }
-        if (typeof fileref!="undefined")
+        if (typeof fileref != "undefined")
             document.getElementsByTagName("head")[0].appendChild(fileref)
     },
 
@@ -104,7 +108,7 @@ var $eXeSelecciona = {
         return score;
     },
     endScorm: function () {
-        if ($eXeSelecciona.mScorm) {
+        if ($eXeSelecciona.mScorm && typeof $eXeSelecciona.mScorm.quit == "function") {
             $eXeSelecciona.mScorm.quit();
         }
 
@@ -152,7 +156,7 @@ var $eXeSelecciona = {
                     } else {
                         $eXeSelecciona.previousScore = score;
                         $eXeSelecciona.mScorm.set("cmi.core.score.raw", score);
-                        message = $eXeSelecciona.userName !== '' ? $eXeSelecciona.userName + '. ' +mOptions.msgs.msgYouScore+ ': ' + score : mOptions.msgs.msgYouScore+ ': ' + score
+                        message = $eXeSelecciona.userName !== '' ? $eXeSelecciona.userName + '. ' + mOptions.msgs.msgYouScore + ': ' + score : mOptions.msgs.msgYouScore + ': ' + score
                         if (!mOptions.repeatActivity) {
                             $('#seleccionaSendScore-' + instance).hide();
                         }
@@ -163,7 +167,7 @@ var $eXeSelecciona = {
                     $eXeSelecciona.previousScore = score;
                     score = score === "" ? 0 : score;
                     $eXeSelecciona.mScorm.set("cmi.core.score.raw", score);
-                    $('#seleccionaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore+ ': ' + score)
+                    $('#seleccionaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score)
                     $('#seleccionaRepeatActivity-' + instance).show();
                     message = "";
                 }
@@ -180,9 +184,12 @@ var $eXeSelecciona = {
     loadGame: function () {
         $eXeSelecciona.options = [];
         $eXeSelecciona.activities.each(function (i) {
-            var dl = $(".selecciona-DataGame", this),
+
+            var version = $(".selecciona-version", this).eq(0).text(),
+                dl = $(".selecciona-DataGame", this),
                 imagesLink = $('.selecciona-LinkImages', this),
-                mOption = $eXeSelecciona.loadDataGame(dl, imagesLink),
+                audioLink = $('.selecciona-LinkAudios', this),
+                mOption = $eXeSelecciona.loadDataGame(dl, imagesLink, audioLink, version),
                 msg = mOption.msgs.msgPlayStart;
 
             $eXeSelecciona.options.push(mOption);
@@ -198,25 +205,20 @@ var $eXeSelecciona = {
                 $('#seleccionaGameContainer-' + i).show();
             }
             $('#seleccionaMessageMaximize-' + i).text(msg);
+            $('#seleccionaDivFeedBack-' + i).prepend($('.selecciona-feedback-game', this));
             $eXeSelecciona.addEvents(i);
+            $('#seleccionaDivFeedBack-' + i).hide();
         });
-        if(typeof(MathJax)=="undefined"){
+        if (typeof (MathJax) == "undefined") {
             $eXeSelecciona.loadMathJax();
         }
-        setTimeout(function () {
-            if (typeof (YT) !== "undefined") {
-                $eXeSelecciona.youTubeReady();
-            } else {
-                $eXeSelecciona.loadYoutubeApi();
-            }
-        }, 4000);
 
     },
     loadMathJax: function () {
         var tag = document.createElement('script');
         //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
         tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async=true;
+        tag.async = true;
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     },
@@ -224,19 +226,18 @@ var $eXeSelecciona = {
         var html = '',
             path = $eXeSelecciona.idevicePath,
             msgs = $eXeSelecciona.options[instance].msgs;
-        html += '<div class="selecciona-MainContainer">\
-        <div class="selecciona-GameMinimize" id="seleccionaGameMinimize-' + instance + '">\
-            <a href="#" class="selecciona-LinkMaximize" id="seleccionaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'seleccionaIcon.png" class="selecciona-Icons selecciona-IconMinimize" alt="Mostrar actividad">\
-                <div class="selecciona-MessageMaximize" id="seleccionaMessageMaximize-' + instance + '"></div>\
+        html += '<div class="gameQP-MainContainer">\
+        <div class="gameQP-GameMinimize" id="seleccionaGameMinimize-' + instance + '">\
+            <a href="#" class="gameQP-LinkMaximize" id="seleccionaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'seleccionaIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="' + msgs.msgMaximize + '">\
+                <div class="gameQP-MessageMaximize" id="MessageMaximize-' + instance + '"></div>\
             </a>\
         </div>\
-        <div class="selecciona-GameContainer" id="seleccionaGameContainer-' + instance + '">\
-            <div class="selecciona-GameScoreBoard">\
-                <div class="selecciona-GameScores">\
-                    <a href="#" class="selecciona-LinkMinimize" id="seleccionaLinkMinimize-' + instance + '" title="Minimizar">\
-                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
-                    </a>\
+        <div class="gameQP-GameContainer" id="seleccionaGameContainer-' + instance + '">\
+            <div class="gameQP-GameScoreBoard">\
+                <div class="gameQP-GameScores">\
+                    <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
+                    <p id="seleccionaPNumber-' + instance + '">0</p>\
                     <strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Hit"></div>\
                     <p id="seleccionaPHits-' + instance + '">0</p>\
@@ -247,7 +248,7 @@ var $eXeSelecciona = {
                     <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
                     <p id="seleccionaPScore-' + instance + '">0</p>\
                 </div>\
-                <div class="selecciona-LifesGame" id="seleccionaLifesGame-' + instance + '">\
+                <div class="gameQP-LifesGame" id="seleccionaLifesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
@@ -259,94 +260,112 @@ var $eXeSelecciona = {
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                 </div>\
-                <div class="selecciona-NumberLifesGame" id="seleccionaNumberLivesGame-' + instance + '">\
+                <div class="gameQP-NumberLifesGame" id="seleccionaNumberLivesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="seleccionaPLifes-' + instance + '">0</p>\
                 </div>\
-                <div class="selecciona-TimeNumber">\
+                <div class="gameQP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
                     <div class="exeQuextIcons  exeQuextIcons-Time"></div>\
-                    <p id="seleccionaPTime-' + instance + '" class="selecciona-PTime">00:00</p>\
-                    <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
-                    <p id="seleccionaPNumber-' + instance + '">0</p>\
-                    <a href="#" class="selecciona-LinkFullScreen" id="seleccionaLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+                    <p id="seleccionaPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
+                    <a href="#" class="gameQP-LinkMinimize" id="seleccionaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
+                        <div class="exeQuextIcons exeQuextIcons-Minimize gameQP-Activo"></div>\
+                    </a>\
+                    <a href="#" class="gameQP-LinkFullScreen" id="seleccionaLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
                         <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-FullScreen" id="seleccionaFullScreen-' + instance + '">\
-                     </div>\
+                        <div class="exeQuextIcons exeQuextIcons-FullScreen gameQP-Activo" id="seleccionaFullScreen-' + instance + '">\
+                        </div>\
                     </a>\
                 </div>\
             </div>\
-            <div class="selecciona-ShowClue" id="seleccionaShowClue-' + instance + '">\
+            <div class="gameQP-ShowClue" id="seleccionaShowClue-' + instance + '">\
                 <div class="sr-av">' + msgs.msgClue + ':</div>\
-                <p class="selecciona-PShowClue selecciona-parpadea" id="seleccionaPShowClue-' + instance + '"></p>\
+                <p class="gameQP-PShowClue gameQP-parpadea" id="seleccionaPShowClue-' + instance + '"></p>\
             </div>\
-            <div class="selecciona-Multimedia" id="seleccionaMultimedia-' + instance + '">\
-                <img class="selecciona-Cursor" id="seleccionaCursor-' + instance + '" src="' + path + 'seleccionaCursor.gif" alt="Cursor" />\
-                <img  src="" class="selecciona-Images" id="seleccionaImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
-                <div class="selecciona-EText" id="seleccionaEText-' + instance + '"></div>\
-                <img src="' + path + 'seleccionaHome.png" class="selecciona-Cover" id="seleccionaCover-' + instance + '" alt="' + msgs.msImage + '" />\
-                <div class="selecciona-Video" id="seleccionaVideo-' + instance + '"></div>\
-                <div class="selecciona-Protector" id="seleccionaProtector-' + instance + '"></div>\
-                <div class="selecciona-GameOver" id="seleccionaGamerOver-' + instance + '">\
-                    <div class="selecciona-DataGameImage">\
-                        <img src="' + path + 'seleccionaGameWon.png" class="selecciona-HistGGame" id="seleccionaHistGGame-' + instance + '" alt="' + msgs.mgsAllQuestions + '" />\
-                        <img src="' + path + 'seleccionaGameLost.png" class="selecciona-LostGGame" id="seleccionaLostGGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
-                    </div>\
-                    <div class="selecciona-DataGameScore" id="seleccionaDataGame-' + instance + '">\
-                         <p id="seleccionaOverScore-' + instance + '">Score: 0</p>\
-                         <p id="seleccionaOverHits-' + instance + '">Hits: 0</p>\
-                         <p id="seleccionaOverErrors-' + instance + '">Errors: 0</p>\
-                    </div>\
+            <div class="gameQP-Multimedia" id="seleccionaMultimedia-' + instance + '">\
+                <img class="gameQP-Cursor" id="seleccionaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
+                <img  src="" class="gameQP-Images" id="seleccionaImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <div class="gameQP-EText" id="seleccionaEText-' + instance + '"></div>\
+                <img src="' + path + 'seleccionaHome.png" class="gameQP-Cover" id="seleccionaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <div class="gameQP-Video" id="seleccionaVideo-' + instance + '"></div>\
+                <div class="gameQP-Protector" id="seleccionaProtector-' + instance + '"></div>\
+                <a href="#" class="gameQP-LinkAudio" id="seleccionaLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
+                <div class="gameQP-GameOver" id="seleccionaGamerOver-' + instance + '">\
+                        <div class="gameQP-DataImage">\
+                            <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="seleccionaHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
+                            <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="seleccionaLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
+                        </div>\
+                        <div class="gameQP-DataScore">\
+                            <p id="seleccionaOverScore-' + instance + '">Score: 0</p>\
+                            <p id="seleccionaOverHits-' + instance + '">Hits: 0</p>\
+                            <p id="seleccionaOverErrors-' + instance + '">Errors: 0</p>\
+                        </div>\
                 </div>\
             </div>\
-            <div class="selecciona-AuthorLicence" id="seleccionaAutorLicence-' + instance + '">\
+            <div class="gameQP-AuthorLicence" id="seleccionaAuthorLicence-' + instance + '">\
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="seleccionaPAuthor-' + instance + '"></p>\
             </div>\
-            <div class="selecciona-CodeAccessDiv" id="seleccionaCodeAccessDiv-' + instance + '">\
-                <div class="selecciona-MessageCodeAccessE" id="seleccionaMesajeAccesCodeE-' + instance + '"></div>\
-                <div class="selecciona-DataCodeAccessE">\
-                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="selecciona-CodeAccessE"  id="seleccionaCodeAccessE-' + instance + '" readonly>\
+            <div class="gameQP-CodeAccessDiv" id="seleccionaCodeAccessDiv-' + instance + '">\
+                <p class="gameQP-MessageCodeAccessE" id="seleccionaMesajeAccesCodeE-' + instance + '"></p>\
+                <div class="gameQP-DataCodeAccessE">\
+                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="seleccionaCodeAccessE-' + instance + '">\
                     <a href="#" id="seleccionaCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
                         <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
-                        <div class="exeQuextIcons-Submit"></div>\
+                        <div class="exeQuextIcons exeQuextIcons-Submit gameQP-Activo"></div>\
+                    </a>\
+                </div>\
+                </div>\
+            <div class="sr-av" id="seleccionaStartGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
+            <div class="gameQP-StartGame"><a href="#" id="seleccionaStartGame-' + instance + '"></a></div>\
+            <div class="gameQP-QuestionDiv" id="seleccionaQuestionDiv-' + instance + '">\
+                <div class="sr-av">' + msgs.msgQuestion + ':</div>\
+                <div class="gameQP-Question" id="seleccionaQuestion-' + instance + '"></div>\
+                <div class="gameQP-OptionsDiv" id="seleccionaOptionsDiv-' + instance + '">\
+                    <div class="sr-av">' + msgs.msgOption + ' A:</div>\
+                    <a href="#" class="gameQP-Option1 gameQP-Options" id="seleccionaOption1-' + instance + '" data-number="0"></a>\
+                    <div class="sr-av">' + msgs.msgOption + ' B:</div>\
+                    <a href="#" class="gameQP-Option2 gameQP-Options" id="seleccionaOption2-' + instance + '" data-number="1"></a>\
+                    <div class="sr-av">' + msgs.msgOption + ' C:</div>\
+                    <a href="#" class="gameQP-Option3 gameQP-Options" id="seleccionaOption3-' + instance + '" data-number="2"></a>\
+                    <div class="sr-av">' + msgs.msgOption + ' D:</div>\
+                    <a href="#" class="gameQP-Option4 gameQP-Options" id="seleccionaOption4-' + instance + '" data-number="3"></a>\
+                </div>\
+            </div>\
+            <div class="gameQP-WordsDiv" id="seleccionaWordDiv-' + instance + '">\
+                <div class="sr-av">' + msgs.msgAnswer + ':</div>\
+                <div class="gameQP-Prhase" id="seleccionaEPhrase-' + instance + '"></div>\
+                <div class="sr-av">' + msgs.msgQuestion + ':</div>\
+                <div class="gameQP-Definition" id="seleccionaDefinition-' + instance + '"></div>\
+                <div class="gameQP-DivReply" id="seleccionaDivResponder-' + instance + '">\
+                    <input type="text" value="" class="gameQP-EdReply" id="seleccionaEdAnswer-' + instance + '" autocomplete="off">\
+                    <a href="#" id="seleccionaBtnReply-' + instance + '" title="' + msgs.msgReply + '">\
+                        <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
+                        <div class="exeQuextIcons-Submit gameQP-Activo"></div>\
                     </a>\
                 </div>\
             </div>\
-            <div class="sr-av" id="seleccionaStarGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
-            <div class="selecciona-StartGame"><a href="#" id="seleccionaStarGame-' + instance + '"></a></div>\
-            <div class="selecciona-QuestionDiv" id="seleccionaQuestionDiv-' + instance + '">\
-                <div class="sr-av">' + msgs.msgQuestion + ':</div>\
-                <div class="selecciona-Question" id="seleccionaQuestion-' + instance + '"></div>\
-                <div class="selecciona-OptionsDiv" id="seleccionaOptionsDiv-' + instance + '">\
-                    <div class="sr-av">' + msgs.msgOption + ' A:</div>\
-                    <a href="#" class="selecciona-Option1 selecciona-Options" id="seleccionaOption1-' + instance + '" data-number="0"></a>\
-                    <div class="sr-av">' + msgs.msgOption + ' B:</div>\
-                    <a href="#" class="selecciona-Option2 selecciona-Options" id="seleccionaOption2-' + instance + '" data-number="1"></a>\
-                    <div class="sr-av">' + msgs.msgOption + ' C:</div>\
-                    <a href="#" class="selecciona-Option3 selecciona-Options" id="seleccionaOption3-' + instance + '" data-number="2"></a>\
-                    <div class="sr-av">' + msgs.msgOption + ' D:</div>\
-                    <a href="#" class="selecciona-Option4 selecciona-Options" id="seleccionaOption4-' + instance + '" data-number="3"></a>\
-                </div>\
-            </div>\
-            <div class="selecciona-BottonContainerDiv" id="seleccionaBottonContainer-' + instance + '">\
-                <a href="#" class="selecciona-LinkVideoIntroShow" id="seleccionaLinkVideoIntroShow-' + instance + '" title="' + msgs.msgVideoIntro + '">\
+            <div class="gameQP-BottonContainerDiv" id="seleccionaBottonContainer-' + instance + '">\
+                <a href="#" class="gameQP-LinkVideoIntroShow" id="seleccionaLinkVideoIntroShow-' + instance + '" title="' + msgs.msgVideoIntro + '">\
                     <strong><span class="sr-av">' + msgs.msgVideoIntro + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Video"></div>\
                 </a>\
-                <div class="selecciona-AnswersDiv" id="seleccionaAnswerDiv-' + instance + '">\
-                    <div class="selecciona-Answers" id="seleccionaAnswers-' + instance + '"></div>\
+                <div class="gameQP-AnswersDiv" id="seleccionaAnswerDiv-' + instance + '">\
+                    <div class="gameQP-Answers" id="seleccionaAnswers-' + instance + '"></div>\
                     <a href="#" id="seleccionaButtonAnswer-' + instance + '" title="' + msgs.msgAnswer + '">\
                         <strong><span class="sr-av">' + msgs.msgAnswer + '</span></strong>\
-                        <div class="exeQuextIcons-Submit"></div>\
+                        <div class="exeQuextIcons-Submit gameQP-Activo"></div>\
                     </a>\
                 </div>\
             </div>\
-             <div class="selecciona-VideoIntroDiv" id="seleccionaVideoIntroDiv-' + instance + '">\
-                <div class="selecciona-VideoIntro" id="seleccionaVideoIntro-' + instance + '"></div>\
-                <input type="button" class="feedbackbutton selecciona-VideoIntroClose" id="seleccionaVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '"/>\
+             <div class="gameQP-VideoIntroDiv" id="seleccionaVideoIntroDiv-' + instance + '">\
+                <div class="gameQP-VideoIntro" id="seleccionaVideoIntro-' + instance + '"></div>\
+                <input type="button" class="feedbackbutton gameQP-VideoIntroClose" id="seleccionaVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '"/>\
+            </div>\
+            <div class="gameQP-DivFeedBack" id="seleccionaDivFeedBack-' + instance + '">\
+                <input type="button" id="seleccionaFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
             </div>\
         </div>\
     </div>\
@@ -356,15 +375,15 @@ var $eXeSelecciona = {
     addButtonScore: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         var butonScore = "";
-        var fB = '<div class="selecciona-BottonContainer">';
+        var fB = '<div class="gameQP-BottonContainer">';
         if (mOptions.isScorm == 2) {
             var buttonText = mOptions.textButtonScorm;
             if (buttonText != "") {
                 if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                     this.hasSCORMbutton = true;
-                    fB += '<div class="selecciona-GetScore">';
+                    fB += '<div class="gameQP-GetScore">';
                     if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
-                    fB += '<p><input type="button" id="seleccionaSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="selecciona-RepeatActivity" id="seleccionaRepeatActivity-' + instance + '"></span></p>';
+                    fB += '<p><input type="button" id="seleccionaSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="gameQP-RepeatActivity" id="seleccionaRepeatActivity-' + instance + '"></span></p>';
                     if (!this.isInExe) fB += '</form>';
                     fB += '</div>';
                     butonScore = fB;
@@ -373,8 +392,8 @@ var $eXeSelecciona = {
         } else if (mOptions.isScorm == 1) {
             if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                 this.hasSCORMbutton = true;
-                fB += '<div class="selecciona-GetScore">';
-                fB += '<p><span class="selecciona-RepeatActivity" id="seleccionaRepeatActivity-' + instance + '"></span></p>';
+                fB += '<div class="gameQP-GetScore">';
+                fB += '<p><span class="gameQP-RepeatActivity" id="seleccionaRepeatActivity-' + instance + '"></span></p>';
                 fB += '</div>';
                 butonScore = fB;
             }
@@ -382,24 +401,56 @@ var $eXeSelecciona = {
         fB = +'</div>';
         return butonScore;
     },
-    loadDataGame: function (data, imgsLink) {
+    loadDataGame: function (data, imgsLink, audioLink, version) {
         var json = $eXeSelecciona.Decrypt(data.text()),
             mOptions = $eXeSelecciona.isJsonString(json);
+        version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
         mOptions.gameOver = false;
-        mOptions.scoreGame=0;
-        imgsLink.each(function (index) {
-            mOptions.selectsGame[index].url = $(this).attr('href');
-            if(mOptions.selectsGame[index].url.length<10){
-                mOptions.selectsGame[index].url="";
+        mOptions.hasVideo = false;
+        mOptions.waitStart = false;
+        mOptions.waitPlayIntro = false;
+        mOptions.hasVideoIntro = false;
+        mOptions.gameStarted = false;
+        mOptions.scoreGame = 0;
+        for (var i = 0; i < mOptions.selectsGame.length; i++) {
+            mOptions.selectsGame[i].audio = typeof mOptions.selectsGame[i].audio == 'undefined' ? '' : mOptions.selectsGame[i].audio
+            if (mOptions.selectsGame[i].type == 2) {
+                mOptions.hasVideo = true;
+            }
+
+        }
+        mOptions.scoreGame = 0;
+        mOptions.scoreTotal = 0;
+        mOptions.playerAudio = "";
+        mOptions.gameMode = typeof mOptions.gameMode != 'undefined' ? mOptions.gameMode : 0;
+        mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
+        mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
+        mOptions.gameOver = false;
+        imgsLink.each(function () {
+            var iq = parseInt($(this).text());
+            if (!isNaN(iq) && iq < mOptions.selectsGame.length) {
+                mOptions.selectsGame[iq].url = $(this).attr('href');
+                if (mOptions.selectsGame[iq].url.length < 4 && mOptions.selectsGame[iq].type == 1) {
+                    mOptions.selectsGame[iq].url = "";
+                }
             }
         });
-        mOptions.scoreTotal=0;
-        for (var i=0;i< mOptions.selectsGame.length;i++){
-            if(mOptions.customScore){
-                mOptions.scoreTotal +=mOptions.selectsGame[i].customScore;
-            }else{
-                mOptions.selectsGame[i].customScore=1
-                mOptions.scoreTotal +=mOptions.selectsGame[i].customScore
+
+        audioLink.each(function () {
+            var iq = parseInt($(this).text());
+            if (!isNaN(iq) && iq < mOptions.selectsGame.length) {
+                mOptions.selectsGame[iq].audio = $(this).attr('href');
+                if (mOptions.selectsGame[iq].audio.length < 4) {
+                    mOptions.selectsGame[iq].audio = "";
+                }
+            }
+        });
+        for (var i = 0; i < mOptions.selectsGame.length; i++) {
+            if (mOptions.customScore) {
+                mOptions.scoreTotal += mOptions.selectsGame[i].customScore;
+            } else {
+                mOptions.selectsGame[i].customScore = 1
+                mOptions.scoreTotal += mOptions.selectsGame[i].customScore
             }
         }
         mOptions.selectsGame = mOptions.optionsRamdon ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
@@ -447,15 +498,81 @@ var $eXeSelecciona = {
                     'controls': 1
                 }
             });
-            $('#seleccionaStarGame-' + i).text(mOptions.msgs.msgStartGame);
-            if ($eXeSelecciona.getIDYoutube($eXeSelecciona.options[i].idVideo) !== '') {
-                $('#seleccionaVideoIntroContainer-' + i).css('display', 'flex');
-                $('#seleccionaVideoIntroContainer-' + i).show();
-                $('#seleccionaLinkVideoIntroShow-' + i).show();
-            }
-            $('#seleccionaCodeAccessE-'+ i).prop('readonly',false);
+            $('#seleccionaVideo-' + i).hide();
+            $('#seleccionaCodeAccessE-' + i).prop('readonly', false);
         }
     },
+    youTubeReadyOne: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        mOptions.player = new YT.Player('seleccionaVideo-' + instance, {
+            width: '100%',
+            height: '100%',
+            videoId: '',
+            playerVars: {
+                'color': 'white',
+                'autoplay': 0,
+                'controls': 0
+            },
+            events: {
+                'onReady': $eXeSelecciona.onPlayerReady,
+                'onError': $eXeSelecciona.onPlayerError
+            }
+        });
+        $('#seleccionaVideo-' + instance).hide();
+
+        mOptions.playerIntro = new YT.Player('seleccionaVideoIntro-' + instance, {
+            width: '100%',
+            height: '100%',
+            videoId: '',
+            playerVars: {
+                'color': 'white',
+                'autoplay': 0,
+                'controls': 1
+            }
+        });
+    },
+
+    preloadGame: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        if (mOptions.waitStart) {
+            mOptions.waitStart = false;
+            setTimeout(function () {
+                $eXeSelecciona.startGame(instance);
+            }, 1000);
+        }
+        if (mOptions.waitPlayIntro) {
+            mOptions.waitPlayIntro = false;
+            setTimeout(function () {
+                $eXeSelecciona.playVideoIntro(instance);
+                $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
+            }, 1000);
+         
+        }
+    },
+
+    playSound: function (selectedFile, instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
+        mOptions.playerAudio.addEventListener("canplaythrough", event => {
+            mOptions.playerAudio.play();
+        });
+
+    },
+    stopSound(instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
+            mOptions.playerAudio.pause();
+        }
+    },
+
+    playVideoIntro: function (instance) {
+        $('#seleccionaVideoIntroDiv-' + instance).show();
+        var mOptions = $eXeSelecciona.options[instance],
+            idVideo = $eXeSelecciona.getIDYoutube(mOptions.idVideo);
+        mOptions.endVideo = mOptions.endVideo <= mOptions.startVideo ? 36000 : mOptions.endVideo;
+        $eXeSelecciona.startVideoIntro(idVideo, mOptions.startVideo, mOptions.endVideo, instance);
+    },
+
     loadYoutubeApi: function () {
         onYouTubeIframeAPIReady = $eXeSelecciona.youTubeReady;
         var tag = document.createElement('script');
@@ -465,56 +582,81 @@ var $eXeSelecciona = {
 
     },
     onPlayerReady: function (event) {
-        $eXeSelecciona.youtubeLoaded = true;
+        var video=event.target.h.id;
+        video=video.split("-");
+        if(video.length==2 && (video[0]=="seleccionaVideo" || video[0]=="seleccionaVideoIntro" )){
+            var instance=parseInt(video[1]);
+            if(!isNaN(instance)){
+                $eXeSelecciona.preloadGame(instance);
+            }
+
+        }
     },
     updateTimerDisplay: function () {},
     updateProgressBar: function () {},
     onPlayerError: function (event) {},
-    startVideo: function (id, start, end, instance) {
-        var mOptions = $eXeSelecciona.options[instance];
-        if (mOptions.player) {
-            mOptions.player.loadVideoById({
-                'videoId': id,
-                'startSeconds': start,
-                'endSeconds': end
-            });
-        }
-    },
     startVideoIntro: function (id, start, end, instance) {
-        var mOptions = $eXeSelecciona.options[instance];
+        var mOptions = $eXeSelecciona.options[instance],
+            mstart = start < 1 ? 0.1 : start;
         if (mOptions.playerIntro) {
-            mOptions.playerIntro.loadVideoById({
-                'videoId': id,
-                'startSeconds': start,
-                'endSeconds': end
-            });
+            if (typeof mOptions.playerIntro.loadVideoById == "function") {
+                mOptions.playerIntro.loadVideoById({
+                    'videoId': id,
+                    'startSeconds': mstart,
+                    'endSeconds': end
+                });
+            }
         }
     },
     stopVideoIntro: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.playerIntro) {
-            mOptions.playerIntro.pauseVideo();
+            if (typeof mOptions.playerIntro.pauseVideo == "function") {
+                mOptions.playerIntro.pauseVideo();
+            }
+        }
+    },
+    startVideo: function (id, start, end, instance) {
+        var mOptions = $eXeSelecciona.options[instance],
+            mstart = start < 1 ? 0.1 : start;
+        if (mOptions.player) {
+            if (typeof mOptions.player.loadVideoById == "function") {
+                mOptions.player.loadVideoById({
+                    'videoId': id,
+                    'startSeconds': mstart,
+                    'endSeconds': end
+                });
+            }
+
         }
     },
     playVideo: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.player) {
-            mOptions.player.playVideo();
+            if (typeof mOptions.player.playVideo == "function") {
+                mOptions.player.playVideo();
+            }
         }
     },
     stopVideo: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.player) {
-            mOptions.player.pauseVideo();
+            if (typeof mOptions.player.pauseVideo == "function") {
+                mOptions.player.pauseVideo();
+            }
         }
     },
     muteVideo: function (mute, instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.player) {
             if (mute) {
-                mOptions.player.mute();
+                if (typeof mOptions.player.mute == "function") {
+                    mOptions.player.mute();
+                }
             } else {
-                mOptions.player.unMute();
+                if (typeof mOptions.player.unMute == "function") {
+                    mOptions.player.unMute();
+                }
             }
         }
     },
@@ -540,6 +682,7 @@ var $eXeSelecciona = {
             $('#seleccionaGameMinimize-' + instance).css('visibility', 'visible').show();
             return true;
         });
+
         $('#seleccionaSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeSelecciona.sendScore(false, instance);
@@ -563,15 +706,25 @@ var $eXeSelecciona = {
             }
             return true;
         });
+        $('#seleccionaBtnMoveOn-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeSelecciona.newQuestion(instance)
+        });
+        $('#seleccionaBtnReply-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeSelecciona.answerQuestion(instance);
+        });
+        $('#seleccionaEdAnswer-' + instance).on("keydown", function (event) {
+            if (event.which == 13 || event.keyCode == 13) {
+                $eXeSelecciona.answerQuestion(instance);
+                return false;
+            }
+            return true;
+        });
         mOptions.livesLeft = mOptions.numberLives;
-        $('#seleccionaStarGame-' + instance).text(mOptions.msgs.msgLoading);
-        $('#seleccionaStarGame-' + instance).on('click touchstart', function (e) {
+        $('#seleccionaOptionsDiv-' + instance).find('.gameQP-Options').on('click', function (e) {
             e.preventDefault();
-            $eXeSelecciona.startGame(instance);
-        })
-        $('#seleccionaOptionsDiv-' + instance).find('.selecciona-Options').on('click', function (e) {
-            e.preventDefault();
-            $eXeSelecciona.changeQuextion(instance,this);
+            $eXeSelecciona.changeQuextion(instance, this);
         })
         $('#seleccionaLinkFullScreen-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -582,16 +735,16 @@ var $eXeSelecciona = {
         $('#seleccionaInstructions-' + instance).text(mOptions.instructions);
 
         $('#seleccionaPNumber-' + instance).text(mOptions.numberQuestions);
-        $('#seleccionaGameContainer-' + instance+' .selecciona-StartGame').show();
+        $('#seleccionaGameContainer-' + instance + ' .gameQP-StartGame').show();
         $('#seleccionaQuestionDiv-' + instance).hide();
-        $('#seleccionaBottonContainer-' + instance).addClass('selecciona-BottonContainerDivEnd');
+        $('#seleccionaBottonContainer-' + instance).addClass('gameQP-BottonContainerDivEnd');
 
         if (mOptions.itinerary.showCodeAccess) {
             $('#seleccionaAnswerDiv-' + instance).hide();
             $('#seleccionaMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#seleccionaMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#seleccionaCodeAccessDiv-' + instance).show();
-            $('#seleccionaGameContainer-' + instance+' .selecciona-StartGame').hide();
+            $('#seleccionaGameContainer-' + instance + ' .gameQP-StartGame').hide();
         }
         $('#seleccionaInstruction-' + instance).text(mOptions.instructions);
         $('#seleccionaSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -604,26 +757,87 @@ var $eXeSelecciona = {
         $('#seleccionaPShowClue-' + instance).hide();
         mOptions.gameOver = false;
 
-
-        $('#seleccionaLinkVideoIntroShow-' + instance).on('click touchstart', function (e) {
-            e.preventDefault();
-            $('#seleccionaVideoIntroDiv-' + instance).show();
-            var idVideo = $eXeSelecciona.getIDYoutube(mOptions.idVideo);
-            mOptions.endVideo = mOptions.endVideo <= mOptions.startVideo ? 36000 : mOptions.endVideo;
-            $eXeSelecciona.startVideoIntro(idVideo, mOptions.startVideo, mOptions.endVideo, instance);
-        });
-
-        $('#seleccionaVideoIntroClose-' + instance).on('click touchstart', function (e) {
-            e.preventDefault();
-            $('#seleccionaVideoIntroDiv-' + instance).hide();
-            $eXeSelecciona.startVideoIntro('', 0, 0, instance);
-        });
         $('#seleccionaButtonAnswer-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $eXeSelecciona.answerQuestion(instance);
         });
+
+        $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
+        $('#seleccionaStartGame-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeSelecciona.getYTAPI(instance);
+
+        });
+
+        $('#seleccionaVideoIntroClose-' + instance).on('click', function (e) {
+            e.preventDefault();
+            console.log(mOptions.msgs.msgPlayStart)
+            $('#seleccionaVideoIntroDiv-' + instance).hide();
+            $('#selecionaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
+            $eXeSelecciona.startVideoIntro('', 0, 0, instance);
+        });
+        $('#seleccionaFeedBackClose-' + instance).on('click', function (e) {
+            $('#seleccionaDivFeedBack-' + instance).hide();
+        });
+        $('#seleccionaLinkAudio-' + instance).on('click', function (e) {
+            e.preventDefault();
+            var audio = mOptions.selectsGame[mOptions.activeQuestion].audio;
+            $eXeSelecciona.stopSound(instance);
+            $eXeSelecciona.playSound(audio, instance);
+        });
+
+        $('#seleccionaLinkVideoIntroShow-' + instance).on('click touchstart', function (e) {
+            e.preventDefault();
+            $eXeSelecciona.getYTVideoIntro(instance);
+        });
+
+
+        if (mOptions.gameMode == 2) {
+            $('#seleccionaGameContainer-' + instance).find('.exeQuextIcons-Hit').hide();
+            $('#seleccionaGameContainer-' + instance).find('.exeQuextIcons-Error').hide();
+            $('#seleccionaPErrors-' + instance).hide();
+            $('#seleccionaPHits-' + instance).hide();
+            $('#seleccionaGameContainer-' + instance).find('.exeQuextIcons-Score').hide();
+            $('#seleccionaPScore-' + instance).hide();
+        }
+        if ($eXeSelecciona.getIDYoutube(mOptions.idVideo) !== '') {
+            mOptions.hasVideoIntro = true;
+            $('#seleccionaLinkVideoIntroShow-' + instance).show();
+        }
+        $('#seleccionaWordDiv-' + instance).hide();
     },
-    changeQuextion: function (instance,button) {
+    getYTAPI: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        mOptions.selectsGame = mOptions.optionsRamdon ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
+        if ((typeof (mOptions.player) == "undefined") && mOptions.hasVideo) {
+            $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgLoading);
+            mOptions.waitStart = true;
+            if (typeof (YT) !== "undefined") {
+                $eXeSelecciona.youTubeReadyOne(instance);
+            } else {
+                $eXeSelecciona.loadYoutubeApi();
+            }
+        } else {
+            $eXeSelecciona.startGame(instance);
+        }
+    },
+    getYTVideoIntro: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        if ((typeof (mOptions.playerIntro) == "undefined") && mOptions.hasVideoIntro) {
+            mOptions.waitPlayIntro = true;
+            $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgLoading);
+            if (typeof (YT) !== "undefined") {
+                $eXeSelecciona.youTubeReadyOne(instance);
+            } else {
+                $eXeSelecciona.loadYoutubeApi();
+            }
+
+        } else {
+            $eXeSelecciona.playVideoIntro(instance);
+            console.log('getYTVideoIntro',2);
+        }
+    },
+    changeQuextion: function (instance, button) {
         var mOptions = $eXeSelecciona.options[instance];
         if (!mOptions.gameActived) {
             return;
@@ -639,38 +853,37 @@ var $eXeSelecciona = {
         } else {
             mOptions.respuesta = mOptions.respuesta.replace(letter, '');
         }
-        var colors = [$eXeSelecciona.colors.red, $eXeSelecciona.colors.blue, $eXeSelecciona.colors.green, $eXeSelecciona.colors.yellow],
-            bordeColors = [$eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.yellow],
+        var bordeColors = [$eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.yellow],
             css = {
-                'border-size': 2,
+                'border-size': 1,
                 'border-color': bordeColors[numberButton],
-                'background-color': colors[numberButton],
+                'background-color': "transparent",
                 'cursor': 'default',
                 'color': $eXeSelecciona.colors.black
             }
         if (type) {
             css = {
-                'border-size': 2,
-                'border-color': $eXeSelecciona.colors.black,
+                'border-size': 1,
+                'border-color': bordeColors[numberButton],
                 'background-color': bordeColors[numberButton],
-                'cursor': 'point',
+                'cursor': 'pointer',
                 'color': '#ffffff'
             }
         }
         $(button).css(css);
-        $('#seleccionaAnswers-' + instance +' .selecciona-AnswersOptions').remove();
+        $('#seleccionaAnswers-' + instance + ' .gameQP-AnswersOptions').remove();
         for (var i = 0; i < mOptions.respuesta.length; i++) {
             if (mOptions.respuesta[i] === 'A') {
-                $('#seleccionaAnswers-' + instance).append('<div class="selecciona-AnswersOptions selecciona-Answer1"></div>');
+                $('#seleccionaAnswers-' + instance).append('<div class="gameQP-AnswersOptions gameQP-Answer1"></div>');
 
             } else if (mOptions.respuesta[i] === 'B') {
-                $('#seleccionaAnswers-' + instance).append('<div class="selecciona-AnswersOptions selecciona-Answer2"></div>');
+                $('#seleccionaAnswers-' + instance).append('<div class="gameQP-AnswersOptions gameQP-Answer2"></div>');
 
             } else if (mOptions.respuesta[i] === 'C') {
-                $('#seleccionaAnswers-' + instance).append('<div class="selecciona-AnswersOptions selecciona-Answer3"></div>');
+                $('#seleccionaAnswers-' + instance).append('<div class="gameQP-AnswersOptions gameQP-Answer3"></div>');
 
             } else if (mOptions.respuesta[i] === 'D') {
-                $('#seleccionaAnswers-' + instance).append('<div class="selecciona-AnswersOptions selecciona-Answer4"></div>');
+                $('#seleccionaAnswers-' + instance).append('<div class="gameQP-AnswersOptions gameQP-Answer4"></div>');
             }
         }
 
@@ -679,7 +892,7 @@ var $eXeSelecciona = {
         var mOptions = $eXeSelecciona.options[instance],
             mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
             author = '';
-        if(mOptions.gameOver){
+        if (mOptions.gameOver) {
             return;
         }
         if (typeof mQuextion == "undefined") {
@@ -717,10 +930,8 @@ var $eXeSelecciona = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.itinerary.codeAccess === $('#seleccionaCodeAccessE-' + instance).val()) {
-            $('#seleccionaQuestionDiv-' + instance).show();
             $('#seleccionaCodeAccessDiv-' + instance).hide();
-            $('#seleccionaAnswerDiv-' + instance).show();
-            $eXeSelecciona.startGame(instance);
+            $eXeSelecciona.getYTAPI(instance);
         } else {
             $('#seleccionaMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
             $('#seleccionaCodeAccessE-' + instance).val('');
@@ -729,29 +940,29 @@ var $eXeSelecciona = {
     showScoreGame: function (type, instance) {
         var mOptions = $eXeSelecciona.options[instance],
             msgs = mOptions.msgs,
-            $seleccionaHistGGame = $('#seleccionaHistGGame-' + instance),
-            $seleccionaLostGGame = $('#seleccionaLostGGame-' + instance),
+            $seleccionaHistGame = $('#seleccionaHistGame-' + instance),
+            $seleccionaLostGame = $('#seleccionaLostGame-' + instance),
             $seleccionaOverPoint = $('#seleccionaOverScore-' + instance),
             $seleccionaOverHits = $('#seleccionaOverHits-' + instance),
             $seleccionaOverErrors = $('#seleccionaOverErrors-' + instance),
             $seleccionaPShowClue = $('#seleccionaPShowClue-' + instance),
             $seleccionaGamerOver = $('#seleccionaGamerOver-' + instance),
             message = "",
-            messageColor=2;
-        $seleccionaHistGGame.hide();
-        $seleccionaLostGGame.hide();
+            messageColor = 2;
+        $seleccionaHistGame.hide();
+        $seleccionaLostGame.hide();
         $seleccionaOverPoint.show();
         $seleccionaOverHits.show();
         $seleccionaOverErrors.show();
         $seleccionaPShowClue.hide();
         switch (parseInt(type)) {
             case 0:
-                message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
-                $seleccionaHistGGame.show();
+                message = msgs.msgCool + ' ' + msgs.msgAllQuestions;
+                $seleccionaHistGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        message = msgs.mgsAllQuestions;
-                        $seleccionaPShowClue.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
+                        message = msgs.msgAllQuestions;
+                        $seleccionaPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
                         $seleccionaPShowClue.show();
                     } else {
                         $seleccionaPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -761,11 +972,11 @@ var $eXeSelecciona = {
                 break;
             case 1:
                 message = msgs.msgLostLives;
-                messageColor=1;
-                $seleccionaLostGGame.show();
+                messageColor = 1;
+                $seleccionaLostGame.show();
                 if (mOptions.itinerary.showClue) {
                     if (mOptions.obtainedClue) {
-                        $seleccionaPShowClue.text(msgs.msgInformation+": " + mOptions.itinerary.clueGame);
+                        $seleccionaPShowClue.text(msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
                         $seleccionaPShowClue.show();
                     } else {
                         $seleccionaPShowClue.text(msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue));
@@ -785,29 +996,29 @@ var $eXeSelecciona = {
                 break;
         }
         $eXeSelecciona.showMessage(messageColor, message, instance);
-        $seleccionaOverPoint.text(msgs.msgScore + ': ' + mOptions.score);
+        var msscore = mOptions.gameMode == 0 ? msgs.msgScore + ': ' + mOptions.score : msgs.msgScore + ': ' + mOptions.score.toFixed(2);
+        $seleccionaOverPoint.text(msscore);
         $seleccionaOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
         $seleccionaOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
+        if (mOptions.gameMode == 2) {
+            $('#seleccionaGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
+        }
         $seleccionaGamerOver.show();
     },
     startGame: function (instance) {
-        var mOptions = $eXeSelecciona.options[instance];
-        if (!$eXeSelecciona.youtubeLoaded) {
-            $eXeSelecciona.showMessage(1, mOptions.msgs.msgLoadInterface, instance)
-            return;
-        }
+        var mOptions = $eXeSelecciona.options[instance]
         if (mOptions.gameStarted) {
             return;
         };
-        mOptions.scoreGame=0;
+        mOptions.scoreGame = 0;
         mOptions.obtainedClue = false;
         $('#seleccionaVideoIntroContainer-' + instance).hide();
         $('#seleccionaLinkVideoIntroShow-' + instance).hide();
         $('#seleccionaPShowClue-' + instance).hide();
-        $('#seleccionaGameContainer-' + instance+' .selecciona-StartGame').hide();
-        $('#seleccionaQuestionDiv-' + instance).show();
+        $('#seleccionaGameContainer-' + instance + ' .gameQP-StartGame').hide();
         $('#seleccionaQuestion-' + instance).text('');
-        $('#seleccionaAnswerDiv-' + instance).show();
+        $('#seleccionaQuestionDiv-' + instance).show();
+        $('#seleccionaWordDiv-' + instance).hide();
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -829,7 +1040,11 @@ var $eXeSelecciona = {
                     var timeShowSolution = 1000;
                     if (mOptions.showSolution) {
                         timeShowSolution = mOptions.timeShowSolution * 1000;
-                        $eXeSelecciona.drawSolution(instance);
+                        if (mOptions.selectsGame[mOptions.activeQuestion].typeSelect != 2) {
+                            $eXeSelecciona.drawSolution(instance);
+                        } else {
+                            $eXeSelecciona.drawPhrase(mOptions.selectsGame[mOptions.activeQuestion].solutionQuestion, mOptions.selectsGame[mOptions.activeQuestion].quextion, 100, 1, false, instance)
+                        }
                     }
                     setTimeout(function () {
                         $eXeSelecciona.newQuestion(instance)
@@ -844,18 +1059,17 @@ var $eXeSelecciona = {
         $('#seleccionaPHits-' + instance).text(mOptions.hits);
         $('#seleccionaPErrors-' + instance).text(mOptions.errors);
         $('#seleccionaPScore-' + instance).text(mOptions.score);
-        $('seleccionaQuestion-' + instance).css('color', $eXeSelecciona.colors.black);
         mOptions.gameStarted = true;
         $eXeSelecciona.newQuestion(instance);
     },
     updateSoundVideo: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
-        if(mOptions.activeSilent){
-            if (mOptions.player && typeof mOptions.player.getCurrentTime === "function"){
-                var time=Math.round(mOptions.player.getCurrentTime());
-                if (time==mOptions.question.silentVideo){
+        if (mOptions.activeSilent) {
+            if (mOptions.player && typeof mOptions.player.getCurrentTime === "function") {
+                var time = Math.round(mOptions.player.getCurrentTime());
+                if (time == mOptions.question.silentVideo) {
                     mOptions.player.mute(instance);
-                }else if (time==mOptions.endSilent){
+                } else if (time == mOptions.endSilent) {
                     mOptions.player.unMute(instance);
                 }
             }
@@ -881,6 +1095,7 @@ var $eXeSelecciona = {
 
         clearInterval(mOptions.counterClock);
         $('#seleccionaVideo-' + instance).hide();
+        $('#seleccionaLinkAudio-' + instance).hide();
         $eXeSelecciona.startVideo('', 0, 0, instance);
         $eXeSelecciona.stopVideo(instance)
         $('#seleccionaImagen-' + instance).hide();
@@ -893,15 +1108,11 @@ var $eXeSelecciona = {
         $eXeSelecciona.clearQuestions(instance);
         $eXeSelecciona.uptateTime(0, instance);
         $('#seleccionaPNumber-' + instance).text('0');
-        $('#seleccionaStarGame-' + instance).text(mOptions.msgs.msgNewGame);
-        $('#seleccionaGameContainer-' + instance+' .selecciona-StartGame').show();
+        $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgNewGame);
+        $('#seleccionaGameContainer-' + instance + ' .gameQP-StartGame').show();
         $('#seleccionaQuestionDiv-' + instance).hide();
         $('#seleccionaAnswerDiv-' + instance).hide();
-        if ($eXeSelecciona.getIDYoutube(mOptions.idVideo) !== '') {
-            $('#seleccionaVideoIntroContainer-' + instance).css('display', 'flex');
-            $('#seleccionaVideoIntroContainer-' + instance).show();
-            $('#seleccionaLinkVideoIntroShow-' + instance).show();
-        }
+        $('#seleccionaWordDiv-' + instance).hide();
         mOptions.gameOver = true;
         if (mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeSelecciona.initialScore === '') {
@@ -911,12 +1122,94 @@ var $eXeSelecciona = {
                 $eXeSelecciona.initialScore = score;
             }
         }
+        $eXeSelecciona.showFeedBack(instance);
+        if ($eXeSelecciona.getIDYoutube(mOptions.idVideo) !== '') {
+            $('#seleccionaLinkVideoIntroShow-' + instance).show();
+        }
     },
+
+    showFeedBack: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        var puntos = mOptions.hits * 100 / mOptions.selectsGame.length;
+        if (mOptions.gameMode == 2 || mOptions.feedBack) {
+            $('#seleccionaHistGame-' + instance).hide();
+            $('#seleccionaLostGame-' + instance).hide();
+            if (puntos >= mOptions.percentajeFB) {
+                $('#seleccionaDivFeedBack-' + instance).find('.selecciona-feedback-game').show();
+                $('#seleccionaDivFeedBack-' + instance).show();
+                $('#seleccionaHistGame-' + instance).show();
+
+            } else {
+                $eXeSelecciona.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
+                $('#seleccionaLostGame-' + instance).show();
+            }
+        }
+    },
+    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance) {
+        $('#seleccionaEPhrase-' + instance).find('.gameQP-Word').remove();
+        $('#seleccionaBtnReply-' + instance).prop('disabled', true);
+        $('#seleccionaBtnMoveOn-' + instance).prop('disabled', true);
+        $('#seleccionaEdAnswer-' + instance).prop('disabled', true);
+        $('#seleccionaQuestionDiv-' + instance).hide();
+        $('#seleccionaWordDiv-' + instance).show();
+        $('#seleccionaAnswerDiv-' + instance).hide();
+        if (!casesensitive) {
+            phrase = phrase.toUpperCase();
+        }
+        var cPhrase = $eXeSelecciona.clear(phrase),
+            letterShow = $eXeSelecciona.getShowLetter(cPhrase, nivel),
+            h = cPhrase.replace(/\s/g, '&'),
+            nPhrase = [];
+        for (var z = 0; z < h.length; z++) {
+            if (h[z] != '&' && letterShow.indexOf(z) == -1) {
+                nPhrase.push(' ')
+            } else {
+                nPhrase.push(h[z]);
+            }
+        }
+        nPhrase = nPhrase.join('');
+        var phrase_array = nPhrase.split('&');
+        for (var i = 0; i < phrase_array.length; i++) {
+            var cleanWord = phrase_array[i];
+            if (cleanWord != '') {
+                $('<div class="gameQP-Word"></div>').appendTo('#seleccionaEPhrase-' + instance);
+                for (var j = 0; j < cleanWord.length; j++) {
+                    var letter = '<div class="gameQP-Letter blue">' + cleanWord[j] + '</div>';
+                    if (type == 1) {
+                        letter = '<div class="gameQP-Letter red">' + cleanWord[j] + '</div>';
+                    } else if (type == 2) {
+                        letter = '<div class="gameQP-Letter green">' + cleanWord[j] + '</div>';
+                    }
+                    $('#seleccionaEPhrase-' + instance).find('.gameQP-Word').last().append(letter);
+                }
+            }
+        }
+        $('#seleccionaDefinition-' + instance).text(definition);
+        return cPhrase;
+    },
+    clear: function (phrase) {
+        return phrase.replace(/[&\s\n\r]+/g, " ").trim();
+    },
+    getShowLetter: function (phrase, nivel) {
+        var numberLetter = parseInt(phrase.length * nivel / 100);
+        var arrayRandom = [];
+        while (arrayRandom.length < numberLetter) {
+            var numberRandow = parseInt(Math.random() * phrase.length);
+
+            if (arrayRandom.indexOf(numberRandow) != -1) {
+                continue;
+            } else {
+                arrayRandom.push(numberRandow)
+            }
+        };
+        return arrayRandom.sort()
+    },
+
     drawText: function (texto, color) {},
-    showQuestion: function (i,instance) {
+    showQuestion: function (i, instance) {
         var mOptions = $eXeSelecciona.options[instance],
             mQuextion = mOptions.selectsGame[i],
-            q=mQuextion;
+            q = mQuextion;
         $eXeSelecciona.clearQuestions(instance);
         mOptions.gameActived = true;
         mOptions.question = mQuextion
@@ -924,72 +1217,73 @@ var $eXeSelecciona = {
         var tiempo = $eXeSelecciona.getTimeToString($eXeSelecciona.getTimeSeconds(mQuextion.time)),
             author = '',
             alt = '';
-        $('#seleccionaPTime-'+instance).text(tiempo);
-        $('#seleccionaQuestion-'+instance).text(mQuextion.quextion);
-        $('#seleccionaImagen-'+instance).hide();
-        $('#seleccionaCover-'+instance).show();
-        $('#seleccionaEText-'+instance).hide();
-        $('#seleccionaVideo-'+instance).hide();
-        $eXeSelecciona.startVideo('', 0, 0,instance);
+        $('#seleccionaPTime-' + instance).text(tiempo);
+        $('#seleccionaQuestion-' + instance).text(mQuextion.quextion);
+        $('#seleccionaImagen-' + instance).hide();
+        $('#seleccionaCover-' + instance).show();
+        $('#seleccionaEText-' + instance).hide();
+        $('#seleccionaVideo-' + instance).hide();
+        $('#seleccionaLinkAudio-' + instance).hide();
+        $eXeSelecciona.startVideo('', 0, 0, instance);
         $eXeSelecciona.stopVideo(instance)
-        $('#seleccionaCursor-'+instance).hide();
+        $('#seleccionaCursor-' + instance).hide();
         $eXeSelecciona.showMessage(0, '', instance);
-        if(mOptions.answersRamdon){
+        if (mOptions.answersRamdon) {
             $eXeSelecciona.ramdonOptions(instance);
         }
-        mOptions.activeSilent=(q.type==2) &&(q.soundVideo==1)  && (q.tSilentVideo>0) && (q.silentVideo>=q.iVideo) && (q.iVideo<q.fVideo);
-        var endSonido=parseInt(q.silentVideo)+parseInt(q.tSilentVideo);
-        mOptions.endSilent=endSonido>q.fVideo?q.fVideo: endSonido;
-        $('#seleccionaAuthor-'+instance).text('');
+        mOptions.activeSilent = (q.type == 2) && (q.soundVideo == 1) && (q.tSilentVideo > 0) && (q.silentVideo >= q.iVideo) && (q.iVideo < q.fVideo);
+        var endSonido = parseInt(q.silentVideo) + parseInt(q.tSilentVideo);
+        mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;
+        $('#seleccionaAuthor-' + instance).text('');
         if (mQuextion.type === 1) {
-            $('#seleccionaImagen-'+instance).prop('src', mQuextion.url)
+            $('#seleccionaImagen-' + instance).prop('src', mQuextion.url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
                         alt = $eXeSelecciona.msgs.msgNoImage;
-                        $('#seleccionaAuthor-'+instance).text('');
+                        $('#seleccionaAuthor-' + instance).text('');
                     } else {
                         var mData = $eXeSelecciona.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                         $eXeSelecciona.drawImage(this, mData);
-                        $('#seleccionaImagen-'+instance).show();
-                        $('#seleccionaCover-'+instance).hide();
-                        $('#seleccionaCursor-'+instance).hide();
+                        $('#seleccionaImagen-' + instance).show();
+                        $('#seleccionaCover-' + instance).hide();
+                        $('#seleccionaCursor-' + instance).hide();
                         alt = mQuextion.alt;
+                        author = mQuextion.author;
                         if (mQuextion.x > 0 || mQuextion.y > 0) {
                             var left = mData.x + (mQuextion.x * mData.w);
                             var top = mData.y + (mQuextion.y * mData.h);
-                            $('#seleccionaCursor-'+instance).css({
+                            $('#seleccionaCursor-' + instance).css({
                                 'left': left + 'px',
                                 'top': top + 'px'
                             });
-                            author = mQuextion.author;
-                            $('#seleccionaCursor-'+instance).show();
+                            $('#seleccionaCursor-' + instance).show();
                         }
                     }
                     $eXeSelecciona.showMessage(0, author, instance);
                 });
-            $('#seleccionaImagen-'+instance).attr('alt', alt);
+            $('#seleccionaImagen-' + instance).attr('alt', alt);
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
             if (window.innerWidth < 401) {
-               //text = $eXeSelecciona.reduceText(text);
+                //text = $eXeSelecciona.reduceText(text);
             }
-            $('#seleccionaEText-'+instance).html(text);
-            $('#seleccionaCover-'+instance).hide();
-            $('#seleccionaEText-'+instance).show();
+            $('#seleccionaEText-' + instance).html(text);
+            $('#seleccionaCover-' + instance).hide();
+            $('#seleccionaEText-' + instance).show();
             $eXeSelecciona.showMessage(0, '', instance);
 
         } else if (mQuextion.type === 2) {
-            $('#seleccionaVideo-'+instance).show();
+            $('#seleccionaVideo-' + instance).show();
             var idVideo = $eXeSelecciona.getIDYoutube(mQuextion.url);
             $eXeSelecciona.startVideo(idVideo, mQuextion.iVideo, mQuextion.fVideo, instance);
             $eXeSelecciona.showMessage(0, '', instance);
             if (mQuextion.imageVideo === 0) {
-                $('#seleccionaVideo-'+instance).hide();
-                $('#seleccionaCover-'+instance).show();
+                $('#seleccionaVideo-' + instance).hide();
+                $('#seleccionaCover-' + instance).show();
 
             } else {
-                $('#seleccionaVideo-'+instance).show();
-                $('#seleccionaCover-'+instance).hide();
+                $('#seleccionaVideo-' + instance).show();
+                $('#seleccionaCover-' + instance).hide();
             }
             if (mQuextion.soundVideo === 0) {
                 $eXeSelecciona.muteVideo(true, instance);
@@ -997,24 +1291,42 @@ var $eXeSelecciona = {
                 $eXeSelecciona.muteVideo(false, instance);
             }
         }
-        $eXeSelecciona.drawQuestions(instance);
+        if (mQuextion.typeSelect != 2) {
+            $eXeSelecciona.drawQuestions(instance);
+        } else {
+            $eXeSelecciona.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance)
+            $('#seleccionaBtnReply-' + instance).prop('disabled', false);
+            $('#seleccionaBtnMoveOn-' + instance).prop('disabled', false);
+            $('#seleccionaEdAnswer-' + instance).prop('disabled', false);
+            $('#seleccionaEdAnswer-' + instance).focus();
+            $('#seleccionaEdAnswer-' + instance).val('');
+        }
+
         if (mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeSelecciona.initialScore === '') {
                 var score = ((mOptions.scoreGame * 10) / mOptions.scoreTotal).toFixed(2);
-                $eXeSelecciona.sendScore(true,instance);
-                $('#seleccionaRepeatActivity-'+instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+                $eXeSelecciona.sendScore(true, instance);
+                $('#seleccionaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
 
             }
         }
-        if(typeof(MathJax)!="undefined"){
-           MathJax.Hub.Queue(["Typeset", MathJax.Hub,'#seleccionaGameContainer-'+instance]);
+        if (q.audio.length > 4 && q.type != 2) {
+            $('#seleccionaLinkAudio-' + instance).show();
+        }
+
+        $eXeSelecciona.stopSound(instance);
+        if (q.type != 2 && q.audio.trim().length > 5) {
+            $eXeSelecciona.playSound(q.audio.trim(), instance);
+        }
+        if (typeof (MathJax) != "undefined") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#seleccionaGameContainer-' + instance]);
         }
 
     },
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
-        str=unescape(str)
+        str = unescape(str)
         try {
             var key = 146;
             var pos = 0;
@@ -1050,26 +1362,29 @@ var $eXeSelecciona = {
                 }
             }
         });
+        if (!mOptions.useLives) {
+            $('#seleccionaNumberLivesGame-' + instance).hide();
+        }
     },
 
     newQuestion: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.useLives && mOptions.livesLeft <= 0) {
-            $eXeSelecciona.gameOver(1,instance);
+            $eXeSelecciona.gameOver(1, instance);
             return;
         }
-        var mActiveQuestion = $eXeSelecciona.updateNumberQuestion(mOptions.activeQuestion,instance);
+        var mActiveQuestion = $eXeSelecciona.updateNumberQuestion(mOptions.activeQuestion, instance);
         if (mActiveQuestion === -10) {
-            $('seleccionaPNumber-' + instance).text('0');
-            $eXeSelecciona.gameOver(0,instance);
+            $('#seleccionaPNumber-' + instance).text('0');
+            $eXeSelecciona.gameOver(0, instance);
             return;
         } else {
             mOptions.counter = $eXeSelecciona.getTimeSeconds(mOptions.selectsGame[mActiveQuestion].time);
-            if(mOptions.selectsGame[mActiveQuestion].type===2){
-                var durationVideo=mOptions.selectsGame[mActiveQuestion].fVideo -mOptions.selectsGame[mActiveQuestion].iVideo;
-                mOptions.counter+=durationVideo;
+            if (mOptions.selectsGame[mActiveQuestion].type === 2) {
+                var durationVideo = mOptions.selectsGame[mActiveQuestion].fVideo - mOptions.selectsGame[mActiveQuestion].iVideo;
+                mOptions.counter += durationVideo;
             }
-            $eXeSelecciona.showQuestion(mActiveQuestion,instance)
+            $eXeSelecciona.showQuestion(mActiveQuestion, instance)
             mOptions.activeCounter = true;
             var numQ = mOptions.numberQuestions - mActiveQuestion;
             $('#seleccionaPNumber-' + instance).text(numQ);
@@ -1097,18 +1412,29 @@ var $eXeSelecciona = {
     },
 
     answerQuestion: function (instance) {
-        var mOptions = $eXeSelecciona.options[instance];
+        var mOptions = $eXeSelecciona.options[instance],
+            quextion = mOptions.selectsGame[mOptions.activeQuestion];
         if (!mOptions.gameActived) {
             return;
         }
         mOptions.gameActived = false;
         var message = "",
-            solution = mOptions.selectsGame[mOptions.activeQuestion].solution,
+            solution = quextion.solution,
             answer = mOptions.respuesta.toUpperCase(),
             correct = true;
-        if (mOptions.selectsGame[mOptions.activeQuestion].typeSelect === 1) {
+
+        if (quextion.typeSelect === 2) {
+            solution = quextion.solutionQuestion.toUpperCase();
+            answer = $.trim($('#seleccionaEdAnswer-' + instance).val()).toUpperCase();
+            correct = solution == answer;
+            if (answer.length == 0) {
+                $eXeSelecciona.showMessage(1, mOptions.msgs.msgIndicateWord, instance);
+                return;
+            }
+
+        } else if (quextion.typeSelect === 1) {
             if (answer.length !== solution.length) {
-                $eXeSelecciona.showMessage(1,mOptions.msgs.mgsOrders,instance);
+                $eXeSelecciona.showMessage(1, mOptions.msgs.msgOrders, instance);
                 mOptions.gameActived = true;
                 return;
             }
@@ -1129,55 +1455,87 @@ var $eXeSelecciona = {
             }
         }
         mOptions.activeCounter = false;
-        var obtainedPoints = 0
-        type = 1;
-        if (correct) {
-            mOptions.hits++
-            color = $eXeSelecciona.colors.green;
-            obtainedPoints = 1000 + mOptions.counter * 10;
-            if(mOptions.selectsGame[mOptions.activeQuestion].type===2){
-                var realTime=$eXeSelecciona.getTimeSeconds(mOptions.selectsGame[mOptions.activeQuestion].time);
-                realTime=mOptions.counter>realTime?realTime:mOptions.counter
-                obtainedPoints =  (1000 + realTime * 10);
-
-            }
-            obtainedPoints=mOptions.selectsGame[mOptions.activeQuestion].customScore *obtainedPoints;
-            mOptions.scoreGame+=mOptions.selectsGame[mOptions.activeQuestion].customScore;
-
-            message = $eXeSelecciona.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' '+mOptions.msgs.mgsPoints;            type = 2;
-        } else {
-            mOptions.errors++;
-            if (mOptions.useLives) {
-                mOptions.livesLeft--;
-                $eXeSelecciona.updateLives(instance);
-                message = $eXeSelecciona.getRetroFeedMessages(false, instance)+ ' ' +mOptions.msgs.msgLoseLive;            
-            } else {
-                obtainedPoints = -330 * mOptions.selectsGame[mOptions.activeQuestion].customScore ;
-                message = $eXeSelecciona.getRetroFeedMessages(false, instance)  + ' ' +mOptions.msgs.msgLoseT;
-            }
-        }
-        mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
-        $('#seleccionaPScore-' + instance).text(mOptions.score);
+        $eXeSelecciona.updateScore(correct, instance);
         var timeShowSolution = 1000;
-        if (mOptions.showSolution) {
-            timeShowSolution = mOptions.timeShowSolution * 1000;
-            $eXeSelecciona.drawSolution(instance);
-        }
         var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         $('#seleccionaPHits-' + instance).text(mOptions.hits);
         $('#seleccionaPErrors-' + instance).text(mOptions.errors);
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
                 timeShowSolution = 5000;
-                message += " "+mOptions.msgs.msgUseFulInformation;
-                $('#seleccionaPShowClue-' + instance).text(mOptions.msgs.msgInformation+": " + mOptions.itinerary.clueGame);                mOptions.obtainedClue = true;
+                message += " " + mOptions.msgs.msgUseFulInformation;
+                $('#seleccionaPShowClue-' + instance).text(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                mOptions.obtainedClue = true;
                 $('#seleccionaPShowClue-' + instance).show();
             }
         }
-        $eXeSelecciona.showMessage(type, message,instance);
+        if (mOptions.showSolution) {
+            timeShowSolution = mOptions.timeShowSolution * 1000;
+            if (quextion.typeSelect != 2) {
+                $eXeSelecciona.drawSolution(instance);
+            } else {
+                $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, 1, false, instance)
+            }
+        }
         setTimeout(function () {
             $eXeSelecciona.newQuestion(instance)
         }, timeShowSolution);
+    },
+
+    updateScore: function (correctAnswer, instance) {
+        var mOptions = $eXeSelecciona.options[instance],
+            quextion = mOptions.selectsGame[mOptions.activeQuestion],
+            message = "",
+            obtainedPoints = 0,
+            type = 1,
+            msgs = mOptions.msgs,
+            sscore = 0;
+        var pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (correctAnswer) {
+            mOptions.hits++
+            if (mOptions.gameMode == 0) {
+                var pointsTemp = mOptions.counter < 60 ? mOptions.counter * 10 : 600;
+                obtainedPoints = 1000 + pointsTemp;
+                obtainedPoints = quextion.customScore * obtainedPoints;
+                message = $eXeSelecciona.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' ' + pts;
+
+            } else if (mOptions.gameMode == 1) {
+                obtainedPoints = ((10 * quextion.customScore) / mOptions.scoreTotal);
+                var points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
+                message = $eXeSelecciona.getRetroFeedMessages(true, instance) + ' ' + points + ' ' + pts;
+
+            } else if (mOptions.gameMode == 2) {
+                obtainedPoints = ((10 * quextion.customScore) / mOptions.scoreTotal);
+                message = $eXeSelecciona.getRetroFeedMessages(true, instance);
+            }
+            type = 2;
+            mOptions.scoreGame += quextion.customScore;
+
+        } else {
+            mOptions.errors++;
+            if (mOptions.gameMode != 0) {
+                message = "";
+            } else {
+                obtainedPoints = -330 * quextion.customScore;
+                message = ' ' + msgs.msgLoseT;
+                if (mOptions.useLives) {
+                    mOptions.livesLeft--;
+                    $eXeSelecciona.updateLives(instance);
+                    message = ' ' + msgs.msgLoseLive;
+                }
+            }
+            message = $eXeSelecciona.getRetroFeedMessages(obtainedPoints > 0, instance) + message;
+        }
+        mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
+        sscore = mOptions.score;
+        if (mOptions.gameMode != 0) {
+            sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
+        }
+        $('#seleccionaPScore-' + instance).text(sscore);
+        $('#qseleccionaPHits-' + instance).text(mOptions.hits);
+        $('#seleccionaPErrors-' + instance).text(mOptions.errors);
+        $eXeSelecciona.showMessage(type, message, instance);
+
     },
     reduceText: function (text) {
         var rText = text;
@@ -1190,12 +1548,12 @@ var $eXeSelecciona = {
         return rText;
     },
     showMessage: function (type, message, instance) {
-        var colors = ['#555555', $eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.yellow];
-        color = colors[type];
-        var weight = type == 0 ? 'normal' : 'bold';
+        var colors = ['#555555', $eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.yellow],
+            mcolor = colors[type],
+            weight = type == 0 ? 'normal' : 'normal';
         $('#seleccionaPAuthor-' + instance).text(message);
         $('#seleccionaPAuthor-' + instance).css({
-            'color': color,
+            'color': mcolor,
             'font-weight': weight,
         });
     },
@@ -1247,19 +1605,19 @@ var $eXeSelecciona = {
             }
         }
         var respuestas = mOptions.question.options;
-        var respuestasNuevas=[];
-        var respuestaCorrectas=[];
+        var respuestasNuevas = [];
+        var respuestaCorrectas = [];
         for (var i = 0; i < soluciones.length; i++) {
             var sol = soluciones.charCodeAt(i) - 65;
             respuestaCorrectas.push(respuestas[sol]);
         }
         var respuestasNuevas = mOptions.question.options.slice(0, l)
         respuestasNuevas = $eXeSelecciona.shuffleAds(respuestasNuevas);
-        var solucionesNuevas ="";
+        var solucionesNuevas = "";
         for (var j = 0; j < respuestasNuevas.length; j++) {
             for (var z = 0; z < respuestaCorrectas.length; z++) {
                 if (respuestasNuevas[j] == respuestaCorrectas[z]) {
-                    solucionesNuevas=solucionesNuevas.concat(letras[j]);
+                    solucionesNuevas = solucionesNuevas.concat(letras[j]);
                     break;
                 }
             }
@@ -1272,21 +1630,23 @@ var $eXeSelecciona = {
                 mOptions.question.options.push('');
             }
         }
-        mOptions.question.solution=solucionesNuevas;
+        mOptions.question.solution = solucionesNuevas;
     },
     drawQuestions: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
-            colors = [$eXeSelecciona.colors.red, $eXeSelecciona.colors.blue, $eXeSelecciona.colors.green, $eXeSelecciona.colors.yellow],
             bordeColors = [$eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.yellow];
-        $('#seleccionaOptionsDiv-' + instance + '>.selecciona-Options').each(function (index) {
+        $('#seleccionaQuestionDiv-' + instance).show();
+        $('#seleccionaWordDiv-' + instance).hide();
+        $('#seleccionaAnswerDiv-' + instance).show();
+        $('#seleccionaOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
             var option = mOptions.question.options[index]
             $(this).css({
                 'border-color': bordeColors[index],
-                'background-color': colors[index],
+                'background-color': "transparent",
                 'cursor': 'pointer',
                 'color': $eXeSelecciona.colors.black
             }).text(option);
-              if (option) {
+            if (option) {
                 $(this).show();
             } else {
                 $(this).hide()
@@ -1296,17 +1656,15 @@ var $eXeSelecciona = {
     drawSolution: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
             mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
-            colors = [$eXeSelecciona.colors.red, $eXeSelecciona.colors.blue, $eXeSelecciona.colors.green, $eXeSelecciona.colors.yellow],
-            bordeColors = [$eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.yellow],
             solution = mQuextion.solution,
             letters = 'ABCD';
-            mOptions.gameActived = false;
-        $('#seleccionaOptionsDiv-' + instance).find('.selecciona-Options').each(function (i) {
+        mOptions.gameActived = false;
+        $('#seleccionaOptionsDiv-' + instance).find('.gameQP-Options').each(function (i) {
             var css = {};
             if (mQuextion.typeSelect === 1) {
                 css = {
-                    'border-color': '#00ff00',
-                    'background-color': '#dcffdc',
+                    'border-color': $eXeSelecciona.borderColors.correct,
+                    'background-color': $eXeSelecciona.colors.correct,
                     'border-size': '1',
                     'cursor': 'pointer',
                     'color': $eXeSelecciona.borderColors.black
@@ -1324,17 +1682,17 @@ var $eXeSelecciona = {
                 $(this).text(text);
             } else {
                 css = {
-                    'border-color': '#777777',
+                    'border-color': $eXeSelecciona.borderColors.incorrect,
                     'border-size': '1',
                     'background-color': 'transparent',
                     'cursor': 'pointer',
-                    'color': '#777777'
+                    'color': $eXeSelecciona.borderColors.grey
                 };
                 if (solution.indexOf(letters[i]) !== -1) {
                     css = {
-                        'border-color': '#00ff00',
-                        'background-color': '#dcffdc',
-                        'border-size': '2',
+                        'border-color': $eXeSelecciona.borderColors.correct,
+                        'background-color': $eXeSelecciona.colors.correct,
+                        'border-size': '1',
                         'cursor': 'pointer',
                         'color': $eXeSelecciona.borderColors.black
                     }
@@ -1346,14 +1704,13 @@ var $eXeSelecciona = {
     clearQuestions: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         mOptions.respuesta = "";
-        $('#seleccionaAnswers-' + instance + '> .selecciona-AnswersOptions').remove();
-        var colors = [$eXeSelecciona.colors.red, $eXeSelecciona.colors.blue, $eXeSelecciona.colors.green, $eXeSelecciona.colors.yellow];
+        $('#seleccionaAnswers-' + instance + '> .gameQP-AnswersOptions').remove();
         var bordeColors = [$eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.yellow];
-        $('#seleccionaOptionsDiv-' + instance + '>.selecciona-Options').each(function (index) {
+        $('#seleccionaOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
             $(this).css({
                 'border-color': bordeColors[index],
-                'background-color': colors[index],
-                'cursor': 'default'
+                'background-color': "transparent",
+                'cursor': 'pointer'
             }).text('');
         });
     },
@@ -1380,15 +1737,15 @@ var $eXeSelecciona = {
         }
     },
     toggleFullscreen: function (element, instance) {
-		var element = element || document.documentElement;
-		if (!document.fullscreenElement && !document.mozFullScreenElement &&
-			!document.webkitFullscreenElement && !document.msFullscreenElement) {
-			$eXeSelecciona.getFullscreen(element);
-		} else {
-			$eXeSelecciona.exitFullscreen(element);
+        var element = element || document.documentElement;
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement && !document.msFullscreenElement) {
+            $eXeSelecciona.getFullscreen(element);
+        } else {
+            $eXeSelecciona.exitFullscreen(element);
         }
         $eXeSelecciona.refreshImageActive(instance);
-	}
+    }
 }
 $(function () {
     $eXeSelecciona.init();

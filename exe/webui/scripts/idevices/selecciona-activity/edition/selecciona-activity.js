@@ -61,7 +61,7 @@ var $exeDevice = {
         "msgLoseT": _("You lost 330 points"),
         "msgLoseLive": _("You lost one life"),
         "msgLostLives": _("You lost all your lives!"),
-        "mgsAllQuestions": _("Questions completed!"),
+        "msgAllQuestions": _("Questions completed!"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
         "msgNotNetwork": _("You can only play this game with internet connection."),
@@ -88,9 +88,10 @@ var $exeDevice = {
         "msgRickText": _("Rich Text"),
         "msgUseFulInformation": _("and information that will be very useful"),
         "msgLoading": _("Loading. Please wait..."),
-        "mgsPoints": _("points"),
-        "mgsOrders": _("Please order the answers"),
-
+        "msgOrders": _("Please order the answers"),
+        "msgIndicateWord": _("Provide a word or phrase"),
+        "msgMoveOne": _("Move on"),
+        "msgPoints": _("points"),
 
     },
 
@@ -99,12 +100,13 @@ var $exeDevice = {
         this.setMessagesInfo();
         this.createForm();
     },
-    enableForm: function (field) {
 
+    enableForm: function (field) {
         $exeDevice.initQuestions();
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
     },
+
     setMessagesInfo: function () {
         var msgs = this.msgs;
         msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
@@ -122,12 +124,13 @@ var $exeDevice = {
         msgs.msgWriteText = _("You have to type a text in the editor");
         msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
         msgs.msgTypeChoose = _("Please check all the answers in the right order");
-        msgs.msgTimeFormat=_("Please check the time format: hh:mm:ss");
-
+        msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
+        msgs.msgProvideSolution = _("Please write the solution");
+        msgs.msgEDefintion = _("Please provide the word definition");
+        msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
 
     },
     loadYoutubeApi: function () {
-
         onYouTubeIframeAPIReady = $exeDevice.youTubeReady;
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
@@ -135,6 +138,7 @@ var $exeDevice = {
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     },
+
     youTubeReady: function () {
         $("#seleccionaMediaVideo").prop("disabled", false);
         $exeDevice.player = new YT.Player('seleccionaEVideo', {
@@ -162,9 +166,11 @@ var $exeDevice = {
             }
         });
     },
+
     onPlayerReady: function (event) {
         $exeDevice.youtubeLoaded = true;
     },
+
     updateSoundVideo: function () {
         if ($exeDevice.activeSilent) {
             if ($exeDevice.player && typeof $exeDevice.player.getCurrentTime === "function") {
@@ -177,6 +183,7 @@ var $exeDevice = {
             }
         }
     },
+
     updateTimerDisplay: function () {
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.getCurrentTime === "function") {
@@ -185,8 +192,8 @@ var $exeDevice = {
                 $exeDevice.updateSoundVideo();
             }
         }
-        //$('#duration').text(formatTime( player.getDuration() ));
     },
+
     updateTimerVIDisplay: function () {
         if ($exeDevice.playerIntro) {
             if (typeof $exeDevice.playerIntro.getCurrentTime === "function") {
@@ -194,21 +201,23 @@ var $exeDevice = {
                 $('#seleccionaEVITime').text(time);
             }
         }
-        //$('#duration').text(formatTime( player.getDuration() ));
     },
+
     updateProgressBar: function () {
         $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
     },
+
     onPlayerError: function (event) {
         //$exeDevice.showMessage("El video seleccionado no está disponible")
-
     },
+
     startVideo: function (id, start, end) {
+        var mstart = start < 1 ? 0.1 : start;
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.loadVideoById === "function") {
                 $exeDevice.player.loadVideoById({
                     'videoId': id,
-                    'startSeconds': start,
+                    'startSeconds': mstart,
                     'endSeconds': end
                 });
             }
@@ -219,12 +228,14 @@ var $exeDevice = {
         }
 
     },
+
     startVideoIntro: function (id, start, end) {
+        var mstart = start < 1 ? 0.1 : start;
         if ($exeDevice.playerIntro) {
             if (typeof $exeDevice.playerIntro.loadVideoById === "function") {
                 $exeDevice.playerIntro.loadVideoById({
                     'videoId': id,
-                    'startSeconds': start,
+                    'startSeconds': mstart,
                     'endSeconds': end
                 });
             }
@@ -236,6 +247,7 @@ var $exeDevice = {
 
         }
     },
+
     stopVideoIntro: function () {
         if ($exeDevice.playerIntro) {
             if (typeof $exeDevice.playerIntro.pauseVideo === "function") {
@@ -244,6 +256,7 @@ var $exeDevice = {
             clearInterval($exeDevice.timeUpdateInterval);
         }
     },
+
     playVideo: function () {
         if ($exeDevice.player) {
             clearInterval($exeDevice.timeUpdateInterval);
@@ -255,6 +268,7 @@ var $exeDevice = {
             }, 1000);
         }
     },
+
     stopVideo: function () {
 
         if ($exeDevice.player) {
@@ -264,6 +278,7 @@ var $exeDevice = {
             }
         }
     },
+
     muteVideo: function (mute) {
         if ($exeDevice.player) {
             if (mute) {
@@ -277,20 +292,37 @@ var $exeDevice = {
             }
         }
     },
+
+    playSound: function (selectedFile) {
+        $exeDevice.playerAudio = new Audio(selectedFile);
+        $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+            $exeDevice.playerAudio.play();
+        });
+    },
+
+    stopSound() {
+        if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
+            $exeDevice.playerAudio.pause();
+        }
+    },
+
     showMessage: function (msg) {
         eXe.app.alert(msg);
     },
+
     addQuestion: function () {
         if ($exeDevice.validateQuestion() != false) {
             $exeDevice.clearQuestion();
             $exeDevice.selectsGame.push($exeDevice.getCuestionDefault());
             $exeDevice.active = $exeDevice.selectsGame.length - 1;
-            $('#seleccionaNumberQuestion').text($exeDevice.selectsGame.length);
             $exeDevice.typeEdit = -1;
             $('#seleccionaEPaste').hide();
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
+            $('#seleccionaENumberQuestion').text($exeDevice.selectsGame.length);
+
         }
     },
+
     removeQuestion: function (num) {
         if ($exeDevice.selectsGame.length < 2) {
             $exeDevice.showMessage(msgs.msgEOneQuestion);
@@ -304,10 +336,11 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#seleccionaEPaste').hide();
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
-            $('#seleccionaNumberQuestion').text($exeDevice.active + 1);
+            $('#seleccionaENumberQuestion').text($exeDevice.active + 1);
         }
 
     },
+
     copyQuestion: function () {
         if ($exeDevice.validateQuestion() != false) {
             $exeDevice.typeEdit = 0;
@@ -316,6 +349,7 @@ var $exeDevice = {
         }
 
     },
+
     cutQuestion: function () {
         if ($exeDevice.validateQuestion() != false) {
             $exeDevice.numberCutCuestion = $exeDevice.active;
@@ -324,6 +358,7 @@ var $exeDevice = {
 
         }
     },
+
     arrayMove: function (arr, oldIndex, newIndex) {
         if (newIndex >= arr.length) {
             var k = newIndex - arr.length + 1;
@@ -347,6 +382,7 @@ var $exeDevice = {
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
         }
     },
+
     nextQuestion: function () {
 
         if ($exeDevice.validateQuestion() != false) {
@@ -356,6 +392,7 @@ var $exeDevice = {
             }
         }
     },
+
     lastQuestion: function () {
         if ($exeDevice.validateQuestion() != false) {
             if ($exeDevice.active < $exeDevice.selectsGame.length - 1) {
@@ -364,6 +401,7 @@ var $exeDevice = {
             }
         }
     },
+
     previousQuestion: function () {
         if ($exeDevice.validateQuestion() != false) {
             if ($exeDevice.active > 0) {
@@ -372,6 +410,7 @@ var $exeDevice = {
             }
         }
     },
+
     firstQuestion: function () {
         if ($exeDevice.validateQuestion() != false) {
             if ($exeDevice.active > 0) {
@@ -380,20 +419,31 @@ var $exeDevice = {
             }
         }
     },
+
     showQuestion: function (i) {
+        $exeDevice.clearQuestion();
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.selectsGame.length ? $exeDevice.selectsGame.length - 1 : num;
-        var p = $exeDevice.selectsGame[num];
-
-        var numOptions = 0;
-        $('.selecciona-EAnwersOptions').each(function (j) {
-            numOptions++;
-            if (p.options[j].trim() !== '') {
-                p.numOptions = numOptions;
-            }
-            $(this).val(p.options[j]);
-        });
+        var p = $exeDevice.selectsGame[num],
+            numOptions = 0;
+        p.typeSelect = p.typeSelect ? p.typeSelect : 0;
+        p.solutionQuestion = p.solutionQuestion && p.solutionQuestion != "undefined" ? p.solutionQuestion : '';
+        p.percentageShow = p.percentageShow && typeof p.percentageShow != "undefined" ? p.percentageShow : 35;
+        if (p.typeSelect != 2) {
+            $('.gameQE-EAnwersOptions').each(function (j) {
+                numOptions++;
+                if (p.options[j].trim() !== '') {
+                    p.numOptions = numOptions;
+                }
+                $(this).val(p.options[j]);
+            });
+        } else {
+            $('#seleccionaESolutionWord').val(p.solutionQuestion);
+            $('#seleccionaPercentageShow').val(p.percentageShow);
+            $('#seleccionaEDefinitionWord').val(p.quextion);
+        }
         $exeDevice.stopVideo();
+        $exeDevice.showTypeQuestion(p.typeSelect);
         $exeDevice.changeTypeQuestion(p.type);
         $exeDevice.showOptions(p.numberOptions);
         $('#seleccionaEQuestion').val(p.quextion);
@@ -422,27 +472,32 @@ var $exeDevice = {
             tinyMCE.get('seleccionaEText').setContent(unescape(p.eText));
         }
 
-        $('.selecciona-EAnwersOptions').each(function (j) {
+        $('.gameQE-EAnwersOptions').each(function (j) {
             var option = j < p.numOptions ? p.options[j] : '';
             $(this).val(option);
         });
-        $('#seleccionaNumberQuestion').text(i + 1);
+        p.audio = p.audio && p.audio != "undefined" ? p.audio : "";
+        $exeDevice.stopSound();
+        if (p.type != 2 && p.audio.trim().length > 4) {
+            $exeDevice.playSound(p.audio.trim());
+        }
+        $('#seleccionaEURLAudio').val(p.audio);
+        $('#seleccionaENumberQuestion').text(i + 1);
         $('#seleccionaEScoreQuestion').val(1);
-         if (typeof(p.customScore)!="undefined") {
+        if (typeof (p.customScore) != "undefined") {
             $('#seleccionaEScoreQuestion').val(p.customScore);
         }
-
-        $("input.selecciona-Number[name='slcnumber'][value='" + p.numberOptions + "']").prop("checked", true)
-        $("input.selecciona-Type[name='slcmediatype'][value='" + p.type + "']").prop("checked", true);
+        $("input.gameQE-Number[name='slcnumber'][value='" + p.numberOptions + "']").prop("checked", true)
+        $("input.gameQE-Type[name='slcmediatype'][value='" + p.type + "']").prop("checked", true);
         $exeDevice.checkQuestions(p.solution);
-        $("input.selecciona-Times[name='slctime'][value='" + p.time + "']").prop("checked", true);
-        $("input.selecciona-TypeSelect[name='slctypeselect'][value='" + p.typeSelect + "']").prop("checked", true);
+        $("input.gameQE-Times[name='slctime'][value='" + p.time + "']").prop("checked", true);
+        $("input.gameQE-TypeSelect[name='slctypeselect'][value='" + p.typeSelect + "']").prop("checked", true);
     },
     checkQuestions: function (solution) {
-        $("input.selecciona-ESolution[name='slcsolution']").prop("checked", false);
+        $("input.gameQE-ESolution[name='slcsolution']").prop("checked", false);
         for (var i = 0; i < solution.length; i++) {
             var sol = solution[i];
-            $("input.selecciona-ESolution[name='slcsolution'][value='" + sol + "']").prop("checked", true);
+            $("input.gameQE-ESolution[name='slcsolution'][value='" + sol + "']").prop("checked", true);
         }
         $('#selecionaESolutionSelect').text(solution);
 
@@ -465,7 +520,6 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-
             $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
             $('#seleccionaENoVideo').show();
         }
@@ -499,7 +553,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-            $exeDevice.showMessage(_("This video is not currently available"));
+            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
             $('#seleccionaENoVideo').show();
         }
     },
@@ -562,24 +616,27 @@ var $exeDevice = {
         $exeDevice.changeTypeQuestion(0);
         $exeDevice.showOptions(4);
         $exeDevice.showSolution('');
-        //$("input.myclass[name='myname'][value='the_value']").prop("checked", true);
-        $('.selecciona-Type')[0].checked = true;
-        $('.selecciona-Times')[0].checked = true;
-        $('.selecciona-Number')[2].checked = true;
+        $('.gameQE-Type')[0].checked = true;
+        $('.gameQE-Times')[0].checked = true;
+        $('.gameQE-Number')[2].checked = true;
         $('#seleccionaEURLImage').val('');
         $('#seleccionaEXImage').val('0');
         $('#seleccionaEYImage').val('0');
         $('#seleccionaEAuthor').val('');
         $('#seleccionaEAlt').val('');
+        $('#seleccionaEURLAudio').val('');
         $('#seleccionaEURLYoutube').val('');
         $('#seleccionaEInitVideo').val('00:00:00');
         $('#seleccionaEEndVideo').val('00:00:00');
         $('#seleccionaECheckSoundVideo').prop('checked', true);
         $('#seleccionaECheckImageVideo').prop('checked', true);
+        $("input.gameQE-ESolution[name='slcsolution']").prop("checked", false);
         $('#selecionaESolutionSelect').text('');
         tinyMCE.get('seleccionaEText').setContent('');
         $('#seleccionaEQuestion').val('');
-        $('.selecciona-EAnwersOptions').each(function () {
+        $('#seleccionaESolutionWord').val('');
+        $('#seleccionaEDefinitionWord').val('');
+        $('.gameQE-EAnwersOptions').each(function () {
             $(this).val('');
         });
     },
@@ -611,6 +668,8 @@ var $exeDevice = {
         $('#seleccionaEInputImage').hide();
         $('#seleccionaETitleVideo').hide();
         $('#seleccionaEInputVideo').hide();
+        $('#seleccionaEInputAudio').show();
+        $('#seleccionaETitleAudio').show();
         $('#seleccionaEInputOptionsVideo').hide();
         $('#seleccionaInputOptionsImage').hide();
         if (tinyMCE.get('seleccionaEText')) {
@@ -645,6 +704,8 @@ var $exeDevice = {
                 $('#seleccionaENoVideo').show();
                 $('#seleccionaEVideo').show();
                 $('#seleccionaEInputOptionsVideo').show();
+                $('#seleccionaEInputAudio').hide();
+                $('#seleccionaETitleAudio').hide();
                 break;
             case 3:
                 $('#seleccionaEText').show();
@@ -657,7 +718,7 @@ var $exeDevice = {
         }
     },
     showOptions: function (number) {
-        $('.selecciona-EOptionDiv').each(function (i) {
+        $('.gameQE-EOptionDiv').each(function (i) {
             $(this).show();
             if (i >= number) {
                 $(this).hide();
@@ -665,7 +726,7 @@ var $exeDevice = {
             }
 
         });
-        $('.selecciona-EAnwersOptions').each(function (j) {
+        $('.gameQE-EAnwersOptions').each(function (j) {
             if (j >= number) {
                 $(this).val('');
             }
@@ -673,11 +734,11 @@ var $exeDevice = {
         });
     },
     showSolution: function (solution) {
-        $("input.selecciona-ESolution[name='slcsolution']").prop("checked", false);
+        $("input.gameQE-ESolution[name='slcsolution']").prop("checked", false);
         for (var i = 0; i < solution.length; i++) {
             var sol = solution[i];
-            $('.selecciona-ESolution')[solution].checked = true;
-            $("input.selecciona-ESolution[name='slcsolution'][value='" + sol + "']").prop("checked", true)
+            $('.gameQE-ESolution')[solution].checked = true;
+            $("input.gameQE-ESolution[name='slcsolution'][value='" + sol + "']").prop("checked", true)
         }
         $('#selecionaESolutionSelect').text(solution);
 
@@ -686,109 +747,131 @@ var $exeDevice = {
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
-			<div id="seleccionaIdeviceForm">\
+			<div id="gameQEIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Choose the right answers and click on the Check button.")) + '\
-                    <fieldset class="exe-fieldset exe-fieldset-closed">\
-                        <legend><a href="#">' + _("Options") + '</a></legend>\
-                        <div>\
-                            <p>\
-                                <label for="seleccionaEShowMinimize"><input type="checkbox" id="seleccionaEShowMinimize">' + _("Show minimized.") + '</label>\
-                            </p>\
-                            <p>\
-                                <label for="seleccionaEUseLives"><input type="checkbox" checked id="seleccionaEUseLives">' + _("Use lives") + '.</label>\
-                                <label for="seleccionaENumberLives">' + _("Number of lives") + ':<input type="number" name="seleccionaENumberLives" id="seleccionaENumberLives" value="3" min="1" max="5" /></label>\
-                            </p>\
-                            <p>\
-                                <label for="seleccionaEQuestionsRamdon"><input type="checkbox" id="seleccionaEQuestionsRamdon">' + _("Random questions") + '</label>\
-                                <label for="seleccionaEAnswersRamdon"><input type="checkbox" id="seleccionaEAnswersRamdon">' + _("Random options") + '</label>\
-                            </p>\
-                            <p>\
-                                <label for="seleccionaEShowSolution"><input type="checkbox" checked id="seleccionaEShowSolution">' + _("Show solutions") + '. </label>\
-                                <label for="seleccionaETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="seleccionaETimeShowSolution" id="seleccionaETimeShowSolution" value="3" min="1" max="9" /> </label>\
-                            </p>\
-                            <div class="selecciona-EVideoIntroData">\
-                                <label for="seleccionaEVideoIntro">' + _("Video Intro") + '<input type="text" id="seleccionaEVideoIntro" /></label>\
-                                <a href="#" id="seleccionaEVideoIntroPlay" class="selecciona-tEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "slcPlay.png" + '"  alt="" class="selecciona-EButtonImage b-play" /></a>\
-                            </div>\
-                            <p>\
-                                <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
-                            </p>\
+                        <fieldset class="exe-fieldset exe-fieldset-closed">\
+                            <legend><a href="#">' + _("Options") + '</a></legend>\
+                            <div>\
+                                <p>\
+                                    <label for="seleccionaEShowMinimize"><input type="checkbox" id="seleccionaEShowMinimize">' + _("Show minimized.") + '</label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaEQuestionsRamdon"><input type="checkbox" id="seleccionaEQuestionsRamdon">' + _("Random questions") + '</label>\
+                                    <label for="seleccionaEAnswersRamdon"><input type="checkbox" id="seleccionaEAnswersRamdon">' + _("Random options") + '</label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaEShowSolution"><input type="checkbox" checked id="seleccionaEShowSolution">' + _("Show solutions") + '. </label>\
+                                    <label for="seleccionaETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="seleccionaETimeShowSolution" id="seleccionaETimeShowSolution" value="3" min="1" max="9" /> </label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
+                                </p>\
+                                <p>\
+                                    <input class="gameQE-TypeGame" checked="checked" id="seleccionaEGameMode" type="radio" name="slcgamemode" value="0" />\
+                                    <label for="seleccionaEGameMode">' + _("Game") + '</label>\
+                                    <input class="gameQE-TypeGame"  id="seleccionaETypeActivity" type="radio" name="slcgamemode" value="1" />\
+                                    <label for="seleccionaETypeActivity">' + _("Activity") + '</label>\
+                                    <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="slcgamemode" value="2" />\
+                                    <label for="seleccionaETypeReto">' + _("Challenge") + '</label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaEUseLives"><input type="checkbox" checked id="seleccionaEUseLives"> ' + _("Use lives") + '. </label> \
+                                    <label for="seleccionaENumberLives">' + _("Number of lives") + ':\
+                                    <input type="number" name="seleccionaENumberLives" id="seleccionaENumberLives" value="3" min="1" max="5" /> </label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaEHasFeedBack"><input type="checkbox"  id="seleccionaEHasFeedBack"> ' + _("Feedback") + '. </label> \
+                                    <input type="number" name="seleccionaEPercentajeFB" id="seleccionaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> </label>\
+                                </p>\
+                                <p id="seleccionaEFeedbackP" class="gameQE-EFeedbackP">\
+                                    <textarea id="seleccionaEFeedBackEditor" class="exe-html-editor"\></textarea>\
+                                </p>\
+                                <p class="gameQE-Flex">\
+                                    <label for="seleccionaEVideoIntro">' + _("Video Intro") + ':</label><input type="text" id="seleccionaEVideoIntro" /><a href="#" class="gameQE-ButtonLink" id="seleccionaEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="Play" class="gameQE-EButtonImage" /></a>\
+                                </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
                         <legend><a href="#">' + _("Questions") + '</a></legend>\
-                        <div class="selecciona-EPanel" id="seleccionaEPanel">\
-                            <div class="selecciona-EOptionsMedia">\
-                                <div class="selecciona-EOptionsGame">\
+                        <div class="gameQE-EPanel" id="seleccionaEPanel">\
+                            <div class="gameQE-EOptionsMedia">\
+                                <div class="gameQE-EOptionsGame">\
                                     <span>' + _("Type") + ':</span>\
-                                    <div class="selecciona-EInputType">\
-                                        <input class="selecciona-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
+                                    <div class="gameQE-EInputType">\
+                                        <input class="gameQE-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
                                         <label for="seleccionaTypeSelect">' + _("Select") + '</label>\
-                                        <input class="selecciona-TypeSelect"  id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="1"/>\
+                                        <input class="gameQE-TypeSelect"  id="seleccionaTypeOrders" type="radio" name="slctypeselect" value="1"/>\
                                         <label for="seleccionaTypeOrders">' + _("Order") + '</label>\
+                                        <input class="gameQE-TypeSelect"  id="seleccionaTypeWord" type="radio" name="slctypeselect" value="2"/>\
+                                        <label for="seleccionaTypeWord">' + _("Word") + '</label>\
                                     </div>\
                                     <span>' + _("Multimedia Type") + ':</span>\
-                                    <div class="selecciona-EInputMedias">\
-                                        <input class="selecciona-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
+                                    <div class="gameQE-EInputMedias">\
+                                        <input class="gameQE-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
                                         <label for="seleccionaMediaNormal">' + _("None") + '</label>\
-                                        <input class="selecciona-Type"  id="seleccionaMediaImage" type="radio" name="slcmediatype" value="1" disabled />\
+                                        <input class="gameQE-Type"  id="seleccionaMediaImage" type="radio" name="slcmediatype" value="1" disabled />\
                                         <label for="seleccionaMediaImage">' + _("Image") + '</label>\
-                                        <input class="selecciona-Type"  id="seleccionaMediaVideo" type="radio" name="slcmediatype" value="2" disabled />\
+                                        <input class="gameQE-Type"  id="seleccionaMediaVideo" type="radio" name="slcmediatype" value="2" disabled />\
                                         <label for="seleccionaMediaVideo">' + _("Video") + '</label>\
-                                        <input class="selecciona-Type"  id="seleccionaMediaText" type="radio" name="slcmediatype" value="3" disabled />\
+                                        <input class="gameQE-Type"  id="seleccionaMediaText" type="radio" name="slcmediatype" value="3" disabled />\
                                         <label for="seleccionaMediaText">' + _("Text") + '</label>\
                                     </div>\
-                                    <span>' + _("Options Number") + ':</span>\
-                                    <div class="selecciona-EInputNumbers">\
-                                        <input class="selecciona-Number" id="numQ2" type="radio" name="slcnumber" value="2" />\
+                                    <span id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</span>\
+                                    <div class="gameQE-EInputNumbers" id="seleccionaEInputNumbers" >\
+                                        <input class="gameQE-Number" id="numQ2" type="radio" name="slcnumber" value="2" />\
                                         <label for="numQ2">2</label>\
-                                        <input class="selecciona-Number" id="numQ3" type="radio" name="slcnumber" value="3" />\
+                                        <input class="gameQE-Number" id="numQ3" type="radio" name="slcnumber" value="3" />\
                                         <label for="numQ3">3</label>\
-                                        <input class="selecciona-Number" id="numQ4" type="radio" name="slcnumber" value="4" checked="checked" />\
+                                        <input class="gameQE-Number" id="numQ4" type="radio" name="slcnumber" value="4" checked="checked" />\
                                         <label for="numQ4">4</label>\
                                     </div>\
+                                    <span id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</span>\
+                                    <div class="gameQE-EPercentage" id="seleccionaPercentage">\
+                                        <input type="number" name="seleccionaPercentageShow" id="seleccionaPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
+                                    </div>\
                                     <span>' + _("Time per question") + ':</span>\
-                                    <div class="selecciona-EInputTimes">\
-                                        <input class="selecciona-Times" checked="checked" id="q15s" type="radio" name="slctime" value="0" />\
+                                    <div class="gameQE-EInputTimes">\
+                                        <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="slctime" value="0" />\
                                         <label for="q15s">15s</label>\
-                                        <input class="selecciona-Times" id="q30s" type="radio" name="slctime" value="1" />\
+                                        <input class="gameQE-Times" id="q30s" type="radio" name="slctime" value="1" />\
                                         <label for="q30s">30s</label>\
-                                        <input class="selecciona-Times" id="q1m" type="radio" name="slctime" value="2" />\
+                                        <input class="gameQE-Times" id="q1m" type="radio" name="slctime" value="2" />\
                                         <label for="q1m">1m</label>\
-                                        <input class="selecciona-Times" id="q3m" type="radio" name="slctime" value="3" />\
+                                        <input class="gameQE-Times" id="q3m" type="radio" name="slctime" value="3" />\
                                         <label for="q3m">3m</label>\
-                                        <input class="selecciona-Times" id="q5m" type="radio" name="slctime" value="4" />\
+                                        <input class="gameQE-Times" id="q5m" type="radio" name="slctime" value="4" />\
                                         <label for="q5m">5m</label>\
-                                        <input class="selecciona-Times" id="q10m" type="radio" name="slctime" value="5" />\
+                                        <input class="gameQE-Times" id="q10m" type="radio" name="slctime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
-                                    <span class="selecciona-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + '</span>\
-                                    <div class="selecciona-EInputImage" id="seleccionaEInputImage">\
+                                    <span class="gameQE-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + '</span>\
+                                    <div class="gameQE-EInputImage gameQE-Flex" id="seleccionaEInputImage">\
                                         <label class="sr-av" for="seleccionaEURLImage">' + _("Image URL") + '</label>\
-                                        <input type="text" class="exe-file-picker selecciona-EURLImage"  id="seleccionaEURLImage"/>\
+                                        <input type="text" class="exe-file-picker gameQE-EURLImage"  id="seleccionaEURLImage"/>\
+                                        <a href="#" id="seleccionaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
-                                    <div class="selecciona-EInputOptionsImage" id="seleccionaInputOptionsImage">\
-                                        <div>\
+                                    <div class="gameQE-EInputOptionsImage" id="seleccionaInputOptionsImage">\
+                                        <div class="gameQE-ECoord">\
                                             <label for="seleccionaEXImage">X:</label>\
                                             <input id="seleccionaEXImage" type="text" value="0" />\
                                             <label for="seleccionaEXImage">Y:</label>\
                                             <input id="seleccionaEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <span class="selecciona-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + '</span>\
-                                    <div class="selecciona-EInputVideo" id="seleccionaEInputVideo">\
+                                    <span class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + '</span>\
+                                    <div class="gameQE-EInputVideo gameQE-Flex" id="seleccionaEInputVideo">\
                                         <label class="sr-av" for="seleccionaEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="seleccionaEURLYoutube" type="text" />\
-                                        <a href="#" id="seleccionaEPlayVideo" class="selecciona-ENavigationButton selecciona-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "slcPlay.png" + '"  alt="" class="selecciona-EButtonImage b-play" /></a>\
+                                        <a href="#" id="seleccionaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
-                                    <div class="selecciona-EInputOptionsVideo" id="seleccionaEInputOptionsVideo">\
+                                    <div class="gameQE-EInputOptionsVideo" id="seleccionaEInputOptionsVideo">\
                                         <div>\
                                             <label for="seleccionaEInitVideo">' + _("Start") + ':</label>\
                                             <input id="seleccionaEInitVideo" type="text" value="00:00:00" maxlength="8" />\
                                             <label for="seleccionaEEndVideo">' + _("End") + ':</label>\
                                             <input id="seleccionaEEndVideo" type="text" value="00:00:00" maxlength="8" />\
-                                            <button class="selecciona-EVideoTime" id="seleccionaEVideoTime" type="button">00:00:00</button>\
+                                            <button class="gameQE-EVideoTime" id="seleccionaEVideoTime" type="button">00:00:00</button>\
                                         </div>\
                                         <div>\
                                             <label for="seleccionaESilenceVideo">' + _("Silence") + ':</label>\
@@ -803,92 +886,104 @@ var $exeDevice = {
                                             <input id="seleccionaECheckImageVideo" type="checkbox" checked="checked" />\
                                         </div>\
                                     </div>\
-                                    <div class="selecciona-EAuthorAlt" id="seleccionaEAuthorAlt">\
-                                        <div class="selecciona-EInputAuthor" id="seleccionaInputAuthor">\
+                                    <div class="gameQE-EAuthorAlt" id="seleccionaEAuthorAlt">\
+                                        <div class="gameQE-EInputAuthor" id="quextInputAuthor">\
                                             <label for="seleccionaEAuthor">' + _("Author") + '</label>\
                                             <input id="seleccionaEAuthor" type="text" />\
                                         </div>\
-                                        <div class="selecciona-EInputAlt" id="seleccionaInputAlt">\
+                                        <div class="gameQE-EInputAlt" id="quextInputAlt">\
                                             <label for="seleccionaEAlt">' + _("Alternative text") + '</label>\
                                             <input id="seleccionaEAlt" type="text" />\
                                         </div>\
                                     </div>\
+                                    <span id="seleccionaETitleAudio">' + _("Audio") + '</span>\
+                                    <div class="gameQE-EInputAudio" id="seleccionaEInputAudio">\
+                                        <label class="sr-av" for="seleccionaEURLAudio">' + _("URL") + '</label>\
+                                        <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="seleccionaEURLAudio"/>\
+                                        <a href="#" id="seleccionaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                    </div>\
+                                    <div id="seleccionaEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
+                                        <label for="seleccionaEScoreQuestion">' + _("Score") + ':</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
+                                    </div>\
                                 </div>\
-                                <div class="selecciona-EMultiMediaOption">\
-                                    <div class="selecciona-EMultimedia" id="seleccionaEMultimedia">\
+                                <div class="gameQE-EMultiMediaOption">\
+                                    <div class="gameQE-EMultimedia" id="seleccionaEMultimedia">\
                                         <textarea id="seleccionaEText"></textarea>\
-                                        <img class="selecciona-EImage" src="' + path + "slcEImage.png" + '" id="seleccionaEImage" alt="' + _("Image") + '" />\
-                                        <img class="selecciona-ENoImage" src="' + path + "slcEImage.png" + '" id="seleccionaENoImage" alt="' + _("No image") + '" />\
-                                        <div class="selecciona-EVideo" id="seleccionaEVideo"></div>\
-                                        <img class="selecciona-ENoImageVideo" src="' + path + "slcENoImageVideo.png" + '" id="seleccionaENoImageVideo" alt="" />\
-                                        <img class="selecciona-ENoVideo" src="' + path + "slcENoVideo.png" + '" id="seleccionaENoVideo" alt="" />\
-                                        <img class="selecciona-ECursor" src="' + path + "slcCursor.gif" + '" id="seleccionaECursor" alt="Cursor" />\
-                                        <img class="selecciona-ECover" src="' + path + "slcECover.png" + '" id="seleccionaECover" alt="' + _("No image") + '" />\
+                                        <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="seleccionaEImage" alt="' + _("Image") + '" />\
+                                        <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="seleccionaENoImage" alt="' + _("No image") + '" />\
+                                        <div class="gameQE-EMedia" id="seleccionaEVideo"></div>\
+                                        <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="seleccionaENoImageVideo" alt="" />\
+                                        <img class="gameQE-EMedia" src="' + path + "quextIENoVideo.png" + '" id="seleccionaENoVideo" alt="" />\
+                                        <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="seleccionaECursor" alt="Cursor" />\
+                                        <img class="gameQE-EMedia" src="' + path + "quextIECoverSelecciona.png" + '" id="seleccionaECover" alt="' + _("No image") + '" />\
                                     </div>\
                                 </div>\
                             </div>\
-                            <div class="selecciona-EContents">\
-                                  <div class="selecciona-ESolutionSelect"> <label for="seleccionaEScoreQuestion">' + _("Score") + ':<input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/></label>\
-                                  <p>' + _("Solution") + ': </p><p id="selecionaESolutionSelect"></p></div>\
-                                  <div class="selecciona-EQuestionDiv">\
-                                        <label class="sr-av">' + _("Question") + ':</label><input type="text" class="selecciona-EQuestion" id="seleccionaEQuestion">\
+                            <div class="gameQE-EContents">\
+                                   <div><span>' + _("Solution") + ': </span><span id="selecionaESolutionSelect"></span></div>\
+                                   <div class="gameQE-EQuestionDiv" id="seleccionaEQuestionDiv">\
+                                        <label class="sr-av">' + _("Question") + ':</label><input type="text" class="gameQE-EQuestion" id="seleccionaEQuestion">\
                                    </div>\
-                                   <div class="selecciona-EAnswers">\
-                                    <div class="selecciona-EOptionDiv">\
-                                        <label class="sr-av">' + _("Solution") + ' A:</label><input type="checkbox" class="selecciona-ESolution" name="slcsolution" id="seleccionaESolution0" value="A" />\
-                                        <label >A</label><input type="text" class="selecciona-EOption0 selecciona-EAnwersOptions" id="seleccionaEOption0">\
+                                <div class="gameQE-EAnswers" id="seleccionaEAnswers">\
+                                    <div class="gameQE-EOptionDiv">\
+                                        <label class="sr-av">' + _("Solution") + ' A:</label><input type="checkbox" class="gameQE-ESolution" name="slcsolution" id="seleccionaESolution0" value="A" />\
+                                        <label >A</label><input type="text" class="gameQE-EOption0 gameQE-EAnwersOptions" id="seleccionaEOption0">\
                                     </div>\
-                                    <div class="selecciona-EOptionDiv">\
-                                        <label class="sr-av">' + _("Solution") + ' B:</label><input type="checkbox" class="selecciona-ESolution" name="slcsolution" id="seleccionaESolution1" value="B" />\
-                                        <label >B</label><input type="text" class="selecciona-EOption1 selecciona-EAnwersOptions"  id="seleccionaEOption1">\
+                                    <div class="gameQE-EOptionDiv">\
+                                        <label class="sr-av">' + _("Solution") + ' B:</label><input type="checkbox" class="gameQE-ESolution" name="slcsolution" id="seleccionaESolution1" value="B" />\
+                                        <label >B</label><input type="text" class="gameQE-EOption1 gameQE-EAnwersOptions"  id="seleccionaEOption1">\
                                     </div>\
-                                    <div class="selecciona-EOptionDiv">\
-                                        <label class="sr-av">' + _("Solution") + ' C:</label><input type="checkbox" class="selecciona-ESolution" name="slcsolution" id="seleccionaESolution2" value="C" />\
-                                        <label >C</label><input type="text" class="selecciona-EOption2 selecciona-EAnwersOptions"  id="seleccionaEOption2">\
+                                    <div class="gameQE-EOptionDiv">\
+                                        <label class="sr-av">' + _("Solution") + ' C:</label><input type="checkbox" class="gameQE-ESolution" name="slcsolution" id="seleccionaESolution2" value="C" />\
+                                        <label >C</label><input type="text" class="gameQE-EOption2 gameQE-EAnwersOptions"  id="seleccionaEOption2">\
                                     </div>\
-                                    <div class="selecciona-EOptionDiv">\
-                                        <label class="sr-av">' + _("Solution") + ' D:</label><input type="checkbox"  class="selecciona-ESolution" name="slcsolution" id="seleccionaESolution3" value="D" />\
-                                        <label >D</label><input type="text" class="selecciona-EOption3 selecciona-EAnwersOptions"  id="seleccionaEOption3">\
-                                    </div>\
-                                </div>\
-                            </div>\
-                            <div class="selecciona-ENavigationButtons">\
-                                <a href="#" id="seleccionaEAdd" class="selecciona-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "slcAdd.png" + '"  alt="" class="selecciona-EButtonImage b-add" /></a>\
-                                <a href="#" id="seleccionaEFirst" class="selecciona-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "slcFirst.png" + '"  alt="" class="selecciona-EButtonImage b-first" /></a>\
-                                <a href="#" id="seleccionaEPrevious" class="selecciona-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "slcPrev.png" + '"  alt="" class="selecciona-EButtonImage b-prev" /></a>\
-                                <span class="sr-av">' + _("Question number:") + '</span><span class="selecciona-NumberQuestion" id="seleccionaNumberQuestion">1</span>\
-                                <a href="#" id="seleccionaENext" class="selecciona-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "slcNext.png" + '"  alt="" class="selecciona-EButtonImage b-next" /></a>\
-                                <a href="#" id="seleccionaELast" class="selecciona-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "slcLast.png" + '"  alt="" class="selecciona-EButtonImage b-last" /></a>\
-                                <a href="#" id="seleccionaEDelete" class="selecciona-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "slcDelete.png" + '"  alt="" class="selecciona-EButtonImage b-delete" /></a>\
-                                <a href="#" id="seleccionaECopy" class="selecciona-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "slcCopy.png" + '"   alt="" class="selecciona-EButtonImage b-copy" /></a>\
-                                <a href="#" id="seleccionaECut" class="selecciona-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "slcCut.png" + '"  alt=""  class="selecciona-EButtonImage b-cut" /></a>\
-                                <a href="#" id="seleccionaEPaste" class="selecciona-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "slcPaste.png" + '"  alt="" class="selecciona-EButtonImage b-paste" /></a>\
-                            </div>\
-                            <div class="selecciona-EVIDiv" id="seleccionaEVIDiv">\
-                                <div class="selecciona-EVIV">\
-                                    <div class="selecciona-EMVI">\
-                                        <div class="selecciona-EVI" id="seleccionaEVI"></div>\
-                                        <img class="selecciona-ENoVI" src="' + path + "slcENoVideo.png" + '" id="seleccionaEVINo" alt="" />\
+                                    <div class="gameQE-EOptionDiv">\
+                                        <label class="sr-av">' + _("Solution") + ' D:</label><input type="checkbox"  class="gameQE-ESolution" name="slcsolution" id="seleccionaESolution3" value="D" />\
+                                        <label >D</label><input type="text" class="gameQE-EOption3 gameQE-EAnwersOptions"  id="seleccionaEOption3">\
                                     </div>\
                                 </div>\
-                                <div class="selecciona-EVIOptions">\
+                                <div class="gameQE-EWordDiv gameQE-DP" id="selecionaEWordDiv">\
+                                    <div class="gameQE-ESolutionWord"><label for="seleccionaESolutionWord">' + _("Word/Phrase") + ': </label><input type="text"  id="seleccionaESolutionWord"/></div>\
+                                    <div class="gameQE-ESolutionWord"><label for="seleccionaEDefinitionWord">' + _("Definition") + ': </label><input type="text"  id="seleccionaEDefinitionWord"/></div>\
+                                </div>\
+                            </div>\
+                            <div class="gameQE-ENavigationButtons">\
+                                <a href="#" id="seleccionaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="seleccionaENumberQuestion">1</span>\
+                                <a href="#" id="seleccionaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt=""  class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEPaste" class="gameQE-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextIEPaste.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                            </div>\
+                            <div class="gameQE-EVIDiv" id="seleccionaEVIDiv">\
+                                <div class="gameQE-EVIV">\
+                                    <div class="gameQE-EMVI">\
+                                        <div class="gameQE-EVI" id="seleccionaEVI"></div>\
+                                        <img class="gameQE-ENoVI" src="' + path + "quextIENoVideo.png" + '" id="seleccionaEVINo" alt="" />\
+                                    </div>\
+                                </div>\
+                                <div class="gameQE-EVIOptions">\
                                     <label for="seleccionaEVIURL">' + _("Youtube URL") + ':</label>\
                                     <input id="seleccionaEVIURL" type="text" />\
-                                    <a href="#" id="seleccionaEVIPlayI" class="selecciona-ENavigationButton selecciona-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "slcPlay.png" + '" alt="" class="selecciona-EButtonImage b-playintro" /></a>\
+                                    <a href="#" id="seleccionaEVIPlayI" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '" alt="" class="gameQE-EButtonImage b-playintro" /></a>\
                                     <label for="seleccionaEVIStart">' + _("Start") + ':</label>\
                                     <input id="seleccionaEVIStart" type="text" value="00:00:00" readonly />\
                                     <label for="seleccionaEVIEnd">' + _("End") + ':</label>\
                                     <input id="seleccionaEVIEnd" type="text" value="00:00:00" readonly />\
-                                    <button class="selecciona-EVideoTime" id="seleccionaEVITime" type="button">00:00:00</button>\
+                                    <button class="gameQE-EVideoTime" id="seleccionaEVITime" type="button">00:00:00</button>\
                                 </div>\
-                                <input type="button" class="selecciona-EVIClose" id="seleccionaEVIClose" value="' + _("Close") + '" />\
+                                <input type="button" class="gameQE-EVIClose" id="seleccionaEVIClose" value="' + _("Close") + '" />\
                             </div>\
-                            <div class="selecciona-ENumQuestionDiv" id="seleccionaENumQuestionDiv">\
-                               <div class="selecciona-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="selecciona-ENumQuestions" id="seleccionaENumQuestions">0</span>\
+                            <div class="gameQE-ENumQuestionDiv" id="seleccionaENumQuestionDiv">\
+                                <div class="gameQE-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="gameQE-ENumQuestions" id="seleccionaENumQuestions">0</span>\
                             </div>\
                         </div>\
                     </fieldset>\
-                    '+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
+                    ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
                  </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
@@ -899,7 +994,7 @@ var $exeDevice = {
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
         $exeDevice.loadYoutubeApi();
-        $exeAuthoring.iDevice.tabs.init("seleccionaIdeviceForm");
+        $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
         tinymce.init({
             selector: '#seleccionaEText',
@@ -924,14 +1019,9 @@ var $exeDevice = {
         });
 
     },
-    validTime: function (time) {
-        var reg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/;
-        return (time.length == 8 && reg.test(time))
-    },
     initQuestions: function () {
-        $('#seleccionaEInputOptionsImage').css('display', 'flex');
+        $('#seleccionaEInputImage').css('display', 'flex');
         $('#seleccionaEInputVideo').css('display', 'flex');
-        $('#seleccionaEAuthorAlt').css('display', 'flex');
         $("#seleccionaMediaNormal").prop("disabled", false);
         $("#seleccionaMediaImage").prop("disabled", false);
         $("#seleccionaMediaText").prop("disabled", false);
@@ -942,6 +1032,7 @@ var $exeDevice = {
             this.showOptions(4);
             this.showSolution('');
         }
+        $exeDevice.showTypeQuestion(0);
         this.active = 0;
     },
     getCuestionDefault: function () {
@@ -968,7 +1059,13 @@ var $exeDevice = {
         p.solution = '';
         p.silentVideo = 0;
         p.tSilentVideo = 0;
+        p.solutionWord = '';
+        p.audio = '';
         return p;
+    },
+    validTime: function (time) {
+        var reg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/;
+        return (time.length == 8 && reg.test(time))
     },
     loadPreviousValues: function (field) {
 
@@ -977,38 +1074,93 @@ var $exeDevice = {
             $exeDevice.active = 0;
             var wrapper = $("<div></div>");
             wrapper.html(originalHTML);
-            var json = $exeDevice.Decrypt($('.selecciona-DataGame', wrapper).text());
+            var json = $exeDevice.Decrypt($('.selecciona-DataGame', wrapper).text()),
+                version = $('.selecciona-version', wrapper).text();
             var dataGame = $exeDevice.isJsonString(json),
-                $imagesLink = $('.selecciona-LinkImages', wrapper);
-            $imagesLink.each(function (index) {
-                dataGame.selectsGame[index].url = $(this).attr('href');
-                if(dataGame.selectsGame[index].url.length<10){
-					dataGame.selectsGame[index].url="";
-				}
+                $imagesLink = $('.selecciona-LinkImages', wrapper),
+                $audiosLink = $('.selecciona-LinkAudios', wrapper);
+            $imagesLink.each(function () {
+                var iq = parseInt($(this).text());
+                if (!isNaN(iq) && iq < dataGame.selectsGame.length) {
+                    dataGame.selectsGame[iq].url = $(this).attr('href');
+                    if (dataGame.selectsGame[iq].url.length < 4 && dataGame.selectsGame[iq].type == 1) {
+                        dataGame.selectsGame[iq].url = "";
+                    }
+                }
+            });
+            for (var i = 0; i < dataGame.selectsGame.length; i++) {
+                dataGame.selectsGame[i].audio = typeof dataGame.selectsGame[i].audio == "undefined" ? "" : dataGame.selectsGame[i].audio;
+            }
+
+            $audiosLink.each(function () {
+                var iq = parseInt($(this).text());
+                if (!isNaN(iq) && iq < dataGame.selectsGame.length) {
+                    dataGame.selectsGame[iq].audio = $(this).attr('href');
+                    if (dataGame.selectsGame[iq].audio.length < 4) {
+                        dataGame.selectsGame[iq].audio = "";
+                    }
+                }
             });
             $exeDevice.active = 0;
-            for (var i = 0; i < dataGame.selectsGame.length; i++) {
-                if (dataGame.selectsGame[i].type == 3) {
-                    dataGame.selectsGame[i].eText = unescape(dataGame.selectsGame[i].eText);
+            var instructions = $(".selecciona-instructions", wrapper);
+            if (instructions.length == 1) {
+                instructions = instructions.html() || ''
+                if (tinyMCE.get('eXeGameInstructions')) {
+                    tinyMCE.get('eXeGameInstructions').setContent(instructions);
+                } else {
+                    $("#eXeGameInstructions").val(instructions)
                 }
             }
-            $exeDevice.selectsGame = dataGame.selectsGame;
-            var instructions = $(".selecciona-instructions", wrapper);
-            if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
-            // i18n
-            $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
-             // Text after
-            var textAfter = $(".selecciona-extra-content",wrapper);
-            if (textAfter.length == 1) tinyMCE.get('eXeIdeviceTextAfter').setContent(textAfter.html());
 
+            var textFeedBack = $(".selecciona-feedback-game", wrapper);
+            if (textFeedBack.length == 1) {
+                textFeedBack = textFeedBack.html() || ''
+                if (tinyMCE.get('seleccionaEFeedBackEditor')) {
+                    tinyMCE.get('seleccionaEFeedBackEditor').setContent(textFeedBack);
+                } else {
+                    $("#seleccionaEFeedBackEditor").val(textFeedBack)
+                }
+            }
+
+            var textAfter = $(".selecciona-extra-content", wrapper);
+            if (textAfter.length == 1) {
+                textAfter = textAfter.html() || ''
+                if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                    tinyMCE.get('eXeIdeviceTextAfter').setContent(textAfter);
+                } else {
+                    $("#eXeIdeviceTextAfter").val(textAfter)
+                }
+            }
+            $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
 
+        }
+    },
+    updateGameMode: function (gamemode, feedback, useLives) {
+
+        $("#seleccionaEUseLives").prop('disabled', true);
+        $("#seleccionaENumberLives").prop('disabled', true);
+        $('#seleccionaEPercentajeFB').prop('disabled', !feedback && gamemode != 2);
+        $('#seleccionaEHasFeedBack').prop('disabled', gamemode == 2);
+        $('#seleccionaEHasFeedBack').prop('checked', feedback);
+        if (gamemode == 2 || feedback) {
+            $('#seleccionaEFeedbackP').slideDown();
+        }
+        if (gamemode != 2 && !feedback) {
+            $('#seleccionaEFeedbackP').slideUp();
+        }
+        if (gamemode == 0) {
+            $("#seleccionaEUseLives").prop('disabled', false);
+            $("#seleccionaENumberLives").prop('disabled', !useLives);
         }
     },
     updateFieldGame: function (game) {
 
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.answersRamdon = game.answersRamdon || false;
+        game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
+        game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
+        game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         $('#seleccionaEShowMinimize').prop('checked', game.showMinimize);
         $('#seleccionaEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#seleccionaEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -1023,13 +1175,28 @@ var $exeDevice = {
         $('#seleccionaEVIEnd').val($exeDevice.secondsToHour(game.endVideo));
         $('#seleccionaEVIStart').val($exeDevice.secondsToHour(game.startVideo));
         $('#seleccionaECustomScore').prop('checked', game.customScore);
-        $('label[for=seleccionaEScoreQuestion], input#seleccionaEScoreQuestion').hide();
+        $('#seleccionaEScoreQuestionDiv').hide();
+        $("#seleccionaEHasFeedBack").prop('checked', game.feedBack);
+        $("#seleccionaEPercentajeFB").val(game.percentajeFB);
+        $("input.gameQE-TypeGame[name='slcgamemode'][value='" + game.gameMode + "']").prop("checked", true);
+        $("#seleccionaEUseLives").prop('disabled', game.gameMode == 0);
+        $("#seleccionaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
+        $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
+        for (var i = 0; i < game.selectsGame.length; i++) {
+            game.selectsGame[i].audio = typeof game.selectsGame[i].audio == "undefined" ? "" : game.selectsGame[i].audio;
+        }
         if (game.customScore) {
-            $('label[for=seleccionaEScoreQuestion], input#seleccionaEScoreQuestion').show();
+            $('#seleccionaEScoreQuestionDiv').show();
         }
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
+        if (game.feedBack || game.gameMode == 2) {
+            $('#seleccionaEFeedbackP').show();
+        } else {
+            $('#seleccionaEFeedbackP').hide();
+        }
+        $('#seleccionaEPercentajeFB').prop('disabled', !game.feedBack);
+        $exeDevice.selectsGame = game.selectsGame;
         $exeDevice.showQuestion($exeDevice.active);
-
 
     },
     isJsonString: function (str) {
@@ -1055,6 +1222,7 @@ var $exeDevice = {
             return false;
         }
     },
+
     save: function () {
         if (!$exeDevice.validateQuestion()) {
             return;
@@ -1074,17 +1242,21 @@ var $exeDevice = {
             divContent = "";
         var instructions = tinyMCE.get('eXeGameInstructions').getContent();
         if (instructions != "") divContent = '<div class="selecciona-instructions">' + instructions + '</div>';
-        var linksImages = $exeDevice.createlinksImage(dataGame.selectsGame);
-        var html = '<div class="selecciona-IDevice">';
+        var textFeedBack = tinyMCE.get('seleccionaEFeedBackEditor').getContent(),
+            linksImages = $exeDevice.createlinksImage(dataGame.selectsGame),
+            linksAudios = $exeDevice.createlinksAudio(dataGame.selectsGame),
+            html = '<div class="selecciona-IDevice">';
         html += divContent;
-        html += '<div class="selecciona-DataGame">' + $exeDevice.Encrypt(json) + '</div>';
+        html += '<div class="selecciona-version js-hidden">' + $exeDevice.version + '</div>';
+        html += '<div class="selecciona-feedback-game">' + textFeedBack + '</div>';
+        html += '<div class="selecciona-DataGame js-hidden" >' + $exeDevice.Encrypt(json) + '</div>';
         html += linksImages;
+        html += linksAudios;
+        var textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
+        if (textAfter != "") {
+            html += '<div class="selecciona-extra-content">' + textAfter + '</div>';
+        }
         html += '</div>';
-         // Get the optional text
-         var textAfter = tinymce.editors[2].getContent();
-         if (textAfter!="") {
-             html += '<div class="selecciona-extra-content">'+textAfter+'</div>';
-         }
         return html;
     },
     Encrypt: function (str) {
@@ -1138,6 +1310,9 @@ var $exeDevice = {
         p.alt = $('#seleccionaEAlt').val();
         p.customScore = parseFloat($('#seleccionaEScoreQuestion').val());
         p.url = $('#seleccionaEURLImage').val().trim();
+        p.audio = $('#seleccionaEURLAudio').val();
+        $exeDevice.stopSound();
+        $exeDevice.stopVideo();
         if (p.type == 2) {
             p.url = $exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim()) ? $('#seleccionaEURLYoutube').val() : '';
         }
@@ -1151,20 +1326,32 @@ var $exeDevice = {
         p.quextion = $('#seleccionaEQuestion').val().trim();
         p.options = [];
         p.solution = $('#selecionaESolutionSelect').text().trim();
+        p.solutionQuestion = "";
+        if (p.typeSelect == 2) {
+            p.quextion = $('#seleccionaEDefinitionWord').val().trim();
+            p.solution = "";
+            p.solutionQuestion = $('#seleccionaESolutionWord').val();
+        }
 
+        p.percentageShow = parseInt($('#seleccionaPercentageShow').val());
         var optionEmpy = false;
-        $('.selecciona-EAnwersOptions').each(function (i) {
+        var validExt = ['mp3', 'ogg', 'wav'],
+            extaudio = p.audio.split('.').pop().toLowerCase();
+        $('.gameQE-EAnwersOptions').each(function (i) {
             var option = $(this).val().trim();
             if (i < p.numberOptions && option.length == 0) {
                 optionEmpy = true;
+            }
+            if (p.typeSelect == 2) {
+                option = "";
             }
             p.options.push(option);
         });
         if (p.typeSelect == 1 && p.solution.length != p.numberOptions) {
             message = msgs.msgTypeChoose;
-        } else if (p.quextion.length == 0) {
+        } else if (p.typeSelect != 2 && p.quextion.length == 0) {
             message = msgs.msgECompleteQuestion;
-        } else if (optionEmpy) {
+        } else if (p.typeSelect != 2 && optionEmpy) {
             message = msgs.msgECompleteAllOptions
         } else if (p.type == 1 && p.url.length < 5) {
             message = msgs.msgEURLValid;
@@ -1178,12 +1365,19 @@ var $exeDevice = {
             message = msgs.msgWriteText;
         } else if (p.type == 2 && !$exeDevice.validTime($('#seleccionaEInitVideo').val()) || !$exeDevice.validTime($('#seleccionaEEndVideo').val())) {
             message = $exeDevice.msgs.msgTimeFormat
-        }else if (p.type == 2 && p.tSilentVideo > 0 && !$exeDevice.validTime($('#seleccionaESilenceVideo').val())) {
+        } else if (p.type == 2 && p.tSilentVideo > 0 && !$exeDevice.validTime($('#seleccionaESilenceVideo').val())) {
             message = msgs.msgTimeFormat;
-        }else if (p.type == 2 && p.tSilentVideo > 0  && (p.silentVideo < p.iVideo || p.silentVideo >= p.fVideo)) {
+        } else if (p.type == 2 && p.tSilentVideo > 0 && (p.silentVideo < p.iVideo || p.silentVideo >= p.fVideo)) {
             message = msgs.msgSilentPoint;
+        } else if (p.typeSelect == 2 && p.solutionQuestion.trim().length == 0) {
+            message = $exeDevice.msgs.msgEDefintion;
+        } else if (p.typeSelect == 2 && p.quextion.trim().length == 0) {
+            message = $exeDevice.msgs.msgEProvideWord;
         }
 
+        if (p.audio.length > 0 && validExt.indexOf(extaudio) == -1) {
+            message = _("Supported formats") + '. ' + _('Audio') + ": mp3, ogg, wav";
+        }
         if (message.length == 0) {
             $exeDevice.selectsGame[$exeDevice.active] = p;
             message = true;
@@ -1197,11 +1391,22 @@ var $exeDevice = {
     createlinksImage: function (selectsGame) {
         var html = '';
         for (var i = 0; i < selectsGame.length; i++) {
-            var linkImage = '<a href="' + selectsGame[i].url + '" class="js-hidden selecciona-LinkImages">' + i + '</a>';
-            if(selectsGame[i].url.length<10){
-				linkImage='<a href="#" class="js-hidden selecciona-LinkImages">' + i + '</a>';
-			}
+            var linkImage = '';
+            if (selectsGame[i].type == 1 && !selectsGame[i].url.indexOf('http') == 0) {
+                linkImage = '<a href="' + selectsGame[i].url + '" class="js-hidden selecciona-LinkImages">' + i + '</a>';
+            }
             html += linkImage;
+        }
+        return html;
+    },
+    createlinksAudio: function (selectsGame) {
+        var html = '';
+        for (var i = 0; i < selectsGame.length; i++) {
+            var linkaudio = '';
+            if (selectsGame[i].type != 2 && !selectsGame[i].audio.indexOf('http') == 0 && selectsGame[i].audio.length > 4) {
+                linkaudio = '<a href="' + selectsGame[i].audio + '" class="js-hidden selecciona-LinkAudios">' + i + '</a>';
+            }
+            html += linkaudio;
         }
         return html;
     },
@@ -1225,10 +1430,10 @@ var $exeDevice = {
         var link = document.createElement('a');
         link.href = data;
         link.download = _("Game") + "Selecciona.json";
-        document.getElementById('seleccionaIdeviceForm').appendChild(link);
+        document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
-            document.getElementById('seleccionaIdeviceForm').removeChild(link);
+            document.getElementById('gameQEIdeviceForm').removeChild(link);
             window.URL.revokeObjectURL(data);
         }, 100);
     },
@@ -1258,18 +1463,20 @@ var $exeDevice = {
             }
         }
         $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions;
-        tinymce.editors[0].setContent(unescape(instructions));
-        var textAfter = game.textAfter || '';
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(textAfter));
+        var instructions = game.instructionsExe || game.instructions,
+            tAfter = game.textAfter || "",
+            textFeedBack = game.textFeedBack || "";
+        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+        tinyMCE.get('seleccionaEFeedBackEditor').setContent(unescape(textFeedBack));
         $('.exe-form-tabs li:first-child a').click();
     },
     validateData: function () {
         var clear = $exeDevice.removeTags,
-            // instructions = escape($("#eXeGameInstructions").html())
             instructions = $('#eXeGameInstructions').text(),
             instructionsExe = escape(tinyMCE.get('eXeGameInstructions').getContent()),
             textAfter = escape(tinyMCE.get('eXeIdeviceTextAfter').getContent()),
+            textFeedBack = escape(tinyMCE.get('seleccionaEFeedBackEditor').getContent()),
             showMinimize = $('#seleccionaEShowMinimize').is(':checked'),
             optionsRamdon = $('#seleccionaEQuestionsRamdon').is(':checked'),
             answersRamdon = $('#seleccionaEAnswersRamdon').is(':checked'),
@@ -1281,16 +1488,23 @@ var $exeDevice = {
             endVideo = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()),
             startVideo = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
             itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
-            customScore = $('#seleccionaECustomScore').is(':checked');
+            customScore = $('#seleccionaECustomScore').is(':checked'),
+            feedBack = $('#seleccionaEHasFeedBack').is(':checked'),
+            percentajeFB = parseInt(clear($('#seleccionaEPercentajeFB').val())),
+            gameMode = parseInt($('input[name=slcgamemode]:checked').val());
         if (!itinerary) return false;
+        if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
+            eXe.app.alert($exeDevice.msgs.msgProvideFB);
+            return false;
+        }
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
             return false;
         }
         var selectsGame = $exeDevice.selectsGame;
         for (var i = 0; i < selectsGame.length; i++) {
-            mquestion = selectsGame[i]
-            mquestion.customScore=typeof(mquestion.customScore)=="undefined"?1:mquestion.customScore;
+            var mquestion = selectsGame[i]
+            mquestion.customScore = typeof (mquestion.customScore) == "undefined" ? 1 : mquestion.customScore;
             if (mquestion.quextion.length == 0) {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteQuestion);
                 return false;
@@ -1301,15 +1515,22 @@ var $exeDevice = {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return false;
             }
-            var completAnswer = true;
-            for (var j = 0; j < mquestion.numberOptions; j++) {
-                if (mquestion.options[j].length == 0) {
-                    completAnswer = false;
+            if (mquestion.typeSelect == 2) {
+                if (mquestion.solutionQuestion.length == 0) {
+                    $exeDevice.showMessage($exeDevice.msgs.msgProvideSolution);
+                    return false;
                 }
-            }
-            if (!completAnswer) {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteAllOptions);
-                return false;
+            } else {
+                var completAnswer = true;
+                for (var j = 0; j < mquestion.numberOptions; j++) {
+                    if (mquestion.options[j].length == 0) {
+                        completAnswer = false;
+                    }
+                }
+                if (!completAnswer) {
+                    $exeDevice.showMessage($exeDevice.msgs.msgECompleteAllOptions);
+                    return false;
+                }
             }
         }
         for (var i = 0; i < selectsGame.length; i++) {
@@ -1353,7 +1574,12 @@ var $exeDevice = {
             'repeatActivity': scorm.repeatActivity,
             'title': '',
             'customScore': customScore,
-            'textAfter': textAfter
+            'textAfter': textAfter,
+            'textFeedBack': textFeedBack,
+            'gameMode': gameMode,
+            'feedBack': feedBack,
+            'percentajeFB': percentajeFB,
+            'version': 2
         }
         return data;
     },
@@ -1362,6 +1588,27 @@ var $exeDevice = {
         var wrapper = $("<div></div>");
         wrapper.html(str);
         return wrapper.text();
+    },
+    showTypeQuestion: function (type) {
+        if (type == 2) {
+            $('#seleccionaEAnswers').hide();
+            $('#seleccionaEQuestionDiv').hide();
+            $('#gameQEIdeviceForm .gameQE-ESolutionSelect').hide();
+            $('#seleccionaOptionsNumberSpan').hide();
+            $('#seleccionaEInputNumbers').hide();
+            $('#seleccionaPercentageSpan').show();
+            $('#seleccionaPercentage').show();
+            $('#selecionaEWordDiv').show();
+        } else {
+            $('#seleccionaEAnswers').show();
+            $('#seleccionaEQuestionDiv').show();
+            $('#gameQEIdeviceForm .gameQE-ESolutionSelect').show();
+            $('#seleccionaOptionsNumberSpan').show();
+            $('#seleccionaEInputNumbers').show();
+            $('#seleccionaPercentageSpan').hide();
+            $('#seleccionaPercentage').hide();
+            $('#selecionaEWordDiv').hide();
+        }
     },
     addEvents: function () {
         $('#seleccionaEPaste').hide();
@@ -1384,18 +1631,21 @@ var $exeDevice = {
             });
 
         });
-       
+
         $('#seleccionaShowCodeAccess').on('change', function () {
             var marcado = $(this).is(':checked');
             $('#seleccionaCodeAccess').prop('disabled', !marcado);
             $('#seleccionaMessageCodeAccess').prop('disabled', !marcado);
         });
-        $('.selecciona-EPanel').on('click', 'input.selecciona-Type', function (e) {
+        $('.gameQE-EPanel').on('click', 'input.gameQE-Type', function (e) {
             var type = parseInt($(this).val());
             $exeDevice.changeTypeQuestion(type);
         });
-
-        $('.selecciona-EPanel').on('click', 'input.selecciona-Number', function (e) {
+        $('.gameQE-EPanel').on('click', 'input.gameQE-TypeSelect', function (e) {
+            var type = parseInt($(this).val());
+            $exeDevice.showTypeQuestion(type);
+        });
+        $('.gameQE-EPanel').on('click', 'input.gameQE-Number', function (e) {
             var number = parseInt($(this).val());
             $exeDevice.showOptions(number);
         });
@@ -1483,13 +1733,25 @@ var $exeDevice = {
             v = v.substring(0, 1);
             this.value = v;
         });
+        $('#seleccionaPercentageShow').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 3);
+            this.value = v;
+        });
+        $('#seleccionaPercentageShow').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 35 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });
+
 
         $('#seleccionaEScoreQuestion').on('focusout', function () {
             if (!$exeDevice.validateScoreQuestion($(this).val())) {
                 $(this).val(1);
             }
         });
-        $('#seleccionaIdeviceForm').on('dblclick', '#seleccionaEImage', function () {
+        $('#gameQEIdeviceForm').on('dblclick', '#seleccionaEImage', function () {
             $('#seleccionaECursor').hide();
             $('#seleccionaEXImage').val(0);
             $('#seleccionaEYImage').val(0);
@@ -1561,7 +1823,10 @@ var $exeDevice = {
                     break;
             }
             $timeV.val($('#seleccionaEVideoTime').text());
-            $timeV.css({'background-color':'white','color':'#2c6d2c'});
+            $timeV.css({
+                'background-color': 'white',
+                'color': '#2c6d2c'
+            });
         });
         $('#seleccionaEVIStart').css('color', '#2c6d2c');
         $('#seleccionaEVIStart').on('click', function (e) {
@@ -1590,7 +1855,7 @@ var $exeDevice = {
             $('#seleccionaETimeShowSolution').prop('disabled', !marcado);
         });
 
-        $('.selecciona-ESolution').on('change', function (e) {
+        $('.gameQE-ESolution').on('change', function (e) {
             var marcado = $(this).is(':checked'),
                 value = $(this).val();
             $exeDevice.clickSolution(marcado, value);
@@ -1598,9 +1863,9 @@ var $exeDevice = {
 
         $('#seleccionaECustomScore').on('change', function () {
             var marcado = $(this).is(':checked');
-            $('label[for=seleccionaEScoreQuestion], input#seleccionaEScoreQuestion').hide();
+            $('#seleccionaEScoreQuestionDiv').hide();
             if (marcado) {
-                $('label[for=seleccionaEScoreQuestion], input#seleccionaEScoreQuestion').show();
+                $('#seleccionaEScoreQuestionDiv').show();
             }
         });
 
@@ -1618,6 +1883,23 @@ var $exeDevice = {
                 y = parseFloat($('#seleccionaEYImage').val());
             $exeDevice.showImage(url, x, y, alt);
         });
+
+        $('#seleccionaEPlayImage').on('click', function (e) {
+            e.preventDefault();
+            var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'],
+                selectedFile = $('#seleccionaEURLImage').val(),
+                ext = selectedFile.split('.').pop().toLowerCase();
+            if ((selectedFile.indexOf('resources') == 0 || selectedFile.indexOf('/previews/') == 0) && validExt.indexOf(ext) == -1) {
+                $exeDevice.showMessage(_("Supported formats") + ": jpg, jpeg, gif, png, svg");
+                return false;
+            }
+            var url = selectedFile,
+                alt = $('#seleccionaEAlt').val(),
+                x = parseFloat($('#seleccionaEXImage').val()),
+                y = parseFloat($('#seleccionaEYImage').val());
+            $exeDevice.showImage(url, x, y, alt);
+        });
+
         $('#seleccionaEImage').on('click', function (e) {
             $exeDevice.clickImage(this, e.pageX, e.pageY);
         });
@@ -1661,49 +1943,58 @@ var $exeDevice = {
             $('#seleccionaENumQuestionDiv').show();
             $exeDevice.stopVideoIntro();
         });
+        $('#seleccionaECursor').on('click', function (e) {
+            $(this).hide();
+            $('#seleccionaEXImage').val(0);
+            $('#seleccionaEYImage').val(0);
+        });
+        $('#seleccionaEPlayAudio').on('click', function (e) {
+            e.preventDefault();
+            var validExt = ['mp3', 'ogg', 'wav'],
+                selectedFile = $('#seleccionaEURLAudio').val(),
+                ext = selectedFile.split('.').pop().toLowerCase();
+            if (validExt.indexOf(ext) == -1) {
+                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
+            } else {
+                if (selectedFile.length > 4) {
+                    $exeDevice.stopSound();
+                    $exeDevice.playSound(selectedFile);
+                }
+            }
+        });
+
+        $('#seleccionaEURLAudio').on('change', function () {
+            var validExt = ['mp3', 'ogg', 'wav'],
+                selectedFile = $(this).val(),
+                ext = selectedFile.split('.').pop().toLowerCase();
+            if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
+                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
+            } else {
+                if (selectedFile.length > 4) {
+                    $exeDevice.stopSound();
+                    $exeDevice.playSound(selectedFile);
+                }
+            }
+        });
+        $('#seleccionaEHasFeedBack').on('change', function () {
+            var marcado = $(this).is(':checked');
+            if (marcado) {
+                $('#seleccionaEFeedbackP').slideDown();
+            } else {
+                $('#seleccionaEFeedbackP').slideUp();
+            }
+            $('#seleccionaEPercentajeFB').prop('disabled', !marcado);
+        });
+        $('#gameQEIdeviceForm').on('click', 'input.gameQE-TypeGame', function (e) {
+            var gm = parseInt($(this).val()),
+                fb = $('#seleccionaEHasFeedBack').is(':checked'),
+                ul = $('#seleccionaEUseLives').is(':checked');
+            $exeDevice.updateGameMode(gm, fb, ul);
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
-    setInputFilter: function (textbox, inputFilter) {
-        ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop"].forEach(function (event) {
-            textbox.addEventListener(event, function () {
-                if (inputFilter(this.value)) {
-                    this.oldValue = this.value;
-                    this.oldSelectionStart = this.selectionStart;
-                    this.oldSelectionEnd = this.selectionEnd;
-                } else if (this.hasOwnProperty("oldValue")) {
-                    this.value = this.oldValue;
-                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
-                } else {
-                    this.value = "";
-                }
-            });
-        });
-    },
-    validateScoreQuestion: function (text) {
-        var isValid = text.length > 0 && text !== '.' && text !== ',' && /^-?\d*[.,]?\d*$/.test(text);
-        return isValid;
-    },
-    validateHhMm: function (text) {
-        var isValid = text.length > 0 && /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/.test(text);
-        return isValid;
-    },
 
-    /*
-    setInputFilter(document.getElementById("intTextBox"), function(value) {
-    return /^-?\d*$/.test(value); });
-    setInputFilter(document.getElementById("uintTextBox"), function(value) {
-    return /^\d*$/.test(value); });
-    setInputFilter(document.getElementById("intLimitTextBox"), function(value) {
-    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 500); });
-    setInputFilter(document.getElementById("currencyTextBox"), function(value) {
-    return /^-?\d*[.,]?\d{0,2}$/.test(value); });
-    setInputFilter(document.getElementById("latinTextBox"), function(value) {
-    return /^[a-z]*$/i.test(value); });
-    setInputFilter(document.getElementById("hexTextBox"), function(value) {
-    return /^[0-9a-f]*$/i.test(value); });
-
-    */
     clickSolution: function (checked, value) {
         var solutions = $('#selecionaESolutionSelect').text();
 
@@ -1717,8 +2008,8 @@ var $exeDevice = {
         $('#selecionaESolutionSelect').text(solutions);
     },
     clickImage: function (img, epx, epy) {
-        var $cursor = $('#seleccionaECursor');
-        $x = $('#seleccionaEXImage'),
+        var $cursor = $('#seleccionaECursor'),
+            $x = $('#seleccionaEXImage'),
             $y = $('#seleccionaEYImage'),
             $img = $(img),
             posX = epx - $img.offset().left,
@@ -1768,5 +2059,9 @@ var $exeDevice = {
             'width': mData.w + 'px',
             'height': mData.h + 'px'
         });
+    },
+    validateScoreQuestion: function (text) {
+        var isValid = text.length > 0 && text !== '.' && text !== ',' && /^-?\d*[.,]?\d*$/.test(text);
+        return isValid;
     },
 }
