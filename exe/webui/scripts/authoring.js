@@ -1302,7 +1302,7 @@ var $exeAuthoring = {
                     var msg = _("You can export this game so you can later use it in another iDevice of the same type. You can also use it in %s and you can import games from %s and use them here.");
                         msg = msg.replace(/%s/g, '<a href="https://quext.educarex.es/" target="_blank" rel="noopener noreferrer">QuExt</a>');
                     var html = '\
-                            <div class="exe-form-tab" title="' + _('Share') + '">\
+                            <div class="exe-form-tab" title="' + _('Import/Export') + '">\
                                 <div class="exe-idevice-info">' + msg + '</div>\
                                 <div id="eXeGameExportImport">\
                                     <p>\
