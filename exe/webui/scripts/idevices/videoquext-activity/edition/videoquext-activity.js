@@ -118,10 +118,9 @@ var $exeDevice = {
         msgs.msgEPointExist = _("There is already a question in that second.");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideSolution = _("Please write the solution");
-        msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
         msgs.msgEDefintion = _("Please provide the word definition");
-
-
+        msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
+        msgs.msgDuration=_('El valor del punto de fin del vídeo no puede ser superior a la duración del vídeo')
     },
     getId: function () {
         var randomstring = Math.random().toString(36).slice(-8);
@@ -171,9 +170,10 @@ var $exeDevice = {
 
     },
     onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
+        if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.paused ) {
+            $exeDevice.durationVideo=Math.floor($exeDevice.player.getDuration());
             if ($exeDevice.hourToSeconds($('#vquextEVIEnd').val()) == 0) {
-                var duration = $exeDevice.secondsToHour(Math.round($exeDevice.player.getDuration()));
+                var duration = $exeDevice.secondsToHour(Math.floor($exeDevice.player.getDuration()));
                 $('#vquextEVIEnd').val(duration);
             }
         }
@@ -1083,7 +1083,11 @@ var $exeDevice = {
         } else if (startVideoQuExt >= endVideoQuExt) {
             $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
             return;
+        }else if (endVideoQuExt> $exeDevice.durationVideo){
+            $exeDevice.showMessage($exeDevice.msgs.msgDuration);
+            return;
         }
+
         var questionsGame = $exeDevice.questionsGame;
         for (var i = 0; i < questionsGame.length; i++) {
             var mquestion = questionsGame[i]

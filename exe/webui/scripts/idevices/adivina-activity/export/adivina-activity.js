@@ -836,12 +836,8 @@ var $eXeAdivina = {
             $('#adivinaLostGame-' + instance).hide();
             if (puntos >= mOptions.percentajeFB) {
                 $('#adivinaDivFeedBack-' + instance).find('.adivina-feedback-game').show();
-                $('#adivinaDivFeedBack-' + instance).show();
-                $('#adivinaHistGame-' + instance).show();
-
             } else {
                 $eXeAdivina.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
-                $('#adivinaLostGame-' + instance).show();
             }
         }
     },

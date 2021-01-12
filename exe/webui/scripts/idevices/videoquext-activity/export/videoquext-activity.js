@@ -447,10 +447,26 @@ var $eXeVideoQuExt = {
                 },
                 events: {
                     'onReady': $eXeVideoQuExt.onPlayerReady,
-                    'onError': $eXeVideoQuExt.onPlayerError
+                    'onError': $eXeVideoQuExt.onPlayerError,
+                    'onStateChange': $eXeVideoQuExt.onPlayerStateChange
                 }
             });
 
+        }
+    },
+    onPlayerStateChange: function (event) {
+        if (event.data == YT.PlayerState.ENDED) {
+            var video = event.target.h.id;
+            video = video.split("-");
+            if (video.length == 2 && video[0] == "vquextVideo") {
+                var instance = parseInt(video[1]);
+                if (!isNaN(instance)) {
+                    var mOptions=$eXeVideoQuExt.options[instance]
+                    mOptions.stateReproduction = -1;
+                    $eXeVideoQuExt.gameOver(0, instance);
+                }
+
+            }
         }
     },
     youTubeReadyOne: function (instance) {
@@ -467,6 +483,7 @@ var $eXeVideoQuExt = {
             events: {
                 'onReady': $eXeVideoQuExt.onPlayerReady,
                 'onError': $eXeVideoQuExt.onPlayerError
+                //'onStateChange': $eXeVideoQuExt.onPlayerStateChange
             }
         });
     },
@@ -1059,15 +1076,11 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.questionsGame.length;
         if (mOptions.gameMode == 2 || mOptions.feedBack) {
-            $('#vquextHistGame-' + instance).hide();
-            $('#qvuextLostGame-' + instance).hide();
             if (puntos >= mOptions.percentajeFB) {
                 $('#vquextDivFeedBack-' + instance).find('.vquext-feedback-game').show();
                 $('#vquextDivFeedBack-' + instance).show();
-                $('#vquextHistGame-' + instance).show();
             } else {
                 $eXeVideoQuExt.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
-                $('#vquextLostGame-' + instance).show();
             }
         }
     },

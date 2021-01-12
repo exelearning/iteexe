@@ -1036,15 +1036,11 @@ var $eXeQuExt = {
         var mOptions = $eXeQuExt.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.questionsGame.length;
         if (mOptions.gameMode == 2 || mOptions.feedBack) {
-            $('#quextHistGame-' + instance).hide();
-            $('#quextLostGame-' + instance).hide();
             if (puntos >= mOptions.percentajeFB) {
                 $('#quextDivFeedBack-' + instance).find('.quext-feedback-game').show();
                 $('#quextDivFeedBack-' + instance).show();
-                $('#quextHistGame-' + instance).show();
             } else {
                 $eXeQuExt.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
-                $('#quextLostGame-' + instance).show();
             }
         }
     },

@@ -1132,16 +1132,11 @@ var $eXeSelecciona = {
         var mOptions = $eXeSelecciona.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.selectsGame.length;
         if (mOptions.gameMode == 2 || mOptions.feedBack) {
-            $('#seleccionaHistGame-' + instance).hide();
-            $('#seleccionaLostGame-' + instance).hide();
             if (puntos >= mOptions.percentajeFB) {
                 $('#seleccionaDivFeedBack-' + instance).find('.selecciona-feedback-game').show();
                 $('#seleccionaDivFeedBack-' + instance).show();
-                $('#seleccionaHistGame-' + instance).show();
-
             } else {
                 $eXeSelecciona.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
-                $('#seleccionaLostGame-' + instance).show();
             }
         }
     },
