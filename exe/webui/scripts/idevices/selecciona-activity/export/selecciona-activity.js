@@ -229,7 +229,7 @@ var $eXeSelecciona = {
         html += '<div class="gameQP-MainContainer">\
         <div class="gameQP-GameMinimize" id="seleccionaGameMinimize-' + instance + '">\
             <a href="#" class="gameQP-LinkMaximize" id="seleccionaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'seleccionaIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="' + msgs.msgMaximize + '">\
-                <div class="gameQP-MessageMaximize" id="MessageMaximize-' + instance + '"></div>\
+                <div class="gameQP-MessageMaximize" id="seleccionaMessageMaximize-' + instance + '"></div>\
             </a>\
         </div>\
         <div class="gameQP-GameContainer" id="seleccionaGameContainer-' + instance + '">\
@@ -291,7 +291,7 @@ var $eXeSelecciona = {
                 <img src="' + path + 'seleccionaHome.png" class="gameQP-Cover" id="seleccionaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="seleccionaVideo-' + instance + '"></div>\
                 <div class="gameQP-Protector" id="seleccionaProtector-' + instance + '"></div>\
-                <a href="#" class="gameQP-LinkAudio" id="seleccionaLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
+                <a href="#" class="gameQP-LinkAudio" id="seleccionaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + "exequextaudio.png" + '" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="seleccionaGamerOver-' + instance + '">\
                         <div class="gameQP-DataImage">\
                             <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="seleccionaHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
@@ -1469,7 +1469,8 @@ var $eXeSelecciona = {
             if (quextion.typeSelect != 2) {
                 $eXeSelecciona.drawSolution(instance);
             } else {
-                $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, 1, false, instance)
+                var mtipe=correct?2:1;
+                $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance)
             }
         }
         setTimeout(function () {
