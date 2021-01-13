@@ -920,7 +920,7 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EContents">\
-                                   <div><span>' + _("Solution") + ': </span><span id="selecionaESolutionSelect"></span></div>\
+                                   <div id="seleccionaESolitionOptions"><span>' + _("Solution") + ': </span><span id="selecionaESolutionSelect"></span></div>\
                                    <div class="gameQE-EQuestionDiv" id="seleccionaEQuestionDiv">\
                                         <label class="sr-av">' + _("Question") + ':</label><input type="text" class="gameQE-EQuestion" id="seleccionaEQuestion">\
                                    </div>\
@@ -1599,6 +1599,8 @@ var $exeDevice = {
             $('#seleccionaPercentageSpan').show();
             $('#seleccionaPercentage').show();
             $('#selecionaEWordDiv').show();
+            $('#seleccionaESolitionOptions').hide();
+            
         } else {
             $('#seleccionaEAnswers').show();
             $('#seleccionaEQuestionDiv').show();
@@ -1608,6 +1610,7 @@ var $exeDevice = {
             $('#seleccionaPercentageSpan').hide();
             $('#seleccionaPercentage').hide();
             $('#selecionaEWordDiv').hide();
+            $('#seleccionaESolitionOptions').show();
         }
     },
     addEvents: function () {

@@ -845,7 +845,7 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EContents">\
-                                <div><span>' + _("Solution") + ': </span><span id="ocaESolutionSelect"></span></div>\
+                                <div <div id="ocaESolitionOptions"><span>' + _("Solution") + ': </span><span id="ocaESolutionSelect"></span></div>\
                                 <div class="gameQE-EQuestionDiv" id="ocaEQuestionDiv">\
                                     <label class="sr-av">' + _("Question") + ':</label><input type="text" class="gameQE-EQuestion" id="ocaEQuestion">\
                                 </div>\
@@ -1093,8 +1093,6 @@ var $exeDevice = {
         if (instructions != "") divContent = '<div class="oca-instructions">' + instructions + '</div>';
         var linksImages = $exeDevice.createlinksImage(dataGame.selectsGame),
             linksAudios = $exeDevice.createlinksAudio(dataGame.selectsGame);
-        console.log(linksAudios);
-
         var html = '<div class="oca-IDevice">';
         html += divContent;
         html += '<div class="oca-DataGame">' + $exeDevice.Encrypt(dataGame) + '</div>';
@@ -1744,6 +1742,7 @@ var $exeDevice = {
             $('#ocaPercentageSpan').show();
             $('#ocaPercentage').show();
             $('#ocaEWordDiv').show();
+            $('#ocaESolitionOptions').hide();
         } else {
             $('#ocaEAnswers').show();
             $('#ocaEQuestionDiv').show();
@@ -1753,6 +1752,7 @@ var $exeDevice = {
             $('#ocaPercentageSpan').hide();
             $('#ocaPercentage').hide();
             $('#ocaEWordDiv').hide();
+            $('#ocaESolitionOptions').show();
         }
     },
     addEvents: function () {

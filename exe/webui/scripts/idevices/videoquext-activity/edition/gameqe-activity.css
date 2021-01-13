@@ -58,10 +58,6 @@
 	position: absolute;
 }
 /* Opciones */
-.gameQE-EOptionsGame {
-	min-height: 300px;
-	width: 50%;
-}
 .gameQE-Flex {
 	align-items: center;
 	display: flex;
@@ -69,6 +65,18 @@
 	justify-content: flex-start;
 	width: 100%;
 }
+.gameQE-ENameTema input[type=text]:last-of-type{
+	width: 100%;
+	margin-left: 0.2em;
+}
+.gameQE-ENameTema{
+	flex-wrap: nowrap;
+}
+.gameQE-EOptionsGame {
+	min-height: 300px;
+	width: 50%;
+}
+
 .gameQE-EOptionsGame div {
 	margin-bottom: 0.3em;
 }
