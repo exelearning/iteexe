@@ -1,0 +1,456 @@
+#gameQEIdeviceForm {
+	margin-top: 2em;
+}
+#gameQEIdeviceForm input[type=number] {
+	width: 3em;
+}
+#gameQEIdeviceForm label {
+	margin-right: 0.1em;
+}
+#gameQEIdeviceForm input[type="radio"], #gameQEIdeviceForm input[type="checkbox"], #gameQEIdeviceForm input[type=button] {
+	cursor: pointer;
+}
+/*Panel preguntas */
+.gameQE-EPanel {
+	margin: 0.7em auto;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+.gameQE-EOptionsMedia {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+	width: 100%;
+}
+/* Medias */
+.gameQE-EMultiMediaOption {
+	height: 100%;
+	min-height: 300px;
+	min-width: 400px;
+	position: relative;
+	width: 50%;
+}
+.gameQE-EMultimedia {
+	background-color: #fff;
+	border-radius: .5em;
+	height: 227px;
+	margin: 40px auto auto auto;
+	position: relative;
+	width: 400px;
+}
+.gameQE-EMedia {
+	border: 1px solid #cccccc;
+	border-radius: .5em;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.gameQE-EMedia:last-of-type {
+	display: block;
+}
+.gameQE-ECursor {
+	display: none;
+	left: 0;
+	position: absolute;
+}
+/* Opciones */
+.gameQE-Flex {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	width: 100%;
+}
+.gameQE-ENameTema input[type=text]:last-of-type{
+	width: 100%;
+	margin-left: 0.2em;
+}
+.gameQE-ENameTema{
+	flex-wrap: nowrap;
+}
+.gameQE-EOptionsGame {
+	min-height: 300px;
+	width: 50%;
+}
+
+.gameQE-EOptionsGame div {
+	margin-bottom: 0.3em;
+}
+.gameQE-EOptionsGame input[type=text] {
+	margin-right: .2em;
+	text-align: center;
+	width: 5em;
+}
+/* Opciones imagen */
+.gameQE-EInputImage {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	min-width: 100px;
+	width: 100%;
+}
+#gameQEIdeviceForm .gameQE-EInputImage input[type=text] {
+	flex-flow: 1;
+	margin-right: 0.2em;
+	min-width: 100px;
+	width: 100%;
+}
+.uextE-EInputImage input[type=button] {
+	flex-shrink: 0;
+}
+.gameQE-EAuthorAlt label {
+	display: block;
+}
+.gameQE-EAuthorAlt input[type=text] {
+	margin-right: 0.2em;
+	width: 100%;
+}
+.gameQE-EAuthorAlt div {
+	width: 100%;
+}
+/* Opciones video */
+.gameQE-EInputVideo input[type=text] {
+	width: 85%;
+}
+.gameQE-EInputOptionsVideo>div {
+	margin-top: 0.6em;
+}
+.gameQE-EInputOptionsVideo button {
+	font-size: 1em;
+	height: 1.6em;
+}
+/* Opciones audio */
+.gameQE-EInputAudio {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+.gameQE-EInputAudio input[type=text] {
+	flex-flow: 1;
+	margin-right: 0.2em;
+	min-width: 100px;
+	width: 100%;
+}
+.gameQE-EInputAudio input[type=button] {
+	flex-shrink: 0;
+}
+.gameQE-ButtonLink {
+	display: block;
+	height: 1.6em;
+	width: 1.6em;
+}
+/*Preguntas*/
+.gameQE-EQuestionDiv {
+	margin-bottom: .3em;
+	width: 100%;
+}
+.gameQE-EQuestion {
+	text-align: center;
+	width: 98%;
+}
+.gameQE-EAnswers {
+	background: transparent;
+	background-color: transparent;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+}
+.gameQE-EOptionDiv {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 3px 0;
+	min-height: 35px;
+	width: 49%;
+}
+.gameQE-EAnwersOptions {
+	text-align: center;
+	width: 100%;
+}
+.gameQE-SolutionWordDiv {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: .5em auto;
+	width: 100%;
+}
+.gameQE-ESolutionWord {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin-bottom: 0.5em;
+	width: 100%;
+}
+.gameQE-SolutionWordDiv input {
+	text-align: center;
+}
+/*Numero Preguntas */
+.gameQE-ENumQuestionDiv {
+	align-items: center;
+	display: flex;
+	height: 1.5em;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: .3em;
+	width: 3em;
+	z-index: 20000;
+}
+.gameQE-ENumQ {
+	background-image: url(quextIENumber.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	margin-right: 0px;
+	width: 1.5em;
+}
+.gameQE-ENumQuestions {
+	font-weight: bold;
+	height: 1.5em;
+	text-align: center;
+	width: 2em;
+}
+/* barra edición */
+.gameQE-ENavigationButtons {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+}
+.gameQE-ENavigationButton {
+	height: 1.5em;
+	margin: 0 .3em;
+	min-width: 1.5em;
+	width: 1.5em;
+}
+.gameQE-EButtonImage {
+	height: 100%;
+	transition: all .3s ease-in-out;
+	width: 100%;
+}
+.gameQE-EButtonImage:hover {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.gameQE-NumberQuestion {
+	font-weight: bold;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	width: 2em;
+}
+/* Video introdución */
+.gameQE-EVIDiv {
+	background-color: #f9f9f9;
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 20000;
+}
+/* Video introdución */
+.gameQE-EVIV {
+	width: 100%;
+}
+.gameQE-EMVI {
+	height: 315px;
+	margin: 70px auto;
+	position: relative;
+	width: 560px;
+}
+.gameQE-EVI, .gameQE-ENoVI {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.gameQE-EVIOptions {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	height: 50px;
+	justify-content: flex-start;
+	position: absolute;
+	width: 100%;
+}
+.gameQE-EVIOptions * {
+	margin-left: 0.3em;
+}
+.gameQE-EVIOptions input[type=text] {
+	text-align: center;
+	width: 5em;
+}
+.gameQE-EVIOptions input[type=text]:first-of-type {
+	width: 15em;
+}
+.gameQE-EVideoIntroDiv {
+	border-radius: 10px;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 98%;
+	z-index: 20000;
+}
+.gameQE-EVIClose {
+	position: absolute;
+	right: 0.3em;
+	top: 0.3em;
+}
+
+.gameQE-EVIOptionsVQ input[type=text] {
+  text-align: center;
+  width: 5em;
+  margin-right: .2em;
+}
+
+.gameQE-EVIOptionsVQ #vquextEVIURL{
+  width: 15em;
+}
+
+/* Ocutar elementos */
+.gameQE-EInputOptionsVideo, .gameQE-DP, .gameQE-EInputImage, .gameQE-EVIDiv, .gameQE-ScoreQuestionDiv, .gameQE-ECoord, .gameQE-EFeedbackP, .gameQE-ETitleImage, .gameQE-ETitleVideo, .gameQE-EInputVideo, .gameQE-EAuthorAlt, .gameQE-ESolutionSelect input[type=number], .gameQE-ESolutionSelect label {
+	display: none;
+}
+/* Especificos del juego  selecciona*/
+.gameQE-ESolutionSelect {
+	margin-bottom: 0.5em;
+}
+.gameQE-ESolutionSelect input[type=number] {
+	margin: auto 0.2em;
+}
+#gameQEIdeviceForm .gameQE-EOptionDiv label {
+	margin-right: 0.2em;
+}
+.gameQE-ESolutionSelect input[type=number], .gameQE-ESolutionSelect label {
+	display: none;
+}
+label[for=gameQEScoreQuestion], input#gameQEScoreQuestion {
+	display: none;
+}
+.gameQE-EWordDiv {
+	margin: .5em auto;
+	width: 100%;
+}
+#gameQEIdeviceForm .gameQE-ESolutionWord label {
+	display: inline-block;
+}
+#gameQEIdeviceForm .gameQE-ESolutionWord input[type=text] {
+	text-align: center;
+	width: 100%;
+}
+/* To review */
+#gameQEIdeviceForm .exe-block-info img {
+	margin-left: .2em;
+	vertical-align: middle;
+}
+#gameQEIdeviceFormTab3 * {
+	font-size: 0.9em;
+}
+#gameQEIdeviceFormTab3 p:first-child {
+	margin-top: 0;
+}
+#gameQEIdeviceFormTab3 {
+	overflow: auto;
+}
+#gameQEIdeviceFormTab3 .ci18n {
+	float: left;
+	width: 50%;
+}
+@media screen and (max-width:720px) {
+	#gameQEIdeviceForm #gameQEIdeviceFormTab3 .ci18n {
+		float: none;
+		width: 100%;
+	}
+}
+#gameQEIdeviceForm #gameQEIdeviceFormTab3 label {
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin-bottom: .2em;
+}
+#gameQEIdeviceForm #gameQEIdeviceFormTab3 input {
+	font-size: 0.9em;
+	width: 300px;
+}
+/* Tabs (this should be common) */
+.exe-form-tabs {
+	list-style: none;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+}
+#main .exe-form-tabs li {
+	display: inline;
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+.exe-form-tabs li:first-child a {
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.exe-form-tabs li:last-child a {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.exe-form-tabs a {
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	color: #666;
+	display: inline-block;
+	padding: .5em 1em;
+}
+.exe-form-tabs li:not(:last-child) a {
+	border-right: none;
+}
+.exe-form-tabs .exe-form-active-tab {
+	background: #FFF;
+	color: #000;
+	font-weight: 500;
+}
+#gameQESCORMoptions {
+	margin-left: 1.5em;
+	visibility: hidden;
+}
+label[for=gameQEActivitySCORM] {
+	font-weight: bold;
+}
+#gameQESCORMinstructionsButton {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsButton ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsButton ul li {
+	list-style-image: none;
+	margin: 0 0 .5em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsAuto {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsAuto ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}

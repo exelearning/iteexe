@@ -50,6 +50,7 @@ var $eXeOca = {
     isInExe: false,
     tiradas: [9, 3, 4, 4, 2, 3, 3, 6, 4, 2, 3, 3, 6, 4, 2, 3, 3, 6, 4, 2, 3],
     tirada: 0,
+
     init: function () {
         this.activities = $('.oca-IDevice');
         if (this.activities.length == 0) return;
@@ -64,10 +65,12 @@ var $eXeOca = {
         if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
         else this.enable();
     },
+
     loadSCORM_API_wrapper: function () {
         if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', '$eXeOca.loadSCOFunctions()');
         else this.loadSCOFunctions();
     },
+
     loadSCOFunctions: function () {
         if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeOca.enable()');
         else this.enable();
@@ -81,6 +84,7 @@ var $eXeOca = {
             $eXeOca.initialScore = $eXeOca.previousScore;
         }
     },
+
     loadJSCSSFile: function (filename, filetype) {
         if (filetype == "js") { //if filename is a external JavaScript file
             var fileref = document.createElement('script')
@@ -99,20 +103,23 @@ var $eXeOca = {
     enable: function () {
         $eXeOca.loadGame();
     },
+
     getUserName: function () {
         var user = $eXeOca.mScorm.get("cmi.core.student_name");
         return user
     },
+
     getPreviousScore: function () {
         var score = $eXeOca.mScorm.get("cmi.core.score.raw");
         return score;
     },
+
     endScorm: function () {
         if ($eXeOca.mScorm) {
             $eXeOca.mScorm.quit();
         }
-
     },
+
     updateScorm: function (prevScore, repeatActivity, instance) {
         var mOptions = $eXeOca.options[instance],
             text = '';
@@ -131,6 +138,7 @@ var $eXeOca = {
         $('#ocaRepeatActivity-' + instance).text(text);
         $('#ocaRepeatActivity-' + instance).fadeIn(1000);
     },
+
     sendScore: function (instance) {
         var mOptions = $eXeOca.options[instance],
             score = (((mOptions.gamers[0].casilla + 1) * 10) / mOptions.numeroCasillas).toFixed(2);
@@ -145,6 +153,7 @@ var $eXeOca = {
             }
         }
     },
+
     loadGame: function () {
         $eXeOca.options = [];
         $eXeOca.activities.each(function (i) {
@@ -153,7 +162,6 @@ var $eXeOca = {
                 audiosLink = $('.oca-LinkAudios', this),
                 mOption = $eXeOca.loadDataGame(dl, imagesLink, audiosLink);
             var msg = mOption.msgs.msgPlayStart;
-
             $eXeOca.options.push(mOption);
             var oca = $eXeOca.createInterfaceOca(i);
             dl.before(oca).remove();
@@ -174,9 +182,8 @@ var $eXeOca = {
         if (typeof (MathJax) == "undefined") {
             $eXeOca.loadMathJax();
         }
-
-
     },
+
     loadMathJax: function () {
         var tag = document.createElement('script');
         //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
@@ -185,16 +192,17 @@ var $eXeOca = {
         var firstScriptTag = document.getElementsByTagName('script')[0];
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     },
+
     randomArray: function (length, max) {
         return Array.apply(null, Array(length)).map(function () {
             return Math.round(Math.random() * max) + 1;
         });
     },
+
     createInterfaceOca: function (instance) {
         var html = '',
             path = $eXeOca.idevicePath,
             msgs = $eXeOca.options[instance].msgs;
-
         html += '<div class="oca-MainContainer" id="ocaMainContainer-' + instance + '">\
                     <div class="oca-GameMinimize" id="ocaGameMinimize-' + instance + '">\
                         <a href="#" class="oca-LinkMaximize" id="ocaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'ocaIcon.png" class="oca-Icons oca-IconMinimize oca-Activo" alt="Mostrar actividad">\
@@ -298,11 +306,11 @@ var $eXeOca = {
                                 <img class="oca-MessageImage" id="ocaMessageImage-' + instance + '" src="' + path + 'ocallave.png" alt="Image" />\
                                 <p id="ocaPMessage-' + instance + '"></p>\
                             </div>\
-                            <div  class="oca-Dado oca-Activo" id="ocaDado-' + instance + '">\
+                            <div  class="oca-Dado" id="ocaDado-' + instance + '">\
                                 <div class="oca-FondoDado" id="ocaFondoDado-' + instance + '"></div>\
                                 <div class="oca-PuntosDado" id="ocaPuntosDado-' + instance + '"></div>\
                                 <a href="#" class="ocaClick" id="ocaClickDado-' + instance + '" >\
-                                    <div class="oca-ManoDado"></div>\
+                                    <div class="oca-ManoDado oca-Activo"></div>\
                                 </a>\
                             </div>\
                             <div class="oca-MessageModal" id="ocaMessageModal-' + instance + '">\
@@ -368,6 +376,7 @@ var $eXeOca = {
                 ' + this.addButtonScore(instance);
         return html;
     },
+
     createInterfaceQuestion: function (instance) {
         var html = '',
             path = $eXeOca.idevicePath,
@@ -429,6 +438,7 @@ var $eXeOca = {
     </div>';
         return html;
     },
+
     addButtonScore: function (instance) {
         var mOptions = $eXeOca.options[instance];
         var butonScore = "";
@@ -458,7 +468,8 @@ var $eXeOca = {
         fB = +'</div>';
         return butonScore;
     },
-    cargaJugadores: function (instance) {
+
+    loadPlayers: function (instance) {
         var mOptions = $eXeOca.options[instance],
             gamers = [],
             validNames = true;
@@ -498,7 +509,6 @@ var $eXeOca = {
             })
         }
         return validNames;
-
     },
 
     rebootGame: function (instance) {
@@ -508,7 +518,6 @@ var $eXeOca = {
         clearInterval(mOptions.relolMueveOcaRetro);
         clearInterval(mOptions.relojJuego);
         mOptions.contadorJuego = 0;
-        //$eXeOca.updateTimeGame(0, instance);
         $('#ocaSelectsGamers-' + instance).show();
         $('#ocaDado-' + instance).hide();
         $eXeOca.sendScore(instance);
@@ -517,33 +526,32 @@ var $eXeOca = {
         mOptions.jugadorActivo = 4;
         for (var i = 0; i < mOptions.numeroJugadores; i++) {
             mOptions.gamers[i].casilla = -1;
-            $eXeOca.colocarFichaJugador(i, instance);
+            $eXeOca.placePlayerToken(i, instance);
         }
-        $eXeOca.cargaTablero(instance);
+        $eXeOca.loadGameBoard(instance);
     },
-    iniciaJuego: function (instance) {
+
+    startGame: function (instance) {
         var mOptions = $eXeOca.options[instance];
-        $eXeOca.cargaTablero(instance);
+        $eXeOca.loadGameBoard(instance);
         if (mOptions.gameStarted) {
-            $eXeOca.muestraMensaje(mOptions.msgs.msgGameStarted, 4000, 0, instance);
+            $eXeOca.showGameMessage(mOptions.msgs.msgGameStarted, 4000, 0, instance);
             return;
         };
-
-        if (!$eXeOca.cargaJugadores(instance)) {
-            $eXeOca.muestraMensaje(mOptions.msgs.msgPlayersName, 4000, 0, instance);
+        if (!$eXeOca.loadPlayers(instance)) {
+            $eXeOca.showGameMessage(mOptions.msgs.msgPlayersName, 4000, 0, instance);
             return;
         }
         for (var i = 0; i < mOptions.numeroJugadores; i++) {
             for (var j = 1; j < 4; j++) {
-                $eXeOca.changeIconMochila(i, j, false, instance);
-
+                $eXeOca.changeBackpackIcons(i, j, false, instance);
             }
         }
         $('#ocaSelectsGamers-' + instance).hide();
         $('#ocaDado-' + instance).show();
         mOptions.scoreGame = 0;
         mOptions.obtainedClue = false;
-        if ($eXeOca.areVideoQuestion(mOptions.selectsGame)) {
+        if ($eXeOca.isVideoQuestion(mOptions.selectsGame)) {
             if (typeof (YT) !== "undefined") {
                 if (typeof (mOptions.player) == "undefined") {
                     $eXeOca.youTubeReadyOne(instance);
@@ -552,35 +560,24 @@ var $eXeOca = {
                 $eXeOca.loadYoutubeApi();
             }
         }
-
         mOptions.direccion = 1;
         mOptions.contadorJuego = 0;
         mOptions.jugadorActivo = Math.floor(Math.random() * mOptions.numeroJugadores);
-        $eXeOca.cambiarJugador(instance);
-        //$eXeOca.moverFicha(mOptions.jugadorActivo, mOptions.casillaSalida.x, mOptions.casillaSalida.y, instance);
-        //mDadoTrivial->setDadoLanzar(mModoJuego);
-        ///mEstadoJuego=OCA_LANZAR_DADO;
-        7
-        /* mOptions.relojJuego = setInterval(function () {
-                    mOptions.contadorJuego++;
-                    $eXeOca.updateTimeGame(mOptions.contadorJuego, instance)
-
-                }, 1000);*/
-
+        $eXeOca.changePlayer(instance);
         mOptions.gameStarted = true;
         mOptions.gameActived = false;
     },
 
-    areVideoQuestion: function (questions) {
+    isVideoQuestion: function (questions) {
         for (var i = 0; i < questions.length; i++) {
             if (questions[i].type == 2) {
                 return true;
             }
         }
         return false;
-
     },
-    cambiarJugador: function (instance) {
+
+    changePlayer: function (instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.jugadorActivo++;
         mOptions.jugadorActivo = mOptions.jugadorActivo >= mOptions.numeroJugadores ? 0 : mOptions.jugadorActivo;
@@ -588,24 +585,25 @@ var $eXeOca = {
         $('#ocaClickDado-' + instance).show();
 
         if (mOptions.gamers[mOptions.jugadorActivo].casilla < 0) {
-            $eXeOca.colocarFichaJugador(mOptions.jugadorActivo, instance);
+            $eXeOca.placePlayerToken(mOptions.jugadorActivo, instance);
         }
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgsYouPlay, 3000, mOptions.jugadorActivo + 12, instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgsYouPlay, 3000, mOptions.jugadorActivo + 12, instance);
         mOptions.moviendo = false;
     },
 
-    moverFicha: function (jugador, x, y, instance) {
+    movePlayerToken: function (jugador, x, y, instance) {
         var mOptions = $eXeOca.options[instance],
             mjugador = "#ocaFicha" + jugador + '-' + instance,
             $Jugador = $(mjugador);
         $Jugador.css({
             'left': x + 'px',
             'top': y + 'px',
-            'width': mOptions.anchoFicha,
-            'height': mOptions.anchoFicha
+            'width': mOptions.wt,
+            'height': mOptions.wt
         });
     },
-    colocarFichaJugador: function (jugador, instance) {
+
+    placePlayerToken: function (jugador, instance) {
         var mOptions = $eXeOca.options[instance],
             x = 0,
             y = 0;
@@ -621,32 +619,30 @@ var $eXeOca = {
                 y = mOptions.casillaSalida.y;
             }
         } else {
-            x = mOptions.posicionesTablero[numcasilla].x
-            y = mOptions.posicionesTablero[numcasilla].y;
+            x = mOptions.pT[numcasilla].x
+            y = mOptions.pT[numcasilla].y;
         }
-
         var mjugador = "#ocaFicha" + jugador + '-' + instance,
             $Jugador = $(mjugador);
         $Jugador.css({
             'left': x + 'px',
             'top': y + 'px',
-            'width': mOptions.anchoFicha + 'px',
-            'height': mOptions.anchoFicha + 'px',
+            'width': mOptions.wt + 'px',
+            'height': mOptions.wt + 'px',
         });
         $Jugador.show();
         if (numcasilla > -1) {
-            $eXeOca.posicionesVariasCasilla(numcasilla, instance);
+            $eXeOca.placePlayerTokensSkare(numcasilla, instance);
         }
 
     },
-    mueveFichaJugador: function (numjugador, valor, instance) {
+    movePlayerToken: function (numjugador, valor, instance) {
         var mOptions = $eXeOca.options[instance],
             jugador = mOptions.gamers[numjugador],
             $Jugador = $("#ocaFicha" + numjugador + '-' + instance),
             x = 0,
             y = 0,
             posJugador = jugador.casilla;
-
         jugador.casillaanterior = jugador.casilla;
         jugador.casilla += valor;
         $('#ocaGameContainer-' + instance).find('.oca-FichaJugador').css('z-index', 20);
@@ -657,59 +653,54 @@ var $eXeOca = {
                     clearInterval(mOptions.relolMueveOca);
                     var pos = jugador.casilla - (mOptions.numeroCasillas - 1);
                     mOptions.gamers[numjugador].casilla = mOptions.numeroCasillas - 1;
-                    $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, pos, instance);
+                    $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, pos, instance);
                     return;
                 }
-                x = mOptions.posicionesTablero[posJugador].x;
-                y = mOptions.posicionesTablero[posJugador].y;
-                /*   $Jugador.animate({
-                       left: x + 'px',
-                       top: y + 'px'
-                   },  mOptions.velocidad -100, 'linear');*/
+                x = mOptions.pT[posJugador].x;
+                y = mOptions.pT[posJugador].y;
                 $Jugador.css({
                     'left': x + 'px',
                     'top': y + 'px',
-                    'width': mOptions.anchoFicha,
-                    'height': mOptions.anchoFicha,
+                    'width': mOptions.wt,
+                    'height': mOptions.wt,
                     'z-index': 21
                 });
 
                 if (posJugador == jugador.casilla) {
                     clearInterval(mOptions.relolMueveOca);
-                    $eXeOca.analizaPosicion(jugador.casilla, instance);
+                    $eXeOca.getTarget(jugador.casilla, instance);
                     return;
                 }
             }
 
         }, mOptions.velocidad);
     },
-    mueveFichaJugadorLibre: function (numjugador, valor, instance) {
+
+    movePlayerTokenFreely: function (numjugador, valor, instance) {
         var mOptions = $eXeOca.options[instance],
             jugador = mOptions.gamers[numjugador],
             $Jugador = $("#ocaFicha" + numjugador + '-' + instance),
             x = 0,
             y = 0,
             posJugador = jugador.casilla;
-
-
         jugador.casilla += valor;
         mOptions.relolMueveOcaLibre = setInterval(function () {
             if (posJugador <= jugador.casilla) {
                 posJugador++;
-                x = mOptions.posicionesTablero[posJugador].x;
-                y = mOptions.posicionesTablero[posJugador].y;
+                x = mOptions.pT[posJugador].x;
+                y = mOptions.pT[posJugador].y;
                 $Jugador.css({
                     'left': x + 'px',
                     'top': y + 'px',
-                    'width': mOptions.anchoFicha,
-                    'height': mOptions.anchoFicha,
+                    'width': mOptions.wt,
+                    'height': mOptions.wt,
                     'z-index': 21
                 });
                 if (posJugador == jugador.casilla) {
                     clearInterval(mOptions.relolMueveOcaLibre);
-                    $eXeOca.posicionesVariasCasilla(posJugador, instance);
+                    $eXeOca.placePlayerTokensSkare(posJugador, instance);
                     setTimeout(function () {
-                        $eXeOca.analizaPosicion(jugador.casilla, instance);
+                        $eXeOca.getTarget(jugador.casilla, instance);
                     }, 1000);
                     return;
                 }
@@ -718,44 +709,18 @@ var $eXeOca = {
         }, mOptions.velocidad);
     },
 
-    preguntaRespondida: function (respuesta, instance) {
+    questionAnswer: function (respuesta, instance) {
         $('#ocaGameQuestion-' + instance).hide();
         $('#ocaGameContainer-' + instance).show();
-        $eXeOca.cargaTablero(instance);
-        var anchoIdevice = $('#ocaGameContainer-' + instance).width();
+        $eXeOca.loadGameBoard(instance);
         if (respuesta) {
-            $eXeOca.cambiarJugador(instance);
+            $eXeOca.changePlayer(instance);
         } else {
-            $eXeOca.actualizaVidas(instance);
-
+            $eXeOca.updateNumberLives(instance);
         }
     },
 
-    actualizaVidasCastigo: function (vidas, message, icono, instance) {
-        var mOptions = $eXeOca.options[instance];
-        mOptions.gamers[mOptions.jugadorActivo].vidas = mOptions.gamers[mOptions.jugadorActivo].vidas - vidas;
-        $('#ocaMochila-' + instance + ' > .ocaj' + mOptions.jugadorActivo).find('.oca-Vida').find('p').text(mOptions.gamers[mOptions.jugadorActivo].vidas);
-        if (mOptions.gamers[mOptions.jugadorActivo].vidas <= 0) {
-            if (mOptions.gamers[mOptions.jugadorActivo].casilla > 37) {
-                mOptions.valorDado = mOptions.gamers[mOptions.jugadorActivo].casilla - 37;
-            } else if (mOptions.gamers[mOptions.jugadorActivo].casilla > 20) {
-                mOptions.valorDado = mOptions.gamers[mOptions.jugadorActivo].casilla - 20;
-            } else {
-                mOptions.valorDado = mOptions.gamers[mOptions.jugadorActivo].casilla + 1;
-            }
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgLostLivesH, 5000, mOptions.jugadorActivo + 12, instance);
-            mOptions.gamers[mOptions.jugadorActivo].vidas = 3;
-            setTimeout(function () {
-                $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, mOptions.valorDado, instance);
-            }, 5000);
-        } else {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + message, 5000, icono, instance);
-            setTimeout(function () {
-                $eXeOca.cambiarJugador(instance);
-            }, 5000)
-        }
-    },
-    actualizaVidas: function (instance) {
+    updateNumberLives: function (instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.gamers[mOptions.jugadorActivo].vidas = mOptions.gamers[mOptions.jugadorActivo].vidas - 1;
         $('#ocaMochila-' + instance + ' > .ocaj' + mOptions.jugadorActivo).find('.oca-Vida').find('p').text(mOptions.gamers[mOptions.jugadorActivo].vidas);
@@ -767,18 +732,18 @@ var $eXeOca = {
             } else {
                 mOptions.valorDado = mOptions.gamers[mOptions.jugadorActivo].casilla + 1;
             }
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgLostLivesH, 3000, mOptions.jugadorActivo + 12, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgLostLivesH, 3000, mOptions.jugadorActivo + 12, instance);
             mOptions.gamers[mOptions.jugadorActivo].vidas = 3;
         } else {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgErrorQuestion, 3000, mOptions.jugadorActivo + 12, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgErrorQuestion, 3000, mOptions.jugadorActivo + 12, instance);
 
         }
         setTimeout(function () {
-            $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, mOptions.valorDado, instance);
+            $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, mOptions.valorDado, instance);
         }, 3000);
-
     },
-    mueveFichaJugadorRetro: function (numjugador, valor, instance) {
+
+    movePlayerTokenBack: function (numjugador, valor, instance) {
         var mOptions = $eXeOca.options[instance],
             jugador = mOptions.gamers[numjugador],
             $Jugador = $("#ocaFicha" + numjugador + '-' + instance),
@@ -796,37 +761,36 @@ var $eXeOca = {
                     y = mOptions.casillaIniciales[mOptions.jugadorActivo].y;
 
                 } else {
-                    x = mOptions.posicionesTablero[posJugador].x;
-                    y = mOptions.posicionesTablero[posJugador].y;
+                    x = mOptions.pT[posJugador].x;
+                    y = mOptions.pT[posJugador].y;
                 }
                 $Jugador.css({
                     'left': x + 'px',
                     'top': y + 'px',
-                    'width': mOptions.anchoFicha,
-                    'height': mOptions.anchoFicha,
+                    'width': mOptions.wt,
+                    'height': mOptions.wt,
                     'z-index': 21
                 });
-
                 if (posJugador == jugador.casilla) {
                     clearInterval(mOptions.relolMueveOcaRetro);
                     if (jugador.casilla < 0 || jugador.casilla == 20 || jugador.casilla == 37) {
                         $('#ocaMochila-' + instance + ' > .ocaj' + mOptions.jugadorActivo).find('.oca-Vida').find('p').text(3);
                     }
                     if (posJugador == 57 || posJugador == 59) {
-                        $eXeOca.analizaPosicion(jugador.casilla, instance);
+                        $eXeOca.getTarget(jugador.casilla, instance);
                     } else if (mOptions.rebote && (posJugador == 5 || posJugador == 25)) {
                         mOptions.rebote = false;
                         var mensaje = mOptions.gamers[mOptions.jugadorActivo].name + ', ' + mOptions.msgs.msgRoolDice;
-                        $eXeOca.posicionesVariasCasilla(posJugador, instance);
-                        $eXeOca.muestraMensaje(mensaje, 5000, mOptions.jugadorActivo + 12, instance);
-                        $eXeOca.activaDado(instance);
+                        $eXeOca.placePlayerTokensSkare(posJugador, instance);
+                        $eXeOca.showGameMessage(mensaje, 5000, mOptions.jugadorActivo + 12, instance);
+                        $eXeOca.activeDice(instance);
                     } else {
 
                         if (posJugador > -1) {
-                            $eXeOca.posicionesVariasCasilla(posJugador, instance);
+                            $eXeOca.placePlayerTokensSkare(posJugador, instance);
                         }
                         setTimeout(function () {
-                            $eXeOca.cambiarJugador(instance);
+                            $eXeOca.changePlayer(instance);
                         }, 2000);
                     }
                     $eXeOca.sendScore(instance);
@@ -836,94 +800,47 @@ var $eXeOca = {
 
         }, mOptions.velocidad);
     },
-    compruebaCastigo1: function (jugadorActivo, instance) {
-        var mOptions = $eXeOca.options[instance],
-            castigado = false,
-            mensaje = "",
-            numrondas = 0;
-        if (mOptions.gamers[jugadorActivo].casilla == 18 && mOptions.numeroJugadores > 1 && mOptions.gamers[jugadorActivo].posada > 0) {
-            mensaje = mOptions.gamers[jugadorActivo].casilla + ", " + mOptions.msgs.msgHostal1;
-            mOptions.gamers[jugadorActivo].posada = 0;
-            castigado = true;
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje, 4000, 3, instance);
-        } else if (mOptions.gamers[jugadorActivo].casilla == 30 && mOptions.numeroJugadores > 1) {
-            numrondas = mOptions.gamers[jugadorActivo].pozo;
-            if (numrondas > 0) {
-                mensaje = ", " + mOptions.msgs.msgWaterWell1;
-                if (numrondas > 1) {
-                    mensaje = ", " + mOptions.msgs.msgWaterWell2;
-                }
-                $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje, 5000, 4, instance);
-                castigado = true;
-                mOptions.gamers[jugadorActivo].pozo--;
-            }
 
-        } else if (mOptions.gamers[jugadorActivo].casilla == 41 && mOptions.numeroJugadores > 1) {
-            numrondas = mOptions.gamers[jugadorActivo].laberinto;
-            if (numrondas > 0) {
-                mensaje = ", " + mOptions.msgs.msgWaterLabyrinth1;
-                if (numrondas > 1) {
-                    mensaje = ", " + mOptions.msgs.msgWaterLabyrinth2;
-                }
-                $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje, 4000, 5, instance);
-                castigado = true;
-                mOptions.gamers[jugadorActivo].laberinto--;
-            }
-
-        } else if (mOptions.gamers[jugadorActivo].casilla == 51 && mOptions.numeroJugadores > 1) {
-            numrondas = mOptions.gamers[jugadorActivo].carcel;
-            if (numrondas > 0) {
-                mensaje = ", " + mOptions.msgs.msgJail1;
-                if (numrondas > 1) {
-                    mensaje = ", " + mOptions.msgs.msgJail2;
-                }
-                $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje, 5000, 6, instance);
-                castigado = true;
-                mOptions.gamers[jugadorActivo].carcel--;
-            }
-
-        }
-        return castigado;
-    },
-
-    posada: function (instance) {
+    hostal: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mesaje_posada_pocion = ", " + mOptions.msgs.msgHostal0,
             mesaje_posada_one = ", " + mOptions.msgs.msgHostalOne;
         if (mOptions.gamers[mOptions.jugadorActivo].pocion) {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_posada_pocion, 4000, 9, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_posada_pocion, 4000, 9, instance);
             mOptions.gamers[mOptions.jugadorActivo].pocion = false;
-            $eXeOca.changeIconMochila(mOptions.jugadorActivo, 2, false, instance);
+            $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 2, false, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorLibre(mOptions.jugadorActivo, 1, instance);
+                $eXeOca.movePlayerTokenFreely(mOptions.jugadorActivo, 1, instance);
             }, 4000);
         } else {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_posada_one, 6000, 3, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_posada_one, 6000, 3, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, 19, instance);
+                $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, 19, instance);
             }, 3000);
         }
 
     },
-    pozo: function (instance) {
+
+    waterWell: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mesaje_pozo_llave = ", " + mOptions.msgs.msgWaterWell0,
             mesaje_pozo_one = ", " + mOptions.msgs.msgWaterWellOne;
         if (mOptions.gamers[mOptions.jugadorActivo].llave) {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_pozo_llave, 3000, 8, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_pozo_llave, 3000, 8, instance);
             mOptions.gamers[mOptions.jugadorActivo].llave = false;
-            $eXeOca.changeIconMochila(mOptions.jugadorActivo, 1, false, instance);
+            $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 1, false, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorLibre(mOptions.jugadorActivo, 1, instance);
+                $eXeOca.movePlayerTokenFreely(mOptions.jugadorActivo, 1, instance);
             }, 4000);
         } else {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_pozo_one, 8000, 4, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_pozo_one, 8000, 4, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, 16, instance);
+                $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, 16, instance);
             }, 3000);
         }
     },
-    laberinto: function (instance) {
+
+    labyrinth: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mesaje_laberinto_llave = ", " + mOptions.msgs.msgWaterLabyrinth0,
             mesaje_laberinto_one = ", " + mOptions.msgs.msgWaterLabyrinthOne,
@@ -932,22 +849,23 @@ var $eXeOca = {
             mcasilla = casillasRertono[castigo],
             destino = 42 - mcasilla;
         if (mOptions.gamers[mOptions.jugadorActivo].llave) {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_laberinto_llave, 3000, 8, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_laberinto_llave, 3000, 8, instance);
             mOptions.gamers[mOptions.jugadorActivo].llave = false;
-            $eXeOca.changeIconMochila(mOptions.jugadorActivo, 1, false, instance);
+            $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 1, false, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorLibre(mOptions.jugadorActivo, 1, instance);
+                $eXeOca.movePlayerTokenFreely(mOptions.jugadorActivo, 1, instance);
             }, 3000);
 
         } else {
             mesaje_laberinto_one = mesaje_laberinto_one.replace('%1', mcasilla);
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_laberinto_one, 5000, 5, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_laberinto_one, 5000, 5, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, destino, instance);
+                $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, destino, instance);
             }, 3000);
         }
     },
-    carcel: function (instance) {
+
+    jail: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mesaje_carcel_llave = ", " + mOptions.msgs.msgJail0,
             mesaje_carcel_one = ", " + mOptions.msgs.msgJailOne,
@@ -956,105 +874,108 @@ var $eXeOca = {
             mcasilla = casillasRertono[castigo],
             destino = 52 - mcasilla;
         if (mOptions.gamers[mOptions.jugadorActivo].llave) {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_carcel_llave, 3000, 8, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_carcel_llave, 3000, 8, instance);
             mOptions.gamers[mOptions.jugadorActivo].pocion = false;
-            $eXeOca.changeIconMochila(mOptions.jugadorActivo, 1, false, instance);
+            $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 1, false, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorLibre(mOptions.jugadorActivo, 1, instance);
+                $eXeOca.movePlayerTokenFreely(mOptions.jugadorActivo, 1, instance);
             }, 4000);
         } else {
             mesaje_carcel_one = mesaje_carcel_one.replace('%1', mcasilla);
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_carcel_one, 7000, 6, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_carcel_one, 7000, 6, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, destino, instance);
+                $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, destino, instance);
             }, 3000);
         }
     },
-    muerte: function (instance) {
+
+    death: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_muerto = ", " + mOptions.msgs.msgDeath,
             mensaje_muerte_pocion = ", " + mOptions.msgs.msgDeath0;
         if (mOptions.gamers[mOptions.jugadorActivo].pocion) {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_muerte_pocion, 3000, 9, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_muerte_pocion, 3000, 9, instance);
             mOptions.gamers[mOptions.jugadorActivo].pocion = false;
-            $eXeOca.changeIconMochila(mOptions.jugadorActivo, 2, false, instance);
+            $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 2, false, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorLibre(mOptions.jugadorActivo, 1, instance);
+                $eXeOca.movePlayerTokenFreely(mOptions.jugadorActivo, 1, instance);
             }, 4000);
         } else {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_muerto, 10000, 7, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_muerto, 10000, 7, instance);
             setTimeout(function () {
-                $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, 58, instance);
+                $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, 58, instance);
             }, 3000);
         }
 
     },
-    ganasPartida: function (instance) {
+
+    winGame: function (instance) {
         $eXeOca.gameOver(0, instance);
     },
-    reboteOcaDado: function (instance) {
+
+    fromGoose: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mesaje_tira = ", " + mOptions.msgs.msgRoolDice;
         mOptions.rebote = false;
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_tira, 5000, mOptions.jugadorActivo + 12, instance);
-        $eXeOca.activaDado(instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_tira, 5000, mOptions.jugadorActivo + 12, instance);
+        $eXeOca.activeDice(instance);
     },
-    analizaPosicion: function (posicion, instance) {
+
+    getTarget: function (posicion, instance) {
         var mOptions = $eXeOca.options[instance],
             ocasdados = [2, 11, 22, 32, 39, 49, 59, 43, 25, 5, 14],
             sorpresas = [8, 17, 27, 35, 45, 54];
-
-        $eXeOca.posicionesVariasCasilla(posicion, instance);
+        $eXeOca.placePlayerTokensSkare(posicion, instance);
         if (mOptions.rebote && ocasdados.indexOf(posicion) != -1) {
-            $eXeOca.reboteOcaDado(instance);
+            $eXeOca.fromGoose(instance);
         } else if (posicion == 62) {
-            $eXeOca.ganasPartida(instance);
+            $eXeOca.winGame(instance);
         } else if (sorpresas.indexOf(posicion) != -1) {
-            $eXeOca.muestraSorpresa(instance);
-            //$eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ', seleciona sorpresa', 3000, mOptions.jugadorActivo + 12, instance);
+            $eXeOca.showSurprise(instance);
         } else if (posicion == 2) {
-            $eXeOca.deOcaAOca(9, instance);
+            $eXeOca.goose(9, instance);
         } else if (posicion == 11) {
-            $eXeOca.deOcaAOca(11, instance);
+            $eXeOca.goose(11, instance);
         } else if (posicion == 22) {
-            $eXeOca.deOcaAOca(10, instance);
+            $eXeOca.goose(10, instance);
         } else if (posicion == 32) {
-            $eXeOca.deOcaAOca(7, instance);
+            $eXeOca.goose(7, instance);
         } else if (posicion == 39) {
-            $eXeOca.deOcaAOca(10, instance);
+            $eXeOca.goose(10, instance);
         } else if (posicion == 49) {
-            $eXeOca.deOcaAOca(10, instance);
+            $eXeOca.goose(10, instance);
         } else if (posicion == 59) {
-            $eXeOca.deOcaAOca(3, instance);
+            $eXeOca.goose(3, instance);
         } else if (posicion == 5) {
-            $eXeOca.dePuenteAPuente(9, 1, instance);
+            $eXeOca.brigge(9, 1, instance);
         } else if (posicion == 14) {
-            $eXeOca.dePuenteAPuente(9, -1, instance);
+            $eXeOca.brigge(9, -1, instance);
         } else if (posicion == 25) {
-            $eXeOca.deDadoADado(18, 1, instance);
+            $eXeOca.dice(18, 1, instance);
         } else if (posicion == 43) {
-            $eXeOca.deDadoADado(18, -1, instance);
+            $eXeOca.dice(18, -1, instance);
         } else if (posicion == 18) {
-            $eXeOca.posada(instance);
+            $eXeOca.hostal(instance);
         } else if (posicion == 30) {
-            $eXeOca.pozo(instance);
+            $eXeOca.waterWell(instance);
         } else if (posicion == 41) {
-            $eXeOca.laberinto(instance);
+            $eXeOca.labyrinth(instance);
         } else if (posicion == 51) {
-            $eXeOca.carcel(instance);
+            $eXeOca.jail(instance);
         } else if (posicion == 57) {
-            $eXeOca.muerte(instance);
+            $eXeOca.death(instance);
         } else if (posicion == 20 || posicion == 37) {
             $eXeOca.hospital(instance);
         } else {
             setTimeout(function () {
-                $eXeOca.muestraCuestion(instance)
+                $eXeOca.showGameQuestion(instance)
             }, 1000);
         }
-        $eXeOca.cargaTablero(instance);
+        $eXeOca.loadGameBoard(instance);
         $eXeOca.sendScore(instance);
     },
-    lanzaDado: function (instance) {
+
+    throwDice: function (instance) {
         var mOptions = $eXeOca.options[instance],
             posiciones = $eXeOca.randomArray(15, 5),
             valor = posiciones[posiciones.length - 1],
@@ -1062,8 +983,8 @@ var $eXeOca = {
             contador = 0,
             vrayo = valor * mOptions.gamers[mOptions.jugadorActivo].rayo;
         if (mOptions.gamers[mOptions.jugadorActivo].rayo == 2) {
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ", " + mOptions.msgs.msgDoubleSpeed, 5000, 10, instance);
-            $eXeOca.changeIconMochila(mOptions.jugadorActivo, 3, false, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + ", " + mOptions.msgs.msgDoubleSpeed, 5000, 10, instance);
+            $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 3, false, instance);
 
         }
         mOptions.gamers[mOptions.jugadorActivo].rayo = 1;
@@ -1074,7 +995,7 @@ var $eXeOca = {
                 image = $eXeOca.idevicePath + 'ocapt' + posiciones[contador] + '.png';
                 if (contador == posiciones.length - 1) {
                     clearInterval(mOptions.contadorDado);
-                    $eXeOca.mueveFichaJugador(mOptions.jugadorActivo, vrayo, instance);
+                    $eXeOca.movePlayerToken(mOptions.jugadorActivo, vrayo, instance);
                     image = $eXeOca.idevicePath + 'ocapt' + valor + '.png';
                     $eXeOca.tirada++;
                 }
@@ -1085,7 +1006,8 @@ var $eXeOca = {
             }
         }, 150);
     },
-    changeIconMochila(jugadorActivo, icon, value, instance) {
+
+    changeBackpackIcons(jugadorActivo, icon, value, instance) {
         var img = "";
         if (icon == 1) {
             img = value ? 'ocallave1.png' : 'ocallave.png';
@@ -1110,26 +1032,29 @@ var $eXeOca = {
                 });
         }
     },
+
     hospital: function (instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.gamers[mOptions.jugadorActivo].vidas = 3;
         $('#ocaMochila-' + instance + ' > .ocaj' + mOptions.jugadorActivo).find('.oca-Vida').find('p').text(mOptions.gamers[mOptions.jugadorActivo].vidas);
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + ", " + mOptions.msgs.msgLostLives0, 3000, 16, instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + ", " + mOptions.msgs.msgLostLives0, 3000, 16, instance);
         setTimeout(function () {
-            $eXeOca.cambiarJugador(instance);
+            $eXeOca.changePlayer(instance);
         }, 3000);
     },
-    activaDado: function (instance) {
+
+    activeDice: function (instance) {
         var mOptions = $eXeOca.options[instance];
         $('#ocaFondoDado-' + instance).css('background-color', $eXeOca.colorsDado[mOptions.jugadorActivo]);
         $('#ocaClickDado-' + instance).show();
         if (mOptions.gamers[mOptions.jugadorActivo].casilla < 0) {
-            //$eXeOca.colocarFichaJugador(mOptions.jugadorActivo, instance);
+            //$eXeOca.placePlayerToken(mOptions.jugadorActivo, instance);
         }
 
         mOptions.moviendo = false;
     },
-    muestraCuestion: function (instance) {
+
+    showGameQuestion: function (instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.activeCounter = true;
         mOptions.activeQuestion++;
@@ -1162,15 +1087,15 @@ var $eXeOca = {
                     $eXeOca.stopVideo(instance);
                     var ts = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 3000;
                     setTimeout(function () {
-                        $eXeOca.preguntaRespondida(false, instance);
+                        $eXeOca.questionAnswer(false, instance);
                     }, ts);
                     return;
                 }
             }
-
         }, 1000);
     },
-    muestraMensaje: function (mensaje, time, type, instance) {
+
+    showGameMessage: function (mensaje, time, type, instance) {
         $('#ocaPMessage-' + instance).text(mensaje);
         $('#ocaMessage-' + instance).hide();
         $('#ocaMessage-' + instance).slideDown(100).delay(time).slideUp(100);
@@ -1236,28 +1161,28 @@ var $eXeOca = {
                 break;
         }
         img = $eXeOca.idevicePath + img;
-
         $('#ocaMessage-' + instance).find('img').attr('src', img);
     },
-    muestraSorpresa: function (instance) {
+
+    showSurprise: function (instance) {
         var sorpresas = [0, 1, 1, 2, 3, 4],
             sorpresa = Math.floor(Math.random() * sorpresas.length);
         sorpresa = sorpresas[sorpresa];
         switch (sorpresa) {
             case 0:
-                $eXeOca.sorpresaNuevaTirada(instance);
+                $eXeOca.newDiceRoll(instance);
                 break;
             case 1:
-                $eXeOca.sorpresaVuelveCasilla(instance);
+                $eXeOca.goBackPreviousBox(instance);
                 break;
             case 2:
-                $eXeOca.sorpresaLlave(instance);
+                $eXeOca.getKey(instance);
                 break;
             case 3:
-                $eXeOca.sorpresaRayo(instance);
+                $eXeOca.faster(instance);
                 break;
             case 4:
-                $eXeOca.sorpresaPocion(instance);
+                $eXeOca.magicPotion(instance);
                 break;
             case 5:
                 break;
@@ -1267,362 +1192,276 @@ var $eXeOca = {
         }
     },
 
-    sorpresaNuevaTirada: function (instance) {
+    newDiceRoll: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_tira = ", " + mOptions.msgs.msgSurprise0,
             nextGamer = mOptions.jugadorActivo + 1 >= mOptions.numeroJugadores ? 12 : 12 + mOptions.jugadorActivo + 1;
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_tira, 5000, nextGamer, instance);
-        $eXeOca.activaDado(instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_tira, 5000, nextGamer, instance);
+        $eXeOca.activeDice(instance);
     },
 
-    sorpresaVuelveCasilla: function (instance) {
+    goBackPreviousBox: function (instance) {
         var mOptions = $eXeOca.options[instance],
             castigo = Math.floor(Math.random() * 5) + 5,
             mensaje_tira = ", " + mOptions.msgs.msgSurprise1,
             mensaje_tira = mensaje_tira.replace('%1', castigo)
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_tira, 5000, 11, instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_tira, 5000, 11, instance);
         setTimeout(function () {
-            $eXeOca.mueveFichaJugadorRetro(mOptions.jugadorActivo, castigo, instance);
+            $eXeOca.movePlayerTokenBack(mOptions.jugadorActivo, castigo, instance);
         }, 5000)
     },
 
-    sorpresaLlave: function (instance) {
+    getKey: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_llave = ", " + mOptions.msgs.msgSurprise2;
         mOptions.gamers[mOptions.jugadorActivo].llave = true;
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_llave, 5000, 8, instance);
-        $eXeOca.changeIconMochila(mOptions.jugadorActivo, 1, true, instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_llave, 5000, 8, instance);
+        $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 1, true, instance);
         setTimeout(function () {
-            $eXeOca.cambiarJugador(instance);
+            $eXeOca.changePlayer(instance);
         }, 5000);
     },
 
-    sorpresaRayo: function (instance) {
+    faster: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_llave = ", " + mOptions.msgs.msgSurprise3;
         mOptions.gamers[mOptions.jugadorActivo].rayo = 2;
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_llave, 5000, 10, instance);
-        $eXeOca.changeIconMochila(mOptions.jugadorActivo, 3, true, instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_llave, 5000, 10, instance);
+        $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 3, true, instance);
         setTimeout(function () {
-            $eXeOca.cambiarJugador(instance);
+            $eXeOca.changePlayer(instance);
         }, 5000);
     },
 
-    sorpresaPocion: function (instance) {
+    magicPotion: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_llave = ", " + mOptions.msgs.msgSurprise4;
         mOptions.gamers[mOptions.jugadorActivo].pocion = true;
-        $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_llave, 5000, 9, instance);
-        $eXeOca.changeIconMochila(mOptions.jugadorActivo, 2, true, instance);
+        $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mensaje_llave, 5000, 9, instance);
+        $eXeOca.changeBackpackIcons(mOptions.jugadorActivo, 2, true, instance);
         setTimeout(function () {
-            $eXeOca.cambiarJugador(instance);
+            $eXeOca.changePlayer(instance);
         }, 5000);
     },
 
-    deOcaAOca: function (dado, instance) {
+    goose: function (dado, instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_oca = mOptions.msgs.msgOcaOca;
         mOptions.direccion = 1;
         mOptions.rebote = true;
-        $eXeOca.muestraMensaje(mensaje_oca, 5000, 0, instance);
+        $eXeOca.showGameMessage(mensaje_oca, 5000, 0, instance);
         setTimeout(function () {
-            $eXeOca.mueveFichaJugador(mOptions.jugadorActivo, dado, instance);
+            $eXeOca.movePlayerToken(mOptions.jugadorActivo, dado, instance);
 
         }, 5000);
 
     },
 
-    dePuenteAPuente: function (dado, direccion, instance) {
+    brigge: function (dado, direccion, instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_puente = mOptions.msgs.msgsBridge;
         mOptions.rebote = true;
         mOptions.direccion = direccion;
-        $eXeOca.muestraMensaje(mensaje_puente, 5000, 2, instance);
-        var move = direccion == 1 ? $eXeOca.mueveFichaJugador : $eXeOca.mueveFichaJugadorRetro;
+        $eXeOca.showGameMessage(mensaje_puente, 5000, 2, instance);
+        var move = direccion == 1 ? $eXeOca.movePlayerToken : $eXeOca.movePlayerTokenBack;
         setTimeout(function () {
             move(mOptions.jugadorActivo, dado, instance);
         }, 3000);
 
     },
-    deDadoADado: function (dado, direccion, instance) {
+
+    dice: function (dado, direccion, instance) {
         var mOptions = $eXeOca.options[instance],
             mensaje_dado = mOptions.msgs.msgsDice;
         mOptions.rebote = true;
         mOptions.direccion = direccion;
-        $eXeOca.muestraMensaje(mensaje_dado, 5000, 1, instance);
-        var move = direccion == 1 ? $eXeOca.mueveFichaJugador : $eXeOca.mueveFichaJugadorRetro;
+        $eXeOca.showGameMessage(mensaje_dado, 5000, 1, instance);
+        var move = direccion == 1 ? $eXeOca.movePlayerToken : $eXeOca.movePlayerTokenBack;
         setTimeout(function () {
             move(mOptions.jugadorActivo, dado, instance)
         }, 2000);
-
     },
 
 
-    cargaTablero: function (instance) {
+    loadGameBoard: function (instance) {
         var mOptions = $eXeOca.options[instance];
-        mOptions.kancho = $('#ocaTablero-' + instance).width() / 668;
-        $eXeOca.cargarPosiciones(mOptions.kancho, instance);
+        mOptions.kw = $('#ocaTablero-' + instance).width() / 668;
+        $eXeOca.loadPositions(mOptions.kw, instance);
         $('#ocaTablero-' + instance).find('.oca-Ficha').hide();
         for (var i = 0; i < mOptions.numeroJugadores; i++) {
-            $eXeOca.colocarFichaJugador(i, instance);
+            $eXeOca.placePlayerToken(i, instance);
         }
-        $eXeOca.juegoHorizontal(instance);
-    },
-    crearNumeroCasilla: function (kancho, instance) {
-
+        $eXeOca.placeElements(instance);
     },
 
-    cargarPosicionesNumero: function (kancho, instance) {
-
-    },
-
-    cargarPosiciones: function (kancho, instance) {
+    loadPositions: function (kw, instance) {
         var mOptions = $eXeOca.options[instance],
             punto1 = {
-                'x': Math.round(30 * kancho),
-                'y': Math.round(567 * kancho)
+                'x': Math.round(30 * kw),
+                'y': Math.round(567 * kw)
             },
             punto2 = {
-                'x': Math.round(30 * kancho),
-                'y': Math.round(603 * kancho)
+                'x': Math.round(30 * kw),
+                'y': Math.round(603 * kw)
             },
             punto3 = {
-                'x': Math.round(66 * kancho),
-                'y': Math.round(567 * kancho)
+                'x': Math.round(66 * kw),
+                'y': Math.round(567 * kw)
             },
             punto4 = {
-                'x': Math.round(66 * kancho),
-                'y': Math.round(603 * kancho)
+                'x': Math.round(66 * kw),
+                'y': Math.round(603 * kw)
             }
-
-
         mOptions.numeroCasillas = 63;
-        mOptions.anchoFicha = Math.round(32 * kancho);
-        mOptions.anchoNumero = Math.round(16 * kancho);
+        mOptions.wt = Math.round(32 * kw);
+        mOptions.anchoNumero = Math.round(16 * kw);
         mOptions.casillaSalida = {
-                'x': Math.round(121 * kancho),
-                'y': Math.round(582 * kancho)
-            },
-
-            mOptions.casillaIniciales = [punto1, punto2, punto3, punto4];
-        mOptions.posicionesTablero = [];
+            'x': Math.round(121 * kw),
+            'y': Math.round(582 * kw)
+        };
+        mOptions.casillaIniciales = [punto1, punto2, punto3, punto4];
+        mOptions.pT = [];
         for (var i = 0; i < mOptions.numeroCasillas; i++) {
             var posicion = new Object();
-            mOptions.posicionesTablero.push(posicion);
-            mOptions.posicionesTablero[i].x = 0;
-            mOptions.posicionesTablero[i].y = 0;
-            mOptions.posicionesTablero[i].w = mOptions.anchoFicha;
-            mOptions.posicionesTablero[i].y = mOptions.anchoFicha;
+            mOptions.pT.push(posicion);
+            mOptions.pT[i].x = 0;
+            mOptions.pT[i].y = 0;
+            mOptions.pT[i].w = mOptions.wt;
+            mOptions.pT[i].y = mOptions.wt;
         }
-
-        mOptions.posicionesTablero[0].x = 170;
-        mOptions.posicionesTablero[0].y = 586;
-
-        mOptions.posicionesTablero[1].x = 242;
-        mOptions.posicionesTablero[1].y = 586;
-
-        mOptions.posicionesTablero[2].x = 296;
-        mOptions.posicionesTablero[2].y = 586;
-
-        mOptions.posicionesTablero[3].x = 350;
-        mOptions.posicionesTablero[3].y = 586;
-
-        mOptions.posicionesTablero[4].x = 404;
-        mOptions.posicionesTablero[4].y = 586;
-
-        mOptions.posicionesTablero[5].x = 456;
-        mOptions.posicionesTablero[5].y = 586;
-
-        mOptions.posicionesTablero[6].x = 505;
-        mOptions.posicionesTablero[6].y = 586;
-
-        mOptions.posicionesTablero[7].x = 564;
-        mOptions.posicionesTablero[7].y = 598;
-
-        mOptions.posicionesTablero[8].x = 598;
-        mOptions.posicionesTablero[8].y = 562;
-
-        mOptions.posicionesTablero[9].x = 588;
-        mOptions.posicionesTablero[9].y = 502;
-
-        mOptions.posicionesTablero[10].x = 588;
-        mOptions.posicionesTablero[10].y = 453;
-
-        mOptions.posicionesTablero[11].x = 588;
-        mOptions.posicionesTablero[11].y = 400;
-
-        mOptions.posicionesTablero[12].x = 586;
-        mOptions.posicionesTablero[12].y = 344;
-
-        mOptions.posicionesTablero[13].x = 588;
-        mOptions.posicionesTablero[13].y = 291;
-
-        mOptions.posicionesTablero[14].x = 588;
-        mOptions.posicionesTablero[14].y = 238;
-
-        mOptions.posicionesTablero[15].x = 588;
-        mOptions.posicionesTablero[15].y = 185;
-
-        mOptions.posicionesTablero[16].x = 588;
-        mOptions.posicionesTablero[16].y = 135;
-
-        mOptions.posicionesTablero[17].x = 596;
-        mOptions.posicionesTablero[17].y = 80;
-
-        mOptions.posicionesTablero[18].x = 558;
-        mOptions.posicionesTablero[18].y = 47;
-
-        mOptions.posicionesTablero[19].x = 508;
-        mOptions.posicionesTablero[19].y = 50;
-
-        mOptions.posicionesTablero[20].x = 456;
-        mOptions.posicionesTablero[20].y = 50;
-
-        mOptions.posicionesTablero[21].x = 401;
-        mOptions.posicionesTablero[21].y = 50;
-
-        mOptions.posicionesTablero[22].x = 346;
-        mOptions.posicionesTablero[22].y = 50;
-
-        mOptions.posicionesTablero[23].x = 296;
-        mOptions.posicionesTablero[23].y = 50;
-
-        mOptions.posicionesTablero[24].x = 238;
-        mOptions.posicionesTablero[24].y = 50;
-
-        mOptions.posicionesTablero[25].x = 187;
-        mOptions.posicionesTablero[25].y = 50;
-
-        mOptions.posicionesTablero[26].x = 138;
-        mOptions.posicionesTablero[26].y = 50;
-
-        mOptions.posicionesTablero[27].x = 80;
-        mOptions.posicionesTablero[27].y = 37;
-
-        mOptions.posicionesTablero[28].x = 40;
-        mOptions.posicionesTablero[28].y = 78;
-
-        mOptions.posicionesTablero[29].x = 52;
-        mOptions.posicionesTablero[29].y = 136;
-
-        mOptions.posicionesTablero[30].x = 52;
-        mOptions.posicionesTablero[30].y = 186;
-
-        mOptions.posicionesTablero[31].x = 52;
-        mOptions.posicionesTablero[31].y = 238;
-
-        mOptions.posicionesTablero[32].x = 52;
-        mOptions.posicionesTablero[32].y = 292;
-
-        mOptions.posicionesTablero[33].x = 50;
-        mOptions.posicionesTablero[33].y = 346;
-
-        mOptions.posicionesTablero[34].x = 50;
-        mOptions.posicionesTablero[34].y = 398;
-
-        mOptions.posicionesTablero[35].x = 38;
-        mOptions.posicionesTablero[35].y = 456;
-
-        mOptions.posicionesTablero[36].x = 82;
-        mOptions.posicionesTablero[36].y = 488;
-
-        mOptions.posicionesTablero[37].x = 140;
-        mOptions.posicionesTablero[37].y = 484;
-
-        mOptions.posicionesTablero[38].x = 188;
-        mOptions.posicionesTablero[38].y = 484;
-
-        mOptions.posicionesTablero[39].x = 240;
-        mOptions.posicionesTablero[39].y = 484;
-
-        mOptions.posicionesTablero[40].x = 294;
-        mOptions.posicionesTablero[40].y = 484;
-
-        mOptions.posicionesTablero[41].x = 348;
-        mOptions.posicionesTablero[41].y = 484;
-
-        mOptions.posicionesTablero[42].x = 398;
-        mOptions.posicionesTablero[42].y = 484;
-
-        mOptions.posicionesTablero[43].x = 458;
-        mOptions.posicionesTablero[43].y = 490;
-
-        mOptions.posicionesTablero[44].x = 496;
-        mOptions.posicionesTablero[44].y = 456;
-
-        mOptions.posicionesTablero[45].x = 480;
-        mOptions.posicionesTablero[45].y = 395;
-
-        mOptions.posicionesTablero[46].x = 480;
-        mOptions.posicionesTablero[46].y = 346;
-
-        mOptions.posicionesTablero[47].x = 480;
-        mOptions.posicionesTablero[47].y = 294;
-
-        mOptions.posicionesTablero[48].x = 480;
-        mOptions.posicionesTablero[48].y = 244;
-
-        mOptions.posicionesTablero[49].x = 496;
-        mOptions.posicionesTablero[49].y = 182;
-
-        mOptions.posicionesTablero[50].x = 456;
-        mOptions.posicionesTablero[50].y = 140;
-
-        mOptions.posicionesTablero[51].x = 400;
-        mOptions.posicionesTablero[51].y = 158;
-
-        mOptions.posicionesTablero[52].x = 350;
-        mOptions.posicionesTablero[52].y = 158;
-
-        mOptions.posicionesTablero[53].x = 294;
-        mOptions.posicionesTablero[53].y = 158;
-
-        mOptions.posicionesTablero[54].x = 245;
-        mOptions.posicionesTablero[54].y = 158;
-
-        mOptions.posicionesTablero[55].x = 186;
-        mOptions.posicionesTablero[55].y = 146;
-
-        mOptions.posicionesTablero[56].x = 142;
-        mOptions.posicionesTablero[56].y = 180;
-
-        mOptions.posicionesTablero[57].x = 156;
-        mOptions.posicionesTablero[57].y = 240;
-
-        mOptions.posicionesTablero[58].x = 156;
-        mOptions.posicionesTablero[58].y = 291;
-
-        mOptions.posicionesTablero[59].x = 144;
-        mOptions.posicionesTablero[59].y = 354;
-
-        mOptions.posicionesTablero[60].x = 184;
-        mOptions.posicionesTablero[60].y = 388;
-
-        mOptions.posicionesTablero[61].x = 248;
-        mOptions.posicionesTablero[61].y = 374;
-
-        mOptions.posicionesTablero[62].x = 331;
-        mOptions.posicionesTablero[62].y = 331;
-        //var borderRadius = Math.round(mOptions.anchoFicha / 2) + 'px';
-        // $('#ocaTablero-' + instance).find('.oca-Ficha').remove();
-        for (var i = 0; i < mOptions.posicionesTablero.length; i++) {
-            mOptions.posicionesTablero[i].x = Math.round(mOptions.posicionesTablero[i].x * kancho);
-            mOptions.posicionesTablero[i].y = Math.round(mOptions.posicionesTablero[i].y * kancho);
-            /*   var $ficha=$('<div class="oca-Ficha"></div>');
-                $('#ocaTablero-'+instance).append('<div class="oca-Ficha"></div>')
-                $ficha=$('#ocaTablero-'+instance).find('.oca-Ficha').last()
-                $ficha.css({
-                    "position":"absolute",
-                    'left':mOptions.posicionesTablero[i].x+'px',
-                    'top':mOptions.posicionesTablero[i].y+'px',
-                    'width':mOptions.posicionesTablero[i].w +'px',
-                    'height':mOptions.posicionesTablero[i].h+'px',
-                    'background':'#f00',
-                    'border-radius':borderRadius
-                });*/
+        mOptions.pT[0].x = 170;
+        mOptions.pT[0].y = 586;
+        mOptions.pT[1].x = 242;
+        mOptions.pT[1].y = 586;
+        mOptions.pT[2].x = 296;
+        mOptions.pT[2].y = 586;
+        mOptions.pT[3].x = 350;
+        mOptions.pT[3].y = 586;
+        mOptions.pT[4].x = 404;
+        mOptions.pT[4].y = 586;
+        mOptions.pT[5].x = 456;
+        mOptions.pT[5].y = 586;
+        mOptions.pT[6].x = 505;
+        mOptions.pT[6].y = 586;
+        mOptions.pT[7].x = 564;
+        mOptions.pT[7].y = 598;
+        mOptions.pT[8].x = 598;
+        mOptions.pT[8].y = 562;
+        mOptions.pT[9].x = 588;
+        mOptions.pT[9].y = 502;
+        mOptions.pT[10].x = 588;
+        mOptions.pT[10].y = 453;
+        mOptions.pT[11].x = 588;
+        mOptions.pT[11].y = 400;
+        mOptions.pT[12].x = 586;
+        mOptions.pT[12].y = 344;
+        mOptions.pT[13].x = 588;
+        mOptions.pT[13].y = 291;
+        mOptions.pT[14].x = 588;
+        mOptions.pT[14].y = 238;
+        mOptions.pT[15].x = 588;
+        mOptions.pT[15].y = 185;
+        mOptions.pT[16].x = 588;
+        mOptions.pT[16].y = 135;
+        mOptions.pT[17].x = 596;
+        mOptions.pT[17].y = 80;
+        mOptions.pT[18].x = 558;
+        mOptions.pT[18].y = 47;
+        mOptions.pT[19].x = 508;
+        mOptions.pT[19].y = 50;
+        mOptions.pT[20].x = 456;
+        mOptions.pT[20].y = 50;
+        mOptions.pT[21].x = 401;
+        mOptions.pT[21].y = 50;
+        mOptions.pT[22].x = 346;
+        mOptions.pT[22].y = 50;
+        mOptions.pT[23].x = 296;
+        mOptions.pT[23].y = 50;
+        mOptions.pT[24].x = 238;
+        mOptions.pT[24].y = 50;
+        mOptions.pT[25].x = 187;
+        mOptions.pT[25].y = 50;
+        mOptions.pT[26].x = 138;
+        mOptions.pT[26].y = 50;
+        mOptions.pT[27].x = 80;
+        mOptions.pT[27].y = 37;
+        mOptions.pT[28].x = 40;
+        mOptions.pT[28].y = 78;
+        mOptions.pT[29].x = 52;
+        mOptions.pT[29].y = 136;
+        mOptions.pT[30].x = 52;
+        mOptions.pT[30].y = 186;
+        mOptions.pT[31].x = 52;
+        mOptions.pT[31].y = 238;
+        mOptions.pT[32].x = 52;
+        mOptions.pT[32].y = 292;
+        mOptions.pT[33].x = 50;
+        mOptions.pT[33].y = 346;
+        mOptions.pT[34].x = 50;
+        mOptions.pT[34].y = 398;
+        mOptions.pT[35].x = 38;
+        mOptions.pT[35].y = 456;
+        mOptions.pT[36].x = 82;
+        mOptions.pT[36].y = 488;
+        mOptions.pT[37].x = 140;
+        mOptions.pT[37].y = 484;
+        mOptions.pT[38].x = 188;
+        mOptions.pT[38].y = 484;
+        mOptions.pT[39].x = 240;
+        mOptions.pT[39].y = 484;
+        mOptions.pT[40].x = 294;
+        mOptions.pT[40].y = 484;
+        mOptions.pT[41].x = 348;
+        mOptions.pT[41].y = 484;
+        mOptions.pT[42].x = 398;
+        mOptions.pT[42].y = 484;
+        mOptions.pT[43].x = 458;
+        mOptions.pT[43].y = 490;
+        mOptions.pT[44].x = 496;
+        mOptions.pT[44].y = 456;
+        mOptions.pT[45].x = 480;
+        mOptions.pT[45].y = 395;
+        mOptions.pT[46].x = 480;
+        mOptions.pT[46].y = 346;
+        mOptions.pT[47].x = 480;
+        mOptions.pT[47].y = 294;
+        mOptions.pT[48].x = 480;
+        mOptions.pT[48].y = 244;
+        mOptions.pT[49].x = 496;
+        mOptions.pT[49].y = 182;
+        mOptions.pT[50].x = 456;
+        mOptions.pT[50].y = 140;
+        mOptions.pT[51].x = 400;
+        mOptions.pT[51].y = 158;
+        mOptions.pT[52].x = 350;
+        mOptions.pT[52].y = 158;
+        mOptions.pT[53].x = 294;
+        mOptions.pT[53].y = 158;
+        mOptions.pT[54].x = 245;
+        mOptions.pT[54].y = 158;
+        mOptions.pT[55].x = 186;
+        mOptions.pT[55].y = 146;
+        mOptions.pT[56].x = 142;
+        mOptions.pT[56].y = 180;
+        mOptions.pT[57].x = 156;
+        mOptions.pT[57].y = 240;
+        mOptions.pT[58].x = 156;
+        mOptions.pT[58].y = 291;
+        mOptions.pT[59].x = 144;
+        mOptions.pT[59].y = 354;
+        mOptions.pT[60].x = 184;
+        mOptions.pT[60].y = 388;
+        mOptions.pT[61].x = 248;
+        mOptions.pT[61].y = 374;
+        mOptions.pT[62].x = 331;
+        mOptions.pT[62].y = 331;
+        for (var i = 0; i < mOptions.pT.length; i++) {
+            mOptions.pT[i].x = Math.round(mOptions.pT[i].x * kw);
+            mOptions.pT[i].y = Math.round(mOptions.pT[i].y * kw);
         }
     },
-    posicionesVariasCasilla: function (casilla, instance) {
+
+    placePlayerTokensSkare: function (casilla, instance) {
         var mOptions = $eXeOca.options[instance],
             listaOcupantes = [];
         if (mOptions.numeroJugadores == 1) return;
@@ -1632,10 +1471,10 @@ var $eXeOca = {
                 listaOcupantes.push(i);
             }
         }
-        $eXeOca.calculaPosicionOcupante(casilla, listaOcupantes, instance);
-
+        $eXeOca.setPositionPlayers(casilla, listaOcupantes, instance);
     },
-    calculaPosicionOcupante: function (casilla, listaOcupantes, instance) {
+
+    setPositionPlayers: function (casilla, listaOcupantes, instance) {
         var mOptions = $eXeOca.options[instance],
             posiconesHorizontales = [0, 1, 2, 3, 4, 5, 6, 37, 38, 39, 40, 41, 42, 50, 51, 52, 53, 54, 19, 20, 21, 22, 23, 24, 25, 26, 51, 62, 61, 7, 8, 43, 44, 35, 36, 59, 60, 18],
             posiconesVerticales = [9, 10, 11, 12, 13, 14, 15, 16, 17, 29, 30, 31, 32, 33, 34, 35, 45, 46, 46, 47, 48, 57, 58, 17, 49, 10, 35, 27, 28, 55, 56];
@@ -1643,10 +1482,10 @@ var $eXeOca = {
             for (var i = 0; i < listaOcupantes.length; i++) {
                 var j = listaOcupantes[i],
                     sposicion = mOptions.gamers[j].casilla,
-                    nposX = mOptions.posicionesTablero[sposicion].x,
-                    nposY = mOptions.posicionesTablero[sposicion].y,
-                    nposW = mOptions.anchoFicha,
-                    nposH = mOptions.anchoFicha;
+                    nposX = mOptions.pT[sposicion].x,
+                    nposY = mOptions.pT[sposicion].y,
+                    nposW = mOptions.wt,
+                    nposH = mOptions.wt;
                 if (i == 0) {
                     if (listaOcupantes.length > 1) {
                         nposX = nposX - nposW / 2;
@@ -1670,17 +1509,16 @@ var $eXeOca = {
                 }
                 nposX = Math.round(nposX);
                 nposY = Math.round(nposY);
-                $eXeOca.moverFicha(j, nposX, nposY, instance);
-
+                $eXeOca.movePlayerToken(j, nposX, nposY, instance);
             }
         } else if (posiconesHorizontales.indexOf(casilla) != -1) {
             for (var i = 0; i < listaOcupantes.length; i++) {
                 var j = listaOcupantes[i],
                     sposicion = mOptions.gamers[j].casilla,
-                    nposX = mOptions.posicionesTablero[sposicion].x,
-                    nposY = mOptions.posicionesTablero[sposicion].y,
-                    nposW = mOptions.anchoFicha,
-                    nposH = mOptions.anchoFicha;
+                    nposX = mOptions.pT[sposicion].x,
+                    nposY = mOptions.pT[sposicion].y,
+                    nposW = mOptions.wt,
+                    nposH = mOptions.wt;
                 if (i == 0) {
                     if (listaOcupantes.length > 1) {
                         nposY = nposY + nposH / 2;
@@ -1703,7 +1541,7 @@ var $eXeOca = {
                     nposX = nposX - nposW / 2;
                     nposY = nposY - nposH / 2;
                 }
-                $eXeOca.moverFicha(j, nposX, nposY, instance);
+                $eXeOca.movePlayerToken(j, nposX, nposY, instance);
             }
         }
     },
@@ -1725,7 +1563,6 @@ var $eXeOca = {
         mOptions.numeroJugadores = 1;
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
             mOptions.selectsGame[i].audio = typeof mOptions.selectsGame[i].audio == 'undefined' ? '' : mOptions.selectsGame[i].audio
-
         }
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
@@ -1735,7 +1572,6 @@ var $eXeOca = {
                     mOptions.selectsGame[iq].url = "";
                 }
             }
-
         });
         audioLink.each(function () {
             var iq = parseInt($(this).text());
@@ -1781,6 +1617,7 @@ var $eXeOca = {
         mOptions.numberQuestions = mOptions.selectsGame.length;
         return mOptions;
     },
+
     isJsonString: function (str) {
         try {
             var o = JSON.parse(str, null, 2);
@@ -1790,6 +1627,7 @@ var $eXeOca = {
         } catch (e) {}
         return false;
     },
+
     shuffleAds: function (arr) {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
@@ -1808,7 +1646,6 @@ var $eXeOca = {
                     'controls': 0
                 }
             });
-
         }
     },
 
@@ -1824,8 +1661,8 @@ var $eXeOca = {
                 'controls': 0
             }
         });
-
     },
+
     loadYoutubeApi: function () {
         onYouTubeIframeAPIReady = $eXeOca.youTubeReady;
         var tag = document.createElement('script');
@@ -1834,46 +1671,57 @@ var $eXeOca = {
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     },
+
     updateTimerDisplay: function () {},
     updateProgressBar: function () {},
     onPlayerError: function (event) {},
     startVideo: function (id, start, end, instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.player) {
-            mOptions.player.loadVideoById({
-                'videoId': id,
-                'startSeconds': start,
-                'endSeconds': end
-            });
+            if (typeof mOptions.player.loadVideoById == "function") {
+                mOptions.player.loadVideoById({
+                    'videoId': id,
+                    'startSeconds': start,
+                    'endSeconds': end
+                });
+            }
         }
     },
 
     playVideo: function (instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.player) {
-            mOptions.player.playVideo();
+            if (typeof mOptions.player.playVideo == "function") {
+                mOptions.player.playVideo();
+            }
         }
     },
+
     stopVideo: function (instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.player) {
-            mOptions.player.pauseVideo();
+            if (typeof mOptions.player.pauseVideo == "function") {
+                mOptions.player.pauseVideo();
+            }
         }
     },
+
     muteVideo: function (mute, instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.player) {
             if (mute) {
-                mOptions.player.mute();
+                if (typeof mOptions.player.mute == "function") {
+                    mOptions.player.mute();
+                }
             } else {
-                mOptions.player.unMute();
+                if (typeof mOptions.player.unMute == "function") {
+                    mOptions.player.unMute();
+                }
             }
         }
     },
-    changeImageNumberGamers: function (number, instance) {
 
-    },
-    juegoHorizontal: function (instance) {
+    placeElements: function (instance) {
         var anchoTablero = $('#ocaTablero-' + instance).width(),
             anchoIdevice = $('#ocaGameContainer-' + instance).width();
         if (anchoIdevice < 750) {
@@ -1887,9 +1735,7 @@ var $eXeOca = {
                 'flex-direction': 'column',
                 'align-items': 'center'
             });
-
         } else {
-
             $('#ocaGameContainer-' + instance).css({
                 'flex-direction': 'row',
                 'align-items': 'flex-start'
@@ -1901,24 +1747,18 @@ var $eXeOca = {
                 'margin-left': '0.5em'
             });
         }
-
-
         $('.oca-NumberGamers').find('p').css({
-            'font-size': $eXeOca.hallarTamano(1, instance),
-            'line-height': $eXeOca.hallarTamano(1.5, instance),
-            'height': $eXeOca.hallarTamano(1.5, instance),
+            'font-size': $eXeOca.getSize(1, instance),
+            'line-height': $eXeOca.getSize(1.5, instance),
+            'height': $eXeOca.getSize(1.5, instance),
 
         });
-
         $('.oca-NumberGamers').css({
-            'padding-bottom': $eXeOca.hallarTamano(1.5, instance),
-            'padding': $eXeOca.hallarTamano(1.5, instance),
+            'padding-bottom': $eXeOca.getSize(1.5, instance),
+            'padding': $eXeOca.getSize(1.5, instance),
 
         });
-
-
-
-        var fsize = parseFloat($eXeOca.hallarTamano(1.1, instance), 10) < 0.7 ? '.7rem' : $eXeOca.hallarTamano(1.1, instance),
+        var fsize = parseFloat($eXeOca.getSize(1.1, instance), 10) < 0.7 ? '.7rem' : $eXeOca.getSize(1.1, instance),
             fheight = "1.8rem",
             fradiuos = "0.25rem",
             fleft = "0.4rem",
@@ -1928,7 +1768,6 @@ var $eXeOca = {
             fradiuos = "0.125rem";
             fleft = "0.3rem";
             fpadding = "0.35rem";
-
         }
 
         $('.oca-NameGamer').css({
@@ -1944,29 +1783,22 @@ var $eXeOca = {
         $('.oca-FichaJugador').css({
             'width': fheight,
             'height': fheight,
-
         });
-
-
         $('.oca-MessageImage').css({
-            'width': $eXeOca.hallarTamano(3.5, instance),
-            'height': $eXeOca.hallarTamano(3.5, instance),
-            'margin-left': $eXeOca.hallarTamano(1, instance)
+            'width': $eXeOca.getSize(3.5, instance),
+            'height': $eXeOca.getSize(3.5, instance),
+            'margin-left': $eXeOca.getSize(1, instance)
         });
-
         $('.oca-NumberIcon').css({
             'width': fheight,
             'height': fheight,
             'margin-left': fleft
         });
-
         $('.oca-NumberGamers').find('p').css({
             'font-size': fsize,
             'line-height': fheight,
             'height': fheight,
-
         });
-
         $('.oca-NumberGamers').css({
             'padding-bottom': fheight,
 
@@ -1978,51 +1810,39 @@ var $eXeOca = {
             'border-radius': fradiuos
         });
 
-        var tamanoFont = parseFloat($eXeOca.hallarTamano(1.2, instance), 10) < 0.8 ? '.8rem' : $eXeOca.hallarTamano(1.1, instance);
+        var tamanoFont = parseFloat($eXeOca.getSize(1.2, instance), 10) < 0.8 ? '.8rem' : $eXeOca.getSize(1.1, instance);
         $('.oca-Message').find('p').css({
             'font-size': tamanoFont,
-            'padding': $eXeOca.hallarTamano(0.3, instance)
+            'padding': $eXeOca.getSize(0.3, instance)
         });
-
         $('.oca-MessageModalTexto').find('p').css({
             'font-size': tamanoFont,
         });
-
         $('.oca-AcceptButton').css({
-            'width': $eXeOca.hallarTamano(1.7, instance),
-            'height': $eXeOca.hallarTamano(1.7, instance),
+            'width': $eXeOca.getSize(1.7, instance),
+            'height': $eXeOca.getSize(1.7, instance),
         });
         $('.oca-CancelButton').css({
-            'width': $eXeOca.hallarTamano(1.7, instance),
-            'height': $eXeOca.hallarTamano(1.7, instance),
+            'width': $eXeOca.getSize(1.7, instance),
+            'height': $eXeOca.getSize(1.7, instance),
         });
-
-        /* $('.oca-Tiempo').css({
-             'width': $eXeOca.hallarTamano(4, instance),
-             'padding-top': $eXeOca.hallarTamano(0.2, instance),
-             'padding-bottom': $eXeOca.hallarTamano(0.2, instance),
-             'padding-left': $eXeOca.hallarTamano(0.1, instance),
-             'padding-right': $eXeOca.hallarTamano(0.1, instance),
-             'left': $eXeOca.hallarTamano(19, instance),
-             'top': $eXeOca.hallarTamano(11.60, instance),
-             'font-size': $eXeOca.hallarTamano(1.2, instance),
-         });*/
         $('.oca-PTiempo').css({
-            'height': $eXeOca.hallarTamano(1.5, instance),
-            'line-height': $eXeOca.hallarTamano(1.5, instance),
-
+            'height': $eXeOca.getSize(1.5, instance),
+            'line-height': $eXeOca.getSize(1.5, instance),
         });
 
     },
-    hallarTamano: function (size, instance) {
+
+    getSize: function (size, instance) {
         var facTamano = $('#ocaTabllero-' + instance).width() >= 550 ? 1 : $('#ocaTablero-' + instance).width() / 550,
             fs = parseFloat(size * facTamano, 10).toFixed(2);
         return fs + 'rem';
     },
+
     addEvents: function (instance) {
         var mOptions = $eXeOca.options[instance];
-        mOptions.kancho = $('#ocaTablero-' + instance).width() / 668;
-        $eXeOca.cargaTablero(instance);
+        mOptions.kw = $('#ocaTablero-' + instance).width() / 668;
+        $eXeOca.loadGameBoard(instance);
         mOptions.respuesta = '';
         window.addEventListener('unload', function () {
             $eXeOca.endScorm();
@@ -2030,12 +1850,12 @@ var $eXeOca = {
 
         window.addEventListener('resize', function () {
             $eXeOca.refreshImageActive(instance);
-            $eXeOca.cargaTablero(instance);
+            $eXeOca.loadGameBoard(instance);
         });
         $('#ocaClickDado-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $(this).hide();
-            $eXeOca.lanzaDado(instance);
+            $eXeOca.throwDice(instance);
         });
         if (mOptions.itinerary.showCodeAccess) {
             $('#ocaMessageModalDiv-' + instance).show();
@@ -2045,9 +1865,7 @@ var $eXeOca = {
             $('#ocaSelectsGamers-' + instance).hide();
             $('#ocaMessageModalTexto-' + instance).hide();
             $('#ocaAnswerDiv-' + instance).hide();
-
         }
-
         /* pruebas */
         $('.oca-prueba').on('click touchstart', function (e) {
             e.preventDefault();
@@ -2061,28 +1879,27 @@ var $eXeOca = {
             $('#ocaClickDado-' + instance).hide();
             mOptions.rebote = false;
             mOptions.valorDado = num;
-            $eXeOca.mueveFichaJugador(mOptions.jugadorActivo, num, instance);
+            $eXeOca.movePlayerToken(mOptions.jugadorActivo, num, instance);
 
         });
-
         $('.oca-sorpresa').on('click touchstart', function (e) {
             e.preventDefault();
             var sorpresa = parseInt($(this).text());
             switch (sorpresa) {
                 case 0:
-                    $eXeOca.sorpresaNuevaTirada(instance);
+                    $eXeOca.newDiceRoll(instance);
                     break;
                 case 1:
-                    $eXeOca.sorpresaVuelveCasilla(instance);
+                    $eXeOca.goBackPreviousBox(instance);
                     break;
                 case 2:
-                    $eXeOca.sorpresaLlave(instance);
+                    $eXeOca.getKey(instance);
                     break;
                 case 3:
-                    $eXeOca.sorpresaRayo(instance);
+                    $eXeOca.faster(instance);
                     break;
                 case 4:
-                    $eXeOca.sorpresaPocion(instance);
+                    $eXeOca.magicPotion(instance);
                     break;
                 case 5:
                     break;
@@ -2090,7 +1907,6 @@ var $eXeOca = {
                 default:
                     break;
             }
-
         });
         $('#ocaLinkReboot-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -2102,24 +1918,21 @@ var $eXeOca = {
             $('#ocaMessageModal-' + instance).show();
             $('#ocaMessageModalTexto-' + instance).css('display', 'flex');
             $('#ocaMessageModalTexto-' + instance).show();
-            $eXeOca.cargaTablero(instance);
-
+            $eXeOca.loadGameBoard(instance);
         });
         $('#ocaMessageAceptar-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
-            mOptions.kancho = $('#ocaTablero-' + instance).width() / 668;
+            mOptions.kw = $('#ocaTablero-' + instance).width() / 668;
             $eXeOca.rebootGame(instance);
             $('#ocaMessageModalDiv-' + instance).hide();
             $('#ocaMessageModal-' + instance).hide();
-            $eXeOca.cargaTablero(instance);
-
+            $eXeOca.loadGameBoard(instance);
 
         });
         $('#ocaMessageCancelar-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $('#ocaMessageModalDiv-' + instance).hide();
             $('#ocaMessageModal-' + instance).hide();
-
         });
         $('#ocaNameGamers-' + instance).find('.oca-Jugador').hide();
         $('#ocaNameGamers-' + instance).find('.oca-Jugador').first().show();
@@ -2142,15 +1955,13 @@ var $eXeOca = {
             $('#ocaGameContainer-' + instance).show()
             $('#ocaGameMinimize-' + instance).hide();
             $eXeOca.refreshImageActive(instance);
-            $eXeOca.cargaTablero(instance);
+            $eXeOca.loadGameBoard(instance);
         });
         $('#ocaLinkMinimize-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $('#ocaGameContainer-' + instance).hide();
             $('#ocaGameMinimize-' + instance).css('visibility', 'visible').show();
-            return true;
         });
-
         $('#ocaCodeAccessDiv-' + instance).hide();
         $('#ocaVideo-' + instance).hide();
         $('#ocaImagen-' + instance).hide();
@@ -2170,7 +1981,7 @@ var $eXeOca = {
         });
         $('#ocaBtnMoveOn-' + instance).on('click', function (e) {
             e.preventDefault();
-            $eXeOca.muestraCuestion(instance)
+            $eXeOca.showGameQuestion(instance)
         });
         $('#ocaBtnReply-' + instance).on('click', function (e) {
             e.preventDefault();
@@ -2186,7 +1997,7 @@ var $eXeOca = {
         mOptions.livesLeft = mOptions.numberLives;
         $('#ocaStartGame-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
-            $eXeOca.iniciaJuego(instance);
+            $eXeOca.startGame(instance);
         });
         $('#ocaOptionsDiv-' + instance).find('.oca-Options').on('click', function (e) {
             e.preventDefault();
@@ -2197,7 +2008,6 @@ var $eXeOca = {
             var element = document.getElementById('ocaMainContainer-' + instance);
             $eXeOca.toggleFullscreen(element, instance);
         });
-
         $('#ocaInstructions-' + instance).text(mOptions.instructions);
         $('#ocaBottonContainer-' + instance).addClass('oca-BottonContainerDivEnd');
         if (mOptions.itinerary.showCodeAccess) {
@@ -2220,21 +2030,19 @@ var $eXeOca = {
         });
         for (var i = 0; i < 4; i++) {
             for (var j = 1; j < 4; j++) {
-                $eXeOca.changeIconMochila(i, j, false, instance);
-
+                $eXeOca.changeBackpackIcons(i, j, false, instance);
             }
         }
         $('#ocaStartGame-' + i).text(mOptions.msgs.msgStartGame);
         $('#ocaCodeAccessE-' + i).prop('readonly', false);
-
         $('#ocaLinkAudio-' + instance).on('click', function (e) {
             e.preventDefault();
             var audio = mOptions.selectsGame[mOptions.activeQuestion].audio;
             $eXeOca.stopSound(instance);
             $eXeOca.playSound(audio, instance);
         });
-
     },
+
     changeQuextion: function (instance, button) {
         var mOptions = $eXeOca.options[instance];
         var numberButton = parseInt($(button).data("number")),
@@ -2283,6 +2091,7 @@ var $eXeOca = {
         }
         $('#ocaNameGamers-' + instance).find('input').eq(0).focus();
     },
+
     refreshImageActive: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
@@ -2295,7 +2104,6 @@ var $eXeOca = {
             return;
         }
         if (mQuextion.type === 1) {
-
             $('#ocaImagen-' + instance).attr('src', mQuextion.url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
@@ -2324,6 +2132,7 @@ var $eXeOca = {
             $('#ocaImagen-' + instance).attr('alt', mQuextion.alt);
         }
     },
+
     enterCodeAccess: function (instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.itinerary.codeAccess === $('#ocaCodeAccessE-' + instance).val()) {
@@ -2331,13 +2140,13 @@ var $eXeOca = {
             $('#ocaMessageModal-' + instance).hide();
             $('#ocaCodeAccessDiv-' + instance).hide();
             $('#ocaAnswerDiv-' + instance).show();
-            $eXeOca.cargaTablero(instance);
-
+            $eXeOca.loadGameBoard(instance);
         } else {
             $('#ocaMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
             $('#ocaCodeAccessE-' + instance).val('');
         }
     },
+
     updateSoundVideo: function (instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.activeSilent) {
@@ -2351,19 +2160,23 @@ var $eXeOca = {
             }
         }
     },
+
     updateTime: function (tiempo, instance) {
         var mTime = $eXeOca.getTimeToString(tiempo);
         $('#ocaPTime-' + instance).text(mTime);
     },
+
     updateTimeGame(time, instance) {
         var mTime = $eXeOca.getTimeToString(time);
         $('#ocaTiempo-' + instance).text(mTime);
     },
+
     getTimeToString: function (iTime) {
         var mMinutes = parseInt(iTime / 60) % 60;
         var mSeconds = iTime % 60;
         return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
     },
+
     gameOver: function (type, instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.gameStarted = false;
@@ -2376,7 +2189,6 @@ var $eXeOca = {
         $('#ocaEText-' + instance).hide();
         $('#ocaCursor-' + instance).hide();
         $('#ocaCover-' + instance).hide();
-
         $eXeOca.clearQuestions(instance);
         $eXeOca.updateTime(0, instance);
         $('#ocaStartGame-' + instance).text(mOptions.msgs.msgNewGame);
@@ -2392,16 +2204,16 @@ var $eXeOca = {
         $('#ocaPMessageModal-' + instance).text(winner);
         $('#ocaDado-' + instance).hide();
         if (mOptions.itinerary.showClue) {
-            $eXeOca.muestraMensaje(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame, 35000, 0, instance);
+            $eXeOca.showGameMessage(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame, 35000, 0, instance);
         } else {
             var mesaje_victoria = ", " + mOptions.msgs.msgWinGame;
-            $eXeOca.muestraMensaje(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_victoria, 15000, 0, instance);
+            $eXeOca.showGameMessage(mOptions.gamers[mOptions.jugadorActivo].name + mesaje_victoria, 15000, 0, instance);
         }
         $('#ocaLinkAudio-' + instance).hide();
         $eXeOca.sendScore(instance);
         $eXeOca.initialScore = (((mOptions.gamers[0].casilla + 1) * 10) / mOptions.numeroCasillas).toFixed(2);
-
     },
+
     drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance) {
         $('#ocaEPhrase-' + instance).find('.oca-Word').remove();
         $('#ocaBtnReply-' + instance).prop('disabled', true);
@@ -2444,9 +2256,11 @@ var $eXeOca = {
         $('#ocaDefinition-' + instance).text(definition);
         return cPhrase;
     },
+
     clear: function (phrase) {
         return phrase.replace(/[&\s\n\r]+/g, " ").trim();
     },
+
     getShowLetter: function (phrase, nivel) {
         var numberLetter = parseInt(phrase.length * nivel / 100);
         var arrayRandom = [];
@@ -2463,6 +2277,7 @@ var $eXeOca = {
     },
 
     drawText: function (texto, color) {},
+
     showQuestion: function (i, instance) {
         var mOptions = $eXeOca.options[instance],
             mQuextion = mOptions.selectsGame[i],
@@ -2520,14 +2335,10 @@ var $eXeOca = {
             $('#ocaImagen-' + instance).prop('alt', alt);
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
-            if (window.innerWidth < 401) {
-                //text = $eXeOca.reduceText(text);
-            }
             $('#ocaEText-' + instance).html(text);
             $('#ocaCover-' + instance).hide();
             $('#ocaEText-' + instance).show();
             $eXeOca.showMessage(0, '', instance);
-
         } else if (mQuextion.type === 2) {
             $('#ocaVideo-' + instance).show();
             var idVideo = $eXeOca.getIDYoutube(mQuextion.url);
@@ -2557,11 +2368,9 @@ var $eXeOca = {
             $('#ocaEdAnswer-' + instance).focus();
             $('#ocaEdAnswer-' + instance).val('');
         }
-
         if (q.audio.length > 4 && q.type != 2) {
             $('#ocaLinkAudio-' + instance).show();
         }
-
         $eXeOca.stopSound(instance);
         if (q.type != 2 && q.audio.trim().length > 5) {
             $eXeOca.playSound(q.audio.trim(), instance);
@@ -2570,7 +2379,6 @@ var $eXeOca = {
             MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#ocaGameQuestion-' + instance]);
         }
         $('#ocaEdAnswer-' + instance).focus();
-
     },
 
     playSound: function (selectedFile, instance) {
@@ -2581,12 +2389,14 @@ var $eXeOca = {
         });
 
     },
+
     stopSound(instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
         }
     },
+
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
@@ -2599,7 +2409,6 @@ var $eXeOca = {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
             }
-
             return ostr;
         } catch (ex) {
             return '';
@@ -2609,10 +2418,9 @@ var $eXeOca = {
     Decrypt1: function (game) {
         var selectsGame = []
         for (var i = 0; i < game.selectsGame.length; i++) {
-            var mquestion = $eXeOca.getCuestionDesEncriptada(game.selectsGame[i]);
+            var mquestion = $eXeOca.getDecrytepQuestion(game.selectsGame[i]);
             selectsGame.push(mquestion);
         }
-
         var data = {
             'asignatura': '',
             "author": '',
@@ -2641,11 +2449,10 @@ var $eXeOca = {
             'textAfter': game.textAfter,
             "versionGameOca": game.versionGameOca
         }
-
         return data;
     },
 
-    getCuestionDesEncriptada: function (q) {
+    getDecrytepQuestion: function (q) {
         var p = new Object(),
             qs = unescape(window.atob(q.s)),
             len = q.q.length.toString();
@@ -2676,9 +2483,9 @@ var $eXeOca = {
         p.x = q.x;
         p.y = q.y;
         p.fVideo = q.z;
+        p.audio = q.ad
         return p;
     },
-
 
     getIDYoutube: function (url) {
         var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
@@ -2765,7 +2572,7 @@ var $eXeOca = {
         clearInterval(mOptions.counterClock);
         var ts = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 3000;
         setTimeout(function () {
-            $eXeOca.preguntaRespondida(correct, instance);
+            $eXeOca.questionAnswer(correct, instance);
         }, ts);
 
     },
@@ -2781,6 +2588,7 @@ var $eXeOca = {
         });
         $('#ocaAutorLicence-' + instance).show();
     },
+
     drawImage: function (image, mData) {
         $(image).css({
             'left': mData.x + 'px',
@@ -2789,6 +2597,7 @@ var $eXeOca = {
             'height': mData.h + 'px'
         });
     },
+
     placeImageWindows: function (image, naturalWidth, naturalHeight) {
         var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
             hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
@@ -2814,6 +2623,7 @@ var $eXeOca = {
             y: yImagen
         }
     },
+
     ramdonOptions: function (instance) {
         var mOptions = $eXeOca.options[instance],
             l = 0,
@@ -2856,6 +2666,7 @@ var $eXeOca = {
         }
         mOptions.question.solution = solucionesNuevas;
     },
+
     drawQuestions: function (instance) {
         var mOptions = $eXeOca.options[instance],
             bordeColors = [$eXeOca.borderColors.red, $eXeOca.borderColors.blue, $eXeOca.borderColors.green, $eXeOca.borderColors.yellow];
@@ -2877,6 +2688,7 @@ var $eXeOca = {
             }
         });
     },
+
     drawSolution: function (instance) {
         var mOptions = $eXeOca.options[instance],
             mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
@@ -2925,6 +2737,7 @@ var $eXeOca = {
             $(this).css(css);
         });
     },
+
     clearQuestions: function (instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.respuesta = "";
@@ -2938,6 +2751,7 @@ var $eXeOca = {
             }).text('');
         });
     },
+
     exitFullscreen: function () {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -2949,6 +2763,7 @@ var $eXeOca = {
             document.webkitExitFullscreen();
         }
     },
+
     getFullscreen: function (element) {
         if (element.requestFullscreen) {
             element.requestFullscreen();
@@ -2960,6 +2775,7 @@ var $eXeOca = {
             element.msRequestFullscreen();
         }
     },
+
     toggleFullscreen: function (element, instance) {
         var element = element || document.documentElement;
         if (!document.fullscreenElement && !document.mozFullScreenElement &&
