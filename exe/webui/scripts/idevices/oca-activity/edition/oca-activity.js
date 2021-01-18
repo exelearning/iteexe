@@ -280,7 +280,7 @@ var $exeDevice = {
     },
     removeQuestion: function (num) {
         if ($exeDevice.selectsGame.length < 2) {
-            $exeDevice.showMessage(msgs.msgEOneQuestion);
+            $exeDevice.showMessage( $exeDevice.msgs.msgEOneQuestion);
             return;
         } else {
             $exeDevice.selectsGame.splice($exeDevice.active, 1);

@@ -300,7 +300,7 @@ var $eXeTrivial = {
                     <a href="#" id="trivialStartGame-' + instance + '" class="trivial-StartGame">Iniciar partida</a>\
                 </div>\
                 <div class="trivial-Message" id="trivialMessage-' + instance + '">\
-                    <img class="trivial-MessageImage" id="trivialMessageImage-' + instance + '" src="' + path + 'trivialllave.png"\
+                    <img class="trivial-MessageImage" id="trivialMessageImage-' + instance + '" src="' + path + 'trivialIcon.png"\
                         alt="Image" />\
                     <p id="trivialPMessage-' + instance + '"></p>\
                 </div>\

@@ -65,8 +65,8 @@ var $exeDevice = {
         "msgYouLastScore": _("The last score saved is"),
         "msgOption": _("Option"),
         "msgImage": _("Image"),
-        "mgsOrders": _("Por favor, ordena todas las opciones"),
-        "msgIndicateWord": _("Debes escribir una palabra o una frase"),
+        "msgOrders": _("Please order the answers"),
+        "msgIndicateWord": _("Provide a word or phrase"),
         "msgGameStarted": _("El juego ya ha comenzado"),
         "msgPlayersName": _("Debes indicar un nombre para todos los jugadores seleccionados"),
         "msgReboot": _("¿Deseas reiniciar el juego?"),
@@ -113,11 +113,10 @@ var $exeDevice = {
         msgs.msgStartWith = _("Starts with %1");
         msgs.msgContaint = _("Contains letter %1");
         msgs.msgVideoNotAvailable = _("This video is not currently available");
-        msgs.msgSilentPoint = _("El tiempo de silencio es incorrecto. Compruebe la duración del vídeo");
-        msgs.msgTypeChoose = _("Por favor, marque todas las opciones en el orden correcto");
-        msgs.msgTimeFormat = _("Indique el tiempo en el siguientes formato: hh:mm:ss");
-        msgs.msgProvideSolution = _("Por favor, escriba una solución");
-        msgs.msgEOneQuestion = _("Al menos debe haber una pregunta");
+        msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
+        msgs.msgTypeChoose = _("Please check all the answers in the right order");
+        msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
+        msgs.msgProvideSolution = _("Please write the solution");
         msgs.msgNameThemes = _('Debes indicar un nombre para todos los temas seleccionados');
         msgs.msgCmpleteAllQuestions = _('Debes completar correctamente todas  las cuestiones de todos los temas seleccionados');
         msgs.msgGameIntrunctions = _("Lanza el dado y contesta a la pregunta hasta completar todos los quesos");
@@ -246,7 +245,7 @@ var $exeDevice = {
     },
     removeQuestion: function (num) {
         if ($exeDevice.temas[$exeDevice.activeTema].length < 2) {
-            $exeDevice.showMessage(msgs.msgEOneQuestion);
+            $exeDevice.showMessage($exeDevice.msgs.msgEOneQuestion);
             return;
         } else {
             $exeDevice.temas[$exeDevice.activeTema].splice($exeDevice.activesQuestions[$exeDevice.activeTema], 1);
@@ -1366,7 +1365,7 @@ var $exeDevice = {
         p.eText = tinyMCE.get('trivialEText').getContent();
         p.quextion = $('#trivialEQuestion').val().trim();
         p.options = [];
-        p.solution = $('#selecionESolutionSelect').text().trim();
+        p.solution = $('#trivialESolutionSelect').text().trim();
         p.solutionQuestion = $('#trivialESolutionWord').val();
         p.percentageShow = parseInt($('#trivialPercentageShow').val());
         var optionEmpy = false;
@@ -1444,9 +1443,7 @@ var $exeDevice = {
             }
         }
         return html;
-
     },
-
 
     createlinksAudio: function (dataGame) {
         var html = '';
