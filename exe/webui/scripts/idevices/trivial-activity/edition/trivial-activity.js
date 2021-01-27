@@ -499,7 +499,7 @@ var $exeDevice = {
         });
     },
 
-    stopSound() {
+    stopSound: function() {
         if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
             $exeDevice.playerAudio.pause();
         }

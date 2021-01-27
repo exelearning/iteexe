@@ -147,6 +147,9 @@ var $eXeSelecciona = {
         var mOptions = $eXeSelecciona.options[instance],
             message = '',
             score = ((mOptions.scoreGame * 10) / mOptions.scoreTotal).toFixed(2);
+        if (mOptions.order == 2) {
+            score = mOptions.score / 10;
+        }
         if (mOptions.gameStarted || mOptions.gameOver) {
             if (typeof $eXeSelecciona.mScorm != 'undefined') {
                 if (!auto) {
@@ -184,7 +187,6 @@ var $eXeSelecciona = {
     loadGame: function () {
         $eXeSelecciona.options = [];
         $eXeSelecciona.activities.each(function (i) {
-
             var version = $(".selecciona-version", this).eq(0).text(),
                 dl = $(".selecciona-DataGame", this),
                 imagesLink = $('.selecciona-LinkImages', this),
@@ -405,6 +407,7 @@ var $eXeSelecciona = {
         var json = $eXeSelecciona.Decrypt(data.text()),
             mOptions = $eXeSelecciona.isJsonString(json);
         version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
+
         mOptions.gameOver = false;
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
@@ -414,6 +417,10 @@ var $eXeSelecciona = {
         mOptions.scoreGame = 0;
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
             mOptions.selectsGame[i].audio = typeof mOptions.selectsGame[i].audio == 'undefined' ? '' : mOptions.selectsGame[i].audio
+            mOptions.selectsGame[i].hit = typeof mOptions.selectsGame[i].hit == "undefined" ? 0 : mOptions.selectsGame[i].hit;
+            mOptions.selectsGame[i].error = typeof mOptions.selectsGame[i].error == "undefined" ? 0 : mOptions.selectsGame[i].error;
+            mOptions.selectsGame[i].msgHit = typeof mOptions.selectsGame[i].msgHit == "undefined" ? "" : mOptions.selectsGame[i].msgHit;
+            mOptions.selectsGame[i].msgError = typeof mOptions.selectsGame[i].msgError == "undefined" ? "" : mOptions.selectsGame[i].msgError;
             if (mOptions.selectsGame[i].type == 2) {
                 mOptions.hasVideo = true;
             }
@@ -425,6 +432,11 @@ var $eXeSelecciona = {
         mOptions.gameMode = typeof mOptions.gameMode != 'undefined' ? mOptions.gameMode : 0;
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
+        mOptions.customMessages = typeof mOptions.customMessages != "undefined" ? mOptions.customMessages : false;
+        if (typeof mOptions.order == "undefined") {
+            mOptions.order = mOptions.optionsRamdon ? 1 : 0;
+        }
+        mOptions.customMessages = mOptions.order == 2 ? true : mOptions.customMessages;
         mOptions.gameOver = false;
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
@@ -453,7 +465,7 @@ var $eXeSelecciona = {
                 mOptions.scoreTotal += mOptions.selectsGame[i].customScore
             }
         }
-        mOptions.selectsGame = mOptions.optionsRamdon ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
+        mOptions.selectsGame = mOptions.order == 1 ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
         mOptions.numberQuestions = mOptions.selectsGame.length;
         return mOptions;
     },
@@ -546,7 +558,7 @@ var $eXeSelecciona = {
                 $eXeSelecciona.playVideoIntro(instance);
                 $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
             }, 1000);
-         
+
         }
     },
 
@@ -582,11 +594,11 @@ var $eXeSelecciona = {
 
     },
     onPlayerReady: function (event) {
-        var video=event.target.h.id;
-        video=video.split("-");
-        if(video.length==2 && (video[0]=="seleccionaVideo" || video[0]=="seleccionaVideoIntro" )){
-            var instance=parseInt(video[1]);
-            if(!isNaN(instance)){
+        var video = event.target.h.id;
+        video = video.split("-");
+        if (video.length == 2 && (video[0] == "seleccionaVideo" || video[0] == "seleccionaVideoIntro")) {
+            var instance = parseInt(video[1]);
+            if (!isNaN(instance)) {
                 $eXeSelecciona.preloadGame(instance);
             }
 
@@ -708,7 +720,7 @@ var $eXeSelecciona = {
         });
         $('#seleccionaBtnMoveOn-' + instance).on('click', function (e) {
             e.preventDefault();
-            $eXeSelecciona.newQuestion(instance)
+            $eXeSelecciona.newQuestion(instance, false, false)
         });
         $('#seleccionaBtnReply-' + instance).on('click', function (e) {
             e.preventDefault();
@@ -771,7 +783,6 @@ var $eXeSelecciona = {
 
         $('#seleccionaVideoIntroClose-' + instance).on('click', function (e) {
             e.preventDefault();
-            console.log(mOptions.msgs.msgPlayStart)
             $('#seleccionaVideoIntroDiv-' + instance).hide();
             $('#selecionaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
             $eXeSelecciona.startVideoIntro('', 0, 0, instance);
@@ -808,7 +819,7 @@ var $eXeSelecciona = {
     },
     getYTAPI: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
-        mOptions.selectsGame = mOptions.optionsRamdon ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
+        mOptions.selectsGame = mOptions.order == 1 ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
         if ((typeof (mOptions.player) == "undefined") && mOptions.hasVideo) {
             $('#seleccionaStartGame-' + instance).text(mOptions.msgs.msgLoading);
             mOptions.waitStart = true;
@@ -834,7 +845,6 @@ var $eXeSelecciona = {
 
         } else {
             $eXeSelecciona.playVideoIntro(instance);
-            console.log('getYTVideoIntro',2);
         }
     },
     changeQuextion: function (instance, button) {
@@ -1040,14 +1050,16 @@ var $eXeSelecciona = {
                     var timeShowSolution = 1000;
                     if (mOptions.showSolution) {
                         timeShowSolution = mOptions.timeShowSolution * 1000;
-                        if (mOptions.selectsGame[mOptions.activeQuestion].typeSelect != 2) {
-                            $eXeSelecciona.drawSolution(instance);
-                        } else {
-                            $eXeSelecciona.drawPhrase(mOptions.selectsGame[mOptions.activeQuestion].solutionQuestion, mOptions.selectsGame[mOptions.activeQuestion].quextion, 100, 1, false, instance)
+                        if (!$eXeSelecciona.sameQuestion(false,instance)) {
+                            if (mOptions.selectsGame[mOptions.activeQuestion].typeSelect != 2) {
+                                $eXeSelecciona.drawSolution(instance);
+                            } else {
+                                $eXeSelecciona.drawPhrase(mOptions.selectsGame[mOptions.activeQuestion].solutionQuestion, mOptions.selectsGame[mOptions.activeQuestion].quextion, 100, 1, false, instance)
+                            }
                         }
                     }
                     setTimeout(function () {
-                        $eXeSelecciona.newQuestion(instance)
+                        $eXeSelecciona.newQuestion(instance, false, false)
                     }, timeShowSolution);
                     return;
                 }
@@ -1060,7 +1072,7 @@ var $eXeSelecciona = {
         $('#seleccionaPErrors-' + instance).text(mOptions.errors);
         $('#seleccionaPScore-' + instance).text(mOptions.score);
         mOptions.gameStarted = true;
-        $eXeSelecciona.newQuestion(instance);
+        $eXeSelecciona.newQuestion(instance, false, true);
     },
     updateSoundVideo: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
@@ -1362,13 +1374,13 @@ var $eXeSelecciona = {
         }
     },
 
-    newQuestion: function (instance) {
+    newQuestion: function (instance, correctAnswer, start) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.useLives && mOptions.livesLeft <= 0) {
             $eXeSelecciona.gameOver(1, instance);
             return;
         }
-        var mActiveQuestion = $eXeSelecciona.updateNumberQuestion(mOptions.activeQuestion, instance);
+        var mActiveQuestion = $eXeSelecciona.updateNumberQuestion(mOptions.activeQuestion, correctAnswer, start, instance);
         if (mActiveQuestion === -10) {
             $('#seleccionaPNumber-' + instance).text('0');
             $eXeSelecciona.gameOver(0, instance);
@@ -1389,12 +1401,37 @@ var $eXeSelecciona = {
         var times = [15, 30, 60, 180, 300, 600]
         return times[iT];
     },
-    updateNumberQuestion: function (numq, instance) {
+    updateNumberQuestion: function (numq, correct, start, instance) {
         var mOptions = $eXeSelecciona.options[instance],
             numActiveQuestion = numq;
-        numActiveQuestion++;
-        if (numActiveQuestion >= mOptions.numberQuestions) {
-            return -10
+        if (mOptions.order == 2) {
+            if (start) {
+                numq = 0;
+            }
+            if ((correct && mOptions.selectsGame[numq].hit == -2) || (!correct && mOptions.selectsGame[numq].error == -2)) {
+                return -10
+            } else if ((correct && mOptions.selectsGame[numq].hit == -1) || (!correct && mOptions.selectsGame[numq].error == -1)) {
+                numActiveQuestion++;
+                if (numActiveQuestion >= mOptions.numberQuestions) {
+                    return -10
+                }
+            } else if (correct && mOptions.selectsGame[numq].hit >= 0) {
+                numActiveQuestion =  mOptions.selectsGame[numq].hit;
+                if (numActiveQuestion >= mOptions.numberQuestions) {
+                    return -10
+                }
+            }else if(!correct && mOptions.selectsGame[numq].error >= 0) {
+                numActiveQuestion =  mOptions.selectsGame[numq].error;
+                if (numActiveQuestion >= mOptions.numberQuestions) {
+                    return -10
+                }
+            }
+
+        } else {
+            numActiveQuestion++;
+            if (numActiveQuestion >= mOptions.numberQuestions) {
+                return -10
+            }
         }
         mOptions.activeQuestion = numActiveQuestion;
         return numActiveQuestion;
@@ -1466,16 +1503,25 @@ var $eXeSelecciona = {
         }
         if (mOptions.showSolution) {
             timeShowSolution = mOptions.timeShowSolution * 1000;
-            if (quextion.typeSelect != 2) {
-                $eXeSelecciona.drawSolution(instance);
-            } else {
-                var mtipe=correct?2:1;
-                $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance)
+            if (!$eXeSelecciona.sameQuestion(correct,instance)) {
+                if (quextion.typeSelect != 2) {
+                    $eXeSelecciona.drawSolution(instance);
+                } else {
+                    var mtipe = correct ? 2 : 1;
+                    $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance)
+                }
             }
+
         }
+
         setTimeout(function () {
-            $eXeSelecciona.newQuestion(instance)
+            $eXeSelecciona.newQuestion(instance, correct, false)
         }, timeShowSolution);
+    },
+    sameQuestion: function (correct, instance) {
+        var mOptions = $eXeSelecciona.options[instance],
+            q = mOptions.selectsGame[mOptions.activeQuestion];
+        return ((correct && q.hits == mOptions.activeQuestion) || (!correct && q.error == mOptions.activeQuestion))
     },
 
     updateScore: function (correctAnswer, instance) {
@@ -1484,43 +1530,42 @@ var $eXeSelecciona = {
             message = "",
             obtainedPoints = 0,
             type = 1,
-            msgs = mOptions.msgs,
-            sscore = 0;
-        var pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+            sscore = 0,
+            points = 0;
         if (correctAnswer) {
             mOptions.hits++
             if (mOptions.gameMode == 0) {
                 var pointsTemp = mOptions.counter < 60 ? mOptions.counter * 10 : 600;
                 obtainedPoints = 1000 + pointsTemp;
                 obtainedPoints = quextion.customScore * obtainedPoints;
-                message = $eXeSelecciona.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' ' + pts;
-
+                points = obtainedPoints;
             } else if (mOptions.gameMode == 1) {
                 obtainedPoints = ((10 * quextion.customScore) / mOptions.scoreTotal);
-                var points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
-                message = $eXeSelecciona.getRetroFeedMessages(true, instance) + ' ' + points + ' ' + pts;
-
+                if (mOptions.order == 2) {
+                    obtainedPoints = ((quextion.customScore) / 10);
+                }
+                points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
             } else if (mOptions.gameMode == 2) {
                 obtainedPoints = ((10 * quextion.customScore) / mOptions.scoreTotal);
-                message = $eXeSelecciona.getRetroFeedMessages(true, instance);
+                if (mOptions.order == 2) {
+                    obtainedPoints = ((quextion.customScore) / 10);
+                }
+                points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
             }
             type = 2;
             mOptions.scoreGame += quextion.customScore;
-
         } else {
             mOptions.errors++;
             if (mOptions.gameMode != 0) {
                 message = "";
             } else {
                 obtainedPoints = -330 * quextion.customScore;
-                message = ' ' + msgs.msgLoseT;
+                points = obtainedPoints;
                 if (mOptions.useLives) {
                     mOptions.livesLeft--;
                     $eXeSelecciona.updateLives(instance);
-                    message = ' ' + msgs.msgLoseLive;
                 }
             }
-            message = $eXeSelecciona.getRetroFeedMessages(obtainedPoints > 0, instance) + message;
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
         sscore = mOptions.score;
@@ -1530,19 +1575,51 @@ var $eXeSelecciona = {
         $('#seleccionaPScore-' + instance).text(sscore);
         $('#qseleccionaPHits-' + instance).text(mOptions.hits);
         $('#seleccionaPErrors-' + instance).text(mOptions.errors);
+        message = $eXeSelecciona.getMessageAnswer(correctAnswer, points, instance);
         $eXeSelecciona.showMessage(type, message, instance);
 
     },
-    reduceText: function (text) {
-        var rText = text;
-        for (var i = 8; i < 40; i++) {
-            var normal = i + 'pt';
-            var re = new RegExp(normal, "gi");
-            var reducido = (i - 3) + 'pt';
-            rText = rText.replace(re, reducido)
+    getMessageAnswer: function (correctAnswer, npts, instance) {
+        var message = "";
+        if (correctAnswer) {
+            message = $eXeSelecciona.getMessageCorrectAnswer(npts, instance);
+        } else {
+            message = $eXeSelecciona.getMessageErrorAnswer(npts, instance);
         }
-        return rText;
+        return message;
     },
+    getMessageCorrectAnswer(npts, instance) {
+        var mOptions = $eXeSelecciona.options[instance],
+            messageCorrect = $eXeSelecciona.getRetroFeedMessages(true, instance),
+            message = "",
+            pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (mOptions.customMessages && mOptions.selectsGame[mOptions.activeQuestion].msgHit.length > 0) {
+            message = mOptions.selectsGame[mOptions.activeQuestion].msgHit
+            message = mOptions.gameMode < 2 ? message + '. ' + npts + ' ' + pts : message;
+        } else {
+            message = mOptions.gameMode == 2 ? messageCorrect : messageCorrect + ' ' + npts + ' ' + pts;
+        }
+        return message;
+    },
+
+    getMessageErrorAnswer(npts, instance) {
+        var mOptions = $eXeSelecciona.options[instance],
+            messageError = $eXeSelecciona.getRetroFeedMessages(false, instance),
+            message = "",
+            pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (mOptions.customMessages && mOptions.selectsGame[mOptions.activeQuestion].msgError.length > 0) {
+            message = mOptions.selectsGame[mOptions.activeQuestion].msgError;
+            if (mOptions.gameMode != 2) {
+                message = mOptions.useLives ? message + '. ' + mOptions.msgs.msgLoseLive : message + '. ' + npts + ' ' + pts;
+            }
+        } else {
+            message = mOptions.useLives ? messageError + ' ' + mOptions.msgs.msgLoseLive : messageError + ' ' + npts + ' ' + pts;
+            message = mOptions.gameMode > 0 ? messageError : message;
+
+        }
+        return message;
+    },
+
     showMessage: function (type, message, instance) {
         var colors = ['#555555', $eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.yellow],
             mcolor = colors[type],
@@ -1590,7 +1667,6 @@ var $eXeSelecciona = {
         var mOptions = $eXeSelecciona.options[instance],
             l = 0,
             letras = "ABCD";
-
         if (mOptions.question.typeSelect == 1) {
             return;
         }
@@ -1628,6 +1704,7 @@ var $eXeSelecciona = {
         }
         mOptions.question.solution = solucionesNuevas;
     },
+
     drawQuestions: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
             bordeColors = [$eXeSelecciona.borderColors.red, $eXeSelecciona.borderColors.blue, $eXeSelecciona.borderColors.green, $eXeSelecciona.borderColors.yellow];
@@ -1649,6 +1726,7 @@ var $eXeSelecciona = {
             }
         });
     },
+
     drawSolution: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
             mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
@@ -1697,6 +1775,7 @@ var $eXeSelecciona = {
             $(this).css(css);
         });
     },
+
     clearQuestions: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         mOptions.respuesta = "";
@@ -1710,6 +1789,7 @@ var $eXeSelecciona = {
             }).text('');
         });
     },
+
     exitFullscreen: function () {
         if (document.exitFullscreen) {
             document.exitFullscreen();

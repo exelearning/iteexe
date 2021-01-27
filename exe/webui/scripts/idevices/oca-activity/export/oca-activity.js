@@ -2390,7 +2390,7 @@ var $eXeOca = {
 
     },
 
-    stopSound(instance) {
+    stopSound: function(instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();

@@ -113,6 +113,8 @@ var $exeDevice = {
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
         msgs.msgEProvideWord = _("Please provide one word or phrase");
+        msgs.msgStartWith = _("Starts with %1");
+        msgs.msgContaint = _("Contains letter %1");
         msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgEUnavailableVideo = _("This video is not currently available")
         msgs.msgECompleteQuestion = _("You have to complete the question");
@@ -128,6 +130,8 @@ var $exeDevice = {
         msgs.msgProvideSolution = _("Please write the solution");
         msgs.msgEDefintion = _("Please provide the word definition");
         msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
+        msgs.msgNotHitCuestion = _('La cuestión marcada como próxima en caso de acierto no existe no existe');
+        msgs.msgNotErrorCuestion = _('La cuestión marcada como próxima en caso de error no existe no existe');
 
     },
     loadYoutubeApi: function () {
@@ -270,7 +274,6 @@ var $exeDevice = {
     },
 
     stopVideo: function () {
-
         if ($exeDevice.player) {
             clearInterval($exeDevice.timeUpdateInterval);
             if (typeof $exeDevice.player.pauseVideo === "function") {
@@ -294,6 +297,8 @@ var $exeDevice = {
     },
 
     playSound: function (selectedFile) {
+        console.log(selectedFile);
+        selectedFile=$exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectedFile);
         $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
             $exeDevice.playerAudio.play();
@@ -319,13 +324,13 @@ var $exeDevice = {
             $('#seleccionaEPaste').hide();
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
             $('#seleccionaENumberQuestion').text($exeDevice.selectsGame.length);
-
+            $exeDevice.updateSelectOrder();
         }
     },
 
-    removeQuestion: function (num) {
+    removeQuestion: function () {
         if ($exeDevice.selectsGame.length < 2) {
-            $exeDevice.showMessage(msgs.msgEOneQuestion);
+            $exeDevice.showMessage($exeDevice.msgs.msgEOneQuestion);
             return;
         } else {
             $exeDevice.selectsGame.splice($exeDevice.active, 1);
@@ -337,8 +342,8 @@ var $exeDevice = {
             $('#seleccionaEPaste').hide();
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
             $('#seleccionaENumberQuestion').text($exeDevice.active + 1);
+            $exeDevice.updateSelectOrder();
         }
-
     },
 
     copyQuestion: function () {
@@ -347,7 +352,6 @@ var $exeDevice = {
             $exeDevice.clipBoard = $exeDevice.selectsGame[$exeDevice.active];
             $('#seleccionaEPaste').show();
         }
-
     },
 
     cutQuestion: function () {
@@ -355,7 +359,6 @@ var $exeDevice = {
             $exeDevice.numberCutCuestion = $exeDevice.active;
             $exeDevice.typeEdit = 1;
             $('#seleccionaEPaste').show();
-
         }
     },
 
@@ -419,16 +422,49 @@ var $exeDevice = {
             }
         }
     },
+    updateSelectOrder: function () {
 
+        $('#seleccionaGotoCorrect').find('option').remove();
+        $('#seleccionaGotoCorrect').append($('<option>', {
+            value: -2,
+            text: _('End')
+        }));
+        $('#seleccionaGotoCorrect').append($('<option>', {
+            value: -1,
+            text: _('Next')
+        }));
+        for (var j = 0; j < $exeDevice.selectsGame.length; j++) {
+            $('#seleccionaGotoCorrect').append($('<option>', {
+                value: j,
+                text: '' + (j + 1)
+            }));
+        }
+        $('#seleccionaGotoCorrect').val($exeDevice.selectsGame[$exeDevice.active].hit);
+
+        $('#seleccionaGotoIncorrect').find('option').remove();
+        $('#seleccionaGotoIncorrect').append($('<option>', {
+            value: -2,
+            text: _('End')
+        }));
+        $('#seleccionaGotoIncorrect').append($('<option>', {
+            value: -1,
+            text: _('Next')
+        }));
+        for (var i = 0; i < $exeDevice.selectsGame.length; i++) {
+            $('#seleccionaGotoIncorrect').append($('<option>', {
+                value: i,
+                text: '' + (i + 1)
+            }));
+        }
+        $('#seleccionaGotoIncorrect').val($exeDevice.selectsGame[$exeDevice.active].error);
+
+    },
     showQuestion: function (i) {
         $exeDevice.clearQuestion();
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.selectsGame.length ? $exeDevice.selectsGame.length - 1 : num;
         var p = $exeDevice.selectsGame[num],
             numOptions = 0;
-        p.typeSelect = p.typeSelect ? p.typeSelect : 0;
-        p.solutionQuestion = p.solutionQuestion && p.solutionQuestion != "undefined" ? p.solutionQuestion : '';
-        p.percentageShow = p.percentageShow && typeof p.percentageShow != "undefined" ? p.percentageShow : 35;
         if (p.typeSelect != 2) {
             $('.gameQE-EAnwersOptions').each(function (j) {
                 numOptions++;
@@ -482,6 +518,10 @@ var $exeDevice = {
             $exeDevice.playSound(p.audio.trim());
         }
         $('#seleccionaEURLAudio').val(p.audio);
+        $('#seleccionaGotoCorrect').val(p.hit);
+        $('#seleccionaGotoIncorrect').val(p.error);
+        $('#seleccionaEMessageOK').val(p.msgHit);
+        $('#seleccionaEMessageKO').val(p.msgError);
         $('#seleccionaENumberQuestion').text(i + 1);
         $('#seleccionaEScoreQuestion').val(1);
         if (typeof (p.customScore) != "undefined") {
@@ -566,6 +606,7 @@ var $exeDevice = {
             'height': mData.h + 'px'
         });
     },
+
     showImage: function (url, x, y, alt, type) {
         var $image = $('#seleccionaEImage'),
             $cursor = $('#seleccionaECursor');
@@ -573,11 +614,12 @@ var $exeDevice = {
         $cursor.hide();
         $image.attr('alt', alt);
         $('#seleccionaENoImage').show();
+        url=$exeDevice.extractURLGD(url);
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                     if (type == 1) {
-                        $exeDevice.showMessage(msgs.msgEURLValid);
+                        $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                     }
                     return false;
                 } else {
@@ -590,11 +632,12 @@ var $exeDevice = {
                 }
             }).on('error', function () {
                 if (type == 1) {
-                    $exeDevice.showMessage(msgs.msgEURLValid);
+                    $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                 }
                 return false;
             });
     },
+
     paintMouse: function (image, cursor, x, y) {
         $(cursor).hide();
         if (x > 0 || y > 0) {
@@ -639,6 +682,8 @@ var $exeDevice = {
         $('.gameQE-EAnwersOptions').each(function () {
             $(this).val('');
         });
+        $('#seleccionaEMessageOK').val('');
+        $('#seleccionaEMessageKO').val('');
     },
     hourToSeconds: function (str) {
         var i = str.split(':');
@@ -757,7 +802,18 @@ var $exeDevice = {
                                     <label for="seleccionaEShowMinimize"><input type="checkbox" id="seleccionaEShowMinimize">' + _("Show minimized.") + '</label>\
                                 </p>\
                                 <p>\
-                                    <label for="seleccionaEQuestionsRamdon"><input type="checkbox" id="seleccionaEQuestionsRamdon">' + _("Random questions") + '</label>\
+                                    <label>' + _("Orden de las preguntas") + ': </label>\
+                                    <input class="gameQE-TypeOrder" checked="checked" id="seleccionaEOrderLinear" type="radio" name="slcgameorder" value="0" />\
+                                    <label for="seleccionaEOrderLinear">' + _("Lineal") + '</label>\
+                                    <input class="gameQE-TypeOrder"  id="seleccionaEOrderRamdon" type="radio" name="slcgameorder" value="1" />\
+                                    <label for="seleccionaEOrderRamdon">' + _("Azar") + '</label>\
+                                    <input class="gameQE-TypeOrder"  id="seleccionaEOrderThree" type="radio" name="slcgameorder" value="2" />\
+                                    <label for="seleccionaEOrderThree">' + _("Árbol") + '</label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaECustomMessages"><input type="checkbox" id="seleccionaECustomMessages">' + _("Custom messages") + '. </label>\
+                                </p>\
+                                <p>\
                                     <label for="seleccionaEAnswersRamdon"><input type="checkbox" id="seleccionaEAnswersRamdon">' + _("Random options") + '</label>\
                                 </p>\
                                 <p>\
@@ -768,10 +824,11 @@ var $exeDevice = {
                                     <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
                                 </p>\
                                 <p>\
+                                    <label>' + _("Tipo de actividad") + ': </label>\
                                     <input class="gameQE-TypeGame" checked="checked" id="seleccionaEGameMode" type="radio" name="slcgamemode" value="0" />\
                                     <label for="seleccionaEGameMode">' + _("Game") + '</label>\
                                     <input class="gameQE-TypeGame"  id="seleccionaETypeActivity" type="radio" name="slcgamemode" value="1" />\
-                                    <label for="seleccionaETypeActivity">' + _("Activity") + '</label>\
+                                    <label for="seleccionaETypeActivity">' + _("Ejercicio") + '</label>\
                                     <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="slcgamemode" value="2" />\
                                     <label for="seleccionaETypeReto">' + _("Challenge") + '</label>\
                                 </p>\
@@ -947,6 +1004,30 @@ var $exeDevice = {
                                     <div class="gameQE-ESolutionWord"><label for="seleccionaEDefinitionWord">' + _("Definition") + ': </label><input type="text"  id="seleccionaEDefinitionWord"/></div>\
                                 </div>\
                             </div>\
+                            <div class="gameQE-EOrders" id="seleccionaEOrder">\
+                                <div class="gameQE-ESolutionWord>\
+                                    <span class="sr-av"></span><span class="gameQE-EHit"></span>\
+                                    <label for="seleccionaEMessageOK">' + _("Mensaje") + ':</label>\
+                                    <input type="text" class=""  id="seleccionaEMessageOK">\
+                                    <label for="seleccionaGotoCorrect">' + _("Ir") + ':</label>\
+                                    <select name="seleccionaGotoCorrect" id="seleccionaGotoCorrect">\
+                                        <option value="-2">' + _('End') + '</option>\
+                                        <option value="-1" selected>' + _('Next') + '</option>\
+                                        <option value="0">' + 1 + '</option>\
+                                    </select>\
+                                </div>\
+                                <div class="gameQE-ESolutionWord>\
+                                    <span class="sr-av"></span><span class="gameQE-EError"></span>\
+                                    <label for="seleccionaEMessageKO">' + _("Message") + ':</label>\
+                                    <input type="text" class=""  id="seleccionaEMessageKO">\
+                                    <label for="seleccionaGotoIncorrect">' + _("Ir") + ':</label>\
+                                    <select name="seleccionaGotoIncorrect" id="seleccionaGotoIncorrect">\
+                                        <option value="-2">' + _('End') + '</option>\
+                                        <option value="-1" selected>' + _('Next') + '</option>\
+                                        <option value="0">' + 1 + '</option>\
+                                    </select>\
+                                </div>\
+                            </div>\
                             <div class="gameQE-ENavigationButtons">\
                                 <a href="#" id="seleccionaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="seleccionaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
@@ -1025,6 +1106,10 @@ var $exeDevice = {
         $("#seleccionaMediaNormal").prop("disabled", false);
         $("#seleccionaMediaImage").prop("disabled", false);
         $("#seleccionaMediaText").prop("disabled", false);
+        $('#seleccionaGotoCorrect').hide();
+        $('#seleccionaGotoIncorrect').hide();
+        $('label[for="seleccionaGotoCorrect"]').hide();
+        $('label[for="seleccionaGotoIncorrect"]').hide();
         if ($exeDevice.selectsGame.length == 0) {
             var question = $exeDevice.getCuestionDefault();
             $exeDevice.selectsGame.push(question);
@@ -1037,6 +1122,7 @@ var $exeDevice = {
     },
     getCuestionDefault: function () {
         var p = new Object();
+        p.typeSelect = 0;
         p.type = 0;
         p.time = 0;
         p.numberOptions = 4;
@@ -1051,8 +1137,8 @@ var $exeDevice = {
         p.fVideo = 0;
         p.eText = '';
         p.quextion = '';
-        p.options = [],
-            p.options.push('');
+        p.options = [];
+        p.options.push('');
         p.options.push('');
         p.options.push('');
         p.options.push('');
@@ -1061,6 +1147,10 @@ var $exeDevice = {
         p.tSilentVideo = 0;
         p.solutionWord = '';
         p.audio = '';
+        p.hit = -1;
+        p.error = -1;
+        p.msgHit = '';
+        p.msgError = '';
         return p;
     },
     validTime: function (time) {
@@ -1133,11 +1223,9 @@ var $exeDevice = {
             }
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
-
         }
     },
     updateGameMode: function (gamemode, feedback, useLives) {
-
         $("#seleccionaEUseLives").prop('disabled', true);
         $("#seleccionaENumberLives").prop('disabled', true);
         $('#seleccionaEPercentajeFB').prop('disabled', !feedback && gamemode != 2);
@@ -1155,14 +1243,17 @@ var $exeDevice = {
         }
     },
     updateFieldGame: function (game) {
-
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.answersRamdon = game.answersRamdon || false;
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
+        game.customScore = typeof game.customScore == "undefined" ? false : game.customScore;
+        game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
+        if (typeof game.order == "undefined") {
+            game.order = game.optionsRamdon ? 1 : 0;
+        }
         $('#seleccionaEShowMinimize').prop('checked', game.showMinimize);
-        $('#seleccionaEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#seleccionaEAnswersRamdon').prop('checked', game.answersRamdon);
         $('#seleccionaEUseLives').prop('checked', game.useLives);
         $('#seleccionaENumberLives').val(game.numberLives);
@@ -1175,28 +1266,39 @@ var $exeDevice = {
         $('#seleccionaEVIEnd').val($exeDevice.secondsToHour(game.endVideo));
         $('#seleccionaEVIStart').val($exeDevice.secondsToHour(game.startVideo));
         $('#seleccionaECustomScore').prop('checked', game.customScore);
+        $('#seleccionaECustomScore').prop('disabled', game.order == 2);
+        $('#seleccionaECustomMessages').prop('checked', game.customMessages);
+        $('#seleccionaECustomMessages').prop('disabled', game.order == 2);
         $('#seleccionaEScoreQuestionDiv').hide();
         $("#seleccionaEHasFeedBack").prop('checked', game.feedBack);
         $("#seleccionaEPercentajeFB").val(game.percentajeFB);
         $("input.gameQE-TypeGame[name='slcgamemode'][value='" + game.gameMode + "']").prop("checked", true);
+        $("input.gameQE-TypeOrder[name='slcgameorder'][value='" + game.order + "']").prop("checked", true);
         $("#seleccionaEUseLives").prop('disabled', game.gameMode == 0);
         $("#seleccionaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
+        $exeDevice.showSelectOrder(game.order, game.customMessages, game.customScore);
         for (var i = 0; i < game.selectsGame.length; i++) {
             game.selectsGame[i].audio = typeof game.selectsGame[i].audio == "undefined" ? "" : game.selectsGame[i].audio;
+            game.selectsGame[i].hit = typeof game.selectsGame[i].hit == "undefined" ? -1 : game.selectsGame[i].hit;
+            game.selectsGame[i].error = typeof game.selectsGame[i].error == "undefined" ? -1 : game.selectsGame[i].error;
+            game.selectsGame[i].msgHit = typeof game.selectsGame[i].msgHit == "undefined" ? "" : game.selectsGame[i].msgHit;
+            game.selectsGame[i].msgError = typeof game.selectsGame[i].msgError == "undefined" ? "" : game.selectsGame[i].msgError;
+            game.selectsGame[i].typeSelect = typeof game.selectsGame[i].typeSelect == "undefined" ? "" : game.selectsGame[i].typeSelect;
+            game.selectsGame[i].solutionQuestion = typeof game.selectsGame[i].solutionQuestion == "undefined" ? "" : game.selectsGame[i].solutionQuestion;
         }
-        if (game.customScore) {
-            $('#seleccionaEScoreQuestionDiv').show();
-        }
-        $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         if (game.feedBack || game.gameMode == 2) {
             $('#seleccionaEFeedbackP').show();
         } else {
             $('#seleccionaEFeedbackP').hide();
         }
         $('#seleccionaEPercentajeFB').prop('disabled', !game.feedBack);
+        $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.selectsGame = game.selectsGame;
+        $exeDevice.updateSelectOrder();
+        
         $exeDevice.showQuestion($exeDevice.active);
+
 
     },
     isJsonString: function (str) {
@@ -1311,6 +1413,11 @@ var $exeDevice = {
         p.customScore = parseFloat($('#seleccionaEScoreQuestion').val());
         p.url = $('#seleccionaEURLImage').val().trim();
         p.audio = $('#seleccionaEURLAudio').val();
+        p.hit = parseInt($('#seleccionaGotoCorrect').val());
+        p.error = parseInt($('#seleccionaGotoIncorrect').val());
+        p.msgHit = $('#seleccionaEMessageOK').val();
+        p.msgError = $('#seleccionaEMessageKO').val();
+        console.log('validateQuestion', $('#seleccionaGotoCorrect').val(), 'p.hit', p.hit, 'p.error', p.error);
         $exeDevice.stopSound();
         $exeDevice.stopVideo();
         if (p.type == 2) {
@@ -1332,7 +1439,6 @@ var $exeDevice = {
             p.solution = "";
             p.solutionQuestion = $('#seleccionaESolutionWord').val();
         }
-
         p.percentageShow = parseInt($('#seleccionaPercentageShow').val());
         var optionEmpy = false;
         var validExt = ['mp3', 'ogg', 'wav'],
@@ -1378,6 +1484,16 @@ var $exeDevice = {
         if (p.audio.length > 0 && validExt.indexOf(extaudio) == -1) {
             message = _("Supported formats") + '. ' + _('Audio') + ": mp3, ogg, wav";
         }
+        var order = parseInt($('input[name=slcgameorder]:checked').val());
+        if (order == 2) {
+            if (p.hit >= $exeDevice.selectsGame.length) {
+                message = _('La cuestion elegida en caso de acierto no existe');
+            }
+            if (p.error >= $exeDevice.selectsGame.length) {
+                message = _('La cuestion elegida en caso de error no existe');
+            }
+        }
+
         if (message.length == 0) {
             $exeDevice.selectsGame[$exeDevice.active] = p;
             message = true;
@@ -1437,7 +1553,8 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
-    importGame: function (content) {
+
+    importGameOld: function (content) {
         var game = $exeDevice.isJsonString(content);
         if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
@@ -1478,7 +1595,7 @@ var $exeDevice = {
             textAfter = escape(tinyMCE.get('eXeIdeviceTextAfter').getContent()),
             textFeedBack = escape(tinyMCE.get('seleccionaEFeedBackEditor').getContent()),
             showMinimize = $('#seleccionaEShowMinimize').is(':checked'),
-            optionsRamdon = $('#seleccionaEQuestionsRamdon').is(':checked'),
+            optionsRamdon = false,
             answersRamdon = $('#seleccionaEAnswersRamdon').is(':checked'),
             showSolution = $('#seleccionaEShowSolution').is(':checked'),
             timeShowSolution = parseInt(clear($('#seleccionaETimeShowSolution').val())),
@@ -1489,9 +1606,11 @@ var $exeDevice = {
             startVideo = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
             itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
             customScore = $('#seleccionaECustomScore').is(':checked'),
+            customMessages = $('#seleccionaECustomMessages').is(':checked'),
             feedBack = $('#seleccionaEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#seleccionaEPercentajeFB').val())),
-            gameMode = parseInt($('input[name=slcgamemode]:checked').val());
+            gameMode = parseInt($('input[name=slcgamemode]:checked').val()),
+            order = parseInt($('input[name=slcgameorder]:checked').val());
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -1535,12 +1654,12 @@ var $exeDevice = {
         }
         for (var i = 0; i < selectsGame.length; i++) {
             var qt = selectsGame[i]
-            if (qt.type == 1 && qt.url.length < 8) {
+            if (qt.type == 1 && qt.url.length < 4) {
                 qt.x = 0
                 qt.y = 0;
                 qt.author = '';
                 qt.alt = '';
-            } else if (qt.type == 2 && qt.url.length < 8) {
+            } else if (qt.type == 2 && qt.url.length < 4) {
                 qt.iVideo = 0
                 qt.fVideo = 0;
                 qt.author = '';
@@ -1579,7 +1698,9 @@ var $exeDevice = {
             'gameMode': gameMode,
             'feedBack': feedBack,
             'percentajeFB': percentajeFB,
-            'version': 2
+            'order': order,
+            'customMessages': customMessages,
+            'version': 3
         }
         return data;
     },
@@ -1600,7 +1721,7 @@ var $exeDevice = {
             $('#seleccionaPercentage').show();
             $('#selecionaEWordDiv').show();
             $('#seleccionaESolitionOptions').hide();
-            
+
         } else {
             $('#seleccionaEAnswers').show();
             $('#seleccionaEQuestionDiv').show();
@@ -1654,27 +1775,27 @@ var $exeDevice = {
         });
         $('#seleccionaEAdd').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.addQuestion()
+            $exeDevice.addQuestion();
         });
         $('#seleccionaEFirst').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.firstQuestion()
+            $exeDevice.firstQuestion();
         });
         $('#seleccionaEPrevious').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.previousQuestion()
+            $exeDevice.previousQuestion();
         });
         $('#seleccionaENext').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.nextQuestion()
+            $exeDevice.nextQuestion();
         });
         $('#seleccionaELast').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.lastQuestion()
+            $exeDevice.lastQuestion();
         });
         $('#seleccionaEDelete').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.removeQuestion()
+            $exeDevice.removeQuestion();
         });
         $('#seleccionaECopy').on('click', function (e) {
             e.preventDefault();
@@ -1686,7 +1807,7 @@ var $exeDevice = {
         });
         $('#seleccionaEPaste').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.pasteQuestion()
+            $exeDevice.pasteQuestion();
         });
 
         $('#seleccionaEPlayVideo').on('click', function (e) {
@@ -1697,6 +1818,7 @@ var $exeDevice = {
         $(' #seleccionaECheckSoundVideo').on('change', function () {
             $exeDevice.showVideoQuestion();
         });
+
         $('#seleccionaECheckImageVideo').on('change', function () {
             $exeDevice.showVideoQuestion();
         });
@@ -1954,9 +2076,9 @@ var $exeDevice = {
         $('#seleccionaEPlayAudio').on('click', function (e) {
             e.preventDefault();
             var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $('#seleccionaEURLAudio').val(),
+                selectedFile = $('#seleccionaEURLAudio').val().trim(),
                 ext = selectedFile.split('.').pop().toLowerCase();
-            if (validExt.indexOf(ext) == -1) {
+            if (selectedFile.length==0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {
                 if (selectedFile.length > 4) {
@@ -1967,10 +2089,8 @@ var $exeDevice = {
         });
 
         $('#seleccionaEURLAudio').on('change', function () {
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $(this).val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
+            var selectedFile = $(this).val().trim();;
+            if (selectedFile.length==0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {
                 if (selectedFile.length > 4) {
@@ -1988,14 +2108,52 @@ var $exeDevice = {
             }
             $('#seleccionaEPercentajeFB').prop('disabled', !marcado);
         });
+
         $('#gameQEIdeviceForm').on('click', 'input.gameQE-TypeGame', function (e) {
             var gm = parseInt($(this).val()),
                 fb = $('#seleccionaEHasFeedBack').is(':checked'),
                 ul = $('#seleccionaEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
-        $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
+        $('.gameQE-TypeOrder').on('click', function (e) {
+            var type = parseInt($(this).val()),
+                messages = $('#seleccionaECustomMessages').is(':checked'),
+                customS = $('#seleccionaECustomScore').is(':checked');
+            $exeDevice.showSelectOrder(type, messages, customS);
+
+        });
+
+        $('#seleccionaECustomMessages').on('change', function () {
+            var messages = $(this).is(':checked'),
+                type = parseInt($('input[name=slcgameorder]:checked').val()),
+                customS = $('#seleccionaECustomScore').is(':checked');
+            $exeDevice.showSelectOrder(type, messages, customS);
+        });
+        $exeAuthoring.iDevice.gamification.itinerary.addEvents();
+    },
+    showSelectOrder: function (type, messages, custonmScore) {
+        if (type == 2 || messages) {
+            $('.gameQE-EOrders').slideDown();
+        } else {
+            $('.gameQE-EOrders').slideUp();
+        }
+        $('#seleccionaECustomMessages').prop('disabled', type == 2);
+        if (type == 2) {
+            $('#seleccionaGotoCorrect').show();
+            $('#seleccionaGotoIncorrect').show();
+            $('label[for="seleccionaGotoCorrect"]').show();
+            $('label[for="seleccionaGotoIncorrect"]').show();
+        } else {
+            $('#seleccionaGotoCorrect').hide();
+            $('#seleccionaGotoIncorrect').hide();
+            $('label[for="seleccionaGotoCorrect"]').hide();
+            $('label[for="seleccionaGotoIncorrect"]').hide();
+        }
+        $('#seleccionaEScoreQuestionDiv').hide();
+        if (type == 2 || custonmScore) {
+            $('#seleccionaEScoreQuestionDiv').show();
+        }
     },
 
     clickSolution: function (checked, value) {
@@ -2067,4 +2225,280 @@ var $exeDevice = {
         var isValid = text.length > 0 && text !== '.' && text !== ',' && /^-?\d*[.,]?\d*$/.test(text);
         return isValid;
     },
+    importGame: function (content) {
+        var game = $exeDevice.isJsonString(content);
+        if (!game || typeof game.typeGame == "undefined") {
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
+            return;
+        } else if (game.typeGame == 'Selecciona') {
+            game.selectsGame = $exeDevice.importSelecciona(game);
+            $exeDevice.active = 0;
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
+                tAfter = game.textAfter || "",
+                textFeedBack = game.textFeedBack || "";
+            tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            tinyMCE.get('seleccionaEFeedBackEditor').setContent(unescape(textFeedBack));
+        } else if (game.typeGame == 'Oca') {
+            $exeDevice.selectsGame = $exeDevice.importSelecciona(game);
+            $exeDevice.updateSelectOrder();
+        } else if (game.typeGame == 'QuExt') {
+            $exeDevice.selectsGame = $exeDevice.importQuExt(game);
+            $exeDevice.updateSelectOrder();
+          } else if (game.typeGame == 'Adivina') {
+            $exeDevice.selectsGame = $exeDevice.importAdivina(game);
+            $exeDevice.updateSelectOrder();
+        } else if (game.typeGame == 'Rosco') {
+            $exeDevice.selectsGame = $exeDevice.importRosco(game);
+            $exeDevice.updateSelectOrder();
+        } else {
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
+            return;
+        }
+        $exeDevice.active = 0;
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.showQuestion($exeDevice.active);
+        $('.exe-form-tabs li:first-child a').click();
+    },
+    importQuExt: function (data) {
+        for (var i = 0; i < data.questionsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault();
+            var cuestion = data.questionsGame[i],
+                solution = 'ABCD';
+            p.typeSelect = 0;
+            p.type = cuestion.type;
+            p.time = cuestion.time;
+            p.numberOptions = cuestion.numberOptions;
+            p.url = cuestion.url;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.soundVideo = cuestion.soundVideo;
+            p.imageVideo = cuestion.imageVideo;
+            p.iVideo = cuestion.iVideo;
+            p.fVideo = cuestion.fVideo;
+            p.eText = cuestion.eText;
+            p.quextion = cuestion.quextion;
+            p.options = [];
+            for (var j = 0; j < cuestion.options.length; j++) {
+                p.options.push(cuestion.options[j]);
+            }
+            var numOpt = 0;
+            for (var j = 0; j < p.options.length; j++) {
+                if (p.options[j].trim().length == 0) {
+                    p.numberOptions = numOpt;
+                    break;
+                }
+                numOpt++;
+            }
+            if (p.type == 3) {
+                p.eText = unescape(p.eText)
+            }
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.hit = typeof cuestion.hit == "undefined" ? -1 : cuestion.hit;
+            p.error = typeof cuestion.error == "undefined" ? -1 : cuestion.error;
+            p.msgHit = typeof cuestion.msgHit == "undefined" ? "" : cuestion.msgHit;
+            p.msgError = typeof cuestion.msgError == "undefined" ? "" : cuestion.msgError;
+            p.options = cuestion.options;
+            p.solution = solution.charAt(cuestion.solution);
+            p.silentVideo = cuestion.silentVideo;
+            p.tSilentVideo = cuestion.tSilentVideo;
+            p.solutionQuestion = '';
+            p.percentageShow = 35;
+            $exeDevice.selectsGame.push(p);
+        }
+        return $exeDevice.selectsGame;
+    },
+    deleteEmptyQuestion: function () {
+        if ($exeDevice.selectsGame.length > 1) {
+            var quextion = $('#seleccionaEQuestion').val().trim(),
+                typeSelect = parseInt($('input[name=slctypeselect]:checked').val()),
+                solutionQuestion = "";
+            if (typeSelect == 2) {
+                solutionQuestion = $('#seleccionaESolutionWord').val();
+                quextion = $('#seleccionaEDefinitionWord').val().trim();
+                if (quextion.length == 0 && solutionQuestion.length == 0) {
+                    $exeDevice.removeQuestion();
+                }
+            } else {
+                var empty = true;
+                $('.gameQE-EAnwersOptions').each(function (i) {
+                    var option = $(this).val().trim();
+                    if (option.length > 0) {
+                        empty = false;
+                    }
+                });
+                if (quextion.length == 0 && solutionQuestion.length == 0) {
+                    $exeDevice.removeQuestion();
+                }
+            }
+        }
+    },
+    extractURLGD: function (urlmedia) {
+        var sUrl=urlmedia;
+        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
+    },
+    importAdivina: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault();
+            var cuestion = data.wordsGame[i];
+            p.typeSelect = 2;
+            p.type = cuestion.url.length > 10 ? 1 : 0;
+            p.time = cuestion.time || $exeDevice.getIndexTime(data.timeQuestion);
+            p.numberOptions = 4;
+            p.url = cuestion.url;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.soundVideo = 1;
+            p.imageVideo = 1;
+            p.iVideo = 0;
+            p.fVideo = 0;
+            p.eText = '';
+            p.quextion = cuestion.definition;
+            p.options = [];
+            p.options.push('');
+            p.options.push('');
+            p.options.push('');
+            p.options.push('');
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.hit = typeof cuestion.hit == "undefined" ? -1 : cuestion.hit;
+            p.error = typeof cuestion.error == "undefined" ? -1 : cuestion.error;
+            p.msgHit = typeof cuestion.msgHit == "undefined" ? "" : cuestion.msgHit;
+            p.msgError = typeof cuestion.msgError == "undefined" ? "" : cuestion.msgError;
+            p.solution = '';
+            p.silentVideo = 0;
+            p.tSilentVideo = 0;
+            p.solutionQuestion = cuestion.word;
+            p.percentageShow = cuestion.percentageShow || data.percentageShow;
+            $exeDevice.selectsGame.push(p);
+        }
+        return $exeDevice.selectsGame;
+    },
+    importRosco: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault(),
+                cuestion = data.wordsGame[i],
+                start = cuestion.type = 1 ? $exeDevice.msgs.msgContaint.replace('%1', cuestion.letter) : $exeDevice.msgs.msgStartWith.replace('%1', cuestion.letter);
+            p.typeSelect = 2;
+            p.type = cuestion.url.length > 10 ? 1 : 0;
+            p.time = cuestion.time || $exeDevice.getIndexTime(data.timeQuestion);
+            p.numberOptions = 4;
+            p.url = cuestion.url;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.soundVideo = 1;
+            p.imageVideo = 1;
+            p.iVideo = 0;
+            p.fVideo = 0;
+            p.eText = '';
+            p.quextion = start + ': ' + cuestion.definition;
+            p.options = [];
+            p.options.push('');
+            p.options.push('');
+            p.options.push('');
+            p.options.push('');
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.hit = typeof cuestion.hit == "undefined" ? -1 : cuestion.hit;
+            p.error = typeof cuestion.error == "undefined" ? -1 : cuestion.error;
+            p.msgHit = typeof cuestion.msgHit == "undefined" ? "" : cuestion.msgHit;
+            p.msgError = typeof cuestion.msgError == "undefined" ? "" : cuestion.msgError;
+            p.solution = '';
+            p.silentVideo = 0;
+            p.tSilentVideo = 0;
+            p.solutionQuestion = cuestion.word;
+            p.percentageShow = cuestion.percentageShow || data.percentageShow;
+            if (p.solutionQuestion.trim().length > 0) {
+                $exeDevice.selectsGame.push(p);
+            }
+        }
+        console.log($exeDevice.selectsGame)
+        return $exeDevice.selectsGame;
+    },
+    importSelecciona: function (data) {
+        for (var i = 0; i < data.selectsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault();
+            var cuestion = data.selectsGame[i];
+            p.typeSelect = cuestion.typeSelect;
+            p.type = cuestion.type;
+            p.time = cuestion.time;
+            p.numberOptions = cuestion.numberOptions;
+            p.url = cuestion.url;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.soundVideo = cuestion.soundVideo;
+            p.imageVideo = cuestion.imageVideo;
+            p.iVideo = cuestion.iVideo;
+            p.fVideo = cuestion.fVideo;
+            p.eText = cuestion.eText;
+            p.quextion = cuestion.quextion;
+            p.options = [];
+            for (var j = 0; j < cuestion.options.length; j++) {
+                p.options.push(cuestion.options[j]);
+            }
+            var numOpt = 0;
+            for (var j = 0; j < p.options.length; j++) {
+                if (p.options[j].trim().length == 0) {
+                    p.numberOptions = numOpt;
+                    break;
+                }
+                numOpt++;
+            }
+            if (p.type == 3) {
+                p.eText = unescape(p.eText)
+            }
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.hit = typeof cuestion.hit == "undefined" ? -1 : cuestion.hit;
+            p.error = typeof cuestion.error == "undefined" ? -1 : cuestion.error;
+            p.msgHit = typeof cuestion.msgHit == "undefined" ? "" : cuestion.msgHit;
+            p.msgError = typeof cuestion.msgError == "undefined" ? "" : cuestion.msgError;
+            p.options = cuestion.options;
+            p.solution = cuestion.solution;
+            p.silentVideo = cuestion.silentVideo;
+            p.tSilentVideo = cuestion.tSilentVideo;
+            p.solutionQuestion = cuestion.solutionQuestion;
+            p.percentageShow = cuestion.percentageShow;
+            $exeDevice.selectsGame.push(p);
+        }
+        return $exeDevice.selectsGame;
+    },
+    getIndexTime: function (time) {
+        var index = 0;
+        switch (time) {
+            case 15:
+                index = 0;
+                break;
+            case 30:
+                index = 1;
+                break;
+            case 60:
+                index = 2;
+                break;
+            case 180:
+                index = 3;
+                break;
+            case 300:
+                index = 4;
+            case 600:
+                index = 5;
+                break;
+            case 900:
+                index = 6;
+                break;
+            default:
+                index = time;
+                break;
+        }
+        return index;
+    }
 }

@@ -139,6 +139,8 @@ var $exeDevice = {
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
         msgs.msgEProvideWord = _("Please provide one word or phrase");
         msgs.msgEOneQuestion = _("Please provide at least one question");
+        msgs.msgStartWith = _("Starts with %1");
+        msgs.msgContaint = _("Contains letter %1");
         msgs.msgEUnavailableVideo = _("This video is not currently available")
         msgs.msgECompleteQuestion = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
@@ -452,7 +454,7 @@ var $exeDevice = {
         });
     },
 
-    stopSound() {
+    stopSound: function() {
         if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
             $exeDevice.playerAudio.pause();
         }
@@ -1593,7 +1595,7 @@ var $exeDevice = {
         for (var i = 0; i < data.wordsGame.length; i++) {
             var p = $exeDevice.getCuestionDefault(),
                 cuestion = data.wordsGame[i],
-                start = cuestion.type = 1 ? "Contiene la " + cuestion.letter : "Comienza con la " + cuestion.letter;
+                start = cuestion.type = 1 ? $exeDevice.msgs.msgContaint.replace('%1', cuestion.letter) : $exeDevice.msgs.msgStartWith.replace('%1', cuestion.letter);
             p.typeSelect = 2;
             p.type = cuestion.url.length > 10 ? 1 : 0;
             p.time = cuestion.time || $exeDevice.getIndexTime(data.timeQuestion);

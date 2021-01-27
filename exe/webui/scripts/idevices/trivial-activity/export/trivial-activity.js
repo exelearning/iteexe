@@ -192,7 +192,7 @@ var $eXeTrivial = {
         });
 
     },
-    stopSound(instance) {
+    stopSound: function(instance) {
         var mOptions = $eXeTrivial.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();

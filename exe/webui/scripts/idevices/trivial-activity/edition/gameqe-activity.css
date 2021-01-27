@@ -192,6 +192,63 @@
 .gameQE-SolutionWordDiv input {
 	text-align: center;
 }
+
+
+/* Itinerario */
+
+.gameQE-EOrders {
+	margin-top: 0.5em;
+	display: none;
+}
+.gameQE-EOrders > div {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;;
+
+}
+.gameQE-EOrders input[type=text] {
+	text-align: center;
+}
+
+.gameQE-EOrders > div {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin-bottom: 0.5em;
+}
+
+.gameQE-EOrders > div *{
+	margin-right:.2em;
+}
+.gameQE-EOrders input[type=text]{
+	width: 100%;
+}
+
+.gameQE-EOrders label{
+	white-space:nowrap;
+}
+
+.gameQE-EHit {
+	background-image: url(quextIEHit.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.gameQE-EError {
+	background-image: url(quextIEError.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+
+
+
 /*Numero Preguntas */
 .gameQE-ENumQuestionDiv {
 	align-items: center;
