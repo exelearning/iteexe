@@ -297,8 +297,7 @@ var $exeDevice = {
     },
 
     playSound: function (selectedFile) {
-        console.log(selectedFile);
-        selectedFile=$exeDevice.extractURLGD(selectedFile);
+        var selectedFile=$exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectedFile);
         $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
             $exeDevice.playerAudio.play();
@@ -560,7 +559,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
+            $exeDevice.showMessage($exeDevice.msgs.msgEUnavailableVideo);
             $('#seleccionaENoVideo').show();
         }
     },
@@ -593,7 +592,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
+            $exeDevice.showMessage($exeDevice.msgs.msgEUnavailableVideo);
             $('#seleccionaENoVideo').show();
         }
     },
@@ -1480,10 +1479,6 @@ var $exeDevice = {
         } else if (p.typeSelect == 2 && p.quextion.trim().length == 0) {
             message = $exeDevice.msgs.msgEProvideWord;
         }
-
-        if (p.audio.length > 0 && validExt.indexOf(extaudio) == -1) {
-            message = _("Supported formats") + '. ' + _('Audio') + ": mp3, ogg, wav";
-        }
         var order = parseInt($('input[name=slcgameorder]:checked').val());
         if (order == 2) {
             if (p.hit >= $exeDevice.selectsGame.length) {
@@ -2075,16 +2070,10 @@ var $exeDevice = {
         });
         $('#seleccionaEPlayAudio').on('click', function (e) {
             e.preventDefault();
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $('#seleccionaEURLAudio').val().trim(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (selectedFile.length==0) {
-                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
-            } else {
-                if (selectedFile.length > 4) {
-                    $exeDevice.stopSound();
-                    $exeDevice.playSound(selectedFile);
-                }
+            var selectedFile = $('#seleccionaEURLAudio').val().trim();
+            if (selectedFile.length > 4) {
+                $exeDevice.stopSound();
+                $exeDevice.playSound(selectedFile);
             }
         });
 

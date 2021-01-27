@@ -421,6 +421,7 @@ var $eXeSelecciona = {
             mOptions.selectsGame[i].error = typeof mOptions.selectsGame[i].error == "undefined" ? 0 : mOptions.selectsGame[i].error;
             mOptions.selectsGame[i].msgHit = typeof mOptions.selectsGame[i].msgHit == "undefined" ? "" : mOptions.selectsGame[i].msgHit;
             mOptions.selectsGame[i].msgError = typeof mOptions.selectsGame[i].msgError == "undefined" ? "" : mOptions.selectsGame[i].msgError;
+            mOptions.selectsGame[i].url=$eXeSelecciona.extractURLGD(mOptions.selectsGame[i].url);
             if (mOptions.selectsGame[i].type == 2) {
                 mOptions.hasVideo = true;
             }
@@ -562,8 +563,16 @@ var $eXeSelecciona = {
         }
     },
 
+    extractURLGD: function (urlmedia) {
+        var sUrl=urlmedia;
+        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
+    },
     playSound: function (selectedFile, instance) {
-        var mOptions = $eXeSelecciona.options[instance];
+        var mOptions = $eXeSelecciona.options[instance],
+            selectedFile=$eXeSelecciona.extractURLGD(selectedFile);
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
         mOptions.playerAudio.addEventListener("canplaythrough", event => {
             mOptions.playerAudio.play();

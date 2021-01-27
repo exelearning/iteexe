@@ -460,7 +460,7 @@ var $exeDevice = {
             }
         } else {
 
-            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
+            $exeDevice.showMessage($exeDevice.msgs.msgEUnavailableVideo);
             $('#quextENoVideo').show();
         }
     },
@@ -493,7 +493,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
-            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
+            $exeDevice.showMessage($exeDevice.msgs.msgEUnavailableVideo);
             $('#quextENoVideo').show();
         }
     },
