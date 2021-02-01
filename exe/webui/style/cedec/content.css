@@ -122,7 +122,7 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 /* Form buttons */
 .iDevice_inner input[type=submit],input.feedbackbutton{background:#FFF;border:0;padding:7px 15px;color:#333;border-radius:4px;margin-bottom:1em;border:1px solid #CCC;cursor:pointer}
-.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#EEE;border-color:#ADADAD;color:#000}
+.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover,.iDevice_inner input[type=submit]:focus,.feedbackbutton:focus{background:#EEE;border-color:#ADADAD;color:#000}
 /* Hide/Show iDevice */
 .toggle-idevice{text-align:right;display:block}
 .iDevice_header .toggle-idevice{margin:0;position:absolute;right:15px;top:15px}

@@ -91,7 +91,7 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 /* Form buttons */
 .iDevice_inner input[type=submit],.feedbackbutton{background:#007691;border:0;padding:4px 10px;color:#fff;margin-bottom:1em}
-.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover{background:#3a4749}
+.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover,.iDevice_inner input[type=submit]:focus,.feedbackbutton:focus{background:#3a4749}
 /* Hide/Show iDevice */
 .toggle-idevice{text-align:right;display:block;margin-right:13px}
 .iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:13px;margin:0}
