@@ -40,13 +40,17 @@ intef-exe (3:2.5.1) lucid; urgency=medium
     - [Other] Fixed: iDevice broken when the icon was empty. (#522)
     - [Other] Fixed: JavaScript error in SCORM 1.2 (invalid 1.2 property). (#509)
     - [Other] Fixed: Moodle + SCORM navigation problem. (#505)
+    - [Other] Fixed: FPD Available iDevices were not saved (#530)
+
+  * Fran Macías
+    - Fixed: Portable version (Linux) export problem. (#531)
 
   * Juan Rafael Fernández
     - String extraction process revision (pybabel tests). (#524)
     - Breton (brezhoneg) added to the list of supported languages.
     - Translations coordination.
 
-  * eXeLearning.net Translation Teams
+  * eXeLearning.net Translation Team
     - New full Spanish translation, by Juan Rafael Fernández.
     - New full Catalan translation, by Carles Ferrando Garcia.
     - New full Galician translation, by Pablo Nimo.
