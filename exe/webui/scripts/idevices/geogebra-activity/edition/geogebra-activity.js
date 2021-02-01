@@ -34,12 +34,7 @@ var $exeDevice = {
 		"disableAutoScale": [_("Disable auto-scale"), false],
 		"showSuggestionButtons": [_("Show suggestion buttons"), true],
 		"playButton": [_("Play button"), false],
-		"ShowAuthor": [_("Author"), true],
-		/*"scale": [_("Scale"),1],
-		"appName":"classic",
-		"buttonRounding":0.7,
-		"language":"en",
-		*/
+		"ShowAuthor": [_("Authorship"), true]
 	},
 
 	// Create the form to insert HTML in the TEXTAREA
@@ -61,21 +56,21 @@ var $exeDevice = {
 					<legend><a href="#">' + _("General Settings") + '</a></legend>\
 					<div>\
 						<p id="geogebraActivityURLS">\
-							<label for="geogebraActivityURL">' + _("URL or Identifier") + ': </label><input type="text" name="geogebraActivityURL" id="geogebraActivityURL" /> \
-							<a href="#" id="geogebraActivityPlayButton" title="' + _("Load applet data") + '"></a>\
+							<label for="geogebraActivityURL">' + _("URL or identifier (ID)") + ': </label><input type="text" name="geogebraActivityURL" id="geogebraActivityURL" /> \
+							<a href="#" id="geogebraActivityPlayButton" title="' + _("Load data") + '"><span class="sr-av">'+_("Load data")+'</span></a>\
 							<label for="geogebraActivityURLexample">' + _("Example") + ': </label><input type="text" id="geogebraActivityURLexample" name="geogebraActivityURLexample" readonly="readonly" value="' + this.activityURLbase + 'VgHhQXCC" />\
-						</p>\
-						<p id="geogebraActivitySize">\
-							<label for="geogebraActivityWidth">' + _("Width") + ': </label><input type="text" max="1500" name="geogebraActivityWidth" id="geogebraActivityWidth" /><span> px</span>\
-							<label for="geogebraActivityHeight">' + _("Height") + ': </label><input type="text" max="1500" name="geogebraActivityHeight" id="geogebraActivityHeight" /><span> px</span>\
 						</p>\
 						<p>\
 							<span>' + _("Title") + ': </span>\
 							<span id="geogebraActivityTitle"><a href="https://#" target="_blank"></a></span>\
 					    </p>\
 						<p>\
-						    <span>' + _("Author") + ': </span>\
+						    <span>' + _("Authorship") + ': </span>\
 						    <span id="geogebraActivityAuthorURL"></span>\
+						</p>\
+						<p id="geogebraActivitySize">\
+							<label for="geogebraActivityWidth">' + _("Width") + ': </label><input type="text" max="1500" name="geogebraActivityWidth" id="geogebraActivityWidth" /><span> px</span>\
+							<label for="geogebraActivityHeight">' + _("Height") + ': </label><input type="text" max="1500" name="geogebraActivityHeight" id="geogebraActivityHeight" /><span> px</span>\
 						</p>\
 					</div>\
 				</fieldset>\
@@ -100,7 +95,7 @@ var $exeDevice = {
 						<div id="geogebraActivitySCORMinstructions">\
 							<ul>\
 								<li>' + _("The button will only be displayed when exporting as SCORM and while editing in eXeLearning.") + '</li>\
-								<li>' + _('No incluya más de una actividad evaluable en la página.') + '</li>\
+								<li>' + _('Do not include more than one activity with score per page.') + '</li>\
 							</ul>\
 						</div>\
 					</div>\
@@ -273,7 +268,7 @@ var $exeDevice = {
 		$("#geogebraActivityURL").focus();
 		$("#geogebraActivityURL").removeClass("loading");
 		if(tipo){
-			eXe.app.alert(_("Required") + ": " + _("URL o ID de Actividad de Geogebra válida"));
+			eXe.app.alert(_("Provide a valid GeoGebra URL or activity ID."));
 		}
 	},
 	getId: function (url) {
@@ -435,7 +430,7 @@ var $exeDevice = {
 		var url = $("#geogebraActivityURL").val();
 		url = url.replace("https://ggbm.at/", urlBase);
 		if (url == "") {
-			eXe.app.alert(_("Required") + ": " + _("URL o ID de Actividad de Geogebra válida"));
+			eXe.app.alert(_("Provide a valid GeoGebra URL or activity ID."));
 			return false;
 		}
 		url = $exeDevice.getId(url);
@@ -496,7 +491,7 @@ var $exeDevice = {
 		var title = $('#geogebraActivityTitle').find('a').text() || '',
 			murl = $('#geogebraActivityTitle').find('a').prop('href') || '';
 		if (author != "") {
-			var ath = _('Author');
+			var ath = _('Authorship');
 			var show = $('#geogebraActivityShowAuthor').prop('checked') ? "1" : "0";
 			divContent += '<div class="auto-geogebra-author js-hidden">' + escape(author) + ',' + escape(murl) + ',' + escape(title) + ',' + show + ',' + escape(ath) + '</div>';
 		}

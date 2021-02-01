@@ -15,9 +15,9 @@ label[for=geogebraActivityHeight]{margin-left:1.5em}
 #geogebraActivitySCORMinstructions{display:none;color:#777;margin:10px 0 0 25px}
 #geogebraActivitySCORMinstructions ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
 #geogebraActivitySCORMinstructions ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}
-#geogebraActivityURL.loading{background:url(../export/geogegra-activity-loading.gif) no-repeat 0 50%;background-size:24px 24px}
+#geogebraActivityURL.loading{background:url(../export/geogegra-activity-loading.gif) no-repeat 5px 50%;background-size:22px 22px;border:2px solid #fff;text-indent:-999em}
 #geogebraActivityURL.loading *{visibility:hidden}
-#geogebraActivitySize{display:none}
+/*#geogebraActivitySize{display:none}*/
 #geogebraActivityScale{width:55px;margin-right:1.5em}
 #geogebraActivityPlayButton{display:inline-block;;width:1.5em;height: 1.5em; background-image:url(geogegra-activity-playbutton.png); margin-right: 1em;  background-size:100% 100%}
 .exe-feedback-fieldset #eXeAutoGeogebraCheckOptions p:last-child {margin:0}
