@@ -50,15 +50,13 @@ class AboutPage(Renderable, rend.Page):
         rend.Page.__init__(self)
 
     def render_version(self, ctx, data):
-        return ctx.tag()[version.release]
-
-    def render_revision(self, ctx, data):
+        revstring = ''
         if G.application.snap:
-            revstring = version.revision + ' SNAP'
-        else:
-            revstring = version.revision
-        return ctx.tag()[tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, version.revision),
-                                target='_blank')[revstring]
-                        ]
+            revstring = ' (SNAP)'
+        elif G.application.standalone:
+            revstring = ' (standalone)'
+        elif G.application.portable:
+            revstring = ' (portable)'
+        return ctx.tag()[version.release+revstring]
 
 # ===========================================================================

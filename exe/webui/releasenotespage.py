@@ -53,11 +53,6 @@ class ReleaseNotesPage(Renderable, rend.Page):
     def render_version(self, ctx, data):
         return ctx.tag()[version.release]
 
-    def render_revision(self, ctx, data):
-        return ctx.tag()[tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, version.revision),
-                                target='_blank')[version.revision]
-                        ]
-
     def render_changelog(self, ctx, data):
         try:
             # When eXe is run on an regular installation, ChangeLog file is in the webDir

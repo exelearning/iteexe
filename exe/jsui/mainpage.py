@@ -335,16 +335,14 @@ class MainPage(RenderableLivePage):
         return ctx.tag(**attribs)
 
     def render_version(self, ctx, data):
+        revstring = ''
         if G.application.snap:
-            revstring = revision + ' SNAP'
-        else:
-            revstring = revision
-        return [tags.p()["Version: %s" % release],
-                tags.p()["Revision: ",
-                         tags.a(href='%s/commits/%s' % (self.config.baseGitWebURL, revision),
-                                target='_blank')[revstring]
-                        ]
-               ]
+            revstring = ' (SNAP)'
+        elif G.application.standalone:
+            revstring = ' (standalone)'
+        elif G.application.portable:
+            revstring = ' (portable)'
+        return [tags.p()["Version: %s%s" % (release, revstring)]]
 
     def handleTestPrintMsg(self, client, message):
         """
