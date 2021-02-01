@@ -19,7 +19,7 @@ var myTheme = {
             <li><strong>m</strong> <span>= </span>'+$exe_i18n.menu+'</li>\
         </ul></div>');
         $("#nodeDecoration").after(i);
-        var l = $('<p id="info-toggler"><a href="#" class="instructions" title="?" onclick="myTheme.toggleInstructions(this);return false"><span>?</span></a></p><p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")"+'"><span>'+$exe_i18n.menu+'</span></a></p>');
+        var l = $('<p id="info-toggler"><a href="#" class="instructions" title="?" onclick="myTheme.toggleInstructions(this);return false"><span>?</span></a></p><p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this);return false" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")"+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         nav.before(l);
         var url = window.location.href;
         url = url.split("?");
