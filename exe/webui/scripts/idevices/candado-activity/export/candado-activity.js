@@ -1,5 +1,5 @@
 /**
- * Lock Activity iDevice (export code)
+ * Lock iDevice (export code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -77,8 +77,8 @@ var $eXeCandado = {
             msgs = $eXeCandado.options[instance].msgs;
             html += '<div class="candado-MainContainer">\
                 <div class="candado-GameMinimize" id="candadoGameMinimize-' + instance + '">\
-                    <a href="#" class="candado-LinkMaximize " id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize candado-Activo" alt="' + msgs.msgEShowActivity + '">\
-                        <div class="candado-MessageMaximize " id="candadoMessageMaximize-' + instance + '">' + msgs.msgEShowActivity + '</div>\
+                    <a href="#" class="candado-LinkMaximize " id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize candado-Activo" alt="">\
+                        <span class="candado-MessageMaximize " id="candadoMessageMaximize-' + instance + '">' + msgs.msgEShowActivity + '</span>\
                     </a>\
                 </div>\
                 <div class="candado-GameContainer" id="candadoGameContainer-' + instance + '">\
@@ -263,11 +263,12 @@ var $eXeCandado = {
         clearInterval(mOptions.counterClock);
         mOptions.candadoSolved=true;
         $eXeCandado.uptateTime(mOptions.counter, instance);
-        $('#candadoInstructions-' + instance).hide();
-         $('#candadoFeedRetro-' + instance).show();
+        $('#candadoInstructions-' + instance).hide().attr("aria-labelledby","candadoShowIntro-" + instance);
+         $('#candadoFeedRetro-' + instance).show().attr("aria-labelledby","candadoShowRetro-" + instance);
         $('#candadoSolutionDiv-' + instance).hide();
         $('#candadoNavigator-' + instance).show();
         $('#candadoMessageInfo-' + instance).hide();
+        $("#candadoShowRetro-" + instance).focus();
     },
     uptateTime: function (tiempo, instance) {
         tiempo=tiempo<0?0:tiempo;
@@ -329,13 +330,17 @@ var $eXeCandado = {
         window.alert(tmsg)
     },
     showMessage: function (type, message, instance) {
+        var colors = ['danger', 'info', 'success'];
+        $("#candadoPInformation-" + instance).text(message).attr("class","exe-block-"+colors[type]);
+        /* To review
         var colors = ['#555555', $eXeCandado.borderColors.red, $eXeCandado.borderColors.green, $eXeCandado.borderColors.blue, $eXeCandado.borderColors.yellow];
-        color = colors[type];
+        var color = colors[type];
         $("#candadoPInformation-" + instance).text(message);
         $("#candadoPInformation-" + instance).css({
             'color': color,
             'font-weight': 'bold'
         });
+        */
     }
 }
 $(function () {

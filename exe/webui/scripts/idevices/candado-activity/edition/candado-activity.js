@@ -1,5 +1,5 @@
 /**
- * Lock Activity iDevice (edition code)
+ * Lock iDevice (edition code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -8,7 +8,7 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Lock Activity'),
+        name: _('Lock'),
     },
     iDevicePath: "/scripts/idevices/candado-activity/edition/",
     msgs: {},
@@ -37,7 +37,8 @@ var $exeDevice = {
         "msgRequiredAccessKey": _("Access code required"),
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
-        "msgEShowActivity" :_("Show activity")
+        "msgEShowActivity" :_("Show activity"),
+        "msgSubmit" : _("Check")
     },
 
     init: function () {
@@ -57,7 +58,7 @@ var $exeDevice = {
         msgs.msgEShowMinimize =_("Show minimized.");
         msgs.msgERebootActivity  =_("Repeat activity")
         msgs.msgCustomMessage=_("Error message");
-        msgs.msgNumFaildedAttemps=_("Errors to display the message");
+        msgs.msgNumFaildedAttemps=_("Errors (number of attempts) to display the message");
         msgs.msgEnterCustomMessage=_("Please write the error message.");
 
     },

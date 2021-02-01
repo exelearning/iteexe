@@ -36,7 +36,6 @@
 }
 .candado-EDataAccess input[type=text]{
   width: 100%;
-  text-align: center;
   min-width: 50px;
   flex-grow: 1;
 }

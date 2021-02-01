@@ -2,14 +2,12 @@
 	border: 0;
 	border-bottom: none;
 	border-width: 0;
-	outline: none;
-	outline-width: 0;
-	text-decoration: none !important;
+	text-decoration: none;
 }
 /* Contenedor */
 .candado-MainContainer {
 	font-size: 1em;
-	margin: 0 auto;
+	margin: 1em auto;
 	max-width: 900px;
 	padding: 0;
 	width: 100%;
@@ -21,13 +19,15 @@
 	margin: 0;
 	padding: 0;
 }
-/* Instrucciones */
-.candado-instructions {
-	margin: 0.3em auto;
+.candado-MainContainer p:empty{display:none}
+/* Instrucciones y feedback */
+.candado-instructions,.candado-retro {
+	margin: 0 auto;
 	width: 100%;
 }
-.candado-instructions p {
+.candado-instructions p,.candado-retro p {
 	font-size: 1em;
+	margin:1em 0
 }
 /* Minimizado */
 .candado-LinkMaximize {
@@ -66,6 +66,9 @@
 	min-width: 3.5em;
 	text-align: center;
 }
+.candado-LinkMinimize{
+    margin-left:.5em
+}
 .candado-MainContainer  .exeQuextIcons34-Minimize {
 	background-image: url(exequextmin.png);
 	background-size: 100% 100%;
@@ -74,7 +77,7 @@
 }
 /* Intruciones reto */
 .candado-Instructiones, .candado-FeedRetro {
-	margin: 0.3em auto;
+	margin: 0 auto;
 	max-height: 2000px;
 	min-height: 100px;
 	overflow: hidden;
@@ -90,13 +93,21 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin: 1em auto;
+	margin: 1em auto 0 auto;
 	width: 100%;
+}
+
+.candado-SolutionDiv label{
+    font-weight:bold
 }
 
 .candado-SolutionDiv a {
 	width: 1.5em;
 	height: 1.5em;
+}
+
+.candado-SolutionDiv input.feedbackbutton{
+    margin:0 .5em
 }
 
 .candado-SolutionDiv .exeQuextIcons-Submit {
@@ -110,7 +121,6 @@
 	margin: 0 .3em;
 	max-width: 350px;
 	padding: 0;
-	text-align: center;
 	width: 60%;
 }
 
@@ -123,6 +133,8 @@
 	font-weight: bold;
 	text-align: center;
 	width: 100%;
+	padding:.5em 1em;
+	margin:1em 0
 }
 /* botones desafio */
 .candado-ShowIntro {
@@ -138,9 +150,10 @@
 	-o-transition: transform 0.3s;
 	-webkit-transition: transform 0.3s;
 	transition: transform 0.3s;
+    margin-right:.5em
 }
 
-.candado-Activo:hover {
+.candado-LinkMaximize:hover .candado-Activo{
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
@@ -160,7 +173,6 @@
 		font-size: 0.9em;
 		line-height: 1.1em;
 		padding: 3px 2px;
-		text-align: center;
 	}
 	.candado-GameContainer input[type="text"]:active, .candado-GameContainer input[type="text"]:focus {
 		background: #fdfdfd;
@@ -175,10 +187,7 @@
 	.candado-GameContainer {
 		font-size: 0.8rem;
 	}
-	.candado-instructions {
-		margin: 2px auto;
-	}
-	.candado-instructions p {
+	.candado-instructions p,.candado-retro p {
 		font-size: 0.8em;
 		margin: 0 auto;
 	}
