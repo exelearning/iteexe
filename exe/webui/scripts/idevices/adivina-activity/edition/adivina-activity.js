@@ -138,13 +138,14 @@ var $exeDevice = {
                                 <label for="adivinaECaseSensitive"><input type="checkbox" id="adivinaECaseSensitive"> ' + _("Case sensitive") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="adivinaEGameMode"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk">' + _("Type of activity") + '</a>:</label>\
+                                <label for="adivinaEGameMode">' + _("Tipo de actividad") + ':</label>\
                                 <input class="gameQE-TypeGame" checked="checked id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                 <label for="adivinaETypeActivity">' + _("Exercise") + '</label>\
                                 <input class="gameQE-TypeGame" " id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
                                 <label for="adivinaEGameMode">' + _("Game") + '</label>\
                                 <input class="gameQE-TypeGame"  id="adivinaETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="adivinaETypeReto">' + _("Challenge") + '</label>\
+                                <a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk"><img src="' + path + "quextIEHelp.gif" + '"  alt="'+_("Help")+'"/></a>\
                             </p>\
                             <div id="adivinaEGameModeHelp" style="display:none">\
                                 <ul>\
