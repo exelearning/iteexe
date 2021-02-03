@@ -138,18 +138,18 @@ var $exeDevice = {
                                 <label for="adivinaECaseSensitive"><input type="checkbox" id="adivinaECaseSensitive"> ' + _("Case sensitive") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="adivinaEGameMode">' + _("Type") + ' (<a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk">'+_("Help")+'</a>):</label>\
-                                <input class="gameQE-TypeGame" checked="checked" id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
-                                <label for="adivinaEGameMode">' + _("Game") + '</label>\
-                                <input class="gameQE-TypeGame"  id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
+                                <label for="adivinaEGameMode"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk">' + _("Type of activity") + '</a>:</label>\
+                                <input class="gameQE-TypeGame" checked="checked id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                 <label for="adivinaETypeActivity">' + _("Exercise") + '</label>\
+                                <input class="gameQE-TypeGame" " id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
+                                <label for="adivinaEGameMode">' + _("Game") + '</label>\
                                 <input class="gameQE-TypeGame"  id="adivinaETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="adivinaETypeReto">' + _("Challenge") + '</label>\
                             </p>\
                             <div id="adivinaEGameModeHelp" style="display:none">\
                                 <ul>\
-                                    <li><strong>'+_("Game")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
                                     <li><strong>'+_("Exercise")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                    <li><strong>'+_("Game")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
                                     <li><strong>'+_("Challenge")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
                                 </ul>\
                             </div>\

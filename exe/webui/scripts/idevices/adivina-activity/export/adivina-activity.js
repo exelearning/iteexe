@@ -828,10 +828,10 @@ var $eXeAdivina = {
         var mOptions = $eXeAdivina.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.wordsGame.length;
         if (mOptions.gameMode == 2 || mOptions.feedBack) {
-            $('#adivinaHistGame-' + instance).hide();
-            $('#adivinaLostGame-' + instance).hide();
+
             if (puntos >= mOptions.percentajeFB) {
                 $('#adivinaDivFeedBack-' + instance).find('.adivina-feedback-game').show();
+                $('#adivinaDivFeedBack-' + instance).show();
             } else {
                 $eXeAdivina.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
             }
@@ -1385,19 +1385,18 @@ var $eXeAdivina = {
 
     },
     showMessage: function (type, message, instance) {
+        /*To review
         var colors = ['danger', 'info', 'success'];
         $("#adivinaPAuthor-" + instance).text(message).attr("class","exe-idevice-feedback-msg exe-block-"+colors[type]);
-		/* To review
+        El orden correcto de lso c olores sería el siguiente:
+        colors = ['info', 'danger', 'success'];
+		*/
         var colors = ['#555555', $eXeAdivina.borderColors.red, $eXeAdivina.borderColors.green, $eXeAdivina.borderColors.blue, $eXeAdivina.borderColors.yellow],
-            weight = type == 0 ? 'normal' : 'normal',
             color = colors[type];
         $('#adivinaPAuthor-' + instance).text(message);
         $('#adivinaPAuthor-' + instance).css({
-            'color': color,
-            'font-weight': weight,
-            'margin': 0
+            'color': color
         });
-		*/
     },
     drawImage: function (image, mData) {
         $(image).css({
