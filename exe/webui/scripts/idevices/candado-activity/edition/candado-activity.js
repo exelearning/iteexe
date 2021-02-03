@@ -28,7 +28,7 @@ var $exeDevice = {
         "msgOk": _("Accept"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
-        "msgTime": _("Max time"),
+        "msgTime": _("Time Limit (mm:ss)"),
         "msgInstructions": _("Instructions"),
         "msgFeedback": _("Feedback"),
         "msgCodeAccess": _("Access code"),

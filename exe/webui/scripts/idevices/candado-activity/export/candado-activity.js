@@ -84,7 +84,7 @@ var $eXeCandado = {
                 <div class="candado-GameContainer" id="candadoGameContainer-' + instance + '">\
                     <div class="candado-GameScoreBoard">\
                         <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-                        <div class="exeQuextIcons34-Time"></div>\
+                        <div class="exeQuextIcons34-Time" title="'+msgs.msgTime+'"></div>\
                         <p id="candadoPTime-' + instance + '" class="candado-PTime">00:00</p>\
                         <a href="#" class="candado-LinkMinimize candado-Activo" id="candadoLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                             <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
@@ -331,7 +331,7 @@ var $eXeCandado = {
     },
     showMessage: function (type, message, instance) {
         var colors = ['danger', 'info', 'success'];
-        $("#candadoPInformation-" + instance).text(message).attr("class","exe-block-"+colors[type]);
+        $("#candadoPInformation-" + instance).text(message).attr("class","exe-idevice-feedback-msg exe-block-"+colors[type]);
         /* To review
         var colors = ['#555555', $eXeCandado.borderColors.red, $eXeCandado.borderColors.green, $eXeCandado.borderColors.blue, $eXeCandado.borderColors.yellow];
         var color = colors[type];
