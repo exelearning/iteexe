@@ -268,46 +268,42 @@ var $eXeAdivina = {
             html = '';
         html += '<div class="gameQP-MainContainer">\
         <div class="gameQP-GameMinimize" id="adivinaGameMinimize-' + instance + '">\
-            <a href="#" class="gameQP-LinkMaximize" id="adivinaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="gameQP-IconMinimize gameQP-Activo"  alt="' + msgs.msgMaximize + '">\
+            <a href="#" class="gameQP-LinkMaximize" id="adivinaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "adivinaIcon.png" + '" class="gameQP-IconMinimize gameQP-Activo"  alt="">\
             <div class="gameQP-MessageMaximize" id="adivinaMessageMaximize-' + instance + '"></div></a>\
         </div>\
         <div class="gameQP-GameContainer" id="adivinaGameContainer-' + instance + '">\
             <div class="gameQP-GameScoreBoard">\
                 <div class="gameQP-GameScores">\
-                    <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
-                    <p  id="adivinaPNumber-' + instance + '">0</p>\
-                    <strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
-					<div class="exeQuextIcons exeQuextIcons-Hit"></div>\
-                    <p  id="adivinaPHits-' + instance + '">0</p>\
-                    <strong><span class="sr-av">' + msgs.msgErrors + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Error"></div>\
-                    <p id="adivinaPErrors-' + instance + '">0</p>\
-                    <strong><span class="sr-av">' + msgs.msgScore + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
-                    <p id="adivinaPScore-' + instance + '">0</p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number" title="'+msgs.msgNumQuestions+'"></div>\
+                    <p><span class="sr-av">'+msgs.msgNumQuestions+': </span><span id="adivinaPNumber-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons exeQuextIcons-Hit" title="'+msgs.msgHits+'"></div>\
+                    <p><span class="sr-av">'+msgs.msgHits+': </span><span id="adivinaPHits-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Error" title="'+msgs.msgErrors+'"></div>\
+                    <p><span class="sr-av">'+msgs.msgErrors+': </span><span id="adivinaPErrors-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Score" title="'+msgs.msgScore+'"></div>\
+                    <p><span class="sr-av">'+msgs.msgScore+': </span><span id="adivinaPScore-' + instance + '">0</span></p>\
                 </div>\
                 <div class="gameQP-LifesGame" id="adivinaLifesAdivina-' + instance + '">\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + '</strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + '</strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + '</strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + '</strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + '</strong>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
                 </div>\
                 <div class="gameQP-NumberLifesGame" id="adivinaNumberLivesAdivina-' + instance + '">\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <strong class="sr-av">' + msgs.msgLive + '</strong>\
                     <div  class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="adivinaPLifes-' + instance + '">0</p>\
                 </div>\
                 <div class="gameQP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-					<div class="exeQuextIcons  exeQuextIcons-Time"></div>\
+					<div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
                     <p  id="adivinaPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
-                    <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
                     <a href="#" class="gameQP-LinkMinimize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                         <div class="exeQuextIcons exeQuextIcons-Minimize  gameQP-Activo"></div>\
@@ -319,8 +315,8 @@ var $eXeAdivina = {
 				</div>\
             </div>\
             <div class="gameQP-ShowClue" id="adivinaShowClue-' + instance + '">\
-                <div class="sr-av">' + msgs.msgClue + ':</div>\
-                <p class=" gameQP-PShowClue gameQP-parpadea" id="adivinaPShowClue-' + instance + '"></p>\
+                <div class="sr-av">' + msgs.msgClue + '</div>\
+                <p class=" gameQP-PShowClue gameQP-parpadea exe-idevice-feedback-msg exe-block-info" id="adivinaPShowClue-' + instance + '"></p>\
            </div>\
            <div class="gameQP-Multimedia" id="adivinaMultimedia-' + instance + '">\
                 <img class="gameQP-Cursor" id="adivinaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
@@ -889,10 +885,10 @@ var $eXeAdivina = {
                 break;
         }
         $eXeAdivina.showMessage(messageColor, message, instance);
-        var msscore = mOptions.gameMode == 0 ? msgs.msgScore + ': ' + mOptions.score : msgs.msgScore + ': ' + mOptions.score.toFixed(2);
-        $adivinaOverPoint.text(msscore);
-        $adivinaOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
-        $adivinaOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
+        var msscore = mOptions.gameMode == 0 ? '<strong>'+ msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>'+ msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
+        $adivinaOverPoint.html(msscore);
+        $adivinaOverHits.html('<strong>'+msgs.msgHits + ':</strong> ' + mOptions.hits);
+        $adivinaOverErrors.html('<strong>'+msgs.msgErrors + ':</strong> ' + mOptions.errors);
         if (mOptions.gameMode == 2) {
             $('#adivinaGameContainer-' + instance).find('.gameQP-DataScore').hide();
         }
@@ -1389,6 +1385,9 @@ var $eXeAdivina = {
 
     },
     showMessage: function (type, message, instance) {
+        var colors = ['danger', 'info', 'success'];
+        $("#adivinaPAuthor-" + instance).text(message).attr("class","exe-idevice-feedback-msg exe-block-"+colors[type]);
+		/* To review
         var colors = ['#555555', $eXeAdivina.borderColors.red, $eXeAdivina.borderColors.green, $eXeAdivina.borderColors.blue, $eXeAdivina.borderColors.yellow],
             weight = type == 0 ? 'normal' : 'normal',
             color = colors[type];
@@ -1398,6 +1397,7 @@ var $eXeAdivina = {
             'font-weight': weight,
             'margin': 0
         });
+		*/
     },
     drawImage: function (image, mData) {
         $(image).css({

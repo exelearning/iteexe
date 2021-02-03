@@ -52,7 +52,7 @@ var $exeDevice = {
         "msgScore": _("Score"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
-        "msgTime": _("Time"),
+        "msgTime": _("Time Limit (mm:ss)"),
         "msgLive": _("Life"),
         "msgFullScreen": _("Full Screen"),
         "msgExitFullScreen": _("Exit Full Screen"),
@@ -112,7 +112,7 @@ var $exeDevice = {
         msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
         msgs.msgTypeChoose = _("Please check all the answers in the right order");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
-        msgs.msgProvideFB = _('Message to display when passing the game, activity or challenge');
+        msgs.msgProvideFB = _('Message to display when passing the game, exercise or challenge');
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -127,7 +127,7 @@ var $exeDevice = {
 								<label for="adivinaEShowMinimize"><input type="checkbox" id="adivinaEShowMinimize"> ' + _("Show minimized.") + ' </label>\
                             </p>\
                             <p>\
-                             <label for="adivinaEOptionsRamdon"><input type="checkbox" id="adivinaEOptionsRamdon" checked> ' + _("Random questions") + ' </label>\
+                             <label for="adivinaEOptionsRamdon"><input type="checkbox" id="adivinaEOptionsRamdon"> ' + _("Random questions") + ' </label>\
                             </p>\
                             <p>\
 								<label for="adivinaEShowSolution"><input type="checkbox" checked id="adivinaEShowSolution"> ' + _("Show solutions") + '. </label> \
@@ -138,14 +138,21 @@ var $exeDevice = {
                                 <label for="adivinaECaseSensitive"><input type="checkbox" id="adivinaECaseSensitive"> ' + _("Case sensitive") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="adivinaEGameMode">' + _("Type") + ':</label>\
+                                <label for="adivinaEGameMode">' + _("Type") + ' (<a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk">'+_("Help")+'</a>):</label>\
                                 <input class="gameQE-TypeGame" checked="checked" id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
                                 <label for="adivinaEGameMode">' + _("Game") + '</label>\
                                 <input class="gameQE-TypeGame"  id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
-                                <label for="adivinaETypeActivity">' + _("Activity") + '</label>\
+                                <label for="adivinaETypeActivity">' + _("Exercise") + '</label>\
                                 <input class="gameQE-TypeGame"  id="adivinaETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="adivinaETypeReto">' + _("Challenge") + '</label>\
                             </p>\
+                            <div id="adivinaEGameModeHelp" style="display:none">\
+                                <ul>\
+                                    <li><strong>'+_("Game")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                    <li><strong>'+_("Exercise")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                    <li><strong>'+_("Challenge")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                </ul>\
+                            </div>\
                             <p>\
                                 <label for="adivinaEUseLives"><input type="checkbox" checked id="adivinaEUseLives"> ' + _("Use lives") + '. </label> \
                                 <label for="adivinaENumberLives">' + _("Number of lives") + ':\
@@ -153,7 +160,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="adivinaEHasFeedBack"><input type="checkbox"  id="adivinaEHasFeedBack"> ' + _("Feedback") + '. </label> \
-                                <input type="number" name="adivinaEPercentajeFB" id="adivinaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> </label>\
+                                <input type="number" name="adivinaEPercentajeFB" id="adivinaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> '+_("% right to see the feedback")+' </label>\
                             </p>\
                             <p id="adivinaEFeedbackP" class="gameQE-EFeedbackP">\
                                 <textarea id="adivinaEFeedBackEditor" class="exe-html-editor"\></textarea>\
@@ -165,35 +172,39 @@ var $exeDevice = {
                     <div class="gameQE-EPanel" id="adivinaEPanel">\
                         <div class="gameQE-EOptionsMedia">\
                             <div class="gameQE-EOptionsGame">\
-                                <span>' + _("Multimedia Type") + ':</span>\
-                                <div class="gameQE-EInputMedias">\
-                                    <input class="gameQE-Type" checked="checked" id="adivinaEMediaNormal" type="radio" name="qxtmediatype" value="0" disabled />\
-                                    <label for="adivinaEMediaNormal">' + _("None") + '</label>\
-                                    <input class="gameQE-Type"  id="adivinaEMediaImage" type="radio" name="qxtmediatype" value="1" disabled />\
-                                    <label for="adivinaEMediaImage">' + _("Image") + '</label>\
-                                    <input class="gameQE-Type"  id="adivinaEMediaVideo" type="radio" name="qxtmediatype" value="2" disabled />\
-                                    <label for="adivinaEMediaVideo">' + _("Video") + '</label>\
-                                    <input class="gameQE-Type"  id="adivinaEMediaText" type="radio" name="qxtmediatype" value="3" disabled />\
-                                    <label for="adivinaEMediaText">' + _("Text") + '</label>\
-                                </div>\
-                                <span>' + _("Time per question") + ':</span>\
-                                <div class="gameQE-EInputTimes">\
-                                    <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="qxttime" value="0" />\
-                                    <label for="q15s">15s</label>\
-                                    <input class="gameQE-Times" id="q30s" type="radio" name="qxttime" value="1" />\
-                                    <label for="q30s">30s</label>\
-                                    <input class="gameQE-Times" id="q1m" type="radio" name="qxttime" value="2" />\
-                                    <label for="q1m">1m</label>\
-                                    <input class="gameQE-Times" id="q3m" type="radio" name="qxttime" value="3" />\
-                                    <label for="q3m">3m</label>\
-                                    <input class="gameQE-Times" id="q5m" type="radio" name="qxttime" value="4" />\
-                                    <label for="q5m">5m</label>\
-                                    <input class="gameQE-Times" id="q10m" type="radio" name="qxttime" value="5" />\
-                                    <label for="q10m">10m</label>\
-                                </div>\
-                                <div class="gameQE-EPercentage" id="adivinaEPercentage">\
-                                    <label for="adivinaEPercentageShow">' + _("Percentage of letters to show (%)") + ':</label><input type="number" name="adivinaEPercentageShow" id="adivinaEPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
-                                </div>\
+                                <p>\
+									<strong>' + _("Multimedia Type") + ':</strong>\
+									<span class="gameQE-EInputMedias">\
+										<input class="gameQE-Type" checked="checked" id="adivinaEMediaNormal" type="radio" name="qxtmediatype" value="0" disabled />\
+										<label for="adivinaEMediaNormal">' + _("None") + '</label>\
+										<input class="gameQE-Type"  id="adivinaEMediaImage" type="radio" name="qxtmediatype" value="1" disabled />\
+										<label for="adivinaEMediaImage">' + _("Image") + '</label>\
+										<input class="gameQE-Type"  id="adivinaEMediaVideo" type="radio" name="qxtmediatype" value="2" disabled />\
+										<label for="adivinaEMediaVideo">' + _("Video") + '</label>\
+										<input class="gameQE-Type"  id="adivinaEMediaText" type="radio" name="qxtmediatype" value="3" disabled />\
+										<label for="adivinaEMediaText">' + _("Text") + '</label>\
+									</span>\
+								</p>\
+                                <p>\
+									<strong>' + _("Time per question") + ':</strong>\
+									<span class="gameQE-EInputTimes">\
+										<input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="qxttime" value="0" />\
+										<label for="q15s">15s</label>\
+										<input class="gameQE-Times" id="q30s" type="radio" name="qxttime" value="1" />\
+										<label for="q30s">30s</label>\
+										<input class="gameQE-Times" id="q1m" type="radio" name="qxttime" value="2" />\
+										<label for="q1m">1m</label>\
+										<input class="gameQE-Times" id="q3m" type="radio" name="qxttime" value="3" />\
+										<label for="q3m">3m</label>\
+										<input class="gameQE-Times" id="q5m" type="radio" name="qxttime" value="4" />\
+										<label for="q5m">5m</label>\
+										<input class="gameQE-Times" id="q10m" type="radio" name="qxttime" value="5" />\
+										<label for="q10m">10m</label>\
+									</span>\
+								</p>\
+                                <p class="gameQE-EPercentage" id="adivinaEPercentage">\
+                                    <label for="adivinaEPercentageShow">' + _("Percentage of letters to show (%)") + ':</label> <input type="number" name="adivinaEPercentageShow" id="adivinaEPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
+                                </p>\
                                 <span class="gameQE-ETitleImage" id="adivinaETitleImage">' + _("Image URL") + '</span>\
                                 <div class="gameQE-EInputImage" id="adivinaEInputImage">\
                                     <label class="sr-av" for="adivinaEURLImage">' + _("Image URL") + '</label>\
@@ -308,6 +319,11 @@ var $exeDevice = {
                 });
             }
         });
+        // Help link
+        $("#adivinaEGameModeHelpLnk").css("text-transform","lowercase").attr("title",_("Show")+"/"+_("Hide")).click(function(){
+            $("#adivinaEGameModeHelp").toggle();
+            return false;
+        })
     },
     enableForm: function (field) {
         $exeDevice.initQuestions();

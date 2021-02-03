@@ -1,19 +1,18 @@
-.gameQP-MainContainer a:link, .gameQP-MainContainer a:link, .gameQP-MainContainer a:visited, .gameQP-MainContainer a:focus {
+.gameQP-MainContainer a,.gameQP-MainContainer a:visited, .gameQP-MainContainer a:focus {
 	border: 0;
 	border-bottom: none;
 	border-width: 0;
-	outline: none;
-	outline-width: 0;
-	text-decoration: none !important;
+	text-decoration: none;
 }
 
 /* Contenedor */
 
 .gameQP-MainContainer {
 	font-size: 1em;
-	margin: 0 auto;
+	margin: 1em auto;
 	padding: 0;
 	width: 100%;
+	max-width: 750px;
 }
 
 .gameQP-MainContainer * {
@@ -33,11 +32,22 @@
 	width: 100%;
 }
 
+/* Mensajes */
+.gameQP-MainContainer .exe-idevice-feedback-msg{
+	margin-left:auto;
+	margin-right:auto;
+	padding:.5em 1em;
+	max-width:750px;
+}
+.exe-idevice-feedback-msg:empty{
+	display:none!important
+}
+
 /* Minimizado */
 
 .gameQP-GameMinimize {
 	display: none;
-	margin: 0.3em auto;
+	margin: 1em auto;
 	width: 100%;
 }
 
@@ -49,16 +59,16 @@
 
 .gameQP-IconMinimize {
 	height: 2em;
-	margin-right: 0.3em;
+	margin-right: 0.5em;
 	width: 2em;
 }
 
 /* Juego */
 
 .gameQP-GameContainer {
-	margin: 0.3em auto;
+	margin: 0 auto;
 	max-width: 750px;
-	padding: 0.3em;
+	padding: 1em 0.3em 0 0.3em;
 	position: relative;
 	width: 100%;
 }
@@ -108,7 +118,7 @@
 
 .gameQP-PTime {
 	margin-left: 0.3em;
-	min-width: 3em;
+	min-width: 3.5em;
 	text-align: center;
 	width: auto;
 }
@@ -116,6 +126,7 @@
 /* Pista */
 
 .gameQP-ShowClue {
+	margin-top: 1em;
 	margin-bottom: 0.3em;
 	min-height: 1em;
 	padding: 0;
@@ -280,7 +291,6 @@
 
 .gameQP-AuthorLicence {
 	margin: 1em auto 0 auto;
-	min-height: 1.6em;
 	width: 100%;
 }
 
@@ -309,22 +319,18 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
-	margin: 0.7em auto;
+	margin: 0.7em auto 0 auto;
 	width: 100%;
 }
 
 .gameQP-DataCodeAccessE label {
-	font-size: 0.9em;
-}
-
-.gameQP-CodeAccessDiv input[type=text] {
-	text-align: center;
+	font-weight: bold;
 }
 
 .gameQP-CodeAccessE {
-	margin: 0.7em 0.3em;
+	margin: 0 .3em;
 	max-width: 300px;
-	width: 50%;
+	width: 60%;
 }
 
 /* Inicio juego */
@@ -333,11 +339,14 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	-webkit-user-select: none;
-	font-size: 1.2em;
-	margin: 0.9em auto;
+	margin: 1em auto 0 auto;
 	text-align: center;
 	user-select: none;
 	width: 100%;
+}
+
+.gameQP-StartGame a{
+	text-decoration:underline;
 }
 
 /* Pegunta tipo test */
@@ -536,14 +545,12 @@
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
-	margin-bottom: 2em;
 	width: 100%;
 }
 
 .gameQP-EdReply {
 	margin: auto 0.2em;
 	max-width: 400px;
-	text-align: center;
 	width: 60%;
 }
 
@@ -606,7 +613,7 @@ input.gameQP-VideoIntroClose {
 
 .gameQP-DivInstructions {
 	font-size: 1em;
-	margin: 0;
+	margin: 1em 0 0 0;
 	text-align: center;
 	width: 95%;
 }
@@ -752,7 +759,7 @@ input.gameQP-VideoIntroClose {
 	transition: transform 0.3s;
 }
 
-.gameQP-Activo:hover {
+.gameQP-LinkMaximize:hover .gameQP-Activo {
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);

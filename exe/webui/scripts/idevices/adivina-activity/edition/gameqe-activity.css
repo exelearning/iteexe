@@ -78,11 +78,10 @@
 }
 
 .gameQE-EOptionsGame div {
-	margin-bottom: 0.3em;
+	margin-bottom: 0.7em;
 }
 .gameQE-EOptionsGame input[type=text] {
 	margin-right: .2em;
-	text-align: center;
 	width: 5em;
 }
 /* Opciones imagen */
@@ -188,6 +187,12 @@
 	justify-content: flex-start;
 	margin-bottom: 0.5em;
 	width: 100%;
+}
+.gameQE-ESolutionWord label{
+	display:inline-block;
+	width:11em;
+	text-align:right;
+	padding-right:.5em
 }
 .gameQE-SolutionWordDiv input {
 	text-align: center;
@@ -406,7 +411,6 @@ label[for=gameQEScoreQuestion], input#gameQEScoreQuestion {
 	display: inline-block;
 }
 #gameQEIdeviceForm .gameQE-ESolutionWord input[type=text] {
-	text-align: center;
 	width: 100%;
 }
 /* To review */
