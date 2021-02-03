@@ -1098,43 +1098,55 @@ var $exeAuthoring = {
                 }
             },
             itinerary : {
+				getContents : function(){
+					return '\
+						<div class="exe-idevice-info">'+_("You might create an itinerary of challenges where players won't be able to access a new game or challenge until they get a key in a previous activity. For this purpose, you might establish an access code as well as a message that may be displayed to players when they get a fixed percentage of hits, and be used as a password to a new challenge or a following activity.")+'</div>\
+						<p>\
+							<label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess" >' +_("Access code is required")+'</label>\
+						</p>\
+						<p style="margin-left:1.4em;margin-bottom:1.5em;display:none" id="eXeGameShowCodeAccessOptions">\
+							<label for="eXeGameCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
+							<input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
+							<label for="eXeGameMessageCodeAccess" id="labelMessageAccess">'+_("Question")+':</label>\
+							<input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
+						</p>\
+						<p>\
+							<label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue" >'+_("Show a message or password")+'</label>\
+						</p>\
+						<div style="margin-left:1.4em;margin-bottom:1.5em;display:none" id="eXeGameShowClueOptions">\
+							<p>\
+								<label for="eXeGameClue">'+_("Message")+':</label>\
+								<input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
+							</p>\
+							<p>\
+								<label for="eXeGamePercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
+								<select id="eXeGamePercentajeClue" disabled>\
+									<option value="10">10%</option>\
+									<option value="20">20%</option>\
+									<option value="30">30%</option>\
+									<option value="40" selected>40%</option>\
+									<option value="50">50%</option>\
+									<option value="60">60%</option>\
+									<option value="70">70%</option>\
+									<option value="80">80%</option>\
+									<option value="90">90%</option>\
+									<option value="100">100%</option>\
+								</select>\
+							</p>\
+						</div>\
+					';
+				},
+				getOptions : function(){
+					return '\
+						<p><a href="#eXeGameItineraryOptions" id="eXeGameItineraryOptionsLnk">'+_("More options (password protected activities)...")+'</a></p>\
+						<div id="eXeGameItineraryOptions" style="display:none">\
+							' + $exeAuthoring.iDevice.gamification.itinerary.getContents() + '\
+						</div>';
+				},
                 getTab : function(){
                     return '\
                              <div class="exe-form-tab" title="' + _('Itinerary') + '">\
-                                <div class="exe-idevice-info">'+_("You might create an itinerary of challenges where players won't be able to access a new game or challenge until they get a key in a previous activity. For this purpose, you might establish an access code as well as a message that may be displayed to players when they get a fixed percentage of hits, and be used as a password to a new challenge or a following activity.")+'</div>\
-                                <p align="left">\
-                                    <label for="eXeGameShowCodeAccess"><input type="checkbox" id="eXeGameShowCodeAccess" >' +_("Access code is required")+'</label>\
-                                </p>\
-                                <p style="margin-left:1.4em;margin-bottom:1.5em" >\
-                                    <label for="eXeGameCodeAccess" id="labelCodeAccess">'+_("Access code")+':</label>\
-                                    <input type="text" name="eXeGameCodeAccess" id="eXeGameCodeAccess"  maxlength="40" disabled />\
-                                    <label for="eXeGameMessageCodeAccess" id="labelMessageAccess">'+_("Question")+':</label>\
-                                    <input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
-                                </p>\
-                                <p>\
-                                    <label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue" >'+_("Show a message or password")+'</label>\
-                                </p>\
-                                <div style="margin-left:1.4em;margin-bottom:1.5em">\
-                                    <p>\
-                                        <label for="eXeGameClue">'+_("Message")+':</label>\
-                                        <input type="text" name="eXeGameClue" id="eXeGameClue"  maxlength="50" disabled>\
-                                    </p>\
-                                    <p>\
-                                        <label for="eXeGamePercentajeClue" id="labelPercentajeClue">'+_("Percentage of hits needed to display the message")+':</label>\
-                                        <select id="eXeGamePercentajeClue" disabled>\
-                                            <option value="10">10%</option>\
-                                            <option value="20">20%</option>\
-                                            <option value="30">30%</option>\
-                                            <option value="40" selected>40%</option>\
-                                            <option value="50">50%</option>\
-                                            <option value="60">60%</option>\
-                                            <option value="70">70%</option>\
-                                            <option value="80">80%</option>\
-                                            <option value="90">90%</option>\
-                                            <option value="100">100%</option>\
-                                        </select>\
-                                    </p>\
-                                </div>\
+								' + $exeAuthoring.iDevice.gamification.itinerary.getContents() + '\
                             </div>';
                 },
                 getValues : function(){
@@ -1169,9 +1181,11 @@ var $exeAuthoring = {
                 },
                 setValues : function(a){
                     $('#eXeGameShowClue').prop('checked', a.showClue);
+                    if (a.showClue) $("#eXeGameShowClueOptions").show();
                     $('#eXeGameClue').val(a.clueGame);
                     $('#eXeGamePercentajeClue').val(a.percentageClue);
                     $('#eXeGameShowCodeAccess').prop('checked', a.showCodeAccess);
+                    if (a.showCodeAccess) $("#eXeGameShowCodeAccessOptions").show();
                     $('#eXeGameCodeAccess').val(a.codeAccess);
                     $('#eXeGameMessageCodeAccess').val(a.messageCodeAccess);
                     $('#eXeGameClue').prop('disabled', !a.showClue);
@@ -1182,13 +1196,22 @@ var $exeAuthoring = {
                 addEvents:function(){
                     $('#eXeGameShowClue').on('change', function () {
                         var mark = $(this).is(':checked');
+                        if (mark) $("#eXeGameShowClueOptions").show();
+                        else $("#eXeGameShowClueOptions").hide();						
                         $('#eXeGameClue').prop('disabled', !mark);
                         $('#eXeGamePercentajeClue').prop('disabled', !mark);
                     });
                     $('#eXeGameShowCodeAccess').on('change', function () {
                         var mark = $(this).is(':checked');
+                        if (mark) $("#eXeGameShowCodeAccessOptions").show();
+                        else $("#eXeGameShowCodeAccessOptions").hide();
                         $('#eXeGameCodeAccess').prop('disabled', !mark);
                         $('#eXeGameMessageCodeAccess').prop('disabled', !mark);
+                    });
+                    $('#eXeGameItineraryOptionsLnk').click(function(){
+                        $("#eXeGameItineraryOptionsLnk").remove();
+                        $("#eXeGameItineraryOptions").fadeIn();
+                        return false;
                     });
                 }
             },
