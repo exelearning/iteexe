@@ -112,7 +112,7 @@ var $exeDevice = {
         msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
         msgs.msgTypeChoose = _("Please check all the answers in the right order");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
-        msgs.msgProvideFB = _('Message to display when passing the game, exercise or challenge');
+        msgs.msgProvideFB = _('Message to display when passing the game');
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,

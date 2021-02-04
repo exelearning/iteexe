@@ -78,7 +78,8 @@ var $exeDevice = {
         "msgUseFulInformation": _("and information that will be very useful"),
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
-        "msgAudio": _("Audio")
+        "msgAudio": _("Audio"),
+        "msgEndGameScore": _("Please start playing first...")
     },
 
     init: function () {
@@ -108,7 +109,7 @@ var $exeDevice = {
         msgs.msgWriteText = _("You have to type a text in the editor");
         msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
-        msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
+        msgs.msgProvideFB = _('Message to display when passing the game');
 
     },
     loadYoutubeApi: function () {
