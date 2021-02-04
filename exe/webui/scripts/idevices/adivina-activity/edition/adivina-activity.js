@@ -138,14 +138,13 @@ var $exeDevice = {
                                 <label for="adivinaECaseSensitive"><input type="checkbox" id="adivinaECaseSensitive"> ' + _("Case sensitive") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="adivinaEGameMode">' + _("Tipo de actividad") + ':</label>\
+                                <label for="adivinaEGameMode"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Activity type") + ':</label>\
                                 <input class="gameQE-TypeGame" checked="checked id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                 <label for="adivinaETypeActivity">' + _("Exercise") + '</label>\
                                 <input class="gameQE-TypeGame" " id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
                                 <label for="adivinaEGameMode">' + _("Game") + '</label>\
                                 <input class="gameQE-TypeGame"  id="adivinaETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="adivinaETypeReto">' + _("Challenge") + '</label>\
-                                <a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk"><img src="' + path + "quextIEHelp.gif" + '"  alt="'+_("Help")+'"/></a>\
                             </p>\
                             <div id="adivinaEGameModeHelp" style="display:none">\
                                 <ul>\
@@ -321,7 +320,7 @@ var $exeDevice = {
             }
         });
         // Help link
-        $("#adivinaEGameModeHelpLnk").css("text-transform","lowercase").attr("title",_("Show")+"/"+_("Hide")).click(function(){
+        $("#adivinaEGameModeHelpLnk").click(function(){
             $("#adivinaEGameModeHelp").toggle();
             return false;
         })
