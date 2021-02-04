@@ -32,17 +32,6 @@
 	width: 100%;
 }
 
-/* Mensajes */
-.gameQP-MainContainer .exe-idevice-feedback-msg{
-	margin-left:auto;
-	margin-right:auto;
-	padding:.5em 1em;
-	max-width:750px;
-}
-.exe-idevice-feedback-msg:empty{
-	display:none!important
-}
-
 /* Minimizado */
 
 .gameQP-GameMinimize {
@@ -127,7 +116,7 @@
 
 .gameQP-ShowClue {
 	margin-top: 1em;
-	margin-bottom: 0.3em;
+	margin-bottom: 1em;
 	min-height: 1em;
 	padding: 0;
 	width: 100%;

@@ -316,7 +316,7 @@ var $eXeAdivina = {
             </div>\
             <div class="gameQP-ShowClue" id="adivinaShowClue-' + instance + '">\
                 <div class="sr-av">' + msgs.msgClue + '</div>\
-                <p class=" gameQP-PShowClue gameQP-parpadea exe-idevice-feedback-msg exe-block-info" id="adivinaPShowClue-' + instance + '"></p>\
+                <p class=" gameQP-PShowClue gameQP-parpadea" id="adivinaPShowClue-' + instance + '"></p>\
            </div>\
            <div class="gameQP-Multimedia" id="adivinaMultimedia-' + instance + '">\
                 <img class="gameQP-Cursor" id="adivinaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
@@ -1385,12 +1385,6 @@ var $eXeAdivina = {
 
     },
     showMessage: function (type, message, instance) {
-        /*To review
-        var colors = ['danger', 'info', 'success'];
-        $("#adivinaPAuthor-" + instance).text(message).attr("class","exe-idevice-feedback-msg exe-block-"+colors[type]);
-        El orden correcto de lso c olores sería el siguiente:
-        colors = ['info', 'danger', 'success'];
-		*/
         var colors = ['#555555', $eXeAdivina.borderColors.red, $eXeAdivina.borderColors.green, $eXeAdivina.borderColors.blue, $eXeAdivina.borderColors.yellow],
             color = colors[type];
         $('#adivinaPAuthor-' + instance).text(message);
