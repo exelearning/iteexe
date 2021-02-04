@@ -292,7 +292,7 @@ var $eXeCandado = {
         if ($eXeCandado.checkWord(answord, mOptions.candadoSolution))  {
             $eXeCandado.showFeedback(instance);
         } else {
-            message = $eXeCandado.getRetroFeedMessages(false, instance) +  mOptions.msgs.msgErrorCode;
+            message = $eXeCandado.getRetroFeedMessages(false, instance) + " " + mOptions.msgs.msgErrorCode;
             typeMessage = 1;
             mOptions.candadoErrors++;
             if( mOptions.candadoAttemps>0 && mOptions.candadoErrorMessage.length>0 && mOptions.candadoErrors>=mOptions.candadoAttemps){
@@ -330,9 +330,6 @@ var $eXeCandado = {
         window.alert(tmsg)
     },
     showMessage: function (type, message, instance) {
-        var colors = ['danger', 'info', 'success'];
-        $("#candadoPInformation-" + instance).text(message).attr("class","exe-idevice-feedback-msg exe-block-"+colors[type]);
-        /* To review
         var colors = ['#555555', $eXeCandado.borderColors.red, $eXeCandado.borderColors.green, $eXeCandado.borderColors.blue, $eXeCandado.borderColors.yellow];
         var color = colors[type];
         $("#candadoPInformation-" + instance).text(message);
@@ -340,7 +337,6 @@ var $eXeCandado = {
             'color': color,
             'font-weight': 'bold'
         });
-        */
     }
 }
 $(function () {

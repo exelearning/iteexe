@@ -125,16 +125,13 @@
 
 /* Mensaje informativo */
 .candado-MessageInfo {
-	margin: 0.3em auto;
+	margin: 1em auto;
 	width: 100%;
 }
 .candado-MessageInfo p {
 	font-weight: bold;
 	text-align: center;
 	width: 100%;
-	padding:.5em 1em;
-	margin:0 0 1.5em 0;
-	background-image:none
 }
 /* botones desafio */
 .candado-ShowIntro {
