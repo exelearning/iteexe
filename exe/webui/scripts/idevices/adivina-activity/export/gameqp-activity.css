@@ -30,6 +30,7 @@
 	font-size: 1em;
 	margin: 0.3em auto;
 	width: 100%;
+	overflow: auto;
 }
 
 /* Minimizado */
@@ -967,12 +968,6 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 	}
 }
 
-@media screen and (max-width:650px) {
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
-		font-size: 0.9rem;
-	}
-}
-
 @media screen and (max-width:550px) {
 	.gameQP-Question {
 		margin-bottom: 0.5em;
@@ -983,17 +978,11 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 	.gameQP-instructions {
 		margin: 0.1em auto;
 	}
-	.gameQP-instructions p {
-		margin: 0 auto;
-	}
 }
 
 @media screen and (max-width:470px) {
 	.gameQP-Multimedia {
 		width: 95%;
-	}
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
-		font-size: 0.8rem;
 	}
 	.gameQP-LifesGame {
 		display: none;
@@ -1028,12 +1017,6 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 		background: #fdfdfd;
 		border: 1px solid #398ee7;
 		border-radius: 4px;
-	}
-}
-
-@media screen and (max-width:390px) {
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
-		font-size: 0.7rem;
 	}
 }
 
@@ -1130,4 +1113,10 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 		max-width: 80vmin;
 		width: 80vmin;
 	}
+}
+
+/* To review */
+.adivina-instructions,
+.quext-instructions{
+	overflow:auto;
 }
