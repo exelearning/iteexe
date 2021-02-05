@@ -698,13 +698,21 @@ var $exeDevice = {
                                 <label for="quextECustomScore"><input type="checkbox" id="quextECustomScore">' + _("Custom score") + '. </label>\
                             </p>\
                             <p>\
-                                <input class="gameQE-TypeGame" checked="checked" id="quextEGameMode" type="radio" name="qxtgamemode" value="0" />\
-                                <label for="quextEGameMode">' + _("Game") + '</label>\
+                                <strong class="GameModeLabel"><a href="#quextEGameModeHelp" id="quextEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
                                 <input class="gameQE-TypeGame"  id="quextETypeActivity" type="radio" name="qxtgamemode" value="1" />\
-                                <label for="quextETypeActivity">' + _("Activity") + '</label>\
+                                <label for="quextETypeActivity">' + _("0 to 10") + '</label>\
+								<input class="gameQE-TypeGame" checked="checked" id="quextEGameMode" type="radio" name="qxtgamemode" value="0" />\
+                                <label for="quextEGameMode">' + _("Points and lives") + '</label>\
                                 <input class="gameQE-TypeGame"  id="quextETypeReto" type="radio" name="qxtgamemode" value="2" />\
-                                <label for="quextETypeReto">' + _("Challenge") + '</label>\
+                                <label for="quextETypeReto">' + _("No score") + '</label>\
                             </p>\
+                            <div id="quextEGameModeHelp" style="display:none">\
+                                <ul>\
+                                    <li><strong>'+_("0 to 10")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                    <li><strong>'+_("Points and lives")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                    <li><strong>'+_("No score")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                </ul>\
+                            </div>\
                             <p>\
                                 <label for="quextEUseLives"><input type="checkbox" checked id="quextEUseLives"> ' + _("Use lives") + '. </label> \
                                 <label for="quextENumberLives">' + _("Number of lives") + ':\
@@ -762,6 +770,9 @@ var $exeDevice = {
                                         <input class="gameQE-Times" id="q10m" type="radio" name="qxttime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
+                                    <div id="quextEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
+                                        <label for="quextEScoreQuestion">' + _("Score") + ':</label> <input type="number" name="quextEScoreQuestion" id="quextEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
+                                    </div>\
                                     <span class="gameQE-ETitleImage" id="quextETitleImage">' + _("Image URL") + '</span>\
                                     <div class="gameQE-Flex gameQE-EInputImage" id="quextEInputImage">\
                                         <label class="sr-av" for="quextEURLImage">' + _("Image URL") + '</label>\
@@ -818,9 +829,6 @@ var $exeDevice = {
                                         <label class="sr-av" for="quextEURLAudio">' + _("URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="quextEURLAudio"/>\
                                         <a href="#" id="quextEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
-                                    </div>\
-                                    <div id="quextEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
-                                        <label for="quextEScoreQuestion">' + _("Score") + ':</label><input type="number" name="quextEScoreQuestion" id="quextEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EMultiMediaOption">\
@@ -923,7 +931,6 @@ var $exeDevice = {
             fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
             menubar: false,
             statusbar: false,
-            content_css: "css/tinymce.css",
             setup: function (ed) {
                 ed.on('init', function (e) {
                     $exeDevice.enableForm(field);
@@ -1830,7 +1837,12 @@ var $exeDevice = {
                 ul = $('#quextEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
-
+        // Help link
+        $("#quextEGameModeHelpLnk").click(function(){
+			alert("Case")
+            $("#qEGameModeHelp").toggle();
+            return false;
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },

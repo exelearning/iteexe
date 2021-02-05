@@ -379,7 +379,7 @@
 	-ms-user-select: none;
 	-webkit-user-select: none;
 	align-items: center;
-	background-color: transparent;
+	background-color: #FFF;
 	border: 1px solid #777777;
 	border-radius: 0.4em;
 	cursor: pointer;
@@ -771,7 +771,8 @@ input.gameQP-VideoIntroClose {
 }
 
 .gameQP-GetScore input[type=button] {
-	padding: 0.3em;
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
 	width: auto;
 }
 
@@ -780,6 +781,7 @@ input.gameQP-VideoIntroClose {
 	display: flex;
 	justify-content: center;
 	width: 100%;
+	margin-top:1em
 }
 
 /* Iconos */

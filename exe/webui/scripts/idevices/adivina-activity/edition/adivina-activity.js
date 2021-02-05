@@ -313,7 +313,6 @@ var $exeDevice = {
             fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
             menubar: false,
             statusbar: false,
-            content_css: "css/tinymce.css",
             setup: function (ed) {
                 ed.on('init', function (e) {
                     $exeDevice.enableForm(field);
