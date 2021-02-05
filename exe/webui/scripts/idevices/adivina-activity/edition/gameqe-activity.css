@@ -519,3 +519,6 @@ label[for=gameQEActivitySCORM] {
 	margin:0 2px;
 	vertical-align:middle;
 }
+.GameModeLabel{
+	font-weight:normal
+}

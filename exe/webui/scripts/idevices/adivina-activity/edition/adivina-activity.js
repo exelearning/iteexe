@@ -1,4 +1,5 @@
 /**
+/**
  * Adivina Activity iDevice (edition code)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
@@ -138,19 +139,19 @@ var $exeDevice = {
                                 <label for="adivinaECaseSensitive"><input type="checkbox" id="adivinaECaseSensitive"> ' + _("Case sensitive") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="adivinaEGameMode"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Activity type") + ':</label>\
+                                <strong class="GameModeLabel"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
                                 <input class="gameQE-TypeGame" checked="checked id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
-                                <label for="adivinaETypeActivity">' + _("Exercise") + '</label>\
+                                <label for="adivinaETypeActivity">' + _("0 to 10") + '</label>\
                                 <input class="gameQE-TypeGame" " id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
-                                <label for="adivinaEGameMode">' + _("Game") + '</label>\
+                                <label for="adivinaEGameMode">' + _("Points and lives") + '</label>\
                                 <input class="gameQE-TypeGame"  id="adivinaETypeReto" type="radio" name="qxtgamemode" value="2" />\
-                                <label for="adivinaETypeReto">' + _("Challenge") + '</label>\
+                                <label for="adivinaETypeReto">' + _("No score") + '</label>\
                             </p>\
                             <div id="adivinaEGameModeHelp" style="display:none">\
                                 <ul>\
-                                    <li><strong>'+_("Exercise")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
-                                    <li><strong>'+_("Game")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
-                                    <li><strong>'+_("Challenge")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                    <li><strong>'+_("0 to 10")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                    <li><strong>'+_("Points and lives")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                    <li><strong>'+_("No score")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
                                 </ul>\
                             </div>\
                             <p>\
@@ -319,11 +320,6 @@ var $exeDevice = {
                 });
             }
         });
-        // Help link
-        $("#adivinaEGameModeHelpLnk").click(function(){
-            $("#adivinaEGameModeHelp").toggle();
-            return false;
-        })
     },
     enableForm: function (field) {
         $exeDevice.initQuestions();
@@ -1258,6 +1254,11 @@ var $exeDevice = {
                 ul = $('#adivinaEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
+        // Help link
+        $("#adivinaEGameModeHelpLnk").click(function(){
+            $("#adivinaEGameModeHelp").toggle();
+            return false;
+        });		
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     getIDYoutube: function (url) {
