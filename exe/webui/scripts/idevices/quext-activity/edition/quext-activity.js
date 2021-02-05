@@ -1167,7 +1167,7 @@ var $exeDevice = {
         var json = JSON.stringify(dataGame),
             divContent = "";
         var instructions = tinyMCE.get('eXeGameInstructions').getContent();
-        if (instructions != "") divContent = '<div class="quext-instructions">' + instructions + '</div>';
+        if (instructions != "") divContent = '<div class="quext-instructions gameQP-instructions">' + instructions + '</div>';
         var textFeedBack = tinyMCE.get('quextEFeedBackEditor').getContent(),
             linksImages = $exeDevice.createlinksImage(dataGame.questionsGame),
             linksAudios = $exeDevice.createlinksAudio(dataGame.questionsGame),

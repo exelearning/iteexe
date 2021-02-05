@@ -721,7 +721,7 @@ var $exeDevice = {
             divContent = "";
         json = $exeDevice.Encrypt(json);
         var textFeedBack = tinyMCE.get('adivinaEFeedBackEditor').getContent();
-        if (dataGame.instructions != "") divContent = '<div class="adivina-instructions">' + dataGame.instructions + '</div>';
+        if (dataGame.instructions != "") divContent = '<div class="adivina-instructions gameQP-instructions">' + dataGame.instructions + '</div>';
         var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame),
             linksAudios = $exeDevice.createlinksAudio(dataGame.wordsGame);
         var html = '<div class="adivina-IDevice">';
