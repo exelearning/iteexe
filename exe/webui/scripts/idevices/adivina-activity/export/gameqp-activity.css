@@ -1117,6 +1117,8 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 
 /* To review */
 .adivina-instructions,
-.quext-instructions{
+.quext-instructions,
+.rosco-instructions,
+.selecciona-instructions{
 	overflow:auto;
 }

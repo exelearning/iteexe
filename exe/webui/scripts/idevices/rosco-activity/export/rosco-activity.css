@@ -10,9 +10,10 @@
 /* Contenedor */
 
 .rosco-Main {
-    max-width: 720px;
+    max-width: 750px;
     width: 100%;
     margin: 0.4em auto;
+    position:relative; /* See .rosco-GameScoreBoard */
 }
 
 .rosco-MainContainer {
@@ -96,6 +97,7 @@
     margin: 0 auto;
     background-color: transparent;
     padding: 0.3em;
+    margin-top:27px; /* See .rosco-GameScoreBoard */
 }
 
 .rosco-GameScoreBoard {
@@ -104,6 +106,9 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 0.3em;
+    position:absolute;
+    top:0;
+    left:0
 }
 
 .rosco-GameScoreBoard p {
@@ -164,6 +169,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     align-items: center;
+    margin-top:27px; /* See .rosco-GameScoreBoard */
 }
 
 .rosco-Letter {

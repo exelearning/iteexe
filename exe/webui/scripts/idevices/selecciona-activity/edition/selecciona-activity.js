@@ -1342,7 +1342,7 @@ var $exeDevice = {
         var json = JSON.stringify(dataGame),
             divContent = "";
         var instructions = tinyMCE.get('eXeGameInstructions').getContent();
-        if (instructions != "") divContent = '<div class="selecciona-instructions">' + instructions + '</div>';
+        if (instructions != "") divContent = '<div class="selecciona-instructions gameQP-instructions">' + instructions + '</div>';
         var textFeedBack = tinyMCE.get('seleccionaEFeedBackEditor').getContent(),
             linksImages = $exeDevice.createlinksImage(dataGame.selectsGame),
             linksAudios = $exeDevice.createlinksAudio(dataGame.selectsGame),

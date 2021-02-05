@@ -222,29 +222,29 @@ var $eXeRosco = {
 				<div class="rosco-GameContainer" id="roscoGameContainer-' + instance + '">\
 					<div class="rosco-GameScoreBoard">\
 						<div class="rosco-GameScores">\
-							<strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
-							<div class="exeQuextIcons exeQuextIcons-Hit"></div>\
+							<strong class="sr-av">' + msgs.msgHits + ':</strong>\
+							<div class="exeQuextIcons exeQuextIcons-Hit" title="' + msgs.msgHits + '"></div>\
 							<p  id="roscotPHits-' + instance + '">0</p>\
-							<strong><span class="sr-av">' + msgs.msgErrors + ':</span></strong>\
-							<div class="exeQuextIcons  exeQuextIcons-Error"></div>\
+							<strong class="sr-av">' + msgs.msgErrors + ':</strong>\
+							<div class="exeQuextIcons  exeQuextIcons-Error" title="' + msgs.msgErrors + '"></div>\
 							<p id="roscotPErrors-' + instance + '">0</p>\
 						</div>\
 						<div class="rosco-TimeNumber">\
-					  	 	<strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-							<div class="exeQuextIcons  exeQuextIcons-Time"></div>\
-							<p class="rosco-PTime"  id="roscoPTime-' + instance + '">' + sTime + '</p>\
-							<div class="exeQuextIcons  exeQuextIcons-OneRound" id="roscoNumberRounds-' + instance + '"></div>\
-								<strong><span class="sr-av"  id="roscoNumberRoundsSpan-' + instance + '">' + msgs.msgOneRound + ':</span></strong>\
-								<a href="#" class="rosco-LinkArrowMinimize" id="roscoLinkArrowMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
-								<strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
-									<div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
-							    </a>\
-								<a href="#" class="rosco-LinkTypeGame" id="roscoLinkTypeGame-' + instance + '" title="' + msgs.msgHideRoulette + '">\
-									<strong><span class="sr-av">' + msgs.msgHideRoulette + ':</span></strong>\
-									<div class="exeQuextIcons exeQuextIcons-RoscoRows" id="roscoTypeGame-' + instance + '"></div>\
-								</a>\
-							</div>\
+							<strong class="sr-av">' + msgs.msgTime + ':</strong>\
+							<div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
+							<p class="gameQP-PTime"  id="roscoPTime-' + instance + '">' + sTime + '</p>\
+							<div class="exeQuextIcons  exeQuextIcons-OneRound" id="roscoNumberRounds-' + instance + '" title="' + msgs.msgOneRound + '"></div>\
+							<strong class="sr-av" id="roscoNumberRoundsSpan-' + instance + '">' + msgs.msgOneRound + ':</strong>\
+							<a href="#" class="rosco-LinkArrowMinimize" id="roscoLinkArrowMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+								<strong class="sr-av">' + msgs.msgMinimize + ':</strong>\
+								<div class="exeQuextIcons exeQuextIcons-Minimize"></div>\
+							</a>\
+							<a href="#" class="rosco-LinkTypeGame" id="roscoLinkTypeGame-' + instance + '" title="' + msgs.msgHideRoulette + '">\
+								<strong class="sr-av">' + msgs.msgHideRoulette + ':</strong>\
+								<div class="exeQuextIcons exeQuextIcons-RoscoRows" id="roscoTypeGame-' + instance + '"></div>\
+							</a>\
 						</div>\
+					</div>\
 					<div class="rosco-Letters" id="roscoLetters-' + instance + '">' + aLetters + '</div>\
 					<div class="rosco-ShowClue" id="roscoShowClue-' + instance + '">\
 						<div class="sr-av">' + msgs.msgClue + ':</div>\

@@ -436,7 +436,7 @@ var $exeDevice = {
 		var json = JSON.stringify(dataGame),
 			divContent = "";
 		json = $exeDevice.Encrypt(json);
-		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions">' + dataGame.instructions + '</div>';
+		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions gameQP-instructions">' + dataGame.instructions + '</div>';
 		var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame),
 			linksAudios = $exeDevice.createlinksAudio(dataGame.wordsGame);
 
