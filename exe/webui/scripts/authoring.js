@@ -1111,7 +1111,7 @@ var $exeAuthoring = {
 							<input type="text" name="eXeGameMessageCodeAccess" id="eXeGameMessageCodeAccess" maxlength="200"/ disabled> \
 						</p>\
 						<p>\
-							<label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue" >'+_("Show a message or password")+'</label>\
+							<label for="eXeGameShowClue"><input type="checkbox" id="eXeGameShowClue" >'+_("Show a message or password when reaching the objective")+'</label>\
 						</p>\
 						<div style="margin-left:1.4em;margin-bottom:1.5em;display:none" id="eXeGameShowClueOptions">\
 							<p>\
@@ -1145,7 +1145,7 @@ var $exeAuthoring = {
 				},
                 getTab : function(){
                     return '\
-                             <div class="exe-form-tab" title="' + _('Itinerary') + '">\
+                             <div class="exe-form-tab" title="' + _('Passwords') + '">\
 								' + $exeAuthoring.iDevice.gamification.itinerary.getContents() + '\
                             </div>';
                 },
