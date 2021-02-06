@@ -1257,7 +1257,8 @@ var $exeDevice = {
         $("#adivinaEGameModeHelpLnk").click(function(){
             $("#adivinaEGameModeHelp").toggle();
             return false;
-        });		
+
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     getIDYoutube: function (url) {

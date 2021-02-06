@@ -232,7 +232,7 @@ var $eXeRosco = {
 						<div class="rosco-TimeNumber">\
 							<strong class="sr-av">' + msgs.msgTime + ':</strong>\
 							<div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
-							<p class="gameQP-PTime"  id="roscoPTime-' + instance + '">' + sTime + '</p>\
+							<p class="rosco-PTime"  id="roscoPTime-' + instance + '">' + sTime + '</p>\
 							<div class="exeQuextIcons  exeQuextIcons-OneRound" id="roscoNumberRounds-' + instance + '" title="' + msgs.msgOneRound + '"></div>\
 							<strong class="sr-av" id="roscoNumberRoundsSpan-' + instance + '">' + msgs.msgOneRound + ':</strong>\
 							<a href="#" class="rosco-LinkArrowMinimize" id="roscoLinkArrowMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
@@ -243,6 +243,10 @@ var $eXeRosco = {
 								<strong class="sr-av">' + msgs.msgHideRoulette + ':</strong>\
 								<div class="exeQuextIcons exeQuextIcons-RoscoRows" id="roscoTypeGame-' + instance + '"></div>\
 							</a>\
+							<a href="#" class="rosco-LinkFullScreen" id="roscoLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+                        		<strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
+                        		<div class="exeQuextIcons exeQuextIcons-FullScreen" id="roscoFullScreen-' + instance + '"></div>\
+                			</a>\
 						</div>\
 					</div>\
 					<div class="rosco-Letters" id="roscoLetters-' + instance + '">' + aLetters + '</div>\
@@ -255,7 +259,7 @@ var $eXeRosco = {
 						<img src="' + path + 'exequextcursor.gif" class="rosco-Cursor" alt="Cursor" id="roscoCursor-' + instance + '"/> \
 						<img src="" class="rosco-Image" alt="' + msgs.msgNoImage + '" id="roscoHomeImage-' + instance + '"/> \
 						<img src="' + path + 'roscoHome.png" class="rosco-NoImage" alt="' + msgs.msgNoImage + '" id="roscoNoImage-' + instance + '"/> \
-						<a href="#" class="rosco-LinkAudio" id="roscoLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" class="rosco-Activo" alt="' + msgs.msgAudio + '">\</a>\
+						<a href="#" class="rosco-LinkAudio" id="roscoLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" alt="' + msgs.msgAudio + '">\</a>\
 					</div>\
 					<div class="rosco-AuthorLicence" id="roscoAutorLicence-' + instance + '">\
 						<div class="sr-av">' + msgs.msgAuthor + ':</div>\
@@ -551,6 +555,12 @@ var $eXeRosco = {
 			$eXeRosco.stopSound(instance);
 			$eXeRosco.playSound(audio, instance);
 		});
+
+		$("#roscoLinkFullScreen-" + instance).on('click touchstart', function (e) {
+            e.preventDefault();
+            var element = document.getElementById('roscoMainContainer-' + instance);
+            $eXeRosco.toggleFullscreen(element, instance);
+        });
 
 
 	},
@@ -1292,7 +1302,39 @@ var $eXeRosco = {
 				break;
 		}
 		return color;
-	}
+	},
+	exitFullscreen: function () {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    },
+    getFullscreen: function (element) {
+        if (element.requestFullscreen) {
+            element.requestFullscreen();
+        } else if (element.mozRequestFullScreen) {
+            element.mozRequestFullScreen();
+        } else if (element.webkitRequestFullscreen) {
+            element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        } else if (element.msRequestFullscreen) {
+            element.msRequestFullscreen();
+        }
+    },
+    toggleFullscreen: function (element, instance) {
+        var element = element || document.documentElement;
+        if (!document.fullscreenElement && !document.mozFullScreenElement &&
+            !document.webkitFullscreenElement && !document.msFullscreenElement) {
+            $eXeRosco.getFullscreen(element);
+        } else {
+            $eXeRosco.exitFullscreen(element);
+        }
+        $eXeRosco.refreshImageActive(instance);
+    }
 }
 $(function () {
 	$eXeRosco.init();

@@ -63,7 +63,9 @@ var $exeDevice = {
 		"msgSeveralScore": _("You can save the score as many times as you want"),
 		"msgYouLastScore": _("The last score saved is"),
 		"msgActityComply": _("You have already done this activity."),
-		"msgPlaySeveralTimes": _("You can do this activity as many times as you want")
+		"msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
+		"msgFullScreen": _("Full Screen"),
+        "msgExitFullScreen": _("Exit Full Screen"),
 	},
 	colors: {
 		black: "#1c1b1b",

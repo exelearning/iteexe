@@ -92,7 +92,7 @@ var $exeDevice = {
         "msgIndicateWord": _("Provide a word or phrase"),
         "msgMoveOne": _("Move on"),
         "msgPoints": _("points"),
-
+        "msgEndGameScore": _("Please start playing first...")
     },
 
     init: function () {
@@ -129,7 +129,7 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideSolution = _("Please write the solution");
         msgs.msgEDefintion = _("Please provide the word definition");
-        msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
+        msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNotHitCuestion = _('La cuestión marcada como próxima en caso de acierto no existe no existe');
         msgs.msgNotErrorCuestion = _('La cuestión marcada como próxima en caso de error no existe no existe');
 
@@ -801,14 +801,21 @@ var $exeDevice = {
                                     <label for="seleccionaEShowMinimize"><input type="checkbox" id="seleccionaEShowMinimize">' + _("Show minimized.") + '</label>\
                                 </p>\
                                 <p>\
-                                    <label>' + _("Orden de las preguntas") + ': </label>\
-                                    <input class="gameQE-TypeOrder" checked="checked" id="seleccionaEOrderLinear" type="radio" name="slcgameorder" value="0" />\
+                                    <strong class="GameModeLabel"><a href="#seleccionaEOrderHelp" id="seleccionaEOrderHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Orden de las preguntas") + ':</strong>\
+                                     <input class="gameQE-TypeOrder" checked="checked" id="seleccionaEOrderLinear" type="radio" name="slcgameorder" value="0" />\
                                     <label for="seleccionaEOrderLinear">' + _("Lineal") + '</label>\
                                     <input class="gameQE-TypeOrder"  id="seleccionaEOrderRamdon" type="radio" name="slcgameorder" value="1" />\
                                     <label for="seleccionaEOrderRamdon">' + _("Azar") + '</label>\
                                     <input class="gameQE-TypeOrder"  id="seleccionaEOrderThree" type="radio" name="slcgameorder" value="2" />\
                                     <label for="seleccionaEOrderThree">' + _("Árbol") + '</label>\
                                 </p>\
+                                <div id="seleccionaEOrderHelp" style="display:none">\
+                                    <ul>\
+                                        <li><strong>'+_("Lineal")+' &rarr; </strong>'+_("Las preguntas se muestran siembre en el orden definido por el autor.")+'</li>\
+                                         <li><strong>'+_("Azar")+' &rarr; </strong>'+_("Cada vez que se realiza la actividad, las preguntas se muestran en un orden diferente.")+'</li>\
+                                         <li><strong>'+_("Árbol")+' &rarr; </strong>'+_("Las preguntas se organizan en itinerarios que se mostrarán o no según las repuestas del usuario")+'</li>\
+                                    </ul>\
+                                </div>\
                                 <p>\
                                     <label for="seleccionaECustomMessages"><input type="checkbox" id="seleccionaECustomMessages">' + _("Custom messages") + '. </label>\
                                 </p>\
@@ -823,21 +830,28 @@ var $exeDevice = {
                                     <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
                                 </p>\
                                 <p>\
-                                    <label>' + _("Tipo de actividad") + ': </label>\
-                                    <input class="gameQE-TypeGame" checked="checked" id="seleccionaEGameMode" type="radio" name="slcgamemode" value="0" />\
-                                    <label for="seleccionaEGameMode">' + _("Game") + '</label>\
-                                    <input class="gameQE-TypeGame"  id="seleccionaETypeActivity" type="radio" name="slcgamemode" value="1" />\
-                                    <label for="seleccionaETypeActivity">' + _("Ejercicio") + '</label>\
-                                    <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="slcgamemode" value="2" />\
-                                    <label for="seleccionaETypeReto">' + _("Challenge") + '</label>\
+                                <strong class="GameModeLabel"><a href="#seleccionaEGameModeHelp" id="seleccionaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
+                                    <input class="gameQE-TypeGame" checked="checked id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
+                                    <label for="seleccionaETypeActivity">' + _("0 to 10") + '</label>\
+                                    <input class="gameQE-TypeGame" " id="seleccionaEGameMode" type="radio" name="qxtgamemode" value="0" />\
+                                    <label for="seleccionaEGameMode">' + _("Points and lives") + '</label>\
+                                    <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="qxtgamemode" value="2" />\
+                                    <label for="seleccionaETypeReto">' + _("No score") + '</label>\
                                 </p>\
+                                <div id="seleccionaEGameModeHelp" style="display:none">\
+                                    <ul>\
+                                        <li><strong>'+_("0 to 10")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                         <li><strong>'+_("Points and lives")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                         <li><strong>'+_("No score")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                    </ul>\
+                                </div>\
                                 <p>\
                                     <label for="seleccionaEUseLives"><input type="checkbox" checked id="seleccionaEUseLives"> ' + _("Use lives") + '. </label> \
                                     <label for="seleccionaENumberLives">' + _("Number of lives") + ':\
                                     <input type="number" name="seleccionaENumberLives" id="seleccionaENumberLives" value="3" min="1" max="5" /> </label>\
                                 </p>\
                                 <p>\
-                                    <label for="seleccionaEHasFeedBack"><input type="checkbox"  id="seleccionaEHasFeedBack"> ' + _("Feedback") + '. </label> \
+                                    <label for="seleccionaEHasFeedBack"><input type="checkbox"  id="seleccionaEHasFeedBack"> ' + _("Feedback") + ': </label> \
                                     <input type="number" name="seleccionaEPercentajeFB" id="seleccionaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> </label>\
                                 </p>\
                                 <p id="seleccionaEFeedbackP" class="gameQE-EFeedbackP">\
@@ -853,7 +867,7 @@ var $exeDevice = {
                         <div class="gameQE-EPanel" id="seleccionaEPanel">\
                             <div class="gameQE-EOptionsMedia">\
                                 <div class="gameQE-EOptionsGame">\
-                                    <span>' + _("Type") + ':</span>\
+                                    <strong>' + _("Type") + ':</strong>\
                                     <div class="gameQE-EInputType">\
                                         <input class="gameQE-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
                                         <label for="seleccionaTypeSelect">' + _("Select") + '</label>\
@@ -862,7 +876,7 @@ var $exeDevice = {
                                         <input class="gameQE-TypeSelect"  id="seleccionaTypeWord" type="radio" name="slctypeselect" value="2"/>\
                                         <label for="seleccionaTypeWord">' + _("Word") + '</label>\
                                     </div>\
-                                    <span>' + _("Multimedia Type") + ':</span>\
+                                    <strong>' + _("Multimedia Type") + ':</strong>\
                                     <div class="gameQE-EInputMedias">\
                                         <input class="gameQE-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
                                         <label for="seleccionaMediaNormal">' + _("None") + '</label>\
@@ -873,7 +887,7 @@ var $exeDevice = {
                                         <input class="gameQE-Type"  id="seleccionaMediaText" type="radio" name="slcmediatype" value="3" disabled />\
                                         <label for="seleccionaMediaText">' + _("Text") + '</label>\
                                     </div>\
-                                    <span id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</span>\
+                                    <strong id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</strong>\
                                     <div class="gameQE-EInputNumbers" id="seleccionaEInputNumbers" >\
                                         <input class="gameQE-Number" id="numQ2" type="radio" name="slcnumber" value="2" />\
                                         <label for="numQ2">2</label>\
@@ -882,11 +896,11 @@ var $exeDevice = {
                                         <input class="gameQE-Number" id="numQ4" type="radio" name="slcnumber" value="4" checked="checked" />\
                                         <label for="numQ4">4</label>\
                                     </div>\
-                                    <span id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</span>\
+                                    <strong id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</strong>\
                                     <div class="gameQE-EPercentage" id="seleccionaPercentage">\
                                         <input type="number" name="seleccionaPercentageShow" id="seleccionaPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
                                     </div>\
-                                    <span>' + _("Time per question") + ':</span>\
+                                    <strong>' + _("Time per question") + ':</strong>\
                                     <div class="gameQE-EInputTimes">\
                                         <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="slctime" value="0" />\
                                         <label for="q15s">15s</label>\
@@ -901,7 +915,7 @@ var $exeDevice = {
                                         <input class="gameQE-Times" id="q10m" type="radio" name="slctime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
-                                    <span class="gameQE-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + '</span>\
+                                    <strong class="gameQE-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + ':</strong>\
                                     <div class="gameQE-EInputImage gameQE-Flex" id="seleccionaEInputImage">\
                                         <label class="sr-av" for="seleccionaEURLImage">' + _("Image URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLImage"  id="seleccionaEURLImage"/>\
@@ -915,7 +929,7 @@ var $exeDevice = {
                                             <input id="seleccionaEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <span class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + '</span>\
+                                    <strong class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + ':</strong>\
                                     <div class="gameQE-EInputVideo gameQE-Flex" id="seleccionaEInputVideo">\
                                         <label class="sr-av" for="seleccionaEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="seleccionaEURLYoutube" type="text" />\
@@ -944,22 +958,22 @@ var $exeDevice = {
                                     </div>\
                                     <div class="gameQE-EAuthorAlt" id="seleccionaEAuthorAlt">\
                                         <div class="gameQE-EInputAuthor" id="quextInputAuthor">\
-                                            <label for="seleccionaEAuthor">' + _("Author") + '</label>\
+                                            <label for="seleccionaEAuthor"><strong>' + _("Author") + '</strong>: </label>\
                                             <input id="seleccionaEAuthor" type="text" />\
                                         </div>\
                                         <div class="gameQE-EInputAlt" id="quextInputAlt">\
-                                            <label for="seleccionaEAlt">' + _("Alternative text") + '</label>\
+                                            <label for="seleccionaEAlt"><strong>' + _("Alternative text") + ':</strong> </label>\
                                             <input id="seleccionaEAlt" type="text" />\
                                         </div>\
                                     </div>\
-                                    <span id="seleccionaETitleAudio">' + _("Audio") + '</span>\
+                                    <strong id="seleccionaETitleAudio">' + _("Audio") + ':</strong>\
                                     <div class="gameQE-EInputAudio" id="seleccionaEInputAudio">\
-                                        <label class="sr-av" for="seleccionaEURLAudio">' + _("URL") + '</label>\
+                                        <label class="sr-av" for="seleccionaEURLAudio">' + _("URL") + ':</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="seleccionaEURLAudio"/>\
                                         <a href="#" id="seleccionaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div id="seleccionaEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
-                                        <label for="seleccionaEScoreQuestion">' + _("Score") + ':</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
+                                        <label for="seleccionaEScoreQuestion"><strong>' + _("Score") + '</strong>:</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EMultiMediaOption">\
@@ -976,7 +990,7 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EContents">\
-                                   <div id="seleccionaESolitionOptions"><span>' + _("Solution") + ': </span><span id="selecionaESolutionSelect"></span></div>\
+                                   <div id="seleccionaESolitionOptions"><span><strong>' + _("Solution") + ':</strong> </span><span id="selecionaESolutionSelect"></span></div>\
                                    <div class="gameQE-EQuestionDiv" id="seleccionaEQuestionDiv">\
                                         <label class="sr-av">' + _("Question") + ':</label><input type="text" class="gameQE-EQuestion" id="seleccionaEQuestion">\
                                    </div>\
@@ -999,8 +1013,8 @@ var $exeDevice = {
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EWordDiv gameQE-DP" id="selecionaEWordDiv">\
-                                    <div class="gameQE-ESolutionWord"><label for="seleccionaESolutionWord">' + _("Word/Phrase") + ': </label><input type="text"  id="seleccionaESolutionWord"/></div>\
-                                    <div class="gameQE-ESolutionWord"><label for="seleccionaEDefinitionWord">' + _("Definition") + ': </label><input type="text"  id="seleccionaEDefinitionWord"/></div>\
+                                    <div class="gameQE-ESolutionWord"><label for="seleccionaESolutionWord"><strong>' + _("Word/Phrase") + ':</strong> </label><input type="text"  id="seleccionaESolutionWord"/></div>\
+                                    <div class="gameQE-ESolutionWord"><label for="seleccionaEDefinitionWord"><strong>' + _("Definition") + ':</strong> </label><input type="text"  id="seleccionaEDefinitionWord"/></div>\
                                 </div>\
                             </div>\
                             <div class="gameQE-EOrders" id="seleccionaEOrder">\
@@ -2119,6 +2133,19 @@ var $exeDevice = {
                 customS = $('#seleccionaECustomScore').is(':checked');
             $exeDevice.showSelectOrder(type, messages, customS);
         });
+        // Help link
+        $("#seleccionaEGameModeHelpLnk").click(function(){
+            $("#seleccionaEGameModeHelp").toggle();
+            return false;
+        });
+
+        $("#seleccionaEOrderHelpLnk").click(function(){
+            $("#seleccionaEOrderHelp").toggle();
+            return false;
+        });
+
+
+        
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     showSelectOrder: function (type, messages, custonmScore) {

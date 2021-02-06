@@ -230,37 +230,32 @@ var $eXeSelecciona = {
             msgs = $eXeSelecciona.options[instance].msgs;
         html += '<div class="gameQP-MainContainer">\
         <div class="gameQP-GameMinimize" id="seleccionaGameMinimize-' + instance + '">\
-            <a href="#" class="gameQP-LinkMaximize" id="seleccionaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'seleccionaIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="' + msgs.msgMaximize + '">\
-                <div class="gameQP-MessageMaximize" id="seleccionaMessageMaximize-' + instance + '"></div>\
-            </a>\
+            <a href="#" class="gameQP-LinkMaximize" id="seleccionaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'seleccionaIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="">\
+            <div class="gameQP-MessageMaximize" id="seleccionaMessageMaximize-' + instance + '"></div></a>\
         </div>\
         <div class="gameQP-GameContainer" id="seleccionaGameContainer-' + instance + '">\
             <div class="gameQP-GameScoreBoard">\
                 <div class="gameQP-GameScores">\
-                    <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
-                    <p id="seleccionaPNumber-' + instance + '">0</p>\
-                    <strong><span class="sr-av">' + msgs.msgHits + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Hit"></div>\
-                    <p id="seleccionaPHits-' + instance + '">0</p>\
-                    <strong><span class="sr-av">' + msgs.msgErrors + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Error"></div>\
-                    <p id="seleccionaPErrors-' + instance + '">0</p>\
-                    <strong><span class="sr-av">' + msgs.msgScore + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
-                    <p id="seleccionaPScore-' + instance + '">0</p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number" title="'+msgs.msgNumQuestions+'"></div>\
+                    <p><span class="sr-av">' + msgs.msgNumQuestions + ': </span><span id="seleccionaPNumber-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons exeQuextIcons-Hit" title="'+msgs.msgHits+'"></div>\
+                    <p><span class="sr-av">' + msgs.msgHits + ': </span><span id="seleccionaPHits-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Error" title="'+msgs.msgErrors+'"></div>\
+                    <p><span class="sr-av">' + msgs.msgErrors + ': </span><span id="seleccionaPErrors-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Score" title="'+msgs.msgScore+'"></div>\
+                    <p><span class="sr-av">' + msgs.msgScore + ': </span><span id="seleccionaPScore-' + instance + '">0</span></p>\
                 </div>\
                 <div class="gameQP-LifesGame" id="seleccionaLifesGame-' + instance + '">\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life"></div>\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + ':</strong>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + ':</strong>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + ':</strong>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + ':</strong>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <strong class="sr-av">' + msgs.msgLive + ':</strong>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
                 </div>\
                 <div class="gameQP-NumberLifesGame" id="seleccionaNumberLivesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
@@ -269,7 +264,7 @@ var $eXeSelecciona = {
                 </div>\
                 <div class="gameQP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Time"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
                     <p id="seleccionaPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
                     <a href="#" class="gameQP-LinkMinimize" id="seleccionaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
@@ -277,8 +272,7 @@ var $eXeSelecciona = {
                     </a>\
                     <a href="#" class="gameQP-LinkFullScreen" id="seleccionaLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
                         <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-FullScreen gameQP-Activo" id="seleccionaFullScreen-' + instance + '">\
-                        </div>\
+                        <div class="exeQuextIcons exeQuextIcons-FullScreen gameQP-Activo" id="seleccionaFullScreen-' + instance + '"></div>\
                     </a>\
                 </div>\
             </div>\

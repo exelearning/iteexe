@@ -75,6 +75,15 @@
     transform: scale(1.1);
 }
 
+.rosco-LinkMaximize:hover .rosco-IconMinimize {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
 
 
 /* Círculo */
@@ -253,6 +262,8 @@
     bottom: 0;
     right: 0;
     margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 .rosco-Image, .rosco-GameOver {
@@ -355,8 +366,9 @@
 
 .rosco-Definition {
     width: 100%;
-    margin: 1em auto;
-    min-height: 2em;
+    margin: 0.7em auto;
+    min-height: 1.5em;
+
 }
 
 .rosco-Definition p {
@@ -666,6 +678,12 @@
     }
 }
 
+
+@media screen and (max-width:750px) {
+    .rosco-LinkFullScreen {
+        display: none;
+    }
+}
 @media screen and (max-width:670px) {
     .rosco-Canvas {
         display: none;
@@ -676,6 +694,7 @@
     .rosco-LinkTypeGame {
         display: none;
     }
+   
 }
 
 @media screen and (max-width:450px) {
@@ -722,3 +741,348 @@
     }
 
 }
+
+/* Pnatalla completa*/
+
+div:fullscreen .exeQuextIcons-FullScreen {
+	background-image: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-webkit-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-moz-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:fullscreen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+.rosco-MainContainer:-webkit-full-screen {
+	background-color: white;
+	height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.rosco-MainContainer:-moz-full-screen {
+	background-color: white;
+	height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.rosco-MainContainer:-ms-full-screen {
+	background-color: white;
+	height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.rosco-MainContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+div:-webkit-full-screen .rosco-Game{
+    width: 30vw;
+    height:  30vw;
+    max-width:500px;
+    max-height:500px;
+}
+div:-moz-full-screen .rosco-Game {
+    width: 30vw;
+    height:  30vw;
+    max-width:500px;
+    max-height:500px;
+}
+
+div:-o-fulls-creen .rosco-Game {
+    width: 30vw;
+    height:  30vw;
+    max-width:500px;
+    max-height:500px;
+}
+
+div:fullscreen .rosco-Game {
+    width: 30vw;
+    height:  30vw;
+    max-width:500px;
+    max-height:500px;
+}
+
+div:-webkit-full-screen .rosco-GameContainer{
+    width:  60vw;
+    max-width: 1500px;
+    margin: 0;
+}
+div:-moz-full-screen .rosco-GameContainer {
+    width:  60vw;
+    max-width: 1500px;
+    margin: 0;
+}
+
+div:-o-fulls-creen .rosco-GameContainer {
+    width:  60vw;
+    max-width: 1500px;
+    margin: 0;
+}
+
+
+div:fullscreen .rosco-GameContainer {
+    width:  60vw;
+    max-width: 1500px;
+    margin: 0;
+}
+
+div:-o-fulls-creen .rosco-Canvas {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+div:-webkit-full-screen .rosco-Canvas {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+div:-moz-full-screen .rosco-Canvas {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+div:fullscreen .rosco-Canvas {
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+div:-o-full-screen .rosco-Multimedia {
+    max-width: 100%;
+
+}
+
+div:-webkit-full-screen .rosco-Multimedia {
+    max-width: 100%;
+}
+div:-moz-full-screen .rosco-Multimedia {
+    max-width: 100%;
+}
+
+div:-o-full-screen .rosco-Multimedia {
+    max-width: 100%;
+}
+
+div:-webkit-full-screen .rosco-GameScoreBoard {
+    top: .3em;
+    width: 99vw;
+    left:0.5vw;
+}
+div:-moz-full-screen .rosco-GameScoreBoard {
+    top: .3em;
+    width: 99vw;
+    left:0.5vw;
+}
+
+div:-o-full-screen .rosco-GameScoreBoard {
+    top: .3em;
+    width: 99vw;
+    left:0.5vw;
+}
+div:fullscreen .rosco-GameScoreBoard {
+    top: .3em;
+    width: 99vw;
+    left:0.5vw;
+}
+
+div:-webkit-full-screen .rosco-GameScoreBoard p {
+    font-size: 1.3em;
+}
+div:-moz-full-screen .rosco-GameScoreBoard p {
+    font-size: 1.3em;
+}
+
+div:-o-full-screen .rosco-GameScoreBoard p {
+    font-size: 1.3em;
+}
+div:fullscreen .rosco-GameScoreBoard p {
+    font-size: 1.3em;
+}
+
+div:-webkit-full-screen .rosco-GameScoreBoard .exeQuextIcons {
+    width: 1.8em;
+    height: 1.8em;
+    margin-right: 0.3em;
+}
+div:-moz-full-screen .rosco-GameScoreBoard .exeQuextIcons {
+    width: 1.8em;
+    height: 1.8em;
+    margin-right: 0.3em;
+}
+
+div:-o-full-screen .rosco-GameScoreBoard .exeQuextIcons{
+    width: 1.8em;
+    height: 1.8em;
+    margin-right: 0.3em;
+}
+div:fullscreen .rosco-GameScoreBoard .exeQuextIcons{
+    width: 1.8em;
+    height: 1.8em;
+    margin-right: 0.3em;
+}
+
+div:-webkit-full-screen .rosco-TypeDefinition p {
+
+    font-size: 1.2em;
+}
+div:-moz-full-screen .rosco-TypeDefinition p {
+
+    font-size: 1.2em;
+}
+
+div:-o-full-screen .rosco-TypeDefinition p {
+
+    font-size: 1.2em;
+}
+div:fullscreen .rosco-TypeDefinition  p{
+    font-size: 1.2em;
+}
+
+div:-webkit-full-screen .rosco-Definition p {
+
+    font-size: 1.1em;
+}
+div:-moz-full-screen .rosco-Definition p {
+
+    font-size: 1.1em;
+}
+
+div:-o-full-screen .rosco-Definition p {
+
+    font-size: 1.1em;
+}
+div:fullscreen .rosco-Definition  p{
+    font-size: 1.1em;
+}
+
+div:-webkit-full-screen .rosco-EdReply {
+    max-width: 500px;
+    font-size: 1.1em;
+}
+div:-moz-full-screen .rosco-EdReply {
+    max-width: 500px;
+    font-size: 1.1em;
+}
+
+div:-o-full-screen .rosco-EdReply {
+    max-width: 500px;
+    font-size: 1.1em;
+}
+div:fullscreen .rosco-EdReply {
+    max-width: 500px;
+    font-size: 1.1em;
+}
+
+div:-webkit-full-screen .rosco-Letter {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 1.2em;
+}
+div:-moz-full-screen .rosco-Letter {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 1.2em;
+}
+
+div:-o-full-screen .rosco-Letter {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 1.2em;
+}
+div:fullscreen .rosco-Letter {
+    width: 2.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    font-size: 1.2em;
+}
+
+div:-webkit-full-screen .rosco-GameScoreBoard .exeQuextIcons {
+    width: 1.9em;
+    height: 1.9em;
+    margin-right: 0.3em;
+}
+div:-moz-full-screen .rosco-GameScoreBoard .exeQuextIcons {
+    width: 1.9em;
+    height: 1.9em;
+    margin-right: 0.3em;
+}
+
+div:-o-full-screen .rosco-GameScoreBoard .exeQuextIcons{
+    width: 1.9em;
+    height: 1.9em;
+    margin-right: 0.3em;
+}
+div:fullscreen .rosco-GameScoreBoard .exeQuextIcons{
+    width: 1.9em;
+    height: 1.9em;
+    margin-right: 0.3em;
+}
+
+
+div:-webkit-full-screen .rosco-GameContainer .exeQuextIcons-MoveOne {
+    width: 1.9em;
+    height: 1.9em;
+}
+div:-moz-full-screen .rosco-GameContainer .exeQuextIcons-MoveOne {
+    width: 1.9em;
+    height: 1.9em;
+}
+
+div:-o-full-screen .rosco-GameContainer .exeQuextIcons-MoveOne{
+    width: 1.9em;
+    height: 1.9em;
+}
+div:fullscreen .rosco-GameContainer .exeQuextIcons-MoveOne{
+    width: 1.9em;
+    height: 1.9em;
+}
+
+
+div:-webkit-full-screen .rosco-GameContainer .exeQuextIcons-Submit {
+    width: 1.9em;
+    height: 1.9em;
+}
+div:-moz-full-screen .rosco-GameContainer .exeQuextIcons-Submit {
+    width: 1.9em;
+    height: 1.9em;
+}
+
+div:-o-full-screen .rosco-GameContainer .exeQuextIcons-Submit{
+    width: 1.9em;
+    height: 1.9em;
+}
+div:fullscreen .rosco-GameContainer .exeQuextIcons-Submit{
+    width: 1.9em;
+    height: 1.9em;
+}
+
+
+
+
+
