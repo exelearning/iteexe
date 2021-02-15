@@ -413,6 +413,14 @@ Ext.application({
 			}
 		}
 	},
+	
+	// Check if the advanced mode is on or not
+	checkAdvancedModePreference : function(){
+		if (typeof(advancedModePreferenceValue)=='undefined') advancedModePreferenceValue = 0;
+		if (advancedModePreferenceValue==1) Ext.getCmp("advanced_toggler").setValue(true);
+		else Ext.getCmp("advanced_toggler").setValue(false);
+		eXe.app.getController("Toolbar").eXeUIversionSetStatus(advancedModePreferenceValue);
+	},
 
     appFolder: "jsui/app"
 

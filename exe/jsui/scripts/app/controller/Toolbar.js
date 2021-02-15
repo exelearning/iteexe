@@ -336,12 +336,7 @@ Ext.define('eXe.controller.Toolbar', {
         nevow_clientToServerEvent('eXeUIVersionCheck',this)
     },
     exeUIsetInitialStatus : function(value){
-        if (value == 1 ){
-            Ext.getCmp("advanced_toggler").setValue(true);
-            Ext.select("BODY").removeCls('exe-simplified');
-            Ext.select("BODY").addCls('exe-advanced');
-        }
-
+        advancedModePreferenceValue = value;
     },
     exeUIalert : function(){
         Ext.Msg.alert(
@@ -351,6 +346,7 @@ Ext.define('eXe.controller.Toolbar', {
 
     },
     eXeUIversionSetStatus : function(newValue){
+        advancedModePreferenceValue = newValue;
         let descriptionLabel = Ext.DomQuery.select("label[for=pp_description]");
         let contentPanel = false; // The main content. It should always exist.
         let iframe = document.getElementsByTagName('iframe');
