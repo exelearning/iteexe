@@ -1,9 +1,7 @@
-.rosco-MainContainer a:link, .rosco-MainContainer a:link, .rosco-MainContainer a:visited, .rosco-MainContainer a:focus {
-    text-decoration: none !important;
+.rosco-MainContainer a{
+    text-decoration: none;
     border: 0;
-    outline: none;
     border-width: 0;
-    outline-width: 0;
     border-bottom: none;
 }
 
@@ -21,6 +19,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin:1em auto;
 }
 
 .rosco-MainContainer * {
@@ -414,22 +413,11 @@
 }
 
 .rosco-GameContainer input[type="text"], input.rosco-EdReply {
-    padding: 3px 2px;
-    display: inline-block;
-    box-sizing: border-box;
-    line-height: 1.5em;
-    font-size: 0.9em;
-    background: #fdfdfd;
-    border: 1px solid #828282;
-    border-radius: 4px;
-    text-align: center;
-    margin: 0 0.3em;
+    margin: 0 .3em;
 }
 
 .rosco-GameContainer input[type="text"]:active, .rosco-GameContainer input[type="text"]:focus, input.rosco-EdReply:focus, input.rosco-EdReply:active {
-    background: #fdfdfd;
-    border: 1px solid #398ee7;
-    border-radius: 4px;
+    /* To review */
 }
 
 /* Inicio juego */
@@ -437,8 +425,6 @@
 .rosco-StartGame {
     width: 100%;
     margin: 0.9em auto;
-    font-size: 1.2em;
-    font-weight: bold;
     text-align: center;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -446,11 +432,13 @@
     user-select: none;
 }
 
+.rosco-StartGame a{
+	text-decoration:underline;
+}
+
 /* Código acceso */
 
 .rosco-CodeAccessDiv {
-    width: 100%;
-    margin: 15px auto;
     display: none;
 }
 
@@ -459,10 +447,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.rosco-CodeAccessDiv label {
-    display: none;
+    margin-top:.7em
 }
 
 .rosco-MessageCodeAccessE {
@@ -470,24 +455,22 @@
     min-height: 1em;
     margin: 0.7em auto;
     text-align: center;
-    font-size: 0.9em;
     vertical-align: middle;
     margin: 0;
 }
 
 .rosco-CodeAccessE {
-    width: 65%;
-    font-size: 0.9em;
+    margin: 0 .3em;
+    max-width: 300px;
+    width: 60%;		
 }
 
 /*Intrucciones */
 
 .rosco-DivInstructions {
-    margin: 0;
+    margin: 0 auto;
     font-size: 1em;
     width: 95%;
-    margin: 0.5em auto;
-    font-weight: bold;
     text-align: center;
 }
 
@@ -608,7 +591,7 @@
 }
 
 
-.rosco-Activo {
+.rosco-LinkMaximize img {
 	-moz-transition: transform 0.3s;
 	-ms-transition: transform 0.3s;
 	-o-transition: transform 0.3s;
@@ -619,7 +602,7 @@
 	transition: transform 0.3s;
 }
 
-.rosco-Activo:hover {
+.rosco-LinkMaximize:hover img {
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);

@@ -38,7 +38,7 @@ var $exeDevice = {
 		"msgMinimize": _("Minimize"),
 		"msgMaximize": _("Maximize"),
 		"msgHits": _("Hits"),
-		"msgTime": _("Time"),
+		"msgTime": _("Time Limit (mm:ss)"),
 		"msgOneRound": _("One round"),
 		"msgTowRounds": _("Two rounds"),
 		"msgImage": _("Image"),
@@ -66,6 +66,7 @@ var $exeDevice = {
 		"msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
 		"msgFullScreen": _("Full Screen"),
         "msgExitFullScreen": _("Exit Full Screen"),
+        "msgMoveOne": _("Move on")
 	},
 	colors: {
 		black: "#1c1b1b",

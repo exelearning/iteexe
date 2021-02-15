@@ -216,7 +216,7 @@ var $eXeRosco = {
 		html += '<div class="rosco-Main">\
 				<div class="rosco-MainContainer" id="roscoMainContainer-' + instance + '">\
 				<div class="rosco-GameMinimize" id="roscoGameMinimize-' + instance + '">\
-				<a href="#" class="rosco-LinkMaximize" id="roscoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'rosco-icon.png" class="rosco-IconMinimize" id="roscoIcon-' + instance + '" alt="' + msgs.msgMinimize + '">\
+				<a href="#" class="rosco-LinkMaximize" id="roscoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'rosco-icon.png" class="rosco-IconMinimize" id="roscoIcon-' + instance + '" alt="">\
 					<div  class="rosco-MessageMaximize" id="roscoMessageMaximize-' + instance + '">' + msgs.msgPlayStart + '</div></a>\
 				</div>\
 				<div class="rosco-GameContainer" id="roscoGameContainer-' + instance + '">\
@@ -244,7 +244,7 @@ var $eXeRosco = {
 								<div class="exeQuextIcons exeQuextIcons-RoscoRows" id="roscoTypeGame-' + instance + '"></div>\
 							</a>\
 							<a href="#" class="rosco-LinkFullScreen" id="roscoLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
-                        		<strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
+                        		<strong class="sr-av">' + msgs.msgFullScreen + ':</strong>\
                         		<div class="exeQuextIcons exeQuextIcons-FullScreen" id="roscoFullScreen-' + instance + '"></div>\
                 			</a>\
 						</div>\
@@ -256,10 +256,10 @@ var $eXeRosco = {
 			   		</div>\
 					<div class="rosco-Multimedia" id="roscoMultimedia-' + instance + '">\
 						<div class="rosco-Protector" id="roscoProtector-' + instance + '"></div>\
-						<img src="' + path + 'exequextcursor.gif" class="rosco-Cursor" alt="Cursor" id="roscoCursor-' + instance + '"/> \
+						<img src="' + path + 'exequextcursor.gif" class="rosco-Cursor" alt="" id="roscoCursor-' + instance + '"/> \
 						<img src="" class="rosco-Image" alt="' + msgs.msgNoImage + '" id="roscoHomeImage-' + instance + '"/> \
 						<img src="' + path + 'roscoHome.png" class="rosco-NoImage" alt="' + msgs.msgNoImage + '" id="roscoNoImage-' + instance + '"/> \
-						<a href="#" class="rosco-LinkAudio" id="roscoLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" alt="' + msgs.msgAudio + '">\</a>\
+						<a href="#" class="rosco-LinkAudio" id="roscoLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" alt="' + msgs.msgAudio + '"></a>\
 					</div>\
 					<div class="rosco-AuthorLicence" id="roscoAutorLicence-' + instance + '">\
 						<div class="sr-av">' + msgs.msgAuthor + ':</div>\
@@ -280,12 +280,12 @@ var $eXeRosco = {
 						</div>\
 						<div class="rosco-DivReply" id="roscoDivReply-' + instance + '">\
 							<a href="#" id="roscoBtnMoveOn-' + instance + '" title="' + msgs.msgMoveOne + '">\
-								<strong><span class="sr-av">' + msgs.msgMoveOne + '</span></strong>\
+								<strong class="sr-av">' + msgs.msgMoveOne + '</strong>\
 								<div class="exeQuextIcons-MoveOne"></div>\
 							</a>\
 							<input type="text" value="" class="rosco-EdReply" id="roscoEdReply-' + instance + '" autocomplete="off">\
 							<a href="#" id="roscoBtnReply-' + instance + '" title="' + msgs.msgReply + '">\
-								<strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
+								<strong class="sr-av">' + msgs.msgReply + '</strong>\
 								<div class="exeQuextIcons-Submit"></div>\
 							</a>\
 						</div>\
@@ -293,9 +293,9 @@ var $eXeRosco = {
 					<div class="rosco-CodeAccessDiv" id="roscoCodeAccessDiv-' + instance + '">\
                 		<div class="rosco-MessageCodeAccessE" id="roscoMesajeAccesCodeE-' + instance + '"></div>\
                 		<div class="rosco-DataCodeAccessE">\
-                    		<label for="roscoEdCodeAccess-' + instance + '">' + msgs.msgCodeAccess + ':</label><input type="text" class="rosco-CodeAccessE" id="roscoEdCodeAccess-' + instance + '">\
+                    		<label for="roscoEdCodeAccess-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="rosco-CodeAccessE" id="roscoEdCodeAccess-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
                     		<a href="#" id="roscoCodeAccessButton-' + instance + '" title="' + msgs.msgReply + '">\
-                    		<strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
+                    		<strong class="sr-av">' + msgs.msgReply + '</strong>\
                     		<div class="exeQuextIcons-Submit"></div>\
 							</a>\
 						</div>\
