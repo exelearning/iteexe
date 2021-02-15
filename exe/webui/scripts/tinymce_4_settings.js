@@ -128,6 +128,7 @@ var $exeTinyMCE = {
 			width: w,
 			height: h,
 			convert_urls: false,
+			paste_as_text: true,
 			schema: this.getSchema(),
 			content_css: this.content_css,			
 			resize: "both",
