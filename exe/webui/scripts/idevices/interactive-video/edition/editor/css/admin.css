@@ -143,6 +143,7 @@ border-radius:4px;border-top-left-radius:0
 #from-to strong{display:block;float:left;width:4em;text-align:right;padding:.2em .5em 0 0}
 #from-to label{font-weight:normal}
 #from-to .checkbox{padding:.2em 0 0 1.5em}
+#from-to .disabled{visibility:hidden} /* To review */
 #from-to .disabled label{color:#999}
 #from-to input[type=text]{border:1px solid #e0e0e0;padding:.2em .3em;color:#555;width:1.5em;margin:0 .1em}
 #from a{display:inline-block;background:url(../images/timer.png) no-repeat 50% 50%;width:28px;height:28px;vertical-align:middle;margin-top:-.2em}
