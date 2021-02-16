@@ -688,7 +688,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="quextEQuestionsRamdon"><input type="checkbox" id="quextEQuestionsRamdon">' + _("Random questions") + '</label>\
-                                <label for="quextEAnswersRamdon"><input type="checkbox" id="quextEAnswersRamdon">' + _("Random options") + '</label>\
+                                <label for="quextEAnswersRamdon" class="gameQE-inlineOption"><input type="checkbox" id="quextEAnswersRamdon">' + _("Random options") + '</label>\
                             </p>\
                             <p>\
                                 <label for="quextEShowSolution"><input type="checkbox" checked id="quextEShowSolution">' + _("Show solutions") + '. </label>\
@@ -706,11 +706,11 @@ var $exeDevice = {
                                 <input class="gameQE-TypeGame"  id="quextETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="quextETypeReto">' + _("No score") + '</label>\
                             </p>\
-                            <div id="quextEGameModeHelp" style="display:none">\
+                            <div id="quextEGameModeHelp" class="gameQE-TypeGameHelp">\
                                 <ul>\
-                                    <li><strong>'+_("0 to 10")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
-                                    <li><strong>'+_("Points and lives")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
-                                    <li><strong>'+_("No score")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                    <li><strong>'+_("0 to 10")+': </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                    <li><strong>'+_("Points and lives")+': </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                    <li><strong>'+_("No score")+': </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
                                 </ul>\
                             </div>\
                             <p>\
@@ -1839,8 +1839,7 @@ var $exeDevice = {
         });
         // Help link
         $("#quextEGameModeHelpLnk").click(function(){
-			alert("Case")
-            $("#qEGameModeHelp").toggle();
+			$("#quextEGameModeHelp").toggle();
             return false;
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();

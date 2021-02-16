@@ -147,11 +147,11 @@ var $exeDevice = {
                                 <input class="gameQE-TypeGame"  id="adivinaETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="adivinaETypeReto">' + _("No score") + '</label>\
                             </p>\
-                            <div id="adivinaEGameModeHelp" style="display:none">\
+                            <div id="adivinaEGameModeHelp" class="gameQE-TypeGameHelp">\
                                 <ul>\
-                                    <li><strong>'+_("0 to 10")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
-                                    <li><strong>'+_("Points and lives")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
-                                    <li><strong>'+_("No score")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                    <li><strong>'+_("0 to 10")+': </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                    <li><strong>'+_("Points and lives")+': </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                    <li><strong>'+_("No score")+': </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
                                 </ul>\
                             </div>\
                             <p>\

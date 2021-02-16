@@ -809,11 +809,11 @@ var $exeDevice = {
                                     <input class="gameQE-TypeOrder"  id="seleccionaEOrderThree" type="radio" name="slcgameorder" value="2" />\
                                     <label for="seleccionaEOrderThree">' + _("Árbol") + '</label>\
                                 </p>\
-                                <div id="seleccionaEOrderHelp" style="display:none">\
+                                <div id="seleccionaEOrderHelp" class="gameQE-TypeGameHelp">\
                                     <ul>\
-                                        <li><strong>'+_("Lineal")+' &rarr; </strong>'+_("Las preguntas se muestran siembre en el orden definido por el autor.")+'</li>\
-                                         <li><strong>'+_("Azar")+' &rarr; </strong>'+_("Cada vez que se realiza la actividad, las preguntas se muestran en un orden diferente.")+'</li>\
-                                         <li><strong>'+_("Árbol")+' &rarr; </strong>'+_("Las preguntas se organizan en itinerarios que se mostrarán o no según las repuestas del usuario")+'</li>\
+                                        <li><strong>'+_("Lineal")+': </strong>'+_("Las preguntas se muestran siembre en el orden definido por el autor.")+'</li>\
+                                         <li><strong>'+_("Azar")+': </strong>'+_("Cada vez que se realiza la actividad, las preguntas se muestran en un orden diferente.")+'</li>\
+                                         <li><strong>'+_("Árbol")+': </strong>'+_("Las preguntas se organizan en itinerarios que se mostrarán o no según las repuestas del usuario")+'</li>\
                                     </ul>\
                                 </div>\
                                 <p>\
@@ -838,11 +838,11 @@ var $exeDevice = {
                                     <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                     <label for="seleccionaETypeReto">' + _("No score") + '</label>\
                                 </p>\
-                                <div id="seleccionaEGameModeHelp" style="display:none">\
+                                <div id="seleccionaEGameModeHelp" class="gameQE-TypeGameHelp">\
                                     <ul>\
-                                        <li><strong>'+_("0 to 10")+' &rarr; </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
-                                         <li><strong>'+_("Points and lives")+' &rarr; </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
-                                         <li><strong>'+_("No score")+' &rarr; </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                        <li><strong>'+_("0 to 10")+': </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
+                                         <li><strong>'+_("Points and lives")+': </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
+                                         <li><strong>'+_("No score")+': </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
                                     </ul>\
                                 </div>\
                                 <p>\

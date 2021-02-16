@@ -84,6 +84,15 @@
 	margin-right: .2em;
 	width: 5em;
 }
+.gameQE-inlineOption,.gameQE-TypeGame{
+	margin-left:.5em
+}
+/* Ayuda */
+#activeIdevice .gameQE-TypeGameHelp{
+	display:none;
+	margin-bottom:2em;
+	font-size:.95em
+}
 /* Opciones imagen */
 .gameQE-EInputImage {
 	align-items: center;
@@ -149,7 +158,6 @@
 	width: 100%;
 }
 .gameQE-EQuestion {
-	text-align: center;
 	width: 98%;
 }
 .gameQE-EAnswers {
@@ -170,7 +178,6 @@
 	width: 49%;
 }
 .gameQE-EAnwersOptions {
-	text-align: center;
 	width: 100%;
 }
 .gameQE-SolutionWordDiv {
