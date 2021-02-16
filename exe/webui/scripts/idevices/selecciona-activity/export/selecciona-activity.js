@@ -258,20 +258,20 @@ var $eXeSelecciona = {
                     <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
                 </div>\
                 <div class="gameQP-NumberLifesGame" id="seleccionaNumberLivesGame-' + instance + '">\
-                    <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
+                    <strong class="sr-av">' + msgs.msgLive + ':</strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="seleccionaPLifes-' + instance + '">0</p>\
                 </div>\
                 <div class="gameQP-TimeNumber">\
-                    <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
+                    <strong class="sr-av">' + msgs.msgTime + ':</strong>\
                     <div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
                     <p id="seleccionaPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
                     <a href="#" class="gameQP-LinkMinimize" id="seleccionaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
-                        <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
+                        <strong class="sr-av">' + msgs.msgMinimize + ':</strong>\
                         <div class="exeQuextIcons exeQuextIcons-Minimize gameQP-Activo"></div>\
                     </a>\
                     <a href="#" class="gameQP-LinkFullScreen" id="seleccionaLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
-                        <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
+                        <strong class="sr-av">' + msgs.msgFullScreen + ':</strong>\
                         <div class="exeQuextIcons exeQuextIcons-FullScreen gameQP-Activo" id="seleccionaFullScreen-' + instance + '"></div>\
                     </a>\
                 </div>\
@@ -294,9 +294,9 @@ var $eXeSelecciona = {
                             <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="seleccionaLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
                         </div>\
                         <div class="gameQP-DataScore">\
-                            <p id="seleccionaOverScore-' + instance + '">Score: 0</p>\
-                            <p id="seleccionaOverHits-' + instance + '">Hits: 0</p>\
-                            <p id="seleccionaOverErrors-' + instance + '">Errors: 0</p>\
+                            <p id="seleccionaOverScore-' + instance + '"><strong>Score:</strong> 0</p>\
+                            <p id="seleccionaOverHits-' + instance + '"><strong>Hits:</strong> 0</p>\
+                            <p id="seleccionaOverErrors-' + instance + '"><strong>Errors:</strong> 0</p>\
                         </div>\
                 </div>\
             </div>\
@@ -307,9 +307,9 @@ var $eXeSelecciona = {
             <div class="gameQP-CodeAccessDiv" id="seleccionaCodeAccessDiv-' + instance + '">\
                 <p class="gameQP-MessageCodeAccessE" id="seleccionaMesajeAccesCodeE-' + instance + '"></p>\
                 <div class="gameQP-DataCodeAccessE">\
-                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="seleccionaCodeAccessE-' + instance + '">\
+                    <label for="seleccionaCodeAccessE-' + instance + '">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="seleccionaCodeAccessE-' + instance + '">\
                     <a href="#" id="seleccionaCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
-                        <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
+                        <strong class="sr-av">' + msgs.msgSubmit + '</strong>\
                         <div class="exeQuextIcons exeQuextIcons-Submit gameQP-Activo"></div>\
                     </a>\
                 </div>\
@@ -338,27 +338,27 @@ var $eXeSelecciona = {
                 <div class="gameQP-DivReply" id="seleccionaDivResponder-' + instance + '">\
                     <input type="text" value="" class="gameQP-EdReply" id="seleccionaEdAnswer-' + instance + '" autocomplete="off">\
                     <a href="#" id="seleccionaBtnReply-' + instance + '" title="' + msgs.msgReply + '">\
-                        <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
+                        <strong class="sr-av">' + msgs.msgReply + '</strong>\
                         <div class="exeQuextIcons-Submit gameQP-Activo"></div>\
                     </a>\
                 </div>\
             </div>\
             <div class="gameQP-BottonContainerDiv" id="seleccionaBottonContainer-' + instance + '">\
                 <a href="#" class="gameQP-LinkVideoIntroShow" id="seleccionaLinkVideoIntroShow-' + instance + '" title="' + msgs.msgVideoIntro + '">\
-                    <strong><span class="sr-av">' + msgs.msgVideoIntro + ':</span></strong>\
+                    <strong class="sr-av">' + msgs.msgVideoIntro + ':</strong>\
                     <div class="exeQuextIcons exeQuextIcons-Video"></div>\
                 </a>\
                 <div class="gameQP-AnswersDiv" id="seleccionaAnswerDiv-' + instance + '">\
                     <div class="gameQP-Answers" id="seleccionaAnswers-' + instance + '"></div>\
                     <a href="#" id="seleccionaButtonAnswer-' + instance + '" title="' + msgs.msgAnswer + '">\
-                        <strong><span class="sr-av">' + msgs.msgAnswer + '</span></strong>\
+                        <strong class="sr-av">' + msgs.msgAnswer + '</strong>\
                         <div class="exeQuextIcons-Submit gameQP-Activo"></div>\
                     </a>\
                 </div>\
             </div>\
              <div class="gameQP-VideoIntroDiv" id="seleccionaVideoIntroDiv-' + instance + '">\
                 <div class="gameQP-VideoIntro" id="seleccionaVideoIntro-' + instance + '"></div>\
-                <input type="button" class="feedbackbutton gameQP-VideoIntroClose" id="seleccionaVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '"/>\
+                <input type="button" class="gameQP-VideoIntroClose" id="seleccionaVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '"/>\
             </div>\
             <div class="gameQP-DivFeedBack" id="seleccionaDivFeedBack-' + instance + '">\
                 <input type="button" id="seleccionaFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
@@ -1009,10 +1009,10 @@ var $eXeSelecciona = {
                 break;
         }
         $eXeSelecciona.showMessage(messageColor, message, instance);
-        var msscore = mOptions.gameMode == 0 ? msgs.msgScore + ': ' + mOptions.score : msgs.msgScore + ': ' + mOptions.score.toFixed(2);
-        $seleccionaOverPoint.text(msscore);
-        $seleccionaOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
-        $seleccionaOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
+        var msscore = mOptions.gameMode == 0 ? '<strong>'+msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>'+msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
+        $seleccionaOverPoint.html(msscore);
+        $seleccionaOverHits.html('<strong>'+msgs.msgHits + ':</strong> ' + mOptions.hits);
+        $seleccionaOverErrors.html('<strong>'+msgs.msgErrors + '</strong>: ' + mOptions.errors);
         if (mOptions.gameMode == 2) {
             $('#seleccionaGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
         }

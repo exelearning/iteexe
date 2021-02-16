@@ -312,7 +312,7 @@ var $eXeQuExt = {
             </div>\
             <div class="gameQP-VideoIntroDiv" id="quextVideoIntroDiv-' + instance + '">\
                 <div class="gameQP-VideoIntro" id="quextVideoIntro-' + instance + '"></div>\
-                <input type="button" class="gameQP-VideoIntroClose feedbackbutton" id="quextVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '" />\
+                <input type="button" class="gameQP-VideoIntroClose" id="quextVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '" />\
             </div>\
             <div class="gameQP-DivFeedBack" id="quextDivFeedBack-' + instance + '">\
                 <input type="button" id="quextFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\

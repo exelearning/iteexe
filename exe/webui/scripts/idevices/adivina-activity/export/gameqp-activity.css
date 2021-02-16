@@ -573,12 +573,21 @@
 	z-index: 20000;
 }
 
-input.gameQP-VideoIntroClose {
+input.gameQP-VideoIntroClose{
 	cursor: pointer;
 	margin: 0;
 	position: absolute;
-	right: 0.2em;
-	top: 0.2em;
+	right: 10px;
+	top: 10px;
+	background:#fff;
+	border:none;
+	font-size:13px;
+	padding:5px 20px;
+	border-radius:4px;
+}
+input.gameQP-VideoIntroClose:hover{
+	background:#858585;
+	color:#fff;
 }
 
 .gameQP-LinkVideoIntroShow {
