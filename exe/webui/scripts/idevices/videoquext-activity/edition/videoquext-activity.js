@@ -11,7 +11,7 @@ var $exeDevice = {
     // i18n
     i18n: {
         name: _('VideoQuExt Activity'),
-        alt: _('Fast Video Quiz') // To review
+        alt: _('Video Quiz') // To review
     },
     iDevicePath: "/scripts/idevices/videoquext-activity/edition/",
     msgs: {},

@@ -55,7 +55,7 @@ var $eXeSelecciona = {
         if (this.activities.length == 0) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Select Activity') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Multiple Choice Quiz') + '</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;

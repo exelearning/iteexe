@@ -84,7 +84,7 @@
 	margin-right: .2em;
 	width: 5em;
 }
-.gameQE-inlineOption,.gameQE-TypeGame{
+.gameQE-inlineOption,.gameQE-TypeGame,.gameQE-TypeOrder{
 	margin-left:.5em
 }
 /* Ayuda */
@@ -218,9 +218,6 @@
 	flex-wrap: nowrap;
 	justify-content: flex-start;;
 
-}
-.gameQE-EOrders input[type=text] {
-	text-align: center;
 }
 
 .gameQE-EOrders > div {

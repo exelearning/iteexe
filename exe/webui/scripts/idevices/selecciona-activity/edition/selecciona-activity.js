@@ -11,7 +11,7 @@ var $exeDevice = {
     // i18n
     i18n: {
         name: _('Select Activity'),
-        alt: _('Fast Multiple Choice Quiz')
+        alt: _('Multiple Choice Quiz')
     },
     iDevicePath: "/scripts/idevices/selecciona-activity/edition/",
     msgs: {},
@@ -130,8 +130,8 @@ var $exeDevice = {
         msgs.msgProvideSolution = _("Please write the solution");
         msgs.msgEDefintion = _("Please provide the word definition");
         msgs.msgProvideFB = _('Message to display when passing the game');
-        msgs.msgNotHitCuestion = _('La cuestión marcada como próxima en caso de acierto no existe no existe');
-        msgs.msgNotErrorCuestion = _('La cuestión marcada como próxima en caso de error no existe no existe');
+        msgs.msgNotHitCuestion = _('The question marked as next in case of success does not exist.');
+        msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
 
     },
     loadYoutubeApi: function () {
@@ -801,19 +801,19 @@ var $exeDevice = {
                                     <label for="seleccionaEShowMinimize"><input type="checkbox" id="seleccionaEShowMinimize">' + _("Show minimized.") + '</label>\
                                 </p>\
                                 <p>\
-                                    <strong class="GameModeLabel"><a href="#seleccionaEOrderHelp" id="seleccionaEOrderHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Orden de las preguntas") + ':</strong>\
+                                    <strong class="GameModeLabel"><a href="#seleccionaEOrderHelp" id="seleccionaEOrderHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Questions order") + ':</strong>\
                                      <input class="gameQE-TypeOrder" checked="checked" id="seleccionaEOrderLinear" type="radio" name="slcgameorder" value="0" />\
-                                    <label for="seleccionaEOrderLinear">' + _("Lineal") + '</label>\
+                                    <label for="seleccionaEOrderLinear">' + _("Default") + '</label>\
                                     <input class="gameQE-TypeOrder"  id="seleccionaEOrderRamdon" type="radio" name="slcgameorder" value="1" />\
-                                    <label for="seleccionaEOrderRamdon">' + _("Azar") + '</label>\
+                                    <label for="seleccionaEOrderRamdon">' + _("Random") + '</label>\
                                     <input class="gameQE-TypeOrder"  id="seleccionaEOrderThree" type="radio" name="slcgameorder" value="2" />\
-                                    <label for="seleccionaEOrderThree">' + _("Árbol") + '</label>\
+                                    <label for="seleccionaEOrderThree">' + _("Tree") + '</label>\
                                 </p>\
                                 <div id="seleccionaEOrderHelp" class="gameQE-TypeGameHelp">\
                                     <ul>\
-                                        <li><strong>'+_("Lineal")+': </strong>'+_("Las preguntas se muestran siembre en el orden definido por el autor.")+'</li>\
-                                         <li><strong>'+_("Azar")+': </strong>'+_("Cada vez que se realiza la actividad, las preguntas se muestran en un orden diferente.")+'</li>\
-                                         <li><strong>'+_("Árbol")+': </strong>'+_("Las preguntas se organizan en itinerarios que se mostrarán o no según las repuestas del usuario")+'</li>\
+                                        <li><strong>'+_("Default")+': </strong>'+_("Order defined by the author.")+'</li>\
+                                         <li><strong>'+_("Random")+': </strong>'+_("Different order each time you run the game.")+'</li>\
+                                         <li><strong>'+_("Tree")+': </strong>'+_("The questions will change depending on the answers.")+'</li>\
                                     </ul>\
                                 </div>\
                                 <p>\
@@ -919,7 +919,7 @@ var $exeDevice = {
                                     <div class="gameQE-EInputImage gameQE-Flex" id="seleccionaEInputImage">\
                                         <label class="sr-av" for="seleccionaEURLImage">' + _("Image URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLImage"  id="seleccionaEURLImage"/>\
-                                        <a href="#" id="seleccionaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="seleccionaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div class="gameQE-EInputOptionsImage" id="seleccionaInputOptionsImage">\
                                         <div class="gameQE-ECoord">\
@@ -933,7 +933,7 @@ var $exeDevice = {
                                     <div class="gameQE-EInputVideo gameQE-Flex" id="seleccionaEInputVideo">\
                                         <label class="sr-av" for="seleccionaEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="seleccionaEURLYoutube" type="text" />\
-                                        <a href="#" id="seleccionaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="seleccionaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div class="gameQE-EInputOptionsVideo" id="seleccionaEInputOptionsVideo">\
                                         <div>\
@@ -1020,9 +1020,9 @@ var $exeDevice = {
                             <div class="gameQE-EOrders" id="seleccionaEOrder">\
                                 <div class="gameQE-ESolutionWord>\
                                     <span class="sr-av"></span><span class="gameQE-EHit"></span>\
-                                    <label for="seleccionaEMessageOK">' + _("Mensaje") + ':</label>\
+                                    <label for="seleccionaEMessageOK">' + _("Message") + ':</label>\
                                     <input type="text" class=""  id="seleccionaEMessageOK">\
-                                    <label for="seleccionaGotoCorrect">' + _("Ir") + ':</label>\
+                                    <label for="seleccionaGotoCorrect">' + _("Go to") + ':</label>\
                                     <select name="seleccionaGotoCorrect" id="seleccionaGotoCorrect">\
                                         <option value="-2">' + _('End') + '</option>\
                                         <option value="-1" selected>' + _('Next') + '</option>\
@@ -1033,7 +1033,7 @@ var $exeDevice = {
                                     <span class="sr-av"></span><span class="gameQE-EError"></span>\
                                     <label for="seleccionaEMessageKO">' + _("Message") + ':</label>\
                                     <input type="text" class=""  id="seleccionaEMessageKO">\
-                                    <label for="seleccionaGotoIncorrect">' + _("Ir") + ':</label>\
+                                    <label for="seleccionaGotoIncorrect">' + _("Go to") + ':</label>\
                                     <select name="seleccionaGotoIncorrect" id="seleccionaGotoIncorrect">\
                                         <option value="-2">' + _('End') + '</option>\
                                         <option value="-1" selected>' + _('Next') + '</option>\
@@ -1063,7 +1063,7 @@ var $exeDevice = {
                                 <div class="gameQE-EVIOptions">\
                                     <label for="seleccionaEVIURL">' + _("Youtube URL") + ':</label>\
                                     <input id="seleccionaEVIURL" type="text" />\
-                                    <a href="#" id="seleccionaEVIPlayI" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '" alt="" class="gameQE-EButtonImage b-playintro" /></a>\
+                                    <a href="#" id="seleccionaEVIPlayI" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '" alt="' + _("Play") + '" class="gameQE-EButtonImage b-playintro" /></a>\
                                     <label for="seleccionaEVIStart">' + _("Start") + ':</label>\
                                     <input id="seleccionaEVIStart" type="text" value="00:00:00" readonly />\
                                     <label for="seleccionaEVIEnd">' + _("End") + ':</label>\
@@ -1496,10 +1496,10 @@ var $exeDevice = {
         var order = parseInt($('input[name=slcgameorder]:checked').val());
         if (order == 2) {
             if (p.hit >= $exeDevice.selectsGame.length) {
-                message = _('La cuestion elegida en caso de acierto no existe');
+                message = $exeDevice.msgs.msgNotHitCuestion;
             }
             if (p.error >= $exeDevice.selectsGame.length) {
-                message = _('La cuestion elegida en caso de error no existe');
+                message = $exeDevice.msgs.msgNotErrorCuestion;
             }
         }
 
