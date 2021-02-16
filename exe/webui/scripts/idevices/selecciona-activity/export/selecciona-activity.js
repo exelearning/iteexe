@@ -281,7 +281,7 @@ var $eXeSelecciona = {
                 <p class="gameQP-PShowClue gameQP-parpadea" id="seleccionaPShowClue-' + instance + '"></p>\
             </div>\
             <div class="gameQP-Multimedia" id="seleccionaMultimedia-' + instance + '">\
-                <img class="gameQP-Cursor" id="seleccionaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
+                <img class="gameQP-Cursor" id="seleccionaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="" />\
                 <img  src="" class="gameQP-Images" id="seleccionaImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-EText" id="seleccionaEText-' + instance + '"></div>\
                 <img src="' + path + 'seleccionaHome.png" class="gameQP-Cover" id="seleccionaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\

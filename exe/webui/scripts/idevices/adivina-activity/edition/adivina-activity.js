@@ -210,7 +210,7 @@ var $exeDevice = {
                                 <div class="gameQE-EInputImage" id="adivinaEInputImage">\
                                     <label class="sr-av" for="adivinaEURLImage">' + _("Image URL") + '</label>\
                                     <input type="text" class="exe-file-picker gameQE-EURLImage"  id="adivinaEURLImage"/>\
-                                    <a href="#" id="adivinaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                    <a href="#" id="adivinaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                 </div>\
                                 <div class="gameQE-EInputOptionsImage" id="adivinaEInputOptionsImage"></div>\
                                 <div class="gameQE-ECoord">\
@@ -223,7 +223,7 @@ var $exeDevice = {
                                 <div class="gameQE-Flex gameQE-EInputVideo" id="adivinaEInputVideo">\
                                     <label class="sr-av" for="adivinaEURLYoutube">' + _("Youtube URL") + '</label>\
                                     <input id="adivinaEURLYoutube" type="text" />\
-                                    <a href="#" id="adivinaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                    <a href="#" id="adivinaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                 </div>\
                                 <div class="gameQE-EInputOptionsVideo" id="adivinaEInputOptionsVideo">\
                                         <div>\
@@ -248,7 +248,7 @@ var $exeDevice = {
                                 <div class="gameQE-EInputAudio" id="adivinaEInputAudio">\
                                     <label class="sr-av" for="adivinaEURLAudio">' + _("URL") + '</label>\
                                     <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="adivinaEURLAudio"/>\
-                                    <a href="#" id="adivinaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                    <a href="#" id="adivinaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                 </div>\
                             </div>\
                             <div class="gameQE-EMultiMediaOption">\
@@ -259,7 +259,7 @@ var $exeDevice = {
                                     <div class="gameQE-EMedia" id="adivinaEVideo"></div>\
                                     <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="adivinaENoImageVideo" alt="" />\
                                     <img class="gameQE-EMedia" src="' + path + "quextIENoVideo.png" + '" id="adivinaENoVideo" alt="" />\
-                                    <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="adivinaECursor" alt="Cursor" />\
+                                    <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="adivinaECursor" alt="" />\
                                     <img class="gameQE-EMedia" src="' + path + "quextIECoverAdivina.png" + '" id="adivinaECover" alt="' + _("No image") + '" />\
                                 </div>\
                             </div>\
@@ -270,16 +270,16 @@ var $exeDevice = {
                                 <div class="gameQE-ESolutionWord"><label for="adivinaEDefinitionWord">' + _("Definition") + ': </label><input type="text"  id="adivinaEDefinitionWord"/></div>\
                             </div>\
                             <div class="gameQE-ENavigationButtons">\
-                                <a href="#" id="adivinaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="" class="gameQE-EButtonImage b-add" /></a>\
-                                <a href="#" id="adivinaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="" class="gameQE-EButtonImage b-first" /></a>\
-                                <a href="#" id="adivinaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="" class="gameQE-EButtonImage b-prev" /></a>\
+                                <a href="#" id="adivinaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="' + _("Add question") + '" class="gameQE-EButtonImage b-add" /></a>\
+                                <a href="#" id="adivinaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="' + _("First question") + '" class="gameQE-EButtonImage b-first" /></a>\
+                                <a href="#" id="adivinaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="' + _("Previous question") + '" class="gameQE-EButtonImage b-prev" /></a>\
                                 <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="adivinaENumberQuestion">1</span>\
-                                <a href="#" id="adivinaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="" class="gameQE-EButtonImage b-next" /></a>\
-                                <a href="#" id="adivinaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="" class="gameQE-EButtonImage b-last" /></a>\
-                                <a href="#" id="adivinaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="" class="gameQE-EButtonImage b-delete" /></a>\
-                                <a href="#" id="adivinaECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="" class="gameQE-EButtonImage b-copy" /></a>\
-                                <a href="#" id="adivinaECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt=""  class="gameQE-EButtonImage b-cut" /></a>\
-                                <a href="#" id="adivinaEPaste" class="gameQE-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextIEPaste.png" + '"  alt="" class="gameQE-EButtonImage b-paste" /></a>\
+                                <a href="#" id="adivinaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="' + _("Next question") + '" class="gameQE-EButtonImage b-next" /></a>\
+                                <a href="#" id="adivinaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="' + _("Last question") + '" class="gameQE-EButtonImage b-last" /></a>\
+                                <a href="#" id="adivinaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="' + _("Delete question") + '" class="gameQE-EButtonImage b-delete" /></a>\
+                                <a href="#" id="adivinaECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="' + _("Copy question") + '" class="gameQE-EButtonImage b-copy" /></a>\
+                                <a href="#" id="adivinaECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt="' + _("Cut question") + '"  class="gameQE-EButtonImage b-cut" /></a>\
+                                <a href="#" id="adivinaEPaste" class="gameQE-ENavigationButton"  title="' + _("Paste question") + '"><img src="' + path + "quextIEPaste.png" + '"  alt="' + _("Paste question") + '" class="gameQE-EButtonImage b-paste" /></a>\
                             </div>\
                         </div>\
                         <div class="gameQE-ENumQuestionDiv" id="adivinaENumQuestionDiv">\

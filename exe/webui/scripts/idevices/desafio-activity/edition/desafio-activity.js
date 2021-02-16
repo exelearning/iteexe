@@ -311,16 +311,16 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="desafio-ENavigationButtons" id="desafioENavigationButtons">\
-                                <a href="#" id="desafioEAdd" class="desafio-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="" class="desafio-EButtonImage b-add" /></a>\
-                                <a href="#" id="desafioEFirst" class="desafio-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="" class="desafio-EButtonImage b-first" /></a>\
-                                <a href="#" id="desafioEPrevious" class="desafio-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="" class="desafio-EButtonImage b-prev" /></a>\
+                                <a href="#" id="desafioEAdd" class="desafio-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="' + _("Add question") + '" class="desafio-EButtonImage b-add" /></a>\
+                                <a href="#" id="desafioEFirst" class="desafio-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="' + _("First question") + '" class="desafio-EButtonImage b-first" /></a>\
+                                <a href="#" id="desafioEPrevious" class="desafio-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="' + _("Previous question") + '" class="desafio-EButtonImage b-prev" /></a>\
                                 <span class="sr-av">' + _("Question number:") + '</span><span class="desafio-NumberQuestion" id="desafioENumberChallenge">1</span>\
-                                <a href="#" id="desafioENext" class="desafio-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="" class="desafio-EButtonImage b-next" /></a>\
-                                <a href="#" id="desafioELast" class="desafio-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="" class="desafio-EButtonImage b-last" /></a>\
-                                <a href="#" id="desafioEDelete" class="desafio-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="" class="desafio-EButtonImage b-delete" /></a>\
-                                <a href="#" id="desafioECopy" class="desafio-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="" class="desafio-EButtonImage b-copy" /></a>\
-                                <a href="#" id="desafioECut" class="desafio-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt=""  class="desafio-EButtonImage b-cut" /></a>\
-                                <a href="#" id="desafioEPaste" class="desafio-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextIEPaste.png" + '"  alt="" class="desafio-EButtonImage b-paste" /></a>\
+                                <a href="#" id="desafioENext" class="desafio-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="' + _("Next question") + '" class="desafio-EButtonImage b-next" /></a>\
+                                <a href="#" id="desafioELast" class="desafio-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="' + _("Last question") + '" class="desafio-EButtonImage b-last" /></a>\
+                                <a href="#" id="desafioEDelete" class="desafio-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="' + _("Delete question") + '" class="desafio-EButtonImage b-delete" /></a>\
+                                <a href="#" id="desafioECopy" class="desafio-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="' + _("Copy question") + '" class="desafio-EButtonImage b-copy" /></a>\
+                                <a href="#" id="desafioECut" class="desafio-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt="' + _("Cut question") + '"  class="desafio-EButtonImage b-cut" /></a>\
+                                <a href="#" id="desafioEPaste" class="desafio-ENavigationButton"  title="' + _("Paste question") + '"><img src="' + path + "quextIEPaste.png" + '"  alt="' + _("Paste question") + '" class="desafio-EButtonImage b-paste" /></a>\
                             </div>\
                             <div class="desafio-ENumQuestionDiv" id="desafioENumQuestionDiv">\
                                <div class="desafio-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\

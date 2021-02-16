@@ -319,7 +319,7 @@ var $eXeAdivina = {
                 <p class=" gameQP-PShowClue gameQP-parpadea" id="adivinaPShowClue-' + instance + '"></p>\
            </div>\
            <div class="gameQP-Multimedia" id="adivinaMultimedia-' + instance + '">\
-                <img class="gameQP-Cursor" id="adivinaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
+                <img class="gameQP-Cursor" id="adivinaCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="" />\
                 <img  src="" class="gameQP-Images" id="adivinaImage-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-EText" id="adivinaEText-' + instance + '"></div>\
                 <img src="' + path + 'adivinaHome.png" class="gameQP-Cover" id="adivinaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\

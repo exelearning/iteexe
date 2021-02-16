@@ -274,10 +274,10 @@ var $eXeTrivial = {
                 <div class="trivial-SelectsGamers" id="trivialSelectsGamers-' + instance + '">\
                     <div class="trivial-NumberGamers" id="trivialNumberGamers-' + instance + '">\
                         <p>Jugadores:</p>\
-                        <a href="#" class="trivial-NumberIcon  trivial-Activo" data-number="1"><img src="' + path + 'tvlcr1.png" alt="" width="28px"></a>\
-                        <a href="#" class="trivial-NumberIcon trivial-Activo" data-number="2"><img src="' + path + 'tvlcb2.png"  alt="" width="28"></a>\
-                        <a href="#" class="trivial-NumberIcon trivial-Activo" data-number="3"><img src="' + path + 'tvlcb3.png"  alt="" width="28"></a>\
-                        <a href="#" class="trivial-NumberIcon trivial-Activo" data-number="4"><img src="' + path + 'tvlcb4.png"   alt="" width="28"></a>\
+                        <a href="#" class="trivial-NumberIcon  trivial-Activo" data-number="1"><img src="' + path + 'tvlcr1.png" alt="1" width="28px"></a>\
+                        <a href="#" class="trivial-NumberIcon trivial-Activo" data-number="2"><img src="' + path + 'tvlcb2.png"  alt="2" width="28"></a>\
+                        <a href="#" class="trivial-NumberIcon trivial-Activo" data-number="3"><img src="' + path + 'tvlcb3.png"  alt="3" width="28"></a>\
+                        <a href="#" class="trivial-NumberIcon trivial-Activo" data-number="4"><img src="' + path + 'tvlcb4.png"   alt="4" width="28"></a>\
                     </div>\
                     <div class="trivial-NameGamers" id="trivialNameGamers-' + instance + '">\
                         <div class="trivial-JugadorData">\
@@ -425,7 +425,7 @@ var $eXeTrivial = {
             <p id="trivialPNombreTema-' + instance + '" class="trivial-PNombreTema"> <strong><span class="sr-av">Tema: </span></strong>Tema</p>\
         </div>\
         <div class="trivial-Multimedia" id="trivialMultimedia-' + instance + '">\
-            <img class="trivial-Cursor" id="trivialCursor-' + instance + '" src="' + path + 'trivialCursor.gif" alt="Cursor" />\
+            <img class="trivial-Cursor" id="trivialCursor-' + instance + '" src="' + path + 'trivialCursor.gif" alt="" />\
             <img  src="" class="trivial-Images" id="trivialImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
             <div class="trivial-EText" id="trivialEText-' + instance + '"></div>\
             <img src="' + path + 'trivialHome.png" class="trivial-Cover" id="trivialCover-' + instance + '" alt="' + msgs.msImage + '" />\

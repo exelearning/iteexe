@@ -277,10 +277,10 @@ var $eXeOca = {
                             <div class="oca-SelectsGamers" id="ocaSelectsGamers-' + instance + '">\
                                 <div class="oca-NumberGamers" id="ocaNumberGamers-' + instance + '">\
                                     <p>' + msgs.msgGamers + ':</p>\
-                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="1"><img src="' + path + 'ocacr1.png" alt="" width="32px"></a>\
-                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="2"><img src="' + path + 'ocacb2.png" alt="" width="32px"></a>\
-                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="3"><img src="' + path + 'ocacb3.png" alt="" width="32px"></a>\
-                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="4"><img src="' + path + 'ocacb4.png" alt="" width="32px"></a>\
+                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="1"><img src="' + path + 'ocacr1.png" alt="1" width="32px"></a>\
+                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="2"><img src="' + path + 'ocacb2.png" alt="2" width="32px"></a>\
+                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="3"><img src="' + path + 'ocacb3.png" alt="3" width="32px"></a>\
+                                    <a href="#" class="oca-NumberIcon oca-Activo" data-number="4"><img src="' + path + 'ocacb4.png" alt="4" width="32px"></a>\
                                 </div>\
                                 <div class="oca-NameGamers" id="ocaNameGamers-' + instance + '">\
                                         <div class="oca-Jugador">\
@@ -387,7 +387,7 @@ var $eXeOca = {
             <p id="ocaPTime-' + instance + '" class="oca-PTime">00:00</p>\
         </div>\
         <div class="oca-Multimedia" id="ocaMultimedia-' + instance + '">\
-            <img class="oca-Cursor" id="ocaCursor-' + instance + '" src="' + path + 'ocaCursor.gif" alt="Cursor" />\
+            <img class="oca-Cursor" id="ocaCursor-' + instance + '" src="' + path + 'ocaCursor.gif" alt="" />\
             <img  src="" class="oca-Images" id="ocaImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
             <div class="oca-EText" id="ocaEText-' + instance + '"></div>\
             <img src="' + path + 'ocaHome.png" class="oca-Cover" id="ocaCover-' + instance + '" alt="' + msgs.msImage + '" />\

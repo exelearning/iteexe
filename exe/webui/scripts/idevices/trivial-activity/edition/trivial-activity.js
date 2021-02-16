@@ -800,7 +800,7 @@ var $exeDevice = {
                                     <div class="gameQE-Flex gameQE-EInputImage" id="trivialEInputImage">\
                                         <label class="sr-av" for="trivialEURLImage">' + _("Image URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLImage"  id="trivialEURLImage"/>\
-                                        <a href="#" id="trivialEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="trivialEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div class="gameQE-EInputOptionsImage" id="quextInputOptionsImage">\
                                         <div class="gameQE-ECoord">\
@@ -814,7 +814,7 @@ var $exeDevice = {
                                     <div class="gameQE-Flex gameQE-EInputVideo" id="trivialEInputVideo">\
                                         <label class="sr-av" for="trivialEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="trivialEURLYoutube" type="text" />\
-                                        <a href="#" id="trivialEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage" /></a>\
+                                        <a href="#" id="trivialEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage" /></a>\
                                     </div>\
                                     <div class="gameQE-EInputOptionsVideo" id="trivialEInputOptionsVideo">\
                                         <div>\
@@ -851,7 +851,7 @@ var $exeDevice = {
                                     <div class="gameQE-EInputAudio" id="trivialEInputAudio">\
                                         <label class="sr-av" for="trivialEURLAudio">' + _("URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="trivialEURLAudio"/>\
-                                        <a href="#" id="trivialEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="trivialEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EMultiMediaOption">\
@@ -862,7 +862,7 @@ var $exeDevice = {
                                         <div class="gameQE-EMedia" id="trivialEVideo"></div>\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="trivialENoImageVideo" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoVideo.png" + '" id="trivialENoVideo" alt="" />\
-                                        <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="trivialECursor" alt="Cursor" />\
+                                        <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="trivialECursor" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + "quextIECoverTrivial.png" + '" id="trivialECover" alt="' + _("No image") + '" />\
                                     </div>\
                                 </div>\
@@ -896,16 +896,16 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-ENavigationButtons">\
-                                <a href="#" id="trivialEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="" class="gameQE-EButtonImage b-add" /></a>\
-                                <a href="#" id="trivialEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="" class="gameQE-EButtonImage b-first" /></a>\
-                                <a href="#" id="trivialEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="" class="gameQE-EButtonImage b-prev" /></a>\
+                                <a href="#" id="trivialEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="' + _("Add question") + '" class="gameQE-EButtonImage b-add" /></a>\
+                                <a href="#" id="trivialEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="' + _("First question") + '" class="gameQE-EButtonImage b-first" /></a>\
+                                <a href="#" id="trivialEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="' + _("Previous question") + '" class="gameQE-EButtonImage b-prev" /></a>\
                                 <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="trivialNumberQuestion">1</span>\
-                                <a href="#" id="trivialENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="" class="gameQE-EButtonImage b-next" /></a>\
-                                <a href="#" id="trivialELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="" class="gameQE-EButtonImage b-last" /></a>\
-                                <a href="#" id="trivialEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="" class="gameQE-EButtonImage b-delete" /></a>\
-                                <a href="#" id="trivialECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="" class="gameQE-EButtonImage b-copy" /></a>\
-                                <a href="#" id="trivialECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt=""  class="gameQE-EButtonImage b-cut" /></a>\
-                                <a href="#" id="trivialEPaste" class="gameQE-ENavigationButton"  title=' + _("Paste question") + '><img src="' + path + "quextIEPaste.png" + '"  alt="" class="gameQE-EButtonImage b-paste" /></a>\
+                                <a href="#" id="trivialENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="' + _("Next question") + '" class="gameQE-EButtonImage b-next" /></a>\
+                                <a href="#" id="trivialELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="' + _("Last question") + '" class="gameQE-EButtonImage b-last" /></a>\
+                                <a href="#" id="trivialEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="' + _("Delete question") + '" class="gameQE-EButtonImage b-delete" /></a>\
+                                <a href="#" id="trivialECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="' + _("Copy question") + '" class="gameQE-EButtonImage b-copy" /></a>\
+                                <a href="#" id="trivialECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt="' + _("Cut question") + '"  class="gameQE-EButtonImage b-cut" /></a>\
+                                <a href="#" id="trivialEPaste" class="gameQE-ENavigationButton"  title="' + _("Paste question") + '"><img src="' + path + "quextIEPaste.png" + '"  alt="' + _("Paste question") + '" class="gameQE-EButtonImage b-paste" /></a>\
                             </div>\
                             <div class="gameQE-ENumQuestionDiv" id="trivialENumQuestionDiv">\
                                 <div class="gameQE-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="gameQE-ENumQuestions" id="trivialENumQuestions">0</span>\

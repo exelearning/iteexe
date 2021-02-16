@@ -531,7 +531,7 @@ var $exeDevice = {
 					</div>\
 					<div class="roscoImageBarEdition">\
 						<div class="roscoImageEdition">\
-							<img src="' + path + 'quextIECursor.gif" class="roscoCursorEdition" alt="Cursor" /> \
+							<img src="' + path + 'quextIECursor.gif" class="roscoCursorEdition" alt="" /> \
 							<img src="" class="roscoHomeImageEdition" alt="' + _("No image") + '" /> \
 							<img src="' + path + 'roscoHomeImage.png" class="roscoNoImageEdition" alt="' + _("No image") + '" /> \
 						</div>\

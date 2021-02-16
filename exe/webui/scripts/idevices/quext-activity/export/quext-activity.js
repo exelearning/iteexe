@@ -255,7 +255,7 @@ var $eXeQuExt = {
                 <p class="gameQP-PShowClue gameQP-parpadea" id="quextPShowClue-' + instance + '"></p>\
             </div>\
             <div class="gameQP-Multimedia" id="quextMultimedia-' + instance + '">\
-                <img class="gameQP-Cursor" id="quextCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
+                <img class="gameQP-Cursor" id="quextCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="" />\
                 <img  src="" class="gameQP-Images" id="quextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-EText" id="quextEText-' + instance + '"></div>\
                 <img src="' + path + 'quextHome.png" class="gameQP-Cover" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
