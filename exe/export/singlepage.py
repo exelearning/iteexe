@@ -315,6 +315,8 @@ class SinglePage(Page):
         for idevice in node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e = " em_iDevice"
+                if idevice.icon and idevice.icon != "":
+                    e += ' em_iDevice_'+idevice.icon
                 if unicode(idevice.emphasis) == '0':
                     e = ""
                 # iDevice container

@@ -165,6 +165,8 @@ class ScormPage(Page):
         for idevice in self.node.idevices:
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
+                if idevice.icon and idevice.icon != "":
+                    e += ' em_iDevice_'+idevice.icon
                 if unicode(idevice.emphasis)=='0':
                     e=""
                 html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
