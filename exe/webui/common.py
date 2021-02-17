@@ -492,7 +492,9 @@ def ideviceHeader(e, style, mode):
         w2 += '<div class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
         if e.idevice.icon and e.idevice.icon != "":
-            eEm += ' em_iDevice_'+e.idevice.icon
+            _iconNameToClass = re.sub('[^A-Za-z0-9]+', '', e.idevice.icon) # Allowed CSS classNames only
+            if _iconNameToClass!="":        
+                eEm += ' em_iDevice_'+_iconNameToClass
 
     if mode=="preview" and themeHasXML:
         w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
