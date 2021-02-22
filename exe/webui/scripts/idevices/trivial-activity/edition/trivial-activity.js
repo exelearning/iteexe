@@ -1121,10 +1121,16 @@ var $exeDevice = {
             }
             dataGame.temas = $exeDevice.temas;
             $exeDevice.numeroTemas = dataGame.numeroTemas;
-            $exeDevice.nombresTemas = dataGame.nombresTemas;
             var instructions = $(".trivial-instructions", wrapper);
-            if (instructions.length == 1) tinyMCE.get('eXeGameInstructions').setContent(instructions.html());
-            // i18n
+            if (instructions.length == 1) {
+                instructions = instructions.html() || ''
+                if (tinyMCE.get('eXeGameInstructions')) {
+                    tinyMCE.get('eXeGameInstructions').setContent(instructions);
+                } else {
+                    $("#eXeGameInstructions").val(instructions)
+                }
+            } 
+             // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.changeNumberTemas(dataGame.numeroTemas);
             $exeDevice.updateFieldGame(dataGame);
@@ -1193,7 +1199,7 @@ var $exeDevice = {
         }
         dataGame.msgs = i18n;
         var instructions = tinyMCE.get('eXeGameInstructions').getContent(),
-            divIntrunstion = instructions != "" ? '<div class="gameQE-instructions">' + instructions + '</div>' : '',
+            divIntrunstion = instructions != "" ? '<div class="trivial-instructions">' + instructions + '</div>' : '',
             linksImages = $exeDevice.createlinksImage(dataGame),
             linksAudios = $exeDevice.createlinksAudio(dataGame);
         var html = '<div class="trivial-IDevice">';
@@ -1206,8 +1212,8 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.tooManyQuestions);
             return false;
         }
-
         return html;
+      
     },
     Encrypt: function (game) {
         var nombres = [];
@@ -1297,6 +1303,7 @@ var $exeDevice = {
             'title': '',
             'customScore': game.customScore,
             'textAfter': game.textAfter,
+            'msgs':game.msgs,
             "version": game.version
         }
 

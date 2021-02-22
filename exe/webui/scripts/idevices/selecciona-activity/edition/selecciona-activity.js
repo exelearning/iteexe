@@ -1430,7 +1430,6 @@ var $exeDevice = {
         p.error = parseInt($('#seleccionaGotoIncorrect').val());
         p.msgHit = $('#seleccionaEMessageOK').val();
         p.msgError = $('#seleccionaEMessageKO').val();
-        console.log('validateQuestion', $('#seleccionaGotoCorrect').val(), 'p.hit', p.hit, 'p.error', p.error);
         $exeDevice.stopSound();
         $exeDevice.stopVideo();
         if (p.type == 2) {
@@ -2436,7 +2435,6 @@ var $exeDevice = {
                 $exeDevice.selectsGame.push(p);
             }
         }
-        console.log($exeDevice.selectsGame)
         return $exeDevice.selectsGame;
     },
     importSelecciona: function (data) {

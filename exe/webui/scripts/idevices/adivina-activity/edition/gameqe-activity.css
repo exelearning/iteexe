@@ -202,7 +202,7 @@
 	padding-right:.5em
 }
 .gameQE-SolutionWordDiv input {
-	text-align: center;
+	text-align: left;
 }
 
 
@@ -221,7 +221,7 @@
 }
 
 .gameQE-EOrders > div {
-	align-items: center;
+	align-items: left;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
@@ -356,7 +356,7 @@
 	margin-left: 0.3em;
 }
 .gameQE-EVIOptions input[type=text] {
-	text-align: center;
+	text-align: left;
 	width: 5em;
 }
 .gameQE-EVIOptions input[type=text]:first-of-type {
@@ -377,8 +377,11 @@
 	top: 0.3em;
 }
 
+.gameQE-EVIOptionsVQ  {
+	margin-bottom: 0.6em;
+  }
 .gameQE-EVIOptionsVQ input[type=text] {
-  text-align: center;
+  text-align: left;
   width: 5em;
   margin-right: .2em;
 }

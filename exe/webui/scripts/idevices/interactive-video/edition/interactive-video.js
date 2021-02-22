@@ -184,17 +184,13 @@ var $exeDevice = {
 			videoType : "",
 			i18n : {}
 		};		
-		
 		this.loadPreviousValues(field);
-		
 	},
-	
 	// Load the saved values in the form fields
 	loadPreviousValues : function(field){
 
 		var originalHTML = field.val();
 		if (originalHTML != '') {
-			
 			var wrapper = $("<div id='interactiveVideoTmpWrapper'></div>");
 				wrapper.html(originalHTML);
 				// Check the CSS class (Show/Hide results)
