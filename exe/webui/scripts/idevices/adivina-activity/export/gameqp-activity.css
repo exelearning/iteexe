@@ -990,6 +990,9 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:470px) {
+	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+		font-size: 0.9rem;
+	}
 	.gameQP-Multimedia {
 		width: 95%;
 	}
@@ -1030,6 +1033,9 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:340px) {
+	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+		font-size: 0.8rem;
+	}
 	.gameQP-GameScoreBoard p {
 		font-weight: normal;
 		margin: 0.1em;
@@ -1055,7 +1061,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 
 @media screen and (max-width:295px) {
 	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
-		font-size: 0.6rem;
+		font-size: 0.7rem;
 	}
 	.gameQP-GameScoreBoard {
 		justify-content: flex-start;
@@ -1069,6 +1075,9 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:265px) {
+	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+		font-size: 0.6rem;
+	}
 	.gameQP-GameScoreBoard p {
 		font-weight: normal;
 		margin: 2px;

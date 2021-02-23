@@ -195,11 +195,11 @@ var $eXeVideoQuExt = {
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
-        str = unescape(str)
+        str = unescape(str);
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -551,7 +551,6 @@ var $eXeVideoQuExt = {
             }
         }
     },
-
     playVideo: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.videoType > 0) {
@@ -582,6 +581,7 @@ var $eXeVideoQuExt = {
     },
     muteVideo: function (mute, instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
+        mute=mOptions.videoType==2?false:mute;
         if (mOptions.videoType > 0) {
             if (mOptions.localPlayer) {
                 mOptions.localPlayer.muted = mute;
@@ -788,7 +788,6 @@ var $eXeVideoQuExt = {
             $('#vquextCover-' + instance).hide();
             $eXeVideoQuExt.muteVideo(false, instance);
         }
-
         $eXeVideoQuExt.playVideo(instance);
         mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
         $eXeVideoQuExt.uptateTime(0, instance);
@@ -1171,7 +1170,7 @@ var $eXeVideoQuExt = {
         if (mOptions.showSolution) {
             $eXeVideoQuExt.drawSolution(instance);
         }
-        $eXeVideoQuExt.updateScore(valid, instance); 
+        $eXeVideoQuExt.updateScore(valid, instance);
         var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
@@ -1413,8 +1412,8 @@ var $eXeVideoQuExt = {
     drawSolution: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             message = '';
-        if ((mOptions.question.typeQuestion == 1) && (mOptions.questionAnswer === false)) {v
-            message ='-> ' + mOptions.question.solutionQuestion;
+        if ((mOptions.question.typeQuestion == 1) && (mOptions.questionAnswer === false)) {
+            message =mOptions.msgs.msgSolution+': '+ mOptions.question.solutionQuestion;
             $eXeVideoQuExt.showMessage(1, message, instance);
             $('#vquextDivReply-' + instance).hide();
 
