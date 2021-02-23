@@ -29,8 +29,10 @@ var $exeDevice = {
     quextVersion: 2,
     videoType: 0,
     idVideoQuExt: "",
+    endVideoQuExt: 0,
     pointStart: 0,
     pointEnd: 100000,
+    videoLoading: false,
     ci18n: {
         "msgPlayStart": _("Click here to play"),
         "msgSubmit": _("Submit"),
@@ -188,26 +190,30 @@ var $exeDevice = {
         if ($exeDevice.videoType > 0) {
             return;
         }
-        if ($exeDevice.player && typeof $exeDevice.player.getDuration == "function") {
-            $exeDevice.durationVideo = Math.floor($exeDevice.player.getDuration());
-            if ($exeDevice.videoType == 0 && $exeDevice.hourToSeconds($('#vquextEVIEnd').val()) == 0) {
-                var duration = $exeDevice.secondsToHour($exeDevice.durationVideo);
-                $('#vquextEVIEnd').val(duration);
+        if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.paused) {
+            if ($exeDevice.player && typeof $exeDevice.player.getDuration == "function") {
+                $exeDevice.durationVideo = Math.floor($exeDevice.player.getDuration());
+                if ($exeDevice.hourToSeconds($('#vquextEVIEnd').val()) == 0) {
+                    var duration = $exeDevice.secondsToHour(Math.floor($exeDevice.player.getDuration()));
+                    $('#vquextEVIEnd').val(duration);
+                }
             }
+
         }
     },
 
     onPlayerReady: function (event) {
-
         if ($exeDevice.videoType > 0) {
-            return;
-        }
-        $exeDevice.youtubeLoaded = true;
-        var url = $('#vquextEVIURL').val(),
-            idV = $exeDevice.getIDYoutube(url);
-        if (idV) {
-            $exeDevice.startVideo(url, $exeDevice.pointStart, $exeDevice.pointEnd);
-        }
+             return;
+         }
+         $exeDevice.youtubeLoaded = true;
+         var url = $('#vquextEVIURL').val(),
+             idV = $exeDevice.getIDYoutube(url);
+         if (idV) {
+             $exeDevice.initClock(0);
+             $exeDevice.startVideo(url,$exeDevice.startVideoQuExt,$exeDevice.endVideoQuExt);
+             $exeDevice.showPlayer()
+         }
     },
     updateProgressBar: function () {
         if ($exeDevice.videoType > 0) {
@@ -296,8 +302,18 @@ var $exeDevice = {
                 var time = $exeDevice.secondsToHour($exeDevice.player.getCurrentTime());
                 $('#vquextEVITime').text(time);
             }
+
+            if (typeof $exeDevice.player.getDuration === "function") {
+                $exeDevice.durationVideo = $exeDevice.player.getDuration();
+                if ($exeDevice.endVideoQuExt < 1) {
+                    $exeDevice.endVideoQuExt = $exeDevice.durationVideo;
+
+                }
+
+
+            }
         }
-        //$('#duration').text(formatTime( player.getDuration() ));
+
     },
     updateProgressBarYT: function () {
         $('#progress-bar').val(($eXeDevice.player.getCurrentTime() / $eXeDevice.player.getDuration()) * 100);
@@ -325,11 +341,24 @@ var $exeDevice = {
             $exeDevice.localPlayer.muted = mute;
         }
     },
+    getDataVideoLocal: function (e) {
+        $exeDevice.durationVideo = Math.floor(this.duration);
+        var endVideo = $exeDevice.hourToSeconds($('#vquextEVIEnd').val()) || 0;
+        console.log($exeDevice.durationVideo, endVideo);
+        if (endVideo < 1) {
+            $('#vquextEVIEnd').val($exeDevice.secondsToHour($exeDevice.durationVideo));
+        }
+    },
     updateTimerDisplayLocal: function () {
         if ($exeDevice.localPlayer) {
-            if ($exeDevice.localPlayer.currentTime) {
-                var time = $exeDevice.secondsToHour(Math.round($exeDevice.localPlayer.currentTime));
+            var currentTime = $exeDevice.localPlayer.currentTime;
+            if (currentTime) {
+                var time = $exeDevice.secondsToHour(Math.ceil(currentTime));
                 $('#vquextEVITime').text(time);
+                if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                    $exeDevice.localPlayer.pause();
+                    $exeDevice.pointEnd = 100000;
+                }
             }
         }
     },
@@ -885,7 +914,6 @@ var $exeDevice = {
                 }
             }
 
-            $exeDevice.videoType = typeof dataGame.videoType == "udefined" ? 0 : dataGame.videoType;
             if (dataGame.videoType > 0) {
                 dataGame.idVideoQuExt = videoLink;
             }
@@ -900,22 +928,26 @@ var $exeDevice = {
             }
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
-            $exeDevice.initClock(dataGame.videoType);
-            
-            
+            if($exeDevice.videoType>0){
+                $exeDevice.initClock(dataGame.videoType);
+                $exeDevice.showPlayer();
+            }
+
         }
     },
     validTime: function (time) {
         var reg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/;
         return (time.length == 8 && reg.test(time))
     },
-    updateFieldGame: function (game) {
+    updateFieldGame: function (game) {        
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
+      
         game.answersRamdon = game.answersRamdon || false;
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
+        game.videoType = typeof game.videoType == "undefined" ? 0 : game.videoType;
         $('#vquextEShowMinimize').prop('checked', game.showMinimize);
         $('#vquextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#vquextEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -942,9 +974,13 @@ var $exeDevice = {
         $exeDevice.showSelectOrder(game.customMessages);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showQuestion($exeDevice.active);
-        $exeDevice.idVideoQuExt = game.idVideoQuExt;
+        $exeDevice.videoType = typeof game.videoType == "udefined" ? 0 : game.videoType;
+        $exeDevice.idVideoQuExt = game.idVideoQuExt;     
+        $exeDevice.endVideoQuExt = game.endVideoQuExt;
+        $exeDevice.startVideoQuExt = game.startVideoQuExt;
         $exeDevice.pointStart = game.startVideoQuExt;
         $exeDevice.pointEnd = game.endVideoQuExt;
+        $exeDevice.videoType = game.videoType;
         for (var i = 0; i < game.questionsGame.length; i++) {
             game.questionsGame[i].msgHit = typeof game.questionsGame[i].msgHit == "undefined" ? "" : game.questionsGame[i].msgHit;
             game.questionsGame[i].msgError = typeof game.questionsGame[i].msgError == "undefined" ? "" : game.questionsGame[i].msgError;
@@ -965,17 +1001,19 @@ var $exeDevice = {
             $('#vquextEFeedbackP').hide();
         }
         $('#vquextEPercentajeFB').prop('disabled', !game.feedBack);
-
     },
 
     updateGameMode: function (gamemode, feedback, useLives) {
         $("#vquextEUseLives").prop('disabled', true);
         $("#vquextENumberLives").prop('disabled', true);
-        $('#vquextPercentajeFB').prop('disabled', !feedback && gamemode != 2);
+        $('#vquextEPercentajeFB').prop('disabled', true);
         $('#vquextEHasFeedBack').prop('disabled', gamemode == 2);
         $('#vquextEHasFeedBack').prop('checked', feedback);
+      
         if (gamemode == 2 || feedback) {
             $('#vquextEFeedbackP').slideDown();
+            $('#vquextEPercentajeFB').prop('disabled', false);
+            console.log(gamemode, feedback);
         }
         if (gamemode != 2 && !feedback) {
             $('#vquextEFeedbackP').slideUp();
@@ -1077,7 +1115,7 @@ var $exeDevice = {
         } else if ($exeDevice.videoType == 2 && !isAudio) {
             $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo + 'yo soy');
             return false;
-        }else if (!$exeDevice.validTime($('#vquextEVIStart').val()) || !$exeDevice.validTime($('#vquextEVIEnd').val())) {
+        } else if (!$exeDevice.validTime($('#vquextEVIStart').val()) || !$exeDevice.validTime($('#vquextEVIEnd').val())) {
             $exeDevice.showMessage($exeDevice.msgs.msgTimeFormat);
             return false;
         } else if (startVideoQuExt >= endVideoQuExt) {
@@ -1193,7 +1231,10 @@ var $exeDevice = {
                 numOpt++;
             }
         }
+
         $exeDevice.updateFieldGame(game);
+        $('#vquextEVIEnd').val('00:00:00');
+        $exeDevice.loadVideo(game.idVideoQuExt);
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
             textFeedBack = game.textFeedBack || "";
@@ -1542,6 +1583,7 @@ var $exeDevice = {
 
         $("#vquextEVIURL").change(function () {
             var url = $(this).val().trim();
+            $('#vquextEVIEnd').val('00:00:00');
             $exeDevice.loadVideo(url);
         });
 
@@ -1584,67 +1626,32 @@ var $exeDevice = {
         });
 
     },
-    initClock:function(type){
-        $exeDevice.localPlayer.ontimeupdate = null;
+    initClock: function (type) {
+        $exeDevice.endVideoQuExt = 0;
+        $exeDevice.localPlayer.removeEventListener("timeupdate", $exeDevice.timeUpdateVideoLocal, false);
+        $exeDevice.localPlayer.removeEventListener("loadedmetadata", $exeDevice.getDataVideoLocal);
         clearInterval($exeDevice.timeUpdateInterval);
-        if(type>0){
-            $exeDevice.localPlayer.ontimeupdate = function () {
-                if ($exeDevice.videoType > 0) {
-                    var currentTime = Math.floor($exeDevice.localPlayer.currentTime),
-                    endVideoQuExt = $exeDevice.hourToSeconds($('#vquextEVIEnd').val());
-                    $exeDevice.updateTimerDisplayLocal();
-                    if (currentTime == $exeDevice.pointEnd) {
-                        $exeDevice.localPlayer.pause();
-                        $exeDevice.pointEnd = 100000;
-                    }
-                    if ( !isNaN(endVideoQuExt) && endVideoQuExt < 2) {
-                        var duration=$exeDevice.localPlayer.duration;
-                        $exeDevice.durationVideo = Math.floor(duration);
-                        $('#vquextEVIEnd').val($exeDevice.secondsToHour(duration))
-                    }
-                }
-            }
-        }else{
+        if (type > 0) {
+            $exeDevice.localPlayer.addEventListener("loadedmetadata", $exeDevice.getDataVideoLocal);
+            $exeDevice.localPlayer.addEventListener("timeupdate", $exeDevice.timeUpdateVideoLocal, false);
+        } else {
             $exeDevice.timeUpdateInterval = setInterval(function () {
-                if ($exeDevice.videoType==0){
+                if ($exeDevice.videoType == 0) {
                     $exeDevice.updateTimerDisplayYT();
                 }
             }, 1000);
         }
 
     },
-    loadVideo: function (url) {
-        if (url.trim().length == 0) {
-            return;
+    timeUpdateVideoLocal: function () {
+        if ($exeDevice.videoType > 0) {
+            $exeDevice.updateTimerDisplayLocal();
+
         }
-        var id = $exeDevice.getIDYoutube(url),
-            validExtAudio = ['mp3', 'wav'],
-            validExt = ['mp4', 'ogg', 'webm'],
-            extension = url.split('.').pop().toLowerCase(),
-            isVideoLocal = (validExt.indexOf(extension) != -1) || (url.toLowerCase().indexOf("google.com/videoplayback") != -1),
-            isAudio = (validExtAudio.indexOf(extension) != -1) || ((url.toLowerCase().indexOf("https://drive.google.com") == 0 && url.toLowerCase().indexOf('sharing') != -1));
-        if (!id && validExt.indexOf(extension) == -1 && !isVideoLocal && validExtAudio.indexOf(extension) == -1 && !isAudio) {
-            eXe.app.alert(_("Introduzca la URL de un vídeo de YouTube o seleccione un archivo de los siguientes formatos: ogv/ogg, webm, mp4"));
-            return;
-        }
-        $('#vquextEVIEnd').val($exeDevice.secondsToHour(0));
-        if (isVideoLocal) {
-            $exeDevice.videoType = 1;
-            $exeDevice.localPlayer.pause();
-        } else if (isAudio) {
-            $exeDevice.videoType = 2;
-            $exeDevice.localPlayer.pause();
-        } else {
-            $exeDevice.videoType = 0;
-            $exeDevice.localPlayer.src == "";
-        }
-        $exeDevice.startVideo(url, $exeDevice.pointStart, $exeDevice.pointEnd);
-        $exeDevice.initClock($exeDevice.videoType);
-        $exeDevice.showPlayer();
     },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
+    placeImageWindows: function (img, naturalWidth, naturalHeight) {
+        var wDiv = $(img).parent().width() > 0 ? $(img).parent().width() : 1,
+            hDiv = $(img).parent().height() > 0 ? $(img).parent().height() : 1,
             varW = naturalWidth / wDiv,
             varH = naturalHeight / hDiv,
             wImage = wDiv,
@@ -1666,5 +1673,35 @@ var $exeDevice = {
             x: xImagen,
             y: yImagen
         }
+    },
+    loadVideo: function (url) {
+        if (url.trim().length == 0 || $exeDevice.videoLoading) {
+            return;
+        }
+        $exeDevice.videoLoading = true;
+        var id = $exeDevice.getIDYoutube(url),
+            validExtAudio = ['mp3', 'wav'],
+            validExt = ['mp4', 'ogg', 'webm'],
+            extension = url.split('.').pop().toLowerCase(),
+            isVideoLocal = (validExt.indexOf(extension) != -1) || (url.toLowerCase().indexOf("google.com/videoplayback") != -1),
+            isAudio = (validExtAudio.indexOf(extension) != -1) || ((url.toLowerCase().indexOf("https://drive.google.com") == 0 && url.toLowerCase().indexOf('sharing') != -1));
+        if (!id && validExt.indexOf(extension) == -1 && !isVideoLocal && validExtAudio.indexOf(extension) == -1 && !isAudio) {
+            eXe.app.alert($exeDevice.msgs.msgFormatVideo);
+            return;
+        }
+        if (isVideoLocal) {
+            $exeDevice.videoType = 1;
+            $exeDevice.localPlayer.pause();
+        } else if (isAudio) {
+            $exeDevice.videoType = 2;
+            $exeDevice.localPlayer.pause();
+        } else {
+            $exeDevice.videoType = 0;
+            $exeDevice.localPlayer.src == "";
+        }
+        $exeDevice.initClock($exeDevice.videoType);
+        $exeDevice.startVideo(url, $exeDevice.pointStart, $exeDevice.pointEnd);
+        $exeDevice.showPlayer();
+        $exeDevice.videoLoading = false;
     }
 }

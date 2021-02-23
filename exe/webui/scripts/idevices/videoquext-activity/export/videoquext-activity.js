@@ -1046,6 +1046,7 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.showScoreGame(type, instance);
         $eXeVideoQuExt.clearQuestions(instance);
         $eXeVideoQuExt.uptateTime(0, instance);
+        $eXeVideoQuExt.stopVideo(instance);
         $('#vquextPNumber-' + instance).text('0');
         $('#vquextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
         $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
@@ -1167,10 +1168,10 @@ var $eXeVideoQuExt = {
             valid = answer === mOptions.question.solution;
         }
         mOptions.questionAnswer = true;
-        $eXeVideoQuExt.updateScore(valid, instance);
         if (mOptions.showSolution) {
             $eXeVideoQuExt.drawSolution(instance);
         }
+        $eXeVideoQuExt.updateScore(valid, instance); 
         var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
@@ -1257,11 +1258,16 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.showMessage(type, message, instance);
     },
     getMessageAnswer: function (correctAnswer, npts, instance) {
-        var message = "";
+        var mOptions = $eXeVideoQuExt.options[instance];
+        var message = "",
+        q=mOptions.questionsGame[mOptions.activeQuestion];
         if (correctAnswer) {
             message = $eXeVideoQuExt.getMessageCorrectAnswer(npts, instance);
         } else {
             message = $eXeVideoQuExt.getMessageErrorAnswer(npts, instance);
+        }
+        if(mOptions.showSolution && q.typeQuestion==1){
+            message+=': '+q.solutionQuestion;
         }
         return message;
     },
@@ -1407,8 +1413,8 @@ var $eXeVideoQuExt = {
     drawSolution: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             message = '';
-        if ((mOptions.question.typeQuestion == 1) && (mOptions.questionAnswer === false)) {
-            message = mOptions.msgs.msgSolution + ': ' + mOptions.question.solutionQuestion;
+        if ((mOptions.question.typeQuestion == 1) && (mOptions.questionAnswer === false)) {v
+            message ='-> ' + mOptions.question.solutionQuestion;
             $eXeVideoQuExt.showMessage(1, message, instance);
             $('#vquextDivReply-' + instance).hide();
 
