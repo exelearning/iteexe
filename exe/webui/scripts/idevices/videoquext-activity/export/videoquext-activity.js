@@ -504,6 +504,7 @@ var $eXeVideoQuExt = {
                 $eXeVideoQuExt.youTubeReadyOne(instance);
             } else {
                 $eXeVideoQuExt.loadYoutubeApi();
+
             }
         } else {
             $eXeVideoQuExt.startGame(instance);
@@ -576,6 +577,14 @@ var $eXeVideoQuExt = {
         if (mOptions.player) {
             if (typeof mOptions.player.pauseVideo == "function") {
                 mOptions.player.pauseVideo();
+            }
+        }
+    },
+    endVideoYoutube:function(instance){
+        var mOptions = $eXeVideoQuExt.options[instance];
+        if (mOptions.player) {
+            if (typeof mOptions.player.stopVideo == "function") {
+                mOptions.player.stopVideo();
             }
         }
     },
@@ -1046,6 +1055,9 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.clearQuestions(instance);
         $eXeVideoQuExt.uptateTime(0, instance);
         $eXeVideoQuExt.stopVideo(instance);
+        if(mOptions.videoType==0){
+            $eXeVideoQuExt.endVideoYoutube(instance);
+        }
         $('#vquextPNumber-' + instance).text('0');
         $('#vquextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
         $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
@@ -1071,6 +1083,9 @@ var $eXeVideoQuExt = {
             } else {
                 $eXeVideoQuExt.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
             }
+        }
+        if(mOptions.gameMode==2){
+            $('#vquextGamerOver-' + instance).find('.gameQP-DataScore').hide(); 
         }
     },
     drawText: function (texto, color) {},

@@ -185,13 +185,12 @@ var $exeDevice = {
         if ($exeDevice.videoType > 0) {
             return;
         }
-        if (event.data == YT.PlayerState.PLAYING || event.data == YT.PlayerState.paused) {
-            if ($exeDevice.player && typeof $exeDevice.player.getDuration == "function") {
-                $exeDevice.durationVideo = Math.floor($exeDevice.player.getDuration());
-                if ($exeDevice.hourToSeconds($('#vquextEVIEnd').val()) == 0) {
-                    var duration = $exeDevice.secondsToHour(Math.floor($exeDevice.player.getDuration()));
-                    $('#vquextEVIEnd').val(duration);
-                }
+        var lduration = $exeDevice.player.getDuration();
+        if (!isNaN(lduration) && lduration > 0) {
+            $exeDevice.durationVideo = Math.floor(lduration);
+            if ($exeDevice.hourToSeconds($('#vquextEVIEnd').val()) == 0) {
+                var duration = $exeDevice.secondsToHour($exeDevice.durationVideo);
+                $('#vquextEVIEnd').val(duration);
             }
         }
     },
@@ -261,7 +260,6 @@ var $exeDevice = {
         }
     },
     stopVideoYT: function () {
-
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.pauseVideo === "function") {
                 $exeDevice.player.stopVideo();
@@ -326,7 +324,6 @@ var $exeDevice = {
     getDataVideoLocal: function (e) {
         $exeDevice.durationVideo = Math.floor(this.duration);
         var endVideo = $exeDevice.hourToSeconds($('#vquextEVIEnd').val()) || 0;
-        console.log($exeDevice.durationVideo, endVideo);
         if (endVideo < 1) {
             $('#vquextEVIEnd').val($exeDevice.secondsToHour($exeDevice.durationVideo));
         }
@@ -966,7 +963,6 @@ var $exeDevice = {
         if (gamemode == 2 || feedback) {
             $('#vquextEFeedbackP').slideDown();
             $('#vquextEPercentajeFB').prop('disabled', false);
-            console.log(gamemode, feedback);
         }
         if (gamemode != 2 && !feedback) {
             $('#vquextEFeedbackP').slideUp();
@@ -1189,6 +1185,7 @@ var $exeDevice = {
         if ($exeDevice.videoType > 0) {
             $exeDevice.initClock(game.videoType);
             $exeDevice.showPlayer();
+            $exeDevice.startVideo(game.idVideoQuExt, game.startVideoQuExt, game.endVideoQuExt)
         } else {
             $exeDevice.startVideo(game.idVideoQuExt, game.startVideoQuExt, game.endVideoQuExt)
         }
