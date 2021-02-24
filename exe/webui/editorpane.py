@@ -426,7 +426,7 @@ data is entered into this field."""))
             if self.style.get_name() == style.get_name():
                 html += "selected "
                 isSelected = True
-            html += ">" + style.get_name() + "~" + style.get_dirname() + "</option>\n"
+            html += ">" + style.get_name() + "~" + str(style.get_dirname()) + "</option>\n"
             idx = idx + 1
         html += "</select> \n"
         # Auto-select the current style
