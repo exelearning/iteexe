@@ -96,6 +96,10 @@ class JsBlock(Block):
                 idevice_icon = Path(G.application.config.stylesDir/style/"icon_" + self.idevice.icon + ".png")
                 if idevice_icon.exists():
                     icon_exists = True
+                else:
+                    idevice_icon = Path(G.application.config.stylesDir/style/"icon_" + self.idevice.icon + ".svg")
+                    if idevice_icon.exists():
+                        icon_exists = True
 
         # Icon HTML element
         html += u'<img class="js-idevide-icon-preview" name="iconiDevice%s" id="iconiDevice"' % (self.id)
@@ -171,7 +175,7 @@ class JsBlock(Block):
                 html += u'<div style="float:left; text-align:center; width:105px;\n'
                 html += u'margin-right:10px; margin-bottom:15px" > '
                 html += u'<img src="%s" \n' % filename
-                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;height:auto\" onclick=\"window[0].selectStyleIcon('%s',this, '%s', '%s')\" title=\"%s.%s\">\n" % (icon, iconSrc, self.id, icon ,iconExtension)
+                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;max-height:60px;height:auto\" onclick=\"window[0].selectStyleIcon('%s',this, '%s', '%s')\" title=\"%s.%s\">\n" % (icon, iconSrc, self.id, icon ,iconExtension)
                 html += u'<br /><span style="display:inline-block;width:100px;overflow:hidden;text-overflow:ellipsis">%s.%s</span></div>\n' % (icon, iconExtension)
         
         html += '</div></div>'

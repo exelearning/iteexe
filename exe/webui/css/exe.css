@@ -271,7 +271,7 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice textarea.jsContentEditor{display:none}
 /* iDevice title and icon selection styles */
 .js-show-icon-panel-button{margin:0 5px;font-size:.9em}
-.js-idevide-icon-preview{vertical-align:middle;max-width:60px;height:auto}
+.js-idevide-icon-preview{vertical-align:middle;max-width:60px;height:auto;max-height:60px}
 .js-delete-icon{margin:0 5px}
 .js-icon-panel-container{display:none;z-index:99}
 /* Forms */
