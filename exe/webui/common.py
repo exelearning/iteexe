@@ -492,7 +492,7 @@ def ideviceHeader(e, style, mode):
         w2 += '<div class="iDevice_content_wrapper">'+lb
         eEm = ' em_iDevice'
         if e.idevice.icon and e.idevice.icon != "":
-            _iconNameToClass = re.sub('[^A-Za-z0-9]+', '', e.idevice.icon) # Allowed CSS classNames only
+            _iconNameToClass = re.sub('[^A-Za-z0-9_-]+', '', e.idevice.icon) # Allowed CSS classNames only
             if _iconNameToClass!="":        
                 eEm += ' em_iDevice_'+_iconNameToClass
 

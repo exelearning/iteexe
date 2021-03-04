@@ -166,7 +166,7 @@ class ScormPage(Page):
             if idevice.klass != 'NotaIdevice':
                 e=" em_iDevice"
                 if idevice.icon and idevice.icon != "":
-                    _iconNameToClass = re.sub('[^A-Za-z0-9]+', '', idevice.icon) # Allowed CSS classNames only
+                    _iconNameToClass = re.sub('[^A-Za-z0-9_-]+', '', idevice.icon) # Allowed CSS classNames only
                     if _iconNameToClass!="":        
                         e += ' em_iDevice_'+_iconNameToClass
                 if unicode(idevice.emphasis)=='0':
