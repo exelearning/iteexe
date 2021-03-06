@@ -33,6 +33,7 @@ var $eXeDesafio = {
     init: function () {
         this.activities = $('.desafio-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeDesafio.supportedBrowser('desafio')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Challenge') + '</p>');
@@ -216,7 +217,7 @@ var $eXeDesafio = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -298,7 +299,6 @@ var $eXeDesafio = {
                     "width": l+'px',
                     "height": t+'px',
                     "flex-glow": 0
-
                 })
             }
         });
@@ -481,8 +481,6 @@ var $eXeDesafio = {
         }
         $eXeDesafio.showMessage(type, message, instance);
         $eXeDesafio.changeImageButtonState(instance, mOptions.typeQuestion);
-
-
     },
     showChallenge: function (number, instance) {
         var mOptions = $eXeDesafio.options[instance],
@@ -516,7 +514,6 @@ var $eXeDesafio = {
         }
         $eXeDesafio.showMessage(type, message, instance);
         $eXeDesafio.changeImageButtonState(instance, mOptions.typeQuestion);
-
     },
 
     saveDataStorage: function (instance) {
@@ -525,7 +522,6 @@ var $eXeDesafio = {
             mOptions.desafioDate = $eXeDesafio.getActualFullDate();
             $('#desafioDate-' + instance).text(mOptions.msgs.msgStartTime + ': ' + mOptions.desafioDate);
         }
-
         var data = {
             'started': mOptions.gameStarted || mOptions.gameOver,
             'endGame': mOptions.endGame,
@@ -786,6 +782,14 @@ var $eXeDesafio = {
             'font-weight': 'normal',
             'font-size': $eXeDesafio.fontSize
         });
+    },
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
+        }
+        return sp;
     }
 }
 $(function () {

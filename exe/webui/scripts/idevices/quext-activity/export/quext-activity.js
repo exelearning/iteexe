@@ -53,6 +53,7 @@ var $eXeQuExt = {
     init: function () {
         this.activities = $('.quext-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeQuExt.supportedBrowser('quext')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('QuExt') + '</p>');
@@ -210,26 +211,26 @@ var $eXeQuExt = {
         <div class="gameQP-GameContainer" id="quextGameContainer-' + instance + '">\
             <div class="gameQP-GameScoreBoard">\
                 <div class="gameQP-GameScores">\
-                    <div class="exeQuextIcons  exeQuextIcons-Number" title="'+msgs.msgNumQuestions+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number" title="' + msgs.msgNumQuestions + '"></div>\
                     <p><span class="sr-av">' + msgs.msgNumQuestions + ': </span><span id="quextPNumber-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons exeQuextIcons-Hit" title="'+msgs.msgHits+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Hit" title="' + msgs.msgHits + '"></div>\
                     <p><span class="sr-av">' + msgs.msgHits + ': </span><span id="quextPHits-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons  exeQuextIcons-Error" title="'+msgs.msgErrors+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Error" title="' + msgs.msgErrors + '"></div>\
                     <p><span class="sr-av">' + msgs.msgErrors + ': </span><span id="quextPErrors-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons  exeQuextIcons-Score" title="'+msgs.msgScore+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Score" title="' + msgs.msgScore + '"></div>\
                     <p><span class="sr-av">' + msgs.msgScore + ': </span><span id="quextPScore-' + instance + '">0</span></p>\
                 </div>\
                 <div class="gameQP-LifesGame" id="quextLifesGame-' + instance + '">\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                 </div>\
                 <div class="gameQP-NumberLifesGame" id="quextNumberLivesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
@@ -238,7 +239,7 @@ var $eXeQuExt = {
                 </div>\
                 <div class="gameQP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Time" title="' + msgs.msgTime + '"></div>\
                     <p id="quextPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
                     <a href="#" class="gameQP-LinkMinimize" id="quextLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
@@ -358,7 +359,7 @@ var $eXeQuExt = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -437,7 +438,7 @@ var $eXeQuExt = {
         return mOptions;
     },
     preloadGame: function (instance) {
-        var  mOptions = $eXeQuExt.options[instance];
+        var mOptions = $eXeQuExt.options[instance];
         if (mOptions.waitStart) {
             mOptions.waitStart = false;
             setTimeout(function () {
@@ -457,12 +458,12 @@ var $eXeQuExt = {
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeQuExt.options[instance];
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", event => {
+        mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
 
     },
-    stopSound(instance) {
+    stopSound: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
@@ -553,7 +554,7 @@ var $eXeQuExt = {
                 'color': 'white',
                 'autoplay': 0,
                 'controls': 0
-            }, 
+            },
             events: {
                 'onReady': $eXeQuExt.onPlayerReady,
                 'onError': $eXeQuExt.onPlayerError
@@ -580,11 +581,11 @@ var $eXeQuExt = {
 
     },
     onPlayerReady: function (event) {
-        var video=event.target.h.id;
-        video=video.split("-");
-        if(video.length==2 && (video[0]=="quextVideo" || video[0]=="quextVideoIntro" )){
-            var instance=parseInt(video[1]);
-            if(!isNaN(instance)){
+        var video = event.target.h.id;
+        video = video.split("-");
+        if (video.length == 2 && (video[0] == "quextVideo" || video[0] == "quextVideoIntro")) {
+            var instance = parseInt(video[1]);
+            if (!isNaN(instance)) {
                 $eXeQuExt.preloadGame(instance);
             }
 
@@ -905,10 +906,10 @@ var $eXeQuExt = {
                 break;
         }
         $eXeQuExt.showMessage(messageColor, message, instance);
-        var msscore = mOptions.gameMode == 0 ? '<strong>'+ msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>'+ msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
+        var msscore = mOptions.gameMode == 0 ? '<strong>' + msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>' + msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
         $quextOverPoint.html(msscore);
-        $quextOverHits.html('<strong>'+msgs.msgHits + ':</strong> ' + mOptions.hits);
-        $quextOverErrors.html('<strong>'+msgs.msgErrors + ':</strong> ' + mOptions.errors);
+        $quextOverHits.html('<strong>' + msgs.msgHits + ':</strong> ' + mOptions.hits);
+        $quextOverErrors.html('<strong>' + msgs.msgErrors + ':</strong> ' + mOptions.errors);
         if (mOptions.gameMode == 2) {
             $('#quextGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
         }
@@ -1451,6 +1452,14 @@ var $eXeQuExt = {
             $eXeQuExt.exitFullscreen(element);
         }
         $eXeQuExt.refreshImageActive(instance);
+    },
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
+        }
+        return sp;
     }
 }
 $(function () {

@@ -75,7 +75,7 @@ var $exeDevice = {
         msgs.msgOneChallenge = _("Please add at least one trial.");
         msgs.msgTenChallenges = _("You can only add ten trials.");
         msgs.msgDataChanllenge = _("Please write the title, description and solution of all the trials.");
-
+        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
     },
     showMessage: function (msg) {
         eXe.app.alert(msg);
@@ -405,7 +405,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
                 pos += 1;
@@ -423,7 +423,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -475,7 +475,8 @@ var $exeDevice = {
             var df=tinyMCE.get('desafioEChallenge-' + i).getContent();
             html += '<div class="desafio-ChallengeDescription">' + df+ '</div>';
         }
-        html += '<div class="desafio-DataGame">' + json + '</div>';
+        html += '<div class="desafio-DataGame js-hidden">' + json + '</div>';
+        html += '<div class="desafio-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
@@ -578,7 +579,7 @@ var $exeDevice = {
         }
         var challengesGame = $exeDevice.challengesGame;
         for (var i = 0; i < challengesGame.length; i++) {
-            mChallenge = challengesGame[i]
+            var mChallenge = challengesGame[i]
             if (mChallenge.title.length == 0 || mChallenge.solution.length == 0 || mChallenge.description.length == 0 ) {
                 $exeDevice.showMessage($exeDevice.msgs.msgDataChanllenge);
                 return false;

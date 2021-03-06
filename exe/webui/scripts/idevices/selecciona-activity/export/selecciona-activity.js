@@ -53,6 +53,7 @@ var $eXeSelecciona = {
     init: function () {
         this.activities = $('.selecciona-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeSelecciona.supportedBrowser('selecciona')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Multiple Choice Quiz') + '</p>');
@@ -236,26 +237,26 @@ var $eXeSelecciona = {
         <div class="gameQP-GameContainer" id="seleccionaGameContainer-' + instance + '">\
             <div class="gameQP-GameScoreBoard">\
                 <div class="gameQP-GameScores">\
-                    <div class="exeQuextIcons  exeQuextIcons-Number" title="'+msgs.msgNumQuestions+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number" title="' + msgs.msgNumQuestions + '"></div>\
                     <p><span class="sr-av">' + msgs.msgNumQuestions + ': </span><span id="seleccionaPNumber-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons exeQuextIcons-Hit" title="'+msgs.msgHits+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Hit" title="' + msgs.msgHits + '"></div>\
                     <p><span class="sr-av">' + msgs.msgHits + ': </span><span id="seleccionaPHits-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons  exeQuextIcons-Error" title="'+msgs.msgErrors+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Error" title="' + msgs.msgErrors + '"></div>\
                     <p><span class="sr-av">' + msgs.msgErrors + ': </span><span id="seleccionaPErrors-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons  exeQuextIcons-Score" title="'+msgs.msgScore+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Score" title="' + msgs.msgScore + '"></div>\
                     <p><span class="sr-av">' + msgs.msgScore + ': </span><span id="seleccionaPScore-' + instance + '">0</span></p>\
                 </div>\
                 <div class="gameQP-LifesGame" id="seleccionaLifesGame-' + instance + '">\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                 </div>\
                 <div class="gameQP-NumberLifesGame" id="seleccionaNumberLivesGame-' + instance + '">\
                     <strong class="sr-av">' + msgs.msgLive + ':</strong>\
@@ -264,7 +265,7 @@ var $eXeSelecciona = {
                 </div>\
                 <div class="gameQP-TimeNumber">\
                     <strong class="sr-av">' + msgs.msgTime + ':</strong>\
-                    <div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
+                    <div class="exeQuextIcons  exeQuextIcons-Time" title="' + msgs.msgTime + '"></div>\
                     <p id="seleccionaPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
                     <a href="#" class="gameQP-LinkMinimize" id="seleccionaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong class="sr-av">' + msgs.msgMinimize + ':</strong>\
@@ -415,7 +416,7 @@ var $eXeSelecciona = {
             mOptions.selectsGame[i].error = typeof mOptions.selectsGame[i].error == "undefined" ? 0 : mOptions.selectsGame[i].error;
             mOptions.selectsGame[i].msgHit = typeof mOptions.selectsGame[i].msgHit == "undefined" ? "" : mOptions.selectsGame[i].msgHit;
             mOptions.selectsGame[i].msgError = typeof mOptions.selectsGame[i].msgError == "undefined" ? "" : mOptions.selectsGame[i].msgError;
-            mOptions.selectsGame[i].url=$eXeSelecciona.extractURLGD(mOptions.selectsGame[i].url);
+            mOptions.selectsGame[i].url = $eXeSelecciona.extractURLGD(mOptions.selectsGame[i].url);
             if (mOptions.selectsGame[i].type == 2) {
                 mOptions.hasVideo = true;
             }
@@ -558,22 +559,22 @@ var $eXeSelecciona = {
     },
 
     extractURLGD: function (urlmedia) {
-        var sUrl=urlmedia;
-        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+        var sUrl = urlmedia;
+        if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;
     },
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeSelecciona.options[instance],
-            selectedFile=$eXeSelecciona.extractURLGD(selectedFile);
+            selectedFile = $eXeSelecciona.extractURLGD(selectedFile);
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", event => {
+        mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
 
     },
-    stopSound(instance) {
+    stopSound: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
@@ -1009,10 +1010,10 @@ var $eXeSelecciona = {
                 break;
         }
         $eXeSelecciona.showMessage(messageColor, message, instance);
-        var msscore = mOptions.gameMode == 0 ? '<strong>'+msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>'+msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
+        var msscore = mOptions.gameMode == 0 ? '<strong>' + msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>' + msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
         $seleccionaOverPoint.html(msscore);
-        $seleccionaOverHits.html('<strong>'+msgs.msgHits + ':</strong> ' + mOptions.hits);
-        $seleccionaOverErrors.html('<strong>'+msgs.msgErrors + '</strong>: ' + mOptions.errors);
+        $seleccionaOverHits.html('<strong>' + msgs.msgHits + ':</strong> ' + mOptions.hits);
+        $seleccionaOverErrors.html('<strong>' + msgs.msgErrors + '</strong>: ' + mOptions.errors);
         if (mOptions.gameMode == 2) {
             $('#seleccionaGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
         }
@@ -1053,7 +1054,7 @@ var $eXeSelecciona = {
                     var timeShowSolution = 1000;
                     if (mOptions.showSolution) {
                         timeShowSolution = mOptions.timeShowSolution * 1000;
-                        if (!$eXeSelecciona.sameQuestion(false,instance)) {
+                        if (!$eXeSelecciona.sameQuestion(false, instance)) {
                             if (mOptions.selectsGame[mOptions.activeQuestion].typeSelect != 2) {
                                 $eXeSelecciona.drawSolution(instance);
                             } else {
@@ -1340,7 +1341,7 @@ var $eXeSelecciona = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -1419,12 +1420,12 @@ var $eXeSelecciona = {
                     return -10
                 }
             } else if (correct && mOptions.selectsGame[numq].hit >= 0) {
-                numActiveQuestion =  mOptions.selectsGame[numq].hit;
+                numActiveQuestion = mOptions.selectsGame[numq].hit;
                 if (numActiveQuestion >= mOptions.numberQuestions) {
                     return -10
                 }
-            }else if(!correct && mOptions.selectsGame[numq].error >= 0) {
-                numActiveQuestion =  mOptions.selectsGame[numq].error;
+            } else if (!correct && mOptions.selectsGame[numq].error >= 0) {
+                numActiveQuestion = mOptions.selectsGame[numq].error;
                 if (numActiveQuestion >= mOptions.numberQuestions) {
                     return -10
                 }
@@ -1506,7 +1507,7 @@ var $eXeSelecciona = {
         }
         if (mOptions.showSolution) {
             timeShowSolution = mOptions.timeShowSolution * 1000;
-            if (!$eXeSelecciona.sameQuestion(correct,instance)) {
+            if (!$eXeSelecciona.sameQuestion(correct, instance)) {
                 if (quextion.typeSelect != 2) {
                     $eXeSelecciona.drawSolution(instance);
                 } else {
@@ -1591,7 +1592,7 @@ var $eXeSelecciona = {
         }
         return message;
     },
-    getMessageCorrectAnswer(npts, instance) {
+    getMessageCorrectAnswer: function (npts, instance) {
         var mOptions = $eXeSelecciona.options[instance],
             messageCorrect = $eXeSelecciona.getRetroFeedMessages(true, instance),
             message = "",
@@ -1605,7 +1606,7 @@ var $eXeSelecciona = {
         return message;
     },
 
-    getMessageErrorAnswer(npts, instance) {
+    getMessageErrorAnswer: function (npts, instance) {
         var mOptions = $eXeSelecciona.options[instance],
             messageError = $eXeSelecciona.getRetroFeedMessages(false, instance),
             message = "",
@@ -1824,6 +1825,14 @@ var $eXeSelecciona = {
             $eXeSelecciona.exitFullscreen(element);
         }
         $eXeSelecciona.refreshImageActive(instance);
+    },
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
+        }
+        return sp;
     }
 }
 $(function () {

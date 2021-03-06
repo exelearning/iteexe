@@ -110,6 +110,7 @@ var $exeDevice = {
         msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
+        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
 
     },
     loadYoutubeApi: function () {
@@ -266,7 +267,7 @@ var $exeDevice = {
     },
     playSound: function (selectedFile) {
         $exeDevice.playerAudio = new Audio(selectedFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
             $exeDevice.playerAudio.play();
         });
     },
@@ -1182,6 +1183,7 @@ var $exeDevice = {
         if (textAfter != "") {
             html += '<div class="quext-extra-content">' + textAfter + '</div>';
         }
+        html += '<div class="quext-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
@@ -1191,7 +1193,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
                 pos += 1;
@@ -1210,7 +1212,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;

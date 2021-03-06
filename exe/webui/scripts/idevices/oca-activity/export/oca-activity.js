@@ -54,6 +54,7 @@ var $eXeOca = {
     init: function () {
         this.activities = $('.oca-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeOca.supportedBrowser('oca')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('To do') + '</p>');
@@ -1007,7 +1008,7 @@ var $eXeOca = {
         }, 150);
     },
 
-    changeBackpackIcons(jugadorActivo, icon, value, instance) {
+    changeBackpackIcons: function (jugadorActivo, icon, value, instance) {
         var img = "";
         if (icon == 1) {
             img = value ? 'ocallave1.png' : 'ocallave.png';
@@ -2166,7 +2167,7 @@ var $eXeOca = {
         $('#ocaPTime-' + instance).text(mTime);
     },
 
-    updateTimeGame(time, instance) {
+    updateTimeGame: function (time, instance) {
         var mTime = $eXeOca.getTimeToString(time);
         $('#ocaTiempo-' + instance).text(mTime);
     },
@@ -2384,13 +2385,13 @@ var $eXeOca = {
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeOca.options[instance];
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", event => {
+        mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
 
     },
 
-    stopSound: function(instance) {
+    stopSound: function (instance) {
         var mOptions = $eXeOca.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
@@ -2404,7 +2405,7 @@ var $eXeOca = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -2785,6 +2786,14 @@ var $eXeOca = {
             $eXeOca.exitFullscreen(element);
         }
         $eXeOca.refreshImageActive(instance);
+    },   
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
+        }
+        return sp;
     }
 }
 $(function () {

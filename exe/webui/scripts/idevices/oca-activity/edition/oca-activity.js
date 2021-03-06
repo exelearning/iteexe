@@ -156,9 +156,7 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Indique el tiempo en el siguientes formato: hh:mm:ss");
         msgs.msgEOneQuestion = _("Al menos debe haber una pregunta");
         msgs.tooManyQuestions = _("¡Demasiadas preguntas! El juego puede tener un máximo aproximado de unas 800 preguntas, pero este número puede variar mucho dependiendo del tipo de cuestiones y la longitud de sr pregunta,  sus respuestas, urls y textos enriquecidos");
-
-
-
+        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
     },
     loadYoutubeApi: function () {
         onYouTubeIframeAPIReady = $exeDevice.youTubeReady;
@@ -449,7 +447,7 @@ var $exeDevice = {
     },
     playSound: function (selectedFile) {
         $exeDevice.playerAudio = new Audio(selectedFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+        $exeDevice.playerAudio.addEventListener("canplaythrough",function(event){
             $exeDevice.playerAudio.play();
         });
     },
@@ -1047,7 +1045,6 @@ var $exeDevice = {
         $('#ocaEShowSolution').prop('checked', game.showSolution);
         $('#ocaETimeShowSolution').prop('disabled', !game.showSolution);
         $('#ocaETimeShowSolution').val(game.timeShowSolution);
-
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showQuestion($exeDevice.active);
 
@@ -1097,9 +1094,10 @@ var $exeDevice = {
             linksAudios = $exeDevice.createlinksAudio(dataGame.selectsGame);
         var html = '<div class="oca-IDevice">';
         html += divContent;
-        html += '<div class="oca-DataGame">' + $exeDevice.Encrypt(dataGame) + '</div>';
+        html += '<div class="oca-DataGame js-hidden">' + $exeDevice.Encrypt(dataGame) + '</div>';
         html += linksImages;
         html += linksAudios;
+        html += '<div class="oca-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         if (html.length > 650000) {
             $exeDevice.showMessage($exeDevice.msgs.tooManyQuestions);
@@ -1152,7 +1150,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -1220,7 +1218,6 @@ var $exeDevice = {
         p.o.push(q.options[2]);
         p.o.push(q.options[3]);
         p.p = q.type;
-
         p.q = q.quextion;
         p.r = window.btoa(escape(q.solutionQuestion));
         p.s = window.btoa(escape(q.quextion.length + '' + q.solution));
@@ -1653,7 +1650,7 @@ var $exeDevice = {
         }
         var selectsGame = $exeDevice.selectsGame;
         for (var i = 0; i < selectsGame.length; i++) {
-            mquestion = selectsGame[i]
+            var mquestion = selectsGame[i]
             mquestion.customScore = typeof (mquestion.customScore) == "undefined" ? 1 : mquestion.customScore;
             if (mquestion.quextion.length == 0) {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteQuestion);

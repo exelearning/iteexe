@@ -132,6 +132,7 @@ var $exeDevice = {
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNotHitCuestion = _('The question marked as next in case of success does not exist.');
         msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
+        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
 
     },
     loadYoutubeApi: function () {
@@ -299,7 +300,7 @@ var $exeDevice = {
     playSound: function (selectedFile) {
         var selectedFile=$exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectedFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
             $exeDevice.playerAudio.play();
         });
     },
@@ -831,7 +832,7 @@ var $exeDevice = {
                                 </p>\
                                 <p>\
                                 <strong class="GameModeLabel"><a href="#seleccionaEGameModeHelp" id="seleccionaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
-                                    <input class="gameQE-TypeGame" checked="checked id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
+                                    <input class="gameQE-TypeGame" checked="checked id="seleccionaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                     <label for="seleccionaETypeActivity">' + _("0 to 10") + '</label>\
                                     <input class="gameQE-TypeGame" " id="seleccionaEGameMode" type="radio" name="qxtgamemode" value="0" />\
                                     <label for="seleccionaEGameMode">' + _("Points and lives") + '</label>\
@@ -1371,7 +1372,9 @@ var $exeDevice = {
         if (textAfter != "") {
             html += '<div class="selecciona-extra-content">' + textAfter + '</div>';
         }
+        html += '<div class="selecciona-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
+        
         return html;
     },
     Encrypt: function (str) {
@@ -1380,7 +1383,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
                 pos += 1;
@@ -1399,7 +1402,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;

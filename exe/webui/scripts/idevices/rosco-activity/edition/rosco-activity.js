@@ -65,8 +65,8 @@ var $exeDevice = {
 		"msgActityComply": _("You have already done this activity."),
 		"msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
 		"msgFullScreen": _("Full Screen"),
-        "msgExitFullScreen": _("Exit Full Screen"),
-        "msgMoveOne": _("Move on")
+		"msgExitFullScreen": _("Exit Full Screen"),
+		"msgMoveOne": _("Move on")
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -93,6 +93,7 @@ var $exeDevice = {
 		msgs.msgURLValid = _("You must upload or indicate the valid URL of an image");
 		msgs.msgOneWord = _("Please provide at least one word");
 		msgs.msgProvideTimeSolution = _("You must provide the time to view the solution");
+		msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
 
 	},
 	createForm: function () {
@@ -231,7 +232,6 @@ var $exeDevice = {
 			if (version.length == 1) {
 				json = $exeDevice.Decrypt(json);
 			}
-
 
 			var dataGame = $exeDevice.isJsonString(json);
 			version = version == '' || typeof version == 'undefined' ? 0 : parseInt(version);
@@ -395,7 +395,7 @@ var $exeDevice = {
 		try {
 			var key = 146;
 			var pos = 0;
-			ostr = '';
+			var ostr = '';
 			while (pos < str.length) {
 				ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
 				pos += 1;
@@ -413,7 +413,7 @@ var $exeDevice = {
 		try {
 			var key = 146;
 			var pos = 0;
-			ostr = '';
+			var ostr = '';
 			while (pos < str.length) {
 				ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
 				pos += 1;
@@ -441,20 +441,19 @@ var $exeDevice = {
 		json = $exeDevice.Encrypt(json);
 		if (dataGame.instructions != "") divContent = '<div class="rosco-instructions gameQP-instructions">' + dataGame.instructions + '</div>';
 		var linksImages = $exeDevice.createlinksImage(dataGame.wordsGame),
-			linksAudios = $exeDevice.createlinksAudio(dataGame.wordsGame);
-
-		html = '<div class="rosco-IDevice">';
+			linksAudios = $exeDevice.createlinksAudio(dataGame.wordsGame),
+			html = '<div class="rosco-IDevice">';
 		html += '<div class="rosco-version js-hidden">' + $exeDevice.roscoVersion + '</div>';
 		html += divContent;
-		html += '<div class="rosco-DataGame">' + json + '</div>';
+		html += '<div class="rosco-DataGame js-hidden">' + json + '</div>';
 		html += linksImages;
 		html += linksAudios;
-		html += '</div>';
-		// Get the optional text
 		var textAfter = tinymce.editors[1].getContent();
 		if (textAfter != "") {
 			html += '<div class="rosco-extra-content">' + textAfter + '</div>';
 		}
+		html += '<div class="rosco-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
+		html += '</div>';
 		return html;
 	},
 	createlinksImage: function (wordsGame) {
@@ -830,8 +829,6 @@ var $exeDevice = {
 			$(this).hide();
 
 		});
-
-
 		$('#roscoDuration').on('keyup', function () {
 			var v = this.value;
 			v = v.replace(/\D/g, '');
@@ -887,7 +884,7 @@ var $exeDevice = {
 	playSound: function (selectedFile) {
 		$exeDevice.stopSound();
 		$exeDevice.playerAudio = new Audio(selectedFile);
-		$exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+		$exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
 			$exeDevice.playerAudio.play();
 		});
 	},

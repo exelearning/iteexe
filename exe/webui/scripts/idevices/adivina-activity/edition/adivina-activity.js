@@ -88,7 +88,7 @@ var $exeDevice = {
         "msgClose": _("Close"),
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
-        "msgAudio": _("Audio")
+        "msgAudio": _("Audio"),
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -114,6 +114,7 @@ var $exeDevice = {
         msgs.msgTypeChoose = _("Please check all the answers in the right order");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
+        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -661,7 +662,7 @@ var $exeDevice = {
             $exeDevice.showQuestion(0);
         }
     },
-    getIndexTime(tm) {
+    getIndexTime: function(tm) {
         var tms = [15, 30, 60, 180, 300, 600, 900],
             itm = tms.indexOf(tm);
         itm = itm < 0 ? 1 : itm;
@@ -733,11 +734,9 @@ var $exeDevice = {
         html += linksAudios;
         var textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
         if (textAfter != "") {
-            html += '<div class="adivina-extra-content">' + textAfter + '</div>';
-        }
+            html += '<div class="adivina-extra-content">' + textAfter + '</div>';        }
+        html += '<div class="adivina-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
-        // Get the optional text
-
         return html;
     },
 
@@ -938,7 +937,7 @@ var $exeDevice = {
 
     playSound: function (selectedFile) {
         $exeDevice.playerAudio = new Audio(selectedFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event){
             $exeDevice.playerAudio.play();
         });
     },

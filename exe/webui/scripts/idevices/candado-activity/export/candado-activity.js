@@ -31,6 +31,7 @@ var $eXeCandado = {
     init: function () {
         this.activities = $('.candado-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeCandado.supportedBrowser('candado')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Lock') + '</p>');
@@ -119,7 +120,7 @@ var $eXeCandado = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -337,6 +338,14 @@ var $eXeCandado = {
             'color': color,
             'font-weight': 'bold'
         });
+    },
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
+        }
+        return sp;
     }
 }
 $(function () {

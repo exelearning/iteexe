@@ -40,6 +40,7 @@ var $eXeRosco = {
 	init: function () {
 		this.activities = $('.rosco-IDevice');
 		if (this.activities.length == 0) return;
+		if (!$eXeRosco.supportedBrowser('rosco')) return;
 		if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
 			this.activities.hide();
 			if (typeof (_) != 'undefined') this.activities.before('<p>' + _('A-Z Quiz Game') + '</p>');
@@ -121,7 +122,7 @@ var $eXeRosco = {
 		try {
 			var key = 146;
 			var pos = 0;
-			ostr = '';
+			var ostr = '';
 			while (pos < str.length) {
 				ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
 				pos += 1;
@@ -231,7 +232,7 @@ var $eXeRosco = {
 						</div>\
 						<div class="rosco-TimeNumber">\
 							<strong class="sr-av">' + msgs.msgTime + ':</strong>\
-							<div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
+							<div class="exeQuextIcons  exeQuextIcons-Time" title="' + msgs.msgTime + '"></div>\
 							<p class="rosco-PTime"  id="roscoPTime-' + instance + '">' + sTime + '</p>\
 							<div class="exeQuextIcons  exeQuextIcons-OneRound" id="roscoNumberRounds-' + instance + '" title="' + msgs.msgOneRound + '"></div>\
 							<strong class="sr-av" id="roscoNumberRoundsSpan-' + instance + '">' + msgs.msgOneRound + ':</strong>\
@@ -395,7 +396,7 @@ var $eXeRosco = {
 			}
 			mLetters.push(letter);
 		}
-		html = mLetters.join('');
+		var html = mLetters.join('');
 		return html;
 	},
 
@@ -557,10 +558,10 @@ var $eXeRosco = {
 		});
 
 		$("#roscoLinkFullScreen-" + instance).on('click touchstart', function (e) {
-            e.preventDefault();
-            var element = document.getElementById('roscoMainContainer-' + instance);
-            $eXeRosco.toggleFullscreen(element, instance);
-        });
+			e.preventDefault();
+			var element = document.getElementById('roscoMainContainer-' + instance);
+			$eXeRosco.toggleFullscreen(element, instance);
+		});
 
 
 	},
@@ -744,13 +745,13 @@ var $eXeRosco = {
 			}
 		}
 		if (mWord.audio.length > 4) {
-            $('#roscoLinkAudio-' + instance).show();
-        }
+			$('#roscoLinkAudio-' + instance).show();
+		}
 
-        $eXeRosco.stopSound(instance);
-        if (mWord.audio.trim().length > 4) {
-            $eXeRosco.playSound(mWord.audio.trim(), instance);
-        }
+		$eXeRosco.stopSound(instance);
+		if (mWord.audio.trim().length > 4) {
+			$eXeRosco.playSound(mWord.audio.trim(), instance);
+		}
 
 		if (typeof (MathJax) != "undefined") {
 			MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#roscoPDefinition-' + instance]);
@@ -760,12 +761,12 @@ var $eXeRosco = {
 	playSound: function (selectedFile, instance) {
 		var mOptions = $eXeRosco.options[instance];
 		mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-		mOptions.playerAudio.addEventListener("canplaythrough", event => {
+		mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
 			mOptions.playerAudio.play();
 		});
 
 	},
-	stopSound(instance) {
+	stopSound: function (instance) {
 		var mOptions = $eXeRosco.options[instance];
 		if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
 			mOptions.playerAudio.pause();
@@ -966,6 +967,8 @@ var $eXeRosco = {
 		$('#roscoEdReply-' + instance).prop('disabled', true);
 		word = mOptions.caseSensitive ? word : word.toUpperCase();
 		answord = mOptions.caseSensitive ? answord : answord.toUpperCase();
+		var mFontColor = $eXeRosco.colors.white,
+			mBackColor = $eXeRosco.colors.blue;
 		if ($eXeRosco.checkWord(word, answord)) {
 			mOptions.hits++
 			mOptions.wordsGame[mOptions.activeWord].state = 2;
@@ -1033,7 +1036,6 @@ var $eXeRosco = {
 		if (pista) {
 			mAnimo = mOptions.msgs.msgInformation;
 			posTextoAnimoY = yMessage - 15;
-			porTextoPalabraY = posTextoAnimoY + 30;
 			posTextoAnimoX = xCenter - ctxt.measureText(mAnimo).width / 2;
 			$eXeRosco.wrapText(ctxt, mAnimo + ': ' + mOptions.itinerary.clueGame, xMessage + 13, yMessage - 32, 257, 24);
 			$('#roscoPMessages-' + instance).css("color", lColor).text(mAnimo + ': ' + mOptions.itinerary.clueGame);
@@ -1304,36 +1306,44 @@ var $eXeRosco = {
 		return color;
 	},
 	exitFullscreen: function () {
-        if (document.exitFullscreen) {
-            document.exitFullscreen();
-        } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-        } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		}
+	},
+	getFullscreen: function (element) {
+		if (element.requestFullscreen) {
+			element.requestFullscreen();
+		} else if (element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		} else if (element.webkitRequestFullscreen) {
+			element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		} else if (element.msRequestFullscreen) {
+			element.msRequestFullscreen();
+		}
+	},
+	toggleFullscreen: function (element, instance) {
+		var element = element || document.documentElement;
+		if (!document.fullscreenElement && !document.mozFullScreenElement &&
+			!document.webkitFullscreenElement && !document.msFullscreenElement) {
+			$eXeRosco.getFullscreen(element);
+		} else {
+			$eXeRosco.exitFullscreen(element);
+		}
+		$eXeRosco.refreshImageActive(instance);
+	},
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
         }
-    },
-    getFullscreen: function (element) {
-        if (element.requestFullscreen) {
-            element.requestFullscreen();
-        } else if (element.mozRequestFullScreen) {
-            element.mozRequestFullScreen();
-        } else if (element.webkitRequestFullscreen) {
-            element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
-        } else if (element.msRequestFullscreen) {
-            element.msRequestFullscreen();
-        }
-    },
-    toggleFullscreen: function (element, instance) {
-        var element = element || document.documentElement;
-        if (!document.fullscreenElement && !document.mozFullScreenElement &&
-            !document.webkitFullscreenElement && !document.msFullscreenElement) {
-            $eXeRosco.getFullscreen(element);
-        } else {
-            $eXeRosco.exitFullscreen(element);
-        }
-        $eXeRosco.refreshImageActive(instance);
+        return sp;
     }
 }
 $(function () {

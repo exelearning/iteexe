@@ -122,6 +122,10 @@
 	width: 100%;
 }
 /* Opciones video */
+.gameQE-EAuthorVideo input[type=text] {
+	width: 85%;
+	max-width: 400px;
+}
 .gameQE-EInputVideo input[type=text] {
 	width: 85%;
 }

@@ -267,14 +267,78 @@
 
 .gameQP-PointBar {
 	background-color: #8697cb;
-	height: 0.3em;
+	height: 0.6em;
 	left: 0;
 	margin: 0;
 	padding: 0;
 	position: absolute;
-	top: 0;
-	width: 0.3em;
+	top: -0.15em;
+	width: 0.6em;
 	z-index: 900;
+}
+
+.gameQP-Tooltip {
+    display: none;
+    position: absolute;
+    width: 250px;
+    padding: 10px;
+    margin: 0 0 12px 0;
+    z-index: 100;
+    bottom: 170%;
+    background: #f3d55a;
+    color: #1c1b1b;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.7em;
+}
+.gameQP-Tooltip:before {
+    content: "";
+    position: absolute;
+    border: 0 solid #f3d55a;
+    bottom: -14px;
+    z-index: 100;
+    border-right-width: 10px;
+    border-bottom: 14px solid transparent;
+    width: 50%;
+    right: 50%;
+}
+.gameQP-Tooltip:after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    z-index: 100;
+    border: 0 solid #f3d55a;
+    border-bottom: 14px solid transparent;
+    border-left-width: 10px;
+    width: 50%;
+    left: 50%;
+}
+
+
+/* Barra de navegación */
+
+
+.gameQP-NavigationButtons {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+	display: none;
+}
+.gameQP-NavigationButton {
+	height: 1.5em;
+	margin: 0 .3em;
+	min-width: 1.5em;
+	width: 1.5em;
+}
+.gameQP-NumberQuestion {
+	font-weight: bold;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	width: 2em;
 }
 
 /* Author */
@@ -745,6 +809,24 @@ input.gameQP-VideoIntroClose:hover{
 	background-size: 100% 100%;
 }
 
+.exeQuextIcons-First {
+	background-image: url(exequextfirstr.png);
+	background-size: 100% 100%;
+}
+.exeQuextIcons-Next {
+	background-image: url(exequextnextr.png);
+	background-size: 100% 100%;
+}
+.exeQuextIcons-Previous {
+	background-image: url(exequextpreviousr.png);
+	background-size: 100% 100%;
+}
+
+.exeQuextIcons-Last {
+	background-image: url(exequextlastr.png);
+	background-size: 100% 100%;
+}
+
 /* Enlace activo */
 
 .gameQP-Activo {
@@ -802,6 +884,7 @@ input.gameQP-VideoIntroClose:hover{
 	margin-right: 0.3em;
 	width: 1.4em;
 }
+
 
 .gameQP-GameContainer .exeQuextIcons-Video, .gameQP-GameContainer .exeQuextIcons-Submit {
 	height: 1.7em;
@@ -1140,3 +1223,6 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 .selecciona-instructions{
 	overflow:auto;
 }
+
+
+

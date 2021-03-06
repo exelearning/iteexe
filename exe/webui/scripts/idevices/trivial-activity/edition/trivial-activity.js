@@ -121,6 +121,7 @@ var $exeDevice = {
         msgs.msgCmpleteAllQuestions = _('Debes completar correctamente todas  las cuestiones de todos los temas seleccionados');
         msgs.msgGameIntrunctions = _("Lanza el dado y contesta a la pregunta hasta completar todos los quesos");
         msgs.tooManyQuestions = _("¡Demasiadas preguntas! El juego puede tener un máximo de unas 800 a 1200 preguntas. Este número puede variar mucho dependiendo del tipo de cuestiones y la longitud de sr pregunta,  sus respuestas, urls y textos enriquecidos");
+        msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
 
     },
     loadYoutubeApi: function () {
@@ -494,12 +495,12 @@ var $exeDevice = {
     },
     playSound: function (selectedFile) {
         $exeDevice.playerAudio = new Audio(selectedFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", event => {
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
             $exeDevice.playerAudio.play();
         });
     },
 
-    stopSound: function() {
+    stopSound: function () {
         if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
             $exeDevice.playerAudio.pause();
         }
@@ -1040,9 +1041,6 @@ var $exeDevice = {
         return p;
     },
 
-
-
-
     getCuestionDesEncriptada: function (q) {
         var p = new Object(),
             qs = unescape(window.atob(q.s)),
@@ -1129,8 +1127,8 @@ var $exeDevice = {
                 } else {
                     $("#eXeGameInstructions").val(instructions)
                 }
-            } 
-             // i18n
+            }
+            // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.changeNumberTemas(dataGame.numeroTemas);
             $exeDevice.updateFieldGame(dataGame);
@@ -1207,13 +1205,14 @@ var $exeDevice = {
         html += '<div class="trivial-DataGame js-hidden">' + $exeDevice.Encrypt(dataGame) + '</div>';
         html += linksImages;
         html += linksAudios;
+        html += '<div class="trivial-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         if (html.length > 650000) {
             $exeDevice.showMessage($exeDevice.msgs.tooManyQuestions);
             return false;
         }
         return html;
-      
+
     },
     Encrypt: function (game) {
         var nombres = [];
@@ -1303,7 +1302,7 @@ var $exeDevice = {
             'title': '',
             'customScore': game.customScore,
             'textAfter': game.textAfter,
-            'msgs':game.msgs,
+            'msgs': game.msgs,
             "version": game.version
         }
 
@@ -1458,13 +1457,13 @@ var $exeDevice = {
             var selectsGame = $exeDevice.temas[j];
             for (var i = 0; i < selectsGame.length; i++) {
                 var quextion = selectsGame[i];
-                if (quextion.audio.length>4 && quextion.audio.indexOf('http') != 0) {
+                if (quextion.audio.length > 4 && quextion.audio.indexOf('http') != 0) {
                     var linkAudio = '<a href="' + quextion.audio + '" class="js-hidden trivial-LinkAudios-' + j + '">' + i + '</a>';
                     html += linkAudio;
                 }
             }
         }
-  
+
         return html;
     },
 
@@ -2203,7 +2202,6 @@ var $exeDevice = {
             }
         });
 
-
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
@@ -2273,8 +2271,8 @@ var $exeDevice = {
         $('#trivialESolutionSelect').text(solutions);
     },
     clickImage: function (img, epx, epy) {
-        var $cursor = $('#trivialECursor');
-        $x = $('#trivialEXImage'),
+        var $cursor = $('#trivialECursor'),
+            $x = $('#trivialEXImage'),
             $y = $('#trivialEYImage'),
             $img = $(img),
             posX = epx - $img.offset().left,

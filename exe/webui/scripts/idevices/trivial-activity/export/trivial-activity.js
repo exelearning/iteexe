@@ -52,6 +52,7 @@ var $eXeTrivial = {
     init: function () {
         this.activities = $('.trivial-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeTrivial.supportedBrowser('adivina')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('To do') + '</p>');
@@ -63,7 +64,6 @@ var $eXeTrivial = {
         if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
         else this.enable();
     },
-
 
     endScorm: function () {
         if ($eXeTrivial.mScorm) {
@@ -187,7 +187,7 @@ var $eXeTrivial = {
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeTrivial.options[instance];
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", event => {
+        mOptions.playerAudio.addEventListener("canplaythrough", function(event) {
             mOptions.playerAudio.play();
         });
 
@@ -946,7 +946,7 @@ var $eXeTrivial = {
         }, 150);
 
     },
-    showTargetPositions(vd, instance) {
+    showTargetPositions: function(vd, instance) {
         var mOptions = $eXeTrivial.options[instance],
             jugador = mOptions.gamers[mOptions.activePlayer],
             $Jugador = $("#trivialFicha" + mOptions.activePlayer + '-' + instance),
@@ -1002,7 +1002,7 @@ var $eXeTrivial = {
         }
 
     },
-    activeCheese(activePlayer, queso, value, instance) {
+    activeCheese: function(activePlayer, queso, value, instance) {
         var color = value ? $eXeTrivial.colorQuesos[queso] : $eXeTrivial.colors.white;
         $('#trivialJugadores-' + instance + ' > .trivialj' + activePlayer).find(".trivial-Queso").eq(queso).css({
             'background-color': color
@@ -1428,7 +1428,6 @@ var $eXeTrivial = {
             'padding-left': $eXeTrivial.getSize(0.1, instance),
             'padding-right': $eXeTrivial.getSize(0.1, instance),
             'font-size': $eXeTrivial.getSize(1.2),
-            instance,
         });
         $('.trivial-PTiempo').css({
             'height': $eXeTrivial.getSize(1.5, instance),
@@ -1773,7 +1772,7 @@ var $eXeTrivial = {
         var mTime = $eXeTrivial.getTimeToString(tiempo);
         $('#trivialPTime-' + instance).text(mTime);
     },
-    updateTimeGame(time, instance) {
+    updateTimeGame: function(time, instance) {
         var mTime = $eXeTrivial.getTimeToString(time);
         $('#trivialTiempo-' + instance).text(mTime);
     },
@@ -2132,7 +2131,7 @@ var $eXeTrivial = {
 
     showMessage: function (type, message, instance) {
         var colors = ['#555555', $eXeTrivial.borderColors.red, $eXeTrivial.borderColors.green, $eXeTrivial.borderColors.blue, $eXeTrivial.borderColors.yellow];
-        color = colors[type];
+        var color = colors[type];
         var weight = type == 0 ? 'normal' : 'bold';
         $('#trivialPAuthor-' + instance).text(message);
         $('#trivialPAuthor-' + instance).css({
@@ -4543,6 +4542,14 @@ var $eXeTrivial = {
             }
         }
         return pos;
+    },
+    supportedBrowser: function (idevice) {
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        if (!sp) {
+            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+            $('.' + idevice + '-instructions').text(bns);
+        }
+        return sp;
     }
 }
 $(function () {

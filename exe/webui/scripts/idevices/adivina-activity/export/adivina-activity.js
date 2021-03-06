@@ -37,6 +37,7 @@ var $eXeAdivina = {
     init: function () {
         this.activities = $('.adivina-IDevice');
         if (this.activities.length == 0) return;
+        if (!$eXeAdivina.supportedBrowser('adivina')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
             if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Word Guessing') + '</p>');
@@ -241,12 +242,12 @@ var $eXeAdivina = {
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeAdivina.options[instance];
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", event => {
+        mOptions.playerAudio.addEventListener("canplaythrough", function(event) {
             mOptions.playerAudio.play();
         });
 
     },
-    stopSound(instance) {
+    stopSound: function(instance) {
         var mOptions = $eXeAdivina.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
@@ -274,26 +275,26 @@ var $eXeAdivina = {
         <div class="gameQP-GameContainer" id="adivinaGameContainer-' + instance + '">\
             <div class="gameQP-GameScoreBoard">\
                 <div class="gameQP-GameScores">\
-                    <div class="exeQuextIcons  exeQuextIcons-Number" title="'+msgs.msgNumQuestions+'"></div>\
-                    <p><span class="sr-av">'+msgs.msgNumQuestions+': </span><span id="adivinaPNumber-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons exeQuextIcons-Hit" title="'+msgs.msgHits+'"></div>\
-                    <p><span class="sr-av">'+msgs.msgHits+': </span><span id="adivinaPHits-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons  exeQuextIcons-Error" title="'+msgs.msgErrors+'"></div>\
-                    <p><span class="sr-av">'+msgs.msgErrors+': </span><span id="adivinaPErrors-' + instance + '">0</span></p>\
-                    <div class="exeQuextIcons  exeQuextIcons-Score" title="'+msgs.msgScore+'"></div>\
-                    <p><span class="sr-av">'+msgs.msgScore+': </span><span id="adivinaPScore-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Number" title="' + msgs.msgNumQuestions + '"></div>\
+                    <p><span class="sr-av">' + msgs.msgNumQuestions + ': </span><span id="adivinaPNumber-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons exeQuextIcons-Hit" title="' + msgs.msgHits + '"></div>\
+                    <p><span class="sr-av">' + msgs.msgHits + ': </span><span id="adivinaPHits-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Error" title="' + msgs.msgErrors + '"></div>\
+                    <p><span class="sr-av">' + msgs.msgErrors + ': </span><span id="adivinaPErrors-' + instance + '">0</span></p>\
+                    <div class="exeQuextIcons  exeQuextIcons-Score" title="' + msgs.msgScore + '"></div>\
+                    <p><span class="sr-av">' + msgs.msgScore + ': </span><span id="adivinaPScore-' + instance + '">0</span></p>\
                 </div>\
                 <div class="gameQP-LifesGame" id="adivinaLifesAdivina-' + instance + '">\
                     <strong class="sr-av">' + msgs.msgLive + '</strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + '</strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + '</strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + '</strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                     <strong class="sr-av">' + msgs.msgLive + '</strong>\
-                    <div  class="exeQuextIcons exeQuextIcons-Life" title="'+msgs.msgLive+'"></div>\
+                    <div  class="exeQuextIcons exeQuextIcons-Life" title="' + msgs.msgLive + '"></div>\
                 </div>\
                 <div class="gameQP-NumberLifesGame" id="adivinaNumberLivesAdivina-' + instance + '">\
                     <strong class="sr-av">' + msgs.msgLive + '</strong>\
@@ -302,7 +303,7 @@ var $eXeAdivina = {
                 </div>\
                 <div class="gameQP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-					<div class="exeQuextIcons  exeQuextIcons-Time" title="'+msgs.msgTime+'"></div>\
+					<div class="exeQuextIcons  exeQuextIcons-Time" title="' + msgs.msgTime + '"></div>\
                     <p  id="adivinaPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
                     <a href="#" class="gameQP-LinkMinimize" id="adivinaLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
@@ -885,10 +886,10 @@ var $eXeAdivina = {
                 break;
         }
         $eXeAdivina.showMessage(messageColor, message, instance);
-        var msscore = mOptions.gameMode == 0 ? '<strong>'+ msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>'+ msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
+        var msscore = mOptions.gameMode == 0 ? '<strong>' + msgs.msgScore + ':</strong> ' + mOptions.score : '<strong>' + msgs.msgScore + ':</strong> ' + mOptions.score.toFixed(2);
         $adivinaOverPoint.html(msscore);
-        $adivinaOverHits.html('<strong>'+msgs.msgHits + ':</strong> ' + mOptions.hits);
-        $adivinaOverErrors.html('<strong>'+msgs.msgErrors + ':</strong> ' + mOptions.errors);
+        $adivinaOverHits.html('<strong>' + msgs.msgHits + ':</strong> ' + mOptions.hits);
+        $adivinaOverErrors.html('<strong>' + msgs.msgErrors + ':</strong> ' + mOptions.errors);
         if (mOptions.gameMode == 2) {
             $('#adivinaGameContainer-' + instance).find('.gameQP-DataScore').hide();
         }
@@ -1425,9 +1426,22 @@ var $eXeAdivina = {
             y: yImagen
         }
     },
+    supportedBrowser: function (idevice) {
+        var ua = window.navigator.userAgent,
+            msie = ua.indexOf('MSIE '),
+            sp = true;
+        if (msie > 0) {
+            var ie = parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+            if (ie < 10) {
+                var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+                $('.' + idevice + '-instructions').text(bns);
+                sp = false;
+            }
+        }
+        return sp;
+    }
 }
 $(function () {
-
 
     $eXeAdivina.init();
 });

@@ -60,6 +60,7 @@ var $exeDevice = {
         msgs.msgCustomMessage=_("Error message");
         msgs.msgNumFaildedAttemps=_("Errors (number of attempts) to display the message");
         msgs.msgEnterCustomMessage=_("Please write the error message.");
+        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
 
     },
     showMessage: function (msg) {
@@ -182,7 +183,7 @@ var $exeDevice = {
         try {
             var key = 146;
             var pos = 0;
-            ostr = '';
+            var ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(str.charCodeAt(pos) ^ key);
                 pos += 1;
@@ -233,7 +234,8 @@ var $exeDevice = {
         html += '<div class="candado-version js-hidden">' + $exeDevice.candadoVersion + '</div>';
         html += '<div class="candado-instructions">' + tinymce.editors[0].getContent() + '</div>';
         html += '<div class="candado-retro">' + tinymce.editors[1].getContent() + '</div>';
-        html += '<div class="candado-DataGame" js-hidden>' +  json + '</div>';
+        html += '<div class="candado-DataGame js-hidden" >' +  json + '</div>';
+        html += '<div class="candado-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
