@@ -436,6 +436,8 @@ var $exeDevice = {
         if (typeof (p.customScore) != "undefined") {
             $('#quextEScoreQuestion').val(p.customScore);
         }
+        $('#quextEMessageKO').val(p.msgError);
+        $('#quextEMessageOK').val(p.msgHit);
         $("input.gameQE-Number[name='qxtnumber'][value='" + p.numberOptions + "']").prop("checked", true)
         $("input.gameQE-Type[name='qxtype'][value='" + p.type + "']").prop("checked", true);
         $("input.gameQE-ESolution[name='qxsolution'][value='" + p.solution + "']").prop("checked", true);
@@ -578,6 +580,8 @@ var $exeDevice = {
         $('.gameQE-EAnwersOptions').each(function () {
             $(this).val('');
         });
+        $('#quextEMessageOK').val('');
+        $('#quextEMessageKO').val('');
     },
     hourToSeconds: function (str) {
         var i = str.split(':');
@@ -690,6 +694,9 @@ var $exeDevice = {
                             <p>\
                                 <label for="quextEQuestionsRamdon"><input type="checkbox" id="quextEQuestionsRamdon">' + _("Random questions") + '</label>\
                                 <label for="quextEAnswersRamdon" class="gameQE-inlineOption"><input type="checkbox" id="quextEAnswersRamdon">' + _("Random options") + '</label>\
+                            </p>\
+                            <p>\
+                                <label for="quextECustomMessages"><input type="checkbox" id="quextECustomMessages">' + _("Custom messages") + '. </label>\
                             </p>\
                             <p>\
                                 <label for="quextEShowSolution"><input type="checkbox" checked id="quextEShowSolution">' + _("Show solutions") + '. </label>\
@@ -869,6 +876,18 @@ var $exeDevice = {
                                     </div>\
                                 </div>\
                             </div>\
+                            <div class="gameQE-EOrders" id="quextEOrder">\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Hit") + '</span><span class="gameQE-EHit"></span>\
+                                    <label for="quextEMessageOK">' + _("Message") + ':</label>\
+                                    <input type="text" class=""  id="quextEMessageOK">\
+                                </div>\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Error") + '</span><span class="gameQE-EError"></span>\
+                                    <label for="quextEMessageKO">' + _("Message") + ':</label>\
+                                    <input type="text" class=""  id="quextEMessageKO">\
+                                </div>\
+                            </div>\
                             <div class="gameQE-ENavigationButtons">\
                                 <a href="#" id="quextEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="' + _("Add question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="quextEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="' + _("First question") + '" class="gameQE-EButtonImage" /></a>\
@@ -981,6 +1000,8 @@ var $exeDevice = {
         p.silentVideo = 0;
         p.tSilentVideo = 0;
         p.audio = '';
+        p.msgHit = '';
+        p.msgError = '';
         return p;
     },
     validTime: function (time) {
@@ -1091,6 +1112,7 @@ var $exeDevice = {
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
+        game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         $('#quextEShowMinimize').prop('checked', game.showMinimize);
         $('#quextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#quextEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -1109,9 +1131,13 @@ var $exeDevice = {
         $("input.gameQE-TypeGame[name='qxtgamemode'][value='" + game.gameMode + "']").prop("checked", true);
         $("#quextEUseLives").prop('disabled', game.gameMode == 0);
         $("#quextENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
+        $('#quextECustomMessages').prop('checked', game.customMessages);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
+        $exeDevice.showSelectOrder(game.customMessages);
         for (var i = 0; i < game.questionsGame.length; i++) {
             game.questionsGame[i].audio = typeof game.questionsGame[i].audio == "undefined" ? "" : game.questionsGame[i].audio;
+            game.questionsGame[i].msgHit = typeof game.questionsGame[i].msgHit == "undefined" ? "" : game.questionsGame[i].msgHit;
+            game.questionsGame[i].msgError = typeof game.questionsGame[i].msgError == "undefined" ? "" : game.questionsGame[i].msgError;
         }
         if (game.customScore) {
             $('#quextEScoreQuestionDiv').show();
@@ -1126,6 +1152,13 @@ var $exeDevice = {
         $exeDevice.questionsGame = game.questionsGame;
         $exeDevice.showQuestion($exeDevice.active);
 
+    },
+    showSelectOrder: function (messages, custonmScore) {
+        if (messages) {
+            $('.gameQE-EOrders').slideDown();
+        } else {
+            $('.gameQE-EOrders').slideUp();
+        }
     },
     isJsonString: function (str) {
         try {
@@ -1253,6 +1286,8 @@ var $exeDevice = {
         p.quextion = $('#quextEQuestion').val().trim();
         p.options = [];
         p.solution = parseInt($('input[name=qxsolution]:checked').val());
+        p.msgHit = $('#quextEMessageOK').val();
+        p.msgError = $('#quextEMessageKO').val();
         var optionEmpy = false;
         var validExt = ['mp3', 'ogg', 'wav'],
             extaudio = p.audio.split('.').pop().toLowerCase();
@@ -1402,7 +1437,8 @@ var $exeDevice = {
             customScore = $('#quextECustomScore').is(':checked'),
             feedBack = $('#quextEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#quextEPercentajeFB').val())),
-            gameMode = parseInt($('input[name=qxtgamemode]:checked').val());
+            gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
+            customMessages = $('#quextECustomMessages').is(':checked');
         if (!itinerary) return false;
 
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
@@ -1484,7 +1520,8 @@ var $exeDevice = {
             'gameMode': gameMode,
             'feedBack': feedBack,
             'percentajeFB': percentajeFB,
-            'version': 2
+            'version': 2,
+            'customMessages': customMessages
         }
         return data;
     },
@@ -1839,10 +1876,14 @@ var $exeDevice = {
                 ul = $('#quextEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
-        // Help link
         $("#quextEGameModeHelpLnk").click(function(){
 			$("#quextEGameModeHelp").toggle();
             return false;
+        });
+
+        $('#quextECustomMessages').on('change', function () {
+            var messages = $(this).is(':checked');
+            $exeDevice.showSelectOrder(messages);
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 

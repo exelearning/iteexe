@@ -288,6 +288,22 @@
 	text-align: center;
 	width: 2em;
 }
+.gameQE-ECustomMessage {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 1em;
+	width: 100%;
+}
+.gameQE-ECustomMessage input[type=text] {
+	width: 100%;
+	margin-right: 0.1em;
+}
+.gameQE-ECustomMessage label {
+	margin: 0 0.1em;
+}
+
+	
 /* barra edición */
 .gameQE-ENavigationButtons {
 	align-items: center;
@@ -296,6 +312,7 @@
 	margin-top: 1em;
 	width: 100%;
 }
+
 .gameQE-ENavigationButton {
 	height: 1.5em;
 	margin: 0 .3em;

@@ -1019,8 +1019,8 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EOrders" id="seleccionaEOrder">\
-                                <div class="gameQE-ESolutionWord>\
-                                    <span class="sr-av"></span><span class="gameQE-EHit"></span>\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Hit") + '</span><span class="gameQE-EHit"></span>\
                                     <label for="seleccionaEMessageOK">' + _("Message") + ':</label>\
                                     <input type="text" class=""  id="seleccionaEMessageOK">\
                                     <label for="seleccionaGotoCorrect">' + _("Go to") + ':</label>\
@@ -1030,8 +1030,8 @@ var $exeDevice = {
                                         <option value="0">' + 1 + '</option>\
                                     </select>\
                                 </div>\
-                                <div class="gameQE-ESolutionWord>\
-                                    <span class="sr-av"></span><span class="gameQE-EError"></span>\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Error") + '</span><span class="gameQE-EError"></span>\
                                     <label for="seleccionaEMessageKO">' + _("Message") + ':</label>\
                                     <input type="text" class=""  id="seleccionaEMessageKO">\
                                     <label for="seleccionaGotoIncorrect">' + _("Go to") + ':</label>\

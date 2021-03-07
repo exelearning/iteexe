@@ -403,6 +403,7 @@ var $eXeQuExt = {
         mOptions.playerAudio = "";
         mOptions.gameMode = typeof mOptions.gameMode != 'undefined' ? mOptions.gameMode : 0;
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
+        mOptions.customMessages = typeof mOptions.customMessages != 'undefined' ? mOptions.customMessages : false;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.gameOver = false;
         imgsLink.each(function () {
@@ -1214,50 +1215,48 @@ var $eXeQuExt = {
         sMessages = sMessages.split('|');
         return sMessages[Math.floor(Math.random() * sMessages.length)];
     },
-
     updateScore: function (correctAnswer, instance) {
         var mOptions = $eXeQuExt.options[instance],
             quextion = mOptions.questionsGame[mOptions.activeQuestion],
             message = "",
             obtainedPoints = 0,
             type = 1,
-            msgs = mOptions.msgs,
-            sscore = 0;
-        var pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+            sscore = 0,
+            points = 0;
         if (correctAnswer) {
             mOptions.hits++
             if (mOptions.gameMode == 0) {
                 var pointsTemp = mOptions.counter < 60 ? mOptions.counter * 10 : 600;
                 obtainedPoints = 1000 + pointsTemp;
                 obtainedPoints = quextion.customScore * obtainedPoints;
-                message = $eXeQuExt.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' ' + pts;
-
+                points = obtainedPoints;
             } else if (mOptions.gameMode == 1) {
                 obtainedPoints = ((10 * quextion.customScore) / mOptions.scoreTotal);
-                var points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
-                message = $eXeQuExt.getRetroFeedMessages(true, instance) + ' ' + points + ' ' + pts;
-
+                if (mOptions.order == 2) {
+                    obtainedPoints = ((quextion.customScore) / 10);
+                }
+                points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
             } else if (mOptions.gameMode == 2) {
                 obtainedPoints = ((10 * quextion.customScore) / mOptions.scoreTotal);
-                message = $eXeQuExt.getRetroFeedMessages(true, instance);
+                if (mOptions.order == 2) {
+                    obtainedPoints = ((quextion.customScore) / 10);
+                }
+                points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
             }
             type = 2;
             mOptions.scoreGame += quextion.customScore;
-
         } else {
             mOptions.errors++;
             if (mOptions.gameMode != 0) {
                 message = "";
             } else {
                 obtainedPoints = -330 * quextion.customScore;
-                message = ' ' + msgs.msgLoseT;
+                points = obtainedPoints;
                 if (mOptions.useLives) {
                     mOptions.livesLeft--;
                     $eXeQuExt.updateLives(instance);
-                    message = ' ' + msgs.msgLoseLive;
                 }
             }
-            message = $eXeQuExt.getRetroFeedMessages(obtainedPoints > 0, instance) + message;
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
         sscore = mOptions.score;
@@ -1266,11 +1265,55 @@ var $eXeQuExt = {
         }
         $('#quextPScore-' + instance).text(sscore);
         $('#quextPHits-' + instance).text(mOptions.hits);
-        $('#quextPErrors-' + instance).text(mOptions.errors);
+        $('#vquextPErrors-' + instance).text(mOptions.errors);
+        message = $eXeQuExt.getMessageAnswer(correctAnswer, points, instance);
         $eXeQuExt.showMessage(type, message, instance);
-
     },
 
+    getMessageAnswer: function (correctAnswer, npts, instance) {
+        var mOptions = $eXeQuExt.options[instance];
+        var message = "",
+            q = mOptions.questionsGame[mOptions.activeQuestion];
+        if (correctAnswer) {
+            message = $eXeQuExt.getMessageCorrectAnswer(npts, instance);
+        } else {
+            message = $eXeQuExt.getMessageErrorAnswer(npts, instance);
+        }
+        if (mOptions.showSolution && q.typeQuestion == 1) {
+            message += ': ' + q.solutionQuestion;
+        }
+        return message;
+    },
+    getMessageCorrectAnswer: function (npts, instance) {
+        var mOptions = $eXeQuExt.options[instance],
+            messageCorrect = $eXeQuExt.getRetroFeedMessages(true, instance),
+            message = "",
+            pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (mOptions.customMessages && mOptions.questionsGame[mOptions.activeQuestion].msgHit.length > 0) {
+            message = mOptions.questionsGame[mOptions.activeQuestion].msgHit
+            message = mOptions.gameMode < 2 ? message + '. ' + npts + ' ' + pts : message;
+        } else {
+            message = mOptions.gameMode == 2 ? messageCorrect : messageCorrect + ' ' + npts + ' ' + pts;
+        }
+        return message;
+    },
+    getMessageErrorAnswer: function (npts, instance) {
+        var mOptions = $eXeQuExt.options[instance],
+            messageError = $eXeQuExt.getRetroFeedMessages(false, instance),
+            message = "",
+            pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (mOptions.customMessages && mOptions.questionsGame[mOptions.activeQuestion].msgError.length > 0) {
+            message = mOptions.questionsGame[mOptions.activeQuestion].msgError;
+            if (mOptions.gameMode != 2) {
+                message = mOptions.useLives ? message + '. ' + mOptions.msgs.msgLoseLive : message + '. ' + npts + ' ' + pts;
+            }
+        } else {
+            message = mOptions.useLives ? messageError + ' ' + mOptions.msgs.msgLoseLive : messageError + ' ' + npts + ' ' + pts;
+            message = mOptions.gameMode > 0 ? messageError : message;
+
+        }
+        return message;
+    },
     answerQuestion: function (respuesta, instance) {
         var mOptions = $eXeQuExt.options[instance];
         if (!mOptions.gameActived) {

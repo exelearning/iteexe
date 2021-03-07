@@ -211,9 +211,9 @@ var $eXeAdivina = {
         mOptions.playerAudio = "";
         mOptions.gameMode = typeof mOptions.gameMode != 'undefined' ? mOptions.gameMode : 0;
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
+        mOptions.customMessages = typeof mOptions.customMessages != 'undefined' ? mOptions.customMessages : false;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.gameOver = false;
-
 
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
@@ -1010,7 +1010,7 @@ var $eXeAdivina = {
 
         if (q.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeAdivina.initialScore === '') {
-                var score = ((mOptions.scoreGame * 10) / mOptions.scoreTotal).toFixed(2);
+                var score = ((mOptions.hits * 10) / mOptions.wordsGame.length).toFixed(2);
                 $eXeAdivina.sendScore(true, instance);
                 $('#adivinaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
 
@@ -1337,41 +1337,34 @@ var $eXeAdivina = {
             message = "",
             obtainedPoints = 0,
             type = 1,
-            msgs = mOptions.msgs,
-            sscore = 0;
-        var pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+            sscore = 0,
+            points = 0;
         if (correctAnswer) {
             mOptions.hits++
             if (mOptions.gameMode == 0) {
                 var pointsTemp = mOptions.counter < 60 ? mOptions.counter * 10 : 600;
                 obtainedPoints = 1000 + pointsTemp;
-                message = $eXeAdivina.getRetroFeedMessages(true, instance) + ' ' + obtainedPoints + ' ' + pts;
-
+                points = obtainedPoints;
             } else if (mOptions.gameMode == 1) {
                 obtainedPoints = (10 / mOptions.wordsGame.length);
-                var points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
-                message = $eXeAdivina.getRetroFeedMessages(true, instance) + ' ' + points + ' ' + pts;
-
+                points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
             } else if (mOptions.gameMode == 2) {
                 obtainedPoints = (10 / mOptions.wordsGame.length);
-                message = $eXeAdivina.getRetroFeedMessages(true, instance);
+                points = obtainedPoints % 1 == 0 ? obtainedPoints : obtainedPoints.toFixed(2);
             }
             type = 2;
-
         } else {
             mOptions.errors++;
             if (mOptions.gameMode != 0) {
                 message = "";
             } else {
                 obtainedPoints = -330;
-                message = ' ' + msgs.msgLoseT;
+                points = obtainedPoints;
                 if (mOptions.useLives) {
                     mOptions.livesLeft--;
                     $eXeAdivina.updateLives(instance);
-                    message = ' ' + msgs.msgLoseLive;
                 }
             }
-            message = $eXeAdivina.getRetroFeedMessages(obtainedPoints > 0, instance) + message;
         }
         mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
         sscore = mOptions.score;
@@ -1381,9 +1374,52 @@ var $eXeAdivina = {
         $('#adivinaPScore-' + instance).text(sscore);
         $('#adivinaPHits-' + instance).text(mOptions.hits);
         $('#adivinaPErrors-' + instance).text(mOptions.errors);
+        message = $eXeAdivina.getMessageAnswer(correctAnswer, points, instance);
         $eXeAdivina.showMessage(type, message, instance);
-        return type;
+    },
+    getMessageAnswer: function (correctAnswer, npts, instance) {
+        var mOptions = $eXeAdivina.options[instance];
+        var message = "",
+            q = mOptions.wordsGame[mOptions.activeQuestion];
+        if (correctAnswer) {
+            message = $eXeAdivina.getMessageCorrectAnswer(npts, instance);
+        } else {
+            message = $eXeAdivina.getMessageErrorAnswer(npts, instance);
+        }
+        if (mOptions.showSolution && q.typeQuestion == 1) {
+            message += ': ' + q.solutionQuestion;
+        }
+        return message;
+    },
+    getMessageCorrectAnswer: function (npts, instance) {
+        var mOptions = $eXeAdivina.options[instance],
+            messageCorrect = $eXeAdivina.getRetroFeedMessages(true, instance),
+            message = "",
+            pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (mOptions.customMessages && mOptions.wordsGame[mOptions.activeQuestion].msgHit.length > 0) {
+            message = mOptions.wordsGame[mOptions.activeQuestion].msgHit
+            message = mOptions.gameMode < 2 ? message + '. ' + npts + ' ' + pts : message;
+        } else {
+            message = mOptions.gameMode == 2 ? messageCorrect : messageCorrect + ' ' + npts + ' ' + pts;
+        }
+        return message;
+    },
+    getMessageErrorAnswer: function (npts, instance) {
+        var mOptions = $eXeAdivina.options[instance],
+            messageError = $eXeAdivina.getRetroFeedMessages(false, instance),
+            message = "",
+            pts = typeof mOptions.msgs.msgPoints == 'undefined' ? 'puntos' : mOptions.msgs.msgPoints;
+        if (mOptions.customMessages && mOptions.wordsGame[mOptions.activeQuestion].msgError.length > 0) {
+            message = mOptions.wordsGame[mOptions.activeQuestion].msgError;
+            if (mOptions.gameMode != 2) {
+                message = mOptions.useLives ? message + '. ' + mOptions.msgs.msgLoseLive : message + '. ' + npts + ' ' + pts;
+            }
+        } else {
+            message = mOptions.useLives ? messageError + ' ' + mOptions.msgs.msgLoseLive : messageError + ' ' + npts + ' ' + pts;
+            message = mOptions.gameMode > 0 ? messageError : message;
 
+        }
+        return message;
     },
     showMessage: function (type, message, instance) {
         var colors = ['#555555', $eXeAdivina.borderColors.red, $eXeAdivina.borderColors.green, $eXeAdivina.borderColors.blue, $eXeAdivina.borderColors.yellow],

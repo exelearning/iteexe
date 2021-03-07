@@ -129,7 +129,10 @@ var $exeDevice = {
 								<label for="adivinaEShowMinimize"><input type="checkbox" id="adivinaEShowMinimize"> ' + _("Show minimized.") + ' </label>\
                             </p>\
                             <p>\
-                             <label for="adivinaEOptionsRamdon"><input type="checkbox" id="adivinaEOptionsRamdon"> ' + _("Random questions") + ' </label>\
+                                <label for="adivinaEOptionsRamdon"><input type="checkbox" id="adivinaEOptionsRamdon"> ' + _("Random questions") + ' </label>\
+                            </p>\
+                            <p>\
+                                <label for="adivinaECustomMessages"><input type="checkbox" id="adivinaECustomMessages">' + _("Custom messages") + '. </label>\
                             </p>\
                             <p>\
 								<label for="adivinaEShowSolution"><input type="checkbox" checked id="adivinaEShowSolution"> ' + _("Show solutions") + '. </label> \
@@ -270,6 +273,18 @@ var $exeDevice = {
                                 <div class="gameQE-ESolutionWord"><label for="adivinaESolutionWord">' + _("Word/Phrase") + ': </label><input type="text"  id="adivinaESolutionWord"/></div>\
                                 <div class="gameQE-ESolutionWord"><label for="adivinaEDefinitionWord">' + _("Definition") + ': </label><input type="text"  id="adivinaEDefinitionWord"/></div>\
                             </div>\
+                            <div class="gameQE-EOrders" id="adivinaEOrder">\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Hit") + '</span><span class="gameQE-EHit"></span>\
+                                    <label for="adivinaEMessageOK">' + _("Message") + ':</label>\
+                                        <input type="text" class=""  id="adivinaEMessageOK">\
+                                </div>\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Error") + '</span><span class="gameQE-EError"></span>\
+                                    <label for="adivinaEMessageKO">' + _("Message") + ':</label>\
+                                    <input type="text" class=""  id="adivinaEMessageKO">\
+                                </div>\
+                           </div>\
                             <div class="gameQE-ENavigationButtons">\
                                 <a href="#" id="adivinaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="' + _("Add question") + '" class="gameQE-EButtonImage b-add" /></a>\
                                 <a href="#" id="adivinaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="' + _("First question") + '" class="gameQE-EButtonImage b-first" /></a>\
@@ -368,6 +383,8 @@ var $exeDevice = {
         $('#adivinaENumberQuestion').text(i + 1);
         $("input.gameQE-Type[name='qxtmediatype'][value='" + p.type + "']").prop("checked", true);
         $("input.gameQE-Times[name='qxttime'][value='" + p.time + "']").prop("checked", true);
+        $('#adivinaEMessageKO').val(p.msgError);
+        $('#adivinaEMessageOK').val(p.msgHit);
     },
 
     initQuestions: function () {
@@ -573,6 +590,8 @@ var $exeDevice = {
         p.solution = '';
         p.silentVideo = 0;
         p.tSilentVideo = 0;
+        p.error = -1;
+        p.msgHit = '';
 
         return p;
     },
@@ -778,6 +797,8 @@ var $exeDevice = {
         p.alt = $('#adivinaEAlt').val();
         p.url = $('#adivinaEURLImage').val().trim();
         p.audio = $('#adivinaEURLAudio').val();
+        p.msgHit = $('#adivinaEMessageOK').val();
+        p.msgError = $('#adivinaEMessageKO').val();
         $exeDevice.stopSound();
         $exeDevice.stopVideo();
         if (p.type == 2) {
@@ -848,7 +869,9 @@ var $exeDevice = {
             caseSensitive = $('#adivinaECaseSensitive').is(':checked'),
             feedBack = $('#adivinaEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#adivinaEPercentajeFB').val())),
-            gameMode = parseInt($('input[name=qxtgamemode]:checked').val());
+            gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
+            customMessages = $('#adivinaECustomMessages').is(':checked');
+
         if (showSolution && timeShowSolution.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
             return false;
@@ -901,7 +924,8 @@ var $exeDevice = {
             'gameMode': gameMode,
             'feedBack': feedBack,
             'percentajeFB': percentajeFB,
-            'version': 2
+            'version': 2,
+            'customMessages': customMessages
         }
         return data;
     },
@@ -1252,13 +1276,23 @@ var $exeDevice = {
                 ul = $('#adivinaEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
-        // Help link
         $("#adivinaEGameModeHelpLnk").click(function(){
             $("#adivinaEGameModeHelp").toggle();
             return false;
 
         });
+        $('#adivinaECustomMessages').on('change', function () {
+            var messages = $(this).is(':checked');
+            $exeDevice.showSelectOrder(messages);
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
+    },
+    showSelectOrder: function (messages, custonmScore) {
+        if (messages) {
+            $('.gameQE-EOrders').slideDown();
+        } else {
+            $('.gameQE-EOrders').slideUp();
+        }
     },
     getIDYoutube: function (url) {
         if (url) {
@@ -1462,6 +1496,7 @@ var $exeDevice = {
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
+        game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         $exeDevice.timeQuestion = typeof game.timeQuestion != "undefined" ? game.timeQuestion : $exeDevice.timeQuestion;
         $exeDevice.percentageShow = typeof game.percentageShow != "undefined" ? game.percentageShow : $exeDevice.timeQuestion;
         game.timeQuestion = $exeDevice.timeQuestion;
@@ -1479,8 +1514,10 @@ var $exeDevice = {
         $("input.gameQE-TypeGame[name='qxtgamemode'][value='" + game.gameMode + "']").prop("checked", true);
         $("#adivinaEUseLives").prop('disabled', game.gameMode == 0);
         $("#adivinaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
+        $('#adivinaECustomMessages').prop('checked', game.customMessages);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
+        $exeDevice.showSelectOrder(game.customMessages);
         var version = typeof game.version == 'undefined' ? 0 : game.version;
         for (var i = 0; i < game.wordsGame.length; i++) {
             var p = game.wordsGame[i];
@@ -1497,6 +1534,8 @@ var $exeDevice = {
                 p.eText = '';
                 p.audio = '';
             }
+            p.msgHit = typeof p.msgHit == "undefined" ? "" : p.msgHit;
+            p.msgError = typeof p.msgError == "undefined" ? "" :p.msgError;
             p.time = p.time < 0 ? 0 : p.time;
             p.audio = typeof p.audio == "undefined" ? '' : p.audio;
             game.wordsGame[i] = p;

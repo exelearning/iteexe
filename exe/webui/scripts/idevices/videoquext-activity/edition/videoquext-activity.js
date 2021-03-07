@@ -775,13 +775,13 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EOrders" id="vquextEOrder">\
-                                <div class="gameQE-ESolutionWord>\
-                                    <span class="sr-av"></span><span class="gameQE-EHit"></span>\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Hit") + '</span><span class="gameQE-EHit"></span>\
                                     <label for="vquextEMessageOK">' + _("Message") + ':</label>\
                                     <input type="text" class=""  id="vquextEMessageOK">\
                                 </div>\
-                                <div class="gameQE-ESolutionWord>\
-                                    <span class="sr-av"></span><span class="gameQE-EError"></span>\
+                                <div class="gameQE-ECustomMessage">\
+                                    <span class="sr-av">' + _("Error") + '</span><span class="gameQE-EError"></span>\
                                     <label for="vquextEMessageKO">' + _("Message") + ':</label>\
                                     <input type="text" class=""  id="vquextEMessageKO">\
                                 </div>\
@@ -1122,9 +1122,7 @@ var $exeDevice = {
         p.imageVideo = $('#vquextECheckImageVideo').is(':checked') ? 1 : 0;
         p.iVideo = 0;
         p.fVideo = 0;
-        p.eText = '';
-        p.msgHit = $('#vquextEMessageOK').val();
-        p.msgError = $('#vquextEMessageKO').val();
+        p.eText = ''; 
         p.typeQuestion = parseInt($('input[name=vquexttypequestion]:checked').val());
         p.quextion = $('#vquextEQuestion').val().trim();
         if (p.typeQuestion == 1) {

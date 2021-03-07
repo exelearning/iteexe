@@ -462,7 +462,7 @@ var $eXeVideoQuExt = {
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
         mOptions.isNavigable = typeof mOptions.isNavigable != 'undefined' ? mOptions.isNavigable : false;
         mOptions.repeatQuestion = typeof mOptions.repeatQuestion != 'undefined' ? mOptions.repeatQuestion : false;
-
+        mOptions.customMessages = typeof mOptions.customMessages != 'undefined' ? mOptions.customMessages : false;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.gameOver = false;
         mOptions.gameStarted = false;
