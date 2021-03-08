@@ -319,7 +319,7 @@ var $exeDevice = {
 			id = "Before";
 		}
 		return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
-                    <legend><a href='#'>" + _('Contenido adicional') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
+                    <legend><a href='#'>" + tit + " (" + _('Optional').toLowerCase() + ")</a></legend>\
                     <div>\
                         <p>\
                             <label for='eXeIdeviceText" + id + "' class='sr-av'>" + tit + ":</label>\
