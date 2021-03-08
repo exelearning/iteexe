@@ -1166,6 +1166,7 @@ class Package(Persistable):
     exportElp = property(get_exportElp, set_exportElp)
     isTemplate = property(get_isTemplate, set_isTemplate)
     templateFile = property(get_templateFile, set_templateFile)
+    load_message = ""
 
     def findNode(self, nodeId):
         """
@@ -1315,6 +1316,7 @@ class Package(Persistable):
         self.currentNode.copyToPackage(newPackage)
         return newPackage
 
+
     @staticmethod
     def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False, preventUpdateRecent=False):
         """
@@ -1362,7 +1364,7 @@ class Package(Persistable):
             u'content.xsd',
             u'config.xml'
         ]
-
+        load_message = ""
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
             if unicode(fn, 'utf8') not in excluded_files:
@@ -1395,7 +1397,12 @@ class Package(Persistable):
                 else:
                     datainfo = zippedFile.getinfo(u"content.data")
                     if xmlinfo.date_time >= datainfo.date_time:
-                        newPackage, validxml = decodeObjectFromXML(xml)
+                        try:
+                            newPackage, validxml = decodeObjectFromXML(xml)
+                        except:
+                            load_message = _(u"Sorry, wrong file format error: Can't read the xml, so try the old .data instead")
+
+                            log.warn("Error decode xml. Incorrect contentv3.xml")
             if not validxml:
                 toDecode   = zippedFile.read(u"content.data")
                 newPackage = decodeObjectRaw(toDecode)
@@ -1595,7 +1602,8 @@ class Package(Persistable):
         newPackage.set_license(newPackage.license)
 
         newPackage.isLoading = False
-
+        if load_message:
+            newPackage.load_message = load_message
         return newPackage
 
     def getUserResourcesFiles(self, node):

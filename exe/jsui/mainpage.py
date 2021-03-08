@@ -518,8 +518,12 @@ class MainPage(RenderableLivePage):
         package = self._loadPackage(client, filename, newLoad=True)
         self.session.packageStore.addPackage(package)
         self.webServer.root.bindNewPackage(package, self.session)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
-                        package.name).encode('utf8'), filter_func=filter_func)
+        if package.load_message:
+            client.alert(package.load_message,
+                         onDone=(u'eXe.app.gotoUrl("/%s")' % package.name).encode('utf8'),
+                         filter_func=filter_func)
+        else:
+            client.sendScript((u'eXe.app.gotoUrl("/%s")' % package.name).encode('utf8'), filter_func=filter_func)
 
     def handleLoadTemplate(self, client, filename):
         """Load the template named 'filename'"""
@@ -1388,13 +1392,13 @@ class MainPage(RenderableLivePage):
 
     def handleSaveEXeUIversion(self,client,status):
         initial=G.application.config.configParser.get('user', 'eXeUIversion')
-        if initial == '2' :
+        if initial == '2':
             client.call(u'eXe.app.getController("Toolbar").exeUIalert')
         G.application.config.configParser.set('user', 'eXeUIversion', status)
         client.call(u'eXe.app.getController("Toolbar").eXeUIversionSetStatus', status)
 
     def handleIsExeUIAdvanced(self,client):
-        status=G.application.config.configParser.get('user', 'eXeUIversion') 
+        status=G.application.config.configParser.get('user', 'eXeUIversion')
         client.call(u'eXe.app.getController("Toolbar").exeUIsetInitialStatus', status)
 
     def handleBrowseURL(self, client, url):

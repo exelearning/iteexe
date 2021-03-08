@@ -126,8 +126,6 @@ class Node(Persistable):
         # can reference the previous path and update anchors & any links:
         self.last_full_node_path = self.GetFullNodePath()
 
-
-
     def GetFullNodePath(self, new_node_title=""):
         """
         A general purpose single-line node-naming convention,
@@ -151,8 +149,9 @@ class Node(Persistable):
                 #   but continue on, since it was probably one of the top nodes 
                 #   above the extraction that is None. 
                 # but this node IS valid, so add it to the path:
-                full_path = full_path + ":" \
-                        + quote(node.getTitle().encode('utf8'))
+                if isinstance(node, Node) and hasattr(node, "getTitle"):
+                    full_path = full_path + ":" \
+                            + quote(node.getTitle().encode('utf8'))
 
         # and finally, add this node itself:
         if new_node_title == "":
@@ -161,8 +160,6 @@ class Node(Persistable):
             # a new_node_title was specified, create this path with the new name
             full_path = full_path + ":" + quote(new_node_title.encode('utf8'))
         return full_path
-
-
 
     def RenamedNodePath(self, isMerge=False, isExtract=False):
         """
@@ -469,7 +466,7 @@ class Node(Persistable):
         else:
             delete_msg += "deleting Node "
         delete_msg += "[parent="
-        if hasattr(self, 'parent') and self.parent:
+        if hasattr(self, 'parent') and self.parent and hasattr(self.parent, '_title'):
             delete_msg += "\"" + self.parent._title + "\"] \""
         else:
             delete_msg += "None] \""
@@ -491,8 +488,8 @@ class Node(Persistable):
             # Remove it. 
             # Now that intlinks_to_anchors can store nodes for auto_top...
             this_anchor_field = self
-            this_field.RemoveInternalLinkToRemovedAnchor( \
-                    this_anchor_field, full_link_name)
+            if hasattr(this_field, 'RemoveInternalLinkToRemovedAnchor'):
+                this_field.RemoveInternalLinkToRemovedAnchor(this_anchor_field, full_link_name)
 
         # Remove ourself from the id dict and our parents child thing
         # (zombie nodes may not even be listed)
@@ -554,7 +551,7 @@ class Node(Persistable):
             num_children = len(self.children)
         for i in range(num_children-1, -1, -1):
             # safety check for extracted nodes, ensure that children[i] is valid
-            if self.children[i]:
+            if self.children[i] and hasattr(self.children[i], 'parent'):
                 if self.children[i].parent is None:
                     log.warn('reconnecting child node before deletion from node')
                     self.children[i].parent = self
