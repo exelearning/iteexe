@@ -130,10 +130,10 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideSolution = _("Please write the solution");
         msgs.msgEDefintion = _("Please provide the word definition");
-        msgs.msgProvideFB = _('Indica el mensaje que se mostrará al superar el juego, actividad o reto');
-        msgs.msgDuration = _('El valor del punto de fin del vídeo no puede ser superior a la duración del vídeo');
-        msgs.msgFormatVideo = _('Introduzca una URL de YouTube o seleccione un archivo de los siguientes formatos: mp4, ogg, webm, mp3, wav');
-        msgs.msgExportFileError = _('No se pueden exportar juegos sobre archivos de vídeo o audio locales');
+        msgs.msgProvideFB = _('Write the message to be displayed when passing the game');
+        msgs.msgDuration = _('Please check the video length and the end time');
+        msgs.msgFormatVideo = _('Use a YouTube URL or select a file (mp4, ogg, webm, mp3, wav)');
+        msgs.msgExportFileError = _("Games with local videos or audios can't be exported");
         msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
     },
     getId: function () {
@@ -641,8 +641,8 @@ var $exeDevice = {
                                 <textarea id="vquextEFeedBackEditor" class="exe-html-editor"\></textarea>\
                             </p>\
                             <p>\
-                                <label for="vquextENavigable"><input type="checkbox" id="vquextENavigable">' + _("Navegable") + '. </label>\
-                                <label for="vquextERepeatQuestion"><input type="checkbox" id="vquextERepeatQuestion" disabled>' + _("Repetir cuestión") + '. </label>\
+                                <label for="vquextENavigable"><input type="checkbox" id="vquextENavigable">' + _("Navigable") + '. </label>\
+                                <label for="vquextERepeatQuestion"><input type="checkbox" id="vquextERepeatQuestion" disabled>' + _("Repeat question") + '. </label>\
                             </p>\
                             <p class="gameQE-Flex">\
                                 <label for="vquextEReloadQuestion"><input type="checkbox" id="vquextEReloadQuestion">' + _("Reload video") + '. </label>\
