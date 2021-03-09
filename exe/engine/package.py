@@ -1318,7 +1318,8 @@ class Package(Persistable):
 
 
     @staticmethod
-    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False, preventUpdateRecent=False):
+    def load(filename, newLoad=True, destinationPackage=None, fromxml=None, isTemplate=False, preventUpdateRecent=False,
+             is_new_package=False):
         """
         Load package from disk, returns a package.
         """
@@ -1598,8 +1599,11 @@ class Package(Persistable):
         newPackage.lang = newPackage._lang
 
         # Reset license to ensure is set for the main package properties and for
-        # both Lom and LomES
-        newPackage.set_license(newPackage.license)
+        # both Lom and
+        if is_new_package:
+            newPackage.set_license(G.application.config.defaultLicense)
+        else:
+            newPackage.set_license(newPackage.license)
 
         newPackage.isLoading = False
         if load_message:
