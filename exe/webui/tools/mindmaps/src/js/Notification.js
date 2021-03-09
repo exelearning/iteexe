@@ -179,7 +179,7 @@ mindmaps.Notification.prototype = {
  */
 mindmaps.Notification.Defaults = {
   title : null,
-  content : _("New Notification"),
+  content : _("Info"),
   position : "topLeft",
   padding : 10,
   expires : 0,

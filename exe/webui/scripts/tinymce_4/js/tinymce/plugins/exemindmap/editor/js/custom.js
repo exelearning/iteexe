@@ -321,7 +321,7 @@ mindmaps.OpenDocumentCommand = function() {
 	this.label = _("Import");
 	this.shortcut = ["ctrl+o", "meta+o"];
 	this.icon = "ui-icon-folder-open";
-	this.description = _("Open an existing mind map from your disk");
+	// this.description = _("Open an existing mind map from your disk");
 };
 mindmaps.OpenDocumentCommand.prototype = new mindmaps.Command();
 
@@ -332,7 +332,7 @@ mindmaps.SaveDocumentCommand = function() {
 	this.enabled = false;
 	this.shortcut = ["ctrl+e", "meta+e"];
 	this.icon = "ui-icon-copy";
-	this.description = _("Download the map to save it");
+	this.description = _("Download");
 };
 mindmaps.SaveDocumentCommand.prototype = new mindmaps.Command();
 
@@ -360,10 +360,10 @@ mindmaps.SaveDocumentAndExitCommand.prototype = new mindmaps.Command();
 // Fullscreen
 mindmaps.OpenInNewWindowCommand = function() {
 	this.id = "OPEN_IN_NEW_WINDOW_COMMAND";
-	this.label = _("Fullscreen");
+	this.label = _("Full Screen");
 	this.enabled = true;
 	this.icon = "ui-icon-newwin";
-	this.description = _("Open this map in a new window");
+	// this.description = _("Open this map in a new window");
 };
 mindmaps.OpenInNewWindowCommand.prototype = new mindmaps.Command();
 
@@ -373,7 +373,7 @@ mindmaps.ToggleNavigatorCommand = function() {
 	this.label = _("Navigator");
 	this.enabled = true;
 	this.icon = "ui-icon-zoomin";
-	this.description = _("Hide or show the navigator");
+	// this.description = _("Hide or show the navigator");
 };
 mindmaps.ToggleNavigatorCommand.prototype = new mindmaps.Command();
 
@@ -382,7 +382,7 @@ mindmaps.CloseDocumentCommand = function() {
 	this.id = "CLOSE_DOCUMENT_COMMAND";
 	this.label = _("Finish");
 	this.icon = "ui-icon-close";
-	this.description = _("Close the mind map editor");
+	this.description = _("Close");
 };
 mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
 

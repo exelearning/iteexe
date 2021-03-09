@@ -99,7 +99,7 @@ function removeEventLayerXY() {
 */
 function addUnloadHook () {
   window.onbeforeunload = function (e) {
-    var msg = _("Are you sure? Any unsaved progress will be lost.")
+    var msg = _("If you have made changes and have not saved them, they will be lost. Do you really want to quit?")
     e = e || window.event;
 
     // For IE and Firefox prior to version 4

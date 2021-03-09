@@ -153,8 +153,8 @@ mindmaps.OpenDocumentPresenter = function(eventBus, mindmapModel, view, filePick
       try {
         var doc = mindmaps.Document.fromJSON(reader.result);
       } catch (e) {
-        eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, _('File is not a valid mind map!'));
-        throw new Error(_('Error while opening map from hdd'), e);
+        eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, _('Sorry, wrong file format'));
+        throw new Error(_('Could not retrieve data (Core error)'), e);
       }
       mindmapModel.setDocument(doc);
       view.hideOpenDialog();

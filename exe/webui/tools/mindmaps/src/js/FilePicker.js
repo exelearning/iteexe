@@ -42,7 +42,7 @@ mindmaps.FilePicker = function(eventBus, mindmapModel) {
 
             var doc = mindmaps.Document.fromObject(data);
           } catch (e) {
-            eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, 'File is not a valid mind map!');
+            eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, 'Sorry, wrong file format');
             throw new Error('Error while parsing map from cloud', e);
           }
 

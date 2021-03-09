@@ -99,7 +99,7 @@ mindmaps.CreateNodeCommand = function() {
   this.shortcut = "tab";
   this.label = _("Add");
   this.icon = "ui-icon-plusthick";
-  this.description = _("Creates a new node");
+  this.description = _("Add");
 };
 mindmaps.CreateNodeCommand.prototype = new mindmaps.Command();
 
@@ -114,7 +114,7 @@ mindmaps.CreateSiblingNodeCommand = function() {
   this.shortcut = "shift+tab";
   this.label = _("Add");
   this.icon = "ui-icon-plusthick";
-  this.description = _("Creates a new sibling node");
+  this.description = _("Add"); // Creates a new sibling node
 };
 mindmaps.CreateSiblingNodeCommand.prototype = new mindmaps.Command();
 
@@ -129,7 +129,7 @@ mindmaps.DeleteNodeCommand = function() {
   this.shortcut = ["del", "backspace"];
   this.label = _("Delete");
   this.icon = "ui-icon-minusthick";
-  this.description = _("Deletes a new node");
+  this.description = _("Delete"); // Deletes a new node
 };
 mindmaps.DeleteNodeCommand.prototype = new mindmaps.Command();
 
@@ -142,8 +142,8 @@ mindmaps.DeleteNodeCommand.prototype = new mindmaps.Command();
 mindmaps.EditNodeCaptionCommand = function() {
   this.id = "EDIT_NODE_CAPTION_COMMAND";
   this.shortcut = ["F2", "return"];
-  this.label = _("Edit node caption");
-  this.description = _("Edits the node text");
+  this.label = _("Edit"); // Edit
+  this.description = _("Edit"); // Edits the node text
 };
 mindmaps.EditNodeCaptionCommand.prototype = new mindmaps.Command();
 
@@ -156,7 +156,7 @@ mindmaps.EditNodeCaptionCommand.prototype = new mindmaps.Command();
 mindmaps.ToggleNodeFoldedCommand = function() {
   this.id = "TOGGLE_NODE_FOLDED_COMMAND";
   this.shortcut = "space";
-  this.description = _("Show or hide the node's children");
+  // this.description = _("Show or hide the node's children");
 };
 mindmaps.ToggleNodeFoldedCommand.prototype = new mindmaps.Command();
 
@@ -209,7 +209,7 @@ mindmaps.CopyNodeCommand = function() {
   this.shortcut = ["ctrl+c", "meta+c"];
   this.label = _("Copy");
   this.icon = "ui-icon-copy";
-  this.description = _("Copy a branch");
+  this.description = _("Copy");
 };
 mindmaps.CopyNodeCommand.prototype = new mindmaps.Command();
 
@@ -224,7 +224,7 @@ mindmaps.CutNodeCommand = function() {
   this.shortcut = ["ctrl+x", "meta+x"];
   this.label = _("Cut");
   this.icon = "ui-icon-scissors";
-  this.description = _("Cut a branch");
+  this.description = _("Cut");
 };
 mindmaps.CutNodeCommand.prototype = new mindmaps.Command();
 
@@ -239,7 +239,7 @@ mindmaps.PasteNodeCommand = function() {
   this.shortcut = ["ctrl+v", "meta+v"];
   this.label = _("Paste");
   this.icon = "ui-icon-clipboard";
-  this.description = _("Paste a branch");
+  this.description = _("Paste"); // Paste a branch
 };
 mindmaps.PasteNodeCommand.prototype = new mindmaps.Command();
 
@@ -257,7 +257,7 @@ mindmaps.NewDocumentCommand = function() {
   this.id = "NEW_DOCUMENT_COMMAND";
   this.label = _("New");
   this.icon = "ui-icon-document-b";
-  this.description = _("Start working on a new mind map");
+  // this.description = _("Start working on a new mind map");
 };
 mindmaps.NewDocumentCommand.prototype = new mindmaps.Command();
 
@@ -269,10 +269,10 @@ mindmaps.NewDocumentCommand.prototype = new mindmaps.Command();
  */
 mindmaps.OpenDocumentCommand = function() {
   this.id = "OPEN_DOCUMENT_COMMAND";
-  this.label = _("Open...");
+  this.label = _("Open");
   this.shortcut = ["ctrl+o", "meta+o"];
   this.icon = "ui-icon-folder-open";
-  this.description = _("Open an existing mind map");
+  this.description = _("Open");
 };
 mindmaps.OpenDocumentCommand.prototype = new mindmaps.Command();
 
@@ -284,10 +284,10 @@ mindmaps.OpenDocumentCommand.prototype = new mindmaps.Command();
  */
 mindmaps.SaveDocumentCommand = function() {
   this.id = "SAVE_DOCUMENT_COMMAND";
-  this.label = _("Save...");
+  this.label = _("Save");
   this.shortcut = ["ctrl+s", "meta+s"];
   this.icon = "ui-icon-disk";
-  this.description = _("Save the mind map");
+  this.description = _("Save"); // Save the mind map
 };
 mindmaps.SaveDocumentCommand.prototype = new mindmaps.Command();
 
@@ -301,7 +301,7 @@ mindmaps.CloseDocumentCommand = function() {
   this.id = "CLOSE_DOCUMENT_COMMAND";
   this.label = _("Close");
   this.icon = "ui-icon-close";
-  this.description = _("Close the mind map");
+  this.description = _("Exit");
 };
 mindmaps.CloseDocumentCommand.prototype = new mindmaps.Command();
 
@@ -317,7 +317,7 @@ mindmaps.HelpCommand = function() {
   this.icon = "ui-icon-help";
   this.label = _("Help");
   this.shortcut = "F1";
-  this.description = _("Get help!");
+  this.description = _("Help");
 };
 mindmaps.HelpCommand.prototype = new mindmaps.Command();
 
@@ -332,7 +332,7 @@ mindmaps.PrintCommand = function() {
   this.icon = "ui-icon-print";
   this.label = _("Print");
   this.shortcut = ["ctrl+p", "meta+p"];
-  this.description = _("Print the mind map");
+  this.description = _("Print");
 };
 mindmaps.PrintCommand.prototype = new mindmaps.Command();
 
@@ -345,7 +345,7 @@ mindmaps.PrintCommand.prototype = new mindmaps.Command();
 mindmaps.ExportCommand = function() {
   this.id = "EXPORT_COMMAND";
   this.icon = "ui-icon-image";
-  this.label = _("Save image");
-  this.description = _("Export the mind map as an image");
+  this.label = _("Save As..."); // Save As...
+  this.description = _("Save As..."); // Export the mind map as an image
 };
 mindmaps.ExportCommand.prototype = new mindmaps.Command();
