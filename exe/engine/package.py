@@ -1400,7 +1400,7 @@ class Package(Persistable):
                         try:
                             newPackage, validxml = decodeObjectFromXML(xml)
                         except:
-                            load_message = _(u"Sorry, wrong file format error: Can't read the xml, so try the old .data instead")
+                            load_message = _(u"Can't read the .xml file. eXe will try to recover the content from the .data file instead.")
 
                             log.warn("Error decode xml. Incorrect contentv3.xml")
             if not validxml:
