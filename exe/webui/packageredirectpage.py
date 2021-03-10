@@ -107,7 +107,7 @@ class PackageRedirectPage(RenderableResource):
         template_base = self.config.templatesDir / (self.config.defaultContentTemplate + '.elt')
         
         if os.path.exists(template_base):
-            package = session.packageStore.createPackageFromTemplate(template_base)
+            package = session.packageStore.createPackageFromTemplate(template_base, is_new_package=True)
         else:
             package = session.packageStore.createPackage()
             

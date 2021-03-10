@@ -85,12 +85,12 @@ class PackageStore:
         return package
 
 
-    def createPackageFromTemplate(self, templateBase):
+    def createPackageFromTemplate(self, templateBase, is_new_package=False):
         """
         Creates a new package from Template
         """
         log.debug(u"createPackageFromTemplate")
-        package = Package.load(templateBase, isTemplate=True)
+        package = Package.load(templateBase, isTemplate=True, is_new_package=is_new_package)
         package.set_templateFile(str(templateBase.basename().splitext()[0]))
         # Make up an initial unique name
         i = 1
