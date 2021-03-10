@@ -105,8 +105,8 @@ mindmaps.ApplicationController = function() {
 			try {
 				var doc = mindmaps.Document.fromObject(JSON.parse(top.mindmapEditor.data));
 			} catch (e) {
-				eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, _('File is not a valid mind map!'));
-				throw new Error(_('Error while opening map from hdd'), e);
+				eventBus.publish(mindmaps.Event.NOTIFICATION_ERROR, _('Sorry, wrong file format'));
+				throw new Error(_('Could not retrieve data (Core error)'), e);
 			}
 			mindmapModel.setDocument(doc);
 		};
@@ -339,21 +339,21 @@ mindmaps.SaveDocumentCommand.prototype = new mindmaps.Command();
 // Save
 mindmaps.saveDocumentInExeCommand = function() {
 	this.id = "SAVE_DOCUMENT_IN_EXE_COMMAND";
-	this.label = _("Save...");
+	this.label = _("Save");
 	this.enabled = true;
 	this.shortcut = ["ctrl+s", "meta+s"];
 	this.icon = "ui-icon-disk";
-	this.description = _("Save the mind map");
+	this.description = _("Save");
 };
 mindmaps.saveDocumentInExeCommand.prototype = new mindmaps.Command();
 
 mindmaps.SaveDocumentAndExitCommand = function() {
 	this.id = "SAVE_DOCUMENT_AND_EXIT_COMMAND"; 
-	this.label = _("Save...");
+	this.label = _("Save");
 	this.enabled = true; 
 	this.shortcut = ["ctrl+s", "meta+s"];
 	this.icon = "ui-icon-disk";
-	this.description = "Salvar el mapa mental y salir";
+	this.description = _("Save");
 };
 mindmaps.SaveDocumentAndExitCommand.prototype = new mindmaps.Command();
 
