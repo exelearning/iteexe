@@ -1136,14 +1136,7 @@ var $exeAuthoring = {
 						</div>\
 					';
 				},
-				getOptions : function(){
-					return '\
-						<p><a href="#eXeGameItineraryOptions" id="eXeGameItineraryOptionsLnk">'+_("More options (password protected activities)...")+'</a></p>\
-						<div id="eXeGameItineraryOptions" style="display:none">\
-							' + $exeAuthoring.iDevice.gamification.itinerary.getContents() + '\
-						</div>';
-				},
-                getTab : function(){
+				getTab : function(){
                     return '\
                              <div class="exe-form-tab" title="' + _('Passwords') + '">\
 								' + $exeAuthoring.iDevice.gamification.itinerary.getContents() + '\
