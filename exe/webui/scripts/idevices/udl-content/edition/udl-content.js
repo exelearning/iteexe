@@ -12,21 +12,10 @@
  */
 var $exeDevice = {
 	
-	// Defaul value
-	isCompatibleStyle : false,
-	
 	// Allow empty paragraphs?
 	allowEmptyParagraphs : false,
 	
-	// Some Styles have special functionalities
-	compatibleStyles : [
-		'udl',
-		'Educaand_Escolares',
-		'Educaand_Adultos'
-	],
-	
-	// Icon and plugin URL
-	iconURL : '/images/stock-insert-image.png',
+	// Plugin URL
 	baseURL : '/scripts/idevices/udl-content/edition/',
 	
 	// Each block is stored in a JSON object
@@ -111,7 +100,6 @@ var $exeDevice = {
 			"Engagement" : "Implicación",
 			"Representation" : "Comprensión",
 			"Action & Expression" : "Expresión",
-			'Use the %s "Select an icon" link to change the activity type.' : 'Usa la opcion %s "Seleccionar un icono" para cambiar el tipo de actividad.',
 			"New block" : "Nuevo bloque",
 			"Delete block %s? This can't be undone." : "¿Borrar el bloque %s? No se puede deshacer.",
 			"Empty = No button" : "Vacío = Sin botón",
@@ -176,12 +164,11 @@ var $exeDevice = {
 	
 	// Go!
 	init : function(){
-		if (this.compatibleStyles.indexOf(this.getStyleName())!=-1) this.isCompatibleStyle = true;
 		this.createForm();
 		this.addDataListToTitle();
 	},
 	
-	// Title auto-complete (only compatible Styles will have this)
+	// Title auto-complete
 	addDataListToTitle : function(){
 		var opts = '';
 		var lang = $("html").eq(0).attr("lang");
@@ -202,7 +189,6 @@ var $exeDevice = {
 		
 		var html = '\
 			<div id="udlContentForm">\
-				<div class="exe-idevice-info" id="udlContentTypeInfo">'+_('Using a Style with UDL icons might help. Use the "Styles" menu to change it.')+'</div>\
 				<p id="udlContentTypeOptions">\
 					<strong>'+_('Type')+':</strong> \
 					<label for="udlContentType-engagement" class="active"><input type="radio" name="udlContentType" id="udlContentType-engagement" value="engagement" checked="checked" /> '+_('Engagement')+'</label> \
@@ -379,13 +365,6 @@ var $exeDevice = {
 	// Load the saved values in the form fields
 	loadPreviousValues : function(field){
 
-		// Different instructions for the compatible Styles
-		if (this.isCompatibleStyle){
-			var msg = _('Use the %s "Select an icon" link to change the content type.');
-				msg = msg.replace ('%s','<img src="'+this.iconURL+'" alt="" />');
-			$("#udlContentTypeInfo").html(msg);
-		}
-		
 		// Change the content type when selecting a UDL icon from the Style
 		$("#activeIdevice .js-show-icon-panel-button").click(function(){
 			$('#iconiDevice').on('load', function(){
@@ -672,15 +651,6 @@ var $exeDevice = {
 			tmp.html(c);
 			$("p:empty",tmp).remove();
 		return tmp.html();		
-	},
-	
-	// Get the name of the selected Style to see if it's compatible
-	getStyleName : function(){
-		if (typeof(exe_style)=='undefined') return "";
-		var n = exe_style.replace("/style/","");
-			n = n.split("/");
-			n = n[0];
-			return n;
 	},
 	
 	// Transform the form into a JSON object and that object into HTML to save
