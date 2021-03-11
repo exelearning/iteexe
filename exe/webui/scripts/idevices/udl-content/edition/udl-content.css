@@ -1,0 +1,76 @@
+/**
+ * UDL Content iDevice (edition CSS)
+ *
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Ignacio Gros (http://gros.es/) for Consejería de Educación y Deporte, Junta de Andalucía (https://moocedu.juntadeandalucia.es/)
+ * 
+ * Characters and alternative content icons: Consejería de Educación y Deporte (Junta de Andalucía)
+ * Add, move, delete block icons: Francisco Javier Pulido
+ * 
+ *
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ */
+#udlContentTypeInfo img{vertical-align:middle;margin:0 2px;position:relative;top:-2px}
+#udlContentTypeOptions label{padding:.3em .5em .3em 0;margin-left:.5em;border-radius:2px}
+#udlContentTypeOptions label.active{color:#fff}
+/* See the UDL Guidelines for more information: https://udlguidelines.cast.org/ */
+label[for='udlContentType-engagement'].active{background:#499113}
+label[for='udlContentType-representation'].active{background:#a25ac4}
+label[for='udlContentType-expression'].active{background:#0065ab}
+
+#udlContentFormAddBlockWrapper{margin:0}
+#udlContentFormAddBlock{text-indent:-999em;display:inline-block;width:28px;height:28px;background:url(icons/add.png) no-repeat 50% 50%;opacity:.6;margin:0 0 10px 15px;
+-webkit-transition: opacity 0.5s ease-in-out;
+-moz-transition: opacity 0.5s ease-in-out;
+transition: opacity 0.5s ease-in-out;
+background-size:24px 24px}
+#udlContentFormAddBlock:hover,#udlContentFormAddBlock:focus{opacity:1}
+
+.udlContentFormBlockHeader{background:#fafafa;border:1px solid #ededed;overflow:auto;padding:10px 15px;cursor:pointer}
+.udlContentFormBlockHeader:hover{background:#EFEFEF}
+.udlContentFormBlockHeader h2{font-size:1.1em;margin:0;display:inline;color:#787878;font-weight:bold}
+.udlContentFormBlockHeader h2 strong{text-indent:-999em;display:inline-block;width:28px;height:28px;background:url(icons/num.png) no-repeat 50% 50%;opacity:.8;background-size:20px 20px}
+.udlContentFormBlockHeaderLinks{float:right}
+.udlContentFormBlockHeaderLinks a{text-indent:-999em;display:inline-block;width:28px;height:28px;background:url(icons/num.png) no-repeat 50% 50%;opacity:.6;
+-webkit-transition: opacity 0.5s ease-in-out;
+-moz-transition: opacity 0.5s ease-in-out;
+transition: opacity 0.5s ease-in-out;
+background-size:20px 20px}
+.udlContentFormBlockHeaderLinks a:hover,.udlContentFormBlockHeaderLinks a:focus{opacity:1}
+.udlContentFormBlockHeaderLinks a.udlContentFormBlockDeleter{background-image:url(icons/delete.png)}
+.udlContentFormBlockHeaderLinks a.udlContentFormBlockUp{background-image:url(icons/up.png)}
+.udlContentFormBlockHeaderLinks a.udlContentFormBlockDown{background-image:url(icons/down.png)}
+.udlContentFormBlockHeaderLinks a.udlContentFormBlockDown{background-image:url(icons/down.png)}
+.udlContentFormBlockHeaderLinks a.udlContentToggler{background-image:url(icons/open.png)}
+.udlContentFormBlockContent{border:1px solid #ededed;border-top:0;padding-bottom:15px}
+.udlContentField{margin:0;padding:15px 15px 0 15px}
+
+.udlContentFormBlock:first-child .udlContentFormBlockUp,
+.udlContentFormBlock:last-child .udlContentFormBlockDown,
+.udlContentFormBlock:only-child .udlContentFormBlockDeleter{opacity:.3;cursor:not-allowed}
+
+.udlContentFormBlock:last-child,
+.udlContentFormBlock:only-child{margin-bottom:15px}
+
+.udlContentFormTabs ul{margin:0 0 -6px 0;padding:0;list-style:none;z-index:999;position:relative;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:14px}
+body.mce-fullscreen .udlContentFormTabs ul{display:none}
+.udlContentFormTabs li{display:inline;margin:0;padding:0}
+.udlContentFormTabs a{background:#fff;line-height:25px;display:inline-block;padding:3px 10px;border:1px solid #bfbfbf;margin-left:-4px;border-left:none;color:#999}
+.udlContentFormTabs li:first-child a{margin-left:0}
+.udlContentFormTabs li:first-child a{border-left:1px solid #bfbfbf}
+.udlContentFormTabs .active{padding-bottom:4px;border-bottom:none;color:#595959}
+.udlContentFormTabs a:hover,.udlContentFormTabs a:focus{color:#595959}
+.udlContentFormTabs a:focus{text-decoration:none}
+
+.udlContentEditorContent{display:none}
+.udlContentFormBlockButtonTxtOptions input{margin-left:1em}
+.udlContentFormBlockButtonTxtOptions img{vertical-align:bottom;position:absolute;margin-left:1em;height:60px;width:auto}
+
+/* To review (Should this code be common?) */
+#udlContentEditorWrapper{overflow:auto;margin-bottom:1.5em}
+#udlContentEditorWrapper .ci18n{width:50%;float:left}
+@media screen and (max-width:720px) {
+	#udlContentEditorWrapper .ci18n{width:100%;float:none}	
+}
+#udlContentEditorWrapper .ci18n label{display:block;font-weight:bold;margin-bottom:5px}
+#udlContentEditorWrapper .ci18n input{width:300px}

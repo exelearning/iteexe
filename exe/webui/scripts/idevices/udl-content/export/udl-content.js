@@ -1,0 +1,291 @@
+/**
+ * UDL Content iDevice
+ *
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Ignacio Gros (http://gros.es/) for Consejería de Educación y Deporte, Junta de Andalucía (https://moocedu.juntadeandalucia.es/)
+ * 
+ * Characters and alternative content icons: Consejería de Educación y Deporte (Junta de Andalucía)
+ * 
+ *
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ */
+var $UDLcontentIdevice = {
+    
+    // Check if it's working to stop if so
+	isWorking : false,
+	
+	// Close alt content default button text
+	closeBtnTxt : $exe_i18n.hide,
+	
+	// Alternative content links position
+	altContentLinks : "bottom", // bottom or top (bottom will use no tooltips)
+	// You can also use this in content.css for "top": #UDLcontentIdevicAaltContentLinks{top:0}
+	
+	// Check if the position of the links is set to top in the Style
+	checkAltContentLinksPosition : function(){
+		var e = $("#UDLcontentIdevicAaltContentLinks");
+		if (e.length>0) return;
+		e = $('<div id="UDLcontentIdevicAaltContentLinks"></div>');
+		$("body").append(e);
+		if (e.css("top")=='0px') this.altContentLinks = 'top';
+		$("#UDLcontentIdevicAaltContentLinks").remove();
+	},
+    
+	// Go!
+	init : function(){
+		
+		this.checkAltContentLinksPosition();
+        
+		$(".UDLcontentIdevice").each(function(instance){
+            
+            var iDeviceId = $(this).attr("id");
+			
+			if ($UDLcontentIdevice.altContentLinks=='bottom') $(this).addClass("exe-udlContent-alt-bottom");
+			
+			// Get the close button text and remove the buttons
+			var cBtn = $("button.exe-udlContent-alt-content-hide",this);
+			if (cBtn.length>0) {
+				var cBtnTxt = cBtn.eq(0).text();
+				if (cBtnTxt!="") $UDLcontentIdevice.closeBtnTxt = cBtnTxt;
+				cBtn.remove();
+			}
+			
+            var blocks = $(".exe-udlContent-block",this);
+            
+            blocks.each(function(i){
+                var e = $(this);
+                // Add an ID to each block
+                var blockId = "exe-udlContent-block-"+iDeviceId+"-"+i;
+                e.attr("id",blockId);
+                var isFeedback = $(this).hasClass("js-hidden");
+                // Add a "Show feedback" button if required
+                if (isFeedback) {
+					var h2 = $(".exe-udlContent-header",this);
+					var btnCSS = "udl-btn";
+					// Check the button type (normal button or character)
+					if (h2.hasClass("exe-udlContent-character-1")) btnCSS = "udl-character udl-character-1";
+					else if (h2.hasClass("exe-udlContent-character-2")) btnCSS = "udl-character udl-character-2";
+					else if (h2.hasClass("exe-udlContent-character-3")) btnCSS = "udl-character udl-character-3";
+                    if (h2.length==1) {
+                        var t = h2.text();
+                        if (t!="") {
+                            // Add the link (button)
+							var p = '<p class="exe-udlContent-block-toggler"><a href="#'+blockId+'" class="'+btnCSS+'" id="'+blockId+'-toggler"><i></i><span>'+t+'</span></a></p>';
+                            e.before(p);
+                        }   
+                        // Add event
+                        $("#"+blockId+"-toggler").click(function(){
+                            var ref = $(this).attr("href");
+                            if ($UDLcontentIdevice.isWorking) return false;
+                            $UDLcontentIdevice.isWorking = true;
+							var block = $(ref);
+                            if (block.is(":visible")) {
+                                block.slideUp(function(){
+                                    $UDLcontentIdevice.isWorking = false;
+                                });
+                            } else {
+                                block.slideDown(function(){
+                                    $UDLcontentIdevice.isWorking = false;
+                                });
+                            }
+                            return false;
+                        });                        
+                        // ARIA attributes
+                        h2.attr("id",blockId+"-title");
+                        e.attr("aria-labelledby",blockId+"-toggler "+blockId+"-title");
+                    }
+                }
+				
+				// Main content (add ID and CSS class)
+				var cont = $(".exe-udlContent-content-main",this);
+				if (cont.length!=1) return;
+				var id = blockId+"-content-main";
+				cont.attr("id",id);
+				cont.addClass("exe-udlContent-content-block"); // Add a common CSS to the block contents
+				
+				
+				// Alternative contents
+				var hasExtras = false;
+				var alt1 = $(".exe-udlContent-content-simplified",this);
+				var alt2 = $(".exe-udlContent-content-audio",this);
+				var alt3 = $(".exe-udlContent-content-visual",this);
+				if (alt1.length==1 || alt2.length==1 || alt3.length==1) hasExtras = true;
+				if (!hasExtras) return;
+				
+				// CSS class for blocks with alternative content
+				e.addClass("exe-udlContent-block-with-alt");
+				
+				// Alternative contents menu
+				var nav = "";
+				
+				// Simplified text
+				nav += $UDLcontentIdevice.getNavLi(alt1,blockId,"simplified");
+				
+				// Audio
+				nav += $UDLcontentIdevice.getNavLi(alt2,blockId,"audio");
+				
+				// Visual aid
+				nav += $UDLcontentIdevice.getNavLi(alt3,blockId,"visual");
+				
+				if (nav=="") return;
+				
+				// Add a Close link
+				nav += '<li class="exe-udlContent-alt-toggler"><a href="#'+blockId+'-content-main" class="exe-udlContent-alt-lnk exe-udlContent-alt-lnk-close" title="'+$UDLcontentIdevice.closeBtnTxt+'"><span class="sr-av">'+$UDLcontentIdevice.closeBtnTxt+'</span></a></li>'
+				nav = "<ul id='"+blockId+"-content-nav' class='exe-udlContent-content-nav'>"+nav+"</ul>";
+				
+				// Add the menu
+				e.prepend(nav);
+				
+            });
+
+			// Media URL (only visible when printing)
+			$("audio,video,iframe",this).each(function(){
+				var a = $(this);
+				var src = a.attr("src");
+				if (src && src!="") {
+					a.before('<span class="exe-udlContent-url">&lt;'+src+'&gt;</span>')
+				} else {
+					src = $("source",a);
+					if (src.length>0) {
+						src = src.attr("src");
+						if (src && src!="") {
+							a.before('<span class="exe-udlContent-url">&lt;'+src+'&gt;</span>');
+						}
+					}
+				}
+			})
+			
+        });
+		
+		// Alternative content links events
+		$(".exe-udlContent-alt-lnk").each(function(){
+			var e = $(this);
+			
+			if ($(e).hasClass("exe-udlContent-alt-lnk-close")) {
+				// Close link
+				e.click(function(){
+					$UDLcontentIdevice.isWorking = false;
+					$UDLcontentIdevice.closeAltContents(this);
+					return false;					
+				});
+			} else {
+				// Alt content links
+				// Pure HTML5 / CSS Tooltips Using Title Data Attribute
+				if ($UDLcontentIdevice.altContentLinks!='bottom') {
+					e.attr("data-tooltip",this.title);
+					e.addClass("udl-tt udl-tt-bottom");
+					e.hover(function(){
+						this.title = "";
+					},function(){
+						this.title = $(this).attr("data-tooltip");
+					});						
+				}
+				e.click(function(){
+					if ($UDLcontentIdevice.isWorking) return false;
+					$UDLcontentIdevice.isWorking = true;				
+					
+					var ref = $(this).attr("href");
+					var dest = $(ref);
+					if (dest.is(":visible")) {
+						$UDLcontentIdevice.isWorking = false;
+						$UDLcontentIdevice.closeAltContents(this);
+						return false;
+					} else {
+						
+						// Hide all the contents
+						ref = ref.split("-content-");
+						if (ref.length==2) {
+							ref = ref[0];
+							var block = $(ref);
+							// Hide all the blocks
+							$(".exe-udlContent-content-block",block).hide();
+						}
+						
+						// Show the Close link
+						var ul = e.closest('ul');
+						var closeLnk = $('.exe-udlContent-alt-toggler',ul);
+						var txt = $UDLcontentIdevice.closeBtnTxt;
+						var lnk = $(".exe-udlContent-alt-close-lnk",dest);
+						if (lnk.length==1) {
+							lnk = lnk.text();
+							if (lnk!="") {
+								txt = lnk;
+							}
+						}
+						$("a",closeLnk).attr("title",txt).attr("data-tooltip",txt);
+						closeLnk.css("visibility","visible");					
+
+						// Show the right content
+						dest.fadeIn("fast",function(){
+							$UDLcontentIdevice.isWorking = false;
+						});
+						
+					}
+					return false;
+				});			
+			}	
+			
+		});
+		
+		// Close alt content link
+		$(".exe-udlContent-alt-close-lnk a").click(function(){
+			$UDLcontentIdevice.isWorking = false;
+			$UDLcontentIdevice.closeAltContents(this);
+			return false;
+		});		
+		
+	},
+	
+	// Alternative content link HTML
+	getAltLink : function(id,type,tit){
+		return '<li><a href="#'+id+'" class="exe-udlContent-alt-lnk exe-udlContent-alt-lnk-'+type+'" title="'+tit+'" id="'+id+'-lnk"><span class="sr-av">'+tit+'</span></a></li>';
+	},
+	
+	// Close link HTML (hidden, but accessible)
+	getCloseAltLink : function(blockId,type,tit){
+		return '<p class="exe-udlContent-alt-close-lnk"><a href="#'+blockId+'-content-main" title="'+$UDLcontentIdevice.closeBtnTxt+'" class="udl-lnk-'+type+'"><span>'+$UDLcontentIdevice.closeBtnTxt+' ('+tit+')</span></a></p>';
+	},
+	
+	// Get the alternative content link
+	getNavLi : function(e,blockId,type){
+		var li = "";
+		if (e.length!=1) return li;
+		e.addClass("exe-udlContent-content-block"); // Add a common CSS to the block contents
+		var h2 = $(".exe-udlContent-alt-content-title h2",e);
+		if (h2.length==1) {
+			var tit = h2.text();
+			if (tit!="") {
+				var id = blockId+"-content-"+type;
+				e.attr("id",id);
+				li += $UDLcontentIdevice.getAltLink(id,type,tit);
+				h2.after($UDLcontentIdevice.getCloseAltLink(blockId,type,tit));
+				// ARIA attributes
+				h2.attr("id",id+"-title");
+				e.attr("aria-labelledby",id+"-lnk "+id+"-title");
+			}
+		}	
+		return li;
+	},	
+	
+	// Close all the alternative contents and show the main content
+	closeAltContents : function(e){
+		var ref = $(e).attr("href");
+		ref = ref.split("-content-");
+		if (ref.length==2) {
+			ref = ref[0];
+			var block = $(ref);
+			// Hide all the blocks
+			$(".exe-udlContent-content-block",block).hide();
+			// Show the main content
+			$(".exe-udlContent-content-main").show();
+			// Hide the Close link
+			$(".exe-udlContent-alt-toggler",block).css("visibility","hidden");
+		}
+	}
+    
+}
+
+$(function(){
+	// DOM is loaded
+	$UDLcontentIdevice.init();
+});

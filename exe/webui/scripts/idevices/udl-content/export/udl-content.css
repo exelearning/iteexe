@@ -1,0 +1,125 @@
+/**
+ * UDL Content iDevice
+ *
+ * Released under Attribution-ShareAlike 4.0 International License.
+ * Author: Ignacio Gros (http://gros.es/) for Consejería de Educación y Deporte, Junta de Andalucía (https://moocedu.juntadeandalucia.es/)
+ * 
+ * Characters and alternative content icons: Consejería de Educación y Deporte (Junta de Andalucía)
+ * 
+ * Pure HTML5 / CSS Tooltips Using Title Data Attribute by Codeconvey.com:
+ * https://codeconvey.com/pure-html5-css-tooltips-using-title-data-attribute/
+ * See Codeconvey.com Terms & Conditions: https://codeconvey.com/terms-conditions/
+ * Set $UDLactitityIdevice.altContentLinks = "top" to enable them
+ *
+ * License: http://creativecommons.org/licenses/by-sa/4.0/
+ */
+.exe-udlContent-block{margin-top:1em}
+.exe-udlContent .exe-udlContent-block-toggler{margin:1.5em 0}
+.exe-udlContent .udl-btn{text-decoration:none;background-color:#499113;padding:.3em 1em;color:#fff;
+transition: background-color 0.4s ease-in-out;
+display:inline-block;
+}
+.exe-udlContent .udl-btn:hover{background-color:#366c0e}
+.exe-udlContent .udl-btn:focus{text-decoration:underline}
+
+.exe-udlContent-representation .udl-btn{background-color:#a25ac4}
+.exe-udlContent-representation .udl-btn:hover{background-color:#7d389e}
+.exe-udlContent-representation .udl-btn:focus{text-decoration:underline}
+
+.exe-udlContent-expression .udl-btn{background-color:#0065ab}
+.exe-udlContent-expression .udl-btn:hover{background-color:#004b80}
+.exe-udlContent-expression .udl-btn:focus{text-decoration:underline}
+
+.js .exe-udlContent-header,
+.exe-udlContent-alt-close-lnk{
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px); 
+}
+
+.js .exe-udlContent-alt-content-title h2{font-size:1em}
+.exe-udlContent-alt-content-title h2{color:#499113}
+.exe-udlContent-representation .exe-udlContent-alt-content-title h2{color:#a25ac4}
+.exe-udlContent-expression .exe-udlContent-alt-content-title h2{color:#0065ab}
+
+.exe-udlContent-content-nav{margin:0;padding:0;list-style:none;text-align:center}
+.exe-udlContent-content-nav li{margin:0 10px;padding:0;display:inline}
+
+.exe-udlContent .exe-udlContent-alt-lnk{width:40px;height:40px;padding:0;background:url(udl-icons-sm.png);display:inline-block;opacity:.6;
+transition: opacity 0.4s ease-in-out}
+.exe-udlContent .exe-udlContent-alt-toggler{visibility:hidden;float:right}
+.exe-udlContent-alt-lnk:hover,.exe-udlContent-alt-lnk:focus{opacity:1}
+.exe-udlContent .exe-udlContent-alt-lnk-simplified{background-position:0 -40px}
+.exe-udlContent .exe-udlContent-alt-lnk-audio{background-position:0 -80px}
+.exe-udlContent .exe-udlContent-alt-lnk-visual{background-position:0 -120px}
+
+@media screen and (min-width:1px) {
+	.exe-udlContent .exe-udlContent-alt-lnk{background-image:url(udl-icons.png);background-size:40px auto}
+}
+
+.exe-udlContent-content-simplified,
+.exe-udlContent-content-audio,
+.exe-udlContent-content-visual{border-top:1px solid #858585;padding-top:.5em;position:relative;margin:1em 0}
+
+.exe-udlContent-block-toggler i{display:none}
+.exe-udlContent .udl-character{color:#000;font-size:1.2em}
+
+/* Alternative contents (bottom) */
+.js .exe-udlContent-alt-bottom .exe-udlContent-alt-content-title h2{font-size:1.2em}
+.exe-udlContent-alt-bottom .exe-udlContent-content-simplified,
+.exe-udlContent-alt-bottom .exe-udlContent-content-audio,
+.exe-udlContent-alt-bottom .exe-udlContent-content-visual{border-top:none;padding-top:.0}
+.exe-udlContent-alt-bottom .exe-udlContent-block-with-alt{position:relative;padding-bottom:40px}
+.exe-udlContent-alt-bottom .exe-udlContent-content-nav{position:absolute;bottom:0;right:0;overflow:hidden;height:40px}
+.exe-udlContent-alt-bottom .exe-udlContent-content-nav li{margin:0 0 0 20px;height:40px}
+.exe-udlContent-alt-bottom .exe-udlContent .exe-udlContent-alt-toggler{float:none}
+
+@media screen and (min-width:1px) {
+	.exe-udlContent .udl-character span{opacity:.6;transition: all 0.3s ease-in-out;margin-right:1em;line-height:1.5em}
+	.exe-udlContent .udl-character{display:flex;align-items:center;text-decoration:none;min-height:125px}
+	.exe-udlContent .udl-character i{float:left;display:inline-block;height:125px;width:125px;background:url(udl-character-1.gif) no-repeat 0 0;background-size:125px auto;border-radius:10px;margin-right:1em}
+	.exe-udlContent .udl-character-2 i{background-image:url(udl-character-2.gif)}
+	.exe-udlContent .udl-character-3 i{background-image:url(udl-character-3.gif)}
+	.exe-udlContent .udl-character:hover i,.exe-udlContent .udl-character:focus i{background-position:0 -125px}
+	.exe-udlContent .udl-character:hover span,.exe-udlContent .udl-character:focus span{opacity:1;font-size:1.03em}
+}
+
+@media screen and (max-width:576px) {
+	.exe-udlContent .udl-character{display:inline-block}
+	.exe-udlContent .udl-character i{display:block;float:none;margin:0 auto .5em auto}
+}
+
+/* Pure HTML5 / CSS Tooltips */
+a.udl-tt{position:relative;display:inline;color:#3cae41;font-size:.95em}
+a.udl-tt:after{display:block;visibility:hidden;position:absolute;bottom:0;left:20%;opacity:0;content:attr(data-tooltip);height:auto;min-width:180px;padding:6px 8px;z-index:999;color:#fff;text-decoration:none;text-align:center;background:rgba(0,0,0,0.85);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
+a.udl-tt:before{position:absolute;visibility:hidden;width:0;height:0;left:50%;bottom:0;opacity:0;content:"";border-style:solid;border-width:6px 6px 0 6px;border-color:rgba(0,0,0,0.85) transparent transparent transparent}
+a.udl-tt:hover:after{visibility:visible;opacity:1;bottom:20px}
+a.udl-tt:hover:before{visibility:visible;opacity:1;bottom:14px}
+/* Tips on bottom */
+a.udl-tt.udl-tt-bottom:after{bottom:auto;top:0}
+a.udl-tt.udl-tt-bottom:hover:after{top:48px}
+a.udl-tt.udl-tt-bottom:before{border-width:0 5px 8.7px 5px;border-color:transparent transparent rgba(0,0,0,0.85) transparent;top:0px}
+a.udl-tt.udl-tt-bottom:hover:before{top:40px}
+/* Colors */
+a.udl-tt:after{background:#333}
+a.udl-tt:before{border-color:#333 transparent transparent transparent}
+a.udl-tt.udl-tt-bottom:before{border-color:transparent transparent #333 transparent}
+a.udl-tt.right:before{border-color:transparent #333 transparent transparent}
+a.udl-tt.left:before{border-color:transparent transparent transparent #333}
+a.udl-tt:after,a.udl-tt:before{transition:opacity 0.3s ease-in-out}
+
+/* Print options */
+.exe-udlContent button.exe-udlContent-alt-content-hide,
+.exe-udlContent-url{display:none}
+@media print{
+	.exe-udlContent-block-toggler i,
+	.exe-udlContent-content-nav,.mejs-container,.exe-udlContent-block-toggler{display:none!important}
+	.exe-udlContent-content-block,.exe-udlContent-block,.exe-udlContent-url{display:block!important}
+	.exe-udlContent .exe-udlContent-content-simplified,
+	.exe-udlContent .exe-udlContent-content-audio,
+	.exe-udlContent .exe-udlContent-content-visual{border-top:1px solid #858585;padding-top:.5em;margin-top:1.5em}
+	.exe-udlContent-alt-bottom .exe-udlContent-block-with-alt{padding-bottom:0}
+	.exe-udlContent a{text-decoration:none!important}
+	.exe-udlContent a[href^=http]:after{content:" <" attr(href) "> "}
+	.js .exe-udlContent-header{position:relative!important;clip:auto;margin-top:1.5em}
+}
