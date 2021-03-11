@@ -74,3 +74,8 @@ body.mce-fullscreen .udlContentFormTabs ul{display:none}
 }
 #udlContentEditorWrapper .ci18n label{display:block;font-weight:bold;margin-bottom:5px}
 #udlContentEditorWrapper .ci18n input{width:300px}
+
+/* Footer logos */
+@media screen and (min-width:1px) {
+	#udlContentForm{background:url(udl-content-logos.png) no-repeat bottom right;background-size:400px auto;padding-bottom:41px}	
+}
