@@ -706,9 +706,9 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class="GameModeLabel"><a href="#quextEGameModeHelp" id="quextEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
-                                <input class="gameQE-TypeGame"  id="quextETypeActivity" type="radio" name="qxtgamemode" value="1" />\
+                                <input class="gameQE-TypeGame" checked="checked"  id="quextETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                 <label for="quextETypeActivity">' + _("0 to 10") + '</label>\
-								<input class="gameQE-TypeGame" checked="checked" id="quextEGameMode" type="radio" name="qxtgamemode" value="0" />\
+								<input class="gameQE-TypeGame"  id="quextEGameMode" type="radio" name="qxtgamemode" value="0" />\
                                 <label for="quextEGameMode">' + _("Points and lives") + '</label>\
                                 <input class="gameQE-TypeGame"  id="quextETypeReto" type="radio" name="qxtgamemode" value="2" />\
                                 <label for="quextETypeReto">' + _("No score") + '</label>\
