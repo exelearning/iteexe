@@ -1,5 +1,5 @@
 /**
- * VideoQuExt Activity iDevice (edition code)
+ * VideoQuExt iDevice (edition code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -9,10 +9,6 @@
  */
 var $exeDevice = {
     // i18n
-    i18n: {
-        name: _('VideoQuExt Activity'),
-        alt: _('Video Quiz') // To review
-    },
     iDevicePath: "/scripts/idevices/videoquext-activity/edition/",
     msgs: {},
     active: 0,

@@ -1,5 +1,5 @@
 /**
- * VideoQuExt Activity iDevice (export code)
+ * VideoQuExt iDevice (export code)
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
  * Graphic design: Ana María Zamora Moreno, Francisco Javier Pulido
@@ -47,7 +47,7 @@ var $eXeVideoQuExt = {
         if (!$eXeVideoQuExt.supportedBrowser('vquext')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Video Quiz') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>VideoQuExt</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
