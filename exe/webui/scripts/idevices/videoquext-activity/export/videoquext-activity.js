@@ -824,19 +824,22 @@ var $eXeVideoQuExt = {
         });
         $('#vquextProgressBar-' + instance).on('mouseenter', 'a.gameQP-PointBar', function (e) {
             e.preventDefault();
-            if (mOptions.isNavigable) {
+            if (mOptions.isNavigable || mOptions.previewQuestions) {
                 var number = $(this).data('number');
                 var textoTooltip = mOptions.questionsGame[number].quextion;
                 if (textoTooltip.length > 0) {
                     $(this).append('<div class="gameQP-Tooltip">' + textoTooltip + '</div>');
                     $(this).find("div.gameQP-Tooltip").css("left", '-121px');
+                    if (typeof (MathJax) != "undefined") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '.gameQP-Tooltip']);
+                    }
                     $(this).find("div.gameQP-Tooltip").fadeIn(300);
                 }
             }
         });
         $('#vquextProgressBar-' + instance).on('mouseleave', 'a.gameQP-PointBar', function (e) {
             e.preventDefault();
-            if (mOptions.isNavigable) {
+            if (mOptions.isNavigable || mOptions.previewQuestions) {
                 $(".gameQP-PointBar > div.gameQP-Tooltip").fadeOut(300).delay(300).queue(function () {
                     $(this).remove();
                     $(this).dequeue();

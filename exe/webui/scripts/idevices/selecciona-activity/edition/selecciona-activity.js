@@ -832,11 +832,11 @@ var $exeDevice = {
                                 </p>\
                                 <p>\
                                 <strong class="GameModeLabel"><a href="#seleccionaEGameModeHelp" id="seleccionaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
-                                    <input class="gameQE-TypeGame" checked="checked id="seleccionaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
+                                    <input class="gameQE-TypeGame" checked="checked id="seleccionaETypeActivity" type="radio" name="slcgamemode" value="1" />\
                                     <label for="seleccionaETypeActivity">' + _("0 to 10") + '</label>\
-                                    <input class="gameQE-TypeGame" " id="seleccionaEGameMode" type="radio" name="qxtgamemode" value="0" />\
+                                    <input class="gameQE-TypeGame" " id="seleccionaEGameMode" type="radio" name="slcgamemode" value="0" />\
                                     <label for="seleccionaEGameMode">' + _("Points and lives") + '</label>\
-                                    <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="qxtgamemode" value="2" />\
+                                    <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="slcgamemode" value="2" />\
                                     <label for="seleccionaETypeReto">' + _("No score") + '</label>\
                                 </p>\
                                 <div id="seleccionaEGameModeHelp" class="gameQE-TypeGameHelp">\
