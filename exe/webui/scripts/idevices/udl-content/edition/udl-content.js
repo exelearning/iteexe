@@ -179,6 +179,7 @@ var $exeDevice = {
 		}
 		if (opts=='') return;
 		var tit = $("#activeIdevice input[type='text']").eq(0);
+		tit.attr("placeholder",_("Double click or type to see suggestions"));
 		opts = '<datalist id="activeIdeviceTitleSuggestions">'+opts+'</datalist>';
 		tit.after(opts);
 		tit.attr("list","activeIdeviceTitleSuggestions");
@@ -456,6 +457,7 @@ var $exeDevice = {
 			blocks = this.htmlToJSON(wrapper);
 			
 		} else {
+			$("#activeIdevice input[type='text']").eq(0).val(""); // Default title (empty)
 			blocks = this.defaultContent;
 		}
 		
