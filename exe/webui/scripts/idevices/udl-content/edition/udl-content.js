@@ -333,11 +333,31 @@ var $exeDevice = {
 	
 	// Show/Hide the button options (text or characters)
 	toggleBtnOptions : function(e) {
+		e.value = e.value.replace(/~/g,""); // ~ is not allowed, as it's used when saving the content
 		var fid = e.id;
 			fid = fid.replace("udlContentFormBlockButtonTxt-","udlContentFormBlockButtonTxtOptions-");
 		var optionsBlock = $("#"+fid);
 		if (e.value=='') optionsBlock.css("visibility","hidden");
-		else optionsBlock.css("visibility","visible");		
+		else optionsBlock.css("visibility","visible");	
+		// Check if there's accessible hidden content
+		fid = fid.replace("Options-","Explanation-");
+		optionsBlock = $("#"+fid);
+		if (e.value!='' && e.value.indexOf("|")!=-1) {
+			var tmp = e.value;
+				tmp = tmp.replace("|","~~");
+			var parts = tmp.split("~~");
+			if (parts.length==2) {
+				if (parts[0]!="" && parts[1]!="") {
+					var spans = $("span",optionsBlock);
+					spans.eq(0).text(parts[0]);
+					spans.eq(1).text(parts[1]);
+					optionsBlock.show();
+				}
+			} else {
+				optionsBlock.hide();
+			}
+			
+		} else optionsBlock.hide();		
 	},
 	
 	// Move a block (up or down)
@@ -450,7 +470,16 @@ var $exeDevice = {
 			var btnType = 0;
 			var header = $(".exe-udlContent-header",this);
 			if (header.length==1) {
-				btnTxt = header.text() || "";	
+				btnTxt = header.text() || "";
+				// Transform the accessible hidden content into "foo | "
+				var srAv = $(".sr-av",header);
+				if (srAv.length==1) {
+					var srAvTxt = srAv.text();
+						srAvTxt = $.trim(srAvTxt);
+					srAv.remove();
+					btnTxt = header.text();
+					if (btnTxt!="" && srAvTxt!="") btnTxt = srAvTxt + " | " + btnTxt;
+				}
 				if (header.hasClass("exe-udlContent-character-1")) btnType = 1;
 				else if (header.hasClass("exe-udlContent-character-2")) btnType = 2;
 				else if (header.hasClass("exe-udlContent-character-3")) btnType = 3;
@@ -530,6 +559,22 @@ var $exeDevice = {
 		var btnType = block.btnType;
 		var btnOptionsStyle = ' style="visibility:hidden"';
 		if (btnTxt!="") btnOptionsStyle = "";
+		var btnTextPartsStyle = ' style="display:none"';
+		// Check if there's hidden accessible text
+		var txtA = "";
+		var txtB = "";
+		if (btnTxt.indexOf("|")!=-1) {
+			var tmp = btnTxt;
+				tmp = tmp.replace("|","~~");
+			var parts = tmp.split("~~");
+			if (parts.length==2) {
+				if (parts[0]!="" && parts[1]!="") {
+					btnTextPartsStyle = '';
+					txtA = parts[0];
+					txtB = parts[1];
+				}
+			}
+		}
 		var ch0 = "";
 		var ch1 = "";
 		var ch2 = "";
@@ -565,6 +610,9 @@ var $exeDevice = {
 							<label><input type="radio" value="3"'+ch3+' /> '+_('Character')+' 3</label> \
 							<img src="'+this.baseURL+'characters/'+btnType+'.png" alt="'+_('Character')+'" />\
 						</span>\
+					</p>\
+					<p class="udlContentField udlContentFormBlockButtonTxtExplanation"'+btnTextPartsStyle+'>\
+						<strong>'+_("Button text")+': </strong><span class="sr-only-explanation" title="'+_("Accessible hidden content")+'">'+txtA+'</span> <span title="'+_("Visible")+'">'+txtB+'</span>\
 					</p>\
 					<div class="udlContentFormBlockTxt udlContentField">\
 						<label class="sr-av">'+_("Content")+': </label>\
@@ -605,6 +653,7 @@ var $exeDevice = {
 				labels.eq(5).attr("for","udlContentFormTxt-"+i);
 			$("input[type='text']",this).eq(0).attr("id","udlContentFormBlockButtonTxt-"+i);
 			$(".udlContentFormBlockButtonTxtOptions",this).attr("id","udlContentFormBlockButtonTxtOptions-"+i);
+			$(".udlContentFormBlockButtonTxtExplanation",this).attr("id","udlContentFormBlockButtonTxtExplanation-"+i);
 			var radios = $("input[type='radio']",this);
 				radios.eq(0).attr("name","udlContentCharacter-"+i).attr("id","udlContentCharacter-"+i+"-0");
 				radios.eq(1).attr("name","udlContentCharacter-"+i).attr("id","udlContentCharacter-"+i+"-1");
@@ -667,6 +716,17 @@ var $exeDevice = {
 			if (block.contMain=="") error = true;
 			else {
 				var btnTxt = block.btnTxt; 
+					btnTxt = $.trim(btnTxt);
+				// Check if the button text has accessible hidden content
+				if (btnTxt.indexOf("|")!=-1) {
+					var tmp = btnTxt.replace("|","~~");
+					var parts = tmp.split("~~");
+					if (parts.length==2) {
+						if (parts[0]!="" && parts[1]!="") {
+							btnTxt = '<span class="sr-av">'+$.trim(parts[0])+' </span>' + $.trim(parts[1]);
+						}
+					}
+				}
 				var css = "";
 				if (btnTxt!="") css = " js-hidden";
 				// Alternative contents

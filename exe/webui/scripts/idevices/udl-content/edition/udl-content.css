@@ -65,6 +65,9 @@ body.mce-fullscreen .udlContentFormTabs ul{display:none}
 .udlContentEditorContent{display:none}
 .udlContentFormBlockButtonTxtOptions input{margin-left:1em}
 .udlContentFormBlockButtonTxtOptions img{vertical-align:bottom;position:absolute;margin-left:1em;height:60px;width:auto}
+.udlContentFormBlockButtonTxtExplanation strong{font-weight:normal}
+.udlContentFormBlockButtonTxtExplanation span{cursor:help}
+.sr-only-explanation{opacity:.6;margin:0 .2em;cursor:help;text-decoration:line-through}
 
 /* To review (Should this code be common?) */
 #udlContentEditorWrapper{overflow:auto;margin-bottom:1.5em}

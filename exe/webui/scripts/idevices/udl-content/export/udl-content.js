@@ -67,10 +67,10 @@ var $UDLcontentIdevice = {
 					else if (h2.hasClass("exe-udlContent-character-2")) btnCSS = "udl-character udl-character-2";
 					else if (h2.hasClass("exe-udlContent-character-3")) btnCSS = "udl-character udl-character-3";
                     if (h2.length==1) {
-                        var t = h2.text();
+                        var t = $("h2",h2).html();
                         if (t!="") {
                             // Add the link (button)
-							var p = '<p class="exe-udlContent-block-toggler"><a href="#'+blockId+'" class="'+btnCSS+'" id="'+blockId+'-toggler"><i></i><span>'+t+'</span></a></p>';
+							var p = '<p class="exe-udlContent-block-toggler"><a href="#'+blockId+'" class="'+btnCSS+'" id="'+blockId+'-toggler"><span>'+t+'</span></a></p>';
                             e.before(p);
                         }   
                         // Add event

@@ -75,12 +75,12 @@ transition: opacity 0.4s ease-in-out}
 .exe-udlContent-alt-bottom .exe-udlContent .exe-udlContent-alt-toggler{float:none}
 
 @media screen and (min-width:1px) {
-	.exe-udlContent .udl-character span{opacity:.6;transition: all 0.3s ease-in-out;margin-right:1em;line-height:1.5em}
+	.exe-udlContent .udl-character span{opacity:.6;transition: all 0.3s ease-in-out;margin:0 1em}
 	.exe-udlContent .udl-character{display:flex;align-items:center;text-decoration:none;min-height:125px}
-	.exe-udlContent .udl-character i{float:left;display:inline-block;height:125px;width:125px;background:url(udl-character-1.gif) no-repeat 0 0;background-size:125px auto;border-radius:10px;margin-right:1em}
-	.exe-udlContent .udl-character-2 i{background-image:url(udl-character-2.gif)}
-	.exe-udlContent .udl-character-3 i{background-image:url(udl-character-3.gif)}
-	.exe-udlContent .udl-character:hover i,.exe-udlContent .udl-character:focus i{background-position:0 -125px}
+	.exe-udlContent .udl-character:before{content:" ";float:left;display:block;height:125px;width:125px;background:url(udl-character-1.gif) no-repeat 0 0;background-size:125px auto;border-radius:10px}
+	.exe-udlContent .udl-character-2:before{background-image:url(udl-character-2.gif)}
+	.exe-udlContent .udl-character-3:before{background-image:url(udl-character-3.gif)}
+	.exe-udlContent .udl-character:hover:before,.exe-udlContent .udl-character:focus:before{background-position:0 -125px}
 	.exe-udlContent .udl-character:hover span,.exe-udlContent .udl-character:focus span{opacity:1;font-size:1.03em}
 }
 
