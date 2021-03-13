@@ -69,16 +69,15 @@ body.mce-fullscreen .udlContentFormTabs ul{display:none}
 .udlContentFormBlockButtonTxtExplanation span{cursor:help}
 .sr-only-explanation{opacity:.6;margin:0 .2em;cursor:help;text-decoration:line-through}
 
+#udlContentEditorWrapper{overflow:auto;margin-bottom:0}
+#udlContentFormInfo{text-align:center;font-size:.9em;color:#999;overflow:auto;padding-right:10px;margin:0;position:relative;top:-5px;min-height:28px}
+#udlContentFormInfo a{display:block;background:url(icons/info.png) no-repeat 50% 50%;opacity:.6;width:28px;height:28px;background-size:20px 20px;position:absolute;top:0;right:16px}
+#udlContentFormInfoContent{width:400px;display:none;padding-top:2px}
+#udlContentFormInfoContent img{display:block;margin:5px auto 0 auto}
 /* To review (Should this code be common?) */
-#udlContentEditorWrapper{overflow:auto;margin-bottom:1.5em}
 #udlContentEditorWrapper .ci18n{width:50%;float:left}
 @media screen and (max-width:720px) {
 	#udlContentEditorWrapper .ci18n{width:100%;float:none}	
 }
 #udlContentEditorWrapper .ci18n label{display:block;font-weight:bold;margin-bottom:5px}
 #udlContentEditorWrapper .ci18n input{width:300px}
-
-/* Footer logos */
-@media screen and (min-width:1px) {
-	#udlContentForm{background:url(udl-content-logos.png) no-repeat bottom right;background-size:400px auto;padding-bottom:41px}	
-}

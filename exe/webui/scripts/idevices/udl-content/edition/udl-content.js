@@ -198,6 +198,10 @@ var $exeDevice = {
 				<p id="udlContentFormAddBlockWrapper"><a href="#" id="udlContentFormAddBlock" title="'+_("New block")+'">'+_("New block")+'</a></p>\
 				<div id="udlContentFormBlocks"></div>\
 			</div>\
+			<p id="udlContentFormInfo">\
+				<a href="#udlContentFormInfoContent" title="'+_("About this iDevice")+'"><span class="sr-av">'+_("About this iDevice")+'</span></a>\
+				<span id="udlContentFormInfoContent">'+_("Cofinanced by:")+' <span lang="es"><img src="'+this.baseURL+'udl-content-logos.png" width="400" height="54" title="FEDER - Consejería de Educación y Deporte (Junta de Andalucía)" alt="Unión Europea - Fondos FEDER - Junta de Andalucía - Consejería de Educación y Deporte" /></span></span>\
+			</p>\
 		';
 		
 		
@@ -237,6 +241,11 @@ var $exeDevice = {
 		});
 		// Enable the tabs
 		$exeAuthoring.iDevice.tabs.init("udlContentEditorWrapper");		
+		// iDevice info
+		$("#udlContentFormInfo a").click(function(){
+			$("#udlContentFormInfoContent").toggle();
+			return false;
+		});
 	},
 	
 	// Add JavaScript events to the block elements
