@@ -92,7 +92,7 @@ var $eXeDesafio = {
                 <div class="desafio-GameContainer" id="desafioGameContainer-' + instance + '">\
                     <div class="desafio-GameScoreBoard">\
                         <div class="desafio-GameChallenges" id="desafioGameChallenges-' + instance + '">\
-                            <a href="#" class="desafio-LinkDesafio" id="desafioDesafio-' + instance + '" title="Desafio">\
+                            <a href="#" class="desafio-LinkDesafio" id="desafioDesafio-' + instance + '" title="' + msgs.msgDesafio + '">\
                                 <strong><span class="sr-av">' + msgs.msgDesafio + ':</span></strong>\
                                 <div class="desafio-GameDesafio desafio-Activo"></div>\
                             </a>\
@@ -141,7 +141,7 @@ var $eXeDesafio = {
                                 <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
                                 <div class="exeQuextIcons34 exeQuextIcons34-Time"></div>\
                                 <p id="desafioPTime-' + instance + '" class="desafio-PTime">00:00:00</p>\
-                                <a href="#" class="desafio-LinkMinimize" id="desafioLinkMinimize-' + instance + '" title="Minimizar">\
+                                <a href="#" class="desafio-LinkMinimize" id="desafioLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                                 <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                                 <div class="exeQuextIcons34 exeQuextIcons34-Minimize desafio-Activo"></div>\
                                 </a>\
@@ -725,7 +725,7 @@ var $eXeDesafio = {
         }
         if (mOptions.typeQuestion == 0) {
             if ($eXeDesafio.checkWord(mOptions.desafioSolution, answord)) {
-                message = $eXeDesafio.getRetroFeedMessages(true, instance) + mOptions.msgs.msgDesafioSolved1;
+                message = $eXeDesafio.getRetroFeedMessages(true, instance) + mOptions.msgs.msgDesafioSolved;
                 typeMessage = 1;
                 mOptions.desafioSolved = true;
                 $eXeDesafio.saveDataStorage(instance);
