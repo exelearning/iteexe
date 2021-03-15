@@ -122,12 +122,13 @@ var $eXeVideoQuExt = {
     sendScore: function (auto, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             message = '';
-        var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
+        var score = ((mOptions.hits * 10) /mOptions.questionsGame.length).toFixed(2);
         if (mOptions.isNavigable) {
+            score=0;
             for (var i = 0; i < mOptions.questionsGame.length; i++) {
                 score = mOptions.questionsGame[i].answerScore > 0 ? score + 1 : score;
             }
-            score = ((score * 10) / mOptions.numberQuestions).toFixed(2);
+            score = ((score * 10) /  mOptions.questionsGame.length).toFixed(2);
         }
         if (mOptions.gameStarted || mOptions.gameOver) {
             if (typeof $eXeVideoQuExt.mScorm != 'undefined') {
