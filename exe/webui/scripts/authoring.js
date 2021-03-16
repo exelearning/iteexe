@@ -1386,6 +1386,7 @@ var $exeAuthoring = {
                     e = $(this);
                     e.attr("id", tabId);
                     txt = e.attr("title");
+                    e.attr("title","");
                     if (txt == '') txt = (i + 1);
                     if (i > 0) {
                         e.hide();
