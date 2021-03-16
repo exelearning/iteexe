@@ -232,7 +232,41 @@ var $UDLcontentIdevice = {
 			$UDLcontentIdevice.isWorking = false;
 			$UDLcontentIdevice.closeAltContents(this);
 			return false;
-		});		
+		});	
+
+		// Add character image
+		$(".exe-udlContent-block-toggler a.udl-character").each(function(){
+			var c = this.className;
+				c = c.split(" ");
+				c = c[c.length-1];
+				c = c.replace("udl-character-","");
+			if (c==1 || c==2 || c==3) {
+				// Image names (characters)
+				var characters = [
+					"",
+					"EMO",
+					"RÉFLEX",
+					"INTERÉS"
+				];
+				var tmp = "";
+				var img = "";
+				try {
+					tmp = window.getComputedStyle(this,':before');
+					if (tmp && tmp.backgroundImage && tmp.backgroundImg!="") {
+						tmp = tmp.backgroundImage;
+						tmp = tmp.split("(");
+						tmp = tmp[tmp.length-1];
+						tmp = tmp.split(")");
+						tmp = tmp[0];
+						tmp = tmp.replace(/"/g,"");
+						if (tmp!="") img = tmp;
+					}
+				} catch(e) {
+					
+				}
+				if (img!="") $(this).prepend('<img src="'+img+'" alt="'+characters[c]+'" class="udl-character-img" />');
+			}
+		})
 		
 	},
 	

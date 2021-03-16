@@ -36,6 +36,7 @@ display:inline-block;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px); 
 }
+.udl-character-img{display:none}
 
 .js .exe-udlContent-alt-content-title h2{font-size:1em}
 .exe-udlContent-alt-content-title h2{color:#499113}
