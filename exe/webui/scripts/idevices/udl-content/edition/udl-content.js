@@ -141,7 +141,7 @@ var $exeDevice = {
 			"Timing" : "Temporalización",
 			"Work in group" : "Trabaja en equipo",
 			"More information" : "Para saber más",
-			"Challenge" : "Reto",
+			"Challenge" : "Desafío",
 			"Note" : "Nota",
 			"Trivia" : "Curiosidad",
 			"Cultural notes" : "Apuntes culturales",
