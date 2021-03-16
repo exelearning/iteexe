@@ -180,6 +180,19 @@ var myTheme = {
 			var iDevices = $(".iDevice_wrapper");
 			var firstIsText = false;
 			iDevices.each(function(i){
+				// To review (just for 2.5.1)
+				if ($(this).hasClass("UDLcontentIdevice")) {
+					var h = $(".iDevice_header",this);
+						h = h.css("background-image");
+						if (h && h!="") {
+							h = h.split("/");
+							h = h[h.length-1];
+							h = h.split(".");
+							h = h[0];
+							h = h.replace("icon_","");
+							$(this).addClass("em_iDevice_"+h);
+						}
+				} // / 2.5.1				
 				if (iDevices.length>1 && i==0 && this.className.indexOf("FreeTextIdevice")!=-1) {
 					$(".iDevice",this).css("margin-top",0);
 					firstIsText = true;
