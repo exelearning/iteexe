@@ -64,7 +64,8 @@ body.mce-fullscreen .udlContentFormTabs ul{display:none}
 
 .udlContentEditorContent{display:none}
 .udlContentFormBlockButtonTxtOptions input{margin-left:1em}
-.udlContentFormBlockButtonTxtOptions img{vertical-align:bottom;position:absolute;margin-left:1em;height:60px;width:auto}
+.udlContentFormBlockButtonTxtOptions img{vertical-align:bottom;position:absolute;margin-left:1em;height:60px;width:auto;cursor:help}
+.udlContentFormBlockButtonTxtOptions img.pos-0{cursor:auto}
 .udlContentFormBlockButtonTxtExplanation strong{font-weight:normal}
 .udlContentFormBlockButtonTxtExplanation span{cursor:help}
 .sr-only-explanation{opacity:.6;margin:0 .2em;cursor:help;text-decoration:line-through}

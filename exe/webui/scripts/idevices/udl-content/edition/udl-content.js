@@ -29,7 +29,15 @@ var $exeDevice = {
 			"contAlt2" : "",
 			"contAlt3" : ""
 		}
-	],	
+	],
+
+	// Image names (characters)
+	characters : [
+		"",
+		"EMO",
+		"RÉFLEX",
+		"INTERÉS"
+	],
 	
 	// Translatable strings (Language tab)
 	ci18n : {
@@ -256,7 +264,9 @@ var $exeDevice = {
 		var e = $(".udlContentFormBlockDeleter",block);
 		if (e.length!=1) return;
 		$("input[name='udlContentCharacter-"+i+"']").change(function(){
-			$("#"+this.name+"-thumbnail").attr("src",$exeDevice.baseURL+"characters/"+this.value+".png");
+			var v = this.value;
+			var imgNames = $exeDevice.characters;
+			$("#"+this.name+"-thumbnail").attr("src",$exeDevice.baseURL+"characters/"+v+".png").attr("title",imgNames[v]).attr("class","pos-"+v);
 		});
 		// Delete block
 		e.unbind("click").click(function(){
@@ -590,6 +600,7 @@ var $exeDevice = {
 		var ch1 = "";
 		var ch2 = "";
 		var ch3 = "";
+		var imgNames = $exeDevice.characters;
 		if (btnType==0) ch0 = ' checked="checked"';
 		else if (btnType==1) ch1 = ' checked="checked"';
 		else if (btnType==2) ch2 = ' checked="checked"';
@@ -619,7 +630,7 @@ var $exeDevice = {
 							<label><input type="radio" value="1"'+ch1+' /> '+_('Character')+' 1</label> \
 							<label><input type="radio" value="2"'+ch2+' /> '+_('Character')+' 2</label> \
 							<label><input type="radio" value="3"'+ch3+' /> '+_('Character')+' 3</label> \
-							<img src="'+this.baseURL+'characters/'+btnType+'.png" alt="'+_('Character')+'" />\
+							<img src="'+this.baseURL+'characters/'+btnType+'.png" alt="'+_('Character')+'" title="'+imgNames[btnType]+'" class="pos-'+btnType+'" />\
 						</span>\
 					</p>\
 					<p class="udlContentField udlContentFormBlockButtonTxtExplanation"'+btnTextPartsStyle+'>\
