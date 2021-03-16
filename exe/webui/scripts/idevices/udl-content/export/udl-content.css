@@ -57,6 +57,7 @@ transition: opacity 0.4s ease-in-out}
 	.exe-udlContent .exe-udlContent-alt-lnk{background-image:url(udl-icons.png);background-size:40px auto}
 }
 
+.exe-udlContent-content-block{overflow:auto}
 .exe-udlContent-content-simplified,
 .exe-udlContent-content-audio,
 .exe-udlContent-content-visual{border-top:1px solid #858585;padding-top:.5em;position:relative;margin:1em 0}
