@@ -120,6 +120,7 @@ var $exeDevice = {
 			"Presentation" : "Presentación",
 			"Character" : "Personaje",
 			"Text button" : "Botón de texto",
+			"Accessible hidden content" : "Contenido oculto de manera accesible",
 			// datalist
 			"Activity" : "Actividad",
 			"Highlight" : "Destacado",
@@ -164,8 +165,10 @@ var $exeDevice = {
 			"Grammar" : "Gramática",
 			"Vocabulary" : "Vocabulario",
 			"Playback" : "Reproducción",
-			"Phonetics" : "Fonética"
-			// ,"Visual aid" : "Apoyo visual"			
+			"Phonetics" : "Fonética",
+			// Recognition
+			"About this iDevice" : "Sobre este iDevice",
+			"Cofinanced by:" : "Cofinanciado por:"
 		},		
 		
 	},
