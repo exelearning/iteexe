@@ -139,6 +139,8 @@ var $exeDevice = {
 		});
 		
 		$("#interactiveVideoYoutubeURL").change(function(){
+			// Allow youtu.be:
+			this.value = this.value.replace("https://youtu.be/","https://www.youtube.com/watch?v=");
 			var e = $("#interactiveVideoEditorOpener");
 			if (this.value.indexOf("https://www.youtube.com/watch?v=")==0) {
 				$exeDevice.testIfVideoExists(this.value,"youtube");
@@ -147,6 +149,8 @@ var $exeDevice = {
 				e.hide();
 			}
 		}).keyup(function(){
+			// Allow youtu.be:
+			this.value = this.value.replace("https://youtu.be/","https://www.youtube.com/watch?v=");			
 			var e = $("#interactiveVideoEditorOpener");
 			if (this.value.indexOf("https://www.youtube.com/watch?v=")==0) {
 				$exeDevice.testIfVideoExists(this.value,"youtube");
