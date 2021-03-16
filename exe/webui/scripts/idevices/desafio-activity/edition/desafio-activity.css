@@ -33,7 +33,6 @@
 
 .desafio-DataDesafio input[type=text] {
   width: 100%;
-  text-align: center;
   min-width: 100px;
   flex-grow: 1;
 }

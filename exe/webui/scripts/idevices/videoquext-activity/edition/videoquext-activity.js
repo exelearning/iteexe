@@ -1217,6 +1217,7 @@ var $exeDevice = {
             $exeDevice.showPlayer();
             $exeDevice.startVideo(game.idVideoQuExt, game.startVideoQuExt, game.endVideoQuExt)
         } else {
+            $exeDevice.initClock(game.videoType);
             $exeDevice.startVideo(game.idVideoQuExt, game.startVideoQuExt, game.endVideoQuExt)
         }
         var instructions = game.instructionsExe || game.instructions,
