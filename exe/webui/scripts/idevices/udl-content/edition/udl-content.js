@@ -41,7 +41,7 @@ var $exeDevice = {
 	
 	// Translatable strings (Language tab)
 	ci18n : {
-		"simplified" : _("Simplified text"),
+		"simplified" : _("Easier to read"),
 		"audio" : _("Audio"),
 		"visual" : _("Visual aid"),
 		"hide" : _("Close")
@@ -114,7 +114,7 @@ var $exeDevice = {
 			"Please provide a main content for all the blocks." : "Escribe el contenido principal de todos los bloques.",
 			"Choose the content to edit:" : "Elige el tipo de contenido a editar:",
 			"Main content (required)" : "Contenido principal (obligatorio)",
-			"Simplified text" : "Texto simplificado",
+			"Easier to read" : "Lectura facilitada",
 			"Visual aid" : "Apoyo visual",
 			"Alternative content" : "Contenido alternativo",
 			"Presentation" : "Presentación",
@@ -642,7 +642,7 @@ var $exeDevice = {
 							<p class="sr-av">'+_("Choose the content to edit:")+'</p>\
 							<ul>\
 								<li><a href="#" class="active udl-a-0">'+_("Main content (required)")+'</a></li>\
-								<li><a href="#" title="'+_("Alternative content")+'" class="udl-a-1">'+_("Simplified text")+'</a></li>\
+								<li><a href="#" title="'+_("Alternative content")+'" class="udl-a-1">'+_("Easier to read")+'</a></li>\
 								<li><a href="#" title="'+_("Alternative content")+'" class="udl-a-2">'+_("Audio")+'</a></li>\
 								<li><a href="#" title="'+_("Alternative content")+'" class="udl-a-3">'+_("Visual aid")+'</a></li>\
 							</ul>\
@@ -756,7 +756,7 @@ var $exeDevice = {
 				var cont2 = block.contAlt2;
 				var cont3 = block.contAlt3;
 				// Alternative contents titles
-				var cont1T = _('Simplified text');
+				var cont1T = _('Easier to read');
 				var cont2T = _('Audio');
 				var cont3T = _('Visual aid');
 				var clsBtn = _('Hide');
