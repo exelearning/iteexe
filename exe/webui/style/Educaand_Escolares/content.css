@@ -173,9 +173,6 @@ padding-top: 10px!important}
 .ListaIdevice .iDevice_header, .MultichoiceIdevice .iDevice_header, .TrueFalseIdevice .iDevice_header, .MultiSelectIdevice .iDevice_header, .ClozeIdevice .iDevice_header, .ScrambledListIdevice .iDevice_header, .GeoGebraIdevice .iDevice_header, .interactive-videoIdevice .iDevice_header{background-image:url(icon_udl_exp_interactivo.svg)}
 .QuizTestIdevice .iDevice_header{background-image:url(icon_udl_exp_cuestionario.svg)}
 
-/* UDL iDevice */
-body .udl-character-img{display:inline;position:absolute!important;clip:rect(1px, 1px, 1px, 1px)}
-
 /*iDevice Educaand*/
 /*solo los creados para Educaand*/
 /*Implicación del aprendizaje*/

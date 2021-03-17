@@ -22,6 +22,12 @@ var $UDLcontentIdevice = {
 	altContentLinks : "bottom", // bottom or top (bottom will use no tooltips)
 	// You can also use this in content.css for "top": #UDLcontentIdevicAaltContentLinks{top:0}
 	
+	// Get the base path (different in eXe)
+	getBase: function () {
+		if (typeof ($exeAuthoring) != 'undefined') return "/scripts/idevices/udl-content/export/";
+		return "";
+	},	
+	
 	// Check if the position of the links is set to top in the Style
 	checkAltContentLinksPosition : function(){
 		var e = $("#UDLcontentIdevicAaltContentLinks");
@@ -265,7 +271,13 @@ var $UDLcontentIdevice = {
 				} catch(e) {
 					
 				}
-				if (img!="") $(this).prepend('<img src="'+img+'" alt="'+characters[c]+'" class="udl-character-img" />');
+				if (img!="") {
+					var ext = img.substr(img.length - 4);
+					if (ext!=".gif") {
+						img = $UDLcontentIdevice.getBase()+"udl-character-"+c+".gif";
+					}
+					$(this).prepend('<img src="'+img+'" alt="'+characters[c]+'" class="udl-character-img" />');
+				}
 			}
 		})
 		

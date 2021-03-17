@@ -32,12 +32,12 @@ display:inline-block;
 .exe-udlContent-expression .udl-btn:focus{text-decoration:underline}
 
 .js .exe-udlContent-header,
-.exe-udlContent-alt-close-lnk{
+.exe-udlContent-alt-close-lnk,
+.udl-character-img{
     position: absolute !important;
     clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
     clip: rect(1px, 1px, 1px, 1px); 
 }
-.udl-character-img{display:none}
 
 .js .exe-udlContent-alt-content-title h2{font-size:1em}
 .exe-udlContent-alt-content-title h2{color:#499113}
@@ -116,7 +116,11 @@ a.udl-tt:after,a.udl-tt:before{transition:opacity 0.3s ease-in-out}
 .exe-udlContent-url{display:none}
 @media print{
 	.exe-udlContent-block-toggler i,
-	.exe-udlContent-content-nav,.mejs-container,.exe-udlContent-block-toggler{display:none!important}
+	.exe-udlContent-content-nav,.mejs-container,.exe-udlContent-block-toggler .udl-btn{display:none!important}
+	.exe-udlContent-block-toggler .udl-character:before{display:none}
+	.exe-udlContent .udl-character span{display:none}
+	.exe-udlContent-block-toggler{width:125px;height:125px;position:relative;overflow:hidden}
+	.udl-character-img{width:125px;left:0;top:0;clip:auto}
 	.exe-udlContent-content-block,.exe-udlContent-block,.exe-udlContent-url{display:block!important}
 	.exe-udlContent .exe-udlContent-content-simplified,
 	.exe-udlContent .exe-udlContent-content-audio,
