@@ -7,11 +7,6 @@
  * 
  * Characters and alternative content icons: Consejería de Educación y Deporte (Junta de Andalucía)
  * 
- * Pure HTML5 / CSS Tooltips Using Title Data Attribute by Codeconvey.com:
- * https://codeconvey.com/pure-html5-css-tooltips-using-title-data-attribute/
- * See Codeconvey.com Terms & Conditions: https://codeconvey.com/terms-conditions/
- * Set $UDLactitityIdevice.altContentLinks = "top" to enable them
- *
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  */
 .exe-udlContent-block{margin-top:1em}
@@ -91,25 +86,6 @@ transition: opacity 0.4s ease-in-out}
 	.exe-udlContent .udl-character{display:inline-block}
 	.exe-udlContent .udl-character i{display:block;float:none;margin:0 auto .5em auto}
 }
-
-/* Pure HTML5 / CSS Tooltips */
-a.udl-tt{position:relative;display:inline;color:#3cae41;font-size:.95em}
-a.udl-tt:after{display:block;visibility:hidden;position:absolute;bottom:0;left:20%;opacity:0;content:attr(data-tooltip);height:auto;min-width:180px;padding:6px 8px;z-index:999;color:#fff;text-decoration:none;text-align:center;background:rgba(0,0,0,0.85);-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px}
-a.udl-tt:before{position:absolute;visibility:hidden;width:0;height:0;left:50%;bottom:0;opacity:0;content:"";border-style:solid;border-width:6px 6px 0 6px;border-color:rgba(0,0,0,0.85) transparent transparent transparent}
-a.udl-tt:hover:after{visibility:visible;opacity:1;bottom:20px}
-a.udl-tt:hover:before{visibility:visible;opacity:1;bottom:14px}
-/* Tips on bottom */
-a.udl-tt.udl-tt-bottom:after{bottom:auto;top:0}
-a.udl-tt.udl-tt-bottom:hover:after{top:48px}
-a.udl-tt.udl-tt-bottom:before{border-width:0 5px 8.7px 5px;border-color:transparent transparent rgba(0,0,0,0.85) transparent;top:0px}
-a.udl-tt.udl-tt-bottom:hover:before{top:40px}
-/* Colors */
-a.udl-tt:after{background:#333}
-a.udl-tt:before{border-color:#333 transparent transparent transparent}
-a.udl-tt.udl-tt-bottom:before{border-color:transparent transparent #333 transparent}
-a.udl-tt.right:before{border-color:transparent #333 transparent transparent}
-a.udl-tt.left:before{border-color:transparent transparent transparent #333}
-a.udl-tt:after,a.udl-tt:before{transition:opacity 0.3s ease-in-out}
 
 /* Print options */
 .exe-udlContent button.exe-udlContent-alt-content-hide,

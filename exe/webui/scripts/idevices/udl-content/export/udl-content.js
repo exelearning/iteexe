@@ -19,7 +19,7 @@ var $UDLcontentIdevice = {
 	closeBtnTxt : $exe_i18n.hide,
 	
 	// Alternative content links position
-	altContentLinks : "bottom", // bottom or top (bottom will use no tooltips)
+	altContentLinks : "bottom", // bottom or top
 	// You can also use this in content.css for "top": #UDLcontentIdevicAaltContentLinks{top:0}
 	
 	// Get the base path (different in eXe)
@@ -177,16 +177,6 @@ var $UDLcontentIdevice = {
 				});
 			} else {
 				// Alt content links
-				// Pure HTML5 / CSS Tooltips Using Title Data Attribute
-				if ($UDLcontentIdevice.altContentLinks!='bottom') {
-					e.attr("data-tooltip",this.title);
-					e.addClass("udl-tt udl-tt-bottom");
-					e.hover(function(){
-						this.title = "";
-					},function(){
-						this.title = $(this).attr("data-tooltip");
-					});						
-				}
 				e.click(function(){
 					if ($UDLcontentIdevice.isWorking) return false;
 					$UDLcontentIdevice.isWorking = true;				
@@ -219,7 +209,7 @@ var $UDLcontentIdevice = {
 								txt = lnk;
 							}
 						}
-						$("a",closeLnk).attr("title",txt).attr("data-tooltip",txt);
+						$("a",closeLnk).attr("title",txt);
 						closeLnk.css("visibility","visible");					
 
 						// Show the right content
