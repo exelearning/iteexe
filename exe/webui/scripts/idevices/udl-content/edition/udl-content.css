@@ -75,7 +75,7 @@ body.mce-fullscreen .udlContentFormTabs ul{display:none}
 #udlContentFormInfo{text-align:center;font-size:.9em;color:#999;overflow:auto;padding-right:10px;margin:0;position:relative;top:-5px;min-height:28px}
 #udlContentFormInfo a{display:block;background:url(icons/info.png) no-repeat 50% 50%;opacity:.6;width:28px;height:28px;background-size:20px 20px;position:absolute;top:0;right:16px}
 #udlContentFormInfoContent{width:400px;display:none;padding-top:2px}
-#udlContentFormInfoContent img{display:block;margin:5px auto 0 auto}
+#udlContentFormInfoContent img{display:block;margin:0 auto;width:300px;height:auto}
 /* To review (Should this code be common?) */
 #udlContentEditorWrapper .ci18n{width:50%;float:left}
 @media screen and (max-width:720px) {

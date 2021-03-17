@@ -214,7 +214,7 @@ var $exeDevice = {
 			</div>\
 			<p id="udlContentFormInfo">\
 				<a href="#udlContentFormInfoContent" title="'+_("About this iDevice")+'"><span class="sr-av">'+_("About this iDevice")+'</span></a>\
-				<span id="udlContentFormInfoContent">'+_("Cofinanced by:")+' <span lang="es"><img src="'+this.baseURL+'udl-content-logos.png" width="400" height="54" title="FEDER - Consejería de Educación y Deporte (Junta de Andalucía)" alt="Unión Europea - Fondos FEDER - Junta de Andalucía - Consejería de Educación y Deporte" /></span></span>\
+				<span id="udlContentFormInfoContent">'+_("Cofinanced by:")+' <span lang="es"><img src="'+this.baseURL+'udl-content-logos.png" width="600" height="237" title="FEDER - Consejería de Educación y Deporte - Andalucía se mueve con Europa" alt="Unión Europea - FEDER - Junta de Andalucía - Consejería de Educación y Deporte - Andalucía se mueve con Europa" /></span></span>\
 			</p>\
 		';
 		
