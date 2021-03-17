@@ -3,6 +3,7 @@
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros (http://gros.es/) for Consejería de Educación y Deporte, Junta de Andalucía (https://moocedu.juntadeandalucia.es/)
+ * Cofinanced with the European Union FEDER funds.
  * 
  * Characters and alternative content icons: Consejería de Educación y Deporte (Junta de Andalucía)
  * Add, move, delete block icons: Francisco Javier Pulido
@@ -52,7 +53,8 @@ var $exeDevice = {
 		
 		// Required strings
 		title : _("UDL Content"),
-		altTitle : _("UDL"),
+		shortTitle : _("UDL"), // That will be the title of the Style
+		longTitle : _("Universal Design for Learning"), // Not used (help text)
 		
 		// Auto-complete
 		datalist : [
