@@ -123,6 +123,7 @@ var $exeDevice = {
 			"Character" : "Personaje",
 			"Text button" : "Botón de texto",
 			"Accessible hidden content" : "Contenido oculto de manera accesible",
+			"Double click or type to see suggestions" : "Haz doble clic o escribe para ver sugerencias",
 			// datalist
 			"Activity" : "Actividad",
 			"Highlight" : "Destacado",
