@@ -106,7 +106,8 @@ var $exeDevice = {
 		],
 		
 		// Spanish (optional)
-		es : {
+		// These strings will be deleted soon
+		es_to_review : {
 			"Engagement" : "Implicación",
 			"Representation" : "Comprensión",
 			"Action & Expression" : "Expresión",
