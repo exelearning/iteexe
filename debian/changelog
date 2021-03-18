@@ -1,3 +1,51 @@
+intef-exe (3:2.6)
+
+  * Ignacio Gros
+    - TinyMCE: New image optimizer.
+    - TinyMCE: New mind maps editor plugin (mindmaps, by David Richard).
+    - TinyMCE: Paste as text by default. (#541)
+    - New UDL Content iDevice.
+      Junta de Andalucía - Consejería de Educación y Deporte (cofinanced with the European Union FEDER funds).
+    - Interactive Video iDevice: You can use a youtu.be URL too.
+    - Fixed: The CSS class that depends on the selected iDevice icon was missing when exporting. (#558)
+    - Fixed: Could not see the selected icon in Styles with SVG icons.
+    - iDevices revision (usability, HTML, presentation, strings).
+    - New "Advanced mode" preference revision.
+    - Fixed: MediaElement Player download file problem. (#555)
+    - SimplePoint Style: Prevent link default behaviour (usability problem).
+    - The About eXe page shows the application type instead of the revision number.
+
+  * SDWeb
+    - TinyMCE: New audio recorder plugin.
+    - TinyMCE: New image optimizer (upload revision).
+    - The "Advanced mode" is now a preference. It's saved in exe.conf instead of using a cookie. (#489)
+    - Fixed: Backward compatibility. Open an elp file reading its contentv2.xml file. (#206)
+    - Fixed: Available iDevices were not saved. (#530)
+
+  * Manuel Narváez
+    - New iDevice category (Games):
+      New iDevices: Lock, Multiple Choice Quiz.
+      New functionalities and bug fixes in: A-Z Quiz Game, QuExt, VideoQuExt, Word Guessing.
+    - GeoGebra iDevice: 
+      It works with ID, not only URL.
+      Optional content after the activity.
+      SCORM revision (not only 0 to 10 scores).
+      New zoom option for big applets.
+      New authorship option.
+      The activity size is no longer required. 
+
+  * APSL
+    - Fixed: The default package license was not respected. (#547)
+    - Fixed: Open elp with an incorrect contentv3.xml file (use the content.data file instead). (#545)
+    - Fixed: Strange characters in the iDevice editor. (#535)
+
+  * Juan Rafael Fernández
+    - String extraction process revision.
+    - Translations coordination.
+
+  * eXeLearning.net Translation Team
+    - New full Spanish translation, by Juan Rafael Fernández.
+
 intef-exe (3:2.5.1) lucid; urgency=medium
 
   * Ignacio Gros
