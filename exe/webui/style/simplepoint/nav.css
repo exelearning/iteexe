@@ -9,7 +9,8 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 #nodeDecoration{padding:0;margin:0;background:none;border:none}
 #nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #f3f3f3}
 #siteFooter{position:fixed;bottom:0;width:100%}
-.page-counter{position:fixed;color:#FFF;z-index:999;bottom:15px;right:60px;font-size:.9em;display:inline-block;margin:0 auto}
+.page-counter{display:none}
+#bottomPagination .page-counter{position:fixed;color:#FFF;z-index:999;bottom:15px;right:75px;font-size:.9em;display:inline-block;margin:0 auto}
 .page-counter-label{display:none}
 
 @media all and (min-width: 700px) {
@@ -39,12 +40,13 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
 #siteNav .other-section{display:none}
 #siteNav ul ul ul a{padding-left:60px}
 /* Pagination */
-.pagination{padding-top:20px;text-align:right}
+.pagination a{display:block;width:16px;height:16px;background:url(_simplepoint_navigation.png) no-repeat -50px -50px;position:fixed;z-index:999}
 .pagination .sep{display:none}
-
-#topPagination{display:none}
-.pagination a{display:block;width:16px;height:16px;background:url(_simplepoint_navigation.png) no-repeat -50px -50px;position:fixed;bottom:17px;right:17px;z-index:999}
-.pagination .prev{right:43px;background-position:0 -50px}
+#topPagination{position:absolute;top:0}
+#topPagination a{top:17px;right:17px}
+#bottomPagination{padding-top:20px;text-align:right}
+#bottomPagination a{bottom:17px;right:17px}
+#content .prev{right:43px;background-position:0 -50px}
 /* Autoclear */
 #content:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0} 
 #content{display:inline-block}
@@ -58,8 +60,8 @@ html[xmlns] #content{display:block}
 * html #siteNav ul ul a{width:405px}
 * html #siteNav ul ul ul a{width:380px}
 
-#nav-toggler{margin:0;position:absolute;top:17px;right:17px}
-#info-toggler{margin:0;position:absolute;top:17px;right:43px}
+#nav-toggler{margin:0;position:absolute;top:17px;right:95px}
+#info-toggler{margin:0;position:absolute;top:17px;right:69px}
 #nav-toggler a,#info-toggler a{display:block;width:16px;height:16px;background:url(_simplepoint_navigation.png) no-repeat 0 0;outline:none}
 #info-toggler a{background-position:-50px 0}
 #nav-toggler span,.pagination a span,#nodeDecoration,#info-toggler span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
@@ -84,14 +86,15 @@ html[xmlns] #content{display:block}
 @media all and (max-width: 700px) {
     body{background:#fff}
 	#content{width:100%;background:#fff;border:none;box-shadow:none;margin:0;padding-bottom:0}
-	#header,#emptyHeader{padding-right:20px}
-	.pagination a {bottom:60px;left:17px;position:absolute}
-	.pagination .next{left:auto;right:17px}	
+	#header,#emptyHeader{padding-right:40px}
+	#bottomPagination a {bottom:60px;left:17px;position:absolute}
+	#bottomPagination .next{left:auto;right:17px}	
 	#siteNav{float:none;width:100%;padding:0}
 	#main-wrapper,.no-nav #main-wrapper{padding:0 10px;min-height:100px}
 	#nodeTitle{margin-top:.5em}
 	#siteFooter,.no-nav #siteFooter{position:static;bottom:auto;width:auto;padding:25px 50px;height:auto;line-height:1.5em;min-height:50px;text-align:center}
-	.page-counter{position:static;bottom:auto;color:#000;text-align:center;display:block;margin-bottom:1.5em}
+	#topPagination{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+	#bottomPagination .page-counter{position:static;bottom:auto;color:#000;text-align:center;display:block;margin-bottom:1.5em}
 	.page-counter-label{display:inline}
     #packageLicense,#packageLicense a{background:none;padding:0;text-align:center;color:#444}
 	#content .exe-col{float:none;width:100%;padding:0}

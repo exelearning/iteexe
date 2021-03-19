@@ -9,10 +9,11 @@ intef-exe (3:2.6)
     - Interactive Video iDevice: You can use a youtu.be URL.
     - The About eXe page shows the application type instead of the revision number.
     - iDevices revision (usability, HTML, presentation, strings).
+    - Presentation Style: New Next/Previous top links.
     - Fixed: The CSS class that depends on the selected iDevice icon was missing when exporting. (#558)
     - Fixed: Could not see the selected icon in Styles with SVG icons.
     - Fixed: MediaElement Player download file problem. (#555)
-    - Fixed: SimplePoint Style: Prevent link default behaviour (usability problem).
+    - Fixed: Presentation Style: Prevent link default behaviour (usability problem).
 
   * Manuel Narváez
     - New iDevice category (Games):
