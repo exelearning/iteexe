@@ -566,8 +566,8 @@ var $eXeSelecciona = {
         return sUrl;
     },
     playSound: function (selectedFile, instance) {
-        var mOptions = $eXeSelecciona.options[instance],
-            selectedFile = $eXeSelecciona.extractURLGD(selectedFile);
+        var mOptions = $eXeSelecciona.options[instance];
+        selectedFile = $eXeSelecciona.extractURLGD(selectedFile);
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
         mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
