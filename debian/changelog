@@ -4,6 +4,7 @@ intef-exe (3:2.6)
     - TinyMCE: New image optimizer.
     - TinyMCE: New mind maps editor plugin (mindmaps, by David Richard).
     - TinyMCE: Paste as text by default. (#541)
+    - TinyMCE: GNU Free Documentation License added to the available licenses list.
     - New UDL Content iDevice.
       Junta de Andalucía - Consejería de Educación y Deporte (cofinanced with the European Union FEDER funds).
     - Interactive Video iDevice: You can use a youtu.be URL.
