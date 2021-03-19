@@ -89,6 +89,7 @@ class SnapConfig(Config):
         self.audioMediaConverter_wav = "/usr/bin/sox %(infile)s %(outfile)s"
         self.audioMediaConverter_mp3 = "/usr/bin/sox %(infile)s -t wav - | /usr/bin/lame -b 32 - %(outfile)s"
         self.ffmpegPath = "/usr/bin/ffmpeg"
+        self.eXeUIversion = 2
 
     def _getConfigPathOptions(self):
         """

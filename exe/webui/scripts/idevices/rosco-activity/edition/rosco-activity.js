@@ -349,6 +349,7 @@ var $exeDevice = {
 			}
 			return false;
 		};
+		url=$exeDevice.extractURLGD(url);
 		image.prop('src', url)
 			.on('load', function () {
 				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -360,7 +361,6 @@ var $exeDevice = {
 					}
 					return false;
 				} else {
-
 					var mData = $exeDevice.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
 					$exeDevice.drawImage(this, mData);
 					image.attr('alt', alt);
@@ -749,10 +749,8 @@ var $exeDevice = {
 			$exeDevice.showImage(img, url, x, y, alt, 1);
 		});
 		$('#roscoDataWord input.roscoURLAudioEdition').on('change', function () {
-			var validExt = ['mp3', 'ogg', 'wav'],
-				selectedFile = $(this).val(),
-				ext = selectedFile.split('.').pop().toLowerCase();
-			if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
+			var selectedFile = $(this).val();
+			if (selectedFile.length ==0) {
 				eXe.app.alert(_("Supported formats") + ": mp3', 'ogg', 'wav'");
 			} else {
 				if (selectedFile.length > 4) {
@@ -764,10 +762,8 @@ var $exeDevice = {
 		$('#roscoDataWord a.roscoPlayAudio').on('click', function (e) {
 			e.preventDefault();
 			var $audio = $(this).parent().find('.roscoURLAudioEdition').first(),
-				validExt = ['mp3', 'ogg', 'wav'],
-				selectedFile = $audio.val(),
-				ext = selectedFile.split('.').pop().toLowerCase();
-			if (selectedFile.length > 0 && validExt.indexOf(ext) == -1) {
+				selectedFile = $audio.val();
+			if (selectedFile.length==0) {
 				eXe.app.alert(_("Supported formats") + ": mp3', 'ogg', 'wav'");
 			} else {
 				if (selectedFile.length > 4) {
@@ -787,10 +783,12 @@ var $exeDevice = {
 			x = x ? x : 0;
 			y = y ? y : 0;
 			$pater.slideToggle();
+			$exeDevice.stopSound();
 			$exeDevice.showImage(img, url, x, y, alt, 0);
 		});
 		$('#roscoDataWord a.roscoLinkClose').on('click', function (e) {
 			e.preventDefault();
+			$exeDevice.stopSound();
 			$(this).parents('.roscoImageBarEdition').slideUp();
 		});
 		$('#roscoDataWord .roscoWordEdition').on('focusout', function () {
@@ -883,7 +881,8 @@ var $exeDevice = {
 	},
 	playSound: function (selectedFile) {
 		$exeDevice.stopSound();
-		$exeDevice.playerAudio = new Audio(selectedFile);
+		var selectFile=$exeDevice.extractURLGD(selectedFile);
+		$exeDevice.playerAudio = new Audio(selectFile);
 		$exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
 			$exeDevice.playerAudio.play();
 		});
@@ -928,5 +927,12 @@ var $exeDevice = {
 			}
 		} catch (e) {}
 		return false;
-	}
+	},
+	extractURLGD: function (urlmedia) {
+        var sUrl=urlmedia;
+        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
+    }
 }

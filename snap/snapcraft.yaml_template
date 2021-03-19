@@ -23,7 +23,7 @@ parts:
 apps:
   exelearning:
     environment:
-      PYTHONPATH: $SNAP/lib:$SNAP/usr/lib/:$SNAP/lib/python2.7/site-packages/usr/share/exe/:$PYTHONPATH
+      PYTHONPATH: $SNAP/lib:$SNAP/usr/lib/:$SNAP/lib/python2.7/site-packages:$SNAP/lib/python2.7/site-packages/usr/share/exe/:$PYTHONPATH
       LANG: C.UTF-8
       LC_ALL: C.UTF-8
       HOME: /home/$USER

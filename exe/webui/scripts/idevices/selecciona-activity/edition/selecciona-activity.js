@@ -298,8 +298,8 @@ var $exeDevice = {
     },
 
     playSound: function (selectedFile) {
-        var selectedFile=$exeDevice.extractURLGD(selectedFile);
-        $exeDevice.playerAudio = new Audio(selectedFile);
+        var selectFile=$exeDevice.extractURLGD(selectedFile);
+        $exeDevice.playerAudio = new Audio(selectFile);
         $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
             $exeDevice.playerAudio.play();
         });
@@ -2094,7 +2094,7 @@ var $exeDevice = {
         });
 
         $('#seleccionaEURLAudio').on('change', function () {
-            var selectedFile = $(this).val().trim();;
+            var selectedFile = $(this).val().trim();
             if (selectedFile.length==0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {

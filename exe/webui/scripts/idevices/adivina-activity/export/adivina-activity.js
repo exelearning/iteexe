@@ -187,6 +187,7 @@ var $eXeAdivina = {
         mOptions.waitStart = false;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
             var p = mOptions.wordsGame[i];
+            p.url = $eXeAdivina.extractURLGD(p.url);
             if (version < 2) {
                 if (p.type == 2) {
                     p.type = 1
@@ -241,6 +242,7 @@ var $eXeAdivina = {
 
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeAdivina.options[instance];
+        selectedFile = $eXeAdivina.extractURLGD(selectedFile);
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
         mOptions.playerAudio.addEventListener("canplaythrough", function(event) {
             mOptions.playerAudio.play();
@@ -1475,6 +1477,13 @@ var $eXeAdivina = {
             }
         }
         return sp;
+    },
+    extractURLGD: function (urlmedia) {
+        var sUrl = urlmedia;
+        if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
     }
 }
 $(function () {

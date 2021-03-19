@@ -265,7 +265,8 @@ var $exeDevice = {
         }
     },
     playSound: function (selectedFile) {
-        $exeDevice.playerAudio = new Audio(selectedFile);
+        var selectFile=$exeDevice.extractURLGD(selectedFile);
+        $exeDevice.playerAudio = new Audio(selectFile);
         $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
             $exeDevice.playerAudio.play();
         });
@@ -516,6 +517,7 @@ var $exeDevice = {
         $cursor.hide();
         $image.attr('alt', alt);
         $('#quextENoImage').show();
+        url=$exeDevice.extractURLGD(url);
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -1288,8 +1290,6 @@ var $exeDevice = {
         p.msgHit = $('#quextEMessageOK').val();
         p.msgError = $('#quextEMessageKO').val();
         var optionEmpy = false;
-        var validExt = ['mp3', 'ogg', 'wav'],
-            extaudio = p.audio.split('.').pop().toLowerCase();
         $('.gameQE-EAnwersOptions').each(function (i) {
             var option = $(this).val().trim();
             if (i < p.numberOptions && option.length == 0) {
@@ -1318,9 +1318,6 @@ var $exeDevice = {
             message = msgs.msgTimeFormat;
         } else if (p.type == 2 && p.tSilentVideo > 0 && (p.silentVideo < p.iVideo || p.silentVideo >= p.fVideo)) {
             message = msgs.msgSilentPoint;
-        }
-        if (p.audio.length > 0 && validExt.indexOf(extaudio) == -1) {
-            message = _("Supported formats") + '. ' + _('Audio') + ": mp3, ogg, wav";
         }
         if (message.length == 0) {
             $exeDevice.questionsGame[$exeDevice.active] = p;
@@ -1834,24 +1831,16 @@ var $exeDevice = {
         });
         $('#quextEPlayAudio').on('click', function (e) {
             e.preventDefault();
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $('#quextEURLAudio').val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (validExt.indexOf(ext) == -1) {
-                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
-            } else {
-                if (selectedFile.length > 4) {
-                    $exeDevice.stopSound();
-                    $exeDevice.playSound(selectedFile);
-                }
+            var selectedFile = $('#quextEURLAudio').val().trim();
+            if (selectedFile.length > 4) {
+                $exeDevice.stopSound();
+                $exeDevice.playSound(selectedFile);
             }
         });
 
         $('#quextEURLAudio').on('change', function () {
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $(this).val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
+            var selectedFile = $(this).val().trim();
+            if (selectedFile.length==0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {
                 if (selectedFile.length > 4) {
@@ -1944,4 +1933,11 @@ var $exeDevice = {
         var isValid = text.length > 0 && text !== '.' && text !== ',' && /^-?\d*[.,]?\d*$/.test(text);
         return isValid;
     },
+    extractURLGD: function (urlmedia) {
+        var sUrl=urlmedia;
+        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
+    }
 }

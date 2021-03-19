@@ -812,8 +812,6 @@ var $exeDevice = {
         p.tSilentVideo = parseInt($('#adivinaETimeSilence').val());
         p.eText = tinyMCE.get('adivinaEText').getContent();
         p.percentageShow = parseInt($('#adivinaEPercentageShow').val());
-        var validExt = ['mp3', 'ogg', 'wav'],
-            extaudio = p.audio.split('.').pop().toLowerCase();
         if (p.word.length == 0) {
             message = $exeDevice.msgs.msgEProvideWord;
         } else if (p.definition.length == 0 && p.type != 1) {
@@ -834,9 +832,6 @@ var $exeDevice = {
             message = msgs.msgTimeFormat;
         } else if (p.type == 2 && p.tSilentVideo > 0 && (p.silentVideo < p.iVideo || p.silentVideo >= p.fVideo)) {
             message = msgs.msgSilentPoint;
-        }
-        if (p.audio.length > 0 && validExt.indexOf(extaudio) == -1) {
-            message = _("Supported formats") + '. ' + _('Audio') + ": mp3, ogg, wav";
         }
         if (message.length == 0) {
             $exeDevice.wordsGame[$exeDevice.active] = p;
@@ -936,6 +931,7 @@ var $exeDevice = {
         $cursor.hide();
         $image.attr('alt', alt);
         $('#adivinaENoImage').show();
+        url=$exeDevice.extractURLGD(url);
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -960,7 +956,8 @@ var $exeDevice = {
     },
 
     playSound: function (selectedFile) {
-        $exeDevice.playerAudio = new Audio(selectedFile);
+        var selectFile=$exeDevice.extractURLGD(selectedFile);
+        $exeDevice.playerAudio = new Audio(selectFile);
         $exeDevice.playerAudio.addEventListener("canplaythrough", function(event){
             $exeDevice.playerAudio.play();
         });
@@ -1061,18 +1058,11 @@ var $exeDevice = {
         });
         $('#adivinaEPlayAudio').on('click', function (e) {
             e.preventDefault();
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $('#adivinaEURLAudio').val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (validExt.indexOf(ext) == -1) {
-                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
-            } else {
-                if (selectedFile.length > 4) {
-                    $exeDevice.stopSound();
-                    $exeDevice.playSound(selectedFile);
-                }
+            var selectedFile = $('#adivinaEURLAudio').val().trim();
+            if (selectedFile.length > 4) {
+                $exeDevice.stopSound();
+                $exeDevice.playSound(selectedFile);
             }
-
         });
         $(' #adivinaECheckSoundVideo').on('change', function () {
             $exeDevice.showVideoQuestion();
@@ -1250,13 +1240,12 @@ var $exeDevice = {
         });
 
         $('#adivinaEURLAudio').on('change', function () {
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $(this).val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
+            var selectedFile = $(this).val().trim();
+            if (selectedFile.length==0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {
                 if (selectedFile.length > 4) {
+                    $exeDevice.stopSound();
                     $exeDevice.playSound(selectedFile);
                 }
             }
@@ -1682,5 +1671,12 @@ var $exeDevice = {
         wrapper.html(str);
         return wrapper.text();
     },
+    extractURLGD: function (urlmedia) {
+        var sUrl=urlmedia;
+        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
+    }
 
 }

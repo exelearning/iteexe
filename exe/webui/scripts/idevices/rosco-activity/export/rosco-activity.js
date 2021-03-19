@@ -184,12 +184,6 @@ var $eXeRosco = {
 			json = $eXeRosco.Decrypt(json);
 		}
 		var mOptions = $eXeRosco.isJsonString(json);
-		for (var i = 0; i < mOptions.wordsGame.length; i++) {
-			if (version < 2) {
-				mOptions.wordsGame[i].audio = typeof mOptions.wordsGame[i].audio == 'undefined' ? '' : mOptions.wordsGame[i].audio
-			}
-
-		}
 		mOptions.playerAudio = "";
 		mOptions.gameOver = false;
 		imgsLink.each(function (index) {
@@ -204,7 +198,12 @@ var $eXeRosco = {
 				mOptions.wordsGame[index].audio = "";
 			}
 		});
-
+		for (var i = 0; i < mOptions.wordsGame.length; i++) {
+			if (version < 2) {
+				mOptions.wordsGame[i].audio = typeof mOptions.wordsGame[i].audio == 'undefined' ? '' : mOptions.wordsGame[i].audio
+			}
+			mOptions.wordsGame[i].url = $eXeRosco.extractURLGD(mOptions.wordsGame[i].url);
+		}
 		return mOptions;
 	},
 
@@ -760,7 +759,8 @@ var $eXeRosco = {
 
 	playSound: function (selectedFile, instance) {
 		var mOptions = $eXeRosco.options[instance];
-		mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
+		selectedFile = $eXeRosco.extractURLGD(selectedFile);
+		mOptions.playerAudio = new Audio(selectedFile);
 		mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
 			mOptions.playerAudio.play();
 		});
@@ -1344,6 +1344,13 @@ var $eXeRosco = {
             $('.' + idevice + '-instructions').text(bns);
         }
         return sp;
+	},
+	extractURLGD: function (urlmedia) {
+        var sUrl = urlmedia;
+        if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
     }
 }
 $(function () {

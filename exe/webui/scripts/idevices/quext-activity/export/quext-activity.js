@@ -393,6 +393,8 @@ var $eXeQuExt = {
         mOptions.gameStarted = false;
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             mOptions.questionsGame[i].audio = typeof mOptions.questionsGame[i].audio == 'undefined' ? '' : mOptions.questionsGame[i].audio
+            mOptions.questionsGame[i].url = $eXeQuExt.extractURLGD(mOptions.questionsGame[i].url);
+
             if (mOptions.questionsGame[i].type == 2) {
                 mOptions.hasVideo = true;
             }
@@ -458,7 +460,8 @@ var $eXeQuExt = {
 
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeQuExt.options[instance];
-        mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
+        selectedFile = $eXeQuExt.extractURLGD(selectedFile);
+        mOptions.playerAudio = new Audio(selectedFile);
         mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
@@ -1503,6 +1506,13 @@ var $eXeQuExt = {
             $('.' + idevice + '-instructions').text(bns);
         }
         return sp;
+    },
+    extractURLGD: function (urlmedia) {
+        var sUrl = urlmedia;
+        if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }
+        return sUrl;
     }
 }
 $(function () {
