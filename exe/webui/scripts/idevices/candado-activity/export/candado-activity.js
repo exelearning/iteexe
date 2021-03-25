@@ -213,7 +213,6 @@ var $eXeCandado = {
             $('#candadoFeedRetro-' + instance).show();
             $('#candadoSolutionDiv-' + instance).hide();
         });
-        $('#candadoSolution-' + instance).focus();
         $('#candadoMessageInfo-'+ instance).show();
         $('#candadoNavigator-' + instance).hide();
         if(mOptions.candadoShowMinimize){
@@ -238,7 +237,6 @@ var $eXeCandado = {
         if(!mOptions.candadoShowMinimize){
             $eXeCandado.startGame(instance);
         }
-        $('#candadoSolution-' + instance).focus();
     },
     startGame: function (instance) {
        var mOptions = $eXeCandado.options[instance];

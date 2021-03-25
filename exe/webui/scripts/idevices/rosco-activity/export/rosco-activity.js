@@ -411,7 +411,7 @@ var $eXeRosco = {
 			$('#roscoCodeAccessDiv-' + instance).show();
 			$('#roscoStartGame-' + instance).hide();
 			$('#roscoDivInstructions-' + instance).hide();
-			$('#roscoEdCodeAccess-' + instance).focus();
+			//$('#roscoEdCodeAccess-' + instance).focus();
 		}
 		$('#roscoCodeAccessButton-' + instance).on('click', function (e) {
 			e.preventDefault();
