@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.5\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2020-06-25 19:39+0200\nPO-Revision-Date: 2019-12-06 22:32+0600\nLast-Translator: Tandin Penjor <tpenjor.sce@rub.edu.bt>\nLanguage: dz\nLanguage-Team: Dzongkha <tpenjor.sce@rub.edu.bt>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\nPOT-Creation-Date: 2021-03-26 13:30+0100\nPO-Revision-Date: 2019-12-06 22:32+0600\nLast-Translator: Tandin Penjor <tpenjor.sce@rub.edu.bt>\nLanguage: dz\nLanguage-Team: Dzongkha <tpenjor.sce@rub.edu.bt>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "DropDown Activity": "\u0f42\u0f51\u0f58\u0f0b\u0f50\u0f7c\u0f0b \u0f66\u0fa6\u0fb1\u0f7c\u0f44\u0f0b\u0f63\u0f71", 
  "Title": "\u0f58\u0f42\u0f7c\u0f0b\u0f58\u0f72\u0f44", 
  "Save file": "\u0f61\u0f72\u0f42\u0f0b\u0f66\u0fa3\u0f51\u0f0b\u0f0b\u0f66\u0fb2\u0f74\u0f44\u0f66\u0f0b\u0f56\u0f5e\u0f42", 
