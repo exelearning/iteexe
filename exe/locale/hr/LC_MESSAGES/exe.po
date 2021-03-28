@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-26 13:30+0100\n"
+"POT-Creation-Date: 2021-03-28 17:48+0200\n"
 "PO-Revision-Date: 2007-03-02 10:18+1200\n"
 "Last-Translator: \n"
 "Language: hr\n"
@@ -203,9 +203,9 @@ msgstr ""
 #: exe/engine/casestudyidevice.py:64
 #: exe/engine/ejercicioresueltofpdidevice.py:64
 #: exe/engine/imagewithtextidevice.py:62
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:186
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:240
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:261
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:187
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:241
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:262
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:29
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:752
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:822
@@ -678,7 +678,7 @@ msgstr ""
 #: exe/webui/element.py:2485 exe/webui/element.py:2620
 #: exe/webui/element.py:2735 exe/webui/element.py:2936
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:114
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:167
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:168
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:33
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:57
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:87
@@ -923,7 +923,7 @@ msgstr ""
 #: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
 #: exe/webui/element.py:2464 exe/webui/element.py:2913
 #: exe/webui/element.py:2917 exe/webui/scripts/authoring.js:1110
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:74
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:75
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:47
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:61
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:857
@@ -1049,7 +1049,7 @@ msgstr ""
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
 #: exe/webui/imagemagnifierblock.py:109 exe/webui/imagewithtextblock.py:83
 #: exe/webui/multimediablock.py:87
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:184
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:185
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:750
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:883
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:130
@@ -1207,7 +1207,7 @@ msgid "Hint"
 msgstr ""
 
 #: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2389
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:126
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:127
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:247
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:690
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:108
@@ -1784,7 +1784,7 @@ msgstr ""
 
 #: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:190
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:191
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:756
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:889
@@ -2405,7 +2405,7 @@ msgid "(Optional) Game Time Limit"
 msgstr ""
 
 #: exe/engine/placetheobjectsidevice.py:66
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:56
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:57
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:31
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:41
 msgid "Time Limit (mm:ss)"
@@ -3585,7 +3585,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:630
 #: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:261
 #: exe/jsui/scripts/app/view/forms/ValidatePanel.js:84
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:283
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:284
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:38
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:887
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1034
@@ -3665,7 +3665,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:99
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:78
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:79
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:41
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:64
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:58
@@ -4616,10 +4616,6 @@ msgstr ""
 msgid "Aggregation Level"
 msgstr ""
 
-#: exe/jsui/scripts/app/view/forms/LomSections.js:54
-msgid "Agregation Level"
-msgstr ""
-
 #: exe/jsui/scripts/app/view/forms/LomSections.js:57
 msgid "Version"
 msgstr ""
@@ -4965,8 +4961,8 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:249
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:433
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:437
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:80
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:245
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:81
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:246
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:65
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:828
@@ -5370,7 +5366,7 @@ msgid "Import style from custom URL"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:518
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:253
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:254
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:96
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:101
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:838
@@ -5743,7 +5739,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:561
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:568
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:146
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:147
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:6
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:710
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:805
@@ -7871,9 +7867,9 @@ msgid "Words"
 msgstr ""
 
 #: exe/webui/common.py:682
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:217
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:230
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:255
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:218
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:231
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:256
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:789
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:803
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:840
@@ -8590,7 +8586,7 @@ msgstr ""
 
 #: exe/webui/element.py:1554 exe/webui/element.py:1556
 #: exe/webui/element.py:1811
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:38
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:39
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:32
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:36
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:20
@@ -8656,7 +8652,7 @@ msgstr ""
 
 #: exe/webui/element.py:2369 exe/webui/element.py:2824
 #: exe/webui/questionelement.py:121
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:295
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:296
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:320
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:899
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1052
@@ -9073,7 +9069,7 @@ msgid "Access code is required"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:1108
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:45
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:46
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:34
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:54
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:39
@@ -9088,8 +9084,8 @@ msgid "Show a message or password when reaching the objective"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:1118
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:279
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:284
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:280
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:285
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:883
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:888
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1024
@@ -9198,9 +9194,9 @@ msgid "Import/Export"
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:1328
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1207
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1223
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1245
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1208
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1224
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1246
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:93
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:348
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1757
@@ -9240,25 +9236,29 @@ msgid "Go to Tools - Preview to see the tooltip content"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:12
+msgid "Games"
+msgstr ""
+
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:13
 #: exe/webui/scripts/idevices/adivina-activity/export/adivina-activity.js:43
 msgid "Word Guessing"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:36
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:51
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:37
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:52
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:18
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:69
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:93
 msgid "Move on"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:37
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:38
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:19
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:83
 msgid "Reply"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:39
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:40
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:35
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:55
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:21
@@ -9266,27 +9266,27 @@ msgstr ""
 msgid "Enter the access code"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:40
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:41
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:36
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:22
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:39
 msgid "The access code is not correct"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:41
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:42
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:23
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:40
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:35
 msgid "Game Over!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:42
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:43
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:92
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:82
 msgid "Provide a word or phrase"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:43
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:44
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:37
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:29
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:41
@@ -9294,27 +9294,27 @@ msgstr ""
 msgid "Cool! The clue is:"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:44
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:45
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:31
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:43
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:38
 msgid "You have got %1 hits and %2 misses"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:46
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:47
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:33
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:45
 msgid "Play Again"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:47
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:48
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:37
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:34
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:46
 msgid "Access code required"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:48
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:49
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:33
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:40
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:47
@@ -9322,7 +9322,7 @@ msgstr ""
 msgid "Cool! The information you were looking for"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:49
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:50
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:34
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:41
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:36
@@ -9331,7 +9331,7 @@ msgstr ""
 msgid "Click here to play"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:50
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:51
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:42
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:37
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:49
@@ -9339,7 +9339,7 @@ msgstr ""
 msgid "Errors"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:52
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:53
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:43
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:40
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:50
@@ -9347,8 +9347,8 @@ msgstr ""
 msgid "Hits"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:53
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:146
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:147
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:32
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:44
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:710
@@ -9363,7 +9363,7 @@ msgstr ""
 msgid "Score"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:55
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:29
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:35
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:45
@@ -9374,7 +9374,7 @@ msgstr ""
 msgid "Minimize"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:55
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:56
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:30
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:36
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:46
@@ -9384,14 +9384,14 @@ msgstr ""
 msgid "Maximize"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:57
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:58
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:48
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:55
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:47
 msgid "Life"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:58
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:59
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:49
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:67
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:56
@@ -9402,7 +9402,7 @@ msgstr ""
 msgid "Full Screen"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:59
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:60
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:50
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:68
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:57
@@ -9410,14 +9410,14 @@ msgstr ""
 msgid "Exit Full Screen"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:60
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:61
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:51
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:58
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:50
 msgid "Number of questions"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:61
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:62
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:38
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:52
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:59
@@ -9425,42 +9425,42 @@ msgstr ""
 msgid "No picture question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:62
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:63
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:53
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:60
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:52
 msgid "Cool!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:63
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:64
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:54
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:61
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:53
 msgid "You lost 330 points"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:64
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:65
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:55
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:62
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:54
 msgid "You lost one life"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:65
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:66
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:56
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:63
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:55
 msgid "You lost all your lives!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:66
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:67
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:57
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:64
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:56
 msgid "Questions completed!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:67
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:68
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:38
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:39
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:58
@@ -9470,7 +9470,7 @@ msgstr ""
 msgid "Right! | Excellent! | Great! | Very good! | Perfect!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:68
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:69
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:39
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:40
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:59
@@ -9480,7 +9480,7 @@ msgstr ""
 msgid "It was not that! | Incorrect! | Not correct! | Sorry! | Error!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:69
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:70
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:73
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:84
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:75
@@ -9490,28 +9490,28 @@ msgid ""
 "Please try again."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:70
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:71
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:46
 msgid ""
 "Write the correct word and click on Reply. If you hesitate, click on Move"
 " on."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:71
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:72
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:47
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:67
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:59
 msgid "You can only play this game with internet connection."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:72
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:73
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:50
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:68
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:60
 msgid "Please start the game before saving your score."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:73
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:74
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:60
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:51
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:69
@@ -9519,13 +9519,13 @@ msgstr ""
 msgid "The score can't be saved because this page is not part of a SCORM package."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:75
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:76
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:55
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:63
 msgid "Answer"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:76
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:77
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:62
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:56
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:72
@@ -9533,7 +9533,7 @@ msgstr ""
 msgid "You can only save the score once!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:77
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:78
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:63
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:57
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:73
@@ -9541,8 +9541,8 @@ msgstr ""
 msgid "You can only save once"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:79
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:83
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:80
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:84
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:68
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:59
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:75
@@ -9551,7 +9551,7 @@ msgstr ""
 msgid "Your score"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:81
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:82
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:66
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:60
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:77
@@ -9559,7 +9559,7 @@ msgstr ""
 msgid "Your score will be saved after each question. You can only play once."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:82
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:83
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:67
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:61
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:78
@@ -9567,7 +9567,7 @@ msgstr ""
 msgid "Your score will be automatically saved after each question."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:84
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:85
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:69
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:63
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:80
@@ -9575,7 +9575,7 @@ msgstr ""
 msgid "You can save the score as many times as you want"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:85
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:86
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:70
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:64
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:81
@@ -9583,7 +9583,7 @@ msgstr ""
 msgid "The last score saved is"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:86
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:87
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:71
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:65
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:82
@@ -9591,7 +9591,7 @@ msgstr ""
 msgid "You have already done this activity."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:87
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:88
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:72
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:66
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:83
@@ -9599,7 +9599,7 @@ msgstr ""
 msgid "You can do this activity as many times as you want"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:88
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:89
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:75
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:921
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:86
@@ -9612,24 +9612,24 @@ msgstr ""
 msgid "Close"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:89
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:90
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:78
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:90
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:80
 msgid "Loading. Please wait..."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:90
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:91
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:79
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:94
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:81
 msgid "points"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:91
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:240
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:251
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:255
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:92
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:241
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:252
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:256
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:80
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:820
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:836
@@ -9647,7 +9647,7 @@ msgstr ""
 msgid "Audio"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:100
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:101
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:96
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:90
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:112
@@ -9655,7 +9655,7 @@ msgstr ""
 msgid "Please provide the word definition or the valid URL of an image"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:101
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:102
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:71
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:97
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:92
@@ -9664,7 +9664,7 @@ msgstr ""
 msgid "The selected file does not contain a valid game"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:102
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:103
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:98
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:93
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:114
@@ -9672,43 +9672,43 @@ msgstr ""
 msgid "You must upload or indicate the valid URL of an image"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:103
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:104
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:99
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:115
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:114
 msgid "Please provide one word or phrase"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:104
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:100
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:118
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:115
 msgid "Please provide at least one question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1348
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:106
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1349
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:101
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:119
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:116
 msgid "This video is not currently available"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:106
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:107
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:102
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:120
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:117
 msgid "You have to complete the question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:107
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:108
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:103
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:121
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:118
 msgid "You have to complete all the selected options"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:108
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:109
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:104
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:688
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:122
@@ -9717,14 +9717,14 @@ msgstr ""
 msgid "Choose the right answer"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:109
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:110
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:105
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:123
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:120
 msgid "Type the right URL of a Youtube video"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:110
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:111
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:106
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:124
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:121
@@ -9733,45 +9733,45 @@ msgid ""
 "show"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:111
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:125
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:122
 msgid "The video end value must be higher than the start one"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:113
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:108
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:126
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:123
 msgid "You have to type a text in the editor"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:113
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:114
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:109
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:127
 msgid "The silence time is wrong. Check the video duration."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:114
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:115
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:128
 msgid "Please check all the answers in the right order"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:115
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:116
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:110
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:129
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:126
 msgid "Please check the time format: hh:mm:ss"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:116
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:117
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:111
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:132
 msgid "Message to display when passing the game"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:117
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:118
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:63
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:78
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:112
@@ -9782,7 +9782,7 @@ msgstr ""
 msgid "Your browser is not compatible with this tool."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:123
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:124
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:50
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:244
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:82
@@ -9796,12 +9796,12 @@ msgstr ""
 msgid "General settings"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:124
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:125
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:106
 msgid "Observe the letters, identify and fill in the missing words."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:129
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:130
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:58
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:250
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:693
@@ -9811,19 +9811,19 @@ msgstr ""
 msgid "Show minimized."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:132
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:133
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:696
 msgid "Random questions"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:135
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:136
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:700
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:821
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:605
 msgid "Custom messages"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:138
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:139
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:703
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:122
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:827
@@ -9831,21 +9831,21 @@ msgstr ""
 msgid "Show solutions"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:139
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:140
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:704
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:828
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:609
 msgid "Show solution time (seconds)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:143
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:144
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:128
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:100
 msgid "Case sensitive"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:148
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:156
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:149
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:157
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:712
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:720
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:836
@@ -9855,8 +9855,8 @@ msgstr ""
 msgid "0 to 10"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:150
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:157
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:151
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:158
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:714
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:721
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:838
@@ -9866,8 +9866,8 @@ msgstr ""
 msgid "Points and lives"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:152
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:158
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:153
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:159
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:716
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:722
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:840
@@ -9877,7 +9877,7 @@ msgstr ""
 msgid "No score"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:156
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:157
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:720
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:844
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:622
@@ -9886,7 +9886,7 @@ msgid ""
 "educational context."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:157
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:158
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:721
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:845
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:623
@@ -9895,7 +9895,7 @@ msgid ""
 "to loose your lives."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:158
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:159
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:722
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:846
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:624
@@ -9904,43 +9904,42 @@ msgid ""
 "(a feedback)."
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:162
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:163
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:726
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:850
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:628
 msgid "Use lives"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:163
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:164
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:727
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:851
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:629
 msgid "Number of lives"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:168
-#, python-format
-msgid "% right to see the feedback"
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:169
+msgid "&percnt; right to see the feedback"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:176
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:177
 msgid "Words/Phrases"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:181
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:182
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:747
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:880
 msgid "Multimedia Type"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:188
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:189
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:754
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:887
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:485
 msgid "Video"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:194
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:195
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:37
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:47
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:767
@@ -9951,13 +9950,13 @@ msgstr ""
 msgid "Time per question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:211
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:212
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:900
 msgid "Percentage of letters to show (%)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:213
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:215
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:214
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:216
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:785
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:787
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:919
@@ -9965,8 +9964,8 @@ msgstr ""
 msgid "Image URL"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:226
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:228
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:227
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:229
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:799
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:801
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:912
@@ -9976,7 +9975,7 @@ msgstr ""
 msgid "Youtube URL"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:230
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:231
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:803
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:937
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:661
@@ -9984,7 +9983,7 @@ msgstr ""
 msgid "Play video"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:234
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:235
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:85
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:809
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:917
@@ -9998,7 +9997,7 @@ msgstr ""
 msgid "End"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:234
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:235
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:84
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:29
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:807
@@ -10009,26 +10008,26 @@ msgstr ""
 msgid "Start"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:237
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:238
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:814
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:948
 msgid "Silence"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:237
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:238
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:816
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:950
 msgid "Time (s)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:248
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:249
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:832
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:966
 msgid "Alternative text"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:262
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:267
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:263
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:268
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:847
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:852
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:45
@@ -10040,13 +10039,13 @@ msgstr ""
 msgid "No image"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:273
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:274
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1017
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:769
 msgid "Word/Phrase"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:274
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:275
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:528
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1018
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:770
@@ -10059,14 +10058,14 @@ msgstr ""
 msgid "Definition"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:278
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:279
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:882
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1023
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:775
 msgid "Hit"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:289
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:290
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:314
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:893
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1046
@@ -10074,7 +10073,7 @@ msgstr ""
 msgid "Add question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:290
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:291
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:315
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:894
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1047
@@ -10083,7 +10082,7 @@ msgstr ""
 msgid "First question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:291
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:292
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:316
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:895
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1048
@@ -10092,7 +10091,7 @@ msgstr ""
 msgid "Previous question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:292
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:293
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:317
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:896
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1049
@@ -10100,7 +10099,7 @@ msgstr ""
 msgid "Question number:"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:293
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:294
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:318
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:897
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1050
@@ -10109,7 +10108,7 @@ msgstr ""
 msgid "Next question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:294
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:295
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:319
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:898
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1051
@@ -10118,28 +10117,28 @@ msgstr ""
 msgid "Last question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:296
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:297
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:321
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:900
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1053
 msgid "Copy question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:297
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:298
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:322
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:901
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1054
 msgid "Cut question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:298
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:299
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:323
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:902
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1055
 msgid "Paste question"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:302
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:303
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:326
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:924
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1077
@@ -10147,7 +10146,7 @@ msgstr ""
 msgid "Number of questions:"
 msgstr ""
 
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1556
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1557
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:532
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1374
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:91
@@ -11690,8 +11689,7 @@ msgid "Cofinanced by:"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:280
-#, python-format
-msgid "Delete block %s? This can't be undone."
+msgid "Delete block $? This can't be undone."
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:622
@@ -12730,9 +12728,8 @@ msgid "Insert/Edit Attributes"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:28
-#, python-format
 msgid ""
-"Use the %s option after recording to define the authorship or the audio "
+"Use the $ option after recording to define the authorship or the audio "
 "title."
 msgstr ""
 
@@ -14284,8 +14281,7 @@ msgid "'"
 msgstr ""
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:7
-#, python-format
-msgid "Drop image here or %sbrowse...%s"
+msgid "Drop image here or $browse...$"
 msgstr ""
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:8
@@ -14315,8 +14311,7 @@ msgid ""
 msgstr ""
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:18
-#, python-format
-msgid "%sSave the current image%s before overwriting it."
+msgid "$Save the current image$ before overwriting it."
 msgstr ""
 
 #: exe/webui/tools/mindmaps/src/js/Command.js:100
@@ -16758,5 +16753,26 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Error while saving to local storage"
+#~ msgstr ""
+
+#~ msgid "Agregation Level"
+#~ msgstr ""
+
+#~ msgid "% right to see the feedback"
+#~ msgstr ""
+
+#~ msgid "Delete block %s? This can't be undone."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Use the %s option after recording "
+#~ "to define the authorship or the "
+#~ "audio title."
+#~ msgstr ""
+
+#~ msgid "Drop image here or %sbrowse...%s"
+#~ msgstr ""
+
+#~ msgid "%sSave the current image%s before overwriting it."
 #~ msgstr ""
 
