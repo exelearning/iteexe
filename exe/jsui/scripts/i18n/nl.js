@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-26 13:30+0100\nPO-Revision-Date: 2016-11-29 15:33+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage: nl\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-28 17:48+0200\nPO-Revision-Date: 2016-11-29 15:33+0100\nLast-Translator: k.werschkull <k.werschkull@hccnet.nl>\nLanguage: nl\nLanguage-Team: Dutch <exe@exelearning.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "DropDown Activity": "Selectielijst activiteit", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Omschrijf het geval. Een goede gevalstudie\nbevat een controverse of beschrijft de situatie en de personen die erbij\nbetrokken zijn. Er moet ook ruimte zijn voor beslissingen of acties die\nwaardoor iemand de situatie kan controleren.", 
  "Choose an effect (you can change it later).": "Kies een effect (je kunt het later aanpassen)", 
@@ -528,7 +528,6 @@ translations = {
  "Delete \"{node}\" node and all its children?": "Verwijder \"{node}\" node en alle subnodes?", 
  "Define the Link: Select that page.": "Definieer de link: Kies die pagina.", 
  "Link URL": "URL", 
- "Agregation Level": "Aggregatie niveau", 
  "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent.": "Als U deze optie aanvinkt zal de map met het geexporteerde SCORM bestand het eXe pakket als complete website bevatten. Alle HTML-bestanden zullen het voorvoegsel \"website_\" hebben om ze te onderscheidne van hun SCORM equivalent. ", 
  "Percentage": "Percentage", 
  "Albanian ": "Albanees", 

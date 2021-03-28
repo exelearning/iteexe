@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2021-03-26 13:30+0100\nPO-Revision-Date: 2019-06-12 22:57+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: Juan Rafael Fern\u00e1ndez <jrfern@gmail.com>\nPOT-Creation-Date: 2021-03-28 17:48+0200\nPO-Revision-Date: 2019-06-12 22:57+0200\nLast-Translator: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nLanguage: pt\nLanguage-Team: Dionisio Mart\u00ednez Soler <dmsoler@edu.xunta.gal>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "DropDown Activity": "Atividade drop-down", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Criar a hist\u00f3ria do caso. Um bom caso \u00e9 aquele \nque descreve uma controv\u00e9rsia ou apresenta uma cena descrevendo as personagens \nenvolvidas e a situa\u00e7\u00e3o. Deve permitir decidir a\u00e7\u00f5es \nque levem \u00e0 resolu\u00e7\u00e3o da situa\u00e7\u00e3o.", 
  "Choose an effect (you can change it later).": "Escolha um efeito (pode alter\u00e1-lo mais tarde).", 
@@ -683,7 +683,6 @@ translations = {
  "Delete \"{node}\" node and all its children?": "Apagar a p\u00e1gina \"{node}\" e todos os seus filhos?", 
  "Define the Link: Select that page.": "Definir a Liga\u00e7\u00e3o: Escolher esta p\u00e1gina.", 
  "Link URL": "URL da liga\u00e7\u00e3o", 
- "Agregation Level": "N\u00edvel", 
  "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent.": "Se marcar esta op\u00e7\u00e3o, o arquivo SCORM exportado ir\u00e1 incluir o resultado de exportar este pacote eXe como S\u00edtio Web. Todos os ficheiros html ir\u00e3o ter o prefixo \"website_\" para os diferenciar dos seus equivalentes SCORM.", 
  "Percentage": "Percentagem", 
  "Always force editable exports on package load": "For\u00e7ar sempre exporta\u00e7\u00e3o edit\u00e1vel ao abrir o pacote", 

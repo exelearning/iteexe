@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-26 13:30+0100\nPO-Revision-Date: 2019-05-24 12:39+0200\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage: it\nLanguage-Team: Andrea Primiani <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-28 17:48+0200\nPO-Revision-Date: 2019-05-24 12:39+0200\nLast-Translator: Andrea Primiani <primiani@dag.it>\nLanguage: it\nLanguage-Team: Andrea Primiani <primiani@dag.it>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "DropDown Activity": "Attivit\u00e0 Lista a discesa", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creare uno studio di un caso. Un buon caso \u00e8 quello \nche descrive una controversia o un insieme di situazioni mediante la descrizione \ndelle caratteristiche implicate. Si dovrebbe anche permettere di intraprendere \nuna qualche azione per la risoluzione della situazione.", 
  "Choose an effect (you can change it later).": "Scegliere un effetto (potr\u00e0 essere modificato pi\u00f9 tardi).", 
@@ -683,7 +683,6 @@ translations = {
  "Delete \"{node}\" node and all its children?": "Cancellare il nodo  \"{node}\" e tutti i discendenti?", 
  "Define the Link: Select that page.": "Definire il link: scegliere la pagina.", 
  "Link URL": "URL collegamento", 
- "Agregation Level": "Livello di aggregazione", 
  "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent.": "Con questa opzione il file SCORM esportato includer\u00e0 il risultato dell'esportazione di questo pacchetto eXe in formato Sito Web. Tutti i file HTML avranno il prefisso \"website_\" per distinguerli dai loro equivalenti SCORM.", 
  "Percentage": "Percentuale", 
  "Always force editable exports on package load": "Forzare sempre esportazioni modificabili durante il caricamento del pacchetto", 

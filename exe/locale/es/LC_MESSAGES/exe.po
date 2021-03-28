@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-03-28 17:48+0200\n"
-"PO-Revision-Date: 2021-03-27 16:54+0100\n"
+"PO-Revision-Date: 2021-03-28 18:06+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -10186,7 +10186,7 @@ msgstr "Ir a Utilidades - Visualización previa para ver el contenido del bocadi
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:12
 msgid "Games"
-msgstr ""
+msgstr "Juegos"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:13
 #: exe/webui/scripts/idevices/adivina-activity/export/adivina-activity.js:43
@@ -10883,7 +10883,7 @@ msgstr "Número de vidas"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:169
 msgid "&percnt; right to see the feedback"
-msgstr ""
+msgstr "de respuestas correctas para mostrar la retroalimentación"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:177
 msgid "Words/Phrases"
@@ -12690,7 +12690,7 @@ msgstr "Cofinanciado por:"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:280
 msgid "Delete block $? This can't be undone."
-msgstr ""
+msgstr "¿Borrar el bloque $? No se podrá volver atrás."
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:622
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:24
@@ -13761,7 +13761,7 @@ msgstr "Insertar/Editar atributos"
 msgid ""
 "Use the $ option after recording to define the authorship or the audio "
 "title."
-msgstr ""
+msgstr "Use la opción $ después de grabar para definir el título y la autoría."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:127
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:182
@@ -15409,7 +15409,7 @@ msgstr "'"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:7
 msgid "Drop image here or $browse...$"
-msgstr ""
+msgstr "Arrastre aquí una imagen o $elija una...$"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:8
 msgid "Max width"
@@ -15441,7 +15441,7 @@ msgstr ""
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:18
 msgid "$Save the current image$ before overwriting it."
-msgstr ""
+msgstr "$Guarde la imagen actual$ antes de sobrescribirla."
 
 #: exe/webui/tools/mindmaps/src/js/Command.js:100
 #: exe/webui/tools/mindmaps/src/js/Command.js:102
@@ -15952,25 +15952,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "Agregation Level"
-#~ msgstr "Nivel de agregación"
-
-#~ msgid "% right to see the feedback"
-#~ msgstr "% de respuestas correctas para mostrar la retroalimentación"
-
-#~ msgid "Delete block %s? This can't be undone."
-#~ msgstr "¿Borrar el bloque %s? No se podrá volver atrás."
-
-#~ msgid ""
-#~ "Use the %s option after recording "
-#~ "to define the authorship or the "
-#~ "audio title."
-#~ msgstr "Use la opción %s después de grabar para definir el título y la autoría."
-
-#~ msgid "Drop image here or %sbrowse...%s"
-#~ msgstr "Arrastre aquí una imagen o %s elija una... %s"
-
-#~ msgid "%sSave the current image%s before overwriting it."
-#~ msgstr "%sGuarde la imagen actual%s antes de sobrescribirla."
-

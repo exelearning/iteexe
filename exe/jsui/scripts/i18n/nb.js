@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-26 13:30+0100\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-28 17:48+0200\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 
@@ -43,7 +43,6 @@ translations = {
  "Add images": "Legg til bilder", 
  "Delete Section": "Slett seksjon", 
  "Version": "Versjon", 
- "Agregation Level": "Aggregeringsniv\u00e5", 
  "Delete Clickable Area": "Slett klikkbart omr\u00e5de", 
  "Percentage": "Prosent", 
  "No emphasis (Free Text...)": "Ingen utheving (fri tekst)", 

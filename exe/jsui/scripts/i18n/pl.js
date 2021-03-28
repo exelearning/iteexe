@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2021-03-26 13:30+0100\nPO-Revision-Date: 2020-01-07 22:42+0000\nLast-Translator: Waldemar Stoczkowski, 2019\nLanguage: pl\nLanguage-Team: Polish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/pl\/)\nPlural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2021-03-28 17:48+0200\nPO-Revision-Date: 2020-01-07 22:42+0000\nLast-Translator: Waldemar Stoczkowski, 2019\nLanguage: pl\nLanguage-Team: Polish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/pl\/)\nPlural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Number of rounds": "Liczba rund", 
  "DropDown Activity": "Rozwijana Lista", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Opisz pewn\u0105 sytuacj\u0119. Dobra b\u0119dzie taka, kt\u00f3ra \nopisuje dyskusje lub osoby zaanga\u017cowane w \ndan\u0105 sytuacj\u0119. Powinna r\u00f3wnie\u017c pozwala\u0107 na pewne dzia\u0142ania  \npo to, \u017ceby otrzyma\u0107 analiz\u0119 sytuacji.", 
@@ -731,7 +731,6 @@ translations = {
  "Delete \"{node}\" node and all its children?": "Usun\u0105\u0107 w\u0119ze\u0142 \"{node}\" i wszystkie jego elementy potomne?", 
  "Define the Link: Select that page.": "Zdefiniuj link: wybierz t\u0119 stron\u0119.", 
  "Link URL": "Link URL", 
- "Agregation Level": "Poziom Agregacji", 
  "Checking this option the exported SCORM file will include the result of exporting this eXe package as Web Site. All the html files will have the \"website_\" prefix to differentiate them from their SCORM equivalent.": "Zaznaczenie tej opcji spowoduje, \u017ce wyeksportowany plik SCORM b\u0119dzie zawiera\u0142 wynik eksportowania tego pakietu eXe jako witryny sieci Web. Wszystkie pliki html b\u0119d\u0105 mia\u0142y prefiks \"website_\", aby odr\u00f3\u017cni\u0107 je od ich odpowiednika SCORM.", 
  "Percentage": "Procent", 
  "Always force editable exports on package load": "Zawsze wymuszaj edytowalne eksportowanie na \u0142adowanie pakietu", 
