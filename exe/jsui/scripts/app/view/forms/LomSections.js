@@ -51,7 +51,7 @@ Ext.define('eXe.view.forms.LomSections', {
 	            eXe.view.forms.LomWidgets.field(_('Keyword'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'general_keyword{1}_string1', _('Keyword'), null, true) ) ),
 	            eXe.view.forms.LomWidgets.field(_('Coverage'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'general_coverage{1}_string1', _('Coverage'), null, true) ) ),
 	            eXe.view.forms.LomWidgets.field(_('Structure'), false, false, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'general_structure_value', _('Structure'), null, true) ),
-	            eXe.view.forms.LomWidgets.field(_('Aggregation Level'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'general_aggregationLevel_value', _('Agregation Level')) )
+	            eXe.view.forms.LomWidgets.field(_('Aggregation Level'), false, true, eXe.view.forms.LomWidgets.helpcombo( null, this.prefix + 'general_aggregationLevel_value', _('Aggregation Level')) )
 	        ],
 	        'lifeCycle': [
 	            eXe.view.forms.LomWidgets.field(_('Version'), true, false, eXe.view.forms.LomWidgets.langfield( eXe.view.forms.LomWidgets.helpfield( null, this.prefix + 'lifeCycle_version_string{1}', _('Version'), null, true) ) ),
