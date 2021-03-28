@@ -4,7 +4,7 @@ if (typeof(_)=='undefined') {
 }
 var $i18n = {
 	imageOptimizer : _("Image optimizer"),
-	uploadInstructions : _("Drop image here or %sbrowse...%s"),
+	uploadInstructions : _("Drop image here or $browse...$"),
 	maxWidth : _("Max width"),
 	maxHeight : _("Max height"),
 	width : _("Width"),
@@ -15,5 +15,5 @@ var $i18n = {
 	resultSize : _("After"),
 	finish : _("Finish"),
 	newImageWarning : _("You just added that image. Save the iDevice or select the image again to update it."),
-	backupWarning : _("%sSave the current image%s before overwriting it.")
+	backupWarning : _("$Save the current image$ before overwriting it.")
 }

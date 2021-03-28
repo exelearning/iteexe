@@ -9,6 +9,7 @@
  */
 var $exeDevice = {
     i18n: {
+        category: _('Games'),
         name: _('Word Guessing')
     },
     msgs: {},
@@ -165,7 +166,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="adivinaEHasFeedBack"><input type="checkbox"  id="adivinaEHasFeedBack"> ' + _("Feedback") + '. </label> \
-                                <input type="number" name="adivinaEPercentajeFB" id="adivinaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> '+_("% right to see the feedback")+' </label>\
+                                <input type="number" name="adivinaEPercentajeFB" id="adivinaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> '+_("&percnt; right to see the feedback")+' </label>\
                             </p>\
                             <p id="adivinaEFeedbackP" class="gameQE-EFeedbackP">\
                                 <textarea id="adivinaEFeedBackEditor" class="exe-html-editor"\></textarea>\

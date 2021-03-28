@@ -122,8 +122,8 @@ window.addEventListener('DOMContentLoaded', function () {
 			url = top.window.location+"/"+originalSrc;
 			name = parts;
 			var backupWarning = $i18n.backupWarning;
-				backupWarning = backupWarning.replace("%s",'<a href="'+url+'" download="'+name+'">');
-				backupWarning = backupWarning.replace("%s",'</a>');
+				backupWarning = backupWarning.replace("$",'<a href="'+url+'" download="'+name+'">');
+				backupWarning = backupWarning.replace("$",'</a>');
 			$("#imageEditorBackupMessage").html(backupWarning);
 		}
 	} else if (originalSrc.indexOf("/previews/")==0) {
@@ -214,8 +214,8 @@ var eXeImageCompressor = {
 		document.title = $i18n.imageOptimizer;
 		var e = $("#imageEditorUploader p");
 		var html = $i18n.uploadInstructions;
-			html = html.replace("%s",'<label for="file">');
-			html = html.replace("%s",'<input type="file" id="file" accept="image/*" class="sr-only"></label>');
+			html = html.replace("$",'<label for="file">');
+			html = html.replace("$",'<input type="file" id="file" accept="image/*" class="sr-only"></label>');
 			e.html(html)
 		$("label[for='inputMaxWidth']").html($i18n.maxWidth+":");
 		$("label[for='inputMaxHeight']").html($i18n.maxHeight+":");

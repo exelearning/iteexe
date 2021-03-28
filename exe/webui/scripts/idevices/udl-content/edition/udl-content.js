@@ -112,7 +112,7 @@ var $exeDevice = {
 			"Representation" : "Comprensión",
 			"Action & Expression" : "Expresión",
 			"New block" : "Nuevo bloque",
-			"Delete block %s? This can't be undone." : "¿Borrar el bloque %s? No se puede deshacer.",
+			"Delete block $? This can't be undone." : "¿Borrar el bloque $? No se puede deshacer.",
 			"Empty = No button" : "Vacío = Sin botón",
 			"Please provide a main content for all the blocks." : "Escribe el contenido principal de todos los bloques.",
 			"Choose the content to edit:" : "Elige el tipo de contenido a editar:",
@@ -277,8 +277,8 @@ var $exeDevice = {
 		});
 		// Delete block
 		e.unbind("click").click(function(){
-			var msg = _("Delete block %s? This can't be undone.");
-				msg = msg.replace("%s",(i+1));
+			var msg = _("Delete block $? This can't be undone.");
+				msg = msg.replace("$",(i+1));
 			Ext.Msg.confirm(_("Attention"), msg, function(button) {
 				if (button == "yes") {
 					// Update the data
