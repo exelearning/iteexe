@@ -41,6 +41,7 @@ var $eXeVideoQuExt = {
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
+    hasLATEX:false,
     init: function () {
         this.activities = $('.vquext-IDevice');
         if (this.activities.length == 0) return;
@@ -189,7 +190,7 @@ var $eXeVideoQuExt = {
             $eXeVideoQuExt.addEvents(i);
 
         });
-        if (typeof (MathJax) == "undefined") {
+        if ($eXeVideoQuExt.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeVideoQuExt.loadMathJax();
         }
     },
@@ -455,6 +456,7 @@ var $eXeVideoQuExt = {
             json = $eXeVideoQuExt.Decrypt(json);
         }
         var mOptions = $eXeVideoQuExt.isJsonString(json);
+        $eXeVideoQuExt.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
         mOptions.waitStart = false;
         mOptions.videoLocal = videoLocal;
         mOptions.questionAnswer = false;

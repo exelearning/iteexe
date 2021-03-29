@@ -37,6 +37,7 @@ var $eXeRosco = {
 	userName: '',
 	previousScore: '',
 	initialScore: '',
+	hasLATEX:false,
 	init: function () {
 		this.activities = $('.rosco-IDevice');
 		if (this.activities.length == 0) return;
@@ -162,7 +163,7 @@ var $eXeRosco = {
 			$('#roscoMessageMaximize-' + i).text(msg);
 			$eXeRosco.addEvents(i);
 		});
-		if (typeof (MathJax) == "undefined") {
+		if ($eXeRosco.hasLATEX && typeof (MathJax) == "undefined") {
 			$eXeRosco.loadMathJax();
 		}
 	},
@@ -184,6 +185,7 @@ var $eXeRosco = {
 			json = $eXeRosco.Decrypt(json);
 		}
 		var mOptions = $eXeRosco.isJsonString(json);
+		$eXeRosco.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
 		mOptions.playerAudio = "";
 		mOptions.gameOver = false;
 		imgsLink.each(function (index) {

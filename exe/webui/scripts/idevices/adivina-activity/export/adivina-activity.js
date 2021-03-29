@@ -34,6 +34,7 @@ var $eXeAdivina = {
     userName: '',
     previousScore: '',
     initialScore: '',
+    hasLATEX:false,
     init: function () {
         this.activities = $('.adivina-IDevice');
         if (this.activities.length == 0) return;
@@ -140,10 +141,9 @@ var $eXeAdivina = {
 
             $('#adivinaDivFeedBack-' + i).hide();
         });
-        if (typeof (MathJax) == "undefined") {
+        if ($eXeAdivina.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeAdivina.loadMathJax();
         }
-
     },
     Decrypt: function (str) {
         if (!str) str = "";
@@ -183,6 +183,7 @@ var $eXeAdivina = {
             json = $eXeAdivina.Decrypt(json);
         }
         var mOptions = $eXeAdivina.isJsonString(json);
+        $eXeAdivina.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
@@ -487,6 +488,9 @@ var $eXeAdivina = {
             }
         }
         $('#adivinaDefinition-' + instance).text(definition);
+        if (typeof (MathJax) != "undefined") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#adivinaGameContainer-' + instance]);
+        }
         return cPhrase;
     },
     clear: function (phrase) {
@@ -1017,9 +1021,6 @@ var $eXeAdivina = {
                 $('#adivinaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
 
             }
-        }
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#adivinaGameContainer-' + instance]);
         }
 
     },

@@ -50,6 +50,7 @@ var $eXeSelecciona = {
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
+    hasLATEX:false,
     init: function () {
         this.activities = $('.selecciona-IDevice');
         if (this.activities.length == 0) return;
@@ -212,7 +213,7 @@ var $eXeSelecciona = {
             $eXeSelecciona.addEvents(i);
             $('#seleccionaDivFeedBack-' + i).hide();
         });
-        if (typeof (MathJax) == "undefined") {
+        if ($eXeSelecciona.hasLATEX &&  typeof (MathJax) == "undefined") {
             $eXeSelecciona.loadMathJax();
         }
 
@@ -402,7 +403,7 @@ var $eXeSelecciona = {
         var json = $eXeSelecciona.Decrypt(data.text()),
             mOptions = $eXeSelecciona.isJsonString(json);
         version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
-
+        $eXeSelecciona.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
         mOptions.gameOver = false;
         mOptions.hasVideo = false;
         mOptions.waitStart = false;

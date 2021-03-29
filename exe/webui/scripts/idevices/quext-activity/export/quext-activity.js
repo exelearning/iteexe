@@ -50,6 +50,7 @@ var $eXeQuExt = {
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
+    hasLATEX:false,
     init: function () {
         this.activities = $('.quext-IDevice');
         if (this.activities.length == 0) return;
@@ -193,11 +194,9 @@ var $eXeQuExt = {
             $eXeQuExt.addEvents(i);
             $('#quextDivFeedBack-' + i).hide();
         });
-        if (typeof (MathJax) == "undefined") {
+        if ($eXeQuExt.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeQuExt.loadMathJax();
         }
-
-
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
@@ -385,6 +384,7 @@ var $eXeQuExt = {
             json = $eXeQuExt.Decrypt(json);
         }
         var mOptions = $eXeQuExt.isJsonString(json);
+        $eXeQuExt.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
         mOptions.gameOver = false;
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
