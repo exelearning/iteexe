@@ -10,25 +10,7 @@
 <link rel="stylesheet" href="css/custom.css">
 <link rel="stylesheet" href="/tools/mindmaps/src/css/Aristo/jquery-ui-1.8.7.custom.css" />
 <link rel="stylesheet" href="/tools/mindmaps/src/css/minicolors/jquery.miniColors.css">
-<script>
-_ = top._;
-var customStrings = {
-	openMap : _("Open map"),
-	openMapInstructions : _("Selecciona un mapa conceptual de tu disco duro (formato json)."),
-	saveMap : _("Save map"),
-	saveMapInstructions : _("Guarda el mapa conceptual en tu equipo (se guarda en formato json)."),
-	save : _("Save"),
-	size : _("Size"),
-	textStyle : _("Text style"),
-	textColor : _("Text color"),
-	branchColor : _("Line color"),
-	recursive : _("Recursive"),
-	"export" : _("Export"),
-	exportInstructions : _('Para descargar la imagen haz clic sobre el mapa con el botón derecho del ratón y elige "Guardar imagen como..."'),
-	printInstructions : _("Usa la opción para imprimir que hay en el menú."),
-	footer : _("It works with mindmaps")
-}
-</script>
+<script src="js/langs/all.js"></script>
 
 <script id="template-float-panel" type="text/x-jquery-tmpl">
 <div class="ui-widget ui-dialog ui-corner-all ui-widget-content float-panel no-select">
@@ -153,13 +135,6 @@ var customStrings = {
       </tr>
     </table>
   </div>
-</div>
-</script>
-
-<script id="template-export-map" type="text/x-jquery-tmpl">
-<div id="export-map-dialog" title="${customStrings.export}">
-  <h2 class='image-description'>${customStrings.exportInstructions}</h2>
-  <div id="export-preview"></div>
 </div>
 </script>
 
