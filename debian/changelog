@@ -30,6 +30,7 @@ intef-exe (3:2.6) lucid; urgency=medium
 
   * SDWeb
     - TinyMCE: New audio recorder plugin.
+      Centro Integrado de Aprendizajes Virtuales y Digitalizados (BirtLH).
     - The "Advanced mode" is now a preference. It's saved in exe.conf instead of using a cookie. (#489)
     - Fixed: Available iDevices were not saved. (#530)
     - Fixed: Backward compatibility. Open an elp file reading its contentv2.xml file. (#206)
