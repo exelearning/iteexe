@@ -15426,9 +15426,6 @@ msgstr ""
 #~ msgid "Elements (it the right order)"
 #~ msgstr "Elementos (na ordem correta)"
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Edit iDevices"
 #~ msgstr "Editar iDevices"
 

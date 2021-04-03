@@ -15364,9 +15364,6 @@ msgstr ""
 "mit einer aktuelleren Version von eXe erstellt. Bitte aktualisieren Sie "
 "Ihre eXe Version und versuchen Sie es dann noch einmal"
 
-#~ msgid ""
-#~ msgstr ""
-
 # In the original, shouldn't the sentence begin with "There"?
 #~ msgid "Should be at least one section of this type"
 #~ msgstr "Es sollte mindestens eine Sektion dieses Typs geben."

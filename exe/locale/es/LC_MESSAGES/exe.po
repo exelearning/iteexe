@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-03-28 18:06+0200\n"
+"PO-Revision-Date: 2021-04-03 18:37+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -1201,7 +1201,7 @@ msgstr "Reventón"
 #: exe/engine/extendedfieldengine.py:37
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:73
 msgid "Highlight"
-msgstr "Foco"
+msgstr "Destacado"
 
 #: exe/engine/extendedfieldengine.py:38
 msgid "Pulsate"
@@ -12092,7 +12092,7 @@ msgstr "Por favor, incluya la información necesaria."
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:732
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:856
 msgid "Easier to read"
-msgstr "Lectura simplificada"
+msgstr "Lectura facilitada"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:53
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:117
@@ -12115,7 +12115,7 @@ msgstr "Diseño Universal para el Aprendizaje"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:74
 msgid "Download the source file"
-msgstr "Descargar el fichero fuente"
+msgstr "Descarga el fichero fuente"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:76
 msgid "Exercises"
@@ -12123,11 +12123,11 @@ msgstr "Ejercicios"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:77
 msgid "Write"
-msgstr "Escribir"
+msgstr "Escribe"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:78
 msgid "Listen"
-msgstr "Escuchar"
+msgstr "Escucha"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:79
 msgid "Do it here"
@@ -12137,15 +12137,15 @@ msgstr "Hazlo aquí"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:158
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:292
 msgid "Record"
-msgstr "Grabar"
+msgstr "Graba"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:81
 msgid "Speak"
-msgstr "Hablar"
+msgstr "Habla"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:82
 msgid "Read"
-msgstr "Leer"
+msgstr "Lee"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:84
 msgid "Guidance"
@@ -12153,11 +12153,11 @@ msgstr "Orientaciones"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:86
 msgid "To get informed"
-msgstr ""
+msgstr "Para informarse"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:87
 msgid "Think"
-msgstr "Pensar"
+msgstr "Piensa"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:88
 msgid "Assessment rubric"
@@ -12169,7 +12169,7 @@ msgstr "Temporalización"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:91
 msgid "Work in group"
-msgstr "Trabajar en grupo"
+msgstr "Trabaja en equipo"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:92
 msgid "More information"
@@ -12261,7 +12261,7 @@ msgstr "Fonética"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:215
 msgid "Double click or type to see suggestions"
-msgstr "Haga doble clic o escriba para ver sugerencias"
+msgstr "Haz doble clic o escribe para ver sugerencias"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:229
 msgid "Engagement"
@@ -12273,15 +12273,15 @@ msgstr "Comprensión"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:231
 msgid "Action & Expression"
-msgstr "Actuación y expresión"
+msgstr "Expresión"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:233
 msgid "New block"
-msgstr "Añadir bloque"
+msgstr "Nuevo bloque"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:237
 msgid "About this iDevice"
-msgstr "Acerca de este iDevice"
+msgstr "Sobre este iDevice"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:238
 msgid "Cofinanced by:"
@@ -12289,7 +12289,7 @@ msgstr "Cofinanciado por:"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:311
 msgid "Delete block $? This can't be undone."
-msgstr "¿Borrar el bloque $? No se podrá volver atrás."
+msgstr "¿Borrar el bloque $? No se puede deshacer."
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:702
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:24
@@ -12301,7 +12301,7 @@ msgstr "Bloque"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:713
 msgid "Empty = No button"
-msgstr "Vacío = sin botón"
+msgstr "Vacío = Sin botón"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:715
 msgid "Presentation"
@@ -12328,7 +12328,7 @@ msgstr "Elija el contenido que quiere editar:"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:731
 msgid "Main content (required)"
-msgstr "Contenido principal (requerido)"
+msgstr "Contenido principal (obligatorio)"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:732
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:733
@@ -13697,35 +13697,35 @@ msgstr "Navegador"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:3
 msgid "Open map"
-msgstr ""
+msgstr "Abrir mapa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:4
 msgid "Select a json file."
-msgstr ""
+msgstr "Seleccione un fichero json."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:5
 msgid "Save map"
-msgstr ""
+msgstr "Guardar mapa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:6
 msgid "Save the mind map as a json file."
-msgstr ""
+msgstr "Guardar el mapa en formato json."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:9
 msgid "Text style"
-msgstr ""
+msgstr "Estilo del texto"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:11
 msgid "Line color"
-msgstr ""
+msgstr "Color de línea"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:12
 msgid "Recursive"
-msgstr ""
+msgstr "Recursivo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:14
 msgid "It works with mindmaps"
-msgstr ""
+msgstr "Funciona con mapas mentales"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:339
@@ -13767,15 +13767,15 @@ msgstr "Puede editar el mapa..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Crop"
-msgstr ""
+msgstr "Cortar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:88
 msgid "Please write the Content"
-msgstr "Por favor escriba el contenido"
+msgstr "Escriba el contenido"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:175
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:639
@@ -13802,25 +13802,25 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:131
 msgid "Please select a programming language"
-msgstr ""
+msgstr "Seleccione un lenguaje de programación"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:293
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:513
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:532
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Insertar código HTML como texto"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:347
 msgid "Programming language"
-msgstr ""
+msgstr "Lenguaje de programación"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:357
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Lenguaje de marcas (HTML, etc.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:359
 msgid "C type"
-msgstr ""
+msgstr "Tipo C"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:381
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
@@ -13839,17 +13839,17 @@ msgstr "Oscuro"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:409
 msgid "Line numbers"
-msgstr ""
+msgstr "Números de línea"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:413
 msgid "Line highlight"
-msgstr ""
+msgstr "Realce de línea"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:480
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:525
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:540
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Pegar fragmento HTML (embeber código)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -15557,353 +15557,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "EDIA Project - PBL"
-#~ msgstr "Proyecto EDIA - ABP (Aprendizaje Basado en Proyectos)"
-
-#~ msgid ""
-#~ "National Centre for the Development of"
-#~ " the Educational Curriculum on Non-"
-#~ "Proprietary Systems (CEDEC)"
-#~ msgstr ""
-#~ "Centro nacional para el desarrollo del"
-#~ " currículum en sistemas no-propietarios "
-#~ "(CEDEC)"
-
-#~ msgid "Project's name"
-#~ msgstr "Nombre del proyecto"
-
-#~ msgid "Project's final goal."
-#~ msgstr "Objetivo final del proyecto."
-
-#~ msgid "Point out what students are about to learn."
-#~ msgstr "Indicar qué van a aprender los estudiantes."
-
-#~ msgid ""
-#~ "Students need no preknowledge to "
-#~ "complete all these tasks because there"
-#~ " are materials enough to be "
-#~ "independent in their accomplishment. Students"
-#~ " also have the help and orientation"
-#~ " from their teacher."
-#~ msgstr ""
-#~ "Los estudiantes no necesitan ningún "
-#~ "conocimiento previo para completar estas "
-#~ "tareas porque hay suficientes materiales "
-#~ "para que sean independientes en su "
-#~ "realización. Los estudiantes disponen también"
-#~ " de la ayuda y la orientación "
-#~ "de su profesor."
-
-#~ msgid "Author's name"
-#~ msgstr "Nombre del autor"
-
-#~ msgid "Front page"
-#~ msgstr "Portada"
-
-#~ msgid "Creative Commons BY-SA"
-#~ msgstr "Creative Commons BY-SA"
-
-#~ msgid "Motivating inspiration."
-#~ msgstr "Inspiración motivadora."
-
-#~ msgid "Project / Final Challenge"
-#~ msgstr "Proyecto / Desafío final"
-
-#~ msgid "What to learn and how to learn."
-#~ msgstr "Qué aprender y cómo aprender."
-
-#~ msgid "Motivation for the project development."
-#~ msgstr "Motivación para el desarrollo del proyecto."
-
-#~ msgid "Breaking the ice"
-#~ msgstr "Rompiendo el hielo"
-
-#~ msgid "Learning Diary"
-#~ msgstr "Diario de aprendizaje"
-
-#~ msgid "First activity. Creation of the learning diary in the suggested format."
-#~ msgstr ""
-#~ "Primera actividad. Creación del diario "
-#~ "de aprendizaje en el formato sugerido."
-
-#~ msgid "Creation of the first post heading."
-#~ msgstr "Creación del encabezamiento de la primera entrada del blog."
-
-#~ msgid "Writing the diary"
-#~ msgstr "Escribiendo el diario"
-
-#~ msgid ""
-#~ "Script for writing the post. It "
-#~ "must lead the student to think "
-#~ "about and reflect:"
-#~ msgstr ""
-#~ "Guion para escribir la entrada. Debe "
-#~ "guiar al estudiante a pensar y "
-#~ "reflexionar sobre:"
-
-#~ msgid "What the final challenge is"
-#~ msgstr "Cuál es el desafío final"
-
-#~ msgid "What the assessment will be like"
-#~ msgstr "Cuál será la evaluación"
-
-#~ msgid "What they will learn"
-#~ msgstr "Qué aprenderán"
-
-#~ msgid "How class groups work"
-#~ msgstr "Cómo trabajan los grupos en el aula"
-
-#~ msgid "Starting Activity"
-#~ msgstr "Actividad introductoria"
-
-#~ msgid "Introductory Activity to the project involving:"
-#~ msgstr "Actividad introductoria del proyecto, que incluye:"
-
-#~ msgid "Team work"
-#~ msgstr "Trabajo en equipo"
-
-#~ msgid "Reflection and motivation"
-#~ msgstr "Reflexión y motivación"
-
-#~ msgid "Expression of feelings."
-#~ msgstr "Expresión de emociones."
-
-#~ msgid "Steps for the suggested activity"
-#~ msgstr "Etapas de la actividad sugerida"
-
-#~ msgid "Your project: General information"
-#~ msgstr "Su proyecto: Información general"
-
-#~ msgid "Explanation of the final challenge."
-#~ msgstr "Explicación del desafío final."
-
-#~ msgid "Overview of suggested tasks."
-#~ msgstr "Vista general de las tareas sugeridas."
-
-#~ msgid "General information about:"
-#~ msgstr "Información general sobre:"
-
-#~ msgid "Assessment"
-#~ msgstr "Evaluación"
-
-#~ msgid "Class team management"
-#~ msgstr "Gestión de los equipos en el aula"
-
-#~ msgid "Learning diary and personal site."
-#~ msgstr "Diario de aprendizaje y sitio web personal."
-
-#~ msgid "Dissemination of project activities."
-#~ msgstr "Divulgación de las actividades del proyecto."
-
-#~ msgid "Starting motivation"
-#~ msgstr "Motivación inicial"
-
-#~ msgid "Mission 1"
-#~ msgstr "Misión 1"
-
-#~ msgid "Guidelines to open a new post."
-#~ msgstr "Guías para iniciar una nueva entrada del blog."
-
-#~ msgid "Questions or guidelines for students to revise and reflect:"
-#~ msgstr ""
-#~ "Preguntas y guías que deberán revisar"
-#~ " los estudiantes y sobre las que "
-#~ "reflexionar:"
-
-#~ msgid "The task they have done"
-#~ msgstr "La tarea que han realizado"
-
-#~ msgid "The resources they have checked"
-#~ msgstr "Los recursos que han utilizado"
-
-#~ msgid "Materials they have created"
-#~ msgstr "Los materiales que han creado"
-
-#~ msgid "What they have learnt"
-#~ msgstr "Qué han aprendido"
-
-#~ msgid "Difficulties found."
-#~ msgstr "Dificultades halladas."
-
-#~ msgid "Remaining doubts"
-#~ msgstr "Dudas que aún tienen"
-
-#~ msgid "Class team functioning"
-#~ msgstr "Funcionamiento de los equipos en el aula"
-
-#~ msgid "Task (Mission)"
-#~ msgstr "Tarea (Misión)"
-
-#~ msgid "General introduction"
-#~ msgstr "Introducción general"
-
-#~ msgid "What the \"final mission\" will be and link to the assessment rubric."
-#~ msgstr "Cuál será la \"misión final\" y enlace a la rúbrica de evaluación."
-
-#~ msgid "What learning objective this mission helps to achieve."
-#~ msgstr "Qué objetivos de aprendizaje ayuda a lograr esta misión."
-
-#~ msgid "Steps for your mission"
-#~ msgstr "Pasos de su misión"
-
-#~ msgid "What the final mission will be."
-#~ msgstr "Cuál será la misión final."
-
-#~ msgid "What sudents will learn about."
-#~ msgstr "Sobre qué aprenderán los estudiantes."
-
-#~ msgid "Starting activity"
-#~ msgstr "Actividad inicial"
-
-#~ msgid "Didactic guidelines"
-#~ msgstr "Guías didácticas"
-
-#~ msgid "Need any help?"
-#~ msgstr "¿Necesita ayuda?"
-
-#~ msgid "ICT resources/apps/tools"
-#~ msgstr "Recursos/apps/herramientas TIC"
-
-#~ msgid "Assessment and curricular references"
-#~ msgstr "Evaluación y referencias curriculares"
-
-#~ msgid "Link to the final rubric of the project."
-#~ msgstr "Enlace a la rúbrica final del proyecto."
-
-#~ msgid "Assessment recommendations / resources of each task."
-#~ msgstr "Recomendaciones para la evaluación / recursos para cada tarea."
-
-#~ msgid "Assessment criteria and guidance on how to assess."
-#~ msgstr "Criterios de evaluación y orientaciones sobre cómo evaluar."
-
-#~ msgid "Contents / learning standards and key competences."
-#~ msgstr "Contenidos / estándares de aprendizaje y competencias clave."
-
-#~ msgid "Learning Pathway and timing"
-#~ msgstr "Itinerario de aprendizaje y temporalización"
-
-#~ msgid "Steps"
-#~ msgstr "Pasos"
-
-#~ msgid "Main aim"
-#~ msgstr "Objetivo principal"
-
-#~ msgid "Before you start"
-#~ msgstr "Antes de empezar"
-
-#~ msgid "... sessions"
-#~ msgstr "... sesiones"
-
-#~ msgid "(Mission 1)"
-#~ msgstr "(Misión 1)"
-
-#~ msgid "(Mission 2)"
-#~ msgstr "(Misión 2)"
-
-#~ msgid "(Mission 3)"
-#~ msgstr "(Misión 3)"
-
-#~ msgid "(Final Challenge)"
-#~ msgstr "(Desafío final)"
-
-#~ msgid "Interdisciplinary nature"
-#~ msgstr "Naturaleza interdisciplinaria"
-
-#~ msgid "Recommendations to involve other subjects"
-#~ msgstr "Recomendaciones para implicar a otras materias"
-
-#~ msgid "Fact sheet"
-#~ msgstr "Hoja de evidencias"
-
-#~ msgid "Level / course"
-#~ msgstr "Nivel / curso"
-
-#~ msgid "Final project"
-#~ msgstr "Proyecto final"
-
-#~ msgid "Contents"
-#~ msgstr "Contenidos"
-
-#~ msgid "General guidelines for teachers"
-#~ msgstr "Guías generales para el profesorado"
-
-#~ msgid "Resource structure"
-#~ msgstr "Estructura de los recursos"
-
-#~ msgid "Types of tasks and activities"
-#~ msgstr "Tipos de tareas y actividades"
-
-#~ msgid "Methodological approach"
-#~ msgstr "Enfoque metodológico"
-
-#~ msgid "Use of the learning diary"
-#~ msgstr "Uso del diario de aprendizaje"
-
-#~ msgid "Rubrics and other documents"
-#~ msgstr "Rúbricas y otros documentos"
-
-#~ msgid "You can download all the documents to print, share, reuse..."
-#~ msgstr ""
-#~ "Puede descargar todos los documentos "
-#~ "para imprimirlos, compartirlos, reutilizarlos..."
-
-#~ msgid "Example image"
-#~ msgstr "Imagen ejemplo"
-
-#~ msgid "Base"
-#~ msgstr "Base"
-
-#~ msgid "Please select the media file to edit it"
-#~ msgstr "Por favor seleccione el fichero multimedia que desea editar"
-
-#~ msgid "Detect automatically"
-#~ msgstr "Detectar automáticamente"
-
-#~ msgid "iframe"
-#~ msgstr "iframe (marco)"
-
-#~ msgid "Use JavaScript player"
-#~ msgstr "Usar reproductor JavaScript"
-
-#~ msgid "Use Controls"
-#~ msgstr "Mostrar los controles"
-
-#~ msgid "Use Autoplay"
-#~ msgstr "Reproducir automáticamente"
-
-#~ msgid "Paste your embed code below:"
-#~ msgstr "Pegar el código embebido a continuación:"
-
-#~ msgid "Please select the Source"
-#~ msgstr "Por favor seleccione la fuente"
-
-#~ msgid "This format (%) is valid for audio and video."
-#~ msgstr "Este formato (%) es válido tanto para audio como para vídeo."
-
-#~ msgid "Cannot detect automatically. Please choose the right type."
-#~ msgstr "Falló la detección automática. Por favor elija el tipo correcto."
-
-#~ msgid "Successfully updated, but please convert the video to another format:"
-#~ msgstr ""
-#~ "Actualizado sin errores, pero por favor"
-#~ " convierta el vídeo a otro formato:"
-
-#~ msgid "Selected format: "
-#~ msgstr "Seleccionar el formato: "
-
-#~ msgid "Please use any of these formats or provide a link to the file itself: "
-#~ msgstr ""
-#~ "Por favor use cualesquiera de estos "
-#~ "formatos o proporcione un enlace al "
-#~ "fichero mismo: "
-
-#~ msgid "Please use any of these formats or provide a link to the file itself:"
-#~ msgstr ""
-#~ "Por favor use cualesquiera de estos "
-#~ "formatos o proporcione un enlace al "
-#~ "fichero mismo:"
-
-#~ msgid "'"
-#~ msgstr "'"
-

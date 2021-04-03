@@ -15655,9 +15655,6 @@ msgstr ""
 #~ msgid "Please select a language"
 #~ msgstr "Επιλογή γλώσσας."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Classic style"
 #~ msgstr "Κλασικό στυλ"
 

@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-03-28 17:48+0200\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2021-04-02 09:49+0200\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 
@@ -540,7 +540,6 @@ translations = {
  "Enter \nthe text you wish to associate with the file.": "Skriv \nteksten du vil forbinde med filen.", 
  "Irish ": "Irsk", 
  "Activity": "Aktivitet", 
- "Use Controls": "Bruk kontroller", 
  "Objectives.": "M\u00e5l.", 
  "Reading Activity 0.11": "Leseaktivitet 0.11", 
  "True\/false questions present a statement where \nthe learner must decide if the statement is true. This type of question works \nwell for factual information and information that lends itself to either\/or \nresponses.": "Sant-\/usantsp\u00f8rsm\u00e5l gir et utsagn brukeren \nm\u00e5 velge om er sant eller usant. Denne typen sp\u00f8rsm\u00e5l passer \nbest for faktainformasjon eller informasjon som kan gi \n enten\/eller svar.", 
@@ -694,7 +693,6 @@ translations = {
  "Ossetian; Ossetic ": "Ossetisk", 
  "Japanese Wikipedia Article": "Japansk Wikipedia-artikkel", 
  "Kalaallisut; Greenlandic ": "Kalaallisut", 
- "Use Autoplay": "Bruk Autoplay", 
  "Tsonga ": "Tsonga", 
  "Ungroup iDevices": "Ikke grupper iDevicene", 
  "Add an interactive feedback field to your iDevice.": "Legg til et felt for interaktiv tilbakemelding i din iDevice.", 

@@ -15337,9 +15337,6 @@ msgstr ""
 #~ msgid "http://exelearning.net/downloads/"
 #~ msgstr "http://exelearning.net/downloads/"
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Classic style"
 #~ msgstr ""
 

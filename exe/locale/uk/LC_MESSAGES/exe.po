@@ -14791,9 +14791,6 @@ msgstr ""
 #~ msgid "Text (optional feedback)"
 #~ msgstr ""
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Your Style could not be saved because an unknown error occurred."
 #~ msgstr ""
 

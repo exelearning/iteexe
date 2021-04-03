@@ -14615,9 +14615,6 @@ msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。�
 #~ msgid "Elements (it the right order)"
 #~ msgstr "元素（正確順序）"
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Edit iDevices"
 #~ msgstr "編輯 iDevice"
 

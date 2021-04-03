@@ -15370,9 +15370,6 @@ msgstr ""
 "stato creato con una versione più recente di eXe. Aggiornare eXe e "
 "riprovare."
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Edit iDevices"
 #~ msgstr "Modifica iDevice"
 
