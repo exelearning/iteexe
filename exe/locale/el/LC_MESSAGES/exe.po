@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-04 13:13+0300\n"
+"PO-Revision-Date: 2021-04-04 19:57+0300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
 "Language-Team: Greek <ttnfy17@yahoo.gr>\n"
@@ -855,7 +855,7 @@ msgstr "Γλώσσα συμπλήρωσης κενών"
 #: exe/engine/config.py:105 exe/engine/config.py:127 exe/engine/config.py:131
 #: exe/engine/config.py:135 exe/jsui/scripts/app/view/ui/LeftPanel.js:106
 msgid "Text and Tasks"
-msgstr "Κείμενα & Εργασίες"
+msgstr "Κείμενα και Εργασίες"
 
 #: exe/engine/config.py:101 exe/engine/config.py:102 exe/engine/config.py:106
 #: exe/engine/config.py:128 exe/engine/config.py:129 exe/engine/config.py:130
@@ -1385,8 +1385,8 @@ msgid ""
 msgstr ""
 "<p>Επιλέξτε σύμβολα από τον επεξεργαστή κειμένου παρακάτω ή εισάγετε LATEX "
 "χειροκίνητα για να δημιουργήσετε έναν μαθηματικό τύπο. Για να κάνετε "
-"προεπισκόπηση του LATEX όπως θα εμφανίζεται, χρησιμοποιήστε &το πλήκτρο;"
-"Προεπισκόπηση&gt; παρακάτω.</p>"
+"προεπισκόπηση του LATEX όπως θα εμφανίζεται, χρησιμοποιήστε το πλήκτρο &lt;"
+"Προεπισκόπηση&gt; που βρίσκεται παρακάτω.</p>"
 
 #: exe/engine/field.py:3659
 msgid ""
