@@ -90,9 +90,9 @@ var $exeDevice = {
         "msgSolution": _("Solution"),
         "msgFirstQuestion": _("First question"),
         "msgNextQuestion": _("Next question"),
-        "msgPreviousQuestion":_("Previous question"),
+        "msgPreviousQuestion": _("Previous question"),
         "msgLastQuestion": _("Last question"),
-        "msgQuestionNumber":_("Question number")
+        "msgQuestionNumber": _("Question number")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -103,7 +103,7 @@ var $exeDevice = {
         $exeDevice.initQuestions();
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
-        $exeDevice.loadYoutubeApi();
+        //$exeDevice.loadYoutubeApi();
         $('.gameQE-EVILabel').find('button').hide();
     },
     setMessagesInfo: function () {
@@ -130,7 +130,7 @@ var $exeDevice = {
         msgs.msgDuration = _('Please check the video length and the end time');
         msgs.msgFormatVideo = _('Use a YouTube URL or select a file (mp4, ogg, webm, mp3, wav)');
         msgs.msgExportFileError = _("Games with local videos or audios can't be exported");
-        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
+        msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
     },
     getId: function () {
         var randomstring = Math.random().toString(36).slice(-8);
@@ -189,12 +189,12 @@ var $exeDevice = {
         }
         var lduration = Math.floor($exeDevice.player.getDuration());
         if (!isNaN(lduration) && lduration > 0) {
-           $exeDevice.durationVideo = lduration;
+            $exeDevice.durationVideo = lduration;
             if ($exeDevice.hourToSeconds($('#vquextEVIEnd').val()) == 0) {
                 var duration = $exeDevice.secondsToHour(lduration);
                 $('#vquextEVIEnd').val(duration);
             }
-        } 
+        }
     },
     onPlayerReady: function (event) {
         if ($exeDevice.videoType > 0) {
@@ -328,31 +328,31 @@ var $exeDevice = {
         }
     },
     getDataVideoLocal: function (e) {
-       if ($exeDevice.videoType > 0) {
-              if(this.duration>0){
+        if ($exeDevice.videoType > 0) {
+            if (this.duration > 0) {
                 $exeDevice.durationVideo = Math.floor(this.duration);
                 var endVideo = $exeDevice.hourToSeconds($('#vquextEVIEnd').val()) || 0;
                 if (endVideo < 1) {
                     $('#vquextEVIEnd').val($exeDevice.secondsToHour($exeDevice.durationVideo));
                 }
-              }
-          }
+            }
+        }
 
     },
     updateTimerDisplayLocal: function () {
-         if ($exeDevice.videoType > 0) {
-              if ($exeDevice.localPlayer) {
-                  var currentTime = $exeDevice.localPlayer.currentTime;
-                  if (currentTime) {
-                      var time = $exeDevice.secondsToHour(Math.floor(currentTime));
-                      $('#vquextEVITime').text(time);
-                      if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
-                          $exeDevice.localPlayer.pause();
-                          $exeDevice.pointEnd = 100000;
-                      }
-                  }
-              }
-          }
+        if ($exeDevice.videoType > 0) {
+            if ($exeDevice.localPlayer) {
+                var currentTime = $exeDevice.localPlayer.currentTime;
+                if (currentTime) {
+                    var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                    $('#vquextEVITime').text(time);
+                    if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                        $exeDevice.localPlayer.pause();
+                        $exeDevice.pointEnd = 100000;
+                    }
+                }
+            }
+        }
 
     },
     updateProgressBarLocal: function () {
@@ -915,6 +915,8 @@ var $exeDevice = {
             if ($exeDevice.videoType > 0) {
                 $exeDevice.initClock(dataGame.videoType);
                 $exeDevice.showPlayer();
+            } else {
+                $exeDevice.loadYoutubeApi();
             }
         }
     },
@@ -928,7 +930,7 @@ var $exeDevice = {
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
-        game.authorVideo=typeof game.authorVideo != "undefined" ? game.authorVideo : "";
+        game.authorVideo = typeof game.authorVideo != "undefined" ? game.authorVideo : "";
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         game.videoType = typeof game.videoType == "undefined" ? 0 : game.videoType;
         game.isNavigable = typeof game.isNavigable == "undefined" ? false : game.isNavigable;
@@ -1060,7 +1062,7 @@ var $exeDevice = {
             html += '<div class="vquext-feedback-game">' + textFeedBack + '</div>';
         }
         html += linkVideo;
-        html += '<div class="vquext-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
+        html += '<div class="vquext-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
@@ -1118,7 +1120,7 @@ var $exeDevice = {
         p.imageVideo = $('#vquextECheckImageVideo').is(':checked') ? 1 : 0;
         p.iVideo = 0;
         p.fVideo = 0;
-        p.eText = ''; 
+        p.eText = '';
         p.typeQuestion = parseInt($('input[name=vquexttypequestion]:checked').val());
         p.quextion = $('#vquextEQuestion').val().trim();
         if (p.typeQuestion == 1) {
@@ -1258,7 +1260,7 @@ var $exeDevice = {
             customMessages = $('#vquextECustomMessages').is(':checked'),
             isVideoLocal = (validExt.indexOf(extension) != -1) || (idVideoQuExt.toLowerCase().indexOf("google.com/videoplayback") != -1),
             isAudio = (validExtAudio.indexOf(extension) != -1) || ((idVideoQuExt.toLowerCase().indexOf("https://drive.google.com") == 0 && idVideoQuExt.toLowerCase().indexOf('sharing') != -1)),
-            authorVideo=$('#vquextEAuthor').val(),
+            authorVideo = $('#vquextEAuthor').val(),
             isNavigable = $('#vquextENavigable').is(':checked'),
             repeatQuestion = $('#vquextERepeatQuestion').is(':checked');
         if (!itinerary) return false;
@@ -1352,9 +1354,9 @@ var $exeDevice = {
             'videoType': $exeDevice.videoType,
             'customMessages': customMessages,
             'version': 2,
-            'authorVideo':authorVideo,
-            'isNavigable':isNavigable,
-            'repeatQuestion':repeatQuestion
+            'authorVideo': authorVideo,
+            'isNavigable': isNavigable,
+            'repeatQuestion': repeatQuestion
         }
         return data;
     },
@@ -1566,15 +1568,25 @@ var $exeDevice = {
         });
 
         $("#vquextEVIURL").change(function () {
-            var url = $(this).val().trim();
+            var url = $(this).val().trim(),
+                id = $exeDevice.getIDYoutube(url);
             $('#vquextEVIEnd').val('00:00:00');
-            $exeDevice.loadVideo(url);
+            if (typeof YT == "undefined" && id) {
+                $exeDevice.loadYoutubeApi()
+            } else {
+                $exeDevice.loadVideo(url);
+            }
         });
 
         $('#vquextEPlayStart').on('click', function (e) {
             e.preventDefault();
-            var url = $('#vquextEVIURL').val().trim();
-            $exeDevice.loadVideo(url);
+            var url = $('#vquextEVIURL').val().trim(),
+                id = $exeDevice.getIDYoutube(url);
+            if (typeof YT == "undefined" && id) {
+                $exeDevice.loadYoutubeApi()
+            } else {
+                $exeDevice.loadVideo(url);
+            }
 
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();

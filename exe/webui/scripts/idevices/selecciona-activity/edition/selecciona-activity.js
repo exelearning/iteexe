@@ -31,6 +31,8 @@ var $exeDevice = {
     silentVideo: 0,
     tSilentVideo: 0,
     endSilent: 0,
+    isVideoType: false,
+    isVideoIntro: 0,
     ci18n: {
         "msgReady": _("Ready?"),
         "msgStartGame": _("Click here to start"),
@@ -145,7 +147,6 @@ var $exeDevice = {
     },
 
     youTubeReady: function () {
-        $("#seleccionaMediaVideo").prop("disabled", false);
         $exeDevice.player = new YT.Player('seleccionaEVideo', {
             width: '100%',
             height: '100%',
@@ -168,12 +169,43 @@ var $exeDevice = {
                 'color': 'white',
                 'autoplay': 0,
                 'controls': 1
+            },
+            events: {
+                'onReady': $exeDevice.onPlayerReady,
+                'onError': $exeDevice.onPlayerError
             }
+            
         });
     },
 
     onPlayerReady: function (event) {
-        $exeDevice.youtubeLoaded = true;
+        if ($exeDevice.isVideoType) {
+            $exeDevice.showVideoQuestion();
+        } else if ($exeDevice.isVideoIntro == 1) {
+            $('#seleccionaEVideoIntroPlay').click();
+            var idv = $exeDevice.getIDYoutube($('#seleccionaEVideoIntro').val()),
+                iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
+                fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
+                if (fVI <= iVI) {
+                    $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                    return;
+                }
+            $('#seleccionaEVIURL').val($('#seleccionaEVideoIntro').val());
+            $('#seleccionaEVIDiv').show();
+            $('#seleccionaEVI').show();
+            $('#seleccionaEVINo').hide();
+            $('#seleccionaENumQuestionDiv').hide();
+            $exeDevice.startVideoIntro(idv, iVI, fVI);
+        } else if ($exeDevice.isVideoIntro == 2) {
+            var idv = $exeDevice.getIDYoutube($('#seleccionaEVIURL').val()),
+                iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
+                fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
+            if (fVI <= iVI) {
+                $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                return;
+            }
+            $exeDevice.startVideoIntro(idv, iVI, fVI);
+        }
     },
 
     updateSoundVideo: function () {
@@ -503,7 +535,13 @@ var $exeDevice = {
             $exeDevice.tSilentVideo = p.tSilentVideo;
             $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
             $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
-            $exeDevice.showVideoQuestion();
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
+
         } else if (p.type == 3) {
             tinyMCE.get('seleccionaEText').setContent(unescape(p.eText));
         }
@@ -1088,7 +1126,7 @@ var $exeDevice = {
 			';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
-        $exeDevice.loadYoutubeApi();
+        //$exeDevice.loadYoutubeApi();
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
         tinymce.init({
@@ -1120,6 +1158,8 @@ var $exeDevice = {
         $("#seleccionaMediaNormal").prop("disabled", false);
         $("#seleccionaMediaImage").prop("disabled", false);
         $("#seleccionaMediaText").prop("disabled", false);
+        $("#seleccionaMediaVideo").prop("disabled", false);
+
         $('#seleccionaGotoCorrect').hide();
         $('#seleccionaGotoIncorrect').hide();
         $('label[for="seleccionaGotoCorrect"]').hide();
@@ -1192,8 +1232,12 @@ var $exeDevice = {
                     }
                 }
             });
+            var hasYoutube = false;
             for (var i = 0; i < dataGame.selectsGame.length; i++) {
                 dataGame.selectsGame[i].audio = typeof dataGame.selectsGame[i].audio == "undefined" ? "" : dataGame.selectsGame[i].audio;
+                if (i > 0 && dataGame.selectsGame[i].type == 2) {
+                    hasYoutube = true;
+                }
             }
 
             $audiosLink.each(function () {
@@ -1234,6 +1278,9 @@ var $exeDevice = {
                 } else {
                     $("#eXeIdeviceTextAfter").val(textAfter)
                 }
+            }
+            if (hasYoutube) {
+                $exeDevice.loadYoutubeApi();
             }
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
@@ -1310,10 +1357,7 @@ var $exeDevice = {
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.selectsGame = game.selectsGame;
         $exeDevice.updateSelectOrder();
-        
         $exeDevice.showQuestion($exeDevice.active);
-
-
     },
     isJsonString: function (str) {
         try {
@@ -1823,15 +1867,42 @@ var $exeDevice = {
 
         $('#seleccionaEPlayVideo').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
         });
 
         $(' #seleccionaECheckSoundVideo').on('change', function () {
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
         });
 
         $('#seleccionaECheckImageVideo').on('change', function () {
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
         });
 
 
@@ -2042,7 +2113,16 @@ var $exeDevice = {
         $('#seleccionaEVideoIntroPlay').on('click', function (e) {
             e.preventDefault();
             var idv = $exeDevice.getIDYoutube($('#seleccionaEVideoIntro').val());
-            if (idv) {
+            if (!idv) {
+                $('#seleccionaEVINo').show();
+                $('#seleccionaEVI').hide();
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoIntro = 1;
+                $exeDevice.loadYoutubeApi();
+            } else {
                 var iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
                 $('#seleccionaEVIURL').val($('#seleccionaEVideoIntro').val());
@@ -2051,16 +2131,18 @@ var $exeDevice = {
                 $('#seleccionaEVINo').hide();
                 $('#seleccionaENumQuestionDiv').hide();
                 $exeDevice.startVideoIntro(idv, iVI, fVI);
-            } else {
-                $('#seleccionaEVINo').show();
-                $('#seleccionaEVI').hide();
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             }
         });
         $('#seleccionaEVIPlayI').on('click', function (e) {
             e.preventDefault();
             var idv = $exeDevice.getIDYoutube($('#seleccionaEVIURL').val());
-            if (idv) {
+            if (!idv) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoIntro = 2;
+                $exeDevice.loadYoutubeApi();
+            } else {
                 var iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
                 if (fVI <= iVI) {
@@ -2068,8 +2150,6 @@ var $exeDevice = {
                     return;
                 }
                 $exeDevice.startVideoIntro(idv, iVI, fVI);
-            } else {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube)
             }
         });
         $('#seleccionaEVIClose').on('click', function (e) {

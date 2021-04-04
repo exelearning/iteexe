@@ -35,6 +35,7 @@ var $eXeAdivina = {
     previousScore: '',
     initialScore: '',
     hasLATEX:false,
+   
     init: function () {
         this.activities = $('.adivina-IDevice');
         if (this.activities.length == 0) return;
@@ -142,8 +143,9 @@ var $eXeAdivina = {
             $('#adivinaDivFeedBack-' + i).hide();
         });
         if ($eXeAdivina.hasLATEX && typeof (MathJax) == "undefined") {
-            $eXeAdivina.loadMathJax();
-        }
+			var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+			$exe.loadScript(math);
+		}
     },
     Decrypt: function (str) {
         if (!str) str = "";
@@ -352,7 +354,7 @@ var $eXeAdivina = {
                 <div class="sr-av">' + msgs.msgAnswer + ':</div>\
                 <div class="gameQP-Prhase" id="adivinaEPhrase-' + instance + '"></div>\
                 <div class="sr-av">' + msgs.msgQuestion + ':</div>\
-                <div class="gameQP-Definition" id="adivinaDefinition-' + instance + '"></div>\
+                <div class="gameQP-Question" id="adivinaDefinition-' + instance + '"></div>\
                 <div class="gameQP-DivReply" id="adivinaDivReply-' + instance + '">\
                     <a href="#" id="adivinaBtnMoveOn-' + instance + '" title="' + msgs.msgMoveOne + '">\
                         <strong><span class="sr-av">' + msgs.msgMoveOne + '</span></strong>\
@@ -1327,7 +1329,7 @@ var $eXeAdivina = {
             $eXeAdivina.newQuestion(instance)
         }, timeShowSolution);
     },
-    loadMathJax: function () {
+   loadMathJax: function () {
         var tag = document.createElement('script');
         //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
         tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";

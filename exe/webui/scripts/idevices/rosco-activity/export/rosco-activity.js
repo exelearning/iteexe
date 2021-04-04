@@ -164,7 +164,8 @@ var $eXeRosco = {
 			$eXeRosco.addEvents(i);
 		});
 		if ($eXeRosco.hasLATEX && typeof (MathJax) == "undefined") {
-			$eXeRosco.loadMathJax();
+			var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+			$exe.loadScript(math);
 		}
 	},
 

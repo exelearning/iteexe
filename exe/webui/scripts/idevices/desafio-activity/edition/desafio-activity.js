@@ -82,7 +82,7 @@ var $exeDevice = {
     },
     addChallenge: function () {
         $exeDevice.saveChallenge();
-        if($exeDevice.challengesGame.length==9){
+        if($exeDevice.challengesGame.length==10){
             $exeDevice.showMessage($exeDevice.msgs.msgTenChallenges);
             return;
         }

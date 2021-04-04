@@ -195,8 +195,9 @@ var $eXeQuExt = {
             $('#quextDivFeedBack-' + i).hide();
         });
         if ($eXeQuExt.hasLATEX && typeof (MathJax) == "undefined") {
-            $eXeQuExt.loadMathJax();
-        }
+            var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+			$exe.loadScript(math);
+		}
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
