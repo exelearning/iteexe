@@ -28,6 +28,7 @@ from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
 from exe.engine.jsidevice import JsIdevice;
+from cgi import escape
 
 log = logging.getLogger(__name__)
 
@@ -238,9 +239,9 @@ class IdevicePane(Renderable, Resource):
         log.debug("of type "+repr(type(prototype.title)))
         log.debug(prototype._title.lower())
         xml  = u"  <idevice>\n"
-        xml += u"   <label>" + prototype.rawTitle + "</label>\n"
+        xml += u"   <label>" + escape(prototype.rawTitle) + "</label>\n"
         xml += u"   <id>" + prototype.id + "</id>\n"
-        xml += u"   <category>" + _(category) + "</category>\n"
+        xml += u"   <category>" + escape(_(category)) + "</category>\n"
         xml += u"   <visible>" + str(visible).lower() + "</visible>\n"
         xml += u"  </idevice>\n"
         return xml
