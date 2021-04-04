@@ -12281,7 +12281,7 @@ msgstr "Nuevo bloque"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:237
 msgid "About this iDevice"
-msgstr "Sobre este iDevice"
+msgstr "Acerca de este iDevice"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:238
 msgid "Cofinanced by:"
@@ -13725,7 +13725,7 @@ msgstr "Recursivo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:14
 msgid "It works with mindmaps"
-msgstr "Funciona con mapas mentales"
+msgstr "Funciona con mindmaps"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:339
