@@ -1,4 +1,4 @@
-intef-exe (3:2.6~beta1) lucid; urgency=medium
+intef-exe (3:2.6~alfa) lucid; urgency=medium
 
   * Ignacio Gros
     - TinyMCE: New image optimizer.

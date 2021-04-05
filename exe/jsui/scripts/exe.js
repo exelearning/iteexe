@@ -217,6 +217,9 @@ Ext.application({
                 
                 latest = latest.replace(/\./g,"");
                 current = current.replace(/\./g,"");
+				// Remove ~alfa or ~beta
+				current = current.split("~");
+				current = current[0];
 
                 while (latest.length>current.length) current += '0';
                 while (current.length>latest.length) latest += '0';                
