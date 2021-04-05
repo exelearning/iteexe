@@ -1,4 +1,4 @@
-intef-exe (3:2.6) lucid; urgency=medium
+intef-exe (3:2.6~beta1) lucid; urgency=medium
 
   * Ignacio Gros
     - TinyMCE: New image optimizer.
@@ -15,6 +15,7 @@ intef-exe (3:2.6) lucid; urgency=medium
     - Fixed: Could not see the selected icon in Styles with SVG icons.
     - Fixed: MediaElement Player download file problem. (#555)
     - Fixed: Presentation Style: Prevent link default behaviour (usability problem).
+    - Fixed: Escape & and other characters to avoid XML errors in the JavaScript iDevices configuration files.
 
   * Manuel Narváez
     - New iDevice category (Games):
