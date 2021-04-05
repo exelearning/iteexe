@@ -31,6 +31,8 @@ var $exeDevice = {
     tSilentVideo: 0,
     endSilent: 0,
     version: 2,
+    isVideoType: false,
+    isVideoIntro: 0,
     ci18n: {
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
@@ -109,7 +111,7 @@ var $exeDevice = {
         msgs.msgSilentPoint = _("The silence time is wrong. Check the video duration.");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
-        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
+        msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
 
     },
     loadYoutubeApi: function () {
@@ -143,11 +145,40 @@ var $exeDevice = {
                 'color': 'white',
                 'autoplay': 0,
                 'controls': 1
+            },
+            events: {
+                'onReady': $exeDevice.onPlayerReady,
+                'onError': $exeDevice.onPlayerError
             }
         });
     },
     onPlayerReady: function (event) {
-        $exeDevice.youtubeLoaded = true;
+        if ($exeDevice.isVideoType) {
+            $exeDevice.showVideoQuestion();
+        }else if ($exeDevice.isVideoIntro == 1) {
+            var idv = $exeDevice.getIDYoutube($('#quextEVideoIntro').val()),
+                iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
+                fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
+            if (fVI <= iVI) {
+                $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                return;
+            }
+            $('#quextEVIURL').val($('#quextEVideoIntro').val());
+            $('#quextEVIDiv').show();
+            $('#quextEVI').show();
+            $('#quextEVINo').hide();
+            $('#quextENumQuestionDiv').hide();
+            $exeDevice.startVideoIntro(idv, iVI, fVI);
+        } else if ($exeDevice.isVideoIntro == 2) {
+            var idv = $exeDevice.getIDYoutube($('#quextEVIURL').val()),
+                iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
+                fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
+            if (fVI <= iVI) {
+                $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                return;
+            }
+            $exeDevice.startVideoIntro(idv, iVI, fVI);
+        }
     },
 
     updateTimerDisplay: function () {
@@ -265,9 +296,9 @@ var $exeDevice = {
         }
     },
     playSound: function (selectedFile) {
-        var selectFile=$exeDevice.extractURLGD(selectedFile);
+        var selectFile = $exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function (event) {
             $exeDevice.playerAudio.play();
         });
     },
@@ -416,7 +447,12 @@ var $exeDevice = {
             $exeDevice.tSilentVideo = p.tSilentVideo;
             $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
             $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
-            $exeDevice.showVideoQuestion();
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
         } else if (p.type == 3) {
             tinyMCE.get('quextEText').setContent(unescape(p.eText));
         }
@@ -517,7 +553,7 @@ var $exeDevice = {
         $cursor.hide();
         $image.attr('alt', alt);
         $('#quextENoImage').show();
-        url=$exeDevice.extractURLGD(url);
+        url = $exeDevice.extractURLGD(url);
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -707,7 +743,7 @@ var $exeDevice = {
                                 <label for="quextECustomScore"><input type="checkbox" id="quextECustomScore">' + _("Custom score") + '. </label>\
                             </p>\
                             <p>\
-                                <strong class="GameModeLabel"><a href="#quextEGameModeHelp" id="quextEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
+                                <strong class="GameModeLabel"><a href="#quextEGameModeHelp" id="quextEGameModeHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="' + _("Help") + '"/></a> ' + _("Score") + ':</strong>\
                                 <input class="gameQE-TypeGame" checked="checked"  id="quextETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                 <label for="quextETypeActivity">' + _("0 to 10") + '</label>\
 								<input class="gameQE-TypeGame"  id="quextEGameMode" type="radio" name="qxtgamemode" value="0" />\
@@ -717,9 +753,9 @@ var $exeDevice = {
                             </p>\
                             <div id="quextEGameModeHelp" class="gameQE-TypeGameHelp">\
                                 <ul>\
-                                    <li><strong>'+_("0 to 10")+': </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
-                                    <li><strong>'+_("Points and lives")+': </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
-                                    <li><strong>'+_("No score")+': </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                    <li><strong>' + _("0 to 10") + ': </strong>' + _("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.") + '</li>\
+                                    <li><strong>' + _("Points and lives") + ': </strong>' + _("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.") + '</li>\
+                                    <li><strong>' + _("No score") + ': </strong>' + _("No score and no lives. You have to answer right to get some information (a feedback).") + '</li>\
                                 </ul>\
                             </div>\
                             <p>\
@@ -747,13 +783,13 @@ var $exeDevice = {
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="gameQE-EInputMedias">\
                                         <input class="gameQE-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="gameQE-MediaNormal">' + _("None") + '</label>\
+                                        <label for="quextMediaNormal">' + _("None") + '</label>\
                                         <input class="gameQE-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
-                                        <label for="mediaImagen">' + _("Image") + '</label>\
+                                        <label for="quextMediaImage">' + _("Image") + '</label>\
                                         <input class="gameQE-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
-                                        <label for="mediaVideo">' + _("Video") + '</label>\
+                                        <label for="quextMediaVideo">' + _("Video") + '</label>\
                                         <input class="gameQE-Type"  id="quextMediaText" type="radio" name="qxtype" value="3" disabled />\
-                                        <label for="mediaTexto">' + _("Text") + '</label>\
+                                        <label for="quextMediaText">' + _("Text") + '</label>\
                                     </div>\
                                     <span>' + _("Options Number") + ':</span>\
                                     <div class="gameQE-EInputNumbers">\
@@ -935,7 +971,7 @@ var $exeDevice = {
 			';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
-        $exeDevice.loadYoutubeApi();
+        //$exeDevice.loadYoutubeApi();
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
         tinymce.init({
@@ -967,6 +1003,7 @@ var $exeDevice = {
         $("#quextMediaNormal").prop("disabled", false);
         $("#quextMediaImage").prop("disabled", false);
         $("#quextMediaText").prop("disabled", false);
+        $("#quextMediaVideo").prop("disabled", false);
         if ($exeDevice.questionsGame.length == 0) {
             var question = $exeDevice.getCuestionDefault();
             $exeDevice.questionsGame.push(question);
@@ -1034,8 +1071,12 @@ var $exeDevice = {
                     }
                 }
             });
+            var hasYoutube = false;
             for (var i = 0; i < dataGame.questionsGame.length; i++) {
                 dataGame.questionsGame[i].audio = typeof dataGame.questionsGame[i].audio == "undefined" ? "" : dataGame.questionsGame[i].audio;
+                if (i > 0 && dataGame.questionsGame[i].type == 2) {
+                    hasYoutube = true;
+                }
             }
             $audiosLink.each(function () {
                 var iq = parseInt($(this).text());
@@ -1082,7 +1123,9 @@ var $exeDevice = {
                     $("#eXeIdeviceTextAfter").val(textAfter)
                 }
             }
-
+            if (hasYoutube) {
+                $exeDevice.loadYoutubeApi();
+            }
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
         }
@@ -1217,7 +1260,7 @@ var $exeDevice = {
         if (textAfter != "") {
             html += '<div class="quext-extra-content">' + textAfter + '</div>';
         }
-        html += '<div class="quext-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
+        html += '<div class="quext-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
@@ -1600,15 +1643,43 @@ var $exeDevice = {
 
         $('#quextEPlayVideo').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#quextEURLYoutube').val().trim())) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
+
         });
 
 
         $(' #quextECheckSoundVideo').on('change', function () {
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#quextEURLYoutube').val().trim())) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
         });
         $('#quextECheckImageVideo').on('change', function () {
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#quextEURLYoutube').val().trim())) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
         });
         $('#gameQEIdeviceForm').on('dblclick', '#quextEImage', function () {
             $('#quextECursor').hide();
@@ -1786,25 +1857,41 @@ var $exeDevice = {
         $('#quextEVideoIntroPlay').on('click', function (e) {
             e.preventDefault();
             var idv = $exeDevice.getIDYoutube($('#quextEVideoIntro').val());
-            if (idv) {
+            if (!idv) {
+                $('#quextEVINo').show();
+                $('#quextEVI').hide();
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoIntro = 1;
+                $exeDevice.loadYoutubeApi();
+            } else {
                 var iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
+                if (fVI <= iVI) {
+                    $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                    return;
+                }
                 $('#quextEVIURL').val($('#quextEVideoIntro').val());
                 $('#quextEVIDiv').show();
                 $('#quextEVI').show();
                 $('#quextEVINo').hide();
                 $('#quextENumQuestionDiv').hide();
                 $exeDevice.startVideoIntro(idv, iVI, fVI);
-            } else {
-                $('#quextEVINo').show();
-                $('#quextEVI').hide();
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             }
         });
         $('#quextEVIPlayI').on('click', function (e) {
             e.preventDefault();
             var idv = $exeDevice.getIDYoutube($('#quextEVIURL').val());
-            if (idv) {
+            if (!idv) {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoIntro = 2;
+                $exeDevice.loadYoutubeApi();
+            } else {
                 var iVI = $exeDevice.hourToSeconds($('#quextEVIStart').val()),
                     fVI = $exeDevice.hourToSeconds($('#quextEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#quextEVIEnd').val()) : 9000;
                 if (fVI <= iVI) {
@@ -1812,9 +1899,9 @@ var $exeDevice = {
                     return;
                 }
                 $exeDevice.startVideoIntro(idv, iVI, fVI);
-            } else {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube)
             }
+
+
         });
         $('#quextEVIClose').on('click', function (e) {
             e.preventDefault();
@@ -1840,7 +1927,7 @@ var $exeDevice = {
 
         $('#quextEURLAudio').on('change', function () {
             var selectedFile = $(this).val().trim();
-            if (selectedFile.length==0) {
+            if (selectedFile.length == 0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {
                 if (selectedFile.length > 4) {
@@ -1864,8 +1951,8 @@ var $exeDevice = {
                 ul = $('#quextEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
-        $("#quextEGameModeHelpLnk").click(function(){
-			$("#quextEGameModeHelp").toggle();
+        $("#quextEGameModeHelpLnk").click(function () {
+            $("#quextEGameModeHelp").toggle();
             return false;
         });
 
@@ -1934,8 +2021,8 @@ var $exeDevice = {
         return isValid;
     },
     extractURLGD: function (urlmedia) {
-        var sUrl=urlmedia;
-        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+        var sUrl = urlmedia;
+        if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;

@@ -33,6 +33,7 @@ var $exeDevice = {
     version: 2,
     iDevicePath: "/scripts/idevices/adivina-activity/edition/",
     playerAudio: "",
+    isVideoType:false,
     ci18n: {
         "msgHappen": _("Move on"),
         "msgReply": _("Reply"),
@@ -259,7 +260,7 @@ var $exeDevice = {
                             <div class="gameQE-EMultiMediaOption">\
                                 <div class="gameQE-EMultimedia" id="adivinaEMultimedia">\
                                     <textarea id="adivinaEText"></textarea>\
-                                    <img class="gameQE-EMedia" src="' + path + "quextIEImage" + '" id="adivinaEImage" alt="' + _("Image") + '" />\
+                                    <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="adivinaEImage" alt="' + _("Image") + '" />\
                                     <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="adivinaENoImage" alt="' + _("No image") + '" />\
                                     <div class="gameQE-EMedia" id="adivinaEVideo"></div>\
                                     <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="adivinaENoImageVideo" alt="" />\
@@ -312,7 +313,7 @@ var $exeDevice = {
 		    </div>\
 			';
         var field = $("textarea.jsContentEditor").eq(0)
-        $exeDevice.loadYoutubeApi();
+       // $exeDevice.loadYoutubeApi();
         field.before(html);
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
@@ -372,7 +373,13 @@ var $exeDevice = {
             $exeDevice.tSilentVideo = p.tSilentVideo;
             $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
             $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
-            $exeDevice.showVideoQuestion();
+            if( typeof YT =="undefined"){
+                $exeDevice.isVideoType=true;
+                $exeDevice.loadYoutubeApi();
+            }else{
+                $exeDevice.showVideoQuestion();
+            }
+            
         } else if (p.type == 3) {
             tinyMCE.get('adivinaEText').setContent(unescape(p.eText));
         }
@@ -394,6 +401,7 @@ var $exeDevice = {
         $("#adivinaEMediaNormal").prop("disabled", false);
         $("#adivinaEMediaImage").prop("disabled", false);
         $("#adivinaEMediaText").prop("disabled", false);
+        $("#adivinaEMediaVideo").prop("disabled", false);
         if ($exeDevice.wordsGame.length == 0) {
             var question = $exeDevice.getCuestionDefault();
             $exeDevice.wordsGame.push(question);
@@ -466,7 +474,6 @@ var $exeDevice = {
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     },
     youTubeReady: function () {
-        $("#adivinaEMediaVideo").prop("disabled", false);
         $exeDevice.player = new YT.Player('adivinaEVideo', {
             width: '100%',
             height: '100%',
@@ -483,7 +490,9 @@ var $exeDevice = {
         });
     },
     onPlayerReady: function (event) {
-        $exeDevice.youtubeLoaded = true;
+        if ($exeDevice.isVideoType){
+            $exeDevice.showVideoQuestion();
+        }
     },
     updateSoundVideo: function () {
         if ($exeDevice.activeSilent) {
@@ -611,6 +620,7 @@ var $exeDevice = {
                 $imagesLink = $('.adivina-LinkImages', wrapper),
                 $audiosLink = $('.adivina-LinkAudios', wrapper);
             version = version == '' ? 0 : parseInt(version);
+            var hasYoutube=false;
             for (var i = 0; i < dataGame.wordsGame.length; i++) {
                 var p = dataGame.wordsGame[i];
                 if (version < 2) {
@@ -626,7 +636,11 @@ var $exeDevice = {
                     p.eText = '';
                     p.audio = '';
                 }
+                if(i>0 && p.type==2){
+                    hasYoutube=true;
+                }
                 dataGame.wordsGame[i] = p;
+                
             }
 
             $imagesLink.each(function () {
@@ -679,7 +693,11 @@ var $exeDevice = {
                 }
             }
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
+            if(hasYoutube){
+                $exeDevice.loadYoutubeApi();
+            }
             $exeDevice.showQuestion(0);
+           
         }
     },
     getIndexTime: function(tm) {
@@ -1055,7 +1073,17 @@ var $exeDevice = {
         });
         $('#adivinaEPlayVideo').on('click', function (e) {
             e.preventDefault();
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())){
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if( typeof YT =="undefined"){
+                $exeDevice.isVideoType=true;
+                $exeDevice.loadYoutubeApi();
+            }else{
+                $exeDevice.showVideoQuestion();
+            }
+
         });
         $('#adivinaEPlayAudio').on('click', function (e) {
             e.preventDefault();
@@ -1066,10 +1094,28 @@ var $exeDevice = {
             }
         });
         $(' #adivinaECheckSoundVideo').on('change', function () {
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())){
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if( typeof YT =="undefined"){
+                $exeDevice.isVideoType=true;
+                $exeDevice.loadYoutubeApi();
+            }else{
+                $exeDevice.showVideoQuestion();
+            }
         });
         $('#adivinaECheckImageVideo').on('change', function () {
-            $exeDevice.showVideoQuestion();
+            if (!$exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())){
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+                return;
+            }
+            if( typeof YT =="undefined"){
+                $exeDevice.isVideoType=true;
+                $exeDevice.loadYoutubeApi();
+            }else{
+                $exeDevice.showVideoQuestion();
+            }
         });
         $('#adivinaEUseLives').on('change', function () {
             var marcado = $(this).is(':checked');
@@ -1317,7 +1363,7 @@ var $exeDevice = {
         }
     },
 
-    showVideoQuestion: function () {
+    showVideoQuestion: function () {    
         var soundVideo = $('#adivinaECheckSoundVideo').is(':checked') ? 1 : 0,
             imageVideo = $('#adivinaECheckImageVideo').is(':checked') ? 1 : 0,
             iVideo = $exeDevice.hourToSeconds($('#adivinaEInitVideo').val()),
