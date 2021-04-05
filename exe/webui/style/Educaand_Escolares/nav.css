@@ -1,8 +1,5 @@
 html,body{min-height:100%}
-html{padding:0}
-html,body{min-height:100%}
-html{background:#fff url(_escolares_bg.png);/* repeat 0 -2px */
-background-size:cover;background-position:top left;background-repeat:no-repeat}
+html{padding:0;background:#fff url(_escolares_bg.png);background-size:cover;background-position:top left;background-repeat:no-repeat}
 body{padding:0;text-align:center}
 @media all and (min-width:1px){
 	body{background-image:url(_escolares_bg.png);background-size:cover;background-position:top left;background-repeat:no-repeat}

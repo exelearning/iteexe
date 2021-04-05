@@ -215,9 +215,8 @@ $(function(){
 	if ($("body").hasClass("exe-web-site")) {
 		if($(window).width()<829 && $(window).height()<1800){
 			myTheme.init2();
-		}
-		else{
-		myTheme.init();
+		} else {
+			myTheme.init();
 		}
 	}
 	myTheme.common.init();

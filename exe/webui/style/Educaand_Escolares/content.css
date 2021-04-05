@@ -20,7 +20,7 @@ header#header #headerContent h1{color:#cc6715;border:none;margin-right:75px}
 #header h1,#nodeTitle{text-shadow:0 0 8px rgba(255,255,255,.6),0 0 5px rgba(255,255,255,.6),0 0 2px rgba(255,255,255,.9)}
 #exe-node-0 header.nodeDecoration h1.nodeTitle{color:#fff;background-color:#00843d;padding:5px 5px 5px 15px;margin:5px 0 0 0 !important;border:none!important}
 h1#nodeTitle{margin-right:30px}
-/*en scorm se metia titulo en logo*/
+/* en scorm se metia titulo en logo */
 @media (max-width:420px){
 	#header{font-size:21px}
 	h1#nodeTitle{margin-right:80px;line-height:1.1em;font-size:21px}
@@ -43,108 +43,43 @@ ol,ul{color:#444}
 #main h5{font-size:1.1em}
 #main h6{font-size:1em}
 .iDevice{margin:25px 0}
-/*tooltip*/
+/* tooltip */
 a.definition-tt{color:#00843D}
-/*modales*/
+/* modales */
 #pp_full_res .pp_title{color:#00843D;margin:0;padding:1em 0 .25em 0}
 #pp_full_res .pp_inline p{color:#444}
-/* modales en single page*/
+/* modales en single page */
 exe-dialog-text{display:inline-block!important}
 /*scorm navegacion*/
 .previousnext a.previouslink{display:none}
 section.previousnext{display:none}
-/* iDevice icons generico */
-.iDevice_header{background-position:0 50%;background-repeat:no-repeat;padding-top:10px}
-.iDevice_header{background:url(icon_udl_exp_escribe.svg) no-repeat 0 bottom;padding-left:95px;position:relative;min-height:75px!important;width:auto!important}
-.hidden-idevice .iDevice_header{background-color:#fff;padding-left:75px}
-.iDevice_header.iDevice_header_noIcon{padding:0 0 0 10px}
-/* Interactive activities */
-.ListaIdevice .iDevice_header,
-.MultichoiceIdevice .iDevice_header,
-.TrueFalseIdevice .iDevice_header,
-.MultiSelectIdevice .iDevice_header,
-.ClozeIdevice .iDevice_header,
-.ScrambledListIdevice .iDevice_header,
-.GeoGebraIdevice .iDevice_header,
-.interactive-videoIdevice .iDevice_header{background-image:url(icon_udl_exp_interactivo.svg)}
-/*iDevice title*/
+
+/* iDevice title */
 .iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:middle;top:15px;color:#2E2E2E;letter-spacing:.5px;font-weight:bold}
-/*color gris para diferenciar los iDevices que crean manualmente,identificando rapidamente que no han utilizado los iDevices indicados en la lista*/
-.hidden-idevice .iDeviceTitle{color:#526668}
-/*titulos en verde*/
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .iDeviceTitle,.download-packageIdevice .iDeviceTitle,.objectivesIdevice .iDeviceTitle,.RssIdevice .iDeviceTitle{color:#549b0d}
-/*titulos gestor*/
-.IdeviceObjetivo .iDeviceTitle,.IdeviceTemporalizacion .iDeviceTitle,.IdeviceTemporalizacin .iDeviceTitle,.IdeviceOrientaciones .iDeviceTitle,.RubricIdevice .iDeviceTitle{color:#549b0d}
-.textIdevice .iDeviceTitle{color:#2E2E2E}
-/*titulo gris para diferenciar iDevice que crean manualmente por lo que no siguen las indicaciones del manual*/
-/*titulos en violeta*/
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDeviceTitle,.FileAttachIdeviceInc .iDeviceTitle,.GalleryIdevice .iDeviceTitle,.WikipediaIdevice .iDeviceTitle,.preknowledgeIdevice h1.iDeviceTitle,.ReflectionIdevice h1.iDeviceTitle,.CasestudyIdevice h1.iDeviceTitle,.preknowledgeIdevice h2.iDeviceTitle,.ReflectionIdevice h2.iDeviceTitle,.CasestudyIdevice h2.iDeviceTitle{color:#784aba}
-/*idevices gestor*/
-.IdeviceEscucha .iDeviceTitle,.IdeviceLee .iDeviceTitle,.IdevicePiensa .iDeviceTitle,.IdeviceParainformarse .iDeviceTitle,.IdeviceEjemplo .iDeviceTitle,.IdeviceDestacado .iDeviceTitle{color:#784aba}
-/*titulos en azul*/
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .iDeviceTitle,.interactive-videoIdevice .iDeviceTitle,.ListaIdevice .iDeviceTitle,.QuizTestIdevice .iDeviceTitle,.MultichoiceIdevice .iDeviceTitle,.TrueFalseIdevice .iDeviceTitle,.MultiSelectIdevice .iDeviceTitle,.ClozeIdevice .iDeviceTitle,.ScrambledListIdevice .iDeviceTitle,.GeoGebraIdevice header.iDevice_header h2.iDeviceTitle,.activityIdevice header.iDevice_header h2,.interactive-videoIdevice header.iDevice_header h2.iDeviceTitle,.GeoGebraIdevice header.iDevice_header h1.iDeviceTitle,.activityIdevice header.iDevice_header h1,.interactive-videoIdevice header.iDevice_header h1.iDeviceTitle,.readingIdevice h1.iDeviceTitle,.readingIdevice h2.iDeviceTitle{color:#0065ab}
-.AdivinaIdevice .iDeviceTitle,.QuExtIdevice .iDeviceTitle,.RoscoIdevice .iDeviceTitle,.VideoQuExtIdevice .iDeviceTitle{color:#0065ab}
-/*idevices gestor*/
- .IdeviceTrabajaenequipo .iDeviceTitle,.IdeviceHabla .iDeviceTitle,.IdeviceGraba .iDeviceTitle,.IdeviceEjercicios .iDeviceTitle,.IdeviceActividad .iDeviceTitle{color:#0065ab}
-.download-packageIdevice header.iDevice_header_noIcon,.GeoGebraIdevice header.iDevice_header_noIcon{padding-right:30px!important;padding-left:85px!important}
-.download-packageIdevice h1.iDeviceTitle,.GeoGebraIdevice h1.iDeviceTitle{top:20px}
-.em_iDevice_activity header h2{color:#0065ab}
-.em_iDevice_activity header h2{color:#0065ab}
-/*Title FPD adaptacion*/
-/*titulo azul*/
-.emphasis_autoevaluacionfpd .iDeviceTitle{color:#0065ab}
-/*titulo violeta*/
-.emphasis_citasparapensarfpd .iDeviceTitle,.emphasis_recomendacionfpd .iDeviceTitle,.emphasis_casopracticofpd .iDeviceTitle,.emphasis_reflexionfpd .iDeviceTitle,.emphasis_ejercicioresueltofpd .iDeviceTitle,.emphasis_debesconocerfpd .iDeviceTitle,.emphasis_parasabermasfpd .iDeviceTitle{color:#784aba}
-/*titulo verde*/
-.emphasis_orientacionesfpd .iDeviceTitle{color:#549b0d}
+body .hidden-idevice .iDeviceTitle{color:#526668}
+
 /* iDevice content */
 .iDevice_content{overflow:auto;text-align:left}
 /*.iDevice_inner*/
-.iDevice_inner{margin-top:5px;padding:10px 20px 20px 20px;background:#fff;-webkit-box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);-moz-box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37)!important;border:4px solid #2E2e2E;border-radius:20px}
-/*gris para diferenciar los iDevices que crean */
-/*.iDevice_inner verde IMP*/
-.objectivesIdevice .iDevice_inner,.RssIdevice .iDevice_inner{border:4px solid #549b0d}
-/*de gestor*/
-.IdeviceObjetivo .iDevice_inner,.IdeviceTemporalizacion .iDevice_inner,.IdeviceTemporalizacin .iDevice_inner,.IdeviceOrientaciones .iDevice_inner{border:4px solid #549b0d}
-.download-packageIdevice .iDevice_inner,.RubricIdevice .iDevice_inner{border-top:4px solid #549b0d;box-shadow:none!important;border-bottom:none!important;border-left:none!important;border-right:none!important;border-radius:0px!important}
-/*iDevice_inner libre en gris para cuando crean un iDevice libremente diferenciarlo*/
-.textIdevice .iDevice_inner{border:4px solid #2e2e2e}
-/*iDevice_inner violeta COMP*/
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDevice_inner,.FileAttachIdeviceInc .iDevice_inner,.GalleryIdevice .iDevice_inner,.preknowledgeIdevice .iDevice_inner,.ReflectionIdevice .iDevice_inner,.CasestudyIdevice .iDevice_inner,.WikipediaIdevice .iDevice_inner{border:4px solid #A25AC4}
-.FileAttachIdeviceInc a{color:#412866}
-/*de gestor*/
-.IdeviceEscucha .iDevice_inner,.IdeviceLee .iDevice_inner,.IdevicePiensa .iDevice_inner,.IdeviceParainformarse .iDevice_inner,.IdeviceEjemplo .iDevice_inner,.IdeviceDestacado .iDevice_inner{border:4px solid #A25AC4}
-/*iDevice_inner azul EXP*/
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .iDevice_inner,.ListaIdevice .iDevice_inner,.QuizTestIdevice .iDevice_inner,.MultichoiceIdevice .iDevice_inner,.TrueFalseIdevice .iDevice_inner,.MultiSelectIdevice .iDevice_inner,.ClozeIdevice .iDevice_inner,.ScrambledListIdevice .iDevice_inner,.GeoGebraIdevice .iDevice_inner,.activityIdevice .iDevice_inner,.pblIdevice .iDevice_inner,.readingIdevice .iDevice_inner{border:4px solid #0065ab}
-.AdivinaIdevice .iDevice_inner,.QuExtIdevice .iDevice_inner,.RoscoIdevice .iDevice_inner,.VideoQuExtIdevice .iDevice_inner,.interactive-videoIdevice .iDevice_inner{border-top:4px solid #0065ab !important;box-shadow:none!important;border-bottom:none;border-left:none;border-right:none;border-radius:0px!important}
-/*de gestor*/
-.IdeviceTrabajaenequipo .iDevice_inner,.IdeviceHabla .iDevice_inner,.IdeviceGraba .iDevice_inner,.IdeviceEjercicios .iDevice_inner,.IdeviceActividad .iDevice_inner{border:4px solid #0065ab}
-.adivina-GameContainer,.quext-GameContainer,.vquext-GameContainer{border:4px solid white!important}
-.rosco-Canvas{box-shadow:none!important;border:none!important;background-color:transparent!important}
-/*FPD iDevice_inner*/
-/*verde*/
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .iDevice_inner,.emphasis_orientacionesfpd .iDevice_inner{border:4px solid #549b0d}
-/*azuñ*/
-.emphasis_autoevaluacionfpd .iDevice_inner{border:4px solid #0065ab}
-/*violeta*/
-.emphasis_parasabermasfpd .iDevice_inner,.emphasis_debesconocerfpd .iDevice_inner,.emphasis_citasparapensarfpd .iDevice_inner,.emphasis_recomendacionfpd .iDevice_inner,.emphasis_casopracticofpd .iDevice_inner,.emphasis_reflexionfpd .iDevice_inner,.emphasis_ejercicioresueltofpd .iDevice_inner{border:4px solid #A25AC4}
-.iDevice_destacadofpd{padding:10px 20px 20px 20px;background:#fff;-webkit-box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);-moz-box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);border:4px solid #A25AC4;margin-top:45px;border-radius:20px}
-.DestacadofpdIdevice .iDevice.emphasis0{margin-top:0px!important}
-/*Tablas*/
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table{background:#fff;border-color:#549b0d}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table th{border-color:#549b0d}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead{background:#437c0a;color:#FFF}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table tr:nth-child(2n-1) td,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table tbody tr:nth-child(2n-1) th{background:#dcf9bf}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table tbody tr:nth-child(2n) th{background:#dcf9bf}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead+tbody tr:nth-child(2n) th{background:#fff}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead+tbody tr:nth-child(2n-1) th{background:#dcf9bf}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table{background:#fff;border-color:#784aba}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table th{border-color:#784aba}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead{background:#5f3996;color:#FFF}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table tr:nth-child(2n-1) td,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table tbody tr:nth-child(2n-1) th{background:#eae3f4}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table tbody tr:nth-child(2n) th{background:#eae3f4}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead+tbody tr:nth-child(2n) th{background:#fff}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead+tbody tr:nth-child(2n-1) th{background:#eae3f4}
+.iDevice_inner{margin-top:5px;padding:10px 20px 20px 20px;background:#fff;box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);border-radius:20px;
+/* To review; border:4px solid #2E2e2E */border:4px solid #0065AB}
+.iDeviceTitle{color:#0065AB}
+/* iDevice icons */
+.iDevice_header{background:url(icon_udl_exp_interactivo.svg) no-repeat 0 bottom;padding-top:10px;padding-left:95px;position:relative;min-height:75px!important;width:auto!important}
+.iDevice .iDevice_header.iDevice_header_noIcon{padding:0 0 0 10px;background-image:none}
+
+/*
+.AdivinaiDevice .iDevice_header,
+.candadoIdevice .iDevice_header,
+.desafioIdevice .iDevice_header,
+.QuExtIdevice .iDevice_header,
+.RoscoIdevice .iDevice_header,
+.SeleccionaIdevice .iDevice_header,
+.VideoQuExtIdevice .iDevice_header{background-image:url(icon_udl_exp_juego.svg)}
+*/
+
+/* azul (default) */
+/*
 .iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table{background:#fff;border-color:#0065ab}
 .iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table th{border-color:#0065ab}
 .iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table thead{background:#005088;color:#FFF}
@@ -152,142 +87,106 @@ section.previousnext{display:none}
 .iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table tbody tr:nth-child(2n) th{background:#cceaff}
 .iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table thead+tbody tr:nth-child(2n) th{background:#fff}
 .iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table thead+tbody tr:nth-child(2n-1) th{background:#cceaff}
-/*carrusel*/
-.fx-carousel-pagination{margin:11px 0 0 0;padding:0;list-style:none;text-align:center;overflow:auto;display:block}
-.exe-carousel h2{margin-top:2em}
-.js .exe-carousel h2{margin-top:1em;color:#7c3f06}
-.fx-carousel-pagination li{display:inline;padding:0;margin:0 3px}
-.fx-carousel-pagination a{outline:none;display:inline-block;padding:3px 11px;border-radius:5px;background:#ee7f1a;text-decoration:none!important;color:#7c3f06;font-weight:bold}
+*/
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table{border-color:#0065ab}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table th{border-color:#0065ab}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table thead{background:#005088;color:#FFF}
+
+/* verde */
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .iDeviceTitle,
+.objectivesIdevice .iDeviceTitle,
+.download-packageIdevice .iDeviceTitle,
+.RssIdevice .iDeviceTitle,
+.RubricIdevice .iDeviceTitle{color:#499113}
+
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .iDevice_inner,
+.objectivesIdevice .iDevice_inner,
+.download-packageIdevice .iDevice_inner,
+.RssIdevice .iDevice_inner,
+.RubricIdevice .iDevice_inner{border-color:#499113}
+
+.objectivesIdevice .iDevice_header{background-image:url(icon_udl_eng_objetivos.svg)}
+.download-packageIdevice .iDevice_header{background-image:url(icon_udl_eng_descarga.svg);padding-left:95px}
+.RssIdevice .iDevice_header{background-image:url(icon_udl_eng_rss.svg)}
+.RubricIdevice .iDevice_header{background-image:url(icon_udl_eng_rubrica.svg)}
+
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table{background:#fff;border-color:#549b0d}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table th{border-color:#549b0d}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead{background:#437c0a;color:#FFF}
+
+/* violeta */
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDeviceTitle,
+.GalleryIdevice .iDeviceTitle,
+.FileAttachIdeviceInc .iDeviceTitle{color:#A25AC4}
+
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDevice_inner,
+.GalleryIdevice .iDevice_inner,
+.FileAttachIdeviceInc .iDevice_inner{border-color:#A25AC4}
+
+.GalleryIdevice .iDevice_header{background-image:url(icon_udl_rep_galeria.svg)}
+.FileAttachIdeviceInc .iDevice_header{background-image:url(icon_udl_rep_adjunto.svg)}
+
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table{background:#fff;border-color:#784aba}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table th{border-color:#784aba}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead{background:#5f3996;color:#FFF}
+
+
+/* azul */
+/*
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .iDeviceTitle,
+.pblIdevice .iDeviceTitle,
+.ListaIdevice .iDeviceTitle,
+.QuizTestIdevice .iDeviceTitle,
+.ClozeIdevice .iDeviceTitle,
+.ScrambledListIdevice .iDeviceTitle,
+.MultichoiceIdevice .iDeviceTitle,
+.MultiSelectIdevice .iDeviceTitle,
+.TrueFalseIdevice .iDeviceTitle,
+.GeoGebraIdevice .iDeviceTitle,
+.interactive-videoIdevice .iDeviceTitle{color:#0065AB}
+
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .iDevice_inner,
+.pblIdevice .iDevice_inner,
+.ListaIdevice .iDevice_inner,
+.QuizTestIdevice .iDevice_inner,
+.ClozeIdevice .iDevice_inner,
+.ScrambledListIdevice .iDevice_inner,
+.MultichoiceIdevice .iDevice_inner,
+.MultiSelectIdevice .iDevice_inner,
+.TrueFalseIdevice .iDevice_inner,
+.GeoGebraIdevice .iDevice_inner,
+.interactive-videoIdevice .iDevice_inner{border-color:#0065AB}
+*/
+/*
+.pblIdevice .iDevice_header{background-image:url(icon_udl_exp_tarea.svg)}
+.ListaIdevice .iDevice_header,
+.QuizTestIdevice .iDevice_header,
+.ClozeIdevice .iDevice_header,
+.ScrambledListIdevice .iDevice_header,
+.MultichoiceIdevice .iDevice_header,
+.MultiSelectIdevice .iDevice_header,
+.TrueFalseIdevice .iDevice_header,
+.GeoGebraIdevice .iDevice_header,
+.interactive-videoIdevice .iDevice_header{background-image:url(icon_udl_exp_interactivo.svg)}
+*/
+
+/*.FileAttachIdeviceInc a{color:#412866}*/
+
+/* To do (form buttons) */
+
+/* FX */
+.js .exe-carousel h2{color:#7c3f06}
+.fx-carousel-pagination a{background:#ee7f1a;text-decoration:none!important;color:#7c3f06;font-weight:bold}
 .fx-carousel-pagination a:hover,.fx-carousel-pagination a:focus{text-decoration:none;color:#444}
-.fx-carousel-pagination .fx-disabled{filter:alpha(opacity=30);opacity:.3}
-.fx-carousel-pagination .fx-disabled,.fx-carousel-pagination .fx-disabled a,.fx-carousel-pagination .fx-disabled a:hover{cursor:text;text-decoration:none}
 .fx-carousel-pagination .fx-current a{background:#73D413;color:#444;text-decoration:none}
 .fx-carousel-content{display:none;background:#fff;padding:1px 15px .5em 15px;border-radius:5px;margin:0 65px;border:1px solid #444}
-.fx-carousel-content.fx-current{display:block}
-.fx-carousel-pagination li{font-size:.85em}
-.fx-carousel-pagination .fx-carousel-prev-next{position:absolute;top:15px;left:0;*left:-10px}
-/* IE6,IE7 */
-.fx-carousel-pagination .fx-carousel-prev-next a{width:50px;height:50px;padding:0;line-height:50px;font-size:25px;font-family:Arial,Verdana,Helvetica,sans-serif;border-radius:25px;text-align:left;text-indent:10px}
-.fx-carousel-pagination .fx-carousel-prev-next a:hover{text-decoration:none;color:inherit}
-.fx-carousel-pagination .fx-carousel-prev-next a:focus{text-decoration:none}
-.fx-carousel-pagination .fx-carousel-next{left:auto;right:0}
-.fx-carousel-pagination .fx-carousel-next a{text-indent:14px}
 /* Paginacion */
-.exe-paginated{margin:2em auto;width:90%}
-.js .exe-paginated{width:96%}
-.exe-paginated .fx-pagination{margin:0 0 11px 0;padding:0;list-style:none;text-align:center}
-.exe-paginated h2{margin-top:2em}
-.js .exe-paginated h2{margin-top:1em;color:#7c3f06}
-.fx-pagination li{display:inline;padding:0;margin:0 3px}
-.fx-pagination .fx-prev{margin-right:6px}
-.fx-pagination a{outline:none;display:inline-block;padding:3px 11px;cursor:pointer;border-radius:5px;background:#ee7f1a!important;text-decoration:none!important;color:#444!important}
-.fx-pagination a:hover,.fx-pagination a:focus{color:#444;text-decoration:none}
-.fx-prev-next a{font-family:Arial,Verdana,Helvetica,sans-serif}
-.fx-pagination .fx-disabled{filter:alpha(opacity=30);opacity:.3}
-.fx-pagination .fx-disabled,.fx-pagination .fx-disabled a,.fx-pagination .fx-disabled a:hover{cursor:text;text-decoration:none}
-.fx-pagination .fx-current a{background:#73D413!important;color:#fff;text-decoration:none!important}
-.fx-page-content{display:none;background:#fff;padding:1px 15px .5em 15px;border-radius:5px;border:1px solid #444}
-/* Tabs */
-.exe-tabs{margin:2em auto;width:90%}
-.js .exe-tabs{width:96%}
-.exe-tabs .fx-tabs{margin:0;padding:0;list-style:none;overflow:auto}
-.exe-tabs h2{margin-top:2em}
-.js .exe-tabs h2{margin-top:.5em}
-* html .exe-tabs .fx-tabs{width:100%}/* IE6 */
-.exe-tabs .fx-tabs li{display:inline}
-.exe-tabs .fx-tabs a{display:block;padding:20PX 15px;outline:none;float:left;text-decoration:none;color:#cc6715}
-.exe-tabs .fx-tabs a:hover,.exe-tabs .fx-tabs a:focus{text-decoration:none}
-.fx-tabs .fx-current a{background:#f3f3f3;border-top:5px solid #cc6715;padding:15px}
-.exe-tabs .fx-tabs a:before{color:#cc6715;content:'\229C';padding-right:10px;text-decoration:none}
-.exe-tabs .fx-tab-content{background:#f3f3f3;padding:15px;border-top:5px solid #cc6715;position:relative;z-index:99;bottom:10px}
-.exe-tabs .fx-default-panel{border-top-left-radius:0}
-.exe-tabs .fx-tab-content.fx-current{display:block}
+.js .exe-paginated h2{color:#7c3f06}
+.fx-pagination a{background:#ee7f1a!important;text-decoration:none!important;color:#444!important}
+.fx-pagination a:hover,.fx-pagination a:focus{color:#444}
+.fx-pagination .fx-current a{background:#73D413;color:#fff;text-decoration:none!important}
+.fx-page-content{background:#fff;border:1px solid #444}
 
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tabs .fx-current a{background:#f3f3f3;border-top:5px solid #549b0d!important;padding:15px;color:#499113}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tabs .fx-current a{background:#f3f3f3;border-top:5px solid #784aba!important;padding:15px;color:#784aba}
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tabs .fx-current a{background:#f3f3f3;border-top:5px solid #0065ab!important;padding:15px;color:#0065ab}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tab-content{background:#f3f3f3;border-top:5px solid #549b0d!important;padding:15px;color:#444}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tab-content{background:#f3f3f3;border-top:5px solid #784aba!important;padding:15px;color:#444}
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tab-content{background:#f3f3f3;padding:15px;border-top:5px solid #0065ab;position:relative;z-index:99;bottom:10px;color:#444}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tabs a,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tabs a:before{color:#499113}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tabs a,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tabs a:before{color:#784aba}
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tabs a,.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tabs a:before{color:#0065ab}
-/*Linea de tiempo*/
-div.fx-timeline-container{border-left:2px solid #872C1A!important;margin:20px auto;width:95%}
-.fx-timeline-major h2 a{background-color:#872C1A!important;border-radius:4px;color:#fff;line-height:2.3em;padding:5px 10px;text-decoration:none}
-.fx-timeline-major h2 a:hover,.fx-timeline-major h2 a:focus{text-decoration:none;background-color:#9C4938!important}
-.fx-timeline-minor h3 a{font-weight:bold;text-decoration:none;color:#872C1A!important}
-.fx-timeline-minor h3 a:after{content:"\21D8";margin-left:10px;color:#872C1A!important}
-.fx-timeline-minor h3 a.open:after{content:"\21D6";margin-left:10px;color:#872C1A!important}
-.fx-timeline-minor h3 a:hover,.872C1A-timeline-minor h3 a:focus{color:#872C1A!important;text-decoration:none;font-weight:bold}
-.fx-timeline-container a.fx-timeline-expand{color:#7c3f06!important;cursor:pointer;background:#fff!important;border-radius:4px;border:1px solid #7c3f06;font-size:.95em;padding:3px 5px;display:block;text-decoration:none!important;font-weight:bold}
-.fx-timeline-container a.fx-timeline-expand:hover{color:#fff!important;background:#872C1A!important}
-.fx-timeline-major h2:before{content:"—";margin-left:-20px;color:#872C1A!important}
-.fx-timeline-major h3:before{content:"‒";margin:0 9px 0 -25px;color:#872C1A!important}
-/*nota*/
-.classnote{border:2px solid #444;-webkit-border-bottom-left-radius:20px;-moz-border-radius-bottom-left:20px;border-bottom-left-radius:20px;background:#Fff;padding-left:10px;padding-right:10px;padding-top:5px;margin-top:5px;margin-bottom:20px;width:35.5%;margin-left:63%}
-.notetitleex{font:italic bold 14px verdana;cursor:pointer;padding-left:px;padding-bottom:5px;color:#444;border-bottom:none!important}
-a[title*='Borrar todas las notas'] img.submit{margin-top:30px}
-/*fin*/
-/*botones edicion iDevice*/
-.exe-authoring-page .em_iDevice .idevice-edition-buttons{left:10px;bottom:-18px}
-/*boton descarga archivo fuente*/
-.exe-download-package-link a{background:#333;color:white}
-#siteFooter{font-size:.95em;margin:25px 0}
-#siteFooter a{color:#DB0B00}
-#lbOverlay{background-color:#e2e2e2}
-#lbOuterContainer{border-color:#ddd}
-.ExternalUrlIdevice iframe{border:none}
-/* Lightbox */
-.exeImageGallery{width:100%}
-/* base.css */
-.block,.feedback{padding:0}
-li{list-style-position:outside}
-#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
-/* Form buttons,button azul EXP */
-.iDevice_inner input[type=submit],.iDevice_inner input[type=button],.readingIdevice .iDevice_inner input[type=button]{background:#0065ab!important;border:0;padding:4px 10px;color:#fff;margin-bottom:1em;border-radius:5px}
-.feedbackbutton{background:#cc6715!important;border:0;padding:4px 10px;color:#fff;margin-bottom:1em;border-radius:5px}
-.feedbackbutton:hover{background:#9D4C0A!important}
-.textIdevice .iDevice_inner input[type=button]{background:#cc6715!important;border:0;padding:4px 10px;color:#fff;margin-bottom:1em;border-radius:5px}
-.textIdevice .iDevice_inner input[type=button]:hover{background:#9D4C0A!important}
-.iDevice_inner input[type=submit]:hover,.iDevice_inner input[type=button]:hover,.readingIdevice .iDevice_inner input[type=button]:hover{background:#2B87C6!important}
-/*button violeta COMP*/
-.CasestudyIdevice .iDevice_inner input[type=button],.ReflectionIdevice .iDevice_inner input[type=button],.EjercicioresueltofpdIdevice .iDevice_inner input[type=button],.ReflectionfpdIdevice .iDevice_inner input[type=button]{background:#8D66C4!important;border:1px solid #6129B2}
-.CasestudyIdevice .iDevice_inner input[type=button]:hover,.ReflectionIdevice .iDevice_inner input[type=button]:hover,.EjercicioresueltofpdIdevice .iDevice_inner input[type=button]:hover,.ReflectionfpdIdevice .iDevice_inner input[type=button]:hover{background:#784aba!important;border:1px solid #6129B2}
-.block.iDevice_content>.exe-text+.iDevice_buttons input[type=button]{background:#549b0d;;border:1px solid #fff;color:white}
-.block.iDevice_content>.exe-text+.iDevice_buttons input[type=button]:hover{background:#397002;;border:1px solid #fff;color:white}
-/* Hide/Show iDevice */
-.toggle-idevice{text-align:right;display:block;margin-right:13px}
-.iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:13px;margin:0}
-.toggle-idevice{margin-top:5px;margin-bottom:0px}
-.toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_escolares_icons.png) no-repeat 0 -20px}
-.toggle-idevice .show-idevice{background-position:0 0}
-.toggle-idevice span,#printNode a span{position:absolute;clip:rect(1px 1px 1px 1px);/* IE6,IE7 */
- clip:rect(1px,1px,1px,1px)}
-/* eXe < 2.1 */
-.iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
-.iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}
-/* Licenses */
-#packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#444;line-height:1em;margin:0 0 25px 0;background:#526668;border-top:1px solid #00843d}
-#packageLicense p{margin:20px 0}
-#packageLicense a{color:#444;text-decoration:underline}
-#packageLicense.propietary{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
-#packageLicense.cc{padding:0 20px 10px 110px;background:transparent url(_escolares_licenses.gif) no-repeat 20px 5px}
-#packageLicense.cc-by-sa{background-position:20px -95px}
-#packageLicense.cc-by-nd{background-position:20px -195px}
-#packageLicense.cc-by-nc-sa{background-position:20px -295px}
-#packageLicense.cc-by-nc-nd{background-position:20px -395px}
-#packageLicense.cc-0{background-position:20px -495px}
-/* eXe Figures */
-.exe-figure{margin:2.5em 0}
-.exe-figure,.exe-figure span,.exe-figure a{color:#444;font-size:12px!important}
-.position-center{margin:2.5em auto}
-.position-right{margin:2.5em 0 2.5em auto}
-.float-left{margin:.5em 1.5em 1em 0}
-.float-right{float:right;margin:.5em 0 1em 2em}
-#printNode{margin:0;position:absolute;top:33px;right:33px}
-#printNode.with-toggler{margin-bottom:0}
-#printNode a{display:block;width:30px;height:30px;background:#fff url(_escolares_print.png) no-repeat 50% 50%;box-shadow:rgba(0,0,0,0.3) 3px 3px 4px;border-radius:15px}
 /* Accordion */
 .exe-accordion,.exe-accordion *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 .exe-accordion{width:90%;margin:2em 0 2em 5%;border-top:1px solid #cc6715;border-left:1px solid #cc6715;border-right:2px solid #cc6715;border-bottom:2px solid #cc6715}
@@ -303,11 +202,87 @@ a.fx-accordion-title h2:hover:before{content:"\25be";font-size:1em;background-co
 .fx-accordion-title.active,.fx-accordion-title:hover{filter:alpha(opacity=90);opacity:.9;text-decoration:none}
 .fx-accordion-section:last-child .fx-accordion-title{border-left:20px solid #cc6715!important}
 .fx-afx-accordion-titleccordion-content{padding:0 15px;display:none;background-color:#f1f1f1;border-top:1px solid #cc6715}
-.fx-accordion-content p:first-child{margin:0px}
-.exe-accordion.ayudante{border:none!important}
-.exe-accordion.ayudante .fx-accordion-section:last-child .fx-accordion-title{border:none!important}
-.exe-accordion.ayudante a.fx-accordion-title h2:before{content:none}
-.exe-accordion.ayudante a.fx-accordion-title h2:hover:before{content:none}
+
+/* Tabs */
+.exe-tabs .fx-tabs a{padding:20px 15px}
+.exe-tabs .fx-tabs a:hover,.exe-tabs .fx-tabs a:focus{text-decoration:none}
+.fx-tabs .fx-current a{background:#f3f3f3;border-top:5px solid #cc6715;padding:15px}
+.exe-tabs .fx-tabs a:before{content:'\229C';padding-right:10px}
+.exe-tabs .fx-tab-content{background:#f3f3f3;padding:15px;border-top:5px solid #cc6715;position:relative;z-index:99;bottom:10px}
+.exe-tabs .fx-default-panel{border-top-left-radius:0}
+.exe-tabs .fx-tabs .fx-current a{background:#f3f3f3;border-top:5px solid #cc6715;padding:15px;color:#cc6715}
+.iDevice_content .exe-tabs .fx-tab-content{background:#f3f3f3;border-top:5px solid #cc6715;padding:15px;color:#444}
+.exe-tabs .fx-tabs a,.exe-tabs .fx-tabs a:before{color:#cc6715}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tabs .fx-current a{border-top-color:#549b0d;color:#499113}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tabs .fx-current a{border-top-color:#784aba;color:#784aba}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tabs .fx-current a{border-top-color:#0065ab;color:#0065ab}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tab-content{border-top-color:#549b0d;color:#444}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tab-content{border-top-color:#784aba;color:#444}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tab-content{border-top-color:#0065ab;position:relative;z-index:99;bottom:10px;color:#444}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tabs a,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-tabs .fx-tabs a:before{color:#499113}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tabs a,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-tabs .fx-tabs a:before{color:#784aba}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tabs a,.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-tabs .fx-tabs a:before{color:#0065ab}
+
+/* Time line */
+div.fx-timeline-container{border-left:2px solid #872C1A!important}
+.fx-timeline-major h2 a{background-color:#872C1A!important}
+.fx-timeline-major h2 a:hover,.fx-timeline-major h2 a:focus{background-color:#9C4938!important}
+.fx-timeline-minor h3 a{color:#872C1A!important}
+.fx-timeline-minor h3 a:after{content:"\21D8";margin-left:10px;color:#872C1A!important}
+.fx-timeline-minor h3 a.open:after{content:"\21D6";margin-left:10px;color:#872C1A!important}
+.fx-timeline-minor h3 a:hover,.fx-timeline-minor h3 a:focus{color:#872C1A!important}
+.fx-timeline-container a.fx-timeline-expand{color:#7c3f06!important;background:#fff!important;border:1px solid #7c3f06;font-weight:bold}
+.fx-timeline-container a.fx-timeline-expand:hover{color:#fff!important;background:#872C1A!important}
+/*
+.fx-timeline-major h2:before{content:"—";margin-left:-20px;color:#872C1A!important}
+.fx-timeline-major h3:before{content:"‒";margin:0 9px 0 -25px;color:#872C1A!important}
+*/
+
+/* Note */
+.classnote{border:2px solid #444;-webkit-border-bottom-left-radius:20px;-moz-border-radius-bottom-left:20px;border-bottom-left-radius:20px;background:#Fff;padding-left:10px;padding-right:10px;padding-top:5px;margin-top:5px;margin-bottom:20px;width:35.5%;margin-left:63%}
+.notetitleex{font:italic bold 14px verdana;cursor:pointer;padding-left:px;padding-bottom:5px;color:#444;border-bottom:none!important}
+/* iDevice edition buttons */
+.exe-authoring-page .em_iDevice .idevice-edition-buttons{left:10px;bottom:-18px}
+
+.exe-download-package-link a{background:#333;color:white}
+#siteFooter{font-size:.95em;margin:25px 0}
+#siteFooter a{color:#DB0B00}
+#lbOverlay{background-color:#e2e2e2}
+#lbOuterContainer{border-color:#ddd}
+.ExternalUrlIdevice iframe{border:none}
+/* Lightbox */
+.exeImageGallery{width:100%}
+/* base.css */
+.block,.feedback{padding:0}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+
+/* Hide/Show iDevice */
+.toggle-idevice{text-align:right;display:block;margin-right:13px}
+.iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:13px;margin:0}
+.toggle-idevice{margin-top:5px;margin-bottom:0px}
+.toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_escolares_icons.png) no-repeat 0 -20px}
+.toggle-idevice .show-idevice{background-position:0 0}
+.toggle-idevice span,#printNode a span{position:absolute;clip:rect(1px 1px 1px 1px);/* IE6,IE7 */clip:rect(1px,1px,1px,1px)}
+/* eXe < 2.1 */
+.iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
+.iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}
+/* Licenses */
+#packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#444;line-height:1em;margin:0 0 25px 0;background:#526668;border-top:1px solid #00843d}
+#packageLicense p{margin:20px 0}
+#packageLicense a{color:#444;text-decoration:underline}
+#packageLicense.propietary{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+#packageLicense.cc{padding:0 20px 10px 110px;background:transparent url(_escolares_licenses.gif) no-repeat 20px 5px}
+#packageLicense.cc-by-sa{background-position:20px -95px}
+#packageLicense.cc-by-nd{background-position:20px -195px}
+#packageLicense.cc-by-nc-sa{background-position:20px -295px}
+#packageLicense.cc-by-nc-nd{background-position:20px -395px}
+#packageLicense.cc-0{background-position:20px -495px}
+/* eXe Figures */
+#printNode{margin:0;position:absolute;top:33px;right:33px}
+#printNode.with-toggler{margin-bottom:0}
+#printNode a{display:block;width:30px;height:30px;background:#fff url(_escolares_print.png) no-repeat 50% 50%;box-shadow:rgba(0,0,0,0.3) 3px 3px 4px;border-radius:15px}
+
 /* Hint & Feedback */
 .iDevice_hint_content{border:1px solid #cec486;background:#ecf0f1}
 .iDevice_inner .feedback{background:#f2f2f2;border:1px solid #343333;padding:0 1em;margin:1em 0}
@@ -316,6 +291,7 @@ a.fx-accordion-title h2:hover:before{content:"\25be";font-size:1em;background-co
 .iDevice_inner .feedback-wrong{background:#f2f2f2}
 .iDevice_inner .iDevice_answer-feedback{background:none;border:none;padding:0;margin:0}
 .TrueFalseIdevice .feedback{margin-top:1.5em}
+
 /* Edition (to review) */
 #activeIdevice .js-idevide-icon-preview{max-width:64px;max-height:64px}
 /*version imprimible*/
