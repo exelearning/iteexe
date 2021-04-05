@@ -78,6 +78,7 @@ transition: opacity 0.4s ease-in-out}
 	.exe-udlContent .udl-character:before{content:" ";float:left;display:block;height:125px;width:125px;background:url(udl-character-1.gif) no-repeat 0 0;background-size:125px auto;border-radius:10px}
 	.exe-udlContent .udl-character-2:before{background-image:url(udl-character-2.gif)}
 	.exe-udlContent .udl-character-3:before{background-image:url(udl-character-3.gif)}
+	.exe-udlContent .udl-character-4:before{background-image:url(udl-character-4.gif)}
 	.exe-udlContent .udl-character:hover:before,.exe-udlContent .udl-character:focus:before{background-position:0 -125px}
 	.exe-udlContent .udl-character:hover span,.exe-udlContent .udl-character:focus span{opacity:1;font-size:1.03em}
 }

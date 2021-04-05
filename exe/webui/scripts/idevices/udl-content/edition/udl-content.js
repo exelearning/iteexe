@@ -35,9 +35,10 @@ var $exeDevice = {
 	// Image names (characters)
 	characters : [
 		"",
-		"EMO",
-		"RÉFLEX",
-		"INTERÉS"
+		"MOTUS",
+		"CLAVIS",
+		"KARDIA",
+		"LUMEN"
 	],
 	
 	// Translatable strings (Language tab)
@@ -365,8 +366,8 @@ var $exeDevice = {
 		var fid = e.id;
 			fid = fid.replace("udlContentFormBlockButtonTxt-","udlContentFormBlockButtonTxtOptions-");
 		var optionsBlock = $("#"+fid);
-		if (e.value=='') optionsBlock.css("visibility","hidden");
-		else optionsBlock.css("visibility","visible");	
+		if (e.value=='') optionsBlock.hide();
+		else optionsBlock.show();	
 		// Check if there's accessible hidden content
 		fid = fid.replace("Options-","Explanation-");
 		optionsBlock = $("#"+fid);
@@ -512,6 +513,7 @@ var $exeDevice = {
 				if (header.hasClass("exe-udlContent-character-1")) btnType = 1;
 				else if (header.hasClass("exe-udlContent-character-2")) btnType = 2;
 				else if (header.hasClass("exe-udlContent-character-3")) btnType = 3;
+				else if (header.hasClass("exe-udlContent-character-4")) btnType = 4;
 			}
 			var contMain = $(".exe-udlContent-content-main",this).html() || "";
 			var contAlt1 = $(".exe-udlContent-content-simplified",this).html() || "";
@@ -586,7 +588,7 @@ var $exeDevice = {
 		$(".udlContentFormBlockContent").hide();
 		var btnTxt = block.btnTxt;
 		var btnType = block.btnType;
-		var btnOptionsStyle = ' style="visibility:hidden"';
+		var btnOptionsStyle = ' style="display:none"';
 		if (btnTxt!="") btnOptionsStyle = "";
 		var btnTextPartsStyle = ' style="display:none"';
 		// Check if there's hidden accessible text
@@ -608,11 +610,13 @@ var $exeDevice = {
 		var ch1 = "";
 		var ch2 = "";
 		var ch3 = "";
+		var ch4 = "";
 		var imgNames = $exeDevice.characters;
 		if (btnType==0) ch0 = ' checked="checked"';
 		else if (btnType==1) ch1 = ' checked="checked"';
 		else if (btnType==2) ch2 = ' checked="checked"';
 		else if (btnType==3) ch3 = ' checked="checked"';
+		else if (btnType==4) ch4 = ' checked="checked"';
 		var contMain = block.contMain;
 		var contAlt1 = block.contAlt1;
 		var contAlt2 = block.contAlt2;
@@ -638,6 +642,7 @@ var $exeDevice = {
 							<label><input type="radio" value="1"'+ch1+' /> '+_('Character')+' 1</label> \
 							<label><input type="radio" value="2"'+ch2+' /> '+_('Character')+' 2</label> \
 							<label><input type="radio" value="3"'+ch3+' /> '+_('Character')+' 3</label> \
+							<label><input type="radio" value="4"'+ch4+' /> '+_('Character')+' 4</label> \
 							<img src="'+this.baseURL+'characters/'+btnType+'.png" alt="'+_('Character')+'" title="'+imgNames[btnType]+'" class="pos-'+btnType+'" />\
 						</span>\
 					</p>\
@@ -680,7 +685,8 @@ var $exeDevice = {
 				labels.eq(2).attr("for","udlContentCharacter-"+i+"-1");
 				labels.eq(3).attr("for","udlContentCharacter-"+i+"-2");
 				labels.eq(4).attr("for","udlContentCharacter-"+i+"-3");
-				labels.eq(5).attr("for","udlContentFormTxt-"+i);
+				labels.eq(5).attr("for","udlContentCharacter-"+i+"-4");
+				labels.eq(6).attr("for","udlContentFormTxt-"+i);
 			$("input[type='text']",this).eq(0).attr("id","udlContentFormBlockButtonTxt-"+i);
 			$(".udlContentFormBlockButtonTxtOptions",this).attr("id","udlContentFormBlockButtonTxtOptions-"+i);
 			$(".udlContentFormBlockButtonTxtExplanation",this).attr("id","udlContentFormBlockButtonTxtExplanation-"+i);
@@ -689,6 +695,7 @@ var $exeDevice = {
 				radios.eq(1).attr("name","udlContentCharacter-"+i).attr("id","udlContentCharacter-"+i+"-1");
 				radios.eq(2).attr("name","udlContentCharacter-"+i).attr("id","udlContentCharacter-"+i+"-2");
 				radios.eq(3).attr("name","udlContentCharacter-"+i).attr("id","udlContentCharacter-"+i+"-3");
+				radios.eq(4).attr("name","udlContentCharacter-"+i).attr("id","udlContentCharacter-"+i+"-4");
 			$(".udlContentFormBlockButtonTxtOptions img",this).attr("id","udlContentCharacter-"+i+"-thumbnail");
 			$(".udlContentFormTabs",this).attr("id","udlContentFormTabs-"+i);
 			var textareas = $("textarea",this);
@@ -783,7 +790,7 @@ var $exeDevice = {
 					if (btnTxt!="") {
 						var extraCSS = "";
 						var btnType = block.btnType;
-						if (btnType==1 || btnType==2 || btnType==3) extraCSS = " exe-udlContent-character-"+btnType;
+						if (btnType==1 || btnType==2 || btnType==3 || btnType==4) extraCSS = " exe-udlContent-character-"+btnType;
 						res += '<header class="exe-udlContent-header'+extraCSS+'"><h2>'+btnTxt+'</h2></header>';
 					}
 					res += '<div class="exe-udlContent-content">';

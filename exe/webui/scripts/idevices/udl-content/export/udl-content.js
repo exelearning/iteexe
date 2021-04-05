@@ -73,6 +73,7 @@ var $UDLcontentIdevice = {
 					if (h2.hasClass("exe-udlContent-character-1")) btnCSS = "udl-character udl-character-1";
 					else if (h2.hasClass("exe-udlContent-character-2")) btnCSS = "udl-character udl-character-2";
 					else if (h2.hasClass("exe-udlContent-character-3")) btnCSS = "udl-character udl-character-3";
+					else if (h2.hasClass("exe-udlContent-character-4")) btnCSS = "udl-character udl-character-4";
                     if (h2.length==1) {
                         var t = $("h2",h2).html();
                         if (t!="") {
@@ -241,9 +242,10 @@ var $UDLcontentIdevice = {
 				// Image names (characters)
 				var characters = [
 					"",
-					"EMO",
-					"RÉFLEX",
-					"INTERÉS"
+					"MOTUS",
+					"CLAVIS",
+					"KARDIA",
+					"LUMEN"
 				];
 				var tmp = "";
 				var img = "";

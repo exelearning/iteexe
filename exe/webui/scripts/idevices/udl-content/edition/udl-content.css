@@ -64,7 +64,8 @@ body.mce-fullscreen .udlContentFormTabs ul{display:none}
 .udlContentFormTabs a:focus{text-decoration:none}
 
 .udlContentEditorContent{display:none}
-.udlContentFormBlockButtonTxtOptions input{margin-left:1em}
+.udlContentFormBlockButtonTxtOptions{display:block;margin-top:1em}
+.udlContentFormBlockButtonTxtOptions label{margin-right:1em}
 .udlContentFormBlockButtonTxtOptions img{vertical-align:bottom;position:absolute;margin-left:1em;height:60px;width:auto;cursor:help}
 .udlContentFormBlockButtonTxtOptions img.pos-0{cursor:auto}
 .udlContentFormBlockButtonTxtExplanation strong{font-weight:normal}
