@@ -34,8 +34,8 @@ var $eXeAdivina = {
     userName: '',
     previousScore: '',
     initialScore: '',
-    hasLATEX:false,
-   
+    hasLATEX: false,
+
     init: function () {
         this.activities = $('.adivina-IDevice');
         if (this.activities.length == 0) return;
@@ -143,18 +143,18 @@ var $eXeAdivina = {
             $('#adivinaDivFeedBack-' + i).hide();
         });
         if ($eXeAdivina.hasLATEX && typeof (MathJax) == "undefined") {
-			var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-			$exe.loadScript(math);
-		}
+            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+            $exe.loadScript(math);
+        }
     },
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
         str = unescape(str)
         try {
-            var key = 146;
-            var pos = 0;
-            ostr = '';
+            var key = 146,
+                pos = 0,
+                ostr = '';
             while (pos < str.length) {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
@@ -185,7 +185,7 @@ var $eXeAdivina = {
             json = $eXeAdivina.Decrypt(json);
         }
         var mOptions = $eXeAdivina.isJsonString(json);
-        $eXeAdivina.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        $eXeAdivina.hasLATEX = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
@@ -247,12 +247,12 @@ var $eXeAdivina = {
         var mOptions = $eXeAdivina.options[instance];
         selectedFile = $eXeAdivina.extractURLGD(selectedFile);
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", function(event) {
+        mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
 
     },
-    stopSound: function(instance) {
+    stopSound: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
@@ -571,7 +571,7 @@ var $eXeAdivina = {
         $('#adivinaBtnMoveOn-' + instance).hide();
         $('#adivinaEdAnswer-' + instance).hide();
         $('#adivinaDefinition-' + instance).hide();
-        $('#-' + instance).hide();
+        $('#adivinaVideo-' + instance).hide();
         $('#adivinaEdAnswer-' + instance).val("");
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
@@ -1329,7 +1329,7 @@ var $eXeAdivina = {
             $eXeAdivina.newQuestion(instance)
         }, timeShowSolution);
     },
-   loadMathJax: function () {
+    loadMathJax: function () {
         var tag = document.createElement('script');
         //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
         tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
