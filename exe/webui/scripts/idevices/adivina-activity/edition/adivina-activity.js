@@ -180,7 +180,7 @@ var $exeDevice = {
                         <div class="gameQE-EOptionsMedia">\
                             <div class="gameQE-EOptionsGame">\
                                 <p>\
-									<strong>' + _("Multimedia Type") + ':</strong>\
+									<span>' + _("Multimedia Type") + ':</span>\
 									<span class="gameQE-EInputMedias">\
 										<input class="gameQE-Type" checked="checked" id="adivinaEMediaNormal" type="radio" name="qxtmediatype" value="0" disabled />\
 										<label for="adivinaEMediaNormal">' + _("None") + '</label>\
@@ -193,7 +193,7 @@ var $exeDevice = {
 									</span>\
 								</p>\
                                 <p>\
-									<strong>' + _("Time per question") + ':</strong>\
+									<span>' + _("Time per question") + ':</span>\
 									<span class="gameQE-EInputTimes">\
 										<input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="qxttime" value="0" />\
 										<label for="q15s">15s</label>\

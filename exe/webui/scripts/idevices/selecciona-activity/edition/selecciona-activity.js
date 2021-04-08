@@ -906,7 +906,7 @@ var $exeDevice = {
                         <div class="gameQE-EPanel" id="seleccionaEPanel">\
                             <div class="gameQE-EOptionsMedia">\
                                 <div class="gameQE-EOptionsGame">\
-                                    <strong>' + _("Type") + ':</strong>\
+                                    <span>' + _("Type") + ':</span>\
                                     <div class="gameQE-EInputType">\
                                         <input class="gameQE-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
                                         <label for="seleccionaTypeSelect">' + _("Select") + '</label>\
@@ -915,7 +915,7 @@ var $exeDevice = {
                                         <input class="gameQE-TypeSelect"  id="seleccionaTypeWord" type="radio" name="slctypeselect" value="2"/>\
                                         <label for="seleccionaTypeWord">' + _("Word") + '</label>\
                                     </div>\
-                                    <strong>' + _("Multimedia Type") + ':</strong>\
+                                    <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="gameQE-EInputMedias">\
                                         <input class="gameQE-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
                                         <label for="seleccionaMediaNormal">' + _("None") + '</label>\
@@ -926,7 +926,7 @@ var $exeDevice = {
                                         <input class="gameQE-Type"  id="seleccionaMediaText" type="radio" name="slcmediatype" value="3" disabled />\
                                         <label for="seleccionaMediaText">' + _("Text") + '</label>\
                                     </div>\
-                                    <strong id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</strong>\
+                                    <span id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</span>\
                                     <div class="gameQE-EInputNumbers" id="seleccionaEInputNumbers" >\
                                         <input class="gameQE-Number" id="numQ2" type="radio" name="slcnumber" value="2" />\
                                         <label for="numQ2">2</label>\
@@ -935,11 +935,11 @@ var $exeDevice = {
                                         <input class="gameQE-Number" id="numQ4" type="radio" name="slcnumber" value="4" checked="checked" />\
                                         <label for="numQ4">4</label>\
                                     </div>\
-                                    <strong id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</strong>\
+                                    <span id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</span>\
                                     <div class="gameQE-EPercentage" id="seleccionaPercentage">\
                                         <input type="number" name="seleccionaPercentageShow" id="seleccionaPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
                                     </div>\
-                                    <strong>' + _("Time per question") + ':</strong>\
+                                    <span>' + _("Time per question") + ':</span>\
                                     <div class="gameQE-EInputTimes">\
                                         <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="slctime" value="0" />\
                                         <label for="q15s">15s</label>\
@@ -954,7 +954,7 @@ var $exeDevice = {
                                         <input class="gameQE-Times" id="q10m" type="radio" name="slctime" value="5" />\
                                         <label for="q10m">10m</label>\
                                     </div>\
-                                    <strong class="gameQE-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + ':</strong>\
+                                    <span class="gameQE-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + ':</span>\
                                     <div class="gameQE-EInputImage gameQE-Flex" id="seleccionaEInputImage">\
                                         <label class="sr-av" for="seleccionaEURLImage">' + _("Image URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLImage"  id="seleccionaEURLImage"/>\
@@ -968,7 +968,7 @@ var $exeDevice = {
                                             <input id="seleccionaEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <strong class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + ':</strong>\
+                                    <span class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + ':</span>\
                                     <div class="gameQE-EInputVideo gameQE-Flex" id="seleccionaEInputVideo">\
                                         <label class="sr-av" for="seleccionaEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="seleccionaEURLYoutube" type="text" />\
@@ -997,22 +997,22 @@ var $exeDevice = {
                                     </div>\
                                     <div class="gameQE-EAuthorAlt" id="seleccionaEAuthorAlt">\
                                         <div class="gameQE-EInputAuthor" id="quextInputAuthor">\
-                                            <label for="seleccionaEAuthor"><strong>' + _("Author") + '</strong>: </label>\
+                                            <label for="seleccionaEAuthor"><span>' + _("Author") + '</span>: </label>\
                                             <input id="seleccionaEAuthor" type="text" />\
                                         </div>\
                                         <div class="gameQE-EInputAlt" id="quextInputAlt">\
-                                            <label for="seleccionaEAlt"><strong>' + _("Alternative text") + ':</strong> </label>\
+                                            <label for="seleccionaEAlt"><span>' + _("Alternative text") + ':</span> </label>\
                                             <input id="seleccionaEAlt" type="text" />\
                                         </div>\
                                     </div>\
-                                    <strong id="seleccionaETitleAudio">' + _("Audio") + ':</strong>\
+                                    <span id="seleccionaETitleAudio">' + _("Audio") + ':</span>\
                                     <div class="gameQE-EInputAudio" id="seleccionaEInputAudio">\
                                         <label class="sr-av" for="seleccionaEURLAudio">' + _("URL") + ':</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="seleccionaEURLAudio"/>\
                                         <a href="#" id="seleccionaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div id="seleccionaEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
-                                        <label for="seleccionaEScoreQuestion"><strong>' + _("Score") + '</strong>:</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
+                                        <label for="seleccionaEScoreQuestion"><span>' + _("Score") + '</span>:</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EMultiMediaOption">\
@@ -1029,7 +1029,7 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EContents">\
-                                   <div id="seleccionaESolitionOptions"><span><strong>' + _("Solution") + ':</strong> </span><span id="selecionaESolutionSelect"></span></div>\
+                                   <div id="seleccionaESolitionOptions"><span><span>' + _("Solution") + ':</span> </span><span id="selecionaESolutionSelect"></span></div>\
                                    <div class="gameQE-EQuestionDiv" id="seleccionaEQuestionDiv">\
                                         <label class="sr-av">' + _("Question") + ':</label><input type="text" class="gameQE-EQuestion" id="seleccionaEQuestion">\
                                    </div>\
@@ -1052,8 +1052,8 @@ var $exeDevice = {
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EWordDiv gameQE-DP" id="selecionaEWordDiv">\
-                                    <div class="gameQE-ESolutionWord"><label for="seleccionaESolutionWord"><strong>' + _("Word/Phrase") + ':</strong> </label><input type="text"  id="seleccionaESolutionWord"/></div>\
-                                    <div class="gameQE-ESolutionWord"><label for="seleccionaEDefinitionWord"><strong>' + _("Definition") + ':</strong> </label><input type="text"  id="seleccionaEDefinitionWord"/></div>\
+                                    <div class="gameQE-ESolutionWord"><label for="seleccionaESolutionWord"><span>' + _("Word/Phrase") + ':</span> </label><input type="text"  id="seleccionaESolutionWord"/></div>\
+                                    <div class="gameQE-ESolutionWord"><label for="seleccionaEDefinitionWord"><span>' + _("Definition") + ':</span> </label><input type="text"  id="seleccionaEDefinitionWord"/></div>\
                                 </div>\
                             </div>\
                             <div class="gameQE-EOrders" id="seleccionaEOrder">\
