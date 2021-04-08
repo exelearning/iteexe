@@ -49,7 +49,7 @@ class StandaloneConfig(Config):
         self.templatesDir  = Path(exePath/'content_template').abspath()
         self.styles        = []
         self.lastDir       = exePath
-        self.eXeUIversion  = 2
+        self.eXeUIversion  = 0
 
     def _getConfigPathOptions(self):
         """

@@ -44,6 +44,6 @@ class MacConfig(LinuxConfig):
         self.dataDir     = Path(os.environ['HOME'])
         self.configDir   = Path(self.dataDir)/'.exe'
         self.lastDir     = Path(os.environ['HOME'])
-        self.eXeUIversion = 2
+        self.eXeUIversion = 0
 
 # ===========================================================================
