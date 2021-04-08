@@ -215,11 +215,11 @@ class PreferencesPage(RenderableResource):
             locale = request.args['locale'][0]
             self.config.locale = locale
             # Change package lang too
-            session = request.getSession()
-            packagename = request.getPackageName()
-            for name,package in session.packageStore.loaded.items():
-                if name == packagename:
-                    package.set_lang(locale)
+            # session = request.getSession()
+            # packagename = request.getPackageName()
+            # for name,package in session.packageStore.loaded.items():
+            #     if name == packagename:
+            #         package.set_lang(locale)
             #
             self.config.locales[locale].install(unicode=True)
             self.config.configParser.set('user', 'locale', locale)
