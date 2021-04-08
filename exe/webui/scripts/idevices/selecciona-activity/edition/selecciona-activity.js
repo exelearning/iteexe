@@ -906,54 +906,67 @@ var $exeDevice = {
                         <div class="gameQE-EPanel" id="seleccionaEPanel">\
                             <div class="gameQE-EOptionsMedia">\
                                 <div class="gameQE-EOptionsGame">\
-                                    <span>' + _("Type") + ':</span>\
-                                    <div class="gameQE-EInputType">\
-                                        <input class="gameQE-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
-                                        <label for="seleccionaTypeSelect">' + _("Select") + '</label>\
-                                        <input class="gameQE-TypeSelect"  id="seleccionaTypeOrders" type="radio" name="slctypeselect" value="1"/>\
-                                        <label for="seleccionaTypeOrders">' + _("Order") + '</label>\
-                                        <input class="gameQE-TypeSelect"  id="seleccionaTypeWord" type="radio" name="slctypeselect" value="2"/>\
-                                        <label for="seleccionaTypeWord">' + _("Word") + '</label>\
-                                    </div>\
-                                    <span>' + _("Multimedia Type") + ':</span>\
-                                    <div class="gameQE-EInputMedias">\
-                                        <input class="gameQE-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
-                                        <label for="seleccionaMediaNormal">' + _("None") + '</label>\
-                                        <input class="gameQE-Type"  id="seleccionaMediaImage" type="radio" name="slcmediatype" value="1" disabled />\
-                                        <label for="seleccionaMediaImage">' + _("Image") + '</label>\
-                                        <input class="gameQE-Type"  id="seleccionaMediaVideo" type="radio" name="slcmediatype" value="2" disabled />\
-                                        <label for="seleccionaMediaVideo">' + _("Video") + '</label>\
-                                        <input class="gameQE-Type"  id="seleccionaMediaText" type="radio" name="slcmediatype" value="3" disabled />\
-                                        <label for="seleccionaMediaText">' + _("Text") + '</label>\
-                                    </div>\
-                                    <span id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</span>\
-                                    <div class="gameQE-EInputNumbers" id="seleccionaEInputNumbers" >\
-                                        <input class="gameQE-Number" id="numQ2" type="radio" name="slcnumber" value="2" />\
-                                        <label for="numQ2">2</label>\
-                                        <input class="gameQE-Number" id="numQ3" type="radio" name="slcnumber" value="3" />\
-                                        <label for="numQ3">3</label>\
-                                        <input class="gameQE-Number" id="numQ4" type="radio" name="slcnumber" value="4" checked="checked" />\
-                                        <label for="numQ4">4</label>\
-                                    </div>\
-                                    <span id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</span>\
-                                    <div class="gameQE-EPercentage" id="seleccionaPercentage">\
-                                        <input type="number" name="seleccionaPercentageShow" id="seleccionaPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
-                                    </div>\
-                                    <span>' + _("Time per question") + ':</span>\
-                                    <div class="gameQE-EInputTimes">\
-                                        <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="slctime" value="0" />\
-                                        <label for="q15s">15s</label>\
-                                        <input class="gameQE-Times" id="q30s" type="radio" name="slctime" value="1" />\
-                                        <label for="q30s">30s</label>\
-                                        <input class="gameQE-Times" id="q1m" type="radio" name="slctime" value="2" />\
-                                        <label for="q1m">1m</label>\
-                                        <input class="gameQE-Times" id="q3m" type="radio" name="slctime" value="3" />\
-                                        <label for="q3m">3m</label>\
-                                        <input class="gameQE-Times" id="q5m" type="radio" name="slctime" value="4" />\
-                                        <label for="q5m">5m</label>\
-                                        <input class="gameQE-Times" id="q10m" type="radio" name="slctime" value="5" />\
-                                        <label for="q10m">10m</label>\
-                                    </div>\
+                                    <p>\
+                                        <span>' + _("Type") + ':</span>\
+                                        <span class="gameQE-EInputType">\
+                                            <input class="gameQE-TypeSelect" checked id="seleccionaTypeChoose" type="radio" name="slctypeselect" value="0"/>\
+                                            <label for="seleccionaTypeSelect">' + _("Select") + '</label>\
+                                            <input class="gameQE-TypeSelect"  id="seleccionaTypeOrders" type="radio" name="slctypeselect" value="1"/>\
+                                            <label for="seleccionaTypeOrders">' + _("Order") + '</label>\
+                                            <input class="gameQE-TypeSelect"  id="seleccionaTypeWord" type="radio" name="slctypeselect" value="2"/>\
+                                            <label for="seleccionaTypeWord">' + _("Word") + '</label>\
+                                        </span>\
+                                    </p>\
+                                    <p>\
+                                        <span>' + _("Multimedia Type") + ':</span>\
+                                        <span class="gameQE-EInputMedias">\
+                                            <input class="gameQE-Type" checked="checked" id="seleccionaMediaNormal" type="radio" name="slcmediatype" value="0" disabled />\
+                                            <label for="seleccionaMediaNormal">' + _("None") + '</label>\
+                                            <input class="gameQE-Type"  id="seleccionaMediaImage" type="radio" name="slcmediatype" value="1" disabled />\
+                                            <label for="seleccionaMediaImage">' + _("Image") + '</label>\
+                                            <input class="gameQE-Type"  id="seleccionaMediaVideo" type="radio" name="slcmediatype" value="2" disabled />\
+                                            <label for="seleccionaMediaVideo">' + _("Video") + '</label>\
+                                            <input class="gameQE-Type"  id="seleccionaMediaText" type="radio" name="slcmediatype" value="3" disabled />\
+                                            <label for="seleccionaMediaText">' + _("Text") + '</label>\
+                                        </span>\
+                                    </p>\
+                                    <p>\
+                                        <span id="seleccionaOptionsNumberSpan">' + _("Options Number") + ':</span>\
+                                        <span class="gameQE-EInputNumbers" id="seleccionaEInputNumbers" >\
+                                            <input class="gameQE-Number" id="numQ2" type="radio" name="slcnumber" value="2" />\
+                                            <label for="numQ2">2</label>\
+                                            <input class="gameQE-Number" id="numQ3" type="radio" name="slcnumber" value="3" />\
+                                            <label for="numQ3">3</label>\
+                                            <input class="gameQE-Number" id="numQ4" type="radio" name="slcnumber" value="4" checked="checked" />\
+                                            <label for="numQ4">4</label>\
+                                        </span>\
+                                    </p>\
+                                    <p>\
+                                        <span id="seleccionaPercentageSpan">' + _("Percentage of letters to show (%)") + ':</span>\
+                                        <span class="gameQE-EPercentage" id="seleccionaPercentage">\
+                                            <input type="number" name="seleccionaPercentageShow" id="seleccionaPercentageShow" value="35" min="0" max="100" step="5" /> </label>\
+                                        </span>\
+                                    </p>\
+                                    <p>\
+                                        <span>' + _("Time per question") + ':</span>\
+                                        <span class="gameQE-EInputTimes">\
+                                            <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="slctime" value="0" />\
+                                            <label for="q15s">15s</label>\
+                                            <input class="gameQE-Times" id="q30s" type="radio" name="slctime" value="1" />\
+                                            <label for="q30s">30s</label>\
+                                            <input class="gameQE-Times" id="q1m" type="radio" name="slctime" value="2" />\
+                                            <label for="q1m">1m</label>\
+                                            <input class="gameQE-Times" id="q3m" type="radio" name="slctime" value="3" />\
+                                            <label for="q3m">3m</label>\
+                                            <input class="gameQE-Times" id="q5m" type="radio" name="slctime" value="4" />\
+                                            <label for="q5m">5m</label>\
+                                            <input class="gameQE-Times" id="q10m" type="radio" name="slctime" value="5" />\
+                                            <label for="q10m">10m</label>\
+                                        </span>\
+                                    <p>\
+                                    <p id="seleccionaEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
+                                        <label for="seleccionaEScoreQuestion"><span>' + _("Score") + '</span>:</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
+                                    </p>\
                                     <span class="gameQE-ETitleImage" id="seleccionaETitleImage">' + _("Image URL") + ':</span>\
                                     <div class="gameQE-EInputImage gameQE-Flex" id="seleccionaEInputImage">\
                                         <label class="sr-av" for="seleccionaEURLImage">' + _("Image URL") + '</label>\
@@ -1010,9 +1023,6 @@ var $exeDevice = {
                                         <label class="sr-av" for="seleccionaEURLAudio">' + _("URL") + ':</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="seleccionaEURLAudio"/>\
                                         <a href="#" id="seleccionaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
-                                    </div>\
-                                    <div id="seleccionaEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
-                                        <label for="seleccionaEScoreQuestion"><span>' + _("Score") + '</span>:</label><input type="number" name="seleccionaEScoreQuestion" id="seleccionaEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EMultiMediaOption">\

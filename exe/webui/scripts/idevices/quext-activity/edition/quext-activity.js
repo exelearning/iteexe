@@ -780,44 +780,50 @@ var $exeDevice = {
                         <div class="gameQE-EPanel" id="quextEPanel">\
                             <div class="gameQE-EOptionsMedia">\
                                 <div class="gameQE-EOptionsGame">\
-                                    <span>' + _("Multimedia Type") + ':</span>\
-                                    <div class="gameQE-EInputMedias">\
-                                        <input class="gameQE-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
-                                        <label for="quextMediaNormal">' + _("None") + '</label>\
-                                        <input class="gameQE-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
-                                        <label for="quextMediaImage">' + _("Image") + '</label>\
-                                        <input class="gameQE-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
-                                        <label for="quextMediaVideo">' + _("Video") + '</label>\
-                                        <input class="gameQE-Type"  id="quextMediaText" type="radio" name="qxtype" value="3" disabled />\
-                                        <label for="quextMediaText">' + _("Text") + '</label>\
-                                    </div>\
-                                    <span>' + _("Options Number") + ':</span>\
-                                    <div class="gameQE-EInputNumbers">\
-                                        <input class="gameQE-Number" id="numQ2" type="radio" name="qxtnumber" value="2" />\
-                                        <label for="numQ2">2</label>\
-                                        <input class="gameQE-Number" id="numQ3" type="radio" name="qxtnumber" value="3" />\
-                                        <label for="numQ3">3</label>\
-                                        <input class="gameQE-Number" id="numQ4" type="radio" name="qxtnumber" value="4" checked="checked" />\
-                                        <label for="numQ4">4</label>\
-                                    </div>\
-                                    <span>' + _("Time per question") + ':</span>\
-                                    <div class="gameQE-EInputTimes">\
-                                        <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="qxttime" value="0" />\
-                                        <label for="q15s">15s</label>\
-                                        <input class="gameQE-Times" id="q30s" type="radio" name="qxttime" value="1" />\
-                                        <label for="q30s">30s</label>\
-                                        <input class="gameQE-Times" id="q1m" type="radio" name="qxttime" value="2" />\
-                                        <label for="q1m">1m</label>\
-                                        <input class="gameQE-Times" id="q3m" type="radio" name="qxttime" value="3" />\
-                                        <label for="q3m">3m</label>\
-                                        <input class="gameQE-Times" id="q5m" type="radio" name="qxttime" value="4" />\
-                                        <label for="q5m">5m</label>\
-                                        <input class="gameQE-Times" id="q10m" type="radio" name="qxttime" value="5" />\
-                                        <label for="q10m">10m</label>\
-                                    </div>\
-                                    <div id="quextEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
+                                    <p>\
+                                        <span>' + _("Multimedia Type") + ':</span>\
+                                        <span class="gameQE-EInputMedias">\
+                                            <input class="gameQE-Type" checked="checked" id="quextMediaNormal" type="radio" name="qxtype" value="0" disabled />\
+                                            <label for="quextMediaNormal">' + _("None") + '</label>\
+                                            <input class="gameQE-Type"  id="quextMediaImage" type="radio" name="qxtype" value="1" disabled />\
+                                            <label for="quextMediaImage">' + _("Image") + '</label>\
+                                            <input class="gameQE-Type"  id="quextMediaVideo" type="radio" name="qxtype" value="2" disabled />\
+                                            <label for="quextMediaVideo">' + _("Video") + '</label>\
+                                            <input class="gameQE-Type"  id="quextMediaText" type="radio" name="qxtype" value="3" disabled />\
+                                            <label for="quextMediaText">' + _("Text") + '</label>\
+                                        </span>\
+                                    </p>\
+                                    <p>\
+                                        <span>' + _("Options Number") + ':</span>\
+                                        <span class="gameQE-EInputNumbers">\
+                                            <input class="gameQE-Number" id="numQ2" type="radio" name="qxtnumber" value="2" />\
+                                            <label for="numQ2">2</label>\
+                                            <input class="gameQE-Number" id="numQ3" type="radio" name="qxtnumber" value="3" />\
+                                            <label for="numQ3">3</label>\
+                                            <input class="gameQE-Number" id="numQ4" type="radio" name="qxtnumber" value="4" checked="checked" />\
+                                            <label for="numQ4">4</label>\
+                                        </span>\
+                                    </p>\
+                                    <p>\
+                                        <span>' + _("Time per question") + ':</span>\
+                                        <span class="gameQE-EInputTimes">\
+                                            <input class="gameQE-Times" checked="checked" id="q15s" type="radio" name="qxttime" value="0" />\
+                                            <label for="q15s">15s</label>\
+                                            <input class="gameQE-Times" id="q30s" type="radio" name="qxttime" value="1" />\
+                                            <label for="q30s">30s</label>\
+                                            <input class="gameQE-Times" id="q1m" type="radio" name="qxttime" value="2" />\
+                                            <label for="q1m">1m</label>\
+                                            <input class="gameQE-Times" id="q3m" type="radio" name="qxttime" value="3" />\
+                                            <label for="q3m">3m</label>\
+                                            <input class="gameQE-Times" id="q5m" type="radio" name="qxttime" value="4" />\
+                                            <label for="q5m">5m</label>\
+                                            <input class="gameQE-Times" id="q10m" type="radio" name="qxttime" value="5" />\
+                                            <label for="q10m">10m</label>\
+                                        </span>\
+                                    </p>\
+                                    <p id="quextEScoreQuestionDiv" class="gameQE-ScoreQuestionDiv">\
                                         <label for="quextEScoreQuestion">' + _("Score") + ':</label> <input type="number" name="quextEScoreQuestion" id="quextEScoreQuestion" value="1" min="0"  max="100" step="0.05"/>\
-                                    </div>\
+                                    </p>\
                                     <span class="gameQE-ETitleImage" id="quextETitleImage">' + _("Image URL") + '</span>\
                                     <div class="gameQE-Flex gameQE-EInputImage" id="quextEInputImage">\
                                         <label class="sr-av" for="quextEURLImage">' + _("Image URL") + '</label>\
