@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-07 16:54+0200\n"
+"PO-Revision-Date: 2021-04-09 13:06+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Language: ca\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -13361,7 +13361,7 @@ msgstr "Desa el mapa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:6
 msgid "Save the mind map as a json file."
-msgstr "Desa el mapa conceptual com un fitxer json."
+msgstr "Desa el mapa mental com un fitxer json."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:9
 msgid "Text style"
@@ -13377,21 +13377,21 @@ msgstr "Recursiva"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:14
 msgid "It works with mindmaps"
-msgstr "Funciona amb mapes conceptuals"
+msgstr "Funciona amb mindmaps"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:339
 #: exe/webui/tools/mindmaps/src/js/ToolBar.js:293
 msgid "Mind map"
-msgstr "Mapa conceptual"
+msgstr "Mapa mental"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:40
 msgid "Use the editor to create a new mind map..."
-msgstr "Usa l'editor per crear un mapa conceptual nou..."
+msgstr "Usa l'editor per crear un mapa mental nou..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:58
 msgid "Open the mind map editor"
-msgstr "Obre l'editor del mapa conceptual"
+msgstr "Obre l'editor del mapa mental"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:105
 msgid "Descriptive title"
@@ -13407,7 +13407,7 @@ msgstr "Enllaça la imatge a mida completa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:154
 msgid "Please create a mind map."
-msgstr "Crea un mapa conceptual."
+msgstr "Crea un mapa mental."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:163
 msgid "Please provide a title."
@@ -13415,7 +13415,7 @@ msgstr "Proporciona un títol"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:251
 msgid "You can edit the mind map..."
-msgstr "Podeu editar el mapa conceptual..."
+msgstr "Podeu editar el mapa mental..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Back"
@@ -14683,7 +14683,7 @@ msgstr "Afegeix"
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:52
 msgid "Welcome to mindmaps"
-msgstr "Benvingut a mapes conceptuals"
+msgstr "Benvingut a mindmaps"
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:142
 #: exe/webui/tools/style-designer/langs/all.js:90
