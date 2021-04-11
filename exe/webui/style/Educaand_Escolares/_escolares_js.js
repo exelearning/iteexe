@@ -1,5 +1,4 @@
 var myTheme = {
-    printButton : false,
     init : function(){
 		var ie_v = $exe.isIE();
 		if (ie_v && ie_v<8) return false;
@@ -13,11 +12,6 @@ var myTheme = {
 				navToggler += '<a href="#" class="hide-nav" id="toggle-nav" title="'+tit+'">';
 					navToggler += '<span>'+$exe_i18n.menu+'</span>';
 				navToggler += '</a>';
-				if (myTheme.printButton==true && typeof(window.print)=='function') {
-					navToggler += '<a href="#" id="print-page">';
-						navToggler += '<span>'+$exe_i18n.print+'</span>';
-					navToggler += '</a>';
-				}
 			navToggler += '</p>';
         var l = $(navToggler);
         var nav = $("#siteNav");
@@ -54,11 +48,6 @@ var myTheme = {
 				navToggler += '<a href="#" class="hide-nav" id="toggle-nav" title="'+tit+'">';
 					navToggler += '<span>'+$exe_i18n.menu+'</span>';
 				navToggler += '</a>';
-				if (myTheme.printButton==true && typeof(window.print)=='function') {
-					navToggler += '<a href="#" id="print-page">';
-						navToggler += '<span>'+$exe_i18n.print+'</span>';
-					navToggler += '</a>';
-				}
 			navToggler += '</p>';
         var l = $(navToggler);
         var nav = $("#siteNav");
@@ -180,33 +169,19 @@ var myTheme = {
 			var iDevices = $(".iDevice_wrapper");
 			var firstIsText = false;
 			iDevices.each(function(i){
-				// To review (just for 2.5.1)
-				if ($(this).hasClass("UDLcontentIdevice")) {
-					var h = $(".iDevice_header",this);
-						h = h.css("background-image");
-						if (h && h!="") {
-							h = h.split("/");
-							h = h[h.length-1];
-							h = h.split(".");
-							h = h[0];
-							h = h.replace("icon_","");
-							$(this).addClass("em_iDevice_"+h);
-						}
-				} // / 2.5.1				
 				if (iDevices.length>1 && i==0 && this.className.indexOf("FreeTextIdevice")!=-1) {
 					$(".iDevice",this).css("margin-top",0);
 					firstIsText = true;
 				}
+				// Use common CSS class names (so they have a similar presentation)
+				if (!$(this).hasClass("UDLcontentIdevice")) {
+					var header = $(".iDevice_header",this);
+					var icon = header.css("background-image");
+					if (icon.indexOf("icon_udl_eng")!=-1) $(this).addClass("em_iDevice_udl_eng_like");
+					if (icon.indexOf("icon_udl_exp")!=-1) $(this).addClass("em_iDevice_udl_exp_like");
+					if (icon.indexOf("icon_udl_rep")!=-1) $(this).addClass("em_iDevice_udl_rep_like");
+				}
 			});
-			// Print button in authoring-page, SCORM and IMS
-			if (myTheme.printButton==true && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-ims") || $("body").hasClass("exe-scorm"))) {
-				var extra = '';
-				if (iDevices.length>1 && !firstIsText) extra = ' class="with-toggler"';
-				$("#nodeDecoration").after('<p id="printNode"'+extra+'><a href="#" title="'+$exe_i18n.print+'"><span>'+$exe_i18n.print+'</span></a></p>');
-				$("#printNode a").click(function(e){
-					myTheme.printContent(document.body.className);
-				});
-			}
 		}
 	}
 }
@@ -215,52 +190,9 @@ $(function(){
 	if ($("body").hasClass("exe-web-site")) {
 		if($(window).width()<829 && $(window).height()<1800){
 			myTheme.init2();
-		}
-		else{
-		myTheme.init();
+		} else {
+			myTheme.init();
 		}
 	}
 	myTheme.common.init();
 });
-function ayudantes(evt, cityName){
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-};
-
-
-function personajes(evt, cityName) {
-  // Declare all variables
-  var i, personajescontent, tablinks;
-
-  // Get all elements with class="personajesconten" and hide them
-  personajescontent = document.getElementsByClassName("personajescontent");
-  for (i = 0; i < personajescontent.length; i++) {
-    personajescontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-};
