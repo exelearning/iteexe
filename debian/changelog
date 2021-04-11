@@ -116,6 +116,7 @@ intef-exe (3:2.5.1) lucid; urgency=medium
     - Revised full Simplified Chinese (zh_CN) translation, by Chenggui Duan. 
     - New German translation, by Jan Joscha Finger.
     - New Greek translation, by Yannis Kaskamanidis.
+    - New translation to Dzongkha, by Tandin Penjor.
 
  -- eXeLearning <admin@exelearning.net>  Fri, 30 Oct 2020 11:15:00 +0200
 
