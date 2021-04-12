@@ -103,7 +103,6 @@ var $exeDevice = {
         $exeDevice.initQuestions();
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
-        //$exeDevice.loadYoutubeApi();
         $('.gameQE-EVILabel').find('button').hide();
     },
     setMessagesInfo: function () {
@@ -731,7 +730,7 @@ var $exeDevice = {
                                     <div class="gameQE-EProgressBar" id="vquextEProgressBar">\
                                         <div class="gameQE-EInterBar" id="vquextEInterBar"></div>\
                                     </div>\
-                                    <div class="gameQE-EMultimedia gameQE-Flex" id="vquextEMultimedia">\
+                                    <div class="gameQE-EMultiVideoQuExt gameQE-Flex" id="vquextEMultimedia">\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="vquextENoImageVideo" alt="" />\
                                         <div class="gameQE-EMedia" id="vquextEVideo"></div>\
                                         <video class="gameQE-EMedia" id = "vquextEVideoLocal" preload="auto" controls><source src = ""></video>\

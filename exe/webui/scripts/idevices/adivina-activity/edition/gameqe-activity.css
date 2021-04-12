@@ -40,6 +40,13 @@
 	position: relative;
 	width: 400px;
 }
+.gameQE-EMultiVideoQuExt {
+	background-color: #fff;
+	height: 300px;
+	margin: 20px auto auto auto;
+	position: relative;
+	max-width: 528px;
+}
 .gameQE-EMedia {
 	border: 1px solid #cccccc;
 	border-radius: .5em;

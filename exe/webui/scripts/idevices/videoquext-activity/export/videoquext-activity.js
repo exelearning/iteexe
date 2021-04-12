@@ -1182,7 +1182,7 @@ var $eXeVideoQuExt = {
                             $eXeVideoQuExt.stopVideo(instance);
                             mOptions.counter = 0
                             mOptions.stateReproduction = 1;
-                            mOptions.gameActived = true;
+                            mOptions.gameActived = false;
                         } else {
                             $eXeVideoQuExt.drawQuestions(instance);
                             mOptions.counter = $eXeVideoQuExt.getTimeSeconds(mOptions.questionsGame[mOptions.activeQuestion].time);
@@ -1284,6 +1284,7 @@ var $eXeVideoQuExt = {
         if (mOptions.gameActived) {}
     },
     getTimeToString: function (iTime) {
+        iTime=iTime<0?0:iTime;
         var mMinutes = parseInt(iTime / 60) % 60;
         var mSeconds = iTime % 60;
         return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
