@@ -212,14 +212,18 @@ Ext.application({
                 
                 var latest = no;
                 var current = eXe.app.config.release;
-                
-                if (current=="" || latest==current) return; // No release number for testing packages
-                
-                latest = latest.replace(/\./g,"");
-                current = current.replace(/\./g,"");
+				
 				// Remove ~alfa or ~beta
 				current = current.split("~");
 				current = current[0];
+				// Remove pp... (launchpad.net ppa version)
+				current = current.split("pp");
+				current = current[0];				
+                
+                if (current=="" || latest==current) return; // No release number for dev packages
+                
+                latest = latest.replace(/\./g,"");
+                current = current.replace(/\./g,"");
 
                 while (latest.length>current.length) current += '0';
                 while (current.length>latest.length) latest += '0';                
