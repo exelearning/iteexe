@@ -138,6 +138,7 @@ Ext.define('eXe.controller.Outline', {
     },
 
     onNodeContextMenu: function(view, record, item, index, e, eOpts) {
+        if (this.checkActiveIdevice()==false) return false;
         e.preventDefault();
         this.onNodeClick(view, record, item, index, e, eOpts);
         var contextMenu = new Ext.menu.Menu({
@@ -157,6 +158,7 @@ Ext.define('eXe.controller.Outline', {
     },
 
     processNodeEvent: function(menu, item, e, eOpts) {
+        if (this.checkActiveIdevice()==false) return false;
         this.nodeAction(e.action)
     },
     
@@ -174,14 +176,35 @@ Ext.define('eXe.controller.Outline', {
     onLaunch: function() {
     	this.reload();
     },
+	
+    checkActiveIdevice: function(){
+        var iframe = document.getElementsByTagName('iframe');
+        if (iframe.length==1) {
+            iframe = iframe[0];
+            var doc = iframe.contentWindow.document;
+            var btn = doc.getElementById("exe-submitButton");
+            if (btn) {
+                Ext.Msg.alert(
+                    _('Info'),
+                    _("The changes you made will be lost if you navigate away from this page.")
+                );				
+                return false;
+            } else {
+                return true;
+            }
+        }		
+        return true;
+    },	
     
     onNodeClick: function(view, record, item, index, e, eOpts) {
+    	if (this.checkActiveIdevice()==false) return false;
     	this.loadNodeOnAuthoringPage(record.data.id);
         document.title = "eXe : " + record.data.text;
     },
     
     onNodeAdd: function(button, e, eOpts) {
-    	var outlineTreePanel = this.getOutlineTreePanel(),
+		if (this.checkActiveIdevice()==false) return false;
+		var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0';
     	
@@ -192,7 +215,7 @@ Ext.define('eXe.controller.Outline', {
     },
     
     onNodeDel: function(button, e, eOpts) {
-    	var outlineTreePanel = this.getOutlineTreePanel(),
+		var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0', msg;
     	
@@ -217,6 +240,7 @@ Ext.define('eXe.controller.Outline', {
 	},
 
     onNodeRename: function() {
+    	if (this.checkActiveIdevice()==false) return false;
     	var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0', title;
