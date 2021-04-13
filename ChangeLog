@@ -16,6 +16,8 @@ intef-exe (3:2.6~beta) lucid; urgency=medium
     - Fixed: MediaElement Player download file problem. (#555)
     - Fixed: Presentation Style: Prevent link default behaviour (usability problem).
     - Fixed: Invalid XML in the JavaScript iDevices configuration files.
+    - Fixed: "New version available" message always displayed in the PPA version. (#540)
+    - Fixed: Add/Rename/Move page disabled when editing an iDevice. (#550)
 
   * Manuel Narváez
     - New iDevice category (Games):
