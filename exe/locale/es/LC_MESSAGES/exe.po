@@ -10476,7 +10476,7 @@ msgstr "Número de vidas"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:170
 msgid "&percnt; right to see the feedback"
-msgstr "de respuestas correctas para mostrar la retroalimentación"
+msgstr "&percent; de respuestas correctas para mostrar la retroalimentación"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:178
 msgid "Words/Phrases"

@@ -277,7 +277,7 @@ translations = {
  "Advanced Options": "Opciones avanzadas", 
  "Time Limit (mm:ss)": "L\u00edmite de tiempo (mm:ss)", 
  "A hint or definition is missing": "Falta una pista o una definici\u00f3n", 
- "&percnt; right to see the feedback": "de respuestas correctas para mostrar la retroalimentaci\u00f3n", 
+ "&percnt; right to see the feedback": "&percent; de respuestas correctas para mostrar la retroalimentaci\u00f3n", 
  "Search": "Buscar", 
  "QuExt": "QuExt", 
  "Ready?": "\u00bfPreparado?", 
