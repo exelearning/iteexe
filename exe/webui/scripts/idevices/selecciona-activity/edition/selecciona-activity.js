@@ -383,6 +383,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = 0;
             $exeDevice.clipBoard = $exeDevice.selectsGame[$exeDevice.active];
             $('#seleccionaEPaste').show();
+            
         }
     },
 
@@ -416,6 +417,7 @@ var $exeDevice = {
             $exeDevice.showQuestion($exeDevice.active);
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
         }
+        $exeDevice.updateSelectOrder();
     },
 
     nextQuestion: function () {
