@@ -178,6 +178,8 @@ var $eXeDesafio = {
                     <div class="desafio-StartGameDiv" id="desafioStartGameDiv-' + instance + '">\
                         <a href="#" class="desafio-StartGame"  id="desafioStartGame-' + instance + '" title="' + msgs.Play + '">' + msgs.msgStartGame + '</a>\
                     </div>\
+                    <div class="desafio-Clues" id="desafioClues-' + instance + '">\
+                    </div>\
                     <div class="desafio-DateDiv" id="desafioDateDiv-' + instance + '">\
                         <p class="desafio-Date"  id="desafioDate-' + instance + '">' + msgs.msgDate + ':</p>\
                         <a href="#" class="desafio-LinkReboot " id="desafioRebootButton-' + instance + '" title="' + msgs.msgReboot + '">\
@@ -262,7 +264,24 @@ var $eXeDesafio = {
         mOptions.endGame = false;
         mOptions.desafioSolved = false;
         mOptions.solvedsChallenges = [];
+        mOptions.timesShow = [];
         mOptions.stateChallenges = $eXeDesafio.createArrayStateChallenges(mOptions.desafioType, mOptions.challengesGame.length);
+        mOptions.clueTimes = [];
+        for (var i = 0; i < mOptions.challengesGame.length; i++) {
+            mOptions.challengesGame[i].clueTimes = [];
+            mOptions.challengesGame[i].clueTexts = [];
+            mOptions.timesShow.push(10000000);
+           
+            if (typeof mOptions.challengesGame[i].clues != "undefined") {
+                for (var z = 0; z < mOptions.challengesGame[i].clues.length; z++) {
+                    if (mOptions.challengesGame[i].clues[z].clue.length > 0) {
+                        mOptions.challengesGame[i].clueTimes.push(mOptions.challengesGame[i].clues[z].time * 60)
+                        mOptions.challengesGame[i].clueTexts.push(mOptions.challengesGame[i].clues[z].clue);
+                    }
+                }
+            }
+        }
+
         return mOptions;
     },
     changeImageButtonState: function (instance, type) {
@@ -284,20 +303,20 @@ var $eXeDesafio = {
         $('#desafioDesafio-' + instance).find(".desafio-GameDesafio").css({
             "background": imgDesafio,
             "background-size": "100% 100%",
-            "width": l +'px',
-            "height": t+'px',
+            "width": l + 'px',
+            "height": t + 'px',
         });
 
         $buttonChalleng.each(function (i) {
             if (i < mOptions.stateChallenges.length) {
                 var state = mOptions.stateChallenges[i].state,
                     left = (-l * i) + "px",
-                    top = (-t * state) + 'px';
-                mcss = "url(" + $eXeDesafio.idevicePath + file + ") no-repeat " + left + " " + top;
+                    top = (-t * state) + 'px',
+                    mcss = "url(" + $eXeDesafio.idevicePath + file + ") no-repeat " + left + " " + top;
                 $(this).find(".exeQuextRetos").css({
                     "background": mcss,
-                    "width": l+'px',
-                    "height": t+'px',
+                    "width": l + 'px',
+                    "height": t + 'px',
                     "flex-glow": 0
                 })
             }
@@ -382,7 +401,6 @@ var $eXeDesafio = {
                 return;
             }
             var number = parseInt($(this).data('number'));
-
             $eXeDesafio.showChallenge(number, instance);
 
         });
@@ -449,6 +467,10 @@ var $eXeDesafio = {
         mOptions.desafioSolved = false;
         mOptions.typeQuestion = 0;
         mOptions.solvedsChallenges = [];
+        mOptions.timesShow = [];
+        for(var i=0;i<mOptions.challengesGame.length;i++){
+            mOptions.timesShow.push(10000000);
+        }
         $eXeDesafio.startGame(instance, mOptions.typeQuestion, mOptions.activeChallenge);
     },
     showDesafio: function (instance) {
@@ -481,6 +503,7 @@ var $eXeDesafio = {
         }
         $eXeDesafio.showMessage(type, message, instance);
         $eXeDesafio.changeImageButtonState(instance, mOptions.typeQuestion);
+        $('#desafioClues-' + instance).html('');
     },
     showChallenge: function (number, instance) {
         var mOptions = $eXeDesafio.options[instance],
@@ -492,6 +515,9 @@ var $eXeDesafio = {
         if (mOptions.stateChallenges[number].state == 0) {
             return;
         };
+        if (mOptions.timesShow[number] == 10000000) {
+            mOptions.timesShow[number]= mOptions.counter;
+        }
         $eXeDesafio.changeStateButton(instance);
         $("#desafioSolutionDiv-" + instance).show();
         mOptions.typeQuestion = 1;
@@ -514,6 +540,21 @@ var $eXeDesafio = {
         }
         $eXeDesafio.showMessage(type, message, instance);
         $eXeDesafio.changeImageButtonState(instance, mOptions.typeQuestion);
+        $eXeDesafio.showClues(number, instance)
+    },
+    showClues(number, instance) {
+        var mOptions = $eXeDesafio.options[instance],
+            text = "";
+            
+        if (typeof mOptions.challengesGame[number].clueTimes != "undefined") {
+            var tmp = mOptions.timesShow [number]- mOptions.counter;
+            for (var i = 0; i < mOptions.challengesGame[number].clueTimes.length; i++) {
+                if (mOptions.challengesGame[number].clueTimes[i]<= tmp) {
+                    text += '<p><strong>'+mOptions.msgs.msgHelp+' '+(i+1)+': </strong>' + mOptions.challengesGame[number].clueTexts[i] + '</p>';
+                }
+            }
+        }
+        $('#desafioClues-' + instance).html(text);
     },
 
     saveDataStorage: function (instance) {
@@ -534,7 +575,8 @@ var $eXeDesafio = {
             'numberChallenges': mOptions.challengesGame.length,
             'typeQuestion': mOptions.typeQuestion,
             'solvedsChallenges': mOptions.solvedsChallenges,
-            'stateChallenges': mOptions.stateChallenges
+            'stateChallenges': mOptions.stateChallenges,
+            'timesShow': mOptions.timesShow
         }
         localStorage.setItem('dataDesafio-' + instance, JSON.stringify(data));
     },
@@ -610,6 +652,9 @@ var $eXeDesafio = {
         mOptions.desafioSolved = dataDesafio.desafioSolved;
         mOptions.stateChallenges = dataDesafio.stateChallenges;
         mOptions.solvedsChallenges = dataDesafio.solvedsChallenges;
+        if(typeof dataDesafio.timesShow!="undefined"){
+            mOptions.timesShow=dataDesafio.timesShow ;
+        }
         $('#desafioDate-' + instance).text(mOptions.msgs.msgStartTime + ': ' + dataDesafio.desafioDate);
         var ds = dataDesafio.desafioSolved ? 0 : 1;
         if (mOptions.endGame) {
@@ -664,6 +709,12 @@ var $eXeDesafio = {
                 if (mOptions.counter <= 0) {
                     $eXeDesafio.gameOver(1, instance);
                 }
+                if (mOptions.typeQuestion == 1) {
+                    var tmp=mOptions.timesShow[mOptions.activeChallenge]- mOptions.counter;
+                    if (mOptions.challengesGame[mOptions.activeChallenge].clueTimes.indexOf(tmp) != -1) {
+                        $eXeDesafio.showClues(mOptions.activeChallenge, instance);
+                    }
+                }
             }
 
         }, 1000);
@@ -672,6 +723,7 @@ var $eXeDesafio = {
         mOptions.gameActived = true;
         $eXeDesafio.saveDataStorage(instance);
     },
+
     uptateTime: function (tiempo, instance) {
         var mTime = $eXeDesafio.getTimeToString(tiempo);
         $('#desafioPTime-' + instance).text(mTime);
@@ -694,6 +746,7 @@ var $eXeDesafio = {
         $('#desafioCover-' + instance).hide();
         $('#desafioImagen-' + instance).hide();
         $('#desafioFeedBacks-' + instance).hide();
+        $('#desafioClues-' + instance).html('');
 
         var message = type === 0 ? mOptions.msgs.msgDesafioSolved : mOptions.msgs.msgEndTime;
         $eXeDesafio.showMessage(2, message, instance);
@@ -784,7 +837,7 @@ var $eXeDesafio = {
         });
     },
     supportedBrowser: function (idevice) {
-        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
         if (!sp) {
             var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
             $('.' + idevice + '-instructions').text(bns);

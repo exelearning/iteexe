@@ -293,6 +293,11 @@
 	height: 100%;
 }
 
+.desafio-Clues{
+	margin-top:0.8em;
+	font-size: 0.9em;
+}
+
 /* Mensaje */
 
 .desafio-MessageInfo {

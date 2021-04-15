@@ -1596,7 +1596,7 @@ var $eXeSelecciona = {
             sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
         }
         $('#seleccionaPScore-' + instance).text(sscore);
-        $('#qseleccionaPHits-' + instance).text(mOptions.hits);
+        $('#seleccionaPHits-' + instance).text(mOptions.hits);
         $('#seleccionaPErrors-' + instance).text(mOptions.errors);
         message = $eXeSelecciona.getMessageAnswer(correctAnswer, points, instance);
         $eXeSelecciona.showMessage(type, message, instance);
@@ -1689,11 +1689,9 @@ var $eXeSelecciona = {
             if (mOptions.gameMode != 0) {
                 sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
             }
-          
-
         }
         $('#seleccionaPScore-' + instance).text(sscore);
-        $('#qseleccionaPHits-' + instance).text(mOptions.hits);
+        $('#seleccionaPHits-' + instance).text(mOptions.hits);
         $('#seleccionaPErrors-' + instance).text(mOptions.errors);
         $eXeSelecciona.showMessage(type, message, instance);
 

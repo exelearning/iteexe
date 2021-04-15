@@ -25,7 +25,7 @@ var $exeDevice = {
     typeEdit: -1,
     numberCutCuestion: -1,
     desafioFeedBacks: [],
-    desafioVersion:1,
+    desafioVersion: 1,
     clipBoard: '',
     ci18n: {
         "msgStartGame": _("Click here to start"),
@@ -39,27 +39,28 @@ var $exeDevice = {
         "msgSuccesses": _("Right! | Excellent! | Great! | Very good! | Perfect!"),
         "msgFailures": _("It was not that! | Incorrect! | Not correct! | Sorry! | Error!"),
         "msgInformation": _("Information"),
-        "mgsSolution":_("Solution"),
-        "msgDate":_("Date") ,
-        "msgDesafio":_("Challenge"), // Desafío in ES
-        "msgChallenge":_("Trial"), // Reto in ES
-        "msgChallengesCompleted":_("Completed trials"),
-        "msgStartTime":_("Starting time"),
-        "msgReadTime":_("Read the instructions and click on a trial when you're ready to play."),
-        "msgChallengesAllCompleted":_("You've completed all the trials! You can now complete the game."),
-        "msgDesafioSolved":_("You made it! You can restart to play again."),
-        "msgDesafioSolved1":_("You solved the trial! Congratulations!"),
-        "msgEndTime":_("Time Over. Please restart to try again."),
-        "msgSolutionError":_("Sorry. Wrong solution."),
-        "msgSolutionCError":_("Sorry. The solution is wrong."),
-        "msgChallengeSolved":_("You solved this trial! Please select another one."),
-        "msgDesafioReboot":_("Restart the game and the starting time?"),
-        "msgCompleteAllChallenged":_("You must complete all the trials to finish."),
-        "msgSolvedChallenge":_("You already completed this trial."),
-        "msgWriteChallenge":_("Complete the trial. Write the solution."),
-        "msgEndTimeRestart":_("Time Over. Please restart to try again."),
-        "msgReboot":_("Restart")
-   },
+        "mgsSolution": _("Solution"),
+        "msgDate": _("Date"),
+        "msgDesafio": _("Challenge"), // Desafío in ES
+        "msgChallenge": _("Trial"), // Reto in ES
+        "msgChallengesCompleted": _("Completed trials"),
+        "msgStartTime": _("Starting time"),
+        "msgReadTime": _("Read the instructions and click on a trial when you're ready to play."),
+        "msgChallengesAllCompleted": _("You've completed all the trials! You can now complete the game."),
+        "msgDesafioSolved": _("You made it! You can restart to play again."),
+        "msgDesafioSolved1": _("You solved the trial! Congratulations!"),
+        "msgEndTime": _("Time Over. Please restart to try again."),
+        "msgSolutionError": _("Sorry. Wrong solution."),
+        "msgSolutionCError": _("Sorry. The solution is wrong."),
+        "msgChallengeSolved": _("You solved this trial! Please select another one."),
+        "msgDesafioReboot": _("Restart the game and the starting time?"),
+        "msgCompleteAllChallenged": _("You must complete all the trials to finish."),
+        "msgSolvedChallenge": _("You already completed this trial."),
+        "msgWriteChallenge": _("Complete the trial. Write the solution."),
+        "msgEndTimeRestart": _("Time Over. Please restart to try again."),
+        "msgReboot": _("Restart"),
+        "msgHelp": _("Help")
+    },
 
     init: function () {
         this.setMessagesInfo();
@@ -75,14 +76,15 @@ var $exeDevice = {
         msgs.msgOneChallenge = _("Please add at least one trial.");
         msgs.msgTenChallenges = _("You can only add ten trials.");
         msgs.msgDataChanllenge = _("Please write the title, description and solution of all the trials.");
-        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
+        msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgClue = _("Help");
     },
     showMessage: function (msg) {
         eXe.app.alert(msg);
     },
     addChallenge: function () {
         $exeDevice.saveChallenge();
-        if($exeDevice.challengesGame.length==10){
+        if ($exeDevice.challengesGame.length == 10) {
             $exeDevice.showMessage($exeDevice.msgs.msgTenChallenges);
             return;
         }
@@ -96,10 +98,10 @@ var $exeDevice = {
         $('#desafioENumChallenges').text($exeDevice.challengesGame.length);
         $('.desafio-EDivFeebBack').hide();
         $('#desafioEDivFeebBack-' + $exeDevice.active).show();
-        if (tinyMCE.get('desafioEChallenge-' + $exeDevice.active )) {
-            tinyMCE.get('desafioEChallenge-' + $exeDevice.active ).setContent('');
+        if (tinyMCE.get('desafioEChallenge-' + $exeDevice.active)) {
+            tinyMCE.get('desafioEChallenge-' + $exeDevice.active).setContent('');
         } else {
-            $('desafioEChallenge-' + $exeDevice.active ).val('');
+            $('desafioEChallenge-' + $exeDevice.active).val('');
         }
     },
     clearChallenge: function () {
@@ -164,7 +166,7 @@ var $exeDevice = {
     },
 
     pasteChallenge: function () {
-        if($exeDevice.challengesGame.length>(9+$exeDevice.typeEdit)){
+        if ($exeDevice.challengesGame.length > (9 + $exeDevice.typeEdit)) {
             $('#desafioEPaste').hide();
             $exeDevice.showMessage($exeDevice.msgs.msgTenChallenges);
             return;
@@ -215,7 +217,6 @@ var $exeDevice = {
     showChallenge: function (i) {
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.challengesGame.length ? $exeDevice.challengesGame.length - 1 : num;
-        p = $exeDevice.challengesGame[num];
         $('#desafioENumQuestionDiv').show();
         $('#desafiolblEDTime').hide();
         $('#desafioEDTime').hide();
@@ -235,6 +236,15 @@ var $exeDevice = {
         $('#desafioEChallenges').show();
         $('#desafioENumChallenges').text($exeDevice.challengesGame.length);
         $('#desafioENumberChallenge').text($exeDevice.active + 1);
+        if (typeof c.clues != "undefined") {
+            $('#desafioEClue1').val(c.clues[0].clue);
+            $('#desafioEClue2').val(c.clues[1].clue);
+            $('#desafioEClue3').val(c.clues[2].clue);
+            $('#desafioECTime1').val(c.clues[0].time);
+            $('#desafioECTime2').val(c.clues[1].time);
+            $('#desafioECTime3').val(c.clues[2].time)
+        }
+
     },
 
     createForm: function () {
@@ -274,7 +284,7 @@ var $exeDevice = {
                                             <option value="0">Lineal</option>\
                                             <option value="1">Libre</option>\
                                         </select>\
-                                        <label id="desafiolblEDTime" for="desafioEDTime">' + _("Time") + ': </label>\
+                                        <label id="desafiolblEDTime" for="desafioEDTime" >' + _("Max time") + ': </label>\
                                         <select id="desafioEDTime">\
                                             <option value="1">1m</option>\
                                             <option value="10">10m</option>\
@@ -307,6 +317,9 @@ var $exeDevice = {
                                     </div>\
                                     <div id="desafioEChallenges">\
                                     ' + this.getDivChallenges(10) + '\
+                                    </div>\
+                                    <div class="desafio-EClues" id="desafioEClues">\
+                                    ' + this.getDivClues() + '\
                                     </div>\
                                 </div>\
                             </div>\
@@ -341,14 +354,119 @@ var $exeDevice = {
 
     },
     getDivChallenges: function (num) {
-        var chs='';
-        for (var j=0;j<num;j++){
+        var chs = '';
+        for (var j = 0; j < num; j++) {
             var ch = '<div class="desafio-EDivFeebBack" id="desafioEDivFeebBack-' + j + '">\
             <label for="desafioEChallenge-' + j + '" class="sr-av">' + _('Feedback') + '":</label>\
             <textarea id="desafioEChallenge-' + j + '" class="exe-html-editor desafio-EFeedBack"\></textarea>\
             </div>'
-            chs+=ch;
+            chs += ch;
         }
+        return chs;
+    },
+    getDivClues: function () {
+        var chs = ' <p class="desafio-EClue">\
+        <label for="desafioEClue1">' + _("Help") + ' 1:</label><input type="text" id="desafioEClue1" />\
+        <label id="desafiolblECTime1" for="desafioECTime1" class="sr-av">' + _("Time") + ':</label>\
+        <select id="desafioECTime1">\
+            <option value="1">1m</option>\
+            <option value="3">3m</option>\
+            <option value="5" selected>5m</option>\
+            <option value="10">10m</option>\
+            <option value="15">15m</option>\
+            <option value="20" >20m</option>\
+            <option value="25">25m</option>\
+            <option value="30">30m</option>\
+            <option value="35">35m</option>\
+            <option value="40">40m</option>\
+            <option value="45">45m</option>\
+            <option value="50">50m</option>\
+            <option value="55">55m</option>\
+            <option value="60">60m</option>\
+            <option value="65">65m</option>\
+            <option value="70">70m</option>\
+            <option value="75">75m</option>\
+            <option value="80">80m</option>\
+            <option value="85">55m</option>\
+            <option value="90">90m</option>\
+            <option value="95">75m</option>\
+            <option value="100">100m</option>\
+            <option value="110">110m</option>\
+            <option value="120">120m</option>\
+            <option value="150">150</option>\
+            <option value="180">180m</option>\
+            <option value="210">210m</option>\
+            <option value="240">240m</option>\
+        </select>\
+    </p>\
+    <p class="desafio-EClue">\
+        <label for="desafioEClue2">' + _("Help") + ' 2:</label><input type="text"  id="desafioEClue2" />\
+        <label id="desafiolblECTime2" for="desafioECTime2" class="sr-av">' + _("Time") + ' :</label>\
+            <select id="desafioECTime2">\
+            <option value="1">1m</option>\
+            <option value="3">3m</option>\
+            <option value="5">5m</option>\
+            <option value="10" selected>10m</option>\
+            <option value="15">15m</option>\
+            <option value="20">20m</option>\
+            <option value="25">25m</option>\
+            <option value="30">30m</option>\
+            <option value="35">35m</option>\
+            <option value="40">40m</option>\
+            <option value="45">45m</option>\
+            <option value="50">50m</option>\
+            <option value="55">55m</option>\
+            <option value="60">60m</option>\
+            <option value="65">65m</option>\
+            <option value="70">70m</option>\
+            <option value="75">75m</option>\
+            <option value="80">80m</option>\
+            <option value="85">55m</option>\
+            <option value="90">90m</option>\
+            <option value="95">75m</option>\
+            <option value="100">100m</option>\
+            <option value="110">110m</option>\
+            <option value="120">120m</option>\
+            <option value="150">150</option>\
+            <option value="180">180m</option>\
+            <option value="210">210m</option>\
+            <option value="240">240m</option>\
+        </select>\
+    </p>\
+    <p class="desafio-EClue">\
+        <label for="desafioEClue3">' + _("Help") + ' 3:</label><input type="text"  id="desafioEClue3" />\
+        <label id="desafiolblECTime3" for="desafioECTime3" class="sr-av">' + _("Time") + ':</label>\
+        <select id="desafioECTime3">\
+        <option value="1">1m</option>\
+        <option value="3">3m</option>\
+        <option value="5">5m</option>\
+        <option value="10">10m</option>\
+        <option value="15" selected>15m</option>\
+        <option value="20">20m</option>\
+        <option value="25">25m</option>\
+        <option value="30">30m</option>\
+        <option value="35">35m</option>\
+        <option value="40">40m</option>\
+        <option value="45">45m</option>\
+        <option value="50">50m</option>\
+        <option value="55">55m</option>\
+        <option value="60">60m</option>\
+        <option value="65">65m</option>\
+        <option value="70">70m</option>\
+        <option value="75">75m</option>\
+        <option value="80">80m</option>\
+        <option value="85">55m</option>\
+        <option value="90">90m</option>\
+        <option value="95">75m</option>\
+        <option value="100">100m</option>\
+        <option value="119">110m</option>\
+        <option value="120">120m</option>\
+        <option value="150">150</option>\
+        <option value="180">180m</option>\
+        <option value="210">210m</option>\
+        <option value="240">240m</option>\
+        </select>\
+    </p>';
         return chs;
     },
     getChallengeDefault: function () {
@@ -365,9 +483,9 @@ var $exeDevice = {
             var wrapper = $("<div></div>");
             wrapper.html(originalHTML);
             var json = $('.desafio-DataGame', wrapper).text(),
-                version=$('.desafio-version', wrapper).text();
-            if (version.length==1 || !json.startsWith('{')){
-                json=$exeDevice.Decrypt(json);
+                version = $('.desafio-version', wrapper).text();
+            if (version.length == 1 || !json.startsWith('{')) {
+                json = $exeDevice.Decrypt(json);
             }
             var dataGame = $exeDevice.isJsonString(json);
             $exeDevice.desafioTitle = dataGame.desafioTitle;
@@ -393,13 +511,21 @@ var $exeDevice = {
             var c = $exeDevice.challengesGame[0];
             $('#desafioECTitle').val(c.title);
             $('#desafioECSolution').val(c.solution);
+            if (typeof c.clues != "undefined") {
+                $('#desafioEClue1').val(c.clues[0].clue);
+                $('#desafioEClue2').val(c.clues[1].clue);
+                $('#desafioEClue3').val(c.clues[2].clue);
+                $('#desafioECTime1').val(c.clues[0].time);
+                $('#desafioECTime2').val(c.clues[1].time);
+                $('#desafioECTime3').val(c.clues[2].time)
+            }
             var instructions = $(".desafio-instructions", wrapper);
             if (instructions.length == 1) $("#eXeGameInstructions").val(instructions.html());
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.updateFieldGame(dataGame);
         }
     },
-    Encrypt :function (str) {
+    Encrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
         try {
@@ -419,7 +545,7 @@ var $exeDevice = {
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
-        str=unescape(str)
+        str = unescape(str)
         try {
             var key = 146;
             var pos = 0;
@@ -463,20 +589,20 @@ var $exeDevice = {
         dataGame.msgs = i18n;
         var json = JSON.stringify(dataGame),
             divContent = "";
-        json=$exeDevice.Encrypt(json);
+        json = $exeDevice.Encrypt(json);
         var instructions = tinyMCE.get('eXeGameInstructions').getContent(),
             description = tinyMCE.get('desafioEDescription').getContent();
         if (instructions != "") divContent = '<div class="desafio-instructions">' + instructions + '</div>';
         var html = '<div class="desafio-IDevice">';
         html += divContent;
         html += '<div class="desafio-version js-hidden">' + $exeDevice.desafioVersion + '</div>';
-        html += '<div class="desafio-EDescription">' + description+ '</div>';
+        html += '<div class="desafio-EDescription">' + description + '</div>';
         for (var i = 0; i < $exeDevice.challengesGame.length; i++) {
-            var df=tinyMCE.get('desafioEChallenge-' + i).getContent();
-            html += '<div class="desafio-ChallengeDescription">' + df+ '</div>';
+            var df = tinyMCE.get('desafioEChallenge-' + i).getContent();
+            html += '<div class="desafio-ChallengeDescription">' + df + '</div>';
         }
         html += '<div class="desafio-DataGame js-hidden">' + json + '</div>';
-        html += '<div class="desafio-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
+        html += '<div class="desafio-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
@@ -492,8 +618,22 @@ var $exeDevice = {
         }
         p.title = $('#desafioECTitle').val();
         p.solution = $('#desafioECSolution').val();
-        p.clue = $('#desafioECMessage').val();
-        p.clueTime = parseInt($('#desafioECTime option:selected').val());
+        p.timeShow=-1;
+        var clues = [{
+            "clue": $('#desafioEClue1').val(),
+            "time": parseInt($('#desafioECTime1 option:selected').val()),
+
+        },
+        {
+            "clue": $('#desafioEClue2').val(),
+            "time": parseInt($('#desafioECTime2 option:selected').val()),
+        },
+        {
+            "clue": $('#desafioEClue3').val(),
+            "time": parseInt($('#desafioECTime3 option:selected').val()),
+
+        }];
+        p.clues = clues;
         $exeDevice.challengesGame[i] = p;
         return message;
 
@@ -567,7 +707,7 @@ var $exeDevice = {
         var instructions = $('#eXeGameInstructions').text(),
             instructionsExe = (tinyMCE.get('eXeGameInstructions').getContent()),
             showMinimize = $('#desafioEShowMinimize').is(':checked');
-         if ($exeDevice.desafioTitle.length == 0) {
+        if ($exeDevice.desafioTitle.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgTitleDesafio);
             return false;
         } else if ($exeDevice.desafioSolution.length == 0) {
@@ -580,7 +720,7 @@ var $exeDevice = {
         var challengesGame = $exeDevice.challengesGame;
         for (var i = 0; i < challengesGame.length; i++) {
             var mChallenge = challengesGame[i]
-            if (mChallenge.title.length == 0 || mChallenge.solution.length == 0 || mChallenge.description.length == 0 ) {
+            if (mChallenge.title.length == 0 || mChallenge.solution.length == 0 || mChallenge.description.length == 0) {
                 $exeDevice.showMessage($exeDevice.msgs.msgDataChanllenge);
                 return false;
             }
@@ -612,7 +752,7 @@ var $exeDevice = {
         if ($exeDevice.challengesGame.length == 0) {
             var challenge = $exeDevice.getChallengeDefault();
             $exeDevice.active = 0,
-            $exeDevice.challengesGame.push(challenge);
+                $exeDevice.challengesGame.push(challenge);
         }
         $('#desafioENavigationButtons').hide();
         $('#desafioEPaste').hide();
@@ -673,6 +813,7 @@ var $exeDevice = {
                 $exeDevice.typeActive = 0;
                 $exeDevice.saveChallenge();
                 $exeDevice.showDesafio();
+                $exeDevice.showClues(false);
             }
 
         });
@@ -681,6 +822,7 @@ var $exeDevice = {
                 $exeDevice.typeActive = 1;
                 $exeDevice.saveDesafio();
                 $exeDevice.showChallenge($exeDevice.active);
+                $exeDevice.showClues(true);
             }
         });
 
@@ -702,6 +844,14 @@ var $exeDevice = {
             })
         } else {
             $('#eXeGameExportImport').hide();
+        }
+
+    },
+    showClues: function (show) {
+        if (show) {
+            $('#desafioEClues').show();
+        } else {
+            $('#desafioEClues').hide();
         }
 
     },
