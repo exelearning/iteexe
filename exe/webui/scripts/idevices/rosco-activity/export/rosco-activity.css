@@ -380,7 +380,7 @@
 }
 
 .rosco-DivReply {
-    margin: 0px auto;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -414,12 +414,8 @@
 
 .rosco-GameContainer input[type="text"], input.rosco-EdReply {
     margin: 0 .3em;
+    padding: 0.4em 0.25em;
 }
-
-.rosco-GameContainer input[type="text"]:active, .rosco-GameContainer input[type="text"]:focus, input.rosco-EdReply:focus, input.rosco-EdReply:active {
-    /* To review */
-}
-
 /* Inicio juego */
 
 .rosco-StartGame {
@@ -432,7 +428,7 @@
     user-select: none;
 }
 
-.rosco-StartGame a{
+.rosco-StartGame a:hover{
 	text-decoration:underline;
 }
 
@@ -462,7 +458,7 @@
 .rosco-CodeAccessE {
     margin: 0 .3em;
     max-width: 300px;
-    width: 60%;		
+    width: 60%;
 }
 
 /*Intrucciones */
@@ -627,7 +623,7 @@
 
 @-moz-keyframes rosco-parpadeo {
     0% {
-        font-size: 1.0;
+        opacity: 1.0;
     }
     50% {
         opacity: 0.0;
@@ -677,7 +673,6 @@
     .rosco-LinkTypeGame {
         display: none;
     }
-   
 }
 
 @media screen and (max-width:450px) {
@@ -694,6 +689,9 @@
         margin: 0 auto;
         font-size: 0.8em;
     }
+    .rosco-MessageCodeAccessE {
+		font-size: 1em;
+	}
 }
 
 @media screen and (max-width:370px) {

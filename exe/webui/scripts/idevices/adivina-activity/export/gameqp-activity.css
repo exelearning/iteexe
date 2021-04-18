@@ -8,7 +8,7 @@
 /* Contenedor */
 
 .gameQP-MainContainer {
-	font-size: 1em;
+	font-size: 1rem;
 	margin: 1em auto;
 	padding: 0;
 	width: 100%;
@@ -27,7 +27,6 @@
 /* Instrucciones */
 
 .gameQP-instructions {
-	font-size: 1em;
 	margin: 0.3em auto;
 	width: 100%;
 	overflow: auto;
@@ -116,9 +115,8 @@
 /* Pista */
 
 .gameQP-ShowClue {
-	margin-top: 1em;
-	margin-bottom: 1em;
-	min-height: 1em;
+	margin: 0.3em auto;
+	min-height: 0.4em;
 	padding: 0;
 	width: 100%;
 }
@@ -154,6 +152,8 @@
 	position: absolute;
 	right: 0;
 	top: 0;
+	width:100%;
+	height:100%
 }
 
 .gameQP-Images, .gameQP-GameOver, .gameQP-EText {
@@ -169,7 +169,6 @@
 
 .gameQP-EText {
 	border: none;
-	font-size: 1em;
 	overflow-y: auto;
 	padding-right: 0.7em;
 	z-index: 10001;
@@ -344,7 +343,8 @@
 /* Author */
 
 .gameQP-AuthorLicence {
-	margin: 1em auto 0 auto;
+	margin: 0.3em auto 0 auto;
+	min-height: 0.4em;
 	width: 100%;
 }
 
@@ -399,7 +399,7 @@
 	width: 100%;
 }
 
-.gameQP-StartGame a{
+.gameQP-StartGame a:hover{
 	text-decoration:underline;
 }
 
@@ -416,7 +416,6 @@
 	-ms-user-select: none;
 	-webkit-user-select: none;
 	border-radius: 0.3em;
-	font-size: 1em;
 	margin: 0 auto;
 	margin-bottom: 0.4em;
 	min-height: 3.2em;
@@ -426,6 +425,9 @@
 	vertical-align: middle;
 	background-color: transparent;
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Respuesta  tipo test */
@@ -450,17 +452,18 @@
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	margin: 0.1em;
 	min-height: 3em;
 	padding: 0.3em;
 	user-select: none;
 	width: 48%;
+	text-align: center ;
 }
 
 .gameQP-OptionsDiv a {
 	border: 1px solid #777777;
 	color: #1c1b1b;
-	font-size: 1em;
 }
 
 .gameQP-AnswersDiv {
@@ -645,7 +648,7 @@ input.gameQP-VideoIntroClose{
 	top: 10px;
 	background:#fff;
 	border:none;
-	font-size:13px;
+	font-size:0.9em;
 	padding:5px 20px;
 	border-radius:4px;
 }
@@ -661,7 +664,6 @@ input.gameQP-VideoIntroClose:hover{
 .gameQP-BottonContainerDiv, .gameQP-BottonContainer {
 	align-items: center;
 	display: flex;
-	font-size: 1rem;
 	justify-content: flex-end;
 	margin: 0.1em auto;
 	padding: 0;
@@ -675,7 +677,6 @@ input.gameQP-VideoIntroClose:hover{
 /*Intrucciones */
 
 .gameQP-DivInstructions {
-	font-size: 1em;
 	margin: 1em 0 0 0;
 	text-align: center;
 	width: 95%;
@@ -769,7 +770,6 @@ input.gameQP-VideoIntroClose:hover{
 }
 
 .gameQP-PreviewQuestionsTitle {
-	font-size: 1em;
 	font-weight: bold;
 	margin: 0 auto 0.5em auto;
 	text-align: center;
@@ -851,7 +851,6 @@ input.gameQP-VideoIntroClose:hover{
 /* Puntuacion */
 
 .gameQP-BottonContainer {
-	font-size: 1rem;
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -964,30 +963,27 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 }
 
 div:-webkit-full-screen .gameQP-Options {
-	font-size: 1.1em;
-	min-height: 3.5em;
+	min-height: 3.2em;
 }
 
 div:-moz-full-screen .gameQP-Options {
-	font-size: 1.1em;
-	min-height: 3.5em;
+	min-height: 3.2em;;
 }
 
 div:fullscreen .gameQP-Question {
-	font-size: 1.1em;
+	min-height: 3.2em;
 }
 
 div:-webkit-full-screen .gameQP-Question {
-	font-size: 1.1em;
+	min-height: 3.2em;
 }
 
 div:-moz-full-screen .gameQP-Question {
-	font-size: 1.1em;
+	min-height: 3.2em;
 }
 
 div:fullscreen .gameQP-Options {
-	font-size: 1.1em;
-	min-height: 3.5em;
+	min-height: 3.2em;
 }
 
 div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, div:-moz-full-screen .gameQP-Multimedia {
@@ -1026,7 +1022,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 
 @-moz-keyframes gameQP-parpadeo {
 	0% {
-		font-size: 1.0;
+		opacity: 1.0;
 	}
 	50% {
 		opacity: 0.0;
@@ -1061,6 +1057,9 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:550px) {
+	.gameQP-MainContainer {
+		font-size: 0.9rem;
+	}
 	.gameQP-Question {
 		margin-bottom: 0.5em;
 	}
@@ -1070,11 +1069,32 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 	.gameQP-instructions {
 		margin: 0.1em auto;
 	}
+	.gameQP-DivInstructions {
+		display: none;
+	}
+	.gameQP-PShowClue {
+		font-size: 0.9em;
+	}
+	.gameQP-StartGame a {
+		font-size: 0.9em;
+	}
+	.gameQP-AuthorLicence p {
+		font-size: 0.9em;
+	}
 }
 
 @media screen and (max-width:470px) {
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+	.gameQP-MainContainer {
 		font-size: 0.9rem;
+	}
+	.gameQP-PShowClue {
+		font-size: 0.8em;
+	}
+	.gameQP-AuthorLicence p {
+		font-size: 0.8em;
+	}
+	.gameQP-Question {
+		margin-bottom: 0.3em;
 	}
 	.gameQP-Multimedia {
 		width: 95%;
@@ -1105,8 +1125,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 		display: inline-block;
 		line-height: 1.5em;
 		margin: 0 0.3em;
-		padding: 3px 2px;
-		text-align: center;
+		padding: 0.4em 0.25em;
 	}
 	.gameQP-GameContainer input[type="text"]:active, .gameQP-GameContainer input[type="text"]:focus, input.gameQP-EdReply:focus, input.gameQP-EdReply:active, input.gameQP-CodeAccessE:focus, input.gameQP-CodeAccessE:active {
 		background: #fdfdfd;
@@ -1116,7 +1135,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:340px) {
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+	.gameQP-MainContainer {
 		font-size: 0.8rem;
 	}
 	.gameQP-GameScoreBoard p {
@@ -1143,7 +1162,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:295px) {
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+	.gameQP-MainContainer {
 		font-size: 0.7rem;
 	}
 	.gameQP-GameScoreBoard {
@@ -1158,15 +1177,12 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (max-width:265px) {
-	.gameQP-GameContainer, .gameQP-BottonContainer, .gameQP-instructions {
+	.gameQP-MainContainer {
 		font-size: 0.6rem;
 	}
 	.gameQP-GameScoreBoard p {
 		font-weight: normal;
 		margin: 2px;
-	}
-	.gameQP-GameContainer, .gameQP-BottonContainer {
-		font-size: 0.6rem;
 	}
 	.gameQP-GameContainer .exeQuextIcons {
 		height: 1.1em;
@@ -1202,7 +1218,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 		background-color: #fff;
 		margin: 2em auto;
 		max-width: 95vmin;
-		top: 2em;
+		top: 1.4em;
 		width: 95vmin;
 	}
 }
@@ -1210,9 +1226,9 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 @media screen and ( min-width: 700px) and (max-height: 800px) {
 	div:fullscreen .gameQP-Multimedia {
 		background-color: #fff;
-		margin-bottom: 4em;
-		max-width: 80vmin;
-		width: 80vmin;
+		margin-bottom: 0.6em;
+		max-width: 95vmin;
+		width: 95vmin;
 	}
 }
 
@@ -1223,6 +1239,3 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 .selecciona-instructions{
 	overflow:auto;
 }
-
-
-

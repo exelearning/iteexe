@@ -985,6 +985,7 @@ var $eXeVideoQuExt = {
                     $eXeVideoQuExt.drawImage(this, mData);
                 }
             });
+        $('#vquextProgressBar-' + instance).width( $('#vquextVideo-' + instance).width());
         $eXeVideoQuExt.createPointsVideo(instance);
     },
     enterCodeAccess: function (instance) {
@@ -1118,6 +1119,7 @@ var $eXeVideoQuExt = {
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             mOptions.questionsGame[i].answerScore = -1;
         }
+        $('#vquextProgressBar-' + instance).width( $('#vquextVideo-' + instance).width());
         $eXeVideoQuExt.createPointsVideo(instance);
         $('#vquextPShowClue-' + instance).hide();
         $('#vquextPShowClue-' + instance).text("");
@@ -1617,11 +1619,9 @@ var $eXeVideoQuExt = {
     showMessage: function (type, message, instance) {
         var colors = ['#555555', $eXeVideoQuExt.borderColors.red, $eXeVideoQuExt.borderColors.green, $eXeVideoQuExt.borderColors.blue, $eXeVideoQuExt.borderColors.yellow];
         var color = colors[type];
-        var weight = type == 0 ? 'normal' : 'bold';
         $('#vquextPAuthor-' + instance).html(message);
         $('#vquextPAuthor-' + instance).css({
-            'color': color,
-            'font-weight': weight
+            'color': color
         });
     },
     drawImage: function (image, mData) {
