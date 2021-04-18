@@ -1030,7 +1030,7 @@ var $eXeRosco = {
 		var posTextoAnimoY = mOptions.showSolution ? yMessage - 10 : yMessage;
 		ctxt.fillStyle = $eXeRosco.colors.white;
 		var lColor = Hit ? $eXeRosco.colors.green : $eXeRosco.colors.red;
-		ctxt.strokeStyle = "#555555";
+		ctxt.strokeStyle = "#DDDDDD";
 		ctxt.lineWidth = 2;
 		$eXeRosco.roundRect(xMessage + 5, 130, 277, 120, 8, true, true, ctxt);
 		ctxt.textAlig = "center";
@@ -1196,12 +1196,12 @@ var $eXeRosco = {
 		ctxt.lineTo(x, y + radius.tl);
 		ctxt.quadraticCurveTo(x, y, x + radius.tl, y);
 		ctxt.closePath();
-		$eXeRosco.setShadow(ctxt, "rgba(0, 0, 0, 0.5)", 7, 7, 10);
-		if (fill) {
-			ctxt.fill();
-		}
+		$eXeRosco.setShadow(ctxt, "rgba(100, 100, 100, 0.5)", 3, 3, 4);
 		if (stroke) {
 			ctxt.stroke();
+		}
+		if (fill) {
+			ctxt.fill();
 		}
 		$eXeRosco.setShadow(ctxt, "white", 0, 0, 0);
 	},
