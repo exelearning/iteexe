@@ -1427,7 +1427,7 @@ var $eXeQuExt = {
             var option = mOptions.question.options[index];
             $(this).css({
                 'border-color': $eXeQuExt.borderColors.grey,
-                'background-color': "#fff",
+                'background-color': "transparent",
                 'cursor': 'pointer',
                 'color': $eXeQuExt.colors.black,
                 'border-width': '1px'

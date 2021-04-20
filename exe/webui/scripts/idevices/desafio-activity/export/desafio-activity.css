@@ -276,8 +276,7 @@
 .desafio-Solution {
 	margin: 0 .3em;
 	max-width: 350px;
-	padding: 0;
-	text-align: center;
+	padding: 0.4em 0.25em;
 	width: 60%;
 }
 
@@ -291,6 +290,11 @@
 	background-size: 100% 100%;
 	width: 100%;
 	height: 100%;
+}
+
+.desafio-Clues{
+	margin-top:0.8em;
+	font-size: 0.9em;
 }
 
 /* Mensaje */

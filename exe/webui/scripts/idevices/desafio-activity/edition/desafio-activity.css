@@ -10,7 +10,7 @@
   margin-right: .15em;
 }
 
-#desafioIdeviceForm #desafioEChallenges {
+#desafioIdeviceForm #desafioEChallenges, #desafioIdeviceForm #desafioEClues  {
   display: none;
 }
 
@@ -25,16 +25,33 @@
   width: 100%;
 }
 
+
+.desafio-EClue{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.desafio-EClue input[type=text]{
+  width: 100%;
+  margin-right: 0.2em;
+  flex-grow: 0;
+}
+.desafio-EClue label{
+  margin-right: 0.1em;
+  white-space:nowrap;
+}
+
 .desafio-DataDesafio {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
-
 .desafio-DataDesafio input[type=text] {
   width: 100%;
   min-width: 100px;
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .desafio-DataDesafio input[type=text]:nth-of-type(2n+1) {

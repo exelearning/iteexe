@@ -140,30 +140,6 @@ var myTheme = {
     reset : function() {
         myTheme.toggleMenu();        
     },
-	inIframe : function(){
-		try {
-			return window.self !== window.top;
-		} catch (e) {
-			return true;
-		}
-	},	
-	printContent : function(bodyClassName){
-		if (bodyClassName.indexOf("exe-authoring-page")==0) {
-			if (typeof(_)!='undefined') {
-				eXe.app.alert(_("File") + " - " + _("Print") + " (Ctrl+P)");
-				return false;
-			}
-		}
-		if (!this.inIframe()) {
-			window.print();
-		} else {
-			var isIE = navigator.appName.indexOf('Microsoft') !=-1;
-			if (isIE) alert('Ctrl+P');
-			var a = window.open(self.location.href);			
-			if (!isIE) a.onload = function() { this.print() }
-			a.focus();			
-		}
-	},
 	common : {
 		init : function(c){
 			var iDevices = $(".iDevice_wrapper");
@@ -177,11 +153,48 @@ var myTheme = {
 				if (!$(this).hasClass("UDLcontentIdevice")) {
 					var header = $(".iDevice_header",this);
 					var icon = header.css("background-image");
-					if (icon.indexOf("icon_udl_eng")!=-1) $(this).addClass("em_iDevice_udl_eng_like");
-					if (icon.indexOf("icon_udl_exp")!=-1) $(this).addClass("em_iDevice_udl_exp_like");
-					if (icon.indexOf("icon_udl_rep")!=-1) $(this).addClass("em_iDevice_udl_rep_like");
+					if (typeof(icon)=='string'){
+						if (icon.indexOf("icon_udl_eng")!=-1) $(this).addClass("em_iDevice_udl_eng_like");
+						if (icon.indexOf("icon_udl_exp")!=-1) $(this).addClass("em_iDevice_udl_exp_like");
+						if (icon.indexOf("icon_udl_rep")!=-1) $(this).addClass("em_iDevice_udl_rep_like");
+					}
 				}
 			});
+			// "Do it here" will be the default title of the Interactive Activities
+			if (document.body.className.indexOf("exe-authoring-page")==0) {
+				if (typeof(top._)!='undefined') {
+					var d = [
+						"DropDown Activity",
+						"SCORM Quiz",
+						"Scrambled List",
+						"Multi-choice",
+						"Multi-select",
+						"True-False Question",
+						"Cloze Activity",
+						"Interactive Video",
+						"GeoGebra Activity"
+					];					
+					var l = [
+						"ListaIdevice",
+						"QuizTestIdevice",
+						"ScrambledListIdevice",
+						"MultichoiceIdevice",
+						"MultiSelectIdevice",
+						"TrueFalseIdevice",
+						"ClozeIdevice",
+						"interactive-videoIdevice",
+						"GeoGebraIdevice"
+					];
+					var editor = $("#activeIdevice");
+					if (editor.length!=1) return;
+					var c = editor.attr("class");
+					var i = l.indexOf(c);
+					if (i==-1) return;
+					var t = $("input[type='text']",editor).eq(0);
+					if (t.length!=1) return;
+					if (t.val()==_(d[i])) t.val(_("Do it here"));
+				}
+			}			
 		}
 	}
 }

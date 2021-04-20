@@ -706,6 +706,7 @@ var $eXeAdivina = {
         } else {
             $eXeAdivina.showImage("", 0, 0, '', '', instance);
         }
+
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
@@ -728,7 +729,6 @@ var $eXeAdivina = {
         $("#adivinaDivReply-" + instance).show();
         $("#adivinaDivInstructions-" + instance).hide();
         $('#adivinaStartGame-' + instance).hide();
-        $('#adivinaDivInstructions-' + instance).hide();
         $('#adivinaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
         mOptions.hits = 0;
         mOptions.errors = 0;
@@ -801,6 +801,7 @@ var $eXeAdivina = {
     gameOver: function (type, instance) {
         var mOptions = $eXeAdivina.options[instance];
         $eXeAdivina.showImage("", 0, 0, '', '', instance);
+        
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
@@ -930,9 +931,7 @@ var $eXeAdivina = {
             }
         }
         $('#adivinaDefinition-' + instance).html(html);
-        if ($('#adivinaGameContainer-' + instance).width() < 768) {
-            $('#adivinaDivInstructions-' + instance).hide();
-        }
+
     },
     shuffleAds: function (arr) {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
@@ -971,6 +970,7 @@ var $eXeAdivina = {
         $('#adivinaAuthor-' + instance).text('');
         if (q.type === 1) {
             $eXeAdivina.showImage(q.url, q.x, q.y, q.author, q.alt, instance);
+            $('#adivinaPAuthor-' + instance).text( q.author);
         } else if (q.type === 3) {
             var text = unescape(q.eText);
             if (window.innerWidth < 401) {
@@ -1168,7 +1168,6 @@ var $eXeAdivina = {
             $cursor.hide();
             $Image.hide();
             $noImage.show();
-            $Author.text('');
             return false;
         };
 
@@ -1179,7 +1178,6 @@ var $eXeAdivina = {
                     $Image.hide();
                     $Image.attr('alt', $eXeAdivina.options[instance].msgs.msgNoImage);
                     $noImage.show();
-                    $Author.text('');
                     return false;
                 } else {
                     var mData = $eXeAdivina.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
@@ -1187,7 +1185,6 @@ var $eXeAdivina = {
                     $Image.show();
                     $cursor.hide();
                     $noImage.hide();
-                    $Author.text(author);
                     $Image.attr('alt', alt);
                     if (x > 0 && y > 0) {
                         var left = mData.x + (x * mData.w);
@@ -1205,7 +1202,6 @@ var $eXeAdivina = {
                 $Image.hide();
                 $Image.attr('alt', $eXeAdivina.options[instance].msgs.msgNoImage);
                 $noImage.show();
-                $Author.text('');
                 return false;
             });
     },
