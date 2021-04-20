@@ -20,14 +20,14 @@ header#header #headerContent h1{color:#cc6715;border:none;margin-right:75px}
 #header h1,#nodeTitle{text-shadow:0 0 8px rgba(255,255,255,.6),0 0 5px rgba(255,255,255,.6),0 0 2px rgba(255,255,255,.9)}
 #exe-node-0 header.nodeDecoration h1.nodeTitle{color:#fff;background-color:#00843d;padding:5px 5px 5px 15px;margin:5px 0 0 0 !important;border:none!important}
 h1#nodeTitle{margin-right:30px}
-/* en scorm se metia titulo en logo */
+/* Safe long titles in SCORM */
 @media (max-width:420px){
 	#header{font-size:21px}
 	h1#nodeTitle{margin-right:80px;line-height:1.1em;font-size:21px}
 	body .iDeviceTitle{font-size:20px}
 	body .iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:48px;margin:0}
 }
-/* .nodeTitle when single page */
+/* .nodeTitle in single page */
 .nodeTitle{padding:5px 0;border-bottom:2px solid #00843D;margin:5px 5px 5px 0;color:#00843D;letter-spacing:.5px;font-size:1.5em;padding-right:60px}
 h1{font-size:1.5em;color:#444;letter-spacing:.5px;font-weight:bold}
 h2{font-size:1.4em;color:#444;letter-spacing:.5px;font-weight:bold}
@@ -66,8 +66,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .iDevice_header{background:url(icon_udl_exp_interactivo.svg) no-repeat 0 bottom;padding-top:10px;padding-left:95px;position:relative;min-height:75px!important;width:auto!important}
 .iDevice .iDevice_header.iDevice_header_noIcon{padding:0 0 0 10px;background-image:none}
 /* Buttons */
-.feedbackbutton,.feedback-button input{text-decoration:none;background-color:#0065ab;padding:.3em 1em;color:#fff;transition:background-color 0.4s ease-in-out;display:inline-block;border:none;cursor:pointer}
-.feedbackbutton:hover,.feedback-button input:hover{background-color:#004b80}
+.feedbackbutton,.feedback-button input,.iDevice_buttons input{text-decoration:none;background-color:#0065ab;padding:.3em 1em;color:#fff;transition:background-color 0.4s ease-in-out;display:inline-block;border:none;cursor:pointer}
+.feedbackbutton:hover,.feedback-button input:hover,.iDevice_buttons input:hover{background-color:#004b80}
 
 .activityIdevice .iDevice_header{background-image:url(icon_udl_exp_actividad.svg)}
 .readingIdevice .iDevice_header{background-image:url(icon_udl_exp_lee.svg)}
@@ -104,8 +104,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table th{border-color:#549b0d}
 .iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead{background:#437c0a;color:#FFF}
 
-.em_iDevice_udl_eng_like .feedbackbutton,.em_iDevice_udl_eng_like .feedback-button input{background-color:#499113}
-.em_iDevice_udl_eng_like .feedbackbutton:hover,.em_iDevice_udl_eng_like .feedback-button input:hover{background-color:#366c0e}
+.em_iDevice_udl_eng_like .feedbackbutton,.em_iDevice_udl_eng_like .feedback-button input,.em_iDevice_udl_eng_like .iDevice_buttons input{background-color:#499113}
+.em_iDevice_udl_eng_like .feedbackbutton:hover,.em_iDevice_udl_eng_like .feedback-button input:hover,.em_iDevice_udl_eng_like .iDevice_buttons input:hover{background-color:#366c0e}
 
 /* Purple iDevices */
 .iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDeviceTitle,
@@ -159,8 +159,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table th{border-color:#784aba}
 .iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead{background:#5f3996;color:#FFF}
 
-.em_iDevice_udl_rep_like .feedbackbutton,.em_iDevice_udl_rep_like .feedback-button input{background-color:#a25ac4}
-.em_iDevice_udl_rep_like .feedbackbutton:hover,.em_iDevice_udl_rep_like .feedback-button input:hover{background-color:#7d389e}
+.em_iDevice_udl_rep_like .feedbackbutton,.em_iDevice_udl_rep_like .feedback-button input,.em_iDevice_udl_rep_like .iDevice_buttons input{background-color:#a25ac4}
+.em_iDevice_udl_rep_like .feedbackbutton:hover,.em_iDevice_udl_rep_like .feedback-button input:hover,.em_iDevice_udl_rep_like .iDevice_buttons input:hover{background-color:#7d389e}
 
 .FileAttachIdeviceInc a{color:#412866}
 
@@ -253,7 +253,7 @@ li{list-style-position:outside}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;clip:rect(1px 1px 1px 1px);/* IE6,IE7 */clip:rect(1px,1px,1px,1px)}
 
-/* eXe < 2.1 (to review) */
+/* Links */
 .iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
 .iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}
 
@@ -287,7 +287,8 @@ li{list-style-position:outside}
 	#header{padding-top:0px!important}
 	body{text-align:justify!important;color:#000!important}
 	ol,ul{color:#000!important}
-	#header #headerContent h1{padding-left:15px;margin-right:80px!important}
+	#header #headerContent h1{margin-right:80px!important}
+	#exe-node-0 header.nodeDecoration h1.nodeTitle{padding-left:0}
 	header.nodeDecoration h1.nodeTitle{page-break-after:none!important}
 	#header{height:auto;font-size:1em;text-align:left;letter-spacing:.5px;padding:0px 25px 16px 0px;border:none;margin-bottom:0}
 	.nodeDecoration{padding-top:10px}
@@ -295,8 +296,7 @@ li{list-style-position:outside}
 	#nodeDecoration,#emptyHeader{color:#000;text-shadow:none;background:none;border:2px solid #CC6715;padding:5px 5px 10px 15px;margin-left:10px}
 	#nodeDecoration,#header,#emptyHeader{color:#000;text-shadow:none;background:none;border:none;padding:20px 0}
 	.em_iDevice_activity header h2{color:#0065ab}
-	/*en version impresa los title de tareas y demas indicados son h2*/
-	 #packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#444;line-height:1em;margin:0 0 25px 0;background:#fff;border-top:1px solid #00843d}
+	#packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#444;line-height:1em;margin:0 0 25px 0;background:#fff;border-top:1px solid #00843d}
 	#packageLicense p{margin:20px 0}
 	#packageLicense a{color:#444;text-decoration:underline}
 	#packageLicense.propietary{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
@@ -306,27 +306,20 @@ li{list-style-position:outside}
 	#packageLicense.cc-by-nc-sa{background-position:20px -295px}
 	#packageLicense.cc-by-nc-nd{background-position:20px -395px}
 	#packageLicense.cc-0{background-position:20px -495px}
-	#packageLicense,#packageLicense a,#nodeTitle,{color:#000}
-	.iDevice_header{padding:5px 0}
+	#packageLicense,#packageLicense a,#nodeTitle{color:#000}
+	.iDevice_header{padding:5px 0!important;background:none!important}
 	.iDevice_header h2{padding-left:0px}
 	.nodeTitle{color:#00843d}
-	/*la version imprimible exporta los h1 en h2 por lo que hay que corregir el padding lateral*/
-	 .GeoGebraIdevice header.iDevice_header h2.iDeviceTitle{padding-left:0px}
-	.AdivinaIdevice header.iDevice_header h2.iDeviceTitle,.QuExtIdevice header.iDevice_header h2.iDeviceTitle,.RoscoIdevice header.iDevice_header h2.iDeviceTitle,.VideoQuExtIdevice header.iDevice_header h2.iDeviceTitle{padding-left:0px}
-	.FileAttachIdeviceInc header h2{padding-left:75px}
-	.textIdevice header.iDevice_header_noIcon .iDeviceTitle{padding-left:0px!important}
-	.ListaIdevice .iDevice_header,.MultichoiceIdevice .iDevice_header,.TrueFalseIdevice .iDevice_header,.MultiSelectIdevice .iDevice_header,.ClozeIdevice .iDevice_header,.ScrambledListIdevice .iDevice_header,.interactive-videoIdevice .iDevice_header,.QuizTestIdevice .iDevice_header{padding-left:0px}
 	.iDevice_inner .feedback{background:#fff!important}
-	.iDevice_inner input[value*="respuestas"]{display:none!important}
-	.iDevice_inner input[type=submit],.iDevice_inner input[value*="Averiguar"],.iDevice_inner input[value*="Mostrar"],.feedbackbutton{display:none}
-	ul.fx-tabs{display:none!important}
+	.feedbackbutton,.feedback-button input,.iDevice_buttons input,ul.fx-tabs{display:none!important}
+	a{font-weight:bolder;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}	
 	a[href*=pdf]:after{content:">>Documento de descarga";color:#666;font-weight:normal;font-size:10px;overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
 	.emphasis0:has(>.iDevice_content>.exe-text>p>.external-iframe-src){margin:0px!important}
-	/*span.external-iframe-src{height:10px!important;background:white url(icon_udl_rep_reproduccion.svg) 0 0 no-repeat!important;background-size:35px 25px!important}*/
 	span.external-iframe-src>a[href*="genial"]:before{content:"Enlace a recurso interactivo>>";overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
 	span.external-iframe-src>a[href*="youtube"]:before{content:"Enlace a recurso reproducible>>";overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
 	iframe.external-iframe{display:none}
-	/*no reproducimos imagen iframe en imprimible*/
+	/* No iframe content */
 	 .external-iframe-src{display:block!important;font-size:.70em;text-align:left;padding:5px 10px 10px 50px}
 	.exe-dialog-text{display:block!important}
 	.fx-accordion-content,.fx-timeline-event{display:block!important}
@@ -352,7 +345,7 @@ li{list-style-position:outside}
 	.AdivinaIdevice h1.iDeviceTitle,.QuExtIdevice h1.iDeviceTitle,.RoscoIdevice h1.iDeviceTitle,.VideoQuExtIdevice h1.iDeviceTitle,.AdivinaIdevice h2.iDeviceTitle,.QuExtIdevice h2.iDeviceTitle,.RoscoIdevice h2.iDeviceTitle,.VideoQuExtIdevice h2.iDeviceTitle{color:#0065ab;padding-left:0px!important}
 	.AdivinaIdevice .iDevice_inner,.QuExtIdevice .iDevice_inner,.RoscoIdevice .iDevice_inner,.VideoQuExtIdevice .iDevice_inner,.interactive-videoIdevice .iDevice_inner{border:none!important}
 	.interactive-videoIdevice:after{content:"El vídeo interactivo no se muestra en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
-	.GeoGebraIdevice:after{content:"Las actividades de Geogebra no se muestran en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
+	.GeoGebraIdevice:after{content:"Las actividades de GeoGebra no se muestran en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
 	.AdivinaIdevice:after,.QuExtIdevice:after,.RoscoIdevice:after,.VideoQuExtIdevice:after{content:"Los recursos de tipo Juego,no se muestra en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
 	.interactive-videoIdevice:after{content:"El vídeo interactivo no se muestra en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
 	.ExternalUrlIdevice:before{content:"Las páginas externas no se muestran en la versión imprimible";font-size:14px;color:#444 font-style:italic}
