@@ -167,7 +167,7 @@ class WebsitePage(Page):
 
             if self.node.package.backgroundImg:
                 html += u" style=\"background-image: url("
-                html += quote(self.node.package.backgroundImg.basename())
+                html += quote(str(self.node.package.backgroundImg.basename()))
                 html += u"); "
 
                 if self.node.package.backgroundImgTile:
