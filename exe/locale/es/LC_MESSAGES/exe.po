@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-03 18:37+0200\n"
+"PO-Revision-Date: 2021-04-20 18:37+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -10476,7 +10476,7 @@ msgstr "Número de vidas"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:170
 msgid "&percnt; right to see the feedback"
-msgstr "&percent; de respuestas correctas para mostrar la retroalimentación"
+msgstr "&percnt; de respuestas correctas para mostrar la retroalimentación"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:178
 msgid "Words/Phrases"
