@@ -60,9 +60,8 @@ body .pagination a{filter:alpha(opacity=100);opacity:1;outline:none}
 #content{overflow:auto}
 
 #header-options{margin:20px 0 0;position:absolute;top:2em;right:100px;z-index:99}
-#header-options a{font-size:.95em;margin-left:15px;margin-right:8px;background:transparent url(_escolares_print.png) no-repeat 5px 50%;padding:0 10px 0 32px;color:#444}
+#header-options a{font-size:.95em;margin-left:15px;margin-right:8px;background:transparent url(_escolares_menu.png) no-repeat 5px 50%;padding:0 10px 0 32px;color:#444}
 #header-options a:hover,#header-options a:focus{color:#7c3f06}
-#header-options #toggle-nav{background-image:url(_escolares_menu.gif)}
 #exe-client-search-text{max-width:50%}
 .exe-client-search-result{background:#ecd078;padding:0 2px}
 a .exe-client-search-result{color:#00566a}
