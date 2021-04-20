@@ -37,7 +37,7 @@ var $eXeRosco = {
 	userName: '',
 	previousScore: '',
 	initialScore: '',
-	hasLATEX:false,
+	hasLATEX: false,
 	init: function () {
 		this.activities = $('.rosco-IDevice');
 		if (this.activities.length == 0) return;
@@ -47,7 +47,6 @@ var $eXeRosco = {
 			if (typeof (_) != 'undefined') this.activities.before('<p>' + _('A-Z Quiz Game') + '</p>');
 			return;
 		}
-		$eXeRosco.angleSize = 2 * Math.PI / 27;
 		if (typeof ($exeAuthoring) != 'undefined') this.isInExe = true;
 		this.idevicePath = this.isInExe ? "/scripts/idevices/rosco-activity/export/" : "";
 		if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
@@ -142,10 +141,9 @@ var $eXeRosco = {
 				imagesLink = $('.rosco-LinkImages', this),
 				audiosLink = $('.rosco-LinkAudios', this),
 				option = $eXeRosco.loadDataGame(dl, imagesLink, audiosLink, version);
+			option.radiusLetter = 16 + Math.floor((27 - option.letters.length) / 3);
+			option.angleSize = 2 * Math.PI / option.letters.length;
 			$eXeRosco.options.push(option);
-			$eXeRosco.letters = option.letters;
-			$eXeRosco.radiusLetter = 16 + Math.floor((27 - option.letters.length) / 3);
-			$eXeRosco.angleSize = 2 * Math.PI / option.letters.length;
 			var rosco = $eXeRosco.createInterfaceRosco(i);
 			dl.before(rosco).remove();
 			var msg = $eXeRosco.options[i].msgs.msgPlayStart;
@@ -164,7 +162,7 @@ var $eXeRosco = {
 			$eXeRosco.addEvents(i);
 		});
 		if ($eXeRosco.hasLATEX && typeof (MathJax) == "undefined") {
-			var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+			var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
 			$exe.loadScript(math);
 		}
 	},
@@ -186,7 +184,7 @@ var $eXeRosco = {
 			json = $eXeRosco.Decrypt(json);
 		}
 		var mOptions = $eXeRosco.isJsonString(json);
-		$eXeRosco.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+		$eXeRosco.hasLATEX = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
 		mOptions.playerAudio = "";
 		mOptions.gameOver = false;
 		imgsLink.each(function (index) {
@@ -387,14 +385,14 @@ var $eXeRosco = {
 		if (!auto) alert(message);
 	},
 	getLettersRosco: function (instance) {
-		var letras = this.letters,
-			mLetters = [],
-			mOptions = $eXeRosco.options[instance];
+		var mLetters = [],
+			mOptions = $eXeRosco.options[instance],
+			letras = mOptions.letters;
 		for (var i = 0; i < mOptions.wordsGame.length; i++) {
 			var letter = '<div class="rosco-Letter rosco-LetterBlack" id="letterR' + letras[i] + '-' + instance + '">' + letras[i] + '</div>',
 				word = $.trim(mOptions.wordsGame[i].word);
 			if (word.length > 0) {
-				letter = '<div class="rosco-Letter" id="letterR' + letras[i] + '-' + instance + '">' + letras[i] + '</div>';
+				letter = '<div class="rosco-Letter" id="letterR' + letras[i] + '-' + instance + '">' + $eXeRosco.getRealLetter(letras[i]) + '</div>';
 			}
 			mLetters.push(letter);
 		}
@@ -596,7 +594,7 @@ var $eXeRosco = {
 				mOptions.validWords++;
 				mBackColor = $eXeRosco.colors.blue;
 			}
-			var letter = '#letterR' + $eXeRosco.letters.charAt(i) + '-' + instance;
+			var letter = '#letterR' + mOptions.letters.charAt(i) + '-' + instance;
 			$(letter).css({
 				'background-color': mBackColor,
 				'color': $eXeRosco.colors.white
@@ -695,9 +693,10 @@ var $eXeRosco = {
 
 	drawText: function (texto, color, instance) {
 		var ctxt = $eXeRosco.options[instance].ctxt,
+			mOptions = $eXeRosco.options[instance],
 			whidthCtxt = $eXeRosco.mcanvas.width,
 			heightCtxt = $eXeRosco.mcanvas.height,
-			radiusLetter = $eXeRosco.radiusLetter,
+			radiusLetter = mOptions.radiusLetter,
 			xCenter = whidthCtxt / 2,
 			yCenter = heightCtxt / 2,
 			wText = whidthCtxt - 7 * radiusLetter,
@@ -723,7 +722,7 @@ var $eXeRosco = {
 			msgs = mOptions.msgs,
 			mWord = mOptions.wordsGame[activeLetter],
 			definition = mWord.definition,
-			letter = $eXeRosco.letters.charAt(activeLetter),
+			letter = $eXeRosco.getRealLetter(mOptions.letters.charAt(activeLetter)),
 			start = mWord.type == 0 ? msgs.msgStartWith : msgs.msgContaint;
 		start = start.replace('%1', letter);
 		$('#roscoPDefinition-' + instance).text(definition);
@@ -878,7 +877,7 @@ var $eXeRosco = {
 			mActiveWord = $eXeRosco.updateNumberWord(mOptions.activeWord, instance);
 		if (mOptions.gameOver) return;
 		if (mActiveWord == -10) {
-			$eXeRosco.gameOver(instance, 0);
+			$eXeRosco.gameOver(0, instance);
 		} else {
 			mOptions.activeWord = mActiveWord;
 			$eXeRosco.showWord(mActiveWord, instance)
@@ -904,7 +903,7 @@ var $eXeRosco = {
 			mOptions = $eXeRosco.options[instance];
 		while (end) {
 			numActiveWord++;
-			if (numActiveWord > $eXeRosco.letters.length - 1) {
+			if (numActiveWord > mOptions.letters.length - 1) {
 				if (mOptions.activeGameSpin < mOptions.numberTurns) {
 					if (mOptions.answeredWords >= mOptions.validWords) {
 						end = false
@@ -926,11 +925,10 @@ var $eXeRosco = {
 			}
 		}
 	},
-
 	passWord: function (instance) {
 		var mOptions = $eXeRosco.options[instance];
 		mOptions.gameActived = false;
-		var letter = '#letterR' + $eXeRosco.letters.charAt(mOptions.activeWord) + '-' + instance;
+		var letter = '#letterR' + mOptions.letters.charAt(mOptions.activeWord) + '-' + instance;
 		$(letter).css({
 			'background-color': $eXeRosco.colors.blue,
 			'color': $eXeRosco.colors.white
@@ -940,7 +938,7 @@ var $eXeRosco = {
 			$eXeRosco.drawText('', $eXeRosco.colors.blue, instance);
 			$('#roscoEdReply-' + instance).focus();
 		}
-		var letter = '#letterR' + $eXeRosco.letters.charAt(mOptions.activeWord) + '-' + instance;
+		var letter = '#letterR' + mOptions.letters.charAt(mOptions.activeWord) + '-' + instance;
 		$(letter).css({
 			'background-color': $eXeRosco.colors.blue,
 			'color': $eXeRosco.colors.white
@@ -955,7 +953,7 @@ var $eXeRosco = {
 			return;
 		}
 		mOptions.gameActived = false;
-		var letter = $eXeRosco.letters[mOptions.activeWord],
+		var letter = mOptions.letters[mOptions.activeWord],
 			answord = $('#roscoEdReply-' + instance).val();
 		if ($.trim(answord) == "") {
 			mOptions.gameActived = true;
@@ -1077,21 +1075,22 @@ var $eXeRosco = {
 			}
 			if (iNumber == activeWord) {
 				var letter = "",
-					mLetter = $eXeRosco.letters.charAt(iNumber);
+					mLetter = mOptions.letters.charAt(iNumber);
 				letter = '#letterR' + mLetter + '-' + instance;
+				mLetter = $eXeRosco.getRealLetter(mOptions.letters.charAt(iNumber));
 				$(letter).css({
 					'background-color': mBackColor,
 					'color': mFontColor
 				});
 				var ctxt = mOptions.ctxt,
-					angle = ($eXeRosco.angleSize * (iNumber + $eXeRosco.letters.length - 6)) % $eXeRosco.letters.length,
-					radiusLetter = $eXeRosco.radiusLetter,
+					angle = (mOptions.angleSize * (iNumber + mOptions.letters.length - 6)) % mOptions.letters.length,
+					radiusLetter = mOptions.radiusLetter,
 					xCenter = $eXeRosco.mcanvas.width / 2,
 					yCenter = $eXeRosco.mcanvas.height / 2,
 					radius = $eXeRosco.mcanvas.width / 2 - radiusLetter * 2,
 					yPoint = yCenter + radius * Math.sin(angle),
 					xPoint = xCenter + radius * Math.cos(angle),
-					font = $eXeRosco.getFontSizeLetters();
+					font = $eXeRosco.getFontSizeLetters(instance);
 				ctxt.beginPath();
 				ctxt.strokeStyle = $eXeRosco.colors.white;
 				ctxt.arc(xPoint, yPoint, radiusLetter, 0, 2 * Math.PI);
@@ -1205,23 +1204,23 @@ var $eXeRosco = {
 		}
 		$eXeRosco.setShadow(ctxt, "white", 0, 0, 0);
 	},
-
 	drawRosco: function (instance) {
 		var ctxt = $eXeRosco.options[instance].ctxt,
 			whidthCtxt = $eXeRosco.mcanvas.width,
-			heightCtxt = $eXeRosco.mcanvas.height;
+			heightCtxt = $eXeRosco.mcanvas.height,
+			mOptions = $eXeRosco.options[instance];
 		ctxt.clearRect(0, 0, whidthCtxt, heightCtxt);
-		var radiusLetter = $eXeRosco.radiusLetter,
+		var radiusLetter = mOptions.radiusLetter,
 			xCenter = Math.round(whidthCtxt / 2),
 			yCenter = Math.round(heightCtxt / 2),
 			radius = whidthCtxt / 2 - radiusLetter * 2,
 			letter = "";
-		for (var i = 0; i < $eXeRosco.letters.length; i++) {
-			letter = $eXeRosco.letters.charAt(i);
-			var angle = ($eXeRosco.angleSize * (i + $eXeRosco.letters.length - 6)) % $eXeRosco.letters.length,
+		for (var i = 0; i < mOptions.letters.length; i++) {
+			letter = $eXeRosco.getRealLetter(mOptions.letters.charAt(i));
+			var angle = (mOptions.angleSize * (i + mOptions.letters.length - 6)) % mOptions.letters.length,
 				yPoint = yCenter + radius * Math.sin(angle),
 				xPoint = xCenter + radius * Math.cos(angle),
-				font = $eXeRosco.getFontSizeLetters();
+				font = $eXeRosco.getFontSizeLetters(instance);
 			ctxt.beginPath();
 			ctxt.lineWidth = 0;
 			ctxt.strokeStyle = $eXeRosco.colors.black;
@@ -1241,25 +1240,44 @@ var $eXeRosco = {
 			ctxt.closePath();
 		}
 	},
-	getFontSizeLetters: function () {
-		var mFont = "20px",
+	getRealLetter: function (letter) {
+		var mletter = letter;
+		if (letter == '0') {
+			mletter = 'L·L'
+		} else if (letter == '1') {
+			mletter = 'SS'
+		}
+		return mletter;
+	},
+	getCaracterLetter: function (letter) {
+		var caracter = letter;
+		if (letter == "L·L") {
+			caracter = '0'
+		} else if (letter == "SS") {
+			caracter = '1';
+		}
+		return caracter;
+	},
+	getFontSizeLetters: function (instance) {
+		var mOptions = $eXeRosco.options[instance],
+			mFont = "20px",
 			fontS = ' bold %1 sans-serif ';
-		if ($eXeRosco.letters.length < 18) {
+		if (mOptions.letters.length < 18) {
 			mFont = "24px"
 		}
-		if ($eXeRosco.letters.length < 24) {
+		if (mOptions.letters.length < 24) {
 			mFont = "22px"
-		} else if ($eXeRosco.letters.length < 32) {
+		} else if (mOptions.letters.length < 32) {
 			mFont = "20px"
-		} else if ($eXeRosco.letters.length < 36) {
+		} else if (mOptions.letters.length < 36) {
 			mFont = "16px"
-		} else if ($eXeRosco.letters.length < 40) {
+		} else if (mOptions.letters.length < 40) {
 			mFont = "14px"
-		} else if ($eXeRosco.letters.length < 44) {
+		} else if (mOptions.letters.length < 44) {
 			mFont = "12px"
-		} else if ($eXeRosco.letters.length < 50) {
+		} else if (mOptions.letters.length < 50) {
 			mFont = "10px"
-		} else if ($eXeRosco.letters.length < 100) {
+		} else if (mOptions.letters.length < 100) {
 			mFont = "8px"
 		}
 		fontS = fontS.replace('%1', mFont);
@@ -1274,7 +1292,7 @@ var $eXeRosco = {
 		for (var i = 0; i < mOptions.wordsGame.length; i++) {
 			mOptions.wordsGame[i].state = mOptions.wordsGame[i].word.trim().length == 0 ? 0 : 1;
 			mBackColor = mOptions.wordsGame[i].state == 1 ? $eXeRosco.colors.blue : $eXeRosco.colors.black;
-			letter = '#letterR' + $eXeRosco.letters.charAt(i) + '-' + instance;
+			letter = '#letterR' + mOptions.letters.charAt(i) + '-' + instance;
 			$(letter).css({
 				'background-color': mBackColor,
 				'color': mFontColor
@@ -1340,21 +1358,21 @@ var $eXeRosco = {
 		}
 		$eXeRosco.refreshImageActive(instance);
 	},
-    supportedBrowser: function (idevice) {
-        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
-        if (!sp) {
-            var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
-            $('.' + idevice + '-instructions').text(bns);
-        }
-        return sp;
+	supportedBrowser: function (idevice) {
+		var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
+		if (!sp) {
+			var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
+			$('.' + idevice + '-instructions').text(bns);
+		}
+		return sp;
 	},
 	extractURLGD: function (urlmedia) {
-        var sUrl = urlmedia;
-        if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
-            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
-        }
-        return sUrl;
-    }
+		var sUrl = urlmedia;
+		if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+			sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+		}
+		return sUrl;
+	}
 }
 $(function () {
 	$eXeRosco.init();
