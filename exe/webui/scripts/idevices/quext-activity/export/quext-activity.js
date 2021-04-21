@@ -50,7 +50,7 @@ var $eXeQuExt = {
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
-    hasLATEX:false,
+    hasLATEX: false,
     init: function () {
         this.activities = $('.quext-IDevice');
         if (this.activities.length == 0) return;
@@ -195,9 +195,9 @@ var $eXeQuExt = {
             $('#quextDivFeedBack-' + i).hide();
         });
         if ($eXeQuExt.hasLATEX && typeof (MathJax) == "undefined") {
-            var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-			$exe.loadScript(math);
-		}
+            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+            $exe.loadScript(math);
+        }
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
@@ -384,8 +384,11 @@ var $eXeQuExt = {
         if (version > 0) {
             json = $eXeQuExt.Decrypt(json);
         }
-        var mOptions = $eXeQuExt.isJsonString(json);
-        $eXeQuExt.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        var mOptions = $eXeQuExt.isJsonString(json),
+            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        if (hasLatex) {
+            $eXeQuExt.hasLATEX = true;
+        }
         mOptions.gameOver = false;
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
@@ -1501,7 +1504,7 @@ var $eXeQuExt = {
         $eXeQuExt.refreshImageActive(instance);
     },
     supportedBrowser: function (idevice) {
-        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
         if (!sp) {
             var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
             $('.' + idevice + '-instructions').text(bns);

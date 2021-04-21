@@ -183,8 +183,11 @@ var $eXeRosco = {
 		if (version > 0) {
 			json = $eXeRosco.Decrypt(json);
 		}
-		var mOptions = $eXeRosco.isJsonString(json);
-		$eXeRosco.hasLATEX = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+		var mOptions = $eXeRosco.isJsonString(json),
+			hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+		if (hasLatex) {
+			$eXeRosco.hasLATEX = true;
+		}
 		mOptions.playerAudio = "";
 		mOptions.gameOver = false;
 		imgsLink.each(function (index) {

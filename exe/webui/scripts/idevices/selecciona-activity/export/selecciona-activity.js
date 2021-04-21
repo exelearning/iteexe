@@ -409,7 +409,10 @@ var $eXeSelecciona = {
         var json = $eXeSelecciona.Decrypt(data.text()),
             mOptions = $eXeSelecciona.isJsonString(json);
         version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
-        $eXeSelecciona.hasLATEX = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        var hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        if (hasLatex) {
+            $eXeSelecciona.hasLATEX = true;
+        }
         mOptions.gameOver = false;
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
@@ -461,7 +464,7 @@ var $eXeSelecciona = {
             }
         });
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
-            if (mOptions.customScore || mOptions.order==2 ) {
+            if (mOptions.customScore || mOptions.order == 2) {
                 mOptions.scoreTotal += mOptions.selectsGame[i].customScore;
             } else {
                 mOptions.selectsGame[i].customScore = 1
@@ -1157,8 +1160,8 @@ var $eXeSelecciona = {
     showFeedBack: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.selectsGame.length;
-        if(mOptions.order==2){
-            puntos=mOptions.score*10;
+        if (mOptions.order == 2) {
+            puntos = mOptions.score * 10;
         }
         if (mOptions.gameMode == 2 || mOptions.feedBack) {
             if (puntos >= mOptions.percentajeFB) {
@@ -1643,7 +1646,7 @@ var $eXeSelecciona = {
                 type = 2;
                 mOptions.scoreGame += quextion.customScore;
 
-            } 
+            }
             mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
             sscore = mOptions.score;
             if (mOptions.gameMode != 0) {
@@ -1667,7 +1670,7 @@ var $eXeSelecciona = {
                     }
                 }
                 message = $eXeSelecciona.getMessageAnswer(correctAnswer, points, instance);
-            } else if (answerScore>0)  {
+            } else if (answerScore > 0) {
                 mOptions.errors++;
                 mOptions.hits--;
                 if (mOptions.gameMode != 0) {
@@ -1738,10 +1741,10 @@ var $eXeSelecciona = {
     },
     getMessageErrorAnswerRepeat: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
-            message =  $eXeSelecciona.getRetroFeedMessages(false, instance);
+            message = $eXeSelecciona.getRetroFeedMessages(false, instance);
         if (mOptions.customMessages && mOptions.selectsGame[mOptions.activeQuestion].msgError.length > 0) {
             message = mOptions.selectsGame[mOptions.activeQuestion].msgError;
-        } 
+        }
         return message;
     },
     getMessageCorrectAnswerRepeat: function (instance) {
