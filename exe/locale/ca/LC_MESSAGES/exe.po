@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-09 13:06+0200\n"
+"PO-Revision-Date: 2021-04-21 13:06+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Language: ca\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1711,7 +1711,7 @@ msgstr "Alfabet per seleccionar"
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:154
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:78
 msgid "abcdefghijklmnopqrstuvwxyz"
-msgstr "a,b,c,ç,d,e,f,g,h,i,j,k,l,l·l,m,n,o,p,q,r,s,t,u,v,w,x,y,z"
+msgstr "abcçdefghijklmnopqrstuvwxyz"
 
 #: exe/engine/hangmanidevice.py:83
 msgid "Letter Button Style"
