@@ -1,9 +1,9 @@
 # EXELearning French PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2020 EXELearning.net
+# Copyright (C) 2011-2021 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>, 2009.
-# Jesús Miguel Domínguez <miguelcaliban@gmail.com>, 2012-2020.
+# Jesús Miguel Domínguez <miguelcaliban@gmail.com>, 2012-2021.
 #
 msgid ""
 msgstr ""
