@@ -48,9 +48,11 @@ intef-exe (3:2.6~beta) lucid; urgency=medium
     - Translations coordination.
 
   * eXeLearning.net Translation Team
-    - New full Spanish translation, by Juan Rafael Fernández.
-    - New full Catalan translation, by Carles Ferrando Garcia.
-    - New full Greek translation, by Yannis Kaskamanidis.
+    - New complete Spanish translation, by Juan Rafael Fernández.
+    - New complete Catalan translation, by Carles Ferrando Garcia.
+    - New complete French translation, by Jesús Miguel Domínguez.
+    - New complete Italian translation, by Andrea Primiani.
+    - New complete Greek translation, by Yannis Kaskamanidis.
     - New translation to Dzongkha, by Tandin Penjor.
 
  -- eXeLearning <admin@exelearning.net>  Fri, 28 Mar 2021 11:15:00 +0200
