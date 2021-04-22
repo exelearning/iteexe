@@ -1,16 +1,16 @@
 # EXELearning French PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2021 EXELearning.net
+# Copyright (C) 2011-2020 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>, 2009.
-# Jesús Miguel Domínguez <miguelcaliban@gmail.com>, 2012-2021.
+# Jesús Miguel Domínguez <miguelcaliban@gmail.com>, 2012-2020.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-14 21:11+0200\n"
+"PO-Revision-Date: 2021-04-22 09:23+0200\n"
 "Last-Translator: Jesús Miguel Domínguez <miguelcaliban@gmail.com>\n"
 "Language: fr\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -9534,7 +9534,7 @@ msgstr "Super ! Voilà la piste:"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:44
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:39
 msgid "You have got %1 hits and %2 misses"
-msgstr "Vous avez obtenu "
+msgstr "Vous avez obtenu %1 bonnes réponses et %2 mauvaises réponses"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:47
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:33
@@ -15217,3 +15217,376 @@ msgstr ""
 "Le dossier que vous souhaitez charger, ou les outils et fichiers qu'il incorpore "
 "ont été créés avec une version d'Exe plus récente que celle que vous utilisez. "
 "SVP, faites une mise à jour d'Exelearning et réessayez."
+
+#~ msgid "http://exelearning.net/html_manual/exe20_en/"
+#~ msgstr "http://exelearning.net/html_manual/exe20_en/ (en anglais)"
+
+#~ msgid "http://exelearning.net/?lang=en"
+#~ msgstr "http://exelearning.net/?lang=en (en anglais)"
+
+#~ msgid "http://exelearning.net/forums/"
+#~ msgstr "http://exelearning.net/forums/"
+
+#~ msgid "http://exelearning.net/downloads/"
+#~ msgstr "http://exelearning.net/downloads/"
+
+#~ msgid "Should be at least one section of this type"
+#~ msgstr "Au moins une section de ce type est nécessaire"
+
+#~ msgid "Itinerary"
+#~ msgstr "Itinéraire"
+
+#~ msgid "Show a message or password"
+#~ msgstr "Montrer un message ou un mot de passe"
+
+#~ msgid "Share"
+#~ msgstr "Partager"
+
+#~ msgid "Time to answer(seconds)"
+#~ msgstr "Temps pour la réponse (secondes)"
+
+#~ msgid "Drag question"
+#~ msgstr "Ordonner les questions"
+
+#~ msgid "Show zoom buttons"
+#~ msgstr "Boutons de zoom"
+
+#~ msgid "VideoQuExt Activity"
+#~ msgstr "Activité VideoQuExt"
+
+#~ msgid "Agregation Level"
+#~ msgstr "Niveau d'ajout"
+
+#~ msgid "EDIA Project - PBL"
+#~ msgstr "Projet EDIA - PBL"
+
+#~ msgid ""
+#~ "National Centre for the Development of the Educational Curriculum on Non-"
+#~ "Proprietary Systems (CEDEC)"
+#~ msgstr ""
+#~ "Centre Espagnol pour le Développement Curriculaire en systèmes non-"
+#~ "propriétaires (CEDEC)"
+
+#~ msgid "Project's name"
+#~ msgstr "Nom du projet"
+
+#~ msgid "Project's final goal."
+#~ msgstr "Objectif final du projet"
+
+#~ msgid "Point out what students are about to learn."
+#~ msgstr "Indiquer ce que l'apprenant va apprendre."
+
+#~ msgid ""
+#~ "Students need no preknowledge to complete all these tasks because there are "
+#~ "materials enough to be independent in their accomplishment. Students also "
+#~ "have the help and orientation from their teacher."
+#~ msgstr ""
+#~ "Aucune connaissance préalable n'est requise pour compléter toutes ces tâches "
+#~ "car le matériel est suffisant pour les compléter de manière autonome. Les "
+#~ "apprenants disposent de l'aide et des orientations du professeur."
+
+#~ msgid "Author's name"
+#~ msgstr "Nom de l'auteur"
+
+#~ msgid "Front page"
+#~ msgstr "Première page"
+
+#~ msgid "Creative Commons BY-SA"
+#~ msgstr "Creative Commons BY-SA"
+
+#~ msgid "Motivating inspiration."
+#~ msgstr "Inspiration motivante."
+
+#~ msgid "Project / Final Challenge"
+#~ msgstr "Projet / Défi final"
+
+#~ msgid "What to learn and how to learn."
+#~ msgstr "Quoi apprendre et comment l'apprendre."
+
+#~ msgid "Motivation for the project development."
+#~ msgstr "Motivation pour le développement du projet."
+
+#~ msgid "Breaking the ice"
+#~ msgstr "Pour briser la glace"
+
+#~ msgid "Learning Diary"
+#~ msgstr "Journal d'apprentissage"
+
+#~ msgid "First activity. Creation of the learning diary in the suggested format."
+#~ msgstr ""
+#~ "Première activité. Création du journal d'apprentissage sous le format suggéré."
+
+#~ msgid "Creation of the first post heading."
+#~ msgstr "Création du premier en-tête de message."
+
+#~ msgid "Writing the diary"
+#~ msgstr "Écriture du journal"
+
+#~ msgid ""
+#~ "Script for writing the post. It must lead the student to think about and "
+#~ "reflect:"
+#~ msgstr ""
+#~ "Script pour l'écriture du message. Il doit orienter la réflexion de "
+#~ "l'apprenant:"
+
+#~ msgid "What the final challenge is"
+#~ msgstr "Ce que le défi final suppose"
+
+#~ msgid "What the assessment will be like"
+#~ msgstr "Ce à quoi ressemble l'évaluation"
+
+#~ msgid "What they will learn"
+#~ msgstr "Ce qu'ils apprendront"
+
+#~ msgid "How class groups work"
+#~ msgstr "Comment travailleront les groupes-classes"
+
+#~ msgid "Starting Activity"
+#~ msgstr "Activité de démarrage"
+
+#~ msgid "Introductory Activity to the project involving:"
+#~ msgstr "Activité d'introduction pour l'implication dans le projet:"
+
+#~ msgid "Team work"
+#~ msgstr "Travail en groupe"
+
+#~ msgid "Reflection and motivation"
+#~ msgstr "Réflexion et motivation"
+
+#~ msgid "Expression of feelings."
+#~ msgstr "Expression des impressions."
+
+#~ msgid "Steps for the suggested activity"
+#~ msgstr "Étapes de l'activité suggérée"
+
+#~ msgid "Your project: General information"
+#~ msgstr "Votre projet: information générale"
+
+#~ msgid "Explanation of the final challenge."
+#~ msgstr "Explication du défi final."
+
+#~ msgid "Overview of suggested tasks."
+#~ msgstr "Vue d'ensemble des tâches suggérées."
+
+#~ msgid "General information about:"
+#~ msgstr "Information générale sur:"
+
+#~ msgid "Assessment"
+#~ msgstr "Évaluation"
+
+#~ msgid "Class team management"
+#~ msgstr "Gestion de l'équipe-classe"
+
+#~ msgid "Learning diary and personal site."
+#~ msgstr "Journal d'apprentissage et site personnel."
+
+#~ msgid "Dissemination of project activities."
+#~ msgstr "Diffusion des activités du projet."
+
+#~ msgid "Starting motivation"
+#~ msgstr "Motivation de démarrage"
+
+#~ msgid "Mission 1"
+#~ msgstr "Mission 1"
+
+#~ msgid "Guidelines to open a new post."
+#~ msgstr "Guide pour ouvrir un nouveau message."
+
+#~ msgid "Questions or guidelines for students to revise and reflect:"
+#~ msgstr "Questions ou guide destinés aux apprenants pour réviser ou réfléchir:"
+
+#~ msgid "The task they have done"
+#~ msgstr "Tâche réalisée"
+
+#~ msgid "The resources they have checked"
+#~ msgstr "Ressources vérifiées"
+
+#~ msgid "Materials they have created"
+#~ msgstr "Matériels créés"
+
+#~ msgid "What they have learnt"
+#~ msgstr "Ce qu¡ils ont appris"
+
+#~ msgid "Difficulties found."
+#~ msgstr "Difficultés rencontrées"
+
+#~ msgid "Remaining doubts"
+#~ msgstr "questions non répondues"
+
+#~ msgid "Class team functioning"
+#~ msgstr "Gestion de l'équipe-classe"
+
+#~ msgid "Task (Mission)"
+#~ msgstr "Tâche (Mission)"
+
+#~ msgid "General introduction"
+#~ msgstr "Introduction générale"
+
+#~ msgid "What the \"final mission\" will be and link to the assessment rubric."
+#~ msgstr ""
+#~ "Description de la \"mission finale\" et link vers la rubrique d'évaluation."
+
+#~ msgid "What learning objective this mission helps to achieve."
+#~ msgstr "Objectif d'apprentissage impliqué dans cette mission"
+
+#~ msgid "Steps for your mission"
+#~ msgstr "Étapes de votre mission"
+
+#~ msgid "What the final mission will be."
+#~ msgstr "Description de la misión finale."
+
+#~ msgid "What sudents will learn about."
+#~ msgstr "Ce que les étudiants apprendront."
+
+#~ msgid "Starting activity"
+#~ msgstr "Activité de démarrage"
+
+#~ msgid "Didactic guidelines"
+#~ msgstr "Guide didactique"
+
+#~ msgid "Need any help?"
+#~ msgstr "Besoin d'aide ?"
+
+#~ msgid "ICT resources/apps/tools"
+#~ msgstr "Ressources/apps/outils ICT"
+
+#~ msgid "Assessment and curricular references"
+#~ msgstr "Références curriculaires et évaluation"
+
+#~ msgid "Link to the final rubric of the project."
+#~ msgstr "Link vers la rubrique finale du projet."
+
+#~ msgid "Assessment recommendations / resources of each task."
+#~ msgstr "Conseils pour l'évaluation / ressources pour chaque tâche."
+
+#~ msgid "Assessment criteria and guidance on how to assess."
+#~ msgstr "Critères et guide d'évaluation"
+
+#~ msgid "Contents / learning standards and key competences."
+#~ msgstr "Contenus / standards d'apprentissage et compétences clés."
+
+#~ msgid "Learning Pathway and timing"
+#~ msgstr "Itinéraire et temporalisation de l'apprentissage"
+
+#~ msgid "Steps"
+#~ msgstr "Étapes"
+
+#~ msgid "Main aim"
+#~ msgstr "Objectif principal"
+
+#~ msgid "Before you start"
+#~ msgstr "Avant de commencer"
+
+#~ msgid "... sessions"
+#~ msgstr "... séances"
+
+#~ msgid "(Mission 1)"
+#~ msgstr "(Mission 1)"
+
+#~ msgid "(Mission 2)"
+#~ msgstr "(Mission 2)"
+
+#~ msgid "(Mission 3)"
+#~ msgstr "(Mission 3)"
+
+#~ msgid "(Final Challenge)"
+#~ msgstr "Défi final"
+
+#~ msgid "Interdisciplinary nature"
+#~ msgstr "Nature interdisciplinaire"
+
+#~ msgid "Recommendations to involve other subjects"
+#~ msgstr "Conseils pour l'inclusion d'autres thèmes"
+
+#~ msgid "Fact sheet"
+#~ msgstr "Fiche d'information"
+
+#~ msgid "Level / course"
+#~ msgstr "Niveau / cours"
+
+#~ msgid "Final project"
+#~ msgstr "Projet final"
+
+#~ msgid "Contents"
+#~ msgstr "Contenus"
+
+#~ msgid "General guidelines for teachers"
+#~ msgstr "Guides généraux pour les professeurs"
+
+#~ msgid "Resource structure"
+#~ msgstr "Structures des ressources"
+
+#~ msgid "Types of tasks and activities"
+#~ msgstr "Types de tâches et d'activités"
+
+#~ msgid "Methodological approach"
+#~ msgstr "Approche méthodologique"
+
+#~ msgid "Use of the learning diary"
+#~ msgstr "Utilisation du journal d'apprentissage"
+
+#~ msgid "Rubrics and other documents"
+#~ msgstr "Rubriques et autres documents"
+
+#~ msgid "You can download all the documents to print, share, reuse..."
+#~ msgstr ""
+#~ "Vous pouvez télécharger tous les documents pour les imprimer, partager, "
+#~ "réutiliser..."
+
+#~ msgid "Example image"
+#~ msgstr "Image exemple"
+
+#~ msgid "Base"
+#~ msgstr "Base"
+
+#~ msgid "Please select the media file to edit it"
+#~ msgstr "Veuillez sélectionner le fichier media pour son édition"
+
+#~ msgid "Detect automatically"
+#~ msgstr "Détection automatique"
+
+#~ msgid "iframe"
+#~ msgstr "iframe"
+
+#~ msgid "Use JavaScript player"
+#~ msgstr "Use JavaScript player"
+
+#~ msgid "Use Controls"
+#~ msgstr "Montrer les contrôles"
+
+#~ msgid "Use Autoplay"
+#~ msgstr "Activer la reproduction automatique"
+
+#~ msgid "Paste your embed code below:"
+#~ msgstr "Collez votre code incorporé ci-dessous :"
+
+#~ msgid "Please select the Source"
+#~ msgstr "Veuillez saisir la source"
+
+#~ msgid "This format (%) is valid for audio and video."
+#~ msgstr "Format (%) valable pour audio et vidéo."
+
+#~ msgid "Cannot detect automatically. Please choose the right type."
+#~ msgstr ""
+#~ "Détection automatique impossible. Veuillez choisir manuellement le type "
+#~ "correct."
+
+#~ msgid "Successfully updated, but please convert the video to another format:"
+#~ msgstr ""
+#~ "Mise à jour réussie, mais veuillez passer la vidéo à un format différent :"
+
+#~ msgid "Selected format: "
+#~ msgstr "Format sélectionné :"
+
+#~ msgid "Please use any of these formats or provide a link to the file itself: "
+#~ msgstr ""
+#~ "Veuillez utiliser un de ces formats ou introduire le lien direct vers le "
+#~ "fichier :"
+
+#~ msgid "Please use any of these formats or provide a link to the file itself:"
+#~ msgstr ""
+#~ "Veuillez utiliser un de ces formats ou introduire le lien direct vers le "
+#~ "fichier :"
+
+#~ msgid "'"
+#~ msgstr "'"
