@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-20 18:37+0200\n"
+"PO-Revision-Date: 2021-04-22 18:37+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -4989,7 +4989,7 @@ msgid ""
 " classification scheme."
 msgstr ""
 "Típicamente, el TEMA será expresado en forma de palabras clave, "
-"expresiones clave o códigos de clasificación que describn el tema del "
+"expresiones clave o códigos de clasificación que describen el tema del "
 "recurso. La práctica recomendada es seleccionar un valor de un "
 "vocabulario controlado, o de un esquema formal de clasificación."
 
@@ -14057,17 +14057,17 @@ msgstr "Insertar span en selección"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Clip"
-msgstr "Clip"
+msgstr "Recortar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Placement"
-msgstr "Placement"
+msgstr "Posicionamiento"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Overflow"
-msgstr "Overflow"
+msgstr "Desbordamiento"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -14097,7 +14097,7 @@ msgstr "Lo mismo en todos"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Padding"
-msgstr "Padding"
+msgstr "Relleno"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -14107,7 +14107,7 @@ msgstr "Imagen flotante"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Display"
-msgstr "Display"
+msgstr "Mostrar"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
