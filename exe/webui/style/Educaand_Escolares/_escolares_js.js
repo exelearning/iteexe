@@ -1,4 +1,22 @@
 var myTheme = {
+    collapseActivities : true, // Minimize interactive activities
+    activities : [
+        "Lista",
+        "QuizTest",
+        "ScrambledList",
+        "Multichoice",
+        "MultiSelect",
+        "TrueFalse",
+        "Cloze",
+        "interactive-video",
+        "GeoGebra",
+        "Eleccionmultiplefpd",
+        "Clozefpd",
+        "Clozelangfpd",
+        "Seleccionmultiplefpd",
+        "Verdaderofalsofpd",
+        "Ejercicioresueltofpd"
+    ],
     init : function(){
 		var ie_v = $exe.isIE();
 		if (ie_v && ie_v<8) return false;
@@ -159,11 +177,25 @@ var myTheme = {
 						if (icon.indexOf("icon_udl_rep")!=-1) $(this).addClass("em_iDevice_udl_rep_like");
 					}
 				}
-			});
+			}); 
+            if (myTheme.collapseActivities) {
+                var as = myTheme.activities;
+                var editor = $("#activeIdevice");
+                if (typeof(_)!='function' || editor.length!=1) {
+                    for (var z=0;z<as.length;z++){
+                        var a = as[z];
+                        // Minimize those iDevices (like clicking on .toggle-idevice a)
+                        var aW = $(".iDevice_wrapper."+a+"Idevice");
+                        aW.addClass("hidden-idevice");
+                        $(".toggle-idevice a",aW).attr("class","show-idevice");
+                        $(".iDevice_inner",aW).hide();
+                    }
+                }
+            }            
 			// "Do it here" will be the default title of the Interactive Activities
 			if (document.body.className.indexOf("exe-authoring-page")==0) {
 				if (typeof(top._)!='undefined') {
-					var d = [
+                    var d = [
 						"DropDown Activity",
 						"SCORM Quiz",
 						"Scrambled List",
