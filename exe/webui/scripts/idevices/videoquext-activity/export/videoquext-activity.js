@@ -41,7 +41,7 @@ var $eXeVideoQuExt = {
     youtubeLoaded: false,
     hasSCORMbutton: false,
     isInExe: false,
-    hasLATEX:false,
+    hasLATEX: false,
     init: function () {
         this.activities = $('.vquext-IDevice');
         if (this.activities.length == 0) return;
@@ -123,13 +123,13 @@ var $eXeVideoQuExt = {
     sendScore: function (auto, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             message = '';
-        var score = ((mOptions.hits * 10) /mOptions.questionsGame.length).toFixed(2);
+        var score = ((mOptions.hits * 10) / mOptions.questionsGame.length).toFixed(2);
         if (mOptions.isNavigable) {
-            score=0;
+            score = 0;
             for (var i = 0; i < mOptions.questionsGame.length; i++) {
                 score = mOptions.questionsGame[i].answerScore > 0 ? score + 1 : score;
             }
-            score = ((score * 10) /  mOptions.questionsGame.length).toFixed(2);
+            score = ((score * 10) / mOptions.questionsGame.length).toFixed(2);
         }
         if (mOptions.gameStarted || mOptions.gameOver) {
             if (typeof $eXeVideoQuExt.mScorm != 'undefined') {
@@ -191,9 +191,9 @@ var $eXeVideoQuExt = {
 
         });
         if ($eXeVideoQuExt.hasLATEX && typeof (MathJax) == "undefined") {
-            var math="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-			$exe.loadScript(math);
-		}
+            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
+            $exe.loadScript(math);
+        }
     },
     loadMathJax: function () {
         var tag = document.createElement('script');
@@ -239,7 +239,7 @@ var $eXeVideoQuExt = {
                 default:
                     break;
             }
-            $('#vquextProgressBar-' + instance).append('<a href="#" class="gameQP-PointBar" title="'+(i+1)+'"><strong class="sr-av">'+(i+1)+'</strong></a>');
+            $('#vquextProgressBar-' + instance).append('<a href="#" class="gameQP-PointBar" title="' + (i + 1) + '"><strong class="sr-av">' + (i + 1) + '</strong></a>');
             $('#vquextProgressBar-' + instance + ' a.gameQP-PointBar').last().css({
                 'left': widthIntBar - 3 + 'px',
                 'cursor': (mOptions.isNavigable) ? 'pointer' : 'default',
@@ -453,11 +453,15 @@ var $eXeVideoQuExt = {
     },
     loadDataGame: function (data, version, videoLocal) {
         var json = data.text();
+        version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
         if (version > 0) {
             json = $eXeVideoQuExt.Decrypt(json);
         }
-        var mOptions = $eXeVideoQuExt.isJsonString(json);
-        $eXeVideoQuExt.hasLATEX=/\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        var mOptions = $eXeVideoQuExt.isJsonString(json),
+            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        if (hasLatex) {
+            $eXeVideoQuExt.hasLATEX = true;
+        }
         mOptions.waitStart = false;
         mOptions.videoLocal = videoLocal;
         mOptions.questionAnswer = false;
@@ -729,7 +733,7 @@ var $eXeVideoQuExt = {
             e.preventDefault();
             $('#vquextpreviewQuestionsDiv-' + instance).slideUp();
         });
-       
+
         $('#vquextGamerOver-' + instance).hide();
         $('#vquextCodeAccessDiv-' + instance).hide();
         $('#vquextVideo-' + instance).hide();
@@ -821,7 +825,7 @@ var $eXeVideoQuExt = {
             $eXeVideoQuExt.goQuestion(instance, 3, 0, false);
         });
         $('#vquextProgressBar-' + instance).on('click', 'a.gameQP-PointBar', function (e) {
-             if (mOptions.isNavigable) {
+            if (mOptions.isNavigable) {
                 var number = $(this).data('number');
                 $eXeVideoQuExt.goQuestion(instance, 4, number)
             }
@@ -853,7 +857,7 @@ var $eXeVideoQuExt = {
 
         $('#vquextProgressBar-' + instance).on('click', function (e) {
             e.preventDefault();
-            if (mOptions.isNavigable &&  ! $(e.target).hasClass('gameQP-PointBar')) {
+            if (mOptions.isNavigable && !$(e.target).hasClass('gameQP-PointBar')) {
                 var mx = Math.floor(e.pageX - $(this).offset().left),
                     widthBar = $(this).width(),
                     duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
@@ -865,7 +869,7 @@ var $eXeVideoQuExt = {
                         break;
                     }
                 }
-                 if (active < mOptions.questionsGame.length) {
+                if (active < mOptions.questionsGame.length) {
                     $eXeVideoQuExt.goQuestion(instance, 4, active, ctime)
                 } else {
                     $eXeVideoQuExt.goEnd(instance, ctime)
@@ -873,7 +877,7 @@ var $eXeVideoQuExt = {
 
             }
         });
-        $eXeVideoQuExt.showNavigationButtons(instance,0);
+        $eXeVideoQuExt.showNavigationButtons(instance, 0);
     },
     goEnd: function (instance, time) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -985,7 +989,7 @@ var $eXeVideoQuExt = {
                     $eXeVideoQuExt.drawImage(this, mData);
                 }
             });
-        $('#vquextProgressBar-' + instance).width( $('#vquextVideo-' + instance).width());
+        $('#vquextProgressBar-' + instance).width($('#vquextVideo-' + instance).width());
         $eXeVideoQuExt.createPointsVideo(instance);
     },
     enterCodeAccess: function (instance) {
@@ -1070,7 +1074,7 @@ var $eXeVideoQuExt = {
         }
         $quextGamerOver.show();
     },
-    showNavigationButtons(instance, time){
+    showNavigationButtons(instance, time) {
         var mOptions = $eXeVideoQuExt.options[instance];
         $('#vquextFirst-' + instance).hide();
         $('#vquextPrevious-' + instance).hide();
@@ -1084,16 +1088,16 @@ var $eXeVideoQuExt = {
         if (mOptions.reloadQuestion || mOptions.previewQuestions || mOptions.pauseVideo || mOptions.isNavigable) {
             $('#vquextVideoReloadContainer-' + instance).show();
         }
-        if (time==0){
-            if(mOptions.previewQuestions){
+        if (time == 0) {
+            if (mOptions.previewQuestions) {
                 $('#vquextPreview-' + instance).show();
             }
 
-        }else if(time==1 ){
-             if (mOptions.previewQuestions) {
+        } else if (time == 1) {
+            if (mOptions.previewQuestions) {
                 $('#vquextPreview-' + instance).show();
             }
-            if (mOptions.reloadQuestion && ! mOptions.isNavigable) {
+            if (mOptions.reloadQuestion && !mOptions.isNavigable) {
                 $('#vquextReeload-' + instance).show();
             }
             if (mOptions.pauseVideo) {
@@ -1119,7 +1123,7 @@ var $eXeVideoQuExt = {
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             mOptions.questionsGame[i].answerScore = -1;
         }
-        $('#vquextProgressBar-' + instance).width( $('#vquextVideo-' + instance).width());
+        $('#vquextProgressBar-' + instance).width($('#vquextVideo-' + instance).width());
         $eXeVideoQuExt.createPointsVideo(instance);
         $('#vquextPShowClue-' + instance).hide();
         $('#vquextPShowClue-' + instance).text("");
@@ -1127,7 +1131,7 @@ var $eXeVideoQuExt = {
         $('#vquextQuestionDiv-' + instance).show();
         $('#vquextQuestion-' + instance).text('');
         $('#vquextProgressBar-' + instance).show();
-        $eXeVideoQuExt.showNavigationButtons(instance,1);
+        $eXeVideoQuExt.showNavigationButtons(instance, 1);
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -1174,7 +1178,7 @@ var $eXeVideoQuExt = {
                     if (timeVideo >= pointVideo) {
                         var sSolution = false;
                         if (mOptions.isNavigable) {
-                            if (!mOptions.repeatQuestion && mOptions.questionsGame[mOptions.activeQuestion].answerScore != -1 ) {
+                            if (!mOptions.repeatQuestion && mOptions.questionsGame[mOptions.activeQuestion].answerScore != -1) {
                                 sSolution = true;
                             }
                         }
@@ -1286,7 +1290,7 @@ var $eXeVideoQuExt = {
         if (mOptions.gameActived) {}
     },
     getTimeToString: function (iTime) {
-        iTime=iTime<0?0:iTime;
+        iTime = iTime < 0 ? 0 : iTime;
         var mMinutes = parseInt(iTime / 60) % 60;
         var mSeconds = iTime % 60;
         return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
@@ -1295,7 +1299,7 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance];
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
-       
+
         clearInterval(mOptions.counterClock);
         $('#vquextVideo-' + instance).hide();
         $('#vquextVideoLocal-' + instance).hide();
@@ -1316,7 +1320,7 @@ var $eXeVideoQuExt = {
         $('#vquextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
         $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
         $('#vquextQuestionDiv-' + instance).hide();
-        $eXeVideoQuExt.showNavigationButtons(instance,0);
+        $eXeVideoQuExt.showNavigationButtons(instance, 0);
         mOptions.gameOver = true;
         if (mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeVideoQuExt.initialScore === '') {

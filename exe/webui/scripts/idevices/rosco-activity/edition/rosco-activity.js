@@ -79,6 +79,7 @@ var $exeDevice = {
 	},
 	letters: _("abcdefghijklmnopqrstuvwxyz").toUpperCase(),
 	init: function () {
+		this.letters = $exeDevice.replaceLetters(this.letters);
 		this.setMessagesInfo();
 		this.createForm();
 		this.addEvents();
@@ -93,7 +94,7 @@ var $exeDevice = {
 		msgs.msgURLValid = _("You must upload or indicate the valid URL of an image");
 		msgs.msgOneWord = _("Please provide at least one word");
 		msgs.msgProvideTimeSolution = _("You must provide the time to view the solution");
-		msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
+		msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
 
 	},
 	createForm: function () {
@@ -150,8 +151,18 @@ var $exeDevice = {
 		$exeAuthoring.iDevice.gamification.scorm.init();
 		this.loadPreviousValues(field);
 	},
+	getLetters: function (dataGame) {
+		if (typeof dataGame.letters == "undefined") {
+			dataGame.letters = '';
+			for (var i = 0; i < dataGame.wordsGame.length; i++) {
+				dataGame.letters += dataGame.wordsGame[i].letter;
+			}
+		}
+		return dataGame.letters;
+	},
 	updateFieldGame: function (dataGame) {
-		$exeDevice.letters = dataGame.letters ? dataGame.letters : _("abcdefghijklmnopqrstuvwxyz").toUpperCase();
+		$exeDevice.letters = $exeDevice.getLetters(dataGame);
+		$('#roscoDataWord').append($exeDevice.getWords().join(''));
 		$('#roscoDuration').val(dataGame.durationGame)
 		$('#roscoNumberTurns').val(dataGame.numberTurns);
 		$('#roscoShowSolution').prop("checked", dataGame.showSolution);
@@ -349,7 +360,7 @@ var $exeDevice = {
 			}
 			return false;
 		};
-		url=$exeDevice.extractURLGD(url);
+		url = $exeDevice.extractURLGD(url);
 		image.prop('src', url)
 			.on('load', function () {
 				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -459,22 +470,27 @@ var $exeDevice = {
 	createlinksImage: function (wordsGame) {
 		var html = '';
 		for (var i = 0; i < wordsGame.length; i++) {
-			var linkImage = '<a href="' + wordsGame[i].url + '" class="js-hidden rosco-LinkImages">' + i + '</a>';
-			if (wordsGame[i].url.length == 0) {
-				linkImage = '<a href="#" class="js-hidden rosco-LinkImages">' + i + '</a>';
+			if (typeof wordsGame[i].url != "undefined") {
+				var linkImage = '<a href="' + wordsGame[i].url + '" class="js-hidden rosco-LinkImages">' + i + '</a>';
+				if (wordsGame[i].url.length == 0) {
+					linkImage = '<a href="#" class="js-hidden rosco-LinkImages">' + i + '</a>';
+				}
+				html += linkImage;
 			}
-			html += linkImage;
 		}
 		return html;
 	},
 	createlinksAudio: function (wordsGame) {
 		var html = '';
 		for (var i = 0; i < wordsGame.length; i++) {
-			var linkAudio = '<a href="' + wordsGame[i].audio + '" class="js-hidden rosco-LinkAudios">' + i + '</a>';
-			if (wordsGame[i].audio.length == 0) {
-				linkAudio = '<a href="#" class="js-hidden rosco-LinkAudios">' + i + '</a>';
+			if (typeof wordsGame[i].audio != "undefined") {
+				var linkAudio = '<a href="' + wordsGame[i].audio + '" class="js-hidden rosco-LinkAudios">' + i + '</a>';
+				if (wordsGame[i].audio.length == 0) {
+					linkAudio = '<a href="#" class="js-hidden rosco-LinkAudios">' + i + '</a>';
+				}
+				html += linkAudio;
 			}
-			html += linkAudio;
+
 		}
 		return html;
 	},
@@ -486,8 +502,9 @@ var $exeDevice = {
 	startContains: function (letter, word, type) {
 		var start = false,
 			vocalLetter = "AEIOU",
-			mWord = $.trim(word.toUpperCase());
-		mWord = (type == 0) ? mWord.slice(0, 1) : mWord.substr(1);
+			mWord = $.trim(word.toUpperCase()),
+			mletter = $exeDevice.getRealLetter(letter);
+		mWord = (type == 0) ? mWord.slice(0, mletter.length) : mWord.substr(1);
 		if (vocalLetter.indexOf(letter) != -1) {
 			if (letter == "A" && /[AÁÀÂÄ]/.test(mWord)) {
 				start = true;
@@ -501,7 +518,7 @@ var $exeDevice = {
 				start = true;
 			}
 		} else {
-			start = mWord.indexOf(letter) != -1;
+			start = mWord.indexOf(mletter) != -1;
 		}
 		return start;
 	},
@@ -518,11 +535,12 @@ var $exeDevice = {
 		return start;
 	},
 	getDataWord: function (letter) {
-		var path = $exeDevice.iDevicePath,
+		var mLetter = $exeDevice.getRealLetter(letter),
+			path = $exeDevice.iDevicePath,
 			fileWord = '\
 				<div class="roscoWordMutimediaEdition">\
 					<div class="roscoFileWordEdition">\
-						<h3 class="roscoLetterEdition">' + letter + '</h3>\
+						<h3 class="roscoLetterEdition">' + mLetter + '</h3>\
 						<a href="#" class="roscoLinkStart" title="' + _("Click here to toggle between Word starts with... and Word contains...") + '"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
 						<label class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
 						<label class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
@@ -556,6 +574,7 @@ var $exeDevice = {
 		return fileWord;
 	},
 	getWords: function () {
+		$('.roscoWordMutimediaEdition').remove();
 		var rows = [];
 		for (var i = 0; i < this.letters.length; i++) {
 			var letter = this.letters.charAt(i),
@@ -634,6 +653,7 @@ var $exeDevice = {
 		});
 		for (var i = 0; i < this.letters.length; i++) {
 			var letter = this.letters.charAt(i),
+				mletter = $exeDevice.getRealLetter(letter),
 				word = $.trim(words[i]),
 				definition = $.trim(definitions[i]),
 				url = $.trim(urls[i]),
@@ -641,12 +661,12 @@ var $exeDevice = {
 			if (word.length > 0) {
 				if (mType == 0 && !(this.startContainsAll(letter, word, mType))) {
 					var message = _("%1 does not start with letter %2").replace('%1', word);
-					message = message.replace('%2', letter);
+					message = message.replace('%2', mletter);
 					eXe.app.alert(message);
 					return false;
 				} else if (mType == 1 && !(this.startContainsAll(letter, word, mType))) {
 					var message = $exeDevice.msgs.msgNotContain.replace('%1', word);
-					message = message.replace('%2', letter);
+					message = message.replace('%2', mletter);
 					eXe.app.alert(message);
 					return false;
 				} else if (($.trim(definition).length == 0) && (url.length < 10)) {
@@ -707,6 +727,30 @@ var $exeDevice = {
 		}
 		return data;
 	},
+	replaceLetters: function (letters) {
+		return letters.toUpperCase()
+			.replace(/[,\s]/g, '')
+			.replace(/L·L/g, '0')
+			.replace(/SS/g, '1');
+	},
+	getRealLetter: function (letter) {
+		var mletter = letter;
+		if (letter == "0") {
+			mletter = 'L·L'
+		} else if (letter == "1") {
+			mletter = 'SS'
+		}
+		return mletter;
+	},
+	getCaracterLetter: function (letter) {
+		var caracter = letter;
+		if (letter == "L·L") {
+			caracter = '0'
+		} else if (letter == "SS") {
+			caracter = '1';
+		}
+		return caracter;
+	},
 	importGame: function (content) {
 		var game = $exeDevice.isJsonString(content);
 		if (!game || typeof game.typeGame == "undefined") {
@@ -750,7 +794,7 @@ var $exeDevice = {
 		});
 		$('#roscoDataWord input.roscoURLAudioEdition').on('change', function () {
 			var selectedFile = $(this).val();
-			if (selectedFile.length ==0) {
+			if (selectedFile.length == 0) {
 				eXe.app.alert(_("Supported formats") + ": mp3', 'ogg', 'wav'");
 			} else {
 				if (selectedFile.length > 4) {
@@ -763,7 +807,7 @@ var $exeDevice = {
 			e.preventDefault();
 			var $audio = $(this).parent().find('.roscoURLAudioEdition').first(),
 				selectedFile = $audio.val();
-			if (selectedFile.length==0) {
+			if (selectedFile.length == 0) {
 				eXe.app.alert(_("Supported formats") + ": mp3', 'ogg', 'wav'");
 			} else {
 				if (selectedFile.length > 4) {
@@ -794,15 +838,16 @@ var $exeDevice = {
 		$('#roscoDataWord .roscoWordEdition').on('focusout', function () {
 			var word = $(this).val().trim(),
 				letter = $(this).siblings().filter(".roscoLetterEdition").text(),
-				color = $(this).val().trim() == "" ? $exeDevice.colors.grey : $exeDevice.colors.blue;
+				color = $(this).val().trim() == "" ? $exeDevice.colors.grey : $exeDevice.colors.blue,
+				mletter = $exeDevice.getCaracterLetter(letter);
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);
 			if (word.length > 0) {
 				var mType = $(this).parent().find('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
-				if (mType == 0 && !($exeDevice.startContainsAll(letter, word, mType))) {
+				if (mType == 0 && !($exeDevice.startContainsAll(mletter, word, mType))) {
 					var message = msgs.msgNotStart.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
-				} else if (mType == 1 && !($exeDevice.startContainsAll(letter, word, mType))) {
+				} else if (mType == 1 && !($exeDevice.startContainsAll(mletter, word, mType))) {
 					var message = msgs.msgNotContain.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
@@ -881,19 +926,17 @@ var $exeDevice = {
 	},
 	playSound: function (selectedFile) {
 		$exeDevice.stopSound();
-		var selectFile=$exeDevice.extractURLGD(selectedFile);
+		var selectFile = $exeDevice.extractURLGD(selectedFile);
 		$exeDevice.playerAudio = new Audio(selectFile);
-		$exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
+		$exeDevice.playerAudio.addEventListener("canplaythrough", function (event) {
 			$exeDevice.playerAudio.play();
 		});
 	},
-
-	stopSound() {
+	stopSound: function() {
 		if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
 			$exeDevice.playerAudio.pause();
 		}
 	},
-
 	exportGame: function () {
 		var dataGame = this.validateData();
 		if (!dataGame) {
@@ -918,7 +961,6 @@ var $exeDevice = {
 			window.URL.revokeObjectURL(data);
 		}, 100);
 	},
-
 	isJsonString: function (str) {
 		try {
 			var o = JSON.parse(str, null, 2);
@@ -929,10 +971,10 @@ var $exeDevice = {
 		return false;
 	},
 	extractURLGD: function (urlmedia) {
-        var sUrl=urlmedia;
-        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
-            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
-        }
-        return sUrl;
-    }
+		var sUrl = urlmedia;
+		if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+			sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+		}
+		return sUrl;
+	}
 }

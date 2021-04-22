@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2021-04-02 09:49+0200\nPO-Revision-Date: 2021-04-09 13:06+0200\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\nLanguage: ca\nLanguage-Team: Catalan <kde-i18n-ca@kde.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
+ "": "Project-Id-Version: eXeLearning 2.6\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2021-04-02 09:49+0200\nPO-Revision-Date: 2021-04-21 13:06+0200\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\nLanguage: ca\nLanguage-Team: Catalan <kde-i18n-ca@kde.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.4.0\n", 
  "Number of rounds": "Nombre de rondes", 
  "DropDown Activity": "Activitat desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creat el cas hist\u00f2ria. Un bon cas \u00e9s aquell \n que descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \n involucrats en la situaci\u00f3. Hauria de permetre les accions \n encaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -2858,7 +2858,7 @@ translations = {
  "FPD - Guidelines Teacher": "FPD - Directrius professorat ", 
  "Access code required": "Requerit el codi d'acc\u00e9s", 
  "chance": "vides", 
- "abcdefghijklmnopqrstuvwxyz": "a,b,c,\u00e7,d,e,f,g,h,i,j,k,l,l\u00b7l,m,n,o,p,q,r,s,t,u,v,w,x,y,z", 
+ "abcdefghijklmnopqrstuvwxyz": "abc\u00e7defghijklmnopqrstuvwxyz", 
  "Context": "Context ", 
  "Settings Saved": "S'ha desat la configuraci\u00f3", 
  "Current frame second": "Marc actual segon", 

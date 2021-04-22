@@ -184,8 +184,11 @@ var $eXeAdivina = {
         if (version > 0) {
             json = $eXeAdivina.Decrypt(json);
         }
-        var mOptions = $eXeAdivina.isJsonString(json);
-        $eXeAdivina.hasLATEX = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        var mOptions = $eXeAdivina.isJsonString(json),
+            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        if (hasLatex) {
+            $eXeAdivina.hasLATEX = true;
+        }
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
@@ -801,7 +804,7 @@ var $eXeAdivina = {
     gameOver: function (type, instance) {
         var mOptions = $eXeAdivina.options[instance];
         $eXeAdivina.showImage("", 0, 0, '', '', instance);
-        
+
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
@@ -970,7 +973,7 @@ var $eXeAdivina = {
         $('#adivinaAuthor-' + instance).text('');
         if (q.type === 1) {
             $eXeAdivina.showImage(q.url, q.x, q.y, q.author, q.alt, instance);
-            $('#adivinaPAuthor-' + instance).text( q.author);
+            $('#adivinaPAuthor-' + instance).text(q.author);
         } else if (q.type === 3) {
             var text = unescape(q.eText);
             if (window.innerWidth < 401) {
