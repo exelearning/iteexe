@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-23 11:56+0200\n"
+"PO-Revision-Date: 2021-04-23 17:23+0200\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh\n"
 "Language-Team: eXe <info@exelearning.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 2.4.2\n"
 
 #: exe/application.py:239
 #, python-format
@@ -78,8 +78,8 @@ msgstr "Java Applet"
 #: exe/engine/reflectionidevice.py:47
 #: exe/engine/seleccionmultiplefpdidevice.py:47
 #: exe/engine/truefalseidevice.py:145
-#: exe/engine/verdaderofalsofpdidevice.py:146
-#: exe/engine/wikipediaidevice.py:55 exe/idevices/exampleidevice.py:40
+#: exe/engine/verdaderofalsofpdidevice.py:146 exe/engine/wikipediaidevice.py:55
+#: exe/idevices/exampleidevice.py:40
 msgid "University of Auckland"
 msgstr "奥克兰大学"
 
@@ -156,7 +156,7 @@ msgstr "附件"
 
 #: exe/engine/attachmentidevice.py:46
 msgid "The attachment iDevice is used to attach existing files to your .elp content. For example, you might have a PDF file or a PPT or .ODP presentation file that you wish the learners to have access to, these can be attached and labeled to indicate what the attachment is and how large the file is. Learners can click on the attachment link and can download the attachment."
-msgstr "“附件” 这个 iDevice 版块用来将现有的文件附加到您的 .elp 内容中。例如，您有个 PDF 、PPT 或 ODP 的简报文件想让给学生看，就可以将它们附加并加上标签来告诉大家这是什么，以及文件有多大。学生可以点击附件的链接并下载。"
+msgstr "“附件” 这个 iDevice 模块用来将现有的文件附加到您的 .elp 内容中。例如，您有个 PDF 、PPT 或 ODP 的简报文件想让给学生看，就可以将它们附加并加上标签来告诉大家这是什么，以及文件有多大。学生可以点击附件的链接并下载。"
 
 #: exe/engine/attachmentidevice.py:58
 msgid "Enter the text you wish to associate with the downloaded file. You might want to provide instructions on what you require the learner to do once the file is downloaded or how the material should be used."
@@ -271,8 +271,7 @@ msgstr "FPD - 情境"
 
 #: exe/engine/casopracticofpdidevice.py:31
 #: exe/engine/citasparapensarfpdidevice.py:33
-#: exe/engine/debesconocerfpdidevice.py:30
-#: exe/engine/destacadofpdidevice.py:30
+#: exe/engine/debesconocerfpdidevice.py:30 exe/engine/destacadofpdidevice.py:30
 #: exe/engine/orientacionesalumnadofpdidevice.py:31
 #: exe/engine/orientacionestutoriafpdidevice.py:31
 #: exe/engine/parasabermasfpdidevice.py:31
@@ -282,18 +281,17 @@ msgstr "Jose Ramon Jimenez Reyes"
 
 #: exe/engine/casopracticofpdidevice.py:32
 msgid "Situation is an iDevice that provides the student with a story that will guide her along the learning process."
-msgstr "情境是一个iDevice 版块，它为学生提供一个故事，指引该学生的学习过程。"
+msgstr "情境是一个iDevice 模块，它为学生提供一个故事，指引该学生的学习过程。"
 
 #: exe/engine/casopracticofpdidevice.py:35
 #: exe/engine/citasparapensarfpdidevice.py:37
-#: exe/engine/debesconocerfpdidevice.py:34
-#: exe/engine/destacadofpdidevice.py:33
+#: exe/engine/debesconocerfpdidevice.py:34 exe/engine/destacadofpdidevice.py:33
 #: exe/engine/orientacionesalumnadofpdidevice.py:35
 #: exe/engine/orientacionestutoriafpdidevice.py:35
 #: exe/engine/parasabermasfpdidevice.py:35
 #: exe/engine/recomendacionfpdidevice.py:35
 msgid "Enter the text that will appear on this iDevice"
-msgstr "输入将出现在此 iDevice 活动的文本"
+msgstr "输入将出现在此 iDevice 模块的文本"
 
 #: exe/engine/casopracticofpdidevice.py:38
 #: exe/engine/casopracticofpdidevice.py:136
@@ -306,7 +304,7 @@ msgstr "FPD - 引用"
 
 #: exe/engine/citasparapensarfpdidevice.py:34
 msgid "Quotation is an iDevice that provides the students with quotations to reflect upon."
-msgstr "“引用”是为学生提供引文进行反思的 iDevice 版块。"
+msgstr "“引用”是为学生提供引文进行反思的 iDevice 模块。"
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -327,9 +325,8 @@ msgstr "按照地图上的提示依序点击。"
 
 #: exe/engine/clickinorderidevice.py:55 exe/engine/hangmanidevice.py:57
 #: exe/engine/hangmanidevice.py:176 exe/engine/memorymatchidevice.py:54
-#: exe/engine/memorymatchidevice.py:113
-#: exe/engine/placetheobjectsidevice.py:57 exe/engine/sortidevice.py:52
-#: exe/engine/sortidevice.py:134
+#: exe/engine/memorymatchidevice.py:113 exe/engine/placetheobjectsidevice.py:57
+#: exe/engine/sortidevice.py:52 exe/engine/sortidevice.py:134
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:62
 #: exe/jsui/scripts/app/view/forms/LomSections.js:66
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
@@ -610,8 +607,7 @@ msgstr "<p>通过粘贴其他来源的文本或直接在该字段中键入文本
 #: exe/engine/genericidevice.py:294 exe/engine/idevicestore.py:692
 #: exe/engine/idevicestore.py:801 exe/engine/listaidevice.py:140
 #: exe/engine/listaidevice.py:295 exe/engine/truefalseidevice.py:50
-#: exe/engine/truefalseidevice.py:125
-#: exe/engine/verdaderofalsofpdidevice.py:51
+#: exe/engine/truefalseidevice.py:125 exe/engine/verdaderofalsofpdidevice.py:51
 #: exe/engine/verdaderofalsofpdidevice.py:126 exe/webui/clozeblock.py:182
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
 #: exe/webui/common.py:972 exe/webui/common.py:982
@@ -715,7 +711,7 @@ msgstr "FPD  - 你应该知道"
 
 #: exe/engine/debesconocerfpdidevice.py:31
 msgid "You Should Know is an iDevice that helps the student widen her knowledge with core contents."
-msgstr "“你应该知道”是一个iDevice版块，帮助学生扩展她的核心内容的知识。"
+msgstr "“你应该知道”是一个iDevice 模块，帮助学生扩展她的核心内容的知识。"
 
 #: exe/engine/debesconocerfpdidevice.py:37
 #: exe/engine/debesconocerfpdidevice.py:136
@@ -728,7 +724,7 @@ msgstr "FPD  - 突出显示"
 
 #: exe/engine/destacadofpdidevice.py:31
 msgid "Highlighted is an iDevice that emphasizes text to catch the student's attention."
-msgstr "“突出显示”这个iDevice 版块对文字进行强调显示，以便吸引学生的注意力。"
+msgstr "“突出显示”这个iDevice 模块对文字进行强调显示，以便吸引学生的注意力。"
 
 #: exe/engine/destacadofpdidevice.py:36 exe/engine/destacadofpdidevice.py:134
 msgid "Highlighted Text:"
@@ -1020,10 +1016,10 @@ msgid ""
 "This iDevice should only be used if your content \n"
 "will be viewed by learners online."
 msgstr ""
-"外部网站iDevice将外部网站\n"
+"外部网站iDevice模块将外部网站\n"
 "加载到eXe内容中的嵌入式框架中，而不是在弹出框中打开它。 \n"
 "这意味着学习者不必打乱窗户。 \n"
-"仅当学习者在线观看您的内容时，才应使用此iDevice 版块。"
+"仅当学习者在线观看您的内容时，才应使用此iDevice 模块。"
 
 #: exe/engine/externalurlidevice.py:49 exe/engine/externalurlidevice.py:116
 msgid ""
@@ -1079,13 +1075,13 @@ msgstr "<p>如果设置此选项，将显示分数。 </p>"
 msgid ""
 "Only select .swf (Flash Objects) for \n"
 "this iDevice."
-msgstr "该 iDevice 版块只能选用.swf (Flash Object)。"
+msgstr "该 iDevice 模块只能选用.swf (Flash Object)。"
 
 #: exe/engine/field.py:3546 exe/engine/field.py:3610
 msgid ""
 "Only select .flv (Flash Video Files) for \n"
 "this iDevice."
-msgstr "该 iDevice 版块只能选用.flv (Flash Video Files)。"
+msgstr "该 iDevice 模块只能选用.flv (Flash Video Files)。"
 
 #: exe/engine/field.py:3622
 msgid "Type a discussion topic here."
@@ -1191,7 +1187,7 @@ msgstr "Toughra Technologies FZ LLC."
 
 #: exe/engine/fileattachidevice.py:39
 msgid "File Attachments Idevice."
-msgstr "文档附件 iDevice 版块。"
+msgstr "文档附件 iDevice 模块。"
 
 #: exe/engine/fileattachidevice.py:45 exe/engine/fileattachidevice.py:66
 #: exe/engine/memorymatchidevice.py:59 exe/engine/memorymatchidevice.py:75
@@ -1230,7 +1226,7 @@ msgid ""
 "(e.g. mov, wmf etc) into the .FLV format using third party encoders. These\n"
 "are not supplied with eXe. Users will also need to download the Flash 8\n"
 "player from http://www.macromedia.com/ to play the video."
-msgstr "这个 iDevice版块只支持Flash Video文档(.FLV)格式, 而非其它视频文档格式. "
+msgstr "这个 iDevice 模块只支持Flash Video文档(.FLV)格式, 而非其它视频文档格式. "
 
 #: exe/engine/flashmovieidevice.py:52
 msgid ""
@@ -1271,7 +1267,9 @@ msgid ""
 "associate additional textual information to a flash file. This may be useful \n"
 "where you wish to provide educational instruction regarding the flash file \n"
 "the learners will view."
-msgstr "这个 iDevice 版块能让你提供与flash文档相关的文字说明. "
+msgstr ""
+"这个 iDevice 模块能让你提供与flash文档相关的补充文字说明. \n"
+"当您希望为学生提供与flash文件相关的教学指导的时候，这个模块就可以发挥作用。"
 
 #: exe/engine/flashwithtextidevice.py:53
 msgid ""
@@ -1279,15 +1277,13 @@ msgid ""
 "                                 associate with the image."
 msgstr "输入有关图片的描述."
 
-#: exe/engine/flashwithtextidevice.py:58
-#: exe/engine/flashwithtextidevice.py:118
+#: exe/engine/flashwithtextidevice.py:58 exe/engine/flashwithtextidevice.py:118
 msgid ""
 "Provide a caption for the flash you \n"
 "                                  have just inserted."
 msgstr "为你所插入的flash提供标题."
 
-#: exe/engine/flashwithtextidevice.py:60
-#: exe/engine/flashwithtextidevice.py:120
+#: exe/engine/flashwithtextidevice.py:60 exe/engine/flashwithtextidevice.py:120
 msgid ""
 "Enter the flash display \n"
 "dimensions (in pixels) and determine the alignment of the image on screen. \n"
@@ -1304,7 +1300,7 @@ msgid ""
 "establishing context, delivering instructions and providing general information.\n"
 "This provides the framework within which the learning activities are built and \n"
 "delivered."
-msgstr "大多数课件都是要编写课文，传授知识和提供基本信息。这个iDevice 版块提供了一个框架让学习活动得以建立和传授。"
+msgstr "大多数课件都是要编写课文，传授知识和提供基本信息。这个iDevice 模块提供了一个框架让学习活动得以建立和传授。"
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
 #: exe/engine/freetextidevice.py:45
@@ -1317,7 +1313,7 @@ msgid ""
 "iDevice has no emphasis applied although limited formatting can be applied to \n"
 "text through the text editing buttons associated with the field."
 msgstr ""
-"在此栏位输入文字。此 iDevice 版块沒有突显重点的功能，\n"
+"在此栏位输入文字。此 iDevice 模块沒有突显重点的功能，\n"
 "不过还是可以通过文字编辑按键來套用一些格式。"
 
 #: exe/engine/freetextfpdidevice.py:122 exe/engine/freetextidevice.py:130
@@ -1353,7 +1349,7 @@ msgstr "当有一组相关的图片要展示时或对一个特定的练习，要
 
 #: exe/engine/galleryidevice.py:460
 msgid "Use this Idevice if you have a lot of images to show."
-msgstr "用此 iDevice 版块可展示许多图片。"
+msgstr "用此 iDevice 模块可展示许多图片。"
 
 #: exe/engine/galleryidevice.py:469
 msgid "Enter a title for the gallery"
@@ -1534,7 +1530,7 @@ msgstr "<p>阅读活动将主要用于检查学习者对给定文本的理解。
 
 #: exe/engine/idevicestore.py:649
 msgid "<p>Teachers should keep the following in mind when using this iDevice: </p><ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "<p>教师在使用此iDevice 版块时应牢记以下几点： </p><ol><li>考虑为资源计划的各种类型的活动的数量，这些活动将在内容中以视觉方式发出信号。避免使用太多不同类型或类别的活动，否则学习者可能会感到困惑。通常，三至四种不同的类型对于教学资源来说已经绰绰有余。</li><li>从视觉设计的角度来看，请避免两个iDevice版块直接相连，且中间没有任何文本。如果必须这样做，可以将两个问题或事件整合到一个iDevice 版块中。</li></ol>"
+msgstr "<p>教师在使用此iDevice 模块时应牢记以下几点： </p><ol><li>考虑为资源计划的各种类型的活动的数量，这些活动将在内容中以视觉方式发出信号。避免使用太多不同类型或类别的活动，否则学习者可能会感到困惑。通常，三至四种不同的类型对于教学资源来说已经绰绰有余。</li><li>从视觉设计的角度来看，请避免两个iDevice模块直接相连，且中间没有任何文本。如果必须这样做，可以将两个问题或事件整合到一个iDevice 模块中。</li></ol>"
 
 #: exe/engine/idevicestore.py:684 exe/engine/idevicestore.py:793
 msgid "What to read"
@@ -1636,7 +1632,7 @@ msgstr " <P>阅读活动, 顾名思义是要学生完成一些任务. 此活动�
 
 #: exe/engine/idevicestore.py:758
 msgid "Teachers should keep the following in mind when using this iDevice: <ol><li>Think about the number of different types of activity planned for your resource that will be visually signalled in the content. Avoid using too many different types or classification of activities otherwise learner may become confused. Usually three or four different types are more than adequate for a teaching resource.</li><li>From a visual design perspective, avoid having two iDevices immediately following each other without any text in between. If this is required, rather collapse two questions or events into one iDevice. </li><li>Think about activities where the perceived benefit of doing the activity outweighs the time and effort it will take to complete the activity. </li></ol>"
-msgstr "  <p>教师在使用此iDevice 活动时应牢记以下几点： </p><ol><li>考虑为资源计划的各种类型的活动的数量，这些活动将在内容中以视觉方式发出信号。避免使用太多不同类型或类别的活动，否则学习者可能会感到困惑。通常，三至四种不同的类型对于教学资源来说已经绰绰有余。</li><li>从视觉设计的角度来看，请避免两个iDevice活动直接相连，且中间没有任何文本。如果必须这样做，可以将两个问题或事件整合到一个iDevice 活动中。</li></ol>"
+msgstr "  <p>教师在使用此iDevice 模块时应牢记以下几点： </p><ol><li>考虑为资源计划的各种类型的活动的数量，这些活动将在内容中以视觉方式发出信号。避免使用太多不同类型或类别的活动，否则学习者可能会感到困惑。通常，三至四种不同的类型对于教学资源来说已经绰绰有余。</li><li>从视觉设计的角度来看，请避免两个iDevice模块直接相连，且中间没有任何文本。如果必须这样做，可以将两个问题或事件整合到一个iDevice 模块中。</li></ol>"
 
 #: exe/engine/imagemagnifieridevice.py:41
 msgid "Image Magnifier"
@@ -1660,9 +1656,8 @@ msgstr "点击图片或\"添加图片\"按钮来选择所要放大的图片文�
 msgid "Choose an Image"
 msgstr "选择图片"
 
-#: exe/engine/imagemagnifieridevice.py:54
-#: exe/engine/imagewithtextidevice.py:65 exe/engine/multimediaidevice.py:64
-#: exe/webui/listablock.py:169
+#: exe/engine/imagemagnifieridevice.py:54 exe/engine/imagewithtextidevice.py:65
+#: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:192
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:30
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:760
@@ -1750,7 +1745,20 @@ msgid ""
 "combustion engine, you could have a visual for each of the four positions of\n"
 "the piston with a brief textual summary of the key aspects of each visual.\n"
 "</p>"
-msgstr "图象及文字解释能为学习提供感性和知性的帮助."
+msgstr ""
+"<p>\n"
+"图文 iDevice 模块可以用于多种不同的方式，支持与 eXe 内容相关的情绪（情感）发展和学习任务的完成。\n"
+"</p><p>\n"
+"<b>视觉信息与文字的整合：摘要</b>\n"
+"</p><p>\n"
+"认知心理学家指出，为学习者提供\n"
+"具有代表性的图像和相应的口头摘要（同时显示）\n"
+"可以减轻认知负担并增强学习记忆力。\n"
+"该 iDevice 可以用于显示图像（照片，图表或图形），\n"
+"并带有简短的文字摘要，涵盖与图像有关的要点。\n"
+"例如，如果您要教授四冲程内燃机的功能，\n"
+"则可以为活塞的四个位置中的每个位置提供一个图像，\n"
+"并简要介绍每个图像的关键信息。</p>"
 
 #: exe/engine/imagewithtextidevice.py:66
 msgid ""
@@ -1758,8 +1766,7 @@ msgid ""
 "                                                associate with the image."
 msgstr "输入图片相关的描述。"
 
-#: exe/engine/imagewithtextidevice.py:71
-#: exe/engine/imagewithtextidevice.py:118
+#: exe/engine/imagewithtextidevice.py:71 exe/engine/imagewithtextidevice.py:118
 msgid ""
 "Provide a caption for the image \n"
 "you have just inserted."
@@ -1841,7 +1848,7 @@ msgid ""
 "                        you use the Free Text iDevice to provide \n"
 "                        explanatory notes and learning instruction around \n"
 "                        this graphic."
-msgstr "LATEX是用于创建公式符号的数学语言。 这个iDevice 版块将LATEX转化成数学符号的图象，可显示在课程内容中。"
+msgstr "LATEX是用于创建公式符号的数学语言。 这个iDevice 模块将LATEX转化成数学符号的图象，可显示在课程内容中。"
 
 #: exe/engine/mathidevice.py:55
 msgid "You can use the toolbar or enter latex manually into the textarea. "
@@ -2055,7 +2062,7 @@ msgstr "奥克兰技术大学"
 
 #: exe/engine/multimediaidevice.py:42
 msgid "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions."
-msgstr "MP3 iDevice 版块可用于播放MP3音乐及附上相关的文本说明."
+msgstr "MP3 iDevice 模块可用于播放MP3音乐及附上相关的文本说明."
 
 #: exe/engine/multimediaidevice.py:49
 msgid "Choose an MP3 file"
@@ -2094,7 +2101,7 @@ msgstr "FPD  - 学生指南"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:32
 msgid "Guidelines Students is an iDevice that permits students know the objectives of their learning."
-msgstr "“学生指南”这个iDevice版块，可以帮助学生了解他们的学习目标。"
+msgstr "“学生指南”这个iDevice 模块，可以帮助学生了解他们的学习目标。"
 
 #: exe/engine/orientacionesalumnadofpdidevice.py:38
 msgid "Guidelines Students Text"
@@ -2110,7 +2117,7 @@ msgstr "FPD  - 教师指南"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:32
 msgid "Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."
-msgstr "“教师指南”这个iDevice 版块可以让老师知道学生的学习目标。"
+msgstr "“教师指南”这个iDevice 模块可以让老师知道学生的学习目标。"
 
 #: exe/engine/orientacionestutoriafpdidevice.py:38
 msgid "Guidelines Teacher Text"
@@ -2183,7 +2190,7 @@ msgstr "FPD  - 前进一步"
 
 #: exe/engine/parasabermasfpdidevice.py:32
 msgid "A Step Ahead is an iDevice that permits students widen their knowledge with further contents."
-msgstr "“前进一步\" 这个iDevice 版块可以让学生通过更多内容扩展他们的知识。"
+msgstr "“前进一步\" 这个 iDevice 模块可以让学生通过更多内容扩展他们的知识。"
 
 #: exe/engine/parasabermasfpdidevice.py:38
 #: exe/engine/parasabermasfpdidevice.py:137
@@ -2362,7 +2369,7 @@ msgstr "FPD  - 一个建议"
 
 #: exe/engine/recomendacionfpdidevice.py:32
 msgid "A Piece of Advice is an iDevice that permits the teacher give advice on interesting books, films..."
-msgstr "”一条建议“这个iDevice 版块可以让老师提供有关有趣的书籍，电影的建议......"
+msgstr "”一条建议“这个iDevice 模块可以让老师提供有关有趣的书籍，电影的建议......"
 
 #: exe/engine/recomendacionfpdidevice.py:38
 #: exe/engine/recomendacionfpdidevice.py:137
@@ -2400,8 +2407,7 @@ msgid ""
 "reflective feedback.)"
 msgstr "描述学生应怎样评估和完成练习."
 
-#: exe/engine/reflectionfpdidevice.py:64
-#: exe/engine/reflectionfpdidevice.py:200
+#: exe/engine/reflectionfpdidevice.py:64 exe/engine/reflectionfpdidevice.py:200
 #: exe/engine/reflectionfpdmodifidevice.py:63
 #: exe/engine/reflectionfpdmodifidevice.py:199
 #: exe/engine/reflectionidevice.py:62 exe/engine/reflectionidevice.py:201
@@ -2441,7 +2447,7 @@ msgid ""
 "The RSS iDevice is used \n"
 "to provide new content to an individual users machine. Using this\n"
 "iDevice you can provide links from a feed you select for learners to view."
-msgstr "RSS 这个 iDevice 版块用于向单个用户的计算机提供新内容。通过这个iDevice版块，可以推送订阅源中的链接供学习者查看。"
+msgstr "RSS 这个 iDevice 模块用于向单个用户的计算机提供新内容。通过这个iDevice模块，可以推送订阅源中的链接供学习者查看。"
 
 #: exe/engine/rssidevice.py:51
 msgid ""
@@ -2658,7 +2664,7 @@ msgid ""
 "changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content \n"
 "is covered by the GNU Free Documentation 1.2 License, and since 2009 additionally\n"
 "by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"
-msgstr "<p> Wikipedia 这个 iDevice 版块允许您从Wikipedia中查找现有内容，并将此内容下载到您的eXe资源中。 而Wikipedia文章iDevice则可拍摄文章内容的快照副本。 Wikipedia中的更改不会自动更新eXe中的单个快照副本，因此需要获取该文章的新副本。同样，在eXe中所做的更改不会在Wikipedia中更新。 </p> <p> 维基百科的内容采用了GNU 自由文档许可证1.2 版本，此外，自2009年以来，维基百科的内容也采用了知识共享署名-相同方式共享 3.0 许可证。</p>"
+msgstr "<p> Wikipedia 这个 iDevice 模块允许您从Wikipedia中查找现有内容，并将此内容下载到您的eXe资源中。 而Wikipedia文章iDevice则可拍摄文章内容的快照副本。 Wikipedia中的更改不会自动更新eXe中的单个快照副本，因此需要获取该文章的新副本。同样，在eXe中所做的更改不会在Wikipedia中更新。 </p> <p> 维基百科的内容采用了GNU 自由文档许可证1.2 版本，此外，自2009年以来，维基百科的内容也采用了知识共享署名-相同方式共享 3.0 许可证。</p>"
 
 #: exe/engine/wikipediaidevice.py:67
 msgid "Article"
@@ -2858,9 +2864,9 @@ msgstr ""
 " 错误是："
 
 #: exe/export/cmdlineexporter.py:75 exe/jsui/mainpage.py:399
-#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1477
-#: exe/jsui/mainpage.py:1664 exe/jsui/mainpage.py:1710
-#: exe/jsui/mainpage.py:1755 exe/jsui/mainpage.py:1776
+#: exe/jsui/mainpage.py:408 exe/jsui/mainpage.py:1477 exe/jsui/mainpage.py:1664
+#: exe/jsui/mainpage.py:1710 exe/jsui/mainpage.py:1755
+#: exe/jsui/mainpage.py:1776
 #, python-format
 msgid ""
 "\"%s\" already exists.\n"
@@ -2936,7 +2942,7 @@ msgstr "例子"
 msgid ""
 "This is an example of a user created\n"
 "iDevice plugin."
-msgstr "这是用户创造的iDevice 版块插件的例子。"
+msgstr "这是用户创造的iDevice模块插件的例子。"
 
 #: exe/idevices/exampleidevice.py:44
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:65
@@ -2991,7 +2997,7 @@ msgstr "插入 %s"
 
 #: exe/jsui/idevicepane.py:160
 msgid "My iDevices"
-msgstr "我的iDevices版块"
+msgstr "我的iDevices模块"
 
 #: exe/jsui/idevicepane.py:168
 msgid "JS iDevices"
@@ -3005,14 +3011,12 @@ msgstr "试验"
 msgid "Gamification"
 msgstr "游戏化"
 
-#: exe/jsui/mainpage.py:438 exe/jsui/mainpage.py:1314
-#: exe/jsui/mainpage.py:1469
+#: exe/jsui/mainpage.py:438 exe/jsui/mainpage.py:1314 exe/jsui/mainpage.py:1469
 #: exe/jsui/scripts/app/controller/TemplateManager.js:101
 msgid "Cannot access directory named "
 msgstr "不能识别路径名称"
 
-#: exe/jsui/mainpage.py:438 exe/jsui/mainpage.py:1316
-#: exe/jsui/mainpage.py:1469
+#: exe/jsui/mainpage.py:438 exe/jsui/mainpage.py:1316 exe/jsui/mainpage.py:1469
 msgid ". Please use ASCII names."
 msgstr ". 请使用ASCII码。"
 
@@ -5176,21 +5180,21 @@ msgstr "隐藏"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:123
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:155
 msgid "Ungroup iDevices"
-msgstr "取消 iDevices 版块分组"
+msgstr "取消 iDevices模块分组"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:130
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:135
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:153
 msgid "Available iDevices"
-msgstr "可用的iDevice 版块"
+msgstr "可用的iDevice 模块"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:143
 msgid "Save iDevices"
-msgstr "保存 iDevices 版块"
+msgstr "保存 iDevices 模块"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:185
 msgid "iDevices"
-msgstr "iDevices 版块"
+msgstr "iDevices模块"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:196
 msgid "Category"
@@ -5524,7 +5528,7 @@ msgstr "如果您离开此页面，eXe应用程序将继续运行。如果您确
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:119 exe/jsui/scripts/exe.js:338
 msgid "Group iDevices"
-msgstr "将 iDevices版块进行分组"
+msgstr "将 iDevices模块进行分组"
 
 #: exe/jsui/scripts/exe.js:365 exe/jsui/scripts/exe.js:376
 msgid "Show panel"
@@ -7248,7 +7252,7 @@ msgstr "无法撤消编辑"
 
 #: exe/webui/block.py:242 exe/webui/block.py:338
 msgid "This will delete this iDevice. Do you really want to do this?"
-msgstr "这将删除此 iDevice 版块。你真的想这么做吗？"
+msgstr "这将删除此 iDevice 模块。你真的想这么做吗？"
 
 #: exe/webui/block.py:252
 msgid "Move Up"
@@ -7678,7 +7682,7 @@ msgstr "标题:"
 
 #: exe/webui/editorpage.py:126
 msgid "Please enter an idevice name."
-msgstr "请填入 iDevice 版块的名称。"
+msgstr "请填入 iDevice 模块的名称。"
 
 #: exe/webui/editorpage.py:191 exe/webui/editorpage.py:203
 msgid "Sorry, wrong file format."
@@ -7686,19 +7690,19 @@ msgstr "对不起, 文件格式错误。"
 
 #: exe/webui/editorpage.py:266
 msgid "Import iDevice"
-msgstr "导入 iDevice 版块"
+msgstr "导入 iDevice 模块"
 
 #: exe/webui/editorpage.py:269
 msgid "Export iDevice"
-msgstr "导出 iDevice 版块"
+msgstr "导出 iDevice 模块"
 
 #: exe/webui/editorpage.py:295
 msgid "New iDevice"
-msgstr "新的 iDevice 版块"
+msgstr "新的 iDevice 模块"
 
 #: exe/webui/editorpane.py:67
 msgid "Your new iDevice will appear in the iDevice pane with this title. This is a compulsory field and you will be prompted to enter a label if you try to submit your iDevice without one."
-msgstr "你新的iDevice将以此名称列在iDevice栏中。这是一个必须填写的栏目。"
+msgstr "你新的iDevice模块将以此名称列在iDevice栏中。这是一个必须填写的栏目。"
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
@@ -7706,39 +7710,39 @@ msgstr "这是一个非必要栏域."
 
 #: exe/webui/editorpane.py:72
 msgid "The purpose dialogue allows you to describe your intended purpose of the iDevice to other potential users."
-msgstr "描述该 iDevice 版块的目的."
+msgstr "描述该 iDevice模块的目的."
 
 #: exe/webui/editorpane.py:75
 msgid "Use this pulldown to select whether or not  the iDevice should have any formatting  applied to it to distinguish it; ie. a border and an icon."
-msgstr "使用此下拉菜单选择 iDevice 版块是否应该应用任何格式以区分它，即边框和图标。"
+msgstr "使用此下拉菜单选择 iDevice 模块是否应该应用任何格式以区分它，即边框和图标。"
 
 #: exe/webui/editorpane.py:79
 msgid "Use this field to describe your intended use and the pedagogy behind the device's development. This can be useful if your iDevice is to be exported for others to use."
-msgstr "使用此字段描述您的预期用途以及活动开发背后的教学法。如果要将您的iDevice版块导出以供其他人使用，这将很有用。"
+msgstr "使用此字段描述您的预期用途以及活动开发背后的教学法。如果要将您的iDevice模块导出以供其他人使用，这将很有用。"
 
 #: exe/webui/editorpane.py:84
 msgid "Add a single text line to an iDevice. Useful if you want the ability to place a label within the iDevice."
-msgstr "将单个文本行添加到iDevice版块。如果您希望能够在活动内放置标签，则很有用。"
+msgstr "将单个文本行添加到iDevice模块。如果您希望能够在活动内放置标签，则很有用。"
 
 #: exe/webui/editorpane.py:87
 msgid "Add a text entry box to an iDevice. Used for entering larger amounts of textual content."
-msgstr "将文本输入框添加到iDevice版块。用于输入大量的文本内容。"
+msgstr "将文本输入框添加到iDevice模块。用于输入大量的文本内容。"
 
 #: exe/webui/editorpane.py:90
 msgid "Add an interactive feedback field to your iDevice."
-msgstr "在您的 iDevice 版块中添加互动评价字段。"
+msgstr "在您的 iDevice 模块中添加互动评价字段。"
 
 #: exe/webui/editorpane.py:91
 msgid "Add a flash video to your iDevice."
-msgstr "在您的 iDevice 版块中新增 flash 影片。"
+msgstr "在您的 iDevice 模块中新增 flash 影片。"
 
 #: exe/webui/editorpane.py:92
 msgid "Add an mp3 file to your iDevice."
-msgstr "将mp3文件添加到您的 iDevice 版块。"
+msgstr "将mp3文件添加到您的 iDevice 模块。"
 
 #: exe/webui/editorpane.py:93
 msgid "Add an attachment file to your iDevice."
-msgstr "为 iDevice 版块添加附件。"
+msgstr "为 iDevice 模块添加附件。"
 
 #: exe/webui/editorpane.py:145 exe/webui/editorpane.py:152
 #: exe/webui/editorpane.py:160 exe/webui/editorpane.py:176
@@ -7763,7 +7767,7 @@ msgstr "如果此栏空白, 评语按钮将不显示."
 
 #: exe/webui/editorpane.py:198
 msgid "Please enter<br />an idevice name."
-msgstr "请填入iDevice版块名称."
+msgstr "请输入iDevice模块名称。"
 
 #: exe/webui/editorpane.py:250
 msgid "Add Field"
@@ -7834,8 +7838,7 @@ msgstr "错误：%s 类直接调用Element.renderView"
 msgid "Add Image"
 msgstr "添加图片"
 
-#: exe/webui/element.py:789 exe/webui/element.py:1206
-#: exe/webui/element.py:1901
+#: exe/webui/element.py:789 exe/webui/element.py:1206 exe/webui/element.py:1901
 msgid "Display as:"
 msgstr "显示为:"
 
@@ -8442,7 +8445,7 @@ msgstr "在页面中仅包含一个得分的游戏（否则将无效）。"
 
 #: exe/webui/scripts/authoring.js:1410 exe/webui/scripts/authoring.js:1418
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
-msgstr "不要在同一页面中包含“SCORM Quiz” iDevice 版块。"
+msgstr "不要在同一页面中包含“SCORM Quiz” iDevice 模块。"
 
 #: exe/webui/scripts/authoring.js:1415
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:101
@@ -8456,7 +8459,7 @@ msgstr "页面中仅包含一个带有“保存分数”按钮的活动。"
 #: exe/webui/scripts/authoring.js:1487
 #, python-format
 msgid "You can export this game so you can later use it in another iDevice of the same type. You can also use it in %s and you can import games from %s and use them here."
-msgstr "您可以导出该游戏，以便以后可以在其他相同类型的iDevice 版块中使用它。您也可以在%s中使用它，还可以从 %s 导入游戏并在此处使用它们。"
+msgstr "您可以导出该游戏，以便以后可以在其他相同类型的iDevice 模块中使用它。您也可以在%s中使用它，还可以从 %s 导入游戏并在此处使用它们。"
 
 #: exe/webui/scripts/authoring.js:1490
 msgid "Import/Export"
@@ -8489,15 +8492,15 @@ msgstr "转到工具 - 预览以查看此作品"
 
 #: exe/webui/scripts/editor.js:53
 msgid "Do you want to overwrite the existing idevice {idevice}?"
-msgstr "你想覆盖现有的idevice 版块 {idevice}吗？"
+msgstr "你想覆盖现有的idevice模块 {idevice}吗？"
 
 #: exe/webui/scripts/editor.js:98 exe/webui/scripts/editor.js:125
 msgid "eXe Idevices"
-msgstr "eXe Idevices"
+msgstr "eXe Idevices模块"
 
 #: exe/webui/scripts/editor.js:106
 msgid "Please save the idevice first, then try to export it."
-msgstr "请先保存idevice 版块，然后尝试导出它。"
+msgstr "请先保存idevice模块，然后尝试导出它。"
 
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:67
 #: exe/webui/scripts/exe_tooltips/exe_tooltips.js:152
@@ -10145,7 +10148,7 @@ msgstr "请完成活动"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:80
 msgid "You can only add one Interactive Video iDevice per page."
-msgstr "每页只能添加一个互动视频 iDevice 版块。"
+msgstr "每页只能添加一个互动视频 iDevice 模块。"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:105
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:91
@@ -10172,7 +10175,7 @@ msgstr "打开编辑器并开始添加互动..."
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:136
 #, python-format
 msgid "Please save your iDevice now (click on %s now) and edit it to add interaction."
-msgstr "请立即保存您的iDevice版块（立即单击%s）并进行编辑以添加交互。"
+msgstr "请立即保存您的iDevice模块（立即单击%s）并进行编辑以添加交互。"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:140
 msgid "Recommended type"
@@ -10917,7 +10920,7 @@ msgstr "新版块"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:237
 msgid "About this iDevice"
-msgstr "关于本iDevice 版块"
+msgstr "关于本iDevice 模块"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:238
 msgid "Cofinanced by:"
@@ -12713,7 +12716,7 @@ msgstr "说明："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:71
 msgid "Create a Page with a Free Text iDevice."
-msgstr "创建带有自由文本iDevice版块的页面。"
+msgstr "创建带有自由文本iDevice 模块的页面。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:72
 msgid "Define the Link: Select that page."
@@ -12721,7 +12724,7 @@ msgstr "定义链接：选择该页面。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:73
 msgid "The tooltip will show the content of the Free Text iDevice."
-msgstr "工具提示将显示自由文本 iDevice 版块的内容。"
+msgstr "工具提示将显示自由文本 iDevice 模块的内容。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:253
 msgid "Please select a Page"
@@ -12761,7 +12764,7 @@ msgstr "写下术语及其定义。您可以使用HTML并在编辑器中对其�
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:557
 msgid "Show the content of the first Free Text iDevice in the specified page."
-msgstr "在指定页面中显示第一个“自由文本” iDevice 版块的内容。"
+msgstr "在指定页面中显示第一个“自由文本” iDevice 模块的内容。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:574
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:712
@@ -13255,7 +13258,7 @@ msgstr "在屏幕的左下角有一个区域iDevices。"
 
 #: exe/webui/tools/assistant/langs/all.js:47
 msgid "IDevices are blocks that you can add to your pages."
-msgstr "iDevices是您可以添加到页面的版块。"
+msgstr "iDevices是您可以添加到页面的模块。"
 
 #: exe/webui/tools/assistant/langs/all.js:48
 msgid "They are organized by categories: interactive, non-interactive activities..."
@@ -13267,7 +13270,7 @@ msgstr "一个简单的测试："
 
 #: exe/webui/tools/assistant/langs/all.js:50
 msgid "Add a Free Text iDevice by clicking on its name (it's under Textual Information)."
-msgstr "通过单击其名称（在文本信息下）添加自由文本 iDevice 版块。"
+msgstr "通过单击其名称（在文本信息下）添加自由文本 iDevice 模块。"
 
 #: exe/webui/tools/assistant/langs/all.js:51
 msgid "Write something."
@@ -13279,11 +13282,11 @@ msgstr "单击编辑器下方的按钮保存："
 
 #: exe/webui/tools/assistant/langs/all.js:54
 msgid "That's all! If you add another iDevice you will see that you can also use the buttons to choose the position that each iDevice fills:"
-msgstr "就这样！如果你添加另一个iDevice 版块，你会发现你也可以使用按钮来选择每个iDevice 版块填充的位置："
+msgstr "就这样！如果你添加另一个iDevice 模块，你会发现你也可以使用按钮来选择每个iDevice 模块填充的位置："
 
 #: exe/webui/tools/assistant/langs/all.js:55
 msgid "Test the different iDevices: Interactive Activities, Image Gallery..."
-msgstr "测试不同的iDevices 版块：交互活动，图库..."
+msgstr "测试不同的iDevices 模块：交互活动，图库..."
 
 #: exe/webui/tools/assistant/langs/all.js:56
 msgid "It's so easy to create contents."
@@ -13939,4 +13942,4 @@ msgstr "无法合并: 存在重复的 java applet 资源名称 (包括: \"\")。
 
 #: twisted/persisted/styles.py:541
 msgid "Either your idevices/generic.data file or the package you are loading was created with a newer version of eXe.  Please upgrade eXe and try again."
-msgstr "您的idevices版块 / generic.data文件或您正在加载的课件包是使用较新版本的eXe创建的。请升级eXe，然后重试。"
+msgstr "您的idevices模块 / generic.data文件或您正在加载的课件包是使用较新版本的eXe创建的。请升级eXe，然后重试。"
