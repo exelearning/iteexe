@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2021-04-09 18:08+0200\n"
+"PO-Revision-Date: 2021-04-22 21:25+0300\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
 "Language-Team: Greek <ttnfy17@yahoo.gr>\n"
@@ -620,7 +620,7 @@ msgstr "Ύψος περιοχής τοποθέτησης"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "Delay (ms) to hide revealed contents"
-msgstr "Καθηστέρηση (σε MS) για απόκρυψη των αντικειμένων που αποκαλύφθηκαν"
+msgstr "Καθυστέρηση (σε MS) για απόκρυψη των αντικειμένων που αποκαλύφθηκαν"
 
 #: exe/engine/clickinorderidevice.py:156
 msgid "After delay ms hide the content prev revealed"
@@ -705,7 +705,7 @@ msgstr ""
 "να είναι συνεπές, συνεκτικό και να έχει την κατάλληλη έκταση. Θυμηθείτε ότι "
 "στόχος δεν είναι η γνώση του λεξιλογίου, έτσι οι έννοιες των λέξεων κλειδιών "
 "πρέπει να είναι γνωστές στους μαθητές.  </p>  <p>Υπογραμμίστε τις λέξεις που "
-"στοχεύετε στο κείμενο. Εναλλατικά δώστε λέξεις με την ίδια ρίζα αλλά με "
+"στοχεύετε στο κείμενο. Εναλλακτικά δώστε λέξεις με την ίδια ρίζα αλλά με "
 "διαφορετικά προσφύματα. Είναι καλή ιδέα να εξετάσει ένας συνάδελφος τη "
 "δραστηριότητα, ώστε να σιγουρευτείτε ότι δεν υπάρχουν εκπλήξεις!  </p>  </dd></"
 "dl>"
@@ -1536,7 +1536,7 @@ msgid ""
 "player from http://www.macromedia.com/ to play the video."
 msgstr ""
 "Αυτό το η-Σύνεργο υποστηρίζει μόνο μορφή ταινίας flash (.flv) και δεν \n"
-"δέχεται άλλες μορφές αρχείων βίντεο. Μπορείτε παρόλ' αυτά να μετατρέψετε άλλες "
+"δέχεται άλλες μορφές αρχείων βίντεο. Μπορείτε παρόλα αυτά να μετατρέψετε άλλες "
 "μορφές \n"
 "αρχείων βίντεο (π.χ. mov, wmf κλπ.) στη μορφή .flv χρησιμοποιώντας μετατροπείς "
 "άλλων \n"
@@ -2469,7 +2469,7 @@ msgstr "Εικόνα παρασκηνίου κελιών (εμφανίζεται
 
 #: exe/engine/memorymatchidevice.py:67
 msgid "Back Img"
-msgstr "Είκονα παρασκηνίου Img"
+msgstr "Εικόνα παρασκηνίου Img"
 
 #: exe/engine/memorymatchidevice.py:68
 msgid "Background image behind cells shown as cells are hidden"
@@ -3229,7 +3229,7 @@ msgstr "Κείμενο / Περιεχόμενο αντικειμένου προ�
 
 #: exe/engine/truefalseidevice.py:144
 msgid "True-False Question"
-msgstr "Δραστηριότητα ΣωστόΛάθος"
+msgstr "Δραστηριότητα Σωστό-Λάθος"
 
 #: exe/engine/truefalseidevice.py:146 exe/engine/verdaderofalsofpdidevice.py:147
 msgid ""
@@ -3348,7 +3348,7 @@ msgid ""
 "within Wikipedia."
 msgstr ""
 "Εισάγετε μια φράση ή έναν όρο που θέλετε \n"
-"να αναζητήσετε στην Βικιπαίδεια."
+"να αναζητήσετε στη Βικιπαίδεια."
 
 #: exe/engine/wikipediaidevice.py:106 exe/engine/wikipediaidevice.py:144
 #, python-format
@@ -3396,8 +3396,8 @@ msgid ""
 "Once you have chosen Set ELP field values option using '-s <values>' or     '--"
 "set <values>', it's possible to configure the following options:"
 msgstr ""
-"Αφού διαλέξετε την επιλογή 'Προσδιορίστε τις τιμές πεδίου ELP' χρησιμοποιιώντας "
-"'-s <values>' ή     '--set <values>', είναι δυνατόν να ρυθμίσετε τις παρακάτω "
+"Αφού διαλέξετε την επιλογή 'Προσδιορίστε τις τιμές πεδίου ELP' χρησιμοποιώντας '-"
+"s <values>' ή     '--set <values>', είναι δυνατόν να ρυθμίσετε τις παρακάτω "
 "επιλογές:"
 
 #: exe/exe_do:91
@@ -3757,7 +3757,7 @@ msgstr ""
 #: exe/jsui/mainpage.py:467 exe/jsui/mainpage.py:472 exe/jsui/mainpage.py:477
 #, python-format
 msgid "Package saved to: %s"
-msgstr "Το πακέτο αποθηκεύθηκε στο: %s"
+msgstr "Το πακέτο αποθηκεύτηκε στο: %s"
 
 #: exe/jsui/mainpage.py:493
 #, python-format
@@ -4461,8 +4461,8 @@ msgid ""
 msgstr ""
 "Με αυτή την επιλογή θα συμπεριληφθούν όλα τα πεδία εξαγωγής στις ενότητες CDATA. "
 "Αυτό το είδος ενοτήτων δεν συνιστάται από το πρότυπο XLIFF, ωστόσο μπορεί να "
-"είναι μια καλή επιλογή εάν θέλετε να χρησιμοποιήσετε ένα εργαλείο "
-"προεπεξεργασίας (π.χ. Rainbow) πριν το λογισμικό της Υπολογιστικά Υποβοηθούμενης "
+"είναι μια καλή επιλογή εάν θέλετε να χρησιμοποιήσετε ένα εργαλείο αρχικής "
+"επεξεργασίας (π.χ. Rainbow) πριν το λογισμικό της Υπολογιστικά Υποβοηθούμενης "
 "Μετάφρασης."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:946
@@ -4870,7 +4870,7 @@ msgstr "Αναγνωριστικό"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:153
 msgid "An unambiguous reference to the resource within a given context."
-msgstr "Σαφής αναφορά σε ένα εκπαιδευτικό υλικό με προκαθρισμένο περιεχόμενο."
+msgstr "Σαφής αναφορά σε ένα εκπαιδευτικό υλικό με προκαθορισμένο περιεχόμενο."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:159
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
@@ -9416,7 +9416,7 @@ msgstr "Πρέπει να δώσετε τον κωδικό πρόσβασης γ
 #: exe/webui/scripts/authoring.js:1331
 msgid "Please explain how to obtain the code to play this game"
 msgstr ""
-"Παρακαλώ εξηγήστερ πώς αποκτήσατε τον κωδικό για να παίξετε αυτό το παιχνίδι"
+"Παρακαλώ εξηγήστε πώς αποκτήσατε τον κωδικό για να παίξετε αυτό το παιχνίδι"
 
 #: exe/webui/scripts/authoring.js:1382 exe/webui/scripts/authoring.js:1401
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:47
@@ -10805,8 +10805,8 @@ msgid ""
 "Insert a GeoGebra activity from www.geogebra.org. It requires an Internet "
 "connection."
 msgstr ""
-"Ειαγωγή μιας δραστηριότητας GeoGebra από το www.geogebra.org. Απαιτείται σύνδεση "
-"στο διαδίκτυο."
+"Εισαγωγή μιας δραστηριότητας GeoGebra από το www.geogebra.org. Απαιτείται "
+"σύνδεση στο διαδίκτυο."
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:63
 msgid "URL or identifier (ID)"
@@ -11122,7 +11122,7 @@ msgstr "Αριθ."
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:96
 #, python-format
 msgid "Remove slide %s?"
-msgstr "Αφαίρεση της διαφάνεις %s;"
+msgstr "Αφαίρεση της διαφάνειας %s;"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:97
 msgid "Slides list"
@@ -12870,7 +12870,7 @@ msgstr "Εμφάνιση μπάρας τοποθεσίας"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:241
 msgid "Show Scrollbars"
-msgstr "Εμφάνιση μπάρς κύλισης"
+msgstr "Εμφάνιση μπάρας κύλισης"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:242
 msgid "Show Menu Bar"
@@ -13509,7 +13509,8 @@ msgstr "Εννοιολογικός χάρτης"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:40
 msgid "Use the editor to create a new mind map..."
 msgstr ""
-"Χρησιμοποιήστε τον επεξεργαστή για να δημιουργήσετε έναν νέο εννοιλογικό χάρτη..."
+"Χρησιμοποιήστε τον επεξεργαστή για να δημιουργήσετε έναν νέο εννοιολογικό "
+"χάρτη..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:58
 msgid "Open the mind map editor"
@@ -13673,7 +13674,7 @@ msgid ""
 "Continue without a title? Some users might see an image instead of the rendered "
 "code. Without the title the image may not be accessible to them."
 msgstr ""
-"Συνέχεια χωρίς τίτλο; Κάποιοι χρήστε πιθανόν να δούνε μια εικόνα αντί για τον "
+"Συνέχεια χωρίς τίτλο; Κάποιοι χρήστες πιθανόν να δούνε μια εικόνα αντί για τον "
 "αποδιδόμενο κώδικα. Χωρίς τον τίτλο, η εικόνα δεν θα είναι προσβάσιμη σε αυτούς."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:622
@@ -13698,7 +13699,7 @@ msgstr "Συμπερίληψη εναλλακτικής εικόνας (συνι
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:666
 msgid "Image title (alternative text):"
-msgstr "Τίτλος εικόνας (εναλλακτικο κείμενο):"
+msgstr "Τίτλος εικόνας (εναλλακτικό κείμενο):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:676
 msgid ""
@@ -14649,7 +14650,7 @@ msgid ""
 msgstr ""
 "Θυμηθείτε ότι για να επεξεργαστείτε και να τροποποιήσετε το έργο σας οποιαδήποτε "
 "στιγμή, θα πρέπει να ανοίξετε το αρχείο elp με το eXe. Στο τέλος, απλά θα πρέπει "
-"να κάνετε και παλι εξαγωγή του έργου σας."
+"να κάνετε και πάλι εξαγωγή του έργου σας."
 
 #: exe/webui/tools/assistant/langs/all.js:68
 msgid ""
@@ -15241,7 +15242,7 @@ msgstr "Άρθρο της πολωνικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:128
 msgid "Portugese Wikipedia Article"
-msgstr "Άρθρο της πορτογαλλικής Βικιπαίδειας"
+msgstr "Άρθρο της πορτογαλικής Βικιπαίδειας"
 
 #: exe/webui/wikipediablock.py:129
 msgid "Slovenian Wikipedia Article"
