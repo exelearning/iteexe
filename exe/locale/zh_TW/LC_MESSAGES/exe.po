@@ -1,5 +1,5 @@
 # Traditional Chinese Messages for exe.
-# Copyright (C) 2006-2019 Free Software Foundation, Inc.
+# Copyright (C) 2006-2021 Free Software Foundation, Inc.
 # This file is distributed under the same license as the exe package.
 #
 # Jenny Lin <jenny.lin@auckland.ac.nz>, 2006.
@@ -7,21 +7,22 @@
 # Meng-Hsun Lo <menghsun1203.eed04@nctu.edu.tw>, 2016.
 # Ji-Jim Lin <ajim159951@gmail.com>, 2016.
 # Ping-Feng Zo <kevinwx12392@gmail.com>, 2016.
-# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2019.
+# Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
 "POT-Creation-Date: 2021-04-02 09:49+0200\n"
-"PO-Revision-Date: 2019-05-12 17:31+0200\n"
-"Last-Translator: Franklin Weng <franklin at goodhorse dot idv dot tw>\n"
+"PO-Revision-Date: 2021-04-27 19:47+0200\n"
+"Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
 "Language: zh_Hant_TW\n"
-"Language-Team: Chinese Traditional <zh-l10n@linux.org.tw>\n"
+"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
 "Plural-Forms: nplurals=1; plural=0\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #: exe/application.py:239
 #, python-format
@@ -49,6 +50,18 @@ msgid ""
 "or\n"
 "Users/<user name>/AppData/Roaming/exe on Windows 7/8/10"
 msgstr ""
+"eXeLearning, 全名 EXtremely Easy to use eLearning authoring"
+" tool（極易上手線上學習教材建立工具）\n"
+"   用法：%s [選項] [套件名稱]\n"
+"   選項包括：\n"
+"   -V, --version  印出版本資訊就退出\n"
+"   -h, --help  印出本說明後就退出\n"
+"   --standalone  完全由目前目錄執行，不參考系統目錄\n"
+"   --portable  以可攜版模式執行\n"
+"設定檔在 Linux/Unix/MacOS 裡是放在 $HOME/.exe/exe.config 裡，\n"
+"Windows XP 放在 Documents and Settings/<username>/Application"
+" Data/exe/exe.config，\n"
+"Windows 7/8/10 則放在 Users/<username>/AppData/Roamiing/exe/exe.config 中。"
 
 #: exe/engine/appletidevice.py:67
 msgid "Java Applet"
@@ -266,7 +279,8 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼做，以便解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素：<ul>"
+"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼做，以便解決該情境的問題。案例分析允許學生"
+"使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素：<ul>"
 " \n"
 "<li>    在這個故事情境中您所要傳達的教學要點</li>\n"
 "<li>    學生需要做什麼準備工作以便進行這個案例分析</li>\n"
@@ -603,7 +617,9 @@ msgid ""
 " </li></ol>"
 msgstr ""
 "<p>克漏字 (Cloze) "
-"克漏字是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li>確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li>確認單字的組成與文法的完成度。</li></ol>"
+"克漏字是給一段文字或句子，學生們要填上缺少的單字。它們通常有幾個目的：</p><ol><li"
+">確認主要課程觀念的知識（也許是預先確認，單字成份練習，或是摘要確認）。</li><li>確認閱讀理解力。</li><li>確認字彙知識。</li><li"
+">確認單字的組成與文法的完成度。</li></ol>"
 
 #: exe/engine/clozefpdidevice.py:64 exe/engine/clozeidevice.py:63
 #: exe/engine/clozelangfpdidevice.py:64
@@ -631,14 +647,16 @@ msgid ""
 msgstr ""
 "<dl> <dt>如果您是要測驗核心概念或閱讀的理解能力：</dt>\n"
 "<dd> "
-"<p>將核心的概念或閱讀測驗的摘要寫下來。這份摘要必須足以充份測驗出學生的知識，但也不能太長以免造成閱讀疲勞。通常差不多一頁就夠了，但對年紀小的學生或初學者可能要更短。</p>"
+"<p>將核心的概念或閱讀測驗的摘要寫下來。這份摘要必須足以充份測驗出學生的知識，但也不能太長以免造成閱讀疲勞。通常差不多一頁就夠了，但對年紀小的學生或初學者"
+"可能要更短。</p>"
 "\n"
 "<p>選擇這份摘要中用於理解概念的關鍵詞。 這可能是動詞，名詞或關鍵副詞。然後選擇一個明確的答案。</p></dd>\n"
 "<dt>如果您是要測驗對字彙的瞭解：</dt>\n"
 "<dd><p>使用目標的字彙寫下一段文字。這段文字要能凝聚並連貫，並且長度要適中。接著將目標字彙突顯出來，然後選擇一個明確的答案。</p></dd>"
 "\n"
 "<dt>如果您是要測驗字詞的構成與文法：</dt>\n"
-"<dd><p>使用目標的字詞寫下一段文字。這段文字要能凝聚並連貫，並且長度要適中。請記住，目的不是要測試字彙的瞭解，因此詞語的核心含義應該為學生所熟知。</p>"
+"<dd><p>使用目標的字詞寫下一段文字。這段文字要能凝聚並連貫，並且長度要適中。請記住，目的不是要測試字彙的瞭解，因此詞語的核心含義應該為學生所熟知。</"
+"p>"
 "\n"
 "<p>將目標字詞突顯出來。提供一些具有相同詞語核心但不同後綴的替代詞。 最好能讓同事先測試/練習，以確保沒有意外！</p></dd></dl>"
 
@@ -692,7 +710,8 @@ msgid ""
 "answer can be defined enclosing them with pipes (|). I.e.: "
 "|dog|cat|bird|</p>"
 msgstr ""
-"<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p>要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p><p>超過一個以上的答案，可以用"
+"<p>輸入克漏字測驗的文字。您可以從別處剪貼文字過來，或是直接在此輸入。</p><p"
+">要選擇打算隱藏起來的單字，在該單字上雙擊選擇，並按下底下的「隱藏/顯示單字」按鍵。</p><p>超過一個以上的答案，可以用"
 " | 符號隔開。例如：|dog|cat|bird|</p>"
 
 #: exe/engine/clozefpdidevice.py:132 exe/engine/clozefpdidevice.py:282
@@ -858,7 +877,8 @@ msgid ""
 "aspects\n"
 "of the case and if so how are ideas feed back to the class</li></ul>"
 msgstr ""
-"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
+"案例分析提供學生們一個有教育意義的模擬情境。通常它會基於一個真實的情境，要求學生來展示實作，或是描述他們可能會怎麼完成一份工作來解決該情境的問題。案例分析允"
+"許學生使用他們自己的知識與經驗來解決指定的工作。當設計案例分析時您可考慮以下的因素："
 "\n"
 "<ul> \n"
 "<li>\t在這個故事情境中您所要傳達的教學要點</li>\n"
@@ -976,7 +996,8 @@ msgid ""
 "answer\" as indicated by the selection for the correct answer; or \"Wrong"
 " answer\"\n"
 "for the other options."
-msgstr "輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
+msgstr ""
+"輸入學生選擇特定選項時要看到的回饋意見。如果您未輸入，eXe 將會自動提供以下的回饋：選正確選項時會顯示「正確答案」；其他選項則顯示「錯誤答案」。"
 
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3802
 #: exe/engine/field.py:3867 exe/engine/multichoiceidevice.py:131
@@ -1174,6 +1195,13 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>若未勾選，則允許一小部份的拼字或大小寫錯誤。若勾選則拼字與大小寫必須完全符合才會被接受。</p>"
+"<p><strong>例如：</strong>若正確答案為 <code>Elephant</code>，則 <code>elephant</code> 與"
+" <code>Eliphant</code> 因為只有一個字母有誤，會被判定為 <em>「夠接近正確答案」</em>，即使勾選了「要檢查大小寫」。</p>"
+"<p>若上例中未開啟「要檢查大小寫」選項，則小寫 <code>e</code> 不會被當成錯誤，而 <code>eliphant</code>"
+" 仍因只有一個字母差異而會被接受。</p>"
+"<p>若同時開啟了「嚴格評分」與「檢查大小寫」選項，則只有 \"Elephant\" 會被視為正確答案。若開啟「嚴格評分」但未開啟「檢查大小寫」，則"
+" \"elephant\" 也可以被接受。</p>"
 
 #: exe/engine/field.py:3159 exe/engine/field.py:3393
 msgid ""
@@ -1211,6 +1239,13 @@ msgid ""
 "Marking\" is checked and \"Check Capitalization\" is not, \"elephant\" "
 "will also be accepted.</p>"
 msgstr ""
+"<p>若未勾選，則允許一小部份的拼字或大小寫錯誤。若勾選則拼字與大小寫必須完全符合才會被接受。</p>"
+"<p><strong>例如：</strong>若正確答案為 <code>Elephant</code>，則 <code>elephant</code> 與"
+" <code>Eliphant</code> 因為只有一個字母有誤，會被判定為 <em>「夠接近正確答案」</em>，即使勾選了「要檢查大小寫」。</p>"
+"<p>若上例中未開啟「要檢查大小寫」選項，則小寫 <code>e</code> 不會被當成錯誤，而 <code>eliphant</code>"
+" 仍因只有一個字母差異而會被接受。</p>"
+"<p>若同時開啟了「嚴格評分」與「檢查大小寫」選項，則只有 \"Elephant\" 會被視為正確答案。若開啟「嚴格評分」但未開啟「檢查大小寫」，則"
+" \"elephant\" 也可以被接受。</p>"
 
 #: exe/engine/field.py:3403
 msgid "<p>If this option is set, the score will be shown.</p>"
@@ -1237,7 +1272,8 @@ msgid ""
 "<p>Select symbols from the text editor below or enter LATEX manually to "
 "create mathematical formula. To preview your LATEX as it will display use"
 " the &lt;Preview&gt; button below.</p>"
-msgstr "<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
+msgstr ""
+"<p>在底下的文字編輯器中選擇符號，或是手動輸入 LATEX 的文稿來建立數學式。要預覽您的 LATEX 內容，請用下方的「預覽」鍵。</p>"
 
 #: exe/engine/field.py:3659
 msgid ""
@@ -2432,7 +2468,7 @@ msgstr ""
 msgid ""
 "Can't read the .xml file. eXe will try to recover the content from the "
 ".data file instead."
-msgstr ""
+msgstr "無法讀取此 xml 檔。eXe 會嘗試從 .data 檔中修復內容。"
 
 #: exe/engine/package.py:1683 exe/jsui/scripts/app/controller/Toolbar.js:634
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:521
@@ -2733,7 +2769,7 @@ msgstr "未知的副檔名 %s：檔案 %s%s 無法轉換為 ISO 9660 格式。"
 msgid ""
 "renamed a Resource for an Applet Idevice, and it should not have even "
 "made it this far!"
-msgstr ""
+msgstr "已為一個 idevice 重新命名，但注意不應該發生這個問題喔！"
 
 #: exe/engine/rssidevice.py:40 exe/engine/rssidevice.py:48
 msgid "RSS"
@@ -3369,7 +3405,7 @@ msgstr "實驗性"
 
 #: exe/jsui/idevicepane.py:198
 msgid "Gamification"
-msgstr ""
+msgstr "遊戲化"
 
 #: exe/jsui/mainpage.py:438 exe/jsui/mainpage.py:1314 exe/jsui/mainpage.py:1469
 #: exe/jsui/scripts/app/controller/TemplateManager.js:101
@@ -4083,6 +4119,8 @@ msgid ""
 " of the target field. If you are using this kind of tools, you will need "
 "to pre-fill the target field with a copy of the source field."
 msgstr ""
+"如果沒有選擇此選項，則目標欄位預設會空白。不過有些電腦輔助翻譯軟體（如 OmegaT）只會翻譯在目標欄位的內容。如果您使用的是這類工具，則您必須選擇此選項，"
+"將來源內容複製到目標欄位。"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:937
 msgid ""
@@ -4091,6 +4129,8 @@ msgid ""
 "good option if you want to use a pre-process tool (i.g.: Rainbow) before "
 "using the Computer Aided Translation software."
 msgstr ""
+"這個選項會將所有在 CDATA 區段中匯出的欄位折起來。這種區段在 XLIFF 標準中並不建議使用，但若您在使用電腦輔助翻譯軟體前，使用一些預先處理的工具（"
+"如 Rainbow）時，CDATA 區段就很有用。"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:946
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:69
@@ -4554,6 +4594,8 @@ msgid ""
 "no assumptions can be made about the status of these and other rights "
 "with respect to the resource."
 msgstr ""
+"一般而言，權利資訊中會包含此資源的權利宣告，或是包含權利宣告的頁面。權利資訊通常會明確指出擁有的智慧財產權（IPR）、版權（Copyright）與各種不同的"
+"權利。如果權利資訊是空白的，不能任意假設此資源的權利。"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:207
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:185
@@ -4625,6 +4667,8 @@ msgid ""
 "easily, consider adding a link to the elp in your content instead of "
 "using this option."
 msgstr ""
+"匯出的資料夾中會加入 elp 檔的複本，即使您的內容中沒有 elp 檔的連結。如果您要讓大家更容易找到您的 elp 檔，請考慮在您的內容中加入 elp"
+" 檔的連結。"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:105
 msgid "Add a search bar (editable Web Site export only)"
@@ -4795,7 +4839,7 @@ msgstr "結構"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:72
 msgid "Aggregation Level"
-msgstr ""
+msgstr "集合等級"
 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:75
 msgid "Version"
@@ -5029,7 +5073,7 @@ msgstr "注意"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:710
 msgid "There should be at least one section of this type"
-msgstr ""
+msgstr "這個型態至少要有一個章節"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:45
 msgid "void"
@@ -5387,6 +5431,8 @@ msgid ""
 "markup: It will remove any invalid code, even HTML5 tags (except VIDEO "
 "and AUDIO) when using XHTML format."
 msgstr ""
+"「寬鬆」會允許任何標籤。「嚴格」只允許合法的標籤：它會移除任何不合標準的代碼，若是使用 XHTML 格式則甚至可能移除 HTML5 的標籤（除了"
+" VIDEO 與 AUDIO 外）"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:234
 msgid "Editor version"
@@ -5421,14 +5467,14 @@ msgstr "關閉所有內部連結"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:272
 msgid "Always force editable exports on package load"
-msgstr ""
+msgstr "載入套件時強制改為可編輯匯出"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:279
 msgid ""
 "This will ignore the package \"Create editable export?\" setting every "
 "time it's loaded. You will be able to disable it before exporting, but it"
 " will be reset every time you open the package."
-msgstr ""
+msgstr "這個選項會在套件載入時忽略「要建立可編輯的匯出嗎？」的設定。您在匯出前還是可以把這選項關閉，但每次開啟此套件時此選項就會被重置。"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:290
 msgid "Naming standard for exported content"
@@ -5667,7 +5713,7 @@ msgstr "取消 iDevices 群組"
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:135
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:153
 msgid "Available iDevices"
-msgstr ""
+msgstr "可用的 iDevice"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:143
 msgid "Save iDevices"
@@ -5964,7 +6010,7 @@ msgstr "關於 eXe"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:687
 msgid "Advanced mode"
-msgstr ""
+msgstr "進階模式"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:858
 msgid "You've been working for a long time without saving."
@@ -7412,7 +7458,8 @@ msgid "process/procedure supporting service"
 msgstr "處理/程序支援服務"
 
 #: exe/jsui/scripts/lomvocab.js:826
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr "個別/協作/協同學習/工作管理服務"
 
 #: exe/jsui/scripts/lomvocab.js:830
@@ -8189,7 +8236,7 @@ msgid ""
 "Your new iDevice will appear in the iDevice pane with this title. This is"
 " a compulsory field and you will be prompted to enter a label if you try "
 "to submit your iDevice without one."
-msgstr ""
+msgstr "您的新 iDevice 會在面板上以此標題呈現。這個欄位是必須的，如果您沒有填寫，會跳出一個提示請您填寫。"
 
 #: exe/webui/editorpane.py:71
 msgid "This is an optional field."
@@ -8212,7 +8259,7 @@ msgid ""
 "Use this field to describe your intended use and the pedagogy behind the "
 "device's development. This can be useful if your iDevice is to be "
 "exported for others to use."
-msgstr ""
+msgstr "使用此欄位來描述您預期的用途，以及此 iDevice 開發背後的教學法。若您的 iDevice 要匯出給其他人使用，則這個資訊很重要。"
 
 #: exe/webui/editorpane.py:84
 msgid ""
@@ -8600,7 +8647,8 @@ msgid "eXe problem"
 msgstr "eXe 問題"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr "您的瀏覽器 (ie) 的相容檢視已打開。"
 
 #: exe/webui/iecmwarning.py:50
@@ -8769,7 +8817,7 @@ msgstr "載入"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:694
 #: exe/webui/tools/image-compressor/js/langs/all.js:6
 msgid "Image optimizer"
-msgstr ""
+msgstr "影像最佳化"
 
 #: exe/webui/scripts/authoring.js:154
 msgid "Select one or more images"
@@ -8835,12 +8883,12 @@ msgstr "請提供圖片描述（替代文字）："
 #: exe/webui/scripts/authoring.js:1192
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:321
 msgid "Content after"
-msgstr ""
+msgstr "之後的內容："
 
 #: exe/webui/scripts/authoring.js:1195
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:324
 msgid "Content before"
-msgstr ""
+msgstr "之前的內容："
 
 #: exe/webui/scripts/authoring.js:1236
 msgid "Language settings"
@@ -8862,7 +8910,7 @@ msgstr ""
 
 #: exe/webui/scripts/authoring.js:1274
 msgid "Access code is required"
-msgstr ""
+msgstr "需要存取代碼"
 
 #: exe/webui/scripts/authoring.js:1277
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:46
@@ -8873,11 +8921,11 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:45
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:40
 msgid "Access code"
-msgstr ""
+msgstr "存取代碼"
 
 #: exe/webui/scripts/authoring.js:1283
 msgid "Show a message or password when reaching the objective"
-msgstr ""
+msgstr "點擊到目標時要顯示的訊息或密碼"
 
 #: exe/webui/scripts/authoring.js:1287
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:281
@@ -8889,27 +8937,27 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:779
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:784
 msgid "Message"
-msgstr ""
+msgstr "訊息"
 
 #: exe/webui/scripts/authoring.js:1291
 msgid "Percentage of hits needed to display the message"
-msgstr ""
+msgstr "顯示此訊息需要答對多少百分比的問題"
 
 #: exe/webui/scripts/authoring.js:1310
 msgid "Passwords"
-msgstr ""
+msgstr "密碼"
 
 #: exe/webui/scripts/authoring.js:1323
 msgid "You must write a clue"
-msgstr ""
+msgstr "您必須撰寫一個提示"
 
 #: exe/webui/scripts/authoring.js:1327
 msgid "You must provide the code to play this game"
-msgstr ""
+msgstr "您必須提供代碼來玩此遊戲"
 
 #: exe/webui/scripts/authoring.js:1331
 msgid "Please explain how to obtain the code to play this game"
-msgstr ""
+msgstr "請解釋您如何取得此代碼"
 
 #: exe/webui/scripts/authoring.js:1382 exe/webui/scripts/authoring.js:1401
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:47
@@ -8922,20 +8970,20 @@ msgstr "SCORM"
 
 #: exe/webui/scripts/authoring.js:1389
 msgid "Do not save the score"
-msgstr ""
+msgstr "不要儲存分數"
 
 #: exe/webui/scripts/authoring.js:1392
 msgid "Automatically save the score"
-msgstr ""
+msgstr "自動儲存分數"
 
 #: exe/webui/scripts/authoring.js:1394 exe/webui/scripts/authoring.js:1402
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:60
 msgid "Repeat activity"
-msgstr ""
+msgstr "重覆此活動"
 
 #: exe/webui/scripts/authoring.js:1398
 msgid "Show a button to save the score"
-msgstr ""
+msgstr "顯示儲存分數的按鍵"
 
 #: exe/webui/scripts/authoring.js:1400
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:95
@@ -8950,17 +8998,17 @@ msgstr "按鍵文字"
 msgid ""
 "This will only work when exporting as SCORM and while editing in "
 "eXeLearning."
-msgstr ""
+msgstr "這只在 eXeLearning 中編輯並準備匯出為 SCORM 時會有作用。"
 
 #: exe/webui/scripts/authoring.js:1408
 msgid ""
 "The score will be automatically saved after answering each question and "
 "at the end of the game."
-msgstr ""
+msgstr "回答完每個問題，還有遊戲結束時會自動儲存分數。"
 
 #: exe/webui/scripts/authoring.js:1409 exe/webui/scripts/authoring.js:1417
 msgid "Include only one game with score in the page (or it won't work)."
-msgstr ""
+msgstr "只在頁面中包含一個有分數的遊戲（不然不起作用）。"
 
 #: exe/webui/scripts/authoring.js:1410 exe/webui/scripts/authoring.js:1418
 msgid "Do not include a \"SCORM Quiz\" iDevice in the same page."
@@ -8975,7 +9023,7 @@ msgstr "此按鍵只會在 eXeLearning 中編輯並匯出為 SCORM 時顯示。"
 
 #: exe/webui/scripts/authoring.js:1416
 msgid "Include only one activity with a \"Save score\" button in the page."
-msgstr ""
+msgstr "只在頁面中包含一個帶有「儲存分數」按鍵的活動。"
 
 #: exe/webui/scripts/authoring.js:1487
 #, python-format
@@ -8983,11 +9031,11 @@ msgid ""
 "You can export this game so you can later use it in another iDevice of "
 "the same type. You can also use it in %s and you can import games from %s"
 " and use them here."
-msgstr ""
+msgstr "您可以將此遊戲匯出，稍後用在另一個同樣型態的 iDevice 中。您也可以在 %s 中使用，以及從 %s 匯出遊戲然後在這裡使用。"
 
 #: exe/webui/scripts/authoring.js:1490
 msgid "Import/Export"
-msgstr ""
+msgstr "匯入/匯出"
 
 #: exe/webui/scripts/authoring.js:1497
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1212
@@ -9033,12 +9081,12 @@ msgstr "到工具－預覽 觀看工具提示內容"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:12
 msgid "Games"
-msgstr ""
+msgstr "遊戲"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:13
 #: exe/webui/scripts/idevices/adivina-activity/export/adivina-activity.js:44
 msgid "Word Guessing"
-msgstr ""
+msgstr "猜單字"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:37
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:52
@@ -9046,13 +9094,13 @@ msgstr ""
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:69
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:94
 msgid "Move on"
-msgstr ""
+msgstr "下一題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:38
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:19
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:84
 msgid "Reply"
-msgstr ""
+msgstr "回答"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:40
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:36
@@ -9060,27 +9108,27 @@ msgstr ""
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:21
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:39
 msgid "Enter the access code"
-msgstr ""
+msgstr "輸入存取代碼"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:41
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:37
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:22
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:40
 msgid "The access code is not correct"
-msgstr ""
+msgstr "存取代碼不正確"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:42
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:23
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:41
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:36
 msgid "Game Over!"
-msgstr ""
+msgstr "遊戲結束！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:43
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:93
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:83
 msgid "Provide a word or phrase"
-msgstr ""
+msgstr "請輸入一個單字或片語"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:44
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:38
@@ -9088,27 +9136,27 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:42
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:37
 msgid "Cool! The clue is:"
-msgstr ""
+msgstr "很好！提示是："
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:45
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:31
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:44
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:39
 msgid "You have got %1 hits and %2 misses"
-msgstr ""
+msgstr "您答對了 %1 次，失誤了 %2 次"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:47
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:33
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:46
 msgid "Play Again"
-msgstr ""
+msgstr "再玩一次"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:48
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:38
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:34
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:47
 msgid "Access code required"
-msgstr ""
+msgstr "需要存取代碼"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:49
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:34
@@ -9116,7 +9164,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:48
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:41
 msgid "Cool! The information you were looking for"
-msgstr ""
+msgstr "很好！您要找的資訊："
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:50
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:35
@@ -9125,7 +9173,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:49
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:34
 msgid "Click here to play"
-msgstr ""
+msgstr "點擊此處以遊玩"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:51
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:43
@@ -9133,7 +9181,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:50
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:42
 msgid "Errors"
-msgstr ""
+msgstr "失誤"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:53
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:44
@@ -9141,7 +9189,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:51
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:43
 msgid "Hits"
-msgstr ""
+msgstr "答對數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:54
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:148
@@ -9168,7 +9216,7 @@ msgstr "分數"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:53
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:45
 msgid "Minimize"
-msgstr ""
+msgstr "最小化"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:56
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:31
@@ -9178,14 +9226,14 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:54
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:46
 msgid "Maximize"
-msgstr ""
+msgstr "最大化"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:58
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:49
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:56
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:48
 msgid "Life"
-msgstr ""
+msgstr "生命"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:59
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:50
@@ -9204,14 +9252,14 @@ msgstr "全螢幕"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:58
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:50
 msgid "Exit Full Screen"
-msgstr ""
+msgstr "離開全螢幕模式"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:61
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:52
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:59
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:51
 msgid "Number of questions"
-msgstr ""
+msgstr "問題數量"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:62
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:39
@@ -9219,42 +9267,42 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:60
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:52
 msgid "No picture question"
-msgstr ""
+msgstr "沒有圖片的問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:63
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:54
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:61
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:53
 msgid "Cool!"
-msgstr ""
+msgstr "很好！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:64
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:55
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:62
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:54
 msgid "You lost 330 points"
-msgstr ""
+msgstr "您失去了 330 分"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:65
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:56
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:63
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:55
 msgid "You lost one life"
-msgstr ""
+msgstr "您失去了一條命"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:66
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:57
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:64
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:56
 msgid "You lost all your lives!"
-msgstr ""
+msgstr "您所有生命都用完了！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:67
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:58
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:65
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:57
 msgid "Questions completed!"
-msgstr ""
+msgstr "回答了所有問題！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:68
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:39
@@ -9264,7 +9312,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:66
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:58
 msgid "Right! | Excellent! | Great! | Very good! | Perfect!"
-msgstr ""
+msgstr "答對了！|好厲害！|太棒了！|非常好！|太完美了！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:69
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:40
@@ -9274,7 +9322,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:67
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:59
 msgid "It was not that! | Incorrect! | Not correct! | Sorry! | Error!"
-msgstr ""
+msgstr "不太對喔！|不正確！|不對！|抱歉！| 錯了！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:70
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:74
@@ -9284,42 +9332,43 @@ msgstr ""
 msgid ""
 "You need at least %s&percnt; of correct answers to get the information. "
 "Please try again."
-msgstr ""
+msgstr "您至少需要正確回答 %s&percnt; 的問題以取得資訊。請再試一次。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:71
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:46
 msgid ""
 "Write the correct word and click on Reply. If you hesitate, click on Move"
 " on."
-msgstr ""
+msgstr "輸入正確的單字然後按下「回答」。如果您不確定，可以按「下一題」。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:72
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:47
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:68
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:60
 msgid "You can only play this game with internet connection."
-msgstr ""
+msgstr "玩這個遊戲必須有網際網路連線。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:73
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:50
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:69
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:61
 msgid "Please start the game before saving your score."
-msgstr ""
+msgstr "開始遊戲前請先儲存您的分數。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:74
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:61
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:51
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:70
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:62
-msgid "The score can't be saved because this page is not part of a SCORM package."
-msgstr ""
+msgid ""
+"The score can't be saved because this page is not part of a SCORM package."
+msgstr "無法儲存分數，因為此頁面不是 SCORM 套件中的一部份。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:76
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:55
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:64
 msgid "Answer"
-msgstr ""
+msgstr "答案"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:77
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:63
@@ -9327,7 +9376,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:73
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:65
 msgid "You can only save the score once!"
-msgstr ""
+msgstr "您只能儲存一次分數！"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:78
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:64
@@ -9335,7 +9384,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:74
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:66
 msgid "You can only save once"
-msgstr ""
+msgstr "您只能儲存一次分數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:80
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:84
@@ -9345,7 +9394,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:80
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:68
 msgid "Your score"
-msgstr ""
+msgstr "您的分數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:82
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:67
@@ -9353,7 +9402,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:78
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:70
 msgid "Your score will be saved after each question. You can only play once."
-msgstr ""
+msgstr "您的分數會在每次回答問題後儲存。您只能玩一次。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:83
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:68
@@ -9361,7 +9410,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:79
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:71
 msgid "Your score will be automatically saved after each question."
-msgstr ""
+msgstr "您的分數會在每次回答問題後儲存。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:85
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:70
@@ -9369,7 +9418,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:81
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:72
 msgid "You can save the score as many times as you want"
-msgstr ""
+msgstr "您可以自由儲存分數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:86
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:71
@@ -9377,7 +9426,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:82
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:73
 msgid "The last score saved is"
-msgstr ""
+msgstr "上次儲存的分數為"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:87
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:72
@@ -9385,7 +9434,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:83
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:74
 msgid "You have already done this activity."
-msgstr ""
+msgstr "您已經完成此活動。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:88
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:73
@@ -9393,7 +9442,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:84
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:75
 msgid "You can do this activity as many times as you want"
-msgstr ""
+msgstr "您可以自由遊玩此活動"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:89
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:76
@@ -9413,14 +9462,14 @@ msgstr "關閉"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:91
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:81
 msgid "Loading. Please wait..."
-msgstr ""
+msgstr "載入中，請稍候..."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:91
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:80
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:95
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:82
 msgid "points"
-msgstr ""
+msgstr "分"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:92
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:242
@@ -9448,7 +9497,7 @@ msgstr "音效"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:114
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:113
 msgid "Please provide the word definition or the valid URL of an image"
-msgstr ""
+msgstr "請提供單字的意思或圖片的網址"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:103
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:74
@@ -9457,7 +9506,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:115
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:114
 msgid "The selected file does not contain a valid game"
-msgstr ""
+msgstr "選取的檔案並未包含正確的遊戲內容"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:104
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:100
@@ -9465,21 +9514,21 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:116
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:115
 msgid "You must upload or indicate the valid URL of an image"
-msgstr ""
+msgstr "您必須上傳或是指定圖片的網址"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:101
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:117
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:116
 msgid "Please provide one word or phrase"
-msgstr ""
+msgstr "請輸入一個單字或片語"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:106
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:102
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:120
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:117
 msgid "Please provide at least one question"
-msgstr ""
+msgstr "請輸入至少一個問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:107
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1353
@@ -9487,21 +9536,21 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:121
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:118
 msgid "This video is not currently available"
-msgstr ""
+msgstr "目前無法觀看此影片"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:108
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:104
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:122
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:119
 msgid "You have to complete the question"
-msgstr ""
+msgstr "您必須回答此問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:109
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:105
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:123
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:120
 msgid "You have to complete all the selected options"
-msgstr ""
+msgstr "您必須完成所有選取的選項"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:110
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:106
@@ -9510,14 +9559,14 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:121
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:597
 msgid "Choose the right answer"
-msgstr ""
+msgstr "選取正確的答案"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:111
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:125
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:122
 msgid "Type the right URL of a Youtube video"
-msgstr ""
+msgstr "輸入 YouTube 影片的網址"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:108
@@ -9526,45 +9575,45 @@ msgstr ""
 msgid ""
 "You have to indicate the start and the end of the video that you want to "
 "show"
-msgstr ""
+msgstr "您必須指定您要顯示影片的起始與結束點"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:113
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:109
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:127
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:124
 msgid "The video end value must be higher than the start one"
-msgstr ""
+msgstr "影片的結束點必須晚於起始點"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:114
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:110
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:128
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:125
 msgid "You have to type a text in the editor"
-msgstr ""
+msgstr "您必須在編輯器中輸入文字"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:115
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:111
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:129
 msgid "The silence time is wrong. Check the video duration."
-msgstr ""
+msgstr "靜默時間不正確。請檢查影片的時間長短是否正確。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:116
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:130
 msgid "Please check all the answers in the right order"
-msgstr ""
+msgstr "請檢查所有的答案順序是否正確。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:117
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:112
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:131
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:128
 msgid "Please check the time format: hh:mm:ss"
-msgstr ""
+msgstr "請檢查時間格式，必須為：hh:mm:ss"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:118
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:113
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:134
 msgid "Message to display when passing the game"
-msgstr ""
+msgstr "完成遊戲時顯示的訊息"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:119
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:64
@@ -9594,7 +9643,7 @@ msgstr "一般設定"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:126
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:106
 msgid "Observe the letters, identify and fill in the missing words."
-msgstr ""
+msgstr "觀察字母，找出並填入遺漏的單字。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:131
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:59
@@ -9604,19 +9653,19 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:805
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:602
 msgid "Show minimized."
-msgstr ""
+msgstr "顯示已最小化。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:134
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:700
 msgid "Random questions"
-msgstr ""
+msgstr "隨機提問"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:137
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:704
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:824
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:608
 msgid "Custom messages"
-msgstr ""
+msgstr "自訂訊息"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:140
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:707
@@ -9624,14 +9673,14 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:830
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:611
 msgid "Show solutions"
-msgstr ""
+msgstr "顯示答案"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:141
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:708
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:831
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:612
 msgid "Show solution time (seconds)"
-msgstr ""
+msgstr "顯示解答時間（秒）"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:145
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:128
@@ -9648,7 +9697,7 @@ msgstr "區分大小寫"
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:617
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:625
 msgid "0 to 10"
-msgstr ""
+msgstr "0 到 10"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:152
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:159
@@ -9659,7 +9708,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:619
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:626
 msgid "Points and lives"
-msgstr ""
+msgstr "分數與生命數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:154
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:160
@@ -9670,7 +9719,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:621
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:627
 msgid "No score"
-msgstr ""
+msgstr "沒有分數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:158
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:724
@@ -9679,7 +9728,7 @@ msgstr ""
 msgid ""
 "No lives, 0 to 10 score, right/wrong answers counter... A more "
 "educational context."
-msgstr ""
+msgstr "沒有生命數，分數必須 0 到 10，正確/錯誤答案計數器... 以及教學內容。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:159
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:725
@@ -9688,7 +9737,7 @@ msgstr ""
 msgid ""
 "Just like a game: Try to get a high score (thousands of points) and not "
 "to loose your lives."
-msgstr ""
+msgstr "就像遊戲一樣：試著取得高分並避免失去生命。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:160
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:726
@@ -9697,35 +9746,35 @@ msgstr ""
 msgid ""
 "No score and no lives. You have to answer right to get some information "
 "(a feedback)."
-msgstr ""
+msgstr "沒有分數也沒有生命數。您必須回答正確以取得資訊（提示）。"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:164
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:730
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:853
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:631
 msgid "Use lives"
-msgstr ""
+msgstr "使用生命數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:165
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:731
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:854
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:632
 msgid "Number of lives"
-msgstr ""
+msgstr "生命數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:170
 msgid "&percnt; right to see the feedback"
-msgstr ""
+msgstr "&percnt; 的答案正確才能查看提示"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:178
 msgid "Words/Phrases"
-msgstr ""
+msgstr "單字/片語"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:183
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:751
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:883
 msgid "Multimedia Type"
-msgstr ""
+msgstr "多媒體型態"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:190
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:758
@@ -9742,12 +9791,12 @@ msgstr "影片"
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:47
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:704
 msgid "Time per question"
-msgstr ""
+msgstr "每個問題的時間"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:213
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:903
 msgid "Percentage of letters to show (%)"
-msgstr ""
+msgstr "顯示字母的百分比（%）"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:215
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:217
@@ -9767,7 +9816,7 @@ msgstr "影像網址"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:938
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1068
 msgid "Youtube URL"
-msgstr ""
+msgstr "YouTube 網址"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:232
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:807
@@ -9775,7 +9824,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:664
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:730
 msgid "Play video"
-msgstr ""
+msgstr "播放影片"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:236
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:94
@@ -9800,25 +9849,25 @@ msgstr "結束"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1071
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:666
 msgid "Start"
-msgstr "開始"
+msgstr "起始"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:239
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:818
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:951
 msgid "Silence"
-msgstr ""
+msgstr "靜默"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:239
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:820
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:953
 msgid "Time (s)"
-msgstr ""
+msgstr "時間（秒）"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:250
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:836
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:969
 msgid "Alternative text"
-msgstr ""
+msgstr "替代文字"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:264
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:269
@@ -9831,13 +9880,13 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:992
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:742
 msgid "No image"
-msgstr ""
+msgstr "沒有影像"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:275
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1020
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:772
 msgid "Word/Phrase"
-msgstr ""
+msgstr "單字/片語"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:276
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:530
@@ -9857,7 +9906,7 @@ msgstr "定義"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1026
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:778
 msgid "Hit"
-msgstr ""
+msgstr "答對數"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:291
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:317
@@ -9865,7 +9914,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1049
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:789
 msgid "Add question"
-msgstr ""
+msgstr "新增問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:292
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:318
@@ -9874,7 +9923,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:92
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:790
 msgid "First question"
-msgstr ""
+msgstr "第一個問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:293
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:319
@@ -9883,7 +9932,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:94
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:791
 msgid "Previous question"
-msgstr ""
+msgstr "前一個問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:294
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:320
@@ -9891,7 +9940,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1052
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:792
 msgid "Question number:"
-msgstr ""
+msgstr "問題編號："
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:295
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:321
@@ -9900,7 +9949,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:93
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:793
 msgid "Next question"
-msgstr ""
+msgstr "下一個問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:296
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:322
@@ -9909,28 +9958,28 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:95
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:794
 msgid "Last question"
-msgstr ""
+msgstr "最後一個問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:298
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:324
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:904
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1056
 msgid "Copy question"
-msgstr ""
+msgstr "複製問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:299
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:325
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:905
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1057
 msgid "Cut question"
-msgstr ""
+msgstr "剪下問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:300
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:326
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:906
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1058
 msgid "Paste question"
-msgstr ""
+msgstr "貼上問題"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:304
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:329
@@ -9938,7 +9987,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1080
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:798
 msgid "Number of questions:"
-msgstr ""
+msgstr "問題數量："
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1562
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:535
@@ -9947,16 +9996,16 @@ msgstr ""
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1562
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:1186
 msgid "Game"
-msgstr ""
+msgstr "遊戲"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:12
 #: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:37
 msgid "Lock"
-msgstr ""
+msgstr "鎖定"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:41
 msgid "Show activity"
-msgstr ""
+msgstr "顯示活動"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:52
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:167
@@ -9965,23 +10014,23 @@ msgstr "請寫下一些說明指示。"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:53
 msgid "Max time"
-msgstr ""
+msgstr "最長時間"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:54
 msgid "Please write the feedback."
-msgstr ""
+msgstr "請寫下提示。"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:61
 msgid "Error message"
-msgstr ""
+msgstr "答錯時的訊息"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:62
 msgid "Errors (number of attempts) to display the message"
-msgstr ""
+msgstr "答錯（並嘗試了數次後）要顯示的訊息"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:63
 msgid "Please write the error message."
-msgstr ""
+msgstr "請寫下答錯時的訊息。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:14
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:45
@@ -9989,103 +10038,103 @@ msgstr ""
 #: exe/webui/scripts/idevices/desafio-activity/export/desafio-activity.js:39
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:93
 msgid "Challenge"
-msgstr ""
+msgstr "挑戰"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:32
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:36
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:17
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:37
 msgid "Click here to start"
-msgstr ""
+msgstr "點擊此處以開始"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:47
 msgid "Trial"
-msgstr ""
+msgstr "嘗試"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:49
 msgid "Completed trials"
-msgstr ""
+msgstr "已完成的嘗試"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:50
 msgid "Starting time"
-msgstr ""
+msgstr "開始時間"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:51
 msgid "Read the instructions and click on a trial when you're ready to play."
-msgstr ""
+msgstr "閱讀說明並在準備好要玩的時候點擊「嘗試」。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:52
 msgid "You've completed all the trials! You can now complete the game."
-msgstr ""
+msgstr "您已完成所有的嘗試了！現在可以完成此遊戲了。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:53
 msgid "You made it! You can restart to play again."
-msgstr ""
+msgstr "您成功了！您可以重新開始再玩一次。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:54
 msgid "You solved the trial! Congratulations!"
-msgstr ""
+msgstr "您完成了嘗試！恭喜！"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:55
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:63
 msgid "Time Over. Please restart to try again."
-msgstr ""
+msgstr "時間到。請重新開始再試一次。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:56
 msgid "Sorry. Wrong solution."
-msgstr ""
+msgstr "抱歉，答案錯誤。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:57
 msgid "Sorry. The solution is wrong."
-msgstr ""
+msgstr "抱歉，答案錯誤。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:58
 msgid "You solved this trial! Please select another one."
-msgstr ""
+msgstr "您完成了嘗試！請選另一個來嘗試。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:59
 msgid "Restart the game and the starting time?"
-msgstr ""
+msgstr "要重新開始遊戲並重新計時嗎？"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:60
 msgid "You must complete all the trials to finish."
-msgstr ""
+msgstr "您必須完成所有的嘗試。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:61
 msgid "You already completed this trial."
-msgstr ""
+msgstr "您已經完成了此嘗試。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:62
 msgid "Complete the trial. Write the solution."
-msgstr ""
+msgstr "完成此嘗試，寫下正確答案。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:75
 msgid "Please write the challenge title."
-msgstr ""
+msgstr "請寫下挑戰的標題。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:76
 msgid "Please write the challenge description."
-msgstr ""
+msgstr "請寫下挑戰的描述。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:77
 msgid "Please write the challenge solution."
-msgstr ""
+msgstr "請寫下挑戰的解答。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:78
 msgid "Please add at least one trial."
-msgstr ""
+msgstr "請新增至少一個嘗試。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:79
 msgid "You can only add ten trials."
-msgstr ""
+msgstr "您只能增加十個嘗試。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:80
 msgid "Please write the title, description and solution of all the trials."
-msgstr ""
+msgstr "請寫下所有嘗試的標題、描述與解答。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:248
 msgid "Complete all the trials to finish the activity."
-msgstr ""
+msgstr "完成所有嘗試以結束此活動。"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:258
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:747
@@ -10093,11 +10142,11 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:88
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:657
 msgid "Questions"
-msgstr ""
+msgstr "問題"
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:264
 msgid "Trials"
-msgstr ""
+msgstr "嘗試"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:14
 msgid "Download source file"
@@ -10113,7 +10162,7 @@ msgstr "在新增下載連結到您的頁面之前，請先到「屬性」分頁
 msgid ""
 "Please don't forget to check the Properties tab: Title, language, "
 "license, author, description..."
-msgstr ""
+msgstr "請不要忘了檢查屬性分頁：標題、語言、授權條款、作者、描述..."
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:162
 msgid "General information about this educational resource"
@@ -10121,7 +10170,7 @@ msgstr "關於此教育資源的一般資訊"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:170
 msgid "'License'"
-msgstr ""
+msgstr "'授權條款'"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:172
 msgid ""
@@ -10259,11 +10308,11 @@ msgstr "從 www.geogebra.org 插入一個 GeoGebra 活動。它需要網路連�
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:63
 msgid "URL or identifier (ID)"
-msgstr ""
+msgstr "網址或代碼（ID）"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:64
 msgid "Load data"
-msgstr ""
+msgstr "載入資料"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:76
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:204
@@ -10295,12 +10344,12 @@ msgstr "儲存分數按鍵"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:102
 msgid "Do not include more than one activity with score per page."
-msgstr ""
+msgstr "每一頁不要包含超過一個帶有分數的活動。"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:277
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:445
 msgid "Provide a valid GeoGebra URL or activity ID."
-msgstr ""
+msgstr "請輸入一個 GeoGebra 的網址或活動代碼。"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:466
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:198
@@ -10413,7 +10462,8 @@ msgid "Add an image with description (alternative text)."
 msgstr "加上一張影像與描述（替代文字）。"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:42
-msgid "Write a question and some answers. Don't forget to choose the right one."
+msgid ""
+"Write a question and some answers. Don't forget to choose the right one."
 msgstr "寫下一個問題與一些答案。不要忘了指出正確的答案。"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:43
@@ -10483,7 +10533,7 @@ msgstr "清單"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:71
 msgid "Elements (in the right order)"
-msgstr ""
+msgstr "元素（以正確的順序）"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:74
 msgid "Please create a slide (frame) first."
@@ -10638,7 +10688,7 @@ msgstr "點擊 %s 可以許得影片目前的時間。"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:20
 msgid "Interactive Video"
-msgstr ""
+msgstr "互動式影片"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:34
 msgid "Slide (frame)"
@@ -10805,201 +10855,201 @@ msgstr "請填寫此欄位：%s。"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:14
 msgid "QuExt Activity"
-msgstr ""
+msgstr "QuExt 活動"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:39
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:30
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:43
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:38
 msgid "Click here for a new game"
-msgstr ""
+msgstr "點擊此處以開始新遊戲"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:75
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:742
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:86
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:865
 msgid "Video Intro"
-msgstr ""
+msgstr "影片介紹"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:78
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:90
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:80
 msgid "and information that will be very useful"
-msgstr ""
+msgstr "以及有用的資訊"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:82
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:96
 msgid "Please start playing first..."
-msgstr ""
+msgstr "請先開始播放..."
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:701
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:827
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:605
 msgid "Random options"
-msgstr ""
+msgstr "隨機排列選項"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:711
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:834
 msgid "Custom score"
-msgstr ""
+msgstr "自訂分數"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:742
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:918
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:865
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1070
 msgid "Play video intro"
-msgstr ""
+msgstr "播放影片介紹"
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:762
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:894
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:693
 msgid "Options Number"
-msgstr ""
+msgstr "選項編號"
 
 #: exe/webui/scripts/idevices/quext-activity/export/quext-activity.js:60
 msgid "QuExt"
-msgstr ""
+msgstr "QuExt"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:11
 #: exe/webui/scripts/idevices/rosco-activity/export/rosco-activity.js:47
 msgid "A-Z Quiz Game"
-msgstr ""
+msgstr "A-Z 的謎題遊戲"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:16
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:36
 msgid "Ready?"
-msgstr ""
+msgstr "準備好了嗎，孩子們？"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:24
 msgid "New word"
-msgstr ""
+msgstr "新的單字"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:25
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:118
 msgid "Starts with %1"
-msgstr ""
+msgstr "以 %1 開頭"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:26
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:119
 msgid "Contains letter %1"
-msgstr ""
+msgstr "包含字母 %1"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:27
 msgid "Move on to the next word"
-msgstr ""
+msgstr "前往下一個單字"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:28
 msgid "Provide a word"
-msgstr ""
+msgstr "輸入單字"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:35
 msgid "The information you were looking for"
-msgstr ""
+msgstr "您要找的資訊："
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:42
 msgid "One round"
-msgstr ""
+msgstr "一回合"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:43
 msgid "Two rounds"
-msgstr ""
+msgstr "兩回合"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:52
 msgid "Show word wheel"
-msgstr ""
+msgstr "顯示單字輪"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:53
 msgid "Hide word wheel"
-msgstr ""
+msgstr "隱藏單字輪"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:88
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:645
 msgid "%1 does not start with letter %2"
-msgstr ""
+msgstr "%1 並非以字母 %2 開頭"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:89
 msgid "%1 does not contain letter %2"
-msgstr ""
+msgstr "%1 並未包含字母 %2"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:94
 msgid "Please provide at least one word"
-msgstr ""
+msgstr "請提供至少一個單字"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:95
 msgid "You must provide the time to view the solution"
-msgstr ""
+msgstr "您必須提供顯示解答的時間"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:101
 #, python-format
 msgid ""
 "Provide a word and its definition. May toggle between: \"Word starts\" or"
 " \"Word contains\", by clicking on %s"
-msgstr ""
+msgstr "輸入一個單字與它的含義。可以點擊 %s 來切換「單字開頭」或「單字包含」兩個選項"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:102
 msgid "Starts with/Contains"
-msgstr ""
+msgstr "單字開頭/單字包含"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:114
 msgid "Game time (seconds)"
-msgstr ""
+msgstr "遊戲時間（秒）"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:118
 msgid "Number of rounds"
-msgstr ""
+msgstr "回合數"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:123
 msgid "Show solution in"
-msgstr ""
+msgstr "顯示解答時間："
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:125
 msgid "seconds"
-msgstr ""
+msgstr "秒"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:528
 msgid "Click here to toggle between Word starts with... and Word contains..."
-msgstr ""
+msgstr "點擊這裡在「單字開頭」與「單字包含」間切換..."
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:528
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:732
 msgid "The word starts with..."
-msgstr ""
+msgstr "單字開頭為..."
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:531
 msgid "Show/Hide image"
-msgstr ""
+msgstr "顯示/隱藏影像"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:531
 msgid "Select Image"
-msgstr ""
+msgstr "選擇影像"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:540
 msgid "Indicate a valid URL of an image or select one from your device"
-msgstr ""
+msgstr "輸入影像的網址，或從您的裝置中選取影像"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:550
 msgid "Indicate a valid URL of an audio or select one from your device"
-msgstr ""
+msgstr "輸入音效的網址，或從您的裝置中選取音效"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:551
 msgid "Play audio"
-msgstr ""
+msgstr "播放音效"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:552
 msgid "Hide image"
-msgstr ""
+msgstr "隱藏影像"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:733
 msgid "The word contains..."
-msgstr ""
+msgstr "單字包含..."
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:14
 msgid "Rubric"
-msgstr ""
+msgstr "評分綱領"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:25
 msgid "Notes"
-msgstr ""
+msgstr "備忘"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:28
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:111
@@ -11012,11 +11062,11 @@ msgstr "套用"
 msgid ""
 "Complete the table to define a scoring guide. Define the score or value "
 "of each descriptor."
-msgstr ""
+msgstr "將評分綱領填入此表格中。定義每個描述符的分數。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:137
 msgid "Learn how to apply a rubric"
-msgstr ""
+msgstr "學習如何套用評分綱領"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:207
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:569
@@ -11046,72 +11096,72 @@ msgstr "公共領域"
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:399
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:411
 msgid "Example rubric"
-msgstr ""
+msgstr "範例評分綱領"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:240
 msgid "Level"
-msgstr ""
+msgstr "等級"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:241
 msgid "Criteria"
-msgstr ""
+msgstr "條件"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:242
 msgid "Descriptor"
-msgstr ""
+msgstr "描述符"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:272
 msgid "Load CEDEC's rubrics (in Spanish)"
-msgstr ""
+msgstr "載入 CEDEC 的評分綱領（西班牙文）"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:281
 msgid "New rubric"
-msgstr ""
+msgstr "新增評分綱領"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:283
 msgid "New rubric: "
-msgstr ""
+msgstr "新綱領："
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:290
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:395
 msgid "Example rubrics"
-msgstr ""
+msgstr "範例評分綱領"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:311
 msgid "Please select a template"
-msgstr ""
+msgstr "請選擇一個範本"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:407
 msgid "CEDEC's rubrics"
-msgstr ""
+msgstr "CEDEC 的評分綱領"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:601
 msgid "Rubric use instructions (optional)"
-msgstr ""
+msgstr "評分綱領使用說明（選填）"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:612
 msgid "Maximum score:"
-msgstr ""
+msgstr "最大分數："
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:612
 msgid "The result of adding the scores of the first level."
-msgstr ""
+msgstr "第一等級分數加起來的結果。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:613
 msgid "New column"
-msgstr ""
+msgstr "新欄"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:614
 msgid "New row"
-msgstr ""
+msgstr "新列"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:628
 msgid "Rubric information"
-msgstr ""
+msgstr "綱領資訊"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:630
 msgid "Show rubric information"
-msgstr ""
+msgstr "顯示綱領資訊"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:632
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:921
@@ -11125,36 +11175,36 @@ msgstr "來源/作者連結"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:678
 msgid "Revert all changes? This can't be undone."
-msgstr ""
+msgstr "要拋棄所有變更嗎？這個動作無法回復。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:678
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:313
 msgid "Attention"
-msgstr ""
+msgstr "注意"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:773
 msgid "The rubric is empty..."
-msgstr ""
+msgstr "綱領是空白的..."
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:782
 msgid "Please write the rubric title."
-msgstr ""
+msgstr "請寫下綱領的標題。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:795
 msgid "Please write the level name in each column."
-msgstr ""
+msgstr "請在每欄寫下等級名稱。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:809
 msgid "Please write the criteria name in each row."
-msgstr ""
+msgstr "請在每列寫下條件名稱。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:825
 msgid "Please write all the criteria descriptors."
-msgstr ""
+msgstr "寫下所有條件的描述符。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:898
 msgid "Score (include a number)"
-msgstr ""
+msgstr "分數（包含數字）"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:905
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:705
@@ -11168,15 +11218,15 @@ msgstr "下"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:929
 msgid "Delete the row?"
-msgstr ""
+msgstr "­要刪除此列嗎？"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:971
 msgid "There should be at least one level."
-msgstr ""
+msgstr "至少要有一個等級。"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:975
 msgid "Delete the column?"
-msgstr ""
+msgstr "要刪除此欄嗎？"
 
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:15
 msgid "Scrambled List"
@@ -11208,32 +11258,32 @@ msgstr "請寫下錯誤時要顯示的文字。"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:14
 msgid "Select Activity"
-msgstr ""
+msgstr "選擇活動"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:15
 #: exe/webui/scripts/idevices/selecciona-activity/export/selecciona-activity.js:60
 msgid "Multiple Choice Quiz"
-msgstr ""
+msgstr "多重選擇題"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:89
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:79
 msgid "Rich Text"
-msgstr ""
+msgstr "Rich Text"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:92
 msgid "Please order the answers"
-msgstr ""
+msgstr "請將答案排序"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:132
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:90
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:129
 msgid "Please write the solution"
-msgstr ""
+msgstr "請寫下解答"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:133
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:130
 msgid "Please provide the word definition"
-msgstr ""
+msgstr "請提供單字的意思"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:135
 msgid "The question marked as next in case of success does not exist."
@@ -11245,46 +11295,46 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:800
 msgid "Choose the right answers and click on the Check button."
-msgstr ""
+msgstr "選擇正確的答案並按下檢查按鍵。"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:808
 msgid "Questions order"
-msgstr ""
+msgstr "問題順序"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:812
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:819
 msgid "Random"
-msgstr ""
+msgstr "隨機"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:814
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:820
 msgid "Tree"
-msgstr ""
+msgstr "樹狀"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:818
 msgid "Order defined by the author."
-msgstr ""
+msgstr "作者自訂順序。"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:819
 msgid "Different order each time you run the game."
-msgstr ""
+msgstr "每次都打亂順序。"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:820
 msgid "The questions will change depending on the answers."
-msgstr ""
+msgstr "問題會依答案而改變。"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:877
 msgid "Select"
-msgstr ""
+msgstr "選取"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:879
 msgid "Order"
-msgstr ""
+msgstr "排序"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1029
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1040
 msgid "Go to"
-msgstr ""
+msgstr "跳到"
 
 #: exe/webui/scripts/idevices/text/edition/text.js:96
 msgid "Please write some information."
@@ -11294,76 +11344,76 @@ msgstr "請寫下一些資訊。"
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:732
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:856
 msgid "Easier to read"
-msgstr ""
+msgstr "較易閱讀"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:53
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:117
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:734
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:858
 msgid "Visual aid"
-msgstr ""
+msgstr "視覺協助"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:63
 msgid "UDL Content"
-msgstr ""
+msgstr "UDL 內容"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:64
 msgid "UDL"
-msgstr ""
+msgstr "UDL"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:66
 msgid "Universal Design for Learning"
-msgstr ""
+msgstr "全方位課程設計（Universal Design for Learning, UDL）"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:74
 msgid "Download the source file"
-msgstr ""
+msgstr "下載原始檔"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:76
 msgid "Exercises"
-msgstr ""
+msgstr "練習題"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:77
 msgid "Write"
-msgstr ""
+msgstr "寫"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:78
 msgid "Listen"
-msgstr ""
+msgstr "聽"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:79
 msgid "Do it here"
-msgstr ""
+msgstr "在這裡做"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:158
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:292
 msgid "Record"
-msgstr ""
+msgstr "記錄"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:81
 msgid "Speak"
-msgstr ""
+msgstr "唸"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:82
 msgid "Read"
-msgstr ""
+msgstr "讀"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:84
 msgid "Guidance"
-msgstr ""
+msgstr "指南"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:86
 msgid "To get informed"
-msgstr ""
+msgstr "取得說明"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:87
 msgid "Think"
-msgstr ""
+msgstr "想"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:88
 msgid "Assessment rubric"
-msgstr ""
+msgstr "測驗評分綱領"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:90
 msgid "Timing"
@@ -11371,11 +11421,11 @@ msgstr "時程"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:91
 msgid "Work in group"
-msgstr ""
+msgstr "群組內工作"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:92
 msgid "More information"
-msgstr ""
+msgstr "更多資訊"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:95
 msgid "Trivia"
@@ -11383,11 +11433,11 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:96
 msgid "Cultural notes"
-msgstr ""
+msgstr "文化備忘"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:97
 msgid "Learn to learn"
-msgstr ""
+msgstr "學習如何學習"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:98
 msgid "Instrument practice"
@@ -11395,15 +11445,15 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:99
 msgid "Music"
-msgstr ""
+msgstr "音樂"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:100
 msgid "Mediation"
-msgstr ""
+msgstr "冥想"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:101
 msgid "Use your hands"
-msgstr ""
+msgstr "用您的手"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:102
 msgid "Sign language"
@@ -11411,59 +11461,59 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:103
 msgid "Homogeneous groups"
-msgstr ""
+msgstr "同質群組"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:104
 msgid "Heterogeneous groups"
-msgstr ""
+msgstr "異質群組"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:105
 msgid "Debate"
-msgstr ""
+msgstr "辯論"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:106
 msgid "Written text coproduction"
-msgstr ""
+msgstr "共同產生文章"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:107
 msgid "Oral text coproduction"
-msgstr ""
+msgstr "共同產生演講稿"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:108
 msgid "Digital competence"
-msgstr ""
+msgstr "數位競爭"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:109
 msgid "Singing"
-msgstr ""
+msgstr "簽署"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:110
 msgid "Semantic networks"
-msgstr ""
+msgstr "語意網路"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:111
 msgid "Easy read"
-msgstr ""
+msgstr "容易閱讀"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:113
 msgid "Grammar"
-msgstr ""
+msgstr "文法"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:114
 msgid "Vocabulary"
-msgstr ""
+msgstr "字彙"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:115
 msgid "Playback"
-msgstr ""
+msgstr "播放"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:116
 msgid "Phonetics"
-msgstr ""
+msgstr "語音學"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:215
 msgid "Double click or type to see suggestions"
-msgstr ""
+msgstr "雙擊或輸入來看建議"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:229
 msgid "Engagement"
@@ -11471,27 +11521,27 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:230
 msgid "Representation"
-msgstr ""
+msgstr "表達"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:231
 msgid "Action & Expression"
-msgstr ""
+msgstr "動作與表示"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:233
 msgid "New block"
-msgstr ""
+msgstr "新區塊"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:237
 msgid "About this iDevice"
-msgstr ""
+msgstr "關於此 iDevice"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:238
 msgid "Cofinanced by:"
-msgstr ""
+msgstr "共同出資："
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:311
 msgid "Delete block $? This can't be undone."
-msgstr ""
+msgstr "確定要刪除區塊 $ 嗎？這個動作無法復原。"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:702
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:24
@@ -11503,112 +11553,112 @@ msgstr "區塊"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:713
 msgid "Empty = No button"
-msgstr ""
+msgstr "空白表示沒有按鍵"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:715
 msgid "Presentation"
-msgstr ""
+msgstr "簡報"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:716
 msgid "Text button"
-msgstr ""
+msgstr "文字按鍵"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:717
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:718
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:719
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:720
 msgid "Character"
-msgstr ""
+msgstr "字元"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:724
 msgid "Accessible hidden content"
-msgstr ""
+msgstr "可存取隱藏內容"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:729
 msgid "Choose the content to edit:"
-msgstr ""
+msgstr "選擇要編輯的內容："
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:731
 msgid "Main content (required)"
-msgstr ""
+msgstr "主要內容（必填）"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:732
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:733
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:734
 msgid "Alternative content"
-msgstr ""
+msgstr "替代內容"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:900
 msgid "Please provide a main content for all the blocks."
-msgstr ""
+msgstr "請為所有區塊填入主要內容"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:85
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:649
 msgid "Pause video"
-msgstr ""
+msgstr "暫停播放影片"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:86
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:648
 msgid "Preview questions"
-msgstr ""
+msgstr "預覽問題"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:87
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:647
 msgid "Reload video"
-msgstr ""
+msgstr "重新載入影片"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:89
 msgid "Please write the answer or solution"
-msgstr ""
+msgstr "請寫下解答"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:96
 msgid "Question number"
-msgstr ""
+msgstr "問題編號"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:126
 msgid "That second is not part of the video. Please check the video duration."
-msgstr ""
+msgstr "提供的秒數不正確。請確認影片的長度。"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:127
 msgid "There is already a question in that second."
-msgstr ""
+msgstr "那個時間點已經輸入問題了。"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:131
 msgid "Write the message to be displayed when passing the game"
-msgstr ""
+msgstr "完成遊戲時顯示的訊息"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:132
 msgid "Please check the video length and the end time"
-msgstr ""
+msgstr "請檢查影片長度與結束時間"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:133
 msgid "Use a YouTube URL or select a file (mp4, ogg, webm, mp3, wav)"
-msgstr ""
+msgstr "輸入 YouTube 的網址，或選擇一個檔案（mp4, ogg, webm, mp3, wav）"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:134
 msgid "Games with local videos or audios can't be exported"
-msgstr ""
+msgstr "使用本地端影片或聲音檔的遊戲無法匯出"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:643
 msgid "Navigable"
-msgstr ""
+msgstr "可導覽"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:644
 msgid "Repeat question"
-msgstr ""
+msgstr "重覆問題"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:680
 msgid "Test"
-msgstr ""
+msgstr "測試"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:686
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:688
 msgid "Question point"
-msgstr ""
+msgstr "問題得分"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:729
 msgid "Preview question"
-msgstr ""
+msgstr "預覽問題"
 
 #: exe/webui/scripts/stylemanager.js:78
 msgid "Do you want to delete the selected style?"
@@ -11635,7 +11685,8 @@ msgid "Heading 2"
 msgstr "標頭 2"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr "目前您的瀏覽器並未支援，請改用鍵盤捷徑。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:6
@@ -12540,38 +12591,39 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:136
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:195
 msgid "Pause"
-msgstr ""
+msgstr "暫停"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:161
 msgid "Error: Media Recorder"
-msgstr ""
+msgstr "發生錯誤：媒體錄製器"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:239
 msgid "There is no audio input device connected."
-msgstr ""
+msgstr "音效裝置未連線。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:252
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:354
 msgid "Audio recorder"
-msgstr ""
+msgstr "聲音錄製器"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:266
 msgid "Audio input:"
-msgstr ""
+msgstr "聲音輸入："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:286
 msgid "Duration:"
-msgstr ""
+msgstr "期間："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:313
 msgid ""
 "JavaScript player (for old browsers or browsers that can't play that "
 "audio format)"
-msgstr ""
+msgstr "JavaScript 播放器（給瀏覽器版本太舊，或是無法播放該音效檔的瀏覽器使用）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:32
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:91
-msgid "Collapsible content panels for presenting information in a limited space."
+msgid ""
+"Collapsible content panels for presenting information in a limited space."
 msgstr "利用可折疊的控制區在有限的空間中，表現足夠的資訊。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:33
@@ -12732,7 +12784,8 @@ msgid "Don't forget to check the Accessibility tab."
 msgstr "別忘了檢查無障礙設定的分頁。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:277
-msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
+msgid ""
+"Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr "當使用者禁用JavaScript時，給予使用者一個警告。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:287
@@ -12843,94 +12896,94 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:168
 msgid "Crop and save"
-msgstr ""
+msgstr "裁剪並儲存"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:171
 msgid "Save without cropping"
-msgstr ""
+msgstr "不裁剪直接儲存"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:419
 #: exe/webui/tools/mindmaps/src/js/MainViewController.js:178
 msgid "Navigator"
-msgstr ""
+msgstr "導覽"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:3
 msgid "Open map"
-msgstr ""
+msgstr "開啟心智圖"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:4
 msgid "Select a json file."
-msgstr ""
+msgstr "請選擇一個 json 檔。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:5
 msgid "Save map"
-msgstr ""
+msgstr "儲存心智圖"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:6
 msgid "Save the mind map as a json file."
-msgstr ""
+msgstr "將心智圖存成 json 檔。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:9
 msgid "Text style"
-msgstr ""
+msgstr "文字樣式"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:11
 msgid "Line color"
-msgstr ""
+msgstr "線條顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:12
 msgid "Recursive"
-msgstr ""
+msgstr "遞迴"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:14
 msgid "It works with mindmaps"
-msgstr ""
+msgstr "可以在心智圖中使用"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:35
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:339
 #: exe/webui/tools/mindmaps/src/js/ToolBar.js:293
 msgid "Mind map"
-msgstr ""
+msgstr "心智圖"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:40
 msgid "Use the editor to create a new mind map..."
-msgstr ""
+msgstr "使用編輯器建立新的心智圖..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:58
 msgid "Open the mind map editor"
-msgstr ""
+msgstr "開啟心智圖編輯器"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:105
 msgid "Descriptive title"
-msgstr ""
+msgstr "標題"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:111
 msgid "Show the title under the image"
-msgstr ""
+msgstr "在影像下方顯示標題"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:119
 msgid "Link to full size image"
-msgstr ""
+msgstr "到完整影像的連結"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:154
 msgid "Please create a mind map."
-msgstr ""
+msgstr "請建立一個心智圖。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:163
 msgid "Please provide a title."
-msgstr ""
+msgstr "請輸入標題。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:251
 msgid "You can edit the mind map..."
-msgstr ""
+msgstr "您可以編輯此心智圖。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Back"
-msgstr ""
+msgstr "返回"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 msgid "Crop"
-msgstr ""
+msgstr "裁剪"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:88
 msgid "Please write the Content"
@@ -12959,25 +13012,25 @@ msgstr "請寫下對話框內容。您可以使用 HTML 並在編輯器中編輯
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:131
 msgid "Please select a programming language"
-msgstr ""
+msgstr "請選擇一個程式語言"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:293
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:513
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:532
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "以文字貼上 HTML 代碼"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:347
 msgid "Programming language"
-msgstr ""
+msgstr "程式語言"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:357
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "標記式語言（如 HTML 等）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:359
 msgid "C type"
-msgstr ""
+msgstr "C 語言型態"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:381
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
@@ -12996,17 +13049,17 @@ msgstr "深"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:409
 msgid "Line numbers"
-msgstr ""
+msgstr "行號"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:413
 msgid "Line highlight"
-msgstr ""
+msgstr "行突顯"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:480
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:525
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:540
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "貼上 HTML 代碼片段（嵌入代碼）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -13042,7 +13095,8 @@ msgid "Error (missing function):"
 msgstr "錯誤（函式遺失）："
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:460
-msgid "The image could not be created. Insert the code without alternative image?"
+msgid ""
+"The image could not be created. Insert the code without alternative image?"
 msgstr "無法建立影像。要加入程式碼而不加入替代影像嗎？"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:512
@@ -13483,35 +13537,35 @@ msgstr "3行"
 
 #: exe/webui/scripts/tinymce_4_settings.js:27
 msgid "Image (left) + Text (right)"
-msgstr ""
+msgstr "影像（左）+ 文字（右）"
 
 #: exe/webui/scripts/tinymce_4_settings.js:28
 msgid "Text (left) + Image (right)"
-msgstr ""
+msgstr "文字（左）+ 影像（右）"
 
 #: exe/webui/scripts/tinymce_4_settings.js:29
 msgid "Table with column headers"
-msgstr ""
+msgstr "帶有欄標題的表格"
 
 #: exe/webui/scripts/tinymce_4_settings.js:30
 msgid "Table with row headers"
-msgstr ""
+msgstr "帶有列標題的表格"
 
 #: exe/webui/scripts/tinymce_4_settings.js:31
 msgid "Table with column and row headers"
-msgstr ""
+msgstr "帶有列與欄標題的表格"
 
 #: exe/webui/scripts/tinymce_4_settings.js:32
 msgid "2 videos"
-msgstr ""
+msgstr "2 支影片"
 
 #: exe/webui/scripts/tinymce_4_settings.js:33
 msgid "2 images"
-msgstr ""
+msgstr "2 個影像"
 
 #: exe/webui/scripts/tinymce_4_settings.js:34
 msgid "3 images"
-msgstr ""
+msgstr "3 個影像"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:50
 #: exe/webui/scripts/tinymce_4_settings.js:211
@@ -13572,14 +13626,14 @@ msgstr "引用"
 
 #: exe/webui/scripts/tinymce_4_settings.js:224
 msgid "Highlighted text"
-msgstr ""
+msgstr "突顯的文字"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:114
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:310
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:67
 #: exe/webui/scripts/tinymce_4_settings.js:432
 msgid "Editor"
-msgstr "編輯者"
+msgstr "編輯器"
 
 #: exe/webui/sortblock.py:92
 msgid "Add Another Item to be Sorted"
@@ -13649,15 +13703,15 @@ msgstr "無法取得資料（核心錯誤）"
 #: exe/webui/stylemanagerpage.py:262
 #, python-format
 msgid "Files %s does not exist or are not readable."
-msgstr ""
+msgstr "檔案  %s 不存在或是無法讀取。"
 
 #: exe/webui/stylemanagerpage.py:269
 msgid "Wrong config.xml file format."
-msgstr ""
+msgstr "config.xml 檔格式錯誤。"
 
 #: exe/webui/stylemanagerpage.py:272
 msgid "An unknown error occurred while importing the style."
-msgstr ""
+msgstr "匯入樣式時發生無法判斷的錯誤。"
 
 #: exe/webui/stylemanagerpage.py:304
 msgid "Error while getting styles list from the repository"
@@ -14100,33 +14154,33 @@ msgstr "輸入16進制顏色值(#000000-#ffffff)："
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:7
 msgid "Drop image here or $browse...$"
-msgstr ""
+msgstr "將圖片拖到這裡或是 $browse...$"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:8
 msgid "Max width"
-msgstr ""
+msgstr "最大寬度"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:9
 msgid "Max height"
-msgstr ""
+msgstr "最大高度"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:12
 msgid "Quality"
-msgstr ""
+msgstr "品質"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:14
 msgid "Before"
-msgstr ""
+msgstr "之前："
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:15
 msgid "After"
-msgstr ""
+msgstr "之後："
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:17
 msgid ""
 "You just added that image. Save the iDevice or select the image again to "
 "update it."
-msgstr ""
+msgstr "您新增了影像。請儲存 iDevice 或是重新更新影像。"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:18
 msgid "$Save the current image$ before overwriting it."
@@ -14137,11 +14191,11 @@ msgstr ""
 #: exe/webui/tools/mindmaps/src/js/Command.js:115
 #: exe/webui/tools/mindmaps/src/js/Command.js:117
 msgid "Add"
-msgstr ""
+msgstr "新增"
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:52
 msgid "Welcome to mindmaps"
-msgstr ""
+msgstr "歡迎使用心智圖"
 
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:142
 #: exe/webui/tools/style-designer/langs/all.js:90
@@ -14154,7 +14208,7 @@ msgstr ""
 
 #: exe/webui/tools/mindmaps/src/js/MindMap.js:21
 msgid "Central Idea"
-msgstr ""
+msgstr "中心主題"
 
 #: exe/webui/tools/style-designer/js/app.js:1476
 msgid "Name the new style"
@@ -14611,4 +14665,3 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。請更新eXe並再試一次。"
-
