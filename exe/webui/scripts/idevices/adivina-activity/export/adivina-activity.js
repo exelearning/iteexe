@@ -191,6 +191,7 @@ var $eXeAdivina = {
         }
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
+        mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
             var p = mOptions.wordsGame[i];
             p.url = $eXeAdivina.extractURLGD(p.url);
@@ -241,10 +242,29 @@ var $eXeAdivina = {
                 }
             }
         });
+        mOptions.wordsGame=$eXeAdivina.getQuestions(mOptions.wordsGame, mOptions.percentajeQuestions);
         mOptions.numberQuestions = mOptions.wordsGame.length;
         return mOptions;
     },
-
+    getQuestions: function(questions,percentaje){
+        var mQuestions=questions;
+        if(percentaje<100){
+            var num=Math.round((percentaje*questions.length)/100);
+            num=num<1?1:num;
+            if(num<questions.length){
+                var array=[];
+                for(var i=0;i<questions.length;i++){
+                    array.push(i);
+                }
+                array=$eXeAdivina.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
+                mQuestions=[];
+                for (var i=0;i<array.length;i++){
+                    mQuestions.push(questions[array[i]]);
+                }
+            }
+        }
+        return mQuestions;
+    },
 
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeAdivina.options[instance];
@@ -334,7 +354,7 @@ var $eXeAdivina = {
                 <img src="' + path + 'adivinaHome.png" class="gameQP-Cover" id="adivinaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="adivinaVideo-' + instance + '"></div>\
                 <div class="gameQP-Protector" id="adivinaProtector-' + instance + '"></div>\
-                <a href="#" class="gameQP-LinkAudio" id="adivinaLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
+                <a href="#" class="gameQP-LinkAudio" id="adivinaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="adivinaGamerOver-' + instance + '">\
                         <div class="gameQP-DataImage">\
                             <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="adivinaHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
@@ -822,6 +842,7 @@ var $eXeAdivina = {
         $eXeAdivina.startVideo('', 0, 0, instance);
         $eXeAdivina.stopVideo(instance)
         $eXeAdivina.uptateTime(0, instance);
+        $eXeAdivina.stopSound(instance)
         $('#adivinaBtnReply-' + instance).hide();
         $('#adivinaBtnMoveOn-' + instance).hide();
         $('#adivinaEdAnswer-' + instance).hide();

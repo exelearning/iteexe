@@ -370,6 +370,7 @@ var $exeDevice = {
             $exeDevice.showPlayer();
             $('#vquextNumberQuestion').text($exeDevice.questionsGame.length);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
+            $exeDevice.updateQuestionsNumber();
         }
     },
     removeQuestion: function (num) {
@@ -384,6 +385,7 @@ var $exeDevice = {
             $exeDevice.showQuestion($exeDevice.active);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
             $('#vquextNumberQuestion').text($exeDevice.active + 1);
+            $exeDevice.updateQuestionsNumber();
         }
     },
     arrayMove: function (arr, oldIndex, newIndex) {
@@ -427,6 +429,17 @@ var $exeDevice = {
             $exeDevice.active = 0;
             $exeDevice.showQuestion($exeDevice.active);
         }
+    },
+    updateQuestionsNumber: function(){
+        var percentaje=parseInt($exeDevice.removeTags($('#vquextEPercentajeQuestions').val()));
+        if(isNaN(percentaje)){
+            return;
+        }
+        percentaje=percentaje<1?1:percentaje;
+        percentaje=percentaje>100?100:percentaje;
+        var num=Math.round((percentaje*$exeDevice.questionsGame.length)/100);
+        num=num==0?1:num;
+        $('#vquextENumeroPercentaje').text(num+_(':')+$exeDevice.questionsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
@@ -646,6 +659,10 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="vquextEAuthor">' + _("Author") + ': </label><input id="vquextEAuthor" type="text" />\
+                            </p>\
+                            <p>\
+                                <label for="vquextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="vquextEPercentajeQuestions" id="vquextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
+                                <span id="vquextENumeroPercentaje">1:1</span>\
                             </p>\
                         </div>\
                     </fieldset>\
@@ -934,6 +951,7 @@ var $exeDevice = {
         game.videoType = typeof game.videoType == "undefined" ? 0 : game.videoType;
         game.isNavigable = typeof game.isNavigable == "undefined" ? false : game.isNavigable;
         game.repeatQuestion = typeof game.repeatQuestion == "undefined" ? false : game.repeatQuestion;
+        game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions
         $('#vquextEShowMinimize').prop('checked', game.showMinimize);
         $('#vquextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#vquextEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -942,6 +960,7 @@ var $exeDevice = {
         $('#vquextEPauseVideo').prop('checked', game.pauseVideo);
         $('#vquextEUseLives').prop('checked', game.useLives);
         $('#vquextENumberLives').val(game.numberLives);
+        $('#vquextEPercentajeQuestions').val(game.percentajeQuestions || 100);
         $('#vquextEVideoIntro').val(game.idVideoQuExt);
         $('#vquextEShowSolution').prop('checked', game.showSolution);
         $('#vquextETimeShowSolution').val(game.timeShowSolution)
@@ -985,6 +1004,7 @@ var $exeDevice = {
             $('#vquextEVideo').show();
             $('#vquextEVideoLocal').hide();
         }
+        $exeDevice.updateQuestionsNumber();
     },
     updateGameMode: function (gamemode, feedback, useLives) {
         $("#vquextEUseLives").prop('disabled', true);
@@ -1261,7 +1281,9 @@ var $exeDevice = {
             isAudio = (validExtAudio.indexOf(extension) != -1) || ((idVideoQuExt.toLowerCase().indexOf("https://drive.google.com") == 0 && idVideoQuExt.toLowerCase().indexOf('sharing') != -1)),
             authorVideo = $('#vquextEAuthor').val(),
             isNavigable = $('#vquextENavigable').is(':checked'),
-            repeatQuestion = $('#vquextERepeatQuestion').is(':checked');
+            repeatQuestion = $('#vquextERepeatQuestion').is(':checked'),
+            percentajeQuestions=parseInt(clear($('#vquextEPercentajeQuestions').val()));
+
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -1355,7 +1377,8 @@ var $exeDevice = {
             'version': 2,
             'authorVideo': authorVideo,
             'isNavigable': isNavigable,
-            'repeatQuestion': repeatQuestion
+            'repeatQuestion': repeatQuestion,
+            'percentajeQuestions':percentajeQuestions
         }
         return data;
     },
@@ -1467,6 +1490,24 @@ var $exeDevice = {
             this.value = this.value.trim() == '' ? 3 : this.value;
             this.value = this.value > 5 ? 5 : this.value;
             this.value = this.value < 1 ? 1 : this.value;
+        });
+        $('#vquextEPercentajeQuestions').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 3);
+            this.value = v;
+            if(this.value>0 && this.value<101){
+                $exeDevice.updateQuestionsNumber();
+            }
+        });
+        $('#vquextEPercentajeQuestions').on('click', function () {
+            $exeDevice.updateQuestionsNumber();
+        });
+        $('#vquextEPercentajeQuestions').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 100 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 1 ? 1 : this.value;
+            $exeDevice.updateQuestionsNumber();
         });
         $('#vquextETimeShowSolution').on('keyup', function () {
             var v = this.value;

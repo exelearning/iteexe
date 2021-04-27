@@ -172,6 +172,10 @@ var $exeDevice = {
                             <p id="adivinaEFeedbackP" class="gameQE-EFeedbackP">\
                                 <textarea id="adivinaEFeedBackEditor" class="exe-html-editor"\></textarea>\
                             </p>\
+                            <p>\
+                                <label for="adivinaEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="adivinaEPercentajeQuestions" id="adivinaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
+                                <span id="adivinaENumeroPercentaje"> 1:1 </span>\
+                            </p>\
                          </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -343,7 +347,17 @@ var $exeDevice = {
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
     },
-
+    updateQuestionsNumber: function(){
+        var percentaje=parseInt($exeDevice.removeTags($('#adivinaEPercentajeQuestions').val()));
+        if(isNaN(percentaje)){
+            return;
+        }
+        percentaje=percentaje<1?1:percentaje;
+        percentaje=percentaje>100?100:percentaje;
+        var num=Math.round((percentaje*$exeDevice.wordsGame.length)/100);
+        num=num==0?1:num;
+        $('#adivinaENumeroPercentaje').text( num+":"+$exeDevice.wordsGame.length)
+    },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.wordsGame.length ? $exeDevice.wordsGame.length - 1 : num;
@@ -884,7 +898,8 @@ var $exeDevice = {
             feedBack = $('#adivinaEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#adivinaEPercentajeFB').val())),
             gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
-            customMessages = $('#adivinaECustomMessages').is(':checked');
+            customMessages = $('#adivinaECustomMessages').is(':checked'),
+            percentajeQuestions=parseInt(clear($('#adivinaEPercentajeQuestions').val()));
 
         if (showSolution && timeShowSolution.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
@@ -939,7 +954,8 @@ var $exeDevice = {
             'feedBack': feedBack,
             'percentajeFB': percentajeFB,
             'version': 2,
-            'customMessages': customMessages
+            'customMessages': customMessages,
+            'percentajeQuestions':percentajeQuestions
         }
         return data;
     },
@@ -1321,6 +1337,24 @@ var $exeDevice = {
             var messages = $(this).is(':checked');
             $exeDevice.showSelectOrder(messages);
         });
+        $('#adivinaEPercentajeQuestions').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 3);
+            this.value = v;
+            if(this.value>0 && this.value<101){
+                $exeDevice.updateQuestionsNumber();
+            }
+        });
+        $('#adivinaEPercentajeQuestions').on('click', function () {
+            $exeDevice.updateQuestionsNumber();
+        });
+        $('#adivinaEPercentajeQuestions').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 100 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 1 ? 1 : this.value;
+            $exeDevice.updateQuestionsNumber();
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     showSelectOrder: function (messages, custonmScore) {
@@ -1428,6 +1462,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#adivinaEPaste').hide();
             $('#adivinaENumQuestions').text($exeDevice.wordsGame.length);
+            $exeDevice.updateQuestionsNumber();
         }
     },
 
@@ -1444,6 +1479,7 @@ var $exeDevice = {
             $('#adivinaEPaste').hide();
             $('#adivinaENumQuestions').text($exeDevice.wordsGame.length);
             $('#adivinaENumberQuestion').text($exeDevice.active + 1);
+            $exeDevice.updateQuestionsNumber();
         }
 
     },
@@ -1487,6 +1523,7 @@ var $exeDevice = {
             $exeDevice.arrayMove($exeDevice.wordsGame, $exeDevice.numberCutCuestion, $exeDevice.active);
             $exeDevice.showQuestion($exeDevice.active);
             $('#adivinaENumQuestions').text($exeDevice.wordsGame.length);
+            $exeDevice.updateQuestionsNumber();
         }
     },
 
@@ -1535,6 +1572,7 @@ var $exeDevice = {
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         $exeDevice.timeQuestion = typeof game.timeQuestion != "undefined" ? game.timeQuestion : $exeDevice.timeQuestion;
         $exeDevice.percentageShow = typeof game.percentageShow != "undefined" ? game.percentageShow : $exeDevice.timeQuestion;
+        game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
         game.timeQuestion = $exeDevice.timeQuestion;
         game.percentageShow = $exeDevice.percentageShow;
         $('#adivinaEShowMinimize').prop('checked', game.showMinimize);
@@ -1551,9 +1589,11 @@ var $exeDevice = {
         $("#adivinaEUseLives").prop('disabled', game.gameMode == 0);
         $("#adivinaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
         $('#adivinaECustomMessages').prop('checked', game.customMessages);
+        $('#adivinaEPercentajeQuestions').val(game.percentajeQuestions);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
+        
         var version = typeof game.version == 'undefined' ? 0 : game.version;
         for (var i = 0; i < game.wordsGame.length; i++) {
             var p = game.wordsGame[i];
@@ -1583,6 +1623,7 @@ var $exeDevice = {
             $('#adivinaEFeedbackP').hide();
         }
         $('#adivinaEPercentajeFB').prop('disabled', !game.feedBack);
+        $exeDevice.updateQuestionsNumber();
     },
     exportGame: function () {
         var dataGame = this.validateData();

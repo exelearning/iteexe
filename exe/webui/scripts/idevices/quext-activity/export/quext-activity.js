@@ -262,7 +262,7 @@ var $eXeQuExt = {
                 <img src="' + path + 'quextHome.png" class="gameQP-Cover" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="quextVideo-' + instance + '"></div>\
                 <div class="gameQP-Protector" id="quextProtector-' + instance + '"></div>\
-                <a href="#" class="gameQP-LinkAudio" id="quextLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + "exequextaudio.png" + '" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
+                <a href="#" class="gameQP-LinkAudio" id="quextLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="quextGamerOver-' + instance + '">\
                         <div class="gameQP-DataImage">\
                             <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="quextHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
@@ -395,6 +395,8 @@ var $eXeQuExt = {
         mOptions.waitPlayIntro = false;
         mOptions.hasVideoIntro = false;
         mOptions.gameStarted = false;
+        mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
+
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             mOptions.questionsGame[i].audio = typeof mOptions.questionsGame[i].audio == 'undefined' ? '' : mOptions.questionsGame[i].audio
             mOptions.questionsGame[i].url = $eXeQuExt.extractURLGD(mOptions.questionsGame[i].url);
@@ -431,7 +433,7 @@ var $eXeQuExt = {
                 }
             }
         });
-
+        mOptions.questionsGame=$eXeQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             if (mOptions.customScore) {
                 mOptions.scoreTotal += mOptions.questionsGame[i].customScore;
@@ -443,6 +445,25 @@ var $eXeQuExt = {
         mOptions.questionsGame = mOptions.optionsRamdon ? $eXeQuExt.shuffleAds(mOptions.questionsGame) : mOptions.questionsGame;
         mOptions.numberQuestions = mOptions.questionsGame.length;
         return mOptions;
+    },
+    getQuestions: function(questions,percentaje){
+        var mQuestions=questions;
+        if(percentaje<100){
+            var num=Math.round((percentaje*questions.length)/100);
+            num=num<1?1:num;
+            if(num<questions.length){
+                var array=[];
+                for(var i=0;i<questions.length;i++){
+                    array.push(i);
+                }
+                array=$eXeQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
+                mQuestions=[];
+                for (var i=0;i<array.length;i++){
+                    mQuestions.push(questions[array[i]]);
+                }
+            }
+        }
+        return mQuestions;
     },
     preloadGame: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
@@ -1007,6 +1028,7 @@ var $eXeQuExt = {
         $('#quextLinkAudio-' + instance).hide();
         $eXeQuExt.startVideo('', 0, 0, instance);
         $eXeQuExt.stopVideo(instance);
+        $eXeQuExt.stopSound(instance);
         $('#quextImagen-' + instance).hide();
         $('#quextEText-' + instance).hide();
         $('#quextCursor-' + instance).hide();

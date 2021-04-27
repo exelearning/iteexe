@@ -295,7 +295,7 @@ var $eXeSelecciona = {
                 <img src="' + path + 'seleccionaHome.png" class="gameQP-Cover" id="seleccionaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="seleccionaVideo-' + instance + '"></div>\
                 <div class="gameQP-Protector" id="seleccionaProtector-' + instance + '"></div>\
-                <a href="#" class="gameQP-LinkAudio" id="seleccionaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + "exequextaudio.png" + '" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
+                <a href="#" class="gameQP-LinkAudio" id="seleccionaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="seleccionaGamerOver-' + instance + '">\
                         <div class="gameQP-DataImage">\
                             <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="seleccionaHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
@@ -420,6 +420,7 @@ var $eXeSelecciona = {
         mOptions.hasVideoIntro = false;
         mOptions.gameStarted = false;
         mOptions.scoreGame = 0;
+        mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
             mOptions.selectsGame[i].audio = typeof mOptions.selectsGame[i].audio == 'undefined' ? '' : mOptions.selectsGame[i].audio
             mOptions.selectsGame[i].hit = typeof mOptions.selectsGame[i].hit == "undefined" ? 0 : mOptions.selectsGame[i].hit;
@@ -439,9 +440,6 @@ var $eXeSelecciona = {
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.customMessages = typeof mOptions.customMessages != "undefined" ? mOptions.customMessages : false;
-        if (typeof mOptions.order == "undefined") {
-            mOptions.order = mOptions.optionsRamdon ? 1 : 0;
-        }
         mOptions.customMessages = mOptions.order == 2 ? true : mOptions.customMessages;
         mOptions.gameOver = false;
         imgsLink.each(function () {
@@ -463,6 +461,12 @@ var $eXeSelecciona = {
                 }
             }
         });
+        if (typeof mOptions.order == "undefined") {
+            mOptions.order = mOptions.optionsRamdon ? 1 : 0;
+        }
+        if(mOptions.order!=2){
+            mOptions.selectsGame=$eXeSelecciona.getQuestions(mOptions.selectsGame, mOptions.percentajeQuestions);
+        }
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
             if (mOptions.customScore || mOptions.order == 2) {
                 mOptions.scoreTotal += mOptions.selectsGame[i].customScore;
@@ -474,6 +478,25 @@ var $eXeSelecciona = {
         mOptions.selectsGame = mOptions.order == 1 ? $eXeSelecciona.shuffleAds(mOptions.selectsGame) : mOptions.selectsGame;
         mOptions.numberQuestions = mOptions.selectsGame.length;
         return mOptions;
+    },
+    getQuestions: function(questions,percentaje){
+        var mQuestions=questions;
+        if(percentaje<100){
+            var num=Math.round((percentaje*questions.length)/100);
+            num=num<1?1:num;
+            if(num<questions.length){
+                var array=[];
+                for(var i=0;i<questions.length;i++){
+                    array.push(i);
+                }
+                array=$eXeSelecciona.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
+                mQuestions=[];
+                for (var i=0;i<array.length;i++){
+                    mQuestions.push(questions[array[i]]);
+                }
+            }
+        }
+        return mQuestions;
     },
     isJsonString: function (str) {
         try {
@@ -1126,7 +1149,8 @@ var $eXeSelecciona = {
         $('#seleccionaVideo-' + instance).hide();
         $('#seleccionaLinkAudio-' + instance).hide();
         $eXeSelecciona.startVideo('', 0, 0, instance);
-        $eXeSelecciona.stopVideo(instance)
+        $eXeSelecciona.stopVideo(instance);
+        $eXeSelecciona.stopSound(instance);
         $('#seleccionaImagen-' + instance).hide();
         $('#seleccionaEText-' + instance).hide();
         $('#seleccionaCursor-' + instance).hide();

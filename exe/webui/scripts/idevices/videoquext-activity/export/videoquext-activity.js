@@ -195,6 +195,28 @@ var $eXeVideoQuExt = {
             $exe.loadScript(math);
         }
     },
+        getQuestions: function(questions,percentaje){
+        console.log(percentaje, 'percentaje');
+        var num=questions.length;
+        var mQuestions=questions;
+        if(percentaje<100){
+            num=Math.round((percentaje*questions.length)/100);
+            num=num<1?1:num;
+            console.log(num,'num');
+            if(num<questions.length){
+                var array=[];
+                for(var i=0;i<questions.length;i++){
+                    array.push(i);
+                }
+                array=$eXeVideoQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
+                mQuestions=[];
+                for (var i=0;i<array.length;i++){
+                    mQuestions.push(questions[array[i]]);
+                }
+            }
+        }
+        return mQuestions;
+    },
     loadMathJax: function () {
         var tag = document.createElement('script');
         //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
@@ -465,6 +487,7 @@ var $eXeVideoQuExt = {
         mOptions.waitStart = false;
         mOptions.videoLocal = videoLocal;
         mOptions.questionAnswer = false;
+        mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
         mOptions.gameMode = typeof mOptions.gameMode != 'undefined' ? mOptions.gameMode : 0;
         mOptions.authorVideo = typeof mOptions.authorVideo != 'undefined' ? mOptions.authorVideo : "";
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
@@ -476,6 +499,8 @@ var $eXeVideoQuExt = {
         mOptions.gameStarted = false;
         mOptions.scoreGame = 0;
         mOptions.scoreTotal = 0;
+        mOptions.questionsGame=$eXeVideoQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
+        mOptions.numberQuestions = mOptions.questionsGame.length;
         if (mOptions.videoType > 0) {
             mOptions.idVideoQuExt = mOptions.videoLocal;
         } else {
@@ -489,8 +514,27 @@ var $eXeVideoQuExt = {
                 mOptions.scoreTotal += mOptions.questionsGame[i].customScore
             }
         }
-        mOptions.numberQuestions = mOptions.questionsGame.length;
         return mOptions;
+    },
+    getQuestions: function(questions,percentaje){
+         var num=questions.length;
+        var mQuestions=questions;
+        if(percentaje<100){
+            num=Math.round((percentaje*questions.length)/100);
+            num=num<1?1:num;
+            if(num<questions.length){
+                var array=[];
+                for(var i=0;i<questions.length;i++){
+                    array.push(i);
+                }
+                array=$eXeVideoQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
+                mQuestions=[];
+                for (var i=0;i<array.length;i++){
+                    mQuestions.push(questions[array[i]]);
+                }
+            }
+        }
+        return mQuestions;
     },
     isJsonString: function (str) {
         try {
