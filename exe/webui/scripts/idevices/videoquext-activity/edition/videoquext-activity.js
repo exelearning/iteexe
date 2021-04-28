@@ -336,7 +336,6 @@ var $exeDevice = {
                 }
             }
         }
-
     },
     updateTimerDisplayLocal: function () {
         if ($exeDevice.videoType > 0) {
@@ -352,7 +351,6 @@ var $exeDevice = {
                 }
             }
         }
-
     },
     updateProgressBarLocal: function () {
         if ($exeDevice.localPlayer) {
@@ -439,7 +437,7 @@ var $exeDevice = {
         percentaje=percentaje>100?100:percentaje;
         var num=Math.round((percentaje*$exeDevice.questionsGame.length)/100);
         num=num==0?1:num;
-        $('#vquextENumeroPercentaje').text(num+_(':')+$exeDevice.questionsGame.length)
+        $('#vquextENumeroPercentaje').text(num+"/"+$exeDevice.questionsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
@@ -662,7 +660,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="vquextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="vquextEPercentajeQuestions" id="vquextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
-                                <span id="vquextENumeroPercentaje">1:1</span>\
+                                <span id="vquextENumeroPercentaje">1/1</span>\
                             </p>\
                         </div>\
                     </fieldset>\

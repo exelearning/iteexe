@@ -423,7 +423,7 @@ var $exeDevice = {
         percentaje=percentaje>100?100:percentaje;
         var num=Math.round((percentaje*$exeDevice.questionsGame.length)/100);
         num=num==0?1:num;
-        $('#quextENumeroPercentaje').text(num+_(':')+$exeDevice.questionsGame.length)
+        $('#quextENumeroPercentaje').text(num+"/"+$exeDevice.questionsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
@@ -789,7 +789,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="quextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="quextEPercentajeQuestions" id="quextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
-                                <span id="quextENumeroPercentaje"> 1:1</span>\
+                                <span id="quextENumeroPercentaje">1/1</span>\
                              </p>\
                         </div>\
                     </fieldset>\

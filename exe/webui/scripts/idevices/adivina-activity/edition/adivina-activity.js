@@ -174,7 +174,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="adivinaEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="adivinaEPercentajeQuestions" id="adivinaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
-                                <span id="adivinaENumeroPercentaje"> 1:1 </span>\
+                                <span id="adivinaENumeroPercentaje">1/1</span>\
                             </p>\
                          </div>\
                     </fieldset>\
@@ -356,7 +356,7 @@ var $exeDevice = {
         percentaje=percentaje>100?100:percentaje;
         var num=Math.round((percentaje*$exeDevice.wordsGame.length)/100);
         num=num==0?1:num;
-        $('#adivinaENumeroPercentaje').text( num+":"+$exeDevice.wordsGame.length)
+        $('#adivinaENumeroPercentaje').text( num+"/"+$exeDevice.wordsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
