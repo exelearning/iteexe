@@ -66,7 +66,8 @@ var $exeDevice = {
 		"msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
 		"msgFullScreen": _("Full Screen"),
 		"msgExitFullScreen": _("Exit Full Screen"),
-		"msgMoveOne": _("Move on")
+		"msgMoveOne": _("Move on"),
+		"msgAudio": _("Audio")
 	},
 	colors: {
 		black: "#1c1b1b",

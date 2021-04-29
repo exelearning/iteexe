@@ -320,6 +320,7 @@ var $exeDevice = {
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
             $('#quextENumberQuestion').text($exeDevice.questionsGame.length);
+            $exeDevice.updateQuestionsNumber();
         }
     },
     removeQuestion: function () {
@@ -336,6 +337,7 @@ var $exeDevice = {
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
             $('#quextENumberQuestion').text($exeDevice.active + 1);
+            $exeDevice.updateQuestionsNumber();
         }
 
     },
@@ -376,6 +378,7 @@ var $exeDevice = {
             $exeDevice.arrayMove($exeDevice.questionsGame, $exeDevice.numberCutCuestion, $exeDevice.active);
             $exeDevice.showQuestion($exeDevice.active);
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
+            $exeDevice.updateQuestionsNumber();
         }
     },
     nextQuestion: function () {
@@ -410,6 +413,17 @@ var $exeDevice = {
                 $exeDevice.showQuestion($exeDevice.active);
             }
         }
+    },
+    updateQuestionsNumber: function(){
+        var percentaje=parseInt($exeDevice.removeTags($('#quextEPercentajeQuestions').val()));
+        if(isNaN(percentaje)){
+            return;
+        }
+        percentaje=percentaje<1?1:percentaje;
+        percentaje=percentaje>100?100:percentaje;
+        var num=Math.round((percentaje*$exeDevice.questionsGame.length)/100);
+        num=num==0?1:num;
+        $('#quextENumeroPercentaje').text(num+"/"+$exeDevice.questionsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
@@ -773,6 +787,10 @@ var $exeDevice = {
                             <p class="gameQE-Flex">\
                                 <label for="quextEVideoIntro">' + _("Video Intro") + ':</label><input type="text" id="quextEVideoIntro" /><a href="#" class="gameQE-ButtonLink" id="quextEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="Play" class="gameQE-EButtonImage" /></a>\
                             </p>\
+                            <p>\
+                                <label for="quextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="quextEPercentajeQuestions" id="quextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
+                                <span id="quextENumeroPercentaje">1/1</span>\
+                             </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -1163,6 +1181,7 @@ var $exeDevice = {
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
+        game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
         $('#quextEShowMinimize').prop('checked', game.showMinimize);
         $('#quextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#quextEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -1182,6 +1201,7 @@ var $exeDevice = {
         $("#quextEUseLives").prop('disabled', game.gameMode == 0);
         $("#quextENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
         $('#quextECustomMessages').prop('checked', game.customMessages);
+        $('#quextEPercentajeQuestions').val(game.percentajeQuestions);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
         for (var i = 0; i < game.questionsGame.length; i++) {
@@ -1200,6 +1220,7 @@ var $exeDevice = {
         }
         $('#quextEPercentajeFB').prop('disabled', !game.feedBack);
         $exeDevice.questionsGame = game.questionsGame;
+        $exeDevice.updateQuestionsNumber();
         $exeDevice.showQuestion($exeDevice.active);
 
     },
@@ -1483,7 +1504,8 @@ var $exeDevice = {
             feedBack = $('#quextEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#quextEPercentajeFB').val())),
             gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
-            customMessages = $('#quextECustomMessages').is(':checked');
+            customMessages = $('#quextECustomMessages').is(':checked'),
+            percentajeQuestions=parseInt(clear($('#quextEPercentajeQuestions').val()));
         if (!itinerary) return false;
 
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
@@ -1566,7 +1588,8 @@ var $exeDevice = {
             'feedBack': feedBack,
             'percentajeFB': percentajeFB,
             'version': 2,
-            'customMessages': customMessages
+            'customMessages': customMessages,
+            'percentajeQuestions':percentajeQuestions
         }
         return data;
     },
@@ -1965,6 +1988,24 @@ var $exeDevice = {
         $('#quextECustomMessages').on('change', function () {
             var messages = $(this).is(':checked');
             $exeDevice.showSelectOrder(messages);
+        });
+        $('#quextEPercentajeQuestions').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 3);
+            this.value = v;
+            if(this.value>0 && this.value<101){
+                $exeDevice.updateQuestionsNumber();
+            }
+        });
+        $('#quextEPercentajeQuestions').on('click', function () {
+            $exeDevice.updateQuestionsNumber();
+        });
+        $('#quextEPercentajeQuestions').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 100 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 1 ? 1 : this.value;
+            $exeDevice.updateQuestionsNumber();
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 

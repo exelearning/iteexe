@@ -263,7 +263,7 @@ var $eXeRosco = {
 						<img src="' + path + 'exequextcursor.gif" class="rosco-Cursor" alt="" id="roscoCursor-' + instance + '"/> \
 						<img src="" class="rosco-Image" alt="' + msgs.msgNoImage + '" id="roscoHomeImage-' + instance + '"/> \
 						<img src="' + path + 'roscoHome.png" class="rosco-NoImage" alt="' + msgs.msgNoImage + '" id="roscoNoImage-' + instance + '"/> \
-						<a href="#" class="rosco-LinkAudio" id="roscoLinkAudio-' + instance + '" title="' + msgs.Audio + '"><img src="' + path + "exequextaudio.png" + '" alt="' + msgs.msgAudio + '"></a>\
+						<a href="#" class="rosco-LinkAudio" id="roscoLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" alt="' + msgs.msgAudio + '"></a>\
 					</div>\
 					<div class="rosco-AuthorLicence" id="roscoAutorLicence-' + instance + '">\
 						<div class="sr-av">' + msgs.msgAuthor + ':</div>\

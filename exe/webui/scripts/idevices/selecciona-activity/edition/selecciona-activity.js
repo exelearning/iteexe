@@ -94,7 +94,8 @@ var $exeDevice = {
         "msgIndicateWord": _("Provide a word or phrase"),
         "msgMoveOne": _("Move on"),
         "msgPoints": _("points"),
-        "msgEndGameScore": _("Please start playing first...")
+        "msgEndGameScore": _("Please start playing first..."),
+        "msgAudio":_("Audio")
     },
 
     init: function () {
@@ -491,7 +492,19 @@ var $exeDevice = {
             }));
         }
         $('#seleccionaGotoIncorrect').val($exeDevice.selectsGame[$exeDevice.active].error);
+        $exeDevice.updateQuestionsNumber();
 
+    },
+    updateQuestionsNumber: function(){
+        var percentaje=parseInt($exeDevice.removeTags($('#seleccionaEPercentajeQuestions').val()));
+        if(isNaN(percentaje)){
+            return;
+        }
+        percentaje=percentaje<1?1:percentaje;
+        percentaje=percentaje>100?100:percentaje;
+        var num=Math.round((percentaje*$exeDevice.selectsGame.length)/100);
+        num=num==0?1:num;
+        $('#seleccionaENumeroPercentaje').text( num+"/"+$exeDevice.selectsGame.length);
     },
     showQuestion: function (i) {
         $exeDevice.clearQuestion();
@@ -900,6 +913,10 @@ var $exeDevice = {
                                 </p>\
                                 <p class="gameQE-Flex">\
                                     <label for="seleccionaEVideoIntro">' + _("Video Intro") + ':</label><input type="text" id="seleccionaEVideoIntro" /><a href="#" class="gameQE-ButtonLink" id="seleccionaEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="Play" class="gameQE-EButtonImage" /></a>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="seleccionaEPercentajeQuestions" id="seleccionaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
+                                    <span id="seleccionaENumeroPercentaje">1/1</span>\
                                 </p>\
                         </div>\
                     </fieldset>\
@@ -1323,6 +1340,8 @@ var $exeDevice = {
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customScore = typeof game.customScore == "undefined" ? false : game.customScore;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
+        game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
+
         if (typeof game.order == "undefined") {
             game.order = game.optionsRamdon ? 1 : 0;
         }
@@ -1340,6 +1359,7 @@ var $exeDevice = {
         $('#seleccionaEVIStart').val($exeDevice.secondsToHour(game.startVideo));
         $('#seleccionaECustomScore').prop('checked', game.customScore);
         $('#seleccionaECustomScore').prop('disabled', game.order == 2);
+        $('#seleccionaEPercentajeQuestions').prop('disabled', game.order == 2);
         $('#seleccionaECustomMessages').prop('checked', game.customMessages);
         $('#seleccionaECustomMessages').prop('disabled', game.order == 2);
         $('#seleccionaEScoreQuestionDiv').hide();
@@ -1349,6 +1369,8 @@ var $exeDevice = {
         $("input.gameQE-TypeOrder[name='slcgameorder'][value='" + game.order + "']").prop("checked", true);
         $("#seleccionaEUseLives").prop('disabled', game.gameMode == 0);
         $("#seleccionaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
+        $('#seleccionaEPercentajeQuestions').val(game.percentajeQuestions);
+
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.order, game.customMessages, game.customScore);
         for (var i = 0; i < game.selectsGame.length; i++) {
@@ -1430,7 +1452,6 @@ var $exeDevice = {
         }
         html += '<div class="selecciona-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
-        
         return html;
     },
     Encrypt: function (str) {
@@ -1677,7 +1698,9 @@ var $exeDevice = {
             feedBack = $('#seleccionaEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#seleccionaEPercentajeFB').val())),
             gameMode = parseInt($('input[name=slcgamemode]:checked').val()),
-            order = parseInt($('input[name=slcgameorder]:checked').val());
+            order = parseInt($('input[name=slcgameorder]:checked').val()),
+            percentajeQuestions=parseInt(clear($('#seleccionaEPercentajeQuestions').val()));
+
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -1767,7 +1790,8 @@ var $exeDevice = {
             'percentajeFB': percentajeFB,
             'order': order,
             'customMessages': customMessages,
-            'version': 3
+            'version': 3,
+            'percentajeQuestions':percentajeQuestions
         }
         return data;
     },
@@ -2237,9 +2261,24 @@ var $exeDevice = {
             $("#seleccionaEOrderHelp").toggle();
             return false;
         });
-
-
-        
+        $('#seleccionaEPercentajeQuestions').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 3);
+            this.value = v;
+            if(this.value>0 && this.value<101){
+                $exeDevice.updateQuestionsNumber();
+            }
+        });
+        $('#seleccionaEPercentajeQuestions').on('click', function () {
+            $exeDevice.updateQuestionsNumber();
+        });
+        $('#seleccionaEPercentajeQuestions').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 100 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 1 ? 1 : this.value;
+            $exeDevice.updateQuestionsNumber();
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     showSelectOrder: function (type, messages, custonmScore) {
@@ -2249,6 +2288,7 @@ var $exeDevice = {
             $('.gameQE-EOrders').slideUp();
         }
         $('#seleccionaECustomMessages').prop('disabled', type == 2);
+        $('#seleccionaEPercentajeQuestions').prop('disabled', type == 2);
         if (type == 2) {
             $('#seleccionaGotoCorrect').show();
             $('#seleccionaGotoIncorrect').show();
