@@ -56,6 +56,7 @@ intef-exe (3:2.6~beta) lucid; urgency=medium
     - New complete French translation, by Jesús Miguel Domínguez.
     - New complete Italian translation, by Andrea Primiani.
     - New complete Greek translation, by Yannis Kaskamanidis.
+    - New Traditional Chinese translation, by Franklin Weng.
     - New translation to Dzongkha, by Tandin Penjor.
 
  -- eXeLearning <admin@exelearning.net>  Fri, 28 Mar 2021 11:15:00 +0200
