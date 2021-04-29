@@ -238,7 +238,7 @@ var $UDLcontentIdevice = {
 				c = c.split(" ");
 				c = c[c.length-1];
 				c = c.replace("udl-character-","");
-			if (c==1 || c==2 || c==3) {
+			if (c==1 || c==2 || c==3 || c==4) {
 				// Image names (characters)
 				var characters = [
 					"",
