@@ -101,7 +101,7 @@ var $exeDevice = {
 	createForm: function () {
 		var path = this.iDevicePath,
 			wordInstructions = _('Provide a word and its definition. May toggle between: "Word starts" or "Word contains", by clicking on %s');
-		wordInstructions = wordInstructions.replace("%s", '<img src="' + path + "roscoIcoStart.png" + '" alt="' + _("Starts with/Contains") + '" title="' + _("Starts with/Contains") + '" />')
+		wordInstructions = wordInstructions.replace("%s", '<img src="' + path + 'roscoIcoStart.png" alt="' + _("Starts with/Contains") + '" title="' + _("Starts with/Contains") + '" />')
 		var html = '\
 			<div id="roscoIdeviceForm">\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
@@ -542,10 +542,10 @@ var $exeDevice = {
 				<div class="roscoWordMutimediaEdition">\
 					<div class="roscoFileWordEdition">\
 						<h3 class="roscoLetterEdition">' + mLetter + '</h3>\
-						<a href="#" class="roscoLinkStart" title="' + _("Click here to toggle between Word starts with... and Word contains...") + '"><img src="' + path + "roscoStart.png" + '" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
+						<a href="#" class="roscoLinkStart" title="' + _("Click here to toggle between Word starts with... and Word contains...") + '"><img src="' + path + 'roscoStart.png" alt="' + _("The word starts with...") + '" class="roscoStartEdition"/></a>\
 						<label class="sr-av">' + _("Word") + ': </label><input type="text" class="roscoWordEdition" placeholder="' + _("Word") + '">\
 						<label class="sr-av">' + _("Definition") + ': </label><input type="text" class="roscoDefinitionEdition" placeholder="' + _("Definition") + '">\
-						<a href="#" class="roscoLinkSelectImage" title="' + _("Show/Hide image") + '"><img src="' + path + "roscoSelectImageInactive.png" + '" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
+						<a href="#" class="roscoLinkSelectImage" title="' + _("Show/Hide image") + '"><img src="' + path + 'roscoSelectImageInactive.png" alt="' + _("Select Image") + '" class="roscoSelectImageEdition"/></a>\
 					</div>\
 					<div class="roscoImageBarEdition">\
 						<div class="roscoImageEdition">\
@@ -565,8 +565,8 @@ var $exeDevice = {
 						<div class="roscoAudioDiv">\
 							<label for="roscoEURLAudio' + letter + '">' + _("Audio") + ': </label>\
 							<input type="text" class="exe-file-picker roscoURLAudioEdition"  id="roscoEURLAudio' + letter + '"  placeholder="' + _("Indicate a valid URL of an audio or select one from your device") + '"/>\
-							<a href="#" class="roscoPlayAudio" title="' + _("Audio") + '" id="roscoPlayAudio' + letter + '" ><img src="' + path + "quextIEPlay.png" + '" alt="' + _("Play audio") + '" class="roscoIconoPlayAudio"/></a>\
-							<a href="#" class="roscoLinkClose" title="' + _("Hide image") + '"><img src="' + path + "roscoClose.png" + '" alt="' + _("Minimize") + '" class="roscoCloseImage"/></a>\
+							<a href="#" class="roscoPlayAudio" title="' + _("Play audio") + '" id="roscoPlayAudio' + letter + '" ><img src="' + path + 'quextIEPlay.png" alt="' + _("Play audio") + '" class="roscoIconoPlayAudio"/></a>\
+							<a href="#" class="roscoLinkClose" title="' + _("Hide image") + '"><img src="' + path + 'roscoClose.png" alt="' + _("Minimize") + '" class="roscoCloseImage"/></a>\
 						</div>\
 						<hr class="roscoSeparation"/>\
 					</div>\

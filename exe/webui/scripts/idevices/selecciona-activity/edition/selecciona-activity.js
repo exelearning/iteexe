@@ -855,7 +855,7 @@ var $exeDevice = {
                                     <label for="seleccionaEShowMinimize"><input type="checkbox" id="seleccionaEShowMinimize">' + _("Show minimized.") + '</label>\
                                 </p>\
                                 <p>\
-                                    <strong class="GameModeLabel"><a href="#seleccionaEOrderHelp" id="seleccionaEOrderHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Questions order") + ':</strong>\
+                                    <strong class="GameModeLabel"><a href="#seleccionaEOrderHelp" id="seleccionaEOrderHelpLnk" class="GameModeHelpLink" title="' + _('Help') + '"><img src="' + path + 'quextIEHelp.gif" width="16" height="16" alt="'+ _('Help') + '"/></a> ' + _("Questions order") + ':</strong>\
                                      <input class="gameQE-TypeOrder" checked="checked" id="seleccionaEOrderLinear" type="radio" name="slcgameorder" value="0" />\
                                     <label for="seleccionaEOrderLinear">' + _("Default") + '</label>\
                                     <input class="gameQE-TypeOrder"  id="seleccionaEOrderRamdon" type="radio" name="slcgameorder" value="1" />\
@@ -884,10 +884,10 @@ var $exeDevice = {
                                     <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
                                 </p>\
                                 <p>\
-                                <strong class="GameModeLabel"><a href="#seleccionaEGameModeHelp" id="seleccionaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + "quextIEHelp.gif" + '"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
-                                    <input class="gameQE-TypeGame" checked="checked id="seleccionaETypeActivity" type="radio" name="slcgamemode" value="1" />\
+                                <strong class="GameModeLabel"><a href="#seleccionaEGameModeHelp" id="seleccionaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + 'quextIEHelp.gif" width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
+                                    <input class="gameQE-TypeGame" checked="checked" id="seleccionaETypeActivity" type="radio" name="slcgamemode" value="1" />\
                                     <label for="seleccionaETypeActivity">' + _("0 to 10") + '</label>\
-                                    <input class="gameQE-TypeGame" " id="seleccionaEGameMode" type="radio" name="slcgamemode" value="0" />\
+                                    <input class="gameQE-TypeGame" id="seleccionaEGameMode" type="radio" name="slcgamemode" value="0" />\
                                     <label for="seleccionaEGameMode">' + _("Points and lives") + '</label>\
                                     <input class="gameQE-TypeGame"  id="seleccionaETypeReto" type="radio" name="slcgamemode" value="2" />\
                                     <label for="seleccionaETypeReto">' + _("No score") + '</label>\
@@ -906,13 +906,13 @@ var $exeDevice = {
                                 </p>\
                                 <p>\
                                     <label for="seleccionaEHasFeedBack"><input type="checkbox"  id="seleccionaEHasFeedBack"> ' + _("Feedback") + ': </label> \
-                                    <input type="number" name="seleccionaEPercentajeFB" id="seleccionaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> </label>\
+                                    <label for="seleccionaEPercentajeFB"><input type="number" name="seleccionaEPercentajeFB" id="seleccionaEPercentajeFB" value="100" min="5" max="100" step="5" disabled />'+_("&percnt; right to see the feedback")+'</label>\
                                 </p>\
                                 <p id="seleccionaEFeedbackP" class="gameQE-EFeedbackP">\
                                     <textarea id="seleccionaEFeedBackEditor" class="exe-html-editor"\></textarea>\
                                 </p>\
                                 <p class="gameQE-Flex">\
-                                    <label for="seleccionaEVideoIntro">' + _("Video Intro") + ':</label><input type="text" id="seleccionaEVideoIntro" /><a href="#" class="gameQE-ButtonLink" id="seleccionaEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="Play" class="gameQE-EButtonImage" /></a>\
+                                    <label for="seleccionaEVideoIntro">' + _("Video Intro") + ':</label><input type="text" id="seleccionaEVideoIntro" /><a href="#" class="gameQE-ButtonLink" id="seleccionaEVideoIntroPlay"  title="' + _("Play video intro") + '"><img src="' + path + 'quextIEPlay.png"  alt="' + _("Play") + '" class="gameQE-EButtonImage" /></a>\
                                 </p>\
                                 <p>\
                                     <label for="seleccionaEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="seleccionaEPercentajeQuestions" id="seleccionaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
@@ -990,7 +990,7 @@ var $exeDevice = {
                                     <div class="gameQE-EInputImage gameQE-Flex" id="seleccionaEInputImage">\
                                         <label class="sr-av" for="seleccionaEURLImage">' + _("Image URL") + '</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLImage"  id="seleccionaEURLImage"/>\
-                                        <a href="#" id="seleccionaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="seleccionaEPlayImage" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Show") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Show") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div class="gameQE-EInputOptionsImage" id="seleccionaInputOptionsImage">\
                                         <div class="gameQE-ECoord">\
@@ -1004,7 +1004,7 @@ var $exeDevice = {
                                     <div class="gameQE-EInputVideo gameQE-Flex" id="seleccionaEInputVideo">\
                                         <label class="sr-av" for="seleccionaEURLYoutube">' + _("Youtube URL") + '</label>\
                                         <input id="seleccionaEURLYoutube" type="text" />\
-                                        <a href="#" id="seleccionaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="seleccionaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play video") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div class="gameQE-EInputOptionsVideo" id="seleccionaEInputOptionsVideo">\
                                         <div>\
@@ -1016,7 +1016,7 @@ var $exeDevice = {
                                         </div>\
                                         <div>\
                                             <label for="seleccionaESilenceVideo">' + _("Silence") + ':</label>\
-                                            <input id="seleccionaESilenceVideo" type="text" value="00:00:00" maxlength="8"" />\
+                                            <input id="seleccionaESilenceVideo" type="text" value="00:00:00" maxlength="8" />\
                                             <label for="seleccionaETimeSilence">' + _("Time (s)") + ':</label>\
                                             <input type="number" name="seleccionaETimeSilence" id="seleccionaETimeSilence" value="0" min="0" max="120" /> \
                                         </div>\
@@ -1041,19 +1041,19 @@ var $exeDevice = {
                                     <div class="gameQE-EInputAudio" id="seleccionaEInputAudio">\
                                         <label class="sr-av" for="seleccionaEURLAudio">' + _("URL") + ':</label>\
                                         <input type="text" class="exe-file-picker gameQE-EURLAudio"  id="seleccionaEURLAudio"/>\
-                                        <a href="#" id="seleccionaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage b-play" /></a>\
+                                        <a href="#" id="seleccionaEPlayAudio" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play audio") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play audio") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EMultiMediaOption">\
                                     <div class="gameQE-EMultimedia" id="seleccionaEMultimedia">\
                                         <textarea id="seleccionaEText"></textarea>\
-                                        <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="seleccionaEImage" alt="' + _("Image") + '" />\
-                                        <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="seleccionaENoImage" alt="' + _("No image") + '" />\
+                                        <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png"  id="seleccionaEImage" alt="' + _("Image") + '" />\
+                                        <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png"  id="seleccionaENoImage" alt="' + _("No image") + '" />\
                                         <div class="gameQE-EMedia" id="seleccionaEVideo"></div>\
-                                        <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="seleccionaENoImageVideo" alt="" />\
-                                        <img class="gameQE-EMedia" src="' + path + "quextIENoVideo.png" + '" id="seleccionaENoVideo" alt="" />\
-                                        <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="seleccionaECursor" alt="" />\
-                                        <img class="gameQE-EMedia" src="' + path + "quextIECoverSelecciona.png" + '" id="seleccionaECover" alt="' + _("No image") + '" />\
+                                        <img class="gameQE-EMedia" src="' + path + 'quextIENoImageVideo.png" id="seleccionaENoImageVideo" alt="" />\
+                                        <img class="gameQE-EMedia" src="' + path + 'quextIENoVideo.png" id="seleccionaENoVideo" alt="" />\
+                                        <img class="gameQE-ECursor" src="' + path + 'quextIECursor.gif" id="seleccionaECursor" alt="" />\
+                                        <img class="gameQE-EMedia" src="' + path + 'quextIECoverSelecciona.png" id="seleccionaECover" alt="' + _("No image") + '" />\
                                     </div>\
                                 </div>\
                             </div>\
@@ -1110,16 +1110,16 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-ENavigationButtons">\
-                                <a href="#" id="seleccionaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + "quextIEAdd.png" + '"  alt="' + _("Add question") + '" class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + "quextIEFirst.png" + '"  alt="' + _("First question") + '" class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + "quextIEPrev.png" + '"  alt="' + _("Previous question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + 'quextIEAdd.png" alt="' + _("Add question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + 'quextIEFirst.png" alt="' + _("First question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + 'quextIEPrev.png" alt="' + _("Previous question") + '" class="gameQE-EButtonImage" /></a>\
                                 <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="seleccionaENumberQuestion">1</span>\
-                                <a href="#" id="seleccionaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + "quextIENext.png" + '"  alt="' + _("Next question") + '" class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + "quextIELast.png" + '"  alt="' + _("Last question") + '" class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + "quextIEDelete.png" + '"  alt="' + _("Delete question") + '" class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + "quextIECopy.png" + '"   alt="' + _("Copy question") + '" class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + "quextIECut.png" + '"  alt="' + _("Cut question") + '"  class="gameQE-EButtonImage" /></a>\
-                                <a href="#" id="seleccionaEPaste" class="gameQE-ENavigationButton"  title="' + _("Paste question") + '"><img src="' + path + "quextIEPaste.png" + '"  alt="' + _("Paste question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + 'quextIENext.png" alt="' + _("Next question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + 'quextIELast.png" alt="' + _("Last question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + 'quextIEDelete.png"  alt="' + _("Delete question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaECopy" class="gameQE-ENavigationButton" title="' + _("Copy question") + '"><img src="' + path + 'quextIECopy.png"  alt="' + _("Copy question") + '" class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaECut" class="gameQE-ENavigationButton" title="' + _("Cut question") + '"><img src="' + path + 'quextIECut.png" alt="' + _("Cut question") + '"  class="gameQE-EButtonImage" /></a>\
+                                <a href="#" id="seleccionaEPaste" class="gameQE-ENavigationButton"  title="' + _("Paste question") + '"><img src="' + path + 'quextIEPaste.png"  alt="' + _("Paste question") + '" class="gameQE-EButtonImage" /></a>\
                             </div>\
                             <div class="gameQE-EVIDiv" id="seleccionaEVIDiv">\
                                 <div class="gameQE-EVIV">\
@@ -1131,7 +1131,7 @@ var $exeDevice = {
                                 <div class="gameQE-EVIOptions">\
                                     <label for="seleccionaEVIURL">' + _("Youtube URL") + ':</label>\
                                     <input id="seleccionaEVIURL" type="text" />\
-                                    <a href="#" id="seleccionaEVIPlayI" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + "quextIEPlay.png" + '" alt="' + _("Play") + '" class="gameQE-EButtonImage b-playintro" /></a>\
+                                    <a href="#" id="seleccionaEVIPlayI" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play video intro") + '" class="gameQE-EButtonImage b-playintro" /></a>\
                                     <label for="seleccionaEVIStart">' + _("Start") + ':</label>\
                                     <input id="seleccionaEVIStart" type="text" value="00:00:00" readonly />\
                                     <label for="seleccionaEVIEnd">' + _("End") + ':</label>\
