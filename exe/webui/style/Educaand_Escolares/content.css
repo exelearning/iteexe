@@ -56,7 +56,6 @@ section.previousnext{display:none}
 
 /* iDevice title */
 .iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:middle;top:15px;color:#2E2E2E;letter-spacing:.5px;font-weight:bold}
-body .hidden-idevice .iDeviceTitle{color:#526668}
 /* iDevice content */
 .iDevice_content{overflow:auto;text-align:left}
 /*.iDevice_inner*/
