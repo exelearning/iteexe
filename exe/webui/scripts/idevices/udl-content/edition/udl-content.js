@@ -406,7 +406,7 @@ var $exeDevice = {
 			if ($(this).hasClass("active")) {
 				var tinyMCEcontent = tinymce.get(id).getContent();
 					tinyMCEcontent = $exeDevice.removeEmptyParagraphs(tinyMCEcontent);
-				$("#"+id+"-"+i).html(tinyMCEcontent);
+				$("#"+id+"-"+i).val(tinyMCEcontent);
 			}
 		});		
 	},
@@ -735,7 +735,13 @@ var $exeDevice = {
 		if (this.allowEmptyParagraphs) return c;
 		var tmp = $("<div></div>");
 			tmp.html(c);
-			$("p:empty",tmp).remove();
+			$("p",tmp).each(function(i){
+				var x = $(this).html();
+					x = x.replace(/\s/g, "");
+					x = x.replace(/&nbsp;/g, "");
+					if (x=="") $(this).addClass("emptyParagraphToRemove");
+			});
+			$("p.emptyParagraphToRemove",tmp).remove();
 		return tmp.html();		
 	},
 	
