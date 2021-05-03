@@ -42,7 +42,7 @@ ol,ul{color:#444}
 #main h4{font-size:1.2em}
 #main h5{font-size:1.1em}
 #main h6{font-size:1em}
-.iDevice{margin:25px 0}
+.iDevice{margin:25px 0 1em 0}
 /* Tooltips */
 a.definition-tt{color:#00843D}
 /* Modals */
@@ -72,9 +72,12 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .activityIdevice .iDevice_header{background-image:url(icon_udl_exp_actividad.svg)}
 .readingIdevice .iDevice_header{background-image:url(icon_udl_exp_lee.svg)}
 
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table{border-color:#0065ab}
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table th{border-color:#0065ab}
-.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table thead{background:#005088;color:#FFF}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table,
+.UDLcontentIdevice-exp .exe-table{border-color:#0065ab}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table th,
+.UDLcontentIdevice-exp .exe-table td,.UDLcontentIdevice-exp .exe-table th{border-color:#0065ab}
+.iDevice_wrapper[class*='em_iDevice_udl_exp'] .exe-table thead,
+.UDLcontentIdevice-exp .exe-table thead{background:#005088;color:#FFF}
 
 /* Green iDevices */
 .iDevice_wrapper[class*='em_iDevice_udl_eng'] .iDeviceTitle,
@@ -83,7 +86,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .RssIdevice .iDeviceTitle,
 .RubricIdevice .iDeviceTitle,
 .OrientacionesalumnadofpdIdevice .iDeviceTitle,
-.OrientacionestutoriafpdIdevice .iDeviceTitle{color:#499113}
+.OrientacionestutoriafpdIdevice .iDeviceTitle,
+.UDLcontentIdevice-eng .iDeviceTitle{color:#499113}
 
 .iDevice_wrapper[class*='em_iDevice_udl_eng'] .iDevice_inner,
 .objectivesIdevice .iDevice_inner,
@@ -91,7 +95,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .RssIdevice .iDevice_inner,
 .RubricIdevice .iDevice_inner,
 .OrientacionesalumnadofpdIdevice .iDevice_inner,
-.OrientacionestutoriafpdIdevice .iDevice_inner{border-color:#499113}
+.OrientacionestutoriafpdIdevice .iDevice_inner,
+.UDLcontentIdevice-eng .iDevice_inner{border-color:#499113}
 
 .objectivesIdevice .iDevice_header{background-image:url(icon_udl_eng_objetivos.svg)}
 .download-packageIdevice .iDevice_header{background-image:url(icon_udl_eng_descarga.svg);padding-left:95px}
@@ -100,12 +105,17 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .OrientacionesalumnadofpdIdevice .iDevice_header,
 .OrientacionestutoriafpdIdevice .iDevice_header{background-image:url(icon_udl_eng_rubrica.svg)}
 
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table{background:#fff;border-color:#549b0d}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table th{border-color:#549b0d}
-.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead{background:#437c0a;color:#FFF}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table,
+.UDLcontentIdevice-eng .exe-table{background:#fff;border-color:#549b0d}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table th,
+.UDLcontentIdevice-eng .exe-table td,.UDLcontentIdevice-eng .exe-table th{border-color:#549b0d}
+.iDevice_wrapper[class*='em_iDevice_udl_eng'] .exe-table thead,
+.UDLcontentIdevice-eng .exe-table thead{background:#437c0a;color:#FFF}
 
-.em_iDevice_udl_eng_like .feedbackbutton,.em_iDevice_udl_eng_like .feedback-button input,.em_iDevice_udl_eng_like .iDevice_buttons input{background-color:#499113}
-.em_iDevice_udl_eng_like .feedbackbutton:hover,.em_iDevice_udl_eng_like .feedback-button input:hover,.em_iDevice_udl_eng_like .iDevice_buttons input:hover{background-color:#366c0e}
+.em_iDevice_udl_eng_like .feedbackbutton,.em_iDevice_udl_eng_like .feedback-button input,.em_iDevice_udl_eng_like .iDevice_buttons input,
+.UDLcontentIdevice-eng .feedbackbutton,.UDLcontentIdevice-eng .feedback-button input,.UDLcontentIdevice-eng .iDevice_buttons input{background-color:#499113}
+.em_iDevice_udl_eng_like .feedbackbutton:hover,.em_iDevice_udl_eng_like .feedback-button input:hover,.em_iDevice_udl_eng_like .iDevice_buttons input:hover,
+.UDLcontentIdevice-eng .feedbackbutton:hover,.UDLcontentIdevice-eng .feedback-button input:hover,.UDLcontentIdevice-eng .iDevice_buttons input:hover{background-color:#366c0e}
 
 /* Purple iDevices */
 .iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDeviceTitle,
@@ -122,7 +132,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .RecomendacionfpdIdevice .iDeviceTitle,
 .DebesconocerfpdIdevice .iDeviceTitle,
 .preknowledgeIdevice .iDeviceTitle,
-.WikipediaIdevice .iDeviceTitle{color:#A25AC4}
+.WikipediaIdevice .iDeviceTitle,
+.UDLcontentIdevice-rep .iDeviceTitle{color:#A25AC4}
 
 .iDevice_wrapper[class*='em_iDevice_udl_rep'] .iDevice_inner,
 .GalleryIdevice .iDevice_inner,
@@ -138,7 +149,8 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .RecomendacionfpdIdevice .iDevice_inner,
 .DebesconocerfpdIdevice .iDevice_inner,
 .preknowledgeIdevice .iDevice_inner,
-.WikipediaIdevice .iDevice_inner{border-color:#A25AC4}
+.WikipediaIdevice .iDevice_inner,
+.UDLcontentIdevice-rep .iDevice_inner{border-color:#A25AC4}
 
 .GalleryIdevice .iDevice_header{background-image:url(icon_udl_rep_galeria.svg)}
 .FileAttachIdeviceInc .iDevice_header{background-image:url(icon_udl_rep_adjunto.svg)}
@@ -155,12 +167,17 @@ body .hidden-idevice .iDeviceTitle{color:#526668}
 .DebesconocerfpdIdevice .iDevice_header,
 .preknowledgeIdevice .iDevice_header{background-image:url(icon_udl_rep_conocer.svg)}
 
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table{background:#fff;border-color:#784aba}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table th{border-color:#784aba}
-.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead{background:#5f3996;color:#FFF}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table,
+.UDLcontentIdevice-rep .exe-table{background:#fff;border-color:#784aba}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table td,.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table th,
+.UDLcontentIdevice-rep .exe-table td,.UDLcontentIdevice-rep .exe-table th{border-color:#784aba}
+.iDevice_wrapper[class*='em_iDevice_udl_rep'] .exe-table thead,
+.UDLcontentIdevice-rep .exe-table thead{background:#5f3996;color:#FFF}
 
-.em_iDevice_udl_rep_like .feedbackbutton,.em_iDevice_udl_rep_like .feedback-button input,.em_iDevice_udl_rep_like .iDevice_buttons input{background-color:#a25ac4}
-.em_iDevice_udl_rep_like .feedbackbutton:hover,.em_iDevice_udl_rep_like .feedback-button input:hover,.em_iDevice_udl_rep_like .iDevice_buttons input:hover{background-color:#7d389e}
+.em_iDevice_udl_rep_like .feedbackbutton,.em_iDevice_udl_rep_like .feedback-button input,.em_iDevice_udl_rep_like .iDevice_buttons input,
+.UDLcontentIdevice-rep .feedbackbutton,.UDLcontentIdevice-rep .feedback-button input,.UDLcontentIdevice-rep .iDevice_buttons input{background-color:#a25ac4}
+.em_iDevice_udl_rep_like .feedbackbutton:hover,.em_iDevice_udl_rep_like .feedback-button input:hover,.em_iDevice_udl_rep_like .iDevice_buttons input:hover,
+.UDLcontentIdevice-rep .feedbackbutton:hover,.UDLcontentIdevice-rep .feedback-button input:hover,.UDLcontentIdevice-rep .iDevice_buttons input:hover{background-color:#7d389e}
 
 .FileAttachIdeviceInc a{color:#412866}
 
@@ -246,12 +263,13 @@ li{list-style-position:outside}
 #wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
 
 /* Hide/Show iDevice */
-.toggle-idevice{text-align:right;display:block;margin-right:13px}
+.toggle-idevice{text-align:right;display:block;margin-right:13px;line-height:21px;height:21px}
 .iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:13px;margin:0}
 .toggle-idevice{margin-top:5px;margin-bottom:0px}
 .toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_escolares_icons.png) no-repeat 0 -20px}
 .toggle-idevice .show-idevice{background-position:0 0}
 .toggle-idevice span{position:absolute;clip:rect(1px 1px 1px 1px);/* IE6,IE7 */clip:rect(1px,1px,1px,1px)}
+.toggle-idevice + .iDevice.emphasis0{margin-top:0}
 
 /* Links */
 .iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}

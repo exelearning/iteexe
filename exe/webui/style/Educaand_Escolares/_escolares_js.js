@@ -182,16 +182,35 @@ var myTheme = {
                 var as = myTheme.activities;
                 var editor = $("#activeIdevice");
                 if (typeof(_)!='function' || editor.length!=1) {
-                    for (var z=0;z<as.length;z++){
-                        var a = as[z];
-                        // Minimize those iDevices (like clicking on .toggle-idevice a)
-                        var aW = $(".iDevice_wrapper."+a+"Idevice");
-                        aW.addClass("hidden-idevice");
-                        $(".toggle-idevice a",aW).attr("class","show-idevice");
-                        $(".iDevice_inner",aW).hide();
-                    }
+                    if ($(".iDevice").length>1) {
+						for (var z=0;z<as.length;z++){
+							var a = as[z];
+							// Minimize those iDevices (like clicking on .toggle-idevice a)
+							var aW = $(".iDevice_wrapper."+a+"Idevice");
+							aW.addClass("hidden-idevice");
+							$(".toggle-idevice a",aW).attr("class","show-idevice");
+							$(".iDevice_inner",aW).hide();
+						}
+						// The iDevices with the icon_udl_exp_tarea are minified too
+						$(".iDevice_wrapper").each(function(){
+							var header = $(".iDevice_header",this);
+							if (header.length==1) {
+								var img = header.attr("style");
+								if (typeof(img)=='string' && img.indexOf("icon_udl_exp_tarea.svg")!=-1) {
+									var aW = $(this);
+									aW.addClass("hidden-idevice");
+									$(".toggle-idevice a",aW).attr("class","show-idevice");
+									$(".iDevice_inner",aW).hide();
+								}
+							}
+						});
+						// You can toggle the iDevice clicking on any part of its header
+						$(".iDevice_header").click(function(){
+							$(".toggle-idevice a",this).trigger("click");
+						}).css("cursor","pointer");
+					}
                 }
-            }            
+            }   
 			// "Do it here" will be the default title of the Interactive Activities
 			if (document.body.className.indexOf("exe-authoring-page")==0) {
 				if (typeof(top._)!='undefined') {
