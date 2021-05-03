@@ -45,6 +45,15 @@ var $UDLcontentIdevice = {
         
 		$(".UDLcontentIdevice").each(function(instance){
             
+            // Add a different CSS class for each content type
+            var cont = $(".exe-udlContent",this);
+            if (cont.length==1){
+                var type = "eng";
+                if (cont.hasClass("exe-udlContent-representation")) type = "rep";
+                else if (cont.hasClass("exe-udlContent-expression")) type = "exp";
+                $(this).addClass("UDLcontentIdevice-"+type);
+            }
+            
             var iDeviceId = $(this).attr("id");
 			
 			if ($UDLcontentIdevice.altContentLinks=='bottom') $(this).addClass("exe-udlContent-alt-bottom");
@@ -243,8 +252,8 @@ var $UDLcontentIdevice = {
 				var characters = [
 					"",
 					"MOTUS",
-					"CLAVIS",
 					"KARDIA",
+					"CLAVIS",
 					"LUMEN"
 				];
 				var tmp = "";

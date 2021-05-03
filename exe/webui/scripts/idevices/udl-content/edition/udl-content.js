@@ -36,8 +36,8 @@ var $exeDevice = {
 	characters : [
 		"",
 		"MOTUS",
-		"CLAVIS",
 		"KARDIA",
+		"CLAVIS",
 		"LUMEN"
 	],
 	
