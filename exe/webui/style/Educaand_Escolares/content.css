@@ -327,6 +327,7 @@ li{list-style-position:outside}
 	.fx-accordion-section:last-child .fx-accordion-title{padding-left:10px!important}
 	.exe-accordion{border:1px solid #fff!important}
 	.fx-accordion-title{border-top:1px solid #fff!important}
+	body .fx-accordion-title,.exe-accordion h2{font-size:1em}
 	.fx-accordion-content{padding:15px 15px 10px 0px}
 	.container-wrapper-genially{max-height:800px!important}
 	h2.pp_title{color:#00843d}

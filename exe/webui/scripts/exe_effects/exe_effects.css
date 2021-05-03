@@ -93,8 +93,13 @@ html[xmlns] .fx-timeline-container,html[xmlns] .fx-timeline-event{display:block}
 
 /* Print version */
 @media print{
-    .exe-tabs .fx-tab-content,.exe-paginated .fx-page-content,.exe-carousel .fx-carousel-content{display:block!important;margin-bottom:1.5em}
-    .exe-tabs .fx-tab-content h2.sr-av{position:relative;overflow:auto;clip:auto;height:auto}
+	.exe-tabs .fx-tabs,
+	.exe-paginated .fx-pagination,
+	.exe-carousel .fx-pagination{display:none}
+	.exe-tabs .fx-tab-content,.exe-paginated .fx-page-content,.exe-carousel .fx-carousel-content{display:block!important;margin-bottom:1.5em}
+	.exe-tabs .fx-tab-content h2.sr-av{position:relative;overflow:auto;clip:auto;height:auto}
+	body .fx-accordion-title,.exe-accordion h2{background:#fff;color:inherit;font-size:1.4em}
+	.fx-accordion-content{display:block}
 }
 
 /* ePub */
