@@ -103,6 +103,15 @@ var $UDLcontentIdevice = {
                             } else {
                                 block.slideDown(function(){
                                     $UDLcontentIdevice.isWorking = false;
+									// Resize H5P activities (to review)
+									var iframes = $("iframe",block);
+									iframes.each(function(){
+										if (this.src && this.src.indexOf("https://h5p.org/")==0) {
+											if (!this.style || !this.style.height || this.style.height=="") {
+												this.src = this.src;
+											}
+										}
+									});
                                 });
                             }
                             return false;
