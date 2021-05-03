@@ -39,6 +39,7 @@ intef-exe (3:2.6~beta) lucid; urgency=medium
     - Fixed: Backward compatibility. Open an elp file reading its contentv2.xml file. (#206)
 
   * APSL
+    - Package building.
     - Fixed: The default package license was not respected. (#547)
     - Fixed: Open elp with an incorrect contentv3.xml file (use the content.data file instead). (#545)
     - Fixed: Strange characters in the iDevice editor. (#535)
@@ -51,6 +52,7 @@ intef-exe (3:2.6~beta) lucid; urgency=medium
 
   * eXeLearning.net Translation Team
     - New complete Spanish translation, by Juan Rafael Fernández.
+    - New complete Basque translation, by Joxemi Andonegi.
     - New complete Catalan translation, by Carles Ferrando Garcia.
     - New complete Galician translation, by Pablo Nimo.
     - New complete French translation, by Jesús Miguel Domínguez.
