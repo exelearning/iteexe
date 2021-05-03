@@ -1,4 +1,4 @@
-intef-exe (3:2.6~beta) lucid; urgency=medium
+intef-exe (3:2.6~beta2) lucid; urgency=medium
 
   * Ignacio Gros
     - TinyMCE: New image optimizer.
@@ -11,6 +11,7 @@ intef-exe (3:2.6~beta) lucid; urgency=medium
     - The About eXe page shows the application type instead of the revision number.
     - iDevices revision (usability, HTML, presentation, strings).
     - Presentation Style: New Next/Previous top links.
+    - Add a Show/Hide title to the time line links to improve accessibility.
     - Fixed: The CSS class that depends on the selected iDevice icon was missing when exporting. (#558)
     - Fixed: Could not see the selected icon in Styles with SVG icons.
     - Fixed: MediaElement Player download file problem. (#555)
