@@ -238,14 +238,14 @@ $exeFX = {
 						} else {
 							if (oldB) {
 								partContent = partContent.replace(/\<\/H3>/g,'</a></h3>\n<div class="fx-timeline-event" style="display:none">');
-								partContent = partContent.replace(/\<H3>/g,'</div>\n<h3 class="fx-timeline-event-trigger"><a href="#" style="color:'+mainColor+'">');								
+								partContent = partContent.replace(/\<H3>/g,'</div>\n<h3 class="fx-timeline-event-trigger"><a href="#" style="color:'+mainColor+'" title="'+$exe_i18n.show+'/'+$exe_i18n.hide+'">');								
 							} else {
 								partContent = partContent.replace(/\<\/h3>/g,'</a></h3>\n<div class="fx-timeline-event" style="display:none">');
-								partContent = partContent.replace(/\<h3>/g,'</div>\n<h3 class="fx-timeline-event-trigger"><a href="#" style="color:'+mainColor+'">');
+								partContent = partContent.replace(/\<h3>/g,'</div>\n<h3 class="fx-timeline-event-trigger"><a href="#" style="color:'+mainColor+'" title="'+$exe_i18n.show+'/'+$exe_i18n.hide+'">');
 							}					
 							partContent = partContent.replace('</div>','');
 							partContent += '</div>';
-							partContent = '<div class="fx-timeline-major">\n<h2 class="fx-timeline-marker"><span><a href="#" style="background:'+mainColor+'">'+partTitle+'</a></span></h2>\n<div class="fx-timeline-minor">\n'+partContent+'\n</div>\n</div>'
+							partContent = '<div class="fx-timeline-major">\n<h2 class="fx-timeline-marker" title="'+$exe_i18n.show+'/'+$exe_i18n.hide+'"><span><a href="#" style="background:'+mainColor+'">'+partTitle+'</a></span></h2>\n<div class="fx-timeline-minor">\n'+partContent+'\n</div>\n</div>'
 							html += partContent;
 						}
 					}								
