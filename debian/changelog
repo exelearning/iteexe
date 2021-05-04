@@ -13,6 +13,7 @@ intef-exe (3:2.6~beta2) lucid; urgency=medium
     - Presentation Style: New Next/Previous top links.
     - Add a Show/Hide title to the time line links to improve accessibility.
     - Contents with effects: Print version revision.
+    - Allow H5P embedded content in tabs, carousels and accordions.
     - Fixed: The CSS class that depends on the selected iDevice icon was missing when exporting. (#558)
     - Fixed: Could not see the selected icon in Styles with SVG icons.
     - Fixed: MediaElement Player download file problem. (#555)

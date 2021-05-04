@@ -43,6 +43,16 @@ $exeFX = {
 		c += ")";
 		return c;		
 	},
+	h5pResize : function(block){
+		var iframes = $("iframe",block);
+		iframes.each(function(){
+			if (this.src && this.src.indexOf("https://h5p.org/")==0) {
+				if (!this.style || !this.style.height || this.style.height=="") {
+					this.src = this.src;
+				}
+			}
+		});
+	},
 	removeXMLNS : function(t) {
 		if (document.body.className.indexOf("exe-epub3")==0) {
 			var xmlnsString = 'h2 xmlns="http://www.w3.org/1999/xhtml"';
@@ -135,7 +145,9 @@ $exeFX = {
 				} else {
 					$exeFX.accordion.closeBlock(aID);
 					$(this).addClass('active');
-					$('.'+k+'-accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+					$('.'+k+'-accordion ' + currentAttrValue).slideDown(300,function(){
+						$exeFX.h5pResize($(this));
+					}).addClass('open'); 
 				}
 				e.preventDefault();
 			});		
@@ -288,7 +300,9 @@ $exeFX = {
 			$(".fx-tabs li",g).removeClass("fx-current").removeClass("fx-C2");
 			$("#"+id+"-link").addClass("fx-current fx-C2");
 			$(".fx-tab-content",g).removeClass("fx-current");
-			$("#"+id).addClass("fx-current");
+			var block = $("#"+id);
+			block.addClass("fx-current");
+			$exeFX.h5pResize(block);
 		},
 		rft : function(e,i){
 			var html = "";
@@ -420,7 +434,9 @@ $exeFX = {
 			lis.removeClass("fx-current").removeClass("fx-C1");
 			$("#"+id+"-link").addClass("fx-current fx-C1");
 			$(".fx-page-content",g).removeClass("fx-current");
-			$("#"+id).addClass("fx-current");
+			var block = $("#"+id);
+			block.addClass("fx-current");
+			$exeFX.h5pResize(block);
 		},	
 		init : function(x,i){
 			var e = $(x);
@@ -554,6 +570,7 @@ $exeFX = {
 			$(".fx-carousel-content",g).hide();
 			$("#"+id).fadeIn("slow",function(){
 				$exeFX.carousel.isWorking = false;
+				$exeFX.h5pResize($(this));
 			});
 		},	
 		init : function(x,i){
