@@ -21,6 +21,7 @@ intef-exe (3:2.6~beta2) lucid; urgency=medium
     - Fixed: "New version available" message always displayed in the PPA version. (#540)
     - Fixed: Add/Rename/Move page disabled when editing an iDevice. (#550)
     - Fixed: Dropdown Activity instructions. (#574)
+    - Fixed: Note iDevice missing instructions. (#575)
 
   * Manuel Narváez
     - New iDevice category (Games):

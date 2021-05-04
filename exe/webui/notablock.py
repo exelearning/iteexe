@@ -68,6 +68,7 @@ class NotaBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div class=\"iDevice\"><br/>\n"
+        html += '<p>' + _("This iDevice will only be visible in eXe. It won't be exported.") + '</p>'
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.commentElement.renderEdit()
         html += "<br/>" + self.renderEditButtons()
