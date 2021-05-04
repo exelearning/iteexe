@@ -59,14 +59,17 @@ section.previousnext{display:none}
 /* iDevice content */
 .iDevice_content{overflow:auto;text-align:left}
 /*.iDevice_inner*/
-.iDevice_inner{margin-top:5px;padding:10px 20px 20px 20px;background:#fff;box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);border-radius:20px;border:4px solid #0065AB}
+.iDevice_inner{padding:10px 20px 20px 20px;background:#fff;box-shadow:0px 18px 16px -6px rgba(0,0,0,0.37);border-radius:20px;border:4px solid #0065AB}
 .iDeviceTitle{color:#0065AB}
 /* iDevice icons */
-.iDevice_header{background:url(icon_udl_exp_interactivo.svg) no-repeat 0 bottom;padding-top:10px;padding-left:95px;position:relative;min-height:75px!important;width:auto!important}
+.iDevice_header{background:url(icon_udl_exp_interactivo.svg) no-repeat 0 50%;padding:5px 0 5px 80px;position:relative;min-height:60px}
 .iDevice .iDevice_header.iDevice_header_noIcon{padding:0 0 0 10px;background-image:none}
 /* Buttons */
 .feedbackbutton,.feedback-button input,.iDevice_buttons input{text-decoration:none;background-color:#0065ab;padding:.3em 1em;color:#fff;transition:background-color 0.4s ease-in-out;display:inline-block;border:none;cursor:pointer}
 .feedbackbutton:hover,.feedback-button input:hover,.iDevice_buttons input:hover{background-color:#004b80}
+
+.emphasis0 .feedbackbutton,.emphasis0 .feedback-button input,.emphasis0 .iDevice_buttons input{background-color:#CC6715}
+.emphasis0 .feedbackbutton:hover,.emphasis0 .feedback-button input:hover,.emphasis0 .iDevice_buttons input:hover{background-color:#9D4C0A}
 
 .activityIdevice .iDevice_header{background-image:url(icon_udl_exp_actividad.svg)}
 .readingIdevice .iDevice_header{background-image:url(icon_udl_exp_lee.svg)}
@@ -189,9 +192,9 @@ section.previousnext{display:none}
 
 /* Pagination */
 .js .exe-paginated h2{color:#7c3f06}
-.fx-pagination a{background:#ee7f1a!important;text-decoration:none!important;color:#444!important}
+.js .fx-pagination a{background:#ee7f1a;text-decoration:none!important;color:#444!important}
 .fx-pagination a:hover,.fx-pagination a:focus{color:#444}
-.fx-pagination .fx-current a{background:#73D413;color:#fff;text-decoration:none!important}
+.js .fx-pagination .fx-current a{background:#73D413;color:#fff;text-decoration:none!important}
 .fx-page-content{background:#fff;border:1px solid #444}
 
 /* Accordion */
@@ -312,7 +315,6 @@ li{list-style-position:outside}
 	#headerContent{height:51px;background:url(logo_junta.png) no-repeat 100% 20%;padding-bottom:15px}
 	#nodeDecoration,#emptyHeader{color:#000;text-shadow:none;background:none;border:2px solid #CC6715;padding:5px 5px 10px 15px;margin-left:10px}
 	#nodeDecoration,#header,#emptyHeader{color:#000;text-shadow:none;background:none;border:none;padding:20px 0}
-	.em_iDevice_activity header h2{color:#0065ab}
 	#packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#444;line-height:1em;margin:0 0 25px 0;background:#fff;border-top:1px solid #00843d}
 	#packageLicense p{margin:20px 0}
 	#packageLicense a{color:#444;text-decoration:underline}

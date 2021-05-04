@@ -21,8 +21,7 @@ body{padding:0;text-align:center}
 #siteNav{width:279px;float:left;padding-right:20px;margin:0px 0 70px 0}
 #siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
 #siteNav a{font-size:.95em;display:block;padding:7px 10px 7px 20px;border-bottom:1px solid #d6510d;color:#000;background:#fdcca0;font-weight:bold;text-decoration:none}
-#siteNav a:hover{color:#000;background:#f0a762;border-color:#5A4532}
-#siteNav a:focus{color:#000;background:#f0a762;border-color:#5A4532}
+#siteNav a:hover,#siteNav a:focus{color:#000;background:#f0a762;border-color:#5A4532}
 #siteNav ul ul a{padding-left:35px;font-size:.9em;background:#FEDCBD;border-color:#d6510d;color:#444444}
 #siteNav ul ul a:hover,#siteNav ul ul a:focus{background:#FFF5EB;border-color:#AC7949;color:#3a4749;text-decoration:underline}
 #siteNav .active{color:#000;text-decoration:none;background:#fff;border-color:#fff}
