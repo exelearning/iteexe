@@ -1568,9 +1568,9 @@ var $exeDevice = {
         } else if (p.type == 2 && p.tSilentVideo > 0 && (p.silentVideo < p.iVideo || p.silentVideo >= p.fVideo)) {
             message = msgs.msgSilentPoint;
         } else if (p.typeSelect == 2 && p.solutionQuestion.trim().length == 0) {
-            message = $exeDevice.msgs.msgEDefintion;
-        } else if (p.typeSelect == 2 && p.quextion.trim().length == 0) {
             message = $exeDevice.msgs.msgEProvideWord;
+        } else if (p.typeSelect == 2 && p.quextion.trim().length == 0) {
+            message = $exeDevice.msgs.msgEDefintion;
         }
         var order = parseInt($('input[name=slcgameorder]:checked').val());
         if (order == 2) {
