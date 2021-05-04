@@ -970,7 +970,7 @@ var $eXeAdivina = {
             alt = '';
         mOptions.gameActived = true;
         mOptions.question = q;
-        $eXeAdivina.showMessage(0, '', 0);
+        $eXeAdivina.showMessage(0, '', instance);
         $('#adivinaEPhrase-' + instance).find('.gameQP-Letter').css('color', $eXeAdivina.borderColors.blue);
         $eXeAdivina.drawPhrase(q.word, q.definition, q.percentageShow, 0, $eXeAdivina.options[instance].caseSensitive, instance);
         $('#adivinaEdAnswer-' + instance).val("");

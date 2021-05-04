@@ -571,9 +571,6 @@ var $exeDevice = {
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                    if (type == 1) {
-                        $exeDevice.showMessage(msgs.msgEURLValid);
-                    }
                     return false;
                 } else {
                     var mData = $exeDevice.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
@@ -584,9 +581,6 @@ var $exeDevice = {
                     return true;
                 }
             }).on('error', function () {
-                if (type == 1) {
-                    $exeDevice.showMessage(msgs.msgEURLValid);
-                }
                 return false;
             });
     },

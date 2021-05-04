@@ -99,7 +99,7 @@ var $exeDevice = {
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;
-        msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
+        msgs.msgEProvideDefinition = _("Please provide the word definition");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
         msgs.msgEURLValid = _("You must upload or indicate the valid URL of an image");
         msgs.msgEProvideWord = _("Please provide one word or phrase");
@@ -374,7 +374,7 @@ var $exeDevice = {
             $('#adivinaEYImage').val(p.y);
             $('#adivinaEAuthor').val(p.author);
             $('#adivinaEAlt').val(p.alt);
-            $exeDevice.showImage(p.url, p.x, p.y, p.alt, 0);
+            $exeDevice.showImage(p.url, p.x, p.y, p.alt);
         } else if (p.type == 2) {
             $('#adivinaECheckSoundVideo').prop('checked', p.soundVideo == 1);
             $('#adivinaECheckImageVideo').prop('checked', p.imageVideo == 1);
@@ -458,6 +458,8 @@ var $exeDevice = {
                 $('#adivinaEAuthorAlt').show();
                 $('#adivinaECursor').show();
                 $('#adivinaEInputOptionsImage').show();
+                $exeDevice.showImage($('#adivinaEURLImage').val(), $('#adivinaEXImage').val(), $('#adivinaEYImage').val(), $('#adivinaEAlt').val())
+
                 break;
             case 2:
                 $('#adivinaEImageVideo').show();
@@ -970,9 +972,6 @@ var $exeDevice = {
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                    if (type == 1) {
-                        $exeDevice.showMessage(msgs.msgEURLValid);
-                    }
                     return false;
                 } else {
                     var mData = $exeDevice.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
@@ -983,9 +982,6 @@ var $exeDevice = {
                     return true;
                 }
             }).on('error', function () {
-                if (type == 1) {
-                    $exeDevice.showMessage(msgs.msgEURLValid);
-                }
                 return false;
             });
     },

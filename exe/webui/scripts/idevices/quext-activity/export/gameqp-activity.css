@@ -836,7 +836,7 @@ input.gameQP-VideoIntroClose:hover{
 	transition: transform 0.3s;
 }
 
-.gameQP-LinkMaximize:hover .gameQP-Activo {
+.gameQP-LinkMaximize:hover .gameQP-Activo, .gameQP-Activo:hover {
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
