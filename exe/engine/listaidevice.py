@@ -347,8 +347,11 @@ class ListaField(FieldWithResources):
         self.rawContent = ''
         self._setVersion2Attributes()
         self.otras = ''
-        self.otrasInstruc = \
-            x_(u"<p>Optional: Write other words to complete the Dropdown activity.<br/> Use | (the vertical bar) to separate words.<br/> This field can be left blank. </p>")
+        # self.otrasInstruc should have no HTML tags (#574)
+        otrasInstruc = \
+            _(u"<p>Optional: Write other words to complete the Dropdown activity.<br/> Use | (the vertical bar) to separate words.<br/> This field can be left blank. </p>")
+        cleanr = re.compile('<.*?>')
+        self.otrasInstruc = re.sub(cleanr, '', otrasInstruc)
      
 
     def _setVersion2Attributes(self):
