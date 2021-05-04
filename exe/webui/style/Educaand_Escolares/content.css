@@ -331,13 +331,11 @@ li{list-style-position:outside}
 	.feedbackbutton,.feedback-button input,.iDevice_buttons input,ul.fx-tabs{display:none!important}
 	a{font-weight:bolder;text-decoration:none!important}
 	a[href^=http]:after{content:" <" attr(href) "> "}	
-	a[href*=pdf]:after{content:">>Documento de descarga";color:#666;font-weight:normal;font-size:10px;overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
 	.emphasis0:has(>.iDevice_content>.exe-text>p>.external-iframe-src){margin:0px!important}
-	span.external-iframe-src>a[href*="genial"]:before{content:"Enlace a recurso interactivo>>";overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
-	span.external-iframe-src>a[href*="youtube"]:before{content:"Enlace a recurso reproducible>>";overflow-wrap:break-word;word-wrap:break-word;-ms-word-break:break-all;word-break:break-all;word-break:break-word;-ms-hyphens:auto;-moz-hyphens:auto;-webkit-hyphens:auto;hyphens:auto}
 	iframe.external-iframe{display:none}
 	/* No iframe content */
-	 .external-iframe-src{display:block!important;font-size:.70em;text-align:left;padding:5px 10px 10px 50px}
+	 .external-iframe-src{display:block!important;font-size:.70em;text-align:left;padding:5px 10px 10px 50px;text-align:center}
+	 .external-iframe-src a:after{content:""}
 	.exe-dialog-text{display:block!important}
 	.fx-accordion-content,.fx-timeline-event{display:block!important}
 	.exe-accordion{width:100%!important;background-color:#fff!important}
@@ -362,11 +360,7 @@ li{list-style-position:outside}
 	.exe-interactive-video,.rosco-IDevice,.quext-IDevice,.adivina-IDevice,.vquext-IDevice,.auto-geogebra{display:none!important}
 	.AdivinaIdevice h1.iDeviceTitle,.QuExtIdevice h1.iDeviceTitle,.RoscoIdevice h1.iDeviceTitle,.VideoQuExtIdevice h1.iDeviceTitle,.AdivinaIdevice h2.iDeviceTitle,.QuExtIdevice h2.iDeviceTitle,.RoscoIdevice h2.iDeviceTitle,.VideoQuExtIdevice h2.iDeviceTitle{color:#0065ab;padding-left:0px!important}
 	.AdivinaIdevice .iDevice_inner,.QuExtIdevice .iDevice_inner,.RoscoIdevice .iDevice_inner,.VideoQuExtIdevice .iDevice_inner,.interactive-videoIdevice .iDevice_inner{border:none!important}
-	.interactive-videoIdevice:after{content:"El vídeo interactivo no se muestra en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
-	.GeoGebraIdevice:after{content:"Las actividades de GeoGebra no se muestran en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
-	.AdivinaIdevice:after,.QuExtIdevice:after,.RoscoIdevice:after,.VideoQuExtIdevice:after{content:"Los recursos de tipo Juego,no se muestra en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
-	.interactive-videoIdevice:after{content:"El vídeo interactivo no se muestra en las versiones imprimibles";font-size:14px;color:#444 font-style:italic}
-	.ExternalUrlIdevice:before{content:"Las páginas externas no se muestran en la versión imprimible";font-size:14px;color:#444 font-style:italic}
+	.GeoGebraIdevice:after,.AdivinaIdevice:after,.QuExtIdevice:after,.RoscoIdevice:after,.VideoQuExtIdevice:after,.interactive-videoIdevice:after{content:"—";text-align:center;display:block;margin:1em 0}
 	article.node:last-child{page-break-after:initial}
 	.iDevice_solution.feedback h1{font-size:12px!important;color:#444}
 	.fx-timeline-container a.fx-timeline-expand{display:none}
