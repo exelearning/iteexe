@@ -1,5 +1,22 @@
 var myTheme = {
-    printButton : false,
+    collapseActivities : true, // Minimize interactive activities
+    activities : [
+        "Lista",
+        "QuizTest",
+        "ScrambledList",
+        "Multichoice",
+        "MultiSelect",
+        "TrueFalse",
+        "Cloze",
+        "interactive-video",
+        "GeoGebra",
+        "Eleccionmultiplefpd",
+        "Clozefpd",
+        "Clozelangfpd",
+        "Seleccionmultiplefpd",
+        "Verdaderofalsofpd",
+        "Ejercicioresueltofpd"
+    ],
     init : function(){
 		var ie_v = $exe.isIE();
 		if (ie_v && ie_v<8) return false;
@@ -13,11 +30,6 @@ var myTheme = {
 				navToggler += '<a href="#" class="hide-nav" id="toggle-nav" title="'+tit+'">';
 					navToggler += '<span>'+$exe_i18n.menu+'</span>';
 				navToggler += '</a>';
-				if (myTheme.printButton==true && typeof(window.print)=='function') {
-					navToggler += '<a href="#" id="print-page">';
-						navToggler += '<span>'+$exe_i18n.print+'</span>';
-					navToggler += '</a>';
-				}
 			navToggler += '</p>';
         var l = $(navToggler);
         var nav = $("#siteNav");
@@ -54,11 +66,6 @@ var myTheme = {
 				navToggler += '<a href="#" class="hide-nav" id="toggle-nav" title="'+tit+'">';
 					navToggler += '<span>'+$exe_i18n.menu+'</span>';
 				navToggler += '</a>';
-				if (myTheme.printButton==true && typeof(window.print)=='function') {
-					navToggler += '<a href="#" id="print-page">';
-						navToggler += '<span>'+$exe_i18n.print+'</span>';
-					navToggler += '</a>';
-				}
 			navToggler += '</p>';
         var l = $(navToggler);
         var nav = $("#siteNav");
@@ -151,62 +158,94 @@ var myTheme = {
     reset : function() {
         myTheme.toggleMenu();        
     },
-	inIframe : function(){
-		try {
-			return window.self !== window.top;
-		} catch (e) {
-			return true;
-		}
-	},	
-	printContent : function(bodyClassName){
-		if (bodyClassName.indexOf("exe-authoring-page")==0) {
-			if (typeof(_)!='undefined') {
-				eXe.app.alert(_("File") + " - " + _("Print") + " (Ctrl+P)");
-				return false;
-			}
-		}
-		if (!this.inIframe()) {
-			window.print();
-		} else {
-			var isIE = navigator.appName.indexOf('Microsoft') !=-1;
-			if (isIE) alert('Ctrl+P');
-			var a = window.open(self.location.href);			
-			if (!isIE) a.onload = function() { this.print() }
-			a.focus();			
-		}
-	},
 	common : {
 		init : function(c){
 			var iDevices = $(".iDevice_wrapper");
 			var firstIsText = false;
 			iDevices.each(function(i){
-				// To review (just for 2.5.1)
-				if ($(this).hasClass("UDLcontentIdevice")) {
-					var h = $(".iDevice_header",this);
-						h = h.css("background-image");
-						if (h && h!="") {
-							h = h.split("/");
-							h = h[h.length-1];
-							h = h.split(".");
-							h = h[0];
-							h = h.replace("icon_","");
-							$(this).addClass("em_iDevice_"+h);
-						}
-				} // / 2.5.1				
 				if (iDevices.length>1 && i==0 && this.className.indexOf("FreeTextIdevice")!=-1) {
 					$(".iDevice",this).css("margin-top",0);
 					firstIsText = true;
 				}
-			});
-			// Print button in authoring-page, SCORM and IMS
-			if (myTheme.printButton==true && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-ims") || $("body").hasClass("exe-scorm"))) {
-				var extra = '';
-				if (iDevices.length>1 && !firstIsText) extra = ' class="with-toggler"';
-				$("#nodeDecoration").after('<p id="printNode"'+extra+'><a href="#" title="'+$exe_i18n.print+'"><span>'+$exe_i18n.print+'</span></a></p>');
-				$("#printNode a").click(function(e){
-					myTheme.printContent(document.body.className);
-				});
-			}
+				// Use common CSS class names (so they have a similar presentation)
+				if (!$(this).hasClass("UDLcontentIdevice")) {
+					var header = $(".iDevice_header",this);
+					var icon = header.css("background-image");
+					if (typeof(icon)=='string'){
+						if (icon.indexOf("icon_udl_eng")!=-1) $(this).addClass("em_iDevice_udl_eng_like");
+						if (icon.indexOf("icon_udl_exp")!=-1) $(this).addClass("em_iDevice_udl_exp_like");
+						if (icon.indexOf("icon_udl_rep")!=-1) $(this).addClass("em_iDevice_udl_rep_like");
+					}
+				}
+			}); 
+            if (myTheme.collapseActivities) {
+                var as = myTheme.activities;
+                var editor = $("#activeIdevice");
+                if (typeof(_)!='function' || editor.length!=1) {
+                    if ($(".iDevice").length>1) {
+						for (var z=0;z<as.length;z++){
+							var a = as[z];
+							// Minimize those iDevices (like clicking on .toggle-idevice a)
+							var aW = $(".iDevice_wrapper."+a+"Idevice");
+							aW.addClass("hidden-idevice");
+							$(".toggle-idevice a",aW).attr("class","show-idevice");
+							$(".iDevice_inner",aW).hide();
+						}
+						// The iDevices with the icon_udl_exp_tarea are minified too
+						$(".iDevice_wrapper").each(function(){
+							var header = $(".iDevice_header",this);
+							if (header.length==1) {
+								var img = header.attr("style");
+								if (typeof(img)=='string' && img.indexOf("icon_udl_exp_tarea.svg")!=-1) {
+									var aW = $(this);
+									aW.addClass("hidden-idevice");
+									$(".toggle-idevice a",aW).attr("class","show-idevice");
+									$(".iDevice_inner",aW).hide();
+								}
+							}
+						});
+						// You can toggle the iDevice clicking on any part of its header
+						$(".iDevice_header").click(function(){
+							$(".toggle-idevice a",this).trigger("click");
+						}).css("cursor","pointer");
+					}
+                }
+            }   
+			// "Do it here" will be the default title of the Interactive Activities
+			if (document.body.className.indexOf("exe-authoring-page")==0) {
+				if (typeof(top._)!='undefined') {
+                    var d = [
+						"DropDown Activity",
+						"SCORM Quiz",
+						"Scrambled List",
+						"Multi-choice",
+						"Multi-select",
+						"True-False Question",
+						"Cloze Activity",
+						"Interactive Video",
+						"GeoGebra Activity"
+					];					
+					var l = [
+						"ListaIdevice",
+						"QuizTestIdevice",
+						"ScrambledListIdevice",
+						"MultichoiceIdevice",
+						"MultiSelectIdevice",
+						"TrueFalseIdevice",
+						"ClozeIdevice",
+						"interactive-videoIdevice",
+						"GeoGebraIdevice"
+					];
+					var editor = $("#activeIdevice");
+					if (editor.length!=1) return;
+					var c = editor.attr("class");
+					var i = l.indexOf(c);
+					if (i==-1) return;
+					var t = $("input[type='text']",editor).eq(0);
+					if (t.length!=1) return;
+					if (t.val()==_(d[i])) t.val(_("Do it here"));
+				}
+			}			
 		}
 	}
 }
@@ -215,53 +254,9 @@ $(function(){
 	if ($("body").hasClass("exe-web-site")) {
 		if($(window).width()<829 && $(window).height()<1800){
 			myTheme.init2();
-		}
-		else{
-		myTheme.init();
+		} else {
+			myTheme.init();
 		}
 	}
 	myTheme.common.init();
 });
-
-function ayudantes(evt, cityName){
-  // Declare all variables
-  var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-};
-
-
-function personajes(evt, cityName) {
-  // Declare all variables
-  var i, personajescontent, tablinks;
-
-  // Get all elements with class="personajesconten" and hide them
-  personajescontent = document.getElementsByClassName("personajescontent");
-  for (i = 0; i < personajescontent.length; i++) {
-    personajescontent[i].style.display = "none";
-  }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(cityName).style.display = "block";
-  evt.currentTarget.className += " active";
-};
