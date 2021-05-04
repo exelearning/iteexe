@@ -12,7 +12,7 @@ body{padding:0;text-align:center}
 #header,#emptyHeader{border:none;padding:40px 210px 20px 20px;background:none;font-size:2em}
 #emptyHeader{height:42px}
 #headerContent{color:#cc6715;text-shadow:1px 1px 1px #FFF}
-#nodeDecoration{padding:0 30px 0 0;margin:0 0 25px 0;border:none;text-shadow:none;background:none;border-bottom:3px solid #00843D;background:url(logo_junta.png) no-repeat 100% 50%!important}
+#nodeDecoration{padding:0 30px 0 0;margin:0 0 25px 0;border:none;text-shadow:none;background:none;border-bottom:3px solid #00843D;background:url(_escolares_logo.png) no-repeat 100% 50%!important}
 #nodeTitle{padding:17px 0px 15px 10px;color:#00843D;letter-spacing:.5px;font-size:1.7em;font-weight:bold;margin-right:2.3em}
 #siteFooter{padding:5px 20px 20px 20px;text-align:right;margin-top:-56px}
 /* Navigation */
@@ -31,7 +31,7 @@ body{padding:0;text-align:center}
 /* Pagination */
 .pagination{text-align:right;font-size:.95em}
 .pagination .sep{display:none}
-.pagination a{display:block;position:absolute;right:52px;width:32px;height:32px;padding:0;background:url(_style_icons.png) no-repeat 0 0}
+.pagination a{display:block;position:absolute;right:52px;width:32px;height:32px;padding:0;background:url(_escolares_nav_icons.png) no-repeat 0 0}
 body .pagination a{filter:alpha(opacity=100);opacity:1;outline:none}
 .pagination a span span{display:none}
 .pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
