@@ -2,7 +2,7 @@ html,body{min-height:100%}
 html{padding:0;background:#f1f2f4}
 body{padding:0;text-align:center}
 @media all and (min-width:1px){
-	body{background:#f1f2f4 url(_adultos_bg.png) no-repeat 0 0}
+	body{min-height:100vh;background:#f1f2f4 url(_adultos_bg.png) no-repeat 0 0}
 }
 #lbOverlay{background:#f3f3f3}
 #content{width:100%;max-width:1230px;min-width:300px;margin:0 auto;text-align:left;position:relative;padding-bottom:21px}

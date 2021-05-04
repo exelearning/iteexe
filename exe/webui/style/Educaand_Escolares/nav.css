@@ -2,7 +2,7 @@ html,body{min-height:100%}
 html{padding:0;background:#fdfdfd}
 body{padding:0;text-align:center}
 @media all and (min-width:1px){
-	body{background:#fdfdfd url(_escolares_bg.png) no-repeat 0 0 fixed;background-size:cover}
+	body{min-height:100vh;background:#fdfdfd url(_escolares_bg.png) no-repeat 0 0 fixed;background-size:cover}
 }
 #lbOverlay{background:#f3f3f3}
 #content{width:100%;max-width:1230px;min-width:300px;margin:0 auto;text-align:left;position:relative;padding-bottom:21px}
@@ -59,7 +59,7 @@ body .pagination a{filter:alpha(opacity=100);opacity:1;outline:none}
 #content{overflow:auto}
 
 #header-options{margin:20px 0 0;position:absolute;top:2em;right:100px;z-index:99}
-#header-options a{font-size:.95em;margin-left:15px;margin-right:8px;background:transparent url(_escolares_menu.png) no-repeat 5px 50%;padding:0 10px 0 32px;color:#444}
+#header-options a{font-size:.95em;margin-left:15px;margin-right:8px;background:transparent url(_escolares_menu.gif) no-repeat 5px 50%;padding:0 10px 0 32px;color:#444}
 #header-options a:hover,#header-options a:focus{color:#7c3f06}
 #exe-client-search-text{max-width:50%}
 .exe-client-search-result{background:#ecd078;padding:0 2px}
