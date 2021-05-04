@@ -371,10 +371,10 @@ li{list-style-position:outside}
 	.exe-tabs .fx-tab-content{display:none;background:#fff;padding:15px;border-top:none!important;position:relative;z-index:99;bottom:10px}
 	.js .exe-tabs{background-color:white;width:100%;border:none}
 	div.node,article.node{page-break-after:always}
-	.exe-interactive-video,.rosco-IDevice,.quext-IDevice,.adivina-IDevice,.vquext-IDevice,.auto-geogebra{display:none!important}
-	.AdivinaIdevice h1.iDeviceTitle,.QuExtIdevice h1.iDeviceTitle,.RoscoIdevice h1.iDeviceTitle,.VideoQuExtIdevice h1.iDeviceTitle,.AdivinaIdevice h2.iDeviceTitle,.QuExtIdevice h2.iDeviceTitle,.RoscoIdevice h2.iDeviceTitle,.VideoQuExtIdevice h2.iDeviceTitle{color:#0065ab;padding-left:0px!important}
-	.AdivinaIdevice .iDevice_inner,.QuExtIdevice .iDevice_inner,.RoscoIdevice .iDevice_inner,.VideoQuExtIdevice .iDevice_inner,.interactive-videoIdevice .iDevice_inner{border:none!important}
-	.GeoGebraIdevice:after,.AdivinaIdevice:after,.QuExtIdevice:after,.RoscoIdevice:after,.VideoQuExtIdevice:after,.interactive-videoIdevice:after{content:"—";text-align:center;display:block;margin:1em 0}
+	.selecciona-IDevice,.candado-IDevice,.desafio-IDevice,.exe-interactive-video,.rosco-IDevice,.quext-IDevice,.adivina-IDevice,.vquext-IDevice,.auto-geogebra{display:none!important}
+	.SeleccionaIdevice h1.iDeviceTitle,.desafioIdevice h1.iDeviceTitle,.candadoIdevice h1.iDeviceTitle,.AdivinaIdevice h1.iDeviceTitle,.QuExtIdevice h1.iDeviceTitle,.RoscoIdevice h1.iDeviceTitle,.VideoQuExtIdevice h1.iDeviceTitle,.SeleccionaIdevice h2.iDeviceTitle,.desafioIdevice h2.iDeviceTitle,.candadoIdevice h2.iDeviceTitle,.AdivinaIdevice h2.iDeviceTitle,.QuExtIdevice h2.iDeviceTitle,.RoscoIdevice h2.iDeviceTitle,.VideoQuExtIdevice h2.iDeviceTitle{color:#0065ab;padding-left:0px!important}
+	.SeleccionaIdevice .iDevice_inner,.desafioIdevice .iDevice_inner,.candadoIdevice .iDevice_inner,.AdivinaIdevice .iDevice_inner,.QuExtIdevice .iDevice_inner,.RoscoIdevice .iDevice_inner,.VideoQuExtIdevice .iDevice_inner,.interactive-videoIdevice .iDevice_inner{border:none!important}
+	.SeleccionaIdevice:after,.desafioIdevice:after,.candadoIdevice:after,.GeoGebraIdevice:after,.AdivinaIdevice:after,.QuExtIdevice:after,.RoscoIdevice:after,.VideoQuExtIdevice:after,.interactive-videoIdevice:after{content:"—";text-align:center;display:block;margin:1em 0}
 	article.node:last-child{page-break-after:initial}
 	.iDevice_solution.feedback h1{font-size:12px!important;color:#444}
 	.fx-timeline-container a.fx-timeline-expand{display:none}
