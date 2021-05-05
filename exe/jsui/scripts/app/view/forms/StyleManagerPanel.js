@@ -307,7 +307,7 @@ function createPanelProperties(properties, stylen,mode,withbutton) {
                     xtype: 'textfield',
                     fieldLabel: properties[i].name,
                     name: properties[i].nxml,
-                    value: properties[i].value,
+                    value: properties[i].value==true ? '' : properties[i].value,
                     grow : true,
                     width: 420,
                     readOnly: mode,
