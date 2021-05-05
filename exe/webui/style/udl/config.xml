@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<theme>
+    <name>UDL</name>
+    <version>1.0</version>
+    <compatibility>2.6</compatibility>
+    <author>Consejería de Educación y Deporte</author>
+    <author-url>https://moocedu.juntadeandalucia.es/</author-url>
+    <license>Creative Commons by-sa</license>
+    <license-url>https://creativecommons.org/licenses/by-sa/4.0/</license-url>
+	<description>Style based on "EducaAnd Escolares". Original style by: Consejería de Educación y Deporte (https://moocedu.juntadeandalucia.es/) for eXeLearning (http://exelearning.net/), cofinanced by FEDER funds. Atkinson Hyperlegible Font: Copyright, Braille Institute of America, Inc., https://www.brailleinstitute.org/freefont</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+]]></extra-head>
+    <edition-extra-head><![CDATA[<script type="text/javascript">if (typeof(exe_style)!='undefined' && exe_style.indexOf("content.css")!=-1) document.write('<scr'+'ipt type="text/javascript" src="'+exe_style.replace("content.css","_style_js.js")+'"></scr'+'ipt>')</script>]]></edition-extra-head>
+    <extra-body><![CDATA[<script type="text/javascript" src="_style_js.js"></script>]]></extra-body>
+</theme>
