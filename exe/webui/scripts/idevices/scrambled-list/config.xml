@@ -2,7 +2,7 @@
 <idevice>
 	<title>Scrambled List</title>
 	<css-class>ScrambledList</css-class>
-	<icon>key_points</icon>
+	<icon>activity</icon>
 	<category>Interactive Activities</category>
 	<!--
 	<version>1.0</version>
