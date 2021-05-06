@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-05-04 18:24+0200\n"
-"PO-Revision-Date: 2021-04-22 18:37+0200\n"
+"PO-Revision-Date: 2021-05-06 21:19+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -1271,7 +1271,7 @@ msgstr "Borrar el archivo"
 
 #: exe/engine/extendedfieldengine.py:325
 msgid "No File Uploaded Currently"
-msgstr "Es este momento no se ha subido ningún fichero"
+msgstr "En este momento no se ha subido ningún fichero"
 
 #: exe/engine/extendedfieldengine.py:357 exe/webui/editorelement.py:225
 #: exe/webui/flashmovieblock.py:83 exe/webui/flashwithtextblock.py:83
@@ -9405,7 +9405,7 @@ msgstr "Añadir otra pregunta"
 
 #: exe/webui/notablock.py:71
 msgid "This iDevice will only be visible in eXe. It won't be exported."
-msgstr ""
+msgstr "Este iDevice sólo es visible dentro de eXe, no se incluye en las exportaciones."
 
 #: exe/webui/notablock.py:105
 msgid "Show/Hide"
@@ -15571,4 +15571,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-

@@ -15746,9 +15746,6 @@ msgstr ""
 #~ msgid "EDIA Project - PBL"
 #~ msgstr "EDIA Проект - PBL"
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Project's name"
 #~ msgstr "Название проекта"
 

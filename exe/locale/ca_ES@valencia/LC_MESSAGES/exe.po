@@ -15755,9 +15755,6 @@ msgstr ""
 #~ msgid "EDIA Project - PBL"
 #~ msgstr "Projecte EDIA - ABP (Aprenentatge Basat en Projectes)"
 
-#~ msgid ""
-#~ msgstr ""
-
 #~ msgid "Project's name"
 #~ msgstr "Nom del projecte"
 
