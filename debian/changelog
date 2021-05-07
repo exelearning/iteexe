@@ -24,6 +24,7 @@ intef-exe (3:2.6~beta2) lucid; urgency=medium
     - Fixed: Dropdown Activity instructions. (#574)
     - Fixed: Note iDevice missing instructions. (#575)
     - Fixed: TinyMCE - Paragraphs disappeared when updating/deleting a FIGURE. (#576)
+    - Fixed: TinyMCE - Image title changed when selecting  an image. (#577)
 
   * Manuel Narváez
     - New iDevice category (Games):
