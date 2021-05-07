@@ -840,16 +840,8 @@ var exe_tinymce = {
                     var img = new Image() ;
                     img.src = full_previewImage_url;
                     img.onload = function() {
-                        // We know field_name, but not the IDs of the fields to set the dimensions
-                        var fieldOrder = field_name;
-                        fieldOrder = fieldOrder.split("-")[0];
-                        fieldOrder = fieldOrder.split("_");
-                        if (fieldOrder.length==2) {
-                            fieldOrder = Number(fieldOrder[1]);
-                            $("#mceu_"+(fieldOrder+3)).val(img.width);
-                            $("#mceu_"+(fieldOrder+5)).val(img.height);
-                            exe_tinymce.current_image_size = [ img.width, img.height ];
-                        }
+                        // See issue #157
+                        exe_tinymce.current_image_size = [ img.width, img.height ];
                     }
                 }
                 else if (type == "media") {
