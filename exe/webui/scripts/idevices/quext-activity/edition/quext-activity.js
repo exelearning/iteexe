@@ -1452,6 +1452,9 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
+        if ($exeDevice.questionsGame.length > 1) {
+            game.questionsGame = $exeDevice.importQuExt(game)
+        }
         $exeDevice.active = 0;
         $exeDevice.questionsGame = game.questionsGame;
         for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
@@ -1476,6 +1479,20 @@ var $exeDevice = {
         tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
         tinyMCE.get('quextEFeedBackEditor').setContent(unescape(textFeedBack));
         $('.exe-form-tabs li:first-child a').click();
+    },
+    importQuExt: function (game) {
+        var questionsGame = $exeDevice.questionsGame;
+        for (var i = 0; i < game.questionsGame.length; i++) {
+            var p = game.questionsGame[i];
+            p.time = typeof p.time == 'undefined' ? 1 : p.time;
+            p.audio = typeof p.audio == "undefined" ? "" : p.audio;
+            p.hit = typeof p.hit == "undefined" ? -1 : p.hit;
+            p.error = typeof p.error == "undefined" ? -1 : p.error;
+            p.msgHit = typeof p.msgHit == "undefined" ? "" : p.msgHit;
+            p.msgError = typeof p.msgError == "undefined" ? "" : p.msgError;
+            questionsGame.push(p);
+        }
+        return questionsGame;
     },
     validateData: function () {
         var clear = $exeDevice.removeTags,

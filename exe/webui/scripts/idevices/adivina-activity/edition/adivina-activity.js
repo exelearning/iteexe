@@ -1654,6 +1654,9 @@ var $exeDevice = {
             eXe.app.alert($exeDevice.msgs.msgESelectFile);
             return;
         }
+        if ($exeDevice.wordsGame.length > 1) {
+            game.wordsGame = $exeDevice.importAdivina(game)
+        }
         $exeDevice.updateFieldGame(game);
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
@@ -1662,9 +1665,24 @@ var $exeDevice = {
         tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
         tinyMCE.get('adivinaEFeedBackEditor').setContent(unescape(textFeedBack));
         $('.exe-form-tabs li:first-child a').click();
-        $exeDevice.showQuestion(0);
+        $exeDevice.active=0;
+        $exeDevice.showQuestion($exeDevice.active);
     },
-
+    importAdivina: function (game) {
+        var wordsGame = $exeDevice.wordsGame;
+        for (var i = 0; i < game.wordsGame.length; i++) {
+            var p = game.wordsGame[i];
+            p.percentageShow = typeof game.percentageShow == 'undefined' ? 35 : game.percentageShow;
+            p.time = typeof p.time == 'undefined' ? 1 : p.time;
+            p.audio = typeof p.audio == "undefined" ? "" : p.audio;
+            p.hit = typeof p.hit == "undefined" ? -1 : p.hit;
+            p.error = typeof p.error == "undefined" ? -1 : p.error;
+            p.msgHit = typeof p.msgHit == "undefined" ? "" : p.msgHit;
+            p.msgError = typeof p.msgError == "undefined" ? "" : p.msgError;
+            wordsGame.push(p);
+        }
+        return wordsGame;
+    },
     isJsonString: function (str) {
         try {
             var o = JSON.parse(str, null, 2);
