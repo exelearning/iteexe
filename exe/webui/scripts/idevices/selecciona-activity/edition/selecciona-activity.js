@@ -356,7 +356,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#seleccionaEPaste').hide();
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
-            $('#seleccionaENumberQuestion').text($exeDevice.selectsGame.length);
+            $('#seleccionaENumberQuestion').val($exeDevice.selectsGame.length);
             $exeDevice.updateSelectOrder();
         }
     },
@@ -374,7 +374,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#seleccionaEPaste').hide();
             $('#seleccionaENumQuestions').text($exeDevice.selectsGame.length);
-            $('#seleccionaENumberQuestion').text($exeDevice.active + 1);
+            $('#seleccionaENumberQuestion').val($exeDevice.active + 1);
             $exeDevice.updateSelectOrder();
         }
     },
@@ -575,7 +575,7 @@ var $exeDevice = {
         $('#seleccionaGotoIncorrect').val(p.error);
         $('#seleccionaEMessageOK').val(p.msgHit);
         $('#seleccionaEMessageKO').val(p.msgError);
-        $('#seleccionaENumberQuestion').text(i + 1);
+        $('#seleccionaENumberQuestion').val(i + 1);
         $('#seleccionaEScoreQuestion').val(1);
         if (typeof (p.customScore) != "undefined") {
             $('#seleccionaEScoreQuestion').val(p.customScore);
@@ -1113,7 +1113,7 @@ var $exeDevice = {
                                 <a href="#" id="seleccionaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + 'quextIEAdd.png" alt="' + _("Add question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="seleccionaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + 'quextIEFirst.png" alt="' + _("First question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="seleccionaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + 'quextIEPrev.png" alt="' + _("Previous question") + '" class="gameQE-EButtonImage" /></a>\
-                                <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="seleccionaENumberQuestion">1</span>\
+                                <label class="sr-av" for="seleccionaENumberQuestion">' + _("Question number:") + ':</label><input type="text" class="gameQE-NumberQuestion"  id="seleccionaENumberQuestion" value="1"/>\
                                 <a href="#" id="seleccionaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + 'quextIENext.png" alt="' + _("Next question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="seleccionaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + 'quextIELast.png" alt="' + _("Last question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="seleccionaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + 'quextIEDelete.png"  alt="' + _("Delete question") + '" class="gameQE-EButtonImage" /></a>\
@@ -2278,6 +2278,23 @@ var $exeDevice = {
             this.value = this.value > 100 ? 100 : this.value;
             this.value = this.value < 1 ? 1 : this.value;
             $exeDevice.updateQuestionsNumber();
+        });
+        $('#seleccionaENumberQuestion').keyup(function (e) {
+            if (e.keyCode == 13) {
+                var num = parseInt($(this).val());
+                if (!isNaN(num) && num > 0) {
+                    if ($exeDevice.validateQuestion() != false) {
+                        $exeDevice.active= num < $exeDevice.selectsGame.length ? num-1 : $exeDevice.selectsGame.length-1;
+                        $exeDevice.showQuestion($exeDevice.active);
+
+                    }else{
+                        $(this).val($exeDevice.active+1)
+                    }
+                }else{
+                    $(this).val($exeDevice.active+1)
+                }
+
+            }
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },

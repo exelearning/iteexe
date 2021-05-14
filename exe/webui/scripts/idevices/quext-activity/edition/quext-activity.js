@@ -319,7 +319,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
-            $('#quextENumberQuestion').text($exeDevice.questionsGame.length);
+            $('#quextENumberQuestion').val($exeDevice.questionsGame.length);
             $exeDevice.updateQuestionsNumber();
         }
     },
@@ -336,7 +336,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#quextEPaste').hide();
             $('#quextENumQuestions').text($exeDevice.questionsGame.length);
-            $('#quextENumberQuestion').text($exeDevice.active + 1);
+            $('#quextENumberQuestion').val($exeDevice.active + 1);
             $exeDevice.updateQuestionsNumber();
         }
 
@@ -481,7 +481,7 @@ var $exeDevice = {
         }
         $('#quextEURLAudio').val(p.audio);
 
-        $('#quextENumberQuestion').text(i + 1);
+        $('#quextENumberQuestion').val(i + 1);
         $('#quextEScoreQuestion').val(1);
         if (typeof (p.customScore) != "undefined") {
             $('#quextEScoreQuestion').val(p.customScore);
@@ -947,7 +947,7 @@ var $exeDevice = {
                                 <a href="#" id="quextEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + 'quextIEAdd.png" alt="' + _("Add question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="quextEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _("First question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="quextEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + 'quextIEPrev.png" alt="' + _("Previous question") + '" class="gameQE-EButtonImage" /></a>\
-                                <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="quextENumberQuestion">1</span>\
+                                <label class="sr-av" for="quextENumberQuestion">' + _("Question number:") + ':</label><input type="text" class="gameQE-NumberQuestion"  id="quextENumberQuestion" value="1"/>\
                                 <a href="#" id="quextENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + 'quextIENext.png" alt="' + _("Next question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="quextELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + 'quextIELast.png" alt="' + _("Last question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="quextEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + 'quextIEDelete.png" alt="' + _("Delete question") + '" class="gameQE-EButtonImage" /></a>\
@@ -2017,6 +2017,23 @@ var $exeDevice = {
             this.value = this.value > 100 ? 100 : this.value;
             this.value = this.value < 1 ? 1 : this.value;
             $exeDevice.updateQuestionsNumber();
+        });
+        $('#quextENumberQuestion').keyup(function (e) {
+            if (e.keyCode == 13) {
+                var num = parseInt($(this).val());
+                if (!isNaN(num) && num > 0) {
+                    if ($exeDevice.validateQuestion() != false) {
+                        $exeDevice.active= num < $exeDevice.questionsGame.length ? num-1 : $exeDevice.questionsGame.length-1;
+                        $exeDevice.showQuestion($exeDevice.active);
+
+                    }else{
+                        $(this).val($exeDevice.active+1)
+                    }
+                }else{
+                    $(this).val($exeDevice.active+1)
+                }
+
+            }
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 

@@ -366,7 +366,7 @@ var $exeDevice = {
             $exeDevice.questionsGame.push($exeDevice.getCuestionDefault());
             $exeDevice.active = $exeDevice.questionsGame.length - 1;
             $exeDevice.showPlayer();
-            $('#vquextNumberQuestion').text($exeDevice.questionsGame.length);
+            $('#vquextNumberQuestion').val($exeDevice.questionsGame.length);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
             $exeDevice.updateQuestionsNumber();
         }
@@ -382,7 +382,7 @@ var $exeDevice = {
             }
             $exeDevice.showQuestion($exeDevice.active);
             $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
-            $('#vquextNumberQuestion').text($exeDevice.active + 1);
+            $('#vquextNumberQuestion').val($exeDevice.active + 1);
             $exeDevice.updateQuestionsNumber();
         }
     },
@@ -472,7 +472,7 @@ var $exeDevice = {
         $('#vquextEMessageKO').val(p.msgError);
         $('#vquextEMessageOK').val(p.msgHit);
         $('#vquextPoint').val($exeDevice.secondsToHour(p.pointVideo));
-        $('#vquextNumberQuestion').text(i + 1);
+        $('#vquextNumberQuestion').val(i + 1);
         $("input.gameQE-Number[name='vqxnumber'][value='" + p.numberOptions + "']").prop("checked", true)
         $("input.gameQE-ESolution[name='vqxsolution'][value='" + p.solution + "']").prop("checked", true);
         $("input.gameQE-Times[name='vqxtime'][value='" + p.time + "']").prop("checked", true);
@@ -800,7 +800,7 @@ var $exeDevice = {
                                 <a href="#" id="vquextEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + 'quextIEAdd.png" alt="' + _("Add question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="vquextEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + 'quextIEFirst.png" alt="' + _("First question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="vquextEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + 'quextIEPrev.png" alt="' + _("Previous question") + '" class="gameQE-EButtonImage" /></a>\
-                                <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="vquextNumberQuestion">1</span>\
+                                <label class="sr-av" for="vquextNumberQuestion">' + _("Question number:") + ':</label><input type="text" class="gameQE-NumberQuestion"  id="vquextNumberQuestion" value="1"/>\
                                 <a href="#" id="vquextENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + 'quextIENext.png" alt="' + _("Next question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="vquextELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + 'quextIELast.png" alt="' + _("Last question") + '" class="gameQE-EButtonImage" /></a>\
                                 <a href="#" id="vquextEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + 'quextIEDelete.png" alt="' + _("Delete question") + '" class="gameQE-EButtonImage" /></a>\
@@ -993,7 +993,7 @@ var $exeDevice = {
             game.questionsGame[i].msgError = typeof game.questionsGame[i].msgError == "undefined" ? "" : game.questionsGame[i].msgError;
         }
         $('#vquextENumQuestions').text($exeDevice.questionsGame.length);
-        $('#vquextNumberQuestion').text($exeDevice.active + 1);
+        $('#vquextNumberQuestion').val($exeDevice.active + 1);
         if (game.videoType > 0) {
             $('#vquextEVideo').hide();
             $('#vquextEVideoLocal').show();
@@ -1659,6 +1659,23 @@ var $exeDevice = {
         $('#vquextENavigable').on('change', function () {
             var disable = $(this).is(':checked');
             $('#vquextERepeatQuestion').prop('disabled', !disable);
+        });
+        $('#vquextNumberQuestion').keyup(function (e) {
+            if (e.keyCode == 13) {
+                var num = parseInt($(this).val());
+                if (!isNaN(num) && num > 0) {
+                    if ($exeDevice.validateQuestion() != false) {
+                        $exeDevice.active= num < $exeDevice.questionsGame.length ? num-1 : $exeDevice.questionsGame.length-1;
+                        $exeDevice.showQuestion($exeDevice.active);
+
+                    }else{
+                        $(this).val($exeDevice.active+1)
+                    }
+                }else{
+                    $(this).val($exeDevice.active+1)
+                }
+
+            }
         });
 
     },

@@ -295,7 +295,7 @@ var $exeDevice = {
                                 <a href="#" id="adivinaEAdd" class="gameQE-ENavigationButton" title="' + _("Add question") + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _("Add question") + '" class="gameQE-EButtonImage b-add" /></a>\
                                 <a href="#" id="adivinaEFirst" class="gameQE-ENavigationButton"  title="' + _("First question") + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _("First question") + '" class="gameQE-EButtonImage b-first" /></a>\
                                 <a href="#" id="adivinaEPrevious" class="gameQE-ENavigationButton" title="' + _("Previous question") + '"><img src="' + path + 'quextIEPrev.png" alt="' + _("Previous question") + '" class="gameQE-EButtonImage b-prev" /></a>\
-                                <span class="sr-av">' + _("Question number:") + '</span><span class="gameQE-NumberQuestion" id="adivinaENumberQuestion">1</span>\
+                                <label class="sr-av" for="adivinaENumberQuestion">' + _("Question number:") + ':</label><input type="text" class="gameQE-NumberQuestion"  id="adivinaENumberQuestion" value="1"/>\
                                 <a href="#" id="adivinaENext" class="gameQE-ENavigationButton"  title="' + _("Next question") + '"><img src="' + path + 'quextIENext.png" alt="' + _("Next question") + '" class="gameQE-EButtonImage b-next" /></a>\
                                 <a href="#" id="adivinaELast" class="gameQE-ENavigationButton"  title="' + _("Last question") + '"><img src="' + path + 'quextIELast.png" alt="' + _("Last question") + '" class="gameQE-EButtonImage b-last" /></a>\
                                 <a href="#" id="adivinaEDelete" class="gameQE-ENavigationButton" title="' + _("Delete question") + '"><img src="' + path + 'quextIEDelete.png" alt="' + _("Delete question") + '" class="gameQE-EButtonImage b-delete" /></a>\
@@ -402,7 +402,7 @@ var $exeDevice = {
             $exeDevice.playSound(p.audio.trim());
         }
         $('#adivinaEURLAudio').val(p.audio);
-        $('#adivinaENumberQuestion').text(i + 1);
+        $('#adivinaENumberQuestion').val(i + 1);
         $("input.gameQE-Type[name='qxtmediatype'][value='" + p.type + "']").prop("checked", true);
         $("input.gameQE-Times[name='qxttime'][value='" + p.time + "']").prop("checked", true);
         $('#adivinaEMessageKO').val(p.msgError);
@@ -1351,6 +1351,23 @@ var $exeDevice = {
             this.value = this.value < 1 ? 1 : this.value;
             $exeDevice.updateQuestionsNumber();
         });
+        $('#adivinaENumberQuestion').keyup(function (e) {
+            if (e.keyCode == 13) {
+                var num = parseInt($(this).val());
+                if (!isNaN(num) && num > 0) {
+                    if ($exeDevice.validateQuestion() != false) {
+                        $exeDevice.active= num < $exeDevice.wordsGame.length ? num-1 : $exeDevice.wordsGame.length-1;
+                        $exeDevice.showQuestion($exeDevice.active);
+
+                    }else{
+                        $(this).val($exeDevice.active+1)
+                    }
+                }else{
+                    $(this).val($exeDevice.active+1)
+                }
+
+            }
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     showSelectOrder: function (messages, custonmScore) {
@@ -1453,7 +1470,7 @@ var $exeDevice = {
             $exeDevice.clearQuestion();
             $exeDevice.wordsGame.push($exeDevice.getCuestionDefault());
             $exeDevice.active = $exeDevice.wordsGame.length - 1;
-            $('#adivinaENumberQuestion').text($exeDevice.wordsGame.length);
+            $('#adivinaENumberQuestion').val($exeDevice.wordsGame.length);
             $exeDevice.typeEdit = -1;
             $('#adivinaEPaste').hide();
             $('#adivinaENumQuestions').text($exeDevice.wordsGame.length);
@@ -1473,7 +1490,7 @@ var $exeDevice = {
             $exeDevice.typeEdit = -1;
             $('#adivinaEPaste').hide();
             $('#adivinaENumQuestions').text($exeDevice.wordsGame.length);
-            $('#adivinaENumberQuestion').text($exeDevice.active + 1);
+            $('#adivinaENumberQuestion').val($exeDevice.active + 1);
             $exeDevice.updateQuestionsNumber();
         }
 
