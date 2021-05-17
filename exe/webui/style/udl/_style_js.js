@@ -192,6 +192,7 @@ var myTheme = {
 							aW.addClass("hidden-idevice");
 							$(".toggle-idevice a",aW).attr("class","show-idevice");
 							$(".iDevice_inner",aW).hide();
+							if(a=='GeoGebra') $("div.auto-geogebra",aW).addClass("disableAutoScale"); // Prevent zoom problems when the iDevice is minified
 						}
 						// The iDevices with the icon_udl_exp_tarea are minified too
 						$(".iDevice_wrapper").each(function(){
