@@ -9,7 +9,7 @@ html{padding:0}
 body{font:1.05em/1.4 "Atkinson Hyperlegible",Arial,Helvetica,sans-serif;padding:20px;margin:0;text-align:left;color:#444;background:#fff}
 input,select,textarea,.feedback{font-family:"Atkinson Hyperlegible",​Arial,Helvetica,sans-serif;font-size:1em}
 .pre-code,.highlighted-code{font-family:"Atkinson Hyperlegible",​Arial,Helvetica,sans-serif;font-size:.9em;border-radius:0}
-a{color:#000}
+a{color:#cc6715}
 /* Header is also in single page */
 header#header #headerContent h1{color:#cc6715;border:none;margin-right:75px}
 #header h1{margin:0;font-size:1em;color:#00843D}
@@ -35,7 +35,6 @@ h3{font-size:1.35em;color:#444;letter-spacing:.5px;font-weight:bold}
 h4{font-size:1.2em;font-weight:bold;color:#444}
 h5{font-size:1.1em;font-weight:bold;color:#444}
 h6{font-size:1em;font-weight:bold;color:#444}
-pre{font-size:1em;color:#000}
 p{margin:1em 0}
 ol,ul{color:#444}
 #main{height:auto!important;height:300px;min-height:300px;padding-top:10px}
@@ -44,7 +43,7 @@ ol,ul{color:#444}
 #main h6{font-size:1em}
 .iDevice{margin:25px 0 1em 0}
 /* Tooltips */
-a.definition-tt{color:#00843D}
+body a.definition-tt{font-weight:bold;color:#000}
 /* Modals */
 #pp_full_res .pp_title{color:#00843D;margin:0;padding:1em 0 .25em 0}
 #pp_full_res .pp_inline p{color:#444}
