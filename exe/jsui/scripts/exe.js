@@ -216,7 +216,10 @@ Ext.application({
 				// Remove ~alfa or ~beta
 				current = current.split("~");
 				current = current[0];
-				// Remove pp... (launchpad.net ppa version)
+				// Remove b (Example: 2.6b2)
+				current = current.split("b");
+				current = current[0];                
+                // Remove pp... (launchpad.net ppa version)
 				current = current.split("pp");
 				current = current[0];				
                 
