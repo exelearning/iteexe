@@ -45,7 +45,6 @@ except ImportError, error:
         sys.exit(1)
 from exe.export.cmdlineexporter import CmdlineExporter
 from exe.importers.cmdlineimporter import CmdlineImporter
-from exe.engine.idevicestore import IdeviceStore
 from exe.engine.package import Package
 from exe.engine.path import Path, TempDirPath
 
