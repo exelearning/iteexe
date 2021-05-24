@@ -481,12 +481,7 @@ def ideviceHeader(e, style, mode):
     w2 = ''
     eEm = ''
 
-
-    if (((e.idevice.emphasis > 0) and
-        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == False))
-        or (
-        ((e.idevice.title != "") or (e.idevice.icon != "")) and
-        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == True))) :
+    if (e.idevice.emphasis > 0 and ((e.idevice.icon and e.idevice.icon!="") or (e.idevice.title and e.idevice.title!=""))):
 
         w2 = '<div class="iDevice_inner">'+lb
         w2 += '<div class="iDevice_content_wrapper">'+lb
@@ -577,11 +572,7 @@ def ideviceFooter(e, style, mode):
     themeHasXML = themeHasConfigXML(style)
     h = ''
 
-    if (((e.idevice.emphasis > 0) and
-        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == False))
-        or (
-        ((e.idevice.title != "") or (e.idevice.icon != "")) and
-        (G.application.ideviceStore and G.application.ideviceStore.isJs(e.idevice) == True))) :
+    if (e.idevice.emphasis > 0 and ((e.idevice.icon and e.idevice.icon!="") or (e.idevice.title and e.idevice.title!=""))):
 
         h = "</div>"+lb # Close iDevice_content_wrapper
         h += "</div>"+lb # Close iDevice_inner
