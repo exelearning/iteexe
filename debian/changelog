@@ -53,6 +53,7 @@ intef-exe (3:2.6b3) lucid; urgency=medium
     - Fixed: Strange characters in the iDevice editor. (#535)
     - Fixed: Strange characters when adding a header background image. (#562)
     - Fixed: Package language changed when changing eXe's language. (#564)
+    - Fixed: Set the default Style using the config.py file.
 
   * Juan Rafael Fernández
     - String extraction process revision.
