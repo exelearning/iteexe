@@ -76,7 +76,7 @@ draw = ImageDraw.Draw(im)
 # Brand the splash screen (if we can)
 if candrawfont:
     draw.text((150, 102), "Version: " + version.release, font=font, fill=fontcolor)
-    draw.text((150, 105 + font_height), "Revision: " + version.revision, font=font, fill=fontcolor)
+    # draw.text((150, 105 + font_height), "Revision: " + version.revision, font=font, fill=fontcolor)
 
 # Remove the image from memory
 del draw
