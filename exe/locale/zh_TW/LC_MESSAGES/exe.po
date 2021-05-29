@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
 "POT-Creation-Date: 2021-05-04 18:24+0200\n"
-"PO-Revision-Date: 2021-04-27 19:47+0200\n"
+"PO-Revision-Date: 2021-05-29 13:38+0200\n"
 "Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
 "Language: zh_Hant_TW\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -8713,7 +8713,7 @@ msgstr "新增其他問題"
 
 #: exe/webui/notablock.py:71
 msgid "This iDevice will only be visible in eXe. It won't be exported."
-msgstr ""
+msgstr "這個 iDevice 只能在 eXe 裡使用，不能匯出。"
 
 #: exe/webui/notablock.py:105
 msgid "Show/Hide"
@@ -14659,4 +14659,3 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。請更新eXe並再試一次。"
-
