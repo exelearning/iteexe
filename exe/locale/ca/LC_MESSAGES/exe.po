@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-05-04 18:24+0200\n"
-"PO-Revision-Date: 2021-04-21 13:06+0200\n"
+"PO-Revision-Date: 2021-05-29 18:11+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>"
 "\n"
 "Language: ca\n"
@@ -9326,7 +9326,7 @@ msgstr "Afegeix una altra pregunta."
 
 #: exe/webui/notablock.py:71
 msgid "This iDevice will only be visible in eXe. It won't be exported."
-msgstr ""
+msgstr "Aquest iDevice sols és visible a l'eXe. No pot ser exportat."
 
 #: exe/webui/notablock.py:105
 msgid "Show/Hide"
@@ -15473,4 +15473,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
