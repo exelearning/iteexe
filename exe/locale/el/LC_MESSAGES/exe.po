@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-05-04 18:24+0200\n"
-"PO-Revision-Date: 2021-04-22 21:25+0300\n"
+"PO-Revision-Date: 2021-05-29 18:15+0200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
 "Language-Team: Greek <ttnfy17@yahoo.gr>\n"
@@ -9448,7 +9448,7 @@ msgstr "Προσθήκη άλλης Eρώτησης"
 
 #: exe/webui/notablock.py:71
 msgid "This iDevice will only be visible in eXe. It won't be exported."
-msgstr ""
+msgstr "Αυτό το η-Σύνεργο θα είναι ορατό μόνο στο exe. Δεν θα είναι δυνατή η εξαγωγή του."
 
 #: exe/webui/notablock.py:105
 msgid "Show/Hide"
@@ -15667,4 +15667,3 @@ msgstr ""
 "Είτε το αρχείο η-Σύνεργα/generic.data, είτε το πακέτο που προσπαθείτε να "
 "φορτώσετε, δημιουργήθηκαν με μια νεότερη έκδοση του eXe. Παρακαλώ "
 "αναβαθμίστε το eXe και προσπαθήστε πάλι."
-
