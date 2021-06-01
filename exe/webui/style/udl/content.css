@@ -301,6 +301,11 @@ li{list-style-position:outside}
 /* iDevice edition buttons */
 .exe-authoring-page .em_iDevice .idevice-edition-buttons{left:10px;bottom:-18px}
 
+/* TinyMCE */
+.EducaAnd_IMP{color:#499113}
+.EducaAnd_EXP{color:#0065ab}
+.EducaAnd_COM{color:#784aba}
+
 /* Print */
 @media print{
 	#header{padding-top:0px!important}
