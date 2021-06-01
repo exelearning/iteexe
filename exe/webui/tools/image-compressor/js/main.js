@@ -14,8 +14,8 @@ window.addEventListener('DOMContentLoaded', function () {
         options: {
           strict: true,
           checkOrientation: true,
-          maxWidth: 800,
-          maxHeight: 800,
+          maxWidth: eXeImageCompressor.sizeLimit,
+          maxHeight: eXeImageCompressor.sizeLimit,
           minWidth: 0,
           minHeight: 0,
           width: undefined,
@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', function () {
 			var base64data = reader.result;                
 				vm.outputURL = base64data;
 			}
-            console.log('Output: ', result);
+            // console.log('Output: ', result);
 
             if (URL) {
               vm.outputURL = URL.createObjectURL(result);
@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', function () {
           return;
         }
 
-        console.log('Input: ', file);
+        // console.log('Input: ', file);
 
         if (URL) {
           this.inputURL = URL.createObjectURL(file);
@@ -93,6 +93,11 @@ window.addEventListener('DOMContentLoaded', function () {
 
       drop: function(e) {
         e.preventDefault();
+        // eXeLearning
+        jQuery("#inputSize").val("");
+        jQuery("#inputMaxWidth").val(eXeImageCompressor.maxSize)[0].dispatchEvent(new Event('input'));
+        jQuery("#inputMaxHeight").val(eXeImageCompressor.maxSize)[0].dispatchEvent(new Event('input'));
+        // / eXeLearning
         this.compress(e.dataTransfer.files ? e.dataTransfer.files[0] : null);
       },
     },
@@ -125,9 +130,14 @@ window.addEventListener('DOMContentLoaded', function () {
 				backupWarning = backupWarning.replace("$",'<a href="'+url+'" download="'+name+'">');
 				backupWarning = backupWarning.replace("$",'</a>');
 			$("#imageEditorBackupMessage").html(backupWarning);
+			// Get the image size
+			eXeImageCompressor.loadImage(url);
 		}
 	} else if (originalSrc.indexOf("/previews/")==0) {
 		top.eXe.app.alert($i18n.newImageWarning);
+	} else {
+		// Open the file picker
+		jQuery("label[for='file']").trigger("click");
 	}
 
       var vm = this;
@@ -151,11 +161,65 @@ window.addEventListener('DOMContentLoaded', function () {
 // eXeLearning
 var eXeImageCompressor = {
 	type : "file", // base64 or file
+	sizeLimit : 1200, // true max size
+	maxSize : this.sizeLimit,
+	setMaxSize : function(){
+		var v = this.getCookie("eXeImageCompressorMaxSize");
+		if (!isNaN(v) && v!="") {
+			v = Math.round(v);
+			if (v>0 && v<this.sizeLimit) this.maxSize = v;
+		}
+	},
+	setCookie : function(cvalue) {
+		var d = new Date();
+		d.setTime(d.getTime() + (30*24*60*60*1000));
+		var expires = "expires="+ d.toUTCString();
+		document.cookie = "eXeImageCompressorMaxSize=" + cvalue + ";" + expires + ";path=/";
+	},
+	getCookie: function(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i=0;i<ca.length;i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') c = c.substring(1);
+			if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+		}
+		return "";
+	},
+	loadImage: function(url){
+		var img = new Image();
+		img.onload = function() {
+			var w = this.width;
+			var h = this.height;
+			if (!isNaN(w) && !isNaN(h)) {
+				var v = w;
+				if (h>w) v = h;
+				if (v>eXeImageCompressor.sizeLimit) v = eXeImageCompressor.sizeLimit;
+				jQuery("#inputSize").val(v);
+				jQuery("#inputMaxWidth").val(v)[0].dispatchEvent(new Event('input'));
+				jQuery("#inputMaxHeight").val(v)[0].dispatchEvent(new Event('input'));							
+			}
+		}
+		img.src = url;
+		var ext = url.split('.').pop();
+			ext = ext.toLowerCase();
+		if (ext=="jpg" || ext=="jpeg" || url.indexOf("data:image/jpeg")==0) jQuery("#inputQuality,label[for='inputQuality']").show();	
+		else jQuery("#inputQuality,label[for='inputQuality']").hide();	
+	},	
 	init : function(){
 		this.i18n();
+		this.setMaxSize();
 		setTimeout(function(){
+			jQuery("#imageEditorOutputImg").load(function(){
+				eXeImageCompressor.loadImage(this.src);
+			});			
 			jQuery("#imageEditorSaveImg").fadeIn().click(function(){
       
+				// Update the cookie
+				var v = jQuery("#inputSize").val();
+				if (!isNaN(v) && v<eXeImageCompressor.sizeLimit) eXeImageCompressor.setCookie(v);
+				
 				var img = jQuery("#imageEditorOutputImg")
 				var src = img.attr("src");					
 				
@@ -206,8 +270,15 @@ var eXeImageCompressor = {
 				return false;
 				
 			});
+			jQuery("#inputSize").change(function(){
+				var v = this.value;
+					v = v.replace(/\D/g,'');
+					if (v>eXeImageCompressor.sizeLimit) v = v.slice(0,-1);
+					this.value = v;
+				jQuery("#inputMaxWidth").val(v)[0].dispatchEvent(new Event('input'));
+				jQuery("#inputMaxHeight").val(v)[0].dispatchEvent(new Event('input'));
+			});
 		},1000);
-		
 	},
 	i18n : function(){
 
@@ -217,6 +288,7 @@ var eXeImageCompressor = {
 			html = html.replace("$",'<label for="file">');
 			html = html.replace("$",'<input type="file" id="file" accept="image/*" class="sr-only"></label>');
 			e.html(html)
+		$("label[for='inputSize']").html($i18n.size+":");
 		$("label[for='inputMaxWidth']").html($i18n.maxWidth+":");
 		$("label[for='inputMaxHeight']").html($i18n.maxHeight+":");
 		$("label[for='inputWidth']").html($i18n.width+":");

@@ -2,6 +2,11 @@
 body{background:#FFF;padding:20px;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:14px;color:#333741;margin:0}
 input, select{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;font-size:14px}
 #imageEditorOptions{margin:20px 0}
+label[for='inputMaxWidth'],#inputMaxWidth,
+label[for='inputMaxHeight'],#inputMaxHeight,
+label[for='inputWidth'],#inputWidth,
+label[for='inputHeight'],#inputHeight,
+label[for='inputQuality'],#inputQuality{display:none}
 #imageEditorOptions p{margin:0}
 #imageEditorOptions input,#imageEditorOptions select{width:70px;margin-right:20px}
 #imageEditorData .imageEditorData{margin-right:20px}

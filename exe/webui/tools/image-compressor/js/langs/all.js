@@ -5,6 +5,7 @@ if (typeof(_)=='undefined') {
 var $i18n = {
 	imageOptimizer : _("Image optimizer"),
 	uploadInstructions : _("Drop image here or $browse...$"),
+	size : _('Size'),
 	maxWidth : _("Max width"),
 	maxHeight : _("Max height"),
 	width : _("Width"),
