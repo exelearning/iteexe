@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-05-04 18:24+0200\n"
-"PO-Revision-Date: 2021-04-23 17:10+0200\n"
+"PO-Revision-Date: 2021-05-31 20:38+0200\n"
 "Last-Translator: Jesús Miguel Domínguez <miguelcaliban@gmail.com>\n"
 "Language: fr\n"
 "Language-Team: EXE Team <exe@exelearning.org>\n"
@@ -9336,7 +9336,7 @@ msgstr "Ajouter une autre question"
 
 #: exe/webui/notablock.py:71
 msgid "This iDevice will only be visible in eXe. It won't be exported."
-msgstr ""
+msgstr "Cet outil pédagogique ne sera visible qu'en eXe. Il ne sera pas exporté."
 
 #: exe/webui/notablock.py:105
 msgid "Show/Hide"
@@ -15520,4 +15520,3 @@ msgstr ""
 "Le dossier que vous souhaitez charger, ou les outils et fichiers qu'il "
 "incorpore ont été créés avec une version d'Exe plus récente que celle que"
 " vous utilisez. SVP, faites une mise à jour d'Exelearning et réessayez."
-

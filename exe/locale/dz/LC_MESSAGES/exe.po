@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2021-05-04 18:24+0200\n"
-"PO-Revision-Date: 2021-04-10 13:44+0200\n"
+"PO-Revision-Date: 2021-05-31 20:32+0200\n"
 "Last-Translator: Tandin Penjor <tpenjor.sce@rub.edu.bt>\n"
 "Language: dz\n"
 "Language-Team: Dzongkha <tpenjor.sce@rub.edu.bt>\n"
@@ -8725,7 +8725,7 @@ msgstr "དྲི་བ་གཞན་ཅིག་ཁ་སྐོང་རྐྱ
 
 #: exe/webui/notablock.py:71
 msgid "This iDevice will only be visible in eXe. It won't be exported."
-msgstr ""
+msgstr "འ་ནི་བརྡ་དོན་ཐབས་འཕྲུལ་འདི་ཨི་ཨེགསི་ཨི་རྐྱངམ་ཅིག་ནང་མཐོང་ཚུགས། འདི་ཕྱིར་འདྲེན་འབད་མི་བཏུབ།"
 
 #: exe/webui/notablock.py:105
 msgid "Show/Hide"
@@ -14676,4 +14676,3 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
