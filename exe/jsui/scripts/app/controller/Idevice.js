@@ -30,7 +30,27 @@ Ext.define('eXe.controller.Idevice', {
         });
     },
     
+    checkActiveIdevice: function(){
+        var iframe = document.getElementsByTagName('iframe');
+        if (iframe.length==1) {
+            iframe = iframe[0];
+            var doc = iframe.contentWindow.document;
+            var btn = doc.getElementById("exe-submitButton");
+            if (btn) {
+                Ext.Msg.alert(
+                    _('Info'),
+                    _("The changes you made will be lost if you navigate away from this page.")
+                );				
+                return false;
+            } else {
+                return true;
+            }
+        }		
+        return true;
+    },    
+    
     onIdeviceClick: function(view, record, item, index, e, eOpts) {
+        if (this.checkActiveIdevice()==false) return false;
         var authoring = Ext.ComponentQuery.query('#authoring')[0].getWin();
         if (authoring && authoring.submitLink && !view.panel.editing) {
             var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),

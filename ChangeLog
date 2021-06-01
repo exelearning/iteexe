@@ -20,7 +20,7 @@ intef-exe (3:2.6b3) lucid; urgency=medium
     - Fixed: Presentation Style: Prevent link default behaviour (usability problem).
     - Fixed: Invalid XML in the JavaScript iDevices configuration files.
     - Fixed: "New version available" message always displayed in the PPA version. (#540)
-    - Fixed: Add/Rename/Move page disabled when editing an iDevice. (#550)
+    - Fixed: Add/Rename/Move page and add iDevice disabled when editing an iDevice. (#550)
     - Fixed: Dropdown Activity instructions. (#574)
     - Fixed: Note iDevice missing instructions. (#575)
     - Fixed: TinyMCE - Paragraphs disappeared when updating/deleting a FIGURE. (#576)
