@@ -1,10 +1,12 @@
 /* GeoGebra Activity iDevice (edition CSS) */
 #geogebraActivitySCORMoptions{visibility:hidden;margin-left:1.5em}
 #geogebraActivityInstructions{width:500px}
-#geogebraActivityURL,#geogebraActivityURLexample{width:200px;margin-right:1.5em}
 #geogebraActivityURL{width:300px;margin-right:.2em}
 #geogebraActivityWidth,#geogebraActivityHeight,#geogebraActivityLang,#geogebraActivityBorderColor{width:70px}
-#geogebraActivityURLexample{background:#F0F0F0;color:#6d6d6d}
+#geogebraActivityURLexample{width:300px;margin-right:1em;background:#F0F0F0;color:#6d6d6d}
+@media all and (max-width:750px){
+	#geogebraActivityURL,#geogebraActivityURLexample{width:250px}
+}
 label[for=geogebraActivityHeight]{margin-left:1.5em}
 #eXeAutoGeogebraCheckOptions{overflow:auto;margin:1em 0 .5em 0}
 #eXeAutoGeogebraForm p{margin-bottom:1.5em}
