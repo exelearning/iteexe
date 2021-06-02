@@ -137,9 +137,7 @@ window.addEventListener('DOMContentLoaded', function () {
 		top.eXe.app.alert($i18n.newImageWarning);
 	} else {
 		// Open the file picker
-		setTimeout(function(){
-			jQuery("label[for='file']").trigger("click");
-		},100);
+		jQuery("label[for='file']").trigger("click");
 	}
 
       var vm = this;
