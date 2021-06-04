@@ -42,8 +42,6 @@ ol,ul{color:#444}
 #main h5{font-size:1.1em}
 #main h6{font-size:1em}
 .iDevice{margin:25px 0 1em 0}
-/* Tooltips */
-body a.definition-tt{font-weight:bold;color:#000}
 /* Modals */
 #pp_full_res .pp_title{color:#00843D;margin:0;padding:1em 0 .25em 0}
 #pp_full_res .pp_inline p{color:#444}
