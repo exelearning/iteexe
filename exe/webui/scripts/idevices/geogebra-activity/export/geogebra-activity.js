@@ -155,7 +155,7 @@ var $eXeAutoGeogebra = {
             "showToolBarHelp": (c.indexOf("showToolBarHelp") > -1 ? true : false),
             "showResetIcon": (c.indexOf("showResetIcon") > -1 ? true : false),
             "enableLabelDrags": false,
-            "enableShiftDragZoom": false,
+            "enableShiftDragZoom": (c.indexOf("enableShiftDragZoom") > -1 ? true : false),
             "enableRightClick": (c.indexOf("enableRightClick") > -1 ? true : false),
             "errorDialogsActive": (c.indexOf("errorDialogsActive") > -1 ? true : false),
             "useBrowserForJS": false,

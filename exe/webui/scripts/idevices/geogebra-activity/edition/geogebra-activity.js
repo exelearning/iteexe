@@ -27,6 +27,7 @@ var $exeDevice = {
 		"showToolBar": [_("Show toolbar"), false],
 		"showToolBarHelp": [_("Show toolbar help"), false],
 		"showResetIcon": [_("Show reset icon"), false],
+		"enableShiftDragZoom": [_("Zoom"), false],
 		"enableRightClick": [_("Enable right click"), false],
 		"errorDialogsActive": [_("Error dialogs active"), false],
 		"preventFocus": [_("Prevent focus"), false],
