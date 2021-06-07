@@ -170,11 +170,12 @@ var eXeImageCompressor = {
 			if (v>0 && v<this.sizeLimit) this.maxSize = v;
 		}
 	},
+	firstImageLoaded : false,
 	setCookie : function(cvalue) {
 		var d = new Date();
 		d.setTime(d.getTime() + (30*24*60*60*1000));
 		var expires = "expires="+ d.toUTCString();
-		document.cookie = "eXeImageCompressorMaxSize=" + cvalue + ";" + expires + ";path=/";
+		document.cookie = "eXeImageCompressorMaxSize=" + cvalue + ";" + expires + ";path=/;SameSite=Lax";
 	},
 	getCookie: function(cname) {
 		var name = cname + "=";
@@ -196,6 +197,8 @@ var eXeImageCompressor = {
 				var v = w;
 				if (h>w) v = h;
 				if (v>eXeImageCompressor.sizeLimit) v = eXeImageCompressor.sizeLimit;
+				if (eXeImageCompressor.firstImageLoaded==false && v>eXeImageCompressor.maxSize) v = eXeImageCompressor.maxSize;
+				eXeImageCompressor.firstImageLoaded = true;
 				jQuery("#inputSize").val(v);
 				jQuery("#inputMaxWidth").val(v)[0].dispatchEvent(new Event('input'));
 				jQuery("#inputMaxHeight").val(v)[0].dispatchEvent(new Event('input'));							
