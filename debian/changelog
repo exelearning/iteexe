@@ -1,4 +1,4 @@
-intef-exe (3:2.6b3) lucid; urgency=medium
+intef-exe (3:2.6) lucid; urgency=medium
 
   * Ignacio Gros
     - TinyMCE: New image optimizer.
@@ -68,8 +68,8 @@ intef-exe (3:2.6b3) lucid; urgency=medium
     - New complete Italian translation, by Andrea Primiani.
     - New complete Greek translation, by Yannis Kaskamanidis.
     - New complete Simplified Chinese translation, by Chenggui Duan.
+    - New complete Russian translation, by Dmytro Abaydullin.
     - New Traditional Chinese translation, by Franklin Weng.
-    - New Russian translation, by Dmytro Abaydullin.
     - New translation to Dzongkha, by Tandin Penjor.
 
  -- eXeLearning <admin@exelearning.net>  Fri, 28 Mar 2021 11:15:00 +0200
