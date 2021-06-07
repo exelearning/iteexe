@@ -5,6 +5,7 @@ intef-exe (3:2.6) lucid; urgency=medium
     - TinyMCE: New mind maps editor plugin (mindmaps, by David Richard).
     - TinyMCE: Paste as text by default. (#541)
     - TinyMCE: GNU Free Documentation License added to the available licenses list.
+    - TinyMCE: The "Insert HTML code as text" plugin remembers the user's preferences.
     - You can save an iDevice with the editor in full screen mode.
     - New UDL Content iDevice.
       Junta de Andalucía - Consejería de Educación y Deporte (cofinanced with the European Union FEDER funds).
