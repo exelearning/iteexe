@@ -254,6 +254,12 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 /* TinyMCE Float Panel (to review - see #132) */
 .mce-floatpanel{max-height:100%;overflow:auto}
 .mce-fullscreen .idevice-edition-buttons,.mce-fullscreen .toggle-idevice{display:none}
+/* Save iDevice with fullscreen */
+.mce-fullscreen #activeIdevice .exe-editButtons{z-index:10000;position:absolute;left:8px;bottom:37px;margin:0}
+.mce-fullscreen #activeIdevice .exe-editButtons select,.mce-fullscreen #activeIdevice .exe-editButtons img,.mce-fullscreen #activeIdevice .exe-editButtons a{display:none}
+.mce-fullscreen #activeIdevice .exe-editButtons a img{display:inline}
+.mce-fullscreen #activeIdevice .exe-editButtons a:nth-of-type(0),
+.mce-fullscreen #activeIdevice .exe-editButtons a:nth-of-type(1){display:inline}
 
 /* iDevice edition */
 .exe-authoring-page #activeIdevice{padding-top:1.5em;border:0;box-shadow:none}
