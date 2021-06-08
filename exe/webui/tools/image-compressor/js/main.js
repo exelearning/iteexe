@@ -197,11 +197,13 @@ var eXeImageCompressor = {
 				var v = w;
 				if (h>w) v = h;
 				if (v>eXeImageCompressor.sizeLimit) v = eXeImageCompressor.sizeLimit;
-				if (eXeImageCompressor.firstImageLoaded==false && v>eXeImageCompressor.maxSize) v = eXeImageCompressor.maxSize;
-				eXeImageCompressor.firstImageLoaded = true;
-				jQuery("#inputSize").val(v);
-				jQuery("#inputMaxWidth").val(v)[0].dispatchEvent(new Event('input'));
-				jQuery("#inputMaxHeight").val(v)[0].dispatchEvent(new Event('input'));							
+				if (eXeImageCompressor.firstImageLoaded==false && v>eXeImageCompressor.maxSize) {
+					v = eXeImageCompressor.maxSize;
+					jQuery("#inputSize").val(v);
+					jQuery("#inputMaxWidth").val(v)[0].dispatchEvent(new Event('input'));
+					jQuery("#inputMaxHeight").val(v)[0].dispatchEvent(new Event('input'));					
+				}
+				eXeImageCompressor.firstImageLoaded = true;							
 			}
 		}
 		img.src = url;
