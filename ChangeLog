@@ -8,7 +8,9 @@ intef-exe (3:2.6) lucid; urgency=medium
     - TinyMCE: The "Insert HTML code as text" plugin remembers the user's preferences.
     - You can save an iDevice with the editor in full screen mode.
     - New UDL Content iDevice.
-      Junta de Andalucía - Consejería de Educación y Deporte (cofinanced with the European Union FEDER funds).
+      Junta de Andalucía - Consejería de Educación y Deporte
+      https://www.juntadeandalucia.es/organismos/educacionydeporte
+      Cofinanced with the European Union FEDER funds.
     - Interactive Video iDevice: You can use a youtu.be URL.
     - The About eXe page shows the application type instead of the revision number.
     - iDevices revision (usability, HTML, presentation, strings).
