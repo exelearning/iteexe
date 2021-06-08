@@ -162,7 +162,7 @@ window.addEventListener('DOMContentLoaded', function () {
 var eXeImageCompressor = {
 	type : "file", // base64 or file
 	sizeLimit : 1200, // true max size
-	maxSize : this.sizeLimit,
+	maxSize : 1200, // default size
 	setMaxSize : function(){
 		var v = this.getCookie("eXeImageCompressorMaxSize");
 		if (!isNaN(v) && v!="") {
@@ -197,7 +197,7 @@ var eXeImageCompressor = {
 				var v = w;
 				if (h>w) v = h;
 				if (v>eXeImageCompressor.sizeLimit) v = eXeImageCompressor.sizeLimit;
-				if (eXeImageCompressor.firstImageLoaded==false && v>eXeImageCompressor.maxSize) {
+				if (eXeImageCompressor.firstImageLoaded==false && v>=eXeImageCompressor.maxSize) {
 					v = eXeImageCompressor.maxSize;
 					jQuery("#inputSize").val(v);
 					jQuery("#inputMaxWidth").val(v)[0].dispatchEvent(new Event('input'));
