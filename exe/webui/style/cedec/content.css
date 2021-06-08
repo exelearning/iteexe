@@ -143,9 +143,10 @@ li{list-style-position:outside}
 #packageLicense.cc{padding:0 20px 0 110px;background:#F5F5F5 url(_cedec_licenses.gif) no-repeat 20px 5px}
 #packageLicense.cc-by-sa{background-position:20px -95px}
 #packageLicense.cc-by-nd{background-position:20px -195px}
-#packageLicense.cc-by-nc-sa{background-position:20px -295px}
-#packageLicense.cc-by-nc-nd{background-position:20px -395px}
-#packageLicense.cc-0{background-position:20px -495px}
+#packageLicense.cc-by-nc{background-position:20px -295px}
+#packageLicense.cc-by-nc-sa{background-position:20px -395px}
+#packageLicense.cc-by-nc-nd{background-position:20px -495px}
+#packageLicense.cc-0{background-position:20px -595px}
 
 /* eXe Figures */
 .exe-figure{margin:2.5em 0}

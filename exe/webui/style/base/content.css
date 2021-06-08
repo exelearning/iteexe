@@ -85,9 +85,10 @@ input,select{font-size:1em;font-family:inherit}
 #packageLicense.cc{padding-left:95px;background:url(_style_licenses.png) no-repeat 0 0}
 #packageLicense.cc-by-sa{background-position:0 -100px}
 #packageLicense.cc-by-nd{background-position:0 -200px}
-#packageLicense.cc-by-nc-sa{background-position:0 -300px}
-#packageLicense.cc-by-nc-nd{background-position:0 -400px}
-#packageLicense.cc-0{background-position:0 -500px}
+#packageLicense.cc-by-nc{background-position:0 -300px}
+#packageLicense.cc-by-nc-sa{background-position:0 -400px}
+#packageLicense.cc-by-nc-nd{background-position:0 -500px}
+#packageLicense.cc-0{background-position:0 -600px}
 #siteFooter{padding:20px}
 
 /* Download package iDevice */

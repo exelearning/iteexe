@@ -20,9 +20,10 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
     #packageLicense.cc{background-image:url(_simplepoint_licenses.gif);background-repeat:no-repeat;background-position:0 0}
     #packageLicense.cc-by-sa{background-position:0 -100px}
     #packageLicense.cc-by-nd{background-position:0 -200px}
-    #packageLicense.cc-by-nc-sa{background-position:0 -300px}
-    #packageLicense.cc-by-nc-nd{background-position:0 -400px}
-    #packageLicense.cc-0{background-position:0 -500px}
+	#packageLicense.cc-by-nc{background-position:0 -300px}
+    #packageLicense.cc-by-nc-sa{background-position:0 -400px}
+    #packageLicense.cc-by-nc-nd{background-position:0 -500px}
+    #packageLicense.cc-0{background-position:0 -600px}
 }
 /* Navigation */
 #skipNav{text-align:center;padding-top:25px}
