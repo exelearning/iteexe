@@ -193,12 +193,16 @@ class IdevicePane(Renderable, Resource):
             if (category=='Text and Tasks'):
                 if (prototype._title!='Text'):
                     xml += self.__renderPrototype(prototype, category, visible)
+        # Interactive Activities should be in the second place
+        for prototype, category, visible in prototypesToRender:
+            if (category=='Interactive Activities'):
+                xml += self.__renderPrototype(prototype, category, visible)
         # Other categories
         # Keep these category names here so the tranlations are not lost even when there are no iDevices in those categories
         experimentalCategoryName = _('Experimental')
         gamificationCategoryName = _('Gamification')
         for prototype, category, visible in prototypesToRender:
-            if (category!='Text and Tasks' and category!='Hidden'):
+            if (category!='Text and Tasks' and category!='Hidden' and category!='Interactive Activities'):
                 xml += self.__renderPrototype(prototype, category, visible)
         xml += u"</idevices>\n"
         xml += u"<!-- IDevice Pane End -->\n"
