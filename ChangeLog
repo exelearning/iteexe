@@ -7,7 +7,7 @@ intef-exe (3:2.6) lucid; urgency=medium
     - TinyMCE: GNU Free Documentation License added to the available licenses list.
     - TinyMCE: The "Insert HTML code as text" plugin remembers the user's preferences.
     - You can save an iDevice with the editor in full screen mode.
-    - New UDL Content iDevice.
+    - New UDL Content iDevice and new UDL Style.
       Junta de Andalucía - Consejería de Educación y Deporte
       https://www.juntadeandalucia.es/organismos/educacionydeporte
       Cofinanced with the European Union FEDER funds.
