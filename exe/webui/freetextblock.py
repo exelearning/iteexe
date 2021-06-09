@@ -76,7 +76,7 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div style=\"position: relative\">\n"
+        html  = u"<div>\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
         html += u"</div>\n"
