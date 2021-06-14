@@ -1334,7 +1334,7 @@ def enableLinksToElp(package, html):
     Replace exe-package:elp with the elp name
     Use # instead of the elp name if the package's not been saved (no name...)
     '''
-    soup = BeautifulSoup(html, features = "lxml")
+    soup = BeautifulSoup(html, features = "html.parser")
     hasElp = False
     for link in soup.findAll('a'):
         if (link.get('href')=='exe-package:elp') and hasattr(package, 'name'):
