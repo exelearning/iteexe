@@ -491,8 +491,11 @@ def ideviceHeader(e, style, mode):
             if _iconNameToClass!="":        
                 eEm += ' em_iDevice_'+_iconNameToClass
 
-    if mode=="preview" and themeHasXML:
-        w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
+    if mode=="preview":
+        if themeHasXML:
+            w += '<'+articleTag+' class="iDevice_wrapper '+e.idevice.klass+eEm+'" id="id'+e.id+'">'+lb
+        else:
+            w += '<'+articleTag+' class="'+e.idevice.klass+'">'+lb
 
     w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
     if mode=="preview":
@@ -580,7 +583,6 @@ def ideviceFooter(e, style, mode):
     h += "</div>"+lb # Close iDevice
     if mode=="preview":
         h += e.renderViewButtons()
-    if mode=="preview" and themeHasXML:
         h += "</"+articleTag+">"+lb # Close iDevice_wrapper
     return h
 

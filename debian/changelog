@@ -33,6 +33,7 @@ intef-exe (3:2.6) lucid; urgency=medium
     - Fixed: TinyMCE - Image title changed when selecting  an image. (#577)
     - Fixed: exe_do exported a different HTML with missing elements. (#536)
     - Fixed: Package license. CC BY-NC wrong icon. (#583)
+    - Fixed: The feedback was not working when using an old style. (#587)
 
   * Manuel Narváez
     - New iDevice category (Games):

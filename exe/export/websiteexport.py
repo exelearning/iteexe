@@ -219,8 +219,8 @@ class WebsiteExport(object):
                 jsFile = (self.scriptsDir/'exe_jquery.js')
                 jsFile.copyfile(outputDir/'exe_jquery.js')
         else:
-            listFiles+=[self.scriptsDir/'exe_jquery.js']
-            listOutFiles+=[outputDir/'exe_jquery.js']
+            jsFile = (self.scriptsDir/'exe_jquery.js')
+            jsFile.copyfile(outputDir/'exe_jquery.js')
 
         # Minify common.js file
         listFiles=getFilesJSToMinify('website', self.scriptsDir)
