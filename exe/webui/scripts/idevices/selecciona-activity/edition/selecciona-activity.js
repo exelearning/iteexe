@@ -1755,7 +1755,7 @@ var $exeDevice = {
                 qt.author = '';
                 qt.alt = '';
             } else if (qt.type == 3) {
-                qt.eText = escape(qt.eText);
+                qt.eText = qt.eText;
             }
         }
         var scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
@@ -2504,8 +2504,8 @@ var $exeDevice = {
         }
     },
     extractURLGD: function (urlmedia) {
-        var sUrl=urlmedia;
-        if(urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+        var sUrl = urlmedia;
+        if (typeof urlmedia != "undefined" && urlmedia.length>0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;
