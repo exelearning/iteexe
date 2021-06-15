@@ -65,12 +65,12 @@ var $eXeAutoGeogebra = {
                 var intro = "";
                 var instructions = $(".auto-geogebra-instructions", this);
                 if (instructions.length == 1 && instructions.text() != "") {
-                    intro = '<div class="auto-geogebra-instructions">' + instructions.html() + '</div>';
+                    intro = instructions.wrap('<div class="auto-geogebra-instructions"></div>');
                 }
                 var aft = "";
                 var after = $(".auto-geogebra-extra-content", this);
                 if (after.length == 1 && after.text() != "") {
-                    aft = '<div class="auto-geogebra-extra-content">' + after.html() + '</div>';
+                    aft = after.wrap('<div class="auto-geogebra-extra-content"></div>');
                 }
                 var ath = "";
                 var author = $(".auto-geogebra-author", this);
