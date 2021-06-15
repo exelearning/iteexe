@@ -35,6 +35,7 @@ intef-exe (3:2.6) lucid; urgency=medium
     - Fixed: Package license. CC BY-NC wrong icon. (#583)
     - Fixed: The feedback was not working when using an old style. (#587)
     - Fixed: Invalid HTML in the "Download source file" iDevice (and links to the elp file) (#588)
+    - Fixed: Geogebra iDevice - Lightbox did not work in the instructions. (#590)
 
   * Manuel Narváez
     - New iDevice category (Games):
