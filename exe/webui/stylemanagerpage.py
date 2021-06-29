@@ -437,8 +437,7 @@ class StyleManagerPage(RenderableResource):
                 context = None
             d = threads.deferToThread(
                                       urlretrieve, url, filename_path,
-                                      lambda n, b, f: self.progressDownload(n, b, f, self.client),
-                                      context=context)
+                                      lambda n, b, f: self.progressDownload(n, b, f, self.client))
             d.addCallbacks(successDownload, errorDownload)
 
             # On success or on error, get back to repository styles list
