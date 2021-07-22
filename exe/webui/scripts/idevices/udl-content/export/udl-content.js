@@ -334,7 +334,7 @@ var $UDLcontentIdevice = {
 			// Hide all the blocks
 			$(".exe-udlContent-content-block",block).hide();
 			// Show the main content
-			$(".exe-udlContent-content-main").show();
+			$(".exe-udlContent-content-main",block).show();
 			// Hide the Close link
 			$(".exe-udlContent-alt-toggler",block).css("visibility","hidden");
 		}
