@@ -234,6 +234,8 @@ var $UDLcontentIdevice = {
 						// Show the right content
 						dest.fadeIn("fast",function(){
 							$UDLcontentIdevice.isWorking = false;
+							// Scroll to the content
+							$UDLcontentIdevice.scrollTo(dest);
 						});
 						
 					}
@@ -293,6 +295,13 @@ var $UDLcontentIdevice = {
 		
 	},
 	
+	// Scroll to element (if needed)
+	scrollTo : function(e){
+		$([document.documentElement, document.body]).animate({
+			scrollTop: e.offset().top-30
+		}, 1000);
+	},
+	
 	// Alternative content link HTML
 	getAltLink : function(id,type,tit){
 		return '<li><a href="#'+id+'" class="exe-udlContent-alt-lnk exe-udlContent-alt-lnk-'+type+'" title="'+tit+'" id="'+id+'-lnk"><span class="sr-av">'+tit+'</span></a></li>';
@@ -334,9 +343,12 @@ var $UDLcontentIdevice = {
 			// Hide all the blocks
 			$(".exe-udlContent-content-block",block).hide();
 			// Show the main content
-			$(".exe-udlContent-content-main",block).show();
+			var content = $(".exe-udlContent-content-main",block);
+				content.show();
 			// Hide the Close link
 			$(".exe-udlContent-alt-toggler",block).css("visibility","hidden");
+			// Scroll to the content
+			this.scrollTo(content);
 		}
 	}
     
