@@ -197,7 +197,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: this.toolsRefresh
             },
             '#help_tutorial': {
-                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/ayuda/' }
+                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/help/' }
             },
             '#help_assistant': {
                 click: this.assistantPage
@@ -218,7 +218,7 @@ Ext.define('eXe.controller.Toolbar', {
                 click: { fn: this.processBrowseEvent, url: 'https://github.com/exelearning/iteexe/issues' }
             },
             '#help_forums': {
-                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/forums/' }
+                click: { fn: this.processBrowseEvent, url: 'https://exelearning.net/en/forums-eng/' }
             },
             '#help_about': {
                 click: this.aboutPage
@@ -511,16 +511,32 @@ Ext.define('eXe.controller.Toolbar', {
                 'gl'
             ];
             if (websiteTranslations.indexOf(html.lang)!=-1) {
-                var helpLinks = [
-					'https://exelearning.net/en/ayuda/',
-					'https://exelearning.net/en/',
-					'https://exelearning.net/en/forums/'
-                ];
-                if (helpLinks.indexOf(e.url)!=-1) {
-                    var url = e.url;
-                    url = url.replace("/en/","/"+html.lang+"/");
-                    e.url = url;
-                }
+				// URL list
+				var i18n = {
+					es : [
+						"ayuda",
+						"forums"
+					],
+					ca : [
+						"ajuda",
+						"forums-2"
+					],
+					eu : [
+						"jaitsi",
+						"forums-3"
+					],
+					gl : [
+						"axuda",
+						"forums-gl"
+					]					
+				}
+				var base = "https://exelearning.net/";
+				if (html.lang!="es") base += html.lang+"/";
+				var url = i18n[html.lang];	
+					
+				if (e.url=="https://exelearning.net/en/help/") e.url = base+url[0]+"/";
+				else if (e.url=="https://exelearning.net/en/") e.url = base;
+				else if (e.url=="https://exelearning.net/en/forums-eng/") e.url = base+url[1]+"/";
             }
         }
         window.open(e.url)

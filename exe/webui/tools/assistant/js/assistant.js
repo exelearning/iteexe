@@ -24,17 +24,31 @@ var eXeAssistant = {
                 'gl'
             ];
             if (websiteTranslations.indexOf(html.lang)!=-1) {
-                var lnks = [
-                    'eXe_Tutorial_lnk',
-                    'eXe_Forums_lnk',
-                    'eXe_Web_Site_lnk'
-                ];
-                for (var i=0;i<lnks.length;i++) {
-                    var lnk = $("#"+lnks[i]);
-                    var ref = lnk.attr("href");
-                        ref = ref.replace("/en/","/"+html.lang+"/");
-                    lnk.attr("href",ref);
-                }
+				// URL list
+				var i18n = {
+					es : [
+						"ayuda",
+						"forums"
+					],
+					ca : [
+						"ajuda",
+						"forums-2"
+					],
+					eu : [
+						"jaitsi",
+						"forums-3"
+					],
+					gl : [
+						"axuda",
+						"forums-gl"
+					]					
+				}
+				var base = "https://exelearning.net/";
+				if (html.lang!="es") base += html.lang+"/";
+				var url = i18n[html.lang];
+				$("#eXe_Tutorial_lnk").attr("href",base+url[0]+"/");
+				$("#eXe_Forums_lnk").attr("href",base+url[1]+"/");
+				$("#eXe_Web_Site_lnk").attr("href",base);
             }            
         }
     },
