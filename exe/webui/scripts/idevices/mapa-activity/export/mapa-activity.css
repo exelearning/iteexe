@@ -1,0 +1,1585 @@
+.MQP-MainContainer a, .MQP-MainContainer a:visited, .MQP-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	text-decoration: none;
+}
+
+/* Contenedor */
+
+.MQP-MainContainer {
+	font-size: 1rem;
+	margin-top: 1em;
+	padding: 0;
+	width: 100%;
+	max-width: 1100px;
+	height: auto;
+	background-color: transparent;
+}
+
+.MQP-MainContainer * {
+	box-sizing: border-box;
+}
+
+.MQP-MainContainer p {
+	margin: 0;
+	padding: 0;
+}
+
+.MQP-MainContainer input[type=text] {
+	text-align: center;
+}
+
+/* Instrucciones */
+
+.MQP-instructions {
+	margin: 0.3em auto;
+	width: 100%;
+	overflow: auto;
+}
+
+/* Minimizado */
+
+.MQP-GameMinimize {
+	margin: 1em auto;
+	width: 100%;
+}
+
+.MQP-LinkMaximize {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.MQP-IconMinimize {
+	height: 2em;
+	margin-right: 0.5em;
+	width: 2em;
+}
+
+/* Juego */
+
+.MQP-GameContainer {
+	margin: 0 auto;
+	max-width: 1100px;
+	position: relative;
+	width: 100%;
+	height: auto;
+	background-color: transparent;
+
+}
+
+/* barra de puntuaciones */
+
+.MQP-MesageToolBar {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+}
+
+.MQP-MessageDetail {
+	width: 100%;
+	text-align: center;
+	margin: .6em auto;
+	font-size: 1em;
+	display: none;
+}
+
+.MQP-ToolBar {
+	width: 100%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.MQP-ToolBarR {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.MQP-ToolBarL {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.MQP-GameScoreBoard {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+	width: 100%;
+	height: 1.1em;
+}
+
+.MQP-GameScores {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.MQP-GameScores span {
+	margin-right: 0.4em;
+}
+
+.MQP-GameScores>p:last-child {
+	text-align: left;
+}
+
+.MQP-CloseBotton {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0.6em;
+}
+
+.MQP-Flex {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	min-width: 100px;
+	width: 100%;
+}
+
+.MQP-Flex input[type=text] {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	min-width: 100px;
+	width: 100%;
+	margin-right: 0.3em;
+}
+
+/* Pista */
+
+.MQP-ShowClue {
+	margin: 0.3em auto;
+	min-height: 0.4em;
+	padding: 0;
+	width: 100%;
+}
+
+.MQP-PShowClue {
+	color: #00a300;
+	text-align: center;
+	width: 100%;
+}
+
+/* Multimedia */
+
+.MQP-Multimedia {
+	background-color: transparent;
+	margin: 0.5em auto;
+	max-width: 700px;
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.MQP-Detail {
+	width: 80%;
+	padding: 0.8em;
+	border-radius: 0.6em;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	margin-top: 7em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.MQP-LinkCloseDetail {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
+.MQP-Cubierta {
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255, .4);
+	display: none;
+}
+
+.MQP-TitlePoint {
+	width: 100%;
+	text-align: center;
+	font-size: 1.1em;
+	padding: 0.3em;
+	margin-bottom: .3em;
+	background-color: #ffffff;
+}
+
+.MQP-AuthorPoint {
+	width: 100%;
+	text-align: center;
+	font-size: 0.9em;
+	margin-top: 0.3em;
+	background-color: #ffffff;
+	color: #333333;
+	font-style: italic;
+}
+
+.MQP-Footer {
+	font-size: 1em;
+	padding: 0.5em;
+	width: 100%;
+	color: #071717;
+	border-radius: 0.3em;
+	background-color: #ffffff;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	max-height: 7em;
+	overflow-y: auto;
+}
+
+.MQP-Area {
+	position: absolute;
+	z-index: 99;
+	background-color: rgba(59, 123, 84, 0.01);
+	display: none;
+	line-height: 0;
+	font-size: 0;
+	color: transparent;
+}
+
+.MQP-MultimediaPoint {
+	border-radius: 0.6em;
+	margin: 0.5em auto;
+	width: 100%;
+	max-width: 1024px;
+	overflow: hidden;
+	position: relative;
+	background-color: #ffffff;
+}
+
+img.MQP-ImageMain {
+	width: 100%;
+	height: auto;
+	position: absolute;
+}
+
+.MQP-Images {
+	border: 0;
+	border-radius: 0.6em;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+	width: 100%;
+}
+
+.MQP-Point {
+	left: 0;
+	top: 0;
+	position: absolute;
+	text-decoration: none;
+	width: 1.7em;
+	height: 1.7em;
+	background-image: url(mapamarcador.svg);
+	background-size: 100% 100%;
+	z-index: 88;
+
+}
+
+.MQP-MainContainer a.MQP-Point span{
+	color: transparent;
+	line-height: 0;
+	font-size: 0;
+}
+
+
+.MQP-NoImage, .MQP-Video, .MQP-Cover {
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+
+.MQP-Images {
+	border: 0;
+	border-radius: 0.6em;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+	width: 100%;
+}
+
+.MQP-EText {
+	border: none;
+	overflow-y: auto;
+	padding-right: 0.7em;
+	z-index: 10001;
+	width: 100%;
+	height: 100%;
+	max-height: 500px;
+}
+
+
+.MQP-LinkSlideLeft {
+	position: absolute;
+	display: block;
+	background-image: url(mapaslideleft.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	left: 0;
+	margin: auto;
+	top: 40%;
+	width: 1.5em;
+	height: 4em;
+}
+.MQP-LinkSlideRight {
+	position: absolute;
+	display: block;
+	background-image: url(mapaslidelrigh.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	right: 0;
+	margin: auto;
+	width: 1.5em;
+	height: 4em;
+	top: 40%;
+}
+
+
+.MQP-LinkAudio {
+	position: absolute;
+	display: block;
+	background-image: url(mapam2.svg);
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+
+/* Author */
+
+.MQP-AuthorLicence {
+	margin: 0.3em auto 0 auto;
+	min-height: 0.4em;
+	width: 100%;
+	text-align: center;
+	font-size: .9em;
+	color: #555555;
+	font-style: italic;
+}
+
+/* Código acceso */
+
+.MQP-CodeAccessDiv {
+	display: none;
+	margin: 1em auto;
+	width: 100%;
+}
+
+.MQP-MessageCodeAccessE {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.MQP-DataCodeAccessE {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0.7em auto 0 auto;
+	width: 100%;
+}
+
+.MQP-Message {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	margin: 0.4em auto 0 auto;
+	flex-direction: column;
+	text-align: center;
+	width: 100%;
+	font-size: 1em;
+	font-weight: 500;
+}
+
+.MQP-Message p {
+	text-align: center;
+}
+
+.MQP-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 300px;
+	width: 80%;
+}
+
+/* Pegunta tipo test */
+
+.MQP-TestContainer {
+	width: 85%;
+	background-color: white;
+	min-height: 200px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	padding: 1em;
+	border-radius: 0.6em;
+	max-width: 600px;
+	border: 1px solid #dddddd;
+	margin-top: 4em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.MQP-QuestionDiv, .MQP-WordsDiv {
+	margin: 1em auto;
+	width: 100%;
+	min-height: 4em;
+}
+
+.MQP-Question {
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	margin: 0 auto;
+	margin-bottom: .6em;
+	min-height: 4em;
+	padding: 0.3em;
+	text-align: center;
+	user-select: none;
+	vertical-align: middle;
+	background-color: transparent;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1em;
+	border-top: 2px solid teal;
+}
+
+/* Respuesta  tipo test */
+
+.MQP-OptionsDiv {
+	background-color: transparent;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.MQP-MainContainer a.MQP-Options {
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	align-items: center;
+	background-color: #FFF;
+	border: 1px solid #777777;
+	border-radius: 0.4em;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0.1em;
+	min-height: 3em;
+	padding: 0.3em;
+	user-select: none;
+	width: 48%;
+	text-align: center;
+}
+
+.MQP-OptionsDiv a {
+	border: 1px solid #777777;
+	color: #1c1b1b;
+}
+
+.MQP-AnswersDiv {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	padding: 0;
+}
+
+.MQP-Answers {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 0.3em;
+	padding: 0;
+	width: 8em;
+}
+
+.MQP-AnswersOptions {
+	border-radius: 2px;
+	height: 1.4em;
+	width: 1.4em;
+}
+
+.MQP-Answer1 {
+	background-color: #b3092f;
+	border: 1px solid #1c1b1b;
+	border-radius: 3px;
+	margin-left: 0.1em;
+}
+
+.MQP-Answer2 {
+	background-color: #5877c6;
+	border: 1px solid #1c1b1b;
+	border-radius: 3px;
+	margin-left: 0.1em;
+}
+
+.MQP-Answer3 {
+	background-color: #00a300;
+	border: 1px solid #1c1b1b;
+	border-radius: 3px;
+	margin-left: 0.1em;
+}
+
+.MQP-Answer4 {
+	background-color: #f3d55a;
+	border: 1px solid #1c1b1b;
+	border-radius: 2px;
+	margin-left: 0.1em;
+}
+
+/* Pregunta tipo ahorcado */
+
+.MQP-Definition {
+	align-items: center;
+	display: flex;
+	font-weight: 600;
+	justify-content: center;
+	margin: 0.5em auto;
+	min-height: 2em;
+	text-align: center;
+	width: 90%;
+}
+
+.MQP-Definition a {
+	cursor: pointer;
+	margin: 0;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+	z-index: 220;
+}
+
+.MQP-Prhase {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0.5em auto;
+	min-height: 3em;
+	width: 97%;
+	padding-top: 1em;
+	border-top: 2px solid teal;
+}
+
+.MQP-Word {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	padding: 6px;
+	padding-bottom: 2px;
+	padding-top: 3px;
+}
+
+.MQP-Letter {
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	align-items: center;
+	border: 1px solid #555555;
+	border-radius: 3px;
+	display: flex;
+	font-size: 1.3em;
+	font-weight: 600;
+	height: 1.8em;
+	justify-content: center;
+	margin: 1px;
+	padding: 0;
+	text-align: center;
+	user-select: none;
+	width: 1.3em;
+}
+
+.MQP-Letter.blue {
+	color: #5877c6;
+}
+
+.MQP-Letter.green {
+	color: #00a300;
+}
+
+.MQP-Letter.red {
+	color: #b3092f;
+}
+
+.MQP-Letter.black {
+	color: #1c1b1b;
+}
+
+/* Respuesta ahorcado */
+
+.MQP-DivReply {
+	align-items: center;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.MQP-EdReply {
+	margin: auto 0.2em;
+	max-width: 400px;
+	width: 60%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+.MQP-BottonContainerDiv, .MQP-BottonContainer {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0.1em auto;
+	padding: 0;
+	width: 100%;
+}
+
+.MQP-BottonContainerDivEnd {
+	justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.MQP-DivInstructions {
+	margin: 1em 0 0 0;
+	text-align: center;
+	width: 95%;
+}
+
+.MQP-Parpadea {
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 5;
+	-webkit-animation-name: MQP-parpadeo;
+	-webkit-animation-timing-function: linear;
+	animation-duration: 1s;
+	animation-iteration-count: 5;
+	animation-name: MQP-parpadeo;
+	animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.MQP-DivFeedBack {
+	align-items: center;
+	background-color: rgba(232, 232, 232, 0.8);
+	border-radius: .6em;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1010;
+}
+
+.MQP-DivFeedBack button {
+	cursor: pointer;
+}
+
+.quext-feedback-game, .mapa-feedback-game, .selecciona-feedback-game, .vquext-feedback-game {
+	-moz-box-shadow: 0 10px 6px -6px #999;
+	-webkit-box-shadow: 0 10px 6px -6px #999999;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: .6em;
+	box-shadow: 0 10px 6px -6px #999;
+	display: none;
+	margin-bottom: 1em;
+	max-height: 80%;
+	min-height: 10em;
+	overflow-y: auto;
+	padding: 1em;
+	width: 95%;
+}
+
+.quext-extra-content, .mapa-extra-content, .selecciona-extra-content, .vquext-extra-content {
+	margin-top: 1.7em;
+}
+
+/* Enlace activo */
+
+.MQP-Activo {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	transition: transform 0.3s;
+}
+
+.MQP-LinkMaximize:hover .MQP-Activo, .MQP-Activo:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+/* Mensaje Modal */
+
+.MQP-MessageModal {
+	border-radius: 0.8em;
+	box-shadow: 0 0.7em 1.2em rgba(0, 0, 0, 0.19), 0 0.5em 0.5em rgba(0, 0, 0, 0.23);
+	width: 65%;
+	max-width: 500px;
+	min-width: 250px;
+	padding: 1em;
+	background-color: white;
+	margin-top: 6em;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.MQP-MessageModalTexto {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+	display: none;
+}
+
+.MQP-MessageModalTexto p {
+	align-content: center;
+	align-items: center;
+	display: flex;
+	font-size: 1em;
+	height: 60%;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	padding-top: 1em;
+}
+
+.MQP-AcceptButton {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+	height: 1.7rem;
+	transition: transform 0.3s ease;
+	width: 1.7rem;
+	margin-right: 0.3em;
+}
+
+.MQP-CancelButton {
+	background: url(exequextrerrors.png) no-repeat;
+	background-size: 100% 100%;
+	cursor: pointer;
+	height: 1.7rem;
+	transition: transform 0.3s ease;
+	width: 1.7rem;
+	margin-right: 0.3em;
+}
+
+.MQP-MessageModalIcono {
+	background-image: url(mapaIcon.svg);
+	background-size: 100% 100%;
+	flex-shrink: 0;
+	width: 80px;
+	margin: 1em 1em 1em 1em;
+}
+
+.MQP-MessageModalIcono:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
+.MQP-MessageFindDiv {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0.6em auto;
+	padding: 0;
+
+}
+.MQP-MessageFind{
+	text-align: center;
+	font-size: 1.1em;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	color: #5877c6;
+	display: inline-block;
+	width: 100%;
+
+}
+.MQP-MainContainer .MQP-IconPlayIdentify {
+	background-size: 100% 100%;
+	background-image: url(mapam2.svg);
+	background-size: 100% 100%;
+	height: 1.3em;
+	margin: 0;
+	margin-right: 0.5em;
+	margin-left: 0.5em;
+	width: 1.3em;
+}
+
+.MQP-MessageModal * {
+	padding: 0;
+}
+
+.MQP-MessageGOScore {
+	width: 80%;
+	height: 100%;
+	border-radius: 0.8em;
+}
+
+.MQP-MessageGOContent {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	border-radius: 0.8em;
+	padding: 1em;
+}
+
+.MQP-MessageGOScoreData {
+	border-radius: 0.8em;
+	width: 50%
+}
+
+.MQP-MessageMoScoreData {
+	border-radius: 0.8em;
+	width: 100%
+}
+
+.MQP-MessageMoScoreData p {
+	font-size: 1em;
+}
+
+.MQP-MessageGOScore p {
+	text-align: center;
+}
+
+.MQP-MessageGOScoreData>div {
+	margin: 0.5em;
+	width: 100%;
+	margin-left: 1em;
+}
+
+.MQP-GOScoreButtons {
+	height: 20%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.MQP-GOScoreButtons>a {
+	display: inline-block;
+	width: 100px;
+	text-align: center;
+	font-size: 1.1em;
+	height: 1.5em;
+}
+
+.MQP-Hide {
+	display: none;
+}
+
+/* Puntuacion */
+
+.MQP-ScoreOver {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.MQP-MessageGOScore {
+	margin: 0em;
+	width: 100%
+}
+
+.MQP-GOContent {
+	width: 100%;
+	margin: 0;
+}
+
+.MQP-MessageGOScore>div {
+	margin-bottom: 0.5em;
+}
+
+.MQP-MessageGOScore>p {
+	margin-bottom: 1em;
+}
+
+.MQP-BottonContainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.MQP-BottonContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+.MQP-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+
+.MQP-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 1em
+}
+
+/* Iconos */
+
+.MQP-MainContainer .exeQuextIcons {
+	background-size: 100% 100%;
+	height: 1.4em;
+	margin-right: 0.5em;
+	width: 1.4em;
+}
+
+.MQP-MainContainer .MQP-IconsToolBar {
+	background-size: 100% 100%;
+	height: 1.6em;
+	margin: 0.5em;
+	width: 1.6em;
+}
+
+
+
+.MQP-MainContainer .exeQuextIcons-Areas {
+	background-image: url(mapaareas.svg);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-MZGame {
+	background-image: url(mapaminimizar1.svg);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-FSGame {
+	background-image: url(mapamaximizar.svg);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-TXGame {
+	background-image: url(mapatest.svg);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-CWGame {
+	background-image: url(mapacerrarventana.svg);
+	background-size: 100% 100%;
+}
+.MQP-MainContainer .exeQuextIcons-CReturn {
+	background-image: url(mapavolver.svg);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Video, .MQP-MainContainer .exeQuextIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+.MQP-MainContainer .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Minimize {
+	background-image: url(exequextmin.png);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Hit {
+	background-image: url(exequexthits.png);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Error {
+	background-image: url(exequextrerrors.png);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Score {
+	background-image: url(exequextscore.png);
+	background-size: 100% 100%;
+}
+
+.MQP-MainContainer .exeQuextIcons-Number {
+	background-image: url(exequextnumber.png);
+	background-size: 100% 100%;
+}
+
+/* Full Screen */
+
+div:fullscreen .MQP-Multimedia {
+	max-width: 1200px;
+}
+
+div:-webkit-full-screen .MQP-Multimedia {
+	max-width: 1200px;
+}
+
+div:-moz-full-screen .MQP-Multimedia {
+	max-width: 1200px;
+}
+
+div:fullscreen .MQP-EText {
+	max-height: 80vh;
+}
+
+div:-webkit-full-screen .MQP-EText {
+	max-height: 80vh;
+}
+
+div:-moz-full-screen .MQP-EText {
+	max-height: 80vh;
+}
+
+div:fullscreen .exeQuextIcons-FSGame {
+	background-image: url(mapaminimizar.svg);
+}
+
+div:-webkit-full-screen .exeQuextIcons-FSGame {
+	background-image: url(mapaminimizar.svg);
+}
+
+div:-moz-full-screen .exeQuextIcons-FSGame {
+	background-image: url(mapaminimizar.svg);
+}
+
+div:fullscreen .MPQ-OptionsTest {
+	max-height: 500px;
+	max-width: 95%;
+}
+
+div:-moz-full-screen .MQP-OptionsTest {
+	max-height: 500px;
+	max-width: 95%;
+}
+
+div:-webkit-full-screen .MQP-OptionsTest {
+	max-height: 500px;
+	max-width: 95%;
+}
+
+div:fullscreen .MPQ-OptionTest::before {
+	padding-top: 30%;
+}
+
+div:-moz-full-screen .MPQ-OptionTest::before {
+	padding-top: 30%;
+}
+
+div:-webkit-full-screen .MPQ-OptionTest::before {
+	padding-top: 30%;
+}
+
+div:fullscreen .MQP-Options {
+	min-height: 3.2em;
+}
+
+div:-moz-full-screen .MQP-Options {
+	min-height: 3.2em;
+}
+
+div:-webkit-full-screen .MQP-Options {
+	min-height: 3.2em;
+}
+
+div:fullscreen .MQP-Question {
+	min-height: 3.2em;
+}
+
+div:-webkit-full-screen .MQP-Question {
+	min-height: 3.2em;
+}
+
+div:-moz-full-screen .MQP-Question {
+	min-height: 3.2em;
+}
+
+div:fullscreen .MQP-Options {
+	min-height: 3.2em;
+}
+
+div:-webkit-full-screen .MQP-LinkCloseDetail {
+	top:0;
+	right: 0;
+}
+
+div:-moz-full-screen .MQP-LinkCloseDetail{
+	top:0;
+	right: 0;
+}
+
+div:fullscreen .MQP-LinkCloseDetail{
+	top:0;
+	right: 0;
+}
+
+
+.MQP-GameContainer:-webkit-full-screen {
+	background-color: white;
+}
+
+.MQP-GameContainer:-moz-full-screen {
+	background-color: white;
+}
+
+.MQP-GameContainer:-ms-full-screen {
+	background-color: white;
+}
+
+.MQP-GameContainer:-o-full-screen {
+	background-color: white;
+}
+
+.MQP-Test {
+	width: 100%;
+	min-height: 90%;
+	position: absolute;
+	top: 3em;
+	left: 0;
+	z-index: 3100;
+	background-color: white;
+	display: none
+}
+
+.MQP-LinkCloseOptions {
+	position: absolute;
+	display: block;
+	top: 1em;
+	right: 1em;
+}
+
+.MQP-ImageMain {
+	height: auto;
+	position: relative;
+}
+
+.MQP-ContentRect {
+	position: relative;
+	width: 280px;
+	height: 200px;
+	background-color: transparent;
+	margin: 0.6em auto;
+	overflow: hidden;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 0.5em;
+}
+
+.MQP-MainContainer a.MPQ-OptionTest {
+	width: 22%;
+	margin: 0.3em auto;
+	border-radius: 0.5em;
+	background-color: white;
+	margin-bottom: 0.5em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1em;
+	text-align: center;
+	transition: all .3s ease-in-out;
+	padding: 0.2em;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	max-width: 200px;
+}
+
+.MPQ-OptionTest::before {
+	content: '';
+	display: block;
+	padding-top: 35%;
+}
+
+.MPQ-OptionTest:hover {
+	transform: scale(1.01);
+}
+
+.MPQ-OptionsTest {
+	width: 95%;
+	min-height: 100px;
+	margin: 0.3em auto;
+	overflow-y: auto;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	max-height: 300px;
+	border-radius: 0.8em;
+	max-width: 900px;
+}
+
+.MQP-ImageRect {
+	position: absolute;
+	max-width: none;
+}
+
+.MPQ-CursorRect {
+	position: absolute;
+	width: 2em;
+	height: 2em;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-image: url(mapam19.png);
+	background-size: 100% 100%;
+	z-index: 10;
+}
+
+@-moz-keyframes MQP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes MQP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@keyframes MQP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@media screen and (max-width:780px) {
+	.MQP-MessageModalIcono {
+		display: none;
+	}
+	.MessageGOScoreData {
+		width: 100%;
+	}
+	.MQP-MessageGOContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.MQP-MessageGOScoreData {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width:720px) and (orientation: portrait) {
+	.MQP-Detail {
+		width: 85%;
+	}
+	.MQP-EText {
+		max-height: 60vh;
+	}
+	.MQP-MessageModal {
+		width: 80%;
+	}
+	.MPQ-OptionsTest {
+		width: 100%;
+		max-height: 500px;
+	}
+	.MQP-MainContainer a.MPQ-OptionTest {
+		width: 32%;
+		box-shadow: none;
+		border: none;
+		margin-bottom: 0.1em;
+		font-size: 0.9em;
+	}
+	.MQP-MainContainer .MQP-TitlePoint {
+		font-size: 1em;
+		padding: 0.2em;
+		margin-bottom: .2em;
+	}
+}
+
+@media screen and (max-width:550px) {
+	.MQP-Question {
+		margin-bottom: 0.5em;
+	}
+	.MQP-instructions {
+		margin: 0.1em auto;
+	}
+	.MQP-DivInstructions {
+		display: none;
+	}
+	.MQP-PShowClue {
+		font-size: 0.9em;
+	}
+	.MQP-Footer {
+		max-height: 14em;
+	}
+	.MQP-AuthorLicence {
+		font-size: 0.9em;
+	}
+	.MQP-Detail {
+		width: 95%;
+	}
+	.MQP-Point {
+		width: 1.1em;
+		height: 1.1em;
+	}
+	.MQP-MessageModalIcono {
+		display: none;
+	}
+	.MQP-MainContainer .exeQuextIcons {
+		width: 1.2em;
+		height: 1.2em;
+	}
+	.MQP-MainContainer .MQP-IconsToolBar {
+		width: 1.4em;
+		height: 1.4em;
+	}
+	.MQP-MainContainer a.MQP-Options {
+		min-height: 3em;
+		margin-top: 0.6em;
+		width: 100%;
+		font-size: 0.9em;
+	}
+	.MQP-TestContainer {
+		width: 95%;
+	}
+	.MQP-Question, .MQP-Message, .MQP-Definition {
+		width: 100%;
+		font-size: 0.9em;
+	}
+	.MQP-Letter {
+		font-size: 1.2em;
+		height: 1.6em;
+		width: 1.2em;
+	}
+	.MQP-MessageFind {
+		font-size: 0.9em;
+		margin: 0.2em;
+	}
+	.MQP-MessageModal {
+		width: 90%;
+		padding: 0.6em;
+		border-radius: 0.6em;
+	}
+	.MQP-Detail {
+		margin-top: 0.3em;
+	}
+	.MQP-ContentRect {
+		box-shadow: none;
+		border: none;
+	}
+	.MQP-MessageGOContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.MQP-GOScoreButtons>a {
+		font-size: 1em;
+	}
+	.MQP-TitlePoint {
+		font-size: 1em;
+		font-weight: normal;
+		padding: 0.2em;
+		margin-bottom: .2em;
+	}
+	.MQP-MessageMoScoreData p {
+		font-size: 0.9em;
+	}
+	.MQP-MessageDetail {
+		font-size: .9em;
+	}
+	.MQP-LinkSlideLeft {
+		left: 0.4em;
+		width: .8em;
+		height:3em;
+		top:40%
+	}
+	.MQP-LinkSlideRight {
+		right: 0.4em;
+		width: .8em;
+		height:3em;
+		top:40%;
+	}
+}
+
+@media screen and (max-width:470px) {
+	.MQP-AuthorLicence {
+		font-size: 0.8em;
+	}
+	.MQP-Question {
+		margin-bottom: 0.3em;
+	}
+	.MQP-LinkMinimize {
+		display: none;
+	}
+	.MQP-DataCodeAccessE label {
+		display: none;
+	}
+	.MQP-MainContainer .exeQuextIcons-Submit {
+		height: 2em;
+		width: 2em;
+	}
+	.MQP-MainContainer input[type="text"], input.MQP-EdReply, input.MQP-CodeAccessE {
+		background: #fdfdfd;
+		border: 1px solid #828282;
+		border-radius: 4px;
+		box-sizing: border-box;
+		display: inline-block;
+		line-height: 1.3em;
+		margin: 0 0.3em;
+		padding: 0.2em 0.25em;
+		font-size: 1em;
+	}
+	.MQP-MainContainer input[type="text"]:active, .MQP-MainContainer input[type="text"]:focus, input.MQP-EdReply:focus, input.MQP-EdReply:active, input.MQP-CodeAccessE:focus, input.MQP-CodeAccessE:active {
+		background: #fdfdfd;
+		border: 1px solid #398ee7;
+		border-radius: 4px;
+	}
+	.MQP-MainContainer .exeQuextIcons-Submit {
+		height: 1.7em;
+		width: 1.7em;
+	}
+	.MQP-GameContainer {
+		min-height: 70vh;
+	}
+	.MQP-ContentRect {
+		width: 140px;
+		height: 100px;
+		margin: 0.3em auto;
+		border-radius: 0.3em;
+	}
+	.MPQ-CursorRect {
+		width: 1.5em;
+		height: 1.5em;
+	}
+	.MQP-MessageGOScore>div {
+		margin-bottom: 0;
+	}
+}
+
+@media screen and (max-width:340px) {
+	.MQP-MainContainer {
+		font-size: 0.9rem;
+	}
+	.MQP-GameScoreBoard p {
+		font-weight: normal;
+		margin: 0.1em;
+		padding: 0;
+	}
+	.MQP-MainContainer .exeQuextIcons {
+		margin: 0;
+		padding: 0;
+	}
+	.MQP-MainContainer .MQP-GameScoreBoard p {
+		padding: 0;
+	}
+	.MQP-GameScores {
+		width: 50%;
+	}
+	.MQP-instructions p {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:295px) {
+	.MQP-MainContainer {
+		font-size: 0.8rem;
+	}
+	.MQP-GameScoreBoard {
+		justify-content: flex-start;
+	}
+	.MQP-GameScores {
+		width: 50%;
+	}
+}
+
+@media screen and (max-width:265px) {
+	.MQP-MainContainer {
+		font-size: 0.7rem;
+	}
+	.MQP-GameScoreBoard p {
+		font-weight: normal;
+		margin: 2px;
+	}
+	.MQP-MainContainer .exeQuextIcons {
+		height: 1.1em;
+		width: 1.1em;
+	}
+	.MQP-MainContainer .exeQuextIcons-Submit {
+		height: 2em;
+		width: 2em;
+	}
+	.MQP-GameScores {
+		width: auto;
+	}
+	.MQP-Letter {
+		font-size: 1.2em;
+		height: 1.7em;
+		margin: 0;
+		width: 1.2em;
+	}
+}
+
+/* To review */
+
+.mapa-instructions, .quext-instructions, .rosco-instructions, .selecciona-instructions {
+	overflow: auto;
+}
