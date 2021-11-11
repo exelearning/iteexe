@@ -440,6 +440,7 @@ var $eXeSelecciona = {
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.customMessages = typeof mOptions.customMessages != "undefined" ? mOptions.customMessages : false;
+        mOptions.audioFeedBach = typeof mOptions.audioFeedBach != "undefined" ? mOptions.audioFeedBach : false;
         mOptions.customMessages = mOptions.order == 2 ? true : mOptions.customMessages;
         mOptions.gameOver = false;
         imgsLink.each(function () {
@@ -1236,6 +1237,9 @@ var $eXeSelecciona = {
             }
         }
         $('#seleccionaDefinition-' + instance).text(definition);
+            if (typeof (MathJax) != "undefined") {
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#seleccionaGameContainer-' + instance]);
+        }
         return cPhrase;
     },
     clear: function (phrase) {
@@ -1331,7 +1335,6 @@ var $eXeSelecciona = {
             if (mQuextion.imageVideo === 0) {
                 $('#seleccionaVideo-' + instance).hide();
                 $('#seleccionaCover-' + instance).show();
-
             } else {
                 $('#seleccionaVideo-' + instance).show();
                 $('#seleccionaCover-' + instance).hide();
@@ -1361,12 +1364,12 @@ var $eXeSelecciona = {
 
             }
         }
-        if (q.audio.length > 4 && q.type != 2) {
+        if (q.audio.length > 4 && q.type != 2 && !mOptions.audioFeedBach) {
             $('#seleccionaLinkAudio-' + instance).show();
         }
 
         $eXeSelecciona.stopSound(instance);
-        if (q.type != 2 && q.audio.trim().length > 5) {
+        if (q.type != 2 && q.audio.trim().length > 5 && !mOptions.audioFeedBach) {
             $eXeSelecciona.playSound(q.audio.trim(), instance);
         }
         if (typeof (MathJax) != "undefined") {
@@ -1537,6 +1540,10 @@ var $eXeSelecciona = {
         } else {
             $eXeSelecciona.updateScoreThree(correct, instance);
         }
+        if (mOptions.showSolution & quextion.audio.trim().length > 5 && mOptions.audioFeedBach) {
+            $eXeSelecciona.playSound(quextion.audio.trim(), instance);
+            $('#seleccionaLinkAudio-' + instance).show();
+        }
 
         var timeShowSolution = 1000;
         var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
@@ -1563,7 +1570,7 @@ var $eXeSelecciona = {
             }
 
         }
-
+    
         setTimeout(function () {
             $eXeSelecciona.newQuestion(instance, correct, false)
         }, timeShowSolution);

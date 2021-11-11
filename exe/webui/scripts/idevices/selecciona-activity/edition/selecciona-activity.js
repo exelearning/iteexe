@@ -6,6 +6,7 @@
  * Testers: Ricardo Málaga Floriano, Francisco Muñoz de la Peña
  * Translator: Antonio Juan Delgado García
  * License: http://creativecommons.org/licenses/by-sa/4.0/
+ * Versión: 3.1
  */
 var $exeDevice = {
     // i18n
@@ -706,8 +707,6 @@ var $exeDevice = {
             $(cursor).show();
         }
     },
-
-
     clearQuestion: function () {
         $exeDevice.changeTypeQuestion(0);
         $exeDevice.showOptions(4);
@@ -879,6 +878,9 @@ var $exeDevice = {
                                 <p>\
                                     <label for="seleccionaEShowSolution"><input type="checkbox" checked id="seleccionaEShowSolution">' + _("Show solutions") + '. </label>\
                                     <label for="seleccionaETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="seleccionaETimeShowSolution" id="seleccionaETimeShowSolution" value="3" min="1" max="9" /> </label>\
+                                </p>\
+                                <p>\
+                                    <label for="seleccionaEAudioFeedBack"><input type="checkbox" id="seleccionaEAudioFeedBack">' + _("Reproducir audio al mostrar la solución") + '.</label>\
                                 </p>\
                                 <p>\
                                     <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
@@ -1339,6 +1341,7 @@ var $exeDevice = {
         game.gameMode = typeof game.gameMode != "undefined" ? game.gameMode : 0;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customScore = typeof game.customScore == "undefined" ? false : game.customScore;
+        game.audioFeedBach = typeof game.audioFeedBach == "undefined" ? false : game.audioFeedBach;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
 
@@ -1362,6 +1365,7 @@ var $exeDevice = {
         $('#seleccionaEPercentajeQuestions').prop('disabled', game.order == 2);
         $('#seleccionaECustomMessages').prop('checked', game.customMessages);
         $('#seleccionaECustomMessages').prop('disabled', game.order == 2);
+        $('#seleccionaEAudioFeedBack').prop('checked', game.audioFeedBach);
         $('#seleccionaEScoreQuestionDiv').hide();
         $("#seleccionaEHasFeedBack").prop('checked', game.feedBack);
         $("#seleccionaEPercentajeFB").val(game.percentajeFB);
@@ -1699,6 +1703,7 @@ var $exeDevice = {
             percentajeFB = parseInt(clear($('#seleccionaEPercentajeFB').val())),
             gameMode = parseInt($('input[name=slcgamemode]:checked').val()),
             order = parseInt($('input[name=slcgameorder]:checked').val()),
+            audioFeedBach= $('#seleccionaEAudioFeedBack').is(':checked'),
             percentajeQuestions=parseInt(clear($('#seleccionaEPercentajeQuestions').val()));
 
         if (!itinerary) return false;
@@ -1790,8 +1795,9 @@ var $exeDevice = {
             'percentajeFB': percentajeFB,
             'order': order,
             'customMessages': customMessages,
-            'version': 3,
-            'percentajeQuestions':percentajeQuestions
+            'version': 3.1,
+            'percentajeQuestions':percentajeQuestions,
+            'audioFeedBach':audioFeedBach
         }
         return data;
     },
