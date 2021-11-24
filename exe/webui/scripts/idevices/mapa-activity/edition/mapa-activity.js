@@ -141,10 +141,10 @@ var $exeDevice = {
         msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
         msgs.msgProvideTitle = _("Debes indicar un título para este punto");
         msgs.msgMarkPoint = _("Debes marcar un punto en el mapa");
-        msgs.msgDrawArea = _("Debes dibujar un area en el mapa");
+        msgs.msgDrawArea = _("Debes dibujar un área en el mapa");
         msgs.msgTitle = _("Indica un título para la diapositiva.");
         msgs.msgSelectAudio = _("Selecciona un archivo de audio.");
-        msgs.msgErrorPointMap = _("Error en el submapa.'");
+        msgs.msgErrorPointMap = _("Error en el submapa.");
         msgs.msgEOnePoint = _("Debes indicar al menos un punto.");
         msgs.msgCloseMap = _("Debes cerrar todos los mapas editados antes de guardar la actividad.");
         msgs.msgCloseSlide = _("Debes cerrar la presentación editada antes de guardar la actividad.");
@@ -1103,7 +1103,7 @@ var $exeDevice = {
             }
 
         }
-        
+
         return medias
     },
     validateDataLevel: function () {
@@ -1233,7 +1233,10 @@ var $exeDevice = {
     clearSavePoints: function () {
         for (var i = 0; i < $exeDevice.activeMap.pts.length; i++) {
             var p = $exeDevice.activeMap.pts[i];
-            var id = p.id.substring(1)
+
+           
+            
+            var id = p.id.substring(1);
             if (p.type == 0) {
                 p.video = "";
                 p.eText = "";
@@ -1984,21 +1987,21 @@ var $exeDevice = {
             $exeDevice.showTypeQuestion(type);
         });
         $('#gameQEIdeviceForm').on('click', 'input.MQE-TypeEvaluation', function (e) {
-            
-            var type = parseInt($(this).val());            
+
+            var type = parseInt($(this).val());
             $('#mapaSolutionData').show();
             if (type == 4) {
                 $('#mapaFQuestions').show();
                 $('#mapaEvaluationData').show();
                 $('#mapaEShowSolution').show();
                 $('label[for=mapaEShowSolution]').show();
-                $('#mapaETimeShowSolution').prop("disabled",!$('#mapaEShowSolution').is(':checked'));
+                $('#mapaETimeShowSolution').prop("disabled", !$('#mapaEShowSolution').is(':checked'));
             } else {
                 $('#mapaFQuestions').hide();
                 $('#mapaEvaluationData').hide();
                 $('#mapaEShowSolution').hide();
                 $('label[for=mapaEShowSolution]').hide();
-                $('#mapaETimeShowSolution').prop("disabled",false);
+                $('#mapaETimeShowSolution').prop("disabled", false);
             }
             if (type == 1 || type == 2 || type == 3) {
                 $('#mapaDataIdentifica').show();
@@ -2014,7 +2017,7 @@ var $exeDevice = {
             if (type == 2 || type == 3) {
                 $('#mapaEvaluationIdentify').show();
             }
-            if (type ==0) {
+            if (type == 0) {
                 $('#mapaSolutionData').hide();
             }
             $exeDevice.loadIcon();
@@ -3150,7 +3153,7 @@ var $exeDevice = {
             $('#mapaDataIdentifica').show();
             $('#mapaEShowSolution').hide();
             $('label[for=mapaEShowSolution]').hide();
-            $('#mapaETimeShowSolution').prop("disabled",false);
+            $('#mapaETimeShowSolution').prop("disabled", false);
 
         }
         $('#mapaIconTypeDiv').show();

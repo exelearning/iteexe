@@ -119,13 +119,11 @@ var $eXeMapa = {
         }
 
     },
-
     showImageTest(url, alt, instance) {
         var $Image = $('#mapaImageRect-' + instance);
         $Image.prop('src', url);
         $Image.attr('alt', alt);
     },
-
     addPoints: function (instance, points) {
         var mOptions = $eXeMapa.options[instance],
             spoints = "",
@@ -170,7 +168,6 @@ var $eXeMapa = {
         $('#mapaMultimedia-' + instance).append(spoints);
         $('#mapaOptionsTest-' + instance).append(options);
     },
-
     paintPoints: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         $('#mapaMultimedia-' + instance).find('.MQP-Point').each(function () {
@@ -284,7 +281,6 @@ var $eXeMapa = {
         });
         $area.show();
     },
-
     updateSoundVideo: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         if (mOptions.activeSilent) {
@@ -298,7 +294,6 @@ var $eXeMapa = {
             }
         }
     },
-
     loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url) {
         var json = data.text();
         var mOptions = $eXeMapa.isJsonString(json),
@@ -447,7 +442,6 @@ var $eXeMapa = {
             }
         });
     },
-
     setImage: function (p, $images) {
         $images.each(function () {
             var id = $(this).text();
@@ -457,7 +451,6 @@ var $eXeMapa = {
             }
         });
     },
-
     setAudio: function (p, $audios) {
         $audios.each(function () {
             var id = $(this).text();
@@ -508,8 +501,6 @@ var $eXeMapa = {
         }
         return m;
     },
-
-
     rebootGame: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         mOptions.hits = 0;
@@ -1171,8 +1162,6 @@ var $eXeMapa = {
                 return false;
             });
     },
-
-
     getNumberPoints: function (pts) {
         var number = 0;
         for (var i = 0; i < pts.length; i++) {
@@ -1368,14 +1357,12 @@ var $eXeMapa = {
                 }
             }
         });
-
         $('#mapaLinkAudio-' + instance).on('click', function (e) {
             e.preventDefault();
             if (typeof mOptions.activeMap.pts[mOptions.activeMap.active].audio != "undefined" && mOptions.activeMap.pts[mOptions.activeMap.active].audio.length > 4) {
                 $eXeMapa.playSound(mOptions.activeMap.pts[mOptions.activeMap.active].audio, instance);
             }
         });
-
         $('#mapaPlayAudioIdenty-' + instance).on('click', function (e) {
             e.preventDefault();
             if (typeof mOptions.title.audio != "undefined" && mOptions.title.audio.length > 4) {
@@ -1388,7 +1375,6 @@ var $eXeMapa = {
                 $eXeMapa.playSound(mOptions.activeMap.pts[mOptions.activeMap.active].question_audio, instance);
             }
         });
-
         $('#mapaMultimedia-' + instance).on('mouseenter', '.MQP-Area', function (e) {
             e.preventDefault();
             if (mOptions.showData || !mOptions.gameStarted) {
@@ -1525,7 +1511,6 @@ var $eXeMapa = {
                 $eXeMapa.showPoint(n, instance);
             }
         });
-
         $('#mapaTest-' + instance).on('click', '.MPQ-OptionTest', function (e) {
             e.preventDefault();
             var text = $(this).text(),
@@ -1578,7 +1563,6 @@ var $eXeMapa = {
         });
 
     },
-
     showSlide: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[mOptions.activeMap.active];
@@ -1596,8 +1580,6 @@ var $eXeMapa = {
         }
 
     },
-
-
     startGame: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         $('#mapaMessageFindP-' + instance).show();
@@ -1652,7 +1634,6 @@ var $eXeMapa = {
         }
 
         $eXeMapa.stopSound(instance);
-
     },
     closePoint: function (instance) {
         var mOptions = $eXeMapa.options[instance];
@@ -1689,7 +1670,6 @@ var $eXeMapa = {
             }
             $eXeMapa.showClue(instance);
             $eXeMapa.messageAllVisited(instance);
-
         });
     },
     changeQuextion: function (instance, button) {
@@ -1781,7 +1761,6 @@ var $eXeMapa = {
             $('#mapaFMessageInfo-' + instance).find('.MQP-GOScoreButtons').show();
         }
         $('#mapaCubierta-' + instance).show();
-
     },
     answerQuestion: function (instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -1825,8 +1804,6 @@ var $eXeMapa = {
                 }
             }
         }
-
-
         var message = $eXeMapa.updateScore(correct, instance),
             timeShowSolution = 3000,
             type = correct ? 2 : 1;
@@ -1845,7 +1822,6 @@ var $eXeMapa = {
             $eXeMapa.newQuestion(instance, correct, false);
         }, timeShowSolution);
     },
-
     showClue: function (instance) {
         var mOptions = $eXeMapa.options[instance],
             percentageHits = 0;
@@ -1910,7 +1886,6 @@ var $eXeMapa = {
         $('#mapaRepeatActivity-' + instance).text(text);
         $('#mapaRepeatActivity-' + instance).fadeIn(1000);
     },
-
     updateScore: function (correctAnswer, instance) {
         var mOptions = $eXeMapa.options[instance],
             message = "",
@@ -1980,7 +1955,6 @@ var $eXeMapa = {
         if (mOptions.evaluation == 3) {
             $('#mapaErrorScore-' + instance).hide();
         }
-
         mOptions.gameOver = true;
         if ((mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) && mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
@@ -1992,7 +1966,6 @@ var $eXeMapa = {
         $('#mapaCubierta-' + instance).fadeIn(100, function () {
             $eXeMapa.hideCover(instance);
         });
-
     },
     updateNumberQuestion: function (numq, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2025,7 +1998,6 @@ var $eXeMapa = {
         message = message + ' ' + npts + ' ' + mOptions.msgs.msgPoints;
         return message;
     },
-
     getMessageErrorAnswer: function (instance) {
         var mOptions = $eXeMapa.options[instance],
             messageError = $eXeMapa.getRetroFeedMessages(false, instance),
@@ -2060,7 +2032,6 @@ var $eXeMapa = {
             lp = Math.round(p.x * wI - wC / 2),
             tp = Math.round(p.y * hI - hC / 2),
             msg = typeof p.question != "undefined" && p.question.length > 0 ? p.question : '';
-
         if (p.state != -1) {
             mOptions.showData = false;
             return;
@@ -2070,8 +2041,7 @@ var $eXeMapa = {
         $('#mapaMessageRect-' + instance).show();
         $('#mapaImageRect-' + instance).css({
             'left': -lp + 'px',
-            'top': -tp + 'px',
-
+            'top': -tp + 'px'
         });
         $eXeMapa.stopSound(instance);
         $('#mapaPlayAudioRect-' + instance).hide();
@@ -2093,7 +2063,6 @@ var $eXeMapa = {
         $('#mapaCubierta-' + instance).hide();
         mOptions.showData = false;
     },
-
     answerRect: function (instance, answer) {
         var mOptions = $eXeMapa.options[instance],
             solution = mOptions.tilteRect,
@@ -2160,7 +2129,6 @@ var $eXeMapa = {
 
 
     },
-
     answerFind: function (num, id, instance) {
         var mOptions = $eXeMapa.options[instance],
             solution = mOptions.title.id,
@@ -2229,7 +2197,6 @@ var $eXeMapa = {
             }, mOptions.timeShowSolution * 1000);
         }
     },
-
     changeStateCover(instance, show) {
         var $cover = $('#mapaCubierta-' + instance),
             colorBG = show ? 'rgb(255, 255, 255, .001)' : 'rgb(255, 255, 255, .001)';
@@ -2300,7 +2267,6 @@ var $eXeMapa = {
             $eXeMapa.messageAllVisited(instance);
             return;
         }
-
         mOptions.waitPlayVideo = false;
         $eXeMapa.startVideo('', 0, 0, instance);
         $eXeMapa.stopVideo(instance);
@@ -2327,7 +2293,6 @@ var $eXeMapa = {
         if (q.footer.length > 0) {
             $('#mapaFooterPoint-' + instance).show();
         }
-
         if (q.type === 0) {
             $eXeMapa.showImagePoint(q.url, q.author, q.alt, instance);
             $('#mapaMultimediaPoint-' + instance).show();
@@ -2351,9 +2316,6 @@ var $eXeMapa = {
         } else if (q.type === 3) {
             $('#mapaMultimediaPoint-' + instance).show();
             $('#mapaLinkAudio-' + instance).show();
-            /*    if (typeof mOptions.activeMap.pts[i].audio.length != "undefined" && mOptions.activeMap.pts[i].audio.length > 4) {
-                    $eXeMapa.playSound(mOptions.activeMap.pts[i].audio, instance);
-                }*/
         } else if (q.type == 5) {
             $eXeMapa.showMapDetail(instance, i);
         } else if (q.type == 6) {
@@ -2362,8 +2324,8 @@ var $eXeMapa = {
             $eXeMapa.showSlide(mOptions.activeSlide, instance);
 
         }
-        if (typeof mOptions.activeMap.pts[i].audio != "undefined" && mOptions.activeMap.pts[i].audio.length > 4) {
-            $eXeMapa.playSound(mOptions.activeMap.pts[i].audio, instance);
+        if (typeof q.audio != "undefined" &&  q.audio.length > 4) {
+            $eXeMapa.playSound( q.audio, instance);
         }
         if (mOptions.isScorm < 4 && mOptions.evaluation > -1) {
             if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
@@ -2398,21 +2360,14 @@ var $eXeMapa = {
         $('#mapaLinkAudio-' + instance).hide();
         $('#mapaLinkSlideLeft-' + instance).hide();
         $('#mapaLinkSlideRight-' + instance).hide();
-
         $('#mapaAuthorPoint-' + instance).hide();
     },
-
-
     getScoreVisited: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         var num = $eXeMapa.getNumberVisited(mOptions.visiteds),
             score = ((num * 10) / mOptions.numberQuestions).toFixed(2);
         return score;
     },
-   /* getNumberVisited: function (visiteds) {
-        var un = [...new Set(visiteds)];
-        return un.length;
-    },*/
     getNumberVisited: function (a) {
         var visiteds=Object.values($.extend(true, {}, a));
         for(var i = visiteds.length -1; i >=0; i--){
@@ -2420,7 +2375,6 @@ var $eXeMapa = {
         }
         return visiteds.length;
     },
-
     messageAllVisited: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         if (mOptions.evaluation == 0) {
@@ -2435,10 +2389,8 @@ var $eXeMapa = {
                 $('#mapaMessageFindP-' + instance).show();
 
             }
-
         }
     },
-
     getScoreFind: function (instance) {
         var mOptions = $eXeMapa.options[instance],
             score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
@@ -2494,8 +2446,6 @@ var $eXeMapa = {
             hC = $('#mapaFTests-' + instance).height() + 30;
             tp = parseInt($('#mapaFTests-' + instance).css('marginTop'));
         }
-
-
         hC += tp;
         hN = hM < hC ? hC : hM;
         $('#mapaMainContainer-' + instance).height(hN);
@@ -2505,10 +2455,7 @@ var $eXeMapa = {
         if (!$('#mapaGameContainer-' + instance).is(":visible")) {
             $('#mapaMainContainer-' + instance).css('height', 'auto');
         }
-
     },
-
-
     updateHeightGame: function (instance) {
         var $mapaGameContainer = $('#mapaGameContainer-' + instance),
             $TB = $('#mapaToolBar-' + instance),
@@ -2554,7 +2501,6 @@ var $eXeMapa = {
             $('#mapaMainContainer-' + instance).css('height', 'auto');
         }
     },
-
     refreshImageActive: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         $eXeMapa.showImage(mOptions.activeMap.url, mOptions.activeMap.alt, instance);
@@ -2674,7 +2620,6 @@ var $eXeMapa = {
 
         }
     },
-
     playVideo: function (instance) {
         var mOptions = $eXeMapa.options[instance],
             point = mOptions.activeMap.pts[mOptions.activeMap.active];
@@ -2745,7 +2690,6 @@ var $eXeMapa = {
 
     loadMathJax: function () {
         var tag = document.createElement('script');
-        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
         tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
         tag.async = true;
         var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -2767,7 +2711,6 @@ var $eXeMapa = {
             'width': mData.w + 'px',
             'height': mData.h + 'px'
         });
-
     },
     getShowLetter: function (phrase, nivel) {
         var numberLetter = parseInt(phrase.length * nivel / 100);
@@ -2783,7 +2726,6 @@ var $eXeMapa = {
         }
         return arrayRandom.sort();
     },
-
     placeImageWindows: function (image, naturalWidth, naturalHeight) {
         var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
             hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
@@ -2809,7 +2751,6 @@ var $eXeMapa = {
             y: yImagen
         };
     },
-
     placeImageWindows1: function (image, naturalWidth, naturalHeight, instance) {
         $('#mapaMultimedia-' + instance).css('height', 'auto');
         var mOptions = $eXeMapa.options[instance],
@@ -2862,23 +2803,19 @@ var $eXeMapa = {
             }
             $('#mapaMultimedia-' + instance).height(hI);
         }
-
         var lf = Math.round((wp - wI) / 2);
         $(image).css({
             'top': '0',
             'left': lf + 'px',
             'width': Math.round(wI) + 'px',
-            'height': Math.round(hI) + 'px',
-
+            'height': Math.round(hI) + 'px'
         });
         if (mOptions.evaluation == 1) {
             $('#mapaImageRect-' + instance).css({
                 'width': Math.round(wI) + 'px',
-                'height': Math.round(hI) + 'px',
-
+                'height': Math.round(hI) + 'px'
             });
         }
-
     },
     setHeightContainer: function (instance) {
         var top = $('#mapaToolBar-' + instance).height() + 16;
