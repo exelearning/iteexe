@@ -34,8 +34,13 @@ function connect(outputNum) {
                 try {
                     eval(xmlhttp.responseText)
                 } catch (e) {
-                    alert(EXCEPTION_ + e.toString()+'\n'+CAUSED_BY_SCRIPT_+xmlhttp.responseText)
-                    throw e
+                    // alert(EXCEPTION_ + e.toString()+'\n'+CAUSED_BY_SCRIPT_+xmlhttp.responseText)
+                    // throw e
+                    if (typeof(Ext)=='object') {
+                        Ext.Msg.alert(_("Warning"), _("An unexpected error has occurred") + " (Nevow)");
+                    } else {
+                        alert(_("An unexpected error has occurred") + " (Nevow)");
+                    }
                 }
                 if (!liveevil_unload && auto_open) {
                     connect(outputNum + 1)
