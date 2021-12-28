@@ -591,12 +591,24 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "%s")' % (float(percent) / 100, percent, _("Downloading...")))
         log.info('%3d' % (percent))
 
+    def is_connected(self,hostname):
+        try:
+            urlretrieve(hostname)
+            return True
+        except:
+            pass
+        return False
+
     def handleSourcesDownload(self, client):
         """
         Download taxon sources from url and deploy in $HOME/.exe/classification_sources
         """
+        if not self.is_connected("https://github.com/"):
+            client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("Could not retrieve data (Core error)")))
+            return None
+
         url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
-        client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
+        client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))        
         d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
 
         def successDownload(result):
