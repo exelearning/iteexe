@@ -27,7 +27,7 @@ jobs:
       - name: Install required python and pip
         uses: gabrielfalcao/pyenv-action@v8
         with:
-          default: 2.7.13
+          default: 2.7.18
           command: |
             easy_install pip
             pip install --upgrade pip
