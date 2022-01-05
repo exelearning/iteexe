@@ -29,13 +29,12 @@ jobs:
         with:
           default: 2.7.18
           command: |
-            open /Applications/Python\ 2.7/Install\ Certificates.command
             easy_install pip
             pip install --upgrade pip
       - name: Install Python requirements
         run: |
           pip install lxml==2.2.8
-          pip install py2app
+          pip install py2app==0.26.1
           pip install Pillow==5.3.0
           pip install zope.interface
           pip install chardet
