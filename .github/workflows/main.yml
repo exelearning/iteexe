@@ -14,7 +14,6 @@ jobs:
       MACOSX_DEPLOYMENT_TARGET: 10.14
 
     steps:
-
       - name: Checkout
         uses: actions/checkout@v2
 
@@ -27,3 +26,48 @@ jobs:
           brew info openssl
       - name: Install required python and pip
         uses: gabrielfalcao/pyenv-action@v8
+        with:
+          default: 2.7.13
+          command: |
+            easy_install pip
+            pip install --upgrade pip
+      - name: Install Python requirements
+        run: |
+          pip install lxml==2.2.8
+          pip install py2app
+          pip install Pillow==5.3.0
+          pip install zope.interface
+          pip install chardet
+          pip install gitpython
+          pip install suds
+          pip install requests-oauthlib
+          pip install python-dateutil
+          pip install httplib2
+          pip install beautifulsoup4
+          pip install feedparser
+          pip install oauthlib
+          pip install webassets
+          pip install cssmin
+      - name: Create disk image
+        run: hdiutil create -volname exe -size 500m -layout GPTSPUD -fs 'Journaled HFS+' -type UDIF installs/osx/exe
+
+      - name: Build package
+        run: |
+          brew install npm
+          echo "--> Installing appdmg" 
+          npm install -g appdmg
+          which appdmg
+          echo "--> Installing appdmg" 
+          npm install  appdmg
+          which appdmg
+          ls -l /usr/local/bin/appdmg
+          echo "--> bin:"
+          ls -l /usr/local/bin
+          cd installs/osx
+          echo "--> Creating python app and DMG image..."
+          python make.py -p
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: exe-macos
+          path: installs/osx/INTEF-exe-*.dmg
