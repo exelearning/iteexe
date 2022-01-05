@@ -29,6 +29,7 @@ jobs:
         with:
           default: 2.7.18
           command: |
+            open /Applications/Python\ 2.7/Install\ Certificates.command
             easy_install pip
             pip install --upgrade pip
       - name: Install Python requirements
