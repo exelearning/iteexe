@@ -1,0 +1,29 @@
+name: build-macos
+
+on: [push]
+
+jobs:
+  build-macos:
+    runs-on: macos-10.15
+
+    env:
+      ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      PYTHON_CONFIGURE_OPTS: --enable-shared
+      DEVELOPER_DIR: /Applications/Xcode_10.3.app/Contents/Developer
+      SDKROOT: /Applications/Xcode_10.3.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk
+      MACOSX_DEPLOYMENT_TARGET: 10.14
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install macOS build requirements
+        run: |
+          brew install libtiff libjpeg webp little-cms2
+          brew install libxml2
+          brew info openssl
+          brew link openssl --force
+          brew info openssl
+      - name: Install required python and pip
+        uses: gabrielfalcao/pyenv-action@v8

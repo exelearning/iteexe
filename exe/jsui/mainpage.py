@@ -595,7 +595,8 @@ class MainPage(RenderableLivePage):
         try:
             urlretrieve(hostname)
             return True
-        except:
+        except Exception, e:
+            log.error('Error checking host %s is %s'%(hostname, e.strerror))
             pass
         return False
 
