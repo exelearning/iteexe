@@ -19,6 +19,8 @@ jobs:
 
       - name: Install macOS build requirements
         run: |
+          echo "--> Xcode developer dir contents"
+          ls -n /Applications/ | grep Xcode*
           brew install libtiff libjpeg webp little-cms2
           brew install libxml2
           brew info openssl
