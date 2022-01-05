@@ -34,6 +34,7 @@ import tempfile
 import base64
 import certifi
 import ssl
+import httplib2
 from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor, defer
 from exe.webui.livepage          import RenderableLivePage,\
@@ -595,11 +596,11 @@ class MainPage(RenderableLivePage):
 
     def isConnected(self, hostname):
         try:
-            urlretrieve(hostname,context=ssl.create_default_context(cafile=certifi.where()))
+            _cafile = os.path.join(os.path.dirname(httplib2.__file__), 'cacerts.txt')
+            urlretrieve(hostname,context=ssl.create_default_context(cafile=_cafile))
             return True
         except Exception, e:
             log.error('Error checking host %s is %s'%(hostname, e.strerror))
-            log.error(certifi.where())
             pass
         return False
 
