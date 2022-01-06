@@ -596,9 +596,7 @@ class MainPage(RenderableLivePage):
 
     def isConnected(self, hostname):
         try:
-            _cafile = os.path.join(os.path.dirname(httplib2.__file__))
-            log.info("cafile: %s"%(_cafile))
-            urlretrieve(hostname,context=ssl.create_default_context(cafile=_cafile))
+            urlretrieve(hostname,context=ssl.create_default_context(cafile="cacerts.txt"))
             #urlretrieve(hostname,context=ssl.create_default_context(cafile=_cafile))
             #urlretrieve(hostname)
             return True
