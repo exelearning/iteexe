@@ -621,9 +621,11 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         
         if sys.platform=='darwin' and hasattr(sys, 'frozen'):
-            d = threads.deferToThread(urlretrieve(url, None, context=ssl.create_default_context(cafile="cacerts.txt")), lambda n, b, f: self.progressDownload(n, b, f, client))
+            
+            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client),ssl.create_default_context(cafile="cacerts.txt"))
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+       
 
         def successDownload(result):
             filename = result[0]
