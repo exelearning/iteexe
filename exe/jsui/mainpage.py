@@ -620,14 +620,6 @@ class MainPage(RenderableLivePage):
         url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         
-        if sys.platform=='darwin' and hasattr(sys, 'frozen'):
-            ctx = ssl.create_default_context(cafile="cacerts.txt")
-            log.info('darwin frozen goto calling url: %s '%(url))
-            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client), ctx)
-            log.info('darwin frozen defered calling')
-        else:
-            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
-       
         def successDownload(result):
             log.info('eXe downloaded %s'%(result[0]))
             filename = result[0]
@@ -642,7 +634,18 @@ class MainPage(RenderableLivePage):
             finally:
                 Path(filename).remove()
 
-        d.addCallback(successDownload)
+        if (sys.platform=='darwin' and hasattr(sys, 'frozen')):
+            cafile = "cacerts.txt"
+            try:
+                success = urlretrieve(url, None, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+                successDownload(success)    
+            except Exception, e:
+                log.error('Error downloading url %s is %s'%(url, e.strerror))
+            pass
+        
+        else:
+            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+            d.addCallback(successDownload)
 
     def handleOverwriteLocalStyle(self, client, style_dir, downloaded_file):
         """
