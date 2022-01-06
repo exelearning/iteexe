@@ -639,7 +639,6 @@ class MainPage(RenderableLivePage):
             cafile = "cacerts.txt"
             try:
                 success = urlretrieve(url, None, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
-                log.info(success)    
                 successDownload(success)                
                 log.info("finished download")    
             except Exception, e:
