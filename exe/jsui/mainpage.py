@@ -596,10 +596,14 @@ class MainPage(RenderableLivePage):
 
     def isConnected(self, hostname):
         try:
-            urlretrieve(hostname,context=ssl.create_default_context(cafile="cacerts.txt"))
-            #urlretrieve(hostname,context=ssl.create_default_context(cafile=_cafile))
-            #urlretrieve(hostname)
+            if sys.platform=='darwin' and hasattr(sys, 'frozen'):
+                verify = 'cacerts.txt'
+                urlretrieve(hostname,context=ssl.create_default_context(cafile=verify))
+            else:
+                urlretrieve(hostname)
+            log.info('eXe can reach host %s without problems'%(hostname))
             return True
+
         except Exception, e:
             log.error('Error checking host %s is %s'%(hostname, e.strerror))
             pass
@@ -615,7 +619,12 @@ class MainPage(RenderableLivePage):
 
         url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
-        d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+        
+        if sys.platform=='darwin' and hasattr(sys, 'frozen'):
+            d = threads.deferToThread(urlretrieve(context=ssl.create_default_context(cafile="cacerts.txt")), url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+        else:
+            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
+       
 
         def successDownload(result):
             filename = result[0]
