@@ -621,8 +621,9 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         
         def successDownload(result):
-            log.info('eXe downloaded %s'%(result[0]))
+            log.info('result %s'%(result))
             filename = result[0]
+            log.info('filename %s'%(filename))
             if not zipfile.is_zipfile(filename):
                 client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
                 return None
