@@ -621,13 +621,15 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         
         if sys.platform=='darwin' and hasattr(sys, 'frozen'):
-            
-            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client),ssl.create_default_context(cafile="cacerts.txt"))
+            ctx = ssl.create_default_context(cafile="cacerts.txt")
+            log.info('darwin frozen goto calling url: %s '%(url))
+            d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client), ctx)
+            log.info('darwin frozen defered calling')
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
        
-
         def successDownload(result):
+            log.info('eXe downloaded %s'%(result[0]))
             filename = result[0]
             if not zipfile.is_zipfile(filename):
                 client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
