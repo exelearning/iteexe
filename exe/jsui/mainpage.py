@@ -624,7 +624,6 @@ class MainPage(RenderableLivePage):
             log.info(result)    
             filename = result[0]
             log.info("successDownload filename: %s"%(filename))    
-
             if not zipfile.is_zipfile(filename):
                 log.error("filename not is zip file: %s"%(filename)) 
                 log.error("Filename exists: %s"%(os.path.exists(filename)))
