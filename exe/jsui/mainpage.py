@@ -594,28 +594,6 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "%s")' % (float(percent) / 100, percent, _("Downloading...")))
         log.info('%3d' % (percent))
 
-    def successDownload(self, client, result):
-            log.info(result)    
-            filename = result[0]
-            log.info("successDownload filename: %s"%(filename))    
-
-            if not zipfile.is_zipfile(filename):
-                log.error("filename not is zip file: %s"%(filename)) 
-                log.error("Filename exists: %s"%(os.path.exists(filename)))
-                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
-                return None
-
-            zipFile = zipfile.ZipFile(filename, "r")
-            try:
-                zipFile.extractall(G.application.config.configDir)
-                log.info("Extracted in %s"%(G.application.config.configDir))    
-                client.sendScript('Ext.MessageBox.hide()')
-            except Exception, e:
-                log.error('Error extracting file %s in %s is: %s'%(filename, G.application.config.configDir, e.strerror))
-            finally:
-                # Path(filename).remove()
-                log.info("Deleted %s"%(filename))    
-
     def isConnected(self, hostname):
         try:
             if sys.platform=='darwin' and hasattr(sys, 'frozen'):
@@ -642,21 +620,45 @@ class MainPage(RenderableLivePage):
         url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         
+        def successDownload(result):
+            log.info(result)    
+            filename = result[0]
+            log.info("successDownload filename: %s"%(filename))    
+
+            if not zipfile.is_zipfile(filename):
+                log.error("filename not is zip file: %s"%(filename)) 
+                log.error("Filename exists: %s"%(os.path.exists(filename)))
+                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
+                return None
+
+            zipFile = zipfile.ZipFile(filename, "r")
+            try:
+                zipFile.extractall(G.application.config.configDir)
+                log.info("Extracted in %s"%(G.application.config.configDir))    
+                client.sendScript('Ext.MessageBox.hide()')
+            except Exception, e:
+                log.error('Error extracting file %s in %s is: %s'%(filename, G.application.config.configDir, e.strerror))
+            finally:
+                # Path(filename).remove()
+                log.info("Deleted %s"%(filename))    
+
         if (sys.platform=='darwin'  and hasattr(sys, 'frozen')):
             cafile = "cacerts.txt"
             try:
-                success = urlretrieve(url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
-                self.successDownload(client, success)                
-                log.info("finished download")    
-                #d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client),ssl.create_default_context(cafile=cafile))
-                #d.addCallback(self.successDownload)
+                #success = urlretrieve(url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+                #self.successDownload(client, success)                
+                #log.info("finished download")    
+                d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+                d.addCallback(successDownload)
             except Exception, e:
                 log.error('Error downloading url %s is %s'%(url, e.strerror))
-            pass
+        elif (sys.platform=='darwin'):
+            d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client))
+            d.addCallback(successDownload)
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
-            d.addCallback(self.successDownload)
-
+            d.addCallback(successDownload)
+    
     def handleOverwriteLocalStyle(self, client, style_dir, downloaded_file):
         """
         Delete locally installed style and import new version from URL
