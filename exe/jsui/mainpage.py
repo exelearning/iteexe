@@ -598,10 +598,11 @@ class MainPage(RenderableLivePage):
             filename = result[0]
             log.info("successDownload filename: %s"%(filename))    
 
-            if not zipfile.is_zipfile(filename):
-                log.error("filename not is zip file: %s"%(filename)) 
-                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
-                return None
+            if sys.platform is not 'darwin' and not hasattr(sys, 'frozen'):
+                if not zipfile.is_zipfile(filename):
+                    log.error("filename not is zip file: %s"%(filename)) 
+                    client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
+                    return None
 
             zipFile = zipfile.ZipFile(filename, "r")
             try:
