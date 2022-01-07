@@ -644,7 +644,7 @@ class MainPage(RenderableLivePage):
         if (sys.platform=='darwin' and hasattr(sys, 'frozen')):
             cafile = "cacerts.txt"
             try:
-                success = urlretrieve(url, None, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+                success = urlretrieve(url, G.application.config.configDir, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
                 self.successDownload(success)                
                 log.info("finished download")    
             except Exception, e:
