@@ -595,11 +595,13 @@ class MainPage(RenderableLivePage):
         log.info('%3d' % (percent))
 
     def successDownload(self, client, result):
+            log.info("successDownload result: %s"%(result))    
             filename = result[0]
             log.info("successDownload filename: %s"%(filename))    
 
             if not zipfile.is_zipfile(filename):
                 log.error("filename not is zip file: %s"%(filename)) 
+                log.error("Filename exists: %s"%(os.path.exists(filename)))
                 client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
                 return None
 
