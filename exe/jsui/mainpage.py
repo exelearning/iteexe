@@ -596,13 +596,12 @@ class MainPage(RenderableLivePage):
 
     def successDownload(client, result):
             filename = result[0]
-            log.info("successDownload filename: %s"%(filename))    
+            log.info("Enters in successDownload with filename: %s"%(filename))    
 
-            if sys.platform is not 'darwin' and not hasattr(sys, 'frozen'):
-                if not zipfile.is_zipfile(filename):
-                    log.error("filename not is zip file: %s"%(filename)) 
-                    client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
-                    return None
+            if not zipfile.is_zipfile(filename):
+                log.error("filename not is zip file: %s"%(filename)) 
+                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
+                return None
 
             zipFile = zipfile.ZipFile(filename, "r")
             try:
@@ -643,14 +642,9 @@ class MainPage(RenderableLivePage):
         
         if (sys.platform=='darwin' and hasattr(sys, 'frozen')):
             cafile = "cacerts.txt"
-            try:
-                success = urlretrieve(url, G.application.config.configDir, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
-                self.successDownload(success)                
-                log.info("finished download")    
-            except Exception, e:
-                log.error('Error downloading url %s is %s'%(url, e.strerror))
-            pass
-        
+            success = urlretrieve(url, G.application.config.configDir, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+            self.successDownload(success)                
+            log.info("finished download")            
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
             d.addCallback(self.successDownload)
