@@ -599,6 +599,7 @@ class MainPage(RenderableLivePage):
             log.info("successDownload filename: %s"%(filename))    
 
             if not zipfile.is_zipfile(filename):
+                log.error("filename not is zip file: %s"%(filename)) 
                 client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
                 return None
 
@@ -607,6 +608,8 @@ class MainPage(RenderableLivePage):
                 zipFile.extractall(G.application.config.configDir)
                 log.info("Extracted in %s"%(G.application.config.configDir))    
                 client.sendScript('Ext.MessageBox.hide()')
+            except Exception, e:
+                log.error('Error extracting file %s in %s is: %s'%(filename, G.application.config.configDir, e.strerror))
             finally:
                 Path(filename).remove()
                 log.info("Deleted %s"%(filename))    
