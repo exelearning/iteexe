@@ -594,6 +594,23 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "%s")' % (float(percent) / 100, percent, _("Downloading...")))
         log.info('%3d' % (percent))
 
+    def successDownload(client, result):
+            filename = result[0]
+            log.info("successDownload filename: %s"%(filename))    
+
+            if not zipfile.is_zipfile(filename):
+                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
+                return None
+
+            zipFile = zipfile.ZipFile(filename, "r")
+            try:
+                zipFile.extractall(G.application.config.configDir)
+                log.info("Extracted in %s"%(G.application.config.configDir))    
+                client.sendScript('Ext.MessageBox.hide()')
+            finally:
+                Path(filename).remove()
+                log.info("Deleted %s"%(filename))    
+
     def isConnected(self, hostname):
         try:
             if sys.platform=='darwin' and hasattr(sys, 'frozen'):
@@ -620,24 +637,11 @@ class MainPage(RenderableLivePage):
         url = 'https://github.com/exelearning/classification_sources/raw/master/classification_sources.zip'
         client.sendScript('Ext.MessageBox.progress("%s", "%s")' %(_("Sources Download"), _("Connecting to classification sources repository...")))
         
-        def successDownload(result):
-            filename = result[0]
-            if not zipfile.is_zipfile(filename):
-                client.sendScript('Ext.MessageBox.alert("%s", "%s" )' % (_("Sources Download"), _("There has been an error while trying to download classification sources. Please try again later.")))
-                return None
-
-            zipFile = zipfile.ZipFile(filename, "r")
-            try:
-                zipFile.extractall(G.application.config.configDir)
-                client.sendScript('Ext.MessageBox.hide()')
-            finally:
-                Path(filename).remove()
-
         if (sys.platform=='darwin' and hasattr(sys, 'frozen')):
             cafile = "cacerts.txt"
             try:
                 success = urlretrieve(url, None, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
-                successDownload(success)                
+                self.successDownload(success)                
                 log.info("finished download")    
             except Exception, e:
                 log.error('Error downloading url %s is %s'%(url, e.strerror))
@@ -645,7 +649,7 @@ class MainPage(RenderableLivePage):
         
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
-            d.addCallback(successDownload)
+            d.addCallback(self.successDownload)
 
     def handleOverwriteLocalStyle(self, client, style_dir, downloaded_file):
         """
