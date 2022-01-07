@@ -639,7 +639,7 @@ class MainPage(RenderableLivePage):
             except Exception, e:
                 log.error('Error extracting file %s in %s is: %s'%(filename, G.application.config.configDir, e.strerror))
             finally:
-                # Path(filename).remove()
+                Path(filename).remove()
                 log.info("Deleted %s"%(filename))    
 
         if (sys.platform=='darwin'  and hasattr(sys, 'frozen')):
