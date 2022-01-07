@@ -594,7 +594,7 @@ class MainPage(RenderableLivePage):
         client.sendScript('Ext.MessageBox.updateProgress(%f, "%d%%", "%s")' % (float(percent) / 100, percent, _("Downloading...")))
         log.info('%3d' % (percent))
 
-    def successDownload(client, result):
+    def successDownload(self, client, result):
             filename = result[0]
             log.info("successDownload filename: %s"%(filename))    
 
