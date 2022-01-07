@@ -596,7 +596,7 @@ class MainPage(RenderableLivePage):
 
     def successDownload(client, result):
             filename = result[0]
-            log.info("Enters in successDownload with filename: %s"%(filename))    
+            log.info("successDownload filename: %s"%(filename))    
 
             if not zipfile.is_zipfile(filename):
                 log.error("filename not is zip file: %s"%(filename)) 
@@ -611,7 +611,7 @@ class MainPage(RenderableLivePage):
             except Exception, e:
                 log.error('Error extracting file %s in %s is: %s'%(filename, G.application.config.configDir, e.strerror))
             finally:
-                # Path(filename).remove()
+                Path(filename).remove()
                 log.info("Deleted %s"%(filename))    
 
     def isConnected(self, hostname):
@@ -642,9 +642,14 @@ class MainPage(RenderableLivePage):
         
         if (sys.platform=='darwin' and hasattr(sys, 'frozen')):
             cafile = "cacerts.txt"
-            success = urlretrieve(url, G.application.config.configDir, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
-            self.successDownload(success)                
-            log.info("finished download")            
+            try:
+                success = urlretrieve(url, None, lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+                self.successDownload(client, success)                
+                log.info("finished download")    
+            except Exception, e:
+                log.error('Error downloading url %s is %s'%(url, e.strerror))
+            pass
+        
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
             d.addCallback(self.successDownload)
