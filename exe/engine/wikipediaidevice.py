@@ -33,6 +33,9 @@ from exe.engine.path          import Path, TempDirPath
 from exe.engine.resource      import Resource
 
 import urllib
+import ssl
+import sys
+
 class UrlOpener(urllib.FancyURLopener):
     """
     Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
@@ -98,7 +101,10 @@ within Wikipedia.""")
         
         # Get the site content
         try:
-            net  = urllib.urlopen(url)
+            if sys.platform=='darwin' and hasattr(sys, 'frozen'):
+                net  = urllib.urlopen(url,context=ssl.create_default_context(cafile='cacerts.txt'))
+            else:
+                net  = urllib.urlopen(url)
             page = net.read()
             net.close()
         except IOError, error:
