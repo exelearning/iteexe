@@ -113,8 +113,8 @@ answer" as indicated by the selection for the correct answer; or "Wrong answer"
 for the other options.""")
         self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
         self.message          = ""
-
-        self.addQuestion()
+        for _ in range(2):
+            self.addQuestion()
 
     # Properties
     hintInstruc     = lateTranslate('hintInstruc')
@@ -129,7 +129,8 @@ for the other options.""")
         Add a new question to this iDevice. 
         """
         question = QuizQuestionField(self, x_(u'Question'))
-        question.addOption()
+        for _ in range(2):
+            question.addOption()
         self.questions.append(question)
 
 

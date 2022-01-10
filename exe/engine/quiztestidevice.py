@@ -129,8 +129,8 @@ click the radio button next to the correct option.""")
         self.questionTextArea      = TextAreaField(x_(u'Question:'),
                                          self._questionInstruc, u'')
         self.questionTextArea.idevice = self.idevice
-
-        self.addOption()
+        for _ in range(2):
+            self.addOption()
     
     # Properties
     questionInstruc      = lateTranslate('questionInstruc')
@@ -254,7 +254,8 @@ time to learn and practice using the information or skill.
         self.isAnswered = True
         self.passRate   = "50"
         self.questions  = []
-        self.addQuestion()
+        for _ in range(2):
+            self.addQuestion()
         self.systemResources += ["common.js"]
         
 
