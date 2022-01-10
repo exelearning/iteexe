@@ -23,8 +23,9 @@ An RSS Idevice is one built from a RSS feed.
 """
 
 import re
-
+import requests
 import feedparser
+
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
@@ -97,7 +98,12 @@ display them as links in your content. From here you can edit the bookmarks and 
         """
         content = ""
         try:
-            rssDic = feedparser.parse(url)
+            rssDic = []
+            headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:50.0) Gecko/20100101 Firefox/50.0'}
+            response = requests.get(url, timeout=10, headers=headers)
+            statuscode = response.status_code
+            if statuscode == 200:
+                rssDic = feedparser.parse(response.text)
             length = len(rssDic['entries'])
             if length > 0 :
                 content += "<ul>"
@@ -105,8 +111,8 @@ display them as links in your content. From here you can edit the bookmarks and 
                     content += '<li><a href="%s">%s</a></li>' %(
                         rssDic['entries'][i].link, rssDic['entries'][i].title)  
                 content += "</ul>"
-        except IOError, error:
-            log.warning(unicode(error))
+        except Exception, error:
+            log.error(unicode(error))
             content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
             
         if content == "":
