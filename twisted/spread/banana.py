@@ -62,7 +62,7 @@ VOCAB    = chr(0x87)
 
 HIGH_BIT_SET = chr(0x80)
 
-SIZE_LIMIT = 640 * 1024   # 640k is all you'll ever need :-)
+SIZE_LIMIT = 4096 * 1024   #4096k is all you'll ever need :-)
 
 class Pynana(protocol.Protocol, styles.Ephemeral):
     knownDialects = ["pb", "none"]
