@@ -19,6 +19,8 @@ parts:
     plugin: python
     python-version: python2
     requirements: [requirements.txt]
+    build-packages: [mimetex]
+    stage-packages: [mimetex]
 
 apps:
   exelearning:
@@ -30,3 +32,4 @@ apps:
       XDG_CONFIG_HOME: /home/$USER/.config
     plugs: [home, network, network-bind, unity7, desktop, desktop-legacy, x11, removable-media]
     command: exe --snap
+    
