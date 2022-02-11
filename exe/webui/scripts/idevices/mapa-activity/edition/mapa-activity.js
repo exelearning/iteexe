@@ -10,7 +10,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Mapa')
+        name: _('Map')
     },
     msgs: {},
     active: 0,
@@ -86,31 +86,31 @@ var $exeDevice = {
         "msgAccept": _("Accept"),
         "msgYes": _("Yes"),
         "msgNo": _("No"),
-        "msgShowAreas": _("Mostrar áreas activas"),
-        "msgShowTest": _("Mostrar cuestionario"),
-        "msgGoActivity": _("Hac clic aqui para realizar esta actividad"),
-        "msgSelectAnswers": _("Selecciona las opciones correctas y pulsa sobre el botón Responder"),
-        "msgCheksOptions": _("Marca todas las opciones en el orden adecuado y pulsa sobre el botón Responder"),
-        "msgWriteAnswer": _("Escribe la respuesta correcta y pulsa sobre el botón Responder"),
-        "msgIdentify": _("Identifica"),
-        "msgSearch": _("Encuentra"),
-        "msgClickOn": _("Haz clic sobre"),
-        "msgReviewContents": _("Debes repasar el %s&percnt; de los contenidos de la actividad antes de completar el cuestionario"),
-        "msgScore10": _("¡Todo perfecto! ¡Enhorabuena! ¿Deseas repetir esta actividad?"),
-        "msgScore4": _("No has superado esta prueba. Deberías repasar sus contenidos e inténtalo de nuevo. ¿Deseas repetir esta actividad?"),
-        "msgScore6": _("¡Estupendo! Has superado la prueba, pero seguro que lo puedes mejorar. ¿Deseas repetir esta actividad?"),
-        "msgScore8": _("¡Casi perfecto! Aún lo puedes hacer mejor ¿Deseas repetir esta actividad?"),
-        "msgNotCorrect": _("¡No es correcto! Has hecho clic sobre"),
-        "msgNotCorrect1": _("¡No es cierto! La respuesta correcta es"),
-        "msgNotCorrect2": _("y la respuesta correcta es"),
-        "msgNotCorrect3": _("¡Prueba otra vez!"),
-        "msgAllVisited": "¡Genial! Has visitado los puntos necesarios.",
-        "msgCompleteTest": "Puedes completar el cuestionario",
-        "msgPlayStart": _("Pulsa aquí para comenzar"),
+        "msgShowAreas": _("Show active areas"),
+        "msgShowTest": _("Show questionnaire"),
+        "msgGoActivity": _("Click here to do this activity"),
+        "msgSelectAnswers": _("Select the correct options and click on the 'Reply' button."),
+        "msgCheksOptions": _("Mark all the options in the correct order and click on the 'Reply' button."),
+        "msgWriteAnswer": _("Mark all the options in the correct order and click on the 'Reply' button."),
+        "msgIdentify": _("Identify"),
+        "msgSearch": _("Find"),
+        "msgClickOn": _("Click on"),
+        "msgReviewContents": _("You must review %s% of the contents of the activity before completing the questionnaire."),
+        "msgScore10": _("Everything is perfect! Do you want to repeat this activity?"),
+        "msgScore4": _("You have not passed this test. You should review its contents and try again. Do you want to repeat this activity?"),
+        "msgScore6": _("Great! You have passed the test, but you can improve it surely. Do you want to repeat this activity?"),
+        "msgScore8": _("Almost perfect! You can still do it better. Do you want to repeat this activity?"),
+        "msgNotCorrect": _("It is not correct! You have clicked on"),
+        "msgNotCorrect1": _("¡It is not correct! You have clicked on"),
+        "msgNotCorrect2": _("and the correct answer is"),
+        "msgNotCorrect3": _("Try again!"),
+        "msgAllVisited":  _("Great! You have visited the required dots."),
+        "msgCompleteTest": _("You can do the test."),
+        "msgPlayStart": _("Click here to start"),
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%");
-        this.ci18n.msgReviewContents = this.ci18n.msgReviewContents.replace("&percnt;", "%") // Avoid invalid HTML
+        this.ci18n.msgReviewContents = this.ci18n.msgReviewContents.replace("&percnt;", "%");
         this.setMessagesInfo();
         this.createForm();
     },
@@ -139,16 +139,16 @@ var $exeDevice = {
         msgs.msgEDefintion = _("Please provide the word definition");
         msgs.msgNotHitCuestion = _('The question marked as next in case of success does not exist.');
         msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
-        msgs.msgProvideTitle = _("Debes indicar un título para este punto");
-        msgs.msgMarkPoint = _("Debes marcar un punto en el mapa");
-        msgs.msgDrawArea = _("Debes dibujar un área en el mapa");
-        msgs.msgTitle = _("Indica un título para la diapositiva.");
-        msgs.msgSelectAudio = _("Selecciona un archivo de audio.");
-        msgs.msgErrorPointMap = _("Error en el submapa.");
-        msgs.msgEOnePoint = _("Debes indicar al menos un punto.");
-        msgs.msgCloseMap = _("Debes cerrar todos los mapas editados antes de guardar la actividad.");
-        msgs.msgCloseSlide = _("Debes cerrar la presentación editada antes de guardar la actividad.");
-        msgs.msgEOneSlide = _("Debe haber al menos una diapositiva en la presentación.");
+        msgs.msgProvideTitle = _("You must indicate a title for this point.");
+        msgs.msgMarkPoint = _("You must mark a point on the map.");
+        msgs.msgDrawArea = _("You must draw an area on the map.");
+        msgs.msgTitle = _("Give a title for the slide.");
+        msgs.msgSelectAudio = _("Select an audio file.");
+        msgs.msgErrorPointMap = _("Error in the submap.");
+        msgs.msgEOnePoint = _("You must indicate one point at least.");
+        msgs.msgCloseMap = _("You must close all the edited maps before saving the activity.");
+        msgs.msgCloseSlide = _("You must close the edited presentation before saving the activity.");
+        msgs.msgEOneSlide = _("There must be at least one slide in the presentation.");
 
     },
     createForm: function () {
@@ -156,25 +156,25 @@ var $exeDevice = {
             html = '\
             <div id="gameQEIdeviceForm">\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Haz clic sobre las áreas o iconos activos de la imagen")) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Click on the active areas or image icons.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
-                    <legend><a href="#">' + _("Opciones") + '</a></legend>\
+                    <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
                         <p>\
-                            <label for="mapaEShowMinimize"><input type="checkbox" id="mapaEShowMinimize">Mostrar minimizado</label>\
+                            <label for="mapaEShowMinimize"><input type="checkbox" id="mapaEShowMinimize">'+_('Show minimized.')+'</label>\
                         </p>\
                         <p>\
-                            <span>' + _("Evaluación") + ':</span>\
+                            <span>' + _("Assessment") + ':</span>\
                             <input class="MQE-TypeEvaluation"  checked id="mapaEEvaluationPoints" type="radio" name="mpevaluation"  value="0" />\
-                            <label for="mapaEEvaluationPoints">' + _("Puntos visitados") + '</label>\
+                            <label for="mapaEEvaluationPoints">' + _("Visited points") + '</label>\
                             <input class="MQE-TypeEvaluation" id="mapaEEvaluationSearch" type="radio" name="mpevaluation"  value="2" />\
-                            <label for="mapaEEvaluationIdentify">' + _("Identifica") + '</label>\
+                            <label for="mapaEEvaluationIdentify">' + _("Identify") + '</label>\
                             <input class="MQE-TypeEvaluation" id="mapaEEvaluationIdentify" type="radio" name="mpevaluation" value="3" />\
-                            <label for="mapaEEvaluationSearch">' + _("Encuentra") + '</label>\
+                            <label for="mapaEEvaluationSearch">' + _("Find") + '</label>\
                             <input class="MQE-TypeEvaluation" id="mapaEEvaluationTX" type="radio" name="mpevaluation"  value="1" />\
                             <label for="mapaEEvaluationTX">' + _("Test") + '</label>\
                             <input class="MQE-TypeEvaluation" id="mapaEEvaluationTest" type="radio" name="mpevaluation"  value="4" />\
-                            <label for="mapaEEvaluationTest">' + _("Cuestionario") + '</label>\
+                            <label for="mapaEEvaluationTest">' + _("Questionnaire") + '</label>\
                         </p>\
                         <p class="MQE-EHide" id="mapaSolutionData">\
                             <label for="mapaEShowSolution"><input type="checkbox" checked id="mapaEShowSolution">' + _("Show solutions") + '. </label>\
@@ -182,16 +182,16 @@ var $exeDevice = {
                         </p>\
                         <div class="MQE-EHide" id="mapaEvaluationData">\
                             <p>\
-                                <label for="mapaPercentajeShowQ">' + _("Porcentaje de contenidos visitados necesario para poder realizar el cuestionario de la actividad") + ':  </label><input type="number" name="mapaPercentajeShowQ" id="mapaPercentajeShowQ" value="100" min="1" max="100" />\
+                                <label for="mapaPercentajeShowQ">' + _("Percentage of visited contents necessary to be able to carry out the activity questionnaire") + ':  </label><input type="number" name="mapaPercentajeShowQ" id="mapaPercentajeShowQ" value="100" min="1" max="100" />\
                                 <span id="mapaPShowQuestions">1/1</span>\
                             </p>\
                             <p >\
-                                <label for="mapaPercentajeQuestions">' + _("Porcentaje de preguntas del cuestionario") + ':  <input type="number" name="mapaPercentajeQuestions" id="mapaPercentajeQuestions" value="100" min="1" max="100" /> </label>\
+                                <label for="mapaPercentajeQuestions">' + _("Percentage of questionnaire questions") + ':  <input type="number" name="mapaPercentajeQuestions" id="mapaPercentajeQuestions" value="100" min="1" max="100" /> </label>\
                                 <span id="mapaNumberQuestions">1/1</span>\
                             </p>\
                         </div>\
                         <p class="MQE-EHide" id="mapaEvaluationIdentify">\
-                            <label for="mapaPercentajeIdentify">' + _("Porcentaje de preguntas") + ':  <input type="number" name="mapaPercentajeIdentify" id="mapaPercentajeIdentify" value="100" min="1" max="100" /> </label>\
+                            <label for="mapaPercentajeIdentify">' + _("Percentage of questions") + ':  <input type="number" name="mapaPercentajeIdentify" id="mapaPercentajeIdentify" value="100" min="1" max="100" /> </label>\
                             <span id="mapaNumberPercentaje">1/1</span>\
                         </p>\
                         <p class="MQE-EHide" id="mapaEvaluationAudioData">\
@@ -200,17 +200,17 @@ var $exeDevice = {
                     </div>\
                 </fieldset>\
                 <fieldset class="exe-fieldset MQE-FieldPanel">\
-                    <legend><a href="#">' + _('Mapa') + '</a></legend>\
+                    <legend><a href="#">' + _('Map') + '</a></legend>\
                     <div class="MQE-EPanel" id="mapaEPanel">\
                         <div id="mapaImageSelect">\
                             <p class="MQE-CloseDetail" id="mapaCloseDetail">\
-                                <a href="#" id="mapaCloseLevel" title="' + _('Close') + '">Cerrar mapa <img src="' + path + 'mapacerrarventana.svg" class="MQE-ENavigationButton MQE-EActivo " alt=""/></a>\
+                                <a href="#" id="mapaCloseLevel" title="' + _('Close') + '">'+('Close map')+' <img src="' + path + 'mapacerrarventana.svg" class="MQE-ENavigationButton MQE-EActivo " alt=""/></a>\
                             </p>\
                             <p class="MQE-EFlex">\
                                 <label for="mapaURLImageMap">' + _('Image') + ':</label>\
                                 <input type="text" id="mapaURLImageMap" class="MQE-IURLImage exe-file-picker" />\
                                 <a href="#" id="mapaShowImageMap" class="MQE-ENavigationButton MQE-EActivo  MQE-Play" title="' + _('Show Image') + '"></a>\
-                                <a href="#" id="mapaMoreImageMap" class="MQE-ENavigationButton MQE-EActivo  MQE-More"  title="' + _('Mäs') + '"></a>\
+                                <a href="#" id="mapaMoreImageMap" class="MQE-ENavigationButton MQE-EActivo  MQE-More"  title="' + _('More') + '"></a>\
                             </p>\
                             <p class="MQE-EFlex MQE-EHide" id="mapaMoreImage">\
                                 <label for="mapaAuthorImageMap">' + _('Author') + ':</label><input id="mapaAuthorImageMap" type="text" />\
@@ -242,7 +242,7 @@ var $exeDevice = {
                                 <span class="MQE-EFlexN">\
                                     <span>Tipo:</span>\
                                     <input class="MQE-Type" id="mapaEMediaNone" checked type="radio" name="mpmediatype" value="4" />\
-                                    <label for="mapaEMediaNone">' + _('Ninguno') + '</label>\
+                                    <label for="mapaEMediaNone">' + _('None') + '</label>\
                                     <input class="MQE-Type" checked="" id="mapaEMediaImage" type="radio"  name="mpmediatype" value="0" />\
                                     <label for="mapaEMediaImage">' + _('Image') + '</label>\
                                     <input class="MQE-Type" id="mapaEMediaVideo" type="radio" name="mpmediatype" value="1" />\
@@ -252,11 +252,11 @@ var $exeDevice = {
                                     <input class="MQE-Type" id="mapaEMediaAudio" type="radio" name="mpmediatype" value="3" />\
                                     <label for="mapaEMediaAudio">' + _('Audio') + '</label>\
                                     <input class="MQE-Type" id="mapaEMediaMap" type="radio" name="mpmediatype" value="5" />\
-                                    <label for="mapaEMediaMap">' + _('Mapa') + '</label>\
-                                    <a href="#" id="mapaEditPointsMap"  class="MQE-EditPointsMap" title="' + _('Editar puntos del mapa') + '">' + _(' Editar') + '</a>\
+                                    <label for="mapaEMediaMap">' + _('Map') + '</label>\
+                                    <a href="#" id="mapaEditPointsMap"  class="MQE-EditPointsMap" title="' + _('Edit points of the map') + '">' + _(' Edit') + '</a>\
                                     <input class="MQE-Type" id="mapaEMediaSlide" type="radio" name="mpmediatype" value="6" />\
-                                    <label for="mapaEMediaSlide">' + _('Presentación') + '</label>\
-                                    <a href="#" id="mapaEditSlide"  class="MQE-EditPointsMap" title="' + _('Editar puntos de la presentación') + '">' + _(' Editar') + '</a>\
+                                    <label for="mapaEMediaSlide">' + _('Presentation') + '</label>\
+                                    <a href="#" id="mapaEditSlide"  class="MQE-EditPointsMap" title="' + _('Edit points of the presentation') + '">' + _(' Edit') + '</a>\
                                  </span>\
                             </p>\
                         </div>\
@@ -270,7 +270,7 @@ var $exeDevice = {
                         <div id="mapaDataVideo" class="MQE-EHide">\
                             <p class="MQE-EFlex">\
                                 <label for="mapaURLYoutube">' + _('URL YouTube') + ': </label><input type="text" id="mapaURLYoutube" class="MQE-IURLImage" />\
-                                <a href="#" id="mapaPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Show video') + '"></a>\
+                                <a href="#" id="mapaPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Play video') + '"></a>\
                             </p>\
                         </div>\
                         <div id="mapaDataAudio" class="MQE-EHide">\
@@ -281,7 +281,7 @@ var $exeDevice = {
                         </div>\
                         <div id="mapaDataFooter" class="MQE-EHide">\
                             <p class="MQE-EFlex">\
-                                <label for="mapaFooter">' + _('Pie') + ': </label><input type="text" id="mapaFooter" class="MQE-IURLImage" />\
+                                <label for="mapaFooter">' + _('Footer') + ': </label><input type="text" id="mapaFooter" class="MQE-IURLImage" />\
                             </p>\
                         </div>\
                         <div id="mapaDataText" class="MQE-EHide">\
@@ -289,7 +289,7 @@ var $exeDevice = {
                         </div>\
                         <div id="mapaDataIdentifica" class="MQE-EHide">\
                             <p class="MQE-EFlex">\
-                                <label for="mapaIdentify">' + _('Identifica') + ': </label>\
+                                <label for="mapaIdentify">' + _('Identify') + ': </label>\
                                 <input type="text" id="mapaIdentify" class="MQE-IURLImage" />\
                                 <a href="#" id="mapaIdentifyMoreAudio" class="MQE-ENavigationButton MQE-EActivo  MQE-More"  title="' + _('Audio') + '"></a>\
                             </p>\
@@ -303,21 +303,21 @@ var $exeDevice = {
                         </div>\
                         <div class="MQE-EContents">\
                             <div class="MQE-ENavigationButtons">\
-                                <a href="#" id="mapaEAdd" class="MQE-ENavigationButton MQE-EActivo  MQE-Add" title="' + _('Añadir punto') + '"></a>\
-                                <a href="#" id="mapaEFirst" class="MQE-ENavigationButton MQE-EActivo  MQE-First" title="' + _('Primer punto ') + '"></a>\
-                                <a href="#" id="mapaEPrevious" class="MQE-ENavigationButton MQE-EActivo  MQE-Previous" title="' + _('Punto anterior') + '"></a>\
-                                <label class="sr-av" for="mapaNumberPoint">' + _('Punto número') + ':</label>\
+                                <a href="#" id="mapaEAdd" class="MQE-ENavigationButton MQE-EActivo  MQE-Add" title="' + _('Add point') + '"></a>\
+                                <a href="#" id="mapaEFirst" class="MQE-ENavigationButton MQE-EActivo  MQE-First" title="' + _('First point') + '"></a>\
+                                <a href="#" id="mapaEPrevious" class="MQE-ENavigationButton MQE-EActivo  MQE-Previous" title="' + _('Previous point') + '"></a>\
+                                <label class="sr-av" for="mapaNumberPoint">' + _('Point number') + ':</label>\
                                 <input type="text" class="MQE-NumberPoint" id="mapaNumberPoint" value="1" />\
-                                <a href="#" id="mapaENext" class="MQE-ENavigationButton MQE-EActivo  MQE-Next" title="' + _('Punto siguiente') + '"></a>\
-                                <a href="#" id="mapaELast" class="MQE-ENavigationButton MQE-EActivo  MQE-Last" title="' + _('Último punto') + '"></a>\
-                                <a href="#" id="mapaEDelete" class="MQE-ENavigationButton MQE-EActivo  MQE-Delete" title="' + _('Eliminar punto') + '"></a>\
-                                <a href="#" id="mapaECopy" class="MQE-ENavigationButton MQE-EActivo  MQE-Copy" title="' + _('Copiar punto') + '"></a>\
-                                <a href="#" id="mapaECut" class="MQE-ENavigationButton MQE-EActivo  MQE-Cut" title="' + _('Cortar punto') + '"></a>\
-                                <a href="#" id="mapaEPaste" class="MQE-ENavigationButton MQE-EActivo  MQE-Paste" title="' + _('Pegar punto') + '"></a>\
+                                <a href="#" id="mapaENext" class="MQE-ENavigationButton MQE-EActivo  MQE-Next" title="' + _('Next Point') + '"></a>\
+                                <a href="#" id="mapaELast" class="MQE-ENavigationButton MQE-EActivo  MQE-Last" title="' + _('Last point') + '"></a>\
+                                <a href="#" id="mapaEDelete" class="MQE-ENavigationButton MQE-EActivo  MQE-Delete" title="' + _('Delete point') + '"></a>\
+                                <a href="#" id="mapaECopy" class="MQE-ENavigationButton MQE-EActivo  MQE-Copy" title="' + _('Copy point') + '"></a>\
+                                <a href="#" id="mapaECut" class="MQE-ENavigationButton MQE-EActivo  MQE-Cut" title="' + _('Cut point') + '"></a>\
+                                <a href="#" id="mapaEPaste" class="MQE-ENavigationButton MQE-EActivo  MQE-Paste" title="' + _('Paste point') + '"></a>\
                             </div>\
                         </div>\
                         <div class="MQE-ENumQuestionDiv">\
-                            <div class="MQE-ENumQ"><span class="sr-av">' + _("Número de puntos") + ':</span></div>\ <span class="MQE-ENumQuestions" id="mapaENumPoints">1</span>\
+                            <div class="MQE-ENumQ"><span class="sr-av">' + _("Number of points") + ':</span></div>\ <span class="MQE-ENumQuestions" id="mapaENumPoints">1</span>\
                         </div>\
                         <div class="MQE-Cubierta" id="mapaCubierta"></div>\
                     </div>\
@@ -363,17 +363,17 @@ var $exeDevice = {
                     <p class="MQE-EFlex">\
                         <label>' + _("URL YouTube") + '</label>\
                         <input type="text" id="mapaPURLYoutube" class="MQE-IURLImage" />\
-                        <a href="#" id="mapaPPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Show Video') + '"></a>\
+                        <a href="#" id="mapaPPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Play video') + '"></a>\
                     </p>\
                     <p class="MQE-EFlex" id="mapaEPointInputOptionsVideo">\
-                        <label for="mapaPInitVideo">' + _('Inicio') + ':</label><input id="mapaPInitVideo" type="text"   value="00:00:00" maxlength="8" />\
-                        <label for="mapaPEndVideo">' + _('Fin') + ':</label><input id="mapaPEndVideo" type="text" value="00:00:00" maxlength="8" />\
+                        <label for="mapaPInitVideo">' + _('Start') + ':</label><input id="mapaPInitVideo" type="text"   value="00:00:00" maxlength="8" />\
+                        <label for="mapaPEndVideo">' + _('End') + ':</label><input id="mapaPEndVideo" type="text" value="00:00:00" maxlength="8" />\
                         <button class="MQE-EMediaTime" id="mapaPVideoTime" type="button">00:00:00</button>\
                     </p>\
                 </div>\
                 <div id="mapaPDataFooter">\
                     <p class="MQE-EFlex">\
-                        <label for="mapaPFooter">' + _("Pie") + ': </label><input type="text" id="mapaPFooter" class="MQE-IURLImage" />\
+                        <label for="mapaPFooter">' + _("Footer") + ': </label><input type="text" id="mapaPFooter" class="MQE-IURLImage" />\
                     </p>\
                 </div>\
             </div>\
@@ -404,22 +404,22 @@ var $exeDevice = {
                 </div>\
                 <div id="mapaSDataFooter">\
                     <p class="MQE-EFlex">\
-                        <label for="mapaSFooter">' + _("Pie") + ': </label><input type="text" id="mapaSFooter" class="MQE-IURLImage" />\
+                        <label for="mapaSFooter">' + _("Footer") + ': </label><input type="text" id="mapaSFooter" class="MQE-IURLImage" />\
                     </p>\
                 </div>\
                 <div class="MQE-EContents">\
                             <div class="MQE-ENavigationButtons">\
-                                <a href="#" id="mapaEAddSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Add" title="' + _('Añadir diapositiva') + '"></a>\
-                                <a href="#" id="mapaEFirstSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-First" title="' + _('Primer diapositiva ') + '"></a>\
-                                <a href="#" id="mapaEPreviousSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Previous" title="' + _('Diapositiva anterior') + '"></a>\
-                                <label class="sr-av" for="mapaNumberSlide">' + _('Diapositiva número') + ':</label>\
+                                <a href="#" id="mapaEAddSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Add" title="' + _('Add a slide') + '"></a>\
+                                <a href="#" id="mapaEFirstSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-First" title="' + _('First slide') + '"></a>\
+                                <a href="#" id="mapaEPreviousSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Previous" title="' + _('Previous slide') + '"></a>\
+                                <label class="sr-av" for="mapaNumberSlide">' + _('Slide number') + ':</label>\
                                 <input type="text" class="MQE-NumberPoint" id="mapaNumberSlide" value="1" />\
-                                <a href="#" id="mapaENextSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Next" title="' + _('Diapositiva siguiente') + '"></a>\
-                                <a href="#" id="mapaELastSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Last" title="' + _('Última diapositiva') + '"></a>\
-                                <a href="#" id="mapaEDeleteSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Delete" title="' + _('Eliminar diapositiva') + '"></a>\
-                                <a href="#" id="mapaECopySlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Copy" title="' + _('Copiar diapositiva') + '"></a>\
-                                <a href="#" id="mapaECutSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Cut" title="' + _('Cortar diapositiva') + '"></a>\
-                                <a href="#" id="mapaEPasteSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Paste" title="' + _('Pegar diapositiva') + '"></a>\
+                                <a href="#" id="mapaENextSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Next" title="' + _('Next slide') + '"></a>\
+                                <a href="#" id="mapaELastSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Last" title="' + _('Last slide') + '"></a>\
+                                <a href="#" id="mapaEDeleteSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Delete" title="' + _('Delete slide') + '"></a>\
+                                <a href="#" id="mapaECopySlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Copy" title="' + _('Copy slide') + '"></a>\
+                                <a href="#" id="mapaECutSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Cut" title="' + _('Cut slide') + '"></a>\
+                                <a href="#" id="mapaEPasteSlide" class="MQE-ENavigationButton MQE-EActivo  MQE-Paste" title="' + _('Paste slide') + '"></a>\
                             </div>\
                         </div>\
             </div>\
@@ -429,7 +429,7 @@ var $exeDevice = {
 
     getCuestionario: function () {
         var html = '<fieldset class="exe-fieldset  exe-fieldset-closed" id="mapaFQuestions">\
-        <legend><a href="#">' + _('Cuestionario') + '</a></legend>\
+        <legend><a href="#">' + _('Questionnaire') + '</a></legend>\
         <div class="MQE-EContents">\
             <div id="mapaDataQuestion" class="MQE-EFlexSolution">\
                 <div class="MQE-EInputType">\
@@ -538,7 +538,7 @@ var $exeDevice = {
             id = "Before";
         }
         return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
-                    <legend><a href='#'>" + _('Contenido adicional') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
+                    <legend><a href='#'>" + _('Additional content') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
                     <div>\
                         <p>\
                             <label for='eXeIdeviceText" + id + "' class='sr-av'>" + tit + ":</label>\
@@ -2242,7 +2242,7 @@ var $exeDevice = {
 
     closeSlide: function () {
 
-        Ext.MessageBox.confirm(_('Cerrar pressntación'), _('¿Desea guardar los cambios de esta presentación?'), callbackFunction);
+        Ext.MessageBox.confirm(_('Close presentation'), _('Do you want to save the changes of this presentation?'), callbackFunction);
 
         function callbackFunction(btn) {
             if (btn == 'yes') {
@@ -2335,82 +2335,82 @@ var $exeDevice = {
 
     getIconType: function () {
         var html = '<div class="MQE-IconType" id="mapaIconTypeDiv">\
-            <label for="mapaIconType">' + _('Icono') + ': </label>\
+            <label for="mapaIconType">' + _('Icon') + ': </label>\
             <select name="mapaIconType" id="mapaIconType">\
-            <option value="1">' + _('Área invisible') + '</option>\
-            <option value="0" selected>' + _('Lupa') + '</option>\
-            <option value="7">' + _('Marcador') + '</option>\
+            <option value="1">' + _('Invisible area') + '</option>\
+            <option value="0" selected>' + _('Magnifying glass') + '</option>\
+            <option value="7">' + _('Map marker') + '</option>\
             <option value="2">' + _('Audio') + '</option>\
-            <option value="3">' + _('Imagen') + '</option>\
-            <option value="4">' + _('Texto') + '</option>\
-            <option value="5">' + _('Vídeo') + '</option>\
-            <option value="6">' + _('Presentación') + '</option>\
-            <option value="8">' + _('Chincheta') + ' 1</option>\
-            <option value="9">' + _('Chincheta') + ' 2</option>\
-            <option value="10">' + _('Chincheta') + ' 3</option>\
-            <option value="11">' + _('Flecha') + ' 1</option>\
-            <option value="12">' + _('Flecha') + ' 2</option>\
-            <option value="13">' + _('Flecha') + ' 3</option>\
-            <option value="14">' + _('Flecha') + ' 4</option>\
-            <option value="15">' + _('Flecha') + ' 5</option>\
-            <option value="16">' + _('Flecha') + ' 6</option>\
-            <option value="17">' + _('Flecha') + ' 7</option>\
-            <option value="18">' + _('Flecha') + ' 8</option>\
-            <option value="19">' + _('Punto') + '</option>\
-            <option value="20">' + _('Lupa') + '</option>\
-            <option value="27">' + _('Marcador') + '</option>\
+            <option value="3">' + _('Image') + '</option>\
+            <option value="4">' + _('Text') + '</option>\
+            <option value="5">' + _('Video') + '</option>\
+            <option value="6">' + _('Presentation') + '</option>\
+            <option value="8">' + _('Pushpin') + ' 1</option>\
+            <option value="9">' + _('Pushpin') + ' 2</option>\
+            <option value="10">' + _('Pushpin') + ' 3</option>\
+            <option value="11">' + _('Arrow') + ' 1</option>\
+            <option value="12">' + _('Arrow') + ' 2</option>\
+            <option value="13">' + _('Arrow') + ' 3</option>\
+            <option value="14">' + _('Arrow') + ' 4</option>\
+            <option value="15">' + _('Arrow') + ' 5</option>\
+            <option value="16">' + _('Arrow') + ' 6</option>\
+            <option value="17">' + _('Arrow') + ' 7</option>\
+            <option value="18">' + _('Arrow') + ' 8</option>\
+            <option value="19">' + _('Point') + '</option>\
+            <option value="20">' + _('Magnifying glass') + '</option>\
+            <option value="27">' + _('Map marker') + '</option>\
             <option value="22">' + _('Audio') + '</option>\
-            <option value="23">' + _('Imagen') + '</option>\
-            <option value="24">' + _('Texto') + '</option>\
-            <option value="25">' + _('Vídeo') + '</option>\
-            <option value="26">' + _('Presentación') + '</option>\
-            <option value="28">' + _('Chincheta') + ' 1</option>\
-            <option value="29">' + _('Chincheta') + ' 2</option>\
-            <option value="30">' + _('Chincheta') + ' 3</option>\
-            <option value="31">' + _('Flecha') + ' 1</option>\
-            <option value="32">' + _('Flecha') + ' 2</option>\
-            <option value="33">' + _('Flecha') + ' 3</option>\
-            <option value="34">' + _('Flecha') + ' 4</option>\
-            <option value="35">' + _('Flecha') + ' 5</option>\
-            <option value="36">' + _('Flecha') + ' 6</option>\
-            <option value="37">' + _('Flecha') + ' 7</option>\
-            <option value="38">' + _('Flecha') + ' 8</option>\
-            <option value="40">' + _('Lupa') + '</option>\
-            <option value="47">' + _('Marcador') + '</option>\
+            <option value="23">' + _('Image') + '</option>\
+            <option value="24">' + _('Text') + '</option>\
+            <option value="25">' + _('Video') + '</option>\
+            <option value="26">' + _('Presentation') + '</option>\
+            <option value="28">' + _('Pushpin') + ' 1</option>\
+            <option value="29">' + _('Pushpin') + ' 2</option>\
+            <option value="30">' + _('Pushpin') + ' 3</option>\
+            <option value="31">' + _('Arrow') + ' 1</option>\
+            <option value="32">' + _('Arrow') + ' 2</option>\
+            <option value="33">' + _('Arrow') + ' 3</option>\
+            <option value="34">' + _('Arrow') + ' 4</option>\
+            <option value="35">' + _('Arrow') + ' 5</option>\
+            <option value="36">' + _('Arrow') + ' 6</option>\
+            <option value="37">' + _('Arrow') + ' 7</option>\
+            <option value="38">' + _('Arrow') + ' 8</option>\
+            <option value="40">' + _('Magnifying glass') + '</option>\
+            <option value="47">' + _('Map marker') + '</option>\
             <option value="42">' + _('Audio') + '</option>\
-            <option value="43">' + _('Imagen') + '</option>\
-            <option value="44">' + _('Texto') + '</option>\
-            <option value="45">' + _('Vídeo') + '</option>\
-            <option value="46">' + _('Presentación') + '</option>\
-            <option value="48">' + _('Chincheta') + ' 1</option>\
-            <option value="49">' + _('Chincheta') + ' 2</option>\
-            <option value="50">' + _('Chincheta') + ' 3</option>\
-            <option value="51">' + _('Flecha') + ' 1</option>\
-            <option value="52">' + _('Flecha') + ' 2</option>\
-            <option value="53">' + _('Flecha') + ' 3</option>\
-            <option value="54">' + _('Flecha') + ' 4</option>\
-            <option value="55">' + _('Flecha') + ' 5</option>\
-            <option value="56">' + _('Flecha') + ' 6</option>\
-            <option value="57">' + _('Flecha') + ' 7</option>\
-            <option value="58">' + _('Flecha') + ' 8</option>\
-            <option value="60">' + _('Lupa') + '</option>\
-            <option value="67">' + _('Marcador') + '</option>\
+            <option value="43">' + _('Image') + '</option>\
+            <option value="44">' + _('Text') + '</option>\
+            <option value="45">' + _('Video') + '</option>\
+            <option value="46">' + _('Presentation') + '</option>\
+            <option value="48">' + _('Pushpin') + ' 1</option>\
+            <option value="49">' + _('Pushpin') + ' 2</option>\
+            <option value="50">' + _('Pushpin') + ' 3</option>\
+            <option value="51">' + _('Arrow') + ' 1</option>\
+            <option value="52">' + _('Arrow') + ' 2</option>\
+            <option value="53">' + _('Arrow') + ' 3</option>\
+            <option value="54">' + _('Arrow') + ' 4</option>\
+            <option value="55">' + _('Arrow') + ' 5</option>\
+            <option value="56">' + _('Arrow') + ' 6</option>\
+            <option value="57">' + _('Arrow') + ' 7</option>\
+            <option value="58">' + _('Arrow') + ' 8</option>\
+            <option value="60">' + _('Magnifying glass') + '</option>\
+            <option value="67">' + _('Map marker') + '</option>\
             <option value="62">' + _('Audio') + '</option>\
-            <option value="63">' + _('Imagen') + '</option>\
-            <option value="64">' + _('Texto') + '</option>\
-            <option value="65">' + _('Vídeo') + '</option>\
-            <option value="66">' + _('Presentación') + '</option>\
-            <option value="68">' + _('Chincheta') + ' 1</option>\
-            <option value="69">' + _('Chincheta') + ' 2</option>\
-            <option value="70">' + _('Chincheta') + ' 3</option>\
-            <option value="71">' + _('Flecha') + ' 1</option>\
-            <option value="72">' + _('Flecha') + ' 2</option>\
-            <option value="73">' + _('Flecha') + ' 3</option>\
-            <option value="74">' + _('Flecha') + ' 4</option>\
-            <option value="75">' + _('Flecha') + ' 5</option>\
-            <option value="76">' + _('Flecha') + ' 6</option>\
-            <option value="77">' + _('Flecha') + ' 7</option>\
-            <option value="78">' + _('Flecha') + ' 8</option>\
+            <option value="63">' + _('Image') + '</option>\
+            <option value="64">' + _('Text') + '</option>\
+            <option value="65">' + _('Video') + '</option>\
+            <option value="66">' + _('Presentation') + '</option>\
+            <option value="68">' + _('Pushpin') + ' 1</option>\
+            <option value="69">' + _('Pushpin') + ' 2</option>\
+            <option value="70">' + _('Pushpin') + ' 3</option>\
+            <option value="71">' + _('Arrow') + ' 1</option>\
+            <option value="72">' + _('Arrow') + ' 2</option>\
+            <option value="73">' + _('Arrow') + ' 3</option>\
+            <option value="74">' + _('Arrow') + ' 4</option>\
+            <option value="75">' + _('Arrow') + ' 5</option>\
+            <option value="76">' + _('Arrow') + ' 6</option>\
+            <option value="77">' + _('Arrow') + ' 7</option>\
+            <option value="78">' + _('Arrow') + ' 8</option>\
             </select>\
             <span class="MQE-EIconPoint" id="mapaIconPoint"></span>\
         </div>';
@@ -3306,7 +3306,7 @@ var $exeDevice = {
     },
 
     closeLevel: function () {
-        Ext.MessageBox.confirm(_('Cerrar mapa'), _('¿Desea guardar los cambios de este mapa?'), callbackFunction);
+        Ext.MessageBox.confirm(_('Close map'), _('Do you want to save the changes of this map?'), callbackFunction);
 
         function callbackFunction(btn) {
             if (btn == 'yes') {

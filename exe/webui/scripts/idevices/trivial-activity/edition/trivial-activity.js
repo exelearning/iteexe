@@ -11,8 +11,8 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Trivial Activity'),
-        alt: _('Trivial QuExt')
+        name: _('Trivial'),
+        alt: _('Trivial')
     },
     iDevicePath: "/scripts/idevices/trivial-activity/edition/",
     msgs: {},
@@ -69,22 +69,22 @@ var $exeDevice = {
         "msgImage": _("Image"),
         "msgOrders": _("Please order the answers"),
         "msgIndicateWord": _("Provide a word or phrase"),
-        "msgGameStarted": _("El juego ya ha comenzado"),
-        "msgPlayersName": _("Debes indicar un nombre para todos los jugadores seleccionados"),
-        "msgReboot": _("¿Deseas reiniciar el juego?"),
-        "msgRoolDice": _("lanza el dado"),
-        "msgsWinner": _("El juego ha terminado el ganador es %1 ¿Deseas volvar a jugar?"),
-        "msgWinGame": _("¡genial! Ganas la partida"),
-        "msgsYouPlay": _("tú juegas. Lanza el dado"),
-        "msgSaveDiceAuto": _("Su puntuación se guardará automaticamente tras cada tirada."),
-        "msgOnlyFirstGame": _("Sólo puede jugar una vez."),
-        "msgGamers": _("Jugadores"),
-        "msgReply": _("Responder"),
-        "msgErrorQuestion": _("has fallado"),
-        "msgsWinner": _("El juego ha terminado el ganador es %1 ¿Deseas volvar a jugar?"),
-        "msgsYouPlay": _("tú juegas. Lanza el dado"),
-        "msgGetQueso": _("consigues el queso de "),
-        "msgRightAnswre": _("Un punto más")
+        "msgGameStarted": _("The game has already started."),
+        "msgPlayersName": _("You must indicate a name for all the selected players."),
+        "msgReboot": _("Do you want to restart the game?"),
+        "msgRoolDice": _("roll the dice."),
+        "msgsWinner": _("The game has finished. The winner is %1. Do you want to play again?"),
+        "msgWinGame": _("Cool! You win the game."),
+        "msgsYouPlay": _("you play. Roll the dice."),
+        "msgSaveDiceAuto": _("Your score will be automatically saved after each throw."),
+        "msgOnlyFirstGame": _("You can only play once."),
+        "msgGamers": _("Players"),
+        "msgReply": _("Answer"),
+        "msgErrorQuestion": _("you have failed."),
+        "msgsWinner": _("The game has finished. The winner is %1. Do you want to play again?"),
+        "msgsYouPlay": _("you play. Roll the dice."),
+        "msgGetQueso": _("you get the cheese of"),
+        "msgRightAnswre": _("One more point.")
     },
     getId: function () {
         return Math.round(new Date().getTime() + (Math.random() * 100));
@@ -121,10 +121,10 @@ var $exeDevice = {
         msgs.msgTypeChoose = _("Please check all the answers in the right order");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideSolution = _("Please write the solution");
-        msgs.msgNameThemes = _('Debes indicar un nombre para todos los temas seleccionados');
-        msgs.msgCmpleteAllQuestions = _('Debes completar correctamente todas  las cuestiones de todos los temas seleccionados');
-        msgs.msgGameIntrunctions = _("Lanza el dado y contesta a la pregunta hasta completar todos los quesos");
-        msgs.tooManyQuestions = _("¡Demasiadas preguntas! El juego puede tener un máximo de unas 800 a 1200 preguntas. Este número puede variar mucho dependiendo del tipo de cuestiones y la longitud de sr pregunta,  sus respuestas, urls y textos enriquecidos");
+        msgs.msgNameThemes = _('You must indicate a name for all the selected topics.');
+        msgs.msgCmpleteAllQuestions = _('You must complete all the questions of all the selected topics correctly.');
+        msgs.msgGameIntrunctions = _("Roll the dice and answer the question until you complete all the cheeses.");
+        msgs.tooManyQuestions = _("Too many questions! The game can have a maximum of about 800 and 1200 questions. This number can vary a lot depending on the type of questions and the length of the questions, the answers, the URLs and the enriched text.");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
 
     },
@@ -718,7 +718,7 @@ var $exeDevice = {
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
-                            <p>' + _("Numéro de temas") + ': \
+                            <p>' + _("Number of topics") + ': \
                                 <input class="gameQE-NumeroTemas" checked="checked" id="trivialNG2" type="radio" name="tvlnt" value="2"  />\
                                 <label>2</label>\
                                 <input class="gameQE-NumeroTemas"  type="radio" name="tvlnt" value="3"  />\
@@ -744,12 +744,12 @@ var $exeDevice = {
                         <div class="gameQE-EPanel" id="trivialEPanel">\
                             <div class="gameQE-EOptionsMedia">\
                                 <div class="gameQE-EOptionsGame">\
-                                    <span>' + _("Tema") + ':</span>\
+                                    <span>' + _("Topic") + ':</span>\
                                     <div class="gameQE-Flex gameQE-ENameTema">\
-                                        <label class="sr-av">' + _("Número tema") + '</label> <input type="number" name="trivialNumberTema" id="trivialNumberTema" value="1" min="1" max="2" step="1" /> \
-                                        <label class="sr-av">' + _("Nombre tema") + '</label> <input type="text" id="trivialNameTema" />\
+                                        <label class="sr-av">' + _("Topic number") + '</label> <input type="number" name="trivialNumberTema" id="trivialNumberTema" value="1" min="1" max="2" step="1" /> \
+                                        <label class="sr-av">' + _("Topic number") + '</label> <input type="text" id="trivialNameTema" />\
                                     </div>\
-                                    <span>' + _("Cargar") + ':</span>\
+                                    <span>' + _("Load") + ':</span>\
                                     <div>\
                                         <input type="file" name="trivialLoadGame" id="trivialLoadGame" accept=".json" />\
                                     </div>\
@@ -830,7 +830,7 @@ var $exeDevice = {
                                             <button class="gameQE-EVideoTime" id="trivialEVideoTime" type="button">00:00:00</button>\
                                         </div>\
                                         <div>\
-                                            <label for="trivialESilenceVideo">' + _("Silencio") + ':</label>\
+                                            <label for="trivialESilenceVideo">' + _("Silence") + ':</label>\
                                             <input id="trivialESilenceVideo" type="text" value="00:00:00" maxlength="8"" />\
                                             <label for="trivialETimeSilence">' + _("Time (s)") + ':</label>\
                                             <input type="number" name="trivialETimeSilence" id="trivialETimeSilence" value="0" min="0" max="120" /> \

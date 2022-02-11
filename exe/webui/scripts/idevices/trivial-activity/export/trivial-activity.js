@@ -52,10 +52,10 @@ var $eXeTrivial = {
     init: function () {
         this.activities = $('.trivial-IDevice');
         if (this.activities.length == 0) return;
-        if (!$eXeTrivial.supportedBrowser('adivina')) return;
+        if (!$eXeTrivial.supportedBrowser('trivial')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('To do') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Trivial') + '</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
