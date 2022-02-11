@@ -74,7 +74,7 @@ var $exeDevice = {
         "msgReboot": _("Do you want to restart the game?"),
         "msgRoolDice": _("roll the dice."),
         "msgsWinner": _("The game has finished. The winner is %1. Do you want to play again?"),
-        "msgWinGame": _("Cool! You win the game."),
+        "msgWinGame": _("Cool! You won the game."),
         "msgsYouPlay": _("you play. Roll the dice."),
         "msgSaveDiceAuto": _("Your score will be automatically saved after each throw."),
         "msgOnlyFirstGame": _("You can only play once."),

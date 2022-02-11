@@ -95,7 +95,7 @@ var $exeDevice = {
         "msgIdentify": _("Identify"),
         "msgSearch": _("Find"),
         "msgClickOn": _("Click on"),
-        "msgReviewContents": _("You must review %s% of the contents of the activity before completing the questionnaire."),
+        "msgReviewContents": _("You must review %s&percnt; of the contents of the activity before completing the questionnaire."),
         "msgScore10": _("Everything is perfect! Do you want to repeat this activity?"),
         "msgScore4": _("You have not passed this test. You should review its contents and try again. Do you want to repeat this activity?"),
         "msgScore6": _("Great! You have passed the test, but you can improve it surely. Do you want to repeat this activity?"),
@@ -107,6 +107,8 @@ var $exeDevice = {
         "msgAllVisited":  _("Great! You have visited the required dots."),
         "msgCompleteTest": _("You can do the test."),
         "msgPlayStart": _("Click here to start"),
+        "msgSubtitles": _("Subtitles"),
+        "msgSelectSubtitles": _("Select a subtitle file. Supported formats:")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%");
@@ -142,7 +144,7 @@ var $exeDevice = {
         msgs.msgProvideTitle = _("You must indicate a title for this point.");
         msgs.msgMarkPoint = _("You must mark a point on the map.");
         msgs.msgDrawArea = _("You must draw an area on the map.");
-        msgs.msgTitle = _("Give a title for the slide.");
+        msgs.msgTitle = _("Provide a slide title.");
         msgs.msgSelectAudio = _("Select an audio file.");
         msgs.msgErrorPointMap = _("Error in the submap.");
         msgs.msgEOnePoint = _("You must indicate one point at least.");
@@ -253,10 +255,10 @@ var $exeDevice = {
                                     <label for="mapaEMediaAudio">' + _('Audio') + '</label>\
                                     <input class="MQE-Type" id="mapaEMediaMap" type="radio" name="mpmediatype" value="5" />\
                                     <label for="mapaEMediaMap">' + _('Map') + '</label>\
-                                    <a href="#" id="mapaEditPointsMap"  class="MQE-EditPointsMap" title="' + _('Edit points of the map') + '">' + _(' Edit') + '</a>\
+                                    <a href="#" id="mapaEditPointsMap"  class="MQE-EditPointsMap" title="' + _('Edit map points') + '">' + _('Edit') + '</a>\
                                     <input class="MQE-Type" id="mapaEMediaSlide" type="radio" name="mpmediatype" value="6" />\
                                     <label for="mapaEMediaSlide">' + _('Presentation') + '</label>\
-                                    <a href="#" id="mapaEditSlide"  class="MQE-EditPointsMap" title="' + _('Edit points of the presentation') + '">' + _(' Edit') + '</a>\
+                                    <a href="#" id="mapaEditSlide"  class="MQE-EditPointsMap" title="' + _('Edit presentation points') + '">' + _('Edit') + '</a>\
                                  </span>\
                             </p>\
                         </div>\
@@ -269,7 +271,7 @@ var $exeDevice = {
                         </div>\
                         <div id="mapaDataVideo" class="MQE-EHide">\
                             <p class="MQE-EFlex">\
-                                <label for="mapaURLYoutube">' + _('URL YouTube') + ': </label><input type="text" id="mapaURLYoutube" class="MQE-IURLImage" />\
+                                <label for="mapaURLYoutube">' + _('Youtube URL') + ': </label><input type="text" id="mapaURLYoutube" class="MQE-IURLImage" />\
                                 <a href="#" id="mapaPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Play video') + '"></a>\
                             </p>\
                         </div>\
@@ -355,13 +357,13 @@ var $exeDevice = {
                         <a href="#" id="mapaPShowImage" class="MQE-ENavigationButton MQE-EActivo  MQE-Play" title="' + _('Show Image') + '"></a>\
                     </p>\
                     <p class="MQE-EFlex">\
-                        <label for="mapaPAuthorImage">' + _("Autor") + ':</label><input id="mapaPAuthorImage"  type="text" />\
+                        <label for="mapaPAuthorImage">' + _("Author") + ':</label><input id="mapaPAuthorImage"  type="text" />\
                         <label for="mapaPAltImage">' + _("Alt") + ':</label><input id="mapaPAltImage" type="text" />\
                     </p>\
                 </div>\
                 <div id="mapaPDataVideo" class="MQE-EHide">\
                     <p class="MQE-EFlex">\
-                        <label>' + _("URL YouTube") + '</label>\
+                        <label>' + _("Youtube URL") + '</label>\
                         <input type="text" id="mapaPURLYoutube" class="MQE-IURLImage" />\
                         <a href="#" id="mapaPPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Play video') + '"></a>\
                     </p>\
@@ -398,7 +400,7 @@ var $exeDevice = {
                         <a href="#" id="mapaSShowImage" class="MQE-ENavigationButton MQE-EActivo  MQE-Play" title="' + _('Show Image') + '"></a>\
                     </p>\
                     <p class="MQE-EFlex">\
-                        <label for="mapaSAuthorImage">' + _("Autor") + ':</label><input id="mapaSAuthorImage"  type="text" />\
+                        <label for="mapaSAuthorImage">' + _("Author") + ':</label><input id="mapaSAuthorImage"  type="text" />\
                         <label for="mapaSAltImage">' + _("Alt") + ':</label><input id="mapaSAltImage" type="text" />\
                     </p>\
                 </div>\

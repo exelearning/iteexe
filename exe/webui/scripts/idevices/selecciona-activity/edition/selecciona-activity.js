@@ -880,7 +880,7 @@ var $exeDevice = {
                                     <label for="seleccionaETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="seleccionaETimeShowSolution" id="seleccionaETimeShowSolution" value="3" min="1" max="9" /> </label>\
                                 </p>\
                                 <p>\
-                                    <label for="seleccionaEAudioFeedBack"><input type="checkbox" id="seleccionaEAudioFeedBack">' + _("Reproducir audio al mostrar la solución") + '.</label>\
+                                    <label for="seleccionaEAudioFeedBack"><input type="checkbox" id="seleccionaEAudioFeedBack">' + _("Play audio when displaying the solution") + '.</label>\
                                 </p>\
                                 <p>\
                                     <label for="seleccionaECustomScore"><input type="checkbox" id="seleccionaECustomScore">' + _("Custom score") + '. </label>\
