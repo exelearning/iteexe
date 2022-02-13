@@ -81,7 +81,6 @@ var $exeDevice = {
         "msgGamers": _("Players"),
         "msgReply": _("Answer"),
         "msgErrorQuestion": _("you have failed."),
-        "msgsWinner": _("The game has finished. The winner is %1. Do you want to play again?"),
         "msgsYouPlay": _("you play. Roll the dice."),
         "msgGetQueso": _("you get the cheese of"),
         "msgRightAnswre": _("One more point.")
