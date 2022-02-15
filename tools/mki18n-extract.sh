@@ -95,12 +95,15 @@
 # 2021-03-26
 #    * Ready for 2.6 (JRF)
 #
+# 2022-02-15
+#    * Ready for 2.6.1 (JRF)
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.6"
+version="2.6.1"
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"
