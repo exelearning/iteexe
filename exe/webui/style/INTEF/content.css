@@ -97,11 +97,7 @@ li{list-style-position:outside}
 .iDevice_header .toggle-idevice{position:absolute;right:13px;bottom:13px;margin:0}
 .toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_intef_icons.png) no-repeat 0 -20px}
 .toggle-idevice .show-idevice{background-position:0 0}
-.toggle-idevice span,#printNode a span{
-	position:absolute; 
-	clip:rect(1px 1px 1px 1px);/* IE6, IE7 */
-	clip:rect(1px, 1px, 1px, 1px);	
-}
+.toggle-idevice span,#printNode a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 /* eXe < 2.1 */
 .iDevice a,#siteFooter a,#packageLicense a,.toggle-idevice a{text-decoration:underline}
 .iDevice a:hover,#siteFooter a:hover,#packageLicense a:hover,.toggle-idevice a:hover{text-decoration:none}

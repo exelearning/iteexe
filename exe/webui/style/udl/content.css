@@ -267,7 +267,7 @@ li{list-style-position:outside}
 .toggle-idevice{margin-top:5px;margin-bottom:0px}
 .toggle-idevice a{display:inline-block;width:20px;height:20px;background:url(_style_icons.png) no-repeat 0 -20px}
 .toggle-idevice .show-idevice{background-position:0 0}
-.toggle-idevice span{position:absolute;clip:rect(1px 1px 1px 1px);/* IE6,IE7 */clip:rect(1px,1px,1px,1px)}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 .toggle-idevice + .iDevice.emphasis0{margin-top:0}
 
 /* Links */
