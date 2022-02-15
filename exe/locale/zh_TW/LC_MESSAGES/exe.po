@@ -10,9 +10,9 @@
 # Franklin Weng <franklin at goodhorse dot idv dot tw>, 2013-2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2021-05-29 13:38+0200\n"
 "Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
 "Language: zh_Hant_TW\n"

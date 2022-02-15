@@ -6,9 +6,9 @@
 # Karel Werschkull <k.werschkull@@hccnet.nl> 2013-2016.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2016-11-29 15:33+0100\n"
 "Last-Translator: k.werschkull <k.werschkull@hccnet.nl>\n"
 "Language: nl\n"

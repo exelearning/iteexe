@@ -6,9 +6,9 @@
 # Carles Ferrando Garcia <carles.ferrando@gmail.com>, 2012-2021.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2021-05-29 18:11+0200\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>"
 "\n"

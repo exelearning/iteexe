@@ -7,9 +7,9 @@
 # vedran <vvucic@eunet.rs>, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2008-07-15 08:15+0200\n"
 "Last-Translator: vedran <vvucic@eunet.rs>\n"
 "Language: sr\n"

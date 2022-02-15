@@ -10,9 +10,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2020-08-01 14:07+0200\n"
 "Last-Translator: Jan Joscha Finger <j.joscha.finger@educarex.es>\n"
 "Language: de\n"

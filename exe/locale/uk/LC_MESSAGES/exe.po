@@ -9,9 +9,9 @@
 # Андрій Лашкєєв <zombyg@gmail.com>, 2018
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2018-12-17 22:42+0000\n"
 "Last-Translator: Андрій Лашкєєв <zombyg@gmail.com>, 2018\n"
 "Language: uk\n"

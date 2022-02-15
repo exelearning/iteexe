@@ -12,9 +12,9 @@
 # AlexL <loginov.alex.valer@gmail.com>, 2019-2020.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6\n"
+"Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-02-13 10:22+0100\n"
+"POT-Creation-Date: 2022-02-15 11:29+0100\n"
 "PO-Revision-Date: 2020-01-07 22:42+0000\n"
 "Last-Translator: Waldemar Stoczkowski, 2019\n"
 "Language: pl\n"
