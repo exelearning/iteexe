@@ -329,8 +329,7 @@ li{list-style-position:outside}
 	#packageLicense.cc-by-nc-nd{background-position:20px -395px}
 	#packageLicense.cc-0{background-position:20px -495px}
 	#packageLicense,#packageLicense a,#nodeTitle{color:#000}
-	.iDevice_header{padding:5px 0!important;background:none!important}
-	.iDevice_header h2{padding-left:0px}
+	.iDevice_header{color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
 	.nodeTitle{color:#00843d}
 	.iDevice_inner .feedback{background:#fff!important}
 	.feedbackbutton,.feedback-button input,.iDevice_buttons input,ul.fx-tabs{display:none!important}
