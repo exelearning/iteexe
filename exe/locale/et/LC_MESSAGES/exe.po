@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-15 11:29+0100\n"
+"POT-Creation-Date: 2022-02-16 16:16+0100\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language: et\n"
@@ -11413,11 +11413,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "¡It is not correct! You have clicked on"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -12419,6 +12416,11 @@ msgid "Listen"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
+#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
+#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
+#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr ""
 
@@ -15687,4 +15689,7 @@ msgid ""
 msgstr ""
 "Kas iDevice/generic.data fail või sinu laetav pakett loodi uuema eXe "
 "versioonia. Palun uuenda eXe versiooni ja proovi uuesti."
+
+#~ msgid "¡It is not correct! You have clicked on"
+#~ msgstr ""
 

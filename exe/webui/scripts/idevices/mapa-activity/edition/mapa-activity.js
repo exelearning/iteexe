@@ -101,7 +101,7 @@ var $exeDevice = {
         "msgScore6": _("Great! You have passed the test, but you can improve it surely. Do you want to repeat this activity?"),
         "msgScore8": _("Almost perfect! You can still do it better. Do you want to repeat this activity?"),
         "msgNotCorrect": _("It is not correct! You have clicked on"),
-        "msgNotCorrect1": _("¡It is not correct! You have clicked on"),
+        "msgNotCorrect1": _("It is not correct! You have clicked on"),
         "msgNotCorrect2": _("and the correct answer is"),
         "msgNotCorrect3": _("Try again!"),
         "msgAllVisited":  _("Great! You have visited the required dots."),

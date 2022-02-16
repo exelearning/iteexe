@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-15 11:29+0100\n"
+"POT-Creation-Date: 2022-02-16 16:16+0100\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language: km\n"
@@ -11508,11 +11508,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "¡It is not correct! You have clicked on"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -12514,6 +12511,11 @@ msgid "Listen"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
+#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
+#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
+#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr ""
 
@@ -15783,4 +15785,7 @@ msgstr ""
 "ទាំង​ឯកសារ idevices/generic.data ឬ​កញ្ចប់​ដែល​អ្នក​កំពុង​ផ្ទុក "
 "គឺ​ត្រូវ​បាន​បង្កើត​ដោយ​កំណែ​ក្រោយ​របស់ eXe ។ សូម​ធ្វើ​ឲ្យ eXe ប្រសើរ "
 "ហើយ​ព្យាយាម​ម្ដងទៀត ។"
+
+#~ msgid "¡It is not correct! You have clicked on"
+#~ msgstr ""
 

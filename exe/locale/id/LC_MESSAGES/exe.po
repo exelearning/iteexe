@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-15 11:29+0100\n"
+"POT-Creation-Date: 2022-02-16 16:16+0100\n"
 "PO-Revision-Date: 2007-12-04 01:11+1300\n"
 "Last-Translator: Toha Mustofa <toha.mustofa@gmail.com>\n"
 "Language: id\n"
@@ -11488,11 +11488,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "¡It is not correct! You have clicked on"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -12494,6 +12491,11 @@ msgid "Listen"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
+#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
+#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
+#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr ""
 
@@ -15763,4 +15765,7 @@ msgstr ""
 "Entah berkas \"idevices\"/\"generic.data\" anda atau paket yang anda muat"
 " dibuat oleh versi eXe yang lebih baru. Tolong perbaharus eXe dan coba "
 "lagi."
+
+#~ msgid "¡It is not correct! You have clicked on"
+#~ msgstr ""
 

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2022-02-15 11:29+0100\n"
+"POT-Creation-Date: 2022-02-16 16:16+0100\n"
 "PO-Revision-Date: 2019-06-12 22:57+0200\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.gal>\n"
 "Language: pt\n"
@@ -11813,11 +11813,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "¡It is not correct! You have clicked on"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -12821,6 +12818,11 @@ msgid "Listen"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
+#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
+#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
+#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr ""
 
@@ -16205,4 +16207,7 @@ msgstr ""
 "Ou o seu ficheiro idevices/generic.data ou o pacote que está a abrir "
 "foram criados com uma versão mais recente de eXe. Por favor, atualize eXe"
 " e tente de novo."
+
+#~ msgid "¡It is not correct! You have clicked on"
+#~ msgstr ""
 

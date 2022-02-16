@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2022-02-15 11:29+0100\n"
+"POT-Creation-Date: 2022-02-16 16:16+0100\n"
 "PO-Revision-Date: 2022-02-15 17:08+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -11890,7 +11890,9 @@ msgstr "Selecciona las opciones correctas y pulsa sobre el botón 'Responder'."
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:93
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
 msgid "Mark all the options in the correct order and click on the 'Reply' button."
-msgstr "Marca todas las opciones en el orden adecuado y pulsa sobre el botón 'Responder'."
+msgstr ""
+"Marca todas las opciones en el orden adecuado y pulsa sobre el botón "
+"'Responder'."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
@@ -11913,7 +11915,9 @@ msgstr "Pulsa sobre"
 msgid ""
 "You must review %s&percnt; of the contents of the activity before "
 "completing the questionnaire."
-msgstr "Debes repasar el %s&percent; de los contenidos de la actividad antes de completar el cuestionario."
+msgstr ""
+"Debes repasar el %s&percent; de los contenidos de la actividad antes de "
+"completar el cuestionario."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:99
 msgid "Everything is perfect! Do you want to repeat this activity?"
@@ -11923,13 +11927,17 @@ msgstr "¡Todo perfecto! ¡Enhorabuena! ¿Deseas repetir esta actividad?"
 msgid ""
 "You have not passed this test. You should review its contents and try "
 "again. Do you want to repeat this activity?"
-msgstr "No has superado esta prueba. Repasa sus contenidos e inténtalo de nuevo. ¿Deseas repetir la actividad?"
+msgstr ""
+"No has superado esta prueba. Repasa sus contenidos e inténtalo de nuevo. "
+"¿Deseas repetir la actividad?"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:101
 msgid ""
 "Great! You have passed the test, but you can improve it surely. Do you "
 "want to repeat this activity?"
-msgstr "¡Estupendo! Has superado la prueba, pero seguro que lo puedes mejorar. ¿Deseas repetir esta actividad?"
+msgstr ""
+"¡Estupendo! Has superado la prueba, pero seguro que lo puedes mejorar. "
+"¿Deseas repetir esta actividad?"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:102
 msgid ""
@@ -11938,12 +11946,9 @@ msgid ""
 msgstr "¡Casi perfecto! Aún lo puedes hacer mejor. ¿Deseas repetir esta actividad?"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
 msgid "It is not correct! You have clicked on"
 msgstr "¡No es correcto! Has pulsado sobre"
-
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "¡It is not correct! You have clicked on"
-msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
 msgid "and the correct answer is"
@@ -12950,6 +12955,11 @@ msgid "Listen"
 msgstr "Escucha"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
+#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
+#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
+#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr "Hazlo aquí"
 
@@ -16342,4 +16352,7 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
+
+#~ msgid "¡It is not correct! You have clicked on"
+#~ msgstr ""
 
