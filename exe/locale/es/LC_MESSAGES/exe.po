@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2022-02-16 16:16+0100\n"
-"PO-Revision-Date: 2022-02-15 17:08+0100\n"
+"PO-Revision-Date: 2022-02-17 11:44+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -11952,27 +11952,27 @@ msgstr "¡No es correcto! Has pulsado sobre"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
 msgid "and the correct answer is"
-msgstr ""
+msgstr "y la respuesta correcta es"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:106
 msgid "Try again!"
-msgstr ""
+msgstr "¡Prueba otra vez!"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:107
 msgid "Great! You have visited the required dots."
-msgstr ""
+msgstr "¡Genial! Has visitado los puntos necesarios."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:108
 msgid "You can do the test."
-msgstr ""
+msgstr "Puedes completar el cuestionario."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:110
 msgid "Subtitles"
-msgstr ""
+msgstr "Subtítulos"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:111
 msgid "Select a subtitle file. Supported formats:"
-msgstr ""
+msgstr "Selecciona un archivo de subtítulos. Formatos válidos:"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:140
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:136
@@ -11994,55 +11994,55 @@ msgstr "La cuestión que has indicado como siguiente en caso de error no existe.
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:144
 msgid "You must indicate a title for this point."
-msgstr ""
+msgstr "Debes indicar un título para este punto."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:145
 msgid "You must mark a point on the map."
-msgstr ""
+msgstr "Debes marcar un punto en el mapa."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:146
 msgid "You must draw an area on the map."
-msgstr ""
+msgstr "Debes dibujar un área en el mapa."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:147
 msgid "Provide a slide title."
-msgstr ""
+msgstr "Ponle título la diapositiva."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:148
 msgid "Select an audio file."
-msgstr ""
+msgstr "Selecciona un fichero de audio."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:149
 msgid "Error in the submap."
-msgstr ""
+msgstr "Error en el submapa."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:150
 msgid "You must indicate one point at least."
-msgstr ""
+msgstr "Debes indicar al menos un punto."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:151
 msgid "You must close all the edited maps before saving the activity."
-msgstr ""
+msgstr "Debes cerrar todos los mapas editados antes de guardar la actividad."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:152
 msgid "You must close the edited presentation before saving the activity."
-msgstr ""
+msgstr "Debes cerrar la presentación modificada antes de guardar la actividad."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:153
 msgid "There must be at least one slide in the presentation."
-msgstr ""
+msgstr "Debe haber al menos una diapositiva en la presentación."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:161
 msgid "Click on the active areas or image icons."
-msgstr ""
+msgstr "Pulsa sobre las áreas o iconos activos de la imagen."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:169
 msgid "Assessment"
-msgstr ""
+msgstr "Evaluación"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:171
 msgid "Visited points"
-msgstr ""
+msgstr "Puntos visitados"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:177
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:694
@@ -12052,25 +12052,25 @@ msgstr "Test"
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:179
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:434
 msgid "Questionnaire"
-msgstr ""
+msgstr "Cuestionario"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:187
 msgid ""
 "Percentage of visited contents necessary to be able to carry out the "
 "activity questionnaire"
-msgstr ""
+msgstr "Porcentaje de contenidos visitados necesario para poder realizar el cuestionario de la actividad"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:191
 msgid "Percentage of questionnaire questions"
-msgstr ""
+msgstr "Porcentaje de preguntas del cuestionario"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:196
 msgid "Percentage of questions"
-msgstr ""
+msgstr "Porcentaje de preguntas"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:258
 msgid "Edit map points"
-msgstr ""
+msgstr "Editar los puntos del mapa"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:260
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2352
@@ -12083,102 +12083,102 @@ msgstr "Presentación"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:261
 msgid "Edit presentation points"
-msgstr ""
+msgstr "Editar los puntos de la presentación"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:308
 msgid "Add point"
-msgstr ""
+msgstr "Añadir punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:309
 msgid "First point"
-msgstr ""
+msgstr "Primer punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:310
 msgid "Previous point"
-msgstr ""
+msgstr "Punto anterior"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:311
 msgid "Point number"
-msgstr ""
+msgstr "Punto número"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:313
 msgid "Next Point"
-msgstr ""
+msgstr "Punto siguiente"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:314
 msgid "Last point"
-msgstr ""
+msgstr "Último punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:315
 msgid "Delete point"
-msgstr ""
+msgstr "Eliminar punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:316
 msgid "Copy point"
-msgstr ""
+msgstr "Copiar punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:317
 msgid "Cut point"
-msgstr ""
+msgstr "Cortar punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:318
 msgid "Paste point"
-msgstr ""
+msgstr "Pegar punto"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:322
 msgid "Number of points"
-msgstr ""
+msgstr "Número de puntos"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:361
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:404
 msgid "Alt"
-msgstr ""
+msgstr "Alt"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:414
 msgid "Add a slide"
-msgstr ""
+msgstr "Añadir diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:415
 msgid "First slide"
-msgstr ""
+msgstr "Primera diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:416
 msgid "Previous slide"
-msgstr ""
+msgstr "Diapositiva anterior"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:417
 msgid "Slide number"
-msgstr ""
+msgstr "Diapositiva número"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:419
 msgid "Next slide"
-msgstr ""
+msgstr "Diapositiva siguiente"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:420
 msgid "Last slide"
-msgstr ""
+msgstr "Última diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:421
 msgid "Delete slide"
-msgstr ""
+msgstr "Eliminar diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:422
 msgid "Copy slide"
-msgstr ""
+msgstr "Copiar diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:423
 msgid "Cut slide"
-msgstr ""
+msgstr "Cortar diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:424
 msgid "Paste slide"
-msgstr ""
+msgstr "Pegar diapositiva"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:440
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:937
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:762
 msgid "Select"
-msgstr "Selecciona"
+msgstr "Seleccionar"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:442
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:939
@@ -12201,37 +12201,37 @@ msgstr "Número de la pregunta"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:543
 msgid "Additional content"
-msgstr ""
+msgstr "Contenido adicional"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2250
 msgid "Close presentation"
-msgstr ""
+msgstr "Cerrar la presentación"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2250
 msgid "Do you want to save the changes of this presentation?"
-msgstr ""
+msgstr "¿Desea guardar los cambios de esta presentación?"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2343
 msgid "Icon"
-msgstr ""
+msgstr "Icono"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2345
 msgid "Invisible area"
-msgstr ""
+msgstr "Área invisible"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2346
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2365
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2383
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2401
 msgid "Magnifying glass"
-msgstr ""
+msgstr "Lupa"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2347
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2366
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2384
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2402
 msgid "Map marker"
-msgstr ""
+msgstr "Marcador"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2353
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2354
@@ -12246,7 +12246,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2409
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2410
 msgid "Pushpin"
-msgstr ""
+msgstr "Chincheta"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2356
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2357
@@ -12281,19 +12281,19 @@ msgstr ""
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2417
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2418
 msgid "Arrow"
-msgstr ""
+msgstr "Flecha"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
 msgid "Close map"
-msgstr ""
+msgstr "Cerrar mapa"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
 msgid "Do you want to save the changes of this map?"
-msgstr ""
+msgstr "¿Desea guardar los cambios de este mapa?"
 
 #: exe/webui/scripts/idevices/mapa-activity/export/mapa-activity.js:49
 msgid "Mapa"
-msgstr ""
+msgstr "Mapa"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:14
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:90
@@ -12814,7 +12814,7 @@ msgstr "El orden de las cuestiones depende de las respuestas del jugador."
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:886
 msgid "Play audio when displaying the solution"
-msgstr ""
+msgstr "Reproducir audio al mostrar la solución"
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1098
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1109
@@ -12829,72 +12829,72 @@ msgstr "Por favor, incluya la información necesaria."
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:16
 #: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:58
 msgid "Trivial"
-msgstr ""
+msgstr "Trivial"
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:73
 msgid "The game has already started."
-msgstr ""
+msgstr "El juego ya ha comenzado."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:74
 msgid "You must indicate a name for all the selected players."
-msgstr ""
+msgstr "Debes indicar un nombre para todos los jugadores seleccionados."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:75
 msgid "Do you want to restart the game?"
-msgstr ""
+msgstr "¿Deseas reiniciar el juego?"
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:76
 msgid "roll the dice."
-msgstr ""
+msgstr "lanza el dado."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:77
 msgid "The game has finished. The winner is %1. Do you want to play again?"
-msgstr ""
+msgstr "El juego ha terminado. El ganador es %1. ¿Deseas volver a jugar?"
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:78
 msgid "Cool! You won the game."
-msgstr ""
+msgstr "¡Genial! Ganas la partida."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:79
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:85
 msgid "you play. Roll the dice."
-msgstr ""
+msgstr "tú juegas. Lanza el dado."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:80
 msgid "Your score will be automatically saved after each throw."
-msgstr ""
+msgstr "Su puntuación se guardará automáticamente tras cada tirada."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:81
 msgid "You can only play once."
-msgstr ""
+msgstr "Sólo puede jugar una vez."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:82
 msgid "Players"
-msgstr ""
+msgstr "Jugadores"
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:84
 msgid "you have failed."
-msgstr ""
+msgstr "has fallado."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:86
 msgid "you get the cheese of"
-msgstr ""
+msgstr "consigues el queso de"
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:87
 msgid "One more point."
-msgstr ""
+msgstr "Un punto más."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:124
 msgid "You must indicate a name for all the selected topics."
-msgstr ""
+msgstr "Debes indicar un nombre para todos los temas seleccionados."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:125
 msgid "You must complete all the questions of all the selected topics correctly."
-msgstr ""
+msgstr "Debes completar correctamente todas las cuestiones de todos los temas seleccionados."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:126
 msgid "Roll the dice and answer the question until you complete all the cheeses."
-msgstr ""
+msgstr "Lanza el dado y contesta a la pregunta hasta completar todos los quesos."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:127
 msgid ""
@@ -12902,16 +12902,16 @@ msgid ""
 "questions. This number can vary a lot depending on the type of questions "
 "and the length of the questions, the answers, the URLs and the enriched "
 "text."
-msgstr ""
+msgstr "¡Demasiadas preguntas! El juego puede tener un máximo de unas 800 a 1200 preguntas. Este número puede variar mucho dependiendo del tipo de cuestiones y la longitud de su pregunta, sus respuestas, urls y textos enriquecidos."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:724
 msgid "Number of topics"
-msgstr ""
+msgstr "Número de temas"
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:752
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:753
 msgid "Topic number"
-msgstr ""
+msgstr "Tema número"
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:52
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:664
@@ -16352,7 +16352,4 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
 
