@@ -1463,7 +1463,7 @@ var $exeDevice = {
             var selectsGame = $exeDevice.temas[j];
             for (var i = 0; i < selectsGame.length; i++) {
                 var quextion = selectsGame[i];
-                if (quextion.audio.length > 4 && quextion.audio.indexOf('http') != 0) {
+                if (typeof quextion.audio!='undefined' && quextion.audio.length > 4 && quextion.audio.indexOf('http') != 0) {
                     var linkAudio = '<a href="' + quextion.audio + '" class="js-hidden trivial-LinkAudios-' + j + '">' + i + '</a>';
                     html += linkAudio;
                 }

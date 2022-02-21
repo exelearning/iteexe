@@ -887,7 +887,7 @@ var $eXeTrivial = {
                     ganas = true;
                     mensaje += mOptions.msgs.msgWin;
                 } else {
-                    mensaje += mOptions.msgs.msgGetQueso + mOptions.nombresTemas[mOptions.activeTema];
+                    mensaje += mOptions.msgs.msgGetQueso +' '+ mOptions.nombresTemas[mOptions.activeTema];
                     puntos = puntos + 10;
                 }
                 if (!mOptions.gamers[mOptions.activePlayer].cheeses.includes(mOptions.activeTema)) {

@@ -91,7 +91,7 @@ var $exeDevice = {
         "msgGoActivity": _("Click here to do this activity"),
         "msgSelectAnswers": _("Select the correct options and click on the 'Reply' button."),
         "msgCheksOptions": _("Mark all the options in the correct order and click on the 'Reply' button."),
-        "msgWriteAnswer": _("Mark all the options in the correct order and click on the 'Reply' button."),
+        "msgWriteAnswer": _("Write the correct word o phrase and click on the 'Reply' button."),
         "msgIdentify": _("Identify"),
         "msgSearch": _("Find"),
         "msgClickOn": _("Click on"),
@@ -101,7 +101,7 @@ var $exeDevice = {
         "msgScore6": _("Great! You have passed the test, but you can improve it surely. Do you want to repeat this activity?"),
         "msgScore8": _("Almost perfect! You can still do it better. Do you want to repeat this activity?"),
         "msgNotCorrect": _("It is not correct! You have clicked on"),
-        "msgNotCorrect1": _("It is not correct! You have clicked on"),
+        "msgNotCorrect1": _("It's not true! The right answer is"),
         "msgNotCorrect2": _("and the correct answer is"),
         "msgNotCorrect3": _("Try again!"),
         "msgAllVisited":  _("Great! You have visited the required dots."),
@@ -206,7 +206,7 @@ var $exeDevice = {
                     <div class="MQE-EPanel" id="mapaEPanel">\
                         <div id="mapaImageSelect">\
                             <p class="MQE-CloseDetail" id="mapaCloseDetail">\
-                                <a href="#" id="mapaCloseLevel" title="' + _('Close') + '">'+('Close map')+' <img src="' + path + 'mapacerrarventana.svg" class="MQE-ENavigationButton MQE-EActivo " alt=""/></a>\
+                                <a href="#" id="mapaCloseLevel" title="' + _('Close map') + '">'+_('Close map')+' <img src="' + path + 'mapacerrarventana.svg" class="MQE-ENavigationButton MQE-EActivo " alt=""/></a>\
                             </p>\
                             <p class="MQE-EFlex">\
                                 <label for="mapaURLImageMap">' + _('Image') + ':</label>\
