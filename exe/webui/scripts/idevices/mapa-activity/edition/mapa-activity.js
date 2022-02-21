@@ -91,7 +91,7 @@ var $exeDevice = {
         "msgGoActivity": _("Click here to do this activity"),
         "msgSelectAnswers": _("Select the correct options and click on the 'Reply' button."),
         "msgCheksOptions": _("Mark all the options in the correct order and click on the 'Reply' button."),
-        "msgWriteAnswer": _("Write the correct word o phrase and click on the 'Reply' button."),
+        "msgWriteAnswer": _("Write the correct word or phrase and click on the 'Reply' button."),
         "msgIdentify": _("Identify"),
         "msgSearch": _("Find"),
         "msgClickOn": _("Click on"),
