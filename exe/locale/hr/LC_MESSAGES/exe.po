@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-22 14:22+0100\n"
+"POT-Creation-Date: 2022-02-16 16:16+0100\n"
 "PO-Revision-Date: 2007-03-02 10:18+1200\n"
 "Last-Translator: \n"
 "Language: hr\n"
@@ -372,8 +372,7 @@ msgstr ""
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:62
 #: exe/jsui/scripts/app/view/forms/LomSections.js:66
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:185
-#: exe/webui/content_template/strings.py:510 exe/webui/galleryblock.py:216
-#: exe/webui/jsblock.py:82
+#: exe/webui/galleryblock.py:216 exe/webui/jsblock.py:82
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:279
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:281
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:164
@@ -1420,9 +1419,7 @@ msgid ""
 msgstr ""
 
 #: exe/engine/freetextfpdidevice.py:46 exe/engine/freetextidevice.py:38
-#: exe/engine/freetextidevice.py:45 exe/webui/content_template/strings.py:35
-#: exe/webui/content_template/strings.py:52
-#: exe/webui/content_template/strings.py:527
+#: exe/engine/freetextidevice.py:45
 msgid "Free Text"
 msgstr ""
 
@@ -2326,23 +2323,20 @@ msgstr ""
 msgid "Guidelines Teacher Text:"
 msgstr ""
 
-#: exe/engine/package.py:330 exe/webui/content_template/strings.py:7
-#: exe/webui/content_template/strings.py:22
+#: exe/engine/package.py:330
+msgid "Section"
+msgstr ""
+
+#: exe/engine/package.py:330
+msgid "Unit"
+msgstr ""
+
+#: exe/engine/package.py:330
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:750
 msgid "Topic"
 msgstr ""
 
-#: exe/engine/package.py:330 exe/webui/content_template/strings.py:8
-#: exe/webui/content_template/strings.py:23
-msgid "Section"
-msgstr ""
-
-#: exe/engine/package.py:330 exe/webui/content_template/strings.py:9
-#: exe/webui/content_template/strings.py:24
-msgid "Unit"
-msgstr ""
-
-#: exe/engine/package.py:354 exe/webui/content_template/strings.py:12
+#: exe/engine/package.py:354
 msgid "Home"
 msgstr ""
 
@@ -4281,7 +4275,6 @@ msgid "An entity primarily responsible for making the content of the resource."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
-#: exe/webui/content_template/strings.py:511
 msgid "Subject"
 msgstr ""
 
@@ -8025,390 +8018,6 @@ msgstr ""
 msgid "Click for completion instructions"
 msgstr ""
 
-#: exe/webui/content_template/strings.py:6
-msgid "Base"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:20
-msgid "EDIA Project - PBL"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:21
-msgid ""
-"National Centre for the Development of the Educational Curriculum on Non-"
-"Proprietary Systems (CEDEC)"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:25
-#: exe/webui/content_template/strings.py:43
-#: exe/webui/content_template/strings.py:535
-msgid "Project's name"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:26
-msgid "Project's final goal."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:27
-msgid "Point out what students are about to learn."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:28
-msgid ""
-"Students need no preknowledge to complete all these tasks because there "
-"are materials enough to be independent in their accomplishment. Students "
-"also have the help and orientation from their teacher."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:29
-#: exe/webui/content_template/strings.py:45
-#: exe/webui/content_template/strings.py:537
-msgid "Author's name"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:32
-msgid "Front page"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:42
-#: exe/webui/content_template/strings.py:534
-msgid "Creative Commons BY-SA"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:67
-msgid "Motivating inspiration."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:68
-msgid "Project / Final Challenge"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:69
-msgid "What to learn and how to learn."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:70
-msgid "Motivation for the project development."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:79
-#: exe/webui/content_template/strings.py:423
-msgid "Breaking the ice"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:82
-#: exe/webui/content_template/strings.py:195
-msgid "Learning Diary"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:103
-msgid "First activity. Creation of the learning diary in the suggested format."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:104
-msgid "Creation of the first post heading."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:105
-#: exe/webui/content_template/strings.py:221
-msgid "Writing the diary"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:106
-msgid ""
-"Script for writing the post. It must lead the student to think about and "
-"reflect:"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:107
-msgid "What the final challenge is"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:108
-msgid "What the assessment will be like"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:109
-msgid "What they will learn"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:110
-msgid "How class groups work"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:117
-msgid "Starting Activity"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:138
-msgid "Introductory Activity to the project involving:"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:139
-msgid "Team work"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:140
-msgid "Reflection and motivation"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:141
-msgid "Expression of feelings."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:142
-msgid "Steps for the suggested activity"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:149
-msgid "Your project: General information"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:176
-msgid "Explanation of the final challenge."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:177
-msgid "Overview of suggested tasks."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:178
-msgid "General information about:"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:179
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:169
-msgid "Assessment"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:180
-msgid "Class team management"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:181
-msgid "Learning diary and personal site."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:182
-msgid "Dissemination of project activities."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:183
-msgid "Starting motivation"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:192
-msgid "Mission 1"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:220
-msgid "Guidelines to open a new post."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:222
-msgid "Questions or guidelines for students to revise and reflect:"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:223
-msgid "The task they have done"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:224
-msgid "The resources they have checked"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:225
-msgid "Materials they have created"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:226
-msgid "What they have learnt"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:227
-msgid "Difficulties found."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:228
-msgid "Remaining doubts"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:229
-msgid "Class team functioning"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:236
-msgid "Task (Mission)"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:251
-msgid "General introduction"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:252
-msgid "What the \"final mission\" will be and link to the assessment rubric."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:253
-msgid "What learning objective this mission helps to achieve."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:254
-msgid "Steps for your mission"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:261
-#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:26
-msgid "Introduction"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:274
-msgid "What the final mission will be."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:275
-msgid "What sudents will learn about."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:276
-msgid "Starting activity"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:285
-msgid "Didactic guidelines"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:288
-msgid "Need any help?"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:295
-msgid "ICT resources/apps/tools"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:302
-msgid "Assessment and curricular references"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:315
-msgid "Link to the final rubric of the project."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:316
-msgid "Assessment recommendations / resources of each task."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:317
-msgid "Assessment criteria and guidance on how to assess."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:318
-msgid "Contents / learning standards and key competences."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:325
-msgid "Learning Pathway and timing"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:418
-msgid "Steps"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:419
-msgid "Main aim"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:420
-#: exe/webui/content_template/strings.py:515
-#: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:91
-msgid "Timing"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:421
-msgid "Before you start"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:422
-#: exe/webui/content_template/strings.py:424
-#: exe/webui/content_template/strings.py:426
-#: exe/webui/content_template/strings.py:428
-#: exe/webui/content_template/strings.py:430
-#: exe/webui/content_template/strings.py:432
-msgid "... sessions"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:425
-msgid "(Mission 1)"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:427
-msgid "(Mission 2)"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:429
-msgid "(Mission 3)"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:431
-msgid "(Final Challenge)"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:433
-msgid "Interdisciplinary nature"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:434
-msgid "Recommendations to involve other subjects"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:441
-msgid "Fact sheet"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:512
-msgid "Level / course"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:513
-msgid "Final project"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:514
-msgid "Contents"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:516
-msgid "General guidelines for teachers"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:517
-msgid "Resource structure"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:518
-msgid "Types of tasks and activities"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:519
-msgid "Methodological approach"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:520
-msgid "Use of the learning diary"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:544
-msgid "Rubrics and other documents"
-msgstr ""
-
-#: exe/webui/content_template/strings.py:551
-msgid "You can download all the documents to print, share, reuse..."
-msgstr ""
-
-#: exe/webui/content_template/strings.py:560
-msgid "Example image"
-msgstr ""
-
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
 msgstr ""
@@ -8645,8 +8254,7 @@ msgstr ""
 msgid "Display as:"
 msgstr ""
 
-#: exe/webui/content_template/strings.py:44
-#: exe/webui/content_template/strings.py:536 exe/webui/element.py:796
+#: exe/webui/element.py:796
 msgid "by"
 msgstr ""
 
@@ -9783,6 +9391,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:90
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:82
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:209
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:345
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:390
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:78
@@ -10896,6 +10505,10 @@ msgstr ""
 msgid "required"
 msgstr ""
 
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:26
+msgid "Introduction"
+msgstr ""
+
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:27
 msgid "Save cover"
 msgstr ""
@@ -11293,11 +10906,8 @@ msgid "Select the correct options and click on the 'Reply' button."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:93
-msgid "Mark all the options in the correct order and click on the 'Reply' button."
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
-msgid "Write the correct word or phrase and click on the 'Reply' button."
+msgid "Mark all the options in the correct order and click on the 'Reply' button."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
@@ -11346,11 +10956,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "It's not true! The right answer is"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -11439,6 +11046,10 @@ msgstr ""
 msgid "Click on the active areas or image icons."
 msgstr ""
 
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:169
+msgid "Assessment"
+msgstr ""
+
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:171
 msgid "Visited points"
 msgstr ""
@@ -11465,11 +11076,6 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:196
 msgid "Percentage of questions"
-msgstr ""
-
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:209
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
-msgid "Close map"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:258
@@ -11685,6 +11291,10 @@ msgstr ""
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2417
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2418
 msgid "Arrow"
+msgstr ""
+
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
+msgid "Close map"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
@@ -12349,6 +11959,11 @@ msgid "Listen"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
+#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
+#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
+#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
+#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr ""
 
@@ -12380,6 +11995,10 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:89
 msgid "Assessment rubric"
+msgstr ""
+
+#: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:91
+msgid "Timing"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:92
