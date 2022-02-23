@@ -77,7 +77,7 @@ var $eXeAutoGeogebra = {
                 if (author.length == 1 && author.text() != "") {
                     var math=author.text().split(',');
                     if (math.length==5 && math[3]=="1" ){
-                        ath = '<div class="auto-geogebra-author">'+unescape(math[4])+': <a href="' + unescape(math[1]) + '">' +unescape(math[0])+ '<a></div>';
+                        ath = '<div class="auto-geogebra-author">'+unescape(math[4])+': <a href="' + unescape(math[1]) + '" target="_blank">' +unescape(math[0])+ '</a></div>';
 
                     }
                 }
