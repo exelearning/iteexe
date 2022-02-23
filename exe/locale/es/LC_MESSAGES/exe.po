@@ -1,17 +1,17 @@
 # eXeLearning Spanish PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2021 eXeLearning.net
+# Copyright (C) 2011-2022 eXeLearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 # Asociacion Cultural Reggae <acreggae@acreggae.com>, 2009.
-# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2021.
+# Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2022-02-23 11:01+0100\n"
-"PO-Revision-Date: 2022-02-17 11:44+0100\n"
+"PO-Revision-Date: 2022-02-23 11:32+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -16363,4 +16363,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
