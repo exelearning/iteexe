@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-16 16:16+0100\n"
+"POT-Creation-Date: 2022-02-23 11:01+0100\n"
 "PO-Revision-Date: 2006-09-22 10:21+1200\n"
 "Last-Translator: EXE Team <exe@exelearning.org>\n"
 "Language: ig\n"
@@ -3304,9 +3304,9 @@ msgstr ""
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:103
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:60
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:352
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1223
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1277
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1344
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1263
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1317
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1384
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:131
 #: exe/webui/stylemanagerpage.py:236
 #: exe/webui/tools/mindmaps/src/js/MainViewController.js:123
@@ -5056,9 +5056,9 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:997
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1205
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1235
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:956
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1120
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1150
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:992
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1160
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
 #: exe/webui/tools/assistant/langs/all.js:30
 #: exe/webui/tools/style-designer/langs/all.js:40
 msgid "License"
@@ -9390,7 +9390,6 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:90
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:82
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:209
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:345
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:390
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:78
@@ -10905,8 +10904,11 @@ msgid "Select the correct options and click on the 'Reply' button."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:93
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
 msgid "Mark all the options in the correct order and click on the 'Reply' button."
+msgstr ""
+
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
+msgid "Write the correct word or phrase and click on the 'Reply' button."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
@@ -10955,8 +10957,11 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
 msgid "It is not correct! You have clicked on"
+msgstr ""
+
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
+msgid "It's not true! The right answer is"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -10976,6 +10981,8 @@ msgid "You can do the test."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:110
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1526
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1672
 msgid "Subtitles"
 msgstr ""
 
@@ -11075,6 +11082,11 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:196
 msgid "Percentage of questions"
+msgstr ""
+
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:209
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
+msgid "Close map"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:258
@@ -11290,10 +11302,6 @@ msgstr ""
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2417
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2418
 msgid "Arrow"
-msgstr ""
-
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
-msgid "Close map"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3320
@@ -11584,8 +11592,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:380
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1235
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:946
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1150
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:982
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
 msgid "All Rights Reserved"
 msgstr ""
 
@@ -11596,8 +11604,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1000
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1003
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1230
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:938
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1145
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:974
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1185
 msgid "Public Domain"
 msgstr ""
 
@@ -11958,11 +11966,6 @@ msgid "Listen"
 msgstr ""
 
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:80
-#: exe/webui/style/Educaand_Adultos/_adultos_js.js:275
-#: exe/webui/style/Educaand_Adultos_Oficial/_adultos_js.js:275
-#: exe/webui/style/Educaand_Adultos_Oficial_SN/_adultos_js.js:275
-#: exe/webui/style/Educaand_Escolares/_escolares_js.js:275
-#: exe/webui/style/Educaand_Escolares_Oficial/_escolares_js.js:275
 msgid "Do it here"
 msgstr ""
 
@@ -12569,8 +12572,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:29
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2026
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2033
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2092
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2099
 msgid "Insert/Edit Embedded Media"
 msgstr ""
 
@@ -13407,7 +13410,7 @@ msgid "Title and Attribution"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1241
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1156
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1196
 msgid "Please check the \"License\" field"
 msgstr ""
 
@@ -13435,18 +13438,18 @@ msgstr ""
 msgid "Please don't forget to write the file size."
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1187
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1227
 msgid ""
 "This fragment uses old code. Would you like to update it? (necessary to "
 "be able to edit the parameters)"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1246
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1316
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1286
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1356
 msgid "You are using and old code. Update it (required to edit)?"
 msgstr ""
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1304
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1344
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
