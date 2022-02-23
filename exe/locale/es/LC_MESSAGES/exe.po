@@ -11894,7 +11894,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
 msgid "Write the correct word or phrase and click on the 'Reply' button."
-msgstr ""
+msgstr "Escribe la palabra o frase correcta y haz clic en el botón \"Responder\"."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
@@ -11918,7 +11918,7 @@ msgid ""
 "You must review %s&percnt; of the contents of the activity before "
 "completing the questionnaire."
 msgstr ""
-"Debes repasar el %s&percent; de los contenidos de la actividad antes de "
+"Debes repasar el %s&percnt; de los contenidos de la actividad antes de "
 "completar el cuestionario."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:99
@@ -11953,7 +11953,7 @@ msgstr "¡No es correcto! Has pulsado sobre"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
 msgid "It's not true! The right answer is"
-msgstr ""
+msgstr "¡No es cierto! La respuesta correcta es"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
 msgid "and the correct answer is"
