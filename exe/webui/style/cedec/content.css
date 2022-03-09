@@ -180,7 +180,7 @@ li{list-style-position:outside}
 .exe-block-info{padding:0 1em 0 55px;background:#E1F1F9 url(_cedec_icon_info.png) no-repeat 17px .9em;margin:1.5em 0}
 .exe-block-success{padding:0 1em 0 55px;background:#E5F3E0 url(_cedec_icon_success.png) no-repeat 17px .9em;margin:1.5em 0}
 p.exe-block-warning,p.exe-block-alert,p.exe-block-danger,p.exe-block-info,p.exe-block-success{padding:1em 1em 1em 55px}
-.exe-interactive-video #slide .exe-block-msg{background-image:none}
+.exe-interactive-video .exe-block-msg{background-image:none}
 
 /* Quote With Authorship */
 .styled-qc{font-family:"Open Sans",​Arial,Helvetica,​sans-serif;font-size:1.1em}
