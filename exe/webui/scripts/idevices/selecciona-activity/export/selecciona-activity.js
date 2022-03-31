@@ -219,18 +219,65 @@ var $eXeSelecciona = {
 
         });
         if ($eXeSelecciona.hasLATEX && typeof (MathJax) == "undefined") {
-            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-            $exe.loadScript(math);
+            $eXeSelecciona.loadMathJax();
         }
 
     },
     loadMathJax: function () {
-        var tag = document.createElement('script');
-        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
-        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async = true;
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        if (!window.MathJax) {
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
     },
     createInterfaceSelecciona: function (instance) {
         var html = '',
@@ -409,7 +456,7 @@ var $eXeSelecciona = {
         var json = $eXeSelecciona.Decrypt(data.text()),
             mOptions = $eXeSelecciona.isJsonString(json);
         version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
-        var hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeSelecciona.hasLATEX = true;
         }
@@ -465,8 +512,8 @@ var $eXeSelecciona = {
         if (typeof mOptions.order == "undefined") {
             mOptions.order = mOptions.optionsRamdon ? 1 : 0;
         }
-        if(mOptions.order!=2){
-            mOptions.selectsGame=$eXeSelecciona.getQuestions(mOptions.selectsGame, mOptions.percentajeQuestions);
+        if (mOptions.order != 2) {
+            mOptions.selectsGame = $eXeSelecciona.getQuestions(mOptions.selectsGame, mOptions.percentajeQuestions);
         }
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
             if (mOptions.customScore || mOptions.order == 2) {
@@ -480,19 +527,21 @@ var $eXeSelecciona = {
         mOptions.numberQuestions = mOptions.selectsGame.length;
         return mOptions;
     },
-    getQuestions: function(questions,percentaje){
-        var mQuestions=questions;
-        if(percentaje<100){
-            var num=Math.round((percentaje*questions.length)/100);
-            num=num<1?1:num;
-            if(num<questions.length){
-                var array=[];
-                for(var i=0;i<questions.length;i++){
+    getQuestions: function (questions, percentaje) {
+        var mQuestions = questions;
+        if (percentaje < 100) {
+            var num = Math.round((percentaje * questions.length) / 100);
+            num = num < 1 ? 1 : num;
+            if (num < questions.length) {
+                var array = [];
+                for (var i = 0; i < questions.length; i++) {
                     array.push(i);
                 }
-                array=$eXeSelecciona.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
-                mQuestions=[];
-                for (var i=0;i<array.length;i++){
+                array = $eXeSelecciona.shuffleAds(array).slice(0, num).sort(function (a, b) {
+                    return a - b;
+                });
+                mQuestions = [];
+                for (var i = 0; i < array.length; i++) {
                     mQuestions.push(questions[array[i]]);
                 }
             }
@@ -594,7 +643,7 @@ var $eXeSelecciona = {
 
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
-        if (typeof urlmedia != "undefined" && urlmedia.length>0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+        if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;
@@ -1095,7 +1144,7 @@ var $eXeSelecciona = {
                             if (mOptions.selectsGame[mOptions.activeQuestion].typeSelect != 2) {
                                 $eXeSelecciona.drawSolution(instance);
                             } else {
-                                $eXeSelecciona.drawPhrase(mOptions.selectsGame[mOptions.activeQuestion].solutionQuestion, mOptions.selectsGame[mOptions.activeQuestion].quextion, 100, 1, false, instance)
+                                $eXeSelecciona.drawPhrase(mOptions.selectsGame[mOptions.activeQuestion].solutionQuestion, mOptions.selectsGame[mOptions.activeQuestion].quextion, 100, 1, false, instance, true)
                             }
                         }
                     }
@@ -1197,7 +1246,7 @@ var $eXeSelecciona = {
             }
         }
     },
-    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance) {
+    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution) {
         $('#seleccionaEPhrase-' + instance).find('.gameQP-Word').remove();
         $('#seleccionaBtnReply-' + instance).prop('disabled', true);
         $('#seleccionaBtnMoveOn-' + instance).prop('disabled', true);
@@ -1236,9 +1285,14 @@ var $eXeSelecciona = {
                 }
             }
         }
-        $('#seleccionaDefinition-' + instance).text(definition);
-            if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#seleccionaGameContainer-' + instance]);
+        if(!solution){
+            $('#seleccionaDefinition-' + instance).text(definition);
+        }
+        
+        var html = $('#seleccionaWordDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeSelecciona.updateLatex('seleccionaWordDiv-' + instance)
         }
         return cPhrase;
     },
@@ -1348,7 +1402,7 @@ var $eXeSelecciona = {
         if (mQuextion.typeSelect != 2) {
             $eXeSelecciona.drawQuestions(instance);
         } else {
-            $eXeSelecciona.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance)
+            $eXeSelecciona.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance, false)
             $('#seleccionaBtnReply-' + instance).prop('disabled', false);
             $('#seleccionaBtnMoveOn-' + instance).prop('disabled', false);
             $('#seleccionaEdAnswer-' + instance).prop('disabled', false);
@@ -1372,9 +1426,9 @@ var $eXeSelecciona = {
         if (q.type != 2 && q.audio.trim().length > 5 && !mOptions.audioFeedBach) {
             $eXeSelecciona.playSound(q.audio.trim(), instance);
         }
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#seleccionaGameContainer-' + instance]);
-        }
+
+
+
 
     },
     Decrypt: function (str) {
@@ -1565,12 +1619,12 @@ var $eXeSelecciona = {
                     $eXeSelecciona.drawSolution(instance);
                 } else {
                     var mtipe = correct ? 2 : 1;
-                    $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance)
+                    $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance, true)
                 }
             }
 
         }
-    
+
         setTimeout(function () {
             $eXeSelecciona.newQuestion(instance, correct, false)
         }, timeShowSolution);
@@ -1892,6 +1946,11 @@ var $eXeSelecciona = {
                 $(this).hide()
             }
         });
+        var html = $('#seleccionaQuestionDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeSelecciona.updateLatex('seleccionaQuestionDiv-' + instance)
+        }
     },
 
     drawSolution: function (instance) {

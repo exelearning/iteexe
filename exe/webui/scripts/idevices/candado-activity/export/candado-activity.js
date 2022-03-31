@@ -28,6 +28,7 @@ var $eXeCandado = {
     msgs: '',
     hasSCORMbutton: false,
     isInExe: false,
+    hasLATEX: false,
     init: function () {
         this.activities = $('.candado-IDevice');
         if (this.activities.length == 0) return;
@@ -45,15 +46,15 @@ var $eXeCandado = {
     loadGame: function () {
         $eXeCandado.options = [];
         $eXeCandado.activities.each(function (i) {
-            var version=$(".candado-version", this).eq(0).text(),
+            var version = $(".candado-version", this).eq(0).text(),
                 dl = $(".candado-DataGame", this),
-                mOption = $eXeCandado.loadDataGame(dl,version),
+                mOption = $eXeCandado.loadDataGame(dl, version),
                 msg = mOption.msgs.msgPlayStart;
-            mOption.candadoInstructions= $(".candado-instructions", this).eq(0).html();
-            mOption.counter=mOption.candadoTime* 60;
-            mOption.candadoStarted=false;
-            mOption.candadoSolved=false;
-            mOption.candadoErrors=0;
+            mOption.candadoInstructions = $(".candado-instructions", this).eq(0).html();
+            mOption.counter = mOption.candadoTime * 60;
+            mOption.candadoStarted = false;
+            mOption.candadoSolved = false;
+            mOption.candadoErrors = 0;
             $eXeCandado.options.push(mOption);
             var candado = $eXeCandado.createInterfaceQuExt(i);
             dl.before(candado).remove();
@@ -68,15 +69,79 @@ var $eXeCandado = {
             }
             $('#candadoMessageMaximize-' + i).text(msg);
             $eXeCandado.addEvents(i);
-            $( '#candadoInstructions-' + i).append($(".candado-instructions", this));
-            $( '#candadoFeedRetro-' + i).append($(".candado-retro", this));
+            $('#candadoInstructions-' + i).append($(".candado-instructions", this));
+            $('#candadoFeedRetro-' + i).append($(".candado-retro", this));
+            var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($('#candadoGameContainer-' + i).html());
+            if (hasLatex) {
+                $eXeCandado.hasLATEX = true;
+            }
         });
+        if ($eXeCandado.hasLATEX && typeof (MathJax) == "undefined") {
+            $eXeCandado.loadMathJax();
+        }
+    },
+
+    loadMathJax: function () {
+        if (!window.MathJax) {
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
             path = $eXeCandado.idevicePath,
             msgs = $eXeCandado.options[instance].msgs;
-            html += '<div class="candado-MainContainer">\
+        html += '<div class="candado-MainContainer">\
                 <div class="candado-GameMinimize" id="candadoGameMinimize-' + instance + '">\
                     <a href="#" class="candado-LinkMaximize " id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize candado-Activo" alt="">\
                         <span class="candado-MessageMaximize " id="candadoMessageMaximize-' + instance + '">' + msgs.msgEShowActivity + '</span>\
@@ -85,7 +150,7 @@ var $eXeCandado = {
                 <div class="candado-GameContainer" id="candadoGameContainer-' + instance + '">\
                     <div class="candado-GameScoreBoard">\
                         <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
-                        <div class="exeQuextIcons34-Time" title="'+msgs.msgTime+'"></div>\
+                        <div class="exeQuextIcons34-Time" title="' + msgs.msgTime + '"></div>\
                         <p id="candadoPTime-' + instance + '" class="candado-PTime">00:00</p>\
                         <a href="#" class="candado-LinkMinimize candado-Activo" id="candadoLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                             <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
@@ -95,19 +160,19 @@ var $eXeCandado = {
                     <div class="candado-Instructiones exe-text" id="candadoInstructions-' + instance + '"></div>\
                     <div class="candado-FeedRetro exe-text" id="candadoFeedRetro-' + instance + '"></div>\
                     <div class="candado-MessageInfo" id="candadoMessageInfo-' + instance + '">\
-                    <div class="sr-av">'+msgs.msgInstructions+'</div>\
+                    <div class="sr-av">' + msgs.msgInstructions + '</div>\
                         <p id="candadoPInformation-' + instance + '"></p>\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoSolutionDiv-' + instance + '">\
-                        <label for="candadoSolution-' + instance + '" class="labelSolution">'+msgs.msgCodeAccess+':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
+                        <label for="candadoSolution-' + instance + '" class="labelSolution">' + msgs.msgCodeAccess + ':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
                         <a href="#" id="candadoSolutionButton-' + instance + '" title="' + msgs.msgSubmit + '" class="candado-SolutionButton candado-Activo">\
                             <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
                             <div class="exeQuextIcons-Submit"></div>\
                         </a>\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoNavigator-' + instance + '">\
-                        <input type="button" class="candado-ShowIntro feedbackbutton" id="candadoShowIntro-' + instance + '"   value="'+msgs.msgInstructions+'" />\
-                        <input type="button" class="candado-ShowRetro feedbackbutton" id="candadoShowRetro-' + instance + '"   value="'+msgs.msgFeedback+'" />\
+                        <input type="button" class="candado-ShowIntro feedbackbutton" id="candadoShowIntro-' + instance + '"   value="' + msgs.msgInstructions + '" />\
+                        <input type="button" class="candado-ShowRetro feedbackbutton" id="candadoShowRetro-' + instance + '"   value="' + msgs.msgFeedback + '" />\
                     </div>\
                 </div>\
             </div>'
@@ -116,7 +181,7 @@ var $eXeCandado = {
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
-        str=unescape(str)
+        str = unescape(str)
         try {
             var key = 146;
             var pos = 0;
@@ -133,9 +198,10 @@ var $eXeCandado = {
     },
     loadDataGame: function (data, version) {
         var json = data.text();
-        if (version==1 || !json.startsWith('{')){
-            json=$eXeCandado.Decrypt(json);
+        if (version == 1 || !json.startsWith('{')) {
+            json = $eXeCandado.Decrypt(json);
         }
+
         var mOptions = $eXeCandado.isJsonString(json);
         return mOptions;
     },
@@ -156,18 +222,18 @@ var $eXeCandado = {
     },
     saveDataStorage: function (instance) {
         var mOptions = $eXeCandado.options[instance],
-        tiempo=mOptions.counter<0?0:mOptions.counter;
+            tiempo = mOptions.counter < 0 ? 0 : mOptions.counter;
         var data = {
             'candadoStarted': mOptions.candadoStarted,
             'candadoSolved': mOptions.candadoSolved,
             'counter': tiempo,
             'candadoTime': mOptions.candadoTime,
-            'candadoReboot':mOptions.candadoReboot,
-            'candadoErrors':mOptions.candadoErrors
+            'candadoReboot': mOptions.candadoReboot,
+            'candadoErrors': mOptions.candadoErrors
         }
         localStorage.setItem('dataCandado-' + instance, JSON.stringify(data));
     },
-        getDataStorage: function (instance) {
+    getDataStorage: function (instance) {
         var data = $eXeCandado.isJsonString(localStorage.getItem('dataCandado-' + instance));
         return data;
     },
@@ -175,14 +241,14 @@ var $eXeCandado = {
         var mOptions = $eXeCandado.options[instance];
         window.addEventListener('unload', function () {
             if (mOptions.candadoStarted) {
-               $eXeCandado.saveDataStorage(instance);
+                $eXeCandado.saveDataStorage(instance);
             }
         });
         $('#candadoLinkMaximize-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $("#candadoGameContainer-" + instance).show()
             $("#candadoGameMinimize-" + instance).hide();
-            if(!mOptions.candadoStarted){
+            if (!mOptions.candadoStarted) {
                 $eXeCandado.startGame(instance);
             };
             $('#candadoSolution-' + instance).focus();
@@ -213,42 +279,42 @@ var $eXeCandado = {
             $('#candadoFeedRetro-' + instance).show();
             $('#candadoSolutionDiv-' + instance).hide();
         });
-        $('#candadoMessageInfo-'+ instance).show();
+        $('#candadoMessageInfo-' + instance).show();
         $('#candadoNavigator-' + instance).hide();
-        if(mOptions.candadoShowMinimize){
+        if (mOptions.candadoShowMinimize) {
             $("#candadoGameContainer-" + instance).hide();
             $("#candadoGameMinimize-" + instance).css('visibility', 'visible').show();
         }
-        if(mOptions.candadoTime==0){
-            $('#candadoTimeQuestion-'+ instance).hide();
-            $('#candadoTimeNumber-' + instance).css('width','32px');
+        if (mOptions.candadoTime == 0) {
+            $('#candadoTimeQuestion-' + instance).hide();
+            $('#candadoTimeNumber-' + instance).css('width', '32px');
         }
         var dataCandado = $eXeCandado.getDataStorage(instance);
-        mOptions.candadoSolved=false;
-        mOptions.counter=mOptions.candadoTime*60;
+        mOptions.candadoSolved = false;
+        mOptions.counter = mOptions.candadoTime * 60;
         if (dataCandado) {
-            if(mOptions.candadoTime!=dataCandado.candadoTime || mOptions.candadoReboot!=dataCandado.candadoReboot  || (mOptions.candadoReboot && dataCandado.candadoSolved) ){
+            if (mOptions.candadoTime != dataCandado.candadoTime || mOptions.candadoReboot != dataCandado.candadoReboot || (mOptions.candadoReboot && dataCandado.candadoSolved)) {
                 localStorage.removeItem('dataCandado-' + instance);
-            }else{
-                mOptions.candadoSolved=dataCandado.candadoSolved;
-                mOptions.counter=dataCandado.counter;
+            } else {
+                mOptions.candadoSolved = dataCandado.candadoSolved;
+                mOptions.counter = dataCandado.counter;
             }
         }
-        if(!mOptions.candadoShowMinimize){
+        if (!mOptions.candadoShowMinimize) {
             $eXeCandado.startGame(instance);
         }
     },
     startGame: function (instance) {
-       var mOptions = $eXeCandado.options[instance];
-       mOptions.candadoStarted=true;
-       if(mOptions.candadoSolved && !mOptions.candadoReboot){
+        var mOptions = $eXeCandado.options[instance];
+        mOptions.candadoStarted = true;
+        if (mOptions.candadoSolved && !mOptions.candadoReboot) {
             $eXeCandado.showFeedback(instance);
             return;
-       }
-       if(mOptions.candadoTime==0){
+        }
+        if (mOptions.candadoTime == 0) {
             return;
-       }
-       $eXeCandado.uptateTime(0, instance);
+        }
+        $eXeCandado.uptateTime(0, instance);
         mOptions.counterClock = setInterval(function () {
             mOptions.counter--;
             $eXeCandado.uptateTime(mOptions.counter, instance);
@@ -257,20 +323,20 @@ var $eXeCandado = {
             }
         }, 1000);
     },
-    showFeedback:function(instance){
+    showFeedback: function (instance) {
         var mOptions = $eXeCandado.options[instance];
         clearInterval(mOptions.counterClock);
-        mOptions.candadoSolved=true;
+        mOptions.candadoSolved = true;
         $eXeCandado.uptateTime(mOptions.counter, instance);
-        $('#candadoInstructions-' + instance).hide().attr("aria-labelledby","candadoShowIntro-" + instance);
-         $('#candadoFeedRetro-' + instance).show().attr("aria-labelledby","candadoShowRetro-" + instance);
+        $('#candadoInstructions-' + instance).hide().attr("aria-labelledby", "candadoShowIntro-" + instance);
+        $('#candadoFeedRetro-' + instance).show().attr("aria-labelledby", "candadoShowRetro-" + instance);
         $('#candadoSolutionDiv-' + instance).hide();
         $('#candadoNavigator-' + instance).show();
         $('#candadoMessageInfo-' + instance).hide();
         $("#candadoShowRetro-" + instance).focus();
     },
     uptateTime: function (tiempo, instance) {
-        tiempo=tiempo<0?0:tiempo;
+        tiempo = tiempo < 0 ? 0 : tiempo;
         var mTime = $eXeCandado.getTimeToString(tiempo);
         $('#candadoPTime-' + instance).text(mTime);
     },
@@ -288,21 +354,21 @@ var $eXeCandado = {
             $eXeCandado.showMessage(1, mOptions.msgs.msgEnterCode, instance);
             return;
         }
-        if ($eXeCandado.checkWord(answord, mOptions.candadoSolution))  {
+        if ($eXeCandado.checkWord(answord, mOptions.candadoSolution)) {
             $eXeCandado.showFeedback(instance);
         } else {
             message = $eXeCandado.getRetroFeedMessages(false, instance) + " " + mOptions.msgs.msgErrorCode;
             typeMessage = 1;
             mOptions.candadoErrors++;
-            if( mOptions.candadoAttemps>0 && mOptions.candadoErrorMessage.length>0 && mOptions.candadoErrors>=mOptions.candadoAttemps){
+            if (mOptions.candadoAttemps > 0 && mOptions.candadoErrorMessage.length > 0 && mOptions.candadoErrors >= mOptions.candadoAttemps) {
                 typeMessage = 0;
-                message=mOptions.candadoErrorMessage;
+                message = mOptions.candadoErrorMessage;
             }
             $('#candadoSolution-' + instance).val('');
         }
         $eXeCandado.showMessage(typeMessage, message, instance);
     },
-    checkWord: function (answord,word) {
+    checkWord: function (answord, word) {
         var sWord = $.trim(word).replace(/\s+/g, " ").toUpperCase().replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, ""),
             sAnsWord = $.trim(answord).replace(/\s+/g, " ").toUpperCase().replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, "");
         sWord = $.trim(sWord);
@@ -338,7 +404,7 @@ var $eXeCandado = {
         });
     },
     supportedBrowser: function (idevice) {
-        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer'  || window.navigator.userAgent.indexOf('MSIE ')>0);
+        var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
         if (!sp) {
             var bns = $('.' + idevice + '-bns').eq(0).text() || 'Your browser is not compatible with this tool.';
             $('.' + idevice + '-instructions').text(bns);

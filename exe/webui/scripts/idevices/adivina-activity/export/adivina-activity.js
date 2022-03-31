@@ -143,8 +143,7 @@ var $eXeAdivina = {
             $('#adivinaDivFeedBack-' + i).hide();
         });
         if ($eXeAdivina.hasLATEX && typeof (MathJax) == "undefined") {
-            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-            $exe.loadScript(math);
+            $eXeAdivina.loadMathJax();
         }
     },
     Decrypt: function (str) {
@@ -185,7 +184,7 @@ var $eXeAdivina = {
             json = $eXeAdivina.Decrypt(json);
         }
         var mOptions = $eXeAdivina.isJsonString(json),
-            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeAdivina.hasLATEX = true;
         }
@@ -242,23 +241,25 @@ var $eXeAdivina = {
                 }
             }
         });
-        mOptions.wordsGame=$eXeAdivina.getQuestions(mOptions.wordsGame, mOptions.percentajeQuestions);
+        mOptions.wordsGame = $eXeAdivina.getQuestions(mOptions.wordsGame, mOptions.percentajeQuestions);
         mOptions.numberQuestions = mOptions.wordsGame.length;
         return mOptions;
     },
-    getQuestions: function(questions,percentaje){
-        var mQuestions=questions;
-        if(percentaje<100){
-            var num=Math.round((percentaje*questions.length)/100);
-            num=num<1?1:num;
-            if(num<questions.length){
-                var array=[];
-                for(var i=0;i<questions.length;i++){
+    getQuestions: function (questions, percentaje) {
+        var mQuestions = questions;
+        if (percentaje < 100) {
+            var num = Math.round((percentaje * questions.length) / 100);
+            num = num < 1 ? 1 : num;
+            if (num < questions.length) {
+                var array = [];
+                for (var i = 0; i < questions.length; i++) {
                     array.push(i);
                 }
-                array=$eXeAdivina.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
-                mQuestions=[];
-                for (var i=0;i<array.length;i++){
+                array = $eXeAdivina.shuffleAds(array).slice(0, num).sort(function (a, b) {
+                    return a - b;
+                });
+                mQuestions = [];
+                for (var i = 0; i < array.length; i++) {
                     mQuestions.push(questions[array[i]]);
                 }
             }
@@ -476,7 +477,7 @@ var $eXeAdivina = {
         }
         if (!auto) alert(message);
     },
-    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance) {
+    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution) {
         $('#adivinaEPhrase-' + instance).find('.gameQP-Word').remove();
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
@@ -512,9 +513,14 @@ var $eXeAdivina = {
                 }
             }
         }
-        $('#adivinaDefinition-' + instance).text(definition);
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#adivinaGameContainer-' + instance]);
+        if (!solution) {
+            $('#adivinaDefinition-' + instance).text(definition);
+        }
+
+        var html = $('#adivinaDefinition-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeAdivina.updateLatex('adivinaDefinition-' + instance)
         }
         return cPhrase;
     },
@@ -788,7 +794,7 @@ var $eXeAdivina = {
                     if (mOptions.showSolution) {
                         timeShowSolution = mOptions.timeShowSolution * 1000;
                         var question = mOptions.wordsGame[mOptions.activeQuestion];
-                        $eXeAdivina.drawPhrase(question.word, question.definition, 100, 1, mOptions.caseSensitive, instance)
+                        $eXeAdivina.drawPhrase(question.word, question.definition, 100, 1, mOptions.caseSensitive, instance, true)
                     }
                     setTimeout(function () {
                         $eXeAdivina.newQuestion(instance)
@@ -972,7 +978,7 @@ var $eXeAdivina = {
         mOptions.question = q;
         $eXeAdivina.showMessage(0, '', instance);
         $('#adivinaEPhrase-' + instance).find('.gameQP-Letter').css('color', $eXeAdivina.borderColors.blue);
-        $eXeAdivina.drawPhrase(q.word, q.definition, q.percentageShow, 0, $eXeAdivina.options[instance].caseSensitive, instance);
+        $eXeAdivina.drawPhrase(q.word, q.definition, q.percentageShow, 0, $eXeAdivina.options[instance].caseSensitive, instance, false);
         $('#adivinaEdAnswer-' + instance).val("");
         $('#adivinaBtnReply-' + instance).prop('disabled', false);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', false);
@@ -1343,20 +1349,72 @@ var $eXeAdivina = {
         }
         if (mOptions.showSolution) {
             timeShowSolution = mOptions.timeShowSolution * 1000;
-            $eXeAdivina.drawPhrase(question.word, question.definition, 100, type, mOptions.caseSensitive, instance)
+            $eXeAdivina.drawPhrase(question.word, question.definition, 100, type, mOptions.caseSensitive, instance, true)
         }
         setTimeout(function () {
             $eXeAdivina.newQuestion(instance)
         }, timeShowSolution);
     },
+
     loadMathJax: function () {
-        var tag = document.createElement('script');
-        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
-        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async = true;
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        if (!window.MathJax) {
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
     },
+
+
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
+    },
+
     updateScore: function (correctAnswer, instance) {
         var mOptions = $eXeAdivina.options[instance],
             message = "",
@@ -1503,7 +1561,7 @@ var $eXeAdivina = {
     },
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
-        if(typeof urlmedia != "undefined" && urlmedia.length>0 && urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+        if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;

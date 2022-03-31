@@ -38,7 +38,7 @@ var $exeDevice = {
     temasJson: [],
     activeTema: 0,
     activesQuestions: [0, 0, 0, 0, 0, 0],
-    trivialID:0,
+    trivialID: 0,
     ci18n: {
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
@@ -93,7 +93,7 @@ var $exeDevice = {
         this.createForm();
     },
     enableForm: function (field) {
-        $exeDevice.trivialID=$exeDevice.getId();
+        $exeDevice.trivialID = $exeDevice.getId();
         $exeDevice.initQuestions();
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
@@ -498,7 +498,7 @@ var $exeDevice = {
     },
     playSound: function (selectedFile) {
         $exeDevice.playerAudio = new Audio(selectedFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event) {
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function (event) {
             $exeDevice.playerAudio.play();
         });
     },
@@ -915,6 +915,7 @@ var $exeDevice = {
                                 <div class="gameQE-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="gameQE-ENumQuestions" id="trivialENumQuestions">0</span>\
                             </div>\
                         </div>\
+                        ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
                  </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
@@ -1131,6 +1132,16 @@ var $exeDevice = {
                     $("#eXeGameInstructions").val(instructions)
                 }
             }
+            var textAfter = $(".trivial-extra-content", wrapper);
+            if (textAfter.length == 1) {
+                textAfter = textAfter.html() || ''
+                if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                    tinyMCE.get('eXeIdeviceTextAfter').setContent(textAfter);
+                } else {
+                    $("#eXeIdeviceTextAfter").val(textAfter)
+                }
+            }
+
             // i18n
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
             $exeDevice.changeNumberTemas(dataGame.numeroTemas);
@@ -1146,7 +1157,7 @@ var $exeDevice = {
         $exeDevice.temas = game.temas;
         $exeDevice.nombresTemas = game.nombresTemas;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
-        $exeDevice.trivialID=typeof game.trivialID =="undefined"? $exeDevice.trivialID: game.trivialID;
+        $exeDevice.trivialID = typeof game.trivialID == "undefined" ? $exeDevice.trivialID : game.trivialID;
         $('#eXeGamePercentajeClue option[value=100]').attr('selected', 'selected');
         $('#eXeGamePercentajeClue').val(100);
         game.answersRamdon = game.answersRamdon || false;
@@ -1209,6 +1220,10 @@ var $exeDevice = {
         html += '<div class="trivial-DataGame js-hidden">' + $exeDevice.Encrypt(dataGame) + '</div>';
         html += linksImages;
         html += linksAudios;
+        var textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
+        if (textAfter != "") {
+            html += '<div class="trivial-extra-content">' + textAfter + '</div>';
+        }
         html += '<div class="trivial-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         if (html.length > 650000) {
@@ -1260,7 +1275,7 @@ var $exeDevice = {
             'customScore': game.customScore,
             'textAfter': game.textAfter,
             'msgs': game.msgs,
-            'trivialID':game.trivialID,
+            'trivialID': game.trivialID,
             "version": game.version
         }
         return JSON.stringify(data);
@@ -1308,7 +1323,7 @@ var $exeDevice = {
             'customScore': game.customScore,
             'textAfter': game.textAfter,
             'msgs': game.msgs,
-            'trivialID':game.trivialID,
+            'trivialID': game.trivialID,
             'version': game.version
         }
 
@@ -1463,7 +1478,7 @@ var $exeDevice = {
             var selectsGame = $exeDevice.temas[j];
             for (var i = 0; i < selectsGame.length; i++) {
                 var quextion = selectsGame[i];
-                if (typeof quextion.audio!='undefined' && quextion.audio.length > 4 && quextion.audio.indexOf('http') != 0) {
+                if (typeof quextion.audio != 'undefined' && quextion.audio.length > 4 && quextion.audio.indexOf('http') != 0) {
                     var linkAudio = '<a href="' + quextion.audio + '" class="js-hidden trivial-LinkAudios-' + j + '">' + i + '</a>';
                     html += linkAudio;
                 }
@@ -2213,14 +2228,14 @@ var $exeDevice = {
                 var num = parseInt($(this).val());
                 if (!isNaN(num) && num > 0) {
                     if ($exeDevice.validateQuestion() != false) {
-                        $exeDevice.activesQuestions[$exeDevice.activeTema]= num <  $exeDevice.temas[$exeDevice.activeTema].length ? num-1 : $exeDevice.temas[$exeDevice.activeTema].length-1;
-                        $exeDevice.showQuestion( $exeDevice.activesQuestions[$exeDevice.activeTema]);
+                        $exeDevice.activesQuestions[$exeDevice.activeTema] = num < $exeDevice.temas[$exeDevice.activeTema].length ? num - 1 : $exeDevice.temas[$exeDevice.activeTema].length - 1;
+                        $exeDevice.showQuestion($exeDevice.activesQuestions[$exeDevice.activeTema]);
 
-                    }else{
-                        $(this).val( $exeDevice.activesQuestions[$exeDevice.activeTema]+1)
+                    } else {
+                        $(this).val($exeDevice.activesQuestions[$exeDevice.activeTema] + 1)
                     }
-                }else{
-                    $(this).val($exeDevice.activesQuestions[$exeDevice.activeTema]+1)
+                } else {
+                    $(this).val($exeDevice.activesQuestions[$exeDevice.activeTema] + 1)
                 }
 
             }

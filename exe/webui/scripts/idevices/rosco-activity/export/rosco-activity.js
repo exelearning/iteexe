@@ -162,8 +162,7 @@ var $eXeRosco = {
 			$eXeRosco.addEvents(i);
 		});
 		if ($eXeRosco.hasLATEX && typeof (MathJax) == "undefined") {
-			var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-			$exe.loadScript(math);
+			$eXeRosco.loadMathJax();
 		}
 	},
 
@@ -184,7 +183,7 @@ var $eXeRosco = {
 			json = $eXeRosco.Decrypt(json);
 		}
 		var mOptions = $eXeRosco.isJsonString(json),
-			hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+			hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
 		if (hasLatex) {
 			$eXeRosco.hasLATEX = true;
 		}
@@ -756,9 +755,10 @@ var $eXeRosco = {
 		if (mWord.audio.trim().length > 4) {
 			$eXeRosco.playSound(mWord.audio.trim(), instance);
 		}
-
-		if (typeof (MathJax) != "undefined") {
-			MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#roscoPDefinition-' + instance]);
+		var html = $('#roscoPDefinition-' + instance).html(),
+			latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+		if (latex) {
+			$eXeRosco.updateLatex('roscoPDefinition-' + instance)
 		}
 	},
 
@@ -1112,13 +1112,61 @@ var $eXeRosco = {
 		}
 	},
 	loadMathJax: function () {
-		var tag = document.createElement('script');
-		//tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
-		tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-		tag.async = true;
-		var firstScriptTag = document.getElementsByTagName('script')[0];
-		firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		if (!window.MathJax) {
+			window.MathJax = {
+				loader: {
+					load: ['[tex]/color', '[tex]/mathtools',
+						'[tex]/ams', '[tex]/mhchem',
+						'[tex]/cancel', '[tex]/enclose',
+						'[tex]/physics', '[tex]/textmacros'
+					]
+				},
+				tex: {
+					inlineMath: [
+						['$', '$'],
+						["\\(", "\\)"]
+					],
+
+					displayMath: [
+						['$$', '$$'],
+						["\\[", "\\]"]
+					],
+					processEscapes: true,
+					tags: 'ams',
+					packages: {
+						'[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+					},
+					physics: {
+						italicdiff: false,
+						arrowdel: false
+					}
+				},
+			};
+		}
+		var script = document.createElement('script');
+		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+		script.async = true;
+		document.head.appendChild(script);
 	},
+	updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
+    },
 	checkWord: function (word, answord) {
 
 		var sWord = $.trim(word).replace(/\s+/g, " ").replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, ""),
@@ -1370,12 +1418,12 @@ var $eXeRosco = {
 		return sp;
 	},
 	extractURLGD: function (urlmedia) {
-        var sUrl = urlmedia;
-        if(typeof urlmedia != "undefined" && urlmedia.length>0 && urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
-            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
-        }
-        return sUrl;
-    }
+		var sUrl = urlmedia;
+		if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+			sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+		}
+		return sUrl;
+	}
 }
 $(function () {
 	$eXeRosco.init();

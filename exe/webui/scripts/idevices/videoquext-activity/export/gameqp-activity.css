@@ -605,6 +605,7 @@
 	margin: auto 0.2em;
 	max-width: 400px;
 	width: 60%;
+	text-align: center;
 }
 
 .gameQP-GameContainer .exeQuextIcons-MoveOne, .gameQP-GameContainer .exeQuextIcons-Submit {

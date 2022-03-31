@@ -195,9 +195,65 @@ var $eXeQuExt = {
             $('#quextDivFeedBack-' + i).hide();
         });
         if ($eXeQuExt.hasLATEX && typeof (MathJax) == "undefined") {
-            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-            $exe.loadScript(math);
+            $eXeQuExt.loadMathJax();
         }
+
+    },
+    loadMathJax: function () {
+        if (!window.MathJax) {
+
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/colorv2', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['colorv2', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#'+mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar mathjax')
+                }
+
+            }
+
+        }, 100);
     },
     createInterfaceQuExt: function (instance) {
         var html = '',
@@ -370,14 +426,7 @@ var $eXeQuExt = {
             return '';
         }
     },
-    loadMathJax: function () {
-        var tag = document.createElement('script');
-        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
-        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async = true;
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    },
+
     loadDataGame: function (data, imgsLink, audioLink, version) {
         var json = data.text();
         version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
@@ -385,7 +434,7 @@ var $eXeQuExt = {
             json = $eXeQuExt.Decrypt(json);
         }
         var mOptions = $eXeQuExt.isJsonString(json),
-            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeQuExt.hasLATEX = true;
         }
@@ -433,7 +482,7 @@ var $eXeQuExt = {
                 }
             }
         });
-        mOptions.questionsGame=$eXeQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
+        mOptions.questionsGame = $eXeQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             if (mOptions.customScore) {
                 mOptions.scoreTotal += mOptions.questionsGame[i].customScore;
@@ -444,21 +493,24 @@ var $eXeQuExt = {
         }
         mOptions.questionsGame = mOptions.optionsRamdon ? $eXeQuExt.shuffleAds(mOptions.questionsGame) : mOptions.questionsGame;
         mOptions.numberQuestions = mOptions.questionsGame.length;
+
         return mOptions;
     },
-    getQuestions: function(questions,percentaje){
-        var mQuestions=questions;
-        if(percentaje<100){
-            var num=Math.round((percentaje*questions.length)/100);
-            num=num<1?1:num;
-            if(num<questions.length){
-                var array=[];
-                for(var i=0;i<questions.length;i++){
+    getQuestions: function (questions, percentaje) {
+        var mQuestions = questions;
+        if (percentaje < 100) {
+            var num = Math.round((percentaje * questions.length) / 100);
+            num = num < 1 ? 1 : num;
+            if (num < questions.length) {
+                var array = [];
+                for (var i = 0; i < questions.length; i++) {
                     array.push(i);
                 }
-                array=$eXeQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
-                mQuestions=[];
-                for (var i=0;i<array.length;i++){
+                array = $eXeQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) {
+                    return a - b;
+                });
+                mQuestions = [];
+                for (var i = 0; i < array.length; i++) {
                     mQuestions.push(questions[array[i]]);
                 }
             }
@@ -1169,8 +1221,10 @@ var $eXeQuExt = {
             $eXeQuExt.playSound(q.audio.trim(), instance);
         }
         $eXeQuExt.drawQuestions(instance);
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#quextGameContainer-' + instance]);
+        var html = $('#quextQuestionDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeQuExt.updateLatex('quextQuestionDiv-' + instance)
         }
     },
 
@@ -1244,6 +1298,8 @@ var $eXeQuExt = {
         sMessages = sMessages.split('|');
         return sMessages[Math.floor(Math.random() * sMessages.length)];
     },
+
+
     updateScore: function (correctAnswer, instance) {
         var mOptions = $eXeQuExt.options[instance],
             quextion = mOptions.questionsGame[mOptions.activeQuestion],
@@ -1535,7 +1591,7 @@ var $eXeQuExt = {
     },
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
-        if (typeof urlmedia != "undefined" && urlmedia.length>0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+        if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;

@@ -114,8 +114,8 @@ var $eXeMapa = {
             }
         });
         if ($eXeMapa.hasLATEX && typeof (MathJax) == "undefined") {
-            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-            $exe.loadScript(math);
+
+            $eXeMapa.loadMathJax();
         }
 
     },
@@ -295,9 +295,9 @@ var $eXeMapa = {
         }
     },
     loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url) {
-        var json = data.text();
-        var mOptions = $eXeMapa.isJsonString(json),
-            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+        var json = data.text(),
+            mOptions = $eXeMapa.isJsonString(json),
+            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeMapa.hasLATEX = true;
         }
@@ -532,7 +532,7 @@ var $eXeMapa = {
         }
         var soluciones = mOptions.question.solution;
         for (var j = 0; j < mOptions.question.options.length; j++) {
-            if (mOptions.question.options[j].trim().length >0) {
+            if (mOptions.question.options[j].trim().length > 0) {
                 l++;
             }
         }
@@ -597,8 +597,13 @@ var $eXeMapa = {
                 $(this).hide();
             }
         });
+        var html = $('#mapaQuestionDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaFTests-' + instance);
+        }
     },
-    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance) {
+    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution) {
         $('#mapaEPhrase-' + instance).find('.MQP-Word').remove();
         $('#mapaBtnReply-' + instance).prop('disabled', true);
         $('#mapaBtnMoveOn-' + instance).prop('disabled', true);
@@ -637,7 +642,19 @@ var $eXeMapa = {
                 }
             }
         }
-        $('#mapaDefinition-' + instance).text(definition);
+
+        
+
+        if (!solution) {
+            $('#mapaDefinition-' + instance).text(definition);
+        }
+
+        var html = $('#mapaWordDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaWordDiv-' + instance)
+        }
+        return cPhrase;
         return cPhrase;
     },
 
@@ -707,7 +724,7 @@ var $eXeMapa = {
             $eXeMapa.drawQuestions(instance);
         } else {
             $eXeMapa.showMessage(0, mOptions.msgs.msgWriteAnswer, instance);
-            $eXeMapa.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance);
+            $eXeMapa.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance, false);
             $('#mapaBtnReply-' + instance).prop('disabled', false);
             $('#mapaEdAnswer-' + instance).prop('disabled', false);
             $('#mapaEdAnswer-' + instance).focus();
@@ -721,9 +738,7 @@ var $eXeMapa = {
             }
         }
 
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#mapaMainContainer-' + instance]);
-        }
+
     },
 
     shuffleAds: function (arr) {
@@ -1092,7 +1107,7 @@ var $eXeMapa = {
         return butonScore;
     },
 
-    
+
     clear: function (phrase) {
         return phrase.replace(/[&\s\n\r]+/g, " ").trim();
     },
@@ -1222,9 +1237,7 @@ var $eXeMapa = {
             mq = mOptions.titles[num].question;
         }
         $('#mapaMessageFindP-' + instance).text(mq);
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#mapaMainContainer-' + instance]);
-        }
+
         $('#mapaPlayAudioIdenty-' + instance).hide();
         $eXeMapa.stopSound(instance);
         if (typeof mOptions.title.audio != "undefined" && mOptions.title.audio.length > 4) {
@@ -1234,6 +1247,11 @@ var $eXeMapa = {
 
         mOptions.showDetail = false;
         $eXeMapa.updateHeightGame(instance);
+        var html = $('#mapaMainContainer-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaMainContainer-' + instance)
+        }
     },
     initElements: function (instance) {
         var mOptions = $eXeMapa.options[instance];
@@ -1813,7 +1831,7 @@ var $eXeMapa = {
                 $eXeMapa.drawSolution(instance);
             } else {
                 var mtipe = correct ? 2 : 1;
-                $eXeMapa.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance);
+                $eXeMapa.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance, true);
             }
         }
         $eXeMapa.showClue(instance);
@@ -2100,7 +2118,7 @@ var $eXeMapa = {
                         $eXeMapa.updateHeightGame(instance);
                     });
 
-                }, mOptions.timeShowSolution *1000);
+                }, mOptions.timeShowSolution * 1000);
             }
         } else {
             mOptions.activeMap.pts[mOptions.activeMap.active].state = 1;
@@ -2120,7 +2138,7 @@ var $eXeMapa = {
                 $('#mapaTest-' + instance).hide();
                 $eXeMapa.stopSound(instance);
 
-            }, mOptions.timeShowSolution *1000);
+            }, mOptions.timeShowSolution * 1000);
         }
         $eXeMapa.showClue(instance);
         $eXeMapa.paintPoints(instance);
@@ -2165,7 +2183,7 @@ var $eXeMapa = {
                         $eXeMapa.hideCover(instance);
                         $eXeMapa.hideMapDetail(instance, true);
                     });
-                }, mOptions.timeShowSolution *1000);
+                }, mOptions.timeShowSolution * 1000);
             }
         } else {
             message = mOptions.msgs.msgNotCorrect + ' "' + answert + '"';
@@ -2324,8 +2342,8 @@ var $eXeMapa = {
             $eXeMapa.showSlide(mOptions.activeSlide, instance);
 
         }
-        if (typeof q.audio != "undefined" &&  q.audio.length > 4) {
-            $eXeMapa.playSound( q.audio, instance);
+        if (typeof q.audio != "undefined" && q.audio.length > 4) {
+            $eXeMapa.playSound(q.audio, instance);
         }
         if (mOptions.isScorm < 4 && mOptions.evaluation > -1) {
             if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
@@ -2334,8 +2352,10 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#mapaMainContainer-' + instance]);
+        var html = $('#mapaFDetails-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaFDetails-' + instance);
         }
         if (q.type < 5 || q.type == 6) {
             $('#mapaCubierta-' + instance).fadeIn(100, function () {
@@ -2369,9 +2389,9 @@ var $eXeMapa = {
         return score;
     },
     getNumberVisited: function (a) {
-        var visiteds=Object.values($.extend(true, {}, a));
-        for(var i = visiteds.length -1; i >=0; i--){
-            if(visiteds.indexOf(visiteds[i]) !== i) visiteds.splice(i,1);
+        var visiteds = Object.values($.extend(true, {}, a));
+        for (var i = visiteds.length - 1; i >= 0; i--) {
+            if (visiteds.indexOf(visiteds[i]) !== i) visiteds.splice(i, 1);
         }
         return visiteds.length;
     },
@@ -2689,13 +2709,61 @@ var $eXeMapa = {
     },
 
     loadMathJax: function () {
-        var tag = document.createElement('script');
-        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async = true;
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    },
+        if (!window.MathJax) {
 
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar mathjax')
+                }
+
+            }
+
+        }, 100);
+    },
     showMessage: function (type, message, instance) {
         var colors = [$eXeMapa.borderColors.black, $eXeMapa.borderColors.red, $eXeMapa.borderColors.green, $eXeMapa.borderColors.blue, $eXeMapa.borderColors.yellow],
             color = colors[type];

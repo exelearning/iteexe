@@ -30,6 +30,7 @@ var $eXeDesafio = {
     msgs: '',
     fontSize: '1em',
     isInExe: false,
+    hasLatex:false,
     init: function () {
         this.activities = $('.desafio-IDevice');
         if (this.activities.length == 0) return;
@@ -75,9 +76,71 @@ var $eXeDesafio = {
             $('#desafioDescription-' + i).hide();
             $('#desafioFeedBacks-' + i).hide();
             $eXeDesafio.addEvents(i);
+            var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($('#desafioGameContainer-' + i).html());
+            if (hasLatex) {
+                $eXeDesafio.hasLATEX = true;
+            }
         });
+        if ($eXeDesafio.hasLATEX && typeof (MathJax) == "undefined") {
+            $eXeDesafio.loadMathJax();
+        }
 
+    },
+    loadMathJax: function () {
+        if (!window.MathJax) {
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
 
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
     },
     createInterfaceQuExt: function (instance) {
         var html = '',

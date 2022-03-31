@@ -387,6 +387,7 @@
     max-width: 300px;
     width: 60%;
     margin: 0 0.3em;
+    text-align: center;
 }
 
 .rosco-GameContainer .exeQuextIcons-MoveOne, .rosco-GameContainer .exeQuextIcons-Submit {

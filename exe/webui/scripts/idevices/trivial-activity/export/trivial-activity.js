@@ -49,6 +49,7 @@ var $eXeTrivial = {
     hasSCORMbutton: false,
     isInExe: false,
     tirada: 0,
+    hasLatex: false,
     init: function () {
         this.activities = $('.trivial-IDevice');
         if (this.activities.length == 0) return;
@@ -184,9 +185,65 @@ var $eXeTrivial = {
             $('#trivialMessageMaximize-' + i).text(msg);
             $eXeTrivial.addEvents(i);
         });
-        if (typeof (MathJax) == "undefined") {
+        if ($eXeTrivial.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeTrivial.loadMathJax();
         }
+    },
+    loadMathJax: function () {
+        if (!window.MathJax) {
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
     },
     loadMedias: function (game, sgame) {
         for (var j = 0; j < game.numeroTemas; j++) {
@@ -559,14 +616,6 @@ var $eXeTrivial = {
         }
         return false;
     },
-    loadMathJax: function () {
-        var tag = document.createElement('script');
-        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
-        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async = true;
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    },
     randomArray: function (length, max) {
         return Array.apply(null, Array(length)).map(function () {
             return Math.round(Math.random() * max) + 1;
@@ -887,7 +936,7 @@ var $eXeTrivial = {
                     ganas = true;
                     mensaje += mOptions.msgs.msgWin;
                 } else {
-                    mensaje += mOptions.msgs.msgGetQueso +' '+ mOptions.nombresTemas[mOptions.activeTema];
+                    mensaje += mOptions.msgs.msgGetQueso + ' ' + mOptions.nombresTemas[mOptions.activeTema];
                     puntos = puntos + 10;
                 }
                 if (!mOptions.gamers[mOptions.activePlayer].cheeses.includes(mOptions.activeTema)) {
@@ -976,7 +1025,7 @@ var $eXeTrivial = {
             });
         });
         $eXeTrivial.placeElements(instance);
-           
+
         //$eXeTrivial.createGameTokeTesting();
     },
     winGame: function (instance) {
@@ -1103,7 +1152,7 @@ var $eXeTrivial = {
                         if (squestions[active].typeSelect != 2) {
                             $eXeTrivial.drawSolution(instance);
                         } else {
-                            $eXeTrivial.drawPhrase(squestions[active].solutionQuestion, squestions[active].quextion, 100, 1, false, instance)
+                            $eXeTrivial.drawPhrase(squestions[active].solutionQuestion, squestions[active].quextion, 100, 1, false, instance, true)
                         }
                     }
                     $eXeTrivial.stopVideo(instance);
@@ -1253,6 +1302,11 @@ var $eXeTrivial = {
     loadDataGame: function (data) {
         var mOptions = $eXeTrivial.isJsonString(data.text());
         mOptions = $eXeTrivial.Decrypt(mOptions);
+        var myJSON = JSON.stringify(mOptions),
+            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(myJSON);
+        if (hasLatex) {
+            $eXeTrivial.hasLATEX = true;
+        }
         mOptions.gameOver = false;
         mOptions.scoreGame = 0;
         mOptions.velocidad = 300;
@@ -1395,18 +1449,18 @@ var $eXeTrivial = {
             });
             $('#trivialMaterias-' + instance).show();
         }
-        if(screen.width>=750){        
-            if( $('#trivialGameContainer-' + instance).width()<750){
+        if (screen.width >= 750) {
+            if ($('#trivialGameContainer-' + instance).width() < 750) {
                 $('#trivialMaterias-' + instance).hide();
                 $('#trivialGameContainer-' + instance).find('div.trivial-PanelLateral').addClass('trivial-PanelLateralMin')
                 $('#trivialGameContainer-' + instance).find('div.trivial-Jugador').addClass('trivial-JugadorMin')
 
-            }else{
+            } else {
                 $('#trivialMaterias-' + instance).show();
                 $('#trivialGameContainer-' + instance).find('div.trivial-PanelLateral').removeClass('trivial-PanelLateralMin')
                 $('#trivialGameContainer-' + instance).find('div.trivial-Jugador').removeClass('trivial-JugadorMin')
             }
-        }   
+        }
 
         $('.trivial-NumberGamers').find('p').css({
             'font-size': $eXeTrivial.getSize(1, instance),
@@ -1711,7 +1765,7 @@ var $eXeTrivial = {
             $eXeTrivial.stopSound(instance);
             $eXeTrivial.playSound(audio, instance);
         });
-        
+
         if (typeof mOptions.trivialID != "undefined") {
             var dataTrivial = $eXeTrivial.getDataStorage(mOptions.trivialID);
             if (dataTrivial) {
@@ -1897,7 +1951,7 @@ var $eXeTrivial = {
         $eXeTrivial.initialScore = (((mOptions.gamers[0].casilla + 1) * 10) / mOptions.numeroCasillas).toFixed(2);
         $eXeTrivial.saveDataStorage(instance);
     },
-    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance) {
+    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution) {
         $('#trivialEPhrase-' + instance).find('.trivial-Word').remove();
         $('#trivialBtnReply-' + instance).prop('disabled', true);
         $('#trivialBtnMoveOn-' + instance).prop('disabled', true);
@@ -1907,7 +1961,7 @@ var $eXeTrivial = {
         $('#trivialAnswerDiv-' + instance).hide();
         if (!casesensitive) {
             phrase = phrase.toUpperCase();
-                }
+        }
         var cPhrase = $eXeTrivial.clear(phrase),
             letterShow = $eXeTrivial.getShowLetter(cPhrase, nivel),
             h = cPhrase.replace(/\s/g, '&'),
@@ -1936,7 +1990,15 @@ var $eXeTrivial = {
                 }
             }
         }
-        $('#trivialDefinition-' + instance).text(definition);
+        if (!solution) {
+            $('#trivialDefinition-' + instance).text(definition);
+        }
+
+        var html = $('#trivialWordDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeTrivial.updateLatex('trivialWordDiv-' + instance)
+        }
         return cPhrase;
     },
     clear: function (phrase) {
@@ -2043,7 +2105,7 @@ var $eXeTrivial = {
         if (mQuextion.typeSelect != 2) {
             $eXeTrivial.drawQuestions(instance);
         } else {
-            $eXeTrivial.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance)
+            $eXeTrivial.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance, false)
             $('#trivialBtnReply-' + instance).prop('disabled', false);
             $('#trivialBtnMoveOn-' + instance).prop('disabled', false);
             $('#trivialEdAnswer-' + instance).prop('disabled', false);
@@ -2057,11 +2119,6 @@ var $eXeTrivial = {
         if (q.type != 2 && q.audio.trim().length > 5) {
             $eXeTrivial.playSound(q.audio.trim(), instance);
         }
-
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#trivialGameQuestion-' + instance]);
-        }
-
         $('#trivialEdAnswer-' + instance).focus();
     },
 
@@ -2193,7 +2250,7 @@ var $eXeTrivial = {
             if (quextion.typeSelect != 2) {
                 $eXeTrivial.drawSolution(instance);
             } else {
-                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance)
+                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance, true)
             }
         }
         $eXeTrivial.stopVideo(instance);
@@ -2313,6 +2370,11 @@ var $eXeTrivial = {
                 $(this).hide();
             }
         });
+        var html = $('#trivialQuestionDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeTrivial.updateLatex('trivialQuestionDiv-' + instance)
+        }
     },
     drawSolution: function (instance) {
         var mOptions = $eXeTrivial.options[instance],

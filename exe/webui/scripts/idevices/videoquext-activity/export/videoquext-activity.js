@@ -191,26 +191,27 @@ var $eXeVideoQuExt = {
 
         });
         if ($eXeVideoQuExt.hasLATEX && typeof (MathJax) == "undefined") {
-            var math = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-            $exe.loadScript(math);
+            $eXeVideoQuExt.loadMathJax();
         }
     },
-        getQuestions: function(questions,percentaje){
+    getQuestions: function (questions, percentaje) {
         console.log(percentaje, 'percentaje');
-        var num=questions.length;
-        var mQuestions=questions;
-        if(percentaje<100){
-            num=Math.round((percentaje*questions.length)/100);
-            num=num<1?1:num;
-            console.log(num,'num');
-            if(num<questions.length){
-                var array=[];
-                for(var i=0;i<questions.length;i++){
+        var num = questions.length;
+        var mQuestions = questions;
+        if (percentaje < 100) {
+            num = Math.round((percentaje * questions.length) / 100);
+            num = num < 1 ? 1 : num;
+            console.log(num, 'num');
+            if (num < questions.length) {
+                var array = [];
+                for (var i = 0; i < questions.length; i++) {
                     array.push(i);
                 }
-                array=$eXeVideoQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
-                mQuestions=[];
-                for (var i=0;i<array.length;i++){
+                array = $eXeVideoQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) {
+                    return a - b;
+                });
+                mQuestions = [];
+                for (var i = 0; i < array.length; i++) {
                     mQuestions.push(questions[array[i]]);
                 }
             }
@@ -218,12 +219,60 @@ var $eXeVideoQuExt = {
         return mQuestions;
     },
     loadMathJax: function () {
-        var tag = document.createElement('script');
-        //tag.src = "https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_CHTML";
-        tag.src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/MathJax.js?config=TeX-MML-AM_CHTML";
-        tag.async = true;
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        if (!window.MathJax) {
+            window.MathJax = {
+                loader: {
+                    load: ['[tex]/color', '[tex]/mathtools',
+                        '[tex]/ams', '[tex]/mhchem',
+                        '[tex]/cancel', '[tex]/enclose',
+                        '[tex]/physics', '[tex]/textmacros'
+                    ]
+                },
+                tex: {
+                    inlineMath: [
+                        ['$', '$'],
+                        ["\\(", "\\)"]
+                    ],
+
+                    displayMath: [
+                        ['$$', '$$'],
+                        ["\\[", "\\]"]
+                    ],
+                    processEscapes: true,
+                    tags: 'ams',
+                    packages: {
+                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    },
+                    physics: {
+                        italicdiff: false,
+                        arrowdel: false
+                    }
+                },
+            };
+        }
+        var script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.async = true;
+        document.head.appendChild(script);
+    },
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+
+            }
+
+        }, 100);
     },
     Decrypt: function (str) {
         if (!str) str = "";
@@ -480,7 +529,8 @@ var $eXeVideoQuExt = {
             json = $eXeVideoQuExt.Decrypt(json);
         }
         var mOptions = $eXeVideoQuExt.isJsonString(json),
-            hasLatex = /\\\((.*)\\\)|\\\[(.*)\\\]/.test(json);
+            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+
         if (hasLatex) {
             $eXeVideoQuExt.hasLATEX = true;
         }
@@ -499,7 +549,7 @@ var $eXeVideoQuExt = {
         mOptions.gameStarted = false;
         mOptions.scoreGame = 0;
         mOptions.scoreTotal = 0;
-        mOptions.questionsGame=$eXeVideoQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
+        mOptions.questionsGame = $eXeVideoQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
         mOptions.numberQuestions = mOptions.questionsGame.length;
         if (mOptions.videoType > 0) {
             mOptions.idVideoQuExt = mOptions.videoLocal;
@@ -516,20 +566,22 @@ var $eXeVideoQuExt = {
         }
         return mOptions;
     },
-    getQuestions: function(questions,percentaje){
-         var num=questions.length;
-        var mQuestions=questions;
-        if(percentaje<100){
-            num=Math.round((percentaje*questions.length)/100);
-            num=num<1?1:num;
-            if(num<questions.length){
-                var array=[];
-                for(var i=0;i<questions.length;i++){
+    getQuestions: function (questions, percentaje) {
+        var num = questions.length;
+        var mQuestions = questions;
+        if (percentaje < 100) {
+            num = Math.round((percentaje * questions.length) / 100);
+            num = num < 1 ? 1 : num;
+            if (num < questions.length) {
+                var array = [];
+                for (var i = 0; i < questions.length; i++) {
                     array.push(i);
                 }
-                array=$eXeVideoQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) { return a - b;  });
-                mQuestions=[];
-                for (var i=0;i<array.length;i++){
+                array = $eXeVideoQuExt.shuffleAds(array).slice(0, num).sort(function (a, b) {
+                    return a - b;
+                });
+                mQuestions = [];
+                for (var i = 0; i < array.length; i++) {
                     mQuestions.push(questions[array[i]]);
                 }
             }
@@ -750,9 +802,6 @@ var $eXeVideoQuExt = {
         $('#vquextPreview-' + instance).click(function (e) {
             e.preventDefault();
             $eXeVideoQuExt.previewQuestions(instance);
-            if (typeof (MathJax) != "undefined") {
-                MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#vquextGameContainer-' + instance]);
-            }
         });
         $('#vquextEdAnswer-' + instance).on("keydown", function (event) {
             if (event.which == 13 || event.keyCode == 13) {
@@ -885,6 +934,12 @@ var $eXeVideoQuExt = {
                     if (typeof (MathJax) != "undefined") {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, '.gameQP-Tooltip']);
                     }
+       
+                    var html = $('#vquextProgressBar-' + instance).html(),
+                        latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+                    if (latex) {
+                        $eXeVideoQuExt.updateLatex('vquextProgressBar-' + instance)
+                    }
                     $(this).find("div.gameQP-Tooltip").fadeIn(300);
                 }
             }
@@ -983,6 +1038,11 @@ var $eXeVideoQuExt = {
             $('#vquextpreviewQuestionsDiv-' + instance).append('<p class="gameQP-prevQuestP">' + (i + 1) + '.- ' + mOptions.questionsGame[i].quextion + '</p>');
         }
         $('#vquextpreviewQuestionsDiv-' + instance).slideToggle();
+        var html = $('#vquextpreviewQuestionsDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeVideoQuExt.updateLatex('vquextpreviewQuestionsDiv-' + instance)
+        }
     },
     reloadQuestion: function (instance, free, time) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -1750,8 +1810,10 @@ var $eXeVideoQuExt = {
             $('#vquextOptionsDiv-' + instance).show();
             $('#vquextDivReply-' + instance).hide();
         }
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#vquextGameContainer-' + instance]);
+        var html = $('#vquextQuestionDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
         }
     },
     drawSolution: function (instance) {
@@ -1781,9 +1843,12 @@ var $eXeVideoQuExt = {
                 }
             });
         }
-        if (typeof (MathJax) != "undefined") {
-            MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#vquextGameContainer-' + instance]);
+        var html = $('#vquextQuestionDiv-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
         }
+
     },
     clearQuestions: function (instance) {
         $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
