@@ -1530,9 +1530,9 @@ class ClozeElement(ElementWithResources):
                 #'  autocomplete="off"',
                 inputHtml = ['<label for="clozeBlank%s.%s" class="sr-av">%s (%s):</label>' % (self.id, i, c_("Cloze"), (i+1))]
                 if self.field.instantMarking:
-                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" onkeyup="$exe.cloze.change(this)" />' % (self.id, i, lenWord)]
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sch" onkeyup="$exe.cloze.change(this)" />' % (self.id, i, lenWord)]
                 else:
-                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sem" />' % (self.id, i, lenWord)]
+                    inputHtml += ['<input class="autocomplete-off" type="text" value="" id="clozeBlank%s.%s" style="width:%sch" />' % (self.id, i, lenWord)]
                 html += inputHtml
                 # Hidden span with correct answer
                 html += ['<span style="display:none" id="clozeAnswer%s.%s">%s</span>' % (self.id, i, encrypt(missingWord))]
