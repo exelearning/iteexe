@@ -19,8 +19,18 @@ function quitDialog() {
 }
 
 function deleteIdevice() {
+    var tit = _("Delete");
+    // Show the name of the iDevice to delete
+    var e = document.getElementById("ideviceSelect");
+    if (e) {
+        try{
+            e = e.options[e.selectedIndex].value;
+            if (e!="") tit = tit + " - " + e;
+        }catch(e){}
+        
+    }
     Ext.Msg.show( {
-        title: _('Delete'),
+        title: tit,
         msg: _("Confirm?"),
         scope: this,
         modal: true,
