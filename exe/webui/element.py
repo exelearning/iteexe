@@ -1571,7 +1571,7 @@ class ClozeElement(ElementWithResources):
         else:
             html += ['</form>']
         html += ['</%s>' % sectionTag]
-        return '\n'.join(html)
+        return ''.join(html)
     
     def renderText(self):
         """
@@ -1784,11 +1784,10 @@ class ClozelangElement(ElementWithResources):
                 lenWord=max(len(wrd) for wrd in aceptedWords)
                 words += "'" + missingWord + "',"
                 # The edit box for the user to type into
-                inputHtml = [
-                    ' <input type="text" value="" ',
+                inputHtml = ['<input type="text" value="" ',
                     '        id="clozelangBlank%s.%s"' % (self.id, i),
 #                    '    autocomplete="off"',
-                    '    style="width:%sem"/>\n' % lenWord]
+                    '    style="width:%sch"/>' % lenWord]
                 if self.field.instantMarking:
                     inputHtml.insert(2, '  onkeyup="$exe.cloze.onLangChange(this)"')
                 html += inputHtml
