@@ -186,7 +186,7 @@ Ext.define('eXe.controller.Outline', {
             if (btn) {
                 Ext.Msg.alert(
                     _('Info'),
-                    _("The changes you made will be lost if you navigate away from this page.")
+                    _("Cannot leave the iDevice editor. The changes you made will be lost if you navigate away from this page.")
                 );				
                 return false;
             } else {
