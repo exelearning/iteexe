@@ -149,6 +149,9 @@ Ext.define('eXe.controller.Outline', {
 		    },{
 			    text: _('Export this page as elp'),
 			    handler: this.getController('Toolbar').extractPackage
+            },{
+			    text: _('Delete this node'),
+			    handler: this.getController('Outline').onNodeDel
             }
           ]
 		});
@@ -215,7 +218,8 @@ Ext.define('eXe.controller.Outline', {
     },
     
     onNodeDel: function(button, e, eOpts) {
-		var outlineTreePanel = this.getOutlineTreePanel(),
+        var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
+		// var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0', msg;
     	
@@ -231,7 +235,8 @@ Ext.define('eXe.controller.Outline', {
     			buttons: Ext.Msg.YESNO,
     			fn: function(button) {
 					if (button == "yes")	{
-						this.disableButtons();
+						// this.disableButtons();
+                        eXe.app.getController("Outline").disableButtons(),
 						nevow_clientToServerEvent('DelNode', this, '', nodeid);
 			    	}
     			}
