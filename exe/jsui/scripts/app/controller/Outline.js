@@ -144,15 +144,25 @@ Ext.define('eXe.controller.Outline', {
         var contextMenu = new Ext.menu.Menu({
 		  items: [
             {
+			    text: _('Add Page'),
+			    handler: this.getController('Outline').onNodeAdd
+            },{
+			    text: _('Rename'),
+			    handler: this.getController('Outline').onNodeRename
+            },{
+			    text: _('Delete'),
+			    handler: this.getController('Outline').onNodeDel
+            },          
+            {
+                xtype: 'menuseparator'
+            },
+            {
 			    text: _('Insert elp in this page'),
 			    handler: this.getController('Toolbar').insertPackage
 		    },{
 			    text: _('Export this page as elp'),
 			    handler: this.getController('Toolbar').extractPackage
-            },{
-			    text: _('Delete this node'),
-			    handler: this.getController('Outline').onNodeDel
-            }
+            }            
           ]
 		});
         var x = e.browserEvent.clientX;
@@ -206,20 +216,19 @@ Ext.define('eXe.controller.Outline', {
     },
     
     onNodeAdd: function(button, e, eOpts) {
-		if (this.checkActiveIdevice()==false) return false;
-		var outlineTreePanel = this.getOutlineTreePanel(),
+		if (eXe.app.getController("Outline").checkActiveIdevice()==false) return false;
+		var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0';
     	
     	if (selected != 0)
     		nodeid = selected[0].data.id;
-    	this.disableButtons();
+    	eXe.app.getController("Outline").disableButtons();
 		nevow_clientToServerEvent('AddChild', this, '', nodeid);    		
     },
     
     onNodeDel: function(button, e, eOpts) {
         var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
-		// var outlineTreePanel = this.getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0', msg;
     	
@@ -235,8 +244,7 @@ Ext.define('eXe.controller.Outline', {
     			buttons: Ext.Msg.YESNO,
     			fn: function(button) {
 					if (button == "yes")	{
-						// this.disableButtons();
-                        eXe.app.getController("Outline").disableButtons(),
+						eXe.app.getController("Outline").disableButtons(),
 						nevow_clientToServerEvent('DelNode', this, '', nodeid);
 			    	}
     			}
@@ -245,8 +253,8 @@ Ext.define('eXe.controller.Outline', {
 	},
 
     onNodeRename: function() {
-    	if (this.checkActiveIdevice()==false) return false;
-    	var outlineTreePanel = this.getOutlineTreePanel(),
+    	if (eXe.app.getController("Outline").checkActiveIdevice()==false) return false;
+    	var outlineTreePanel = eXe.app.getController("Outline").getOutlineTreePanel(),
     		selected = outlineTreePanel.getSelectionModel().getSelection(),
     		nodeid = '0', title;
     	
@@ -264,7 +272,7 @@ Ext.define('eXe.controller.Outline', {
 			fn: function(button, text) {
 				if (button == "ok")	{
 					if (text) {
-						this.disableButtons();
+						eXe.app.getController("Outline").disableButtons(),
 						nevow_clientToServerEvent('RenNode', this, '', nodeid, text);
 					}
 		    	}
