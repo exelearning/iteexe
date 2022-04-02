@@ -1,3 +1,50 @@
+intef-exe (3:2.6.1) lucid; urgency=medium
+
+  * Manuel Narváez
+    - New "Trivial" Game iDevice.
+    - New "Map" Game iDevice.
+    - Full Game iDevices revision and compatibility with the latest MathJax version.
+    - srt Subtitles in local videos.
+    - GeoGebra iDevice revision.
+
+  * Ignacio Gros
+    - New node contextual menu options: Add, rename, delete. (#609)
+    - iDevice editor: Show information about iDevice being deleted. (#608)
+    - UDL Content iDevice: Scroll to the content (main or alternative).
+    - No default content templates in the new version.
+    - Avoid HTML code in the server errors messages.
+    - Fixed: Full-screen videos in PrettyPhoto. (#592)
+    - Fixed: Video player: Autoplay + Muted. (#604)
+    - Fixed: Interactive video iDevice messages presentation problem. (#615)
+    - Fixed: allowfullscreen missing after editing an IFRAME. (#614)
+    - Fixed: UDL Content iDevice error when having alternative contents. ( #593)
+    - Fixed: Help links (new URL pattern). (#596)
+    - Fixed: Unwanted horizontal scroll bar with INTEF and UDL Styles. (#607)
+    - Fixed: Missing fonts in the SimplePoint Style (404 errors).
+    - Fixed: Cloze iDevice inputs width (too long). (#616)
+    - Fixed: Cloze activity: Spaces before and after each word removed. (#598)
+
+  * APSL
+    - Package building.
+    - New GitHub actions: Mac installer, SNAP package.
+    - Two options by default in the question iDevices.
+    - Fixed: Long contents save problem fixed: SIZE_LIMIT increased. (#496)
+    - Fixed: Create images from LaTeX (SNAP version). Mimetex package included. (#599)
+    - Fixed: Mac connection to GitHub (SSL context set). (#569)
+    - Fixed: Mac connection to Wikepedia (SSL context set). (#570)
+    - Fixed: RSS iDevice problems ("requests" module). (#497)
+    
+  * Juan Rafael Fernández
+    - String extraction process revision.
+    - Translations coordination.
+
+  * eXeLearning.net Translation Team
+    - New complete Spanish translation, by Juan Rafael Fernández.
+    - New complete Basque translation, by Joxemi Andonegi and Eneko Andonegi Ferradas.
+    - New complete Catalan translation, by Carles Ferrando Garcia.
+    - New complete Galician translation, by Pablo Nimo.
+    - New complete Valencian translation, by Ricardo Nutz.
+
 intef-exe (3:2.6) lucid; urgency=medium
 
   * Ignacio Gros
