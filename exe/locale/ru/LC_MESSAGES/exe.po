@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-02-23 11:01+0100\n"
+"POT-Creation-Date: 2022-04-06 11:24+0200\n"
 "PO-Revision-Date: 2021-06-08 10:30+0200\n"
 "Last-Translator: Dmytro Abaydullin <abaidullin11@gmail.com>, 2021\n"
 "Language: ru\n"
@@ -22,7 +22,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: exe/application.py:239
 #, python-format
@@ -483,6 +483,7 @@ msgstr "Щёлкните в соответствии с подсказкой н�
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:389
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:154
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:440
 #: exe/webui/tools/assistant/langs/all.js:26
 msgid "Title"
 msgstr "Заголовок"
@@ -832,8 +833,8 @@ msgstr ""
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
 #: exe/webui/common.py:965 exe/webui/common.py:975
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2485 exe/webui/element.py:2620
-#: exe/webui/element.py:2735 exe/webui/element.py:2936
+#: exe/webui/element.py:2484 exe/webui/element.py:2619
+#: exe/webui/element.py:2734 exe/webui/element.py:2935
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:114
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:170
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:34
@@ -1154,9 +1155,9 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3802
 #: exe/engine/field.py:3867 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
-#: exe/webui/element.py:2464 exe/webui/element.py:2913
-#: exe/webui/element.py:2917 exe/webui/scripts/authoring.js:1271
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2459
+#: exe/webui/element.py:2463 exe/webui/element.py:2912
+#: exe/webui/element.py:2916 exe/webui/scripts/authoring.js:1271
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:76
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:51
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:464
@@ -1270,6 +1271,7 @@ msgstr "Выгрузить"
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:370
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:675
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:651
 #: exe/webui/style/INTEF/_intef_js.js:125
 msgid "File"
 msgstr "Файл"
@@ -1476,8 +1478,8 @@ msgstr ""
 
 #: exe/engine/field.py:3727 exe/engine/field.py:3776
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2197 exe/webui/element.py:2252
-#: exe/webui/element.py:2584 exe/webui/element.py:2676
+#: exe/webui/element.py:2196 exe/webui/element.py:2251
+#: exe/webui/element.py:2583 exe/webui/element.py:2675
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:79
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:922
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:926
@@ -1501,7 +1503,7 @@ msgstr "Опция"
 msgid "Hint"
 msgstr "Подсказка"
 
-#: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2389
+#: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2388
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:129
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:260
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:163
@@ -1511,6 +1513,7 @@ msgstr "Подсказка"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:722
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:609
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:239
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:559
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "Опции"
@@ -1531,7 +1534,7 @@ msgstr ""
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2364
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2363
 msgid "Question:"
 msgstr "Вопросы:"
 
@@ -1903,7 +1906,7 @@ msgid "Text for reset button"
 msgstr "Текст для кнопки рестарта"
 
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:676
-#: exe/webui/element.py:1557 exe/webui/element.py:1812
+#: exe/webui/element.py:1557 exe/webui/element.py:1811
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:64
 msgid "Restart"
 msgstr "Начать заново"
@@ -2833,20 +2836,20 @@ msgstr "Текст Руководства Учителя"
 msgid "Guidelines Teacher Text:"
 msgstr "Текст Руководства Учителя:"
 
-#: exe/engine/package.py:330
-msgid "Section"
-msgstr "Секция"
-
-#: exe/engine/package.py:330
-msgid "Unit"
-msgstr "Модуль"
-
-#: exe/engine/package.py:330
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:7
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:750
 msgid "Topic"
 msgstr "Тема"
 
-#: exe/engine/package.py:354
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:8
+msgid "Section"
+msgstr "Секция"
+
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:9
+msgid "Unit"
+msgstr "Модуль"
+
+#: exe/engine/package.py:354 exe/webui/content_template/strings.py:12
 msgid "Home"
 msgstr "Дом"
 
@@ -3841,7 +3844,6 @@ msgstr ""
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:103
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:108
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:76
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:500
 msgid "Example"
 msgstr "Пример"
 
@@ -3968,9 +3970,9 @@ msgstr "Источники загрузки"
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:103
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:60
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:352
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1263
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1317
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1384
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1309
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1363
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1430
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:131
 #: exe/webui/stylemanagerpage.py:236
 #: exe/webui/tools/mindmaps/src/js/MainViewController.js:123
@@ -4231,7 +4233,7 @@ msgid "Failed to save properties"
 msgstr "Ошибка сохранения свойств"
 
 #: exe/jsui/scripts/app/controller/Idevice.js:59
-#: exe/jsui/scripts/app/controller/Outline.js:206
+#: exe/jsui/scripts/app/controller/Outline.js:219
 #: exe/jsui/scripts/app/controller/Toolbar.js:363 exe/webui/editorpage.py:250
 #: exe/webui/editorpane.py:401
 #: exe/webui/tools/mindmaps/src/js/Notification.js:191
@@ -4239,9 +4241,11 @@ msgid "Info"
 msgstr "Информация"
 
 #: exe/jsui/scripts/app/controller/Idevice.js:60
-#: exe/jsui/scripts/app/controller/Outline.js:207
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
-msgid "The changes you made will be lost if you navigate away from this page."
+#: exe/jsui/scripts/app/controller/Outline.js:220
+#, fuzzy
+msgid ""
+"Please save your iDevice first. The changes you made will be lost if you "
+"navigate away from this page."
 msgstr "Произведённые изменения будут утеряны, если Вы уйдете с этой страницы."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:238
@@ -4291,7 +4295,7 @@ msgstr "Галерея изображений"
 #: exe/webui/scripts/authoring.js:180 exe/webui/scripts/authoring.js:203
 #: exe/webui/scripts/authoring.js:504 exe/webui/scripts/authoring.js:514
 #: exe/webui/scripts/authoring.js:522 exe/webui/scripts/authoring.js:545
-#: exe/webui/scripts/editor.js:99 exe/webui/scripts/editor.js:126
+#: exe/webui/scripts/editor.js:110 exe/webui/scripts/editor.js:137
 #: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
 msgstr "Все файлы"
@@ -4360,9 +4364,9 @@ msgstr "Ошибка"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:353
 #: exe/jsui/scripts/app/controller/MainTab.js:406
-#: exe/jsui/scripts/app/controller/Outline.js:245
+#: exe/jsui/scripts/app/controller/Outline.js:258
 #: exe/jsui/scripts/app/controller/Toolbar.js:660
-#: exe/webui/scripts/editor.js:55
+#: exe/webui/scripts/editor.js:66
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:325
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:78
 #: exe/webui/tools/style-designer/langs/all.js:129
@@ -4386,22 +4390,50 @@ msgid "LOM Metadata import success!"
 msgstr "Успешный импорт метаданных LOM!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:165
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:49
+msgid "Add Page"
+msgstr "Добавить страницу"
+
+#: exe/jsui/scripts/app/controller/Outline.js:168
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56 exe/webui/block.py:245
+#: exe/webui/block.py:341 exe/webui/editorelement.py:78
+#: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
+#: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
+#: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
+#: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
+#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:113
+#: exe/webui/jsblock.py:118 exe/webui/scripts/editor.js:22
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:907
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:942
+#: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:635
+#: exe/webui/tools/mindmaps/src/js/Command.js:131
+#: exe/webui/tools/mindmaps/src/js/Command.js:133
+msgid "Delete"
+msgstr "Удалить"
+
+#: exe/jsui/scripts/app/controller/Outline.js:171
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:63
+msgid "Rename"
+msgstr "Переименовать"
+
+#: exe/jsui/scripts/app/controller/Outline.js:178
 msgid "Insert elp in this page"
 msgstr "Вставить elp на эту страницу"
 
-#: exe/jsui/scripts/app/controller/Outline.js:168
+#: exe/jsui/scripts/app/controller/Outline.js:181
 msgid "Export this page as elp"
 msgstr "Экспортировать эту страницу как elp"
 
-#: exe/jsui/scripts/app/controller/Outline.js:243
+#: exe/jsui/scripts/app/controller/Outline.js:256
 msgid "Delete \"{node}\" node and all its children?"
 msgstr "Удалить \"{node}\" узел и всех его наследников?"
 
-#: exe/jsui/scripts/app/controller/Outline.js:268
+#: exe/jsui/scripts/app/controller/Outline.js:281
 msgid "Rename \"{node}\" node"
 msgstr "Переименовать \"{node}\" узел"
 
-#: exe/jsui/scripts/app/controller/Outline.js:272
+#: exe/jsui/scripts/app/controller/Outline.js:285
 msgid "Enter the new name:"
 msgstr "Введите новое имя файла:"
 
@@ -4508,6 +4540,7 @@ msgstr "Пакет"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:54
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:68
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:405
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:506
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:626
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:649
 #: exe/webui/tools/style-designer/langs/all.js:13
@@ -4880,7 +4913,7 @@ msgid "You do not have the permissions to create a folder in folder"
 msgstr "У вас нет прав на создание папки в папке"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:387
-#: exe/webui/scripts/editor.js:24
+#: exe/webui/scripts/editor.js:35
 msgid "Confirm?"
 msgstr "Подтверждаете?"
 
@@ -4914,6 +4947,7 @@ msgstr "Имя"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:759
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:156
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:691
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:518
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Type"
@@ -4945,7 +4979,6 @@ msgstr "Открыть"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:395
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:399
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 #: exe/webui/tools/assistant/langs/all.js:53
 #: exe/webui/tools/mindmaps/src/js/Command.js:294
 #: exe/webui/tools/mindmaps/src/js/Command.js:297
@@ -5103,6 +5136,7 @@ msgstr "Конкретная ссылка на ресурс в пределах 
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:93
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:740
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:537
 msgid "Source"
 msgstr "Источник"
 
@@ -5824,9 +5858,10 @@ msgstr "Главный автор ресурса."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:997
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1205
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1235
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:992
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1160
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:467
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1038
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1206
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1236
 #: exe/webui/tools/assistant/langs/all.js:30
 #: exe/webui/tools/style-designer/langs/all.js:40
 msgid "License"
@@ -6396,31 +6431,6 @@ msgstr "LOM"
 msgid "LOM-ES"
 msgstr "LOM-ES"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:49
-msgid "Add Page"
-msgstr "Добавить страницу"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56 exe/webui/block.py:245
-#: exe/webui/block.py:341 exe/webui/editorelement.py:78
-#: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
-#: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
-#: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
-#: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
-#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:113
-#: exe/webui/jsblock.py:118 exe/webui/scripts/editor.js:23
-#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:907
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:942
-#: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:635
-#: exe/webui/tools/mindmaps/src/js/Command.js:131
-#: exe/webui/tools/mindmaps/src/js/Command.js:133
-msgid "Delete"
-msgstr "Удалить"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:63
-msgid "Rename"
-msgstr "Переименовать"
-
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:76
 msgid "Minify this panel"
 msgstr "Сократить эту панель"
@@ -6581,7 +6591,7 @@ msgstr "Утилиты"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:480
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:714 exe/webui/editorpane.py:268
-#: exe/webui/element.py:2106
+#: exe/webui/element.py:2105
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:147
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:6
 msgid "Preview"
@@ -8411,8 +8421,8 @@ msgstr "Название файла:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:191
 #: exe/webui/scripts/authoring.js:506 exe/webui/scripts/authoring.js:516
-#: exe/webui/scripts/authoring.js:1511 exe/webui/scripts/editor.js:83
-#: exe/webui/scripts/editor.js:110
+#: exe/webui/scripts/authoring.js:1511 exe/webui/scripts/editor.js:94
+#: exe/webui/scripts/editor.js:121
 msgid "Select a file"
 msgstr "Выбрать файл"
 
@@ -8651,7 +8661,7 @@ msgid "Enable JavaScript"
 msgstr "Включить JavaScript"
 
 #: exe/webui/common.py:633 exe/webui/common.py:940 exe/webui/element.py:1547
-#: exe/webui/element.py:2477 exe/webui/listablock.py:274
+#: exe/webui/element.py:2476 exe/webui/listablock.py:274
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:24
 #: exe/webui/scripts/idevices/text/edition/text.js:20
 msgid "Show Feedback"
@@ -8661,14 +8671,14 @@ msgstr "Показать \"Обратная связь\""
 msgid "Hide Feedback"
 msgstr "Скрыть \"Обратная связь\""
 
-#: exe/webui/common.py:635 exe/webui/common.py:668 exe/webui/element.py:2280
+#: exe/webui/common.py:635 exe/webui/common.py:668 exe/webui/element.py:2279
 #: exe/webui/stylemanagerpage.py:329 exe/webui/stylemanagerpage.py:509
 #: exe/webui/stylemanagerpage.py:522 exe/webui/templatemanagerpage.py:238
 #: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "Правильно"
 
-#: exe/webui/common.py:636 exe/webui/element.py:2283
+#: exe/webui/common.py:636 exe/webui/element.py:2282
 msgid "Incorrect"
 msgstr "Неправильно"
 
@@ -8694,7 +8704,7 @@ msgstr "Это может не сработать в этом читателе e
 msgid "This activity does not work in ePub."
 msgstr "Это действие не работает в ePub."
 
-#: exe/webui/common.py:643 exe/webui/element.py:2505 exe/webui/element.py:2948
+#: exe/webui/common.py:643 exe/webui/element.py:2504 exe/webui/element.py:2947
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:43
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:280
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:282
@@ -8758,7 +8768,7 @@ msgstr "Найти"
 msgid "Accept"
 msgstr "Принять"
 
-#: exe/webui/common.py:669 exe/webui/element.py:2716 exe/webui/element.py:2734
+#: exe/webui/common.py:669 exe/webui/element.py:2715 exe/webui/element.py:2733
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:47
 msgid "Wrong"
 msgstr "Неправильно"
@@ -8838,6 +8848,11 @@ msgstr "eXe: редактор электронного обучения XHTML"
 msgid "Click for completion instructions"
 msgstr "Щелкните для завершения инструкций"
 
+#: exe/webui/content_template/strings.py:6
+#, fuzzy
+msgid "Base"
+msgstr "Регистр"
+
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
 msgstr "Вы должны знать"
@@ -8884,7 +8899,7 @@ msgstr "Справа"
 msgid "Align:"
 msgstr "Выравнивание:"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1897
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1896
 msgid "Select Flash Object"
 msgstr "Выбрать Flash объект"
 
@@ -9087,7 +9102,7 @@ msgstr "ОШИБКА Element.renderView вызвал напрямую класс
 msgid "Add Image"
 msgstr "Добавить изображение"
 
-#: exe/webui/element.py:789 exe/webui/element.py:1206 exe/webui/element.py:1901
+#: exe/webui/element.py:789 exe/webui/element.py:1206 exe/webui/element.py:1900
 msgid "Display as:"
 msgstr "Отобразить как:"
 
@@ -9124,16 +9139,16 @@ msgstr "Проверить прописные?"
 msgid "Instant Marking?"
 msgstr "Мгновенная маркировка?"
 
-#: exe/webui/element.py:1544 exe/webui/element.py:1802
+#: exe/webui/element.py:1544 exe/webui/element.py:1801
 msgid "Get score"
 msgstr "Получить счёт"
 
-#: exe/webui/element.py:1550 exe/webui/element.py:1808
+#: exe/webui/element.py:1550 exe/webui/element.py:1807
 msgid "Show/Clear Answers"
 msgstr "Показать/Очистить Ответы"
 
 #: exe/webui/element.py:1554 exe/webui/element.py:1556
-#: exe/webui/element.py:1811
+#: exe/webui/element.py:1810
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:40
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:33
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:55
@@ -9145,12 +9160,12 @@ msgstr "Показать/Очистить Ответы"
 msgid "Submit"
 msgstr "Отправить"
 
-#: exe/webui/element.py:1560 exe/webui/element.py:1815
+#: exe/webui/element.py:1560 exe/webui/element.py:1814
 msgid "Show Answers"
 msgstr "Показать ответы"
 
-#: exe/webui/element.py:1596 exe/webui/element.py:1847
-#: exe/webui/element.py:2469 exe/webui/element.py:2929
+#: exe/webui/element.py:1596 exe/webui/element.py:1846
+#: exe/webui/element.py:2468 exe/webui/element.py:2928
 #: exe/webui/listablock.py:312
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:52
 #: exe/webui/testquestionelement.py:158
@@ -9165,42 +9180,42 @@ msgstr "Проверить регистр?"
 msgid "Show Score?"
 msgstr "Показать счёт?"
 
-#: exe/webui/element.py:1805
+#: exe/webui/element.py:1804
 msgid "Show/Hide Feedback"
 msgstr "Показать/Скрыть \"Обратная связь\""
 
-#: exe/webui/element.py:1963
+#: exe/webui/element.py:1962
 msgid "Please select a .flv file."
 msgstr "Пожалуйста, выберите .flv файл."
 
-#: exe/webui/element.py:1979
+#: exe/webui/element.py:1978
 msgid "Select a flash video"
 msgstr "Выбрать flash видео"
 
-#: exe/webui/element.py:2088
+#: exe/webui/element.py:2087
 msgid "text"
 msgstr "текст"
 
-#: exe/webui/element.py:2089
+#: exe/webui/element.py:2088
 msgid "newline"
 msgstr "новая строка"
 
-#: exe/webui/element.py:2092
+#: exe/webui/element.py:2091
 msgid "Select a font size: "
 msgstr "Выбрать размер шрифта: "
 
-#: exe/webui/element.py:2202 exe/webui/element.py:2589
-#: exe/webui/element.py:2714 exe/webui/element.py:2732
+#: exe/webui/element.py:2201 exe/webui/element.py:2588
+#: exe/webui/element.py:2713 exe/webui/element.py:2731
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Скорректировать опцию"
 
-#: exe/webui/element.py:2230 exe/webui/element.py:2617
+#: exe/webui/element.py:2229 exe/webui/element.py:2616
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Удалить опцию"
 
-#: exe/webui/element.py:2369 exe/webui/element.py:2824
+#: exe/webui/element.py:2368 exe/webui/element.py:2823
 #: exe/webui/questionelement.py:121
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:302
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:336
@@ -9213,11 +9228,11 @@ msgstr "Удалить опцию"
 msgid "Delete question"
 msgstr "Удалить вопрос"
 
-#: exe/webui/element.py:2404 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2403 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Добавить ещё один Вариант для ответа"
 
-#: exe/webui/element.py:2839
+#: exe/webui/element.py:2838
 msgid "Add another option"
 msgstr "Добавить ещё один вариант для ответа"
 
@@ -9226,6 +9241,7 @@ msgid "URL:"
 msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:70
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:672
 msgid "Remember that HTTP pages cannot be included into HTTPS websites."
 msgstr "Помните, что страницы HTTP не могут быть включены в веб-сайты HTTPS."
 
@@ -9821,11 +9837,11 @@ msgstr "Импорт/Экспорт"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2130
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2146
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2225
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1435
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2154
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2170
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2195
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2209
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1450
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2169
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2185
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2210
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2224
 msgid "Supported formats"
 msgstr "Поддерживаемые форматы"
 
@@ -9838,15 +9854,15 @@ msgstr ""
 "Перейдите в раздел «Инструменты - Предварительный просмотр», чтобы "
 "увидеть эту работу."
 
-#: exe/webui/scripts/editor.js:53
+#: exe/webui/scripts/editor.js:64
 msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr "Вы хотите заменить существующий idevice {idevice}?"
 
-#: exe/webui/scripts/editor.js:98 exe/webui/scripts/editor.js:125
+#: exe/webui/scripts/editor.js:109 exe/webui/scripts/editor.js:136
 msgid "eXe Idevices"
 msgstr "eXe Idevice'ы"
 
-#: exe/webui/scripts/editor.js:106
+#: exe/webui/scripts/editor.js:117
 msgid "Please save the idevice first, then try to export it."
 msgstr ""
 "Пожалуйста, сначала сохраните idevice, а затем попытайтесь экспортировать"
@@ -10329,11 +10345,12 @@ msgstr "точки"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:842
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:858
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:862
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1435
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1450
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:53
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:665
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:797
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:735
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:522
 msgid "Audio"
 msgstr "Аудио"
 
@@ -10698,6 +10715,7 @@ msgstr "Тип мультимедиа"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:807
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:952
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:775
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:521
 msgid "Video"
 msgstr "Видео"
 
@@ -10967,13 +10985,13 @@ msgstr "Количество вопросов:"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1443
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:93
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1644
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1501
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1516
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:1205
 msgid "Game"
 msgstr "Игра"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:12
-#: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:37
+#: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:38
 msgid "Lock"
 msgstr "Замок"
 
@@ -11010,7 +11028,7 @@ msgstr "Напишите сообщение об ошибке."
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:14
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:45
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:272
-#: exe/webui/scripts/idevices/desafio-activity/export/desafio-activity.js:39
+#: exe/webui/scripts/idevices/desafio-activity/export/desafio-activity.js:40
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:94
 msgid "Challenge"
 msgstr "Вызов"
@@ -11827,8 +11845,9 @@ msgid "Mark all the options in the correct order and click on the 'Reply' button
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
-msgid "Write the correct word or phrase and click on the 'Reply' button."
-msgstr ""
+#, fuzzy
+msgid "Write the correct word o phrase and click on the 'Reply' button."
+msgstr "Выберите правильные ответы и нажмите кнопку ответа."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
@@ -11876,11 +11895,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "It's not true! The right answer is"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -11900,12 +11916,14 @@ msgid "You can do the test."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:110
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1526
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1672
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:634
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1572
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1718
 msgid "Subtitles"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:111
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:643
 msgid "Select a subtitle file. Supported formats:"
 msgstr ""
 
@@ -12519,8 +12537,9 @@ msgstr "Узнайте как применить рубрику"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:380
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1235
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:982
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:480
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1028
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1236
 msgid "All Rights Reserved"
 msgstr "Все права защищены"
 
@@ -12531,8 +12550,10 @@ msgstr "Все права защищены"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1000
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1003
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1230
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:974
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1185
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:470
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:473
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1020
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1231
 msgid "Public Domain"
 msgstr "Публичный домен"
 
@@ -12610,11 +12631,13 @@ msgstr "Показать информацию о рубрике"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:632
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:982
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:452
 msgid "Source/Author"
 msgstr "Исходник/Автор"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:633
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:988
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:458
 msgid "Source/Author Link"
 msgstr "Исходник/Авторская ссылка"
 
@@ -12765,7 +12788,7 @@ msgstr "Пожалуйста, напишите некоторую информа
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:15
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:16
-#: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:58
+#: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:59
 msgid "Trivial"
 msgstr ""
 
@@ -13234,6 +13257,7 @@ msgstr "Заголовок 1"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:959
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:429
 #: exe/webui/tools/style-designer/langs/all.js:77
 msgid "Header"
 msgstr "Заголовок"
@@ -13376,6 +13400,10 @@ msgstr ""
 msgid "Anchor"
 msgstr "Якорь"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "Произведённые изменения будут утеряны, если Вы уйдете с этой страницы."
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:68
 msgid "Restore last draft"
 msgstr "Восстановить последний черновик"
@@ -13457,12 +13485,14 @@ msgstr "Название изображения"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:99
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:166
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:630
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Style"
 msgstr "Стиль"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:100
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:546
 msgid "Dimensions"
 msgstr "Размеры"
 
@@ -13510,8 +13540,9 @@ msgstr "Введённый адрес напоминает электронну�
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:29
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2092
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2099
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:501
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2138
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2145
 msgid "Insert/Edit Embedded Media"
 msgstr "Добавить/Изменить встроенный клип"
 
@@ -13520,8 +13551,6 @@ msgid "Alternative source"
 msgstr "Альтернативный источник"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:139
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:508
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:562
 msgid "Use CTRL+V on your keyboard to paste the code into the window."
 msgstr "Используйте CTRL+V на Вашей клавиатуре для вставки кода в окно."
 
@@ -13950,7 +13979,6 @@ msgid "Quote With Authorship"
 msgstr "Цитировать с авторством"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:34
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:379
 msgid "Include Styles (improves presentation)"
 msgstr "Включить стили (улучшает презентацию)"
 
@@ -13996,7 +14024,6 @@ msgid "Auto close tags"
 msgstr "Автоматически закрывать тэги"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:389
 msgid "Highlight syntax"
 msgstr "Подсветка синтаксиса"
 
@@ -14051,10 +14078,12 @@ msgid "Class added to the \"CSS class\" field."
 msgstr "Класс добавлен в поле \"класс CSS\"."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:155
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:616
 msgid "ID"
 msgstr "Идентификатор"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:156
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:629
 msgid "CSS class"
 msgstr "Класс CSS"
 
@@ -14083,6 +14112,7 @@ msgid "Value"
 msgstr "Значение"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:253
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:611
 msgid "Attributes"
 msgstr "Атрибуты"
 
@@ -14340,24 +14370,28 @@ msgid "Select image"
 msgstr "Выбрать изображение"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:966
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:436
 msgid "Footer caption"
 msgstr "Нижний колонтитул"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:976
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:446
 msgid "Title Link"
 msgstr "Название ссылки"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:999
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
 msgid "Choose a license..."
 msgstr "Выберите лицензию..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1011
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1021
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:481
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:491
 msgid "Custom license"
 msgstr "Пользовательская лицензия"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1058
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:424
 msgid "-- Not Set --"
 msgstr "- Не установлено -"
 
@@ -14374,11 +14408,12 @@ msgid "Text Bottom"
 msgstr "По нижнему краю текста"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1100
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:604
 msgid "Title and Attribution"
 msgstr "Название и атрибуты"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1241
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1196
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1242
 msgid "Please check the \"License\" field"
 msgstr "Пожалуйста, проверьте поле \"Лицензия\""
 
@@ -14406,7 +14441,77 @@ msgstr "Всплывание"
 msgid "Please don't forget to write the file size."
 msgstr "Пожалуйста, не забудьте написать размер файла."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1227
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:351
+#, fuzzy
+msgid "Please select the media file to edit it"
+msgstr "Пожалуйста, выберите изображение для редактирования"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:520
+msgid "Detect automatically"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:564
+#, fuzzy
+msgid "JavaScript player"
+msgstr "Всплывающий JavaScript"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:564
+msgid "Improve browser compatibility with some formats"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:565
+#, fuzzy
+msgid "Play controls"
+msgstr "контролировать"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:566
+msgid "Autoplay"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:573
+#, fuzzy
+msgid "Mute Autoplay Video"
+msgstr "Играть видео"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:596
+msgid "Paste your embed code below:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:666
+#, fuzzy
+msgid "Please select the Source"
+msgstr "Пожалуйста, выберите страницу"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:689
+#, fuzzy
+msgid "Mute Autoplay Video (recommended)?"
+msgstr "Если вы показываете код (рекомендуется):"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:876
+#, python-format
+msgid "This format (%s) is valid for audio and video."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:877
+msgid "Cannot detect automatically. Please choose the right type."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:894
+msgid "Successfully updated, but please convert the video to another format:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:902
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:914
+#, fuzzy
+msgid "Selected format: "
+msgstr "Выбрать формат."
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:903
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:915
+msgid "Please use any of these formats or provide a link to the file itself:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1273
 msgid ""
 "This fragment uses old code. Would you like to update it? (necessary to "
 "be able to edit the parameters)"
@@ -14414,12 +14519,12 @@ msgstr ""
 "Этот фрагмент использует старый код. Вы хотите его обновить? (Необходимо,"
 " чтобы была возможность редактировать параметры)"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1286
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1356
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1332
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1402
 msgid "You are using and old code. Update it (required to edit)?"
 msgstr "Вы используете старый код. Обновить его (требуется для редактирования)?"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1344
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1390
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
@@ -14510,14 +14615,6 @@ msgstr "Вы должны написать заголовок."
 msgid "You can edit the mind map..."
 msgstr "Вы можете редактировать ментальную карту"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
-msgid "Back"
-msgstr "Назад"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
-msgid "Crop"
-msgstr "Обрезать"
-
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:88
 msgid "Please write the Content"
 msgstr "Пожалуйста, напишите содержимое"
@@ -14544,57 +14641,6 @@ msgid ""
 msgstr ""
 "Напишите содержимое диалога. Вы можете использовать HTML и редактировать "
 "его в редакторе."
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:186
-msgid "Please select a programming language"
-msgstr "Выберите язык программирования."
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:362
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:589
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:608
-msgid "Insert HTML code as text"
-msgstr "Вставить HTML как текст"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:415
-msgid "Programming language"
-msgstr "Язык программирования"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:425
-msgid "Markup (HTML, etc.)"
-msgstr "Язык разметки (HTML и т. д.)"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:427
-msgid "C type"
-msgstr "Тип C"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:457
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
-msgid "Appearance"
-msgstr "Вид"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:466
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:843
-msgid "Light"
-msgstr "Освещение"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:467
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:844
-msgid "Dark"
-msgstr "Тёмное"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:485
-msgid "Line numbers"
-msgstr "Номера строк"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:489
-msgid "Line highlight"
-msgstr "Выделите линии"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:556
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:601
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:616
-msgid "Paste HTML fragment (embed code)"
-msgstr "Вставить фрагмент HTML (встроенный код)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -15059,6 +15105,10 @@ msgstr "Открыть в том же окне"
 msgid "Open in a new window"
 msgstr "Открыть в новом окне"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
+msgid "Appearance"
+msgstr "Вид"
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:840
 msgid "Change the styling:"
 msgstr "Изменить оформление:"
@@ -15066,6 +15116,14 @@ msgstr "Изменить оформление:"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:842
 msgid "Yellow"
 msgstr "Жёлтый"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:843
+msgid "Light"
+msgstr "Освещение"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:844
+msgid "Dark"
+msgstr "Тёмное"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:845
 msgid "Red"
@@ -15169,6 +15227,7 @@ msgid "Subscript"
 msgstr "Подстрочный"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:583
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 #: exe/webui/scripts/tinymce_4_settings.js:218
 msgid "Code"
@@ -15737,6 +15796,10 @@ msgstr "Введите значение альфа (0-100)"
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr "Введите шестнадцатеричное значение цвета (#000000-#ffffff)"
 
+#: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
+msgid "'"
+msgstr ""
+
 #: exe/webui/tools/image-compressor/js/langs/all.js:7
 msgid "Drop image here or $browse...$"
 msgstr "Перетащите изображение сюда или $Выбери одно...$"
@@ -16276,4 +16339,40 @@ msgstr ""
 
 #~ msgid "¡It is not correct! You have clicked on"
 #~ msgstr ""
+
+#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
+#~ msgstr ""
+
+#~ msgid "It's not true! The right answer is"
+#~ msgstr ""
+
+#~ msgid "Back"
+#~ msgstr "Назад"
+
+#~ msgid "Crop"
+#~ msgstr "Обрезать"
+
+#~ msgid "Please select a programming language"
+#~ msgstr "Выберите язык программирования."
+
+#~ msgid "Insert HTML code as text"
+#~ msgstr "Вставить HTML как текст"
+
+#~ msgid "Programming language"
+#~ msgstr "Язык программирования"
+
+#~ msgid "Markup (HTML, etc.)"
+#~ msgstr "Язык разметки (HTML и т. д.)"
+
+#~ msgid "C type"
+#~ msgstr "Тип C"
+
+#~ msgid "Line numbers"
+#~ msgstr "Номера строк"
+
+#~ msgid "Line highlight"
+#~ msgstr "Выделите линии"
+
+#~ msgid "Paste HTML fragment (embed code)"
+#~ msgstr "Вставить фрагмент HTML (встроенный код)"
 

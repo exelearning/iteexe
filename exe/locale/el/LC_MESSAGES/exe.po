@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2022-02-23 11:01+0100\n"
+"POT-Creation-Date: 2022-04-06 11:24+0200\n"
 "PO-Revision-Date: 2021-05-29 18:15+0200\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
@@ -19,7 +19,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.9.1\n"
 
 #: exe/application.py:239
 #, python-format
@@ -490,6 +490,7 @@ msgstr "Πιέστε για να κάνετε την τοποθέτηση στη
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:389
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:82
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:154
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:440
 #: exe/webui/tools/assistant/langs/all.js:26
 msgid "Title"
 msgstr "Τίτλος"
@@ -844,8 +845,8 @@ msgstr ""
 #: exe/webui/clozefpdblock.py:209 exe/webui/clozelangfpdblock.py:221
 #: exe/webui/common.py:965 exe/webui/common.py:975
 #: exe/webui/editorelement.py:148 exe/webui/editorpane.py:255
-#: exe/webui/element.py:2485 exe/webui/element.py:2620
-#: exe/webui/element.py:2735 exe/webui/element.py:2936
+#: exe/webui/element.py:2484 exe/webui/element.py:2619
+#: exe/webui/element.py:2734 exe/webui/element.py:2935
 #: exe/webui/listablock.py:461 exe/webui/questionelement.py:114
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:170
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:34
@@ -1170,9 +1171,9 @@ msgstr ""
 #: exe/engine/eleccionmultiplefpdidevice.py:133 exe/engine/field.py:3802
 #: exe/engine/field.py:3867 exe/engine/multichoiceidevice.py:131
 #: exe/engine/multiselectidevice.py:82
-#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2460
-#: exe/webui/element.py:2464 exe/webui/element.py:2913
-#: exe/webui/element.py:2917 exe/webui/scripts/authoring.js:1271
+#: exe/engine/seleccionmultiplefpdidevice.py:84 exe/webui/element.py:2459
+#: exe/webui/element.py:2463 exe/webui/element.py:2912
+#: exe/webui/element.py:2916 exe/webui/scripts/authoring.js:1271
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:76
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:51
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:464
@@ -1286,6 +1287,7 @@ msgstr "Φόρτωση"
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:370
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:675
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:224
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:651
 #: exe/webui/style/INTEF/_intef_js.js:125
 msgid "File"
 msgstr "Αρχείο"
@@ -1498,8 +1500,8 @@ msgstr ""
 
 #: exe/engine/field.py:3727 exe/engine/field.py:3776
 #: exe/engine/quiztestidevice.py:48 exe/engine/quiztestidevice.py:98
-#: exe/webui/element.py:2197 exe/webui/element.py:2252
-#: exe/webui/element.py:2584 exe/webui/element.py:2676
+#: exe/webui/element.py:2196 exe/webui/element.py:2251
+#: exe/webui/element.py:2583 exe/webui/element.py:2675
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:79
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:922
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:926
@@ -1523,7 +1525,7 @@ msgstr "Επιλογή"
 msgid "Hint"
 msgstr "Υπόδειξη"
 
-#: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2389
+#: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2388
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:129
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:260
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:163
@@ -1533,6 +1535,7 @@ msgstr "Υπόδειξη"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:722
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:609
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:239
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:559
 #: exe/webui/testquestionelement.py:110
 msgid "Options"
 msgstr "Επιλογές"
@@ -1553,7 +1556,7 @@ msgstr ""
 #: exe/engine/quiztestidevice.py:129 exe/engine/quiztestidevice.py:221
 #: exe/engine/truefalseidevice.py:46 exe/engine/truefalseidevice.py:122
 #: exe/engine/verdaderofalsofpdidevice.py:47
-#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2364
+#: exe/engine/verdaderofalsofpdidevice.py:123 exe/webui/element.py:2363
 msgid "Question:"
 msgstr "Ερώτηση:"
 
@@ -1931,7 +1934,7 @@ msgid "Text for reset button"
 msgstr "Κείμενο για το πλήκτρο επαναφοράς"
 
 #: exe/engine/hangmanidevice.py:101 exe/webui/common.py:676
-#: exe/webui/element.py:1557 exe/webui/element.py:1812
+#: exe/webui/element.py:1557 exe/webui/element.py:1811
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:64
 msgid "Restart"
 msgstr "Επανεκκίνηση"
@@ -2871,20 +2874,20 @@ msgstr "Κείμενο 'Στόχοι για τους εκπαιδευτικού�
 msgid "Guidelines Teacher Text:"
 msgstr "Κείμενο 'Στόχοι για τους εκπαιδευτικούς'::"
 
-#: exe/engine/package.py:330
-msgid "Section"
-msgstr "Ενότητα"
-
-#: exe/engine/package.py:330
-msgid "Unit"
-msgstr "Παράγραφος"
-
-#: exe/engine/package.py:330
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:7
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:750
 msgid "Topic"
 msgstr "Κεφάλαιο"
 
-#: exe/engine/package.py:354
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:8
+msgid "Section"
+msgstr "Ενότητα"
+
+#: exe/engine/package.py:330 exe/webui/content_template/strings.py:9
+msgid "Unit"
+msgstr "Παράγραφος"
+
+#: exe/engine/package.py:354 exe/webui/content_template/strings.py:12
 msgid "Home"
 msgstr "Αρχή"
 
@@ -3890,7 +3893,6 @@ msgstr ""
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:103
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:108
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:76
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:500
 msgid "Example"
 msgstr "Παράδειγμα"
 
@@ -4015,9 +4017,9 @@ msgstr "Λήψη πηγών"
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:103
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:60
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:352
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1263
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1317
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1384
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1309
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1363
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1430
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:131
 #: exe/webui/stylemanagerpage.py:236
 #: exe/webui/tools/mindmaps/src/js/MainViewController.js:123
@@ -4282,7 +4284,7 @@ msgid "Failed to save properties"
 msgstr "Αδυναμία αποθήκευσης ιδιοτήτων"
 
 #: exe/jsui/scripts/app/controller/Idevice.js:59
-#: exe/jsui/scripts/app/controller/Outline.js:206
+#: exe/jsui/scripts/app/controller/Outline.js:219
 #: exe/jsui/scripts/app/controller/Toolbar.js:363 exe/webui/editorpage.py:250
 #: exe/webui/editorpane.py:401
 #: exe/webui/tools/mindmaps/src/js/Notification.js:191
@@ -4290,9 +4292,11 @@ msgid "Info"
 msgstr "Πληροφορίες"
 
 #: exe/jsui/scripts/app/controller/Idevice.js:60
-#: exe/jsui/scripts/app/controller/Outline.js:207
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
-msgid "The changes you made will be lost if you navigate away from this page."
+#: exe/jsui/scripts/app/controller/Outline.js:220
+#, fuzzy
+msgid ""
+"Please save your iDevice first. The changes you made will be lost if you "
+"navigate away from this page."
 msgstr "Οι αλλαγές που κάνατε θα χαθούν εάν πλοηγηθείτε εκτός αυτής της σελίδας."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:238
@@ -4342,7 +4346,7 @@ msgstr "Αρχεία εικόνων"
 #: exe/webui/scripts/authoring.js:180 exe/webui/scripts/authoring.js:203
 #: exe/webui/scripts/authoring.js:504 exe/webui/scripts/authoring.js:514
 #: exe/webui/scripts/authoring.js:522 exe/webui/scripts/authoring.js:545
-#: exe/webui/scripts/editor.js:99 exe/webui/scripts/editor.js:126
+#: exe/webui/scripts/editor.js:110 exe/webui/scripts/editor.js:137
 #: exe/webui/scripts/stylemanager.js:42 exe/webui/scripts/stylemanager.js:66
 msgid "All Files"
 msgstr "Όλα τα αρχεία"
@@ -4411,9 +4415,9 @@ msgstr "Σφάλμα"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:353
 #: exe/jsui/scripts/app/controller/MainTab.js:406
-#: exe/jsui/scripts/app/controller/Outline.js:245
+#: exe/jsui/scripts/app/controller/Outline.js:258
 #: exe/jsui/scripts/app/controller/Toolbar.js:660
-#: exe/webui/scripts/editor.js:55
+#: exe/webui/scripts/editor.js:66
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:325
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/plugin.min.js:78
 #: exe/webui/tools/style-designer/langs/all.js:129
@@ -4437,22 +4441,50 @@ msgid "LOM Metadata import success!"
 msgstr "Επιτυχημένη εισαγωγή μεταδεδομένων LOM!"
 
 #: exe/jsui/scripts/app/controller/Outline.js:165
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:49
+msgid "Add Page"
+msgstr "Προσθήκη σελίδας"
+
+#: exe/jsui/scripts/app/controller/Outline.js:168
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56 exe/webui/block.py:245
+#: exe/webui/block.py:341 exe/webui/editorelement.py:78
+#: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
+#: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
+#: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
+#: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
+#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:113
+#: exe/webui/jsblock.py:118 exe/webui/scripts/editor.js:22
+#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:907
+#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:942
+#: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:635
+#: exe/webui/tools/mindmaps/src/js/Command.js:131
+#: exe/webui/tools/mindmaps/src/js/Command.js:133
+msgid "Delete"
+msgstr "Διαγραφή"
+
+#: exe/jsui/scripts/app/controller/Outline.js:171
+#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:63
+msgid "Rename"
+msgstr "Μετονομασία"
+
+#: exe/jsui/scripts/app/controller/Outline.js:178
 msgid "Insert elp in this page"
 msgstr "Εισαγωγή αρχείου elp σε αυτή τη σελίδα"
 
-#: exe/jsui/scripts/app/controller/Outline.js:168
+#: exe/jsui/scripts/app/controller/Outline.js:181
 msgid "Export this page as elp"
 msgstr "Εξαγωγή αυτής της σελίδας σε αρχείο elp"
 
-#: exe/jsui/scripts/app/controller/Outline.js:243
+#: exe/jsui/scripts/app/controller/Outline.js:256
 msgid "Delete \"{node}\" node and all its children?"
 msgstr "Διαγραφή κόμβου \"{node}\" και όλων των απόγονων κόμβων;"
 
-#: exe/jsui/scripts/app/controller/Outline.js:268
+#: exe/jsui/scripts/app/controller/Outline.js:281
 msgid "Rename \"{node}\" node"
 msgstr "Μετονομασία κόμβου \"{node}\""
 
-#: exe/jsui/scripts/app/controller/Outline.js:272
+#: exe/jsui/scripts/app/controller/Outline.js:285
 msgid "Enter the new name:"
 msgstr "Εισαγωγή νέου ονόματος:"
 
@@ -4562,6 +4594,7 @@ msgstr "Πακέτο"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:54
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:68
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exelink/plugin.min.js:405
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:506
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:626
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:649
 #: exe/webui/tools/style-designer/langs/all.js:13
@@ -4937,7 +4970,7 @@ msgid "You do not have the permissions to create a folder in folder"
 msgstr "Δεν έχετε άδεια να δημιουργήσετε υποφάκελο"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:387
-#: exe/webui/scripts/editor.js:24
+#: exe/webui/scripts/editor.js:35
 msgid "Confirm?"
 msgstr "Επιβεβαίωση;"
 
@@ -4971,6 +5004,7 @@ msgstr "Όνομα"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:759
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:156
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:691
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:518
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Type"
@@ -5002,7 +5036,6 @@ msgstr "Άνοιγμα"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:395
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:399
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/langs/all.js:7
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
 #: exe/webui/tools/assistant/langs/all.js:53
 #: exe/webui/tools/mindmaps/src/js/Command.js:294
 #: exe/webui/tools/mindmaps/src/js/Command.js:297
@@ -5159,6 +5192,7 @@ msgstr "Σαφής αναφορά σε ένα εκπαιδευτικό υλικ�
 #: exe/jsui/scripts/app/view/forms/LomSections.js:193
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:93
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:740
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:537
 msgid "Source"
 msgstr "Πηγή"
 
@@ -5897,9 +5931,10 @@ msgstr "Αρχικός δημιουργός του έργου."
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:997
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1205
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1235
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:992
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1160
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:467
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1038
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1206
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1236
 #: exe/webui/tools/assistant/langs/all.js:30
 #: exe/webui/tools/style-designer/langs/all.js:40
 msgid "License"
@@ -6479,31 +6514,6 @@ msgstr "LOM"
 msgid "LOM-ES"
 msgstr "LOM-ES"
 
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:49
-msgid "Add Page"
-msgstr "Προσθήκη σελίδας"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56 exe/webui/block.py:245
-#: exe/webui/block.py:341 exe/webui/editorelement.py:78
-#: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
-#: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
-#: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
-#: exe/webui/editorpage.py:255 exe/webui/editorpage.py:258
-#: exe/webui/galleryblock.py:299 exe/webui/jsblock.py:113
-#: exe/webui/jsblock.py:118 exe/webui/scripts/editor.js:23
-#: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:3
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:907
-#: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:942
-#: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:635
-#: exe/webui/tools/mindmaps/src/js/Command.js:131
-#: exe/webui/tools/mindmaps/src/js/Command.js:133
-msgid "Delete"
-msgstr "Διαγραφή"
-
-#: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:63
-msgid "Rename"
-msgstr "Μετονομασία"
-
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:76
 msgid "Minify this panel"
 msgstr "Ελαχιστοποίηση αυτού του πίνακα"
@@ -6664,7 +6674,7 @@ msgstr "Εργαλεία"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:480
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:714 exe/webui/editorpane.py:268
-#: exe/webui/element.py:2106
+#: exe/webui/element.py:2105
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:147
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/abcmusic/langs/all.js:6
 msgid "Preview"
@@ -8498,8 +8508,8 @@ msgstr "Όνομα αρχείου:"
 #: exe/webui/attachmentblock.py:104 exe/webui/editorelement.py:351
 #: exe/webui/element.py:1085 exe/webui/scripts/authoring.js:191
 #: exe/webui/scripts/authoring.js:506 exe/webui/scripts/authoring.js:516
-#: exe/webui/scripts/authoring.js:1511 exe/webui/scripts/editor.js:83
-#: exe/webui/scripts/editor.js:110
+#: exe/webui/scripts/authoring.js:1511 exe/webui/scripts/editor.js:94
+#: exe/webui/scripts/editor.js:121
 msgid "Select a file"
 msgstr "Επιλογή αρχείου"
 
@@ -8750,7 +8760,7 @@ msgid "Enable JavaScript"
 msgstr "Ενεργοποίηση JavaScript"
 
 #: exe/webui/common.py:633 exe/webui/common.py:940 exe/webui/element.py:1547
-#: exe/webui/element.py:2477 exe/webui/listablock.py:274
+#: exe/webui/element.py:2476 exe/webui/listablock.py:274
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:24
 #: exe/webui/scripts/idevices/text/edition/text.js:20
 msgid "Show Feedback"
@@ -8760,14 +8770,14 @@ msgstr "Ανατροφοδότηση"
 msgid "Hide Feedback"
 msgstr "Απόκρυψη Ανατροφοδότησης"
 
-#: exe/webui/common.py:635 exe/webui/common.py:668 exe/webui/element.py:2280
+#: exe/webui/common.py:635 exe/webui/common.py:668 exe/webui/element.py:2279
 #: exe/webui/stylemanagerpage.py:329 exe/webui/stylemanagerpage.py:509
 #: exe/webui/stylemanagerpage.py:522 exe/webui/templatemanagerpage.py:238
 #: exe/webui/templatemanagerpage.py:260
 msgid "Correct"
 msgstr "Σωστό"
 
-#: exe/webui/common.py:636 exe/webui/element.py:2283
+#: exe/webui/common.py:636 exe/webui/element.py:2282
 msgid "Incorrect"
 msgstr "Λάθος"
 
@@ -8793,7 +8803,7 @@ msgstr "Αυτό ενδεχομένως να μην λειτουργήσει σ�
 msgid "This activity does not work in ePub."
 msgstr "Αυτή η δραστηριότητα δεν λειτουργεί σε αναγνώστη ePub."
 
-#: exe/webui/common.py:643 exe/webui/element.py:2505 exe/webui/element.py:2948
+#: exe/webui/common.py:643 exe/webui/element.py:2504 exe/webui/element.py:2947
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:43
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:280
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:282
@@ -8857,7 +8867,7 @@ msgstr "Αναζήτηση"
 msgid "Accept"
 msgstr "Αποδοχή"
 
-#: exe/webui/common.py:669 exe/webui/element.py:2716 exe/webui/element.py:2734
+#: exe/webui/common.py:669 exe/webui/element.py:2715 exe/webui/element.py:2733
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:47
 msgid "Wrong"
 msgstr "Λάθος"
@@ -8937,6 +8947,11 @@ msgstr "eXe : συντάκτης XHTML για την εξ' αποστάσεως 
 msgid "Click for completion instructions"
 msgstr "Κλικ για οδηγίες συμπλήρωσης"
 
+#: exe/webui/content_template/strings.py:6
+#, fuzzy
+msgid "Base"
+msgstr "Θήκη"
+
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
 msgstr "Θα πρέπει να γνωρίζεις"
@@ -8983,7 +8998,7 @@ msgstr "Δεξιά"
 msgid "Align:"
 msgstr "Στοίχιση:"
 
-#: exe/webui/editorelement.py:268 exe/webui/element.py:1897
+#: exe/webui/editorelement.py:268 exe/webui/element.py:1896
 msgid "Select Flash Object"
 msgstr "Επιλογή αντικειμένου flash"
 
@@ -9188,7 +9203,7 @@ msgstr "ΣΦΑΛΜΑ: Απευθείας κλήση του element.renderView μ
 msgid "Add Image"
 msgstr "Επιλογή εικόνας"
 
-#: exe/webui/element.py:789 exe/webui/element.py:1206 exe/webui/element.py:1901
+#: exe/webui/element.py:789 exe/webui/element.py:1206 exe/webui/element.py:1900
 msgid "Display as:"
 msgstr "Μέγεθος εμφάνισης:"
 
@@ -9225,16 +9240,16 @@ msgstr "Έλεγχος κεφαλαίων - πεζών;"
 msgid "Instant Marking?"
 msgstr "Άμεση σημείωση;"
 
-#: exe/webui/element.py:1544 exe/webui/element.py:1802
+#: exe/webui/element.py:1544 exe/webui/element.py:1801
 msgid "Get score"
 msgstr "Λήψη βαθμολογίας"
 
-#: exe/webui/element.py:1550 exe/webui/element.py:1808
+#: exe/webui/element.py:1550 exe/webui/element.py:1807
 msgid "Show/Clear Answers"
 msgstr "Εμφάνιση/Απόκρυψη απαντήσεων"
 
 #: exe/webui/element.py:1554 exe/webui/element.py:1556
-#: exe/webui/element.py:1811
+#: exe/webui/element.py:1810
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:40
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:33
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:55
@@ -9246,12 +9261,12 @@ msgstr "Εμφάνιση/Απόκρυψη απαντήσεων"
 msgid "Submit"
 msgstr "Υποβολή"
 
-#: exe/webui/element.py:1560 exe/webui/element.py:1815
+#: exe/webui/element.py:1560 exe/webui/element.py:1814
 msgid "Show Answers"
 msgstr "Εμφάνιση Απαντήσεων"
 
-#: exe/webui/element.py:1596 exe/webui/element.py:1847
-#: exe/webui/element.py:2469 exe/webui/element.py:2929
+#: exe/webui/element.py:1596 exe/webui/element.py:1846
+#: exe/webui/element.py:2468 exe/webui/element.py:2928
 #: exe/webui/listablock.py:312
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:52
 #: exe/webui/testquestionelement.py:158
@@ -9266,42 +9281,42 @@ msgstr "Έλεγχος για κεφαλαία;"
 msgid "Show Score?"
 msgstr "Εμφάνιση βαθμολογίας;"
 
-#: exe/webui/element.py:1805
+#: exe/webui/element.py:1804
 msgid "Show/Hide Feedback"
 msgstr "Εμφάνιση/Απόκρυψη ανατροφοδότησης"
 
-#: exe/webui/element.py:1963
+#: exe/webui/element.py:1962
 msgid "Please select a .flv file."
 msgstr "Παρακαλώ επιλέξτε ένα αρχείο .flv."
 
-#: exe/webui/element.py:1979
+#: exe/webui/element.py:1978
 msgid "Select a flash video"
 msgstr "Επιλογή ταινίας flash"
 
-#: exe/webui/element.py:2088
+#: exe/webui/element.py:2087
 msgid "text"
 msgstr "κείμενο"
 
-#: exe/webui/element.py:2089
+#: exe/webui/element.py:2088
 msgid "newline"
 msgstr "νέα γραμμή"
 
-#: exe/webui/element.py:2092
+#: exe/webui/element.py:2091
 msgid "Select a font size: "
 msgstr "Επιλογή μεγέθους γραμματοσειράς: "
 
-#: exe/webui/element.py:2202 exe/webui/element.py:2589
-#: exe/webui/element.py:2714 exe/webui/element.py:2732
+#: exe/webui/element.py:2201 exe/webui/element.py:2588
+#: exe/webui/element.py:2713 exe/webui/element.py:2731
 #: exe/webui/testoptionelement.py:111
 msgid "Correct Option"
 msgstr "Σωστή Επιλογή"
 
-#: exe/webui/element.py:2230 exe/webui/element.py:2617
+#: exe/webui/element.py:2229 exe/webui/element.py:2616
 #: exe/webui/testoptionelement.py:139
 msgid "Delete option"
 msgstr "Διαγραφή επιλογής"
 
-#: exe/webui/element.py:2369 exe/webui/element.py:2824
+#: exe/webui/element.py:2368 exe/webui/element.py:2823
 #: exe/webui/questionelement.py:121
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:302
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:336
@@ -9314,11 +9329,11 @@ msgstr "Διαγραφή επιλογής"
 msgid "Delete question"
 msgstr "Διαγραφή ερώτησης"
 
-#: exe/webui/element.py:2404 exe/webui/testquestionelement.py:122
+#: exe/webui/element.py:2403 exe/webui/testquestionelement.py:122
 msgid "Add another Option"
 msgstr "Προσθήκη άλλης Eπιλογής"
 
-#: exe/webui/element.py:2839
+#: exe/webui/element.py:2838
 msgid "Add another option"
 msgstr "Προσθήκη άλλης επιλογής"
 
@@ -9327,6 +9342,7 @@ msgid "URL:"
 msgstr "URL:"
 
 #: exe/webui/externalurlblock.py:70
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:672
 msgid "Remember that HTTP pages cannot be included into HTTPS websites."
 msgstr ""
 "Να θυμάστε ότι ιστοσελίδες HTTP δεν μπορούν να συμπεριληφθούν σε HTTPS "
@@ -9936,11 +9952,11 @@ msgstr "Εισαγωγή/Εξαγωγή"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2130
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2146
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2225
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1435
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2154
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2170
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2195
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2209
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1450
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2169
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2185
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2210
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2224
 msgid "Supported formats"
 msgstr "Υποστηριζόμενες μορφές"
 
@@ -9951,15 +9967,15 @@ msgstr "Υποστηριζόμενες μορφές"
 msgid "Go to Tools - Preview to see this working"
 msgstr "Μεταβείτε στο μενού Εργαλεία --> Προεπισκόπηση για να δείτε πως λειτουργεί"
 
-#: exe/webui/scripts/editor.js:53
+#: exe/webui/scripts/editor.js:64
 msgid "Do you want to overwrite the existing idevice {idevice}?"
 msgstr "Θέλετε να διαγράψετε το προϋπάρχον η-Σύνεργο {idevice};"
 
-#: exe/webui/scripts/editor.js:98 exe/webui/scripts/editor.js:125
+#: exe/webui/scripts/editor.js:109 exe/webui/scripts/editor.js:136
 msgid "eXe Idevices"
 msgstr "η-Σύνεργα eXe"
 
-#: exe/webui/scripts/editor.js:106
+#: exe/webui/scripts/editor.js:117
 msgid "Please save the idevice first, then try to export it."
 msgstr "Παρακαλώ πρώτα αποθηκεύστε το η-Σύνεργο και μετά κάντε εξαγωγή."
 
@@ -10440,11 +10456,12 @@ msgstr "βαθμοί"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:842
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:858
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:862
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1435
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1450
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:53
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:665
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:797
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:735
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:522
 msgid "Audio"
 msgstr "Ήχος"
 
@@ -10817,6 +10834,7 @@ msgstr "Είδος πολυμέσου"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:807
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:952
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:775
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:521
 msgid "Video"
 msgstr "Βίντεο"
 
@@ -11086,13 +11104,13 @@ msgstr "Αριθμός ερωτήσεων:"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1443
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:93
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1644
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1501
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1516
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:1205
 msgid "Game"
 msgstr "Παιχνίδι"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:12
-#: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:37
+#: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:38
 msgid "Lock"
 msgstr "Κλείδωμα δραστηριότητας"
 
@@ -11129,7 +11147,7 @@ msgstr "Παρακαλώ καταχωρίστε το μήνυμα λάθους."
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:14
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:45
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:272
-#: exe/webui/scripts/idevices/desafio-activity/export/desafio-activity.js:39
+#: exe/webui/scripts/idevices/desafio-activity/export/desafio-activity.js:40
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:94
 msgid "Challenge"
 msgstr "Δοκιμασία"
@@ -11954,8 +11972,9 @@ msgid "Mark all the options in the correct order and click on the 'Reply' button
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
-msgid "Write the correct word or phrase and click on the 'Reply' button."
-msgstr ""
+#, fuzzy
+msgid "Write the correct word o phrase and click on the 'Reply' button."
+msgstr "Επιλέξτε τις σωστές απαντήσεις και κάντε κλικ στο κουμπί Έλεγχος."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
@@ -12003,11 +12022,8 @@ msgid ""
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:103
-msgid "It is not correct! You have clicked on"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:104
-msgid "It's not true! The right answer is"
+msgid "It is not correct! You have clicked on"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:105
@@ -12027,12 +12043,14 @@ msgid "You can do the test."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:110
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1526
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1672
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:634
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1572
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1718
 msgid "Subtitles"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:111
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:643
 msgid "Select a subtitle file. Supported formats:"
 msgstr ""
 
@@ -12652,8 +12670,9 @@ msgstr "Μάθετε πως να δημιουργείτε μια ρουμπρί�
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:380
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1010
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1235
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:982
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1190
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:480
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1028
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1236
 msgid "All Rights Reserved"
 msgstr "All Rights Reserved"
 
@@ -12664,8 +12683,10 @@ msgstr "All Rights Reserved"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1000
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1003
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1230
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:974
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1185
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:470
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:473
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1020
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1231
 msgid "Public Domain"
 msgstr "Κοινό κτήμα"
 
@@ -12743,11 +12764,13 @@ msgstr "Εμφάνιση πληροφοριών ρουμπρίκας"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:632
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:982
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:452
 msgid "Source/Author"
 msgstr "Πηγή/Δημιουργός"
 
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:633
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:988
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:458
 msgid "Source/Author Link"
 msgstr "Σύνδεσμος Πηγής/Δημιουργού"
 
@@ -12900,7 +12923,7 @@ msgstr "Παρακαλώ γράψτε μερικές πληροφορίες."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:15
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:16
-#: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:58
+#: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:59
 msgid "Trivial"
 msgstr ""
 
@@ -13369,6 +13392,7 @@ msgstr "Επικεφαλίδα 1"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:18
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:199
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:959
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:429
 #: exe/webui/tools/style-designer/langs/all.js:77
 msgid "Header"
 msgstr "Κεφαλίδα"
@@ -13511,6 +13535,10 @@ msgstr ""
 msgid "Anchor"
 msgstr "Άγκυρα"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:67
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "Οι αλλαγές που κάνατε θα χαθούν εάν πλοηγηθείτε εκτός αυτής της σελίδας."
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:68
 msgid "Restore last draft"
 msgstr "Επαναφορά τελευταίου προσχεδίου"
@@ -13592,12 +13620,14 @@ msgstr "Τίτλος εικόνας"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:99
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:166
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:630
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Style"
 msgstr "Τεχνοτροπία"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:100
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:546
 msgid "Dimensions"
 msgstr "Διαστάσεις"
 
@@ -13649,8 +13679,9 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:136
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:29
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2092
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2099
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:501
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2138
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:2145
 msgid "Insert/Edit Embedded Media"
 msgstr "Εισαγωγή/Επεξεργασία ενσωματωμένου μέσου"
 
@@ -13659,8 +13690,6 @@ msgid "Alternative source"
 msgstr "Εναλλακτική πηγή"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:139
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:508
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:562
 msgid "Use CTRL+V on your keyboard to paste the code into the window."
 msgstr ""
 "Χρησιμοποιήστε τη συντόμευση CTRL+V στο πληκτρολόγιό σας για να "
@@ -14091,7 +14120,6 @@ msgid "Quote With Authorship"
 msgstr "Παράθεμα με αναφορά στα συγγραφικά δικαιώματα"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/blockquoteandcite/plugin.min.js:34
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:379
 msgid "Include Styles (improves presentation)"
 msgstr "Περιλαμβάνει τεχνοτροπίες (βελτιώνει την παρουσίαση)"
 
@@ -14139,7 +14167,6 @@ msgid "Auto close tags"
 msgstr "Ετικέτες αυτόματου κλεισίματος"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:26
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:389
 msgid "Highlight syntax"
 msgstr "Επισήμανση σύνταξης"
 
@@ -14194,10 +14221,12 @@ msgid "Class added to the \"CSS class\" field."
 msgstr "Class που προστέθηκε στο πεδίο \"CSS class\"."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:155
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:616
 msgid "ID"
 msgstr "ID"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:156
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:629
 msgid "CSS class"
 msgstr "CSS class"
 
@@ -14226,6 +14255,7 @@ msgid "Value"
 msgstr "Τιμή"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/easyattributes/plugin.min.js:253
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:611
 msgid "Attributes"
 msgstr "Χαρακτηριστικά"
 
@@ -14486,24 +14516,28 @@ msgid "Select image"
 msgstr "Επιλογή εικόνας"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:966
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:436
 msgid "Footer caption"
 msgstr "Λεζάντα υποσέλιδου"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:976
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:446
 msgid "Title Link"
 msgstr "Σύνδεσμος τίτλου"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:999
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:469
 msgid "Choose a license..."
 msgstr "Επιλέξτε μια άδεια..."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1011
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1021
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:481
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:491
 msgid "Custom license"
 msgstr "Προσαρμοσμένη άδεια"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1058
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:424
 msgid "-- Not Set --"
 msgstr "-- Δεν ρυθμίστηκε --"
 
@@ -14520,11 +14554,12 @@ msgid "Text Bottom"
 msgstr "Κείμενο κάτω"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1100
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:604
 msgid "Title and Attribution"
 msgstr "Τίτλος και χαρακτηριστικό"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1241
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1196
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1242
 msgid "Please check the \"License\" field"
 msgstr "Παρακαλώ ελέγξτε το πεδίο 'Άδεια'"
 
@@ -14552,7 +14587,77 @@ msgstr "Αναδυόμενο παράθυρο"
 msgid "Please don't forget to write the file size."
 msgstr "Παρακαλώ μην ξεχάσετε να γράψετε το μέγεθος του αρχείου."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1227
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:351
+#, fuzzy
+msgid "Please select the media file to edit it"
+msgstr "Παρακαλώ επιλέξτε την εικόνα για να την επεξεργαστείτε"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:520
+msgid "Detect automatically"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:564
+#, fuzzy
+msgid "JavaScript player"
+msgstr "Αναδυόμενο παράθυρο JavaScript"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:564
+msgid "Improve browser compatibility with some formats"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:565
+#, fuzzy
+msgid "Play controls"
+msgstr "έλεγχος"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:566
+msgid "Autoplay"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:573
+#, fuzzy
+msgid "Mute Autoplay Video"
+msgstr "Αναραπαγωγή βίντεο"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:596
+msgid "Paste your embed code below:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:666
+#, fuzzy
+msgid "Please select the Source"
+msgstr "Παρακαλώ επιλέξτε μια σελίδα"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:689
+#, fuzzy
+msgid "Mute Autoplay Video (recommended)?"
+msgstr "Εάν εμφανίζεται ο κώδικας (συνιστάται):"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:876
+#, python-format
+msgid "This format (%s) is valid for audio and video."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:877
+msgid "Cannot detect automatically. Please choose the right type."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:894
+msgid "Successfully updated, but please convert the video to another format:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:902
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:914
+#, fuzzy
+msgid "Selected format: "
+msgstr "Επιλογή μορφοποίησης."
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:903
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:915
+msgid "Please use any of these formats or provide a link to the file itself:"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1273
 msgid ""
 "This fragment uses old code. Would you like to update it? (necessary to "
 "be able to edit the parameters)"
@@ -14560,14 +14665,14 @@ msgstr ""
 "Αυτό το απόσπασμα χρησιμοποιεί παλιό κωδικό. Θέλετε να τον ενημερώσετε "
 "(απαραίτητο να μπορείτε να επεξεργαστείτε τις παραμέτρους);"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1286
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1356
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1332
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1402
 msgid "You are using and old code. Update it (required to edit)?"
 msgstr ""
 "Χρησιμοποιείτε παλιό κωδικό. Θέλετε να τον ενημερώσετε (απαιτείται "
 "επεξεργασία);"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1344
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1390
 msgid ""
 "You are using QuickTime.\n"
 "We recommend you to use any of these formats:\n"
@@ -14660,14 +14765,6 @@ msgstr "Παρακαλώ δώστε έναν τίτλο."
 msgid "You can edit the mind map..."
 msgstr "Μπορείτε να επεξεργαστείτε τον εννοιολογικό χάρτη..."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
-msgid "Back"
-msgstr "Πίσω"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/imagetools/plugin.min.js:1
-msgid "Crop"
-msgstr "Αποκοπή"
-
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/modalwindow/plugin.min.js:88
 msgid "Please write the Content"
 msgstr "Παρακαλώ γράψτε το περιεχόμενο"
@@ -14694,57 +14791,6 @@ msgid ""
 msgstr ""
 "Γράψτε το περιεχόμενο του διαλόγου. Μπορείτε να χρησιμοποιήσετε κώδικα "
 "HTML και να τον επεξεργαστείτε στον επεξεργαστή."
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:186
-msgid "Please select a programming language"
-msgstr "Παρακαλώ επιλέξτε μια γλώσσα προγραμματισμού"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:362
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:589
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:608
-msgid "Insert HTML code as text"
-msgstr "Εισαγωγή κώδικα HTML ως κειμένου"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:415
-msgid "Programming language"
-msgstr "Γλώσσα προγραμματισμού"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:425
-msgid "Markup (HTML, etc.)"
-msgstr "Markup (HTML κ.λπ.)"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:427
-msgid "C type"
-msgstr "Τύπος C"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:457
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
-msgid "Appearance"
-msgstr "Εμφάνιση"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:466
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:843
-msgid "Light"
-msgstr "Φως"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:467
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:844
-msgid "Dark"
-msgstr "Σκοτεινό"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:485
-msgid "Line numbers"
-msgstr "Αριθμοί γραμμής"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:489
-msgid "Line highlight"
-msgstr "Επισήμανση γραμμής"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:556
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:601
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:616
-msgid "Paste HTML fragment (embed code)"
-msgstr "Επικόλληση αποσπάσματος HTML (κώδικας ενσωμάτωσης - embed)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -15214,6 +15260,10 @@ msgstr "Ανοίγει στο ίδιο παράθυρο"
 msgid "Open in a new window"
 msgstr "Ανοίγει σε νέο παράθυρο"
 
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:824
+msgid "Appearance"
+msgstr "Εμφάνιση"
+
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:840
 msgid "Change the styling:"
 msgstr "Αλλαγή τεχνοτροπίας:"
@@ -15221,6 +15271,14 @@ msgstr "Αλλαγή τεχνοτροπίας:"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:842
 msgid "Yellow"
 msgstr "Κίτρινο"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:843
+msgid "Light"
+msgstr "Φως"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:844
+msgid "Dark"
+msgstr "Σκοτεινό"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/tooltips/plugin.min.js:845
 msgid "Red"
@@ -15324,6 +15382,7 @@ msgid "Subscript"
 msgstr "Δείκτης"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:38
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:583
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:638
 #: exe/webui/scripts/tinymce_4_settings.js:218
 msgid "Code"
@@ -15900,6 +15959,10 @@ msgstr "Εισάγετε μια τιμή Alpha (0-255)"
 msgid "Enter an Hex color value (#000000-#ffffff)"
 msgstr "Εισάγετε μια τιμή Hex (#000000-#ffffff)"
 
+#: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
+msgid "'"
+msgstr ""
+
 #: exe/webui/tools/image-compressor/js/langs/all.js:7
 msgid "Drop image here or $browse...$"
 msgstr "Αποθέστε την εικόνα εδώ ή $browse...$"
@@ -16446,4 +16509,40 @@ msgstr ""
 
 #~ msgid "¡It is not correct! You have clicked on"
 #~ msgstr ""
+
+#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
+#~ msgstr ""
+
+#~ msgid "It's not true! The right answer is"
+#~ msgstr ""
+
+#~ msgid "Back"
+#~ msgstr "Πίσω"
+
+#~ msgid "Crop"
+#~ msgstr "Αποκοπή"
+
+#~ msgid "Please select a programming language"
+#~ msgstr "Παρακαλώ επιλέξτε μια γλώσσα προγραμματισμού"
+
+#~ msgid "Insert HTML code as text"
+#~ msgstr "Εισαγωγή κώδικα HTML ως κειμένου"
+
+#~ msgid "Programming language"
+#~ msgstr "Γλώσσα προγραμματισμού"
+
+#~ msgid "Markup (HTML, etc.)"
+#~ msgstr "Markup (HTML κ.λπ.)"
+
+#~ msgid "C type"
+#~ msgstr "Τύπος C"
+
+#~ msgid "Line numbers"
+#~ msgstr "Αριθμοί γραμμής"
+
+#~ msgid "Line highlight"
+#~ msgstr "Επισήμανση γραμμής"
+
+#~ msgid "Paste HTML fragment (embed code)"
+#~ msgstr "Επικόλληση αποσπάσματος HTML (κώδικας ενσωμάτωσης - embed)"
 
