@@ -147,11 +147,11 @@ Ext.define('eXe.controller.Outline', {
 			    text: _('Add Page'),
 			    handler: this.getController('Outline').onNodeAdd
             },{
-			    text: _('Rename'),
-			    handler: this.getController('Outline').onNodeRename
-            },{
 			    text: _('Delete'),
 			    handler: this.getController('Outline').onNodeDel
+            },{
+			    text: _('Rename'),
+			    handler: this.getController('Outline').onNodeRename
             },          
             {
                 xtype: 'menuseparator'
