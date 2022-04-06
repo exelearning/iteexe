@@ -1480,8 +1480,10 @@ Ext.define('eXe.controller.Toolbar', {
 	        this.saveWorkInProgress();
 	        // If the package has been previously saved/loaded
 	        // Just save it over the old file
+            setTimeout(function(){
+                nevow_clientToServerEvent('savePackage', this, '', filename, onDone, export_type_name);
+            },50);
             Ext.Msg.wait(new Ext.Template(_('Saving package to: {filename}')).apply({filename: filename}));
-            nevow_clientToServerEvent('savePackage', this, '', filename, onDone, export_type_name);
 	    } else {
 	        // If the package is new (never saved/loaded) show a
             // fileSaveAs dialog
