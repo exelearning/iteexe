@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.6.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
 "POT-Creation-Date: 2022-04-06 11:24+0200\n"
-"PO-Revision-Date: 2022-02-23 11:32+0100\n"
+"PO-Revision-Date: 2022-04-21 10:09+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
 "Language-Team: Spanish <jrfern@telefonica.net>\n"
@@ -4290,11 +4290,10 @@ msgstr "Información"
 
 #: exe/jsui/scripts/app/controller/Idevice.js:60
 #: exe/jsui/scripts/app/controller/Outline.js:220
-#, fuzzy
 msgid ""
 "Please save your iDevice first. The changes you made will be lost if you "
 "navigate away from this page."
-msgstr "Los cambios realizados se perderán si sale de esta página."
+msgstr "Guarde primero el iDevice. Los cambios realizados se perderán si sale de esta página sin guardarlos."
 
 #: exe/jsui/scripts/app/controller/MainTab.js:238
 #: exe/jsui/scripts/app/controller/MainTab.js:296
@@ -8907,9 +8906,8 @@ msgid "Click for completion instructions"
 msgstr "Pulse para recibir instrucciones sobre cómo completar la actividad"
 
 #: exe/webui/content_template/strings.py:6
-#, fuzzy
 msgid "Base"
-msgstr "Minús./Mayús."
+msgstr "Base"
 
 #: exe/webui/debesconocerfpdblock.py:68
 msgid "You Should Know"
@@ -11911,15 +11909,14 @@ msgstr ""
 "'Responder'."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
-#, fuzzy
 msgid "Write the correct word o phrase and click on the 'Reply' button."
-msgstr "Escribe la palabra o frase correcta y haz clic en el botón \"Responder\"."
+msgstr "Escribe la palabra o expresión correcta y pulsa en el botón 'Responder'."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:294
 msgid "Identify"
-msgstr "Identifica"
+msgstr "Identificar"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:96
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:175
@@ -14525,74 +14522,67 @@ msgid "Please don't forget to write the file size."
 msgstr "No olvide escribir el tamaño del fichero."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:351
-#, fuzzy
 msgid "Please select the media file to edit it"
-msgstr "Por favor seleccione la imagen para editarla"
+msgstr "Seleccione el archivo multimedia para editarlo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:520
 msgid "Detect automatically"
-msgstr ""
+msgstr "Detectar automáticamente"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:564
-#, fuzzy
 msgid "JavaScript player"
-msgstr "Javascript popup"
+msgstr "Reproductor JavaScript"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:564
 msgid "Improve browser compatibility with some formats"
-msgstr ""
+msgstr "Mejorar la compatibilidad de los navegadores con algunos formatos"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:565
-#, fuzzy
 msgid "Play controls"
-msgstr "controlar"
+msgstr "Controles de reproducción"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:566
 msgid "Autoplay"
-msgstr ""
+msgstr "Reproducir automáticamente"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:573
-#, fuzzy
 msgid "Mute Autoplay Video"
-msgstr "Reproducir el vídeo"
+msgstr "Reproducir el vídeo sin sonido"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:596
 msgid "Paste your embed code below:"
-msgstr ""
+msgstr "Pegue su código aquí:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:666
-#, fuzzy
 msgid "Please select the Source"
-msgstr "Por favor seleccione una página"
+msgstr "Seleccione el fichero fuente"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:689
-#, fuzzy
 msgid "Mute Autoplay Video (recommended)?"
-msgstr "Si muestra el código (recomendado):"
+msgstr "¿Reproducir automáticamente sin sonido (recomendado)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:876
 #, python-format
 msgid "This format (%s) is valid for audio and video."
-msgstr ""
+msgstr "El formato (%s) sirve para audio y vídeo."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:877
 msgid "Cannot detect automatically. Please choose the right type."
-msgstr ""
+msgstr "No se pudo detectar automáticamente. Elija el tipo adecuado."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:894
 msgid "Successfully updated, but please convert the video to another format:"
-msgstr ""
+msgstr "Actualizado correctamente, pero se recomienda convertir el vídeo a otro formato:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:902
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:914
-#, fuzzy
 msgid "Selected format: "
-msgstr "Seleccione formato."
+msgstr "Formato seleccionado: "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:903
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:915
 msgid "Please use any of these formats or provide a link to the file itself:"
-msgstr ""
+msgstr "Use alguno de estos formatos o incluya un enlace al fichero:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1273
 msgid ""
@@ -15883,7 +15873,7 @@ msgstr "Introduzca un código hexadecimal (#000000-#ffffff)"
 
 #: exe/webui/tools/fMath/js/jquery-ui/jquery-ui.min.js:8
 msgid "'"
-msgstr ""
+msgstr "'"
 
 #: exe/webui/tools/image-compressor/js/langs/all.js:7
 msgid "Drop image here or $browse...$"
@@ -16426,37 +16416,3 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr "¡No es cierto! La respuesta correcta es"
-
-#~ msgid "Back"
-#~ msgstr "Atrás"
-
-#~ msgid "Crop"
-#~ msgstr "Cortar"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "Seleccione un lenguaje de programación"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "Insertar código HTML como texto"
-
-#~ msgid "Programming language"
-#~ msgstr "Lenguaje de programación"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "Lenguaje de marcas (HTML, etc.)"
-
-#~ msgid "C type"
-#~ msgstr "Tipo C"
-
-#~ msgid "Line numbers"
-#~ msgstr "Números de línea"
-
-#~ msgid "Line highlight"
-#~ msgstr "Realce de línea"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "Pegar fragmento HTML (embeber código)"
-
