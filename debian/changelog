@@ -1,4 +1,4 @@
-intef-exe (3:2.6.1) lucid; urgency=medium
+intef-exe (3:2.7) lucid; urgency=medium
 
   * Manuel Narváez
     - New "Trivial" Game iDevice.
@@ -33,6 +33,10 @@ intef-exe (3:2.6.1) lucid; urgency=medium
     - Fixed: Mac connection to GitHub (SSL context set). (#569)
     - Fixed: Mac connection to Wikepedia (SSL context set). (#570)
     - Fixed: RSS iDevice problems ("requests" module). (#497)
+    - Fixed: Download Classification Sources button not working. (#620)
+	
+  * Pablo Amaya
+    - Fixed: Unsaved changes in Chrome/Edge. (#617)
     
   * Juan Rafael Fernández
     - String extraction process revision.
