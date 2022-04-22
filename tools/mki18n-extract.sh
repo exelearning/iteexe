@@ -103,7 +103,7 @@
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.6.1"
+version="2.7"
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"
