@@ -13882,41 +13882,36 @@ msgid ""
 msgstr "写下对话框的内容。您可以使用HTML并在编辑器中对其进行编辑。"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
-#, fuzzy
 msgid "Please select a programming language"
-msgstr "请选择一个页面"
+msgstr "请选择编程语言"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "将HTML代码插入为文本"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
-msgstr "编程工具"
+msgstr "编程语言"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "标记语言（如 HTML 等）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
-#, fuzzy
 msgid "C type"
-msgstr "文档类型"
+msgstr "C类"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "选项编号"
+msgstr "行号"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "突出"
+msgstr "突出显示行"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "粘贴 HTML 片段（嵌入代码）"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -15531,28 +15526,4 @@ msgstr "您的idevices模块 / generic.data文件或您正在加载的课件包�
 
 #~ msgid "Crop"
 #~ msgstr "裁剪"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "请选择编程语言"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "将HTML代码插入为文本"
-
-#~ msgid "Programming language"
-#~ msgstr "编程语言"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "标记语言（如 HTML 等）"
-
-#~ msgid "C type"
-#~ msgstr "C类"
-
-#~ msgid "Line numbers"
-#~ msgstr "行号"
-
-#~ msgid "Line highlight"
-#~ msgstr "突出显示行"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "粘贴 HTML 片段（嵌入代码）"
 

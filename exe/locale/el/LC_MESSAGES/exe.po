@@ -14793,41 +14793,36 @@ msgstr ""
 "HTML και να τον επεξεργαστείτε στον επεξεργαστή."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
-#, fuzzy
 msgid "Please select a programming language"
-msgstr "Παρακαλώ επιλέξτε μια σελίδα"
+msgstr "Παρακαλώ επιλέξτε μια γλώσσα προγραμματισμού"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Εισαγωγή κώδικα HTML ως κειμένου"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
-msgstr "εργαλείο προγραμματισμού"
+msgstr "Γλώσσα προγραμματισμού"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Markup (HTML κ.λπ.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
-#, fuzzy
 msgid "C type"
-msgstr "Τύπος αρχείου"
+msgstr "Τύπος C"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "Αριθμός επιλογών"
+msgstr "Αριθμοί γραμμής"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "Επισήμανση"
+msgstr "Επισήμανση γραμμής"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Επικόλληση αποσπάσματος HTML (κώδικας ενσωμάτωσης - embed)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -16558,28 +16553,4 @@ msgstr ""
 
 #~ msgid "Crop"
 #~ msgstr "Αποκοπή"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "Παρακαλώ επιλέξτε μια γλώσσα προγραμματισμού"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "Εισαγωγή κώδικα HTML ως κειμένου"
-
-#~ msgid "Programming language"
-#~ msgstr "Γλώσσα προγραμματισμού"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "Markup (HTML κ.λπ.)"
-
-#~ msgid "C type"
-#~ msgstr "Τύπος C"
-
-#~ msgid "Line numbers"
-#~ msgstr "Αριθμοί γραμμής"
-
-#~ msgid "Line highlight"
-#~ msgstr "Επισήμανση γραμμής"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "Επικόλληση αποσπάσματος HTML (κώδικας ενσωμάτωσης - embed)"
 

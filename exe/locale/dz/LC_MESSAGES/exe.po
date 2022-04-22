@@ -13912,35 +13912,32 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
 #, fuzzy
 msgid "Please select a programming language"
-msgstr "ཤོག་ལེབ་གཅིག་སེལ་འཐུ་འབད་གནང"
+msgstr "ལས་རིམ་བཟོ་ལས་ཀྱི་སྐད་ཡིག་སེལ་འཐུ་འབད་གནང"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "ཨེཆ་ཊི་ཨེམ་ཨེལ་གློག་བཀོད་དེ་ཚིག་ཡིག་འབད་བཙུགས་"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
 msgstr "ལས་རིམ་བཟོ་ལས་ཀྱི་ལག་ཆས"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "རྟགས་སྐད(ཨེཆ་ཊི་ཨེམ་ཨེལ་ ལ་སོགས་པ་)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
 #, fuzzy
 msgid "C type"
-msgstr "ཡིག་ཆ་དབྱེ་བ"
+msgstr "སི་ཊ་ཡིབ་"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "གདམ་ཁ་ཚུའི་ཨང"
+msgstr "གྲལ་ཐིག་གི་ཨང་"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "གཙོ་དམིགས"
+msgstr "གྲལ་ཐིག་གི་གཙོ་དམིགས"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
@@ -15566,28 +15563,4 @@ msgstr ""
 
 #~ msgid "Crop"
 #~ msgstr "བཏོག་བཅོས"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "ལས་རིམ་བཟོ་ལས་ཀྱི་སྐད་ཡིག་སེལ་འཐུ་འབད་གནང"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "ཨེཆ་ཊི་ཨེམ་ཨེལ་གློག་བཀོད་དེ་ཚིག་ཡིག་འབད་བཙུགས་"
-
-#~ msgid "Programming language"
-#~ msgstr "ལས་རིམ་བཟོ་ལས་ཀྱི་ལག་ཆས"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "རྟགས་སྐད(ཨེཆ་ཊི་ཨེམ་ཨེལ་ ལ་སོགས་པ་)"
-
-#~ msgid "C type"
-#~ msgstr "སི་ཊ་ཡིབ་"
-
-#~ msgid "Line numbers"
-#~ msgstr "གྲལ་ཐིག་གི་ཨང་"
-
-#~ msgid "Line highlight"
-#~ msgstr "གྲལ་ཐིག་གི་གཙོ་དམིགས"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr ""
 

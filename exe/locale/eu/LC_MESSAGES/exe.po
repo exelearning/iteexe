@@ -14546,41 +14546,36 @@ msgstr ""
 "dezakezu."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
-#, fuzzy
 msgid "Please select a programming language"
-msgstr "Aukeratu orri bat, mesedez"
+msgstr "Aukeratu programazio lengoaia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Sartu HTML kodea testu gisa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
-msgstr "programazioko tresna"
+msgstr "Programazio lengoaia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Markup (HTML, etab.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
-#, fuzzy
 msgid "C type"
-msgstr "Dokumentu-mota"
+msgstr "C motakoa"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "Diapositiba zenbakia"
+msgstr "Lerro zenbakiak"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "Nabarmendu"
+msgstr "Lerroak nabarmendu"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Itsatsi HTML zatia (kodea txertatu)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -16280,28 +16275,4 @@ msgstr ""
 
 #~ msgid "Crop"
 #~ msgstr "Moztu"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "Aukeratu programazio lengoaia"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "Sartu HTML kodea testu gisa"
-
-#~ msgid "Programming language"
-#~ msgstr "Programazio lengoaia"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "Markup (HTML, etab.)"
-
-#~ msgid "C type"
-#~ msgstr "C motakoa"
-
-#~ msgid "Line numbers"
-#~ msgstr "Lerro zenbakiak"
-
-#~ msgid "Line highlight"
-#~ msgstr "Lerroak nabarmendu"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "Itsatsi HTML zatia (kodea txertatu)"
 

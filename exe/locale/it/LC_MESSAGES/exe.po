@@ -14635,41 +14635,36 @@ msgstr ""
 "modificarlo nell'editor."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
-#, fuzzy
 msgid "Please select a programming language"
-msgstr "Scegliere una pagina"
+msgstr "Scegliere un linguaggio di programmazione"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Inserire codice HTML in formato testo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
-msgstr "ambiente di programmazione"
+msgstr "Linguaggio di programmazione"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Marcatura (HTML ecc.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
-#, fuzzy
 msgid "C type"
-msgstr "Doctype"
+msgstr "Tipo C"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "Numero di opzioni"
+msgstr "Numeri di riga"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "Evidenzia"
+msgstr "Evidenzia riga"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Incolla frammento HTML (codice incluso)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -16370,28 +16365,4 @@ msgstr ""
 
 #~ msgid "Crop"
 #~ msgstr "Ritaglia"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "Scegliere un linguaggio di programmazione"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "Inserire codice HTML in formato testo"
-
-#~ msgid "Programming language"
-#~ msgstr "Linguaggio di programmazione"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "Marcatura (HTML ecc.)"
-
-#~ msgid "C type"
-#~ msgstr "tipo C"
-
-#~ msgid "Line numbers"
-#~ msgstr "Numeri di riga"
-
-#~ msgid "Line highlight"
-#~ msgstr "Evidenzia riga"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "Incolla frammento HTML (codice incluso)"
 

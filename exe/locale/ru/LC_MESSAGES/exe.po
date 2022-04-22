@@ -14643,41 +14643,36 @@ msgstr ""
 "его в редакторе."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
-#, fuzzy
 msgid "Please select a programming language"
-msgstr "Пожалуйста, выберите страницу"
+msgstr "Выберите язык программирования."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Вставить HTML как текст"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
-msgstr "утилита программирования"
+msgstr "Язык программирования"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Язык разметки (HTML и т. д.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
-#, fuzzy
 msgid "C type"
-msgstr "Тип документа"
+msgstr "Тип C"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "Количество вариантов"
+msgstr "Номера строк"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "Световой эффект"
+msgstr "Выделите линии"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Вставить фрагмент HTML (встроенный код)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -16388,28 +16383,4 @@ msgstr ""
 
 #~ msgid "Crop"
 #~ msgstr "Обрезать"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "Выберите язык программирования."
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "Вставить HTML как текст"
-
-#~ msgid "Programming language"
-#~ msgstr "Язык программирования"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "Язык разметки (HTML и т. д.)"
-
-#~ msgid "C type"
-#~ msgstr "Тип C"
-
-#~ msgid "Line numbers"
-#~ msgstr "Номера строк"
-
-#~ msgid "Line highlight"
-#~ msgstr "Выделите линии"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "Вставить фрагмент HTML (встроенный код)"
 
