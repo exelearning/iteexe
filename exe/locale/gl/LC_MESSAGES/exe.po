@@ -7,9 +7,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6.1\n"
+"Project-Id-Version: eXeLearning 2.7\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2022-04-06 11:24+0200\n"
+"POT-Creation-Date: 2022-04-22 12:24+0200\n"
 "PO-Revision-Date: 2022-03-15 10:51+0100\n"
 "Last-Translator: Pablo Nimo Liboreiro <pablonimo@edu.xunta.es>\n"
 "Language: gl\n"
@@ -4285,7 +4285,7 @@ msgstr "Arquivos de imaxe"
 #: exe/jsui/scripts/app/controller/Toolbar.js:1207
 #: exe/jsui/scripts/app/controller/Toolbar.js:1242
 #: exe/jsui/scripts/app/controller/Toolbar.js:1473
-#: exe/jsui/scripts/app/controller/Toolbar.js:1620
+#: exe/jsui/scripts/app/controller/Toolbar.js:1622
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:158
 #: exe/webui/scripts/authoring.js:180 exe/webui/scripts/authoring.js:203
 #: exe/webui/scripts/authoring.js:504 exe/webui/scripts/authoring.js:514
@@ -4612,7 +4612,7 @@ msgstr "Inserindo paquete: {filename}"
 #: exe/jsui/scripts/app/controller/Toolbar.js:744
 #: exe/jsui/scripts/app/controller/Toolbar.js:765
 #: exe/jsui/scripts/app/controller/Toolbar.js:1472
-#: exe/jsui/scripts/app/controller/Toolbar.js:1619
+#: exe/jsui/scripts/app/controller/Toolbar.js:1621
 msgid "eXe Package Files"
 msgstr "Paquetes eXe"
 
@@ -4857,23 +4857,23 @@ msgstr ""
 "O paquete actual foi modificado pero anon se gardou aínda. Gustaríalle "
 "gardalo?"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1552
+#: exe/jsui/scripts/app/controller/Toolbar.js:1555
 msgid "Saving package to: {filename}"
 msgstr "Gardando paquete como: {filename}"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1576
+#: exe/jsui/scripts/app/controller/Toolbar.js:1578
 msgid "Title for template:"
 msgstr "Título da plantilla:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1577
+#: exe/jsui/scripts/app/controller/Toolbar.js:1579
 msgid "Enter the new name for template:"
 msgstr "Introduza un novo nome para a plantilla:"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1599
+#: exe/jsui/scripts/app/controller/Toolbar.js:1601
 msgid "Save file"
 msgstr "Gardar arquivo"
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1605
+#: exe/jsui/scripts/app/controller/Toolbar.js:1607
 msgid "Saving package..."
 msgstr "Gardando paquete..."
 
@@ -14653,6 +14653,43 @@ msgid ""
 msgstr ""
 "Escriba o contido do diálogo. Pode utilizar HTML e editalo dende o mesmo "
 "editor."
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
+#, fuzzy
+msgid "Please select a programming language"
+msgstr "Por favor seleccione unha páxina"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
+msgid "Insert HTML code as text"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
+#, fuzzy
+msgid "Programming language"
+msgstr "ferramenta de programación"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
+msgid "Markup (HTML, etc.)"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
+#, fuzzy
+msgid "C type"
+msgstr "Tipo de doc"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
+#, fuzzy
+msgid "Line numbers"
+msgstr "Número de diapositiva"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
+#, fuzzy
+msgid "Line highlight"
+msgstr "Foco"
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
+msgid "Paste HTML fragment (embed code)"
+msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."

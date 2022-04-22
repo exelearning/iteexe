@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.6.1\n"
+"Project-Id-Version: eXeLearning 2.7\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-06 11:24+0200\n"
+"POT-Creation-Date: 2022-04-22 12:24+0200\n"
 "PO-Revision-Date: 2006-07-28 15:29+1200\n"
 "Last-Translator: Jenny <jennylin_nz@yahoo.com>\n"
 "Language: is\n"
@@ -3854,7 +3854,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:1207
 #: exe/jsui/scripts/app/controller/Toolbar.js:1242
 #: exe/jsui/scripts/app/controller/Toolbar.js:1473
-#: exe/jsui/scripts/app/controller/Toolbar.js:1620
+#: exe/jsui/scripts/app/controller/Toolbar.js:1622
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:158
 #: exe/webui/scripts/authoring.js:180 exe/webui/scripts/authoring.js:203
 #: exe/webui/scripts/authoring.js:504 exe/webui/scripts/authoring.js:514
@@ -4180,7 +4180,7 @@ msgstr ""
 #: exe/jsui/scripts/app/controller/Toolbar.js:744
 #: exe/jsui/scripts/app/controller/Toolbar.js:765
 #: exe/jsui/scripts/app/controller/Toolbar.js:1472
-#: exe/jsui/scripts/app/controller/Toolbar.js:1619
+#: exe/jsui/scripts/app/controller/Toolbar.js:1621
 msgid "eXe Package Files"
 msgstr ""
 
@@ -4408,23 +4408,23 @@ msgid ""
 "to save it?"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1552
+#: exe/jsui/scripts/app/controller/Toolbar.js:1555
 msgid "Saving package to: {filename}"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1576
+#: exe/jsui/scripts/app/controller/Toolbar.js:1578
 msgid "Title for template:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1577
+#: exe/jsui/scripts/app/controller/Toolbar.js:1579
 msgid "Enter the new name for template:"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1599
+#: exe/jsui/scripts/app/controller/Toolbar.js:1601
 msgid "Save file"
 msgstr ""
 
-#: exe/jsui/scripts/app/controller/Toolbar.js:1605
+#: exe/jsui/scripts/app/controller/Toolbar.js:1607
 msgid "Saving package..."
 msgstr ""
 
@@ -14074,6 +14074,39 @@ msgstr ""
 msgid ""
 "Write the content of the dialog. You may use HTML and edit it in the "
 "editor."
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
+#, fuzzy
+msgid "Please select a programming language"
+msgstr "Vinsamlegast veldu nafn á námstæki."
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
+msgid "Insert HTML code as text"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
+msgid "Programming language"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
+msgid "Markup (HTML, etc.)"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
+msgid "C type"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
+msgid "Line numbers"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
+msgid "Line highlight"
+msgstr ""
+
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
+msgid "Paste HTML fragment (embed code)"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
