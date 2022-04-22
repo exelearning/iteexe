@@ -14679,41 +14679,36 @@ msgstr ""
 "l'editor."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
-#, fuzzy
 msgid "Please select a programming language"
-msgstr "Tria una pàgina"
+msgstr "Tria un llenguatge de programació"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
 msgid "Insert HTML code as text"
-msgstr ""
+msgstr "Insereix codi HTML com a text"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
-#, fuzzy
 msgid "Programming language"
-msgstr "eina de programació"
+msgstr "Llenguatge de programació"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
 msgid "Markup (HTML, etc.)"
-msgstr ""
+msgstr "Llenguatge de marques (HTML, etc.)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
-#, fuzzy
 msgid "C type"
-msgstr "Tipus de document"
+msgstr "Tipus C"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
-#, fuzzy
 msgid "Line numbers"
-msgstr "Diapositiva número"
+msgstr "Números de línia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
-#, fuzzy
 msgid "Line highlight"
-msgstr "Ressaltat"
+msgstr "Ressaltat de línia"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Paste HTML fragment (embed code)"
-msgstr ""
+msgstr "Apega fragmente HTML (codi embegut)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:104
 msgid "That image was created using the old formula editor."
@@ -16421,28 +16416,4 @@ msgstr ""
 
 #~ msgid "Crop"
 #~ msgstr "Retalla"
-
-#~ msgid "Please select a programming language"
-#~ msgstr "Tria un llenguatge de programació"
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr "Insereix codi HTML com a text"
-
-#~ msgid "Programming language"
-#~ msgstr "Llenguatge de programació"
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr "Llenguatge de marques (HTML, etc.)"
-
-#~ msgid "C type"
-#~ msgstr "Tipus C"
-
-#~ msgid "Line numbers"
-#~ msgstr "Números de línia"
-
-#~ msgid "Line highlight"
-#~ msgstr "Ressaltat de línia"
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr "Apega fragmente HTML (codi embegut)"
 
