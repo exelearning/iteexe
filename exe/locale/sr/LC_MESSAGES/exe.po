@@ -1,8 +1,7 @@
-# translation of exe_en.po to serbiansr
-# EXELearning English PO file.
-# Copyright (C) 2004-2008
-# This file is distributed under the same license as the EXE package.
-#
+# translation of eXe to Serbian
+# Copyright (C) 2004-2011 EXELearning.org
+# Copyright (C) 2011-2022 eXeLearning.net
+# This file is distributed under the same license as the eXeLearning package.
 # eXe Project <exe@exelearning.org>, 2008.
 # vedran <vvucic@eunet.rs>, 2008.
 msgid ""
@@ -15717,7 +15716,7 @@ msgstr "Tačno"
 #: exe/webui/truefalseelement.py:118 exe/webui/truefalseelement.py:218
 #: exe/webui/truefalseelement.py:264
 msgid "False"
-msgstr "Pogređno"
+msgstr "Pogrešno"
 
 #: exe/webui/wikipediablock.py:115
 msgid "English Wikipedia Article"
@@ -15849,43 +15848,4 @@ msgstr ""
 "Vaš iUređaj/generic.data datoteka ili paket koji nadodajete su kreiraniu "
 "novijoj verziji programa eXe. Molimo vas da obnovite eXE i pokušate "
 "ponovo."
-
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
-
-#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
-#~ msgstr ""
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr ""
-
-#~ msgid "Back"
-#~ msgstr ""
-
-#~ msgid "Crop"
-#~ msgstr ""
-
-#~ msgid "Please select a programming language"
-#~ msgstr ""
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr ""
-
-#~ msgid "Programming language"
-#~ msgstr ""
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr ""
-
-#~ msgid "C type"
-#~ msgstr ""
-
-#~ msgid "Line numbers"
-#~ msgstr ""
-
-#~ msgid "Line highlight"
-#~ msgstr ""
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr ""
 
