@@ -23,7 +23,7 @@ translations = {
  "Check Caps?": "Proverite dugme za veliak slova na tastaturi?", 
  "Demote node down in hierarchy": "Spusti ta\u010dku na ni\u017ee u hijerarhiji", 
  "Tongan  ": "Tonganski", 
- "False": "Pogre\u0111no", 
+ "False": "Pogre\u0161no", 
  "Afrikaans ": "Afri\u010dki", 
  "Can NOT Undo Edits": "Ne mogu da opozovem ure\u0111ivanja", 
  "The MP3 iDevice allows you to attach an MP3 media file to your content along with relevant textuallearning instructions.": "MP3 iUre\u0111aj omogu\u0107ava da prilo\u017eite MP3 datoteku u va\u0161 sadr\u017eaj uz relevantne tekstualne edukativne instrukcije.", 
