@@ -23,6 +23,7 @@ intef-exe (3:2.7) lucid; urgency=medium
     - Fixed: Missing fonts in the SimplePoint Style (404 errors).
     - Fixed: Cloze iDevice inputs width (too long). (#616)
     - Fixed: Cloze activity: Spaces before and after each word removed. (#598)
+    - Fixed: UDL Style. Print version presentation problems. (#621)
 
   * APSL
     - Package building.
@@ -41,6 +42,7 @@ intef-exe (3:2.7) lucid; urgency=medium
   * Juan Rafael Fernández
     - String extraction process revision.
     - Translations coordination.
+    - Fixed: Wrong Servbian translation reported by @Sandra1Nikolic. (#623)
 
   * eXeLearning.net Translation Team
     - New complete Spanish translation, by Juan Rafael Fernández.

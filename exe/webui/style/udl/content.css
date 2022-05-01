@@ -52,7 +52,8 @@ section.previousnext{display:none}
 /* Blue iDevices (default) */
 
 /* iDevice title */
-.iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:middle;top:15px;color:#2E2E2E;letter-spacing:.5px;font-weight:bold}
+.iDeviceTitle{font-size:1.4em;display:inline;font-weight:normal;vertical-align:middle;top:0;color:#2E2E2E;letter-spacing:.5px;font-weight:bold}
+.iDeviceTitle:before{content:" ";display:block;width:15px;height:15px}
 /* iDevice content */
 .iDevice_content{overflow:auto;text-align:left}
 /*.iDevice_inner*/
@@ -374,7 +375,6 @@ li{list-style-position:outside}
 	.toggle-idevice{display:none}
 	.iDevice_content{text-align:justify!important;color:#000}
 	.iDevice_inner p,.iDevice_inner ul li,.iDevice_inner ol li{text-align:justify!important}
-	.iDeviceTitle{top:25px!important;display:inline}
-	.iDevice{margin:10px 0!important}
+	.iDevice{margin:25px 0!important}
 	.js .exe-paginated h2,.js .exe-carousel h2{font-size:1.1em}
 }
