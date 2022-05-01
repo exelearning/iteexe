@@ -42,7 +42,7 @@ intef-exe (3:2.7) lucid; urgency=medium
   * Juan Rafael Fernández
     - String extraction process revision.
     - Translations coordination.
-    - Fixed: Wrong Servbian translation reported by @Sandra1Nikolic. (#623)
+    - Fixed: Wrong Serbian translation reported by @Sandra1Nikolic. (#623)
 
   * eXeLearning.net Translation Team
     - New complete Spanish translation, by Juan Rafael Fernández.
