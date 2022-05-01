@@ -1030,11 +1030,11 @@ var $exeDevice = {
                                         </div>\
                                     </div>\
                                     <div class="gameQE-EAuthorAlt" id="seleccionaEAuthorAlt">\
-                                        <div class="gameQE-EInputAuthor" id="quextInputAuthor">\
+                                        <div class="gameQE-EInputAuthor" id="seleccionaInputAuthor">\
                                             <label for="seleccionaEAuthor"><span>' + _("Author") + '</span>: </label>\
                                             <input id="seleccionaEAuthor" type="text" />\
                                         </div>\
-                                        <div class="gameQE-EInputAlt" id="quextInputAlt">\
+                                        <div class="gameQE-EInputAlt" id="seleccionaInputAlt">\
                                             <label for="seleccionaEAlt"><span>' + _("Alternative text") + ':</span> </label>\
                                             <input id="seleccionaEAlt" type="text" />\
                                         </div>\

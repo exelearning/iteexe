@@ -1509,7 +1509,9 @@ var $eXeSelecciona = {
             if (start) {
                 numq = 0;
             }
-            if ((correct && mOptions.selectsGame[numq].hit == -2) || (!correct && mOptions.selectsGame[numq].error == -2)) {
+            if(mOptions.activeQuestion<0){
+                numActiveQuestion=0;
+            }else if ((correct && mOptions.selectsGame[numq].hit == -2) || (!correct && mOptions.selectsGame[numq].error == -2)) {
                 return -10
             } else if ((correct && mOptions.selectsGame[numq].hit == -1) || (!correct && mOptions.selectsGame[numq].error == -1)) {
                 numActiveQuestion++;
