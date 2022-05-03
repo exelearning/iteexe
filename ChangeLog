@@ -32,7 +32,7 @@ intef-exe (3:2.7) lucid; urgency=medium
     - Fixed: Long contents save problem fixed: SIZE_LIMIT increased. (#496)
     - Fixed: Create images from LaTeX (SNAP version). Mimetex package included. (#599)
     - Fixed: Mac connection to GitHub (SSL context set). (#569)
-    - Fixed: Mac connection to Wikepedia (SSL context set). (#570)
+    - Fixed: Mac connection to Wikipedia (SSL context set). (#570)
     - Fixed: RSS iDevice problems ("requests" module). (#497)
     - Fixed: Download Classification Sources button not working. (#620)
 	
