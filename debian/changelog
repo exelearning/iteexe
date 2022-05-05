@@ -24,6 +24,7 @@ intef-exe (3:2.7) lucid; urgency=medium
     - Fixed: Cloze iDevice inputs width (too long). (#616)
     - Fixed: Cloze activity: Spaces before and after each word removed. (#598)
     - Fixed: UDL Style. Print version presentation problems. (#621)
+    - Fixed: IFRAME content not displaying inside tabs, timelines, accordions... (#625)
 
   * APSL
     - Package building.
