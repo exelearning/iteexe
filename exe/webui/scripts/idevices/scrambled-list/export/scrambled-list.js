@@ -21,8 +21,9 @@ var $exeScrambledList = {
 	},
     
     enableList : function(activity,instance){
-		var lists = $("ul",activity);
-		if (lists.length==1) {
+		var lists = $("ul.exe-sortableList-list",activity);
+		var btn = $("p.exe-sortableList-buttonText",activity);
+		if (lists.length==1&&btn.length==1) {
 			lists.css("visibility","hidden");
 			lists.each(
 				function(){
@@ -31,7 +32,7 @@ var $exeScrambledList = {
 						lis.push(this.innerHTML);
 					});
 					lis = $exeScrambledList.randomizeArray(lis);
-					$exeScrambledList.getListHTML(activity,lis,this,instance);
+					$exeScrambledList.getListHTML(activity,lis,this,instance,btn);
 				}
 			);
 		}        
@@ -99,13 +100,13 @@ var $exeScrambledList = {
 		$exeScrambledList.getListLinks(listOrder);
 	},
     
-	getListHTML : function(activity,lis,list,listOrder) {
+	getListHTML : function(activity,lis,list,listOrder,btn) {
 		var html = '<ul class="exe-sortableList-options" id="exe-sortableList-'+listOrder+'">';
 		for (var i=0;i<lis.length;i++) {
 			html += '<li>'+lis[i]+'</li>';
 		}
 		html += "</ul>";
-		html += '<p id="exe-sortableListButton-'+listOrder+'"><input type="button" class="feedbackbutton exe-sortableList-check-'+listOrder+'" value="'+$("P",activity).eq(1).text()+'" /></p>';
+		html += '<p id="exe-sortableListButton-'+listOrder+'"><input type="button" class="feedbackbutton exe-sortableList-check-'+listOrder+'" value="'+btn.text()+'" /></p>';
 		html += '<div id="exe-sortableList-'+listOrder+'-feedback"></div>';
 		$(list).hide().attr("id","exe-sortableListResults-"+listOrder).before(html);
 		$("#exe-sortableList-"+listOrder).sortable().bind('sortupdate', function(e, ui) {
