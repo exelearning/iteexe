@@ -24,6 +24,7 @@ intef-exe (3:2.7) lucid; urgency=medium
     - Fixed: Cloze iDevice inputs width (too long). (#616)
     - Fixed: Cloze activity: Spaces before and after each word removed. (#598)
     - Fixed: UDL Style. Print version presentation problems. (#621)
+    - Fixed: UDL Style. Unwanted horizontal scrollbar (G. Chrome + Long words). (#628)
     - Fixed: IFRAME content not displaying inside tabs, timelines, accordions... (#625)
     - Fixed: Download elp iDevice: Unnecessary quotation marks. (#626)
     - Fixed: Scrambled List iDevice introduction: Allow more than one paragraph. (#627)
