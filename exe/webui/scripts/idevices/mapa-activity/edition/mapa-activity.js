@@ -1028,8 +1028,7 @@ var $exeDevice = {
             return false
         }
         var dataGame = $exeDevice.validateData();
-
-
+        
         if (!dataGame) {
             return false;
         }
