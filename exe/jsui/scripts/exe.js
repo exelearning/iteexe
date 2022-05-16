@@ -216,6 +216,11 @@ Ext.application({
 				// Remove ~alfa or ~beta
 				current = current.split("~");
 				current = current[0];
+				// Remove -alfa or -beta
+				current = current.split("-alfa");
+				current = current[0];
+				current = current.split("-beta");
+				current = current[0];
 				// Remove b (Example: 2.6b2)
 				current = current.split("b");
 				current = current[0];                
