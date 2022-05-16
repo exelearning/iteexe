@@ -662,7 +662,12 @@ var $eXeQuExt = {
 
     },
     onPlayerReady: function (event) {
-        var video = event.target.h.id;
+        var video='';
+        if((event.target.h) && (event.target.h.id) ){
+            video=event.target.h.id;
+        }else if ((event.target.i ) && (event.target.i.id)) {
+            video=event.target.i.id;
+        } 
         video = video.split("-");
         if (video.length == 2 && (video[0] == "quextVideo" || video[0] == "quextVideoIntro")) {
             var instance = parseInt(video[1]);

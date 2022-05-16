@@ -135,7 +135,7 @@ var $eXeMapa = {
         for (var i = 0; i < points.length; i++) {
             var p = points[i],
                 title = (mOptions.evaluation != 1 && mOptions.evaluation != 2 && mOptions.evaluation != 3) ? p.title : '',
-                point = '<a href="#" class="MQP-Point MQP-Activo" data-number="' + i + '"   data-id="' + p.id + '" title="' + title + '"><span>' + p.title + '<span></a>',
+                point = '<a href="#" class="MQP-Point MQP-Activo" data-number="' + i + '"   data-id="' + p.id + '" title="' + title + '"><span>' + p.title + '</span></a>',
                 pt = {
                     'number': i,
                     'title': p.title
@@ -2622,7 +2622,12 @@ var $eXeMapa = {
 
     },
     onPlayerReady: function (event) {
-        var video = event.target.h.id;
+        var video='mapaVideoPoint-0';
+        if((event.target.h) && (event.target.h.id) ){
+            video=event.target.h.id;
+        }else if ((event.target.i ) && (event.target.i.id)) {
+            video=event.target.i.id;
+        } 
         video = video.split("-");
         if (video.length == 2 && (video[0] == "mapaVideoPoint")) {
             var instance = parseInt(video[1]);
