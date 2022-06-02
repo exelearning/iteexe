@@ -23,6 +23,7 @@ jobs:
           ls -n /Applications/ | grep Xcode*
           brew install libtiff libjpeg webp little-cms2
           brew install libxml2
+          brew install openssl
           brew info openssl
           brew link openssl --force
           brew info openssl
