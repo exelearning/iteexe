@@ -316,7 +316,7 @@ li{list-style-position:outside}
 	header.nodeDecoration h1.nodeTitle{page-break-after:none!important}
 	#header{height:auto;font-size:1em;text-align:left;letter-spacing:.5px;padding:0px 25px 16px 0px;border:none;margin-bottom:0}
 	.nodeDecoration{padding-top:10px}
-	#headerContent{height:51px;background:url(_style_logo.png) no-repeat 100% 20%;padding-bottom:15px}
+	#headerContent{min-height:51px;background:url(_style_logo.png) no-repeat 100% 20%;padding-bottom:15px}
 	#nodeDecoration,#emptyHeader{color:#000;text-shadow:none;background:none;border:2px solid #CC6715;padding:5px 5px 10px 15px;margin-left:10px}
 	#nodeDecoration,#header,#emptyHeader{color:#000;text-shadow:none;background:none;border:none;padding:20px 0}
 	#packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#444;line-height:1em;margin:0 0 25px 0;background:#fff;border-top:1px solid #00843d}
