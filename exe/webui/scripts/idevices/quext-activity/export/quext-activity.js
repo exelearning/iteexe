@@ -662,7 +662,7 @@ var $eXeQuExt = {
 
     },
     onPlayerReady: function (event) {
-        var video='';
+        var video='quextVideo-0';
         if((event.target.h) && (event.target.h.id) ){
             video=event.target.h.id;
         }else if ((event.target.i ) && (event.target.i.id)) {
