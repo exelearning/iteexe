@@ -5,7 +5,7 @@ intef-exe (3:2.7) lucid; urgency=medium
     - New "Map" Game iDevice.
     - Full Game iDevices revision and compatibility with the latest MathJax version.
     - srt Subtitles in local videos.
-    - GeoGebra iDevice revision.
+    - GeoGebra iDevice: Author link in new window.
 
   * Ignacio Gros
     - New node contextual menu options: Add, rename, delete. (#609)
@@ -28,7 +28,7 @@ intef-exe (3:2.7) lucid; urgency=medium
     - Fixed: IFRAME content not displaying inside tabs, timelines, accordions... (#625)
     - Fixed: Download elp iDevice: Unnecessary quotation marks. (#626)
     - Fixed: Scrambled List iDevice introduction: Allow more than one paragraph. (#627)
-    - Fixed: Warn before editing another iDevice ("Save first" message). (#632)
+    - Fixed: Warn before editing or deleting another iDevice ("Save first" message). (#632)
 
   * APSL
     - Package building.

@@ -336,7 +336,7 @@ class Block(Renderable):
                                    _(u"Edit"), self.package.isChanged, True)
         html += common.confirmThenSubmitImage(
             _(u"This will delete this iDevice. Do you really want to do this?"),
-            u"delete",
+            u"deletePreviousCheck",
             self.id, u"/images/stock-cancel.png", 
             _(u"Delete"), 1)
         html += '</p>'

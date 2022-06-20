@@ -543,6 +543,16 @@ function submitChange(action, selectId)
 // Check the user really really wants to do this before submitting
 function confirmThenSubmitLink(message, action, object, changed)
 {
+    if (action=='deletePreviousCheck') {
+        if (document.getElementById("activeIdevice")&&document.getElementById("exe-submitButton")) {
+            Ext.Msg.alert(
+                _('Info'),
+                _("Please save your iDevice first. The changes you made will be lost if you navigate away from this page.")
+            );				
+            return false;
+        }
+        action = 'delete';
+    }
     parent.Ext.Msg.confirm("", message, function(button) {
         if (button == "yes")
 	        submitLink(action, object, changed);
