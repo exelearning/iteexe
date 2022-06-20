@@ -28,6 +28,7 @@ intef-exe (3:2.7-beta) lucid; urgency=medium
     - Fixed: IFRAME content not displaying inside tabs, timelines, accordions... (#625)
     - Fixed: Download elp iDevice: Unnecessary quotation marks. (#626)
     - Fixed: Scrambled List iDevice introduction: Allow more than one paragraph. (#627)
+    - Fixed: Warn before editing another iDevice ("Save first" message). (#632)
 
   * APSL
     - Package building.
