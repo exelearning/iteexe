@@ -502,6 +502,15 @@ function execute_submitLink(action, object, changed, currentNode)
 }
 function submitLink(action, object, changed, currentNode)
 {
+    if (action=="edit"){
+        if (document.getElementById("activeIdevice")&&document.getElementById("exe-submitButton")) {
+            Ext.Msg.alert(
+                _('Info'),
+                _("Please save your iDevice first. The changes you made will be lost if you navigate away from this page.")
+            );				
+            return false;
+        }
+    }
     var ed = "";
     if (typeof(tinyMCE)!='undefined' && tinyMCE.activeEditor) ed = tinyMCE.activeEditor;
     if (ed!="" && ed.id=="mce_fullscreen") {
