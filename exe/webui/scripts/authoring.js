@@ -543,7 +543,8 @@ function submitChange(action, selectId)
 // Check the user really really wants to do this before submitting
 function confirmThenSubmitLink(message, action, object, changed)
 {
-    if (action=='deletePreviousCheck') {
+    var c = action;
+    if (c=='deletePreviousCheck') {
         if (document.getElementById("activeIdevice")&&document.getElementById("exe-submitButton")) {
             Ext.Msg.alert(
                 _('Info'),
@@ -551,11 +552,11 @@ function confirmThenSubmitLink(message, action, object, changed)
             );				
             return false;
         }
-        action = 'delete';
+        c = 'delete';
     }
     parent.Ext.Msg.confirm("", message, function(button) {
         if (button == "yes")
-	        submitLink(action, object, changed);
+	        submitLink(c, object, changed);
     });
 }
 
