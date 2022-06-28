@@ -48,8 +48,6 @@
   margin-right: 0.2em;
 }
 
-
-
 .exe-block-info img {
   vertical-align: middle;
   margin-left: .2em
@@ -80,7 +78,7 @@
   .candado-EDataAccess {
     flex-wrap: wrap;
   }
-  .candado-EDataAccess input[type=text],   .candado-EDataAccess input[type=number],{
+  .candado-EDataAccess input[type=text],   .candado-EDataAccess input[type=number]{
     margin-bottom: 0.3em;
   }
 }
