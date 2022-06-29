@@ -23,6 +23,8 @@ jobs:
           ls -n /Applications/ | grep Xcode*
           brew install libtiff libjpeg webp little-cms2
           brew install openssl
+          brew link openssl --force
+          brew --prefix openssl
           brew install libxml2
       - name: Install required python and pip
         uses: gabrielfalcao/pyenv-action@v8
