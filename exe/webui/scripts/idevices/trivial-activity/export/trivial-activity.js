@@ -56,7 +56,7 @@ var $eXeTrivial = {
         if (!$eXeTrivial.supportedBrowser('trivial')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Trivial') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('TriviExt') + '</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;

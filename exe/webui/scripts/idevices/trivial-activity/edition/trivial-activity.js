@@ -11,8 +11,8 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Trivial'),
-        alt: _('Trivial')
+        name: _('TriviExt'),
+        alt: _('TriviExt')
     },
     iDevicePath: "/scripts/idevices/trivial-activity/edition/",
     msgs: {},
@@ -1508,7 +1508,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Trivial.json";
+        link.download = _("Game") + "TriviEx.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
