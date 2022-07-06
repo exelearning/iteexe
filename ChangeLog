@@ -1,7 +1,7 @@
 intef-exe (3:2.7) lucid; urgency=medium
 
   * Manuel Narváez
-    - New "Trivial" Game iDevice.
+    - New "TriviExt" Game iDevice.
     - New "Map" Game iDevice.
     - Full Game iDevices revision and compatibility with the latest MathJax version.
     - srt Subtitles in local videos.
