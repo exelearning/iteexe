@@ -1,8 +1,7 @@
-# EXELearning English PO file.
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2001-2021 EXELearning.net
+# Copyright (C) 2001-2022 EXELearning.net
 # This file is distributed under the same license as the EXE package.
-# eXe Translations <translations@exelearning.net>, 2011-2021.
+# eXe Translations <translations@exelearning.net>, 2011-2022.
 #
 msgid ""
 msgstr ""
@@ -15290,43 +15289,4 @@ msgid ""
 "Either your idevices/generic.data file or the package you are loading was"
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
-
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
-
-#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
-#~ msgstr ""
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr ""
-
-#~ msgid "Back"
-#~ msgstr ""
-
-#~ msgid "Crop"
-#~ msgstr ""
-
-#~ msgid "Please select a programming language"
-#~ msgstr ""
-
-#~ msgid "Insert HTML code as text"
-#~ msgstr ""
-
-#~ msgid "Programming language"
-#~ msgstr ""
-
-#~ msgid "Markup (HTML, etc.)"
-#~ msgstr ""
-
-#~ msgid "C type"
-#~ msgstr ""
-
-#~ msgid "Line numbers"
-#~ msgstr ""
-
-#~ msgid "Line highlight"
-#~ msgstr ""
-
-#~ msgid "Paste HTML fragment (embed code)"
-#~ msgstr ""
 
