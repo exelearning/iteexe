@@ -600,7 +600,7 @@ msgstr "Klikalny obszar"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top (Y) Coord"
-msgstr "Górna wpółrzędna (Y) "
+msgstr "Górna wpółrzędna (Y)"
 
 #: exe/engine/clickinorderidevice.py:152
 msgid "Top CSS top property"
@@ -1102,7 +1102,7 @@ msgstr ""
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Blind"
-msgstr " Ślepy"
+msgstr "Ślepy"
 
 #: exe/engine/extendedfieldengine.py:36
 msgid "Bounce"
@@ -7247,7 +7247,7 @@ msgstr "egzamin"
 
 #: exe/jsui/scripts/lomvocab.js:63 exe/jsui/scripts/lomvocab.js:875
 msgid "experiment"
-msgstr "eksperyment "
+msgstr "eksperyment"
 
 #: exe/jsui/scripts/lomvocab.js:67
 msgid "problem statement"
@@ -7268,7 +7268,7 @@ msgstr "dyscyplina"
 
 #: exe/jsui/scripts/lomvocab.js:103 exe/jsui/scripts/lomvocab.js:923
 msgid "idea"
-msgstr "pomysł "
+msgstr "pomysł"
 
 #: exe/jsui/scripts/lomvocab.js:107 exe/jsui/scripts/lomvocab.js:927
 msgid "prerequisite"
@@ -7280,7 +7280,7 @@ msgstr "cel edukacyjny"
 
 #: exe/jsui/scripts/lomvocab.js:115 exe/jsui/scripts/lomvocab.js:935
 msgid "accessibility restrictions"
-msgstr "ograniczenia dostępności "
+msgstr "ograniczenia dostępności"
 
 #: exe/jsui/scripts/lomvocab.js:119 exe/jsui/scripts/lomvocab.js:939
 msgid "educational level"
@@ -7322,7 +7322,7 @@ msgstr "nieznany"
 
 #: exe/jsui/scripts/lomvocab.js:159 exe/jsui/scripts/lomvocab.js:975
 msgid "initiator"
-msgstr "inicjator "
+msgstr "inicjator"
 
 #: exe/jsui/scripts/lomvocab.js:163 exe/jsui/scripts/lomvocab.js:979
 msgid "terminator"
@@ -7419,7 +7419,7 @@ msgstr "utwórz"
 
 #: exe/jsui/scripts/lomvocab.js:261 exe/jsui/scripts/lomvocab.js:1077
 msgid "decide"
-msgstr " zdecyduj"
+msgstr "zdecyduj"
 
 #: exe/jsui/scripts/lomvocab.js:265 exe/jsui/scripts/lomvocab.js:1081
 msgid "define"
@@ -7471,7 +7471,7 @@ msgstr "zorganizuj"
 
 #: exe/jsui/scripts/lomvocab.js:317 exe/jsui/scripts/lomvocab.js:1133
 msgid "organize oneself"
-msgstr "zorganizuj się "
+msgstr "zorganizuj się"
 
 #: exe/jsui/scripts/lomvocab.js:321 exe/jsui/scripts/lomvocab.js:1137
 msgid "plan"
@@ -7916,7 +7916,7 @@ msgstr "analiza tekstu-obrazu"
 
 #: exe/jsui/scripts/lomvocab.js:847
 msgid "discussion activity"
-msgstr "dyskusja na temat działalności "
+msgstr "dyskusja na temat działalności"
 
 #: exe/jsui/scripts/lomvocab.js:851
 msgid "closed exercise or problem"
@@ -9716,7 +9716,7 @@ msgstr "Podaj słowo lub frazę"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:49
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:37
 msgid "Cool! The clue is:"
-msgstr "Super! Wskazówka jest następująca: "
+msgstr "Super! Wskazówka jest następująca:"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:46
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:31
@@ -10356,7 +10356,7 @@ msgstr "Wiadomości niestandardowe"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:740
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:621
 msgid "Show solutions"
-msgstr "Pokaż rozwiązania "
+msgstr "Pokaż rozwiązania"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:142
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:183
@@ -11812,7 +11812,7 @@ msgstr "Zamknij mapę"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:258
 msgid "Edit map points"
-msgstr "Edytowanie punktów mapy "
+msgstr "Edytowanie punktów mapy"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:260
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:2352
@@ -13830,7 +13830,7 @@ msgstr "Sformatuj"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:35
 msgid "Format HTML Code"
-msgstr "Format kod HTML "
+msgstr "Format kod HTML"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:41
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:48
