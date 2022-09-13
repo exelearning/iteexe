@@ -16390,18 +16390,3 @@ msgstr ""
 "incorpore ont été créés avec une version d'Exe plus récente que celle que"
 " vous utilisez. SVP, faites une mise à jour d'Exelearning et réessayez."
 
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
-
-#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
-#~ msgstr ""
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr ""
-
-#~ msgid "Back"
-#~ msgstr "Retour"
-
-#~ msgid "Crop"
-#~ msgstr "Recoupe"
-

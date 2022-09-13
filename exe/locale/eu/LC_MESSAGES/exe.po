@@ -15984,3 +15984,4 @@ msgid ""
 msgstr ""
 "Kargatzen ari zaren idevices/generic.data fitxategia edo paketea eXe-ren bertsio "
 "berriago batekin sortuta dago. Mesedez, eguneratu zure eXe-a eta berriz saiatu."
+

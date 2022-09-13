@@ -16369,18 +16369,3 @@ msgstr ""
 "создан с помощью новой версии eXe. Пожалуйста, обновите eXe и повторите "
 "попытку."
 
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
-
-#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
-#~ msgstr ""
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr ""
-
-#~ msgid "Back"
-#~ msgstr "Назад"
-
-#~ msgid "Crop"
-#~ msgstr "Обрезать"
-

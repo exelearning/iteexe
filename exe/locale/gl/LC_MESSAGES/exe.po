@@ -16071,3 +16071,4 @@ msgid ""
 msgstr ""
 "O seu ficheiro idevices/generic.data ou o paquete que está a cargar foi creado "
 "con unha versión máis recente de eXe.  Por favor actualice eXe e ténteo de novo."
+

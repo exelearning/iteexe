@@ -15549,18 +15549,3 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr ""
 
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
-
-#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
-#~ msgstr ""
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr ""
-
-#~ msgid "Back"
-#~ msgstr "ལོག་འགྱོ"
-
-#~ msgid "Crop"
-#~ msgstr "བཏོག་བཅོས"
-

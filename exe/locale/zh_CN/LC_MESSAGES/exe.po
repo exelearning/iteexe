@@ -15512,18 +15512,3 @@ msgid ""
 " created with a newer version of eXe.  Please upgrade eXe and try again."
 msgstr "您的idevices模块 / generic.data文件或您正在加载的课件包是使用较新版本的eXe创建的。请升级eXe，然后重试。"
 
-#~ msgid "¡It is not correct! You have clicked on"
-#~ msgstr ""
-
-#~ msgid "Write the correct word or phrase and click on the 'Reply' button."
-#~ msgstr ""
-
-#~ msgid "It's not true! The right answer is"
-#~ msgstr ""
-
-#~ msgid "Back"
-#~ msgstr "返回"
-
-#~ msgid "Crop"
-#~ msgstr "裁剪"
-
