@@ -1,15 +1,15 @@
 # Polish EXELearning PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2019 EXELearning.net
+# Copyright (C) 2011-2022 EXELearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
 #
 # Translators:
 # Dominik Adrian Grzywak, 2018
-# Waldemar Stoczkowski, 2022
 # Jakub Tomaszewski <tomaszewski202@gmail.com>, 2019
 # AlexL <loginov.alex.valer@gmail.com>, 2019-2020
+# Waldemar Stoczkowski, 2022
 #
 msgid ""
 msgstr ""
