@@ -754,7 +754,11 @@ var $exe = {
         init : function(){
             var math = $(".exe-math");
             var mathjax = false;
-            if (math.length>0) {
+            if (math.length>0||$("body").hasClass("exe-auto-math")) {
+                if ($("body").hasClass("exe-auto-math")) {
+                    var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($('#main').html());
+                    if (hasLatex) mathjax = true;
+                }
                 math.each(function(){
                     var e = $(this);
                     if (e.hasClass("exe-math-engine")) {

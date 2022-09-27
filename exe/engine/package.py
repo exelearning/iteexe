@@ -803,6 +803,15 @@ class Package(Persistable):
         :param addSearchBox: New value for the _addSearchBox flag.
         """
         self._addSearchBox = addSearchBox
+        
+    def set_loadMathEngine(self, loadMathEngine):
+        """
+        Set _loadMathEngine flag.
+
+        :type loadMathEngine: boolean
+        :param load: New value for the _loadMathEngine flag.
+        """
+        self._loadMathEngine = loadMathEngine
 
     def get_addSearchBox(self):
         """
@@ -813,6 +822,18 @@ class Package(Persistable):
         """
         if hasattr(self, '_addSearchBox'):
             return self._addSearchBox
+        else:
+            return False
+            
+    def get_loadMathEngine(self):
+        """
+        Returns _loadMathEngine flag value.
+
+        :rtype: boolean
+        :return: Flag indicating wheter we should load an external JS (like MathJax) or not
+        """
+        if hasattr(self, '_loadMathEngine'):
+            return self._loadMathEngine
         else:
             return False
 
@@ -1163,6 +1184,7 @@ class Package(Persistable):
     extraHeadContent = property(lambda self: self._extraHeadContent, set_extraHeadContent)
     addPagination = property(get_addPagination, set_addPagination)
     addSearchBox = property(get_addSearchBox, set_addSearchBox)
+    loadMathEngine = property(get_loadMathEngine, set_loadMathEngine)
     exportElp = property(get_exportElp, set_exportElp)
     isTemplate = property(get_isTemplate, set_isTemplate)
     templateFile = property(get_templateFile, set_templateFile)

@@ -359,7 +359,10 @@ class Epub3Page(Page):
             html += style.get_extra_head()
         html += common.getExtraHeadContent(self.node.package)
         html += u"</head>" + lb
-        html += u'<body class="exe-epub3" id="exe-node-'+self.node.id+'">' + lb
+        extraCSS = ''
+        if self.node.package.get_loadMathEngine():
+            extraCSS = ' exe-auto-math'
+        html += u'<body class="exe-epub3'+extraCSS+'" id="exe-node-'+self.node.id+'">' + lb
         html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb
         html += u"<" + headerTag + " id=\"nodeDecoration\">"

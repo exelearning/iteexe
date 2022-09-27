@@ -139,7 +139,10 @@ class AuthoringPage(RenderableResource):
         self.blocks = []
         self.__addBlocks(topNode)
         html  = self.__renderHeader()
-        html += u'<body onload="onLoadHandler();" class="exe-authoring-page js">\n'
+        extraCSS = ''
+        if self.package.get_loadMathEngine():
+            extraCSS = ' exe-auto-math'
+        html += u'<body onload="onLoadHandler();" class="exe-authoring-page'+extraCSS+' js">\n'
         html += u"<form method=\"post\" "
 
         if request is None:

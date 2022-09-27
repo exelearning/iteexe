@@ -105,6 +105,19 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             },
                             flex: 0,
                             help: _('Checking this option, a "Page X of Y." text will be added to every page of the exported content (except ePub\'s frontpage). This doesn\'t affect Single Page and Text File export files.')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+                                inputId: 'pp_loadMathEngine',
+                                boxLabel: _('Math content: Load MathJax in pages with LaTeX code.'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Checking this option, pages with LaTeX code will automatically load the MathJax JavaScript file from a content delivery network (CDN). MathJax is a JavaScript display engine for mathematics.')
+                            },
+                            flex: 0,
+                            help: _('Checking this option, pages with LaTeX code will automatically load the MathJax JavaScript file from a content delivery network (CDN). MathJax is a JavaScript display engine for mathematics.')
                         }
                     ]
                 },

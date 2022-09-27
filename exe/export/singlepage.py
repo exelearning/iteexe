@@ -76,11 +76,14 @@ class SinglePage(Page):
         # Render HTML header
         html  = self.renderHeader(title, docType, for_print)
         
+        extraCSS = ''
+        if package.get_loadMathEngine():
+            extraCSS = ' exe-auto-math'        
         if for_print:
             # Include extra onload bit:
-            html += u'<body class="exe-single-page" onload="print_page()">'
+            html += u'<body class="exe-single-page'+extraCSS+'" onload="print_page()">'
         else:
-            html += u'<body class="exe-single-page">'
+            html += u'<body class="exe-single-page'+extraCSS+'">'
             
         # Script to check if JS is enabled
         html += u'<script type="text/javascript">document.body.className+=" js"</script>' + lineBreak

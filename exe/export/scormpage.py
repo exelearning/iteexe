@@ -130,12 +130,15 @@ class ScormPage(Page):
         
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
+        extraCSS = ''
+        if self.node.package.get_loadMathEngine():
+            extraCSS = ' exe-auto-math'
         if self.scormType == 'commoncartridge':
             if style.hasValidConfig():
                 html += style.get_extra_head()        
             html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb
-            html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm\">"
+            html += u"<body id=\""+self.node.id+"\" class=\"exe-scorm"+extraCSS+"\">"
             html += u'<script type="text/javascript">document.body.className+=" js"</script>'+lb            
         else:
             html += u"<script type=\"text/javascript\" src=\"SCORM_API_wrapper.js\"></script>"+lb
@@ -144,7 +147,7 @@ class ScormPage(Page):
                 html += style.get_extra_head()
             html += common.getExtraHeadContent(self.node.package)
             html += u"</head>"+lb            
-            html += u'<body id="exe-node-'+self.node.id+'" class=\"exe-scorm\" '
+            html += u'<body id="exe-node-'+self.node.id+'" class=\"exe-scorm'+extraCSS+'\" '
             if common.hasQuizTest(self.node):
                 html += u'onunload="unloadPage(true)">'
             else:
