@@ -677,7 +677,36 @@ var $exe = {
     // Math options (MathJax, etc.)
     math : {
         // Change this from your Style or your elp using $exe.math.engine="..."
-        engine : "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML",
+        engine : "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+        // MathJax options:
+        engineConfig : {
+            loader: {
+                load: ['[tex]/color', '[tex]/mathtools',
+                    '[tex]/ams', '[tex]/mhchem',
+                    '[tex]/cancel', '[tex]/enclose',
+                    '[tex]/physics', '[tex]/textmacros'
+                ]
+            },
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ["\\(", "\\)"]
+                ],
+                displayMath: [
+                    ['$$', '$$'],
+                    ["\\[", "\\]"]
+                ],
+                processEscapes: true,
+                tags: 'ams',
+                packages: {
+                    '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                },
+                physics: {
+                    italicdiff: false,
+                    arrowdel: false
+                }
+            }
+        },
         // Create links to the code and the image (different possibilities)
         createLinks : function(math) {
             var mathjax = false;
@@ -742,7 +771,10 @@ var $exe = {
                             }
                         }
                     });
-                    $exe.loadScript($exe.math.engine,$exe.math.createLinks());
+                    if (typeof(window.MathJax)!='object') {
+                        window.MathJax = $exe.math.engineConfig;
+                        $exe.loadScript($exe.math.engine,$exe.math.createLinks());
+                    }
                 } else {
                     $exe.math.createLinks(math);
                 }
