@@ -766,15 +766,34 @@ var $exe = {
                     }
                 });
                 if (mathjax && navigator.onLine) {
-                    $(".exe-math-code").each(function(){
-                        var code = this.innerHTML.replace(/ /g,'');
-                        if (code.indexOf("<math")==-1) {
-                            if (code.indexOf("\\[")!=0 && code.substr(code.length-2)!="\\]") {
-                                // Wrap the code: \[ ... \]
-                                this.innerHTML = "\\[ "+this.innerHTML+" \\]";
-                            }
-                        }
-                    });
+					math.each(function(){
+						var isInline = false;
+						var codeW = $(".exe-math-code",this);
+						var code = codeW.html().trim();
+							if (code.indexOf("\\(")==0||(code.indexOf("$")==0&&code.indexOf("$$")!=0)) isInline = true; 
+						if (isInline) $(this).addClass("exe-math-inline");
+						if (code.indexOf("<math")==-1) {
+							if (isInline) {
+								if (code.indexOf("$")==0&&code.substr(code.length-1)=="$") {
+									// $x$ is valid inline
+								} else {
+									if (code.indexOf("\\(")!=0 && code.substr(code.length-2)!="\\)") {
+										// Wrap the code: \( ... \)
+										codeW.html("\\("+code+"\\)");
+									}
+								}
+							} else {
+								if (code.indexOf("$$")==0&&code.substr(code.length-2)=="$$") {
+									// $$x$$ is valid block
+								} else {
+									if (code.indexOf("\\[")!=0 && code.substr(code.length-2)!="\\]") {
+										// Wrap the code: \[ ... \]
+										codeW.html("\\["+code+"\\]");
+									}
+								}
+							}
+						}
+					});
                     if (typeof(window.MathJax)!='object') {
                         window.MathJax = $exe.math.engineConfig;
                         $exe.loadScript($exe.math.engine,$exe.math.createLinks());

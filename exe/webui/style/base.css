@@ -56,7 +56,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .js .exe-dl dd{display:none;padding-left:0;margin:1em 1em 1em 37px}
 
 /* Math */
-.exe-math{margin:2em 0}
+.exe-math{display:block;margin:2em 0}
 .exe-math,.MathJax_Display{text-align:left!important}
 .exe-math.position-center,.position-center .MathJax_Display,
 [style*="text-align: center"] .MathJax_Display{text-align:center!important}
@@ -64,6 +64,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 [style*="text-align: right"] .MathJax_Display{text-align:right!important}
 .js .show-image .exe-math-code,.js .show-code .exe-math-img{display:none}
 .exe-math-links{font-size:.85em}
+.exe-math-inline{display:inline;margin:0 .1em!important}
 
 /* TinyMCE: Images and media */
 .exe-figure{margin:2em 0;max-width:100%}
