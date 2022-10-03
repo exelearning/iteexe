@@ -365,9 +365,11 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             my_style = G.application.config.styleStore.getStyle(page.node.package.style)
             for x in my_style.get_style_dir().files('*.*'):
                 xmlStr += """    <file href="%s"/>\n""" % x.basename()
-            # we do want base.css and (for short time), popup_bg.gif, also:
+            # we do want base.css and some images:
             xmlStr += """    <file href="base.css"/>\n"""
             xmlStr += """    <file href="popup_bg.gif"/>\n"""
+            if self.package.get_addExeLink():
+                xmlStr += """    <file href="exe_powered_logo.png"/>\n"""
             # now the javascript files:
             xmlStr += """    <file href="SCORM_API_wrapper.js"/>\n"""
             xmlStr += """    <file href="SCOFunctions.js"/>\n"""
@@ -442,6 +444,9 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             for x in my_style.get_style_dir().files('*.*'):
                 fileStr += """    <file href="%s"/>\n""" % x.basename()
                 self.dependencies[x.basename()] = True    
+            if page.node.package.get_addExeLink():
+                self.resStr += '    <file href="exe_powered_logo.png"/>\n'                
+                self.dependencies["exe_powered_logo.png"] = True
             # CC export require content.* any place inside the manifest:
             if page.node.package.exportSource and page.depth == 1:
                 self.resStr += '    <file href="content.xsd"/>\n'
@@ -453,6 +458,8 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
             self.dependencies["base.css"] = True
             self.dependencies["content.css"] = True
             self.dependencies["popup_bg.gif"] = True
+            if page.node.package.get_addExeLink():
+                self.dependencies["exe_powered_logo.png"] = True
         else:
             if self.scormType == "scorm2004":
                 self.resStr += "adlcp:scormType=\"sco\" "
@@ -615,6 +622,8 @@ class ScormExport(object):
         # Copy the style files to the output dir
 
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
+        if package.get_addExeLink():
+            styleFiles += [self.styleDir/'..'/'exe_powered_logo.png']
         # And with all the files of the style we avoid problems:
         styleFiles += self.styleDir.files("*.*")
         if self.scormType == "commoncartridge":

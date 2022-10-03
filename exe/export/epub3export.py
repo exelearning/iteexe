@@ -601,6 +601,8 @@ class Epub3Export(object):
         # Copy the style files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir /'..'/ 'popup_bg.gif']
+        if package.get_addExeLink():
+            styleFiles += [self.styleDir/'..'/'exe_powered_logo.png']        
         styleFiles += [f for f in self.styleDir.files("*.*") if f.basename() not in ['nav.css']]
 
         # FIXME for now, only copy files referenced in Common Cartridge

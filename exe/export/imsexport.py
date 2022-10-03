@@ -512,6 +512,8 @@ class IMSExport(object):
         # Copy the style files to the output dir
         # But not nav.css
         styleFiles = [self.styleDir/'..'/'popup_bg.gif']
+        if package.get_addExeLink():
+            styleFiles += [self.styleDir/'..'/'exe_powered_logo.png']
         styleFiles += self.styleDir.files("*.*")
         if "nav.css" in styleFiles:
             styleFiles.remove("nav.css")

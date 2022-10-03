@@ -189,6 +189,8 @@ class WebsiteExport(object):
         if os.path.isdir(self.stylesDir):
             # Copy the style files to the output dir
             styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
+            if package.get_addExeLink():
+                styleFiles += [self.stylesDir/'..'/'exe_powered_logo.png']
             styleFiles += self.stylesDir.files("*.*")
             self.stylesDir.copylist(styleFiles, outputDir)
 
