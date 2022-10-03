@@ -444,6 +444,7 @@ class IMSPage(Page):
         html += self.renderLicense()
         html += self.renderFooter()
         html += u"</div>"+lb # /#outer
+        html += common.renderExeLink(self.node.package)        
         if style.hasValidConfig():
             html += style.get_extra_body()
         html += u'</body></html>'

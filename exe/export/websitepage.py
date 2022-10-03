@@ -246,6 +246,7 @@ class WebsitePage(Page):
             html += "</div>"+lb
             html += self.renderFooter()
         html += u"</div>"+lb # /content
+        html += common.renderExeLink(self.node.package)
         if themeHasXML:
         #if style.hasValidConfig():
             html += style.get_extra_body()

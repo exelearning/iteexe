@@ -120,6 +120,9 @@ class SinglePage(Page):
         # Close main content block
         html += u'</div>' + lineBreak
         
+        # eXe footer link
+        html += common.renderExeLink(self.node.package)        
+        
         # Some styles might have their own JavaScript files (see their config.xml file)
         style = G.application.config.styleStore.getStyle(self.node.package.style)
         if style.hasValidConfig():

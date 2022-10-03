@@ -446,6 +446,11 @@ def renderFooter(footer):
         html += footer + "</" + footerTag + ">"
     return html
 
+def renderExeLink(package):
+    if package.get_addExeLink():
+        return '<p id="made-with-eXe"><a href="https://exelearning.net/" target="_blank" rel="noopener"><span>'+_("Made with eXeLearning")+'<span> ('+_("New Window")+')</span></span></a></p>';
+    return ''
+
 def themeHasConfigXML(style):
     themePath = Path(G.application.config.stylesDir/style)
     themeXMLFile = themePath.joinpath("config.xml")

@@ -118,6 +118,19 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             },
                             flex: 0,
                             help: _('Checking this option, pages with LaTeX code will automatically load the MathJax JavaScript file from a content delivery network (CDN). MathJax is a JavaScript display engine for mathematics.')
+                        },{
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
+                                inputId: 'pp_addExeLink',
+                                boxLabel: _('"Made with eXeLearning" link'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('Help us spreading eXeLearning. Checking this option, a "Made with eXeLearning" link will be displayed in your pages.')
+                            },
+                            flex: 0,
+                            help: _('Help us spreading eXeLearning. Checking this option, a "Made with eXeLearning" link will be displayed in your pages.')
                         }
                     ]
                 },

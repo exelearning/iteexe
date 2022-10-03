@@ -204,7 +204,9 @@ class ScormPage(Page):
         #if not style.hasValidConfig():
             html += self.renderLicense()
             html += self.renderFooter()
+            html += common.renderExeLink(self.node.package)
         else:
+            html += common.renderExeLink(self.node.package)
             html += style.get_extra_body()
         html += u'</body></html>'
         html = html.encode('utf8')

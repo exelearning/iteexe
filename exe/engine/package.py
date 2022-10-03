@@ -812,6 +812,15 @@ class Package(Persistable):
         :param load: New value for the _loadMathEngine flag.
         """
         self._loadMathEngine = loadMathEngine
+        
+    def set_addExeLink(self, addExeLink):
+        """
+        Set _addExeLink flag.
+
+        :type addExeLink: boolean
+        :param load: New value for the _addExeLink flag.
+        """
+        self._addExeLink = addExeLink
 
     def get_addSearchBox(self):
         """
@@ -836,6 +845,18 @@ class Package(Persistable):
             return self._loadMathEngine
         else:
             return False
+            
+    def get_addExeLink(self):
+        """
+        Returns _addExeLink flag value.
+
+        :rtype: boolean
+        :return: Flag indicating wheter we should load an external JS (like MathJax) or not
+        """
+        if hasattr(self, '_addExeLink'):
+            return self._addExeLink
+        else:
+            return True
 
     def set_exportElp(self, exportElp):
         """
@@ -1185,6 +1206,7 @@ class Package(Persistable):
     addPagination = property(get_addPagination, set_addPagination)
     addSearchBox = property(get_addSearchBox, set_addSearchBox)
     loadMathEngine = property(get_loadMathEngine, set_loadMathEngine)
+    addExeLink = property(get_addExeLink, set_addExeLink)
     exportElp = property(get_exportElp, set_exportElp)
     isTemplate = property(get_isTemplate, set_isTemplate)
     templateFile = property(get_templateFile, set_templateFile)
