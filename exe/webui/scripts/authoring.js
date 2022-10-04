@@ -1749,6 +1749,16 @@ function createLeftPanelToggler(){
 
 function createEmptyPageInstructions(){
 	eXe.app.createEmptyPageInstructions();
+    // To review (Link to click and type) - #642
+    if (document.getElementById("activeIdevice")) return;
+    jQuery("#main").append('<p id="pageAddTextLinkWrapper"><a href="#" id="pageAddTextLink">'+_("Add a Text iDevice")+'</a></p>');
+    jQuery("#pageAddTextLink").click(function(){
+        var id = document.body.id;
+            id = id.replace("exe-authoring-page-","");
+            id = parseInt(id);
+        submitLink("AddIdevice","58",1,id);
+        return false;
+    });
 }
 
 function checkIdevicesVisibility(){

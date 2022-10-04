@@ -330,6 +330,28 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 body.exe-advanced{display:block}
 body.exe-advanced .exe-advanced{display:block}
 
+/* Click and type button - #642 */
+p#pageAddTextLinkWrapper{margin:20px 0;text-align:center}
+p#pageAddTextLinkWrapper a{
+height:16px;
+line-height:16px;
+color:#333;
+background:#E0E0E0;
+padding:3px 6px 4px 6px;
+font-family:tahoma, arial, verdana, sans-serif;
+font-size:11px;
+font-weight:normal;
+border:1px solid #9D9D9D;
+border-radius:2px;
+text-decoration:none!important;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+p#pageAddTextLinkWrapper a:hover,
+p#pageAddTextLinkWrapper a:focus{
+    background: rgb(251,251,251);
+    background: linear-gradient(180deg, rgba(251,251,251,1) 0%, rgba(233,233,233,1) 100%);
+}
+
 /* Provisional code to review */
 .exe-editor-toggler{margin:0 5px}
 body.with-color-picker{overflow:hidden}
