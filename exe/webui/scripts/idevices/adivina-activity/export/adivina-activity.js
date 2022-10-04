@@ -517,10 +517,10 @@ var $eXeAdivina = {
             $('#adivinaDefinition-' + instance).text(definition);
         }
 
-        var html = $('#adivinaDefinition-' + instance).html(),
+        var html = $('#adivinaGameContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeAdivina.updateLatex('adivinaDefinition-' + instance)
+            $eXeAdivina.updateLatex('adivinaGameContainer-' + instance)
         }
         return cPhrase;
     },
@@ -843,6 +843,8 @@ var $eXeAdivina = {
         $('#adivinaImage-' + instance).hide();
         $('#adivinaCover-' + instance).hide();
         $('#adivinaVideo-' + instance).hide();
+        $('#adivinaEText-' + instance).hide();
+        
         $('#adivinaStartGame-' + instance).show();
         $eXeAdivina.showScoreGame(type, instance);
         $eXeAdivina.startVideo('', 0, 0, instance);
@@ -1363,42 +1365,13 @@ var $eXeAdivina = {
 
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = {
-                loader: {
-                    load: ['[tex]/color', '[tex]/mathtools',
-                        '[tex]/ams', '[tex]/mhchem',
-                        '[tex]/cancel', '[tex]/enclose',
-                        '[tex]/physics', '[tex]/textmacros'
-                    ]
-                },
-                tex: {
-                    inlineMath: [
-                        ['$', '$'],
-                        ["\\(", "\\)"]
-                    ],
-
-                    displayMath: [
-                        ['$$', '$$'],
-                        ["\\[", "\\]"]
-                    ],
-                    processEscapes: true,
-                    tags: 'ams',
-                    packages: {
-                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
-                    },
-                    physics: {
-                        italicdiff: false,
-                        arrowdel: false
-                    }
-                },
-            };
+            window.MathJax = $exe.math.engineConfig; 
         }
         var script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.src = $exe.math.engine;
         script.async = true;
         document.head.appendChild(script);
     },
-
 
     updateLatex: function (mnodo) {
         setTimeout(function () {
@@ -1414,7 +1387,6 @@ var $eXeAdivina = {
                 } catch (error) {
                     console.log('Error al refrescar cuestiones')
                 }
-
             }
 
         }, 100);

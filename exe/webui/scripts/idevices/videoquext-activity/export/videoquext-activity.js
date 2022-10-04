@@ -220,38 +220,10 @@ var $eXeVideoQuExt = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = {
-                loader: {
-                    load: ['[tex]/color', '[tex]/mathtools',
-                        '[tex]/ams', '[tex]/mhchem',
-                        '[tex]/cancel', '[tex]/enclose',
-                        '[tex]/physics', '[tex]/textmacros'
-                    ]
-                },
-                tex: {
-                    inlineMath: [
-                        ['$', '$'],
-                        ["\\(", "\\)"]
-                    ],
-
-                    displayMath: [
-                        ['$$', '$$'],
-                        ["\\[", "\\]"]
-                    ],
-                    processEscapes: true,
-                    tags: 'ams',
-                    packages: {
-                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
-                    },
-                    physics: {
-                        italicdiff: false,
-                        arrowdel: false
-                    }
-                },
-            };
+            window.MathJax = $exe.math.engineConfig; 
         }
         var script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.src = $exe.math.engine;
         script.async = true;
         document.head.appendChild(script);
     },
@@ -941,10 +913,6 @@ var $eXeVideoQuExt = {
                 if (textoTooltip.length > 0) {
                     $(this).append('<div class="gameQP-Tooltip">' + textoTooltip + '</div>');
                     $(this).find("div.gameQP-Tooltip").css("left", '-121px');
-                    if (typeof (MathJax) != "undefined") {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '.gameQP-Tooltip']);
-                    }
-       
                     var html = $('#vquextProgressBar-' + instance).html(),
                         latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
                     if (latex) {
@@ -1820,10 +1788,10 @@ var $eXeVideoQuExt = {
             $('#vquextOptionsDiv-' + instance).show();
             $('#vquextDivReply-' + instance).hide();
         }
-        var html = $('#vquextQuestionDiv-' + instance).html(),
+        var html = $('#vquextGameContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
+            $eXeVideoQuExt.updateLatex('vquextGameContainer-' + instance)
         }
     },
     drawSolution: function (instance) {
@@ -1853,10 +1821,10 @@ var $eXeVideoQuExt = {
                 }
             });
         }
-        var html = $('#vquextQuestionDiv-' + instance).html(),
+        var html = $('#vquextGameContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
+            $eXeVideoQuExt.updateLatex('vquextGameContainer-' + instance)
         }
 
     },

@@ -201,38 +201,10 @@ var $eXeQuExt = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-
-            window.MathJax = {
-                loader: {
-                    load: ['[tex]/colorv2', '[tex]/mathtools',
-                        '[tex]/ams', '[tex]/mhchem',
-                        '[tex]/cancel', '[tex]/enclose',
-                        '[tex]/physics', '[tex]/textmacros'
-                    ]
-                },
-                tex: {
-                    inlineMath: [
-                        ['$', '$'],
-                        ["\\(", "\\)"]
-                    ],
-                    displayMath: [
-                        ['$$', '$$'],
-                        ["\\[", "\\]"]
-                    ],
-                    processEscapes: true,
-                    tags: 'ams',
-                    packages: {
-                        '[+]': ['colorv2', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
-                    },
-                    physics: {
-                        italicdiff: false,
-                        arrowdel: false
-                    }
-                },
-            };
+            window.MathJax = $exe.math.engineConfig; 
         }
         var script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.src = $exe.math.engine;
         script.async = true;
         document.head.appendChild(script);
     },
@@ -1229,7 +1201,7 @@ var $eXeQuExt = {
         var html = $('#quextQuestionDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeQuExt.updateLatex('quextQuestionDiv-' + instance)
+            $eXeQuExt.updateLatex('quextGameContainer-' + instance)
         }
     },
 

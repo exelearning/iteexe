@@ -225,45 +225,16 @@ var $eXeSelecciona = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = {
-                loader: {
-                    load: ['[tex]/color', '[tex]/mathtools',
-                        '[tex]/ams', '[tex]/mhchem',
-                        '[tex]/cancel', '[tex]/enclose',
-                        '[tex]/physics', '[tex]/textmacros'
-                    ]
-                },
-                tex: {
-                    inlineMath: [
-                        ['$', '$'],
-                        ["\\(", "\\)"]
-                    ],
-
-                    displayMath: [
-                        ['$$', '$$'],
-                        ["\\[", "\\]"]
-                    ],
-                    processEscapes: true,
-                    tags: 'ams',
-                    packages: {
-                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
-                    },
-                    physics: {
-                        italicdiff: false,
-                        arrowdel: false
-                    }
-                },
-            };
+            window.MathJax = $exe.math.engineConfig; 
         }
         var script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.src = $exe.math.engine;
         script.async = true;
         document.head.appendChild(script);
     },
     updateLatex: function (mnodo) {
         setTimeout(function () {
-            if (typeof (MathJax) != "undefined") {
-                try {
+            if (typeof (MathJax) != "undefined") {                try {
                     if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
                     } else if (typeof MathJax.typeset == "function") {
@@ -1294,10 +1265,10 @@ var $eXeSelecciona = {
             $('#seleccionaDefinition-' + instance).text(definition);
         }
         
-        var html = $('#seleccionaWordDiv-' + instance).html(),
+        var html = $('#seleccionaGameContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeSelecciona.updateLatex('seleccionaWordDiv-' + instance)
+            $eXeSelecciona.updateLatex('seleccionaGameContainer-' + instance)
         }
         return cPhrase;
     },
@@ -1953,10 +1924,10 @@ var $eXeSelecciona = {
                 $(this).hide()
             }
         });
-        var html = $('#seleccionaQuestionDiv-' + instance).html(),
+        var html = $('#seleccionaGameContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeSelecciona.updateLatex('seleccionaQuestionDiv-' + instance)
+            $eXeSelecciona.updateLatex('seleccionaGameContainer-' + instance)
         }
     },
 

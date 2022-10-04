@@ -191,38 +191,10 @@ var $eXeTrivial = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = {
-                loader: {
-                    load: ['[tex]/color', '[tex]/mathtools',
-                        '[tex]/ams', '[tex]/mhchem',
-                        '[tex]/cancel', '[tex]/enclose',
-                        '[tex]/physics', '[tex]/textmacros'
-                    ]
-                },
-                tex: {
-                    inlineMath: [
-                        ['$', '$'],
-                        ["\\(", "\\)"]
-                    ],
-
-                    displayMath: [
-                        ['$$', '$$'],
-                        ["\\[", "\\]"]
-                    ],
-                    processEscapes: true,
-                    tags: 'ams',
-                    packages: {
-                        '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
-                    },
-                    physics: {
-                        italicdiff: false,
-                        arrowdel: false
-                    }
-                },
-            };
+            window.MathJax = $exe.math.engineConfig; 
         }
         var script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+        script.src = $exe.math.engine;
         script.async = true;
         document.head.appendChild(script);
     },
@@ -1994,10 +1966,10 @@ var $eXeTrivial = {
             $('#trivialDefinition-' + instance).text(definition);
         }
 
-        var html = $('#trivialWordDiv-' + instance).html(),
+        var html = $('#trivialGameQuestion-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeTrivial.updateLatex('trivialWordDiv-' + instance)
+            $eXeTrivial.updateLatex('trivialGameQuestion-' + instance)
         }
         return cPhrase;
     },
@@ -2370,10 +2342,10 @@ var $eXeTrivial = {
                 $(this).hide();
             }
         });
-        var html = $('#trivialQuestionDiv-' + instance).html(),
+        var html = $('#trivialGameQuestion-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeTrivial.updateLatex('trivialQuestionDiv-' + instance)
+            $eXeTrivial.updateLatex('trivialGameQuestion-' + instance)
         }
     },
     drawSolution: function (instance) {

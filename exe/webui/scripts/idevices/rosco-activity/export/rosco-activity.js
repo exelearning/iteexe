@@ -1112,42 +1112,14 @@ var $eXeRosco = {
 		}
 	},
 	loadMathJax: function () {
-		if (!window.MathJax) {
-			window.MathJax = {
-				loader: {
-					load: ['[tex]/color', '[tex]/mathtools',
-						'[tex]/ams', '[tex]/mhchem',
-						'[tex]/cancel', '[tex]/enclose',
-						'[tex]/physics', '[tex]/textmacros'
-					]
-				},
-				tex: {
-					inlineMath: [
-						['$', '$'],
-						["\\(", "\\)"]
-					],
-
-					displayMath: [
-						['$$', '$$'],
-						["\\[", "\\]"]
-					],
-					processEscapes: true,
-					tags: 'ams',
-					packages: {
-						'[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
-					},
-					physics: {
-						italicdiff: false,
-						arrowdel: false
-					}
-				},
-			};
-		}
-		var script = document.createElement('script');
-		script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-		script.async = true;
-		document.head.appendChild(script);
-	},
+        if (!window.MathJax) {
+            window.MathJax = $exe.math.engineConfig; 
+        }
+        var script = document.createElement('script');
+        script.src = $exe.math.engine;
+        script.async = true;
+        document.head.appendChild(script);
+    },
 	updateLatex: function (mnodo) {
         setTimeout(function () {
             if (typeof (MathJax) != "undefined") {
