@@ -198,6 +198,7 @@
 	display: none;
 }
 
+
 .MQP-Cubierta {
 	width: 100%;
 	height: auto;
@@ -208,6 +209,58 @@
 	background-color: rgb(255, 255, 255, .4);
 	display: none;
 }
+
+/* ToolTip */
+.MQP-ToolTip {
+	width: 400px;
+	max-width: 90%;
+	min-height: 80px;
+	background-color: white;
+	border: 1px solid #ccc;
+	position: absolute;
+	z-index: 10;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	padding: 0.5em 0.5em;
+	font-size: 1em;
+	top: 0;
+	left: 0;
+	visibility: hidden;
+	z-index: 3101;
+}
+.MQP-ToolTipTitle {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 0.4em;
+	padding: 0.2em;
+	border-bottom: 1px solid grey;
+	font-size: 0.9em;
+}
+.MQP-ToolTipClose {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	width: 20px;
+	height: 20px;
+	z-index:100;
+	display :block;
+}
+.MQP-MainContainer .MQP-ToolTipClose .MQP-IconsToolBar {
+    background-size: 100% 100%;
+	width: 20px;
+	height:20px;
+    margin: 0;
+}
+
+.MQP-ToolTipText{
+	color:inherit;
+	font-size: 0.9em;
+	max-height:400px;
+	overflow-y: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/*  Point */
 
 .MQP-TitlePoint {
 	width: 100%;
@@ -1458,6 +1511,10 @@ div:fullscreen .MQP-LinkCloseDetail{
 		height:3em;
 		top:40%;
 	}
+	.MQP-ToolTip {
+		width: 60%;
+		min-height: 150px;
+	}
 }
 
 @media screen and (max-width:470px) {
@@ -1512,6 +1569,21 @@ div:fullscreen .MQP-LinkCloseDetail{
 	}
 	.MQP-MessageGOScore>div {
 		margin-bottom: 0;
+	}
+	.MQP-ToolTip {
+		width: 94%;
+		max-width: 100%;
+		box-shadow: none;
+		padding: 0.3em 0.3em;
+		font-size: 0.8em;
+		top: 2em;
+		left: 3%;;
+	}
+	.MQP-ToolTip {
+		width: 60%;
+		min-height: 150px;
+		left: 20%;
+		top:1em
 	}
 }
 

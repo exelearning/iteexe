@@ -93,11 +93,12 @@ var $eXeMapa = {
                 $imagesLink = $('.mapa-LinkImagesPoints', this),
                 $audiosLink = $('.mapa-LinkAudiosPoints', this),
                 $textLink = $('.mapa-LinkTextsPoints', this),
+                $toolTips = $('.mapa-LinkToolTipPoints', this),
                 $imagesMap = $('.mapa-LinkImagesMapas', this),
                 $imagesSlides = $('.mapa-LinkImagesSlides', this),
                 $audiosIdentifyLink = $('.mapa-LinkAudiosIdentify', this),
                 $urlmap = $('.mapa-ImageMap', this).eq(0).attr('href'),
-                mOption = $eXeMapa.loadDataGame(dl, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, $urlmap);
+                mOption = $eXeMapa.loadDataGame(dl, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, $urlmap, $toolTips);
             $eXeMapa.options.push(mOption);
             var mapa = $eXeMapa.createInterfaceMapa(i);
             dl.before(mapa).remove();
@@ -294,7 +295,7 @@ var $eXeMapa = {
             }
         }
     },
-    loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url) {
+    loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url, $toolTips) {
         var json = data.text(),
             mOptions = $eXeMapa.isJsonString(json),
             hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
@@ -322,7 +323,7 @@ var $eXeMapa = {
         mOptions.visiteds = [];
         mOptions.levels = [];
         mOptions.numLevel = 0;
-        mOptions.hasYoutube = $eXeMapa.setMedias(mOptions.points, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, false, mOptions.evaluation);
+        mOptions.hasYoutube = $eXeMapa.setMedias(mOptions.points, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, false, mOptions.evaluation, $toolTips);
         mOptions.titles = $eXeMapa.getDataGame1(mOptions.points, mOptions.evaluation);
         mOptions.numberQuestions = mOptions.evaluation == 4 ? Math.floor(mOptions.selectsGame.length * (mOptions.percentajeQuestions / 100)) : Math.floor(mOptions.titles.length * (mOptions.percentajeIdentify / 100));
         mOptions.numberQuestions = mOptions.evaluation == 1 ? mOptions.points.length : mOptions.numberQuestions;
@@ -374,7 +375,7 @@ var $eXeMapa = {
         }
         return data;
     },
-    setMedias: function (pts, $images, $texts, $audios, $imgmpas, $audiosIdentifyLink, $imagesSlides, hasYoutube, evaluation) {
+    setMedias: function (pts, $images, $texts, $audios, $imgmpas, $audiosIdentifyLink, $imagesSlides, hasYoutube, evaluation, $tooltips) {
         var hasYB = hasYoutube;
         for (var i = 0; i < pts.length; i++) {
             var p = pts[i];
@@ -385,6 +386,8 @@ var $eXeMapa = {
                     p.url = $eXeMapa.extractURLGD(p.url);
                 } else if (p.type == 2 && typeof p.eText != "undefined" && p.eText.trim().length > 0) {
                     $eXeMapa.setText(p, $texts);
+                } else if (p.type == 7 && typeof p.toolTip != "undefined" && p.toolTip.trim().length > 0) {
+                    $eXeMapa.setToolTip(p, $tooltips);
                 }
                 if (p.type != 1 && typeof p.audio != "undefined" && p.audio.indexOf('http') != 0 && p.audio.length > 4) {
                     $eXeMapa.setAudio(p, $audios);
@@ -409,7 +412,7 @@ var $eXeMapa = {
                 if (typeof p.map.url != "undefined" && p.map.url.indexOf('http') != 0 && p.map.url.length > 4) {
                     $eXeMapa.setImgMap(p, $imgmpas);
                 }
-                hasYB = $eXeMapa.setMedias(p.map.pts, $images, $texts, $audios, $imgmpas, $audiosIdentifyLink, $imagesSlides, hasYB, evaluation);
+                hasYB = $eXeMapa.setMedias(p.map.pts, $images, $texts, $audios, $imgmpas, $audiosIdentifyLink, $imagesSlides, hasYB, evaluation, $tooltips);
             }
         }
         return hasYB;
@@ -465,6 +468,16 @@ var $eXeMapa = {
             var id = $(this).data('id');
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
                 p.eText = $(this).html();
+                return;
+            }
+        });
+
+    },
+    setToolTip: function (p, $tt) {
+        $tt.each(function () {
+            var id = $(this).data('id');
+            if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
+                p.toolTip = $(this).html();
                 return;
             }
         });
@@ -643,7 +656,7 @@ var $eXeMapa = {
             }
         }
 
-        
+
 
         if (!solution) {
             $('#mapaDefinition-' + instance).text(definition);
@@ -838,9 +851,17 @@ var $eXeMapa = {
             <div class="MQP-Multimedia" id="mapaMultimedia-' + instance + '">\
                 <img src="" id="mapaImage-' + instance + '" class="MQP-ImageMain" alt="" />\
                 <a href="#" class="MQP-LinkCloseDetail" id="mapaLinkCloseDetail-' + instance + '" title="' + msgs.msgClose + '">\
-                <strong class="sr-av">' + msgs.msgReturnMap + ':</strong>\
-                <div class="MQP-IconsToolBar exeQuextIcons-CReturn MQP-Activo"></div>\
+                    <strong class="sr-av">' + msgs.msgReturnMap + ':</strong>\
+                    <div class="MQP-IconsToolBar exeQuextIcons-CReturn MQP-Activo"></div>\
                 </a>\
+                <div class="MQP-ToolTip" id="mapaToolTip-' + instance + '">\
+                    <div class="MQP-ToolTipTitle" id="mapaToolTipTitle-' + instance + '"></div>\
+                    <a href="#" class="MQP-ToolTipClose" id="mapaToolTipClose-' + instance + '" title="' + msgs.msgClose + '">\
+                        <strong class="sr-av">' + msgs.msgClose + ':</strong>\
+                        <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
+                    </a>\
+                    <div class="MQP-ToolTipText" id="mapaToolTipText-' + instance + '"></div>\
+                </div>\
             </div>\
             <div class="MQP-AuthorLicence" id="mapaAutorLicence-' + instance + '"></div>\
             <div class="MQP-Cubierta" id="mapaCubierta-' + instance + '">\
@@ -1578,6 +1599,11 @@ var $eXeMapa = {
             }
             $eXeMapa.showSlide(mOptions.activeSlide, instance);
         });
+        $('#mapaToolTipClose-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeMapa.closeToolTip(instance)
+        });
+
 
     },
     showSlide: function (i, instance) {
@@ -1595,6 +1621,104 @@ var $eXeMapa = {
         if (q.slides[0].footer.length > 0) {
             $('#mapaFooterPoint-' + instance).show();
         }
+    },
+    showToolTip: function (num, instance, ) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[num],
+            $divText = $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').find('.mapa-LinkToolTipPoints[data-id="' + q.id + '"]').eq(0);
+        $('#mapaToolTipText-' + instance).empty();
+        if ($divText.length == 1) {
+            $divText.removeClass('js-hidden');
+            $('#mapaToolTipText-' + instance).append($divText);
+        }
+        $('#mapaToolTipTitle-' + instance).html(q.title);
+        $('#mapaToolTipText-' + instance).show();
+        $('#mapaFooterPoint-' + instance).hide();
+        $('#mapaMultimediaPoint-' + instance).hide();
+        var $main = $('#mapaGameContainer-' + instance),
+            $tooltip = $('#mapaToolTip-' + instance),
+            $button = $('#mapaMultimedia-' + instance).find("[data-number='" + num + "']").eq(0),
+            wMain = $main.innerWidth(),
+            hMain = $main.innerHeight(),
+            lMain = $main.offset().left,
+            tMain = $main.offset().top,
+            rMain = wMain + lMain,
+            bMain = tMain + hMain,
+            wToolTip = $tooltip.innerWidth(),
+            hToolTip = $tooltip.innerHeight(),
+            lToolTip = $button.offset().left - (wToolTip - $button.width()) / 2,
+            tToolTip = $button.offset().top - (hToolTip - $button.innerHeight()) / 2;
+
+        lToolTip = (lToolTip + wToolTip) > rMain ? (rMain - wToolTip - $button.innerHeight() -
+            15) : lToolTip;
+        tToolTip = (tToolTip + hToolTip) > bMain ? bMain - hToolTip : tToolTip;
+        tToolTip = tToolTip < tMain ? tMain : tToolTip;
+        $tooltip.css({
+            'visibility': 'visible',
+            'width': '0px'
+        });
+
+        if ($main.innerWidth() < 470 || mOptions.evaluation==1) {
+            tToolTip=tMain+30
+            lToolTip=lMain+(wMain-wToolTip)/2
+        }
+        $tooltip.offset({
+            'top': tToolTip,
+            'left': lToolTip
+        });
+        $tooltip.css({
+            'width': wToolTip + 'px'
+        });
+        $tooltip.hide()
+
+        var hm = hToolTip < hMain ? hMain : $tooltip.outerHeight();
+        $('#mapaGameContainer-' + instance).outerHeight(hm)
+        $tooltip.fadeIn();;
+
+    },
+    closeToolTip: function (instance) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[mOptions.activeMap.active];
+        $('#mapaGameContainer-' + instance).css('height', 'auto');
+        $('#mapaTest-' + instance).hide();
+        $('#mapaToolTip-' + instance).fadeOut(function () {
+            $('#mapaToolTip-' + instance).css({
+                'visibility': 'hidden',
+                'display': 'block'
+            });
+            mOptions.showData = false;
+            var $divTool = $('#mapaToolTip-' + instance).find('.mapa-LinkToolTipPoints[data-id="' + q.id + '"]').eq(0)
+            if ($divTool.length == 1) {
+                $divTool.addClass('js-hidden');
+                $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').append($divTool);
+            }
+            if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+                $eXeMapa.hideMapDetail(instance, true);
+            }
+            $eXeMapa.hideCover(instance);
+            if (mOptions.evaluation == 1) {
+                $eXeMapa.showMessage(0, '', instance);
+                if (mOptions.activeMap.pts.length - mOptions.hits - mOptions.errors <= 0) {
+                    $eXeMapa.gameOver(instance);
+                }
+            } else if (mOptions.evaluation == 2) {
+                mOptions.activeTitle++;
+                if (mOptions.activeTitle >= mOptions.numberQuestions) {
+                    $eXeMapa.gameOver(instance);
+                } else {
+                    $eXeMapa.showFind(instance, mOptions.activeTitle);
+                }
+            } else if (mOptions.evaluation == 3) {
+                mOptions.activeTitle++;
+                if (mOptions.hits >= mOptions.numberQuestions) {
+                    $eXeMapa.gameOver(instance);
+                } else {
+                    $eXeMapa.showFind(instance, mOptions.activeTitle);
+                }
+            }
+            $eXeMapa.showClue(instance);
+            $eXeMapa.messageAllVisited(instance);
+        });
 
     },
     startGame: function (instance) {
@@ -1605,7 +1729,6 @@ var $eXeMapa = {
             $eXeMapa.showFind(instance, 0);
         }
         mOptions.gameStarted = true;
-
     },
     showMapDetail: function (instance, num) {
         var mOptions = $eXeMapa.options[instance];
@@ -1933,7 +2056,7 @@ var $eXeMapa = {
         var mOptions = $eXeMapa.options[instance];
         mOptions.activeQuestion++;
         if (mOptions.activeQuestion >= mOptions.numberQuestions) {
-            $eXeMapa.gameOver(0, instance);
+            $eXeMapa.gameOver(instance);
             return;
         } else {
             $eXeMapa.showQuestion(mOptions.activeQuestion, instance);
@@ -1982,7 +2105,12 @@ var $eXeMapa = {
         }
         $('#mapaCubierta-' + instance).fadeIn(100, function () {
             $eXeMapa.hideCover(instance);
+            
+            $('#mapaFMessageOver-' + instance).show();
+            $('#mapaFMessages-' + instance).show();
+            
         });
+
     },
     updateNumberQuestion: function (numq, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2095,7 +2223,7 @@ var $eXeMapa = {
         }
         if (correct) {
             mOptions.activeMap.pts[mOptions.activeMap.active].state = 2;
-            if (mOptions.activeMap.pts[mOptions.activeMap.active].type < 4 || mOptions.activeMap.pts[mOptions.activeMap.active].type == 6) {
+            if (mOptions.activeMap.pts[mOptions.activeMap.active].type < 4 || mOptions.activeMap.pts[mOptions.activeMap.active].type == 6 || mOptions.activeMap.pts[mOptions.activeMap.active].type == 7) {
                 $eXeMapa.hideCover(instance);
                 $('#mapaCubierta-' + instance).fadeOut(100, function () {
                     $eXeMapa.showMessageDetail(instance, message, 2);
@@ -2166,6 +2294,8 @@ var $eXeMapa = {
                     $eXeMapa.showPoint(num, instance);
 
                 });
+            } else if (mOptions.activeMap.pts[num].type == 7) {
+                $eXeMapa.showToolTip(num, instance)
             } else {
                 $eXeMapa.showMessageModal(instance, message + ': ' + mOptions.title.title, 1, 2);
                 setTimeout(function () {
@@ -2294,7 +2424,7 @@ var $eXeMapa = {
         }
         $('#mapaFDetails-' + instance).css('marginTop', pt + 'px');
         $('#mapaFDetails-' + instance).show();
-        w = $('#mapaCubierta-' + instance).width();
+        var w = $('#mapaCubierta-' + instance).width();
         if (window.innerWidth < 550) {
             w = w * 0.90;
         } else if (window.innerWidth < 720) {
@@ -2325,11 +2455,19 @@ var $eXeMapa = {
             $('#mapaAuthorPoint-' + instance).html(q.author);
             $('#mapaMultimediaPoint-' + instance).show();
         } else if (q.type === 2) {
-            $('#mapaTextPoint-' + instance).html(q.eText);
+            $('#mapaTextPoint-' + instance).empty();
+            var $divText = $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').find('.mapa-LinkTextsPoints[data-id="' + q.id + '"]').eq(0);
+            if ($divText.length == 1) {
+                $divText.removeClass('js-hidden');
+                $('#mapaTextPoint-' + instance).append($divText);
+            }
             $('#mapaTextPoint-' + instance).show();
             $('#mapaFooterPoint-' + instance).hide();
             $('#mapaMultimediaPoint-' + instance).hide();
 
+        } else if (q.type == 7) {
+
+            $eXeMapa.showToolTip(i, instance);
         } else if (q.type === 3) {
             $('#mapaMultimediaPoint-' + instance).show();
             $('#mapaLinkAudio-' + instance).show();
@@ -2415,14 +2553,34 @@ var $eXeMapa = {
             score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
         return score;
     },
+
     hideCover: function (instance) {
-        var mOptions = $eXeMapa.options[instance];
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[mOptions.activeMap.active];
         $('#mapaFDetails-' + instance).hide();
-        $('mapaFMessages-' + instance).hide();
-        $('mapaFTests-' + instance).hide();
+        $('#mapaFMessages-' + instance).hide();
+
+        if (q.type == 2) {
+            var $divText = $('#mapaTextPoint-' + instance).find('.mapa-LinkTextsPoints[data-id="' + q.id + '"]').eq(0)
+            if ($divText.length == 1) {
+                $divText.addClass('js-hidden');
+                $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').append($divText);
+                $('#mapaTextPoint-' + instance).empty();
+            }
+
+        } else if (q.type == 7) {
+            var $divTool = $('#mapaToolTip-' + instance).find('.mapa-LinkToolTipPoints[data-id="' + q.id + '"]').eq(0)
+            if ($divTool.length == 1) {
+
+                $divTool.addClass('js-hidden');
+                $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').append($divTool);
+                $('#mapaToolTip-' + instance).empty();
+            }
+
+        }
+        $('#mapaFTests-' + instance).hide();
         mOptions.showData = false;
     },
-
     hideMapDetail: function (instance, start) {
         var mOptions = $eXeMapa.options[instance];
         if (mOptions.levels.length > 1) {
@@ -2621,12 +2779,12 @@ var $eXeMapa = {
 
     },
     onPlayerReady: function (event) {
-        var video='mapaVideoPoint-0';
-        if((event.target.h) && (event.target.h.id) ){
-            video=event.target.h.id;
-        }else if ((event.target.i ) && (event.target.i.id)) {
-            video=event.target.i.id;
-        } 
+        var video = 'mapaVideoPoint-0';
+        if ((event.target.h) && (event.target.h.id)) {
+            video = event.target.h.id;
+        } else if ((event.target.i) && (event.target.i.id)) {
+            video = event.target.i.id;
+        }
         video = video.split("-");
         if (video.length == 2 && (video[0] == "mapaVideoPoint")) {
             var instance = parseInt(video[1]);
@@ -2714,7 +2872,7 @@ var $eXeMapa = {
 
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;

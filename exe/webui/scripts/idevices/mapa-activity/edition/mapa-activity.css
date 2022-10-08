@@ -63,6 +63,7 @@
 	width: 100%;
 	height: 100%;
 	background-color: white;
+	display: none;
 }
 
 
@@ -682,6 +683,7 @@ label[for=MQE-ActivitySCORM] {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	display: none;
 }
 /*Preguntas*/
 
