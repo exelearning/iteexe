@@ -270,7 +270,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                                     'change': me.onChange
                                 }
                             },
-                            help: _('Select a license or write your own one.')
+                            help: _('Select a license or write your own one.') + ' <a href="https://creativecommons.org/faq/" target="_blank" title="'+_('New Window')+'" rel="noopener" style="color:inherit;opacity:.7">'+_('Creative Commons licenses information page')+'</a>'
                         },
                         {
                             cls: 'exe-advanced',
