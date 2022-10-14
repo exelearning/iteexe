@@ -30,6 +30,7 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
     div.node,article.node{page-break-after:always}
     .external-iframe{display:none}
     .external-iframe-src{display:block!important;margin:2em 0;font-size:.95em;text-align:center}	
+    #made-with-eXe{display:none}
 }
 .external-iframe{border:0;}
 /* The New eXeLearning */
@@ -217,3 +218,23 @@ img,video{max-width:100%;height:auto}
 @media all and (max-width: 600px) {
 	.exe-client-search-results #exe-client-search-reset{display:block;margin:1em 0 0 0}
 }
+/* Made with eXeLearning */
+#made-with-eXe{margin:0;position:fixed;bottom:0;right:0}
+#made-with-eXe a{
+    text-decoration:none;
+    box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-top-left-radius:4px;
+    color:#222;
+    font-size:11px;
+    font-family:Arial, sans-serif;
+    line-height:35px;width:35px;height:35px;
+    background:#fff url(exe_powered_logo.png) no-repeat 0 50%;
+    display:block;
+    background-size:auto 23px;
+    text-decoration:none;
+    transition:.5s;
+    opacity:.8
+}
+#made-with-eXe span{padding-left:35px;padding-right:5px}
+#made-with-eXe span span{position:absolute;overflow:hidden;clip:rect(0 0 0 0);clip:rect(0,0,0,0);height:0}
+#made-with-eXe a:hover{width:auto;padding:0 5px;background-position:5px 50%;opacity:1}
