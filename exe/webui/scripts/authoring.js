@@ -1757,7 +1757,7 @@ function createEmptyPageInstructions(){
         jQuery(".exe_idevice_panel table.x-grid-table .x-grid-cell-inner",top.document.body).each(function(){
             if (this.innerHTML==_("Text")) $(this).trigger("click");
         });
-		return false;
+        return false;
     });
 }
 

@@ -14,9 +14,7 @@
 
 .cover-on #player,.cover-on #activity-results,.cover-on #slide,.cover-on #activity-results-toggler{display:none!important}
 .cover-on #activity{width:50%!important}
-#activity-cover{background:#fff;width:408px;padding:20px 20px 20px 20px;
-width:90%;padding-right:5%;padding-left:5%;
-height:316px;margin:0 auto;overflow:auto;display:none}
+#activity-cover{background:#fff;width:408px;padding:20px 5%;width:90%;height:316px;margin:0 auto;overflow:auto;display:none}
 #activity-cover.activity-cover-img{width:100%;padding:0;position:relative;height:316px;text-align:center;overflow:hidden}
 #activity-cover .activity-cover-img-content{line-height:316px}
 #activity-cover.activity-cover-img img{width:auto;height:auto;max-width:408px;max-height:316px;vertical-align:middle}
