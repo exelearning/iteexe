@@ -1113,7 +1113,7 @@ var $eXeRosco = {
 	},
 	loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;

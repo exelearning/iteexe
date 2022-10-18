@@ -201,7 +201,7 @@ var $eXeQuExt = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;
@@ -1201,7 +1201,7 @@ var $eXeQuExt = {
         var html = $('#quextQuestionDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeQuExt.updateLatex('quextGameContainer-' + instance)
+            $eXeQuExt.updateLatex('quextQuestionDiv-' + instance)
         }
     },
 

@@ -220,7 +220,7 @@ var $eXeVideoQuExt = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;
@@ -913,6 +913,10 @@ var $eXeVideoQuExt = {
                 if (textoTooltip.length > 0) {
                     $(this).append('<div class="gameQP-Tooltip">' + textoTooltip + '</div>');
                     $(this).find("div.gameQP-Tooltip").css("left", '-121px');
+                    if (typeof (MathJax) != "undefined") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '.gameQP-Tooltip']);
+                    }
+       
                     var html = $('#vquextProgressBar-' + instance).html(),
                         latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
                     if (latex) {
@@ -1788,10 +1792,10 @@ var $eXeVideoQuExt = {
             $('#vquextOptionsDiv-' + instance).show();
             $('#vquextDivReply-' + instance).hide();
         }
-        var html = $('#vquextGameContainer-' + instance).html(),
+        var html = $('#vquextQuestionDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeVideoQuExt.updateLatex('vquextGameContainer-' + instance)
+            $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
         }
     },
     drawSolution: function (instance) {
@@ -1821,10 +1825,10 @@ var $eXeVideoQuExt = {
                 }
             });
         }
-        var html = $('#vquextGameContainer-' + instance).html(),
+        var html = $('#vquextQuestionDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeVideoQuExt.updateLatex('vquextGameContainer-' + instance)
+            $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
         }
 
     },

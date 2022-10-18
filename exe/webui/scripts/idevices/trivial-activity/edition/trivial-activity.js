@@ -712,6 +712,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
+            <div class="exe-idevice-info">'+_("Cree un trivial educativo con preguntas de tipo test, ordena y palabra/definición, categorizadas en hasta 6 temas diferentes. Podrán jugar, al mismo tiempo, de 1 a 4 alumnos o equipos.")+' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset($exeDevice.msgs.msgGameIntrunctions) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -916,7 +917,8 @@ var $exeDevice = {
                             </div>\
                         </div>\
                         ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
-                 </div>\
+                        <div class="exe-idevice-info">'+_("Este juego puede presentar problemas de accesibilidad para algunas personas. Debe tenerlo en cuenta a la hora de elaborar el contenido y, si sus destinatarios lo requieren, proporcionar una alternativa accesible.")+'</div>\
+                    </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
@@ -942,7 +944,6 @@ var $exeDevice = {
             fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt",
             menubar: false,
             statusbar: false,
-            content_css: "css/tinymce.css",
             setup: function (ed) {
                 ed.on('init', function (e) {
                     $exeDevice.enableForm(field);

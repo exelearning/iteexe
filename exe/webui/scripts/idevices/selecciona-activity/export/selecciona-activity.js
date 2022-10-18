@@ -225,7 +225,7 @@ var $eXeSelecciona = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;
@@ -234,7 +234,8 @@ var $eXeSelecciona = {
     },
     updateLatex: function (mnodo) {
         setTimeout(function () {
-            if (typeof (MathJax) != "undefined") {                try {
+            if (typeof (MathJax) != "undefined") {
+                try {
                     if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
                     } else if (typeof MathJax.typeset == "function") {
@@ -1265,10 +1266,10 @@ var $eXeSelecciona = {
             $('#seleccionaDefinition-' + instance).text(definition);
         }
         
-        var html = $('#seleccionaGameContainer-' + instance).html(),
+        var html = $('#seleccionaWordDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeSelecciona.updateLatex('seleccionaGameContainer-' + instance)
+            $eXeSelecciona.updateLatex('seleccionaWordDiv-' + instance)
         }
         return cPhrase;
     },
@@ -1924,10 +1925,10 @@ var $eXeSelecciona = {
                 $(this).hide()
             }
         });
-        var html = $('#seleccionaGameContainer-' + instance).html(),
+        var html = $('#seleccionaQuestionDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeSelecciona.updateLatex('seleccionaGameContainer-' + instance)
+            $eXeSelecciona.updateLatex('seleccionaQuestionDiv-' + instance)
         }
     },
 
