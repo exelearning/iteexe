@@ -1753,11 +1753,11 @@ function createEmptyPageInstructions(){
     if (document.getElementById("activeIdevice")) return;
     jQuery("#main").append('<p id="pageAddTextLinkWrapper"><a href="#" id="pageAddTextLink">'+_("Add a Text iDevice")+'</a></p>');
     jQuery("#pageAddTextLink").click(function(){
-        var id = document.body.id;
-            id = id.replace("exe-authoring-page-","");
-            id = parseInt(id);
-        submitLink("AddIdevice","58",1,id);
-        return false;
+        // Trigger submitLink("AddIdevice",iDeviceID,1,nodeId);
+        jQuery(".exe_idevice_panel table.x-grid-table .x-grid-cell-inner",top.document.body).each(function(){
+            if (this.innerHTML==_("Text")) $(this).trigger("click");
+        });
+		return false;
     });
 }
 

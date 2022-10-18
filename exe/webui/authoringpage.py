@@ -142,7 +142,7 @@ class AuthoringPage(RenderableResource):
         extraCSS = ''
         if self.package.get_loadMathEngine():
             extraCSS = ' exe-auto-math'
-        html += u'<body onload="onLoadHandler();" class="exe-authoring-page'+extraCSS+' js" id="exe-authoring-page-'+unicode(topNode.id)+'">\n'
+        html += u'<body onload="onLoadHandler();" class="exe-authoring-page'+extraCSS+' js">\n'
         html += u"<form method=\"post\" "
 
         if request is None:

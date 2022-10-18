@@ -69,6 +69,7 @@ Ext.define('eXe.view.ui.LeftPanel', {
                 {
                     xtype: 'gridpanel',
                     itemId: 'idevice_panel',
+                    cls: 'exe_idevice_panel',
                     height: 150,
                     autoScroll: true,
                     store: 'IdeviceXmlStore',
