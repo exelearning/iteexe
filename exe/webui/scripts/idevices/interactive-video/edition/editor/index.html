@@ -68,14 +68,23 @@ $(function(){
 					<div class="admin-block" id="frontpage-block">
 						<div id="frontpage-form-msg" class="success-msg"></div>
 						<form id="frontpage-form" name="frontpage-form">
-							<p class="instructions">%Your_Interactive_Video_Cover%:</p>
+							<p class="instructions sr-av">%Your_Interactive_Video_Cover%:</p>
+							<p class="answers">
+								<label for="frontpage-type" class="text-field">%Cover_Type%:</label>
+								<label for="frontpage-type-1" class="radio"><input type="radio" id="frontpage-type-1" name="frontpage-type" checked="checked" value="default" /> %Text%</label>
+								<label for="frontpage-type-2" class="radio"><input type="radio" id="frontpage-type-2" name="frontpage-type" value="image" /> %Image%</label>
+							</p>
 							<p class="text-field">
 								<label for="frontpage-title">%Title% <span>(%required%)</span>: </label>
 								<input type="text" name="frontpage-title" id="frontpage-title" />
-							</p>
-							<p>
+							</p>							
+							<p id="frontpage-type-1-opts">
 								<label for="frontpage-content">%Introduction%: </label>
 								<textarea name="frontpage-content" id="frontpage-content" cols="32" rows="4"></textarea>
+							</p>
+							<p id="frontpage-type-2-opts">
+								<label for="frontpage-content">%Image%: </label>
+								<textarea name="frontpage-content-alt" id="frontpage-content-alt" cols="32" rows="4"></textarea>
 							</p>
 							<p class="buttons">
 								<input type="button" name="frontpage-submit" id="frontpage-submit" value="%Save_Front_Page%" />

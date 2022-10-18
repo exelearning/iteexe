@@ -24,6 +24,7 @@ $i18n = {
 	required : _("required"),
 	Introduction : _("Introduction"),
 	Save_Front_Page : _("Save cover"),
+	Cover_Type : _("Cover type"),
 	// Types
 	Text : _("Text"),
 	Image : _("Image"),

@@ -31,6 +31,9 @@ p{margin:1em 0}
 .js .js-hidden{display:none}
 .admin-block{display:none}
 
+#frontpage-form .answers label{margin-right:.5em}
+#frontpage-type-2-opts{display:none}
+
 #help-block ul{margin:2.5em 0 2.5em 50px;padding:0;list-style:none}
 #help-block li{margin:1em 0;padding:0 0 0 35px;background:url(../images/help/01.png) no-repeat 0 50%}
 #help-block .step-2{background-image:url(../images/help/02.png)}

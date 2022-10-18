@@ -246,6 +246,7 @@ var $exeDevice = {
 			}
 			// Save the list of images and remove the wrapper
 			top.interactiveVideoEditor.imageList = $(".exe-interactive-video-img img",wrapper);
+			top.interactiveVideoEditor.activityToSave.poster = $(".exe-interactive-video-poster img",wrapper).attr("src");
 			$('#interactiveVideoTmpWrapper').remove();
 		}	
 		
@@ -375,8 +376,12 @@ var $exeDevice = {
 		if (typeof(top.interactiveVideoEditor)!='undefined') {		
 		
 			var imgsHTML = "";
+			var activity = top.interactiveVideoEditor.activityToSave;
 			// Check for images:
-			var slides = top.interactiveVideoEditor.activityToSave.slides;
+			if (activity.coverType&&activity.coverType=="poster") {
+				imgsHTML += '<p class="exe-interactive-video-poster sr-av"><img src="'+activity.poster+'" alt="'+activity.posterDescription+'" /></p>';
+			}
+			var slides = activity.slides;
 			if (slides) {
 				for (var i=0;i<slides.length;i++) {
 					var slide = slides[i];

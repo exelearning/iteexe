@@ -17,6 +17,10 @@
 #activity-cover{background:#fff;width:408px;padding:20px 20px 20px 20px;
 width:90%;padding-right:5%;padding-left:5%;
 height:316px;margin:0 auto;overflow:auto;display:none}
+#activity-cover.activity-cover-img{width:100%;padding:0;position:relative;height:316px;text-align:center;overflow:hidden}
+#activity-cover .activity-cover-img-content{line-height:316px}
+#activity-cover.activity-cover-img img{width:auto;height:auto;max-width:408px;max-height:316px;vertical-align:middle}
+#activity-cover.activity-cover-img a{position:absolute;bottom:20px;right:20px}
 .cover-on #activity-cover{display:block}
 #activity-cover-logo{display:none} /* Use this to add a logo to all the activities */
 #start-activity{text-align:center;margin:2.5em 0}

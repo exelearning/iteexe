@@ -295,6 +295,7 @@ var interaction = {
 		play = play+playContent+"</p>";
 		// var cover = "<h2>"+$("#activity-title").html()+"</h2>";
 		var cover = "";
+		var coverCSS = "";
 		var videoTitle = "...";
 		if (InteractiveVideo.title) videoTitle = InteractiveVideo.title;
 		else {
@@ -308,7 +309,19 @@ var interaction = {
 		}
 		if (!(InteractiveVideo.description && videoTitle=="...")) cover = "<h2>"+videoTitle+"</h2>";
 		if (InteractiveVideo.description) cover += InteractiveVideo.description;
-		$("#activity").prepend('<div id="activity-cover"><div id="activity-cover-logo"></div><div id="activity-cover-content">'+cover+'</div>'+play+'</div>');
+		
+		// Cover (poster)
+		if (InteractiveVideo.coverType&&InteractiveVideo.coverType=="poster") {
+			var img = $(".interactive-videoIdevice .exe-interactive-video-poster");
+			if (img.length==1) {
+				img = img.eq(0);
+				cover = "<h2 class='sr-av'>"+videoTitle+"</h2>";
+				cover += "<span class='activity-cover-img-content'>"+img.html()+'</span>';
+				coverCSS = ' class="activity-cover-img"';
+			}
+		} 		
+		$("#activity").prepend('<div id="activity-cover"'+coverCSS+'><div id="activity-cover-logo"></div><div id="activity-cover-content">'+cover+'</div>'+play+'</div>');
+		
 		
 		if (this.type=='mediateca') {
 			

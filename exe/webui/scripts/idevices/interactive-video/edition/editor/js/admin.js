@@ -565,6 +565,18 @@ var iAdmin = {
 			iAdmin.typeCurrentTitle = $("h3",c).html();
 			return false;
 		});		
+
+		// Cover options
+		$("input[name='frontpage-type']").change(function(){
+			var v = this.value;
+			if (v=='default'){
+				$("#frontpage-type-2-opts").hide();
+				$("#frontpage-type-1-opts").show();
+			} else {
+				$("#frontpage-type-1-opts").hide();
+				$("#frontpage-type-2-opts").show();
+			}
+		});
 		
 		try {
 			document.createEvent("TouchEvent");
@@ -615,6 +627,36 @@ var iAdmin = {
 		var i = InteractiveVideo;
 		$("#frontpage-title").val(i.title);
 		if (i.description) $("#frontpage-content").val(i.description);
+		if (i['coverType']) {
+			var type = i['coverType'];
+			if (type == 'poster') {
+				if (typeof(top.interactiveVideoEditor.activityToSave)=='object') {
+					var activity = top.interactiveVideoEditor.activityToSave;
+					if (typeof(activity.poster)=='string') {
+						var poster = activity.poster;
+						if (poster!="") {
+							var alt = "";
+							if (typeof(activity.posterDescription)=='string') {
+								alt = activity.posterDescription;
+							}
+							if (poster.indexOf("resources/")==0) {
+								var base = top.window.location.href;
+									base = base.split("?");
+									base = base[0];
+									base = base.split("#");
+									base = base[0];
+									if (base.charAt(base.length-1)!="/") base += "/";
+								poster = poster.replace('resources/',base+'resources/');
+							}
+							$('#frontpage-type-2').prop("checked","checked");
+							$("#frontpage-type-1-opts").hide();
+							$("#frontpage-type-2-opts").show();							
+							$("#frontpage-content-alt").val('<img src="'+poster+'" alt="'+alt+'" />');
+						}
+					}
+				}
+			}
+		}
 		if (i.slides) {
 			iAdmin.updateFramesList(i.slides);
 		}
@@ -630,6 +672,57 @@ var iAdmin = {
 			}
 			InteractiveVideo["title"] = projectTitle;
 			InteractiveVideo["description"] = tinyMCE.get('frontpage-content').save();
+			InteractiveVideo["coverType"] = "text";
+			
+			// Image type cover
+			var coverType = $("input[name='frontpage-type']:checked").val();			
+			if (coverType=='image') {
+				// Image cover
+				var coverImage = tinyMCE.get('frontpage-content-alt').save();
+				// Check if it's a valid URL
+				if (coverImage == "") {
+					iAdmin.msg.txt($i18n.No_Image);
+					return false;
+				}
+				
+				var tmp = $("<div></div>");
+				tmp.html(coverImage);
+				var imgs = $("img",tmp);
+				if (imgs.length == 0) {
+					iAdmin.msg.txt($i18n.No_Image);
+					return false;
+				}
+				imgs = imgs.eq(0);
+				var url = imgs.attr("src");
+				
+				if (url == "") {
+					iAdmin.msg.txt($i18n.No_Image);
+					return false;
+				}
+				
+				// Check the alt text
+				var alt = imgs.attr("alt");
+				if (alt == "") {
+					iAdmin.msg.txt($i18n.No_Alt);
+					return false;
+				}
+				
+				// Remove absolute path (local file in "resources")
+				var base = top.window.location.href;
+					base = base.split("?");
+					base = base[0];
+					base = base.split("#");
+					base = base[0];
+					if (base.charAt(base.length-1)!="/") base += "/";
+					base += "resources/";
+					url = url.replace(base,"resources/");
+
+				// Save the data
+				InteractiveVideo["poster"] = url;
+				InteractiveVideo["posterDescription"] = alt;
+				InteractiveVideo["coverType"] = "poster";
+			}
+			
 			$("#frontpage-form").hide().delay(1500).fadeIn();
 			$("#frontpage-form-msg").html("<p>"+$i18n.Cover_Updated+"</p>").show().delay(1000).fadeOut();
 			return false;
@@ -1354,7 +1447,7 @@ var iAdmin = {
 			// Dropdown and cloze will have the strikethrough button
 			if (id=="dropdown-question" || id=="cloze-question") strikethrough = ' strikethrough';
 			var buttons = 'undo redo | bold italic'+strikethrough+' | alignleft aligncenter | bullist numlist | link | code';
-			if (id=="image-block-content") {
+			if (id=="image-block-content" || id=="frontpage-content-alt") {
 				buttons = 'undo redo image';
 			}
 			tinymce.init({
