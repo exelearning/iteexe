@@ -97,8 +97,9 @@ var $eXeMapa = {
                 $imagesMap = $('.mapa-LinkImagesMapas', this),
                 $imagesSlides = $('.mapa-LinkImagesSlides', this),
                 $audiosIdentifyLink = $('.mapa-LinkAudiosIdentify', this),
-                $urlmap = $('.mapa-ImageMap', this).eq(0).attr('href'),
-                mOption = $eXeMapa.loadDataGame(dl, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, $urlmap, $toolTips);
+                $urlmap = $('.mapa-ImageMap', this).eq(0).attr('src');
+            $urlmap = typeof $urlmap == "undefined" ? $('.mapa-ImageMap', this).eq(0).attr('href') : $urlmap;
+            var mOption = $eXeMapa.loadDataGame(dl, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, $urlmap, $toolTips);
             $eXeMapa.options.push(mOption);
             var mapa = $eXeMapa.createInterfaceMapa(i);
             dl.before(mapa).remove();
@@ -115,7 +116,6 @@ var $eXeMapa = {
             }
         });
         if ($eXeMapa.hasLATEX && typeof (MathJax) == "undefined") {
-
             $eXeMapa.loadMathJax();
         }
 
@@ -298,7 +298,7 @@ var $eXeMapa = {
     loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url, $toolTips) {
         var json = data.text(),
             mOptions = $eXeMapa.isJsonString(json),
-            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
+            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeMapa.hasLATEX = true;
         }
@@ -344,6 +344,9 @@ var $eXeMapa = {
             mOptions.gameStarted = true;
         }
         mOptions.playerAudio = "";
+        mOptions.loadingURL = false;
+        mOptions.topBBTop = false;
+        mOptions.autoShow = typeof mOptions.autoShow == "undefinide" ? false : mOptions.autoShow;
         return mOptions;
     },
     getDataGame1: function (pts, evaluation) {
@@ -438,27 +441,42 @@ var $eXeMapa = {
     },
     setImageSlide: function (s, $images) {
         $images.each(function () {
-            var id = $(this).text();
+            var id = $(this).data('id'),
+                type = true;
+            if (typeof id == "undefined") {
+                type = false;
+                id = $(this).text();;
+            }
             if (typeof s.id != "undefined" && typeof id != "undefined" && s.id == id) {
-                s.url = $(this).attr('href');
+                s.url = type ? $(this).attr('src') : $(this).attr('href');
                 return;
             }
         });
     },
     setImage: function (p, $images) {
         $images.each(function () {
-            var id = $(this).text();
+            var id = $(this).data('id'),
+                type = true;
+            if (typeof id == "undefined") {
+                type = false;
+                id = $(this).text();;
+            }
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
-                p.url = $(this).attr('href');
+                p.url = type ? $(this).attr('src') : $(this).attr('href');
                 return;
             }
         });
     },
     setAudio: function (p, $audios) {
         $audios.each(function () {
-            var id = $(this).text();
+            var id = $(this).data('id'),
+                type = true;
+            if (typeof id == "undefined") {
+                type = false;
+                id = $(this).text();;
+            }
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
-                p.audio = $(this).attr('href');
+                p.audio = type ? $(this).attr('src') : $(this).attr('href');
                 return;
             }
         });
@@ -485,19 +503,29 @@ var $eXeMapa = {
     },
     setImgMap: function (p, $imgmap) {
         $imgmap.each(function () {
-            var id = $(this).text();
+            var id = $(this).data('id'),
+                type = true;
+            if (typeof id == "undefined") {
+                type = false;
+                id = $(this).text();;
+            }
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
-                p.map.url = $(this).attr('href');
+                p.map.url = type ? $(this).attr('src') : $(this).attr('href');
                 return;
             }
         });
-
     },
     setAudioIdentefy: function (p, $audios) {
         $audios.each(function () {
-            var id = $(this).text();
+            var id = $(this).data('id'),
+                type = true;
+            if (typeof id == "undefined") {
+                type = false;
+                id = $(this).text();;
+            }
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
-                p.question_audio = $(this).attr('href');
+                p.question_audio = type ? $(this).attr('src') : $(this).attr('href');
+
                 return;
             }
         });
@@ -611,7 +639,7 @@ var $eXeMapa = {
             }
         });
         var html = $('#mapaQuestionDiv-' + instance).html(),
-            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaFTests-' + instance);
         }
@@ -663,7 +691,7 @@ var $eXeMapa = {
         }
 
         var html = $('#mapaWordDiv-' + instance).html(),
-            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaWordDiv-' + instance)
         }
@@ -854,21 +882,15 @@ var $eXeMapa = {
                     <strong class="sr-av">' + msgs.msgReturnMap + ':</strong>\
                     <div class="MQP-IconsToolBar exeQuextIcons-CReturn MQP-Activo"></div>\
                 </a>\
-                <div class="MQP-ToolTip" id="mapaToolTip-' + instance + '">\
-                    <div class="MQP-ToolTipTitle" id="mapaToolTipTitle-' + instance + '"></div>\
-                    <a href="#" class="MQP-ToolTipClose" id="mapaToolTipClose-' + instance + '" title="' + msgs.msgClose + '">\
-                        <strong class="sr-av">' + msgs.msgClose + ':</strong>\
-                        <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
-                    </a>\
-                    <div class="MQP-ToolTipText" id="mapaToolTipText-' + instance + '"></div>\
-                </div>\
-            </div>\
-            <div class="MQP-AuthorLicence" id="mapaAutorLicence-' + instance + '"></div>\
-            <div class="MQP-Cubierta" id="mapaCubierta-' + instance + '">\
+                ' + this.getDetailSound(instance) + '\
+                ' + this.getToolTip(instance) + '\
                 ' + this.getDetailMedia(instance) + '\
                 ' + this.getModalMessage(instance) + '\
-                ' + this.getTestGame(instance) + '\
-                ' + this.getDetailTest(instance) + '\
+            </div>\
+            ' + this.getDetailTest(instance) + '\
+            <div class="MQP-AuthorLicence" id="mapaAutorLicence-' + instance + '"></div>\
+            <div class="MQP-Cubierta" id="mapaCubierta-' + instance + '">\
+            ' + this.getTestGame(instance) + '\
             </div>\
         </div>\
     ' + this.addButtonScore(instance) + '\
@@ -876,7 +898,19 @@ var $eXeMapa = {
     ';
         return html;
     },
-
+    getToolTip: function (instance) {
+        var html = '',
+            msgs = $eXeMapa.options[instance].msgs;
+        html = '<div class="MQP-ToolTip" id="mapaToolTip-' + instance + '">\
+                        <div class="MQP-ToolTipTitle" id="mapaToolTipTitle-' + instance + '"></div>\
+                        <a href="#" class="MQP-ToolTipClose" id="mapaToolTipClose-' + instance + '" title="' + msgs.msgClose + '">\
+                            <strong class="sr-av">' + msgs.msgClose + ':</strong>\
+                            <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
+                        </a>\
+                        <div class="MQP-ToolTipText" id="mapaToolTipText-' + instance + '"></div>\
+                    </div>'
+        return html;
+    },
     getToolBar: function (instance) {
         var html = '',
             msgs = $eXeMapa.options[instance].msgs;
@@ -917,7 +951,7 @@ var $eXeMapa = {
         var html = '',
             msgs = $eXeMapa.options[instance].msgs;
         html = '<div id="mapaFMessages-' + instance + '" class="MQP-MessageModal">\
-                    <div id="mapaFMessageInfo-' + instance + '">\
+                    <div  class="MQP-FMessageInfo" id="mapaFMessageInfo-' + instance + '">\
                         <div class="MQP-MessageGOScore">\
                             <div class="MQP-MessageGOContent">\
                                 <div class="MQP-MessageModalIcono"></div>\
@@ -925,12 +959,13 @@ var $eXeMapa = {
                                     <p id="mapaMessageInfoText-' + instance + '"></p>\
                                 </div>\
                             </div>\
-                            <div class="MQP-GOScoreButtons">\
-                                <a href="#" class="" id="mapaFMessageInfoAccept-' + instance + '" title="' + msgs.msgAccept + '">' + msgs.msgAccept + '</a>\
-                            </div>\
+                            <a href="#" class="MQP-ToolTipClose" id="mapaFMessageInfoAccept-' + instance + '" title="' + msgs.msgClose + '">\
+                                <strong class="sr-av">' + msgs.msgClose + ':</strong>\
+                                <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
+                            </a>\
                         </div>\
                     </div>\
-                    <div id="mapaFMessageOver-' + instance + '" class="MQP-MessageGOScore" >\
+                    <div id="mapaFMessageOver-' + instance + '" class="MQP-MessageGOScore MQP-FOver" >\
                         <div class="MQP-MessageGOContent">\
                             <div class="MQP-MessageModalIcono"></div>\
                             <div class="MQP-MessageGOScoreData">\
@@ -1054,10 +1089,6 @@ var $eXeMapa = {
                     <p class= "MQP-MessageDetail" id="mapaMessageDetail-' + instance + '"></p>\
                     <div class="MQP-Flex">\
                         <div class="MQP-TitlePoint" id="mapaTitlePoint-' + instance + '"></div>\
-                        <a href="#" class="MQP-LinkClose" id="mapaLinkClose1-' + instance + '" title="' + msgs.msgClose + '">\
-                            <strong class="sr-av">' + msgs.msgClose + ':</strong>\
-                            <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
-                        </a>\
                     </div>\
                     <div class="MQP-MultimediaPoint" id="mapaMultimediaPoint-' + instance + '">\
                         <img src="" class="MQP-Images" id="mapaImagePoint-' + instance + '"  alt="' + msgs.msgNoImage + '" />\
@@ -1070,6 +1101,30 @@ var $eXeMapa = {
                     <div class="MQP-EText" id="mapaTextPoint-' + instance + '"></div>\
                     <div class="MQP-AuthorPoint" id="mapaAuthorPoint-' + instance + '"></div>\
                     <div class="MQP-Footer" id="mapaFooterPoint-' + instance + '"></div>\
+                    <a href="#" class="MQP-LinkDetailClose" id="mapaLinkClose1-' + instance + '" title="' + msgs.msgClose + '">\
+                        <strong class="sr-av">' + msgs.msgClose + ':</strong>\
+                        <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
+                    </a>\
+                </div>';
+        return html;
+    },
+    getDetailSound: function (instance) {
+        var html = '',
+            path = $eXeMapa.idevicePath,
+            msgs = $eXeMapa.options[instance].msgs;
+        html = '<div class="MQP-DetailsSound" id="mapaFDetailsSound-' + instance + '">\
+                    <p class= "MQP-MessageDetail" id="mapaMessageDetailSound-' + instance + '"></p>\
+                    <div class="MQP-ToolTipTitle" id="mapaTitlePointSound-' + instance + '"></div>\
+                    <a href="#" class="MQP-ToolTipClose" id="mapaLinkCloseSound-' + instance + '" title="' + msgs.msgClose + '">\
+                        <strong class="sr-av">' + msgs.msgClose + ':</strong>\
+                        <div class="MQP-IconsToolBar exeQuextIcons-CWGame MQP-Activo"></div>\
+                    </a>\
+                    <div class="MQP-MultimediaPointSound" >\
+                      <a href="#" class="MQP-LinkSound MQP-Activo" id="mapaLinkAudio1-' + instance + '"   title="' + msgs.msgAudio + '">\
+                           <img src="' + path+ 'mapam2.svg" class="MQP-Images" alt="' + msgs.msgAudio + '" />\
+                      </a>\
+                    </div>\
+                    <div class="MQP-FooterSound" id="mapaFooterPointSound-' + instance + '"></div>\
                 </div>';
         return html;
     },
@@ -1077,8 +1132,7 @@ var $eXeMapa = {
         var html = '',
             path = $eXeMapa.idevicePath,
             msgs = $eXeMapa.options[instance].msgs;
-        html = '</div>\
-        <div class="MQP-Test" id="mapaTest-' + instance + '">\
+        html = '<div class="MQP-Test" id="mapaTest-' + instance + '">\
             <div class="MQP-MessageFindDiv" id="mapaMessageRect-' + instance + '">\
                 <a href="#" id="mapaPlayAudioRect-' + instance + '" title="' + msgs.msgAudio + '">\
                     <span class="sr-av">' + msgs.msgAudio + ':</span>\
@@ -1101,7 +1155,7 @@ var $eXeMapa = {
     addButtonScore: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         var butonScore = "";
-        var fB = '<div class="MQP-BottonContainer">';
+        var fB = '<div class="MQP-BottonContainer" id="mapaBottonConatiner-' + instance + '">';
         if (mOptions.isScorm == 2) {
             var buttonText = mOptions.textButtonScorm;
             if (buttonText != "") {
@@ -1187,7 +1241,7 @@ var $eXeMapa = {
                     $Image.show();
                     $noImage.hide();
                     $Image.attr('alt', alt);
-                    $eXeMapa.updateHeightGame(instance);
+                    //$eXeMapa.updateHeightGame(instance);
                     return true;
                 }
             }).on('error', function () {
@@ -1266,20 +1320,21 @@ var $eXeMapa = {
         }
 
         mOptions.showDetail = false;
-        $eXeMapa.updateHeightGame(instance);
+        //$eXeMapa.updateHeightGame(instance);
         var html = $('#mapaMainContainer-' + instance).html(),
-            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaMainContainer-' + instance)
         }
     },
     initElements: function (instance) {
         var mOptions = $eXeMapa.options[instance];
+        $eXeMapa.hideModalWindows(instance);
         $('#mapaGameMinimize-' + instance).hide();
         $('#mapaGameContainer-' + instance).hide();
         $('#mapaFDetails-' + instance).hide();
+        $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaFTests-' + instance).hide();
-        $('#mapaCubierta-' + instance).hide();
         $('#mapaToolBarL-' + instance).hide();
         $('#mapaMessageMaximize-' + instance).text(mOptions.msgs.msgPlayStart);
         $('#mapaVideoPoint-' + instance).hide();
@@ -1297,7 +1352,7 @@ var $eXeMapa = {
         $('#mapaStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
         $('#mapaMessageFindP-' + instance).hide();
         $('#mapaStartGame-' + instance).hide();
-
+        $('#mapaCubierta-' + instance).hide()
         if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
             $('#mapaStartGame-' + instance).show();
         }
@@ -1321,11 +1376,12 @@ var $eXeMapa = {
         }
         if (mOptions.itinerary.showCodeAccess) {
             $('#mapaAccessMessage-' + instance).text(mOptions.itinerary.messageCodeAccess);
-            $('#mapaFMessages-' + instance).show();
             $('#mapaFMessageAccess-' + instance).show();
-            $('#mapaCubierta-' + instance).fadeIn(100, function () {
-                $eXeMapa.updateHeightGame(instance);
-            });
+            $('#mapaCubierta' + instance).show();
+            mOptions.showData = true;
+            setTimeout(function () {
+                $eXeMapa.placePointInWindow($('#mapaFMessages-' + instance), -1, instance)
+            }, 500)
         }
         if (!mOptions.hasAreas || !mOptions.showActiveAreas || mOptions.evaluation == 1) {
             $('#mapaLinkAreas-' + instance).hide();
@@ -1347,6 +1403,7 @@ var $eXeMapa = {
         });
         $("#mapaLinkMinimize-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
+            if (mOptions.showData) return;
             $("#mapaGameContainer-" + instance).hide();
             $("#mapaGameMinimize-" + instance).css('visibility', 'visible').show();
             $("#mapaMainContainer-" + instance).css('height', 'auto').show();
@@ -1358,6 +1415,7 @@ var $eXeMapa = {
         };
         $("#mapaLinkFullScreen-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
+            if (mOptions.showData) return;
             var element = document.getElementById('mapaGameContainer-' + instance);
             $eXeMapa.toggleFullscreen(element, instance);
         });
@@ -1394,8 +1452,19 @@ var $eXeMapa = {
                     mOptions.visiteds.push(id);
                 }
             }
+            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+                mOptions.showData = true;
+                $eXeMapa.showPoint(n, instance);
+            }
+
         });
         $('#mapaLinkAudio-' + instance).on('click', function (e) {
+            e.preventDefault();
+            if (typeof mOptions.activeMap.pts[mOptions.activeMap.active].audio != "undefined" && mOptions.activeMap.pts[mOptions.activeMap.active].audio.length > 4) {
+                $eXeMapa.playSound(mOptions.activeMap.pts[mOptions.activeMap.active].audio, instance);
+            }
+        });
+        $('#mapaLinkAudio1-' + instance).on('click', function (e) {
             e.preventDefault();
             if (typeof mOptions.activeMap.pts[mOptions.activeMap.active].audio != "undefined" && mOptions.activeMap.pts[mOptions.activeMap.active].audio.length > 4) {
                 $eXeMapa.playSound(mOptions.activeMap.pts[mOptions.activeMap.active].audio, instance);
@@ -1426,7 +1495,12 @@ var $eXeMapa = {
                     mOptions.visiteds.push(id);
                 }
             }
+            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+                mOptions.showData = true;
+                $eXeMapa.showPoint(n, instance);
+            }
         });
+
         $('#mapaLinkAreas-' + instance).on('mouseenter click', function (e) {
             e.preventDefault();
             $('#mapaMultimedia-' + instance).find('.MQP-Area').css({
@@ -1440,6 +1514,7 @@ var $eXeMapa = {
 
         $('#mapaLinkTest-' + instance).on('click', function (e) {
             e.preventDefault();
+            if (mOptions.showData) return;
             if (!mOptions.gameOver && mOptions.activeQuestion < mOptions.numberQuestions) {
                 $eXeMapa.showQuestionaire(instance);
             } else {
@@ -1448,17 +1523,11 @@ var $eXeMapa = {
         });
         $('#mapaFMessageInfoAccept-' + instance).on('click', function (e) {
             e.preventDefault();
-            $('#mapaGameContainer-' + instance).css('height', 'auto');
-            $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                $eXeMapa.hideCover(instance);
-            });
-
+            $eXeMapa.closePoint(instance);
         });
         $('#mapaMessageGONo-' + instance).on('click', function (e) {
             e.preventDefault();
-            $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                $eXeMapa.hideCover(instance);
-            });
+            $eXeMapa.hideCover(instance);
             if (mOptions.evaluation != 0) {
                 $eXeMapa.endFind(instance);
 
@@ -1472,9 +1541,7 @@ var $eXeMapa = {
             e.preventDefault();
             if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
                 $eXeMapa.startFinds(instance);
-                $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                    $eXeMapa.hideCover(instance);
-                });
+                $eXeMapa.hideCover(instance);
                 if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
                     $eXeMapa.showFind(instance, 0);
                 }
@@ -1490,12 +1557,14 @@ var $eXeMapa = {
             e.preventDefault();
             $eXeMapa.stopVideo(instance);
             $eXeMapa.stopSound(instance);
-            $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                $eXeMapa.hideCover(instance);
-            });
+            $eXeMapa.hideCover(instance);
 
         });
         $('#mapaLinkClose1-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeMapa.closePoint(instance);
+        });
+        $('#mapaLinkCloseSound-' + instance).on('click', function (e) {
             e.preventDefault();
             $eXeMapa.closePoint(instance);
         });
@@ -1547,6 +1616,32 @@ var $eXeMapa = {
                 }
             } else {
                 $eXeMapa.showPoint(n, instance);
+            }
+        });
+
+
+        $('#mapaToolTip-' + instance).on('mouseleave', function (e) {
+            e.preventDefault();
+            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+                $eXeMapa.closeToolTip(instance)
+            }
+        });
+        $('#mapaFDetails-' + instance).on('mouseleave', function (e) {
+            e.preventDefault();
+            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+                $eXeMapa.closePoint(instance)
+            }
+        });
+        $('#mapaFDetailsSound-' + instance).on('mouseleave', function (e) {
+            e.preventDefault();
+            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+                $eXeMapa.closePoint(instance)
+            }
+        });
+        $('#mapaFMessages-' + instance).on('mouseleave', function (e) {
+            e.preventDefault();
+            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+                $eXeMapa.closePoint(instance)
             }
         });
         $('#mapaTest-' + instance).on('click', '.MPQ-OptionTest', function (e) {
@@ -1621,8 +1716,30 @@ var $eXeMapa = {
         if (q.slides[0].footer.length > 0) {
             $('#mapaFooterPoint-' + instance).show();
         }
+        $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), mOptions.activeMap.active, instance)
+
     },
-    showToolTip: function (num, instance, ) {
+    showPointLink: function (num, instance) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[num];
+        if (!mOptions.loadingURL) {
+            mOptions.loadingURL = true;
+            var win = window.open(q.link, '_blank');
+            if (win) { //Browser has allowed it to be opened
+                win.focus();
+            } else {
+                //Browser has blocked it
+                alert('Please allow popups for this website');
+            }
+            setTimeout(function () {
+                mOptions.showData = false;
+                mOptions.loadingURL = false;
+            }, 1000)
+        }
+
+    },
+
+    showToolTip: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num],
             $divText = $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').find('.mapa-LinkToolTipPoints[data-id="' + q.id + '"]').eq(0);
@@ -1631,61 +1748,148 @@ var $eXeMapa = {
             $divText.removeClass('js-hidden');
             $('#mapaToolTipText-' + instance).append($divText);
         }
-        $('#mapaToolTipTitle-' + instance).html(q.title);
+        var html = $('#mapaToolTipText-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaToolTipText-' + instance);
+        }
+        $('#mapaToolTipTitle-' + instance).text(q.title);
         $('#mapaToolTipText-' + instance).show();
         $('#mapaFooterPoint-' + instance).hide();
         $('#mapaMultimediaPoint-' + instance).hide();
-        var $main = $('#mapaGameContainer-' + instance),
-            $tooltip = $('#mapaToolTip-' + instance),
-            $button = $('#mapaMultimedia-' + instance).find("[data-number='" + num + "']").eq(0),
-            wMain = $main.innerWidth(),
-            hMain = $main.innerHeight(),
-            lMain = $main.offset().left,
-            tMain = $main.offset().top,
-            rMain = wMain + lMain,
-            bMain = tMain + hMain,
-            wToolTip = $tooltip.innerWidth(),
-            hToolTip = $tooltip.innerHeight(),
-            lToolTip = $button.offset().left - (wToolTip - $button.width()) / 2,
-            tToolTip = $button.offset().top - (hToolTip - $button.innerHeight()) / 2;
+        $eXeMapa.placePointInWindow($('#mapaToolTip-' + instance), num, instance)
+    },
 
-        lToolTip = (lToolTip + wToolTip) > rMain ? (rMain - wToolTip - $button.innerHeight() -
-            15) : lToolTip;
-        tToolTip = (tToolTip + hToolTip) > bMain ? bMain - hToolTip : tToolTip;
-        tToolTip = tToolTip < tMain ? tMain : tToolTip;
-        $tooltip.css({
-            'visibility': 'visible',
-            'width': '0px'
-        });
-
-        if ($main.innerWidth() < 470 || mOptions.evaluation==1) {
-            tToolTip=tMain+30
-            lToolTip=lMain+(wMain-wToolTip)/2
+    showPointNone: function (num, instance) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[num];
+        if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+            mOptions.activeTitle++;
+            if (mOptions.activeTitle > mOptions.numberQuestions) {
+                $eXeMapa.gameOver(instance);
+            } else if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+                $eXeMapa.showFind(instance, mOptions.activeTitle);
+            }
+        } else {
+            $eXeMapa.showMessageModal(instance, q.title, 1, 0, num);
         }
-        $tooltip.offset({
-            'top': tToolTip,
-            'left': lToolTip
-        });
-        $tooltip.css({
-            'width': wToolTip + 'px'
-        });
-        $tooltip.hide()
+        mOptions.visiteds.push(q.id);
+        $eXeMapa.messageAllVisited(instance);
+    },
 
-        var hm = hToolTip < hMain ? hMain : $tooltip.outerHeight();
-        $('#mapaGameContainer-' + instance).outerHeight(hm)
-        $tooltip.fadeIn();;
+
+    showPointImage: function (num, instance) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[num];
+        $eXeMapa.showImagePoint(q.url, q.author, q.alt, instance);
+        $('#mapaMultimediaPoint-' + instance).show();
+        if (q.author.length > 0) {
+            $('#mapaAuthorPoint-' + instance).show();
+        }
+        $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
 
     },
+    showPointSound: function (num, instance) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[num];
+        $eXeMapa.placePointInWindow($('#mapaFDetailsSound-' + instance), num, instance)
+
+    },
+    showPointVideo: function (num, instance) {
+        var mOptions = $eXeMapa.options[instance];
+        mOptions.waitPlayVideo = true;
+        $eXeMapa.playVideo(instance);
+        $('#mapaVideoPoint-' + instance).show();
+        $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
+    },
+
+    showPointText: function (num, instance) {
+        var mOptions = $eXeMapa.options[instance],
+            q = mOptions.activeMap.pts[num],
+            $divText = $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').find('.mapa-LinkTextsPoints[data-id="' + q.id + '"]').eq(0);
+        $('#mapaTextPoint-' + instance).empty();
+        $('#mapaTextPoint-' + instance).show();
+        $('#mapaFooterPoint-' + instance).hide();
+        $('#mapaMultimediaPoint-' + instance).hide();
+        if ($divText.length == 1) {
+            $divText.removeClass('js-hidden');
+            $('#mapaTextPoint-' + instance).append($divText);
+        }
+        var html = $('#mapaTextPoint-' + instance).html(),
+            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaTextPoint-' + instance);
+        }
+        $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
+
+    },
+    placePointInWindow($window, num, instance) {
+        var mOptions = $eXeMapa.options[instance],
+            $gamec = $('#mapaGameContainer-' + instance),
+            $main = $('#mapaGameContainer-' + instance),
+            $multimedia = $('#mapaMultimedia-' + instance),
+            isFulls = $eXeMapa.isFullScreen(),
+            $tb = $('#mapaToolBar-' + instance),
+            htb = $tb.is(':visible') ? $tb.outerHeight(true) : 0,
+            $mf = $('#mapaMessageFindP-' + instance),
+            hmf = $mf.is(':visible') ? $mf.outerHeight(true) : 0,
+            $gc = $('#mapaGameClue-' + instance),
+            hgc = $gc.is(':visible') ? $gc.outerHeight(true) : 0,
+            mtMulti = parseInt($multimedia.css('marginTop')),
+            tMulti = htb + hmf + hgc + mtMulti,
+            hMain = $gamec.innerHeight(),
+            wMain = $gamec.innerWidth(),
+            hWindow = $window.outerHeight(true),
+            wWindow = $window.outerWidth(true),
+            lWindow = ($multimedia.innerWidth() - wWindow) / 2,
+            tWindow = -tMulti + 15;
+        if (hWindow >= hMain) {
+            hMain = hWindow + 15;
+            $gamec.innerHeight(hMain);
+            $main.innerHeight($main.outerHeight(true) + 35);
+        }
+        if (mOptions.gameOver || typeof num == "undefined" || num < 0 || mOptions.evaluation == 1 || $gamec.innerWidth() < 650) {
+            if (num < 1) {
+                tWindow = -tMulti + 70;
+            }
+        } else {
+            var $button = $multimedia.find("[data-number='" + num + "']").eq(0),
+                lMulti = isFulls ? 0 : parseInt($multimedia.css('marginLeft')),
+                lWindow = Math.round($button.position().left - (wWindow - $button.innerWidth()) / 2),
+                tWindow = Math.round($button.position().top - (hWindow - $button.innerHeight()) / 2),
+                tWindow = tWindow < -tMulti ? -tMulti : tWindow;
+
+            //arriba
+            tWindow = tWindow < -tMulti ? -tMulti : tWindow;
+            //abajo:
+            if ((tMulti + tWindow + hWindow) > hMain) {
+                hsobra = (tMulti + tWindow + hWindow) - hMain
+                tWindow = tWindow - hsobra - 15;
+            }
+            //izquierda:
+            lWindow = lWindow < -lMulti ? -lMulti : lWindow;
+
+            // Derecha
+            if ((lMulti + lWindow + wWindow) > wMain) {
+                hsobra = (lMulti + lWindow + wWindow) - wMain
+                lWindow = lWindow - hsobra - 15;
+            }
+        }
+        $window.css({
+            'top': tWindow,
+            'left': lWindow
+        });
+        $window.fadeIn();
+
+    },
+
     closeToolTip: function (instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[mOptions.activeMap.active];
         $('#mapaGameContainer-' + instance).css('height', 'auto');
         $('#mapaTest-' + instance).hide();
         $('#mapaToolTip-' + instance).fadeOut(function () {
-            $('#mapaToolTip-' + instance).css({
-                'visibility': 'hidden',
-                'display': 'block'
-            });
+            $eXeMapa.hideModalWindows(instance);
             mOptions.showData = false;
             var $divTool = $('#mapaToolTip-' + instance).find('.mapa-LinkToolTipPoints[data-id="' + q.id + '"]').eq(0)
             if ($divTool.length == 1) {
@@ -1757,6 +1961,7 @@ var $eXeMapa = {
         var mOptions = $eXeMapa.options[instance];
         $('#mapaMessageFindP-' + instance).text('');
         $('#mapaMessageDetail-' + instance).hide();
+        $('#mapaMessageDetailsSound-' + instance).hide();
         $('#mapaMultimedia-' + instance).find('.MQP-Point').each(function () {
             $(this).attr('title', $(this).text());
         });
@@ -1777,40 +1982,45 @@ var $eXeMapa = {
     },
     closePoint: function (instance) {
         var mOptions = $eXeMapa.options[instance];
+        $eXeMapa.hideModalWindows(instance);
         $eXeMapa.stopVideo(instance);
         $eXeMapa.stopVideoText(instance);
         $eXeMapa.stopSound(instance);
+        $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaFDetails-' + instance).hide();
-        $('#mapaGameContainer-' + instance).css('height', 'auto');
+        $('#mapaFMessages-' + instance).hide();
         $('#mapaTest-' + instance).hide();
-        $('#mapaCubierta-' + instance).fadeOut(100, function () {
-            if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
-                $eXeMapa.hideMapDetail(instance, true);
+        $('#mapaGameContainer-' + instance).css('height', 'auto');
+        $('#mapaText-' + instance).css('height', 'auto');
+        if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+            $eXeMapa.hideMapDetail(instance, true);
+        }
+        $eXeMapa.hideCover(instance);
+        if (mOptions.evaluation == 1) {
+            $eXeMapa.showMessage(0, '', instance);
+            if (mOptions.activeMap.pts.length - mOptions.hits - mOptions.errors <= 0) {
+                $eXeMapa.gameOver(instance);
             }
-            $eXeMapa.hideCover(instance);
-            if (mOptions.evaluation == 1) {
-                $eXeMapa.showMessage(0, '', instance);
-                if (mOptions.activeMap.pts.length - mOptions.hits - mOptions.errors <= 0) {
-                    $eXeMapa.gameOver(instance);
-                }
-            } else if (mOptions.evaluation == 2) {
-                mOptions.activeTitle++;
-                if (mOptions.activeTitle >= mOptions.numberQuestions) {
-                    $eXeMapa.gameOver(instance);
-                } else {
-                    $eXeMapa.showFind(instance, mOptions.activeTitle);
-                }
-            } else if (mOptions.evaluation == 3) {
-                mOptions.activeTitle++;
-                if (mOptions.hits >= mOptions.numberQuestions) {
-                    $eXeMapa.gameOver(instance);
-                } else {
-                    $eXeMapa.showFind(instance, mOptions.activeTitle);
-                }
+        } else if (mOptions.evaluation == 2) {
+            mOptions.activeTitle++;
+            if (mOptions.activeTitle >= mOptions.numberQuestions) {
+                $eXeMapa.gameOver(instance);
+            } else {
+                $eXeMapa.showFind(instance, mOptions.activeTitle);
             }
-            $eXeMapa.showClue(instance);
-            $eXeMapa.messageAllVisited(instance);
-        });
+        } else if (mOptions.evaluation == 3) {
+            mOptions.activeTitle++;
+            if (mOptions.hits >= mOptions.numberQuestions) {
+                $eXeMapa.gameOver(instance);
+            } else {
+                $eXeMapa.showFind(instance, mOptions.activeTitle);
+            }
+        }
+        $eXeMapa.showClue(instance);
+        $eXeMapa.messageAllVisited(instance);
+        mOptions.showData = false;
+
+        // $eXeMapa.updateHeightGame(instance,-1)
     },
     changeQuextion: function (instance, button) {
         var mOptions = $eXeMapa.options[instance];
@@ -1866,26 +2076,28 @@ var $eXeMapa = {
         var mOptions = $eXeMapa.options[instance];
         if ($eXeMapa.getNumberVisited(mOptions.visiteds) < Math.floor(mOptions.numberPoints * (mOptions.percentajeShowQ / 100))) {
             var msg = mOptions.msgs.msgReviewContents.replace('%s', mOptions.percentajeShowQ);
-            $eXeMapa.showMessageModal(instance, msg, 0, 0);
+            $eXeMapa.showMessageModal(instance, msg, 0, 0, -1);
             return;
         }
         mOptions.questionaireStarted = true;
         $eXeMapa.stopVideo(instance);
         $eXeMapa.showQuestion(mOptions.activeQuestion, instance);
+        $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaFDetails-' + instance).hide();
         $('#mapaFMessages-' + instance).hide();
         $('#mapaFTests-' + instance).show();
         $('#mapaCubierta-' + instance).show();
         $('#mapaPNumber-' + instance).text(mOptions.numberQuestions);
-        $eXeMapa.updateHeightGame(instance);
+        //$eXeMapa.updateHeightGame(instance);
 
     },
-    showMessageModal: function (instance, message, type, color1) {
+    showMessageModal: function (instance, message, type, color1, num) {
         var mOptions = $eXeMapa.options[instance],
             colors = [$eXeMapa.borderColors.black, $eXeMapa.borderColors.red, $eXeMapa.borderColors.green, $eXeMapa.borderColors.blue, $eXeMapa.borderColors.yellow],
             color = colors[color1];
         mOptions.showData = true;
         $('#mapaFDetails-' + instance).hide();
+        $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaFTests-' + instance).hide();
         $('#mapaFMessages-' + instance).show();
         $('#mapaFMessageInfo-' + instance).show();
@@ -1897,10 +2109,15 @@ var $eXeMapa = {
             'font-size': '1em'
         });
         $('#mapaFMessageInfo-' + instance).find('.MQP-GOScoreButtons').hide();
+        $('#mapaFMessageInfoAccept-' + instance).hide();
         if (type != 2) {
             $('#mapaFMessageInfo-' + instance).find('.MQP-GOScoreButtons').show();
+            $('#mapaFMessageInfoAccept-' + instance).show();
         }
-        $('#mapaCubierta-' + instance).show();
+        $eXeMapa.placePointInWindow($('#mapaFMessages-' + instance), num, instance)
+
+
+
     },
     answerQuestion: function (instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2082,6 +2299,7 @@ var $eXeMapa = {
             msg = mOptions.msgs.msgScore8;
         }
         $('#mapaFDetails-' + instance).hide();
+        $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaFTests-' + instance).hide();
         $('#mapaFMessages-' + instance).fadeIn();
         $('#mapaFMessageInfo-' + instance).hide();
@@ -2103,13 +2321,11 @@ var $eXeMapa = {
                 $eXeMapa.initialScore = score;
             }
         }
-        $('#mapaCubierta-' + instance).fadeIn(100, function () {
-            $eXeMapa.hideCover(instance);
-            
-            $('#mapaFMessageOver-' + instance).show();
-            $('#mapaFMessages-' + instance).show();
-            
-        });
+        $eXeMapa.hideCover(instance);
+        $('#mapaFMessageOver-' + instance).show();
+        setTimeout(function () {
+            $eXeMapa.placePointInWindow($('#mapaFMessages-' + instance), -1, instance)
+        }, 500)
 
     },
     updateNumberQuestion: function (numq, instance) {
@@ -2205,17 +2421,17 @@ var $eXeMapa = {
         $('#mapaTest-' + instance).css({
             'top': htb + 'px'
         });
-        $('#mapaCubierta-' + instance).hide();
         mOptions.showData = false;
     },
     answerRect: function (instance, answer) {
         var mOptions = $eXeMapa.options[instance],
             solution = mOptions.tilteRect,
             correct = solution == answer,
-            message = $eXeMapa.updateScoreFind(correct, instance);
+            message = $eXeMapa.updateScoreFind(correct, instance),
+            num = mOptions.activeMap.active;
         $('#mapaFMessages-' + instance).hide();
         $('#mapaFDetails-' + instance).hide();
-
+        $('#mapaFDetailsSound-' + instance).hide();
         if (mOptions.activeMap.pts[mOptions.activeMap.active].type == 5) {
             mOptions.activeMap.pts[mOptions.activeMap.active].type = 0;
             mOptions.activeMap.pts[mOptions.activeMap.active].url = mOptions.activeMap.pts[mOptions.activeMap.active].map.url;
@@ -2225,45 +2441,40 @@ var $eXeMapa = {
             mOptions.activeMap.pts[mOptions.activeMap.active].state = 2;
             if (mOptions.activeMap.pts[mOptions.activeMap.active].type < 4 || mOptions.activeMap.pts[mOptions.activeMap.active].type == 6 || mOptions.activeMap.pts[mOptions.activeMap.active].type == 7) {
                 $eXeMapa.hideCover(instance);
-                $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                    $eXeMapa.showMessageDetail(instance, message, 2);
-                    $eXeMapa.showPoint(mOptions.activeMap.active, instance);
-                    $eXeMapa.updateHeightGame(instance);
-                });
+                $eXeMapa.showMessageDetail(instance, message, 2);
+                $eXeMapa.showPoint(mOptions.activeMap.active, instance);
             } else {
-                $eXeMapa.showMessageModal(instance, message, 2, 2);
-                $eXeMapa.updateHeightGame(instance);
+                //$eXeMapa.showMessageModal(instance, message, 2, 2, 1, -1);
+                var num = mOptions.activeMap.active
+                if (mOptions.activeMap.pts[num].type == 8) {
+                    $eXeMapa.showPointLink(num, instance)
+                } else {
+                    $eXeMapa.showMessageModal(instance, message + ': ' + mOptions.activeMap.pts[mOptions.activeMap.active].title, 2, 2, -1);
+                }
                 setTimeout(function () {
+                    if (mOptions.activeMap.pts.length - mOptions.hits - mOptions.errors <= 0) {
+                        $eXeMapa.gameOver(instance);
+                    } else {
+                        $('#mapaTest-' + instance).hide();
+                    }
                     $eXeMapa.hideCover(instance);
-                    $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                        if (mOptions.activeMap.pts.length - mOptions.hits - mOptions.errors <= 0) {
-                            $eXeMapa.gameOver(instance);
-                        } else {
-                            $('#mapaTest-' + instance).hide();
-                        }
-
-                        $eXeMapa.updateHeightGame(instance);
-                    });
+                    mOptions.showData = false;
 
                 }, mOptions.timeShowSolution * 1000);
             }
         } else {
             mOptions.activeMap.pts[mOptions.activeMap.active].state = 1;
             message = mOptions.msgs.msgNotCorrect1 + ' "' + solution + '"';
-            $eXeMapa.showMessageModal(instance, message, 2, 0);
-            $eXeMapa.updateHeightGame(instance);
+            $eXeMapa.showMessageModal(instance, message, 2, 0, -1);
             setTimeout(function () {
                 $eXeMapa.hideCover(instance);
-                $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                    if (mOptions.numberQuestions - mOptions.hits - mOptions.errors <= 0) {
-                        $eXeMapa.gameOver(instance);
-                    } else {
-                        $('#mapaTest-' + instance).hide();
-                    }
-                    $eXeMapa.updateHeightGame(instance);
-                });
-                $('#mapaTest-' + instance).hide();
+                if (mOptions.numberQuestions - mOptions.hits - mOptions.errors <= 0) {
+                    $eXeMapa.gameOver(instance);
+                } else {
+                    $('#mapaTest-' + instance).hide();
+                } //$('#mapaTest-' + instance).hide();
                 $eXeMapa.stopSound(instance);
+                mOptions.showData = false;
 
             }, mOptions.timeShowSolution * 1000);
         }
@@ -2285,33 +2496,35 @@ var $eXeMapa = {
         $eXeMapa.showClue(instance);
         $('#mapaFMessages-' + instance).hide();
         $('#mapaFDetails-' + instance).hide();
+        $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaLinkCloseDetail-' + instance).hide();
 
         if (correct) {
             if (mOptions.activeMap.pts[num].type < 4 || mOptions.activeMap.pts[num].type == 6) {
-                $('#mapaCubierta-' + instance).fadeIn(100, function () {
-                    $eXeMapa.showMessageDetail(instance, message, 2);
-                    $eXeMapa.showPoint(num, instance);
-
-                });
+                $eXeMapa.showMessageDetail(instance, message, 2);
+                $eXeMapa.showPoint(num, instance);
             } else if (mOptions.activeMap.pts[num].type == 7) {
                 $eXeMapa.showToolTip(num, instance)
             } else {
-                $eXeMapa.showMessageModal(instance, message + ': ' + mOptions.title.title, 1, 2);
+
+                if (mOptions.activeMap.pts[num].type == 8) {
+                    $eXeMapa.showPointLink(num, instance)
+                } else {
+                    $eXeMapa.showMessageModal(instance, message + ': ' + mOptions.title.title, 1, 2, num);
+                }
                 setTimeout(function () {
-                    $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                        if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
-                            mOptions.activeTitle++;
-                        }
-                        $eXeMapa.hideMapDetail(instance, true);
-                        if (mOptions.activeTitle >= mOptions.numberQuestions || mOptions.evaluation == 3 && mOptions.hits >= mOptions.numberQuestions) {
-                            $eXeMapa.gameOver(instance);
-                        } else {
-                            $eXeMapa.showFind(instance, mOptions.activeTitle);
-                        }
-                        $eXeMapa.hideCover(instance);
-                        $eXeMapa.hideMapDetail(instance, true);
-                    });
+                    if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+                        mOptions.activeTitle++;
+                    }
+                    $eXeMapa.hideMapDetail(instance, true);
+                    if (mOptions.activeTitle >= mOptions.numberQuestions || mOptions.evaluation == 3 && mOptions.hits >= mOptions.numberQuestions) {
+                        $eXeMapa.gameOver(instance);
+                    } else {
+                        $eXeMapa.showFind(instance, mOptions.activeTitle);
+                    }
+                    $eXeMapa.hideCover(instance);
+                    $eXeMapa.hideMapDetail(instance, true);
+                    mOptions.showData = false;
                 }, mOptions.timeShowSolution * 1000);
             }
         } else {
@@ -2323,39 +2536,26 @@ var $eXeMapa = {
                 message += ' ' + mOptions.msgs.msgNotCorrect3;
             }
 
-            $eXeMapa.showMessageModal(instance, message, 2, 0);
+            $eXeMapa.showMessageModal(instance, message, 2, 0, num);
             setTimeout(function () {
-                $('#mapaCubierta-' + instance).fadeOut(100, function () {
+                if (mOptions.evaluation == 2) {
+                    mOptions.activeTitle++;
+                }
+                $eXeMapa.hideMapDetail(instance, true);
+                if (mOptions.activeTitle >= mOptions.numberQuestions) {
+                    $eXeMapa.gameOver(instance);
+                } else {
                     if (mOptions.evaluation == 2) {
-                        mOptions.activeTitle++;
+                        $eXeMapa.showFind(instance, mOptions.activeTitle);
                     }
-                    $eXeMapa.hideMapDetail(instance, true);
-                    if (mOptions.activeTitle >= mOptions.numberQuestions) {
-                        $eXeMapa.gameOver(instance);
-                    } else {
-                        if (mOptions.evaluation == 2) {
-                            $eXeMapa.showFind(instance, mOptions.activeTitle);
-                        }
-                    }
-                    $eXeMapa.hideCover(instance);
-
-                });
+                }
+                $eXeMapa.hideCover(instance);
+                mOptions.showData = false;
 
             }, mOptions.timeShowSolution * 1000);
         }
     },
-    changeStateCover(instance, show) {
-        var $cover = $('#mapaCubierta-' + instance),
-            colorBG = show ? 'rgb(255, 255, 255, .001)' : 'rgb(255, 255, 255, .001)';
-        $cover.css({
-            'background-color': colorBG
-        });
-        if (show) {
-            $cover.fadeIn(100, function () {
-                $eXeMapa.updateHeightGame(instance);
-            });
-        }
-    },
+
     updateScoreFind: function (correctAnswer, instance) {
         var mOptions = $eXeMapa.options[instance],
             message = "",
@@ -2387,31 +2587,27 @@ var $eXeMapa = {
             'color': color
         });
         $('#mapaMessageDetail-' + instance).show();
+
+        $('#mapaMessageDetailsSound-' + instance).text(message);
+        $('#mapaMessageDetailsSound-' + instance).css({
+            'color': color
+        });
+        $('#mapaMessageDetailsSound-' + instance).show();
     },
     showPoint: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[i],
             w = 0,
-            t = 0,
-            pt = $('#mapaToolBar-' + instance).height();
+            t = 0;
         mOptions.activeMap.active = i;
+
         if (q.type == 1) {
             $eXeMapa.stopSound(instance);
         }
         $eXeMapa.showClue(instance);
+        $eXeMapa.hideModalWindows(instance);
         if (q.type == 4) {
-            if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
-                mOptions.activeTitle++;
-                if (mOptions.activeTitle > mOptions.numberQuestions) {
-                    $eXeMapa.gameOver(instance);
-                } else if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
-                    $eXeMapa.showFind(instance, mOptions.activeTitle);
-                }
-            } else {
-                $eXeMapa.showMessageModal(instance, q.title, 1, 0);
-            }
-            mOptions.visiteds.push(q.id);
-            $eXeMapa.messageAllVisited(instance);
+            $eXeMapa.showPointNone(i, instance);
             return;
         }
         mOptions.waitPlayVideo = false;
@@ -2419,12 +2615,8 @@ var $eXeMapa = {
         $eXeMapa.stopVideo(instance);
         $eXeMapa.hideModalMessages(instance);
         mOptions.visiteds.push(q.id);
-        if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
-            pt += $('#mapaMessageFind-' + instance).height() + 2 * parseInt($('#mapaMessageFind-' + instance).css('marginTop'));
-        }
-        $('#mapaFDetails-' + instance).css('marginTop', pt + 'px');
-        $('#mapaFDetails-' + instance).show();
-        var w = $('#mapaCubierta-' + instance).width();
+
+        var w = $('#mapaGameContainer-' + instance).width();
         if (window.innerWidth < 550) {
             w = w * 0.90;
         } else if (window.innerWidth < 720) {
@@ -2434,49 +2626,37 @@ var $eXeMapa = {
         }
         t = Math.round(w * 0.65);
         $('#mapaMultimediaPoint-' + instance).height(t);
+        $('#mapaMultimediaPoint-' + instance).show();
         $('#mapaAuthorPoint-' + instance).html(q.author);
         $('#mapaTitlePoint-' + instance).text(q.title);
+        $('#mapaTitlePointSound-' + instance).text(q.title);
         $('#mapaFooterPoint-' + instance).text(q.footer);
-        if (q.footer.length > 0) {
+        $('#mapaFooterPointSound-' + instance).text(q.footer);
+        $('#mapaFooterPoint-' + instance).show();
+        $('#mapaTextPoint-' + instance).text(q.title);
+        if (q.footer.length > 0 && q.type == 2 && q.type == 7) {
             $('#mapaFooterPoint-' + instance).show();
         }
         if (q.type === 0) {
-            $eXeMapa.showImagePoint(q.url, q.author, q.alt, instance);
-            $('#mapaMultimediaPoint-' + instance).show();
-            if (q.author.length > 0) {
-                $('#mapaAuthorPoint-' + instance).show();
-            }
+            $eXeMapa.showPointImage(i, instance);
         } else if (q.type === 1) {
             t = Math.round(w * 0.7);
             $('#mapaMultimediaPoint-' + instance).height(t);
-            mOptions.waitPlayVideo = true;
-            $eXeMapa.playVideo(instance);
-            $('#mapaVideoPoint-' + instance).show();
-            $('#mapaAuthorPoint-' + instance).html(q.author);
-            $('#mapaMultimediaPoint-' + instance).show();
+            $eXeMapa.showPointVideo(i, instance);
         } else if (q.type === 2) {
-            $('#mapaTextPoint-' + instance).empty();
-            var $divText = $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').find('.mapa-LinkTextsPoints[data-id="' + q.id + '"]').eq(0);
-            if ($divText.length == 1) {
-                $divText.removeClass('js-hidden');
-                $('#mapaTextPoint-' + instance).append($divText);
-            }
-            $('#mapaTextPoint-' + instance).show();
-            $('#mapaFooterPoint-' + instance).hide();
-            $('#mapaMultimediaPoint-' + instance).hide();
-
+            $eXeMapa.showPointText(i, instance);
         } else if (q.type == 7) {
-
             $eXeMapa.showToolTip(i, instance);
+        } else if (q.type == 8) {
+            $eXeMapa.showPointLink(i, instance);
         } else if (q.type === 3) {
-            $('#mapaMultimediaPoint-' + instance).show();
-            $('#mapaLinkAudio-' + instance).show();
+            $eXeMapa.showPointSound(i, instance);
         } else if (q.type == 5) {
             $eXeMapa.showMapDetail(instance, i);
         } else if (q.type == 6) {
             mOptions.activeSlide = 0;
             $('#mapaLinkSlideRight-' + instance).show();
-            $eXeMapa.showSlide(mOptions.activeSlide, instance);
+            $eXeMapa.showSlide(mOptions.activeSlide, instance, i);
 
         }
         if (typeof q.audio != "undefined" && q.audio.length > 4) {
@@ -2489,21 +2669,20 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
-        var html = $('#mapaFDetails-' + instance).html(),
-            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
-        if (latex) {
-            $eXeMapa.updateLatex('mapaFDetails-' + instance);
-        }
-        if (q.type < 5 || q.type == 6) {
-            $('#mapaCubierta-' + instance).fadeIn(100, function () {
-                $eXeMapa.updateHeightGame(instance);
-            });
-        }
+
+
     },
     setFontModalMessage: function (size, instance) {
         $('#mapaMessageInfoText-' + instance).css({
             'font-size': size + 'em'
         });
+    },
+    hideModalWindows(instance) {
+        $('#mapaFMessages-' + instance).hide();
+        $('#mapaFTests-' + instance).hide();
+        $('#mapaFDetails-' + instance).hide();
+        $('#mapaToolTip-' + instance).hide();
+        $('#mapaFDetailsSound-' + instance).hide();
     },
     hideModalMessages: function (instance) {
         $('#mapaFMessages-' + instance).hide();
@@ -2559,7 +2738,7 @@ var $eXeMapa = {
             q = mOptions.activeMap.pts[mOptions.activeMap.active];
         $('#mapaFDetails-' + instance).hide();
         $('#mapaFMessages-' + instance).hide();
-
+        $('#mapaFDetailsSound-' + instance).hide();
         if (q.type == 2) {
             var $divText = $('#mapaTextPoint-' + instance).find('.mapa-LinkTextsPoints[data-id="' + q.id + '"]').eq(0)
             if ($divText.length == 1) {
@@ -2579,7 +2758,6 @@ var $eXeMapa = {
 
         }
         $('#mapaFTests-' + instance).hide();
-        mOptions.showData = false;
     },
     hideMapDetail: function (instance, start) {
         var mOptions = $eXeMapa.options[instance];
@@ -2607,77 +2785,8 @@ var $eXeMapa = {
 
         }
     },
-    updateHeightGame1: function (instance) {
-        $('#mapaGameContainer-' + instance).css('height', 'auto');
-        var hM = $('#mapaGameContainer-' + instance).height(),
-            hC = hM,
-            hN = hM,
-            tp = 0;
-        if ($('#mapaFMessages-' + instance).is(":visible")) {
-            hC = $('#mapaFMessages-' + instance).height() + 30;
-            tp = parseInt($('#mapaFMessages-' + instance).css('marginTop'));
-        } else if ($('#mapaFDetails-' + instance).is(":visible")) {
-            hC = $('#mapaFDetails-' + instance).height() + 30;
-            tp = parseInt($('#mapaFDetails-' + instance).css('marginTop'));
-        } else if ($('#mapaFTests-' + instance).is(":visible")) {
-            hC = $('#mapaFTests-' + instance).height() + 30;
-            tp = parseInt($('#mapaFTests-' + instance).css('marginTop'));
-        }
-        hC += tp;
-        hN = hM < hC ? hC : hM;
-        $('#mapaMainContainer-' + instance).height(hN);
-        $('#mapaGameContainer-' + instance).height(hN);
-        $('#mapaCubierta-' + instance).height(hN);
 
-        if (!$('#mapaGameContainer-' + instance).is(":visible")) {
-            $('#mapaMainContainer-' + instance).css('height', 'auto');
-        }
-    },
-    updateHeightGame: function (instance) {
-        var $mapaGameContainer = $('#mapaGameContainer-' + instance),
-            $TB = $('#mapaToolBar-' + instance),
-            hTB = $TB.is(':visible') ? $TB.height() + (parseInt($TB.css('marginTop')) || 0) + (parseInt($TB.css('marginBotton')) || 0) : 0,
-            $MF = $('#mapaMessageFindP-' + instance),
-            hMF = $MF.is(':visible') ? $MF.height() + (parseInt($MF.css('marginTop')) || 0) + (parseInt($MF.css('marginBotton')) || 0) : 0,
-            $GC = $('#mapaGameClue-' + instance),
-            hGC = $GC.is(':visible') ? $GC.height() + (parseInt($GC.css('marginTop')) || 0) + (parseInt($GC.css('marginBotton')) || 0) : 0,
-            $MM = $('#mapaMultimedia-' + instance),
-            hMM = $MM.is(':visible') ? $MM.height() + (parseInt($MM.css('marginTop')) || 0) + (parseInt($MM.css('marginBotton')) || 0) : 0,
-            $AL = $('#mapaAutorLicence-' + instance),
-            hAL = $AL.is(':visible') ? $AL.height() + (parseInt($AL.css('marginTop')) || 0) + (parseInt($AL.css('marginBotton')) || 0) : 0,
-            $mapaCubierta = $('#mapaCubierta-' + instance),
-            $FD = $('#mapaFDetails-' + instance),
-            hFD = $FD.is(':visible') ? $FD.height() + (parseInt($FD.css('marginTop')) || 0) + (parseInt($FD.css('marginBotton')) || 0) : 0,
-            $FM = $('#mapaFMessages-' + instance),
-            hFM = $FM.is(':visible') ? $FM.height() + (parseInt($FM.css('marginTop')) || 0) + (parseInt($FM.css('marginBotton')) || 0) : 0,
-            $FT = $('#mapaFTests-' + instance),
-            hFT = $FT.is(':visible') ? $FT.height() + (parseInt($FT.css('marginTop')) || 0) + (parseInt($FT.css('marginBotton')) || 0) : 0,
-            $MT = $('#mapaMessageRect-' + instance),
-            hMT = $MT.is(':visible') ? $MT.height() + (parseInt($MT.css('marginTop')) || 0) + (parseInt($MT.css('marginBotton')) || 0) : 0,
-            $mapaTest = $('#mapaTest-' + instance),
-            $IT = $('#mapaImageRect-' + instance),
-            hIT = $IT.is(':visible') ? $IT.height() + (parseInt($IT.css('marginTop')) || 0) + (parseInt($IT.css('marginBotton')) || 0) : 0,
-            $OT = $('#mapaOptionsTest-' + instance),
-            hOT = $OT.is(':visible') ? $OT.height() + (parseInt($OT.css('marginTop')) || 0) + (parseInt($OT.css('marginBotton')) || 0) : 0,
-            hGameContainer = $mapaGameContainer.is(':visible') ? hTB + hMF + hGC + hMM + hAL : 0,
-            hCubierta = $mapaCubierta.is(':visible') ? hFD + hFM + hFT : 0,
-            hText = $mapaTest.is(':visible') ? hMT + hIT + hOT : 0;
-        $mapaGameContainer.height(hGameContainer);
-        $mapaCubierta.height(hGameContainer);
-        $mapaTest.height(hText);
-        var hMaxSize = (Math.max(hGameContainer, hCubierta, hText));
-        if ($eXeMapa.isFullScreen()) {
-            $('#mapaGameContainer-' + instance).css('height', '100vh');
-            $('#mapaMainContainer-' + instance).css('height', '100vh');
-        } else {
-            $('#mapaGameContainer-' + instance).css('height', hMaxSize + 30 + 'px');
-            $('#mapaMainContainer-' + instance).css('height', hMaxSize + 50 + 'px');
-        }
 
-        if (!$('#mapaGameContainer-' + instance).is(":visible")) {
-            $('#mapaMainContainer-' + instance).css('height', 'auto');
-        }
-    },
     refreshImageActive: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         $eXeMapa.showImage(mOptions.activeMap.url, mOptions.activeMap.alt, instance);
@@ -2685,9 +2794,8 @@ var $eXeMapa = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         if (mOptions.itinerary.codeAccess === $('#mapaCodeAccessE-' + instance).val()) {
-            $('#mapaCubierta-' + instance).fadeOut(100, function () {
-                $eXeMapa.hideCover(instance);
-            });
+            $eXeMapa.hideCover(instance);
+            mOptions.showData = false;
         } else {
             $('#mapaMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
             $('#mapaCodeAccessE-' + instance).val('');
@@ -2858,7 +2966,7 @@ var $eXeMapa = {
                     $eXeMapa.placeImageWindows1(this, this.naturalWidth, this.naturalHeight, instance);
                     $Image.show();
                     $Image.attr('alt', alt);
-                    $eXeMapa.updateHeightGame(instance);
+                    //$eXeMapa.updateHeightGame(instance);
                     $eXeMapa.paintPoints(instance);
 
                     return true;

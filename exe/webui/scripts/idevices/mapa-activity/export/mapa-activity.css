@@ -4,14 +4,17 @@
 	border-width: 0;
 	text-decoration: none;
 }
-
+.mapa-LinkImagesPoints{
+	width: 10px;
+	height: 10px;
+}
 /* Contenedor */
 
 .MQP-MainContainer {
 	font-size: 1rem;
 	margin-top: 1em;
 	padding: 0;
-	width: 100%;
+	width: 96%;
 	max-width: 1100px;
 	height: auto;
 	background-color: transparent;
@@ -75,6 +78,10 @@
 	display: inline-block;
 	width: 100%;
 	text-align: center;
+}
+
+.MQP-ToolBar p {
+    font-size: 1.2em;
 }
 
 .MQP-MessageDetail {
@@ -172,7 +179,7 @@
 
 .MQP-Multimedia {
 	background-color: transparent;
-	margin: 0.5em auto;
+	margin: 1em auto;
 	max-width: 700px;
 	position: relative;
 	width: 100%;
@@ -181,13 +188,16 @@
 
 .MQP-Detail {
 	width: 80%;
+	max-width: 90%;
 	padding: 0.8em;
-	border-radius: 0.6em;
+	border-radius: 0.4em;
 	background-color: #ffffff;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
-	margin-top: 7em;
-	margin-left: auto;
-	margin-right: auto;
+	top: 0;
+	left:0;
+	position: absolute;
+	display: none;
+	z-index: 3003;
 }
 
 .MQP-LinkCloseDetail {
@@ -207,12 +217,14 @@
 	left: 0;
 	z-index: 100000;
 	background-color: rgb(255, 255, 255, .4);
-	display: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /* ToolTip */
 .MQP-ToolTip {
-	width: 400px;
+	width: 300px;
 	max-width: 90%;
 	min-height: 80px;
 	background-color: white;
@@ -224,8 +236,26 @@
 	font-size: 1em;
 	top: 0;
 	left: 0;
-	visibility: hidden;
 	z-index: 3101;
+	border-radius: 0.4em;
+}
+
+.MQP-DetailsSound {
+	width: 300px;
+	max-width: 90%;
+	min-height: 80px;
+	background-color: white;
+	border: 1px solid #ccc;
+	position: absolute;
+	z-index: 10;
+	box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+	padding: 0.5em 0.5em;
+	font-size: 1em;
+	top: 0;
+	left: 0;
+	z-index: 3101;
+	border-radius: 0.4em;
+
 }
 .MQP-ToolTipTitle {
 	text-align: center;
@@ -244,6 +274,20 @@
 	z-index:100;
 	display :block;
 }
+
+.MQP-MainContainer a.MQP-LinkDetailClose {
+	position: absolute;
+	top: 7px;
+	right: 3px;
+	width: 30px;
+	height: 30px;
+	z-index:100;
+	display :block;
+}
+
+.MQP-MainContainer a.MQP-LinkDetailClose  .MQP-IconsToolBar{
+	margin:0
+}
 .MQP-MainContainer .MQP-ToolTipClose .MQP-IconsToolBar {
     background-size: 100% 100%;
 	width: 20px;
@@ -254,7 +298,7 @@
 .MQP-ToolTipText{
 	color:inherit;
 	font-size: 0.9em;
-	max-height:400px;
+	max-height:300px;
 	overflow-y: auto;
 	display: flex;
 	justify-content: center;
@@ -271,6 +315,7 @@
 	background-color: #ffffff;
 }
 
+
 .MQP-AuthorPoint {
 	width: 100%;
 	text-align: center;
@@ -286,7 +331,7 @@
 	padding: 0.5em;
 	width: 100%;
 	color: #071717;
-	border-radius: 0.3em;
+	border-radius: 0.4em;
 	background-color: #ffffff;
 	-webkit-hyphens: auto;
 	-moz-hyphens: auto;
@@ -295,6 +340,8 @@
 	max-height: 7em;
 	overflow-y: auto;
 }
+
+
 
 .MQP-Area {
 	position: absolute;
@@ -307,13 +354,24 @@
 }
 
 .MQP-MultimediaPoint {
-	border-radius: 0.6em;
+	border-radius: 0.4em;
 	margin: 0.5em auto;
 	width: 100%;
 	max-width: 1024px;
 	overflow: hidden;
 	position: relative;
 	background-color: #ffffff;
+}
+
+.MQP-MultimediaPointSound {
+	width: 80%;
+	height: 150px;
+	margin:auto;
+	overflow: hidden;
+	position: relative;
+	background-color: #ffffff;
+	border-radius: 0.4em;
+	margin: 0.5em auto;
 }
 
 img.MQP-ImageMain {
@@ -324,7 +382,7 @@ img.MQP-ImageMain {
 
 .MQP-Images {
 	border: 0;
-	border-radius: 0.6em;
+	border-radius: 0.4em;
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -366,7 +424,7 @@ img.MQP-ImageMain {
 
 .MQP-Images {
 	border: 0;
-	border-radius: 0.6em;
+	border-radius: 0.4em;
 	height: 100%;
 	left: 0;
 	position: absolute;
@@ -389,35 +447,35 @@ img.MQP-ImageMain {
 .MQP-LinkSlideLeft {
 	position: absolute;
 	display: block;
-	background-image: url(mapaslideleft.png);
+	background-image: url(mapaslideleft.svg);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
 	left: 0;
 	margin: auto;
 	top: 40%;
-	width: 1.5em;
-	height: 4em;
+	width: 2em;
+	height: 5em;
 }
 .MQP-LinkSlideRight {
 	position: absolute;
 	display: block;
-	background-image: url(mapaslidelrigh.png);
+	background-image: url(mapaslidelrigh.svg);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
 	right: 0;
 	margin: auto;
-	width: 1.5em;
-	height: 4em;
+	width: 2em;
+	height: 5em;
 	top: 40%;
 }
 
 
-.MQP-LinkAudio {
+.MQP-LinkAudioS {
 	position: absolute;
 	display: block;
-	background-image: url(mapam2.svg);
+	background-image: url(exeplaysound.svg);
 	background-size: 50% 50%;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -428,6 +486,14 @@ img.MQP-ImageMain {
 	top: 0;
 	width: 100%;
 	height: 100%
+}
+.MQP-LinkSound{
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Author */
@@ -495,12 +561,10 @@ img.MQP-ImageMain {
 	min-height: 200px;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
 	padding: 1em;
-	border-radius: 0.6em;
+	border-radius: 0.4em;
 	max-width: 600px;
-	border: 1px solid #dddddd;
 	margin-top: 4em;
-	margin-left: auto;
-	margin-right: auto;
+	display: none;
 }
 
 .MQP-QuestionDiv, .MQP-WordsDiv {
@@ -754,7 +818,7 @@ img.MQP-ImageMain {
 .MQP-DivFeedBack {
 	align-items: center;
 	background-color: rgba(232, 232, 232, 0.8);
-	border-radius: .6em;
+	border-radius: .4em;
 	display: flex;
 	flex-direction: column;
 	height: 100%;
@@ -775,7 +839,7 @@ img.MQP-ImageMain {
 	-webkit-box-shadow: 0 10px 6px -6px #999999;
 	background-color: #fff;
 	border: 1px solid #999;
-	border-radius: .6em;
+	border-radius: .4em;
 	box-shadow: 0 10px 6px -6px #999;
 	display: none;
 	margin-bottom: 1em;
@@ -811,19 +875,33 @@ img.MQP-ImageMain {
 	transform: scale(1.1);
 }
 
-/* Mensaje Modal */
+.MQP-Detail {
+	width: 80%;
+	max-width: 90%;
+	padding: 0.8em;
+	border-radius: 0.4em;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	top: 0;
+	left:0;
+	position: absolute;
+	display: none;
+	z-index: 3103;
+}
 
 .MQP-MessageModal {
-	border-radius: 0.8em;
-	box-shadow: 0 0.7em 1.2em rgba(0, 0, 0, 0.19), 0 0.5em 0.5em rgba(0, 0, 0, 0.23);
+	border-radius: 0.4em;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
 	width: 65%;
 	max-width: 500px;
 	min-width: 250px;
-	padding: 1em;
+	padding: 0.3em;
 	background-color: white;
-	margin-top: 6em;
-	margin-left: auto;
-	margin-right: auto;
+	top: 0;
+	left:0;
+	position: absolute;
+	display: none;
+	z-index: 3103;
 }
 
 .MQP-MessageModalTexto {
@@ -850,7 +928,7 @@ img.MQP-ImageMain {
 }
 
 .MQP-AcceptButton {
-	background: url(exequextreply.png) no-repeat;
+	background: url(exequextreply.svg) no-repeat;
 	background-size: 100% 100%;
 	cursor: pointer;
 	height: 1.7rem;
@@ -860,7 +938,7 @@ img.MQP-ImageMain {
 }
 
 .MQP-CancelButton {
-	background: url(exequextrerrors.png) no-repeat;
+	background: url(exequextrerrors.svg) no-repeat;
 	background-size: 100% 100%;
 	cursor: pointer;
 	height: 1.7rem;
@@ -905,7 +983,7 @@ img.MQP-ImageMain {
 }
 .MQP-MainContainer .MQP-IconPlayIdentify {
 	background-size: 100% 100%;
-	background-image: url(mapam2.svg);
+	background-image: url(exeplaysound.svg);
 	background-size: 100% 100%;
 	height: 1.3em;
 	margin: 0;
@@ -918,28 +996,33 @@ img.MQP-ImageMain {
 	padding: 0;
 }
 
+.MQP-FMessageInfo{
+	position: relative;
+}
+
 .MQP-MessageGOScore {
 	width: 80%;
 	height: 100%;
-	border-radius: 0.8em;
+	border-radius: 0.4em;
 }
+
 
 .MQP-MessageGOContent {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
-	border-radius: 0.8em;
-	padding: 1em;
+	border-radius: 0.4em;
+	padding: 0.7em;
 }
 
 .MQP-MessageGOScoreData {
-	border-radius: 0.8em;
+	border-radius: 0.4em;
 	width: 50%
 }
 
 .MQP-MessageMoScoreData {
-	border-radius: 0.8em;
+	border-radius: 0.4em;
 	width: 100%
 }
 
@@ -972,7 +1055,9 @@ img.MQP-ImageMain {
 	font-size: 1.1em;
 	height: 1.5em;
 }
-
+.MQP-FOver{
+	padding: 0.6em;
+}
 .MQP-Hide {
 	display: none;
 }
@@ -1081,32 +1166,32 @@ img.MQP-ImageMain {
 }
 
 .MQP-MainContainer .exeQuextIcons-Submit {
-	background: url(exequextreply.png) no-repeat;
+	background: url(exequextreply.svg) no-repeat;
 	background-size: 100% 100%;
 }
 
 .MQP-MainContainer .exeQuextIcons-Minimize {
-	background-image: url(exequextmin.png);
+	background-image: url(exequextmin.svg);
 	background-size: 100% 100%;
 }
 
 .MQP-MainContainer .exeQuextIcons-Hit {
-	background-image: url(exequexthits.png);
+	background-image: url(exequexthits.svg);
 	background-size: 100% 100%;
 }
 
 .MQP-MainContainer .exeQuextIcons-Error {
-	background-image: url(exequextrerrors.png);
+	background-image: url(exequextrerrors.svg);
 	background-size: 100% 100%;
 }
 
 .MQP-MainContainer .exeQuextIcons-Score {
-	background-image: url(exequextscore.png);
+	background-image: url(exequextscore.svg);
 	background-size: 100% 100%;
 }
 
 .MQP-MainContainer .exeQuextIcons-Number {
-	background-image: url(exequextnumber.png);
+	background-image: url(exequextnumber.svg);
 	background-size: 100% 100%;
 }
 
@@ -1306,7 +1391,7 @@ div:fullscreen .MQP-LinkCloseDetail{
 	align-items: flex-start;
 	flex-wrap: wrap;
 	max-height: 300px;
-	border-radius: 0.8em;
+	border-radius: 0.4em;
 	max-width: 900px;
 }
 
@@ -1401,11 +1486,7 @@ div:fullscreen .MQP-LinkCloseDetail{
 		margin-bottom: 0.1em;
 		font-size: 0.9em;
 	}
-	.MQP-MainContainer .MQP-TitlePoint {
-		font-size: 1em;
-		padding: 0.2em;
-		margin-bottom: .2em;
-	}
+	
 }
 
 @media screen and (max-width:550px) {
@@ -1453,6 +1534,7 @@ div:fullscreen .MQP-LinkCloseDetail{
 	}
 	.MQP-TestContainer {
 		width: 95%;
+		top:1em;
 	}
 	.MQP-Question, .MQP-Message, .MQP-Definition {
 		width: 100%;
@@ -1470,7 +1552,7 @@ div:fullscreen .MQP-LinkCloseDetail{
 	.MQP-MessageModal {
 		width: 90%;
 		padding: 0.6em;
-		border-radius: 0.6em;
+		border-radius: 0.4em;
 	}
 	.MQP-Detail {
 		margin-top: 0.3em;
@@ -1514,6 +1596,24 @@ div:fullscreen .MQP-LinkCloseDetail{
 	.MQP-ToolTip {
 		width: 60%;
 		min-height: 150px;
+	}
+	.MQP-ToolBar p {
+		font-size: 1em;
+	}
+	.MQP-Footer {
+		font-size: 0.8em;
+		
+	}
+	.MQP-TitlePoint {
+		font-size: 0.9em;
+		padding: 0.2em;
+		margin-bottom: .2em;
+	}
+	.mapa-extra-content{
+		font-size: 0.9em;
+	}
+	.MQP-MessageModal{
+		font-size: 0.9em;
 	}
 }
 
@@ -1561,7 +1661,7 @@ div:fullscreen .MQP-LinkCloseDetail{
 		width: 140px;
 		height: 100px;
 		margin: 0.3em auto;
-		border-radius: 0.3em;
+		border-radius: 0.4em;
 	}
 	.MPQ-CursorRect {
 		width: 1.5em;
