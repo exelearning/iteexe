@@ -191,7 +191,7 @@ var $eXeTrivial = {
     },
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;
@@ -1966,10 +1966,10 @@ var $eXeTrivial = {
             $('#trivialDefinition-' + instance).text(definition);
         }
 
-        var html = $('#trivialGameQuestion-' + instance).html(),
+        var html = $('#trivialWordDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeTrivial.updateLatex('trivialGameQuestion-' + instance)
+            $eXeTrivial.updateLatex('trivialWordDiv-' + instance)
         }
         return cPhrase;
     },
@@ -2342,10 +2342,10 @@ var $eXeTrivial = {
                 $(this).hide();
             }
         });
-        var html = $('#trivialGameQuestion-' + instance).html(),
+        var html = $('#trivialQuestionDiv-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeTrivial.updateLatex('trivialGameQuestion-' + instance)
+            $eXeTrivial.updateLatex('trivialQuestionDiv-' + instance)
         }
     },
     drawSolution: function (instance) {

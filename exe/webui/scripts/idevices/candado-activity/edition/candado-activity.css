@@ -1,6 +1,6 @@
 #candadoIdeviceForm {
-  margin-top: 2em;
-  padding: 1em;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
 }
 
 #candadoIdeviceForm input[type="radio"], #candadoIdeviceForm input[type="checkbox"], #candadoIdeviceForm select {

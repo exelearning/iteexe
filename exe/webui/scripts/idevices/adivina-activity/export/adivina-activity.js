@@ -517,10 +517,10 @@ var $eXeAdivina = {
             $('#adivinaDefinition-' + instance).text(definition);
         }
 
-        var html = $('#adivinaGameContainer-' + instance).html(),
+        var html = $('#adivinaDefinition-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            $eXeAdivina.updateLatex('adivinaGameContainer-' + instance)
+            $eXeAdivina.updateLatex('adivinaDefinition-' + instance)
         }
         return cPhrase;
     },
@@ -843,8 +843,6 @@ var $eXeAdivina = {
         $('#adivinaImage-' + instance).hide();
         $('#adivinaCover-' + instance).hide();
         $('#adivinaVideo-' + instance).hide();
-        $('#adivinaEText-' + instance).hide();
-        
         $('#adivinaStartGame-' + instance).show();
         $eXeAdivina.showScoreGame(type, instance);
         $eXeAdivina.startVideo('', 0, 0, instance);
@@ -1365,7 +1363,7 @@ var $eXeAdivina = {
 
     loadMathJax: function () {
         if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig; 
+            window.MathJax = $exe.math.engineConfig;
         }
         var script = document.createElement('script');
         script.src = $exe.math.engine;
@@ -1387,6 +1385,7 @@ var $eXeAdivina = {
                 } catch (error) {
                     console.log('Error al refrescar cuestiones')
                 }
+
             }
 
         }, 100);
