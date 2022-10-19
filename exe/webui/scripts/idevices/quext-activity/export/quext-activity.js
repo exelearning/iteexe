@@ -406,7 +406,7 @@ var $eXeQuExt = {
             json = $eXeQuExt.Decrypt(json);
         }
         var mOptions = $eXeQuExt.isJsonString(json),
-            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+        hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeQuExt.hasLATEX = true;
         }
@@ -1199,7 +1199,7 @@ var $eXeQuExt = {
         }
         $eXeQuExt.drawQuestions(instance);
         var html = $('#quextQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeQuExt.updateLatex('quextQuestionDiv-' + instance)
         }

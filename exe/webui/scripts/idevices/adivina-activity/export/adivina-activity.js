@@ -184,7 +184,7 @@ var $eXeAdivina = {
             json = $eXeAdivina.Decrypt(json);
         }
         var mOptions = $eXeAdivina.isJsonString(json),
-            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeAdivina.hasLATEX = true;
         }
@@ -518,7 +518,7 @@ var $eXeAdivina = {
         }
 
         var html = $('#adivinaDefinition-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeAdivina.updateLatex('adivinaDefinition-' + instance)
         }

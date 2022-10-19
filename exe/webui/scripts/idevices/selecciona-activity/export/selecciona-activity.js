@@ -428,7 +428,7 @@ var $eXeSelecciona = {
         var json = $eXeSelecciona.Decrypt(data.text()),
             mOptions = $eXeSelecciona.isJsonString(json);
         version = typeof version == "undefined" || version == '' ? 0 : parseInt(version);
-        var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+        var hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeSelecciona.hasLATEX = true;
         }
@@ -1267,7 +1267,7 @@ var $eXeSelecciona = {
         }
         
         var html = $('#seleccionaWordDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeSelecciona.updateLatex('seleccionaWordDiv-' + instance)
         }
@@ -1926,7 +1926,7 @@ var $eXeSelecciona = {
             }
         });
         var html = $('#seleccionaQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeSelecciona.updateLatex('seleccionaQuestionDiv-' + instance)
         }

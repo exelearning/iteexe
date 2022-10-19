@@ -71,7 +71,7 @@ var $eXeCandado = {
             $eXeCandado.addEvents(i);
             $('#candadoInstructions-' + i).append($(".candado-instructions", this));
             $('#candadoFeedRetro-' + i).append($(".candado-retro", this));
-            var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($('#candadoGameContainer-' + i).html());
+            var hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test($('#candadoGameContainer-' + i).html());
             if (hasLatex) {
                 $eXeCandado.hasLATEX = true;
             }

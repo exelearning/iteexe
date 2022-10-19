@@ -183,7 +183,7 @@ var $eXeRosco = {
 			json = $eXeRosco.Decrypt(json);
 		}
 		var mOptions = $eXeRosco.isJsonString(json),
-			hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+			hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
 		if (hasLatex) {
 			$eXeRosco.hasLATEX = true;
 		}
@@ -756,7 +756,7 @@ var $eXeRosco = {
 			$eXeRosco.playSound(mWord.audio.trim(), instance);
 		}
 		var html = $('#roscoPDefinition-' + instance).html(),
-			latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+			latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
 		if (latex) {
 			$eXeRosco.updateLatex('roscoPDefinition-' + instance)
 		}

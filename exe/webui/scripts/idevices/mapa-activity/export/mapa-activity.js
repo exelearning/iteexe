@@ -298,7 +298,7 @@ var $eXeMapa = {
     loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url, $toolTips) {
         var json = data.text(),
             mOptions = $eXeMapa.isJsonString(json),
-            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeMapa.hasLATEX = true;
         }
@@ -611,7 +611,7 @@ var $eXeMapa = {
             }
         });
         var html = $('#mapaQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaFTests-' + instance);
         }
@@ -663,7 +663,7 @@ var $eXeMapa = {
         }
 
         var html = $('#mapaWordDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaWordDiv-' + instance)
         }
@@ -1268,7 +1268,7 @@ var $eXeMapa = {
         mOptions.showDetail = false;
         $eXeMapa.updateHeightGame(instance);
         var html = $('#mapaMainContainer-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaMainContainer-' + instance)
         }
@@ -2490,7 +2490,7 @@ var $eXeMapa = {
             }
         }
         var html = $('#mapaFDetails-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaFDetails-' + instance);
         }

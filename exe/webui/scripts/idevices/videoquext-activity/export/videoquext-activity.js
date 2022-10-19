@@ -501,7 +501,7 @@ var $eXeVideoQuExt = {
             json = $eXeVideoQuExt.Decrypt(json);
         }
         var mOptions = $eXeVideoQuExt.isJsonString(json),
-            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
+            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
 
         if (hasLatex) {
             $eXeVideoQuExt.hasLATEX = true;
@@ -918,7 +918,7 @@ var $eXeVideoQuExt = {
                     }
        
                     var html = $('#vquextProgressBar-' + instance).html(),
-                        latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+                        latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
                     if (latex) {
                         $eXeVideoQuExt.updateLatex('vquextProgressBar-' + instance)
                     }
@@ -1021,7 +1021,7 @@ var $eXeVideoQuExt = {
         }
         $('#vquextpreviewQuestionsDiv-' + instance).slideToggle();
         var html = $('#vquextpreviewQuestionsDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeVideoQuExt.updateLatex('vquextpreviewQuestionsDiv-' + instance)
         }
@@ -1793,7 +1793,7 @@ var $eXeVideoQuExt = {
             $('#vquextDivReply-' + instance).hide();
         }
         var html = $('#vquextQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
         }
@@ -1826,7 +1826,7 @@ var $eXeVideoQuExt = {
             });
         }
         var html = $('#vquextQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeVideoQuExt.updateLatex('vquextQuestionDiv-' + instance)
         }

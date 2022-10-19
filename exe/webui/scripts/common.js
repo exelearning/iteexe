@@ -677,36 +677,43 @@ var $exe = {
     // Math options (MathJax, etc.)
     math : {
         // Change this from your Style or your elp using $exe.math.engine="..."
-        engine : "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js",
+        engine : "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-svg.js",
         // MathJax options:
         engineConfig : {
             loader: {
-                load: ['[tex]/color', '[tex]/mathtools',
-                    '[tex]/ams', '[tex]/mhchem',
-                    '[tex]/cancel', '[tex]/enclose',
-                    '[tex]/physics', '[tex]/textmacros'
-                ]
+                load: ['[tex]/ams', '[tex]/amscd', '[tex]/cancel', '[tex]/centernot',
+                '[tex]/color','[tex]/colortbl','[tex]/configmacros','[tex]/gensymb',
+                '[tex]/mathtools', '[tex]/mhchem','[tex]/newcommand', '[tex]/noerrors',
+                '[tex]/noundefined', '[tex]/physics','[tex]/textmacros','[tex]/gensymb',
+                 '[tex]/textcomp','[tex]/bbox', '[tex]/upgreek','[tex]/verb'
+				]
             },
             tex: {
                 inlineMath: [
-                    ['$', '$'],
                     ["\\(", "\\)"]
                 ],
                 displayMath: [
-                    ['$$', '$$'],
                     ["\\[", "\\]"]
                 ],
                 processEscapes: true,
                 tags: 'ams',
                 packages: {
-                    '[+]': ['color', 'mathtools', 'ams', 'mhchem', 'cancel', 'enclose', 'physics', 'textmacros']
+                    '[+]': ['ams','amscd',  'cancel','centernot', 'color','colortbl',
+                    'configmacros', 'gensymb', 'mathtools', 'mhchem','newcommand','noerrors',
+                    'noundefined','physics','textmacros','upgreek','verb'
+					]
                 },
                 physics: {
                     italicdiff: false,
                     arrowdel: false
-                }
-            }
-        },
+                },
+            },
+            textmacros: {
+                packages: {
+                    '[+]': ['textcomp','bbox']
+            	}
+		 	}
+       	},
         // Create links to the code and the image (different possibilities)
         createLinks : function(math) {
             var mathjax = false;
@@ -735,6 +742,7 @@ var $exe = {
                 });
             });            
         },
+		
         // Open a new window with the LaTeX or MathML code
         showCode : function(e){
             var tit = e.innerHTML;
@@ -756,7 +764,7 @@ var $exe = {
             var mathjax = false;
             if (math.length>0||$("body").hasClass("exe-auto-math")) {
                 if ($("body").hasClass("exe-auto-math")) {
-                    var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($('#main').html());
+                    var hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test($('#main').html());
                     if (hasLatex) mathjax = true;
                 }
                 math.each(function(){

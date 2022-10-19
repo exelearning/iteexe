@@ -1275,7 +1275,7 @@ var $eXeTrivial = {
         var mOptions = $eXeTrivial.isJsonString(data.text());
         mOptions = $eXeTrivial.Decrypt(mOptions);
         var myJSON = JSON.stringify(mOptions),
-            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(myJSON);
+            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(myJSON);
         if (hasLatex) {
             $eXeTrivial.hasLATEX = true;
         }
@@ -1967,7 +1967,7 @@ var $eXeTrivial = {
         }
 
         var html = $('#trivialWordDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeTrivial.updateLatex('trivialWordDiv-' + instance)
         }
@@ -2343,7 +2343,7 @@ var $eXeTrivial = {
             }
         });
         var html = $('#trivialQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeTrivial.updateLatex('trivialQuestionDiv-' + instance)
         }

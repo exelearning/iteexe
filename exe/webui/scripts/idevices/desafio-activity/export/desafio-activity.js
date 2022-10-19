@@ -76,7 +76,7 @@ var $eXeDesafio = {
             $('#desafioDescription-' + i).hide();
             $('#desafioFeedBacks-' + i).hide();
             $eXeDesafio.addEvents(i);
-            var hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($('#desafioGameContainer-' + i).html());
+            var hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test($('#desafioGameContainer-' + i).html());
             if (hasLatex) {
                 $eXeDesafio.hasLATEX = true;
             }
