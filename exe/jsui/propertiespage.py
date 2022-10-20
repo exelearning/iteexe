@@ -277,11 +277,14 @@ class PropertiesPage(Renderable, Resource):
                 obj = self.package.dublinCore
             if part == 'eo':
                 obj = self.package.exportOptions
+            if fieldId=='pp_scolinks':
+                setattr(obj, name, False)
+                return obj, name
             if hasattr(obj, name):
                 return obj, name
             else:
                 # If attributes don't exist, initialize them with value 'False'
-                if fieldId in ['pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource', 'pp_addSearchBox', 'pp_loadMathEngine', 'pp_addExeLink', 'pp_exportElp']:
+                if fieldId in ['pp_scolinks','pp_scowsinglepage', 'pp_scowwebsite', 'pp_exportSource', 'pp_addSearchBox', 'pp_loadMathEngine', 'pp_addExeLink', 'pp_exportElp']:
                     setattr(obj, name, False)
                     return obj, name
 
