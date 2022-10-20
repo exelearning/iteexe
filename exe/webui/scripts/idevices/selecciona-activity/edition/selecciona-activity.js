@@ -1061,8 +1061,8 @@ var $exeDevice = {
                                 </div>\
                             </div>\
                             <div class="gameQE-EContents">\
-                                   <div id="seleccionaESolitionOptions"><span><span>' + _("Solution") + ':</span> </span><span id="selecionaESolutionSelect"></span></div>\
-                                   <div class="gameQE-EQuestionDiv" id="seleccionaEQuestionDiv">\
+                                <div id="seleccionaESolitionOptions" class="gameQE-SolitionOptionsDiv" ><span>' + _("Question") + ':</span><span><span>' + _("Solution") + ': </span><span id="selecionaESolutionSelect"></span></span></div>\
+                                    <div class="gameQE-EQuestionDiv" id="seleccionaEQuestionDiv">\
                                         <label class="sr-av">' + _("Question") + ':</label><input type="text" class="gameQE-EQuestion" id="seleccionaEQuestion">\
                                    </div>\
                                 <div class="gameQE-EAnswers" id="seleccionaEAnswers">\

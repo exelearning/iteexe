@@ -216,6 +216,12 @@
 	text-align: left;
 }
 
+.gameQE-SolitionOptionsDiv{
+	width: 98%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 
 /* Itinerario */
 
