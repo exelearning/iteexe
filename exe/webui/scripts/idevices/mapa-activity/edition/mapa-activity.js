@@ -198,7 +198,7 @@ var $exeDevice = {
                             <label for="mapaPercentajeIdentify">' + _("Percentage of questions") + ':  <input type="number" name="mapaPercentajeIdentify" id="mapaPercentajeIdentify" value="100" min="1" max="100" /> </label>\
                             <span id="mapaNumberPercentaje">1/1</span>\
                         </p>\
-                        <p class="MQE-EHide" id="mapaEAutoShowDiv">\
+                        <p id="mapaEAutoShowDiv">\
                             <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Show when the mouse is over the icon or active area") + '. </label>\
                         </p>\
                     </div>\
