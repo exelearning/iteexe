@@ -71,7 +71,7 @@ var $exeDevice = {
         var msgs=this.msgs;
         var html = '\
 			    <div id="candadoIdeviceForm">\
-                    <div class="exe-idevice-info">'+_("Cree actividades en las que la retroalimentación está protegida por contraseña.")+' <a href="https://youtu.be/aKdBRClanYk" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\				    <div class="exe-form-tab" title="' +  msgs.msgEGeneralSettings+ '">\
+                    <div class="exe-idevice-info">'+_("Create activities with a password protected feedback.")+' <a href="https://youtu.be/aKdBRClanYk" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\				    <div class="exe-form-tab" title="' +  msgs.msgEGeneralSettings+ '">\
                         <div class="candado-EPanel" id="candadoEPanel">\
                             <p class="candadoToggle">\
                                 <input checked id="candadoECandado" type="radio" name="dsfDesRet" value="0" />\

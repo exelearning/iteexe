@@ -712,7 +712,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">'+_("Cree un trivial educativo con preguntas de tipo test, ordena y palabra/definición, categorizadas en hasta 6 temas diferentes. Podrán jugar, al mismo tiempo, de 1 a 4 alumnos o equipos.")+' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\
+            <div class="exe-idevice-info">'+_("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.")+' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset($exeDevice.msgs.msgGameIntrunctions) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -917,7 +917,7 @@ var $exeDevice = {
                             </div>\
                         </div>\
                         ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
-                        <div class="exe-idevice-info">'+_("Este juego puede presentar problemas de accesibilidad para algunas personas. Debe tenerlo en cuenta a la hora de elaborar el contenido y, si sus destinatarios lo requieren, proporcionar una alternativa accesible.")+'</div>\
+                        <div class="exe-idevice-info">'+_("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.")+'</div>\
                     </div>\
 				' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
