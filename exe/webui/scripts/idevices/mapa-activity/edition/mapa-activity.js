@@ -340,12 +340,12 @@ var $exeDevice = {
                 </fieldset>\
                  ' + $exeDevice.getCuestionario() + '\
                  ' + $exeDevice.getTextFieldset("after") + '\
-                 <div class="exe-idevice-info">'+_("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.")+'</div>\
             </div>\
             ' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
             ' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
             ' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
-        </div>';
+            <div class="exe-idevice-warning">'+_("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.")+'</div>\
+		</div>';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");

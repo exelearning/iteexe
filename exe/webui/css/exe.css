@@ -316,9 +316,14 @@ body .exe-hidden-accessible{position:static;overflow:visible;clip:auto;height:au
 #activeIdevice .exe-form-tabs .exe-form-active-tab{color:#000;background:#FFF;font-weight:bold}
 
 /* Dismissable messages (to be used with exe-block-info) */
-.exe-idevice-info .exe-block-dismissible{position:relative;padding-right:30px}
-.exe-block-dismissible .exe-block-close{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold}
+.exe-idevice-info .exe-block-dismissible,
+.exe-idevice-warning .exe-block-dismissible{position:relative;padding-right:30px}
+.exe-block-dismissible a{text-decoration:underline}
+.exe-block-dismissible a:hover{text-decoration:none}
+.exe-block-dismissible .exe-block-close{position:absolute;right:13px;top:7px;font-size:18px;font-family:Verdana,sans-serif;color:#86A9BB;text-shadow:0 1px 0 #fff;font-weight:bold;text-decoration:none}
 .exe-block-dismissible .exe-block-close:hover,.exe-block-dismissible .exe-block-close:focus{color:#063853;text-decoration:none}
+.exe-idevice-warning .exe-block-dismissible .exe-block-close{color:#BBAC8C}
+.exe-idevice-warning .exe-block-dismissible .exe-block-close:hover,.exe-idevice-warning .exe-block-dismissible .exe-block-close:focus{color:#796034}
 
 /* Empty page instructions */
 #emptyPageInstructions{margin-top:2em;position:relative;padding-right:30px}

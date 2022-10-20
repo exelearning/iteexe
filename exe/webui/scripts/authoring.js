@@ -1006,10 +1006,12 @@ var $exeAuthoring = {
                 return false;
             });
 
-            // Enable the iDevice instructions
-            $(".exe-idevice-info").each(function(){
+            // Enable the iDevice instructions and warnings
+            $(".exe-idevice-info,.exe-idevice-warning").each(function(){
                 var e = $(this);
-                e.html('<p class="exe-block-info exe-block-dismissible">'+e.html()+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>');
+                var css = "info";
+                if (e.hasClass("exe-idevice-warning")) css = "warning";
+                e.html('<p class="exe-block-'+css+' exe-block-dismissible">'+e.html()+' <a href="#" class="exe-block-close" title="'+_("Hide")+'"><span class="sr-av">'+_("Hide")+' </span>×</a></p>');
             });
 
             // Dismissible messages
