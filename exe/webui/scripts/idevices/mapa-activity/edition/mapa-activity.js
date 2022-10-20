@@ -152,13 +152,13 @@ var $exeDevice = {
         msgs.msgCloseMap = _("You must close all the edited maps before saving the activity.");
         msgs.msgCloseSlide = _("You must close the edited presentation before saving the activity.");
         msgs.msgEOneSlide = _("There must be at least one slide in the presentation.");
-        msgs.msgWriteLink = _("Debes indicar una URL correcta");
+        msgs.msgWriteLink = _("Please type or paste a valid URL.");
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">'+_("Cree mapas de imágenes con zonas activas que podrán mostrar a su vez imágenes, vídeos, sonidos, textos enriquecidos o presentaciones.")+' <a href=https://youtu.be/xy1vBj9KGQk" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\
+            <div class="exe-idevice-info">'+_("Create image maps: Images with interactive hotspots to reveal images, videos, sounds, texts...")+' <a href=https://youtu.be/xy1vBj9KGQk" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Click on the active areas or image icons.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -199,7 +199,7 @@ var $exeDevice = {
                             <span id="mapaNumberPercentaje">1/1</span>\
                         </p>\
                         <p class="MQE-EHide" id="mapaEAutoShowDiv">\
-                            <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Mostrar al pasar el ratón sobre el icono o área activa") + '. </label>\
+                            <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Show when the mouse is over the icon or active area") + '. </label>\
                         </p>\
                     </div>\
                 </fieldset>\
@@ -340,7 +340,7 @@ var $exeDevice = {
                 </fieldset>\
                  ' + $exeDevice.getCuestionario() + '\
                  ' + $exeDevice.getTextFieldset("after") + '\
-                 <div class="exe-idevice-info">'+_("Este juego puede presentar problemas de accesibilidad para algunas personas. Debe tenerlo en cuenta a la hora de elaborar el contenido y, si sus destinatarios lo requieren, proporcionar una alternativa accesible.")+'</div>\
+                 <div class="exe-idevice-info">'+_("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.")+'</div>\
             </div>\
             ' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
             ' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
