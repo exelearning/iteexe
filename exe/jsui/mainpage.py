@@ -257,6 +257,7 @@ class MainPage(RenderableLivePage):
         setUpHandler(self.handleMergeXliffPackage, 'mergeXliffPackage')
         setUpHandler(self.handleInsertPackage, 'insertPackage')
         setUpHandler(self.handleExtractPackage, 'extractPackage')
+        setUpHandler(self.handleExtractSCORM, 'extractSCORM')        
         setUpHandler(self.outlinePane.handleSetTreeSelection, 'setTreeSelection')
         setUpHandler(self.handleClearAndMakeTempPrintDir, 'makeTempPrintDir')
         setUpHandler(self.handleRemoveTempDir, 'removeTempDir')
@@ -1530,6 +1531,48 @@ class MainPage(RenderableLivePage):
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
         client.alert(_(u'Package extracted to: %s') % filename)
+
+    def handleExtractSCORM(self, client, filename, existOk):
+        """
+        Create a new package consisting of the current node and export to SCORM
+        'existOk' means the user has been informed of existance and ok'd it
+        """
+        style = G.application.config.styleStore.getStyle(self.package.style)
+        stylesDir = style.get_style_dir()
+
+        filename = Path(filename, 'utf-8')
+        saveDir = filename.dirname()
+        if saveDir and not saveDir.exists():
+            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
+            return
+
+        # Add the extension if its not already there
+        if not filename.lower().endswith('.zip'):
+            filename += '.zip'
+
+        if Path(filename).exists() and existOk != 'true':
+            msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
+            client.alert(_(u'EXTRACT FAILED!\n%s') % msg)
+            return
+
+        try:
+            # Create a new package for the extracted nodes
+            newPackage = self.package.extractNode()
+
+            # trigger a rename of all of the internal nodes and links,
+            # and to remove any old anchors from the dest package,
+            # and remove any zombie links via isExtract:
+            newNode = newPackage.root
+            if newNode:
+                newNode.RenamedNodePath(isExtract=True)
+
+            scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
+            scorm.export(newPackage)
+
+        except Exception, e:
+            client.alert(_('EXTRACT FAILED!\n%s') % str(e))
+            raise
+        client.filePickerAlert(_(u'Package extracted to: %s') % filename)
 
     def handleCreateDir(self, client, currentDir, newDir):
         try:

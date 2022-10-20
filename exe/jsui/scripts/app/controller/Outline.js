@@ -162,7 +162,14 @@ Ext.define('eXe.controller.Outline', {
 		    },{
 			    text: _('Export this page as elp'),
 			    handler: this.getController('Toolbar').extractPackage
-            }            
+            },          
+			{
+				xtype: 'menuseparator'
+			},
+			{
+				text: _('Export this page as SCORM'),
+				handler: this.getController('Toolbar').extractSCORM
+			}             
           ]
 		});
         var x = e.browserEvent.clientX;

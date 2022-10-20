@@ -328,6 +328,13 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                             text: _('Export the current page as elp')
                                         },
                                         {
+                                            cls: 'exe-advanced',
+                                            xtype: 'accesskey_menuitem',
+                                            itemId: 'file_extract_SCORM',
+                                            accesskey: 's',
+                                            text: _('Export the current page as SCORM')
+                                        },                                                                                
+                                        {
                                             cls: 'exe-simplified',
                                             xtype: 'accesskey_menuitem',
                                             text: _('SCORM1.2'),
