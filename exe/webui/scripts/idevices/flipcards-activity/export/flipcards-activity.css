@@ -1,0 +1,1052 @@
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.flip-card-inner.flipped {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+    cursor: pointer;
+}
+
+.flip-card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.FLCDSP-Navigation {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em auto;
+
+}
+
+
+
+.FLCDSP-Navigation a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 0.3em;
+}
+
+.FLCDSP-Navigation a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #2980b9;
+    color: white;
+    border-radius: 0.3em;
+}
+
+.FLCDSP-Navigation a:hover {
+    color: white;
+    background-color: #04AA6D;
+
+}
+
+.FLCDSP-CardsNumber {
+    margin: 0 1.5em;
+}
+
+.FLCDSP-Navigation span {
+    display: inline-block;
+    font-size: 1.2em;
+}
+
+
+
+
+
+.FLCDSP-MainContainer a, .FLCDSP-MainContainer a:visited, .FLCDSP-MainContainer a:focus {
+    border: 0;
+    border-bottom: none;
+    border-width: 0;
+    text-decoration: none;
+}
+
+/* Contenedor */
+
+.FLCDSP-MainContainer {
+    font-size: 1rem;
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.FLCDSP-MainContainer * {
+    box-sizing: border-box;
+}
+
+.FLCDSP-MainContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Instrucciones */
+
+.FLCDSP-instructions {
+    margin: 0.3em auto;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Minimizado */
+
+.FLCDSP-GameMinimize {
+    display: none;
+    margin: 1em auto;
+    width: 100%;
+}
+
+.FLCDSP-LinkMaximize {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.FLCDSP-IconMinimize {
+    height: 2em;
+    margin-right: 0.5em;
+    width: 2em;
+}
+
+/* Juego */
+
+.FLCDSP-GameContainer {
+    margin: 0 auto;
+    padding: 2em 0.3em 2em 0.3em;
+    position: relative;
+    max-width: 1600px;
+    width: 100%;
+    min-height: 500px;
+}
+
+/* barra de puntuaciones */
+
+.FLCDSP-GameScoreBoard {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    width: 100%;
+    height: 1.1em;
+}
+
+.FLCDSP-GameScoreBoard p {
+    font-size: 1.1em;
+    margin-right: 0.3em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.FLCDSP-GameScores {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.FLCDSP-GameScores>p:last-child {
+    text-align: left;
+}
+
+.FLCDSP-TimeNumber {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.flipcards-info {
+    background-color: red;
+}
+
+.FLCDSP-PTime {
+    margin-left: 0.3em;
+    min-width: 3.5em;
+    text-align: center;
+    width: auto;
+}
+
+/* Pista */
+.FLCDSP-ShowClue {
+    display: none;
+}
+
+
+.FLCDSP-PShowClue {
+    text-align: center;
+    width: 100%;
+}
+
+/* Tarjetas */
+
+/* El contenedor de la tarjeta */
+
+.FLCDSP-CardDraw {
+    position: relative;
+    margin: 1em;
+}
+
+.FLCDSP-ImageContain {
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    border-radius: 0.6em;
+    position: absolute;
+    background-color: white;
+}
+
+.FLCDSP-Image {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    border-radius: 0.6em;
+
+}
+
+.FLCDSP-EText {
+    border: none;
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    padding: 0.1em;
+    top: 2%;
+    left: 2%;
+    font-weight: 500;
+    border-radius: 0.3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+
+
+
+.FLCDSP-Multimedia {
+    background-color: transparent;
+    border-radius: 0.6em;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 0.3em;
+    margin-top: 0.8em;
+
+
+}
+
+.FLCDSP-GameButtons {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.FLCDSP-Cursor {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+    height: 1.3em;
+    z-index: 1004;
+    display: none;
+}
+
+.FLCDSP-LinkAudio img {
+    width: 100%;
+    height: 100%;
+}
+
+.FLCDSP-LinkAudio {
+    top: 0.2em;
+    position: absolute;
+    left: 0.2em;
+    width: 3em;
+    height: 3em;
+    max-height: 3em;
+    max-width: 3em;
+    min-width: 1em;
+    min-height: 1em;
+    display: block;
+    z-index: 1005;
+    display: none;
+}
+
+
+.FLCDSP-LinkAudioBig {
+    width: 150px;
+    height: 150px;
+    max-height: 250px;
+    max-width: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.FLCDSP-LinkAudio-Back {
+    display: none;
+}
+
+.FLCDSP-LinkAudio-Front {
+    display: none;
+}
+
+.FLCDSP-Audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Game Over */
+
+.FLCDSP-Cover {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1007;
+    background-color: rgb(255, 255, 255, 0.1)
+}
+
+.FLCDSP-ClueBotton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6em auto;
+}
+
+
+
+/* Aciertos */
+
+.FLCDSP-Information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FLCDSP-Information a {
+    font-size: 1.2em;
+    display: inline-block;
+    text-align: center;
+}
+
+
+/* Message */
+
+.FLCDSP-Message {
+    margin: 0.5em;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+
+.FLCDSP-Message {
+    display: none;
+
+}
+
+.FLCDSP-Message p {
+    display: none;
+
+}
+
+.FLCDSP-AuthorGame {
+    margin: 0.5em auto;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    display: none;
+}
+
+/* Código acceso */
+
+
+.FLCDSP-CodeAccessDiv, .FLCDSP-ShowClue {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.5em;
+    margin-top: 2em;
+}
+
+.FLCDSP-MessageCodeAccessE {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    margin: 0.5em;
+}
+
+.FLCDSP-DataCodeAccessE {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0.7em auto 0 auto;
+    width: 100%;
+}
+
+.FLCDSP-CodeAccessE {
+    margin: 0 .3em;
+    width: 100%;
+    text-align: center;
+}
+
+
+.FLCDSP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.FLCDSP-BottonContainerDiv, .FLCDSP-BottonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.1em auto;
+    padding: 0;
+    width: 100%;
+}
+
+.FLCDSP-BottonContainerDivEnd {
+    justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.FLCDSP-DivInstructions {
+    margin: 1em 0 0 0;
+    text-align: center;
+    width: 95%;
+}
+
+.FLCDSP-parpadea {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-name: FLCDSP-parpadeo;
+    -webkit-animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-name: FLCDSP-parpadeo;
+    animation-timing-function: linear;
+}
+
+
+.flipcards-extra-content {
+    margin-top: 1.7em;
+}
+
+/* Enlace activo */
+
+.FLCDSP-Activo {
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    -webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    -webkit-transition: transform 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s;
+}
+
+.FLCDSP-LinkMaximize:hover .FLCDSP-Activo, .FLCDSP-Activo:hover {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Puntuacion */
+
+.FLCDSP-BottonContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.FLCDSP-BottonContainer * {
+    margin: 0;
+    padding: 0;
+}
+
+.FLCDSP-GetScore input[type=button] {
+    padding: 0.3em 0.5em;
+    margin: 0 .5em 1em 0.5em;
+    width: auto;
+}
+
+.FLCDSP-GetScore {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1em
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Iconos */
+
+.FLCDSP-GameContainer .exeQuextIcons {
+    background-size: 100% 100%;
+    height: 1.4em;
+    margin-right: 0.3em;
+    width: 1.4em;
+}
+
+.exeQuextButtonsF {
+    background-size: 100% 100%;
+    height: 4em;
+    width: 4em;
+    margin-left: 0.5em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    margin-right: 0.5em;
+
+}
+
+.FLCDSP-GameOverExt {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.FLCDSP-GameOver {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    margin: 0.3em auto;
+}
+
+.FLCDSP-GameOver:before {
+    content: '';
+    display: block;
+    padding-top: 40%;
+}
+
+.FLCDSP-DataImage {
+    height: 100%;
+    padding: 0;
+    position: relative;
+    width: 50%;
+}
+
+.FLCDSP-DataScore {
+    padding: 0;
+    width: 50%;
+}
+
+.FLCDSP-DataScore p {
+    margin: 0.7em;
+    font-size: 0.9em;
+}
+
+.FLCDSP-HistGGame, .FLCDSP-LostGGame {
+    bottom: 0;
+    left: 0;
+    display: none;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+}
+
+.FLCDSP-HistGGame:before, .FLCDSP-LostGGame:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.FLCDSP-ImageMessage {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 60% 60%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.9;
+    display: none;
+
+}
+
+.FLCDSP-StartGame {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.FLCDSP-StartGame a:hover {
+    text-decoration: underline;
+}
+
+.FLCDSP-StartGame a {
+    color: #a2241a;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.FLCDSP-ImageMessageOK {
+    background-image: url(exequextbuttonok.svg);
+
+}
+
+.FLCDSP-ImageMessageKO {
+    background-image: url(exequextbuttonko.svg);
+
+}
+
+
+.FLCDSP-GameContainer .exeQuextIcons-Video, .FLCDSP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+
+.FLCDSP-GameContainer .exeQuextIcons-Minimize {
+    background-image: url(exequextmin.png);
+    background-size: 100% 100%;
+}
+
+.FLCDSP-GameContainer .exeQuextIcons-Hit {
+    background-image: url(exequexthits.png);
+    background-size: 100% 100%;
+}
+
+.FLCDSP-GameContainer .exeQuextIcons-Error {
+    background-image: url(exequextrerrors.png);
+    background-size: 100% 100%;
+}
+
+.FLCDSP-GameContainer .exeQuextIcons-Score {
+    background-image: url(exequextscore.png);
+    background-size: 100% 100%;
+}
+
+.FLCDSP-GameContainer .exeQuextIcons-ButtonOk {
+    background-image: url(exequextbuttonok.svg);
+    background-size: 100% 100%;
+}
+
+.FLCDSP-GameContainer .exeQuextIcons-ButtonKO {
+    background-image: url(exequextbuttonko.svg);
+    background-size: 100% 100%;
+}
+
+
+
+.FLCDSP-GameContainer .exeQuextIcons-Number {
+    background-image: url(exequextnumber.png);
+    background-size: 100% 100%;
+}
+
+
+.FLCDSP-MainContainer .exeQuextIcons-Submit {
+    background: url(exequextreply.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+div:fullscreen .FLCDSP-Message {
+    font-weight: 1.1em;
+}
+
+.FLCDSP-GameContainer:-webkit-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.FLCDSP-GameContainer:-moz-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.FLCDSP-GameContainer:-ms-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.FLCDSP-GameContainer:-o-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.FLCDSP-GameContainer:fullscreen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+div:fullscreen .FLCDSP-Multimedia {
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+div:fullscreen .FLCDSP-Multimedia {
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+@-moz-keyframes FLCDSP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes FLCDSP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
+
+@keyframes FLCDSP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+.FLCDSP-GameButtons-Movil {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 70px;
+}
+
+.exeQuextButtonsF-movil {
+
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    width: 3em;
+    height: 3em;
+
+
+    
+}
+
+
+
+@media screen and (max-width:600px) {
+    .FLCDSP-MainContainer {
+        font-size: 0.9rem;
+    }
+
+    .FLCDSP-instructions {
+        margin: 0.1em auto;
+    }
+
+    .FLCDSP-DivInstructions {
+        display: none;
+    }
+
+    .FLCDSP-PShowClue {
+        font-size: 1em;
+    }
+
+    .FLCDSP-Message {
+        font-size: 1em;
+    }
+
+
+    .FLCDSP-CodeAccessDiv, .FLCDSP-ShowClue {
+        width: 75%;
+    }
+
+    .FLCDSP-Multimedia {
+        margin-top: 0.6em;
+        justify-content: space-around;
+
+    }
+
+
+
+}
+
+@media screen and (max-width:650px) {
+
+    .FLCDSP-GameOverExt {
+        width: 80%;
+    }
+
+    .FLCDSP-DataImage {
+        display: none;
+    }
+
+    .FLCDSP-DataScore {
+        width: 90%;
+    }
+
+    .FLCDSP-CardDraw{
+        margin: 0.4em;
+    }
+    
+    .FLCDSP-Information{
+        margin-top:1em
+    }
+
+    .FLCDSP-MainContainer {
+        font-size: 0.9rem;
+    }
+
+  
+    .FLCDSP-LinkMinimize {
+        display: none;
+    }
+
+    .FLCDSP-DataCodeAccessE label {
+        display: none;
+    }
+
+    .FLCDSP-GameContainer .exeQuextIcons-MoveOne, .FLCDSP-GameContainer .exeQuextIcons-Submit, .FLCDSP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+
+    .FLCDSP-GameContainer input[type="text"], input.FLCDSP-CodeAccessE {
+        background: #fdfdfd;
+        border: 1px solid #828282;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: inline-block;
+        line-height: 1.5em;
+        margin: 0 0.3em;
+        padding: 0.4em 0.25em;
+    }
+
+    .FLCDSP-GameContainer input[type="text"]:active, .FLCDSP-GameContainer input[type="text"]:focus, input.FLCDSP-EdReply:focus, input.FLCDSP-EdReply:active, input.FLCDSP-CodeAccessE:focus, input.FLCDSP-CodeAccessE:active {
+        background: #fdfdfd;
+        border: 1px solid #398ee7;
+        border-radius: 4px;
+    }
+
+    .FLCDSP-CodeAccessDiv, .FLCDSP-ShowClue {
+        width: 90%;
+    }
+
+    div:fullscreen .FLCDSP-Message {
+        font-weight: 1em;
+    }
+
+}
+
+@media screen and (max-width:340px) {
+    .FLCDSP-MainContainer {
+        font-size: 0.8rem;
+    }
+
+    .FLCDSP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 0.1em;
+        padding: 0;
+    }
+
+    .FLCDSP-GameContainer .exeQuextIcons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .FLCDSP-GameContainer .FLCDSP-GameScoreBoard p {
+        padding: 0;
+    }
+
+    .FLCDSP-GameScores {
+        width: 50%;
+    }
+
+    .FLCDSP-TimeNumber {
+        width: 45%;
+    }
+
+    .FLCDSP-instructions p {
+        margin: 0 auto;
+    }
+
+    div:fullscreen .FLCDSP-Message {
+        font-weight: 1em;
+    }
+}
+
+@media screen and (max-width:295px) {
+    .FLCDSP-MainContainer {
+        font-size: 0.7rem;
+    }
+
+    .FLCDSP-GameScoreBoard {
+        justify-content: flex-start;
+    }
+
+    .FLCDSP-GameScores {
+        width: 50%;
+    }
+
+    .FLCDSP-TimeNumber {
+        width: 42%;
+    }
+}
+
+@media screen and (max-width:265px) {
+    .FLCDSP-MainContainer {
+        font-size: 0.6rem;
+    }
+
+    .FLCDSP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 2px;
+    }
+
+    .FLCDSP-GameContainer .exeQuextIcons {
+        height: 1.1em;
+        width: 1.1em;
+    }
+
+    .FLCDSP-GameContainer .exeQuextIcons-Submit, .FLCDSP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+
+    .FLCDSP-GameScores {
+        width: auto;
+    }
+
+    .FLCDSP-TimeNumber {
+        justify-content: flex-start;
+        width: auto;
+    }
+
+    .FLCDSP-Letter {
+        font-size: 1.2em;
+        height: 1.7em;
+        margin: 0;
+        width: 1.2em;
+    }
+}
+
+@media screen and (max-width:235px) {
+    .FLCDSP-GameScoreBoard .exeQuextIcons-Life, .FLCDSP-GameScoreBoard .exeQuextIcons-Time {
+        display: none;
+    }
+}
