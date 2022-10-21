@@ -1,0 +1,897 @@
+.MTHO-MainContainer a, .MTHO-MainContainer a:visited, .MTHO-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	text-decoration: none;
+}
+
+/* Contenedor */
+
+.MTHO-MainContainer {
+	font-size: 1rem;
+	margin: 1em auto;
+	padding: 0;
+	width: 100%;
+	max-width: 750px;
+}
+
+.MTHO-MainContainer * {
+	box-sizing: border-box;
+}
+
+.MTHO-MainContainer p {
+	margin: 0;
+	padding: 0;
+}
+
+
+.MTHO-Cubierta {
+	width: 100%;
+	height: 100%;
+	min-height: 110px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255, .2);
+	display: none;
+
+}
+
+.MTHO-Cubierta .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+	height: 1.7em;
+	width: 1.7em;
+}
+
+/* Instrucciones */
+
+.MTHO-instructions {
+	margin: 0.3em auto;
+	width: 100%;
+	overflow: auto;
+}
+
+/* Minimizado */
+
+.MTHO-GameMinimize {
+	display: none;
+	margin: 1em auto;
+	width: 100%;
+}
+
+.MTHO-LinkMaximize {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.MTHO-IconMinimize {
+	height: 2em;
+	margin-right: 0.5em;
+	width: 2em;
+}
+
+/* Juego */
+
+.MTHO-GameContainer {
+	margin: 0 auto;
+	max-width: 750px;
+	padding: 1em 0.3em 0 0.3em;
+	position: relative;
+	width: 100%;
+}
+
+/* barra de puntuaciones */
+
+.MTHO-GameScoreBoard {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.3em;
+	width: 100%;
+}
+
+.MTHO-GameScoreBoard p {
+	font-size: 1.1em;
+	margin-right: 0.3em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.MTHO-GameScores {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.MTHO-GameScores>p:last-child {
+	text-align: left;
+}
+
+
+.MTHO-TimeNumber {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.MTHO-PTime {
+	margin-left: 0.3em;
+	min-width: 3.5em;
+	text-align: center;
+	width: auto;
+}
+
+/* Pista */
+
+.MTHO-ShowClue {
+	margin: 0.5em auto 0 auto;
+	width: 95%;
+	background-color: transparent;
+	justify-content: center;
+	align-items: center;
+}
+
+.MTHO-PShowClue {
+	color: rgb(26, 100, 20);
+	text-align: center;
+	width: 100%;
+	font-size: 1.2em;
+}
+/* Multimedia */
+
+.MTHO-Multimedia {
+	background-color: transparent;
+	border-radius: 0.6em;
+	margin: 0.3em auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+.MTHO-ImagesHome{
+	margin-top: 1em;
+	width: 90%;
+	max-width:200px;
+	margin:auto;
+
+}
+.MTHO-Flex {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	min-width: 100px;
+	width: 100%;
+
+}
+
+
+.MTHO-Form {
+	margin-top: 0.6em;
+	font-size: 1.4em;
+	text-align: center;
+}
+
+.MTHO-Form label {
+	letter-spacing: 3px
+}
+
+.MTHO-Form input[type=text] {
+	margin: 0;
+	margin-right: 0.2em;
+
+}
+
+.MTHO-Form input.operator {
+	text-align: center
+}
+
+.MTHO-MainContainer table {
+	width: 100%
+}
+
+.MTHO-MainContainer table, td, th {
+	border: 1px solid #BBB
+}
+
+.MTHO-MainContainer table{
+	background-color: #f9f9f9;
+}
+
+.MTHO-MainContainer table, td{
+	padding-left: 0.2em;
+	padding-right: 0.2em;
+	padding: 0.2em;
+	background-color: #fff;
+
+}
+
+
+.MTHO-pagination {
+	text-align: center
+}
+
+.MTHO-tr-right td {
+	background: #cfc
+}
+
+.MTHO-tr-wrong td {
+	background: #fcc
+}
+
+.MTHO-right, .MTHO-wrong {
+	background: url(operaciones_matematicas.gif) no-repeat 0 0;
+	display: block;
+	width: 20px;
+	height: 20px;
+	text-indent: -999em;
+	margin: 0 auto
+}
+
+.MTHO-wrong {
+	background-position: 0 -20px
+}
+
+.MTHO-Summary ul {
+	padding: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+
+.MTHO-Summary ul li {
+	display: inline-block;
+	margin-left: 0.6em;
+	white-space: nowrap;
+}
+
+.MTHO-CodeAccessDiv {
+	padding: 1.5em 0.5em 1.5em 0.5em;
+	margin: 4em auto;
+	width: 95%;
+	max-width: 450px;
+	background-color: white;
+	border-radius: 0.5em;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.MTHO-MessageCodeAccessE {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.MTHO-DataCodeAccessE {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0.7em auto 0 auto;
+	width: 100%;
+}
+
+.MTHO-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 250px;
+	text-align: center;
+	width: 80%;
+}
+
+
+
+/* Game Over */
+
+.MTHO-GameOver {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	z-index: 200;
+}
+
+.MTHO-DataImage {
+	height: 100%;
+	padding: 0;
+	position: relative;
+	width: 50%;
+}
+
+.MTHO-DataScore {
+	padding: 0;
+	width: 50%;
+}
+
+.MTHO-DataScore p {
+	margin: 0.7em;
+}
+
+.MTHO-HistGGame, .MTHO-LostGGame {
+	bottom: 0;
+	display: none;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 80%;
+}
+
+.MTHO-HistGGame:before, .MTHO-LostGGame:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
+.MTHO-GameContainer .operator{
+	margin-left: 0.3em;
+	margin-right: 0.3em;
+}
+
+.MTHO-BCheck {
+	appearance: none;
+	background-color: #954bb5;
+	border: 1px solid rgba(27, 31, 35, .15);
+	border-radius: 0.4em;
+	box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 600;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.MTHO-BCheck:focus:not(:focus-visible):not(.focus-visible) {
+	box-shadow: none;
+	outline: none;
+}
+
+.MTHO-BCheck:hover {
+	background-color: #a2daff;
+	color: #2b0000;
+}
+
+.MTHO-BCheck:focus {
+	box-shadow: rgba(72, 219, 238, 0.4) 0 0 0 3px;
+	outline: none;
+}
+
+
+/* Author */
+
+
+/* Código acceso */
+
+.MTHO-MessageCodeAccessE {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.IDFP-DataCodeAccessE {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0.7em auto 0 auto;
+	width: 100%;
+}
+
+.IDFP-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 250px;
+	text-align: center;
+	width: 80%;
+}
+
+
+.MTHO-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 300px;
+	width: 60%;
+}
+
+/* Inicio juego */
+
+.MTHO-StartGame {
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	user-select: none;
+	width: 100%;
+}
+
+.MTHO-StartGame a:hover {
+	text-decoration: underline;
+}
+
+/* Pegunta tipo test */
+
+
+
+
+.MTHO-EdReply {
+	margin: auto 0.2em;
+	max-width: 400px;
+	width: 60%;
+	text-align: center;
+}
+
+
+.MTHO-LinkVideoIntroShow {
+	display: none;
+}
+
+.MTHO-BottonContainerDiv, .MTHO-BottonContainer {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0.1em auto;
+	padding: 0;
+	width: 100%;
+}
+
+.MTHO-BottonContainerDivEnd {
+	justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.MTHO-DivInstructions {
+	margin: 1em 0 0 0;
+	text-align: center;
+	width: 95%;
+}
+
+.MTHO-parpadea {
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 5;
+	-webkit-animation-name: MTHO-parpadeo;
+	-webkit-animation-timing-function: linear;
+	animation-duration: 1s;
+	animation-iteration-count: 5;
+	animation-name: MTHO-parpadeo;
+	animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.MTHO-DivFeedBack {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1010;
+}
+
+.MTHO-DivFeedBack button {
+	cursor: pointer;
+}
+
+.quext-feedback-game, .mathoperations-feedback-game, .selecciona-feedback-game, .vquext-feedback-game {
+	-moz-box-shadow: 0 10px 6px -6px #999;
+	-webkit-box-shadow: 0 10px 6px -6px #999999;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: .6em;
+	box-shadow: 0 10px 6px -6px #999;
+	display: none;
+	margin-bottom: 1em;
+	max-height: 80%;
+	min-height: 10em;
+	overflow-y: auto;
+	padding: 1em;
+	width: 95%;
+}
+
+.mathoperations-extra-content {
+	margin-top: 1.7em;
+}
+
+
+
+/* Enlace activo */
+
+.MTHO-Activo {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	transition: transform 0.3s;
+}
+
+.MTHO-LinkMaximize:hover .MTHO-Activo, .MTHO-Activo:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+/* Puntuacion */
+
+.MTHO-BottonContainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.MTHO-BottonContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+.MTHO-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+
+.MTHO-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 1em
+}
+
+/* Iconos */
+
+.MTHO-GameContainer .exeQuextIcons {
+	background-size: 100% 100%;
+	height: 1.4em;
+	margin-right: 0.3em;
+	width: 1.4em;
+}
+
+
+.MTHO-GameContainer .exeQuextIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+.MTHO-MainContainer .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.MTHO-MainContainer .exeQuextIcons-MoveOne {
+	background: url(exequextmoveon.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-Minimize {
+	background-image: url(exequextmin.png);
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-Hit {
+	background-image: url(exequexthits.png);
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-FullScreen {
+	background-image: url(exequextfull.png);
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-Error {
+	background-image: url(exequextrerrors.png);
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-Score {
+	background-image: url(exequextscore.png);
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-Time {
+	background-image: url(exequexttime.png);
+	background-size: 100% 100%;
+}
+
+.MTHO-GameContainer .exeQuextIcons-Number {
+	background-image: url(exequextnumber.png);
+	background-size: 100% 100%;
+}
+
+
+
+
+/* Full Screen */
+
+div:fullscreen .exeQuextIcons-FullScreen {
+	background-image: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-webkit-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-moz-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+
+
+div:fullscreen .MTHO-Multimedia, div:-webkit-full-screen .MTHO-Multimedia, div:-moz-full-screen .MTHO-Multimedia {
+	background-color: #fff;
+	margin: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 95vmin;
+	top: 3em;
+	width: 95vmin;
+}
+
+.MTHO-GameContainer:-webkit-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.MTHO-GameContainer:-moz-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.MTHO-GameContainer:-ms-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.MTHO-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+@-moz-keyframes MTHO-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes MTHO-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@keyframes MTHO-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@media screen and (max-width:550px) {
+	.MTHO-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.MTHO-LinkFullScreen {
+		display: none;
+	}
+
+	.MTHO-instructions {
+		margin: 0.1em auto;
+	}
+
+	.MTHO-DivInstructions {
+		display: none;
+	}
+
+	.MTHO-PShowClue {
+		font-size: 0.9em;
+	}
+
+	.MTHO-StartGame a {
+		font-size: 0.9em;
+	}
+
+	.MTHO-AuthorLicence p {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width:470px) {
+	.MTHO-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.MTHO-PShowClue {
+		font-size: 0.8em;
+	}
+
+	.MTHO-Multimedia {
+		width: 95%;
+	}
+
+	.MTHO-LifesGame {
+		display: none;
+	}
+
+
+	.MTHO-LinkMinimize {
+		display: none;
+	}
+
+	.MTHO-DataCodeAccessE label {
+		display: none;
+	}
+
+	.MTHO-GameContainer input[type="text"], input.MTHO-EdReply, input.MTHO-CodeAccessE {
+		background: #fdfdfd;
+		border: 1px solid #828282;
+		border-radius: 4px;
+		box-sizing: border-box;
+		display: inline-block;
+		line-height: 1.5em;
+		margin: 0 0.3em;
+		padding: 0.4em 0.25em;
+	}
+
+	.MTHO-GameContainer input[type="text"]:active, .MTHO-GameContainer input[type="text"]:focus, input.MTHO-EdReply:focus, input.MTHO-EdReply:active, input.MTHO-CodeAccessE:focus, input.MTHO-CodeAccessE:active {
+		background: #fdfdfd;
+		border: 1px solid #398ee7;
+		border-radius: 4px;
+	}
+}
+
+@media screen and (max-width:340px) {
+	.MTHO-MainContainer {
+		font-size: 0.8rem;
+	}
+
+	.MTHO-GameScoreBoard p {
+		font-weight: normal;
+		margin: 0.1em;
+		padding: 0;
+	}
+
+	.MTHO-GameContainer .exeQuextIcons {
+		margin: 0;
+		padding: 0;
+	}
+
+	.MTHO-GameContainer .MTHO-GameScoreBoard p {
+		padding: 0;
+	}
+
+	.MTHO-GameScores {
+		width: 50%;
+	}
+
+	.MTHO-TimeNumber {
+		width: 45%;
+	}
+
+	.MTHO-instructions p {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:295px) {
+	.MTHO-MainContainer {
+		font-size: 0.7rem;
+	}
+
+	.MTHO-GameScoreBoard {
+		justify-content: flex-start;
+	}
+
+	.MTHO-GameScores {
+		width: 50%;
+	}
+
+	.MTHO-TimeNumber {
+		width: 42%;
+	}
+}
+
+@media screen and (max-width:265px) {
+	.MTHO-MainContainer {
+		font-size: 0.6rem;
+	}
+
+	.MTHO-GameScoreBoard p {
+		font-weight: normal;
+		margin: 2px;
+	}
+
+	.MTHO-GameContainer .exeQuextIcons {
+		height: 1.1em;
+		width: 1.1em;
+	}
+
+	.MTHO-GameScores {
+		width: auto;
+	}
+
+	.MTHO-TimeNumber {
+		justify-content: flex-start;
+		width: auto;
+	}
+
+}
+
+@media screen and (max-width:235px) {
+	 .MTHO-GameScoreBoard .exeQuextIcons-Time {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	div:fullscreen .MTHO-Multimedia {
+		background-color: #fff;
+		margin: 2em auto;
+		max-width: 95vmin;
+		top: 1.4em;
+		width: 95vmin;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-height: 800px) {
+	div:fullscreen .MTHO-Multimedia {
+		background-color: #fff;
+		margin-bottom: 0.6em;
+		max-width: 95vmin;
+		width: 95vmin;
+	}
+}
+
+/* To review */
+.mathoperations-instructions
+{
+	overflow: auto;
+}
