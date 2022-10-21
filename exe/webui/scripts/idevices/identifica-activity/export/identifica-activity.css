@@ -1,0 +1,1157 @@
+.IDFP-MainContainer, .IDFP-MainContainer * {
+	box-sizing: border-box;
+}
+
+.IDFP-MainContainer a, .IDFP-MainContainer a:visited, .IDFP-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	text-decoration: none;
+}
+
+/* Contenedor */
+
+.IDFP-MainContainer {
+	font-size: 1rem;
+	margin: 1em auto;
+	padding: 0 0.5em;
+	width: 100%;
+	max-width: 1000px;
+	border-radius: 1em;
+	min-height: 610px;
+}
+
+.IDFP-MainContainer p {
+	margin: 0;
+	padding: 0;
+}
+
+/* Instrucciones */
+
+.IDFP-instructions {
+	margin: 0.3em auto;
+	width: 100%;
+	overflow: auto;
+}
+
+/* Minimizado */
+
+.IDFP-GameMinimize {
+	display: block;
+	margin: 0.5em auto;
+	width: 100%;
+}
+
+.IDFP-LinkMaximize {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.IDFP-IconMinimize {
+	height: 2em;
+	margin-right: 0.5em;
+	width: 2em;
+}
+
+/* barra de puntuaciones */
+
+.IDFP-GameScoreBoard {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.3em;
+	width: 100%;
+}
+
+.IDFP-GameScoreBoard p {
+	font-size: 1.1em;
+	margin-right: 0.3em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.IDFP-GameScores {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.IDFP-GameScores>p:last-child {
+	text-align: left;
+}
+
+.IDFP-TimeNumber {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+
+/* Pista */
+
+.IDFP-ShowClue {
+	margin: 1em auto;
+	width: 90%;
+	background-color: transparent;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.IDFP-PShowClue {
+	color: rgb(209, 7, 7);
+	text-align: center;
+	width: 100%;
+	font-size: 1.2em;
+}
+
+.IDFP-Cursor {
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 2em;
+	z-index: 1000000;
+}
+
+.IDFP-LinkAudio {
+	bottom: 3px;
+	display: none;
+	position: absolute;
+	right: 3px;
+	width: 2em;
+	z-index: 1005;
+}
+
+
+.IDFP-Cubierta {
+	width: 100%;
+	height: 100%;
+	min-height: 110px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255, .2);
+	display: none;
+
+}
+
+.IDFP-Cubierta .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+	height: 1.7em;
+	width: 1.7em;
+}
+
+/* Author */
+
+.IDFP-AuthorLicence {
+	min-height: 2em;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: -2em;
+}
+
+.IDFP-AuthorLicence p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	font-size: 1em;
+	font-style: italic;
+	color: #999
+}
+
+/* Código acceso */
+
+.IDFP-CodeAccessDiv {
+	padding: 1.5em 0.5em 1.5em 0.5em;
+	margin: 9em auto;
+	width: 95%;
+	max-width: 450px;
+	background-color: white;
+	border-radius: 0.5em;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.IDFP-MessageCodeAccessE {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.IDFP-DataCodeAccessE {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0.7em auto 0 auto;
+	width: 100%;
+}
+
+.IDFP-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 250px;
+	text-align: center;
+	width: 80%;
+}
+
+
+
+
+.IDFP-EdReply {
+	margin: auto 0.2em;
+	max-width: 400px;
+	width: 60%;
+	text-align: center;
+}
+
+.IDFP-GameContainer .IDFPIcons-MoveOne, .IDFP-GameContainer .IDFPIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+/*Intrucciones */
+
+.IDFP-DivInstructions {
+	margin: 1em 0 0 0;
+	text-align: center;
+	width: 95%;
+}
+
+.IDFP-parpadea {
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 5;
+	-webkit-animation-name: IDFP-parpadeo;
+	-webkit-animation-timing-function: linear;
+	animation-duration: 1s;
+	animation-iteration-count: 5;
+	animation-name: IDFP-parpadeo;
+	animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.IDFP-DivFeedBack {
+	align-items: center;
+	background-color: transparent;
+	display: none;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1010;
+	min-height: 200px;
+}
+
+.IDFP-DivFeedBack button {
+	cursor: pointer;
+}
+
+.identifica-feedback-game {
+	-moz-box-shadow: 0 10px 6px -6px #999;
+	-webkit-box-shadow: 0 10px 6px -6px #999999;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: .6em;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+	display: none;
+	margin-bottom: 1em;
+	max-height: 80%;
+	min-height: 20em;
+	overflow-y: auto;
+	padding: 1em;
+	width: 85%;
+	height: auto;
+}
+
+.IDFP-LinkClue {
+	margin-bottom: 1.5em;
+}
+
+.identifica-extra-content {
+	margin-top: 1.7em;
+}
+
+
+.IDFPIcons-Preview {
+	background-image: url(exequextsq.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-PauseVideo {
+	background-image: url(exequextpause.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-PlayVideo {
+	background-image: url(exequextplayvideo.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-Reload {
+	background-image: url(exequextreload.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-First {
+	background-image: url(exequextfirstr.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-Next {
+	background-image: url(exequextnextr.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-Previous {
+	background-image: url(exequextpreviousr.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-Last {
+	background-image: url(exequextlastr.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-Life {
+	background-image: url(exequextlive.png);
+	background-size: 100% 100%;
+}
+
+.IDFPIcons-PointsClue {
+	background-image: url(exequextpoints.png);
+	background-size: 100% 100%;
+}
+
+
+
+/* Enlace activo */
+
+.IDFP-Activo {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	transition: transform 0.3s;
+}
+
+.IDFP-LinkMaximize:hover .IDFP-Activo, .IDFP-Activo:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+.IDFP-ActivoClue {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.3));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.3));
+	transition: transform 0.3s;
+}
+
+.IDFP-ActivoClue:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+/* Puntuacion */
+
+.IDFP-BottonContainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.IDFP-BottonContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+.IDFP-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+
+.IDFP-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 1em
+}
+
+/* Game Over */
+
+.IDFP-GameOver {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.IDFP-DataImage {
+	height: 100%;
+	padding: 0;
+	position: relative;
+	width: 50%;
+}
+
+.IDFP-DataScore {
+	padding: 0;
+	width: 50%;
+}
+
+.IDFP-DataScore p {
+	margin: 0.7em;
+	font-size: 1.2em;
+	font-weight: bolder;
+}
+
+.IDFP-HistGGame, .IDFP-LostGGame {
+	bottom: 0;
+	display: none;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 80%;
+}
+
+.IDFP-HistGGame:before, .IDFP-LostGGame:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
+
+/* Iconos */
+
+.IDFP-GameContainer .IDFPIcons {
+	background-size: 100% 100%;
+	height: 1.4em;
+	margin-right: 0.3em;
+	width: 1.4em;
+}
+
+.IDFP-GameContainer .IDFPIcons-Video, .IDFP-GameContainer .IDFPIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+.IDFP-MainContainer .IDFPIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.IDFP-MainContainer .IDFPIcons-MoveOne {
+	background: url(exequextmoveon.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-Minimize {
+	background-image: url(exequextmin.png);
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-Hit {
+	background-image: url(exequexthits.png);
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-FullScreen {
+	background-image: url(exequextfull.png);
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-Error {
+	background-image: url(exequextrerrors.png);
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-Score {
+	background-image: url(exequextscore.png);
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-Time {
+	background-image: url(exequexttime.png);
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .IDFPIcons-Number {
+	background-image: url(exequextnumber.png);
+	background-size: 100% 100%;
+}
+
+
+/* Full Screen */
+
+div:fullscreen .IDFPIcons-FullScreen {
+	background-image: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-webkit-full-screen .IDFPIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-moz-full-screen .IDFPIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+
+div:fullscreen .IDFP-Multimedia, div:-webkit-full-screen .IDFP-Multimedia, div:-moz-full-screen .IDFP-Multimedia {
+	background-color: #fff;
+	margin: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 95vmin;
+	top: 3em;
+	width: 95vmin;
+}
+
+.IDFP-GameContainer:-webkit-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.IDFP-GameContainer:-moz-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.IDFP-GameContainer:-ms-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.IDFP-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+@-moz-keyframes IDFP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes IDFP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@keyframes IDFP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+
+.identifica-instructions {
+	overflow: auto;
+}
+
+.IDFP-Multimedia {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	background-color: transparent;
+	align-items: center;
+	max-width: 1000px;
+	margin: auto;
+	margin-bottom: 0.5em;
+}
+
+
+
+.IDFP-Media {
+	width: 65%;
+	background-color: transparent;
+	position: relative;
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+	max-width: 560px;
+}
+
+.IDFP-Media:before {
+	content: '';
+	display: block;
+	padding-top: 56%;
+}
+
+.IDFP-ButtonClue {
+	width: 95%;
+	background-color: transparent;
+	margin: 0.6em auto;
+	text-align: center;
+}
+
+
+.IDFP-BClue {
+	appearance: none;
+	background-color: #954bb5;
+	border: 1px solid rgba(27, 31, 35, .15);
+	border-radius: 0.4em;
+	box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: 600;
+	line-height: 1.2em;
+	padding: 0.6em 1em;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: middle;
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.IDFP-BClue:focus:not(:focus-visible):not(.focus-visible) {
+	box-shadow: none;
+	outline: none;
+}
+
+.IDFP-BClue:hover {
+	background-color: #a2daff;
+	color: #2b0000;
+}
+
+.IDFP-BClue:focus {
+	box-shadow: rgba(72, 219, 238, 0.4) 0 0 0 3px;
+	outline: none;
+}
+
+.IDFP-BClue:disabled {
+	background-color: #a2daff;
+	border-color: rgba(27, 31, 35, .1);
+	color: rgba(255, 255, 255, .8);
+	cursor: default;
+}
+
+.IDFP-BClue:active {
+	background-color: #4f9ed3;
+	box-shadow: rgba(16, 82, 32, 0.2) 0 1px 0 inset;
+}
+
+.IDFP-Botton {
+	display: none;
+}
+
+.IDFP-Botton img {
+	max-width: 32px;
+	max-height: 32px;
+	margin: 0.4em;
+}
+
+.IDFP-Left,
+.IDFP-Right {
+	background-color: transparent;
+	width: 7%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	min-width: 32px;
+	max-width: 80px;
+
+}
+
+.IDFP-LinkClue {
+	display: none;
+}
+
+.IDFP-Clue {
+	width: 100%;
+}
+
+
+
+.IDFP-MessageClue {
+	width: 100%;
+	margin: 0.6em auto;
+	text-align: center;
+	color: #45085f;
+	font-size: 1.2em;
+}
+
+.IDFP-CardDraw {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: transparent;
+}
+
+.IDFP-card {
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	perspective: 1000px;
+	margin: auto;
+}
+
+.IDFP-ImageContain {
+	width: 96%;
+	height: 96%;
+	top: 2%;
+	left: 2%;
+	border-radius: 0.6em;
+	position: absolute;
+	background-color: transparent;
+}
+
+.IDFP-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	transition: transform 0.6s;
+	transform-style: preserve-3d;
+
+}
+
+.IDFP-card-inner.flipped {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+.IDFP-card-front,
+.IDFP-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background-color: transparent;
+	color: black;
+	cursor: pointer;
+}
+
+
+.IDFP-card-text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.IDFP-card-back {
+	background-color: white;
+	color: transparent;
+	transform: rotateY(180deg);
+}
+
+.IDFP-Image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: transparent;
+	border-radius: 0.6em;
+	width: 100%;
+	height: 100;
+
+}
+
+.IDFP-DivSubmit {
+	width: 100%;
+	text-align: center;
+	padding: 0.4em;
+	max-width: 500px;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.IDFP-DivSubmit input[type="text"] {
+	width: 70%;
+	text-align: center;
+	padding: 0.3em;
+	margin-right: 0.3em;
+	margin-left: 0.3em;
+
+}
+
+.IDFP-Cursor {
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 1.3em;
+	height: 1.3em;
+	z-index: 1004;
+
+}
+
+.IDFP-MainContainer .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.IDFP-MainContainer .exeQuextIcons-MoveOne {
+	background: url(exequextmoveon.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.IDFP-GameContainer .exeQuextIcons-Submit, .IDFP-GameContainer .exeQuextIcons-MoveOne {
+	height: 2em;
+	width: 2em;
+}
+
+
+
+@media screen and (max-width:550px) {
+
+	.IDFP-Left,
+	.IDFP-Right {
+		display: none;
+	}
+
+	.IDFP-Botton {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-top: 0.6em;
+	}
+
+
+	.IDFP-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.IDFP-LinkFullScreen {
+		display: none;
+	}
+
+	.IDFP-instructions {
+		margin: 0.1em auto;
+	}
+
+	.IDFP-DivInstructions {
+		display: none;
+	}
+
+	.IDFP-PShowClue {
+		font-size: 1em;
+	}
+
+
+
+	.IDFP-AuthorLicence p {
+		font-size: 0.9em;
+	}
+
+
+	.IDFP-Media {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+
+	}
+
+
+	.IDFP-LinkClue {
+		margin-bottom: 0.7em;
+	}
+
+
+	.IDFP-DataImage {
+		width: 40%;
+
+	}
+
+	.IDFP-DataScore {
+		width: 60%;
+
+	}
+
+
+	.IDFP-DataScore p {
+		margin: 0.2em;
+		font-size: 0.8em;
+
+	}
+
+	.IDFP-Botton img {
+		max-width: 32px;
+		max-height: 32px;
+		margin: 0.3em;
+
+	}
+
+	.IDFP-MainContainer {
+
+		min-height: 1.4vh;
+	}
+}
+
+@media screen and (max-width:470px) {
+	.IDFP-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.IDFP-PShowClue {
+		font-size: 1em;
+	}
+
+	.IDFP-AuthorLicence p {
+		font-size: 0.8em;
+	}
+
+	.IDFP-Multimedia {
+		width: 100%;
+	}
+
+	.IDFP-LinkMinimize {
+		display: none;
+	}
+
+	.IDFP-DataCodeAccessE label {
+		display: none;
+	}
+
+	.IDFP-GameContainer .IDFPIcons-MoveOne, .IDFP-GameContainer .IDFPIcons-Submit, .IDFP-GameContainer .IDFPIcons-Video {
+		height: 2em;
+		width: 2em;
+	}
+
+	.IDFP-GameContainer input[type="text"], input.IDFP-EdReply, input.IDFP-CodeAccessE {
+		background: #fdfdfd;
+		border: 1px solid #828282;
+		border-radius: 4px;
+		box-sizing: border-box;
+		display: inline-block;
+		line-height: 1.5em;
+		margin: 0 0.3em;
+		padding: 0.4em 0.25em;
+	}
+
+	.IDFP-GameContainer input[type="text"]:active, .IDFP-GameContainer input[type="text"]:focus, input.IDFP-EdReply:focus, input.IDFP-EdReply:active, input.IDFP-CodeAccessE:focus, input.IDFP-CodeAccessE:active {
+		background: #fdfdfd;
+		border: 1px solid #398ee7;
+		border-radius: 4px;
+	}
+
+	.IDFP-MessageClue {
+		width: 95%;
+		text-align: center;
+		color: #45085f;
+
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width:340px) {
+	.IDFP-MainContainer {
+		font-size: 0.8rem;
+	}
+
+	.IDFP-GameScoreBoard p {
+		font-weight: normal;
+		margin: 0.1em;
+		padding: 0;
+	}
+
+	.IDFP-GameContainer .IDFPIcons {
+		margin: 0;
+		padding: 0;
+	}
+
+	.IDFP-GameContainer .IDFP-GameScoreBoard p {
+		padding: 0;
+	}
+
+	.IDFP-GameScores {
+		width: 50%;
+	}
+
+	.IDFP-TimeNumber {
+		width: 45%;
+	}
+
+	.IDFP-instructions p {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:295px) {
+	.IDFP-MainContainer {
+		font-size: 0.7rem;
+	}
+
+	.IDFP-GameScoreBoard {
+		justify-content: flex-start;
+	}
+
+	.IDFP-GameScores {
+		width: 50%;
+	}
+
+	.IDFP-TimeNumber {
+		width: 42%;
+	}
+}
+
+@media screen and (max-width:265px) {
+	.IDFP-MainContainer {
+		font-size: 0.6rem;
+	}
+
+	.IDFP-GameScoreBoard p {
+		font-weight: normal;
+		margin: 2px;
+	}
+
+	.IDFP-GameContainer .IDFPIcons {
+		height: 1.1em;
+		width: 1.1em;
+	}
+
+	.IDFP-GameContainer .IDFPIcons-Submit {
+		height: 2em;
+		width: 2em;
+	}
+
+	.IDFP-GameScores {
+		width: auto;
+	}
+
+	.IDFP-TimeNumber {
+		justify-content: flex-start;
+		width: auto;
+	}
+
+}
+
+@media screen and (min-width: 1400px) {
+	div:fullscreen .IDFP-Multimedia {
+		background-color: #fff;
+		margin: 2em auto;
+		max-width: 95vmin;
+		top: 1.4em;
+		width: 95vmin;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-height: 800px) {
+	div:fullscreen .IDFP-Multimedia {
+		background-color: #fff;
+		margin-bottom: 0.6em;
+		max-width: 95vmin;
+		width: 95vmin;
+	}
+}
+
+.BotonLeerMas {
+	cursor: pointer;
+	background-color: #fff;
+	color: #292929;
+	border: 1px solid rgba(0, 0, 0, .12);
+	box-shadow: 0 4px 28px 0 transparent;
+	margin: 0;
+	overflow: visible;
+	text-transform: uppercase;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0 30px;
+	vertical-align: middle;
+	font-size: 11px;
+	line-height: 38px;
+	transition: .1s ease-in-out;
+	transition-property: color, background-color, background-position, border-color, box-shadow;
+	border-radius: 500px;
+	background-origin: border-box;
+}
+
+.BotonLeerMas:hover {
+	color: #850409;
+	border: 1px solid rgba(0, 0, 0, 0);
+	box-shadow: 0 3px 12px #00000012;
+}
+
+.BotonLeerMas:hover a {
+	color: #850409;
+
+}
+
+.EnlaceLeerMas {
+	text-decoration: none;
+	color: #292929;
+	font-family: Work Sans;
+	font-weight: 500;
+	letter-spacing: 1px;
+}
+.EnlaceLeerMas:hover {
+	color: #850409;
+}
