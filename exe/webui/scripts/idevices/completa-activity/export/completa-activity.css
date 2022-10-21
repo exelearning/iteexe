@@ -1,0 +1,808 @@
+
+
+.CMPT-MainContainer a,.CMPT-MainContainer a:visited, .CMPT-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	text-decoration: none;
+}
+
+.CMPT-ButtonsDiv {
+	margin: 1.5em auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	flex-wrap: wrap;
+	
+}
+.CMPT-Multimedia input, .CMPT-Multimedia select {
+	margin-top: .3em;
+	margin-bottom: .8em;
+}
+
+.CMPT-WordsButton, .CMPT-ButtonsComands {
+    color: #6e6e6e;
+    font: normal 12px Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: border-color .218s;
+    -moz-transition: border .218s;
+    -o-transition: border-color .218s;
+    transition: border-color .218s;
+    background: #f3f3f3;
+    background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    background: -moz-linear-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    border: solid 1px #dcdcdc;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    margin-right: 1em;
+	font-size: 1em;
+	padding: 0.6em 1em;
+	position:relative;
+	z-index:100;
+	cursor: pointer;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	text-align: center;
+	user-select: none;
+	white-space: nowrap;
+}
+.CMPT-WordsButton:hover,  .CMPT-ButtonsComands:hover {
+    color: #333;
+    border-color: #999;
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); 
+	-webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+.CMPT-WordsButton:active, .CMPT-ButtonsComands:active{
+    color: #000;
+    border-color: #444;
+}
+
+.CMPT-Hide{
+	display: none;
+}
+.CMPT-Flex {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	min-width: 100px;
+	width: 100%;
+
+}
+
+.CMPT-Flex input[type=text] {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	min-width: 100px;
+	width: 100%;
+	margin-right: 0.3em;
+}
+
+.CMPT-Images{
+	width: 90%;
+}
+.CMPT-ImagesHome{
+
+	width: 90%;
+	max-width:250px;
+	margin:auto;
+
+}
+/*.CMPT-WordsButton {
+	background-color: white;
+	color: black;
+	cursor: default;
+	min-width: 4em;
+	border: 1px solid black;
+	text-align: center;
+	padding: 0.3em 0.5em;
+	border-radius: 0.3em;
+	position:relative;
+	margin-left:1.1em;
+	z-index:100;
+}*/
+
+.CMPT-WordsButtonNumber {
+	position:absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.8em;
+	width: 28px;
+	height: 28px;
+	top:-14px;
+	right: -14px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius:  50%;
+	border-radius: 50%;
+	background-color: #004716;
+	color: #fff;
+}
+/* Contenedor */
+
+.CMPT-MainContainer {
+	font-size: 1rem;
+	margin: 1em auto;
+	padding: 0;
+	width: 100%;
+	max-width: 900px;
+}
+
+.CMPT-MainContainer * {
+	box-sizing: border-box;
+}
+
+
+/* Instrucciones */
+
+.CMPT-instructions {
+	margin: 0.3em auto;
+	width: 100%;
+	overflow: auto;
+}
+
+/* Minimizado */
+
+.CMPT-GameMinimize {
+	display: none;
+	margin: 1em auto;
+	width: 100%;
+}
+
+.CMPT-LinkMaximize {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.CMPT-IconMinimize {
+	height: 2em;
+	margin-right: 0.5em;
+	width: 2em;
+}
+
+/* Juego */
+
+.CMPT-GameContainer {
+	margin: 0 auto;
+	max-width: 900px;
+	padding: 1em 0.3em 0 0.3em;
+	position: relative;
+	width: 100%;
+}
+
+.CMPT-Cubierta {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255, .2);
+	display: none;
+
+}
+
+.CMPT-Cubierta .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+	height: 1.7em;
+	width: 1.7em;
+}
+
+/* barra de puntuaciones */
+
+.CMPT-GameScoreBoard {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.3em;
+	width: 100%;
+}
+
+.CMPT-GameScoreBoard p {
+	font-size: 1.1em;
+	margin-right: 0.3em;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0;
+	padding: 0;
+	margin-right: 0.3em;
+
+}
+
+.CMPT-GameScores {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.CMPT-GameScores>p:last-child {
+	text-align: left;
+}
+
+.CMPT-LifesGame {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.CMPT-NumberLifesGame {
+	display: none;
+}
+
+.CMPT-TimeNumber {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.CMPT-PTime {
+	margin-left: 0.3em;
+	min-width: 3.5em;
+	text-align: center;
+	width: auto;
+	display: none;
+}
+
+/* Pista */
+
+.CMPT-ShowClue {
+	margin: 0.3em auto;
+	min-height: 0.4em;
+	padding: 0;
+	width: 100%;
+	display: none;
+}
+
+.CMPT-PShowClue {
+	color: #5877c6;
+	text-align: center;
+	width: 100%;
+}
+
+/* Multimedia */
+
+.CMPT-Multimedia {
+	background-color: transparent;
+	margin: 0.3em auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	min-height: 100px;
+}
+
+
+
+/* Game Over */
+
+.CMPT-GameOver {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	z-index: 200;
+}
+
+.CMPT-DataImage {
+	height: 100%;
+	padding: 0;
+	position: relative;
+	width: 50%;
+}
+
+.CMPT-DataScore {
+	padding: 0;
+	width: 50%;
+}
+
+.CMPT-DataScore p {
+	margin: 0.7em;
+}
+
+.CMPT-HistGGame, .CMPT-LostGGame {
+	bottom: 0;
+	display: none;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 80%;
+}
+
+.CMPT-HistGGame:before, .CMPT-LostGGame:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
+
+.CMPT-CodeAccessDiv {
+	padding: 1.5em 0.5em 1.5em 0.5em;
+	margin: 3em auto;
+	width: 95%;
+	max-width: 450px;
+	background-color: white;
+	border-radius: 0.5em;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.CMPT-MessageCodeAccessE, .CMPT-Message {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.CMPT-DataCodeAccessE {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0.7em auto 0 auto;
+	width: 100%;
+}
+
+.CMPT-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 250px;
+	text-align: center;
+	width: 80%;
+}
+
+/* Inicio juego */
+
+.CMPT-StartGame {
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	user-select: none;
+	width: 100%;
+}
+
+.CMPT-StartGame a:hover{
+	text-decoration:underline;
+}
+
+
+
+/* Respuesta ahorcado */
+
+.CMPT-DivReply {
+	align-items: center;
+	background-color: transparent;
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+}
+
+.CMPT-EdReply {
+	margin: auto 0.2em;
+	max-width: 400px;
+	width: 60%;
+	text-align: center;
+}
+
+.CMPT-GameContainer .exeQuextIcons-MoveOne, .CMPT-GameContainer .exeQuextIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+
+
+
+/*Intrucciones */
+
+.CMPT-DivInstructions {
+	margin: 1em 0 0 0;
+	text-align: center;
+	width: 95%;
+}
+
+.CMPT-parpadea {
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 5;
+	-webkit-animation-name: CMPT-parpadeo;
+	-webkit-animation-timing-function: linear;
+	animation-duration: 1s;
+	animation-iteration-count: 5;
+	animation-name: CMPT-parpadeo;
+	animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.CMPT-DivFeedBack {
+	align-items: center;
+	background-color: rgba(232, 232, 232, 0.2);
+	border-radius: .6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1010;
+}
+
+.CMPT-DivFeedBack button {
+	cursor: pointer;
+}
+
+.completa-feedback-game {
+	-moz-box-shadow: 0 10px 6px -6px #999;
+	-webkit-box-shadow: 0 10px 6px -6px #999999;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: .6em;
+	box-shadow: 0 10px 6px -6px #999;
+	display: none;
+	margin-bottom: 1em;
+	min-height: 10em;
+	overflow-y: auto;
+	padding: 1em;
+	width: 95%;
+}
+
+.completa-extra-content {
+	margin-top: 1.7em;
+}
+
+/* Enlace activo */
+
+.CMPT-Activo {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	transition: transform 0.3s;
+}
+
+.CMPT-LinkMaximize:hover .CMPT-Activo, .CMPT-Activo:hover  {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+/* Puntuacion */
+
+.CMPT-BottonContainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.CMPT-BottonContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+.CMPT-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+
+.CMPT-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top:1em
+}
+
+/* Iconos */
+
+.CMPT-GameContainer .exeQuextIcons {
+	background-size: 100% 100%;
+	height: 1.4em;
+	margin-right: 0.3em;
+	width: 1.4em;
+}
+
+
+.CMPT-GameContainer .exeQuextIcons-Video, .CMPT-GameContainer .exeQuextIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+.CMPT-MainContainer .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Minimize {
+	background-image: url(exequextmin.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Hit {
+	background-image: url(exequexthits.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-FullScreen {
+	background-image: url(exequextfull.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Error {
+	background-image: url(exequextrerrors.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Score {
+	background-image: url(exequextscore.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Time {
+	background-image: url(exequexttime.png);
+	background-size: 100% 100%;
+	display: none;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Number {
+	background-image: url(exequextnumber.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Life {
+	background-image: url(exequextlive.png);
+	background-size: 100% 100%;
+}
+
+.CMPT-GameContainer .exeQuextIcons-Video {
+	background-image: url(exequextvideo.png);
+	background-size: 100% 100%;
+}
+
+/* Full Screen */
+
+div:fullscreen .exeQuextIcons-FullScreen {
+	background-image: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-webkit-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-moz-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+
+
+div:fullscreen .CMPT-Multimedia, div:-webkit-full-screen .CMPT-Multimedia, div:-moz-full-screen .CMPT-Multimedia {
+	background-color: #fff;
+	margin: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 95vmin;
+	top: 3em;
+	width: 95vmin;
+}
+
+.CMPT-GameContainer:-webkit-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.CMPT-GameContainer:-moz-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.CMPT-GameContainer:-ms-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.CMPT-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+@-moz-keyframes CMPT-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes CMPT-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@keyframes CMPT-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+	50% {
+		opacity: 0.0;
+	}
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@media screen and (max-width:550px) {
+	.CMPT-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.CMPT-LinkFullScreen {
+		display: none;
+	}
+	.CMPT-instructions {
+		margin: 0.1em auto;
+	}
+	.CMPT-DivInstructions {
+		display: none;
+	}
+	.CMPT-PShowClue {
+		font-size: 0.9em;
+	}
+	.CMPT-StartGame a {
+		font-size: 0.9em;
+	}
+
+}
+
+@media screen and (max-width:470px) {
+	.CMPT-MainContainer {
+		font-size: 0.9rem;
+	}
+	.CMPT-PShowClue {
+		font-size: 0.8em;
+	}
+	.CMPT-Multimedia {
+		width: 95%;
+	}
+	.CMPT-LinkMinimize {
+		display: none;
+	}
+	.CMPT-DataCodeAccessE label {
+		display: none;
+	}
+	 .CMPT-GameContainer .exeQuextIcons-Submit{
+		height: 2em;
+		width: 2em;
+	}
+
+}
+
+@media screen and (max-width:340px) {
+	.CMPT-MainContainer {
+		font-size: 0.8rem;
+	}
+	.CMPT-GameScoreBoard p {
+		font-weight: normal;
+		margin: 0.1em;
+		padding: 0;
+	}
+	.CMPT-GameContainer .exeQuextIcons {
+		margin: 0;
+		padding: 0;
+	}
+	.CMPT-GameContainer .CMPT-GameScoreBoard p {
+		padding: 0;
+	}
+	.CMPT-GameScores {
+		width: 50%;
+	}
+	.CMPT-TimeNumber {
+		width: 45%;
+	}
+	.CMPT-instructions p {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:295px) {
+	.CMPT-MainContainer {
+		font-size: 0.7rem;
+	}
+	.CMPT-GameScoreBoard {
+		justify-content: flex-start;
+	}
+	.CMPT-GameScores {
+		width: 50%;
+	}
+	.CMPT-TimeNumber {
+		width: 42%;
+	}
+}
+
+@media screen and (max-width:265px) {
+	.CMPT-MainContainer {
+		font-size: 0.6rem;
+	}
+	.CMPT-GameScoreBoard p {
+		font-weight: normal;
+		margin: 2px;
+	}
+	.CMPT-GameContainer .exeQuextIcons {
+		height: 1.1em;
+		width: 1.1em;
+	}
+	.CMPT-GameContainer .exeQuextIcons-Submit{
+		height: 2em;
+		width: 2em;
+	}
+	.CMPT-GameScores {
+		width: auto;
+	}
+	.CMPT-TimeNumber {
+		justify-content: flex-start;
+		width: auto;
+	}
+}
+
+@media screen and (max-width:235px) {
+   .CMPT-GameScoreBoard .exeQuextIcons-Time {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	div:fullscreen .CMPT-Multimedia {
+		background-color: #fff;
+		margin: 2em auto;
+		max-width: 95vmin;
+		top: 1.4em;
+		width: 95vmin;
+	}
+}
+
+@media screen and ( min-width: 700px) and (max-height: 800px) {
+	div:fullscreen .CMPT-Multimedia {
+		background-color: #fff;
+		margin-bottom: 0.6em;
+		max-width: 95vmin;
+		width: 95vmin;
+	}
+}
+
+/* To review */
+.completa-instructions{
+	overflow:auto;
+}
