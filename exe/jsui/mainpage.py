@@ -1572,7 +1572,7 @@ class MainPage(RenderableLivePage):
         except Exception, e:
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
-        client.filePickerAlert(_(u'Package extracted to: %s') % filename)
+        client.alert(_(u'Package extracted to: %s') % filename)
 
     def handleCreateDir(self, client, currentDir, newDir):
         try:

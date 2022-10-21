@@ -152,21 +152,17 @@ Ext.define('eXe.controller.Outline', {
             },{
 			    text: _('Rename'),
 			    handler: this.getController('Outline').onNodeRename
-            },          
-            {
+            },{
                 xtype: 'menuseparator'
-            },
-            {
+            },{
 			    text: _('Insert elp in this page'),
 			    handler: this.getController('Toolbar').insertPackage
 		    },{
+                xtype: 'menuseparator'
+            },{
 			    text: _('Export this page as elp'),
 			    handler: this.getController('Toolbar').extractPackage
-            },          
-			{
-				xtype: 'menuseparator'
-			},
-			{
+            },{
 				text: _('Export this page as SCORM'),
 				handler: this.getController('Toolbar').extractSCORM
 			}             
