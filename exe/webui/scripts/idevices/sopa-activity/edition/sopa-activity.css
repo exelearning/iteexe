@@ -1,0 +1,565 @@
+#gameQEIdeviceForm {
+	margin-top: 2em;
+}
+#gameQEIdeviceForm input[type=number] {
+	width: 3em;
+}
+#gameQEIdeviceForm label {
+	margin-right: 0.1em;
+}
+#gameQEIdeviceForm input[type="radio"], #gameQEIdeviceForm input[type="checkbox"], #gameQEIdeviceForm input[type=button] {
+	cursor: pointer;
+}
+/*Panel preguntas */
+.SPE-EPanel {
+	margin: 0.7em auto;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+.SPE-EOptionsMedia {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
+	width: 100%;
+}
+/* Medias */
+.SPE-EMultiMediaOption {
+	height: 100%;
+	min-height: 300px;
+	min-width: 400px;
+	position: relative;
+	width: 50%;
+}
+.SPE-EMultimedia {
+	background-color: #fff;
+	border-radius: .5em;
+	height: 227px;
+	margin: 40px auto auto auto;
+	position: relative;
+	width: 400px;
+}
+.SPE-EMultiVideoQuExt {
+	background-color: #fff;
+	height: 300px;
+	margin: 20px auto auto auto;
+	position: relative;
+	max-width: 528px;
+}
+.SPE-EMedia {
+	border: 1px solid #cccccc;
+	border-radius: .5em;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.SPE-EMedia:last-of-type {
+	display: block;
+}
+.SPE-ECursor {
+	display: none;
+	left: 0;
+	position: absolute;
+}
+/* Opciones */
+.SPE-Flex {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	width: 100%;
+}
+.SPE-ENameTema input[type=text]:last-of-type{
+	width: 100%;
+	margin-left: 0.2em;
+}
+.SPE-ENameTema{
+	flex-wrap: nowrap;
+}
+.SPE-EOptionsGame {
+	min-height: 300px;
+	width: 50%;
+}
+
+.SPE-EOptionsGame div {
+	margin-bottom: 0.7em;
+}
+.SPE-EOptionsGame input[type=text] {
+	margin-right: .2em;
+	width: 5em;
+}
+.SPE-inlineOption,.SPE-TypeGame,.SPE-TypeOrder{
+	margin-left:.5em
+}
+/* Ayuda */
+#activeIdevice .SPE-TypeGameHelp{
+	display:none;
+	margin-bottom:2em;
+	font-size:.95em
+}
+/* Opciones imagen */
+.SPE-EInputImage {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	min-width: 100px;
+	width: 100%;
+}
+.SPE-EInputImage input[type=text] {
+	flex-flow: 1;
+	margin-right: 0.2em;
+	min-width: 100px;
+	width: 100%;
+}
+
+/* Opciones imagen */
+
+.SPE-EAuthorAlt{
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.SPE-EAuthorAlt div {
+	width: 49%;
+}
+
+.SPE-EAuthorAlt label {
+	display: block;
+}
+.SPE-EAuthorAlt input[type=text] {
+	width: 97%;
+}
+/* Opciones video */
+.SPE-EAuthorVideo input[type=text] {
+	width: 85%;
+	max-width: 400px;
+}
+.SPE-EInputVideo input[type=text] {
+	width: 85%;
+}
+.SPE-EInputOptionsVideo>div {
+	margin-top: 0.6em;
+}
+.SPE-EInputOptionsVideo button {
+	font-size: 1em;
+	height: 1.6em;
+}
+/* Opciones audio */
+.SPE-EInputAudio {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+.SPE-EInputAudio input[type=text] {
+	flex-flow: 1;
+	margin-right: 0.2em;
+	min-width: 100px;
+	width: 100%;
+}
+.SPE-EInputAudio input[type=button] {
+	flex-shrink: 0;
+}
+.SPE-ButtonLink {
+	display: block;
+	height: 1.6em;
+	width: 1.6em;
+}
+/*Preguntas*/
+.SPE-EQuestionDiv {
+	margin-bottom: .3em;
+	width: 100%;
+}
+.SPE-EQuestion {
+	width: 98%;
+}
+.SPE-EAnswers {
+	background: transparent;
+	background-color: transparent;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 auto;
+	width: 100%;
+}
+.SPE-EOptionDiv {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 3px 0;
+	min-height: 35px;
+	width: 49%;
+}
+.SPE-EAnwersOptions {
+	width: 100%;
+}
+.SPE-SolutionWordDiv {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: .5em auto;
+	width: 100%;
+}
+.SPE-ESolutionWord {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin-bottom: 0.5em;
+	width: 100%;
+}
+.SPE-ESolutionWord label{
+	display:inline-block;
+	width:11em;
+	text-align:right;
+	padding-right:.5em
+}
+.SPE-SolutionWordDiv input {
+	text-align: left;
+}
+
+
+/* Itinerario */
+
+.SPE-EOrders {
+	margin-top: 0.5em;
+	display: none;
+}
+.SPE-EOrders > div {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;;
+
+}
+
+.SPE-EOrders > div {
+	align-items: left;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	margin-bottom: 0.5em;
+}
+
+.SPE-EOrders > div *{
+	margin-right:.2em;
+}
+.SPE-EOrders input[type=text]{
+	width: 100%;
+}
+
+.SPE-EOrders label{
+	white-space:nowrap;
+}
+
+.SPE-EHit {
+	background-image: url(quextIEHit.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.SPE-EError {
+	background-image: url(quextIEError.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+
+
+
+/*Numero Preguntas */
+.SPE-ENumQuestionDiv {
+	align-items: center;
+	display: flex;
+	height: 1.5em;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: .3em;
+	width: 3em;
+	z-index: 20000;
+}
+.SPE-ENumQ {
+	background-image: url(quextIENumber.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	margin-right: 0px;
+	width: 1.5em;
+}
+.SPE-ENumQuestions {
+	font-weight: bold;
+	height: 1.5em;
+	text-align: center;
+	width: 2em;
+}
+.SPE-ECustomMessage {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 1em;
+	width: 100%;
+}
+.SPE-ECustomMessage input[type=text] {
+	width: 100%;
+	margin-right: 0.1em;
+}
+.SPE-ECustomMessage label {
+	margin: 0 0.1em;
+}
+
+	
+/* barra edición */
+.SPE-ENavigationButtons {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+}
+
+.SPE-ENavigationButton {
+	height: 1.5em;
+	margin: 0 .3em;
+	min-width: 1.5em;
+	width: 1.5em;
+}
+.SPE-EButtonImage {
+	height: 100%;
+	transition: all .3s ease-in-out;
+	width: 100%;
+}
+.SPE-EButtonImage:hover {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.SPE-NumberQuestion {
+	font-weight: bold;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	width: 2em;
+}
+/* Video introdución */
+.SPE-EVIDiv {
+	background-color: #f9f9f9;
+	display: none;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 20000;
+}
+/* Video introdución */
+.SPE-EVIV {
+	width: 100%;
+}
+.SPE-EMVI {
+	height: 315px;
+	margin: 70px auto;
+	position: relative;
+	width: 560px;
+}
+.SPE-EVI, .SPE-ENoVI {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+.SPE-EVIOptions {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	height: 50px;
+	justify-content: flex-start;
+	position: absolute;
+	width: 100%;
+}
+.SPE-EVIOptions * {
+	margin-left: 0.3em;
+}
+.SPE-EVIOptions input[type=text] {
+	text-align: left;
+	width: 5em;
+}
+.SPE-EVIOptions input[type=text]:first-of-type {
+	width: 15em;
+}
+.SPE-EVideoIntroDiv {
+	border-radius: 10px;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 98%;
+	z-index: 20000;
+}
+.SPE-EVIClose {
+	position: absolute;
+	right: 0.3em;
+	top: 0.3em;
+}
+
+.SPE-EVIOptionsVQ  {
+	margin-bottom: 0.6em;
+  }
+.SPE-EVIOptionsVQ input[type=text] {
+  text-align: left;
+  width: 5em;
+  margin-right: .2em;
+}
+
+.SPE-EVIOptionsVQ #vquextEVIURL{
+  width: 15em;
+}
+
+/* Ocutar elementos */
+.SPE-ECoord, .SPE-EFeedbackP,  .SPE-EAuthorAlt, .SPE-ESolutionSelect input[type=number], .SPE-ESolutionSelect label {
+	display: none;
+}
+/* Especificos del juego  selecciona*/
+.SPE-ESolutionSelect {
+	margin-bottom: 0.5em;
+}
+.SPE-ESolutionSelect input[type=number] {
+	margin: auto 0.2em;
+}
+#gameQEIdeviceForm .SPE-EOptionDiv label {
+	margin-right: 0.2em;
+}
+.SPE-ESolutionSelect input[type=number], .SPE-ESolutionSelect label {
+	display: none;
+}
+label[for=gameQEScoreQuestion], input#gameQEScoreQuestion {
+	display: none;
+}
+.SPE-EWordDiv {
+	margin: .5em auto;
+	width: 100%;
+}
+#gameQEIdeviceForm .SPE-ESolutionWord label {
+	display: inline-block;
+}
+#gameQEIdeviceForm .SPE-ESolutionWord input[type=text] {
+	width: 100%;
+}
+/* To review */
+#gameQEIdeviceForm .exe-block-info img {
+	margin-left: .2em;
+	vertical-align: middle;
+}
+#gameQEIdeviceFormTab3 * {
+	font-size: 0.9em;
+}
+#gameQEIdeviceFormTab3 p:first-child {
+	margin-top: 0;
+}
+#gameQEIdeviceFormTab3 {
+	overflow: auto;
+}
+#gameQEIdeviceFormTab3 .ci18n {
+	float: left;
+	width: 50%;
+}
+@media screen and (max-width:720px) {
+	#gameQEIdeviceForm #gameQEIdeviceFormTab3 .ci18n {
+		float: none;
+		width: 100%;
+	}
+}
+#gameQEIdeviceForm #gameQEIdeviceFormTab3 label {
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin-bottom: .2em;
+}
+#gameQEIdeviceForm #gameQEIdeviceFormTab3 input {
+	font-size: 0.9em;
+	width: 300px;
+}
+/* Tabs (this should be common) */
+.exe-form-tabs {
+	list-style: none;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+}
+#main .exe-form-tabs li {
+	display: inline;
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+.exe-form-tabs li:first-child a {
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.exe-form-tabs li:last-child a {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.exe-form-tabs a {
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	color: #666;
+	display: inline-block;
+	padding: .5em 1em;
+}
+.exe-form-tabs li:not(:last-child) a {
+	border-right: none;
+}
+.exe-form-tabs .exe-form-active-tab {
+	background: #FFF;
+	color: #000;
+	font-weight: 500;
+}
+#gameQESCORMoptions {
+	margin-left: 1.5em;
+	visibility: hidden;
+}
+label[for=gameQEActivitySCORM] {
+	font-weight: bold;
+}
+#gameQESCORMinstructionsButton {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsButton ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsButton ul li {
+	list-style-image: none;
+	margin: 0 0 .5em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsAuto {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsAuto ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+.GameModeHelpLink{
+	margin:0 2px;
+	vertical-align:middle;
+}
+.GameModeLabel{
+	font-weight:normal
+}

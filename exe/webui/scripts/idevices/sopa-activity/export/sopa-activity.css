@@ -1,0 +1,1162 @@
+.SPP-MainContainer a, .SPP-MainContainer a:visited, .SPP-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	text-decoration: none;
+}
+
+/* Contenedor */
+
+.SPP-MainContainer {
+	font-size: 1rem;
+	margin: 1em auto;
+	padding: 0;
+	width: 100%;
+	max-width: 1000px;
+	min-height: 450px;
+}
+
+.SPP-MainContainer * {
+	box-sizing: border-box;
+}
+
+.SPP-MainContainer p {
+	margin: 0;
+	padding: 0;
+}
+
+/* Instrucciones */
+
+.SPP-instructions {
+	margin: 0.3em auto;
+	width: 100%;
+	overflow: auto;
+}
+
+/* Minimizado */
+
+.SPP-GameMinimize {
+	display: none;
+	margin: 1em auto;
+	width: 100%;
+}
+
+.SPP-LinkMaximize {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+.SPP-IconMinimize {
+	height: 2em;
+	margin-right: 0.5em;
+	width: 2em;
+}
+
+/* Juego */
+
+.SPP-GameContainer {
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 1em 0.3em 0 0.3em;
+	position: relative;
+	width: 100%;
+	min-height: 500px;
+}
+
+/* barra de puntuaciones */
+
+.SPP-GameScoreBoard {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 0.3em;
+	width: 100%;
+}
+
+.SPP-GameScoreBoard p {
+	font-size: 1.1em;
+	margin-right: 0.3em;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.SPP-GameScores {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+}
+
+.SPP-GameScores>p:last-child {
+	text-align: left;
+}
+
+
+.SPP-TimeNumber {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+}
+
+
+/* Pista */
+
+.SPP-ShowClue {
+	margin: 0.3em auto;
+	padding: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.SPP-PShowClue {
+	color: #5877c6;
+	text-align: center;
+	width: 100%;
+	font-size: 1.2em;
+}
+
+/* Multimedia */
+
+.SPP-Multimedia {
+	background-color: transparent;
+	margin: 0.3em auto;
+	max-width: 1024px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
+
+.SPP-Protector, .SPP-NoImage {
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+.SPP-Images{
+	width: 90%;
+}
+.SPP-ImagesHome{
+
+	width: 90%;
+	max-width:250px;
+	margin:auto;
+
+}
+.SPP-Images, .SPP-GameOver {
+	border: 0;
+	border-radius: 0.6em;
+	left: 0;
+	position: absolute;
+	text-decoration: none;
+	top: 0;
+}
+
+
+
+.SPP-Cursor {
+	display: none;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 2em;
+	z-index: 1000000;
+}
+
+.SPP-LinkAudio {
+	bottom: 3px;
+	display: none;
+	position: absolute;
+	right: 3px;
+	width: 2em;
+	z-index: 1005;
+}
+.SPP-LinkAudioD {
+	position: absolute;
+	display: block;
+	background-image: url(sopaaudio.svg);
+	background-size: 50% 50%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%
+}
+
+/* Game Over */
+
+.SPP-GameOver {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	z-index: 200;
+}
+
+.SPP-DataImage {
+	height: 100%;
+	padding: 0;
+	position: relative;
+	width: 50%;
+}
+
+.SPP-DataScore {
+	padding: 0;
+	width: 50%;
+}
+
+.SPP-DataScore p {
+	margin: 0.7em;
+}
+
+.SPP-HistGGame, .SPP-LostGGame {
+	bottom: 0;
+	display: none;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 80%;
+}
+
+.SPP-HistGGame:before, .SPP-LostGGame:before {
+	content: '';
+	display: block;
+	padding-top: 100%;
+}
+
+
+
+/* Barra de navegación */
+
+
+.SPP-NavigationButtons {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+	display: none;
+}
+
+.SPP-NavigationButton {
+	height: 1.5em;
+	margin: 0 .3em;
+	min-width: 1.5em;
+	width: 1.5em;
+}
+
+.SPP-NumberQuestion {
+	font-weight: bold;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	width: 2em;
+}
+
+/* Author */
+
+.SPP-AuthorLicence {
+	margin: 0.3em auto 0 auto;
+	min-height: 0.4em;
+	width: 100%;
+}
+
+.SPP-AuthorLicence p {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+}
+
+/* Código acceso */
+
+.SPP-CodeAccessDiv {
+	padding: 1.5em 0.5em 1.5em 0.5em;
+	margin: 8em auto;
+	width: 95%;
+	max-width: 450px;
+	background-color: white;
+	border-radius: 0.5em;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.SPP-MessageCodeAccessE {
+	text-align: center;
+	vertical-align: middle;
+	width: 100%;
+}
+
+.SPP-DataCodeAccessE {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin: 0.7em auto 0 auto;
+	width: 100%;
+}
+
+.SPP-CodeAccessE {
+	margin: 0 .3em;
+	max-width: 250px;
+	text-align: center;
+	width: 80%;
+}
+
+.SPP-GameContainer .exeQuextIcons-Submit {
+	height: 1.7em;
+	width: 1.7em;
+}
+
+.SPP-BottonContainerDiv, .SPP-BottonContainer {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0.1em auto;
+	padding: 0;
+	width: 100%;
+}
+
+.SPP-BottonContainerDivEnd {
+	justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.SPP-DivInstructions {
+	margin: 1em 0 0 0;
+	text-align: center;
+	width: 95%;
+}
+
+.SPP-parpadea {
+	-webkit-animation-duration: 1s;
+	-webkit-animation-iteration-count: 5;
+	-webkit-animation-name: SPP-parpadeo;
+	-webkit-animation-timing-function: linear;
+	animation-duration: 1s;
+	animation-iteration-count: 5;
+	animation-name: SPP-parpadeo;
+	animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.SPP-DivFeedBack {
+	align-items: center;
+	background-color: rgba(232, 232, 232, 0.8);
+	border-radius: .6em;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 1010;
+}
+
+.SPP-DivFeedBack button {
+	cursor: pointer;
+}
+
+.sopa-feedback-game {
+	-moz-box-shadow: 0 10px 6px -6px #999;
+	-webkit-box-shadow: 0 10px 6px -6px #999999;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: .6em;
+	box-shadow: 0 10px 6px -6px #999;
+	display: none;
+	margin-bottom: 1em;
+	max-height: 80%;
+	min-height: 10em;
+	overflow-y: auto;
+	padding: 1em;
+	width: 95%;
+}
+
+.sopa-extra-content {
+	margin-top: 1.7em;
+}
+
+
+
+/* Enlace activo */
+
+.SPP-Activo {
+	-moz-transition: transform 0.3s;
+	-ms-transition: transform 0.3s;
+	-o-transition: transform 0.3s;
+	-webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	-webkit-transition: transform 0.3s;
+	cursor: pointer;
+	filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+	transition: transform 0.3s;
+}
+
+.SPP-LinkMaximize:hover .SPP-Activo, .SPP-Activo:hover {
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+
+/* Puntuacion */
+
+.SPP-BottonContainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.SPP-BottonContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+.SPP-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+
+.SPP-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top: 1em
+}
+
+.SPP-Detail {
+	width: 300px;
+	height: 420px;
+
+	border-radius: 0.6em;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	margin-top: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+
+}
+.SPP-MultimediaPoint {
+	border-radius: 0.6em;
+	margin: 0.5em auto;
+	width: 280px;
+	height:280px;
+	overflow: hidden;
+	position: relative;
+	background-color: #ffffff;
+}
+
+.SPP-LinkCloseDetail {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
+.SPP-MessageDetail {
+	width: 100%;
+	text-align: center;
+	margin: .6em auto;
+	font-size: 1em;
+	display: none;
+}
+
+
+.SPP-Flex {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	min-width: 100px;
+	width: 100%;
+
+}
+
+.SPP-Flex input[type=text] {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	min-width: 100px;
+	width: 100%;
+	margin-right: 0.3em;
+}
+
+.SPP-TitlePoint {
+	width: 100%;
+	text-align: center;
+	font-size: 1.1em;
+	padding: 0.3em;
+	margin-bottom: .3em;
+	background-color: #ffffff;
+}
+
+.SPP-AuthorPoint {
+	width: 100%;
+	text-align: center;
+	font-size: 0.9em;
+	margin-top: 0.3em;
+	background-color: #ffffff;
+	color: #333333;
+	font-style: italic;
+}
+
+.SPP-LinkCloseDetail {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 0;
+	display: none;
+}
+
+.SPP-Footer {
+	font-size: 1.1em;
+	padding: 0.5em;
+	width: 100%;
+	color: #071717;
+	border-radius: 0.3em;
+	background-color: transparent;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	max-height: 7em;
+	overflow-y: auto;
+}
+
+.SPP-Cubierta {
+	width: 100%;
+	height: 100%;
+	min-height: 110px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100000;
+	background-color: rgb(255, 255, 255, .2);
+	display: none;
+
+}
+
+.SPP-IconsToolBar {
+	background-size: 100% 100%;
+	height: 1.6em;
+	margin: 0.5em;
+	width: 1.6em;
+}
+
+
+
+/* Iconos */
+
+.SPP-GameContainer .exeQuextIcons {
+	background-size: 100% 100%;
+	height: 1.4em;
+	margin-right: 0.3em;
+	width: 1.4em;
+}
+
+
+
+.SPP-Cubierta .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+	height: 1.7em;
+	width: 1.7em;
+}
+.SPP-MainContainer .exeQuextIcons-CWGame {
+	background-image: url(mapacerrarventana.svg);
+	background-size: 100% 100%;
+}
+
+.SPP-GameContainer .exeQuextIcons-Minimize {
+	background-image: url(exequextmin.png);
+	background-size: 100% 100%;
+}
+
+.SPP-GameContainer .exeQuextIcons-Hit {
+	background-image: url(exequexthits.png);
+	background-size: 100% 100%;
+}
+
+.SPP-GameContainer .exeQuextIcons-FullScreen {
+	background-image: url(exequextfull.png);
+	background-size: 100% 100%;
+}
+
+
+.SPP-GameContainer .exeQuextIcons-Score {
+	background-image: url(exequextscore.png);
+	background-size: 100% 100%;
+}
+
+.SPP-GameContainer .exeQuextIcons-Time {
+	background-image: url(exequexttime.png);
+	background-size: 100% 100%;
+}
+
+.SPP-GameContainer .exeQuextIcons-Number {
+	background-image: url(exequextnumber.png);
+	background-size: 100% 100%;
+}
+
+
+/* Inicio juego */
+.SPP-PTime {
+	margin-left: 0.3em;
+	min-width: 3.5em;
+	text-align: center;
+	width: auto;
+}
+.SPP-StartGame {
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	margin: 1em auto 0 auto;
+	text-align: center;
+	user-select: none;
+	width: 100%;
+	font-size: 1.2em;
+}
+
+.SPP-StartGame a:hover{
+	text-decoration:underline;
+}
+
+
+
+/* Full Screen */
+
+div:fullscreen .exeQuextIcons-FullScreen {
+	background-image: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-webkit-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-moz-full-screen .exeQuextIcons-FullScreen {
+	background: url(exequextnormal.png);
+	background-size: 100% 100%;
+}
+
+div:-webkit-full-screen .SPP-Options {
+	min-height: 3.2em;
+}
+
+div:-moz-full-screen .SPP-Options {
+	min-height: 3.2em;
+	;
+}
+
+div:fullscreen .SPP-Question {
+	min-height: 3.2em;
+}
+
+div:-webkit-full-screen .SPP-Question {
+	min-height: 3.2em;
+}
+
+div:-moz-full-screen .SPP-Question {
+	min-height: 3.2em;
+}
+
+div:fullscreen .SPP-Options {
+	min-height: 3.2em;
+}
+
+div:fullscreen .SPP-Multimedia, div:-webkit-full-screen .SPP-Multimedia, div:-moz-full-screen .SPP-Multimedia {
+	background-color: #fff;
+	margin: 3em;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 95vmin;
+	top: 3em;
+	width: 95vmin;
+}
+
+.SPP-GameContainer:-webkit-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.SPP-GameContainer:-moz-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.SPP-GameContainer:-ms-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.SPP-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+@-moz-keyframes SPP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@-webkit-keyframes SPP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@keyframes SPP-parpadeo {
+	0% {
+		opacity: 1.0;
+	}
+
+	50% {
+		opacity: 0.0;
+	}
+
+	100% {
+		opacity: 1.0;
+	}
+}
+
+@media screen and (max-width:550px) {
+	.SPP-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.SPP-LinkFullScreen {
+		display: none;
+	}
+
+	.SPP-instructions {
+		margin: 0.1em auto;
+	}
+
+	.SPP-DivInstructions {
+		display: none;
+	}
+
+	.SPP-PShowClue {
+		font-size: 0.9em;
+	}
+
+	.SPP-AuthorLicence p {
+		font-size: 0.9em;
+	}
+}
+
+@media screen and (max-width:470px) {
+	.SPP-MainContainer {
+		font-size: 0.9rem;
+	}
+
+	.SPP-PShowClue {
+		font-size: 0.8em;
+	}
+
+	.SPP-AuthorLicence p {
+		font-size: 0.8em;
+	}
+
+	.SPP-Question {
+		margin-bottom: 0.3em;
+	}
+
+	.SPP-Multimedia {
+		width: 100%;
+	}
+
+	.SPP-LinkMinimize {
+		display: none;
+	}
+
+	.SPP-DataCodeAccessE label {
+		display: none;
+	}
+
+	.SPP-GameContainer .exeQuextIcons-MoveOne, .SPP-GameContainer .exeQuextIcons-Submit, .SPP-GameContainer .exeQuextIcons-Video {
+		height: 2em;
+		width: 2em;
+	}
+
+	.SPP-GameContainer input[type="text"], input.SPP-EdReply, input.SPP-CodeAccessE {
+		background: #fdfdfd;
+		border: 1px solid #828282;
+		border-radius: 4px;
+		box-sizing: border-box;
+		display: inline-block;
+		line-height: 1.5em;
+		margin: 0 0.3em;
+		padding: 0.4em 0.25em;
+	}
+
+	.SPP-GameContainer input[type="text"]:active, .SPP-GameContainer input[type="text"]:focus, input.SPP-EdReply:focus, input.SPP-EdReply:active, input.SPP-CodeAccessE:focus, input.SPP-CodeAccessE:active {
+		background: #fdfdfd;
+		border: 1px solid #398ee7;
+		border-radius: 4px;
+	}
+	.SPP-Detail {
+		width: 240px;
+		height: 336px;
+		margin-top: 10em;
+		border-radius: 0.3em;
+		box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+     }
+	.SPP-MultimediaPoint {
+		border-radius: 0.3em;
+		margin: 0.5em auto;
+		width: 225px;
+		height:225px;
+	}
+}
+
+@media screen and (max-width:340px) {
+	.SPP-MainContainer {
+		font-size: 0.8rem;
+	}
+
+	.SPP-GameScoreBoard p {
+		font-weight: normal;
+		margin: 0.1em;
+		padding: 0;
+	}
+
+	.SPP-GameContainer .exeQuextIcons {
+		margin: 0;
+		padding: 0;
+	}
+
+	.SPP-GameContainer .SPP-GameScoreBoard p {
+		padding: 0;
+	}
+
+	.SPP-GameScores {
+		width: 50%;
+	}
+
+	.SPP-TimeNumber {
+		width: 45%;
+	}
+
+	.SPP-instructions p {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width:295px) {
+	.SPP-MainContainer {
+		font-size: 0.7rem;
+	}
+
+	.SPP-GameScoreBoard {
+		justify-content: flex-start;
+	}
+
+	.SPP-GameScores {
+		width: 50%;
+	}
+
+	.SPP-TimeNumber {
+		width: 42%;
+	}
+}
+
+@media screen and (max-width:265px) {
+	.SPP-MainContainer {
+		font-size: 0.6rem;
+	}
+
+	.SPP-GameScoreBoard p {
+		font-weight: normal;
+		margin: 2px;
+	}
+
+	.SPP-GameContainer .exeQuextIcons {
+		height: 1.1em;
+		width: 1.1em;
+	}
+
+	.SPP-GameContainer .exeQuextIcons-Submit, .SPP-GameContainer .exeQuextIcons-Video {
+		height: 2em;
+		width: 2em;
+	}
+
+	.SPP-GameScores {
+		width: auto;
+	}
+
+	.SPP-TimeNumber {
+		justify-content: flex-start;
+		width: auto;
+	}
+
+}
+
+@media screen and (max-width:235px) {
+	.SPP-GameScoreBoard .exeQuextIcons-Life, .SPP-GameScoreBoard .exeQuextIcons-Time {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1400px) {
+	div:fullscreen .SPP-Multimedia {
+		background-color: #fff;
+		margin: 2em auto;
+		max-width: 95vmin;
+		top: 1.4em;
+		width: 95vmin;
+	}
+}
+
+@media screen and (min-width: 700px) and (max-height: 800px) {
+	div:fullscreen .SPP-Multimedia {
+		background-color: #fff;
+		margin-bottom: 0.6em;
+		max-width: 95vmin;
+		width: 95vmin;
+	}
+}
+
+
+
+.SPP-Puzzle p {
+	font: 1.3em sans-serif;
+	margin: 20px 20px 0px 20px;
+}
+
+
+
+
+/**
+  * Styles for the puzzle
+  */
+.SPP-Puzzle {
+	display: inline-block;
+	border: 1px solid black;
+	padding: 2vw;
+}
+
+.SPP-Puzzle>div {
+	/* rows */
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* style for each square in the puzzle */
+.SPP-PuzzleSquare {
+	height: 6vw;
+	width: 6vw;
+	text-transform: uppercase;
+	background-color: white;
+	border: 0;
+	font: 4vw sans-serif;
+	padding: 0 !important;
+	margin: 0 !important;
+
+}
+
+@media only screen and (min-width: 600px) {
+	.SPP-Puzzle {
+		padding: 1rem;
+	}
+
+	.SPP-PuzzleSquare {
+		height: 2rem;
+		width: 2rem;
+		font: 1.3rem sans-serif;
+	}
+}
+
+.SPP-MainContainer button::-moz-focus-inner {
+	border: 0;
+}
+
+/* indicates when a square has been selected */
+.SPP-Puzzle .selected {
+	background-color:#f3d55a;
+}
+
+/* indicates that the square is part of a word that has been found */
+.SPP-Puzzle .found {
+	background-color: #3a518b;
+	color: white;
+}
+
+.SPP-Puzzle .solved {
+	background-color: rgb(148, 79, 148);
+	color: white;
+}
+
+/* indicates that all words have been found */
+.SPP-Puzzle .complete {
+	background-color: #368d80;
+}
+
+/**
+  * Styles for the word list
+  */
+.SPP-Words {
+	padding: 0 1em;
+	list-style-type: none;
+	text-align: left;
+}
+
+.SPP-WordsHide {
+	display: none;
+
+}
+
+@media only screen and (min-width: 600px) {
+	.SPP-Words li {
+		padding: 3px 0;
+		font: 1em sans-serif;
+
+	}
+	#sopaWords{
+		max-width: 70%;
+	}
+}
+
+#sopaResolve{
+	margin-top: 1em;
+	background-color: white;
+	color:#071717;
+	padding: 0.6em;
+	cursor: pointer;
+	border-radius: 0.3em;
+	display: none;
+
+}
+#sopaWords{
+	max-width: 100%;
+}
+.Sopa-Li {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	min-height: 1.7em;
+	
+}
+.Sopa-Li span,.Sopa-Li a {
+	margin-right: 0.2em;
+	font-size: 1.1em;
+}
+
+.SopaIcons {
+	background-size: 100% 100%;
+	height: 1.4em;
+	margin-right: 0.3em;
+	width: 1.4em;
+}
+
+.SopaIcon-Image {
+	background: url(sopaimage.svg) no-repeat;
+	background-size: 100% 100%;
+}
+
+.SopaIcon-Audio {
+	background: url(sopaaudio.svg) no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/* indicates that the word has been found */
+.SPP-WordFound {
+	text-decoration: line-through;
+	font-size: 3em;
+}
+
+/**
+  * Styles for the controls
+  */
+.SPP-MainContainer #controls {
+	display: inline-block;
+	max-width: 50rem;
+	padding: 1em;
+	border: none;
+	text-align: left;
+}
+
+.SPP-MainContainer label {
+	white-space: nowrap;
+	margin-top: 1em;
+}
+
+.SPP-Words input {
+	border: none;
+	border-bottom: 1px solid #ccc;
+	font-size: 1em;
+}
+
+.SSP-Word {
+	color: #660101
+}
+
+
+select {
+	max-width: 10rem;
+}
+
+.SPP-MainContainer #create-grid, #solve {
+	display: block;
+	margin-top: 1rem;
+}
+
+
+.SPP-MainContainer #sopaMessage {
+	margin-top: 0.7em;
+	margin-bottom: 0.7em;
+	font-size: 1.3em;
+	min-height: 1.5em;
+	background-color: transparent;
+	text-align: center;
+	width: 1000;
+}
