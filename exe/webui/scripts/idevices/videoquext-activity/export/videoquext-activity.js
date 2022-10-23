@@ -462,6 +462,10 @@ var $eXeVideoQuExt = {
             </div>\
         </div>\
     </div>\
+    <div class="gameQP-DivModeBoard" id="vquextDivModeBoard-' + instance + '">\
+         <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
+         <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
+    </div>\
     ' + this.addButtonScore(instance);
         return html;
     },
@@ -523,6 +527,7 @@ var $eXeVideoQuExt = {
         mOptions.scoreTotal = 0;
         mOptions.questionsGame = $eXeVideoQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
         mOptions.numberQuestions = mOptions.questionsGame.length;
+        mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
         if (mOptions.videoType > 0) {
             mOptions.idVideoQuExt = mOptions.videoLocal;
         } else {
@@ -916,7 +921,6 @@ var $eXeVideoQuExt = {
                     if (typeof (MathJax) != "undefined") {
                         MathJax.Hub.Queue(["Typeset", MathJax.Hub, '.gameQP-Tooltip']);
                     }
-       
                     var html = $('#vquextProgressBar-' + instance).html(),
                         latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
                     if (latex) {
@@ -958,6 +962,17 @@ var $eXeVideoQuExt = {
 
             }
         });
+        $('#vquextModeBoardOK-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeVideoQuExt.answerQuestionBoard(true, instance)
+
+		});
+		$('#vquextModeBoardKO-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeVideoQuExt.answerQuestionBoard(false, instance)
+
+		});
+
         $eXeVideoQuExt.showNavigationButtons(instance, 0);
     },
     goEnd: function (instance, time) {
@@ -1387,6 +1402,7 @@ var $eXeVideoQuExt = {
         mOptions.gameActived = false;
 
         clearInterval(mOptions.counterClock);
+        $('#vquextDivModeBoard-' + instance).hide();
         $('#vquextVideo-' + instance).hide();
         $('#vquextVideoLocal-' + instance).hide();
         $('#vquextProgressBar-' + instance).hide();
@@ -1560,6 +1576,46 @@ var $eXeVideoQuExt = {
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
 
+        $('#vquextProgressBar-' + instance + ' .gameQP-PointBar').eq(mOptions.activeQuestion).css({
+            'background-color': color
+        });
+        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+            if (!mOptions.obtainedClue) {
+                mOptions.obtainedClue = true;
+                $('#vquextPShowClue-' + instance).show();
+                $('#vquextPShowClue-' + instance).text(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+            }
+        }
+        mOptions.counter = 1;
+        if (mOptions.useLives && mOptions.livesLeft <= 0) {
+            $eXeVideoQuExt.gameOver(1, instance);
+            return;
+        }
+        if (mOptions.isScorm === 1) {
+            if (mOptions.repeatActivity || $eXeVideoQuExt.initialScore === '') {
+                var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
+                $eXeVideoQuExt.sendScore(true, instance);
+                $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+            }
+        }
+    },
+    answerQuestionBoard: function (value, instance) {
+        var mOptions = $eXeVideoQuExt.options[instance];
+        if (!mOptions.gameActived) {
+            return;
+        }
+        mOptions.gameActived = false;
+        var valid = value;
+        mOptions.questionAnswer = true;
+        mOptions.questionsGame[mOptions.activeQuestion].answerScore = valid ? 1 : 0;
+        if (mOptions.showSolution) {
+            $eXeVideoQuExt.drawSolution(instance);
+        }
+        $eXeVideoQuExt.updateScore(valid, instance);
+        var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100,
+            color = valid ? $eXeVideoQuExt.borderColors.green : $eXeVideoQuExt.borderColors.red;
+        $('#vquextPHits-' + instance).text(mOptions.hits);
+        $('#vquextPErrors-' + instance).text(mOptions.errors);
         $('#vquextProgressBar-' + instance + ' .gameQP-PointBar').eq(mOptions.activeQuestion).css({
             'background-color': color
         });
@@ -1770,10 +1826,15 @@ var $eXeVideoQuExt = {
             ntime = $eXeVideoQuExt.getTimeToString($eXeVideoQuExt.getTimeSeconds(mQuextion.time))
         $('#vquextQuestion-' + instance).text(mQuextion.quextion).show();
         $('#vquextPTime-' + instance).text(ntime);
+        $('#vquextDivModeBoard-' + instance).hide();
         if (mQuextion.typeQuestion == 1) {
             $('#vquextDivReply-' + instance).show();
             $('#vquextOptionsDiv-' + instance).hide();
             $('#vquextSolutionWord').focus();
+            if (mOptions.modeBoard) {
+                $('#vquextDivModeBoard-' + instance).css('display', 'flex');
+                $('#vquextDivModeBoard-' + instance).fadeIn();
+            }
         } else {
             $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
                 var option = mQuextion.options[index]
@@ -1805,6 +1866,7 @@ var $eXeVideoQuExt = {
             message = mOptions.msgs.msgSolution + ': ' + mOptions.question.solutionQuestion;
             $eXeVideoQuExt.showMessage(1, message, instance);
             $('#vquextDivReply-' + instance).hide();
+            $('#vquextDivModeBoard-' + instance).hide();
 
         } else {
             $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
@@ -1845,6 +1907,7 @@ var $eXeVideoQuExt = {
         $('#vquextPTime--' + instance).text("00:00");
         $('#vquextOptionsDiv-' + instance).hide();
         $('#vquextDivReply-' + instance).hide();
+        $('#vquextDivModeBoard-' + instance).hide();
         $('#vquextEdAnswer-' + instance).val("");
     },
     exitFullscreen: function () {

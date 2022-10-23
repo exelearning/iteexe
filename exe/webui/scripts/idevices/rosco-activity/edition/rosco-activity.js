@@ -67,7 +67,10 @@ var $exeDevice = {
 		"msgFullScreen": _("Full Screen"),
 		"msgExitFullScreen": _("Exit Full Screen"),
 		"msgMoveOne": _("Move on"),
-		"msgAudio": _("Audio")
+		"msgAudio": _("Audio"),
+		"msgCorrect": _("Correct"),
+		"msgIncorrect": _("Incorrect"),
+		"msgWhiteBoard": _("Pizarra digital")
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -79,6 +82,7 @@ var $exeDevice = {
 		grey: '#818181'
 	},
 	letters: _("abcdefghijklmnopqrstuvwxyz").toUpperCase(),
+	modeBoard:false,
 	init: function () {
 		this.letters = $exeDevice.replaceLetters(this.letters);
 		this.setMessagesInfo();
@@ -130,6 +134,9 @@ var $exeDevice = {
 							<p>\
 								<label for="roscoCaseSensitive"><input type="checkbox" id="roscoCaseSensitive"> ' + _("Case sensitive") + ' </label>\
 							</p>\
+							<p>\
+								<label for="roscoModeBoard"><input type="checkbox" id="roscoModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+							</p>\
 						</div>\
 					</fieldset>\
 					<fieldset class="exe-fieldset">\
@@ -170,6 +177,7 @@ var $exeDevice = {
 		$('#roscoShowSolution').prop("checked", dataGame.showSolution);
 		$('#roscoShowMinimize').prop("checked", dataGame.showMinimize);
 		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
+		$('#roscoModeBoard').prop("checked", dataGame.modeBoard);
 		$('#roscoTimeShowSolution').prop('disabled', !dataGame.showSolution);
 		for (var i = 0; i < dataGame.wordsGame[i].length; i++) {
 			dataGame.wordsGame[i].audio = typeof dataGame.wordsGame[i].audio == "undefined" ? '' : dataGame.wordsGame[i].audio;
@@ -247,6 +255,8 @@ var $exeDevice = {
 			}
 
 			var dataGame = $exeDevice.isJsonString(json);
+			dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
+			$exeDevice.modeBoard=dataGame.modeBoard;
 			version = version == '' || typeof version == 'undefined' ? 0 : parseInt(version);
 			for (var i = 0; i < dataGame.wordsGame.length; i++) {
 				if (version < 2) {
@@ -593,6 +603,7 @@ var $exeDevice = {
 			textAfter = tinymce.editors[1].getContent(),
 			showMinimize = $('#roscoShowMinimize').is(':checked'),
 			showSolution = $('#roscoShowSolution').is(':checked'),
+			modeBoard = $('#roscoModeBoard').is(':checked'),
 			timeShowSolution = parseInt(clear($.trim($('#roscoTimeShowSolution').val()))),
 			durationGame = parseInt(clear($('#roscoDuration').val())),
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val())),
@@ -661,12 +672,12 @@ var $exeDevice = {
 				url = $.trim(urls[i]),
 				mType = types[i];
 			if (word.length > 0) {
-				if (mType == 0 && !(this.startContainsAll(letter, word, mType))) {
+				if (!$exeDevice.modeBoard && mType == 0 && !(this.startContainsAll(letter, word, mType))) {
 					var message = _("%1 does not start with letter %2").replace('%1', word);
 					message = message.replace('%2', mletter);
 					eXe.app.alert(message);
 					return false;
-				} else if (mType == 1 && !(this.startContainsAll(letter, word, mType))) {
+				} else if(!$exeDevice.modeBoard && mType == 1 && !(this.startContainsAll(letter, word, mType))) {
 					var message = $exeDevice.msgs.msgNotContain.replace('%1', word);
 					message = message.replace('%2', mletter);
 					eXe.app.alert(message);
@@ -725,6 +736,7 @@ var $exeDevice = {
 			'textAfter': escape(textAfter),
 			'caseSensitive': caseSensitive,
 			'version': 2,
+			'modeBoard':modeBoard
 
 		}
 		return data;
@@ -845,11 +857,11 @@ var $exeDevice = {
 			$(this).siblings().filter('.roscoLetterEdition').css("background-color", color);
 			if (word.length > 0) {
 				var mType = $(this).parent().find('.roscoStartEdition').attr('src').indexOf("roscoContains.png") != -1 ? 1 : 0;
-				if (mType == 0 && !($exeDevice.startContainsAll(mletter, word, mType))) {
+				if (!$exeDevice.modeBoard  && mType == 0 && !($exeDevice.startContainsAll(mletter, word, mType))) {
 					var message = msgs.msgNotStart.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
-				} else if (mType == 1 && !($exeDevice.startContainsAll(mletter, word, mType))) {
+				} else if (!$exeDevice.modeBoard && mType == 1 && !($exeDevice.startContainsAll(mletter, word, mType))) {
 					var message = msgs.msgNotContain.replace('%1', word);
 					message = message.replace('%2', letter);
 					eXe.app.alert(message);
@@ -859,6 +871,10 @@ var $exeDevice = {
 		$('#roscoShowSolution').on('change', function () {
 			var mark = $(this).is(':checked');
 			$('#roscoTimeShowSolution').prop('disabled', !mark);
+		});
+		$('#roscoModeBoard').on('change', function () {
+			$exeDevice.modeBoard= $(this).is(':checked');
+
 		});
 		$('.roscoHomeImageEdition').on('click', function (e) {
 			$exeDevice.clickImage(this, e.pageX, e.pageY);

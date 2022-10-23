@@ -83,7 +83,10 @@ var $exeDevice = {
         "msgErrorQuestion": _("you have failed."),
         "msgsYouPlay": _("you play. Roll the dice."),
         "msgGetQueso": _("you get the cheese of"),
-        "msgRightAnswre": _("One more point.")
+        "msgRightAnswre": _("One more point."),
+        "msgAudio": _("Audio"),
+		"msgCorrect": _("Correct"),
+		"msgIncorrect": _("Incorrect")
     },
     getId: function () {
         return Math.round(new Date().getTime() + (Math.random() * 100));
@@ -737,6 +740,9 @@ var $exeDevice = {
                                 <label for="trivialEShowSolution"><input type="checkbox" checked id="trivialEShowSolution">' + _("Show solutions") + '. </label>\
                                 <label for="trivialETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="trivialETimeShowSolution" id="trivialETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
+                            <p>\
+                                <label for="trivialModeBoard"><input type="checkbox" id="trivialModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                            </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -1090,6 +1096,7 @@ var $exeDevice = {
             var json = $('.trivial-DataGame', wrapper).text(),
                 dataGame = $exeDevice.isJsonString(json);
             dataGame = $exeDevice.Decrypt(dataGame);
+            dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
             for (var i = 0; i < dataGame.numeroTemas; i++) {
                 var tema = dataGame.temas[i];
                 for (var j = 0; j < tema.length; j++) {
@@ -1167,6 +1174,7 @@ var $exeDevice = {
         $('#trivialEShowSolution').prop('checked', game.showSolution);
         $('#trivialETimeShowSolution').prop('disabled', !game.showSolution);
         $('#trivialETimeShowSolution').val(game.timeShowSolution);
+        $('#trivialModeBoard').prop("checked", game.modeBoard);
         $('#trivialNumberTema').val(1);
         $('#trivialLoadGame').val('');
         $('#trivialNameTema').val(game.nombresTemas[0]);
@@ -1277,7 +1285,8 @@ var $exeDevice = {
             'textAfter': game.textAfter,
             'msgs': game.msgs,
             'trivialID': game.trivialID,
-            "version": game.version
+            "version": game.version,
+            "modeBoard": game.modeBoard
         }
         return JSON.stringify(data);
     },
@@ -1325,7 +1334,8 @@ var $exeDevice = {
             'textAfter': game.textAfter,
             'msgs': game.msgs,
             'trivialID': game.trivialID,
-            'version': game.version
+            'version': game.version,
+            "modeBoard": game.modeBoard
         }
 
         return data;
@@ -1785,6 +1795,7 @@ var $exeDevice = {
             optionsRamdon = true,
             answersRamdon = true,
             showSolution = $('#trivialEShowSolution').is(':checked'),
+            modeBoard = $('#trivialModeBoard').is(':checked'),
             timeShowSolution = parseInt(clear($('#trivialETimeShowSolution').val())),
             useLives = false,
             numberLives = 3,
@@ -1887,7 +1898,8 @@ var $exeDevice = {
             'customScore': customScore,
             'textAfter': textAfter,
             'trivialID': $exeDevice.trivialID,
-            'version': 2
+            'version': 2,
+            'modeBoard':modeBoard
         }
         return data;
     },

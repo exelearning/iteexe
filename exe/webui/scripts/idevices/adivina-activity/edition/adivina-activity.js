@@ -91,6 +91,8 @@ var $exeDevice = {
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
+		"msgCorrect": _("Correct"),
+		"msgIncorrect": _("Incorrect")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -175,6 +177,9 @@ var $exeDevice = {
                             <p>\
                                 <label for="adivinaEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="adivinaEPercentajeQuestions" id="adivinaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
                                 <span id="adivinaENumeroPercentaje">1/1</span>\
+                            </p>\
+                            <p>\
+                                <label for="adivinaModeBoard"><input type="checkbox" id="adivinaModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
                             </p>\
                          </div>\
                     </fieldset>\
@@ -635,6 +640,7 @@ var $exeDevice = {
             var dataGame = $exeDevice.isJsonString(json),
                 $imagesLink = $('.adivina-LinkImages', wrapper),
                 $audiosLink = $('.adivina-LinkAudios', wrapper);
+            dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
             version = version == '' ? 0 : parseInt(version);
             var hasYoutube=false;
             for (var i = 0; i < dataGame.wordsGame.length; i++) {
@@ -890,6 +896,7 @@ var $exeDevice = {
             showMinimize = $('#adivinaEShowMinimize').is(':checked'),
             optionsRamdon = $('#adivinaEOptionsRamdon').is(':checked'),
             showSolution = $('#adivinaEShowSolution').is(':checked'),
+            modeBoard = $('#adivinaModeBoard').is(':checked'),
             timeShowSolution = parseInt(clear($('#adivinaETimeShowSolution').val())),
             useLives = $('#adivinaEUseLives').is(':checked'),
             numberLives = parseInt(clear($('#adivinaENumberLives').val())),
@@ -957,7 +964,8 @@ var $exeDevice = {
             'percentajeFB': percentajeFB,
             'version': 2,
             'customMessages': customMessages,
-            'percentajeQuestions':percentajeQuestions
+            'percentajeQuestions':percentajeQuestions,
+            'modeBoard':modeBoard
         }
         return data;
     },
@@ -1592,6 +1600,7 @@ var $exeDevice = {
         $('#adivinaEUseLives').prop('checked', game.useLives);
         $('#adivinaENumberLives').val(game.numberLives);
         $('#adivinaEShowSolution').prop('checked', game.showSolution);
+        $('#adivinaModeBoard').prop("checked", game.modeBoard);
         $('#adivinaETimeShowSolution').val(game.timeShowSolution)
         $('#adivinaETimeShowSolution').prop('disabled', !game.showSolution);
         $('#adivinaECaseSensitive').prop('checked', game.caseSensitive);

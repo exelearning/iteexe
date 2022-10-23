@@ -191,6 +191,7 @@ var $eXeAdivina = {
         mOptions.hasVideo = false;
         mOptions.waitStart = false;
         mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
+        mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
             var p = mOptions.wordsGame[i];
             p.url = $eXeAdivina.extractURLGD(p.url);
@@ -404,6 +405,11 @@ var $eXeAdivina = {
             <div class="gameQP-DivInstructions" id="adivinaDivInstructions-' + instance + '">' + msgs.msgWrote + '</div>\
             <div class="gameQP-DivFeedBack" id="adivinaDivFeedBack-' + instance + '">\
                 <input type="button" id="adivinaFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
+            </div>\
+            <div class="gameQP-DivModeBoard" id="adivinaDivModeBoard-' + instance + '">\
+                <a class="gameQP-ModeBoard" href="#" id="adivinaModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
+                <a class="gameQP-ModeBoard" href="#" id="adivinaModeBoardMoveOn-' + instance + '" title="' + msgs.msgMoveOne + '">' + msgs.msgMoveOne + '</a>\
+                <a class="gameQP-ModeBoard" href="#" id="adivinaModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
             </div>\
         </div>\
     </div>\
@@ -650,8 +656,6 @@ var $eXeAdivina = {
             $eXeAdivina.stopSound(instance);
             $eXeAdivina.playSound(audio, instance);
         });
-
-
         $('#adivinaPShowClue-' + instance).hide();
         $('#adivinaStartGame-' + instance).show();
 
@@ -704,6 +708,20 @@ var $eXeAdivina = {
         $('#adivinaStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
             $eXeAdivina.getYTAPI(instance);
+        });
+        $('#adivinaModeBoardOK-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeAdivina.answerQuestionBoard(true, instance)
+
+        });
+        $('#adivinaModeBoardKO-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeAdivina.answerQuestionBoard(false, instance)
+
+        });
+        $('#adivinaModeBoardMoveOn-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeAdivina.newQuestion(instance)
         });
 
 
@@ -830,12 +848,12 @@ var $eXeAdivina = {
     gameOver: function (type, instance) {
         var mOptions = $eXeAdivina.options[instance];
         $eXeAdivina.showImage("", 0, 0, '', '', instance);
-
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
         $('#adivinaLinkAudio-' + instance).hide();
         $eXeAdivina.stopSound(instance);
+        $('#adivinaDivModeBoard-' + instance).hide()
         clearInterval(mOptions.counterClock);
         $('#adivinaEPhrase-' + instance).find('.gameQP-Word').hide();
         $('#adivinaEdAnswer-' + instance).val('');
@@ -977,6 +995,7 @@ var $eXeAdivina = {
         mOptions.gameActived = true;
         mOptions.question = q;
         $eXeAdivina.showMessage(0, '', instance);
+
         $('#adivinaEPhrase-' + instance).find('.gameQP-Letter').css('color', $eXeAdivina.borderColors.blue);
         $eXeAdivina.drawPhrase(q.word, q.definition, q.percentageShow, 0, $eXeAdivina.options[instance].caseSensitive, instance, false);
         $('#adivinaEdAnswer-' + instance).val("");
@@ -1053,6 +1072,10 @@ var $eXeAdivina = {
                 $('#adivinaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
 
             }
+        }
+        if (mOptions.modeBoard) {
+            $('#adivinaDivModeBoard-' + instance).css('display', 'flex');
+            $('#adivinaDivModeBoard-' + instance).fadeIn();
         }
 
     },
@@ -1147,12 +1170,12 @@ var $eXeAdivina = {
 
     },
     onPlayerReady: function (event) {
-        var video='adivinaVideo-0';
-        if((event.target.h) && (event.target.h.id) ){
-            video=event.target.h.id;
-        }else if ((event.target.i ) && (event.target.i.id)) {
-            video=event.target.i.id;
-        }         
+        var video = 'adivinaVideo-0';
+        if ((event.target.h) && (event.target.h.id)) {
+            video = event.target.h.id;
+        } else if ((event.target.i) && (event.target.i.id)) {
+            video = event.target.i.id;
+        }
         video = video.split("-");
         if (video.length == 2 && video[0] == "adivinaVideo") {
             var instance = parseInt(video[1]);
@@ -1327,20 +1350,50 @@ var $eXeAdivina = {
             question = mOptions.wordsGame[mOptions.activeQuestion],
             answord = $.trim($('#adivinaEdAnswer-' + instance).val()),
             solution = $.trim(question.word);
+        if (!mOptions.gameActived) {
+            return;
+        }
         if (answord.length == 0) {
             $eXeAdivina.showMessage(1, mOptions.msgs.msgIndicateWord, instance);
             return;
         }
+        mOptions.gameActived=false;
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
+        answord = mOptions.caseSensitive ? answord : answord.toUpperCase();
+        solution = mOptions.caseSensitive ? solution : solution.toUpperCase();
+        var type = $eXeAdivina.updateScore(solution == answord, instance),
+            percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
+        mOptions.activeCounter = false;
+        var timeShowSolution = 1000;
+        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+            if (!mOptions.obtainedClue) {
+                mOptions.obtainedClue = true;
+                timeShowSolution = 3000;
+                $('#adivinaPShowClue-' + instance).show();
+                $('#adivinaPShowClue-' + instance).text(mOptions.msgs.msgInformation + ': ' + mOptions.itinerary.clueGame);
+            }
+        }
+        if (mOptions.showSolution) {
+            timeShowSolution = mOptions.timeShowSolution * 1000;
+            $eXeAdivina.drawPhrase(question.word, question.definition, 100, type, mOptions.caseSensitive, instance, true)
+        }
+        setTimeout(function () {
+            $eXeAdivina.newQuestion(instance)
+        }, timeShowSolution);
+    },
+    answerQuestionBoard: function (value, instance) {
+        var mOptions = $eXeAdivina.options[instance],
+            question = mOptions.wordsGame[mOptions.activeQuestion];
         if (!mOptions.gameActived) {
             return;
         }
-        answord = mOptions.caseSensitive ? answord : answord.toUpperCase();
-        solution = mOptions.caseSensitive ? solution : solution.toUpperCase();
         mOptions.gameActived = false;
-        var type = $eXeAdivina.updateScore(solution == answord, instance),
+        $('#adivinaBtnReply-' + instance).prop('disabled', true);
+        $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
+        $('#adivinaEdAnswer-' + instance).prop('disabled', true);
+        var type = $eXeAdivina.updateScore(value, instance),
             percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
         mOptions.activeCounter = false;
         var timeShowSolution = 1000;

@@ -536,6 +536,10 @@ var $eXeTrivial = {
                 </a>\
             </div>\
         </div>\
+        <div class="trivial-DivModeBoard" id="trivialDivModeBoard-' + instance + '">\
+                <a class="trivial-ModeBoard" href="#" id="trivialModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
+                <a class="trivial-ModeBoard" href="#" id="trivialModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
+        </div>\
     </div>';
         return html;
     },
@@ -1300,6 +1304,7 @@ var $eXeTrivial = {
         mOptions.gameActived = false;
         mOptions.activesQuestions = [];
         mOptions.scoreTotal = 0;
+        mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
         return mOptions;
     },
 
@@ -1745,6 +1750,18 @@ var $eXeTrivial = {
             }
         }
 
+        $('#trivialModeBoardOK-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeTrivial.answerQuestionBoard(true, instance)
+
+		});
+		$('#trivialModeBoardKO-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeTrivial.answerQuestionBoard(false, instance)
+
+		});
+
+
     },
     getDataStorage: function (id) {
         var id = 'dataTrivial-' + id,
@@ -1894,7 +1911,8 @@ var $eXeTrivial = {
         clearInterval(mOptions.relojJuego);
         $('#trivialVideo-' + instance).hide();
         $eXeTrivial.startVideo('', 0, 0, instance);
-        $eXeTrivial.stopVideo(instance)
+        $eXeTrivial.stopVideo(instance);
+        $('#trivialDivModeBoard-' + instance).hide();
         $('#trivialImagen-' + instance).hide();
         $('#trivialEText-' + instance).hide();
         $('#trivialCursor-' + instance).hide();
@@ -1924,6 +1942,7 @@ var $eXeTrivial = {
         $eXeTrivial.saveDataStorage(instance);
     },
     drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution) {
+        var mOptions = $eXeTrivial.options[instance];
         $('#trivialEPhrase-' + instance).find('.trivial-Word').remove();
         $('#trivialBtnReply-' + instance).prop('disabled', true);
         $('#trivialBtnMoveOn-' + instance).prop('disabled', true);
@@ -1931,6 +1950,10 @@ var $eXeTrivial = {
         $('#trivialQuestionDiv-' + instance).hide();
         $('#trivialWordDiv-' + instance).show();
         $('#trivialAnswerDiv-' + instance).hide();
+        if (mOptions.modeBoard) {
+			$('#trivialDivModeBoard-' + instance).css('display', 'flex');
+			$('#trivialDivModeBoard-' + instance).fadeIn();
+		}
         if (!casesensitive) {
             phrase = phrase.toUpperCase();
         }
@@ -1971,6 +1994,7 @@ var $eXeTrivial = {
         if (latex) {
             $eXeTrivial.updateLatex('trivialWordDiv-' + instance)
         }
+
         return cPhrase;
     },
     clear: function (phrase) {
@@ -2002,6 +2026,7 @@ var $eXeTrivial = {
         var tiempo = $eXeTrivial.getTimeToString($eXeTrivial.getTimeSeconds(mQuextion.time)),
             author = '',
             alt = '';
+        $('#trivialDivModeBoard-' + instance).hide();
         $('#trivialPTime-' + instance).text(tiempo);
         $('#trivialQuestion-' + instance).text(mQuextion.quextion);
         $('#trivialImagen-' + instance).hide();
@@ -2235,6 +2260,40 @@ var $eXeTrivial = {
 
         $eXeTrivial.saveDataStorage(instance);
     },
+    answerQuestionBoard: function (value,instance) {
+        var mOptions = $eXeTrivial.options[instance],
+            active = mOptions.activesQuestions[mOptions.activeTema],
+            quextion = mOptions.temas[mOptions.activeTema][active],
+            message = "",
+            type=1;
+        if (mOptions.activeCounter == false) {
+            return;
+        }
+        mOptions.activeCounter = false;
+        if (value) {
+            message = $eXeTrivial.getRetroFeedMessages(true, instance);
+            type = 2;
+        } else {
+            message = $eXeTrivial.getRetroFeedMessages(false, instance);
+        }
+        if (mOptions.showSolution) {
+            if (quextion.typeSelect != 2) {
+                $eXeTrivial.drawSolution(instance);
+            } else {
+                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance, true)
+            }
+        }
+        $eXeTrivial.stopVideo(instance);
+        $eXeTrivial.showMessage(type, message, instance);
+        clearInterval(mOptions.counterClock);
+        var ts = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 3000;
+        setTimeout(function () {
+            $eXeTrivial.questionAnswer(value, instance);
+        }, ts);
+
+        $eXeTrivial.saveDataStorage(instance);
+    },
+
 
     showMessage: function (type, message, instance) {
         var colors = ['#555555', $eXeTrivial.borderColors.red, $eXeTrivial.borderColors.green, $eXeTrivial.borderColors.blue, $eXeTrivial.borderColors.yellow];
@@ -2342,11 +2401,13 @@ var $eXeTrivial = {
                 $(this).hide();
             }
         });
+
         var html = $('#trivialQuestionDiv-' + instance).html(),
             latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeTrivial.updateLatex('trivialQuestionDiv-' + instance)
         }
+
     },
     drawSolution: function (instance) {
         var mOptions = $eXeTrivial.options[instance],

@@ -164,6 +164,7 @@ var $eXeRosco = {
 		if ($eXeRosco.hasLATEX && typeof (MathJax) == "undefined") {
 			$eXeRosco.loadMathJax();
 		}
+
 	},
 
 	isJsonString: function (str) {
@@ -189,6 +190,7 @@ var $eXeRosco = {
 		}
 		mOptions.playerAudio = "";
 		mOptions.gameOver = false;
+		mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
 		imgsLink.each(function (index) {
 			mOptions.wordsGame[index].url = $(this).attr('href');
 			if (mOptions.wordsGame[index].url.length < 4) {
@@ -310,7 +312,13 @@ var $eXeRosco = {
 						Your browser does not support the HTML5 canvas tag\
 					</canvas>\
 				</div>\
-			</div>' + this.addButtonScore(instance) +
+			</div>\
+			<div class="rosco-DivModeBoard" id="roscoDivModeBoard-' + instance + '">\
+				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardOK-' + instance + '" title="">' + msgs.msgCorrect + '</a>\
+				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardMoveOn-' + instance + '" title="">' + msgs.msgMoveOne + '</a>\
+				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardKO-' + instance + '" title="">' + msgs.msgIncorrect + '</a>\
+			</div>\
+			' + this.addButtonScore(instance) +
 			'</div>';
 		return html
 	},
@@ -564,6 +572,20 @@ var $eXeRosco = {
 			var element = document.getElementById('roscoMainContainer-' + instance);
 			$eXeRosco.toggleFullscreen(element, instance);
 		});
+		$('#roscoModeBoardOK-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeRosco.answerQuetionBoard(true, instance)
+
+		});
+		$('#roscoModeBoardKO-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeRosco.answerQuetionBoard(false, instance)
+
+		});
+		$('#roscoModeBoardMoveOn-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeRosco.passWord(instance);
+		});
 
 
 	},
@@ -664,6 +686,7 @@ var $eXeRosco = {
 			msgs = mOptions.msgs;
 		clearInterval(mOptions.counterClock);
 		$eXeRosco.uptateTime(mOptions.counter, instance);
+		$('#roscoDivModeBoard-' + instance).hide();
 
 		var msg = msgs.msgYouHas.replace('%1', mOptions.hits);
 		msg = msg.replace('%2', mOptions.errors)
@@ -754,6 +777,10 @@ var $eXeRosco = {
 		$eXeRosco.stopSound(instance);
 		if (mWord.audio.trim().length > 4) {
 			$eXeRosco.playSound(mWord.audio.trim(), instance);
+		}
+		if (mOptions.modeBoard) {
+			$('#roscoDivModeBoard-' + instance).css('display', 'flex');
+			$('#roscoDivModeBoard-' + instance).fadeIn();
 		}
 		var html = $('#roscoPDefinition-' + instance).html(),
 			latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
@@ -969,6 +996,7 @@ var $eXeRosco = {
 		$('#roscoBtnReply-' + instance).prop('disabled', true);
 		$('#roscoBtnMoveOn-' + instance).prop('disabled', true);
 		$('#roscoEdReply-' + instance).prop('disabled', true);
+
 		word = mOptions.caseSensitive ? word : word.toUpperCase();
 		answord = mOptions.caseSensitive ? answord : answord.toUpperCase();
 		var mFontColor = $eXeRosco.colors.white,
@@ -1002,6 +1030,64 @@ var $eXeRosco = {
 			}
 		}
 		letter = '#letterR' + letter + '-' + instance;
+		$(letter).css({
+			'background-color': mBackColor,
+			'color': mFontColor
+		});
+		$eXeRosco.drawRosco(instance);
+		message = mOptions.showSolution ? message : msgs.msgNewWord;
+		setTimeout(function () {
+			$eXeRosco.newWord(instance)
+		}, timeShowSolution);
+		$eXeRosco.drawMessage(Hit, word, clue, instance);
+	},
+
+	answerQuetionBoard: function (value, instance) {
+		var mOptions = $eXeRosco.options[instance],
+			msgs = mOptions.msgs;
+		if (mOptions.gameActived == false) {
+			return;
+		}
+		mOptions.gameActived = false;
+		$('#roscoBtnReply-' + instance).prop('disabled', true);
+		$('#roscoBtnMoveOn-' + instance).prop('disabled', true);
+		$('#roscoEdReply-' + instance).prop('disabled', true);
+		var message = "",
+			Hit = true,
+			word = $.trim(mOptions.wordsGame[mOptions.activeWord].word);
+		word = mOptions.caseSensitive ? word : word.toUpperCase();
+		var mFontColor = $eXeRosco.colors.white,
+			mBackColor = $eXeRosco.colors.blue;
+		if (value) {
+			mOptions.hits++
+			mOptions.wordsGame[mOptions.activeWord].state = 2;
+			Hit = true;
+			mFontColor = $eXeRosco.colors.white;
+			mBackColor = $eXeRosco.colors.green
+		} else {
+			mOptions.wordsGame[mOptions.activeWord].state = 3;
+			mOptions.errors++;
+			Hit = false;
+			mFontColor = $eXeRosco.colors.white;
+			mBackColor = $eXeRosco.colors.red;
+		}
+		var percentageHits = (mOptions.hits / mOptions.validWords) * 100;
+		mOptions.answeredWords++;
+		$('#roscotPHits-' + instance).text(mOptions.hits);
+		$('#roscotPErrors-' + instance).text(mOptions.errors);
+		var timeShowSolution = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 1000;
+		var clue = false;
+		if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+			if (!mOptions.obtainedClue) {
+				mOptions.obtainedClue = true;
+				timeShowSolution = 4000;
+				clue = true;
+				$('#roscoPShowClue-' + instance).show();
+				$('#roscoPShowClue-' + instance).text(mOptions.msgs.msgInformation + ': ' + mOptions.itinerary.clueGame);
+			}
+		}
+		var letter = mOptions.letters[mOptions.activeWord],
+			letter = '#letterR' + letter + '-' + instance;
 		$(letter).css({
 			'background-color': mBackColor,
 			'color': mFontColor
@@ -1112,33 +1198,33 @@ var $eXeRosco = {
 		}
 	},
 	loadMathJax: function () {
-        if (!window.MathJax) {
-            window.MathJax = $exe.math.engineConfig;
-        }
-        var script = document.createElement('script');
-        script.src = $exe.math.engine;
-        script.async = true;
-        document.head.appendChild(script);
-    },
+		if (!window.MathJax) {
+			window.MathJax = $exe.math.engineConfig;
+		}
+		var script = document.createElement('script');
+		script.src = $exe.math.engine;
+		script.async = true;
+		document.head.appendChild(script);
+	},
 	updateLatex: function (mnodo) {
-        setTimeout(function () {
-            if (typeof (MathJax) != "undefined") {
-                try {
-                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
-                    } else if (typeof MathJax.typeset == "function") {
-                        var nodo = document.getElementById(mnodo);
-                        MathJax.typesetClear([nodo]);
-                        MathJax.typeset([nodo]);
-                    }
-                } catch (error) {
-                    console.log('Error al refrescar cuestiones')
-                }
+		setTimeout(function () {
+			if (typeof (MathJax) != "undefined") {
+				try {
+					if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+						MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+					} else if (typeof MathJax.typeset == "function") {
+						var nodo = document.getElementById(mnodo);
+						MathJax.typesetClear([nodo]);
+						MathJax.typeset([nodo]);
+					}
+				} catch (error) {
+					console.log('Error al refrescar cuestiones')
+				}
 
-            }
+			}
 
-        }, 100);
-    },
+		}, 100);
+	},
 	checkWord: function (word, answord) {
 
 		var sWord = $.trim(word).replace(/\s+/g, " ").replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, ""),

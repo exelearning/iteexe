@@ -390,6 +390,11 @@ var $eXeSelecciona = {
             <div class="gameQP-DivFeedBack" id="seleccionaDivFeedBack-' + instance + '">\
                 <input type="button" id="seleccionaFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
             </div>\
+            <div class="gameQP-DivModeBoard" id="seleccionaDivModeBoard-' + instance + '">\
+                <a class="gameQP-ModeBoard" href="#" id="seleccionaModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
+                <a class="gameQP-ModeBoard" href="#" id="seleccionaModeBoardMoveOn-' + instance + '" title="' + msgs.msgMoveOne + '">' + msgs.msgMoveOne + '</a>\
+                <a class="gameQP-ModeBoard" href="#" id="seleccionaModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
+            </div>\
         </div>\
     </div>\
     ' + this.addButtonScore(instance);
@@ -440,6 +445,7 @@ var $eXeSelecciona = {
         mOptions.gameStarted = false;
         mOptions.scoreGame = 0;
         mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
+        mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
         for (var i = 0; i < mOptions.selectsGame.length; i++) {
             mOptions.selectsGame[i].audio = typeof mOptions.selectsGame[i].audio == 'undefined' ? '' : mOptions.selectsGame[i].audio
             mOptions.selectsGame[i].hit = typeof mOptions.selectsGame[i].hit == "undefined" ? 0 : mOptions.selectsGame[i].hit;
@@ -880,6 +886,20 @@ var $eXeSelecciona = {
             $('#seleccionaLinkVideoIntroShow-' + instance).show();
         }
         $('#seleccionaWordDiv-' + instance).hide();
+        $('#seleccionaModeBoardOK-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeSelecciona.answerQuestionBoard(true, instance)
+
+		});
+		$('#seleccionaModeBoardKO-' + instance).on('click', function (e) {
+			e.preventDefault();
+			$eXeSelecciona.answerQuestionBoard(false, instance)
+
+		});
+		$('#seleccionaModeBoardMoveOn-' + instance).on('click', function (e) {
+			e.preventDefault();
+            $eXeSelecciona.newQuestion(instance)
+		});
     },
     getYTAPI: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
@@ -1171,8 +1191,8 @@ var $eXeSelecciona = {
         var mOptions = $eXeSelecciona.options[instance];
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
-
         clearInterval(mOptions.counterClock);
+        $('#seleccionaDivModeBoard-' + instance).hide()
         $('#seleccionaVideo-' + instance).hide();
         $('#seleccionaLinkAudio-' + instance).hide();
         $eXeSelecciona.startVideo('', 0, 0, instance);
@@ -1375,7 +1395,9 @@ var $eXeSelecciona = {
             } else {
                 $eXeSelecciona.muteVideo(false, instance);
             }
+
         }
+        $('#seleccionaDivModeBoard-' + instance).hide();
         if (mQuextion.typeSelect != 2) {
             $eXeSelecciona.drawQuestions(instance);
         } else {
@@ -1385,6 +1407,11 @@ var $eXeSelecciona = {
             $('#seleccionaEdAnswer-' + instance).prop('disabled', false);
             $('#seleccionaEdAnswer-' + instance).focus();
             $('#seleccionaEdAnswer-' + instance).val('');
+            if (mOptions.modeBoard) {
+                $('#seleccionaDivModeBoard-' + instance).css('display', 'flex');
+                $('#seleccionaDivModeBoard-' + instance).fadeIn();
+            }
+    
         }
 
         if (mOptions.isScorm === 1) {
@@ -1403,8 +1430,7 @@ var $eXeSelecciona = {
         if (q.type != 2 && q.audio.trim().length > 5 && !mOptions.audioFeedBach) {
             $eXeSelecciona.playSound(q.audio.trim(), instance);
         }
-
-
+ 
 
 
     },
@@ -1606,6 +1632,54 @@ var $eXeSelecciona = {
 
         setTimeout(function () {
             $eXeSelecciona.newQuestion(instance, correct, false)
+        }, timeShowSolution);
+    },
+    answerQuestionBoard: function ( value, instance) {
+        var mOptions = $eXeSelecciona.options[instance],
+            quextion = mOptions.selectsGame[mOptions.activeQuestion];
+        if (!mOptions.gameActived) {
+            return;
+        }
+        mOptions.gameActived = false;
+        mOptions.activeCounter = false;
+        if (mOptions.order != 2) {
+            $eXeSelecciona.updateScore(value, instance);
+        } else {
+            $eXeSelecciona.updateScoreThree(value, instance);
+        }
+        if (mOptions.showSolution & quextion.audio.trim().length > 5 && mOptions.audioFeedBach) {
+            $eXeSelecciona.playSound(quextion.audio.trim(), instance);
+            $('#seleccionaLinkAudio-' + instance).show();
+        }
+
+        var timeShowSolution = 1000;
+        var percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100;
+        $('#seleccionaPHits-' + instance).text(mOptions.hits);
+        $('#seleccionaPErrors-' + instance).text(mOptions.errors);
+        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+            if (!mOptions.obtainedClue) {
+                timeShowSolution = 5000;
+                message += " " + mOptions.msgs.msgUseFulInformation;
+                $('#seleccionaPShowClue-' + instance).text(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                mOptions.obtainedClue = true;
+                $('#seleccionaPShowClue-' + instance).show();
+            }
+        }
+        if (mOptions.showSolution) {
+            timeShowSolution = mOptions.timeShowSolution * 1000;
+            if (!$eXeSelecciona.sameQuestion(value, instance)) {
+                if (quextion.typeSelect != 2) {
+                    $eXeSelecciona.drawSolution(instance);
+                } else {
+                    var mtipe = value ? 2 : 1;
+                    $eXeSelecciona.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, mtipe, false, instance, true)
+                }
+            }
+
+        }
+
+        setTimeout(function () {
+            $eXeSelecciona.newQuestion(instance, value, false)
         }, timeShowSolution);
     },
     sameQuestion: function (correct, instance) {

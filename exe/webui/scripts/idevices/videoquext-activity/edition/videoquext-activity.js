@@ -92,7 +92,9 @@ var $exeDevice = {
         "msgNextQuestion": _("Next question"),
         "msgPreviousQuestion": _("Previous question"),
         "msgLastQuestion": _("Last question"),
-        "msgQuestionNumber": _("Question number")
+        "msgQuestionNumber": _("Question number"),
+        "msgCorrect": _("Correct"),
+		"msgIncorrect": _("Incorrect")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -663,6 +665,9 @@ var $exeDevice = {
                                 <label for="vquextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="vquextEPercentajeQuestions" id="vquextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
                                 <span id="vquextENumeroPercentaje">1/1</span>\
                             </p>\
+                            <p>\
+                                <label for="vquextEModeBoard"><input type="checkbox" id="vquextEModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                            </p>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -890,6 +895,7 @@ var $exeDevice = {
                 json = $exeDevice.Decrypt(json);
             }
             var dataGame = $exeDevice.isJsonString(json);
+            dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
             $exeDevice.active = 0;
             $exeDevice.questionsGame = dataGame.questionsGame;
             for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
@@ -978,6 +984,7 @@ var $exeDevice = {
         $('#vquextENavigable').prop('checked', game.isNavigable);
         $('#vquextERepeatQuestion').prop('checked', game.repeatQuestion);
         $('#vquextERepeatQuestion').prop('disabled', !game.isNavigable);
+        $('#vquextEModeBoard').prop("checked", game.modeBoard);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
@@ -1281,7 +1288,8 @@ var $exeDevice = {
             authorVideo = $('#vquextEAuthor').val(),
             isNavigable = $('#vquextENavigable').is(':checked'),
             repeatQuestion = $('#vquextERepeatQuestion').is(':checked'),
-            percentajeQuestions=parseInt(clear($('#vquextEPercentajeQuestions').val()));
+            percentajeQuestions=parseInt(clear($('#vquextEPercentajeQuestions').val())),
+            modeBoard = $('#vquextEModeBoard').is(':checked');
 
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
@@ -1377,7 +1385,8 @@ var $exeDevice = {
             'authorVideo': authorVideo,
             'isNavigable': isNavigable,
             'repeatQuestion': repeatQuestion,
-            'percentajeQuestions':percentajeQuestions
+            'percentajeQuestions':percentajeQuestions,
+            'modeBoard':modeBoard
         }
         return data;
     },
