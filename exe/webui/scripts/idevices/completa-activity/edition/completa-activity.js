@@ -8,7 +8,7 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Lock'),
+        name: _('Complete')
     },
     iDevicePath: "/scripts/idevices/CMPT-activity/edition/",
     msgs: {},
@@ -71,11 +71,11 @@ var $exeDevice = {
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
         "msgSolution": _( "Solution"),
-        "msgTry": _( "Reintentar"),
-        "msgCheck": _( "Comprobar"),
-        "msgEndScore": _( "Has tenido %s aciertos y %d errores."),
-        "msgEndTime": _( "El tiempo ha finalizado."),
-        "msgGameEnd": _("Has completado la actividad"),
+        "msgTry": _( "Try again"),
+        "msgCheck": _( "Check"),
+        "msgEndScore": _( "You got %s right answers and %d errors."),
+        "msgEndTime": _( "Time over."),
+        "msgGameEnd": _("You completed the activity"),
     },
 
 
@@ -110,9 +110,9 @@ var $exeDevice = {
         var msgs = this.msgs;
         var html = '\
 			    <div id="gameQEIdeviceForm">\
-                    <div class="exe-idevice-info">'+_("Cree actividades o juegos en los que nuestro alumnado deberá completar los huecos de un texto, escribiendo, seleccionando de cuadros desplegables o arrastrando desde botones las respuestas correctas.")+' <a href="https://youtu.be/NUDuvjQSTR0" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\
+                    <div class="exe-idevice-info">'+_("Create activities in which the student will have to fill in the blanks of a text writing or choosing an answer.")+' <a href="https://youtu.be/NUDuvjQSTR0" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
                     <div class="exe-form-tab" title="' + _('General settings') + '">\
-                    ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe el texto, identifique y complete las palabras que faltan.")) + '\
+                    ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Read the text and complete the missing words.")) + '\
                         <fieldset class="exe-fieldset exe-fieldset-closed">\
                             <legend><a href="#">' + _("Options") + '</a></legend>\
                             <div>\
@@ -122,36 +122,36 @@ var $exeDevice = {
                                         <input class="CMPT-Type" checked="checked" id="cmpttype0" type="radio" name="cmpttype" value="0" />\
                                         <label for="cmpttype0">' + _("Completa") + '</label>\
                                         <input class="CMPT-Type" id="cmpttype1" type="radio" name="cmpttype" value="1" />\
-                                        <label for="cmpttype1">' + _("Arrastra") + '</label>\
+                                        <label for="cmpttype1">' + _("Drag and drop") + '</label>\
                                         <input class="CMPT-Type" id="cmpttype2" type="radio" name="cmpttype" value="2" />\
                                         <label for="cmpttype2">' + _("Selecciona") + '</label>\
                                     </span>\
                                 </p>\
                                 <p id="cmptEWordsErrorsDiv" class="CMPT-EWordsNo">\
-                                    <label for="cmptEWordsErrors">' + _("Palabras incorrectas") + ':  </label><input type="text" id="cmptEWordsErrors">\
+                                    <label for="cmptEWordsErrors">' + _("Wrong words") + ':  </label><input type="text" id="cmptEWordsErrors">\
                                 </p>\
                                 <p>\
-                                    <label for="cmptAttemptsNumber">' + _("Número de intentos") + ':\
+                                    <label for="cmptAttemptsNumber">' + _("Number of attempts") + ':\
                                     <input type="number" name="cmptAttemptsNumber" id="cmptAttemptsNumber" value="1" min="1" max="9" /> </label>\
                                 </p>\
                                 <p>\
-                                    <label for="cmptETime">' + _("Tiempo(minutos)") + ':\
+                                    <label for="cmptETime">' + _("Time (minutes)") + ':\
                                     <input type="number" name="cmptETime" id="cmptETime" value="0" min="0" max="59" /> </label>\
                                 </p>\
                                 <p>\
                                     <label for="cmptEShowSolution"><input type="checkbox" id="cmptEShowSolution"> ' + _("Show solutions") + '. </label> \
                                 </p>\
                                 <p>\
-                                    <label for="cmptEEstrictCheck"><input type="checkbox" id="cmptEEstrictCheck"> ' + _("Permitir errores en los palabras introducidas") + '. </label>\
+                                    <label for="cmptEEstrictCheck"><input type="checkbox" id="cmptEEstrictCheck"> ' + _("Allow errors in typed words") + '. </label>\
                                     <span id="cmptEPercentajeErrorsDiv" class="CMPT-Hide">\
-                                        <label for="cmptEPercentajeError">' + _("&percnt; de letras incorrectas permitido") + ', <input type="number" name="cmptEPercentajeError" id="cmptEPercentajeError" value="20" min="0" max="100" step="5" /></label>\
+                                        <label for="cmptEPercentajeError">' + _("Incorrect letters allowed (&percnt;)") + ', <input type="number" name="cmptEPercentajeError" id="cmptEPercentajeError" value="20" min="0" max="100" step="5" /></label>\
                                     </span>\
                                 </p>\
                                 <p id="cmptECaseSensitiveDiv">\
                                      <label for="cmptECaseSensitive"><input type="checkbox" id="cmptECaseSensitive"> ' + _("Case sensitive") + '. </label>\
                                 </p>\
                                 <p>\
-                                    <label for="cmptEWordsSize"><input type="checkbox" id="cmptEWordsSize"> ' + _("Tamaño de los cuadros proporcional a la longitud de las palabras") + '. </label>\
+                                    <label for="cmptEWordsSize"><input type="checkbox" id="cmptEWordsSize"> ' + _("Field width proportional to the words length") + '. </label>\
                                 </p>\
                                 <p>\
                                     <label for="cmptEShowMinimize"><input type="checkbox" id="cmptEShowMinimize"> ' + _("Show minimized.") + ' </label>\

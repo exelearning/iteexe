@@ -924,7 +924,7 @@ var $exeDevice = {
                                     <span id="seleccionaENumeroPercentaje">1/1</span>\
                                 </p>\
                                 <p>\
-                                    <label for="seleccionaModeBoard"><input type="checkbox" id="seleccionaModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                                    <label for="seleccionaModeBoard"><input type="checkbox" id="seleccionaModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                                 </p>\
                         </div>\
                     </fieldset>\

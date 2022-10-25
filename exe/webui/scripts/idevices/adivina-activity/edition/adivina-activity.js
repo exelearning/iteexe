@@ -179,7 +179,7 @@ var $exeDevice = {
                                 <span id="adivinaENumeroPercentaje">1/1</span>\
                             </p>\
                             <p>\
-                                <label for="adivinaModeBoard"><input type="checkbox" id="adivinaModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                                <label for="adivinaModeBoard"><input type="checkbox" id="adivinaModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
                          </div>\
                     </fieldset>\

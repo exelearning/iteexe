@@ -8,7 +8,7 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('Identifica Activity')
+        name: _('Identify')
     },
     iDevicePath: "/scripts/idevices/identifica-activity/edition/",
     msgs: {},
@@ -49,26 +49,26 @@ var $exeDevice = {
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
         "msgClose": _("Close"),
-        "msgClue": _("Pista"),
-        "msgShowClue": _("Mostrar una pista"),
-        "msgShowNewClue": _("Mostrar otra pista"),
+        "msgClue": _("Hint"),
+        "msgShowClue": _("Show a clue"),
+        "msgShowNewClue": _("Show another clue"),
         "msgUseFulInformation": _("and information that will be very useful"),
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
         "msgReply": _("Reply"),
-        "msgAttempts": _("Intentos"),
-        "msgScoreQuestion": _("Puntos en juego"),
-        "msgAnswer": _("Introduce una respuesta"),
-        "msgYouCanTryAgain": _("Puedes intentarlo otra vez"),
-        "msgGameStarted": _("El juego ha comenzado"),
-        "msgGameEnd": _("El juego ha finalizado"),
-        "msgCorrectAnswer": _("La respuesta correcta es:"),
+        "msgAttempts": _("Attempts"),
+        "msgScoreQuestion": _("Points at stake"),
+        "msgAnswer": _("Please write the answer"),
+        "msgYouCanTryAgain": _("You can try it again"),
+        "msgGameStarted": _("The game has already started."),
+        "msgGameEnd": _("Game over."),
+        "msgCorrectAnswer": _("The right answer is:"),
         "msgMoveOne": _("Move on"),
         "msgUseClue":_("Has utilizado una pista. Solo puedes conseguir"),
         "msgUseAllClues": _("Has utilizado todas tus pistas. Solo puedes conseguir"),
-        "msgModeWhiteBoard": _("Modo pizarra digital"),
-        "msgCheckLetter": _("Comprobar la letra"),
+        "msgModeWhiteBoard": _("Digital blackboard mode"),
+        "msgCheckLetter": _("Check the letter"),
     },
 
     init: function () {
@@ -86,10 +86,10 @@ var $exeDevice = {
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
         msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgECompleteQuestion = _("You have to complete the question");
-        msgs.msgECompleteAllClues = _("Debes completar todas las pistas");
+        msgs.msgECompleteAllClues = _("Please complete all the clues");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgIndicateSolution= _("Indica el personaje, objeto... a descubrir")
+        msgs.msgIndicateSolution= _("Indicate the character, object or solution to discover")
 
     },
     playSound: function (selectedFile) {
@@ -351,9 +351,9 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Cree actividades en las que, con ayuda de un número variable de pistas, el jugador deberá descubrir un personaje, un objeto o la solución de un problema")+' <a href="https://youtu.be/Od36FCVzfWY" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\
+                <div class="exe-idevice-info">'+_("Create activities in which the players, with some clues, will have to guess a character, an object or the solution to a problem.")+' <a href="https://youtu.be/Od36FCVzfWY" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Utilizando las pistas descubre el personaje oculto en cada cuestión")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Use the clues to guess the hidden answer for each question.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
                         <legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -361,7 +361,7 @@ var $exeDevice = {
                                 <label for="idfEShowMinimize"><input type="checkbox" id="idfEShowMinimize">' + _("Show minimized.") + '</label>\
                             </p>\
                             <p>\
-                                <label for="idfESAvancedMode"><input type="checkbox" checked id="idfESAvancedMode">' + _("Modo avanzado") + '. </label>\
+                                <label for="idfESAvancedMode"><input type="checkbox" checked id="idfESAvancedMode">' + _("Advanced mode") + '. </label>\
                             </p>\
                             <p>\
                                 <label for="idfEQuestionRamdon"><input type="checkbox" id="idfEQuestionRamdon">' + _("Random questions") + '</label>\
@@ -429,7 +429,7 @@ var $exeDevice = {
                                         <a href="#" id="idfEPlayAudio" class="IDFE-ENavigationButton IDFE-EPlayVideo" title="' + _("Play audio") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play audio") + '" class="IDFE-EButtonImage b-play" /></a>\
                                     </div>\
                                     <div>\
-                                        <label for="idfEAttemptsNumber">' + _("Número de intentos") + ':</label><input type="number" name="idfEAttemptsNumber" id="idfEAttemptsNumber" value="3" min="1" max="8" step="1" />\
+                                        <label for="idfEAttemptsNumber">' + _("Number of attempts") + ':</label><input type="number" name="idfEAttemptsNumber" id="idfEAttemptsNumber" value="3" min="1" max="8" step="1" />\
                                     </div>\
                                 </div>\
                                 <div class="IDFE-EMultiMediaClue">\
@@ -442,7 +442,7 @@ var $exeDevice = {
                             </div>\
                             <div class="IDFE-EContents">\
                                    <p>\
-                                      <label for="idfECluesNumber">' + _("Número de pistas") + ':</label><input type="number" name="idfECluesNumber" id="idfECluesNumber" value="4" min="2" max="8" step="1" />\
+                                      <label for="idfECluesNumber">' + _("Number of clues") + ':</label><input type="number" name="idfECluesNumber" id="idfECluesNumber" value="4" min="2" max="8" step="1" />\
                                     </p>\
                                    <div class="IDFE-EAnswers">\
                                     <div class="IDFE-EPistaDiv">\

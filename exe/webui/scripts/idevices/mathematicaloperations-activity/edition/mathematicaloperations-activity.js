@@ -11,7 +11,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Operaciones Matemáticas')
+        name: _('Math Operations')
     },
     msgs: {},
     defaultSettings: {
@@ -75,13 +75,13 @@ var $exeDevice = {
         "msgClose": _("Close"),
         "msgSolution": _("Solution"),
         "msgCheck": _("Check"),
-        "msgWithoutAnswer": _("Sin contestar"),
-        "msgReplied": _("Contestadas"),
-        "msgCorrects": _("Correctas"),
-        "msgIncorrects": _("Incorrectas"),
-        "msgIncomplete": _("Sin rellenar"),
-        "msgEndTime": _("El tiempo ha finalizado."),
-        "msgAllOperations": _("Has realizado todas las operaciones."),
+        "msgWithoutAnswer": _("Not answered"),
+        "msgReplied": _("Answered"),
+        "msgCorrects": _("Right"),
+        "msgIncorrects": _("Wrong"),
+        "msgIncomplete": _("Not completed"),
+        "msgEndTime": _("Time over."),
+        "msgAllOperations": _("Your finished all the operations."),
         
     },
     init: function () {
@@ -112,31 +112,31 @@ var $exeDevice = {
     createForm: function () {
         var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Cree actividades con operaciones matemáticas básicas (suma, resta, multiplicación y/o división) aleatorias en las que nuestro alumnado tendrá que averiguar el resultado, el operador o uno de los  operandos.")+' <a href="https://youtu.be/xCkJ6iv5NGw" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice")+'</a></div>\
+                <div class="exe-idevice-info">'+_("Create basic math operation games (addition, subtraction, multiplication, division). The student will have to guess the result, operator or and operand.")+' <a href="https://youtu.be/xCkJ6iv5NGw" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Realiza las siguientes operaciones matemáticas.")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Solve the following operations.")) + '\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
-                            <p><label for="eRMQtype">' + _("Elige el elemento a adivinar:") + '\
+                            <p><label for="eRMQtype">' + _("Choose what to guess:") + '\
                             <select id="eRMQtype">\
-                                <option value="result">' + _("Resultado") + '</option>\
-                                <option value="operator">' + _("Operador") + '</option>\
-                                <option value="operandA">' + _("Primer operando") + '</option>\
-                                <option value="operandB">' + _("Segundo operando") + '</option>\
-                                <option value="random">' + _("Aleatorio") + '</option>\
+                                <option value="result">' + _("Result") + '</option>\
+                                <option value="operator">' + _("Operator") + '</option>\
+                                <option value="operandA">' + _("First operand") + '</option>\
+                                <option value="operandB">' + _("Second operand") + '</option>\
+                                <option value="random">' + _("Random") + '</option>\
                             </select>\
                             </label></p>\
-                            <p><label for="eRMQnum">' + _("Numero de operaciones:") + '\
+                            <p><label for="eRMQnum">' + _("Number of operations:") + '\
                                 <input id="eRMQnum" type="text" style="width:80px" value="10" onkeyup="$exeDevice.onlyNumbers(this)" />\
                             </label>\
-                            <label for="eRMQmin">' + _("Número más pequeño:") + '\
+                            <label for="eRMQmin">' + _("Smallest number:") + '\
                                 <input id="eRMQmin" type="text" style="width:80px"  value="1" onkeyup="$exeDevice.onlyNumbers(this)" />\
                             </label>\
-                            <label for="eRMQmax">' + _("Número más alto:") + '\
+                            <label for="eRMQmax">' + _("Biggest number:") + '\
                                 <input id="eRMQmax" type="text" style="width:80px"  value="9" onkeyup="$exeDevice.onlyNumbers(this)" />\
                             </label></p>\
-                            <p><label for="eRMQdecimals">' + _("Numero de decimales(Operandos):") + '\
+                            <p><label for="eRMQdecimals">' + _("Number of decimals (operands):") + '\
                                 <select id="eRMQdecimals" onchange="$exeDevice.setDecimalsInResults(this.value)">\
                                     <option value="0">0</option>\
                                     <option value="1">1</option>\
@@ -144,25 +144,25 @@ var $exeDevice = {
                                 </select>\
                             </label></p>\
                             <p><strong>' + _("Operaciones:") + '</strong>\
-                                <label for="eRMQadd"><input id="eRMQadd" type="checkbox" /> ' + _("Suma") + '</label>\
-                                <label for="eRMQsubs"><input id="eRMQsubs" type="checkbox" /> ' + _("Resta") + '</label>\
-                                <label for="eRMQmult"><input id="eRMQmult" type="checkbox" checked /> ' + _("Multiplicación") + '</label>\
-                                <label for="eRMQdiv"><input id="eRMQdiv" type="checkbox" /> ' + _("División") + '</label>\
+                                <label for="eRMQadd"><input id="eRMQadd" type="checkbox" /> ' + _("Addition") + '</label>\
+                                <label for="eRMQsubs"><input id="eRMQsubs" type="checkbox" /> ' + _("Subtraction") + '</label>\
+                                <label for="eRMQmult"><input id="eRMQmult" type="checkbox" checked /> ' + _("Multiplication") + '</label>\
+                            </p>\
+                                <label for="eRMQdiv"><input id="eRMQdiv" type="checkbox" /> ' + _("Division") + '</label>\
+                            <p>\
+                                <label for="eRMQdecimalsInResults"><input id="eRMQdecimalsInResults" type="checkbox" /> ' + _("Allow decimals in the results") + '</label>\
                             </p>\
                             <p>\
-                                <label for="eRMQdecimalsInResults"><input id="eRMQdecimalsInResults" type="checkbox" /> ' + _("Permitir decimales en los resultados") + '</label>\
+                                <label for="eRMQnegative"><input id="eRMQnegative" type="checkbox" /> ' + _("Allow negative results") + '</label>\
                             </p>\
                             <p>\
-                                <label for="eRMQnegative"><input id="eRMQnegative" type="checkbox" /> ' + _("Permitir resultados negativos") + '</label>\
-                            </p>\
-                            <p>\
-                                <label for="eRMQzero"><input id="eRMQzero" type="checkbox" /> ' + _("Permitir cero como valor resultante") + '</label>\
+                                <label for="eRMQzero"><input id="eRMQzero" type="checkbox" /> ' + _("Allow zero as result") + '</label>\
                             </p>\
                             <p>\
                                 <label for="eRMQShowMinimize"><input type="checkbox" id="eRMQShowMinimize"> ' + _("Show minimized.") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="eRMQTime">' + _("Tiempo(minutos)") + ':\
+                                <label for="eRMQTime">' + _("Time (minutes)") + ':\
                                 <input type="number" name="eRMQTime" id="eRMQTime" value="0" min="0" max="59" /> </label>\
                                 </p>\
                             <p>\
@@ -205,7 +205,7 @@ var $exeDevice = {
             time = parseInt($('#eRMQTime').val());
         var num = $("#eRMQnum");
         if (num.val() == "") {
-            $exeDevice.showMessage(_("Indica el número de operaciones"));
+            $exeDevice.showMessage(_("Please specify the number of operations"));
             num.focus();
             return false;
         }
@@ -213,7 +213,7 @@ var $exeDevice = {
 
         var min = $("#eRMQmin");
         if (min.val() == "") {
-            $exeDevice.showMessage(_("Indica el valor mínimo del operando"));
+            $exeDevice.showMessage(_("Please define the minimal value of the operand"));
             min.focus();
             return false;
         }
@@ -222,7 +222,7 @@ var $exeDevice = {
         // max
         var max = $("#eRMQmax");
         if (max.val() == "") {
-            $exeDevice.showMessage(_("Indica el valor máximo del operanod "));
+            $exeDevice.showMessage(_("Please define the highest value of the operand"));
             max.focus();
             return false;
         }

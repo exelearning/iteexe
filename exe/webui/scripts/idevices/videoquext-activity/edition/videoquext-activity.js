@@ -666,7 +666,7 @@ var $exeDevice = {
                                 <span id="vquextENumeroPercentaje">1/1</span>\
                             </p>\
                             <p>\
-                                <label for="vquextEModeBoard"><input type="checkbox" id="vquextEModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                                <label for="vquextEModeBoard"><input type="checkbox" id="vquextEModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
                         </div>\
                     </fieldset>\

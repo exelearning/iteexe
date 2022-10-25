@@ -10,7 +10,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Sopa')
+        name: _('Word Search')
     },
     msgs: {},
     active: 0,
@@ -55,12 +55,12 @@ var $exeDevice = {
         "msgClose": _("Close"),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
-        "msgWordsFind": _("Has encontrado todas las palabras"),
+        "msgWordsFind": _("You found all the words"),
         "msgEndGameScore": _("Please start playing first..."),
-        "mgsGameStart": _("El juego ha comenzado"),
-        "msgYouScore": _("Puntuación"),
+        "mgsGameStart": _("The game has already started."),
+        "msgYouScore": _("Score"),
         "msgEndGameM": _("Has finalizado el juego. Tu puntuación es"),
-        "msgEnd": _("Finalizar"),
+        "msgEnd": _("Finish"),
         "msgEndTime": _("El tiempo ha finalizado. Tu puntuación es")
 
     },
@@ -88,7 +88,7 @@ var $exeDevice = {
     createForm: function () {
         var field = $("textarea.jsContentEditor").eq(0)
         if ($(".iDevice_wrapper.SopaIdevice").length > 0) {
-            html = '<p>' + _('Sólo puede haber una actividad tipo sopa de letras por página/nodo') + '</p>';
+            html = '<p>' + _('It can only be one Word Search game per page.') + '</p>';
             field.before(html);
             return;
         }
@@ -96,9 +96,9 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Cree actividades o juegos tipo de sopa de letras en las que podrá utilizar definiciones con texto, imágenes y/o sonidos.")+' <a href="https://youtu.be/T9n2rGA-80g" hreflang="es" rel="lightbox">'+_("Aprenda a usar este iDevice.")+'</a></div>\
+                <div class="exe-idevice-info">'+_("Create word search games with additional text, images or sound.")+' <a href="https://youtu.be/T9n2rGA-80g" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
-                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Encuentra las palabras ocultas en nuestra sopa de letras.")) + '\
+                ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Find the hidden words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
@@ -106,15 +106,15 @@ var $exeDevice = {
 							<label for="sopaEShowMinimize"><input type="checkbox" id="sopaEShowMinimize"> ' + _("Show minimized.") + ' </label>\
                         </p>\
                         <p>\
-							<label for="sopaETime">' + _("Tiempo(minutos)") + ':\
+							<label for="sopaETime">' + _("Time (minutes)") + ':\
 							<input type="number" name="sopaETime" id="sopaETime" value="0" min="0" max="59" /> </label>\
                         </p>\
                         <p>\
-							<label for="sopaEShowResolve"><input type="checkbox" id="sopaEShowResolve" checked> ' + _("Mostrar botón resolver.") + ' </label>\
+							<label for="sopaEShowResolve"><input type="checkbox" id="sopaEShowResolve" checked> ' + _('Show "Solve" button.') + ' </label>\
                         </p>\
                         <p>\
-                            <label for="sopaEDiagonals"><input type="checkbox"  id="sopaEDiagonals"> ' + _("Diagonales") + '. </label> \
-                            <label for="sopaEReverses"><input type="checkbox"  id="sopaEReverses"> ' + _("Inversas") + '. </label> \
+                            <label for="sopaEDiagonals"><input type="checkbox"  id="sopaEDiagonals"> ' + _("Diagonal") + '. </label> \
+                            <label for="sopaEReverses"><input type="checkbox"  id="sopaEReverses"> ' + _("Inverse") + '. </label> \
                         </p>\
                         <p>\
                             <label for="sopaEHasFeedBack"><input type="checkbox"  id="sopaEHasFeedBack"> ' + _("Feedback") + '. </label> \

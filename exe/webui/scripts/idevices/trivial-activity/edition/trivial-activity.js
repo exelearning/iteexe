@@ -11,8 +11,7 @@
 var $exeDevice = {
     // i18n
     i18n: {
-        name: _('TriviExt'),
-        alt: _('TriviExt')
+        name: _('Trivia')
     },
     iDevicePath: "/scripts/idevices/trivial-activity/edition/",
     msgs: {},
@@ -741,7 +740,7 @@ var $exeDevice = {
                                 <label for="trivialETimeShowSolution">' + _("Show solution time (seconds)") + ' <input type="number" name="trivialETimeShowSolution" id="trivialETimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                             <p>\
-                                <label for="trivialModeBoard"><input type="checkbox" id="trivialModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                                <label for="trivialModeBoard"><input type="checkbox" id="trivialModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
                         </div>\
                     </fieldset>\

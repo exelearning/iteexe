@@ -70,7 +70,7 @@ var $exeDevice = {
 		"msgAudio": _("Audio"),
 		"msgCorrect": _("Correct"),
 		"msgIncorrect": _("Incorrect"),
-		"msgWhiteBoard": _("Pizarra digital")
+		"msgWhiteBoard": _("Digital blackboard")
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -135,7 +135,7 @@ var $exeDevice = {
 								<label for="roscoCaseSensitive"><input type="checkbox" id="roscoCaseSensitive"> ' + _("Case sensitive") + ' </label>\
 							</p>\
 							<p>\
-								<label for="roscoModeBoard"><input type="checkbox" id="roscoModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+								<label for="roscoModeBoard"><input type="checkbox" id="roscoModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
 							</p>\
 						</div>\
 					</fieldset>\
