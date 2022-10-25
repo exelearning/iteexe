@@ -674,13 +674,13 @@ var $eXeIdentifica = {
         $('#idfMessageClue-' + instance).html(clue);
         $('#idfMessageClue-' + instance).fadeOut(400).fadeIn(300).fadeOut(400).fadeIn(300);
         mOptions.pointsClue = mOptions.pointsQuestion - ((mOptions.activeClue + 1) * mOptions.pointsQuestion / ((mOptions.questionsGame[mOptions.activeQuestion].numberClues * 2)));
-        message = message + ' ' + mOptions.pointsClue.toFixed(2) + ' ' + mOptions.msgs.msgPoints;
+        message = mOptions.msgs.msgUseClue.replace('%s', mOptions.pointsClue.toFixed(2));
         $('#idfPoints-' + instance).text(mOptions.pointsClue.toFixed(2))
         mOptions.activeClue++;
         $('#idfUseClue-' + instance).html(mOptions.msgs.msgShowNewClue);
         if (mOptions.activeClue >= numclues) {
             $('#idfUseClue-' + instance).hide();
-            message =  mOptions.msgs.msgUseAllClues + ' ' + mOptions.pointsClue.toFixed(2) + ' ' +  mOptions.msgs.msgPoints;
+            message =  mOptions.msgs.msgUseAllClues.replace('%s', mOptions.pointsClue.toFixed(2));
             $('#idfUseClue-' + instance).html(mOptions.msgs.msgShowClue);
         }
         $eXeIdentifica.showMessage(0, message, instance);

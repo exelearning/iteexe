@@ -93,7 +93,7 @@ var $exeDevice = {
         msgs.msgCompleteData = _("Provide an image, text or audio for each card's front side");
         msgs.msgCompleteDataBack = _("Provide an image, text or audio for each card's back side");
         msgs.msgEOneCard = _("Please create at least one card");
-        msgs.msgMaxCards = _("Maximum card number:") + " 200";
+        msgs.msgMaxCards = _("Maximum card number: %s.");
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -969,8 +969,8 @@ var $exeDevice = {
         $('#flipcardsEPasteC').hide();
         $('#flipcardsEAddC').on('click', function (e) {
             e.preventDefault();
-            if ($exeDevice.cardsGame.length > 100) {
-                $exeDevice.showMessage($exeDevice.msgs.msgMaxCards);
+            if ($exeDevice.cardsGame.length > 200) {
+                $exeDevice.showMessage($exeDevice.msgs.msgMaxCards.replace('%s',200));
                 return;
             }
             $exeDevice.addCard(true);
@@ -994,6 +994,10 @@ var $exeDevice = {
         });
         $('#flipcardsEPasteC').on('click', function (e) {
             e.preventDefault();
+            if ($exeDevice.cardsGame.length > 200) {
+                $exeDevice.showMessage($exeDevice.msgs.msgMaxCards.replace('%s',200));
+                return;
+            }
             $exeDevice.pasteCard();
 
         });

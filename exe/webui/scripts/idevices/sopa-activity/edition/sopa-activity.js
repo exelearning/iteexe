@@ -55,13 +55,13 @@ var $exeDevice = {
         "msgClose": _("Close"),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
-        "msgWordsFind": _("You found all the words"),
+        "msgWordsFind": _("You found all the words. Your score is %s."),
         "msgEndGameScore": _("Please start playing first..."),
         "mgsGameStart": _("The game has already started."),
         "msgYouScore": _("Score"),
-        "msgEndGameM": _("Has finalizado el juego. Tu puntuación es"),
+        "msgEndGameM": _("Game time is over. Your score is %s."),
         "msgEnd": _("Finish"),
-        "msgEndTime": _("El tiempo ha finalizado. Tu puntuación es")
+        "msgEndTime": _("You finished the game. Your score is %s.")
 
     },
     init: function () {

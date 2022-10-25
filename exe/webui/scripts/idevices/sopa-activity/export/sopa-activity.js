@@ -796,12 +796,12 @@ var $eXeSopa = {
             $('#sopaPShowClue').text(mclue);
             $('#sopaPShowClue').show();
         }
-        var message = $eXeSopa.getRetroFeedMessages(true) + ' ' + mOptions.msgs.msgWordsFind + '. ' + mOptions.msgs.msgYouScore + ': ' + score
+        var message = $eXeSopa.getRetroFeedMessages(true) + ' ' + mOptions.msgs.msgWordsFind.replace('%s',score);
 
         if (mode == 1) {
-            message = mOptions.msgs.msgEndGameM + ': ' + score;
+            message = mOptions.msgs.msgEndGameM.replace('%s', score);
         } else if (mode == 2) {
-            message = mOptions.msgs.msgEndTime + ': ' + score;
+            message = mOptions.msgs.msgEndTime.replace('%s', score);
         }
         type = (($eXeSopa.hits * 10) / mOptions.numberQuestions) >= 5 ? 2 : 1;
         $eXeSopa.showMessage(type, message)
@@ -834,7 +834,7 @@ var $eXeSopa = {
         $sopaOverPoint.show();
         $sopaOverHits.show();
         var mclue = '';
-        message = $eXeSopa.getRetroFeedMessages(true) + ' ' + msgs.msgWordsFind;
+        message = $eXeSopa.getRetroFeedMessages(true) + ' ' + msgs.msgWordsFind.replace('%s',$eXeSopa.score.toFixed(2));
         messageColor = 2;
         $sopaHistGame.show();
         $eXeSopa.showMessage(messageColor, message);
