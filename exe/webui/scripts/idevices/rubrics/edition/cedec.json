@@ -1,15 +1,18 @@
 {
 	"rubrics" : [
 		{
-			"title" : "Rúbrica para evaluar un trabajo escrito",
+			"title" : "Rúbrica para evaluar un informe escrito y gráfico",
 			"author" : "CEDEC",
 			"author-url" : "http://cedec.intef.es/",
 			"license" : "CC-BY-SA",
 			"categories" : [
-				"Aspectos formales",
-				"Contenidos",
-				"Expresión y ortografía",
-				"Aportación personal"
+				"Título",
+				"Primer Borrador",
+				"Construcción de Párrafos",
+				"Redacción",
+				"Calidad de Información",
+				"Organización",
+				"Imágenes y vídeos"
 			],
 			"scores" : [
 				"4 Excelente",
@@ -21,73 +24,127 @@
 				[
 					{
 						"weight" : "4",
-						"text" : "Se presenta en plazo, cumple con las indicaciones de extensión mínima, portada, índice y estructura."
+						"text" : "El título es muy creativo y sugerente y  resume muy bien la idea principal del tema."
 					},
 					{
 						"weight" : "3",
-						"text" : "Se presenta en plazo, cumple con casi todas las indicaciones de extensión mínima, portada, índice y estructura."
+						"text" : "El título es creativo y sugerente y resume bien la idea principal del tema."
 					},
 					{
 						"weight" : "2",
-						"text" : "Se presenta en plazo, cumple con algunas indicaciones de extensión mínima, portada, índice y estructura."
+						"text" : "El título resume la idea principal del tema."
 					},
 					{
 						"weight" : "1",
-						"text" : "No se presenta en plazo o no se cumple con las indicaciones de extensión mínima, portada, índice y estructura."
+						"text" : "El título no resume la idea principal del tema."
 					}					
 				],
 				[
 					{
 						"weight" : "4",
-						"text" : "Están bien organizados todos los contenidos y se ajustan al tema establecido."
+						"text" : "Un borrador detallado es presentado ordenadamente que incluye toda la información requerida."
 					},
 					{
 						"weight" : "3",
-						"text" : "Están bien organizados casi todos los contenidos y se ajustan al tema establecido."
+						"text" : "El borrador incluye toda la información requerida y es legible."
 					},
 					{
 						"weight" : "2",
-						"text" : "Están bien organizados algunos de los contenidos y se ajustan al tema establecido."
+						"text" : "El borrador incluye la mayoría de la información requerida y es legible."
 					},
 					{
 						"weight" : "1",
-						"text" : "No están bien organizados  los contenidos ni se ajustan al tema establecido."
+						"text" : "Al borrador le falta información requerida y es difícil de leer."
 					}					
 				],
 				[
 					{
 						"weight" : "4",
-						"text" : "Está redactado de forma correcta y cumple con las normas ortográficas y gramaticales."
+						"text" : "Todos los párrafos incluyen una introducción, explicaciones o detalles y una conclusión."
 					},
 					{
 						"weight" : "3",
-						"text" : "Está redactado de forma correcta y cumple con casi todas las normas ortográficas y gramaticales."
+						"text" : "La mayor parte de los párrafos incluye una introducción, explicaciones o detalles y una conclusión."
 					},
 					{
 						"weight" : "2",
-						"text" : "No tiene una redacción correcta, pero cumple con casi todas las normas ortográficas y gramaticales."
+						"text" : "Los párrafos incluyen información relacionada pero no fueron generalmente bien organizados."
 					},
 					{
 						"weight" : "1",
-						"text" : "No está redactado de forma correcta ni cumple con las normas ortográficas y gramaticales."
+						"text" : "La estructura del párrafo no estaba clara y las oraciones no estaban generalmente relacionadas."
 					}					
 				],
 				[
 					{
 						"weight" : "4",
-						"text" : "Se aportan conclusiones y aportaciones creativas y originales que le dan un toque personal al trabajo."
+						"text" : "No hay errores de gramática, ortografía o puntuación."
 					},
 					{
 						"weight" : "3",
-						"text" : "Se incorporan aportaciones creativas y originales que le dan un toque personal al trabajo."
+						"text" : "Casi no hay errores de gramática, ortografía o puntuación."
 					},
 					{
 						"weight" : "2",
-						"text" : "Se aportan conclusiones pero no aportaciones creativas y originales que le dan un toque personal al trabajo."
+						"text" : "Unos pocos errores de gramática, ortografía o puntuación."
 					},
 					{
 						"weight" : "1",
-						"text" : "No se aportan conclusiones ni aportaciones creativas y originales que le dan un toque personal al trabajo."
+						"text" : "Muchos errores de gramática, ortografía o puntuación."
+					}					
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "La información está claramente relacionada con el tema principal y proporciona varias ideas secundarias y/o ejemplos."
+					},
+					{
+						"weight" : "3",
+						"text" : "La información da respuesta a las preguntas principales y 1-2 ideas secundarias y/o ejemplos."
+					},
+					{
+						"weight" : "2",
+						"text" : "La información da respuesta a las preguntas principales, pero no da detalles y/o ejemplos."
+					},
+					{
+						"weight" : "1",
+						"text" : "La información tiene poco o nada que ver con las preguntas planteadas."
+					}					
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "La información está muy bien organizada con párrafos bien redactados y con subtítulos."
+					},
+					{
+						"weight" : "3",
+						"text" : "La información está organizada con párrafos bien redactados."
+					},
+					{
+						"weight" : "2",
+						"text" : "La información está organizada, pero los párrafos no están bien redactados."
+					},
+					{
+						"weight" : "1",
+						"text" : "La información proporcionada no parece estar organizada."
+					}					
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Las imágenes y vídeos aportados son muy apropiados para  la información escrita."
+					},
+					{
+						"weight" : "3",
+						"text" : "Las imágenes y vídeos son apropiados para la información escrita."
+					},
+					{
+						"weight" : "2",
+						"text" : "Algunas imágenes y vídeos no son apropiados para la información escrita."
+					},
+					{
+						"weight" : "1",
+						"text" : "La mayoría de las veces, las imágenes y los vídeos no son apropiados para la información escrita."
 					}					
 				]				
 			]
@@ -391,16 +448,17 @@
 			]
 		},
 		{
-			"title" : "Rúbrica para evaluar un vídeo en el aula",
+			"title" : "Rúbrica para evaluar la elaboración de un vídeo",
 			"author" : "CEDEC",
 			"author-url" : "http://cedec.intef.es/",
 			"license" : "CC-BY-SA",
 			"categories" : [
 				"Contenido",
 				"Originalidad",
-				"Uso del lenguaje",
-				"Vídeografía (interés)",
-				"Vídeografía (claridad)"
+				"Vocabulario / Uso del lenguaje",
+				"Mensaje",
+				"Grabación y edición del vídeo",
+				"Planificación"
 			],
 			"scores" : [
 				"4 Excelente",
@@ -412,15 +470,15 @@
 				[
 					{
 						"weight" : "4",
-						"text" : "Cubre los temas a profundidad con detalles y ejemplos."
+						"text" : "Cubre los temas con profundidad, utilizando detalles y ejemplos. El conocimiento del tema es excelente."
 					},
 					{
 						"weight" : "3",
-						"text" : "Incluye conocimiento básico sobre el tema. El contenido parece ser bueno."
+						"text" : "Incluye un conocimiento básico sobre el tema. El contenido parece ser bueno."
 					},
 					{
 						"weight" : "2",
-						"text" : "Incluye información esencial sobre el tema, pero tiene 1-2 errores en los hechos."
+						"text" : "Incluye información esencial sobre el tema, pero tiene dos errores en los hechos."
 					},
 					{
 						"weight" : "1",
@@ -430,7 +488,7 @@
 				[
 					{
 						"weight" : "4",
-						"text" : "El producto demuestra  gran originalidad. Las ideas son creativas e ingeniosas."
+						"text" : "El producto demuestra gran originalidad. Las ideas son creativas e ingeniosas."
 					},
 					{
 						"weight" : "3",
@@ -438,65 +496,83 @@
 					},
 					{
 						"weight" : "2",
-						"text" : "Usa ideas de otras personas (dándoles crédito), pero no hay casi evidencia de ideas originales."
+						"text" : "Usa ideas de otras personas ( dándoles crédito ) pero no hay casi evidencia de ideas originales."
 					},
 					{
 						"weight" : "1",
-						"text" : "Usa ideas de otras personas, pero no les da crédito."
+						"text" : "Usa ideas de otras personas pero no les da crédito."
 					}					
 				],
 				[
 					{
 						"weight" : "4",
-						"text" : "No hay faltas de ortografía ni errores gramaticales."
+						"text" : "No hay faltas de ortografía ni errores gramaticales. Vocabulario muy apropiado para el tema y la audiencia."
 					},
 					{
 						"weight" : "3",
-						"text" : "Tres o menos faltas de ortografía y/o errores de puntuación."
+						"text" : "Tres o menos faltas ortográficas y/ gramaticales. Vocabulario bastante apropiado para el tema y la audiencia."
 					},
 					{
 						"weight" : "2",
-						"text" : "Cuatro errores de ortografía y/o errores gramaticales."
+						"text" : "Cuatro errores de ortografía y/o errores gramaticales. Vocabulario no demasiado apropiado para el tema y audiencia."
 					},
 					{
 						"weight" : "1",
-						"text" : "Más de cuatro errores de ortografía y de gramática."
+						"text" : "Más de cuatro errores ortográficos y/o gramaticales. Vocabulario nada apropiado para el tema y la audiencia."
 					}					
 				],
 				[
 					{
 						"weight" : "4",
-						"text" : "Muchas diferentes tomas, ángulos de cámara, efectos de sonido, y/o uso cuidadoso del acercamiento proporcionando variedad en el vídeo."
+						"text" : "El mensaje es perfectamente comprensible, realizado en un volumen alto, entendible y con seguridad y confianza. La información es clara y precisa."
 					},
 					{
 						"weight" : "3",
-						"text" : "Varias (3-4) diferentes tomas, ángulos de cámara, efectos de sonido, y/o uso cuidadoso del acercamiento proporcionando variedad en el vídeo."
+						"text" : "El mensaje es bastante comprensible, realizado en un volumen medio, entendible y con seguridad y confianza. La información es bastante clara y precisa."
 					},
 					{
 						"weight" : "2",
-						"text" : "Una o dos diferentes tomas, ángulos de cámara, efectos de sonido, y/o uso cuidadoso del acercamiento proporcionando variedad en el vídeo."
+						"text" : "El mensaje no es demasiado comprensible. El volumen es excesivamente alto o apenas audible. No es realizado con demasiada seguridad y la información es ambigua."
 					},
 					{
 						"weight" : "1",
-						"text" : "Poco esfuerzo fue hecho para proporcionar variedad en el vídeo."
+						"text" : "El mensaje no es nada comprensible. El volumen es inadecuado por exceso o defecto. No es realizado con ninguna seguridad y la información es transmitida ausente de claridad."
 					}					
 				],
 				[
 					{
 						"weight" : "4",
-						"text" : "La calidad del vídeo y el enfoque fue excelente en todas sus partes."
+						"text" : "Diferentes tomas o ángulos de cámara, efectos de sonido, imágenes, etc., proporcionando variedad al vídeo. La calidad del vídeo y enfoque fue excelente en todas sus partes."
 					},
 					{
 						"weight" : "3",
-						"text" : "La calidad del vídeo y el enfoque fue excelente en la mayor parte del vídeo."
+						"text" : "3-4 tomas diferentes o ángulos de cámara, efectos de sonido, imágenes, etc., proporcionando variedad al vídeo. La calidad del vídeo y enfoque fue excelente en casi todas sus partes."
 					},
 					{
 						"weight" : "2",
-						"text" : "La calidad no es muy buena, pero el enfoque fue excelente en todas las partes del vídeo."
+						"text" : "1-2 tomas diferentes o ángulos de cámara, efectos de sonido, imágenes, proporcionando variedad en el vídeo. La calidad no es muy buena pero el enfoque fue excelente en todas las partes del vídeo."
 					},
 					{
 						"weight" : "1",
-						"text" : "La calidad del vídeo y el enfoque no es muy bueno."
+						"text" : "Poco esfuerzo para proporcionar variedad en el vídeo. La calidad del vídeo y el enfoque no es muy bueno."
+					}					
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Existe una excelente labor de planificación con un guión previo y se percibe que habían hecho suficientes ensayos antes de la grabación."
+					},
+					{
+						"weight" : "3",
+						"text" : "Se detecta que ha habido planificación pero se detecta que en algunos momentos se improvisa con no demasiado acierto."
+					},
+					{
+						"weight" : "2",
+						"text" : "No ha habido suficiente planificación y se ha improvisado desafortunadamente en muchos aspectos."
+					},
+					{
+						"weight" : "1",
+						"text" : "No ha habido planificación alguna. El vídeo ha sido totalmente improvisado."
 					}					
 				]				
 			]
@@ -707,117 +783,6 @@
 			]
 		},		
 		{
-			"title" : "Rúbrica para evaluar el portafolio personal",
-			"author" : "CEDEC",
-			"author-url" : "http://cedec.intef.es/",
-			"license" : "CC-BY-SA",
-			"categories" : [
-				"Organización",
-				"Orden y limpieza",
-				"Presentación",
-				"Evidencias de aprendizaje",
-				"Contenidos"
-			],
-			"scores" : [
-				"4 Excelente",
-				"3 Satisfactorio",
-				"2 Mejorable",
-				"1 Insuficiente"
-			],
-			"descriptions" : [
-				[
-					{
-						"weight" : "4",
-						"text" : "Clasifica y archiva todas las tareas relacionadas con los contenidos propuestos."
-					},
-					{
-						"weight" : "3",
-						"text" : "Clasifica y archiva la mayoría de las tareas relacionadas con los contenidos propuestos."
-					},
-					{
-						"weight" : "2",
-						"text" : "Clasifica y archiva algunas de las tareas relacionadas con los contenidos propuestos."
-					},
-					{
-						"weight" : "1",
-						"text" : "No clasifica y ni archiva ninguna de las tareas relacionadas con los contenidos propuestos."
-					}
-				],
-				[
-					{
-						"weight" : "4",
-						"text" : "Todos los trabajos y tareas se presentan de manera adecuada, en cuanto limpieza y orden."
-					},
-					{
-						"weight" : "3",
-						"text" : "La mayoría de los trabajos y tareas se presentan de manera adecuada, en cuanto limpieza y orden."
-					},
-					{
-						"weight" : "2",
-						"text" : "Sólo algunos trabajos y tareas se presentan de manera adecuada, en cuanto limpieza y orden."
-					},
-					{
-						"weight" : "1",
-						"text" : "Ninguno de los trabajos y tareas se presentan de manera adecuada, en cuanto limpieza y orden."
-					}
-				],
-				[
-					{
-						"weight" : "4",
-						"text" : "La presentación del portafolio es creativa y original."
-					},
-					{
-						"weight" : "3",
-						"text" : "La presentación del portafolio es normal y adecuada."
-					},
-					{
-						"weight" : "2",
-						"text" : "La presentación del portafolio aunque es creativa, no es adecuada."
-					},
-					{
-						"weight" : "1",
-						"text" : "La presentación del portafolio es muy sencilla y poco original."
-					}
-				],
-				[
-					{
-						"weight" : "4",
-						"text" : "El alumno evidencia todos los logros en el proceso y en los contenidos demostrando esfuerzo, calidad y variedad en el desarrollo de los trabajos."
-					},
-					{
-						"weight" : "3",
-						"text" : "El alumno evidencia la mayoría de logros en el proceso y en los contenidos demostrando esfuerzo, calidad y variedad en el desarrollo de los trabajos."
-					},
-					{
-						"weight" : "2",
-						"text" : "El alumno evidencia algunos logros en el proceso y en los contenidos demostrando algún esfuerzo, calidad y variedad en el desarrollo de los trabajos."
-					},
-					{
-						"weight" : "1",
-						"text" : "El alumno no evidencia ningún logro en el proceso y ni en los contenidos no demostrando esfuerzo, ni calidad y variedad en el desarrollo de los trabajos."
-					}
-				],
-				[
-					{
-						"weight" : "4",
-						"text" : "Las ideas expresadas están perfectamente organizadas de forma clara siguiendo un orden totalmente lógico con coherencia y cohesión."
-					},
-					{
-						"weight" : "3",
-						"text" : "Las ideas expresadas están en general bien organizadas de forma clara siguiendo un orden lógico con coherencia y cohesión."
-					},
-					{
-						"weight" : "2",
-						"text" : "Las ideas expresadas no están suficientemente organizadas de forma clara y no siguen un orden totalmente lógico con coherencia y cohesión."
-					},
-					{
-						"weight" : "1",
-						"text" : "Las ideas expresadas están mal organizadas y no siguen un orden totalmente lógico con coherencia y cohesión."
-					}
-				]				
-			]
-		},
-		{
 			"title" : "Rúbrica para evaluar el trabajo en equipo",
 			"author" : "CEDEC",
 			"author-url" : "http://cedec.intef.es/",
@@ -907,6 +872,691 @@
 						"text" : "Solo un miembro del equipo (o ninguno) ha ejercido bien sus funciones y ha cumplido con sus responsabilidades."
 					}
 				]				
+			]
+		},
+		{
+			"title" : "Rúbrica para evaluar un blog-portafolio personal",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Diseño",
+				"Estructura",
+				"Contenidos",
+				"Gramática",
+				"Entradas"
+			],
+			"scores" : [
+				"4 Excelente",
+				"3 Satisfactorio",
+				"2 Mejorable",
+				"1 Insuficiente"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "4",
+						"text" : "El blog tiene una apariencia muy original. Ha hecho muchas modificaciones en la tipografía, en la distribución de los gadgets y en la combinación de colores para contribuir a su claridad, comprensión y personalización."
+					},
+					{
+						"weight" : "3",
+						"text" : "El blog tiene una apariencia original. Ha hecho algunas modificaciones en la tipografía, en la distribución de los gadgets y en la combinación de colores para contribuir a su claridad, comprensión y personalización."
+					},
+					{
+						"weight" : "2",
+						"text" : "El blog tiene una apariencia poco original . Ha hecho pocas modificaciones en la tipografía, en la distribución de los gadgets y en la combinación de colores para contribuir a su claridad, comprensión y personalización."
+					},
+					{
+						"weight" : "1",
+						"text" : "El blog tiene una apariencia estándar. No ha hecho ninguna modificación en la tipografía, en la distribución de los gadgets y en la combinación de colores para contribuir a su claridad, comprensión y personalización."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "El blog contiene todos los apartados necesarios: título del blog, datos personales, etiquetas, entradas, archivo... perfectamente colocados y distribuidos en las columnas."
+					},
+					{
+						"weight" : "3",
+						"text" : "El blog contiene 4 de  los apartados necesarios: título del blog, datos personales, etiquetas, entradas, archivo... perfectamente colocados y distribuidos en las columnas."
+					},
+					{
+						"weight" : "2",
+						"text" : "El blog contiene 3 de los apartados necesarios: título del blog, datos personales, etiquetas, entradas, archivo... perfectamente colocados y distribuidos en las columnas."
+					},
+					{
+						"weight" : "1",
+						"text" : "El blog no contiene los apartados necesarios: título del blog, datos personales, etiquetas, entradas, archivo.. perfectamente colocados y distribuidos en las columnas."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Las ideas expresadas están perfectamente organizadas de forma clara siguiendo un orden totalmente lógico, con coherencia y cohesión."
+					},
+					{
+						"weight" : "3",
+						"text" : "Las ideas expresadas están satisfactoriamente organizadas de forma clara siguiendo un orden suficientemente lógico con coherencia y cohesión."
+					},
+					{
+						"weight" : "2",
+						"text" : "Las ideas expresadas no están suficientemente organizadas de forma clara y no siguen un orden totalmente lógico con coherencia y cohesión."
+					},
+					{
+						"weight" : "1",
+						"text" : "Las ideas expresadas están mal organizadas y no siguen un orden totalmente lógico con coherencia y cohesión."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Expresa las ideas con total claridad y aplica correctamente las reglas ortográficas, gramaticales y de sintaxis."
+					},
+					{
+						"weight" : "3",
+						"text" : "Expresa las ideas con suficiente claridad y aplica en la mayoría de los casos las reglas ortográficas, gramaticales y de sintaxis."
+					},
+					{
+						"weight" : "2",
+						"text" : "No expresa las ideas con total claridad y aplica con algunos errores  las reglas ortográficas, gramaticales y de sintaxis."
+					},
+					{
+						"weight" : "1",
+						"text" : "No expresa las ideas con total claridad y aplica con muchos errores las reglas ortográficas, gramaticales y de sintaxis."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Se recogen de forma ordenada y con sus respectivas etiquetas todas las tareas relacionadas con los contenidos trabajados en clase."
+					},
+					{
+						"weight" : "3",
+						"text" : "Se recogen de forma ordenada y con sus respectivas etiquetas la mayor parte de las tareas relacionadas con los contenidos trabajados en clase."
+					},
+					{
+						"weight" : "2",
+						"text" : "Se recogen de forma ordenada y con sus respectivas etiquetas algunas de las tareas relacionadas con los contenidos trabajados en clase."
+					},
+					{
+						"weight" : "1",
+						"text" : "No aparecen recogidas varias de las tareas realizadas en clase. Además, no están ordenadas y/o carecen de las etiquetas correspondientes."
+					}
+				]
+			]
+		},
+		{
+			"title" : "Rúbrica para evaluar un pódcast",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Lectura del texto",
+				"Análisis y comentario del texto",
+				"Manejo de las herramientas digitales de grabación de audio",
+				"Asunción de tareas",
+				"Participación en el trabajo en equipo"
+			],
+			"scores" : [
+				"4 Excelente",
+				"3 Satisfactorio",
+				"2 Mejorable",
+				"1 Insuficiente"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "4",
+						"text" : "Lee el texto de manera expresiva y cuidando los rasgos propios de la oralidad (tono, ritmo, entonación, énfasis...)."
+					},
+					{
+						"weight" : "3",
+						"text" : "Lee el texto de manera expresiva y cuidando la mayoría de los rasgos propios de la oralidad (tono, ritmo, entonación, énfasis...)."
+					},
+					{
+						"weight" : "2",
+						"text" : "En la lectura del texto no tiene en cuenta todos los rasgos propios de la oralidad (tono, ritmo, entonación, énfasis...)."
+					},
+					{
+						"weight" : "1",
+						"text" : "En la lectura del texto no tiene en cuenta ninguno de los rasgos propios de la oralidad (tono, ritmo, entonación, énfasis...)."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Demuestra comprender en profundidad el texto, la intención del autor, y es capaz de relacionarlo fácilmente con sus propias emociones y experiencias."
+					},
+					{
+						"weight" : "3",
+						"text" : "Demuestra comprender las principales ideas y sentimientos expresados en el texto, y es capaz de encontrar relaciones con sus propias emociones y experiencias."
+					},
+					{
+						"weight" : "2",
+						"text" : "Demuestra comprender algunas de las ideas y sentimientos expresados en el texto, y es capaz de encontrar algunas relaciones con sus propias emociones y experiencias."
+					},
+					{
+						"weight" : "1",
+						"text" : "Demuestra no comprender la esencia del texto ni la intención del autor. No es capaz de relacionarlo con sus propias emociones y experiencias."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Usa las herramientas digitales sin ningún problema y aprovecha todas las posibilidades que ofrecen."
+					},
+					{
+						"weight" : "3",
+						"text" : "Usa las herramientas digitales sin grandes problemas y aprovecha bastante bien las posibilidades que ofrecen."
+					},
+					{
+						"weight" : "2",
+						"text" : "Usa las herramientas digitales con ayuda y no aprovecha todas las posibilidades que ofrecen."
+					},
+					{
+						"weight" : "1",
+						"text" : "Tiene bastantes problemas en el uso de las herramientas digitales y no aprovecha sus posibilidades."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Asume con responsabilidad todas las tareas que le corresponden en la elaboración del pódcast."
+					},
+					{
+						"weight" : "3",
+						"text" : "Asume con responsabilidad casi todas las tareas que le corresponden en la elaboración del pódcast."
+					},
+					{
+						"weight" : "2",
+						"text" : "Asume sólo algunas de las tareas que le corresponden en la elaboración del pódcast."
+					},
+					{
+						"weight" : "1",
+						"text" : "No asume con responsabilidad las tareas que le corresponden en la elaboración del pódcast."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Participa activamente en el equipo aportando ideas y ayudando, cuando lo necesitan, al resto de sus compañeros/as."
+					},
+					{
+						"weight" : "3",
+						"text" : "Participa bastante activamente en el equipo aportando ideas y ayudando, casi siempre al resto de sus compañeros/as."
+					},
+					{
+						"weight" : "2",
+						"text" : "Participa por lo general en el equipo y, en ocasiones, ayuda al resto de sus compañeros/as."
+					},
+					{
+						"weight" : "1",
+						"text" : "Participa poco en el equipo y ofrece poca ayuda al resto de sus compañeros/as."
+					}
+				]
+			]
+		},
+		{
+			"title" : "Rúbrica para evaluar un mapa conceptual",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Identificación del tema principal",
+				"Contenidos / Conceptos",
+				"Organización y estructura",
+				"Formato",
+				"Difusión"
+			],
+			"scores" : [
+				"4 Excelente",
+				"3 Satisfactorio",
+				"2 Mejorable",
+				"1 Insuficiente"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "4",
+						"text" : "El tema aparece identificado claramente en el mapa y expresado de manera clara y precisa."
+					},
+					{
+						"weight" : "3",
+						"text" : "El mapa aparece bien identificado aunque hay algunas imprecisiones en la manera de explicarlo."
+					},
+					{
+						"weight" : "2",
+						"text" : "El tema aparece expresado en el mapa conceptual pero no es fácil de identificar y no está bien expresado."
+					},
+					{
+						"weight" : "1",
+						"text" : "No aparece identificado el tema en el mapa conceptual."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Todos los conceptos y contenidos claves aparecen en el mapa y además se añaden otros que los complementan."
+					},
+					{
+						"weight" : "3",
+						"text" : "Aparecen todos los conceptos y contenidos clave pero no otros de otros temas relacionados."
+					},
+					{
+						"weight" : "2",
+						"text" : "No están todos los conceptos clave aunque sí la mayor parte (al menos el 70%) de ellos."
+					},
+					{
+						"weight" : "1",
+						"text" : "No están reflejados la mayor parte de los conceptos clave."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Los conceptos presentados aparecen ordenados de una manera clara y lógica y conectados mediante elementos gráficos (flechas, símbolos...) y palabras-conectores."
+					},
+					{
+						"weight" : "3",
+						"text" : "Los conceptos presentados aparecen ordenados de manera clara y conectados por elementos gráficos (flechas, símbolos...) exclusivamente."
+					},
+					{
+						"weight" : "2",
+						"text" : "Los conceptos aparecen ordenados de manera clara pero se establecen muy pocas relaciones entre ellos."
+					},
+					{
+						"weight" : "1",
+						"text" : "Los elementos están totalmente desordenados."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Es visualmente atractivo, permite la consulta rápida de los conceptos y los identifica claramente."
+					},
+					{
+						"weight" : "3",
+						"text" : "Identifica los conceptos y es de consulta sencilla aunque no es muy atractivo visualmente."
+					},
+					{
+						"weight" : "2",
+						"text" : "Aparecen todos los conceptos identificados aunque la consulta no es sencilla."
+					},
+					{
+						"weight" : "1",
+						"text" : "Es muy difícil de consultar y no aparecen identificados los conceptos."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "El mapa conceptual es puesto a disposición no solo de los compañeros sino de todas las personas a través de diversos medios (analógicos y digitales de fácil consulta)."
+					},
+					{
+						"weight" : "3",
+						"text" : "El mapa conceptual es puesto a disposición no solo de los compañeros de diversos medios (analógicos y digitales de fácil consulta)."
+					},
+					{
+						"weight" : "2",
+						"text" : "El mapa conceptual es puesto a disposición de los compañeros de aula aunque no resulta sencillo de consulta."
+					},
+					{
+						"weight" : "1",
+						"text" : "Los compañeros (ni personas de otros ámbitos) pueden consultar de ninguna manera el mapa conceptual."
+					}
+				]
+			]
+		},
+		{
+			"title" : "Rúbrica para evaluar un debate en el aula",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Organización",
+				"Debate",
+				"Uso de hechos",
+				"Información",
+				"Presentación y lenguaje"
+			],
+			"scores" : [
+				"4 Excelente",
+				"3 Satisfactorio",
+				"2 Mejorable",
+				"1 Insuficiente"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "4",
+						"text" : "Todos los argumentos están organizados de forma lógica en torno a una idea principal."
+					},
+					{
+						"weight" : "3",
+						"text" : "La mayoría de los argumentos están organizados de forma lógica en torno a una idea principal."
+					},
+					{
+						"weight" : "2",
+						"text" : "Una parte de los argumentos no están organizados en torno a una idea principal de forma clara y lógica."
+					},
+					{
+						"weight" : "1",
+						"text" : "Los argumentos no están vinculados a una idea principal."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Todos los contra-argumentos son precisos, relevantes y fuertes."
+					},
+					{
+						"weight" : "3",
+						"text" : "La mayoría de los contra-argumentos son precisos, relevantes y fuertes."
+					},
+					{
+						"weight" : "2",
+						"text" : "Algunos contra-argumentos son precisos, relevantes y fuertes, pero otros son muy débiles."
+					},
+					{
+						"weight" : "1",
+						"text" : "Los contra-argumentos no son precisos y/o relevantes."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Cada punto principal esta bien apoyado con varios hechos relevantes, estadísticas y/o ejemplos."
+					},
+					{
+						"weight" : "3",
+						"text" : "Casi todos los puntos principales están adecuadamente apoyados con varios hechos relevantes, estadísticas y/o ejemplos."
+					},
+					{
+						"weight" : "2",
+						"text" : "Cada punto principal esta adecuadamente apoyado con varios hechos, estadísticas y/o ejemplos; pero algunos de los hechos no son relevantes."
+					},
+					{
+						"weight" : "1",
+						"text" : "Los puntos principales no están apoyados por hechos."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Toda la información presentada en el debate es clara y precisa."
+					},
+					{
+						"weight" : "3",
+						"text" : "La mayor parte de la información presentada en el debate es clara y precisa."
+					},
+					{
+						"weight" : "2",
+						"text" : "La mayor parte de la información presentada en el debate no es clara ni precisa."
+					},
+					{
+						"weight" : "1",
+						"text" : "La información tiene varios errores y no siempre es clara."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "El equipo usa continuamente gestos, contacto visual, tono de voz, nivel de entusiasmo y el lenguaje en una forma que mantiene la atención de la audiencia."
+					},
+					{
+						"weight" : "3",
+						"text" : "El equipo por lo general usa gestos, contacto visual, tono de voz, nivel de entusiasmo y lenguaje en una forma que mantiene la atención de la audiencia."
+					},
+					{
+						"weight" : "2",
+						"text" : "El equipo algunas veces usa gestos, contacto visual, tono de voz , nivel de entusiasmo y lenguaje en una forma que mantiene la atención de la audiencia."
+					},
+					{
+						"weight" : "1",
+						"text" : "Uno o más de los miembros del equipo tienen un estilo de presentación y lenguaje que no mantiene la atención de la audiencia."
+					}
+				]
+			]
+		},
+		{
+			"title" : "Rúbrica para evaluar un cómic digital",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Imágenes",
+				"Diseño",
+				"Contenido",
+				"Expresión y lenguaje",
+				"Planificación",
+				"Número de viñetas"
+			],
+			"scores" : [
+				"4 Excelente",
+				"3 Satisfactorio",
+				"2 Mejorable",
+				"1 Insuficiente"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "4",
+						"text" : "Las imágenes o elementos visuales son muy adecuados para el tema. Los personajes están perfectamente caracterizados para el tema."
+					},
+					{
+						"weight" : "3",
+						"text" : "Las imágenes o elementos visuales son adecuados. Los personajes están bien caracterizados. Pero con algún error."
+					},
+					{
+						"weight" : "2",
+						"text" : "Algunas imágenes o elementos visuales no son adecuados. Algunos personajes no están bien caracterizados."
+					},
+					{
+						"weight" : "1",
+						"text" : "Escaso uso de elementos visuales, que no permite identificar correctamente la historia a contar. Los personajes no tienen nada que ver con el tema."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Fácil de leer. Muy atractivo. Creativo y original. Muy bien estructurado en su conjunto."
+					},
+					{
+						"weight" : "3",
+						"text" : "Se lee y entiende correctamente. Apariencia correcta."
+					},
+					{
+						"weight" : "2",
+						"text" : "Hay elementos que no se entienden."
+					},
+					{
+						"weight" : "1",
+						"text" : "Difícil de leer. Casi no se entiende."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Los textos explican claramente el tema a tratar. Datos, fechas, personajes... aparecen correctamente. Prácticamente todo el contenido del tema."
+					},
+					{
+						"weight" : "3",
+						"text" : "Los textos explican el tema a tratar. Hay algún error con los datos aportados. Se ha dejado fuera contenido."
+					},
+					{
+						"weight" : "2",
+						"text" : "Hay parte del texto que no se entiende correctamente. Hay información incorrecta y con errores graves. Contenido relevante no aparece."
+					},
+					{
+						"weight" : "1",
+						"text" : "El texto es incomprensible. Hay multutud de datos incorrectos y errores graves. Insuficiente el contenido."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Sin errores gramaticales y ortográficos."
+					},
+					{
+						"weight" : "3",
+						"text" : "Hay algún error gramatical u ortográfico."
+					},
+					{
+						"weight" : "2",
+						"text" : "Hay bastantes errores gramaticales y ortográficos."
+					},
+					{
+						"weight" : "1",
+						"text" : "Hay errores gramaticales y ortográficos graves."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "Se ha realizado una tarea previa de diseño y organización del cómic: carpeta compartida con imágenes, guión... Y se ha ejecutado en función del mismo."
+					},
+					{
+						"weight" : "3",
+						"text" : "Se ha realizado alguna tarea de organización y de diseño previo. Y coincide con el resultado."
+					},
+					{
+						"weight" : "2",
+						"text" : "Casi no se ha realizado ese trabajo de preparación. El resultado es un tanto improvisado."
+					},
+					{
+						"weight" : "1",
+						"text" : "En absoluto se ha tenido en cuenta este aspecto. De ahí un resultado deficiente del cómic."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "El número de viñetas es el correcto para contar la historia. E incluso alguna más."
+					},
+					{
+						"weight" : "3",
+						"text" : "El número de viñetas es correcto."
+					},
+					{
+						"weight" : "2",
+						"text" : "Hay viñetas sin contenido. Su número no es el suficiente."
+					},
+					{
+						"weight" : "1",
+						"text" : "Se ha quedado muy lejos de las viñetas deseadas para realizar un trabajo \"efectivo\"."
+					}
+				]
+			]
+		},
+		{
+			"title" : "Rúbrica para evaluar un reportaje de investigación",
+			"author" : "CEDEC",
+			"author-url" : "http://cedec.intef.es/",
+			"license" : "CC-BY-SA",
+			"categories" : [
+				"Consulta de fuentes",
+				"Organización de la información y los datos",
+				"Redacción del reportaje",
+				"Recursos complementarios",
+				"Publicación"
+			],
+			"scores" : [
+				"4 Excelente",
+				"3 Satisfactorio",
+				"2 Mejorable",
+				"1 Insuficiente"
+			],
+			"descriptions" : [
+				[
+					{
+						"weight" : "4",
+						"text" : "Las fuentes (personas, datos, análisis) usadas son numerosas y diversas relacionadas con el tema y que aportan información relevante."
+					},
+					{
+						"weight" : "3",
+						"text" : "Las fuentes usas son numerosas, diversas relacionadas con el tema aunque no todas aportan información relevante."
+					},
+					{
+						"weight" : "2",
+						"text" : "Las fuentes consultadas son escasas de fuentes y estas no son demasiado variadas. No obstante, todas están relacionadas con el tema."
+					},
+					{
+						"weight" : "1",
+						"text" : "Las fuentes consultadas son muy escasas y además no guardan relación directa con el tema ni aportan información relevante."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "La información recabada está muy bien organizada, puede ser consultada rápidamente y destaca los puntos esenciales que hay que dar a conocer."
+					},
+					{
+						"weight" : "3",
+						"text" : "La información recabada está bien organizada, puede ser consultada con facilidad aunque no quedan muy claro cuáles son los datos y puntos esenciales."
+					},
+					{
+						"weight" : "2",
+						"text" : "La información recabada está bien organizada, aunque no es de fácil consulta."
+					},
+					{
+						"weight" : "1",
+						"text" : "La información recabada de manera muy dispersa. No hay una estructura coherente."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "La redacción del texto del reportaje es ,muy buena: se da a conocer toda la información, la expresión escrita es adecuada y no hay fallos ortográficos."
+					},
+					{
+						"weight" : "3",
+						"text" : "La redacción del texto del reportaje da a conocer toda la información, aunque hay algunos fallos en la expresión escrita."
+					},
+					{
+						"weight" : "2",
+						"text" : "La redacción del texto del reportaje no da a conocer toda la información esencial. Se aprecian algunos fallos en la expresión que hacen que algunos puntos no queden claro. Hay además fallos ortográficos importantes."
+					},
+					{
+						"weight" : "1",
+						"text" : "La redacción es confusa: no se comunica la mayor parte de la información, la expresión escrita es errónea y hay fallos graves de ortografía."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "El texto del reportaje se completa con recursos (imágenes, dibujos, gráficos, tablas estadísticas) que aportan información y matices al texto."
+					},
+					{
+						"weight" : "3",
+						"text" : "El texto del reportaje se completa con recursos (imágenes, dibujos, gráficos, tablas, aunque estos no aportan mucha información complementaria."
+					},
+					{
+						"weight" : "2",
+						"text" : "El texto del reportaje se completa con recursos como imágenes o gráficos aunque estos son escasos y no aportan mucha información."
+					},
+					{
+						"weight" : "1",
+						"text" : "No hay apenas recursos complementarios y estos no dan ninguna información sobre el tema."
+					}
+				],
+				[
+					{
+						"weight" : "4",
+						"text" : "El reportaje es publicado en un formato accesible a todos y de fácil consultad."
+					},
+					{
+						"weight" : "3",
+						"text" : "El reportaje es publicado en un formato de fácil consulta."
+					},
+					{
+						"weight" : "2",
+						"text" : "El reportaje es publicado en un formato que permite consultarlo pero con dificultad."
+					},
+					{
+						"weight" : "1",
+						"text" : "El reportaje no es publicado o lo es de tal forma que es imposible acceder a él."
+					}
+				]
 			]
 		}
 	]

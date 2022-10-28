@@ -810,7 +810,9 @@ var $exeDevice = {
 			var extra = ""
 			// The text INPUT of the first cell should be hidden
 			if (isTopCell) extra = 'style="visibility:hidden" '
-			this.innerHTML = '<input type="text" '+extra+'id="ri_Cell-'+i+'" value="'+html[0]+'" />';
+			var iContent = html[0];
+				iContent = iContent.replace(/"/g,'&quot;');
+			this.innerHTML = '<input type="text" '+extra+'id="ri_Cell-'+i+'" value="'+iContent+'" />';
 			if ($(this).prop("tagName")=='TD') {
 				if (html.length=="2") {
 					try {
