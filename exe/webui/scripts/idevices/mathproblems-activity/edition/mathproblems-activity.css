@@ -1,0 +1,181 @@
+#gameQEIdeviceForm {
+	margin-top: 2em;
+}
+#gameQEIdeviceForm input[type=number] {
+	width: 3em;
+}
+#gameQEIdeviceForm label {
+	margin-right: 0.1em;
+}
+#gameQEIdeviceForm input[type="radio"], #gameQEIdeviceForm input[type="checkbox"], #gameQEIdeviceForm input[type=button] {
+	cursor: pointer;
+}
+
+label[for=gameQEScoreQuestion], input#gameQEScoreQuestion {
+	display: none;
+}
+/* To review */
+#gameQEIdeviceForm .exe-block-info img {
+	margin-left: .2em;
+	vertical-align: middle;
+}
+#gameQEIdeviceFormTab3 * {
+	font-size: 0.9em;
+}
+#gameQEIdeviceFormTab3 p:first-child {
+	margin-top: 0;
+}
+#gameQEIdeviceFormTab3 {
+	overflow: auto;
+}
+#gameQEIdeviceFormTab3 .ci18n {
+	float: left;
+	width: 50%;
+}
+@media screen and (max-width:720px) {
+	#gameQEIdeviceForm #gameQEIdeviceFormTab3 .ci18n {
+		float: none;
+		width: 100%;
+	}
+}
+#gameQEIdeviceForm #gameQEIdeviceFormTab3 label {
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin-bottom: .2em;
+}
+#gameQEIdeviceForm #gameQEIdeviceFormTab3 input {
+	font-size: 0.9em;
+	width: 300px;
+}
+/* Tabs (this should be common) */
+.exe-form-tabs {
+	list-style: none;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+}
+#main .exe-form-tabs li {
+	display: inline;
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+.exe-form-tabs li:first-child a {
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.exe-form-tabs li:last-child a {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.exe-form-tabs a {
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	color: #666;
+	display: inline-block;
+	padding: .5em 1em;
+}
+.exe-form-tabs li:not(:last-child) a {
+	border-right: none;
+}
+.exe-form-tabs .exe-form-active-tab {
+	background: #FFF;
+	color: #000;
+	font-weight: 500;
+}
+#gameQESCORMoptions {
+	margin-left: 1.5em;
+	visibility: hidden;
+}
+label[for=gameQEActivitySCORM] {
+	font-weight: bold;
+}
+#gameQESCORMinstructionsButton {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsButton ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsButton ul li {
+	list-style-image: none;
+	margin: 0 0 .5em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsAuto {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsAuto ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+.MTOE-FeedbackP {
+	display: none;
+}
+
+/* barra edición */
+.MTOE-ENavigationButtons {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+}
+
+.MTOE-ENavigationButton {
+	height: 1.5em;
+	margin: 0 .3em;
+	min-width: 1.5em;
+	width: 1.5em;
+}
+.MTOE-EButtonImage {
+	height: 100%;
+	transition: all .3s ease-in-out;
+	width: 100%;
+}
+.MTOE-EButtonImage:hover {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+.MTOE-NumberQuestion {
+	font-weight: bold;
+	height: 1.5em;
+	line-height: 1.5em;
+	text-align: center;
+	vertical-align: middle;
+	width: 2em;
+}
+/*Numero Preguntas */
+.MTOE-ENumQuestionDiv {
+	align-items: center;
+	display: flex;
+	height: 1.5em;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: .3em;
+	width: 3em;
+	z-index: 20000;
+}
+.MTOE-ENumQ {
+	background-image: url(quextIENumber.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	margin-right: 0px;
+	width: 1.5em;
+}
+.MTOE-ENumQuestions {
+	font-weight: bold;
+	height: 1.5em;
+	text-align: center;
+	width: 2em;
+}
+
