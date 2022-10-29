@@ -70,11 +70,11 @@ var $exeDevice = {
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
-        "msgSolution": _( "Solution"),
-        "msgTry": _( "Try again"),
-        "msgCheck": _( "Check"),
-        "msgEndScore": _( "You got %s right answers and %d errors."),
-        "msgEndTime": _( "Time over."),
+        "msgSolution": _("Solution"),
+        "msgTry": _("Try again"),
+        "msgCheck": _("Check"),
+        "msgEndScore": _("You got %s right answers and %d errors."),
+        "msgEndTime": _("Time over."),
         "msgGameEnd": _("You completed the activity"),
     },
 
@@ -110,7 +110,7 @@ var $exeDevice = {
         var msgs = this.msgs;
         var html = '\
 			    <div id="gameQEIdeviceForm">\
-                    <div class="exe-idevice-info">'+_("Create activities in which the student will have to fill in the blanks of a text writing or choosing an answer.")+' <a href="https://youtu.be/NUDuvjQSTR0" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
+                    <div class="exe-idevice-info">' + _("Create activities in which the student will have to fill in the blanks of a text writing or choosing an answer.") + ' <a href="https://youtu.be/NUDuvjQSTR0" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
                     <div class="exe-form-tab" title="' + _('General settings') + '">\
                     ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Read the text and complete the missing words.")) + '\
                         <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -126,6 +126,9 @@ var $exeDevice = {
                                         <input class="CMPT-Type" id="cmpttype2" type="radio" name="cmpttype" value="2" />\
                                         <label for="cmpttype2">' + _("Selecciona") + '</label>\
                                     </span>\
+                                </p>\
+                                <p id="cmptEWordsLimitDiv" class="CMPT-EWordsNo">\
+                                    <label for="cmptEWordsLimit"><input type="checkbox" id="cmptEWordsLimit">' + _("Limit the words in each dropdown box. Write the possible options, starting with the correct one, separated by |") + '</label>\
                                 </p>\
                                 <p id="cmptEWordsErrorsDiv" class="CMPT-EWordsNo">\
                                     <label for="cmptEWordsErrors">' + _("Wrong words") + ':  </label><input type="text" id="cmptEWordsErrors">\
@@ -170,7 +173,7 @@ var $exeDevice = {
                                 <div class="CMPT-EPanel" id="cmptEPanel">\
                                     <p>\
                                         <label for="cmptEText" class="sr-av">' + _("Text") + ':</label>\
-                                        <textarea id="cmptEText" class="exe-html-editor">'+_("eXeLearning es un programa @@libre@@ para crear contenidos @@educativos@@ de una manera @@sencilla | fácil@@. Está disponible en para todos sistemas @@operativos@@")+'</textarea>\
+                                        <textarea id="cmptEText" class="exe-html-editor">' + _("eXeLearning is a **free** and open source editor to create **educational** resources in an **simple | easy** way. It's available for available for different **operating** systems.").replace(/\*\*/g, "@@") + '</textarea>\
                                     </p>\
                                 </div>\
                         </fieldset>\
@@ -188,7 +191,7 @@ var $exeDevice = {
         $exeAuthoring.iDevice.gamification.scorm.init();
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
-        
+
 
     },
     isJsonString: function (str) {
@@ -251,6 +254,7 @@ var $exeDevice = {
         }
     },
     updateFieldGame: function (game) {
+        game.wordsLimit = typeof game.wordsLimit == 'undefined' ? false : game.wordsLimit;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         $('#cmptEShowMinimize').prop('checked', game.showMinimize);
         $('#cmptEShowSolution').prop('checked', game.showSolution);
@@ -263,6 +267,7 @@ var $exeDevice = {
         $("#cmptEWordsSize").prop('checked', game.wordsSize);
         $('#cmptETime').val(game.time);
         $("#cmptEWordsErrors").prop('checked', game.wordsErrors);
+        $("#cmptEWordsLimit").prop('checked', game.wordsLimit);
         $("input.CMPT-Type[name='cmpttype'][value='" + game.type + "']").prop("checked", true);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         if (game.feedBack) {
@@ -270,10 +275,19 @@ var $exeDevice = {
         } else {
             $('#cmptEFeedbackP').hide();
         }
+        $("#cmptEWordsLimitDiv").hide();
         $('#cmptEPercentajeFB').prop('disabled', !game.feedBack);
         $("#cmptEWordsErrorsDiv").hide();
         if (game.type == 2) {
-            $("#cmptEWordsErrorsDiv").css({'display':'flex'});
+            $("#cmptEWordsLimitDiv").css({
+                'display': 'flex'
+            });
+            $("#cmptEWordsLimitDiv").show();
+        }
+        if (game.type == 2 && !game.wordsLimit) {
+            $("#cmptEWordsErrorsDiv").css({
+                'display': 'flex'
+            });
             $("#cmptEWordsErrorsDiv").show();
         }
         $("#cmptEPercentajeErrorsDiv").show();
@@ -398,8 +412,9 @@ var $exeDevice = {
             percentajeFB = parseInt($('#cmptEPercentajeFB').val()),
             percentajeError = parseInt($('#cmptEPercentajeError').val()),
             type = parseInt($('input[name=cmpttype]:checked').val()),
-            wordsErrors = $('#cmptEWordsErrors').val();
-            attempsNumber=parseInt($('#cmptAttemptsNumber').val());
+            wordsErrors = $('#cmptEWordsErrors').val(),
+            wordsLimit = $('#cmptEWordsLimit').is(':checked'),
+            attempsNumber = parseInt($('#cmptAttemptsNumber').val());
 
         if (textText.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -430,9 +445,10 @@ var $exeDevice = {
                 'time': time,
                 'type': type,
                 'wordsErrors': wordsErrors,
-                'attempsNumber':attempsNumber,
+                'attempsNumber': attempsNumber,
                 'percentajeError': percentajeError,
                 'showSolution': showSolution,
+                'wordsLimit': wordsLimit
             }
 
         return data;
@@ -448,16 +464,38 @@ var $exeDevice = {
             }
             $('#cmptEPercentajeFB').prop('disabled', !marcado);
         });
-  
+
 
         $('#gameQEIdeviceForm').on('click', 'input.CMPT-Type', function (e) {
-            var type = parseInt($(this).val());
+            var type = parseInt($(this).val()),
+            limit= $("#cmptEWordsLimit").is(':checked');
+            $("#cmptEWordsLimitDiv").hide();
             $("#cmptEWordsErrorsDiv").hide();
             if (type == 2) {
-                $("#cmptEWordsErrorsDiv").css({'display':'flex'});
+                $("#cmptEWordsLimitDiv").css({
+                    'display': 'flex'
+                });
+                $("#cmptEWordsLimitDiv").show();
+            }
+
+            if (type == 2 && !limit) {
+                $("#cmptEWordsErrorsDiv").css({
+                    'display': 'flex'
+                });
                 $("#cmptEWordsErrorsDiv").show();
             }
         });
+        $('#cmptEWordsLimit').on('click',  function (e) {
+            var  limit= $(this).is(':checked');
+            $("#cmptEWordsErrorsDiv").hide();
+            if (!limit) {
+                $("#cmptEWordsErrorsDiv").css({
+                    'display': 'flex'
+                });
+                $("#cmptEWordsErrorsDiv").show();
+            }
+        });
+
         $('#cmptEEstrictCheck').on('change', function () {
             var state = $(this).is(':checked');
             $("#cmptECaseSensitiveDiv").show();
@@ -476,7 +514,7 @@ var $exeDevice = {
         $('#cmptETime').on('focusout', function () {
             this.value = this.value.trim() == '' ? 0 : this.value;
             this.value = this.value > 59 ? 59 : this.value;
-            this.value = this.value < 0 ? 0: this.value;
+            this.value = this.value < 0 ? 0 : this.value;
         });
 
         $('#cmptAttemptsNumber').on('keyup', function () {
@@ -488,7 +526,7 @@ var $exeDevice = {
         $('#cmptAttemptsNumber').on('focusout', function () {
             this.value = this.value.trim() == '' ? 1 : this.value;
             this.value = this.value > 9 ? 9 : this.value;
-            this.value = this.value < 1 ? 1: this.value;
+            this.value = this.value < 1 ? 1 : this.value;
         });
 
         $('#cmptEPercentajeError').on('keyup', function () {
@@ -519,7 +557,7 @@ var $exeDevice = {
         $('#cmptEPercentajeError').on('focusout', function () {
             this.value = this.value.trim() == '' ? 1 : this.value;
             this.value = this.value > 100 ? 100 : this.value;
-            this.value = this.value < 0 ? 0: this.value;
+            this.value = this.value < 0 ? 0 : this.value;
         });
 
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();

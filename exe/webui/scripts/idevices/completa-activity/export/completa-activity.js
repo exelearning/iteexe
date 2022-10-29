@@ -192,6 +192,7 @@ var $eXeCompleta = {
 
             $eXeCompleta.hasLATEX = true;
         }
+        mOptions.wordsLimit = typeof mOptions.wordsLimit == "undefined" ? false : mOptions.wordsLimit;
         mOptions.words = [];
         mOptions.wordsErrors = mOptions.wordsErrors || '';
         mOptions.oWords = {};
@@ -577,6 +578,11 @@ var $eXeCompleta = {
             $("#cmptSolutionDiv-" + instance).show();
         }
         $eXeCompleta.showFeedBack(instance);
+           var html = $('#cmptGameContainer-' + instance).html(),
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeCompleta.updateLatex('cmptGameContainer-' + instance)
+        }
     },
 
     reloadGame: function (instance) {
@@ -597,7 +603,7 @@ var $eXeCompleta = {
             'color': '#333333'
         })
         $('#cmptMultimedia-' + instance).find('.CMPT-Select').prop('selectedIndex', 0);
-        if(mOptions.type==1){
+        if (mOptions.type == 1) {
             $eXeCompleta.getWordArrayJson(instance)
         }
         $('#cmptCheckPhrase-' + instance).show();
@@ -637,7 +643,10 @@ var $eXeCompleta = {
                     answord = $(this).find("option:selected").text();
                 if (answord.length == 0) {
                     mOptions.errors++;
-                } else if ($eXeCompleta.checkWord(word, answord, instance)) {
+                } else if (mOptions.wordsLimit && $eXeCompleta.checkWordLimit(word, answord, instance)) {
+                    mOptions.hits++;
+                    $(this).css('color', '#036354')
+                } else if ( !mOptions.wordsLimit && $eXeCompleta.checkWord(word, answord, instance)) {
                     mOptions.hits++;
                     $(this).css('color', '#036354')
                 } else {
@@ -671,6 +680,22 @@ var $eXeCompleta = {
         }
         $('#cmptReloadPhrase-' + instance).text(mOptions.msgs.msgTry + " (" + mOptions.attempsNumber + ")")
         $('#cmptReloadPhrase-' + instance).show();
+    },
+
+    checkWordLimit: function (word, answord, instance) {
+        var sWord = $.trim(word).replace(/\s+/g, " ").replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, ""),
+            sAnsWord = $.trim(answord).replace(/\s+/g, " ").replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/,
+                "");
+        sWord = $.trim(sWord);
+        sAnsWord = $.trim(sAnsWord);
+        if (sWord.indexOf('|') == -1) {
+            return sWord == sAnsWord;
+        }
+        var words = sWord.split('|'),
+            mword = $.trim(words[0]).replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, "");
+            console.log(mword, sAnsWord)
+        return mword == sAnsWord
+
     },
 
     checkWord: function (word, answord, instance) {
@@ -746,7 +771,6 @@ var $eXeCompleta = {
             find = 0,
             inicio = true;
         mOptions.solution = frase.replace(/@@/g, '');
-        console.log(mOptions.solution)
         while (find != -1) {
             find = frase.indexOf('@@')
             if (find != -1) {
@@ -791,18 +815,65 @@ var $eXeCompleta = {
         $('#cmptMultimedia-' + instance).append(html);
     },
 
-    createInputSelect: function (instance) {
+    createInputSelect1: function (instance) {
         var mOptions = $eXeCompleta.options[instance],
-            html = mOptions.text.trim();
+            html = mOptions.text.trim(),
+            solution=mOptions.text.trim();
 
         for (var i = 0; i < mOptions.words.length; i++) {
             var word = mOptions.words[i],
                 word = word.split('|')[0].trim();
             var input = $eXeCompleta.createSelect(i, instance);
-            html = html.replace('#X#', input)
+            html = html.replace('#X#', input);
+            solution=solution.replace('#X#')
         }
         $('#cmptMultimedia-' + instance).empty();
         $('#cmptMultimedia-' + instance).append(html);
+    },
+    createInputSelect: function (instance) {
+        var mOptions = $eXeCompleta.options[instance],
+            html = mOptions.text.trim(),
+            solution=mOptions.text.trim();
+
+        for (var i = 0; i < mOptions.words.length; i++) {
+            var word = mOptions.words[i],
+                word = word.split('|')[0].trim();
+            if (mOptions.wordsLimit) {
+                var input = $eXeCompleta.createSelectLimit(i, instance);
+            } else {
+                var input = $eXeCompleta.createSelect(i, instance);
+            }
+            solution=solution.replace('#X#', word);
+            html = html.replace('#X#', input);
+        }
+        if (mOptions.wordsLimit) {
+            mOptions.solution=solution;
+        }
+        $('#cmptMultimedia-' + instance).empty();
+        $('#cmptMultimedia-' + instance).append(html);
+    },
+    createSelectLimit: function (num, instance) {
+        var mOptions = $eXeCompleta.options[instance],
+            wl = [],
+            word = mOptions.words[num],
+            wordsL = word.split('|')
+        for (var i = 0; i < wordsL.length; i++) {
+            var wd = wordsL[i].trim();
+            wl.push(wd)
+        }
+        var unique = (value, index, self) => {
+            return self.indexOf(value) === index
+        }
+        wl = wl.filter(unique);
+        wl.sort();
+        s = '<select data-number="' + num + '" class="CMPT-Select">';
+        s += '<option val="0"></option>'
+        for (var j = 0; j < wl.length; j++) {
+            s += '<option val="' + (j + 1) + '">' + wl[j] + '</option>'
+        }
+        s += '</select>'
+        return s;
+
     },
     createSelect: function (num, instance) {
         var mOptions = $eXeCompleta.options[instance],
@@ -866,7 +937,7 @@ var $eXeCompleta = {
             wds.push(wd)
         }
         wds.sort();
-        wordsa = [...wds];        
+        wordsa = [...wds];
         if (mOptions.caseSensitive) {
             wordsa = wds.map(name => name.toLowerCase());
         }
