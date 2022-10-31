@@ -48,8 +48,189 @@ var interaction = {
 		"rightAnswer" : "Right answer:",
 		"notAnswered" : "Please finish the activity",
 		"check" : "Check",
-		"newWindow" : "New window"
-	},	
+		"newWindow" : "New window",
+		"msgOnlySaveAuto": "Your score will be saved after each question. You can only play once.",
+        "msgSaveAuto": "Your score will be automatically saved after each question.",
+        "msgYouScore": "Your score",
+        "msgScoreScorm": "The score can't be saved because this page is not part of a SCORM package.",
+        "msgYouLastScore": "The last score saved is",
+        "msgActityComply": "You have already done this activity.",
+        "msgPlaySeveralTimes": "You can do this activity as many times as you want",
+        "msgScoreScorm": "The score can't be saved because this page is not part of a SCORM package.",
+        "msgEndGameScore": "Please start the game before saving your score.",
+        "msgSeveralScore": "You can save the score as many times as you want",
+        "msgOnlySaveScore": "You can only save the score once!",
+        "msgOnlySave": "You can only save once",
+        "msgOnlySaveAuto": "Your score will be saved after each question. You can only play once.",
+
+	},
+	scorm:{
+		'isScorm': 0,
+		'textButtonScorm': 'Save score',
+		'repeatActivity': false
+	},
+	scoreNIA:true,
+	userName: '',
+    previousScore: '',
+    initialScore: '',
+    hasSCORMbutton: false,
+    score: 0,
+    numSlides: 1000,
+    scoreSlides: [],
+    scoref: '0',
+    gameStarted: false,
+	mScorm:null,
+	loadSCORM_API_wrapper: function () {
+        if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', 'interaction.loadSCOFunctions()');
+        else this.loadSCOFunctions();
+    },
+    loadSCOFunctions: function () {
+        if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', 'interaction.enable()');
+        else this.enable();
+        interaction.mScorm = scorm;
+        var callSucceeded = interaction.mScorm.init();
+        if (callSucceeded) {
+            interaction.userName = interaction.getUserName();
+            interaction.previousScore = interaction.getPreviousScore();
+            interaction.mScorm.set("cmi.core.score.max", 10);
+            interaction.mScorm.set("cmi.core.score.min", 0);
+            interaction.initialScore = interaction.previousScore;
+        }
+    },
+	getUserName: function () {
+        var user = interaction.mScorm.get("cmi.core.student_name");
+        return user
+    },
+    getPreviousScore: function () {
+        var score = interaction.mScorm.get("cmi.core.score.raw");
+        return score;
+    },
+    endScorm: function () {
+        if (interaction.mScorm && typeof interaction.mScorm.quit == "function") {
+            interaction.mScorm.quit();
+        }
+
+    },
+    addButtonScore: function (isScorm, textButtonScorm) {
+        var butonScore = "";
+        var fB = '<div id="interactive-BottonContainer">';
+        if (isScorm == 2) {
+            var buttonText = textButtonScorm;
+            if (buttonText != "") {
+                if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+                    this.hasSCORMbutton = true;
+                    fB += '<div class="interactive-GetScore">';
+                    if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
+                    fB += '<p><input type="button" id="interactiveSendScore" value="' + buttonText + '" class="feedbackbutton" /> <span class="interactive-RepeatActivity" id="interactiveRepeatActivity"></span></p>';
+                    if (!this.isInExe) fB += '</form>';
+                    fB += '</div>';
+                    butonScore = fB;
+                }
+            }
+        } else if (isScorm == 1) {
+            if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+                this.hasSCORMbutton = true;
+                fB += '<div class="interactive-GetScore">';
+                fB += '<p><span class="interactive-RepeatActivity" id="interactiveRepeatActivity"></span></p>';
+                fB += '</div>';
+                butonScore = fB;
+            }
+        }
+        fB = +'</div>';
+
+        return butonScore;
+    },
+    updateScorm: function (isScorm, repeatActivity, prevScore) {
+        var text = '',
+            msgs = interaction.i18n;
+        $('#interactiveSendScore').hide();
+        if (isScorm === 1) {
+            if (repeatActivity && prevScore !== '') {
+                text = msgs.msgYouLastScore + ': ' + prevScore;
+            } else if (repeatActivity && prevScore === "") {
+                text = msgs.msgSaveAuto + ' ' + msgs.msgPlaySeveralTimes
+            } else if (!repeatActivity && prevScore === "") {
+                text = msgs.msgOnlySaveAuto;
+            } else if (!repeatActivity && prevScore !== "") {
+                text = msgs.msgActityComply + ' ' + msgs.msgYouLastScore + ': ' + prevScore;
+            }
+        } else if (isScorm === 2) {
+            $('#interactiveSendScore').show();
+            if (repeatActivity && prevScore !== '') {
+                text = msgs.msgYouLastScore + ': ' + prevScore;
+            } else if (repeatActivity && prevScore === '') {
+                text = msgs.msgSeveralScore;
+            } else if (!repeatActivity && prevScore === '') {
+                text = msgs.msgOnlySaveScore;
+            } else if (!repeatActivity && prevScore !== '') {
+                $('#interactiveSendScore').hide();
+                text = msgs.msgActityComply + ' ' + msgs.msgYouScore + ': ' + prevScore;
+            }
+        }
+        $('#interactive-BottonContainer').show();
+        $('#interactiveRepeatActivity').text(text);
+        $('#interactiveRepeatActivity').fadeIn(1000);
+    },
+    sendScore: function (auto, score) {
+        var msgs = interaction.i18n,
+            message = '',
+            score = ((score * 10) / interaction.numSlides).toFixed(2);
+        if (interaction.gameStarted) {
+            if (interaction.mScorm  && typeof interaction.mScorm != 'undefined') {
+                if (!auto) {
+                    $('#interactiveSendScore').show();
+                    if (!interaction.scorm.repeatActivity && interaction.previousScore !== '') {
+                        message = interaction.userName !== '' ? interaction.userName + ' ' + msgs.msgOnlySaveScore : msgs.msgOnlySaveScore;
+                    } else {
+                        interaction.previousScore = score;
+                        interaction.mScorm.set("cmi.core.score.raw", score);
+                        message = interaction.userName !== '' ? interaction.userName + '. ' + msgs.msgYouScore + ': ' + score : msgs.msgYouScore + ': ' + score
+                        if (!interaction.scorm.repeatActivity) {
+                            $('#interactiveSendScore').hide();
+                        }
+
+                        $('#interactiveRepeatActivity').text(msgs.msgYouScore + ': ' + score)
+                        $('#interactiveRepeatActivity').show();
+                    }
+                } else {
+                    interaction.previousScore = score;
+                    score = score === "" ? 0 : score;
+                    interaction.mScorm.set("cmi.core.score.raw", score);
+                    $('#interactiveRepeatActivity').text(msgs.msgYouScore + ': ' + score)
+                    $('#interactiveRepeatActivity').show();
+                    message = "";
+                }
+            } else {
+                message = msgs.msgScoreScorm;
+            }
+        } else {
+            message = msgs.msgEndGameScore;
+        }
+        if (!auto) alert(message);
+    },
+    updateScore: function (question, result) {
+        if(question >=interaction.scoreSlides.length) return;
+        var e = interaction.scoreSlides[question],
+            point = interaction.scoreNIA ? 1 : 0;
+        if (e.type == "singleChoice" || e.type == "multipleChoice" || e.type == "dropdown" ||
+            e.type == "matchElements" || e.type == "sortableList") {
+            var spoint = parseFloat(result)
+            if (!isNaN(spoint)) {
+                point = spoint / 100;
+            }
+        }
+        if (e.score == -1) {
+            e.score = point;
+            interaction.score += point;
+        }
+        if (interaction.scorm.isScorm == 1) {
+            var scoref = ((interaction.score * 10) / interaction.numSlides).toFixed(2);
+            $('#interactiveRepeatActivity').text(interaction.i18n.msgYouScore + ': ' + scoref)
+            $('#interactiveRepeatActivity').show();
+            interaction.sendScore(true, interaction.score)
+        }
+
+    },
 	inIframe : function() {
 		try {
 			return window.self !== window.top;
@@ -60,6 +241,29 @@ var interaction = {
 	cover : {
 		hide : function(play){
 			$("BODY").removeClass("cover-on");
+			if (InteractiveVideo && InteractiveVideo.slides != undefined && InteractiveVideo.slides.length > 0) {
+                if (interaction.scorm.isScorm > 0) {
+                    interaction.updateScorm(interaction.scorm.isScorm, interaction.scorm.repeatActivity, interaction.previousScore);
+                }
+				var activeSlide=0;
+                for (var i = 0; i < InteractiveVideo.slides.length; i++) {
+                    var sr = {
+                        'type': InteractiveVideo.slides[i].type,
+                        'score': -1
+                    }
+                    interaction.scoreSlides.push(sr);
+					if (sr.type == "singleChoice" || sr.type == "multipleChoice" || sr.type == "dropdown" || sr.type == "matchElements" || sr.type == "sortableList") {
+						activeSlide++;
+					}
+                }
+                interaction.numSlides = interaction.scoreNIA ? interaction.scoreSlides.length : activeSlide+1;
+                interaction.gameStarted = true;
+                $('#interactiveSendScore').off('click')
+                $('#interactiveSendScore').on('click', function (e) {
+                    e.preventDefault();
+                    interaction.sendScore(false, interaction.score);
+                });
+            }
 			if (play) interaction.controls.play();
 		},
 		show : function(action){
@@ -215,8 +419,11 @@ var interaction = {
 		}
 		
 	},
-	init : function(){
-		
+	init: function () {
+        if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
+        else this.enable();
+	},
+    enable: function () {
 		// Create the required HTML elements:
 		
 		var es = $(".exe-interactive-video");
@@ -253,7 +460,7 @@ var interaction = {
 				<div id="slide"></div>\
 			</div>\
 		';
-		
+
 		if (showResults) {
 			html += '\
 				<div class="js-required">\
@@ -262,16 +469,23 @@ var interaction = {
 				</div>\
 			';
 		}
-		
+
+		if (typeof (InteractiveVideo) != "undefined") {
+            interaction.scorm = typeof InteractiveVideo.scorm == "undefined" ?  interaction.scorm : InteractiveVideo.scorm;
+			interaction.scoreNIA = typeof InteractiveVideo.scoreNIA == "undefined" ?  true : InteractiveVideo.scoreNIA;
+            var buttonScorm = this.addButtonScore(interaction.scorm.isScorm, interaction.scorm.textButtonScorm);
+            html += buttonScorm;
+        }
+
 		// es.html(es.html()+html);
 		es[0].innerHTML += html;
-		
+
 		if (typeof(InteractiveVideo)=="undefined" || typeof(InteractiveVideo.slides)=="undefined" || InteractiveVideo.slides.length==0) {
 			$("#player").html("<p style='text-align:center;margin:0;line-height:356px'>"+i18n.noSlides+"</p>");
 			$("#activity-results-toggler").hide();
 			return false;
 		}
-		
+
 		try {
 			document.createEvent("TouchEvent");
 			$("BODY").addClass("is-mobile");
@@ -578,16 +792,18 @@ var interaction = {
 					if (t.indexOf("%")!=-1) {
 						result += parseFloat(t);
 						counter ++;
-					} else if (t==interaction.i18n.seen) {
+					} else if (t==interaction.i18n.seen && interaction.scoreNIA) {
 						result += 100;
 						counter ++;
 					}
 				}
+
 			);
+			if(!interaction.scoreNIA  && counter>=interaction.numSlides) complete=true;			
 			if (complete) {
 				$("#resultsSummary").html("<span>"+interaction.formatResult((result/counter).toFixed(2))+"%</span>");
 				$("BODY").addClass("activity-completed");
-			}			
+			}
 		},
 		toggle : function(e){
 			if (interaction.isWorking) return false;
@@ -736,13 +952,14 @@ var interaction = {
 		var tds = $(".result",interaction.table);
 		tds.eq(question).html("<span>"+result+"</span>");
 		interaction.resultsViewer.getFinalResult(tds);
+		interaction.updateScore(question, result);
 	},	
 	dropdownActivity : {
 		create : function(slide,id,order,e) {
 			var html = interaction.getForm.header(id,order,'dropdownActivity');			
 			html += '<p class="question">'+e.text+'</p>';
 			html += '<p class="actions">';
-				html += interaction.getForm.sendButton(id,order,'dropdownActivity');
+			html += interaction.getForm.sendButton(id,order,'dropdownActivity');
 			html += '</p>';
 			html += '<div id="'+id+'dropdownActivityFormMessage">';
 			html += '</div>';
@@ -873,16 +1090,19 @@ var interaction = {
 			}).attr("disabled","disabled");	
 			
 			var i18n = interaction.i18n;
-			
+			var rst=0;
 			if (errors) {
 				var result = (rightAnswered*100/rightAnswers.length).toFixed(2);
 				var extra = interaction.dropdownActivity.getRightAnswer(rightAnswers);
 				interaction.msg("error",i18n.wrong,id,extra);
 				interaction.dropdownActivity.saveResults(question,result,slide,selectedValues);
+				rst=result;
 			} else {
 				interaction.msg("success",i18n.right,id);
 				interaction.dropdownActivity.saveResults(question,100,slide,selectedValues);
+				rst=100;
 			}
+			//interaction.updateScore(question,100);
 			
 		}		
 	},
@@ -1142,7 +1362,7 @@ var interaction = {
 				interaction.msg("success",i18n.right,id);
 				interaction.clozeActivity.saveResults(question,100,slide,selectedValues);
 			}
-			
+
 		}
 	},
 	matchElements : {
@@ -1272,7 +1492,6 @@ var interaction = {
 				var result = (rightAnswered*100/pairs.length).toFixed(2);
 				interaction.matchElements.saveResults(question,result,slide,selectedValues);				
 			}
-			
 		}
 	},
 	getForm : {

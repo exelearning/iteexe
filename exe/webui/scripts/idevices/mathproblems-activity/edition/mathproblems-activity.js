@@ -76,7 +76,9 @@ var $exeDevice = {
         "msgCheck": _("Check"),
         "msgEndGameM": _("You finished the game. Your score is %s."),
         "msgFeedBack": _("FeedBack"),
-        "msgFeedBack": _("No image"),
+        "msgNoImage": _("No image"),
+        "msgMoveOne": _("Move on")
+        
     },
     version: 1,
     active: 0,
@@ -98,7 +100,7 @@ var $exeDevice = {
     createForm: function () {
         var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Create random basic math problems.") + ' <a href="https://youtu.be/xCkJ6iv5NGw" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("Create random basic math problems.") + ' <a href="https://youtu.be/0f54lCxfOxU" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Solve the following math problems.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -119,7 +121,7 @@ var $exeDevice = {
                                 <label for="eCQHasFeedBack"><input type="checkbox"  id="eCQHasFeedBack"> ' + _("Feedback") + '. </label> \
                                 <label for="eCQPercentajeFB"><input type="number" name="eCQPercentajeFB" id="eCQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + ' </label>\
                             </p>\
-                            <p id="eCQFeedbackP" class="MTOE-EFeedbackP">\
+                            <p id="eCQFeedbackP" class="MTOE-EFeedbackP" style="display:none">\
                                 <textarea id="eCQFeedBackEditor" class="exe-html-editor"\></textarea>\
                             </p>\
                             <p>\

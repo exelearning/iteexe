@@ -48,9 +48,28 @@ var $exeDevice = {
 		"rightAnswer" : c_("Right answer:"),
 		"notAnswered" : c_("Please finish the activity"),
 		"check" : c_("Check"),
-		"newWindow" : c_("New Window")
+		"newWindow" : c_("New Window"),
+		"msgOnlySaveAuto": c_("Your score will be saved after each question. You can only play once."),
+		"msgSaveAuto": c_("Your score will be automatically saved after each question."),
+		"msgYouScore": c_("Your score"),
+		"msgScoreScorm": c_("The score can't be saved because this page is not part of a SCORM package."),
+		"msgYouLastScore": c_("The last score saved is"),
+		"msgActityComply": c_("You have already done this activity."),
+		"msgPlaySeveralTimes": c_("You can do this activity as many times as you want"),
+        "msgScoreScorm": c_("The score can't be saved because this page is not part of a SCORM package."),
+		"msgEndGameScore": c_("Please start the game before saving your score."),
+        "msgSeveralScore": c_("You can save the score as many times as you want"),
+        "msgOnlySaveScore": c_("You can only save the score once!"),
+        "msgOnlySave":c_("You can only save once"),
+		"msgOnlySaveAuto": c_("Your score will be saved after each question. You can only play once."),
+
 	},
-	
+	scorm:{
+		'isScorm': 0,
+		'textButtonScorm': c_('Save score'),
+		'repeatActivity': false
+	},
+	scoreNIA:true,
 	testIfVideoExists : function(url,type) {
 
 		if (!top.interactiveVideoEditor) {
@@ -105,12 +124,16 @@ var $exeDevice = {
 					<p>\
 						<label for="interactiveVideoShowResults"><input type="checkbox" name="interactiveVideoShowResults" id="interactiveVideoShowResults" checked="checked" /> '+_("Show results")+'</label>\
 					</p>\
+					<p>\
+						<label for="interactiveVideoScoreNIA"><input type="checkbox" name="interactiveVideoScoreNIA" id="interactiveVideoScoreNIA" checked="checked" /> '+_("Score non-interactive activities")+'</label>\
+					</p>\
 					<div id="interactiveVideoEditorOpener">\
 						<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
 					</div>\
 					'+$exeAuthoring.iDevice.common.getTextFieldset("after")+'\
 				</div>\
 				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
+				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
 			</div>\
 		';
 		
@@ -119,6 +142,7 @@ var $exeDevice = {
 		field.before(html);
 		
 		$exeAuthoring.iDevice.tabs.init("interactiveVideoIdeviceForm");
+		$exeAuthoring.iDevice.gamification.scorm.init();
 		
 		$("input[name=interactiveVideoType]").change(function(){
 			$exeDevice.toggleType(this.value);
@@ -244,6 +268,13 @@ var $exeDevice = {
 				// i18n
 				$exeAuthoring.iDevice.gamification.common.setLanguageTabValues(InteractiveVideo.i18n);
 			}
+			if (typeof(InteractiveVideo)=='object') {
+				InteractiveVideo.scorm = typeof InteractiveVideo.scorm == "undefined" ? $exeDevice.scorm : InteractiveVideo.scorm
+				$exeAuthoring.iDevice.gamification.scorm.setValues(InteractiveVideo.scorm.isScorm, InteractiveVideo.scorm.textButtonScorm, InteractiveVideo.scorm.repeatActivity);
+				InteractiveVideo.scoreNIA = typeof InteractiveVideo.scoreNIA == "undefined" ? true : InteractiveVideo.scoreNIA
+				$("#interactiveVideoScoreNIA").prop("checked", InteractiveVideo.scoreNIA);
+			}
+
 			// Save the list of images and remove the wrapper
 			top.interactiveVideoEditor.imageList = $(".exe-interactive-video-img img",wrapper);
 			top.interactiveVideoEditor.activityToSave.poster = $(".exe-interactive-video-poster img",wrapper).attr("src");
@@ -421,7 +452,8 @@ var $exeDevice = {
 			}
 
 			top.interactiveVideoEditor.activityToSave.i18n = i18n;
-		
+			top.interactiveVideoEditor.activityToSave.scorm= $exeAuthoring.iDevice.gamification.scorm.getValues();;
+			top.interactiveVideoEditor.activityToSave.scoreNIA=$("#interactiveVideoScoreNIA").is(":checked");
 			contents = JSON.stringify(top.interactiveVideoEditor.activityToSave);
 			
 		}
@@ -454,19 +486,16 @@ var $exeDevice = {
 					\nvar InteractiveVideo = '+contents+'\
 				//]]></script>\
 			</div>';
-			
+
 		html += contentAfter;	
-		
+
 		// Return the HTML to save
 		if (type=="local") {
 			html += '<p class="sr-av"><video width="320" height="240" controls="controls" class="mediaelement"><source src="'+myVideo+'" /></video></p>';
 		}
-		
 		// Add the images at the end of the code	
 		html += imgsHTML;
-		
 		return html;
-		
 	}
 
 }

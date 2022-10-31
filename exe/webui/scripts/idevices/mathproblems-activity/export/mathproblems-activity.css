@@ -188,7 +188,7 @@
 .MTHP-ImagesHome{
 	margin-top: 1em;
 	width: 90%;
-	max-width:200px;
+	max-width: 280px;
 	margin:auto;
 
 }
@@ -202,86 +202,6 @@
 
 }
 
-
-.MTHP-Form {
-	margin-top: 0.6em;
-	font-size: 1.4em;
-	text-align: center;
-}
-
-.MTHP-Form label {
-	letter-spacing: 3px
-}
-
-.MTHP-Form input[type=text] {
-	margin: 0;
-	margin-right: 0.2em;
-
-}
-
-.MTHP-Form input.operator {
-	text-align: center
-}
-
-.MTHP-MainContainer table {
-	width: 100%
-}
-
-.MTHP-MainContainer table, td, th {
-	border: 1px solid #BBB
-}
-
-.MTHP-MainContainer table{
-	background-color: #f9f9f9;
-}
-
-.MTHP-MainContainer table, td{
-	padding-left: 0.2em;
-	padding-right: 0.2em;
-	padding: 0.2em;
-	background-color: #fff;
-
-}
-
-
-.MTHP-pagination {
-	text-align: center
-}
-
-.MTHP-tr-right td {
-	background: #cfc
-}
-
-.MTHP-tr-wrong td {
-	background: #fcc
-}
-
-.MTHP-right, .MTHP-wrong {
-	background: url(operaciones_matematicas.gif) no-repeat 0 0;
-	display: block;
-	width: 20px;
-	height: 20px;
-	text-indent: -999em;
-	margin: 0 auto
-}
-
-.MTHP-wrong {
-	background-position: 0 -20px
-}
-
-.MTHP-Summary ul {
-	padding: 0;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	flex-wrap: wrap;
-}
-
-.MTHP-Summary ul li {
-	display: inline-block;
-	margin-left: 0.6em;
-	white-space: nowrap;
-}
 
 .MTHP-CodeAccessDiv {
 	padding: 1.5em 0.5em 1.5em 0.5em;

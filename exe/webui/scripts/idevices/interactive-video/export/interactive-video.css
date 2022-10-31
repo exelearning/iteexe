@@ -97,3 +97,21 @@ tr.even td{background:#f7f7f7}
 	#activity #player{max-width:100%}
 	.active #activity #player{max-width:50%}
 }
+#interactive-BottonContainer {
+	display: none;
+	margin: 0.1em auto;
+	padding: 0;
+	width: 100%;
+}
+.interactive-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+.interactive-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top:1em
+}

@@ -182,6 +182,7 @@ var $eXeMathProblems = {
             }
 
             options.questions[i].solution = eval(formula);
+            options.questions[i].solution= parseFloat(options.questions[i].solution.toFixed(2))
             options.questions[i].wording = text;
         }
 
@@ -374,7 +375,8 @@ var $eXeMathProblems = {
             answord = $('#mthpEdAnswer-' + instance).val(),
             solution = question.solution * 1.00;
         answord = answord.replace(',', '.');
-        answord = parseFloat(answord);
+        answord = parseFloat(answord).toFixed(2);
+        answord= parseFloat(answord);
         if (!mOptions.gameActived) {
             return;
         }
@@ -610,7 +612,6 @@ var $eXeMathProblems = {
             $eXeMathProblems.startGame(instance)
         });
 
-
         $('#mthpFeedBackLink-' + instance).on('click', function () {
 
             $('#mthpFeedBackMessage-' + instance).fadeToggle()
@@ -731,62 +732,6 @@ var $eXeMathProblems = {
         }
     },
 
-    
-
-    checkAnswer: function (e) {
-        mOptions = $eXeMathProblems.options[instance];
-        var id = e.id;
-        var formula = $("#" + id + "-formula");
-
-        if (formula.length != 1) {
-            alert("Error");
-            return false;
-        }
-
-        var vars = $(".exe-calculatedQuestion-varName", e);
-
-        var varName, fieldId, operand;
-        var operationToDo = formula.html();
-        var userAnswer = $("#" + e.id + "-result");
-        if (userAnswer.val() == "") {
-            var warning = $("#" + e.id + "-warning");
-            warning.html("Contesta algo...").fadeIn().delay(2000).fadeOut();
-            userAnswer.focus();
-            return false;
-        }
-        userAnswer.attr("disabled", "disabled");
-        $("#" + e.id + "-submit").hide();
-        userAnswer = parseFloat(userAnswer.val());
-
-        for (var i = 0; i < vars.length; i++) {
-            varName = vars[i].value;
-            fieldId = vars[i].id;
-            operand = $("#" + fieldId.replace("-varName-", "-varVal-"));
-
-            operationToDo = operationToDo.replace("{" + varName + "}", operand.html());
-        }
-
-        var rightAnswer = eval(operationToDo);
-
-        var decimals = parseFloat(e.className.replace("exe-decimals-", ""));
-        if (decimals > 0) {
-            userAnswer = userAnswer.toFixed(decimals);
-            rightAnswer = rightAnswer.toFixed(decimals);
-        }
-
-        var feedback = $("#" + e.id + "-feedback");
-
-        if (userAnswer == rightAnswer) {
-            feedback.attr("class", "feedback feedback-right").html("<p>¡Correcto!</p>");
-        } else {
-            feedback.attr("class", "feedback feedback-wrong").html("<p>No es correcto. Respuesta correcta: <strong>" + rightAnswer + "</strong></p>");
-        }
-        feedback.fadeIn("slow", function () {
-            $("#" + e.id + "-userFeedback").delay(500).fadeIn();
-        });
-
-        return false;
-    },
 
     updateNumberQuestion: function (numq, instance) {
         var mOptions = $eXeMathProblems.options[instance],
