@@ -297,11 +297,7 @@ var $eXeMapa = {
     },
     loadDataGame: function (data, $imagesLink, $textLink, $audiosLink, $imagesMap, $audiosIdentifyLink, $imagesSlides, url, $toolTips) {
         var json = data.text(),
-            mOptions = $eXeMapa.isJsonString(json),
-            hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
-        if (hasLatex) {
-            $eXeMapa.hasLATEX = true;
-        }
+            mOptions = $eXeMapa.isJsonString(json);
         mOptions.url = url;
         mOptions.hasAreas = false;
         mOptions.waitPlayVideo = false;
@@ -639,7 +635,7 @@ var $eXeMapa = {
             }
         });
         var html = $('#mapaQuestionDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaFTests-' + instance);
         }
@@ -691,7 +687,7 @@ var $eXeMapa = {
         }
 
         var html = $('#mapaWordDiv-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaWordDiv-' + instance)
         }
@@ -1121,7 +1117,7 @@ var $eXeMapa = {
                     </a>\
                     <div class="MQP-MultimediaPointSound" >\
                       <a href="#" class="MQP-LinkSound MQP-Activo" id="mapaLinkAudio1-' + instance + '"   title="' + msgs.msgAudio + '">\
-                           <img src="' + path+ 'mapam2.svg" class="MQP-Images" alt="' + msgs.msgAudio + '" />\
+                           <img src="' + path + 'mapam2.svg" class="MQP-Images" alt="' + msgs.msgAudio + '" />\
                       </a>\
                     </div>\
                     <div class="MQP-FooterSound" id="mapaFooterPointSound-' + instance + '"></div>\
@@ -1320,9 +1316,8 @@ var $eXeMapa = {
         }
 
         mOptions.showDetail = false;
-        //$eXeMapa.updateHeightGame(instance);
         var html = $('#mapaMainContainer-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaMainContainer-' + instance)
         }
@@ -1698,6 +1693,11 @@ var $eXeMapa = {
             e.preventDefault();
             $eXeMapa.closeToolTip(instance)
         });
+        var text = $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').html(),
+            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(text);
+        if (hasLatex) {
+            $eXeMapa.hasLATEX = true;
+        }
 
 
     },
@@ -1749,7 +1749,7 @@ var $eXeMapa = {
             $('#mapaToolTipText-' + instance).append($divText);
         }
         var html = $('#mapaToolTipText-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaToolTipText-' + instance);
         }
@@ -1816,7 +1816,7 @@ var $eXeMapa = {
             $('#mapaTextPoint-' + instance).append($divText);
         }
         var html = $('#mapaTextPoint-' + instance).html(),
-            latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeMapa.updateLatex('mapaTextPoint-' + instance);
         }

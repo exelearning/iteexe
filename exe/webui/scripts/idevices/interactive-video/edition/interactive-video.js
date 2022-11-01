@@ -62,7 +62,6 @@ var $exeDevice = {
         "msgOnlySaveScore": c_("You can only save the score once!"),
         "msgOnlySave":c_("You can only save once"),
 		"msgOnlySaveAuto": c_("Your score will be saved after each question. You can only play once."),
-
 	},
 	scorm:{
 		'isScorm': 0,

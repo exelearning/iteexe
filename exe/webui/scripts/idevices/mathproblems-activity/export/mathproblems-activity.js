@@ -174,13 +174,14 @@ var $eXeMathProblems = {
             var text = options.questions[i].wordingseg,
                 formula = options.questions[i].formula,
                 values = formula.match(expresion);
-            for (var j = 0; j < values.length; j++) {
-                var rg = new RegExp(values[j], 'g'),
-                    number = $eXeMathProblems.getRandomNo(options.questions[i].min, options.questions[i].max, options.questions[i].decimals);
-                text = text.replace(rg, number);
-                formula = formula.replace(rg, number);
+            if(values !== null && values.length>0 ){
+                for (var j = 0; j < values.length; j++) {
+                    var rg = new RegExp(values[j], 'g'),
+                        number = $eXeMathProblems.getRandomNo(options.questions[i].min, options.questions[i].max, options.questions[i].decimals);
+                    text = text.replace(rg, number);
+                    formula = formula.replace(rg, number);
+                }
             }
-
             options.questions[i].solution = eval(formula);
             options.questions[i].solution= parseFloat(options.questions[i].solution.toFixed(2))
             options.questions[i].wording = text;
@@ -261,9 +262,9 @@ var $eXeMathProblems = {
 					</a>\
 				</div>\
             </div>\
-            <div class="MTHP-ShowClue" id="mthpShowClue-' + instance + '">\
+            <div class="MTHP-ShowClue">\
                 <div class="sr-av">' + msgs.msgClue + '</div>\
-                <p class=" MTHP-PShowClue MTHP-parpadea" id="mthpPShowClue-' + instance + '"></p>\
+                <p class="MTHP-PShowClue MTHP-parpadea" id="mthpPShowClue-' + instance + '"></p>\
            </div>\
            <div class="MTHP-Multimedia" id="mthpMultimedia-' + instance + '">\
            </div>\
@@ -391,7 +392,6 @@ var $eXeMathProblems = {
         $eXeMathProblems.updateScore(solution == answord, instance)
 
         mOptions.activeCounter = false;
-        $eXeMathProblems.checkClue(instance);
         var timeShowSolution = 1000;
         if (mOptions.showSolution) {
             timeShowSolution = mOptions.timeShowSolution * 1000;
@@ -415,6 +415,7 @@ var $eXeMathProblems = {
     },
 
     checkClue: function (instance) {
+        
         var mOptions = $eXeMathProblems.options[instance],
             percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100,
             message = '';
@@ -422,9 +423,11 @@ var $eXeMathProblems = {
             if (!mOptions.obtainedClue) {
                 message += ' ' + mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame
                 mOptions.obtainedClue = true;
+                $('#mthpPShowClue-' + instance).text(message);
             }
+         
         }
-        $('#mthpPShowClue-' + instance).text(message);
+        
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeMathProblems.options[instance];

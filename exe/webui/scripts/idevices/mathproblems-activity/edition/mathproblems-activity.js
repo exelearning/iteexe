@@ -78,7 +78,7 @@ var $exeDevice = {
         "msgFeedBack": _("FeedBack"),
         "msgNoImage": _("No image"),
         "msgMoveOne": _("Move on")
-        
+
     },
     version: 1,
     active: 0,
@@ -390,18 +390,18 @@ var $exeDevice = {
         p.max = parseInt($("#eCQmax").val());
         p.decimals = parseInt($("#eCQdecimals").val());
         p.time = parseInt($("#eCQTime").val());
-        if(tinyMCE.get('eCQwording')){
+        if (tinyMCE.get('eCQwording')) {
             p.wording = tinyMCE.get('eCQwording').getContent();
-        }else{
-            p.wording=$('#eCQwording').val()
+        } else {
+            p.wording = $('#eCQwording').val()
         }
-        if(tinyMCE.get('eCQfeedbackQuestion')){
+        if (tinyMCE.get('eCQfeedbackQuestion')) {
             p.textFeedBack = tinyMCE.get('eCQfeedbackQuestion').getContent();
-        }else{
-            p.textFeedBack=$('#eCQfeedbackQuestion').val()
+        } else {
+            p.textFeedBack = $('#eCQfeedbackQuestion').val()
         }
-   
-        
+
+
         p.formula = $("#eCQformula").val();
         if (p.min.length == 0 || p.max.length == 0) {
             message = _("Only the Feedback is optional");
@@ -413,7 +413,9 @@ var $exeDevice = {
             var expresion = /\{[a-zA-z]\}/g,
                 vf = p.formula.match(expresion),
                 vw = p.wording.match(expresion);
-            if (vf && vw) {
+            if (vf == null && vw == null) {
+                message = '';
+            } else if (vf && vw) {
                 if (vf.length > 0) {
                     vf = vf.filter($exeDevice.onlyUnique);
                 } else {
@@ -425,15 +427,13 @@ var $exeDevice = {
                 if (vf.length != vw.length) {
                     message = _("The question text and the formula should have the same variables");
                 }
-            }else{
+            } else {
                 message = _("The question text and the formula should have the same variables");
             }
 
-
-
         }
         if (message.length == 0) {
-            $exeDevice.questions[$exeDevice.active] =  Object.assign({}, p);;
+            $exeDevice.questions[$exeDevice.active] = Object.assign({}, p);;
             message = true;
         } else {
             $exeDevice.showMessage(message);
@@ -461,25 +461,25 @@ var $exeDevice = {
             feedBack = $('#eCQHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#eCQPercentajeFB').val())),
             percentajeQuestions = parseInt(clear($('#eCQPercentajeQuestions').val())),
-            textFeedBack='';
-            if(tinyMCE.get('eCQFeedBackEditor')){
-                textFeedBack = tinyMCE.get('eCQFeedBackEditor').getContent();
-            }else{
-                textFeedBack = S('#eCQFeedBackEditor').val();
-            } 
-            
-            if(tinyMCE.get('eXeIdeviceTextAfter')){
-                textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
-            }else{
-                textAfter = S('#eXeIdeviceTextAfter').val();
-            } 
+            textFeedBack = '';
+        if (tinyMCE.get('eCQFeedBackEditor')) {
+            textFeedBack = tinyMCE.get('eCQFeedBackEditor').getContent();
+        } else {
+            textFeedBack = S('#eCQFeedBackEditor').val();
+        }
 
-            if(tinyMCE.get('eXeGameInstructions')){
-                instructions = tinyMCE.get('eXeGameInstructions').getContent();
-            }else{
-                instructions = S('#eXeGameInstructions').val();
-            } 
-            feedBack = $('#eCQHasFeedBack').is(':checked')
+        if (tinyMCE.get('eXeIdeviceTextAfter')) {
+            textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
+        } else {
+            textAfter = S('#eXeIdeviceTextAfter').val();
+        }
+
+        if (tinyMCE.get('eXeGameInstructions')) {
+            instructions = tinyMCE.get('eXeGameInstructions').getContent();
+        } else {
+            instructions = S('#eXeGameInstructions').val();
+        }
+        feedBack = $('#eCQHasFeedBack').is(':checked')
 
         if (showSolution && timeShowSolution.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
@@ -507,7 +507,7 @@ var $exeDevice = {
             'modeBoard': modeBoard,
             'questions': questions,
             'feedBack': feedBack,
-            'textFeedBack':  textFeedBack,
+            'textFeedBack': textFeedBack,
             'percentajeFB': percentajeFB,
             'scorm': scorm,
             'textAfter': textAfter,
@@ -539,8 +539,8 @@ var $exeDevice = {
             var json = $('.mathproblems-DataGame', wrapper).text(),
                 $wordings = $('.mathproblems-LinkWordings', wrapper),
                 $feeebacks = $('.mapa-LinkFeedBacks', wrapper),
-                djson= $exeDevice.Decrypt(json);
-                dataGame = $exeDevice.isJsonString(djson);
+                djson = $exeDevice.Decrypt(json);
+            dataGame = $exeDevice.isJsonString(djson);
             $exeDevice.questions = dataGame.questions;
             $exeDevice.active = 0;
             $exeDevice.setTexts(dataGame.questions, $wordings, $feeebacks)
@@ -587,7 +587,7 @@ var $exeDevice = {
         for (var i = 0; i < pts.length; i++) {
             var p = pts[i];
             if (typeof p.wording != "undefined") {
-                var w=$exeDevice.clearTags(p.wording)
+                var w = $exeDevice.clearTags(p.wording)
                 medias.wordings += '<div class="js-hidden mathproblems-LinkWordings" data-id="' + i + '">' + w + '</div>';
                 //p.wording = '';
             }
@@ -596,11 +596,11 @@ var $exeDevice = {
                 //p.textFeedBack = '';
             }
         }
-       
+
         return medias
     },
     setTexts: function (questions, $wordings, $feedbacks) {
-        
+
         for (var i = 0; i < questions.length; i++) {
             var p = questions[i];
             if (p.wording != "undefined" && p.wording.length > 0) {
@@ -655,7 +655,7 @@ var $exeDevice = {
             textFeedBack = tinyMCE.get('eCQFeedBackEditor').getContent(),
             instructions = tinyMCE.get('eXeGameInstructions').getContent(),
             textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
-            json = $exeDevice.Encrypt(json);
+        json = $exeDevice.Encrypt(json);
         if (instructions != "") divContent = '<div class="mathproblems-instructions mathproblems-instructions">' + instructions + '</div>';
         var html = '<div class="mathproblems-IDevice">';
         html += '<div class="mathproblems-feedback-game js-hidden">' + textFeedBack + '</div>';
@@ -704,7 +704,7 @@ var $exeDevice = {
             return '';
         }
     },
-    
+
     showMessage: function (msg) {
         eXe.app.alert(msg);
     },
@@ -831,16 +831,16 @@ var $exeDevice = {
         $('#eCQModeBoard').prop("checked", game.modeBoard);
         $('#eCQPercentajeFB').prop('disabled', !game.feedBack);
         $('#eCQHasFeedBack').prop('checked', game.feedBack);
-        if ( game.feedBack) {
+        if (game.feedBack) {
             $('#eCQFeedbackP').slideDown();
-        }else {
+        } else {
             $('#eCQFeedbackP').slideUp();
         }
         $exeDevice.questions = game.questions;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         $exeDevice.updateQuestionsNumber();
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.scorm.isScorm, game.scorm.textButtonScorm, game.scorm.repeatActivity);
-    
+
     },
     exportGame: function () {
         if (!$exeDevice.validateQuestion()) {
@@ -880,32 +880,32 @@ var $exeDevice = {
             return;
         }
         $exeDevice.updateFieldGame(game);
-        
+
         var instructions = game.instructionsExe || game.instructions || "",
             tAfter = game.textAfter || "",
             textFeedBack = game.textFeedBack || "";
 
-            if (tinyMCE.get('eXeGameInstructions')) {
-                tinyMCE.get('eXeGameInstructions').setContent(instructions);
-            } else {
-                $("#eXeGameInstructions").val(instructions)
-            }
-            if (tinyMCE.get('eCQFeedBackEditor')) {
-                tinyMCE.get('eCQFeedBackEditor').setContent(textFeedBack);
-            } else {
-                $("#eCQFeedBackEditor").val(textFeedBack)
-            }
+        if (tinyMCE.get('eXeGameInstructions')) {
+            tinyMCE.get('eXeGameInstructions').setContent(instructions);
+        } else {
+            $("#eXeGameInstructions").val(instructions)
+        }
+        if (tinyMCE.get('eCQFeedBackEditor')) {
+            tinyMCE.get('eCQFeedBackEditor').setContent(textFeedBack);
+        } else {
+            $("#eCQFeedBackEditor").val(textFeedBack)
+        }
 
-            if (tinyMCE.get('eXeIdeviceTextAfter')) {
-                tinyMCE.get('eXeIdeviceTextAfter').setContent(tAfter);
-            } else {
-                $("#eXeIdeviceTextAfter").val(tAfter)
-            }
+        if (tinyMCE.get('eXeIdeviceTextAfter')) {
+            tinyMCE.get('eXeIdeviceTextAfter').setContent(tAfter);
+        } else {
+            $("#eXeIdeviceTextAfter").val(tAfter)
+        }
 
         $('.exe-form-tabs li:first-child a').click();
         $exeDevice.showQuestion(0)
     },
-    
+
     isJsonString: function (str) {
         try {
             var o = JSON.parse(str, null, 2);

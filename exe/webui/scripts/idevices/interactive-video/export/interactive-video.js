@@ -213,7 +213,7 @@ var interaction = {
         var e = interaction.scoreSlides[question],
             point = interaction.scoreNIA ? 1 : 0;
         if (e.type == "singleChoice" || e.type == "multipleChoice" || e.type == "dropdown" ||
-            e.type == "matchElements" || e.type == "sortableList") {
+            e.type == "matchElements" || e.type == "sortableList" || e.type == "cloze") {
             var spoint = parseFloat(result)
             if (!isNaN(spoint)) {
                 point = spoint / 100;
@@ -252,11 +252,11 @@ var interaction = {
                         'score': -1
                     }
                     interaction.scoreSlides.push(sr);
-					if (sr.type == "singleChoice" || sr.type == "multipleChoice" || sr.type == "dropdown" || sr.type == "matchElements" || sr.type == "sortableList") {
+					if (sr.type == "singleChoice" || sr.type == "multipleChoice" || sr.type == "dropdown" || sr.type == "matchElements" || sr.type == "sortableList"  || sr.type == "cloze") {
 						activeSlide++;
 					}
                 }
-                interaction.numSlides = interaction.scoreNIA ? interaction.scoreSlides.length : activeSlide+1;
+                interaction.numSlides = interaction.scoreNIA ? interaction.scoreSlides.length : activeSlide;
                 interaction.gameStarted = true;
                 $('#interactiveSendScore').off('click')
                 $('#interactiveSendScore').on('click', function (e) {
@@ -1102,8 +1102,6 @@ var interaction = {
 				interaction.dropdownActivity.saveResults(question,100,slide,selectedValues);
 				rst=100;
 			}
-			//interaction.updateScore(question,100);
-			
 		}		
 	},
 	sortableList : {
