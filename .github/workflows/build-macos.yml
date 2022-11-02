@@ -23,6 +23,7 @@ jobs:
 
           brew install libtiff libjpeg webp little-cms2
           brew install libxml2
+          brew info openssl
 
       # For compatibility with macos <=10.14, we are using system 2.7.18 python.
       # With this version, openssl 1.0 system libs are backwards compatible.
