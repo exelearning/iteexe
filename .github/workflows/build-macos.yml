@@ -30,6 +30,10 @@ jobs:
       # or a newer openssl > 1.0.
       # We could have an action workflow for <=10.14  with system python, and a workflow for >=10.15 with custom python and openssl.
       # At present we are using this action for all versions.
+      - name: Python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: 2.7.18
       - name: Install Python requirements
         run: |
           pip install lxml==2.2.8
@@ -47,6 +51,7 @@ jobs:
           pip install oauthlib
           pip install webassets
           pip install cssmin
+          pip install modulegraph==0.19.2
 
       - name: Create disk image
         run: hdiutil create -volname exe -size 500m -layout GPTSPUD -fs 'Journaled HFS+' -type UDIF installs/osx/exe
