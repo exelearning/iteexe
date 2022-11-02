@@ -124,7 +124,7 @@ var $exeDevice = {
 						<label for="interactiveVideoShowResults"><input type="checkbox" name="interactiveVideoShowResults" id="interactiveVideoShowResults" checked="checked" /> '+_("Show results")+'</label>\
 					</p>\
 					<p>\
-						<label for="interactiveVideoScoreNIA"><input type="checkbox" name="interactiveVideoScoreNIA" id="interactiveVideoScoreNIA" checked="checked" /> '+_("Score non-interactive activities")+'</label>\
+						<label for="interactiveVideoScoreNIA"><input type="checkbox" name="interactiveVideoScoreNIA" id="interactiveVideoScoreNIA" /> '+_("Score non-interactive activities")+'</label>\
 					</p>\
 					<div id="interactiveVideoEditorOpener">\
 						<p class="exe-block-success">'+_("Open the editor and start adding interaction...")+' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="'+_("Editor")+'" /></p>\
