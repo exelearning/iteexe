@@ -18,6 +18,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: 2.7.18
+
       - name: Install brew system libraries
         run: |
 
@@ -63,6 +68,8 @@ jobs:
           ls -l /usr/local/bin/appdmg
           cd installs/osx
           echo "--> Creating python app and DMG image..."
+          python --version
+          which python
           python make.py -p
 
       - name: Upload artifact
