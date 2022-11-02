@@ -156,7 +156,7 @@ var $exeDevice = {
                                 </p>\
                          </div>\
                          <p><label for="eCQformula">' + _("Formula") + ':\
-                            <input id="eCQformula" type="text" style="width:200px" value="' + _("{b}*{h}/2") + '" />\
+                            <input id="eCQformula" type="text" style="width:200px" value="{b}*{h}/2" />\
                          </label></p>\
                         <p>\
                             <label for="eCQwording">' + _("Question text:") + '</label>\
