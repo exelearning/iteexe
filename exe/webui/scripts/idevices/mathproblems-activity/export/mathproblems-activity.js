@@ -1,5 +1,5 @@
 /**
- * Math Problems Problems (Export)
+ * Math Problems (Export)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros

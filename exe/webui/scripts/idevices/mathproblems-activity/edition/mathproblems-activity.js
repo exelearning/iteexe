@@ -1,6 +1,6 @@
 /**
 /**
- * Math problems Activity iDevice (edition code)
+ * Math Problems iDevice (edition code)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Ignacio Gros
