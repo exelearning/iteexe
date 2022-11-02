@@ -56,7 +56,7 @@ jobs:
       - name: Build package
         run: |
           brew install npm
-          echo "--> Installing appdmg" 
+          echo "--> Installing appdmg ..." 
           npm install -g appdmg
           which appdmg
           echo "--> Installing appdmg" 
