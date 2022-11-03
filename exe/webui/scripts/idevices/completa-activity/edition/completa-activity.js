@@ -120,7 +120,7 @@ var $exeDevice = {
                                     <span>' + _("Type") + ':</span>\
                                     <span class="CMPT-ETypes">\
                                         <input class="CMPT-Type" checked="checked" id="cmpttype0" type="radio" name="cmpttype" value="0" />\
-                                        <label for="cmpttype0">' + _("Completa") + '</label>\
+                                        <label for="cmpttype0">' + _("Complete") + '</label>\
                                         <input class="CMPT-Type" id="cmpttype1" type="radio" name="cmpttype" value="1" />\
                                         <label for="cmpttype1">' + _("Drag and drop") + '</label>\
                                         <input class="CMPT-Type" id="cmpttype2" type="radio" name="cmpttype" value="2" />\

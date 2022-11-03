@@ -143,8 +143,8 @@ var $exeDevice = {
                             <span class="FLCRDS-ETitleText" id="flipcardsETitleText">' + _('Text') + '</span>\
                             <div class="FLCRDS-EInputText" id="flipcardsEInputText">\
                                 <label class="sr-av">' + _('Text') + '</label><input type="text" id="flipcardsEText" class="FLCRDS-EText" />\
-                                <label id="flipcardsELblColor" class="FLCRDS-LblColor">' + _('Fuente') + ': </label><input id="flipcardsEColor"  type="color"  class="FLCRDS-EColor" value="#000000">\
-                                <label id="flipcardsELblBgColor"  class="FLCRDS-LblBgColor">' + _('Fondo') + ': </label><input id="flipcardsEBgColor"  type="color"   class="FLCRDS-EBackColor" value="#ffffff">\
+                                <label id="flipcardsELblColor" class="FLCRDS-LblColor">' + _('Color') + ': </label><input id="flipcardsEColor"  type="color"  class="FLCRDS-EColor" value="#000000">\
+                                <label id="flipcardsELblBgColor"  class="FLCRDS-LblBgColor">' + _('Background') + ': </label><input id="flipcardsEBgColor"  type="color"   class="FLCRDS-EBackColor" value="#ffffff">\
                             </div>\
                             <span class="FLCRDS-ETitleImage" id="flipcardsETitleImage">' + _('Image') + '</span>\
                             <div class="FLCRDS-EInputImage"  id="flipcardsEInputImage">\
@@ -187,8 +187,8 @@ var $exeDevice = {
                             <span class="FLCRDS-ETitleText" id="flipcardsETitleTextBack">' + _('Text') + '</span>\
                             <div class="FLCRDS-EInputText" id="flipcardsEInputTextBack">\
                                 <label class="sr-av">' + _('Text') + '</label><input type="text" id="flipcardsETextBack" class="FLCRDS-EText" />\
-                                <label id="flipcardsELblColorBack class="FLCRDS-LblColor">' + _('Fuente') + ': </label><input id="flipcardsEColorBack"  type="color"  class="FLCRDS-EColor" value="#000000">\
-                                <label id="flipcardsELblBgColorBack"  class="FLCRDS-LblBgColor">' + _('Fondo') + ': </label><input id="flipcardsEBgColorBack"  type="color"   class="FLCRDS-EBackColor" value="#ffffff">\
+                                <label id="flipcardsELblColorBack class="FLCRDS-LblColor">' + _('Color') + ': </label><input id="flipcardsEColorBack"  type="color"  class="FLCRDS-EColor" value="#000000">\
+                                <label id="flipcardsELblBgColorBack"  class="FLCRDS-LblBgColor">' + _('Background') + ': </label><input id="flipcardsEBgColorBack"  type="color"   class="FLCRDS-EBackColor" value="#ffffff">\
                             </div>\
                             <span class="FLCRDS-ETitleImage" id="flipcardsETitleImageBack">' + _('Image') + '</span>\
                             <div class="FLCRDS-EInputImage"  id="flipcardsEInputImageBack">\
