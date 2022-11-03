@@ -88,7 +88,7 @@ var $exeDevice = {
     createForm: function () {
         var field = $("textarea.jsContentEditor").eq(0)
         if ($(".iDevice_wrapper.SopaIdevice").length > 0) {
-            html = '<p>' + _('It can only be one Word Search game per page.') + '</p>';
+            html = '<p>' + _('Only one Word Search game per page.') + '</p>';
             field.before(html);
             return;
         }

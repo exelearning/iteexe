@@ -142,7 +142,7 @@ var $eXeSopa = {
                 $('#sopaDivFeedBack').hide();
 
             } else {
-                alert('It can only be one Word Search game per page.')
+                alert('Only one Word Search game per page.')
             }
 
 

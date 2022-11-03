@@ -129,7 +129,7 @@ var $exeDevice = {
                                 <span id="eCQNumeroPercentaje">1/1</span>\
                             </p>\
                             <p style="display:none">\
-                                <label for="eCQModeBoard"><input type="checkbox" id="eCQModeBoard"> ' + _("Modo pizarra digital") + ' </label>\
+                                <label for="eCQModeBoard"><input type="checkbox" id="eCQModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
                         </div>\
                     </fieldset>\
