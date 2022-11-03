@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2022-11-03 12:29+0100\n"
+"POT-Creation-Date: 2022-11-03 13:28+0100\n"
 "PO-Revision-Date: 2022-04-23 12:51+0200\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -11691,6 +11691,7 @@ msgid "Create activities with a password protected feedback."
 msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:12
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:124
 #, fuzzy
 msgid "Complete"
 msgstr "competir"
@@ -11727,19 +11728,16 @@ msgstr ""
 msgid "Read the text and complete the missing words."
 msgstr "Lea el párrafo que aparece abajo y complete las palabras que faltan."
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:124
-#, fuzzy
-msgid "Completa"
-msgstr "competir"
-
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:126
 msgid "Drag and drop"
 msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:128
-#, fuzzy
-msgid "Selecciona"
-msgstr "Reflexión"
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:480
+#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:943
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:768
+msgid "Select"
+msgstr "Seleccionar"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:132
 msgid ""
@@ -11760,6 +11758,7 @@ msgstr "Número de temas"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:142
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:174
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:163
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:110
 #, fuzzy
 msgid "Time (minutes)"
@@ -11781,7 +11780,7 @@ msgstr ""
 msgid ""
 "eXeLearning is a **free** and open source editor to create "
 "**educational** resources in an **simple | easy** way. It's available for"
-" available for different **operating** systems."
+" different **operating** systems."
 msgstr ""
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:14
@@ -12081,9 +12080,10 @@ msgid "Card"
 msgstr "Graba"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:131
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:240
 #, fuzzy
-msgid "Tarjetas"
-msgstr "Inicio"
+msgid "Cards"
+msgstr "Años"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:135
 #, fuzzy
@@ -12092,15 +12092,20 @@ msgstr "Tamaño letra"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:147
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:191
-#, fuzzy
-msgid "Fuente"
-msgstr "Centrado"
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/tools/style-designer/langs/all.js:46
+#: exe/webui/tools/style-designer/langs/all.js:99
+msgid "Color"
+msgstr "Color"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:148
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:192
-#, fuzzy
-msgid "Fondo"
-msgstr "Deshacer"
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+msgid "Background"
+msgstr "Fondo"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:179
 #, fuzzy
@@ -12114,11 +12119,6 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:225
 msgid "Flip down all the cards"
 msgstr ""
-
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:240
-#, fuzzy
-msgid "Cards"
-msgstr "Años"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:15
 #: exe/webui/scripts/idevices/geogebra-activity/export/geogebra-activity.js:32
@@ -12244,6 +12244,7 @@ msgid "Please write the button text."
 msgstr "Debe escribir el texto del botón."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:12
+#: exe/webui/scripts/idevices/identifica-activity/export/identifica-activity.js:48
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:175
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:308
@@ -12339,11 +12340,6 @@ msgstr "Alt"
 #, fuzzy
 msgid "Number of clues"
 msgstr "Número de vidas"
-
-#: exe/webui/scripts/idevices/identifica-activity/export/identifica-activity.js:48
-#, fuzzy
-msgid "Identifica"
-msgstr "Identificador"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
@@ -13154,12 +13150,6 @@ msgstr "Cortar diapositiva"
 msgid "Paste slide"
 msgstr "Pegar diapositiva"
 
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:480
-#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:943
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:768
-msgid "Select"
-msgstr "Seleccionar"
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:482
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:945
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:770
@@ -13298,7 +13288,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:124
 msgid ""
 "Create basic math operation games (addition, subtraction, multiplication,"
-" division). The student will have to guess the result, operator or and "
+" division). The student will have to guess the result, operator or an "
 "operand."
 msgstr ""
 
@@ -13454,11 +13444,6 @@ msgstr ""
 msgid "No decimals"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:163
-#, fuzzy
-msgid "Time(minutes)"
-msgstr "Minutos"
-
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:167
 #, fuzzy
 msgid "Formula"
@@ -13481,7 +13466,7 @@ msgid "Feedback (optional)"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:179
-msgid "Use the Feedback to add an explanation or the right formula&hellip;"
+msgid "Use the Feedback to add an explanation or the right formula."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:416
@@ -14190,11 +14175,6 @@ msgstr "Número de temas"
 msgid "Topic number"
 msgstr "Tema número"
 
-#: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:59
-#, fuzzy
-msgid "TriviExt"
-msgstr "texto"
-
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:52
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:664
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:796
@@ -14741,14 +14721,6 @@ msgstr "Carácter especial"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:55
 msgid "Edit source code"
 msgstr "Editar el código fuente"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/all.js:46
-#: exe/webui/tools/style-designer/langs/all.js:99
-msgid "Color"
-msgstr "Color"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:79
 msgid "Emoticons"
@@ -15761,6 +15733,7 @@ msgstr "Seleccione el archivo multimedia para editarlo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:480
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1033
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1243
 msgid "Standard YouTube License"
 msgstr ""
 
@@ -15824,10 +15797,6 @@ msgstr "Formato seleccionado: "
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:920
 msgid "Please use any of these formats or provide a link to the file itself:"
 msgstr "Use alguno de estos formatos o incluya un enlace al fichero:"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1243
-msgid "Standard Youtube License"
-msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1285
 msgid ""
@@ -16200,11 +16169,6 @@ msgstr "Posicionamiento"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Box"
 msgstr "Caja"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "Background"
-msgstr "Fondo"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -17754,4 +17718,49 @@ msgstr ""
 
 #~ msgid "It can only be one Word Search game per page."
 #~ msgstr ""
+
+#~ msgid "Completa"
+#~ msgstr "competir"
+
+#~ msgid "Fuente"
+#~ msgstr "Centrado"
+
+#~ msgid "Fondo"
+#~ msgstr "Deshacer"
+
+#~ msgid "Standard Youtube License"
+#~ msgstr ""
+
+#~ msgid "Selecciona"
+#~ msgstr "Reflexión"
+
+#~ msgid ""
+#~ "eXeLearning is a **free** and open "
+#~ "source editor to create **educational** "
+#~ "resources in an **simple | easy** "
+#~ "way. It's available for available for"
+#~ " different **operating** systems."
+#~ msgstr ""
+
+#~ msgid "Tarjetas"
+#~ msgstr "Inicio"
+
+#~ msgid ""
+#~ "Create basic math operation games "
+#~ "(addition, subtraction, multiplication, division)."
+#~ " The student will have to guess "
+#~ "the result, operator or and operand."
+#~ msgstr ""
+
+#~ msgid "Use the Feedback to add an explanation or the right formula&hellip;"
+#~ msgstr ""
+
+#~ msgid "Identifica"
+#~ msgstr "Identificador"
+
+#~ msgid "TriviExt"
+#~ msgstr "texto"
+
+#~ msgid "Time(minutes)"
+#~ msgstr "Minutos"
 

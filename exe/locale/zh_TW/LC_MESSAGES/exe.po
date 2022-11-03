@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2022-11-03 12:29+0100\n"
+"POT-Creation-Date: 2022-11-03 13:28+0100\n"
 "PO-Revision-Date: 2021-05-29 13:38+0200\n"
 "Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
 "Language: zh_Hant_TW\n"
@@ -10967,6 +10967,7 @@ msgid "Create activities with a password protected feedback."
 msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:12
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:124
 #, fuzzy
 msgid "Complete"
 msgstr "競爭"
@@ -11003,19 +11004,16 @@ msgstr ""
 msgid "Read the text and complete the missing words."
 msgstr "檢視以下段落並填空。"
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:124
-#, fuzzy
-msgid "Completa"
-msgstr "競爭"
-
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:126
 msgid "Drag and drop"
 msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:128
-#, fuzzy
-msgid "Selecciona"
-msgstr "思考反應"
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:480
+#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:943
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:768
+msgid "Select"
+msgstr "選取"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:132
 msgid ""
@@ -11036,6 +11034,7 @@ msgstr "生命數"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:142
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:174
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:163
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:110
 #, fuzzy
 msgid "Time (minutes)"
@@ -11057,7 +11056,7 @@ msgstr ""
 msgid ""
 "eXeLearning is a **free** and open source editor to create "
 "**educational** resources in an **simple | easy** way. It's available for"
-" available for different **operating** systems."
+" different **operating** systems."
 msgstr ""
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:14
@@ -11343,9 +11342,10 @@ msgid "Card"
 msgstr "記錄"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:131
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:240
 #, fuzzy
-msgid "Tarjetas"
-msgstr "起始"
+msgid "Cards"
+msgstr "年"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:135
 #, fuzzy
@@ -11354,15 +11354,20 @@ msgstr "字型大小"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:147
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:191
-#, fuzzy
-msgid "Fuente"
-msgstr "置中"
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+#: exe/webui/tools/style-designer/langs/all.js:46
+#: exe/webui/tools/style-designer/langs/all.js:99
+msgid "Color"
+msgstr "顏色"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:148
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:192
-#, fuzzy
-msgid "Fondo"
-msgstr "復原"
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
+msgid "Background"
+msgstr "背景"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:179
 msgid "Back side"
@@ -11375,11 +11380,6 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:225
 msgid "Flip down all the cards"
 msgstr ""
-
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:240
-#, fuzzy
-msgid "Cards"
-msgstr "年"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:15
 #: exe/webui/scripts/idevices/geogebra-activity/export/geogebra-activity.js:32
@@ -11503,6 +11503,7 @@ msgid "Please write the button text."
 msgstr "請寫下按鍵文字。"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:12
+#: exe/webui/scripts/idevices/identifica-activity/export/identifica-activity.js:48
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:175
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:308
@@ -11598,11 +11599,6 @@ msgstr ""
 #, fuzzy
 msgid "Number of clues"
 msgstr "生命數"
-
-#: exe/webui/scripts/idevices/identifica-activity/export/identifica-activity.js:48
-#, fuzzy
-msgid "Identifica"
-msgstr "識別子"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
@@ -12389,12 +12385,6 @@ msgstr ""
 msgid "Paste slide"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:480
-#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:943
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:768
-msgid "Select"
-msgstr "選取"
-
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:482
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:945
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:770
@@ -12533,7 +12523,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:124
 msgid ""
 "Create basic math operation games (addition, subtraction, multiplication,"
-" division). The student will have to guess the result, operator or and "
+" division). The student will have to guess the result, operator or an "
 "operand."
 msgstr ""
 
@@ -12688,11 +12678,6 @@ msgstr ""
 msgid "No decimals"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:163
-#, fuzzy
-msgid "Time(minutes)"
-msgstr "分鐘"
-
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:167
 #, fuzzy
 msgid "Formula"
@@ -12715,7 +12700,7 @@ msgid "Feedback (optional)"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:179
-msgid "Use the Feedback to add an explanation or the right formula&hellip;"
+msgid "Use the Feedback to add an explanation or the right formula."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:416
@@ -13412,11 +13397,6 @@ msgstr ""
 msgid "Topic number"
 msgstr ""
 
-#: exe/webui/scripts/idevices/trivial-activity/export/trivial-activity.js:59
-#, fuzzy
-msgid "TriviExt"
-msgstr "文字"
-
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:52
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:664
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:796
@@ -13951,14 +13931,6 @@ msgstr "特殊字元"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:55
 msgid "Edit source code"
 msgstr "編輯原始碼"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-#: exe/webui/tools/style-designer/langs/all.js:46
-#: exe/webui/tools/style-designer/langs/all.js:99
-msgid "Color"
-msgstr "顏色"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:79
 msgid "Emoticons"
@@ -14943,6 +14915,7 @@ msgstr "請選擇要編輯的影像"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:480
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1033
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1243
 msgid "Standard YouTube License"
 msgstr ""
 
@@ -15009,10 +14982,6 @@ msgstr "選擇格式。"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:908
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:920
 msgid "Please use any of these formats or provide a link to the file itself:"
-msgstr ""
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1243
-msgid "Standard Youtube License"
 msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1285
@@ -15357,11 +15326,6 @@ msgstr "位置"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Box"
 msgstr "方塊"
-
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
-msgid "Background"
-msgstr "背景"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -16823,4 +16787,49 @@ msgstr "您的iDevices或是generic.data檔案是由更新版的eXe所建立。�
 
 #~ msgid "It can only be one Word Search game per page."
 #~ msgstr ""
+
+#~ msgid "Completa"
+#~ msgstr "競爭"
+
+#~ msgid "Fuente"
+#~ msgstr "置中"
+
+#~ msgid "Fondo"
+#~ msgstr "復原"
+
+#~ msgid "Standard Youtube License"
+#~ msgstr ""
+
+#~ msgid "Selecciona"
+#~ msgstr "思考反應"
+
+#~ msgid ""
+#~ "eXeLearning is a **free** and open "
+#~ "source editor to create **educational** "
+#~ "resources in an **simple | easy** "
+#~ "way. It's available for available for"
+#~ " different **operating** systems."
+#~ msgstr ""
+
+#~ msgid "Tarjetas"
+#~ msgstr "起始"
+
+#~ msgid ""
+#~ "Create basic math operation games "
+#~ "(addition, subtraction, multiplication, division)."
+#~ " The student will have to guess "
+#~ "the result, operator or and operand."
+#~ msgstr ""
+
+#~ msgid "Use the Feedback to add an explanation or the right formula&hellip;"
+#~ msgstr ""
+
+#~ msgid "Identifica"
+#~ msgstr "識別子"
+
+#~ msgid "TriviExt"
+#~ msgstr "文字"
+
+#~ msgid "Time(minutes)"
+#~ msgstr "分鐘"
 
