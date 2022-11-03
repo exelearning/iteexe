@@ -45,7 +45,7 @@ var $eXeIdentifica = {
         if (!$eXeIdentifica.supportedBrowser('identifica')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Identifica') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Identify') + '</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
