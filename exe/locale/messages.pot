@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2022-11-02 13:30+0100\n"
+"POT-Creation-Date: 2022-11-03 12:29+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -10322,6 +10322,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:182
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:71
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:141
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:138
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:930
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:747
@@ -12386,10 +12387,6 @@ msgstr ""
 msgid "Solve the following math problems."
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:141
-msgid "Modo pizarra digital"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:146
 msgid "Problems"
 msgstr ""
@@ -13005,7 +13002,7 @@ msgid "Finish"
 msgstr ""
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:92
-msgid "It can only be one Word Search game per page."
+msgid "Only one Word Search game per page."
 msgstr ""
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:100

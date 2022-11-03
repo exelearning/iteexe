@@ -6,6 +6,7 @@
 # eXeLearning.net Project <admin@exelearning.net>
 # Asmoz fundazioa, 2009
 #
+#
 # http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
 # Malen <mjareno@asmoz.org>
 # 2012-2022 Joxemi Andonegi <jm.andonegi@gmail.com>
@@ -15,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2022-11-02 13:30+0100\n"
+"POT-Creation-Date: 2022-11-03 12:29+0100\n"
 "PO-Revision-Date: 2022-05-06 13:46+0200\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language: eu\n"
@@ -11113,6 +11114,7 @@ msgstr "Galderak"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:182
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:71
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:141
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:138
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:930
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:747
@@ -13265,10 +13267,6 @@ msgstr ""
 msgid "Solve the following math problems."
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:141
-msgid "Modo pizarra digital"
-msgstr ""
-
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:146
 #, fuzzy
 msgid "Problems"
@@ -13897,8 +13895,9 @@ msgid "Finish"
 msgstr "Amaitu"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:92
-msgid "It can only be one Word Search game per page."
-msgstr ""
+#, fuzzy
+msgid "Only one Word Search game per page."
+msgstr "Bideo interaktibo bakarra orriko."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:100
 msgid "Create word search games with additional text, images or sound."
@@ -17554,4 +17553,10 @@ msgstr ""
 
 #~ msgid "Trivial"
 #~ msgstr "Trivial"
+
+#~ msgid "Modo pizarra digital"
+#~ msgstr ""
+
+#~ msgid "It can only be one Word Search game per page."
+#~ msgstr ""
 
