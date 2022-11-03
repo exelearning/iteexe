@@ -151,7 +151,7 @@ var $exeDevice = {
                                 </select>\
                             </label></p>\
                             <p>\
-                                <label for="eCQTime">' + _("Time(minutes)") + ':\
+                                <label for="eCQTime">' + _("Time (minutes)") + ':\
                                 <input type="number" name="eCQTime" id="eCQTime" value="3" min="1" max="59" /> </label>\
                                 </p>\
                          </div>\
