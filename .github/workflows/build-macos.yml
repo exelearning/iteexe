@@ -24,6 +24,8 @@ jobs:
           brew install libtiff libjpeg webp little-cms2
           brew install libxml2
           brew info openssl
+          brew link openssl --force
+          brew info openssl
 
       # For compatibility with macos <=10.14, we are using system 2.7.18 python.
       # With this version, openssl 1.0 system libs are backwards compatible.
@@ -31,14 +33,17 @@ jobs:
       # or a newer openssl > 1.0.
       # We could have an action workflow for <=10.14  with system python, and a workflow for >=10.15 with custom python and openssl.
       # At present we are using this action for all versions.
-      - name: Python version
-        uses: actions/setup-python@v2
+      - name: Install required python and pip
+        uses: gabrielfalcao/pyenv-action@v8
         with:
-          python-version: 2.7.18
+          default: 2.7.18
+          command: |
+            easy_install pip
+            pip install --upgrade pip
       - name: Install Python requirements
         run: |
           pip install lxml==2.2.8
-          pip install py2app==0.25
+          pip install py2app==0.24
           pip install Pillow==5.3.0
           pip install zope.interface
           pip install chardet
