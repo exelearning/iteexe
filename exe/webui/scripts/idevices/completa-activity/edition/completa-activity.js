@@ -124,7 +124,7 @@ var $exeDevice = {
                                         <input class="CMPT-Type" id="cmpttype1" type="radio" name="cmpttype" value="1" />\
                                         <label for="cmpttype1">' + _("Drag and drop") + '</label>\
                                         <input class="CMPT-Type" id="cmpttype2" type="radio" name="cmpttype" value="2" />\
-                                        <label for="cmpttype2">' + _("Selecciona") + '</label>\
+                                        <label for="cmpttype2">' + _("Select") + '</label>\
                                     </span>\
                                 </p>\
                                 <p id="cmptEWordsLimitDiv" class="CMPT-EWordsNo">\
@@ -173,7 +173,7 @@ var $exeDevice = {
                                 <div class="CMPT-EPanel" id="cmptEPanel">\
                                     <p>\
                                         <label for="cmptEText" class="sr-av">' + _("Text") + ':</label>\
-                                        <textarea id="cmptEText" class="exe-html-editor">' + _("eXeLearning is a **free** and open source editor to create **educational** resources in an **simple | easy** way. It's available for available for different **operating** systems.").replace(/\*\*/g, "@@") + '</textarea>\
+                                        <textarea id="cmptEText" class="exe-html-editor">' + _("eXeLearning is a **free** and open source editor to create **educational** resources in an **simple | easy** way. It's available for different **operating** systems.").replace(/\*\*/g, "@@") + '</textarea>\
                                     </p>\
                                 </div>\
                         </fieldset>\

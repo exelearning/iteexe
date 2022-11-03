@@ -167,7 +167,7 @@ var $exeDevice = {
                             <div  id="eCQfeedbackQuestionDiv" style="display:none">\
                                 <label for="eCQfeedbackQuestion" class="sr-av">' + _("Feedback (optional)") + '</label>\
                                 <textarea name="eCQfeedbackQuestion" id="eCQfeedbackQuestion" class="exe-html-editor" cols="90" rows="4"></textarea>\
-                                <span class="info">' + _("Use the Feedback to add an explanation or the right formula&hellip;") + '</span>\
+                                <span class="info">' + _("Use the Feedback to add an explanation or the right formula.") + '</span>\
                             </div>\
                         <p>\
                           <div class="MTOE-ENavigationButtons">\

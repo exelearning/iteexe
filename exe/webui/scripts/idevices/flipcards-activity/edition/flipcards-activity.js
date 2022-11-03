@@ -127,7 +127,7 @@ var $exeDevice = {
                     </div>\
                 </fieldset>\
                 <fieldset class="exe-fieldset">\
-                <legend><a href="#">' + _('Tarjetas') + '</a></legend>\
+                <legend><a href="#">' + _('Cards') + '</a></legend>\
                 <div class="FLCRDS-EPanel" id="flipcardsEPanel">\
                     <div class="FLCRDS-EPhrase" id="flipcardsEPhrase">\
                         <div class="FLCRDS-EDatosCarta FLCRDS-EFront" id="flipcardsEDatosCarta">\
