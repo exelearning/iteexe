@@ -81,7 +81,7 @@ var $exeDevice = {
         "msgIncorrects": _("Wrong"),
         "msgIncomplete": _("Not completed"),
         "msgEndTime": _("Time over."),
-        "msgAllOperations": _("Your finished all the operations."),
+        "msgAllOperations": _("You finished all the operations."),
         
     },
     init: function () {
