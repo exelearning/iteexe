@@ -59,9 +59,9 @@ var $exeDevice = {
         "msgEndGameScore": _("Please start playing first..."),
         "mgsGameStart": _("The game has already started."),
         "msgYouScore": _("Score"),
-        "msgEndGameM": _("Game time is over. Your score is %s."),
+        "msgEndTime": _("Game time is over. Your score is %s."),
         "msgEnd": _("Finish"),
-        "msgEndTime": _("You finished the game. Your score is %s.")
+        "msgEndGameM": _("You finished the game. Your score is %s.")
 
     },
     init: function () {
@@ -85,6 +85,41 @@ var $exeDevice = {
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
     },
+
+    importAdivina: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault(),
+                cuestion = data.wordsGame[i];
+            p.word = cuestion.word;
+            p.definition = cuestion.definition;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            $exeDevice.wordsGame.push(p);
+        }
+        return $exeDevice.wordsGame;
+    },
+    importRosco: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault(),
+                cuestion = data.wordsGame[i];
+            p.word = cuestion.word;
+            p.definition = cuestion.definition;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            $exeDevice.wordsGame.push(p);
+        }
+        return $exeDevice.wordsGame;
+    },
     createForm: function () {
         var field = $("textarea.jsContentEditor").eq(0)
         if ($(".iDevice_wrapper.SopaIdevice").length > 0) {
@@ -96,7 +131,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Create word search games with additional text, images or sound.")+' <a href="https://youtu.be/T9n2rGA-80g" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
+                <div class="exe-idevice-info">' + _("Create word search games with additional text, images or sound.") + ' <a href="https://youtu.be/T9n2rGA-80g" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Find the hidden words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -113,6 +148,7 @@ var $exeDevice = {
 							<label for="sopaEShowResolve"><input type="checkbox" id="sopaEShowResolve" checked> ' + _('Show "Solve" button.') + ' </label>\
                         </p>\
                         <p>\
+                            <span>' + _('Accept') + ': </span>\
                             <label for="sopaEDiagonals"><input type="checkbox"  id="sopaEDiagonals"> ' + _("Diagonal") + '. </label> \
                             <label for="sopaEReverses"><input type="checkbox"  id="sopaEReverses"> ' + _("Inverse") + '. </label> \
                         </p>\
@@ -124,7 +160,7 @@ var $exeDevice = {
                             <textarea id="sopaEFeedBackEditor" class="exe-html-editor"></textarea>\
                         </p>\
                         <p>\
-                            <label for="sopaEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="sopaEPercentajeQuestions" id="sopaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
+                            <label for="sopaEPercentajeQuestions">% ' + _("Words") + ':  <input type="number" name="sopaEPercentajeQuestions" id="sopaEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
                             <span id="sopaENumeroPercentaje">1/1</span>\
                         </p>\
                     </div>\
@@ -207,7 +243,6 @@ var $exeDevice = {
 				' + $exeAuthoring.iDevice.gamification.share.getTab() + '\
 		    </div>\
 			';
-
         field.before(html);
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
@@ -502,9 +537,9 @@ var $exeDevice = {
             feedBack = $('#sopaEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#sopaEPercentajeFB').val())),
             percentajeQuestions = parseInt(clear($('#sopaEPercentajeQuestions').val()));
-            time = parseInt(clear($('#sopaETime').val())),
-            diagonals=$('#sopaEDiagonals').is(':checked'),
-            reverses=$('#sopaEReverses').is(':checked');
+        time = parseInt(clear($('#sopaETime').val())),
+            diagonals = $('#sopaEDiagonals').is(':checked'),
+            reverses = $('#sopaEReverses').is(':checked');
         if (feedBack && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
             return false;
@@ -540,10 +575,10 @@ var $exeDevice = {
             'percentajeFB': percentajeFB,
             'version': 1,
             'percentajeQuestions': percentajeQuestions,
-            'time':time,
+            'time': time,
             'diagonals': diagonals,
             'reverses': reverses,
-            'showResolve':showResolve
+            'showResolve': showResolve
         }
         return data;
     },
@@ -804,13 +839,13 @@ var $exeDevice = {
         $('#sopaETime').on('focusout', function () {
             this.value = this.value.trim() == '' ? 0 : this.value;
             this.value = this.value > 59 ? 59 : this.value;
-            this.value = this.value < 0 ? 0: this.value;
+            this.value = this.value < 0 ? 0 : this.value;
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
 
     clearQuestion: function () {
-        $exeDevice.changeTypeQuestion();
+
         //$("input.myclass[name='myname'][value='the_value']").prop("checked", true);
         $('#sopaEURLImage').val('');
         $('#sopaEXImage').val('0');
@@ -820,6 +855,7 @@ var $exeDevice = {
         $('#sopaEDefinitionWord').val('');
         $('#sopaESolutionWord').val('');
         $('#sopaEURLAudio').val('');
+        $exeDevice.changeTypeQuestion();
     },
 
     addQuestion: function () {
@@ -985,25 +1021,42 @@ var $exeDevice = {
     importGame: function (content) {
         var game = $exeDevice.isJsonString(content);
         if (!game || typeof game.typeGame == "undefined") {
-            eXe.app.alert($exeDevice.msgs.msgESelectFile);
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
-        } else if (game.typeGame !== 'Sopa') {
-            eXe.app.alert($exeDevice.msgs.msgESelectFile);
+        } else if (game.typeGame == 'Sopa') {
+            game.wordsGame = $exeDevice.importSopa(game);
+            $exeDevice.active = 0;
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
+                tAfter = game.textAfter || "",
+                textFeedBack = game.textFeedBack || "";
+            tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            tinyMCE.get('seleccionaEFeedBackEditor').setContent(unescape(textFeedBack));
+        } else if (game.typeGame == 'Adivina') {
+            game.wordsGame = $exeDevice.importAdivina(game);
+        } else if (game.typeGame == 'Rosco') {
+            game.wordsGame = $exeDevice.importRosco(game);
+        } else {
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
-        if ($exeDevice.wordsGame.length > 1) {
-            game.wordsGame = $exeDevice.importSopa(game)
-        }
-        $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions,
-            tAfter = game.textAfter || "",
-            textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('sopaEFeedBackEditor').setContent(unescape(textFeedBack));
-        $('.exe-form-tabs li:first-child a').click();
+
         $exeDevice.active = 0;
+        $exeDevice.deleteEmptyQuestion();
         $exeDevice.showQuestion($exeDevice.active);
+        $('.exe-form-tabs li:first-child a').click();
+    },
+    deleteEmptyQuestion: function () {
+        if ($exeDevice.wordsGame.length > 1) {
+            var word = $('#sopaESolutionWord').val().trim();
+            if (word.length == 0) {
+                var definition = $('#sopaEDefinitionWord').val().trim();
+                if (definition.length == 0) {
+                    $exeDevice.removeQuestion();
+                }
+            }
+        }
     },
     importSopa: function (game) {
         var wordsGame = $exeDevice.wordsGame;
@@ -1015,6 +1068,7 @@ var $exeDevice = {
         }
         return wordsGame;
     },
+
     isJsonString: function (str) {
         try {
             var o = JSON.parse(str, null, 2);

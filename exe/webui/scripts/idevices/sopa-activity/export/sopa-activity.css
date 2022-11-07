@@ -12,8 +12,7 @@
 	margin: 1em auto;
 	padding: 0;
 	width: 100%;
-	max-width: 1000px;
-	min-height: 450px;
+	max-width: 1300px;
 }
 
 .SPP-MainContainer * {
@@ -57,11 +56,10 @@
 
 .SPP-GameContainer {
 	margin: 0 auto;
-	max-width: 1000px;
+	max-width: 1300px;
 	padding: 1em 0.3em 0 0.3em;
 	position: relative;
 	width: 100%;
-	min-height: 500px;
 }
 
 /* barra de puntuaciones */
@@ -120,7 +118,7 @@
 .SPP-Multimedia {
 	background-color: transparent;
 	margin: 0.3em auto;
-	max-width: 1024px;
+	max-width: 1300px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
