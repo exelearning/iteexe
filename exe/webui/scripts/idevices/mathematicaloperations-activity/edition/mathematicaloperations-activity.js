@@ -147,8 +147,8 @@ var $exeDevice = {
                                 <label for="eRMQadd"><input id="eRMQadd" type="checkbox" /> ' + _("Addition") + '</label>\
                                 <label for="eRMQsubs"><input id="eRMQsubs" type="checkbox" /> ' + _("Subtraction") + '</label>\
                                 <label for="eRMQmult"><input id="eRMQmult" type="checkbox" checked /> ' + _("Multiplication") + '</label>\
-                            </p>\
                                 <label for="eRMQdiv"><input id="eRMQdiv" type="checkbox" /> ' + _("Division") + '</label>\
+                            </p>\
                             <p>\
                                 <label for="eRMQdecimalsInResults"><input id="eRMQdecimalsInResults" type="checkbox" /> ' + _("Allow decimals in the results") + '</label>\
                             </p>\

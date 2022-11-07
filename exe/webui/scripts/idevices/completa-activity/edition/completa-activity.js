@@ -266,7 +266,7 @@ var $exeDevice = {
         $("#cmptEEstrictCheck").prop('checked', game.estrictCheck);
         $("#cmptEWordsSize").prop('checked', game.wordsSize);
         $('#cmptETime').val(game.time);
-        $("#cmptEWordsErrors").prop('checked', game.wordsErrors);
+        $("#cmptEWordsErrors").val(game.wordsErrors);
         $("#cmptEWordsLimit").prop('checked', game.wordsLimit);
         $("input.CMPT-Type[name='cmpttype'][value='" + game.type + "']").prop("checked", true);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
@@ -284,7 +284,7 @@ var $exeDevice = {
             });
             $("#cmptEWordsLimitDiv").show();
         }
-        if (game.type == 2 && !game.wordsLimit) {
+        if (game.type >0 && !game.wordsLimit) {
             $("#cmptEWordsErrorsDiv").css({
                 'display': 'flex'
             });
@@ -478,7 +478,7 @@ var $exeDevice = {
                 $("#cmptEWordsLimitDiv").show();
             }
 
-            if (type == 2 && !limit) {
+            if (type > 0 && ! limit) {
                 $("#cmptEWordsErrorsDiv").css({
                     'display': 'flex'
                 });

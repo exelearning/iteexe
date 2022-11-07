@@ -578,7 +578,7 @@ var $eXeCompleta = {
             $("#cmptSolutionDiv-" + instance).show();
         }
         $eXeCompleta.showFeedBack(instance);
-           var html = $('#cmptGameContainer-' + instance).html(),
+        var html = $('#cmptGameContainer-' + instance).html(),
             latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
             $eXeCompleta.updateLatex('cmptGameContainer-' + instance)
@@ -646,7 +646,7 @@ var $eXeCompleta = {
                 } else if (mOptions.wordsLimit && $eXeCompleta.checkWordLimit(word, answord, instance)) {
                     mOptions.hits++;
                     $(this).css('color', '#036354')
-                } else if ( !mOptions.wordsLimit && $eXeCompleta.checkWord(word, answord, instance)) {
+                } else if (!mOptions.wordsLimit && $eXeCompleta.checkWord(word, answord, instance)) {
                     mOptions.hits++;
                     $(this).css('color', '#036354')
                 } else {
@@ -693,7 +693,6 @@ var $eXeCompleta = {
         }
         var words = sWord.split('|'),
             mword = $.trim(words[0]).replace(/\.$/, "").replace(/\,$/, "").replace(/\;$/, "");
-            console.log(mword, sAnsWord)
         return mword == sAnsWord
 
     },
@@ -815,25 +814,10 @@ var $eXeCompleta = {
         $('#cmptMultimedia-' + instance).append(html);
     },
 
-    createInputSelect1: function (instance) {
-        var mOptions = $eXeCompleta.options[instance],
-            html = mOptions.text.trim(),
-            solution=mOptions.text.trim();
-
-        for (var i = 0; i < mOptions.words.length; i++) {
-            var word = mOptions.words[i],
-                word = word.split('|')[0].trim();
-            var input = $eXeCompleta.createSelect(i, instance);
-            html = html.replace('#X#', input);
-            solution=solution.replace('#X#')
-        }
-        $('#cmptMultimedia-' + instance).empty();
-        $('#cmptMultimedia-' + instance).append(html);
-    },
     createInputSelect: function (instance) {
         var mOptions = $eXeCompleta.options[instance],
             html = mOptions.text.trim(),
-            solution=mOptions.text.trim();
+            solution = mOptions.text.trim();
 
         for (var i = 0; i < mOptions.words.length; i++) {
             var word = mOptions.words[i],
@@ -843,11 +827,11 @@ var $eXeCompleta = {
             } else {
                 var input = $eXeCompleta.createSelect(i, instance);
             }
-            solution=solution.replace('#X#', word);
+            solution = solution.replace('#X#', word);
             html = html.replace('#X#', input);
         }
         if (mOptions.wordsLimit) {
-            mOptions.solution=solution;
+            mOptions.solution = solution;
         }
         $('#cmptMultimedia-' + instance).empty();
         $('#cmptMultimedia-' + instance).append(html);
@@ -928,16 +912,29 @@ var $eXeCompleta = {
     getWordArrayJson: function (instance) {
         var mOptions = $eXeCompleta.options[instance],
             wordsa = [],
-            wds = [];
+            wordsCorrect = [],
+            wordsErrors = [];
         mOptions.oWords = {};
         $('#cmptButonsDiv-' + instance).empty();
         for (var i = 0; i < mOptions.words.length; i++) {
             var wd = mOptions.words[i];
             wd = wd.split('|')[0].trim();
-            wds.push(wd)
+            wordsCorrect.push(wd)
         }
-        wds.sort();
-        wordsa = [...wds];
+        if (mOptions.wordsErrors.length > 0) {
+            we = mOptions.wordsErrors.split(',');
+            for (var i = 0; i < we.length; i++) {
+                var p = we[i].trim().split('|');
+                for (var j = 0; j < p.length; j++) {
+                    p[j] = p[j].trim();
+                }
+                wordsErrors = wordsErrors.concat(p)
+            }
+            wordsCorrect = wordsCorrect.concat(wordsErrors);
+        }
+        mOptions.oWords = {};
+        wordsCorrect.sort();
+        wordsa = [...wordsCorrect];
         if (mOptions.caseSensitive) {
             wordsa = wds.map(name => name.toLowerCase());
         }

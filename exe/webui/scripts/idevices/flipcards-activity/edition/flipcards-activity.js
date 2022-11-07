@@ -118,7 +118,7 @@ var $exeDevice = {
                             <label for="flipcardsENavigation"><input type="checkbox" id="flipcardsENavigation" checked>' + _('Navigation') + '</label>\
                         </p>\
                         <p>\
-                            <label for="flipcardsEPercentajeCards">%' + _('Card') + ':</label><input type="number" name="flipcardsEPercentajeCards" id="flipcardsEPercentajeCards" value="100" min="1" max="100" />\
+                            <label for="flipcardsEPercentajeCards">% ' + _('Cards') + ':</label><input type="number" name="flipcardsEPercentajeCards" id="flipcardsEPercentajeCards" value="100" min="1" max="100" />\
                             <span id="flipcardsENumeroPercentaje">1/1</span>\
                         </p>\
                         <p>\
