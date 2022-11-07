@@ -1,49 +1,56 @@
 intef-exe (3:2.8) lucid; urgency=medium
 
   * Manuel Narváez
-	- New Game: Complete (type or select). Design by Ana María Zamora and Francisco Javier Pulido.
-	- New Game: Word Search (crossword puzzle). Design by Ana María Zamora.
-	- New Game: Identify (guess a character or solution). Design by Ana María Zamora.
-	- New Game: TriviExt (board questions game). Design by Ana María Zamora and Francisco Javier Pulido.
-	- New Game: Memory Cards (flipping cards).
-	- New Game: Math Operations (random basic operations). Previous code by Ignacio Gros. Design by Ana María Zamora.
-	- New Game: Math Problems (random basic math problems). Previous code by Ignacio Gros. Design by Ana María Zamora.
-	- New: Blackboard mode in all the games.
-	- New: Accessibility warning in games that require it.
-	- New: Instructions in all games.
-	- Interactive Video iDevice is now SCORM compatible. Scores can be saved.
-	- Multiple Choice Quiz iDevice usability revision.
-	- Map iDevice: 404 errors fixed (#654) + Usability revision + New SVG icons + Effects in text slides.
-	- Allow LaTeX code in more iDevices. MathJax will be loaded.
-	- MathJax upgrade (from 2.7.1 to 3.2.2) and configuration update. Configuration options in common file. (#641)
+    - New Game: Complete (type or select).
+      Design by Ana María Zamora and Francisco Javier Pulido.
+    - New Game: Word Search (crossword puzzle).
+      Design by Ana María Zamora.
+    - New Game: Identify (guess a character or solution).
+      Design by Ana María Zamora.
+    - New Game: Memory Cards (flipping cards).
+    - New Game: Math Operations (random basic operations).
+      Design by Ana María Zamora.
+      Previous code by Ignacio Gros.
+    - New Game: Math Problems (random basic math problems).
+      Design by Ana María Zamora.
+      Previous code by Ignacio Gros.
+    - New: Blackboard mode in all the games.
+    - New: Accessibility warning in games that require it.
+    - New: Instructions in all games.
+    - Interactive Video iDevice is now SCORM compatible. Scores can be saved.
+    - Multiple Choice Quiz iDevice usability revision.
+    - Map iDevice: 404 errors fixed (#654) + Usability revision + New SVG icons + Effects in text slides.
+    - Allow LaTeX code in more iDevices. MathJax will be loaded.
+    - MathJax upgrade (from 2.7.1 to 3.2.2) and configuration update. Configuration options in common file. (#641)
 
   * Ignacio Gros
-	- New Export preference: "Made with eXeLearning" footer link. (#638)
-	- New Export preference: "Math content: Load MathJax in pages with LaTeX code". You can now type LaTeX code directly into the editor. (#639)
-	- Rubric iDevice: Rubrics update + 6 new rubrics, by CEDEC. (#645)
-	- prettyPhoto (Lightbox): Link in new windows in IFRAME (SCORM and IMS only) + i18n. (#653)
-	- "Add a Text iDevice" button in the main area. (#642)
-	- Interactive Vídeo iDevice: Cover image (poster). (#646)
-	- TinyMCE Media plugin: New "Standard YouTube License" option (#624) + IFRAME attribution problems fixed (#634).
-	- TinyMCE Math plugin: Allow inline formulas (LaTeX code). (#651)
-	- Licenses help links (Creative Commons) in some TinyMCE plugins and the Properties tab. (#649)	
-	
+    - New Export preference: "Made with eXeLearning" footer link. (#638)
+    - New Export preference: "Math content: Load MathJax in pages with LaTeX code". You can now type LaTeX code directly into the editor. (#639)
+    - Rubric iDevice: Rubrics update + 6 new rubrics, by CEDEC. (#645)
+    - prettyPhoto (Lightbox): Link in new windows in IFRAME (SCORM and IMS only) + i18n. (#653)
+    - "Add a Text iDevice" button in the main area. (#642)
+    - Interactive Vídeo iDevice: Cover image (poster) (#646) + Bigger player. (#652)
+    - TinyMCE Media plugin: New "Standard YouTube License" option (#624) + IFRAME attribution problems fixed (#634).
+    - TinyMCE Math plugin: Allow inline formulas (LaTeX code). (#651)
+    - Licenses help links (Creative Commons) in some TinyMCE plugins and the Properties tab. (#649)    
+    
   * Pablo Amaya
-	- New export option: "Export current page as SCORM". (#643)
-	- Old "Add Previous/Next links within SCOs" export option removed. (#658)
-	
+    - New export option: "Export current page as SCORM". (#643)
+    - Old "Add Previous/Next links within SCOs" export option removed. (#658)
+    
   * APSL
     - Package building.
     
   * Juan Rafael Fernández
     - String extraction process revision.
     - Translations coordination.  
-	- PO/msgfmt and string errors fixed.
+    - PO/msgfmt and string errors fixed.
 
   * eXeLearning.net Translation Team
+    - New complete Spanish translation, by Juan Rafael Fernández.
     - New complete Greek translation, by Yannis Kaskamanidis.
-	- New complete Polish translation, by Waldemar Stoczkowski.
-	- New complete Turkish translation, by Turkish transifex team.
+    - New complete Polish translation, by Waldemar Stoczkowski.
+    - New complete Turkish translation, by Turkish transifex team.
 
 intef-exe (3:2.7) lucid; urgency=medium
 
