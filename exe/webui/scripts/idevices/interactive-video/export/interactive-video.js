@@ -1715,6 +1715,10 @@ var interaction = {
 	getImage : function(e,w,h,src){
 		var maxW = 448;
 		var maxH = 356;
+		if ($("#activity").css("height")=="478px") {
+			maxW = 640;
+			maxH = 478;
+		}
 		var newW = w;
 		var newH = h;
 		var css = "square";
@@ -1741,7 +1745,7 @@ var interaction = {
 			newW = Math.round(maxH*newW/newH);
 			newH = maxH;
 		}	
-		return '<img src="'+src+'" alt="'+e.description+'" class="'+css+'" width="'+newW+'" height="'+newH+'" style="display:block;margin-top:'+((356-newH)/2)+'px" /><a href="'+src+'" target="_blank">'+interaction.i18n.newWindow+'</a>';
+		return '<img src="'+src+'" alt="'+e.description+'" class="'+css+'" width="'+newW+'" height="'+newH+'" style="display:block;margin-top:'+((maxH-newH)/2)+'px" /><a href="'+src+'" target="_blank">'+interaction.i18n.newWindow+'</a>';
 	}	
 }
 
