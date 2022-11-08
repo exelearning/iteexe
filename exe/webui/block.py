@@ -330,10 +330,12 @@ class Block(Renderable):
         """
         Returns an XHTML string for the view buttons
         """
+        editTitle = _(u"Edit")
+        editTitle += _(u" (%s)") % _(self.idevice._typeName)
         html = '<p class="exe-controls idevice-edition-buttons">'
         html  += common.submitImage(u"edit", self.id, 
                                    u"/images/stock-edit.png", 
-                                   _(u"Edit"), self.package.isChanged, True)
+                                   editTitle, self.package.isChanged, True)
         html += common.confirmThenSubmitImage(
             _(u"This will delete this iDevice. Do you really want to do this?"),
             u"deletePreviousCheck",

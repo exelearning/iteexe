@@ -62,6 +62,7 @@ class Idevice(Persistable):
         self._tip         = tip
         self.icon         = icon
         self.originalicon = icon
+        self._typeName    = title        
             
         # userResources are copied into and stored in the package
         self.userResources = []
