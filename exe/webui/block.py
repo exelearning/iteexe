@@ -331,7 +331,8 @@ class Block(Renderable):
         Returns an XHTML string for the view buttons
         """
         editTitle = _(u"Edit")
-        editTitle += _(u" (%s)") % _(self.idevice._typeName)
+        if hasattr(self.idevice, '_typeName'):
+            editTitle += u" (%s)" % _(self.idevice._typeName)
         html = '<p class="exe-controls idevice-edition-buttons">'
         html  += common.submitImage(u"edit", self.id, 
                                    u"/images/stock-edit.png", 
