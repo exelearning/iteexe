@@ -11046,7 +11046,7 @@ msgstr "Su navegador no es compatible con esta herramienta."
 msgid ""
 "Create activities in which given a definition the student has to complete"
 " the word filling in the gaps."
-msgstr "Cree actividades o juegos en los que, dada la definición de una palabra, se solicita a nuestro alumnado la propia palabra completando las letras que faltan."
+msgstr "Cree actividades en las que, dada la definición de una palabra, se solicita al alumnado la propia palabra completando las letras que faltan."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:127
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:51
@@ -11709,7 +11709,7 @@ msgstr "Has completado la actividad"
 msgid ""
 "Create activities in which the student will have to fill in the blanks of"
 " a text writing or choosing an answer."
-msgstr "Cree actividades o juegos en los que el alumnado deberá completar los huecos de un texto, escribiendo, seleccionando de cuadros desplegables o arrastrando desde botones las respuestas correctas."
+msgstr "Cree actividades en las que el alumnado deberá completar los huecos de un texto escribiendo, seleccionando o arrastrando las respuestas."
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:116
 msgid "Read the text and complete the missing words."
@@ -13253,11 +13253,11 @@ msgid ""
 "Create basic math operation games (addition, subtraction, multiplication,"
 " division). The student will have to guess the result, operator or an "
 "operand."
-msgstr "Cree actividades con operaciones matemáticas básicas (suma, resta, multiplicación y/o división) aleatorias en las que nuestro alumnado tendrá que averiguar el resultado, el operador o uno de los  operandos."
+msgstr "Cree actividades con operaciones matemáticas básicas (suma, resta, multiplicación y/o división) aleatorias en las que el alumnado tendrá que averiguar el resultado, el operador o uno de los  operandos."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:126
 msgid "Solve the following operations."
-msgstr "Realiza las siguientes operaciones matemáticas:"
+msgstr "Realiza las siguientes operaciones matemáticas."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:130
 msgid "Choose what to guess:"
@@ -13520,7 +13520,7 @@ msgstr "Proporcione la definición de la palabra o la URL válida de una imagen"
 msgid ""
 "Create activities in which students see a video, image or text and they "
 "have to choose the right answer."
-msgstr "Cree actividades o juegos en los que dado un vídeo, imagen o texto, se solicite al  alumnado la respuesta correcta a la pregunta."
+msgstr "Cree actividades en las que dado un vídeo, imagen o texto, se solicite al alumnado la respuesta correcta a la pregunta."
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:746
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:882
@@ -13636,7 +13636,7 @@ msgstr "Empieza por/Contiene"
 msgid ""
 "Create activities in which students are given a definition and they have "
 "to guess the word that starts with a letter or contains a letter."
-msgstr "Cree actividades o juegos en los que dada la definición de una palabra, se solicite al alumnado la propia palabra que comienza o contiene la letra que se señala."
+msgstr "Cree actividades o en las que dada la definición de una palabra, se solicite al alumnado la propia palabra que comienza o contiene la letra que se señala."
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:121
 msgid "Game time (seconds)"
@@ -13928,7 +13928,7 @@ msgstr "Ordena todas las respuestas"
 msgid ""
 "Create activities with multiple choice questions or questions in which "
 "you have to put the answers in the right order."
-msgstr "Cree actividades o juegos de respuesta múltiple con ninguna, una o varias opciones correctas y/o actividades y juegos de ordenación, en los que el jugador deberá organizar las diferentes opciones según el orden indicado en la pregunta."
+msgstr "Cree actividades de respuesta múltiple con ninguna, una o varias opciones correctas y/o actividades y juegos de ordenación, en los que el jugador deberá organizar las diferentes opciones según el orden indicado en la pregunta."
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:855
 msgid "Choose the right answers and click on the Check button."
@@ -13993,7 +13993,7 @@ msgstr "Solo puede haber una actividad tipo Sopa por página/nodo."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:100
 msgid "Create word search games with additional text, images or sound."
-msgstr "Cree actividades o juegos tipo de sopa de letras en las que podrá utilizar texto, imágenes y sonidos."
+msgstr "Cree actividades tipo sopa de letras en las que podrá utilizar texto, imágenes y sonidos."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:102
 msgid "Find the hidden words."
@@ -14099,7 +14099,10 @@ msgstr ""
 msgid ""
 "Create an educational board game with different question types (test, "
 "order, definition) of different categories. From 1 to 4 players or teams."
-msgstr "Cree un trivial educativo con preguntas de tipo test, ordenación y palabra/definición de diferentes categorías. Podrán jugar, al mismo tiempo, de 1 a 4 alumnos o equipos."
+msgstr ""
+"Cree un juego de mesa educativo con diferentes tipos de pregunta "
+"(test, ordena, definición) organizadas por categorías. De 1 a 4 jugadores "
+"o equipos."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:727
 msgid "Number of topics"
@@ -14407,7 +14410,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:608
 msgid "Create activities consisting on a video with interactive questions."
-msgstr "Cree actividades o juegos en los que intercalemos preguntas a lo largo de un vídeo local o de YouTube."
+msgstr "Cree actividades en las que se intercalan preguntas a lo largo de un vídeo."
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:656
 msgid "Navigable"
@@ -15919,7 +15922,10 @@ msgstr "No se ha encontrado el código fuente."
 msgid ""
 "If you check the Properties - Export - Math content option you can just "
 "type LaTeX code directly into the editor instead of using this window."
-msgstr "Si marca la opción Propiedades - Exportar - Contenido matemático sólo podrá escribir código LaTeX directamente en el editor en lugar de utilizar esta ventana."
+msgstr ""
+"Si marca la opción Propiedades - Exportar - Contenido matemático podrá "
+"escribir código LaTeX directamente en el editor en lugar de utilizar "
+"esta ventana."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:243
 msgid "You should save a copy of the code before continuing."
@@ -15955,7 +15961,9 @@ msgstr "Por favor escriba el código"
 msgid ""
 "That is LaTeX code for an inline formula. If you need an alternative "
 "image, please use a block formula."
-msgstr "Se trata de código LaTeX para integrar la fórmula en la línea de texto. Si necesita una imagen alternativa, introduzca una fórmula como bloque."
+msgstr ""
+"Se trata de código LaTeX para integrar la fórmula en la línea de texto. "
+"Si necesita una imagen alternativa, introduzca una fórmula como bloque."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:574
 msgid ""
