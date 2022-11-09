@@ -80,6 +80,7 @@ var interaction = {
     scoref: '0',
     gameStarted: false,
 	mScorm:null,
+	hasLATEX: false,
 	loadSCORM_API_wrapper: function () {
         if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', 'interaction.loadSCOFunctions()');
         else this.loadSCOFunctions();
@@ -230,6 +231,34 @@ var interaction = {
             interaction.sendScore(true, interaction.score)
         }
 
+    },
+	loadMathJax: function () {
+        if (!window.MathJax) {
+            window.MathJax = $exe.math.engineConfig;
+        }
+        var script = document.createElement('script');
+        script.src = $exe.math.engine;
+        script.async = true;
+        document.head.appendChild(script);
+    },
+
+    updateLatex: function (mnodo) {
+        setTimeout(function () {
+            if (typeof (MathJax) != "undefined") {
+                try {
+                    if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
+                    } else if (typeof MathJax.typeset == "function") {
+                        var nodo = document.getElementById(mnodo);
+                        MathJax.typesetClear([nodo]);
+                        MathJax.typeset([nodo]);
+                    }
+                } catch (error) {
+                    console.log('Error al refrescar cuestiones')
+                }
+            }
+
+        }, 100);
     },
 	inIframe : function() {
 		try {
@@ -427,6 +456,8 @@ var interaction = {
 		// Create the required HTML elements:
 		
 		var es = $(".exe-interactive-video");
+		var text=$(".exe-interactive-video").eq(0).html()
+		var hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(text);
 		
 		var showResults = true;
 		if (es.hasClass("exe-interactive-video-no-results")) showResults = false;
@@ -536,7 +567,10 @@ var interaction = {
 		} 		
 		$("#activity").prepend('<div id="activity-cover"'+coverCSS+'><div id="activity-cover-logo"></div><div id="activity-cover-content">'+cover+'</div>'+play+'</div>');
 		
-		
+		if (hasLatex && typeof (window.MathJax) == "undefined") {
+			interaction.hasLATEX = true;
+            interaction.loadMathJax();
+        }
 		if (this.type=='mediateca') {
 			
 			$exe.loadScript("https://mediateca.educa.madrid.org/includes/player/exelearning/jwplayer.js","interaction.ready()");
@@ -937,7 +971,7 @@ var interaction = {
 				$("#activity").css("width","100%");
 				interaction.slide.enable(slide,e,order);
 			}
-			
+			interaction.updateLatex('activity-wrapper');
 		},
 		hide : function(trigger){
 			interaction.visibleSlide = "";
