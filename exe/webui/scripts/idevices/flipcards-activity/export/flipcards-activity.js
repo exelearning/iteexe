@@ -1147,7 +1147,7 @@ var $eXeFlipCards = {
             $text.show();
             $text.css({
                 'color': color,
-                'background-color': $eXeFlipCards.hexToRgba(backcolor, 0.85)
+                'background-color': $eXeFlipCards.hexToRgba(backcolor, 0.70)
             });
 
 
@@ -1235,7 +1235,7 @@ var $eXeFlipCards = {
             $text.show();
             $text.css({
                 'color': color,
-                'background-color': $eXeFlipCards.hexToRgba(backcolor, 0.85)
+                'background-color': $eXeFlipCards.hexToRgba(backcolor, 0.70)
             });
 
 

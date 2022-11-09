@@ -1273,6 +1273,8 @@ var $exeDevice = {
             game.cardsGame = $exeDevice.importAdivina(game);
         } else if (game.typeGame == 'Rosco') {
             game.cardsGame = $exeDevice.importRosco(game);
+        }else if (game.typeGame == 'QuExt') {
+            game.cardsGame = $exeDevice.importQuExt(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
@@ -1324,10 +1326,34 @@ var $exeDevice = {
         return $exeDevice.cardsGame;
     },
 
+    importQuExt: function (data) {
+        for (var i = 0; i < data.questionsGame.length; i++) {
+            var p = $exeDevice.getCardDefault(),
+                cuestion = data.questionsGame[i];
+            p.eText = cuestion.quextion;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            p.eTextBk = '';
+            if( typeof cuestion.options !="undefined" && cuestion.options.length>cuestion.solution ){
+                p.eTextBk =cuestion.options[cuestion.solution ];
+            }
+            if (p.eText.length > 0) {
+                $exeDevice.cardsGame.push(p);
+            }
+
+        }
+        return $exeDevice.cardsGame;
+    },
+
     deleteEmptyQuestion: function () {
         var url = $('#flipcardsEURLImage').val().trim(),
             audio = $('#flipcardsEURLAudio').val().trim(),
-            eText = $('#flipcardsEText').val();
+            eText = $('#flipcardsEText').val().trim();
         if ($exeDevice.cardsGame.length > 1) {
             if (url.length == 0 && audio.length == 0 && eText.length == 0) {
                 $exeDevice.removeCard();
