@@ -17,10 +17,10 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New: Blackboard mode in all the games.
     - New: Accessibility warning in games that require it.
     - New: Instructions in all games.
-    - Interactive Video iDevice is now SCORM compatible. Scores can be saved.
+    - Interactive Video iDevice is now SCORM compatible. Scores can be saved. (#650)
     - Multiple Choice Quiz iDevice usability revision.
     - Map iDevice: 404 errors fixed (#654) + Usability revision + New SVG icons + Effects in text slides.
-    - Allow LaTeX code in more iDevices. MathJax will be loaded.
+    - Allow LaTeX code in more iDevices (Games and Interactive Video). MathJax will be loaded.
     - MathJax upgrade (from 2.7.1 to 3.2.2) and configuration update. Configuration options in common file. (#641)
 
   * Ignacio Gros
