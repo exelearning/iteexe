@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.7\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2022-04-22 12:24+0200\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.8\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2022-11-03 13:28+0100\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 
@@ -171,7 +171,7 @@ translations = {
  "Technical": "Teknisk", 
  "Saving package...": "Lagrer pakke...", 
  "Image with Text": "Bilde med tekst", 
- "Add Previous\/Next links within SCOs?": "Vil du legge til Neste\/Tilbake linker i pakken?", 
+ "Show Feedback": "Vis tilbakemelding", 
  "Game over.": "Spillet er over.", 
  "Arabic ": "Arabisk", 
  "Cornish ": "Kornisk", 
@@ -702,7 +702,6 @@ translations = {
  "Maximum zoom": "Maksimal zoom", 
  "iDevice Editor": "iDevice editor", 
  "Interactivity Type": "Interaksjonstype", 
- "Show Feedback": "Vis tilbakemelding", 
  "License:": "Lisens:", 
  "Hebrew (formerly iw) ": "Hebraisk", 
  "Purpose": "Form\u00e5l", 
