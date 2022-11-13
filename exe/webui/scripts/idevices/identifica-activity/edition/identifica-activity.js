@@ -872,7 +872,6 @@ var $exeDevice = {
         $exeDevice.active = 0;
         $exeDevice.questionsGame = game.questionsGame;
         for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
-
             var numOpt = 0,
                 clues = $exeDevice.questionsGame[i].clues;
             for (var j = 0; j < clues.length; j++) {
@@ -887,9 +886,22 @@ var $exeDevice = {
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
             textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('idfEFeedBackEditor').setContent(unescape(textFeedBack));
+            if (tinyMCE.get('eXeGameInstructions')) {
+                tinyMCE.get('eXeGameInstructions').setContent((unescape(instructions));
+            } else {
+                $("#eXeGameInstructions").val((unescape(instructions))
+            }
+
+            if (tinyMCE.get('idfEFeedBackEditor')) {
+                tinyMCE.get('idfEFeedBackEditor').setContent(unescape(textFeedBack));
+            } else {
+                $("#idfEFeedBackEditor").val(unescape(textFeedBack))
+            }
+            if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            } else {
+                $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+            }
         $('.exe-form-tabs li:first-child a').click();
     },
     importIdentifica: function (game) {

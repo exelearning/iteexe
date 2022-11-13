@@ -100,6 +100,7 @@ var $exeDevice = {
         msgs.msgNumFaildedAttemps = _("Errors (number of attempts) to display the message");
         msgs.msgEnterCustomMessage = _("Please write the error message.");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgESelectFile = _("The selected file does not contain a valid game");
 
     },
     showMessage: function (msg) {
@@ -297,6 +298,43 @@ var $exeDevice = {
             $("#cmptEPercentajeErrorsDiv").hide();
         }
 
+    },
+    importGame: function (content) {
+        var game = $exeDevice.isJsonString(content);
+        if (!game || typeof game.typeGame == "undefined") {
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
+            return;
+        } else if (game.typeGame == 'Completa') {
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
+                tAfter = game.textAfter || "",
+                textFeedBack = game.textFeedBack || "",
+                textText=game.textText || "";
+                if (tinyMCE.get('cmptEText')) {
+                    tinyMCE.get('cmptEText').setContent(unescape(textText));
+                } else {
+                    $("#cmptEText").val(unescape(textText))
+                }
+                if (tinyMCE.get('eXeGameInstructions')) {
+                    tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+                } else {
+                    $("#eXeGameInstructions").val(unescape(instructions))
+                }
+                if (tinyMCE.get('cmptEFeedBackEditor')) {
+                    tinyMCE.get('cmptEFeedBackEditor').setContent(unescape(textFeedBack));
+                } else {
+                    $("#cmptEFeedBackEditor").val(unescape(textFeedBack))
+                }
+                if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                    tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+                } else {
+                    $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+                }
+        } else {
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
+            return;
+        }
+        $('.exe-form-tabs li:first-child a').click();
     },
     exportGame: function () {
         var dataGame = this.validateData();

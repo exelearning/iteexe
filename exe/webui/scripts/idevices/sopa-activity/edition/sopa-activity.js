@@ -1030,9 +1030,21 @@ var $exeDevice = {
             var instructions = game.instructionsExe || game.instructions,
                 tAfter = game.textAfter || "",
                 textFeedBack = game.textFeedBack || "";
-            tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-            tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-            tinyMCE.get('seleccionaEFeedBackEditor').setContent(unescape(textFeedBack));
+                if (tinyMCE.get('eXeGameInstructions')) {
+                    tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+                } else {
+                    $("#eXeGameInstructions").val(unescape(instructions))
+                }
+                if (tinyMCE.get('sopaEFeedBackEditor')) {
+                    tinyMCE.get('sopaEFeedBackEditor').setContent(unescape(textFeedBack));
+                } else {
+                    $("#sopaEFeedBackEditor").val(unescape(textFeedBack))
+                }
+                if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                    tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+                } else {
+                    $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+                }
         } else if (game.typeGame == 'Adivina') {
             game.wordsGame = $exeDevice.importAdivina(game);
         } else if (game.typeGame == 'Rosco') {

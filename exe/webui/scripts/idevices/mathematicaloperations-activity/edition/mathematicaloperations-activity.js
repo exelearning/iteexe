@@ -413,7 +413,7 @@ var $exeDevice = {
 
 
     updateFieldGame: function (game) {
-        $exeDevice.active = 0;
+
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         $('#eRMQShowMinimize').prop('checked', game.showMinimize);
         $("#eRMQHasFeedBack").prop('checked', game.feedBack);
@@ -477,12 +477,22 @@ var $exeDevice = {
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
             textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('eRMQFeedBackEditor').setContent(unescape(textFeedBack));
+            if (tinyMCE.get('eXeGameInstructions')) {
+                tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            } else {
+                $("#eXeGameInstructions").val(unescape(instructions))
+            }
+            if (tinyMCE.get('sopaEFeedBackEditor')) {
+                tinyMCE.get('eRMQFeedBackEditor').setContent(unescape(textFeedBack));
+            } else {
+                $("#eRMQFeedBackEditor").val(unescape(textFeedBack))
+            }
+            if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            } else {
+                $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+            }
         $('.exe-form-tabs li:first-child a').click();
-        $exeDevice.active = 0;
-        $exeDevice.showQuestion($exeDevice.active);
     },
     isJsonString: function (str) {
         try {
