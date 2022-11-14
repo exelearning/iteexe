@@ -251,7 +251,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="desafioIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Create escape room type activities in which players will have to complete trials before solving the final challenge.")+' <a href="https://youtu.be/aKdBRClanYk" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
+                <div class="exe-idevice-info">'+_("Create escape room type activities in which players will have to complete trials before solving the final challenge.")+' <a href="https://youtu.be/aKdBRClanYk" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete all the trials to finish the activity.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\

@@ -99,7 +99,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create card memory games with images, sounds or rich text.") + ' <a href="https://youtu.be/P6BRFXLHiJk" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create card memory games with images, sounds or rich text.") + ' <a href="https://youtu.be/P6BRFXLHiJk" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Click on the cards to see what they hide.')) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -466,10 +466,8 @@ var $exeDevice = {
             'background-color': $exeDevice.hexToRgba(p.backcolorBk, 0.7)
         });
         $('#flipcardsENumberCard').val($exeDevice.active + 1);
-
+        $('#flipcardsENumCards').text($exeDevice.cardsGame.length);
     },
-
-
 
     decodeURIComponentSafe: function (s) {
         if (!s) {
@@ -1276,12 +1274,14 @@ var $exeDevice = {
                     $("#eXeIdeviceTextAfter").val(unescape(tAfter))
                 }
 
-        } else if (game.typeGame == 'Adivina') {
+        }else if (game.typeGame == 'Adivina') {
             game.cardsGame = $exeDevice.importAdivina(game);
         } else if (game.typeGame == 'Rosco') {
             game.cardsGame = $exeDevice.importRosco(game);
         }else if (game.typeGame == 'QuExt') {
             game.cardsGame = $exeDevice.importQuExt(game);
+        }else if (game.typeGame == 'Sopa') {
+            game.cardsGame = $exeDevice.importSopa(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
@@ -1353,6 +1353,25 @@ var $exeDevice = {
                 $exeDevice.cardsGame.push(p);
             }
 
+        }
+        return $exeDevice.cardsGame;
+    },
+    importSopa: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCardDefault(),
+                cuestion = data.wordsGame[i];
+            p.eText = cuestion.definition;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            p.eTextBk = cuestion.word;
+            if (p.url.length > 3 || p.audio.length > 3 || p.eText.length > 0) {
+                $exeDevice.cardsGame.push(p);
+            }
         }
         return $exeDevice.cardsGame;
     },
