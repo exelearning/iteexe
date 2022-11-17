@@ -164,7 +164,7 @@
     position: relative;
     max-width: 1600px;
     width: 100%;
-    min-height: 500px;
+
 }
 
 /* barra de puntuaciones */
@@ -273,8 +273,218 @@
     font-size: 1.3rem;
 }
 
+.FLCDSP-ETextMemory {
+    border: none;
+    overflow-y: auto;
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    font-weight: 500;
+    border-radius: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    font-size: 1em;
+}
+.FLCDSP-HoverMemory {
+    -moz-transform: scale(1.0);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+.FLCDSP-ImageContainMemory {
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    border-radius: 0em;
+    position: absolute;
+}
+
+.FLCDSP-CardContainerMemory {
+    position: relative;
+    /* Ancho y alto que tendra el contenedor de la tarjeta */
+    margin: 0.2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    transition: transform 0.3s;
+    width: 160px;
+}
+
+.FLCDSP-CardContainerMemory:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.FLCDSP-Card1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    background-color: white;
+    /* Determinamos la trasicion de los efectos */
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border: 1px solid rgb(3, 112, 116);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.3em;
+}
 
 
+.FLCDSP-Card1Memory {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    background-color: white;
+    /* Determinamos la trasicion de los efectos */
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border: 1px solid rgb(3, 112, 116);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.3em;
+}
+
+
+.FLCDSP-Card1Memory.flipped {
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
+}
+
+/*Determinamos los estilos deseados en la cara de atras de la tarjeta*/
+
+.FLCDSP-Card1Memory .FLCDSP-CardBackMemory {
+    width: 100%;
+    text-align: left;
+    text-align: center;
+    background-color: white;
+    /* Animacion para rotar la cara trasera */
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
+    border-radius: 0.3em;
+}
+
+.FLCDSP-Card1Memory .FLCDSP-CardFrontMemory, .FLCDSP-Card1Memory .FLCDSP-CardBackMemory {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    /*visibility hidden para esconder una cara mientras se muestra la otra */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.FLCDSP-Card1Memory .FLCDSP-CardFrontMemory {
+    background-image: url(flcsHome.png);
+    background-size: 100%;
+    background-position: center;
+    border-radius: 0.3em;
+}
+
+.FLCDSP-CardActiveMemory {
+    border: 3px solid #ff0000;
+    border-radius: 0.3em;
+}
+
+.FLCDSP-CardOKMemory {
+    border: 3px solid #00ff00;
+    border-radius: 0.3em;
+}
+
+.FLCDSP-CardKOMemory {
+    border: 3px solid #ff0000;
+    border-radius: 0.3em;
+}
+
+/* Inicio juego */
+
+.FLCDSP-StartNivelMemory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.FLCDSP-StartNivelMemory a {
+    display: block;
+    margin-left: 0.5em;
+}
+
+.FLCDSP-StartGameMemory {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.FLCDSP-StartGameMemory a:hover {
+    text-decoration: underline;
+}
+
+.FLCDSP-StartGameMemory a {
+    color: #a2241a;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.FLCDSP-ImageMemory {
+    position: absolute;
+    width: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+.FLCDSP-CursorMemory {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+    height: 1.3em;
+    z-index: 1004;
+    display: none;
+}
 
 .FLCDSP-Multimedia {
     background-color: transparent;
@@ -436,7 +646,7 @@
     border-radius: 0.6em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     padding: 1.5em;
-    margin-top: 2em;
+    margin-top: 4em;
 }
 
 .FLCDSP-MessageCodeAccessE {
@@ -580,6 +790,7 @@
 .FLCDSP-GameOverExt {
     background-color: white;
     width: 50%;
+    max-width: 450px;
     border: 1px solid #ddd;
     border-radius: 0.6em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -588,6 +799,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-top: 1em;
 }
 
 .FLCDSP-GameOver {
@@ -688,6 +900,14 @@
     height: 1.7em;
     width: 1.7em;
 }
+.FLCDSP-GameContainer .exeQuextIcons-Time {
+    background-image: url(exequexttime.png);
+    background-size: 100% 100%;
+}
+.FLCDSP-GameContainer .exeQuextIcons-IconReboot {
+    background-image: url(exequextreload.png);
+    background-size: 100% 100%;
+}
 
 
 .FLCDSP-GameContainer .exeQuextIcons-Minimize {
@@ -720,6 +940,10 @@
     background-size: 100% 100%;
 }
 
+.FLCDSP-GameContainer .exeQuextIcons-FullScreen {
+    background-image: url(exequextfull.png);
+    background-size: 100% 100%;
+}
 
 
 .FLCDSP-GameContainer .exeQuextIcons-Number {
@@ -733,7 +957,10 @@
     background-size: 100% 100%;
 }
 
-
+div:fullscreen .exeQuextIcons-FullScreen {
+    background-image: url(exequextnormal.png);
+    background-size: 100% 100%;
+}
 
 div:fullscreen .FLCDSP-Message {
     font-weight: 1.1em;
@@ -882,16 +1109,14 @@ div:fullscreen .FLCDSP-Multimedia {
 
     }
 
-
-
 }
 
 @media screen and (max-width:650px) {
 
     .FLCDSP-GameOverExt {
         width: 80%;
+        margin-top: 1em;
     }
-
     .FLCDSP-DataImage {
         display: none;
     }

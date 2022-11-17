@@ -1023,7 +1023,7 @@ var $eXeSelecciona = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#seleccionaCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#seleccionaCodeAccessE-' + instance).val().toLowerCase()) {
             $('#seleccionaCodeAccessDiv-' + instance).hide();
             $eXeSelecciona.getYTAPI(instance);
         } else {

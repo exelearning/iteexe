@@ -933,7 +933,7 @@ var $eXeMathOperations = {
 
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMathOperations.options[instance];
-        if (mOptions.itinerary.codeAccess == $('#mthoCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase()== $('#mthoCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeMathOperations.showCubiertaOptions(false, instance);
             if (mOptions.time > 0) {
                 mOptions.gameStarted = false;

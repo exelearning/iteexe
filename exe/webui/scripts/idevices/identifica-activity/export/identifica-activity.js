@@ -806,7 +806,7 @@ var $eXeIdentifica = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeIdentifica.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#idfCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#idfCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeIdentifica.showCubiertaOptions(false, instance)
         } else {
             $('#idfMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);

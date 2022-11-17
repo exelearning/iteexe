@@ -2793,7 +2793,7 @@ var $eXeMapa = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMapa.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#mapaCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase()=== $('#mapaCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeMapa.hideCover(instance);
             mOptions.showData = false;
         } else {

@@ -789,7 +789,7 @@ var $eXeSopa = {
     },
     enterCodeAccess: function () {
         var mOptions = $eXeSopa.options;
-        if (mOptions.itinerary.codeAccess == $('#sopaCodeAccessE').val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#sopaCodeAccessE').val().toLowerCase()) {
             $eXeSopa.showCubiertaOptions(false)
 
         } else {

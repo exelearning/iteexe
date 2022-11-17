@@ -1095,7 +1095,7 @@ var $eXeVideoQuExt = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#vquextCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#vquextCodeAccessE-' + instance).val().toLowerCase()) {
             $('#vquextCodeAccessDiv-' + instance).hide();
             if (mOptions.videoType > 0) {
                 $eXeVideoQuExt.startGame(instance)

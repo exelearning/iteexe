@@ -1871,7 +1871,7 @@ var $eXeTrivial = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeTrivial.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#trivialCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#trivialCodeAccessE-' + instance).val().toLowerCase()) {
             $('#trivialSelectsGamers-' + instance).show();
             $('#trivialMessageModal-' + instance).hide();
             $('#trivialCodeAccessDiv-' + instance).hide();
