@@ -160,9 +160,7 @@ abbr[title],acronym[title]{text-decoration:none;border-bottom:1px dotted} /* Unt
 .exe-table-minimalist tr:nth-child(2n-1) td,.exe-table-minimalist tbody tr:nth-child(2n-1) th{background:#F9F9F9}
 .exe-table-minimalist caption{text-align:center;font-style:italic;border-bottom:2px solid #CCC;padding:.6em 0}
 /* Responsive tables */
-.exe-table,
-.exe-table-minimalist{display:block;overflow-x:auto;border:none}
-/* No forced width */
+.exe-table-responsive{display:block;overflow-x:auto;border:none}
 .exe-table-responsive,
 .exe-table-responsive th,
 .exe-table-responsive tr,
