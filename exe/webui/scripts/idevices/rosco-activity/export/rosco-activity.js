@@ -295,16 +295,6 @@ var $eXeRosco = {
 							</a>\
 						</div>\
 					</div>\
-					<div class="rosco-CodeAccessDiv" id="roscoCodeAccessDiv-' + instance + '">\
-                		<div class="rosco-MessageCodeAccessE" id="roscoMesajeAccesCodeE-' + instance + '"></div>\
-                		<div class="rosco-DataCodeAccessE">\
-                    		<label for="roscoEdCodeAccess-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="rosco-CodeAccessE" id="roscoEdCodeAccess-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
-                    		<a href="#" id="roscoCodeAccessButton-' + instance + '" title="' + msgs.msgReply + '">\
-                    		<strong class="sr-av">' + msgs.msgReply + '</strong>\
-                    		<div class="exeQuextIcons-Submit"></div>\
-							</a>\
-						</div>\
-					</div>\
 					<div class="rosco-DivInstructions" id="roscoDivInstructions-' + instance + '">' + msgs.msgWrote + '</div>\
 				</div>\
 				<div id="roscoGame-' + instance + '"class="rosco-Game">\
@@ -312,6 +302,19 @@ var $eXeRosco = {
 						Your browser does not support the HTML5 canvas tag\
 					</canvas>\
 				</div>\
+				<div class="rosco-Cubierta" id="roscoCubierta-' + instance + '" style="display:none">\
+					<div class="rosco-CodeAccessDiv" id="roscoCodeAccessDiv-' + instance + '">\
+						<div class="rosco-MessageCodeAccessE" id="roscoMesajeAccesCodeE-' + instance + '"></div>\
+						<div class="rosco-DataCodeAccessE">\
+							<label for="roscoEdCodeAccess-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="rosco-CodeAccessE" id="roscoEdCodeAccess-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
+							<a href="#" id="roscoCodeAccessButton-' + instance + '" title="' + msgs.msgReply + '">\
+							<strong class="sr-av">' + msgs.msgReply + '</strong>\
+							<div class="exeQuextIcons-Submit"></div>\
+							</a>\
+						</div>\
+					</div>\
+                </div>\
+            </div>\
 			</div>\
 			<div class="rosco-DivModeBoard" id="roscoDivModeBoard-' + instance + '">\
 				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardOK-' + instance + '" title="">' + msgs.msgCorrect + '</a>\
@@ -322,6 +325,13 @@ var $eXeRosco = {
 			'</div>';
 		return html
 	},
+	showCubiertaOptions(mode, instance) {
+        if (mode === false) {
+            $('#roscoCubierta-' + instance).fadeOut();
+            return;
+        }
+        $('#roscoCubierta-' + instance).fadeIn();
+    },
 	changeTextInit: function (big, message, instance) {
 		var html = message;
 		if (big) {
@@ -422,6 +432,7 @@ var $eXeRosco = {
 			$('#roscoCodeAccessDiv-' + instance).show();
 			$('#roscoStartGame-' + instance).hide();
 			$('#roscoDivInstructions-' + instance).hide();
+			$eXeRosco.showCubiertaOptions(true,instance)
 			//$('#roscoEdCodeAccess-' + instance).focus();
 		}
 		$('#roscoCodeAccessButton-' + instance).on('click', function (e) {
@@ -429,7 +440,7 @@ var $eXeRosco = {
 			var keyIntroduced = $.trim($('#roscoEdCodeAccess-' + instance).val()).toUpperCase(),
 				correctKey = $.trim(mOptions.itinerary.codeAccess).toUpperCase();
 			if (keyIntroduced == correctKey) {
-				$('#roscoCodeAccessDiv-' + instance).hide();
+				$eXeRosco.showCubiertaOptions(false,instance);
 				$eXeRosco.startGame(instance);
 			} else {
 				$('#roscoMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
