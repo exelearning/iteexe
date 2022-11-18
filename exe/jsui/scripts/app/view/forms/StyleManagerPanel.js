@@ -430,11 +430,11 @@ function createPanelRepositoryStyle(style, activeStyle) {
 
     if (style.author.trim() && style.author.length > 0) {
         if (style.author_url.trim() && style.author_url.length > 0) {
-            authorLink = '<div class="repository-style-author">' + _('Author') + ': <a href="' + style.author_url + '" target="_blank">' + style.author + '</a></div>';
+            authorLink = '<div class="repository-style-author">' + _('Authorship') + ': <a href="' + style.author_url + '" target="_blank">' + style.author + '</a></div>';
             stylePanel.items.push({html: authorLink});
         }
         else {
-            author = '<div class="repository-style-author">' + _('Author') + ': ' + style.author + '</div>';
+            author = '<div class="repository-style-author">' + _('Authorship') + ': ' + style.author + '</div>';
             stylePanel.items.push({html: author});
         }
     }

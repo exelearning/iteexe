@@ -39,7 +39,7 @@ var $exeDevice = {
         "msgOnlySaveScore": _("You can only save the score once!"),
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
-        "msgAuthor": _("Author"),
+        "msgAuthor": _("Authorship"),
         "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgYouScore": _("Your score"),
@@ -416,7 +416,7 @@ var $exeDevice = {
                                     </div>\
                                     <div class="IDFE-EAuthorAlt"  id="idfEAuthorAlt">\
                                         <div class="IDFE-EInputAuthor">\
-                                            <label>' + _('Author') + '</label><input id="idfEAuthor" type="text"  class="IDFE-EAuthor" />\
+                                            <label>' + _('Authorship') + '</label><input id="idfEAuthor" type="text"  class="IDFE-EAuthor" />\
                                         </div>\
                                         <div class="IDFE-EInputAlt">\
                                             <label>' + _('Alt') + '</label><input  id="idfEAlt" type="text" class="IDFE-EAlt" />\

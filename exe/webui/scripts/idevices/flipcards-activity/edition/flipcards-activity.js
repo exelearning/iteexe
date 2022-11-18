@@ -47,7 +47,7 @@ var $exeDevice = {
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
         "msgYouScore": _("Your score"),
-        "msgAuthor": _("Author"),
+        "msgAuthor": _("Authorship"),
         "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgYouScore": _("Your score"),
@@ -142,7 +142,7 @@ var $exeDevice = {
                             <span id="flipcardsENumeroPercentaje">1/1</span>\
                         </p>\
                         <p>\
-                            <label for="flipcardsEAuthory">' + _('Author') + ': </label><input id="flipcardsEAuthory" type="text" />\
+                            <label for="flipcardsEAuthory">' + _('Authorship') + ': </label><input id="flipcardsEAuthory" type="text" />\
                         </p>\
                     </div>\
                 </fieldset>\
@@ -181,7 +181,7 @@ var $exeDevice = {
                             </div>\
                             <div class="FLCRDS-EAuthorAlt"  id="flipcardsEAuthorAlt">\
                                 <div class="FLCRDS-EInputAuthor">\
-                                    <label>' + _('Author') + '</label><input id="flipcardsEAuthor" type="text"  class="FLCRDS-EAuthor" />\
+                                    <label>' + _('Authorship') + '</label><input id="flipcardsEAuthor" type="text"  class="FLCRDS-EAuthor" />\
                                 </div>\
                                 <div class="FLCRDS-EInputAlt">\
                                     <label>' + _('Alternative text') + '</label><input  id="flipcardsEAlt" type="text" class="FLCRDS-EAlt" />\
@@ -225,7 +225,7 @@ var $exeDevice = {
                             </div>\
                             <div class="FLCRDS-EAuthorAlt"  id="flipcardsEAuthorAltBack">\
                                 <div class="FLCRDS-EInputAuthor">\
-                                    <label>' + _('Author') + '</label><input id="flipcardsEAuthorBack" type="text" class="FLCRDS-EAuthor" />\
+                                    <label>' + _('Authorship') + '</label><input id="flipcardsEAuthorBack" type="text" class="FLCRDS-EAuthor" />\
                                 </div>\
                                 <div class="FLCRDS-EInputAlt">\
                                     <label>' + _('Alternative text') + '</label><input id="flipcardsEAltBack" type="text" class="FLCRDS-EAlt" />\

@@ -246,7 +246,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
 	                            xtype: 'textfield',
 	                            inputId: 'pp_author',
                                 dirtyCls: 'property-form-dirty',
-	                            fieldLabel: _('Author'),
+	                            fieldLabel: _('Authorship'),
 	                            labelWidth: '180px',
 	                            tooltip: _('Primary author of the resource.'),
 	                            anchor: '100%'

@@ -65,7 +65,7 @@ var $exeDevice = {
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
         "msgYouScore": _("Your score"),
-        "msgAuthor": _("Author"),
+        "msgAuthor": _("Authorship"),
         "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgSeveralScore": _("You can save the score as many times as you want"),
@@ -659,7 +659,7 @@ var $exeDevice = {
                                 <label for="vquextEPauseVideo"><input type="checkbox" id="vquextEPauseVideo">' + _("Pause video") + '. </label>\
                             </p>\
                             <p>\
-                                <label for="vquextEAuthor">' + _("Author") + ': </label><input id="vquextEAuthor" type="text" />\
+                                <label for="vquextEAuthor">' + _("Authorship") + ': </label><input id="vquextEAuthor" type="text" />\
                             </p>\
                             <p>\
                                 <label for="vquextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="vquextEPercentajeQuestions" id="vquextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\

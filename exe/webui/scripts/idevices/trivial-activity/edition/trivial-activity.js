@@ -60,7 +60,7 @@ var $exeDevice = {
         "msgQuestion": _("Question"),
         "msgAnswer": _("Check"),
         "msgInformation": _("Information"),
-        "msgAuthor": _("Author"),
+        "msgAuthor": _("Authorship"),
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgYouLastScore": _("The last score saved is"),
@@ -849,7 +849,7 @@ var $exeDevice = {
                                     </div>\
                                     <div class="gameQE-EAuthorAlt" id="trivialEAuthorAlt">\
                                         <div class="gameQE-EInputAuthor" id="trivialInputAuthor">\
-                                            <label for="trivialEAuthor">' + _("Author") + '</label>\
+                                            <label for="trivialEAuthor">' + _("Authorship") + '</label>\
                                             <input id="trivialEAuthor" type="text" />\
                                         </div>\
                                         <div class="gameQE-EInputAlt" id="trivialInputAlt">\

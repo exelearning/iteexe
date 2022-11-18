@@ -59,7 +59,7 @@ var $exeDevice = {
 		"msgYouScore": _("Your score"),
 		"msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
 		"msgSaveAuto": _("Your score will be automatically saved after each question."),
-		"msgAuthor": _("Author"),
+		"msgAuthor": _("Authorship"),
 		"msgSeveralScore": _("You can save the score as many times as you want"),
 		"msgYouLastScore": _("The last score saved is"),
 		"msgActityComply": _("You have already done this activity."),

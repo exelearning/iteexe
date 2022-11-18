@@ -64,7 +64,7 @@ var $exeDevice = {
         "msgOnlySaveScore": _("You can only save the score once!"),
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
-        "msgAuthor": _("Author"),
+        "msgAuthor": _("Authorship"),
         "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgYouScore": _("Your score"),
@@ -880,7 +880,7 @@ var $exeDevice = {
                                     </div>\
                                     <div class="gameQE-EAuthorAlt" id="quextEAuthorAlt">\
                                         <div class="gameQE-EInputAuthor" id="quextInputAuthor">\
-                                            <label for="quextEAuthor">' + _("Author") + '</label>\
+                                            <label for="quextEAuthor">' + _("Authorship") + '</label>\
                                             <input id="quextEAuthor" type="text" />\
                                         </div>\
                                         <div class="gameQE-EInputAlt" id="quextInputAlt">\

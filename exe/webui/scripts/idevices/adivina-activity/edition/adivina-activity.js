@@ -79,7 +79,7 @@ var $exeDevice = {
         "msgOnlySave": _("You can only save once"),
         "msgInformation": _("Information"),
         "msgYouScore": _("Your score"),
-        "msgAuthor": _("Author"),
+        "msgAuthor": _("Authorship"),
         "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
         "msgSaveAuto": _("Your score will be automatically saved after each question."),
         "msgSeveralScore": _("You can save the score as many times as you want"),
@@ -252,7 +252,7 @@ var $exeDevice = {
                                 </div>\
                                 <div class="gameQE-EAuthorAlt" id="adivinaEAuthorAlt">\
                                     <div class="gameQE-EInputAuthor" id="adivinaEInputAuthor">\
-                                        <label for="adivinaEAuthor">' + _("Author") + '</label><input id="adivinaEAuthor" type="text" />\
+                                        <label for="adivinaEAuthor">' + _("Authorship") + '</label><input id="adivinaEAuthor" type="text" />\
                                     </div>\
                                     <div class="gameQE-EInputAlt" id="adivinaEInputAlt">\
                                         <label for="adivinaEAlt">' + _("Alternative text") + '</label><input id="adivinaEAlt" type="text" />\

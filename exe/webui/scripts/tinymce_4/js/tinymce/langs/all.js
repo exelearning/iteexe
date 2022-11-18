@@ -83,7 +83,7 @@ tinymce.addI18n('all',{
 "Keywords": _("Keywords"),
 "Encoding": _("Character Encoding"),
 "Description": _("Description"),
-"Author": _("Author"),
+"Author": _("Authorship"),
 "Fullscreen": _("Full Screen"),
 "Horizontal line": _("Horizontal Line"),
 "Horizontal space": _("Horizontal Space"),

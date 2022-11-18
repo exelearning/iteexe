@@ -25,7 +25,7 @@ var $i18n = {
     Title : _('Title'),
     Language : _('Language'),
     General_description : _('General description (about 150 characters)'),
-    Authorship : _('Author'),
+    Authorship : _('Authorship'),
     Content_License : _('License'),
     Click_Save : _('Click "Save".'),
     Go_to_Authoring : _('Switch back to the "Content" tab.'),

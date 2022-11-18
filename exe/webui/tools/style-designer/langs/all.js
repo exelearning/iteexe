@@ -28,7 +28,8 @@ var $i18n = {
 	Links_color_FULL : _("Links color"),
 	// Description
 	Style_Description : _("Style description"),
-	Author : _("Author"),
+	Author : _("Authorship"),
+	Author_back : _("Author"), // To review: Not used. It's here so the translations are not lost.
 	Author_URL : _("Author URL"),
 	Style_Name : _("Style name"),
 	Save_to_name : _("Save to name the new Style."),

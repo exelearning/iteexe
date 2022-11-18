@@ -217,7 +217,7 @@ var $exeDevice = {
                                 <a href="#" id="mapaMoreImageMap" class="MQE-ENavigationButton MQE-EActivo  MQE-More"  title="' + _('More') + '"></a>\
                             </p>\
                             <p class="MQE-EFlex MQE-EHide" id="mapaMoreImage">\
-                                <label for="mapaAuthorImageMap">' + _('Author') + ':</label><input id="mapaAuthorImageMap" type="text" />\
+                                <label for="mapaAuthorImageMap">' + _('Authorship') + ':</label><input id="mapaAuthorImageMap" type="text" />\
                                 <label for="mapaAltImageMap">Alt:</label><input id="mapaAltImageMap" type="text" />\
                             </p>\
                             <p class="MQE-EFlex MQE-EHide">\
@@ -397,7 +397,7 @@ var $exeDevice = {
                         <a href="#" id="mapaPShowImage" class="MQE-ENavigationButton MQE-EActivo  MQE-Play" title="' + _('Show Image') + '"></a>\
                     </p>\
                     <p class="MQE-EFlex">\
-                        <label for="mapaPAuthorImage">' + _("Author") + ':</label><input id="mapaPAuthorImage"  type="text" />\
+                        <label for="mapaPAuthorImage">' + _("Authorship") + ':</label><input id="mapaPAuthorImage"  type="text" />\
                         <label for="mapaPAltImage">' + _("Alt") + ':</label><input id="mapaPAltImage" type="text" />\
                     </p>\
                 </div>\
@@ -440,7 +440,7 @@ var $exeDevice = {
                         <a href="#" id="mapaSShowImage" class="MQE-ENavigationButton MQE-EActivo  MQE-Play" title="' + _('Show Image') + '"></a>\
                     </p>\
                     <p class="MQE-EFlex">\
-                        <label for="mapaSAuthorImage">' + _("Author") + ':</label><input id="mapaSAuthorImage"  type="text" />\
+                        <label for="mapaSAuthorImage">' + _("Authorship") + ':</label><input id="mapaSAuthorImage"  type="text" />\
                         <label for="mapaSAltImage">' + _("Alt") + ':</label><input id="mapaSAltImage" type="text" />\
                     </p>\
                 </div>\
