@@ -12115,7 +12115,7 @@ msgstr "Identificar"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:123
 msgid "Memory"
-msgstr ""
+msgstr "Memoria"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:136
@@ -13304,7 +13304,6 @@ msgid "Not completed"
 msgstr "Sin completar"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:93
-#, fuzzy
 msgid "You finished all the operations."
 msgstr "Has realizado todas las operaciones."
 
