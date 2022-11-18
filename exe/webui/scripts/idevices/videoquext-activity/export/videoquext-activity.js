@@ -387,16 +387,6 @@ var $eXeVideoQuExt = {
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="vquextPAuthor-' + instance + '"></p>\
             </div>\
-            <div class="gameQP-CodeAccessDiv" id="vquextCodeAccessDiv-' + instance + '">\
-                <p class="gameQP-MessageCodeAccessE" id="vquextMesajeAccesCodeE-' + instance + '"></p>\
-                <div class="gameQP-DataCodeAccessE">\
-                    <label for="vquextCodeAccessE">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="vquextCodeAccessE-' + instance + '">\
-                    <a href="#" id="vquextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
-                        <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
-                        <div class="exeQuextIcons-Submit gameQP-Activo "></div>\
-                    </a>\
-                </div>\
-            </div>\
             <div class="sr-av">' + msgs.msgPlayStart + '</div>\
             <div class="gameQP-StartGame"><a href="#" id="vquextStartGame-' + instance + '">' + msgs.msgPlayStart + '</a></div>\
             <div class="gameQP-QuestionDiv" id="vquextQuestionDiv-' + instance + '">\
@@ -461,6 +451,18 @@ var $eXeVideoQuExt = {
                 <input type="button" id="vquextFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
             </div>\
         </div>\
+        <div class="gameQP-Cubierta" id="vquextCubierta-' + instance + '" style="display:none">\
+            <div class="gameQP-CodeAccessDiv" id="vquextCodeAccessDiv-' + instance + '">\
+                <p class="gameQP-MessageCodeAccessE" id="vquextMesajeAccesCodeE-' + instance + '"></p>\
+                <div class="gameQP-DataCodeAccessE">\
+                    <label for="vquextCodeAccessE-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="vquextCodeAccessE-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
+                    <a href="#" id="vquextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
+                        <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
+                        <div class="exeQuextIcons-Submit gameQP-Activo "></div>\
+                    </a>\
+                </div>\
+            </div>\
+        </div>\
     </div>\
     <div class="gameQP-DivModeBoard" id="vquextDivModeBoard-' + instance + '">\
          <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
@@ -468,6 +470,13 @@ var $eXeVideoQuExt = {
     </div>\
     ' + this.addButtonScore(instance);
         return html;
+    },
+    showCubiertaOptions(mode, instance) {
+        if (mode === false) {
+            $('#vquextCubierta-' + instance).fadeOut();
+            return;
+        }
+        $('#vquextCubierta-' + instance).fadeIn();
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -863,6 +872,7 @@ var $eXeVideoQuExt = {
             $('#vquextCodeAccessDiv-' + instance).show();
             $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').hide();
             $('#vquextQuestionDiv-' + instance).hide();
+            $eXeVideoQuExt.showCubiertaOptions(true,instance);
         }
         $('#vquextInstruction-' + instance).text(mOptions.instructions);
         $('#vquextSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -1097,6 +1107,7 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#vquextCodeAccessE-' + instance).val().toLowerCase()) {
             $('#vquextCodeAccessDiv-' + instance).hide();
+            $eXeVideoQuExt.showCubiertaOptions(false,instance);
             if (mOptions.videoType > 0) {
                 $eXeVideoQuExt.startGame(instance)
             } else {
