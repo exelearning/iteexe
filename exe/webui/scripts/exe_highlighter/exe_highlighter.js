@@ -44,7 +44,7 @@ var $exeHighlighter = {
 						if (hightlight.length>1) {
 							hightlight = hightlight[1];
 							hightlight = hightlight.replace(/\and/g, ',');
-							pre.attr('data-line',hightlight);
+							pre.attr('data-line',$exeHighlighter.checkLines(hightlight));
 						}
 					}
 				}
@@ -55,6 +55,17 @@ var $exeHighlighter = {
 		}	
 	},
 	// To review
+	// Handle wrong values in Line highlight
+	checkLines : function(hightlight){
+		var v = hightlight;
+			v = v.replace(/ /g,'');
+			for (var i=0;i<v.length;i++) {
+				if (v[i]!=','&&isNaN(v[i])&&v[i]!='-') {
+					return "0";
+				}
+			}
+		return v;
+	},
 	// Line 27 (line numbers plugin):	
 	checkClass : function(s,e){
 		// We replace s.test(e.element.className) with $exeHighlighter.checkClass(s,e)
