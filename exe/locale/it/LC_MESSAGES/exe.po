@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-03 13:28+0100\n"
+"POT-Creation-Date: 2022-11-18 11:05+0100\n"
 "PO-Revision-Date: 2021-05-30 13:15+0200\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language: it\n"
@@ -268,8 +268,8 @@ msgstr "L'allegato %s non ha un nodo genitore"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:197
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:251
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:272
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:150
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:194
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:170
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:214
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:439
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:32
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:214
@@ -289,7 +289,7 @@ msgstr "L'allegato %s non ha un nodo genitore"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:956
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1037
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1061
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:179
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:215
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:69
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:779
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:850
@@ -852,7 +852,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:58
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:88
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:97
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:164
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:165
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:364
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:379
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:178
@@ -861,7 +861,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:54
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:780
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:916
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:121
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:157
 #: exe/webui/scripts/idevices/text/edition/text.js:28
 #: exe/webui/scripts/idevices/text/edition/text.js:35
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:649
@@ -1530,9 +1530,9 @@ msgstr "Suggerimento"
 
 #: exe/engine/field.py:3893 exe/engine/field.py:3930 exe/webui/element.py:2388
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:130
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:118
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:119
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:261
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:107
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:111
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:360
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:165
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:128
@@ -1540,7 +1540,7 @@ msgstr "Suggerimento"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:739
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:115
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:857
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:104
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:139
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:725
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:612
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:239
@@ -2067,7 +2067,7 @@ msgstr ""
 #: exe/engine/idevicestore.py:735 exe/engine/idevicestore.py:797
 #: exe/engine/idevicestore.py:834 exe/engine/idevicestore.py:842
 #: exe/webui/questionelement.py:110
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:1250
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:1306
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:21
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:73
 msgid "Activity"
@@ -2252,12 +2252,12 @@ msgstr "Scegliere un'immagine"
 #: exe/engine/multimediaidevice.py:64 exe/webui/listablock.py:169
 #: exe/webui/scripts/authoring.js:1950
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:201
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:173
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:176
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:144
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:146
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:188
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:190
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:174
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:177
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:164
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:166
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:208
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:210
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:31
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:255
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:301
@@ -4457,7 +4457,7 @@ msgstr "Aggiungi pagina"
 
 #: exe/jsui/scripts/app/controller/Outline.js:168
 #: exe/jsui/scripts/app/view/ui/OutlineToolbar1.js:56 exe/webui/block.py:245
-#: exe/webui/block.py:341 exe/webui/editorelement.py:78
+#: exe/webui/block.py:344 exe/webui/editorelement.py:78
 #: exe/webui/editorelement.py:115 exe/webui/editorelement.py:156
 #: exe/webui/editorelement.py:196 exe/webui/editorelement.py:249
 #: exe/webui/editorelement.py:289 exe/webui/editorelement.py:332
@@ -5023,8 +5023,9 @@ msgstr "Nome"
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:80
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:129
 #: exe/jsui/scripts/app/view/forms/LomSections.js:120
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:121
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:122
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:286
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:114
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:92
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:108
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:478
@@ -5727,7 +5728,7 @@ msgstr "Richiesto"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:50
 #: exe/webui/scripts/authoring.js:1213
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:268
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:288
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:329
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:583
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:47
@@ -5914,9 +5915,9 @@ msgstr "Prerequisiti."
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:62
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:168
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:50
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:126
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:165
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:209
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:146
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:185
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:229
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:43
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:421
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:220
@@ -5927,7 +5928,7 @@ msgstr "Prerequisiti."
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:62
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:80
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1043
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:164
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:200
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:64
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:856
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:69
@@ -6383,7 +6384,7 @@ msgstr "Importa lo stile da un indirizzo URL specifico"
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:124
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:897
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1053
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:172
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:208
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:866
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:124
 msgid "URL"
@@ -6482,12 +6483,13 @@ msgstr "Profilo"
 
 #: exe/jsui/scripts/app/view/ui/LeftPanel.js:99 exe/webui/common.py:636
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:228
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:154
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:198
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:117
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:174
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:218
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:408
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:848
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1004
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:152
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:188
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:228
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:638
 msgid "Show"
@@ -8586,7 +8588,7 @@ msgstr "Annulla modifiche"
 msgid "Can NOT Undo Edits"
 msgstr "Le modifiche NON si possono annullare"
 
-#: exe/webui/block.py:242 exe/webui/block.py:338
+#: exe/webui/block.py:242 exe/webui/block.py:341
 msgid "This will delete this iDevice. Do you really want to do this?"
 msgstr "Questa operazione cancellerà questo iDevice. Si vuole procedere?"
 
@@ -8614,7 +8616,7 @@ msgstr "Suggerimento:"
 msgid "ERROR: Block.renderViewContent called directly"
 msgstr "ERRORE: Block.renderViewContent chiamato direttamente"
 
-#: exe/webui/block.py:336 exe/webui/editorpage.py:290
+#: exe/webui/block.py:333 exe/webui/editorpage.py:290
 #: exe/webui/editorpane.py:270
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:17
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:264
@@ -8899,11 +8901,11 @@ msgid "Hide results"
 msgstr "Nascondi risultati"
 
 #: exe/webui/common.py:654
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:155
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:199
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:175
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:219
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:409
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:217
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:153
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:189
 msgid "More"
 msgstr "Altro"
 
@@ -8920,6 +8922,7 @@ msgstr "Cerca"
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:29
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:102
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:86
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:152
 msgid "Accept"
 msgstr "Accetta"
 
@@ -8942,7 +8945,7 @@ msgstr "Lettere selezionate"
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:484
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:559
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:947
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:138
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:174
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:772
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:702
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:37
@@ -8951,6 +8954,7 @@ msgstr "Parola"
 
 #: exe/webui/common.py:681
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:143
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:164
 msgid "Words"
 msgstr "Parole"
 
@@ -9382,13 +9386,13 @@ msgstr "Elimina opzione"
 #: exe/webui/questionelement.py:121
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:306
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:337
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:234
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:254
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:495
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:563
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:189
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:958
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1130
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:193
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:229
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:919
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:815
 #: exe/webui/testquestionelement.py:104 exe/webui/truefalseelement.py:130
@@ -9786,14 +9790,14 @@ msgid "Please provide an image description (alternative text):"
 msgstr "Fornire una descrizione dell'immagine (testo alternativo):"
 
 #: exe/webui/scripts/authoring.js:1206
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:261
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:281
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:322
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:576
 msgid "Content after"
 msgstr "Contenuto seguente"
 
 #: exe/webui/scripts/authoring.js:1209
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:264
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:284
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:325
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:579
 msgid "Content before"
@@ -9981,11 +9985,11 @@ msgstr "Importa/esporta"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1278
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1294
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1316
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:1186
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:1196
-#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:1120
-#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:1136
-#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:1166
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:1238
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:1248
+#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:1132
+#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:1148
+#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:1178
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:116
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:406
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:1976
@@ -10013,14 +10017,14 @@ msgstr "Importa/esporta"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2140
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2156
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:2236
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:700
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:716
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:738
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:735
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:751
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:773
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1460
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2181
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2197
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2222
-#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2236
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2182
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2198
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2223
+#: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:2237
 msgid "Supported formats"
 msgstr "Formati supportati"
 
@@ -10738,10 +10742,10 @@ msgstr "punti"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:262
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:73
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:59
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:171
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:175
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:215
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:219
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:191
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:195
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:235
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:239
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:59
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:427
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:85
@@ -10762,7 +10766,7 @@ msgstr "punti"
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1035
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1051
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:57
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:170
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:206
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:87
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:848
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:864
@@ -10787,8 +10791,9 @@ msgid "Please provide the word definition"
 msgstr "Indicare la definizione della parola"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:105
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:104
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:75
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:92
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:96
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:88
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:135
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:103
@@ -10976,7 +10981,7 @@ msgstr "Messaggio da mostrare al completamento del gioco"
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:64
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:103
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:82
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:93
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:97
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:93
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:134
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:119
@@ -11000,9 +11005,9 @@ msgstr ""
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:127
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:51
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:90
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:115
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:116
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:258
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:104
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:108
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:357
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:105
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:162
@@ -11012,7 +11017,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:112
 #: exe/webui/scripts/idevices/rubrics/edition/exe-rubrics.js:590
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:854
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:101
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:136
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:722
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:178
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:609
@@ -11022,9 +11027,9 @@ msgstr "Impostazioni generali"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:127
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:75
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:114
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:115
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:257
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:103
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:107
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:356
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:161
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:124
@@ -11032,7 +11037,7 @@ msgstr "Impostazioni generali"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:735
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:111
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:853
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:100
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:135
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:721
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:608
 #, fuzzy
@@ -11047,9 +11052,9 @@ msgstr "Osservare le lettere, identificare e inserire le parole mancanti."
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:133
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:59
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:98
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:161
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:162
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:264
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:110
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:136
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:363
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:168
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:171
@@ -11057,7 +11062,7 @@ msgstr "Osservare le lettere, identificare e inserire le parole mancanti."
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:742
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:118
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:860
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:107
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:142
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:740
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:615
 msgid "Show minimized."
@@ -11079,7 +11084,8 @@ msgid "Custom messages"
 msgstr "Messaggi personalizzati"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:142
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:146
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:147
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:127
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:375
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:184
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:125
@@ -11092,6 +11098,7 @@ msgid "Show solutions"
 msgstr "Mostrare le soluzioni"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:143
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:128
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:376
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:185
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:126
@@ -11103,7 +11110,7 @@ msgid "Show solution time (seconds)"
 msgstr "Mostrare il tempo di soluzione (secondi)"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:147
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:155
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:156
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:135
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:104
 msgid "Case sensitive"
@@ -11190,13 +11197,13 @@ msgid "Number of lives"
 msgstr "Numero di vite"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:172
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:165
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:166
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:380
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:179
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:131
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:781
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:917
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:122
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:158
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:650
 msgid "&percnt; right to see the feedback"
 msgstr "&percnt; giuste per vedere la soluzione"
@@ -11211,7 +11218,6 @@ msgstr "&percnt; giuste per vedere la soluzione"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:796
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:926
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:935
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:128
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:752
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:88
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:668
@@ -11230,7 +11236,7 @@ msgid "Digital blackboard mode"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:187
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:134
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:170
 msgid "Words/Phrases"
 msgstr "Parole/frasi"
 
@@ -11282,8 +11288,8 @@ msgstr "Percentuale di lettere da mostrare (%)"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:846
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1000
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1002
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:148
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:150
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:184
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:186
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:813
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:815
 msgid "Image URL"
@@ -11359,8 +11365,8 @@ msgid "Time (s)"
 msgstr "Tempo (s)"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:259
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:168
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:212
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:188
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:232
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:891
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1047
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:860
@@ -11374,16 +11380,16 @@ msgstr "Testo alternativo"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:899
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:581
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1055
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:174
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:210
 msgid "Play audio"
 msgstr "Suona audio"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:273
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:278
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:138
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:140
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:182
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:184
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:158
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:160
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:202
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:204
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:440
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:88
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:906
@@ -11393,7 +11399,7 @@ msgstr "Suona audio"
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:567
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1062
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1067
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:180
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:216
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:875
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:880
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:762
@@ -11403,7 +11409,7 @@ msgstr "Nessuna immagine"
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:284
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:534
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1095
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:140
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:176
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:908
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:792
 msgid "Word/Phrase"
@@ -11413,8 +11419,8 @@ msgstr "Parola/frase"
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:538
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:560
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1096
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:143
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:145
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:179
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:181
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:909
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:793
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:39
@@ -11437,13 +11443,13 @@ msgstr "Tentativo"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:300
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:331
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:228
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:248
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:489
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:556
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:183
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:952
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1124
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:187
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:223
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:913
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:809
 msgid "Add question"
@@ -11451,13 +11457,13 @@ msgstr "Aggiungere domanda"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:301
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:332
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:229
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:249
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:490
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:557
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:184
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:953
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1125
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:188
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:224
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:914
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:92
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:810
@@ -11466,13 +11472,13 @@ msgstr "Prima domanda"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:302
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:333
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:230
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:250
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:491
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:558
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:185
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:954
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1126
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:189
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:225
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:915
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:94
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:811
@@ -11481,12 +11487,12 @@ msgstr "Domanda precedente"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:303
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:334
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:231
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:251
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:492
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:186
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:955
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1127
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:190
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:226
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:916
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:812
 msgid "Question number:"
@@ -11494,13 +11500,13 @@ msgstr "Domanda numero:"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:304
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:335
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:232
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:252
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:493
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:561
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:187
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:956
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1128
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:191
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:227
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:917
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:93
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:813
@@ -11509,13 +11515,13 @@ msgstr "Domanda successiva"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:305
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:336
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:233
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:253
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:494
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:562
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:188
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:957
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1129
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:192
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:228
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:918
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:95
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:814
@@ -11524,39 +11530,39 @@ msgstr "Ultima domanda"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:307
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:338
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:235
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:255
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:496
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:564
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:190
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:959
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1131
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:194
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:230
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:920
 msgid "Copy question"
 msgstr "Copia domanda"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:308
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:339
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:236
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:256
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:497
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:565
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:191
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:960
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1132
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:195
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:231
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:921
 msgid "Cut question"
 msgstr "Taglia domanda"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:309
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:340
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:237
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:257
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:498
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:566
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:192
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:961
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1133
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:196
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:232
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:922
 msgid "Paste question"
 msgstr "Incolla domanda"
@@ -11567,14 +11573,14 @@ msgstr "Incolla domanda"
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:195
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:983
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1155
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:200
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:236
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:925
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:818
 msgid "Number of questions:"
 msgstr "Numero di domande:"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:1670
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:318
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:356
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:676
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:854
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:472
@@ -11582,7 +11588,7 @@ msgstr "Numero di domande:"
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1444
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:97
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1652
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:978
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:1014
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:1526
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:1213
 msgid "Game"
@@ -11635,7 +11641,7 @@ msgid "Create activities with a password protected feedback."
 msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:12
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:124
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:125
 #, fuzzy
 msgid "Complete"
 msgstr "competere"
@@ -11661,66 +11667,67 @@ msgstr "Gioco finito."
 msgid "You completed the activity"
 msgstr "Completare l'attività"
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:114
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:115
 msgid ""
 "Create activities in which the student will have to fill in the blanks of"
 " a text writing or choosing an answer."
 msgstr ""
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:116
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:117
 #, fuzzy
 msgid "Read the text and complete the missing words."
 msgstr "Leggi il paragrafo seguente e inserisci le parole mancanti."
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:126
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:127
 msgid "Drag and drop"
 msgstr ""
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:128
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:129
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:480
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:943
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:768
 msgid "Select"
 msgstr "Seleziona"
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:132
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:133
 msgid ""
 "Limit the words in each dropdown box. Write the possible options, "
 "starting with the correct one, separated by |"
 msgstr ""
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:135
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:136
 #, fuzzy
 msgid "Wrong words"
 msgstr "Altre parole"
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:138
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:139
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:434
 #, fuzzy
 msgid "Number of attempts"
 msgstr "Numero di vite"
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:142
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:143
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:132
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:174
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:163
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:110
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:145
 #, fuzzy
 msgid "Time (minutes)"
 msgstr "Tempo (s)"
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:149
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:150
 msgid "Allow errors in typed words"
 msgstr ""
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:151
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:152
 msgid "Incorrect letters allowed (&percnt;)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:158
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:159
 msgid "Field width proportional to the words length"
 msgstr ""
 
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:177
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:178
 msgid ""
 "eXeLearning is a **free** and open source editor to create "
 "**educational** resources in an **simple | easy** way. It's available for"
@@ -11969,44 +11976,55 @@ msgstr ""
 msgid "Click on the card"
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:94
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:72
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:62
+#, python-format
+msgid "Game time is over. Your score is %s."
+msgstr ""
+
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:73
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:63
+#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:161
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:315
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:431
+#: exe/webui/tools/image-compressor/js/langs/all.js:17
+#: exe/webui/tools/style-designer/langs/all.js:125
+msgid "Finish"
+msgstr "Finire"
+
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:74
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:86
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:64
+#, python-format
+msgid "You finished the game. Your score is %s."
+msgstr ""
+
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:98
 msgid "Provide an image, text or audio for each card's front side"
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:95
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:99
 msgid "Provide an image, text or audio for each card's back side"
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:96
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:100
 #, fuzzy
 msgid "Please create at least one card"
 msgstr "Inserire almeno una parola"
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:97
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:101
 #, python-format
 msgid "Maximum card number: %s."
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:103
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:107
 msgid "Create card memory games with images, sounds or rich text."
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:105
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:109
 #, fuzzy
 msgid "Click on the cards to see what they hide."
 msgstr "L'utente cliccherà in questa per avviare il gioco"
-
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:113
-#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:136
-#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:867
-#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:874
-msgid "Random"
-msgstr "A caso"
-
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:116
-#, fuzzy
-msgid "Game mode"
-msgstr "Modalità avanzata"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:119
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:142
@@ -12014,24 +12032,40 @@ msgstr "Modalità avanzata"
 msgid "Navigation"
 msgstr "Navigazione"
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:122
-#, fuzzy
-msgid "Card"
-msgstr "Registrazione"
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:121
+#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:12
+#: exe/webui/scripts/idevices/identifica-activity/export/identifica-activity.js:48
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:175
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:308
+msgid "Identify"
+msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:131
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:240
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:123
+msgid "Memory"
+msgstr ""
+
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
+#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:136
+#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:867
+#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:874
+msgid "Random"
+msgstr "A caso"
+
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:142
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:151
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:260
 #, fuzzy
 msgid "Cards"
 msgstr "Anni"
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:135
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:155
 #, fuzzy
 msgid "Front side"
 msgstr "Dimensioni carattere"
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:147
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:191
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:167
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:211
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:76
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
@@ -12040,22 +12074,22 @@ msgstr "Dimensioni carattere"
 msgid "Color"
 msgstr "Colore"
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:148
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:192
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:168
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:212
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/all_dlg.js:1
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/style/langs/en_dlg.js:1
 msgid "Background"
 msgstr "Sfondo"
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:179
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:199
 msgid "Back side"
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:224
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:244
 msgid "Flip down the card"
 msgstr ""
 
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:225
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:245
 msgid "Flip down all the cards"
 msgstr ""
 
@@ -12182,14 +12216,6 @@ msgstr "Inserire un URL o ID attività di GeoGebra."
 msgid "Please write the button text."
 msgstr "Inserire il testo del bottone."
 
-#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:12
-#: exe/webui/scripts/idevices/identifica-activity/export/identifica-activity.js:48
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:95
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:175
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:308
-msgid "Identify"
-msgstr ""
-
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:54
 msgid "Show a clue"
 msgstr ""
@@ -12271,7 +12297,7 @@ msgstr "Selezionare la risposta corretta per ogni domanda."
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:424
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:401
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:444
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:167
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:203
 msgid "Alt"
 msgstr ""
 
@@ -13206,7 +13232,7 @@ msgid "Not completed"
 msgstr "competere"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:93
-msgid "Your finished all the operations."
+msgid "You finished all the operations."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:124
@@ -13286,7 +13312,7 @@ msgstr "Durata"
 msgid "Multiplication"
 msgstr "Gamification"
 
-#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:160
+#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:159
 #, fuzzy
 msgid "Division"
 msgstr "Versione editor"
@@ -13329,12 +13355,6 @@ msgstr "problema eXe"
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:69
 msgid "Sorry... The right answer is:"
 msgstr "No... la riposta giusta è:"
-
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:86
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:64
-#, python-format
-msgid "You finished the game. Your score is %s."
-msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:87
 #, fuzzy
@@ -13955,44 +13975,30 @@ msgstr ""
 msgid "You found all the words. Your score is %s."
 msgstr ""
 
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:62
-#, python-format
-msgid "Game time is over. Your score is %s."
-msgstr ""
-
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:63
-#: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:161
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeaudio/plugin.min.js:315
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemindmap/editor/js/custom.js:431
-#: exe/webui/tools/image-compressor/js/langs/all.js:17
-#: exe/webui/tools/style-designer/langs/all.js:125
-msgid "Finish"
-msgstr "Finire"
-
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:92
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:127
 #, fuzzy
 msgid "Only one Word Search game per page."
 msgstr "Un solo video interattivo per pagina."
 
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:100
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:135
 msgid "Create word search games with additional text, images or sound."
 msgstr ""
 
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:102
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:137
 msgid "Find the hidden words."
 msgstr ""
 
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:114
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:149
 #, fuzzy
 msgid "Show \"Solve\" button."
 msgstr "Mostrare le soluzioni"
 
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:117
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:153
 #, fuzzy
 msgid "Diagonal"
 msgstr "diagramma"
 
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:118
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:154
 #, fuzzy
 msgid "Inverse"
 msgstr "investigare"
@@ -15844,35 +15850,35 @@ msgstr ""
 "Scrivere il contenuto della finestra di dialogo. Si può usare HTML e "
 "modificarlo nell'editor."
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:26
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
 msgid "Please select a programming language"
 msgstr "Scegliere un linguaggio di programmazione"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:27
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
 msgid "Insert HTML code as text"
 msgstr "Inserire codice HTML in formato testo"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:28
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
 msgid "Programming language"
 msgstr "Linguaggio di programmazione"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:29
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
 msgid "Markup (HTML, etc.)"
 msgstr "Marcatura (HTML ecc.)"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:30
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:34
 msgid "C type"
 msgstr "Tipo C"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:31
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:35
 msgid "Line numbers"
 msgstr "Numeri di riga"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:32
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:36
 msgid "Line highlight"
 msgstr "Evidenzia riga"
 
-#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:33
+#: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastecode/plugin.min.js:37
 msgid "Paste HTML fragment (embed code)"
 msgstr "Incolla frammento HTML (codice incluso)"
 
@@ -17659,4 +17665,13 @@ msgstr ""
 
 #~ msgid "Time(minutes)"
 #~ msgstr "Minuti"
+
+#~ msgid "Game mode"
+#~ msgstr "Modalità avanzata"
+
+#~ msgid "Card"
+#~ msgstr "Registrazione"
+
+#~ msgid "Your finished all the operations."
+#~ msgstr ""
 
