@@ -33,7 +33,8 @@ intef-exe (3:2.8) lucid; urgency=medium
     - TinyMCE Media plugin: New "Standard YouTube License" option (#624) + IFRAME attribution problems fixed (#634).
     - TinyMCE Math plugin: Allow inline formulas (LaTeX code). (#651)
     - TinyMCE syntax highlighting options: Error handling (wrong values in the "Line highlight" field).
-    - Licenses help links (Creative Commons) in some TinyMCE plugins and the Properties tab. (#649)    
+    - Licenses help links (Creative Commons) in some TinyMCE plugins and the Properties tab. (#649)
+    - Responsive tables. Use "exe-table exe-table-responsive" or "exe-table-minimalist exe-table-responsive" CSS classes.
     
   * Pablo Amaya
     - New export option: "Export current page as SCORM". (#643)
