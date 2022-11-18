@@ -196,7 +196,7 @@ var $exeDevice = {
                                 </div>\
                                 <div class="SPE-EAuthorAlt"  id="sopaEAuthorAlt">\
                                     <div class="SPE-EInputAuthor">\
-                                            <label>' + _('Author') + '</label><input id="sopaEAuthor" type="text"  class="SPE-EAuthor" />\
+                                            <label>' + _('Authorship') + '</label><input id="sopaEAuthor" type="text"  class="SPE-EAuthor" />\
                                     </div>\
                                     <div class="SPE-EInputAlt">\
                                         <label>' + _('Alt') + '</label><input  id="sopaEAlt" type="text" class="SPE-EAlt" />\
