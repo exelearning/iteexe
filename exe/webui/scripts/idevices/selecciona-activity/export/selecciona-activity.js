@@ -331,16 +331,6 @@ var $eXeSelecciona = {
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="seleccionaPAuthor-' + instance + '"></p>\
             </div>\
-            <div class="gameQP-CodeAccessDiv" id="seleccionaCodeAccessDiv-' + instance + '">\
-                <p class="gameQP-MessageCodeAccessE" id="seleccionaMesajeAccesCodeE-' + instance + '"></p>\
-                <div class="gameQP-DataCodeAccessE">\
-                    <label for="seleccionaCodeAccessE-' + instance + '">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="seleccionaCodeAccessE-' + instance + '">\
-                    <a href="#" id="seleccionaCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
-                        <strong class="sr-av">' + msgs.msgSubmit + '</strong>\
-                        <div class="exeQuextIcons exeQuextIcons-Submit gameQP-Activo"></div>\
-                    </a>\
-                </div>\
-                </div>\
             <div class="sr-av" id="seleccionaStartGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
             <div class="gameQP-StartGame"><a href="#" id="seleccionaStartGame-' + instance + '"></a></div>\
             <div class="gameQP-QuestionDiv" id="seleccionaQuestionDiv-' + instance + '">\
@@ -395,10 +385,29 @@ var $eXeSelecciona = {
                 <a class="gameQP-ModeBoard" href="#" id="seleccionaModeBoardMoveOn-' + instance + '" title="' + msgs.msgMoveOne + '">' + msgs.msgMoveOne + '</a>\
                 <a class="gameQP-ModeBoard" href="#" id="seleccionaModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
             </div>\
+                <div class="gameQP-Cubierta" id="seleccionaCubierta-' + instance + '" style="display:none">\
+                    <div class="gameQP-CodeAccessDiv" id="seleccionaCodeAccessDiv-' + instance + '">\
+                    <p class="gameQP-MessageCodeAccessE" id="seleccionaMesajeAccesCodeE-' + instance + '"></p>\
+                    <div class="gameQP-DataCodeAccessE">\
+                        <label for="seleccionaCodeAccessE-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="seleccionaCodeAccessE-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
+                        <a href="#" id="seleccionaCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
+                            <strong class="sr-av">' + msgs.msgSubmit + '</strong>\
+                            <div class="exeQuextIcons exeQuextIcons-Submit gameQP-Activo"></div>\
+                        </a>\
+                    </div>\
+                </div>\
+            </div>\
         </div>\
     </div>\
     ' + this.addButtonScore(instance);
         return html;
+    },
+    showCubiertaOptions(mode, instance) {
+        if (mode === false) {
+            $('#seleccionaCubierta-' + instance).fadeOut();
+            return;
+        }
+        $('#seleccionaCubierta-' + instance).fadeIn();
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
@@ -827,6 +836,8 @@ var $eXeSelecciona = {
             $('#seleccionaMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#seleccionaCodeAccessDiv-' + instance).show();
             $('#seleccionaGameContainer-' + instance + ' .gameQP-StartGame').hide();
+            $eXeSelecciona.showCubiertaOptions(true,instance)
+
         }
         $('#seleccionaInstruction-' + instance).text(mOptions.instructions);
         $('#seleccionaSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -1024,7 +1035,7 @@ var $eXeSelecciona = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#seleccionaCodeAccessE-' + instance).val().toLowerCase()) {
-            $('#seleccionaCodeAccessDiv-' + instance).hide();
+            $eXeSelecciona.showCubiertaOptions(false,instance);
             $eXeSelecciona.getYTAPI(instance);
         } else {
             $('#seleccionaMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
