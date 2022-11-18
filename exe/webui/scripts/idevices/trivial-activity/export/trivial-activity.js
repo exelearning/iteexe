@@ -1746,8 +1746,14 @@ var $eXeTrivial = {
         if (typeof mOptions.trivialID != "undefined") {
             var dataTrivial = $eXeTrivial.getDataStorage(mOptions.trivialID);
             if (dataTrivial) {
-                $eXeTrivial.reloadGame(dataTrivial, instance);
-            }
+                if (dataTrivial) {
+                    if(dataTrivial.activesQuestions.length==mOptions.numeroTemas){
+                        $eXeTrivial.reloadGame(dataTrivial, instance);
+                    }else{
+                        $eXeTrivial.rebootGame(instance)
+                    }
+                }
+           }
         }
 
         $('#trivialModeBoardOK-' + instance).on('click', function (e) {
@@ -1865,7 +1871,7 @@ var $eXeTrivial = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeTrivial.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#trivialCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#trivialCodeAccessE-' + instance).val().toLowerCase()) {
             $('#trivialSelectsGamers-' + instance).show();
             $('#trivialMessageModal-' + instance).hide();
             $('#trivialCodeAccessDiv-' + instance).hide();

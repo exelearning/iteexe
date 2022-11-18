@@ -777,7 +777,7 @@ var $eXeMathProblems = {
 
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMathProblems.options[instance];
-        if (mOptions.itinerary.codeAccess == $('#mthpCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase()== $('#mthpCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeMathProblems.showCubiertaOptions(false, instance);
             mOptions.gameStarted = false;
             $eXeMathProblems.startGame(instance);

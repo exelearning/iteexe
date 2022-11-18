@@ -714,7 +714,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">'+_("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.")+' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
+            <div class="exe-idevice-info">'+_("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.")+' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset($exeDevice.msgs.msgGameIntrunctions) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -1627,6 +1627,7 @@ var $exeDevice = {
         if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
         } else if (game.typeGame == 'Trivial') {
+            game.trivialID=$exeDevice.getId();
             var temas = [];
             for (var i = 0; i < 6; i++) {
                 var tema = [];

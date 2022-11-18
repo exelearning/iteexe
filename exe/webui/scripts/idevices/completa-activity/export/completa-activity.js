@@ -484,7 +484,7 @@ var $eXeCompleta = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeCompleta.options[instance];
-        if (mOptions.itinerary.codeAccess == $('#cmptCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#cmptCodeAccessE-' + instance).val().toLowerCase() ) {
             $eXeCompleta.showCubiertaOptions(false, instance)
             if (mOptions.time > 0) {
                 $eXeCompleta.startGame(instance)

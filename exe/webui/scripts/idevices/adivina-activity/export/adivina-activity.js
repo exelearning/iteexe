@@ -757,7 +757,7 @@ var $eXeAdivina = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
-        if (mOptions.itinerary.codeAccess == $('#adivinaCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#adivinaCodeAccessE-' + instance).val().toLowerCase()) {
             $('#adivinaDefinition-' + instance).show();
             $('#adivinaCodeAccessDiv-' + instance).hide();
             $('#adivinaQuestion-' + instance).show();

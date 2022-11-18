@@ -158,7 +158,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">'+_("Create image maps: Images with interactive hotspots to reveal images, videos, sounds, texts...")+' <a href=https://youtu.be/xy1vBj9KGQk" hreflang="es" rel="lightbox">'+_("Use Instructions")+'</a></div>\
+            <div class="exe-idevice-info">'+_("Create image maps: Images with interactive hotspots to reveal images, videos, sounds, texts...")+' <a href=https://youtu.be/xy1vBj9KGQk" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Click on the active areas or image icons.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\

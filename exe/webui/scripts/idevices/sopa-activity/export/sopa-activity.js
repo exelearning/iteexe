@@ -420,6 +420,7 @@ var $eXeSopa = {
                     </div>\
                     <div class="SPP-MultimediaPoint" id="sopaMMultimediaPoint">\
                         <img src="" class="SPP-Images" id="sopaMImagePoint"  alt="' + msgs.msgNoImage + '" />\
+                        <img class="SPP-Cursor" id="sopaMCursor" src="' + $eXeSopa.idevicePath + 'exequextcursor.gif" alt="" />\
                     </div>\
                     <div class="SPP-AuthorPoint" id="sopaMAuthorPoint"></div>\
                     <div class="SPP-Footer" id="sopaMFooterPoint"></div>\
@@ -490,7 +491,7 @@ var $eXeSopa = {
         if (q.definition.length > 0) {
             $('#sopaMFooterPoint').show();
         }
-        $eXeSopa.showImagePoint(q.url, q.author, q.alt);
+        $eXeSopa.showImagePoint(q.url, q.x, q.y, q.author, q.alt);
 
         if (q.author.length > 0) {
             $('#sopaMAuthorPoint').show();
@@ -502,8 +503,9 @@ var $eXeSopa = {
         }
   
     },
-    showImagePoint: function (url, author, alt) {
+    showImagePoint: function (url, x, y, author, alt) {
         var $Image = $('#sopaMImagePoint'),
+            $cursor = $('#sopaMCursor'),
             $Author = $('#sopaMAuthorPoint');
         $Author.html(author);
         $Image.prop('src', url)
@@ -512,14 +514,23 @@ var $eXeSopa = {
                     $Image.hide();
                     $Image.attr('alt', $eXeSopa.options.msgs.msgNoImage);
                     $noImage.show();
-                    $eXeSopa.showCubiertaOptions(2)
+                    $eXeSopa.showCubiertaOptions(2);
                     return false;
                 } else {
                     var mData = $eXeSopa.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                     $eXeSopa.drawImage(this, mData);
                     $Image.show();
                     $Image.attr('alt', alt);
-                    $eXeSopa.showCubiertaOptions(2)
+                    $eXeSopa.showCubiertaOptions(2);
+                    if (x > 0 && y > 0) {
+                        var left = mData.x + (x * mData.w);
+                        var top = mData.y + (y * mData.h);
+                        $cursor.css({
+                            'left': left + 'px',
+                            'top': top + 'px'
+                        });
+                        $cursor.show();
+                    }
                     return true;
                 }
             }).on('error', function () {
@@ -778,7 +789,7 @@ var $eXeSopa = {
     },
     enterCodeAccess: function () {
         var mOptions = $eXeSopa.options;
-        if (mOptions.itinerary.codeAccess == $('#sopaCodeAccessE').val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#sopaCodeAccessE').val().toLowerCase()) {
             $eXeSopa.showCubiertaOptions(false)
 
         } else {

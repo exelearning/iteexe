@@ -100,7 +100,7 @@ var $exeDevice = {
     createForm: function () {
         var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Create random basic math problems.") + ' <a href="https://youtu.be/0f54lCxfOxU" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("Create random basic math problems.") + ' <a href="https://youtu.be/0f54lCxfOxU" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Solve the following math problems.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\

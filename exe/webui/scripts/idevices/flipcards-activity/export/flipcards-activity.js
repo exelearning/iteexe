@@ -139,6 +139,9 @@ var $eXeFlipCards = {
             var dl = $(".flipcards-DataGame", this),
                 mOption = $eXeFlipCards.loadDataGame(dl, this);
             $eXeFlipCards.options.push(mOption);
+            if (mOption.type == 3) {
+                mOption.cardsGame = $eXeFlipCards.createCardsData(mOption.cardsGame);
+            }
             var flcds = $eXeFlipCards.createInterfaceCards(i);
             dl.before(flcds).remove();
             $('#flcdsGameMinimize-' + i).hide();
@@ -154,7 +157,7 @@ var $eXeFlipCards = {
             }
             $eXeFlipCards.showActivity(i);
             $eXeFlipCards.addEvents(i);
-            if (!mOption.gameMode) {
+            if (mOption.type < 2) {
                 $('#flcdsGameContainer-' + i).find('.exeQuextIcons-Hit').hide();
                 $('#flcdsGameContainer-' + i).find('.exeQuextIcons-Error').hide();
                 $('#flcdsGameContainer-' + i).find('.exeQuextIcons-Score').hide();
@@ -163,6 +166,11 @@ var $eXeFlipCards = {
                 $('#flcdsPScore-' + i).hide();
 
             }
+            if (mOption.type == 3) {
+                $('#flcdsGameContainer-' + i).find('.exeQuextIcons-Error').hide();
+                $('#flcdsPErrors-' + i).hide();
+            }
+
         });
         if ($eXeFlipCards.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeFlipCards.loadMathJax();
@@ -223,6 +231,7 @@ var $eXeFlipCards = {
             $imagesLinkBack = $('.flipcards-LinkImagesBack', sthis),
             $audiosLinkBack = $('.flipcards-LinkAudiosBack', sthis);
         mOptions.playerAudio = "";
+        mOptions.gameStarted = false;
         $imagesLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.cardsGame.length) {
@@ -263,6 +272,7 @@ var $eXeFlipCards = {
                 }
             }
         });
+        mOptions.time = typeof mOptions.time == "undefined" ? 0 : mOptions.time;
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -270,10 +280,10 @@ var $eXeFlipCards = {
         mOptions.activedGame = false;
         mOptions.visiteds = [];
         mOptions.obtainedClue = false;
-        mOptions.gameMode = typeof mOptions.gameMode == "undefined" ? false : mOptions.gameMode;
         mOptions.cardsGame = $eXeFlipCards.getCards(mOptions.cardsGame, mOptions.percentajeCards);
         mOptions.cardsGame = mOptions.randomCards ? $eXeFlipCards.shuffleAds(mOptions.cardsGame) : mOptions.cardsGame;
         mOptions.numberCards = mOptions.cardsGame.length;
+        mOptions.realNumberCards = mOptions.numberCards
         for (var i = 0; i < mOptions.cardsGame.length; i++) {
             mOptions.cardsGame[i].isCorrect = true;
             mOptions.cardsGame[i].eText = $eXeFlipCards.decodeURIComponentSafe(mOptions.cardsGame[i].eText);
@@ -320,13 +330,512 @@ var $eXeFlipCards = {
         }
         return mOptions.cardsGame;
     },
+    activeMemory(instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        for (var i = 0; i < mOptions.cardsGame.length; i++) {
+            var card = mOptions.cardsGame[i];
+            var a = Math.random();
+            if (a >= 0.5) {
+                card.isCorrect = true;
+            } else {
+                card.isCorrect = false;
+                var num = Math.floor(Math.random() * mOptions.cardsGame.length);
+                if (num == i) {
+                    num = num > 0 ? num - 1 : mOptions.cardsGame.length - 1;
+                }
+                var cb = mOptions.cardsGame[num];
+                card.urlBk = cb.urlBk;
+                card.audioBk = cb.audioBk;
+                card.xBk = cb.xBk;
+                card.yBk = cb.yBk;
+                card.authorBk = card.authorBk;
+                card.altBk = cb.altBk;
+                card.eTextBk = cb.eTextBk;
+                card.colorBk = cb.colorBk;
+                card.backcolorBk = cb.backcolorBk;
+            }
+        }
+        return mOptions.cardsGame;
+    },
+    createCardsData: function (cards) {
+        var cardsGame = [],
+            d = 0,
+            j = 0,
+            tp = 0;
+        while (j < cards.length) {
+            var p = new Object();
+            if (d % 2 == 0) {
+                p.number = j;
+                p.url = cards[j].url;
+                p.eText = cards[j].eText;
+                p.audio = cards[j].audio;
+                p.x = cards[j].x;
+                p.y = cards[j].y;
+                p.alt = cards[j].alt;
+                p.author = cards[j].autor;
+                p.color = cards[j].color;
+                p.backcolor = cards[j].backcolor;
+                tp = 0;
+                if (p.url.trim().length > 0 && p.eText.trim().length > 0) {
+                    tp = 2;
+                } else if (p.eText.trim().length > 0) {
+                    tp = 1;
+                }
+                p.type = tp;
+            } else {
+                p.number = j;
+                p.url = cards[j].urlBk;
+                p.eText = cards[j].eTextBk;
+                p.audio = cards[j].audioBk;
+                p.x = cards[j].xBk;
+                p.y = cards[j].yBk;
+                p.alt = cards[j].altBk;
+                p.author = cards[j].authorBk;
+                p.color = cards[j].colorBk;
+                p.backcolor = cards[j].backcolorBk;
+                tp = 0;
+                if (p.url.trim().length > 0 && p.eText.trim().length > 0) {
+                    tp = 2;
+                } else if (p.eText.trim().length > 0) {
+                    tp = 1;
+                }
+                p.type = tp;
+                j++;
+            }
+            d++;
+            cardsGame.push(p);
+        }
+        return cardsGame;
+    },
+    uncorrectPairMemory: function (instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        $eXeFlipCards.updateScoreMemory(false, instance);
+        setTimeout(function () {
+            $eXeFlipCards.updateCoversMemory(instance, false);
+            mOptions.selecteds = [];
+            mOptions.gameActived = true;
+            $eXeFlipCards.showMessageMemory(3, mOptions.msgs.mgsClickCard, instance)
+        }, 2000);
+
+    },
+    updateScoreMemory: function (correctAnswer, instance) {
+        var mOptions = $eXeFlipCards.options[instance],
+            message = "",
+            obtainedPoints = 0,
+            type = 1,
+            sscore = 0;
+        if (correctAnswer) {
+            mOptions.hits++
+            obtainedPoints = (10 / mOptions.realNumberCards);
+            type = 2;
+        }
+        mOptions.score = mOptions.score + obtainedPoints;
+        sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
+
+        $('#flcdsPNumber-' + instance).text(mOptions.realNumberCards - mOptions.hits)
+        $('#flcdsPScore-' + instance).text(sscore);
+        $('#flcdsPHits-' + instance).text(mOptions.hits);
+        message = $eXeFlipCards.getMessageAnswerMemory(correctAnswer, instance);
+        $eXeFlipCards.showMessage(type, message, instance, false);
+        if (mOptions.hits >= mOptions.realNumberCards) {
+            mOptions.gameActived = false;
+            setTimeout(function () {
+                $eXeFlipCards.gameOverMemory(0, instance)
+            }, 2000)
+        }
+    },
+    getMessageAnswerMemory: function (correctAnswer, instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        var message = "";
+        if (correctAnswer) {
+            message = mOptions.msgs.msgTrue1;
+        } else {
+            message = mOptions.msgs.msgTrue2;
+        }
+        return message;
+    },
+    getMessageCorrectAnswerMemory: function (instance) {
+        return $eXeFlipCards.getRetroFeedMessagesMemory(true, instance);
+    },
+    getMessageErrorAnswerMemory: function (instance) {
+        return $eXeFlipCards.getRetroFeedMessagesMemory(false, instance);
+    },
+    showMessageMemory: function (type, message, instance, end) {
+        var colors = ['#555555', $eXeFlipCards.borderColors.red, $eXeFlipCards.borderColors.green, $eXeFlipCards.borderColors.blue, $eXeFlipCards.borderColors.yellow],
+            color = colors[type];
+
+        $('#flcdsMessage-' + instance).text(message);
+        $('#flcdsMessage-' + instance).css({
+            'color': color
+        });
+        if (end) {
+            $('#flcdsMessage-' + instance).hide();
+            $('#flcdsMesasgeEnd-' + instance).text(message);
+            $('#flcdsMesasgeEnd-' + instance).css({
+                'color': color
+            });
+        }
+    },
+    updateCoversMemory: function (instance, answers) {
+        var mOptions = $eXeFlipCards.options[instance],
+            $cardContainers = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardContainerMemory');
+        $cardContainers.each(function () {
+            var state = $(this).data('state'),
+                $card = $(this).find('.FLCDSP-Card1Memory').eq(0);
+            $card.removeClass("FLCDSP-CardActiveMemory");
+            if (state == 1) {
+                if (answers) {
+                    state = 2;
+                } else {
+                    state = 0;
+                }
+                $(this).data('state', state);
+            }
+            if (state == 0) {
+                $(this).css('cursor', 'pointer');
+                if (!mOptions.showCards) {
+                    $card.removeClass('flipped')
+                }
+            } else {
+                $(this).css('cursor', 'default');
+            }
+        });
+    },
+    correctPairMemory: function (number, instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        mOptions.activeQuestion = mOptions.selecteds[0];
+        mOptions.selecteds = [];
+        $eXeFlipCards.updateCoversMemory(instance, true);
+        $eXeFlipCards.updateScoreMemory(true, instance);
+        var percentageHits = (mOptions.hits / mOptions.cardsGame.length) * 100;
+        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+            if (!mOptions.obtainedClue) {
+                mOptions.obtainedClue = true;
+                $('#flcdsPShowClue-' + instance).text(mOptions.itinerary.clueGame);
+                $('#flcdsCubierta-' + instance).show();
+                $('#flcdsShowClue-' + instance).fadeIn();
+            }
+        }
+
+        if (mOptions.isScorm == 1) {
+            if (mOptions.repeatActivity || $eXeFlipCards.initialScore === '') {
+                var score = ((mOptions.hits * 10) / mOptions.realNumberCards).toFixed(2);
+                $eXeFlipCards.sendScore(instance, true);
+                $('#flcdsRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+            }
+        }
+        var $marcados = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardContainerMemory[data-number="' + number + '"]').find('.FLCDSP-Card1Memory')
+        $marcados.each(function () {
+            $(this).data('valid', '1');
+            $(this).animate({
+                zoom: '110%'
+            }, "slow");
+        });
+        var opacity = mOptions.showCards ? 0.25 : 0.3;
+        if (mOptions.showCards) {
+            $marcados.find('.FLCDSP-CardBackMemory').css("opacity", opacity);
+        }
+        if (mOptions.hits >= mOptions.cardsGame.length) {
+            var message = mOptions.msgs.msgCool + ' ' + mOptions.msgs.mgsAllCards;
+            if (mOptions.gameMode == 1) {
+                message = mOptions.msgs.msgCool + ' ' + mOptions.msgs.mgsAllTrios;
+            } else if (mOptions.gameMode == 2) {
+                message = mOptions.msgs.msgCool + ' ' + mOptions.msgs.mgsAllQuartets;
+            }
+            $eXeFlipCards.showMessageMemory(3, message, instance)
+            setTimeout(function () {
+                $marcados.find('.FLCDSP-CardBackMemory').css("opacity", opacity);
+                $eXeFlipCards.gameOverMemory(0, instance);
+                mOptions.gameActived = true;
+            }, 2000);
+
+        } else {
+            mOptions.gameActived = true;
+        }
+    },
+    gameOverMemory: function (type, instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        if (!mOptions.gameStarted) {
+            return;
+        }
+        clearInterval(mOptions.counterClock);
+        mOptions.gameStarted = false;
+        mOptions.gameActived = false;
+        mOptions.gameOver = true;
+        $eXeFlipCards.stopSound(instance);
+        $('#flcdsCubierta-' + instance).show();
+        $eXeFlipCards.showScoreGame(type, instance);
+        if (mOptions.isScorm == 1) {
+            if (mOptions.repeatActivity || $eXeFlipCards.initialScore === '') {
+                var score = ((mOptions.hits * 10) / mOptions.realNumberCards).toFixed(2);
+                $eXeFlipCards.sendScore(instance, true);
+                $('#flcdsRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+                $eXeFlipCards.initialScore = score;
+            }
+        }
+        //$eXeFlipCards.showFeedBack(instance);
+        $('#flcdsReboot-' + instance).show();
+        if (mOptions.isScorm > 0 && !mOptions.repeatActivity) {
+            $('#flcdsReboot-' + instance).hide();
+        }
+    },
+    rebootGameMemory: function (instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        mOptions.gameActived = false;
+        mOptions.gameStarted = false;
+        $('#flcdsCubierta-' + instance).hide();
+        $('#flcdsStartLevels-' + instance).show();
+        $('#flcdsMultimedia-' + instance).find('.FLCDSP-Card1Memory').removeClass('flipped FLCDSP-CardActiveMemory');
+        mOptions.gameStarted = false;
+        mOptions.solveds = [];
+        mOptions.selecteds = [];
+        mOptions.hits = 0;
+        mOptions.errors = 0;
+        mOptions.score = 0;
+        mOptions.counter = mOptions.time * 60;
+        mOptions.obtainedClue = false;
+        $eXeFlipCards.updateTimeMemory(mOptions.counter, instance);
+        $('#flcdsPShowClue-' + instance).text('');
+        $('#flcdsShowClue-' + instance).hide();
+        $('#flcdsPHits-' + instance).text(mOptions.hits);
+        $('#flcdsPNumber-' + instance).text(mOptions.realNumberCards);
+        $('#flcdsCubierta-' + instance).hide();
+        $('#flcdsGameOver-' + instance).hide();
+        $('#flcdsMessage-' + instance).hide();
+        clearInterval(mOptions.counterClock);
+        $eXeFlipCards.stopSound(instance);
+        $('#flcdsStartLevels-' + instance).hide();
+        $('#flcdsCubierta-' + instance).hide();
+        $eXeFlipCards.startGameMemory(instance);
+
+    },
+    updateTimeMemory: function (tiempo, instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        if (mOptions.time == 0) return;
+        var mTime = $eXeFlipCards.getTimeToStringMemory(tiempo);
+        $('#flcdsPTime-' + instance).text(mTime);
+    },
+    getTimeToStringMemory: function (iTime) {
+        var mMinutes = parseInt(iTime / 60) % 60;
+        var mSeconds = iTime % 60;
+        return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
+    },
+
+    refreshCardsMemory: function (instance) {
+        var mOptions = $eXeFlipCards.options[instance],
+            $cards = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardContainer');
+        mOptions.refreshCard = true;
+        $eXeFlipCards.setSize(instance);
+        $cards.each(function () {
+            $eXeFlipCards.showCard($(this), instance)
+        });
+        mOptions.refreshCard = false;
+    },
+    activeHoverMemory: function ($card, instance) {
+        var mOptions = $eXeFlipCards.options[instance],
+            state = $card.data('state');
+        $card.off('mouseenter mouseleave');
+        $card.removeClass("FLCDSP-HoverMemory");
+        if (state == 0) {
+            $card.hover(
+                function () {
+                    state = $card.data('state');
+                    $card.css('cursor', 'default');
+                    if (mOptions.gameActived && state == 0) {
+                        $card.addClass("FLCDSP-HoverMemory");
+                        $card.css('cursor', 'pointer');
+
+                    }
+                },
+                function () {
+                    $card.removeClass("FLCDSP-HoverMemory");
+                }
+            );
+        }
+
+    },
+
+    initCardsMemory: function (instance) {
+        var $cards = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardContainerMemory');
+        $cards.each(function () {
+            $(this).data('state', '0');
+            $eXeFlipCards.activeHoverMemory($(this), instance);
+            $eXeFlipCards.showCardMemory($(this), instance);
+        });
+        $eXeFlipCards.updateLatex('flcdsMultimedia-' + instance)
+    },
+
+    showCardMemory: function (card, instance) {
+        var mOptions = $eXeFlipCards.options[instance],
+            $card = card,
+            $noImage = $card.find('.FLCDSP-CoverMemory').eq(0),
+            $text = $card.find('.FLCDSP-ETextMemory').eq(0),
+            $image = $card.find('.FLCDSP-ImageMemory').eq(0),
+            $cursor = $card.find('.FLCDSP-CursorMemory').eq(0),
+            $audio = $card.find('.FLCDSP-LinkAudioMemory').eq(0),
+            type = parseInt($card.data('type')),
+            state = $noImage.data('state'),
+            x = parseFloat($image.data('x')),
+            y = parseFloat($image.data('y')),
+            url = $image.data('url'),
+            alt = $image.attr('alt') || "No disponibLe",
+            audio = $audio.data('audio') || '',
+            text = $text.html() || "",
+            color = $text.data('color'),
+            backcolor = $text.data('backcolor');
+
+        $text.hide();
+        $image.hide();
+        $cursor.hide();
+        $audio.hide();
+        $noImage.show();
+        if (type == 1) {
+            $text.show();
+            $text.css({
+                'color': color,
+                'background-color': backcolor,
+            });
+        } else if (type == 0 && url.length > 3) {
+            $image.attr('alt', alt);
+            $image.show();
+            $image.prop('src', url)
+                .on('load', function () {
+                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                        $cursor.hide();
+                    } else {
+                        var mData = $eXeFlipCards.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
+                        $eXeFlipCards.drawImage(this, mData);
+                        $image.show();
+                        $cursor.hide();
+                        if (x > 0 || y > 0) {
+                            var left = Math.round(mData.x + (x * mData.w));
+                            var top = Math.round(mData.y + (y * mData.h));
+                            $cursor.css({
+                                'left': left + 'px',
+                                'top': top + 'px'
+                            });
+                            $cursor.show();
+                        }
+                        return true;
+                    }
+                }).on('error', function () {
+                    $cursor.hide();
+                });
+        } else if (type == 2 && url.length > 3) {
+            $image.attr('alt', alt);
+            $image.show();
+            $image.prop('src', url)
+                .on('load', function () {
+                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                        $cursor.hide();
+                    } else {
+                        var mData = $eXeFlipCards.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
+                        $eXeFlipCards.drawImage(this, mData);
+                        $image.show();
+                        $cursor.hide();
+                        if (x > 0 || y > 0) {
+                            var left = Math.round(mData.x + (x * mData.w));
+                            var top = Math.round(mData.y + (y * mData.h));
+                            $cursor.css({
+                                'left': left + 'px',
+                                'top': top + 'px'
+                            });
+                            $cursor.show();
+                        }
+                        return true;
+                    }
+                }).on('error', function () {
+                    $cursor.hide();
+                });
+            $text.show();
+            $text.css({
+                'color': '#000',
+                'background-color': 'rgba(255, 255, 255, 0.7)',
+            });
+        }
+
+        $audio.removeClass('FLCDSP-LinkAudioBig')
+        if (audio.length > 0) {
+            if (url.trim().length == 0 && text.trim().length == 0) {
+                $audio.addClass('FLCDSP-LinkAudioBig')
+            }
+            $audio.show();
+            if (mOptions.gameStarted && !mOptions.refreshCard) {
+                $eXeFlipCards.playSound(audio, instance);
+            }
+        }
+        if (state > 0) {
+            $noImage.hide();
+        }
+
+
+    },
+    startGameMemory: function (instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        if (mOptions.gameStarted) {
+            return;
+        };
+        mOptions.gameStarted = true;
+        $eXeFlipCards.addCardsMemory(instance, mOptions.cardsGame);
+        mOptions.solveds = [];
+        mOptions.selecteds = [];
+        mOptions.hits = 0;
+        mOptions.errors = 0;
+        mOptions.score = 0;
+        mOptions.gameActived = true;
+        mOptions.counter = mOptions.time * 60;
+        mOptions.gameOver = false;
+        mOptions.gameStarted = false;
+        mOptions.obtainedClue = false;
+        mOptions.nattempts = mOptions.attempts > 0 ? mOptions.attempts : 0;
+        $('#flcdsPShowClue-' + instance).text('');
+        $('#flcdsShowClue-' + instance).hide();
+        $('#flcdsPHits-' + instance).text(mOptions.hits);
+        $('#flcdsPErrors-' + instance).text(mOptions.nattempts);
+        $('#flcdsCubierta-' + instance).hide();
+        $('#flcdsGameOver-' + instance).hide();
+        $('#flcdsStartLevels-' + instance).hide();
+        $('#flcdsMessage-' + instance).show();
+        $eXeFlipCards.initCardsMemory(instance);
+        if (mOptions.time == 0) {
+            $('#flcdsPTime-' + instance).hide();
+            $('#flcdsImgTime-' + instance).hide();
+        }
+        if (mOptions.time > 0) {
+            mOptions.counterClock = setInterval(function () {
+                if (mOptions.gameStarted) {
+                    mOptions.counter--;
+                    if (mOptions.counter <= 0) {
+                        $eXeFlipCards.gameOverMemory(1, instance);
+                        return;
+                    }
+                    $eXeFlipCards.updateTimeMemory(mOptions.counter, instance);
+                }
+            }, 1000);
+            $eXeFlipCards.updateTimeMemory(mOptions.time * 60, instance);
+        }
+        if (mOptions.showCards) {
+            $('#flcdsMultimedia-' + instance).find('.FLCDSP-Card1Memory').addClass('flipped');
+        }
+        $eXeFlipCards.showMessageMemory(3, mOptions.msgs.mgsClickCard, instance)
+        mOptions.gameStarted = true;
+    },
+
     showActivity: function (instance) {
         var mOptions = $eXeFlipCards.options[instance];
         mOptions.active = 0;
         mOptions.cardsGame = mOptions.randomCards ? $eXeFlipCards.shuffleAds(mOptions.cardsGame) : mOptions.cardsGame;
-        if (mOptions.gameMode) mOptions.cardsGame = $eXeFlipCards.activeGameMode(instance);
+        if (mOptions.type == 2) {
+            mOptions.cardsGame = $eXeFlipCards.activeGameMode(instance)
+        } else if (mOptions.type == 3) {
+            mOptions.cardsGame = $eXeFlipCards.activeMemory(instance)
+        }
         $eXeFlipCards.stopSound(instance);
-        $eXeFlipCards.addCards(mOptions.cardsGame, instance);
+        if (mOptions.type < 3) {
+            $eXeFlipCards.addCards(mOptions.cardsGame, instance);
+        } else {
+            $eXeFlipCards.addCardsMemory(instance, mOptions.cardsGame);
+        }
         $eXeFlipCards.initCards(instance);
         var $cards = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardDraw');
         $cards.off();
@@ -335,30 +844,47 @@ var $eXeFlipCards = {
             e.preventDefault();
             $(this).find('.FLCDSP-LinkAudio-Front').hide();
             $(this).find('.FLCDSP-LinkAudio-Back').hide();
+            $(this).find('.FLCDSP-Cursor-Front').hide();
+            $(this).find('.FLCDSP-Cursor-Back').hide();
             if (!$(this).find('.flip-card-inner').eq(0).hasClass('flipped')) {
-                if (mOptions.gameMode) {
+                if (mOptions.tye == 2) {
                     $('#flcdsLinkV-' + instance).css('visibility', 'visible');
                     $('#flcdsLinkF-' + instance).css('visibility', 'visible');
                 }
                 $(this).find('.flip-card-inner').eq(0).addClass('flipped');
                 var number = $(this).data('number'),
-                    audioBk = $(this).find('.FLCDSP-LinkAudio-Back').data('audio');
+                    audioBk = $(this).find('.FLCDSP-LinkAudio-Back').eq(0).data('audio'),
+                    urlBack = $(this).find('.FLCDSP-Image-Back').eq(0).data('url'),
+                    xBack = $(this).find('.FLCDSP-Image-Back').eq(0).data('x'),
+                    yBack = $(this).find('.FLCDSP-Image-Back').eq(0).data('y');
                 mOptions.visiteds.push(number);
                 if (audioBk.length > 3) {
                     $(this).find('.FLCDSP-LinkAudio-Back').show();
                 }
 
-                if (mOptions.isScorm === 1 && !mOptions.gameMode) {
+                if (urlBack.length > 3 && (xBack > 0 || yBack > 0)) {
+                    $(this).find('.FLCDSP-Cursor-Back').show();
+                }
+
+                if (mOptions.isScorm === 1 && mOptions.type < 2) {
                     if (mOptions.repeatActivity || $eXeFlipCards.initialScore === '') {
                         $eXeFlipCards.showScoreFooter(instance);
                         $eXeFlipCards.sendScore(instance, true);
                     }
 
                 }
-                if (!mOptions.gameMode) $eXeFlipCards.showClue(instance);
+                if (!mOptions.type == 2) $eXeFlipCards.showClue(instance);
             } else {
                 $(this).find('.flip-card-inner').eq(0).removeClass('flipped');
-                var audio = $(this).find('.FLCDSP-LinkAudio-Front').data('audio');
+                var audio = $(this).find('.FLCDSP-LinkAudio-Front').eq(0).data('audio'),
+                    urlF = $(this).find('.FLCDSP-Image-Front').eq(0).data('url'),
+                    xF = $(this).find('.FLCDSP-Image-Front').eq(0).data('x'),
+                    yF = $(this).find('.FLCDSP-Image-Front').eq(0).data('y');
+
+                if (urlF.length > 3 && (xF > 0 || yF > 0)) {
+                    $(this).find('.FLCDSP-Cursor-Front').show();
+                }
+
                 if (audio.length > 3) {
                     $(this).find('.FLCDSP-LinkAudio-Front').show();
                 }
@@ -371,18 +897,16 @@ var $eXeFlipCards = {
                 $eXeFlipCards.checkAudio($(this), 50, instance);
             }
         });
-        if (mOptions.gameMode || (mOptions.navigation && mOptions.cardsGame.length > 1)) {
+        if (mOptions.type == 2 || (mOptions.type == 1 && mOptions.cardsGame.length > 1)) {
             $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardDraw').hide();
             mOptions.activeCard = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardDraw').eq(0);
             mOptions.activeCard.show();
             $('#flcdsCardNumber-' + instance).text(mOptions.active + 1);
             $('#flcdsNavigation-' + instance).show();
             $eXeFlipCards.showNavigationButtons(instance);
-            if (mOptions.gameMode) {
+            if (mOptions.type == 2) {
                 $('#flcdsNavigation-' + instance).hide();
             }
-
-
         }
         $('#flcdsMultimedia-' + instance).on('click touchstart', '.FLCDSP-LinkAudio-Back', function (e) {
             e.preventDefault();
@@ -517,7 +1041,7 @@ var $eXeFlipCards = {
 
     },
     stopSound: function (instance) {
-     
+
         var mOptions = $eXeFlipCards.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
             mOptions.playerAudio.pause();
@@ -557,14 +1081,24 @@ var $eXeFlipCards = {
                  </div>\
                 <div class="FLCDSP-Info" id="flcdsInfo-' + instance + '"></div>\
                 <div class="FLCDSP-TimeNumber">\
+                    <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
+					<div class="exeQuextIcons  exeQuextIcons-Time" id="flcdsImgTime-' + instance + '" title="' + msgs.msgTime + '"></div>\
+                    <p  id="flcdsPTime-' + instance + '" class="FLCDSP-PTime">00:00</p>\
                     <a href="#" class="FLCDSP-LinkMinimize" id="flcdsLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                         <div class="exeQuextIcons exeQuextIcons-Minimize  FLCDSP-Activo"></div>\
+                    </a>\
+                    <a href="#" class="FLCDSP-LinkFullScreen" id="flcdsLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+						<strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
+						<div class="exeQuextIcons exeQuextIcons-FullScreen  FLCDSP-Activo" id="flcdsFullScreen-' + instance + '"></div>\
                     </a>\
 				</div>\
             </div>\
             <div class="FLCDSP-Information">\
                 <p class="FLCDSP-Message" id="flcdsMessage-' + instance + '"></p>\
+            </div>\
+            <div class="FLCDSP-StartNivelMemory" id="flcdsStartLevels-' + instance + '">\
+                <a href="#" id="flcdsStartGame-' + instance + '">' + msgs.msgPlayStart + '</a>\
             </div>\
             <div class="FLCDSP-Multimedia" id="flcdsMultimedia-' + instance + '">\
                 <div class="FLCDSP-GameButtons" id="flcdsGameButtons-' + instance + '">\
@@ -584,10 +1118,12 @@ var $eXeFlipCards = {
             </div>\
             <div class="FLCDSP-Navigation" id="flcdsNavigation-' + instance + '">\
                 <a href="#" id="flcdsPreviousCard-' + instance + '" title="' + msgs.msgPreviousCard + '">&laquo;&nbsp;' + msgs.msgPreviousCard + '</a>\
-                <span class="sr-av">' + msgs.numberCards + ':</span><span class="FLCDSP-CardsNumber" id="flcdsCardNumber-' + instance + '">' + msgs.numberCards + ':</span>\
+                <span class="sr-av">' + msgs.msgNumQuestions + ':</span><span class="FLCDSP-CardsNumber" id="flcdsCardNumber-' + instance + '">' + msgs.msgNumQuestions + ':</span>\
                 <a href="#" id="flcdsNextCard-' + instance + '" title="' + msgs.msgNextCard + '">' + msgs.msgNextCard + '&nbsp;&raquo</a>\
             </div>\
-            <div class="FLCDSP-Cover" id="flcdsCubierta-' + instance + '">\
+            <div class="FLCDSP-AuthorGame" id="flcdsAuthorGame-' + instance + '"></div>\
+        </div>\
+        <div class="FLCDSP-Cover" id="flcdsCubierta-' + instance + '">\
                 <div class="FLCDSP-CodeAccessDiv" id="flcdsCodeAccessDiv-' + instance + '">\
                     <div class="FLCDSP-MessageCodeAccessE" id="flcdsMesajeAccesCodeE-' + instance + '"></div>\
                     <div class="FLCDSP-DataCodeAccessE">\
@@ -620,8 +1156,6 @@ var $eXeFlipCards = {
                     <a href="#" class="FLCDSP-ClueBotton" id="flcdsClueButton-' + instance + '" title="' + msgs.msgClose + '">' + msgs.msgClose + ' </a>\
                 </div>\
             </div>\
-            <div class="FLCDSP-AuthorGame" id="flcdsAuthorGame-' + instance + '"></div>\
-        </div>\
     </div>\
     ' + this.addButtonScore(instance);
         return html;
@@ -668,15 +1202,16 @@ var $eXeFlipCards = {
             }
         }
         $('#flcdsReboot-' + instance).show();
-        console.log(mOptions.isScorm, !mOptions.repeatActivity)
         if (mOptions.isScorm > 0 && !mOptions.repeatActivity) {
             $('#flcdsReboot-' + instance).hide();
         }
+
     },
     showScoreFooter: function (instance) {
         var mOptions = $eXeFlipCards.options[instance],
-            score = mOptions.gameMode ? mOptions.hits * 10 / mOptions.cardsGame.length : $eXeFlipCards.getScoreVisited(instance);
+            score = mOptions.type > 1 ? mOptions.hits * 10 / mOptions.realNumberCards : $eXeFlipCards.getScoreVisited(instance);
         score = score.toFixed(2);
+
         $('#flcdsRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
         return score;
     },
@@ -699,14 +1234,21 @@ var $eXeFlipCards = {
         $flcdsOverHits.show();
         $flcdsOverErrors.show();
         $flcdsOverScore.show();
+        if (mOptions.type == 3) {
+            $flcdsOverErrors.hide();
+        }
         var mclue = '';
-        message = msgs.msgCool + ' ' + msgs.mgsAllQuestions;
         messageColor = 0;
         $flcdsHistGame.show();
-
-        var score = ((mOptions.hits * 10) / mOptions.cardsGame.length).toFixed(2);
+        var numcards = mOptions.type == 3 ? mOptions.cardsGame.length / 2 : mOptions.cardsGame.length,
+            score = ((mOptions.hits * 10) / numcards).toFixed(2);
+        if (type == 1) {
+            message = msgs.msgEndTime.replace('%s', score)
+        } else if (type == 0) {
+            message = msgs.msgEndGameM.replace('%s', score)
+        }
         $eXeFlipCards.showMessage(messageColor, message, instance, true);
-        $flcdsOverNumCards.html(msgs.msgNumQuestions + ': ' + mOptions.cardsGame.length);
+        $flcdsOverNumCards.html(msgs.msgNumQuestions + ': ' + numcards);
         $flcdsOverHits.html(msgs.msgHits + ': ' + mOptions.hits);
         $flcdsOverErrors.html(msgs.msgErrors + ': ' + mOptions.errors);
         $flcdsOverScore.html(msgs.msgScore + ': ' + score);
@@ -738,7 +1280,7 @@ var $eXeFlipCards = {
         mOptions.active = 0;
         mOptions.obtainedClue = false;
         $('#flcdsPShowClue-' + instance).text('');
-        $('#flcdsPNumber-' + instance).text(mOptions.cardsGame.length);
+        $('#flcdsPNumber-' + instance).text(mOptions.realNumberCards);
         $('#flcdsShowClue-' + instance).hide();
         $('#flcdsPHits-' + instance).text(mOptions.hits);
         $('#flcdsPErrors-' + instance).text(mOptions.errors);
@@ -755,9 +1297,8 @@ var $eXeFlipCards = {
     },
     sendScore: function (instance, auto) {
         var mOptions = $eXeFlipCards.options[instance],
-            message = '',
-            score = (mOptions.gameMode ? mOptions.hits * 10 / mOptions.cardsGame.length : $eXeFlipCards.getScoreVisited(instance)).toFixed(2);
-
+            score = mOptions.type > 1 ? (mOptions.hits * 10 / mOptions.realNumberCards) : $eXeFlipCards.getScoreVisited(instance);
+        score = score.toFixed(2);
         if (typeof ($eXeFlipCards.mScorm) != 'undefined') {
             if (!auto) {
                 if (!mOptions.repeatActivity && $eXeFlipCards.previousScore !== '') {
@@ -798,11 +1339,23 @@ var $eXeFlipCards = {
 
     },
 
+    addCardsMemory: function (instance, cardsGame) {
+        var cards = "";
+        cardsGame = $eXeFlipCards.shuffleAds(cardsGame);
+        $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardContainerMemory').remove();
+        for (var i = 0; i < cardsGame.length; i++) {
+            var card = $eXeFlipCards.createCardMemory(cardsGame[i].number, cardsGame[i])
+            cards += card;
+        }
+        $('#flcdsMultimedia-' + instance).append(cards);
+        $eXeFlipCards.setSize(instance);
+    },
+
 
 
     showClue: function (instance) {
         var mOptions = $eXeFlipCards.options[instance],
-            percentageHits = (mOptions.gameMode ? mOptions.hits * 10 / mOptions.cardsGame.length : $eXeFlipCards.getScoreVisited(instance)) * 10;
+            percentageHits = (mOptions.type == 2 ? mOptions.hits * 10 / mOptions.cardsGame.length : $eXeFlipCards.getScoreVisited(instance)) * 10;
         if (mOptions.itinerary.showClue) {
             if (percentageHits >= mOptions.itinerary.percentageClue) {
                 if (!mOptions.obtainedClue) {
@@ -816,6 +1369,31 @@ var $eXeFlipCards = {
                 }
             }
         }
+    },
+    createCardMemory: function (j, card) {
+        var malt = card.alt || '',
+            saudio = "";
+        if (card.url.trim().length > 0 && card.eText.trim() > 0) {
+            saudio = '<a href="#" data-audio="' + card.audio + '" class="FLCDSP-LinkAudioMemroy"  title="Audio"><img src="' + $eXeFlipCards.idevicePath + 'exequextplayaudio.svg" class="FLCDSP-Audio"  alt="Audio"></a>';
+        } else {
+            saudio = '<a href="#" data-audio="' + card.audio + '" class="FLCDSP-LinkAudioMemory"  title="Audio"><img src="' + $eXeFlipCards.idevicePath + 'exequextplayaudio.svg" class="FLCDSP-Audio"  alt="Audio"></a>'
+
+        }
+        var card = '<div class="FLCDSP-CardContainerMemory" data-number="' + card.number + '" data-type="' + card.type + '" data-state="-1">\
+                    <div class="FLCDSP-Card1Memory" data-type="' + card.type + '" data-state="-1" data-valid="0">\
+                        <div class="FLCDSP-CardFrontMemory">\
+                        </div>\
+                        <div class="FLCDSP-CardBackMemory">\
+                            <div class="FLCDSP-ImageContainMemory">\
+                                <img src="" class="FLCDSP-ImageMemory" data-url="' + card.url + '" data-x="' + card.x + '" data-y="' + card.y + '" alt="' + malt + '" />\
+                                <img class="FLCDSP-CursorMemory" src="' + $eXeFlipCards.idevicePath + 'exequextcursor.gif" alt="" />\
+                            </div>\
+                            <div class="FLCDSP-ETextMemory" data-color="' + card.color + '" data-backcolor="' + card.backcolor + '">' + card.eText + '</div>\
+                            ' + saudio + '\
+                        </div>\
+                    </div>\
+                </div>';
+        return card
     },
 
 
@@ -907,10 +1485,15 @@ var $eXeFlipCards = {
         });
         $('#flcdsReboot-' + instance).on('click', function (e) {
             e.preventDefault();
-            $eXeFlipCards.rebootGame(instance);
+            if (mOptions.type == 2) {
+                $eXeFlipCards.rebootGame(instance);
+            } else if (mOptions.type == 3) {
+                $eXeFlipCards.rebootGameMemory(instance);
+            }
+
         })
         $('#flcdsGameButtons-' + instance).hide();
-        if (mOptions.gameMode) {
+        if (mOptions.type == 2) {
             $eXeFlipCards.showMessage(0, mOptions.msgs.mgsClickCard, instance);
             $('#flcdsGameButtons-' + instance).show();
 
@@ -939,7 +1522,7 @@ var $eXeFlipCards = {
             }
             return true;
         });
-        $('#flcdsPNumber-' + instance).text(mOptions.numberCards);
+        $('#flcdsPNumber-' + instance).text(mOptions.realNumberCards);
         $(window).on('unload', function () {
             if (typeof ($eXeFlipCards.mScorm) != "undefined") {
                 $eXeFlipCards.endScorm();
@@ -985,10 +1568,69 @@ var $eXeFlipCards = {
             $eXeFlipCards.updateScorm($eXeFlipCards.previousScore, mOptions.repeatActivity, instance);
         }
 
+        $('#flcdsStartGame-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeFlipCards.startGameMemory(instance);
+        });
+        $('#flcdsMultimedia-' + instance).on('click', '.FLCDSP-CardContainerMemory', function (e) {
+            $eXeFlipCards.cardClick(this, instance);
+        });
+
+        $('#flcdsStartLevels-' + instance).hide();
+        if (mOptions.type == 3 && mOptions.time > 0) {
+            $('#flcdsStartLevels-' + instance).show();
+        }
+        if (mOptions.type == 3 && mOptions.time == 0) {
+            $eXeFlipCards.startGameMemory(instance)
+        }
 
     },
+    cardClick: function (cc, instance) {
+        $eXeFlipCards.stopSound(instance);
+        var mOptions = $eXeFlipCards.options[instance],
+            $cc = $(cc),
+            maxsel = 1;
+        if (!mOptions.gameActived || !mOptions.gameStarted || mOptions.selecteds.length > maxsel) return;
+        var state = parseInt($cc.data('state'));
 
-    getRetroFeedMessages: function (iHit, instance) {
+        if (state != 0) return;
+        var $card = $cc.find('.FLCDSP-Card1Memory').eq(0);
+        if (!$card.hasClass('flipped') && !mOptions.showCards) {
+            $card.addClass('flipped');
+        }
+
+        mOptions.gameActived = false;
+        $cc.data('state', '1');
+        var num = parseInt($cc.data('number'));
+        mOptions.selecteds.push(num);
+        if (mOptions.selecteds.length <= maxsel) {
+            var message = mOptions.msgs.mgsClickCard;
+            $eXeFlipCards.showMessageMemory(3, message, instance, false)
+        }
+        var sound = $cc.find('.FLCDSP-LinkAudioMemory').data('audio') || '';
+        if (sound.length > 3) {
+            $eXeFlipCards.playSound(sound, instance)
+        }
+        $card.addClass("FLCDSP-CardActiveMemory");
+        mOptions.gameActived = true;
+
+        if (mOptions.selecteds.length == 2) {
+            if (mOptions.selecteds[0] == mOptions.selecteds[1]) {
+                $eXeFlipCards.correctPairMemory(mOptions.selecteds[0], instance);
+            } else {
+                $eXeFlipCards.uncorrectPairMemory(instance);
+            }
+        } else {
+            var $marcados = $('#flcdsMultimedia-' + instance).find('.FLCDSP-Card1Memory');
+            $marcados.each(function () {
+                var valid = parseInt($(this).data('valid'));
+                if (valid == 1 && !mOptions.showCards) {
+                    $(this).find('.FLCDSP-CardBackMemory').css("opacity", .3);
+                }
+            });
+        }
+    },
+    getRetroFeedMessagesMemory: function (iHit, instance) {
         var msgs = $eXeFlipCards.options[instance].msgs;
         var sMessages = iHit ? msgs.msgSuccesses : msgs.msgFailures;
         sMessages = sMessages.split('|');
@@ -1036,7 +1678,7 @@ var $eXeFlipCards = {
                 message = mOptions.msgs.mgsClickCard;
                 $('#flcdsLinkV-' + instance).css('opacity', 1);
                 $('#flcdsLinkF-' + instance).css('opacity', 1);
-                if (mOptions.gameMode) $eXeFlipCards.showClue(instance);
+                if (mOptions.type == 2) $eXeFlipCards.showClue(instance);
                 $eXeFlipCards.showMessage(0, message, instance);
                 $eXeFlipCards.nextCard(instance);
 
@@ -1054,7 +1696,7 @@ var $eXeFlipCards = {
             audioBK = $(card).find('.FLCDSP-LinkAudio-Back').data('audio');
 
         //$(card).find('.FLCDSP-LinkAudio-Back').hide();
-        
+
         if ($(card).find('.flip-card-inner').eq(0).hasClass('flipped')) {
             if (typeof audioBK != "undefined" && audioBK.length > 3) {
 
@@ -1076,7 +1718,7 @@ var $eXeFlipCards = {
     getScoreVisited: function (instance) {
         var mOptions = $eXeFlipCards.options[instance];
         var num = $eXeFlipCards.getNumberVisited(mOptions.visiteds),
-            score = (num * 10) / mOptions.cardsGame.length;
+            score = (num * 10) / mOptions.realNumberCards;
         return score;
     },
     getNumberVisited: function (visiteds) {
@@ -1130,7 +1772,7 @@ var $eXeFlipCards = {
                         $eXeFlipCards.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
+                        if (x > 0 || y > 0) {
                             var left = Math.round(mData.x + (x * mData.w));
                             var top = Math.round(mData.y + (y * mData.h));
                             $cursor.css({
@@ -1169,7 +1811,7 @@ var $eXeFlipCards = {
                         $eXeFlipCards.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
+                        if (x > 0 || y > 0) {
                             var left = Math.round(mData.x + (x * mData.w));
                             var top = Math.round(mData.y + (y * mData.h));
                             $cursor.css({
@@ -1207,6 +1849,8 @@ var $eXeFlipCards = {
             $image = $card.find('.FLCDSP-Image-Back').eq(0),
             $audio = $card.find('.FLCDSP-LinkAudio-Back').eq(0),
             $cursor = $card.find('.FLCDSP-Cursor-Back').eq(0),
+            xb = parseFloat($image.data('x')) || 0,
+            yb = parseFloat($image.data('y')) || 0,
             url = $image.data('url') || '',
             alt = $image.attr('alt') || "No disponible",
             audio = $audio.data('audio') || '',
@@ -1227,6 +1871,16 @@ var $eXeFlipCards = {
                         var mData = $eXeFlipCards.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                         $eXeFlipCards.drawImage(this, mData);
                         $image.show();
+                        $cursor.hide();
+                        if (xb > 0 || yb > 0) {
+                            var left = Math.round(mData.x + (xb * mData.w));
+                            var top = Math.round(mData.y + (yb * mData.h));
+                            $cursor.css({
+                                'left': left + 'px',
+                                'top': top + 'px'
+                            });
+                            $cursor.show();
+                        }
                         return true;
                     }
                 }).on('error', function () {
@@ -1251,11 +1905,21 @@ var $eXeFlipCards = {
             $image.prop('src', url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                        //$cursor.hide();
+                        $cursor.hide();
                     } else {
                         var mData = $eXeFlipCards.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                         $eXeFlipCards.drawImage(this, mData);
                         $image.show();
+                        $cursor.hide();
+                        if (xb > 0 || yb > 0) {
+                            var left = Math.round(mData.x + (xb * mData.w));
+                            var top = Math.round(mData.y + (yb * mData.h));
+                            $cursor.css({
+                                'left': left + 'px',
+                                'top': top + 'px'
+                            });
+                            $cursor.show();
+                        }
                         return true;
                     }
                 }).on('error', function () {
@@ -1291,7 +1955,7 @@ var $eXeFlipCards = {
             $eXeFlipCards.showCard($(this), instance);
 
         });
-        if (mOptions.navigation) {
+        if (mOptions.type == 1) {
             var audio = mOptions.activeCard.find('.FLCDSP-LinkAudio-Front').data('audio');
             if (typeof audio != "undefined" && audio.length > 3) {
                 $eXeFlipCards.playSound(audio, instance);
@@ -1302,7 +1966,7 @@ var $eXeFlipCards = {
 
     enterCodeAccess: function (instance) {
         var mOptions = $eXeFlipCards.options[instance];
-        if (mOptions.itinerary.codeAccess == $('#flcdsCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#flcdsCodeAccessE-' + instance).val().toLowerCase()) {
             $('#flcdsCodeAccessDiv-' + instance).hide();
             $('#flcdsCubierta-' + instance).hide();
 
@@ -1319,7 +1983,7 @@ var $eXeFlipCards = {
         var $pw = $('#flcdsGameButtons-' + instance).parents('.FLCDSP-MainContainer').eq(0).width();
         var swidth = $pw < 450 ? $pw * 0.8 : 300;
         swidth = swidth > 300 ? 300 : swidth;
-        if (mOptions.navigation || mOptions.gameMode) {
+        if (mOptions.type == 1 || mOptions.type == 2) {
 
 
             if ($pw > 450) {
@@ -1385,10 +2049,10 @@ var $eXeFlipCards = {
         $flcds.each(function () {
             $eXeFlipCards.showCard($(this), instance);
         });
-        if($eXeFlipCards.hasLATEX){
+        if ($eXeFlipCards.hasLATEX) {
             $eXeFlipCards.updateLatex('flcdsMultimedia-' + instance);
         }
-        
+
 
     },
 
@@ -1438,7 +2102,7 @@ var $eXeFlipCards = {
             sscore = 0;
         if (correctAnswer) {
             mOptions.hits++;
-            obtainedPoints = 10 / mOptions.cardsGame.length;
+            obtainedPoints = 10 / mOptions.realNumberCards;
 
         } else {
             mOptions.errors++;
@@ -1448,8 +2112,7 @@ var $eXeFlipCards = {
         $('#flcdsPScore-' + instance).text(sscore);
         $('#flcdsPHits-' + instance).text(mOptions.hits);
         $('#flcdsPErrors-' + instance).text(mOptions.errors);
-        $('#flcdsPNumber-' + instance).text(mOptions.cardsGame.length - mOptions.hits - mOptions.errors);
-
+        $('#flcdsPNumber-' + instance).text(mOptions.realNumberCards - mOptions.hits - mOptions.errors);
     },
 
 

@@ -897,7 +897,7 @@ var $eXeQuExt = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
-        if (mOptions.itinerary.codeAccess === $('#quextCodeAccessE-' + instance).val()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#quextCodeAccessE-' + instance).val().toLowerCase()) {
             $('#quextCodeAccessDiv-' + instance).hide();
             $eXeQuExt.getYTAPI(instance);
         } else {

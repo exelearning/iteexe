@@ -131,7 +131,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Create word search games with additional text, images or sound.") + ' <a href="https://youtu.be/T9n2rGA-80g" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("Create word search games with additional text, images or sound.") + ' <a href="https://youtu.be/T9n2rGA-80g" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Find the hidden words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\

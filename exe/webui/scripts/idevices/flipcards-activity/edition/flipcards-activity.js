@@ -22,7 +22,7 @@ var $exeDevice = {
     clipBoard: '',
     iDevicePath: "/scripts/idevices/flipcards-activity/edition/",
     playerAudio: "",
-    version: 1.2,
+    version: 1.3,
     ci18n: {
         "msgSubmit": _("Submit"),
         "msgClue": _("Cool! The clue is:"),
@@ -68,7 +68,11 @@ var $exeDevice = {
         "msgTrue2": _("You're wrong. That's not the card."),
         "msgFalse1": _("Right. That's not the card."),
         "msgFalse2": _("You're wrong. That's the card."),
-        "mgsClickCard": _("Click on the card")
+        "mgsClickCard": _("Click on the card"),
+        "msgEndTime": _("Game time is over. Your score is %s."),
+        "msgEnd": _("Finish"),
+        "msgEndGameM": _("You finished the game. Your score is %s.")
+
 
     },
     init: function () {
@@ -99,23 +103,39 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create card memory games with images, sounds or rich text.") + ' <a href="https://youtu.be/P6BRFXLHiJk" hreflang="es" rel="lightbox">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create card memory games with images, sounds or rich text.") + ' <a href="https://youtu.be/P6BRFXLHiJk" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Click on the cards to see what they hide.')) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _('Options') + '</a></legend>\
                     <div>\
                         <p>\
+                            <span>' + _("Type") + ':</span>\
+                            <span class="FLCRDS-EInputType">\
+                                <input class="FLCRDS-Type" checked id="flipcardsETypeShow" type="radio" name="flctype" value="0"/>\
+                                <label for="flipcardsETypeShow">' + _("Show") + '</label>\
+                                <input class="FLCRDS-Type"  id="flipcardsETypeNavigation" type="radio" name="flctype" value="1"/>\
+                                <label for="flipcardsETypeNavigation">' + _("Navigation") + '</label>\
+                                <input class="FLCRDS-Type"  id="flipcardsETypeIdentify" type="radio" name="flctype" value="2"/>\
+                                <label for="flipcardsETypeIdentify">' + _("Identify") + '</label>\
+                                <input class="FLCRDS-Type"  id="flipcardsETypeMemory" type="radio" name="flctype" value="3"/>\
+                                <label for="flipcardsETypeMemory">' + _("Memory") + '</label>\
+                            </span>\
+                        </p>\
+                        <p style="display:none">\
+							<label for="flipcardsEShowSolution"><input type="checkbox" checked id="flipcardsEShowSolution"> ' + _("Show solutions") + '. </label> \
+							<label for="flipcardsETimeShowSolution">' + _("Show solution time (seconds)") + ':\
+							<input type="number" name="flipcardsETimeShowSolution" id="flipcardsETimeShowSolution" value="3" min="1" max="9" /> </label>\
+                         </p>\
+                         <p id="flipcardsETimeDiv" style="display:none;">\
+                            <label for="flipcardsETime">' + _("Time (minutes)") + ':\
+                            <input type="number" name="flipcardsETime" id="flipcardsETime" value="3" min="0" max="59" /> </label>\
+                        </p>\
+                        <p>\
                             <label for="flipcardsEShowMinimize"><input type="checkbox" id="flipcardsEShowMinimize">' + _('Show minimized.') + '</label>\
                         </p>\
                         <p>\
                             <label for="flipcardsERandomCards"><input type="checkbox" id="flipcardsERandomCards" checked>' + _('Random') + '</label>\
-                        </p>\
-                        <p>\
-                            <label for="flipcardsEGameMode"><input type="checkbox" id="flipcardsEGameMode" >' + _('Game mode') + '</label>\
-                        </p>\
-                        <p id="flipcardsENavigationP">\
-                            <label for="flipcardsENavigation"><input type="checkbox" id="flipcardsENavigation" checked>' + _('Navigation') + '</label>\
                         </p>\
                         <p>\
                             <label for="flipcardsEPercentajeCards">% ' + _('Cards') + ':</label><input type="number" name="flipcardsEPercentajeCards" id="flipcardsEPercentajeCards" value="100" min="1" max="100" />\
@@ -466,10 +486,8 @@ var $exeDevice = {
             'background-color': $exeDevice.hexToRgba(p.backcolorBk, 0.7)
         });
         $('#flipcardsENumberCard').val($exeDevice.active + 1);
-
+        $('#flipcardsENumCards').text($exeDevice.cardsGame.length);
     },
-
-
 
     decodeURIComponentSafe: function (s) {
         if (!s) {
@@ -866,14 +884,16 @@ var $exeDevice = {
             instructions = tinyMCE.get('eXeGameInstructions').getContent(),
             textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent(),
             randomCards = $('#flipcardsERandomCards').is(':checked'),
-            navigation = $('#flipcardsENavigation').is(':checked'),
-            gameMode = $('#flipcardsEGameMode').is(':checked'),
             showMinimize = $('#flipcardsEShowMinimize').is(':checked'),
+            showSolution = $('#flipcardsEShowSolution').is(':checked'),
+            timeShowSolution = parseInt(clear($('#flipcardsETimeShowSolution').val())),
             itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
             percentajeCards = parseInt(clear($('#flipcardsEPercentajeCards').val())),
             author = $('#flipcardsEAuthory').val(),
             cardsGame = $exeDevice.cardsGame,
-            scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
+            scorm = $exeAuthoring.iDevice.gamification.scorm.getValues(),
+            type = parseInt($('input[name=flctype]:checked').val()),
+            time = parseInt($('#flipcardsETime').val());
 
 
         var data = {
@@ -890,9 +910,12 @@ var $exeDevice = {
             'textAfter': escape(textAfter),
             'version': 1,
             'percentajeCards': percentajeCards,
-            'navigation': navigation,
-            'gameMode': gameMode,
-            'version': $exeDevice.version
+            'version': $exeDevice.version,
+            'type': type,
+            'showSolution': showSolution,
+            'timeShowSolution': timeShowSolution,
+            'time':time
+
         }
         return data;
     },
@@ -1028,15 +1051,7 @@ var $exeDevice = {
             e.preventDefault();
             $exeDevice.reverseCard();
         });
-        $('#flipcardsEGameMode').on('change', function () {
-            var marcado = $(this).is(':checked');
-            if (marcado) {
-                $('#flipcardsENavigationP').slideUp();
-            } else {
-                $('#flipcardsENavigationP').slideDown();
-            }
 
-        });
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             $('#eXeGameExportImport').show();
             $('#eXeGameImportGame').on('change', function (e) {
@@ -1096,6 +1111,43 @@ var $exeDevice = {
 
             }
         });
+        $('#flipcardsETime').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 1);
+            this.value = v;
+        });
+        $('#flipcardsETime').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 0 : this.value;
+            this.value = this.value > 59 ? 59 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });
+
+        $('#flipcardsEShowSolution').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#flipcardsETimeShowSolution').prop('disabled', !marcado);
+        });
+
+        $('#flipcardsETimeShowSolution').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 1);
+            this.value = v;
+        });
+        $('#flipcardsETimeShowSolution').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 3 : this.value;
+            this.value = this.value > 9 ? 9 : this.value;
+            this.value = this.value < 1 ? 1 : this.value;
+        });
+
+        $('#gameIdeviceForm').on('click', 'input.FLCRDS-Type', function (e) {
+            var type = parseInt($(this).val());
+            $("#flipcardsETimeDiv").hide();
+            if (type == 3) {
+                $("#flipcardsETimeDiv").show();
+            }
+        });
+
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     reverseFaces: function () {
@@ -1220,14 +1272,18 @@ var $exeDevice = {
         $('#flipcardsEPercentajeCards').val(game.percentajeCards);
         $('#flipcardsEAuthory').val(game.author);
         $('#flipcardsERandomCards').prop('checked', game.randomCards);
-        $('#flipcardsENavigation').prop('checked', game.navigation);
-        $('#flipcardsEGameMode').prop('checked', game.gameMode);
+        $('#flipcardsEShowSolution').prop('checked', game.showSolution);
+        $('#flipcardsETimeShowSolution').val(game.timeShowSolution)
+        $('#flipcardsETimeShowSolution').prop('disabled', !game.showSolution);
+        $('#flipcardsETime').val(game.time);
+        $("input.FLCRDS-Type[name='flctype'][value='" + game.type + "']").prop("checked", true);
+        $("#flipcardsETimeDiv").hide();
+        if (game.type == 3) {
+            $("#flipcardsETimeDiv").show();
+        }
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.cardsGame = game.cardsGame;
         $('#flipcardsENumCards').text($exeDevice.cardsGame.length);
-        if (typeof game.gameMode !== "undefined" && game.gameMode) {
-            $('#flipcardsENavigationP').hide();
-        }
         $exeDevice.updateCardsNumber();
     },
     exportGame: function () {
@@ -1265,23 +1321,25 @@ var $exeDevice = {
             $exeDevice.updateFieldGame(game);
             var instructions = game.instructionsExe || game.instructions,
                 tAfter = game.textAfter || "";
-                if (tinyMCE.get('eXeGameInstructions')) {
-                    tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-                } else {
-                    $("#eXeGameInstructions").val(unescape(instructions))
-                }
-                if (tinyMCE.get('eXeIdeviceTextAfter')) {
-                    tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-                } else {
-                    $("#eXeIdeviceTextAfter").val(unescape(tAfter))
-                }
+            if (tinyMCE.get('eXeGameInstructions')) {
+                tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            } else {
+                $("#eXeGameInstructions").val(unescape(instructions))
+            }
+            if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            } else {
+                $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+            }
 
-        } else if (game.typeGame == 'Adivina') {
-            game.cardsGame = $exeDevice.importAdivina(game);
+        } else if (game.typeGame == 'flipcards') {
+            game.cardsGame = $exeDevice.importflipcards(game);
         } else if (game.typeGame == 'Rosco') {
             game.cardsGame = $exeDevice.importRosco(game);
-        }else if (game.typeGame == 'QuExt') {
+        } else if (game.typeGame == 'QuExt') {
             game.cardsGame = $exeDevice.importQuExt(game);
+        } else if (game.typeGame == 'Sopa') {
+            game.cardsGame = $exeDevice.importSopa(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
@@ -1293,7 +1351,7 @@ var $exeDevice = {
         $('.exe-form-tabs li:first-child a').click();
     },
 
-    importAdivina: function (data) {
+    importflipcards: function (data) {
         for (var i = 0; i < data.wordsGame.length; i++) {
             var p = $exeDevice.getCardDefault(),
                 cuestion = data.wordsGame[i];
@@ -1346,13 +1404,32 @@ var $exeDevice = {
             p.alt = cuestion.alt;
             p.solution = '';
             p.eTextBk = '';
-            if( typeof cuestion.options !="undefined" && cuestion.options.length>cuestion.solution ){
-                p.eTextBk =cuestion.options[cuestion.solution ];
+            if (typeof cuestion.options != "undefined" && cuestion.options.length > cuestion.solution) {
+                p.eTextBk = cuestion.options[cuestion.solution];
             }
             if (p.eText.length > 0) {
                 $exeDevice.cardsGame.push(p);
             }
 
+        }
+        return $exeDevice.cardsGame;
+    },
+    importSopa: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCardDefault(),
+                cuestion = data.wordsGame[i];
+            p.eText = cuestion.definition;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            p.eTextBk = cuestion.word;
+            if (p.url.length > 3 || p.audio.length > 3 || p.eText.length > 0) {
+                $exeDevice.cardsGame.push(p);
+            }
         }
         return $exeDevice.cardsGame;
     },
