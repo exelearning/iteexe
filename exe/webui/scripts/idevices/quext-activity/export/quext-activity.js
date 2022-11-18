@@ -307,16 +307,6 @@ var $eXeQuExt = {
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="quextPAuthor-' + instance + '"></p>\
             </div>\
-            <div class="gameQP-CodeAccessDiv" id="quextCodeAccessDiv-' + instance + '">\
-                <p class="gameQP-MessageCodeAccessE" id="quextMesajeAccesCodeE-' + instance + '"></p>\
-                <div class="gameQP-DataCodeAccessE">\
-                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="quextCodeAccessE-' + instance + '">\
-                    <a href="#" id="quextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
-                        <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-Submit gameQP-Activo"></div>\
-                    </a>\
-                </div>\
-            </div>\
             <div class="sr-av" id="quextStartGameSRAV-' + instance + '">' + msgs.msgPlayStart + ':</div>\
             <div class="gameQP-StartGame"><a href="#" id="quextStartGame-' + instance + '"></a></div>\
             <div class="gameQP-QuestionDiv" id="quextQuestionDiv-' + instance + '">\
@@ -346,10 +336,29 @@ var $eXeQuExt = {
             <div class="gameQP-DivFeedBack" id="quextDivFeedBack-' + instance + '">\
                 <input type="button" id="quextFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
             </div>\
+            <div class="gameQP-Cubierta" id="quextCubierta-' + instance + '" style="display:none">\
+                <div class="gameQP-CodeAccessDiv" id="quextCodeAccessDiv-' + instance + '">\
+                    <p class="gameQP-MessageCodeAccessE" id="quextMesajeAccesCodeE-' + instance + '"></p>\
+                    <div class="gameQP-DataCodeAccessE">\
+                        <label class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="quextCodeAccessE-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
+                        <a href="#" id="quextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
+                            <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
+                            <div class="exeQuextIcons exeQuextIcons-Submit gameQP-Activo"></div>\
+                        </a>\
+                    </div>\
+                </div>\
+            </div>\
         </div>\
     </div>\
     ' + this.addButtonScore(instance);
         return html;
+    },
+    showCubiertaOptions(mode, instance) {
+        if (mode === false) {
+            $('#quextCubierta-' + instance).fadeOut();
+            return;
+        }
+        $('#quextCubierta-' + instance).fadeIn();
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
@@ -784,6 +793,7 @@ var $eXeQuExt = {
             $('#quextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#quextCodeAccessDiv-' + instance).show();
             $('#quextGameContainer-' + instance + ' .gameQP-StartGame').hide();
+            $eXeQuExt.showCubiertaOptions(true,instance)
         }
         $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", function (e) {
             var fullScreenElement =
@@ -898,7 +908,7 @@ var $eXeQuExt = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#quextCodeAccessE-' + instance).val().toLowerCase()) {
-            $('#quextCodeAccessDiv-' + instance).hide();
+            $eXeQuExt.showCubiertaOptions(false,instance);
             $eXeQuExt.getYTAPI(instance);
         } else {
             $('#quextMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
