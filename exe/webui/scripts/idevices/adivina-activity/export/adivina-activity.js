@@ -392,16 +392,6 @@ var $eXeAdivina = {
                     </a>\
                 </div>\
             </div>\
-            <div class="gameQP-CodeAccessDiv" id="adivinaCodeAccessDiv-' + instance + '">\
-                <div class="gameQP-MessageCodeAccessE" id="adivinaMesajeAccesCodeE-' + instance + '"></div>\
-                <div class="gameQP-DataCodeAccessE">\
-                    <label>' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE" id="adivinaCodeAccessE-' + instance + '">\
-                    <a href="#" id="adivinaCodeAccessButton-' + instance + '" title="' + msgs.msgReply + '">\
-                    <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
-                    <div class="exeQuextIcons-Submit gameQP-Activo"></div>\
-                    </a>\
-                </div>\
-            </div>\
             <div class="gameQP-DivInstructions" id="adivinaDivInstructions-' + instance + '">' + msgs.msgWrote + '</div>\
             <div class="gameQP-DivFeedBack" id="adivinaDivFeedBack-' + instance + '">\
                 <input type="button" id="adivinaFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
@@ -411,12 +401,30 @@ var $eXeAdivina = {
                 <a class="gameQP-ModeBoard" href="#" id="adivinaModeBoardMoveOn-' + instance + '" title="' + msgs.msgMoveOne + '">' + msgs.msgMoveOne + '</a>\
                 <a class="gameQP-ModeBoard" href="#" id="adivinaModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
             </div>\
+            <div class="gameQP-Cubierta" id="adivinaCubierta-' + instance + '" style="display:none">\
+                <div class="gameQP-CodeAccessDiv" id="adivinaCodeAccessDiv-' + instance + '">\
+                    <div class="gameQP-MessageCodeAccessE" id="adivinaMesajeAccesCodeE-' + instance + '"></div>\
+                    <div class="gameQP-DataCodeAccessE">\
+                        <label for="adivinaCodeAccessE-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE" id="adivinaCodeAccessE-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
+                        <a href="#" id="adivinaCodeAccessButton-' + instance + '" title="' + msgs.msgReply + '">\
+                        <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
+                        <div class="exeQuextIcons-Submit gameQP-Activo"></div>\
+                        </a>\
+                    </div>\
+                </div>\
+            </div>\
         </div>\
     </div>\
     ' + this.addButtonScore(instance);
         return html;
     },
-
+    showCubiertaOptions(mode, instance) {
+        if (mode === false) {
+            $('#adivinaCubierta-' + instance).fadeOut();
+            return;
+        }
+        $('#adivinaCubierta-' + instance).fadeIn();
+    },
     addButtonScore: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         var butonScore = "";
@@ -668,6 +676,7 @@ var $eXeAdivina = {
             $('#adivinaQuestion-' + instance).hide();
             $('#adivinaDefinition-' + instance).hide();
             $('#adivinaDivInstructions-' + instance).hide();
+            $eXeAdivina.showCubiertaOptions(true,instance)
 
         }
         if (!mOptions.useLives) {
@@ -758,9 +767,7 @@ var $eXeAdivina = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() == $('#adivinaCodeAccessE-' + instance).val().toLowerCase()) {
-            $('#adivinaDefinition-' + instance).show();
-            $('#adivinaCodeAccessDiv-' + instance).hide();
-            $('#adivinaQuestion-' + instance).show();
+            $eXeAdivina.showCubiertaOptions(false,instance);
             $eXeAdivina.getYTAPI(instance);
 
         } else {

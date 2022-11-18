@@ -356,11 +356,35 @@
 }
 
 /* Código acceso */
+.gameQP-Cubierta {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000000001;
+    background-color: rgb(255, 255, 255, 0.1)
+}
+
+.gameQP-Cubierta .exeQuextIcons-Submit {
+	background: url(exequextreply.png) no-repeat;
+	background-size: 100% 100%;
+	height: 1.7em;
+	width: 1.7em;
+}
 
 .gameQP-CodeAccessDiv {
-	display: none;
-	margin: 1em auto;
-	width: 100%;
+	padding: 1.5em 0.5em 1.5em 0.5em;
+	margin: 5em auto;
+	width: 95%;
+	max-width: 450px;
+	background-color: white;
+	border-radius: 0.5em;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
 }
 
 .gameQP-MessageCodeAccessE {
@@ -379,8 +403,9 @@
 
 .gameQP-CodeAccessE {
 	margin: 0 .3em;
-	max-width: 300px;
+	max-width: 350px;
 	width: 60%;
+	text-align: center;
 }
 
 /* Inicio juego */
