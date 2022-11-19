@@ -35,14 +35,14 @@ intef-exe (3:2.8) lucid; urgency=medium
     - TinyMCE syntax highlighting options: Error handling (wrong values in the "Line highlight" field).
     - Licenses help links (Creative Commons) in some TinyMCE plugins and the Properties tab. (#649)
     - Responsive tables. Use "exe-table exe-table-responsive" or "exe-table-minimalist exe-table-responsive" CSS classes.
-    
+
   * Pablo Amaya
     - New export option: "Export current page as SCORM". (#643)
     - Old "Add Previous/Next links within SCOs" export option removed. (#658)
-    
+
   * APSL
     - Package building.
-    
+
   * Juan Rafael Fernández
     - String extraction process revision.
     - Translations coordination.  
@@ -53,6 +53,8 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New complete Greek translation, by Yannis Kaskamanidis.
     - New complete Polish translation, by Waldemar Stoczkowski.
     - New complete Turkish translation, by Turkish transifex team.
+
+ -- eXeLearning <admin@exelearning.net>  Fri, 19 Nov 2022 13:00:00 +0200
 
 intef-exe (3:2.7) lucid; urgency=medium
 
