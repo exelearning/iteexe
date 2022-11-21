@@ -14,6 +14,7 @@
 	align-items: center;
 	width: 100%;
 	flex-wrap: wrap;
+
 	
 }
 .CMPT-Multimedia input, .CMPT-Multimedia select {
@@ -256,11 +257,9 @@
 /* Pista */
 
 .CMPT-ShowClue {
-	margin: 0.3em auto;
-	min-height: 0.4em;
+	margin: 0.1em auto;
 	padding: 0;
 	width: 100%;
-	display: none;
 }
 
 .CMPT-PShowClue {

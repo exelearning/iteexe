@@ -182,9 +182,8 @@
 	overflow: hidden;
 	position: relative;
 	width: 100%;
-	display: flex;
-	justify-content: center
 }
+
 .MTHP-ImagesHome{
 	margin-top: 1em;
 	width: 90%;

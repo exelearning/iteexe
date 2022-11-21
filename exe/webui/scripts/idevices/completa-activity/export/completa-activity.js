@@ -199,6 +199,7 @@ var $eXeCompleta = {
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
+        mOptions.obtainedClue = false;
         mOptions.gameActived = false;
         mOptions.validQuestions = mOptions.number;
         mOptions.counter = 0;
@@ -481,6 +482,7 @@ var $eXeCompleta = {
             $eXeCompleta.showCubiertaOptions(false, instance)
         });
         $('#cmptLinkMaximize-' + instance).focus()
+        $('#cmptPShowClue-' + instance).hide();
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeCompleta.options[instance];
@@ -525,10 +527,12 @@ var $eXeCompleta = {
         if (mOptions.gameStarted) {
             return;
         };
+        
+        $('#cmptGameContainer-' + instance).find('.CMPT-ButtonsDiv').fadeIn();
+        $('#cmptButonsDiv-' + instance).hide();
         if (mOptions.type == 1) {
             $('#cmptButonsDiv-' + instance).show();
         }
-        $('#cmptGameContainer-' + instance).find('.CMPT-ButtonsDiv').fadeIn();
         $('#cmptMultimedia-' + instance).fadeIn();
         $('#cmptDivImgHome-' + instance).hide();
         $('#cmptPHits-' + instance).text(mOptions.hits);
@@ -583,6 +587,16 @@ var $eXeCompleta = {
         if (latex) {
             $eXeCompleta.updateLatex('cmptGameContainer-' + instance)
         }
+        if (mOptions.itinerary.showClue) {
+            var text = $('#cmptPShowClue').text();
+            if (mOptions.obtainedClue) {
+                mclue = text;
+            } else {
+                mclue = mOptions.msgs.msgTryAgain.replace('%s', mOptions.itinerary.percentageClue);
+            }
+            $('#cmptPShowClue').text(mclue);
+            $('#cmptPShowClue').show();
+        }
     },
 
     reloadGame: function (instance) {
@@ -594,6 +608,11 @@ var $eXeCompleta = {
         $eXeCompleta.showMessage(1, '', instance)
         $eXeCompleta.updateGameBoard(instance);
         $('#cmptMultimedia-' + instance).find('.CMPT-Input').val('');
+        if(mOptions.type==1){
+            $('#cmptMultimedia-' + instance).find('.CMPT-Input').addClass('CMPT-Drag');
+            $eXeCompleta.createButtons(instance);
+        }
+        
         $('#cmptMultimedia-' + instance).find('.CMPT-Input').css({
             'color': '#333333'
         });
@@ -672,6 +691,15 @@ var $eXeCompleta = {
                 $eXeCompleta.sendScore(true, instance);
                 $('#cmptRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
                 $eXeCompleta.initialScore = score;
+            }
+        }
+        var percentageHits = (mOptions.hits * 100) / mOptions.number;
+        if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
+
+            if (!mOptions.obtainedClue) {
+                mOptions.obtainedClue = true;
+                $('#cmptPShowClue-' + instance).text(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
+                $('#cmptPShowClue-' + instance).show();
             }
         }
         if (mOptions.attempsNumber <= 0 || mOptions.hits == mOptions.number) {

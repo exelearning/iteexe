@@ -229,7 +229,7 @@ var $eXeMathProblems = {
             path = $eXeMathProblems.idevicePath,
             msgs = $eXeMathProblems.options[instance].msgs,
             html = '';
-        html += '<div class="MTHP-MainContainer">\
+        html += '<div class="MTHP-MainContainer" id="mthpMainContainer-' + instance + '">\
         <div class="MTHP-GameMinimize" id="mthpGameMinimize-' + instance + '">\
             <a href="#" class="MTHP-LinkMaximize" id="mthpLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "mthpIcon.png" + '" class="MTHP-IconMinimize MTHP-Activo"  alt="">\
             <div class="MTHP-MessageMaximize" id="mthpMessageMaximize-' + instance + '"></div></a>\

@@ -157,7 +157,9 @@ var $exeDevice = {
                          </div>\
                          <p><label for="eCQformula">' + _("Formula") + ':\
                             <input id="eCQformula" type="text" style="width:200px" value="{b}*{h}/2" />\
-                         </label></p>\
+                         </label>\
+                         <span><strong>'+_("Math Operations")+': +  -  *  /  **  ()</strong></span>\
+                         </p>\
                         <p>\
                             <label for="eCQwording">' + _("Question text:") + '</label>\
                             <textarea name="eCQwording" id="eCQwording" class="exe-html-editor" cols="90" rows="6">' + _("Calculate in square metres the surface of a triangle with a base of {b}m and a height of {h}m") + '</textarea>\

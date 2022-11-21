@@ -689,8 +689,7 @@ var $eXeSopa = {
             $eXeSopa.stopSound();
             $eXeSopa.playSound(audio);
         });
-        $('#sopaMShowClue').hide();
-        if (mOptions.itinerary.showCodeAccess) {
+          if (mOptions.itinerary.showCodeAccess) {
             $('#sopaMesajeAccesCodeE').text(mOptions.itinerary.messageCodeAccess);
             $($eXeSopa.showCubiertaOptions(0))
 
@@ -748,7 +747,6 @@ var $eXeSopa = {
             e.preventDefault();
             $eXeSopa.startGame();
         });
-        $('#sopaShowClue').html(mOptions.itinerary.clueGame);
         $('#sopaPTimeTitle').hide();
         $('.exeQuextIcons-Time').hide();
         $('#sopaPTime').hide();
@@ -824,7 +822,6 @@ var $eXeSopa = {
             $('#sopaPShowClue').show();
         }
         var message = $eXeSopa.getRetroFeedMessages(true) + ' ' + mOptions.msgs.msgWordsFind.replace('%s',score);
-
         if (mode == 1) {
             message = mOptions.msgs.msgEndGameM.replace('%s', score);
         } else if (mode == 2) {

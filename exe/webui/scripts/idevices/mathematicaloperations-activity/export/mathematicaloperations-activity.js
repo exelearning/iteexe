@@ -687,7 +687,7 @@ var $eXeMathOperations = {
     },
     checkClue: function (instance) {
         var mOptions = $eXeMathOperations.options[instance],
-           percentageHits = (mOptions.hits / mOptions.numer) * 100,
+           percentageHits = (mOptions.hits / mOptions.number) * 100,
            message='';
         if(mOptions.number-mOptions.hits-mOptions.errors<=0){
             message +=mOptions.msgs.msgAllOperations;
@@ -701,6 +701,7 @@ var $eXeMathOperations = {
             }
         }
         $('#mthoPShowClue-' + instance).text(message);
+        $('#mthoPShowClue-' + instance).show()
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeMathOperations.options[instance];
@@ -836,7 +837,7 @@ var $eXeMathOperations = {
 
         });
         $('#mthoStartGame-' + instance).show();
-        $('#mthoPShowClue-' + instance).text('');
+        $('#mthoPShowClue-' + instance).hide();
         if (mOptions.itinerary.showCodeAccess) {
             $('#mthoMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $eXeMathOperations.showCubiertaOptions(0, instance)
