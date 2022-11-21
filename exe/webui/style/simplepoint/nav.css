@@ -24,6 +24,9 @@ html,body{margin:0;padding:0;text-align:center;background:#FFF}
     #packageLicense.cc-by-nc-sa{background-position:0 -400px}
     #packageLicense.cc-by-nc-nd{background-position:0 -500px}
     #packageLicense.cc-0{background-position:0 -600px}
+    #made-with-eXe{right:auto;left:0;bottom:6px;z-index:99}
+    #made-with-eXe a{padding:0 5px;background-position:5px 50%;background-color:#666;color:#666;box-shadow:none}
+    #made-with-eXe a:hover{color:#fff}
 }
 /* Navigation */
 #skipNav{text-align:center;padding-top:25px}
