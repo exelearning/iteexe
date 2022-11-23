@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2022-11-18 11:42+0100\n"
-"PO-Revision-Date: 2022-04-28 13:02+0200\n"
-"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>"
-"\n"
+"PO-Revision-Date: 2022-11-23 09:50+0100\n"
+"Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\n"
 "Language: ca\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.9.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: exe/application.py:239
 #, python-format
@@ -443,7 +443,8 @@ msgstr "FPD - Cita"
 msgid ""
 "Quotation is an iDevice that provides the students with quotations to "
 "reflect upon."
-msgstr "Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
+msgstr ""
+"Cita és un iDevice que permet als estudiants reflexionar sobre les cites."
 
 #: exe/engine/citasparapensarfpdidevice.py:40
 #: exe/engine/citasparapensarfpdidevice.py:139
@@ -1836,7 +1837,8 @@ msgstr "Mike Dawson, Toughra Technologies FZ LLC"
 
 #: exe/engine/hangmanidevice.py:53
 msgid "Hangman style word game with customizable images."
-msgstr "Joc de paraules semblant al joc del penjat amb imatges personalitzables."
+msgstr ""
+"Joc de paraules semblant al joc del penjat amb imatges personalitzables."
 
 #: exe/engine/hangmanidevice.py:61
 msgid "Instructions for Game."
@@ -1941,7 +1943,8 @@ msgstr "Missatge de nivell superat"
 
 #: exe/engine/hangmanidevice.py:115 exe/engine/hangmanidevice.py:163
 msgid "Player will see this message when they guess the word correctly"
-msgstr "El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
+msgstr ""
+"El jugador veurà aquest missatge quan encerti la paraula de forma correcta"
 
 #: exe/engine/hangmanidevice.py:117 exe/engine/hangmanidevice.py:166
 msgid "Game Won Message"
@@ -4226,7 +4229,8 @@ msgstr ""
 #: exe/jsui/mainpage.py:1802
 #, python-format
 msgid "The following fields have been cut to meet the SCORM 1.2 standard: %s"
-msgstr "Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
+msgstr ""
+"Els camps següents s'han tallat per complir amb l'estàndard SCORM 1.2: %s"
 
 #: exe/jsui/mainpage.py:1907 exe/webui/stylemanagerpage.py:264
 #, python-format
@@ -4462,9 +4466,8 @@ msgid "Export this page as elp"
 msgstr "Exporta aquesta pàgina com ELP"
 
 #: exe/jsui/scripts/app/controller/Outline.js:184
-#, fuzzy
 msgid "Export this page as SCORM"
-msgstr "Exporta aquesta pàgina com ELP"
+msgstr "Exporta aquesta pàgina com SCORM"
 
 #: exe/jsui/scripts/app/controller/Outline.js:259
 msgid "Delete \"{node}\" node and all its children?"
@@ -4680,14 +4683,12 @@ msgid "Extracting package: {filename}"
 msgstr "S'està extraguent el paquet: {filename}"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:778
-#, fuzzy
 msgid "Save extracted SCORM package as"
-msgstr "Anomena i desa el paquet extret"
+msgstr "Anomena i desa el paquet SCORM com"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:790
-#, fuzzy
 msgid "SCORM Files"
-msgstr "Afegeix fitxers"
+msgstr "Fitxers SCORM"
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:800
 msgid "Select the parent folder for import."
@@ -5386,7 +5387,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:131
 msgid "Math content: Load MathJax in pages with LaTeX code."
-msgstr ""
+msgstr "Contingut matemàtic: carrega MathJax en pàgines amb codi LaTeX."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:135
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:138
@@ -5394,11 +5395,11 @@ msgid ""
 "Checking this option, pages with LaTeX code will automatically load the "
 "MathJax JavaScript file from a content delivery network (CDN). MathJax is"
 " a JavaScript display engine for mathematics."
-msgstr ""
+msgstr "Marcant aquesta opció, les pàgines amb codi LaTex carregaran el fitxer JavaScript de MathJax des d'una xarxa de lliurament de contingut (\"content delivery network\", CDN). MathJax és un motor de visualització JavaScript per a matemàtics."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:144
 msgid "\"Made with eXeLearning\" link"
-msgstr ""
+msgstr "Enllaç «Creat amb eXeLearning»"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:148
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:151
@@ -5406,6 +5407,8 @@ msgid ""
 "Help us spreading eXeLearning. Checking this option, a \"Made with "
 "eXeLearning\" link will be displayed in your pages."
 msgstr ""
+"Ajudi'ns a donar a conèixer eXeLearning. En marcar aquesta opció, un enllaç"
+" «Creat amb eXeLearning» apareixerà a les vostres pàgines."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:157
 msgid "SCORM Options (1.2 and 2004)"
@@ -5960,9 +5963,8 @@ msgstr "Finestra nova"
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:291
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeimage/plugin.min.js:1025
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:496
-#, fuzzy
 msgid "Creative Commons licenses information page"
-msgstr "creative commons: reconeixement"
+msgstr "Pàgina d'informació sobre les llicències Creative Commons"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:316
 msgid "Usage"
@@ -6034,7 +6036,8 @@ msgstr "Fons de la capçalera"
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:511
 msgid "Background image for a header (an image 100px high is recommended)."
-msgstr "Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
+msgstr ""
+"Imatge de fons per la capçalera ( una imatge de 100 px és recomanable)."
 
 #: exe/jsui/scripts/app/view/forms/PackagePanel.js:529
 msgid "Load Image"
@@ -6153,7 +6156,8 @@ msgstr "Format per defecte als documents nous"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:199
 msgid "The current document format can be modified in the Properties tab"
-msgstr "El format actual del document es pot modificar a la pestanya «Propietats»"
+msgstr ""
+"El format actual del document es pot modificar a la pestanya «Propietats»"
 
 #: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:210
 msgid "Editor mode"
@@ -6649,9 +6653,8 @@ msgid "Export the current page as elp"
 msgstr "Exporta la pàgina actual com a ELP"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:354
-#, fuzzy
 msgid "Export the current page as SCORM"
-msgstr "Exporta la pàgina actual com a ELP"
+msgstr "Exporta la pàgina actual com a SCORM"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:366
 msgid "IMS"
@@ -6823,9 +6826,8 @@ msgid "Show panel"
 msgstr "Mostra el plafó"
 
 #: exe/jsui/scripts/exe.js:418
-#, fuzzy
 msgid "Use the left panel to create pages and add content."
-msgstr "Una vegada estigui la pàgina creada podeu afegir contingut."
+msgstr "Useu el quadre de l'esquerra per crear pàgines i afegir contingut."
 
 #: exe/jsui/scripts/app/controller/Toolbar.js:1064 exe/jsui/scripts/exe.js:419
 msgid "Don't show this warning again"
@@ -8218,7 +8220,8 @@ msgid "process/procedure supporting service"
 msgstr "servei d'ajuda al procediment / procés "
 
 #: exe/jsui/scripts/lomvocab.js:826
-msgid "individual/cooperative/collaborative learning/working management service"
+msgid ""
+"individual/cooperative/collaborative learning/working management service"
 msgstr ""
 "serveis de gestió del treball / individual / cooperatiu / aprenentatge "
 "col·laboratiu "
@@ -8686,11 +8689,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 4.0"
 
 #: exe/webui/common.py:241
 msgid "Creative Commons Attribution Non-commercial Share Alike License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 4.0"
 
 #: exe/webui/common.py:247
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 4.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 4.0"
 
 #: exe/webui/common.py:253
 msgid "GNU Free Documentation License"
@@ -8718,11 +8723,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 3.0"
 
 #: exe/webui/common.py:344
 msgid "Creative Commons Attribution Non-commercial Share Alike License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 3.0"
 
 #: exe/webui/common.py:350
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 3.0"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 3.0"
 
 #: exe/webui/common.py:356
 msgid "Creative Commons Attribution License 2.5"
@@ -8742,11 +8749,13 @@ msgstr "Llicència Creative Commons Reconeixement NoComercial 2.5"
 
 #: exe/webui/common.py:380
 msgid "Creative Commons Attribution Non-commercial Share Alike License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial CompartirIgual 2.5"
 
 #: exe/webui/common.py:386
 msgid "Creative Commons Attribution Non-commercial No Derivatives License 2.5"
-msgstr "Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
+msgstr ""
+"Llicència Creative Commons Reconeixement NoComercial SenseObraDerivada 2.5"
 
 #: exe/webui/common.py:418
 msgid "License:"
@@ -8757,9 +8766,8 @@ msgid "Local Version"
 msgstr "Versió local"
 
 #: exe/webui/common.py:451
-#, fuzzy
 msgid "Made with eXeLearning"
-msgstr "exelearning.net"
+msgstr "Creat amb eXeLearning"
 
 #: exe/webui/common.py:463
 msgid "Enable JavaScript"
@@ -8883,7 +8891,7 @@ msgstr "Més"
 
 #: exe/webui/common.py:656
 msgid "Full size"
-msgstr ""
+msgstr "Mida completa"
 
 #: exe/webui/common.py:657
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:30
@@ -9512,7 +9520,8 @@ msgid "eXe problem"
 msgstr "problema d'eXe"
 
 #: exe/webui/iecmwarning.py:46
-msgid "The Compatibility View of your browser (Internet Explorer) is turned on."
+msgid ""
+"The Compatibility View of your browser (Internet Explorer) is turned on."
 msgstr ""
 "La visualització de compatibilitat del vostre navegador (Internet "
 "explorer) està habilitada."
@@ -10016,7 +10025,7 @@ msgstr "Ves a Eines - Visualitza per veure-ho funcionant"
 
 #: exe/webui/scripts/authoring.js:1945
 msgid "Add a Text iDevice"
-msgstr ""
+msgstr "Afegeix un iDevice Text"
 
 #: exe/webui/scripts/editor.js:64
 msgid "Do you want to overwrite the existing idevice {idevice}?"
@@ -10506,7 +10515,8 @@ msgstr "Inicieu el joc abans de desar la puntuació."
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:73
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:45
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:62
-msgid "The score can't be saved because this page is not part of a SCORM package."
+msgid ""
+"The score can't be saved because this page is not part of a SCORM package."
 msgstr ""
 "La puntuació no es pot desar ja que aquesta pàgina no forma part de un "
 "paquet SCORM."
@@ -10982,6 +10992,8 @@ msgid ""
 "Create activities in which given a definition the student has to complete"
 " the word filling in the gaps."
 msgstr ""
+"Creeu activitats en les quals donada la definició cal que l'estudiant"
+" completi el mot emplenant les lletres que faltin."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:127
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:51
@@ -11021,9 +11033,8 @@ msgstr "Configuració general"
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:135
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:721
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:608
-#, fuzzy
 msgid "Use Instructions"
-msgstr "Instruccions del joc"
+msgstr "Instruccions d'ús"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:128
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:113
@@ -11214,7 +11225,7 @@ msgstr "Preguntes"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:747
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:672
 msgid "Digital blackboard mode"
-msgstr ""
+msgstr "Mode pissarra digital"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:187
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:170
@@ -11620,48 +11631,47 @@ msgstr "Escriu el missatge d'error"
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:75
 msgid "Create activities with a password protected feedback."
 msgstr ""
+"Creeu activitats en les quals la retroalimentació està protegida amb"
+" contrasenya."
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:12
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:125
-#, fuzzy
 msgid "Complete"
-msgstr "competeix "
+msgstr "Completeu"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:75
-#, fuzzy
 msgid "Try again"
-msgstr "Prova de nou!"
+msgstr "Prova de nou"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:77
 #, python-format
 msgid "You got %s right answers and %d errors."
-msgstr ""
+msgstr "Heu tingut %s encerts i  %d errades."
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:78
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:92
-#, fuzzy
 msgid "Time over."
-msgstr "Final del joc."
+msgstr "Els temps ha acabat."
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:79
-#, fuzzy
 msgid "You completed the activity"
-msgstr "Acabeu l'activitat"
+msgstr "Heu completat l'activitat"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:115
 msgid ""
 "Create activities in which the student will have to fill in the blanks of"
 " a text writing or choosing an answer."
 msgstr ""
+"Creeu activitats en les quals l'alumne haurà de emplenar el buits d'un text"
+" escrivint, o triant la resposta."
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:117
-#, fuzzy
 msgid "Read the text and complete the missing words."
-msgstr "Llegeix el paràgraf seguit i completa les paraules que manquen. ."
+msgstr "Llegeix el text i completa les paraules que manquen."
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:127
 msgid "Drag and drop"
-msgstr ""
+msgstr "Arrossega i solta"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:129
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:480
@@ -11675,38 +11685,37 @@ msgid ""
 "Limit the words in each dropdown box. Write the possible options, "
 "starting with the correct one, separated by |"
 msgstr ""
+"Limiteu les de cada quadre desplegable. Escriviu les respostes possibles,"
+" començant pel correcte, separades per |"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:136
-#, fuzzy
 msgid "Wrong words"
-msgstr "Altres paraules"
+msgstr "Mots incorrectes"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:139
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:434
-#, fuzzy
 msgid "Number of attempts"
-msgstr "Nombre de temes"
+msgstr "Nombre d'intents"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:143
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:132
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:174
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:163
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:145
-#, fuzzy
 msgid "Time (minutes)"
-msgstr "Temps"
+msgstr "Temps (minuts)"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:150
 msgid "Allow errors in typed words"
-msgstr ""
+msgstr "Permeteu errades als mots escrits"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:152
 msgid "Incorrect letters allowed (&percnt;)"
-msgstr ""
+msgstr "Lletres incorrectes permeses (&percnt;)"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:159
 msgid "Field width proportional to the words length"
-msgstr ""
+msgstr "Amplària del quadre proporcional a la longitud dels mots"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:178
 msgid ""
@@ -11714,6 +11723,9 @@ msgid ""
 "**educational** resources in an **simple | easy** way. It's available for"
 " different **operating** systems."
 msgstr ""
+"eXeLearning és un editor **lliure** i de codi obert per crear recursos"
+" **educatius** de forma **fàcil i senzilla**. Està disponible per a diferents"
+" sistemes **operatius**."
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:14
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:45
@@ -11824,6 +11836,8 @@ msgid ""
 "Create escape room type activities in which players will have to complete"
 " trials before solving the final challenge."
 msgstr ""
+"Creeu activitats del tipus Joc d'escapada en les quals els jugadors hauran de"
+" completar els reptes abans de resoldre el desafiament final."
 
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:259
 msgid "Complete all the trials to finish the activity."
@@ -11932,38 +11946,37 @@ msgstr "Cal que escriviu el vostre nom."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:12
 msgid "Memory Cards"
-msgstr ""
+msgstr "Targetes de memòria"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:62
-#, fuzzy
 msgid "Number of cards"
-msgstr "Nombre de rondes"
+msgstr "Nombre de targetes"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:67
 msgid "Right. That's the card."
-msgstr ""
+msgstr "Heu encertat. És la targeta."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:68
 msgid "You're wrong. That's not the card."
-msgstr ""
+msgstr "Heu fallat. No és targeta."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:69
 msgid "Right. That's not the card."
-msgstr ""
+msgstr "Heu encertat. No és aquesta targeta."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:70
 msgid "You're wrong. That's the card."
-msgstr ""
+msgstr "Heu fallat. És aquesta targeta."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:71
 msgid "Click on the card"
-msgstr ""
+msgstr "Prem sobre la targeta."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:72
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:62
 #, python-format
 msgid "Game time is over. Your score is %s."
-msgstr ""
+msgstr "El temps ha acabat. La vostra puntuació és  %s."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:73
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:63
@@ -11980,34 +11993,36 @@ msgstr "Acaba"
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:64
 #, python-format
 msgid "You finished the game. Your score is %s."
-msgstr ""
+msgstr "Heu finalitzat el joc. La vostra puntuació és %s."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:98
 msgid "Provide an image, text or audio for each card's front side"
 msgstr ""
+"Cal que proporcioneu una imatge, text o audio per la cara frontal de cada"
+" targeta"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:99
 msgid "Provide an image, text or audio for each card's back side"
 msgstr ""
+"Cal que proporcioneu una imatge, text o audio per la cara posterior de cada"
+" targeta"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:100
-#, fuzzy
 msgid "Please create at least one card"
-msgstr "Proporcioneu al menys una paraula"
+msgstr "Creeu al menys una targeta"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:101
 #, python-format
 msgid "Maximum card number: %s."
-msgstr ""
+msgstr "Nombre màxim de targetes: %s."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:107
 msgid "Create card memory games with images, sounds or rich text."
-msgstr ""
+msgstr "Creeu jocs de memòria de targetes amb imatges, sons o text enriquit."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:109
-#, fuzzy
 msgid "Click on the cards to see what they hide."
-msgstr "L'usuari premerà aquí per començar el joc"
+msgstr "Premeu sobre les targetes per veure el que oculten."
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:119
 #: exe/webui/tools/mindmaps/src/js/HelpController.js:142
@@ -12026,26 +12041,24 @@ msgstr "Identifica"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:123
 msgid "Memory"
-msgstr ""
+msgstr "Memòria"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:136
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:867
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:874
 msgid "Random"
-msgstr "Aleatòri"
+msgstr "Aleatori"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:142
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:151
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:260
-#, fuzzy
 msgid "Cards"
-msgstr "Anys"
+msgstr "Targetes"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:155
-#, fuzzy
 msgid "Front side"
-msgstr "Mida de la font"
+msgstr "Cara frontal"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:167
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:211
@@ -12065,17 +12078,16 @@ msgid "Background"
 msgstr "Fons"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:199
-#, fuzzy
 msgid "Back side"
-msgstr "Darrera diapositiva"
+msgstr "Cara posterior"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:244
 msgid "Flip down the card"
-msgstr ""
+msgstr "Inverteix la targeta"
 
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:245
 msgid "Flip down all the cards"
-msgstr ""
+msgstr "Inverteix totes les targetes"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:15
 #: exe/webui/scripts/idevices/geogebra-activity/export/geogebra-activity.js:32
@@ -12194,11 +12206,11 @@ msgstr "Escriviu el text del botó."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:54
 msgid "Show a clue"
-msgstr ""
+msgstr "Mostra una pista"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:55
 msgid "Show another clue"
-msgstr ""
+msgstr "Mostra una altra pista"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:56
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:80
@@ -12209,20 +12221,19 @@ msgstr "i informació que serà molt útil"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:61
 msgid "Attempts"
-msgstr ""
+msgstr "Intents"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:62
 msgid "Points at stake"
-msgstr ""
+msgstr "Punts en joc"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:63
-#, fuzzy
 msgid "Please write the answer"
-msgstr "Ordena les respostes"
+msgstr "Escriviu la resposta"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:64
 msgid "You can try it again"
-msgstr ""
+msgstr "Podeu intentar-ho de nou"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:65
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:60
@@ -12231,44 +12242,43 @@ msgid "The game has already started."
 msgstr "El joc ha començat."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:67
-#, fuzzy
 msgid "The right answer is:"
-msgstr "Disculpeu... la resposta correcta és:"
+msgstr "La resposta correcta és:"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:69
 #, python-format
 msgid "You used one clue. You can only get %s points."
-msgstr ""
+msgstr "Heu usat una pista. Sols podreu aconseguir aquesta puntuació %s."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:70
 #, python-format
 msgid "You already used all the clues. You can only get %s points."
 msgstr ""
+"Heu usat totes les pistes. Sols podreu aconseguir aquesta puntuació %s."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:72
-#, fuzzy
 msgid "Check the letter"
-msgstr "Selecciona lletres"
+msgstr "Comprova la lletra"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:91
-#, fuzzy
 msgid "Please complete all the clues"
-msgstr "Cal que completeu la pregunta"
+msgstr "Completeu totes les pistes"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:94
 msgid "Indicate the character, object or solution to discover"
-msgstr ""
+msgstr "Indiqueu el personatge, objecte o solució a descobrir"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:356
 msgid ""
 "Create activities in which the players, with some clues, will have to "
 "guess a character, an object or the solution to a problem."
 msgstr ""
+"Creu activitats en les quals el jugador, amb algunes pistes, hauran de"
+" descobrir un personatge, objecte, o solució a un problema."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:358
-#, fuzzy
 msgid "Use the clues to guess the hidden answer for each question."
-msgstr "Seleccioneu una resposta correcta per cada pregunta."
+msgstr "Useu les pistes per descobrir la resposta oculta per a cada pregunta."
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:424
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:401
@@ -12278,9 +12288,8 @@ msgid "Alt"
 msgstr "Alt"
 
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:447
-#, fuzzy
 msgid "Number of clues"
-msgstr "Nombre de vides"
+msgstr "Nombre de pistes"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
@@ -12356,17 +12365,16 @@ msgid "Save cover"
 msgstr "Desa la portada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:28
-#, fuzzy
 msgid "Cover type"
-msgstr "Tipus C"
+msgstr "Tipus de portada"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:33
 msgid "Single choice"
-msgstr "Elecció senzilla"
+msgstr "Resposta única"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:34
 msgid "Multiple choice"
-msgstr "Elecció multiple"
+msgstr "Resposta múltiple"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:35
 msgid "Fill in the blank"
@@ -12374,7 +12382,7 @@ msgstr "Ompliu el buit"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:36
 msgid "Dropdown activity"
-msgstr "Desplega l'activitat"
+msgstr "Activitat desplegable"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:37
 msgid "Match pairs"
@@ -12393,7 +12401,8 @@ msgid "Add an image with description (alternative text)."
 msgstr "Afegiu una imatge amb una descripció (text alternatiu)."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:43
-msgid "Write a question and some answers. Don't forget to choose the right one."
+msgid ""
+"Write a question and some answers. Don't forget to choose the right one."
 msgstr ""
 "Escriviu una pregunta i algunes respostes. No us oblideu de triar la "
 "correcta."
@@ -12438,7 +12447,8 @@ msgstr "Mostra el text a mostrar"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:57
 msgid "Strike through the words to complete. It's case sensitive."
-msgstr "Ratlleu les paraules a completar. Es distingeix majúscules de minúscules."
+msgstr ""
+"Ratlleu les paraules a completar. Es distingeix majúscules de minúscules."
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:58
 msgid "Text to complete"
@@ -12718,9 +12728,8 @@ msgid "Show results"
 msgstr "Mostra els resultats"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:132
-#, fuzzy
 msgid "Score non-interactive activities"
-msgstr "Activitats interactives"
+msgstr "Puntua activitats no interactives"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:135
 msgid "Open the editor and start adding interaction..."
@@ -12772,7 +12781,8 @@ msgid "Select the correct options and click on the 'Reply' button."
 msgstr "Selecciona les opcions correctes i prem el botó «Respon»"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:93
-msgid "Mark all the options in the correct order and click on the 'Reply' button."
+msgid ""
+"Mark all the options in the correct order and click on the 'Reply' button."
 msgstr "Marca totes les opcions en l'ordre correcte i prem el botó «Respon»"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:94
@@ -12922,6 +12932,8 @@ msgid ""
 "Create image maps: Images with interactive hotspots to reveal images, "
 "videos, sounds, texts..."
 msgstr ""
+"Creeu mapes d'imatges: Imatges amb punts d'accés interactius per revelar"
+" imatges, vídeos, sons, texts, ..."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:163
 msgid "Click on the active areas or image icons."
@@ -12963,7 +12975,7 @@ msgstr "Percentatge de qüestions"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:202
 msgid "Show when the mouse is over the icon or active area"
-msgstr ""
+msgstr "Mostra quan el ratolí és a sobre d'una icona o àrea activa"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:211
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3457
@@ -12971,9 +12983,8 @@ msgid "Close map"
 msgstr "Tanca mapa"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:259
-#, fuzzy
 msgid "Simple"
-msgstr "simula "
+msgstr "Simple"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:261
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:286
@@ -13048,6 +13059,8 @@ msgid ""
 "This game may present accessibility problems for some users. You should "
 "provide an accessible alternative if the users need it."
 msgstr ""
+"Aquest joc pot presentar problemes d'accessibilitat per alguns usuaris."
+" Hauríeu de proporcionar una alternativa accessible si l'usuari ho necessita."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:454
 msgid "Add a slide"
@@ -13201,28 +13214,24 @@ msgid "Mapa"
 msgstr "Mapa"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:14
-#, fuzzy
 msgid "Math Operations"
-msgstr "Opcions aleatòries"
+msgstr "Operacions matemàtiques"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:87
-#, fuzzy
 msgid "Not answered"
-msgstr "Resposta correcta"
+msgstr "Sense contestar"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:88
-#, fuzzy
 msgid "Answered"
-msgstr "Resposta"
+msgstr "Contestat"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:91
-#, fuzzy
 msgid "Not completed"
-msgstr "competeix "
+msgstr "Sense completar"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:93
 msgid "You finished all the operations."
-msgstr ""
+msgstr "Heu acabat totes les operacions."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:124
 msgid ""
@@ -13230,116 +13239,101 @@ msgid ""
 " division). The student will have to guess the result, operator or an "
 "operand."
 msgstr ""
+"Creeu jocs d'operacions matemàtiques bàsiques (suma, resta, multiplicació,"
+" divisió). L'alumne haurà d'esbrinar el resultat, operador o un dels operands."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:126
-#, fuzzy
 msgid "Solve the following operations."
-msgstr "Ompliu els camps següents:"
+msgstr "Resol les següents operacions."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:130
-#, fuzzy
 msgid "Choose what to guess:"
-msgstr "Tria que vols usar:"
+msgstr "Tria l'element que cal endevinar:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:132
-#, fuzzy
 msgid "Result"
-msgstr "Resultats"
+msgstr "Resultat"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:133
-#, fuzzy
 msgid "Operator"
-msgstr "opera"
+msgstr "Operador"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:134
 msgid "First operand"
-msgstr ""
+msgstr "Primer operand"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:135
-#, fuzzy
 msgid "Second operand"
-msgstr "coopera "
+msgstr "Segon operand"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:139
-#, fuzzy
 msgid "Number of operations:"
-msgstr "Nombre de qüestions"
+msgstr "Nombre d'operacions:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:142
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:148
-#, fuzzy
 msgid "Smallest number:"
-msgstr "Qüestió número:"
+msgstr "Número més petit:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:145
-#, fuzzy
 msgid "Biggest number:"
-msgstr "Qüestió número:"
+msgstr "Número més gran:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:148
-#, fuzzy
 msgid "Number of decimals (operands):"
-msgstr "Nombre de qüestions"
+msgstr "Nombre de decimals (operands):"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:155
-#, fuzzy
 msgid "Operaciones:"
-msgstr "Propietats"
+msgstr "Operacions:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:156
-#, fuzzy
 msgid "Addition"
-msgstr "animació"
+msgstr "Suma"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:157
-#, fuzzy
 msgid "Subtraction"
-msgstr "Duració"
+msgstr "Resta"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:158
-#, fuzzy
 msgid "Multiplication"
-msgstr "Gamificació"
+msgstr "Multiplicació"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:159
-#, fuzzy
 msgid "Division"
-msgstr "Versió de l'editor"
+msgstr "Divisió"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:162
 msgid "Allow decimals in the results"
-msgstr ""
+msgstr "Permetre decimals als resultats"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:165
-#, fuzzy
 msgid "Allow negative results"
-msgstr "Mostra àrees actives"
+msgstr "Permetre resultats negatius"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:168
 msgid "Allow zero as result"
-msgstr ""
+msgstr "Permetre zero com resultat"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:217
 msgid "Please specify the number of operations"
-msgstr ""
+msgstr "Especifiqueu el nombre d'operacions"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:225
 msgid "Please define the minimal value of the operand"
-msgstr ""
+msgstr "Definiu el valor mínim de l'operand"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:235
 msgid "Please define the highest value of the operand"
-msgstr ""
+msgstr "Definiu el valor màxim de l'operand"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:260
-#, fuzzy
 msgid "No operations selected"
-msgstr "sistema operatiu"
+msgstr "Sense operacions seleccionades"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:14
-#, fuzzy
 msgid "Math Problems"
-msgstr "problema d'eXe"
+msgstr "Problemes de matemàtiques"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:83
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:69
@@ -13347,76 +13341,74 @@ msgid "Sorry... The right answer is:"
 msgstr "Disculpeu... la resposta correcta és:"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:87
-#, fuzzy
 msgid "FeedBack"
-msgstr "Realimentació"
+msgstr "Retroalimentació"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:112
 msgid "Create random basic math problems."
-msgstr ""
+msgstr "Creeu problemes matemàtics bàsics de forma aleatòria."
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:114
 msgid "Solve the following math problems."
-msgstr ""
+msgstr "Resoleu el següents problemes matemàtics."
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:146
-#, fuzzy
 msgid "Problems"
-msgstr "problema d'eXe"
+msgstr "Problemes"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:151
-#, fuzzy
 msgid "Highest number:"
-msgstr "Qüestió número:"
+msgstr "Número màxim:"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:154
 msgid "Decimals:"
-msgstr ""
+msgstr "Decimals:"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:156
 msgid "No decimals"
-msgstr ""
+msgstr "Sense decimals"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:167
-#, fuzzy
 msgid "Formula"
-msgstr "Reformata"
+msgstr "Formula"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:171
-#, fuzzy
 msgid "Question text:"
-msgstr "Text del botó:"
+msgstr "Text de la pregunta:"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:172
 msgid ""
 "Calculate in square metres the surface of a triangle with a base of {b}m "
 "and a height of {h}m"
 msgstr ""
+"Calcula en metres quadrats la superfície d'un triangle amb una base de {b} m"
+" i una altura de {h} m"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:175
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:177
 msgid "Feedback (optional)"
-msgstr ""
+msgstr "Retroalimentació (opcional)"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:179
 msgid "Use the Feedback to add an explanation or the right formula."
 msgstr ""
+"Useu la retroalimentació per afegir una explicació a la formula correcta."
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:416
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:418
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:431
 msgid "Only the Feedback is optional"
-msgstr ""
+msgstr "Sols la retroalimentació és opcional"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:420
-#, fuzzy
 msgid "Please write the question text"
-msgstr "Escriviu el text del botó."
+msgstr "Escriviu el text de la pregunta"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:437
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:440
 msgid "The question text and the formula should have the same variables"
 msgstr ""
+"El text de la pregunta i la formula haurien de tindre les mateixes variables"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:14
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:90
@@ -13514,6 +13506,8 @@ msgid ""
 "Create activities in which students see a video, image or text and they "
 "have to choose the right answer."
 msgstr ""
+"Creeu activitats en les quals els alumnes miren un vídeo, imatge, o text i"
+" cal que triïn la resposta correcta. "
 
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:746
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:882
@@ -13592,9 +13586,8 @@ msgid "Hide word wheel"
 msgstr "Amaga la roda de paraules"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:73
-#, fuzzy
 msgid "Digital blackboard"
-msgstr "diccionari digital "
+msgstr "Pissarra digital"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:94
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:678
@@ -13631,6 +13624,8 @@ msgid ""
 "Create activities in which students are given a definition and they have "
 "to guess the word that starts with a letter or contains a letter."
 msgstr ""
+"Creeu activitats en les quals els alumnes donada una definició, cal que triïn"
+" el mot que comenci amb al lletra o contingui la lletra senyalada."
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:121
 msgid "Game time (seconds)"
@@ -13675,7 +13670,8 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:580
 msgid "Indicate a valid URL of an audio or select one from your device"
-msgstr "Indica una URL vàlida d'un àudio o selecciona'n una del vostre dispositiu"
+msgstr ""
+"Indica una URL vàlida d'un àudio o selecciona'n una del vostre dispositiu"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:582
 msgid "Hide image"
@@ -13925,6 +13921,8 @@ msgid ""
 "Create activities with multiple choice questions or questions in which "
 "you have to put the answers in the right order."
 msgstr ""
+"Creeu activitats amb preguntes de resposta multiple o preguntes en les quals"
+" cal que poseu les respostes en l'ordre correcte."
 
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:855
 msgid "Choose the right answers and click on the Check button."
@@ -13962,40 +13960,36 @@ msgstr "Vés a"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:13
 msgid "Word Search"
-msgstr ""
+msgstr "Sopa de lletres"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:58
 #, python-format
 msgid "You found all the words. Your score is %s."
-msgstr ""
+msgstr "Heu trobat tots els mots. La vostra puntuació és %s."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:127
-#, fuzzy
 msgid "Only one Word Search game per page."
-msgstr "Sols un vídeo interactiu per pàgina."
+msgstr "Sols pot haver un joc Sopa de lletres per pàgina."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:135
 msgid "Create word search games with additional text, images or sound."
-msgstr ""
+msgstr "Creeu jocs de sopa de lletres amb text addicional, imatges o sons."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:137
 msgid "Find the hidden words."
-msgstr ""
+msgstr "Trobeu els mots ocults."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:149
-#, fuzzy
 msgid "Show \"Solve\" button."
-msgstr "Mostra les solucions"
+msgstr "Mostra el botó «solució»."
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:153
-#, fuzzy
 msgid "Diagonal"
-msgstr "diagrama "
+msgstr "Diagonal"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:154
-#, fuzzy
 msgid "Inverse"
-msgstr "investiga "
+msgstr "Inversa"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:200
 #: exe/webui/tools/style-designer/langs/all.js:35
@@ -14038,7 +14032,8 @@ msgstr "Jugueu vosaltres. Tireu el dau."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:79
 msgid "Your score will be automatically saved after each throw."
-msgstr "La vostra puntuació es desarà automàticament després de cada llançament. "
+msgstr ""
+"La vostra puntuació es desarà automàticament després de cada llançament. "
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:80
 msgid "You can only play once."
@@ -14065,13 +14060,15 @@ msgid "You must indicate a name for all the selected topics."
 msgstr "Cal que indiqueu un nom per a tots els temes seleccionats. "
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:127
-msgid "You must complete all the questions of all the selected topics correctly."
+msgid ""
+"You must complete all the questions of all the selected topics correctly."
 msgstr ""
 "Cal que completeu correctament totes les preguntes de tots els temes "
 "seleccionats. "
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:128
-msgid "Roll the dice and answer the question until you complete all the cheeses."
+msgid ""
+"Roll the dice and answer the question until you complete all the cheeses."
 msgstr ""
 "Tireu els daus i responeu a les preguntes fins a completar tots els "
 "formatges. "
@@ -14092,6 +14089,8 @@ msgid ""
 "Create an educational board game with different question types (test, "
 "order, definition) of different categories. From 1 to 4 players or teams."
 msgstr ""
+"Creeu un joc de taula educatiu amb preguntes de diferents tipus (test,"
+" ordena, definició) o categories diferents. Des de 1 a 4 jugadors o equips."
 
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:727
 msgid "Number of topics"
@@ -14395,7 +14394,7 @@ msgstr "Jocs amb vídeos locals o àudios no es poden exportar"
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:608
 msgid "Create activities consisting on a video with interactive questions."
-msgstr ""
+msgstr "Creeu activitats consistents en vídeos amb preguntes interactives."
 
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:656
 msgid "Navigable"
@@ -14439,7 +14438,8 @@ msgid "Heading 2"
 msgstr "Encapçalament 2"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:5
-msgid "Currently not supported by your browser, use keyboard shortcuts instead."
+msgid ""
+"Currently not supported by your browser, use keyboard shortcuts instead."
 msgstr ""
 "El vostre navegador actualment no ho admet, utilitzeu les dreceres de "
 "teclat."
@@ -15376,7 +15376,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:32
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:91
-msgid "Collapsible content panels for presenting information in a limited space."
+msgid ""
+"Collapsible content panels for presenting information in a limited space."
 msgstr ""
 "Plafons de contingut col·lapsable per presentar informació en un espai "
 "limitat."
@@ -15448,7 +15449,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:115
 msgid "All blocks must start with a second level title (Heading 2)."
-msgstr "Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
+msgstr ""
+"Tots els blocs han de començar amb títol de segon nivell (encapçalament 2)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:116
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exeeffects/plugin.min.js:160
@@ -15512,7 +15514,8 @@ msgstr "Aquestos jocs requereixen javaScript."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:132
 msgid "This is the message that the users with no JavaScript will see:"
-msgstr "Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
+msgstr ""
+"Aquest és el missatge que els usuaris que no tenen  JavaScript veuran: "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:139
 msgid "Please enable JavaScript to play this game."
@@ -15528,7 +15531,8 @@ msgstr "Escriu la llista de lletres i/o números per triar."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:160
 msgid "You may include capital letters or they can be automatically included."
-msgstr "Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
+msgstr ""
+"Podeu incloure majúscules o aquestes seran incloses de forma automàtica."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:161
 msgid "Choose if you want the game to be case sensitive."
@@ -15547,7 +15551,8 @@ msgid "Don't forget to check the Accessibility tab."
 msgstr "No oblideu comprovar la pestanya accessibilitat."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exegames_hangman/plugin.min.js:278
-msgid "Provide a warning to users who have JavaScript disabled (Accessibility)."
+msgid ""
+"Provide a warning to users who have JavaScript disabled (Accessibility)."
 msgstr ""
 "Proporciona un avís als usuaris amb  JavaScript deshabilitat "
 "(accessibilitat)."
@@ -15657,7 +15662,7 @@ msgstr "Selecciona el fitxer multimèdia a editar"
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1033
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1243
 msgid "Standard YouTube License"
-msgstr ""
+msgstr "Llicència estàndard de YouTube"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:525
 msgid "Detect automatically"
@@ -15729,7 +15734,8 @@ msgstr ""
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1344
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1414
 msgid "You are using and old code. Update it (required to edit)?"
-msgstr "Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
+msgstr ""
+"Esteu utilitzant codi antic. Voleu actualitzar-lo (requerit per edició)?"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:1402
 msgid ""
@@ -15905,6 +15911,8 @@ msgid ""
 "If you check the Properties - Export - Math content option you can just "
 "type LaTeX code directly into the editor instead of using this window."
 msgstr ""
+"Si marqueu l'opció Propietats - Exporta - Contingut matemàtic podreu escriure"
+" codi LaTex directament dins l'editor en lloc d'utilitzar aquesta finestra."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:243
 msgid "You should save a copy of the code before continuing."
@@ -15923,7 +15931,8 @@ msgid "Error (missing function):"
 msgstr "Error (funció perduda):"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:487
-msgid "The image could not be created. Insert the code without alternative image?"
+msgid ""
+"The image could not be created. Insert the code without alternative image?"
 msgstr ""
 "La imatge no s'ha pogut crear. Voleu inserir el codi sense una imatge "
 "alternativa?"
@@ -15937,6 +15946,8 @@ msgid ""
 "That is LaTeX code for an inline formula. If you need an alternative "
 "image, please use a block formula."
 msgstr ""
+"Això és codi LaTex per una formula en línia. Si necessiteu una imatge"
+" alternativa useu una formula bloc."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:574
 msgid ""
@@ -15958,9 +15969,8 @@ msgid "Choose what to use:"
 msgstr "Tria que vols usar:"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:690
-#, fuzzy
 msgid "Use MathJax from mathjax.org (online only)"
-msgstr "Usa MathJax des de mathjax.org (sols en línia) o la vostra còpia"
+msgstr "Useu MathJax des de mathjax.org (sols en línia)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:707
 msgid ""
@@ -15971,9 +15981,8 @@ msgstr ""
 "eXeMathEditor"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:727
-#, fuzzy
 msgid "Include alternative image"
-msgstr "Inclou imatges alternatives (recomanat)"
+msgstr "Incloeu imatges alternatives"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:736
 msgid "Image title (alternative text):"
@@ -16011,7 +16020,8 @@ msgstr ""
 msgid ""
 "With no image and no MathJax some users might not be able to see the "
 "formula."
-msgstr "Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
+msgstr ""
+"Sense imatge i sense MathJax alguns usuaris no podran veure la formula."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:760
 msgid ""
@@ -16031,7 +16041,8 @@ msgstr ""
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:762
 msgid "If JavaScript is disabled, both (code and image) will be visible."
-msgstr "Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
+msgstr ""
+"Si JavaScript està deshabilitat, ambdós (codi i imatge) seran visibles."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/pastemath/plugin.min.js:764
 msgid "Remember that..."
@@ -16671,7 +16682,8 @@ msgstr "Què és eXeLearning?"
 
 #: exe/webui/tools/assistant/langs/all.js:15
 msgid "eXeLearning Is an open source program to create educational contents."
-msgstr "eXeLearning és un programa de codi obert per a crear continguts educatius."
+msgstr ""
+"eXeLearning és un programa de codi obert per a crear continguts educatius."
 
 #: exe/webui/tools/assistant/langs/all.js:16
 msgid "With eXeLearning you can:"
@@ -17352,7 +17364,8 @@ msgstr "Aquest codi es mostrarà al final de content.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:118
 msgid "content.css is included any time you export, and always after base.css."
-msgstr "content.css està inclòs sempre que exporteu, i sempre després de base.css"
+msgstr ""
+"content.css està inclòs sempre que exporteu, i sempre després de base.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:119
 msgid "This code will be included at the end of nav.css"
@@ -17376,7 +17389,8 @@ msgstr "Contingut de nav.css"
 
 #: exe/webui/tools/style-designer/langs/all.js:123
 msgid "The shadows won't work in browsers with no CSS3 support (IE6, IE7...)."
-msgstr "Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
+msgstr ""
+"Les ombres no funcionaran en navegadors sense suport CSS3  (IE6, IE7...)."
 
 #: exe/webui/tools/style-designer/langs/all.js:129
 #, python-format
@@ -17405,7 +17419,8 @@ msgstr "Nom de l'estil:"
 
 #: exe/webui/tools/style-designer/langs/all.js:136
 msgid "The Hide/Show menu option is disabled in the Style Designer"
-msgstr "L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils"
+msgstr ""
+"L'opció del menú Mostra/Amaga està deshabilitada al dissenyador d'estils"
 
 #: exe/webui/tools/style-designer/langs/all.js:137
 msgid ""
@@ -17576,106 +17591,3 @@ msgstr ""
 "Els  idevices del vostre fitxer generic.data o paquet que esteu carregant"
 " han estat creats amb un versió més nova de eXe. Si-us-plau actualitzeu "
 "eXe i torneu-ho a provar."
-
-#~ msgid "Add Previous/Next links within SCOs?"
-#~ msgstr "Afegeix els enllaços següents/previs dins dels SCOs ?"
-
-#~ msgid ""
-#~ "Checking this box will cause eXe "
-#~ "to add Previous and Next links to"
-#~ " individual pages within your SCO. "
-#~ "The LMS will also still add this"
-#~ " kind of functionality."
-#~ msgstr ""
-#~ "Activant aquesta opció provocarà que eXe"
-#~ " afegeixi els enllaços previs/següents cap"
-#~ " a pàgines individuals dins dels SCO."
-#~ " Els LMS pot afegir  aquest tipus "
-#~ "de funcionalitat."
-
-#~ msgid ""
-#~ "Checking this box will cause eXe "
-#~ "to add Previous and Next links to"
-#~ " individual pages within your SCO.  "
-#~ "This requires a non-standard extension"
-#~ " to SCORM 1.2 and is only known"
-#~ " to work with some versions of "
-#~ "Moodle."
-#~ msgstr ""
-#~ "Activant aquesta opció provocarà que eXe"
-#~ " afegeixi els enllaços previs/següents cap"
-#~ " a pàgines individuals dins dels SCO."
-#~ " Això requereix una extensió no "
-#~ "estàndard SCORM 1.2 i és conegut "
-#~ "que sols funcionarà en algunes versions"
-#~ " de Moodle. "
-
-#~ msgid "Click on the elements of the left panel to add content."
-#~ msgstr "Premeu sobre els elements al plafó de l'esquerra per afegir contingut."
-
-#~ msgid "'License'"
-#~ msgstr "«Llicència»"
-
-#~ msgid "Trivial"
-#~ msgstr "Trivial"
-
-#~ msgid "Modo pizarra digital"
-#~ msgstr ""
-
-#~ msgid "It can only be one Word Search game per page."
-#~ msgstr ""
-
-#~ msgid "Completa"
-#~ msgstr "competeix "
-
-#~ msgid "Fuente"
-#~ msgstr "Centre"
-
-#~ msgid "Fondo"
-#~ msgstr "Desfés"
-
-#~ msgid "Standard Youtube License"
-#~ msgstr ""
-
-#~ msgid "Selecciona"
-#~ msgstr "Reflexió"
-
-#~ msgid ""
-#~ "eXeLearning is a **free** and open "
-#~ "source editor to create **educational** "
-#~ "resources in an **simple | easy** "
-#~ "way. It's available for available for"
-#~ " different **operating** systems."
-#~ msgstr ""
-
-#~ msgid "Tarjetas"
-#~ msgstr "Inicia"
-
-#~ msgid ""
-#~ "Create basic math operation games "
-#~ "(addition, subtraction, multiplication, division)."
-#~ " The student will have to guess "
-#~ "the result, operator or and operand."
-#~ msgstr ""
-
-#~ msgid "Use the Feedback to add an explanation or the right formula&hellip;"
-#~ msgstr ""
-
-#~ msgid "Identifica"
-#~ msgstr "Identificador"
-
-#~ msgid "TriviExt"
-#~ msgstr "text"
-
-#~ msgid "Time(minutes)"
-#~ msgstr "Minuts"
-
-#~ msgid "Game mode"
-#~ msgstr "Mode avançat"
-
-#~ msgid "Card"
-#~ msgstr "Enregistra"
-
-#~ msgid "Your finished all the operations."
-#~ msgstr ""
-
