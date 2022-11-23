@@ -40,6 +40,9 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New export option: "Export current page as SCORM". (#643)
     - Old "Add Previous/Next links within SCOs" export option removed. (#658)
     
+  * Ricardo Nutz
+    - Access to NTFS partitions with SNAP version.
+    
   * APSL
     - Package building.
     
