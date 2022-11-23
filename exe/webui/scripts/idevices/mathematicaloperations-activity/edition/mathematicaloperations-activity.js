@@ -143,7 +143,7 @@ var $exeDevice = {
                                     <option value="2">2</option>\
                                 </select>\
                             </label></p>\
-                            <p><strong>' + _("Operaciones:") + '</strong>\
+                            <p><strong>' + _("Operations:") + '</strong>\
                                 <label for="eRMQadd"><input id="eRMQadd" type="checkbox" /> ' + _("Addition") + '</label>\
                                 <label for="eRMQsubs"><input id="eRMQsubs" type="checkbox" /> ' + _("Subtraction") + '</label>\
                                 <label for="eRMQmult"><input id="eRMQmult" type="checkbox" checked /> ' + _("Multiplication") + '</label>\
