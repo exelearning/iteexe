@@ -158,7 +158,7 @@ var $exeDevice = {
                          <p><label for="eCQformula">' + _("Formula") + ':\
                             <input id="eCQformula" type="text" style="width:200px" value="{b}*{h}/2" />\
                          </label>\
-                         <span><strong>'+_("Math Operations")+': +  -  *  /  **  ()</strong></span>\
+                         <span><span class="sr-av">'+_("Operations:")+' </span><a href="https://www.w3schools.com/js/js_arithmetic.asp" target="_blank" rel="noopener" hreflang="en" title="+  -  *  /  **  ()">'+_("Help")+'</a> - <a href="https://www.w3schools.com/js/js_math.asp" target="_blank" rel="noopener" hreflang="en" title="JavaScript Math">'+_("More")+'</a></span>\
                          </p>\
                         <p>\
                             <label for="eCQwording">' + _("Question text:") + '</label>\
