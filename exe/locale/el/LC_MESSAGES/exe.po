@@ -13437,7 +13437,6 @@ msgid "Number of decimals (operands):"
 msgstr "Αριθμός δεκαδικών (τελεστέων):"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:155
-#, fuzzy
 msgid "Operations:"
 msgstr "Πράξεις:"
 
