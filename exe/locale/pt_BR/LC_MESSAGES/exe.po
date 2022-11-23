@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-18 11:42+0100\n"
+"POT-Creation-Date: 2022-11-23 10:22+0100\n"
 "PO-Revision-Date: 2007-12-07 18:03+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language: pt_BR\n"
@@ -5679,6 +5679,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:576
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:80
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1043
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:200
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:64
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:856
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:69
@@ -9122,7 +9123,7 @@ msgstr "Eliminar opção"
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:254
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:495
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:563
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:189
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:191
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:958
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1130
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:229
@@ -11139,7 +11140,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:248
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:489
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:556
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:183
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:185
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:952
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1124
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:223
@@ -11153,7 +11154,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:249
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:490
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:557
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:184
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:186
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:953
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1125
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:224
@@ -11168,7 +11169,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:250
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:491
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:558
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:185
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:187
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:954
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1126
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:225
@@ -11182,7 +11183,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:334
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:251
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:492
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:186
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:188
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:955
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1127
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:226
@@ -11196,7 +11197,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:252
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:493
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:561
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:187
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:189
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:956
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1128
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:227
@@ -11211,7 +11212,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:253
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:494
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:562
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:188
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:190
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:957
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1129
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:228
@@ -11226,7 +11227,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:255
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:496
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:564
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:190
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:192
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:959
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1131
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:230
@@ -11239,7 +11240,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:256
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:497
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:565
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:191
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:193
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:960
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1132
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:231
@@ -11252,7 +11253,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:257
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:498
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:566
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:192
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:194
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:961
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1133
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:232
@@ -11263,7 +11264,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:313
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:343
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:501
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:195
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:197
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:983
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1155
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:236
@@ -11277,7 +11278,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:676
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:854
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:472
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:875
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:877
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1444
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:97
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1652
@@ -12865,6 +12866,7 @@ msgid "Mapa"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:14
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:170
 #, fuzzy
 msgid "Math Operations"
 msgstr "Adicionar outra opção"
@@ -12937,7 +12939,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:155
 #, fuzzy
-msgid "Operaciones:"
+msgid "Operations:"
 msgstr "Propriedades"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:156
@@ -13028,38 +13030,38 @@ msgstr ""
 msgid "Formula"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:171
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:173
 #, fuzzy
 msgid "Question text:"
 msgstr "Questão:"
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:172
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:174
 msgid ""
 "Calculate in square metres the surface of a triangle with a base of {b}m "
 "and a height of {h}m"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:175
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:177
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:179
 msgid "Feedback (optional)"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:179
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:181
 msgid "Use the Feedback to add an explanation or the right formula."
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:416
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:418
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:431
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:420
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:433
 msgid "Only the Feedback is optional"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:420
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:422
 msgid "Please write the question text"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:437
-#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:440
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:439
+#: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:442
 msgid "The question text and the formula should have the same variables"
 msgstr ""
 
@@ -13629,11 +13631,6 @@ msgstr ""
 #, fuzzy
 msgid "Inverse"
 msgstr "Chinês"
-
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:200
-#: exe/webui/tools/style-designer/langs/all.js:35
-msgid "Author"
-msgstr ""
 
 #: exe/webui/scripts/idevices/text/edition/text.js:96
 msgid "Please write some information."
@@ -16686,6 +16683,10 @@ msgstr ""
 #, fuzzy
 msgid "Style description"
 msgstr "Descrição"
+
+#: exe/webui/tools/style-designer/langs/all.js:35
+msgid "Author"
+msgstr ""
 
 #: exe/webui/tools/style-designer/langs/all.js:37
 msgid "Author URL"
