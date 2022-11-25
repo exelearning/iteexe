@@ -29,7 +29,7 @@ intef-exe (3:2.8) lucid; urgency=medium
     - Rubric iDevice: Rubrics update + 6 new rubrics, by CEDEC. (#645)
     - prettyPhoto (Lightbox): Link in new windows in IFRAME (SCORM and IMS only) + i18n. (#653)
     - "Add a Text iDevice" button in the main area. (#642)
-    - Interactive Vídeo iDevice: Cover image (poster) (#646) + Bigger player. (#652)
+    - Interactive Video iDevice: Cover image (poster) (#646) + Bigger player. (#652) + Multiple-choice score error. (#659)
     - TinyMCE Media plugin: New "Standard YouTube License" option (#624) + IFRAME attribution problems fixed (#634).
     - TinyMCE Math plugin: Allow inline formulas (LaTeX code). (#651)
     - TinyMCE syntax highlighting options: Error handling (wrong values in the "Line highlight" field).

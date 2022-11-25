@@ -1711,6 +1711,10 @@ var interaction = {
 						rightAnswers ++;
 					}
 				}
+				if (selected.length>rightAnswers) {
+					error = true;
+					rightAnswered = 0;
+				}
 				if (rightAnswers>rightAnswered) error = true;
 				if (error) {
 					var extra = interaction.multipleChoice.getRightAnswer(questions);
