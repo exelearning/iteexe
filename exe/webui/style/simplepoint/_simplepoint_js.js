@@ -59,6 +59,14 @@ var myTheme = {
 		return false;
 	},
 	checkKey : function(e){
+		// Actions
+		var x = e || window.event;
+		var kC = x.keyCode;
+		if (kC=="116") {
+			// Presenter: t (end button)
+			e.preventDefault(); // 116 opens Firefox console
+			return;
+		}
 		// if ($(window).width()<750) return false;
 		// Links
 		var p = $("#topPagination");
@@ -74,33 +82,32 @@ var myTheme = {
 		if (nextLnk.length==1) nextURL = nextLnk.attr("href");		
 		
 		// Actions
-		var x = e || window.event;
-		if (x.keyCode=='38') {
-			// up arrow
+		if (kC=='38'||kC=='66') {
+			// up arrow (66 for presenter: b)
 			url = "index.html";
 			if (k=="show-nav") url += "?nav=false";
 			window.location=url;
-		} else if (x.keyCode=='40') {
-			// down arrow
+		} else if (kC=='40'||kC=='27'||kC=='16') {
+			// down arrow (27 and 16 for presenter: "\u001b" and "\u0010")
 			var lis = $("#siteNav a");
 			url = lis.eq(lis.length-1).attr("href");
 			if (k=="show-nav") url += "?nav=false";
 			window.location=url;
-		} else if (x.keyCode=='37') {
-			// left arrow
+		} else if (kC=='37' || kC=='33') {
+			// left arrow (33 for presenter: !)
 			if (prevURL!="" && !myTheme.isLightboxOpen()) window.location=prevURL;
-		} else if (x.keyCode=='32' || x.keyCode=='39') {
-			// space bar or right arrow
+		} else if (kC=='32' || kC=='39' || kC=='34') {
+			// space bar or right arrow (34 for presenter: ")
 			if (nextURL!="" && !myTheme.isLightboxOpen()) window.location=nextURL;
-		} else if (x.keyCode=='77') {
+		} else if (kC=='77') {
 			// m
 			if (k=="show-nav") myTheme.toggleMenu();
 			else myTheme.hideMenu();
-		} else if (x.keyCode=='107') {
+		} else if (kC=='107') {
 			// Steps: +
 			$(".presentation-slide").not(":visible").eq(0).fadeIn();
 			$("#steps-instructions").hide();
-		} else if (x.keyCode=='109') {
+		} else if (kC=='109') {
 			// Steps: -
 			var visibleSteps = $(".presentation-slide").not(":hidden");
 			if (visibleSteps.length>0) {
