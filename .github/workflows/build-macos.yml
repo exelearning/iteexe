@@ -23,7 +23,7 @@ jobs:
           brew install libtiff libjpeg webp little-cms2
           brew install libxml2
 
-      # For compatibility with macos <=10.14, we are using system 2.7.18 python.
+      # For compatibility with macos <=10.14, we are using system 2.7.18 python. 
       # With this version, openssl 1.0 system libs are backwards compatible.
       # Please look at versions previous  to 2022-07-01 if you need a different python version installed with pyenv,
       # or a newer openssl > 1.0.
