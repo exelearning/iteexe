@@ -42,7 +42,7 @@ jobs:
           pip install py2app==0.24
           pip install Pillow==5.3.0
           pip install zope.interface==5.5.2
-          pip install chardet==4.44
+          pip install chardet==4.0.0
           pip install GitPython==2.1.15
           pip install suds==0.4
           pip install requests==2.27.1
