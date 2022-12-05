@@ -33,7 +33,8 @@ var $exeDevice = {
     version: 2,
     iDevicePath: "/scripts/idevices/adivina-activity/edition/",
     playerAudio: "",
-    isVideoType:false,
+    isVideoType: false,
+    localPlayer: null,
     ci18n: {
         "msgHappen": _("Move on"),
         "msgReply": _("Reply"),
@@ -90,8 +91,8 @@ var $exeDevice = {
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
-		"msgCorrect": _("Correct"),
-		"msgIncorrect": _("Incorrect")
+        "msgCorrect": _("Correct"),
+        "msgIncorrect": _("Incorrect")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -109,7 +110,7 @@ var $exeDevice = {
         msgs.msgECompleteQuestion = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
+        msgs.msgECompleteURLYoutube = _("Please type or paste a valid URL.");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
@@ -117,13 +118,13 @@ var $exeDevice = {
         msgs.msgTypeChoose = _("Please check all the answers in the right order");
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
-        msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
+        msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Create activities in which given a definition the student has to complete the word filling in the gaps.")+' <a href="https://youtu.be/aKdBRClanYk" hreflang="es" rel="lightbox" target="_blank">'+_("Use Instructions")+'</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
+                <div class="exe-idevice-info">' + _("Create activities in which given a definition the student has to complete the word filling in the gaps.") + ' <a href="https://youtu.be/aKdBRClanYk" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
@@ -146,7 +147,7 @@ var $exeDevice = {
                                 <label for="adivinaECaseSensitive"><input type="checkbox" id="adivinaECaseSensitive"> ' + _("Case sensitive") + ' </label>\
                             </p>\
                             <p>\
-                                <strong class="GameModeLabel"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk" class="GameModeHelpLink" title="'+_("Help")+'"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="'+_("Help")+'"/></a> ' + _("Score") + ':</strong>\
+                                <strong class="GameModeLabel"><a href="#adivinaEGameModeHelp" id="adivinaEGameModeHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a> ' + _("Score") + ':</strong>\
                                 <input class="gameQE-TypeGame" checked="checked" id="adivinaETypeActivity" type="radio" name="qxtgamemode" value="1" />\
                                 <label for="adivinaETypeActivity">' + _("0 to 10") + '</label>\
                                 <input class="gameQE-TypeGame" id="adivinaEGameMode" type="radio" name="qxtgamemode" value="0" />\
@@ -156,9 +157,9 @@ var $exeDevice = {
                             </p>\
                             <div id="adivinaEGameModeHelp" class="gameQE-TypeGameHelp">\
                                 <ul>\
-                                    <li><strong>'+_("0 to 10")+': </strong>'+_("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.")+'</li>\
-                                    <li><strong>'+_("Points and lives")+': </strong>'+_("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.")+'</li>\
-                                    <li><strong>'+_("No score")+': </strong>'+_("No score and no lives. You have to answer right to get some information (a feedback).")+'</li>\
+                                    <li><strong>' + _("0 to 10") + ': </strong>' + _("No lives, 0 to 10 score, right/wrong answers counter... A more educational context.") + '</li>\
+                                    <li><strong>' + _("Points and lives") + ': </strong>' + _("Just like a game: Try to get a high score (thousands of points) and not to loose your lives.") + '</li>\
+                                    <li><strong>' + _("No score") + ': </strong>' + _("No score and no lives. You have to answer right to get some information (a feedback).") + '</li>\
                                 </ul>\
                             </div>\
                             <p>\
@@ -168,7 +169,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="adivinaEHasFeedBack"><input type="checkbox"  id="adivinaEHasFeedBack"> ' + _("Feedback") + '. </label> \
-                                <label for="adivinaEPercentajeFB"><input type="number" name="adivinaEPercentajeFB" id="adivinaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> '+_("&percnt; right to see the feedback")+' </label>\
+                                <label for="adivinaEPercentajeFB"><input type="number" name="adivinaEPercentajeFB" id="adivinaEPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + ' </label>\
                             </p>\
                             <p id="adivinaEFeedbackP" class="gameQE-EFeedbackP">\
                                 <textarea id="adivinaEFeedBackEditor" class="exe-html-editor"\></textarea>\
@@ -233,9 +234,9 @@ var $exeDevice = {
                                         <label for="adivinaEXImage">Y:</label>\
                                         <input id="adivinaEYImage" type="text" value="0" />\
                                 </div>\
-                                <span class="gameQE-ETitleVideo" id="adivinaETitleVideo">' + _("Youtube URL") + '</span>\
+                                <span class="gameQE-ETitleVideo" id="adivinaETitleVideo">' + _("URL") + '</span>\
                                 <div class="gameQE-Flex gameQE-EInputVideo" id="adivinaEInputVideo">\
-                                    <label class="sr-av" for="adivinaEURLYoutube">' + _("Youtube URL") + '</label>\
+                                    <label class="sr-av" for="adivinaEURLYoutube">' + _("URL") + '</label>\
                                     <input id="adivinaEURLYoutube" type="text" />\
                                     <a href="#" id="adivinaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + 'quextIEPlay.png"  alt="' + _("Play video") + '" class="gameQE-EButtonImage b-play" /></a>\
                                 </div>\
@@ -271,6 +272,7 @@ var $exeDevice = {
                                     <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png" id="adivinaEImage" alt="' + _("Image") + '" />\
                                     <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png" id="adivinaENoImage" alt="' + _("No image") + '" />\
                                     <div class="gameQE-EMedia" id="adivinaEVideo"></div>\
+                                    <video class="gameQE-EMedia" id = "adivinaEVideoLocal" preload="auto" controls><source src = ""></video>\
                                     <img class="gameQE-EMedia" src="' + path + 'quextIENoImageVideo.png"  id="adivinaENoImageVideo" alt="" />\
                                     <img class="gameQE-EMedia" src="' + path + 'quextIENoVideo.png" id="adivinaENoVideo" alt="" />\
                                     <img class="gameQE-ECursor" src="' + path + 'quextIECursor.gif" id="adivinaECursor" alt="" />\
@@ -321,7 +323,7 @@ var $exeDevice = {
 		    </div>\
 			';
         var field = $("textarea.jsContentEditor").eq(0)
-       // $exeDevice.loadYoutubeApi();
+        // $exeDevice.loadYoutubeApi();
         field.before(html);
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
@@ -346,21 +348,37 @@ var $exeDevice = {
             }
         });
     },
+    getDataVideoLocal: function (e) {
+        if ($exeDevice.videoType > 0) {
+            if ($exeDevice.duration > 0) {
+                $exeDevice.durationVideo = Math.floor($exeDevice.duration);
+                var endVideo = $exeDevice.hourToSeconds($('adivinaEEndVideo').val()) || 0;
+                if (endVideo < 1) {
+                    $('#adivinaEEndVideo').val($exeDevice.secondsToHour($exeDevice.durationVideo));
+                }
+            }
+        }
+    },
+    updateProgressBarLocal: function () {
+        if ($exeDevice.localPlayer) {
+            $('#progress-bar').val((Math.round($exeDevice.localPlayer.currentTime) / Math.round($exeDevice.localPlayer.duration)) * 100);
+        }
+    },
     enableForm: function (field) {
         $exeDevice.initQuestions();
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
     },
-    updateQuestionsNumber: function(){
-        var percentaje=parseInt($exeDevice.removeTags($('#adivinaEPercentajeQuestions').val()));
-        if(isNaN(percentaje)){
+    updateQuestionsNumber: function () {
+        var percentaje = parseInt($exeDevice.removeTags($('#adivinaEPercentajeQuestions').val()));
+        if (isNaN(percentaje)) {
             return;
         }
-        percentaje=percentaje<1?1:percentaje;
-        percentaje=percentaje>100?100:percentaje;
-        var num=Math.round((percentaje*$exeDevice.wordsGame.length)/100);
-        num=num==0?1:num;
-        $('#adivinaENumeroPercentaje').text( num+"/"+$exeDevice.wordsGame.length)
+        percentaje = percentaje < 1 ? 1 : percentaje;
+        percentaje = percentaje > 100 ? 100 : percentaje;
+        var num = Math.round((percentaje * $exeDevice.wordsGame.length) / 100);
+        num = num == 0 ? 1 : num;
+        $('#adivinaENumeroPercentaje').text(num + "/" + $exeDevice.wordsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
@@ -391,13 +409,17 @@ var $exeDevice = {
             $exeDevice.tSilentVideo = p.tSilentVideo;
             $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
             $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
-            if( typeof YT =="undefined"){
-                $exeDevice.isVideoType=true;
-                $exeDevice.loadYoutubeApi();
-            }else{
+            if ($exeDevice.getIDYoutube(p.url)) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoQuestion();
+                }
+            } else if ($exeDevice.getURLVideoMediaTeca(p.url)) {
                 $exeDevice.showVideoQuestion();
             }
-            
+
         } else if (p.type == 3) {
             tinyMCE.get('adivinaEText').setContent(unescape(p.eText));
         }
@@ -425,6 +447,7 @@ var $exeDevice = {
             $exeDevice.wordsGame.push(question);
             this.changeTypeQuestion(0)
         }
+        this.localPlayer = document.getElementById('adivinaEVideoLocal');
         this.active = 0;
     },
 
@@ -444,6 +467,7 @@ var $exeDevice = {
         }
         $('#adivinaEText').hide();
         $('#adivinaEVideo').hide();
+        $('#adivinaEVideoLocal').hide();
         $('#adivinaEImage').hide();
         $('#adivinaENoImage').hide();
         $('#adivinaECover').hide();
@@ -510,7 +534,7 @@ var $exeDevice = {
         });
     },
     onPlayerReady: function (event) {
-        if ($exeDevice.isVideoType){
+        if ($exeDevice.isVideoType) {
             $exeDevice.showVideoQuestion();
         }
     },
@@ -526,6 +550,34 @@ var $exeDevice = {
             }
         }
     },
+    updateSoundVideoLocal: function () {
+        if ($exeDevice.activeSilent) {
+            if ($exeDevice.localPlayer) {
+                if ($exeDevice.localPlayer.currentTime) {
+                    var time = Math.round($exeDevice.localPlayer.currentTime);
+                    if (time == $exeDevice.silentVideo) {
+                        $exeDevice.localPlayer.muted = true;
+                    } else if (time == $exeDevice.endSilent) {
+                        $exeDevice.localPlayer.muted = false;
+                    }
+                }
+            }
+        }
+    },
+    updateTimerDisplayLocal: function () {
+        if ($exeDevice.localPlayer) {
+            var currentTime = $exeDevice.localPlayer.currentTime;
+            if (currentTime) {
+                var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                $('#adivinaEVideoTime').text(time);
+                $exeDevice.updateSoundVideoLocal();
+                if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                    $exeDevice.localPlayer.pause();
+                    $exeDevice.pointEnd = 100000;
+                }
+            }
+        }
+    },
     updateTimerDisplay: function () {
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.getCurrentTime === "function") {
@@ -534,7 +586,6 @@ var $exeDevice = {
                 $exeDevice.updateSoundVideo();
             }
         }
-        //$('#duration').text(formatTime( player.getDuration() ));
     },
     updateTimerVIDisplay: function () {
         if ($exeDevice.playerIntro) {
@@ -551,8 +602,22 @@ var $exeDevice = {
     onPlayerError: function (event) {
         //$exeDevice.showMessage("El video adivinaEdo no está disponible")
     },
-    startVideo: function (id, start, end) {
+    startVideo: function (id, start, end, type) {
         var mstart = start < 1 ? 0.1 : start;
+        if (type > 0) {
+            if ($exeDevice.localPlayer) {
+                $exeDevice.pointEnd = end;
+                $exeDevice.localPlayer.src = id
+                $exeDevice.localPlayer.currentTime = parseFloat(start)
+                $exeDevice.localPlayer.play();
+            }
+            $('#adivinaEVideoTime').show();
+            clearInterval($exeDevice.timeUpdateInterval);
+            $exeDevice.timeUpdateInterval = setInterval(function () {
+                $exeDevice.updateTimerDisplayLocal();
+            }, 1000);
+            return
+        }
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.loadVideoById === "function") {
                 $exeDevice.player.loadVideoById({
@@ -567,19 +632,14 @@ var $exeDevice = {
             }, 1000);
         }
     },
-    playVideo: function () {
-        if ($exeDevice.player) {
-            clearInterval($exeDevice.timeUpdateInterval);
-            if (typeof $exeDevice.player.playVideo === "function") {
-                $exeDevice.player.playVideo();
-            }
-            $exeDevice.timeUpdateInterval = setInterval(function () {
-                $exeDevice.updateTimerDisplay();
-            }, 1000);
-        }
-    },
-    stopVideo: function () {
 
+    stopVideo: function () {
+        if ($exeDevice.localPlayer) {
+            clearInterval($exeDevice.timeUpdateInterval);
+            if (typeof $exeDevice.localPlayer.pause == "function") {
+                $exeDevice.localPlayer.pause();
+            }
+        }
         if ($exeDevice.player) {
             clearInterval($exeDevice.timeUpdateInterval);
             if (typeof $exeDevice.player.pauseVideo === "function") {
@@ -588,6 +648,13 @@ var $exeDevice = {
         }
     },
     muteVideo: function (mute) {
+        if ($exeDevice.localPlayer) {
+            if (mute) {
+                $exeDevice.localPlayer.muted = true;
+            } else {
+                $exeDevice.localPlayer.muted = false;
+            }
+        }
         if ($exeDevice.player) {
             if (mute) {
                 if (typeof $exeDevice.player.mute === "function") {
@@ -622,7 +689,6 @@ var $exeDevice = {
         p.tSilentVideo = 0;
         p.msgHit = '';
         p.msgError = '';
-
         return p;
     },
     loadPreviousValues: function (field) {
@@ -632,16 +698,15 @@ var $exeDevice = {
             wrapper.html(originalHTML);
             var json = $('.adivina-DataGame', wrapper).text(),
                 version = $('.adivina-version', wrapper).text();
-
             if (version.length == 1) {
                 json = $exeDevice.Decrypt(json);
             }
             var dataGame = $exeDevice.isJsonString(json),
                 $imagesLink = $('.adivina-LinkImages', wrapper),
                 $audiosLink = $('.adivina-LinkAudios', wrapper);
-            dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
+            dataGame.modeBoard = typeof dataGame.modeBoard == "undefined" ? false : dataGame.modeBoard;
             version = version == '' ? 0 : parseInt(version);
-            var hasYoutube=false;
+            var hasYoutube = false;
             for (var i = 0; i < dataGame.wordsGame.length; i++) {
                 var p = dataGame.wordsGame[i];
                 if (version < 2) {
@@ -657,11 +722,10 @@ var $exeDevice = {
                     p.eText = '';
                     p.audio = '';
                 }
-                if(i>0 && p.type==2){
-                    hasYoutube=true;
+                if (i > 0 && p.type == 2) {
+                    hasYoutube = true;
                 }
                 dataGame.wordsGame[i] = p;
-                
             }
 
             $imagesLink.each(function () {
@@ -714,14 +778,14 @@ var $exeDevice = {
                 }
             }
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
-            if(hasYoutube){
+            if (hasYoutube) {
                 $exeDevice.loadYoutubeApi();
             }
             $exeDevice.showQuestion(0);
-           
+
         }
     },
-    getIndexTime: function(tm) {
+    getIndexTime: function (tm) {
         var tms = [15, 30, 60, 180, 300, 600, 900],
             itm = tms.indexOf(tm);
         itm = itm < 0 ? 1 : itm;
@@ -793,8 +857,9 @@ var $exeDevice = {
         html += linksAudios;
         var textAfter = tinyMCE.get('eXeIdeviceTextAfter').getContent();
         if (textAfter != "") {
-            html += '<div class="adivina-extra-content">' + textAfter + '</div>';        }
-        html += '<div class="adivina-bns js-hidden">' +$exeDevice.msgs.msgNoSuportBrowser + '</div>';
+            html += '<div class="adivina-extra-content">' + textAfter + '</div>';
+        }
+        html += '<div class="adivina-bns js-hidden">' + $exeDevice.msgs.msgNoSuportBrowser + '</div>';
         html += '</div>';
         return html;
     },
@@ -843,6 +908,9 @@ var $exeDevice = {
         $exeDevice.stopVideo();
         if (p.type == 2) {
             p.url = $exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim()) ? $('#adivinaEURLYoutube').val() : '';
+            if (p.url == '') {
+                p.url = $exeDevice.getURLVideoMediaTeca($('#adivinaEURLYoutube').val().trim()) ? $('#adivinaEURLYoutube').val() : '';
+            }
         }
         p.soundVideo = $('#adivinaECheckSoundVideo').is(':checked') ? 1 : 0;
         p.imageVideo = $('#adivinaECheckImageVideo').is(':checked') ? 1 : 0;
@@ -907,7 +975,7 @@ var $exeDevice = {
             percentajeFB = parseInt(clear($('#adivinaEPercentajeFB').val())),
             gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
             customMessages = $('#adivinaECustomMessages').is(':checked'),
-            percentajeQuestions=parseInt(clear($('#adivinaEPercentajeQuestions').val()));
+            percentajeQuestions = parseInt(clear($('#adivinaEPercentajeQuestions').val()));
 
         if (showSolution && timeShowSolution.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
@@ -933,7 +1001,7 @@ var $exeDevice = {
             } else if ((mquestion.type == 1) && (mquestion.url.length < 4)) {
                 $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                 return false;
-            } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url))) {
+            } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url)) && !($exeDevice.getURLVideoMediaTeca(mquestion.url))) {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return false;
             }
@@ -963,8 +1031,8 @@ var $exeDevice = {
             'percentajeFB': percentajeFB,
             'version': 2,
             'customMessages': customMessages,
-            'percentajeQuestions':percentajeQuestions,
-            'modeBoard':modeBoard
+            'percentajeQuestions': percentajeQuestions,
+            'modeBoard': modeBoard
         }
         return data;
     },
@@ -975,7 +1043,7 @@ var $exeDevice = {
         $cursor.hide();
         $image.attr('alt', alt);
         $('#adivinaENoImage').show();
-        url=$exeDevice.extractURLGD(url);
+        url = $exeDevice.extractURLGD(url);
         $image.prop('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -994,9 +1062,9 @@ var $exeDevice = {
     },
 
     playSound: function (selectedFile) {
-        var selectFile=$exeDevice.extractURLGD(selectedFile);
+        var selectFile = $exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", function(event){
+        $exeDevice.playerAudio.addEventListener("canplaythrough", function (event) {
             $exeDevice.playerAudio.play();
         });
     },
@@ -1092,17 +1160,18 @@ var $exeDevice = {
         });
         $('#adivinaEPlayVideo').on('click', function (e) {
             e.preventDefault();
-            if (!$exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())){
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if( typeof YT =="undefined"){
-                $exeDevice.isVideoType=true;
-                $exeDevice.loadYoutubeApi();
-            }else{
+            if ($exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoQuestion();
+                }
+            } else if ($exeDevice.getURLVideoMediaTeca($('#adivinaEURLYoutube').val().trim())) {
                 $exeDevice.showVideoQuestion();
+            } else {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             }
-
         });
         $('#adivinaEPlayAudio').on('click', function (e) {
             e.preventDefault();
@@ -1113,27 +1182,31 @@ var $exeDevice = {
             }
         });
         $(' #adivinaECheckSoundVideo').on('change', function () {
-            if (!$exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())){
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if( typeof YT =="undefined"){
-                $exeDevice.isVideoType=true;
-                $exeDevice.loadYoutubeApi();
-            }else{
+            if ($exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoQuestion();
+                }
+            } else if ($exeDevice.getURLVideoMediaTeca($('#adivinaEURLYoutube').val().trim())) {
                 $exeDevice.showVideoQuestion();
+            } else {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             }
         });
         $('#adivinaECheckImageVideo').on('change', function () {
-            if (!$exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())){
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if( typeof YT =="undefined"){
-                $exeDevice.isVideoType=true;
-                $exeDevice.loadYoutubeApi();
-            }else{
+            if ($exeDevice.getIDYoutube($('#adivinaEURLYoutube').val().trim())) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoQuestion();
+                }
+            } else if ($exeDevice.getURLVideoMediaTeca($('#adivinaEURLYoutube').val().trim())) {
                 $exeDevice.showVideoQuestion();
+            } else {
+                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             }
         });
         $('#adivinaEUseLives').on('change', function () {
@@ -1307,7 +1380,7 @@ var $exeDevice = {
 
         $('#adivinaEURLAudio').on('change', function () {
             var selectedFile = $(this).val().trim();
-            if (selectedFile.length==0) {
+            if (selectedFile.length == 0) {
                 $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
             } else {
                 if (selectedFile.length > 4) {
@@ -1331,7 +1404,7 @@ var $exeDevice = {
                 ul = $('#adivinaEUseLives').is(':checked');
             $exeDevice.updateGameMode(gm, fb, ul);
         });
-        $("#adivinaEGameModeHelpLnk").click(function(){
+        $("#adivinaEGameModeHelpLnk").click(function () {
             $("#adivinaEGameModeHelp").toggle();
             return false;
 
@@ -1345,7 +1418,7 @@ var $exeDevice = {
             v = v.replace(/\D/g, '');
             v = v.substring(0, 3);
             this.value = v;
-            if(this.value>0 && this.value<101){
+            if (this.value > 0 && this.value < 101) {
                 $exeDevice.updateQuestionsNumber();
             }
         });
@@ -1363,14 +1436,14 @@ var $exeDevice = {
                 var num = parseInt($(this).val());
                 if (!isNaN(num) && num > 0) {
                     if ($exeDevice.validateQuestion() != false) {
-                        $exeDevice.active= num < $exeDevice.wordsGame.length ? num-1 : $exeDevice.wordsGame.length-1;
+                        $exeDevice.active = num < $exeDevice.wordsGame.length ? num - 1 : $exeDevice.wordsGame.length - 1;
                         $exeDevice.showQuestion($exeDevice.active);
 
-                    }else{
-                        $(this).val($exeDevice.active+1)
+                    } else {
+                        $(this).val($exeDevice.active + 1)
                     }
-                }else{
-                    $(this).val($exeDevice.active+1)
+                } else {
+                    $(this).val($exeDevice.active + 1)
                 }
 
             }
@@ -1417,13 +1490,15 @@ var $exeDevice = {
         }
     },
 
-    showVideoQuestion: function () {    
+    showVideoQuestion: function () {
         var soundVideo = $('#adivinaECheckSoundVideo').is(':checked') ? 1 : 0,
             imageVideo = $('#adivinaECheckImageVideo').is(':checked') ? 1 : 0,
             iVideo = $exeDevice.hourToSeconds($('#adivinaEInitVideo').val()),
             fVideo = $exeDevice.hourToSeconds($('#adivinaEEndVideo').val()),
             url = $('#adivinaEURLYoutube').val().trim(),
-            id = $exeDevice.getIDYoutube(url);
+            id = $exeDevice.getIDYoutube(url),
+            idLocal = $exeDevice.getURLVideoMediaTeca(url),
+            type = id ? 0 : 1;
         $exeDevice.silentVideo = $exeDevice.hourToSeconds($('#adivinaESilenceVideo').val().trim());
         $exeDevice.tSilentVideo = parseInt($('#adivinaETimeSilence').val());
         $exeDevice.activeSilent = (soundVideo == 1) && ($exeDevice.tSilentVideo > 0) && ($exeDevice.silentVideo >= iVideo) && (iVideo < fVideo);
@@ -1432,13 +1507,22 @@ var $exeDevice = {
         $('#adivinaENoImageVideo').hide();
         $('#adivinaENoVideo').show();
         $('#adivinaEVideo').hide();
-        if (id) {
-            $exeDevice.startVideo(id, iVideo, fVideo);
-            $('#adivinaEVideo').show();
+        $('#adivinaEVideoLocal').hide();
+        if (id || idLocal) {
+            if (id) {
+                $exeDevice.startVideo(id, iVideo, fVideo, 0);
+            } else {
+                $exeDevice.startVideo(idLocal, iVideo, fVideo, 1);
+            }
             $('#adivinaENoVideo').hide();
             if (imageVideo == 0) {
-                $('#adivinaEVideo').hide();
                 $('#adivinaENoImageVideo').show();
+            } else {
+                if (type == 0) {
+                    $('#adivinaEVideo').show();
+                } else {
+                    $('#adivinaEVideoLocal').show();
+                }
             }
             if (soundVideo == 0) {
                 $exeDevice.muteVideo(true)
@@ -1613,7 +1697,7 @@ var $exeDevice = {
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
-        
+
         var version = typeof game.version == 'undefined' ? 0 : game.version;
         for (var i = 0; i < game.wordsGame.length; i++) {
             var p = game.wordsGame[i];
@@ -1631,7 +1715,7 @@ var $exeDevice = {
                 p.audio = '';
             }
             p.msgHit = typeof p.msgHit == "undefined" ? "" : p.msgHit;
-            p.msgError = typeof p.msgError == "undefined" ? "" :p.msgError;
+            p.msgError = typeof p.msgError == "undefined" ? "" : p.msgError;
             p.time = p.time < 0 ? 0 : p.time;
             p.audio = typeof p.audio == "undefined" ? '' : p.audio;
             game.wordsGame[i] = p;
@@ -1690,7 +1774,7 @@ var $exeDevice = {
         tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
         tinyMCE.get('adivinaEFeedBackEditor').setContent(unescape(textFeedBack));
         $('.exe-form-tabs li:first-child a').click();
-        $exeDevice.active=0;
+        $exeDevice.active = 0;
         $exeDevice.showQuestion($exeDevice.active);
     },
     importAdivina: function (game) {
@@ -1797,10 +1881,47 @@ var $exeDevice = {
         wrapper.html(str);
         return wrapper.text();
     },
+    getURLVideoMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'http://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
     extractURLGD: function (urlmedia) {
-        var sUrl=urlmedia;
-        if(typeof urlmedia!="undefined" && urlmedia.length>0 && urlmedia.toLowerCase().indexOf("https://drive.google.com")==0 && urlmedia.toLowerCase().indexOf("sharing")!=-1){
+        var sUrl = urlmedia;
+        if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        }else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $exeDevice.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $exeDevice.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;
     }

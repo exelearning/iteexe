@@ -170,9 +170,9 @@ var $eXeAdivina = {
             if (mOptions.player && typeof mOptions.player.getCurrentTime === "function") {
                 var time = Math.round(mOptions.player.getCurrentTime());
                 if (time == mOptions.question.silentVideo) {
-                    mOptions.player.mute(instance);
+                    mOptions.player.mute();
                 } else if (time == mOptions.endSilent) {
-                    mOptions.player.unMute(instance);
+                    mOptions.player.unMute();
                 }
             }
         }
@@ -194,7 +194,9 @@ var $eXeAdivina = {
         mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
         for (var i = 0; i < mOptions.wordsGame.length; i++) {
             var p = mOptions.wordsGame[i];
-            p.url = $eXeAdivina.extractURLGD(p.url);
+            if (mOptions.wordsGame[i].type != 2) {
+                p.url = $eXeAdivina.extractURLGD(p.url);
+            }
             if (version < 2) {
                 if (p.type == 2) {
                     p.type = 1
@@ -210,7 +212,8 @@ var $eXeAdivina = {
                 p.percentageShow = typeof mOptions.percentageShow == 'undefined' ? 35 : mOptions.percentageShow;
                 p.time = typeof mOptions.timeQuestion == 'undefined' ? 1 : mOptions.timeQuestion;
             }
-            if (p.type == 2) {
+            var idyt = $eXeAdivina.getIDYoutube(p.url)
+            if (p.type == 2 && idyt) {
                 mOptions.hasVideo = true;
             }
             p.time = p.time < 0 ? 0 : p.time;
@@ -222,7 +225,6 @@ var $eXeAdivina = {
         mOptions.customMessages = typeof mOptions.customMessages != 'undefined' ? mOptions.customMessages : false;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.gameOver = false;
-
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.wordsGame.length) {
@@ -232,7 +234,6 @@ var $eXeAdivina = {
                 }
             }
         });
-
         audioLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.wordsGame.length) {
@@ -355,6 +356,7 @@ var $eXeAdivina = {
                 <div class="gameQP-EText" id="adivinaEText-' + instance + '"></div>\
                 <img src="' + path + 'adivinaHome.png" class="gameQP-Cover" id="adivinaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="adivinaVideo-' + instance + '"></div>\
+                <video class="gameQP-Video" id = "adivinaVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
                 <div class="gameQP-Protector" id="adivinaProtector-' + instance + '"></div>\
                 <a href="#" class="gameQP-LinkAudio" id="adivinaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="adivinaGamerOver-' + instance + '">\
@@ -609,12 +611,14 @@ var $eXeAdivina = {
             $("#adivinaGameContainer-" + instance).hide();
             $("#adivinaGameMinimize-" + instance).css('visibility', 'visible').show();
         });
+        mOptions.localPlayer = document.getElementById('adivinaVideoLocal-' + instance)
         $('#adivinaEPhrase-' + instance).hide();
         $('#adivinaBtnReply-' + instance).hide();
         $('#adivinaBtnMoveOn-' + instance).hide();
         $('#adivinaEdAnswer-' + instance).hide();
         $('#adivinaDefinition-' + instance).hide();
         $('#adivinaVideo-' + instance).hide();
+        $('#adivinaVideoLocal-' + instance).hide();
         $('#adivinaEdAnswer-' + instance).val("");
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
@@ -676,7 +680,7 @@ var $eXeAdivina = {
             $('#adivinaQuestion-' + instance).hide();
             $('#adivinaDefinition-' + instance).hide();
             $('#adivinaDivInstructions-' + instance).hide();
-            $eXeAdivina.showCubiertaOptions(true,instance)
+            $eXeAdivina.showCubiertaOptions(true, instance)
 
         }
         if (!mOptions.useLives) {
@@ -767,7 +771,7 @@ var $eXeAdivina = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() == $('#adivinaCodeAccessE-' + instance).val().toLowerCase()) {
-            $eXeAdivina.showCubiertaOptions(false,instance);
+            $eXeAdivina.showCubiertaOptions(false, instance);
             $eXeAdivina.getYTAPI(instance);
 
         } else {
@@ -868,9 +872,10 @@ var $eXeAdivina = {
         $('#adivinaImage-' + instance).hide();
         $('#adivinaCover-' + instance).hide();
         $('#adivinaVideo-' + instance).hide();
+        $('#adivinaVideoLocal-' + instance).hide();
         $('#adivinaStartGame-' + instance).show();
         $eXeAdivina.showScoreGame(type, instance);
-        $eXeAdivina.startVideo('', 0, 0, instance);
+        $eXeAdivina.startVideo('', 0, 0, instance, 0);
         $eXeAdivina.stopVideo(instance)
         $eXeAdivina.uptateTime(0, instance);
         $eXeAdivina.stopSound(instance)
@@ -1015,8 +1020,9 @@ var $eXeAdivina = {
         $('#adivinaCover-' + instance).show();
         $('#adivinaEText-' + instance).hide();
         $('#adivinaVideo-' + instance).hide();
+        $('#adivinaVideoLocal-' + instance).hide();
         $('#adivinaLinkAudio-' + instance).hide();
-        $eXeAdivina.startVideo('', 0, 0, instance);
+        $eXeAdivina.startVideo('', 0, 0, instance, 0);
         $eXeAdivina.stopVideo(instance)
         $('#adivinaCursor-' + instance).hide();
         $eXeAdivina.showMessage(0, '', instance);
@@ -1038,22 +1044,33 @@ var $eXeAdivina = {
             $eXeAdivina.showMessage(0, '', instance);
 
         } else if (q.type === 2) {
-            $('#adivinaVideo-' + instance).show();
-            var idVideo = $eXeAdivina.getIDYoutube(q.url);
-            $eXeAdivina.startVideo(idVideo, q.iVideo, q.fVideo, instance);
-            $eXeAdivina.showMessage(0, '', instance);
-            if (q.imageVideo === 0) {
-                $('#adivinaVideo-' + instance).hide();
-                $('#adivinaCover-' + instance).show();
-
-            } else {
+            var urllv = $eXeAdivina.getURLVideoMediaTeca(q.url),
+                idVideo = $eXeAdivina.getIDYoutube(q.url),
+                type = urllv ? 1 : 0,
+                id = type === 0 ? idVideo : urllv;
+            $eXeAdivina.startVideo(id, q.iVideo, q.fVideo, instance, type);
+            if (type === 0) {
                 $('#adivinaVideo-' + instance).show();
+            } else {
+                $('#adivinaVideoLocal-' + instance).show();
+            }
+            $eXeAdivina.showMessage(0, '', instance);
+            $('#adivinaVideo-' + instance).hide();
+            $('#adivinaVideoLocal-' + instance).hide();
+            if (q.imageVideo === 0) {
+                $('#adivinaCover-' + instance).show();
+            } else {
+                if (type == 1) {
+                    $('#adivinaVideoLocal-' + instance).show();
+                } else {
+                    $('#adivinaVideo-' + instance).show();
+                }
                 $('#adivinaCover-' + instance).hide();
             }
             if (q.soundVideo === 0) {
-                $eXeAdivina.muteVideo(true, instance);
+                $eXeAdivina.muteVideo(true, instance, type);
             } else {
-                $eXeAdivina.muteVideo(false, instance);
+                $eXeAdivina.muteVideo(false, instance, type);
             }
         }
 
@@ -1095,9 +1112,25 @@ var $eXeAdivina = {
         }
 
     },
-    startVideo: function (id, start, end, instance) {
+    startVideo: function (id, start, end, instance, type) {
         var mOptions = $eXeAdivina.options[instance],
             mstart = start < 1 ? 0.1 : start;
+
+        if (type == 1) {
+            if (mOptions.localPlayer) {
+                mOptions.pointEnd = end;
+                mOptions.localPlayer.src = id
+                mOptions.localPlayer.currentTime = parseFloat(start)
+                if (typeof mOptions.localPlayer.play == "function") {
+                    mOptions.localPlayer.play();
+                }
+            }
+            clearInterval(mOptions.timeUpdateInterval);
+            mOptions.timeUpdateInterval = setInterval(function () {
+                $eXeAdivina.updateTimerDisplayLocal(instance);
+            }, 1000);
+            return
+        }
         if (mOptions.player) {
             if (typeof mOptions.player.loadVideoById == "function") {
                 mOptions.player.loadVideoById({
@@ -1106,7 +1139,6 @@ var $eXeAdivina = {
                     'endSeconds': end
                 });
             }
-
         }
     },
     youTubeReady: function () {
@@ -1128,6 +1160,36 @@ var $eXeAdivina = {
             $('#adivinaVideo-' + i).hide();
         }
     },
+
+    updateTimerDisplayLocal: function (instance) {
+        var mOptions = $eXeAdivina.options[instance];
+        if (mOptions.localPlayer) {
+            var currentTime = mOptions.localPlayer.currentTime;
+            if (currentTime) {
+                $eXeAdivina.updateSoundVideoLocal(instance);
+                if (Math.ceil(currentTime) == mOptions.pointEnd || Math.ceil(currentTime) == mOptions.durationVideo) {
+                    mOptions.localPlayer.pause();
+                    mOptions.pointEnd = 100000;
+                }
+            }
+        }
+    },
+    updateSoundVideoLocal: function (instance) {
+        var mOptions = $eXeAdivina.options[instance];
+
+        if (mOptions.activeSilent) {
+            if (mOptions.localPlayer) {
+                if (mOptions.localPlayer.currentTime) {
+                    var time = Math.round(mOptions.localPlayer.currentTime);
+                    if (time == mOptions.question.silentVideo) {
+                        mOptions.localPlayer.muted = true;
+                    } else if (time == mOptions.endSilent) {
+                        mOptions.localPlayer.muted = false;
+                    }
+                }
+            }
+        }
+    },
     youTubeReadyOne: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         mOptions.player = new YT.Player('adivinaVideo-' + instance, {
@@ -1144,6 +1206,20 @@ var $eXeAdivina = {
             }
         });
         $('#adivinaVideo-' + instance).hide();
+    },
+    getURLVideoMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'http://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     },
     getIDYoutube: function (url) {
         if (url) {
@@ -1193,24 +1269,31 @@ var $eXeAdivina = {
     },
     updateTimerDisplay: function () {},
     updateProgressBar: function () {},
-    playVideo: function (instance) {
-        var mOptions = $eXeAdivina.options[instance];
-        if (mOptions.player) {
-            if (typeof mOptions.player.playVideo == "function") {
-                mOptions.player.playVideo();
-            }
-        }
-    },
     stopVideo: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
+        if (mOptions.localPlayer) {
+            if (typeof mOptions.localPlayer.pause == "function") {
+                mOptions.localPlayer.pause();
+            }
+        }
         if (mOptions.player) {
             if (typeof mOptions.player.pauseVideo == "function") {
                 mOptions.player.pauseVideo();
             }
         }
     },
-    muteVideo: function (mute, instance) {
+    muteVideo: function (mute, instance, type) {
         var mOptions = $eXeAdivina.options[instance];
+        if (type == 1) {
+            if (mOptions.localPlayer) {
+                if (mute) {
+                    mOptions.localPlayer.muted = true;
+                } else {
+                    mOptions.localPlayer.muted = false;;
+                }
+            }
+            return
+        }
         if (mOptions.player) {
             if (mute) {
                 if (typeof mOptions.player.mute == "function") {
@@ -1364,7 +1447,7 @@ var $eXeAdivina = {
             $eXeAdivina.showMessage(1, mOptions.msgs.msgIndicateWord, instance);
             return;
         }
-        mOptions.gameActived=false;
+        mOptions.gameActived = false;
         $('#adivinaBtnReply-' + instance).prop('disabled', true);
         $('#adivinaBtnMoveOn-' + instance).prop('disabled', true);
         $('#adivinaEdAnswer-' + instance).prop('disabled', true);
@@ -1595,15 +1678,37 @@ var $eXeAdivina = {
         }
         return sp;
     },
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
         if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeAdivina.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $eXeAdivina.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;
     }
 }
 $(function () {
-
     $eXeAdivina.init();
 });
