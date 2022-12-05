@@ -114,6 +114,7 @@ var $eXeMapa = {
             if (mOption.evaluation == 1 || mOption.evaluation == 2 || mOption.evaluation == 3) {
                 $eXeMapa.startFinds(i);
             }
+            mOption.localPlayer = document.getElementById('mapaVideoLocal-' + i);
         });
         if ($eXeMapa.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeMapa.loadMathJax();
@@ -1090,6 +1091,7 @@ var $eXeMapa = {
                         <img src="" class="MQP-Images" id="mapaImagePoint-' + instance + '"  alt="' + msgs.msgNoImage + '" />\
                         <img src="' + path + 'mapaHome.png" class="MQP-Cover" id="mapaCoverPoint-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                         <div class="MQP-Video" id="mapaVideoPoint-' + instance + '"></div>\
+                        <video class="MQP-VideoLocal" id="mapaVideoLocal-' + instance + '" src=""></video>\
                         <a href="#" class="MQP-LinkAudio MQP-Activo" id="mapaLinkAudio-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
                         <a href="#" class="MQP-LinkSlideLeft MQP-Activo" id="mapaLinkSlideLeft-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
                         <a href="#" class="MQP-LinkSlideRight MQP-Activo" id="mapaLinkSlideRight-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
@@ -1333,6 +1335,7 @@ var $eXeMapa = {
         $('#mapaToolBarL-' + instance).hide();
         $('#mapaMessageMaximize-' + instance).text(mOptions.msgs.msgPlayStart);
         $('#mapaVideoPoint-' + instance).hide();
+        $('#mapaVideoLocal-' + instance).hide();
         $('#mapaGamerOver-' + instance).hide();
         $('#mapaLinkTest-' + instance).hide();
         $('#mapaFMessages-' + instance).hide();
@@ -1799,7 +1802,6 @@ var $eXeMapa = {
         var mOptions = $eXeMapa.options[instance];
         mOptions.waitPlayVideo = true;
         $eXeMapa.playVideo(instance);
-        $('#mapaVideoPoint-' + instance).show();
         $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
     },
 
@@ -2598,9 +2600,10 @@ var $eXeMapa = {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[i],
             w = 0,
-            t = 0;
+            t = 0,
+            urllv = $eXeMapa.getURLVideoMediaTeca(q.video),
+            type= urllv ? 1 : 0;
         mOptions.activeMap.active = i;
-
         if (q.type == 1) {
             $eXeMapa.stopSound(instance);
         }
@@ -2611,7 +2614,9 @@ var $eXeMapa = {
             return;
         }
         mOptions.waitPlayVideo = false;
-        $eXeMapa.startVideo('', 0, 0, instance);
+        if(type==0){
+            $eXeMapa.startVideo('', 0, 0, instance, type);
+        }
         $eXeMapa.stopVideo(instance);
         $eXeMapa.hideModalMessages(instance);
         mOptions.visiteds.push(q.id);
@@ -2689,6 +2694,7 @@ var $eXeMapa = {
         $('#mapaFTests-' + instance).hide();
         $('#mapaFMessageAccess-' + instance).hide();
         $('#mapaVideoPoint-' + instance).hide();
+        $('#mapaVideoLocal-' + instance).hide();
         $('#mapaTextPoint-' + instance).hide();
         $('#mapaImagePoint-' + instance).hide();
         $('#mapaCoverPoint-' + instance).hide();
@@ -2793,7 +2799,7 @@ var $eXeMapa = {
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMapa.options[instance];
-        if (mOptions.itinerary.codeAccess.toLowerCase()=== $('#mapaCodeAccessE-' + instance).val().toLowerCase()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() === $('#mapaCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeMapa.hideCover(instance);
             mOptions.showData = false;
         } else {
@@ -2818,9 +2824,27 @@ var $eXeMapa = {
             return iT;
         }
     },
-    startVideo: function (id, start, end, instance) {
+    startVideo: function (id, start, end, instance, type) {
         var mOptions = $eXeMapa.options[instance],
             mstart = start < 1 ? 0.1 : start;
+            $('#mapaVideoPoint-' + instance).hide();
+            $('#mapaVideoLocal-' + instance).hide();
+        if (typeof type !="undefided" && type > 0) { 
+            if (mOptions.localPlayer) {
+                mOptions.pointEnd = end;
+                mOptions.localPlayer.src = id
+                mOptions.localPlayer.currentTime = parseFloat(start)
+                if (typeof mOptions.localPlayer.play == "function") {
+                    mOptions.localPlayer.play();
+                }
+            }
+            clearInterval(mOptions.timeUpdateInterval);
+            mOptions.timeUpdateInterval = setInterval(function () {
+                $eXeMapa.updateTimerDisplayLocal(instance);
+            }, 1000);
+            $('#mapaVideoLocal-' + instance).show();
+            return;
+        }
         if (mOptions.player) {
             if (typeof mOptions.player.loadVideoById == "function") {
                 mOptions.player.loadVideoById({
@@ -2830,6 +2854,19 @@ var $eXeMapa = {
                 });
             }
         }
+        $('#mapaVideoPoint-' + instance).show();
+    },
+    updateTimerDisplayLocal: function (instance) {
+        var mOptions = $eXeMapa.options[instance];
+        if (mOptions.localPlayer) {
+            var currentTime = mOptions.localPlayer.currentTime;
+            if (currentTime) {
+                if (Math.ceil(currentTime) == mOptions.pointEnd || Math.ceil(currentTime) == mOptions.durationVideo) {
+                    mOptions.localPlayer.pause();
+                    mOptions.pointEnd = 100000;
+                }
+            }
+        }
     },
     getIDYoutube: function (url) {
         if (url) {
@@ -2837,6 +2874,20 @@ var $eXeMapa = {
             var match = url.match(regExp);
             if (match && match[2].length == 11) {
                 return match[2];
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+    getURLVideoMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'http://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
             } else {
                 return false;
             }
@@ -2903,7 +2954,7 @@ var $eXeMapa = {
                     var point = mOptions.activeMap.pts[mOptions.activeMap.active],
                         id = $eXeMapa.getIDYoutube(point.video);
                     if (id) {
-                        $eXeMapa.startVideo(id, point.iVideo, point.fVideo, instance);
+                        $eXeMapa.startVideo(id, point.iVideo, point.fVideo, instance, 0);
                     }
                 }
             }
@@ -2912,7 +2963,14 @@ var $eXeMapa = {
     },
     playVideo: function (instance) {
         var mOptions = $eXeMapa.options[instance],
-            point = mOptions.activeMap.pts[mOptions.activeMap.active];
+            point = mOptions.activeMap.pts[mOptions.activeMap.active],
+            urllv = $eXeMapa.getURLVideoMediaTeca(point.video),
+            type= urllv ? 1 : 0;
+        if (type > 0) {
+            $('#mapaMultimediaPoint-' + instance).css('height','auto');
+            $eXeMapa.startVideo(urllv, point.iVideo, point.fVideo, instance, type);
+            return
+        }
         if (mOptions.hasYoutube && typeof (mOptions.player) == "undefined") {
             if (typeof (YT) !== "undefined") {
                 $eXeMapa.youTubeReadyOne(instance);
@@ -2923,7 +2981,7 @@ var $eXeMapa = {
         } else {
             var id = $eXeMapa.getIDYoutube(point.video);
             if (id) {
-                $eXeMapa.startVideo(id, point.iVideo, point.fVideo, instance);
+                $eXeMapa.startVideo(id, point.iVideo, point.fVideo, instance, type);
             }
         }
     },
@@ -2931,6 +2989,11 @@ var $eXeMapa = {
     updateProgressBar: function () {},
     stopVideo: function (i) {
         var mOptions = $eXeMapa.options[i];
+        if (mOptions.localPlayer) {
+            if (typeof mOptions.localPlayer.pause == "function") {
+                mOptions.localPlayer.pause();
+            }
+        }
         if (mOptions.player) {
             if (typeof mOptions.player.pauseVideo == "function") {
                 mOptions.player.pauseVideo();
@@ -3152,10 +3215,33 @@ var $eXeMapa = {
         }
         return sp;
     },
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
         if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeMapa.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $eXeMapa.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;
     }

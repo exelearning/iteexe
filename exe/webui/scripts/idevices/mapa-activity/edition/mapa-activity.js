@@ -51,6 +51,7 @@ var $exeDevice = {
     activeMap: {},
     activeSlide: 0,
     parentMap: {},
+    localPlayer: '',
     ci18n: {
         "msgSubmit": _("Submit"),
         "msgIndicateWord": _("Provide a word or phrase"),
@@ -124,7 +125,7 @@ var $exeDevice = {
         msgs.msgECompletePoint = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
+        msgs.msgECompleteURLYoutube = _("Please type or paste a valid URL.");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
@@ -158,7 +159,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">'+_("Create image maps: Images with interactive hotspots to reveal images, videos, sounds, texts...")+' <a href=https://youtu.be/xy1vBj9KGQk" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
+            <div class="exe-idevice-info">' + _("Create image maps: Images with interactive hotspots to reveal images, videos, sounds, texts...") + ' <a href=https://youtu.be/xy1vBj9KGQk" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Click on the active areas or image icons.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -277,7 +278,7 @@ var $exeDevice = {
                         </div>\
                         <div id="mapaDataVideo" class="MQE-EHide">\
                             <p class="MQE-EFlex">\
-                                <label for="mapaURLYoutube">' + _('Youtube URL') + ': </label><input type="text" id="mapaURLYoutube" class="MQE-IURLImage" />\
+                                <label for="mapaURLYoutube">' + _('URL:') + ' </label><input type="text" id="mapaURLYoutube" class="MQE-IURLImage" />\
                                 <a href="#" id="mapaPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Play video') + '"></a>\
                             </p>\
                         </div>\
@@ -344,7 +345,7 @@ var $exeDevice = {
             ' + $exeAuthoring.iDevice.gamification.itinerary.getTab() + '\
             ' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
             ' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
-            <div class="exe-idevice-warning">'+_("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.")+'</div>\
+            <div class="exe-idevice-warning">' + _("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.") + '</div>\
 		</div>';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
@@ -377,6 +378,42 @@ var $exeDevice = {
         });
 
     },
+    getIDMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'http://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+
+
+    updateTimerDisplayLocal: function () {
+        if ($exeDevice.videoType > 0) {
+            if ($exeDevice.localPlayer) {
+                var currentTime = $exeDevice.localPlayer.currentTime;
+                if (currentTime) {
+                    var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                    $('#mapaPVideoTime').text(time);
+                    if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                        $exeDevice.localPlayer.pause();
+                        $exeDevice.pointEnd = 100000;
+                    }
+                }
+            }
+        }
+    },
+    updateProgressBarLocal: function () {
+        if ($exeDevice.localPlayer) {
+            $('#progress-bar').val((Math.round($exeDevice.localPlayer.currentTime) / Math.round($exeDevice.localPlayer.duration)) * 100);
+        }
+    },
     getMultimediaPoint: function (path) {
         var html = '<div class="MQE-EPointContainer"  id="mapaPContainer">\
             <div class="MQE-EPointMultimedia">\
@@ -389,6 +426,7 @@ var $exeDevice = {
                     <img id="mapaPNoImage" class="MQE-EImageCover" src="' + path + 'quextIEImage.png" alt="" />\
                     <img class="MQE-EImageCover" src="' + path + 'quextIENoVideo.png" id="mapaPNoVideo" alt="" />\
                     <div id="mapaPVideo"  class="MQE-EImageCover"></div>\
+                    <video class="MQE-EImageCover" id = "mapaEVideoLocal" preload="auto" controls><source src = ""></video>\
                 </div>\
                 <div id="mapaPDataImage">\
                     <p class="MQE-EFlex">\
@@ -403,7 +441,7 @@ var $exeDevice = {
                 </div>\
                 <div id="mapaPDataVideo" class="MQE-EHide">\
                     <p class="MQE-EFlex">\
-                        <label>' + _("Youtube URL") + '</label>\
+                        <label>' + _("URL:") + '</label>\
                         <input type="text" id="mapaPURLYoutube" class="MQE-IURLImage" />\
                         <a href="#" id="mapaPPlayVideo" class="MQE-ENavigationButton MQE-EActivo  MQE-Play"  title="' + _('Play video') + '"></a>\
                     </p>\
@@ -779,7 +817,6 @@ var $exeDevice = {
             default:
                 break;
         }
-
     },
     loadYoutubeApi: function () {
         onYouTubeIframeAPIReady = $exeDevice.youTubeReady;
@@ -811,7 +848,6 @@ var $exeDevice = {
             $exeDevice.showVideoPoint();
         }
     },
-
     updateTimerDisplay: function () {
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.getCurrentTime === "function") {
@@ -820,23 +856,41 @@ var $exeDevice = {
             }
         }
     },
-    updateTimerVIDisplay: function () {
-        if ($exeDevice.playerIntro) {
-            if (typeof $exeDevice.playerIntro.getCurrentTime === "function") {
-                var time = $exeDevice.secondsToHour($exeDevice.playerIntro.getCurrentTime());
-                $('mapaEVITime').text(time);
-            }
-        }
-        //$('#duration').text(formatTime( player.getDuration() ));
-    },
     updateProgressBar: function () {
-        $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
+       // $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
     },
     onPlayerError: function (event) {
         //$exeDevice.showMessage("El video mapaEdo no está disponible")
     },
-    startVideo: function (id, start, end) {
+    updateTimerDisplayLocal: function () {
+        if ($exeDevice.localPlayer) {
+            var currentTime = $exeDevice.localPlayer.currentTime;
+            if (currentTime) {
+                var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                $('#mapaPVideoTime').text(time);
+                $()
+                if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                    $exeDevice.localPlayer.pause();
+                    $exeDevice.pointEnd = 100000;
+                }
+            }
+        }
+    },
+    startVideo: function (id, start, end, type) {
         var mstart = start < 1 ? 0.1 : start;
+        if (type > 0) {
+            if ($exeDevice.localPlayer) {
+                $exeDevice.pointEnd = end;
+                $exeDevice.localPlayer.src = id
+                $exeDevice.localPlayer.currentTime = parseFloat(mstart)
+                $exeDevice.localPlayer.play();
+            }
+            clearInterval($exeDevice.timeUpdateInterval);
+            $exeDevice.timeUpdateInterval = setInterval(function () {
+                $exeDevice.updateTimerDisplayLocal();
+            }, 1000);
+            return
+        }
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.loadVideoById === "function") {
                 $exeDevice.player.loadVideoById({
@@ -863,6 +917,12 @@ var $exeDevice = {
         }
     },
     stopVideo: function () {
+        if ($exeDevice.localPlayer) {
+            clearInterval($exeDevice.timeUpdateInterval);
+            if (typeof $exeDevice.localPlayer.pause == "function") {
+                $exeDevice.localPlayer.pause();
+            }
+        }
         if ($exeDevice.player) {
             clearInterval($exeDevice.timeUpdateInterval);
             if (typeof $exeDevice.player.pauseVideo === "function") {
@@ -1170,7 +1230,7 @@ var $exeDevice = {
             'slides': '',
             'tooltips': ''
         }
- 
+
         for (var i = 0; i < pts.length; i++) {
             var p = pts[i];
             if (p.type != 5) {
@@ -1276,6 +1336,9 @@ var $exeDevice = {
         p.eText = tinyMCE.get('mapaText').getContent();
         if (p.type == 1) {
             p.video = $exeDevice.getIDYoutube($('#mapaURLYoutube').val().trim()) ? $('#mapaURLYoutube').val() : '';
+            if (p.video.length == 0) {
+                p.video = $exeDevice.getIDMediaTeca($('#mapaURLYoutube').val().trim()) ? $('#mapaURLYoutube').val() : '';
+            }
         }
         if (p.x == 0 && p.y == 0) {
             message = msgs.msgMarkPoint;
@@ -1491,7 +1554,7 @@ var $exeDevice = {
             } else if ((mpoint.type == 0) && (mpoint.url.length < 5)) {
                 $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                 return false;
-            } else if ((mpoint.type == 1) && !($exeDevice.getIDYoutube(mpoint.video))) {
+            } else if ((mpoint.type == 1) && !($exeDevice.getIDYoutube(mpoint.video)) && !($exeDevice.getIDMediaTeca(mpoint.video))) {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return false;
             } else if ((mpoint.type == 2) && (mpoint.eText.length == 0)) {
@@ -1513,7 +1576,7 @@ var $exeDevice = {
                     } else if ((vpp.type == 0) && (vpp.url.length < 5)) {
                         $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                         return false;
-                    } else if ((vpp.type == 1) && !($exeDevice.getIDYoutube(vpp.video))) {
+                    } else if ((vpp.type == 1) && !($exeDevice.getIDYoutube(vpp.video)) && !($exeDevice.getIDYoutube(mpoint.video))) {
                         $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                         return false;
                     } else if ((vpp.type == 2) && (vpp.eText.length == 0)) {
@@ -1601,8 +1664,10 @@ var $exeDevice = {
         var $image = $('#mapaPImage'),
             $noImage = $('#mapaPNoImage'),
             $video = $('#mapaPVideo'),
+            $videoLocal = $('#mapaEVideoLocal'),
             $noVideo = $('#mapaPNoVideo');
         $video.hide();
+        $videoLocal.hide();
         $noVideo.hide();
         $image.hide();
         $image.attr('alt', alt);
@@ -2234,36 +2299,43 @@ var $exeDevice = {
             $('#mapaPContainer').fadeOut();
             $('#mapaCubierta').hide();
         });
-
-
         $('#mapaPlayVideo').on('click', function (e) {
             e.preventDefault();
-            if (!$exeDevice.getIDYoutube($('#mapaURLYoutube').val().trim())) {
+            if ($exeDevice.getIDYoutube($('#mapaURLYoutube').val().trim())) {
+                $('#mapaPURLYoutube').val($('#mapaURLYoutube').val());
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoPoint();
+                }
+            } else if ($exeDevice.getIDMediaTeca($('#mapaURLYoutube').val().trim())) {
+                $('#mapaPURLYoutube').val($('#mapaURLYoutube').val());
+                $exeDevice.showVideoPoint();
+            } else {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return;
             }
-            $('#mapaPURLYoutube').val($('#mapaURLYoutube').val());
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoType = true;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                $exeDevice.showVideoPoint();
-            }
+
             $('#mapaPTitle').val($('#mapaTitle').val());
             $('#mapaPFooter').val($('#mapaFooter').val());
         });
         $('#mapaPPlayVideo').on('click', function (e) {
             e.preventDefault();
-            if (!$exeDevice.getIDYoutube($('#mapaPURLYoutube').val().trim())) {
+            if ($exeDevice.getIDYoutube($('#mapaPURLYoutube').val().trim())) {
+                $('#mapaURLYoutube').val($('#mapaPURLYoutube').val());
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoPoint();
+                }
+            } else if ($exeDevice.getIDMediaTeca($('#mapaPURLYoutube').val().trim())) {
+                $('#mapaURLYoutube').val($('#mapaPURLYoutube').val());
+                $exeDevice.showVideoPoint();
+            } else {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return;
-            }
-            $('#mapaURLYoutube').val($('#mapaPURLYoutube').val());
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoType = true;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                $exeDevice.showVideoPoint();
             }
             $('#mapaURLYoutube').val($('#mapaPURLYoutube').val());
             $('#mapaTitle').val($('#mapaPTitle').val());
@@ -2334,6 +2406,7 @@ var $exeDevice = {
             e.preventDefault();
             $exeDevice.closeSlide();
         });
+        $exeDevice.localPlayer = document.getElementById('mapaEVideoLocal');
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
@@ -2924,7 +2997,8 @@ var $exeDevice = {
         var iVideo = $exeDevice.hourToSeconds($('#mapaPInitVideo').val()),
             fVideo = $exeDevice.hourToSeconds($('#mapaPEndVideo').val()),
             url = $('#mapaPURLYoutube').val().trim(),
-            id = $exeDevice.getIDYoutube(url);
+            id = $exeDevice.getIDYoutube(url),
+            idLocal = $exeDevice.getIDMediaTeca(url);
         iVideo = isNaN(iVideo) ? 0 : iVideo;
         fVideo = isNaN(fVideo) ? 3600 : fVideo;
         if (fVideo <= iVideo) fVideo = 36000;
@@ -2934,10 +3008,17 @@ var $exeDevice = {
         $('#mapaPNoVideo').show();
         $('#mapaPDataVideo').show();
         $('#mapaPVideo').hide();
+        $('#mapaEVideoLocal').hide();
         if (id) {
-            $exeDevice.startVideo(id, iVideo, fVideo);
+            $exeDevice.startVideo(id, iVideo, fVideo, 0);
             $('#mapaPVideo').show();
             $('#mapaPNoVideo').hide();
+            $('#mapaEVideoLocal').hide();
+        } else if (idLocal) {
+            $exeDevice.startVideo(idLocal, iVideo, fVideo, 1);
+            $('#mapaPVideo').hide();
+            $('#mapaPNoVideo').hide();
+            $('#mapaEVideoLocal').show();
         } else {
             $exeDevice.showMessage(_("This video is not currently available"));
         }
@@ -3522,6 +3603,9 @@ var $exeDevice = {
 
         if (p.type == 1) {
             p.video = $exeDevice.getIDYoutube($('#mapaURLYoutube').val().trim()) ? $('#mapaURLYoutube').val() : '';
+            if (p.video == '') {
+                p.video = $exeDevice.getIDMediaTeca($('#mapaURLYoutube').val().trim()) ? $('#mapaURLYoutube').val() : '';
+            }
         }
         p.eText = tinyMCE.get('mapaText').getContent();
         p.toolTip = tinyMCE.get('mapaToolTip').getContent();
@@ -3566,10 +3650,33 @@ var $exeDevice = {
         wrapper.html(str);
         return wrapper.text();
     },
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
         if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $exeDevice.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $exeDevice.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;
     }

@@ -421,6 +421,11 @@ img.MQP-ImageMain {
 	width: 100%;
 	height: 100%
 }
+.MQP-VideoLocal {
+	margin: 0 auto;
+	width: 100%;
+	height: auto
+}
 
 .MQP-Images {
 	border: 0;
