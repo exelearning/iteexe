@@ -326,12 +326,12 @@ var $eXeRosco = {
 		return html
 	},
 	showCubiertaOptions(mode, instance) {
-        if (mode === false) {
-            $('#roscoCubierta-' + instance).fadeOut();
-            return;
-        }
-        $('#roscoCubierta-' + instance).fadeIn();
-    },
+		if (mode === false) {
+			$('#roscoCubierta-' + instance).fadeOut();
+			return;
+		}
+		$('#roscoCubierta-' + instance).fadeIn();
+	},
 	changeTextInit: function (big, message, instance) {
 		var html = message;
 		if (big) {
@@ -432,7 +432,7 @@ var $eXeRosco = {
 			$('#roscoCodeAccessDiv-' + instance).show();
 			$('#roscoStartGame-' + instance).hide();
 			$('#roscoDivInstructions-' + instance).hide();
-			$eXeRosco.showCubiertaOptions(true,instance)
+			$eXeRosco.showCubiertaOptions(true, instance)
 			//$('#roscoEdCodeAccess-' + instance).focus();
 		}
 		$('#roscoCodeAccessButton-' + instance).on('click', function (e) {
@@ -440,7 +440,7 @@ var $eXeRosco = {
 			var keyIntroduced = $.trim($('#roscoEdCodeAccess-' + instance).val()).toUpperCase(),
 				correctKey = $.trim(mOptions.itinerary.codeAccess).toUpperCase();
 			if (keyIntroduced == correctKey) {
-				$eXeRosco.showCubiertaOptions(false,instance);
+				$eXeRosco.showCubiertaOptions(false, instance);
 				$eXeRosco.startGame(instance);
 			} else {
 				$('#roscoMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
@@ -1486,14 +1486,38 @@ var $eXeRosco = {
 		}
 		return sp;
 	},
+	getURLAudioMediaTeca: function (url) {
+		if (url) {
+			var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+			var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+			if (matc) {
+				var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+				id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+				return id;
+			}
+			if (matc1) {
+				var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+				id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+				return id;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	},
 	extractURLGD: function (urlmedia) {
 		var sUrl = urlmedia;
 		if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
 			sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+		} else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeRosco.getURLAudioMediaTeca(urlmedia)) {
+			sUrl = $eXeRosco.getURLAudioMediaTeca(urlmedia);
 		}
 		return sUrl;
 	}
 }
+
 $(function () {
 	$eXeRosco.init();
 });
