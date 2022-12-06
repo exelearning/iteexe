@@ -34,6 +34,8 @@ var $exeDevice = {
     endSilent: 0,
     isVideoType: false,
     isVideoIntro: 0,
+    localPlayer: null,
+    localPlayerIntro: null,
     ci18n: {
         "msgReady": _("Ready?"),
         "msgStartGame": _("Click here to start"),
@@ -98,7 +100,7 @@ var $exeDevice = {
         "msgEndGameScore": _("Please start playing first..."),
         "msgAudio": _("Audio"),
         "msgCorrect": _("Correct"),
-		"msgIncorrect": _("Incorrect")
+        "msgIncorrect": _("Incorrect")
     },
 
     init: function () {
@@ -112,7 +114,6 @@ var $exeDevice = {
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
     },
-
     setMessagesInfo: function () {
         var msgs = this.msgs;
         msgs.msgEProvideDefinition = _("Please provide the word definition or the valid URL of an image");
@@ -126,7 +127,7 @@ var $exeDevice = {
         msgs.msgECompleteQuestion = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
+        msgs.msgECompleteURLYoutube = _("Please type or paste a valid URL.");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
@@ -199,7 +200,7 @@ var $exeDevice = {
             $('#seleccionaEVI').show();
             $('#seleccionaEVINo').hide();
             $('#seleccionaENumQuestionDiv').hide();
-            $exeDevice.startVideoIntro(idv, iVI, fVI);
+            $exeDevice.startVideoIntro(idv, iVI, fVI, 0);
         } else if ($exeDevice.isVideoIntro == 2) {
             var idv = $exeDevice.getIDYoutube($('#seleccionaEVIURL').val()),
                 iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
@@ -224,7 +225,34 @@ var $exeDevice = {
             }
         }
     },
-
+    updateSoundVideoLocal: function () {
+        if ($exeDevice.activeSilent) {
+            if ($exeDevice.localPlayer) {
+                if ($exeDevice.localPlayer.currentTime) {
+                    var time = Math.round($exeDevice.localPlayer.currentTime);
+                    if (time == $exeDevice.silentVideo) {
+                        $exeDevice.localPlayer.muted = true;
+                    } else if (time == $exeDevice.endSilent) {
+                        $exeDevice.localPlayer.muted = false;
+                    }
+                }
+            }
+        }
+    },
+    updateTimerDisplayLocal: function () {
+        if ($exeDevice.localPlayer) {
+            var currentTime = $exeDevice.localPlayer.currentTime;
+            if (currentTime) {
+                var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                $('#seleccionaEVideoTime').text(time);
+                $exeDevice.updateSoundVideoLocal();
+                if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                    $exeDevice.localPlayer.pause();
+                    $exeDevice.pointEnd = 100000;
+                }
+            }
+        }
+    },
     updateTimerDisplay: function () {
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.getCurrentTime === "function") {
@@ -234,7 +262,19 @@ var $exeDevice = {
             }
         }
     },
-
+    updateTimerDisplayVILocal: function () {
+        if ($exeDevice.localPlayerIntro) {
+            var currentTime = $exeDevice.localPlayerIntro.currentTime;
+            if (currentTime) {
+                var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                $('#seleccionaEVITime').text(time);
+                if (Math.ceil(currentTime) == $exeDevice.pointEndIntro || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                    $exeDevice.localPlayerIntro.pause();
+                    $exeDevice.pointEndIntro = 100000;
+                }
+            }
+        }
+    },
     updateTimerVIDisplay: function () {
         if ($exeDevice.playerIntro) {
             if (typeof $exeDevice.playerIntro.getCurrentTime === "function") {
@@ -252,8 +292,21 @@ var $exeDevice = {
         //$exeDevice.showMessage("El video seleccionado no está disponible")
     },
 
-    startVideo: function (id, start, end) {
+    startVideo: function (id, start, end, type) {
         var mstart = start < 1 ? 0.1 : start;
+        if (type > 0) {
+            if ($exeDevice.localPlayer) {
+                $exeDevice.pointEnd = end;
+                $exeDevice.localPlayer.src = id
+                $exeDevice.localPlayer.currentTime = parseFloat(mstart)
+                $exeDevice.localPlayer.play();
+            }
+            clearInterval($exeDevice.timeUpdateInterval);
+            $exeDevice.timeUpdateInterval = setInterval(function () {
+                $exeDevice.updateTimerDisplayLocal();
+            }, 1000);
+            return
+        }
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.loadVideoById === "function") {
                 $exeDevice.player.loadVideoById({
@@ -270,8 +323,24 @@ var $exeDevice = {
 
     },
 
-    startVideoIntro: function (id, start, end) {
+    startVideoIntro: function (id, start, end, type) {
         var mstart = start < 1 ? 0.1 : start;
+        $('#seleccionaEVI').hide();
+        $('#seleccionaEVILocal').hide();
+        if (type > 0) {
+            if ($exeDevice.localPlayerIntro) {
+                $exeDevice.pointEndIntro = end;
+                $exeDevice.localPlayerIntro.src = id
+                $exeDevice.localPlayerIntro.currentTime = parseFloat(start)
+                $exeDevice.localPlayerIntro.play();
+            }
+            clearInterval($exeDevice.timeUpdateVIInterval);
+            $exeDevice.timeUpdateVIInterval = setInterval(function () {
+                $exeDevice.updateTimerDisplayVILocal();
+            }, 1000);
+            $('#seleccionaEVILocal').show();
+            return
+        }
         if ($exeDevice.playerIntro) {
             if (typeof $exeDevice.playerIntro.loadVideoById === "function") {
                 $exeDevice.playerIntro.loadVideoById({
@@ -280,16 +349,20 @@ var $exeDevice = {
                     'endSeconds': end
                 });
             }
-
             clearInterval($exeDevice.timeUpdateVIInterval);
             $exeDevice.timeUpdateVIInterval = setInterval(function () {
                 $exeDevice.updateTimerVIDisplay();
             }, 1000);
-
+            $('#seleccionaEVI').show();
         }
     },
-
     stopVideoIntro: function () {
+        if ($exeDevice.localPlayerIntro) {
+            clearInterval($exeDevice.timeUpdateInterval);
+            if (typeof $exeDevice.localPlayerIntro.pause == "function") {
+                $exeDevice.localPlayerIntro.pause();
+            }
+        }
         if ($exeDevice.playerIntro) {
             if (typeof $exeDevice.playerIntro.pauseVideo === "function") {
                 $exeDevice.playerIntro.pauseVideo();
@@ -298,19 +371,74 @@ var $exeDevice = {
         }
     },
 
-    playVideo: function () {
-        if ($exeDevice.player) {
-            clearInterval($exeDevice.timeUpdateInterval);
-            if (typeof $exeDevice.player.playVideo === "function") {
-                $exeDevice.player.playVideo();
+
+    playVideoIntro1: function () {
+        var idv = $exeDevice.getIDYoutube($('#seleccionaEVideoIntro').val()),
+            idmt = $exeDevice.getURLVideoMediaTeca($('#seleccionaEVideoIntro').val()),
+            iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
+            fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
+        if (idv || idmt) {
+            if (fVI <= iVI) {
+                $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                return;
             }
-            $exeDevice.timeUpdateInterval = setInterval(function () {
-                $exeDevice.updateTimerDisplay();
-            }, 1000);
+            if (idv) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoIntro = 1;
+                    $exeDevice.loadYoutubeApi();
+                    return;
+                } else {
+                    $('#seleccionaEVI').show();
+                    $exeDevice.startVideoIntro(idv, iVI, fVI, 0);
+                }
+            } else {
+                $exeDevice.startVideoIntro(idmt, iVI, fVI, 1);
+            }
+            $('#seleccionaEVIURL').val($('#seleccionaEVideoIntro').val());
+            $('#seleccionaEVIDiv').show();
+            $('#seleccionaEVINo').hide();
+            $('#seleccionaENumQuestionDiv').hide();
+        } else {
+            $('#seleccionaEVINo').show();
+            $('#seleccionaEVI').hide();
+            $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
         }
+    },
+    playVideoIntro2: function () {
+        var idv = $exeDevice.getIDYoutube($('#seleccionaEVIURL').val()),
+            idmt = $exeDevice.getURLVideoMediaTeca($('#seleccionaEVIURL').val()),
+            iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
+            fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
+        if (idv || idmt) {
+            if (fVI <= iVI) {
+                $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
+                return;
+            }
+            if (idv) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoIntro = 1;
+                    $exeDevice.loadYoutubeApi();
+                    return;
+                } else {
+                    $exeDevice.startVideoIntro(idv, iVI, fVI, 0);
+                }
+            } else {
+                $exeDevice.startVideoIntro(idmt, iVI, fVI, 1);
+            }
+
+        } else {
+            $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+        }
+
     },
 
     stopVideo: function () {
+        if ($exeDevice.localPlayer) {
+            clearInterval($exeDevice.timeUpdateInterval);
+            if (typeof $exeDevice.localPlayer.pause == "function") {
+                $exeDevice.localPlayer.pause();
+            }
+        }
         if ($exeDevice.player) {
             clearInterval($exeDevice.timeUpdateInterval);
             if (typeof $exeDevice.player.pauseVideo === "function") {
@@ -320,6 +448,13 @@ var $exeDevice = {
     },
 
     muteVideo: function (mute) {
+        if ($exeDevice.localPlayer) {
+            if (mute) {
+                $exeDevice.localPlayer.muted = true;
+            } else {
+                $exeDevice.localPlayer.muted = false;
+            }
+        }
         if ($exeDevice.player) {
             if (mute) {
                 if (typeof $exeDevice.player.mute === "function") {
@@ -553,10 +688,14 @@ var $exeDevice = {
             $exeDevice.tSilentVideo = p.tSilentVideo;
             $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
             $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoType = true;
-                $exeDevice.loadYoutubeApi();
-            } else {
+            if ($exeDevice.getIDYoutube(p.url)) {
+                if (typeof YT == "undefined") {
+                    $exeDevice.isVideoType = true;
+                    $exeDevice.loadYoutubeApi();
+                } else {
+                    $exeDevice.showVideoQuestion();
+                }
+            } else if ($exeDevice.getURLVideoMediaTeca(p.url)) {
                 $exeDevice.showVideoQuestion();
             }
 
@@ -598,35 +737,15 @@ var $exeDevice = {
         $('#selecionaESolutionSelect').text(solution);
 
     },
-    showVideoYoutube: function (quextion) {
-        var id = $exeDevice.getIDYoutube(quextion.url);
-        $('#seleccionaEImageVideo').hide();
-        $('#seleccionaENoVideo').hide();
-        $('#seleccionaEVideo').hide();
-        if (id) {
-            $exeDevice.startVideo(id, quextion.iVideo, quextion.fVideo);
-            $('#seleccionaEVideo').show();
-            if (quextion.imageVideo == 0) {
-                $('#seleccionaEImageVideo').show();
-            }
-            if (quextion.soundVideo == 0) {
-                $('#seleccionaEImageVideo').show();
-                $exeDevice.muteVideo(true)
-            } else {
-                $exeDevice.muteVideo(false)
-            }
-        } else {
-            $exeDevice.showMessage($exeDevice.msgs.msgEUnavailableVideo);
-            $('#seleccionaENoVideo').show();
-        }
-    },
     showVideoQuestion: function () {
         var soundVideo = $('#seleccionaECheckSoundVideo').is(':checked') ? 1 : 0,
             imageVideo = $('#seleccionaECheckImageVideo').is(':checked') ? 1 : 0,
             iVideo = $exeDevice.hourToSeconds($('#seleccionaEInitVideo').val()),
             fVideo = $exeDevice.hourToSeconds($('#seleccionaEEndVideo').val()),
             url = $('#seleccionaEURLYoutube').val().trim(),
-            id = $exeDevice.getIDYoutube(url);
+            id = $exeDevice.getIDYoutube(url),
+            idLocal = $exeDevice.getURLVideoMediaTeca(url),
+            type = id ? 0 : 1;
         $exeDevice.silentVideo = $exeDevice.hourToSeconds($('#seleccionaESilenceVideo').val().trim());
         $exeDevice.tSilentVideo = parseInt($('#seleccionaETimeSilence').val());
         $exeDevice.activeSilent = (soundVideo == 1) && ($exeDevice.tSilentVideo > 0) && ($exeDevice.silentVideo >= iVideo) && (iVideo < fVideo);
@@ -635,13 +754,22 @@ var $exeDevice = {
         $('#seleccionaENoImageVideo').hide();
         $('#seleccionaENoVideo').show();
         $('#seleccionaEVideo').hide();
-        if (id) {
-            $exeDevice.startVideo(id, iVideo, fVideo);
-            $('#seleccionaEVideo').show();
+        $('#seleccionaEVideoLocal').hide();
+        if (id || idLocal) {
+            if (id) {
+                $exeDevice.startVideo(id, iVideo, fVideo, 0);
+            } else {
+                $exeDevice.startVideo(idLocal, iVideo, fVideo, 1);
+            }
             $('#seleccionaENoVideo').hide();
             if (imageVideo == 0) {
-                $('#seleccionaEVideo').hide();
                 $('#seleccionaENoImageVideo').show();
+            } else {
+                if (type == 0) {
+                    $('#seleccionaEVideo').show();
+                } else {
+                    $('#seleccionaEVideoLocal').show();
+                }
             }
             if (soundVideo == 0) {
                 $exeDevice.muteVideo(true)
@@ -649,6 +777,7 @@ var $exeDevice = {
                 $exeDevice.muteVideo(false)
             }
         } else {
+
             $exeDevice.showMessage($exeDevice.msgs.msgEUnavailableVideo);
             $('#seleccionaENoVideo').show();
         }
@@ -760,7 +889,6 @@ var $exeDevice = {
         return (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
     },
     changeTypeQuestion: function (type) {
-
         $('#seleccionaETitleAltImage').hide();
         $('#seleccionaEAuthorAlt').hide();
         $('#seleccionaETitleImage').hide();
@@ -774,9 +902,9 @@ var $exeDevice = {
         if (tinyMCE.get('seleccionaEText')) {
             tinyMCE.get('seleccionaEText').hide();
         }
-
         $('#seleccionaEText').hide();
         $('#seleccionaEVideo').hide();
+        $('#seleccionaEVideoLocal').hide();
         $('#seleccionaEImage').hide();
         $('#seleccionaENoImage').hide();
         $('#seleccionaECover').hide();
@@ -1008,9 +1136,9 @@ var $exeDevice = {
                                             <input id="seleccionaEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <span class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("Youtube URL") + ':</span>\
+                                    <span class="gameQE-ETitleVideo" id="seleccionaETitleVideo">' + _("URL") + ':</span>\
                                     <div class="gameQE-EInputVideo gameQE-Flex" id="seleccionaEInputVideo">\
-                                        <label class="sr-av" for="seleccionaEURLYoutube">' + _("Youtube URL") + '</label>\
+                                        <label class="sr-av" for="seleccionaEURLYoutube">' + _("URL") + '</label>\
                                         <input id="seleccionaEURLYoutube" type="text" />\
                                         <a href="#" id="seleccionaEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play video") + '" class="gameQE-EButtonImage b-play" /></a>\
                                     </div>\
@@ -1058,6 +1186,7 @@ var $exeDevice = {
                                         <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png"  id="seleccionaEImage" alt="' + _("Image") + '" />\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png"  id="seleccionaENoImage" alt="' + _("No image") + '" />\
                                         <div class="gameQE-EMedia" id="seleccionaEVideo"></div>\
+                                        <video class="gameQE-EMedia" id = "seleccionaEVideoLocal" preload="auto" controls><source src = ""></video>\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIENoImageVideo.png" id="seleccionaENoImageVideo" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIENoVideo.png" id="seleccionaENoVideo" alt="" />\
                                         <img class="gameQE-ECursor" src="' + path + 'quextIECursor.gif" id="seleccionaECursor" alt="" />\
@@ -1133,11 +1262,12 @@ var $exeDevice = {
                                 <div class="gameQE-EVIV">\
                                     <div class="gameQE-EMVI">\
                                         <div class="gameQE-EVI" id="seleccionaEVI"></div>\
+                                        <video class="gameQE-EVI" id = "seleccionaEVILocal" preload="auto" controls><source src = ""></video>\
                                         <img class="gameQE-ENoVI" src="' + path + "quextIENoVideo.png" + '" id="seleccionaEVINo" alt="" />\
                                     </div>\
                                 </div>\
                                 <div class="gameQE-EVIOptions">\
-                                    <label for="seleccionaEVIURL">' + _("Youtube URL") + ':</label>\
+                                    <label for="seleccionaEVIURL">' + _("URL") + ':</label>\
                                     <input id="seleccionaEVIURL" type="text" />\
                                     <a href="#" id="seleccionaEVIPlayI" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video intro") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play video intro") + '" class="gameQE-EButtonImage b-playintro" /></a>\
                                     <label for="seleccionaEVIStart">' + _("Start") + ':</label>\
@@ -1209,6 +1339,9 @@ var $exeDevice = {
         }
         $exeDevice.showTypeQuestion(0);
         this.active = 0;
+        this.localPlayer = document.getElementById('seleccionaEVideoLocal');
+        this.localPlayerIntro = document.getElementById('seleccionaEVILocal');
+
     },
     getCuestionDefault: function () {
         var p = new Object();
@@ -1446,6 +1579,7 @@ var $exeDevice = {
         dataGame.msgs = i18n;
         var json = JSON.stringify(dataGame),
             divContent = "";
+
         var instructions = tinyMCE.get('eXeGameInstructions').getContent();
         if (instructions != "") divContent = '<div class="selecciona-instructions gameQP-instructions">' + instructions + '</div>';
         var textFeedBack = tinyMCE.get('seleccionaEFeedBackEditor').getContent(),
@@ -1526,6 +1660,9 @@ var $exeDevice = {
         $exeDevice.stopVideo();
         if (p.type == 2) {
             p.url = $exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim()) ? $('#seleccionaEURLYoutube').val() : '';
+            if (p.url == '') {
+                p.url = $exeDevice.getURLVideoMediaTeca($('#seleccionaEURLYoutube').val().trim()) ? $('#seleccionaEURLYoutube').val() : '';
+            }
         }
         p.soundVideo = $('#seleccionaECheckSoundVideo').is(':checked') ? 1 : 0;
         p.imageVideo = $('#seleccionaECheckImageVideo').is(':checked') ? 1 : 0;
@@ -1734,7 +1871,7 @@ var $exeDevice = {
             } else if ((mquestion.type == 1) && (mquestion.url.length < 10)) {
                 $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
                 return false;
-            } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url))) {
+            } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url)) && !($exeDevice.getURLVideoMediaTeca(mquestion.url))) {
                 $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
                 return false;
             }
@@ -1807,7 +1944,7 @@ var $exeDevice = {
             'version': 3.1,
             'percentajeQuestions': percentajeQuestions,
             'audioFeedBach': audioFeedBach,
-            'modeBoard':modeBoard
+            'modeBoard': modeBoard
         }
         return data;
     },
@@ -1860,9 +1997,7 @@ var $exeDevice = {
                 'background-color': 'white',
                 'color': '#2c6d2c'
             });
-
         });
-
         $('#seleccionaShowCodeAccess').on('change', function () {
             var marcado = $(this).is(':checked');
             $('#seleccionaCodeAccess').prop('disabled', !marcado);
@@ -1919,44 +2054,16 @@ var $exeDevice = {
 
         $('#seleccionaEPlayVideo').on('click', function (e) {
             e.preventDefault();
-            if (!$exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoType = true;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                $exeDevice.showVideoQuestion();
-            }
+            $exeDevice.playVideoQuestion();
         });
 
         $(' #seleccionaECheckSoundVideo').on('change', function () {
-            if (!$exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoType = true;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                $exeDevice.showVideoQuestion();
-            }
+            $exeDevice.playVideoQuestion();
         });
 
         $('#seleccionaECheckImageVideo').on('change', function () {
-            if (!$exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoType = true;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                $exeDevice.showVideoQuestion();
-            }
+            $exeDevice.playVideoQuestion();
         });
-
 
         $('#seleccionaENumberLives').on('keyup', function () {
             var v = this.value;
@@ -2003,7 +2110,6 @@ var $exeDevice = {
             this.value = this.value > 100 ? 100 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
         });
-
 
         $('#seleccionaEScoreQuestion').on('focusout', function () {
             if (!$exeDevice.validateScoreQuestion($(this).val())) {
@@ -2127,7 +2233,6 @@ var $exeDevice = {
                 $('#seleccionaEScoreQuestionDiv').show();
             }
         });
-
         $('#seleccionaEURLImage').on('change', function () {
             var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'],
                 selectedFile = $(this).val(),
@@ -2164,46 +2269,11 @@ var $exeDevice = {
         });
         $('#seleccionaEVideoIntroPlay').on('click', function (e) {
             e.preventDefault();
-            var idv = $exeDevice.getIDYoutube($('#seleccionaEVideoIntro').val());
-            if (!idv) {
-                $('#seleccionaEVINo').show();
-                $('#seleccionaEVI').hide();
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoIntro = 1;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                var iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
-                    fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
-                $('#seleccionaEVIURL').val($('#seleccionaEVideoIntro').val());
-                $('#seleccionaEVIDiv').show();
-                $('#seleccionaEVI').show();
-                $('#seleccionaEVINo').hide();
-                $('#seleccionaENumQuestionDiv').hide();
-                $exeDevice.startVideoIntro(idv, iVI, fVI);
-            }
+            $exeDevice.playVideoIntro1();
         });
         $('#seleccionaEVIPlayI').on('click', function (e) {
             e.preventDefault();
-            var idv = $exeDevice.getIDYoutube($('#seleccionaEVIURL').val());
-            if (!idv) {
-                $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
-                return;
-            }
-            if (typeof YT == "undefined") {
-                $exeDevice.isVideoIntro = 2;
-                $exeDevice.loadYoutubeApi();
-            } else {
-                var iVI = $exeDevice.hourToSeconds($('#seleccionaEVIStart').val()),
-                    fVI = $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) > 0 ? $exeDevice.hourToSeconds($('#seleccionaEVIEnd').val()) : 9000;
-                if (fVI <= iVI) {
-                    $exeDevice.showMessage($exeDevice.msgs.msgEStartEndIncorrect);
-                    return;
-                }
-                $exeDevice.startVideoIntro(idv, iVI, fVI);
-            }
+            $exeDevice.playVideoIntro2();
         });
         $('#seleccionaEVIClose').on('click', function (e) {
             e.preventDefault();
@@ -2314,6 +2384,20 @@ var $exeDevice = {
             }
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
+    },
+    playVideoQuestion: function () {
+        if ($exeDevice.getIDYoutube($('#seleccionaEURLYoutube').val().trim())) {
+            if (typeof YT == "undefined") {
+                $exeDevice.isVideoType = true;
+                $exeDevice.loadYoutubeApi();
+            } else {
+                $exeDevice.showVideoQuestion();
+            }
+        } else if ($exeDevice.getURLVideoMediaTeca($('#seleccionaEURLYoutube').val().trim())) {
+            $exeDevice.showVideoQuestion();
+        } else {
+            $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
+        }
     },
     showSelectOrder: function (type, messages, custonmScore) {
         if (type == 2 || messages) {
@@ -2520,10 +2604,48 @@ var $exeDevice = {
             }
         }
     },
+    getURLVideoMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
     extractURLGD: function (urlmedia) {
         var sUrl = urlmedia;
         if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $exeDevice.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $exeDevice.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;
     },
