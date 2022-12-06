@@ -118,6 +118,9 @@ var $exeDevice = {
                                 <input type="number" name="eCQTimeShowSolution" id="eCQTimeShowSolution" value="3" min="1" max="9" /> </label>\
                             </p>\
                             <p>\
+                                <label for="eCQPercentajeError">% ' + _("Error") + ':  <input type="number" name="eCQPercentajeError" id="eCQPercentajeError" value="0" min="0" max="99" /> </label>\
+                             </p>\
+                            <p>\
                                 <label for="eCQHasFeedBack"><input type="checkbox"  id="eCQHasFeedBack"> ' + _("Feedback") + '. </label> \
                                 <label for="eCQPercentajeFB"><input type="number" name="eCQPercentajeFB" id="eCQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + ' </label>\
                             </p>\
@@ -158,7 +161,7 @@ var $exeDevice = {
                          <p><label for="eCQformula">' + _("Formula") + ':\
                             <input id="eCQformula" type="text" style="width:200px" value="{b}*{h}/2" />\
                          </label>\
-                         <span><span class="sr-av">'+_("Operations:")+' </span><a href="https://www.w3schools.com/js/js_arithmetic.asp" target="_blank" rel="noopener" hreflang="en" title="+  -  *  /  **  ()">'+_("Help")+'</a> - <a href="https://www.w3schools.com/js/js_math.asp" target="_blank" rel="noopener" hreflang="en" title="JavaScript Math">'+_("More")+'</a></span>\
+                         <span><span class="sr-av">' + _("Operations:") + ' </span><a href="https://www.w3schools.com/js/js_arithmetic.asp" target="_blank" rel="noopener" hreflang="en" title="+  -  *  /  **  ()">' + _("Help") + '</a> - <a href="https://www.w3schools.com/js/js_math.asp" target="_blank" rel="noopener" hreflang="en" title="JavaScript Math">' + _("More") + '</a></span>\
                          </p>\
                         <p>\
                             <label for="eCQwording">' + _("Question text:") + '</label>\
@@ -463,6 +466,7 @@ var $exeDevice = {
             feedBack = $('#eCQHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#eCQPercentajeFB').val())),
             percentajeQuestions = parseInt(clear($('#eCQPercentajeQuestions').val())),
+            percentajeError = parseInt(clear($('#eCQPercentajeError').val())),
             textFeedBack = '';
         if (tinyMCE.get('eCQFeedBackEditor')) {
             textFeedBack = tinyMCE.get('eCQFeedBackEditor').getContent();
@@ -514,6 +518,7 @@ var $exeDevice = {
             'scorm': scorm,
             'textAfter': textAfter,
             'version': $exeDevice.version,
+            'percentajeError': percentajeError
         }
         return data;
     },
@@ -802,6 +807,19 @@ var $exeDevice = {
             $exeDevice.updateQuestionsNumber();
         });
 
+        $('#eCQPercentajeError').on('keyup', function () {
+            var v = this.value;
+            v = v.replace(/\D/g, '');
+            v = v.substring(0, 2);
+            this.value = v;
+        });
+        $('#eCQPercentajeError').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 0 : this.value;
+            this.value = this.value > 99 ? 99 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });
+
+
 
         $('#eCQfeedbackLink').on('click', function (e) {
             e.preventDefault();
@@ -822,6 +840,7 @@ var $exeDevice = {
 
     updateFieldGame: function (game) {
         $exeDevice.active = 0;
+        game.percentajeError = typeof game.percentajeError == "undefined" ? 0 : game.percentajeError;
         $('#eCQShowMinimize').prop('checked', game.showMinimize);
         $('#eCQOptionsRamdon').prop('checked', game.optionsRamdon);
         $('#eCQShowSolution').prop('checked', game.showSolution);
@@ -830,6 +849,7 @@ var $exeDevice = {
         $("#eCQHasFeedBack").prop('checked', game.feedBack);
         $("#eCQPercentajeFB").val(game.percentajeFB);
         $('#eCQPercentajeQuestions').val(game.percentajeQuestions);
+        $('#eCQPercentajeError').val(game.percentajeError);
         $('#eCQModeBoard').prop("checked", game.modeBoard);
         $('#eCQPercentajeFB').prop('disabled', !game.feedBack);
         $('#eCQHasFeedBack').prop('checked', game.feedBack);

@@ -148,8 +148,8 @@ var $eXeMathProblems = {
 
     loadDataGame: function (data, $wordings, $feedbacks) {
         var json = data.text(),
-            djson= $eXeMathProblems.Decrypt(json);
-            options = $eXeMathProblems.isJsonString(djson),
+            djson = $eXeMathProblems.Decrypt(json);
+        options = $eXeMathProblems.isJsonString(djson),
             hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(djson);
         if (hasLatex) {
             $eXeMathProblems.hasLATEX = true;
@@ -162,6 +162,7 @@ var $eXeMathProblems = {
         options.gameStarted = false;
         options.obtainedClue = false;
         options.gameOver = false;
+        options.percentajeError = typeof options.percentajeError == "undefined" ? 0 : options.percentajeError;
         $eXeMathProblems.setTexts(options.questions, $wordings, $feedbacks);
         $eXeMathProblems.loadProblems(options)
         options.questions = $eXeMathProblems.getQuestions(options.questions, options.percentajeQuestions);
@@ -174,7 +175,7 @@ var $eXeMathProblems = {
             var text = options.questions[i].wordingseg,
                 formula = options.questions[i].formula,
                 values = formula.match(expresion);
-            if(values !== null && values.length>0 ){
+            if (values !== null && values.length > 0) {
                 for (var j = 0; j < values.length; j++) {
                     var rg = new RegExp(values[j], 'g'),
                         number = $eXeMathProblems.getRandomNo(options.questions[i].min, options.questions[i].max, options.questions[i].decimals);
@@ -183,7 +184,7 @@ var $eXeMathProblems = {
                 }
             }
             options.questions[i].solution = eval(formula);
-            options.questions[i].solution= parseFloat(options.questions[i].solution.toFixed(2))
+            options.questions[i].solution = parseFloat(options.questions[i].solution.toFixed(2))
             options.questions[i].wording = text;
         }
 
@@ -322,7 +323,7 @@ var $eXeMathProblems = {
         $('#mthpBtnReply-' + instance).prop('disabled', false);
         $('#mthpBtnMoveOn-' + instance).prop('disabled', false);
         $('#mthpEdAnswer-' + instance).prop('disabled', false);
-        mOptions.counter = q.time*60;
+        mOptions.counter = q.time * 60;
 
         $('#mthpDivFeedBackQ-' + instance).hide();
         if (q.textFeedBack.length > 0) {
@@ -377,7 +378,7 @@ var $eXeMathProblems = {
             solution = question.solution * 1.00;
         answord = answord.replace(',', '.');
         answord = parseFloat(answord).toFixed(2);
-        answord= parseFloat(answord);
+        answord = parseFloat(answord);
         if (!mOptions.gameActived) {
             return;
         }
@@ -389,15 +390,23 @@ var $eXeMathProblems = {
         $('#mthpBtnReply-' + instance).prop('disabled', true);
         $('#mthpBtnMoveOn-' + instance).prop('disabled', true);
         $('#mthpEdAnswer-' + instance).prop('disabled', true);
-        $eXeMathProblems.updateScore(solution == answord, instance)
-
+        var correct = (solution == answord);
+        if (typeof mOptions.percentajeError != "undefined" && mOptions.percentajeError > 0) {
+            answord = $('#mthpEdAnswer-' + instance).val();
+            answord = answord.replace(',', '.');
+            answord = parseFloat(answord)
+            solution = question.solution * 1.00;
+            var ep = (solution * mOptions.percentajeError) / 100;
+            correct = (answord >= solution - ep) && (answord <= solution + ep);
+        }
+        $eXeMathProblems.updateScore(correct, instance);
         mOptions.activeCounter = false;
         var timeShowSolution = 1000;
         if (mOptions.showSolution) {
             timeShowSolution = mOptions.timeShowSolution * 1000;
         }
         setTimeout(function () {
-            if ( mOptions.numberQuestions - mOptions.hits - mOptions.errors <= 0) {
+            if (mOptions.numberQuestions - mOptions.hits - mOptions.errors <= 0) {
                 $eXeMathProblems.gameOver(0, instance)
             } else {
                 $eXeMathProblems.newQuestion(instance)
@@ -415,7 +424,7 @@ var $eXeMathProblems = {
     },
 
     checkClue: function (instance) {
-        
+
         var mOptions = $eXeMathProblems.options[instance],
             percentageHits = (mOptions.hits / mOptions.numberQuestions) * 100,
             message = '';
@@ -425,9 +434,9 @@ var $eXeMathProblems = {
                 mOptions.obtainedClue = true;
                 $('#mthpPShowClue-' + instance).text(message);
             }
-         
+
         }
-        
+
     },
     addButtonScore: function (instance) {
         var mOptions = $eXeMathProblems.options[instance];
@@ -461,7 +470,7 @@ var $eXeMathProblems = {
     sendScore: function (instance, auto) {
         var mOptions = $eXeMathProblems.options[instance],
             message = '',
-            score = ((mOptions.hits * 10) /  mOptions.numberQuestions).toFixed(2);
+            score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
         if (mOptions.gameStarted || mOptions.gameOver) {
             if (typeof ($eXeMathProblems.mScorm) != 'undefined') {
                 if (!auto) {
@@ -580,7 +589,7 @@ var $eXeMathProblems = {
             }
             return true;
         });
-        $('#mthpPNumber-' + instance).text( mOptions.numberQuestions);
+        $('#mthpPNumber-' + instance).text(mOptions.numberQuestions);
         $(window).on('unload', function () {
             if (typeof ($eXeMathProblems.mScorm) != "undefined") {
                 $eXeMathProblems.endScorm();
@@ -694,7 +703,7 @@ var $eXeMathProblems = {
                         timeShowSolution = mOptions.timeShowSolution * 1000;
                     }
                     setTimeout(function () {
-                        if ( mOptions.numberQuestions - mOptions.hits - mOptions.errors <= 0) {
+                        if (mOptions.numberQuestions - mOptions.hits - mOptions.errors <= 0) {
                             $eXeMathProblems.gameOver(0, instance)
                         } else {
                             $eXeMathProblems.newQuestion(instance)
@@ -727,7 +736,7 @@ var $eXeMathProblems = {
         };
         if (mOptions.scorm.isScorm == 1) {
             if (mOptions.scorm.repeatActivity || $eXeMathProblems.initialScore === '') {
-                var score = ((mOptions.hits * 10) /  mOptions.numberQuestions).toFixed(2);
+                var score = ((mOptions.hits * 10) / mOptions.numberQuestions).toFixed(2);
                 $eXeMathProblems.sendScore(instance, true);
                 $('#mthpRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
 
@@ -740,7 +749,7 @@ var $eXeMathProblems = {
         var mOptions = $eXeMathProblems.options[instance],
             numActiveQuestion = numq;
         numActiveQuestion++;
-        if (numActiveQuestion >=  mOptions.numberQuestions) {
+        if (numActiveQuestion >= mOptions.numberQuestions) {
             return -10;
         }
         mOptions.activeQuestion = numActiveQuestion;
@@ -777,7 +786,7 @@ var $eXeMathProblems = {
 
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMathProblems.options[instance];
-        if (mOptions.itinerary.codeAccess.toLowerCase()== $('#mthpCodeAccessE-' + instance).val().toLowerCase()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#mthpCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeMathProblems.showCubiertaOptions(false, instance);
             mOptions.gameStarted = false;
             $eXeMathProblems.startGame(instance);
@@ -799,7 +808,7 @@ var $eXeMathProblems = {
 
     showFeedBack: function (instance) {
         var mOptions = $eXeMathProblems.options[instance];
-        var puntos = mOptions.hits * 100 /  mOptions.numberQuestions;
+        var puntos = mOptions.hits * 100 / mOptions.numberQuestions;
         if (mOptions.feedBack) {
             if (puntos >= mOptions.percentajeFB) {
                 $('#mthpDivFeedBack-' + instance).find('.mathproblems-feedback-game').show();
@@ -807,11 +816,10 @@ var $eXeMathProblems = {
             } else {
                 $eXeMathProblems.showMessage(1, mOptions.msgs.msgTryAgain.replace('%s', mOptions.percentajeFB), instance);
             }
-            if( $('#mthpGameContainer-' + instance).height()<$('#mthpCubierta-' + instance).height()){
-                $('#mthpGameContainer-' + instance).height($('#mthpCubierta-' + instance).height()+80)
+            if ($('#mthpGameContainer-' + instance).height() < $('#mthpCubierta-' + instance).height()) {
+                $('#mthpGameContainer-' + instance).height($('#mthpCubierta-' + instance).height() + 80)
             }
         }
-        
     },
 
     loadMathJax: function () {
@@ -871,9 +879,9 @@ var $eXeMathProblems = {
         } else {
             mOptions.errors++;
         }
-        pendientes =  mOptions.numberQuestions - mOptions.errors - mOptions.hits;
+        pendientes = mOptions.numberQuestions - mOptions.errors - mOptions.hits;
         message = $eXeMathProblems.getMessageAnswer(correctAnswer, instance);
-        mOptions.score = (mOptions.hits /  mOptions.numberQuestions) * 10;
+        mOptions.score = (mOptions.hits / mOptions.numberQuestions) * 10;
         if (mOptions.isScorm === 1) {
             if (mOptions.scorm.repeatActivity || $eXeMathProblems.initialScore === '') {
                 var score = mOptions.score.toFixed(2);;
@@ -896,9 +904,12 @@ var $eXeMathProblems = {
         }
         if (mOptions.showSolution) {
             if (correctAnswer) {
-                message += mOptions.msgs.msgSolution + ': ' + q.solution;
+                message += ' ' + mOptions.msgs.msgSolution + ': ' + q.solution;
             } else {
-                message = mOptions.msgs.msgNotCorrect + ' ' + q.solution
+                message = ' ' + mOptions.msgs.msgNotCorrect + ' ' + q.solution
+            }
+            if (typeof mOptions.percentajeError != 'undefined' && mOptions.percentajeError > 0) {
+                message += ' +/- ' + mOptions.percentajeError + '%';
             }
         }
         return message;
@@ -911,7 +922,7 @@ var $eXeMathProblems = {
     },
     updateGameBoard(instance) {
         var mOptions = $eXeMathProblems.options[instance],
-            pendientes =  mOptions.numberQuestions - mOptions.errors - mOptions.hits,
+            pendientes = mOptions.numberQuestions - mOptions.errors - mOptions.hits,
             sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
         $('#mthpPHits-' + instance).text(mOptions.hits);
         $('#mthpPErrors-' + instance).text(mOptions.errors);
