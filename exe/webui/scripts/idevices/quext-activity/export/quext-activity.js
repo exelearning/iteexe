@@ -213,7 +213,7 @@ var $eXeQuExt = {
             if (typeof (MathJax) != "undefined") {
                 try {
                     if (MathJax.Hub && typeof MathJax.Hub.Queue == "function") {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#'+mnodo]);
+                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '#' + mnodo]);
                     } else if (typeof MathJax.typeset == "function") {
                         var nodo = document.getElementById(mnodo);
                         MathJax.typesetClear([nodo]);
@@ -289,6 +289,7 @@ var $eXeQuExt = {
                 <div class="gameQP-EText" id="quextEText-' + instance + '"></div>\
                 <img src="' + path + 'quextHome.png" class="gameQP-Cover" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="quextVideo-' + instance + '"></div>\
+                <video class="gameQP-Video" id = "quextVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
                 <div class="gameQP-Protector" id="quextProtector-' + instance + '"></div>\
                 <a href="#" class="gameQP-LinkAudio" id="quextLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="quextGamerOver-' + instance + '">\
@@ -331,6 +332,7 @@ var $eXeQuExt = {
             </div>\
             <div class="gameQP-VideoIntroDiv" id="quextVideoIntroDiv-' + instance + '">\
                 <div class="gameQP-VideoIntro" id="quextVideoIntro-' + instance + '"></div>\
+                <video class="gameQP-VideoIntro" id = "quextVideoIntroLocal-' + instance + '" preload="auto" controls width="100%" height="100%" ><source src = ""></video>\
                 <input type="button" class="gameQP-VideoIntroClose" id="quextVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '" />\
             </div>\
             <div class="gameQP-DivFeedBack" id="quextDivFeedBack-' + instance + '">\
@@ -415,7 +417,7 @@ var $eXeQuExt = {
             json = $eXeQuExt.Decrypt(json);
         }
         var mOptions = $eXeQuExt.isJsonString(json),
-        hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
+            hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
         if (hasLatex) {
             $eXeQuExt.hasLATEX = true;
         }
@@ -425,16 +427,17 @@ var $eXeQuExt = {
         mOptions.waitPlayIntro = false;
         mOptions.hasVideoIntro = false;
         mOptions.gameStarted = false;
+        mOptions.durationVideoIntro = mOptions.endVideo + 100;
         mOptions.percentajeQuestions = typeof mOptions.percentajeQuestions != 'undefined' ? mOptions.percentajeQuestions : 100;
-
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             mOptions.questionsGame[i].audio = typeof mOptions.questionsGame[i].audio == 'undefined' ? '' : mOptions.questionsGame[i].audio
-            mOptions.questionsGame[i].url = $eXeQuExt.extractURLGD(mOptions.questionsGame[i].url);
-
-            if (mOptions.questionsGame[i].type == 2) {
+            if (mOptions.questionsGame[i].type != 2) {
+                mOptions.questionsGame[i].url = $eXeQuExt.extractURLGD(mOptions.questionsGame[i].url);
+            }
+            var idyt = $eXeQuExt.getIDYoutube(mOptions.questionsGame[i].url)
+            if (mOptions.questionsGame[i].type == 2 && idyt) {
                 mOptions.hasVideo = true;
             }
-
         }
         mOptions.scoreGame = 0;
         mOptions.scoreTotal = 0;
@@ -508,7 +511,6 @@ var $eXeQuExt = {
             }, 1000);
         } else if (mOptions.waitPlayIntro) {
             mOptions.waitPlayIntro = false;
-            $eXeQuExt.playVideoIntro(instance);
             setTimeout(function () {
                 $eXeQuExt.playVideoIntro(instance);
                 $('#quextStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
@@ -643,12 +645,12 @@ var $eXeQuExt = {
 
     },
     onPlayerReady: function (event) {
-        var video='quextVideo-0';
-        if((event.target.h) && (event.target.h.id) ){
-            video=event.target.h.id;
-        }else if ((event.target.i ) && (event.target.i.id)) {
-            video=event.target.i.id;
-        } 
+        var video = 'quextVideo-0';
+        if ((event.target.h) && (event.target.h.id)) {
+            video = event.target.h.id;
+        } else if ((event.target.i) && (event.target.i.id)) {
+            video = event.target.i.id;
+        }
         video = video.split("-");
         if (video.length == 2 && (video[0] == "quextVideo" || video[0] == "quextVideoIntro")) {
             var instance = parseInt(video[1]);
@@ -658,12 +660,75 @@ var $eXeQuExt = {
 
         }
     },
+    updateTimerDisplayLocal: function (instance) {
+        var mOptions = $eXeQuExt.options[instance];
+        if (mOptions.localPlayer) {
+            var currentTime = mOptions.localPlayer.currentTime;
+            if (currentTime) {
+                $eXeQuExt.updateSoundVideoLocal(instance);
+                if (Math.ceil(currentTime) == mOptions.pointEnd || Math.ceil(currentTime) == mOptions.durationVideo) {
+                    mOptions.localPlayer.pause();
+                    mOptions.pointEnd = 100000;
+                }
+            }
+        }
+    },
+    updateTimerDisplayLocalIntro: function (instance) {
+        var mOptions = $eXeQuExt.options[instance];
+        if (mOptions.localPlayerIntro) {
+            var currentTime = mOptions.localPlayerIntro.currentTime;
+
+            if (currentTime) {
+                if (Math.ceil(currentTime) == mOptions.pointEndIntro || Math.ceil(currentTime) == mOptions.durationVideoIntro) {
+                    mOptions.localPlayerIntro.pause();
+                    mOptions.pointEndIntro = 100000;
+                    clearInterval(mOptions.timeUpdateIntervalIntro);
+                }
+            }
+        }
+    },
+    updateSoundVideoLocal: function (instance) {
+        var mOptions = $eXeQuExt.options[instance];
+
+        if (mOptions.activeSilent) {
+            if (mOptions.localPlayer) {
+                if (mOptions.localPlayer.currentTime) {
+                    var time = Math.round(mOptions.localPlayer.currentTime);
+                    if (time == mOptions.question.silentVideo) {
+                        mOptions.localPlayer.muted = true;
+                    } else if (time == mOptions.endSilent) {
+                        mOptions.localPlayer.muted = false;
+                    }
+                }
+            }
+        }
+    },
     updateTimerDisplay: function () {},
     updateProgressBar: function () {},
     onPlayerError: function (event) {},
-    startVideoIntro: function (id, start, end, instance) {
+    startVideoIntro: function (id, start, end, instance, type) {
         var mOptions = $eXeQuExt.options[instance],
             mstart = start < 1 ? 0.1 : start;
+            $('#quextVideoIntro-' + instance).hide();
+            $('#quextVideoIntroLocal-' + instance).hide();
+
+        if (type == 1) {
+            if (mOptions.localPlayerIntro) {
+                mOptions.pointEndIntro = end;
+                mOptions.localPlayerIntro.src = id
+                mOptions.localPlayerIntro.currentTime = parseFloat(start)
+                if (typeof mOptions.localPlayerIntro.play == "function") {
+                    mOptions.localPlayerIntro.play();
+                }
+            }
+            clearInterval(mOptions.timeUpdateIntervalIntro);
+            mOptions.timeUpdateIntervalIntro = setInterval(function () {
+                $eXeQuExt.updateTimerDisplayLocalIntro(instance);
+            }, 1000);
+         
+            $('#quextVideoIntroLocal-' + instance).show();
+            return
+        }
         if (mOptions.playerIntro) {
             if (typeof mOptions.playerIntro.loadVideoById == "function") {
                 mOptions.playerIntro.loadVideoById({
@@ -672,27 +737,27 @@ var $eXeQuExt = {
                     'endSeconds': end
                 });
             }
+            $('#quextVideoIntro-' + instance).show();
         }
     },
-    stopVideoIntro: function (instance) {
-        var mOptions = $eXeQuExt.options[instance];
-        if (mOptions.playerIntro) {
-            if (typeof mOptions.playerIntro.pauseVideo == "function") {
-                mOptions.playerIntro.pauseVideo();
-            }
-        }
-    },
-    playVideo: function (instance) {
-        var mOptions = $eXeQuExt.options[instance];
-        if (mOptions.player) {
-            if (typeof mOptions.player.playVideo == "function") {
-                mOptions.player.playVideo();
-            }
-        }
-    },
-    startVideo: function (id, start, end, instance) {
+    startVideo: function (id, start, end, instance, type) {
         var mOptions = $eXeQuExt.options[instance],
             mstart = start < 1 ? 0.1 : start;
+        if (type == 1) {
+            if (mOptions.localPlayer) {
+                mOptions.pointEnd = end;
+                mOptions.localPlayer.src = id
+                mOptions.localPlayer.currentTime = parseFloat(start)
+                if (typeof mOptions.localPlayer.play == "function") {
+                    mOptions.localPlayer.play();
+                }
+            }
+            clearInterval(mOptions.timeUpdateInterval);
+            mOptions.timeUpdateInterval = setInterval(function () {
+                $eXeQuExt.updateTimerDisplayLocal(instance);
+            }, 1000);
+            return
+        }
         if (mOptions.player) {
             if (typeof mOptions.player.loadVideoById == "function") {
                 mOptions.player.loadVideoById({
@@ -701,19 +766,46 @@ var $eXeQuExt = {
                     'endSeconds': end
                 });
             }
-
         }
     },
     stopVideo: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
+        if (mOptions.localPlayer) {
+            if (typeof mOptions.localPlayer.pause == "function") {
+                mOptions.localPlayer.pause();
+            }
+        }
         if (mOptions.player) {
             if (typeof mOptions.player.pauseVideo == "function") {
                 mOptions.player.pauseVideo();
             }
         }
     },
-    muteVideo: function (mute, instance) {
+    stopVideoIntro: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
+        if (mOptions.localPlayerIntro) {
+            if (typeof mOptions.localPlayerIntro.pause == "function") {
+                mOptions.localPlayerIntro.pause();
+            }
+        }
+        if (mOptions.playerIntro) {
+            if (typeof mOptions.playerIntro.pauseVideo == "function") {
+                mOptions.playerIntro.pauseVideo();
+            }
+        }
+    },
+    muteVideo: function (mute, instance, type) {
+        var mOptions = $eXeQuExt.options[instance];
+        if (type == 1) {
+            if (mOptions.localPlayer) {
+                if (mute) {
+                    mOptions.localPlayer.muted = true;
+                } else {
+                    mOptions.localPlayer.muted = false;;
+                }
+            }
+            return
+        }
         if (mOptions.player) {
             if (mute) {
                 if (typeof mOptions.player.mute == "function") {
@@ -734,6 +826,8 @@ var $eXeQuExt = {
         window.addEventListener('resize', function () {
             $eXeQuExt.refreshImageActive(instance);
         });
+        mOptions.localPlayer = document.getElementById('quextVideoLocal-' + instance);
+        mOptions.localPlayerIntro = document.getElementById('quextVideoIntroLocal-' + instance);
         $('videoquextGamerOver-' + instance).css('display', 'flex');
         $('#quextLinkMaximize-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -755,6 +849,7 @@ var $eXeQuExt = {
         $('#quextGamerOver-' + instance).hide();
         $('#quextCodeAccessDiv-' + instance).hide();
         $('#quextVideo-' + instance).hide();
+        $('#quextVideoLocal-' + instance).hide();
         $('#quextImagen-' + instance).hide();
         $('#quextCursor-' + instance).hide();
         $('#quextCover-' + instance).show();
@@ -793,7 +888,7 @@ var $eXeQuExt = {
             $('#quextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#quextCodeAccessDiv-' + instance).show();
             $('#quextGameContainer-' + instance + ' .gameQP-StartGame').hide();
-            $eXeQuExt.showCubiertaOptions(true,instance)
+            $eXeQuExt.showCubiertaOptions(true, instance)
         }
         $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", function (e) {
             var fullScreenElement =
@@ -814,8 +909,10 @@ var $eXeQuExt = {
         $('#quextPShowClue-' + instance).hide();
         mOptions.gameOver = false;
         $('#quextLinkVideoIntroShow-' + instance).hide();
-        if ($eXeQuExt.getIDYoutube(mOptions.idVideo) !== '') {
-            mOptions.hasVideoIntro = true;
+        if ($eXeQuExt.getIDYoutube(mOptions.idVideo) !== '' || $eXeQuExt.getURLVideoMediaTeca(mOptions.idVideo)) {
+            if ($eXeQuExt.getIDYoutube(mOptions.idVideo) !== '') {
+                mOptions.hasVideoIntro = true;
+            }
             $('#quextVideoIntroContainer-' + instance).css('display', 'flex');
             $('#quextVideoIntroContainer-' + instance).show();
             $('#quextLinkVideoIntroShow-' + instance).show();
@@ -823,14 +920,19 @@ var $eXeQuExt = {
 
         $('#quextLinkVideoIntroShow-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
-            $eXeQuExt.getYTVideoIntro(instance)
+            if ($eXeQuExt.getURLVideoMediaTeca(mOptions.idVideo)) {
+                $eXeQuExt.playVideoIntroLocal(instance)
+            } else {
+                $eXeQuExt.getYTVideoIntro(instance)
+            }
         });
 
         $('#quextVideoIntroClose-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $('#quextVideoIntroDiv-' + instance).hide();
+
             $('#quextStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
-            $eXeQuExt.startVideoIntro('', 0, 0, instance);
+            $eXeQuExt.stopVideoIntro(instance);
         });
 
         $('#quextStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
@@ -865,7 +967,15 @@ var $eXeQuExt = {
         var mOptions = $eXeQuExt.options[instance],
             idVideo = $eXeQuExt.getIDYoutube(mOptions.idVideo);
         mOptions.endVideo = mOptions.endVideo <= mOptions.startVideo ? 36000 : mOptions.endVideo;
-        $eXeQuExt.startVideoIntro(idVideo, mOptions.startVideo, mOptions.endVideo, instance);
+        $eXeQuExt.startVideoIntro(idVideo, mOptions.startVideo, mOptions.endVideo, instance, 0);
+    },
+    playVideoIntroLocal(instance) {
+        $('#quextVideoIntroDiv-' + instance).show();
+        var mOptions = $eXeQuExt.options[instance],
+            idVideo = $eXeQuExt.getURLVideoMediaTeca(mOptions.idVideo);
+        mOptions.endVideo = mOptions.endVideo <= mOptions.startVideo ? 36000 : mOptions.endVideo;
+
+        $eXeQuExt.startVideoIntro(idVideo, mOptions.startVideo, mOptions.endVideo, instance, 1);
     },
     refreshImageActive: function (instance) {
         var mOptions = $eXeQuExt.options[instance],
@@ -908,7 +1018,7 @@ var $eXeQuExt = {
     enterCodeAccess: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#quextCodeAccessE-' + instance).val().toLowerCase()) {
-            $eXeQuExt.showCubiertaOptions(false,instance);
+            $eXeQuExt.showCubiertaOptions(false, instance);
             $eXeQuExt.getYTAPI(instance);
         } else {
             $('#quextMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
@@ -1064,8 +1174,9 @@ var $eXeQuExt = {
         mOptions.gameActived = false;
         clearInterval(mOptions.counterClock);
         $('#quextVideo-' + instance).hide();
+        $('#quextVideoLocal-' + instance).hide();
         $('#quextLinkAudio-' + instance).hide();
-        $eXeQuExt.startVideo('', 0, 0, instance);
+        $eXeQuExt.startVideo('', 0, 0, instance, 0);
         $eXeQuExt.stopVideo(instance);
         $eXeQuExt.stopSound(instance);
         $('#quextImagen-' + instance).hide();
@@ -1080,7 +1191,7 @@ var $eXeQuExt = {
         $('#quextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
         $('#quextGameContainer-' + instance + ' .gameQP-StartGame').show();
         $('#quextQuestionDiv-' + instance).hide();
-        if ($eXeQuExt.getIDYoutube(mOptions.idVideo) !== '') {
+        if ($eXeQuExt.getIDYoutube(mOptions.idVideo) !== '' || $eXeQuExt.getURLVideoMediaTeca(mOptions.idVideo)) {
             $('#quextVideoIntroContainer-' + instance).css('display', 'flex');
             $('#quextVideoIntroContainer-' + instance).show();
             $('#quextLinkVideoIntroShow-' + instance).show();
@@ -1094,6 +1205,8 @@ var $eXeQuExt = {
                 $eXeQuExt.initialScore = score;
             }
         }
+        clearInterval(mOptions.timeUpdateInterval);
+        clearInterval(mOptions.timeUpdateIntervalIntro);
         $eXeQuExt.showFeedBack(instance);
     },
     showFeedBack: function (instance) {
@@ -1127,9 +1240,9 @@ var $eXeQuExt = {
         $('#quextCover-' + instance).show();
         $('#quextEText-' + instance).hide();
         $('#quextVideo-' + instance).hide();
+        $('#quextVideoLocal-' + instance).hide();
         $('#quextLinkAudio-' + instance).hide();
         $('#quextPAuthor-' + instance).text('');
-        $eXeQuExt.startVideo('', 0, 0, instance);
         $eXeQuExt.stopVideo(instance)
         $('#quextCursor-' + instance).hide();
         $eXeQuExt.showMessage(0, '', instance);
@@ -1182,21 +1295,28 @@ var $eXeQuExt = {
             $eXeQuExt.showMessage(0, '', instance);
         } else if (mQuextion.type === 2) {
             $('#quextVideo-' + instance).show();
-            var idVideo = $eXeQuExt.getIDYoutube(mQuextion.url);
-            $eXeQuExt.startVideo(idVideo, mQuextion.iVideo, mQuextion.fVideo, instance);
-            $eXeQuExt.showMessage(1, '', instance);
+            var idVideo = $eXeQuExt.getIDYoutube(mQuextion.url),
+                urllv = $eXeQuExt.getURLVideoMediaTeca(mQuextion.url),
+                type = urllv ? 1 : 0,
+                id = type == 0 ? idVideo : urllv;
+            $eXeQuExt.startVideo(id, mQuextion.iVideo, mQuextion.fVideo, instance, type);
+            $eXeQuExt.showMessage(0, '', instance);
+            $('#quextVideo-' + instance).hide();
+            $('#quextVideoLocal-' + instance).hide();
+            $('#quextCover-' + instance).hide();
             if (mQuextion.imageVideo === 0) {
-                $('#quextVideo-' + instance).hide();
                 $('#quextCover-' + instance).show();
-
             } else {
-                $('#quextVideo-' + instance).show();
-                $('#quextCover-' + instance).hide();
+                if (type == 1) {
+                    $('#quextVideoLocal-' + instance).show();
+                } else {
+                    $('#quextVideo-' + instance).show();
+                }
             }
             if (mQuextion.soundVideo === 0) {
-                $eXeQuExt.muteVideo(true, instance);
+                $eXeQuExt.muteVideo(true, instance, type);
             } else {
-                $eXeQuExt.muteVideo(false, instance);
+                $eXeQuExt.muteVideo(false, instance, type);
             }
         }
         if (q.audio.length > 4 && q.type != 2) {
@@ -1214,7 +1334,41 @@ var $eXeQuExt = {
             $eXeQuExt.updateLatex('quextQuestionDiv-' + instance)
         }
     },
+    getURLVideoMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'http://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
 
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
     getIDYoutube: function (url) {
         var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
             match = url.match(regExp);
@@ -1580,7 +1734,10 @@ var $eXeQuExt = {
         var sUrl = urlmedia;
         if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeQuExt.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $eXeQuExt.getURLAudioMediaTeca(urlmedia);
         }
+
         return sUrl;
     }
 }
