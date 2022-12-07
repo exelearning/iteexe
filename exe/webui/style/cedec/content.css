@@ -160,9 +160,6 @@ li{list-style-position:outside}
 #printNode.with-toggler{margin-bottom:-14px}
 #printNode a{font-size:.95em;background:url(_cedec_print.gif) no-repeat 0 50%;padding-left:26px}
 
-/* Accordion */
-.fx-accordion-title,.exe-accordion h2{background:#1E3F5D}
-
 /* DL */
 .exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
 .js .exe-dl dd{margin-left:44px}

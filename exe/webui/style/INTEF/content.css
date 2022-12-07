@@ -140,9 +140,6 @@ li{list-style-position:outside}
 	*/	
 }
 
-/* Accordion */
-.fx-accordion-title,.exe-accordion h2{background:#1E3F5D}
-
 /* Hint & Feedback */
 .iDevice_hint_content{border:1px solid #ecf0f1;background:#FFF}
 .iDevice_inner .feedback{background:#FFF;border:1px solid #ecf0f1;padding:0 1em;margin:1em 0}
