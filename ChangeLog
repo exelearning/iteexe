@@ -17,7 +17,8 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New: Blackboard mode in all the games.
     - New: Accessibility warning in games that require it.
     - New: Instructions in all games.
-    - Interactive Video iDevice is now SCORM compatible. Scores can be saved. (#650)
+    - New: You can use EducaMadrid's Mediateca (https://mediateca.educa.madrid.org/) videos and audios in the games. (#657)
+    - New: Interactive Video iDevice is now SCORM compatible. Scores can be saved. (#650)
     - Multiple Choice Quiz iDevice usability revision.
     - Map iDevice: 404 errors fixed (#654) + Usability revision + New SVG icons + Effects in text slides.
     - Allow LaTeX code in more iDevices (Games and Interactive Video). MathJax will be loaded.
@@ -45,6 +46,7 @@ intef-exe (3:2.8) lucid; urgency=medium
     - Access to NTFS partitions with SNAP version.
     
   * APSL
+    - Mac problems fixed: Install styles from repository. (#656) + Download Classification Sources. (#569)
     - Package building.
     
   * Juan Rafael Fernández
