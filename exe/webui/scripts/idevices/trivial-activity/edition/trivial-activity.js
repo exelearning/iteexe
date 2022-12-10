@@ -38,6 +38,7 @@ var $exeDevice = {
     activeTema: 0,
     activesQuestions: [0, 0, 0, 0, 0, 0],
     trivialID: 0,
+    localPlayer: null,
     ci18n: {
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
@@ -84,8 +85,8 @@ var $exeDevice = {
         "msgGetQueso": _("you get the cheese of"),
         "msgRightAnswre": _("One more point."),
         "msgAudio": _("Audio"),
-		"msgCorrect": _("Correct"),
-		"msgIncorrect": _("Incorrect")
+        "msgCorrect": _("Correct"),
+        "msgIncorrect": _("Incorrect")
     },
     getId: function () {
         return Math.round(new Date().getTime() + (Math.random() * 100));
@@ -111,7 +112,7 @@ var $exeDevice = {
         msgs.msgECompleteQuestion = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
+        msgs.msgECompleteURLYoutube = _("Please type or paste a valid URL");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
@@ -187,12 +188,55 @@ var $exeDevice = {
         //$exeDevice.showMessage("El video  no está disponible")
 
     },
-    startVideo: function (id, start, end) {
+    updateSoundVideoLocal: function () {
+        if ($exeDevice.activeSilent) {
+            if ($exeDevice.localPlayer) {
+                if ($exeDevice.localPlayer.currentTime) {
+                    var time = Math.round($exeDevice.localPlayer.currentTime);
+                    if (time == $exeDevice.silentVideo) {
+                        $exeDevice.localPlayer.muted = true;
+                    } else if (time == $exeDevice.endSilent) {
+                        $exeDevice.localPlayer.muted = false;
+                    }
+                }
+            }
+        }
+    },
+    updateTimerDisplayLocal: function () {
+        if ($exeDevice.localPlayer) {
+            var currentTime = $exeDevice.localPlayer.currentTime;
+            if (currentTime) {
+                var time = $exeDevice.secondsToHour(Math.floor(currentTime));
+                $('#trivialEVideoTime').text(time);
+                $exeDevice.updateSoundVideoLocal();
+                if (Math.ceil(currentTime) == $exeDevice.pointEnd || Math.ceil(currentTime) == $exeDevice.durationVideo) {
+                    $exeDevice.localPlayer.pause();
+                    $exeDevice.pointEnd = 100000;
+                }
+            }
+        }
+    },
+    startVideo: function (id, start, end, type) {
+        var mstart = start < 1 ? 0.1 : start;
+        if (type > 0) {
+            if ($exeDevice.localPlayer) {
+                $exeDevice.pointEnd = end;
+                $exeDevice.localPlayer.src = id
+                $exeDevice.localPlayer.currentTime = parseFloat(mstart)
+                $exeDevice.localPlayer.play();
+
+            }
+            clearInterval($exeDevice.timeUpdateInterval);
+            $exeDevice.timeUpdateInterval = setInterval(function () {
+                $exeDevice.updateTimerDisplayLocal();
+            }, 1000);
+            return
+        }
         if ($exeDevice.player) {
             if (typeof $exeDevice.player.loadVideoById === "function") {
                 $exeDevice.player.loadVideoById({
                     'videoId': id,
-                    'startSeconds': start,
+                    'startSeconds': mstart,
                     'endSeconds': end
                 });
             }
@@ -223,6 +267,13 @@ var $exeDevice = {
         }
     },
     muteVideo: function (mute) {
+        if ($exeDevice.localPlayer) {
+            if (mute) {
+                $exeDevice.localPlayer.muted = true;
+            } else {
+                $exeDevice.localPlayer.muted = false;
+            }
+        }
         if ($exeDevice.player) {
             if (mute) {
                 if (typeof $exeDevice.player.mute === "function") {
@@ -411,7 +462,11 @@ var $exeDevice = {
             $exeDevice.tSilentVideo = p.tSilentVideo;
             $exeDevice.activeSilent = (p.soundVideo == 1) && (p.tSilentVideo > 0) && (p.silentVideo >= p.iVideo) && (p.iVideo < p.fVideo);
             $exeDevice.endSilent = p.silentVideo + p.tSilentVideo;
-            $exeDevice.showVideoQuestion();
+            if ($exeDevice.getIDYoutube(p.url)) {
+                $exeDevice.showVideoQuestion();
+            } else if ($exeDevice.getURLVideoMediaTeca(p.url)) {
+                $exeDevice.showVideoQuestion();
+            }
         } else if (p.type == 3) {
             tinyMCE.get('trivialEText').setContent(unescape(p.eText));
         }
@@ -442,36 +497,15 @@ var $exeDevice = {
         $('#trivialESolutionSelect').text(solution);
 
     },
-    showVideoYoutube: function (quextion) {
-        var id = $exeDevice.getIDYoutube(quextion.url);
-        $('#trivialEImageVideo').hide();
-        $('#trivialENoVideo').hide();
-        $('#trivialEVideo').hide();
-        if (id) {
-            $exeDevice.startVideo(id, quextion.iVideo, quextion.fVideo);
-            $('#trivialEVideo').show();
-            if (quextion.imageVideo == 0) {
-                $('#trivialEImageVideo').show();
-            }
-            if (quextion.soundVideo == 0) {
-                $('#trivialEImageVideo').show();
-                $exeDevice.muteVideo(true)
-            } else {
-                $exeDevice.muteVideo(false)
-            }
-        } else {
-
-            $exeDevice.showMessage($exeDevice.msgEUnavailableVideo);
-            $('#trivialENoVideo').show();
-        }
-    },
     showVideoQuestion: function () {
         var soundVideo = $('#trivialECheckSoundVideo').is(':checked') ? 1 : 0,
             imageVideo = $('#trivialECheckImageVideo').is(':checked') ? 1 : 0,
             iVideo = $exeDevice.hourToSeconds($('#trivialEInitVideo').val()),
             fVideo = $exeDevice.hourToSeconds($('#trivialEEndVideo').val()),
             url = $('#trivialEURLYoutube').val().trim(),
-            id = $exeDevice.getIDYoutube(url);
+            id = $exeDevice.getIDYoutube(url),
+            idLocal = $exeDevice.getURLVideoMediaTeca(url),
+            type = id ? 0 : 1;
         $exeDevice.silentVideo = $exeDevice.hourToSeconds($('#trivialESilenceVideo').val().trim());
         $exeDevice.tSilentVideo = parseInt($('#trivialETimeSilence').val());
         $exeDevice.activeSilent = (soundVideo == 1) && ($exeDevice.tSilentVideo > 0) && ($exeDevice.silentVideo >= iVideo) && (iVideo < fVideo);
@@ -480,13 +514,22 @@ var $exeDevice = {
         $('#trivialENoImageVideo').hide();
         $('#trivialENoVideo').show();
         $('#trivialEVideo').hide();
-        if (id) {
-            $exeDevice.startVideo(id, iVideo, fVideo);
-            $('#trivialEVideo').show();
+        $('#trivialEVideoLocal').hide();
+        if (id || idLocal) {
+            if (id) {
+                $exeDevice.startVideo(id, iVideo, fVideo, 0);
+            } else {
+                $exeDevice.startVideo(idLocal, iVideo, fVideo, 1);
+            }
             $('#trivialENoVideo').hide();
             if (imageVideo == 0) {
-                $('#trivialEVideo').hide();
                 $('#trivialENoImageVideo').show();
+            } else {
+                if (type == 0) {
+                    $('#trivialEVideo').show();
+                } else {
+                    $('#trivialEVideoLocal').show();
+                }
             }
             if (soundVideo == 0) {
                 $exeDevice.muteVideo(true)
@@ -499,7 +542,8 @@ var $exeDevice = {
         }
     },
     playSound: function (selectedFile) {
-        $exeDevice.playerAudio = new Audio(selectedFile);
+        var selectFile = $exeDevice.extractURLGD(selectedFile);
+        $exeDevice.playerAudio = new Audio(selectFile);
         $exeDevice.playerAudio.addEventListener("canplaythrough", function (event) {
             $exeDevice.playerAudio.play();
         });
@@ -525,6 +569,7 @@ var $exeDevice = {
         $cursor.hide();
         $image.attr('alt', alt);
         $('#trivialENoImage').show();
+        url = $exeDevice.extractURLGD(url);
         $image.attr('src', url)
             .on('load', function () {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
@@ -644,6 +689,7 @@ var $exeDevice = {
 
         $('#trivialEText').hide();
         $('#trivialEVideo').hide();
+        $('#trivialEVideoLocal').hide();
         $('#trivialEImage').hide();
         $('#trivialENoImage').hide();
         $('#trivialECover').hide();
@@ -714,7 +760,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">'+_("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.")+' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
+            <div class="exe-idevice-info">' + _("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.") + ' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset($exeDevice.msgs.msgGameIntrunctions) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -820,9 +866,9 @@ var $exeDevice = {
                                             <input id="trivialEYImage" type="text" value="0" />\
                                         </div>\
                                     </div>\
-                                    <span class="gameQE-ETitleVideo" id="trivialETitleVideo">' + _("Youtube URL") + '</span>\
+                                    <span class="gameQE-ETitleVideo" id="trivialETitleVideo">' + _("URL") + '</span>\
                                     <div class="gameQE-Flex gameQE-EInputVideo" id="trivialEInputVideo">\
-                                        <label class="sr-av" for="trivialEURLYoutube">' + _("Youtube URL") + '</label>\
+                                        <label class="sr-av" for="trivialEURLYoutube">' + _("URL") + '</label>\
                                         <input id="trivialEURLYoutube" type="text" />\
                                         <a href="#" id="trivialEPlayVideo" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + "quextIEPlay.png" + '"  alt="' + _("Play") + '" class="gameQE-EButtonImage" /></a>\
                                     </div>\
@@ -870,6 +916,7 @@ var $exeDevice = {
                                         <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="trivialEImage" alt="' + _("Image") + '" />\
                                         <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="trivialENoImage" alt="' + _("No image") + '" />\
                                         <div class="gameQE-EMedia" id="trivialEVideo"></div>\
+                                        <video class="gameQE-EMedia" id = "trivialEVideoLocal" preload="auto" controls><source src = ""></video>\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="trivialENoImageVideo" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoVideo.png" + '" id="trivialENoVideo" alt="" />\
                                         <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="trivialECursor" alt="" />\
@@ -927,7 +974,7 @@ var $exeDevice = {
 				' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
 				' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
 				' + $exeAuthoring.iDevice.gamification.share.getTab() + '\
-				<div class="exe-idevice-warning">'+_("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.")+'</div>\
+				<div class="exe-idevice-warning">' + _("This game may present accessibility problems for some users. You should provide an accessible alternative if the users need it.") + '</div>\
 		    </div>\
 			';
         var field = $("textarea.jsContentEditor").eq(0)
@@ -987,6 +1034,7 @@ var $exeDevice = {
         $exeDevice.showOptions(4);
         $exeDevice.showSolution('');
         $exeDevice.showTypeQuestion(0);
+        this.localPlayer = document.getElementById('trivialEVideoLocal');
 
     },
     getCuestionDefault: function () {
@@ -1095,7 +1143,7 @@ var $exeDevice = {
             var json = $('.trivial-DataGame', wrapper).text(),
                 dataGame = $exeDevice.isJsonString(json);
             dataGame = $exeDevice.Decrypt(dataGame);
-            dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
+            dataGame.modeBoard = typeof dataGame.modeBoard == "undefined" ? false : dataGame.modeBoard;
             for (var i = 0; i < dataGame.numeroTemas; i++) {
                 var tema = dataGame.temas[i];
                 for (var j = 0; j < tema.length; j++) {
@@ -1389,6 +1437,9 @@ var $exeDevice = {
         p.url = $('#trivialEURLImage').val().trim();
         if (p.type == 2) {
             p.url = $exeDevice.getIDYoutube($('#trivialEURLYoutube').val().trim()) ? $('#trivialEURLYoutube').val() : '';
+            if (p.url == '') {
+                p.url = $exeDevice.getURLVideoMediaTeca($('#trivialEURLYoutube').val().trim()) ? $('#trivialEURLYoutube').val() : '';
+            }
         }
         p.audio = $('#trivialEURLAudio').val();
         $exeDevice.stopSound();
@@ -1450,11 +1501,6 @@ var $exeDevice = {
         } else if (p.typeSelect == 2 && p.quextion.trim().length == 0) {
             message = $exeDevice.msgs.msgEProvideWord;
         }
-
-        if (p.audio.length > 0 && validExt.indexOf(extaudio) == -1) {
-            message = _("Supported formats") + '. ' + _('Audio') + ": mp3, ogg, wav";
-        }
-
         if (message.length == 0) {
             var active = $exeDevice.activesQuestions[$exeDevice.activeTema];
             $exeDevice.temas[$exeDevice.activeTema][active] = p;
@@ -1627,7 +1673,7 @@ var $exeDevice = {
         if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
         } else if (game.typeGame == 'Trivial') {
-            game.trivialID=$exeDevice.getId();
+            game.trivialID = $exeDevice.getId();
             var temas = [];
             for (var i = 0; i < 6; i++) {
                 var tema = [];
@@ -1827,7 +1873,7 @@ var $exeDevice = {
                 } else if ((mquestion.type == 1) && (mquestion.url.length < 10)) {
                     $exeDevice.showMessage($exeDevice.msgs.msgCmpleteAllQuestions);
                     return false;
-                } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url))) {
+                } else if ((mquestion.type == 2) && !($exeDevice.getIDYoutube(mquestion.url)) && !($exeDevice.getURLVideoMediaTeca(mquestion.url))) {
                     $exeDevice.showMessage($exeDevice.msgs.msgCmpleteAllQuestions);
                     return false;
                 }
@@ -1899,7 +1945,7 @@ var $exeDevice = {
             'textAfter': textAfter,
             'trivialID': $exeDevice.trivialID,
             'version': 2,
-            'modeBoard':modeBoard
+            'modeBoard': modeBoard
         }
         return data;
     },
@@ -2210,30 +2256,18 @@ var $exeDevice = {
 
         $('#trivialEPlayAudio').on('click', function (e) {
             e.preventDefault();
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $('#trivialEURLAudio').val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (validExt.indexOf(ext) == -1) {
-                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
-            } else {
-                if (selectedFile.length > 4) {
-                    $exeDevice.stopSound();
-                    $exeDevice.playSound(selectedFile);
-                }
+            var selectedFile = $('#trivialEURLAudio').val().trim();
+            if (selectedFile.length > 4) {
+                $exeDevice.stopSound();
+                $exeDevice.playSound(selectedFile);
             }
         });
 
         $('#trivialEURLAudio').on('change', function () {
-            var validExt = ['mp3', 'ogg', 'wav'],
-                selectedFile = $(this).val(),
-                ext = selectedFile.split('.').pop().toLowerCase();
-            if (this.value.length > 0 && validExt.indexOf(ext) == -1) {
-                $exeDevice.showMessage(_("Supported formats") + ": mp3, ogg, wav");
-            } else {
-                if (selectedFile.length > 4) {
-                    $exeDevice.stopSound();
-                    $exeDevice.playSound(selectedFile);
-                }
+            var selectedFile = $(this).val().trim();
+            if (selectedFile.length > 4) {
+                $exeDevice.stopSound();
+                $exeDevice.playSound(selectedFile);
             }
         });
         $('#trivialNumberQuestion').keyup(function (e) {
@@ -2256,6 +2290,7 @@ var $exeDevice = {
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
+
     gameAdd: function (content) {
         var game = $exeDevice.isJsonString(content);
         if (!game || typeof game.typeGame == "undefined") {
@@ -2373,5 +2408,49 @@ var $exeDevice = {
             'width': mData.w + 'px',
             'height': mData.h + 'px'
         });
+    },
+    getURLVideoMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+    extractURLGD: function (urlmedia) {
+        var sUrl = urlmedia;
+        if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $exeDevice.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $exeDevice.getURLAudioMediaTeca(urlmedia);
+        }
+        return sUrl;
     },
 }

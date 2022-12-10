@@ -248,9 +248,54 @@ var $eXeTrivial = {
         }
         return game;
     },
+    getURLVideoMediateca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+    getURLAudioMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/audio/") != -1;
+            var matc1 = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/audio/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            }
+            if (matc1) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'https://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+    extractURLGD: function (urlmedia) {
+        var sUrl = urlmedia;
+        if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
+            sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeTrivial.getURLAudioMediaTeca(urlmedia)) {
+            sUrl = $eXeTrivial.getURLAudioMediaTeca(urlmedia);
+        }
+        return sUrl;
+    },
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeTrivial.options[instance];
-        mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
+        selectedFile = $eXeTrivial.extractURLGD(selectedFile);
+        mOptions.playerAudio = new Audio(selectedFile);
         mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
@@ -493,6 +538,7 @@ var $eXeTrivial = {
             <div class="trivial-EText" id="trivialEText-' + instance + '"></div>\
             <img src="' + path + 'trivialHome.png" class="trivial-Cover" id="trivialCover-' + instance + '" alt="' + msgs.msImage + '" />\
             <div class="trivial-Video" id="trivialVideo-' + instance + '"></div>\
+            <video class="trivial-Video" id = "trivialVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
             <div class="trivial-Protector1" id="trivialProtector-' + instance + '"></div>\
             <a href="#" class="trivial-LinkAudio" id="trivialLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + "exequextaudio.png" + '" class="trivial-Activo" alt="' + msgs.msgAudio + '">\</a>\
         </div>\
@@ -889,6 +935,7 @@ var $eXeTrivial = {
             $eXeTrivial.correctAnswer(instance);
 
         }
+        $eXeTrivial.stopSound(instance);
         $eXeTrivial.saveDataStorage(instance);
     },
     correctAnswer: function (instance) {
@@ -1358,12 +1405,54 @@ var $eXeTrivial = {
         firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     },
-
+    updateSoundVideoLocal: function (instance) {
+        var mOptions = $eXeTrivial.options[instance];
+        if (mOptions.activeSilent) {
+            if (mOptions.localPlayer) {
+                if (mOptions.localPlayer.currentTime) {
+                    var time = Math.round(mOptions.localPlayer.currentTime);
+                    if (time == mOptions.question.silentVideo) {
+                        mOptions.localPlayer.muted = true;
+                    } else if (time == mOptions.endSilent) {
+                        mOptions.localPlayer.muted = false;
+                    }
+                }
+            }
+        }
+    },
+    updateTimerDisplayLocal: function (instance) {
+        var mOptions = $eXeTrivial.options[instance];
+        if (mOptions.localPlayer) {
+            var currentTime = mOptions.localPlayer.currentTime;
+            if (currentTime) {
+                $eXeTrivial.updateSoundVideoLocal(instance);
+                if (Math.ceil(currentTime) == mOptions.pointEnd || Math.ceil(currentTime) == mOptions.durationVideo) {
+                    mOptions.localPlayer.pause();
+                    mOptions.pointEnd = 100000;
+                }
+            }
+        }
+    },
     updateTimerDisplay: function () {},
     updateProgressBar: function () {},
     onPlayerError: function (event) {},
-    startVideo: function (id, start, end, instance) {
+    startVideo: function (id, start, end, instance, type) {
         var mOptions = $eXeTrivial.options[instance];
+        if (type == 1) {
+            if (mOptions.localPlayer) {
+                mOptions.pointEnd = end;
+                mOptions.localPlayer.src = id
+                mOptions.localPlayer.currentTime = parseFloat(start)
+                if (typeof mOptions.localPlayer.play == "function") {
+                    mOptions.localPlayer.play();
+                }
+            }
+            clearInterval(mOptions.timeUpdateInterval);
+            mOptions.timeUpdateInterval = setInterval(function () {
+                $eXeTrivial.updateTimerDisplayLocal(instance);
+            }, 1000);
+            return
+        }
         if (mOptions.player && typeof mOptions.player.loadVideoById == "function") {
             mOptions.player.loadVideoById({
                 'videoId': id,
@@ -1381,12 +1470,24 @@ var $eXeTrivial = {
     },
     stopVideo: function (instance) {
         var mOptions = $eXeTrivial.options[instance];
+        if (mOptions.localPlayer) {
+            if (typeof mOptions.localPlayer.pause == "function") {
+                mOptions.localPlayer.pause();
+            }
+        }
         if (mOptions.player && typeof mOptions.player.pauseVideo == "function") {
             mOptions.player.pauseVideo();
         }
     },
     muteVideo: function (mute, instance) {
         var mOptions = $eXeTrivial.options[instance];
+        if (mOptions.localPlayer) {
+            if (mute) {
+                mOptions.localPlayer.muted = true;
+            } else {
+                mOptions.localPlayer.muted = false;;
+            }
+        }
         if (mOptions.player && typeof mOptions.player.mute == "function" && typeof mOptions.player.unMute == "function") {
             if (mute) {
                 mOptions.player.mute();
@@ -1545,6 +1646,7 @@ var $eXeTrivial = {
         $('#trivialMessageModal-' + instance).hide();
         $('#trivialMessageModal-' + instance).css('visibility', 'visible');
         $('#trivialMessage-' + instance).hide();
+        mOptions.localPlayer = document.getElementById('trivialVideoLocal-' + instance);
         $eXeTrivial.loadGameBoard(instance);
         $('#trivialMaterias-' + instance).find('.trivial-Materia').each(function (i) {
             $(this).hide();
@@ -1642,6 +1744,8 @@ var $eXeTrivial = {
 
         $('#trivialCodeAccessDiv-' + instance).hide();
         $('#trivialVideo-' + instance).hide();
+        $('#trivialVideoLocal-' + instance).hide();
+        $('#trivialVideoLocal-' + instance).hide();
         $('#trivialImagen-' + instance).hide();
         $('#trivialCursor-' + instance).hide();
         $('#trivialCover-' + instance).show();
@@ -1747,25 +1851,25 @@ var $eXeTrivial = {
             var dataTrivial = $eXeTrivial.getDataStorage(mOptions.trivialID);
             if (dataTrivial) {
                 if (dataTrivial) {
-                    if(dataTrivial.activesQuestions.length==mOptions.numeroTemas){
+                    if (dataTrivial.activesQuestions.length == mOptions.numeroTemas) {
                         $eXeTrivial.reloadGame(dataTrivial, instance);
-                    }else{
+                    } else {
                         $eXeTrivial.rebootGame(instance)
                     }
                 }
-           }
+            }
         }
 
         $('#trivialModeBoardOK-' + instance).on('click', function (e) {
-			e.preventDefault();
-			$eXeTrivial.answerQuestionBoard(true, instance)
+            e.preventDefault();
+            $eXeTrivial.answerQuestionBoard(true, instance)
 
-		});
-		$('#trivialModeBoardKO-' + instance).on('click', function (e) {
-			e.preventDefault();
-			$eXeTrivial.answerQuestionBoard(false, instance)
+        });
+        $('#trivialModeBoardKO-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeTrivial.answerQuestionBoard(false, instance)
 
-		});
+        });
 
 
     },
@@ -1841,8 +1945,8 @@ var $eXeTrivial = {
             return;
         }
         if (mQuextion.type === 1) {
-
-            $('#trivialImagen-' + instance).attr('src', mQuextion.url)
+            var url = $eXeTrivial.extractURLGD(mQuextion.url)
+            $('#trivialImagen-' + instance).attr('src', url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
                         alt = mOptions.msgs.msgNoImage;
@@ -1916,8 +2020,10 @@ var $eXeTrivial = {
         mOptions.gameActived = false;
         clearInterval(mOptions.relojJuego);
         $('#trivialVideo-' + instance).hide();
+        $('#trivialVideoLocal-' + instance).hide();
         $eXeTrivial.startVideo('', 0, 0, instance);
         $eXeTrivial.stopVideo(instance);
+        $eXeTrivial.stopSound(instance);
         $('#trivialDivModeBoard-' + instance).hide();
         $('#trivialImagen-' + instance).hide();
         $('#trivialEText-' + instance).hide();
@@ -1957,9 +2063,9 @@ var $eXeTrivial = {
         $('#trivialWordDiv-' + instance).show();
         $('#trivialAnswerDiv-' + instance).hide();
         if (mOptions.modeBoard) {
-			$('#trivialDivModeBoard-' + instance).css('display', 'flex');
-			$('#trivialDivModeBoard-' + instance).fadeIn();
-		}
+            $('#trivialDivModeBoard-' + instance).css('display', 'flex');
+            $('#trivialDivModeBoard-' + instance).fadeIn();
+        }
         if (!casesensitive) {
             phrase = phrase.toUpperCase();
         }
@@ -2039,18 +2145,21 @@ var $eXeTrivial = {
         $('#trivialCover-' + instance).show();
         $('#trivialEText-' + instance).hide();
         $('#trivialVideo-' + instance).hide();
+        $('#trivialVideoLocal-' + instance).hide();
         $('#trivialLinkAudio-' + instance).hide();
         $eXeTrivial.startVideo('', 0, 0, instance);
-        $eXeTrivial.stopVideo(instance)
+        $eXeTrivial.stopVideo(instance);
+
         $('#trivialCursor-' + instance).hide();
         $eXeTrivial.showMessage(0, '', instance);
         $eXeTrivial.ramdonOptions(instance);
         mOptions.activeSilent = (q.type == 2) && (q.soundVideo == 1) && (q.tSilentVideo > 0) && (q.silentVideo >= q.iVideo) && (q.iVideo < q.fVideo);
         var endSonido = parseInt(q.silentVideo) + parseInt(q.tSilentVideo);
         mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;
+        var url = $eXeTrivial.extractURLGD(mQuextion.url);
         $('#trivialAuthor-' + instance).text('');
         if (mQuextion.type === 1) {
-            $('#trivialImagen-' + instance).attr('src', mQuextion.url)
+            $('#trivialImagen-' + instance).attr('src', url)
                 .on('load', function () {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
                         alt = mOptions.msgNoImage;
@@ -2087,17 +2196,23 @@ var $eXeTrivial = {
             $eXeTrivial.showMessage(0, '', instance);
 
         } else if (mQuextion.type === 2) {
-            $('#trivialVideo-' + instance).show();
-            var idVideo = $eXeTrivial.getIDYoutube(mQuextion.url);
-            $eXeTrivial.startVideo(idVideo, mQuextion.iVideo, mQuextion.fVideo, instance);
+            var idVideo = $eXeTrivial.getIDYoutube(mQuextion.url),
+                urllv = $eXeTrivial.getURLVideoMediateca(mQuextion.url),
+                type = urllv ? 1 : 0,
+                id = type == 0 ? idVideo : urllv;
+            $eXeTrivial.startVideo(id, mQuextion.iVideo, mQuextion.fVideo, instance, type);
             $eXeTrivial.showMessage(0, '', instance);
+            $('#trivialVideoLocal-' + instance).hide();
+            $('#trivialVideo-' + instance).hide();
+            $('#trivialCover-' + instance).hide()
             if (mQuextion.imageVideo === 0) {
-                $('#trivialVideo-' + instance).hide();
                 $('#trivialCover-' + instance).show();
-
             } else {
-                $('#trivialVideo-' + instance).show();
-                $('#trivialCover-' + instance).hide();
+                if (type == 1) {
+                    $('#trivialVideoLocal-' + instance).show();
+                } else {
+                    $('#trivialVideo-' + instance).show();
+                }
             }
             if (mQuextion.soundVideo === 0) {
                 $eXeTrivial.muteVideo(true, instance);
@@ -2266,12 +2381,12 @@ var $eXeTrivial = {
 
         $eXeTrivial.saveDataStorage(instance);
     },
-    answerQuestionBoard: function (value,instance) {
+    answerQuestionBoard: function (value, instance) {
         var mOptions = $eXeTrivial.options[instance],
             active = mOptions.activesQuestions[mOptions.activeTema],
             quextion = mOptions.temas[mOptions.activeTema][active],
             message = "",
-            type=1;
+            type = 1;
         if (mOptions.activeCounter == false) {
             return;
         }
