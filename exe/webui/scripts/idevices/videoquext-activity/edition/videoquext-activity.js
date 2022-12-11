@@ -94,7 +94,7 @@ var $exeDevice = {
         "msgLastQuestion": _("Last question"),
         "msgQuestionNumber": _("Question number"),
         "msgCorrect": _("Correct"),
-		"msgIncorrect": _("Incorrect")
+        "msgIncorrect": _("Incorrect")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -118,7 +118,7 @@ var $exeDevice = {
         msgs.msgECompleteQuestion = _("You have to complete the question");
         msgs.msgECompleteAllOptions = _("You have to complete all the selected options");
         msgs.msgESelectSolution = _("Choose the right answer");
-        msgs.msgECompleteURLYoutube = _("Type the right URL of a Youtube video");
+        msgs.msgECompleteURLYoutube = _("Please type or paste a valid URL.");
         msgs.msgEStartEndVideo = _("You have to indicate the start and the end of the video that you want to show");
         msgs.msgEStartEndIncorrect = _("The video end value must be higher than the start one");
         msgs.msgWriteText = _("You have to type a text in the editor");
@@ -138,9 +138,12 @@ var $exeDevice = {
         return randomstring;
     },
     extractURLGD: function (urlmedia) {
-        var sUrl = urlmedia;
+        var sUrl = urlmedia,
+            idmtc = $exeDevice.getIDMediaTeca(urlmedia);
         if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
+        } else if (idmtc) {
+            sUrl='http://mediateca.educa.madrid.org/streaming.php?id='+idmtc
         }
         return sUrl;
     },
@@ -226,6 +229,10 @@ var $exeDevice = {
             $exeDevice.stopVideoYT();
             $exeDevice.startVideoLocal(url, mstart, end);
         } else if ($exeDevice.videoType == 2) {
+            url = $exeDevice.extractURLGD(url);
+            $exeDevice.stopVideoYT();
+            $exeDevice.startVideoLocal(url, mstart, end);
+        } else if ($exeDevice.videoType == 3) {
             url = $exeDevice.extractURLGD(url);
             $exeDevice.stopVideoYT();
             $exeDevice.startVideoLocal(url, mstart, end);
@@ -430,16 +437,16 @@ var $exeDevice = {
             $exeDevice.showQuestion($exeDevice.active);
         }
     },
-    updateQuestionsNumber: function(){
-        var percentaje=parseInt($exeDevice.removeTags($('#vquextEPercentajeQuestions').val()));
-        if(isNaN(percentaje)){
+    updateQuestionsNumber: function () {
+        var percentaje = parseInt($exeDevice.removeTags($('#vquextEPercentajeQuestions').val()));
+        if (isNaN(percentaje)) {
             return;
         }
-        percentaje=percentaje<1?1:percentaje;
-        percentaje=percentaje>100?100:percentaje;
-        var num=Math.round((percentaje*$exeDevice.questionsGame.length)/100);
-        num=num==0?1:num;
-        $('#vquextENumeroPercentaje').text(num+"/"+$exeDevice.questionsGame.length)
+        percentaje = percentaje < 1 ? 1 : percentaje;
+        percentaje = percentaje > 100 ? 100 : percentaje;
+        var num = Math.round((percentaje * $exeDevice.questionsGame.length) / 100);
+        num = num == 0 ? 1 : num;
+        $('#vquextENumeroPercentaje').text(num + "/" + $exeDevice.questionsGame.length)
     },
     showQuestion: function (i) {
         var num = i < 0 ? 0 : i;
@@ -515,7 +522,7 @@ var $exeDevice = {
         $('#vquextENoImageVideo').hide();
         $('#vquextECover').hide();
         $('#vquextENoVideo').hide();
-        if ($exeDevice.videoType == 1) {
+        if ($exeDevice.videoType == 1 || $exeDevice.videoType == 3) {
             $('#vquextEVideoLocal').show();
             $('#vquextEVideo').hide();
         } else if ($exeDevice.videoType == 2) {
@@ -602,7 +609,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Create activities consisting on a video with interactive questions.")+' <a href="https://youtu.be/Ynj02JcsA1I" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
+                <div class="exe-idevice-info">' + _("Create activities consisting on a video with interactive questions.") + ' <a href="https://youtu.be/Ynj02JcsA1I" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Choose the right answer")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -644,7 +651,7 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="vquextEHasFeedBack"><input type="checkbox"  id="vquextEHasFeedBack"> ' + _("Feedback") + '. </label> \
-                                <label for="vquextEPercentajeFB"><input type="number" name="vquextEPercentajeFB" id="vquextEPercentajeFB" value="100" min="5" max="100" step="5" disabled />  '+_("&percnt; right to see the feedback")+' </label>\
+                                <label for="vquextEPercentajeFB"><input type="number" name="vquextEPercentajeFB" id="vquextEPercentajeFB" value="100" min="5" max="100" step="5" disabled />  ' + _("&percnt; right to see the feedback") + ' </label>\
                             </p>\
                             <p id="vquextEFeedbackP" class="gameQE-EFeedbackP">\
                                 <textarea id="vquextEFeedBackEditor" class="exe-html-editor"\></textarea>\
@@ -675,7 +682,7 @@ var $exeDevice = {
                         <div class="gameQE-EPanel" id="vquextEPanel">\
                             <div class="gameQE-Flex gameQE-EVIOptionsVQ">\
                                 <div class="gameQE-EVILabel">\
-                                    <label for="vquextEVIURL">' + _("Youtube") + '/' + _('File') + ':</label>\
+                                    <label for="vquextEVIURL">URL:</label>\
                                     <input type="text" id="vquextEVIURL" class="exe-file-picker gameQE-EURLAudio" />\
                                 </div>\
                                 <a href="#" id="vquextEPlayStart" class="gameQE-ENavigationButton gameQE-EPlayVideo" title="' + _("Play video") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Play") + '" class="gameQE-EButtonImage" /></a>\
@@ -895,7 +902,7 @@ var $exeDevice = {
                 json = $exeDevice.Decrypt(json);
             }
             var dataGame = $exeDevice.isJsonString(json);
-            dataGame.modeBoard=typeof dataGame.modeBoard =="undefined"?false:dataGame.modeBoard;
+            dataGame.modeBoard = typeof dataGame.modeBoard == "undefined" ? false : dataGame.modeBoard;
             $exeDevice.active = 0;
             $exeDevice.questionsGame = dataGame.questionsGame;
             for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
@@ -1053,6 +1060,21 @@ var $exeDevice = {
             return false;
         }
     },
+
+    getIDMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                return id;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    },
+
     save: function () {
         if (!$exeDevice.validateQuestion()) {
             return;
@@ -1113,6 +1135,7 @@ var $exeDevice = {
             extension = idVideoQuExt.split('.').pop().toLowerCase(),
             isVideoLocal = (validExt.indexOf(extension) != -1) || (idVideoQuExt.toLowerCase().indexOf("google.com/videoplayback") != -1),
             isAudio = (validExtAudio.indexOf(extension) != -1) || (idVideoQuExt.toLowerCase().indexOf("https://drive.google.com") == 0 && idVideoQuExt.toLowerCase().indexOf('sharing') != -1);
+        isMediaTeca = idVideoQuExt.indexOf("https://mediateca.educa.madrid.org/") == 0;
         if ($exeDevice.videoType == 0 && !$exeDevice.getIDYoutube(idVideoQuExt)) {
             $exeDevice.showMessage($exeDevice.msgs.msgECompleteURLYoutube);
             return false;
@@ -1120,6 +1143,9 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo);
             return false;
         } else if ($exeDevice.videoType == 2 && !isAudio) {
+            $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo);
+            return false;
+        } else if ($exeDevice.videoType == 3 && !isMediaTeca) {
             $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo);
             return false;
         } else if (!$exeDevice.validTime($('#vquextEVIStart').val()) || !$exeDevice.validTime($('#vquextEVIEnd').val())) {
@@ -1285,12 +1311,12 @@ var $exeDevice = {
             customMessages = $('#vquextECustomMessages').is(':checked'),
             isVideoLocal = (validExt.indexOf(extension) != -1) || (idVideoQuExt.toLowerCase().indexOf("google.com/videoplayback") != -1),
             isAudio = (validExtAudio.indexOf(extension) != -1) || ((idVideoQuExt.toLowerCase().indexOf("https://drive.google.com") == 0 && idVideoQuExt.toLowerCase().indexOf('sharing') != -1)),
+            isMediaTeca = idVideoQuExt.indexOf("https://mediateca.educa.madrid.org/videos") !=1,
             authorVideo = $('#vquextEAuthor').val(),
             isNavigable = $('#vquextENavigable').is(':checked'),
             repeatQuestion = $('#vquextERepeatQuestion').is(':checked'),
-            percentajeQuestions=parseInt(clear($('#vquextEPercentajeQuestions').val())),
+            percentajeQuestions = parseInt(clear($('#vquextEPercentajeQuestions').val())),
             modeBoard = $('#vquextEModeBoard').is(':checked');
-
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -1303,6 +1329,9 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo);
             return false;
         } else if ($exeDevice.videoType == 2 && !isAudio) {
+            $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo);
+            return false;
+        } else if ($exeDevice.videoType == 3 && !isMediaTeca) {
             $exeDevice.showMessage($exeDevice.msgs.msgFormatVideo);
             return false;
         } else if (showSolution && timeShowSolution.length == 0) {
@@ -1385,8 +1414,8 @@ var $exeDevice = {
             'authorVideo': authorVideo,
             'isNavigable': isNavigable,
             'repeatQuestion': repeatQuestion,
-            'percentajeQuestions':percentajeQuestions,
-            'modeBoard':modeBoard
+            'percentajeQuestions': percentajeQuestions,
+            'modeBoard': modeBoard
         }
         return data;
     },
@@ -1504,7 +1533,7 @@ var $exeDevice = {
             v = v.replace(/\D/g, '');
             v = v.substring(0, 3);
             this.value = v;
-            if(this.value>0 && this.value<101){
+            if (this.value > 0 && this.value < 101) {
                 $exeDevice.updateQuestionsNumber();
             }
         });
@@ -1675,14 +1704,14 @@ var $exeDevice = {
                 var num = parseInt($(this).val());
                 if (!isNaN(num) && num > 0) {
                     if ($exeDevice.validateQuestion() != false) {
-                        $exeDevice.active= num < $exeDevice.questionsGame.length ? num-1 : $exeDevice.questionsGame.length-1;
+                        $exeDevice.active = num < $exeDevice.questionsGame.length ? num - 1 : $exeDevice.questionsGame.length - 1;
                         $exeDevice.showQuestion($exeDevice.active);
 
-                    }else{
-                        $(this).val($exeDevice.active+1)
+                    } else {
+                        $(this).val($exeDevice.active + 1)
                     }
-                }else{
-                    $(this).val($exeDevice.active+1)
+                } else {
+                    $(this).val($exeDevice.active + 1)
                 }
 
             }
@@ -1745,8 +1774,10 @@ var $exeDevice = {
             validExt = ['mp4', 'ogg', 'webm'],
             extension = url.split('.').pop().toLowerCase(),
             isVideoLocal = (validExt.indexOf(extension) != -1) || (url.toLowerCase().indexOf("google.com/videoplayback") != -1),
-            isAudio = (validExtAudio.indexOf(extension) != -1) || ((url.toLowerCase().indexOf("https://drive.google.com") == 0 && url.toLowerCase().indexOf('sharing') != -1));
-        if (!id && validExt.indexOf(extension) == -1 && !isVideoLocal && validExtAudio.indexOf(extension) == -1 && !isAudio) {
+            isAudio = (validExtAudio.indexOf(extension) != -1) || ((url.toLowerCase().indexOf("https://drive.google.com") == 0 && url.toLowerCase().indexOf('sharing') != -1)),
+            isMediaTeca = $exeDevice.getIDMediaTeca(url);
+        if (!id && validExt.indexOf(extension) == -1 && !isVideoLocal &&
+            validExtAudio.indexOf(extension) == -1 && !isAudio && !isMediaTeca) {
             eXe.app.alert($exeDevice.msgs.msgFormatVideo);
             return;
         }
@@ -1755,6 +1786,9 @@ var $exeDevice = {
             $exeDevice.localPlayer.pause();
         } else if (isAudio) {
             $exeDevice.videoType = 2;
+            $exeDevice.localPlayer.pause();
+        } else if (isMediaTeca) {
+            $exeDevice.videoType = 3;
             $exeDevice.localPlayer.pause();
         } else {
             $exeDevice.videoType = 0;

@@ -537,8 +537,10 @@ var $eXeVideoQuExt = {
         mOptions.questionsGame = $eXeVideoQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
         mOptions.numberQuestions = mOptions.questionsGame.length;
         mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
-        if (mOptions.videoType > 0) {
+        if (mOptions.videoType == 1 || mOptions.videoType == 2) {
             mOptions.idVideoQuExt = mOptions.videoLocal;
+        } else if (mOptions.videoType == 3) {
+            mOptions.idVideoQuExt = $eXeVideoQuExt.getIDMediaTeca(mOptions.videoLocal);
         } else {
             mOptions.idVideoQuExt = $eXeVideoQuExt.getIDYoutube(mOptions.idVideoQuExt);
         }
@@ -551,6 +553,20 @@ var $eXeVideoQuExt = {
             }
         }
         return mOptions;
+    },
+    getIDMediaTeca: function (url) {
+        if (url) {
+            var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
+            if (matc) {
+                var id = url.split("https://mediateca.educa.madrid.org/video/")[1].split("?")[0];
+                id = 'http://mediateca.educa.madrid.org/streaming.php?id=' + id;
+                return id;
+            } else {
+                return '';
+            }
+        } else {
+            return '';
+        }
     },
     getQuestions: function (questions, percentaje) {
         var num = questions.length;
@@ -609,11 +625,11 @@ var $eXeVideoQuExt = {
     },
     onPlayerStateChange: function (event) {
         if (event.data == YT.PlayerState.ENDED) {
-            var video='vquextVideo-0';
-            if((event.target.h) && (event.target.h.id) ){
-                video=event.target.h.id;
-            }else if ((event.target.i ) && (event.target.i.id)) {
-                video=event.target.i.id;
+            var video = 'vquextVideo-0';
+            if ((event.target.h) && (event.target.h.id)) {
+                video = event.target.h.id;
+            } else if ((event.target.i) && (event.target.i.id)) {
+                video = event.target.i.id;
             }
             video = video.split("-");
             if (video.length == 2 && video[0] == "vquextVideo") {
@@ -668,11 +684,11 @@ var $eXeVideoQuExt = {
 
     },
     onPlayerReady: function (event) {
-        var video='vquextVideo-0';
-        if((event.target.h) && (event.target.h.id) ){
-            video=event.target.h.id;
-        }else if ((event.target.i ) && (event.target.i.id)) {
-                video=event.target.i.id;
+        var video = 'vquextVideo-0';
+        if ((event.target.h) && (event.target.h.id)) {
+            video = event.target.h.id;
+        } else if ((event.target.i) && (event.target.i.id)) {
+            video = event.target.i.id;
         }
         video = video.split("-");
         if (video.length == 2 && video[0] == "vquextVideo") {
@@ -872,7 +888,7 @@ var $eXeVideoQuExt = {
             $('#vquextCodeAccessDiv-' + instance).show();
             $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').hide();
             $('#vquextQuestionDiv-' + instance).hide();
-            $eXeVideoQuExt.showCubiertaOptions(true,instance);
+            $eXeVideoQuExt.showCubiertaOptions(true, instance);
         }
         $('#vquextInstruction-' + instance).text(mOptions.instructions);
         $('#vquextSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -928,9 +944,6 @@ var $eXeVideoQuExt = {
                 if (textoTooltip.length > 0) {
                     $(this).append('<div class="gameQP-Tooltip">' + textoTooltip + '</div>');
                     $(this).find("div.gameQP-Tooltip").css("left", '-121px');
-                    if (typeof (MathJax) != "undefined") {
-                        MathJax.Hub.Queue(["Typeset", MathJax.Hub, '.gameQP-Tooltip']);
-                    }
                     var html = $('#vquextProgressBar-' + instance).html(),
                         latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
                     if (latex) {
@@ -973,15 +986,15 @@ var $eXeVideoQuExt = {
             }
         });
         $('#vquextModeBoardOK-' + instance).on('click', function (e) {
-			e.preventDefault();
-			$eXeVideoQuExt.answerQuestionBoard(true, instance)
+            e.preventDefault();
+            $eXeVideoQuExt.answerQuestionBoard(true, instance)
 
-		});
-		$('#vquextModeBoardKO-' + instance).on('click', function (e) {
-			e.preventDefault();
-			$eXeVideoQuExt.answerQuestionBoard(false, instance)
+        });
+        $('#vquextModeBoardKO-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeVideoQuExt.answerQuestionBoard(false, instance)
 
-		});
+        });
 
         $eXeVideoQuExt.showNavigationButtons(instance, 0);
     },
@@ -1107,7 +1120,7 @@ var $eXeVideoQuExt = {
         var mOptions = $eXeVideoQuExt.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#vquextCodeAccessE-' + instance).val().toLowerCase()) {
             $('#vquextCodeAccessDiv-' + instance).hide();
-            $eXeVideoQuExt.showCubiertaOptions(false,instance);
+            $eXeVideoQuExt.showCubiertaOptions(false, instance);
             if (mOptions.videoType > 0) {
                 $eXeVideoQuExt.startGame(instance)
             } else {
@@ -1491,7 +1504,7 @@ var $eXeVideoQuExt = {
             $('#vquextCover-' + instance).show();
             $('#vquextVideoLocal-' + instance).hide();
         } else {
-            if (mOptions.videoType == 1) {
+            if (mOptions.videoType == 1 || mOptions.videoType == 3 ) {
                 $('#vquextVideoLocal-' + instance).show();
                 $('#vquextCover-' + instance).hide();
             } else if (mOptions.videoType == 2) {
