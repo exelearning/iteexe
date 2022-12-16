@@ -58,7 +58,10 @@ intef-exe (3:2.8) lucid; urgency=medium
 
   * eXeLearning.net Translation Team
     - New complete Spanish translation, by Juan Rafael Fernández.
+    - New complete Basque translation, by Joxemi Andonegi.
     - New complete Catalan translation, by Carles Ferrando Garcia.
+    - New complete Galician translation, by Pablo Nimo.
+    - New complete Valencian translation, by Ricardo Nutz.
     - New complete French translation, by Jesús Miguel Domínguez.
     - New complete Greek translation, by Yannis Kaskamanidis.
     - New complete Polish translation, by Waldemar Stoczkowski.
