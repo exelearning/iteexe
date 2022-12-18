@@ -80,7 +80,7 @@ var $exeDevice = {
         "msgMoveOne": _("Move on")
 
     },
-    version: 1,
+    version: 2,
     active: 0,
     questions: [],
     typeEdit: -1,
@@ -114,12 +114,18 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <label for="eCQShowSolution"><input type="checkbox" checked id="eCQShowSolution"> ' + _("Show solutions") + '. </label> \
-                                <label for="eCQTimeShowSolution">' + _("Show solution time (seconds)") + ':\
-                                <input type="number" name="eCQTimeShowSolution" id="eCQTimeShowSolution" value="3" min="1" max="9" /> </label>\
+                                <label for="eCQTimeShowSolution">' + _("Show solution time (seconds)") + ':</label><input type="number" name="eCQTimeShowSolution" id="eCQTimeShowSolution" value="3" min="1" max="9" step="1"/>\
                             </p>\
                             <p>\
-                                <label for="eCQPercentajeError">% ' + _("Error") + ':  <input type="number" name="eCQPercentajeError" id="eCQPercentajeError" value="0" min="0" max="99" /> </label>\
-                             </p>\
+                                <input class="MTOE-ErrorType" id="eCQRelative" type="checkbox" name="ecqtype" value="0" />\
+                                <label for="eCQRelative">Error relativo:</label>\
+                                <label for="eCQPercentajeRelative" class="sr-av">Error relativo</label><input type="number" name="eCQPercentajeRelative" id="eCQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
+                            <p>\
+                            </p>\
+                                <input class="MTOE-ErrorType" id="eCQAbsolute" type="checkbox" name="ecqtype" value="1" />\
+                                <label for="eCQAbsolute">Error Absoluto:</label>\
+                                <label for="eCQPercentajeAbsolute" class="sr-av">Error Absoluto</label><input type="number" name="eCQPercentajeAbsolute" id="eCQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
+                           </p>\
                             <p>\
                                 <label for="eCQHasFeedBack"><input type="checkbox"  id="eCQHasFeedBack"> ' + _("Feedback") + '. </label> \
                                 <label for="eCQPercentajeFB"><input type="number" name="eCQPercentajeFB" id="eCQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + ' </label>\
@@ -154,8 +160,8 @@ var $exeDevice = {
                                 </select>\
                             </label></p>\
                             <p>\
-                                <label for="eCQTime">' + _("Time (minutes)") + ':\
-                                <input type="number" name="eCQTime" id="eCQTime" value="3" min="1" max="59" /> </label>\
+                                <label for="eCQTime">' + _("Time (s)") + ':\
+                                <input type="number" name="eCQTime" id="eCQTime" value="180" min="1" max="3600" style="width:70px"/> </label>\
                                 </p>\
                          </div>\
                          <p><label for="eCQformula">' + _("Formula") + ':\
@@ -213,7 +219,7 @@ var $exeDevice = {
         p.wording = '';
         p.formula = '';
         p.textFeedBack = '';
-        p.time = 3;
+        p.time = 180;
 
         return p;
     },
@@ -365,7 +371,7 @@ var $exeDevice = {
         $('#eCQmin').val('1');
         $('#eCQmax').val('10');
         $('#eCQdecimals').val('0');
-        $('#eCQTime').val('3');
+        $('#eCQTime').val('180');
         $("#eCQformula").val('')
         tinyMCE.get('eCQwording').setContent('');
         tinyMCE.get('eCQfeedbackQuestion').setContent('');
@@ -466,8 +472,16 @@ var $exeDevice = {
             feedBack = $('#eCQHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#eCQPercentajeFB').val())),
             percentajeQuestions = parseInt(clear($('#eCQPercentajeQuestions').val())),
-            percentajeError = parseInt(clear($('#eCQPercentajeError').val())),
-            textFeedBack = '';
+            errorAbsolute = parseFloat(clear($('#eCQPercentajeAbsolute').val())),
+            errorRelative = parseFloat(clear($('#eCQPercentajeRelative').val())),
+            textFeedBack = '',
+            errorType = 0;
+        if ($('#eCQRelative').is(':checked')) {
+            errorType = 1;
+        } else if ($('#eCQAbsolute').is(':checked')) {
+            errorType = 2;
+        }
+
         if (tinyMCE.get('eCQFeedBackEditor')) {
             textFeedBack = tinyMCE.get('eCQFeedBackEditor').getContent();
         } else {
@@ -518,7 +532,9 @@ var $exeDevice = {
             'scorm': scorm,
             'textAfter': textAfter,
             'version': $exeDevice.version,
-            'percentajeError': percentajeError
+            'errorAbsolute': errorAbsolute,
+            'errorRelative': errorRelative,
+            'errorType': errorType
         }
         return data;
     },
@@ -550,6 +566,11 @@ var $exeDevice = {
             dataGame = $exeDevice.isJsonString(djson);
             $exeDevice.questions = dataGame.questions;
             $exeDevice.active = 0;
+            if (dataGame.version == 1) {
+                for (var i = 0; i < dataGame.questions.length; i++) {
+                    dataGame.questions[i].time = dataGame.questions[i].time * 60;
+                }
+            }
             $exeDevice.setTexts(dataGame.questions, $wordings, $feeebacks)
             $exeDevice.updateFieldGame(dataGame);
             var instructions = $(".mathproblems-instructions", wrapper);
@@ -741,12 +762,12 @@ var $exeDevice = {
         $('#eCQTime').on('keyup', function () {
             var v = this.value;
             v = v.replace(/\D/g, '');
-            v = v.substring(0, 1);
+            v = v.substring(0, 4);
             this.value = v;
         });
         $('#eCQTime').on('focusout', function () {
             this.value = this.value.trim() == '' ? 1 : this.value;
-            this.value = this.value > 59 ? 59 : this.value;
+            this.value = this.value > 3600 ? 3600 : this.value;
             this.value = this.value < 1 ? 1 : this.value;
         });
 
@@ -818,9 +839,6 @@ var $exeDevice = {
             this.value = this.value > 99 ? 99 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
         });
-
-
-
         $('#eCQfeedbackLink').on('click', function (e) {
             e.preventDefault();
             $('#eCQfeedbackQuestionDiv').fadeToggle()
@@ -834,13 +852,70 @@ var $exeDevice = {
             }
             $('#eCQPercentajeFB').prop('disabled', !marcado);
         });
+        $('#eCQRelative').on('change', function (e) {
+            var type = $(this).is(':checked') ? 1 : 0;
+            $exeDevice.setErrorType(type)
+        });
+        $('#eCQAbsolute').on('change', function (e) {
+            var type = $(this).is(':checked') ? 2 : 0;
+            $exeDevice.setErrorType(type)
+        });
+
+        $('#eCQPercentajeRelative').on('keypress', function (evt) {
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        });
+        $('#eCQPercentajeRelative').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 0 : this.value;
+            this.value = this.value > 1 ? 1 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });
+
+        $('#eCQPercentajeAbsolute').on('keypress', function (evt) {
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        });
+        $('#eCQPercentajeAbsolute').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 0 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });
+
+
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
 
-
+    setErrorType: function (type) {
+        $('#eCQAbsolute').prop('checked', false)
+        $('#eCQRelative').prop('checked', false);
+        $('#eCQPercentajeAbsolute').hide();
+        $('#eCQPercentajeRelative').hide();
+        if (type == 1) {
+            $('#eCQRelative').prop('checked', true);
+            $('#eCQPercentajeRelative').show();;
+        } else if (type == 2) {
+            $('#eCQAbsolute').prop('checked', true);
+            $('#eCQPercentajeAbsolute').show();;
+        }
+    },
+    onlyNumberKey: function (evt) {
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+        if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            return false;
+        return true;
+    },
     updateFieldGame: function (game) {
         $exeDevice.active = 0;
-        game.percentajeError = typeof game.percentajeError == "undefined" ? 0 : game.percentajeError;
+        game.errorType = typeof game.errorType == "undefined" ? 0 : game.errorType;
+        game.errorRelative = typeof game.errorRelative == "undefined" ? 0.0 : game.errorRelative;
+        game.errorAbsolute = typeof game.errorAbsolute == "undefined" ? 0.0 : game.errorAbsolute;
+        game.errorRelative = game.version == 1 && typeof game.percentajeError != 'undefinided' && game.percentajeError > 0 ? game.percentajeError / 100 : game.errorRelative;
+        game.errorType = game.version == 1 && typeof game.percentajeError != 'undefinided' && game.percentajeError > 0 ? 1 : game.errorType;
+
         $('#eCQShowMinimize').prop('checked', game.showMinimize);
         $('#eCQOptionsRamdon').prop('checked', game.optionsRamdon);
         $('#eCQShowSolution').prop('checked', game.showSolution);
@@ -849,10 +924,12 @@ var $exeDevice = {
         $("#eCQHasFeedBack").prop('checked', game.feedBack);
         $("#eCQPercentajeFB").val(game.percentajeFB);
         $('#eCQPercentajeQuestions').val(game.percentajeQuestions);
-        $('#eCQPercentajeError').val(game.percentajeError);
+        $('#eCQPercentajeRelative').val(game.errorRelative);
+        $('#eCQPercentajeAbsolute').val(game.errorAbsolute);
         $('#eCQModeBoard').prop("checked", game.modeBoard);
         $('#eCQPercentajeFB').prop('disabled', !game.feedBack);
         $('#eCQHasFeedBack').prop('checked', game.feedBack);
+        $exeDevice.setErrorType(game.errorType)
         if (game.feedBack) {
             $('#eCQFeedbackP').slideDown();
         } else {

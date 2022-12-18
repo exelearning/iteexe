@@ -162,7 +162,15 @@ var $eXeMathProblems = {
         options.gameStarted = false;
         options.obtainedClue = false;
         options.gameOver = false;
-        options.percentajeError = typeof options.percentajeError == "undefined" ? 0 : options.percentajeError;
+        if (options.version == 1) {
+            for (var i = 0; i < options.questions.length; i++) {
+                options.questions[i].time = options.questions[i].time * 60;
+            }
+        }
+        options.errorType = typeof options.errorType == "undefined" ? 0 : options.errorType;
+        options.errorRelative = typeof options.errorRelative == "undefined" ? 0 : options.errorRelative;
+        options.errorAbsolute = typeof options.errorAbsolute == "undefined" ? 0 : options.errorAbsolute;
+        options.errorRelative = options.version == 1 && typeof options.percentajeError != 'undefinided' && options.percentajeError > 0 ? options.percentajeError / 100 : options.errorRelative;
         $eXeMathProblems.setTexts(options.questions, $wordings, $feedbacks);
         $eXeMathProblems.loadProblems(options)
         options.questions = $eXeMathProblems.getQuestions(options.questions, options.percentajeQuestions);
@@ -323,7 +331,7 @@ var $eXeMathProblems = {
         $('#mthpBtnReply-' + instance).prop('disabled', false);
         $('#mthpBtnMoveOn-' + instance).prop('disabled', false);
         $('#mthpEdAnswer-' + instance).prop('disabled', false);
-        mOptions.counter = q.time * 60;
+        mOptions.counter = q.time;
 
         $('#mthpDivFeedBackQ-' + instance).hide();
         if (q.textFeedBack.length > 0) {
@@ -379,7 +387,7 @@ var $eXeMathProblems = {
         answord = answord.replace(',', '.');
         answord = parseFloat(answord).toFixed(2);
         answord = parseFloat(answord);
-        if (!mOptions.gameActived) {
+        if (!mOptions.gameActived || mOptions.gameOver) {
             return;
         }
         if (answord.length == 0) {
@@ -391,12 +399,12 @@ var $eXeMathProblems = {
         $('#mthpBtnMoveOn-' + instance).prop('disabled', true);
         $('#mthpEdAnswer-' + instance).prop('disabled', true);
         var correct = (solution == answord);
-        if (typeof mOptions.percentajeError != "undefined" && mOptions.percentajeError > 0) {
+        if (mOptions.errorType > 0) {
             answord = $('#mthpEdAnswer-' + instance).val();
             answord = answord.replace(',', '.');
             answord = parseFloat(answord)
             solution = question.solution * 1.00;
-            var ep = (solution * mOptions.percentajeError) / 100;
+            var ep = mOptions.errorType == 1 ? solution * mOptions.errorRelative : mOptions.errorAbsolute;
             correct = (answord >= solution - ep) && (answord <= solution + ep);
         }
         $eXeMathProblems.updateScore(correct, instance);
@@ -413,8 +421,6 @@ var $eXeMathProblems = {
             }
 
         }, timeShowSolution);
-
-
 
     },
 
@@ -679,7 +685,7 @@ var $eXeMathProblems = {
         mOptions.gameStarted = false;
         mOptions.obtainedClue = false;
         mOptions.activeCounter = true;
-        mOptions.counter = mOptions.time * 10;
+        mOptions.counter = 60;
         $eXeMathProblems.updateGameBoard(instance)
         $('#mthpMultimedia-' + instance).show();
         $('#mthpDivImgHome-' + instance).hide();
@@ -697,7 +703,7 @@ var $eXeMathProblems = {
                 $eXeMathProblems.uptateTime(mOptions.counter, instance);
                 if (mOptions.counter <= 0) {
                     mOptions.activeCounter = false;
-                    $eXeMathProblems.updateScore(false, instance)
+                    $eXeMathProblems.answerQuestion(instance)
                     var timeShowSolution = 1000;
                     if (mOptions.showSolution) {
                         timeShowSolution = mOptions.timeShowSolution * 1000;
@@ -729,7 +735,7 @@ var $eXeMathProblems = {
             $mthpPNumber.text('0');
             $eXeMathProblems.gameOver(0, instance);
         } else {
-            mOptions.counter = mOptions.questions[mActiveQuestion].time * 60;
+            mOptions.counter = mOptions.questions[mActiveQuestion].time;
             $eXeMathProblems.showQuestion(mActiveQuestion, instance);
             mOptions.activeCounter = true;
             $mthpPNumber.text(mOptions.numberQuestions - mActiveQuestion);
@@ -758,7 +764,6 @@ var $eXeMathProblems = {
     gameOver: function (type, instance) {
         var mOptions = $eXeMathProblems.options[instance];
         mOptions.gameStarted = false;
-
         mOptions.gameOver = true;
         $('#mthpDivModeBoard-' + instance).hide()
         $('#mthpDivFeedBackQ-' + instance).hide()
@@ -907,9 +912,6 @@ var $eXeMathProblems = {
                 message += ' ' + mOptions.msgs.msgSolution + ': ' + q.solution;
             } else {
                 message = ' ' + mOptions.msgs.msgNotCorrect + ' ' + q.solution
-            }
-            if (typeof mOptions.percentajeError != 'undefined' && mOptions.percentajeError > 0) {
-                message += ' +/- ' + mOptions.percentajeError + '%';
             }
         }
         return message;
