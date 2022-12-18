@@ -20,7 +20,7 @@ var $exeDevice = {
         operations: '1111', // Add, subtract, multiply, divide,
         min: -1000, // Smallest number included
         max: 1000, // Highest number included
-        decimals: 0, // Allow decimals
+        decimalsInOperands: 0, // Allow decimals
         decimalsInResults: 1, // Allow decimals in results
         negative: 1, // Allow negative results
         zero: 1 // Allow zero in results
@@ -82,7 +82,7 @@ var $exeDevice = {
         "msgIncomplete": _("Not completed"),
         "msgEndTime": _("Time over."),
         "msgAllOperations": _("You finished all the operations."),
-        
+
     },
     init: function () {
         this.setMessagesInfo();
@@ -112,7 +112,7 @@ var $exeDevice = {
     createForm: function () {
         var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Create basic math operation games (addition, subtraction, multiplication, division). The student will have to guess the result, operator or an operand.")+' <a href="https://youtu.be/xCkJ6iv5NGw" hreflang="es" rel="lightbox" target="_blank">'+_("Use Instructions")+'</a></div>\
+                <div class="exe-idevice-info">' + _("Create basic math operation games (addition, subtraction, multiplication, division). The student will have to guess the result, operator or an operand.") + ' <a href="https://youtu.be/xCkJ6iv5NGw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Solve the following operations.")) + '\
 					<fieldset class="exe-fieldset">\
@@ -159,6 +159,16 @@ var $exeDevice = {
                                 <label for="eRMQzero"><input id="eRMQzero" type="checkbox" /> ' + _("Allow zero as result") + '</label>\
                             </p>\
                             <p>\
+                                <input class="MTOE-ErrorType" id="eRMQRelative" type="checkbox" name="eRMQtype" value="0" />\
+                                <label for="eRMQRelative">Error relativo</label>\
+                                <label for="eRMQPercentajeRelative" class="sr-av">Error relativo</label><input type="number" name="eRMQPercentajeRelative" id="eRMQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
+                            <p>\
+                            </p>\
+                                <input class="MTOE-ErrorType" id="eRMQAbsolute" type="checkbox" name="eRMQtype" value="1" />\
+                                <label for="eRMQAbsolute">Error Absoluto</label>\
+                                <label for="eRMQPercentajeAbsolute" class="sr-av">Error Absoluto</label><input type="number" name="eRMQPercentajeAbsolute" id="eRMQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
+                            </p>\
+                            <p>\
                                 <label for="eRMQShowMinimize"><input type="checkbox" id="eRMQShowMinimize"> ' + _("Show minimized.") + ' </label>\
                             </p>\
                             <p>\
@@ -198,11 +208,19 @@ var $exeDevice = {
             itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
             feedBack = $('#eRMQHasFeedBack').is(':checked'),
             percentajeFB = parseInt($('#eRMQPercentajeFB').val()),
-            decimalsInOperands = $("#eRMQdecimals").val(),
+            decimalsInOperands = parseInt($("#eRMQdecimals").val()),
             decimalsInResults = $("#eRMQdecimalsInResults").is(":checked"),
             negative = $("#eRMQnegative").is(":checked"),
             zero = $("#eRMQzero").is(":checked"),
-            time = parseInt($('#eRMQTime').val());
+            time = parseInt($('#eRMQTime').val()),
+            errorRelative = parseFloat($('#eRMQPercentajeRelative').val()),
+            errorAbsolute = parseFloat($('#eRMQPercentajeAbsolute').val()),
+            errorType = 0;
+        if ($('#eRMQRelative').is(':checked')) {
+            errorType = 1;
+        } else if ($('#eRMQAbsolute').is(':checked')) {
+            errorType = 2;
+        }
         var num = $("#eRMQnum");
         if (num.val() == "") {
             $exeDevice.showMessage(_("Please specify the number of operations"));
@@ -210,7 +228,6 @@ var $exeDevice = {
             return false;
         }
         num = num.val();
-
         var min = $("#eRMQmin");
         if (min.val() == "") {
             $exeDevice.showMessage(_("Please define the minimal value of the operand"));
@@ -227,7 +244,6 @@ var $exeDevice = {
             return false;
         }
         max = max.val();
-
 
         var operations = "";
         // Add
@@ -270,7 +286,10 @@ var $exeDevice = {
             'feedBack': feedBack,
             'percentajeFB': percentajeFB,
             'version': $exeDevice.version,
-            'time':time
+            'time': time,
+            'errorAbsolute': errorAbsolute,
+            'errorRelative': errorRelative,
+            'errorType': errorType
         }
         return data;
     },
@@ -406,15 +425,62 @@ var $exeDevice = {
         $('#eRMQTime').on('focusout', function () {
             this.value = this.value.trim() == '' ? 0 : this.value;
             this.value = this.value > 59 ? 59 : this.value;
-            this.value = this.value < 0 ? 0: this.value;
+            this.value = this.value < 0 ? 0 : this.value;
         });
+        $('#eRMQRelative').on('change', function (e) {
+            var type = $(this).is(':checked') ? 1 : 0;
+            $exeDevice.setErrorType(type)
+        });
+        $('#eRMQAbsolute').on('change', function (e) {
+            var type = $(this).is(':checked') ? 2 : 0;
+            $exeDevice.setErrorType(type)
+        });
+
+        $('#eRMQPercentajeRelative').on('keypress', function (evt) {
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        });
+        $('#eRMQPercentajeRelative').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 0 : this.value;
+            this.value = this.value > 1 ? 1 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });
+
+        $('#eRMQPercentajeAbsolute').on('keypress', function (evt) {
+            var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+            if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                return false;
+            return true;
+        });
+        $('#eRMQPercentajeAbsolute').on('focusout', function () {
+            this.value = this.value.trim() == '' ? 0 : this.value;
+            this.value = this.value > 100 ? 100 : this.value;
+            this.value = this.value < 0 ? 0 : this.value;
+        });;
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
 
-
+    setErrorType: function (type) {
+        $('#eRMQAbsolute').prop('checked', false)
+        $('#eRMQRelative').prop('checked', false);
+        $('#eRMQPercentajeAbsolute').hide();
+        $('#eRMQPercentajeRelative').hide();
+        if (type == 1) {
+            $('#eRMQRelative').prop('checked', true);
+            $('#eRMQPercentajeRelative').show();;
+        } else if (type == 2) {
+            $('#eRMQAbsolute').prop('checked', true);
+            $('#eRMQPercentajeAbsolute').show();;
+        }
+    },
     updateFieldGame: function (game) {
 
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
+        game.errorType = typeof game.errorType == "undefined" ? 0 : game.errorType;
+        game.errorRelative = typeof game.errorRelative == "undefined" ? 0.0 : game.errorRelative;
+        game.errorAbsolute = typeof game.errorAbsolute == "undefined" ? 0.0 : game.errorAbsolute;
         $('#eRMQShowMinimize').prop('checked', game.showMinimize);
         $("#eRMQHasFeedBack").prop('checked', game.feedBack);
         $("#eRMQPercentajeFB").val(game.percentajeFB);
@@ -430,7 +496,10 @@ var $exeDevice = {
         $("#eRMQsubs").prop('checked', game.operations.charAt(1) == "1");
         $("#eRMQmult").prop('checked', game.operations.charAt(2) == "1");
         $("#eRMQdiv").prop('checked', game.operations.charAt(3) == "1");
+        $('#eRMQPercentajeRelative').val(game.errorRelative);
+        $('#eRMQPercentajeAbsolute').val(game.errorAbsolute);   
         $('#eRMQTime').val(game.time);
+        $exeDevice.setErrorType(game.errorType)
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         if (game.textFeedBack) {
             $('#eRMQFeedbackP').show();
@@ -477,21 +546,21 @@ var $exeDevice = {
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
             textFeedBack = game.textFeedBack || "";
-            if (tinyMCE.get('eXeGameInstructions')) {
-                tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-            } else {
-                $("#eXeGameInstructions").val(unescape(instructions))
-            }
-            if (tinyMCE.get('sopaEFeedBackEditor')) {
-                tinyMCE.get('eRMQFeedBackEditor').setContent(unescape(textFeedBack));
-            } else {
-                $("#eRMQFeedBackEditor").val(unescape(textFeedBack))
-            }
-            if (tinyMCE.get('eXeIdeviceTextAfter')) {
-                tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-            } else {
-                $("#eXeIdeviceTextAfter").val(unescape(tAfter))
-            }
+        if (tinyMCE.get('eXeGameInstructions')) {
+            tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+        } else {
+            $("#eXeGameInstructions").val(unescape(instructions))
+        }
+        if (tinyMCE.get('sopaEFeedBackEditor')) {
+            tinyMCE.get('eRMQFeedBackEditor').setContent(unescape(textFeedBack));
+        } else {
+            $("#eRMQFeedBackEditor").val(unescape(textFeedBack))
+        }
+        if (tinyMCE.get('eXeIdeviceTextAfter')) {
+            tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+        } else {
+            $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+        }
         $('.exe-form-tabs li:first-child a').click();
     },
     isJsonString: function (str) {

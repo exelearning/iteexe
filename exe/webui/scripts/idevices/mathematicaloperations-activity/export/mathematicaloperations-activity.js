@@ -32,7 +32,7 @@ var $eXeMathOperations = {
         operations: '1111', // Add, subtract, multiply, divide,
         min: -1000, // Smallest number included
         max: 1000, // Highest number included
-        decimals: 0, // Allow decimals
+        decimalsInOperands: 0, // Allow decimals
         decimalsInResults: 1, // Allow decimals in results
         negative: 1, // Allow negative results
         zero: 1 // Allow zero in results
@@ -165,6 +165,9 @@ var $eXeMathOperations = {
         options.gameStarted = false;
         options.obtainedClue = false;
         options.gameOver = false;
+        options.errorType = typeof options.errorType == "undefined" ? 0 : options.errorType;
+        options.errorRelative = typeof options.errorRelative == "undefined" ? 0 : options.errorRelative;
+        options.errorAbsolute = typeof options.errorAbsolute == "undefined" ? 0 : options.errorAbsolute;
         options = $eXeMathOperations.loadQuestions(options)
         return options;
     },
@@ -172,7 +175,6 @@ var $eXeMathOperations = {
         var mOptions = $eXeMathOperations.options[instance];
         var html = ''
         for (var i = 0; i < mOptions.number; i++) {
-            c
             html += $eXeMathOperations.getQuestion(instance, mOptions.type, i, mOptions.components[i][0], mOptions.components[i][1], mOptions.components[i][2], mOptions.components[i][3], mOptions.decimalsInOperands);
         }
         html += '<p class="MTHO-pagination">';
@@ -312,8 +314,8 @@ var $eXeMathOperations = {
                     if (mOptions.operations[z] != 0) operationsToDo += operators[z];
                 }
                 var operation = operationsToDo[$eXeMathOperations.getRandomNo(0, operationsToDo.length, 0)];
-                var operandA = $eXeMathOperations.getRandomNo(mOptions.min, mOptions.max, mOptions.decimals);
-                var operandB = $eXeMathOperations.getRandomNo(mOptions.min, mOptions.max, mOptions.decimals);
+                var operandA = $eXeMathOperations.getRandomNo(mOptions.min, mOptions.max, mOptions.decimalsInOperands);
+                var operandB = $eXeMathOperations.getRandomNo(mOptions.min, mOptions.max, mOptions.decimalsInOperands);
                 var result;
                 if (operation == "+") result = operandA + operandB;
                 else if (operation == "-") result = operandA - operandB;
@@ -389,7 +391,7 @@ var $eXeMathOperations = {
             }
             mOptions.components.push(components)
         }
-
+        console.log(mOptions);
         return mOptions;
 
     },
@@ -550,6 +552,8 @@ var $eXeMathOperations = {
         var id = e.id.replace("mathoQuestion-", "").split("-");
         var instance = id[0];
         var mOptions = $eXeMathOperations.options[instance];
+        var pOperationResult=0;
+        var pRightResult=0;
         // Not answered
         if ($("INPUT[type=text]", e).val() == "") {
             var msg = $("#" + e.id + "-warning");
@@ -559,8 +563,6 @@ var $eXeMathOperations = {
             }, 2000);
             return false;
         }
-
-
 
         var table = $("#mathoResults-" + instance);
         var trs = $("tbody tr", table);
@@ -589,8 +591,10 @@ var $eXeMathOperations = {
         else operationResult = operationResult.text();
         operationResult = parseFloat(operationResult);
         // operationResult = operationResult.toFixed(numberOfDecimals);
+        
         operationResult = operationResult.toFixed(2);
         operationResult = parseFloat(operationResult);
+        pOperationResult=operationResult;
 
         // Check
         var right = false;
@@ -600,9 +604,22 @@ var $eXeMathOperations = {
         else if (operation == "x" || operation == "*") rightResult = operandA * operandB;
         else if (operation == "/") rightResult = operandA / operandB;
         // rightResult = rightResult.toFixed(numberOfDecimals);
+        pRightResult=rightResult;
         rightResult = rightResult.toFixed(2);
         if (rightResult == operationResult) right = true;
+        if (mOptions.errorType > 0) {
+            var ep = mOptions.errorType == 1 ? pRightResult * mOptions.errorRelative : mOptions.errorAbsolute;
+            var errormin=pRightResult-ep;
+            errormin=errormin.toFixed(2);
+            errormin=parseFloat(errormin);
 
+            var errormax=pRightResult+ep;
+            errormax=errormax.toFixed(2);
+            errormax=parseFloat(errormax);
+            right = (pOperationResult >= errormin) && (pOperationResult <= errormax);
+            console.log('valores', pOperationResult,pRightResult, errormin, errormax,  ep)
+
+        }
         // Include the results in the table
         var tds = $("td", tr);
         var rightTD = tds.eq(1);
@@ -679,6 +696,7 @@ var $eXeMathOperations = {
 
         // Qualification
         var qualification = this.removeUnnecessaryDecimals(100 * parseFloat(rightAnswered.html()) / trs.length);
+
         $("#" + base + "result").html(qualification);
         $eXeMathOperations.updateScore(right, instance);
 
@@ -906,7 +924,7 @@ var $eXeMathOperations = {
         mOptions.gameStarted = false;
         mOptions.obtainedClue = false;
         mOptions.activeCounter = true;
-        mOptions.counter = mOptions.time * 10;
+        mOptions.counter = mOptions.time * 60;
         $eXeMathOperations.updateGameBoard(instance)
         if (mOptions.time > 0) {
             $('#mthoMultimedia-' + instance).show();
@@ -924,7 +942,7 @@ var $eXeMathOperations = {
                 }
 
             }, 1000);
-            $eXeMathOperations.uptateTime(mOptions.time * 10, instance);
+            $eXeMathOperations.uptateTime(mOptions.time * 60, instance);
         }
 
         mOptions.gameStarted = true;
