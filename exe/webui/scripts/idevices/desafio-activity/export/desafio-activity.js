@@ -30,7 +30,12 @@ var $eXeDesafio = {
     msgs: '',
     fontSize: '1em',
     isInExe: false,
-    hasLatex:false,
+    hasLatex: false,
+    userName: '',
+    scorm: '',
+    hasSCORMbutton: false,
+    previousScore: '',
+    initialScore: '',
     init: function () {
         this.activities = $('.desafio-IDevice');
         if (this.activities.length == 0) return;
@@ -43,7 +48,124 @@ var $eXeDesafio = {
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
         if (typeof ($exeAuthoring) != 'undefined') this.isInExe = true;
         this.idevicePath = this.isInExe ? "/scripts/idevices/desafio-activity/export/" : "";
-        this.enable();
+        if ($("body").hasClass("exe-scorm")) this.loadSCORM_API_wrapper();
+        else this.enable();
+
+    },
+    loadSCORM_API_wrapper: function () {
+
+        if (typeof (pipwerks) == 'undefined') $exe.loadScript('SCORM_API_wrapper.js', '$eXeDesafio.loadSCOFunctions()');
+        else this.loadSCOFunctions();
+    },
+    loadSCOFunctions: function () {
+        if (typeof (exitPageStatus) == 'undefined') $exe.loadScript('SCOFunctions.js', '$eXeDesafio.enable()');
+        else this.enable();
+        $eXeDesafio.mScorm = scorm;
+        var callSucceeded = $eXeDesafio.mScorm.init();
+        if (callSucceeded) {
+            $eXeDesafio.userName = $eXeDesafio.getUserName();
+            $eXeDesafio.previousScore = $eXeDesafio.getPreviousScore();
+            $eXeDesafio.mScorm.set("cmi.core.score.max", 10);
+            $eXeDesafio.mScorm.set("cmi.core.score.min", 0);
+            $eXeDesafio.initialScore = $eXeDesafio.previousScore;
+        }
+    },
+    loadJSCSSFile: function (filename, filetype) {
+        if (filetype == "js") { //if filename is a external JavaScript file
+            var fileref = document.createElement('script')
+            fileref.setAttribute("type", "text/javascript")
+            fileref.setAttribute("src", filename)
+        } else if (filetype == "css") { //if filename is an external CSS file
+            var fileref = document.createElement("link")
+            fileref.setAttribute("rel", "stylesheet")
+            fileref.setAttribute("type", "text/css")
+            fileref.setAttribute("href", filename)
+        }
+        if (typeof fileref != "undefined")
+            document.getElementsByTagName("head")[0].appendChild(fileref)
+    },
+    getUserName: function () {
+        var user = $eXeDesafio.mScorm.get("cmi.core.student_name");
+        return user
+    },
+    getPreviousScore: function () {
+        var score = $eXeDesafio.mScorm.get("cmi.core.score.raw");
+        return score;
+    },
+    endScorm: function () {
+        if ($eXeDesafio.mScorm && typeof $eXeDesafio.mScorm.quit == "function") {
+            $eXeDesafio.mScorm.quit();
+        }
+
+    },
+    updateScorm: function (prevScore, repeatActivity, instance) {
+        var mOptions = $eXeDesafio.options[instance],
+            text = '';
+        $('#desafioSendScore-' + instance).hide();
+        if (mOptions.isScorm === 1) {
+            if (repeatActivity && prevScore !== '') {
+                text = mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+            } else if (repeatActivity && prevScore === "") {
+                text = mOptions.msgs.msgSaveAuto + ' ' + mOptions.msgs.msgPlaySeveralTimes;
+            } else if (!repeatActivity && prevScore === "") {
+                text = mOptions.msgs.msgOnlySaveAuto;
+            } else if (!repeatActivity && prevScore !== "") {
+                text = mOptions.msgs.msgActityComply + ' ' + mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+            }
+        } else if (mOptions.isScorm === 2) {
+            $('#desafioSendScore-' + instance).show();
+            if (repeatActivity && prevScore !== '') {
+                text = mOptions.msgs.msgYouLastScore + ': ' + prevScore;
+            } else if (repeatActivity && prevScore === '') {
+                text = mOptions.msgs.msgSeveralScore;
+            } else if (!repeatActivity && prevScore === '') {
+                text = mOptions.msgs.msgOnlySaveScore;
+            } else if (!repeatActivity && prevScore !== '') {
+                $('#desafioSendScore-' + instance).hide();
+                text = mOptions.msgs.msgActityComply + ' ' + mOptions.msgs.msgYouScore + ': ' + prevScore;
+            }
+        }
+        $('#desafioRepeatActivity-' + instance).text(text);
+        $('#desafioRepeatActivity-' + instance).fadeIn(1000);
+    },
+    sendScore: function (auto, instance) {
+        var mOptions = $eXeDesafio.options[instance],
+            message = '',
+            points = mOptions.desafioSolved ? mOptions.solvedsChallenges.length + 1 : mOptions.solvedsChallenges.length,
+            score = 10 * (points / (mOptions.challengesGame.length + 1));
+        if (mOptions.gameStarted || mOptions.gameOver) {
+            if (typeof $eXeDesafio.mScorm != 'undefined') {
+                if (!auto) {
+                    $('#desafioSendScore-' + instance).show();
+                    if (!mOptions.repeatActivity && $eXeDesafio.previousScore !== '') {
+                        message = $eXeDesafio.userName !== '' ? $eXeDesafio.userName + ' ' + mOptions.msgs.msgOnlySaveScore : mOptions.msgs.msgOnlySaveScore;
+                    } else {
+                        $eXeDesafio.previousScore = score;
+                        $eXeDesafio.mScorm.set("cmi.core.score.raw", score);
+                        message = $eXeDesafio.userName !== '' ? $eXeDesafio.userName + '. ' + mOptions.msgs.msgYouScore + ': ' +  score.toFixed(2) : mOptions.msgs.msgYouScore + ': ' +  score.toFixed(2)
+                        if (!mOptions.repeatActivity) {
+                            $('#desafioSendScore-' + instance).hide();
+                        }
+                        $('#desafioRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score.toFixed(2))
+                        $('#desafioRepeatActivity-' + instance).show();
+                    }
+                } else {
+                    $eXeDesafio.previousScore = score;
+                    score = score === "" ? 0 : score;
+                    $eXeDesafio.mScorm.set("cmi.core.score.raw", score);
+                    $('#desafioRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' +  score.toFixed(2))
+                    $('#desafioRepeatActivity-' + instance).show();
+                    message = "";
+                }
+            } else {
+                message = mOptions.msgs.msgScoreScorm;
+            }
+
+        } else {
+            message = mOptions.msgs.msgEndGameScore;
+
+        }
+        if (!auto) alert(message);
     },
     enable: function () {
         $eXeDesafio.loadGame();
@@ -109,7 +231,6 @@ var $eXeDesafio = {
                 } catch (error) {
                     console.log('Error al refrescar cuestiones')
                 }
-
             }
 
         }, 100);
@@ -224,8 +345,37 @@ var $eXeDesafio = {
                     </div>\
                 </div>\
             </div>\
-            '
+            ' + this.addButtonScore(instance);
         return html;
+    },
+    addButtonScore: function (instance) {
+        var mOptions = $eXeDesafio.options[instance];
+        var butonScore = "";
+        var fB = '<div class="desafio-BottonContainer">';
+        if (mOptions.isScorm === 2) {
+            var buttonText = mOptions.textButtonScorm;
+            if (buttonText != "") {
+                if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+                    this.hasSCORMbutton = true;
+                    fB += '<div class="desafio-GetScore">';
+                    if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
+                    fB += '<p><input type="button" id="desafioSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton" /> <span class="desafio-RepeatActivity" id="desafioRepeatActivity-' + instance + '"></span></p>';
+                    if (!this.isInExe) fB += '</form>';
+                    fB += '</div>';
+                    butonScore = fB;
+                }
+            }
+        } else if (mOptions.isScorm === 1) {
+            if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
+                this.hasSCORMbutton = true;
+                fB += '<div class="desafio-GetScore">';
+                fB += '<p><span class="desafio-RepeatActivity" id="desafioRepeatActivity-' + instance + '"></span></p>';
+                fB += '</div>';
+                butonScore = fB;
+            }
+        }
+        fB = +'</div>';
+        return butonScore;
     },
     createArrayStateChallenges: function (type, mlength) {
         var chs = []
@@ -245,8 +395,6 @@ var $eXeDesafio = {
         return chs;
     },
 
-
-
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
@@ -259,7 +407,6 @@ var $eXeDesafio = {
                 ostr = ostr + String.fromCharCode(key ^ str.charCodeAt(pos));
                 pos += 1;
             }
-
             return ostr;
         } catch (ex) {
             return '';
@@ -302,11 +449,11 @@ var $eXeDesafio = {
         mOptions.timesShow = [];
         mOptions.stateChallenges = $eXeDesafio.createArrayStateChallenges(mOptions.desafioType, mOptions.challengesGame.length);
         mOptions.clueTimes = [];
+        mOptions.desafioID = typeof mOptions.desafioID == "undefined" ? 0 : mOptions.desafioID;
         for (var i = 0; i < mOptions.challengesGame.length; i++) {
             mOptions.challengesGame[i].clueTimes = [];
             mOptions.challengesGame[i].clueTexts = [];
             mOptions.timesShow.push(10000000);
-           
             if (typeof mOptions.challengesGame[i].clues != "undefined") {
                 for (var z = 0; z < mOptions.challengesGame[i].clues.length; z++) {
                     if (mOptions.challengesGame[i].clues[z].clue.length > 0) {
@@ -341,7 +488,6 @@ var $eXeDesafio = {
             "width": l + 'px',
             "height": t + 'px',
         });
-
         $buttonChalleng.each(function (i) {
             if (i < mOptions.stateChallenges.length) {
                 var state = mOptions.stateChallenges[i].state,
@@ -356,7 +502,6 @@ var $eXeDesafio = {
                 })
             }
         });
-
     },
     isJsonString: function (str) {
         try {
@@ -388,6 +533,7 @@ var $eXeDesafio = {
         window.addEventListener('unload', function () {
             if (mOptions.gameStarted || mOptions.gameOver) {
                 $eXeDesafio.saveDataStorage(instance);
+                $eXeDesafio.endScorm();
             }
         });
         window.addEventListener('resize', function () {
@@ -475,21 +621,34 @@ var $eXeDesafio = {
         mOptions.gameOver = false;
         mOptions.counter = parseInt(mOptions.desafioTime) * 60;
         mOptions.activeChallenge = 0;
-        var dataDesafio = $eXeDesafio.getDataStorage(instance);
-        if (dataDesafio) {
-            if (mOptions.desafioType != dataDesafio.desafioType || dataDesafio.numberChallenges != mOptions.challengesGame.length || dataDesafio.desafioTime != mOptions.desafioTime) {
-                localStorage.removeItem('dataDesafio-' + instance);
-            } else {
-                $eXeDesafio.reloadGame(instance, dataDesafio);
+        if (typeof mOptions.desafioID != "undefined") {
+            var dataDesafio = $eXeDesafio.getDataStorage(mOptions.desafioID);
+            if (dataDesafio) {
+                if (mOptions.desafioType != dataDesafio.desafioType || dataDesafio.numberChallenges != mOptions.challengesGame.length || dataDesafio.desafioTime != mOptions.desafioTime) {
+                    localStorage.removeItem('dataDesafio-' + mOptions.desafioID);
+                } else {
+                    $eXeDesafio.reloadGame(instance, dataDesafio);
+                }
             }
         }
         $eXeDesafio.changeImageButtonState(instance, mOptions.typeQuestion);
+        $('#desafioSendScore-' + instance).attr('value', mOptions.textButtonScorm);
+        $('#desafioSendScore-' + instance).hide();
+        if (mOptions.isScorm > 0) {
+            $eXeDesafio.updateScorm($eXeDesafio.previousScore, mOptions.repeatActivity, instance);
+        }
+        $('#desafioSendScore-' + instance).click(function (e) {
+            e.preventDefault();
+            $eXeDesafio.sendScore(false, instance);
+            return true;
+        });
 
     },
 
     rebootGame: function (instance) {
         var mOptions = $eXeDesafio.options[instance];
         clearInterval(mOptions.counterClock);
+        localStorage.removeItem('dataDesafio-' + mOptions.desafioID);
         mOptions.stateChallenges = $eXeDesafio.createArrayStateChallenges(mOptions.desafioType, mOptions.challengesGame.length);
         mOptions.gameOver = false;
         mOptions.counter = parseInt(mOptions.desafioTime) * 60;
@@ -503,7 +662,7 @@ var $eXeDesafio = {
         mOptions.typeQuestion = 0;
         mOptions.solvedsChallenges = [];
         mOptions.timesShow = [];
-        for(var i=0;i<mOptions.challengesGame.length;i++){
+        for (var i = 0; i < mOptions.challengesGame.length; i++) {
             mOptions.timesShow.push(10000000);
         }
         $eXeDesafio.startGame(instance, mOptions.typeQuestion, mOptions.activeChallenge);
@@ -551,7 +710,7 @@ var $eXeDesafio = {
             return;
         };
         if (mOptions.timesShow[number] == 10000000) {
-            mOptions.timesShow[number]= mOptions.counter;
+            mOptions.timesShow[number] = mOptions.counter;
         }
         $eXeDesafio.changeStateButton(instance);
         $("#desafioSolutionDiv-" + instance).show();
@@ -580,12 +739,12 @@ var $eXeDesafio = {
     showClues(number, instance) {
         var mOptions = $eXeDesafio.options[instance],
             text = "";
-            
+
         if (typeof mOptions.challengesGame[number].clueTimes != "undefined") {
-            var tmp = mOptions.timesShow [number]- mOptions.counter;
+            var tmp = mOptions.timesShow[number] - mOptions.counter;
             for (var i = 0; i < mOptions.challengesGame[number].clueTimes.length; i++) {
-                if (mOptions.challengesGame[number].clueTimes[i]<= tmp) {
-                    text += '<p><strong>'+mOptions.msgs.msgHelp+' '+(i+1)+': </strong>' + mOptions.challengesGame[number].clueTexts[i] + '</p>';
+                if (mOptions.challengesGame[number].clueTimes[i] <= tmp) {
+                    text += '<p><strong>' + mOptions.msgs.msgHelp + ' ' + (i + 1) + ': </strong>' + mOptions.challengesGame[number].clueTexts[i] + '</p>';
                 }
             }
         }
@@ -594,11 +753,13 @@ var $eXeDesafio = {
 
     saveDataStorage: function (instance) {
         var mOptions = $eXeDesafio.options[instance];
+        if (typeof mOptions.desafioID == "undefined") return;
         if (mOptions.desafioDate == "") {
             mOptions.desafioDate = $eXeDesafio.getActualFullDate();
             $('#desafioDate-' + instance).text(mOptions.msgs.msgStartTime + ': ' + mOptions.desafioDate);
         }
         var data = {
+            'desafioID': mOptions.desafioID,
             'started': mOptions.gameStarted || mOptions.gameOver,
             'endGame': mOptions.endGame,
             'desafioSolved': mOptions.desafioSolved,
@@ -613,7 +774,17 @@ var $eXeDesafio = {
             'stateChallenges': mOptions.stateChallenges,
             'timesShow': mOptions.timesShow
         }
-        localStorage.setItem('dataDesafio-' + instance, JSON.stringify(data));
+        if (mOptions.isScorm === 1) {
+            if (mOptions.repeatActivity || $eXeDesafio.initialScore === '') {
+                var points = mOptions.desafioSolved ? mOptions.solvedsChallenges.length + 1 : mOptions.solvedsChallenges.length,
+                    score = 10 * (points / (mOptions.challengesGame.length + 1));
+                score = score.toFixed(2)
+                $eXeDesafio.sendScore(true, instance);
+                $('#desafioRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+
+            }
+        }
+        localStorage.setItem('dataDesafio-' + mOptions.desafioID, JSON.stringify(data));
     },
     changeStateButton: function (instance) {
         var mOptions = $eXeDesafio.options[instance];
@@ -635,8 +806,8 @@ var $eXeDesafio = {
 
         }
     },
-    getDataStorage: function (instance) {
-        var data = $eXeDesafio.isJsonString(localStorage.getItem('dataDesafio-' + instance));
+    getDataStorage: function (id) {
+        var data = $eXeDesafio.isJsonString(localStorage.getItem('dataDesafio-' + id));
         return data;
     },
 
@@ -687,8 +858,8 @@ var $eXeDesafio = {
         mOptions.desafioSolved = dataDesafio.desafioSolved;
         mOptions.stateChallenges = dataDesafio.stateChallenges;
         mOptions.solvedsChallenges = dataDesafio.solvedsChallenges;
-        if(typeof dataDesafio.timesShow!="undefined"){
-            mOptions.timesShow=dataDesafio.timesShow ;
+        if (typeof dataDesafio.timesShow != "undefined") {
+            mOptions.timesShow = dataDesafio.timesShow;
         }
         $('#desafioDate-' + instance).text(mOptions.msgs.msgStartTime + ': ' + dataDesafio.desafioDate);
         var ds = dataDesafio.desafioSolved ? 0 : 1;
@@ -745,7 +916,7 @@ var $eXeDesafio = {
                     $eXeDesafio.gameOver(1, instance);
                 }
                 if (mOptions.typeQuestion == 1) {
-                    var tmp=mOptions.timesShow[mOptions.activeChallenge]- mOptions.counter;
+                    var tmp = mOptions.timesShow[mOptions.activeChallenge] - mOptions.counter;
                     if (mOptions.challengesGame[mOptions.activeChallenge].clueTimes.indexOf(tmp) != -1) {
                         $eXeDesafio.showClues(mOptions.activeChallenge, instance);
                     }
@@ -788,6 +959,7 @@ var $eXeDesafio = {
         $eXeDesafio.showScoreGame(type, instance);
         mOptions.gameOver = true;
         mOptions.endGame = true;
+
     },
 
     getRetroFeedMessages: function (iHit, instance) {
@@ -856,6 +1028,7 @@ var $eXeDesafio = {
                 $('#desafioSolution-' + instance).val('');
             }
         }
+
         $eXeDesafio.showMessage(typeMessage, message, instance);
     },
     showMessageAlert: function (tmsg) {

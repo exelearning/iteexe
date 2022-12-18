@@ -400,7 +400,42 @@
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
+.desafio-BottonContainerDiv, .desafio-BottonContainer {
+	align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	margin: 0.1em auto;
+	padding: 0;
+	width: 100%;
+}
 
+.desafio-BottonContainerDivEnd {
+	justify-content: flex-end;
+}
+.desafio-GetScore input[type=button] {
+	padding: 0.3em 0.5em;
+	margin: 0 .5em 1em 0.5em;
+	width: auto;
+}
+.desafio-BottonContainer {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.desafio-BottonContainer * {
+	margin: 0;
+	padding: 0;
+}
+
+
+.desafio-GetScore {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	margin-top:1em
+}
 @media screen and (max-width: 800px) {
 	.desafio-GameContainer {
 		font-size: 0.9rem;

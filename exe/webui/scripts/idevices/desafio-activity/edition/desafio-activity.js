@@ -27,6 +27,7 @@ var $exeDevice = {
     desafioFeedBacks: [],
     desafioVersion: 1,
     clipBoard: '',
+    desafioID: 0,
     ci18n: {
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
@@ -59,12 +60,30 @@ var $exeDevice = {
         "msgWriteChallenge": _("Complete the trial. Write the solution."),
         "msgEndTimeRestart": _("Time Over. Please restart to try again."),
         "msgReboot": _("Restart"),
-        "msgHelp": _("Help")
-    },
+        "msgHelp": _("Help"),
+        "msgScoreScorm": _("The score can't be saved because this page is not part of a SCORM package."),
+        "msgEndGameScore": _("Please start the game before saving your score."),
+        "msgOnlySaveScore": _("You can only save the score once!"),
+        "msgOnlySave": _("You can only save once"),
+        "msgInformation": _("Information"),
+        "msgYouScore": _("Your score"),
+        "msgAuthor": _("Authorship"),
+        "msgOnlySaveAuto": _("Your score will be saved after each question. You can only play once."),
+        "msgSaveAuto": _("Your score will be automatically saved after each question."),
+        "msgSeveralScore": _("You can save the score as many times as you want"),
+        "msgYouLastScore": _("The last score saved is"),
+        "msgActityComply": _("You have already done this activity."),
+        "msgPlaySeveralTimes": _("You can do this activity as many times as you want")
 
+    },
+    getId: function () {
+        return Math.round(new Date().getTime() + (Math.random() * 100));
+    },
     init: function () {
+        this.desafioID = this.getId();
         this.setMessagesInfo();
         this.createForm();
+        
 
     },
     setMessagesInfo: function () {
@@ -344,11 +363,14 @@ var $exeDevice = {
                     </fieldset>\
                 </div>\
     			' + $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) + '\
+                ' + $exeAuthoring.iDevice.gamification.scorm.getTab() + '\
 		    </div>\
 			';
         var field = $("textarea.jsContentEditor").eq(0)
         field.before(html);
         $exeAuthoring.iDevice.tabs.init("desafioIdeviceForm");
+        $exeAuthoring.iDevice.gamification.scorm.init();
+
         $exeDevice.loadPreviousValues(field);
         $exeDevice.addEvents();
         $exeDevice.showDesafio();
@@ -563,6 +585,8 @@ var $exeDevice = {
     },
     updateFieldGame: function (game) {
         $('#desafioEShowMinimize').prop('checked', game.showMinimize);
+        $exeDevice.desafioID = typeof game.desafioID == "undefined" ? $exeDevice.desafioID : game.desafioID;
+        $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showDesafio();
 
     },
@@ -726,6 +750,7 @@ var $exeDevice = {
                 return false;
             }
         }
+        var scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
         var data = {
             'asignatura': '',
             "author": '',
@@ -740,7 +765,11 @@ var $exeDevice = {
             'instructions': instructions,
             'showMinimize': showMinimize,
             'challengesGame': challengesGame,
-            'title': ''
+            'title': '',
+            'isScorm': scorm.isScorm,
+            'textButtonScorm': scorm.textButtonScorm,
+            'repeatActivity': scorm.repeatActivity,
+            'desafioID': $exeDevice.desafioID,
         }
         return data;
     },
