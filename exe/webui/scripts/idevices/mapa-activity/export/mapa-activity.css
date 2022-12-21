@@ -208,7 +208,13 @@
 	display: none;
 }
 
-
+.MQP-LinkCloseHome {
+	position: absolute;
+	display: block;
+	top: 0;
+	right: 32px;
+	display: none;
+}
 .MQP-Cubierta {
 	width: 100%;
 	height: auto;
@@ -1164,6 +1170,11 @@ img.MQP-ImageMain {
 	background-image: url(mapavolver.svg);
 	background-size: 100% 100%;
 }
+.MQP-MainContainer .exeQuextIcons-CHome {
+	background-image: url(mapaInicio.svg);
+	background-size: 100% 100%;
+}
+
 
 .MQP-MainContainer .exeQuextIcons-Video, .MQP-MainContainer .exeQuextIcons-Submit {
 	height: 1.7em;

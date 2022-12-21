@@ -110,7 +110,10 @@ var $exeDevice = {
         "msgPlayStart": _("Click here to start"),
         "msgSubtitles": _("Subtitles"),
         "msgSelectSubtitles": _("Select a subtitle file. Supported formats:"),
-        "msgNumQuestions": _("Number of questions")
+        "msgNumQuestions": _("Number of questions"),
+        "msgHome": _("Home"),
+        "msgReturn": _("Return")
+        
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%");
@@ -180,6 +183,9 @@ var $exeDevice = {
                             <label for="mapaEEvaluationTX">' + _("Test") + '</label>\
                             <input class="MQE-TypeEvaluation" id="mapaEEvaluationTest" type="radio" name="mpevaluation"  value="4" />\
                             <label for="mapaEEvaluationTest">' + _("Questionnaire") + '</label>\
+                        </p>\
+                        <p class="MQE-EHide" id="mapaNumOptionsData">\
+                            <label for="mapaNumOptions">' + _("Options Number") + ':</label><input type="number" name="mapaNumOptions" id="mapaNumOptions" value="0" min="1" max="100" />\
                         </p>\
                         <p class="MQE-EHide" id="mapaSolutionData">\
                             <label for="mapaEShowSolution"><input type="checkbox" checked id="mapaEShowSolution">' + _("Show solutions") + '. </label>\
@@ -857,7 +863,7 @@ var $exeDevice = {
         }
     },
     updateProgressBar: function () {
-       // $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
+        // $('#progress-bar').val((player.getCurrentTime() / player.getDuration()) * 100);
     },
     onPlayerError: function (event) {
         //$exeDevice.showMessage("El video mapaEdo no está disponible")
@@ -1156,10 +1162,10 @@ var $exeDevice = {
                 type = true;
             if (typeof id == "undefined") {
                 type = false;
-                id = $(this).text();;
+                id = $(this).text();
             }
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
-                p.map.url ? $(this).attr('src') : $(this).attr('href');
+                p.map.url = type ? $(this).attr('src') : $(this).attr('href');
                 return;
             }
         });
@@ -1183,7 +1189,6 @@ var $exeDevice = {
             return false
         }
         var dataGame = $exeDevice.validateData();
-
         if (!dataGame) {
             return false;
         }
@@ -1201,7 +1206,6 @@ var $exeDevice = {
         var medias = $exeDevice.saveMedias(dataGame.points),
             json = JSON.stringify(dataGame);
         medias = medias.maps + medias.images + medias.audios + medias.texts + medias.slides + medias.tooltips;
-
         var html = '<div class="mapa-IDevice">';
         html += '<div class="mapa-version js-hidden">' + $exeDevice.version + '</div>';
         html += divContent;
@@ -1230,7 +1234,6 @@ var $exeDevice = {
             'slides': '',
             'tooltips': ''
         }
-
         for (var i = 0; i < pts.length; i++) {
             var p = pts[i];
             if (p.type != 5) {
@@ -1268,7 +1271,6 @@ var $exeDevice = {
             }
 
         }
-
         return medias
     },
     validateDataLevel: function () {
@@ -1536,7 +1538,8 @@ var $exeDevice = {
             percentajeShowQ = parseInt(clear($('#mapaPercentajeShowQ').val())),
             percentajeQuestions = parseInt(clear($('#mapaPercentajeQuestions').val())),
             autoShow = $('#mapaEAutoShow').is(':checked') || false,
-            points = $exeDevice.activeMap.pts;
+            points = $exeDevice.activeMap.pts,
+            optionsNumber = parseInt(clear($('#mapaNumOptions').val()));
         if (points.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEOnePoint);
             return false;
@@ -1620,7 +1623,8 @@ var $exeDevice = {
             'percentajeIdentify': percentajeIdentify,
             'percentajeShowQ': percentajeShowQ,
             'percentajeQuestions': percentajeQuestions,
-            'autoShow': autoShow
+            'autoShow': autoShow,
+            'optionsNumber': optionsNumber
         }
         return data;
     },
@@ -2172,9 +2176,10 @@ var $exeDevice = {
             $exeDevice.showTypeQuestion(type);
         });
         $('#gameQEIdeviceForm').on('click', 'input.MQE-TypeEvaluation', function (e) {
-
             var type = parseInt($(this).val());
             $('#mapaSolutionData').show();
+            $('#mapaNumOptionsData').hide();
+
             if (type == 4) {
                 $('#mapaFQuestions').show();
                 $('#mapaEvaluationData').show();
@@ -2189,6 +2194,9 @@ var $exeDevice = {
                 $('#mapaETimeShowSolution').prop("disabled", false);
             }
             $('#mapaEAutoShowDiv').hide();
+            if (type == 1) {
+                $('#mapaNumOptionsData').show();
+            }
             if (type == 0 || type == 4) {
                 $('#mapaEAutoShowDiv').show();
             }
@@ -3332,7 +3340,9 @@ var $exeDevice = {
     updateFieldGame: function (game) {
         $exeDevice.activeMap.active = 0;
         $exeDevice.qActive = 0;
+        game.optionsNumber = typeof game.optionsNumber == "undefined" ? 0 : game.optionsNumber;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
+        $('#mapaNumOptions').val(game.optionsNumber);
         $('#mapaEShowMinimize').prop('checked', game.showMinimize);
         $('#mapaEShowActiveAreas').prop('checked', game.showActiveAreas);
         $('#mapaURLImageMap').val(game.url);
@@ -3352,6 +3362,7 @@ var $exeDevice = {
         $("input.MQE-TypeEvaluation[name='mpevaluation'][value='" + game.evaluation + "']").prop("checked", true);
         $('#mapaEvaluationData').hide();
         $('#mapaSolutionData').show();
+        $('#mapaNumOptionsData').hide();
         if (game.evaluation == 4) {
             $('#mapaFQuestions').show();
             $('#mapaEvaluationData').show();
@@ -3360,6 +3371,9 @@ var $exeDevice = {
             $('#mapaETimeShowSolution').prop("disabled", !game.showSolution);
         }
         $('#mapaEAutoShowDiv').hide();
+        if (game.evaluation == 1) {
+            $('#mapaNumOptionsData').show();
+        }
         if (game.evaluation == 4 || game.evaluation == 0) {
             $('#mapaEAutoShowDiv').show();
         }

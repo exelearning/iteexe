@@ -300,6 +300,7 @@ var $eXeMapa = {
         var json = data.text(),
             mOptions = $eXeMapa.isJsonString(json);
         mOptions.url = url;
+        mOptions.optionsNumber = typeof mOptions.optionsNumber == "undefined" ? 0 : mOptions.optionsNumber;
         mOptions.hasAreas = false;
         mOptions.waitPlayVideo = false;
         mOptions.gameOver = false;
@@ -363,7 +364,6 @@ var $eXeMapa = {
                     p.type = 0;
                     p.url = p.slides[0].url;
                 }
-
             } else {
                 if (evaluation == 1) {
                     p.type = 0;
@@ -504,7 +504,7 @@ var $eXeMapa = {
                 type = true;
             if (typeof id == "undefined") {
                 type = false;
-                id = $(this).text();;
+                id = $(this).text();
             }
             if (typeof p.id != "undefined" && typeof id != "undefined" && p.id == id) {
                 p.map.url = type ? $(this).attr('src') : $(this).attr('href');
@@ -680,9 +680,6 @@ var $eXeMapa = {
                 }
             }
         }
-
-
-
         if (!solution) {
             $('#mapaDefinition-' + instance).text(definition);
         }
@@ -875,9 +872,13 @@ var $eXeMapa = {
             </div>\
             <div class="MQP-Multimedia" id="mapaMultimedia-' + instance + '">\
                 <img src="" id="mapaImage-' + instance + '" class="MQP-ImageMain" alt="" />\
-                <a href="#" class="MQP-LinkCloseDetail" id="mapaLinkCloseDetail-' + instance + '" title="' + msgs.msgClose + '">\
-                    <strong class="sr-av">' + msgs.msgReturnMap + ':</strong>\
+                <a href="#" class="MQP-LinkCloseDetail" id="mapaLinkCloseDetail-' + instance + '" title="' + msgs.msgReturn + '">\
+                    <strong class="sr-av">' + msgs.msgReturn + ':</strong>\
                     <div class="MQP-IconsToolBar exeQuextIcons-CReturn MQP-Activo"></div>\
+                </a>\
+                <a href="#" class="MQP-LinkCloseHome" id="mapaLinkCloseHome-' + instance + '" title="' + msgs.msgHome + '">\
+                    <strong class="sr-av">' + msgs.msgHome + ':</strong>\
+                    <div class="MQP-IconsToolBar exeQuextIcons-CHome MQP-Activo"></div>\
                 </a>\
                 ' + this.getDetailSound(instance) + '\
                 ' + this.getToolTip(instance) + '\
@@ -1656,6 +1657,13 @@ var $eXeMapa = {
             e.preventDefault();
             $eXeMapa.hideMapDetail(instance, false);
         });
+        $('#mapaLinkCloseHome-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $eXeMapa.hideMapDetail(instance, true);
+            $('#mapaLinkCloseDetail-' + instance).hide();
+            $('#mapaLinkCloseHome-' + instance).hide();
+
+        });
 
         $('#mapaStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
@@ -1950,6 +1958,10 @@ var $eXeMapa = {
         $eXeMapa.showButtonAreas(mOptions.activeMap.pts, instance);
 
         $('#mapaLinkCloseDetail-' + instance).show();
+        if (mOptions.levels.length > 2) {
+            $('#mapaLinkCloseHome-' + instance).show();
+        }
+
     },
     showButtonAreas: function (pts, instance) {
         $('#mapaLinkAreas-' + instance).hide();
@@ -2385,6 +2397,30 @@ var $eXeMapa = {
         $eXeMapa.stopSound(instance);
 
     },
+    hideRandomWoptions: function (intance, num) {
+        var mOptions = $eXeMapa.options[instance],
+            p = mOptions.activeMap.pts[num];
+        if (mOptions.optionsNumber > 0) {
+
+        }
+    },
+    randomSubset: function (num, k, sol) {
+        var copy = [],
+            result = []
+        for (var i = 0; i < num; i++) {
+            copy.push(i);
+        }
+        copy.splice(sol, 1);
+        k = k - 1;
+        k = k > copy.length ? copy.length : k;
+        while (result.length < k) {
+            var index = Math.floor(Math.random() * copy.length);
+            result.push(copy[index]);
+            copy.splice(index, 1);
+        }
+        result.push(sol)
+        return result;
+    },
     showOptionsRect: function (instance, num) {
         var mOptions = $eXeMapa.options[instance],
             p = mOptions.activeMap.pts[num],
@@ -2398,6 +2434,14 @@ var $eXeMapa = {
         if (p.state != -1) {
             mOptions.showData = false;
             return;
+        }
+        if (typeof mOptions.optionsNumber != 'undefined' && mOptions.optionsNumber > 1) {
+            var mostrar = $eXeMapa.randomSubset(mOptions.activeMap.pts.length, mOptions.optionsNumber, num)
+            $('#mapaOptionsTest-' + instance).find('.MPQ-OptionTest').hide();
+            console.log(mostrar);
+            for (var i = 0; i < mostrar.length; i++) {
+                $('#mapaOptionsTest-' + instance).find('.MPQ-OptionTest').filter('[data-number="' + mostrar[i] + '"]').show();
+            }
         }
         mOptions.activeMap.active = num;
         $('#mapaMessageRectP-' + instance).text(msg);
@@ -2500,7 +2544,7 @@ var $eXeMapa = {
         $('#mapaFDetails-' + instance).hide();
         $('#mapaFDetailsSound-' + instance).hide();
         $('#mapaLinkCloseDetail-' + instance).hide();
-
+        $('#mapaLinkCloseHome-' + instance).hide();
         if (correct) {
             if (mOptions.activeMap.pts[num].type < 4 || mOptions.activeMap.pts[num].type == 6) {
                 $eXeMapa.showMessageDetail(instance, message, 2);
@@ -2602,7 +2646,7 @@ var $eXeMapa = {
             w = 0,
             t = 0,
             urllv = $eXeMapa.getURLVideoMediaTeca(q.video),
-            type= urllv ? 1 : 0;
+            type = urllv ? 1 : 0;
         mOptions.activeMap.active = i;
         if (q.type == 1) {
             $eXeMapa.stopSound(instance);
@@ -2614,7 +2658,7 @@ var $eXeMapa = {
             return;
         }
         mOptions.waitPlayVideo = false;
-        if(type==0){
+        if (type == 0) {
             $eXeMapa.startVideo('', 0, 0, instance, type);
         }
         $eXeMapa.stopVideo(instance);
@@ -2770,7 +2814,7 @@ var $eXeMapa = {
         if (mOptions.levels.length > 1) {
             var parent = mOptions.levels[mOptions.levels.length - 2];
             if (start) {
-                mOptions.levels.slice(1);
+                mOptions.levels = mOptions.levels.slice(0, 1);
                 parent = mOptions.levels[0];
                 mOptions.numLevel = 0;
             } else {
@@ -2788,6 +2832,10 @@ var $eXeMapa = {
                 mOptions.showDetail = false;
                 $('#mapaLinkCloseDetail-' + instance).hide();
             }
+            if (mOptions.levels.length < 3) {
+                $('#mapaLinkCloseHome-' + instance).hide();
+            }
+
 
         }
     },
@@ -2827,9 +2875,9 @@ var $eXeMapa = {
     startVideo: function (id, start, end, instance, type) {
         var mOptions = $eXeMapa.options[instance],
             mstart = start < 1 ? 0.1 : start;
-            $('#mapaVideoPoint-' + instance).hide();
-            $('#mapaVideoLocal-' + instance).hide();
-        if (typeof type !="undefided" && type > 0) { 
+        $('#mapaVideoPoint-' + instance).hide();
+        $('#mapaVideoLocal-' + instance).hide();
+        if (typeof type != "undefided" && type > 0) {
             if (mOptions.localPlayer) {
                 mOptions.pointEnd = end;
                 mOptions.localPlayer.src = id
@@ -2965,9 +3013,9 @@ var $eXeMapa = {
         var mOptions = $eXeMapa.options[instance],
             point = mOptions.activeMap.pts[mOptions.activeMap.active],
             urllv = $eXeMapa.getURLVideoMediaTeca(point.video),
-            type= urllv ? 1 : 0;
+            type = urllv ? 1 : 0;
         if (type > 0) {
-            $('#mapaMultimediaPoint-' + instance).css('height','auto');
+            $('#mapaMultimediaPoint-' + instance).css('height', 'auto');
             $eXeMapa.startVideo(urllv, point.iVideo, point.fVideo, instance, type);
             return
         }
