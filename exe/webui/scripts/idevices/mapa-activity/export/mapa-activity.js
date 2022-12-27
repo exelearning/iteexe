@@ -119,7 +119,6 @@ var $eXeMapa = {
         if ($eXeMapa.hasLATEX && typeof (MathJax) == "undefined") {
             $eXeMapa.loadMathJax();
         }
-
     },
     showImageTest(url, alt, instance) {
         var $Image = $('#mapaImageRect-' + instance);
@@ -426,7 +425,6 @@ var $eXeMapa = {
             alt: '',
             footer: ''
         };
-
     },
     getID: function () {
         return Math.floor(Math.random() * Date.now());
@@ -434,7 +432,6 @@ var $eXeMapa = {
     setHasVideo(instance) {
         var mOptions = $eXeMapa.options[instance];
         mOptions.hasYoutube = true;
-
     },
     setImageSlide: function (s, $images) {
         $images.each(function () {
@@ -559,7 +556,6 @@ var $eXeMapa = {
         $('#mapaShowClue-' + instance).hide();
         $('#mapaGameClue-' + instance).hide();
         $eXeMapa.showQuestionaire(instance);
-
     },
     ramdonOptions: function (instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -691,7 +687,6 @@ var $eXeMapa = {
         }
         return cPhrase;
     },
-
     drawSolution: function (instance) {
         var mOptions = $eXeMapa.options[instance],
             mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
@@ -740,7 +735,6 @@ var $eXeMapa = {
             $(this).css(css);
         });
     },
-
     showQuestion: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
             mQuextion = mOptions.selectsGame[i];
@@ -771,10 +765,7 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
-
-
     },
-
     shuffleAds: function (arr) {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
@@ -820,7 +811,6 @@ var $eXeMapa = {
         }
         if (!auto) alert(message);
     },
-
     playSound: function (selectedFile, instance) {
         $eXeMapa.stopSound(instance);
         var mOptions = $eXeMapa.options[instance];
@@ -829,7 +819,6 @@ var $eXeMapa = {
         mOptions.playerAudio.addEventListener("canplaythrough", function () {
             mOptions.playerAudio.play();
         });
-
     },
     stopSound: function (instance) {
         var mOptions = $eXeMapa.options[instance];
@@ -1092,7 +1081,7 @@ var $eXeMapa = {
                         <img src="" class="MQP-Images" id="mapaImagePoint-' + instance + '"  alt="' + msgs.msgNoImage + '" />\
                         <img src="' + path + 'mapaHome.png" class="MQP-Cover" id="mapaCoverPoint-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                         <div class="MQP-Video" id="mapaVideoPoint-' + instance + '"></div>\
-                        <video class="MQP-VideoLocal" id="mapaVideoLocal-' + instance + '" src=""></video>\
+                        <video controls class="MQP-VideoLocal" id="mapaVideoLocal-' + instance + '" src=""></video>\
                         <a href="#" class="MQP-LinkAudio MQP-Activo" id="mapaLinkAudio-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
                         <a href="#" class="MQP-LinkSlideLeft MQP-Activo" id="mapaLinkSlideLeft-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
                         <a href="#" class="MQP-LinkSlideRight MQP-Activo" id="mapaLinkSlideRight-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
@@ -1179,8 +1168,6 @@ var $eXeMapa = {
         }
         return butonScore;
     },
-
-
     clear: function (phrase) {
         return phrase.replace(/[&\s\n\r]+/g, " ").trim();
     },
@@ -1236,11 +1223,10 @@ var $eXeMapa = {
                     var mData = $eXeMapa.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
                     $eXeMapa.placeImageWindows(this, this.naturalWidth, this.naturalHeight, instance);
                     $eXeMapa.drawImage(this, mData);
-                    $('#mapaMultimediaPoint-' + instance).height(mData.h);
+                    //$('#mapaMultimediaPoint-' + instance).height(mData.h);
                     $Image.show();
                     $noImage.hide();
                     $Image.attr('alt', alt);
-                    //$eXeMapa.updateHeightGame(instance);
                     return true;
                 }
             }).on('error', function () {
@@ -1294,7 +1280,6 @@ var $eXeMapa = {
         $('#mapaPNumberF-' + instance).text(mOptions.numberQuestions);
         $('#mapaGameClue-' + instance).hide();
     },
-
     showFind: function (instance, num) {
         var mOptions = $eXeMapa.options[instance],
             msg = mOptions.evaluation == 2 ? mOptions.msgs.msgIdentify : mOptions.msgs.msgSearch;
@@ -1310,14 +1295,12 @@ var $eXeMapa = {
             mq = mOptions.titles[num].question;
         }
         $('#mapaMessageFindP-' + instance).text(mq);
-
         $('#mapaPlayAudioIdenty-' + instance).hide();
         $eXeMapa.stopSound(instance);
         if (typeof mOptions.title.audio != "undefined" && mOptions.title.audio.length > 4) {
             $eXeMapa.playSound(mOptions.title.audio, instance);
             $('#mapaPlayAudioIdenty-' + instance).show();
         }
-
         mOptions.showDetail = false;
         var html = $('#mapaMainContainer-' + instance).html(),
             latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
@@ -1407,7 +1390,6 @@ var $eXeMapa = {
             $("#mapaGameMinimize-" + instance).css('visibility', 'visible').show();
             $("#mapaMainContainer-" + instance).css('height', 'auto').show();
         });
-
         document.onfullscreenchange = function (event) {
             var id = event.target.id.split('-')[1];
             $eXeMapa.refreshImageActive(id);
@@ -1418,7 +1400,6 @@ var $eXeMapa = {
             var element = document.getElementById('mapaGameContainer-' + instance);
             $eXeMapa.toggleFullscreen(element, instance);
         });
-
         $('#mapaCodeAccessButton-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $eXeMapa.enterCodeAccess(instance);
@@ -1499,7 +1480,6 @@ var $eXeMapa = {
                 $eXeMapa.showPoint(n, instance);
             }
         });
-
         $('#mapaLinkAreas-' + instance).on('mouseenter click', function (e) {
             e.preventDefault();
             $('#mapaMultimedia-' + instance).find('.MQP-Area').css({
@@ -1510,7 +1490,6 @@ var $eXeMapa = {
             e.preventDefault();
             $('#mapaMultimedia-' + instance).find('.MQP-Area').css('background-color', 'rgba(59, 123, 84, 0.01)');
         });
-
         $('#mapaLinkTest-' + instance).on('click', function (e) {
             e.preventDefault();
             if (mOptions.showData) return;
@@ -1617,8 +1596,6 @@ var $eXeMapa = {
                 $eXeMapa.showPoint(n, instance);
             }
         });
-
-
         $('#mapaToolTip-' + instance).on('mouseleave', function (e) {
             e.preventDefault();
             if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
@@ -1651,7 +1628,6 @@ var $eXeMapa = {
                 return;
             }
             $eXeMapa.answerRect(instance, text, num);
-
         });
         $('#mapaLinkCloseDetail-' + instance).on('click', function (e) {
             e.preventDefault();
@@ -1662,17 +1638,17 @@ var $eXeMapa = {
             $eXeMapa.hideMapDetail(instance, true);
             $('#mapaLinkCloseDetail-' + instance).hide();
             $('#mapaLinkCloseHome-' + instance).hide();
-
         });
-
         $('#mapaStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
+            if ($('#mapaFMessageAccess-' + instance).is(':visible')) {
+                return;
+            }
             if (mOptions.hasYoutube && (typeof (mOptions.player) == "undefined")) {
                 if (typeof (YT) !== "undefined") {
                     $eXeMapa.youTubeReadyOne(instance);
                 } else {
                     $eXeMapa.loadYoutubeApi();
-
                 }
             }
             $eXeMapa.startGame(instance);
@@ -1709,8 +1685,6 @@ var $eXeMapa = {
         if (hasLatex) {
             $eXeMapa.hasLATEX = true;
         }
-
-
     },
     showSlide: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -1728,7 +1702,6 @@ var $eXeMapa = {
             $('#mapaFooterPoint-' + instance).show();
         }
         $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), mOptions.activeMap.active, instance)
-
     },
     showPointLink: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -1740,16 +1713,14 @@ var $eXeMapa = {
                 win.focus();
             } else {
                 //Browser has blocked it
-                alert('Please allow popups for this website');
+                alert('Permita las ventanas emergentes en este sitio');
             }
             setTimeout(function () {
                 mOptions.showData = false;
                 mOptions.loadingURL = false;
             }, 1000)
         }
-
     },
-
     showToolTip: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num],
@@ -1770,7 +1741,6 @@ var $eXeMapa = {
         $('#mapaMultimediaPoint-' + instance).hide();
         $eXeMapa.placePointInWindow($('#mapaToolTip-' + instance), num, instance)
     },
-
     showPointNone: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num];
@@ -1785,10 +1755,15 @@ var $eXeMapa = {
             $eXeMapa.showMessageModal(instance, q.title, 1, 0, num);
         }
         mOptions.visiteds.push(q.id);
+        if (mOptions.isScorm == 1 && mOptions.evaluation != 4 && mOptions.evaluation > -1) {
+            if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
+                var score = mOptions.evaluation === 0 ? $eXeMapa.getScoreVisited(instance) : $eXeMapa.getScoreFind(instance);
+                $eXeMapa.sendScore(true, instance);
+                $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+            }
+        }
         $eXeMapa.messageAllVisited(instance);
     },
-
-
     showPointImage: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num];
@@ -1798,13 +1773,11 @@ var $eXeMapa = {
             $('#mapaAuthorPoint-' + instance).show();
         }
         $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
-
     },
     showPointSound: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num];
         $eXeMapa.placePointInWindow($('#mapaFDetailsSound-' + instance), num, instance)
-
     },
     showPointVideo: function (num, instance) {
         var mOptions = $eXeMapa.options[instance];
@@ -1812,7 +1785,6 @@ var $eXeMapa = {
         $eXeMapa.playVideo(instance);
         $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
     },
-
     showPointText: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num],
@@ -1831,7 +1803,6 @@ var $eXeMapa = {
             $eXeMapa.updateLatex('mapaTextPoint-' + instance);
         }
         $eXeMapa.placePointInWindow($('#mapaFDetails-' + instance), num, instance)
-
     },
     placePointInWindow($window, num, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -1868,7 +1839,6 @@ var $eXeMapa = {
                 lWindow = Math.round($button.position().left - (wWindow - $button.innerWidth()) / 2),
                 tWindow = Math.round($button.position().top - (hWindow - $button.innerHeight()) / 2),
                 tWindow = tWindow < -tMulti ? -tMulti : tWindow;
-
             //arriba
             tWindow = tWindow < -tMulti ? -tMulti : tWindow;
             //abajo:
@@ -1878,7 +1848,6 @@ var $eXeMapa = {
             }
             //izquierda:
             lWindow = lWindow < -lMulti ? -lMulti : lWindow;
-
             // Derecha
             if ((lMulti + lWindow + wWindow) > wMain) {
                 hsobra = (lMulti + lWindow + wWindow) - wMain
@@ -1890,7 +1859,6 @@ var $eXeMapa = {
             'left': lWindow
         });
         $window.fadeIn();
-
     },
 
     closeToolTip: function (instance) {
@@ -1933,12 +1901,12 @@ var $eXeMapa = {
             $eXeMapa.showClue(instance);
             $eXeMapa.messageAllVisited(instance);
         });
-
     },
     startGame: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         $('#mapaMessageFindP-' + instance).show();
         $('#mapaStartGame-' + instance).hide();
+
         if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
             $eXeMapa.showFind(instance, 0);
         }
@@ -1956,12 +1924,10 @@ var $eXeMapa = {
         $eXeMapa.addPoints(instance, mOptions.activeMap.pts);
         $eXeMapa.showImage(mOptions.activeMap.url, mOptions.activeMap.alt, instance);
         $eXeMapa.showButtonAreas(mOptions.activeMap.pts, instance);
-
         $('#mapaLinkCloseDetail-' + instance).show();
         if (mOptions.levels.length > 2) {
             $('#mapaLinkCloseHome-' + instance).show();
         }
-
     },
     showButtonAreas: function (pts, instance) {
         $('#mapaLinkAreas-' + instance).hide();
@@ -1991,7 +1957,6 @@ var $eXeMapa = {
         } else {
             mOptions.evaluation = -1;
         }
-
         $eXeMapa.stopSound(instance);
     },
     closePoint: function (instance) {
@@ -2033,8 +1998,6 @@ var $eXeMapa = {
         $eXeMapa.showClue(instance);
         $eXeMapa.messageAllVisited(instance);
         mOptions.showData = false;
-
-        // $eXeMapa.updateHeightGame(instance,-1)
     },
     changeQuextion: function (instance, button) {
         var mOptions = $eXeMapa.options[instance];
@@ -2102,8 +2065,6 @@ var $eXeMapa = {
         $('#mapaFTests-' + instance).show();
         $('#mapaCubierta-' + instance).show();
         $('#mapaPNumber-' + instance).text(mOptions.numberQuestions);
-        //$eXeMapa.updateHeightGame(instance);
-
     },
     showMessageModal: function (instance, message, type, color1, num) {
         var mOptions = $eXeMapa.options[instance],
@@ -2129,9 +2090,6 @@ var $eXeMapa = {
             $('#mapaFMessageInfoAccept-' + instance).show();
         }
         $eXeMapa.placePointInWindow($('#mapaFMessages-' + instance), num, instance)
-
-
-
     },
     answerQuestion: function (instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2189,6 +2147,13 @@ var $eXeMapa = {
         }
         $eXeMapa.showClue(instance);
         $eXeMapa.showMessage(type, message, instance);
+        if (mOptions.evaluation == 4 && mOptions.isScorm === 1) {
+            if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
+                var score = (mOptions.hits * 10 / mOptions.numberQuestions).toFixed(2);
+                $eXeMapa.sendScore(true, instance);
+                $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+            }
+        }
         setTimeout(function () {
             $eXeMapa.newQuestion(instance, correct, false);
         }, timeShowSolution);
@@ -2328,19 +2293,19 @@ var $eXeMapa = {
             $('#mapaErrorScore-' + instance).hide();
         }
         mOptions.gameOver = true;
-        if ((mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) && mOptions.isScorm === 1) {
+        if ((mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3 || mOptions.evaluation == 4) && mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
                 var score = ((mOptions.hits * 10) / numq).toFixed(2);
                 $eXeMapa.sendScore(true, instance);
                 $eXeMapa.initialScore = score;
+                
             }
         }
         $eXeMapa.hideCover(instance);
         $('#mapaFMessageOver-' + instance).show();
         setTimeout(function () {
             $eXeMapa.placePointInWindow($('#mapaFMessages-' + instance), -1, instance)
-        }, 500)
-
+        }, 500);
     },
     updateNumberQuestion: function (numq, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2395,14 +2360,6 @@ var $eXeMapa = {
             mOptions.showData = false;
         });
         $eXeMapa.stopSound(instance);
-
-    },
-    hideRandomWoptions: function (intance, num) {
-        var mOptions = $eXeMapa.options[instance],
-            p = mOptions.activeMap.pts[num];
-        if (mOptions.optionsNumber > 0) {
-
-        }
     },
     randomSubset: function (num, k, sol) {
         var copy = [],
@@ -2438,7 +2395,6 @@ var $eXeMapa = {
         if (typeof mOptions.optionsNumber != 'undefined' && mOptions.optionsNumber > 1) {
             var mostrar = $eXeMapa.randomSubset(mOptions.activeMap.pts.length, mOptions.optionsNumber, num)
             $('#mapaOptionsTest-' + instance).find('.MPQ-OptionTest').hide();
-            console.log(mostrar);
             for (var i = 0; i < mostrar.length; i++) {
                 $('#mapaOptionsTest-' + instance).find('.MPQ-OptionTest').filter('[data-number="' + mostrar[i] + '"]').show();
             }
@@ -2481,7 +2437,6 @@ var $eXeMapa = {
         if (mOptions.activeMap.pts[mOptions.activeMap.active].type == 5) {
             mOptions.activeMap.pts[mOptions.activeMap.active].type = 0;
             mOptions.activeMap.pts[mOptions.activeMap.active].url = mOptions.activeMap.pts[mOptions.activeMap.active].map.url;
-
         }
         if (correct) {
             mOptions.activeMap.pts[mOptions.activeMap.active].state = 2;
@@ -2490,7 +2445,6 @@ var $eXeMapa = {
                 $eXeMapa.showMessageDetail(instance, message, 2);
                 $eXeMapa.showPoint(mOptions.activeMap.active, instance);
             } else {
-                //$eXeMapa.showMessageModal(instance, message, 2, 2, 1, -1);
                 var num = mOptions.activeMap.active
                 if (mOptions.activeMap.pts[num].type == 8) {
                     $eXeMapa.showPointLink(num, instance)
@@ -2528,8 +2482,13 @@ var $eXeMapa = {
         $eXeMapa.paintPoints(instance);
         var $activ = $('#mapaMultimedia-' + instance).find('.MQP-Point[data-number="' + mOptions.activeMap.active + '"]').eq(0);
         $activ.attr('title', solution);
-
-
+        if (mOptions.isScorm == 1 && mOptions.evaluation != 4 && mOptions.evaluation > -1) {
+            if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
+                var score = mOptions.evaluation === 0 ? $eXeMapa.getScoreVisited(instance) : $eXeMapa.getScoreFind(instance);
+                $eXeMapa.sendScore(true, instance);
+                $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+            }
+        }
     },
     answerFind: function (num, id, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2552,26 +2511,25 @@ var $eXeMapa = {
             } else if (mOptions.activeMap.pts[num].type == 7) {
                 $eXeMapa.showToolTip(num, instance)
             } else {
-
                 if (mOptions.activeMap.pts[num].type == 8) {
                     $eXeMapa.showPointLink(num, instance)
+                    setTimeout(function () {
+                        if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+                            mOptions.activeTitle++;
+                        }
+                        $eXeMapa.hideMapDetail(instance, true);
+                        if (mOptions.activeTitle >= mOptions.numberQuestions || mOptions.evaluation == 3 && mOptions.hits >= mOptions.numberQuestions) {
+                            $eXeMapa.gameOver(instance);
+                        } else {
+                            $eXeMapa.showFind(instance, mOptions.activeTitle);
+                        }
+                        $eXeMapa.hideCover(instance);
+                        $eXeMapa.hideMapDetail(instance, true);
+                        mOptions.showData = false;
+                    }, mOptions.timeShowSolution * 1000);
                 } else {
                     $eXeMapa.showMessageModal(instance, message + ': ' + mOptions.title.title, 1, 2, num);
                 }
-                setTimeout(function () {
-                    if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
-                        mOptions.activeTitle++;
-                    }
-                    $eXeMapa.hideMapDetail(instance, true);
-                    if (mOptions.activeTitle >= mOptions.numberQuestions || mOptions.evaluation == 3 && mOptions.hits >= mOptions.numberQuestions) {
-                        $eXeMapa.gameOver(instance);
-                    } else {
-                        $eXeMapa.showFind(instance, mOptions.activeTitle);
-                    }
-                    $eXeMapa.hideCover(instance);
-                    $eXeMapa.hideMapDetail(instance, true);
-                    mOptions.showData = false;
-                }, mOptions.timeShowSolution * 1000);
             }
         } else {
             message = mOptions.msgs.msgNotCorrect + ' "' + answert + '"';
@@ -2581,7 +2539,6 @@ var $eXeMapa = {
             if (mOptions.evaluation == 3) {
                 message += ' ' + mOptions.msgs.msgNotCorrect3;
             }
-
             $eXeMapa.showMessageModal(instance, message, 2, 0, num);
             setTimeout(function () {
                 if (mOptions.evaluation == 2) {
@@ -2600,8 +2557,14 @@ var $eXeMapa = {
 
             }, mOptions.timeShowSolution * 1000);
         }
+        if (mOptions.isScorm == 1 && mOptions.evaluation != 4 && mOptions.evaluation > -1) {
+            if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
+                var score = mOptions.evaluation === 0 ? $eXeMapa.getScoreVisited(instance) : $eXeMapa.getScoreFind(instance);
+                $eXeMapa.sendScore(true, instance);
+                $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
+            }
+        }
     },
-
     updateScoreFind: function (correctAnswer, instance) {
         var mOptions = $eXeMapa.options[instance],
             message = "",
@@ -2623,7 +2586,6 @@ var $eXeMapa = {
         $('#mapaPNumberF-' + instance).text(nump);
         message = $eXeMapa.getMessageAnswer(correctAnswer, obtainedPoints.toFixed(2), instance);
         return message;
-
     },
     showMessageDetail: function (instance, message, type) {
         var colors = [$eXeMapa.borderColors.black, $eXeMapa.borderColors.red, $eXeMapa.borderColors.green, $eXeMapa.borderColors.blue, $eXeMapa.borderColors.yellow],
@@ -2643,8 +2605,6 @@ var $eXeMapa = {
     showPoint: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[i],
-            w = 0,
-            t = 0,
             urllv = $eXeMapa.getURLVideoMediaTeca(q.video),
             type = urllv ? 1 : 0;
         mOptions.activeMap.active = i;
@@ -2663,18 +2623,9 @@ var $eXeMapa = {
         }
         $eXeMapa.stopVideo(instance);
         $eXeMapa.hideModalMessages(instance);
-        mOptions.visiteds.push(q.id);
-
-        var w = $('#mapaGameContainer-' + instance).width();
-        if (window.innerWidth < 550) {
-            w = w * 0.90;
-        } else if (window.innerWidth < 720) {
-            w = w * 0.80;
-        } else {
-            w = w > 1200 ? 1200 * 0.65 : w * 0.65;
+        if (q.type != 5) {
+            mOptions.visiteds.push(q.id);
         }
-        t = Math.round(w * 0.65);
-        $('#mapaMultimediaPoint-' + instance).height(t);
         $('#mapaMultimediaPoint-' + instance).show();
         $('#mapaAuthorPoint-' + instance).html(q.author);
         $('#mapaTitlePoint-' + instance).text(q.title);
@@ -2689,8 +2640,6 @@ var $eXeMapa = {
         if (q.type === 0) {
             $eXeMapa.showPointImage(i, instance);
         } else if (q.type === 1) {
-            t = Math.round(w * 0.7);
-            $('#mapaMultimediaPoint-' + instance).height(t);
             $eXeMapa.showPointVideo(i, instance);
         } else if (q.type === 2) {
             $eXeMapa.showPointText(i, instance);
@@ -2706,20 +2655,22 @@ var $eXeMapa = {
             mOptions.activeSlide = 0;
             $('#mapaLinkSlideRight-' + instance).show();
             $eXeMapa.showSlide(mOptions.activeSlide, instance, i);
-
         }
         if (typeof q.audio != "undefined" && q.audio.length > 4) {
             $eXeMapa.playSound(q.audio, instance);
         }
-        if (mOptions.isScorm < 4 && mOptions.evaluation > -1) {
+        if (mOptions.isScorm == 1 && mOptions.evaluation != 4 && mOptions.evaluation > -1) {
             if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
-                var score = mOptions.evaluation == 1 ? $eXeMapa.getScoreVisited(instance) : $eXeMapa.getScoreFind(instance);
+                var score = mOptions.evaluation === 0 ? $eXeMapa.getScoreVisited(instance) : $eXeMapa.getScoreFind(instance);
                 $eXeMapa.sendScore(true, instance);
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
-
-
+        var html = $('#mapaFDetails-' + instance).html(),
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMapa.updateLatex('mapaFDetails-' + instance);
+        }
     },
     setFontModalMessage: function (size, instance) {
         $('#mapaMessageInfoText-' + instance).css({
@@ -2768,12 +2719,10 @@ var $eXeMapa = {
                 $('#mapaPShowClue-' + instance).text(mOptions.msgs.msgAllVisited);
                 $('#mapaShowClue-' + instance).show();
             }
-
         } else if (mOptions.evaluation == 4) {
             if (mOptions.percentajeShowQ > 0 && $eXeMapa.getNumberVisited(mOptions.visiteds) >= mOptions.numberPoints * (mOptions.percentajeShowQ / 100)) {
-                $('#mapaMessageFindP-' + instance).text(mOptions.msgs.msgAllVisited + '. ' + mOptions.msgs.msgCompleteTest);
+                $('#mapaMessageFindP-' + instance).text(mOptions.msgs.msgAllVisited + ' ' + mOptions.msgs.msgCompleteTest);
                 $('#mapaMessageFindP-' + instance).show();
-
             }
         }
     },
@@ -2800,12 +2749,10 @@ var $eXeMapa = {
         } else if (q.type == 7) {
             var $divTool = $('#mapaToolTip-' + instance).find('.mapa-LinkToolTipPoints[data-id="' + q.id + '"]').eq(0)
             if ($divTool.length == 1) {
-
                 $divTool.addClass('js-hidden');
                 $('#mapaMainContainer-' + instance).parent('.mapa-IDevice').append($divTool);
                 $('#mapaToolTip-' + instance).empty();
             }
-
         }
         $('#mapaFTests-' + instance).hide();
     },
@@ -2835,12 +2782,8 @@ var $eXeMapa = {
             if (mOptions.levels.length < 3) {
                 $('#mapaLinkCloseHome-' + instance).hide();
             }
-
-
         }
     },
-
-
     refreshImageActive: function (instance) {
         var mOptions = $eXeMapa.options[instance];
         $eXeMapa.showImage(mOptions.activeMap.url, mOptions.activeMap.alt, instance);
@@ -2953,7 +2896,7 @@ var $eXeMapa = {
                 playerVars: {
                     'color': 'white',
                     'autoplay': 0,
-                    'controls': 0
+                    'controls': 1
                 },
                 events: {
                     'onReady': $eXeMapa.onPlayerReady,
@@ -2970,7 +2913,7 @@ var $eXeMapa = {
             playerVars: {
                 'color': 'white',
                 'autoplay': 0,
-                'controls': 0
+                'controls': 1
             },
             events: {
                 'onReady': $eXeMapa.onPlayerReady,
@@ -3006,7 +2949,6 @@ var $eXeMapa = {
                     }
                 }
             }
-
         }
     },
     playVideo: function (instance) {
@@ -3015,9 +2957,9 @@ var $eXeMapa = {
             urllv = $eXeMapa.getURLVideoMediaTeca(point.video),
             type = urllv ? 1 : 0;
         if (type > 0) {
-            $('#mapaMultimediaPoint-' + instance).css('height', 'auto');
+            //$('#mapaMultimediaPoint-' + instance).css('height', 'auto');
             $eXeMapa.startVideo(urllv, point.iVideo, point.fVideo, instance, type);
-            return
+            return;
         }
         if (mOptions.hasYoutube && typeof (mOptions.player) == "undefined") {
             if (typeof (YT) !== "undefined") {
@@ -3025,7 +2967,6 @@ var $eXeMapa = {
             } else {
                 $eXeMapa.loadYoutubeApi();
             }
-
         } else {
             var id = $eXeMapa.getIDYoutube(point.video);
             if (id) {
@@ -3057,7 +2998,6 @@ var $eXeMapa = {
             var atts = $(this).attr('src');
             $(this).attr('src', '').attr('src', atts);
         });
-
     },
     showImage: function (url, alt, instance) {
         var $Image = $('#mapaImage-' + instance);
@@ -3088,7 +3028,6 @@ var $eXeMapa = {
                 return false;
             });
     },
-
     loadMathJax: function () {
         if (!window.MathJax) {
             window.MathJax = $exe.math.engineConfig;
@@ -3137,7 +3076,6 @@ var $eXeMapa = {
         var arrayRandom = [];
         while (arrayRandom.length < numberLetter) {
             var numberRandow = parseInt(Math.random() * phrase.length);
-
             if (arrayRandom.indexOf(numberRandow) != -1) {
                 continue;
             } else {
@@ -3206,7 +3144,6 @@ var $eXeMapa = {
                 hI = window.innerHeight - top;
             }
             $('#mapaMultimedia-' + instance).css('height', hI + 'px');
-
         } else {
             $('#mapaMultimedia-' + instance).css({
                 'max-width': '700px'
@@ -3241,13 +3178,11 @@ var $eXeMapa = {
         var top = $('#mapaToolBar-' + instance).height() + 16;
         top = $('#mapaMessageFind-' + instance).is(":visible") ? top + $('#mapaMessageFind-' + instance).height() : top;
         top = $('#mapaGameClue-' + instance).is(":visible") ? top + $('#mapaGameClue-' + instance).height() : top;
-
     },
     isFullScreen: function () {
         var isFull = !(!document.fullscreenElement && !document.mozFullScreenElement &&
             !document.webkitFullscreenElement && !document.msFullscreenElement);
         return isFull;
-
     },
     supportedBrowser: function (idevice) {
         var ua = window.navigator.userAgent,

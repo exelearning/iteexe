@@ -72,6 +72,23 @@
 
 }
 
+
+.MQP-Detail {
+	width: 80%;
+	max-width: 90%;
+	padding: 0.8em;
+	border-radius: 0.4em;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+	top: 0;
+	left:0;
+	position: absolute;
+	display: none;
+	z-index: 3103;
+	height: auto;
+
+}
+
 /* barra de puntuaciones */
 
 .MQP-MesageToolBar {
@@ -186,19 +203,6 @@
 	height: auto;
 }
 
-.MQP-Detail {
-	width: 80%;
-	max-width: 90%;
-	padding: 0.8em;
-	border-radius: 0.4em;
-	background-color: #ffffff;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
-	top: 0;
-	left:0;
-	position: absolute;
-	display: none;
-	z-index: 3003;
-}
 
 .MQP-LinkCloseDetail {
 	position: absolute;
@@ -367,7 +371,15 @@
 	overflow: hidden;
 	position: relative;
 	background-color: #ffffff;
+
 }
+
+.MQP-MultimediaPoint::before {
+	content: '';
+	display: block;
+	padding-top: 56%;
+}
+
 
 .MQP-MultimediaPointSound {
 	width: 80%;
@@ -417,7 +429,7 @@ img.MQP-ImageMain {
 }
 
 
-.MQP-NoImage, .MQP-Video, .MQP-Cover {
+.MQP-NoImage, .MQP-Video, .MQP-Cover, .MQP-VideoLocal {
 	bottom: 0;
 	left: 0;
 	margin: auto;
@@ -427,11 +439,7 @@ img.MQP-ImageMain {
 	width: 100%;
 	height: 100%
 }
-.MQP-VideoLocal {
-	margin: 0 auto;
-	width: 100%;
-	height: auto
-}
+
 
 .MQP-Images {
 	border: 0;
@@ -884,20 +892,6 @@ img.MQP-ImageMain {
 	-o-transform: scale(1.1);
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
-}
-
-.MQP-Detail {
-	width: 80%;
-	max-width: 90%;
-	padding: 0.8em;
-	border-radius: 0.4em;
-	background-color: #ffffff;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
-	top: 0;
-	left:0;
-	position: absolute;
-	display: none;
-	z-index: 3103;
 }
 
 .MQP-MessageModal {

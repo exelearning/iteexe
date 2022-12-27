@@ -185,7 +185,7 @@ var $exeDevice = {
                             <label for="mapaEEvaluationTest">' + _("Questionnaire") + '</label>\
                         </p>\
                         <p class="MQE-EHide" id="mapaNumOptionsData">\
-                            <label for="mapaNumOptions">' + _("Options Number") + ':</label><input type="number" name="mapaNumOptions" id="mapaNumOptions" value="0" min="1" max="100" />\
+                            <label for="mapaNumOptions">' + _("Options Number") + ':</label><input type="number" name="mapaNumOptions" id="mapaNumOptions" value="0" min="0" max="100" />\
                         </p>\
                         <p class="MQE-EHide" id="mapaSolutionData">\
                             <label for="mapaEShowSolution"><input type="checkbox" checked id="mapaEShowSolution">' + _("Show solutions") + '. </label>\
