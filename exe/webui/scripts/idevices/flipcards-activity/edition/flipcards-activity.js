@@ -103,7 +103,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create card memory games with images, sounds or rich text.") + ' <a href="https://youtu.be/P6BRFXLHiJk" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create card memory games with images, sounds or rich text.") + ' <a href="https://youtu.be/ADrG4vz2W0Y" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Click on the cards to see what they hide.')) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\

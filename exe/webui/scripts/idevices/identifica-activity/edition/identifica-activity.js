@@ -351,7 +351,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">'+_("Create activities in which the players, with some clues, will have to guess a character, an object or the solution to a problem.")+' <a href="https://youtu.be/Od36FCVzfWY" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
+                <div class="exe-idevice-info">'+_("Create activities in which the players, with some clues, will have to guess a character, an object or the solution to a problem.")+' <a href="https://youtu.be/LROSPEDRHkI" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Use the clues to guess the hidden answer for each question.")) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\
