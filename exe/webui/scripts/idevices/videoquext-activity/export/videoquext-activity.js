@@ -195,13 +195,11 @@ var $eXeVideoQuExt = {
         }
     },
     getQuestions: function (questions, percentaje) {
-        console.log(percentaje, 'percentaje');
         var num = questions.length;
         var mQuestions = questions;
         if (percentaje < 100) {
             num = Math.round((percentaje * questions.length) / 100);
             num = num < 1 ? 1 : num;
-            console.log(num, 'num');
             if (num < questions.length) {
                 var array = [];
                 for (var i = 0; i < questions.length; i++) {

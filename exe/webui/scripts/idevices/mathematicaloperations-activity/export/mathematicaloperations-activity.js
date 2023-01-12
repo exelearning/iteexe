@@ -391,7 +391,6 @@ var $eXeMathOperations = {
             }
             mOptions.components.push(components)
         }
-        console.log(mOptions);
         return mOptions;
 
     },
