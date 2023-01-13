@@ -48,6 +48,8 @@ ol,ul{color:#444}
 /* SCORM navigation */
 .previousnext a.previouslink,
 section.previousnext{display:none}
+/* Tables */
+.exe-table thead tr{background:none}
 
 /* Blue iDevices (default) */
 
