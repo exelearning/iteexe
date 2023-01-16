@@ -123,6 +123,8 @@ within Wikipedia.""")
         # BeautifulSoup is faster this way too.
         soup = BeautifulSoup(page, 'lxml')
         content = soup.find('div', attrs={'id': 'content'})
+        if not content:
+            content = soup.find('main', attrs={'id': 'content'})
         # Fix bug #1359: El estilo ITE no respeta ancho de página al exportar
         # a páginas web si se usa iDevice wikipedia
         content['id'] = "wikipedia-content"
