@@ -61,7 +61,7 @@ class SnapConfig(Config):
 
         snapSharePath           = snapBasePath / 'lib' / 'python2.7' / 'site-packages' / 'usr' /  'share'
         exePath                 = snapSharePath / 'exe'
-        userConfigDir           = snapUserPath / '.exe'
+        userConfigDir           = homePath / '.exe'
 
         self.exePath            = exePath
         self.jsDir              = exePath
