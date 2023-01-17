@@ -42,6 +42,7 @@ intef-exe (3:2.8) lucid; urgency=medium
     
   * Pablo Amaya
     - New export option: "Export current page as SCORM". (#643)
+    - Show the iDevice type name when editing, so you can know how to create similar contents. New added iDevices only. (#644)
     - Old "Add Previous/Next links within SCOs" export option removed. (#658)
     
   * Ricardo Nutz
