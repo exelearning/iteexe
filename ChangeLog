@@ -49,6 +49,8 @@ intef-exe (3:2.8) lucid; urgency=medium
     
   * APSL
     - Mac problems fixed: Install styles from repository. (#656) + Download Classification Sources. (#569)
+    - Fixed: User styles lost after installing a newer Snap package. For future upgrades only. (#661)
+    - Fixed: Wikipedia iDevice failed in some languages. (#662)
     - Package building.
     
   * Juan Rafael Fernández
