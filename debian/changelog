@@ -51,6 +51,9 @@ intef-exe (3:2.8) lucid; urgency=medium
     - Fixed: User styles lost after installing a newer Snap package. For future upgrades only. (#661)
     - Fixed: Wikipedia iDevice failed in some languages. (#662)
     - Package building: Linux (deb, rmp, snap), Windows (ready2run, installer), macOS (dmg).
+
+  * Antonio Monje
+    - Games: Instructions (videos).
     
   * Ricardo Nutz
     - Access to NTFS partitions with Snap version.
