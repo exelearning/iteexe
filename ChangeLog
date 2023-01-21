@@ -44,15 +44,19 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New export option: "Export current page as SCORM". (#643)
     - Show the iDevice type name when editing, so you can know how to create similar contents. New added iDevices only. (#644)
     - Old "Add Previous/Next links within SCOs" export option removed. (#658)
-    
-  * Ricardo Nutz
-    - Access to NTFS partitions with SNAP version.
+    - Package building: Linux (AppImage).
     
   * APSL
     - Mac problems fixed: Install styles from repository. (#656) + Download Classification Sources. (#569)
     - Fixed: User styles lost after installing a newer Snap package. For future upgrades only. (#661)
     - Fixed: Wikipedia iDevice failed in some languages. (#662)
-    - Package building.
+    - Package building: Linux (deb, rmp, snap), Windows (ready2run, installer), macOS (dmg).
+    
+  * Ricardo Nutz
+    - Access to NTFS partitions with Snap version.
+
+  * Fran Macías
+    - Package building: Portable versions (Linux, Windows).
     
   * Juan Rafael Fernández
     - String extraction process revision.
