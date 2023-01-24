@@ -27,7 +27,6 @@ intef-exe (3:2.8) lucid; urgency=medium
   * Ignacio Gros
     - New Export preference: "Made with eXeLearning" footer link. (#638)
     - New Export preference: "Math content: Load MathJax in pages with LaTeX code". You can now type LaTeX code directly into the editor. (#639)
-    - Rubric iDevice: Rubrics update + 6 new rubrics, by CEDEC. (#645)
     - prettyPhoto (Lightbox): Link in new windows in IFRAME (SCORM and IMS only) + i18n. (#653)
     - "Add a Text iDevice" button in the main area. (#642)
     - Interactive Video iDevice: Cover image (poster) (#646) + Bigger player. (#652) + Multiple-choice score error. (#659)
@@ -51,6 +50,9 @@ intef-exe (3:2.8) lucid; urgency=medium
     - Fixed: User styles lost after installing a newer Snap package. For future upgrades only. (#661)
     - Fixed: Wikipedia iDevice failed in some languages. (#662)
     - Package building: Linux (deb, rmp, snap), Windows (ready2run, installer), macOS (dmg).
+
+  * CEDEC
+    - Rubric iDevice: Rubrics update + 6 new rubrics. (#645)
 
   * Antonio Monje
     - Games: Instructions (videos).
@@ -80,6 +82,8 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New complete Polish translation, by Waldemar Stoczkowski.
     - New complete Turkish translation, by Turkish Transifex team.
     - New Traditional Chinese translation, by Franklin Weng.
+
+ -- eXeLearning <admin@exelearning.net>  Tue, 24 Jan 2022 16:00:00 +0200
 
 intef-exe (3:2.7) lucid; urgency=medium
 
