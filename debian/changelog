@@ -44,7 +44,7 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New export option: "Export current page as SCORM". (#643)
     - Show the iDevice type name when editing, so you can know how to create similar contents. New added iDevices only. (#644)
     - Old "Add Previous/Next links within SCOs" export option removed. (#658)
-    - Package building: Linux (AppImage).
+    - Package building: Linux (AppImage deb package).
     
   * APSL
     - Mac problems fixed: Install styles from repository. (#656) + Download Classification Sources. (#569)
@@ -54,6 +54,9 @@ intef-exe (3:2.8) lucid; urgency=medium
 
   * Antonio Monje
     - Games: Instructions (videos).
+
+  * Dionisio Martínez Soler
+    - Package building: Linux (AppImage).
     
   * Ricardo Nutz
     - Access to NTFS partitions with Snap version.
@@ -75,7 +78,7 @@ intef-exe (3:2.8) lucid; urgency=medium
     - New complete French translation, by Jesús Miguel Domínguez.
     - New complete Greek translation, by Yannis Kaskamanidis.
     - New complete Polish translation, by Waldemar Stoczkowski.
-    - New complete Turkish translation, by Turkish transifex team.
+    - New complete Turkish translation, by Turkish Transifex team.
     - New Traditional Chinese translation, by Franklin Weng.
 
  -- eXeLearning <admin@exelearning.net>  Fri, 19 Nov 2022 13:00:00 +0200
