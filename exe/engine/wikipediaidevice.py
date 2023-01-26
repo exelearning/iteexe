@@ -35,6 +35,8 @@ from exe.engine.resource      import Resource
 import urllib
 import ssl
 import sys
+from sys                      import platform
+import certifi
 
 class UrlOpener(urllib.FancyURLopener):
     """
@@ -101,10 +103,13 @@ within Wikipedia.""")
         
         # Get the site content
         try:
-            if sys.platform=='darwin' and hasattr(sys, 'frozen'):
-                net  = urllib.urlopen(url,context=ssl.create_default_context(cafile='cacerts.txt'))
+            if (platform == 'darwin' and hasattr(sys, 'frozen')):
+                net = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+            if platform == 'darwin':
+                net = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+                #net = urllib.urlopen(url, context=ssl.create_default_context(cafile=certifi.where()))
             else:
-                net  = urllib.urlopen(url)
+                net = urllib.urlopen(url)
             page = net.read()
             net.close()
         except IOError, error:

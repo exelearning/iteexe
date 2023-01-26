@@ -27,6 +27,8 @@ import logging
 import os
 import shutil
 import ssl
+import certifi
+import sys
 from sys                       import platform
 from zipfile                   import ZipFile, ZIP_DEFLATED
 import json
@@ -431,13 +433,19 @@ class StyleManagerPage(RenderableResource):
             log.debug("Downloading style %s from %s into %s" % (style_name, url, filename_path))
             # Disable the verification of ssl certificates on MacOs
             #  to prevent CERTIFICATE_VERIFY_FAILED
-            if platform == "darwin":
-                context = ssl._create_unverified_context()
+
+            if (platform == 'darwin' and hasattr(sys, 'frozen')):
+                # context = ssl._create_unverified_context()
+                context = ssl.create_default_context(cafile='cacert.pem')
+            elif platform == "darwin":
+                # context = ssl._create_unverified_context()
+                context = ssl.create_default_context(cafile='cacert.pem')
+                #context = ssl.create_default_context(cafile=certifi.where())
             else:
                 context = None
             d = threads.deferToThread(
                                       urlretrieve, url, filename_path,
-                                      lambda n, b, f: self.progressDownload(n, b, f, self.client))
+                                      lambda n, b, f: self.progressDownload(n, b, f, self.client), context=context)
             d.addCallbacks(successDownload, errorDownload)
 
             # On success or on error, get back to repository styles list

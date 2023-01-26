@@ -32,6 +32,8 @@ import traceback
 import shutil
 import tempfile
 import base64
+import certifi
+from sys                         import platform
 from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor, defer
 from exe.webui.livepage          import RenderableLivePage,\
@@ -76,7 +78,8 @@ import zipfile
 log = logging.getLogger(__name__)
 PROCOMUN_WSDL = ProcomunOauth.BASE_URL + '/oauth_services?wsdl'
 
-
+import ssl
+#ssl._create_default_https_context = ssl._create_unverified_context
 
 class MainPage(RenderableLivePage):
     """
@@ -594,9 +597,14 @@ class MainPage(RenderableLivePage):
 
     def isConnected(self, hostname):
         try:
-            if sys.platform=='darwin' and hasattr(sys, 'frozen'):
-                verify = 'cacerts.txt'
-                urlretrieve(hostname,context=ssl.create_default_context(cafile=verify))
+            if platform=='darwin' and hasattr(sys, 'frozen'):
+                verify = 'cacert.pem'
+                urlretrieve(hostname, context=ssl.create_default_context(cafile='cacert.pem'))
+            elif platform=='darwin':
+                verify = 'cacert.pem'
+                urlretrieve(hostname, context=ssl.create_default_context(cafile='cacert.pem'))
+                #urlretrieve(hostname, context=ssl.create_default_context(cafile=certifi.where()))
+                #urlretrieve(hostname)
             else:
                 urlretrieve(hostname)
             log.debug('eXe can reach host %s without problems'%(hostname))
@@ -636,15 +644,19 @@ class MainPage(RenderableLivePage):
                 Path(filename).remove()
                 log.debug("Deleted %s"%(filename))    
 
-        if (sys.platform=='darwin'  and hasattr(sys, 'frozen')):
-            cafile = "cacerts.txt"
+        if (platform=='darwin'  and hasattr(sys, 'frozen')):
+            cafile = "cacert.pem"
             try:
-                d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=cafile))
+                d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile='cacert.pem')) #, context=ssl._create_unverified_context())
                 d.addCallback(successDownload)
             except Exception, e:
                 log.error('Error downloading url %s is %s'%(url, e.strerror))
-        elif (sys.platform=='darwin'):
-            d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client))
+        elif (platform=='darwin'):
+            d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip",
+                                      lambda n, b, f: self.progressDownload(n, b, f, client),
+                                      context=ssl.create_default_context(
+                                          cafile='cacert.pem'))  # , context=ssl._create_unverified_context())
+            #d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile=certifi.where()))
             d.addCallback(successDownload)
         else:
             d = threads.deferToThread(urlretrieve, url, None, lambda n, b, f: self.progressDownload(n, b, f, client))
@@ -1221,7 +1233,7 @@ class MainPage(RenderableLivePage):
         if not client.session.oauthToken.get('procomun'):
             verify = True
             if hasattr(sys, 'frozen'):
-                verify = 'cacerts.txt'
+                verify = 'cacert.pem'
             oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
             oauth2Session.verify = verify
 

@@ -47,7 +47,7 @@ g_files = {
         # License file
         "installs/windows/exeLicense.txt",
         # Root certificates
-        os.path.join(os.path.dirname(httplib2.__file__), 'cacerts.txt')
+        os.path.join(os.path.dirname(httplib2.__file__), 'cacert.pem')
     ]
 }
 

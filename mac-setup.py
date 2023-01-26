@@ -6,6 +6,7 @@ from exe.engine.path import Path
 from exe.engine import version
 import os
 import httplib2
+import certifi
 import py2app
 
 # Make main.py if it doesn't exist
@@ -24,7 +25,7 @@ files = {'../Resources/exe': ["README",
                              "NEWS",
                              "ChangeLog",
                              "exe/webui/mr_x.gif"],
-          '../Resources': ["exe_elp.icns", os.path.join(os.path.dirname(httplib2.__file__), 'cacerts.txt')],
+          '../Resources': ["exe_elp.icns", os.path.join(os.path.dirname(certifi.__file__), 'cacert.pem')],
         }
 
 
