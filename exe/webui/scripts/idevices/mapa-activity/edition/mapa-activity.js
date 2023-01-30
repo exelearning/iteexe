@@ -3572,7 +3572,7 @@ var $exeDevice = {
         $('#mapaAuthorImageMap').val($exeDevice.activeMap.author);
         $('#mapaAltImageMap').val($exeDevice.activeMap.alt);
         $('#mapaCursor').hide();
-        $exeDevice.showImageMap($exeDevice.activeMap.url, p.x, p.y, p.x1, p.y1, p.alt, p.icon);
+        $exeDevice.showImageMap($exeDevice.activeMap.url, p.x, p.y, p.x1, p.y1, p.alt, p.iconType);
         $exeDevice.showPoint($exeDevice.activeMap.active);
         $('#mapaCloseDetail').hide();
         if ($exeDevice.levels.length > 1) {
