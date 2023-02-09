@@ -61,7 +61,7 @@ intef-exe (3:2.8) lucid; urgency=medium
     - Package building: Linux (AppImage).
     
   * Ricardo Nutz
-    - Access to NTFS partitions with Snap version.
+    - Access to NTFS partitions with Snap version (only available in https://github.com/exelearning/iteexe/releases/tag/2.8).
 
   * Fran Macías
     - Package building: Portable versions (Linux, Windows).
