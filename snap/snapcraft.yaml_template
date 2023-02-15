@@ -11,7 +11,7 @@ description: |
   need to become proficient in HTML or XML markup
 grade: stable
 base: core18
-confinement: strict
+confinement: classic
 
 parts:
   exelearning:
