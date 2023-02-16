@@ -11,7 +11,7 @@ description: |
   need to become proficient in HTML or XML markup
 grade: stable
 base: core18
-confinement: classic
+confinement: strict
 
 parts:
   exelearning:
@@ -22,6 +22,12 @@ parts:
     build-packages: [mimetex]
     stage-packages: [mimetex]
 
+plugs:
+  dot-config-exe:
+    allow-connection: true
+    interface: personal-files
+    write: [$HOME/.exe]
+
 apps:
   exelearning:
     environment:
@@ -30,6 +36,6 @@ apps:
       LC_ALL: C.UTF-8
       HOME: /home/$USER
       XDG_CONFIG_HOME: /home/$USER/.config
-    plugs: [home, network, network-bind, unity7, desktop, desktop-legacy, x11, removable-media]
+    plugs: [home, network, network-bind, unity7, desktop, desktop-legacy, x11, removable-media, dot-config-exe]
     command: exe --snap
     
