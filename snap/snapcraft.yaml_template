@@ -23,10 +23,10 @@ parts:
     stage-packages: [mimetex]
 
 plugs:
-  dot-config-exe:
-    allow-connection: true
-    interface: personal-files
-    write: [$HOME/.exe]
+  dot-exe:
+     interface: personal-files
+     write: 
+       - "$HOME/.exe"
 
 apps:
   exelearning:
