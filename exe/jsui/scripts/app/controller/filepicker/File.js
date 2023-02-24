@@ -288,16 +288,19 @@ Ext.define('eXe.controller.filepicker.File', {
         }
         else {
 			if (place.rawValue) {
-                record = store.findRecord("name", place.rawValue, 0, false, true, true);
-                if (record && this.validatePerms(fp.type, record))
-	                if (record.get('type') == "directory") {
-                        this.application.fireEvent( "dirchange" , record.get('realname'), true );
-	                }
-	                else {
-		                fp.status = eXe.view.filepicker.FilePicker.returnOk;
+				record = store.findRecord("name", place.rawValue, 0, false, true, true);
+				if (record && this.validatePerms(fp.type, record)) {
+					if (record.get('type') == "directory") {
+						this.application.fireEvent( "dirchange" , record.get('realname'), true );
+					}
+					else {
+						fp.status = eXe.view.filepicker.FilePicker.returnOk;
 						fp.file = { 'path': record.get('realname') };
 						fp.destroy();
-	                }
+					}
+				} else {
+					this.application.fireEvent( "dirchange" , place.rawValue, true );
+				}
 			}
 			else {
 				var filelist = this.getFilesList();
