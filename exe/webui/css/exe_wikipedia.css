@@ -139,3 +139,8 @@ ul.gallery.mw-gallery-slideshow .gallerybox div.thumb{border:0;background:transp
 .wikitable{background-color:#f8f9fa;color:#222;margin:1em 0;border:1px solid #a2a9b1;border-collapse:collapse}
 .wikitable>*>tr>td,.wikitable>*>tr>th,.wikitable>tr>td,.wikitable>tr>th{border:1px solid #a2a9b1;padding:.2em .4em}
 .wikitable>*>tr>th,.wikitable>tr>th{background-color:#eaecf0;text-align:center}.wikitable>caption{font-weight:700}
+/* #665 */
+.WikipediaIdevice .vector-page-toolbar,
+main.mw-body #vector-toc-collapsed-button,
+main.mw-body #vector-page-titlebar-toc,
+main.mw-body #p-lang-btn{display:none}
