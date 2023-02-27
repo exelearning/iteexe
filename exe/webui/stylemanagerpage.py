@@ -203,7 +203,8 @@ class StyleManagerPage(RenderableResource):
               and style.get_dirname() != "docs" \
               and style.get_dirname() != "INTEF" \
               and style.get_dirname() != "kids" \
-              and style.get_dirname() != "simplepoint":
+              and style.get_dirname() != "simplepoint" \
+              and style.get_dirname() != "udl":
                 delete = True
             if style.hasValidConfig():
                 properties = True
