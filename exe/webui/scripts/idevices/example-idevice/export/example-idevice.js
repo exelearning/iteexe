@@ -6,45 +6,76 @@
  *
  * License: http://creativecommons.org/licenses/by-sa/4.0/
  *
- * eXeLearning KIDS logo (export/example-idevice.png) by Francisco Javier Pulido Cuadrado, under CC BY-SA too.
+ * eXeLearning KIDS logo (export/example-idevice-logo.png) by Francisco Javier Pulido Cuadrado, under CC BY-SA too.
  */
-var $exeExampleIdevice = {
+var $myExampleIdevice = {
+	
+	// Anything included in the export folder will be exported if the iDevice is used.
+	// Vanilla JS or jQuery. Do whatever you need.
     
 	init : function(){
         
-		$(".exe-exampleIdevice").each(function(instance){
+		$(".myExampleIdevice").each(function(){
 			
-			/*
+			// Find the activity wrapper's ID
+			var div = $(".iDevice_content",this);
+			if (div.length!=1) return;
+			var id = div.attr("id");
 			
-			The definition list (DL) will be replaced by this HTML:
+			// Make the buttons do something
+			var btns = $(".exe-custom-btns button",this);
+			if (btns.length!=2) return;
 			
-				<p>
-					<input type="button" class="feedbackbutton" value="Button text" onclick="jQuery('#feedbackID').toggle()" />
-				</p>
-				
-				<div class="feedback" id="feedbackID" style="display:none">
-					<p>Your name</p>
-				</div>
+			btns.eq(0).on("click",function(){
+				alert("This is just an example.");
+			});
 			
-			*/			
-			
-			var dl = $("dl",this); // Definition list
-			var dt = $("dt",dl).text(); // Button text
-			var dd = $("dd",dl).text(); // Your name
-			
-			var html = '<p><input type="button" class="feedbackbutton" value="'+dt+'" onclick="jQuery(\'#exe-exampleIdevice-feedback-'+instance+'\').toggle()" /></p>';
-				html += '<div class="feedback" id="exe-exampleIdevice-feedback-'+instance+'" style="display:none"><p>'+dd+'</p></div>';
-			
-			dl.before(html).remove();
+			btns.eq(1).on("click",function(){
+				$myExampleIdevice.toggleFullscreen(document.getElementById(id));
+			});
 			
         });
 		
-	}
+	},
+	
+	exitFullscreen: function () {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		} else if (document.msExitFullscreen) {
+			document.msExitFullscreen();
+		} else if (document.mozCancelFullScreen) {
+			document.mozCancelFullScreen();
+		} else if (document.webkitExitFullscreen) {
+			document.webkitExitFullscreen();
+		}
+	},
+	
+	getFullscreen: function (element) {
+		if (element.requestFullscreen) {
+			element.requestFullscreen();
+		} else if (element.mozRequestFullScreen) {
+			element.mozRequestFullScreen();
+		} else if (element.webkitRequestFullscreen) {
+			element.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+		} else if (element.msRequestFullscreen) {
+			element.msRequestFullscreen();
+		}
+	},
+	
+	toggleFullscreen: function (element) {
+		var element = element || document.documentElement;
+		if (!document.fullscreenElement && !document.mozFullScreenElement &&
+			!document.webkitFullscreenElement && !document.msFullscreenElement) {
+			$myExampleIdevice.getFullscreen(element);
+		} else {
+			$myExampleIdevice.exitFullscreen(element);
+		}
+	}	
     
 }
 
 $(function(){
 	
-	$exeExampleIdevice.init();
+	$myExampleIdevice.init();
 	
 });

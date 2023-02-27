@@ -1,9 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>Example iDevice</title><!-- If you change this title the iDevice will be available -->
-	<css-class>Example</css-class>
+	<title>Example iDevice</title>
+	<css-class>myExample</css-class>
 	<category>Experimental</category>	
-	<!-- Optional:
-	<icon>example<icon> - Your Style shoud have this file: icon_example.gif
-	-->
 </idevice>
