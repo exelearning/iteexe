@@ -481,7 +481,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                         {
                             xtype: 'container',
                             layout: 'hbox',
-                            anchor: '100%',
+                            // anchor: '100%',
                             items: [
                                 {
                                     xtype: 'hiddenfield',
@@ -540,13 +540,20 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             ]
                         },
                         {
-                            xtype: 'textarea',
-                            inputId: 'pp_footer',
-                            fieldLabel: _('Footer'),
-                            tooltip: _('Web pages footer.'),
-                            height: 80,
-                            anchor: '100%'
-                        }
+                            xtype: 'container',
+                            layout: 'fit',
+                            items: [
+								{
+									xtype: 'textarea',
+									inputId: 'pp_footer',
+									fieldLabel: _('Footer'),
+									tooltip: _('Web pages footer.'),
+									height: 80,
+									anchor: '100%',
+									resizable: true
+								}
+							]
+						}
                     ]
                 },
                 {
@@ -635,6 +642,7 @@ Ext.define('eXe.view.forms.PackagePanel', {
                     },
                     collapsible: true,
                     collapsed: true,
+                    layout: 'fit',
                     items: [
                         {
                             xtype: 'textarea',
@@ -642,7 +650,8 @@ Ext.define('eXe.view.forms.PackagePanel', {
                             fieldLabel: _('Custom HEAD'),
                             tooltip: _('Any code you enter here (STYLE, META, SCRIPT...) will be added in the HEAD section to every page.').replace(" HEAD "," &lt;HEAD&gt; "),
                             height: 80,
-                            anchor: '100%'
+                            anchor: '100%',
+                            resizable: true
                         }
                     ]
                 },
