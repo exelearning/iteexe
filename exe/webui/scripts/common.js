@@ -250,6 +250,7 @@ var $exe = {
 							$("#exe-client-search-text").focus();
 							return false;
 						});
+						$("body").addClass("exe-search-bar-on");
 					},
 					error: function() {
 						

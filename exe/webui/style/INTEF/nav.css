@@ -6,9 +6,7 @@ body{padding:0;
 }
 @media all and (min-width:1px) {
 	body{
-		background-image:url(_intef_header.png),url(_intef_footer.png);
-		background-repeat:no-repeat,no-repeat;
-		background-position:50% 0,50% bottom
+		background:url(_intef_header.png) 50% 0 no-repeat,url(_intef_footer.png) center bottom no-repeat
 	}
 }
 #lbOverlay{background:#f3f3f3}
@@ -20,7 +18,8 @@ body{padding:0;
 #emptyHeader{height:42px}
 #headerContent{color:#004F66;text-shadow:1px 1px 1px #FFF}
 #nodeDecoration{padding:0;margin:0 0 25px 0;border:none;text-shadow:none;background:none;border-bottom:1px dotted #97afb2}
-#nodeTitle{padding:17px 0 15px 0;color:#798B8C;letter-spacing:.5px;font-size:1.7em;font-weight:normal}
+#nodeTitle{padding:17px 85px 15px 0;color:#798B8C;letter-spacing:.5px;font-size:1.7em;font-weight:normal}
+.exe-search-bar-on #nodeTitle{padding-right:0}
 #siteFooter{padding:5px 20px 20px 20px;text-align:right;margin-top:-56px}
 /* Navigation */
 #skipNav{font-size:.95em;text-align:center;padding-top:25px}
@@ -72,15 +71,16 @@ html[xmlns] #content{display:block}
 * html #content{height: 1%;overflow:visible}
 
 #header-options{margin:20px 0 0;position:absolute;top:5.9em;right:20px}
-#header-options a{font-size:.95em;margin-left:15px;background:#fff url(_intef_print.png) no-repeat 5px 50%;padding:0 10px 0 32px;color:#7A989C}
+#header-options a{font-size:.95em;margin-left:15px;background:#fff url(_intef_print.png) no-repeat 5px 50%;padding:0 10px 0 32px;color:#547276}
 #header-options a:hover,#header-options a:focus{color:#526668}
 #header-options #toggle-nav{background-image:url(_intef_menu.gif)}
 #exe-client-search-text{max-width:50%}
-.exe-client-search-result{background:#ecd078;padding:0 2px}
+.exe-client-search-result{background:#FFEA92;padding:0 2px}
 a .exe-client-search-result{color:#00566a}
 
 @media all and (max-width: 768px) {
 	#content{width:100%;border:none;margin:0}
+	#nodeTitle{padding-right:0}
 	#main-wrapper{background:#fff}
 	#header,#emptyHeader{padding-left:20px;padding-right:20px;background-position:50% 23px}
 	#exe-client-search-text{max-width:70%}

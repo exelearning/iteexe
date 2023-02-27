@@ -38,7 +38,7 @@ a{color:#007691}
 /* .nodeTitle when single page */
 .nodeTitle{padding:25px 0;border-bottom:1px dotted #97afb2;margin:25px 0 0 0;color:#3a4749;letter-spacing:.5px;font-size:1.5em}
 h2{font-size:1.4em;color:#007691;letter-spacing:.5px;font-weight:normal}
-h3{font-size:1.35em;color:#97afb2;letter-spacing:.5px;font-weight:normal}
+h3{font-size:1.35em;color:#576F72;letter-spacing:.5px;font-weight:normal}
 p{margin:1em 0}
 ol,ul{color:#3a4749}
 #main{height:auto!important;height:300px;min-height:300px}
@@ -104,7 +104,7 @@ li{list-style-position:outside}
 /* Licenses */
 #packageLicense{text-align:left;font-size:.8em;padding:0 20px;color:#FFF;line-height:1em;margin:0 0 25px 0;background:#526668;border:1px solid #526668;box-shadow:rgba(0, 0, 0, 0.4) 3px 3px 4px}
 #packageLicense p{margin:20px 0}
-#packageLicense a{color:#ecd078;text-decoration:underline}
+#packageLicense a{color:#FFEA92;text-decoration:underline}
 #packageLicense.propietary{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
 #packageLicense.cc{padding:0 20px 0 110px;background:#526668 url(_intef_licenses.gif) no-repeat 20px 5px}
 #packageLicense.cc-by-sa{background-position:20px -95px}
@@ -116,11 +116,14 @@ li{list-style-position:outside}
 
 /* eXe Figures */
 .exe-figure{margin:2.5em 0}
-.exe-figure,.exe-figure a{color:#888}
+.exe-figure,.exe-figure a{color:#6F6F6F}
 .position-center{margin:2.5em auto}
 .position-right{margin:2.5em 0 2.5em auto}
 .float-left{margin:.5em 1.5em 1em 0}
 .float-right{float:right;margin:.5em 0 1em 2em}
+
+/* Tabs */
+.exe-tabs a{color:#005D78}
 
 #printNode{margin:0;position:absolute;top:33px;right:33px}
 #printNode.with-toggler{margin-bottom:0}
@@ -147,3 +150,7 @@ li{list-style-position:outside}
 .iDevice_inner .feedback-wrong{background:#FDFDDB}
 .iDevice_inner .iDevice_answer-feedback{background:none;border:none;padding:0;margin:0}
 .TrueFalseIdevice .feedback{margin-top:1.5em}
+
+/* UDL iDevice */
+.exe-udlContent-content-simplified{line-height:2.5em;letter-spacing:.15em;word-spacing:.15em}
+.exe-udlContent-content-simplified p{margin:2em 0}
