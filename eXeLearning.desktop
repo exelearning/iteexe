@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=eXe
+Name=eXeLearning
 Comment=The EXtremely Easy to use eLearning authoring tool
 GenericName=Elearning XHTML/HTML5 editor
 Exec=exe %f
@@ -8,7 +8,7 @@ Icon=exe
 Terminal=false
 MimeType=application/x-exe-learning;
 Categories=Education;Utility;TextEditor;
-StartupWMClass=eXe
+StartupWMClass=eXeLearing
 Keywords=editor;html5;xhtml;lom-es;scorm;oer;
 
 
