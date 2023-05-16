@@ -184,7 +184,10 @@ class MainPage(RenderableLivePage):
 
             return self.authoringPages[clientid]
         else:
-            raise Exception('No clientHandleId in request')
+            try:
+                self.idevicePane.client.sendScript(u'top.window.location.reload()')
+            except:
+                raise Exception('No clientHandleId in request')
 
     def child_preview(self, ctx):
         if not self.package.previewDir:
