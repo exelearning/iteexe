@@ -644,25 +644,24 @@ var $exe = {
                 $("dt", e).each(function() {
                     t = this;
                     h = $(t).html();
-                    $(t).html("<a href='#' class='exe-dd-toggler exe-dl-" + i + "-a'><span class='icon'" + s + ">» </span>" + h + "</a>")
+                    $(t).html("<a href='#' class='exe-dd-toggler exe-dd-toggler-closed exe-dl-" + i + "-a'><span class='icon'" + s + ">+ </span>" + h + "</a>")
                 });
-                $(e).before("<p class='exe-dl-toggler'><a href='#" + id + "' title='" + $exe_i18n.show + "'" + s + ">+</a> <a href='#" + id + "' title='" + $exe_i18n.hide + "'" + s + ">-</a></p>")
             });
             $('a.exe-dd-toggler').click(function(){
-                $exe.dl.toggle(this);
+                var e = $(this);
+                var s = $("span",this);
+                var dd = $(this).parent().next("dd");
+                if (e.hasClass("exe-dd-toggler-closed")) {
+                    e.removeClass("exe-dd-toggler-closed");
+                    s.html("- ");
+                    dd.show();
+                } else {
+                    e.addClass("exe-dd-toggler-closed");
+                    s.html("+ ");
+                    dd.hide();
+                }
                 return false;
             });
-            $('.exe-dl-toggler a').click(function(){
-                var id = $(this).attr('href').replace("#","");
-                var action = 'show';
-                if ($(this).attr('title')==$exe_i18n.hide) action = 'hide';
-                $exe.dl.toggle(action,id);
-            });
-        },
-        toggle: function(e, a) {
-            if (e == "show") $("#" + a + " dd").show();
-            else if (e == "hide") $("#" + a + " dd").hide();
-            else $(e).parent().next("dd").toggle()
         }
     },
 	

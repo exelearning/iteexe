@@ -51,7 +51,12 @@ input.feedbackbutton{margin-top:10px;margin-bottom:10px}
 .exe-dl dd{margin:1em 1.5em}
 .js .exe-dl dt{margin:1.2em 0 0 0}
 .exe-dl dt a{text-decoration:underline}
-.exe-dl .icon,.exe-dl-toggler a{display:block;width:20px;height:20px;font-size:1.2em;margin-right:1em;line-height:20px;text-align:center;float:left;border-radius:2px;position:relative}
+.exe-dl .icon{font-family:Arial, sans-serif;display:block;width:20px;height:20px;font-size:16px;margin-right:1em;line-height:20px;text-align:center;float:left;border-radius:2px;position:relative}
+@media all and (min-width: 1px) {
+	.exe-dl dt a{align-items:center;display:flex;text-decoration:none}
+	.exe-dl .icon{height:18px;line-height:18px;width:18px;padding:1px;font:18px monospace;font-weight:bold;display:flex;justify-content:center;align-items:center}
+}
+
 .exe-dl-toggler{height:20px;margin:1.5em}
 .exe-dl-toggler a{margin-left:0;font-weight:bold}
 .js .exe-dl dd{display:none;padding-left:0;margin:1em 1em 1em 37px}
