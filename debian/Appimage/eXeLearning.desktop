@@ -1,0 +1,25 @@
+[Desktop Entry]
+Name=eXeLearning
+Version=1.0
+Exec=/usr/bin/exeAppimage.sh 
+Comment=The EXtremely Easy to use eLearning authoring tool (AppImage)
+Icon=exe
+Type=Application
+Terminal=false
+StartupNotify=true
+Encoding=UTF-8
+Categories=Utility;Education;TextEditor;
+MimeType=application/x-exe-learning;
+GenericName=Elearning XHTML/HTML5 editor
+
+# Translations
+Comment[es]=Herramienta para la creación fácil de recursos educativos
+GenericName[es]=Editor XHTML/HTML5 destinado a la educación
+Comment[uk]=Tool for easy creation of educational resources
+GenericName[uk]=XHTML/HTML5 editor for education
+Comment[ru]=Крайне простая в использовании утилита электронного обучения
+GenericName[ru]=Редактор электронного обучения XHTML/HTML5
+Comment[pl]=Niezwykle łatwe w użyciu narzędzie do tworzenia e-learningu
+GenericName[pl]=Edytor E-learningu XHTML/HTML5
+Comment[da]=E-læringsforfatterværktøjet som er ekstremt let at bruge
+GenericName[da]=E-læring XHTML-/HTML5-redigering

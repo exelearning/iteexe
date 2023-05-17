@@ -1,0 +1,15 @@
+Package: intef-exe-appimage
+Version: 2.8
+Installed-Size: 196904
+Maintainer: eXeLearning <admin@exelearning.net>
+Section: editors
+Source: intef-exe-appimage
+Homepage: https://exelearning.net
+Architecture: all
+Priority: standard
+Depends: libfuse2 (>=2.9), libc6 (>=2.8)
+Description: An eXeLearning AppImage package
+ eXeLearning XHTML & HTML5 editor
+ .
+ The eXeLearning project is an authoring environment that enables teachers and students to create and publish open educational resources without the need to become proficient in HTML or XML markup. Content generated using eXeLearning can be exported as web pages, as educational-standard packages used by any Learning Management System, as epub3 files and on mobile devices.
+
