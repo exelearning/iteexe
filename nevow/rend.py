@@ -652,7 +652,7 @@ class FourOhFour:
     """
     __implements__ = inevow.IResource,
 
-    notFound = "<html><head><title>Page Not Found</title><head><body>Sorry, but I couldn't find the object you requested.</body></html>"
+    notFound = "<html><head><title>Page Not Found</title><head><body><p style='font-family:Arial, sans-serif;font-size:13px'>Sorry, but I couldn't find the object you requested.</p></body></html>"
     original = None
 
     def locateChild(self, ctx, segments):

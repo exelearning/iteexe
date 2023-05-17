@@ -90,3 +90,5 @@ main.mw-body .vector-page-toolbar,
 main.mw-body #vector-toc-collapsed-button,
 main.mw-body #vector-page-titlebar-toc,
 main.mw-body #p-lang-btn{display:none}
+/* #680 */
+td,th{font-family:inherit;font-size:inherit}
