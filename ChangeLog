@@ -13,7 +13,7 @@ intef-exe (3:2.8.1) lucid; urgency=medium
 
   * Pablo Amaya
     - AppImage source files for Debian package creation. Helped by Esteban Navas (@algodelinux)
-    - Package building: Linux (deb, AppImage deb package).
+    - Package building: Linux (deb, AppImage deb package). Helped by Esteban Navas (@algodelinux)
     - Fixed: Linux application name and icon. (#670)
 
   * APSL
