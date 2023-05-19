@@ -7,9 +7,9 @@
 # This file is distributed under the same license as the EXE package.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8\n"
+"Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 09:53+0200\n"
+"POT-Creation-Date: 2023-05-19 10:01+0200\n"
 "PO-Revision-Date: 2008-12-23 13:59+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language: km\n"

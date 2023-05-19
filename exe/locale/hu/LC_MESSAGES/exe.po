@@ -6,9 +6,9 @@
 # eXeLearning.net Project <admin@exelearning.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8\n"
+"Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 09:53+0200\n"
+"POT-Creation-Date: 2023-05-19 10:01+0200\n"
 "PO-Revision-Date: 2007-12-07 17:53+1300\n"
 "Last-Translator: Jim Tittsler <jim@exelearning.org>\n"
 "Language: hu\n"

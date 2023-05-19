@@ -14,9 +14,9 @@
 # Mila esker Andoni Tolosari bere laguntzagatik
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8\n"
+"Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2023-05-19 09:53+0200\n"
+"POT-Creation-Date: 2023-05-19 10:01+0200\n"
 "PO-Revision-Date: 2022-12-07 19:46+0100\n"
 "Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
 "Language: eu\n"

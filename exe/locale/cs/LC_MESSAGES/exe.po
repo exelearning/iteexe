@@ -6,9 +6,9 @@
 # Vlastimil Ott <vlastimil@e-ott.info>, 2007, 2008.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8\n"
+"Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-19 09:53+0200\n"
+"POT-Creation-Date: 2023-05-19 10:01+0200\n"
 "PO-Revision-Date: 2008-07-17 19:59+0200\n"
 "Last-Translator: Vlastimil Ott <vlastimil@e-ott.info>\n"
 "Language: cs\n"
