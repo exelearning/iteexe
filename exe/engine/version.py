@@ -27,7 +27,7 @@ import os
 from path import Path
 
 # Result initialization
-project = "exe"
+project = "eXeLearning"
 pkg_version = None
 
 # Try to read the version from the version file
@@ -64,6 +64,7 @@ revision = pkg_version[-40:] if pkg_version else ''
 
 # Compose version string
 version = release + "-r" + revision if revision else release
+version = 2.8
 
 # SNAP version and release
 snap_environ = os.environ.get('SNAP')

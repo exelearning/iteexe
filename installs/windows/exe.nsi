@@ -1,12 +1,12 @@
 ; Script generated with the Venis Install Wizard
 
 ; Define your application name
-!define APPNAME "exe"
+!define APPNAME "eXeLearning"
 
 !ifndef EXE_VERSION
   !define EXE_VERSION "0.24"
 !endif
-!define APPNAMEANDVERSION "eXe ${EXE_VERSION}"
+!define APPNAMEANDVERSION "eXeLearning ${EXE_VERSION}"
 
 ; Main Install settings
 Name "${APPNAMEANDVERSION}"
@@ -161,7 +161,7 @@ Section "exe" Section2
     File /r "..\..\dist\*.*"
     CreateShortCut "$DESKTOP\exe-${EXE_VERSION}.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
     CreateDirectory "$SMPROGRAMS\exe"
-    CreateShortCut "$SMPROGRAMS\exe\exe.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
+    CreateShortCut "$SMPROGRAMS\exe\eXeLearning.lnk" "$INSTDIR\exe.exe" "" "$INSTDIR\eXe_icon.ico"
     CreateShortCut "$SMPROGRAMS\exe\Uninstall.lnk" "$INSTDIR\uninstall.exe"
     
     ; Associtate elp files with exe.exe
@@ -223,6 +223,7 @@ Section Uninstall
     ; Delete Shortcuts
     Delete "$DESKTOP\exe-${EXE_VERSION}.lnk"
     Delete "$SMPROGRAMS\exe\exe.lnk"
+    Delete "$SMPROGRAMS\exe\eXeLearning.lnk"
     Delete "$SMPROGRAMS\exe\Uninstall.lnk"
 		RMDir  "$SMPROGRAMS\exe"
     

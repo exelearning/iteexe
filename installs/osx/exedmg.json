@@ -5,7 +5,7 @@
   "format": "UDZO",
   "contents": [
     { "x": 300, "y": 110, "type": "link", "path": "/Applications" },
-    { "x": 110, "y": 110, "type": "file", "path": "exe.app" },
+    { "x": 110, "y": 110, "type": "file", "path": "eXeLearning.app" },
     { "x": 50, "y": 300, "type": "file", "path": "Changelog.txt" },
     { "x": 150, "y": 300, "type": "file", "path": "README.txt" },
     { "x": 250, "y": 300, "type": "file", "path": "NEWS.txt" },

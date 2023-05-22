@@ -49,9 +49,9 @@ outpathn = os.path.join(OUTPUT, 'INTEF-exe-%s.dmg' % version.release)
 
 # copy the app to the template
 os.chdir(VOL)
-shutil.rmtree('exe.app', True)
-shutil.copytree(os.path.join(WDIR, 'dist', 'exe.app'),
-        os.path.join(VOL, 'exe.app'))
+shutil.rmtree('eXeLearning.app', True)
+shutil.copytree(os.path.join(WDIR, 'dist', 'eXeLearning.app'),
+        os.path.join(VOL, 'eXeLearning.app'))
 
 # copy the README and NEWS files into the template
 shutil.rmtree('README.txt', True)
@@ -61,8 +61,8 @@ shutil.copy(os.path.join(WDIR, 'NEWS'), 'NEWS.txt')
 shutil.copy(os.path.join(WDIR, 'COPYING'), 'COPYING')
 shutil.rmtree('Changelog.txt', True)
 shutil.copy(os.path.join(WDIR, 'debian/changelog'), 'Changelog.txt')
-os.chmod('exe.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0755)
-open('exe.app/Contents/Resources/exe/version', 'w').write(version.version)
+os.chmod('eXeLearning.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0755)
+open('eXeLearning.app/Contents/Resources/exe/version', 'w').write(version.version)
 
 shutil.copy(os.path.join(WDIR, 'installs/osx', 'exedmg.json'), 'exedmg.json')
 shutil.copy(os.path.join(WDIR, 'installs/osx', 'exedmg.png'), 'exedmg.png')
