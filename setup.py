@@ -22,7 +22,7 @@ g_files = {
     '/usr/share/doc/intef-exe': ["README"],
     # "exe/webui/mr_x.gif",
     # Menu link to eXe
-    '/usr/share/applications': ["exe.desktop"],
+    '/usr/share/applications': ["eXeLearning.desktop"],
     # eXe main icon
     '/usr/share/icons/hicolor/48x48/apps': ["exe.png"],
     # eXe XPM icon
