@@ -9,3 +9,4 @@ webassets
 zope-interface
 dateutils
 Pillow
+Unidecode==1.2.0

@@ -30,6 +30,7 @@ import time
 import os
 import imp
 import StringIO
+import unidecode
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
@@ -893,7 +894,7 @@ class ScormExport(object):
         """
         for child in node.children:
             pageName = child.titleShort.lower().replace(" ", "_")
-            pageName = re.sub(r"\W", "", pageName)
+            pageName = re.sub(r"\W", "", unidecode.unidecode(pageName))
             if not pageName:
                 pageName = "__"
 

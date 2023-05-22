@@ -25,6 +25,7 @@ Extends WebsiteExport for convenience
 
 import logging
 import re
+import unidecode
 import imp
 from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
@@ -207,7 +208,7 @@ class XMLExport(WebsiteExport):
         """           
         for child in node.children:
             pageName = child.titleShort.lower().replace(" ", "_")
-            pageName = re.sub(r"\W", "", pageName)
+            pageName = re.sub(r"\W", "", unidecode.unidecode(pageName))
             if not pageName:
                 pageName = "__"
 

@@ -24,6 +24,7 @@ import logging
 import re
 import datetime
 import uuid
+import unidecode
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED, ZIP_STORED
 from exe.webui                     import common
@@ -721,7 +722,7 @@ class Epub3SubExport(object):
         'depth' is the number of ancestors that the page has +1 (ie. root is 1)
         """
         pageName = node.titleShort.lower().replace(" ", u"_")
-        pageName = re.sub(r"\W", "", pageName)
+        pageName = re.sub(r"\W", "", unidecode.unidecode(pageName))
         if not pageName:
             pageName = u"__"
 

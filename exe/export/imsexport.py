@@ -29,6 +29,7 @@ import copy
 import time
 import StringIO
 import re
+import unidecode
 from cgi import escape
 from zipfile import ZipFile, ZIP_DEFLATED
 from exe.webui import common
@@ -239,9 +240,6 @@ class Manifest(object):
             xmlStr += """    <file href="imslrm.xml"/>\n"""
 
         dT = common.getExportDocType()
-        log.info("DT >>>>")
-        log.info(dT)
-        log.info(common.nodeHasMediaelement(page.node))
         if dT == "HTML5" or common.nodeHasMediaelement(page.node):
             xmlStr += '    <file href="exe_html5.js"/>\n'
 
@@ -758,7 +756,7 @@ class IMSExport(object):
         """
         for child in node.children:
             pageName = child.titleShort.lower().replace(" ", "_")
-            pageName = re.sub(r"\W", "", pageName)
+            pageName = re.sub(r"\W", "", unidecode.unidecode(pageName))
             if G.application.config.cutFileName == "1":
                 pageName = pageName[0:8]
             if not pageName:

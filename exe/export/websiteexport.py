@@ -25,6 +25,7 @@ import logging
 import re
 import imp
 import os
+import unidecode
 from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
 from exe.engine.resource      import Resource
@@ -375,7 +376,7 @@ class WebsiteExport(object):
         for child in node.children:
             # assure lower pagename, without whitespaces or alphanumeric characters:
             pageName = child.titleShort.lower().replace(" ", "_")
-            pageName = re.sub(r"\W", "", pageName)
+            pageName = re.sub(r"\W", "", unidecode.unidecode(pageName))
             if not pageName:
                 pageName = "__"
 
