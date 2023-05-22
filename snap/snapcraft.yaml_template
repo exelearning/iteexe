@@ -1,9 +1,9 @@
 name: exelearning
 title: eXeLearning
-version: '2.8'
+version: '2.8.1'
 license: GPL-2.0
 icon: exe.png
-summary: eXelearning 2.8
+summary: eXelearning 2.8.1
 description: |
   eXeLearning is a GPL2+ free tool for the educational community to create
   and publish open educational resources. This authoring environment enables 

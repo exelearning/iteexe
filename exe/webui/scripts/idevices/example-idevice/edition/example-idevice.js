@@ -14,7 +14,7 @@ var $exeDevice = {
 	// i18n
 	i18n : {
 		
-		name : _("Example iDevice"), // Title in config.xml
+		name : _("Example"), // Title in config.xml
 		
 		// Optional translations
 		// Spanish
@@ -35,7 +35,7 @@ var $exeDevice = {
 		// Create the form
 		var html = '\
 			<div id="myExampleForm">\
-				<div class="exe-idevice-info">'+_("Information and instructions.")+'</div>\
+				<div class="exe-idevice-info">'+_("Instructions")+'</div>\
 				<div class="exe-form-tab" title="Tab 1 title">\
 					<p>\
 						<label for="myExampleFieldA">Paragraph content:</label>\

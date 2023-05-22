@@ -1,3 +1,32 @@
+intef-exe (3:2.8.1) lucid; urgency=medium
+
+  * Ignacio Gros
+    - Snap version (no longer maintained): Access to NTFS partitions removed.
+    - Properties tab: Custom HEAD and Footer. Allow TEXTAREA resize. (#666)
+    - Example iDevice full revision. (#674)
+    - Fixed: INTEF style. Accessibility issues and position problem. (#667)
+    - Fixed: Block the DUA style so it can't be deleted. (#673)
+    - Fixed: Wikipedia iDevice. CSS revision. (#665)
+    - Fixed: DL lists. 'Show/Hide all' links removed and presentation revision. (#683)
+    - Fixed: TinyMCE. Wrong font-family in tables. (#680)
+    - Fixed: Avoid 'No clientHandleId in request' exception when reloading the main area. (#685)
+
+  * Pablo Amaya
+    - AppImage source files for Debian package creation. Helped by Esteban Navas (@algodelinux)
+    - Package building: Linux (deb, AppImage deb package). Helped by Esteban Navas (@algodelinux)
+    - Fixed: Linux application name and icon. (#670)
+
+  * APSL
+    - Improve friendly URL (#681) 
+    - Package building: Linux (rmp), Windows (ready2run, installer), macOS (dmg).
+    - Fixed: IMS export. Missing files in imsmanifest.xml (#684)
+    - Fixed: Windows / Mac. Application icon and name. (#678)
+    
+  * Regorxxx
+    - Improve File Picker behavior to follow software standards.
+
+ -- eXeLearning <admin@exelearning.net>  Fri, 19 May 2023 09:20:00 +0200
+
 intef-exe (3:2.8) lucid; urgency=medium
 
   * Manuel Narváez

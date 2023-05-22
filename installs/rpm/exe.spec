@@ -47,7 +47,7 @@ cp -a twisted nevow formless $RPM_BUILD_ROOT%{_datadir}/exe
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps
 cp exe.png $RPM_BUILD_ROOT%{_datadir}/icons/hicolor/48x48/apps/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications/
-cp exe.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
+cp eXeLearning.desktop $RPM_BUILD_ROOT%{_datadir}/applications/
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 cp exe.xml $RPM_BUILD_ROOT%{_datadir}/mime/packages/
 ln -s %{_datadir}/locale $RPM_BUILD_ROOT%{_datadir}/exe/locale
@@ -69,7 +69,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/exe.xpm
 %{_datadir}/locale/*/LC_MESSAGES/exe.mo
 %config %{_datadir}/mime/packages/exe.xml
-%config %{_datadir}/applications/exe.desktop
+%config %{_datadir}/applications/eXeLearning.desktop
 %doc COPYING NEWS README
 
 %post
