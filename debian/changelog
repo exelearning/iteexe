@@ -17,7 +17,6 @@ intef-exe (3:2.8.1) lucid; urgency=medium
     - Fixed: Linux application name and icon. (#670)
 
   * APSL
-    - Improve friendly URL (#681) 
     - Package building: Linux (rmp), Windows (ready2run, installer), macOS (dmg).
     - Fixed: IMS export. Missing files in imsmanifest.xml (#684)
     - Fixed: Windows / Mac. Application icon and name. (#678)
