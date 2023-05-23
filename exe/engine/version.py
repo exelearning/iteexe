@@ -64,7 +64,6 @@ revision = pkg_version[-40:] if pkg_version else ''
 
 # Compose version string
 version = release + "-r" + revision if revision else release
-version = 2.8
 
 # SNAP version and release
 snap_environ = os.environ.get('SNAP')
