@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <idevice>
-	<title>Example</title>
+	<title>Example iDevice</title>
 	<css-class>myExample</css-class>
 	<category>Experimental</category>	
 </idevice>
