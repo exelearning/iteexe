@@ -14,7 +14,7 @@ var $exeDevice = {
 	// i18n
 	i18n : {
 		
-		name : _("Example"), // Title in config.xml
+		// name : _("Example iDevice"), // Title in config.xml
 		
 		// Optional translations
 		// Spanish
