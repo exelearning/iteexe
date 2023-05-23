@@ -8,7 +8,7 @@ Icon=exe
 Terminal=false
 MimeType=application/x-exe-learning;
 Categories=Education;Utility;TextEditor;
-StartupWMClass=eXeLearing
+StartupWMClass=eXeLearning
 Keywords=editor;html5;xhtml;lom-es;scorm;oer;
 
 
