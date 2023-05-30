@@ -307,7 +307,7 @@ var hangMan = {
 	},
 	doClean : function(id) {
 		var s = document.getElementById("start-"+id);
-		s.value = $exe_i18n.exeGames.play;
+		s.value = "Jugar";
 		s.style.display = "inline";
         $("#hangManResults"+id).hide();
         $("#hangManWrapper"+id).hide();

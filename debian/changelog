@@ -10,7 +10,6 @@ intef-exe (3:2.8.1) lucid; urgency=medium
     - Fixed: DL lists. 'Show/Hide all' links removed and presentation revision. (#683)
     - Fixed: TinyMCE. Wrong font-family in tables. (#680)
     - Fixed: Avoid 'No clientHandleId in request' exception when reloading the main area. (#685)
-    - Fixed: Hangman game. Untranslated string. (#689)
 
   * Pablo Amaya
     - AppImage source files for Debian package creation. Helped by Esteban Navas (@algodelinux)
