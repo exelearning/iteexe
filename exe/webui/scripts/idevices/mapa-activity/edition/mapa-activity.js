@@ -432,7 +432,7 @@ var $exeDevice = {
                     <img id="mapaPNoImage" class="MQE-EImageCover" src="' + path + 'quextIEImage.png" alt="" />\
                     <img class="MQE-EImageCover" src="' + path + 'quextIENoVideo.png" id="mapaPNoVideo" alt="" />\
                     <div id="mapaPVideo"  class="MQE-EImageCover"></div>\
-                    <video class="MQE-EImageCover" id = "mapaEVideoLocal" preload="auto" controls><source src = ""></video>\
+                    <video class="MQE-EImageCover" id = "mapaEVideoLocal" preload="auto" controls></video>\
                 </div>\
                 <div id="mapaPDataImage">\
                     <p class="MQE-EFlex">\

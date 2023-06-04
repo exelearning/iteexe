@@ -289,7 +289,7 @@ var $eXeQuExt = {
                 <div class="gameQP-EText" id="quextEText-' + instance + '"></div>\
                 <img src="' + path + 'quextHome.png" class="gameQP-Cover" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="quextVideo-' + instance + '"></div>\
-                <video class="gameQP-Video" id = "quextVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
+                <video class="gameQP-Video" id = "quextVideoLocal-' + instance + '" preload="auto" controls></video>\
                 <div class="gameQP-Protector" id="quextProtector-' + instance + '"></div>\
                 <a href="#" class="gameQP-LinkAudio" id="quextLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="quextGamerOver-' + instance + '">\
@@ -332,7 +332,7 @@ var $eXeQuExt = {
             </div>\
             <div class="gameQP-VideoIntroDiv" id="quextVideoIntroDiv-' + instance + '">\
                 <div class="gameQP-VideoIntro" id="quextVideoIntro-' + instance + '"></div>\
-                <video class="gameQP-VideoIntro" id = "quextVideoIntroLocal-' + instance + '" preload="auto" controls width="100%" height="100%" ><source src = ""></video>\
+                <video class="gameQP-VideoIntro" id = "quextVideoIntroLocal-' + instance + '" preload="auto" controls width="100%" height="100%" ></video>\
                 <input type="button" class="gameQP-VideoIntroClose" id="quextVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '" />\
             </div>\
             <div class="gameQP-DivFeedBack" id="quextDivFeedBack-' + instance + '">\
@@ -650,6 +650,8 @@ var $eXeQuExt = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
+        }else if ((event.target.g) && (event.target.g.id)) {
+            video = event.target.g.id;
         }
         video = video.split("-");
         if (video.length == 2 && (video[0] == "quextVideo" || video[0] == "quextVideoIntro")) {

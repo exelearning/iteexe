@@ -761,7 +761,7 @@ var $exeDevice = {
                                     <div class="gameQE-EMultiVideoQuExt gameQE-Flex" id="vquextEMultimedia">\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIENoImageVideo.png" id="vquextENoImageVideo" alt="" />\
                                         <div class="gameQE-EMedia" id="vquextEVideo"></div>\
-                                        <video class="gameQE-EMedia" id = "vquextEVideoLocal" preload="auto" controls><source src = ""></video>\
+                                        <video class="gameQE-EMedia" id = "vquextEVideoLocal" preload="auto" controls></video>\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIENoVideo.png"  id="vquextENoVideo" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + 'quextECoverVideoQuExt.png" id="vquextECover" alt="' + _("No image") + '" />\
                                     </div>\

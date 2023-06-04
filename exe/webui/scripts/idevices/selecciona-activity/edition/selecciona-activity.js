@@ -1186,7 +1186,7 @@ var $exeDevice = {
                                         <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png"  id="seleccionaEImage" alt="' + _("Image") + '" />\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png"  id="seleccionaENoImage" alt="' + _("No image") + '" />\
                                         <div class="gameQE-EMedia" id="seleccionaEVideo"></div>\
-                                        <video class="gameQE-EMedia" id = "seleccionaEVideoLocal" preload="auto" controls><source src = ""></video>\
+                                        <video class="gameQE-EMedia" id = "seleccionaEVideoLocal" preload="auto" controls></video>\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIENoImageVideo.png" id="seleccionaENoImageVideo" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + 'quextIENoVideo.png" id="seleccionaENoVideo" alt="" />\
                                         <img class="gameQE-ECursor" src="' + path + 'quextIECursor.gif" id="seleccionaECursor" alt="" />\
@@ -1262,7 +1262,7 @@ var $exeDevice = {
                                 <div class="gameQE-EVIV">\
                                     <div class="gameQE-EMVI">\
                                         <div class="gameQE-EVI" id="seleccionaEVI"></div>\
-                                        <video class="gameQE-EVI" id = "seleccionaEVILocal" preload="auto" controls><source src = ""></video>\
+                                        <video class="gameQE-EVI" id = "seleccionaEVILocal" preload="auto" controls></video>\
                                         <img class="gameQE-ENoVI" src="' + path + "quextIENoVideo.png" + '" id="seleccionaEVINo" alt="" />\
                                     </div>\
                                 </div>\

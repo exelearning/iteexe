@@ -782,7 +782,9 @@ var $eXeSopa = {
         }
         if (mOptions.gameStarted) {
             var q = mOptions.wordsGame[mOptions.activeQuestion];
-            $eXeSopa.showImagePoint(q.url, q.x, q.y, q.author, q.alt);
+            if(typeof q !="undefined"){
+                $eXeSopa.showImagePoint(q.url, q.x, q.y, q.author, q.alt);
+            }
         }
     },
     enterCodeAccess: function () {

@@ -1081,7 +1081,7 @@ var $eXeMapa = {
                         <img src="" class="MQP-Images" id="mapaImagePoint-' + instance + '"  alt="' + msgs.msgNoImage + '" />\
                         <img src="' + path + 'mapaHome.png" class="MQP-Cover" id="mapaCoverPoint-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                         <div class="MQP-Video" id="mapaVideoPoint-' + instance + '"></div>\
-                        <video controls class="MQP-VideoLocal" id="mapaVideoLocal-' + instance + '" src=""></video>\
+                        <video controls class="MQP-VideoLocal" id="mapaVideoLocal-' + instance + '"></video>\
                         <a href="#" class="MQP-LinkAudio MQP-Activo" id="mapaLinkAudio-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
                         <a href="#" class="MQP-LinkSlideLeft MQP-Activo" id="mapaLinkSlideLeft-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
                         <a href="#" class="MQP-LinkSlideRight MQP-Activo" id="mapaLinkSlideRight-' + instance + '"   title="' + msgs.msgAudio + '"></a>\
@@ -2934,6 +2934,8 @@ var $eXeMapa = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
+        }else if ((event.target.g) && (event.target.g.id)) {
+            video = event.target.g.id;
         }
         video = video.split("-");
         if (video.length == 2 && (video[0] == "mapaVideoPoint")) {

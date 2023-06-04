@@ -538,7 +538,7 @@ var $eXeTrivial = {
             <div class="trivial-EText" id="trivialEText-' + instance + '"></div>\
             <img src="' + path + 'trivialHome.png" class="trivial-Cover" id="trivialCover-' + instance + '" alt="' + msgs.msImage + '" />\
             <div class="trivial-Video" id="trivialVideo-' + instance + '"></div>\
-            <video class="trivial-Video" id = "trivialVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
+            <video class="trivial-Video" id = "trivialVideoLocal-' + instance + '" preload="auto" controls></video>\
             <div class="trivial-Protector1" id="trivialProtector-' + instance + '"></div>\
             <a href="#" class="trivial-LinkAudio" id="trivialLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + "exequextaudio.png" + '" class="trivial-Activo" alt="' + msgs.msgAudio + '">\</a>\
         </div>\

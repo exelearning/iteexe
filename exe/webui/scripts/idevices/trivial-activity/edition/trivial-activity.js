@@ -916,7 +916,7 @@ var $exeDevice = {
                                         <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="trivialEImage" alt="' + _("Image") + '" />\
                                         <img class="gameQE-EMedia" src="' + path + "quextIEImage.png" + '" id="trivialENoImage" alt="' + _("No image") + '" />\
                                         <div class="gameQE-EMedia" id="trivialEVideo"></div>\
-                                        <video class="gameQE-EMedia" id = "trivialEVideoLocal" preload="auto" controls><source src = ""></video>\
+                                        <video class="gameQE-EMedia" id = "trivialEVideoLocal" preload="auto" controls></video>\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoImageVideo.png" + '" id="trivialENoImageVideo" alt="" />\
                                         <img class="gameQE-EMedia" src="' + path + "quextIENoVideo.png" + '" id="trivialENoVideo" alt="" />\
                                         <img class="gameQE-ECursor" src="' + path + "quextIECursor.gif" + '" id="trivialECursor" alt="" />\

@@ -313,7 +313,7 @@ var $eXeSelecciona = {
                 <div class="gameQP-EText" id="seleccionaEText-' + instance + '"></div>\
                 <img src="' + path + 'seleccionaHome.png" class="gameQP-Cover" id="seleccionaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="seleccionaVideo-' + instance + '"></div>\
-                <video class="gameQP-Video" id = "seleccionaVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
+                <video class="gameQP-Video" id = "seleccionaVideoLocal-' + instance + '" preload="auto" controls></video>\
                 <div class="gameQP-Protector" id="seleccionaProtector-' + instance + '"></div>\
                 <a href="#" class="gameQP-LinkAudio" id="seleccionaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="seleccionaGamerOver-' + instance + '">\
@@ -376,7 +376,7 @@ var $eXeSelecciona = {
             </div>\
              <div class="gameQP-VideoIntroDiv" id="seleccionaVideoIntroDiv-' + instance + '">\
                 <div class="gameQP-VideoIntro" id="seleccionaVideoIntro-' + instance + '"></div>\
-                <video class="gameQP-Video" id = "seleccionaVideoIntroLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
+                <video class="gameQP-Video" id = "seleccionaVideoIntroLocal-' + instance + '" preload="auto" controls></video>\
                 <input type="button" class="gameQP-VideoIntroClose" id="seleccionaVideoIntroClose-' + instance + '" value="' + msgs.msgClose + '"/>\
             </div>\
             <div class="gameQP-DivFeedBack" id="seleccionaDivFeedBack-' + instance + '">\
@@ -691,6 +691,8 @@ var $eXeSelecciona = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
+        }else if ((event.target.g) && (event.target.g.id)) {
+            video = event.target.g.id;
         }
         video = video.split("-");
         if (video.length == 2 && (video[0] == "seleccionaVideo" || video[0] == "seleccionaVideoIntro")) {

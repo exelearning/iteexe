@@ -272,7 +272,7 @@ var $exeDevice = {
                                     <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png" id="adivinaEImage" alt="' + _("Image") + '" />\
                                     <img class="gameQE-EMedia" src="' + path + 'quextIEImage.png" id="adivinaENoImage" alt="' + _("No image") + '" />\
                                     <div class="gameQE-EMedia" id="adivinaEVideo"></div>\
-                                    <video class="gameQE-EMedia" id = "adivinaEVideoLocal" preload="auto" controls><source src = ""></video>\
+                                    <video class="gameQE-EMedia" id = "adivinaEVideoLocal" preload="auto" controls></video>\
                                     <img class="gameQE-EMedia" src="' + path + 'quextIENoImageVideo.png"  id="adivinaENoImageVideo" alt="" />\
                                     <img class="gameQE-EMedia" src="' + path + 'quextIENoVideo.png" id="adivinaENoVideo" alt="" />\
                                     <img class="gameQE-ECursor" src="' + path + 'quextIECursor.gif" id="adivinaECursor" alt="" />\

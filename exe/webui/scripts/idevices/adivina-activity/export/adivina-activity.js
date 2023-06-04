@@ -356,7 +356,7 @@ var $eXeAdivina = {
                 <div class="gameQP-EText" id="adivinaEText-' + instance + '"></div>\
                 <img src="' + path + 'adivinaHome.png" class="gameQP-Cover" id="adivinaCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="adivinaVideo-' + instance + '"></div>\
-                <video class="gameQP-Video" id = "adivinaVideoLocal-' + instance + '" preload="auto" controls><source src = ""></video>\
+                <video class="gameQP-Video" id = "adivinaVideoLocal-' + instance + '" preload="auto" controls></video>\
                 <div class="gameQP-Protector" id="adivinaProtector-' + instance + '"></div>\
                 <a href="#" class="gameQP-LinkAudio" id="adivinaLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="adivinaGamerOver-' + instance + '">\
@@ -1258,6 +1258,8 @@ var $eXeAdivina = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
+        }else if ((event.target.g) && (event.target.g.id)) {
+            video = event.target.g.id;
         }
         video = video.split("-");
         if (video.length == 2 && video[0] == "adivinaVideo") {

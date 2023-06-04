@@ -363,7 +363,7 @@ var $eXeVideoQuExt = {
             <div class="gameQP-Multimedia" id="vquextMultimedia-' + instance + '">\
                 <img  src="' + path + 'quextImageVideo.png" class="gameQP-Images" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <img src="' + path + 'vquextHome.png" class="gameQP-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
-                <video class="gameQP-Video" id="vquextVideoLocal-' + instance + '" src=""></video>\
+                <video class="gameQP-Video" id="vquextVideoLocal-' + instance + '"></video>\
                 <div class="gameQP-Video" id="vquextVideo-' + instance + '"></div>\
                 <div class="gameQP-Protector" id="vquextProtector-' + instance + '"></div>\
                 <div class="gameQP-GameOver" id="vquextGamerOver-' + instance + '">\
@@ -687,6 +687,8 @@ var $eXeVideoQuExt = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
+        }else if ((event.target.g) && (event.target.g.id)) {
+            video = event.target.g.id;
         }
         video = video.split("-");
         if (video.length == 2 && video[0] == "vquextVideo") {
