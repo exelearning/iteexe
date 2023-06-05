@@ -22,6 +22,9 @@ intef-exe (3:2.8.1) lucid; urgency=medium
     - Fixed: IMS export. Missing files in imsmanifest.xml (#684)
     - Fixed: Windows / Mac. Application icon and name. (#678)
     
+  * Manuel Narváez
+    - Empty src attribute in games caused page reload (browser confirmation dialog on leaving page).
+    
   * Regorxxx
     - Improve File Picker behavior to follow software standards.
 
