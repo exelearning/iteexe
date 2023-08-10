@@ -47,7 +47,6 @@ var eXeAssistant = {
 				if (html.lang!="es") base += html.lang+"/";
 				var url = i18n[html.lang];
 				$("#eXe_Tutorial_lnk").attr("href",base+url[0]+"/");
-				$("#eXe_Forums_lnk").attr("href",base+url[1]+"/");
 				$("#eXe_Web_Site_lnk").attr("href",base);
             }            
         }

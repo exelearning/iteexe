@@ -633,13 +633,15 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                 accesskey: 'r',
                                 text: _('Report an Issue')
                             },
-                            {
+                            /* To review:
+							{
                                 xtype: 'accesskey_menuitem',
                                 itemId: 'help_forums',
                                 id: 'help_forums_link',
                                 accesskey: 'f',
                                 text: _('eXe Forums')
                             },
+							*/
                             {
                                 xtype: 'menuseparator'
                             },
