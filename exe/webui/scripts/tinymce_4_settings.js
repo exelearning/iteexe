@@ -239,7 +239,13 @@ var $exeTinyMCE = {
 			},
 			external_plugins: {
 				"style": "/scripts/tinymce_4/js/tinymce/plugins/style/editor_plugin_src.js"
-			}			
+			},
+			setup: function (editor) {
+				editor.on('Change', function(ed) {
+					editor.dom.remove(editor.dom.select("#activeIdevice"));
+					editor.dom.remove(editor.dom.select("#exe-submitButton"));
+				});
+			},
 		});
 	},
 	
