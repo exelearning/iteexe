@@ -241,9 +241,19 @@ var $exeTinyMCE = {
 				"style": "/scripts/tinymce_4/js/tinymce/plugins/style/editor_plugin_src.js"
 			},
 			setup: function (editor) {
+				// #699 Avoid wrong "Please save your iDevice first" message
 				editor.on('Change', function(ed) {
 					editor.dom.remove(editor.dom.select("#activeIdevice"));
 					editor.dom.remove(editor.dom.select("#exe-submitButton"));
+				});
+				// #691 Allow textareas (see common.py)
+				editor.on('Load', function(){
+					var c  = editor.getContent();
+					if (c.indexOf('data-exe-editor-type="exe-editor-textarea"')!=-1) {
+						c = c.replace(/span data-exe-editor-type="exe-editor-textarea"/g,"textarea");
+						c = c.replace(/<!--exe-editor-textarea--><\/span>/g,"</textarea>");
+						editor.setContent(c);
+					}
 				});
 			},
 		});

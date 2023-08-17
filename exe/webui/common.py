@@ -753,6 +753,10 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
     html += u'cols="%s" rows="%s" class="%s">' %(cols, rows, cssClass)
     # to counter TinyMCE's ampersand-processing:
     safe_value = value.replace('&','&amp;')
+    #691 Allow textareas (see TinyMCE settings)
+    safe_value = safe_value.replace('<textarea','<span data-exe-editor-type="exe-editor-textarea"')
+    safe_value = safe_value.replace('</ textarea>','<!--exe-editor-textarea--></span>')
+    safe_value = safe_value.replace('</textarea>','<!--exe-editor-textarea--></span>')
     if (cssClass=="jsContentEditor"):
         if safe_value != value:
             value = safe_value
@@ -809,6 +813,10 @@ def richTextArea(name, value="", width="100%", height=100, cssClass='mceEditor',
     log.debug(u"richTextArea %s, height=%s" % (value, height))
     # to counter TinyMCE's ampersand-processing:
     safe_value = value.replace('&','&amp;')
+    #691 Allow textareas (see TinyMCE settings)
+    safe_value = safe_value.replace('<textarea','<span data-exe-editor-type="exe-editor-textarea"')
+    safe_value = safe_value.replace('</ textarea>','<!--exe-editor-textarea--></span>')
+    safe_value = safe_value.replace('</textarea>','<!--exe-editor-textarea--></span>')
     if safe_value != value:
         value = safe_value
         log.debug(u"richTextArea pre-processed value to: %s" % value)
