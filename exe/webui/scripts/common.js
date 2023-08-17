@@ -649,7 +649,7 @@ var $exe = {
             });
             $('a.exe-dd-toggler').click(function(){
                 var e = $(this);
-                var s = $("span",this);
+                var s = $("span.icon",this);
                 var dd = $(this).parent().next("dd");
                 if (e.hasClass("exe-dd-toggler-closed")) {
                     e.removeClass("exe-dd-toggler-closed");
