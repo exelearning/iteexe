@@ -216,6 +216,8 @@ class ScormPage(Page):
         html = html.replace("application/x-mplayer2\" data=\"resources/", "application/x-mplayer2\" data=\"")
         html = html.replace("audio/x-pn-realaudio-plugin\" data=\"resources/", "audio/x-pn-realaudio-plugin\" data=\"")
         html = html.replace("<param name=\"url\" value=\"resources/", "<param name=\"url\" value=\"")
+        # embed tags
+        html = html.replace("></embed>", " />")
         return html
 
 
