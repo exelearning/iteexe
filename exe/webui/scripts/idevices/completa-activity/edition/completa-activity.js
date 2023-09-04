@@ -10,9 +10,10 @@ var $exeDevice = {
     i18n: {
         name: _('Complete')
     },
-    iDevicePath: "/scripts/idevices/CMPT-activity/edition/",
+    iDevicePath: "/scripts/idevices/completa-activity/edition/",
     msgs: {},
     version: 1,
+    id:false,
     ci18n: {
         "msgHappen": _("Move on"),
         "msgReply": _("Reply"),
@@ -29,8 +30,10 @@ var $exeDevice = {
         "msgInformationLooking": _("Cool! The information you were looking for"),
         "msgPlayStart": _("Click here to play"),
         "msgErrors": _("Errors"),
+        "msgError": _("Error"),
         "msgMoveOne": _("Move on"),
         "msgHits": _("Hits"),
+        "msgHit": _("Hit"),
         "msgScore": _("Score"),
         "msgMinimize": _("Minimize"),
         "msgMaximize": _("Maximize"),
@@ -76,6 +79,10 @@ var $exeDevice = {
         "msgEndScore": _("You got %s right answers and %d errors."),
         "msgEndTime": _("Time over."),
         "msgGameEnd": _("You completed the activity"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('Complete')
     },
 
 
@@ -102,6 +109,19 @@ var $exeDevice = {
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
         msgs.msgESelectFile = _("The selected file does not contain a valid game");
 
+    },
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
     },
     showMessage: function (msg) {
         eXe.app.alert(msg);
@@ -167,6 +187,15 @@ var $exeDevice = {
                                 <p id="cmptEFeedbackP" class="CMPT-EFeedbackP">\
                                     <textarea id="cmptEFeedBackEditor" class="exe-html-editor"></textarea>\
                                 </p>\
+                                 <p>\
+                                <strong class="GameModeLabel"><a href="#cmptEEvaluationHelp" id="cmptEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="cmptEEvaluation"><input type="checkbox" id="cmptEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="cmptEEvaluationID">' + _("Identificador") + ':\
+                                    <input type="text" id="cmptEEvaluationID" disabled/> </label>\
+                                </p>\
+                                <div id="cmptEEvaluationHelp" class="CMPT-TypeGameHelp">\
+                                    <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                </div>\
                             </div>\
                         </fieldset>\
                         <fieldset class="exe-fieldset">\
@@ -256,7 +285,10 @@ var $exeDevice = {
     },
     updateFieldGame: function (game) {
         game.wordsLimit = typeof game.wordsLimit == 'undefined' ? false : game.wordsLimit;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#cmptEShowMinimize').prop('checked', game.showMinimize);
         $('#cmptEShowSolution').prop('checked', game.showSolution);
         $('#cmptECaseSensitive').prop('checked', game.caseSensitive);
@@ -270,6 +302,10 @@ var $exeDevice = {
         $("#cmptEWordsErrors").val(game.wordsErrors);
         $("#cmptEWordsLimit").prop('checked', game.wordsLimit);
         $("input.CMPT-Type[name='cmpttype'][value='" + game.type + "']").prop("checked", true);
+        $('#cmptEEvaluation').prop('checked', game.evaluation);
+        $('#cmptEEvaluationID').val(game.evaluationID);
+        $("#cmptEEvaluationID").prop('disabled', (!game.evaluation));
+
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         if (game.feedBack) {
             $('#cmptEFeedbackP').show();
@@ -305,6 +341,7 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         } else if (game.typeGame == 'Completa') {
+            game.id = $exeDevice.generarID();
             $exeDevice.updateFieldGame(game);
             var instructions = game.instructionsExe || game.instructions,
                 tAfter = game.textAfter || "",
@@ -453,6 +490,9 @@ var $exeDevice = {
             wordsErrors = $('#cmptEWordsErrors').val(),
             wordsLimit = $('#cmptEWordsLimit').is(':checked'),
             attempsNumber = parseInt($('#cmptAttemptsNumber').val());
+            evaluation=$('#cmptEEvaluation').is(':checked'),
+            evaluationID=$('#cmptEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
 
         if (textText.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -486,7 +526,10 @@ var $exeDevice = {
                 'attempsNumber': attempsNumber,
                 'percentajeError': percentajeError,
                 'showSolution': showSolution,
-                'wordsLimit': wordsLimit
+                'wordsLimit': wordsLimit,
+                'evaluation':evaluation,
+                'evaluationID':evaluationID,
+                'id':id
             }
 
         return data;
@@ -597,6 +640,16 @@ var $exeDevice = {
             this.value = this.value > 100 ? 100 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
         });
+         $('#cmptEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#cmptEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#cmptEEvaluationHelpLnk").click(function () {
+            $("#cmptEEvaluationHelp").toggle();
+            return false;
+
+        });
+
 
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 

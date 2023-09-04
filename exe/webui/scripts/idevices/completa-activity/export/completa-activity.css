@@ -44,7 +44,7 @@
 	font-size: 1em;
 	padding: 0.6em 1em;
 	position:relative;
-	z-index:100;
+	z-index:2;
 	cursor: pointer;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -52,6 +52,7 @@
 	text-align: center;
 	user-select: none;
 	white-space: nowrap;
+	margin-bottom: 0.6em;
 }
 .CMPT-WordsButton:hover,  .CMPT-ButtonsComands:hover {
     color: #333;
@@ -98,19 +99,7 @@
 	margin:auto;
 
 }
-/*.CMPT-WordsButton {
-	background-color: white;
-	color: black;
-	cursor: default;
-	min-width: 4em;
-	border: 1px solid black;
-	text-align: center;
-	padding: 0.3em 0.5em;
-	border-radius: 0.3em;
-	position:relative;
-	margin-left:1.1em;
-	z-index:100;
-}*/
+
 
 .CMPT-WordsButtonNumber {
 	position:absolute;
@@ -186,7 +175,7 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 100000;
+	z-index: 5;
 	background-color: rgb(255, 255, 255, .2);
 	display: none;
 
@@ -288,7 +277,7 @@
 	display: flex;
 	justify-content: center;
 	width: 100%;
-	z-index: 200;
+	z-index: 3;
 }
 
 .CMPT-DataImage {
@@ -433,7 +422,7 @@
 	position: absolute;
 	top: 0;
 	width: 100%;
-	z-index: 1010;
+	z-index: 4;
 }
 
 .CMPT-DivFeedBack button {
@@ -626,7 +615,23 @@ div:fullscreen .CMPT-Multimedia, div:-webkit-full-screen .CMPT-Multimedia, div:-
 	height: 100vh;
 	width: 100%;
 }
+.CMPT-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
 
+}
+.CMPT-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.CMPT-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
 @-moz-keyframes CMPT-parpadeo {
 	0% {
 		opacity: 1.0;
