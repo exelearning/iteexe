@@ -1,0 +1,197 @@
+.INFMP-MainContainer a, .INFMP-MainContainer a:visited, .INFMP-MainContainer a:focus {
+	border: 0;
+	border-bottom: none;
+	border-width: 0;
+	text-decoration: none;
+}
+
+/* Contenedor */
+
+.INFMP-MainContainer {
+	font-size: 1rem;
+	margin: 1em auto;
+	padding: 0;
+	width: 100%;
+}
+.INFMP-Message{
+	width: 100%;
+}
+
+.INFMP-MainContainer * {
+	box-sizing: border-box;
+}
+
+.INFMP-MainContainer p {
+	margin: 0;
+	padding: 0;
+}
+.INFMP-GameContainer {
+	width: 100%;
+}
+
+.INFMP-Data{
+	margin-top: 1em;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+.INFMP-Table{
+	width:100%; 
+	max-width:900px;
+	border:1px solid #cccccc;
+	border-radius:0.1em; 
+	padding:1.5em;
+	background-color:#f9f9f9;
+
+}
+.INFMP-Title{
+	width: 100%;
+	margin-bottom: 1em;
+	background-color: #142a48d2;
+	text-align: center;
+	padding: 0.5em;
+	font-size: 1.2em;
+	font-weight: 600;
+	color:white;
+
+}
+.INFMP-Header{
+	width:100%; 
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	flex-wrap: wrap;
+	font-size: 1.1em;
+	font-weight: bolder
+
+}
+
+.INFMP-Plus {
+	padding-top: 0.4em;
+	border-top: 2px solid #aaaaaa;
+	margin-top: 0.8em;
+}
+
+.INFMP-Node {
+	font-size: 1.1em;
+	margin-top: 0.5em;
+	font-weight: 600;
+
+
+}
+
+.INFMP-Activity {
+	background-color: '#f9f9f9f';
+	min-width: 280px;
+	padding: 0.6em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.INFMP-DateScore {
+	display: flex;
+	justify-content:flex-end;
+	align-items: right;
+	gap: 0.3em;
+
+}
+
+.INFMP-DateScore  span{
+	display: block;
+
+}
+
+.INFMP-ActivityScore {
+	font-size: 1.1em;
+	margin-top: 0;
+	font-weight: bolder
+}
+
+.INFMP-GameScore {
+	background-color:#025540;
+	min-width:280px;
+	padding:0.6em; 
+	display:flex; 
+	justify-content:space-between; 
+	align-items:center;
+	font-size: 1.1em;
+	font-weight: bolder;
+	color:white;
+	margin-top: 1em;
+	font-weight: 600;
+}
+
+.INFMP-LinksInforme {
+	background-color:transparent;
+	min-width:280px;
+	padding:0.6em; 
+	display:flex; 
+	justify-content:flex-end; 
+	align-items:center;
+	font-size: 1.1em;
+	font-weight: bolder;
+	color:white;
+	margin-top: 1em;
+}
+.INFMP-LinksInforme a{
+	background-color: #007691;
+	color: white;
+	margin-left: 0.3em;
+	padding: 0.3em 0.4em;
+	border-radius:3px
+
+}
+.INFMP-LinksInforme a:hover{
+	color: black;
+}
+#informeName{
+	margin-left: 0.3em;
+}
+
+.INFMP-UserData {
+	display: flex; 
+	justify-content: space-between;
+	align-items: center; 
+	margin: 1em 0;
+	gap: 1em;
+	min-width: 350px;
+	font-size: 1.1em;
+	font-weight: bolder;
+	}
+  
+  .INFMP-UserData > div {
+	display: flex; 
+	align-items:center;
+	justify-content: flex-start;
+	gap:0.15em;
+
+	flex-wrap: wrap;
+  }
+  .INFMP-UserName {
+	flex-grow: 1; 
+	width:50%;
+  }
+  .INFMP-UserDate {
+	flex-grow: 0; 
+	justify-content: flex-end;
+	flex-wrap: nowrap;
+  }
+  .INFMP-UserDate label {
+	display: block;
+  }
+  .INFMP-UserDate input {
+	flex-grow: 0; 
+	min-width: 40px;
+	max-width: 160px;
+	border: none;
+	border-bottom: 1px dotted  #333;
+  }
+
+  .INFMP-UserName input {
+	flex-grow: 1; 
+	min-width: 150px;
+	border: none;
+	border-bottom: 1px dotted #333;
+  }
