@@ -97,10 +97,6 @@
     font-size: 1.2em;
 }
 
-
-
-
-
 .FLCDSP-MainContainer a, .FLCDSP-MainContainer a:visited, .FLCDSP-MainContainer a:focus {
     border: 0;
     border-bottom: none;
@@ -1011,6 +1007,25 @@ div:fullscreen .FLCDSP-Multimedia {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+}
+
+.FLCDSP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.FLCDSP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+
+.FLCDSP-EvaluationDivIcon span{
+	font-size: 0.9em;
 }
 
 @-moz-keyframes FLCDSP-parpadeo {

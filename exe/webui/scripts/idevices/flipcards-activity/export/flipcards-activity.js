@@ -273,6 +273,9 @@ var $eXeFlipCards = {
             }
         });
         mOptions.time = typeof mOptions.time == "undefined" ? 0 : mOptions.time;
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -524,6 +527,7 @@ var $eXeFlipCards = {
                 $('#flcdsRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeFlipCards.saveEvaluation(instance);
         var $marcados = $('#flcdsMultimedia-' + instance).find('.FLCDSP-CardContainerMemory[data-number="' + number + '"]').find('.FLCDSP-Card1Memory')
         $marcados.each(function () {
             $(this).data('valid', '1');
@@ -552,6 +556,7 @@ var $eXeFlipCards = {
         } else {
             mOptions.gameActived = true;
         }
+
     },
     gameOverMemory: function (type, instance) {
         var mOptions = $eXeFlipCards.options[instance];
@@ -573,6 +578,7 @@ var $eXeFlipCards = {
                 $eXeFlipCards.initialScore = score;
             }
         }
+        $eXeFlipCards.saveEvaluation(instance);
         //$eXeFlipCards.showFeedBack(instance);
         $('#flcdsReboot-' + instance).show();
         if (mOptions.isScorm > 0 && !mOptions.repeatActivity) {
@@ -873,6 +879,9 @@ var $eXeFlipCards = {
                     }
 
                 }
+                if (mOptions.type < 2) {
+                    $eXeFlipCards.saveEvaluation(instance);
+                }
                 if (!mOptions.type == 2) $eXeFlipCards.showClue(instance);
             } else {
                 $(this).find('.flip-card-inner').eq(0).removeClass('flipped');
@@ -889,6 +898,7 @@ var $eXeFlipCards = {
                     $(this).find('.FLCDSP-LinkAudio-Front').show();
                 }
             }
+
             $eXeFlipCards.stopSound(instance);
             $eXeFlipCards.checkAudio($(this), 1000, instance);
         });
@@ -1061,7 +1071,7 @@ var $eXeFlipCards = {
             path = $eXeFlipCards.idevicePath,
             msgs = $eXeFlipCards.options[instance].msgs,
             html = '';
-        html += '<div class="FLCDSP-MainContainer">\
+        html += '<div class="FLCDSP-MainContainer"  id="flcdsMainContainer-' + instance + '">\
         <div class="FLCDSP-GameMinimize" id="flcdsGameMinimize-' + instance + '">\
             <a href="#" class="FLCDSP-LinkMaximize" id="flcdsLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'flipcardsIcon.png"  class="FLCDSP-IconMinimize FLCDSP-Activo"  alt="">\
             <div class="FLCDSP-MessageMaximize" id="flcdsMessageMaximize-' + instance + '">' + msgs.msgPlayStart + '</div>\
@@ -1201,6 +1211,7 @@ var $eXeFlipCards = {
                 $eXeFlipCards.initialScore = $eXeFlipCards.showScoreFooter(instance);
             }
         }
+        $eXeFlipCards.saveEvaluation(instance);
         $('#flcdsReboot-' + instance).show();
         if (mOptions.isScorm > 0 && !mOptions.repeatActivity) {
             $('#flcdsReboot-' + instance).hide();
@@ -1295,6 +1306,118 @@ var $eXeFlipCards = {
         $eXeFlipCards.refreshCards(instance);
 
     },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeFlipCards.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeFlipCards.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeFlipCards.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeFlipCards.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#flcdsMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeFlipCards.options[instance];
+        var $header = $('#flcdsGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#flcdsEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="flcdsEvaluationIcon-' + instance + '" class="FLCDSP-EvaluationDivIcon"><img  src="' + $eXeFlipCards.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#flcdsEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeFlipCards.options[instance],
+            score = mOptions.type > 1 ? (mOptions.hits * 10 / mOptions.realNumberCards).toFixed(2) : $eXeFlipCards.getScoreVisited(instance);
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#flcdsGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text();
+            var formattedDate = $eXeFlipCards.getDateString();
+            var scorm = {
+                'id': mOptions.id,
+                'type': mOptions.msgs.msgTypeGame,
+                'node': node,
+                'name': name,
+                'score': score,
+                'date': formattedDate,
+                'state': (parseFloat(score) >= 5 ? 2 : 1)
+            }
+            var data = $eXeFlipCards.getDataStorage(mOptions.evaluationID);
+            data = $eXeFlipCards.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeFlipCards.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeFlipCards.isJsonString(localStorage.getItem(id));
+        return data;
+    },
+
     sendScore: function (instance, auto) {
         var mOptions = $eXeFlipCards.options[instance],
             score = mOptions.type > 1 ? (mOptions.hits * 10 / mOptions.realNumberCards) : $eXeFlipCards.getScoreVisited(instance);
@@ -1534,6 +1657,7 @@ var $eXeFlipCards = {
         $('#flcdsSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeFlipCards.sendScore(instance, false);
+            $eXeFlipCards.saveEvaluation(instance);
         });
         $('#flcdsImage-' + instance).hide();
         window.addEventListener('resize', function () {
@@ -1585,9 +1709,10 @@ var $eXeFlipCards = {
         }
         $('#flcdsLinkFullScreen-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
-            var element = document.getElementById('flcdsGameContainer-'+instance);
+            var element = document.getElementById('flcdsGameContainer-' + instance);
             $eXeFlipCards.toggleFullscreen(element, instance)
         });
+        $eXeFlipCards.updateEvaluationIcon(instance)
 
     },
     cardClick: function (cc, instance) {
@@ -1677,7 +1802,7 @@ var $eXeFlipCards = {
             }
 
         }
-
+        $eXeFlipCards.saveEvaluation(instance);
         mOptions.activeCard.find('.FLCDSP-ImageMessage').stop().fadeIn(500).delay(2000).fadeOut(500, function () {
             if (mOptions.active < mOptions.cardsGame.length - 1) {
                 message = mOptions.msgs.mgsClickCard;
@@ -2207,7 +2332,7 @@ var $eXeFlipCards = {
         var sUrl = urlmedia;
         if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
-        }else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeFlipCards.getURLAudioMediaTeca(urlmedia)) {
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $eXeFlipCards.getURLAudioMediaTeca(urlmedia)) {
             sUrl = $eXeFlipCards.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;

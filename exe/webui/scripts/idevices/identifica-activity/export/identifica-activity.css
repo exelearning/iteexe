@@ -562,6 +562,23 @@ div:fullscreen .IDFP-Multimedia, div:-webkit-full-screen .IDFP-Multimedia, div:-
 	height: 100vh;
 	width: 100%;
 }
+.IDFP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.IDFP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.IDFP-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
 
 @-moz-keyframes IDFP-parpadeo {
 	0% {

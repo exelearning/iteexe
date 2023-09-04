@@ -118,6 +118,119 @@ var $eXeIdentifica = {
         $('#idfRepeatActivity-' + instance).text(text);
         $('#idfRepeatActivity-' + instance).fadeIn(1000);
     },
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeIdentifica.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#idfGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                score = mOptions.score.toFixed(2)
+            var formattedDate = $eXeIdentifica.getDateString();
+            var scorm = {
+                'id': mOptions.id,
+                'type': mOptions.msgs.msgTypeGame,
+                'node': node,
+                'name': name,
+                'score': score,
+                'date': formattedDate,
+                'state': (parseFloat(score) >= 5 ? 2 : 1)
+
+            }
+            var data = $eXeIdentifica.getDataStorage(mOptions.evaluationID);
+            data = $eXeIdentifica.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeIdentifica.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+    },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeIdentifica.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeIdentifica.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeIdentifica.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeIdentifica.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#idfMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeIdentifica.options[instance];
+        var $header = $('#idfGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#idfEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="idfEvaluationIcon-' + instance + '" class="IDFP-EvaluationDivIcon"><img  src="' + $eXeIdentifica.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#idfEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeIdentifica.isJsonString(localStorage.getItem(id));
+        return data;
+    },
     sendScore: function (auto, instance) {
         var mOptions = $eXeIdentifica.options[instance],
             message = '',
@@ -217,7 +330,7 @@ var $eXeIdentifica = {
         var html = '',
             path = $eXeIdentifica.idevicePath,
             msgs = $eXeIdentifica.options[instance].msgs;
-        html += '<div class="IDFP-MainContainer">\
+        html += '<div class="IDFP-MainContainer"  id="idfMainContainer-' + instance + '">\
         <div class="IDFP-GameMinimize" id="idfGameMinimize-' + instance + '">\
             <a href="#" class="IDFP-LinkMaximize" id="idfLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'identificaIcon.png" class="IDFP-IconMinimize IDFP-Activo" alt="">\
                 <div class="IDFP-MessageMaximize" id="idfMessageMaximize-' + instance + '"></div></a>\
@@ -447,7 +560,11 @@ var $eXeIdentifica = {
         }
         mOptions.scoreGame = 0;
         mOptions.scoreTotal = 0;
+        mOptions.score = 0;
         mOptions.playerAudio = "";
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.questionsGame.length) {
@@ -551,6 +668,7 @@ var $eXeIdentifica = {
         $('#idfSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeIdentifica.sendScore(false, instance);
+            $eXeIdentifica.saveEvaluation(instance);
             return true;
         });
         $('#idfGamerOver-' + instance).hide();
@@ -656,7 +774,7 @@ var $eXeIdentifica = {
             $eXeIdentifica.showClue(instance)
         });
         $('#idfUseClue-' + instance).hide();
-
+        $eXeIdentifica.updateEvaluationIcon(instance)
     },
 
     showClue(instance) {
@@ -680,7 +798,7 @@ var $eXeIdentifica = {
         $('#idfUseClue-' + instance).html(mOptions.msgs.msgShowNewClue);
         if (mOptions.activeClue >= numclues) {
             $('#idfUseClue-' + instance).hide();
-            message =  mOptions.msgs.msgUseAllClues.replace('%s', mOptions.pointsClue.toFixed(2));
+            message = mOptions.msgs.msgUseAllClues.replace('%s', mOptions.pointsClue.toFixed(2));
             $('#idfUseClue-' + instance).html(mOptions.msgs.msgShowClue);
         }
         $eXeIdentifica.showMessage(0, message, instance);
@@ -766,6 +884,7 @@ var $eXeIdentifica = {
 
             }
         }
+        $eXeIdentifica.saveEvaluation(instance);
         setTimeout(function () {
             $eXeIdentifica.newQuestion(instance)
         }, timeShowSolution);
@@ -913,6 +1032,7 @@ var $eXeIdentifica = {
                 $eXeIdentifica.initialScore = score;
             }
         }
+        $eXeIdentifica.saveEvaluation(instance);
         $eXeIdentifica.showFeedBack(instance);
     },
     showFeedBack: function (instance) {
@@ -1017,6 +1137,7 @@ var $eXeIdentifica = {
 
             }
         }
+
         $eXeIdentifica.stopSound(instance);
         if (q.audio.trim().length > 4) {
             $eXeIdentifica.playSound(q.audio.trim(), instance);

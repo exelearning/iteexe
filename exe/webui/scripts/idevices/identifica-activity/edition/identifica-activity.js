@@ -18,6 +18,7 @@ var $exeDevice = {
     numberCutCuestion: -1,
     clipBoard: '',
     version: 1,
+    id: false,
     ci18n: {
         "msgSubmit": _("Submit"),
         "msgCodeAccess": _("Access code"),
@@ -69,6 +70,10 @@ var $exeDevice = {
         "msgUseAllClues": _("You already used all the clues. You can only get %s points."),
         "msgModeWhiteBoard": _("Digital blackboard mode"),
         "msgCheckLetter": _("Check the letter"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('Identify')
     },
 
     init: function () {
@@ -384,6 +389,15 @@ var $exeDevice = {
                                 <label for="idfEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="idfEPercentajeQuestions" id="idfEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
                                 <span id="idfENumeroPercentaje">1/1</span>\
                             </p>\
+                            <p>\
+                                <strong class="GameModeLabel"><a href="#idfEEvaluationHelp" id="idfEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="idfEEvaluation"><input type="checkbox" id="idfEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="idfEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="idfEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="idfEEvaluationHelp" class="IDFE-TypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -639,14 +653,30 @@ var $exeDevice = {
         }
     },
 
-    updateFieldGame: function (game) {
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
 
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
+    updateFieldGame: function (game) {
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.questonsRamdo = game.questonsRamdo || false;
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#idfEShowMinimize').prop('checked', game.showMinimize);
         $('#idfESAvancedMode').prop('checked', game.avancedMode);
         $('#idfEQuestionRamdon').prop('checked', game.questionsRamdon);
@@ -657,6 +687,9 @@ var $exeDevice = {
         $("#idfEPercentajeFB").val(game.percentajeFB);
         $('#idfECustomMessages').prop('checked', game.customMessages);
         $('#idfEPercentajeQuestions').val(game.percentajeQuestions);
+        $('#idfEEvaluation').prop('checked', game.evaluation);
+        $('#idfEEvaluationID').val(game.evaluationID);
+        $("#idfEEvaluationID").prop('disabled', (!game.evaluation));
         $exeDevice.updateGameMode(game.feedBack);
         $exeDevice.showSelectOrder(game.customMessages);
         for (var i = 0; i < game.questionsGame.length; i++) {
@@ -869,6 +902,7 @@ var $exeDevice = {
         if ($exeDevice.questionsGame.length > 1) {
             game.questionsGame = $exeDevice.importIdentifica(game)
         }
+        game.id = $exeDevice.generarID();
         $exeDevice.active = 0;
         $exeDevice.questionsGame = game.questionsGame;
         for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
@@ -933,7 +967,10 @@ var $exeDevice = {
             feedBack = $('#idfEHasFeedBack').is(':checked'),
             percentajeFB = parseInt(clear($('#idfEPercentajeFB').val())),
             customMessages = $('#idfECustomMessages').is(':checked'),
-            percentajeQuestions=parseInt(clear($('#idfEPercentajeQuestions').val()));
+            percentajeQuestions=parseInt(clear($('#idfEPercentajeQuestions').val())),
+            evaluation=$('#idfEEvaluation').is(':checked'),
+            evaluationID=$('#idfEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
         if (!itinerary) return false;
         if (feedBack && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -941,6 +978,10 @@ var $exeDevice = {
         }
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
+            return false;
+        }
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
             return false;
         }
         var questionsGame = $exeDevice.questionsGame;
@@ -961,6 +1002,7 @@ var $exeDevice = {
                 return false;
             }
         }
+
 
         var scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
         var data = {
@@ -986,7 +1028,10 @@ var $exeDevice = {
             'version': $exeDevice.version,
             'customMessages': customMessages,
             'percentajeQuestions':percentajeQuestions,
-            'avancedMode': avancedMode
+            'avancedMode': avancedMode,
+            'evaluation':evaluation,
+            'evaluationID':evaluationID,
+            'id': id
         }
         return data;
     },
@@ -1228,6 +1273,15 @@ var $exeDevice = {
                     $(this).val($exeDevice.active+1)
                 }
             }
+        });
+        $('#idfEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#idfEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#idfEEvaluationHelpLnk").click(function () {
+            $("#idfEEvaluationHelp").toggle();
+            return false;
+
         });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
