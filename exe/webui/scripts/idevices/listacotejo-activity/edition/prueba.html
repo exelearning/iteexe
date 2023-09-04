@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .CTJ-ELogos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .CTJ-ELogo {
+        width: 33%;
+      }
+      .CTJ-EImages {
+        position: relative;
+        width: 100%;
+        height: 200px;
+      }
+      .CTJ-EImage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        margin-top: 0.5em;
+      }
+      .CTJ-EButtom {
+        padding: auto;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        gap: 0.1em;
+        margin-top: 0.5em;
+        background-color: blue;
+       
+      }
+      .CTJ-EButtom img {
+        display: block;
+      }
+
+      .CTJ-EURLImage {
+        width: 100px !important;
+      }
+      .sr-av{
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="CTJ-ELogos">\
+      <div class="CTJ-ELogo">\
+        <span>Comunidad/Empresa</span>\
+        <div class="CTJ-EImages">\
+          <img class="CTJ-EImage" src="logoCotejo.png" id="ctjEImage0" alt="" />\
+          <img class="CTJ-EImage" src="logoCotejo.png" id="ctjENoImage0" />\
+        </div>\
+        <div class="CTJ-EButtom">\
+          <label class="sr-av" for="ctjEURLImage">Logo</label>\
+          <input type="text" class="exe-file-picker CTJ-EURLImage" id="ctjEURLImage0" />\
+          <a href="#" id="ctjEPlayImage0" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="">\
+            <img src="quextIEPlay.png" alt="" class="CTJ-EButtonImage b-play"/>\
+          </a>\
+        </div>\
+      </div>\
+      <div class="CTJ-ELogo">\
+        <span>Logo</span>\
+        <div class="CTJ-EImages">\
+          <img class="CTJ-EImage" src="logoCotejo.png" id="ctjEImage0" alt="" />\
+          <img class="CTJ-EImage" src="logoCotejo.png" id="ctjENoImage1" />\
+        </div>\
+        <div class="CTJ-EButtom">\
+          <label class="sr-av" for="ctjEURLImage">Logo</label>\
+          <input type="text" class="exe-file-picker CTJ-EURLImage"id="ctjEURLImage1" />\
+          <a href="#" id="ctjEPlayImage1" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="" >\
+            <img src="quextIEPlay.png" alt="" class="CTJ-EButtonImage b-play" />\
+        </a>\
+        </div>\
+      </div>\
+      <div class="CTJ-ELogo">\
+        <span>Decoracion</span>\
+        <div class="CTJ-EImages">\
+          <img class="CTJ-EImage" src="logoCotejo.png" id="ctjEImage2" alt="" />\
+          <img class="CTJ-EImage" src="logoCotejo.png" id="ctjENoImage2" />\
+        </div>\
+        <div class="CTJ-EButtom">\
+          <label class="sr-av" for="ctjEURLImage">Logo</label>
+          <input type="text" class="exe-file-picker CTJ-EURLImage" id="ctjEURLImage2" />\
+          <a href="#" id="ctjEPlayImage3" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="">\
+            <img src="quextIEPlay.png" alt="" class="CTJ-EButtonImage b-play"/>\
+          </a>\
+        </div>\
+      </div>\
+    </div>\
+  </body>
+</html>
