@@ -26,3 +26,6 @@ label[for=geogebraActivityHeight]{margin-left:1.5em}
 #geogebraActivityURLS{display: flex; justify-content: flex-start; align-items: center;}
 #geogebraActivityURLS label{margin-right: 0.15em; }
 label[for=geogebraActivityScale]{margin-left:1.5em}
+.geogebractivityTypeGameHelp{display:none;margin-bottom:2em;font-size:.95em;}
+.geogebractivityModeHelpLink{margin:0 2px;vertical-align:middle;}
+.geogebractivityModeLabel{font-weight:normal;}

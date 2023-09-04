@@ -6,4 +6,20 @@
 .auto-geogebra .scorm-button-text{display:none}
 .auto-geogebra-extra-content {margin-top: 1.7em}
 .auto-geogebra-author {margin-top: 0.3em; width: 100%; text-align: center;}
+.auto-geogebra-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
 
+}
+.auto-geogebra-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.auto-geogebra-EvaluationDivIcon span{
+	font-size: 0.9em;
+}

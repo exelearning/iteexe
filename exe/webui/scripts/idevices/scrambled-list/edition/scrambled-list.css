@@ -2,4 +2,5 @@
 #sortableListForm input[type=text]{width:430px}
 #sortableListForm input.sortableListTextOption{width:500px}
 #sortableListValuesContainer{display:none}
+#sortableListEvaluationHelpLnk{margin:0 2px;vertical-align:middle;}
 .exe-sortableList li a{background-image:url(/scripts/idevices/scrambled-list/export/scrambled-list.png)}

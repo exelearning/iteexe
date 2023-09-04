@@ -7,3 +7,20 @@
 .exe-sortableList li a:hover,.exe-sortableList li a:focus{background-position:0 -21px}
 .exe-sortableList li .down{background-position:-21px 0;right:13px}
 .exe-sortableList li .down:hover,.exe-sortableList li .down:focus{background-position:-21px -21px}
+.exe-sortableList-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.exe-sortableList-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.exe-sortableList-EvaluationDivIcon span{
+	font-size: 0.9em;
+}

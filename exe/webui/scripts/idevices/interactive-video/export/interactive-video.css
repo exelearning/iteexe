@@ -115,6 +115,23 @@ tr.even td{background:#f7f7f7}
 	width: 100%;
 	margin-top:1em
 }
+.interactive-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.interactive-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.interactive-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
 
 @media screen and (min-width:1200px) {
 	.exe-interactive-video{width:100%;max-width:1280px}

@@ -19,7 +19,8 @@ var $exeDevice = {
 		this.createForm();
 
 	},
-
+	iDevicePath: "/scripts/idevices/geogebra-activity/edition/",
+	ideviceID:'',
 	// True/false options
 	trueFalseOptions: {
 		"showMenuBar": [_("Show menu bar"), false],
@@ -58,7 +59,7 @@ var $exeDevice = {
 					<div>\
 						<p id="geogebraActivityURLS">\
 							<label for="geogebraActivityURL">' + _("URL or identifier (ID)") + ': </label><input type="text" name="geogebraActivityURL" id="geogebraActivityURL" /> \
-							<a href="#" id="geogebraActivityPlayButton" title="' + _("Load data") + '"><span class="sr-av">'+_("Load data")+'</span></a>\
+							<a href="#" id="geogebraActivityPlayButton" title="' + _("Load data") + '"><span class="sr-av">' + _("Load data") + '</span></a>\
 							<label for="geogebraActivityURLexample">' + _("Example") + ': </label><input type="text" id="geogebraActivityURLexample" name="geogebraActivityURLexample" readonly="readonly" value="' + this.activityURLbase + 'VgHhQXCC" />\
 						</p>\
 						<p>\
@@ -99,6 +100,15 @@ var $exeDevice = {
 								<li>' + _('Do not include more than one activity with score per page.') + '</li>\
 							</ul>\
 						</div>\
+						<p>\
+                            <strong style="display:none" class="geogebractivityModeLabel"><a href="#geogebraActivityEvaluationHelp" id="geogebraActivityEvaluationHelpLnk" class="geogebractivityModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+							<label for="geogebraActivityEvaluation"><input type="checkbox" id="geogebraActivityEvaluation"> ' + _("Informe de progreso") + '. </label> \
+							<label for="geogebraActivityEvaluationID">' + _("Identificador") + ':\
+							<input type="text" id="geogebraActivityEvaluationID" disabled/> </label>\
+                        </p>\
+                        <div id="geogebraActivityEvaluationHelp" class="geogebractivityTypeGameHelp">\
+                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                        </div>\
 					</div>\
 				</fieldset>\
 				' + this.getTextFieldset("after") + '\
@@ -117,7 +127,7 @@ var $exeDevice = {
 			e.preventDefault();
 			var urlBase = this.activityURLbase,
 				url = $("#geogebraActivityURL").val(),
-				murl=url;
+				murl = url;
 			url = url.replace("https://ggbm.at/", urlBase);
 			var id = $exeDevice.getId(url);
 			$("#geogebraActivityAuthorURL").text('');
@@ -134,7 +144,7 @@ var $exeDevice = {
 		$("#geogebraActivityURL").change(function () {
 			var urlBase = this.activityURLbase,
 				url = $("#geogebraActivityURL").val(),
-				murl=url;
+				murl = url;
 			url = url.replace("https://ggbm.at/", urlBase);
 			var id = $exeDevice.getId(url);
 			if (url == "" || id == "") {
@@ -180,7 +190,15 @@ var $exeDevice = {
 			}
 		});
 
+		$('#geogebraActivityEvaluation').on('change', function () {
+			var marcado = $(this).is(':checked');
+			$('#geogebraActivityEvaluationID').prop('disabled', !marcado);
+		});
+		$("#geogebraActivityEvaluationHelpLnk").click(function () {
+			$("#geogebraActivityEvaluationHelp").toggle();
+			return false;
 
+		});
 		this.loadPreviousValues(field);
 
 	},
@@ -202,9 +220,9 @@ var $exeDevice = {
 							"-name": "url"
 						}, {
 							"-name": "title"
-						},{
+						}, {
 							"-name": "visibility"
-						},]
+						}, ]
 					},
 					filters: {
 						field: [{
@@ -244,8 +262,8 @@ var $exeDevice = {
 						murl = res.url ? res.url : "",
 						title = res.title ? res.title : "",
 						visibility = res.visibility ? res.visibility : "";
-					if(visibility.toLowerCase() !="o"){
-						murl=lurl.indexOf('http')==0?lurl:"https://ggbm.at/"+id;
+					if (visibility.toLowerCase() != "o") {
+						murl = lurl.indexOf('http') == 0 ? lurl : "https://ggbm.at/" + id;
 					}
 					$("#geogebraActivityAuthorURL").text(author);
 					$("#geogebraActivityTitle").find('a').text(title);
@@ -268,7 +286,7 @@ var $exeDevice = {
 		$("#geogebraActivityURL").css("color", "#DC143C");
 		$("#geogebraActivityURL").focus();
 		$("#geogebraActivityURL").removeClass("loading");
-		if(tipo){
+		if (tipo) {
 			eXe.app.alert(_("Provide a valid GeoGebra URL or activity ID."));
 		}
 	},
@@ -392,6 +410,15 @@ var $exeDevice = {
 					$('#geogebraActivityBorderColor').val(part.replace("auto-geogebra-border-", ""));
 				} else if (part.indexOf("auto-geogebra-scale-") > -1) {
 					$('#geogebraActivityScale').val(part.replace("auto-geogebra-scale-", ""));
+				} else if (part.indexOf("auto-geogebra-evaluation-id-") > -1) {
+					var evid = part.replace("auto-geogebra-evaluation-id-", "");
+					if (evid != "0") {
+						$('#geogebraActivityEvaluation').prop('checked', true);
+						$('#geogebraActivityEvaluationID').val(evid);
+						$("#geogebraActivityEvaluationID").prop('disabled', false);
+					}
+				}else if (part.indexOf("auto-geogebra-ideviceid-") > -1) {
+					$exeDevice.ideviceID = part.replace("auto-geogebra-ideviceid-", "");
 				}
 				var opts = this.trueFalseOptions;
 				for (var p in opts) {
@@ -422,14 +449,30 @@ var $exeDevice = {
 		}
 
 	},
+	generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
 
 	save: function () {
 
 		var urlBase = this.activityURLbase;
 
 		// URL
-		var url = $("#geogebraActivityURL").val();
-		url = url.replace("https://ggbm.at/", urlBase);
+		var url = $("#geogebraActivityURL").val(),
+			evaluation = $('#geogebraActivityEvaluation').is(':checked'),
+			evaluationID = $('#geogebraActivityEvaluationID').val();
+			ideviceID = $exeDevice.ideviceID ? $exeDevice.ideviceID : $exeDevice.generarID(),
+			url = url.replace("https://ggbm.at/", urlBase);
 		if (url == "") {
 			eXe.app.alert(_("Provide a valid GeoGebra URL or activity ID."));
 			return false;
@@ -439,6 +482,11 @@ var $exeDevice = {
 			$exeDevice.errorMessage(true);
 			return false;
 		}
+		if (evaluation && evaluationID.length < 5) {
+			eXe.app.alert($exeDevice.msgs.msgIDLenght);
+			return false;
+		}
+		evaluationID = evaluation ? evaluationID : '0';
 		var divContent = "";
 		// Instructions
 		var instructions = tinymce.editors[0].getContent();
@@ -487,6 +535,8 @@ var $exeDevice = {
 		}
 		var scl = $('#geogebraActivityScale').val();
 		css += " auto-geogebra-scale-" + scl;
+		css += " auto-geogebra-evaluation-id-" + evaluationID;
+		css += " auto-geogebra-ideviceid-" + ideviceID
 
 		var author = $('#geogebraActivityAuthorURL').text() || '';
 		var title = $('#geogebraActivityTitle').find('a').text() || '',
@@ -496,6 +546,7 @@ var $exeDevice = {
 			var show = $('#geogebraActivityShowAuthor').prop('checked') ? "1" : "0";
 			divContent += '<div class="auto-geogebra-author js-hidden">' + escape(author) + ',' + escape(murl) + ',' + escape(title) + ',' + show + ',' + escape(ath) + '</div>';
 		}
+		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Actividad no realizada")) + ',' + escape(_("Actividad superada. Puntuación: %s")) + ',' + escape(_("Actividad no superada. Puntuación: %s")) + '</div>';
 		var textAfter = tinymce.editors[1].getContent();
 		if (textAfter != "") {
 			divContent += '<div class="auto-geogebra-extra-content">' + textAfter + '</div>';
