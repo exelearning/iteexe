@@ -608,6 +608,129 @@ var $eXeTrivial = {
         $('#trivialRepeatActivity-' + instance).text(text);
         $('#trivialRepeatActivity-' + instance).fadeIn(1000);
     },
+   
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeTrivial.options[instance];
+        var $header = $('#trivialGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#trivialEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="trivialEvaluationIcon-' + instance + '" class="trivial-EvaluationDivIcon"><img  src="' + $eXeTrivial.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#trivialEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeTrivial.options[instance];
+
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeTrivial.getDataStorage1(mOptions.evaluationID),
+                score = '',
+                state = 0;
+            if (!data) {
+                $eXeTrivial.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeTrivial.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#trivialMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeTrivial.options[instance],
+            score = 10,
+            points = mOptions.gamers[0].score;
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            if (mOptions.gamers[0].quesos.length < mOptions.numeroTemas) {
+                score = ((points * 10) / ((mOptions.numeroTemas * 10) + mOptions.numeroTemas))
+                score = score > 10 ? 10.00 : score;
+            }
+            score = score.toFixed(2);
+            var name = $('#trivialGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                formattedDate = $eXeTrivial.getDateString(),
+                scorm = {
+                    'id': mOptions.id,
+                    'type': mOptions.msgs.msgTypeGame,
+                    'node': node,
+                    'name': name,
+                    'score': score,
+                    'date': formattedDate,
+                    'state': (parseFloat(score) >= 5 ? 2 : 1)
+                }
+            var data = $eXeTrivial.getDataStorage1(mOptions.evaluationID);
+            data = $eXeTrivial.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeTrivial.showEvaluationIcon(instance, scorm.state, scorm.score)
+
+        }
+
+
+    },
+    getDataStorage1: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeTrivial.isJsonString(localStorage.getItem(id));
+        return data;
+    },
+
     sendScore: function (instance) {
         var mOptions = $eXeTrivial.options[instance],
             score = 10,
@@ -744,6 +867,7 @@ var $eXeTrivial = {
         $eXeTrivial.updateTimeGame(0, instance);
         $('#trivialSelectsGamers-' + instance).show();
         $('#trivialDado-' + instance).hide();
+        $eXeTrivial.saveEvaluation(instance);
         $eXeTrivial.sendScore(instance);
         $eXeTrivial.initialScore = (((mOptions.gamers[0].casilla + 1) * 10) / mOptions.numeroCasillas).toFixed(2);
         mOptions.gameStarted = false;
@@ -936,6 +1060,7 @@ var $eXeTrivial = {
 
         }
         $eXeTrivial.stopSound(instance);
+        $eXeTrivial.saveEvaluation(instance)
         $eXeTrivial.saveDataStorage(instance);
     },
     correctAnswer: function (instance) {
@@ -979,15 +1104,16 @@ var $eXeTrivial = {
         $eXeTrivial.showGameMessage(mensaje, 3000, mOptions.activePlayer, instance);
         if (ganas) {
             $eXeTrivial.winGame(instance);
-            $eXeTrivial.sendScore(instance);
         } else {
-            $eXeTrivial.sendScore(instance);
             setTimeout(function () {
                 $eXeTrivial.changePlayer(instance, false);
                 $eXeTrivial.activeDice(instance);
                 $eXeTrivial.loadGameBoard(instance);
             }, 3000);
         }
+        $eXeTrivial.sendScore(instance);
+
+
     },
     cheesePositions: function (numasi) {
         var pos = [];
@@ -1172,10 +1298,10 @@ var $eXeTrivial = {
                 if (mOptions.counter <= 0) {
                     mOptions.activeCounter = false;
                     if (mOptions.showSolution) {
-                        if (squestions[active].typeSelect != 2) {
+                        if (squestions[active].typeSelect < 2) {
                             $eXeTrivial.drawSolution(instance);
                         } else {
-                            $eXeTrivial.drawPhrase(squestions[active].solutionQuestion, squestions[active].quextion, 100, 1, false, instance, true)
+                            $eXeTrivial.drawPhrase(squestions[active].solutionQuestion, squestions[active].quextion, 100, 1, false, instance, true, squestions[active].typeSelect)
                         }
                     }
                     $eXeTrivial.stopVideo(instance);
@@ -1345,12 +1471,16 @@ var $eXeTrivial = {
         gamer.number = 0;
         gamer.quesos = [];
         gamers.push(gamer);
+        mOptions.useLiks=true;
         mOptions.gamers = gamers;
         mOptions.activeGamer = 0;
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.activesQuestions = [];
         mOptions.scoreTotal = 0;
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
         return mOptions;
     },
@@ -1671,8 +1801,6 @@ var $eXeTrivial = {
             $eXeTrivial.throwDice(instance);
         });
         $('#trivialSelectsGamers-' + instance).show();
-
-        ;
         $('#trivialTablero-' + instance).on('click touchstart', '.trivial-CasillaDestino ', function (e) {
             e.preventDefault();
             var position = parseInt($(this).data('position')),
@@ -1870,7 +1998,7 @@ var $eXeTrivial = {
             $eXeTrivial.answerQuestionBoard(false, instance)
 
         });
-
+        $eXeTrivial.updateEvaluationIcon(instance);
 
     },
     getDataStorage: function (id) {
@@ -2050,10 +2178,11 @@ var $eXeTrivial = {
         }
         $('#trivialLinkAudio-' + instance).hide();
         $eXeTrivial.sendScore(instance);
+        $eXeTrivial.saveEvaluation(instance)
         $eXeTrivial.initialScore = (((mOptions.gamers[0].casilla + 1) * 10) / mOptions.numeroCasillas).toFixed(2);
         $eXeTrivial.saveDataStorage(instance);
     },
-    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution) {
+    drawPhrase: function (phrase, definition, nivel, type, casesensitive, instance, solution, open) {
         var mOptions = $eXeTrivial.options[instance];
         $('#trivialEPhrase-' + instance).find('.trivial-Word').remove();
         $('#trivialBtnReply-' + instance).prop('disabled', true);
@@ -2061,10 +2190,19 @@ var $eXeTrivial = {
         $('#trivialEdAnswer-' + instance).prop('disabled', true);
         $('#trivialQuestionDiv-' + instance).hide();
         $('#trivialWordDiv-' + instance).show();
+        $('#trivialEPhrase-' + instance).show();
+        $('#trivialDivResponder-' + instance).show();
         $('#trivialAnswerDiv-' + instance).hide();
+        
         if (mOptions.modeBoard) {
             $('#trivialDivModeBoard-' + instance).css('display', 'flex');
             $('#trivialDivModeBoard-' + instance).fadeIn();
+        }
+        if (typeof open !="undefined" && open) {
+            $('#trivialDivModeBoard-' + instance).css('display', 'flex');
+            $('#trivialDivModeBoard-' + instance).fadeIn();
+            $('#trivialEPhrase-' + instance).hide();
+            $('#trivialDivResponder-' + instance).hide();
         }
         if (!casesensitive) {
             phrase = phrase.toUpperCase();
@@ -2220,10 +2358,10 @@ var $eXeTrivial = {
                 $eXeTrivial.muteVideo(false, instance);
             }
         }
-        if (mQuextion.typeSelect != 2) {
+        if (mQuextion.typeSelect < 2) {
             $eXeTrivial.drawQuestions(instance);
         } else {
-            $eXeTrivial.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance, false)
+            $eXeTrivial.drawPhrase(mQuextion.solutionQuestion, mQuextion.quextion, mQuextion.percentageShow, 0, false, instance, false, mQuextion.typeSelect)
             $('#trivialBtnReply-' + instance).prop('disabled', false);
             $('#trivialBtnMoveOn-' + instance).prop('disabled', false);
             $('#trivialEdAnswer-' + instance).prop('disabled', false);
@@ -2365,10 +2503,10 @@ var $eXeTrivial = {
             message = $eXeTrivial.getRetroFeedMessages(false, instance);
         }
         if (mOptions.showSolution) {
-            if (quextion.typeSelect != 2) {
+            if (quextion.typeSelect < 2) {
                 $eXeTrivial.drawSolution(instance);
             } else {
-                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance, true)
+                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance, true,quextion.typeSelect)
             }
         }
         $eXeTrivial.stopVideo(instance);
@@ -2398,10 +2536,10 @@ var $eXeTrivial = {
             message = $eXeTrivial.getRetroFeedMessages(false, instance);
         }
         if (mOptions.showSolution) {
-            if (quextion.typeSelect != 2) {
+            if (quextion.typeSelect < 2) {
                 $eXeTrivial.drawSolution(instance);
             } else {
-                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance, true)
+                $eXeTrivial.drawPhrase(quextion.solutionQuestion, quextion.quextion, 100, type, false, instance, true,quextion.typeSelect)
             }
         }
         $eXeTrivial.stopVideo(instance);

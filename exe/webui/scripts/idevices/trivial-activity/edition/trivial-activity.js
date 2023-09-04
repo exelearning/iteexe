@@ -39,6 +39,7 @@ var $exeDevice = {
     activesQuestions: [0, 0, 0, 0, 0, 0],
     trivialID: 0,
     localPlayer: null,
+    id: false,
     ci18n: {
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
@@ -86,7 +87,11 @@ var $exeDevice = {
         "msgRightAnswre": _("One more point."),
         "msgAudio": _("Audio"),
         "msgCorrect": _("Correct"),
-        "msgIncorrect": _("Incorrect")
+        "msgIncorrect": _("Incorrect"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgNext": _('Next'),
     },
     getId: function () {
         return Math.round(new Date().getTime() + (Math.random() * 100));
@@ -128,6 +133,8 @@ var $exeDevice = {
         msgs.msgGameIntrunctions = _("Roll the dice and answer the question until you complete all the cheeses.");
         msgs.tooManyQuestions = _("Too many questions! The game can have a maximum of about 800 and 1200 questions. This number can vary a lot depending on the type of questions and the length of the questions, the answers, the URLs and the enriched text.");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+
 
     },
     loadYoutubeApi: function () {
@@ -411,6 +418,10 @@ var $exeDevice = {
                     if (cuestion.solutionQuestion.length == 0) {
                         return false;
                     }
+                }else if (cuestion.typeSelect == 3) {
+                    if (cuestion.solutionQuestion.length == 0) {
+                        cuestion.solutionQuestion='open'
+                    }
                 }
             }
         }
@@ -424,7 +435,7 @@ var $exeDevice = {
         p.typeSelect = p.typeSelect ? p.typeSelect : 0;
         p.solutionQuestion = p.solutionQuestion ? p.solutionQuestion : '';
         p.percentageShow = p.percentageShow ? p.percentageShow : 35;
-        if (p.typeSelect != 2) {
+        if (p.typeSelect < 2) {
             $('.gameQE-EAnwersOptions').each(function (j) {
                 numOptions++;
                 if (p.options[j].trim() !== '') {
@@ -487,6 +498,7 @@ var $exeDevice = {
         $exeDevice.checkQuestions(p.solution);
         $("input.gameQE-Times[name='tvltime'][value='" + p.time + "']").prop("checked", true);
         $("input.gameQE-TypeSelect[name='tvltypeselect'][value='" + p.typeSelect + "']").prop("checked", true);
+
     },
     checkQuestions: function (solution) {
         $("input.gameQE-ESolution[name='tvlsolution']").prop("checked", false);
@@ -788,6 +800,15 @@ var $exeDevice = {
                             <p>\
                                 <label for="trivialModeBoard"><input type="checkbox" id="trivialModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
+                            <p>\
+                                <strong class="GameModeLabel"><a href="#trivialEEvaluationHelp" id="trivialEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="trivialEEvaluation"><input type="checkbox" id="trivialEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="trivialEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="trivialEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="trivialEEvaluationHelp" class="gameQE-TypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -807,11 +828,13 @@ var $exeDevice = {
                                     <span>' + _("Type") + ':</span>\
                                     <div class="gameQE-EInputType">\
                                         <input class="gameQE-TypeSelect" checked id="trivialTypeChoose" type="radio" name="tvltypeselect" value="0"/>\
-                                        <label for="trivialTypeSelect">' + _("Select") + '</label>\
+                                        <label for="trivialTypeChoose">' + _("Select") + '</label>\
                                         <input class="gameQE-TypeSelect"  id="trivialTypeOrders" type="radio" name="tvltypeselect" value="1"/>\
                                         <label for="trivialTypeOrders">' + _("Order") + '</label>\
                                         <input class="gameQE-TypeSelect"  id="trivialTypeWord" type="radio" name="tvltypeselect" value="2"/>\
                                         <label for="trivialTypeWord">' + _("Word") + '</label>\
+                                        <input class="gameQE-TypeSelect"  id="trivialTypeOpen" type="radio" name="tvltypeselect" value="3"/>\
+                                        <label for="trivialTypeOpen">' + _("Abierta") + '</label>\
                                     </div>\
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="gameQE-EInputMedias">\
@@ -1204,15 +1227,29 @@ var $exeDevice = {
 
         }
     },
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
 
-
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
     updateFieldGame: function (game) {
         $exeDevice.activeTema = 0;
         $exeDevice.activesQuestions = [0, 0, 0, 0, 0, 0];
         $exeDevice.temas = game.temas;
         $exeDevice.nombresTemas = game.nombresTemas;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
         $exeDevice.trivialID = typeof game.trivialID == "undefined" ? $exeDevice.trivialID : game.trivialID;
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#eXeGamePercentajeClue option[value=100]').attr('selected', 'selected');
         $('#eXeGamePercentajeClue').val(100);
         game.answersRamdon = game.answersRamdon || false;
@@ -1225,6 +1262,10 @@ var $exeDevice = {
         $('#trivialNumberTema').val(1);
         $('#trivialLoadGame').val('');
         $('#trivialNameTema').val(game.nombresTemas[0]);
+        $('#trivialEEvaluation').prop('checked', game.evaluation);
+        $('#trivialEEvaluationID').val(game.evaluationID);
+        $("#trivialEEvaluationID").prop('disabled', (!game.evaluation));
+
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.showQuestion($exeDevice.activesQuestions[$exeDevice.activeTema]);
 
@@ -1333,7 +1374,10 @@ var $exeDevice = {
             'msgs': game.msgs,
             'trivialID': game.trivialID,
             "version": game.version,
-            "modeBoard": game.modeBoard
+            "modeBoard": game.modeBoard,
+            "evaluation": game.evaluation,
+            "evaluationID": game.evaluationID,
+            "id": game.id
         }
         return JSON.stringify(data);
     },
@@ -1382,7 +1426,11 @@ var $exeDevice = {
             'msgs': game.msgs,
             'trivialID': game.trivialID,
             'version': game.version,
-            "modeBoard": game.modeBoard
+            "modeBoard": game.modeBoard,
+
+            "evaluation": game.evaluation,
+            "evaluationID": game.evaluationID,
+            "id": game.id
         }
 
         return data;
@@ -1410,7 +1458,7 @@ var $exeDevice = {
         });
         if (quextion.length > 0) {
             return false;
-        } else if (typeSelect != 2 && !optionEmpy) {
+        } else if (typeSelect < 2 && !optionEmpy) {
             return false
         }
         return true;
@@ -1467,7 +1515,7 @@ var $exeDevice = {
             p.options.push(option);
         });
         p.solutionQuestion = "";
-        if (p.typeSelect == 2) {
+        if (p.typeSelect >= 2) {
             p.quextion = $('#trivialEDefinitionWord').val().trim();
             p.solution = "";
             p.solutionQuestion = $('#trivialESolutionWord').val();
@@ -1476,7 +1524,7 @@ var $exeDevice = {
             message = msgs.msgTypeChoose;
         } else if (p.quextion.length == 0) {
             message = msgs.msgECompleteQuestion;
-        } else if (p.typeSelect != 2 && optionEmpy) {
+        } else if (p.typeSelect < 2 && optionEmpy) {
             message = msgs.msgECompleteAllOptions
         } else if (p.type == 1 && p.url.length < 5) {
             message = msgs.msgEURLValid;
@@ -1496,9 +1544,9 @@ var $exeDevice = {
             message = msgs.msgSilentPoint;
         } else if (p.typeSelect == 2 && p.solutionQuestion.trim().length == 0) {
             message = $exeDevice.msgs.msgProvideSolution;
-        } else if (p.typeSelect == 2 && p.solutionQuestion.trim().length == 0) {
-            message = $exeDevice.msgs.msgEDefintion;
-        } else if (p.typeSelect == 2 && p.quextion.trim().length == 0) {
+        } else if (p.typeSelect == 3 && p.solutionQuestion.trim().length == 0) {
+            p.solutionQuestion='open'
+        } else if (p.typeSelect >= 2 && p.quextion.trim().length == 0) {
             message = $exeDevice.msgs.msgEProvideWord;
         }
         if (message.length == 0) {
@@ -1674,6 +1722,7 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
         } else if (game.typeGame == 'Trivial') {
             game.trivialID = $exeDevice.getId();
+            game.id = $exeDevice.generarID();
             var temas = [];
             for (var i = 0; i < 6; i++) {
                 var tema = [];
@@ -1707,8 +1756,7 @@ var $exeDevice = {
             $exeDevice.temas = temas;
             game.temas = $exeDevice.temas;
             $exeDevice.numeroTemas = game.numeroTemas;
-            $exeDevice.nombresTemas = game.nombresTemas
-
+            $exeDevice.nombresTemas = game.nombresTemas;
             $exeDevice.updateFieldGame(game);
             $exeDevice.changeNumberTemas(game.numeroTemas);
             var instructions = game.instructionsExe || game.instructions;
@@ -1852,10 +1900,17 @@ var $exeDevice = {
             startVideo = 0,
             itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
             customScore = false,
-            temas = [];
+            temas = [],
+            evaluation=$('#trivialEEvaluation').is(':checked'),
+            evaluationID=$('#trivialEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
         if (!itinerary) return false;
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
+            return false;
+        }
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
             return false;
         }
         for (var z = 0; z < numeroTemas; z++) {
@@ -1877,7 +1932,7 @@ var $exeDevice = {
                     $exeDevice.showMessage($exeDevice.msgs.msgCmpleteAllQuestions);
                     return false;
                 }
-                if (mquestion.typeSelect == 2) {
+                if (mquestion.typeSelect >= 2) {
                     if (mquestion.solutionQuestion.length == 0) {
                         $exeDevice.showMessage($exeDevice.msgs.msgCmpleteAllQuestions);
                         return false;
@@ -1945,7 +2000,11 @@ var $exeDevice = {
             'textAfter': textAfter,
             'trivialID': $exeDevice.trivialID,
             'version': 2,
-            'modeBoard': modeBoard
+            'modeBoard': modeBoard,
+            'evaluation':evaluation,
+            'evaluationID':evaluationID,
+            'id': id
+            
         }
         return data;
     },
@@ -1955,7 +2014,7 @@ var $exeDevice = {
         return wrapper.text();
     },
     showTypeQuestion: function (type) {
-        if (type == 2) {
+        if (type >= 2) {
             $('#trivialEAnswers').hide();
             $('#trivialEQuestionDiv').hide();
             $('#gameQEIdeviceForm .gameQE-ESolutionSelect').hide();
@@ -1963,8 +2022,18 @@ var $exeDevice = {
             $('#trivialEInputNumbers').hide();
             $('#trivialPercentageSpan').show();
             $('#trivialPercentage').show();
+            $('#trivialESolutionWord').show();
             $('#trivialEWordDiv').show();
+            $('label[for=trivialEDefinitionWord]').text(_('Definition'));
+            $('label[for=trivialESolutionWord]').show();
             $('#trivialESolitionOptions').hide();
+            $('label[for=trivialEDefinitionWord]').css({'width':'11em'})
+            if( type == 3){
+                $('label[for=trivialEDefinitionWord]').text(_('Question'));
+                $('label[for=trivialESolutionWord]').hide();
+                $('label[for=trivialEDefinitionWord]').css({'width':'auto'})
+                $('#trivialESolutionWord').hide();
+            }
         } else {
             $('#trivialEAnswers').show();
             $('#trivialEQuestionDiv').show();
@@ -2132,7 +2201,6 @@ var $exeDevice = {
                 };
                 reader.readAsText(file);
             });
-
             $('#trivialLoadGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
@@ -2207,6 +2275,7 @@ var $exeDevice = {
             var marcado = $(this).is(':checked');
             $('#trivialETimeShowSolution').prop('disabled', !marcado);
         });
+
 
         $('.gameQE-ESolution').on('change', function (e) {
             var marcado = $(this).is(':checked'),
@@ -2287,10 +2356,32 @@ var $exeDevice = {
 
             }
         });
+        $('#trivialEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#trivialEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#trivialEEvaluationHelpLnk").click(function () {
+            $("#trivialEEvaluationHelp").toggle();
+            return false;
+
+        });
+
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
-
+    showModeOpen: function(open){
+        $('#trivialTypeChoose').show();
+        $('#trivialTypeOrders').show();
+        $('label[for=trivialTypeChoose]').show();
+        $('label[for=trivialTypeOrders]').show();
+        if( open){
+            $('#trivialTypeWord').prop('checked', open);
+            $('#trivialTypeChoose').hide()
+            $('#trivialTypeOrders').hide()
+            $('label[for=trivialTypeChoose]').hide();
+            $('label[for=trivialTypeOrders]').hide();
+        }
+    },
     gameAdd: function (content) {
         var game = $exeDevice.isJsonString(content);
         if (!game || typeof game.typeGame == "undefined") {

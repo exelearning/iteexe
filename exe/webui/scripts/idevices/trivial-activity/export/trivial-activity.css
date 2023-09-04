@@ -1161,6 +1161,24 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 	-webkit-transform: scale(1.1);
 	transform: scale(1.1);
 }
+
+.trivial-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.trivial-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.trivial-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
 @-moz-keyframes trivial-parpadeo {
 	0% {
 		font-size: 1.0;
