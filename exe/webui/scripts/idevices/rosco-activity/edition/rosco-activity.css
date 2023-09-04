@@ -249,3 +249,15 @@ label[for=roscoActivitySCORM]{font-weight:bold}
 #roscoSCORMinstructionsAuto{display:none;color:#777;margin:10px 0 0 25px}
 #roscoSCORMinstructionsAuto ul{margin:1.5em 0 .7em 0;padding:0;list-style:none}
 #roscoSCORMinstructionsAuto ul li{margin:0 0 .5em 0;padding:0;list-style-image:none}
+.roscoTypeGameHelp{
+	display:none;
+	margin-bottom:2em;
+	font-size:.95em
+}
+.GameModeHelpLink{
+	margin:0 2px;
+	vertical-align:middle;
+}
+.GameModeLabel{
+	font-weight:normal
+}

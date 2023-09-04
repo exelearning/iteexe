@@ -12,6 +12,7 @@ var $exeDevice = {
 	iDevicePath: "/scripts/idevices/rosco-activity/edition/",
 	msgs: {},
 	roscoVersion: 2,
+	id: false,
 	ci18n: {
 		"msgReady": _("Ready?"),
 		"msgStartGame": _("Click here to start"),
@@ -70,7 +71,11 @@ var $exeDevice = {
 		"msgAudio": _("Audio"),
 		"msgCorrect": _("Correct"),
 		"msgIncorrect": _("Incorrect"),
-		"msgWhiteBoard": _("Digital blackboard")
+		"msgWhiteBoard": _("Digital blackboard"),
+		"msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+		"msgTypeGame": _("A-Z Quiz Game"),
 	},
 	colors: {
 		black: "#1c1b1b",
@@ -100,6 +105,7 @@ var $exeDevice = {
 		msgs.msgOneWord = _("Please provide at least one word");
 		msgs.msgProvideTimeSolution = _("You must provide the time to view the solution");
 		msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+		msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
 
 	},
 	createForm: function () {
@@ -137,6 +143,15 @@ var $exeDevice = {
 							<p>\
 								<label for="roscoModeBoard"><input type="checkbox" id="roscoModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
 							</p>\
+							<p>\
+                                <strong class="GameModeLabel"><a href="#roscoEEvaluationHelp" id="roscoEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="roscoEEvaluation"><input type="checkbox" id="roscoEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="roscoEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="roscoEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="roscoEEvaluationHelp" class="roscoTypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
 						</div>\
 					</fieldset>\
 					<fieldset class="exe-fieldset">\
@@ -169,8 +184,26 @@ var $exeDevice = {
 		}
 		return dataGame.letters;
 	},
+	generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
 	updateFieldGame: function (dataGame) {
 		$exeDevice.letters = $exeDevice.getLetters(dataGame);
+		dataGame.evaluation = typeof dataGame.evaluation != "undefined" ? dataGame.evaluation : false;
+        dataGame.evaluationID = typeof dataGame.evaluationID != "undefined" ? dataGame.evaluationID : '';
+        $exeDevice.id = typeof dataGame.id != "undefined" ? dataGame.id : false;
+
 		$('#roscoDataWord').append($exeDevice.getWords().join(''));
 		$('#roscoDuration').val(dataGame.durationGame)
 		$('#roscoNumberTurns').val(dataGame.numberTurns);
@@ -179,6 +212,9 @@ var $exeDevice = {
 		$('#roscoTimeShowSolution').val(dataGame.timeShowSolution);
 		$('#roscoModeBoard').prop("checked", dataGame.modeBoard);
 		$('#roscoTimeShowSolution').prop('disabled', !dataGame.showSolution);
+		$('#roscoEEvaluation').prop('checked', dataGame.evaluation);
+        $('#roscoEEvaluationID').val(dataGame.evaluationID);
+        $("#roscoEEvaluationID").prop('disabled', (!dataGame.evaluation));
 		for (var i = 0; i < dataGame.wordsGame[i].length; i++) {
 			dataGame.wordsGame[i].audio = typeof dataGame.wordsGame[i].audio == "undefined" ? '' : dataGame.wordsGame[i].audio;
 		}
@@ -609,7 +645,10 @@ var $exeDevice = {
 			numberTurns = parseInt(clear($('#roscoNumberTurns').val())),
 			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
 			caseSensitive = $('#roscoCaseSensitive').is(':checked'),
-			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues();
+			itinerary = $exeAuthoring.iDevice.gamification.itinerary.getValues(),
+			evaluation=$('#roscoEEvaluation').is(':checked'),
+            evaluationID=$('#roscoEEvaluationID').val(),
+			id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
 		if (!itinerary) return false;
 		if (showSolution && timeShowSolution.length == 0) {
 			eXe.app.alert(msgs.msgProvideTimeSolution);
@@ -626,6 +665,10 @@ var $exeDevice = {
 			eXe.app.alert(msgs.msgOneWord);
 			return false;
 		}
+		if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
+            return false;
+        }
 		var definitions = [];
 		$('.roscoDefinitionEdition').each(function () {
 			var definition = clear($(this).val());
@@ -736,7 +779,10 @@ var $exeDevice = {
 			'textAfter': escape(textAfter),
 			'caseSensitive': caseSensitive,
 			'version': 2,
-			'modeBoard':modeBoard
+			'modeBoard':modeBoard,
+			'evaluation':evaluation,
+            'evaluationID':evaluationID,
+			'id': id
 
 		}
 		return data;
@@ -774,6 +820,7 @@ var $exeDevice = {
 			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
 		}
+		game.id = $exeDevice.generarID();
 		$exeDevice.updateFieldGame(game);
 		tinymce.editors[0].setContent(game.instructions);
 		var tAfter = game.textAfter || '';
@@ -940,6 +987,15 @@ var $exeDevice = {
 		} else {
 			$('#eXeGameExportImport').hide();
 		}
+		$('#roscoEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#roscoEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#roscoEEvaluationHelpLnk").click(function () {
+            $("#roscoEEvaluationHelp").toggle();
+            return false;
+
+        });
 		$exeAuthoring.iDevice.gamification.itinerary.addEvents();
 	},
 	playSound: function (selectedFile) {

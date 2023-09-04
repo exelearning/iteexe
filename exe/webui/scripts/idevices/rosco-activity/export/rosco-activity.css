@@ -700,7 +700,23 @@ a.rosco-ModeBoardShow {
     -webkit-animation-iteration-count: 5;
 }
 
+.rosco-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
 
+}
+.rosco-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.rosco-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
 
 @-moz-keyframes rosco-parpadeo {
     0% {

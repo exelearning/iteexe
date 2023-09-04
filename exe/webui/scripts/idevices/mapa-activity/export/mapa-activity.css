@@ -1422,6 +1422,24 @@ div:fullscreen .MQP-LinkCloseDetail{
 	z-index: 10;
 }
 
+.MPQ-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.MPQ-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.MPQ-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
+
 @-moz-keyframes MQP-parpadeo {
 	0% {
 		opacity: 1.0;

@@ -130,6 +130,115 @@ var $eXeQuExt = {
         $('#quextRepeatActivity-' + instance).text(text);
         $('#quextRepeatActivity-' + instance).fadeIn(1000);
     },
+
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeQuExt.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#quextGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                score = ((10 * mOptions.scoreGame) / mOptions.scoreTotal),
+                currentDate = new Date(),
+                formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+                (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+                currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+                currentDate.getHours().toString().padStart(2, '0') + ':' +
+                currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+                currentDate.getSeconds().toString().padStart(2, '0');
+            var scorm = {
+                'id': mOptions.id,
+                'type': mOptions.msgs.msgTypeGame,
+                'node': node,
+                'name': name,
+                'date': formattedDate,
+                'score': score.toFixed(2),
+                'state': (parseFloat(score) >= 5 ? 2 : 1)
+            }
+            var data = $eXeQuExt.getDataStorage(mOptions.evaluationID);
+            data = $eXeQuExt.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeQuExt.showEvaluationIcon(instance, scorm.state, scorm.score)
+
+        }
+    },
+
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeQuExt.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeQuExt.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeQuExt.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeQuExt.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#quextMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+        }
+    },
+
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeQuExt.options[instance];
+        var $header = $('#quextGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#quextEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="quextEvaluationIcon-' + instance + '" class="gameQP-EvaluationDivIcon"><img  src="' + $eXeQuExt.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#quextEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeQuExt.isJsonString(localStorage.getItem(id));
+        return data;
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
     sendScore: function (auto, instance) {
         var mOptions = $eXeQuExt.options[instance],
             message = '',
@@ -231,7 +340,7 @@ var $eXeQuExt = {
         var html = '',
             path = $eXeQuExt.idevicePath,
             msgs = $eXeQuExt.options[instance].msgs;
-        html += '<div class="gameQP-MainContainer">\
+        html += '<div class="gameQP-MainContainer"  id="quextMainContainer-' + instance + '">\
         <div class="gameQP-GameMinimize" id="quextGameMinimize-' + instance + '">\
             <a href="#" class="gameQP-LinkMaximize" id="quextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'quextIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="">\
                 <div class="gameQP-MessageMaximize" id="quextMessageMaximize-' + instance + '"></div></a>\
@@ -447,6 +556,9 @@ var $eXeQuExt = {
         mOptions.customMessages = typeof mOptions.customMessages != 'undefined' ? mOptions.customMessages : false;
         mOptions.useLives = mOptions.gameMode != 0 ? false : mOptions.useLives;
         mOptions.gameOver = false;
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.questionsGame.length) {
@@ -711,8 +823,8 @@ var $eXeQuExt = {
     startVideoIntro: function (id, start, end, instance, type) {
         var mOptions = $eXeQuExt.options[instance],
             mstart = start < 1 ? 0.1 : start;
-            $('#quextVideoIntro-' + instance).hide();
-            $('#quextVideoIntroLocal-' + instance).hide();
+        $('#quextVideoIntro-' + instance).hide();
+        $('#quextVideoIntroLocal-' + instance).hide();
 
         if (type == 1) {
             if (mOptions.localPlayerIntro) {
@@ -727,7 +839,7 @@ var $eXeQuExt = {
             mOptions.timeUpdateIntervalIntro = setInterval(function () {
                 $eXeQuExt.updateTimerDisplayLocalIntro(instance);
             }, 1000);
-         
+
             $('#quextVideoIntroLocal-' + instance).show();
             return
         }
@@ -846,6 +958,7 @@ var $eXeQuExt = {
         $('#quextSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeQuExt.sendScore(false, instance);
+            $eXeQuExt.saveEvaluation(instance);
             return true;
         });
         $('#quextGamerOver-' + instance).hide();
@@ -962,7 +1075,7 @@ var $eXeQuExt = {
             $('#quextGameContainer-' + instance).find('.exeQuextIcons-Score').hide();
             $('#quextPScore-' + instance).hide();
         }
-
+        $eXeQuExt.updateEvaluationIcon(instance)
     },
     playVideoIntro: function (instance) {
         $('#quextVideoIntroDiv-' + instance).show();
@@ -1016,6 +1129,7 @@ var $eXeQuExt = {
                 });
             $('#quextImagen-' + instance).attr('alt', mQuextion.alt);
         }
+
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
@@ -1207,6 +1321,7 @@ var $eXeQuExt = {
                 $eXeQuExt.initialScore = score;
             }
         }
+        $eXeQuExt.saveEvaluation(instance);
         clearInterval(mOptions.timeUpdateInterval);
         clearInterval(mOptions.timeUpdateIntervalIntro);
         $eXeQuExt.showFeedBack(instance);
@@ -1256,6 +1371,7 @@ var $eXeQuExt = {
 
             }
         }
+        $eXeQuExt.saveEvaluation(instance);
         mOptions.activeSilent = (q.type == 2) && (q.soundVideo == 1) && (q.tSilentVideo > 0) && (q.silentVideo >= q.iVideo) && (q.iVideo < q.fVideo);
         var endSonido = parseInt(q.silentVideo) + parseInt(q.tSilentVideo);
         mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;

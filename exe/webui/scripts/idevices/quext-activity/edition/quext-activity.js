@@ -35,6 +35,7 @@ var $exeDevice = {
     isVideoIntro: 0,
     localPlayer: null,
     localPlayerIntro: null,
+    id: false,
     ci18n: {
         "msgStartGame": _("Click here to start"),
         "msgSubmit": _("Submit"),
@@ -82,7 +83,11 @@ var $exeDevice = {
         "msgLoading": _("Loading. Please wait..."),
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
-        "msgEndGameScore": _("Please start playing first...")
+        "msgEndGameScore": _("Please start playing first..."),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('QuExt')
     },
 
     init: function () {
@@ -870,6 +875,15 @@ var $exeDevice = {
                                 <label for="quextEPercentajeQuestions">% ' + _("Questions") + ':  <input type="number" name="quextEPercentajeQuestions" id="quextEPercentajeQuestions" value="100" min="1" max="100" /> </label>\
                                 <span id="quextENumeroPercentaje">1/1</span>\
                              </p>\
+                             <p>\
+                                <strong class="GameModeLabel"><a href="#quextEEvaluationHelp" id="quextEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="quextEEvaluation"><input type="checkbox" id="quextEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="quextEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="quextEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="quextEEvaluationHelp" class="gameQE-TypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -1257,8 +1271,21 @@ var $exeDevice = {
         }
     },
 
-    updateFieldGame: function (game) {
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
 
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
+    updateFieldGame: function (game) {
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.answersRamdon = game.answersRamdon || false;
         game.percentajeFB = typeof game.percentajeFB != "undefined" ? game.percentajeFB : 100;
@@ -1266,6 +1293,9 @@ var $exeDevice = {
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#quextEShowMinimize').prop('checked', game.showMinimize);
         $('#quextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#quextEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -1286,6 +1316,9 @@ var $exeDevice = {
         $("#quextENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
         $('#quextECustomMessages').prop('checked', game.customMessages);
         $('#quextEPercentajeQuestions').val(game.percentajeQuestions);
+        $('#quextEEvaluation').prop('checked', game.evaluation);
+        $('#quextEEvaluationID').val(game.evaluationID);
+        $("#quextEEvaluationID").prop('disabled', (!game.evaluation));
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
         for (var i = 0; i < game.questionsGame.length; i++) {
@@ -1584,6 +1617,7 @@ var $exeDevice = {
         }
         $exeDevice.active = 0;
         $exeDevice.questionsGame = game.questionsGame;
+        game.id = $exeDevice.generarID();
         for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
             if (game.questionsGame[i].type == 3) {
                 game.questionsGame[i].eText = unescape(game.questionsGame[i].eText);
@@ -1643,7 +1677,10 @@ var $exeDevice = {
             percentajeFB = parseInt(clear($('#quextEPercentajeFB').val())),
             gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
             customMessages = $('#quextECustomMessages').is(':checked'),
-            percentajeQuestions = parseInt(clear($('#quextEPercentajeQuestions').val()));
+            percentajeQuestions = parseInt(clear($('#quextEPercentajeQuestions').val())),
+            evaluation=$('#quextEEvaluation').is(':checked'),
+            evaluationID=$('#quextEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
         if (!itinerary) return false;
 
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
@@ -1652,6 +1689,10 @@ var $exeDevice = {
         }
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
+            return false;
+        }
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
             return false;
         }
         var questionsGame = $exeDevice.questionsGame;
@@ -1727,7 +1768,10 @@ var $exeDevice = {
             'percentajeFB': percentajeFB,
             'version': 2,
             'customMessages': customMessages,
-            'percentajeQuestions': percentajeQuestions
+            'percentajeQuestions': percentajeQuestions,
+            'evaluation':evaluation,
+            'evaluationID':evaluationID,
+            'id': id
         }
         return data;
     },
@@ -2124,6 +2168,16 @@ var $exeDevice = {
 
             }
         });
+        $('#quextEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#quextEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#quextEEvaluationHelpLnk").click(function () {
+            $("#quextEEvaluationHelp").toggle();
+            return false;
+
+        });
+
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },

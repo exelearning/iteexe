@@ -191,6 +191,10 @@ var $eXeRosco = {
 		mOptions.playerAudio = "";
 		mOptions.gameOver = false;
 		mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
+		mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+		mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
+
 		imgsLink.each(function (index) {
 			mOptions.wordsGame[index].url = $(this).attr('href');
 			if (mOptions.wordsGame[index].url.length < 4) {
@@ -295,6 +299,11 @@ var $eXeRosco = {
 							</a>\
 						</div>\
 					</div>\
+					<div class="rosco-DivModeBoard" id="roscoDivModeBoard-' + instance + '">\
+						<a href="#" class="rosco-ModeBoard" id="roscoModeBoardOK-' + instance + '" title="">' + msgs.msgCorrect + '</a>\
+						<a href="#" class="rosco-ModeBoard" id="roscoModeBoardMoveOn-' + instance + '" title="">' + msgs.msgMoveOne + '</a>\
+						<a href="#" class="rosco-ModeBoard" id="roscoModeBoardKO-' + instance + '" title="">' + msgs.msgIncorrect + '</a>\
+					</div>\
 					<div class="rosco-DivInstructions" id="roscoDivInstructions-' + instance + '">' + msgs.msgWrote + '</div>\
 				</div>\
 				<div id="roscoGame-' + instance + '"class="rosco-Game">\
@@ -315,11 +324,6 @@ var $eXeRosco = {
 					</div>\
                 </div>\
             </div>\
-			</div>\
-			<div class="rosco-DivModeBoard" id="roscoDivModeBoard-' + instance + '">\
-				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardOK-' + instance + '" title="">' + msgs.msgCorrect + '</a>\
-				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardMoveOn-' + instance + '" title="">' + msgs.msgMoveOne + '</a>\
-				<a href="#" class="rosco-ModeBoard" id="roscoModeBoardKO-' + instance + '" title="">' + msgs.msgIncorrect + '</a>\
 			</div>\
 			' + this.addButtonScore(instance) +
 			'</div>';
@@ -367,6 +371,121 @@ var $eXeRosco = {
 		}
 		return butonScore;
 	},
+	updateEvaluationIcon: function (instance) {
+		var mOptions = $eXeRosco.options[instance];
+		if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+			var node = $('#nodeTitle').text(),
+				data = $eXeRosco.getDataStorage(mOptions.evaluationID)
+			var score = '',
+				state = 0;
+			if (!data) {
+				$eXeRosco.showEvaluationIcon(instance, state, score);
+				return;
+			}
+			const findObject = data.activities.find(
+				obj => obj.id == mOptions.id && obj.node === node
+			);
+			if (findObject) {
+				state = findObject.state;
+				score = findObject.score;
+			}
+			$eXeRosco.showEvaluationIcon(instance, state, score);
+			var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#roscoMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+		}
+	},
+	showEvaluationIcon: function (instance, state, score) {
+		var mOptions = $eXeRosco.options[instance];
+		var $header = $('#roscoGameContainer-' + instance).parents('article').find('header.iDevice_header');
+		var icon = 'exequextsq.png',
+			alt = mOptions.msgs.msgUncompletedActivity;
+		if (state == 1) {
+			icon = 'exequextrerrors.png';
+			alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+		} else if (state == 2) {
+			icon = 'exequexthits.png';
+			alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+		}
+		$('#roscoEvaluationIcon-' + instance).remove();
+		var sicon = '<div id="roscoEvaluationIcon-' + instance + '" class="rosco-EvaluationDivIcon"><img  src="' + $eXeRosco.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+		$header.eq(0).append(sicon);
+		$('#roscoEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+	},
+	updateEvaluation: function (obj1, obj2, id1) {
+		if (!obj1) {
+			obj1 = {
+				id: id1,
+				activities: []
+			};
+		}
+		const findObject = obj1.activities.find(
+			obj => obj.id === obj2.id && obj.node === obj2.node
+		);
+
+		if (findObject) {
+			findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+		} else {
+			obj1.activities.push({
+				'id': obj2.id,
+				'type': obj2.type,
+				'node': obj2.node,
+				'name': obj2.name,
+				'score': obj2.score,
+				'date': obj2.date,
+				'state': obj2.state,
+			});
+		}
+		return obj1;
+	},
+	getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+    
+	saveEvaluation: function (instance) {
+		var mOptions = $eXeRosco.options[instance];
+		if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+			var name = $('#roscoGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+				node = $('#nodeTitle').text(),
+				score = ((mOptions.hits * 10) / mOptions.validWords).toFixed(2),
+				formattedDate = $eXeRosco.getDateString(),
+				scorm = {
+					'id': mOptions.id,
+					'type': mOptions.msgs.msgTypeGame,
+					'node': node,
+					'name': name,
+					'score': score,
+					'date': formattedDate,
+					'state': (parseFloat(score) >= 5 ? 2 : 1)
+				}
+			var data = $eXeRosco.getDataStorage(mOptions.evaluationID);
+			data = $eXeRosco.updateEvaluation(data, scorm);
+			data = JSON.stringify(data, mOptions.evaluationID);
+			localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+			$eXeRosco.showEvaluationIcon(instance, scorm.state, scorm.score)
+		}
+
+
+	},
+	getDataStorage: function (id) {
+		var id = 'dataEvaluation-' + id,
+			data = $eXeRosco.isJsonString(localStorage.getItem(id));
+		return data;
+	},
+
 	sendScore: function (instance, auto) {
 		var mOptions = $eXeRosco.options[instance],
 			message = '',
@@ -539,6 +658,7 @@ var $eXeRosco = {
 		$("#roscoSendScore-" + instance).click(function (e) {
 			e.preventDefault();
 			$eXeRosco.sendScore(instance, false);
+			$eXeRosco.saveEvaluation(instance);
 		});
 		if (mOptions.isScorm > 0) {
 			$eXeRosco.updateScorm($eXeRosco.previousScore, mOptions.repeatActivity, instance);
@@ -597,8 +717,7 @@ var $eXeRosco = {
 			e.preventDefault();
 			$eXeRosco.passWord(instance);
 		});
-
-
+		$eXeRosco.updateEvaluationIcon(instance);
 	},
 
 	startGame: function (instance) {
@@ -722,6 +841,7 @@ var $eXeRosco = {
 				$eXeRosco.initialScore = score;
 			}
 		}
+		$eXeRosco.saveEvaluation(instance);
 		$('#roscoPMessages-' + instance).text(msg).css("color", $eXeRosco.colors.blackl);
 		$eXeRosco.stopSound(instance);
 		$('#roscoLinkAudio-' + instance).hide();
@@ -752,12 +872,20 @@ var $eXeRosco = {
 		ctxt.closePath();
 		$('#roscoPMessages-' + instance).css("color", color).text(texto);
 	},
-
+	getRandomDefinition:function(definition) {
+		var array = definition.split('|');
+		if (array.length > 1) {
+			var index = Math.floor(Math.random() * array.length);
+			return array[index].trim();
+		} else {
+			return definition;
+		}
+	},
 	showWord: function (activeLetter, instance) {
 		var mOptions = $eXeRosco.options[instance],
 			msgs = mOptions.msgs,
 			mWord = mOptions.wordsGame[activeLetter],
-			definition = mWord.definition,
+			definition = $eXeRosco.getRandomDefinition(mWord.definition),
 			letter = $eXeRosco.getRealLetter(mOptions.letters.charAt(activeLetter)),
 			start = mWord.type == 0 ? msgs.msgStartWith : msgs.msgContaint;
 		start = start.replace('%1', letter);
@@ -781,6 +909,7 @@ var $eXeRosco = {
 
 			}
 		}
+		$eXeRosco.saveEvaluation(instance);
 		if (mWord.audio.length > 4) {
 			$('#roscoLinkAudio-' + instance).show();
 		}

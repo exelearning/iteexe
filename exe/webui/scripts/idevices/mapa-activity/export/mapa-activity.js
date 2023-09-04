@@ -343,6 +343,9 @@ var $eXeMapa = {
         mOptions.playerAudio = "";
         mOptions.loadingURL = false;
         mOptions.topBBTop = false;
+        mOptions.evaluationF = typeof mOptions.evaluationF == "undefined" ? false : mOptions.evaluationF;
+        mOptions.evaluationIDF = typeof mOptions.evaluationIDF == "undefined" ? '' : mOptions.evaluationIDF;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         mOptions.autoShow = typeof mOptions.autoShow == "undefinide" ? false : mOptions.autoShow;
         return mOptions;
     },
@@ -765,10 +768,130 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeMapa.saveEvaluation(instance);
     },
     shuffleAds: function (arr) {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
+    },
+
+
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeMapa.options[instance],
+        numq = mOptions.numberQuestions,
+        score = 0;
+        if (mOptions.evaluation == 0) {
+            score = $eXeMapa.getScoreVisited(instance);
+        } else if (mOptions.evaluation > 0) {
+            score = ((mOptions.hits * 10) / numq).toFixed(2);
+        }
+        if (mOptions.id && mOptions.evaluationF && mOptions.evaluationIDF.length > 0) {
+            var name = $('#mapaGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text();
+                var formattedDate =  $eXeMapa.getDateString();
+                var scorm = {
+                    'id': mOptions.id,
+                    'type': mOptions.msgs.msgTypeGame,
+                    'node': node,
+                    'name': name,
+                    'score': score,
+                    'date': formattedDate,
+                    'state': (parseFloat(score) >= 5 ? 2 : 1)
+                }
+            var data = $eXeMapa.getDataStorage(mOptions.evaluationIDF);
+            data = $eXeMapa.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationIDF);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationIDF, data);
+            $eXeMapa.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+    },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeMapa.options[instance];
+        if (mOptions.id && mOptions.evaluationF && mOptions.evaluationIDF.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeMapa.getDataStorage(mOptions.evaluationIDF)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeMapa.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeMapa.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#mapaMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeMapa.options[instance];
+        var $header = $('#mapaGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#mapaEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="mapaEvaluationIcon-' + instance + '" class="MPQ-EvaluationDivIcon"><img  src="' + $eXeMapa.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#mapaEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeMapa.isJsonString(localStorage.getItem(id));
+        return data;
     },
     sendScore: function (auto, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -1572,6 +1695,7 @@ var $eXeMapa = {
         $('#mapaSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeMapa.sendScore(false, instance);
+            $eXeMapa.saveEvaluation(instance);
             return true;
         });
         $('#mapaMultimedia-' + instance).on('click', '.MQP-Point, .MQP-Area ', function (e) {
@@ -1685,6 +1809,7 @@ var $eXeMapa = {
         if (hasLatex) {
             $eXeMapa.hasLATEX = true;
         }
+        $eXeMapa.updateEvaluationIcon(instance)
     },
     showSlide: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -1762,6 +1887,7 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeMapa.saveEvaluation(instance);
         $eXeMapa.messageAllVisited(instance);
     },
     showPointImage: function (num, instance) {
@@ -2154,6 +2280,7 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeMapa.saveEvaluation(instance);
         setTimeout(function () {
             $eXeMapa.newQuestion(instance, correct, false);
         }, timeShowSolution);
@@ -2298,9 +2425,9 @@ var $eXeMapa = {
                 var score = ((mOptions.hits * 10) / numq).toFixed(2);
                 $eXeMapa.sendScore(true, instance);
                 $eXeMapa.initialScore = score;
-                
             }
         }
+        $eXeMapa.saveEvaluation(instance);
         $eXeMapa.hideCover(instance);
         $('#mapaFMessageOver-' + instance).show();
         setTimeout(function () {
@@ -2489,6 +2616,7 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeMapa.saveEvaluation(instance);
     },
     answerFind: function (num, id, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2564,6 +2692,7 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeMapa.saveEvaluation(instance);
     },
     updateScoreFind: function (correctAnswer, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2666,6 +2795,7 @@ var $eXeMapa = {
                 $('#mapaRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeMapa.saveEvaluation(instance);
         var html = $('#mapaFDetails-' + instance).html(),
             latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {

@@ -52,6 +52,7 @@ var $exeDevice = {
     activeSlide: 0,
     parentMap: {},
     localPlayer: '',
+    id:false,
     ci18n: {
         "msgSubmit": _("Submit"),
         "msgIndicateWord": _("Provide a word or phrase"),
@@ -112,8 +113,11 @@ var $exeDevice = {
         "msgSelectSubtitles": _("Select a subtitle file. Supported formats:"),
         "msgNumQuestions": _("Number of questions"),
         "msgHome": _("Home"),
-        "msgReturn": _("Return")
-        
+        "msgReturn": _("Return"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('Map')
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%");
@@ -157,6 +161,7 @@ var $exeDevice = {
         msgs.msgCloseSlide = _("You must close the edited presentation before saving the activity.");
         msgs.msgEOneSlide = _("There must be at least one slide in the presentation.");
         msgs.msgWriteLink = _("Please type or paste a valid URL.");
+        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');;
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -208,6 +213,15 @@ var $exeDevice = {
                         <p id="mapaEAutoShowDiv">\
                             <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Show when the mouse is over the icon or active area") + '. </label>\
                         </p>\
+                        <p>\
+                            <strong class="GameModeLabel"><a href="#mapaEEvaluationHelp" id="mapaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+							<label for="mapaEEvaluation"><input type="checkbox" id="mapaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+							<label for="mapaEEvaluationID">' + _("Identificador") + ':\
+							<input type="text" id="mapaEEvaluationID" disabled/> </label>\
+                        </p>\
+                        <div id="mapaEEvaluationHelp" class="MQE-TypeGameHelp">\
+                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                        </div>\
                     </div>\
                 </fieldset>\
                 <fieldset class="exe-fieldset MQE-FieldPanel">\
@@ -1539,13 +1553,21 @@ var $exeDevice = {
             percentajeQuestions = parseInt(clear($('#mapaPercentajeQuestions').val())),
             autoShow = $('#mapaEAutoShow').is(':checked') || false,
             points = $exeDevice.activeMap.pts,
-            optionsNumber = parseInt(clear($('#mapaNumOptions').val()));
+            optionsNumber = parseInt(clear($('#mapaNumOptions').val())),
+            evaluationF = $('#mapaEEvaluation').is(':checked'),
+            evaluationIDF = $('#mapaEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
+
         if (points.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEOnePoint);
             return false;
         }
         if (url.length < 4) {
             $exeDevice.showMessage($exeDevice.msgs.msgEURLValid);
+            return false;
+        }
+        if (evaluationF && evaluationIDF.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
             return false;
         }
         for (var i = 0; i < points.length; i++) {
@@ -1624,7 +1646,10 @@ var $exeDevice = {
             'percentajeShowQ': percentajeShowQ,
             'percentajeQuestions': percentajeQuestions,
             'autoShow': autoShow,
-            'optionsNumber': optionsNumber
+            'optionsNumber': optionsNumber,
+            'evaluationF':evaluationF,
+            'evaluationIDF':evaluationIDF,
+            'id': id
         }
         return data;
     },
@@ -2413,6 +2438,15 @@ var $exeDevice = {
         $('#mapaSClose').on('click', function (e) {
             e.preventDefault();
             $exeDevice.closeSlide();
+        });
+        $('#mapaEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#mapaEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#mapaEEvaluationHelpLnk").click(function () {
+            $("#mapaEEvaluationHelp").toggle();
+            return false;
+
         });
         $exeDevice.localPlayer = document.getElementById('mapaEVideoLocal');
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
@@ -3337,10 +3371,27 @@ var $exeDevice = {
         }
     },
 
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
     updateFieldGame: function (game) {
         $exeDevice.activeMap.active = 0;
         $exeDevice.qActive = 0;
         game.optionsNumber = typeof game.optionsNumber == "undefined" ? 0 : game.optionsNumber;
+        game.evaluationF = typeof game.evaluationF != "undefined" ? game.evaluationF : false;
+        game.evaluationIDF = typeof game.evaluationIDF != "undefined" ? game.evaluationIDF : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         $('#mapaNumOptions').val(game.optionsNumber);
         $('#mapaEShowMinimize').prop('checked', game.showMinimize);
@@ -3355,6 +3406,9 @@ var $exeDevice = {
         $('#mapaPercentajeIdentify').val(game.percentajeIdentify || 100);
         $('#mapaPercentajeShowQ').val(game.percentajeShowQ || 100);
         $('#mapaPercentajeQuestions').val(game.percentajeQuestions || 100);
+        $('#mapaEEvaluation').prop('checked', game.evaluationF);
+        $('#mapaEEvaluationID').val(game.evaluationIDF);
+        $("#mapaEEvaluationID").prop('disabled', (!game.evaluationF));
         $exeDevice.showImageMap(game.url, game.points[0].x, game.points[0].y, game.points[0].x1, game.points[0].y1, game.points[0].alt, game.points[0].iconType)
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.activeMap.pts = game.points;
