@@ -29,6 +29,7 @@ var $exeDevice = {
     pointStart: 0,
     pointEnd: 100000,
     videoLoading: false,
+    id: false,
     ci18n: {
         "msgPlayStart": _("Click here to play"),
         "msgSubmit": _("Submit"),
@@ -94,7 +95,11 @@ var $exeDevice = {
         "msgLastQuestion": _("Last question"),
         "msgQuestionNumber": _("Question number"),
         "msgCorrect": _("Correct"),
-        "msgIncorrect": _("Incorrect")
+        "msgIncorrect": _("Incorrect"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('VideoQuExt')
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -132,6 +137,7 @@ var $exeDevice = {
         msgs.msgFormatVideo = _('Use a YouTube URL or select a file (mp4, ogg, webm, mp3, wav)');
         msgs.msgExportFileError = _("Games with local videos or audios can't be exported");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
     },
     getId: function () {
         var randomstring = Math.random().toString(36).slice(-8);
@@ -143,7 +149,7 @@ var $exeDevice = {
         if (urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         } else if (idmtc) {
-            sUrl='http://mediateca.educa.madrid.org/streaming.php?id='+idmtc
+            sUrl = 'http://mediateca.educa.madrid.org/streaming.php?id=' + idmtc
         }
         return sUrl;
     },
@@ -675,6 +681,15 @@ var $exeDevice = {
                             <p>\
                                 <label for="vquextEModeBoard"><input type="checkbox" id="vquextEModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
+                            <p>\
+                                <strong class=""><a href="#vquextEEvaluationHelp" id="vquextEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="vquextEEvaluation"><input type="checkbox" id="vquextEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="vquextEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="vquextEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="vquextEEvaluationHelp" class="gameQE-TypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -952,6 +967,22 @@ var $exeDevice = {
         var reg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/;
         return (time.length == 8 && reg.test(time))
     },
+
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
+
     updateFieldGame: function (game) {
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.answersRamdon = game.answersRamdon || false;
@@ -964,6 +995,9 @@ var $exeDevice = {
         game.isNavigable = typeof game.isNavigable == "undefined" ? false : game.isNavigable;
         game.repeatQuestion = typeof game.repeatQuestion == "undefined" ? false : game.repeatQuestion;
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#vquextEShowMinimize').prop('checked', game.showMinimize);
         $('#vquextEQuestionsRamdon').prop('checked', game.optionsRamdon);
         $('#vquextEAnswersRamdon').prop('checked', game.answersRamdon);
@@ -992,6 +1026,9 @@ var $exeDevice = {
         $('#vquextERepeatQuestion').prop('checked', game.repeatQuestion);
         $('#vquextERepeatQuestion').prop('disabled', !game.isNavigable);
         $('#vquextEModeBoard').prop("checked", game.modeBoard);
+        $('#vquextEEvaluation').prop('checked', game.evaluation);
+        $('#vquextEEvaluationID').val(game.evaluationID);
+        $("#vquextEEvaluationID").prop('disabled', (!game.evaluation));
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
@@ -1250,6 +1287,7 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
+        game.id = $exeDevice.generarID();
         $exeDevice.active = 0;
         $exeDevice.questionsGame = game.questionsGame;
         for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
@@ -1311,12 +1349,16 @@ var $exeDevice = {
             customMessages = $('#vquextECustomMessages').is(':checked'),
             isVideoLocal = (validExt.indexOf(extension) != -1) || (idVideoQuExt.toLowerCase().indexOf("google.com/videoplayback") != -1),
             isAudio = (validExtAudio.indexOf(extension) != -1) || ((idVideoQuExt.toLowerCase().indexOf("https://drive.google.com") == 0 && idVideoQuExt.toLowerCase().indexOf('sharing') != -1)),
-            isMediaTeca = idVideoQuExt.indexOf("https://mediateca.educa.madrid.org/videos") !=1,
+            isMediaTeca = idVideoQuExt.indexOf("https://mediateca.educa.madrid.org/videos") != 1,
             authorVideo = $('#vquextEAuthor').val(),
             isNavigable = $('#vquextENavigable').is(':checked'),
             repeatQuestion = $('#vquextERepeatQuestion').is(':checked'),
             percentajeQuestions = parseInt(clear($('#vquextEPercentajeQuestions').val())),
-            modeBoard = $('#vquextEModeBoard').is(':checked');
+            modeBoard = $('#vquextEModeBoard').is(':checked'),
+            evaluation = $('#vquextEEvaluation').is(':checked'),
+            evaluationID = $('#vquextEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
+
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
             eXe.app.alert($exeDevice.msgs.msgProvideFB);
@@ -1346,6 +1388,10 @@ var $exeDevice = {
         } else if (endVideoQuExt > durationVideo + 1) {
             $exeDevice.showMessage($exeDevice.msgs.msgDuration);
             return;
+        }
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
+            return false;
         }
         var questionsGame = $exeDevice.questionsGame;
         for (var i = 0; i < questionsGame.length; i++) {
@@ -1415,7 +1461,10 @@ var $exeDevice = {
             'isNavigable': isNavigable,
             'repeatQuestion': repeatQuestion,
             'percentajeQuestions': percentajeQuestions,
-            'modeBoard': modeBoard
+            'modeBoard': modeBoard,
+            'evaluation': evaluation,
+            'evaluationID': evaluationID,
+            'id': id
         }
         return data;
     },
@@ -1716,6 +1765,16 @@ var $exeDevice = {
 
             }
         });
+        $('#vquextEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#vquextEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#vquextEEvaluationHelpLnk").click(function () {
+            $("#vquextEEvaluationHelp").toggle();
+            return false;
+
+        });
+
 
     },
     initClock: function (type) {

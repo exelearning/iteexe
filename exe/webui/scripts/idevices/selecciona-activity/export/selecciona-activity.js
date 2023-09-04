@@ -145,6 +145,119 @@ var $eXeSelecciona = {
         $('#seleccionaRepeatActivity-' + instance).text(text);
         $('#seleccionaRepeatActivity-' + instance).fadeIn(1000);
     },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeSelecciona.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeSelecciona.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeSelecciona.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#seleccionaMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeSelecciona.options[instance];
+        var $header = $('#seleccionaGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#seleccionaEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="seleccionaEvaluationIcon-' + instance + '" class="gameQP-EvaluationDivIcon"><img  src="' + $eXeSelecciona.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#seleccionaEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+
+
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeSelecciona.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#seleccionaGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                score = ((10 * mOptions.scoreGame) / mOptions.scoreTotal).toFixed(2),
+                formattedDate = $eXeSelecciona.getDateString();
+            var scorm = {
+                'id': mOptions.id,
+                'type': mOptions.msgs.msgTypeGame,
+                'node': node,
+                'name': name,
+                'score': score,
+                'date': formattedDate,
+                'state': (parseFloat(score) >= 5 ? 2 : 1)
+            }
+            var data = $eXeSelecciona.getDataStorage(mOptions.evaluationID);
+            data = $eXeSelecciona.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeSelecciona.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeSelecciona.isJsonString(localStorage.getItem(id));
+        return data;
+    },
     sendScore: function (auto, instance) {
         var mOptions = $eXeSelecciona.options[instance],
             message = '',
@@ -255,7 +368,7 @@ var $eXeSelecciona = {
         var html = '',
             path = $eXeSelecciona.idevicePath,
             msgs = $eXeSelecciona.options[instance].msgs;
-        html += '<div class="gameQP-MainContainer">\
+        html += '<div class="gameQP-MainContainer"  id="seleccionaMainContainer-' + instance + '">\
         <div class="gameQP-GameMinimize" id="seleccionaGameMinimize-' + instance + '">\
             <a href="#" class="gameQP-LinkMaximize" id="seleccionaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'seleccionaIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="">\
             <div class="gameQP-MessageMaximize" id="seleccionaMessageMaximize-' + instance + '"></div></a>\
@@ -482,6 +595,9 @@ var $eXeSelecciona = {
         mOptions.audioFeedBach = typeof mOptions.audioFeedBach != "undefined" ? mOptions.audioFeedBach : false;
         mOptions.customMessages = mOptions.order == 2 ? true : mOptions.customMessages;
         mOptions.gameOver = false;
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.selectsGame.length) {
@@ -691,7 +807,7 @@ var $eXeSelecciona = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
-        }else if ((event.target.g) && (event.target.g.id)) {
+        } else if ((event.target.g) && (event.target.g.id)) {
             video = event.target.g.id;
         }
         video = video.split("-");
@@ -887,6 +1003,7 @@ var $eXeSelecciona = {
         $('#seleccionaSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeSelecciona.sendScore(false, instance);
+            $eXeSelecciona.saveEvaluation(instance);
             return true;
         });
         $('#seleccionaGamerOver-' + instance).hide();
@@ -1029,6 +1146,7 @@ var $eXeSelecciona = {
             e.preventDefault();
             $eXeSelecciona.newQuestion(instance)
         });
+        $eXeSelecciona.updateEvaluationIcon(instance);
     },
     getYTAPI: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
@@ -1351,6 +1469,7 @@ var $eXeSelecciona = {
                 $eXeSelecciona.initialScore = score;
             }
         }
+        $eXeSelecciona.saveEvaluation(instance);
         $eXeSelecciona.showFeedBack(instance);
         if ($eXeSelecciona.getIDYoutube(mOptions.idVideo) !== '' || $eXeSelecciona.getURLVideoMediaTeca(mOptions.idVideo)) {
             $('#seleccionaLinkVideoIntroShow-' + instance).show();
@@ -1563,7 +1682,7 @@ var $eXeSelecciona = {
         if (q.audio.length > 4 && q.type != 2 && !mOptions.audioFeedBach) {
             $('#seleccionaLinkAudio-' + instance).show();
         }
-
+        $eXeSelecciona.saveEvaluation(instance);
         $eXeSelecciona.stopSound(instance);
         if (q.type != 2 && q.audio.trim().length > 5 && !mOptions.audioFeedBach) {
             $eXeSelecciona.playSound(q.audio.trim(), instance);

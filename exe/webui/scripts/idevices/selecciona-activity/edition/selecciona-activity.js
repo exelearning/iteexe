@@ -36,6 +36,7 @@ var $exeDevice = {
     isVideoIntro: 0,
     localPlayer: null,
     localPlayerIntro: null,
+    id: false,
     ci18n: {
         "msgReady": _("Ready?"),
         "msgStartGame": _("Click here to start"),
@@ -100,7 +101,11 @@ var $exeDevice = {
         "msgEndGameScore": _("Please start playing first..."),
         "msgAudio": _("Audio"),
         "msgCorrect": _("Correct"),
-        "msgIncorrect": _("Incorrect")
+        "msgIncorrect": _("Incorrect"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('Multiple Choice Quiz')
     },
 
     init: function () {
@@ -140,6 +145,8 @@ var $exeDevice = {
         msgs.msgNotHitCuestion = _('The question marked as next in case of success does not exist.');
         msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+
 
     },
     loadYoutubeApi: function () {
@@ -1054,6 +1061,15 @@ var $exeDevice = {
                                 <p>\
                                     <label for="seleccionaModeBoard"><input type="checkbox" id="seleccionaModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                                 </p>\
+                                <p>\
+                                    <strong class="GameModeLabel"><a href="#seleccionaEEvaluationHelp" id="seleccionaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+                                    <label for="seleccionaEEvaluation"><input type="checkbox" id="seleccionaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+                                    <label for="seleccionaEEvaluationID">' + _("Identificador") + ':\
+                                    <input type="text" id="seleccionaEEvaluationID" disabled/> </label>\
+                                </p>\
+                                <div id="seleccionaEEvaluationHelp" class="gameQE-TypeGameHelp">\
+                                    <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                </div>\
                         </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -1474,6 +1490,20 @@ var $exeDevice = {
             $("#seleccionaENumberLives").prop('disabled', !useLives);
         }
     },
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
     updateFieldGame: function (game) {
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
         game.answersRamdon = game.answersRamdon || false;
@@ -1484,6 +1514,9 @@ var $exeDevice = {
         game.audioFeedBach = typeof game.audioFeedBach == "undefined" ? false : game.audioFeedBach;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
 
         if (typeof game.order == "undefined") {
             game.order = game.optionsRamdon ? 1 : 0;
@@ -1515,7 +1548,9 @@ var $exeDevice = {
         $("#seleccionaEUseLives").prop('disabled', game.gameMode == 0);
         $("#seleccionaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
         $('#seleccionaEPercentajeQuestions').val(game.percentajeQuestions);
-
+        $('#seleccionaEEvaluation').prop('checked', game.evaluation);
+        $('#seleccionaEEvaluationID').val(game.evaluationID);
+        $("#seleccionaEEvaluationID").prop('disabled', (!game.evaluation));
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.order, game.customMessages, game.customScore);
         for (var i = 0; i < game.selectsGame.length; i++) {
@@ -1850,7 +1885,10 @@ var $exeDevice = {
             gameMode = parseInt($('input[name=slcgamemode]:checked').val()),
             order = parseInt($('input[name=slcgameorder]:checked').val()),
             audioFeedBach = $('#seleccionaEAudioFeedBack').is(':checked'),
-            percentajeQuestions = parseInt(clear($('#seleccionaEPercentajeQuestions').val()));
+            percentajeQuestions = parseInt(clear($('#seleccionaEPercentajeQuestions').val())),
+            evaluation = $('#seleccionaEEvaluation').is(':checked'),
+            evaluationID = $('#seleccionaEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
 
         if (!itinerary) return false;
         if ((gameMode == 2 || feedBack) && textFeedBack.trim().length == 0) {
@@ -1859,6 +1897,10 @@ var $exeDevice = {
         }
         if (showSolution && timeShowSolution.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEProvideTimeSolution);
+            return false;
+        }
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
             return false;
         }
         var selectsGame = $exeDevice.selectsGame;
@@ -1944,7 +1986,10 @@ var $exeDevice = {
             'version': 3.1,
             'percentajeQuestions': percentajeQuestions,
             'audioFeedBach': audioFeedBach,
-            'modeBoard': modeBoard
+            'modeBoard': modeBoard,
+            'evaluation': evaluation,
+            'evaluationID': evaluationID,
+            'id': id
         }
         return data;
     },
@@ -2383,6 +2428,15 @@ var $exeDevice = {
 
             }
         });
+        $('#seleccionaEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#seleccionaEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#seleccionaEEvaluationHelpLnk").click(function () {
+            $("#seleccionaEEvaluationHelp").toggle();
+            return false;
+
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     playVideoQuestion: function () {
@@ -2500,6 +2554,7 @@ var $exeDevice = {
             return;
         } else if (game.typeGame == 'Selecciona') {
             game.selectsGame = $exeDevice.importSelecciona(game);
+            game.id = $exeDevice.generarID();
             $exeDevice.active = 0;
             $exeDevice.updateFieldGame(game);
             var instructions = game.instructionsExe || game.instructions,
@@ -2514,8 +2569,8 @@ var $exeDevice = {
         } else if (game.typeGame == 'QuExt') {
             $exeDevice.selectsGame = $exeDevice.importQuExt(game);
             $exeDevice.updateSelectOrder();
-        } else if (game.typeGame == 'Adivina') {
-            $exeDevice.selectsGame = $exeDevice.importAdivina(game);
+        } else if (game.typeGame == 'selecciona') {
+            $exeDevice.selectsGame = $exeDevice.importselecciona(game);
             $exeDevice.updateSelectOrder();
         } else if (game.typeGame == 'Rosco') {
             $exeDevice.selectsGame = $exeDevice.importRosco(game);
@@ -2649,7 +2704,7 @@ var $exeDevice = {
         }
         return sUrl;
     },
-    importAdivina: function (data) {
+    importselecciona: function (data) {
         for (var i = 0; i < data.wordsGame.length; i++) {
             var p = $exeDevice.getCuestionDefault();
             var cuestion = data.wordsGame[i];

@@ -219,6 +219,9 @@ var $eXeSopa = {
         mOptions.percentajeFB = typeof mOptions.percentajeFB != 'undefined' ? mOptions.percentajeFB : 100;
         mOptions.gameOver = false;
         mOptions.obtainedClue = false;
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
         imgsLink.each(function () {
             var iq = parseInt($(this).text());
             if (!isNaN(iq) && iq < mOptions.wordsGame.length) {
@@ -277,7 +280,7 @@ var $eXeSopa = {
         $eXeSopa.stopSound();
         var mOptions = $eXeSopa.options;
         selectedFile = $eXeSopa.extractURLGD(selectedFile);
-        mOptions.playerAudio = new Audio(selectedFile); 
+        mOptions.playerAudio = new Audio(selectedFile);
         mOptions.playerAudio.autoplay = true;
         mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
@@ -370,10 +373,10 @@ var $eXeSopa = {
         return html;
     },
     showCubiertaOptions(mode) {
-        if(mode===false){
-            $('#sopaCubierta').fadeOut( function(){
-                $('#sopaGameContainer').css('height','auto');
-                $('#sopaMainContainer').css('height','auto');
+        if (mode === false) {
+            $('#sopaCubierta').fadeOut(function () {
+                $('#sopaGameContainer').css('height', 'auto');
+                $('#sopaMainContainer').css('height', 'auto');
             });
             return;
         }
@@ -390,23 +393,23 @@ var $eXeSopa = {
                 break;
             case 2:
                 $('#sopaMFDetails').show();
-                setTimeout(function(){
-                    var max=Math.max($('#sopaMFDetails').innerHeight()+50,$('#sopaGameContainer').innerHeight()+50);
+                setTimeout(function () {
+                    var max = Math.max($('#sopaMFDetails').innerHeight() + 50, $('#sopaGameContainer').innerHeight() + 50);
                     $('#sopaCubierta').height(max);
-                },0)
-              
+                }, 0)
+
 
                 break;
             default:
-                
+
                 break;
         }
-        $('#sopaCubierta').fadeIn(function(){
-            var max=Math.max($('#sopaCubierta').innerHeight(),$('#sopaGameContainer').innerHeight());
+        $('#sopaCubierta').fadeIn(function () {
+            var max = Math.max($('#sopaCubierta').innerHeight(), $('#sopaGameContainer').innerHeight());
             $('#sopaGameContainer').height(max);
-            $('#sopaMainContainer').height(max+$('.SSP-GameScoreBoard').eq(0).innerHeight()+$('.SSP-ShowClue').eq(0).innerHeight()+30);
+            $('#sopaMainContainer').height(max + $('.SSP-GameScoreBoard').eq(0).innerHeight() + $('.SSP-ShowClue').eq(0).innerHeight() + 30);
 
-        }); 
+        });
     },
     getDetailMedia: function () {
         var html = '',
@@ -432,7 +435,7 @@ var $eXeSopa = {
         if (mOptions.gameStarted) {
             return;
         };
-        if(mOptions.showResolve){
+        if (mOptions.showResolve) {
             $('#sopaResolve').show();
         }
         $('#sopaMessage').fadeIn();
@@ -501,7 +504,7 @@ var $eXeSopa = {
         if (latex) {
             $eXeSopa.updateLatex('sopaFDetails');
         }
-  
+
     },
     showImagePoint: function (url, x, y, author, alt) {
         var $Image = $('#sopaMImagePoint'),
@@ -576,6 +579,120 @@ var $eXeSopa = {
         fB = +'</div>';
         return butonScore;
     },
+
+
+    updateEvaluationIcon: function () {
+        var mOptions = $eXeSopa.options;
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeSopa.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeSopa.showEvaluationIcon(state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeSopa.showEvaluationIcon(state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#sopaMainContainer').parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (state, score) {
+        var mOptions = $eXeSopa.options;
+        var $header = $('#sopaGameContainer').parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#sopaEvaluationIcon').remove();
+        var sicon = '<div id="sopaEvaluationIcon" class="SPP-EvaluationDivIcon"><img  src="' + $eXeSopa.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#sopaEvaluationIcon').find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+
+    saveEvaluation: function () {
+        var mOptions = $eXeSopa.options;
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#sopaGameContainer').parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                score = ((10 * $eXeSopa.hits) / mOptions.wordsGame.length).toFixed(2),
+                formattedDate = $eXeSopa.getDateString(),
+                scorm = {
+                    'id': mOptions.id,
+                    'type': mOptions.msgs.msgTypeGame,
+                    'node': node,
+                    'name': name,
+                    'score': score,
+                    'date': formattedDate,
+                    'state': (parseFloat(score) >= 5 ? 2 : 1)
+                }
+            var data = $eXeSopa.getDataStorage(mOptions.evaluationID);
+            data = $eXeSopa.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeSopa.showEvaluationIcon(scorm.state, scorm.score)
+        }
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeSopa.isJsonString(localStorage.getItem(id));
+        return data;
+    },
     sendScore: function (auto) {
         var mOptions = $eXeSopa.options,
             message = '',
@@ -608,7 +725,7 @@ var $eXeSopa = {
             }
 
         } else {
-            message= mOptions.msgs.msgEndGameScore;
+            message = mOptions.msgs.msgEndGameScore;
         }
         if (!auto) alert(message);
     },
@@ -689,7 +806,7 @@ var $eXeSopa = {
             $eXeSopa.stopSound();
             $eXeSopa.playSound(audio);
         });
-          if (mOptions.itinerary.showCodeAccess) {
+        if (mOptions.itinerary.showCodeAccess) {
             $('#sopaMesajeAccesCodeE').text(mOptions.itinerary.messageCodeAccess);
             $($eXeSopa.showCubiertaOptions(0))
 
@@ -716,6 +833,7 @@ var $eXeSopa = {
         $('#sopaSendScore').click(function (e) {
             e.preventDefault();
             $eXeSopa.sendScore(false);
+            $eXeSopa.saveEvaluation();
         });
         window.addEventListener('resize', function () {
             $eXeSopa.refreshImageActive();
@@ -752,12 +870,12 @@ var $eXeSopa = {
         $('#sopaPTime').hide();
         $('#sopaStartGame').hide();
         $('#sopaDivImgHome').hide();
-        if(mOptions.showResolve){
+        if (mOptions.showResolve) {
             $('#sopaResolve').show();
         }
-        mOptions.gameStarted=true;
+        mOptions.gameStarted = true;
         if (mOptions.time > 0) {
-            mOptions.gameStarted=false;
+            mOptions.gameStarted = false;
             $('#sopaDivImgHome').show();
             $('#sopaResolve').hide();
             $('#sopaMessage').hide();
@@ -769,10 +887,11 @@ var $eXeSopa = {
         }
         $('#sopaPShowClue').text(mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame);
         $('#sopaPShowClue').hide();
-        
+
         if (mOptions.isScorm > 0) {
             $eXeSopa.updateScorm($eXeSopa.previousScore, mOptions.repeatActivity);
         }
+        $eXeSopa.updateEvaluationIcon();
     },
 
     refreshImageActive: function () {
@@ -813,6 +932,7 @@ var $eXeSopa = {
                 $eXeSopa.initialScore = score;
             }
         }
+        $eXeSopa.saveEvaluation();
         if (mOptions.itinerary.showClue) {
             var text = $('#sopaPShowClue').text();
             if (mOptions.obtainedClue) {
@@ -823,7 +943,7 @@ var $eXeSopa = {
             $('#sopaPShowClue').text(mclue);
             $('#sopaPShowClue').show();
         }
-        var message = $eXeSopa.getRetroFeedMessages(true) + ' ' + mOptions.msgs.msgWordsFind.replace('%s',score);
+        var message = $eXeSopa.getRetroFeedMessages(true) + ' ' + mOptions.msgs.msgWordsFind.replace('%s', score);
         if (mode == 1) {
             message = mOptions.msgs.msgEndGameM.replace('%s', score);
         } else if (mode == 2) {
@@ -860,7 +980,7 @@ var $eXeSopa = {
         $sopaOverPoint.show();
         $sopaOverHits.show();
         var mclue = '';
-        message = $eXeSopa.getRetroFeedMessages(true) + ' ' + msgs.msgWordsFind.replace('%s',$eXeSopa.score.toFixed(2));
+        message = $eXeSopa.getRetroFeedMessages(true) + ' ' + msgs.msgWordsFind.replace('%s', $eXeSopa.score.toFixed(2));
         messageColor = 2;
         $sopaHistGame.show();
         $eXeSopa.showMessage(messageColor, message);
@@ -945,14 +1065,14 @@ var $eXeSopa = {
         if (mOptions.wordsGame[number].audio.length > 4) {
             $eXeSopa.playSound(mOptions.wordsGame[number].audio)
         }
-        var percentageHits = ($eXeSopa.hits /mOptions.wordsGame.length) * 100;
+        var percentageHits = ($eXeSopa.hits / mOptions.wordsGame.length) * 100;
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
                 mOptions.obtainedClue = true;
                 $('#sopaPShowClue').show();
             }
         }
-        var score = (percentageHits/10).toFixed(2); 
+        var score = (percentageHits / 10).toFixed(2);
         if (mOptions.isScorm == 1) {
             if (mOptions.repeatActivity || $eXeSopa.initialScore === '') {
                 $eXeSopa.sendScore(true);
@@ -961,6 +1081,7 @@ var $eXeSopa = {
             }
             $('#sopaRepeatActivity').text(mOptions.msgs.msgYouScore + ': ' + score);
         }
+        $eXeSopa.saveEvaluation();
     },
     getRetroFeedMessages: function (iHit) {
         var mOptions = $eXeSopa.options,

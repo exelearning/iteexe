@@ -722,6 +722,24 @@ div:fullscreen .SPP-Multimedia, div:-webkit-full-screen .SPP-Multimedia, div:-mo
 	width: 100%;
 }
 
+.SPP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.SPP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.SPP-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
+
 @-moz-keyframes SPP-parpadeo {
 	0% {
 		opacity: 1.0;
@@ -1051,15 +1069,20 @@ div:fullscreen .SPP-Multimedia, div:-webkit-full-screen .SPP-Multimedia, div:-mo
 	display: none;
 
 }
-
+#sopaWords{
+	max-width: 70%;
+}
 @media only screen and (min-width: 600px) {
 	.SPP-Words li {
 		padding: 3px 0;
 		font: 1em sans-serif;
 
 	}
+	
+}
+@media only screen and (max-width: 600px) {
 	#sopaWords{
-		max-width: 70%;
+		max-width: 100%;
 	}
 }
 
@@ -1073,9 +1096,7 @@ div:fullscreen .SPP-Multimedia, div:-webkit-full-screen .SPP-Multimedia, div:-mo
 	display: none;
 
 }
-#sopaWords{
-	max-width: 100%;
-}
+
 .Sopa-Li {
 	display: flex;
 	justify-content: flex-start;

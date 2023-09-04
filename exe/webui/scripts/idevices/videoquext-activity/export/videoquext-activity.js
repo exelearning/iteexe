@@ -120,6 +120,127 @@ var $eXeVideoQuExt = {
         $('#vquextRepeatActivity-' + instance).text(text);
         $('#vquextRepeatActivity-' + instance).fadeIn(1000);
     },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeVideoQuExt.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeVideoQuExt.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeVideoQuExt.showEvaluationIcon(instance, state, score);
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#vquextMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeVideoQuExt.options[instance];
+        var $header = $('#vquextGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#vquextEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="vquextEvaluationIcon-' + instance + '" class="gameQP-EvaluationDivIcon"><img  src="' + $eXeVideoQuExt.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#vquextEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeVideoQuExt.options[instance],
+            score = ((mOptions.hits * 10) / mOptions.questionsGame.length).toFixed(2);
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            if (mOptions.isNavigable) {
+                score = 0;
+                for (var i = 0; i < mOptions.questionsGame.length; i++) {
+                    score = mOptions.questionsGame[i].answerScore > 0 ? score + 1 : score;
+                }
+                score = ((score * 10) / mOptions.questionsGame.length).toFixed(2);
+            }
+            var name = $('#vquextGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                formattedDate = $eXeVideoQuExt.getDateString(),
+                scorm = {
+                    'id': mOptions.id,
+                    'type': mOptions.msgs.msgTypeGame,
+                    'node': node,
+                    'name': name,
+                    'score': score,
+                    'date': formattedDate,
+                    'state': (parseFloat(score) >= 5 ? 2 : 1)
+                }
+            var data = $eXeVideoQuExt.getDataStorage(mOptions.evaluationID);
+            data = $eXeVideoQuExt.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeVideoQuExt.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+
+
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeVideoQuExt.isJsonString(localStorage.getItem(id));
+        return data;
+    },
     sendScore: function (auto, instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             message = '';
@@ -302,7 +423,7 @@ var $eXeVideoQuExt = {
         msgs.msgNextQuestion = msgs.msgNextQuestion || "Next question";
         msgs.msgLastQuestion = msgs.msgLastQuestion || "Last question";
         msgs.msgQuestionNumber = msgs.msgQuestionNumber || "Question number";
-        html += '<div class="gameQP-MainContainer">\
+        html += '<div class="gameQP-MainContainer"  id="vquextMainContainer-' + instance + '">\
         <div class="gameQP-GameMinimize" id="vquextGameMinimize-' + instance + '">\
             <a href="#" class="gameQP-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'vquextIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="' + msgs.msgMaximize + '">\
                 <div class="gameQP-MessageMaximize" id="vquextMessageMaximize-' + instance + '"></div>\
@@ -398,6 +519,10 @@ var $eXeVideoQuExt = {
                         <div class="exeQuextIcons-Submit"></div>\
                     </a>\
                 </div>\
+                <div class="gameQP-DivModeBoard" id="vquextDivModeBoard-' + instance + '">\
+                    <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
+                    <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
+                </div>\
                 <div class="gameQP-OptionsDiv" id="vquextOptionsDiv-' + instance + '">\
                     <div class="sr-av">' + msgs.msgOption + ' A:</div>\
                     <a href="#"  class="gameQP-Option1 gameQP-Options" id="vquextOption1-' + instance + '" data-number="0"></a>\
@@ -461,10 +586,6 @@ var $eXeVideoQuExt = {
                 </div>\
             </div>\
         </div>\
-    </div>\
-    <div class="gameQP-DivModeBoard" id="vquextDivModeBoard-' + instance + '">\
-         <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
-         <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
     </div>\
     ' + this.addButtonScore(instance);
         return html;
@@ -535,6 +656,10 @@ var $eXeVideoQuExt = {
         mOptions.questionsGame = $eXeVideoQuExt.getQuestions(mOptions.questionsGame, mOptions.percentajeQuestions);
         mOptions.numberQuestions = mOptions.questionsGame.length;
         mOptions.modeBoard = typeof mOptions.modeBoard == "undefined" ? false : mOptions.modeBoard;
+        mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
+        mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
+        mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
+
         if (mOptions.videoType == 1 || mOptions.videoType == 2) {
             mOptions.idVideoQuExt = mOptions.videoLocal;
         } else if (mOptions.videoType == 3) {
@@ -628,6 +753,8 @@ var $eXeVideoQuExt = {
                 video = event.target.h.id;
             } else if ((event.target.i) && (event.target.i.id)) {
                 video = event.target.i.id;
+            } else if ((event.target.g) && (event.target.g.id)) {
+                video = event.target.g.id;
             }
             video = video.split("-");
             if (video.length == 2 && video[0] == "vquextVideo") {
@@ -687,8 +814,6 @@ var $eXeVideoQuExt = {
             video = event.target.h.id;
         } else if ((event.target.i) && (event.target.i.id)) {
             video = event.target.i.id;
-        }else if ((event.target.g) && (event.target.g.id)) {
-            video = event.target.g.id;
         }
         video = video.split("-");
         if (video.length == 2 && video[0] == "vquextVideo") {
@@ -806,6 +931,8 @@ var $eXeVideoQuExt = {
         $('#vquextSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeVideoQuExt.sendScore(false, instance);
+            $eXeVideoQuExt.saveEvaluation(instance);
+
         });
         $('#vquextReeload-' + instance).click(function (e) {
             e.preventDefault();
@@ -997,6 +1124,7 @@ var $eXeVideoQuExt = {
         });
 
         $eXeVideoQuExt.showNavigationButtons(instance, 0);
+        $eXeVideoQuExt.updateEvaluationIcon(instance);
     },
     goEnd: function (instance, time) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -1456,6 +1584,7 @@ var $eXeVideoQuExt = {
                 $eXeVideoQuExt.initialScore = score;
             }
         }
+        $eXeVideoQuExt.saveEvaluation(instance);
         $eXeVideoQuExt.showFeedBack(instance);
     },
     showFeedBack: function (instance) {
@@ -1504,7 +1633,7 @@ var $eXeVideoQuExt = {
             $('#vquextCover-' + instance).show();
             $('#vquextVideoLocal-' + instance).hide();
         } else {
-            if (mOptions.videoType == 1 || mOptions.videoType == 3 ) {
+            if (mOptions.videoType == 1 || mOptions.videoType == 3) {
                 $('#vquextVideoLocal-' + instance).show();
                 $('#vquextCover-' + instance).hide();
             } else if (mOptions.videoType == 2) {
@@ -1537,6 +1666,7 @@ var $eXeVideoQuExt = {
                 $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeVideoQuExt.saveEvaluation(instance);
     },
     getIDYoutube: function (url) {
         var regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/,
@@ -1622,6 +1752,8 @@ var $eXeVideoQuExt = {
                 $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeVideoQuExt.saveEvaluation(instance);
+
     },
     answerQuestionBoard: function (value, instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
@@ -1662,6 +1794,7 @@ var $eXeVideoQuExt = {
                 $('#vquextRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
             }
         }
+        $eXeVideoQuExt.saveEvaluation(instance);
     },
     preloadGame: function (instance) {
         var x = instance,
