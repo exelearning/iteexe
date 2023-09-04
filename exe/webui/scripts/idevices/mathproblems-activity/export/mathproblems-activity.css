@@ -626,6 +626,24 @@ div:fullscreen .MTHP-Multimedia, div:-webkit-full-screen .MTHP-Multimedia, div:-
 	width: 100%;
 }
 
+.MTHP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.MTHP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.MTHP-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
+
 @-moz-keyframes MTHP-parpadeo {
 	0% {
 		opacity: 1.0;

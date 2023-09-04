@@ -167,10 +167,14 @@ var $eXeMathProblems = {
                 options.questions[i].time = options.questions[i].time * 60;
             }
         }
+        options.sortAnswers = typeof options.sortAnswers == "undefined" ? false : true;
         options.errorType = typeof options.errorType == "undefined" ? 0 : options.errorType;
         options.errorRelative = typeof options.errorRelative == "undefined" ? 0 : options.errorRelative;
         options.errorAbsolute = typeof options.errorAbsolute == "undefined" ? 0 : options.errorAbsolute;
         options.errorRelative = options.version == 1 && typeof options.percentajeError != 'undefinided' && options.percentajeError > 0 ? options.percentajeError / 100 : options.errorRelative;
+        options.evaluation = typeof options.evaluation == "undefined" ? false : options.evaluation;
+        options.evaluationID = typeof options.evaluationID == "undefined" ? '' : options.evaluationID;
+        options.id = typeof options.id == "undefined" ? false : options.id;
         $eXeMathProblems.setTexts(options.questions, $wordings, $feedbacks);
         $eXeMathProblems.loadProblems(options)
         options.questions = $eXeMathProblems.getQuestions(options.questions, options.percentajeQuestions);
@@ -181,21 +185,125 @@ var $eXeMathProblems = {
         var expresion = /\{[a-zA-z]\}/g;
         for (var i = 0; i < options.questions.length; i++) {
             var text = options.questions[i].wordingseg,
-                formula = options.questions[i].formula,
-                values = formula.match(expresion);
+                fms = options.questions[i].formula.split('|'),
+                fm0 = fms[0],
+                values = fm0.match(expresion),
+                solutions = [],
+                formula = options.questions[i].formula;
+            values = $eXeMathProblems.getUniqueElements(values);
+
             if (values !== null && values.length > 0) {
-                for (var j = 0; j < values.length; j++) {
-                    var rg = new RegExp(values[j], 'g'),
-                        number = $eXeMathProblems.getRandomNo(options.questions[i].min, options.questions[i].max, options.questions[i].decimals);
-                    text = text.replace(rg, number);
-                    formula = formula.replace(rg, number);
+                var data = $eXeMathProblems.checkValuesFormule(formula, text, values, options, i);
+                text = data.text;
+                solutions = data.solutions;
+            } else {
+                var mformula = formula.split('|');
+                for (var z = 0; z < mformula.length; z++) {
+                    var solution = eval(mformula[z]) * 1.00;
+                    solution = parseFloat(solution.toFixed(2))
+                    solutions.push(solution);
                 }
+
             }
-            options.questions[i].solution = eval(formula);
-            options.questions[i].solution = parseFloat(options.questions[i].solution.toFixed(2))
+            var wronganswer = [];
+            if (solutions.length == 0) {
+                solutions = '0'
+            } else {
+                for (var j = 0; j < solutions.length; j++) {
+                    var option = $eXeMathProblems.getOptionsArray(solutions[j], 4, false);
+                    wronganswer.push(option);
+                }
+                solutions = solutions.join('|')
+            }
+            options.questions[i].wronganswer = wronganswer;
+            options.questions[i].solution = solutions;
             options.questions[i].wording = text;
         }
 
+
+    },
+    getOptionsArray1: function (num, numdatos, permitirNegativos) {
+        let array = [num];
+        let rango = Math.abs(num) * 0.3;
+        let decimalPlaces = num % 1 === 0 ? 0 : 2;
+        rango = num % 1 === 0 && num < 3 ? 5 : rango;
+        while (array.length < numdatos) {
+            let valor = Math.random() * (rango * 2) + num - rango;
+            valor = parseFloat(valor.toFixed(decimalPlaces));
+            if (valor !== num && !array.includes(valor)) {
+                if (!permitirNegativos && valor < 0) {
+                    continue;
+                }
+                array.push(valor);
+            }
+        }
+        let currentIndex = array.length,
+            temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array.slice(0, numdatos);
+    },
+    getOptionsArray: function (num, numdatos) {
+        let array = [num];
+        let rango = Math.abs(num) * 0.3;
+        while (array.length < numdatos) {
+            let valor = Math.random() * (rango * 2) + num - rango;
+            valor = parseFloat(valor.toFixed(2));
+            if (valor !== num && !array.includes(valor)) {
+                array.push(valor);
+            }
+        }
+        let currentIndex = array.length,
+            temporaryValue, randomIndex;
+        while (0 !== currentIndex) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+        return array.slice(0, numdatos);
+    },
+    checkValuesFormule: function (formule, text, values, options, num) {
+        var result = {
+                'formule': '',
+                'text': '',
+                'solutions': [],
+            },
+            solutions = [],
+            mtext = text,
+            nf = formule,
+            isCorrectFormule = true;
+        for (var j = 0; j < values.length; j++) {
+            var rg = new RegExp(values[j], 'g'),
+                number = $eXeMathProblems.getRandomNo(options.questions[num].min, options.questions[num].max, options.questions[num].decimals);
+            mtext = mtext.replace(rg, number);
+            nf = nf.replace(rg, number);
+        }
+        var mformula = nf.split('|'),
+            solution = 0;
+        for (var z = 0; z < mformula.length; z++) {
+            solution = eval(mformula[z]) * 1.00;
+            if (isNaN(solution)) {
+                isCorrectFormule = false;
+                break;
+            };
+            solution = parseFloat(solution.toFixed(2))
+            solutions.push(solution);
+        }
+        result.formule = formule;
+        result.text = mtext;
+        result.solutions = [];
+        if (isCorrectFormule) {
+            result.solutions = solutions
+        };
+        //console.log(result)
+        return result;
 
     },
     setTexts: function (questions, $wordings, $feedbacks) {
@@ -337,14 +445,16 @@ var $eXeMathProblems = {
         if (q.textFeedBack.length > 0) {
             $('#mthpDivFeedBackQ-' + instance).fadeToggle();
         }
-        mOptions.active = num;
+        mOptions.activeQuestion = num;
         var html = $('#mthpMainContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
+            //console.log('updateLatex', mOptions.questions[num].solution)
             $eXeMathProblems.updateLatex('mthpMainContainer-' + instance);
         }
         mOptions.gameActived = true;
         $eXeMathProblems.showMessage(0, '', instance)
+        console.log('Solution', mOptions.questions[num].solution)
 
     },
     isJsonString: function (str) {
@@ -379,34 +489,54 @@ var $eXeMathProblems = {
         $('#mthpCubierta-' + instance).fadeIn();
     },
 
+    hasDuplicates: function (array) {
+        if (array.length == 1) return false;
+        let seen = {};
+        for (let i = 0; i < array.length; i++) {
+            if (seen[array[i]]) {
+                return true;
+            }
+            seen[array[i]] = true;
+        }
+        return false;
+    },
+    getUniqueElements: function (arr) {
+        return Array.from(new Set(arr));
+    },
+    hasDuplicatesElements: function (arr) {
+        return (new Set(arr)).size !== arr.length;
+    },
     answerQuestion: function (instance) {
         var mOptions = $eXeMathProblems.options[instance],
-            question = mOptions.questions[mOptions.activeQuestion],
             answord = $('#mthpEdAnswer-' + instance).val(),
-            solution = question.solution * 1.00;
-        answord = answord.replace(',', '.');
-        answord = parseFloat(answord).toFixed(2);
-        answord = parseFloat(answord);
-        if (!mOptions.gameActived || mOptions.gameOver) {
-            return;
-        }
+            respuestas = [];
+
         if (answord.length == 0) {
             $eXeMathProblems.showMessage(1, mOptions.msgs.msgIndicateWord, instance);
             return;
         }
+        if (!mOptions.gameActived || mOptions.gameOver) {
+            return;
+        }
+        answord = answord.replace(',', '.');
+        var answords = answord.split('|');
+        for (var j = 0; j < answords.length; j++) {
+            var answer = eval(answords[j]) * 1.00;
+            answer = parseFloat(answer.toFixed(2))
+            respuestas.push(answer)
+        }
+        if (respuestas.length > 1 && $eXeMathProblems.hasDuplicatesElements(respuestas)) {
+            $eXeMathProblems.showMessage(1, mOptions.msgs.msgDuplicateAnswer, instance);
+            return;
+        }
+        answord = respuestas.join('|');
+
         mOptions.gameActived = false;
         $('#mthpBtnReply-' + instance).prop('disabled', true);
         $('#mthpBtnMoveOn-' + instance).prop('disabled', true);
         $('#mthpEdAnswer-' + instance).prop('disabled', true);
-        var correct = (solution == answord);
-        if (mOptions.errorType > 0) {
-            answord = $('#mthpEdAnswer-' + instance).val();
-            answord = answord.replace(',', '.');
-            answord = parseFloat(answord)
-            solution = question.solution * 1.00;
-            var ep = mOptions.errorType == 1 ? solution * mOptions.errorRelative : mOptions.errorAbsolute;
-            correct = (answord >= solution - ep) && (answord <= solution + ep);
-        }
+
+        var correct = $eXeMathProblems.validateAnswers(answord, instance);
         $eXeMathProblems.updateScore(correct, instance);
         mOptions.activeCounter = false;
         var timeShowSolution = 1000;
@@ -423,7 +553,52 @@ var $eXeMathProblems = {
         }, timeShowSolution);
 
     },
+    validateAnswerUnsort: function (answords, instance) {
 
+        var mOptions = $eXeMathProblems.options[instance],
+            sSolutions = mOptions.questions[mOptions.activeQuestion].solution.split('|'),
+            sAnswords = answords.split('|'),
+            error = 0;
+        for (let i = 0; i < sAnswords.length; i++) {
+            let found = false;
+            for (let j = 0; j < sSolutions.length; j++) {
+                if (mOptions.errorType > 0) {
+                    error = mOptions.errorType == 1 ? sSolutions[j] * mOptions.errorRelative : mOptions.errorAbsolute;
+                }
+                if (Math.abs(sAnswords[i] - sSolutions[j]) <= error) {
+                    found = true;
+                    sSolutions.splice(j, 1);
+                    break;
+                }
+            }
+            if (!found) {
+                return false;
+            }
+        }
+        return true;
+    },
+    validateAnswerSort: function (answords, instance) {
+        var mOptions = $eXeMathProblems.options[instance],
+            sAnswords = answords.split('|'),
+            sSolutions = Options.questions[mOptions.activeQuestion].solution.split('|'),
+            error = 0;
+        for (let i = 0; i < sAnswords.length; i++) {
+            if (mOptions.errorType > 0) {
+                error = mOptions.errorType == 1 ? sSolutions[i] * mOptions.errorRelative : mOptions.errorAbsolute;
+            }
+            if (Math.abs(sAnswords[i] - sSolutions[i]) > error) {
+                return false;
+            }
+        }
+        return true;
+    },
+
+
+    validateAnswers: function (answords, instance) {
+        var mOptions = $eXeMathProblems.options[instance];
+        return mOptions.sortAnswers ? $eXeMathProblems.validateAnswerSort(answords, instance) : $eXeMathProblems.validateAnswerUnsort(answords, instance)
+
+    },
     getRandomNo: function (from, to, decimals) {
         if (decimals != 0) return parseFloat(((Math.random() * to) + from).toFixed(decimals));
         else return Math.floor(Math.random() * to) + from
@@ -472,6 +647,118 @@ var $eXeMathProblems = {
         }
         fB = +'</div>';
         return butonScore;
+    },
+     updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeMathProblems.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeMathProblems.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeMathProblems.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeMathProblems.showEvaluationIcon(instance, state, score)
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#mthpMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeMathProblems.options[instance];
+        var $header = $('#mthpGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#mthpEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="mthpEvaluationIcon-' + instance + '" class="MTHP-EvaluationDivIcon"><img  src="' + $eXeMathProblems.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#mthpEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeMathProblems.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#mthpGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                score =  ((10 * mOptions.hits) / mOptions.numberQuestions).toFixed(2)
+            var formattedDate =  $eXeMathProblems.getDateString();
+            var scorm = {
+                'id': mOptions.id,
+                'type': mOptions.msgs.msgTypeGame,
+                'node': node,
+                'name': name,
+                'score': score,
+                'date': formattedDate,
+                'state': (parseFloat(score) >= 5 ? 2 : 1)
+            }
+            var data = $eXeMathProblems.getDataStorage(mOptions.evaluationID);
+            data = $eXeMathProblems.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeMathProblems.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeMathProblems.isJsonString(localStorage.getItem(id));
+        return data;
     },
     sendScore: function (instance, auto) {
         var mOptions = $eXeMathProblems.options[instance],
@@ -608,6 +895,7 @@ var $eXeMathProblems = {
         $('#mthpSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeMathProblems.sendScore(instance, false);
+            $eXeMathProblems.saveEvaluation(instance);
 
         });
         $('#mthpBtnMoveOn-' + instance).on('click', function (e) {
@@ -643,7 +931,7 @@ var $eXeMathProblems = {
         $('#mthpDivImgHome-' + instance).show();
         $('#mthpStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
         $("#mthpDivReply-" + instance).hide();
-
+        $eXeMathProblems.updateEvaluationIcon(instance);
     },
 
     shuffleAds: function (arr) {
@@ -676,8 +964,6 @@ var $eXeMathProblems = {
         if (mOptions.gameStarted) {
             return
         }
-        $eXeMathProblems.loadProblems(mOptions);
-        mOptions.questions = mOptions.optionsRamdon ? $eXeMathProblems.shuffleAds(mOptions.questions) : mOptions.questions;
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -724,7 +1010,6 @@ var $eXeMathProblems = {
         mOptions.gameStarted = true;
         $eXeMathProblems.newQuestion(instance);
 
-
     },
     newQuestion: function (instance) {
         var mOptions = $eXeMathProblems.options[instance],
@@ -748,6 +1033,7 @@ var $eXeMathProblems = {
 
             }
         }
+        $eXeMathProblems.saveEvaluation(instance);
     },
 
 
@@ -761,6 +1047,7 @@ var $eXeMathProblems = {
         mOptions.activeQuestion = numActiveQuestion;
         return numActiveQuestion;
     },
+    
     gameOver: function (type, instance) {
         var mOptions = $eXeMathProblems.options[instance];
         mOptions.gameStarted = false;
@@ -781,11 +1068,15 @@ var $eXeMathProblems = {
                 $eXeMathProblems.initialScore = score;
             }
         }
+        $eXeMathProblems.saveEvaluation(instance);
         $eXeMathProblems.showFeedBack(instance);
         $('#mthpStartGame-' + instance).show();
         var message = mOptions.msgs.msgEndGameM.replace('%s', mOptions.score.toFixed(2)),
             type = mOptions.score >= 5 ? 2 : 1;
-        $eXeMathProblems.showMessage(type, message, instance)
+        $eXeMathProblems.showMessage(type, message, instance);
+        mOptions.questions = mOptions.optionsRamdon ? $eXeMathProblems.shuffleAds(mOptions.questions) : mOptions.questions;
+        $eXeMathProblems.loadProblems(mOptions);
+
 
     },
 
@@ -895,6 +1186,7 @@ var $eXeMathProblems = {
 
             }
         }
+        $eXeMathProblems.saveEvaluation(instance);
         $eXeMathProblems.checkClue(instance);
         $eXeMathProblems.updateGameBoard(instance);
         $eXeMathProblems.showMessage(type, message, instance);

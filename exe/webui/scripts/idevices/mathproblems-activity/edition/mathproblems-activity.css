@@ -10,7 +10,10 @@
 #gameQEIdeviceForm input[type="radio"], #gameQEIdeviceForm input[type="checkbox"], #gameQEIdeviceForm input[type=button] {
 	cursor: pointer;
 }
-
+#gameQEIdeviceForm  #eCQformula{
+	width: 50%;
+	min-width: 200px;
+}
 label[for=gameQEScoreQuestion], input#gameQEScoreQuestion {
 	display: none;
 }
@@ -32,6 +35,7 @@ label[for=gameQEScoreQuestion], input#gameQEScoreQuestion {
 	float: left;
 	width: 50%;
 }
+
 @media screen and (max-width:720px) {
 	#gameQEIdeviceForm #gameQEIdeviceFormTab3 .ci18n {
 		float: none;
@@ -179,3 +183,15 @@ label[for=gameQEActivitySCORM] {
 	width: 2em;
 }
 
+.MTOE-TypeGameHelp{
+	display:none;
+	margin-bottom:2em;
+	font-size:.95em
+}
+.GameModeHelpLink{
+	margin:0 2px;
+	vertical-align:middle;
+}
+.GameModeLabel{
+	font-weight:normal
+}
