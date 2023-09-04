@@ -94,12 +94,7 @@
 .gameQE-inlineOption,.gameQE-TypeGame,.gameQE-TypeOrder{
 	margin-left:.5em
 }
-/* Ayuda */
-#activeIdevice .gameQE-TypeGameHelp{
-	display:none;
-	margin-bottom:2em;
-	font-size:.95em
-}
+
 /* Opciones imagen */
 .gameQE-EInputImage {
 	align-items: center;
@@ -554,6 +549,12 @@ label[for=gameQEActivitySCORM] {
 	list-style: none;
 	margin: 1.5em 0 .7em 0;
 	padding: 0;
+}
+/* Ayuda */
+#activeIdevice .gameQE-TypeGameHelp{
+	display:none;
+	margin-bottom:2em;
+	font-size:.95em
 }
 .GameModeHelpLink{
 	margin:0 2px;

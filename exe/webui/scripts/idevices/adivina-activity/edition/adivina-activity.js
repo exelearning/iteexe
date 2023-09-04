@@ -35,6 +35,8 @@ var $exeDevice = {
     playerAudio: "",
     isVideoType: false,
     localPlayer: null,
+    sgoogle: null,
+    id: false,
     ci18n: {
         "msgHappen": _("Move on"),
         "msgReply": _("Reply"),
@@ -92,7 +94,12 @@ var $exeDevice = {
         "msgPoints": _("points"),
         "msgAudio": _("Audio"),
         "msgCorrect": _("Correct"),
-        "msgIncorrect": _("Incorrect")
+        "msgIncorrect": _("Incorrect"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('Word Guessing')
+
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -119,12 +126,14 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Create activities in which given a definition the student has to complete the word filling in the gaps.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
+                <div class="exe-idevice-info">' + _("Create activities in which given a definition the student has to complete the word filling in the gaps.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
@@ -181,6 +190,18 @@ var $exeDevice = {
                             <p>\
                                 <label for="adivinaModeBoard"><input type="checkbox" id="adivinaModeBoard"> ' + _("Digital blackboard mode") + ' </label>\
                             </p>\
+                            <p style="display:none">\
+                                <label for="adivinaETranslate"><input type="checkbox" id="adivinaETranslate" >' + _("Activar traductor") + '. </label>\
+                            </p>\
+                            <p>\
+                                <strong class="GameModeLabel"><a href="#adivinaEEvaluationHelp" id="adivinaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="adivinaEEvaluation"><input type="checkbox" id="adivinaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="adivinaEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="adivinaEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="adivinaEEvaluationHelp" class="gameQE-TypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
                          </div>\
                     </fieldset>\
                     <fieldset class="exe-fieldset">\
@@ -310,6 +331,9 @@ var $exeDevice = {
                                 <a href="#" id="adivinaEPaste" class="gameQE-ENavigationButton"  title="' + _("Paste question") + '"><img src="' + path + 'quextIEPaste.png" alt="' + _("Paste question") + '" class="gameQE-EButtonImage b-paste" /></a>\
                             </div>\
                         </div>\
+                        <p id="adivinaELanguagesDiv" style="display:none">\
+                            <label for="adivinaELanguage">' + _("Traducir al") + '</label><select id="adivinaELanguage" class="gameQE-Languajes"  data-iti="0">' + $exeDevice.loadLanguages() + '</select>\
+                        </p>\
                         <div class="gameQE-ENumQuestionDiv" id="adivinaENumQuestionDiv">\
                             <div class="gameQE-ENumQ"><span class="sr-av">' + _("Number of questions:") + '</span></div>\ <span class="gameQE-ENumQuestions" id="adivinaENumQuestions">0</span>\
                         </div>\
@@ -783,6 +807,7 @@ var $exeDevice = {
             }
             $exeDevice.showQuestion(0);
 
+
         }
     },
     getIndexTime: function (tm) {
@@ -829,6 +854,7 @@ var $exeDevice = {
         if (!$exeDevice.validateQuestion()) {
             return;
         }
+
         var dataGame = $exeDevice.validateData();
 
         if (!dataGame) {
@@ -975,7 +1001,11 @@ var $exeDevice = {
             percentajeFB = parseInt(clear($('#adivinaEPercentajeFB').val())),
             gameMode = parseInt($('input[name=qxtgamemode]:checked').val()),
             customMessages = $('#adivinaECustomMessages').is(':checked'),
-            percentajeQuestions = parseInt(clear($('#adivinaEPercentajeQuestions').val()));
+            percentajeQuestions = parseInt(clear($('#adivinaEPercentajeQuestions').val())),
+            activateTranslate = $('#adivinaETranslate').is(':checked'),
+            evaluation = $('#adivinaEEvaluation').is(':checked'),
+            evaluationID = $('#adivinaEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
 
         if (showSolution && timeShowSolution.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEProvideTimeSolution);
@@ -988,6 +1018,10 @@ var $exeDevice = {
         var wordsGame = $exeDevice.wordsGame;
         if (wordsGame.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEOneQuestion);
+            return false;
+        }
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
             return false;
         }
         for (var i = 0; i < wordsGame.length; i++) {
@@ -1032,7 +1066,11 @@ var $exeDevice = {
             'version': 2,
             'customMessages': customMessages,
             'percentajeQuestions': percentajeQuestions,
-            'modeBoard': modeBoard
+            'modeBoard': modeBoard,
+            'activateTranslate': activateTranslate,
+            'evaluation': evaluation,
+            'evaluationID': evaluationID,
+            'id': id
         }
         return data;
     },
@@ -1409,6 +1447,7 @@ var $exeDevice = {
             return false;
 
         });
+
         $('#adivinaECustomMessages').on('change', function () {
             var messages = $(this).is(':checked');
             $exeDevice.showSelectOrder(messages);
@@ -1448,6 +1487,34 @@ var $exeDevice = {
 
             }
         });
+        $('#adivinaETranslate').on('change', function () {
+            var tr = $(this).is(':checked');
+            $('#adivinaELanguagesDiv').hide()
+            if (tr) {
+                $exeDevice.loadGoogleTranslate();
+            }
+        });
+
+
+        $('#adivinaELanguage').on('change', function () {
+            var langCode = $(this).val();
+            var json = $exeDevice.validateData();
+            if (langCode) {
+                $exeDevice.translateJson(json, langCode).then(traducciones => {
+                    console.log(traducciones)
+                });
+            }
+        });
+        $('#adivinaEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#adivinaEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#adivinaEEvaluationHelpLnk").click(function () {
+            $("#adivinaEEvaluationHelp").toggle();
+            return false;
+
+        });
+
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     showSelectOrder: function (messages, custonmScore) {
@@ -1666,6 +1733,21 @@ var $exeDevice = {
         }
     },
 
+
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
+
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+
     updateFieldGame: function (game) {
         $exeDevice.active = 0;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
@@ -1678,6 +1760,10 @@ var $exeDevice = {
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
         game.timeQuestion = $exeDevice.timeQuestion;
         game.percentageShow = $exeDevice.percentageShow;
+        game.activateTranslate = typeof game.activateTranslate == "undefined" ? false : game.activateTranslate;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#adivinaEShowMinimize').prop('checked', game.showMinimize);
         $('#adivinaEOptionsRamdon').prop('checked', game.optionsRamdon);
         $('#adivinaEUseLives').prop('checked', game.useLives);
@@ -1693,7 +1779,11 @@ var $exeDevice = {
         $("#adivinaEUseLives").prop('disabled', game.gameMode == 0);
         $("#adivinaENumberLives").prop('disabled', (game.gameMode == 0 && game.useLives));
         $('#adivinaECustomMessages').prop('checked', game.customMessages);
+        $('#adivinaETranslate').prop('checked', game.activateTranslate);
         $('#adivinaEPercentajeQuestions').val(game.percentajeQuestions);
+        $('#adivinaEEvaluation').prop('checked', game.evaluation);
+        $('#adivinaEEvaluationID').val(game.evaluationID);
+        $("#adivinaEEvaluationID").prop('disabled', (!game.evaluation));
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         $exeDevice.updateGameMode(game.gameMode, game.feedBack, game.useLives);
         $exeDevice.showSelectOrder(game.customMessages);
@@ -1728,6 +1818,11 @@ var $exeDevice = {
         }
         $('#adivinaEPercentajeFB').prop('disabled', !game.feedBack);
         $exeDevice.updateQuestionsNumber();
+        $('#adivinaELanguagesDiv').hide();
+        if (game.activateTranslate) {
+            $exeDevice.loadGoogleTranslate();
+
+        }
     },
     exportGame: function () {
         var dataGame = this.validateData();
@@ -1766,6 +1861,7 @@ var $exeDevice = {
         if ($exeDevice.wordsGame.length > 1) {
             game.wordsGame = $exeDevice.importAdivina(game)
         }
+        game.id = $exeDevice.generarID();
         $exeDevice.updateFieldGame(game);
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
@@ -1920,10 +2016,137 @@ var $exeDevice = {
         var sUrl = urlmedia;
         if (typeof urlmedia != "undefined" && urlmedia.length > 0 && urlmedia.toLowerCase().indexOf("https://drive.google.com") == 0 && urlmedia.toLowerCase().indexOf("sharing") != -1) {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
-        }else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $exeDevice.getURLAudioMediaTeca(urlmedia)) {
+        } else if (typeof urlmedia != "undefined" && urlmedia.length > 10 && $exeDevice.getURLAudioMediaTeca(urlmedia)) {
             sUrl = $exeDevice.getURLAudioMediaTeca(urlmedia);
         }
         return sUrl;
+    },
+    loadLanguages: function () {
+        var langs = $exeDevice.getLangs();
+
+        var options = '<option value=""></option>';
+        for (var code in langs) {
+            var option = '<option value="' + code + '">' + _(langs[code]) + '</option>';
+            options += option;
+        }
+        return options;
+    },
+    getLangs: function () {
+        const languageNames = {
+            "am": "Amharic ",
+            "ar": "Arabic ",
+            "ast": "Asturiano ",
+            "bg": "Bulgarian ",
+            "bn": "Bengali ",
+            "ca": "Catalan ",
+            "ca_ES@valencia": "Valencian ",
+            "cs": "Czech ",
+            "da": "Danish ",
+            "de": "German ",
+            "dz": "Dzongkha ",
+            "ee": "Ewe ",
+            "el": "Greek ",
+            "en": "English ",
+            "es": "Spanish ",
+            "et": "Estonian ",
+            "eu": "Basque ",
+            "fa": "Persian ",
+            "fi": "Finnish ",
+            "fr": "French ",
+            "gl": "Galician ",
+            "hu": "Hungarian ",
+            "id": "Indonesian ",
+            "is": "Icelandic ",
+            "it": "Italian ",
+            "ja": "Japanese ",
+            "km": "Cambodian ",
+            "nb": "Norwegian Bokmål ",
+            "nl": "Dutch ",
+            "pl": "Polish ",
+            "pt": "Portuguese ",
+            "pt_BR": "Brazilian Portuguese ",
+            "ru": "Russian ",
+            "sk": "Slovak ",
+            "sl": "Slovenian ",
+            "sr": "Serbian ",
+            "sv": "Swedish ",
+            "th": "Thai ",
+            "tl": "Tagalog ",
+            "tr": "Turkish ",
+            "uk": "Ukrainian ",
+            "vi": "Vietnamese ",
+            "zh": "Simplified Chinese ",
+            "zh_TW": "Traditional Chinese ",
+            "zu": "Zulu "
+        };
+        return languageNames;
+    },
+
+    loadGoogleTranslate: function () {
+        if (typeof google !== 'undefined' && typeof google.translate !== 'undefined') {
+            $('#adivinaELanguagesDiv').show()
+        } else {
+            var tag = document.createElement('script');
+            tag.src = "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+            var firstScriptTag = document.getElementsByTagName('script')[0];
+            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        }
+    },
+
+    googleTranslateElementInit: function () {
+        new google.translate.TranslateElement({
+            autoDisplay: false
+        }, 'google_translate_element');
+    },
+    updateHTML: function (json) {
+        // Actualizar los elementos HTML con los valores del JSON traducido
+        const wordsGameElements = document.querySelectorAll('.word-game');
+        wordsGameElements.forEach((element, index) => {
+            const wordElement = element.querySelector('.word');
+            const definitionElement = element.querySelector('.definition');
+            wordElement.textContent = json.wordsGame[index].word;
+            definitionElement.textContent = json.wordsGame[index].definition;
+        });
+        const textButtonScormElement = document.querySelector('#text-button-scorm');
+        textButtonScormElement.textContent = json.textButtonScorm;
+    },
+
+    translateJson: function (json, langCode) {
+        return new Promise((resolve, reject) => {
+            // Comprobar que la librería de Google Translate se ha cargado correctamente y que el objeto sgoogle se ha inicializado
+            if (!$exeDevice.sgoogle) {
+                reject('La librería de Google Translate no se ha cargado correctamente');
+            }
+
+            // Obtener los textos a traducir
+            const palabras = json.palabras.map(palabra => palabra.texto);
+            const definiciones = json.palabras.map(palabra => palabra.definicion);
+            const textos = [json.titulo, ...palabras, ...definiciones];
+
+            // Traducir los textos
+            $exeDevice.sgoogle.getTranslation(textos, langCode).then(traducciones => {
+                // Actualizar los campos del objeto JSON con las traducciones
+                json.titulo = traducciones[0];
+                for (let i = 0; i < palabras.length; i++) {
+                    json.palabras[i].texto = traducciones[i + 1];
+                    json.palabras[i].definicion = traducciones[i + palabras.length + 1];
+                }
+
+                // Resolver la promesa con el objeto JSON traducido
+                resolve(json);
+            });
+        });
     }
+
+}
+
+function googleTranslateElementInit() {
+    // Aquí puedes hacer lo que quieras una vez que se cargue la biblioteca de Google Translate.
+    // En este ejemplo, mostramos un mensaje en la consola del navegador.
+    console.log('¡La librería de Google Translate se ha cargado correctamente!');
+    $exeDevice.sgoogle = new google.translate.TranslateElement({
+        autoDisplay: false
+    }, 'google_translate_element');
+    $('#adivinaELanguagesDiv').show()
 
 }

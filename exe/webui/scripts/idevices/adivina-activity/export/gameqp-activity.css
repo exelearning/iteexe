@@ -1100,6 +1100,25 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 	width: 100%;
 }
 
+.gameQP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.gameQP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.gameQP-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
+
+
 @-moz-keyframes gameQP-parpadeo {
 	0% {
 		opacity: 1.0;
@@ -1135,6 +1154,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 		opacity: 1.0;
 	}
 }
+
 
 @media screen and (max-width:550px) {
 	.gameQP-MainContainer {
