@@ -35,7 +35,10 @@ var $eXeMathOperations = {
         decimalsInOperands: 0, // Allow decimals
         decimalsInResults: 1, // Allow decimals in results
         negative: 1, // Allow negative results
-        zero: 1 // Allow zero in results
+        zero: 1, // Allow zero in results
+        mode: 0,
+        solution: 1
+
     },
     options: [],
     hasSCORMbutton: false,
@@ -124,7 +127,7 @@ var $eXeMathOperations = {
         $eXeMathOperations.options = [];
         $eXeMathOperations.activities.each(function (i) {
             var dl = $(".mathoperations-DataGame", this),
-                mOption = $eXeMathOperations.loadDataGame(dl),
+                mOption = $eXeMathOperations.loadDataGame(dl, i),
                 msg = mOption.msgs.msgPlayStart;
             $eXeMathOperations.options.push(mOption);
             var matho = $eXeMathOperations.createInterfaceMathO(i);
@@ -144,17 +147,15 @@ var $eXeMathOperations = {
             $('#mthoDivFeedBack-' + i).hide();
             $eXeMathOperations.createQuestions(i);
         });
-        if ($eXeMathOperations.hasLATEX && typeof (MathJax) == "undefined") {
+        if ($eXeMathOperations.hasLATEX == 1 && typeof (MathJax) == "undefined") {
             $eXeMathOperations.loadMathJax();
         }
     },
-
-
-    loadDataGame: function (data) {
+    loadDataGame: function (data, instance) {
         var json = data.text(),
             options = $eXeMathOperations.isJsonString(json),
             hasLatex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(json);
-        if (hasLatex) {
+        if (hasLatex || options.mode == 1) {
             $eXeMathOperations.hasLATEX = true;
         }
         options.hits = 0;
@@ -164,12 +165,44 @@ var $eXeMathOperations = {
         options.gameOver = false;
         options.gameStarted = false;
         options.obtainedClue = false;
-        options.gameOver = false;
+        options.solution = typeof options.solution == "undefined" ? true : options.solution;
+        options.mode = typeof options.mode == "undefined" ? 0 : options.mode;
+        options.negativeFractions = typeof options.negativeFractions == "undefined" ? false : options.negativeFractions;
+        options.msgs.msgFracctionNoValid = typeof options.msgs.msgFracctionNoValid == "undefined" ? 'Escribe una fracción válida' : options.msgs.msgFracctionNoValid;
         options.errorType = typeof options.errorType == "undefined" ? 0 : options.errorType;
         options.errorRelative = typeof options.errorRelative == "undefined" ? 0 : options.errorRelative;
         options.errorAbsolute = typeof options.errorAbsolute == "undefined" ? 0 : options.errorAbsolute;
-        options = $eXeMathOperations.loadQuestions(options)
+        options = $eXeMathOperations.loadQuestions(options, instance);
+        options.evaluation = typeof options.evaluation == "undefined" ? false : options.evaluation;
+        options.evaluationID = typeof options.evaluationID == "undefined" ? '' : options.evaluationID;
+        options.id = typeof options.id == "undefined" ? false : options.id;
         return options;
+    },
+    reloadGame: function (instance) {
+        var options = $eXeMathOperations.options[instance];
+        options.hits = 0;
+        options.errors = 0;
+        options.score = 0;
+        options.counter = 0;
+        options.gameOver = false;
+        options.gameStarted = false;
+        options.obtainedClue = false;
+        options.solution = typeof options.solution == "undefined" ? true : options.solution;
+        options.mode = typeof options.mode == "undefined" ? 0 : options.mode;
+        options.negativeFractions = typeof options.negativeFractions == "undefined" ? false : options.negativeFractions;
+        options.msgs.msgFracctionNoValid = typeof options.msgs.msgFracctionNoValid == "undefined" ? 'Escribe una fracción válida' : options.msgs.msgFracctionNoValid;
+        options.errorType = typeof options.errorType == "undefined" ? 0 : options.errorType;
+        options.errorRelative = typeof options.errorRelative == "undefined" ? 0 : options.errorRelative;
+        options.errorAbsolute = typeof options.errorAbsolute == "undefined" ? 0 : options.errorAbsolute;
+        options = $eXeMathOperations.loadQuestions(options, instance);
+        $('#mthoDivFeedBack-' + instance).hide();
+        $('#mthoStartGame-' + instance).hide();
+        $('#mthoPShowClue-' + instance).hide();
+        $eXeMathOperations.createQuestions(instance);
+        if ($eXeMathOperations.hasLATEX == 1 && typeof (MathJax) == "undefined") {
+            $eXeMathOperations.loadMathJax();
+        }
+
     },
     createQuestions: function (instance) {
         var mOptions = $eXeMathOperations.options[instance];
@@ -178,19 +211,18 @@ var $eXeMathOperations = {
             html += $eXeMathOperations.getQuestion(instance, mOptions.type, i, mOptions.components[i][0], mOptions.components[i][1], mOptions.components[i][2], mOptions.components[i][3], mOptions.decimalsInOperands);
         }
         html += '<p class="MTHO-pagination">';
-        html += '<a id="MTHO-' + instance + '-prevLink" style="visibility:hidden" href="#" onclick="$mathoQuestions.goTo(-1,' + mOptions.number + ',' + instance + ');return false">'+mOptions.msgs.msgPrevious+'</a> ';
+        html += '<a id="MTHO-' + instance + '-prevLink" style="visibility:hidden" href="#" onclick="$mathoQuestions.goTo(-1,' + mOptions.number + ',' + instance + ');return false">' + mOptions.msgs.msgPrevious + '</a>';
         html += '<span id="mathoPage-' + instance + '">1</span>/' + mOptions.number;
         html += ' <a id="MTHO-' + instance + '-nextLink" href="#"';
         if (mOptions.number == 1) html += ' style="visibility:hidden"';
-        html += ' onclick="$eXeMathOperations.goTo(1,' + mOptions.number + ',' + instance + ');return false">'+mOptions.msgs.msgNext+'</a> ';
+        html += ' onclick="$eXeMathOperations.goTo(1,' + mOptions.number + ',' + instance + ');return false">' + mOptions.msgs.msgNext + '</a> ';
         html += '</p>';
-
         html += '<table id="mathoResults-' + instance + '">';
         html += '<thead>';
         html += '<tr>';
-        html += '<th>'+mOptions.msgs.msgQuestion+' </th>';
-        html += '<th>'+mOptions.msgs.msgCorrect+' </th>';
-        html += '<th>'+mOptions.msgs.msgSolution+' </th>';
+        html += '<th>' + mOptions.msgs.msgQuestion + ' </th>';
+        html += '<th>' + mOptions.msgs.msgCorrect + ' </th>';
+        html += '<th>' + mOptions.msgs.msgSolution + ' </th>';
         html += '</tr>';
         html += '</thead>';
         html += '<tbody>';
@@ -203,22 +235,18 @@ var $eXeMathOperations = {
         }
         html += '</tbody>';
         html += '<table>';
-
         html += '<div class="MTHO-Summary">';
         html += '<ul>';
-        html += '<li><strong>'+mOptions.msgs.msgWithoutAnswer+': </strong><span id="mathoResults-' + instance + '-total">' + mOptions.number + '</span></li>';
-        html += '<li><strong>'+mOptions.msgs.msgReplied+': </strong><span id="mathoResults-' + instance + '-answered">0</span></li>';
-        html += '<li><strong>'+mOptions.msgs.msgCorrects+': </strong><span id="mathoResults-' + instance + '-right-answered">0</span></li>';
-        html += '<li><strong>'+mOptions.msgs.msgIncorrects+': </strong><span id="mathoResults-' + instance + '-wrong-answered">0</span></li>';
-        html += '<li><strong>'+mOptions.msgs.msgScore+': </strong><span id="mathoResults-' + instance + '-result">0</span>%</li>';
+        html += '<li><strong>' + mOptions.msgs.msgWithoutAnswer + ': </strong><span id="mathoResults-' + instance + '-total">' + mOptions.number + '</span></li>';
+        html += '<li><strong>' + mOptions.msgs.msgReplied + ': </strong><span id="mathoResults-' + instance + '-answered">0</span></li>';
+        html += '<li><strong>' + mOptions.msgs.msgCorrects + ': </strong><span id="mathoResults-' + instance + '-right-answered">0</span></li>';
+        html += '<li><strong>' + mOptions.msgs.msgIncorrects + ': </strong><span id="mathoResults-' + instance + '-wrong-answered">0</span></li>';
+        html += '<li><strong>' + mOptions.msgs.msgScore + ': </strong><span id="mathoResults-' + instance + '-result">0</span>%</li>';
         html += '</ul>';
         html += '</div>';
-
-
         $('#mthoMultimedia-' + instance).empty();
         $('#mthoMultimedia-' + instance).append(html);
     },
-
     isJsonString: function (str) {
         try {
             var o = JSON.parse(str, null, 2);
@@ -233,7 +261,7 @@ var $eXeMathOperations = {
             path = $eXeMathOperations.idevicePath,
             msgs = $eXeMathOperations.options[instance].msgs,
             html = '';
-        html += '<div class="MTHO-MainContainer">\
+        html += '<div class="MTHO-MainContainer"  id="mthoMainContainer-' + instance + '">\
         <div class="MTHO-GameMinimize" id="mthoGameMinimize-' + instance + '">\
             <a href="#" class="MTHO-LinkMaximize" id="mthoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + "mthoIcon.png" + '" class="MTHO-IconMinimize MTHO-Activo"  alt="">\
             <div class="MTHO-MessageMaximize" id="mthoMessageMaximize-' + instance + '"></div></a>\
@@ -270,12 +298,12 @@ var $eXeMathOperations = {
                 <div class="sr-av">' + msgs.msgClue + '</div>\
                 <p class=" MTHO-PShowClue MTHO-parpadea" id="mthoPShowClue-' + instance + '"></p>\
            </div>\
-           <div class="MTHO-Multimedia" id="mthoMultimedia-' + instance + '">\
-           </div>\
            <div class="MTHO-Flex" id="mthoDivImgHome-' + instance + '">\
                 <img src="' + path + "mthoHome.svg" + '" class="MTHO-ImagesHome" id="mthoPHome-' + instance + '"  alt="' + msgs.msgNoImage + '" />\
            </div>\
-            <div class="MTHO-StartGame"><a href="#" id="mthoStartGame-' + instance + '"></a></div>\
+           <div class="MTHO-StartGame"><a href="#" id="mthoStartGame-' + instance + '" style="display:none"></a></div>\
+           <div class="MTHO-Multimedia" id="mthoMultimedia-' + instance + '">\
+           </div>\
             <div class="MTHO-Cubierta" id="mthoCubierta-' + instance + '">\
                 <div class="MTHO-CodeAccessDiv" id="mthoCodeAccessDiv-' + instance + '">\
                     <p class="MTHO-MessageCodeAccessE" id="mthoMesajeAccesCodeE-' + instance + '"></p>\
@@ -296,7 +324,7 @@ var $eXeMathOperations = {
     ' + this.addButtonScore(instance);
         return html;
     },
-    loadQuestions: function (dataGame) {
+    loadQuestionsNumbers: function (dataGame) {
         var mOptions = dataGame;
         mOptions.components = [];
         var min = $eXeMathOperations.defaultSettings.min;
@@ -332,23 +360,19 @@ var $eXeMathOperations = {
                     result
                 ];
             }
-
             var components = getOperation(mOptions.min, mOptions.max);
-
             // No decimals, negative results or zero
             if (mOptions.decimalsInResults == false && mOptions.negative == false && mOptions.zero == false) {
                 while (components[3] !== parseInt(components[3]) || components[3] <= 0) {
                     components = getOperation(mOptions.min, mOptions.max);
                 }
             }
-
             // No decimals or negative results
             else if (mOptions.decimalsInResults == false && mOptions.negative == false) {
                 while (components[3] !== parseInt(components[3]) || components[3] < 0) {
                     components = getOperation(mOptions.min, mOptions.max);
                 }
             }
-
             // No decimals or zero
             else if (mOptions.decimalsInResults == false && mOptions.zero == false) {
                 while (components[3] !== parseInt(components[3]) || components[3] == 0) {
@@ -392,7 +416,17 @@ var $eXeMathOperations = {
             mOptions.components.push(components)
         }
         return mOptions;
+    },
+    loadQuestions: function (dataGame, instance) {
+        var mOptions = {};
+        if (dataGame.mode == 1) {
+            mOptions = $eXeMathOperations.loadQuestionFractions(dataGame)
 
+        } else {
+            mOptions = $eXeMathOperations.loadQuestionsNumbers(dataGame)
+
+        }
+        return mOptions;
     },
     showCubiertaOptions(mode, instance) {
         if (mode === false) {
@@ -411,12 +445,10 @@ var $eXeMathOperations = {
                 $('#mthoDivFeedBack-' + instance).show();
                 break;
             default:
-
                 break;
         }
         $('#mthoCubierta-' + instance).fadeIn();
     },
-
     goTo: function (target, total, instance) {
         $("form.mathoQuestion-" + instance).hide();
         $("#mathoQuestion-" + instance + "-" + target).fadeIn("normal", function () {
@@ -444,6 +476,11 @@ var $eXeMathOperations = {
                 $eXeMathOperations.goTo((target - 1), total, instance);
                 return false;
             }
+        }
+        var html = $('#mthoMultimedia-' + instance).html(),
+            latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
+        if (latex) {
+            $eXeMathOperations.updateLatex('mthoMultimedia-' + instance);
         }
     },
     getRandomNo: function (from, to, allowDecimals) {
@@ -488,24 +525,32 @@ var $eXeMathOperations = {
             }
         }
     },
-    checkInputContent: function (e, type) {
+    checkInputContent: function (e, type, mode) {
         var str = e.value;
         var lastCharacter = str.slice(-1);
         if (type == "operator") {
-            if (lastCharacter != "+" && lastCharacter != "-" && lastCharacter != "*" && lastCharacter != "x" && lastCharacter != "/") {
+            if (lastCharacter != "+" && lastCharacter != "-" && lastCharacter != "*" && lastCharacter != "x" && lastCharacter != "/" && lastCharacter != ":") {
                 e.value = str.substring(0, str.length - 1);
             } else if (lastCharacter == "*") {
                 e.value = str.substring(0, str.length - 1) + "x";
             }
         } else {
+
+            if (mode == 1) {
+                if (lastCharacter == "/" || lastCharacter == "-") {} else {
+                    if (isNaN(parseInt(lastCharacter))) {
+                        e.value = str.substring(0, str.length - 1);
+                    }
+                }
+                return;
+            }
             if (lastCharacter == "," || lastCharacter == ".") {
                 e.value = str.substring(0, str.length - 1);
                 if (e.value.indexOf(".") == -1) {
                     if (e.value == "") e.value = 0;
                     e.value = e.value + ".";
                 }
-            }else if (str.slice(0) == "-") {
-            }else {
+            } else if (str.slice(0) == "-") {} else {
                 if (isNaN(parseFloat(lastCharacter))) {
                     e.value = str.substring(0, str.length - 1);
                 }
@@ -515,13 +560,13 @@ var $eXeMathOperations = {
     getQuestion: function (instance, type, i, operandA, operation, operandB, result, numberOfDecimals) {
         var mOptions = $eXeMathOperations.options[instance];
         if (operation == "*") operation = "x";
-        if (type == "result") result = '<input type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:5em" onkeyup="$eXeMathOperations.checkInputContent(this,\'number\')" />';
-        else if (type == "operator") operation = '<input class="operator" type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:1em" onkeyup="$eXeMathOperations.checkInputContent(this,\'operator\')" />';
-        else if (type == "operandA") operandA = '<input type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:5em" onkeyup="$eXeMathOperations.checkInputContent(this,\'number\')" />';
-        else if (type == "operandB") operandB = '<input type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:5em" onkeyup="$eXeMathOperations.checkInputContent(this,\'number\')" />';
+        if (type == "result") result = '<input type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:5em" onkeyup="$eXeMathOperations.checkInputContent(this,\'number\',' + mOptions.mode + ')" />';
+        else if (type == "operator") operation = '<input class="operator" type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:1em" onkeyup="$eXeMathOperations.checkInputContent(this,\'operator\',' + mOptions.mode + ')" />';
+        else if (type == "operandA") operandA = '<input type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:5em" onkeyup="$eXeMathOperations.checkInputContent(this,\'number\',' + mOptions.mode + ')" />';
+        else if (type == "operandB") operandB = '<input type="text" autocomplete="off" id="mathoQuestion-' + instance + '-' + i + '-answer" style="width:5em" onkeyup="$eXeMathOperations.checkInputContent(this,\'number\',' + mOptions.mode + ')" />';
         var css = ' style="display:none"';
         if (i == 0) css = '';
-        var html = '<form class="MTHO-Form mathoQuestion-' + instance + '" id="mathoQuestion-' + instance + '-' + i + '" onsubmit="return $eXeMathOperations.checkAnswer(this,\'' + type + '\',\'' + numberOfDecimals + '\')"' + css + '>';
+        var html = '<form class="MTHO-Form mathoQuestion-' + instance + '" id="mathoQuestion-' + instance + '-' + i + '" onsubmit="return $eXeMathOperations.checkAnswer(this,\'' + type + '\',\'' + numberOfDecimals + '\',' + mOptions.mode + ')"' + css + '>';
         html += '<p>';
         html += '<label for="mathoQuestion-' + instance + '-' + i + '-answer">';
         html += '<span class="operandA">' + operandA + '</span>';
@@ -530,14 +575,32 @@ var $eXeMathOperations = {
         html += "=";
         html += '<span class="operationResult">' + result + '</span>';
         html += '</label>';
-        html += ' <input type="submit" value="'+mOptions.msgs.msgCheck+'" id="mathoQuestion-' + instance + '-' + i + '-submit" /> <span id="mathoQuestion-' + instance + '-' + i + '-warning"></span>';
+        html += ' <input type="submit" value="' + mOptions.msgs.msgCheck + '" id="mathoQuestion-' + instance + '-' + i + '-submit" /> <span id="mathoQuestion-' + instance + '-' + i + '-warning"></span>';
         html += '</p>';
         html += '</form>';
         return html;
     },
+    reduceDecimals: function (value) {
+        if (typeof value === 'string' || value instanceof String) {
+            // Convierte la cadena en un número de coma flotante
+            value = parseFloat(value);
+        } else if (typeof value !== 'number' || isNaN(value)) {
+            // Devuelve NaN si value no es una cadena ni un número válido
+            return NaN;
+        }
 
+        // Redondea el número a 2 decimales y elimina los ceros finales
+        let result = value.toFixed(2).replace(/\.?0+$/, '');
+
+        // Si el resultado es un número entero, elimina el punto y los ceros finales adicionales
+        if (result.indexOf('.') === result.length - 1) {
+            result = result.slice(0, result.indexOf('.'));
+        }
+
+        // Devuelve el resultado como una cadena
+        return String(result);
+    },
     removeUnnecessaryDecimals: function (num, fix) {
-        
         var res = num;
         if (fix != false) res = res.toFixed(2);
         var res = res.toString().replace(".00", "");
@@ -547,12 +610,191 @@ var $eXeMathOperations = {
         }
         return res;
     },
-    checkAnswer: function (e, type, numberOfDecimals) {
+    checkAnswer: function (e, type, numberOfDecimals, mode) {
+        var result = false;
+        if (mode == 1) {
+            result = $eXeMathOperations.checkAnswerFranctions(e, type)
+        } else {
+            result = $eXeMathOperations.checkAnswerNumbers(e, type, numberOfDecimals, )
+        }
+        return result;
+    },
+    checkAnswerFranctions: function (e, type) {
+        var id = e.id.replace("mathoQuestion-", "").split("-");
+        var instance = parseInt(id[0]);
+        var mOptions = $eXeMathOperations.options[instance];
+        var numf = parseInt(id[1]);
+        var opA = mOptions.fractions[numf][0];
+        var opO = mOptions.fractions[numf][1];
+        var opB = mOptions.fractions[numf][2];
+        var opR = mOptions.fractions[numf][3];
+        var operandA = $(".operandA", e);
+        var operandA_input = $("INPUT", operandA);
+        var operandB = $(".operandB", e);
+        var operandB_input = $("INPUT", operandB);
+        var operation = $(".operation", e);
+        var operation_input = $("INPUT", operation);
+        var operationResult = $(".operationResult", e);
+        var operationResult_input = $("INPUT", operationResult);
+        // Not answered
+        if ($("INPUT[type=text]", e).val() == "") {
+            var msg = $("#" + e.id + "-warning");
+            msg.html(mOptions.msgs.msgIncomplete);
+            setTimeout(function () {
+                msg.html(mOptions.msgs.msgIncomplete);
+            }, 2000);
+            return false;
+        }
+        if (operandA_input.length == 1) {
+            if (!$eXeMathOperations.isFraction(operandA_input.val())) {
+                var msg = $("#" + e.id + "-warning");
+                msg.html(mOptions.msgs.msgFracctionNoValid);
+                setTimeout(function () {
+                    msg.html(mOptions.msgs.msgFracctionNoValid);
+                }, 2000);
+                return false;
+            }
+        } else if (operandB_input.length == 1) {
+            if (!$eXeMathOperations.isFraction(operandB_input.val())) {
+                var msg = $("#" + e.id + "-warning");
+                msg.html(mOptions.msgs.msgFracctionNoValid);
+                setTimeout(function () {
+                    msg.html(mOptions.msgs.msgFracctionNoValid);
+                }, 2000);
+                return false;
+            }
+        } else if (operation_input.length == 1) {
+            var ops = '+-/*x:';
+            var op = operation_input.val().trim().toLowerCase();
+            if (ops.indexOf(op) == -1) {
+                var msg = $("#" + e.id + "-warning");
+                msg.html(mOptions.msgs.msgOperatNotValid);
+                setTimeout(function () {
+                    msg.html(mOptions.msgs.msgOperatNotValid);
+                }, 2000);
+                return false;
+            }
+        } else if (operationResult_input.length == 1) {
+            if (!$eXeMathOperations.isFraction(operationResult_input.val())) {
+                var msg = $("#" + e.id + "-warning");
+                msg.html(mOptions.msgs.msgFracctionNoValid);
+                setTimeout(function () {
+                    msg.html(mOptions.msgs.msgFracctionNoValid);
+                }, 2000);
+                return false;
+            }
+        }
+        var table = $("#mathoResults-" + instance);
+        var trs = $("tbody tr", table);
+        var tr = trs.eq(id[1]);
+        if (operandA_input.length == 1) operandA = operandA_input.val();
+        else operandA = opA;
+
+        if (operation_input.length == 1) operation = operation_input.val();
+        else operation = operation.text();
+
+        if (operandB_input.length == 1) operandB = operandB_input.val();
+        else operandB = opB;
+
+        var operationResult = $(".operationResult", e);
+        var operationResult_input = $("INPUT", operationResult);
+        if (operationResult_input.length == 1) operationResult = operationResult_input.val();
+        else operationResult = opR;
+
+        var right = false;
+        var rightResult = $eXeMathOperations.operateFractions(operandA, operandB, operation, true);
+        if ($eXeMathOperations.compareFractions(operationResult, rightResult, mOptions.solution)) right = true;
+        // Include the results in the table
+        var tds = $("td", tr);
+        var rightTD = tds.eq(1);
+        var solutionTD = tds.eq(2);
+        var base = "mathoResults-" + instance + "-";
+
+        $("#" + e.id + "-submit").hide();
+        e.onsubmit = function () {
+            return false;
+        }
+        $("#" + e.id + "-answer").attr("disabled", "disabled");
+        // Go to the next page
+        var nextFormId = (parseFloat(e.id.replace("mathoQuestion-" + instance + "-", ""))) + 1;
+        var nextForm = document.getElementById("mathoQuestion-" + instance + "-" + nextFormId);
+        if (nextForm) {
+            $eXeMathOperations.goTo(nextFormId, $("form.mathoQuestion-" + instance).length, instance);
+        }
+        // Summary
+        var total = $("#" + base + "total");
+        total.html((parseFloat(total.html()) - 1));
+        var answered = $("#" + base + "answered");
+        answered.html((parseFloat(answered.html()) + 1));
+        var rightAnswered = $("#" + base + "right-answered");
+
+        if (right) {
+            tr.attr("class", "MTHO-tr-right");
+            rightTD.html('<span class="MTHO-right">1</span> ');
+            rightAnswered.html((parseFloat(rightAnswered.html()) + 1));
+        } else {
+            tr.attr("class", "MTHO-tr-wrong");
+            rightTD.html('<span class="MTHO-wrong">0</span> ');
+            var wrongAnswered = $("#" + base + "wrong-answered");
+            wrongAnswered.html((parseFloat(wrongAnswered.html()) + 1));
+        }
+        if (type == "operator") {
+            rightResult = "";
+            if ($eXeMathOperations.operateFractions(operandA, operandB, '+', mOptions.solution) == opR) rightResult += "+ ";
+            if ($eXeMathOperations.operateFractions(operandA, operandB, '-', mOptions.solution) == opR) rightResult += "- ";
+            if ($eXeMathOperations.operateFractions(operandA, operandB, '*', mOptions.solution) == opR) rightResult += "x ";
+            if ($eXeMathOperations.operateFractions(operandA, operandB, ':', mOptions.solution) == opR) rightResult += ": ";
+        }
+        if (type == "operandA") {
+            if (right) rightResult = opA;
+            else {
+                if (operation == "+") rightResult = opR - opB;
+                else if (operation == "-") rightResult = $eXeMathOperations.operateFractions(opR, opB, '+', mOptions.solution);
+                else if (operation == "*" || operation == "x") rightResult = $eXeMathOperations.operateFractions(opR, opB, ':', mOptions.solution);
+                else rightResult = $eXeMathOperations.operateFractions(opR, opB, '*', mOptions.solution);
+            }
+        }
+        // Type = operandB
+        if (type == "operandB") {
+            if (right) rightResult = opB;
+            else {
+                if (operation == "+") rightResult = $eXeMathOperations.operateFractions(opR, opA, '-', mOptions.solution);
+                else if (operation == "-") rightResult = $eXeMathOperations.operateFractions(opR, opA, '-', mOptions.solution);
+                else if (operation == "*" || operation == "x") rightResult = $eXeMathOperations.operateFractions(opR, opA, ':', mOptions.solution);
+                else rightResult = $eXeMathOperations.operateFractions(opR, opA, '*', mOptions.solution);;
+            }
+
+        }
+        if (type != "operator") {
+            rightResult = $eXeMathOperations.createLatex(rightResult);
+        }
+        solutionTD.html(rightResult);
+        // Qualification
+        var qualification = this.removeUnnecessaryDecimals(100 * parseFloat(rightAnswered.html()) / trs.length);
+        $("#" + base + "result").html(qualification);
+        $eXeMathOperations.updateLatex('mthoMultimedia-' + instance);
+        $eXeMathOperations.updateScore(right, instance);
+        return false;
+    },
+    createLatex: function (fraction) {
+        var [numerator, denominator] = fraction.split('/');
+        if (typeof denominator == "undefined" || denominator == "undefined") denominator = 1;
+        var signoDenominador = denominator < 0 ? '-' : '';
+        if (denominator == '1') {
+            return `\\(${numerator}\\)`;
+        } else if (denominator == '-1') {
+            numerator = -parseInt(numerator);
+            return `\\(${numerator}\\)`;
+        } else {
+            return `\\(\\dfrac{${numerator}}{${signoDenominador}${Math.abs(denominator)}}\\)`;
+        }
+    },
+    checkAnswerNumbers: function (e, type, numberOfDecimals) {
         var id = e.id.replace("mathoQuestion-", "").split("-");
         var instance = id[0];
         var mOptions = $eXeMathOperations.options[instance];
-        var pOperationResult=0;
-        var pRightResult=0;
+        var pOperationResult = 0;
+        var pRightResult = 0;
         // Not answered
         if ($("INPUT[type=text]", e).val() == "") {
             var msg = $("#" + e.id + "-warning");
@@ -575,8 +817,22 @@ var $eXeMathOperations = {
 
         var operation = $(".operation", e);
         var operation_input = $("INPUT", operation);
-        if (operation_input.length == 1) operation = operation_input.val();
-        else operation = operation.text();
+        if (operation_input.length == 1) {
+            operation = operation_input.val();
+            operation.toLowerCase();
+            var operators_a = "x*+-/:"
+            if (operation.length > 1 || operators_a.indexOf(operation) == -1) {
+                var msg = $("#" + e.id + "-warning");
+                msg.html(mOptions.msgs.msgOperatNotValid);
+                setTimeout(function () {
+                    msg.html(mOptions.msgs.msgOperatNotValid);
+                }, 2000);
+                return false;
+            }
+        } else {
+            operation = operation.text();
+        }
+
 
         var operandB = $(".operandB", e);
         var operandB_input = $("INPUT", operandB);
@@ -590,34 +846,33 @@ var $eXeMathOperations = {
         else operationResult = operationResult.text();
         operationResult = parseFloat(operationResult);
         // operationResult = operationResult.toFixed(numberOfDecimals);
-        
+
         operationResult = operationResult.toFixed(2);
         operationResult = parseFloat(operationResult);
-        pOperationResult=operationResult;
+        pOperationResult = operationResult;
 
         // Check
         var right = false;
-        var rightResult;
+        var rightResult = 0;
         if (operation == "+") rightResult = operandA + operandB;
         else if (operation == "-") rightResult = operandA - operandB;
         else if (operation == "x" || operation == "*") rightResult = operandA * operandB;
-        else if (operation == "/") rightResult = operandA / operandB;
+        else if (operation == "/" || operation == ":") rightResult = operandA / operandB;
+
         // rightResult = rightResult.toFixed(numberOfDecimals);
-        pRightResult=rightResult;
+        pRightResult = rightResult;
         rightResult = rightResult.toFixed(2);
         if (rightResult == operationResult) right = true;
         if (mOptions.errorType > 0) {
             var ep = mOptions.errorType == 1 ? pRightResult * mOptions.errorRelative : mOptions.errorAbsolute;
-            var errormin=pRightResult-ep;
-            errormin=errormin.toFixed(2);
-            errormin=parseFloat(errormin);
+            var errormin = pRightResult - ep;
+            errormin = errormin.toFixed(2);
+            errormin = parseFloat(errormin);
 
-            var errormax=pRightResult+ep;
-            errormax=errormax.toFixed(2);
-            errormax=parseFloat(errormax);
+            var errormax = pRightResult + ep;
+            errormax = errormax.toFixed(2);
+            errormax = parseFloat(errormax);
             right = (pOperationResult >= errormin) && (pOperationResult <= errormax);
-            console.log('valores', pOperationResult,pRightResult, errormin, errormax,  ep)
-
         }
         // Include the results in the table
         var tds = $("td", tr);
@@ -656,16 +911,10 @@ var $eXeMathOperations = {
             var wrongAnswered = $("#" + base + "wrong-answered");
             wrongAnswered.html((parseFloat(wrongAnswered.html()) + 1));
         }
+
         // Type = operator
         if (type == "operator") {
-            // if (right) rightResult = operation;
-            // else {
-            rightResult = "";
-            if (operandA + operandB == operationResult) rightResult += "+ ";
-            if (operandA - operandB == operationResult) rightResult += "- ";
-            if (operandA * operandB == operationResult) rightResult += "x ";
-            if (operandA / operandB == operationResult) rightResult += "/ ";
-            // }
+            rightResult = $eXeMathOperations.getOperatorString(operandA, operandB, operationResult, mOptions.errorType, mOptions.errorRelative, mOptions.errorAbsolute)
         }
 
         // Type = operandA
@@ -689,31 +938,207 @@ var $eXeMathOperations = {
                 else rightResult = operationResult * operandA;
             }
         }
+        if (type !== 'operator') {
+            rightResult = $eXeMathOperations.reduceDecimals(rightResult);
+        }
 
-        rightResult = this.removeUnnecessaryDecimals(rightResult, false);
         solutionTD.html(rightResult);
-
         // Qualification
         var qualification = this.removeUnnecessaryDecimals(100 * parseFloat(rightAnswered.html()) / trs.length);
-
         $("#" + base + "result").html(qualification);
         $eXeMathOperations.updateScore(right, instance);
 
+        return false;
+    },
 
+    getOperatorString: function (oA, oB, oR, etype, er, ea) {
+        var soperator = '';
+        if (etype == 0) {
+            if ((oA + oB).toFixed(2) == oR.toFixed(2)) soperator += "+ ";
+            if ((oA - oB).toFixed(2) == oR.toFixed(2)) soperator += "- ";
+            if ((oA * oB).toFixed(2) == oR.toFixed(2)) soperator += "x ";
+            if ((oA / oB).toFixed(2) == oR.toFixed(2)) soperator += "/ ";
+        } else {
+            var ep = etype == 1 ? oR * er : ea;
+            var errormin = oR - ep;
+            var errormax = oR + ep;
+            if ((oA + oB) >= errormin && (oA + oB) <= errormax) soperator += "+ ";
+            if ((oA - oB) >= errormin && (oA - oB) <= errormax) soperator += "- ";
+            if ((oA * oB) >= errormin && (oA * oB) <= errormax) soperator += "x ";
+            if ((oA / oB) >= errormin && (oA / oB) <= errormax) soperator += "/ ";
+
+        }
+        return soperator;
+
+
+    },
+    checkAnswerNumbers2: function (e, numberOfDecimals, type) {
+        var id = e.id.replace("mathoQuestion-", "").split("-");
+        var instance = id[0];
+        var mOptions = $eXeMathOperations.options[instance];
+        var pOperationResult = 0;
+        var pRightResult = 0; // Not answered
+        if ($("INPUT[type=text]", e).val() == "") {
+            var msg = $("#" + e.id + "-warning");
+            msg.html(mOptions.msgs.msgIncomplete);
+            setTimeout(function () {
+                msg.html(mOptions.msgs.msgIncomplete);
+            }, 2000);
+            return false;
+        }
+        var table = $("#mathoResults-" + instance);
+        var trs = $("tbody tr", table);
+        var tr = trs.eq(id[1]);
+
+        var operandA = $(".operandA", e);
+        var operandA_input = $("INPUT", operandA);
+        if (operandA_input.length == 1) operandA = operandA_input.val();
+        else operandA = operandA.text();
+        operandA = parseFloat(operandA);
+
+        var operation = $(".operation", e);
+        var operation_input = $("INPUT", operation);
+        if (operation_input.length == 1) operation = operation_input.val();
+        else {
+            var operadores = "x*+-/:"
+            operation = operation.text();
+            operation = operation.toLowerCase();
+            if (operation.length > 1 || operadores.indexOf(operation) == -1) {
+                var msg = $("#" + e.id + "-warning");
+                msg.html(mOptions.msgs.msgOperatNotValid);
+                setTimeout(function () {
+                    msg.html(mOptions.msgs.msgOperatNotValid);
+                }, 2000);
+                return false;
+            }
+        }
+
+        var operandB = $(".operandB", e);
+        var operandB_input = $("INPUT", operandB);
+        if (operandB_input.length == 1) operandB = operandB_input.val();
+        else operandB = operandB.text();
+        operandB = parseFloat(operandB);
+
+        var operationResult = $(".operationResult", e);
+        var operationResult_input = $("INPUT", operationResult);
+        if (operationResult_input.length == 1) operationResult = operationResult_input.val();
+        else operationResult = operationResult.text();
+        operationResult = parseFloat(operationResult);
+
+        operationResult = operationResult.toFixed(2);
+        operationResult = parseFloat(operationResult);
+        pOperationResult = operationResult;
+
+        // Check
+        var right = false;
+        var rightResult;
+        if (operation == "+") rightResult = operandA + operandB;
+        else if (operation == "-") rightResult = operandA - operandB;
+        else if (operation == "x" || operation == "*") rightResult = operandA * operandB;
+        else if (operation == "/" || operation == ":") rightResult = operandA / operandB;
+        // rightResult = rightResult.toFixed(numberOfDecimals);
+        pRightResult = rightResult;
+        rightResult = rightResult.toFixed(2);
+        if (rightResult == operationResult) right = true;
+        if (mOptions.errorType > 0) {
+            var ep = mOptions.errorType == 1 ? pRightResult * mOptions.errorRelative : mOptions.errorAbsolute;
+            var errormin = pRightResult - ep;
+            errormin = errormin.toFixed(2);
+            errormin = parseFloat(errormin);
+            var errormax = pRightResult + ep;
+            errormax = errormax.toFixed(2);
+            errormax = parseFloat(errormax);
+            right = (pOperationResult >= errormin) && (pOperationResult <= errormax);
+
+        }
+        // Include the results in the table
+        var tds = $("td", tr);
+        var rightTD = tds.eq(1);
+        var solutionTD = tds.eq(2);
+        var base = "mathoResults-" + instance + "-";
+
+        // Hide the submit button and disable the form
+        $("#" + e.id + "-submit").hide();
+        e.onsubmit = function () {
+            return false;
+        }
+        $("#" + e.id + "-answer").attr("disabled", "disabled");
+
+        // Go to the next page
+        var nextFormId = (parseFloat(e.id.replace("mathoQuestion-" + instance + "-", ""))) + 1;
+        var nextForm = document.getElementById("mathoQuestion-" + instance + "-" + nextFormId);
+        if (nextForm) {
+            $eXeMathOperations.goTo(nextFormId, $("form.mathoQuestion-" + instance).length, instance);
+        }
+        // Summary
+        var total = $("#" + base + "total");
+        total.html((parseFloat(total.html()) - 1));
+        var answered = $("#" + base + "answered");
+        answered.html((parseFloat(answered.html()) + 1));
+        var rightAnswered = $("#" + base + "right-answered");
+
+        if (right) {
+            tr.attr("class", "MTHO-tr-right");
+            rightTD.html('<span class="MTHO-right">1</span> ');
+            rightAnswered.html((parseFloat(rightAnswered.html()) + 1));
+        } else {
+            tr.attr("class", "MTHO-tr-wrong");
+            rightTD.html('<span class="MTHO-wrong">0</span> ');
+            var wrongAnswered = $("#" + base + "wrong-answered");
+            wrongAnswered.html((parseFloat(wrongAnswered.html()) + 1));
+        }
+        // Type = operator
+        if (type == "operator") {
+            // if (right) rightResult = operation;
+            // else {
+            rightResult = "";
+            if (operandA + operandB == operationResult) rightResult += "+ ";
+            if (operandA - operandB == operationResult) rightResult += "- ";
+            if (operandA * operandB == operationResult) rightResult += "x ";
+            if (operandA / operandB == operationResult) rightResult += "/ ";
+            // }
+        }
+        // Type = operandA
+        if (type == "operandA") {
+            if (right) rightResult = operandA;
+            else {
+                if (operation == "+") rightResult = operationResult - operandB;
+                else if (operation == "-") rightResult = operationResult + operandB;
+                else if (operation == "*" || operation == "x") rightResult = operationResult / operandB;
+                else rightResult = operationResult * operandB;
+            }
+        }
+        // Type = operandB
+        if (type == "operandB") {
+            if (right) rightResult = operandB;
+            else {
+                if (operation == "+") rightResult = operationResult - operandA;
+                else if (operation == "-") rightResult = Math.abs(operationResult - operandA);
+                else if (operation == "*" || operation == "x") rightResult = operationResult / operandA;
+                else rightResult = operationResult * operandA;
+            }
+        }
+
+        rightResult = this.removeUnnecessaryDecimals(rightResult, false);
+        solutionTD.html(rightResult);
+        // Qualification
+        var qualification = this.removeUnnecessaryDecimals(100 * parseFloat(rightAnswered.html()) / trs.length);
+        $("#" + base + "result").html(qualification);
+        $eXeMathOperations.updateScore(right, instance);
         return false;
     },
     checkClue: function (instance) {
         var mOptions = $eXeMathOperations.options[instance],
-           percentageHits = (mOptions.hits / mOptions.number) * 100,
-           message='';
-        if(mOptions.number-mOptions.hits-mOptions.errors<=0){
-            message +=mOptions.msgs.msgAllOperations;
-        }else if(mOptions.gameOver && mOptions.time>0){
-            message +=mOptions.msgs.msgAllOperations;
+            percentageHits = (mOptions.hits / mOptions.number) * 100,
+            message = '';
+        if (mOptions.number - mOptions.hits - mOptions.errors <= 0) {
+            message += mOptions.msgs.msgAllOperations;
+        } else if (mOptions.gameOver && mOptions.time > 0) {
+            message += mOptions.msgs.msgAllOperations;
         }
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
             if (!mOptions.obtainedClue) {
-                message+=' '+mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame
+                message += ' ' + mOptions.msgs.msgInformation + ": " + mOptions.itinerary.clueGame
                 mOptions.obtainedClue = true;
             }
         }
@@ -748,6 +1173,118 @@ var $eXeMathOperations = {
         }
         fB = +'</div>';
         return butonScore;
+    },
+    updateEvaluationIcon: function (instance) {
+        var mOptions = $eXeMathOperations.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var node = $('#nodeTitle').text(),
+                data = $eXeMathOperations.getDataStorage(mOptions.evaluationID)
+            var score = '',
+                state = 0;
+            if (!data) {
+                $eXeMathOperations.showEvaluationIcon(instance, state, score);
+                return;
+            }
+            const findObject = data.activities.find(
+                obj => obj.id == mOptions.id && obj.node === node
+            );
+            if (findObject) {
+                state = findObject.state;
+                score = findObject.score;
+            }
+            $eXeMathOperations.showEvaluationIcon(instance, state, score)
+            var ancla = 'ac-' + mOptions.id;
+            $('#' + ancla).remove();
+            $('#mthoMainContainer-' + instance).parents('article').prepend('<div id="' + ancla + '"></div>');
+
+        }
+    },
+    showEvaluationIcon: function (instance, state, score) {
+        var mOptions = $eXeMathOperations.options[instance];
+        var $header = $('#mthoGameContainer-' + instance).parents('article').find('header.iDevice_header');
+        var icon = 'exequextsq.png',
+            alt = mOptions.msgs.msgUncompletedActivity;
+        if (state == 1) {
+            icon = 'exequextrerrors.png';
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+
+        } else if (state == 2) {
+            icon = 'exequexthits.png';
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+        }
+        $('#mthoEvaluationIcon-' + instance).remove();
+        var sicon = '<div id="mthoEvaluationIcon-' + instance + '" class="MTHO-EvaluationDivIcon"><img  src="' + $eXeMathOperations.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        $header.eq(0).append(sicon);
+        $('#mthoEvaluationIcon-' + instance).find('span').eq(0).text(alt)
+    },
+    updateEvaluation: function (obj1, obj2, id1) {
+        if (!obj1) {
+            obj1 = {
+                id: id1,
+                activities: []
+            };
+        }
+        const findObject = obj1.activities.find(
+            obj => obj.id === obj2.id && obj.node === obj2.node
+        );
+
+        if (findObject) {
+            findObject.state = obj2.state;
+            findObject.score = obj2.score;
+            findObject.name = obj2.name;
+            findObject.date = obj2.date;
+        } else {
+            obj1.activities.push({
+                'id': obj2.id,
+                'type': obj2.type,
+                'node': obj2.node,
+                'name': obj2.name,
+                'score': obj2.score,
+                'date': obj2.date,
+                'state': obj2.state,
+            });
+        }
+        return obj1;
+    },
+    getDateString: function () {
+        var currentDate = new Date();
+        var formattedDate = currentDate.getDate().toString().padStart(2, '0') + '/' +
+            (currentDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+            currentDate.getFullYear().toString().padStart(4, '0') + ' ' +
+            currentDate.getHours().toString().padStart(2, '0') + ':' +
+            currentDate.getMinutes().toString().padStart(2, '0') + ':' +
+            currentDate.getSeconds().toString().padStart(2, '0');
+        return formattedDate;
+
+    },
+
+    saveEvaluation: function (instance) {
+        var mOptions = $eXeMathOperations.options[instance];
+        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+            var name = $('#mthoGameContainer-' + instance).parents('article').find('.iDeviceTitle').eq(0).text(),
+                node = $('#nodeTitle').text(),
+                score = ((10 * mOptions.hits) / mOptions.number).toFixed(2)
+            var formattedDate = $eXeMathOperations.getDateString();
+            var scorm = {
+                'id': mOptions.id,
+                'type': mOptions.msgs.msgTypeGame,
+                'node': node,
+                'name': name,
+                'score': score,
+                'date': formattedDate,
+                'state': (parseFloat(score) >= 5 ? 2 : 1)
+            }
+            var data = $eXeMathOperations.getDataStorage(mOptions.evaluationID);
+            data = $eXeMathOperations.updateEvaluation(data, scorm);
+            data = JSON.stringify(data, mOptions.evaluationID);
+            localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
+            $eXeMathOperations.showEvaluationIcon(instance, scorm.state, scorm.score)
+        }
+    },
+    getDataStorage: function (id) {
+        var id = 'dataEvaluation-' + id,
+            data = $eXeMathOperations.isJsonString(localStorage.getItem(id));
+        return data;
     },
     sendScore: function (instance, auto) {
         var mOptions = $eXeMathOperations.options[instance],
@@ -786,8 +1323,6 @@ var $eXeMathOperations = {
         }
         if (!auto) alert(message);
     },
-
-
     exitFullscreen: function () {
         if (document.exitFullscreen) {
             document.exitFullscreen();
@@ -857,8 +1392,7 @@ var $eXeMathOperations = {
         $('#mthoPShowClue-' + instance).hide();
         if (mOptions.itinerary.showCodeAccess) {
             $('#mthoMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
-            $eXeMathOperations.showCubiertaOptions(0, instance)
-
+            $eXeMathOperations.showCubiertaOptions(0, instance);
         }
         $('#mthoCodeAccessButton-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -884,12 +1418,25 @@ var $eXeMathOperations = {
         $('#mthoSendScore-' + instance).click(function (e) {
             e.preventDefault();
             $eXeMathOperations.sendScore(instance, false);
+            $eXeMathOperations.saveEvaluation(instance);
 
         });
+
         $('#mthoStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
-            $eXeMathOperations.startGame(instance)
+            if (mOptions.gameOver) {
+                $eXeMathOperations.reloadGame(instance);
+                if (mOptions.time > 0) {
+                    mOptions.gameStarted = false;
+                    $eXeMathOperations.startGame(instance)
+                }
+                $eXeMathOperations.updateLatex('mthoMultimedia-' + instance);
+            } else {
+                $eXeMathOperations.startGame(instance)
+            }
+
         });
+
         if (mOptions.time > 0) {
             mOptions.gameStarted = false;
             $('#mthoGameContainer-' + instance).find('.exeQuextIcons-Time').show();
@@ -898,8 +1445,7 @@ var $eXeMathOperations = {
             $('#mthoMultimedia-' + instance).hide();
             $('#mthoDivImgHome-' + instance).show();
             $('#mthoStartGame-' + instance).text(mOptions.msgs.msgPlayStart);
-
-        }else{
+        } else {
             $('#mthoMultimedia-' + instance).show();
             $('#mthoDivImgHome-' + instance).hide();
             $('#mthoStartGame-' + instance).hide();
@@ -907,6 +1453,7 @@ var $eXeMathOperations = {
             $('#mthoPTime-' + instance).hide();
             mOptions.gameStarted = true
         }
+        $eXeMathOperations.updateEvaluationIcon(instance);
     },
 
     startGame: function (instance) {
@@ -914,7 +1461,6 @@ var $eXeMathOperations = {
         if (mOptions.gameStarted) {
             return
         }
-        
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -943,15 +1489,11 @@ var $eXeMathOperations = {
             }, 1000);
             $eXeMathOperations.uptateTime(mOptions.time * 60, instance);
         }
-
         mOptions.gameStarted = true;
-
-
     },
-
     enterCodeAccess: function (instance) {
         var mOptions = $eXeMathOperations.options[instance];
-        if (mOptions.itinerary.codeAccess.toLowerCase()== $('#mthoCodeAccessE-' + instance).val().toLowerCase()) {
+        if (mOptions.itinerary.codeAccess.toLowerCase() == $('#mthoCodeAccessE-' + instance).val().toLowerCase()) {
             $eXeMathOperations.showCubiertaOptions(false, instance);
             if (mOptions.time > 0) {
                 mOptions.gameStarted = false;
@@ -963,7 +1505,6 @@ var $eXeMathOperations = {
             $('#mthoCodeAccessE-' + instance).val('');
         }
     },
-
     uptateTime: function (tiempo, instance) {
         var mTime = $eXeMathOperations.getTimeToString(tiempo);
         $('#mthoPTime-' + instance).text(mTime);
@@ -978,22 +1519,25 @@ var $eXeMathOperations = {
         mOptions.gameStarted = false;
         mOptions.gameOver = true;
         mOptions.activeCounter = false;
-        if(mOptions.time>0){
+        if (mOptions.time > 0) {
             clearInterval(mOptions.counterClock);
             $eXeMathOperations.uptateTime(0, instance);
         }
-        $('#mthoGameContainer-'+instance).find('.MTHO-Form').find('input').attr('disabled','disabled');
-        $('#mthoGameContainer-'+instance).find('.MTHO-Form').find('input[type="submit"]').hide();
+        $('#mthoGameContainer-' + instance).find('.MTHO-Form').find('input').attr('disabled', 'disabled');
+        $('#mthoGameContainer-' + instance).find('.MTHO-Form').find('input[type="submit"]').hide();
         if (mOptions.isScorm == 1) {
             if (mOptions.repeatActivity || $eXeMathOperations.initialScore === '') {
-                var score = ((mOptions.hits * 10) / mOptions.mOptions.number).toFixed(2);
+                var score = ((mOptions.hits * 10) / mOptions.number).toFixed(2);
                 $eXeMathOperations.sendScore(instance, true);
                 $('#mthoRepeatActivity-' + instance).text(mOptions.msgs.msgYouScore + ': ' + score);
                 $eXeMathOperations.initialScore = score;
             }
         }
+        $eXeMathOperations.saveEvaluation(instance);
         $eXeMathOperations.checkClue(instance);
         $eXeMathOperations.showFeedBack(instance);
+        $('#mthoStartGame-' + instance).text(mOptions.msgs.msgNewGame);
+        $('#mthoStartGame-' + instance).show();
     },
     showFeedBack: function (instance) {
         var mOptions = $eXeMathOperations.options[instance];
@@ -1008,7 +1552,6 @@ var $eXeMathOperations = {
             }
         }
     },
-
     loadMathJax: function () {
         if (!window.MathJax) {
             window.MathJax = $exe.math.engineConfig;
@@ -1018,7 +1561,6 @@ var $eXeMathOperations = {
         script.async = true;
         document.head.appendChild(script);
     },
-
     updateLatex: function (mnodo) {
         setTimeout(function () {
             if (typeof (MathJax) != "undefined") {
@@ -1034,10 +1576,8 @@ var $eXeMathOperations = {
                     console.log('Error al refrescar cuestiones')
                 }
             }
-
         }, 100);
     },
-
     updateScore: function (correctAnswer, instance) {
         var mOptions = $eXeMathOperations.options[instance],
             pendientes = 0;
@@ -1057,13 +1597,12 @@ var $eXeMathOperations = {
 
             }
         }
-
+        $eXeMathOperations.saveEvaluation(instance);
         $eXeMathOperations.checkClue(instance);
         $eXeMathOperations.updateGameBoard(instance);
         if (pendientes == 0) {
             $eXeMathOperations.gameOver(1, instance)
         }
-
     },
     updateGameBoard(instance) {
         var mOptions = $eXeMathOperations.options[instance],
@@ -1104,7 +1643,225 @@ var $eXeMathOperations = {
             sUrl = sUrl.replace(/https:\/\/drive\.google\.com\/file\/d\/(.*?)\/.*?\?usp=sharing/g, "https://docs.google.com/uc?export=open&id=$1");
         }
         return sUrl;
-    }
+    },
+    operateFractions: function (f1, f2, operation, type) {
+        var fraction1 = $eXeMathOperations.parsearFraccion(f1);
+        var fraction2 = $eXeMathOperations.parsearFraccion(f2);
+        var resultado;
+        operation = typeof operation == 'undefined' ? 'x' : operation;
+        operation = operation.toLowerCase().trim();
+        switch (operation) {
+            case '+':
+                resultado = $eXeMathOperations.addFractions(fraction1, fraction2, type);
+                break;
+            case '-':
+                resultado = $eXeMathOperations.subtractFractions(fraction1, fraction2, type);
+                break;
+            case '*':
+                resultado = $eXeMathOperations.multiplyFractions(fraction1, fraction2, type);
+                break;
+            case '/':
+                resultado = $eXeMathOperations.divideFractions(fraction1, fraction2, type);
+                break;
+            case ':':
+                resultado = $eXeMathOperations.divideFractions(fraction1, fraction2, type);
+                break;
+            case 'x':
+                resultado = $eXeMathOperations.multiplyFractions(fraction1, fraction2, type);
+                break;
+            default:
+                throw new Error('Operación no soportada');
+        }
+        var result = $eXeMathOperations.simplifyFraction(resultado.numerator, resultado.denominator, type)
+        return $eXeMathOperations.formatFraction(result.numerator, result.denominator);
+    },
+    parsearFraccion: function (fraction) {
+        var [numerator, denominator] = fraction.split('/').map(Number);
+        denominator = typeof denominator == 'undefined' ? 1 : denominator;
+        return {
+            numerator,
+            denominator
+        };
+    },
+    addFractions: function (f1, f2, type) {
+        const commonDenominator = f1.denominator * f2.denominator;
+        const numerator = f1.numerator * f2.denominator + f2.numerator * f1.denominator;
+        return $eXeMathOperations.simplifyFraction(numerator, commonDenominator, type);
+    },
+    subtractFractions: function (f1, f2, type) {
+        const commonDenominator = f1.denominator * f2.denominator;
+        const numerator = f1.numerator * f2.denominator - f2.numerator * f1.denominator;
+        return $eXeMathOperations.simplifyFraction(numerator, commonDenominator, type);
+    },
+    multiplyFractions: function (f1, f2, type) {
+        const numerator = f1.numerator * f2.numerator;
+        const denominator = f1.denominator * f2.denominator;
+        return $eXeMathOperations.simplifyFraction(numerator, denominator, type);
+    },
+    divideFractions: function (f1, f2, type) {
+        const numerator = f1.numerator * f2.denominator;
+        const denominator = f1.denominator * f2.numerator;
+        return $eXeMathOperations.simplifyFraction(numerator, denominator, type);
+    },
+    simplifyFraction: function (numerator, denominator, type) {
+        const mcd = $eXeMathOperations.getLMC(numerator, denominator);
+        if (type && denominator < 0) {
+            numerator *= -1;
+            denominator *= -1;
+        }
+        return {
+            numerator: numerator / mcd,
+            denominator: denominator / mcd
+        };
+    },
+    getLMC: function (a, b) {
+        // Utilizar el algoritmo de Euclides para calcular el MCD
+        a = Math.abs(a);
+        b = Math.abs(b);
+        while (b !== 0) {
+            let t = b;
+            b = a % b;
+            a = t;
+        }
+        return a;
+    },
+
+    isFraction: function (schain) {
+        if (typeof schain !== 'string' || schain.length === 0) {
+            return false;
+        }
+        const parts = schain.split('/');
+        if (parts.length == 1) {
+            parts.push('1')
+        } else if (parts.length !== 2) {
+            return false;
+        }
+        const numerator = parts[0].trim();
+        const denominator = parts[1].trim();
+        const numeratorIsInteger = /^-?\s?\d+$/.test(numerator);
+        const denominatorIsInteger = /^-?\s?\d+$/.test(denominator);
+        if (!numeratorIsInteger || !denominatorIsInteger) {
+            return false;
+        }
+        if (denominator === '0') {
+            return false;
+        }
+        return true;
+    },
+    compareFractions: function (fraction1, fraction2, strict) {
+        if (!$eXeMathOperations.isFraction(fraction1) || !$eXeMathOperations.isFraction(fraction1)) {
+            return;
+        }
+        if (strict) {
+            return (fraction1.replace(/\s/g, '').toLowerCase() == fraction2.replace(/\s/g, '').toLowerCase())
+        }
+        var [num1, den1] = fraction1.replace(/\s/g, '').split('/').map(Number);
+        var [num2, den2] = fraction2.replace(/\s/g, '').split('/').map(Number);
+
+        if (den1 == 0 || den2 == 0) {
+            throw new Error('Los denominadores deben ser distintos de 0');
+        }
+        den1 = typeof den1 == "undefined" ? 1 : den1;
+        den2 = typeof den2 == "undefined" ? 1 : den2;
+        const absNum1 = Math.abs(num1);
+        const absDen1 = Math.abs(den1);
+        const absNum2 = Math.abs(num2);
+        const absDen2 = Math.abs(den2);
+        return (parseInt(num1) / parseInt(den1) === parseInt(num2) / parseInt(den2));
+        // if (strict) {
+        //     return (absNum1 === absNum2 && absDen1 === absDen2 && num1 / den1 === num2 / den2);
+        // } else {
+
+        // }
+    },
+    formatFraction: function (numerator, denominator) {
+        if (denominator == 1) {
+            return `${numerator}`;
+        }
+        return `${numerator}/${denominator}`;
+    },
+    loadQuestionFractions: function (dataGame) {
+        var mOptions = dataGame;
+        mOptions.components = [];
+        mOptions.fractions = [];
+        var min = $eXeMathOperations.defaultSettings.min;
+        if (!isNaN(mOptions.min)) min = parseInt(mOptions.min);
+        mOptions.min = Math.round(min);
+        var max = $eXeMathOperations.defaultSettings.max;
+        if (!isNaN(mOptions.max)) max = parseInt(mOptions.max);
+        mOptions.max = Math.round(max);
+        for (var i = 0; i < mOptions.number; i++) {
+            function getOperation(min, max) {
+                var operators = "+-*:";
+                var operationsToDo = "";
+                for (var z = 0; z < mOptions.operations.length; z++) {
+                    if (mOptions.operations[z] != 0) operationsToDo += operators[z];
+                }
+                var operation = operationsToDo[$eXeMathOperations.getRandomNo(0, operationsToDo.length, 0)];
+                var operandA = $eXeMathOperations.generateFraction(mOptions.min, mOptions.max, mOptions.negativeFractions, mOptions.solution);
+                var operandB = $eXeMathOperations.generateFraction(mOptions.min, mOptions.max, mOptions.negativeFractions, mOptions.solution);
+                if (operation == '-' && !mOptions.negativeFractions) {
+                    if ($eXeMathOperations.is_minor(operandA, operandB)) {
+                        var aux = operandA;
+                        operandA = operandB;
+                        operandB = aux;
+                    }
+                }
+                var result = $eXeMathOperations.operateFractions(operandA, operandB, operation, true);
+                var oA = $eXeMathOperations.createLatex(operandA);
+                var oB = $eXeMathOperations.createLatex(operandB);
+                var lresult = $eXeMathOperations.createLatex(result);
+                return [
+                    [oA, operation, oB, lresult],
+                    [operandA, operation, operandB, result]
+                ];
+            }
+            var datos = getOperation(mOptions.min, mOptions.max);
+            if (mOptions.type == "random") {
+                var options = ["operator", "result", "operandA", "operandB"];
+                mOptions.type = options[this.getRandomNo(0, 4, 0)];
+            }
+            mOptions.components.push(datos[0]);
+            mOptions.fractions.push(datos[1])
+        }
+        return mOptions;
+    },
+    is_minor: function (fraction1, fraction2) {
+        var [num1, den1] = fraction1.split('/').map(Number);
+        var [num2, den2] = fraction2.split('/').map(Number);
+        den1 = typeof den1 == "undefined" ? 1 : den1;
+        den2 = typeof den2 == "undefined" ? 1 : den2;
+        const frac1 = num1 / den1;
+        const frac2 = num2 / den2;
+        return frac2 > frac1;
+    },
+    generateFraction: function (maximo, minimo, signo, type) {
+        if (typeof maximo !== 'number' || typeof minimo !== 'number') {
+            throw new Error('Los valores máximo y mínimo deben ser números');
+        }
+        var numerator = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+        var denominator = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+        if (denominator === 0) {
+            denominator = 1;
+        }
+        if (signo) {
+            var aleatorio1 = Math.random();
+            if (aleatorio1 < 0.5) {
+                numerator *= -1;
+            }
+            aleatorio1 = Math.random();
+            if (aleatorio1 < 0.3) {
+                denominator *= -1;
+            }
+
+        }
+        var fc = $eXeMathOperations.simplifyFraction(numerator, denominator, type);
+        if (fc.denominator == 1) {
+            return `${fc.numerator}`;
+        }
+        return `${fc.numerator}/${fc.denominator}`;
+    },
+
 }
 $(function () {
     $eXeMathOperations.init();

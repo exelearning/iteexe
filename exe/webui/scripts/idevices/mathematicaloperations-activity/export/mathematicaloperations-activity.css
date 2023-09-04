@@ -166,6 +166,15 @@
 	width: 100%;
 
 }
+.MTHO-FlexCenter {
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	min-width: 200px;
+	width: 100%;
+
+}
 
 
 .MTHO-Form {
@@ -417,6 +426,11 @@
 	text-decoration: underline;
 }
 
+.MTHO-pagination a{
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+}
+
 /* Pegunta tipo test */
 
 
@@ -484,8 +498,13 @@
 .MTHO-DivFeedBack button {
 	cursor: pointer;
 }
+.operation{
+	width: 1em;
+	display: inline-block;
+	text-align: center;
 
-.quext-feedback-game, .mathoperations-feedback-game, .selecciona-feedback-game, .vquext-feedback-game {
+}
+ .mathoperations-feedback-game {
 	-moz-box-shadow: 0 10px 6px -6px #999;
 	-webkit-box-shadow: 0 10px 6px -6px #999999;
 	background-color: #fff;
@@ -670,6 +689,24 @@ div:fullscreen .MTHO-Multimedia, div:-webkit-full-screen .MTHO-Multimedia, div:-
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+}
+
+.MTHO-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.MTHO-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+.MTHO-EvaluationDivIcon span{
+	font-size: 0.9em;
 }
 
 @-moz-keyframes MTHO-parpadeo {

@@ -15,6 +15,7 @@ var $exeDevice = {
     },
     msgs: {},
     defaultSettings: {
+        modo: 0,
         type: "result", // result, operator, operandA, operandB, random (to guess)
         number: 10, // Number or operations
         operations: '1111', // Add, subtract, multiply, divide,
@@ -26,6 +27,7 @@ var $exeDevice = {
         zero: 1 // Allow zero in results
     },
     iDevicePath: "/scripts/idevices/mathematicaloperations-activity/edition/",
+    id: false,
     ci18n: {
         "msgHappen": _("Move on"),
         "msgReply": _("Reply"),
@@ -82,7 +84,13 @@ var $exeDevice = {
         "msgIncomplete": _("Not completed"),
         "msgEndTime": _("Time over."),
         "msgAllOperations": _("You finished all the operations."),
-
+        "msgFracctionNoValid": _("Escribe una fracción valida."),
+        "msgOperatNotValid": _("Escribe un operador válido:+-x*/:"),
+        "msgNewGame": _("Pulsa aquí para volver jugar"),
+        "msgUncompletedActivity": _("Actividad no realizada"),
+        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
+        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTypeGame": _('Math Operations')
     },
     init: function () {
         this.setMessagesInfo();
@@ -108,6 +116,8 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
+        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+
     },
     createForm: function () {
         var html = '\
@@ -118,58 +128,74 @@ var $exeDevice = {
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
-                            <p><label for="eRMQtype">' + _("Choose what to guess:") + '\
-                            <select id="eRMQtype">\
-                                <option value="result">' + _("Result") + '</option>\
-                                <option value="operator">' + _("Operator") + '</option>\
-                                <option value="operandA">' + _("First operand") + '</option>\
-                                <option value="operandB">' + _("Second operand") + '</option>\
-                                <option value="random">' + _("Random") + '</option>\
-                            </select>\
-                            </label></p>\
-                            <p><label for="eRMQnum">' + _("Number of operations:") + '\
-                                <input id="eRMQnum" type="text" style="width:80px" value="10" onkeyup="$exeDevice.onlyNumbers(this)" />\
-                            </label>\
-                            <label for="eRMQmin">' + _("Smallest number:") + '\
-                                <input id="eRMQmin" type="text" style="width:80px"  value="1" onkeyup="$exeDevice.onlyNumbers(this)" />\
-                            </label>\
-                            <label for="eRMQmax">' + _("Biggest number:") + '\
-                                <input id="eRMQmax" type="text" style="width:80px"  value="9" onkeyup="$exeDevice.onlyNumbers(this)" />\
-                            </label></p>\
-                            <p><label for="eRMQdecimals">' + _("Number of decimals (operands):") + '\
-                                <select id="eRMQdecimals" onchange="$exeDevice.setDecimalsInResults(this.value)">\
-                                    <option value="0">0</option>\
-                                    <option value="1">1</option>\
-                                    <option value="2">2</option>\
-                                </select>\
-                            </label></p>\
-                            <p><strong>' + _("Operations:") + '</strong>\
+                            <p id="eRMQFractionsDiv" style="diplay:none">\
+                                <label for="eRMQFractions"><input id="eRMQFractions" type="checkbox" /> ' + _("Fracciones") + '.</label>\
+                            </p>\
+                            <p>\
+                                <label for="eRMQtype">' + _("Choose what to guess:") + '\
+                                    <select id="eRMQtype">\
+                                        <option value="result">' + _("Result") + '</option>\
+                                        <option value="operator">' + _("Operator") + '</option>\
+                                        <option value="operandA">' + _("First operand") + '</option>\
+                                        <option value="operandB">' + _("Second operand") + '</option>\
+                                        <option value="random">' + _("Random") + '</option>\
+                                    </select>\
+                                </label>\
+                            </p>\
+                            <p>\
+                                <label for="eRMQnum">' + _("Number of operations:") + '\
+                                    <input id="eRMQnum" type="text" style="width:80px" value="10" onkeyup="$exeDevice.onlyNumbers(this)" />\
+                                </label>\
+                                <label for="eRMQmin">' + _("Smallest number:") + '\
+                                    <input id="eRMQmin" type="text" style="width:80px"  value="1" onkeyup="$exeDevice.onlyNumbers(this)" />\
+                                </label>\
+                                <label for="eRMQmax">' + _("Biggest number:") + '\
+                                    <input id="eRMQmax" type="text" style="width:80px"  value="9" onkeyup="$exeDevice.onlyNumbers(this)" />\
+                                </label>\
+                            </p>\
+                            <p id="eRMQdecimalsDiv">\
+                                <label for="eRMQdecimals">' + _("Number of decimals (operands):") + '\
+                                    <select id="eRMQdecimals" onchange="$exeDevice.setDecimalsInResults(this.value)">\
+                                        <option value="0">0</option>\
+                                        <option value="1">1</option>\
+                                        <option value="2">2</option>\
+                                    </select>\
+                                </label>\
+                            </p>\
+                            <p>\
+                                <strong>' + _("Operations:") + '</strong>\
                                 <label for="eRMQadd"><input id="eRMQadd" type="checkbox" /> ' + _("Addition") + '</label>\
                                 <label for="eRMQsubs"><input id="eRMQsubs" type="checkbox" /> ' + _("Subtraction") + '</label>\
                                 <label for="eRMQmult"><input id="eRMQmult" type="checkbox" checked /> ' + _("Multiplication") + '</label>\
                                 <label for="eRMQdiv"><input id="eRMQdiv" type="checkbox" /> ' + _("Division") + '</label>\
                             </p>\
-                            <p>\
+                            <p id="eRMQdecimalsResultDiv">\
                                 <label for="eRMQdecimalsInResults"><input id="eRMQdecimalsInResults" type="checkbox" /> ' + _("Allow decimals in the results") + '</label>\
                             </p>\
-                            <p>\
+                            <p id="eRMQSolutionDiv"  style="display:none">\
+                                <label for="eRMQSolution"><input id="eRMQSolution" type="checkbox"  checked/> ' + _("Fracción irreducible.") + '</label>\
+                            </p>\
+                            <p id="eRMQnegativeDiv">\
                                 <label for="eRMQnegative"><input id="eRMQnegative" type="checkbox" /> ' + _("Allow negative results") + '</label>\
                             </p>\
-                            <p>\
+                            <p id="eRMQNegativesFracctionsDiv" style="display:none">\
+                                <label for="eRMQNegativesFracctions"><input id="eRMQNegativesFracctions" type="checkbox" /> ' + _("Permitir negativos") + '.</label>\
+                            </p>\
+                            <p id="eRMQZeroDiv">\
                                 <label for="eRMQzero"><input id="eRMQzero" type="checkbox" /> ' + _("Allow zero as result") + '</label>\
                             </p>\
-                            <p>\
+                            <p id="eRMQErrorRelativeDiv">\
                                 <input class="MTOE-ErrorType" id="eRMQRelative" type="checkbox" name="eRMQtype" value="0" />\
                                 <label for="eRMQRelative">Error relativo</label>\
                                 <label for="eRMQPercentajeRelative" class="sr-av">Error relativo</label><input type="number" name="eRMQPercentajeRelative" id="eRMQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
-                            <p>\
                             </p>\
+                            <p id="eRMQErrorAsoluteDiv">\
                                 <input class="MTOE-ErrorType" id="eRMQAbsolute" type="checkbox" name="eRMQtype" value="1" />\
                                 <label for="eRMQAbsolute">Error Absoluto</label>\
                                 <label for="eRMQPercentajeAbsolute" class="sr-av">Error Absoluto</label><input type="number" name="eRMQPercentajeAbsolute" id="eRMQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
                             </p>\
                             <p>\
-                                <label for="eRMQShowMinimize"><input type="checkbox" id="eRMQShowMinimize"> ' + _("Show minimized.") + ' </label>\
+                                <label for="eRMQShowMinimize"><input type="checkbox" id="eRMQShowMinimize"> ' + _("Show minimized.") + '</label>\
                             </p>\
                             <p>\
                                 <label for="eRMQTime">' + _("Time (minutes)") + ':\
@@ -177,11 +203,20 @@ var $exeDevice = {
                                 </p>\
                             <p>\
                                 <label for="eRMQHasFeedBack"><input type="checkbox"  id="eRMQHasFeedBack"> ' + _("Feedback") + '. </label> \
-                                <label for="eRMQPercentajeFB"><input type="number" name="eRMQPercentajeFB" id="eRMQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + ' </label>\
+                                <label for="eRMQPercentajeFB"><input type="number" name="eRMQPercentajeFB" id="eRMQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + '.</label>\
                             </p>\
                             <p id="eRMQFeedbackP" class="MTOE-EFeedbackP">\
                                 <textarea id="eRMQFeedBackEditor" class="exe-html-editor"></textarea>\
                             </p>\
+                            <p>\
+                                <strong class="GameModeLabel"><a href="#eRMQEEvaluationHelp" id="eRMQEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
+								<label for="eRMQEEvaluation"><input type="checkbox" id="eRMQEEvaluation"> ' + _("Informe de progreso") + '. </label> \
+								<label for="eRMQEEvaluationID">' + _("Identificador") + ':\
+								<input type="text" id="eRMQEEvaluationID" disabled/> </label>\
+                            </p>\
+                            <div id="eRMQEEvaluationHelp" class="MTOE-TypeGameHelp">\
+                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            </div>\
                          </div>\
                     </fieldset>\
                     ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
@@ -198,7 +233,6 @@ var $exeDevice = {
         $exeAuthoring.iDevice.gamification.scorm.init();
         $exeDevice.enableForm(field);
     },
-
     validateData: function () {
         var instructions = tinyMCE.get('eXeGameInstructions').getContent(),
             textFeedBack = tinyMCE.get('eRMQFeedBackEditor').getContent(),
@@ -211,11 +245,17 @@ var $exeDevice = {
             decimalsInOperands = parseInt($("#eRMQdecimals").val()),
             decimalsInResults = $("#eRMQdecimalsInResults").is(":checked"),
             negative = $("#eRMQnegative").is(":checked"),
+            solution = $("#eRMQSolution").is(":checked"),
+            negativeFractions = $("#eRMQNegativesFracctions").is(":checked"),
             zero = $("#eRMQzero").is(":checked"),
             time = parseInt($('#eRMQTime').val()),
             errorRelative = parseFloat($('#eRMQPercentajeRelative').val()),
             errorAbsolute = parseFloat($('#eRMQPercentajeAbsolute').val()),
-            errorType = 0;
+            errorType = 0,
+            mode = $("#eRMQFractions").is(":checked") ? 1 : 0,
+            evaluation = $('#eRMQEEvaluation').is(':checked'),
+            evaluationID = $('#eRMQEEvaluationID').val(),
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
         if ($('#eRMQRelative').is(':checked')) {
             errorType = 1;
         } else if ($('#eRMQAbsolute').is(':checked')) {
@@ -235,7 +275,6 @@ var $exeDevice = {
             return false;
         }
         min = min.val();
-
         // max
         var max = $("#eRMQmax");
         if (max.val() == "") {
@@ -244,8 +283,12 @@ var $exeDevice = {
             return false;
         }
         max = max.val();
-
         var operations = "";
+
+        if (parseInt(min) >= parseInt(max)) {
+            $exeDevice.showMessage(_("El número más alto debe ser mayor que el número más pequeño"));
+            return false;
+        }
         // Add
         if ($("#eRMQadd").is(":checked")) operations += "1";
         else operations += "0";
@@ -262,7 +305,10 @@ var $exeDevice = {
             $exeDevice.showMessage(_("No operations selected"));
             return false;
         }
-
+        if (evaluation && evaluationID.length < 5) {
+            eXe.app.alert($exeDevice.msgs.msgIDLenght);
+            return false;
+        }
         var scorm = $exeAuthoring.iDevice.gamification.scorm.getValues();
         var data = {
             'typeGame': 'MathOperations',
@@ -289,11 +335,27 @@ var $exeDevice = {
             'time': time,
             'errorAbsolute': errorAbsolute,
             'errorRelative': errorRelative,
-            'errorType': errorType
+            'errorType': errorType,
+            'mode': mode,
+            'negativeFractions': negativeFractions,
+            'solution': solution,
+            'evaluation':evaluation,
+            'evaluationID':evaluationID,
+            'id': id
         }
         return data;
     },
     onlyNumbers: function (e) {
+        var valorActual = e.value;
+
+        // Reemplazar todos los caracteres que no sean números naturales con una cadena vacía
+        var valorSoloNumeros = valorActual.replace(/[^0-9]/g, '');
+
+        // Actualizar el valor del cuadro de entrada de texto con solo los números naturales
+        e.value = valorSoloNumeros;
+
+    },
+    onlyNumbers1: function (e) {
         var str = e.value;
         var lastCharacter = str.slice(-1);
         if (isNaN(parseFloat(lastCharacter))) {
@@ -326,7 +388,6 @@ var $exeDevice = {
                     $("#eXeGameInstructions").val(instructions)
                 }
             }
-
             var textFeedBack = $(".mathoperations-feedback-game", wrapper);
             if (textFeedBack.length == 1) {
                 textFeedBack = textFeedBack.html() || ''
@@ -336,7 +397,6 @@ var $exeDevice = {
                     $("#eRMQFeedBackEditor").val(textFeedBack)
                 }
             }
-
             var textAfter = $(".mathoperations-extra-content", wrapper);
             if (textAfter.length == 1) {
                 textAfter = textAfter.html() || ''
@@ -348,8 +408,6 @@ var $exeDevice = {
             }
         }
     },
-
-
     save: function () {
         var dataGame = $exeDevice.validateData();
 
@@ -380,13 +438,9 @@ var $exeDevice = {
         html += '</div>';
         return html;
     },
-
-
     showMessage: function (msg) {
         eXe.app.alert(msg);
     },
-
-
     addEvents: function () {
         if (window.File && window.FileReader && window.FileList && window.Blob) {
             $('#eXeGameExportImport').show();
@@ -435,7 +489,6 @@ var $exeDevice = {
             var type = $(this).is(':checked') ? 2 : 0;
             $exeDevice.setErrorType(type)
         });
-
         $('#eRMQPercentajeRelative').on('keypress', function (evt) {
             var ASCIICode = (evt.which) ? evt.which : evt.keyCode
             if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
@@ -447,7 +500,6 @@ var $exeDevice = {
             this.value = this.value > 1 ? 1 : this.value;
             this.value = this.value < 0 ? 0 : this.value;
         });
-
         $('#eRMQPercentajeAbsolute').on('keypress', function (evt) {
             var ASCIICode = (evt.which) ? evt.which : evt.keyCode
             if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
@@ -460,8 +512,20 @@ var $exeDevice = {
             this.value = this.value < 0 ? 0 : this.value;
         });;
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
-    },
+        $('#eRMQFractions').on('change', function (e) {
+            var number = $(this).is(':checked') ? 1 : 0;
+            $exeDevice.changeGameMode(number)
+        });
+        $('#eRMQEEvaluation').on('change', function () {
+            var marcado = $(this).is(':checked');
+            $('#eRMQEEvaluationID').prop('disabled', !marcado);
+        });
+        $("#eRMQEEvaluationHelpLnk").click(function () {
+            $("#eRMQEEvaluationHelp").toggle();
+            return false;
 
+        });
+    },
     setErrorType: function (type) {
         $('#eRMQAbsolute').prop('checked', false)
         $('#eRMQRelative').prop('checked', false);
@@ -475,12 +539,30 @@ var $exeDevice = {
             $('#eRMQPercentajeAbsolute').show();;
         }
     },
-    updateFieldGame: function (game) {
+    generarID: function () {
+        var fecha = new Date(),
+            a = fecha.getUTCFullYear(),
+            m = fecha.getUTCMonth() + 1,
+            d = fecha.getUTCDate(),
+            h = fecha.getUTCHours(),
+            min = fecha.getUTCMinutes(),
+            s = fecha.getUTCSeconds(),
+            o = fecha.getTimezoneOffset();
 
+        var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
+        return IDE;
+    },
+    updateFieldGame: function (game) {
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
+        game.mode = typeof game.mode == "undefined" ? 0 : game.mode;
+        game.solution = typeof game.solution == "undefined" ? true : game.solution;
         game.errorType = typeof game.errorType == "undefined" ? 0 : game.errorType;
         game.errorRelative = typeof game.errorRelative == "undefined" ? 0.0 : game.errorRelative;
         game.errorAbsolute = typeof game.errorAbsolute == "undefined" ? 0.0 : game.errorAbsolute;
+        game.negativeFractions = typeof game.negativeFractions == "undefined" ? false : game.negativeFractions;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
+        $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#eRMQShowMinimize').prop('checked', game.showMinimize);
         $("#eRMQHasFeedBack").prop('checked', game.feedBack);
         $("#eRMQPercentajeFB").val(game.percentajeFB);
@@ -488,6 +570,8 @@ var $exeDevice = {
         $('#eRMQtype').val(game.type);
         $("#eRMQdecimalsInResults").prop('checked', game.decimalsInResults);
         $("#eRMQnegative").prop('checked', game.negative);
+        $("#eRMQSolution").prop('checked', game.solution);
+        $("#eRMQNegativesFracctions").prop('checked', game.negativeFractions);
         $("#eRMQzero").prop('checked', game.zero);
         $("#eRMQnum").val(game.number);
         $("#eRMQmax").val(game.max);
@@ -497,9 +581,14 @@ var $exeDevice = {
         $("#eRMQmult").prop('checked', game.operations.charAt(2) == "1");
         $("#eRMQdiv").prop('checked', game.operations.charAt(3) == "1");
         $('#eRMQPercentajeRelative').val(game.errorRelative);
-        $('#eRMQPercentajeAbsolute').val(game.errorAbsolute);   
+        $('#eRMQPercentajeAbsolute').val(game.errorAbsolute);
         $('#eRMQTime').val(game.time);
-        $exeDevice.setErrorType(game.errorType)
+        $("#eRMQFractions").prop('checked', game.mode == 1);
+        $('#eRMQEEvaluation').prop('checked', game.evaluation);
+        $('#eRMQEEvaluationID').val(game.evaluationID);
+        $("#eRMQEEvaluationID").prop('disabled', (!game.evaluation))
+        $exeDevice.setErrorType(game.errorType);
+        $exeDevice.changeGameMode(game.mode)
         $exeAuthoring.iDevice.gamification.scorm.setValues(game.isScorm, game.textButtonScorm, game.repeatActivity);
         if (game.textFeedBack) {
             $('#eRMQFeedbackP').show();
@@ -507,6 +596,27 @@ var $exeDevice = {
             $('#eRMQFeedbackP').hide();
         }
         $('#eRMQPercentajeFB').prop('disabled', !game.feedBack);
+    },
+    changeGameMode: function (mode) {
+        if (mode == 1) {
+            $('#eRMQdecimalsDiv').hide();
+            $('#eRMQdecimalsResultDiv').hide();
+            $('#eRMQZeroDiv').hide();
+            $('#eRMQErrorRelativeDiv').hide();
+            $('#eRMQErrorAsoluteDiv').hide();
+            $('#eRMQNegativesFracctionsDiv').show();
+            $('#eRMQSolutionDiv').show();
+            $('#eRMQnegativeDiv').hide();
+        } else {
+            $('#eRMQdecimalsDiv').show();
+            $('#eRMQdecimalsResultDiv').show();
+            $('#eRMQZeroDiv').show();
+            $('#eRMQErrorRelativeDiv').show();
+            $('#eRMQErrorAsoluteDiv').show();
+            $('#eRMQNegativesFracctionsDiv').hide();
+            $('#eRMQSolutionDiv').hide();
+            $('#eRMQnegativeDiv').show();
+        }
     },
     exportGame: function () {
         var dataGame = this.validateData();
@@ -532,7 +642,6 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
-
     importGame: function (content) {
         var game = $exeDevice.isJsonString(content);
         if (!game || typeof game.typeGame == "undefined") {
@@ -542,6 +651,7 @@ var $exeDevice = {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
+        game.id = $exeDevice.generarID();
         $exeDevice.updateFieldGame(game);
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
@@ -551,7 +661,7 @@ var $exeDevice = {
         } else {
             $("#eXeGameInstructions").val(unescape(instructions))
         }
-        if (tinyMCE.get('sopaEFeedBackEditor')) {
+        if (tinyMCE.get('eRMQFeedBackEditor')) {
             tinyMCE.get('eRMQFeedBackEditor').setContent(unescape(textFeedBack));
         } else {
             $("#eRMQFeedBackEditor").val(unescape(textFeedBack))
@@ -572,7 +682,6 @@ var $exeDevice = {
         } catch (e) {}
         return false;
     },
-
     hourToSeconds: function (str) {
         var i = str.split(':');
         if (i.length == 0) {
@@ -586,7 +695,6 @@ var $exeDevice = {
         }
         return (+i[0]) * 60 * 60 + (+i[1]) * 60 + (+i[2]);
     },
-
     secondsToHour: function (totalSec) {
         var time = Math.round(totalSec);
         var hours = parseInt(time / 3600) % 24;
@@ -594,11 +702,8 @@ var $exeDevice = {
         var seconds = time % 60;
         return (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? "0" + minutes : minutes) + ":" + (seconds < 10 ? "0" + seconds : seconds);
     },
-
     validTime: function (time) {
         var reg = /^(?:(?:([01]?\d|2[0-3]):)?([0-5]?\d):)?([0-5]?\d)$/;
         return (time.length == 8 && reg.test(time))
     },
-
-
 }
