@@ -460,7 +460,6 @@ var $eXeOrdena = {
         return positions;
     },
     getQuestions: function (questions, percentaje) {
-
         var mQuestions = questions;
         if (percentaje < 100) {
             var num = Math.round((percentaje * questions.length) / 100);
@@ -487,11 +486,9 @@ var $eXeOrdena = {
         $eXeOrdena.stopSound(instance);
         selectedFile = $eXeOrdena.extractURLGD(selectedFile);
         mOptions.playerAudio = new Audio(selectedFile); //or you can get it with getelementbyid
-        mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
-            mOptions.playerAudio.play();
-        });
-
+        mOptions.playerAudio.play().catch(error => console.error("Error playing audio:", error));
     },
+
     stopSound: function (instance) {
         var mOptions = $eXeOrdena.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
