@@ -730,7 +730,7 @@ var $eXeOrdena = {
             data =  $eXeOrdena.updateEvaluation(data, scorm);
             data = JSON.stringify(data, mOptions.evaluationID);
             localStorage.setItem('dataEvaluation-' + mOptions.evaluationID, data);
-             $eXeOrdena.showEvaluationIcon(instance, scorm.state, scorm.score)
+            $eXeOrdena.showEvaluationIcon(instance, scorm.state, scorm.score)
         }
     },
     getDataStorage: function (id) {

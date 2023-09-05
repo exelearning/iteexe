@@ -1,0 +1,1069 @@
+.CQP-MainContainer a, .CQP-MainContainer a:visited, .CQP-MainContainer a:focus {
+    border: 0;
+    border-bottom: none;
+    border-width: 0;
+    text-decoration: none;
+}
+
+.sr-av {
+    display: none;
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Contenedor */
+
+.CQP-MainContainer {
+    font-size: 1rem;
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.CQP-MainContainer * {
+    box-sizing: border-box;
+}
+
+.CQP-MainContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Instrucciones */
+
+.CQP-instructions {
+    margin: 0.3em auto;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Minimizado */
+
+.CQP-GameMinimize {
+    display: none;
+    margin: 1em auto;
+    width: 100%;
+}
+
+.CQP-LinkMaximize {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.CQP-IconMinimize {
+    height: 2em;
+    margin-right: 0.5em;
+    width: 2em;
+}
+
+/* Juego */
+
+.CQP-GameContainer {
+    margin: 0 auto;
+    padding: 1em 0.3em 0 0.3em;
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    min-height: 500px;
+}
+
+/* barra de puntuaciones */
+
+.CQP-GameScoreBoard {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3em;
+    width: 100%;
+    height: 1.1em;
+}
+
+.CQP-GameScoreBoard p {
+    font-size: 1.1em;
+    margin-right: 0.3em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.CQP-GameScores {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.CQP-GameScores>p:last-child {
+    text-align: left;
+}
+
+.CQP-LifesGame {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.CQP-NumberLifesGame {
+    display: none;
+}
+
+.CQP-TimeNumber {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.CQP-info {
+    background-color: red;
+}
+
+.CQP-PTime {
+    margin-left: 0.3em;
+    min-width: 3.5em;
+    text-align: center;
+    width: auto;
+}
+
+/* Pista */
+
+.CQP-ShowClue, .CQP-RebootGame {
+    display: none;
+}
+.CQP-RebootGame p {
+   text-align: center;
+}
+.CQP-RebootGame a {
+    display: block;
+    width: 4em;
+
+ }
+
+
+.CQP-PShowClue {
+    text-align: center;
+    width: 100%;
+}
+
+/* Cartas */
+
+.CQP-CardContainer {
+    position: relative;
+    margin: 0.2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    transition: transform 0.3s;
+    min-width: 4em;
+    max-width: 12em;
+    width: 8em;
+    z-index: 100;
+}
+
+.CQP-CardContainer:before {
+    content: '';
+    padding-top: 100%;
+    display: block;
+}
+
+.CQP-Slide .CQP-CardContainer {
+    width: 3%;
+}
+
+.CQP-Container .CQP-CardContainer {
+    width: 45%;
+}
+
+.CQP-CardContainer {
+    position: relative;
+    margin: 0.2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    transition: transform 0.3s;
+    min-width: 4em;
+    z-index: 100;
+}
+
+.CQP-Card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    background-color: white;
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border: 1px solid rgb(3, 112, 116);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.3em;
+}
+
+.CQP-Card.flipped {
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
+}
+
+.CQP-Card .CQP-CardBack {
+    width: 100%;
+    text-align: left;
+    text-align: center;
+    background-color: white;
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
+    border-radius: 0.3em;
+}
+
+.CQP-Card .CQP-CardFront, .CQP-Card .CQP-CardBack {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.CQP-Card .CQP-CardFront {
+    background-image: url(clasificaHome.png);
+    background-size: 100%;
+    background-position: center;
+    border-radius: 0.3em;
+}
+
+.CQP-CardActive {
+    border: 2px solid #ff0000;
+    border-radius: 0.3em;
+}
+
+.CQP-CardOK {
+    border: 2px solid #00ff00;
+    border-radius: 0.3em;
+}
+
+.CQP-CardKO {
+    border: 2px solid #ff0000;
+    border-radius: 0.3em;
+}
+
+.CQP-Cover {
+    z-index: 1006;
+}
+
+.CQP-ImageContain {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-radius: 0.3em;
+    position: absolute;
+}
+
+.CQP-Image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0.3em;
+    background-color: white;
+}
+
+.CQP-ImageFit {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.3em;
+    background-color: white;
+}
+
+.CQP-EText {
+    border: none;
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    top: 3%;
+    left: 3%;
+    font-weight: 600;
+    border-radius: 0.3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1em;
+    overflow: none;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto
+}
+
+.CQP-Multimedia {
+    background-color: transparent;
+    border-radius: 0.3em;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.CQP-Slide {
+    position: relative;
+    left: -200%;
+    width: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6em 0;
+    z-index: 10000;
+}
+
+.CQP-Container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-height: 40vh;
+}
+
+.CQP-CC {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    border-radius: 0.6em;
+    padding: 0.5em;
+    margin: 0.4em;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    min-height: 45vh;
+    font-size: 1em;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    transition: transform 0.3s;
+}
+
+/*.CQP-CC:hover {
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}*/
+
+.CQP-Container .CQP-Card {
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.20);
+}
+
+.CQP-Container0 {
+    border: 2px solid mediumvioletred;
+    width: 100%;
+    margin-bottom: 0.3em;
+}
+
+.CQP-Container1 {
+    border: 2px solid steelblue;
+    width: 100%;
+}
+
+.CQP-Container2 {
+    border: 2px solid yellowgreen;
+    width: 100%;
+}
+
+.CQP-Container3 {
+    border: 2px solid tan;
+    width: 100%;
+}
+
+.CQP-Cursor {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+    height: 1.3em;
+    z-index: 1004;
+    display: none;
+}
+
+.CQP-LinkAudio {
+    top: -0.5em;
+    position: absolute;
+    left: -0.5em;
+    width: 25%;
+    height: 25%;
+    max-height: 2.5em;
+    max-width: 2.5em;
+    ;
+    min-width: 1em;
+    min-height: 1em;
+    display: block;
+    z-index: 1005;
+    display: none;
+}
+
+.CQP-LinkAudio img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.CQP-LinkAudioBig {
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.CQP-Audio {
+    max-width: 100%;
+    height: auto;
+}
+
+.CQP-Cubierta {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 100000;
+    background-color: rgb(255, 255, 255, .001);
+}
+
+.CQP-ClueBotton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6em;
+}
+
+.CQP-GameOver {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    margin: 0.3em auto;
+}
+
+.CQP-GameOver:before {
+    content: '';
+    display: block;
+    padding-top: 40%;
+}
+
+.CQP-DataImage {
+    height: 100%;
+    padding: 0;
+    position: relative;
+    width: 50%;
+}
+
+.CQP-DataScore {
+    padding: 0;
+    width: 50%;
+}
+
+.CQP-DataScore p {
+    margin: 0.7em;
+    font-size: 0.9em;
+}
+
+/* Message */
+
+.CQP-Message {
+    margin-top: 0.5em;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+
+.CQP-AuthorGame {
+    margin: 0.5em auto;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    display: none;
+}
+
+/* Código acceso */
+
+.CQP-RebootButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CQP-CodeAccessDiv, .CQP-ShowClue, .CQP-RebootGame {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.5em;
+    display: none;
+    margin-top: 4em;
+}
+
+.CQP-MessageCodeAccessE {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.CQP-DataCodeAccessE {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0.7em auto 0 auto;
+    width: 100%;
+}
+
+.CQP-CodeAccessE {
+    margin: 0 .3em;
+    width: 100%;
+    text-align: center;
+}
+
+/* Inicio juego */
+
+.CQP-StartNivel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.CQP-StartNivel a {
+    display: block;
+    margin-left: 0.5em;
+}
+
+.CQP-StartGame {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.CQP-StartGame a:hover {
+    text-decoration: underline;
+}
+
+.CQP-StartGame a {
+    color: #007691;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.CQP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.CQP-BottonContainerDiv, .CQP-BottonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.1em auto;
+    padding: 0;
+    width: 100%;
+}
+
+.CQP-BottonContainerDivEnd {
+    justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.CQP-DivInstructions {
+    margin: 1em 0 0 0;
+    text-align: center;
+    width: 95%;
+}
+
+.CQP-parpadea {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-name: CQP-parpadeo;
+    -webkit-animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-name: CQP-parpadeo;
+    animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.CQP-DivFeedBack {
+    align-items: center;
+    background-color: rgba(232, 232, 232, 0.5);
+    border-radius: .6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1010;
+    overflow: hidden;
+    height: 100%;
+}
+
+.CQP-DivFeedBack button {
+    cursor: pointer;
+}
+
+.clasifica-feedback-game {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #999;
+    border-radius: .6em;
+    display: none;
+    margin-bottom: 0.3em;
+    height: auto;
+    min-height: 11em;
+    overflow-y: auto;
+    padding: 1em;
+    width: 70%;
+    background-color: white;
+}
+
+.clasifica-extra-content {
+    margin-top: 1.7em;
+}
+
+/* Enlace activo */
+
+.CQP-Activo {
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    -webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    -webkit-transition: transform 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s;
+}
+
+.CQP-CC .CQP-Title {
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.CQP-CC .CQP-Line {
+    margin: 0.2em;
+}
+
+.CQP-CC .CQP-EText {
+    font-size: 16px;
+}
+
+.CQP-LinkMaximize:hover .CQP-Activo, .CQP-Activo:hover {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Puntuacion */
+
+.CQP-BottonContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.CQP-BottonContainer * {
+    margin: 0;
+    padding: 0;
+}
+
+.CQP-GetScore input[type=button] {
+    padding: 0.3em 0.5em;
+    margin: 0 .5em 1em 0.5em;
+    width: auto;
+}
+
+.CQP-GetScore {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1em
+}
+
+/* Iconos */
+
+.CQP-GameContainer .exeQuextIcons {
+    background-size: 100% 100%;
+    height: 1.4em;
+    margin-right: 0.3em;
+    width: 1.4em;
+}
+
+.CQP-GameContainer .exeQuextIcons-Video, .CQP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.CQP-MainContainer .exeQuextIcons-Submit {
+    background: url(exequextreply.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Minimize {
+    background-image: url(exequextmin.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-IconReboot {
+    background-image: url(exequextreload.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Hit {
+    background-image: url(exequexthits.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-FullScreen {
+    background-image: url(exequextfull.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Error {
+    background-image: url(exequextrerrors.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Score {
+    background-image: url(exequextscore.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Time {
+    background-image: url(exequexttime.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Number {
+    background-image: url(exequextnumber.png);
+    background-size: 100% 100%;
+}
+
+.CQP-GameContainer .exeQuextIcons-Life {
+    background-image: url(exequextlive.png);
+    background-size: 100% 100%;
+}
+
+/* Full Screen */
+
+div:fullscreen .exeQuextIcons-FullScreen {
+    background-image: url(exequextnormal.png);
+    background-size: 100% 100%;
+}
+
+div:fullscreen .exeQuextIcons-FullScreen {
+    background: url(exequextnormal.png);
+    background-size: 100% 100%;
+}
+
+div:fullscreen .CQP-Message {
+    font-weight: 1.1em;
+}
+
+.CQP-GameContainer:-webkit-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.CQP-GameContainer:-moz-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.CQP-GameContainer:-ms-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.CQP-GameContainer:-o-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.CQP-GameContainer:fullscreen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+div:fullscreen .CQP-Multimedia {
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+div:fullscreen .CQP-Multimedia {
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.CQP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.CQP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+
+.CQP-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
+
+@-moz-keyframes CQP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes CQP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes CQP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .CQP-MainContainer {
+        font-size: 0.9rem;
+    }
+    .CQP-instructions {
+        margin: 0.1em auto;
+    }
+    .CQP-DivInstructions {
+        display: none;
+    }
+    .CQP-PShowClue {
+        font-size: 0.9em;
+    }
+    .CQP-StartGame a {
+        font-size: 0.9em;
+    }
+    .CQP-Message {
+        font-size: 0.9em;
+    }
+    .CQP-CodeAccessDiv, .CQP-ShowClue {
+        width: 75%;
+    }
+    .CQP-CC {
+        border-radius: 0.3em;
+        padding: .05em;
+        margin: 0.1em;
+        box-shadow: none;
+        min-height: 45vh;
+        border: 1px solid #ccc;
+    }
+}
+
+@media screen and (max-width:470px) {
+    .CQP-MainContainer {
+        font-size: 0.9rem;
+    }
+    .CQP-LifesGame {
+        display: none;
+    }
+    .CQP-LinkMinimize {
+        display: none;
+    }
+    .CQP-DataCodeAccessE label {
+        display: none;
+    }
+    .CQP-GameContainer .exeQuextIcons-MoveOne, .CQP-GameContainer .exeQuextIcons-Submit, .CQP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+    .CQP-GameContainer input[type="text"], input.CQP-CodeAccessE {
+        background: #fdfdfd;
+        border: 1px solid #828282;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: inline-block;
+        line-height: 1.5em;
+        margin: 0 0.3em;
+        padding: 0.4em 0.25em;
+    }
+    .CQP-GameContainer input[type="text"]:active, .CQP-GameContainer input[type="text"]:focus, input.CQP-EdReply:focus, input.CQP-EdReply:active, input.CQP-CodeAccessE:focus, input.CQP-CodeAccessE:active {
+        background: #fdfdfd;
+        border: 1px solid #398ee7;
+        border-radius: 4px;
+    }
+    .CQP-CodeAccessDiv {
+        margin-top: 5em;
+    }
+    .CQP-CodeAccessDiv, .CQP-ShowClue {
+        width: 90%;
+    }
+    div:fullscreen .CQP-Message {
+        font-weight: 1em;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .CQP-MainContainer {
+        font-size: 0.8rem;
+    }
+    .CQP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 0.1em;
+        padding: 0;
+    }
+    .CQP-GameContainer .exeQuextIcons {
+        margin: 0;
+        padding: 0;
+    }
+    .CQP-GameContainer .CQP-GameScoreBoard p {
+        padding: 0;
+    }
+    .CQP-GameScores {
+        width: 50%;
+    }
+    .CQP-TimeNumber {
+        width: 45%;
+    }
+    .CQP-instructions p {
+        margin: 0 auto;
+    }
+    div:fullscreen .CQP-Message {
+        font-weight: 1em;
+    }
+}
+
+@media screen and (max-width:295px) {
+    .CQP-MainContainer {
+        font-size: 0.7rem;
+    }
+    .CQP-GameScoreBoard {
+        justify-content: flex-start;
+    }
+    .CQP-GameScores {
+        width: 50%;
+    }
+    .CQP-TimeNumber {
+        width: 42%;
+    }
+}
+
+@media screen and (max-width:265px) {
+    .CQP-MainContainer {
+        font-size: 0.6rem;
+    }
+    .CQP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 2px;
+    }
+    .CQP-GameContainer .exeQuextIcons {
+        height: 1.1em;
+        width: 1.1em;
+    }
+    .CQP-GameContainer .exeQuextIcons-Submit, .CQP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+    .CQP-GameScores {
+        width: auto;
+    }
+    .CQP-TimeNumber {
+        justify-content: flex-start;
+        width: auto;
+    }
+    .CQP-Letter {
+        font-size: 1.2em;
+        height: 1.7em;
+        margin: 0;
+        width: 1.2em;
+    }
+}
+
+@media screen and (max-width:235px) {
+    .CQP-GameScoreBoard .exeQuextIcons-Life, .CQP-GameScoreBoard .exeQuextIcons-Time {
+        display: none;
+    }
+}

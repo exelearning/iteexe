@@ -107,6 +107,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
+            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que ordenar tarjetas con imágenes, textos y/o sonidos.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Arrastra cada carta hasta su posición correcta")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -116,7 +117,7 @@ var $exeDevice = {
                             <label for="ordenaEShowMinimize"><input type="checkbox" id="ordenaEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p>\
-							<label for="ordenaETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartass(segundos)") + ':\
+							<label for="ordenaETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas(segundos)") + ':\
 							<input type="number" name="ordenaETimeShowSolution" id="ordenaETimeShowSolution" value="3" min="1" max="999" /> </label>\
                         </p>\
                         <p>\
