@@ -13,34 +13,23 @@
 	cursor: pointer;
 }
 /*Panel preguntas */
-.ODNE-EPanel {
+.Descubre-EPanel {
+	margin: 1.5em auto;
 	padding: 0;
 	position: relative;
 	width: 100%;
 	max-width: 1000px;
 }
-.ODNE-EPhrase {
+.Descubre-Pareja {
 	align-items:flex-start;
 	display: flex;
 	justify-content: flex-start;
 	flex-wrap: wrap;
 	width: 100%;
-
-
-}
-.ODNE-ENumActivity{
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 0.7em;
-    color: rgb(5, 123, 170);
-}
-
-.ODNE-EActive {
-	background-color:rgb(220, 242, 255);
-	border-radius: 0.3em;
+	overflow-x: auto;
 
 }
-.ODNE-EMultimedia {
+.Descubre-EMultimedia {
 	margin: 0 auto 0.6em auto;
 	position: relative;
 	width: 240px;
@@ -52,7 +41,7 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
     border-radius: 0.3em;
 }
-.ODNE-ECard{
+.Descubre-Card{
 	top:4px;
 	left:4px;
 	width: 232px;
@@ -60,38 +49,35 @@
 	min-width: 232px;
 	background-color: white;
 	position: absolute;
-
 }
-.ODNE-EMultimedia textarea{
+.Descubre-EMultimedia textarea{
 	left:0;
 	top:0;
 	position: absolute;
 
 }
 
-.ODNE-EDatosCarta {
-	width: 45%;
-	max-width: 500px;
-	min-width: 450px;
+.Descubre-DatosCarta {
+	width: 46.5%;
+	max-width: 450px;
     border-radius: 0.3em;
 	padding: 0.7em;
 	padding-bottom: 1.3em;
 	height: auto;
 	margin-right: 0.6em;
-	margin-top: 1em;
-	cursor: pointer;
 
 }
 
-
-.ODNE-EDatosCarta input[type=text] {
+#DescubreEDatosCarta-2{
+	display: none;
+}
+.Descubre-DatosCarta input[type=text] {
 	margin-right: .2em;
-	width: 100%;
 }
 /* Medias */
 
 
-.ODNE-EImageFit{
+.Descubre-ImageFit{
 	width: 240px;
 	min-height: 240px ;
 	height: 240px ;
@@ -102,11 +88,11 @@
 	background-color: white;
 	position: absolute;
 }
-.ODNE-EImage, .ODNE-NoImage{
+.Descubre-Image{
 	position: absolute;
 }
 
-.ODNE-ECursor {
+.Descubre-ECursor {
 	left: 0;
 	top:0;
 	position: absolute;
@@ -114,24 +100,24 @@
 }
 /* Opciones imagen */
 
-.ODNE-EAuthorAlt{
+.Descubre-EAuthorAlt{
 	align-items: center;
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 }
-.ODNE-EAuthorAlt div {
+.Descubre-EAuthorAlt div {
 	width: 49%;
 }
 
-.ODNE-EAuthorAlt label {
+.Descubre-EAuthorAlt label {
 	display: block;
 }
-.ODNE-EAuthorAlt input[type=text] {
+.Descubre-EAuthorAlt input[type=text] {
 	width: 97%;
 }
 
-.ODNE-EInputAudio, .ODNE-EInputImage, .ODNE-EInputText {
+.Descubre-EInputAudio, .Descubre-EInputImage {
 	align-items: center;
 	display: flex;
 	justify-content: flex-start;
@@ -139,27 +125,27 @@
 	min-width: 100px;
 	width: 100%;
 }
-.ODNE-EInputAudio input[type=text],.ODNE-EInputImage input[type=text] {
+.Descubre-EInputAudio input[type=text],.Descubre-EInputImage input[type=text] {
 	flex-flow: 1;
 	margin-right: 0.2em;
 	min-width: 100px;
 	width: 100%;
 
 }
-.ODNE-EInputAudio input[type=button],.ODNE-EInputImage input[type=button] {
+.Descubre-EInputAudio input[type=button],.Descubre-EInputImage input[type=button] {
 	flex-shrink: 0;
 }
 
-.ODNE-ETextDiv {
+.Descubre-ETextDiv {
 	top:0;
 	left:0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(255,255,255,0.7);
+	background-color: #FFF;
 	position: absolute;
 	color: '#000000';
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 16px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -177,12 +163,12 @@
 }
 
 /* Itinerario */
-.ODNE-EOrders{
+.Descubre-EOrders{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
-.ODNE-EHit {
+.Descubre-EHit {
 	background-image: url(quextIEHit.png);
 	background-size: 100% 100%;
 	display: inline-block;
@@ -191,32 +177,12 @@
 }
 
 
-.ODNE-Hide{
+.Descubre-Hide{
 	display: none;
 }
 
-.ODNE-ECustomMessageDiv, .ODNE-ECustomMessageDef{
-	margin-top: 0.6em;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	flex-wrap: nowrap;
-}
-
-.ODNE-ECustomMessageDiv label, .ODNE-ECustomMessageDef label{
-	white-space:nowrap;
-	margin-right: 0.1em;
-}
-.ODNE-ECustomMessageDiv input[type=text], .ODNE-ECustomMessageDef input[type=text]{
-	width: 100%;
-	max-width: 1200px;
-	margin-right: 0.2em;
-}
-
-
-
 /*Numero Preguntas */
-.ODNE-ENumPhrasesDiv {
+.Descubre-ENumQuestionDiv {
 	align-items: center;
 	display: flex;
 	height: 1.5em;
@@ -227,7 +193,7 @@
 	width: 3em;
 	z-index: 20000;
 }
-.ODNE-ENumPhraseS {
+.Descubre-ENumQ {
 	background-image: url(quextIENumber.png);
 	background-size: 100% 100%;
 	display: inline-block;
@@ -235,30 +201,30 @@
 	margin-right: 0px;
 	width: 1.5em;
 }
-.ODNE-ENumPhrases {
+.Descubre-ENumQuestions {
 	font-weight: bold;
 	height: 1.5em;
 	text-align: center;
 	width: 2em;
 }
-.ODNE-ECustomMessage {
+.Descubre-ECustomMessage {
 	align-items: center;
 	display: flex;
 	justify-content: flex-start;
 	margin-top: 1em;
 	width: 100%;
 }
-.ODNE-ECustomMessage input[type=text] {
+.Descubre-ECustomMessage input[type=text] {
 	width: 100%;
 	margin-right: 0.1em;
 }
-.ODNE-ECustomMessage label {
+.Descubre-ECustomMessage label {
 	margin: 0 0.1em;
 }
 
 	
 /* barra edición */
-.ODNE-ENavigationButtons {
+.Descubre-ENavigationButtons {
 	align-items: center;
 	display: flex;
 	justify-content: center;
@@ -266,22 +232,22 @@
 	width: 100%;
 }
 
-.ODNE-ENavigationButton {
+.Descubre-ENavigationButton {
 	height: 1.5em;
 	margin: 0 .3em;
 	min-width: 1.5em;
 	width: 1.5em;
 }
-.ODNE-EButtonImage {
+.Descubre-EButtonImage {
 	height: 100%;
 	transition: all .3s ease-in-out;
 	width: 100%;
 }
-.ODNE-EButtonImage:hover {
+.Descubre-EButtonImage:hover {
 	-webkit-transform: scale(1.05);
 	transform: scale(1.05);
 }
-.ODNE-ENumberPhrase {
+.Descubre-NumberQuestion {
 	font-weight: bold;
 	height: 1.5em;
 	line-height: 1.5em;
@@ -290,7 +256,7 @@
 	width: 2em;
 }
 /* Video introdución */
-.ODNE-EVIDiv {
+.Descubre-EVIDiv {
 	background-color: #f9f9f9;
 	display: none;
 	height: 100%;
@@ -303,12 +269,12 @@
 
 
 /* Ocutar elementos */
-.ODNE-ECoord, .ODNE-EFeedbackP{
+.Descubre-ECoord, .Descubre-EFeedbackP{
 
 	display: none;
 }
 
-.ODNE-ECoord {
+.Descubre-ECoord {
 	display: none;
 }
 
@@ -422,8 +388,9 @@ label[for=gameQEActivitySCORM] {
 .GameModeLabel{
 	font-weight:normal
 }
-.ODNE-TypeGameHelp{
+.Descubre-TypeGameHelp{
 	display:none;
 	margin-bottom:2em;
 	font-size:.95em
 }
+

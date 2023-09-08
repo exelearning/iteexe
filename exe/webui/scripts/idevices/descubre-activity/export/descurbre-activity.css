@@ -1,0 +1,1115 @@
+.DescubreQP-MainContainer a, .DescubreQP-MainContainer a:visited, .DescubreQP-MainContainer a:focus {
+    border: 0;
+    border-bottom: none;
+    border-width: 0;
+    text-decoration: none;
+}
+
+/* Contenedor */
+
+.DescubreQP-MainContainer {
+    font-size: 1rem;
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.DescubreQP-MainContainer * {
+    box-sizing: border-box;
+}
+
+.DescubreQP-MainContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Instrucciones */
+
+.DescubreQP-instructions {
+    margin: 0.3em auto;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Minimizado */
+
+.DescubreQP-GameMinimize {
+    display: none;
+    margin: 1em auto;
+    width: 100%;
+}
+
+.DescubreQP-LinkMaximize {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.DescubreQP-IconMinimize {
+    height: 2em;
+    margin-right: 0.5em;
+    width: 2em;
+}
+
+/* Juego */
+
+.DescubreQP-GameContainer {
+    margin: 0 auto;
+    padding: 1em 0.3em 0 0.3em;
+    position: relative;
+    max-width: 900px;
+    width: 100%;
+    min-height: 300px;
+}
+
+/* barra de puntuaciones */
+
+.DescubreQP-GameScoreBoard {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3em;
+    width: 100%;
+    height: 1.1em;
+}
+
+.DescubreQP-GameScoreBoard p {
+    font-size: 1.1em;
+    margin-right: 0.3em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.DescubreQP-GameScores {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.DescubreQP-GameScores>p:last-child {
+    text-align: left;
+}
+
+.DescubreQP-LifesGame {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.DescubreQP-NumberLifesGame {
+    display: none;
+}
+
+.DescubreQP-TimeNumber {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.Descubre-info {
+    background-color: red;
+}
+
+.DescubreQP-PTime {
+    margin-left: 0.3em;
+    min-width: 3.5em;
+    text-align: center;
+    width: auto;
+}
+
+/* Pista */
+
+.DescubreQP-ShowClue {
+    display: none;
+}
+
+.DescubreQP-PShowClue {
+    text-align: center;
+    width: 100%;
+}
+
+.DescubreQP-EvaluationDivIcon{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 0.1em;
+	width: 100%;
+	margin-bottom: 6px;
+
+}
+.DescubreQP-EvaluationDivIcon img{
+	width: 16px;
+	height: 16px;
+    display: block;
+}
+
+.DescubreQP-EvaluationDivIcon span{
+	font-size: 0.9em;
+}
+
+/* Cartas */
+
+/* El contenedor de la tarjeta */
+
+.DescubreQP-CardContainer {
+    position: relative;
+    /* Ancho y alto que tendra el contenedor de la tarjeta */
+    margin: 0.2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    transition: transform 0.3s;
+}
+
+.DescubreQP-CardContainer:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.DescubreQP-W25 {
+    width: 25%;
+}
+
+.DescubreQP-Card1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 0;
+    background-color: white;
+    /* Determinamos la trasicion de los efectos */
+    -webkit-transition: -webkit-transform 0.4s;
+    -moz-transition: -moz-transform 0.4s;
+    -o-transition: -o-transform 0.4s;
+    transition: transform 0.4s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    border: 1px solid rgb(3, 112, 116);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.3em;
+}
+
+.DescubreQP-CardContainer {
+    position: relative;
+    /* Ancho y alto que tendra el contenedor de la tarjeta */
+    margin: 0.2em;
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    -o-perspective: 800px;
+    perspective: 800px;
+    transition: transform 0.3s;
+}
+
+.DescubreQP-Card1.flipped {
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
+}
+
+/*Determinamos los estilos deseados en la cara de atras de la tarjeta*/
+
+.DescubreQP-Card1 .DescubreQP-CardBack {
+    width: 100%;
+    text-align: left;
+    text-align: center;
+    background-color: white;
+    /* Animacion para rotar la cara trasera */
+    -webkit-transform: rotateY( 180deg);
+    -moz-transform: rotateY( 180deg);
+    -o-transform: rotateY( 180deg);
+    transform: rotateY( 180deg);
+    border-radius: 0.3em;
+}
+
+.DescubreQP-Card1 .DescubreQP-CardFront, .DescubreQP-Card1 .DescubreQP-CardBack {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    /*visibility hidden para esconder una cara mientras se muestra la otra */
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.DescubreQP-Card1 .DescubreQP-CardFront {
+    background-image: url(descubreHome.png);
+    background-size: 100%;
+    background-position: center;
+    border-radius: 0.3em;
+}
+
+.DescubreQP-CardActive {
+    border: 3px solid #ff0000;
+    border-radius: 0.3em;
+}
+
+.DescubreQP-CardOK {
+    border: 3px solid #00ff00;
+    border-radius: 0.3em;
+}
+
+.DescubreQP-CardKO {
+    border: 3px solid #ff0000;
+    border-radius: 0.3em;
+}
+
+.DescubreQP-Cover {
+    /*display: none;*/
+    z-index: 1006;
+}
+
+.DescubreQP-ImageContain {
+    width: 85%;
+    height: 85%;
+    top: 7.5%;
+    left: 7.5%;
+    border-radius: 0em;
+    position: absolute;
+}
+
+.DescubreQP-Image {
+    position: absolute;
+    width: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+
+.DescubreQP-ImageFit {
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+    object-position: center;
+    position: absolute;
+    top: 2.5%;
+    left: 2.5%;
+    border-radius: 0.6em;
+    background-color: white;
+}
+
+.DescubreQP-EText {
+    border: none;
+    overflow-y: auto;
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    top: 3%;
+    left: 3%;
+    font-weight: 500;
+    border-radius: 0.6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    font-size: 1em;
+}
+
+.DescubreQP-Hover {
+    -moz-transform: scale(1.0);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+.centrar-verticalmente {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.DescubreQP-Multimedia {
+    background-color: transparent;
+    border-radius: 0.6em;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding: 0.4em;
+    max-width: 1100px;
+}
+
+
+
+.DescubreQP-Cursor {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+    height: 1.3em;
+    z-index: 1004;
+    display: none;
+}
+
+.DescubreQP-LinkAudio {
+    top: -0.5em;
+    position: absolute;
+    left: -0.5em;
+    width: 20%;
+    height: 20%;
+    max-height: 2.5em;
+    max-width: 2.5em;
+    ;
+    min-width: 1em;
+    min-height: 1em;
+    display: block;
+    z-index: 1005;
+    display: none;
+}
+
+.DescubreQP-LinkAudio img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.DescubreQP-LinkAudioBig {
+    position: absolute;
+    width: 80%;
+    height: 70%;
+    top: 50%;
+    /* position the top  edge of the element at the middle of the parent */
+    left: 50%;
+    /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%);
+}
+
+.DescubreQP-Audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Game Over */
+
+.DescubreQP-Cubierta {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1007;
+    background-color: rgb(255, 255, 255, .001)
+}
+
+.DescubreQP-ClueBotton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6em auto;
+}
+
+.DescubreQP-GameOverExt {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.DescubreQP-GameOver {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    margin: 0.3em auto;
+}
+
+.DescubreQP-GameOver:before {
+    content: '';
+    display: block;
+    padding-top: 40%;
+}
+
+.DescubreQP-DataImage {
+    height: 100%;
+    padding: 0;
+    position: relative;
+    width: 50%;
+}
+
+.DescubreQP-DataScore {
+    padding: 0;
+    width: 50%;
+}
+
+.DescubreQP-DataScore p {
+    margin: 0.7em;
+    font-size: 0.9em;
+}
+
+.DescubreQP-HistGGame, .DescubreQP-LostGGame {
+    bottom: 0;
+    left: 0;
+    display: none;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+}
+
+.DescubreQP-HistGGame:before, .DescubreQP-LostGGame:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+.DescubreQP-Tooltip {
+    display: none;
+    position: absolute;
+    width: 250px;
+    padding: 10px;
+    margin: 0 0 12px 0;
+    z-index: 100;
+    bottom: 170%;
+    background: #f3d55a;
+    color: #1c1b1b;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.7em;
+}
+
+.DescubreQP-Tooltip:before {
+    content: "";
+    position: absolute;
+    border: 0 solid #f3d55a;
+    bottom: -14px;
+    z-index: 100;
+    border-right-width: 10px;
+    border-bottom: 14px solid transparent;
+    width: 50%;
+    right: 50%;
+}
+
+.DescubreQP-Tooltip:after {
+    content: "";
+    position: absolute;
+    bottom: -14px;
+    z-index: 100;
+    border: 0 solid #f3d55a;
+    border-bottom: 14px solid transparent;
+    border-left-width: 10px;
+    width: 50%;
+    left: 50%;
+}
+
+/* Message */
+
+.DescubreQP-Message {
+    margin-top: 0.5em;
+    width: 100%;
+    display: none;
+    text-align: center;
+    font-weight: 500;
+}
+
+.DescubreQP-AuthorGame {
+    margin: 0.5em auto;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    display: none;
+}
+
+/* Código acceso */
+
+.DescubreQP-GameOverExt {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.DescubreQP-CodeAccessDiv, .DescubreQP-ShowClue {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.5em
+}
+
+.DescubreQP-MessageCodeAccessE {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.DescubreQP-DataCodeAccessE {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0.7em auto 0 auto;
+    width: 100%;
+}
+
+.DescubreQP-CodeAccessE {
+    margin: 0 .3em;
+    width: 100%;
+    text-align: center;
+}
+
+/* Inicio juego */
+
+.DescubreQP-StartNivel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.DescubreQP-StartNivel a {
+    display: block;
+    margin-left: 0.5em;
+}
+
+.DescubreQP-StartGame {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.DescubreQP-StartGame a:hover {
+    text-decoration: underline;
+}
+
+.DescubreQP-StartGame a {
+    color: #a2241a;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.DescubreQP-BottonContainerDiv, .DescubreQP-BottonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.1em auto;
+    padding: 0;
+    width: 100%;
+}
+
+.DescubreQP-BottonContainerDivEnd {
+    justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.DescubreQP-DivInstructions {
+    margin: 1em 0 0 0;
+    text-align: center;
+    width: 95%;
+}
+
+.DescubreQP-parpadea {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-name: DescubreQP-parpadeo;
+    -webkit-animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-name: DescubreQP-parpadeo;
+    animation-timing-function: linear;
+}
+
+/* FeedBack*/
+
+.DescubreQP-DivFeedBack {
+    align-items: center;
+    background-color: rgba(232, 232, 232, 0.5);
+    border-radius: .6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1010;
+    overflow: hidden;
+    height: 100%;
+}
+
+.DescubreQP-DivFeedBack button {
+    cursor: pointer;
+}
+
+.descubre-feedback-game {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 1px solid #999;
+    border-radius: .6em;
+    display: none;
+    margin-bottom: 0.3em;
+    height: auto;
+    min-height: 30em;
+    overflow-y: auto;
+    padding: 1em;
+    width: 70%;
+    background-color: white;
+}
+
+.descubre-extra-content {
+    margin-top: 1.7em;
+}
+
+/* Enlace activo */
+
+.DescubreQP-Activo {
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    -webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    -webkit-transition: transform 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s;
+}
+
+.DescubreQP-LinkMaximize:hover .DescubreQP-Activo, .DescubreQP-Activo:hover {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Puntuacion */
+
+.DescubreQP-BottonContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.DescubreQP-BottonContainer * {
+    margin: 0;
+    padding: 0;
+}
+
+.DescubreQP-GetScore input[type=button] {
+    padding: 0.3em 0.5em;
+    margin: 0 .5em 1em 0.5em;
+    width: auto;
+}
+
+.DescubreQP-GetScore {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1em
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Iconos */
+
+.DescubreQP-GameContainer .exeQuextIcons {
+    background-size: 100% 100%;
+    height: 1.4em;
+    margin-right: 0.3em;
+    width: 1.4em;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Video, .DescubreQP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.DescubreQP-MainContainer .exeQuextIcons-Submit {
+    background: url(exequextreply.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Minimize {
+    background-image: url(exequextmin.png);
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-IconReboot {
+    background-image: url(exequextreload.png);
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Hit {
+    background-image: url(exequexthits.png);
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-FullScreen {
+    background-image: url(exequextfull.png);
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Error {
+    background-image: url(exequextrerrors.png);
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Score {
+    background-image: url(exequextscore.png);
+    background-size: 100% 100%;
+}
+
+
+
+.DescubreQP-GameContainer .exeQuextIcons-Number {
+    background-image: url(exequextnumber.png);
+    background-size: 100% 100%;
+}
+
+.DescubreQP-GameContainer .exeQuextIcons-Life {
+    background-image: url(exequextlive.png);
+    background-size: 100% 100%;
+}
+
+/* Full Screen */
+
+div:fullscreen .exeQuextIcons-FullScreen {
+    background-image: url(exequextnormal.png);
+    background-size: 100% 100%;
+}
+
+div:fullscreen .exeQuextIcons-FullScreen {
+    background: url(exequextnormal.png);
+    background-size: 100% 100%;
+}
+
+div:fullscreen .DescubreQP-Message {
+    font-weight: 1.1em;
+}
+
+.DescubreQP-GameContainer:-webkit-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.DescubreQP-GameContainer:-moz-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.DescubreQP-GameContainer:-ms-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.DescubreQP-GameContainer:-o-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+.DescubreQP-GameContainer:fullscreen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+div:fullscreen .DescubreQP-Multimedia {
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+}
+
+
+
+
+
+
+
+@-moz-keyframes DescubreQP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes DescubreQP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@keyframes DescubreQP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .DescubreQP-MainContainer {
+        font-size: 0.9rem;
+    }
+    .DescubreQP-instructions {
+        margin: 0.1em auto;
+    }
+    .DescubreQP-DivInstructions {
+        display: none;
+    }
+    .DescubreQP-PShowClue {
+        font-size: 1em;
+    }
+    .DescubreQP-StartGame a {
+        font-size: 1em;
+    }
+    .DescubreQP-Message {
+        font-size: 1em;
+    }
+    .DescubreQP-GameOverExt {
+        width: 75%;
+    }
+    .DescubreQP-CodeAccessDiv, .DescubreQP-ShowClue {
+        width: 75%;
+    }
+    .DescubreQP-EText{
+        font-size: .8em;
+        border-radius: 0.1rem;
+    }
+    .DescubreQP-EText * {
+        font-size: .8em !important;
+    }
+    div:fullscreen .DescubreQP-EText {
+        font-size: 1em;
+    }
+    div:fullscreen .DescubreQP-EText * {
+        font-size: 1em !important;
+    }
+}
+
+@media screen and (max-width:470px) {
+    .DescubreQP-EText {
+        font-size: .7em ;
+
+    }
+    .DescubreQP-EText *{
+        font-size: .7em !important;
+
+    }
+    .DescubreQP-LifesGame {
+        display: none;
+    }
+    .DescubreQP-LinkMinimize {
+        display: none;
+    }
+    .DescubreQP-DataCodeAccessE label {
+        display: none;
+    }
+    .DescubreQP-GameContainer .exeQuextIcons-MoveOne, .DescubreQP-GameContainer .exeQuextIcons-Submit, .DescubreQP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+    .DescubreQP-GameContainer input[type="text"], input.DescubreQP-CodeAccessE {
+        background: #fdfdfd;
+        border: 1px solid #828282;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: inline-block;
+        line-height: 1.5em;
+        margin: 0 0.3em;
+        padding: 0.4em 0.25em;
+    }
+    .DescubreQP-GameContainer input[type="text"]:active, .DescubreQP-GameContainer input[type="text"]:focus, input.DescubreQP-EdReply:focus, input.DescubreQP-EdReply:active, input.DescubreQP-CodeAccessE:focus, input.DescubreQP-CodeAccessE:active {
+        background: #fdfdfd;
+        border: 1px solid #398ee7;
+        border-radius: 4px;
+    }
+    .DescubreQP-GameOverExt {
+        width: 90%;
+        font-size: 0.9em;
+    }
+    .DescubreQP-CodeAccessDiv, .DescubreQP-ShowClue {
+        width: 90%;
+    }
+    .DescubreQP-Card1 {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        text-align: center;
+        left: 0;
+        top: 0;
+        border: 1px solid rgb(3, 112, 116);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 0.1em;
+    }
+    .DescubreQP-CardActive {
+        border: 2px solid #ff0000;
+        border-radius: 0.1em;
+    }
+    .DescubreQP-CardOK {
+        border: 2px solid #00ff00;
+        border-radius: 0.1em;
+    }
+    .DescubreQP-CardKO {
+        border: 2px solid #ff0000;
+        border-radius: 0.1em;
+    }
+    .DescubreQP-CardContainer {
+        position: relative;
+        /* Ancho y alto que tendra el contenedor de la tarjeta */
+        margin: 0.1em;
+    }
+    div:fullscreen .DescubreQP-Message {
+        font-weight: 1em;
+    }
+    div:fullscreen .DescubreQP-EText {
+        font-size: 1em;
+    }
+    div:fullscreen .DescubreQP-EText * {
+        font-size: 1em !important;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .DescubreQP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 0.1em;
+        padding: 0;
+    }
+    .DescubreQP-GameContainer .exeQuextIcons {
+        margin: 0;
+        padding: 0;
+    }
+    .DescubreQP-GameContainer .DescubreQP-GameScoreBoard p {
+        padding: 0;
+    }
+    .DescubreQP-GameScores {
+        width: 50%;
+    }
+    .DescubreQP-TimeNumber {
+        width: 45%;
+    }
+    .DescubreQP-instructions p {
+        margin: 0 auto;
+    }
+    .DescubreQP-EText * {
+        font-size: 1em !important;
+    }
+    div:fullscreen .DescubreQP-Message {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width:295px) {
+    .DescubreQP-GameScoreBoard {
+        justify-content: flex-start;
+    }
+    .DescubreQP-GameScores {
+        width: 50%;
+    }
+    .DescubreQP-TimeNumber {
+        width: 42%;
+    }
+}
+
+@media screen and (max-width:265px) {
+    .DescubreQP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 2px;
+    }
+    .DescubreQP-GameContainer .exeQuextIcons {
+        height: 1.1em;
+        width: 1.1em;
+    }
+    .DescubreQP-GameContainer .exeQuextIcons-Submit, .DescubreQP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+    .DescubreQP-GameScores {
+        width: auto;
+    }
+    .DescubreQP-TimeNumber {
+        justify-content: flex-start;
+        width: auto;
+    }
+    .DescubreQP-Letter {
+        font-size: 1.2em;
+        height: 1.7em;
+        margin: 0;
+        width: 1.2em;
+    }
+}
+
+@media screen and (max-width:235px) {
+    .DescubreQP-GameScoreBoard .exeQuextIcons-Life, .DescubreQP-GameScoreBoard .exeQuextIcons-Time {
+        display: none;
+    }
+}
