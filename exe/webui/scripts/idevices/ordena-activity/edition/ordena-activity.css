@@ -191,9 +191,7 @@
 }
 
 
-.ODNE-Hide{
-	display: none;
-}
+
 
 .ODNE-ECustomMessageDiv, .ODNE-ECustomMessageDef{
 	margin-top: 0.6em;
@@ -202,12 +200,19 @@
 	justify-content: flex-start;
 	flex-wrap: nowrap;
 }
+.ODNE-EPhraseDivI{
+	margin-top: 2em;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
 
-.ODNE-ECustomMessageDiv label, .ODNE-ECustomMessageDef label{
+}
+.ODNE-ECustomMessageDiv label, .ODNE-ECustomMessageDef label,  .ODNE-EPhraseDivI label{
 	white-space:nowrap;
 	margin-right: 0.1em;
 }
-.ODNE-ECustomMessageDiv input[type=text], .ODNE-ECustomMessageDef input[type=text]{
+.ODNE-ECustomMessageDiv input[type=text], .ODNE-ECustomMessageDef input[type=text], .ODNE-EPhraseDivI input[type=text]{
 	width: 100%;
 	max-width: 1200px;
 	margin-right: 0.2em;
@@ -312,7 +317,9 @@
 	display: none;
 }
 
-
+.ODNE-Hide{
+	display: none;
+}
 /* To review */
 #gameQEIdeviceForm .exe-block-info img {
 	margin-left: .2em;

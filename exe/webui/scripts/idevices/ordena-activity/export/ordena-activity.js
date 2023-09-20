@@ -160,10 +160,13 @@ var $eXeOrdena = {
             $eXeOrdena.showPhrase(0, i);
             $eXeOrdena.addEvents(i);
             $('#ordenaDivFeedBack-' + i).hide();
-            //Fran Melendo: Cambio para que el juego siempre comience empezado si asi lo ha dicho el usuario
-            if (mOption.startAutomatically) {
+            if(mOption.type == 0){
+                $('#ordenaPhrasesContainer-'+i).hide();
+            }
+            if (mOption.startAutomatically || (mOption.type == 0 && mOption.time==0)) {
                 $('#ordenaStartGame-' + i).click();
             }
+            
 
         });
         if ($eXeOrdena.hasLATEX && typeof (MathJax) == "undefined") {
@@ -194,6 +197,7 @@ var $eXeOrdena = {
         q.msgError = '';
         q.msgHit = '';
         q.definition = '';
+        q.phrase='';
         return q;
     },
 
@@ -248,6 +252,7 @@ var $eXeOrdena = {
                     }
                 }
             });
+            mOptions.phrasesGame[i].phrase= typeof mOptions.phrasesGame[i].phrase=="undefined"?'':mOptions.phrasesGame[i].phrase;
             for (var j = 0; j < cards.length; j++) {
                 cards[j].type = 0
                 if (cards[j].url.length > 4 && cards[j].eText.trim().length > 0) {
@@ -288,12 +293,12 @@ var $eXeOrdena = {
                 }
             }
         });
-
+        
         mOptions.active = 0;
         mOptions.evaluation = typeof mOptions.evaluation == "undefined" ? false : mOptions.evaluation;
         mOptions.evaluationID = typeof mOptions.evaluationID == "undefined" ? '' : mOptions.evaluationID;
         mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
-
+        mOptions.type = typeof mOptions.type == "undefined" ? 1 : mOptions.type;
         mOptions.allPhrases = $.extend(true, {}, mOptions.phrasesGame);
         mOptions.phrasesGame = $eXeOrdena.getQuestions(mOptions.phrasesGame, mOptions.percentajeQuestions);
         mOptions.phrasesGame = $eXeOrdena.shuffleAds(mOptions.phrasesGame);
@@ -305,18 +310,24 @@ var $eXeOrdena = {
         mOptions.orderedColumns = typeof mOptions.orderedColumns == "undefined" ? false : mOptions.orderedColumns;
         mOptions.orderedColumns = mOptions.gameColumns < 2 ? false : mOptions.orderedColumns;
         mOptions.fullscreen = false;
+        mOptions.numberQuestions = mOptions.phrasesGame.length;
+        mOptions.hits = 0;
         return mOptions;
 
     },
+
+
 
     showPhrase: function (num, instance) {
         var mOptions = $eXeOrdena.options[instance],
             pc = '.ODNP-CardDraw';
         mOptions.active = num;
         mOptions.phrase = mOptions.phrasesGame[num];
+        if(mOptions.type == 0){
+            $eXeOrdena.showPhraseText(num, instance)
+            return;
+        }
         $eXeOrdena.randomPhrase(instance);
-
-
         $eXeOrdena.stopSound(instance);
         $eXeOrdena.addCards(mOptions.phrase.cards, instance);
         $eXeOrdena.initCards(instance);
@@ -552,6 +563,7 @@ var $eXeOrdena = {
                     <a href="#" id="ordenaNextPhrase-' + instance + '" title="' + msgs.msgNextPhrase + '">' + msgs.msgNextPhrase + '</a>\
             </div>\
             <div class="ODNP-Multimedia" id="ordenaMultimedia-' + instance + '"></div>\
+            <div class="ODNP-Tarjet" id="ordenaPhrasesContainer-' + instance + '"></div>\
             <div class="ODNP-Cubierta" id="ordenaCubierta-' + instance + '">\
                 <div class="ODNP-GameOverExt" id="ordenaGameOver-' + instance + '">\
                     <div class="ODNP-StartGame" id="ordenaMesasgeEnd-' + instance + '"></div>\
@@ -783,6 +795,79 @@ var $eXeOrdena = {
         $eXeOrdena.setSize(instance);
     },
 
+    showPhraseText: function (num, instance) {
+        var mOptions = $eXeOrdena.options[instance];
+        mOptions.phrase = mOptions.phrasesGame[num];
+        mOptions.correctOrder = mOptions.phrase.phrase.split(' ');
+        var words=[];
+        for (var i= 0;i <mOptions.correctOrder.length ; i++){
+         var word ={
+             'text': mOptions.correctOrder[i],
+             'order': i
+         }
+         words.push(word)
+        }
+        var shuffledWords = [...words].sort(() => Math.random() - 0.5);
+        $eXeOrdena.stopSound(instance);
+        $eXeOrdena.addCardsPhrase(shuffledWords, instance);
+        $('#ordenaPhrasesContainer-' + instance).find('.ODNP-Word').draggable({
+            revert: true,
+            droptarget: '.ODNP-WordTarget',
+            drop: function (evt, target) {
+               mOptions.lastDropped = target;
+               $('#ordenaPhrasesContainer-' + instance).find('.ODNP-Word').removeClass('ODNP-WordCorrect')
+               $('#ordenaValidatePhrase-' + instance).show();
+               $('#ordenaHistsGame-' + instance).text('');
+            },
+        });
+        $('#ordenaPhrasesContainer-' + instance).find('.ODNP-WordTarget').droppable({
+              drop: function (evt, draggable) {
+                $(this).removeClass("ODNP-WordActive");
+                if (mOptions.lastDropped) {
+                    var tempHTML = $(draggable).html();
+                    $(draggable).html($(mOptions.lastDropped).html());
+                    $(mOptions.lastDropped).html(tempHTML);
+                  }
+            },
+        });
+     },
+
+    addCardsPhrase: function (words, instance, ) {
+        var cards = "";
+        $('#ordenaPhrasesContainer-' + instance).find('.ODNP-Word').remove();
+        for (var i = 0; i < words.length; i++) {
+            var card = $eXeOrdena.createCardPhrase(i, words[i].text, words[i].order, instance)
+            cards += card;
+        }
+        $('#ordenaPhrasesContainer-' + instance).append(cards);
+
+    },
+    createCardPhrase: function (j,text, order, instance) {
+        return '<div class="ODNP-Word ODNP-WordTarget" data-number="' + j + '" data-order="' + order + '" >' + text + '</div>';
+    },
+
+    moveCardPharse: function ($item, target, instance) {
+        var mOptions = $eXeOrdena.options[instance];
+        if (!mOptions.gameStarted || mOptions.gameOver) {
+            return;
+        }
+
+        var $save = $item.prev('.ODNP-Word');
+        if ($save.data('order') == $(target).data('order')) {
+            $item.insertBefore(target);
+        } else {
+            $item.insertAfter(target);
+            if ($save) {
+                $(target).insertAfter($save);
+            } else {
+                $('#ordenaPhrasesContainer-' + instance).append($(target))
+            }
+        }
+        $('#ordenaValidatePhrase-' + instance).show();
+        $('#ordenaHistsGame-' + instance).text('');
+
+    },
+
     createCard: function (j, type, url, text, audio, x, y, alt, color, backcolor, order, instance) {
         var malt = alt || '',
             saudio = "";
@@ -854,6 +939,10 @@ var $eXeOrdena = {
             e.preventDefault();
             $("#ordenaGameContainer-" + instance).show()
             $("#ordenaGameMinimize-" + instance).hide();
+            if(!mOptions.gameStarted && !mOptions.gameOver){
+                $eXeOrdena.startGame(instance);
+                $('#ordenaStartGame-' + instance).hide();
+            }
         });
         $("#ordenaLinkMinimize-" + instance).on('click touchstart', function (e) {
             e.preventDefault();
@@ -931,17 +1020,14 @@ var $eXeOrdena = {
             $('#ordenaMultimedia-' + instance).find('.ODNP-Card1').addClass('flipped');
             $('#ordenaMultimedia-' + instance).find('.ODNP-Card1').removeClass("ODNP-CardOK ODNP-CardKO");
         });
-        $('#ordenaShowSolution-' + instance).on('click', function (e) {
-            e.preventDefault();
-            $eXeOrdena.showSolutions(instance);
-        });
+
         $('#ordenaClueButton-' + instance).on('click', function (e) {
             e.preventDefault();
             $('#ordenaShowClue-' + instance).hide();
             $('#ordenaCubierta-' + instance).fadeOut();
         });
 
-        $('#ordenaPErrors-' + instance).text(mOptions.attempts);
+        $('#ordenaPErrors-' + instance).text(mOptions.numberQuestions -mOptions.hits);
         if (mOptions.time == 0) {
             $('#ordenaPTime-' + instance).hide();
             $('#ordenaImgTime-' + instance).hide();
@@ -953,16 +1039,19 @@ var $eXeOrdena = {
             $('#ordenaAuthorGame-' + instance).html(mOptions.msgs.msgAuthor + '; ' + mOptions.author);
             $('#ordenaAuthorGame-' + instance).show();
         }
-        if (!mOptions.showSolution) {
-            $('#ordenaShowSolution-' + instance).hide();
-        }
-        $('#ordenaNextPhrase-' + instance).hide();
+          $('#ordenaNextPhrase-' + instance).hide();
         $('#ordenaGameButtons-' + instance).hide();
         $('#ordenaValidatePhrase-' + instance).on('click', function (e) {
             e.preventDefault();
-            var response = mOptions.columns > 1 && mOptions.orderedColumns ? $eXeOrdena.checkPhraseColumns(instance) : $eXeOrdena.checkPhrase(instance),
-                msg = $eXeOrdena.updateScore(response.correct, instance) + ' ' + mOptions.msgs.msgPositions + ': ' + response.valids.length + '. ',
-                color = $eXeOrdena.borderColors.red;
+            var response = {};
+            if(mOptions.type == 0){
+                response = $eXeOrdena.checkPhraseText(instance)
+            }else{
+                response = mOptions.columns > 1 && mOptions.orderedColumns ? $eXeOrdena.checkPhraseColumns(instance) : $eXeOrdena.checkPhrase(instance);
+            }
+            var  valids = mOptions.orderedColumns ? response.valids.length - mOptions.gameColumns : response.valids.length,
+                 msg = $eXeOrdena.updateScore(response.correct, instance) + ' ' + mOptions.msgs.msgPositions + ': ' + valids + '. ',
+                 color = $eXeOrdena.borderColors.red;
             if (response.correct) {
                 msg = mOptions.customMessages ? mOptions.phrasesGame[mOptions.active].msgHit : mOptions.msgs.msgAllOK;
                 color = $eXeOrdena.borderColors.green;
@@ -972,6 +1061,7 @@ var $eXeOrdena = {
                 $eXeOrdena.nextPhrase(instance);
 
             } else {
+                msg = mOptions.customMessages ? mOptions.phrasesGame[mOptions.active].msgError : msg;
                 if (typeof mOptions.phrase.audioError != "undefined" && mOptions.phrase.audioError.length > 4) {
                     $eXeOrdena.playSound(mOptions.phrase.audioError, instance);
                 }
@@ -980,13 +1070,37 @@ var $eXeOrdena = {
             $('#ordenaHistsGame-' + instance).css({
                 'color': color
             });
-            $eXeOrdena.activeCorrects(instance, response.valids);
+            if(mOptions.type == 1 && mOptions.showSolution){
+                $eXeOrdena.activeCorrects(instance, response.valids);
+            }
             $('#ordenaValidatePhrase-' + instance).hide();
             $eXeOrdena.saveEvaluation(instance);
 
         });
         $eXeOrdena.updateEvaluationIcon(instance)
 
+    },
+    checkPhraseText: function(instance){
+        var mOptions = $eXeOrdena.options[instance],
+            correct = true,
+            valids = [];
+        const wordsInTargetContainer = $('#ordenaPhrasesContainer-' + instance).find('.ODNP-Word').map(function () {
+            return $(this).text();
+        }).get();
+        for (var i = 0;i < mOptions.correctOrder.length; i++){
+            if(mOptions.correctOrder[i]!=wordsInTargetContainer[i]){
+                correct = false;
+            }else{
+                if(mOptions.showSolution){
+                  $('#ordenaPhrasesContainer-' + instance).find('.ODNP-Word').eq(i).addClass('ODNP-WordCorrect')
+                }
+                valids.push(i);
+            }
+        }
+        return {
+            'correct': correct,
+            'valids': valids
+        };
     },
     checkAudio: function (card, instance) {
         var audio = $(card).find('.ODNP-LinkAudio').data('audio');
@@ -1000,7 +1114,12 @@ var $eXeOrdena = {
             $('#ordenaHistsGame-' + instance).html('');
             mOptions.active++;
             if (mOptions.active < mOptions.phrasesGame.length) {
-                $eXeOrdena.showPhrase(mOptions.active, instance);
+                if(mOptions.type == 0){
+                    $eXeOrdena.showPhraseText(mOptions.active, instance);
+                }else{
+                    $eXeOrdena.showPhrase(mOptions.active, instance);
+
+                }
                 $('#ordenaValidatePhrase-' + instance).show();
             } else {
                 $eXeOrdena.gameOver(0, instance)
@@ -1030,12 +1149,8 @@ var $eXeOrdena = {
                 }
             });
         }
-
-
     },
-    showSolutions: function (instance, valids) {
 
-    },
     getColors: function (number) {
         var colors = [];
         for (var i = 0; i < number; i++) {
@@ -1416,7 +1531,12 @@ var $eXeOrdena = {
         if (mOptions.gameStarted) {
             return;
         };
-        $eXeOrdena.showMessage(3, mOptions.phrase.definition, instance)
+        if(mOptions.type == 0){
+            $('#ordenaPhrasesContainer-'+instance).show();
+        }
+        if (mOptions.type ==1 ){
+            $eXeOrdena.showMessage(3, mOptions.phrase.definition, instance)
+        }
         mOptions.hits = 0;
         mOptions.errors = 0;
         mOptions.score = 0;
@@ -1431,7 +1551,7 @@ var $eXeOrdena = {
         $('#ordenaPShowClue-' + instance).text('');
         $('#ordenaShowClue-' + instance).hide();
         $('#ordenaPHits-' + instance).text(mOptions.hits);
-        $('#ordenaPErrors-' + instance).text(mOptions.nattempts);
+        $('#ordenaPErrors-' + instance).text(mOptions.numberQuestions -mOptions.hits);
         $('#ordenaCubierta-' + instance).hide();
         $('#ordenaGameOver-' + instance).hide();
         $eXeOrdena.initCards(instance);
@@ -1477,6 +1597,7 @@ var $eXeOrdena = {
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
+        clearInterval(mOptions.counterClock);
         $eXeOrdena.stopSound(instance);
         $('#ordenaCubierta-' + instance).show();
         $eXeOrdena.showScoreGame(type, instance);
@@ -1593,6 +1714,7 @@ var $eXeOrdena = {
         $ordenaOverAttemps.html(msgs.msgAttempts + ': ' + attemps);
         $ordenaGameOver.show();
         $ordenaCubierta.show();
+        $ordenaOverAttemps.hide();
         $('#ordenaShowClue-' + instance).hide();
         if (mOptions.itinerary.showClue) {
             $eXeOrdena.showMessage(3, mclue, instance, true)
@@ -1671,7 +1793,7 @@ var $eXeOrdena = {
         }
         mOptions.score = mOptions.score + obtainedPoints;
         sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
-        $('#ordenaPErrors-' + instance).text(mOptions.nattempts);
+        $('#ordenaPErrors-' + instance).text(mOptions.numberQuestions  -mOptions.hits);
         $('#ordenaPScore-' + instance).text(sscore);
         $('#ordenaPHits-' + instance).text(mOptions.hits);
         if (mOptions.attempts > 0 && mOptions.nattempts == 0 && mOptions.hits < mOptions.phrasesGame.length) {

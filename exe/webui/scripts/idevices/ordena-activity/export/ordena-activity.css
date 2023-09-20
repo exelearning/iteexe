@@ -712,7 +712,7 @@
 	display: none;
     margin-bottom: 0.3em;
     height: auto;
-    min-height: 30em;
+    min-height: 7cqw;
     overflow-y: auto;
     padding: 1em;
 	width: 70%;
@@ -1148,3 +1148,31 @@ div:fullscreen .ODNP-Multimedia {
 		display: none;
 	}
 }
+
+ .ODNP-Tarjet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .ODNP-Word {
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: move;
+    font-size: 1.2em;
+    color:#333;
+    border: 1px solid transparent;
+    max-height: 1.8em;
+    background-color: rgb(255, 255, 255, .01);
+  }
+  .ODNP-WordCorrect {
+    color:#006641
+  }
+
+  .ODNP-Tarjet {
+    min-height: 50px;
+  }
+  .hovering {
+    border: 1px solid #ccc;
+  }

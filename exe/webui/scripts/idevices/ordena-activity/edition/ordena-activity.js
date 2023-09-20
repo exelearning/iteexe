@@ -67,7 +67,7 @@ var $exeDevice = {
         "msgAllAttemps": _("¡Has agotado todos los intentos!. Prueba de nuevo"),
         "mgsAllPhrases": _("¡Has ordenado todas las actividades!"),
         "msgAttempts": _("Intentos"),
-        "msgNumbersAttemps": _("Número de intentos"),
+        "msgNumbersAttemps": _("Número de actividades pendientes"),
         "msgAuthor": _("Autoría"),
         "msgReboot": _("Reiniciar"),
         "msgActivities": _("Actividades"),
@@ -114,13 +114,22 @@ var $exeDevice = {
                     <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
                         <p>\
-                            <label for="ordenaEShowMinimize"><input type="checkbox" id="ordenaEShowMinimize">' + _("Show minimized.") + '</label>\
+                        <span>' + _('Type') + ':</span>\
+                        <span class="ODNE-EInputColumns">\
+                            <input class="ODNE-EType" id="odntype0" checked type="radio" name="odntype" value="0" />\
+                            <label for="odntype0">' + _('Frases') + '</label>\
+                            <input class="ODNE-EType" id="odntype1" type="radio" name="odntype" value="1" />\
+                            <label for="odntype1">' + _('Multimedias') + '</label>\
+                        </span>\
                         </p>\
                         <p>\
+                            <label for="ordenaEShowMinimize"><input type="checkbox" id="ordenaEShowMinimize">' + _("Show minimized.") + '</label>\
+                        </p>\
+                        <p id="ordenaTimeShowDiv" class="ODNE-Hide">\
 							<label for="ordenaETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas(segundos)") + ':\
 							<input type="number" name="ordenaETimeShowSolution" id="ordenaETimeShowSolution" value="3" min="1" max="999" /> </label>\
                         </p>\
-                        <p>\
+                        <p id="ordenaECustomMessagesDiv" class="ODNE-Hide">\
                             <label for="ordenaECustomMessages"><input type="checkbox" id="ordenaECustomMessages">' + _("Mensajes personalizados") + '.</label>\
                         </p>\
                         <p>\
@@ -143,32 +152,32 @@ var $exeDevice = {
                         <p>\
                             <label for="ordenaEAuthor">' + _('Author') + ': </label><input id="ordenaEAuthor" type="text" />\
                         </p>\
-                        <p>\
-                        <span>' + _('Columnas') + ':</span>\
-                        <span class="ODNE-EInputColumns">\
-                            <input class="ODNE-EColumns" id="odn0" checked type="radio" name="odncolumns" value="0" />\
-                            <label for="odn1">No</label>\
-                            <input class="ODNE-EColumns" id="odn1" type="radio" name="odncolumns" value="1" />\
-                            <label for="odn1">1</label>\
-                            <input class="ODNE-EColumns" id="odn2" type="radio" name="odncolumns" value="2" />\
-                            <label for="odn2">2</label>\
-                            <input class="ODNE-EColumns" id="odn3" type="radio" name="odncolumns" value="3" />\
-                            <label for="odn3">3</label>\
-                            <input class="ODNE-EColumns" id="odn4" type="radio" name="odncolumns" value="4" />\
-                            <label for="odn4">4</label>\
-                            <input class="ODNE-EColumns" id="odn4" type="radio" name="odncolumns" value="5" />\
-                            <label for="odn4">5</label>\
-                        </span>\
+                        <p id="ordenaColumnsDiv" class="ODNE-Hide">\
+                            <span>' + _('Columnas') + ':</span>\
+                            <span class="ODNE-EInputColumns">\
+                                <input class="ODNE-EColumns" id="odn0" checked type="radio" name="odncolumns" value="0" />\
+                                <label for="odn1">No</label>\
+                                <input class="ODNE-EColumns" id="odn1" type="radio" name="odncolumns" value="1" />\
+                                <label for="odn1">1</label>\
+                                <input class="ODNE-EColumns" id="odn2" type="radio" name="odncolumns" value="2" />\
+                                <label for="odn2">2</label>\
+                                <input class="ODNE-EColumns" id="odn3" type="radio" name="odncolumns" value="3" />\
+                                <label for="odn3">3</label>\
+                                <input class="ODNE-EColumns" id="odn4" type="radio" name="odncolumns" value="4" />\
+                                <label for="odn4">4</label>\
+                                <input class="ODNE-EColumns" id="odn4" type="radio" name="odncolumns" value="5" />\
+                                <label for="odn4">5</label>\
+                            </span>\
                         </p>\
                         <p id="ordenaCustomizeCard" style="display:none;">\
                             <label for="ordenaMaxWidth"><input type="checkbox" checked  id="ordenaMaxWidth">' + _('Máximo ancho') + '.</label>\
                             <label for="ordenaCardHeight">' + _('Alto (px)') + ':\
                             <input type="number" name="ordenaCardHeight" id="ordenaCardHeight" value="200" min="0" max="1000" /> </label>\
                         </p>\
-                        <p id="ordenaFixedHeaders"  style="display:none;">\
+                        <p id="ordenaFixedHeaders" style="display:none;">\
                             <label for="ordenaOrderedColumns"><input type="checkbox"  id="ordenaOrderedColumns">' + _('Cabeceras fijas') + '.</label>\
                         </p>\
-                        <p>\
+                        <p id="ordenaStartAutomaticallyDiv" style="display:none;">\
                             <label for="ordenaStartAutomatically"><input type="checkbox"  id="ordenaStartAutomatically">' + _('Inicio automático') + '</label>\
                         </p>\
                         <p>\
@@ -185,52 +194,55 @@ var $exeDevice = {
                 <fieldset class="exe-fieldset">\
                 <legend><a href="#">' + _('Actividades') + '</a></legend>\
                     <div class="ODNE-EPanel" id="ordenaEPanel">\
-                    <div class="ODNE-ENavigationButtons">\
-                        <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Añadir actividad') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir actividad') + '" class="ODNE-EButtonImage b-add" /></a>\
-                        <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('Priemra actividad') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('Primera actividad') + '" class="ODNE-EButtonImage b-first" /></a>\
-                        <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="ODNE-EButtonImage b-prev" /></a>\
-                        <span class="sr-av">' + _("Actividad número:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
-                        <a href="#" id="ordenaENext" class="ODNE-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="ODNE-EButtonImage b-next" /></a>\
-                        <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('ültima actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('ültima actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
-                        <a href="#" id="ordenaEDelete" class="ODNE-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="ODNE-EButtonImage b-delete" /></a>\
-                        <a href="#" id="ordenaECopy" class="ODNE-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                        <a href="#" id="ordenaECut" class="ODNE-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                        <a href="#" id="ordenaEPaste" class="ODNE-ENavigationButton"  title="' + _('Pegar actividad') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar actividad') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                        <p class="ODNE-EPhraseDivI" id="ordenaEPĥraseIDiv">\
+                            <label for="ordenaEPraseI">' + _('Frase') + ':</label><input type="text" id="ordenaEPraseI">\
+                        </p>\
+                        <div class="ODNE-ENavigationButtons" id="ordenaButtonsPrhaseDiv" >\
+                            <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Añadir actividad') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir actividad') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('Priemra actividad') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('Primera actividad') + '" class="ODNE-EButtonImage b-first" /></a>\
+                            <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="ODNE-EButtonImage b-prev" /></a>\
+                            <span class="sr-av">' + _("Actividad número:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
+                            <a href="#" id="ordenaENext" class="ODNE-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="ODNE-EButtonImage b-next" /></a>\
+                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('ültima actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('ültima actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
+                            <a href="#" id="ordenaEDelete" class="ODNE-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="ODNE-EButtonImage b-delete" /></a>\
+                            <a href="#" id="ordenaECopy" class="ODNE-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaECut" class="ODNE-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaEPaste" class="ODNE-ENavigationButton"  title="' + _('Pegar actividad') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar actividad') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                        </div>\
+                        <p class="ODNE-ENumActivity ODNE-Hide" id="ordenaActivityNumberDiv">' + _('Actividad') + ' <span id="ordenaActivityNumber">1</span></p>\
+                        <p class="ODNE-ECustomMessageDef ODNE-Hide" id="ordenaEDefinitionDiv">\
+                            <label for="ordenaEDefinition">' + _('Enunciado') + ':</label><input type="text" id="ordenaEDefinition">\
+                            <label>' + _("Audio") + ':</label>\
+                            <input type="text" id="ordenaEURLAudioDefinition" class="exe-file-picker ODNE-EURLAudio"  />\
+                            <a href="#"id="ordenaEPlayAudioDefinition" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
+                        </p>\
+                        <p class="ODNE-ECustomMessageDiv" id="ordenaCustomMessageOKDiv">\
+                            <label for="ordenaEMessageOK">' + _('Acierto') + ':</label><input type="text" id="ordenaEMessageOK"/>\
+                            <label>' + _("Audio") + ':</label>\
+                            <input type="text" id="ordenaEURLAudioOK" class="exe-file-picker ODNE-EURLAudio"  />\
+                            <a href="#"id="ordenaEPlayAudioOK" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
+                        </p>\
+                        <p class="ODNE-ECustomMessageDiv" id="ordenaCustomMessageKODiv">\
+                            <label for="ordenaEMessageKO">' + _('Error') + ':</label><input type="text" id="ordenaEMessageKO"/>\
+                            <label>' + _("Audio") + ':</label>\
+                            <input type="text" id="ordenaEURLAudioKO" class="exe-file-picker ODNE-EURLAudio"  />\
+                            <a href="#"id="ordenaEPlayAudioKO" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
+                        </p>\
+                        <p class="ODNE-EPhrase ODNE-Hide" id="ordenaEPhrase">\
+                        </p>\
+                        <div class="ODNE-EContents ODNE-Hide" id="ordenaButtonCardDiv" >\
+                            <div class="ODNE-ENavigationButtons">\
+                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Añadir carta') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir card') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Borrar carta') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar card') + '" class="ODNE-EButtonImage b-delete" /></a>\
+                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copiar carta') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar card') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cortar carta') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar card') + '" class="ODNE-EButtonImage b-cut" /></a>\
+                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Pegar carta') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar card') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                        </div>\
+                        </div>\
+                        <div class="ODNE-ENumPhrasesDiv" id="ordenaENumPhrasesDiv">\
+                            <div class="ODNE-ENumPhraseS"><span class="sr-av">' + _("Phrases:") + '</span></div> <span class="ODNE-ENumPhrases" id="ordenaENumPhrases">1</span>\
+                        </div>\
                     </div>\
-                    <p class="ODNE-ENumActivity">' + _('Actividad') + ' <span id="ordenaActivityNumber">1</span></p>\
-                    <p class="ODNE-ECustomMessageDef" id="ordenaEDefinitionDiv">\
-                        <label for="ordenaEDefinition">' + _('Enunciado') + ':</label><input type="text" id="ordenaEDefinition">\
-                        <label>' + _("Audio") + ':</label>\
-                        <input type="text" id="ordenaEURLAudioDefinition" class="exe-file-picker ODNE-EURLAudio"  />\
-                        <a href="#"id="ordenaEPlayAudioDefinition" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
-                    </p>\
-                    <p class="ODNE-ECustomMessageDiv">\
-                        <label for="ordenaEMessageOK">' + _('Acierto') + ':</label><input type="text" id="ordenaEMessageOK"/>\
-                        <label>' + _("Audio") + ':</label>\
-                        <input type="text" id="ordenaEURLAudioOK" class="exe-file-picker ODNE-EURLAudio"  />\
-                        <a href="#"id="ordenaEPlayAudioOK" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
-                    </p>\
-                    <p class="ODNE-ECustomMessageDiv">\
-                        <label for="ordenaEMessageKO">' + _('Error') + ':</label><input type="text" id="ordenaEMessageKO"/>\
-                        <label>' + _("Audio") + ':</label>\
-                        <input type="text" id="ordenaEURLAudioKO" class="exe-file-picker ODNE-EURLAudio"  />\
-                        <a href="#"id="ordenaEPlayAudioKO" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
-                    </p>\
-                    <p class="ODNE-EPhrase" id="ordenaEPhrase">\
-                    </p>\
-                    <div class="ODNE-EContents">\
-                        <div class="ODNE-ENavigationButtons">\
-                        <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Añadir carta') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir card') + '" class="ODNE-EButtonImage b-add" /></a>\
-                        <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Borrar carta') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar card') + '" class="ODNE-EButtonImage b-delete" /></a>\
-                        <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copiar carta') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar card') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                        <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cortar carta') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar card') + '" class="ODNE-EButtonImage b-cut" /></a>\
-                        <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Pegar carta') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar card') + '" class="ODNE-EButtonImage b-paste" /></a>\
-                    </div>\
-                    </div>\
-                    <div class="ODNE-ENumPhrasesDiv" id="ordenaENumPhrasesDiv">\
-                        <div class="ODNE-ENumPhraseS"><span class="sr-av">' + _("Phrases:") + '</span></div> <span class="ODNE-ENumPhrases" id="ordenaENumPhrases">0</span>\
-                    </div>\
-                </div>\
                 </fieldset>\
                 ' + $exeDevice.getTextFieldset("after") + '\
             </div>\
@@ -245,6 +257,44 @@ var $exeDevice = {
         $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
         $exeAuthoring.iDevice.gamification.scorm.init();
         this.enableForm(field);
+
+    },
+    showTypeGame:function(type){
+      if(type == 0){
+        $('#ordenaTimeShowDiv').hide();
+        $('#ordenaColumnsDiv').hide();
+        $('#ordenaActivityNumberDiv').hide();
+        $('#ordenaEDefinitionDiv').hide();
+        $('#ordenaEPhrase').hide();
+        $('#ordenaButtonCardDiv').hide();
+        $('#ordenaCustomizeCard').hide();
+        $('#ordenaFixedHeaders').hide();
+        $('#ordenaStartAutomaticallyDiv').hide();
+        $('#ordenaECustomMessagesDiv').hide();
+        $('#ordenaECustomMessages').prop('checked',false)
+        $('#ordenaEPĥraseIDiv').show();
+        $('#ordenaButtonsPrhaseDiv').insertBefore('#ordenaEPhrase')
+      }else{
+        $('#ordenaTimeShowDiv').show();
+        $('#ordenaColumnsDiv').show();
+        $('#ordenaActivityNumberDiv').show();
+        $('#ordenaEDefinitionDiv').css({'display': 'flex'});
+        $('#ordenaEPhrase').show();
+        $('#ordenaButtonCardDiv').show();
+        $('#ordenaCustomizeCard').show();
+        $('#ordenaFixedHeaders').show();
+        $('#ordenaStartAutomaticallyDiv').show();
+        $('#ordenaEPĥraseIDiv').hide()
+        $('#ordenaECustomMessagesDiv').show();
+        $('#ordenaButtonsPrhaseDiv').insertBefore('ordenaActivityNumberDiv')
+      }
+      var customMessages = $('#ordenaECustomMessages').is(':checked');
+      if (customMessages) {
+        $('.ODNE-ECustomMessageDiv').slideDown();
+      } else {
+        $('.ODNE-ECustomMessageDiv').slideUp();
+      }
+
 
     },
     generarID: function () {
@@ -380,6 +430,13 @@ var $exeDevice = {
         num = num == 0 ? 1 : num;
         $('#ordenaENumeroPercentaje').text(num + "/" + $exeDevice.phrasesGame.length)
     },
+    showPhraseType: function(type){
+        if (type==1){
+
+        return;
+        }
+
+    },
     showPhrase: function (i, inload) {
         var num = i < 0 ? 0 : i;
         $exeDevice.active = num >= $exeDevice.phrasesGame.length ? $exeDevice.phrasesGame.length - 1 : num;
@@ -400,6 +457,7 @@ var $exeDevice = {
         $('#ordenaEURLAudioDefinition').val(phrase.audioDefinition);
         $('#ordenaEURLAudioOK').val(phrase.audioHit);
         $('#ordenaEURLAudioKO').val(phrase.audioError);
+        $('#ordenaEPraseI').val(phrase.phrase);
 
 
         $exeDevice.stopSound();
@@ -545,19 +603,28 @@ var $exeDevice = {
             phrase = $exeDevice.getPhraseDefault(),
             $cards = $('#ordenaEPhrase').find('div.ODNE-EDatosCarta'),
             orderedColumns = $('#ordenaOrderedColumns').is(':checked'),
-            gameColumns = parseInt($('input.ODNE-EColumns[name=odncolumns]:checked').val());
+            gameColumns = parseInt($('input.ODNE-EColumns[name=odncolumns]:checked').val()),
+            type = parseInt($('input.ODNE-EType[name=odntype]:checked').val());;
+
         $cards.each(function name() {
             var card = $exeDevice.cardToJson($(this));
-            if (!$exeDevice.validateCard(card)) {
+            if (type == 1 && !$exeDevice.validateCard(card)) {
                 correct = false;
             } else {
                 phrase.cards.push(card)
             }
         });
-        if (gameColumns > 1 && orderedColumns) {
+        if (type == 1 && gameColumns > 1 && orderedColumns) {
             if (phrase.cards.length <= gameColumns) {
                 $exeDevice.showMessage($exeDevice.msgs.msgCardsColumn);
                 return false;
+            }
+        }
+        if(type==0){
+            var ph=$('#ordenaEPraseI').val();
+            if(ph.trim().length<1){
+                return false
+
             }
         }
         if (!correct) {
@@ -570,7 +637,7 @@ var $exeDevice = {
         phrase.audioDefinition = $('#ordenaEURLAudioDefinition').val();
         phrase.audioHit = $('#ordenaEURLAudioOK').val();
         phrase.audioError = $('#ordenaEURLAudioKO').val();
-
+        phrase.phrase = $('#ordenaEPraseI').val();
         $exeDevice.phrasesGame[$exeDevice.active] = phrase;
         return true;
     },
@@ -598,6 +665,7 @@ var $exeDevice = {
         q.audioDefinition = '';
         q.audioHit = '';
         q.audioError = '';
+        q.phrase='';
         return q;
     },
 
@@ -616,7 +684,6 @@ var $exeDevice = {
         p.backcolor = "#ffffff";
         return p;
     },
-
     loadPreviousValues: function (field) {
         var originalHTML = field.val();
         if (originalHTML != '') {
@@ -650,6 +717,7 @@ var $exeDevice = {
                         }
                     }
                 });
+                dataGame.phrasesGame[i].phrase  = typeof dataGame.phrasesGame[i].phrase =="null"?'':dataGame.phrasesGame[i].phrase;
 
             }
             $audiosDef.each(function () {
@@ -865,11 +933,13 @@ var $exeDevice = {
             phrasesGame = $exeDevice.phrasesGame;
             evaluation = $('#ordenaEEvaluation').is(':checked'),
             evaluationID = $('#ordenaEEvaluationID').val(),
-            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID(),
+            type = parseInt($('input.ODNE-EType[name=odntype]:checked').val());
             if (evaluation && evaluationID.length < 5) {
                 eXe.app.alert($exeDevice.msgs.msgIDLenght);
                 return false;
             }
+
         if (phrasesGame.length == 0) {
             $exeDevice.showMessage($exeDevice.msgs.msgEOneQuestion);
             return false;
@@ -903,7 +973,8 @@ var $exeDevice = {
             'gameColumns': gameColumns,
             'evaluation':evaluation,
             'evaluationID':evaluationID,
-            'id':id
+            'id':id,
+            'type':type
         }
         return data;
     },
@@ -938,7 +1009,7 @@ var $exeDevice = {
 
 
 
-    playSound: function (selectedFile) {
+    valplaySound: function (selectedFile) {
         var selectFile = $exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectFile);
         $exeDevice.playerAudio.play().catch(error => console.error("Error playing audio:", error));
@@ -1197,13 +1268,25 @@ var $exeDevice = {
                 $('#ordenaFixedHeaders').hide();
             }
 
-            $exeDevice.resizePanel(ordered, number);
+            var type=parseInt($('input.ODNE-EType[name=odntype]:checked').val())
+            if(type == 1){
+                $exeDevice.resizePanel(ordered, number);
+            }
         });
+
+        $('#gameQEIdeviceForm').on('change', 'input.ODNE-EType', function (e) {
+            var type = parseInt($(this).val());
+            $exeDevice.showTypeGame(type)
+        });
+
 
         $('#ordenaOrderedColumns').on('change', function () {
             var number = parseInt($('input.ODNE-EColumns[name=odncolumns]:checked').val()),
-                ordered = $(this).is(':checked');
-            $exeDevice.resizePanel(ordered, number);
+                ordered = $(this).is(':checked'),
+                type=parseInt($('input.ODNE-EType[name=odntype]:checked').val())
+            if(type == 1){
+                $exeDevice.resizePanel(ordered, number);
+            }
 
         });
         $('#ordenaEEvaluation').on('change', function () {
@@ -1217,9 +1300,11 @@ var $exeDevice = {
         });
 
         var gameColumns = parseInt($('input.ODNE-EColumns[name=odncolumns]:checked').val()),
-            orderedColumns = $('#ordenaOrderedColumns').is(':checked');
-        $exeDevice.resizePanel(orderedColumns, gameColumns);
-
+            orderedColumns = $('#ordenaOrderedColumns').is(':checked'),
+            type = parseInt($('input.ODNE-EType[name=odntype]:checked').val());
+        if(type == 1){
+            $exeDevice.resizePanel(orderedColumns, gameColumns);
+        }
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
     },
     resizePanel: function (ordered, number) {
@@ -1260,7 +1345,6 @@ var $exeDevice = {
                 $exeDevice.playSound(url);
             }
         }
-
     },
 
 
@@ -1277,6 +1361,7 @@ var $exeDevice = {
 
     clearPhrase: function () {
         $('#ordenaEPhrase').empty()
+        $('#ordenaEPraseI').val('');
     },
 
     addPhrase: function () {
@@ -1413,7 +1498,7 @@ var $exeDevice = {
         game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
         game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
         $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
-
+        game.type = typeof game.type != "undefined" ? game.type : 1;
         $('#ordenaEShowMinimize').prop('checked', game.showMinimize);
         $('#ordenaECaseSensitive').prop('checked', game.caseSensitive);
         $("#ordenaEHasFeedBack").prop('checked', game.feedBack);
@@ -1439,23 +1524,25 @@ var $exeDevice = {
         $('#ordenaEEvaluation').prop('checked', game.evaluation);
         $('#ordenaEEvaluationID').val(game.evaluationID);
         $("#ordenaEEvaluationID").prop('disabled', (!game.evaluation));
-   
-        if (game.customMessages) {
+        $("input.ODNE-EType[name='odntype'][value='" + game.type + "']").prop("checked", true);
+        $exeDevice.showTypeGame(game.type)
+        if (game.type == 1 && game.customMessages) {
             $('.ODNE-ECustomMessageDiv').slideDown();
         } else {
             $('.ODNE-ECustomMessageDiv').slideUp();
         }
-        if (game.gameColumns > 0) {
+        if (game.type == 1 && game.gameColumns > 0) {
             $('#ordenaCustomizeCard').show();
 
         } else {
             $('#ordenaCustomizeCard').hide();
         }
-        if (game.gameColumns > 1) {
+        if (game.type == 1 && game.gameColumns > 1) {
             $('#ordenaFixedHeaders').show();
         } else {
             $('#ordenaFixedHeaders').hide();
         }
+        
 
     },
     exportGame: function () {
