@@ -241,10 +241,18 @@ var $exeTinyMCE = {
 				"style": "/scripts/tinymce_4/js/tinymce/plugins/style/editor_plugin_src.js"
 			},
 			setup: function (editor) {
-				// #699 Avoid wrong "Please save your iDevice first" message
 				editor.on('Change', function(ed) {
+					// #699 Avoid wrong "Please save your iDevice first" message
 					editor.dom.remove(editor.dom.select("#activeIdevice"));
 					editor.dom.remove(editor.dom.select("#exe-submitButton"));
+					// #229 Remove data-mce-fragment attributes
+					var c  = editor.getContent();
+					if (c.indexOf(' data-mce-fragment="1">')!=-1) {
+						var s = ' data-mce-fragment="1">';
+						var r = new RegExp(s, 'g');
+						c= c.replace(r, '>');						
+						editor.setContent(c);
+					}
 				});
 				// #691 Allow textareas (see common.py)
 				editor.on('Load', function(){
