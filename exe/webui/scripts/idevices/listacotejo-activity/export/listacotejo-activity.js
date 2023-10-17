@@ -102,8 +102,18 @@ var $eXeListaCotejo = {
     mOptions.urlLogo = imglink1;
     mOptions.urlDecorative = imglink2;
     mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
+    mOptions.useScore = typeof mOptions.useScore == "undefined" ? false : mOptions.useScore;
     mOptions.save = true;
     mOptions.showCounter = true;
+    mOptions.points = 0
+    mOptions.totalPoints = 0
+    for (var i = 0; i < mOptions.levels.length; i++) {
+      mOptions.levels[i].points = typeof mOptions.levels[i].points == 'undefined' ? '' : mOptions.levels[i].points;
+      var parsedPoints = parseInt(mOptions.levels[i].points);
+      if (!isNaN(parsedPoints)) {
+          mOptions.totalPoints += parsedPoints;
+      }
+    }
     return mOptions;
   },
 
@@ -151,7 +161,6 @@ var $eXeListaCotejo = {
   updateItems: function (id, instance) {
    
     var data = $eXeListaCotejo.getDataStorage(id);
-    console.log('data', data)
     if (!data) return;
     var  arr = data.items || [];
     $("#ctjUserName-" + instance).val(data.name || '');
@@ -208,114 +217,51 @@ var $eXeListaCotejo = {
   createInterfaceListaCotejo: function (instance) {
     var mOptions = $eXeListaCotejo.options[instance],
       urll = mOptions.urlLogo || $eXeListaCotejo.idevicePath + "cotejologo.png",
-      urlc =
-        mOptions.urlCommunity ||
-        $eXeListaCotejo.idevicePath + "cotejologocomunidad.png",
-      urld =
-        mOptions.urlDecorative ||
-        $eXeListaCotejo.idevicePath + "cotejoicon.png",
-      isMobile =
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        );
-    (dl = mOptions.hasLogo ? "block" : "none"),
-      (dc = mOptions.hasCommunity ? "block" : "none"),
-      (dd = mOptions.hasDecorative && !isMobile ? "block" : "none"),
-      (footer = mOptions.footer || ""),
-      (df = footer ? "block" : "none"),
-      (ud = mOptions.userData ? "flex" : "none"),
-      (html = "");
+      urlc = mOptions.urlCommunity ||  $eXeListaCotejo.idevicePath + "cotejologocomunidad.png", 
+      urld = mOptions.urlDecorative || $eXeListaCotejo.idevicePath + "cotejoicon.png",
+      isMobile =  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test( navigator.userAgent),
+      dl = mOptions.hasLogo ? "block" : "none",
+      dc = mOptions.hasCommunity ? "block" : "none",
+      dd = mOptions.hasDecorative && !isMobile ? "block" : "none",
+      footer = mOptions.footer || "",
+      df = footer ? "block" : "none",
+      ud = mOptions.userData ? "flex" : "none",
+      us= mOptions.userScore ? "block" : "none",
+      html = "";
     html +=
       '<div class="CTJP-MainContainer">\
-          <div class="CTJP-GameContainer" id="ctjGameContainer-' +
-      instance +
-      '">\
-            <div id="ctjList-' +
-      instance +
-      '" class="CTJP-List">\
+          <div class="CTJP-GameContainer" id="ctjGameContainer-' +  instance + '">\
+            <div id="ctjList-' + instance + '" class="CTJP-List">\
               <div class="CTJP-Header">\
-                <div class="CTJP-Images" style="background-image:url(' +
-      urlc +
-      ");display:" +
-      dc +
-      ';"></div>\
-                <div class="CTJP-Images" style="background-image:url(' +
-      urll +
-      ");display:" +
-      dl +
-      ';"></div>\
-                </div>\
-              <div id="ctjTitle-' +
-      instance +
-      '" class="CTJP-Title">' +
-      mOptions.title +
-      '</div>\
-              <div id="ctjSubTitle-' +
-      instance +
-      '" class="CTJP-SubTitle">' +
-      mOptions.subtitle +
-      '</div>\
-      <div id="ctjUserData-' +
-      instance +
-      '" class="CTJP-UserData" style="display:' +
-      ud +
-      ';">\
-        <div id="ctjUserNameDiv-' +
-      instance +
-      '" class="CTJP-UserName">\
-          <label for=""ctjUserName-' +
-      instance +
-      '">' +
-      mOptions.msgs.msgName +
-      ': </label><input type="text" id="ctjUserName-' +
-      instance +
-      '">\
-        </div>\
-        <div id="ctjUserDateDiv-' +
-      instance +
-      '"  class="CTJP-UserDate">\
-            <label for="ctjUserDate-' +
-      instance +
-      '">' +
-      mOptions.msgs.msgDate +
-      ': </label><input type="text" id="ctjUserDate-' +
-      instance +
-      '">\
-        </div>\
-      </div>\
-      <hr class="CTJP-Line"/>\
-      <div id="ctjCounter-' +
-      instance +
-      '" class="">' +
-      mOptions.msgs.msgComplit +
-      '</div>\
-              <div class="CTJP-Data">\
-                <div id="ctjItems-' +
-      instance +
-      '" class="CTJP-Items" >' +
-      $eXeListaCotejo.createItems(instance) +
-      '</div>\
-                <div class="CTJP-ImgDecorative" style="background-image:url(' +
-      urld +
-      ");display:" +
-      dd +
-      ';"></div>\
+                <div class="CTJP-Images" style="background-image:url(' + urlc + ");display:" +  dc +  ';"></div>\
+                <div class="CTJP-Images" style="background-image:url(' + urll + ");display:" +  dl +  ';"></div>\
               </div>\
-              <div class="CTJP-Footer" style="display:' +
-      df +
-      '">' +
-      footer +
-      '</div>\
+              <div id="ctjTitle-' +  instance + '" class="CTJP-Title">' +  mOptions.title +  '</div>\
+              <div id="ctjSubTitle-' +  instance +  '" class="CTJP-SubTitle">' + mOptions.subtitle +  '</div>\
+              <div id="ctjUserData-' + instance + '" class="CTJP-UserData" style="display:' + ud + ';">\
+              <div id="ctjUserNameDiv-' + instance + '" class="CTJP-UserName">\
+                <label for=""ctjUserName-' + instance + '">' + mOptions.msgs.msgName + ': </label><input type="text" id="ctjUserName-' + instance + '">\
+              </div>\
+              <div id="ctjUserDateDiv-' + instance + '"  class="CTJP-UserDate">\
+                  <label for="ctjUserDate-' + instance + '">' +  mOptions.msgs.msgDate + ': </label><input type="text" id="ctjUserDate-' +  instance +'">\
+              </div>\
             </div>\
-            <div class="CTJP-Capture">\
-              <a id="ctjCapture-' +
-      instance +
-      '" href="#">' +
-      mOptions.msgs.msgSave +
-      "</a>\
+            <hr class="CTJP-Line"/>\
+            <div class="CTJP-Counters">\
+              <div id="ctjCounter-' +  instance +'" class="">' +  mOptions.msgs.msgComplit + '</div>\
+              <div id="ctjScore-' +  instance +'" class="" style="display:'+ us +'">' +  mOptions.msgs.msgScore + '</div>\
             </div>\
+            <div class="CTJP-Data">\
+                <div id="ctjItems-' +instance + '" class="CTJP-Items" >' + $eXeListaCotejo.createItems(instance) + '</div>\
+                <div class="CTJP-ImgDecorative" style="background-image:url(' + urld + ");display:" +  dd + ';"></div>\
+            </div>\
+            <div class="CTJP-Footer" style="display:' + df + '">' + footer +  '</div>\
           </div>\
-        </div>";
+          <div class="CTJP-Capture">\
+              <a id="ctjCapture-' +  instance + '" href="#">' +  mOptions.msgs.msgSave + "</a>\
+          </div>\
+        </div>\
+      </div>";
     return html;
   },
 
@@ -360,38 +306,49 @@ var $eXeListaCotejo = {
     var completados = 0;
     var en_proceso = 0;
     var total_items = 0;
-    $(".CTJP-Item").each(function () {
+    var points = 0
+    $(".CTJP-Item").each(function (i) {
       if ($(this).find('input[type="checkbox"], select').length > 0) {
         total_items++;
       }
       if ($(this).find('input[type="checkbox"]:checked').length > 0) {
         completados++;
+        points +=  $eXeListaCotejo.convertToNumber(mOptions.levels[i].points)
       }
       if ($(this).find('select option[value="1"]:selected').length > 0) {
         completados++;
+        points +=  $eXeListaCotejo.convertToNumber(mOptions.levels[i].points)
+
       }
       if ($(this).find('select option[value="2"]:selected').length > 0) {
         en_proceso++;
+        points +=  $eXeListaCotejo.convertToNumber(mOptions.levels[i].points)/2
+
       }
     });
+    mOptions.points = points;
     $("#ctjCounter-" + instance).hide();
     if (mOptions.showCounter) {
-      var ct =
-        mOptions.msgs.msgComplit +
-        ": " +
-        completados +
-        "/" +
-        total_items +
-        ". ";
+      var ct =mOptions.msgs.msgComplit +": " + completados + "/" +  total_items + ". ";
       if (en_proceso > 0) {
-        ct += mOptions.msgs.msgInProgress + ": " + en_proceso + ".";
+        ct += mOptions.msgs.msgInProgress + ": " + en_proceso + "/" +  total_items + ".";
       }
       if (completados == 0 && en_proceso == 0) {
-        ct = mOptions.msgs.msgtaskNumber + ": " + total_items;
+        ct = mOptions.msgs.msgtaskNumber + ": " + total_items+ ".";
       }
       $("#ctjCounter-" + instance).text(ct);
       $("#ctjCounter-" + instance).show();
     }
+    $("#ctjScore-" + instance).hide();
+    if (mOptions.useScore && mOptions.totalPoints > 0){
+        var ctj = mOptions.msgs.msgScore + ": " + mOptions.points + "/" +   mOptions.totalPoints + ".";
+        $("#ctjScore-" + instance).text(ctj);
+        $("#ctjScore-" + instance).show();
+    }
+  },
+  convertToNumber:function (str) {
+    var num = parseInt(str);  // O puedes usar parseInt(str) si solo quieres números enteros
+    return isNaN(num) ? 0 : num;
   },
   loadMathJax: function () {
     if (!window.MathJax) {
@@ -474,14 +431,17 @@ var $eXeListaCotejo = {
     var html = "";
     for (var level of mOptions.levels) {
       var marginLeft = 1.5 * parseInt(level.nivel) + 0.5;
+      var msgp =  level.points.trim() == '1'? mOptions.msgs.msgPoint : mOptions.msgs.msgPoints;
+      var msg = '('+level.points + ' ' + msgp +')';
+      var points = mOptions.useScore && level.points.trim().length > 0 ? msg : '';
       if (level.type === "0") {
-        html += `<div class="CTJP-Item"><input type="checkbox" style="margin-left: ${marginLeft}em" /><span style="">${level.item}</span></div>`;
+        html += `<div class="CTJP-Item"><input type="checkbox" style="margin-left: ${marginLeft}em" /><span style="">${level.item}</span></span><span class= "CTJP-Points">${points}</span></div>`;
       } else if (level.type === "1") {
-        html += `<div class="CTJP-Item"><input type="checkbox" style="margin-left: ${marginLeft}em" /><span>${level.item}</span><input type="text" /></div>`;
+        html += `<div class="CTJP-Item"><input type="checkbox" style="margin-left: ${marginLeft}em" /><span>${level.item}</span></span><span class= "CTJP-Points">${points}</span><input type="text" /></div>`;
       } else if (level.type === "2") {
-        html += `<div class="CTJP-Item"><select  style="margin-left: ${marginLeft}em"  class="CTJ-Select"><option value="0" selected></option><option value="1">${mOptions.msgs.msgDone}</option><option value="2">${mOptions.msgs.msgInProgress}</option><option value="3">${mOptions.msgs.msgUnrealized}</option></select><span>${level.item}</span></div>`;
+        html += `<div class="CTJP-Item"><select  style="margin-left: ${marginLeft}em"  class="CTJ-Select"><option value="0" selected></option><option value="1">${mOptions.msgs.msgDone}</option><option value="2">${mOptions.msgs.msgInProgress}</option><option value="3">${mOptions.msgs.msgUnrealized}</option></select><span>${level.item}</span></span><span class= "CTJP-Points">${points}</span></div>`;
       } else if (level.type === "3") {
-        html += `<div class="CTJP-Item"><span style="display:inlin-block;margin-left: ${marginLeft}em">${level.item}</span></div>`;
+        html += `<div class="CTJP-Item"><span style="display:inlin-block;margin-left: ${marginLeft}em">${level.item}</span><span class= "CTJP-Points">${points}</span></div>`;
       }
     }
 

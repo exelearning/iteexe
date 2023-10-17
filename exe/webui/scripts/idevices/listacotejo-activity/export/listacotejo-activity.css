@@ -139,12 +139,17 @@
 	right: 1em;
 
 }
+.CTJP-Counters {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 4px
+}
 .CTJP-Items{
 	width: 100%;
 	margin-bottom: .8em;
 	text-align: left;
 }
-
 .CTJP-Item{
     display: flex;
     justify-content: flex-start;
@@ -152,6 +157,12 @@
     gap: 0.1em;
     margin-bottom: 0.6em;
 	font-size: 1em;
+}
+
+.CTJP-Points{
+	margin: left 5px;
+	font-weight: 600px;
+	color:#01343f
 }
 
 .CTJP-Item *{
@@ -177,7 +188,6 @@
 	margin: 1em 0;
 	gap: 1em;
 	min-width: 350px;
-	
 	}
   
   .CTJP-UserData > div {

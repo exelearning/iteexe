@@ -40,9 +40,15 @@
 
 .CTJ-TypeColumn,
 .CTJ-Types{
-    width: 120px;
+    width: 110px;
     white-space: nowrap;
 }
+
+.CTJ-Points-column,
+.CTJ-Points{
+	width: 55px;
+}
+
 .CTJ-editar-column,
 .CTJ-Editions {
     width: 150px;

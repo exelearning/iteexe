@@ -25,6 +25,9 @@ var $exeDevice = {
     msgDate: _("Fecha"),
     msgSave: _("Descargar"),
     msgList: _("lista_de_cotejo"),
+    msgScore: _("Score"),
+    msgPoints: _("puntos"),
+    msgPoint: _("punto")
   },
   init: function () {
     this.createForm();
@@ -39,23 +42,11 @@ var $exeDevice = {
   createForm: function () {
     var html =
       '<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' +
-      _("Puede introducir una lista de cotejo para ofrecer un listado estructurado y fácil de entender de las actividades propuestas a lo largo del recurso educativo. Será un instrumento útil para la autorregulación del aprendizaje del alumnado, al permitirle realizar el seguimiento de las actividades que va completando.") +
-      ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' +
-      _("Use Instructions") +
-      '</a></div>\
-            <div class="exe-form-tab" title="' +
-      _("General settings") +
-      '">\
-            ' +
-      $exeAuthoring.iDevice.gamification.instructions.getFieldset(
-        _("Completa la lista de cotejo marcando las casillas al realizar las actividades correspondientes.")
-      ) +
-      '\
+            <div class="exe-idevice-info">' + _("Puede introducir una lista de cotejo para ofrecer un listado estructurado y fácil de entender de las actividades propuestas a lo largo del recurso educativo. Será un instrumento útil para la autorregulación del aprendizaje del alumnado, al permitirle realizar el seguimiento de las actividades que va completando.") +  ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-form-tab" title="' +  _("General settings") + '">\
+            ' +   $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Completa la lista de cotejo marcando las casillas al realizar las actividades correspondientes.")) + '\
               <fieldset class="exe-fieldset">\
-              <legend><a href="#">' +
-      _("Options") +
-      '</a></legend>\
+              <legend><a href="#">' + _("Options") + '</a></legend>\
                   <div>\
                       <p style="display: flex; justify-content: space-between; width: 100%">\
                         <label for="ctjTitle">'+_("Título")+':</label>\
@@ -66,167 +57,109 @@ var $exeDevice = {
                           <input id="ctjSubTitle" type="text" style="flex-grow: 1; margin-left: 10px"/>\
                       </p>\
                       <p>\
-                        <label for="ctjUserData"><input type="checkbox" id="ctjUserData" /> ' +
-      _("Datos del usuario") +
-      '. </label>\
-                    </p>\
+                        <label for="ctjUserData"><input type="checkbox" id="ctjUserData" /> ' + _("Datos del usuario") +  '. </label>\
+                      </p>\
                       <p>\
-                        <label for="ctjSaveData"><input type="checkbox" id="ctjSaveData" /> ' +
-      _("Recordar opciones marcadas") +
-      '. </label>\
-                    </p>\
-                    <p>'+_("(*) Las celdas admiten texto con formato") +'.</p>\
-                    <p class="CTJ-table-container">\
-                      <table class="CTJ-Table">\
-                        <thead>\
-                          <tr class="CTJ-header-row">\
-                            <th class="CTJ-TypeColumn">'+_("Tipo") +'</th>\
-                            <th class="CTJ-Level1-column" data-nivel="0">'+_("Nivel") +' 1</th>\
-                            <th class="CTJ-Level2-column" data-nivel="1">'+_("Nivel") +' 2</th>\
-                            <th class="CTJ-Level3-column" data-nivel="2">'+_("Nivel") +' 3</th>\
-                            <th class="CTJ-Level4-column" data-nivel="2">'+_("Nivel") +' 4</th>\
-                            <th class="CTJ-editar-column">'+_("Editar") +'</th>\
-                          </tr>\
-                        </thead>\
-                        <tbody>\
-                          <tr class="CTJ-data-row">\
-                            <td class="CTJ-Types">\
-                              <select class="CTJ-Select">\
-                                <option value="0" selected>'+_("Casilla") +'</option>\
-                                <option value="1">'+_("Texto") +'</option>\
-                                <option value="2">'+_("Selección") +'</option>\
-                                <option value="3">'+_("No marcar") +'</option>\
-                              </select>\
-                            </td>\
-                            <td class="CTJ-Level1" contenteditable="true"></td>\
-                            <td class="CTJ-Level2" contenteditable="true"></td>\
-                            <td class="CTJ-Level3" contenteditable="true"></td>\
-                            <td class="CTJ-Level4" contenteditable="true"></td>\
-                            <td class="CTJ-Editions">\
-                              <button class="CTJ-Add">'+_("Añadir")+'</button>\
-                              <button class="CTJ-Delete">'+_("Eliminar")+'</button>\
-                            </td>\
-                          </tr>\
-                        </tbody>\
-                      </table>\
-                    </p>\
-                    <p>\
-                    <div><label for="ctjCommunity"><input type="checkbox" id="ctjCommunity" /> ' +
-      _("Logo (izquierda)") +
-      '. </label> </div>\
-                    <div id="ctjcommunitylogo" class="CTJ-Logo">\
-                      <div class="CTJ-Images">\
-                        <img class="CTJ-EMedia" src="' +
-      $exeDevice.iDevicePath +
-      'codejocomunidad.png" id="ctjEImageCommunity" alt="' +
-      _("Image") +
-      '" />\
-                        <img class="CTJ-EMedia" src="' +
-      $exeDevice.iDevicePath +
-      'codejocomunidad.png" id="ctjEImageNoCommunity" alt="' +
-      _("No image") +
-      '" />\
-                      </div>\
-                      <div class="CTJ-InputImage">\
-                          <label class="sr-av" for="ctjEURLCommunity">' +
-      _("Comunidad") +
-      ':</label>\
-                          <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLCommunity"/>\
-                          <a href="#" id="ctjEPlayCommunity" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' +
-      _("Show") +
-      '"><img src="' +
-      $exeDevice.iDevicePath +
-      'quextIEPlay.png" alt="' +
-      _("Show") +
-      '" class="CTJ-EButtonImage b-play" /></a>\
-                      </div>\
-                    </div>\
-                </p>\
-                <p>\
-                    <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +
-      _("Logo (derecha)") +
-      '. </label> </div>\
-                    <div id="ctjlogologo"  class="CTJ-Logo">\
-                      <div class="CTJ-Images">\
-                        <img class="CTJ-EMedia" src="' +
-      $exeDevice.iDevicePath +
-      'cotejologo.png" id="ctjEImageLogo" alt="' +
-      _("Image") +
-      '" />\
-                        <img class="CTJ-EMedia" src="' +
-      $exeDevice.iDevicePath +
-      'cotejologo.png" id="ctjEImageNoLogo" alt="' +
-      _("No image") +
-      '" />\
-                      </div>\
-                      <div class="CTJ-InputImage">\
-                          <label class="sr-av" for="ctjEURLLogo">' +
-      _("Logo") +
-      ':</label>\
-                          <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLLogo"/>\
-                          <a href="#" id="ctjEPlayLogo" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' +
-      _("Show") +
-      '"><img src="' +
-      $exeDevice.iDevicePath +
-      'quextIEPlay.png" alt="' +
-      _("Show") +
-      '" class="CTJ-EButtonImage b-play" /></a>\
-                      </div>\
-                    </div>\
-                </p>\
-                <p>\
-                    <div><label for="ctjDecorative"><input type="checkbox" id="ctjDecorative" /> ' +
-      _("Imagen decorativa") +
-      '. </label> </div>\
-                    <div id="ctjdecorativelogo"  class="CTJ-Logo">\
-                      <div class="CTJ-Images">\
-                        <img class="CTJ-EMedia" src="' +
-      $exeDevice.iDevicePath +
-      'cotejodecorative.png" id="ctjEImageDecorative" alt="' +
-      _("Image") +
-      '" />\
-                        <img class="CTJ-EMedia" src="' +
-      $exeDevice.iDevicePath +
-      'cotejodecorative.png" id="ctjEImageNoDecorative" alt="' +
-      _("No image") +
-      '" />\
-                      </div>\
-                      <div class="CTJ-InputImage">\
-                          <label class="sr-av" for="ctjEURLDecorative">' +
-      _("Comunidad") +
-      ':</label>\
-                          <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLDecorative"/>\
-                          <a href="#" id="ctjEPlayDecorative" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' +
-      _("Show") +
-      '"><img src="' +
-      $exeDevice.iDevicePath +
-      'quextIEPlay.png" alt="' +
-      _("Show") +
-      '" class="CTJ-EButtonImage b-play" /></a>\
-                      </div>\
-                    </div>\
-                </p>\
-                <p>\
-                    <label for="ctjFooter">' +
-      _("Pie") +
-      '</label>\
-                    <input id="ctjFooter" style="width:500px" type="text" CTJ-EURLImage" value="Esta <a href=https://es.wikipedia.org/wiki/Lista_de_comprobaci%C3%B3n>lista de cotejo</a> se encuentra bajo una licencia</br><a href=http://creativecommons.org/licenses/by-sa/4.0>Creative Commons Reconocimiento-Compartir igual 4.0 International License</a>"/>\
-                </p>\
-            </div>\
-          </fieldset>\
-          ' +
-      $exeAuthoring.iDevice.common.getTextFieldset("after") +
-      "\
+                        <label for="ctjSaveData"><input type="checkbox" id="ctjSaveData" /> ' + _("Recordar opciones marcadas") + '. </label>\
+                      </p>\
+                      <p>\
+                        <label for="ctjUseScore"><input type="checkbox" id="ctjUseScore" /> ' + _("Asignar puntuaciones") + '. </label>\
+                      </p>\
+                      <p>'+_("(*) Las celdas admiten texto con formato") + '.</p>\
+                      <p class="CTJ-table-container">\
+                        <table class="CTJ-Table">\
+                          <thead>\
+                            <tr class="CTJ-header-row">\
+                              <th class="CTJ-TypeColumn">'+_("Tipo") +'</th>\
+                              <th class="CTJ-Points-column" data-points="0">'+_("Puntos") +'</th>\
+                              <th class="CTJ-Level1-column" data-nivel="0">'+_("Nivel") +' 1</th>\
+                              <th class="CTJ-Level2-column" data-nivel="1">'+_("Nivel") +' 2</th>\
+                              <th class="CTJ-Level3-column" data-nivel="2">'+_("Nivel") +' 3</th>\
+                              <th class="CTJ-Level4-column" data-nivel="2">'+_("Nivel") +' 4</th>\
+                              <th class="CTJ-editar-column">'+_("Editar") +'</th>\
+                            </tr>\
+                          </thead>\
+                          <tbody>\
+                            <tr class="CTJ-data-row">\
+                              <td class="CTJ-Types">\
+                                <select class="CTJ-Select">\
+                                  <option value="0" selected>'+_("Casilla") +'</option>\
+                                  <option value="1">'+_("Texto") +'</option>\
+                                  <option value="2">'+_("Selección") +'</option>\
+                                  <option value="3">'+_("No marcar") +'</option>\
+                                </select>\
+                              </td>\
+                              <td class="CTJ-Points" contenteditable="true"></td>\
+                              <td class="CTJ-Level1 CTJ-Levels" contenteditable="true"></td>\
+                              <td class="CTJ-Level2 CTJ-Levels" contenteditable="true"></td>\
+                              <td class="CTJ-Level3 CTJ-Levels" contenteditable="true"></td>\
+                              <td class="CTJ-Level4 CTJ-Levels" contenteditable="true"></td>\
+                              <td class="CTJ-Editions">\
+                                <button class="CTJ-Add">'+_("Añadir")+'</button>\
+                                <button class="CTJ-Delete">'+_("Eliminar")+'</button>\
+                              </td>\
+                            </tr>\
+                          </tbody>\
+                        </table>\
+                      </p>\
+                      <p>\
+                        <div><label for="ctjCommunity"><input type="checkbox" id="ctjCommunity" /> ' + _("Logo (izquierda)") +  '. </label> </div>\
+                        <div id="ctjcommunitylogo" class="CTJ-Logo">\
+                          <div class="CTJ-Images">\
+                            <img class="CTJ-EMedia" src="' +   $exeDevice.iDevicePath + 'codejocomunidad.png" id="ctjEImageCommunity" alt="' + _("Image") + '" />\
+                            <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'codejocomunidad.png" id="ctjEImageNoCommunity" alt="' + _("No image") +'" />\
+                          </div>\
+                          <div class="CTJ-InputImage">\
+                              <label class="sr-av" for="ctjEURLCommunity">' +  _("Comunidad") + ':</label>\
+                              <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLCommunity"/>\
+                              <a href="#" id="ctjEPlayCommunity" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' +  _("Show") + '"><img src="' +  $exeDevice.iDevicePath + 'quextIEPlay.png" alt="' +  _("Show") + '" class="CTJ-EButtonImage b-play" /></a>\
+                          </div>\
+                        </div>\
+                      </p>\
+                      <p>\
+                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("Logo (derecha)") + '. </label> </div>\
+                        <div id="ctjlogologo"  class="CTJ-Logo">\
+                          <div class="CTJ-Images">\
+                            <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejologo.png" id="ctjEImageLogo" alt="' +  _("Image") +  '" />\
+                            <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejologo.png" id="ctjEImageNoLogo" alt="' +  _("No image") + '" />\
+                          </div>\
+                          <div class="CTJ-InputImage">\
+                              <label class="sr-av" for="ctjEURLLogo">' +  _("Logo") + ':</label>\
+                              <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLLogo"/>\
+                              <a href="#" id="ctjEPlayLogo" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' +  _("Show") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEPlay.png" alt="' +  _("Show") + '" class="CTJ-EButtonImage b-play" /></a>\
+                          </div>\
+                        </div>\
+                      </p>\
+                      <p>\
+                          <div><label for="ctjDecorative"><input type="checkbox" id="ctjDecorative" /> ' +  _("Imagen decorativa") + '. </label> </div>\
+                          <div id="ctjdecorativelogo"  class="CTJ-Logo">\
+                            <div class="CTJ-Images">\
+                              <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejodecorative.png" id="ctjEImageDecorative" alt="' + _("Image") + '" />\
+                              <img class="CTJ-EMedia" src="' + $exeDevice.iDevicePath + 'cotejodecorative.png" id="ctjEImageNoDecorative" alt="' + _("No image") +  '" />\
+                            </div>\
+                            <div class="CTJ-InputImage">\
+                                <label class="sr-av" for="ctjEURLDecorative">' +   _("Comunidad") + ':</label>\
+                                <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLDecorative"/>\
+                                <a href="#" id="ctjEPlayDecorative" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' + _("Show") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEPlay.png" alt="' + _("Show") + '" class="CTJ-EButtonImage b-play" /></a>\
+                            </div>\
+                          </div>\
+                      </p>\
+                      <p>\
+                          <label for="ctjFooter">' +  _("Pie") + '</label>\
+                          <input id="ctjFooter" style="width:500px" type="text" CTJ-EURLImage" value="Esta <a href=https://es.wikipedia.org/wiki/Lista_de_comprobaci%C3%B3n>lista de cotejo</a> se encuentra bajo una licencia</br><a href=http://creativecommons.org/licenses/by-sa/4.0>Creative Commons Reconocimiento-Compartir igual 4.0 International License</a>"/>\
+                      </p>\
+                  </div>\
+              </fieldset>\
+          ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + "\
         </div>\
-        " +
-      $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) +
-      "\
+        " +  $exeAuthoring.iDevice.gamification.common.getLanguageTab(this.ci18n) +  "\
       </div>\
       ";
 
     var field = $("textarea.jsContentEditor").eq(0);
     field.before(html);
     $exeAuthoring.iDevice.tabs.init("gameQEIdeviceForm");
+    $(".CTJ-Table .CTJ-Points-column, .CTJ-Table .CTJ-Points").hide();
     $exeDevice.loadPreviousValues(field);
   },
 
@@ -280,10 +213,10 @@ var $exeDevice = {
   },
   actualizeTable: function (arrayLevels) {
     const tbody = $(".CTJ-Table tbody");
+    const useScore = $("#ctjUseScore").is(":checked");
     tbody.empty();
     arrayLevels.forEach((obj) => {
       const row = $("<tr></tr>").addClass("CTJ-data-row");
-
       const select = $("<select></select>").addClass("CTJ-Select");
       [_("Casilla"), _("Texto"), _("Selecciona"),_("No marcar")].forEach((option, index) => {
         const optElement = $("<option></option>")
@@ -296,10 +229,18 @@ var $exeDevice = {
       });
       const selectCell = $("<td></td>").append(select);
       row.append(selectCell);
+      let edit = obj.type != 3;
+      edit = edit.toString();
+      const text = obj.type != 3 ? obj.points : '';
+      const points =$("<td></td>")
+            .addClass('CTJ-Points')
+            .attr("contenteditable", edit)
+      points.html(text)
+      row.append(points);
 
       for (let i = 0; i < 4; i++) {
         const cell = $("<td></td>")
-          .addClass(`CTJ-Level${i + 1}`)
+          .addClass(`CTJ-Level${i + 1} CTJ-Levels`)
           .attr("contenteditable", "true");
         if (i == obj.nivel) {
           cell.html(obj.item);
@@ -317,6 +258,11 @@ var $exeDevice = {
 
       tbody.append(row);
     });
+    if(useScore) {
+        $(".CTJ-Table .CTJ-Points-column, .CTJ-Table .CTJ-Points").show();
+    } else {
+        $(".CTJ-Table .CTJ-Points-column, .CTJ-Table .CTJ-Points").hide();
+    }
   },
   isJsonString: function (str) {
     try {
@@ -329,7 +275,6 @@ var $exeDevice = {
   },
   save: function () {
     var dataGame = $exeDevice.validateData();
-
     if (!dataGame) {
       return false;
     }
@@ -345,45 +290,29 @@ var $exeDevice = {
       json = $exeDevice.Encrypt(json),
       html = '<div class="listacotejo-IDevice">';
     var instructions = tinyMCE.get("eXeGameInstructions").getContent();
-
     if (instructions != "") {
-      divContent =
-        '<div class="ctj-instructions CTJ-instructions">' +
-        instructions +
-        "</div>";
+      divContent = '<div class="ctj-instructions CTJ-instructions">' + instructions + "</div>";
     }
     html += divContent;
     html += '<div class="listacotejo-DataGame js-hidden">' + json + "</div>";
-    html +=
-      '<div class="listacotejo-bns js-hidden">' +
-      _("Navegador no soportado") +
-      "</div>";
+    html += '<div class="listacotejo-bns js-hidden">' +  _("Navegador no soportado") + "</div>";
     var textAfter = tinyMCE.get("eXeIdeviceTextAfter").getContent();
     if (textAfter != "") {
       html += '<div class="listacotejo-extra-content">' + textAfter + "</div>";
     }
     var img = $("#ctjEURLLogo").val();
     if (img.trim().length > 0) {
-      img =
-        '<img src="' +
-        img +
-        '" class="js-hidden listacotejo-LinkLogo" alt="logo" />';
+      img = '<img src="' +  img + '" class="js-hidden listacotejo-LinkLogo" alt="logo" />';
       html += img;
     }
     var img = $("#ctjEURLCommunity").val();
     if (img.trim().length > 0) {
-      img =
-        '<img src="' +
-        img +
-        '" class="js-hidden listacotejo-LinkCommunity" alt="Community" />';
+      img = '<img src="' +  img +'" class="js-hidden listacotejo-LinkCommunity" alt="Community" />';
       html += img;
     }
     var img = $("#ctjEURLDecorative").val();
     if (img.trim().length > 0) {
-      img =
-        '<img src="' +
-        img +
-        '" class="js-hidden listacotejo-LinkDecorative" alt="Decorative" />';
+      img ='<img src="' + img + '" class="js-hidden listacotejo-LinkDecorative" alt="Decorative" />';
       html += img;
     }
     html += "</div>";
@@ -406,6 +335,7 @@ var $exeDevice = {
       footer = $("#ctjFooter").val().trim(),
       saveData = $("#ctjSaveData").is(":checked");
       userData = $("#ctjUserData").is(":checked");
+      useScore = $("#ctjUseScore").is(":checked");
     (isLevelComplete = false), (isMoreThanOneLevelFilled = false);
     if (title === "") {
       $exeDevice.showMessage(_("Indique un título para la lista de cotejo"));
@@ -443,25 +373,43 @@ var $exeDevice = {
       return false;
     }
     var arrayLevels = [];
+    var scoreError = 0;
     $(".CTJ-Table .CTJ-data-row").each(function () {
       var $fila = $(this);
       var type = $fila.find(".CTJ-Select option:selected").val();
       var nivel = "";
       var item = "";
-      $fila.find('td[contenteditable="true"]').each(function () {
+      var points = $fila.find('.CTJ-Points').eq(0).text()
+      $fila.find('.CTJ-Levels').each(function () {
         if ($(this).text().trim() !== "") {
           nivel = $(".CTJ-Table th").eq($(this).index()).attr("data-nivel");
           item = $(this).html();
           return false;
         }
       });
-      arrayLevels.push({
+      if (useScore){
+        if(type == 3  && points.trim().length > 0){
+          scoreError = 2;
+          return false;
+        }
+      }
+      var obj={
         type: type,
         nivel: nivel,
         item: item,
-      });
-    });
+        points: points
+      }
 
+      arrayLevels.push(obj);
+      
+    });
+    if(scoreError == 1){
+      $exeDevice.showMessage(_("Debes indicar  el numero de puntos de cada item evaluable "));
+      return false;
+    } else if(scoreError == 2){
+      $exeDevice.showMessage(_("No puedes indicar una puntuación para este tipo de casillas"));
+      return false;
+    }
     var data = {
       typeGame: "Cotejo",
       id : $exeDevice.id ? $exeDevice.id : $exeDevice.generarID(),
@@ -477,11 +425,15 @@ var $exeDevice = {
       saveData: saveData,
       userData: userData,
       footer: footer,
+      useScore: useScore
     };
 
     return data;
   },
-
+  isNumberInteger:function(str) {
+    var num = Number(str);
+    return num >= 0 && num === parseInt(str, 10);
+  },
   generarID: function () {
     var fecha = new Date(),
         a = fecha.getUTCFullYear(),
@@ -569,12 +521,7 @@ var $exeDevice = {
       }
       var url = selectedFile,
         alt = _("Comunidad/Empresa");
-      $exeDevice.showImage(
-        "#ctjEImageCommunity",
-        "#ctjEImageNoCommunity",
-        url,
-        alt
-      );
+      $exeDevice.showImage("#ctjEImageCommunity", "#ctjEImageNoCommunity", url, alt);
     });
     $("#ctjEPlayCommunity").on("click", function (e) {
       e.preventDefault();
@@ -586,19 +533,12 @@ var $exeDevice = {
           selectedFile.indexOf("/previews/") == 0) &&
         validExt.indexOf(ext) == -1
       ) {
-        $exeDevice.showMessage(
-          _("Supported formats") + ": jpg, jpeg, gif, png, svg"
-        );
+        $exeDevice.showMessage(_("Supported formats") + ": jpg, jpeg, gif, png, svg");
         return false;
       }
       var url = selectedFile,
         alt = _("Comunidad/Empresa");
-      $exeDevice.showImage(
-        "#ctjEImageCommunity",
-        "#ctjEImageNoCommunity",
-        url,
-        alt
-      );
+      $exeDevice.showImage("#ctjEImageCommunity", "#ctjEImageNoCommunity", url, alt);
     });
 
     $("#ctjEURLDecorative").on("change", function () {
@@ -610,19 +550,12 @@ var $exeDevice = {
           selectedFile.indexOf("/previews/") == 0) &&
         validExt.indexOf(ext) == -1
       ) {
-        $exeDevice.showMessage(
-          _("Supported formats") + ": jpg, jpeg, gif, png, svg"
-        );
+        $exeDevice.showMessage(_("Supported formats") + ": jpg, jpeg, gif, png, svg");
         return false;
       }
       var url = selectedFile,
-        alt = _("Decoración");
-      $exeDevice.showImage(
-        "#ctjEImageDecorative",
-        "#ctjEImageNoDecorative",
-        url,
-        alt
-      );
+          alt = _("Decoración");
+      $exeDevice.showImage("#ctjEImageDecorative", "#ctjEImageNoDecorative", url, alt);
     });
     $("#ctjEPlayDecorative").on("click", function (e) {
       e.preventDefault();
@@ -634,19 +567,12 @@ var $exeDevice = {
           selectedFile.indexOf("/previews/") == 0) &&
         validExt.indexOf(ext) == -1
       ) {
-        $exeDevice.showMessage(
-          _("Supported formats") + ": jpg, jpeg, gif, png, svg"
-        );
+        $exeDevice.showMessage(_("Supported formats") + ": jpg, jpeg, gif, png, svg");
         return false;
       }
       var url = selectedFile,
         alt = _("Decoración");
-      $exeDevice.showImage(
-        "#ctjEImageDecorative",
-        "#ctjEImageNoDecorative",
-        url,
-        alt
-      );
+      $exeDevice.showImage("#ctjEImageDecorative", "#ctjEImageNoDecorative",  url, alt);
     });
 
     $("#ctjCommunity").change(function () {
@@ -670,7 +596,32 @@ var $exeDevice = {
         $("#ctjdecorativelogo").hide();
       }
     });
+    $("#ctjUseScore").change(function () {
+      if ($(this).is(":checked")) {
+        $(".CTJ-Table .CTJ-Points-column, .CTJ-Table .CTJ-Points").show();
+      } else {
+          $(".CTJ-Table .CTJ-Points-column, .CTJ-Table .CTJ-Points").hide();
+      }
+    });
+    $(".CTJ-Table").on('change','select.CTJ-Select', function() {
+      const selectedOptionIndex = $(this).val();
+      const pointsCell = $(this).closest('tr').find('.CTJ-Points');
+      if (selectedOptionIndex == '3') {  
+        pointsCell.text(''); 
+        pointsCell.attr('contenteditable', 'false'); 
+      } else {
+        pointsCell.attr('contenteditable', 'true'); 
+      }
+    }).trigger('change');
+    $(".CTJ-Table").on('keypress','.CTJ-Points', function(event) {
+      var charCode = (event.which) ? event.which : event.keyCode;
+      if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        event.preventDefault();
+      }
+    });
   },
+
+
   showImage: function (img, noimg, url, alt) {
     var $image = $(img);
     $image.hide();
@@ -765,11 +716,12 @@ var $exeDevice = {
 
   updateFieldGame: function (game) {
     game.userData= typeof  game.userData=="undefined"?false: game.userData;
+    game.useScore= typeof  game.useScore=="undefined"?false: game.useScore;
+
     $("#ctjTitle").val(game.title);
     $("#ctjSubTitle").val(game.subtitle);
     $("#ctjSaveData").prop("checked", game.saveData);
     $("#ctjUserData").prop("checked", game.userData);
-
     $("#ctjLogo").prop("checked", game.hasLogo);
     $("#ctjCommunity").prop("checked", game.hasCommunity);
     $("#ctjDecorative").prop("checked", game.hasDecorative);
@@ -777,6 +729,8 @@ var $exeDevice = {
     $("#ctjEURLLogo").val(game.urlLogo);
     $("#ctjEURLDecorative").val(game.urlDecorative);
     $("#ctjFooter").val(game.footer);
+    $("#ctjUseScore").prop("checked", game.useScore);
+
     $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
     if (game.hasLogo) {
       $("#ctjlogologo").show();
@@ -786,6 +740,9 @@ var $exeDevice = {
     }
     if (game.hasDecorative) {
       $("#ctjdecorativelogo").show();
+    }
+    for (let i = 0, len = game.levels.length; i < len; i++) {
+      game.levels[i].points = game.levels[i].points === undefined ? '' : game.levels[i].points;
     }
     $exeDevice.actualizeTable(game.levels);
     $exeDevice.showImage(

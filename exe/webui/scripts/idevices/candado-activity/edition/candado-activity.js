@@ -61,7 +61,7 @@ var $exeDevice = {
         msgs.msgNumFaildedAttemps=_("Errors (number of attempts) to display the message");
         msgs.msgEnterCustomMessage=_("Please write the error message.");
         msgs.msgNoSuportBrowser =_("Your browser is not compatible with this tool.");
-
+        msgs.msgEPassword =_("Encriptado.");
     },
     showMessage: function (msg) {
         eXe.app.alert(msg);
@@ -108,7 +108,8 @@ var $exeDevice = {
                                     <option value="60">60m</option>\
                                 </select>\
                                 <input type="checkbox" id="candadoEShowMinimize"><label for="candadoEShowMinimize">' + msgs.msgEShowMinimize + ' </label>\
-                                <input type="checkbox" id="candadoEReboot" checked><label for="candadoEReboot">' + msgs.msgERebootActivity + ' </label>\
+                                <input type="checkbox" id="candadoEReboot" checked><label for="candadoEReboot">' + msgs.msgERebootActivity + '. </label>\
+                                <input type="checkbox" id="candadoEPassword"><label for="candadoEPassword">' + msgs.msgEPassword + ' </label>\
                             </p>\
                             <p class="candado-EDataAccess">\
                                 <label for="candadoEAttemps">' + msgs.msgNumFaildedAttemps + ':</label><input type="number"  name="candadoEAttemps" id="candadoEAttemps" value="0" min="0" max="10" step="1" required />\
@@ -150,14 +151,15 @@ var $exeDevice = {
                 json=$exeDevice.Decrypt(json);
             }
             var dataGame = $exeDevice.isJsonString(json);
-            $exeDevice.candadoSolution=dataGame.candadoSolution;
-            $exeDevice.candadoTime=dataGame.candadoTime;
-            $exeDevice.candadoAttemps=dataGame.candadoAttemps;
-            $exeDevice.candadoErrorMessage=dataGame.candadoErrorMessage;
+            $exeDevice.candadoSolution = dataGame.candadoSolution;
+            $exeDevice.candadoTime = dataGame.candadoTime;
+            $exeDevice.candadoAttemps = dataGame.candadoAttemps;
+            $exeDevice.candadoErrorMessage = dataGame.candadoErrorMessage;
             candadoInstructions = $(".candado-instructions", wrapper).eq(0).html();
             candadoRetro= $(".candado-retro", wrapper).eq(0).html();
             $exeAuthoring.iDevice.gamification.common.setLanguageTabValues(dataGame.msgs);
-            $exeDevice.typeActive=0;
+            $exeDevice.typeActive = 0;
+            dataGame.password = typeof dataGame.password != 'undefined' ? dataGame.password: false; 
             $('#candadoEDSolution').val(dataGame.candadoSolution);
             $('#candadoEDTime').val(dataGame.candadoTime);
             $('#candadoEShowMinimize').prop("checked", dataGame.candadoShowMinimize);
@@ -165,6 +167,7 @@ var $exeDevice = {
             $('#candadoEAttemps').val(dataGame.candadoAttemps);
             $('#candadoEErrorMessage').val(dataGame.candadoErrorMessage);
             $('#candadoEErrorMessage').prop("disabled",dataGame.candadoAttemps==0);
+            $('#candadoEPassword').prop("checked", dataGame.candadoPassword);
             if(tinyMCE.get('candadoEDescription')){
                 tinyMCE.get('candadoEDescription').setContent(candadoInstructions);
             }else{
@@ -248,6 +251,7 @@ var $exeDevice = {
         $exeDevice.candadoSolution=$('#candadoEDSolution').val();
         $exeDevice.candadoShowMinimize = $('#candadoEShowMinimize').is(':checked');
         $exeDevice.candadoReboot = $('#candadoEReboot').is(':checked');
+        $exeDevice.candadoPassword = $('#candadoEPassword').is(':checked');
         $exeDevice.candadoAttemps=$('#candadoEAttemps').val();
         $exeDevice.candadoErrorMessage=$('#candadoEErrorMessage').val();
         if (candadoInstructions.length==0){
@@ -276,7 +280,8 @@ var $exeDevice = {
             'candadoShowMinimize': $exeDevice.candadoShowMinimize,
             'candadoReboot': $exeDevice.candadoReboot,
             'candadoAttemps': $exeDevice.candadoAttemps,
-            'candadoErrorMessage': $exeDevice.candadoErrorMessage
+            'candadoErrorMessage': $exeDevice.candadoErrorMessage,
+            'candadoPassword': $exeDevice.candadoPassword
         }
         return data;
     },
