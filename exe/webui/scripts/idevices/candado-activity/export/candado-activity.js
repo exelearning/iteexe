@@ -113,7 +113,6 @@ var $eXeCandado = {
         var html = '',
             path = $eXeCandado.idevicePath,
             msgs = $eXeCandado.options[instance].msgs;
-            type = $eXeCandado.options[instance].candadoPassword ? 'password':'text'
         html += '<div class="candado-MainContainer">\
                 <div class="candado-GameMinimize" id="candadoGameMinimize-' + instance + '">\
                     <a href="#" class="candado-LinkMaximize " id="candadoLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'candadoIcon.png" class="candado-Icons candado-IconMinimize candado-Activo" alt="">\
@@ -137,7 +136,7 @@ var $eXeCandado = {
                         <p id="candadoPInformation-' + instance + '"></p>\
                     </div>\
                     <div class="candado-SolutionDiv" id="candadoSolutionDiv-' + instance + '">\
-                        <label for="candadoSolution-' + instance + '" class="labelSolution">' + msgs.msgCodeAccess + ':</label><input type="'+ type+'" class="candado-Solution"  id="candadoSolution-' + instance + '" autocomplete="off" value="">\
+                        <label for="candadoSolution-' + instance + '" class="labelSolution">' + msgs.msgCodeAccess + ':</label><input type="text" class="candado-Solution"  id="candadoSolution-' + instance + '">\
                         <a href="#" id="candadoSolutionButton-' + instance + '" title="' + msgs.msgSubmit + '" class="candado-SolutionButton candado-Activo">\
                             <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
                             <div class="exeQuextIcons-Submit"></div>\
@@ -176,7 +175,6 @@ var $eXeCandado = {
         }
 
         var mOptions = $eXeCandado.isJsonString(json);
-        mOptions.candadoPassword == typeof mOptions.candadoPassword !== 'undefined' ? mOptions.candadoPassword : false;
         return mOptions;
     },
     isJsonString: function (str) {
@@ -277,15 +275,6 @@ var $eXeCandado = {
         if (!mOptions.candadoShowMinimize) {
             $eXeCandado.startGame(instance);
         }
-        $('#candadoSolution-' + instance).val('  ');
-        $('#candadoSolution-' + instance).hide();;
-
-        setTimeout(function(){
-            $('#candadoSolution-' + instance).val('');
-            $('#candadoSolution-' + instance).show();;
-
-        },200);
-        
     },
     startGame: function (instance) {
         var mOptions = $eXeCandado.options[instance];
