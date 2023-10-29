@@ -271,34 +271,33 @@
 }
 
 .DescubreQP-ImageContain {
-    width: 85%;
-    height: 85%;
-    top: 7.5%;
-    left: 7.5%;
-    border-radius: 0em;
+    width: 94%;
+    height: 94%;
+    top: 3%;
+    left: 3%;
+    border-radius: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    background-color: white;
+    display: flex;
 }
 
 .DescubreQP-Image {
     position: absolute;
-    width: 100%;
-    width: 100%;
     top: 0;
     left: 0;
-    background-color: white;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+	border-radius: .4em;
 }
 
-.DescubreQP-ImageFit {
-    width: 95%;
-    height: 95%;
-    object-fit: contain;
-    object-position: center;
-    position: absolute;
-    top: 2.5%;
-    left: 2.5%;
-    border-radius: 0.6em;
-    background-color: white;
-}
 
 .DescubreQP-EText {
     border: none;
@@ -309,7 +308,7 @@
     top: 3%;
     left: 3%;
     font-weight: 500;
-    border-radius: 0.6em;
+    border-radius: 0.4em;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -573,46 +573,46 @@ var $exeDevice = {
                 });
 
                 var words = [];
-                for (var j = 0; j < mOptions.wordsGame.length; j++) {
-                    var p = $eXeDescubre.getCuestionDefault();
-                    p.data[0].type = mOptions.wordsGame[j].type0 || 0;
-                    p.data[1].type = mOptions.wordsGame[j].type1 || 0;
-                    p.data[2].type = mOptions.wordsGame[j].type2 || 0;
+                for (var j = 0; j < dataGame.wordsGame.length; j++) {
+                    var p = $exeDevice.getCuestionDefault();
+                    p.data[0].type = dataGame.wordsGame[j].type0 || 0;
+                    p.data[1].type = dataGame.wordsGame[j].type1 || 0;
+                    p.data[2].type = dataGame.wordsGame[j].type2 || 0;
                     p.data[3].type = 0;
 
-                    p.data[0].url = mOptions.wordsGame[j].url0 || '';
-                    p.data[1].url = mOptions.wordsGame[j].url1 || '';
-                    p.data[2].url = mOptions.wordsGame[j].url2 || '';
+                    p.data[0].url = dataGame.wordsGame[j].url0 || '';
+                    p.data[1].url = dataGame.wordsGame[j].url1 || '';
+                    p.data[2].url = dataGame.wordsGame[j].url2 || '';
                     p.data[3].url = '';
 
-                    p.data[0].audio = mOptions.wordsGame[j].audio0 || '';
-                    p.data[1].audio = mOptions.wordsGame[j].audio1 || '';
-                    p.data[2].audio = mOptions.wordsGame[j].audio2 || '';
+                    p.data[0].audio = dataGame.wordsGame[j].audio0 || '';
+                    p.data[1].audio = dataGame.wordsGame[j].audio1 || '';
+                    p.data[2].audio = dataGame.wordsGame[j].audio2 || '';
                     p.data[3].audio = '';
 
-                    p.data[0].x = mOptions.wordsGame[j].x0 || 0;
-                    p.data[1].x = mOptions.wordsGame[j].x1 || 0;
-                    p.data[2].x = mOptions.wordsGame[j].x2 || 0;
+                    p.data[0].x = dataGame.wordsGame[j].x0 || 0;
+                    p.data[1].x = dataGame.wordsGame[j].x1 || 0;
+                    p.data[2].x = dataGame.wordsGame[j].x2 || 0;
                     p.data[3].x = 0;
 
-                    p.data[0].y = mOptions.wordsGame[j].y0 || 0;
-                    p.data[1].y = mOptions.wordsGame[j].y1 || 0;
-                    p.data[2].y = mOptions.wordsGame[j].y2 || 0;
+                    p.data[0].y = dataGame.wordsGame[j].y0 || 0;
+                    p.data[1].y = dataGame.wordsGame[j].y1 || 0;
+                    p.data[2].y = dataGame.wordsGame[j].y2 || 0;
                     p.data[3].y = 0;
 
-                    p.data[0].author = mOptions.wordsGame[j].autmor0 || '';
-                    p.data[1].author = mOptions.wordsGame[j].autmor1 || '';
-                    p.data[2].author = mOptions.wordsGame[j].autmor2 || '';
+                    p.data[0].author = dataGame.wordsGame[j].autmor0 || '';
+                    p.data[1].author = dataGame.wordsGame[j].autmor1 || '';
+                    p.data[2].author = dataGame.wordsGame[j].autmor2 || '';
                     p.data[3].author = '';
 
-                    p.data[0].alt = mOptions.wordsGame[j].alt0 || '';
-                    p.data[1].alt = mOptions.wordsGame[j].alt1 || '';
-                    p.data[2].alt = mOptions.wordsGame[j].alt2 || '';
+                    p.data[0].alt = dataGame.wordsGame[j].alt0 || '';
+                    p.data[1].alt = dataGame.wordsGame[j].alt1 || '';
+                    p.data[2].alt = dataGame.wordsGame[j].alt2 || '';
                     p.data[3].alt = '';
 
-                    p.data[0].eText = mOptions.wordsGame[j].eText0 || '';
-                    p.data[1].eText = mOptions.wordsGame[j].eText1 || '';
-                    p.data[2].eText = mOptions.wordsGame[j].eText2 || '';
+                    p.data[0].eText = dataGame.wordsGame[j].eText0 || '';
+                    p.data[1].eText = dataGame.wordsGame[j].eText1 || '';
+                    p.data[2].eText = dataGame.wordsGame[j].eText2 || '';
                     p.data[3].eText = '';
 
                     p.data[0].backcolor = "#ffffff";
@@ -620,16 +620,16 @@ var $exeDevice = {
                     p.data[2].backcolor = "#ffffff";
                     p.data[3].backcolor = "#ffffff";
 
-                    p.data[0].color = "#ffffff";
-                    p.data[1].color = "#ffffff";
-                    p.data[2].color = "#ffffff";
-                    p.data[3].color = "#ffffff";
+                    p.data[0].color = "#00000";
+                    p.data[1].color = "#00000";
+                    p.data[2].color = "#00000";
+                    p.data[3].color = "#00000";
                     p.msgError = '';
                     p.msgHit = '';
                     words.push(p)
 
                 }
-                mOptions.wordsGame = words;
+                dataGame.wordsGame = words;
 
             } else {
                 for (var k = 0; k < linkImages.length; k++) {

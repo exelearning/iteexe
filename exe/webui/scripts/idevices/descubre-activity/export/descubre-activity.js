@@ -920,7 +920,6 @@ var $eXeDescubre = {
             mOptions.fullscreen = false;
             $eXeDescubre.exitFullscreen(element);
         }
-        $eXeDescubre.refreshCards(instance)
     },
     exitFullscreen: function () {
         if (document.exitFullscreen) {
@@ -1350,19 +1349,9 @@ var $eXeDescubre = {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         $cursor.hide();
                     } else {
-                        var mData = $eXeDescubre.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeDescubre.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
+                        $eXeDescubre.positionPointerCard($cursor, x, y)
                         return true;
                     }
                 }).on('error', function () {
@@ -1376,19 +1365,9 @@ var $eXeDescubre = {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         $cursor.hide();
                     } else {
-                        var mData = $eXeDescubre.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeDescubre.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
+                        $eXeDescubre.positionPointerCard($cursor, x, y)
                         return true;
                     }
                 }).on('error', function () {
@@ -1414,16 +1393,37 @@ var $eXeDescubre = {
         if (state > 0) {
             $noImage.hide();
         }
-
-
     },
+    positionPointerCard: function($cursor, x, y) {
+        $cursor.hide();
+        if(x > 0 || y > 0){
+            var parentClass = '.DescubreQP-ImageContain',
+                siblingClass ='.DescubreQP-Image',
+			    containerElement = $cursor.parents(parentClass).eq(0),
+                imgElement = $cursor.siblings(siblingClass).eq(0),
+                containerPos = containerElement.offset(),
+                imgPos = imgElement.offset(),
+                marginTop = imgPos.top - containerPos.top,
+                marginLeft = imgPos.left - containerPos.left,
+                mx = marginLeft + (x * imgElement.width()),
+                my = marginTop + (y * imgElement.height());
+            $cursor.css({ left: mx, top: my, 'z-index': 1004 });
+            $cursor.show();
+        }
+	},
     refreshCards: function (instance) {
         var mOptions = $eXeDescubre.options[instance],
-            $cards = $('#descubreMultimedia-' + instance).find('.DescubreQP-CardContainer');
+            $flcds = $('#descubreMultimedia-' + instance).find('.DescubreQP-CardContainer')
+        if ( mOptions.refreshCard) return;
         mOptions.refreshCard = true;
         $eXeDescubre.setSize(instance);
-        $cards.each(function () {
-            $eXeDescubre.showCard($(this), instance)
+        $flcds.each(function () { 
+            var $card= $(this),
+                $imageF = $card.find('.DescubreQP-Image').eq(0),
+                $cursorF = $card.find('.DescubreQP-Cursor').eq(0),
+                xF = parseFloat($imageF.data('x')) || 0,
+                yF = parseFloat($imageF.data('y')) || 0;
+                $eXeDescubre.positionPointerCard($cursorF, xF, yF)
         });
         mOptions.refreshCard = false;
     },
@@ -1433,7 +1433,6 @@ var $eXeDescubre = {
             $('#descubreCodeAccessDiv-' + instance).hide();
             $('#descubreCubierta-' + instance).hide();
             $('#descubreStartLevels-' + instance).show();
-
         } else {
             $('#descubreMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
             $('#descubreCodeAccessE-' + instance).val('');
@@ -1793,32 +1792,12 @@ var $eXeDescubre = {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
     },
-
-    paintMouse: function (image, cursor, x, y) {
-        x = parseFloat(x) || 0;
-        y = parseFloat(y) || 0;
-        $(cursor).hide();
-        if (x > 0 || y > 0) {
-            var wI = $(image).width() > 0 ? $(image).width() : 1,
-                hI = $(image).height() > 0 ? $(image).height() : 1,
-                lI = $(image).position().left + (wI * x),
-                tI = $(image).position().top + (hI * y);
-            $(cursor).css({
-                left: lI + 'px',
-                top: tI + 'px',
-                'z-index': 230
-            });
-            $(cursor).show();
-        }
-    },
-
     getRetroFeedMessages: function (iHit, instance) {
         var mOptions = $eXeDescubre.options[instance],
             sMessages = iHit ? mOptions.msgs.msgSuccesses : mOptions.msgs.msgFailures;
         sMessages = sMessages.split('|');
         return sMessages[Math.floor(Math.random() * sMessages.length)];
     },
-
     updateScore: function (correctAnswer, instance) {
         var mOptions = $eXeDescubre.options[instance],
             message = "",
@@ -1889,39 +1868,6 @@ var $eXeDescubre = {
             $('#descubreMesasgeEnd-' + instance).css({
                 'color': color
             });
-        }
-    },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
         }
     },
     supportedBrowser: function (idevice) {
