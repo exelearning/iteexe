@@ -31,7 +31,6 @@ var $eXeClasifica = {
     previousScore: '',
     initialScore: '',
     hasLATEX: false,
-
     init: function () {
         this.activities = $('.clasifica-IDevice');
         if (this.activities.length == 0) return;
@@ -265,15 +264,6 @@ var $eXeClasifica = {
         }
         return mQuestions;
     },
-    playSound1: function (selectedFile, instance) {
-        var mOptions = $eXeClasifica.options[instance];
-        $eXeClasifica.stopSound(instance);
-        selectedFile = $eXeClasifica.extractURLGD(selectedFile);
-        mOptions.playerAudio = new Audio(selectedFile);
-        mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
-            mOptions.playerAudio.play();
-        });
-    },
     playSound: function (selectedFile, instance) {
         var mOptions = $eXeClasifica.options[instance];
         $eXeClasifica.stopSound(instance);
@@ -281,7 +271,6 @@ var $eXeClasifica = {
         mOptions.playerAudio = new Audio(selectedFile);
         mOptions.playerAudio.play().catch(error => console.error("Error playing audio:", error));
     },
-    
     stopSound: function (instance) {
         var mOptions = $eXeClasifica.options[instance];
         if (mOptions.playerAudio && typeof mOptions.playerAudio.pause == "function") {
@@ -641,7 +630,6 @@ var $eXeClasifica = {
             mOptions.fullscreen = false;
             $eXeClasifica.exitFullscreen(element);
         }
-        $eXeClasifica.refreshCards(instance)
     },
     exitFullscreen: function () {
         if (document.exitFullscreen) {
@@ -873,7 +861,7 @@ var $eXeClasifica = {
         }
         $eXeClasifica.showMessage(type, message, instance);
         $eXeClasifica.updateScore($item, correctAnswer, instance);
-        $eXeClasifica.showCard($item, instance);
+        $eXeClasifica.refreshCards(instance);
         $eXeClasifica.updateQuestionNumber(instance);
         var html = $('#clasificaMultimedia-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
@@ -1025,6 +1013,7 @@ var $eXeClasifica = {
 
     },
     setSize: function ($cc, instance) {
+
         var $text = $cc.find('.CQP-EText'),
             hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($text.text()),
             minw = 48,
@@ -1045,10 +1034,6 @@ var $eXeClasifica = {
         } else if (font < 8) {
             font = 8;
         }
-        $cc.css({
-            'width': wcc + 'px',
-            'min-width': wcc + 'px',
-        });
         $text.css({
             'font-size': font + 'px'
         })
@@ -1196,19 +1181,9 @@ var $eXeClasifica = {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         $cursor.hide();
                     } else {
-                        var mData = $eXeClasifica.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeClasifica.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
+                        $eXeClasifica.positionPointerCard($cursor, x, y);
                     }
                 }).on('error', function () {
                     $cursor.hide();
@@ -1221,19 +1196,10 @@ var $eXeClasifica = {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         $cursor.hide();
                     } else {
-                        var mData = $eXeClasifica.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeClasifica.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
+                        $eXeClasifica.positionPointerCard($cursor, x, y);
+
                     }
                 }).on('error', function () {
                     $cursor.hide();
@@ -1253,7 +1219,6 @@ var $eXeClasifica = {
         }
 
         $text.text(mOptions.cardsGame[number].eText);
-        $eXeClasifica.setSize($card, instance);
 
 
     },
@@ -1273,15 +1238,37 @@ var $eXeClasifica = {
     },
     refreshCards: function (instance) {
         var mOptions = $eXeClasifica.options[instance],
-            $cards = $('#clasificaMultimedia-' + instance).find('.CQP-CardContainer');
+            $flcds = $('#clasificaGameContainer-' + instance).find('.CQP-CardContainer')
+        if ( mOptions.refreshCard) return;
         mOptions.refreshCard = true;
-        $cards.each(function () {
-            $eXeClasifica.showCard($(this), instance)
+        $flcds.each(function () { 
+            var $card= $(this),
+                $imageF = $card.find('.CQP-Image').eq(0),
+                $cursorF = $card.find('.CQP-Cursor').eq(0),
+                xF = parseFloat($imageF.data('x')) || 0,
+                yF = parseFloat($imageF.data('y')) || 0;
+                $eXeClasifica.positionPointerCard($cursorF, xF, yF)
         });
-
         mOptions.refreshCard = false;
-
     },
+
+    positionPointerCard: function($cursor, x, y) {
+        $cursor.hide();
+        if(x > 0 || y > 0){
+            var parentClass = '.CQP-ImageContain',
+                siblingClass ='.CQP-Image',
+			    containerElement = $cursor.parents(parentClass).eq(0),
+                imgElement = $cursor.siblings(siblingClass).eq(0),
+                containerPos = containerElement.offset(),
+                imgPos = imgElement.offset(),
+                marginTop = imgPos.top - containerPos.top,
+                marginLeft = imgPos.left - containerPos.left,
+                mx = marginLeft + (x * imgElement.width()),
+                my = marginTop + (y * imgElement.height());
+            $cursor.css({ left: mx, top: my, 'z-index': 1004 });
+            $cursor.show();
+        }
+	},
     enterCodeAccess: function (instance) {
         var mOptions = $eXeClasifica.options[instance];
         if (mOptions.itinerary.codeAccess == $('#clasificaCodeAccessE-' + instance).val()) {
@@ -1295,7 +1282,6 @@ var $eXeClasifica = {
         }
     },
     initCards: function (instance) {
-
         var $cards = $('#clasificaMultimedia-' + instance).find('.CQP-CardContainer');
         $cards.each(function () {
             $(this).data('state', '-1');
@@ -1401,7 +1387,6 @@ var $eXeClasifica = {
         return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
     },
 
-
     showFeedBack: function (instance) {
         var mOptions = $eXeClasifica.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.cardsGame.length;
@@ -1426,23 +1411,6 @@ var $eXeClasifica = {
         return arr;
     },
 
-    paintMouse: function (image, cursor, x, y) {
-        x = parseFloat(x) || 0;
-        y = parseFloat(y) || 0;
-        $(cursor).hide();
-        if (x > 0 || y > 0) {
-            var wI = $(image).width() > 0 ? $(image).width() : 1,
-                hI = $(image).height() > 0 ? $(image).height() : 1,
-                lI = $(image).position().left + (wI * x),
-                tI = $(image).position().top + (hI * y);
-            $(cursor).css({
-                left: lI + 'px',
-                top: tI + 'px',
-                'z-index': 230
-            });
-            $(cursor).show();
-        }
-    },
     getRetroFeedMessages: function (iHit, instance) {
         var mOptions = $eXeClasifica.options[instance],
             sMessages = iHit ? mOptions.msgs.msgSuccesses : mOptions.msgs.msgFailures;
@@ -1484,39 +1452,6 @@ var $eXeClasifica = {
             'color': color
         });
         $('#clasificaMessage-' + instance).show();
-    },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
     },
     supportedBrowser: function (idevice) {
         var ua = window.navigator.userAgent,

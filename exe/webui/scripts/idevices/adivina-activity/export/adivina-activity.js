@@ -145,8 +145,6 @@ var $eXeAdivina = {
         }
 
     },
-
-
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
@@ -465,7 +463,6 @@ var $eXeAdivina = {
     },
 
 
-
     saveEvaluation: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
@@ -758,10 +755,7 @@ var $eXeAdivina = {
             e.preventDefault();
             $eXeAdivina.newQuestion(instance)
         });
-        document.onfullscreenchange = function (event) {
-            var id = event.target.id.split('-')[1];
-            $eXeAdivina.refreshImageActive(id)
-        };
+
         $('#adivinaBtnReply-' + instance).on('click', function (e) {
             e.preventDefault();
             $eXeAdivina.answerQuestion(instance);
@@ -877,19 +871,6 @@ var $eXeAdivina = {
             $eXeAdivina.startGame(instance);
         }
     },
-    refreshImageActive: function (instance) {
-        var mOptions = $eXeAdivina.options[instance];
-        if (mOptions.gameOver) {
-            return;
-        }
-        if (mOptions.gameStarted) {
-            var q = mOptions.wordsGame[mOptions.activeQuestion];
-            $eXeAdivina.showImage(q.url, q.x, q.y, q.author, q.alt, instance);
-        } else {
-            $eXeAdivina.showImage("", 0, 0, '', '', instance);
-        }
-
-    },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeAdivina.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() == $('#adivinaCodeAccessE-' + instance).val().toLowerCase()) {
@@ -970,7 +951,6 @@ var $eXeAdivina = {
             mTime = $eXeAdivina.getTimeToString(tiempo);
         $('#adivinaPTime-' + instance).text(mTime);
         if (mOptions.gameActived) {
-            //$eXeAdivina.drawLetterActive($eXeAdivina.gameData.activeWord, instance);
         }
     },
     getTimeToString: function (iTime) {
@@ -980,7 +960,7 @@ var $eXeAdivina = {
     },
     gameOver: function (type, instance) {
         var mOptions = $eXeAdivina.options[instance];
-        $eXeAdivina.showImage("", 0, 0, '', '', instance);
+        $eXeAdivina.showImage("", instance);
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
@@ -1154,7 +1134,7 @@ var $eXeAdivina = {
         mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;
         $('#adivinaAuthor-' + instance).text('');
         if (q.type === 1) {
-            $eXeAdivina.showImage(q.url, q.x, q.y, q.author, q.alt, instance);
+            $eXeAdivina.showImage(q.url, instance);
             $('#adivinaPAuthor-' + instance).text(q.author);
         } else if (q.type === 3) {
             var text = unescape(q.eText);
@@ -1433,69 +1413,116 @@ var $eXeAdivina = {
         }
     },
 
-    showImage: function (url, x, y, author, alt, instance) {
-        var $cursor = $('#adivinaCursor-' + instance),
-            $noImage = $('#adivinaCover-' + instance),
-            $Image = $('#adivinaImage-' + instance),
-            $Author = $('#adivinaPAuthor-' + instance);
-        if ($.trim(url).length == 0) {
-            $cursor.hide();
-            $Image.hide();
-            $noImage.show();
-            return false;
-        };
-
-        $Image.prop('src', url)
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                    $cursor.hide();
-                    $Image.hide();
-                    $Image.attr('alt', $eXeAdivina.options[instance].msgs.msgNoImage);
-                    $noImage.show();
-                    return false;
-                } else {
-                    var mData = $eXeAdivina.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeAdivina.drawImage(this, mData);
-                    $Image.show();
-                    $cursor.hide();
-                    $noImage.hide();
-                    $Image.attr('alt', alt);
-                    if (x > 0 && y > 0) {
-                        var left = mData.x + (x * mData.w);
-                        var top = mData.y + (y * mData.h);
-                        $cursor.css({
-                            'left': left + 'px',
-                            'top': top + 'px'
-                        });
-                        $cursor.show();
-                    }
-                    return true;
-                }
-            }).on('error', function () {
-                $cursor.hide();
-                $Image.hide();
-                $Image.attr('alt', $eXeAdivina.options[instance].msgs.msgNoImage);
-                $noImage.show();
-                return false;
-            });
-    },
-    paintMouse: function (image, cursor, x, y) {
-        x = parseFloat(x) || 0;
-        y = parseFloat(y) || 0;
-        $(cursor).hide();
-        if (x > 0 || y > 0) {
-            var wI = $(image).width() > 0 ? $(image).width() : 1,
-                hI = $(image).height() > 0 ? $(image).height() : 1,
-                lI = $(image).position().left + (wI * x),
-                tI = $(image).position().top + (hI * y);
-            $(cursor).css({
-                left: lI + 'px',
-                top: tI + 'px',
-                'z-index': 230
-            });
-            $(cursor).show();
+    showImage: function (url, instance) {
+		var mOptions = $eXeAdivina.options[instance],
+			mQuextion = mOptions.wordsGame[mOptions.activeQuestion],
+		    $cursor = $('#adivinaCursor-' + instance),
+			$noImage = $('#adivinaCover-' + instance),
+			$Image = $('#adivinaImage-' + instance),
+			$Author = $('#adivinaAuthor-' + instance);
+            $Protect = $('#adivinaProtector-' + instance);
+        $Image.attr('alt', 'No image');
+		$cursor.hide();
+		$Image.hide();
+		$noImage.hide();
+        $Protect.hide();
+		if ($.trim(url).length == 0) {
+			$cursor.hide();
+			$Image.hide();
+			$noImage.show();
+			$Author.text('');
+			return false;
+		};
+		$Image.attr('src', ''); 
+		$Image.attr('src', url)
+			.on('load', function () {
+				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+					$cursor.hide();
+					$Image.hide();
+					$noImage.show();
+					$Author.text('');
+				} else {
+					$Image.show();
+					$cursor.show();
+					$noImage.hide();
+					$Author.text(mQuextion.author);
+					$Image.attr('alt', mQuextion.alt);
+					$eXeAdivina.centerImage(instance);
+				}
+			}).on('error', function () {
+				$cursor.hide();
+				$Image.hide();
+				$noImage.show();
+				$Author.text('');
+				return false;
+			});
+            $eXeAdivina.showMessage(0,mQuextion.author , instance);
+	},
+    refreshImageActive: function (instance) {
+        var mOptions = $eXeAdivina.options[instance],
+            mQuextion = mOptions.wordsGame[mOptions.activeQuestion];
+        if (typeof mQuextion == "undefined" ) {
+            return;
         }
+        if (mQuextion.type === 1) {
+            if (mQuextion.url && mQuextion.url.length > 3 ) {
+                 $('#adivinaCursor-' + instance).hide();
+                 $eXeAdivina.centerImage(instance);
+            }
+        }
+
     },
+    centerImage: function (instance) {
+        var $image = $('#adivinaImage-' + instance),
+            wDiv =$image.parent().width() > 0 ?  $image.parent().width() : 1,
+            hDiv = $image.parent().height() > 0 ?  $image.parent().height() : 1,
+            naturalWidth = $image[0].naturalWidth,
+            naturalHeight = $image[0].naturalHeight,
+            varW = naturalWidth / wDiv,
+            varH = naturalHeight / hDiv,
+            wImage = wDiv,
+            hImage = hDiv,
+            xImage = 0,
+            yImage = 0;
+        if (varW > varH) {
+            wImage = parseInt(wDiv);
+            hImage = parseInt(naturalHeight / varW);
+            yImage = parseInt((hDiv - hImage) / 2);
+        } else {
+            wImage = parseInt(naturalWidth / varH);
+            hImage = parseInt(hDiv);
+            xImage = parseInt((wDiv - wImage) / 2);
+        }
+        $image.css({
+            width: wImage,
+            height: hImage,
+            position: 'absolute',
+            left: xImage,
+            top: yImage
+        });
+        $eXeAdivina.positionPointer(instance)
+    },
+
+    positionPointer: function(instance) {
+		var mOptions = $eXeAdivina.options[instance],
+			mQuextion = mOptions.wordsGame[mOptions.activeQuestion],
+		    x = parseFloat(mQuextion.x) || 0;
+		    y = parseFloat(mQuextion.y) || 0, 
+			$cursor=$('#adivinaCursor-' + instance);
+			$cursor.hide();
+		if(x > 0 || y > 0){
+			var containerElement = document.getElementById('adivinaMultimedia-' + instance),
+			    containerPos = containerElement.getBoundingClientRect(),
+			    imgElement = document.getElementById('adivinaImage-' + instance),
+			    imgPos = imgElement.getBoundingClientRect(),
+  		        marginTop = imgPos.top - containerPos.top,
+			    marginLeft = imgPos.left - containerPos.left,
+			    x = marginLeft + (x * imgPos.width),
+			    y = marginTop + (y * imgPos.height);
+				$cursor.show();
+				$cursor.css({ left: x, top: y, 'z-index': 30 });
+		}
+	},
     updateLives: function (instance) {
         var mOptions = $eXeAdivina.options[instance],
             classIconLife = '.exeQuextIcons-Life';
@@ -1757,39 +1784,6 @@ var $eXeAdivina = {
         $('#adivinaPAuthor-' + instance).css({
             'color': color
         });
-    },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
     },
     supportedBrowser: function (idevice) {
         var ua = window.navigator.userAgent,

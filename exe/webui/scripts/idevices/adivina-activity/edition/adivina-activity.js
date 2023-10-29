@@ -1102,9 +1102,7 @@ var $exeDevice = {
     playSound: function (selectedFile) {
         var selectFile = $exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectFile);
-        $exeDevice.playerAudio.addEventListener("canplaythrough", function (event) {
-            $exeDevice.playerAudio.play();
-        });
+        $exeDevice.playerAudio.play().catch(error => console.error("Error playing audio:", error));
     },
 
     stopSound() {
