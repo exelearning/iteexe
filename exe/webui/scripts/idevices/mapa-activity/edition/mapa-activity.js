@@ -248,7 +248,7 @@ var $exeDevice = {
                                 <label for="mapaY1">Y1:</label><input id="mapaY1" type="text" value="0" />\
                             </p>\
                         </div>\
-                        <div class="MQE-EMultimedias"mapa-activity.js>\
+                        <div class="MQE-EMultimedias">\
                             <div class="MQE-EMediaContainer">\
                                 <div class="MQE-EMultimedia">\
                                     <img id="mapaImage" class="MQE-EImage" src="' + path + 'quextIEImage.png" alt="" />\
@@ -1749,7 +1749,7 @@ var $exeDevice = {
         });
     },
 
-    stopSound() {
+    stopSound: function() {
         if ($exeDevice.playerAudio && typeof $exeDevice.playerAudio.pause == "function") {
             $exeDevice.playerAudio.pause();
         }

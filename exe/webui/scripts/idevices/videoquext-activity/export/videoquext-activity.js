@@ -493,9 +493,10 @@ var $eXeVideoQuExt = {
                         <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="vquextLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
                     </div>\
                     <div class="gameQP-DataScore">\
-                        <p id="vquextOverScore-' + instance + '">Score: 0</p>\
+                        <p id="vquextOverNumber-' + instance + '">Score: 0</p>\
                         <p id="vquextOverHits-' + instance + '">Hits: 0</p>\
                         <p id="vquextOverErrors-' + instance + '">Errors: 0</p>\
+                        <p id="vquextOverScore-' + instance + '">Score: 0</p>\
                     </div>\
                 </div>\
             </div>\
@@ -1269,6 +1270,7 @@ var $eXeVideoQuExt = {
             $quextOverErrors = $('#vquextOverErrors-' + instance),
             $quextPShowClue = $('#vuextPShowClue-' + instance),
             $quextGamerOver = $('#vquextGamerOver-' + instance),
+            $quextOverNumber = $('#vquextOverNumber-' + instance),
             message = "",
             messageColor = 2;
         $quextHistGame.hide();
@@ -1322,6 +1324,8 @@ var $eXeVideoQuExt = {
         $quextOverPoint.text(msscore);
         $quextOverHits.text(msgs.msgHits + ': ' + mOptions.hits);
         $quextOverErrors.text(msgs.msgErrors + ': ' + mOptions.errors);
+        $quextOverNumber.text(msgs.msgNumQuestions + ': ' + mOptions.questionsGame.length);
+
         if (mOptions.gameMode == 2) {
             $('#vquextGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
         }
