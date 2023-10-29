@@ -138,7 +138,8 @@
 	height: 100%
 }
 .SPP-Images{
-	width: 90%;
+	width: 100%;
+	margin:auto;
 }
 .SPP-ImagesHome{
 
@@ -147,7 +148,7 @@
 	margin:auto;
 
 }
-.SPP-Images, .SPP-GameOver {
+.SPP-GameOver {
 	border: 0;
 	border-radius: 0.6em;
 	left: 0;
@@ -444,26 +445,20 @@
 
 .SPP-Detail {
 	width: 300px;
-	height: 420px;
-
 	border-radius: 0.6em;
 	background-color: #ffffff;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
 	margin-top: 3em;
 	margin-left: auto;
 	margin-right: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+	height: auto;
+
 
 }
 .SPP-MultimediaPoint {
-	border-radius: 0.6em;
+	position: relative;
 	margin: 0.5em auto;
 	width: 280px;
-	height:280px;
-	overflow: hidden;
-	position: relative;
 	background-color: #ffffff;
 }
 

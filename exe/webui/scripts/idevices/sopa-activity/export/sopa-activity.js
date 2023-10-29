@@ -422,7 +422,7 @@ var $eXeSopa = {
                         </a>\
                     </div>\
                     <div class="SPP-MultimediaPoint" id="sopaMMultimediaPoint">\
-                        <img src="" class="SPP-Images" id="sopaMImagePoint"  alt="' + msgs.msgNoImage + '" />\
+                        <img class="SPP-Images" id="sopaMImagePoint"  alt="' + msgs.msgNoImage + '" />\
                         <img class="SPP-Cursor" id="sopaMCursor" src="' + $eXeSopa.idevicePath + 'exequextcursor.gif" alt="" />\
                     </div>\
                     <div class="SPP-AuthorPoint" id="sopaMAuthorPoint"></div>\
@@ -506,6 +506,23 @@ var $eXeSopa = {
         }
 
     },
+    positionPointerCard: function($cursor, x, y) {
+        $cursor.hide();
+        if(x > 0 || y > 0){
+            var parentClass = '.SPP-MultimediaPoint',
+                siblingClass ='.SPP-Images',
+			    containerElement = $cursor.parents(parentClass).eq(0),
+                imgElement = $cursor.siblings(siblingClass).eq(0),
+                containerPos = containerElement.offset(),
+                imgPos = imgElement.offset(),
+                marginTop = imgPos.top - containerPos.top,
+                marginLeft = imgPos.left - containerPos.left,
+                mx = marginLeft + (x * imgElement.width()),
+                my = marginTop + (y * imgElement.height());
+            $cursor.css({ left: mx, top: my, 'z-index': 1004 });
+            $cursor.show();
+        }
+	},
     showImagePoint: function (url, x, y, author, alt) {
         var $Image = $('#sopaMImagePoint'),
             $cursor = $('#sopaMCursor'),
@@ -520,20 +537,10 @@ var $eXeSopa = {
                     $eXeSopa.showCubiertaOptions(2);
                     return false;
                 } else {
-                    var mData = $eXeSopa.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeSopa.drawImage(this, mData);
                     $Image.show();
                     $Image.attr('alt', alt);
                     $eXeSopa.showCubiertaOptions(2);
-                    if (x > 0 && y > 0) {
-                        var left = mData.x + (x * mData.w);
-                        var top = mData.y + (y * mData.h);
-                        $cursor.css({
-                            'left': left + 'px',
-                            'top': top + 'px'
-                        });
-                        $cursor.show();
-                    }
+                    $eXeSopa.positionPointerCard($cursor, x, y)
                     return true;
                 }
             }).on('error', function () {
@@ -545,6 +552,7 @@ var $eXeSopa = {
 
         $('#sopaMMultimediaPoint').show();
     },
+
     isFullScreen: function () {
         var isFull = !(!document.fullscreenElement && !document.mozFullScreenElement &&
             !document.webkitFullscreenElement && !document.msFullscreenElement);
@@ -789,9 +797,6 @@ var $eXeSopa = {
         });
 
         $('#sopaGamerOver').hide();
-        document.onfullscreenchange = function (event) {
-            $eXeSopa.refreshImageActive()
-        };
         $("#sopaLinkFullScreen").on('click touchstart', function (e) {
             e.preventDefault();
             var element = document.getElementById('sopaGameContainer');
@@ -902,7 +907,7 @@ var $eXeSopa = {
         if (mOptions.gameStarted) {
             var q = mOptions.wordsGame[mOptions.activeQuestion];
             if(typeof q !="undefined"){
-                $eXeSopa.showImagePoint(q.url, q.x, q.y, q.author, q.alt);
+                $eXeSopa.positionPointerCard($('sopaMCursor'), q.x, q.y);
             }
         }
     },

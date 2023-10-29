@@ -1229,45 +1229,117 @@ var $eXeSelecciona = {
         }
 
     },
+    showImage: function (url, instance) {
+		var mOptions = $eXeSelecciona.options[instance],
+			mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
+		    $cursor = $('#seleccionaCursor-' + instance),
+			$noImage = $('#seleccionaCover-' + instance),
+			$Image = $('#seleccionaImagen-' + instance),
+			$Author = $('#seleccionaAuthor-' + instance);
+            $Protect = $('#seleccionaProtector-' + instance);
+        $Image.attr('alt', 'No image');
+		$cursor.hide();
+		$Image.hide();
+		$noImage.hide();
+        $Protect.hide();
+		if ($.trim(url).length == 0) {
+			$cursor.hide();
+			$Image.hide();
+			$noImage.show();
+			$Author.text('');
+			return false;
+		};
+		$Image.attr('src', ''); 
+		$Image.attr('src', url)
+			.on('load', function () {
+				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+					$cursor.hide();
+					$Image.hide();
+					$noImage.show();
+					$Author.text('');
+				} else {
+					$Image.show();
+					$cursor.show();
+					$noImage.hide();
+					$Author.text(mQuextion.author);
+					$Image.attr('alt', mQuextion.alt);
+                    $eXeSelecciona.centerImage(instance);
+				}
+			}).on('error', function () {
+				$cursor.hide();
+				$Image.hide();
+				$noImage.show();
+				$Author.text('');
+				return false;
+			});
+            $eXeSelecciona.showMessage(0,mQuextion.author , instance);
+	},
     refreshImageActive: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
-            mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
-            author = '';
-        if (mOptions.gameOver) {
-            return;
-        }
-        if (typeof mQuextion == "undefined") {
+            mQuextion = mOptions.selectsGame[mOptions.activeQuestion];
+        if (typeof mQuextion == "undefined" ) {
             return;
         }
         if (mQuextion.type === 1) {
-
-            $('#seleccionaImagen-' + instance).prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#seleccionaAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeSelecciona.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeSelecciona.drawImage(this, mData);
-                        $('#seleccionaImagen-' + instance).show();
-                        $('#seleccionaCover-' + instance).hide();
-                        alt = mQuextion.alt;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#seleccionaCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            author = mQuextion.author;
-                            $('#seleccionaCursor-' + instance).show();
-                        }
-                    }
-                    $eXeSelecciona.showMessage(0, author, instance);
-                });
-            $('#seleccionaImagen-' + instance).attr('alt', mQuextion.alt);
+            if (mQuextion.url && mQuextion.url.length > 3 ) {
+                $('#seleccionaCursor-' + instance).hide();
+                $eXeSelecciona.centerImage(instance)
+            }
         }
+
     },
+    centerImage: function (instance) {
+        var $image = $('#seleccionaImagen-' + instance),
+            wDiv =$image.parent().width() > 0 ?  $image.parent().width() : 1,
+            hDiv = $image.parent().height() > 0 ?  $image.parent().height() : 1,
+            naturalWidth = $image[0].naturalWidth,
+            naturalHeight = $image[0].naturalHeight,
+            varW = naturalWidth / wDiv,
+            varH = naturalHeight / hDiv,
+            wImage = wDiv,
+            hImage = hDiv,
+            xImage = 0,
+            yImage = 0;
+        if (varW > varH) {
+            wImage = parseInt(wDiv);
+            hImage = parseInt(naturalHeight / varW);
+            yImage = parseInt((hDiv - hImage) / 2);
+        } else {
+            wImage = parseInt(naturalWidth / varH);
+            hImage = parseInt(hDiv);
+            xImage = parseInt((wDiv - wImage) / 2);
+        }
+        $image.css({
+            width: wImage,
+            height: hImage,
+            position: 'absolute',
+            left: xImage,
+            top: yImage
+        });
+        $eXeSelecciona.positionPointer(instance)
+    },
+
+
+    positionPointer: function(instance) {
+		var mOptions = $eXeSelecciona.options[instance],
+			mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
+		    x = parseFloat(mQuextion.x) || 0;
+		    y = parseFloat(mQuextion.y) || 0, 
+			$cursor=$('#seleccionaCursor-' + instance);
+			$cursor.hide();
+		if(x > 0 || y > 0){
+			var containerElement = document.getElementById('seleccionaMultimedia-' + instance),
+			    containerPos = containerElement.getBoundingClientRect(),
+			    imgElement = document.getElementById('seleccionaImagen-' + instance),
+			    imgPos = imgElement.getBoundingClientRect(),
+  		        marginTop = imgPos.top - containerPos.top,
+			    marginLeft = imgPos.left - containerPos.left,
+			    x = marginLeft + (x * imgPos.width),
+			    y = marginTop + (y * imgPos.height);
+				$cursor.show();
+				$cursor.css({ left: x, top: y, 'z-index': 30 });
+		}
+	},
     enterCodeAccess: function (instance) {
         var mOptions = $eXeSelecciona.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#seleccionaCodeAccessE-' + instance).val().toLowerCase()) {
@@ -1439,6 +1511,7 @@ var $eXeSelecciona = {
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         clearInterval(mOptions.counterClock);
+        $eXeSelecciona.showImage('',instance);
         $('#seleccionaDivModeBoard-' + instance).hide()
         $('#seleccionaVideo-' + instance).hide();
         $('#seleccionaVideoLocal-' + instance).hide();
@@ -1570,9 +1643,7 @@ var $eXeSelecciona = {
         mOptions.gameActived = true;
         mOptions.question = mQuextion
         mOptions.respuesta = '';
-        var tiempo = $eXeSelecciona.getTimeToString($eXeSelecciona.getTimeSeconds(mQuextion.time)),
-            author = '',
-            alt = '';
+        var tiempo = $eXeSelecciona.getTimeToString($eXeSelecciona.getTimeSeconds(mQuextion.time));
         $('#seleccionaPTime-' + instance).text(tiempo);
         $('#seleccionaQuestion-' + instance).text(mQuextion.quextion);
         $('#seleccionaImagen-' + instance).hide();
@@ -1591,42 +1662,13 @@ var $eXeSelecciona = {
         mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;
         $('#seleccionaAuthor-' + instance).text('');
         if (mQuextion.type === 1) {
-            $('#seleccionaImagen-' + instance).prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = $eXeSelecciona.msgs.msgNoImage;
-                        $('#seleccionaAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeSelecciona.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeSelecciona.drawImage(this, mData);
-                        $('#seleccionaImagen-' + instance).show();
-                        $('#seleccionaCover-' + instance).hide();
-                        $('#seleccionaCursor-' + instance).hide();
-                        alt = mQuextion.alt;
-                        author = mQuextion.author;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#seleccionaCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $('#seleccionaCursor-' + instance).show();
-                        }
-                    }
-                    $eXeSelecciona.showMessage(0, author, instance);
-                });
-            $('#seleccionaImagen-' + instance).attr('alt', alt);
+            $eXeSelecciona.showImage(mQuextion.url, instance)            
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
-            if (window.innerWidth < 401) {
-                //text = $eXeSelecciona.reduceText(text);
-            }
             $('#seleccionaEText-' + instance).html(text);
             $('#seleccionaCover-' + instance).hide();
             $('#seleccionaEText-' + instance).show();
             $eXeSelecciona.showMessage(0, '', instance);
-
         } else if (mQuextion.type === 2) {
             $('#seleccionaVideo-' + instance).show();
             var idVideo = $eXeSelecciona.getIDYoutube(mQuextion.url),
@@ -2196,39 +2238,7 @@ var $eXeSelecciona = {
             'font-weight': weight,
         });
     },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
-    },
+
     ramdonOptions: function (instance) {
         var mOptions = $eXeSelecciona.options[instance],
             l = 0,
@@ -2391,7 +2401,6 @@ var $eXeSelecciona = {
         } else {
             $eXeSelecciona.exitFullscreen(element);
         }
-        $eXeSelecciona.refreshImageActive(instance);
     },
     supportedBrowser: function (idevice) {
         var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
