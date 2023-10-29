@@ -180,7 +180,86 @@ var $eXeMathProblems = {
         options.questions = $eXeMathProblems.getQuestions(options.questions, options.percentajeQuestions);
         return options;
     },
+    validateIntervals: function(domain) {
+        const allowedCharactersRegex = /^[0-9\s\-!]+$/;
+        let dm = domain.replace(/\s+/g, ' ').trim(); 
+        if (!allowedCharactersRegex.test(dm)) {
+            return false;
+        }
+        const formatRegex = /^(!?-?\d+)(\s+-\s+!?-?\d+)?$/;
+        let isValid = formatRegex.test(dm);
+        if (isValid && dm.includes(' - ')) {
+            let [start, end] = dm.split(' - ').map(Number); // Convierte los números y compara
+            isValid = start <= end;
+        }
+        return isValid;
+    },
+    validateIntervalsWithHash: function(domain) {
+        const regex = /^-?\d+\s+-\s*-?\d+\s+#\s*\d+$/;
+        if (!regex.test(domain.trim())) {
+            return false;
+        }
+        let [interval, hashNumber] = domain.split('#');
+        let [start, end] = interval.split('-').map(str => Number(str.trim()));
+        let hashNum = Number(hashNumber.trim());
+        return start < end && hashNum > 0;
+    },
 
+    processSimpleExpression: function(str) {
+        const elements = str.split(/\s*,\s*/);
+        let definedSet = new Set();
+        let disallowed = new Set();
+        elements.forEach(el => {
+            const exclude = el.startsWith('!');
+            const value = exclude ? el.substring(1) : el;
+            if (value.includes(' - ')) {
+                if(value.includes('#')) {
+                    this.processRangedExpression(value).forEach(item => definedSet.add(item));
+                } else {
+                    let [start, end] = value.split(' - ').map(Number);
+                    for (let i = start; i <= end; i++) {
+                        exclude ? disallowed.add(i) : definedSet.add(i);
+                    }
+                }
+            } else {
+                exclude ? disallowed.add(Number(value)) : definedSet.add(Number(value));
+            }
+        });
+        let allowed = [...definedSet].filter(value => !disallowed.has(value));
+        if (!allowed.length) return [1]; 
+        return allowed;
+    },
+
+    processRangedExpression: function (str) {
+        let [range, step] = str.split('#');
+        step = Number(step);
+        let [start, end] = range.split(' - ').map(Number);
+        let result = [];
+        for (let i = start; i <= end; i += step) {
+            result.push(i);
+        }
+        if (!result.length) return [1]; 
+        return result;
+    },
+
+    getRandomAllowedValue: function(str) {
+        const elements = str.split(/\s*,\s*/);
+        let possibleValuesSet = new Set();
+        let disallowedValuesSet = new Set();
+        elements.forEach(element => {
+            const isDisallowed = element.startsWith('!');
+            const value = isDisallowed ? element.substring(1) : element;
+            if (value.includes('#')) {
+                this.processRangedExpression(value).forEach(val => isDisallowed ? disallowedValuesSet.add(val) : possibleValuesSet.add(val));
+            } else {
+                this.processSimpleExpression(value).forEach(val => isDisallowed ? disallowedValuesSet.add(val) : possibleValuesSet.add(val));
+            }
+        });
+        const possibleValues = [...possibleValuesSet].filter(value => !disallowedValuesSet.has(value));
+        if (!possibleValues.length) return 1;
+        const randomIndex = Math.floor(Math.random() * possibleValues.length);
+        return possibleValues[randomIndex];
+    },
     loadProblems: function (options) {
         var expresion = /\{[a-zA-z]\}/g;
         for (var i = 0; i < options.questions.length; i++) {
@@ -190,7 +269,7 @@ var $eXeMathProblems = {
                 values = fm0.match(expresion),
                 solutions = [],
                 formula = options.questions[i].formula;
-            values = $eXeMathProblems.getUniqueElements(values);
+                values = $eXeMathProblems.getUniqueElements(values);
 
             if (values !== null && values.length > 0) {
                 var data = $eXeMathProblems.checkValuesFormule(formula, text, values, options, i);
@@ -221,32 +300,6 @@ var $eXeMathProblems = {
         }
 
 
-    },
-    getOptionsArray1: function (num, numdatos, permitirNegativos) {
-        let array = [num];
-        let rango = Math.abs(num) * 0.3;
-        let decimalPlaces = num % 1 === 0 ? 0 : 2;
-        rango = num % 1 === 0 && num < 3 ? 5 : rango;
-        while (array.length < numdatos) {
-            let valor = Math.random() * (rango * 2) + num - rango;
-            valor = parseFloat(valor.toFixed(decimalPlaces));
-            if (valor !== num && !array.includes(valor)) {
-                if (!permitirNegativos && valor < 0) {
-                    continue;
-                }
-                array.push(valor);
-            }
-        }
-        let currentIndex = array.length,
-            temporaryValue, randomIndex;
-        while (0 !== currentIndex) {
-            randomIndex = Math.floor(Math.random() * currentIndex);
-            currentIndex -= 1;
-            temporaryValue = array[currentIndex];
-            array[currentIndex] = array[randomIndex];
-            array[randomIndex] = temporaryValue;
-        }
-        return array.slice(0, numdatos);
     },
     getOptionsArray: function (num, numdatos) {
         let array = [num];
@@ -279,11 +332,20 @@ var $eXeMathProblems = {
             mtext = text,
             nf = formule,
             isCorrectFormule = true;
-        for (var j = 0; j < values.length; j++) {
-            var rg = new RegExp(values[j], 'g'),
-                number = $eXeMathProblems.getRandomNo(options.questions[num].min, options.questions[num].max, options.questions[num].decimals);
-            mtext = mtext.replace(rg, number);
-            nf = nf.replace(rg, number);
+        if(typeof options.questions[num].definedVariables != 'undefined' && options.questions[num].definedVariables){
+            for (var j = 0; j < values.length; j++) {
+                var rg = new RegExp(values[j], 'g'),
+                    number = $eXeMathProblems.getDefinidedValue(values[j], options.questions[num].domains);
+                    mtext = mtext.replace(rg, number);
+                    nf = nf.replace(rg, number);
+            }
+        }else{
+            for (var j = 0; j < values.length; j++) {
+                var rg = new RegExp(values[j], 'g'),
+                    number = $eXeMathProblems.getRandomNo(options.questions[num].min, options.questions[num].max, options.questions[num].decimals);
+                    mtext = mtext.replace(rg, number);
+                    nf = nf.replace(rg, number);
+                }
         }
         var mformula = nf.split('|'),
             solution = 0;
@@ -302,9 +364,20 @@ var $eXeMathProblems = {
         if (isCorrectFormule) {
             result.solutions = solutions
         };
-        //console.log(result)
         return result;
 
+    },
+    getDefinidedValue: function(value, domains){
+        var sval = value.replace(/[{}]/g, "");
+        var domain = "1";
+        for (const domainObj of domains) {
+            if (sval == domainObj.name) {
+                domain = domainObj.value;
+                break;
+            }
+        }
+        var num = $eXeMathProblems.getRandomAllowedValue(domain);
+        return num;
     },
     setTexts: function (questions, $wordings, $feedbacks) {
         for (var i = 0; i < questions.length; i++) {
@@ -440,7 +513,6 @@ var $eXeMathProblems = {
         $('#mthpBtnMoveOn-' + instance).prop('disabled', false);
         $('#mthpEdAnswer-' + instance).prop('disabled', false);
         mOptions.counter = q.time;
-
         $('#mthpDivFeedBackQ-' + instance).hide();
         if (q.textFeedBack.length > 0) {
             $('#mthpDivFeedBackQ-' + instance).fadeToggle();
@@ -449,12 +521,10 @@ var $eXeMathProblems = {
         var html = $('#mthpMainContainer-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
-            //console.log('updateLatex', mOptions.questions[num].solution)
             $eXeMathProblems.updateLatex('mthpMainContainer-' + instance);
         }
         mOptions.gameActived = true;
         $eXeMathProblems.showMessage(0, '', instance)
-        console.log('Solution', mOptions.questions[num].solution)
 
     },
     isJsonString: function (str) {

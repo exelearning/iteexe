@@ -28,6 +28,7 @@ var $exeDevice = {
     },
     iDevicePath: "/scripts/idevices/mathematicaloperations-activity/edition/",
     id: false,
+    domains:[],
     ci18n: {
         "msgHappen": _("Move on"),
         "msgReply": _("Reply"),
@@ -347,11 +348,7 @@ var $exeDevice = {
     },
     onlyNumbers: function (e) {
         var valorActual = e.value;
-
-        // Reemplazar todos los caracteres que no sean números naturales con una cadena vacía
         var valorSoloNumeros = valorActual.replace(/[^0-9]/g, '');
-
-        // Actualizar el valor del cuadro de entrada de texto con solo los números naturales
         e.value = valorSoloNumeros;
 
     },
@@ -491,7 +488,7 @@ var $exeDevice = {
         });
         $('#eRMQPercentajeRelative').on('keypress', function (evt) {
             var ASCIICode = (evt.which) ? evt.which : evt.keyCode
-            if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            if (ASCIICode != 0o54 && ASCIICode != 0o56 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
                 return false;
             return true;
         });
@@ -502,7 +499,7 @@ var $exeDevice = {
         });
         $('#eRMQPercentajeAbsolute').on('keypress', function (evt) {
             var ASCIICode = (evt.which) ? evt.which : evt.keyCode
-            if (ASCIICode != 054 && ASCIICode != 056 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+            if (ASCIICode != 0o54 && ASCIICode != 0o56 && ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
                 return false;
             return true;
         });
@@ -523,7 +520,6 @@ var $exeDevice = {
         $("#eRMQEEvaluationHelpLnk").click(function () {
             $("#eRMQEEvaluationHelp").toggle();
             return false;
-
         });
     },
     setErrorType: function (type) {

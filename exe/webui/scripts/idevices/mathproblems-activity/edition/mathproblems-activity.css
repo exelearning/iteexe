@@ -195,3 +195,16 @@ label[for=gameQEActivitySCORM] {
 .GameModeLabel{
 	font-weight:normal
 }
+
+.MTOE-VariableDiv {
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.MTOE-ValuesInput {
+    flex-grow: 1;
+    min-width: 200px; 
+}
