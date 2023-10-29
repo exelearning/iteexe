@@ -260,16 +260,8 @@
     z-index: 1006;
 }
 
-.ODNP-ImageContain {
-    width: 85%;
-    height: 85%;
-    top: 7.5%;
-    left: 7.5%;
-    border-radius: 0em;
-    position: absolute;
-}
 
-.ODNP-Image {
+.ODNP-Image1 {
     position: absolute;
     width: 100%;
     width: 100%;
@@ -278,16 +270,33 @@
     background-color: white;
 }
 
-.ODNP-ImageFit {
-    width: 95%;
-    height: 95%;
-    object-fit: contain;
-    object-position: center;
+.ODNP-ImageContain  {
+    width: 90%;
+    height: 90%;
+    top: 5%;
+    left: 5%;
+    border-radius: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    top: 2.5%;
-    left: 2.5%;
-    border-radius: 0.6em;
     background-color: white;
+    display: flex;
+}
+
+.ODNP-Image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+	border-radius: .4em;
+
 }
 
 .ODNP-EText {
@@ -320,12 +329,6 @@
     -o-transform: scale(1.03);
     -webkit-transform: scale(1.03);
     transform: scale(1.03);
-}
-
-.centrar-verticalmente {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 .ODNP-Multimedia {
@@ -895,13 +898,10 @@ div:fullscreen .ODNP-Multimedia {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    overflow-y:auto
 }
 
-div:fullscreen .ODNP-Multimedia {
-    height: 100vh;
-    width: 100%;
-    max-width: 100vw;
-}
+
 .ODNP-EvaluationDivIcon{
 	display: flex;
 	justify-content: flex-start;

@@ -360,7 +360,7 @@ var $eXeItinerario = {
             </div>\
             <div class="ITNP-Multimedia" id="itnMultimedia">\
                 <img class="ITNP-Cursor" id="itnCursor" src="' + path + 'exequextcursor.gif" alt="" />\
-                <img  src="' + path + 'itinerarioHome.svg" class="ITNP-Images" id="itnImagen" alt="' + msgs.msgNoImage + '" />\
+                <img  src="' + path + 'itinerarioHome.svg" class="ITNP-Image" id="itnImagen" alt="' + msgs.msgNoImage + '" />\
                 <div class="ITNP-EText" id="itnEText"></div>\
                 <img src="' + path + 'itinerarioHome.svg" class="ITNP-Cover" id="itnCover" alt="' + msgs.msgNoImage + '" />\
                 <div class="ITNP-Video" id="itnVideo"></div>\
@@ -446,6 +446,37 @@ var $eXeItinerario = {
     </div>'
 
         return html;
+    },
+
+    centerImage: function (image) {
+        var $image = $(image),
+            wDiv =$image.parent().width() > 0 ? $image.parent().width() : 1,
+            hDiv = $image.parent().height() > 0 ? $image.parent().height() : 1,
+            naturalWidth = $image[0].naturalWidth,
+            naturalHeight = $image[0].naturalHeight,
+            varW = naturalWidth / wDiv,
+            varH = naturalHeight / hDiv,
+            wImage = wDiv,
+            hImage = hDiv,
+            xImage = 0,
+            yImage = 0;
+        if (varW > varH) {
+            wImage = parseInt(wDiv);
+            hImage = parseInt(naturalHeight / varW);
+            yImage = parseInt((hDiv - hImage) / 2);
+        } else {
+            wImage = parseInt(naturalWidth / varH);
+            hImage = parseInt(hDiv);
+            xImage = parseInt((wDiv - wImage) / 2);
+        }
+        $image.css({
+            width: wImage,
+            height: hImage,
+            position: 'absolute',
+            left: xImage,
+            top: yImage
+        });
+        $eXeItinerario.positionPointer()
     },
 
     loadDataGame: function (data, imgsLink, audioLink, version) {
@@ -1117,43 +1148,62 @@ var $eXeItinerario = {
             }
         }
     },
+    showImage: function (url) {
+		var mOptions = $eXeItinerario.options,
+			mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
+		    $cursor = $('#itnCursor'),
+			$noImage = $('#itnCover'),
+			$Image = $('#itnImagen'),
+			$Author = $('#itnAuthor');
+            $Protect = $('#itnProtector');
+        $Image.attr('alt', 'No image');
+		$cursor.hide();
+		$Image.hide();
+		$noImage.hide();
+        $Protect.hide();
+		if ($.trim(url).length == 0) {
+			$cursor.hide();
+			$Image.hide();
+			$noImage.show();
+			$Author.text('');
+			return false;
+		};
+		$Image.attr('src', ''); 
+		$Image.attr('src', url)
+			.on('load', function () {
+				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+					$cursor.hide();
+					$Image.hide();
+					$noImage.show();
+					$Author.text('');
+				} else {
+					$Image.show();
+					$cursor.show();
+					$noImage.hide();
+					$Author.text(mQuextion.author);
+					$Image.attr('alt', mQuextion.alt);
+                    $eXeItinerario.centerImage(this);
+				}
+			}).on('error', function () {
+				$cursor.hide();
+				$Image.hide();
+				$noImage.show();
+				$Author.text('');
+				return false;
+			});
+            $eXeItinerario.showMessage(0,mQuextion.author);
+	},
     refreshImageActive: function () {
         var mOptions = $eXeItinerario.options,
-            mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
-            author = '';
-        if (mOptions.gameOver) {
-            return;
-        }
-        if (typeof mQuextion == "undefined") {
+            mQuextion = mOptions.selectsGame[mOptions.activeQuestion];
+        if (mOptions.gameOver || typeof mQuextion == "undefined" ) {
             return;
         }
         if (mQuextion.type === 1) {
-
-            $('#itnImagen').prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#itnAuthor').text('');
-                    } else {
-                        var mData = $eXeItinerario.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeItinerario.drawImage(this, mData);
-                        $('#itnImagen').show();
-                        $('#itnCover').hide();
-                        alt = mQuextion.alt;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#itnCursor').css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            author = mQuextion.author;
-                            $('#itnCursor').show();
-                        }
-                    }
-                    $eXeItinerario.showMessage(0, author);
-                });
-            $('#itnImagen').attr('alt', mQuextion.alt);
+            if (mQuextion.url && mQuextion.url.length > 3 ) {
+                $('#itnCursor').hide();
+                $eXeItinerario.centerImage('#itnImagen')
+            }
         }
     },
 
@@ -1327,6 +1377,7 @@ var $eXeItinerario = {
         $eXeItinerario.startVideo('', 0, 0);
         $eXeItinerario.stopVideo();
         $eXeItinerario.stopSound();
+        $eXeItinerario.showImage('')
         $('#itnImagen').hide();
         $('#itnEText').hide();
         $('#itnCursor').hide();
@@ -1444,37 +1495,9 @@ var $eXeItinerario = {
         mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;
         $('#itnAuthor').text('');
         if (mQuextion.type === 1) {
-            $('#itnImagen').prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = $eXeItinerario.msgs.msgNoImage;
-                        $('#itnAuthor').text('');
-                    } else {
-                        var mData = $eXeItinerario.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeItinerario.drawImage(this, mData);
-                        $('#itnImagen').show();
-                        $('#itnCover').hide();
-                        $('#itnCursor').hide();
-                        alt = mQuextion.alt;
-                        author = mQuextion.author;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#itnCursor').css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $('#itnCursor').show();
-                        }
-                    }
-                    $eXeItinerario.showMessage(0, author);
-                });
-            $('#itnImagen').attr('alt', alt);
+            $eXeItinerario.showImage(mQuextion.url);
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
-            if (window.innerWidth < 401) {
-                //text = $eXeItinerario.reduceText(text);
-            }
             $('#itnEText').html(text);
             $('#itnCover').hide();
             $('#itnEText').show();
@@ -1525,6 +1548,26 @@ var $eXeItinerario = {
         $eXeItinerario.saveDataStorage();
 
     },
+    positionPointer: function() {
+		var mOptions = $eXeItinerario.options,
+			mQuextion = mOptions.selectsGame[mOptions.activeQuestion],
+		    x = parseFloat(mQuextion.x) || 0;
+		    y = parseFloat(mQuextion.y) || 0, 
+			$cursor=$('#itnCursor');
+			$cursor.hide();
+		if(x > 0 || y > 0){
+			var containerElement = document.getElementById('itnMultimedia'),
+			    containerPos = containerElement.getBoundingClientRect(),
+			    imgElement = document.getElementById('itnImagen'),
+			    imgPos = imgElement.getBoundingClientRect(),
+  		        marginTop = imgPos.top - containerPos.top,
+			    marginLeft = imgPos.left - containerPos.left,
+			    x = marginLeft + (x * imgPos.width),
+			    y = marginTop + (y * imgPos.height);
+				$cursor.show();
+				$cursor.css({ left: x, top: y, 'z-index': 30 });
+		}
+	},
     Decrypt: function (str) {
         if (!str) str = "";
         str = (str == "undefined" || str == "null") ? "" : str;
@@ -1761,39 +1804,7 @@ var $eXeItinerario = {
             'font-weight': weight,
         });
     },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
-    },
+
     ramdonOptions: function () {
         var mOptions = $eXeItinerario.options,
             l = 0,
@@ -1955,7 +1966,6 @@ var $eXeItinerario = {
         } else {
             $eXeItinerario.exitFullscreen(element);
         }
-        $eXeItinerario.refreshImageActive();
     },
     supportedBrowser: function (idevice) {
         var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);

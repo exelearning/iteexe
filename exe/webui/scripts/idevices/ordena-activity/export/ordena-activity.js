@@ -520,7 +520,7 @@ var $eXeOrdena = {
             path = $eXeOrdena.idevicePath,
             msgs = $eXeOrdena.options[instance].msgs,
             html = '';
-        html += '<div class="ODNP-MainContainer">\
+        html += '<div class="ODNP-MainContainer" id="ordenaMainContainer-'+instance+'">\
         <div class="ODNP-GameMinimize" id="ordenaGameMinimize-' + instance + '">\
             <a href="#" class="ODNP-LinkMaximize" id="ordenaLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'ordenaIcon.png"  class="ODNP-IconMinimize ODNP-Activo"  alt="">\
             <div class="ODNP-MessageMaximize" id="ordenaMessageMaximize-' + instance + '">' + msgs.msgPlayStart + '</div>\
@@ -883,8 +883,8 @@ var $eXeOrdena = {
                         </div>\
                         <div class="ODNP-CardBack">\
                             <div class="ODNP-ImageContain">\
-                                <img src="" class="ODNP-Image" data-url="' + url + '" data-x="' + x + '" data-y="' + y + '" alt="' + malt + '" />\
-                                <img class="ODNP-Cursor" src="' + $eXeOrdena.idevicePath + 'exequextcursor.gif" alt="" />\
+                               <img src="" class="ODNP-Image" data-url="' + url + '" data-x="' + x + '" data-y="' + y + '" alt="' + malt + '" />\
+                             <img class="ODNP-Cursor" src="' + $eXeOrdena.idevicePath + 'exequextcursor.gif" alt="" />\
                             </div>\
                             <div class="ODNP-EText" data-color="' + color + '" data-backcolor="' + backcolor + '">' + text + '</div>\
                             ' + saudio + '\
@@ -920,7 +920,6 @@ var $eXeOrdena = {
             mOptions.fullscreen = false;
             $eXeOrdena.exitFullscreen(element);
         }
-        $eXeOrdena.refreshCards(instance)
     },
     exitFullscreen: function () {
         if (document.exitFullscreen) {
@@ -1004,7 +1003,10 @@ var $eXeOrdena = {
             element = element || document.documentElement;
             mOptions.fullscreen = !(!document.fullscreenElement && !document.mozFullScreenElement &&
                 !document.webkitFullscreenElement && !document.msFullscreenElement);
-            $eXeOrdena.refreshCards(instance);
+                if(!mOptions.refreshCard){
+                    $eXeOrdena.refreshCards(instance);
+
+                }
         });
         $('#ordenaStartGame-' + instance).on('click', function (e) {
             e.preventDefault();
@@ -1077,7 +1079,8 @@ var $eXeOrdena = {
             $eXeOrdena.saveEvaluation(instance);
 
         });
-        $eXeOrdena.updateEvaluationIcon(instance)
+        $eXeOrdena.updateEvaluationIcon(instance);
+        mOptions.refreshCard=false;
 
     },
     checkPhraseText: function(instance){
@@ -1110,6 +1113,7 @@ var $eXeOrdena = {
     },
     nextPhrase: function (instance) {
         var mOptions = $eXeOrdena.options[instance];
+        $eXeOrdena.stopSound(instance);
         setTimeout(function () {
             $('#ordenaHistsGame-' + instance).html('');
             mOptions.active++;
@@ -1171,9 +1175,8 @@ var $eXeOrdena = {
             $card.removeClass("ODNP-CardActive flipped");
         });
     },
-    showCard: function (card, instance) {
-        var mOptions = $eXeOrdena.options[instance],
-            $card = card,
+    showCard: function (card) {
+        var $card = card,
             $noImage = $card.find('.ODNP-Cover').eq(0),
             $text = $card.find('.ODNP-EText').eq(0),
             $image = $card.find('.ODNP-Image').eq(0),
@@ -1207,19 +1210,9 @@ var $eXeOrdena = {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         $cursor.hide();
                     } else {
-                        var mData = $eXeOrdena.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeOrdena.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
+                        $eXeOrdena.positionPointerCard($cursor, x, y);
                         return true;
                     }
                 }).on('error', function () {
@@ -1233,19 +1226,10 @@ var $eXeOrdena = {
                     if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                         $cursor.hide();
                     } else {
-                        var mData = $eXeOrdena.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeOrdena.drawImage(this, mData);
                         $image.show();
                         $cursor.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
+                        $eXeOrdena.positionPointerCard($cursor, x, y);
+
                         return true;
                     }
                 }).on('error', function () {
@@ -1281,99 +1265,42 @@ var $eXeOrdena = {
 
     },
 
-    showCard1: function (card, instance) {
-        var $card = card,
-            $noImage = $card.find('.ODNP-Cover').eq(0),
-            $text = $card.find('.ODNP-EText').eq(0),
-            $image = $card.find('.ODNP-Image').eq(0),
-            $cursor = $card.find('.ODNP-Cursor').eq(0),
-            $audio = $card.find('.ODNP-LinkAudio').eq(0),
-            type = parseInt($card.data('type')),
-            x = parseFloat($image.data('x')),
-            y = parseFloat($image.data('y')),
-            url = $image.data('url'),
-            alt = $image.attr('alt') || "No disponibLe",
-            audio = $audio.data('audio') || '',
-            text = $text.html() || "",
-            color = $text.data('color'),
-            backcolor = $text.data('backcolor');
-
-        $text.hide();
-        $image.hide();
+    positionPointerCard: function($cursor, x, y) {
         $cursor.hide();
-        $audio.hide();
-        $noImage.show();
-
-        if (url.length > 3) {
-            $image.attr('alt', alt);
-            $image.show();
-            $image.prop('src', url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                        $cursor.hide();
-                    } else {
-                        var mData = $eXeOrdena.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeOrdena.drawImage(this, mData);
-                        $image.show();
-                        $cursor.hide();
-                        $noImage.hide();
-                        if (x > 0 && y > 0) {
-                            var left = Math.round(mData.x + (x * mData.w));
-                            var top = Math.round(mData.y + (y * mData.h));
-                            $cursor.css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $cursor.show();
-                        }
-                        return true;
-                    }
-                }).on('error', function () {
-                    $cursor.hide();
-                });
-            if (text.trim().length > 0) {
-                $text.show();
-                $text.css({
-                    'color': color,
-                    'background-color': $eXeOrdena.alfaBColor(backcolor),
-                });
-                $noImage.hide();
-            }
-
-
-        } else {
-            if (text.trim().length > 0) {
-                $text.show();
-                $text.css({
-                    'color': color,
-                    'background-color': backcolor,
-                });
-                $noImage.hide();
-            }
+        if(x > 0 || y > 0){
+            var parentClass = '.ODNP-ImageContain',
+                siblingClass ='.ODNP-Image',
+			    containerElement= $cursor.parents(parentClass).eq(0),
+                imgElement =$cursor.siblings(siblingClass).eq(0),
+                containerPos=containerElement.offset(),
+                imgPos = imgElement.offset(),
+                marginTop = imgPos.top - containerPos.top,
+                marginLeft = imgPos.left - containerPos.left,
+                mx = marginLeft + (x * imgElement.width()),
+                my = marginTop + (y * imgElement.height());
+            $cursor.css({ left: mx, top: my, 'z-index': 30 });
+            $cursor.show();
         }
+	},
 
-        $audio.removeClass('ODNP-LinkAudioBig')
-        if (audio.length > 0) {
-            if (url.trim().length == 0 && text.trim().length == 0) {
-                $audio.addClass('ODNP-LinkAudioBig')
-            }
-            $audio.show();
-
-        }
-
-    },
 
     alfaBColor: function (bcolor) {
         var newBGColor = bcolor.replace('rgb', 'rgba').replace(')', ',.8)'); //rgba(100,100,100,.8)
         return newBGColor
     },
+
     refreshCards: function (instance) {
         var mOptions = $eXeOrdena.options[instance],
-            $cards = $('#ordenaMultimedia-' + instance).find('.ODNP-CardDraw');
+            $flcds = $('#ordenaMultimedia-' + instance).find('.ODNP-CardDraw')
         mOptions.refreshCard = true;
         $eXeOrdena.setSize(instance);
-        $cards.each(function () {
-            $eXeOrdena.showCard($(this), instance)
+        $flcds.each(function () {
+            var $card= $(this),
+                $imageF = $card.find('.ODNP-Image').eq(0),
+                $cursorF = $card.find('.ODNP-Cursor').eq(0),
+                xF = parseFloat($imageF.data('x')) || 0,
+                yF = parseFloat($imageF.data('y')) || 0;
+            $eXeOrdena.positionPointerCard($cursorF, xF, yF)
         });
         mOptions.refreshCard = false;
     },
@@ -1513,11 +1440,11 @@ var $eXeOrdena = {
 
 
     },
-    initCards: function (instance) {
 
+    initCards: function (instance) {
         var $cards = $('#ordenaMultimedia-' + instance).find('.ODNP-CardDraw');
         $cards.each(function (i) {
-            $eXeOrdena.showCard($(this), instance);
+            $eXeOrdena.showCard($(this));
         });
         var html = $('#ordenaMultimedia-' + instance).html(),
             latex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(html);
@@ -1578,17 +1505,20 @@ var $eXeOrdena = {
         }
         mOptions.gameStarted = true;
     },
+
     uptateTime: function (tiempo, instance) {
         var mOptions = $eXeOrdena.options[instance];
         if (mOptions.time == 0) return;
         var mTime = $eXeOrdena.getTimeToString(tiempo);
         $('#ordenaPTime-' + instance).text(mTime);
     },
+
     getTimeToString: function (iTime) {
         var mMinutes = parseInt(iTime / 60) % 60;
         var mSeconds = iTime % 60;
         return (mMinutes < 10 ? "0" + mMinutes : mMinutes) + ":" + (mSeconds < 10 ? "0" + mSeconds : mSeconds);
     },
+ 
     gameOver: function (type, instance) {
         var mOptions = $eXeOrdena.options[instance];
         if (!mOptions.gameStarted) {
@@ -1613,7 +1543,6 @@ var $eXeOrdena = {
         $eXeOrdena.showFeedBack(instance);
     },
 
-
     showFeedBack: function (instance) {
         var mOptions = $eXeOrdena.options[instance];
         var puntos = mOptions.hits * 100 / mOptions.phrasesGame.length;
@@ -1627,8 +1556,8 @@ var $eXeOrdena = {
             }
         }
     },
-    isMobile: function () {
 
+    isMobile: function () {
         return (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/BlackBerry/i) ||
             navigator.userAgent.match(/iPhone|iPad|iPod/i) || navigator.userAgent.match(/Opera Mini/i) ||
             navigator.userAgent.match(/IEMobile/i))
@@ -1842,39 +1771,6 @@ var $eXeOrdena = {
             $('#ordenaMesasgeEnd-' + instance).css({
                 'color': color
             });
-        }
-    },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
         }
     },
     supportedBrowser: function (idevice) {

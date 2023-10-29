@@ -1600,11 +1600,11 @@ var $exeDevice = {
         $exeDevice.selectsGame = game.selectsGame;
         $("#itnCodeTest").val(game.codeTest);
         $("#itnMessageCodeTest").val(game.messageCodeTest);
-        $exeDevice.showQuestion($exeDevice.active);
         $exeDevice.updateEvaluationType(game.evaluationType, 0, game.ideviceType);
         $exeDevice.updateIDeviceType(game.ideviceType);
         $exeDevice.showTimesQuestions(game.useTime)
         $('#itnEHasFeedBack').prop('checked', game.feedback);
+        $exeDevice.showQuestion($exeDevice.active);
 
 
     },
@@ -1664,6 +1664,7 @@ var $exeDevice = {
             var et = parseInt($('input[name=itievaluation]:checked').val()),
                 num = parseInt($('input[name=itiname]:checked').val());
             $exeDevice.updateEvaluationType(et, num, idtype);
+            
         } else if (idtype == 2) {
             $('#itnEIEPasswordDiv').css('display', 'flex');
             $('#itnEIEPasswordDiv').show();
@@ -2663,6 +2664,9 @@ var $exeDevice = {
         $('#gameQEIdeviceForm').on('click', 'input.ITNE-IDeviceType', function (e) {
             var number = parseInt($(this).val());
             $exeDevice.updateIDeviceType(number);
+            if(number == 1){
+                $exeDevice.showQuestion($exeDevice.active)
+            }
         });
         $('#gameQEIdeviceForm').on('click', 'input.ITNE-RepeatTest', function (e) {
             var type = parseInt($(this).val());

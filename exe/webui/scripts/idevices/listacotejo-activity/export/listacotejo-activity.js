@@ -334,7 +334,7 @@ var $eXeListaCotejo = {
         ct += mOptions.msgs.msgInProgress + ": " + en_proceso + "/" +  total_items + ".";
       }
       if (completados == 0 && en_proceso == 0) {
-        ct = mOptions.msgs.msgtaskNumber + ": " + total_items+ ".";
+        ct = mOptions.msgs.msgtaskNumber + ": " + total_items;
       }
       $("#ctjCounter-" + instance).text(ct);
       $("#ctjCounter-" + instance).show();

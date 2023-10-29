@@ -501,7 +501,7 @@ var $exeDevice = {
                    <label >X:</label>\
                    <input id="ordenaEX-' + $exeDevice.activeID + '" class="ODNE-EX" type="text" value="0" />\
                    <label >Y:</label>\
-                   <input id="ordenaEY' + $exeDevice.activeID + '" class="ODNE-EY" type="text" value="0" />\
+                   <input id="ordenaEY-' + $exeDevice.activeID + '" class="ODNE-EY" type="text" value="0" />\
            </div>\
            <div class="ODNE-EAuthorAlt"  id="ordenaEAuthorAlt-' + $exeDevice.activeID + '">\
                <div class="ODNE-EInputAuthor">\
@@ -595,6 +595,7 @@ var $exeDevice = {
         p.eText = $card.find('.ODNE-EText').eq(0).val();
         p.color = $card.find('.ODNE-EColor').eq(0).val();
         p.backcolor = $card.find('.ODNE-EBackColor').eq(0).val();
+
         return p;
 
     },
@@ -1009,7 +1010,7 @@ var $exeDevice = {
 
 
 
-    valplaySound: function (selectedFile) {
+    playSound: function (selectedFile) {
         var selectFile = $exeDevice.extractURLGD(selectedFile);
         $exeDevice.playerAudio = new Audio(selectFile);
         $exeDevice.playerAudio.play().catch(error => console.error("Error playing audio:", error));
@@ -1542,8 +1543,6 @@ var $exeDevice = {
         } else {
             $('#ordenaFixedHeaders').hide();
         }
-        
-
     },
     exportGame: function () {
         var dataGame = this.validateData();
