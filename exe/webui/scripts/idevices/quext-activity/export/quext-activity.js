@@ -394,7 +394,7 @@ var $eXeQuExt = {
             </div>\
             <div class="gameQP-Multimedia" id="quextMultimedia-' + instance + '">\
                 <img class="gameQP-Cursor" id="quextCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="" />\
-                <img  src="" class="gameQP-Images" id="quextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <img  src="" class="gameQP-Images" id="quextImage-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-EText" id="quextEText-' + instance + '"></div>\
                 <img src="' + path + 'quextHome.png" class="gameQP-Cover" id="quextCover-' + instance + '" alt="' + msgs.msgNoImage + '" />\
                 <div class="gameQP-Video" id="quextVideo-' + instance + '"></div>\
@@ -402,16 +402,16 @@ var $eXeQuExt = {
                 <div class="gameQP-Protector" id="quextProtector-' + instance + '"></div>\
                 <a href="#" class="gameQP-LinkAudio" id="quextLinkAudio-' + instance + '" title="' + msgs.msgAudio + '"><img src="' + path + 'exequextaudio.png" class="gameQP-Activo" alt="' + msgs.msgAudio + '">\</a>\
                 <div class="gameQP-GameOver" id="quextGamerOver-' + instance + '">\
-                        <div class="gameQP-DataImage">\
-                            <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="quextHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
-                            <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="quextLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
-                        </div>\
-                        <div class="gameQP-DataScore">\
-                            <p id="quextOverScore-' + instance + '">Score: 0</p>\
-                            <p id="quextOverHits-' + instance + '">Hits: 0</p>\
-                            <p id="quextOverErrors-' + instance + '">Errors: 0</p>\
-                        </div>\
+                <div class="gameQP-DataImage">\
+                    <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="quextHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
+                    <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="quextLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
                 </div>\
+                <div class="gameQP-DataScore">\
+                    <p id="quextOverScore-' + instance + '">Score: 0</p>\
+                    <p id="quextOverHits-' + instance + '">Hits: 0</p>\
+                    <p id="quextOverErrors-' + instance + '">Errors: 0</p>\
+                </div>\
+            </div>\
             </div>\
             <div class="gameQP-AuthorLicence" id="quextAuthorLicence-' + instance + '">\
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
@@ -942,7 +942,6 @@ var $eXeQuExt = {
         });
         mOptions.localPlayer = document.getElementById('quextVideoLocal-' + instance);
         mOptions.localPlayerIntro = document.getElementById('quextVideoIntroLocal-' + instance);
-        $('videoquextGamerOver-' + instance).css('display', 'flex');
         $('#quextLinkMaximize-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $("#quextGameContainer-" + instance).show()
@@ -965,7 +964,7 @@ var $eXeQuExt = {
         $('#quextCodeAccessDiv-' + instance).hide();
         $('#quextVideo-' + instance).hide();
         $('#quextVideoLocal-' + instance).hide();
-        $('#quextImagen-' + instance).hide();
+        $('#quextImage-' + instance).hide();
         $('#quextCursor-' + instance).hide();
         $('#quextCover-' + instance).show();
         $('#quextCodeAccessButton-' + instance).on('click touchstart', function (e) {
@@ -1011,7 +1010,6 @@ var $eXeQuExt = {
                 document.msFullscreenElement ||
                 document.mozFullScreenElement ||
                 document.webkitFullscreenElement;
-            $eXeQuExt.refreshImageActive(instance);
         });
         $('#quextInstruction-' + instance).text(mOptions.instructions);
         $('#quextSendScore-' + instance).attr('value', mOptions.textButtonScorm);
@@ -1094,43 +1092,68 @@ var $eXeQuExt = {
     },
     refreshImageActive: function (instance) {
         var mOptions = $eXeQuExt.options[instance],
-            mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
-            author = '';
-        if (mOptions.gameOver) {
-            return;
-        }
-        if (typeof mQuextion == "undefined") {
+            mQuextion = mOptions.questionsGame[mOptions.activeQuestion];
+        if (typeof mQuextion == "undefined" ) {
             return;
         }
         if (mQuextion.type === 1) {
-            $('#quextImagen-' + instance).prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#quextAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeQuExt.drawImage(this, mData);
-                        $('#quextImagen-' + instance).show();
-                        $('#quextCover-' + instance).hide();
-                        alt = mQuextion.alt;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#quextCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            author = mQuextion.author;
-                            $('#quextCursor-' + instance).show();
-                        }
-                    }
-                    $eXeQuExt.showMessage(0, author, instance);
-                });
-            $('#quextImagen-' + instance).attr('alt', mQuextion.alt);
+            if (mQuextion.url && mQuextion.url.length > 3 ) {
+                $('#quextCursor-' + instance).hide();
+                $eXeQuExt.centerImage(instance);
+            }
         }
 
     },
+    centerImage: function (instance) {
+        var $image = $('#quextImage-' + instance),
+            wDiv =$image.parent().width() > 0 ?  $image.parent().width() : 1,
+            hDiv = $image.parent().height() > 0 ?  $image.parent().height() : 1,
+            naturalWidth = $image[0].naturalWidth,
+            naturalHeight = $image[0].naturalHeight,
+            varW = naturalWidth / wDiv,
+            varH = naturalHeight / hDiv,
+            wImage = wDiv,
+            hImage = hDiv,
+            xImage = 0,
+            yImage = 0;
+        if (varW > varH) {
+            wImage = parseInt(wDiv);
+            hImage = parseInt(naturalHeight / varW);
+            yImage = parseInt((hDiv - hImage) / 2);
+        } else {
+            wImage = parseInt(naturalWidth / varH);
+            hImage = parseInt(hDiv);
+            xImage = parseInt((wDiv - wImage) / 2);
+        }
+        $image.css({
+            width: wImage,
+            height: hImage,
+            position: 'absolute',
+            left: xImage,
+            top: yImage
+        });
+        $eXeQuExt.positionPointer(instance)
+    },
+    positionPointer: function(instance) {
+		var mOptions = $eXeQuExt.options[instance],
+			mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
+		    x = parseFloat(mQuextion.x) || 0;
+		    y = parseFloat(mQuextion.y) || 0, 
+			$cursor=$('#quextCursor-' + instance);
+			$cursor.hide();
+		if(x > 0 || y > 0){
+			var containerElement = document.getElementById('quextMultimedia-' + instance),
+			    containerPos = containerElement.getBoundingClientRect(),
+			    imgElement = document.getElementById('quextImage-' + instance),
+			    imgPos = imgElement.getBoundingClientRect(),
+  		        marginTop = imgPos.top - containerPos.top,
+			    marginLeft = imgPos.left - containerPos.left,
+			    x = marginLeft + (x * imgPos.width),
+			    y = marginTop + (y * imgPos.height);
+				$cursor.show();
+				$cursor.css({ left: x, top: y, 'z-index': 30 });
+		}
+	},
     enterCodeAccess: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#quextCodeAccessE-' + instance).val().toLowerCase()) {
@@ -1205,9 +1228,10 @@ var $eXeQuExt = {
         $quextOverHits.html('<strong>' + msgs.msgHits + ':</strong> ' + mOptions.hits);
         $quextOverErrors.html('<strong>' + msgs.msgErrors + ':</strong> ' + mOptions.errors);
         if (mOptions.gameMode == 2) {
-            $('#quextGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
+            $('#quextMultimedia-' + instance).find('.gameQP-DataGameScore').hide();
         }
-        $quextGamerOver.show();
+            $quextGamerOver.show();
+
     },
     startGame: function (instance) {
         var mOptions = $eXeQuExt.options[instance];
@@ -1289,16 +1313,19 @@ var $eXeQuExt = {
         mOptions.gameStarted = false;
         mOptions.gameActived = false;
         clearInterval(mOptions.counterClock);
+        $eXeQuExt.showImageNeo('',instance);
         $('#quextVideo-' + instance).hide();
         $('#quextVideoLocal-' + instance).hide();
         $('#quextLinkAudio-' + instance).hide();
         $eXeQuExt.startVideo('', 0, 0, instance, 0);
         $eXeQuExt.stopVideo(instance);
         $eXeQuExt.stopSound(instance);
-        $('#quextImagen-' + instance).hide();
+        
+        $('#quextImage-' + instance).hide();
         $('#quextEText-' + instance).hide();
         $('#quextCursor-' + instance).hide();
         $('#quextCover-' + instance).hide();
+       
         var message = type === 0 ? mOptions.msgs.msgAllQuestions : mOptions.msgs.msgLostLives;
         $eXeQuExt.showMessage(0, message, instance);
         $eXeQuExt.showScoreGame(type, instance);
@@ -1321,6 +1348,7 @@ var $eXeQuExt = {
                 $eXeQuExt.initialScore = score;
             }
         }
+
         $eXeQuExt.saveEvaluation(instance);
         clearInterval(mOptions.timeUpdateInterval);
         clearInterval(mOptions.timeUpdateIntervalIntro);
@@ -1353,7 +1381,7 @@ var $eXeQuExt = {
             alt = '';
         $('#quextPTime-' + instance).text(tiempo);
         $('#quextQuestion-' + instance).text(mQuextion.quextion);
-        $('#quextImagen-' + instance).hide();
+        $('#quextImage-' + instance).hide();
         $('#quextCover-' + instance).show();
         $('#quextEText-' + instance).hide();
         $('#quextVideo-' + instance).hide();
@@ -1376,37 +1404,9 @@ var $eXeQuExt = {
         var endSonido = parseInt(q.silentVideo) + parseInt(q.tSilentVideo);
         mOptions.endSilent = endSonido > q.fVideo ? q.fVideo : endSonido;
         if (mQuextion.type === 1) {
-            $("#quextImagen-" + instance).prop('src', mQuextion.url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#quextPAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeQuExt.drawImage(this, mData);
-                        $('#quextImagen-' + instance).show();
-                        $('#quextCover-' + instance).hide();
-                        $('#quextCursor-' + instance).hide();
-                        alt = mQuextion.alt;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#quextCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $('#quextCursor-' + instance).show();
-                        }
-                    }
-                    author = mQuextion.author;
-                    $eXeQuExt.showMessage(0, author, instance);
-                });
-            $('#quextImagen-' + instance).attr('alt', alt);
+            $eXeQuExt.showImageNeo(mQuextion.url, instance)
         } else if (mQuextion.type === 3) {
             var text = unescape(mQuextion.eText);
-            if (window.innerWidth < 401) {
-                //text = $eXeQuExt.reduceText(text);
-            }
             $("#quextEText-" + instance).html(text);
             $('#quextEText-' + instance).show();
             $('#quextCover-' + instance).hide();
@@ -1452,6 +1452,51 @@ var $eXeQuExt = {
             $eXeQuExt.updateLatex('quextQuestionDiv-' + instance)
         }
     },
+    showImageNeo: function (url, instance) {
+		var mOptions = $eXeQuExt.options[instance],
+			mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
+		    $cursor = $('#quextCursor-' + instance),
+			$noImage = $('#quextCover-' + instance),
+			$Image = $('#quextImage-' + instance),
+			$Author = $('#quextAuthor-' + instance);
+            $Protect = $('#quextProtector-' + instance);
+		$Image.attr('alt', 'No image');
+		$cursor.hide();
+		$Image.hide();
+		$noImage.hide();
+        $Protect.hide();
+		if ($.trim(url).length == 0) {
+			$cursor.hide();
+			$Image.hide();
+			$noImage.show();
+			$Author.text('');
+			return false;
+		};
+		$Image.attr('src', ''); 
+		$Image.attr('src', url)
+			.on('load', function () {
+				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+					$cursor.hide();
+					$Image.hide();
+					$noImage.show();
+					$Author.text('');
+				} else {
+					$Image.show();
+					$cursor.show();
+					$noImage.hide();
+					$Author.text(mQuextion.author);
+					$Image.attr('alt', mQuextion.alt);
+					$eXeQuExt.centerImage(instance);
+				}
+			}).on('error', function () {
+				$cursor.hide();
+				$Image.hide();
+				$noImage.show();
+				$Author.text('');
+				return false;
+			});
+            $eXeQuExt.showMessage(0,mQuextion.author , instance);
+	},
     getURLVideoMediaTeca: function (url) {
         if (url) {
             var matc = url.indexOf("https://mediateca.educa.madrid.org/video/") != -1;
@@ -1522,7 +1567,7 @@ var $eXeQuExt = {
         }
         var mActiveQuestion = $eXeQuExt.updateNumberQuestion(mOptions.activeQuestion, instance);
         if (mActiveQuestion === -10) {
-            $('quextPNumber-' + instance).text('0');
+            $('#quextPNumber-' + instance).text('0');
             $eXeQuExt.gameOver(0, instance);
             return;
         } else {
@@ -1711,39 +1756,7 @@ var $eXeQuExt = {
         });
         $('#quextPAuthor-' + instance).show();
     },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
-    },
+
     ramdonOptions: function (instance) {
         var mOptions = $eXeQuExt.options[instance],
             arrayRamdon = mOptions.question.options.slice(0, mOptions.question.numberOptions),
@@ -1838,7 +1851,6 @@ var $eXeQuExt = {
         } else {
             $eXeQuExt.exitFullscreen(element);
         }
-        $eXeQuExt.refreshImageActive(instance);
     },
     supportedBrowser: function (idevice) {
         var sp = !(window.navigator.appName == 'Microsoft Internet Explorer' || window.navigator.userAgent.indexOf('MSIE ') > 0);
