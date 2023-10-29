@@ -234,47 +234,47 @@
 
 /* Multimedia */
 
-.rosco-Multimedia {
+
+
+.rosco-MultimediaNeo {
     position: relative;
-    width: 90%;
-    position: relative;
-    background-color: transparent;
+    width: 100%;
+    padding-top: 56.25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5em;
     overflow: hidden;
-    border-radius: 0.7em;
-    margin: 0.3em auto;
 }
 
-.rosco-Multimedia:before {
-    content: '';
+
+.rosco-ImageNeo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
     display: block;
-    padding-top: 56%;
+    border-radius: .4em;
 }
 
 .rosco-Protector, .rosco-NoImage {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
-    margin: auto;
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
-.rosco-Image, .rosco-GameOver {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    border-radius: 0.7em;
-    text-decoration: none;
-    border: 0px;
-}
 
 .rosco-Protector {
     opacity: 0.00001;
-    z-index: 1000;
+    z-index: 15;
     background-color: white;
 }
 
@@ -283,7 +283,7 @@
     left: 0;
     top: 0;
     position: absolute;
-    z-index: 1000000;
+    z-index: 30;
     display: none;
 }
 
@@ -293,7 +293,7 @@
 	position: absolute;
 	right: 3px;
 	width: 2em;
-	z-index: 1005;
+	z-index: 20;
 }
 
 /* Author */
@@ -437,7 +437,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    z-index: 1000000001;
+    z-index: 40;
     background-color: rgb(255, 255, 255, 0.1)
 }
 
@@ -545,7 +545,7 @@ a.rosco-ModeBoard, a.rosco-ModeBoardShow {
 	font-size: 1em;
 	padding: 0.6em 1em;
 	position:relative;
-	z-index:100;
+	z-index:10;
 	cursor: pointer;
 	-moz-user-select: none;
 	-ms-user-select: none;
@@ -576,7 +576,100 @@ a.rosco-ModeBoardShow {
     right:0
 }
 
-/* iconos */
+
+
+/* Estilos para las palabras */
+.rosco-correct {
+    color: #00a300;
+}
+
+.rosco-incorrect {
+    color: red;
+}
+
+.rosco-unanswered{
+    color: #5877c6;
+
+}
+
+.rosco-bg-gray-1 {
+    background-color: #f9f9f9; /* Un gris suave */
+}
+
+.rosco-bg-gray-2 {
+    background-color: #e6e6e6; /* Otro gris suave */
+}
+
+.rosco-Words {
+    width: 100%; 
+    margin: auto; 
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); 
+    text-align: left; 
+    max-height: 36;
+    overflow-y: auto;
+}
+
+.rosco-Words p{
+    padding: 1em;
+}
+
+.rosco-Words p span{
+    color: black;
+    font-weight: 800;
+    padding-left: 0.2em;
+    padding-left: 0.1em;
+}
+
+.rosco-ShowWordsDiv {
+    display: none;
+    width: 100%;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+
+}
+.rosco-ShowAnswerDiv {
+    margin-top:0.7em;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.rosco-ShowAnswerDiv a {
+    display: block;
+    text-decoration: none;
+}
+
+.rosco-ShowAnswerDiv a.rosco-ModeShow {
+    color:#000
+}
+
+.rosco-ShowAnswerDiv a:hover {
+    text-decoration: underline;
+}
+a.rosco-WordsClose {
+    display: block;
+    text-align: center; 
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+a.rosco-WordsClose:hover {
+    background-color: #45a049;
+}
+.rosco-audioicon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    float: right; 
+}
+
 
 .rosco-GameContainer .exeQuextIcons {
     width: 1.6em;
@@ -717,6 +810,9 @@ a.rosco-ModeBoardShow {
 .rosco-EvaluationDivIcon span{
 	font-size: 0.9em;
 }
+
+
+
 
 @-moz-keyframes rosco-parpadeo {
     0% {
@@ -948,19 +1044,19 @@ div:fullscreen .rosco-Canvas {
     height: 100%;
 }
 
-div:-o-full-screen .rosco-Multimedia {
+div:-o-full-screen .rosco-MultimediaNeo {
     max-width: 100%;
 
 }
 
-div:-webkit-full-screen .rosco-Multimedia {
+div:-webkit-full-screen .rosco-MultimediaNeo {
     max-width: 100%;
 }
-div:-moz-full-screen .rosco-Multimedia {
+div:-moz-full-screen .rosco-MultimediaNeo {
     max-width: 100%;
 }
 
-div:-o-full-screen .rosco-Multimedia {
+div:-o-full-screen .rosco-MultimediaNeo {
     max-width: 100%;
 }
 
