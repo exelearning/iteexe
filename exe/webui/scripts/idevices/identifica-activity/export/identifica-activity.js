@@ -378,12 +378,12 @@ var $eXeIdentifica = {
                         <div class="IDFP-card">\
                             <div class="IDFP-card-inner" id="idfcardinner-' + instance + '">\
                                 <div class="IDFP-card-front">\
-                                    <div class="IDFP-ImageContain">\
+                                    <div class="IDFP-ImageContain" >\
                                         <img src="' + path + 'identificaHome.png" class="IDFP-Image  IDFP-Image-Front" alt="" />\
                                     </div>\
                                 </div>\
                                 <div class="IDFP-card-back">\
-                                    <div class="IDFP-ImageContain">\
+                                    <div class="IDFP-ImageContain" id="idfImageContainerBack-' + instance + '">\
                                         <img src="" id="idfBackImage-' + instance + '" class="IDFP-Image IDFP-Image-Back" alt="" />\
                                         <img class="IDFP-Cursor IDFP-Cursor-Back" id="idfBackCursor-' + instance + '" src="' + path + 'exequextcursor.gif" alt="Cursor" />\
                                         <a href="#" class="IDFP-LinkAudio IDFP-LinkAudio-Back" id="idfBackAudio-' + instance + '"   title="Audio"><img src="' + path + 'exequextaudio.png" class="IDFP-Audio" alt="Audio"></a>\
@@ -648,9 +648,6 @@ var $eXeIdentifica = {
         window.addEventListener('unload', function () {
             $eXeIdentifica.endScorm();
         });
-        window.addEventListener('resize', function () {
-            $eXeIdentifica.refreshImageActive(instance);
-        });
         $('#idfLinkMaximize-' + instance).on('click touchstart', function (e) {
             e.preventDefault();
             $("#idfGameContainer-" + instance).show()
@@ -698,9 +695,7 @@ var $eXeIdentifica = {
             $('#idfMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $eXeIdentifica.showCubiertaOptions(0, instance)
         }
-        $(document).on("webkitfullscreenchange mozfullscreenchange fullscreenchange MSFullscreenChange", function (e) {
-            $eXeIdentifica.refreshImageActive(instance);
-        });
+
         $('#idfInstruction-' + instance).text(mOptions.instructions);
         $('#idfSendScore-' + instance).attr('value', mOptions.textButtonScorm);
         $('#idfSendScore-' + instance).hide();
@@ -774,6 +769,9 @@ var $eXeIdentifica = {
             $eXeIdentifica.showClue(instance)
         });
         $('#idfUseClue-' + instance).hide();
+        window.addEventListener('resize', function () {
+            $eXeIdentifica.refreshImageActive(instance);
+        });
         $eXeIdentifica.updateEvaluationIcon(instance)
     },
 
@@ -891,38 +889,32 @@ var $eXeIdentifica = {
     },
     refreshImageActive: function (instance) {
         var mOptions = $eXeIdentifica.options[instance],
-            mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
-            author = '';
-        if (mOptions.gameOver) {
+            mQuextion = mOptions.questionsGame[mOptions.activeQuestion];      
+        if (mOptions.gameOver ||typeof mQuextion == "undefined" ) {
             return;
         }
-        if (typeof mQuextion == "undefined") {
-            return;
-        }
-        $('#idfImagenBack-' + instance).prop('src', mQuextion.url)
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    alt = mOptions.msgs.msgNoImage;
-                    $('#idfAuthor-' + instance).text('');
-                } else {
-                    var mData = $eXeIdentifica.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeIdentifica.drawImage(this, mData);
-                    alt = mQuextion.alt;
-                    if (mQuextion.x > 0 || mQuextion.y > 0) {
-                        var left = mData.x + (mQuextion.x * mData.w);
-                        var top = mData.y + (mQuextion.y * mData.h);
-                        $('#idfCursor-' + instance).css({
-                            'left': left + 'px',
-                            'top': top + 'px'
-                        });
-                        author = mQuextion.author;
-                        $('#idfCursor-' + instance).show();
-                    }
-                }
-                $eXeIdentifica.showMessage(0, author, instance);
-            });
-        $('#idfImagenBack-' + instance).attr('alt', mQuextion.alt);
+        $eXeIdentifica.positionPointerCard(instance)
     },
+    positionPointerCard: function(instance) {
+		var mOptions = $eXeIdentifica.options[instance],
+			mQuextion = mOptions.questionsGame[mOptions.activeQuestion],
+		    x = parseFloat(mQuextion.x) || 0;
+		    y = parseFloat(mQuextion.y) || 0, 
+			$cursor=$('#idfBackCursor-' + instance);
+			$cursor.hide();
+		if(x > 0 || y > 0){
+			var containerElement = document.getElementById('idfImageContainerBack-' + instance),
+			    containerPos = containerElement.getBoundingClientRect(),
+			    imgElement = document.getElementById('idfBackImage-' + instance),
+			    imgPos = imgElement.getBoundingClientRect(),
+  		        marginTop = imgPos.top - containerPos.top,
+			    marginLeft = imgPos.left - containerPos.left,
+			    x = marginLeft + (x * imgPos.width),
+			    y = marginTop + (y * imgPos.height);
+				$cursor.show();
+				$cursor.css({ left: x, top: y, 'z-index': 30 });
+		}
+	},
     enterCodeAccess: function (instance) {
         var mOptions = $eXeIdentifica.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#idfCodeAccessE-' + instance).val().toLowerCase()) {
@@ -1091,18 +1083,8 @@ var $eXeIdentifica = {
                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                     $cursor.hide();
                 } else {
-                    var mData = $eXeIdentifica.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeIdentifica.drawImage(this, mData);
                     $image.show();
-                    if (q.x > 0 && q.y > 0) {
-                        var left = Math.round(mData.x + (q.x * mData.w));
-                        var top = Math.round(mData.y + (q.y * mData.h));
-                        $cursor.css({
-                            'left': left + 'px',
-                            'top': top + 'px'
-                        });
-                        $cursor.show();
-                    }
+                    $eXeIdentifica.positionPointerCard(instance)
                     return true;
                 }
             }).on('error', function () {
@@ -1339,7 +1321,6 @@ var $eXeIdentifica = {
         } else {
             $eXeIdentifica.exitFullscreen(element);
         }
-        $eXeIdentifica.refreshImageActive(instance);
     },
 
     supportedBrowser: function (idevice) {

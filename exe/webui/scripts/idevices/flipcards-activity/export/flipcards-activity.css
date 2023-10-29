@@ -229,25 +229,32 @@
     margin: 1em;
 }
 
-.FLCDSP-ImageContain {
+.FLCDSP-ImageContain  {
     width: 96%;
     height: 96%;
     top: 2%;
     left: 2%;
-    border-radius: 0.6em;
+    border-radius: 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     background-color: white;
+    display: flex;
 }
 
 .FLCDSP-Image {
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
-    background-color: white;
-    border-radius: 0.6em;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+	border-radius: .4em;
 
 }
 
@@ -299,14 +306,6 @@
     -o-transform: scale(1.03);
     -webkit-transform: scale(1.03);
     transform: scale(1.03);
-}
-.FLCDSP-ImageContainMemory {
-    width: 96%;
-    height: 96%;
-    top: 2%;
-    left: 2%;
-    border-radius: 0em;
-    position: absolute;
 }
 
 .FLCDSP-CardContainerMemory {
@@ -464,13 +463,35 @@
     font-weight: 500;
 }
 
+
+.FLCDSP-ImageContainMemory {
+    width: 96%;
+    height: 96%;
+    top: 2%;
+    left: 2%;
+    border-radius: 0.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    background-color: white;
+    display: flex;
+}
+
+
 .FLCDSP-ImageMemory {
     position: absolute;
-    width: 100%;
-    width: 100%;
     top: 0;
     left: 0;
-    background-color: white;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+	border-radius: .2em;
+
 }
 .FLCDSP-CursorMemory {
     left: 0;
@@ -519,19 +540,18 @@
     display: none;
 }
 
-.FLCDSP-LinkAudio img {
+.FLCDSP-LinkAudio img, .FLCDSP-LinkAudioMemory img {
     width: 100%;
     height: 100%;
 }
 
-.FLCDSP-LinkAudio {
-    top: 0.2em;
+.FLCDSP-LinkAudio, .FLCDSP-LinkAudioMemory  {
+    
     position: absolute;
-    left: 0.2em;
-    width: 3em;
-    height: 3em;
-    max-height: 3em;
-    max-width: 3em;
+    left: 0.1em;
+    top: 0.1em;
+    width: 2em;
+    height: 2em;
     min-width: 1em;
     min-height: 1em;
     display: block;
@@ -540,11 +560,9 @@
 }
 
 
-.FLCDSP-LinkAudioBig {
-    width: 150px;
-    height: 150px;
-    max-height: 250px;
-    max-width: 250px;
+.FLCDSP-LinkAudioBig, .FLCDSP-LinkAudioMemoryBig {
+    width: 100px;
+    height: 100px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

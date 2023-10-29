@@ -545,7 +545,6 @@ var $exeDevice = {
         p.colorBk = $('#flipcardsEColorBack').val();
         p.backcolorBk = $('#flipcardsEBgColorBack').val();
         p.eTextBk = $exeDevice.encodeURIComponentSafe($('#flipcardsETextBack').val());
-
         if (p.eText.length == 0 && p.url.length == 0 && p.audio.length == 0) {
             message = msgs.msgCompleteData;
         }
@@ -1588,7 +1587,7 @@ var $exeDevice = {
         var $cursor = $('#flipcardsECursorBack'),
             $image = $('#flipcardsEImageBack'),
             $x = $('#flipcardsEXBack'),
-            $y = $('#flipcardsEYCack');
+            $y = $('#flipcardsEYBack');
         var posX = epx - $image.offset().left,
             posY = epy - $image.offset().top,
             wI = $image.width() > 0 ? $image.width() : 1,
