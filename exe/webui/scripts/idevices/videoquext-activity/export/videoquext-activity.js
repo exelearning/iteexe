@@ -481,9 +481,9 @@ var $eXeVideoQuExt = {
                 <div class="sr-av">' + msgs.msgClue + ':</div>\
                 <p class="gameQP-PShowClue gameQP-parpadea" id="vquextPShowClue-' + instance + '"></p>\
             </div>\
-            <div class="gameQP-Multimedia" id="vquextMultimedia-' + instance + '">\
-                <img  src="' + path + 'quextImageVideo.png" class="gameQP-Images" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
-                <img src="' + path + 'vquextHome.png" class="gameQP-Images" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
+            <div class="gameQP-MultimediaNeo" id="vquextMultimedia-' + instance + '">\
+                <img src="' + path + 'quextImageVideo.png" class="gameQP-ImageNeo" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <img src="' + path + 'vquextHome.png" class="gameQP-ImageNeo" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
                 <video class="gameQP-Video" id="vquextVideoLocal-' + instance + '"></video>\
                 <div class="gameQP-Video" id="vquextVideo-' + instance + '"></div>\
                 <div class="gameQP-Protector" id="vquextProtector-' + instance + '"></div>\
@@ -1233,15 +1233,6 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.uptateTime(0, instance);
     },
     refreshImageActive: function (instance) {
-        $("#vquextCover-" + instance).prop('src', $eXeVideoQuExt.idevicePath + 'vquextHome.png')
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                    console.log('Error loading image');
-                } else {
-                    var mData = $eXeVideoQuExt.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $eXeVideoQuExt.drawImage(this, mData);
-                }
-            });
         $('#vquextProgressBar-' + instance).width($('#vquextVideo-' + instance).width());
         $eXeVideoQuExt.createPointsVideo(instance);
     },
@@ -1931,39 +1922,7 @@ var $eXeVideoQuExt = {
             'color': color
         });
     },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
-    },
+   
     ramdonOptions: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             arrayRamdon = mOptions.question.options.slice(0, mOptions.question.numberOptions),

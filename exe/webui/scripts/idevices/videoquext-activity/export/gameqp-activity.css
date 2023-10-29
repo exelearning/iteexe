@@ -24,6 +24,70 @@
 	padding: 0;
 }
 
+/* Modo Pizarra digital */
+.gameQP-DivModeBoard{
+    margin-top: .8em;
+    display: flex;
+    justify-content: center;
+    display: none;
+    position: relative;
+
+}
+
+
+a.gameQP-ModeBoard, a.gameQP-ModeBoardShow {
+    color: #6e6e6e;
+    font: normal 12px Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    text-shadow: 0 1px 0 #fff;
+    -webkit-transition: border-color .218s;
+    -moz-transition: border .218s;
+    -o-transition: border-color .218s;
+    transition: border-color .218s;
+    background: #f3f3f3;
+    background: -webkit-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    background: -moz-linear-gradient(linear,0% 40%,0% 70%,from(#F5F5F5),to(#F1F1F1));
+    border: solid 1px #dcdcdc;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-right: 1em;
+	font-size: 1em;
+	padding: 0.6em 1em;
+	position:relative;
+	z-index:100;
+	cursor: pointer;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-user-select: none;
+	text-align: center;
+	user-select: none;
+	white-space: nowrap;
+}
+
+a.gameQP-ModeBoard:hover, a.gameQP-ModeBoardShow:hover {
+    color: #333;
+    border-color: #999;
+    -moz-box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2); 
+	-webkit-box-shadow:0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+
+a.gameQP-ModeBoard:active, a.gameQP-ModeBoardShow:active{
+    color: #000;
+    border-color: #444;
+}
+
+a.gameQP-ModeBoardShow {
+    position: absolute;
+    bottom: 0;
+    right:0
+}
+
 /* Instrucciones */
 
 .gameQP-instructions {
@@ -129,23 +193,44 @@
 
 /* Multimedia */
 
-.gameQP-Multimedia {
-	background-color: transparent;
-	border-radius: 0.6em;
-	margin: 0.3em auto;
-	max-width: 1024px;
-	overflow: hidden;
-	position: relative;
-	width: 65%;
+.gameQP-MultimediaNeo {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5em;
+    overflow: hidden;
+	
 }
 
-.gameQP-Multimedia:before {
-	content: '';
-	display: block;
-	padding-top: 56%;
+
+.gameQP-ImageNeo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+	border-radius: .4em;
 }
 
-.gameQP-Protector, .gameQP-NoImage, .gameQP-Video, .gameQP-Cover {
+
+.gameQP-Protector, .gameQP-NoImage, .gameQP-Cover {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.gameQP-Video {
 	bottom: 0;
 	left: 0;
 	margin: auto;
@@ -155,20 +240,15 @@
 	width:100%;
 	height:100%
 }
-
-.gameQP-Images, .gameQP-GameOver, .gameQP-EText {
-	border: 0;
+.gameQP-EText {
+	border: none;
 	border-radius: 0.6em;
+	width: 100%;
 	height: 100%;
+	top: 0;
 	left: 0;
 	position: absolute;
 	text-decoration: none;
-	top: 0;
-	width: 100%;
-}
-
-.gameQP-EText {
-	border: none;
 	overflow-y: auto;
 	padding-right: 0.7em;
 	z-index: 10001;
@@ -181,12 +261,12 @@
 }
 
 .gameQP-Cursor {
-	display: none;
-	left: 0;
-	position: absolute;
-	top: 0;
 	width: 2em;
-	z-index: 1000000;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 30;
+    display: none;
 }
 
 .gameQP-LinkAudio {
@@ -201,11 +281,15 @@
 /* Game Over */
 
 .gameQP-GameOver {
-	align-items: center;
+	position: absolute;
+	width: 90%;
+	max-width: 650px;
+	top:0;
+	z-index: 200;
+	height: 100%;
 	display: flex;
 	justify-content: center;
-	width: 100%;
-	z-index: 200;
+	align-items: center;
 }
 
 .gameQP-DataImage {
@@ -385,6 +469,7 @@
 	border-radius: 0.5em;
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
 }
+
 .gameQP-MessageCodeAccessE {
 	text-align: center;
 	vertical-align: middle;
@@ -749,6 +834,7 @@ a.gameQP-ModeBoardShow {
     bottom: 0;
     right:0
 }
+
 /*Intrucciones */
 
 .gameQP-DivInstructions {
@@ -915,7 +1001,7 @@ a.gameQP-ModeBoardShow {
 	transition: transform 0.3s;
 }
 
-.gameQP-LinkMaximize:hover .gameQP-Activo, .gameQP-Activo:hover  {
+.gameQP-LinkMaximize:hover .gameQP-Activo, .gameQP-Activo:hover {
 	-moz-transform: scale(1.1);
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
@@ -1045,6 +1131,11 @@ div:-moz-full-screen .gameQP-Options {
 	min-height: 3.2em;;
 }
 
+div:fullscreen .gameQP-Options {
+	min-height: 3.2em;
+}
+
+
 div:fullscreen .gameQP-Question {
 	min-height: 3.2em;
 }
@@ -1057,11 +1148,20 @@ div:-moz-full-screen .gameQP-Question {
 	min-height: 3.2em;
 }
 
-div:fullscreen .gameQP-Options {
-	min-height: 3.2em;
+div:fullscreen .gameQP-GameOver {
+	max-width: 900px
 }
 
-div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, div:-moz-full-screen .gameQP-Multimedia {
+div:-webkit-full-screen .gameQP-GameOver {
+	max-width: 900px
+}
+
+div:-moz-full-screen .gameQP-GameOver {
+	max-width: 900px
+}
+
+
+div:fullscreen .gameQP-MultimediaNeo, div:-webkit-full-screen .gameQP-MultimediaNeo, div:-moz-full-screen .gameQP-MultimediaNeo {
 	background-color: #fff;
 	margin: 3em;
 	margin-left: auto;
@@ -1095,6 +1195,12 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 	width: 100%;
 }
 
+.gameQP-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
 .gameQP-EvaluationDivIcon{
 	display: flex;
 	justify-content: flex-start;
@@ -1112,6 +1218,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 .gameQP-EvaluationDivIcon span{
 	font-size: 0.9em;
 }
+
 @-moz-keyframes gameQP-parpadeo {
 	0% {
 		opacity: 1.0;
@@ -1188,7 +1295,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 	.gameQP-Question {
 		margin-bottom: 0.3em;
 	}
-	.gameQP-Multimedia {
+	.gameQP-MultimediaNeo {
 		width: 95%;
 	}
 	.gameQP-LifesGame {
@@ -1306,7 +1413,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and (min-width: 1400px) {
-	div:fullscreen .gameQP-Multimedia {
+	div:fullscreen .gameQP-MultimediaNeo {
 		background-color: #fff;
 		margin: 2em auto;
 		max-width: 95vmin;
@@ -1316,7 +1423,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 }
 
 @media screen and ( min-width: 700px) and (max-height: 800px) {
-	div:fullscreen .gameQP-Multimedia {
+	div:fullscreen .gameQP-MultimediaNeo {
 		background-color: #fff;
 		margin-bottom: 0.6em;
 		max-width: 95vmin;
@@ -1327,7 +1434,7 @@ div:fullscreen .gameQP-Multimedia, div:-webkit-full-screen .gameQP-Multimedia, d
 /* To review */
 .adivina-instructions,
 .quext-instructions,
-.rosco-instructions,
+.quext-instructions,
 .selecciona-instructions{
 	overflow:auto;
 }

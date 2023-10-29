@@ -299,7 +299,6 @@ var $eXeTrivial = {
         mOptions.playerAudio.addEventListener("canplaythrough", function (event) {
             mOptions.playerAudio.play();
         });
-
     },
     stopSound: function (instance) {
         var mOptions = $eXeTrivial.options[instance];
@@ -326,7 +325,6 @@ var $eXeTrivial = {
                 }
             }
         }
-
     },
     createInterfaceTrivial: function (instance) {
         var html = '',
@@ -534,7 +532,7 @@ var $eXeTrivial = {
         </div>\
         <div class="trivial-Multimedia" id="trivialMultimedia-' + instance + '">\
             <img class="trivial-Cursor" id="trivialCursor-' + instance + '" src="' + path + 'trivialCursor.gif" alt="" />\
-            <img  src="" class="trivial-Images" id="trivialImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+            <img  src="" class="trivial-Image" id="trivialImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
             <div class="trivial-EText" id="trivialEText-' + instance + '"></div>\
             <img src="' + path + 'trivialHome.png" class="trivial-Cover" id="trivialCover-' + instance + '" alt="' + msgs.msImage + '" />\
             <div class="trivial-Video" id="trivialVideo-' + instance + '"></div>\
@@ -2061,46 +2059,94 @@ var $eXeTrivial = {
             }
         });
     },
+
+    positionPointer: function(instance) {
+		var mOptions = $eXeTrivial.options[instance],
+            mQuextion = mOptions.temas[mOptions.activeTema][mOptions.activesQuestions[mOptions.activeTema]],
+            x = parseFloat(mQuextion.x) || 0;
+		    y = parseFloat(mQuextion.y) || 0, 
+			$cursor=$('#trivialCursor-' + instance);
+			$cursor.hide();
+		if(x > 0 || y > 0){
+			var containerElement = document.getElementById('trivialMultimedia-' + instance),
+			    containerPos = containerElement.getBoundingClientRect(),
+			    imgElement = document.getElementById('trivialImagen-' + instance),
+			    imgPos = imgElement.getBoundingClientRect(),
+  		        marginTop = imgPos.top - containerPos.top,
+			    marginLeft = imgPos.left - containerPos.left,
+			    x = marginLeft + (x * imgPos.width),
+			    y = marginTop + (y * imgPos.height);
+				$cursor.show();
+				$cursor.css({ left: x, top: y, 'z-index': 30 });
+		}
+	},
+    showImage: function (url, instance) {
+		var mOptions = $eXeTrivial.options[instance],
+            mQuextion = mOptions.temas[mOptions.activeTema][mOptions.activesQuestions[mOptions.activeTema]],
+            $cursor = $('#trivialCursor-' + instance),
+			$noImage = $('#trivialCover-' + instance),
+			$Image = $('#trivialImagen-' + instance),
+			$Author = $('#trivialAuthor-' + instance);
+            $Protect = $('#trivialProtector-' + instance);
+        $Image.attr('alt', 'No image');
+		$cursor.hide();
+		$Image.hide();
+		$noImage.hide();
+        $Protect.hide();
+		if ($.trim(url).length == 0) {
+			$cursor.hide();
+			$Image.hide();
+			$noImage.show();
+			$Author.text('');
+			return false;
+		};
+		$Image.attr('src', ''); 
+		$Image.attr('src', url)
+			.on('load', function () {
+				if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+					$cursor.hide();
+					$Image.hide();
+					$noImage.show();
+					$Author.text('');
+				} else {
+					$Image.show();
+					$cursor.show();
+					$noImage.hide();
+					$Author.text(mQuextion.author);
+					$Image.attr('alt', mQuextion.alt);
+					$eXeTrivial.positionPointer(instance);
+				}
+			}).on('error', function () {
+				$cursor.hide();
+				$Image.hide();
+				$noImage.show();
+				$Author.text('');
+				return false;
+			});
+            $eXeTrivial.showMessage(0,mQuextion.author , instance);
+	},
     refreshImageActive: function (instance) {
         var mOptions = $eXeTrivial.options[instance],
             mQuextion = mOptions.temas[mOptions.activeTema][mOptions.activesQuestions[mOptions.activeTema]],
-            author = '',
-            alt = '';
-        if (mOptions.gameOver) {
-            return;
-        }
-        if (typeof mQuextion == "undefined") {
+			imgElement = $('img#trivialImagen-'+instance)[0];
+        if (typeof mQuextion == "undefined" ) {
             return;
         }
         if (mQuextion.type === 1) {
-            var url = $eXeTrivial.extractURLGD(mQuextion.url)
-            $('#trivialImagen-' + instance).attr('src', url)
-                .on('load', function () {
-                    if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth === 0) {
-                        alt = mOptions.msgs.msgNoImage;
-                        $('#trivialAuthor-' + instance).text('');
-                    } else {
-                        var mData = $eXeTrivial.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeTrivial.drawImage(this, mData);
-                        $('#trivialImagen-' + instance).show();
-                        $('#trivialCover-' + instance).hide();
-                        alt = mQuextion.alt;
-                        author = mQuextion.author;
-                        $('#trivialImagen-' + instance).prop('alt', alt);
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#trivialCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $('#trivialCursor-' + instance).show();
-                        }
-                    }
-                    $eXeTrivial.showMessage(0, author, instance);
-                });
+            if (mQuextion.url && mQuextion.url.length > 3 ) {
+                if (!imgElement.complete && (!imgElement.src ||imgElement.src === '')) {
+                    $eXeTrivial.showImage(mQuextion.url, instance);
+                }else{
+                    $('#trivialCursor-' + instance).hide();
+                    setTimeout(function(){
+                        $eXeTrivial.positionPointer(instance)
+                    }, 1000)
+                }
+            }
         }
+
     },
+
     enterCodeAccess: function (instance) {
         var mOptions = $eXeTrivial.options[instance];
         if (mOptions.itinerary.codeAccess.toLowerCase() === $('#trivialCodeAccessE-' + instance).val().toLowerCase()) {
@@ -2109,12 +2155,10 @@ var $eXeTrivial = {
             $('#trivialCodeAccessDiv-' + instance).hide();
             $('#trivialAnswerDiv-' + instance).show();
             $eXeTrivial.loadGameBoard(instance);
-
         } else {
             $('#trivialMesajeAccesCodeE-' + instance).fadeOut(300).fadeIn(200).fadeOut(300).fadeIn(200);
             $('#trivialCodeAccessE-' + instance).val('');
         }
-
     },
     updateSoundVideo: function (instance) {
         var mOptions = $eXeTrivial.options[instance];
@@ -2303,22 +2347,10 @@ var $eXeTrivial = {
                         alt = mOptions.msgNoImage;
                         $('#trivialAuthor-' + instance).text('');
                     } else {
-                        var mData = $eXeTrivial.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                        $eXeTrivial.drawImage(this, mData);
                         $('#trivialImagen-' + instance).show();
                         $('#trivialCover-' + instance).hide();
                         $('#trivialCursor-' + instance).hide();
-                        alt = mQuextion.alt;
-                        author = mQuextion.author;
-                        if (mQuextion.x > 0 || mQuextion.y > 0) {
-                            var left = mData.x + (mQuextion.x * mData.w);
-                            var top = mData.y + (mQuextion.y * mData.h);
-                            $('#trivialCursor-' + instance).css({
-                                'left': left + 'px',
-                                'top': top + 'px'
-                            });
-                            $('#trivialCursor-' + instance).show();
-                        }
+                        $eXeTrivial.positionPointer(instance)
                     }
                     $eXeTrivial.showMessage(0, author, instance);
                 });
@@ -2564,39 +2596,6 @@ var $eXeTrivial = {
             'font-weight': weight,
         });
         $('#trivialAutorLicence-' + instance).show();
-    },
-    drawImage: function (image, mData) {
-        $(image).css({
-            'left': mData.x + 'px',
-            'top': mData.y + 'px',
-            'width': mData.w + 'px',
-            'height': mData.h + 'px'
-        });
-    },
-    placeImageWindows: function (image, naturalWidth, naturalHeight) {
-        var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
-            hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
-            varW = naturalWidth / wDiv,
-            varH = naturalHeight / hDiv,
-            wImage = wDiv,
-            hImage = hDiv,
-            xImagen = 0,
-            yImagen = 0;
-        if (varW > varH) {
-            wImage = parseInt(wDiv);
-            hImage = parseInt(naturalHeight / varW);
-            yImagen = parseInt((hDiv - hImage) / 2);
-        } else {
-            wImage = parseInt(naturalWidth / varH);
-            hImage = parseInt(hDiv);
-            xImagen = parseInt((wDiv - wImage) / 2);
-        }
-        return {
-            w: wImage,
-            h: hImage,
-            x: xImagen,
-            y: yImagen
-        }
     },
     ramdonOptions: function (instance) {
         var mOptions = $eXeTrivial.options[instance],
