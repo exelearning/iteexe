@@ -4,69 +4,57 @@ on: [push]
 
 jobs:
   build-macos:
-    runs-on: macos-10.15
+    runs-on: macos-latest
 
     env:
       ACTIONS_ALLOW_UNSECURE_COMMANDS: true
       PYTHON_CONFIGURE_OPTS: --enable-shared
-      DEVELOPER_DIR: /Applications/Xcode_10.3.app/Contents/Developer
-      SDKROOT: /Applications/Xcode_10.3.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk
       MACOSX_DEPLOYMENT_TARGET: 10.14
 
     steps:
-
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install brew system libraries
         run: |
+          brew install libtiff libjpeg webp little-cms2 libxml2 zlib
 
-          brew install libtiff libjpeg webp little-cms2
-          brew install libxml2
+      - name: Set environment variables for compiler flags
+        run: |
+          echo "LDFLAGS=-L$(brew --prefix zlib)/lib $LDFLAGS" >> $GITHUB_ENV
+          echo "CPPFLAGS=-I$(brew --prefix zlib)/include $CPPFLAGS" >> $GITHUB_ENV
+          echo "PKG_CONFIG_PATH=$(brew --prefix zlib)/lib/pkgconfig:$PKG_CONFIG_PATH" >> $GITHUB_ENV
 
-      # For compatibility with macos <=10.14, we are using system 2.7.18 python.
-      # With this version, openssl 1.0 system libs are backwards compatible.
-      # Please look at versions previous  to 2022-07-01 if you need a different python version installed with pyenv,
-      # or a newer openssl > 1.0.
-      # We could have an action workflow for <=10.14  with system python, and a workflow for >=10.15 with custom python and openssl.
-      # At present we are using this action for all versions.
+      - name: Setup Python 2 with pyenv
+        uses: gabrielfalcao/pyenv-action@v16
+        with:
+          default: 2.7.18
+
       - name: Install Python requirements
         run: |
-          pip install lxml==2.2.8
-          pip install py2app==0.25
-          pip install Pillow==5.3.0
-          pip install zope.interface
-          pip install chardet
-          pip install gitpython
-          pip install suds
-          pip install requests-oauthlib
-          pip install python-dateutil
-          pip install httplib2
-          pip install beautifulsoup4
-          pip install feedparser
-          pip install oauthlib
-          pip install webassets
-          pip install cssmin
+          python --version
+          pip --version
+          pip install -r requirements.txt
+          echo "PYTHON=$(pyenv which python)" >> $GITHUB_ENV
 
       - name: Create disk image
-        run: hdiutil create -volname exe -size 500m -layout GPTSPUD -fs 'Journaled HFS+' -type UDIF installs/osx/exe
+        run: |
+          hdiutil create -volname exe -size 500m -layout GPTSPUD -fs 'Journaled HFS+' -type UDIF installs/osx/exe
 
       - name: Build package
-        run: |
-          brew install npm
-          echo "--> Installing appdmg" 
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14
+      - run: |
+          pip install py2app httplib2
+          # Monkey patch to avoid exception on modulegraph library using python3 regex
+          sed -i '' 's/re.compile(rb"/re.compile(r"/g' /Users/runner/hostedtoolcache/pyenv_root/2.3.23/x64/versions/2.7.18/lib/python2.7/site-packages/modulegraph/util.py
           npm install -g appdmg
-          which appdmg
-          echo "--> Installing appdmg" 
-          npm install  appdmg
-          which appdmg
-          ls -l /usr/local/bin/appdmg
           cd installs/osx
-          echo "--> Creating python app and DMG image..."
           python make.py -p
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: exe-macos
           path: installs/osx/INTEF-exe-*.dmg
