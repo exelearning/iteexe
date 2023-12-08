@@ -7,6 +7,18 @@ var myTheme = {
 				myTheme.reset();
 			});
 		},1000);
+		try{
+			function throttle(f, delay) {
+				let timer = 0;
+				return function(...args) {
+					clearTimeout(timer);
+					timer = setTimeout(() => f.apply(this, args), delay);
+				}
+			}			
+			new ResizeObserver(throttle((entries) => {
+				myTheme.reset();
+			}, 100)).observe(document.getElementById("main"));
+		}catch(e){}
 		var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this);return false" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
 		$("#siteNav").before(l);
 		$("#topPagination .pagination").prepend('<a href="#" onclick="window.print();return false" title="'+$exe_i18n.print+'" class="print-page"><span>'+$exe_i18n.print+'</span></a> ');
@@ -154,7 +166,6 @@ var myTheme = {
 		});
 	},
 	reset : function() {
-		myTheme.toggleMenu();        
 		myTheme.setNavHeight();
 	},
 	getCustomIcons : function(){
