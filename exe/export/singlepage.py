@@ -247,8 +247,18 @@ class SinglePage(Page):
         if hasABCMusic:
             html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lineBreak            
         html += u'<script type="text/javascript" src="common.js"></script>' + lineBreak
+        gamesJS=''
         for ideviceFile in set(listIdevicesFiles):
-            html += ideviceFile
+            gamesJS+=ideviceFile
+        find = set()
+        cleanarray = []
+        for line in gamesJS.splitlines():
+            if line not in find:
+                find.add(line)
+                cleanarray.append(line)
+        gamesJS='\n'.join(cleanarray)
+        html+=gamesJS
+        
         if common.hasMagnifier(self.node):
             html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lineBreak
             
