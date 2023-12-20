@@ -2,7 +2,8 @@ html,body{min-height:100%}
 html{padding:0;background:#fdfdfd}
 body{padding:0;text-align:center}
 @media all and (min-width:1px){
-	body{min-height:100vh;background:#fdfdfd url(_style_bg.png) no-repeat 0 0 fixed;background-size:cover}
+	html{background:#fdfdfd url(_style_bg.png) no-repeat 0 0 fixed;background-size:cover}
+	body{background:none}
 }
 #lbOverlay{background:#f3f3f3}
 #content{width:100%;max-width:1230px;min-width:300px;margin:0 auto;text-align:left;position:relative;padding-bottom:21px}
