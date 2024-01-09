@@ -1,15 +1,15 @@
 _ = parent._;
 
 var $exeTinyMCE = {
-	
+
 	// imagetools is disabled because it generates base64 images
 	plugins: "toggletoolbars compat3x nonbreaking exegames_hangman exeeffects easyattributes advlist lists autolink exelink charmap print preview anchor tooltips modalwindow searchreplace visualchars visualblocks code codemagic fullscreen insertdatetime table colorpicker contextmenu paste template textcolor hr clearfloat addcontent definitionlist blockquoteandcite pastecode pastemath exeimage exealign exemedia exeaudio exemindmap abcmusic abbr",
 	// These buttons will be visible when the others are hidden
 	buttons0 : "toggletoolbars | undo redo | bold italic | formatselect | alignleft aligncenter alignright alignjustify | exelink unlink | bullist numlist | exeimage exemedia | fullscreen",
 	// When buttons0 are hidden, 1, 2 and 3 are visible
 	buttons1 : "toggletoolbars | bold italic | formatselect fontsizeselect fontselect | forecolor backcolor",
-	buttons2 : "alignleft aligncenter alignright alignjustify | template clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",	
-	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia | exemindmap exeaudio abcmusic | codemagic | fullscreen",	
+	buttons2 : "alignleft aligncenter alignright alignjustify | template clearfloat addcontent | bullist numlist definitionlist | exelink unlink | outdent indent | blockquote blockquoteandcite",
+	buttons3 : "undo redo | cut copy paste pastetext | pastehtml pastecode pastemath | tooltips modalwindow exeeffects | exeimage exemedia | exemindmap exeaudio abcmusic | codemagic | fullscreen",
 	// To add:
 		// buttons2 : "exemath"
 	content_css: "/css/extra.css," + exe_style,
@@ -35,7 +35,7 @@ var $exeTinyMCE = {
 		format: {title: 'Format', items: 'underline strikethrough superscript subscript | formats | removeformat'},
 		table: {title: 'Table', items: 'inserttable tableprops deletetable | cell row column'},
 		tools: {title: 'Tools', items: 'code codemagic visualchars visualblocks fullscreen'}
-	},	
+	},
 	contextmenu: "exelink | inserttable | cell row column deletetable",
 	language: "all", // We set all so we can use eXe's i18n mechanism in all.js
 	table_default_styles: {
@@ -43,12 +43,12 @@ var $exeTinyMCE = {
 	},
 	// Get classes from base.css and content.css
 	getAvailableClasses: function() {
-		
+
 		var sheets = document.styleSheets;
 		var sheet, rule, rules, item, name, tmp;
 		var classes = [];
 		var names = [];
-		
+
 		for (var i=0, iLen=sheets.length; i<iLen; i++) {
 			sheet = sheets[i];
 			if (sheet.href && (sheet.href.indexOf("/base.css")!=-1 || sheet.href.indexOf("/content.css")!=-1)) {
@@ -63,7 +63,7 @@ var $exeTinyMCE = {
 			}
 		}
 		classes.sort();
-		
+
 		// Add some classes (exe-hidden, etc.)
 		var rightClasses = [
 			{text: '-- Not Set --', value: ''},
@@ -72,7 +72,7 @@ var $exeTinyMCE = {
 			{text: 'exe-table', value: 'exe-table'},
 			{text: 'exe-table-minimalist', value: 'exe-table-minimalist'}
 		];
-		
+
 		for (var z=0;z<classes.length;z++) {
 			name = classes[z].replace('.','');
 			if (isNaN(classes[z].charAt(1)) && names.indexOf(name)==-1 && name.indexOf("iDevice")==-1 && name.indexOf("Idevice")==-1 && name!="js") {
@@ -80,10 +80,10 @@ var $exeTinyMCE = {
 				names.push(name);
 			}
 		}
-		
-		return rightClasses;				
-		
-	},	
+
+		return rightClasses;
+
+	},
 	rel_list: [
 		{title: '---', value: ''},
 		{title: 'alternate', value: 'alternate'},
@@ -98,16 +98,16 @@ var $exeTinyMCE = {
 		{title: 'prev', value: 'prev'}
 	],
 	image_title: true,
-    
+
 	init: function(mode,criteria,hide){
-		
+
 		this.mode = mode;
-		
+
 		var h = 175;
 		if (mode=="multiple") h = 50;
 		var w = 882;
 		if (typeof($exeTinyMCEToggler.documentWidth)=='undefined' || (typeof($exeTinyMCEToggler.documentWidth)!='undefined' && $exeTinyMCEToggler.documentWidth<900)) w = '';
-		
+
 		// FR 303
 		var divExists = false;
 		if (mode=='multiple') {
@@ -121,7 +121,7 @@ var $exeTinyMCE = {
 				}).addClass("hidden-editor");
 			}
 		}
-		
+
 		tinymce.init({
 			language: this.language,
 			selector: criteria,
@@ -130,13 +130,13 @@ var $exeTinyMCE = {
 			convert_urls: false,
 			paste_as_text: true,
 			schema: this.getSchema(),
-			content_css: this.content_css,			
+			content_css: this.content_css,
 			resize: "both",
 			branding: false,
 			entity_encoding: "raw",
 			valid_children: this.getValidChildren(),
 			valid_elements: this.getValidElements(),
-			extended_valid_elements: this.getExtendedValidElements(),			
+			extended_valid_elements: this.getExtendedValidElements(),
 			fix_list_elements: true,
 			plugins: this.plugins,
 			menu: this.menu,
@@ -184,7 +184,7 @@ var $exeTinyMCE = {
 			media_poster: false,
 			// Style Formats (see defaultStyleFormats in tinymce.js)
 			style_formats : [
-			
+
 				{title: 'Headings', items: [
 					{title: 'Heading 1', format: 'h1'},
 					{title: 'Heading 2', format: 'h2'},
@@ -221,8 +221,8 @@ var $exeTinyMCE = {
 					{title: 'Center', icon: 'aligncenter', format: 'aligncenter'},
 					{title: 'Right', icon: 'alignright', format: 'alignright'},
 					{title: 'Justify', icon: 'alignjustify', format: 'alignjustify'}
-				]}			
-				
+				]}
+
 			],
 			// style_formats_merge: true,
 			toolbar: [
@@ -230,7 +230,7 @@ var $exeTinyMCE = {
 				this.buttons1,
 				this.buttons2,
 				this.buttons3
-			],			
+			],
 			init_instance_callback: function(ed) {
 				if (mode=="multiple") {
 					if (divExists) div.removeAttr("style"); // FR 303
@@ -241,10 +241,18 @@ var $exeTinyMCE = {
 				"style": "/scripts/tinymce_4/js/tinymce/plugins/style/editor_plugin_src.js"
 			},
 			setup: function (editor) {
-				// #699 Avoid wrong "Please save your iDevice first" message
 				editor.on('Change', function(ed) {
+					// #699 Avoid wrong "Please save your iDevice first" message
 					editor.dom.remove(editor.dom.select("#activeIdevice"));
 					editor.dom.remove(editor.dom.select("#exe-submitButton"));
+					// #229 Remove data-mce-fragment attributes
+					var c  = editor.getContent();
+					if (c.indexOf(' data-mce-fragment="1">')!=-1) {
+						var s = ' data-mce-fragment="1">';
+						var r = new RegExp(s, 'g');
+						c= c.replace(r, '>');						
+						editor.setContent(c);
+					}
 				});
 				// #691 Allow textareas (see common.py)
 				editor.on('Load', function(){
@@ -255,22 +263,22 @@ var $exeTinyMCE = {
 						editor.setContent(c);
 					}
 				});
-			},
+			}
 		});
 	},
-	
+
 	getSchema: function(){
 		var s = "html4";
 		if (exe_export_format=="html5") s = "html5";
 		return s;
 	},
-	
+
 	getValidElements: function(){
 		var e = "*[*]";
 		if (exe_editor_mode=="strict") e = "";
 		return e;
 	},
-	
+
 	getValidChildren: function(){
 		var v = "+body[style]";
 		if (exe_export_format=="html5") v += ",+video[a],+audio[a]";
@@ -280,7 +288,7 @@ var $exeTinyMCE = {
 		}
 		return v;
 	},
-	
+
 	getExtendedValidElements: function(){
 		var e = "";
 		if (exe_editor_mode=="strict") {
@@ -293,7 +301,7 @@ var $exeTinyMCE = {
 		}
 		return e;
 	}
-	
+
 }
 
 /* This will run when having more than one TEXTAREA in a page */
@@ -309,9 +317,9 @@ var $exeTinyMCEToggler = {
 	// addLinkAndToggle - It creates a link to toggle the editor after enabling it
 	// init - Init TinyMCE (called from startEditor)
 	// toggle - Toggle the editor
-	
+
 	mode: "always", // "always" if you don't want to have contents without HTML (plain textareas). Any other value if you do.
-	
+
 	setup: function(eds){
 		eds.each(function(){
 			var n = this.name;
@@ -336,7 +344,7 @@ var $exeTinyMCEToggler = {
 			}
 		});
 	},
-	
+
 	createViewer: function(e){
 		if (typeof(this.documentWidth)=='undefined') {
 			this.documentWidth = $(document).width();
@@ -350,14 +358,14 @@ var $exeTinyMCEToggler = {
 		var v = $('<div class="exe-textarea-preview" id="'+id+'-viewer" style="height:96px;padding:2px 15px;border:1px solid #ccc;overflow:auto'+w+'" onclick="$exeTinyMCEToggler.removeViewer(\''+id+'\')">'+c+'</div>');
 		e.before(v).addClass("sr-av"); // If we use e.hide() TinyMCE won't be properly displayed
 	},
-	
+
 	removeViewer: function(id){
 		$('#'+id+'-toggler').remove();
 		this.startEditor(id,true);
 	},
-	
+
 	getHelpLink: function(e) {
-    
+
         // The textarea has a label with an ID: textareaID-editor-label
         var w = $("#"+e.attr("id")+"-editor-label");
         if (w.length>0) return w;
@@ -377,14 +385,14 @@ var $exeTinyMCEToggler = {
 		f = $("A",p).eq(0);
 		if (f.length==1 && f.html().indexOf("/images/help.gif")!=-1) {
 			return f;
-		} 
-			
+		}
+
 		// Multi-select question has a different HTML. We look for the help link.
 		p = e.parent();
 		f = $("A",p).eq(0);
 		if (f.length==1 && f.html().indexOf("/images/help.gif")!=-1) {
 			return f;
-		} 
+		}
 
 		// Case Study...
 		p = e.parent().prev().prev().prev();
@@ -396,9 +404,9 @@ var $exeTinyMCEToggler = {
 		}
 
 		return r;
-		
-	}, 
-	
+
+	},
+
 	createEditorLink: function(e,id) {
         var f = this.getHelpLink(e);
         if (f!="") {
@@ -407,25 +415,25 @@ var $exeTinyMCEToggler = {
         } else {
             // We can't find the help link, so be just enable the editor
             // $exeTinyMCEToggler.startEditor(id,false);
-        }        
+        }
 	},
-	
+
 	startEditor: function(id,hide){
 		$("#"+id+"-viewer").remove();
 		$("#"+id).show();
 		$exeTinyMCE.init("multiple","#"+id,hide);
 	},
-	
+
 	addLinkAndToggle: function(id,lab,l,hide) {
 		lab.css("margin-right","5px").after(l);
 		if (hide!=false) this.toggle(id,document.getElementById(id+"-toggler"));
 	},
-	
+
 	init: function(id,hide) {
 
         var e = $("#"+id);
         var f = this.getHelpLink(e);
-        
+
         if (f!="") {
             // To review:
             // var l = $('<a href="#" id="'+id+'-toggler" onclick="$exeTinyMCEToggler.toggle(\''+id+'\',this);return false" class="exe-editor-toggler visible-editor">'+_("Editor")+'</a>');
@@ -433,7 +441,7 @@ var $exeTinyMCEToggler = {
         }
 
 	},
-	
+
 	toggle: function(id,e) {
 		var p = $("#"+id).parent();
 		window[e.id+"-iframeHeight"] = "134px";
@@ -462,7 +470,7 @@ var $exeTinyMCEToggler = {
 			p.removeClass("hidden-editor");
 		}
 	}
-	
+
 }
 
 $(function(){

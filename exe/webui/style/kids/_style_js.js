@@ -2,11 +2,6 @@ var myTheme = {
     init : function(){
 		var ie_v = $exe.isIE();
         if (ie_v && ie_v<8) return false;
-        setTimeout(function(){
-            $(window).resize(function() {
-                myTheme.reset();
-            });
-        },1000);
         var l = $('<p id="nav-toggler"><a href="#" onclick="myTheme.toggleMenu(this)" class="hide-nav" id="toggle-nav" title="'+$exe_i18n.hide+'"><span>'+$exe_i18n.menu+'</span></a></p>');
         var n = $("#siteNav");
 		n.before(l);
@@ -110,9 +105,6 @@ var myTheme = {
         $("A",".pagination").each(function(){
             myTheme.param(this,act);
         });
-    },
-    reset : function() {
-        myTheme.toggleMenu();
     }    
 }
 

@@ -23,6 +23,7 @@ from exe.engine.path          import Path, toUnicode
 from exe.engine.persist       import Persistable
 from exe.engine.resource      import Resource
 from exe                     import     globals
+from twisted.web.microdom import escape
 
 import os,sys
 log = logging.getLogger(__name__)
@@ -207,7 +208,7 @@ class FileField(Field):
         Field.__init__(self, desc, help)
         self.idevice = idevice
         self.fileResource = None
-        self.fileInstruc = "Upload a file"
+        self.fileInstruc = _("Upload a file. Please avoid names or paths with spaces or special characters.")
         self.alwaysNameTo = alwaysNameTo
         self.fileDescription = TextField("Description")
         self.fileDescription.idevice = self
@@ -322,6 +323,8 @@ class FileElement(Element):
                                             _("Delete File"))
             html += "</strong></div>"
         else:
+            if (self.field.fileDescription and self.field.fileDescription.content):
+                html += '<script>checkFileAttachmentNameWarning("'+escape(self.field.fileDescription.content)+'")</script>'
             html += "<i>"+_("No File Uploaded Currently") + "</i>"
         html += "<br/></div>"
         

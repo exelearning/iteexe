@@ -31,11 +31,6 @@ var myTheme = {
 		// Check if it's an old IE
 		var ie_v = $exe.isIE();
 		if (ie_v && ie_v<8) return false;
-		setTimeout(function(){
-			$(window).resize(function() {
-				myTheme.toggleMenu();
-			});
-		},1000);
 		var tit = $exe_i18n.menu+" ("+$exe_i18n.hide.toLowerCase()+")";
 		var navToggler = '<p id="header-options">';
 				navToggler += '<a href="#" onclick="myTheme.toggleMenu(this);return false" class="hide-nav" id="toggle-nav" title="'+tit+'">';

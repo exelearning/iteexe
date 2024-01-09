@@ -1735,6 +1735,16 @@ function selectStyleIcon(icon, e, iconSrc, idiDevice) {
 
 }
 
+// File attachments iDevice (#703)
+function checkFileAttachmentNameWarning(fileTitle){
+	var c = document.getElementById("activeIdevice");
+	if (!c) return;
+	if (!c.className) return;
+	if (c.className!="FileAttachIdeviceInc") return;
+	if (!fileTitle||fileTitle=="") return;
+	var info = _('Could not upload the file. Please remove any special characters from the file name or path.');
+	eXe.app.alert(fileTitle+"<br><br>"+info);
+}
 
 function deleteIcon(idiDevice) {
     var fieldIcon = '#iconiDevice'+idiDevice;
