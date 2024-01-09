@@ -1,4 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 /usr/bin/update-mime-database /usr/share/mime
+
+if which gsettings > /dev/null; then
+   theme=$(gsettings get org.gnome.desktop.interface icon-theme)
+   xdg-icon-resource install --context mimetypes --size 48 --mode system --theme ${theme:1:-1} /usr/share/icons/hicolor/48x48/apps/exe.png application-x-exe-learning
+fi
