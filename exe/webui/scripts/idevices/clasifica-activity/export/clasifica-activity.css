@@ -499,7 +499,7 @@
 /* Message */
 
 .CQP-Message {
-    margin-top: 0.5em;
+    margin-top: 0.8em;
     width: 100%;
     text-align: center;
     font-weight: 500;
@@ -569,10 +569,11 @@
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-select: none;
-    margin: 0.5em auto 0 auto;
+    margin: 0.5em auto 0.8em auto;
     text-align: center;
     user-select: none;
     width: 100%;
+
 }
 
 .CQP-StartGame a:hover {
@@ -581,8 +582,9 @@
 
 .CQP-StartGame a {
     color: #007691;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 600;
+
 }
 
 .CQP-GameContainer .exeQuextIcons-Submit {
@@ -677,7 +679,7 @@
 }
 
 .CQP-CC .CQP-Title {
-    font-size: 0.9em;
+    font-size: 1em;
     text-align: center;
 }
 

@@ -160,16 +160,13 @@ var $exeDevice = {
                                                 <input class="MTLE-ProyectTitle"  id="mtlProyectTitle-3" type="text" />\
                                             </div>\
                                         </div>\
-                                        <div>\
-                                          <label for="mtlPresentationMode"><input type="checkbox" id="mtlPresentationMode">' + _("Modo presentación. Oculta los títulos de los iDevices") + '. </label>\
-                                        </div>\
                                     </div>\
                                     <div id="mtlPanelRight" class="MTLE-PanelRight">\
                                       <div class="MTLE-TapsRightDiv" style="display:none;">\
                                            <a href="#" id="mtlShowIdevices" class="GameModeHelpLink" title="' + _('Configurar el orden y la visiblidad de los menús') + '">' + _("IDevices") + '</a> \
                                            <a href="#" id="mtlShowMenus" class="GameModeHelpLink" title="' + _('Configurar el orden y la visiblidad de los menús') + '">' + _("Menús") + '</a>\
                                       </div>\
-                                    <div id="mtlMessageIDevices" class="MTLE-MessagesIdevices">' + _("Se mostrarán siempre") + '</div>\
+                                    <div id="mtlMessageIDevices" class="MTLE-MessagesIdevices">' + _("Selecciona idioma") + '</div>\
                                       <div id="mtlIDevicesPageDiv" class="list MTLE-IDevicesPageDiv"></div>\
                                     </div>\
                                 </div>\
@@ -282,8 +279,6 @@ var $exeDevice = {
         game.idevicesLanguajes = typeof game.idevicesLanguajes == "undefined" ? game.Languajes : game.idevicesLanguajes;
         game.numberLanguages = typeof game.numberLanguages == "undefined" ? 2 : game.numberLanguages;
         game.presentationMode = typeof game.presentationMode == "undefined" ? false : game.presentationMode;
-
-        $('#mtlPresentationMode').prop('checked', game.presentationMode);
         for (var i = 0; i < game.idevicesLanguajes.length; i++) {
             $exeDevice.idevicesTitleState[i] = $exeDevice.updateTitles($exeDevice.idevicesTitleState[i], game.idevicesLanguajes[i].idevices, i)
         }
@@ -445,7 +440,6 @@ var $exeDevice = {
         var idevicesLanguajes = [],
             menus = $exeDevice.getMenuData(),
             numberLanguages = $('#mtlNumLangs').find("option:selected").val(),
-            presentationMode = $('#mtlPresentationMode').is(':checked'),
             proyectTitles = $exeDevice.getProyectTitles();
         for (var i = 0; i < $exeDevice.idevicesTitleState.length; i++) {
             var it = {
@@ -464,7 +458,7 @@ var $exeDevice = {
             'proyectTitles': proyectTitles,
             'translations': $exeDevice.translations,
             'langs': $exeDevice.langs,
-            'presentationMode':presentationMode
+            'presentationMode':false
         }
         return data;
     },

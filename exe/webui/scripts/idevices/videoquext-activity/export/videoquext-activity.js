@@ -159,7 +159,7 @@ var $eXeVideoQuExt = {
             alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
         }
         $('#vquextEvaluationIcon-' + instance).remove();
-        var sicon = '<div id="vquextEvaluationIcon-' + instance + '" class="gameQP-EvaluationDivIcon"><img  src="' + $eXeVideoQuExt.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
+        var sicon = '<div id="vquextEvaluationIcon-' + instance + '" class="VQXTP-EvaluationDivIcon"><img  src="' + $eXeVideoQuExt.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
         $header.eq(0).append(sicon);
         $('#vquextEvaluationIcon-' + instance).find('span').eq(0).text(alt)
     },
@@ -203,11 +203,22 @@ var $eXeVideoQuExt = {
         return formattedDate;
 
     },
+getDirectoryURL:function() {
+        var fullURL = window.location.href;
+        var lastIndex = fullURL.lastIndexOf("/");
+        return fullURL.substring(0, lastIndex + 1);
+    },
+    getDataAccess: function (id) {
+        var id = 'dataAccess-' + id,
+            data = $eXeVideoQuExt.isJsonString(localStorage.getItem(id));
+        return data;
+    },
 
     saveEvaluation: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance],
             score = ((mOptions.hits * 10) / mOptions.questionsGame.length).toFixed(2);
-        if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
+        	var dataAccess=$eXeVideoQuExt.getDataAccess(mOptions.evaluationID);
+        if ((mOptions.evaluationID && dataAccess) || (mOptions.evaluation && mOptions.evaluationID.length > 0)) {
             if (mOptions.isNavigable) {
                 score = 0;
                 for (var i = 0; i < mOptions.questionsGame.length; i++) {
@@ -387,7 +398,7 @@ var $eXeVideoQuExt = {
             widthBar = $('#vquextProgressBar-' + instance).width(),
             duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
             widthIntBar = 0;
-        $('#vquextProgressBar-' + instance + ' a.gameQP-PointBar').remove();
+        $('#vquextProgressBar-' + instance + ' a.VQXTP-PointBar').remove();
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
             widthIntBar = ((mOptions.questionsGame[i].pointVideo - mOptions.startVideoQuExt) * widthBar) / duratioVideo;
             var bcolor = $eXeVideoQuExt.borderColors.blue;
@@ -401,14 +412,14 @@ var $eXeVideoQuExt = {
                 default:
                     break;
             }
-            $('#vquextProgressBar-' + instance).append('<a href="#" class="gameQP-PointBar" title="' + (i + 1) + '"><strong class="sr-av">' + (i + 1) + '</strong></a>');
-            $('#vquextProgressBar-' + instance + ' a.gameQP-PointBar').last().css({
+            $('#vquextProgressBar-' + instance).append('<a href="#" class="VQXTP-PointBar" title="' + (i + 1) + '"><strong class="sr-av">' + (i + 1) + '</strong></a>');
+            $('#vquextProgressBar-' + instance + ' a.VQXTP-PointBar').last().css({
                 'left': widthIntBar - 3 + 'px',
                 'cursor': (mOptions.isNavigable) ? 'pointer' : 'default',
                 'background-color': bcolor,
                 'border': 'solid 1px ' + $eXeVideoQuExt.colors.black
             });
-            $('#vquextProgressBar-' + instance + ' a.gameQP-PointBar').last().data('number', i);
+            $('#vquextProgressBar-' + instance + ' a.VQXTP-PointBar').last().data('number', i);
             $('#vquextProgressBar-' + instance).css({
                 'cursor': (mOptions.isNavigable) ? 'pointer' : 'default',
             });
@@ -423,15 +434,15 @@ var $eXeVideoQuExt = {
         msgs.msgNextQuestion = msgs.msgNextQuestion || "Next question";
         msgs.msgLastQuestion = msgs.msgLastQuestion || "Last question";
         msgs.msgQuestionNumber = msgs.msgQuestionNumber || "Question number";
-        html += '<div class="gameQP-MainContainer"  id="vquextMainContainer-' + instance + '">\
-        <div class="gameQP-GameMinimize" id="vquextGameMinimize-' + instance + '">\
-            <a href="#" class="gameQP-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'vquextIcon.png" class="gameQP-IconMinimize gameQP-Activo" alt="' + msgs.msgMaximize + '">\
-                <div class="gameQP-MessageMaximize" id="vquextMessageMaximize-' + instance + '"></div>\
+        html += '<div class="VQXTP-MainContainer"  id="vquextMainContainer-' + instance + '">\
+        <div class="VQXTP-GameMinimize" id="vquextGameMinimize-' + instance + '">\
+            <a href="#" class="VQXTP-LinkMaximize" id="vquextLinkMaximize-' + instance + '" title="' + msgs.msgMaximize + '"><img src="' + path + 'vquextIcon.png" class="VQXTP-IconMinimize VQXTP-Activo" alt="' + msgs.msgMaximize + '">\
+                <div class="VQXTP-MessageMaximize" id="vquextMessageMaximize-' + instance + '"></div>\
             </a>\
         </div>\
-        <div class="gameQP-GameContainer" id="vquextGameContainer-' + instance + '">\
-            <div class="gameQP-GameScoreBoard">\
-                <div class="gameQP-GameScores">\
+        <div class="VQXTP-GameContainer" id="vquextGameContainer-' + instance + '">\
+            <div class="VQXTP-GameScoreBoard">\
+                <div class="VQXTP-GameScores">\
                     <strong><span class="sr-av">' + msgs.msgNumQuestions + ':</span></strong>\
                     <div class="exeQuextIcons  exeQuextIcons-Number"></div>\
                     <p id="vquextPNumber-' + instance + '">0</p>\
@@ -445,7 +456,7 @@ var $eXeVideoQuExt = {
                     <div class="exeQuextIcons  exeQuextIcons-Score"></div>\
                     <p id="vquextPScore-' + instance + '">0</p>\
                 </div>\
-                <div class="gameQP-LifesGame" id="vquextLifesGame-' + instance + '">\
+                <div class="VQXTP-LifesGame" id="vquextLifesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
@@ -457,42 +468,42 @@ var $eXeVideoQuExt = {
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                 </div>\
-                <div class="gameQP-NumberLifesGame" id="vquextNumberLivesGame-' + instance + '">\
+                <div class="VQXTP-NumberLifesGame" id="vquextNumberLivesGame-' + instance + '">\
                     <strong><span class="sr-av">' + msgs.msgLive + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Life"></div>\
                     <p id="vquextPLifes-' + instance + '">0</p>\
                 </div>\
-                <div class="gameQP-TimeNumber">\
+                <div class="VQXTP-TimeNumber">\
                     <strong><span class="sr-av">' + msgs.msgTime + ':</span></strong>\
                     <div class="exeQuextIcons  exeQuextIcons-Time"></div>\
-                    <p id="vquextPTime-' + instance + '" class="gameQP-PTime">00:00</p>\
-                    <a href="#" class="gameQP-LinkMinimize" id="vquextLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
+                    <p id="vquextPTime-' + instance + '" class="VQXTP-PTime">00:00</p>\
+                    <a href="#" class="VQXTP-LinkMinimize" id="vquextLinkMinimize-' + instance + '" title="' + msgs.msgMinimize + '">\
                         <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-Minimize gameQP-Activo"></div>\
+                        <div class="exeQuextIcons exeQuextIcons-Minimize VQXTP-Activo"></div>\
                     </a>\
-                    <a href="#" class="gameQP-LinkFullScreen" id="vquextLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
+                    <a href="#" class="VQXTP-LinkFullScreen" id="vquextLinkFullScreen-' + instance + '" title="' + msgs.msgFullScreen + '">\
                         <strong><span class="sr-av">' + msgs.msgFullScreen + ':</span></strong>\
-                        <div class="exeQuextIcons exeQuextIcons-FullScreen gameQP-Activo" id="quextFullScreen-' + instance + '">\
+                        <div class="exeQuextIcons exeQuextIcons-FullScreen VQXTP-Activo" id="quextFullScreen-' + instance + '">\
                         </div>\
                     </a>\
                 </div>\
             </div>\
-            <div class="gameQP-ShowClue" id="vquextShowClue-' + instance + '">\
+            <div class="VQXTP-ShowClue" id="vquextShowClue-' + instance + '">\
                 <div class="sr-av">' + msgs.msgClue + ':</div>\
-                <p class="gameQP-PShowClue gameQP-parpadea" id="vquextPShowClue-' + instance + '"></p>\
+                <p class="VQXTP-PShowClue VQXTP-parpadea" id="vquextPShowClue-' + instance + '"></p>\
             </div>\
-            <div class="gameQP-MultimediaNeo" id="vquextMultimedia-' + instance + '">\
-                <img src="' + path + 'quextImageVideo.png" class="gameQP-ImageNeo" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
-                <img src="' + path + 'vquextHome.png" class="gameQP-ImageNeo" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
-                <video class="gameQP-Video" id="vquextVideoLocal-' + instance + '"></video>\
-                <div class="gameQP-Video" id="vquextVideo-' + instance + '"></div>\
-                <div class="gameQP-Protector" id="vquextProtector-' + instance + '"></div>\
-                <div class="gameQP-GameOver" id="vquextGamerOver-' + instance + '">\
-                    <div class="gameQP-DataImage">\
-                        <img src="' + path + 'exequextwon.png" class="gameQP-HistGGame" id="vquextHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
-                        <img src="' + path + 'exequextlost.png" class="gameQP-LostGGame" id="vquextLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
+            <div class="VQXTP-Multimedia" id="vquextMultimedia-' + instance + '">\
+                <img src="' + path + 'quextImageVideo.png" class="VQXTP-Image" id="vquextImagen-' + instance + '" alt="' + msgs.msgNoImage + '" />\
+                <img src="' + path + 'vquextHome.png" class="VQXTP-Image" id="vquextCover-' + instance + '" alt="' + msgs.msImage + '" />\
+                <video class="VQXTP-Video" id="vquextVideoLocal-' + instance + '"></video>\
+                <div class="VQXTP-Video" id="vquextVideo-' + instance + '"></div>\
+                <div class="VQXTP-Protector" id="vquextProtector-' + instance + '"></div>\
+                <div class="VQXTP-GameOver" id="vquextGamerOver-' + instance + '">\
+                    <div class="VQXTP-DataImage">\
+                        <img src="' + path + 'exequextwon.png" class="VQXTP-HistGGame" id="vquextHistGame-' + instance + '" alt="' + msgs.msgAllQuestions + '" />\
+                        <img src="' + path + 'exequextlost.png" class="VQXTP-LostGGame" id="vquextLostGame-' + instance + '"  alt="' + msgs.msgLostLives + '" />\
                     </div>\
-                    <div class="gameQP-DataScore">\
+                    <div class="VQXTP-DataScore">\
                         <p id="vquextOverNumber-' + instance + '">Score: 0</p>\
                         <p id="vquextOverHits-' + instance + '">Hits: 0</p>\
                         <p id="vquextOverErrors-' + instance + '">Errors: 0</p>\
@@ -500,89 +511,89 @@ var $eXeVideoQuExt = {
                     </div>\
                 </div>\
             </div>\
-            <div class="gameQP-ProgressBar" id="vquextProgressBar-' + instance + '">\
-                <div class="gameQP-InterBar" id="vquextInterBar-' + instance + '"></div>\
+            <div class="VQXTP-ProgressBar" id="vquextProgressBar-' + instance + '">\
+                <div class="VQXTP-InterBar" id="vquextInterBar-' + instance + '"></div>\
             </div>\
-            <div class="gameQP-AuthorLicence" id="vquextAuthorLicence-' + instance + '">\
+            <div class="VQXTP-AuthorLicence" id="vquextAuthorLicence-' + instance + '">\
                 <div class="sr-av">' + msgs.msgAuthor + ':</div>\
                 <p id="vquextPAuthor-' + instance + '"></p>\
             </div>\
             <div class="sr-av">' + msgs.msgPlayStart + '</div>\
-            <div class="gameQP-StartGame"><a href="#" id="vquextStartGame-' + instance + '">' + msgs.msgPlayStart + '</a></div>\
-            <div class="gameQP-QuestionDiv" id="vquextQuestionDiv-' + instance + '">\
+            <div class="VQXTP-StartGame"><a href="#" id="vquextStartGame-' + instance + '">' + msgs.msgPlayStart + '</a></div>\
+            <div class="VQXTP-QuestionDiv" id="vquextQuestionDiv-' + instance + '">\
                 <div class="sr-av">' + msgs.msgQuestions + ':</div>\
-                <div class="gameQP-Question" id="vquextQuestion-' + instance + '">\
+                <div class="VQXTP-Question" id="vquextQuestion-' + instance + '">\
                 </div>\
-                <div class="gameQP-DivReply" id="vquextDivReply-' + instance + '">\
-                    <label class="sr-av">' + msgs.msgIndicateSolution + ':</label><input type="text" value="" class="gameQP-EdReply" id="vquextEdAnswer-' + instance + '" autocomplete="off">\
+                <div class="VQXTP-DivReply" id="vquextDivReply-' + instance + '">\
+                    <label class="sr-av">' + msgs.msgIndicateSolution + ':</label><input type="text" value="" class="VQXTP-EdReply" id="vquextEdAnswer-' + instance + '" autocomplete="off">\
                     <a href="#" id="vquextBtnReply-' + instance + '" title="' + msgs.msgReply + '">\
                         <strong><span class="sr-av">' + msgs.msgReply + '</span></strong>\
                         <div class="exeQuextIcons-Submit"></div>\
                     </a>\
                 </div>\
-                <div class="gameQP-DivModeBoard" id="vquextDivModeBoard-' + instance + '">\
-                    <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
-                    <a class="gameQP-ModeBoard" href="#" id="vquextModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
+                <div class="VQXTP-DivModeBoard" id="vquextDivModeBoard-' + instance + '">\
+                    <a class="VQXTP-ModeBoard" href="#" id="vquextModeBoardOK-' + instance + '" title="' + msgs.msgCorrect + '">' + msgs.msgCorrect + '</a>\
+                    <a class="VQXTP-ModeBoard" href="#" id="vquextModeBoardKO-' + instance + '" title="' + msgs.msgIncorrect + '">' + msgs.msgIncorrect + '</a>\
                 </div>\
-                <div class="gameQP-OptionsDiv" id="vquextOptionsDiv-' + instance + '">\
+                <div class="VQXTP-OptionsDiv" id="vquextOptionsDiv-' + instance + '">\
                     <div class="sr-av">' + msgs.msgOption + ' A:</div>\
-                    <a href="#"  class="gameQP-Option1 gameQP-Options" id="vquextOption1-' + instance + '" data-number="0"></a>\
+                    <a href="#"  class="VQXTP-Option1 VQXTP-Options" id="vquextOption1-' + instance + '" data-number="0"></a>\
                     <div class="sr-av">' + msgs.msgOption + ' B:</div>\
-                    <a href="#"  class="gameQP-Option2 gameQP-Options" id="vquextOption2-' + instance + '" data-number="1"></a>\
+                    <a href="#"  class="VQXTP-Option2 VQXTP-Options" id="vquextOption2-' + instance + '" data-number="1"></a>\
                     <div class="sr-av">' + msgs.msgOption + ' C:</div>\
-                    <a href="#"  class="gameQP-Option3 gameQP-Options" id="vquextOption3-' + instance + '" data-number="2"></a>\
+                    <a href="#"  class="VQXTP-Option3 VQXTP-Options" id="vquextOption3-' + instance + '" data-number="2"></a>\
                     <div class="sr-av">' + msgs.msgOption + ' D:</div>\
-                    <a href="#"  class="gameQP-Option4 gameQP-Options" id="vquextOption4-' + instance + '" data-number="3"></a>\
+                    <a href="#"  class="VQXTP-Option4 VQXTP-Options" id="vquextOption4-' + instance + '" data-number="3"></a>\
                 </div>\
             </div>\
-            <div class="gameQP-ReloadContainer" id="vquextVideoReloadContainer-' + instance + '">\
-                <a href="#" class="gameQP-LinkReload" id="vquextReeload-' + instance + '" title="' + msgs.msgReloadVideo + '">\
+            <div class="VQXTP-ReloadContainer" id="vquextVideoReloadContainer-' + instance + '">\
+                <a href="#" class="VQXTP-LinkReload" id="vquextReeload-' + instance + '" title="' + msgs.msgReloadVideo + '">\
                     <strong><span class="sr-av">' + msgs.msgReloadVideo + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Reload gameQP-Activo"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Reload VQXTP-Activo"></div>\
                 </a>\
                 <a href="#" id="vquextFirst-' + instance + '" title="' + msgs.msgFirstQuestion + '">\
                     <strong><span class="sr-av">' + msgs.msgFirstQuestion + ':</span></strong>\
-                    <div class=" exeQuextIcons exeQuextIcons-First gameQP-Activo"></div>\
+                    <div class=" exeQuextIcons exeQuextIcons-First VQXTP-Activo"></div>\
                 </a>\
                 <a href="#" id="vquextPrevious-' + instance + '" title="' + msgs.msgPreviousQuestion + '">\
                     <strong><span class="sr-av">' + msgs.msgPreviousQuestion + ':</span></strong>\
-                    <div class=" exeQuextIcons exeQuextIcons-Previous gameQP-Activo"></div>\
+                    <div class=" exeQuextIcons exeQuextIcons-Previous VQXTP-Activo"></div>\
                 </a>\
-                <span class="sr-av">' + msgs.msgQuestionNumber + '</span><span class="gameQP-NumberQuestion" id="vquextNumberQuestion-' + instance + '">1</span>\
+                <span class="sr-av">' + msgs.msgQuestionNumber + '</span><span class="VQXTP-NumberQuestion" id="vquextNumberQuestion-' + instance + '">1</span>\
                 <a href="#" id="vquextPauseVideo-' + instance + '" title="' + msgs.msgPauseVideo + '">\
                     <strong><span class="sr-av">' + msgs.msgPauseVideo + ':</span></strong>\
-                    <div class=" exeQuextIcons exeQuextIcons-PauseVideo gameQP-Activo"></div>\
+                    <div class=" exeQuextIcons exeQuextIcons-PauseVideo VQXTP-Activo"></div>\
                 </a>\
                 <a href="#" id="vquextNext-' + instance + '" title="' + msgs.msgNextQuestion + '">\
                     <strong><span class="sr-av">' + msgs.msgNextQuestion + ':</span></strong>\
-                    <div class=" exeQuextIcons exeQuextIcons-Next gameQP-Activo"></div>\
+                    <div class=" exeQuextIcons exeQuextIcons-Next VQXTP-Activo"></div>\
                 </a>\
                 <a href="#" id="vquextLast-' + instance + '" title="' + msgs.msgLastQuestion + '">\
                     <strong><span class="sr-av">' + msgs.msgLastQuestion + ':</span></strong>\
-                    <div class=" exeQuextIcons exeQuextIcons-Last gameQP-Activo"></div>\
+                    <div class=" exeQuextIcons exeQuextIcons-Last VQXTP-Activo"></div>\
                 </a>\
                 <a href="#" id="vquextPreview-' + instance + '" title="' + msgs.msgPreviewQuestions + '">\
                     <strong><span class="sr-av">' + msgs.msgPreviewQuestions + ':</span></strong>\
-                    <div class="exeQuextIcons exeQuextIcons-Preview gameQP-Activo"></div>\
+                    <div class="exeQuextIcons exeQuextIcons-Preview VQXTP-Activo"></div>\
                 </a>\
             </div>\
-            <div class="gameQP-previewQuestionsDiv" id="vquextpreviewQuestionsDiv-' + instance + '">\
-                <p class="gameQP-PreviewQuestionsTitle">' + msgs.msgQuestions + '</p>\
+            <div class="VQXTP-previewQuestionsDiv" id="vquextpreviewQuestionsDiv-' + instance + '">\
+                <p class="VQXTP-PreviewQuestionsTitle">' + msgs.msgQuestions + '</p>\
                 <strong><span class="sr-av">' + msgs.msgQuestions + ':</span></strong>\
-                <input type="button" class="feedbackbutton gameQP-previewQuestionsClose"  id="vquextpreviewQuestionsClose-' + instance + '" value="' + msgs.msgClose + '" />\
+                <input type="button" class="feedbackbutton VQXTP-previewQuestionsClose"  id="vquextpreviewQuestionsClose-' + instance + '" value="' + msgs.msgClose + '" />\
             </div>\
-            <div class="gameQP-DivFeedBack" id="vquextDivFeedBack-' + instance + '">\
+            <div class="VQXTP-DivFeedBack" id="vquextDivFeedBack-' + instance + '">\
                 <input type="button" id="vquextFeedBackClose-' + instance + '" value="' + msgs.msgClose + '" class="feedbackbutton" />\
             </div>\
         </div>\
-        <div class="gameQP-Cubierta" id="vquextCubierta-' + instance + '" style="display:none">\
-            <div class="gameQP-CodeAccessDiv" id="vquextCodeAccessDiv-' + instance + '">\
-                <p class="gameQP-MessageCodeAccessE" id="vquextMesajeAccesCodeE-' + instance + '"></p>\
-                <div class="gameQP-DataCodeAccessE">\
-                    <label for="vquextCodeAccessE-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="gameQP-CodeAccessE"  id="vquextCodeAccessE-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
+        <div class="VQXTP-Cubierta" id="vquextCubierta-' + instance + '" style="display:none">\
+            <div class="VQXTP-CodeAccessDiv" id="vquextCodeAccessDiv-' + instance + '">\
+                <p class="VQXTP-MessageCodeAccessE" id="vquextMesajeAccesCodeE-' + instance + '"></p>\
+                <div class="VQXTP-DataCodeAccessE">\
+                    <label for="vquextCodeAccessE-' + instance + '" class="sr-av">' + msgs.msgCodeAccess + ':</label><input type="text" class="VQXTP-CodeAccessE"  id="vquextCodeAccessE-' + instance + '" placeholder="' + msgs.msgCodeAccess + '">\
                     <a href="#" id="vquextCodeAccessButton-' + instance + '" title="' + msgs.msgSubmit + '">\
                         <strong><span class="sr-av">' + msgs.msgSubmit + '</span></strong>\
-                        <div class="exeQuextIcons-Submit gameQP-Activo "></div>\
+                        <div class="exeQuextIcons-Submit VQXTP-Activo "></div>\
                     </a>\
                 </div>\
             </div>\
@@ -601,15 +612,15 @@ var $eXeVideoQuExt = {
     addButtonScore: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
         var butonScore = "";
-        var fB = '<div class="gameQP-BottonContainer">';
+        var fB = '<div class="VQXTP-BottonContainer">';
         if (mOptions.isScorm == 2) {
             var buttonText = mOptions.textButtonScorm;
             if (buttonText != "") {
                 if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                     this.hasSCORMbutton = true;
-                    fB += '<div class="gameQP-GetScore">';
+                    fB += '<div class="VQXTP-GetScore">';
                     if (!this.isInExe) fB += '<form action="#" onsubmit="return false">';
-                    fB += '<p><input type="button" id="vquextSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton gameQP-SendScore" /> <span class="gameQP-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
+                    fB += '<p><input type="button" id="vquextSendScore-' + instance + '" value="' + buttonText + '" class="feedbackbutton VQXTP-SendScore" /> <span class="VQXTP-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
                     if (!this.isInExe) fB += '</form>';
                     fB += '</div>';
                     butonScore = fB;
@@ -618,8 +629,8 @@ var $eXeVideoQuExt = {
         } else if (mOptions.isScorm == 1) {
             if (this.hasSCORMbutton == false && ($("body").hasClass("exe-authoring-page") || $("body").hasClass("exe-scorm"))) {
                 this.hasSCORMbutton = true;
-                fB += '<div class="gameQP-GetScore">';
-                fB += '<p><span class="gameQP-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
+                fB += '<div class="VQXTP-GetScore">';
+                fB += '<p><span class="VQXTP-RepeatActivity" id="vquextRepeatActivity-' + instance + '"></span></p>';
                 fB += '</div>';
                 butonScore = fB;
             }
@@ -995,7 +1006,7 @@ var $eXeVideoQuExt = {
                 $eXeVideoQuExt.getYTAPI(instance);
             }
         });
-        $("#vquextOptionsDiv-" + instance).on('click touchstart', '.gameQP-Options', function (e) {
+        $("#vquextOptionsDiv-" + instance).on('click touchstart', '.VQXTP-Options', function (e) {
             e.preventDefault();
             var answer = $(this).data('number');
             $eXeVideoQuExt.answerQuestion(answer, instance);
@@ -1008,13 +1019,13 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.updateLives(instance);
         $('#vquextInstructions-' + instance).text(mOptions.instructions);
         $('#vquextPNumber-' + instance).text(mOptions.numberQuestions);
-        $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
+        $('#vquextGameContainer-' + instance + ' .VQXTP-StartGame').show();
         $('#vquextQuestionDiv-' + instance).hide();
         if (mOptions.itinerary.showCodeAccess) {
             $('#vquextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#vquextMesajeAccesCodeE-' + instance).text(mOptions.itinerary.messageCodeAccess);
             $('#vquextCodeAccessDiv-' + instance).show();
-            $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').hide();
+            $('#vquextGameContainer-' + instance + ' .VQXTP-StartGame').hide();
             $('#vquextQuestionDiv-' + instance).hide();
             $eXeVideoQuExt.showCubiertaOptions(true, instance);
         }
@@ -1058,33 +1069,33 @@ var $eXeVideoQuExt = {
             e.preventDefault();
             $eXeVideoQuExt.goQuestion(instance, 3, 0, false);
         });
-        $('#vquextProgressBar-' + instance).on('click', 'a.gameQP-PointBar', function (e) {
+        $('#vquextProgressBar-' + instance).on('click', 'a.VQXTP-PointBar', function (e) {
             if (mOptions.isNavigable) {
                 var number = $(this).data('number');
                 $eXeVideoQuExt.goQuestion(instance, 4, number)
             }
         });
-        $('#vquextProgressBar-' + instance).on('mouseenter', 'a.gameQP-PointBar', function (e) {
+        $('#vquextProgressBar-' + instance).on('mouseenter', 'a.VQXTP-PointBar', function (e) {
             e.preventDefault();
             if (mOptions.isNavigable || mOptions.previewQuestions) {
                 var number = $(this).data('number');
                 var textoTooltip = mOptions.questionsGame[number].quextion;
                 if (textoTooltip.length > 0) {
-                    $(this).append('<div class="gameQP-Tooltip">' + textoTooltip + '</div>');
-                    $(this).find("div.gameQP-Tooltip").css("left", '-121px');
+                    $(this).append('<div class="VQXTP-Tooltip">' + textoTooltip + '</div>');
+                    $(this).find("div.VQXTP-Tooltip").css("left", '-121px');
                     var html = $('#vquextProgressBar-' + instance).html(),
                         latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
                     if (latex) {
                         $eXeVideoQuExt.updateLatex('vquextProgressBar-' + instance)
                     }
-                    $(this).find("div.gameQP-Tooltip").fadeIn(300);
+                    $(this).find("div.VQXTP-Tooltip").fadeIn(300);
                 }
             }
         });
-        $('#vquextProgressBar-' + instance).on('mouseleave', 'a.gameQP-PointBar', function (e) {
+        $('#vquextProgressBar-' + instance).on('mouseleave', 'a.VQXTP-PointBar', function (e) {
             e.preventDefault();
             if (mOptions.isNavigable || mOptions.previewQuestions) {
-                $(".gameQP-PointBar > div.gameQP-Tooltip").fadeOut(300).delay(300).queue(function () {
+                $(".VQXTP-PointBar > div.VQXTP-Tooltip").fadeOut(300).delay(300).queue(function () {
                     $(this).remove();
                     $(this).dequeue();
                 });
@@ -1093,7 +1104,7 @@ var $eXeVideoQuExt = {
 
         $('#vquextProgressBar-' + instance).on('click', function (e) {
             e.preventDefault();
-            if (mOptions.isNavigable && !$(e.target).hasClass('gameQP-PointBar')) {
+            if (mOptions.isNavigable && !$(e.target).hasClass('VQXTP-PointBar')) {
                 var mx = Math.floor(e.pageX - $(this).offset().left),
                     widthBar = $(this).width(),
                     duratioVideo = mOptions.endVideoQuExt - mOptions.startVideoQuExt,
@@ -1182,9 +1193,9 @@ var $eXeVideoQuExt = {
     },
     previewQuestions: function (instance) {
         var mOptions = $eXeVideoQuExt.options[instance];
-        $('#vquextpreviewQuestionsDiv-' + instance).find('.gameQP-prevQuestP').remove();
+        $('#vquextpreviewQuestionsDiv-' + instance).find('.VQXTP-prevQuestP').remove();
         for (var i = 0; i < mOptions.questionsGame.length; i++) {
-            $('#vquextpreviewQuestionsDiv-' + instance).append('<p class="gameQP-prevQuestP">' + (i + 1) + '.- ' + mOptions.questionsGame[i].quextion + '</p>');
+            $('#vquextpreviewQuestionsDiv-' + instance).append('<p class="VQXTP-prevQuestP">' + (i + 1) + '.- ' + mOptions.questionsGame[i].quextion + '</p>');
         }
         $('#vquextpreviewQuestionsDiv-' + instance).slideToggle();
         var html = $('#vquextpreviewQuestionsDiv-' + instance).html(),
@@ -1318,7 +1329,7 @@ var $eXeVideoQuExt = {
         $quextOverNumber.text(msgs.msgNumQuestions + ': ' + mOptions.questionsGame.length);
 
         if (mOptions.gameMode == 2) {
-            $('#vquextGameContainer-' + instance).find('.gameQP-DataGameScore').hide();
+            $('#vquextGameContainer-' + instance).find('.VQXTP-DataGameScore').hide();
         }
         $quextGamerOver.show();
     },
@@ -1375,7 +1386,7 @@ var $eXeVideoQuExt = {
         $eXeVideoQuExt.createPointsVideo(instance);
         $('#vquextPShowClue-' + instance).hide();
         $('#vquextPShowClue-' + instance).text("");
-        $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').hide();
+        $('#vquextGameContainer-' + instance + ' .VQXTP-StartGame').hide();
         $('#vquextQuestionDiv-' + instance).show();
         $('#vquextQuestion-' + instance).text('');
         $('#vquextProgressBar-' + instance).show();
@@ -1567,7 +1578,7 @@ var $eXeVideoQuExt = {
         }
         $eXeVideoQuExt.showNumbersQuestions(instance);
         $('#vquextStartGame-' + instance).text(mOptions.msgs.msgNewGame);
-        $('#vquextGameContainer-' + instance + ' .gameQP-StartGame').show();
+        $('#vquextGameContainer-' + instance + ' .VQXTP-StartGame').show();
         $('#vquextQuestionDiv-' + instance).hide();
         $eXeVideoQuExt.showNavigationButtons(instance, 0);
         mOptions.gameOver = true;
@@ -1594,7 +1605,7 @@ var $eXeVideoQuExt = {
             }
         }
         if (mOptions.gameMode == 2) {
-            $('#vquextGamerOver-' + instance).find('.gameQP-DataScore').hide();
+            $('#vquextGamerOver-' + instance).find('.VQXTP-DataScore').hide();
         }
     },
     showNumbersQuestions: function (instance) {
@@ -1725,7 +1736,7 @@ var $eXeVideoQuExt = {
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
 
-        $('#vquextProgressBar-' + instance + ' .gameQP-PointBar').eq(mOptions.activeQuestion).css({
+        $('#vquextProgressBar-' + instance + ' .VQXTP-PointBar').eq(mOptions.activeQuestion).css({
             'background-color': color
         });
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
@@ -1767,7 +1778,7 @@ var $eXeVideoQuExt = {
             color = valid ? $eXeVideoQuExt.borderColors.green : $eXeVideoQuExt.borderColors.red;
         $('#vquextPHits-' + instance).text(mOptions.hits);
         $('#vquextPErrors-' + instance).text(mOptions.errors);
-        $('#vquextProgressBar-' + instance + ' .gameQP-PointBar').eq(mOptions.activeQuestion).css({
+        $('#vquextProgressBar-' + instance + ' .VQXTP-PointBar').eq(mOptions.activeQuestion).css({
             'background-color': color
         });
         if (mOptions.itinerary.showClue && percentageHits >= mOptions.itinerary.percentageClue) {
@@ -1956,7 +1967,7 @@ var $eXeVideoQuExt = {
                 $('#vquextDivModeBoard-' + instance).fadeIn();
             }
         } else {
-            $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
+            $('#vquextOptionsDiv-' + instance + '>.VQXTP-Options').each(function (index) {
                 var option = mQuextion.options[index]
                 $(this).css({
                     'border-color': $eXeVideoQuExt.borderColors.grey,
@@ -1989,7 +2000,7 @@ var $eXeVideoQuExt = {
             $('#vquextDivModeBoard-' + instance).hide();
 
         } else {
-            $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
+            $('#vquextOptionsDiv-' + instance + '>.VQXTP-Options').each(function (index) {
                 if (index === mOptions.question.solution) {
                     $(this).css({
                         'border-color': $eXeVideoQuExt.borderColors.correct,
@@ -2015,7 +2026,7 @@ var $eXeVideoQuExt = {
 
     },
     clearQuestions: function (instance) {
-        $('#vquextOptionsDiv-' + instance + '>.gameQP-Options').each(function (index) {
+        $('#vquextOptionsDiv-' + instance + '>.VQXTP-Options').each(function (index) {
             $(this).css({
                 'border-color': $eXeVideoQuExt.borderColors.grey,
                 'background-color': 'transparent',

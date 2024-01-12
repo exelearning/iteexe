@@ -26,12 +26,15 @@
 }
 
 .CQE-Data {
-	align-items: flex-start;
-	display: flex;
-	justify-content: flex-start;
 	width: 80%;
 	max-width: 600px;
 	position: relative;
+	margin:auto;
+	padding: 1.5em 1.2em;
+	border-radius: 0.4em;
+	border: 1px solid #cccccc;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.3em;
 }
 
 #clasificaEGroupSelect {
@@ -80,9 +83,7 @@
 	hyphens: auto; 
 
 }
-.CQE-ETextDiv .mjx-chtml{
 
-}
 
 .CQE-ETextDivBoth {
 	color: #000;
@@ -92,10 +93,10 @@
 .CQE-EMultimedia {
 	margin: 0 auto 0.6em auto;
 	position: relative;
-	width: 128px;
-	min-height: 128px;
-	height: 128px;
-	min-width: 128px;
+	width: 200px;
+	min-height: 200px;
+	height: 200px;
+	min-width: 200px;
 	overflow: hidden;
 	border: 1px solid rgb(3, 112, 116);
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
@@ -104,10 +105,10 @@
 .CQE-Card{
 	top:4px;
 	left:4px;
-	width: 120px;
-	min-height: 120px;
-	height: 120px;
-	min-width: 120px;
+	width: 192px;
+	min-height:192px;
+	height: 192px;
+	min-width: 192px;
 	background-color: white;
 	position: absolute;
 }
@@ -219,7 +220,7 @@
 	justify-content: center;
 	position: absolute;
 	right: 0;
-	top: -1.5em;
+	top: 0.5em;
 	width: 3em;
 	z-index: 20000;
 }

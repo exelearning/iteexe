@@ -187,11 +187,6 @@ var $exeDevice = {
                 <div class="CQE-EPanel">\
                     <div class="CQE-Data">\
                         ' + $exeDevice.createCards(1) + '\
-                        <div class="CQE-ENumQuestionDiv" id="clasificaENumQuestionDiv">\
-                            <div class="CQE-ENumQ"><span class="sr-av">Pregunta</span></div> <span class="CQE-ENumQuestions" id="clasificaENumQuestions">0</span>\
-                        </div>\
-                    </div>\
-                    <div class="CQE-EContents">\
                         <div class="CQE-EOrders CQE-Hide" id="clasificaEOrder">\
                             <div class="CQE-ECustomMessage">\
                                 <span class="sr-av">' + _("Hit") + '</span><span class="CQE-EHit"></span>\
@@ -202,6 +197,11 @@ var $exeDevice = {
                                 <label for="clasificaEMessageKO">Mensaje:</label><input type="text" class=""  id="clasificaEMessageKO">\
                             </div>\
                        </div>\
+                        <div class="CQE-ENumQuestionDiv" id="clasificaENumQuestionDiv">\
+                            <div class="CQE-ENumQ"><span class="sr-av">Pregunta</span></div> <span class="CQE-ENumQuestions" id="clasificaENumQuestions">0</span>\
+                        </div>\
+                    </div>\
+                    <div class="CQE-EContents">\
                         <div class="CQE-ENavigationButtons">\
                             <a href="#" id="clasificaEAdd" class="CQE-ENavigationButton" title="' + _('Add question') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add question') + '" class="CQE-EButtonImage b-add" /></a>\
                             <a href="#" id="clasificaEFirst" class="CQE-ENavigationButton"  title="' + _('First question') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('First question') + '" class="CQE-EButtonImage b-first" /></a>\

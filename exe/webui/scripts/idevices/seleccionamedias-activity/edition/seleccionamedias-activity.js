@@ -100,7 +100,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que selecionar las tarjetas multimedia.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que selecionar las tarjetas multimedia correctas.") + ' <a href="https://www.youtube.com/watch?v=t5okkUyGTl8" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Selecciona las tarjetas correctas")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
