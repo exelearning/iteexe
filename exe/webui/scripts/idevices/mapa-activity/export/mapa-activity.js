@@ -331,23 +331,52 @@ var $eXeMapa = {
         mOptions.activeMap.author = mOptions.authorImage;
         mOptions.activeMap.alt = mOptions.altImage;
         mOptions.activeMap.active = 0;
-        mOptions.levels = [];
-        mOptions.levels.push($.extend(true, {}, mOptions.activeMap));
-        mOptions.level = 0;
         if (mOptions.evaluation == 0) {
             mOptions.gameStarted = true;
         } else if (mOptions.evaluation == 4) {
             mOptions.selectsGame = $eXeMapa.shuffleAds(mOptions.selectsGame);
             mOptions.gameStarted = true;
+        }else if (mOptions.evaluation == 5){
+            for(var i = 0; i > mOptions.activeMap.pts.length; i++){
+               mOptions.activeMap.pts[i].order = (i+1)
+            }
         }
+        mOptions.levels = [];
+        mOptions.levels.push($.extend(true, {}, mOptions.activeMap));
+        mOptions.level = 0;
         mOptions.playerAudio = "";
         mOptions.loadingURL = false;
         mOptions.topBBTop = false;
         mOptions.evaluationF = typeof mOptions.evaluationF == "undefined" ? false : mOptions.evaluationF;
         mOptions.evaluationIDF = typeof mOptions.evaluationIDF == "undefined" ? '' : mOptions.evaluationIDF;
         mOptions.id = typeof mOptions.id == "undefined" ? false : mOptions.id;
-        mOptions.autoShow = typeof mOptions.autoShow == "undefinide" ? false : mOptions.autoShow;
+        mOptions.autoShow = typeof mOptions.autoShow == "undefined" ? false : mOptions.autoShow;
+        mOptions.autoAudio = typeof mOptions.autoAudio == "undefined" ? true : mOptions.autoAudio;
+        mOptions.order = typeof mOptions.order == "undefined" ? [] : $eXeMapa.stringToArrayOfIntegers(mOptions.order);
+        mOptions.orderResponse = [];
         return mOptions;
+    },
+    stringToArrayOfIntegers: function (str) {
+        if(str.trim().length ==0){
+            return [];
+        }
+
+        return str.split(',').map(Number);
+    },
+    checkOrder: function(instance) {
+        var mOptions = $eXeMapa.options[instance];
+        let hits = 0;
+        let solutionLength = mOptions.order.length;
+        let responseLength = mOptions.orderResponse.length;
+        for (let i = 0; i < solutionLength; i++) {
+            if (i < responseLength && mOptions.order[i] == mOptions.orderResponse[i]) {
+                hits++;
+            }
+        }
+        mOptions.hits = hits;
+        mOptions.errors = solutionLength - hits;
+        $eXeMapa.gameOver(instance)
+
     },
     getDataGame1: function (pts, evaluation) {
         var data = [];
@@ -774,8 +803,6 @@ var $eXeMapa = {
         for (var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
         return arr;
     },
-
-
     saveEvaluation: function (instance) {
         var mOptions = $eXeMapa.options[instance],
         numq = mOptions.numberQuestions,
@@ -976,6 +1003,7 @@ var $eXeMapa = {
             </div>\
             <div class="MQP-MessageFindDiv" id="mapaMessageFind-' + instance + '">\
                 <a href="#" class="MQP-MessageFind" id="mapaStartGame-' + instance + '">' + msgs.msgPlayStart + '</a>\
+                <a href="#" class="MQP-MessageFind" id="mapaCheckOrder-' + instance + '" style="display:none">' + msgs.msgCheck + '</a>\
                 <span class="MQP-MessageFind" id="mapaMessageFindP-' + instance + '"></span>\
                 <a href="#" id="mapaPlayAudioIdenty-' + instance + '" title="' + msgs.msgAudio + '">\
                     <span class="sr-av">' + msgs.msgAudio + ':</span>\
@@ -1458,7 +1486,7 @@ var $eXeMapa = {
         $('#mapaMessageFindP-' + instance).hide();
         $('#mapaStartGame-' + instance).hide();
         $('#mapaCubierta-' + instance).hide()
-        if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
+        if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3 || mOptions.evaluation == 5) {
             $('#mapaStartGame-' + instance).show();
         }
         if (mOptions.showMinimize) {
@@ -1549,13 +1577,13 @@ var $eXeMapa = {
             }
             var n = $(this).data('number'),
                 id = $(this).data('id');
-            if (mOptions.evaluation != 1 && mOptions.evaluation != 2 && mOptions.evaluation != 3 && typeof mOptions.activeMap.pts[n].audio != "undefined" && mOptions.activeMap.pts[n].audio.length > 4) {
+            if (mOptions.autoAudio && mOptions.evaluation != 1 && mOptions.evaluation != 5 && mOptions.evaluation != 2 && mOptions.evaluation != 3 && typeof mOptions.activeMap.pts[n].audio != "undefined" && mOptions.activeMap.pts[n].audio.length > 4) {
                 $eXeMapa.playSound(mOptions.activeMap.pts[n].audio, instance);
                 if (mOptions.activeMap.pts[n].type == 3) {
                     mOptions.visiteds.push(id);
                 }
             }
-            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+            if ((mOptions.evaluation != 5) && mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
                 mOptions.showData = true;
                 $eXeMapa.showPoint(n, instance);
             }
@@ -1592,13 +1620,13 @@ var $eXeMapa = {
             }
             var n = $(this).data('number'),
                 id = $(this).data('id');
-            if (mOptions.evaluation != 1 && mOptions.evaluation != 2 && mOptions.evaluation != 3 && typeof mOptions.activeMap.pts[n].audio != "undefined" && mOptions.activeMap.pts[n].audio.length > 4) {
+            if (mOptions.autoAudio && mOptions.evaluation != 5 && mOptions.evaluation != 1 && mOptions.evaluation != 2 && mOptions.evaluation != 3 && typeof mOptions.activeMap.pts[n].audio != "undefined" && mOptions.activeMap.pts[n].audio.length > 4) {
                 $eXeMapa.playSound(mOptions.activeMap.pts[n].audio, instance);
                 if (mOptions.activeMap.pts[n].type == 3) {
                     mOptions.visiteds.push(id);
                 }
             }
-            if (mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
+            if ((mOptions.evaluation != 5) && mOptions.autoShow && (mOptions.evaluation == 0 || mOptions.evaluation == 4)) {
                 mOptions.showData = true;
                 $eXeMapa.showPoint(n, instance);
             }
@@ -1629,6 +1657,11 @@ var $eXeMapa = {
         $('#mapaMessageGONo-' + instance).on('click', function (e) {
             e.preventDefault();
             $eXeMapa.hideCover(instance);
+            if (mOptions.evaluation == 5){
+                $('#mapaCheckOrder-' + instance).hide();
+                $('#mapaGameContainer-' + instance).css('height', 'auto');
+                return;
+            }
             if (mOptions.evaluation != 0) {
                 $eXeMapa.endFind(instance);
 
@@ -1640,6 +1673,19 @@ var $eXeMapa = {
         });
         $('#mapaMessageGOYes-' + instance).on('click', function (e) {
             e.preventDefault();
+            if (mOptions.evaluation == 5){
+                $eXeMapa.hideCover(instance);
+                mOptions.hits = 0;
+                mOptions.errors = 0;
+                mOptions.score = 0;
+                mOptions.gameActived = true;
+                mOptions.gameOver = false;
+                mOptions.orderResponse=[];
+                mOptions.gameStarted = true;
+                $('#mapaGameContainer-' + instance).css('height', 'auto');
+                $('#mapaCheckOrder-' + instance).show();
+                return;
+            }
             if (mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3) {
                 $eXeMapa.startFinds(instance);
                 $eXeMapa.hideCover(instance);
@@ -1777,6 +1823,14 @@ var $eXeMapa = {
             }
             $eXeMapa.startGame(instance);
         });
+        $('#mapaCheckOrder-' + instance).on('click', function (e) {
+            e.preventDefault();
+            $(this).hide();
+            $eXeMapa.checkOrder(instance)
+
+        });
+
+        
         $('#mapaLinkSlideLeft-' + instance).on('click', function (e) {
             e.preventDefault();
             mOptions.activeSlide = mOptions.activeSlide > 0 ? mOptions.activeSlide - 1 : 0;
@@ -1903,7 +1957,11 @@ var $eXeMapa = {
     showPointSound: function (num, instance) {
         var mOptions = $eXeMapa.options[instance],
             q = mOptions.activeMap.pts[num];
-        $eXeMapa.placePointInWindow($('#mapaFDetailsSound-' + instance), num, instance)
+        if(mOptions.evaluation != 5 && mOptions.autoAudio){
+            $eXeMapa.placePointInWindow($('#mapaFDetailsSound-' + instance), num, instance)
+        }else{
+            mOptions.showData = false;
+        }
     },
     showPointVideo: function (num, instance) {
         var mOptions = $eXeMapa.options[instance];
@@ -2030,7 +2088,12 @@ var $eXeMapa = {
     },
     startGame: function (instance) {
         var mOptions = $eXeMapa.options[instance];
-        $('#mapaMessageFindP-' + instance).show();
+        if(mOptions.evaluation == 5){
+            $('#mapaCheckOrder-' + instance).show();
+        }
+        if(mOptions.evaluation != 5){
+            $('#mapaMessageFindP-' + instance).show();
+        }
         $('#mapaStartGame-' + instance).hide();
 
         if (mOptions.evaluation == 2 || mOptions.evaluation == 3) {
@@ -2396,6 +2459,10 @@ var $eXeMapa = {
         mOptions.questionaireStarted = false;
         mOptions.gameActived = false;
         mOptions.gameOver = true;
+        if(mOptions.evaluation == 5 ){
+            numq = mOptions.order.length || 1;
+            mOptions.orderResponse= [];
+        }
         puntuacion = (mOptions.hits * 10 / numq).toFixed(2);
         if (puntuacion < 5) {
             msg = mOptions.msgs.msgScore4;
@@ -2414,13 +2481,16 @@ var $eXeMapa = {
         $('#mapaGOMessage-' + instance).text(msg);
         $('#mapaGONumber-' + instance).text(mOptions.msgs.msgQuestions + ': ' + numq);
         $('#mapaGoScore-' + instance).text(mOptions.msgs.msgScore + ': ' + puntuacion);
+        if (mOptions.evaluation == 5){
+            $('#mapaGONumber-' + instance).text(mOptions.msgs.msgPointsA + ': ' + numq);
+        }
         $('#mapaGOHits-' + instance).text(mOptions.msgs.msgHits + ': ' + mOptions.hits);
         $('#mapaGOErrors-' + instance).text(mOptions.msgs.msgErrors + ': ' + mOptions.errors);
         if (mOptions.evaluation == 3) {
             $('#mapaErrorScore-' + instance).hide();
         }
         mOptions.gameOver = true;
-        if ((mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3 || mOptions.evaluation == 4) && mOptions.isScorm === 1) {
+        if ((mOptions.evaluation == 5 || mOptions.evaluation == 1 || mOptions.evaluation == 2 || mOptions.evaluation == 3 || mOptions.evaluation == 4) && mOptions.isScorm === 1) {
             if (mOptions.repeatActivity || $eXeMapa.initialScore === '') {
                 var score = ((mOptions.hits * 10) / numq).toFixed(2);
                 $eXeMapa.sendScore(true, instance);
@@ -2740,8 +2810,12 @@ var $eXeMapa = {
         if (q.type == 1) {
             $eXeMapa.stopSound(instance);
         }
+
         $eXeMapa.showClue(instance);
         $eXeMapa.hideModalWindows(instance);
+        if(mOptions.evaluation ==5){
+            mOptions.orderResponse.push(i+1)
+        }
         if (q.type == 4) {
             $eXeMapa.showPointNone(i, instance);
             return;

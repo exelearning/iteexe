@@ -83,6 +83,7 @@ var $exeDevice = {
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgClose": _("Close"),
         "msgPoints": _("points"),
+        "msgPointsA": _("Points"),
         "msgQuestions": _("Questions"),
         "msgAudio": _("Audio"),
         "msgAccept": _("Accept"),
@@ -114,10 +115,11 @@ var $exeDevice = {
         "msgNumQuestions": _("Number of questions"),
         "msgHome": _("Home"),
         "msgReturn": _("Return"),
+        "msgCheck": _("Check"),
         "msgUncompletedActivity": _("Actividad no realizada"),
         "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
         "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
-        "msgTypeGame": _('Map')
+        "msgTypeGame": _('Map'),
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%");
@@ -162,6 +164,7 @@ var $exeDevice = {
         msgs.msgEOneSlide = _("There must be at least one slide in the presentation.");
         msgs.msgWriteLink = _("Please type or paste a valid URL.");
         msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');;
+        msgs.msgSolutionOrder=_("Indica, separándolos por comas, el orden correcto en el que se deben pulsar los puntos")
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -188,8 +191,13 @@ var $exeDevice = {
                             <label for="mapaEEvaluationTX">' + _("Test") + '</label>\
                             <input class="MQE-TypeEvaluation" id="mapaEEvaluationTest" type="radio" name="mpevaluation"  value="4" />\
                             <label for="mapaEEvaluationTest">' + _("Questionnaire") + '</label>\
+                            <input class="MQE-TypeEvaluation" id="mapaEEvaluationOrder" type="radio" name="mpevaluation"  value="5" />\
+                            <label for="mapaEEvaluationOrder">' + _("Order") + '</label>\
+                            </p>\
+                        <p class="MQE-EHide" id="mapaSolutionOrderDiv">\
+                            <label for="mapaSolutionOrder">' + _("Solution") + ':</label><input type="text" id="mapaSolutionOrder" />\
                         </p>\
-                        <p class="MQE-EHide" id="mapaNumOptionsData">\
+                            <p class="MQE-EHide" id="mapaNumOptionsData">\
                             <label for="mapaNumOptions">' + _("Options Number") + ':</label><input type="number" name="mapaNumOptions" id="mapaNumOptions" value="0" min="0" max="100" />\
                         </p>\
                         <p class="MQE-EHide" id="mapaSolutionData">\
@@ -212,6 +220,9 @@ var $exeDevice = {
                         </p>\
                         <p id="mapaEAutoShowDiv">\
                             <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Show when the mouse is over the icon or active area") + '. </label>\
+                        </p>\
+                        <p id="mapaEAutoAudioDiv" class="MQE-EHide">\
+                            <label for="mapaEAutoAudio"><input type="checkbox" id="mapaEAutoAudio" checked>' + _("Reproducir el sonido al pasar el ratón sobre los puntos.") + '. </label>\
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#mapaEEvaluationHelp" id="mapaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
@@ -1552,12 +1563,13 @@ var $exeDevice = {
             percentajeShowQ = parseInt(clear($('#mapaPercentajeShowQ').val())),
             percentajeQuestions = parseInt(clear($('#mapaPercentajeQuestions').val())),
             autoShow = $('#mapaEAutoShow').is(':checked') || false,
+            autoAudio = $('#mapaEAutoAudio').is(':checked') || false,
             points = $exeDevice.activeMap.pts,
             optionsNumber = parseInt(clear($('#mapaNumOptions').val())),
             evaluationF = $('#mapaEEvaluation').is(':checked'),
             evaluationIDF = $('#mapaEEvaluationID').val(),
-            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID();
-
+            id = $exeDevice.id ? $exeDevice.id : $exeDevice.generarID(),
+            order = $('#mapaSolutionOrder').val();
         if (points.length == 0) {
             eXe.app.alert($exeDevice.msgs.msgEOnePoint);
             return false;
@@ -1568,6 +1580,10 @@ var $exeDevice = {
         }
         if (evaluationF && evaluationIDF.length < 5) {
             eXe.app.alert($exeDevice.msgs.msgIDLenght);
+            return false;
+        }
+        if(evaluation == 5 && order && order.length ==0){
+            $exeDevice.showMessage($exeDevice.msgs.msgSolutionOrder);
             return false;
         }
         for (var i = 0; i < points.length; i++) {
@@ -1646,10 +1662,12 @@ var $exeDevice = {
             'percentajeShowQ': percentajeShowQ,
             'percentajeQuestions': percentajeQuestions,
             'autoShow': autoShow,
+            'autoAudio': autoAudio,
             'optionsNumber': optionsNumber,
             'evaluationF':evaluationF,
             'evaluationIDF':evaluationIDF,
-            'id': id
+            'id': id,
+            'order':order
         }
         return data;
     },
@@ -2203,7 +2221,7 @@ var $exeDevice = {
         $('#gameQEIdeviceForm').on('click', 'input.MQE-TypeEvaluation', function (e) {
             var type = parseInt($(this).val());
             $('#mapaSolutionData').show();
-            $('#mapaNumOptionsData').hide();
+
 
             if (type == 4) {
                 $('#mapaFQuestions').show();
@@ -2218,12 +2236,19 @@ var $exeDevice = {
                 $('label[for=mapaEShowSolution]').hide();
                 $('#mapaETimeShowSolution').prop("disabled", false);
             }
+            $('#mapaSolutionOrderDiv').hide();
+            if (type == 5) {
+                $('#mapaSolutionOrderDiv').show();
+                $("#mapaSolutionData").hide();
+            }
+            $('#mapaEAutoAudioDiv').hide();
             $('#mapaEAutoShowDiv').hide();
             if (type == 1) {
                 $('#mapaNumOptionsData').show();
             }
             if (type == 0 || type == 4) {
                 $('#mapaEAutoShowDiv').show();
+                $('#mapaEAutoAudioDiv').show();
             }
             if (type == 1 || type == 2 || type == 3) {
                 $('#mapaDataIdentifica').show();
@@ -3388,6 +3413,9 @@ var $exeDevice = {
     updateFieldGame: function (game) {
         $exeDevice.activeMap.active = 0;
         $exeDevice.qActive = 0;
+        game.order = typeof game.order == "undefined" ? '' : game.order;
+        game.autoAudio = typeof game.autoAudio == "undefined" ? true : game.autoAudio;
+        game.autoShow = typeof game.autoShow == "undefined" ? false : game.autoShow;
         game.optionsNumber = typeof game.optionsNumber == "undefined" ? 0 : game.optionsNumber;
         game.evaluationF = typeof game.evaluationF != "undefined" ? game.evaluationF : false;
         game.evaluationIDF = typeof game.evaluationIDF != "undefined" ? game.evaluationIDF : '';
@@ -3400,7 +3428,8 @@ var $exeDevice = {
         $('#mapaAuthorImageMap').val(game.authorImage);
         $('#mapaAltImageMap').val(game.altImage);
         $('#mapaEShowSolution').prop('checked', game.showSolution);
-        $('#mapaEAutoShow').prop('checked', game.autoShow || false);
+        $('#mapaEAutoShow').prop('checked', game.autoShow);
+        $('#mapaEAutoAudio').prop('checked', game.autoAudio);
         $('#mapaETimeShowSolution').prop('disabled', !game.showSolution);
         $('#mapaETimeShowSolution').val(game.timeShowSolution);
         $('#mapaPercentajeIdentify').val(game.percentajeIdentify || 100);
@@ -3417,19 +3446,15 @@ var $exeDevice = {
         $('#mapaEvaluationData').hide();
         $('#mapaSolutionData').show();
         $('#mapaNumOptionsData').hide();
-        if (game.evaluation == 4) {
-            $('#mapaFQuestions').show();
-            $('#mapaEvaluationData').show();
-            $('#mapaEShowSolution').show();
-            $('label[for=mapaEShowSolution]').show();
-            $('#mapaETimeShowSolution').prop("disabled", !game.showSolution);
-        }
+        $('#mapaSolutionOrder').val(game.order);    
+        $('#mapaEAutoAudioDiv').hide();
         $('#mapaEAutoShowDiv').hide();
         if (game.evaluation == 1) {
             $('#mapaNumOptionsData').show();
         }
         if (game.evaluation == 4 || game.evaluation == 0) {
             $('#mapaEAutoShowDiv').show();
+            $('#mapaEAutoAudioDiv').show();
         }
         $('#mapaEvaluationIdentify').hide();
         if (game.evaluation == 2 || game.evaluation == 3) {
@@ -3451,6 +3476,19 @@ var $exeDevice = {
         if (game.evaluation == 0) {
             $('#mapaSolutionData').hide();
         }
+        if (game.evaluation == 4) {
+            $('#mapaFQuestions').show();
+            $('#mapaEvaluationData').show();
+            $('#mapaEShowSolution').show();
+            $('label[for=mapaEShowSolution]').show();
+            $('#mapaETimeShowSolution').prop("disabled", !game.showSolution);
+        }
+        $('#mapaSolutionOrderDiv').hide();
+        if (game.evaluation == 5) {
+            $('#mapaSolutionOrderDiv').show();
+            $("#mapaSolutionData").hide();
+        }
+
         $exeDevice.updateQuestionsNumber();
     },
 
