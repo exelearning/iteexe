@@ -64,9 +64,9 @@ var $exeDevice = {
         "msgAuthor": _("Authorship"),
         "msgReboot": _("Restart"),
         "msgTimeOver": _("Tu tiempo ha finalizado. Inténtalo de nuevo"),
-        "msgAllAttemps": _("¡Has agotado todos los intentos!. Prueba de nuevo"),
+        "msgAllAttemps": _("¡Has agotado todos los intentos! Prueba de nuevo"),
         "mgsAllCards": _("¡Has encontrado todas las parejas!"),
-        "mgsAllTrios": _("¡Has encontrado todas los tríos!"),
+        "mgsAllTrios": _("¡Has encontrado todos los tríos!"),
         "mgsAllQuartets": _("¡Has encontrado todas los cuartetos!"),
         "mgsGameStart": _("¡El juego ha comenzado! Selecciona dos cartas"),
         "mgsGameStart3": _("¡El juego ha comenzado! Selecciona tres cartas"),
@@ -76,9 +76,9 @@ var $exeDevice = {
         "msgTrios": _("Tríos"),
         "msgQuarts": _("Cuartetos"),
         "msgAttempts": _("Intentos"),
-        "msgCompletedPair": _("Una pareja completada ¡A por la siguiente!"),
-        "msgCompletedTrio": _("Un trío completado ¡A por la siguiente!"),
-        "msgCompletedQuartet": _("Un cuarteto completado ¡A por la siguiente!"),
+        "msgCompletedPair": _("Una pareja completada. ¡A por la siguiente!"),
+        "msgCompletedTrio": _("Un trío completado. ¡A por la siguiente!"),
+        "msgCompletedQuartet": _("Un cuarteto completado. ¡A por la siguiente!"),
         "msgSelectCard": _("Selecciona otra carta"),
         "msgSelectCardOne": _("Selecciona una carta"),
         "msgRookie": _("Inicial"),
@@ -128,7 +128,7 @@ var $exeDevice = {
                             <input class="Descubre-GameMode" checked id="descubreGame2" type="radio" name="qtxgamemode" value="0"  />\
                             <label for="descubreGame2">' + _("Parejas") + '</label>\
                             <input class="Descubre-GameMode"  id="descubreGame3" type="radio" name="qtxgamemode" value="1"  />\
-                            <label for="descubreGame3">' + _("Trios") + '</label>\
+                            <label for="descubreGame3">' + _("Tríos") + '</label>\
                             <input class="Descubre-GameMode"  id="descubreGame4" type="radio" name="qtxgamemode" value="2"  />\
                             <label for="descubreGame4">' + _("Cuartetos") + '</label>\
                         </p>\
@@ -145,7 +145,7 @@ var $exeDevice = {
                             <label for="descubreEShowCards"><input type="checkbox" id="descubreEShowCards">' + _("Cartas visibles") + '.</label>\
                         </p>\
                         <p>\
-							<label for="descubreETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas(segundos)") + ':\
+							<label for="descubreETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas (segundos)") + ':\
 							<input type="number" name="descubreETimeShowSolution" id="descubreETimeShowSolution" value="3" min="1" max="999" /> </label>\
                         </p>\
                         <p>\

@@ -487,7 +487,7 @@ var $exeDevice = {
 
             if ($(this).val() == '') {
                 code = 'es'
-                lang = _('Spànish ')
+                lang = _('Spanish')
             }
             var ob = {
                 'code': code,

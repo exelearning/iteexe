@@ -120,7 +120,7 @@ var $exeDevice = {
                             <label for="slcmEShowSolution"><input type="checkbox" checked id="slcmEShowSolution"> ' + _("Show solutions") + '. </label> \
                         </p>\
                         <p id="slcmTimeShowDiv">\
-							<label for="slcmETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas(segundos)") + ':\
+							<label for="slcmETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas (segundos)") + ':\
 							<input type="number" name="slcmETimeShowSolution" id="slcmETimeShowSolution" value="4" min="1" max="999" /> </label>\
                         </p>\
                         <p>\
@@ -167,7 +167,7 @@ var $exeDevice = {
                             <a href="#" id="slcmEPrevious" class="SLCME-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="SLCME-EButtonImage b-prev" /></a>\
                             <span class="sr-av">' + _("Actividad número:") + '</span><span class="SLCME-NumberPhrase" id="slcmENumberPhrase">1</span>\
                             <a href="#" id="slcmENext" class="SLCME-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="SLCME-EButtonImage b-next" /></a>\
-                            <a href="#" id="slcmELast" class="SLCME-ENavigationButton"  title="' + _('ültima actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="SLCME-EButtonImage b-last" /></a>\
+                            <a href="#" id="slcmELast" class="SLCME-ENavigationButton"  title="' + _('Última actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="SLCME-EButtonImage b-last" /></a>\
                             <a href="#" id="slcmEDelete" class="SLCME-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="SLCME-EButtonImage b-delete" /></a>\
                             <a href="#" id="slcmECopy" class="SLCME-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="SLCME-EButtonImage b-copy" /></a>\
                             <a href="#" id="slcmECut" class="SLCME-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="SLCME-EButtonImage b-copy" /></a>\

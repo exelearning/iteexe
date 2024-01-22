@@ -761,7 +761,7 @@ var $exeDevice = {
       "#ctjEImageDecorative",
       "#ctjEImageNoDecorative",
       game.urlDecorative,
-      _("Imagen decoratia")
+      _("Imagen decorativa")
     );
   },
   drawImage: function (image, mData) {

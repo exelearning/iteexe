@@ -64,7 +64,7 @@ var $exeDevice = {
         "msgClose": _("Close"),
         "msgAudio": _("Audio"),
         "msgTimeOver": _("Tu tiempo ha finalizado. Inténtalo de nuevo"),
-        "msgAllAttemps": _("¡Has agotado todos los intentos!. Prueba de nuevo"),
+        "msgAllAttemps": _("¡Has agotado todos los intentos! Prueba de nuevo"),
         "mgsAllPhrases": _("¡Has ordenado todas las actividades!"),
         "msgAttempts": _("Intentos"),
         "msgNumbersAttemps": _("Número de actividades pendientes"),
@@ -119,14 +119,14 @@ var $exeDevice = {
                             <input class="ODNE-EType" id="odntype0" checked type="radio" name="odntype" value="0" />\
                             <label for="odntype0">' + _('Frases') + '</label>\
                             <input class="ODNE-EType" id="odntype1" type="radio" name="odntype" value="1" />\
-                            <label for="odntype1">' + _('Multimedias') + '</label>\
+                            <label for="odntype1">' + _('Multimedia') + '</label>\
                         </span>\
                         </p>\
                         <p>\
                             <label for="ordenaEShowMinimize"><input type="checkbox" id="ordenaEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p id="ordenaTimeShowDiv" class="ODNE-Hide">\
-							<label for="ordenaETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas(segundos)") + ':\
+							<label for="ordenaETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas (segundos)") + ':\
 							<input type="number" name="ordenaETimeShowSolution" id="ordenaETimeShowSolution" value="3" min="1" max="999" /> </label>\
                         </p>\
                         <p id="ordenaECustomMessagesDiv" class="ODNE-Hide">\
@@ -203,7 +203,7 @@ var $exeDevice = {
                             <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="ODNE-EButtonImage b-prev" /></a>\
                             <span class="sr-av">' + _("Actividad número:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
                             <a href="#" id="ordenaENext" class="ODNE-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="ODNE-EButtonImage b-next" /></a>\
-                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('ültima actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
+                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('Última actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
                             <a href="#" id="ordenaEDelete" class="ODNE-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="ODNE-EButtonImage b-delete" /></a>\
                             <a href="#" id="ordenaECopy" class="ODNE-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
                             <a href="#" id="ordenaECut" class="ODNE-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
