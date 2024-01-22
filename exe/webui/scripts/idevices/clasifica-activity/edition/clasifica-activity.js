@@ -132,11 +132,11 @@ var $exeDevice = {
                         <span class="CQE-EInputMedias">\
                             <span>' + _("Número de categorías") + ':</span>\
                             <input class="CQE-Number" checked="checked" id="quextNumber2" type="radio" name="qxtnumber" value="2" />\
-                            <label for="quextNumber2">' + _("2") + '</label>\
+                            <label for="quextNumber2">2</label>\
                             <input class="CQE-Number"  id="quextNumber3" type="radio" name="qxtnumber" value="3" />\
-                            <label for="quextNumber3">' + _("3") + '</label>\
+                            <label for="quextNumber3">3</label>\
                             <input class="CQE-Number"  id="quextNumber4" type="radio" name="qxtnumber" value="4" />\
-                            <label for="quextNumber4">' + _("4") + '</label>\
+                            <label for="quextNumber4">4</label>\
                         </span>\
                         </p>\
                         <p>\
