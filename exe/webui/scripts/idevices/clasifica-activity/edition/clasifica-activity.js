@@ -112,7 +112,7 @@ var $exeDevice = {
             <div id="gameQEIdeviceForm">\
             <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que clasificar tarjetas con imágenes, textos y/o sonidos.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Arrastra cada tarjeta hasta su contendor.")) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Arrastra cada tarjeta hasta su contenedor.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
@@ -178,7 +178,7 @@ var $exeDevice = {
 							<input type="text" id="clasificaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="clasificaEEvaluationHelp" class="CQE-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\

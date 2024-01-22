@@ -48,19 +48,51 @@ var $exeDevice = {
         msgs.msgEProvideID = _("Tienes que introducir el identificador de este informe de progreso");
     },
     createForm: function () {
-        var html = '\
+        // Adivina, Completa, Identifica, Mapa, Operaciones matemáticas, Problemas matemáticos, QuExt, Rosco, Selecciona, Sopa de letras, Tarjetas de memoria, VídeoQuExt, Geogebra, Lista desordenada y Vídeo Interactivo
+		var iDeviceList = "";
+			iDeviceList += _("Word Guessing");
+			iDeviceList += ", ";
+			iDeviceList += _("Complete");
+			iDeviceList += ", ";
+			iDeviceList += _("Identify");
+			iDeviceList += ", ";
+			iDeviceList += _("Map");
+			iDeviceList += ", ";
+			iDeviceList += _("Math Operations");
+			iDeviceList += ", ";
+			iDeviceList += _("Math Problems");
+			iDeviceList += ", ";
+			iDeviceList += _("QuExt");
+			iDeviceList += ", ";
+			iDeviceList += _("A-Z Quiz Game");
+			iDeviceList += ", ";
+			iDeviceList += _("Multiple Choice Quiz");
+			iDeviceList += ", ";
+			iDeviceList += _("Word Search");
+			iDeviceList += ", ";
+			iDeviceList += _("Memory Cards");
+			iDeviceList += ", ";
+			iDeviceList += _("VideoQuExt");
+			iDeviceList += ", ";
+			iDeviceList += _("Geogebra");
+			iDeviceList += ", ";
+			iDeviceList += _("Scrambled List");
+			iDeviceList += ", ";
+			iDeviceList += _("Interactive Video");
+			iDeviceList += ".";
+		var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Muestra los resultados obtenidos por en alumnos en las activiades asociadas al mismo y su nota media.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
+                <div class="exe-idevice-info">' + _("Muestra los resultados obtenidos por en alumnos en las actividades asociadas al mismo y su nota media.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
-                           <p>' + _("El identificador puede ser un número o una palabra de más de cuatro caracteres. Debes utilizar este mismo identificador en todas las actividades que deseas evluar en este informe de progreso.") + '</p>\
+                           <p>' + _("El identificador puede ser un número o una palabra de más de cuatro caracteres. Debes utilizar este mismo identificador en todas las actividades que deseas evaluar en este informe de progreso.") + '</p>\
                             <p>\
 								<label for="informeEEvaluationID">' + _("Identificador") + ':\
 								<input type="text" id="informeEEvaluationID"/> </label>\
                             </p>\
                             <p>\
-								<label for="informeENumber">' + _("Nº de activiades evaluables") + ':\
+								<label for="informeENumber">' + _("Nº de actividades evaluables") + ':\
 								<input type="number" name="informeENumber" id="informeENumber" value="1" min="1" max="99" step="1" /> </label>\
                             </p>\
                             <p>\
@@ -75,7 +107,7 @@ var $exeDevice = {
                             <p>\
                                 <label for="informeUserData"><input type="checkbox" id="informeUserData" /> ' +   _("Datos del usuario") + '. </label>\
                             </p>\
-                            <p class="exe-idevice-info">' + _("<strong>IDevices compatibles con el informe:</strong> Adivina, Completa, Identifica, Mapa, Operaciones matemáticas, Problemas matemáticos, QuExt, Rosco, Selecciona, Sopa de letras, Tarjetas de memoria, VídeoQuExt, Geogebra,  Lista desordenada y Vídeo Interactivo.") + '</p>\
+                            <p class="exe-idevice-info"><strong>' + _("iDevices compatibles con el informe:") + " </strong>" + iDeviceList + '</p>\
                          </div>\
                     </fieldset>\
                 </div>\

@@ -74,7 +74,7 @@ var $exeDevice = {
         'Hide', 'Show', 'Licensed under the', 'Creative Commons Attribution Share Alike License 4.0'
     ],
     ci18n: {
-        "msgNode": _("Mensaje para el autor: Este idevice permite crear elp multilingües. En previsualización o exportado no será visible."),
+        "msgNode": _("Mensaje para el autor: Este iDevice permite crear elp multilingües. En previsualización o exportado no será visible."),
     },
 
     init: function () {
@@ -90,7 +90,7 @@ var $exeDevice = {
     setMessagesInfo: function () {
         var msgs = this.msgs;
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgOnlyOneIdevice = _("Sólo puedes añadir un idevice tipo Multilingual por página");
+        msgs.msgOnlyOneIdevice = _("Sólo puedes añadir un iDevice tipo Multilingual por página");
     },
 
     arrayMove: function (arr, oldIndex, newIndex) {
@@ -118,7 +118,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Permite crear elp mutilingues.") + ' <a href="https://youtu.be/sILaHXJJiWQ" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("Permite crear elp mutilingües.") + ' <a href="https://youtu.be/sILaHXJJiWQ" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                         <fieldset class="exe-fieldset">\
                             <legend><a href="#">' + _("Multilinguals") + '</a></legend>\
@@ -163,8 +163,8 @@ var $exeDevice = {
                                     </div>\
                                     <div id="mtlPanelRight" class="MTLE-PanelRight">\
                                       <div class="MTLE-TapsRightDiv" style="display:none;">\
-                                           <a href="#" id="mtlShowIdevices" class="GameModeHelpLink" title="' + _('Configurar el orden y la visiblidad de los menús') + '">' + _("IDevices") + '</a> \
-                                           <a href="#" id="mtlShowMenus" class="GameModeHelpLink" title="' + _('Configurar el orden y la visiblidad de los menús') + '">' + _("Menús") + '</a>\
+                                           <a href="#" id="mtlShowIdevices" class="GameModeHelpLink" title="' + _('Configurar el orden y la visibilidad de los menús') + '">' + _("IDevices") + '</a> \
+                                           <a href="#" id="mtlShowMenus" class="GameModeHelpLink" title="' + _('Configurar el orden y la visibilidad de los menús') + '">' + _("Menús") + '</a>\
                                       </div>\
                                     <div id="mtlMessageIDevices" class="MTLE-MessagesIdevices">' + _("Selecciona idioma") + '</div>\
                                       <div id="mtlIDevicesPageDiv" class="list MTLE-IDevicesPageDiv"></div>\
@@ -672,7 +672,7 @@ var $exeDevice = {
             $exeDevice.showMessage('Selecciona el idioma al que quieres asociar los idevices');
             return;
         }
-        var msg2 = _('<span style="color:red;font-weight:bolder;">Selecciona los idevices que se mostrarán en <span style="color:red;font-weight:bolder;">%s</span>').replace('%s', lng);
+        var msg2 = _('Selecciona los iDevices que se mostrarán en %s').replace('%s', '<span style="color:red;font-weight:bolder;">'+lng+'</span>');
         $("#mtlMessageIDevices").html(msg2);
 
     },

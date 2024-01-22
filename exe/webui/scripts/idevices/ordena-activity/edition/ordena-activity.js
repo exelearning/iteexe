@@ -187,7 +187,7 @@ var $exeDevice = {
 							<input type="text" id="ordenaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="ordenaEEvaluationHelp" class="ODNE-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\
@@ -199,11 +199,11 @@ var $exeDevice = {
                         </p>\
                         <div class="ODNE-ENavigationButtons" id="ordenaButtonsPrhaseDiv" >\
                             <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Añadir actividad') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir actividad') + '" class="ODNE-EButtonImage b-add" /></a>\
-                            <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('Priemra actividad') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('Primera actividad') + '" class="ODNE-EButtonImage b-first" /></a>\
+                            <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('Primera actividad') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('Primera actividad') + '" class="ODNE-EButtonImage b-first" /></a>\
                             <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="ODNE-EButtonImage b-prev" /></a>\
                             <span class="sr-av">' + _("Actividad número:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
                             <a href="#" id="ordenaENext" class="ODNE-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="ODNE-EButtonImage b-next" /></a>\
-                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('ültima actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('ültima actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
+                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('ültima actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
                             <a href="#" id="ordenaEDelete" class="ODNE-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="ODNE-EButtonImage b-delete" /></a>\
                             <a href="#" id="ordenaECopy" class="ODNE-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
                             <a href="#" id="ordenaECut" class="ODNE-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
@@ -232,11 +232,11 @@ var $exeDevice = {
                         </p>\
                         <div class="ODNE-EContents ODNE-Hide" id="ordenaButtonCardDiv" >\
                             <div class="ODNE-ENavigationButtons">\
-                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Añadir carta') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir card') + '" class="ODNE-EButtonImage b-add" /></a>\
-                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Borrar carta') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar card') + '" class="ODNE-EButtonImage b-delete" /></a>\
-                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copiar carta') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar card') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cortar carta') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar card') + '" class="ODNE-EButtonImage b-cut" /></a>\
-                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Pegar carta') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar card') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Añadir carta') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir tarjeta') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Borrar carta') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar tarjeta') + '" class="ODNE-EButtonImage b-delete" /></a>\
+                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copiar carta') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar tarjeta') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cortar carta') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar tarjeta') + '" class="ODNE-EButtonImage b-cut" /></a>\
+                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Pegar carta') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar tarjeta') + '" class="ODNE-EButtonImage b-paste" /></a>\
                         </div>\
                         </div>\
                         <div class="ODNE-ENumPhrasesDiv" id="ordenaENumPhrasesDiv">\

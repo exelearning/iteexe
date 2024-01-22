@@ -404,7 +404,7 @@ var $exeDevice = {
       
     });
     if(scoreError == 1){
-      $exeDevice.showMessage(_("Debes indicar  el numero de puntos de cada item evaluable "));
+      $exeDevice.showMessage(_("Debes indicar  el numero de puntos de cada ítem evaluable"));
       return false;
     } else if(scoreError == 2){
       $exeDevice.showMessage(_("No puedes indicar una puntuación para este tipo de casillas"));

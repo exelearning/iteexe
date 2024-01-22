@@ -74,14 +74,14 @@ var $exeDevice = {
         "msgNext": _("Next"),
         "msgLast": _("Last"),
         "msgAccessCode": _("Access code"),
-        "msgNode": _("Mensaje para el editor: Este idevice permite configurar el comportamiento de los idevices en esta página. En previsualización o exportado no será visible."),
+        "msgNode": _("Mensaje para el editor: Este iDevice permite configurar el comportamiento de los iDevices en esta página. En previsualización o exportado no será visible."),
         "msgNotRepeat": _("Ya has realizado esta prueba. No puedes repetirla."),
         "msgRepeat": _("Has completado esta prueba. Puedes repetirla cuando desees."),
         "msgRepeatCode": _("Has completado esta prueba. Para poder repetirla necesitarás un código de acceso."),
         "msgGameOver": _("Has finalizado la actividad"),
         "msgNewGame": _("Pulsa aquí para repetirlo"),
         "msgPlayStart": _("Pulsa aquí para comenzar"),
-        "msgAllQuestions": _("!Has compleado el test!")
+        "msgAllQuestions": _("¡Has completado el test!")
     },
 
     init: function () {
@@ -143,7 +143,7 @@ var $exeDevice = {
         msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
         msgs.msgProvideMessageCode = _("Debes proporcionar el código y el mensaje de acceso");
-        msgs.msgOnlyOneIdevice = _("Sólo puedes añadir un idevice tipo Itinerario por página");
+        msgs.msgOnlyOneIdevice = _("Sólo puedes añadir un iDevice tipo Itinerario por página");
     },
     loadYoutubeApi: function () {
         onYouTubeIframeAPIReady = $exeDevice.youTubeReady;
@@ -975,7 +975,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Permite definir itinerarios diferentes detro de un elp en función de un prueba diagnóstica inicial.") + ' <a href="https://youtu.be/odJq4zF3-QE" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("Permite definir itinerarios diferentes dentro de un elp en función de un prueba diagnóstica inicial.") + ' <a href="https://youtu.be/odJq4zF3-QE" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Choose the right answers and click on the Check button.")) + '\
                         <fieldset class="exe-fieldset">\
@@ -1025,7 +1025,7 @@ var $exeDevice = {
                                             </span>\
                                         </p>\
                                         <p id="itnETypeDiv" style="display:none;">\
-                                        <a href="#" id="itnHelpLink2" class="GameModeHelpLink" title="' + _('Help') + '"><img src="' + path + 'quextIEHelp.gif" width="16" height="16" alt="' + _('Help') + '"/></a><span id="itnEType">' + _("Tipo de prueba diagóstica") + ':</span>\
+                                        <a href="#" id="itnHelpLink2" class="GameModeHelpLink" title="' + _('Help') + '"><img src="' + path + 'quextIEHelp.gif" width="16" height="16" alt="' + _('Help') + '"/></a><span id="itnEType">' + _("Tipo de prueba diagnóstica") + ':</span>\
                                             <input class="ITNE-EvaluationType"  id="numOptionsMax" type="radio" name="itievaluation" value="0" />\
                                             <label for="numOptionsMax">' + _("Opción más frecuente") + '</label>\
                                             <input class="ITNE-EvaluationType" checked  id="numPuntuation" type="radio" name="itievaluation" value="1" />\
@@ -1034,7 +1034,7 @@ var $exeDevice = {
                                         <div id="itnHelp2" class="ITNE-TypeGameHelp">' + $exeDevice.getHelp(2) + '</div>\
                                         <p id="itnIntineraries" class="ITNE-Itineraries ITNF-Flex" style="display:none;">\
                                             <a href="#" id="itnHelpLink4" class="GameModeHelpLink" title="' + _('Help') + '"><img src="' + path + 'quextIEHelp.gif" width="16" height="16" alt="' + _('Help') + '"/></a>\
-                                            <span id="itnEItinerary">' + _("Los idevices seleccionados se mostrarán") + ':</span>\
+                                            <span id="itnEItinerary">' + _("Los iDevices seleccionados se mostrarán") + ':</span>\
                                             <input class="ITNE-ItinerarioName" checked  id="iti0" type="radio" name="itiname" value="0" /><label class="ITNE-ItinerarioNameLB" for="iti0">Antes de la prueba</label> \
                                             <input class="ITNE-ItinerarioName" id="iti1" type="radio" name="itiname" value="1" /><label class="ITNE-ItinerarioNameLB" for="iti1">Itinerario A</label> \
                                             <input class="ITNE-ItinerarioName" id="iti2" type="radio" name="itiname" value="2" /><label class="ITNE-ItinerarioNameLB" for="iti2">Itinerario B</label> \
@@ -1089,8 +1089,8 @@ var $exeDevice = {
                                     </div>\
                                     <div id="itnPanelRight" class="ITNE-PanelRight" style="display:none;">\
                                       <div class="ITNE-TapsRightDiv" style="display:none;">\
-                                           <a href="#" id="itnShowIdevices" class="GameModeHelpLink" title="' + _('Configurar el orden y la visiblidad de los menús') + '">' + _("IDevices") + '</a> \
-                                           <a href="#" id="itnShowMenus" class="GameModeHelpLink" title="' + _('Configurar el orden y la visiblidad de los menús') + '">' + _("Menús") + '</a>\
+                                           <a href="#" id="itnShowIdevices" class="GameModeHelpLink" title="' + _('Configurar el orden y la visibilidad de los menús') + '">' + _("IDevices") + '</a> \
+                                           <a href="#" id="itnShowMenus" class="GameModeHelpLink" title="' + _('Configurar el orden y la visibilidad de los menús') + '">' + _("Menús") + '</a>\
                                       </div>\
                                     <div id="itnMessageIDevices" class="ITNE-MessagesIdevices">' + _("Se mostrarán siempre") + '</div>\
                                       <div id="itnIDevicesPageDiv" class="list ITNE-IDevicesPageDiv"></div>\
@@ -1821,26 +1821,26 @@ var $exeDevice = {
         var help = ''
         if (number == 0) {
             help = '<ul class="ITNE-HelpMessage">\
-                <li><strong>' + _("Prueba diagnóstica") + ': </strong>' + _("Muestra un prueba tipo test de repuesta múltimle cuyo resultado definirá los idevices que se mostrarán en las páginas con nodos de igual identificador.") + '</li>\
-                <li><strong>' + _("Nodo") + ': </strong>' + _("Define el comportamiento de los idevices de esta página en función del resultado obtenido en la prueba diagnóstica de igual identificador.") + '</li>\
-                <li><strong>' + _("Colapsar") + ': </strong>' + _("Permite establecer que idevices se mostrarán minimizados al cargarse la página.") + '</li>\
-                <li><strong>' + _("Presentación") + ': </strong>' + _("Proporciona un conjuto de botones que permite controlar la visibilidad de los idevices de esta página.") + '</li>\
+                <li><strong>' + _("Prueba diagnóstica") + ': </strong>' + _("Muestra un prueba tipo test de repuesta múltiple cuyo resultado definirá los iDevices que se mostrarán en las páginas con nodos de igual identificador.") + '</li>\
+                <li><strong>' + _("Nodo") + ': </strong>' + _("Define el comportamiento de los iDevices de esta página en función del resultado obtenido en la prueba diagnóstica de igual identificador.") + '</li>\
+                <li><strong>' + _("Colapsar") + ': </strong>' + _("Permite establecer que iDevices se mostrarán minimizados al cargarse la página.") + '</li>\
+                <li><strong>' + _("Presentación") + ': </strong>' + _("Proporciona un conjunto de botones que permite controlar la visibilidad de los iDevices de esta página.") + '</li>\
             </ul>';
         } else if (number == 1) {
             help = help = '<p class="ITNE-HelpMessage">' + _("Debes indicar el mismo identificador en la prueba diagnóstica y en sus nodos asociados") + '</p>'
         } else if (number == 2) {
             help = '<ul class="ITNE-HelpMessage">\
                 <li><strong>' + _("Opción más frecuente") + ': </strong>' + _("El itinerario dependerá de la opción seleccionada con más frecuencia en las respuestas de la prueba diagnóstica. No hay puntuación") + '</li>\
-                <li><strong>' + _("Score") + ': </strong>' + _("El itinerario vendrá determidado por la puntuación obtenida en la prueba. Es necesario definir los intervalos de puntuación") + '</li>\
+                <li><strong>' + _("Score") + ': </strong>' + _("El itinerario vendrá determinado por la puntuación obtenida en la prueba. Es necesario definir los intervalos de puntuación") + '</li>\
             </ul>';
         } else if (number == 3) {
             help = '<ul class="ITNE-HelpMessage">\
-                <li><strong>' + _("No") + ': </strong>' + _("La prueba de diágnotica tan sólo se podrá realizar una vez. Una vez definido un itinerario, no se podrá cambiar.") + '</li>\
+                <li><strong>' + _("No") + ': </strong>' + _("La prueba diagnóstica sólo se podrá realizar una vez. Una vez definido un itinerario, no se podrá cambiar.") + '</li>\
                 <li><strong>' + _("Yes") + ': </strong>' + _("Se podrá realizar la prueba diagnóstica tantas veces como se desee. El itinerario se modificará en función de los nuevos resultados obtenidos.") + '</li>\
-                <li><strong>' + _("Código") + ': </strong>' + _("La prueba diagnóstica se podrá repetir mediante la introdución de un código obtenido por medios externos: una pista de un juego.") + '</li>\
+                <li><strong>' + _("Código") + ': </strong>' + _("La prueba diagnóstica se podrá repetir mediante la introducción de un código obtenido por medios externos: una pista de un juego.") + '</li>\
             </ul>';
         } else if (number == 4) {
-            help = '<p class="ITNE-HelpMessage">' + _("En el panel de la derecha, selecciona los idevices que se mostrarán en cada caso") + '</p>'
+            help = '<p class="ITNE-HelpMessage">' + _("En el panel de la derecha, selecciona los iDevices que se mostrarán en cada caso") + '</p>'
         } else if (number == 5) {
             help = '<p class="ITNE-HelpMessage">' + _("Escribe el mensaje que se mostrará al alumno en cada itinerario") + '</p>'
 
