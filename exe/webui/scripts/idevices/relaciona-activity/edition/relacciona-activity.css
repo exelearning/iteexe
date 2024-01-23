@@ -1,0 +1,425 @@
+
+#gameIdeviceForm {
+	margin-top: 2em;
+	width: 100%;
+}
+#gameIdeviceForm input[type=number] {
+	width: 3em;
+}
+#gameIdeviceForm label {
+	margin-right: 0.1em;
+}
+#gameIdeviceForm input[type="radio"], #gameIdeviceForm input[type="checkbox"], #gameIdeviceForm input[type=button] {
+	cursor: pointer;
+}
+/*Panel parejas */
+.RLC-EPanel {
+	padding: 0;
+	width: 100%;
+	max-width: 1200px;
+	position: relative;
+	padding-top: 1em;
+}
+.RLC-EPhrase {
+	align-items:flex-start;
+	display: flex;
+	justify-content: center;
+	flex-wrap: nowrap;
+	width: 100%;
+
+}
+
+.RLC-EBack {
+	background-color:rgb(220, 242, 255);
+	border-radius: 0.3em;
+
+}
+.RLC-EFront{
+	background-color:#eeeeee;
+	border-radius: 0.3em;
+}
+.RLC-EMultimedia {
+	margin: 0 auto 0.6em auto;
+	position: relative;
+	width: 240px;
+	min-height: 240px;
+	height: 240px;
+	min-width: 240px;
+	overflow: hidden;
+	border: 1px solid rgb(3, 112, 116);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20), 0 3px 6px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 0.3em;
+}
+.RLC-ECard{
+	top:4px;
+	left:4px;
+	width: 232px;
+	height: 232px;
+	min-width: 232px;
+	background-color: white;
+	position: absolute;
+
+}
+.RLC-EMultimedia textarea{
+	left:0;
+	top:0;
+	position: absolute;
+
+}
+
+.RLC-EDatosCarta {
+	width: 50%;
+	max-width: 450px;
+	min-width: 400px;
+    border-radius: 0.3em;
+	padding: 0.7em;
+	padding-bottom: 1.3em;
+	height: auto;
+	margin-right: 0.6em;
+	margin-top: 1em;
+	cursor: pointer;
+
+}
+
+
+.RLC-EDatosCarta input[type=text] {
+	margin-right: .2em;
+	width: 100%;
+}
+/* Medias */
+
+
+.RLC-EImageFit{
+	width: 240px;
+	min-height: 240px ;
+	height: 240px ;
+	min-width: 240px;
+	object-fit: contain;
+	object-position: center;
+	margin:auto;
+	background-color: white;
+	position: absolute;
+}
+.RLC-EImage, .RLC-NoImage{
+	position: absolute;
+}
+
+.RLC-ECursor {
+	left: 0;
+	top:0;
+	position: absolute;
+	display: none;
+}
+/* Opciones imagen */
+
+.RLC-EAuthorAlt{
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+.RLC-EAuthorAlt div {
+	width: 49%;
+}
+
+.RLC-EAuthorAlt label {
+	display: block;
+}
+.RLC-EAuthorAlt input[type=text] {
+	width: 97%;
+}
+
+.RLC-EInputAudio, .RLC-EInputImage, .RLC-EInputText {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+	min-width: 100px;
+	width: 100%;
+}
+.RLC-EInputAudio input[type=text],.RLC-EInputImage input[type=text] {
+	flex-flow: 1;
+	margin-right: 0.2em;
+	min-width: 100px;
+	width: 100%;
+
+}
+.RLC-EInputAudio input[type=button],.RLC-EInputImage input[type=button] {
+	flex-shrink: 0;
+}
+
+.RLC-ETextDiv {
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.7);
+	color:black;
+	position: absolute;
+	color: '#000000';
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 1px solid #ccc;
+	border-radius: 0.6em;
+	font-size: 1.3em;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.RLC-ETextDiv *{
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	word-wrap: break-word;
+    overflow-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+
+}
+
+/* Itinerario */
+
+.RLC-EHit {
+	background-image: url(quextIEHit.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	width: 1.5em;
+}
+
+.RLC-Hide{
+	display: none;
+}
+
+.RLC-ECustomMessageDiv, .RLC-ECustomMessageDef{
+	margin-top: 0.6em;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-wrap: nowrap;
+}
+
+.RLC-ECustomMessageDiv label, .RLC-ECustomMessageDef label{
+	white-space:nowrap;
+	margin-right: 0.1em;
+}
+.RLC-ECustomMessageDiv input[type=text], .RLC-ECustomMessageDef input[type=text]{
+	width: 100%;
+	max-width: 1000px;
+	margin-right: 0.2em;
+}
+
+/*Numero Preguntas */
+.RLC-ENumCardDiv {
+	align-items: center;
+	display: flex;
+	height: 1.5em;
+	justify-content: center;
+	position: absolute;
+	right: 0;
+	top: -1em;
+	width: 3em;
+	height: 3em;
+	z-index: 100;
+
+}
+.RLC-ENumCardsIcon {
+	background-image: url(quextIENumber.png);
+	background-size: 100% 100%;
+	display: inline-block;
+	height: 1.5em;
+	margin-right: 0px;
+	width: 1.5em;
+}
+.RLC-ENumCards {
+	font-weight: bold;
+	height: 1.5em;
+	text-align: center;
+	width: 2em;
+}
+.RLC-ECustomMessage {
+	align-items: center;
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 1em;
+	width: 100%;
+}
+.RLC-ECustomMessage input[type=text] {
+	width: 100%;
+	margin-right: 0.1em;
+}
+.RLC-ECustomMessage label {
+	margin: 0 0.1em;
+}
+
+/* barra edición */
+.RLC-ENavigationButtons {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-top: 1em;
+	width: 100%;
+}
+
+.RLC-ENavigationButton {
+	height: 1.5em;
+	margin: 0 .3em;
+	min-width: 1.5em;
+	width: 1.5em;
+}
+.RLC-EButtonImage {
+	height: 100%;
+	transition: all .3s ease-in-out;
+	width: 100%;
+}
+.RLC-EButtonImage:hover {
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+}
+
+.RLC-NumberCard{
+	text-align: center;
+	width: 2em;
+}
+.RLC-EReverseFacces {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;}
+
+.RLC-EReverseFacces a{
+	text-align: center;
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.RLC-ECoord{
+	display: none;
+}
+
+/* To review */
+#gameIdeviceForm .exe-block-info img {
+	margin-left: .2em;
+	vertical-align: middle;
+}
+#gameIdeviceFormTab3 * {
+	font-size: 0.9em;
+}
+#gameIdeviceFormTab3 p:first-child {
+	margin-top: 0;
+}
+#gameIdeviceFormTab3 {
+	overflow: auto;
+}
+#gameIdeviceFormTab3 .ci18n {
+	float: left;
+	width: 50%;
+}
+@media screen and (max-width:720px) {
+	#gameIdeviceForm #gameIdeviceFormTab3 .ci18n {
+		float: none;
+		width: 100%;
+	}
+}
+#gameIdeviceForm #gameIdeviceFormTab3 label {
+	display: block;
+	font-size: 0.9em;
+	font-weight: bold;
+	margin-bottom: .2em;
+}
+#gameIdeviceForm #gameIdeviceFormTab3 input {
+	font-size: 0.9em;
+	width: 300px;
+}
+/* Tabs (this should be common) */
+.exe-form-tabs {
+	list-style: none;
+	margin: 0 0 1.5em 0;
+	padding: 0;
+}
+#main .exe-form-tabs li {
+	display: inline;
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+.exe-form-tabs li:first-child a {
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+}
+.exe-form-tabs li:last-child a {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+.exe-form-tabs a {
+	background: #F9F9F9;
+	border: 1px solid #CCC;
+	color: #666;
+	display: inline-block;
+	padding: .5em 1em;
+}
+.exe-form-tabs li:not(:last-child) a {
+	border-right: none;
+}
+.exe-form-tabs .exe-form-active-tab {
+	background: #FFF;
+	color: #000;
+	font-weight: 500;
+}
+#gameQESCORMoptions {
+	margin-left: 1.5em;
+	visibility: hidden;
+}
+label[for=gameQEActivitySCORM] {
+	font-weight: bold;
+}
+#gameQESCORMinstructionsButton {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsButton ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsButton ul li {
+	list-style-image: none;
+	margin: 0 0 .5em 0;
+	padding: 0;
+}
+#gameQESCORMinstructionsAuto {
+	color: #777;
+	display: none;
+	margin: 10px 0 0 25px;
+}
+#gameQESCORMinstructionsAuto ul {
+	list-style: none;
+	margin: 1.5em 0 .7em 0;
+	padding: 0;
+}
+.GameModeHelpLink{
+	margin:0 2px;
+	vertical-align:middle;
+}
+.GameModeLabel{
+	font-weight:normal
+}
+.RLC-TypeGameHelp{
+	display:none;
+	margin-bottom:2em;
+	font-size:.95em
+}

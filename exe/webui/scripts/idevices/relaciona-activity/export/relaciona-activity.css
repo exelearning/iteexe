@@ -1,0 +1,1187 @@
+/* Contenedor */
+  
+.RLCP-MainContainer {
+    margin: 1em auto;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+.RLCP-MainContainer * {
+    box-sizing: border-box;
+}
+
+.RLCP-MainContainer p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Instrucciones */
+
+.RLCP-instructions {
+    margin: 0.3em auto;
+    width: 100%;
+    overflow: auto;
+}
+
+/* Minimizado */
+
+.RLCP-GameMinimize {
+    display: none;
+    margin: 1em auto;
+    width: 100%;
+}
+
+.RLCP-LinkMaximize {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.RLCP-IconMinimize {
+    height: 2em;
+    margin-right: 0.5em;
+    width: 2em;
+}
+
+/* Juego */
+
+.RLCP-GameContainer {
+    margin: 0 auto;
+    padding: 2em 0.3em 2em 0.3em;
+    position: relative;
+    max-width: 1600px;
+    width: 100%;
+    height: auto;
+}
+
+/* barra de puntuaciones */
+
+.RLCP-GameScoreBoard {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+    width: 100%;
+    height: 1.1em;
+}
+
+.RLCP-GameScoreBoard p {
+    font-size: 1.1em;
+    margin-right: 0.3em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.RLCP-GameScores {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.RLCP-GameScores>p:last-child {
+    text-align: left;
+}
+
+.RLCP-TimeNumber {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.RLCP-PTime {
+    margin-left: 0.3em;
+    min-width: 3.5em;
+    text-align: center;
+    width: auto;
+}
+
+/* Pista */
+.RLCP-ShowClue {
+    display: none;
+}
+
+.RLCP-PShowClue {
+    text-align: center;
+    width: 100%;
+}
+
+.RLCP-ContainerData  {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4em;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.RLCP-ContainerData *  {
+    box-sizing: border-box;
+}
+.RLCP-ImageContain  {
+    width: 30%;
+    height: 100%;
+    position: relative;
+}
+
+.RLCP-Image {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.RLCP-EText {
+    border: none;
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+    font-weight: 500;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.RLCP-StartNivelMemory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.RLCP-StartNivelMemory a {
+    display: block;
+    margin-left: 0.5em;
+    color: #a2241a;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.RLCP-StartGameMemory a:hover {
+    text-decoration: underline;
+}
+
+.RLCP-Multimedia {
+    background-color: transparent;
+    border-radius: 0.6em;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    gap: 0.3em;
+    margin-top: 0.8em;
+    height: auto;
+}
+
+
+.RLCP-Author {
+    position: absolute;
+    width: 1.2em;
+    height: 1.2em;
+    z-index: 4;
+    display: block;
+    bottom: 1px;
+
+}
+.RLCP-AuthorWord {
+
+    left:1px;
+
+
+}
+.RLCP-AuthorDef {
+    right:1px;
+
+}
+.RLCP-Author img {
+    width: 100%;
+    height: 100%;
+}
+
+.RLCP-LinkAudio img {
+    width: 100%;
+    height: 100%;
+}
+
+.RLCP-LinkAudio {
+    top: -3px;
+    position: absolute;
+    left: -3px;
+    width: 32px;
+    height: 32px;
+    min-width: 20px;
+    min-height: 20px;
+    display: block;
+    z-index: 6;
+    cursor: pointer;
+    display: none;
+}
+
+
+.RLCP-LinkAudioBig {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+
+}
+
+.RLCP-LinkAudio-Back {
+    display: none;
+}
+
+.RLCP-LinkAudio-Front {
+    display: none;
+}
+
+.RLCP-Audio {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Game Over */
+
+.RLCP-Cover {
+    width: 100%;
+    height: 95%;
+    position: absolute;
+    top: 1%;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    z-index: 20;
+    background-color: rgb(255, 255, 255, 0.1)
+}
+
+.RLCP-ClueBotton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.6em auto;
+}
+
+
+/* Aciertos */
+
+.RLCP-Information, .RLCP-Buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.4em
+}
+.RLCP-Buttons {
+    gap: 10px;
+    display: none;
+}
+.RLCP-Information a, .RLCP-Buttons a {
+    font-size: 1.2em;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+.RLCP-Message {
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.2em;
+    min-height: 1.5em;
+}
+
+
+
+.RLCP-AuthorGame {
+    margin: 0.5em auto;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    display: none;
+}
+
+/* Código acceso */
+
+
+.RLCP-CodeAccessDiv, .RLCP-ShowClue {
+    background-color: white;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 1.5em;
+    margin-top: 4em;
+}
+
+.RLCP-MessageCodeAccessE {
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    margin: 0.5em;
+}
+
+.RLCP-DataCodeAccessE {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0.7em auto 0 auto;
+    width: 100%;
+}
+
+.RLCP-CodeAccessE {
+    margin: 0 .3em;
+    width: 100%;
+    text-align: center;
+}
+
+.RLCP-GameContainer .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.RLCP-BottonContainerDiv, .RLCP-BottonContainer {
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0.1em auto;
+    padding: 0;
+    width: 100%;
+}
+
+.RLCP-BottonContainerDivEnd {
+    justify-content: flex-end;
+}
+
+/*Intrucciones */
+
+.RLCP-DivInstructions {
+    margin: 1em 0 0 0;
+    text-align: center;
+    width: 95%;
+}
+
+.RLCP-parpadea {
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: 5;
+    -webkit-animation-name: RLCP-parpadeo;
+    -webkit-animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-name: RLCP-parpadeo;
+    animation-timing-function: linear;
+}
+
+
+.relaciona-extra-content {
+    margin-top: 1.7em;
+}
+
+/* Enlace activo */
+
+.RLCP-Activo {
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    -webkit-filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    -webkit-transition: transform 0.3s;
+    cursor: pointer;
+    filter: drop-shadow(.12em .12em .12em rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s;
+}
+
+.RLCP-LinkMaximize:hover .RLCP-Activo, .RLCP-Activo:hover {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Puntuacion */
+
+.RLCP-BottonContainer {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.RLCP-BottonContainer * {
+    margin: 0;
+    padding: 0;
+}
+
+.RLCP-GetScore input[type=button] {
+    padding: 0.3em 0.5em;
+    margin: 0 .5em 1em 0.5em;
+    width: auto;
+}
+
+.RLCP-GetScore {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1em
+}
+
+.noselect {
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Iconos */
+
+.RLCP-GameContainer .exeQuextIcons {
+    background-size: 100% 100%;
+    height: 1.4em;
+    margin-right: 0.3em;
+    width: 1.4em;
+}
+
+.exeQuextButtonsF {
+    background-size: 100% 100%;
+    height: 4em;
+    width: 4em;
+    margin-left: 0.5em;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    margin-right: 0.5em;
+
+}
+
+.RLCP-GameOverExt {
+    background-color: white;
+    width: 50%;
+    max-width: 450px;
+    border: 1px solid #ddd;
+    border-radius: 0.6em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 10em;
+}
+
+.RLCP-GameOver {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    margin: 0.3em auto;
+}
+
+.RLCP-GameOver:before {
+    content: '';
+    display: block;
+    padding-top: 40%;
+}
+
+.RLCP-DataImage {
+    height: 100%;
+    padding: 0;
+    position: relative;
+    width: 50%;
+}
+
+.RLCP-DataScore {
+    padding: 0;
+    width: 50%;
+}
+
+.RLCP-DataScore p {
+    margin: 0.7em;
+    font-size: 0.9em;
+}
+
+.RLCP-HistGGame, .RLCP-LostGGame {
+    bottom: 0;
+    left: 0;
+    display: none;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+}
+
+.RLCP-HistGGame:before, .RLCP-LostGGame:before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+
+.RLCP-StartGame {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    margin: 0.5em auto 0 auto;
+    text-align: center;
+    user-select: none;
+    width: 100%;
+}
+
+.RLCP-StartGame a:hover {
+    text-decoration: underline;
+}
+
+.RLCP-StartGame a {
+    color: #a2241a;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+
+
+.RLCP-GameContainer:-webkit-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.RLCP-GameContainer:-moz-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.RLCP-GameContainer:-ms-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.RLCP-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+.RLCP-GameContainer:-o-full-screen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+}
+
+
+.RLCP-GameContainer .exeQuextIcons-Video, .RLCP-GameContainer .exeQuextIcons-Submit, .RLCP-Cover .exeQuextIcons-Submit {
+    height: 1.7em;
+    width: 1.7em;
+}
+
+.RLCP-GameContainer .exeQuextIcons-Time {
+    background-image: url(exequexttime.png);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-IconReboot {
+    background-image: url(exequextreload.png);
+    background-size: 100% 100%;
+}
+
+
+.RLCP-GameContainer .exeQuextIcons-Minimize {
+    background-image: url(exequextmin.png);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-Hit {
+    background-image: url(exequexthits.png);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-Error {
+    background-image: url(exequextrerrors.png);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-Score {
+    background-image: url(exequextscore.png);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-ButtonOk {
+    background-image: url(exequextbuttonok.svg);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-ButtonKO {
+    background-image: url(exequextbuttonko.svg);
+    background-size: 100% 100%;
+}
+
+.RLCP-GameContainer .exeQuextIcons-FullScreen {
+    background-image: url(exequextfull.png);
+    background-size: 100% 100%;
+}
+
+
+.RLCP-GameContainer .exeQuextIcons-Number {
+    background-image: url(exequextnumber.png);
+    background-size: 100% 100%;
+}
+
+
+.RLCP-MainContainer .exeQuextIcons-Submit, .RLCP-Cover .exeQuextIcons-Submit {
+    background: url(exequextreply.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+div:fullscreen .exeQuextIcons-FullScreen {
+    background-image: url(exequextnormal.png);
+    background-size: 100% 100%;
+}
+
+div:fullscreen .RLCP-Message {
+    font-weight: 1.1em;
+}
+
+
+.RLCP-GameContainer:-webkit-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0.6em 0.6em 1em 0.6em;
+    overflow-y:auto;
+
+}
+
+.RLCP-GameContainer:-moz-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0.6em 0.6em 1em 0.6em;
+    overflow-y:auto;
+
+}
+
+.RLCP-GameContainer:-ms-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0.6em 0.6em 1em 0.6em;
+    overflow-y:auto;
+
+}
+
+.RLCP-GameContainer:-o-full-screen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0.6em 0.6em 1em 0.6em;
+    overflow-y:auto;
+
+}
+
+.RLCP-GameContainer:fullscreen {
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+    max-width: 100vw;
+    padding: 0.6em 0.6em 1em 0.6em;
+    overflow-y:auto;
+
+}
+
+div:fullscreen .RLCP-Word, div:fullscreen .RLCP-Definition {
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.RLCP-EvaluationDivIcon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.1em;
+    width: 100%;
+    margin-bottom: 6px;
+
+}
+
+.RLCP-EvaluationDivIcon img {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+.RLCP-EvaluationDivIcon span {
+    font-size: 0.9em;
+}
+
+@-moz-keyframes RLCP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes RLCP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+
+
+@keyframes RLCP-parpadeo {
+    0% {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
+
+.RLCP-GameButtons-Movil {
+    margin-top: 0;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 70px;
+}
+
+.exeQuextButtonsF-movil {
+    margin-right: 1.5em;
+    margin-left: 1.5em;
+    width: 3em;
+    height: 3em;
+
+
+}
+
+.RLCP-Container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2em;
+    width: 100%;
+}
+
+.RLCP-Card {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    padding: 1em;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin-bottom: 1em;
+    -webkit-user-select: none;
+    /* Safari 3.1+ */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+
+}
+
+.RLCP-CardTarget {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+}
+
+.RLCP-Text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.RLCP-Audio {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.RLCP-Canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9; 
+    pointer-events: none; 
+}
+
+.RLCP-CardTarget .RLCP-Card {
+    margin-bottom: 0;
+}
+
+.RLCP-Main {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+.RLCP-ContainerGame {
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap :20%;
+    height: auto;;
+    position: relative;
+    background-color: transparent;
+}
+.RLCP-ContainerWords,.RLCP-ContainerDefinitions{
+    margin: 0;
+    padding: 0;
+    width: 40%;
+    max-width: 400px;
+    min-width: 120px;
+    height: auto;
+    background-color: white;
+}
+.RLCP-Word, .RLCP-Definition {
+    position: relative;
+    width: 100%;;
+    height: 90px;
+    border: 1px solid #ddd;
+    padding: 3px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.RLCP-Word { left: 0; }
+.RLCP-Definition{ right: 0; }
+.RLCP-Word:before, .RLCP-Definition:before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height:8px;
+    border-radius: 50%;
+    background-color: #555;
+    z-index: 8
+}
+.RLCP-Word.RLCP-Selected, .RLCP-Definition.RLCP-Selected{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.20), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+.RLCP-Word.RLCP-Selected:before {
+    width: 12px;
+    height: 12px;
+    right: -6px
+}
+.RLCP-Definition.RLCP-Selected:before {
+    width: 12px;
+    height: 12px;
+    left: -6px
+}
+.RLCP-Word:before { right: -4px; top: 50%; transform: translateY(-50%); }
+.RLCP-Definition:before { left: -4px; top: 50%; transform: translateY(-50%); }
+.RLCP-Word:hover, .RLCP-Definition:hover { background-color: #e9e9e9; }
+.RLCP-Word.RLCP-Connected, .RLCP-Definition.RLCP-Connected { cursor: pointer; }
+.RLCP-Word.RLCP-Connected:hover, .RLCP-Definition.RLCP-Connected:hover { 
+    background-color: #f9f9f9; 
+}
+.RLCP-ResetButton, .RLCP-CheckButton { 
+    display: none;
+}
+
+@media screen and (max-width:650px) {
+    .RLCP-LinkFullScreen{
+        display: none;
+    }
+    .RLCP-ContainerGame {
+        gap :80px;
+        font-size: 0.9em;
+    }
+    .RLCP-Column {
+        min-height: 0;
+    }
+
+    .RLCP-Card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .RLCP-CardTarget {
+        width: 100px;
+        height: 100px;
+    }
+
+    .RLCP-GameOverExt {
+        width: 80%;
+        margin-top: 5em;
+    }
+
+    .RLCP-DataImage {
+        display: none;
+    }
+
+    .RLCP-DataScore {
+        width: 90%;
+    }
+
+    .RLCP-CardDraw {
+        margin: 0.4em;
+    }
+
+
+
+    .RLCP-MainContainer {
+        font-size: 0.9rem;
+    }
+
+
+    .RLCP-LinkMinimize {
+        display: none;
+    }
+
+    .RLCP-DataCodeAccessE label {
+        display: none;
+    }
+
+    .RLCP-GameContainer .exeQuextIcons-MoveOne, .RLCP-GameContainer .exeQuextIcons-Submit, .RLCP-GameContainer .exeQuextIcons-Video {
+        height: 2em;
+        width: 2em;
+    }
+
+    .RLCP-GameContainer input[type="text"], input.RLCP-CodeAccessE {
+        background: #fdfdfd;
+        border: 1px solid #828282;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: inline-block;
+        line-height: 1.5em;
+        margin: 0 0.3em;
+        padding: 0.4em 0.25em;
+    }
+
+    .RLCP-GameContainer input[type="text"]:active, .RLCP-GameContainer input[type="text"]:focus, input.RLCP-EdReply:focus, input.RLCP-EdReply:active, input.RLCP-CodeAccessE:focus, input.RLCP-CodeAccessE:active {
+        background: #fdfdfd;
+        border: 1px solid #398ee7;
+        border-radius: 4px;
+    }
+
+    .RLCP-CodeAccessDiv, .RLCP-ShowClue {
+        width: 90%;
+    }
+
+    div:fullscreen .RLCP-Message {
+        font-weight: 1em;
+    }
+    .RLCP-ContainerGame {
+        gap :80px;
+        font-size: 0.9rem;
+    }
+    .RLCP-Word, .RLCP-Definition {
+        height: 80px;
+    }
+    .RLCP-LinkAudio {
+        width: 24px;
+        height: 24px;
+    }
+
+    .RLCP-LinkAudioBig {
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .RLCP-Information a, .RLCP-Information p, .RLCP-Buttons a {
+        font-size: 1em;
+    }
+    .RLCP-Message {
+        min-height: 1.3em;
+    }
+}
+
+
+@media screen and (max-width:425px) {
+    .RLCP-MainContainer {
+        font-size: 0.8rem;
+    }
+
+    .RLCP-GameScoreBoard p {
+        font-weight: normal;
+        margin: 0.1em;
+        padding: 0;
+    }
+
+    .RLCP-GameContainer .exeQuextIcons {
+        margin: 0;
+        padding: 0;
+    }
+
+    .RLCP-GameContainer .RLCP-GameScoreBoard p {
+        padding: 0;
+    }
+
+    .RLCP-GameScores {
+        width: 50%;
+    }
+
+    .RLCP-TimeNumber {
+        width: 45%;
+    }
+
+    .RLCP-instructions p {
+        margin: 0 auto;
+    }
+
+   .RLCP-Message {
+        min-height: 1em;
+    }
+ 
+
+    .RLCP-ContainerGame {
+        gap :70px;
+        font-size: 0.8rem;
+    }
+
+    .RLCP-ContainerGame .RLCP-Definition .RLCP-EText, .RLCP-ContainerGame .RLCP-Word .RLCP-EText{
+        font-size: 0.7rem;
+    }
+    .RLCP-Word, .RLCP-Definition {
+        height: 60px;
+    }
+    .RLCP-LinkAudio {
+        width: 20px;
+        height: 20px;    }
+    .RLCP-LinkAudioBig {
+        width: 45px;
+        height: 45px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+    }
+    .RLCP-Word:before, .RLCP-Definition:before {
+        width: 4px;
+        height:4px;
+    }
+    .RLCP-Word.RLCP-Selected:before, .RLCP-Definition.RLCP-Selected:before {
+        width: 8px;
+        height: 8px;
+        right: -4px
+    }
+    .RLCP-Definition.RLCP-Selected:before {
+        width: 8px;
+        height: 8px;
+        left: -4px
+    }
+    .RLCP-Word:before { right: -2px; top: 50%; transform: translateY(-50%); }
+    .RLCP-Definition:before { left: -2px; top: 50%; transform: translateY(-50%); }
+    
+}
+
+@media screen and (max-width:375px) {
+    .RLCP-MainContainer {
+        font-size: 0.7rem;
+    }
+
+    .RLCP-GameScoreBoard {
+        justify-content: flex-start;
+    }
+
+    .RLCP-GameScores {
+        width: 50%;
+    }
+
+    .RLCP-TimeNumber {
+        width: 42%;
+    }
+    .RLCP-ContainerGame {
+        gap :50px;
+        font-size: 0.7rem;
+    }
+   .RLCP-Word, .RLCP-Definition {
+        height: 50px;
+    }
+    .RLCP-LinkAudio {
+        width: 16px;
+        height: 16px;
+    }
+    .RLCP-LinkAudioBig {
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+}
+
