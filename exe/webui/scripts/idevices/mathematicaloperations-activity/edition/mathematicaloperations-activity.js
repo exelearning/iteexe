@@ -86,7 +86,7 @@ var $exeDevice = {
         "msgEndTime": _("Time over."),
         "msgAllOperations": _("You finished all the operations."),
         "msgFracctionNoValid": _("Escribe una fracción valida."),
-        "msgOperatNotValid": _("Escribe un operador válido:+-x*/:"),
+        "msgOperatNotValid": _("Escribe un operador válido: +-x*/:"),
         "msgNewGame": _("Pulsa aquí para volver jugar"),
         "msgUncompletedActivity": _("Actividad no realizada"),
         "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),

@@ -121,12 +121,12 @@ var $exeDevice = {
                 <div class="exe-idevice-info">' + _("Permite crear elp mutilingües.") + ' <a href="https://youtu.be/sILaHXJJiWQ" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                         <fieldset class="exe-fieldset">\
-                            <legend><a href="#">' + _("Multilinguals") + '</a></legend>\
+                            <legend><a href="#">' + _("Multilingual") + '</a></legend>\
                             <div>\
                                 <div class="MTLE-Flex1">\
                                     <div class="MTLE-PanelLeft" >\
                                         <p class="MTLE-selector">\
-                                            <label for="mtlNumLangs">Número de idiomas: </label>\
+                                            <label for="mtlNumLangs">' + _("Número de idiomas:") + '</label>\
                                             <select id="mtlNumLangs">\
                                                 <option value="2">2</option>\
                                                 <option value="3">3</option>\
@@ -648,7 +648,7 @@ var $exeDevice = {
             var selectedValue = selectedValues[index].code;
             selectElement.find('option[value="' + selectedValue + '"]').prop('selected', true);
         });
-        var msg2 = _('<span style="color:red;font-weight:bolder;">Selecciona los idevices que se mostrarán en <span style="color:red;font-weight:bolder;">%s</span>').replace('%s', selectedValues[0].idioma);
+        var msg2 = _('<span style="color:red;font-weight:bolder;">Selecciona los iDevices que se mostrarán en <span style="color:red;font-weight:bolder;">%s</span>').replace('%s', selectedValues[0].idioma);
         $("#mtlMessageIDevices").html(msg2);
     },
     setProyectTitles: function (selectedValues, langs) {

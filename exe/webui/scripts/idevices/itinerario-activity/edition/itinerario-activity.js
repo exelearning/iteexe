@@ -1715,9 +1715,9 @@ var $exeDevice = {
     updateCheckBoxIti: function (number, evt, idt) {
         $exeDevice.activePoint = number;
         var tramos = ["Antes", "A", "B", "C", "D", "E", "F"],
-            msg2 = _('Selecciona y ordena los idevices que se mostrarán antes de realizar la prueba diagnóstica');
+            msg2 = _('Selecciona y ordena los iDevices que se mostrarán antes de realizar la prueba diagnóstica');
         if (number > 0) {
-            msg2 = _('Selecciona y ordena los idevices que se mostrarán en el itinerario %s').replace("%s", tramos[number]);
+            msg2 = _('Selecciona y ordena los iDevices que se mostrarán en el itinerario %s').replace("%s", tramos[number]);
         }
         $('#itnMessageItineraries').hide();
         var ideviceType = parseInt($('input[name=itidevicetype]:checked').val());
