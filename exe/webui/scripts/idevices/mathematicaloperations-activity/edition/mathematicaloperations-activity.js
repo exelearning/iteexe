@@ -85,12 +85,12 @@ var $exeDevice = {
         "msgIncomplete": _("Not completed"),
         "msgEndTime": _("Time over."),
         "msgAllOperations": _("You finished all the operations."),
-        "msgFracctionNoValid": _("Escribe una fracción valida."),
-        "msgOperatNotValid": _("Escribe un operador válido: +-x*/:"),
-        "msgNewGame": _("Pulsa aquí para volver jugar"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgFracctionNoValid": _("Write a valid fraction."),
+        "msgOperatNotValid": _("Write a valid operator: +-x*/:"),
+        "msgNewGame": _("Click here to play"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Math Operations')
     },
     init: function () {
@@ -117,7 +117,7 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
@@ -130,7 +130,7 @@ var $exeDevice = {
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
                             <p id="eRMQFractionsDiv" style="diplay:none">\
-                                <label for="eRMQFractions"><input id="eRMQFractions" type="checkbox" /> ' + _("Fracciones") + '.</label>\
+                                <label for="eRMQFractions"><input id="eRMQFractions" type="checkbox" /> ' + _("Fractions") + '.</label>\
                             </p>\
                             <p>\
                                 <label for="eRMQtype">' + _("Choose what to guess:") + '\
@@ -174,13 +174,13 @@ var $exeDevice = {
                                 <label for="eRMQdecimalsInResults"><input id="eRMQdecimalsInResults" type="checkbox" /> ' + _("Allow decimals in the results") + '</label>\
                             </p>\
                             <p id="eRMQSolutionDiv"  style="display:none">\
-                                <label for="eRMQSolution"><input id="eRMQSolution" type="checkbox"  checked/> ' + _("Fracción irreducible.") + '</label>\
+                                <label for="eRMQSolution"><input id="eRMQSolution" type="checkbox"  checked/> ' + _("Irreducible fraction.") + '</label>\
                             </p>\
                             <p id="eRMQnegativeDiv">\
                                 <label for="eRMQnegative"><input id="eRMQnegative" type="checkbox" /> ' + _("Allow negative results") + '</label>\
                             </p>\
                             <p id="eRMQNegativesFracctionsDiv" style="display:none">\
-                                <label for="eRMQNegativesFracctions"><input id="eRMQNegativesFracctions" type="checkbox" /> ' + _("Permitir negativos") + '.</label>\
+                                <label for="eRMQNegativesFracctions"><input id="eRMQNegativesFracctions" type="checkbox" /> ' + _("Allow negative") + '.</label>\
                             </p>\
                             <p id="eRMQZeroDiv">\
                                 <label for="eRMQzero"><input id="eRMQzero" type="checkbox" /> ' + _("Allow zero as result") + '</label>\
@@ -211,12 +211,12 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class="GameModeLabel"><a href="#eRMQEEvaluationHelp" id="eRMQEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="eRMQEEvaluation"><input type="checkbox" id="eRMQEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="eRMQEEvaluationID">' + _("Identificador") + ':\
+								<label for="eRMQEEvaluation"><input type="checkbox" id="eRMQEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="eRMQEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="eRMQEEvaluationID" disabled/> </label>\
                             </p>\
                             <div id="eRMQEEvaluationHelp" class="MTOE-TypeGameHelp">\
-                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                             </div>\
                          </div>\
                     </fieldset>\
@@ -287,7 +287,7 @@ var $exeDevice = {
         var operations = "";
 
         if (parseInt(min) >= parseInt(max)) {
-            $exeDevice.showMessage(_("El número más alto debe ser mayor que el número más pequeño"));
+            $exeDevice.showMessage(_("The highest number should be bigger than the smallest one"));
             return false;
         }
         // Add

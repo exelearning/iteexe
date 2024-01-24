@@ -45,12 +45,12 @@ var $exeDevice = {
                 </p>\
 				<p>\
                 	<strong><a href="#sortableListEvaluationHelp" id="sortableListEvaluationHelpLnk" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-					<label for="sortableListEvaluation"><input type="checkbox" id="sortableListEvaluation"> ' + _("Informe de progreso") + '. </label> \
-					<label for="sortableListEvaluationID">' + _("Identificador") + ':\
+					<label for="sortableListEvaluation"><input type="checkbox" id="sortableListEvaluation"> ' + _("Progress report") + '. </label> \
+					<label for="sortableListEvaluationID">' + _("Identifier") + ':\
 					<input type="text" id="sortableListEvaluationID" disabled style="width:200px"/> </label>\
                 </p>\
 				<div id="sortableListEvaluationHelp" style="display:none">\
-                    <p>' + _("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                    <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                 </div>\
                 ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
 			</div>\
@@ -222,9 +222,9 @@ var $exeDevice = {
 		var evaluation = $('#sortableListEvaluation').is(':checked'),
 			evaluationID = evaluation ? $('#sortableListEvaluationID').val() : '',
 			ideviceID = $exeDevice.ideviceID ? $exeDevice.ideviceID : $exeDevice.generarID(),
-			msgUncompletedActivity = c_("Actividad no realizada"),
-			msgUnsuccessfulActivity = c_("Actividad no superada. Puntuación: %s"),
-			msgSuccessfulActivity = c_("Actividad superada. Puntuación: %s"),
+			msgUncompletedActivity = c_("Not done activity"),
+			msgUnsuccessfulActivity = c_("Activity: Not passed. Score: %S"),
+			msgSuccessfulActivity = c_("Activity: Passed. Score: %S"),
 			msgTypeIDevice = c_("Scrambled List");
 		
 		msgUncompletedActivity = msgUncompletedActivity[1];

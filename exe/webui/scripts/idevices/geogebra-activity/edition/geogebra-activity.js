@@ -102,12 +102,12 @@ var $exeDevice = {
 						</div>\
 						<p>\
                             <strong style="display:none" class="geogebractivityModeLabel"><a href="#geogebraActivityEvaluationHelp" id="geogebraActivityEvaluationHelpLnk" class="geogebractivityModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="geogebraActivityEvaluation"><input type="checkbox" id="geogebraActivityEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="geogebraActivityEvaluationID">' + _("Identificador") + ':\
+							<label for="geogebraActivityEvaluation"><input type="checkbox" id="geogebraActivityEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="geogebraActivityEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="geogebraActivityEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="geogebraActivityEvaluationHelp" class="geogebractivityTypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
 					</div>\
 				</fieldset>\
@@ -546,7 +546,7 @@ var $exeDevice = {
 			var show = $('#geogebraActivityShowAuthor').prop('checked') ? "1" : "0";
 			divContent += '<div class="auto-geogebra-author js-hidden">' + escape(author) + ',' + escape(murl) + ',' + escape(title) + ',' + show + ',' + escape(ath) + '</div>';
 		}
-		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Actividad no realizada")) + ',' + escape(_("Actividad superada. Puntuación: %s")) + ',' + escape(_("Actividad no superada. Puntuación: %s")) + '</div>';
+		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Not done activity")) + ',' + escape(_("Activity: Passed. Score: %S")) + ',' + escape(_("Activity: Not passed. Score: %S")) + '</div>';
 		var textAfter = tinymce.editors[1].getContent();
 		if (textAfter != "") {
 			divContent += '<div class="auto-geogebra-extra-content">' + textAfter + '</div>';

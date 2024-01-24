@@ -10,34 +10,34 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Informe de progreso')
+        name: _('Progress report')
     },
     msgs: {
     },
     id: '',
 
     ci18n: {
-        "msgSummary": _("Resumen de las actividades"),
-        "msgNoCompletedActivities": _("Aún no has realizado ninguna de las actividades evaluables propuestas en este recurso educativo."),
-        "msgNoPendientes": _("Número de actividades pendientes: %s."),
-        "msgCompletedActivities": _("La siguiente tabla recoge los resultados que has obtenido en las actividades evaluables propuestas en este recurso educativo que ya has completado."),
-        "msgAverageScore": _("Nota media"),
-        "msgReboot": _("Reiniciar"),
-        "msgReload": _("Actualizar"),
-        "mssActivitiesNumber": _("Nº Actividades: %s"),
-        "msgActivitiesCompleted": _("Completadas: %s"),
-        "msgAverageScore1": _("Nota media: %s"),
-        "msgAverageScoreCompleted": _("Nota media completadas: %s"),
-        "msgDelete": _("Esto eliminará las puntuaciones almacenadas de todas las actividades ¿Estás seguro de que deseas continuar?"),
-        "msgSections": _("Secciones del recurso educativo"),
-        "msgSave": _("Guardar"),
-        "msgReport": _("informe_de_progreso"),
-        "msgReportTitle": _("Informe de progreso"),
-        "msgType": _("Tipo"),
-        "msgSeeActivity": _("Ir a la actividad"),
-        "mgsSections": _("Secciones del recurso educativo"),
-        "msgName": _("Nombre"),
-        "msgDate": _("Fecha")
+        "msgSummary": _("Summary of activities"),
+        "msgNoCompletedActivities": _("You didn\'t finish any of the evaluable activities proposed in this educational resource."),
+        "msgNoPendientes": _("Number of pending activities: %s"),
+        "msgCompletedActivities": _("The following table collects the results you have obtained in the evaluable activities proposed in this educational resource that you have already completed."),
+        "msgAverageScore": _("Average score"),
+        "msgReboot": _("Restart"),
+        "msgReload": _("Update"),
+        "mssActivitiesNumber": _("No. of activities: %S"),
+        "msgActivitiesCompleted": _("Completed: %s"),
+        "msgAverageScore1": _("Average score: %s"),
+        "msgAverageScoreCompleted": _("Average note completed: %s"),
+        "msgDelete": _("This will eliminate the stored scores of all activities. Do you want to continue?"),
+        "msgSections": _("Educational resource sections"),
+        "msgSave": _("Save"),
+        "msgReport": _("progress_report"),
+        "msgReportTitle": _("Progress report"),
+        "msgType": _("Type"),
+        "msgSeeActivity": _("Go to the activity"),
+        "mgsSections": _("Educational resource sections"),
+        "msgName": _("Name"),
+        "msgDate": _("Date")
     },
     init: function () {
         this.createForm();
@@ -45,7 +45,7 @@ var $exeDevice = {
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;
-        msgs.msgEProvideID = _("Tienes que introducir el identificador de este informe de progreso");
+        msgs.msgEProvideID = _("You have to provide the identifier of this progress report");
     },
     createForm: function () {
         // Adivina, Completa, Identifica, Mapa, Operaciones matemáticas, Problemas matemáticos, QuExt, Rosco, Selecciona, Sopa de letras, Tarjetas de memoria, VídeoQuExt, Geogebra, Lista desordenada y Vídeo Interactivo
@@ -82,32 +82,32 @@ var $exeDevice = {
 			iDeviceList += ".";
 		var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Muestra los resultados obtenidos por en alumnos en las actividades asociadas al mismo y su nota media.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
+                <div class="exe-idevice-info">' + _("It shows the results obtained by students in the activities associated with it and its average note.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\
-                           <p>' + _("El identificador puede ser un número o una palabra de más de cuatro caracteres. Debes utilizar este mismo identificador en todas las actividades que deseas evaluar en este informe de progreso.") + '</p>\
+                           <p>' + _("The identifier can be a number or word of more than four characters. You must use the same identifier in all the activities you want to evaluate in this progress report.") + '</p>\
                             <p>\
-								<label for="informeEEvaluationID">' + _("Identificador") + ':\
+								<label for="informeEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="informeEEvaluationID"/> </label>\
                             </p>\
                             <p>\
-								<label for="informeENumber">' + _("Nº de actividades evaluables") + ':\
+								<label for="informeENumber">' + _("Number of evaluable activities") + ':\
 								<input type="number" name="informeENumber" id="informeENumber" value="1" min="1" max="99" step="1" /> </label>\
                             </p>\
                             <p>\
-                                <label for="informeEShowDate"><input type="checkbox" id="informeEShowDate">' + _("Mostrar fecha y hora") + '. </label>\
+                                <label for="informeEShowDate"><input type="checkbox" id="informeEShowDate">' + _("Show date and time") + '. </label>\
                             </p>\
                             <p>\
-                                <label for="informeEShowTypeGame"><input type="checkbox" id="informeEShowTypeGame">' + _("Mostrar tipo de iDevice") + '. </label>\
+                                <label for="informeEShowTypeGame"><input type="checkbox" id="informeEShowTypeGame">' + _("Show iDevice type") + '. </label>\
                             </p>\
                             <p>\
-                                <label for="informeEActiveLinks"><input type="checkbox" id="informeEActiveLinks">' + _("Enlazar actividades del informe") + '. </label>\
+                                <label for="informeEActiveLinks"><input type="checkbox" id="informeEActiveLinks">' + _("Link report activities") + '. </label>\
                             </p>\
                             <p>\
-                                <label for="informeUserData"><input type="checkbox" id="informeUserData" /> ' +   _("Datos del usuario") + '. </label>\
+                                <label for="informeUserData"><input type="checkbox" id="informeUserData" /> ' +   _("User data") + '. </label>\
                             </p>\
-                            <p class="exe-idevice-info"><strong>' + _("iDevices compatibles con el informe:") + " </strong>" + iDeviceList + '</p>\
+                            <p class="exe-idevice-info"><strong>' + _("Report compatible iDevices:") + " </strong>" + iDeviceList + '</p>\
                          </div>\
                     </fieldset>\
                 </div>\
@@ -173,7 +173,7 @@ var $exeDevice = {
             activeLinks = $('#informeEActiveLinks').is(':checked');
             userData = $("#informeUserData").is(":checked");
         if (!evaluationID || evaluationID.length < 5) {
-            $exeDevice.showMessage(_('El identificador del informe debe tener al menos 5 caracteres'));
+            $exeDevice.showMessage(_('The report identifier must have at least 5 characters'));
             return false;
 
         }

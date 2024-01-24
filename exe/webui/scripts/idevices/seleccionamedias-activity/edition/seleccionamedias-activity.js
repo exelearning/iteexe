@@ -9,7 +9,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Selecciona Medias')
+        name: _('Select media files')
     },
     msgs: {},
     active: 0,
@@ -63,18 +63,18 @@ var $exeDevice = {
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgClose": _("Close"),
         "msgAudio": _("Audio"),
-        "msgTimeOver": _("Tu tiempo ha finalizado"),
-        "mgsAllPhrases": _("¡Has completado todas las actividades!"),
-        "msgNumbersAttemps": _("Número de actividades pendientes"),
+        "msgTimeOver": _("Time has finished"),
+        "mgsAllPhrases": _("You completed all the activities!"),
+        "msgNumbersAttemps": _("Number of pending activities"),
         "msgActivities": _("Activities"),
         "msgCheck": _("Check"),
         "msgContinue": _("Continue"),
-        "msgAllOK": _("¡Genial! Todo correcto ¡A por otra!"),
-        "msgAgain": _("Inténtalo de nuevo"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
-        "msgChangeMode": _("Cambiar modo de visualización")
+        "msgAllOK": _("Brilliant! All correct!"),
+        "msgAgain": _("Please try again"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgChangeMode": _("Change visualization mode")
 
     },
     init: function () {
@@ -91,18 +91,18 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgCompleteData = _("Debes indicar una imagen, un texto o/y un audio para cada carta");
-        msgs.msgPairsMax = _("Número máximo de actividades: 30");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each letter");
+        msgs.msgPairsMax = _("Maximum number of activities: 30");
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que seleccionar las tarjetas multimedia correctas.") + ' <a href="https://www.youtube.com/watch?v=t5okkUyGTl8" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to select the correct multimedia cards.") + ' <a href="https://www.youtube.com/watch?v=t5okkUyGTl8" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Selecciona las tarjetas correctas")) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Select the right cards")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
@@ -110,7 +110,7 @@ var $exeDevice = {
                             <label for="slcmEShowMinimize"><input type="checkbox" id="slcmEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p>\
-                            <label for="slcmETime">' + _("Tiempo para completar el juego") + '(m):</label><input type="number" name="slcmETime" id="slcmETime" value="0" min="0" max="120" step="1" />\
+                            <label for="slcmETime">' + _("Time to complete the game") + '(m):</label><input type="number" name="slcmETime" id="slcmETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
                             <label for="slcmEAttemptsNumber">' + _("Number of attempts") + ':\
@@ -120,22 +120,22 @@ var $exeDevice = {
                             <label for="slcmEShowSolution"><input type="checkbox" checked id="slcmEShowSolution"> ' + _("Show solutions") + '. </label> \
                         </p>\
                         <p id="slcmTimeShowDiv">\
-							<label for="slcmETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas (segundos)") + ':\
+							<label for="slcmETimeShowSolution">' + _("Time while the cards will be shown (seconds)") + ':\
 							<input type="number" name="slcmETimeShowSolution" id="slcmETimeShowSolution" value="4" min="1" max="999" /> </label>\
                         </p>\
                         <p>\
-                            <label for="slcmEPercentajeQuestions">' + _('% Actividades') + ':</label><input type="number" name="slcmEPercentajeQuestions" id="slcmEPercentajeQuestions" value="100" min="1" max="100" />\
+                            <label for="slcmEPercentajeQuestions">' + _('% Activities') + ':</label><input type="number" name="slcmEPercentajeQuestions" id="slcmEPercentajeQuestions" value="100" min="1" max="100" />\
                             <span id="slcmENumeroPercentaje">1/1</span>\
                         </p>\
                         <p id="slcmEANumberMaxDiv">\
-							<label for="slcmEANumberMaxCard">' + _("Número máximo de tarjetas") + ':\
+							<label for="slcmEANumberMaxCard">' + _("Maximum number of cards") + ':\
 							<input type="number" name="slcmEANumberMaxCard" id="slcmEANumberMaxCard" value="30" min="1" max="30" /> </label>\
                         </p>\
                         <p id="slcmECustomMessagesDiv">\
-                            <label for="slcmECustomMessages"><input type="checkbox" id="slcmECustomMessages">' + _("Mensajes personalizados") + '.</label>\
+                            <label for="slcmECustomMessages"><input type="checkbox" id="slcmECustomMessages">' + _("Custom messages") + '.</label>\
                         </p>\
                         <p>\
-                            <label for="slcmEModeTable"><input type="checkbox" id="slcmEModeTable"> ' + _("Modo tabla") + '. </label> \
+                            <label for="slcmEModeTable"><input type="checkbox" id="slcmEModeTable"> ' + _("Table mode") + '. </label> \
                         </p>\
                         <p>\
                             <label for="slcmEHasFeedBack"><input type="checkbox"  id="slcmEHasFeedBack"> ' + _("Feedback") + '. </label> \
@@ -149,33 +149,33 @@ var $exeDevice = {
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#slcmEEvaluationHelp" id="slcmEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="slcmEEvaluation"><input type="checkbox" id="slcmEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="slcmEEvaluationID">' + _("Identificador") + ':\
+							<label for="slcmEEvaluation"><input type="checkbox" id="slcmEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="slcmEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="slcmEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="slcmEEvaluationHelp" class="SLCME-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\
                 <fieldset class="exe-fieldset">\
-                <legend><a href="#">' + _('Actividades') + '</a></legend>\
+                <legend><a href="#">' + _('Activities') + '</a></legend>\
                     <div class="SLCME-EPanel" id="slcmEPanel">\
                         <div class="SLCME-ENavigationButtons" id="slcmButtonsPrhaseDiv" >\
-                            <a href="#" id="slcmEAdd" class="SLCME-ENavigationButton" title="' + _('Añadir actividad') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir actividad') + '" class="SLCME-EButtonImage b-add" /></a>\
-                            <a href="#" id="slcmEFirst" class="SLCME-ENavigationButton"  title="' + _('Primera actividad') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('Primera actividad') + '" class="SLCME-EButtonImage b-first" /></a>\
-                            <a href="#" id="slcmEPrevious" class="SLCME-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="SLCME-EButtonImage b-prev" /></a>\
-                            <span class="sr-av">' + _("Actividad número:") + '</span><span class="SLCME-NumberPhrase" id="slcmENumberPhrase">1</span>\
-                            <a href="#" id="slcmENext" class="SLCME-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="SLCME-EButtonImage b-next" /></a>\
-                            <a href="#" id="slcmELast" class="SLCME-ENavigationButton"  title="' + _('Última actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="SLCME-EButtonImage b-last" /></a>\
-                            <a href="#" id="slcmEDelete" class="SLCME-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="SLCME-EButtonImage b-delete" /></a>\
-                            <a href="#" id="slcmECopy" class="SLCME-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="SLCME-EButtonImage b-copy" /></a>\
-                            <a href="#" id="slcmECut" class="SLCME-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="SLCME-EButtonImage b-copy" /></a>\
-                            <a href="#" id="slcmEPaste" class="SLCME-ENavigationButton"  title="' + _('Pegar actividad') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar actividad') + '" class="SLCME-EButtonImage b-paste" /></a>\
+                            <a href="#" id="slcmEAdd" class="SLCME-ENavigationButton" title="' + _('Add activity') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add activity') + '" class="SLCME-EButtonImage b-add" /></a>\
+                            <a href="#" id="slcmEFirst" class="SLCME-ENavigationButton"  title="' + _('First activity') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('First activity') + '" class="SLCME-EButtonImage b-first" /></a>\
+                            <a href="#" id="slcmEPrevious" class="SLCME-ENavigationButton" title="' + _('Previous activity') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Previous activity') + '" class="SLCME-EButtonImage b-prev" /></a>\
+                            <span class="sr-av">' + _("Activity number:") + '</span><span class="SLCME-NumberPhrase" id="slcmENumberPhrase">1</span>\
+                            <a href="#" id="slcmENext" class="SLCME-ENavigationButton"  title="' + _('Next activity') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Next activity') + '" class="SLCME-EButtonImage b-next" /></a>\
+                            <a href="#" id="slcmELast" class="SLCME-ENavigationButton"  title="' + _('Last activity') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Last activity') + '" class="SLCME-EButtonImage b-last" /></a>\
+                            <a href="#" id="slcmEDelete" class="SLCME-ENavigationButton" title="' + _('Delete activity') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete activity') + '" class="SLCME-EButtonImage b-delete" /></a>\
+                            <a href="#" id="slcmECopy" class="SLCME-ENavigationButton" title="' + _('Copy activity') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy activity') + '" class="SLCME-EButtonImage b-copy" /></a>\
+                            <a href="#" id="slcmECut" class="SLCME-ENavigationButton" title="' + _('Cut activity') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut activity') + '" class="SLCME-EButtonImage b-copy" /></a>\
+                            <a href="#" id="slcmEPaste" class="SLCME-ENavigationButton"  title="' + _('Paste activity') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste activity') + '" class="SLCME-EButtonImage b-paste" /></a>\
                         </div>\
-                        <p class="SLCME-ENumActivity" id="slcmActivityNumberDiv">' + _('Actividad') + ' <span id="slcmActivityNumber">1</span></p>\
+                        <p class="SLCME-ENumActivity" id="slcmActivityNumberDiv">' + _('Activity') + ' <span id="slcmActivityNumber">1</span></p>\
                         <p class="SLCME-ECustomMessageDef" id="slcmEDefinitionDiv">\
-                            <label for="slcmEDefinition">' + _('Enunciado') + ':</label><input type="text" id="slcmEDefinition">\
+                            <label for="slcmEDefinition">' + _('Statement') + ':</label><input type="text" id="slcmEDefinition">\
                         </p>\
                         <p class="SLCME-ECustomMessageAudio">\
                             <label>' + _("Audio") + ':</label>\
@@ -183,7 +183,7 @@ var $exeDevice = {
                             <a href="#"id="slcmEPlayAudioDefinition" class="SLCME-ENavigationButton SLCME-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="SLCME-EButtonImage b-play" /></a>\
                         </p>\
                         <p class="SLCME-ECustomMessageDiv" id="slcmCustomMessageOKDiv">\
-                            <label for="slcmEMessageOK">' + _('Acierto') + ':</label><input type="text" id="slcmEMessageOK"/>\
+                            <label for="slcmEMessageOK">' + _('Success') + ':</label><input type="text" id="slcmEMessageOK"/>\
                             <label>' + _("Audio") + ':</label>\
                             <input type="text" id="slcmEURLAudioOK" class="exe-file-picker SLCME-EURLAudio"  />\
                             <a href="#"id="slcmEPlayAudioOK" class="SLCME-ENavigationButton SLCME-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="SLCME-EButtonImage b-play" /></a>\
@@ -198,11 +198,11 @@ var $exeDevice = {
                         </p>\
                         <div class="SLCME-EContents" id="slcmButtonCardDiv" >\
                             <div class="SLCME-ENavigationButtons">\
-                            <a href="#" id="slcmEAddC" class="SLCME-ENavigationButton" title="' + _('Añadir carta') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir tarjeta') + '" class="SLCME-EButtonImage b-add" /></a>\
-                            <a href="#" id="slcmEDeleteC" class="SLCME-ENavigationButton" title="' + _('Borrar carta') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar tarjeta') + '" class="SLCME-EButtonImage b-delete" /></a>\
-                            <a href="#" id="slcmECopyC" class="SLCME-ENavigationButton" title="' + _('Copiar carta') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar tarjeta') + '" class="SLCME-EButtonImage b-copy" /></a>\
-                            <a href="#" id="slcmECutC" class="SLCME-ENavigationButton" title="' + _('Cortar carta') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar tarjeta') + '" class="SLCME-EButtonImage b-cut" /></a>\
-                            <a href="#" id="slcmEPasteC" class="SLCME-ENavigationButton"  title="' + _('Pegar carta') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar tarjeta') + '" class="SLCME-EButtonImage b-paste" /></a>\
+                            <a href="#" id="slcmEAddC" class="SLCME-ENavigationButton" title="' + _('Add letter') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add card') + '" class="SLCME-EButtonImage b-add" /></a>\
+                            <a href="#" id="slcmEDeleteC" class="SLCME-ENavigationButton" title="' + _('Delete letter') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete card') + '" class="SLCME-EButtonImage b-delete" /></a>\
+                            <a href="#" id="slcmECopyC" class="SLCME-ENavigationButton" title="' + _('Copy letter') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy card') + '" class="SLCME-EButtonImage b-copy" /></a>\
+                            <a href="#" id="slcmECutC" class="SLCME-ENavigationButton" title="' + _('Cut letter') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut card') + '" class="SLCME-EButtonImage b-cut" /></a>\
+                            <a href="#" id="slcmEPasteC" class="SLCME-ENavigationButton"  title="' + _('Paste letter') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste card') + '" class="SLCME-EButtonImage b-paste" /></a>\
                         </div>\
                         </div>\
                         <div class="SLCME-ENumPhrasesDiv" id="slcmENumPhrasesDiv">\
@@ -249,7 +249,7 @@ var $exeDevice = {
             id = "Before";
         }
         return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
-                    <legend><a href='#'>" + _('Contenido adicional') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
+                    <legend><a href='#'>" + _('Additional content') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
                     <div>\
                         <p>\
                             <label for='eXeIdeviceText" + id + "' class='sr-av'>" + tit + ":</label>\
@@ -403,8 +403,8 @@ var $exeDevice = {
            <span class="SLCME-ETitleText" id="slcmETitleText-' + $exeDevice.activeID + '">' + _("Text") + '</span>\
            <div class="SLCME-EInputText" id="slcmEInputText-' + $exeDevice.activeID + '">\
                 <label class="sr-av">' + _("Text") + '</label><input type="text" id="slcmEText-' + $exeDevice.activeID + '" class="SLCME-EText" />\
-                <label id="slcmELblColor-' + $exeDevice.activeID + '" class="SLCME-LblColor">' + _("Fuente") + ': </label><input id="slcmEColor-' + $exeDevice.activeID + '"  type="color"  class="SLCME-EColor" value="#000000">\
-                <label id="slcmELblBgColor-' + $exeDevice.activeID + '"  class="SLCME-LblBgColor">' + _("Fondo") + ': </label><input id="slcmEBgColor-' + $exeDevice.activeID + '"  type="color"   class="SLCME-EBackColor" value="#ffffff">\
+                <label id="slcmELblColor-' + $exeDevice.activeID + '" class="SLCME-LblColor">' + _("Font") + ': </label><input id="slcmEColor-' + $exeDevice.activeID + '"  type="color"  class="SLCME-EColor" value="#000000">\
+                <label id="slcmELblBgColor-' + $exeDevice.activeID + '"  class="SLCME-LblBgColor">' + _("Background") + ': </label><input id="slcmEBgColor-' + $exeDevice.activeID + '"  type="color"   class="SLCME-EBackColor" value="#ffffff">\
             </div>\
            <span class="SLCME-ETitleImage"id="slcmETitleImage-' + $exeDevice.activeID + '">' + _("Image") + '</span>\
            <div class="SLCME-EInputImage"  id="slcmEInputImage-' + $exeDevice.activeID + '">\
@@ -419,7 +419,7 @@ var $exeDevice = {
                    <label>' + _("Authorship") + '</label><input type="text" class="SLCME-EAuthor" />\
                </div>\
                <div class="SLCME-EInputAlt">\
-                   <label>' + _("Texto alternativo") + '</label><input  type="text" class="SLCME-EAlt" />\
+                   <label>' + _("Alternative text") + '</label><input  type="text" class="SLCME-EAlt" />\
                </div>\
            </div>\
            <span >' + _("Audio") + '</span>\
@@ -430,7 +430,7 @@ var $exeDevice = {
                <a href="#"id="slcmEPlayAudio-' + $exeDevice.activeID + '" class="SLCME-ENavigationButton SLCME-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play" class="SLCME-EButtonImage b-play" /></a>\
            </div>\
            <p>\
-                <label for="slcmState-' + $exeDevice.activeID + '">' + _("Respuesta correcta") + ': <input type="checkbox" id="slcmState-' + $exeDevice.activeID + '" class="SLCME-EState"></label>\
+                <label for="slcmState-' + $exeDevice.activeID + '">' + _("Correct answer") + ': <input type="checkbox" id="slcmState-' + $exeDevice.activeID + '" class="SLCME-EState"></label>\
             </p>\
        </div>';
 

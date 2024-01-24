@@ -102,9 +102,9 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgCorrect": _("Correct"),
         "msgIncorrect": _("Incorrect"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Multiple Choice Quiz')
     },
 
@@ -145,7 +145,7 @@ var $exeDevice = {
         msgs.msgNotHitCuestion = _('The question marked as next in case of success does not exist.');
         msgs.msgNotErrorCuestion = _('The question marked as next in case of error does not exist.');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
 
     },
@@ -1063,12 +1063,12 @@ var $exeDevice = {
                                 </p>\
                                 <p>\
                                     <strong class="GameModeLabel"><a href="#seleccionaEEvaluationHelp" id="seleccionaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-                                    <label for="seleccionaEEvaluation"><input type="checkbox" id="seleccionaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-                                    <label for="seleccionaEEvaluationID">' + _("Identificador") + ':\
+                                    <label for="seleccionaEEvaluation"><input type="checkbox" id="seleccionaEEvaluation"> ' + _("Progress report") + '. </label> \
+                                    <label for="seleccionaEEvaluationID">' + _("Identifier") + ':\
                                     <input type="text" id="seleccionaEEvaluationID" disabled/> </label>\
                                 </p>\
                                 <div id="seleccionaEEvaluationHelp" class="gameQE-TypeGameHelp">\
-                                    <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                    <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                                 </div>\
                         </div>\
                     </fieldset>\

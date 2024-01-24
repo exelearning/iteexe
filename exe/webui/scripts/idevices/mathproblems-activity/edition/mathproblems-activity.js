@@ -80,10 +80,10 @@ var $exeDevice = {
         "msgFeedBack": _("FeedBack"),
         "msgNoImage": _("No image"),
         "msgMoveOne": _("Move on"),
-        "msgDuplicateAnswer": _("No puedes dar soluciones repetidas"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgDuplicateAnswer": _("You can\'t give repeated solutions"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame":_('Math Problems')
     },
     version: 2,
@@ -101,7 +101,7 @@ var $exeDevice = {
         msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
         msgs.msgProvideFB = _('Message to display when passing the game');
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
@@ -149,12 +149,12 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class="GameModeLabel"><a href="#eCQEEvaluationHelp" id="eCQEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="eCQEEvaluation"><input type="checkbox" id="eCQEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="eCQEEvaluationID">' + _("Identificador") + ':\
+								<label for="eCQEEvaluation"><input type="checkbox" id="eCQEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="eCQEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="eCQEEvaluationID" disabled/> </label>\
                             </p>\
                             <div id="eCQEEvaluationHelp" class="MTOE-TypeGameHelp">\
-                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                             </div>\
                         </div>\
                     </fieldset>\
@@ -177,7 +177,7 @@ var $exeDevice = {
                             <textarea name="eCQwording" id="eCQwording" class="exe-html-editor" cols="90" rows="6">' + _("Calculate in square metres the surface of a triangle with a base of {b}m and a height of {h}m") + '</textarea>\
                         <p>\
                         <p>\
-                            <label for="eCQDefinidedVariables"><input type="checkbox" id="eCQDefinidedVariables"> ' + _("Definir el dominio de cada variable") + ' </label>\
+                            <label for="eCQDefinidedVariables"><input type="checkbox" id="eCQDefinidedVariables"> ' + _("Define the domain of each variable") + ' </label>\
                         </p>\
                          <p id="eQCVariablesContainer"></p>\
                          <div id="eCQAleaContainer" >\
@@ -603,7 +603,7 @@ var $exeDevice = {
         }
         p.domains = $exeDevice.areVariablesValid();
         if (p.definedVariables &&  p.domains === false){
-            message = _("El dominio de al menos una variable no es correcto");
+            message = _("The domain of at least one variable is not correct");
         }
         if (message.length == 0) {
             $exeDevice.questions[$exeDevice.active] = Object.assign({}, p);;

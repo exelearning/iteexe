@@ -10,24 +10,24 @@
 var $exeDevice = {
   i18n: {
     category: _("Games"),
-    name: _("Lista de cotejo"),
+    name: _("Checklist"),
   },
   msgs: {},
   id: false,
   iDevicePath: "/scripts/idevices/listacotejo-activity/edition/",
   ci18n: {
-    msgComplit: _("Completadas"),
-    msgDone: _("Realizada"),
-    msgInProgress: _("En proceso"),
-    msgUnrealized: _("No conseguida"),
-    msgtaskNumber: _("Número de tareas"),
-    msgName: _("Nombre"),
-    msgDate: _("Fecha"),
-    msgSave: _("Descargar"),
-    msgList: _("lista_de_cotejo"),
+    msgComplit: _("Completed"),
+    msgDone: _("Done"),
+    msgInProgress: _("In progress"),
+    msgUnrealized: _("Not achieved"),
+    msgtaskNumber: _("Number of tasks"),
+    msgName: _("Name"),
+    msgDate: _("Date"),
+    msgSave: _("Download"),
+    msgList: _("checklist"),
     msgScore: _("Score"),
-    msgPoints: _("puntos"),
-    msgPoint: _("punto")
+    msgPoints: _("points"),
+    msgPoint: _("point")
   },
   init: function () {
     this.createForm();
@@ -35,58 +35,56 @@ var $exeDevice = {
   },
   setMessagesInfo: function () {
     var msgs = this.msgs;
-    msgs.msgEProvideID = _(
-      "Tienes que introducir el identificador de este informe de progreso"
-    );
+    msgs.msgEProvideID = _("You have to provide the identifier of this progress report");
   },
   createForm: function () {
     var html =
       '<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Puede introducir una lista de cotejo para ofrecer un listado estructurado y fácil de entender de las actividades propuestas a lo largo del recurso educativo. Será un instrumento útil para la autorregulación del aprendizaje del alumnado, al permitirle realizar el seguimiento de las actividades que va completando.") +  ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("You can introduce a comparison list to offer a structured and easy way to understand the activities proposed throughout the educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the activities you complete.") +  ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' +  _("General settings") + '">\
-            ' +   $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Completa la lista de cotejo marcando las casillas al realizar las actividades correspondientes.")) + '\
+            ' +   $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete the checklist marking the boxes when finishing the activities.")) + '\
               <fieldset class="exe-fieldset">\
               <legend><a href="#">' + _("Options") + '</a></legend>\
                   <div>\
                       <p style="display: flex; justify-content: space-between; width: 100%">\
-                        <label for="ctjTitle">'+_("Título")+':</label>\
+                        <label for="ctjTitle">'+_("Title")+':</label>\
                         <input id="ctjTitle" type="text"  style="flex-grow: 1; margin-left: 10px" />\
                       </p>\
                       <p style="display: flex;justify-content: space-between; width: 100%;margin-top: 10px;">\
-                        <label for="ctjSubTitle">'+_("Subtítulo")+':</label>\
+                        <label for="ctjSubTitle">'+_("Caption")+':</label>\
                           <input id="ctjSubTitle" type="text" style="flex-grow: 1; margin-left: 10px"/>\
                       </p>\
                       <p>\
-                        <label for="ctjUserData"><input type="checkbox" id="ctjUserData" /> ' + _("Datos del usuario") +  '. </label>\
+                        <label for="ctjUserData"><input type="checkbox" id="ctjUserData" /> ' + _("User data") +  '. </label>\
                       </p>\
                       <p>\
-                        <label for="ctjSaveData"><input type="checkbox" id="ctjSaveData" /> ' + _("Recordar opciones marcadas") + '. </label>\
+                        <label for="ctjSaveData"><input type="checkbox" id="ctjSaveData" /> ' + _("Remember marked options") + '. </label>\
                       </p>\
                       <p>\
-                        <label for="ctjUseScore"><input type="checkbox" id="ctjUseScore" /> ' + _("Asignar puntuaciones") + '. </label>\
+                        <label for="ctjUseScore"><input type="checkbox" id="ctjUseScore" /> ' + _("Assign scores") + '. </label>\
                       </p>\
-                      <p>'+_("(*) Las celdas admiten texto con formato") + '.</p>\
+                      <p>'+_("(*) Cells support formatted text") + '.</p>\
                       <p class="CTJ-table-container">\
                         <table class="CTJ-Table">\
                           <thead>\
                             <tr class="CTJ-header-row">\
-                              <th class="CTJ-TypeColumn">'+_("Tipo") +'</th>\
-                              <th class="CTJ-Points-column" data-points="0">'+_("Puntos") +'</th>\
-                              <th class="CTJ-Level1-column" data-nivel="0">'+_("Nivel") +' 1</th>\
-                              <th class="CTJ-Level2-column" data-nivel="1">'+_("Nivel") +' 2</th>\
-                              <th class="CTJ-Level3-column" data-nivel="2">'+_("Nivel") +' 3</th>\
-                              <th class="CTJ-Level4-column" data-nivel="2">'+_("Nivel") +' 4</th>\
-                              <th class="CTJ-editar-column">'+_("Editar") +'</th>\
+                              <th class="CTJ-TypeColumn">'+_("Type") +'</th>\
+                              <th class="CTJ-Points-column" data-points="0">'+_("Points") +'</th>\
+                              <th class="CTJ-Level1-column" data-nivel="0">'+_("Level") +' 1</th>\
+                              <th class="CTJ-Level2-column" data-nivel="1">'+_("Level") +' 2</th>\
+                              <th class="CTJ-Level3-column" data-nivel="2">'+_("Level") +' 3</th>\
+                              <th class="CTJ-Level4-column" data-nivel="2">'+_("Level") +' 4</th>\
+                              <th class="CTJ-editar-column">'+_("Edit") +'</th>\
                             </tr>\
                           </thead>\
                           <tbody>\
                             <tr class="CTJ-data-row">\
                               <td class="CTJ-Types">\
                                 <select class="CTJ-Select">\
-                                  <option value="0" selected>'+_("Casilla") +'</option>\
-                                  <option value="1">'+_("Texto") +'</option>\
-                                  <option value="2">'+_("Selección") +'</option>\
-                                  <option value="3">'+_("No marcar") +'</option>\
+                                  <option value="0" selected>'+_("Box") +'</option>\
+                                  <option value="1">'+_("Text") +'</option>\
+                                  <option value="2">'+_("Selection") +'</option>\
+                                  <option value="3">'+_("Do not mark") +'</option>\
                                 </select>\
                               </td>\
                               <td class="CTJ-Points" contenteditable="true"></td>\
@@ -95,29 +93,29 @@ var $exeDevice = {
                               <td class="CTJ-Level3 CTJ-Levels" contenteditable="true"></td>\
                               <td class="CTJ-Level4 CTJ-Levels" contenteditable="true"></td>\
                               <td class="CTJ-Editions">\
-                                <button class="CTJ-Add">'+_("Añadir")+'</button>\
-                                <button class="CTJ-Delete">'+_("Eliminar")+'</button>\
+                                <button class="CTJ-Add">'+_("Add")+'</button>\
+                                <button class="CTJ-Delete">'+_("Delete")+'</button>\
                               </td>\
                             </tr>\
                           </tbody>\
                         </table>\
                       </p>\
                       <p>\
-                        <div><label for="ctjCommunity"><input type="checkbox" id="ctjCommunity" /> ' + _("Logo (izquierda)") +  '. </label> </div>\
+                        <div><label for="ctjCommunity"><input type="checkbox" id="ctjCommunity" /> ' + _("Logo (left)") +  '. </label> </div>\
                         <div id="ctjcommunitylogo" class="CTJ-Logo">\
                           <div class="CTJ-Images">\
                             <img class="CTJ-EMedia" src="' +   $exeDevice.iDevicePath + 'codejocomunidad.png" id="ctjEImageCommunity" alt="' + _("Image") + '" />\
                             <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'codejocomunidad.png" id="ctjEImageNoCommunity" alt="' + _("No image") +'" />\
                           </div>\
                           <div class="CTJ-InputImage">\
-                              <label class="sr-av" for="ctjEURLCommunity">' +  _("Comunidad") + ':</label>\
+                              <label class="sr-av" for="ctjEURLCommunity">' +  _("Community") + ':</label>\
                               <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLCommunity"/>\
                               <a href="#" id="ctjEPlayCommunity" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' +  _("Show") + '"><img src="' +  $exeDevice.iDevicePath + 'quextIEPlay.png" alt="' +  _("Show") + '" class="CTJ-EButtonImage b-play" /></a>\
                           </div>\
                         </div>\
                       </p>\
                       <p>\
-                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("Logo (derecha)") + '. </label> </div>\
+                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("Logo (right)") + '. </label> </div>\
                         <div id="ctjlogologo"  class="CTJ-Logo">\
                           <div class="CTJ-Images">\
                             <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejologo.png" id="ctjEImageLogo" alt="' +  _("Image") +  '" />\
@@ -131,21 +129,21 @@ var $exeDevice = {
                         </div>\
                       </p>\
                       <p>\
-                          <div><label for="ctjDecorative"><input type="checkbox" id="ctjDecorative" /> ' +  _("Imagen decorativa") + '. </label> </div>\
+                          <div><label for="ctjDecorative"><input type="checkbox" id="ctjDecorative" /> ' +  _("Decorative image") + '. </label> </div>\
                           <div id="ctjdecorativelogo"  class="CTJ-Logo">\
                             <div class="CTJ-Images">\
                               <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejodecorative.png" id="ctjEImageDecorative" alt="' + _("Image") + '" />\
                               <img class="CTJ-EMedia" src="' + $exeDevice.iDevicePath + 'cotejodecorative.png" id="ctjEImageNoDecorative" alt="' + _("No image") +  '" />\
                             </div>\
                             <div class="CTJ-InputImage">\
-                                <label class="sr-av" for="ctjEURLDecorative">' +   _("Comunidad") + ':</label>\
+                                <label class="sr-av" for="ctjEURLDecorative">' +   _("Community") + ':</label>\
                                 <input type="text" class="exe-file-picker CTJ-EURLImage"  id="ctjEURLDecorative"/>\
                                 <a href="#" id="ctjEPlayDecorative" class="CTJ-ENavigationButton CTJ-EPlayVideo" title="' + _("Show") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEPlay.png" alt="' + _("Show") + '" class="CTJ-EButtonImage b-play" /></a>\
                             </div>\
                           </div>\
                       </p>\
                       <p>\
-                          <label for="ctjFooter">' +  _("Pie") + '</label>\
+                          <label for="ctjFooter">' +  _("Footer") + '</label>\
                           <input id="ctjFooter" style="width:500px" type="text" CTJ-EURLImage" value="Esta <a href=https://es.wikipedia.org/wiki/Lista_de_comprobaci%C3%B3n>lista de cotejo</a> se encuentra bajo una licencia</br><a href=http://creativecommons.org/licenses/by-sa/4.0>Creative Commons Reconocimiento-Compartir igual 4.0 International License</a>"/>\
                       </p>\
                   </div>\
@@ -218,7 +216,7 @@ var $exeDevice = {
     arrayLevels.forEach((obj) => {
       const row = $("<tr></tr>").addClass("CTJ-data-row");
       const select = $("<select></select>").addClass("CTJ-Select");
-      [_("Casilla"), _("Texto"), _("Selecciona"),_("No marcar")].forEach((option, index) => {
+      [_("Box"), _("Text"), _("Choose"),_("Do not mark")].forEach((option, index) => {
         const optElement = $("<option></option>")
           .attr("value", index)
           .html(option);
@@ -247,8 +245,8 @@ var $exeDevice = {
         }
         row.append(cell);
       }
-      const addButton = $("<button>"+_("Añadir")+"</button>").addClass("CTJ-Add");
-      const deleteButton = $("<button>"+_("Eliminar")+"</button>").addClass(
+      const addButton = $("<button>"+_("Add")+"</button>").addClass("CTJ-Add");
+      const deleteButton = $("<button>"+_("Delete")+"</button>").addClass(
         "CTJ-Delete"
       );
       const editCell = $("<td></td>")
@@ -295,7 +293,7 @@ var $exeDevice = {
     }
     html += divContent;
     html += '<div class="listacotejo-DataGame js-hidden">' + json + "</div>";
-    html += '<div class="listacotejo-bns js-hidden">' +  _("Navegador no soportado") + "</div>";
+    html += '<div class="listacotejo-bns js-hidden">' +  _("Unsupported browser") + "</div>";
     var textAfter = tinyMCE.get("eXeIdeviceTextAfter").getContent();
     if (textAfter != "") {
       html += '<div class="listacotejo-extra-content">' + textAfter + "</div>";
@@ -338,7 +336,7 @@ var $exeDevice = {
       useScore = $("#ctjUseScore").is(":checked");
     (isLevelComplete = false), (isMoreThanOneLevelFilled = false);
     if (title === "") {
-      $exeDevice.showMessage(_("Indique un título para la lista de cotejo"));
+      $exeDevice.showMessage(_("Indicate a title for the checklist"));
       return false;
     }
     $(".CTJ-data-row").each(function () {
@@ -350,7 +348,7 @@ var $exeDevice = {
         }).length;
 
       if (filledLevels === 0) {
-        $exeDevice.showMessage(_("No puedes dejar un ítem vacío"));
+        $exeDevice.showMessage(_("You can\'t leave an empty item"));
         return false;
       }
       if (filledLevels > 0) {
@@ -368,7 +366,7 @@ var $exeDevice = {
     }
     if (isMoreThanOneLevelFilled) {
       $exeDevice.showMessage(
-        _("Sólo puedes poner texto en un nivel de este ítem")
+        _("You can only use text at this item\'s level")
       );
       return false;
     }
@@ -404,10 +402,10 @@ var $exeDevice = {
       
     });
     if(scoreError == 1){
-      $exeDevice.showMessage(_("Debes indicar  el numero de puntos de cada ítem evaluable"));
+      $exeDevice.showMessage(_("You must indicate the number of points of each evaluable item"));
       return false;
     } else if(scoreError == 2){
-      $exeDevice.showMessage(_("No puedes indicar una puntuación para este tipo de casillas"));
+      $exeDevice.showMessage(_("You cannot indicate a score for this type of boxes"));
       return false;
     }
     var data = {
@@ -464,7 +462,7 @@ var $exeDevice = {
           $(this).closest(".CTJ-data-row").remove();
         }
       } else {
-        $exeDevice.showMessage(_("Debe haber al menos una fila."));
+        $exeDevice.showMessage(_("There must be at least one row."));
       }
     });
     $("#ctjEURLLogo").on("change", function () {
@@ -482,7 +480,7 @@ var $exeDevice = {
         return false;
       }
       var url = selectedFile,
-        alt = _("Logo proyecto");
+        alt = _("Project logo");
       $exeDevice.showImage("#ctjEImageLogo", "#ctjEImageNoLogo", url, alt);
     });
     $("#ctjEPlayLogo").on("click", function (e) {
@@ -501,7 +499,7 @@ var $exeDevice = {
         return false;
       }
       var url = selectedFile,
-        alt = _("Logo proyecto");
+        alt = _("Project logo");
       $exeDevice.showImage("#ctjEImageLogo", "#ctjEImageNoLogo", url, alt);
     });
 
@@ -520,7 +518,7 @@ var $exeDevice = {
         return false;
       }
       var url = selectedFile,
-        alt = _("Comunidad/Empresa");
+        alt = _("Community/Company");
       $exeDevice.showImage("#ctjEImageCommunity", "#ctjEImageNoCommunity", url, alt);
     });
     $("#ctjEPlayCommunity").on("click", function (e) {
@@ -537,7 +535,7 @@ var $exeDevice = {
         return false;
       }
       var url = selectedFile,
-        alt = _("Comunidad/Empresa");
+        alt = _("Community/Company");
       $exeDevice.showImage("#ctjEImageCommunity", "#ctjEImageNoCommunity", url, alt);
     });
 
@@ -554,7 +552,7 @@ var $exeDevice = {
         return false;
       }
       var url = selectedFile,
-          alt = _("Decoración");
+          alt = _("Decoration");
       $exeDevice.showImage("#ctjEImageDecorative", "#ctjEImageNoDecorative", url, alt);
     });
     $("#ctjEPlayDecorative").on("click", function (e) {
@@ -571,7 +569,7 @@ var $exeDevice = {
         return false;
       }
       var url = selectedFile,
-        alt = _("Decoración");
+        alt = _("Decoration");
       $exeDevice.showImage("#ctjEImageDecorative", "#ctjEImageNoDecorative",  url, alt);
     });
 
@@ -749,19 +747,19 @@ var $exeDevice = {
       "#ctjEImageLogo",
       "#ctjEImageNoLogo",
       game.urlLogo,
-      _("Logo proyecto")
+      _("Project logo")
     );
     $exeDevice.showImage(
       "#ctjEImageCommunity",
       "#ctjEImageNoCommunity",
       game.urlCommunity,
-      _("Comunidad/Empresa")
+      _("Community/Company")
     );
     $exeDevice.showImage(
       "#ctjEImageDecorative",
       "#ctjEImageNoDecorative",
       game.urlDecorative,
-      _("Imagen decorativa")
+      _("Decorative image")
     );
   },
   drawImage: function (image, mData) {

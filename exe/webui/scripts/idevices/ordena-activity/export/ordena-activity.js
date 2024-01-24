@@ -38,7 +38,7 @@ var $eXeOrdena = {
         if (!$eXeOrdena.supportedBrowser('ordena')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Ordena') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Order') + '</p>');
             return;
         }
         if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;

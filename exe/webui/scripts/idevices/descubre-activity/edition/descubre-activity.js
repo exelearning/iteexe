@@ -9,7 +9,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Descubre')
+        name: _('Discover')
     },
     msgs: {},
     active: 0,
@@ -63,32 +63,32 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgAuthor": _("Authorship"),
         "msgReboot": _("Restart"),
-        "msgTimeOver": _("Tu tiempo ha finalizado. Inténtalo de nuevo"),
-        "msgAllAttemps": _("¡Has agotado todos los intentos! Prueba de nuevo"),
-        "mgsAllCards": _("¡Has encontrado todas las parejas!"),
-        "mgsAllTrios": _("¡Has encontrado todos los tríos!"),
-        "mgsAllQuartets": _("¡Has encontrado todas los cuartetos!"),
-        "mgsGameStart": _("¡El juego ha comenzado! Selecciona dos cartas"),
-        "mgsGameStart3": _("¡El juego ha comenzado! Selecciona tres cartas"),
-        "mgsGameStart4": _("¡El juego ha comenzado! Selecciona cuatro cartas"),
-        "msgNumbersAttemps": _("Número de intentos"),
-        "msgPairs": _("Parejas"),
-        "msgTrios": _("Tríos"),
-        "msgQuarts": _("Cuartetos"),
-        "msgAttempts": _("Intentos"),
-        "msgCompletedPair": _("Una pareja completada. ¡A por la siguiente!"),
-        "msgCompletedTrio": _("Un trío completado. ¡A por la siguiente!"),
-        "msgCompletedQuartet": _("Un cuarteto completado. ¡A por la siguiente!"),
-        "msgSelectCard": _("Selecciona otra carta"),
-        "msgSelectCardOne": _("Selecciona una carta"),
-        "msgRookie": _("Inicial"),
-        "msgExpert": _("Medio"),
-        "msgMaster": _("Avanzado"),
-        "msgLevel": _("Nivel"),
-        "msgSelectLevel": _("Selecciona un nivel"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s")
+        "msgTimeOver": _("Time has finished. Please try again"),
+        "msgAllAttemps": _("You finished all the attempts! Please try again"),
+        "mgsAllCards": _("You found all the pairs!"),
+        "mgsAllTrios": _("You found all the trios!"),
+        "mgsAllQuartets": _("You found all the quartets!"),
+        "mgsGameStart": _("The game has started! Select two cards"),
+        "mgsGameStart3": _("The game has started! Select three cards"),
+        "mgsGameStart4": _("The game has started! Select four cards"),
+        "msgNumbersAttemps": _("Number of attemps"),
+        "msgPairs": _("Pairs"),
+        "msgTrios": _("Trios"),
+        "msgQuarts": _("Quartets"),
+        "msgAttempts": _("Attempts"),
+        "msgCompletedPair": _("You completed a pair. Keep going!"),
+        "msgCompletedTrio": _("You completed a trio. Keep going!"),
+        "msgCompletedQuartet": _("You completed a quartet. Keep going!"),
+        "msgSelectCard": _("Choose another letter"),
+        "msgSelectCardOne": _("Choose a letter"),
+        "msgRookie": _("Initial"),
+        "msgExpert": _("Medium"),
+        "msgMaster": _("Advanced"),
+        "msgLevel": _("Level"),
+        "msgSelectLevel": _("Select a level"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -104,19 +104,19 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgFewAttempts = _("El número de intentos tiene que ser mayor o igual que el número de parejas del juego. Indica 0 para un número infinito de intentos");
-        msgs.msgCompleteData = _("Debes indicar una imagen, un texto o/y un audio para cada carta");
-        msgs.msgPairsMax = _("Número máximo de parejas: 20");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgFewAttempts = _("The number of attempts has to be greater than or equal to the number of couples in the game. Indicates 0 for an infinite number of attempts");
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each letter");
+        msgs.msgPairsMax = _("Maximum number of pairs: 20");
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que descubrir parejas, tríos o cuartetos  de tarjetas con imágenes, textos y/o sonidos.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to discover pairs, trios or card quartets with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Cada oveja con su pareja.")) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Birds of a feather flock together.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
@@ -124,16 +124,16 @@ var $exeDevice = {
                             <label for="descubreEShowMinimize"><input type="checkbox" id="descubreEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p>\
-                            <span>' + _("Tipo") + ';</span>\
+                            <span>' + _("Type") + ';</span>\
                             <input class="Descubre-GameMode" checked id="descubreGame2" type="radio" name="qtxgamemode" value="0"  />\
-                            <label for="descubreGame2">' + _("Parejas") + '</label>\
+                            <label for="descubreGame2">' + _("Pairs") + '</label>\
                             <input class="Descubre-GameMode"  id="descubreGame3" type="radio" name="qtxgamemode" value="1"  />\
-                            <label for="descubreGame3">' + _("Tríos") + '</label>\
+                            <label for="descubreGame3">' + _("Trios") + '</label>\
                             <input class="Descubre-GameMode"  id="descubreGame4" type="radio" name="qtxgamemode" value="2"  />\
-                            <label for="descubreGame4">' + _("Cuartetos") + '</label>\
+                            <label for="descubreGame4">' + _("Quartets") + '</label>\
                         </p>\
                         <p>\
-                            <span>' + _("Niveles de dificultad") + ':</span>\
+                            <span>' + _("Difficulty levels") + ':</span>\
                             <input class="Descubre-GameLevel" checked id="descubreL1" type="radio" name="qtxgamelevels" value="1"  />\
                             <label for="descubreL1">1</label>\
                             <input class="Descubre-GameLevel" id="descubreL2" type="radio" name="qtxgamelevels" value="2"  />\
@@ -142,20 +142,20 @@ var $exeDevice = {
                             <label for="descubreL3">3</label>\
                         </p>\
                         <p>\
-                            <label for="descubreEShowCards"><input type="checkbox" id="descubreEShowCards">' + _("Cartas visibles") + '.</label>\
+                            <label for="descubreEShowCards"><input type="checkbox" id="descubreEShowCards">' + _("Visible letters") + '.</label>\
                         </p>\
                         <p>\
-							<label for="descubreETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas (segundos)") + ':\
+							<label for="descubreETimeShowSolution">' + _("Time while the cards will be shown (seconds)") + ':\
 							<input type="number" name="descubreETimeShowSolution" id="descubreETimeShowSolution" value="3" min="1" max="999" /> </label>\
                         </p>\
                         <p>\
-                            <label for="descubreECustomMessages"><input type="checkbox" id="descubreECustomMessages">' + _("Mensajes personalizados") + '.</label>\
+                            <label for="descubreECustomMessages"><input type="checkbox" id="descubreECustomMessages">' + _("Custom messages") + '.</label>\
                         </p>\
                         <p>\
-                        <label for="descubreETime">' + _("Tiempo") + '(m):</label><input type="number" name="descubreETime" id="descubreETime" value="0" min="0" max="120" step="1" />\
+                        <label for="descubreETime">' + _("Time") + '(m):</label><input type="number" name="descubreETime" id="descubreETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
-                            <label for="descubreEAttempts">' + _("Número de intentos") + ':</label><input type="number" name="descubreEAttempts" id="descubreEAttempts" value="0" min="0" max="100" step="1" />\
+                            <label for="descubreEAttempts">' + _("Number of attemps") + ':</label><input type="number" name="descubreEAttempts" id="descubreEAttempts" value="0" min="0" max="100" step="1" />\
                         </p>\
                         <p>\
                             <label for="descubreEShowSolution"><input type="checkbox" checked id="descubreEShowSolution"> ' + _("Show solutions") + '. </label> \
@@ -176,12 +176,12 @@ var $exeDevice = {
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#descubreEEvaluationHelp" id="descubreEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="descubreEEvaluation"><input type="checkbox" id="descubreEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="descubreEEvaluationID">' + _("Identificador") + ':\
+							<label for="descubreEEvaluation"><input type="checkbox" id="descubreEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="descubreEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="descubreEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="descubreEEvaluationHelp" class="Descubre-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\
@@ -194,7 +194,7 @@ var $exeDevice = {
                     <div class="Descubre-EContents">\
                         <div class="Descubre-EOrders Descubre-Hide" id="descubreEOrder">\
                             <div class="Descubre-ECustomMessage">\
-                                <span class="sr-av">' + _("Acierto") + '</span><span class="Descubre-EHit"></span>\
+                                <span class="sr-av">' + _("Success") + '</span><span class="Descubre-EHit"></span>\
                                 <label for="descubreEMessageOK">Mensaje:</label>\
                                     <input type="text" class=""  id="descubreEMessageOK">\
                             </div>\
@@ -256,7 +256,7 @@ var $exeDevice = {
             id = "Before";
         }
         return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
-                    <legend><a href='#'>" + _('Contenido adicional') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
+                    <legend><a href='#'>" + _('Additional content') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
                     <div>\
                         <p>\
                             <label for='eXeIdeviceText" + id + "' class='sr-av'>" + tit + ":</label>\
@@ -279,7 +279,7 @@ var $exeDevice = {
                    <input class="Descubre-Type-' + i + '"  id="descubreEMediaText-' + i + '" type="radio" name="qxtmediatype-' + i + '" value="1"  />\
                    <label for="descubreEMediaText">' + _("Text") + '</label>\
                    <input class="Descubre-Type-' + i + '"  id="descubreEMediaBoth-' + i + '" type="radio" name="qxtmediatype-' + i + '" value="2"  />\
-                   <label for="descubreEMediaBoth-"' + i + '>' + _("Ambos") + '</label>\
+                   <label for="descubreEMediaBoth-"' + i + '>' + _("Both") + '</label>\
                 </span>\
            </p>\
            <div class="Descubre-EMultimedia" id="descubreEMultimedia-' + i + '">\
@@ -293,8 +293,8 @@ var $exeDevice = {
            <span class="Descubre-ETitleText" id="descubreETitleText-' + i + '">' + _("Text") + '</span>\
            <div class="Descubre-EInputImage" id="descubreEInputText-' + i + '">\
                 <label for="descubreEText-' + i + '" class="sr-av">' + _("Text") + '</label><input id="descubreEText-' + i + '" type="text" />\
-                <label for="descubreEColor-' + i + '">' + _("Fuente") + ': </label><input type="color" id="descubreEColor-' + i + '" name="descubreEColor-' + i + '" value="#000000">\
-                <label for="descubreEBackColor-' + i + '">' + _("Fondo") + ': </label><input type="color" id="descubreEBackColor-' + i + '" name="descubreEBackColor-' + i + '" value="#ffffff">\
+                <label for="descubreEColor-' + i + '">' + _("Font") + ': </label><input type="color" id="descubreEColor-' + i + '" name="descubreEColor-' + i + '" value="#000000">\
+                <label for="descubreEBackColor-' + i + '">' + _("Background") + ': </label><input type="color" id="descubreEBackColor-' + i + '" name="descubreEBackColor-' + i + '" value="#ffffff">\
             </div>\
            <span class="Descubre-ETitleImage" id="descubreETitleImage-' + i + '">' + _("Image") + '</span>\
            <div class="Descubre-EInputImage" id="descubreEInputImage-' + i + '">\
@@ -314,7 +314,7 @@ var $exeDevice = {
                    <label for="descubreEAuthor-' + i + '">' + _("Authorship") + '</label><input id="descubreEAuthor-' + i + '" type="text" />\
                </div>\
                <div class="Descubre-EInputAlt" id="descubreEInputAlt-' + i + '">\
-                   <label for="descubreEAlt-' + i + '">' + _("Texto alternativo") + '</label><input id="descubreEAlt-' + i + '" type="text" />\
+                   <label for="descubreEAlt-' + i + '">' + _("Alternative text") + '</label><input id="descubreEAlt-' + i + '" type="text" />\
                </div>\
            </div>\
            <span id="descubreETitleAudio-' + i + '">' + _("Audio") + '</span>\

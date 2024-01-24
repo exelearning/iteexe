@@ -116,9 +116,9 @@ var $exeDevice = {
         "msgHome": _("Home"),
         "msgReturn": _("Return"),
         "msgCheck": _("Check"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Map'),
     },
     init: function () {
@@ -163,8 +163,8 @@ var $exeDevice = {
         msgs.msgCloseSlide = _("You must close the edited presentation before saving the activity.");
         msgs.msgEOneSlide = _("There must be at least one slide in the presentation.");
         msgs.msgWriteLink = _("Please type or paste a valid URL.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');;
-        msgs.msgSolutionOrder=_("Indica, separándolos por comas, el orden correcto en el que se deben pulsar los puntos")
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');;
+        msgs.msgSolutionOrder=_("Indicate, separating them by commas, the correct order in which the points must be clicked")
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -222,16 +222,16 @@ var $exeDevice = {
                             <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Show when the mouse is over the icon or active area") + '. </label>\
                         </p>\
                         <p id="mapaEAutoAudioDiv" class="MQE-EHide">\
-                            <label for="mapaEAutoAudio"><input type="checkbox" id="mapaEAutoAudio" checked>' + _("Reproducir el sonido al pasar el ratón sobre los puntos.") + '. </label>\
+                            <label for="mapaEAutoAudio"><input type="checkbox" id="mapaEAutoAudio" checked>' + _("Play the sound when hovering the mouse over the points.") + '. </label>\
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#mapaEEvaluationHelp" id="mapaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="mapaEEvaluation"><input type="checkbox" id="mapaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="mapaEEvaluationID">' + _("Identificador") + ':\
+							<label for="mapaEEvaluation"><input type="checkbox" id="mapaEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="mapaEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="mapaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="mapaEEvaluationHelp" class="MQE-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\

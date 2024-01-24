@@ -88,9 +88,9 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgCorrect": _("Correct"),
         "msgIncorrect": _("Incorrect"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgNext": _('Next'),
     },
     getId: function () {
@@ -133,7 +133,7 @@ var $exeDevice = {
         msgs.msgGameIntrunctions = _("Roll the dice and answer the question until you complete all the cheeses.");
         msgs.tooManyQuestions = _("Too many questions! The game can have a maximum of about 800 and 1200 questions. This number can vary a lot depending on the type of questions and the length of the questions, the answers, the URLs and the enriched text.");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
 
     },
@@ -802,12 +802,12 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class="GameModeLabel"><a href="#trivialEEvaluationHelp" id="trivialEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="trivialEEvaluation"><input type="checkbox" id="trivialEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="trivialEEvaluationID">' + _("Identificador") + ':\
+								<label for="trivialEEvaluation"><input type="checkbox" id="trivialEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="trivialEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="trivialEEvaluationID" disabled/> </label>\
                             </p>\
                             <div id="trivialEEvaluationHelp" class="gameQE-TypeGameHelp">\
-                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                             </div>\
                         </div>\
                     </fieldset>\
@@ -834,7 +834,7 @@ var $exeDevice = {
                                         <input class="gameQE-TypeSelect"  id="trivialTypeWord" type="radio" name="tvltypeselect" value="2"/>\
                                         <label for="trivialTypeWord">' + _("Word") + '</label>\
                                         <input class="gameQE-TypeSelect"  id="trivialTypeOpen" type="radio" name="tvltypeselect" value="3"/>\
-                                        <label for="trivialTypeOpen">' + _("Abierta") + '</label>\
+                                        <label for="trivialTypeOpen">' + _("Open") + '</label>\
                                     </div>\
                                     <span>' + _("Multimedia Type") + ':</span>\
                                     <div class="gameQE-EInputMedias">\

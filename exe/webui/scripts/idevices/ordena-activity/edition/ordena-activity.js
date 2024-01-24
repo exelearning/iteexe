@@ -9,7 +9,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Ordena')
+        name: _('Order')
     },
     msgs: {},
     active: 0,
@@ -63,23 +63,23 @@ var $exeDevice = {
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgClose": _("Close"),
         "msgAudio": _("Audio"),
-        "msgTimeOver": _("Tu tiempo ha finalizado. Inténtalo de nuevo"),
-        "msgAllAttemps": _("¡Has agotado todos los intentos! Prueba de nuevo"),
-        "mgsAllPhrases": _("¡Has ordenado todas las actividades!"),
-        "msgAttempts": _("Intentos"),
-        "msgNumbersAttemps": _("Número de actividades pendientes"),
-        "msgAuthor": _("Autoría"),
-        "msgReboot": _("Reiniciar"),
-        "msgActivities": _("Actividades"),
-        "msgCheck": _("Comprobar"),
-        "msgNextPhrase": _("Siguiente actividad"),
-        "msgContinue": _("Continuar"),
-        "msgPositions": _("Posiciones correctas"),
-        "msgAllOK": _("¡Genial! Todo correcto ¡A por otra!"),
-        "msgAgain": _("Inténtalo de nuevo"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s")
+        "msgTimeOver": _("Time has finished. Please try again"),
+        "msgAllAttemps": _("You finished all the attempts! Please try again"),
+        "mgsAllPhrases": _("You ordered all the activities!"),
+        "msgAttempts": _("Attempts"),
+        "msgNumbersAttemps": _("Number of pending activities"),
+        "msgAuthor": _("Authorship"),
+        "msgReboot": _("Restart"),
+        "msgActivities": _("Activities"),
+        "msgCheck": _("Check"),
+        "msgNextPhrase": _("Next activity"),
+        "msgContinue": _("Continue"),
+        "msgPositions": _("Correct positions"),
+        "msgAllOK": _("Brilliant! All correct!"),
+        "msgAgain": _("Please try again"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
 
     },
     init: function () {
@@ -96,20 +96,20 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgFewAttempts = _("El número de intentos tiene que ser mayor o igual que el número de frases del juego. Indica 0 para un número infinito de intentos");
-        msgs.msgCompleteData = _("Debes indicar una imagen, un texto o/y un audio para cada carta");
-        msgs.msgPairsMax = _("Número máximo de frases: 20");
-        msgs.msgCardsColumn = _("Con las cabeceras fijas, el número de cartas debe ser mayor que el número de columnas");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgFewAttempts = _("The number of attempts has to be bigger than or equal to the number of phrases in the game. Use 0 for an infinite number of attempts");
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each letter");
+        msgs.msgPairsMax = _("Maximum number of phrases: 20");
+        msgs.msgCardsColumn = _("With fixed headers, the number of cards must be bigger than the number of columns");
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que ordenar tarjetas con imágenes, textos y/o sonidos.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to order cards with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Arrastra cada carta hasta su posición correcta")) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Drag each letter to its correct position")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
@@ -117,7 +117,7 @@ var $exeDevice = {
                         <span>' + _('Type') + ':</span>\
                         <span class="ODNE-EInputColumns">\
                             <input class="ODNE-EType" id="odntype0" checked type="radio" name="odntype" value="0" />\
-                            <label for="odntype0">' + _('Frases') + '</label>\
+                            <label for="odntype0">' + _('Phrases') + '</label>\
                             <input class="ODNE-EType" id="odntype1" type="radio" name="odntype" value="1" />\
                             <label for="odntype1">' + _('Multimedia') + '</label>\
                         </span>\
@@ -126,14 +126,14 @@ var $exeDevice = {
                             <label for="ordenaEShowMinimize"><input type="checkbox" id="ordenaEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p id="ordenaTimeShowDiv" class="ODNE-Hide">\
-							<label for="ordenaETimeShowSolution">' + _("Tiempo durante el que se mostrarán las cartas (segundos)") + ':\
+							<label for="ordenaETimeShowSolution">' + _("Time while the cards will be shown (seconds)") + ':\
 							<input type="number" name="ordenaETimeShowSolution" id="ordenaETimeShowSolution" value="3" min="1" max="999" /> </label>\
                         </p>\
                         <p id="ordenaECustomMessagesDiv" class="ODNE-Hide">\
-                            <label for="ordenaECustomMessages"><input type="checkbox" id="ordenaECustomMessages">' + _("Mensajes personalizados") + '.</label>\
+                            <label for="ordenaECustomMessages"><input type="checkbox" id="ordenaECustomMessages">' + _("Custom messages") + '.</label>\
                         </p>\
                         <p>\
-                            <label for="ordenaETime">' + _("Tiempo") + '(m):</label><input type="number" name="ordenaETime" id="ordenaETime" value="0" min="0" max="120" step="1" />\
+                            <label for="ordenaETime">' + _("Time") + '(m):</label><input type="number" name="ordenaETime" id="ordenaETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
                             <label for="ordenaEShowSolution"><input type="checkbox" checked id="ordenaEShowSolution"> ' + _("Show solutions") + '. </label> \
@@ -146,14 +146,14 @@ var $exeDevice = {
                             <textarea id="ordenaEFeedBackEditor" class="exe-html-editor"></textarea>\
                         </p>\
                         <p>\
-                            <label for="ordenaEPercentajeQuestions">' + _('% Actividades') + ':</label><input type="number" name="ordenaEPercentajeQuestions" id="ordenaEPercentajeQuestions" value="100" min="1" max="100" />\
+                            <label for="ordenaEPercentajeQuestions">' + _('% Activities') + ':</label><input type="number" name="ordenaEPercentajeQuestions" id="ordenaEPercentajeQuestions" value="100" min="1" max="100" />\
                             <span id="ordenaENumeroPercentaje">1/1</span>\
                         </p>\
                         <p>\
                             <label for="ordenaEAuthor">' + _('Author') + ': </label><input id="ordenaEAuthor" type="text" />\
                         </p>\
                         <p id="ordenaColumnsDiv" class="ODNE-Hide">\
-                            <span>' + _('Columnas') + ':</span>\
+                            <span>' + _('Columns') + ':</span>\
                             <span class="ODNE-EInputColumns">\
                                 <input class="ODNE-EColumns" id="odn0" checked type="radio" name="odncolumns" value="0" />\
                                 <label for="odn1">No</label>\
@@ -170,54 +170,54 @@ var $exeDevice = {
                             </span>\
                         </p>\
                         <p id="ordenaCustomizeCard" style="display:none;">\
-                            <label for="ordenaMaxWidth"><input type="checkbox" checked  id="ordenaMaxWidth">' + _('Máximo ancho') + '.</label>\
-                            <label for="ordenaCardHeight">' + _('Alto (px)') + ':\
+                            <label for="ordenaMaxWidth"><input type="checkbox" checked  id="ordenaMaxWidth">' + _('Maximum width') + '.</label>\
+                            <label for="ordenaCardHeight">' + _('Height (px)') + ':\
                             <input type="number" name="ordenaCardHeight" id="ordenaCardHeight" value="200" min="0" max="1000" /> </label>\
                         </p>\
                         <p id="ordenaFixedHeaders" style="display:none;">\
-                            <label for="ordenaOrderedColumns"><input type="checkbox"  id="ordenaOrderedColumns">' + _('Cabeceras fijas') + '.</label>\
+                            <label for="ordenaOrderedColumns"><input type="checkbox"  id="ordenaOrderedColumns">' + _('Fixed headers') + '.</label>\
                         </p>\
                         <p id="ordenaStartAutomaticallyDiv" style="display:none;">\
-                            <label for="ordenaStartAutomatically"><input type="checkbox"  id="ordenaStartAutomatically">' + _('Inicio automático') + '</label>\
+                            <label for="ordenaStartAutomatically"><input type="checkbox"  id="ordenaStartAutomatically">' + _('Automatic start') + '</label>\
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#ordenaEEvaluationHelp" id="ordenaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="ordenaEEvaluation"><input type="checkbox" id="ordenaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="ordenaEEvaluationID">' + _("Identificador") + ':\
+							<label for="ordenaEEvaluation"><input type="checkbox" id="ordenaEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="ordenaEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="ordenaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="ordenaEEvaluationHelp" class="ODNE-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\
                 <fieldset class="exe-fieldset">\
-                <legend><a href="#">' + _('Actividades') + '</a></legend>\
+                <legend><a href="#">' + _('Activities') + '</a></legend>\
                     <div class="ODNE-EPanel" id="ordenaEPanel">\
                         <p class="ODNE-EPhraseDivI" id="ordenaEPĥraseIDiv">\
-                            <label for="ordenaEPraseI">' + _('Frase') + ':</label><input type="text" id="ordenaEPraseI">\
+                            <label for="ordenaEPraseI">' + _('Phrase') + ':</label><input type="text" id="ordenaEPraseI">\
                         </p>\
                         <div class="ODNE-ENavigationButtons" id="ordenaButtonsPrhaseDiv" >\
-                            <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Añadir actividad') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir actividad') + '" class="ODNE-EButtonImage b-add" /></a>\
-                            <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('Primera actividad') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('Primera actividad') + '" class="ODNE-EButtonImage b-first" /></a>\
-                            <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Anterior actividad') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Anterior actividad') + '" class="ODNE-EButtonImage b-prev" /></a>\
-                            <span class="sr-av">' + _("Actividad número:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
-                            <a href="#" id="ordenaENext" class="ODNE-ENavigationButton"  title="' + _('Siguiente actividad') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Próxima actividad') + '" class="ODNE-EButtonImage b-next" /></a>\
-                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('Última actividad') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Última actividad') + '" class="ODNE-EButtonImage b-last" /></a>\
-                            <a href="#" id="ordenaEDelete" class="ODNE-ENavigationButton" title="' + _('Borrar actividad') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar actividad') + '" class="ODNE-EButtonImage b-delete" /></a>\
-                            <a href="#" id="ordenaECopy" class="ODNE-ENavigationButton" title="' + _('Copiar actividad') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                            <a href="#" id="ordenaECut" class="ODNE-ENavigationButton" title="' + _('Cortar actividad') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar actividad') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                            <a href="#" id="ordenaEPaste" class="ODNE-ENavigationButton"  title="' + _('Pegar actividad') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar actividad') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                            <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Add activity') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add activity') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('First activity') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('First activity') + '" class="ODNE-EButtonImage b-first" /></a>\
+                            <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Previous activity') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Previous activity') + '" class="ODNE-EButtonImage b-prev" /></a>\
+                            <span class="sr-av">' + _("Activity number:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
+                            <a href="#" id="ordenaENext" class="ODNE-ENavigationButton"  title="' + _('Next activity') + '"><img src="' + path + 'quextIENext.png" alt="' + _('Next activity') + '" class="ODNE-EButtonImage b-next" /></a>\
+                            <a href="#" id="ordenaELast" class="ODNE-ENavigationButton"  title="' + _('Last activity') + '"><img src="' + path + 'quextIELast.png" alt="' + _('Last activity') + '" class="ODNE-EButtonImage b-last" /></a>\
+                            <a href="#" id="ordenaEDelete" class="ODNE-ENavigationButton" title="' + _('Delete activity') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete activity') + '" class="ODNE-EButtonImage b-delete" /></a>\
+                            <a href="#" id="ordenaECopy" class="ODNE-ENavigationButton" title="' + _('Copy activity') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy activity') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaECut" class="ODNE-ENavigationButton" title="' + _('Cut activity') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut activity') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaEPaste" class="ODNE-ENavigationButton"  title="' + _('Paste activity') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste activity') + '" class="ODNE-EButtonImage b-paste" /></a>\
                         </div>\
-                        <p class="ODNE-ENumActivity ODNE-Hide" id="ordenaActivityNumberDiv">' + _('Actividad') + ' <span id="ordenaActivityNumber">1</span></p>\
+                        <p class="ODNE-ENumActivity ODNE-Hide" id="ordenaActivityNumberDiv">' + _('Activity') + ' <span id="ordenaActivityNumber">1</span></p>\
                         <p class="ODNE-ECustomMessageDef ODNE-Hide" id="ordenaEDefinitionDiv">\
-                            <label for="ordenaEDefinition">' + _('Enunciado') + ':</label><input type="text" id="ordenaEDefinition">\
+                            <label for="ordenaEDefinition">' + _('Statement') + ':</label><input type="text" id="ordenaEDefinition">\
                             <label>' + _("Audio") + ':</label>\
                             <input type="text" id="ordenaEURLAudioDefinition" class="exe-file-picker ODNE-EURLAudio"  />\
                             <a href="#"id="ordenaEPlayAudioDefinition" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
                         </p>\
                         <p class="ODNE-ECustomMessageDiv" id="ordenaCustomMessageOKDiv">\
-                            <label for="ordenaEMessageOK">' + _('Acierto') + ':</label><input type="text" id="ordenaEMessageOK"/>\
+                            <label for="ordenaEMessageOK">' + _('Success') + ':</label><input type="text" id="ordenaEMessageOK"/>\
                             <label>' + _("Audio") + ':</label>\
                             <input type="text" id="ordenaEURLAudioOK" class="exe-file-picker ODNE-EURLAudio"  />\
                             <a href="#"id="ordenaEPlayAudioOK" class="ODNE-ENavigationButton ODNE-EPlayVideo" title="' + _("Audio") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="ODNE-EButtonImage b-play" /></a>\
@@ -232,11 +232,11 @@ var $exeDevice = {
                         </p>\
                         <div class="ODNE-EContents ODNE-Hide" id="ordenaButtonCardDiv" >\
                             <div class="ODNE-ENavigationButtons">\
-                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Añadir carta') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Añadir tarjeta') + '" class="ODNE-EButtonImage b-add" /></a>\
-                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Borrar carta') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Borrar tarjeta') + '" class="ODNE-EButtonImage b-delete" /></a>\
-                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copiar carta') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copiar tarjeta') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cortar carta') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cortar tarjeta') + '" class="ODNE-EButtonImage b-cut" /></a>\
-                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Pegar carta') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Pegar tarjeta') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Add letter') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add card') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Delete letter') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete card') + '" class="ODNE-EButtonImage b-delete" /></a>\
+                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copy letter') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy card') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cut letter') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut card') + '" class="ODNE-EButtonImage b-cut" /></a>\
+                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Paste letter') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste card') + '" class="ODNE-EButtonImage b-paste" /></a>\
                         </div>\
                         </div>\
                         <div class="ODNE-ENumPhrasesDiv" id="ordenaENumPhrasesDiv">\
@@ -320,7 +320,7 @@ var $exeDevice = {
             id = "Before";
         }
         return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
-                    <legend><a href='#'>" + _('Contenido adicional') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
+                    <legend><a href='#'>" + _('Additional content') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
                     <div>\
                         <p>\
                             <label for='eXeIdeviceText" + id + "' class='sr-av'>" + tit + ":</label>\
@@ -486,8 +486,8 @@ var $exeDevice = {
            <span class="ODNE-ETitleText" id="ordenaETitleText-' + $exeDevice.activeID + '">' + _("Text") + '</span>\
            <div class="ODNE-EInputText" id="ordenaEInputText-' + $exeDevice.activeID + '">\
                 <label class="sr-av">' + _("Text") + '</label><input type="text" id="ordenaEText-' + $exeDevice.activeID + '" class="ODNE-EText" />\
-                <label id="ordenaELblColor-' + $exeDevice.activeID + '" class="ODNE-LblColor">' + _("Fuente") + ': </label><input id="ordenaEColor-' + $exeDevice.activeID + '"  type="color"  class="ODNE-EColor" value="#000000">\
-                <label id="ordenaELblBgColor-' + $exeDevice.activeID + '"  class="ODNE-LblBgColor">' + _("Fondo") + ': </label><input id="ordenaEBgColor-' + $exeDevice.activeID + '"  type="color"   class="ODNE-EBackColor" value="#ffffff">\
+                <label id="ordenaELblColor-' + $exeDevice.activeID + '" class="ODNE-LblColor">' + _("Font") + ': </label><input id="ordenaEColor-' + $exeDevice.activeID + '"  type="color"  class="ODNE-EColor" value="#000000">\
+                <label id="ordenaELblBgColor-' + $exeDevice.activeID + '"  class="ODNE-LblBgColor">' + _("Background") + ': </label><input id="ordenaEBgColor-' + $exeDevice.activeID + '"  type="color"   class="ODNE-EBackColor" value="#ffffff">\
             </div>\
            <span class="ODNE-ETitleImage"id="ordenaETitleImage-' + $exeDevice.activeID + '">' + _("Image") + '</span>\
            <div class="ODNE-EInputImage"  id="ordenaEInputImage-' + $exeDevice.activeID + '">\
@@ -508,7 +508,7 @@ var $exeDevice = {
                    <label>' + _("Author") + '</label><input type="text" class="ODNE-EAuthor" />\
                </div>\
                <div class="ODNE-EInputAlt">\
-                   <label>' + _("Texto alternativo") + '</label><input  type="text" class="ODNE-EAlt" />\
+                   <label>' + _("Alternative text") + '</label><input  type="text" class="ODNE-EAlt" />\
                </div>\
            </div>\
            <span >' + _("Audio") + '</span>\

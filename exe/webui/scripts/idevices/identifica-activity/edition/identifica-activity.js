@@ -70,9 +70,9 @@ var $exeDevice = {
         "msgUseAllClues": _("You already used all the clues. You can only get %s points."),
         "msgModeWhiteBoard": _("Digital blackboard mode"),
         "msgCheckLetter": _("Check the letter"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Identify')
     },
 
@@ -391,12 +391,12 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class="GameModeLabel"><a href="#idfEEvaluationHelp" id="idfEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="idfEEvaluation"><input type="checkbox" id="idfEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="idfEEvaluationID">' + _("Identificador") + ':\
+								<label for="idfEEvaluation"><input type="checkbox" id="idfEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="idfEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="idfEEvaluationID" disabled/> </label>\
                             </p>\
                             <div id="idfEEvaluationHelp" class="IDFE-TypeGameHelp">\
-                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                             </div>\
                         </div>\
                     </fieldset>\

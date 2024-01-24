@@ -73,9 +73,9 @@ var $exeDevice = {
         "msgEndTime": _("Game time is over. Your score is %s."),
         "msgEnd": _("Finish"),
         "msgEndGameM": _("You finished the game. Your score is %s."),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Memory Cards')
 
 
@@ -103,7 +103,7 @@ var $exeDevice = {
         msgs.msgCompleteDataBack = _("Provide an image, text or audio for each card's back side");
         msgs.msgEOneCard = _("Please create at least one card");
         msgs.msgMaxCards = _("Maximum card number: %s.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
@@ -153,12 +153,12 @@ var $exeDevice = {
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#flipcardsEEvaluationHelp" id="flipcardsEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="flipcardsEEvaluation"><input type="checkbox" id="flipcardsEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="flipcardsEEvaluationID">' + _("Identificador") + ':\
+							<label for="flipcardsEEvaluation"><input type="checkbox" id="flipcardsEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="flipcardsEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="flipcardsEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="flipcardsEEvaluationHelp" class="FLCRDS-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\

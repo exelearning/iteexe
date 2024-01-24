@@ -9,12 +9,12 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Clasifica')
+        name: _('Classify')
     },
     msgs: {},
     active: 0,
     wordsGame: [],
-    groups: [_('Grupo') + ' ' + 1, _('Grupo') + ' ' + 2, _('Grupo') + ' ' + 3, _('Grupo') + ' ' + 4],
+    groups: [_('Group') + ' ' + 1, _('Group') + ' ' + 2, _('Group') + ' ' + 3, _('Group') + ' ' + 4],
     numberGroups: 2,
     typeEdit: -1,
     numberCutCuestion: -1,
@@ -63,28 +63,28 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgYes": _("Yes"),
         "msgNo": _("No"),
-        "msgTimeOver": _("Tu tiempo ha finalizado. Inténtalo de nuevo"),
-        "mgsGameStart": _("¡El juego ha comenzado! Arrastra cada tarjeta hasta su contenedor"),
-        "msgSelectCard": _("Selecciona otra tarjeta"),
-        "msgSelectCardOne": _("Selecciona una tarjeta"),
-        "msgReboot": _("Reiniciar"),
-        "msgTestPassed": _("¡Genial! ¡Prueba superada!"),
-        "msgTestFailed": _("No has superado la prueba. Inténtalo de nuevo"),
-        "msgRebootGame": _("¿Deseas reiniciar esta partida?"),
-        "msgContinue": _("Continuar"),
-        "msgShowAnswers": _("Comprobar resultados"),
-        "msgUnansweredQuestions": _("Te han quedado %s tarjetas por colocar correctamente. ¿Quieres intentarlo de nuevo?"),
-        "msgAllCorrect": _("¡Genial! ¡Todo perfecto!"),
-        "msgTooManyTries": _("¡Estupendo! Has resuelto esta actividad en %s intentos. ¡Seguro que puedes hacerlo más rápido!"),
-        "msgQ5": _("No has colocado %s tarjetas en su lugar. ¡Inténtalo de nuevo!"),
-        "msgQ7": _("¡Estupendo! Has clasificado correctamente la mayor parte de las tarjetas, %s, pero aún puedes mejorar"),
-        "msgQ9": _("¡Magnífico! Tan sólo te han quedado %s tarjetas por colocar correctamente. Busca la perfección"),
-        "msgSaveGameAuto": _("Su puntuación se guardará automáticamente al finalizar el juego."),
-        "msgOnlySaveGameAuto": _("Su puntuación se guardará automáticamente al finalizar el juego. Sólo puedes jugar una vez."),
-        "msgEndGamerScore": _("Sólo puedes guardar tu puntuación tras finalizar la partida."),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgTimeOver": _("Time has finished. Please try again"),
+        "mgsGameStart": _("The game has started! Drag each card to your container"),
+        "msgSelectCard": _("Choose another card"),
+        "msgSelectCardOne": _("Choose a card"),
+        "msgReboot": _("Restart"),
+        "msgTestPassed": _("Brilliant! Test passed!"),
+        "msgTestFailed": _("You didn\'t pas the test. Please try again"),
+        "msgRebootGame": _("Do you want to restart this game?"),
+        "msgContinue": _("Continue"),
+        "msgShowAnswers": _("Check results"),
+        "msgUnansweredQuestions": _("There were %s cards to be placed correctly. Do you want to try again?"),
+        "msgAllCorrect": _("Brilliant! All perfect!"),
+        "msgTooManyTries": _("Great! You have solved this activity in %s attempts. Surely you can do it faster!"),
+        "msgQ5": _("You placed %s cards in the wrong place. Please try again!"),
+        "msgQ7": _("Great! You have correctly classified most cards, %s, but you can still improve"),
+        "msgQ9": _("Great! Only %s cards to place correctly. Maybe you could try again"),
+        "msgSaveGameAuto": _("Your score will be automatically saved at the end of the game."),
+        "msgOnlySaveGameAuto": _("Your score will be automatically saved at the end of the game. You can only play once."),
+        "msgEndGamerScore": _("You can only save your score after finishing the game."),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML
@@ -98,39 +98,39 @@ var $exeDevice = {
         msgs.msgEOneQuestion = _("Please provide at least one question");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgCompleteData = _("Debes indicar una imagen, un texto o/y un audio para cada tarjeta");
-        msgs.msgPairsMax = _("Número máximo tarjetas a clasificar: 25");
-        msgs.msgCompleteBoth = _("Debes indicar una imagen y un texto para esta tarjeta");
-        msgs.msgCompleteText = _("Debes indicar un texto o sonido para esta tarjeta");
-        msgs.msgCompleteImage = _("Debes indicar una imagen o sonido para esta tarjeta");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each card");
+        msgs.msgPairsMax = _("Maximum cards to classify: 25");
+        msgs.msgCompleteBoth = _("You must indicate an image and text for this card");
+        msgs.msgCompleteText = _("You must indicate a text or sound for this card");
+        msgs.msgCompleteImage = _("You must indicate an image or sound for this card");
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Crea actividades interactivas en las que los jugadores tendrán que clasificar tarjetas con imágenes, textos y/o sonidos.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to classify cards with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Arrastra cada tarjeta hasta su contenedor.")) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Drag each card to its container.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _("Options") + '</a></legend>\
                     <div>\
                         <p>\
-                            <span>' + _("Nivel de dificultad") + ':</span>\
+                            <span>' + _("Difficulty level") + ':</span>\
                             <input class="CQE-ELevel"  id="clasificaL1" type="radio" name="qtxgamelevel" value="0"  />\
-                            <label for="clasificaL1">' + _('Básico') + '</label>\
+                            <label for="clasificaL1">' + _('Essential') + '</label>\
                             <input class="CQE-ELevel" id="clasificaL2" type="radio" name="qtxgamelevel" value="1"  />\
-                            <label for="clasificaL2">' + _('Medio') + '</label>\
+                            <label for="clasificaL2">' + _('Medium') + '</label>\
                             <input class="CQE-ELevel" checked id="clasificaL3" type="radio" name="qtxgamelevel" value="2"  />\
-                            <label for="clasificaL3">' + _('Avanzado') + '</label>\
+                            <label for="clasificaL3">' + _('Advanced') + '</label>\
                         </p>\
                         <p>\
-                            <label for="clasificaECustomMessages"><input type="checkbox" id="clasificaECustomMessages">' + _("Mensajes personalizados") + '.</label>\
+                            <label for="clasificaECustomMessages"><input type="checkbox" id="clasificaECustomMessages">' + _("Custom messages") + '.</label>\
                         </p>\
                         <p>\
                         <span class="CQE-EInputMedias">\
-                            <span>' + _("Número de categorías") + ':</span>\
+                            <span>' + _("Number of categories") + ':</span>\
                             <input class="CQE-Number" checked="checked" id="quextNumber2" type="radio" name="qxtnumber" value="2" />\
                             <label for="quextNumber2">2</label>\
                             <input class="CQE-Number"  id="quextNumber3" type="radio" name="qxtnumber" value="3" />\
@@ -140,22 +140,22 @@ var $exeDevice = {
                         </span>\
                         </p>\
                         <p>\
-                            <label for="clasificaTitle0">' + _("Categoría") + ' 1:</label><input type="text"  id="clasificaTitle0" class="CQE-EGroup" value="' + _('Grupo') + ' 1"/>\
+                            <label for="clasificaTitle0">' + _("Category") + ' 1:</label><input type="text"  id="clasificaTitle0" class="CQE-EGroup" value="' + _('Group') + ' 1"/>\
                         </p>\
                         <p >\
-                            <label for="clasificaTitle1">' + _("Categoría") + ' 2:</label><input type="text"  id="clasificaTitle1" class="CQE-EGroup"  value="' + _('Grupo') + ' 2"/>\
+                            <label for="clasificaTitle1">' + _("Category") + ' 2:</label><input type="text"  id="clasificaTitle1" class="CQE-EGroup"  value="' + _('Group') + ' 2"/>\
                         </p>\
                         <p>\
-                            <label for="clasificaTitle2">' + _("Categoría") + ' 3:</label><input type="text"  id="clasificaTitle2" class="CQE-EGroup" value="' + _('Grupo') + ' 3"/>\
+                            <label for="clasificaTitle2">' + _("Category") + ' 3:</label><input type="text"  id="clasificaTitle2" class="CQE-EGroup" value="' + _('Group') + ' 3"/>\
                         </p>\
                         <p >\
-                            <label for="clasificaTitle3">' + _("Categoría") + ' 4:</label><input type="text"  id="clasificaTitle3" class="CQE-EGroup"  value="' + _('Grupo') + ' 3"/>\
+                            <label for="clasificaTitle3">' + _("Category") + ' 4:</label><input type="text"  id="clasificaTitle3" class="CQE-EGroup"  value="' + _('Group') + ' 3"/>\
                         </p>\
                         <p>\
                             <label for="clasificaEShowMinimize"><input type="checkbox" id="clasificaEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p>\
-                        <label for="clasificaETime">' + _("Tiempo") + '(m):</label><input type="number" name="clasificaETime" id="clasificaETime" value="0" min="0" max="120" step="1" />\
+                        <label for="clasificaETime">' + _("Time") + '(m):</label><input type="number" name="clasificaETime" id="clasificaETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
                             <label for="clasificaEHasFeedBack"><input type="checkbox"  id="clasificaEHasFeedBack"> ' + _("Feedback") + '. </label> \
@@ -173,12 +173,12 @@ var $exeDevice = {
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#clasificaEEvaluationHelp" id="clasificaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="clasificaEEvaluation"><input type="checkbox" id="clasificaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="clasificaEEvaluationID">' + _("Identificador") + ':\
+							<label for="clasificaEEvaluation"><input type="checkbox" id="clasificaEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="clasificaEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="clasificaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="clasificaEEvaluationHelp" class="CQE-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\
@@ -240,7 +240,7 @@ var $exeDevice = {
             id = "Before";
         }
         return "<fieldset class='exe-fieldset exe-feedback-fieldset exe-fieldset-closed'>\
-                    <legend><a href='#'>" + _('Contenido adicional') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
+                    <legend><a href='#'>" + _('Additional content') + " (" + _('Optional').toLowerCase() + ")</a></legend>\
                     <div>\
                         <p>\
                             <label for='eXeIdeviceText" + id + "' class='sr-av'>" + tit + ":</label>\
@@ -262,15 +262,15 @@ var $exeDevice = {
                    <input class="CQE-Type"  id="clasificaEMediaText" type="radio" name="qxtmediatype" value="1"  />\
                    <label for="clasificaEMediaText">' + _("Text") + '</label>\
                    <input class="CQE-Type"  id="clasificaEMediaBoth" type="radio" name="qxtmediatype" value="2"  />\
-                   <label for="clasificaEMediaBoth">' + _("Ambos") + '</label>\
+                   <label for="clasificaEMediaBoth">' + _("Both") + '</label>\
                 </span>\
                     <span>\
-                    <label for="=clasificaEGroupSelect">' + _('Grupo') + ':</label>\
+                    <label for="=clasificaEGroupSelect">' + _('Group') + ':</label>\
                     <select id="clasificaEGroupSelect">\
-                        <option value="0">' + _('Grupo') + ' 1</option>\
-                        <option value="1">' + _('Grupo') + ' 2</option>\
-                        <option value="2">' + _('Grupo') + ' 2</option>\
-                        <option value="3">' + _('Grupo') + ' 3</option>\
+                        <option value="0">' + _('Group') + ' 1</option>\
+                        <option value="1">' + _('Group') + ' 2</option>\
+                        <option value="2">' + _('Group') + ' 2</option>\
+                        <option value="3">' + _('Group') + ' 3</option>\
                     </select>\
                 </span>\
            </p>\
@@ -285,8 +285,8 @@ var $exeDevice = {
            <span class="CQE-ETitleText" id="clasificaETitleText">' + _("Text") + '</span>\
            <div class="CQE-EInputImage" id="clasificaEInputText">\
                 <label for="clasificaEText" class="sr-av">' + _("Text") + '</label><input id="clasificaEText" type="text" />\
-                <label for="clasificaEColor">' + _("Fuente") + ': </label><input type="color" id="clasificaEColor" name="clasificaEColor" value="#000000">\
-                <label for="clasificaEBackColor">' + _("Fondo") + ': </label><input type="color" id="clasificaEBackColor" name="clasificaEBackColor" value="#ffffff">\
+                <label for="clasificaEColor">' + _("Font") + ': </label><input type="color" id="clasificaEColor" name="clasificaEColor" value="#000000">\
+                <label for="clasificaEBackColor">' + _("Background") + ': </label><input type="color" id="clasificaEBackColor" name="clasificaEBackColor" value="#ffffff">\
             </div>\
            <span class="CQE-ETitleImage" id="clasificaETitleImage">' + _("Image") + '</span>\
            <div class="CQE-EInputImage" id="clasificaEInputImage">\
@@ -306,7 +306,7 @@ var $exeDevice = {
                    <label for="clasificaEAuthor">' + _("Author") + '</label><input id="clasificaEAuthor" type="text" />\
                </div>\
                <div class="CQE-EInputAlt" id="clasificaEInputAlt">\
-                   <label for="clasificaEAlt">' + _("Texto alternativo") + '</label><input id="clasificaEAlt" type="text" />\
+                   <label for="clasificaEAlt">' + _("Alternative text") + '</label><input id="clasificaEAlt" type="text" />\
                </div>\
            </div>\
            <span id="clasificaETitleAudio">' + _("Audio") + '</span>\

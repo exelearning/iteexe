@@ -75,9 +75,9 @@ var $exeDevice = {
         "msgYouLastScore": _("The last score saved is"),
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Challenge')
 
     },
@@ -102,7 +102,7 @@ var $exeDevice = {
         msgs.msgDataChanllenge = _("Please write the title, description and solution of all the trials.");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
         msgs.msgClue = _("Help");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     showMessage: function (msg) {
@@ -288,12 +288,12 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class="GameModeLabel"><a href="#desafioEEvaluationHelp" id="desafioEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="desafioEEvaluation"><input type="checkbox" id="desafioEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="desafioEEvaluationID">' + _("Identificador") + ':\
+								<label for="desafioEEvaluation"><input type="checkbox" id="desafioEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="desafioEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="desafioEEvaluationID" disabled/> </label>\
                             </p>\
                             <div id="desafioEEvaluationHelp" class="desafioTypeGameHelp">\
-                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                             </div>\
                         </div>\
                     </fieldset>\

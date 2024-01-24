@@ -27,7 +27,7 @@ var $eXeListaCotejo = {
     ) {
       this.activities.hide();
       if (typeof _ != "undefined")
-        this.activities.before("<p>" + _("Lista de cotejo") + "</p>");
+        this.activities.before("<p>" + _("Checklist") + "</p>");
       return;
     }
     if (typeof $exeAuthoring != "undefined") this.isInExe = true;

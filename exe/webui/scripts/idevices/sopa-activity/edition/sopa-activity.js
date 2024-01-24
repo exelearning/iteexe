@@ -63,9 +63,9 @@ var $exeDevice = {
         "msgEndTime": _("Game time is over. Your score is %s."),
         "msgEnd": _("Finish"),
         "msgEndGameM": _("You finished the game. Your score is %s."),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Word Search')
 
     },
@@ -89,7 +89,7 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
     },
 
     importAdivina: function (data) {
@@ -171,12 +171,12 @@ var $exeDevice = {
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#sopaEEvaluationHelp" id="sopaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="sopaEEvaluation"><input type="checkbox" id="sopaEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="sopaEEvaluationID">' + _("Identificador") + ':\
+							<label for="sopaEEvaluation"><input type="checkbox" id="sopaEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="sopaEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="sopaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="sopaEEvaluationHelp" class="SPE-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                     </fieldset>\

@@ -79,9 +79,9 @@ var $exeDevice = {
         "msgEndScore": _("You got %s right answers and %d errors."),
         "msgEndTime": _("Time over."),
         "msgGameEnd": _("You completed the activity"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Complete')
     },
 
@@ -189,12 +189,12 @@ var $exeDevice = {
                                 </p>\
                                  <p>\
                                 <strong class="GameModeLabel"><a href="#cmptEEvaluationHelp" id="cmptEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="cmptEEvaluation"><input type="checkbox" id="cmptEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="cmptEEvaluationID">' + _("Identificador") + ':\
+								<label for="cmptEEvaluation"><input type="checkbox" id="cmptEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="cmptEEvaluationID">' + _("Identifier") + ':\
                                     <input type="text" id="cmptEEvaluationID" disabled/> </label>\
                                 </p>\
                                 <div id="cmptEEvaluationHelp" class="CMPT-TypeGameHelp">\
-                                    <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                    <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                                 </div>\
                             </div>\
                         </fieldset>\

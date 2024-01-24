@@ -96,9 +96,9 @@ var $exeDevice = {
         "msgQuestionNumber": _("Question number"),
         "msgCorrect": _("Correct"),
         "msgIncorrect": _("Incorrect"),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('VideoQuExt')
     },
     init: function () {
@@ -137,7 +137,7 @@ var $exeDevice = {
         msgs.msgFormatVideo = _('Use a YouTube URL or select a file (mp4, ogg, webm, mp3, wav)');
         msgs.msgExportFileError = _("Games with local videos or audios can't be exported");
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
     },
     getId: function () {
         var randomstring = Math.random().toString(36).slice(-8);
@@ -683,12 +683,12 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <strong class=""><a href="#vquextEEvaluationHelp" id="vquextEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-								<label for="vquextEEvaluation"><input type="checkbox" id="vquextEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-								<label for="vquextEEvaluationID">' + _("Identificador") + ':\
+								<label for="vquextEEvaluation"><input type="checkbox" id="vquextEEvaluation"> ' + _("Progress report") + '. </label> \
+								<label for="vquextEEvaluationID">' + _("Identifier") + ':\
 								<input type="text" id="vquextEEvaluationID" disabled/> </label>\
                             </p>\
                             <div id="vquextEEvaluationHelp" class="gameQE-TypeGameHelp">\
-                                <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los iDevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                                <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                             </div>\
                         </div>\
                     </fieldset>\

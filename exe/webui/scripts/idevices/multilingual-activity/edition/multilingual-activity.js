@@ -74,7 +74,7 @@ var $exeDevice = {
         'Hide', 'Show', 'Licensed under the', 'Creative Commons Attribution Share Alike License 4.0'
     ],
     ci18n: {
-        "msgNode": _("Mensaje para el autor: Este iDevice permite crear elp multilingües. En previsualización o exportado no será visible."),
+        "msgNode": _("Message for the author: This iDevice allows you to create multilingual contents. It will not be visible when previewing or exporting."),
     },
 
     init: function () {
@@ -90,7 +90,7 @@ var $exeDevice = {
     setMessagesInfo: function () {
         var msgs = this.msgs;
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgOnlyOneIdevice = _("Sólo puedes añadir un iDevice tipo Multilingual por página");
+        msgs.msgOnlyOneIdevice = _("You can only add a Multilingual iDevice per page");
     },
 
     arrayMove: function (arr, oldIndex, newIndex) {
@@ -118,7 +118,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Permite crear elp mutilingües.") + ' <a href="https://youtu.be/sILaHXJJiWQ" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("It lets you create mutilingual elp files.") + ' <a href="https://youtu.be/sILaHXJJiWQ" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                         <fieldset class="exe-fieldset">\
                             <legend><a href="#">' + _("Multilingual") + '</a></legend>\
@@ -126,47 +126,47 @@ var $exeDevice = {
                                 <div class="MTLE-Flex1">\
                                     <div class="MTLE-PanelLeft" >\
                                         <p class="MTLE-selector">\
-                                            <label for="mtlNumLangs">' + _("Número de idiomas:") + '</label>\
+                                            <label for="mtlNumLangs">' + _("Number of languages:") + '</label>\
                                             <select id="mtlNumLangs">\
                                                 <option value="2">2</option>\
                                                 <option value="3">3</option>\
                                                 <option value="4">4</option>\
                                             </select>\
                                         </p>\
-                                        <p>' + _('Selecciona el idioma, completa los títulos de los menús y haz clic sobre el botón Asignar para marcar los iDevices que se mostrarán en el idioma elegido.') + '</p>\
+                                        <p>' + _('Select the language, complete the menu titles and click on the Assign button to mark the iDevices to be shown in the chosen language.') + '</p>\
                                         <div id="mtlEIELanguajeMenusDiv" style="display:block;" >\
                                             ' + $exeDevice.createTableMenus() + '\
                                         </div>\
                                         <div style="display:flex; justify-content:right; margin-top:.6em">\
-                                            <a href="#" class="MTLE-BtnCopy">' + _("Guardar") + '</a>\
-                                            <a href="#" class="MTLE-BtnPaste">' + _("Cargar") + '</a>\
+                                            <a href="#" class="MTLE-BtnCopy">' + _("Save") + '</a>\
+                                            <a href="#" class="MTLE-BtnPaste">' + _("Load") + '</a>\
                                         </div>\
-                                        <div>' + _('Título del proyecto')+'</div>\
+                                        <div>' + _('Project title')+'</div>\
                                         <div >\
                                             <div class="MTLE-Flex MTLE-EInputVideo MTLE-ProyectTitleDiv">\
-                                                <label  for="mtlProyectTitle-0">' + _("Idioma") + ' 1:</label>\
+                                                <label  for="mtlProyectTitle-0">' + _("Language") + ' 1:</label>\
                                                 <input  class="MTLE-ProyectTitle" id="mtlProyectTitle-0" type="text" />\
                                             </div>\
                                             <div class="MTLE-Flex MTLE-EInputVideo MTLE-ProyectTitleDiv">\
-                                                <label for="mtlProyectTitle-1">' + _("Idioma") + ' 2:</label>\
+                                                <label for="mtlProyectTitle-1">' + _("Language") + ' 2:</label>\
                                                 <input class="MTLE-ProyectTitle" id="mtlProyectTitle-1"  type="text" />\
                                             </div>\
                                             <div class="MTLE-Flex MTLE-EInputVideo MTLE-ProyectTitleDiv">\
-                                                <label for="mtlProyectTitle-2">' + _("Idioma") + ' 3:</label>\
+                                                <label for="mtlProyectTitle-2">' + _("Language") + ' 3:</label>\
                                                 <input class="MTLE-ProyectTitle" id="mtlProyectTitle-2" type="text" />\
                                             </div>\
                                             <div class="MTLE-Flex MTLE-EInputVideo MTLE-ProyectTitleDiv">\
-                                                <label for="mtlProyectTitle-3">' + _("Idioma") + ' 4:</label>\
+                                                <label for="mtlProyectTitle-3">' + _("Language") + ' 4:</label>\
                                                 <input class="MTLE-ProyectTitle"  id="mtlProyectTitle-3" type="text" />\
                                             </div>\
                                         </div>\
                                     </div>\
                                     <div id="mtlPanelRight" class="MTLE-PanelRight">\
                                       <div class="MTLE-TapsRightDiv" style="display:none;">\
-                                           <a href="#" id="mtlShowIdevices" class="GameModeHelpLink" title="' + _('Configurar el orden y la visibilidad de los menús') + '">' + _("IDevices") + '</a> \
-                                           <a href="#" id="mtlShowMenus" class="GameModeHelpLink" title="' + _('Configurar el orden y la visibilidad de los menús') + '">' + _("Menús") + '</a>\
+                                           <a href="#" id="mtlShowIdevices" class="GameModeHelpLink" title="' + _('Configure the order and visibility of the menus') + '">' + _("iDevices") + '</a> \
+                                           <a href="#" id="mtlShowMenus" class="GameModeHelpLink" title="' + _('Configure the order and visibility of the menus') + '">' + _("Menus") + '</a>\
                                       </div>\
-                                    <div id="mtlMessageIDevices" class="MTLE-MessagesIdevices">' + _("Selecciona idioma") + '</div>\
+                                    <div id="mtlMessageIDevices" class="MTLE-MessagesIdevices">' + _("Select language") + '</div>\
                                       <div id="mtlIDevicesPageDiv" class="list MTLE-IDevicesPageDiv"></div>\
                                     </div>\
                                 </div>\
@@ -507,7 +507,7 @@ var $exeDevice = {
         });
         $(document).on('click', '.MTLE-Add', function (e) {
             e.preventDefault();
-            var row = $('<tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td> <a href="#" class="MTLE-Add MTLE-ENavigationButton" title="' + _("Añadir") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEAdd.png" alt="' + _("Añadir") + '" class="MTLE-EButtonImage" /></a><a href="#" class="MTLE-Delete MTLE-ENavigationButton" title="' + _("Eliminar") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEDelete.png" alt="' + _("Eliminar") + '" class="MTLE-EButtonImage" /></a>\</td></tr>');
+            var row = $('<tr><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td> <a href="#" class="MTLE-Add MTLE-ENavigationButton" title="' + _("Add") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEAdd.png" alt="' + _("Add") + '" class="MTLE-EButtonImage" /></a><a href="#" class="MTLE-Delete MTLE-ENavigationButton" title="' + _("Delete") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEDelete.png" alt="' + _("Delete") + '" class="MTLE-EButtonImage" /></a>\</td></tr>');
             row.insertAfter($(this).closest('tr'));
             $('#mtlNumLangs').val($exeDevice.numberLanguages).trigger('change');
         });
@@ -580,7 +580,7 @@ var $exeDevice = {
                 'lang': _(foundLanguage)
             } : {
                 'code': '',
-                'lang': _('Idioma') + ' ' + (i + 1)
+                'lang': _('Language') + ' ' + (i + 1)
             };
             alangs.push(foundLanguage)
         }
@@ -648,7 +648,9 @@ var $exeDevice = {
             var selectedValue = selectedValues[index].code;
             selectElement.find('option[value="' + selectedValue + '"]').prop('selected', true);
         });
-        var msg2 = _('<span style="color:red;font-weight:bolder;">Selecciona los iDevices que se mostrarán en <span style="color:red;font-weight:bolder;">%s</span>').replace('%s', selectedValues[0].idioma);
+        var msg2 = _('Select the iDevices to be shown in %s');
+			msg2 = msg2.replace('%s', '<strong>'+selectedValues[0].idioma+'</strong>');
+			// msg2 = '<span style="color:red;font-weight:bolder;">'+msg2+'</span>';
         $("#mtlMessageIDevices").html(msg2);
     },
     setProyectTitles: function (selectedValues, langs) {
@@ -672,7 +674,7 @@ var $exeDevice = {
             $exeDevice.showMessage('Selecciona el idioma al que quieres asociar los idevices');
             return;
         }
-        var msg2 = _('Selecciona los iDevices que se mostrarán en %s').replace('%s', '<span style="color:red;font-weight:bolder;">'+lng+'</span>');
+        var msg2 = _('Select the iDevices to be shown in %s').replace('%s', '<span style="color:red;font-weight:bolder;">'+lng+'</span>');
         $("#mtlMessageIDevices").html(msg2);
 
     },
@@ -686,25 +688,25 @@ var $exeDevice = {
                     <th>\
                         <div class="MTLE-TH">\
                             <select id="mtlELanguaje-0" class="MTLE-Languajes"  data-iti="0"></select>\
-                            <a href="#" data-num="0" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Asignar Devices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Asignar iDevices") + '" class="MTLE-EButtonPlay" /></a>\
+                            <a href="#" data-num="0" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Assign iDevices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Assign iDevices") + '" class="MTLE-EButtonPlay" /></a>\
                         </div>\
                     </th>\
                     <th>\
                         <div class="MTLE-TH">\
                             <select id="mtlELanguaje-1" class="MTLE-Languajes"  data-iti="1"></select>\
-                            <a href="#" data-num="1" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Asignar Devices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Asignar iDevices") + '" class="MTLE-EButtonPlay" /></a>\
+                            <a href="#" data-num="1" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Assign iDevices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Assign iDevices") + '" class="MTLE-EButtonPlay" /></a>\
                         </div>\
                     </th>\
                     <th>\
                         <div class="MTLE-TH">\
                             <select id="mtlELanguaje-2" class="MTLE-Languajes"  data-iti="2"></select>\
-                            <a href="#" data-num="2" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Asignar Devices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Asignar iDevices") + '" class="MTLE-EButtonPlay" /></a>\
+                            <a href="#" data-num="2" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Assign iDevices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Assign iDevices") + '" class="MTLE-EButtonPlay" /></a>\
                         </div>\
                     </th>\
                     <th>\
                         <div class="MTLE-TH">\
                             <select id="mtlELanguaje-3" class="MTLE-Languajes"  data-iti="3"></select>\
-                            <a href="#" data-num="3" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Asignar Devices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Asignar iDevices") + '" class="MTLE-EButtonPlay" /></a>\
+                            <a href="#" data-num="3" class="MTLE-Asignar MTLE-ENavigationButton MTLE-EPlayVideo" title="' + _("Assign iDevices") + '"><img src="' + path + 'quextIEPlay.png" alt="' + _("Assign iDevices") + '" class="MTLE-EButtonPlay" /></a>\
                         </div>\
                     </th>\
                     <th id="mtlAcciones"></th>\
@@ -717,8 +719,8 @@ var $exeDevice = {
                     <td contenteditable="true"></td>\
                     <td contenteditable="true"></td>\
                     <td>\
-                        <a href="#"  class="MTLE-Add MTLE-ENavigationButton" title="' + _("Añadir") + '"><img src="' + path + 'quextIEAdd.png" alt="' + _("Añadir") + '" class="MTLE-EButtonImage" /></a>\
-                        <a href="#"  class="MTLE-Delete MTLE-ENavigationButton" title="' + _("Eliminar") + '"><img src="' + path + 'quextIEDelete.png" alt="' + _("Eliminar") + '" class="MTLE-EButtonImage" /></a>\
+                        <a href="#"  class="MTLE-Add MTLE-ENavigationButton" title="' + _("Add") + '"><img src="' + path + 'quextIEAdd.png" alt="' + _("Add") + '" class="MTLE-EButtonImage" /></a>\
+                        <a href="#"  class="MTLE-Delete MTLE-ENavigationButton" title="' + _("Delete") + '"><img src="' + path + 'quextIEDelete.png" alt="' + _("Delete") + '" class="MTLE-EButtonImage" /></a>\
                     </td>\
                 </tr>\
             </tbody>\
@@ -748,7 +750,7 @@ var $exeDevice = {
                 nuevaFila.append('<td>' + celda + '</td>');
                 nuevaFila.attr('contenteditable', true);
             });
-            nuevaFila.append('<td> <a href="#" class="MTLE-Add MTLE-ENavigationButton" title="' + _("Añadir") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEAdd.png" alt="' + _("Añadir") + '" class="MTLE-EButtonImage" /></a><a href="#" class="MTLE-Delete MTLE-ENavigationButton" title="' + _("Eliminar") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEDelete.png" alt="' + _("Eliminar") + '" class="MTLE-EButtonImage" /></a>\</td>');
+            nuevaFila.append('<td> <a href="#" class="MTLE-Add MTLE-ENavigationButton" title="' + _("Add") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEAdd.png" alt="' + _("Add") + '" class="MTLE-EButtonImage" /></a><a href="#" class="MTLE-Delete MTLE-ENavigationButton" title="' + _("Delete") + '"><img src="' + $exeDevice.iDevicePath + 'quextIEDelete.png" alt="' + _("Delete") + '" class="MTLE-EButtonImage" /></a>\</td>');
             $('#mtlIdiomasMenu tbody').append(nuevaFila);
         });
 
@@ -847,7 +849,7 @@ var $exeDevice = {
     loadLanguageSelect: function ($this) {
         const select = $this;
         var langs = $exeDevice.getLangs();
-        select.append('<option value="">' + _('Selecciona') + '</option>');
+        select.append('<option value="">' + _('Choose') + '</option>');
         for (const code in langs) {
             var option = $('<option>').val(code).text(_(langs[code]));
             select.append(option);

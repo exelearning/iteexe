@@ -9,7 +9,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Relaciona')
+        name: _('Relate')
     },
     msgs: {},
     active: 0,
@@ -57,10 +57,10 @@ var $exeDevice = {
         "msgNumQuestions": _("Number of cards"),
         "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
         "msgEndGameM": _("You finished the game. Your score is %s."),
-        "msgUncompletedActivity": _("Actividad no realizada"),
-        "msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-        "msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s"),
-        "msgTypeGame": _('Relaciona')
+        "msgUncompletedActivity": _("Not done activity"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgTypeGame": _('Relate')
 
 
     },
@@ -87,28 +87,28 @@ var $exeDevice = {
         msgs.msgCompleteDataBack = _("Provide an image, text or audio for each card's back side");
         msgs.msgEOneCard = _("Please create at least one card");
         msgs.msgMaxCards = _("Maximum card number: %s.");
-        msgs.msgIDLenght = _('El identificador del informe debe tener al menos 5 caracteres');
+        msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Crea juegos de relación con imágenes, sonidos y textos enriquecidos.") + ' <a href="https://youtu.be/ADrG4vz2W0Y" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create relation games with images, sounds and enriched texts.") + ' <a href="https://youtu.be/ADrG4vz2W0Y" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Enlaza cada tarjeta con su pareja.')) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Link each card with its pair.')) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _('Options') + '</a></legend>\
                     <div>\
                         <p>\
-                            <span>' + _("Nivel") + ':</span>\
+                            <span>' + _("Level") + ':</span>\
                             <span class="RLC-EInputType">\
                                 <input class="RLC-Type" checked id="rclETypeShow" type="radio" name="flctype" value="0"/>\
-                                <label for="rclETypeShow">' + _("Básico") + '</label>\
+                                <label for="rclETypeShow">' + _("Essential") + '</label>\
                                 <input class="RLC-Type"  id="rclETypeNavigation" type="radio" name="flctype" value="1"/>\
-                                <label for="rclETypeNavigation">' + _("Medio") + '</label>\
+                                <label for="rclETypeNavigation">' + _("Medium") + '</label>\
                                 <input class="RLC-Type"  id="rclETypeIdentify" type="radio" name="flctype" value="2"/>\
-                                <label for="rclETypeIdentify">' + _("Avanzado") + '</label>\
+                                <label for="rclETypeIdentify">' + _("Advanced") + '</label>\
                             </span>\
                         </p>\
                         <p style="display:none">\
@@ -132,17 +132,17 @@ var $exeDevice = {
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#rclEEvaluationHelp" id="rclEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
-							<label for="rclEEvaluation"><input type="checkbox" id="rclEEvaluation"> ' + _("Informe de progreso") + '. </label> \
-							<label for="rclEEvaluationID">' + _("Identificador") + ':\
+							<label for="rclEEvaluation"><input type="checkbox" id="rclEEvaluation"> ' + _("Progress report") + '. </label> \
+							<label for="rclEEvaluationID">' + _("Identifier") + ':\
 							<input type="text" id="rclEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="rclEEvaluationHelp" class="RLC-TypeGameHelp">\
-                            <p>' +_("Debes indicar el identificador, puede ser una palabra, una frase o un número de más de cuatro caracteres, que utilizarás para marcar las actividades que serán tenidas en cuenta en este informe de progreso.</p><p> Debe ser <strong>el mismo </strong> en todos los idevices de un informe y diferente en los de cada informe.</p>") + '</p>\
+                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\
                 <fieldset class="exe-fieldset">\
-                <legend><a href="#">' + _('Parejas') + '</a></legend>\
+                <legend><a href="#">' + _('Pairs') + '</a></legend>\
                 <div class="RLC-EPanel" id="rclEPanel">\
                     <div class="RLC-EPhrase" id="rclEPhrase">\
                         <div class="RLC-EDatosCarta RLC-EFront" id="rclEDatosCarta">\

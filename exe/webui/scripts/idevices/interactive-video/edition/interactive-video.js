@@ -62,9 +62,9 @@ var $exeDevice = {
 		"msgOnlySaveScore": c_("You can only save the score once!"),
 		"msgOnlySave": c_("You can only save once"),
 		"msgOnlySaveAuto": c_("Your score will be saved after each question. You can only play once."),
-		"msgUncompletedActivity": _("Actividad no realizada"),
-		"msgSuccessfulActivity": _("Actividad superada. Puntuación: %s"),
-		"msgUnsuccessfulActivity": _("Actividad no superada. Puntuación: %s")
+		"msgUncompletedActivity": _("Not done activity"),
+		"msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
+		"msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
 	},
 	scorm: {
 		'isScorm': 0,
@@ -133,8 +133,8 @@ var $exeDevice = {
 						<label for="interactiveVideoScoreNIA"><input type="checkbox" name="interactiveVideoScoreNIA" id="interactiveVideoScoreNIA" /> ' + _("Score non-interactive activities") + '</label>\
 					</p>\
 					<div id="<p>\
-						<label for="interactiveVideoEvaluation"><input type="checkbox" id="interactiveVideoEvaluation"> ' + _("Informe de progreso") + '. </label> \
-						<label for="interactiveVideoEvaluationID">' + _("Identificador") + ':\
+						<label for="interactiveVideoEvaluation"><input type="checkbox" id="interactiveVideoEvaluation"> ' + _("Progress report") + '. </label> \
+						<label for="interactiveVideoEvaluationID">' + _("Identifier") + ':\
 						<input type="text" id="interactiveVideoEvaluationID" disabled/> </label>\
 					</p>\
 					<p class="exe-block-success">' + _("Open the editor and start adding interaction...") + ' <input type="button" id="interactiveVideoOpenEditor" onclick="$exeDevice.editor.start()" value="' + _("Editor") + '" /></p>\
@@ -434,7 +434,7 @@ var $exeDevice = {
 		var seval = $('#interactiveVideoEvaluation').is(':checked'),
 			sevalid = seval ? $('#interactiveVideoEvaluationID').val() : '';
 		if (seval && sevalid.length < 5) {
-			eXe.app.alert(_('El identificador del informe debe tener al menos 5 caracteres'));
+			eXe.app.alert(_('The report identifier must have at least 5 characters'));
 			return false;
 		}
 

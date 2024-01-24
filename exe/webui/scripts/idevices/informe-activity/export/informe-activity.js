@@ -44,7 +44,7 @@ var $eXeInforme = {
     ) {
       this.activities.hide();
       if (typeof _ != "undefined")
-        this.activities.before("<p>" + _("Informe de progreso") + "</p>");
+        this.activities.before("<p>" + _("Progress report") + "</p>");
       return;
     }
     if (typeof $exeAuthoring != "undefined") this.isInExe = true;

@@ -18,7 +18,7 @@ var $eXeMutilingual = {
         if (!$eXeMutilingual.supportedBrowser('mtl')) return;
         if (typeof ($exeAuthoring) != 'undefined' && $("#exe-submitButton").length > 0) {
             this.activities.hide();
-            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Multilingua') + '</p>');
+            if (typeof (_) != 'undefined') this.activities.before('<p>' + _('Multilingual') + '</p>');
             return;
         }
         if (typeof ($exeAuthoring) != 'undefined') this.isInExe = true;

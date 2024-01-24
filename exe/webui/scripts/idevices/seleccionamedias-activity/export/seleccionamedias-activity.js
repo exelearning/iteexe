@@ -42,7 +42,7 @@ var $eXeSeleccionaMedias = {
     ) {
       this.activities.hide();
       if (typeof _ != "undefined")
-        this.activities.before("<p>" + _("Ordena") + "</p>");
+        this.activities.before("<p>" + _("Order") + "</p>");
       return;
     }
     if ($(".QuizTestIdevice .iDevice").length > 0) this.hasSCORMbutton = true;
