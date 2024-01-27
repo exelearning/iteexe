@@ -1306,6 +1306,8 @@ msgid ""
 "Upload a file. Please avoid names or paths with spaces or special "
 "characters."
 msgstr ""
+"Subir un fichero. Elimine los caracteres especiales del nombre del "
+"fichero y la ruta del archivo."
 
 #: exe/engine/extendedfieldengine.py:304
 #: exe/webui/tools/style-designer/langs/all.js:51
@@ -10399,6 +10401,8 @@ msgid ""
 "Could not upload the file. Please remove any special characters from the "
 "file name or path."
 msgstr ""
+"No se pudo subir el archivo. Por favor, elimine los caracteres especiales"
+" del nombre del fichero y la ruta del archivo."
 
 #: exe/webui/scripts/authoring.js:1956
 msgid "Add a Text iDevice"
@@ -11394,9 +11398,8 @@ msgstr "Audio"
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:66
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:92
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:100
-#, fuzzy
 msgid "Not done activity"
-msgstr "Actividad desplegable"
+msgstr "Actividad no realizada"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:99
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:86
@@ -11421,7 +11424,7 @@ msgstr "Actividad desplegable"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:93
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:101
 msgid "Activity: Passed. Score: %S"
-msgstr ""
+msgstr "Actividad superada. Puntuación: %s"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:100
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:87
@@ -11446,7 +11449,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:94
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:102
 msgid "Activity: Not passed. Score: %S"
-msgstr ""
+msgstr "Actividad no superada. Puntuación: %s"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:141
@@ -11720,7 +11723,7 @@ msgstr "Su navegador no es compatible con esta herramienta."
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:137
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:142
 msgid "The report identifier must have at least 5 characters"
-msgstr ""
+msgstr "El identificador del informe debe tener al menos 5 caracteres"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:136
 msgid ""
@@ -12000,7 +12003,7 @@ msgstr "Modo pizarra digital"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:195
 msgid "Activate translator"
-msgstr ""
+msgstr "Activar traductor"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:199
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:177
@@ -12028,7 +12031,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:809
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:689
 msgid "Progress report"
-msgstr ""
+msgstr "Informe de progreso"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:204
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:182
@@ -12057,6 +12060,11 @@ msgid ""
 "that will be taken into account in this progress report. It must be the "
 "same in all iDevices of a report and different in those of each report."
 msgstr ""
+"Debes indicar el identificador, puede ser una palabra, una frase o un "
+"número de más de cuatro caracteres, que utilizarás para marcar las "
+"actividades que serán tenidas en cuenta en este informe de progreso. Debe"
+" ser el mismo  en todos los idevices de un informe y diferente en los de "
+"cada informe."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:209
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:185
@@ -12454,9 +12462,8 @@ msgid "Paste question"
 msgstr "Pegar pregunta"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:336
-#, fuzzy
 msgid "Translate to"
-msgstr "Ejercicio Resuelto"
+msgstr "Traducir al"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:339
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:378
@@ -12542,9 +12549,8 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:12
 #: exe/webui/scripts/idevices/clasifica-activity/export/clasifica-activity.js:40
-#, fuzzy
 msgid "Classify"
-msgstr "Clase"
+msgstr "Clasifica"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:17
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:144
@@ -12556,42 +12562,38 @@ msgstr "Clase"
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:272
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:273
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:274
-#, fuzzy
 msgid "Group"
-msgstr "grupal"
+msgstr "Grupo"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:66
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:66
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:66
 msgid "Time has finished. Please try again"
-msgstr ""
+msgstr "Tu tiempo ha finalizado. Inténtalo de nuevo"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:67
 msgid "The game has started! Drag each card to your container"
-msgstr ""
+msgstr "¡El juego ha comenzado! Arrastra cada tarjeta hasta su contenedor"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:68
-#, fuzzy
 msgid "Choose another card"
-msgstr "Mostrar otra pista"
+msgstr "Selecciona otra tarjeta"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:69
-#, fuzzy
 msgid "Choose a card"
-msgstr "Elegir una imagen"
+msgstr "Selecciona una tarjeta"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:71
 msgid "Brilliant! Test passed!"
-msgstr ""
+msgstr "¡Genial! ¡Prueba superada!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:72
 msgid "You didn't pas the test. Please try again"
-msgstr ""
+msgstr "No has superado la prueba. Inténtalo de nuevo"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:73
-#, fuzzy
 msgid "Do you want to restart this game?"
-msgstr "¿Deseas reiniciar el juego?"
+msgstr "¿Deseas reiniciar esta partida?"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:74
 #: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:40
@@ -12602,18 +12604,19 @@ msgid "Continue"
 msgstr "Continuar"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:75
-#, fuzzy
 msgid "Check results"
-msgstr "Mostrar la puntuación"
+msgstr "Comprobar resultados"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:76
 #, python-format
 msgid "There were %s cards to be placed correctly. Do you want to try again?"
 msgstr ""
+"Te han quedado %s tarjetas por colocar correctamente. ¿Quieres intentarlo"
+" de nuevo?"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:77
 msgid "Brilliant! All perfect!"
-msgstr ""
+msgstr "¡Genial! ¡Todo perfecto!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:78
 #, python-format
@@ -12621,11 +12624,13 @@ msgid ""
 "Great! You have solved this activity in %s attempts. Surely you can do it"
 " faster!"
 msgstr ""
+"¡Estupendo! Has resuelto esta actividad en %s intentos. ¡Seguro que "
+"puedes hacerlo más rápido!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:79
 #, python-format
 msgid "You placed %s cards in the wrong place. Please try again!"
-msgstr ""
+msgstr "No has colocado %s tarjetas en su lugar. ¡Inténtalo de nuevo!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:80
 #, python-format
@@ -12633,81 +12638,76 @@ msgid ""
 "Great! You have correctly classified most cards, %s, but you can still "
 "improve"
 msgstr ""
+"¡Estupendo! Has clasificado correctamente la mayor parte de las tarjetas,"
+" %s, pero aún puedes mejorar"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:81
 #, python-format
 msgid "Great! Only %s cards to place correctly. Maybe you could try again"
 msgstr ""
+"¡Magnífico! Tan sólo te han quedado %s tarjetas por colocar "
+"correctamente. Busca la perfección"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:82
-#, fuzzy
 msgid "Your score will be automatically saved at the end of the game."
-msgstr "Su puntuación se guardará automáticamente tras cada tirada."
+msgstr "Su puntuación se guardará automáticamente al finalizar el juego."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:83
-#, fuzzy
 msgid ""
 "Your score will be automatically saved at the end of the game. You can "
 "only play once."
 msgstr ""
-"Su puntuación se guardará después de cada pregunta. Sólo puede jugar una "
-"vez."
+"Su puntuación se guardará automáticamente al finalizar el juego. Sólo "
+"puedes jugar una vez."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:84
 msgid "You can only save your score after finishing the game."
-msgstr ""
+msgstr "Sólo puedes guardar tu puntuación tras finalizar la partida."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:102
-#, fuzzy
 msgid "You must indicate an image, a text or/and an audio for each card"
-msgstr ""
-"Debes indicar una imagen, un texto o/y un audio para la cara posterior de"
-" cada tarjeta"
+msgstr "Debes indicar una imagen, un texto o/y un audio para cada tarjeta"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:103
 msgid "Maximum cards to classify: 25"
-msgstr ""
+msgstr "Número máximo tarjetas a clasificar: 25"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:104
-#, fuzzy
 msgid "You must indicate an image and text for this card"
-msgstr "Debes indicar un título para este punto."
+msgstr "Debes indicar una imagen y un texto para esta tarjeta"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:105
-#, fuzzy
 msgid "You must indicate a text or sound for this card"
-msgstr "Debes indicar un título para este punto."
+msgstr "Debes indicar un texto o sonido para esta tarjeta"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
-#, fuzzy
 msgid "You must indicate an image or sound for this card"
-msgstr "Debes indicar un título para este punto."
+msgstr "Debes indicar una imagen o sonido para esta tarjeta"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114
 msgid ""
 "Create interactive activities in which players will have to classify "
 "cards with images, texts and/or sounds."
 msgstr ""
+"Crea actividades interactivas en las que los jugadores tendrán que "
+"clasificar tarjetas con imágenes, textos y/o sonidos."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:116
 msgid "Drag each card to its container."
-msgstr ""
+msgstr "Arrastra cada tarjeta hasta su contenedor."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:121
-#, fuzzy
 msgid "Difficulty level"
-msgstr "difícil"
+msgstr "Nivel de dificultad"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:123
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:108
-#, fuzzy
 msgid "Essential"
-msgstr "presencial"
+msgstr "Básico"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:134
-#, fuzzy
 msgid "Number of categories"
-msgstr "Número de tarjetas"
+msgstr "Número de categorías"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:187
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:149
@@ -12728,9 +12728,8 @@ msgstr "Contenido adicional"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:266
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:283
-#, fuzzy
 msgid "Both"
-msgstr "otro"
+msgstr "Ambos"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:289
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:297
@@ -12989,46 +12988,40 @@ msgid "Trials"
 msgstr "Retos"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:12
-#, fuzzy
 msgid "Discover"
-msgstr "locución"
+msgstr "Descubre"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:67
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:67
-#, fuzzy
 msgid "You finished all the attempts! Please try again"
-msgstr "Has realizado todas las operaciones."
+msgstr "¡Has agotado todos los intentos! Prueba de nuevo"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:68
-#, fuzzy
 msgid "You found all the pairs!"
-msgstr "Has realizado todas las operaciones."
+msgstr "¡Has encontrado todas las parejas!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:69
-#, fuzzy
 msgid "You found all the trios!"
-msgstr "Has realizado todas las operaciones."
+msgstr "¡Has encontrado todos los tríos!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:70
-#, fuzzy
 msgid "You found all the quartets!"
-msgstr "Has realizado todas las operaciones."
+msgstr "¡Has encontrado todas los cuartetos!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:71
 msgid "The game has started! Select two cards"
-msgstr ""
+msgstr "¡El juego ha comenzado! Selecciona dos cartas"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:72
 msgid "The game has started! Select three cards"
-msgstr ""
+msgstr "¡El juego ha comenzado! Selecciona tres cartas"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:73
 msgid "The game has started! Select four cards"
-msgstr ""
+msgstr "¡El juego ha comenzado! Selecciona cuatro cartas"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:74
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:159
-#, fuzzy
 msgid "Number of attemps"
 msgstr "Número de intentos"
 
@@ -13041,15 +13034,13 @@ msgstr "Parejas"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:76
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:132
-#, fuzzy
 msgid "Trios"
-msgstr "Opciones"
+msgstr "Tríos"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:77
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:134
-#, fuzzy
 msgid "Quartets"
-msgstr "Cuadrado"
+msgstr "Cuartetos"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:78
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:62
@@ -13059,30 +13050,27 @@ msgstr "Intentos"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:79
 msgid "You completed a pair. Keep going!"
-msgstr ""
+msgstr "Una pareja completada. ¡A por la siguiente!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:80
 msgid "You completed a trio. Keep going!"
-msgstr ""
+msgstr "Un trío completado. ¡A por la siguiente!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:81
 msgid "You completed a quartet. Keep going!"
-msgstr ""
+msgstr "Un cuarteto completado. ¡A por la siguiente!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:82
-#, fuzzy
 msgid "Choose another letter"
-msgstr "Comprobar la letra"
+msgstr "Selecciona otra carta"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:83
-#, fuzzy
 msgid "Choose a letter"
-msgstr "Elija un tipo:"
+msgstr "Selecciona una carta"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:84
-#, fuzzy
 msgid "Initial"
-msgstr "iniciador"
+msgstr "Inicial"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:87
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:73
@@ -13095,54 +13083,53 @@ msgid "Level"
 msgstr "Nivel"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:88
-#, fuzzy
 msgid "Select a level"
-msgstr "Seleccionar un archivo"
+msgstr "Selecciona un nivel"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:108
 msgid ""
 "The number of attempts has to be greater than or equal to the number of "
 "couples in the game. Indicates 0 for an infinite number of attempts"
 msgstr ""
+"El número de intentos tiene que ser mayor o igual que el número de "
+"parejas del juego. Indica 0 para un número infinito de intentos"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:109
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:101
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:95
-#, fuzzy
 msgid "You must indicate an image, a text or/and an audio for each letter"
-msgstr ""
-"Debes indicar una imagen, un texto o/y un audio para la cara posterior de"
-" cada tarjeta"
+msgstr "Debes indicar una imagen, un texto o/y un audio para cada carta"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:110
 msgid "Maximum number of pairs: 20"
-msgstr ""
+msgstr "Número máximo de parejas: 20"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:118
 msgid ""
 "Create interactive activities in which players will have to discover "
 "pairs, trios or card quartets with images, texts and/or sounds."
 msgstr ""
+"Crea actividades interactivas en las que los jugadores tendrán que "
+"descubrir parejas, tríos o cuartetos  de tarjetas con imágenes, textos "
+"y/o sonidos."
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:120
 msgid "Birds of a feather flock together."
-msgstr ""
+msgstr "Cada oveja con su pareja."
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:137
-#, fuzzy
 msgid "Difficulty levels"
-msgstr "difícil"
+msgstr "Niveles de dificultad"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:146
-#, fuzzy
 msgid "Visible letters"
-msgstr "Letras seleccionadas"
+msgstr "Cartas visibles"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:149
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:130
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:124
 msgid "Time while the cards will be shown (seconds)"
-msgstr ""
+msgstr "Tiempo durante el que se mostrarán las cartas (segundos)"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:14
 msgid "Download source file"
@@ -13567,20 +13554,21 @@ msgid "Number of clues"
 msgstr "Número de pistas"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:20
-#, fuzzy
 msgid "Summary of activities"
-msgstr "Número de intentos"
+msgstr "Resumen de las actividades"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:21
 msgid ""
 "You didn't finish any of the evaluable activities proposed in this "
 "educational resource."
 msgstr ""
+"Aún no has realizado ninguna de las actividades evaluables propuestas en "
+"este recurso educativo."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:22
-#, fuzzy, python-format
+#, python-format
 msgid "Number of pending activities: %s"
-msgstr "Número de operaciones:"
+msgstr "Número de actividades pendientes: %s."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:23
 msgid ""
@@ -13588,11 +13576,13 @@ msgid ""
 "evaluable activities proposed in this educational resource that you have "
 "already completed."
 msgstr ""
+"La siguiente tabla recoge los resultados que has obtenido en las "
+"actividades evaluables propuestas en este recurso educativo que ya has "
+"completado."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:24
-#, fuzzy
 msgid "Average score"
-msgstr "Guardar la puntuación"
+msgstr "Nota media"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:30
@@ -13601,48 +13591,48 @@ msgstr "Actualizar"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:27
 msgid "No. of activities: %S"
-msgstr ""
+msgstr "Nº Actividades: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:28
-#, fuzzy, python-format
+#, python-format
 msgid "Completed: %s"
-msgstr "competir"
+msgstr "Completadas: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:29
-#, fuzzy, python-format
+#, python-format
 msgid "Average score: %s"
-msgstr "Guardar la puntuación"
+msgstr "Nota media: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:30
-#, fuzzy, python-format
+#, python-format
 msgid "Average note completed: %s"
-msgstr "Sin completar"
+msgstr "Nota media completadas: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:31
 msgid ""
 "This will eliminate the stored scores of all activities. Do you want to "
 "continue?"
 msgstr ""
+"Esto eliminará las puntuaciones almacenadas de todas las actividades "
+"¿Estás seguro de que deseas continuar?"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:32
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:38
-#, fuzzy
 msgid "Educational resource sections"
-msgstr "descripción pedagógica"
+msgstr "Secciones del recurso educativo"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:34
 msgid "progress_report"
-msgstr ""
+msgstr "informe_de_progreso"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:37
-#, fuzzy
 msgid "Go to the activity"
-msgstr "Agregar otra actividad"
+msgstr "Ir a la actividad"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:48
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:38
 msgid "You have to provide the identifier of this progress report"
-msgstr ""
+msgstr "Tienes que introducir el identificador de este informe de progreso"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:60
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:13
@@ -13693,9 +13683,8 @@ msgstr "Sopa de letras"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:76
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:103
-#, fuzzy
 msgid "VideoQuExt"
-msgstr "video"
+msgstr "VideoQuExt"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:80
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:15
@@ -13713,6 +13702,8 @@ msgid ""
 "It shows the results obtained by students in the activities associated "
 "with it and its average note."
 msgstr ""
+"Muestra los resultados obtenidos por en alumnos en las actividades "
+"asociadas al mismo y su nota media."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:90
 msgid ""
@@ -13720,34 +13711,34 @@ msgid ""
 "must use the same identifier in all the activities you want to evaluate "
 "in this progress report."
 msgstr ""
+"El identificador puede ser un número o una palabra de más de cuatro "
+"caracteres. Debes utilizar este mismo identificador en todas las "
+"actividades que deseas evaluar en este informe de progreso."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:96
-#, fuzzy
 msgid "Number of evaluable activities"
-msgstr "Número de vidas"
+msgstr "Nº de actividades evaluables"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:100
-#, fuzzy
 msgid "Show date and time"
-msgstr "¿Mostrar / Usar un cronómetro?"
+msgstr "Mostrar fecha y hora"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:103
-#, fuzzy
 msgid "Show iDevice type"
-msgstr "Mostrar la actividad"
+msgstr "Mostrar tipo de iDevice"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:106
 msgid "Link report activities"
-msgstr ""
+msgstr "Enlazar actividades del informe"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:109
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:58
 msgid "User data"
-msgstr ""
+msgstr "Datos del usuario"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:111
 msgid "Report compatible iDevices:"
-msgstr ""
+msgstr "iDevices compatibles con el informe:"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
@@ -14198,14 +14189,12 @@ msgid "Wrong URL. Expected format:"
 msgstr "URL incorrecta. Formato esperado:"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:13
-#, fuzzy
 msgid "Itinerary activity"
-msgstr "Repetir la actividad"
+msgstr "Actividad de itinerario"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:14
-#, fuzzy
 msgid "Itinerary"
-msgstr "Wikcionario"
+msgstr "Itinerario"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:64
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1089
@@ -14223,14 +14212,12 @@ msgid "Please order the answers"
 msgstr "Ordena todas las respuestas"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:73
-#, fuzzy
 msgid "First"
-msgstr "Lista"
+msgstr "Primera"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:76
-#, fuzzy
 msgid "Last"
-msgstr "Pegar"
+msgstr "Última"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:78
 msgid ""
@@ -14238,34 +14225,35 @@ msgid ""
 " of this page's iDevices. It will not be visible when previewing or "
 "exporting."
 msgstr ""
+"Mensaje para el editor: Este iDevice permite configurar el comportamiento"
+" de los iDevices en esta página. En previsualización o exportado no será "
+"visible."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:79
-#, fuzzy
 msgid "You already completed this test. You can't repeat it"
-msgstr "Ya has completado este reto."
+msgstr "Ya has realizado esta prueba. No puedes repetirla"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:80
 msgid "You have completed this test. You can repeat it when you want."
-msgstr ""
+msgstr "Has completado esta prueba. Puedes repetirla cuando desees."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:81
 msgid "You have completed this test. You will need an access code to repeat it."
 msgstr ""
+"Has completado esta prueba. Para poder repetirla necesitarás un código de"
+" acceso."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:82
-#, fuzzy
 msgid "You have finished the activity"
-msgstr "Por favor termine la actividad"
+msgstr "Has finalizado la actividad"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:83
-#, fuzzy
 msgid "Click here to repeat it"
-msgstr "Pulse aquí para jugar"
+msgstr "Pulsa aquí para repetirlo"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:85
-#, fuzzy
 msgid "You finished the test!"
-msgstr "Has realizado todas las operaciones."
+msgstr "¡Has completado el test!"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:122
 #: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:107
@@ -14317,20 +14305,20 @@ msgid "The question marked as next in case of error does not exist."
 msgstr "La cuestión que has indicado como siguiente en caso de error no existe."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:146
-#, fuzzy
 msgid "You must provide the code and access message"
-msgstr "Debe proporcionar el código para jugar a este juego"
+msgstr "Debes proporcionar el código y el mensaje de acceso"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:147
-#, fuzzy
 msgid "You can only add an itinerary iDevice per page"
-msgstr "Sólo puede añadir un vídeo interactivo por página."
+msgstr "Sólo puedes añadir un iDevice tipo Itinerario por página"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:980
 msgid ""
 "It lets you define different itineraries within an elp based on an "
 "initial diagnostic test."
 msgstr ""
+"Permite definir itinerarios diferentes dentro de un elp en función de un "
+"prueba diagnóstica inicial."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:982
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:990
@@ -14339,17 +14327,16 @@ msgstr "Selecciona las respuestas correctas y pulsa sobre el botón \"responder\
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:984
 msgid "Itineraries"
-msgstr ""
+msgstr "Itinerarios"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:987
-#, fuzzy
 msgid "Mode"
-msgstr "Nodo"
+msgstr "Modo"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:989
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1827
 msgid "Diagnostic test"
-msgstr ""
+msgstr "Prueba diagnóstica"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:991
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1828
@@ -14359,9 +14346,8 @@ msgstr "Nodo"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:993
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1829
-#, fuzzy
 msgid "Collapse"
-msgstr "colaborar"
+msgstr "Minimizar"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:995
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1830
@@ -14375,7 +14361,6 @@ msgid "Presentation"
 msgstr "Presentación"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1004
-#, fuzzy
 msgid "Play audio when showing the solution"
 msgstr "Reproducir audio al mostrar la solución"
 
@@ -14387,35 +14372,32 @@ msgstr "Puntuación personalizada"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1011
 msgid "Generate a new identifier"
-msgstr ""
+msgstr "Generar un nuevo identificador"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1015
-#, fuzzy
 msgid "Number of itineraries"
-msgstr "Número de operaciones:"
+msgstr "Número de itinerarios"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1030
 msgid "Diagnostic test type"
-msgstr ""
+msgstr "Tipo de prueba diagnóstica"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1032
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1836
-#, fuzzy
 msgid "Most frequent option"
-msgstr "Cerrar la presentación"
+msgstr "Opción más frecuente"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1039
 msgid "The selected iDevices will be displayed"
-msgstr ""
+msgstr "Los iDevices seleccionados se mostrarán"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1064
 msgid "Repeat diagnostic test"
-msgstr ""
+msgstr "Repetir prueba diagnóstica"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1086
-#, fuzzy
 msgid "Questions time"
-msgstr "cuestionario"
+msgstr "Tiempo en las preguntas"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1089
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1299
@@ -14431,17 +14413,16 @@ msgstr "Reproducir el vídeo de introducción"
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:167
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:168
 msgid "Configure the order and visibility of the menus"
-msgstr ""
+msgstr "Configurar el orden y la visibilidad de los menús"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1095
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:168
-#, fuzzy
 msgid "Menus"
-msgstr "Menú"
+msgstr "Menús"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1097
 msgid "They will always be shown"
-msgstr ""
+msgstr "Se mostrarán siempre"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1112
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:195
@@ -14472,140 +14453,158 @@ msgid "Youtube URL"
 msgstr "URL de Youtube"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1316
-#, fuzzy
 msgid "Collapsed"
-msgstr "colaborar"
+msgstr "Minimizados"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1318
 msgid "Mark the iDevices you want to collapse on this page"
-msgstr ""
+msgstr "Marca los iDevices que deseas mostrar minimizados en esta página"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1412
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1707
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:2646
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:81
-#, fuzzy
 msgid "All"
-msgstr "pequeño"
+msgstr "Todas"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1721
 msgid ""
 "Select and order the iDevices that will be displayed before performing "
 "the diagnostic test"
 msgstr ""
+"Selecciona y ordena los iDevices que se mostrarán antes de realizar la "
+"prueba diagnóstica"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1723
 #, python-format
 msgid "Select and order the iDevices to be shown on the itinerary %s"
-msgstr ""
+msgstr "Selecciona y ordena los iDevices que se mostrarán en el itinerario %s"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1827
 msgid ""
 "It shows a multiple response test which result will define the iDevices "
 "that will be displayed in the pages with nodes with the same identifier."
 msgstr ""
+"Muestra un prueba tipo test de repuesta múltiple cuyo resultado definirá "
+"los iDevices que se mostrarán en las páginas con nodos de igual "
+"identificador."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1828
 msgid ""
 "Define the behavior of the iDevices of this page depending on the result "
 "obtained in the diagnostic test with the same identifier."
 msgstr ""
+"Define el comportamiento de los iDevices de esta página en función del "
+"resultado obtenido en la prueba diagnóstica de igual identificador."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1829
 msgid ""
 "It lets you establish which iDevices will be minimized when the page is "
 "loaded."
 msgstr ""
+"Permite establecer que iDevices se mostrarán minimizados al cargarse la "
+"página."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1830
 msgid ""
 "It provides a set of buttons that allows you to control the visibility of"
 " the iDevices on this page."
 msgstr ""
+"Proporciona un conjunto de botones que permite controlar la visibilidad "
+"de los iDevices de esta página."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1833
 msgid ""
 "You must indicate the same identifier in the diagnostic test and its "
 "associated nodes"
 msgstr ""
+"Debes indicar el mismo identificador en la prueba diagnóstica y en sus "
+"nodos asociados"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1836
 msgid ""
 "The itinerary will depend on the most frequently selected option in the "
 "diagnostic test responses. There is no score"
 msgstr ""
+"El itinerario dependerá de la opción seleccionada con más frecuencia en "
+"las respuestas de la prueba diagnóstica. No hay puntuación"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1837
 msgid ""
 "The itinerary will be determined by the score obtained in the test. It is"
 " necessary to define punctuation intervals"
 msgstr ""
+"El itinerario vendrá determinado por la puntuación obtenida en la prueba."
+" Es necesario definir los intervalos de puntuación"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1841
 msgid ""
 "The diagnostic test can only be performed once. Once an itinerary is "
 "defined, it cannot be changed."
 msgstr ""
+"La prueba diagnóstica sólo se podrá realizar una vez. Una vez definido un"
+" itinerario, no se podrá cambiar."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1842
 msgid ""
 "The diagnostic test can be performed as many times as you want. The "
 "itinerary will be modified based on the new results."
 msgstr ""
+"Se podrá realizar la prueba diagnóstica tantas veces como se desee. El "
+"itinerario se modificará en función de los nuevos resultados obtenidos."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1843
 msgid ""
 "The diagnostic test can be repeated by introducing a code or clue "
 "obtained from a game."
 msgstr ""
+"La prueba diagnóstica se podrá repetir mediante la introducción de un "
+"código obtenido por medios externos: una pista de un juego."
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1846
 msgid ""
 "Use the right panel to select the iDevices that will be displayed in each"
 " case"
 msgstr ""
+"En el panel de la derecha, selecciona los iDevices que se mostrarán en "
+"cada caso"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:1848
 msgid "Write the message that will be shown to the student on each itinerary"
-msgstr ""
+msgstr "Escribe el mensaje que se mostrará al alumno en cada itinerario"
 
 #: exe/webui/scripts/idevices/itinerario-activity/edition/itinerario-activity.js:2219
-#, fuzzy
 msgid "Score intervals are not correct"
-msgstr "El código de acceso no es correcto"
+msgstr "Los intervalos de puntuación no son correctos"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:13
 #: exe/webui/scripts/idevices/listacotejo-activity/export/listacotejo-activity.js:30
 msgid "Checklist"
-msgstr ""
+msgstr "Lista de cotejo"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:19
-#, fuzzy
 msgid "Completed"
-msgstr "competir"
+msgstr "Completadas"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:21
-#, fuzzy
 msgid "In progress"
-msgstr "Progreso de la espera..."
+msgstr "En proceso"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:22
 msgid "Not achieved"
-msgstr ""
+msgstr "No conseguida"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:23
-#, fuzzy
 msgid "Number of tasks"
-msgstr "Número de tarjetas"
+msgstr "Número de tareas"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:27
 msgid "checklist"
-msgstr ""
+msgstr "lista_de_cotejo"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:30
-#, fuzzy
 msgid "point"
-msgstr "puntos"
+msgstr "punto"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:43
 msgid ""
@@ -14614,35 +14613,38 @@ msgid ""
 "It will be a useful instrument for student self-assessment, allowing you "
 "to monitor the activities you complete."
 msgstr ""
+"Puede introducir una lista de cotejo para ofrecer un listado estructurado"
+" y fácil de entender de las actividades propuestas a lo largo del recurso"
+" educativo. Será un instrumento útil para la autorregulación del "
+"aprendizaje del alumnado, al permitirle realizar el seguimiento de las "
+"actividades que va completando."
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:45
-#, fuzzy
 msgid "Complete the checklist marking the boxes when finishing the activities."
-msgstr "Resuelve todos los retos y completa el desafío."
+msgstr ""
+"Completa la lista de cotejo marcando las casillas al realizar las "
+"actividades correspondientes."
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:54
-#, fuzzy
 msgid "Caption"
-msgstr "Localización"
+msgstr "Subtítulo"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:61
 msgid "Remember marked options"
-msgstr ""
+msgstr "Recordar opciones marcadas"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:64
-#, fuzzy
 msgid "Assign scores"
-msgstr "Guardar la puntuación"
+msgstr "Asignar puntuaciones"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:66
 msgid "(*) Cells support formatted text"
-msgstr ""
+msgstr "(*) Las celdas admiten texto con formato"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:72
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:86
-#, fuzzy
 msgid "Points"
-msgstr "puntos"
+msgstr "Puntos"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:84
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:219
@@ -14652,14 +14654,13 @@ msgid "Box"
 msgstr "Caja"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:86
-#, fuzzy
 msgid "Selection"
-msgstr "Reflexión"
+msgstr "Selección"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:87
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:219
 msgid "Do not mark"
-msgstr ""
+msgstr "No marcar"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:96
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:248
@@ -14675,82 +14676,70 @@ msgstr "Añadir"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:104
 msgid "Logo (left)"
-msgstr ""
+msgstr "Logo (izquierda)"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:111
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:139
-#, fuzzy
 msgid "Community"
-msgstr "comunicar"
+msgstr "Comunidad"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:118
-#, fuzzy
 msgid "Logo (right)"
-msgstr "Alinear a la derecha"
+msgstr "Logo (derecha)"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:125
-#, fuzzy
 msgid "Logo"
-msgstr "weblog"
+msgstr "Logo"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:132
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:762
-#, fuzzy
 msgid "Decorative image"
-msgstr "Incluir imagen alternativa"
+msgstr "Imagen decorativa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:219
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:855
-#, fuzzy
 msgid "Choose"
-msgstr "escuela"
+msgstr "Selecciona"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:296
-#, fuzzy
 msgid "Unsupported browser"
-msgstr "Formatos aceptados"
+msgstr "Navegador no soportado"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:339
-#, fuzzy
 msgid "Indicate a title for the checklist"
-msgstr "Debes indicar un título para este punto."
+msgstr "Indique un título para la lista de cotejo"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:351
 msgid "You can't leave an empty item"
-msgstr ""
+msgstr "No puedes dejar un ítem vacío"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:369
 msgid "You can only use text at this item's level"
-msgstr ""
+msgstr "Sólo puedes poner texto en un nivel de este ítem"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:405
-#, fuzzy
 msgid "You must indicate the number of points of each evaluable item"
-msgstr "Debes indicar al menos un punto."
+msgstr "Debes indicar  el numero de puntos de cada ítem evaluable"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:408
-#, fuzzy
 msgid "You cannot indicate a score for this type of boxes"
-msgstr "Debes indicar un título para este punto."
+msgstr "No puedes indicar una puntuación para este tipo de casillas"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:465
-#, fuzzy
 msgid "There must be at least one row."
-msgstr "Debe haber al menos un nivel."
+msgstr "Debe haber al menos una fila."
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:483
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:502
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:750
-#, fuzzy
 msgid "Project logo"
-msgstr "Título del proyecto"
+msgstr "Logo del proyecto"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:521
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:538
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:756
-#, fuzzy
 msgid "Community/Company"
-msgstr "comunicar"
+msgstr "Comunidad/Empresa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:555
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:572
@@ -14913,6 +14902,8 @@ msgid ""
 "Indicate, separating them by commas, the correct order in which the "
 "points must be clicked"
 msgstr ""
+"Indica, separándolos por comas, el orden correcto en el que se deben "
+"pulsar los puntos"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
 msgid ""
@@ -14965,9 +14956,8 @@ msgid "Show when the mouse is over the icon or active area"
 msgstr "Mostrar al pasar el ratón sobre el icono o área activa"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:225
-#, fuzzy
 msgid "Play the sound when hovering the mouse over the points."
-msgstr "Se cierra automáticamente cuando el ratón deja de estar sobre el enlace"
+msgstr "Reproducir el sonido al pasar el ratón sobre los puntos."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:243
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3644
@@ -15197,13 +15187,12 @@ msgid "You finished all the operations."
 msgstr "Has realizado todas las operaciones."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:97
-#, fuzzy
 msgid "Write a valid fraction."
-msgstr "Incluya la información necesaria."
+msgstr "Escribe una fracción valida."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:98
 msgid "Write a valid operator: +-x*/:"
-msgstr ""
+msgstr "Escribe un operador válido: +-x*/:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:135
 msgid ""
@@ -15220,9 +15209,8 @@ msgid "Solve the following operations."
 msgstr "Realiza las siguientes operaciones matemáticas."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:142
-#, fuzzy
 msgid "Fractions"
-msgstr "Acciones"
+msgstr "Fracciones"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:145
 msgid "Choose what to guess:"
@@ -15288,16 +15276,15 @@ msgstr "Permitir decimales en los resultados"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:186
 msgid "Irreducible fraction."
-msgstr ""
+msgstr "Fracción irreducible."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:189
 msgid "Allow negative results"
 msgstr "Permitir resultados negativos"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:192
-#, fuzzy
 msgid "Allow negative"
-msgstr "Permitir resultados negativos"
+msgstr "Permitir negativos\n"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:195
 msgid "Allow zero as result"
@@ -15317,7 +15304,7 @@ msgstr "Indique el valor máximo del operando"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:300
 msgid "The highest number should be bigger than the smallest one"
-msgstr ""
+msgstr "El número más alto debe ser mayor que el número más pequeño"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:320
 msgid "No operations selected"
@@ -15334,7 +15321,7 @@ msgstr "Retroalimentación"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:92
 msgid "You can't give repeated solutions"
-msgstr ""
+msgstr "No puedes dar soluciones repetidas"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:119
 msgid "Create random basic math problems."
@@ -15366,7 +15353,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:189
 msgid "Define the domain of each variable"
-msgstr ""
+msgstr "Definir el dominio de cada variable"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:196
 msgid "Highest number:"
@@ -15407,45 +15394,47 @@ msgid "The question text and the formula should have the same variables"
 msgstr "El texto de la pregunta y la fórmula deben tener las mismas variables"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:617
-#, fuzzy
 msgid "The domain of at least one variable is not correct"
-msgstr "El código de acceso no es correcto"
+msgstr "El dominio de al menos una variable no es correcto"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:13
 msgid "Multilingual Activity"
-msgstr ""
+msgstr "Actividad multilingüe"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:14
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:125
 #: exe/webui/scripts/idevices/multilingual-activity/export/multilingual-activity.js:21
 msgid "Multilingual"
-msgstr ""
+msgstr "Multilingual"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:78
 msgid ""
 "Message for the author: This iDevice allows you to create multilingual "
 "contents. It will not be visible when previewing or exporting."
 msgstr ""
+"Mensaje para el autor: Este iDevice permite crear elp multilingües. En "
+"previsualización o exportado no será visible."
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:94
-#, fuzzy
 msgid "You can only add a Multilingual iDevice per page"
-msgstr "Sólo puede añadir un vídeo interactivo por página."
+msgstr "Sólo puedes añadir un iDevice tipo Multilingual por página"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:122
 msgid "It lets you create mutilingual elp files."
-msgstr ""
+msgstr "Permite crear elp mutilingües."
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:130
-#, fuzzy
 msgid "Number of languages:"
-msgstr "Número de pistas"
+msgstr "Número de idiomas:"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:137
 msgid ""
 "Select the language, complete the menu titles and click on the Assign "
 "button to mark the iDevices to be shown in the chosen language."
 msgstr ""
+"Selecciona el idioma, completa los títulos de los menús y haz clic sobre "
+"el botón Asignar para marcar los iDevices que se mostrarán en el idioma "
+"elegido."
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:145
 #: exe/webui/tools/style-designer/langs/all.js:82
@@ -15453,116 +15442,106 @@ msgid "Project title"
 msgstr "Título del proyecto"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:170
-#, fuzzy
 msgid "Select language"
-msgstr "Seleccionar idioma"
+msgstr "Selecciona idioma"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:491
-#, fuzzy
 msgid "Spanish"
-msgstr "Español "
+msgstr "Español"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:653
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:680
-#, fuzzy, python-format
+#, python-format
 msgid "Select the iDevices to be shown in %s"
-msgstr "Escriba el texto que se mostrará"
+msgstr "Selecciona los iDevices que se mostrarán en %s"
 
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:694
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:700
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:706
 #: exe/webui/scripts/idevices/multilingual-activity/edition/multilingual-activity.js:712
-#, fuzzy
 msgid "Assign iDevices"
-msgstr "Guardar los iDevices"
+msgstr "Asignar Devices"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
-#, fuzzy
 msgid "You ordered all the activities!"
-msgstr "Has completado la actividad"
+msgstr "¡Has ordenado todas las actividades!"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:70
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:68
-#, fuzzy
 msgid "Number of pending activities"
-msgstr "Número de puntos"
+msgstr "Número de actividades pendientes"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:73
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:196
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:69
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:163
-#, fuzzy
 msgid "Activities"
-msgstr "activo"
+msgstr "Actividades"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:75
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:206
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:170
-#, fuzzy
 msgid "Next activity"
-msgstr "Repetir la actividad"
+msgstr "Próxima actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:77
-#, fuzzy
 msgid "Correct positions"
-msgstr "Opción correcta"
+msgstr "Posiciones correctas"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:78
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:72
 msgid "Brilliant! All correct!"
-msgstr ""
+msgstr "¡Genial! Todo correcto ¡A por otra!"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:79
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:73
-#, fuzzy
 msgid "Please try again"
-msgstr "¡Prueba otra vez!"
+msgstr "Inténtalo de nuevo"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:100
 msgid ""
 "The number of attempts has to be bigger than or equal to the number of "
 "phrases in the game. Use 0 for an infinite number of attempts"
 msgstr ""
+"El número de intentos tiene que ser mayor o igual que el número de frases"
+" del juego. Indica 0 para un número infinito de intentos"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:102
 msgid "Maximum number of phrases: 20"
-msgstr ""
+msgstr "Número máximo de frases: 20"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:103
 msgid ""
 "With fixed headers, the number of cards must be bigger than the number of"
 " columns"
 msgstr ""
+"Con las cabeceras fijas, el número de cartas debe ser mayor que el número"
+" de columnas"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:111
-#, fuzzy
 msgid ""
 "Create interactive activities in which players will have to order cards "
 "with images, texts and/or sounds."
 msgstr ""
-"Cree actividades tipo \"habitación de escape\" (escape room) en las que "
-"los jugadores deberán completar diferentes retos antes de resolver el "
-"desafío final."
+"Crea actividades interactivas en las que los jugadores tendrán que "
+"ordenar tarjetas con imágenes, textos y/o sonidos."
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:113
 msgid "Drag each letter to its correct position"
-msgstr ""
+msgstr "Arrastra cada carta hasta su posición correcta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:121
-#, fuzzy
 msgid "Phrases"
-msgstr "practicar"
+msgstr "Frases"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:123
-#, fuzzy
 msgid "Multimedia"
-msgstr "Tipo de multimedia"
+msgstr "Multimedia"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:150
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:128
-#, fuzzy
 msgid "% Activities"
-msgstr "activo"
+msgstr "% Actividades"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:157
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:202
@@ -15570,148 +15549,125 @@ msgid "Columns"
 msgstr "Cols"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:174
-#, fuzzy
 msgid "Maximum width"
 msgstr "Ancho máximo"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:179
-#, fuzzy
 msgid "Fixed headers"
-msgstr "Encabezados"
+msgstr "Cabeceras fijas"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:182
 msgid "Automatic start"
-msgstr ""
+msgstr "Inicio automático"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:199
-#, fuzzy
 msgid "Phrase"
-msgstr "practicar"
+msgstr "Frase"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:202
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:166
-#, fuzzy
 msgid "Add activity"
-msgstr "Repetir la actividad"
+msgstr "Añadir actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:203
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:167
-#, fuzzy
 msgid "First activity"
-msgstr "Repetir la actividad"
+msgstr "Primera actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:204
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:168
-#, fuzzy
 msgid "Previous activity"
-msgstr "actividad de discusión"
+msgstr "Anterior actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:205
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:169
-#, fuzzy
 msgid "Activity number:"
-msgstr "Número más alto:"
+msgstr "Actividad número:"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:207
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:171
-#, fuzzy
 msgid "Last activity"
-msgstr "Repetir la actividad"
+msgstr "Última actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:208
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:172
-#, fuzzy
 msgid "Delete activity"
-msgstr "Actividad \"Selecciona\""
+msgstr "Borrar actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:209
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:173
-#, fuzzy
 msgid "Copy activity"
-msgstr "Mostrar la actividad"
+msgstr "Copiar actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:210
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:174
-#, fuzzy
 msgid "Cut activity"
-msgstr "Actividad QuExt"
+msgstr "Cortar actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:211
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:175
-#, fuzzy
 msgid "Paste activity"
-msgstr "Agregar otra actividad"
+msgstr "Pegar actividad"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:215
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:179
-#, fuzzy
 msgid "Statement"
-msgstr "planteamiento de un problema"
+msgstr "Enunciado"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:236
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:202
-#, fuzzy
 msgid "Add letter"
-msgstr "Letras seleccionadas"
+msgstr "Añadir carta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:236
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:202
-#, fuzzy
 msgid "Add card"
-msgstr "Añadir nueva palabra"
+msgstr "Añadir tarjeta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:237
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:203
-#, fuzzy
 msgid "Delete letter"
-msgstr "Letras seleccionadas"
+msgstr "Borrar carta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:237
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:203
-#, fuzzy
 msgid "Delete card"
-msgstr "Eliminar diapositiva"
+msgstr "Borrar tarjeta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:238
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:204
-#, fuzzy
 msgid "Copy letter"
-msgstr "competir"
+msgstr "Copiar carta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:238
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:204
-#, fuzzy
 msgid "Copy card"
-msgstr "comparar"
+msgstr "Copiar tarjeta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:239
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:205
-#, fuzzy
 msgid "Cut letter"
-msgstr "Letras seleccionadas"
+msgstr "Cortar carta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:239
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:205
 msgid "Cut card"
-msgstr ""
+msgstr "Cortar tarjeta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:240
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:206
-#, fuzzy
 msgid "Paste letter"
-msgstr "Letras seleccionadas"
+msgstr "Pegar carta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:240
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:206
-#, fuzzy
 msgid "Paste card"
-msgstr "lección magistral"
+msgstr "Pegar tarjeta"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:244
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:210
-#, fuzzy
 msgid "Phrases:"
-msgstr "practicar"
+msgstr "Frases:"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:90
@@ -15805,20 +15761,16 @@ msgstr "Opciones al azar"
 
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:12
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:63
-#, fuzzy
 msgid "Relate"
-msgstr "crear"
+msgstr "Relaciona"
 
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:98
-#, fuzzy
 msgid "Create relation games with images, sounds and enriched texts."
-msgstr ""
-"Cree actividades con tarjetas de memoria con imágenes, sonidos y/o texto "
-"enriquecido."
+msgstr "Crea juegos de relación con imágenes, sonidos y textos enriquecidos."
 
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:100
 msgid "Link each card with its pair."
-msgstr ""
+msgstr "Enlaza cada tarjeta con su pareja."
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:17
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:42
@@ -16209,61 +16161,52 @@ msgid "Go to"
 msgstr "Ir a"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:12
-#, fuzzy
 msgid "Select media files"
-msgstr "Seleccionar un archivo"
+msgstr "Selecciona Medias"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:66
 msgid "Time has finished"
-msgstr ""
+msgstr "Tu tiempo ha finalizado"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:67
-#, fuzzy
 msgid "You completed all the activities!"
-msgstr "Has completado la actividad"
+msgstr "¡Has completado todas las actividades!"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:77
 msgid "Change visualization mode"
-msgstr ""
+msgstr "Cambiar modo de visualización"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:96
 msgid "Maximum number of activities: 30"
-msgstr ""
+msgstr "Número máximo de actividades: 30"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:104
-#, fuzzy
 msgid ""
 "Create interactive activities in which players will have to select the "
 "correct multimedia cards."
 msgstr ""
-"Cree actividades tipo \"habitación de escape\" (escape room) en las que "
-"los jugadores deberán completar diferentes retos antes de resolver el "
-"desafío final."
+"Crea actividades interactivas en las que los jugadores tendrán que "
+"seleccionar las tarjetas multimedia correctas."
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:106
-#, fuzzy
 msgid "Select the right cards"
-msgstr "usar la tecla de flecha hacia la derecha"
+msgstr "Selecciona las tarjetas correctas"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:114
-#, fuzzy
 msgid "Time to complete the game"
-msgstr "Debe completar la pregunta"
+msgstr "Tiempo para completar el juego"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:132
-#, fuzzy
 msgid "Maximum number of cards"
-msgstr "Número de tarjetas"
+msgstr "Número máximo de tarjetas"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:139
-#, fuzzy
 msgid "Table mode"
-msgstr "tabla"
+msgstr "Modo tabla"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:434
-#, fuzzy
 msgid "Correct answer"
-msgstr "y la respuesta correcta es"
+msgstr "Respuesta correcta"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:59
 #, python-format
@@ -17956,7 +17899,7 @@ msgstr "Detectar automáticamente"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:556
 msgid "Choose a file or paste a link (URL)"
-msgstr ""
+msgstr "Choose a file or paste a link (URL)"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:578
 msgid "Play controls"
@@ -17967,11 +17910,12 @@ msgid "JavaScript player"
 msgstr "Reproductor JavaScript"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:579
-#, fuzzy
 msgid ""
 "Old browsers compatibility with some formats. Not needed in modern "
 "browsers."
-msgstr "Mejorar la compatibilidad de los navegadores con algunos formatos"
+msgstr ""
+"Old browsers compatibility with some formats. Not needed in modern "
+"browsers."
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:580
 msgid "Autoplay"
@@ -19873,23 +19817,4 @@ msgstr ""
 "O su fichero idevices/generic.data o el paquete que está intentando "
 "cargar fueron creados con una versión más reciente de eXeLearning. Por "
 "favor actualice eXe e inténtelo otra vez."
-
-#~ msgid "The user will see your name when clicking on the button."
-#~ msgstr "El usuario verá su nombre cuando pulse en el botón."
-
-#~ msgid ""
-#~ "The text of the button should be"
-#~ " in the right language, that's why"
-#~ " it's a required field."
-#~ msgstr ""
-#~ "El texto del botón deberá estar en"
-#~ " el idioma adecuado, esta es la "
-#~ "causa de que sea un campo "
-#~ "obligatorio."
-
-#~ msgid "Write your name:"
-#~ msgstr "Escriba su nombre:"
-
-#~ msgid "You should write your name."
-#~ msgstr "Deberá escribir su nombre."
 
