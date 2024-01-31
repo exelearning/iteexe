@@ -96,6 +96,20 @@ Ext.define('eXe.view.forms.ExportPanel', {
                             xtype: 'helpcontainer',
                             item: {
                                 xtype: 'checkboxfield',
+                                inputId: 'pp_addAccessibilityToolbar',
+                                boxLabel: _('Add an accessibility toolbar (HTML exports only)'),
+                                inputValue: true,
+                                uncheckedValue: false,
+                                dirtyCls: 'property-form-dirty',
+                                tooltip: _('The accessibility toolbar allow visitors to manipulate some aspects of your site, like font and text size.')
+                            },
+                            flex: 0,
+                            help: _('The accessibility toolbar allow visitors to manipulate some aspects of your site, like font and text size.')
+                        },
+                        {
+                            xtype: 'helpcontainer',
+                            item: {
+                                xtype: 'checkboxfield',
                                 inputId: 'pp_addPagination',
                                 boxLabel: _('Add page counters in the footer and header of the export?'),
                                 inputValue: true,

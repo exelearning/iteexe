@@ -191,6 +191,10 @@ class WebsiteExport(object):
             styleFiles = [self.stylesDir/'..'/'popup_bg.gif']
             if package.get_addExeLink():
                 styleFiles += [self.stylesDir/'..'/'exe_powered_logo.png']
+            # Copy the accessibility toolbar files to the output dir
+            if package.get_addAccessibilityToolbar():            
+                addAccessibilityToolbarFiles = (self.scriptsDir/'exe_atools')
+                addAccessibilityToolbarFiles.copyfiles(outputDir)
             styleFiles += self.stylesDir.files("*.*")
             self.stylesDir.copylist(styleFiles, outputDir)
 

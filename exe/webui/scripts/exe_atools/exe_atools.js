@@ -52,7 +52,7 @@ $exe.atools = {
 		if (opts.translator==true) translator = '<button id="eXeAtoolsTranslateBtn">'+$exe_i18n["translate"]+' (Google Translate)</button>';
 		var dragBtn = "";
 		if (opts.draggable==true) {
-			dragBtn = '<button id="eXeAtoolsSetDragHandler">'+$exe_i18n["drag_and_drop"]+'</button>';		
+			dragBtn = '<button id="eXeAtoolsSetDragHandler" data-drog>'+$exe_i18n["drag_and_drop"]+'</button>';		
 		} else {
 			localStorage.setItem('exeAtoolsToolbarStyles','');
 		}
@@ -96,16 +96,14 @@ $exe.atools = {
 		$("#eXeAtools").removeClass("loading");
 		// Make it draggable amd set the previous position
 		if (opts.draggable==true) {
-			var handler = document.getElementById("eXeAtoolsSet");
+			var handler = document.getElementById("eXeAtoolsSet");			
 			var css = $exe.atools.storage.getToolbarPosition();
 			if (css!="") {
 				handler.style = css;
-				$exe.atools.checkToolbarPosition();
-				setTimeout(function(){
-					
-				},1000);
 			}
-			$exe.atools.dragElement(handler);	
+			Drog.on(handler);
+			// Move so the element does not move to bottom left the first time you drag it
+			$exe.atools.Drog.fixPosition(handler);		
 		}
 	},
 	checkResetBtnStatus : function(){
@@ -178,38 +176,8 @@ $exe.atools = {
 		});
 		if ($exe.atools.options.draggable==true) {
 			$(window).on("resize",function(){
-				$exe.atools.checkToolbarPosition();
+				$exe.atools.Drog.checkPosition();
 			});			
-		}
-	},
-	checkToolbarPosition : function(){
-		if ($("body").hasClass("exe-atools-on")) {
-			var e = $("#eXeAtoolsSet");
-			elmnt = e[0];
-			if (elmnt.style.bottom!="auto") return;
-			var mt = elmnt.offsetTop;
-			var ml = elmnt.offsetLeft;
-			var maxTop = ($(window).height()-$(elmnt).height());
-			if (mt>maxTop) {
-				mt = maxTop;
-			} else if (mt<0) {
-				mt = 0;
-			}
-			var maxLeft = ($(window).width()-$(elmnt).width());
-			if (ml>maxLeft) {
-				ml = maxLeft;
-			} else if (ml<0) {
-				ml = 0;
-			}	
-			// No styles required
-			if (ml==0&&mt==maxTop) {
-				elmnt.style="";
-				localStorage.setItem('exeAtoolsToolbarStyles', '');
-				return;
-			}
-			elmnt.style.top = mt + "px";
-			elmnt.style.left = ml + "px";
-			elmnt.style.bottom = "auto";
 		}
 	},
 	reader : {
@@ -256,8 +224,13 @@ $exe.atools = {
 		}
 	},
 	setFontSize : function(size) {
-		currentFontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+		// var currentFontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
+		var currentFontSize = document.body.style.fontSize;
+			currentFontSize = currentFontSize.replace("px","");
+			currentFontSize = parseInt(currentFontSize);
+		if (isNaN(currentFontSize)) currentFontSize = $exe.atools.storage.originalFontSize;
 		currentFontSize += size;
+		$("h2 strong").text(parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')) + " - " + currentFontSize)
 		if (currentFontSize<=$exe.atools.storage.originalFontSize) {
 			document.body.style.fontSize = "";
 			localStorage.setItem('exeAtoolsFontSize', '');
@@ -291,54 +264,232 @@ $exe.atools = {
 		}
 		localStorage.setItem('exeAtoolsTranslator',googleTranslateWidgetVisible);
 	},
-	dragElement : function(elmnt){
-		var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-		document.getElementById(elmnt.id + "DragHandler").onmousedown = dragMouseDown;
-		function dragMouseDown(e) {
-			e = e || window.event;
-			e.preventDefault();
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			document.onmouseup = closeDragElement;
-			document.onmousemove = elementDrag;
-		}
-		function elementDrag(e) {
-			e = e || window.event;
-			e.preventDefault();
-			pos1 = pos3 - e.clientX;
-			pos2 = pos4 - e.clientY;
-			pos3 = e.clientX;
-			pos4 = e.clientY;
-			var mt = (elmnt.offsetTop - pos2);
-			var ml = (elmnt.offsetLeft - pos1);
-			var maxTop = ($(window).height()-$(elmnt).height());
-			if (mt>maxTop) {
-				mt = maxTop;
-			} else if (document.body.style.top=="40px"&&mt<40) {
-				mt = 40;
-			} else if (mt<0) {
-				mt = 0;
+	Drog : {
+		limit : function(x,y){
+			var e = $("#eXeAtoolsSet");
+			var h = e.height();
+			var w = e.width();
+			var maxTop = ($(window).height()-h);
+			var bodyT = $("body").css("top");
+			if (bodyT=="40px") {
+				maxTop = maxTop-40;
 			}
-			var maxLeft = ($(window).width()-$(elmnt).width());
-			if (ml>maxLeft) {
-				ml = maxLeft;
-			} else if (ml<0) {
-				ml = 0;
-			}
-			// No styles required
-			if (ml==0&&mt==maxTop) {
-				elmnt.style="";
+			var maxLeft = ($(window).width()-w);
+			if (x>maxLeft) x = maxLeft;
+			else if (x<0) x = 0;
+			if (-y>maxTop) y = -maxTop;
+			else if (y>0) y = 0;	
+			return [x, y];			
+		},
+		checkPosition : function(){
+			if (!$("body").hasClass("exe-atools-on")) return;
+			var e = document.getElementById("eXeAtoolsSet");
+			var translate = $exe.atools.Drog.getTranslation(e);
+			var translateX = translate[0];
+			var translateY = translate[1];
+			if (translateX==0&&translateY==0) return;
+			var pos = $exe.atools.Drog.limit(translateX,translateY);
+			var x = pos[0];
+			var y = pos[1];
+			
+			if (x==0&&y==0) {
+				e.style = "";
 				localStorage.setItem('exeAtoolsToolbarStyles', '');
 				return;
-			}			
-			elmnt.style.top = mt + "px";
-			elmnt.style.left = ml + "px";
-			elmnt.style.bottom = "auto";
-			localStorage.setItem('exeAtoolsToolbarStyles',elmnt.style.cssText);
-		}
-		function closeDragElement(e) {
-			document.onmouseup = null;
-			document.onmousemove = null;
+			}
+			
+			e.style.transform = "translate("+x+"px, "+y+"px)";
+			localStorage.setItem('exeAtoolsToolbarStyles', e.style.cssText);
+		},
+		fixPosition : function(e){
+			var translate = $exe.atools.Drog.getTranslation(e);
+			var translateX = translate[0];
+			var translateY = translate[1];
+			if (translateX==0&&translateY==0) return;
+			Drog.move(e, translateX, translateY);			
+		},
+		getTranslation : function(e){
+			var style = window.getComputedStyle(e);
+			var matrix = new WebKitCSSMatrix(style.transform);
+			var translateX = matrix.m41;
+			var translateY = matrix.m42;
+			return [translateX,translateY];
 		}
 	}
-}
+};
+/*!
+ * Drog.js v1.2.1
+ * [Back-compatibility: IE11+]
+ * Copyright (c) 2021, Emanuel Rojas Vásquez
+ * BSD 3-Clause License
+ * https://github.com/erovas/Drog.js
+ */
+(function(window, document){
+
+    if(window.Drog)
+        return console.error('Drog.js has already been defined');
+
+    let Xi = '-Xi', Yi = '-Yi', Xf = '-Xf', Yf = '-Yf', Xt = '-x', Yt = '-y',
+        mousedown = 'mousedown', touchstart = 'touchstart',
+        mousemove = 'mousemove', touchmove = 'touchmove',
+        mouseup = 'mouseup', touchend = 'touchend',
+        father = '-f', passive = { passive: false },
+        isDrog = '-d', data = '[data-drog]', elmnt, that;
+
+    function addEvent(element, event, callback, opt){
+        element.addEventListener(event, callback, opt || false);
+    }
+
+    function removeEvent(element, event, callback, opt){
+        element.removeEventListener(event, callback, opt || false);
+    }    
+
+    function on(element){
+
+        if(element[isDrog])
+            return;
+
+        let target = element.querySelector(data) || element;
+
+        // save reference original element into target
+        target[father] = element;
+
+        // Save element position
+        element[Xt] = 0;
+        element[Yt] = 0;
+
+        //element[Xi] = 0;
+        //element[Yi] = 0;
+        //element[Xf] = 0;
+        //element[Yf] = 0;
+
+        // element.style.zIndex = 100000;
+        target.style.touchAction = "none";
+
+        // signing element
+        element[isDrog] = true;
+
+        addEvent(target, mousedown, drogInit);
+        addEvent(target, touchstart, drogInit, passive);
+    }
+
+    /*
+	function off(element){
+
+        if(!element[isDrog])
+            return;        
+
+        let target = element.querySelector(data) || element;
+
+        element.style.zIndex = '';
+        element.style.transform = '';
+        target.style.touchAction = '';
+
+        // deleting references
+        target[father] = null;
+
+        // unsigning element
+        element[isDrog] = null;
+
+        removeEvent(target, mousedown, drogInit);
+        removeEvent(target, touchstart, drogInit);
+    }
+	*/
+
+    
+
+    function move(element, x, y){
+        
+        if(!element[isDrog])
+            return;
+
+        x = parseFloat(x) || 0;
+        y = parseFloat(y) || 0
+        element[Xt] = x;
+        element[Yt] = y;
+        element.style.transform = 'translate(' + x + 'px,' + y + 'px)';
+		// To do now localStorage.setItem('exeAtoolsToolbarStyles', element.style.cssText);
+		// To do now console.debug(element.style.cssText)
+    }
+
+    function drogInit(e){
+
+        //Fire by central or left click, avoid it
+        if(e.which === 2 || e.which === 3)
+            return;
+
+        that = this;
+        elmnt = that[father];
+
+        //e.preventDefault();
+
+        // get the mouse cursor position at startup:
+        elmnt[Xi] = e.clientX || e.targetTouches[0].clientX;
+        elmnt[Yi] = e.clientY || e.targetTouches[0].clientY;
+
+        // call a function whenever the cursor moves:
+        if(e.type === touchstart){
+            addEvent(that, touchmove, drogMove, passive);
+            addEvent(that, touchend, drogEnd, passive);
+        }
+        else {
+            addEvent(document, mousemove, drogMove);
+            addEvent(document, mouseup, drogEnd);
+        }
+    }
+
+    function drogMove(e){
+
+        e.preventDefault();
+        
+        if(e.type === touchmove)
+            elmnt = this[father];
+
+        // calculate the new cursor position:
+        try{
+			elmnt[Xf] = e.clientX || e.targetTouches[0].clientX;
+			elmnt[Yf] = e.clientY || e.targetTouches[0].clientY;
+		}catch(e){}
+
+        elmnt[Xt] -= elmnt[Xi] - elmnt[Xf];
+        elmnt[Yt] -= elmnt[Yi] - elmnt[Yf];
+
+        elmnt[Xi] = elmnt[Xf];
+        elmnt[Yi] = elmnt[Yf];
+		
+		// To do
+		// elmnt[Xi] and elmnt[Yi] 
+		
+		// elmnt should not be dragged out of the window
+		var pos = $exe.atools.Drog.limit(elmnt[Xt],elmnt[Yt]);
+			elmnt[Xt] = pos[0];
+			elmnt[Yt] = pos[1];
+			
+		if (pos[0]==0&&pos[1]==0) {
+			elmnt.style = "";
+			localStorage.setItem('exeAtoolsToolbarStyles', '');
+			return;
+		}
+
+        elmnt.style.transform = 'translate(' + elmnt[Xt] + 'px,' + elmnt[Yt] + 'px)';
+		localStorage.setItem('exeAtoolsToolbarStyles', elmnt.style.cssText);
+    }
+
+    function drogEnd(){
+
+        that = this;
+        // stop moving when mouse/touch is released:
+        removeEvent(document, mousemove, drogMove);
+        removeEvent(document, mouseup, drogEnd);
+
+        removeEvent(that, touchmove, drogMove, passive);
+        removeEvent(that, touchend, drogEnd, passive);
+    }
+
+    window.Drog = {
+        on: on,
+        // off: off,
+        move: move
+    }
+
+})(window, document);

@@ -160,6 +160,8 @@ class WebsitePage(Page):
             extraCSS = ' exe-search-bar'
         if self.node.package.get_loadMathEngine():
             extraCSS += ' exe-auto-math'
+        if self.node.package.get_addAccessibilityToolbar():
+            extraCSS = ' exe-atools'
         html += u'<body class="exe-web-site'+extraCSS+'" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
         html += u"<div id=\"content\">"+lb
         html += '<p id="skipNav"><a href="#main" class="sr-av">' + c_('Skip navigation')+'</a></p>'+lb
