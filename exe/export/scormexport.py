@@ -502,6 +502,10 @@ xsi:schemaLocation="http://www.imsglobal.org/xsd/imscc/imscp_v1p1 imscp_v1p1.xsd
 
         if common.hasABCMusic(page.node):
             resources = resources + [f.basename() for f in (self.config.webDir/"scripts"/'tinymce_4'/'js'/'tinymce'/'plugins'/'abcmusic'/'export').files()]
+            
+        # Accessibility toolbar files
+        if page.node.package.get_addAccessibilityToolbar():            
+            resources = resources + [f.basename() for f in (self.config.webDir / "scripts" / 'exe_atools').files()]
 
         for resource in resources:
             fileStr += "    <file href=\""+escape(resource)+"\"/>\n"
@@ -852,6 +856,10 @@ class ScormExport(object):
             (G.application.config.webDir/'templates'/'content.xsd').copyfile(outputDir/'content.xsd')
             (outputDir/'content.data').write_bytes(encodeObject(package))
             (outputDir/'contentv3.xml').write_bytes(encodeObjectToXML(package))
+        # Copy the accessibility toolbar files to the output dir
+        if package.get_addAccessibilityToolbar():            
+            addAccessibilityToolbarFiles = (self.scriptsDir / 'exe_atools')
+            addAccessibilityToolbarFiles.copyfiles(outputDir)
 
         # Zip it up!
         self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)

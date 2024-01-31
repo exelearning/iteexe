@@ -270,6 +270,11 @@ class SinglePageExport(object):
         if hasABCMusic:
             pluginScripts = (self.scriptsDir/'tinymce_4/js/tinymce/plugins/abcmusic/export')
             pluginScripts.copyfiles(self.outputDir)
+            
+        # Copy the accessibility toolbar files to the output dir
+        if self.page.node.package.get_addAccessibilityToolbar():            
+            addAccessibilityToolbarFiles = (self.scriptsDir/'exe_atools')
+            addAccessibilityToolbarFiles.copyfiles(self.outputDir)
 
         for child in node.children:
             self.compruebaReproductores(child)

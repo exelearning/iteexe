@@ -246,7 +246,6 @@ $exe.atools = {
 			currentFontSize = parseInt(currentFontSize);
 		if (isNaN(currentFontSize)) currentFontSize = $exe.atools.storage.originalFontSize;
 		currentFontSize += size;
-		$("h2 strong").text(parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size')) + " - " + currentFontSize)
 		if (currentFontSize<=$exe.atools.storage.originalFontSize) {
 			document.body.style.fontSize = "";
 			localStorage.setItem('exeAtoolsFontSize', '');

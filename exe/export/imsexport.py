@@ -303,6 +303,9 @@ class Manifest(object):
         if common.hasABCMusic(page.node):
             resources = resources + [f.basename() for f in (
                         self.config.webDir / "scripts" / 'tinymce_4' / 'js' / 'tinymce' / 'plugins' / 'abcmusic' / 'export').files()]
+        # Accessibility toolbar files
+        if page.node.package.get_addAccessibilityToolbar():            
+            resources = resources + [f.basename() for f in (self.config.webDir / "scripts" / 'exe_atools').files()]
 
         for resource in resources:
             fileStr += "    <file href=\"" + escape(resource) + "\"/>\n"
@@ -439,6 +442,8 @@ class IMSPage(Page):
         extraCSS = ''
         if self.node.package.get_loadMathEngine():
             extraCSS = ' exe-auto-math'
+        if self.node.package.get_addAccessibilityToolbar():
+            extraCSS = ' exe-atools'
         html += u'<body class="exe-ims' + extraCSS + '" id="exe-node-' + self.node.id + '"><script type="text/javascript">document.body.className+=" js"</script>' + lb
         html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb
@@ -732,6 +737,10 @@ class IMSExport(object):
             (G.application.config.webDir / 'templates' / 'content.xsd').copyfile(outputDir / 'content.xsd')
             (outputDir / 'content.data').write_bytes(encodeObject(package))
             (outputDir / 'contentv3.xml').write_bytes(encodeObjectToXML(package))
+        # Copy the accessibility toolbar files to the output dir
+        if package.get_addAccessibilityToolbar():            
+            addAccessibilityToolbarFiles = (self.scriptsDir / 'exe_atools')
+            addAccessibilityToolbarFiles.copyfiles(outputDir)
 
         if package.license == "license GFDL":
             # include a copy of the GNU Free Documentation Licence
