@@ -27,7 +27,17 @@ if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",s
 
 var $exe = {
 	
-    init: function() {
+	// Called right after the <body> tag
+	setBodyClass: function(){
+		var c=" js";
+		var b = $("body");
+		if(b.hasClass("exe-atools")&&typeof(localStorage)=='object'){
+			var x=localStorage.getItem('exeAtoolsMode');
+			if(x&&x=="dark") c+=" exe-atools-dm"};
+		document.body.className+=c;
+	},
+	
+	init: function() {
         var bod = $('body');
         $exe.addRoles();
         if (!bod.hasClass("exe-single-page")) {

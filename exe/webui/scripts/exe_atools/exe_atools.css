@@ -121,6 +121,7 @@ body.exe-atools-mo{font-family:'Montserrat', sans-serif}
 #eXeAtools #eXeAtoolsTranslateBtn{background-position:-210px 0}
 #eXeAtools #eXeAtoolsSetDragHandler{background-position:-245px 0;cursor:move;opacity:.8;margin-right:-10px}
 #eXeAtools #eXeAtoolsResetBtn{background-position:-280px 0}
+#eXeAtools #eXeAtoolsModeToggler{background-position:-315px 0}
 #eXeAtools #eXeAtoolsResetBtn.reset-disabled{opacity:.5;cursor:not-allowed}
 #eXeAtools #eXeAtoolsSetDragHandler:hover{opacity:1}
 

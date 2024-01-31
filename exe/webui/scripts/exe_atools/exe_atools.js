@@ -1,7 +1,8 @@
 $exe.atools = {
 	options : {
-		translator : true,
-		draggable : true
+		draggable : true,
+		modeToggler : false,
+		translator : false
 	},
 	storage : {
 		originalFontSize : "",
@@ -56,6 +57,10 @@ $exe.atools = {
 		} else {
 			localStorage.setItem('exeAtoolsToolbarStyles','');
 		}
+		var modeBtn = "";
+		if (opts.modeToggler==true) {
+			modeBtn = '<button id="eXeAtoolsModeToggler">'+$exe_i18n["mode_toggler"]+'</button>';		
+		}
 		var html = '\
 			<div id="eXeAtools" class="loading">\
 				<div id="eXeAtoolsBtnSet"><button id="eXeAtoolsBtn" title="'+$exe_i18n.accessibility_tools+'"><span class="sr-av">'+$exe_i18n.accessibility_tools+'</span></button></div>\
@@ -67,7 +72,7 @@ $exe.atools = {
 						<option value="od">OpenDyslexic</option>\
 						<option value="ah">Atkinson Hyperlegible</option>\
 						<option value="mo">Montserrat</option>\
-					</select><button id="eXeAtoolsLgTextBtn">'+$exe_i18n["increase_text_size"]+'</button><button id="eXeAtoolsSmTextBtn">'+$exe_i18n["decrease_text_size"]+'</button><button id="eXeAtoolsResetBtn">'+$exe_i18n["reset"]+'</button>'+reader+translator+'<button id="eXeAtoolsCloseBtn">'+$exe_i18n["close_toolbar"]+'</button>\
+					</select><button id="eXeAtoolsLgTextBtn">'+$exe_i18n["increase_text_size"]+'</button><button id="eXeAtoolsSmTextBtn">'+$exe_i18n["decrease_text_size"]+'</button><button id="eXeAtoolsResetBtn">'+$exe_i18n["reset"]+'</button>'+modeBtn+reader+translator+'<button id="eXeAtoolsCloseBtn">'+$exe_i18n["close_toolbar"]+'</button>\
 				</div>\
 			</div>\
 		';
@@ -173,6 +178,17 @@ $exe.atools = {
 			// To review (Back to left bottom?)
 			// $("#eXeAtoolsSet").attr("style","");
 			// localStorage.setItem('exeAtoolsToolbarStyles','');
+		});
+		$("#eXeAtoolsModeToggler").click(function(){
+			var c = "exe-atools-dm";
+			var b = $("body");
+			if (b.hasClass(c)) {
+				b.removeClass(c);
+				localStorage.setItem('exeAtoolsMode', "");
+			} else {
+				b.addClass(c);
+				localStorage.setItem('exeAtoolsMode', 'dark');
+			}
 		});
 		if ($exe.atools.options.draggable==true) {
 			$(window).on("resize",function(){

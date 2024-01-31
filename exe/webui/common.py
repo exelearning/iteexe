@@ -665,7 +665,8 @@ def getJavaScriptStrings(addTag = True):
     s += 'stop_reading:"'+c_("Stop reading")+'",'
     s += 'translate:"'+c_("Translate")+'",'
     s += 'drag_and_drop:"'+c_("Drag and drop")+'",'
-    s += 'reset:"'+c_("Reset")+'"'
+    s += 'reset:"'+c_("Reset")+'",'
+    s += 'mode_toggler:"'+c_("Dark/Light mode")+'"'
     s += '};'
     if addTag:
         s += '</script>'
