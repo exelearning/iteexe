@@ -209,6 +209,10 @@ var $exe = {
 		});
 		// Search form
 		if (window.DOMParser) this.clientSearch.init(bod); // IE8- do not support the DOMParser object
+		// Accessibility toolbar
+		if ($("body").hasClass("exe-atools")) {
+			$exe.loadScript("exe_atools.js","$exe.atools.init()");
+		}
 		
     },
 	
