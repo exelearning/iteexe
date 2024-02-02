@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2023-05-19 10:01+0200\nPO-Revision-Date: 2022-11-25 17:28+0100\nLast-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\nLanguage: zh_Hant_TW\nLanguage-Team: Traditional Chinese <zh-l10n@lists.slat.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: translations@exelearning.net\nPOT-Creation-Date: 2024-02-02 15:40+0100\nPO-Revision-Date: 2022-11-25 17:28+0100\nLast-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\nLanguage: zh_Hant_TW\nLanguage-Team: Traditional Chinese <zh-l10n@lists.slat.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "\u56de\u5408\u6578", 
  "DropDown Activity": "\u62d6\u653e\u6d3b\u52d5", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "\u5efa\u7acb\u6848\u4f8b\u6545\u4e8b\u3002\u4e00\u500b\u597d\u7684\u6848\u4f8b\u63cf\u8ff0\u4e00\u9805\u722d\u8b70\uff0c\u6216\u63cf\u8ff0\u5728\u67d0\u500b\u60c5\u5883\u4e0b\u7684\u67d0\u500b\u4eba\u7269\u3002\u5b83\u4e5f\u61c9\u8a72\u5141\u8a31\u5927\u5bb6\u63a1\u53d6\u67d0\u4e9b\u884c\u52d5\u4ee5\u4fbf\u89e3\u6c7a\u9019\u500b\u60c5\u5883\u3002", 
@@ -2429,7 +2429,6 @@ translations = {
  "Select an mp3 file": "\u9078\u64c7 mp3 \u6a94\u6848", 
  "Timer Text": "\u8a08\u6642\u5668\u6587\u5b57", 
  "You can only save the score once!": "\u60a8\u53ea\u80fd\u5132\u5b58\u4e00\u6b21\u5206\u6578\uff01", 
- "Improve browser compatibility with some formats": "\u6539\u9032\u700f\u89bd\u5668\u5c0d\u67d0\u4e9b\u683c\u5f0f\u7684\u76f8\u5bb9\u6027", 
  "control": "\u63a7\u5236", 
  "Click on the AddFiles button to select the .ggb file and then click on the Upload button.": "\u9ede\u64ca\u300c\u65b0\u589e\u6a94\u6848\u300d\u6309\u9375\uff0c\u9078\u64c7 .ggb \u6a94\u4e26\u9ede\u64ca\u300c\u4e0a\u50b3\u300d\u3002", 
  "iDevice %s has no package": "iDevice %s \u6c92\u6709\u5957\u4ef6", 

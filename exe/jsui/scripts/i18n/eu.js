@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2023-05-19 10:01+0200\nPO-Revision-Date: 2022-12-07 19:46+0100\nLast-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\nLanguage: eu\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-02-02 15:40+0100\nPO-Revision-Date: 2022-12-07 19:46+0100\nLast-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\nLanguage: eu\nLanguage-Team: eXe <exelearning.euskaraz@gmail.com>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "Bira kopurua", 
  "DropDown Activity": "Jarduera zabalgarria", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Sortu kasu-istorioa. Kasuak, ona izateko, \ngatazka bat deskribatu beharko luke, edo pertsonaien bidez egoera azaldu. \nGainera, gatazka konpondu ahal izateko \nhainbat ekintza gauzatzeko aukera eman beharko luke.", 
@@ -2472,7 +2472,6 @@ translations = {
  "Select an mp3 file": "Aukeratu mp3  fitxategi bat", 
  "Timer Text": "Kronometroaren testua", 
  "You can only save the score once!": "Bakarrik behin gorde ditzakezu puntuak!", 
- "Improve browser compatibility with some formats": "Hobetu nabigatzailearen eta zenbait formatuen bateragarritasuna", 
  "control": "kontrolatu", 
  "Click on the AddFiles button to select the .ggb file and then click on the Upload button.": ".ggb fitxategia hautatzeko, klik egin 'Gehitu fitxategiak' botoian, eta ondoren, 'Kargatu' botoian.", 
  "iDevice %s has no package": "%s iDevice-ak ez du paketerik", 

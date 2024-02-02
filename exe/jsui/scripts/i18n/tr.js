@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2023-05-19 10:01+0200\nPO-Revision-Date: 2018-12-17 22:42+0000\nLast-Translator: Kaya Zeren <kayazeren@gmail.com>, 2022\nLanguage: tr\nLanguage-Team: Turkish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/tr\/)\nPlural-Forms: nplurals=2; plural=(n > 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2024-02-02 15:40+0100\nPO-Revision-Date: 2018-12-17 22:42+0000\nLast-Translator: Kaya Zeren <kayazeren@gmail.com>, 2022\nLanguage: tr\nLanguage-Team: Turkish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/tr\/)\nPlural-Forms: nplurals=2; plural=(n > 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "Raund say\u0131s\u0131", 
  "DropDown Activity": "A\u00e7\u0131l\u0131r Kutu Etkinli\u011fi", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Vaka hikayesi olu\u015fturun. \u0130yi bir vaka, bir tart\u0131\u015fmay\u0131 tan\u0131mlayan veya ilgili karakterleri ve durumu tan\u0131mlayarak sahneyi belirleyen vakad\u0131r. Ayr\u0131ca, durumun \u00e7\u00f6z\u00fcm\u00fcn\u00fc elde etmek i\u00e7in baz\u0131 eylemlerin yap\u0131lmas\u0131na da izin vermelidir.", 
@@ -2364,7 +2364,6 @@ translations = {
  "Select an mp3 file": "Bir mp3 dosyas\u0131s se\u00e7in", 
  "Timer Text": "Zamanlay\u0131c\u0131 Metni", 
  "You can only save the score once!": "Puan\u0131n\u0131z\u0131 sadece bir kez kaydedebilirsiniz!", 
- "Improve browser compatibility with some formats": "Baz\u0131 bi\u00e7imlerle taray\u0131c\u0131 uyumlulu\u011funu iyile\u015ftirin", 
  "control": "kontrol", 
  "Click on the AddFiles button to select the .ggb file and then click on the Upload button.": ".ggb dosyas\u0131n\u0131 se\u00e7mek i\u00e7in Dosya Ekle d\u00fc\u011fmesine t\u0131klay\u0131n ve ard\u0131ndan Y\u00fckle d\u00fc\u011fmesine t\u0131klay\u0131n.", 
  "iDevice %s has no package": "%s iDevice'\u0131 bir pakede sahip de\u011fil", 

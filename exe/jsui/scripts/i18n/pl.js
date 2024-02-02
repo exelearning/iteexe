@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2023-05-19 10:01+0200\nPO-Revision-Date: 2018-12-17 22:42+0000\nLast-Translator: Waldemar Stoczkowski, 2022\nLanguage: pl\nLanguage-Team: Polish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/pl\/)\nPlural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2024-02-02 15:40+0100\nPO-Revision-Date: 2018-12-17 22:42+0000\nLast-Translator: Waldemar Stoczkowski, 2022\nLanguage: pl\nLanguage-Team: Polish (https:\/\/www.transifex.com\/Magic\/teams\/44238\/pl\/)\nPlural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "Liczba rund", 
  "DropDown Activity": "Rozwijana Lista", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Opisz pewn\u0105 sytuacj\u0119. Dobra b\u0119dzie taka, kt\u00f3ra \nopisuje dyskusje lub osoby zaanga\u017cowane w \ndan\u0105 sytuacj\u0119. Powinna r\u00f3wnie\u017c pozwala\u0107 na pewne dzia\u0142ania  \npo to, \u017ceby otrzyma\u0107 analiz\u0119 sytuacji.", 
@@ -2364,7 +2364,6 @@ translations = {
  "Select an mp3 file": "Wybierz plik mp3", 
  "Timer Text": "Tekst zegara", 
  "You can only save the score once!": "Mo\u017cesz zapisa\u0107 wynik tylko raz!", 
- "Improve browser compatibility with some formats": "Popraw kompatybilno\u015b\u0107 przegl\u0105darki z niekt\u00f3rymi formatami", 
  "control": "kontrola", 
  "Click on the AddFiles button to select the .ggb file and then click on the Upload button.": "Kliknij przycisk Dodaj Plik, aby wybra\u0107 plik .ggb, a nast\u0119pnie kliknij przycisk Prze\u015blij.", 
  "iDevice %s has no package": "iObiekt %s nie posiada pakietu", 

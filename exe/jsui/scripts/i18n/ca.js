@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2023-05-19 10:01+0200\nPO-Revision-Date: 2023-01-07 13:45+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\nLanguage: ca\nLanguage-Team: Catalan <kde-i18n-ca@kde.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-02-02 15:40+0100\nPO-Revision-Date: 2023-01-07 13:45+0100\nLast-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>\nLanguage: ca\nLanguage-Team: Catalan <kde-i18n-ca@kde.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "Nombre de rondes", 
  "DropDown Activity": "Activitat desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creat el cas hist\u00f2ria. Un bon cas \u00e9s aquell \n que descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \n involucrats en la situaci\u00f3. Hauria de permetre les accions \n encaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -2472,7 +2472,6 @@ translations = {
  "Select an mp3 file": "Selecciona un fitxer mp3", 
  "Timer Text": "Text del cronometre", 
  "You can only save the score once!": "Sols podeu desar la puntuaci\u00f3 una vegada!", 
- "Improve browser compatibility with some formats": "Millora la compatibilitat del navegador amb algun formats", 
  "control": "controla ", 
  "Click on the AddFiles button to select the .ggb file and then click on the Upload button.": "Prem al bot\u00f3 \u00abAfegeix fitxers\u00bb per seleccionar el fitxer .ggb i llavors prem sobre el bot\u00f3 \u00abCarrega\u00bb.", 
  "iDevice %s has no package": "iDevice %s no t\u00e9 paquet", 
