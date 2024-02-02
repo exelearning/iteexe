@@ -442,7 +442,40 @@ var $exeDevice = {
 	},
 	
 	// Add the scores of the first level and show the result in #ri_MaxScore
-	setMaxScore : function(){
+	setMaxScore : function(e){
+		if (e) {		
+			// Nothing but numbers, dot or comma
+			var v = e.value;
+				v = v.replace(/[^0-9 \,.]/, '');
+				v = v.replace(/ /, '');
+				
+			// Only comma or dot
+			if (v.indexOf(",")!=-1&&v.indexOf(".")!=-1) v = v.replace(",","");
+				
+			function countSeparators(s1, letter) {
+				var m = s1.match( new RegExp(letter,'g') );
+				if (m) return m.length;
+				return 0;
+			}			
+			var dots = countSeparators(v,'\\.');				
+			// Only one dot
+			if(dots>1){
+				for (var z=0;z<dots-1;z++) {
+					var pos = v.lastIndexOf(".");
+					v = v.substring(0, pos);
+				}
+			}
+			// Only one comma
+			dots = countSeparators(v,'\\,');				
+			if(dots>1){
+				for (var z=0;z<dots-1;z++) {
+					var pos = v.lastIndexOf(",");
+					v = v.substring(0, pos);
+				}
+			}
+
+			e.value = v;
+		}
 		var trs = $("#ri_TableEditor tbody tr");
 		var nums = [];
 		trs.each(function(){
@@ -906,9 +939,9 @@ var $exeDevice = {
 		
 		// Set the maximum score
 		$(".ri_Weight").keyup(function(){
-			$exeDevice.setMaxScore();	
+			$exeDevice.setMaxScore(this);	
 		}).blur(function(){
-			$exeDevice.setMaxScore();	
+			$exeDevice.setMaxScore(this);	
 		});
 		$exeDevice.setMaxScore();
 		
