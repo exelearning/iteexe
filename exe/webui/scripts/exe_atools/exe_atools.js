@@ -1,8 +1,21 @@
 $exe.atools = {
 	options : {
 		draggable : true,
-		modeToggler : false,
-		translator : false
+		modeToggler : $exe.options.atools.modeToggler,
+		translator : $exe.options.atools.translator
+	},
+	i18n : {
+		read : $exe_i18n["read"],
+		translate : $exe_i18n["translate"],
+		drag_and_drop : $exe_i18n["drag_and_drop"],
+		mode_toggler : $exe_i18n["mode_toggler"],
+		accessibility_tools : $exe_i18n['accessibility_tools'],
+		default_font : $exe_i18n["default_font"],
+		increase_text_size : $exe_i18n["increase_text_size"],
+		decrease_text_size : $exe_i18n["decrease_text_size"],
+		reset : $exe_i18n["reset"],
+		close_toolbar : $exe_i18n["close_toolbar"],
+		stop_reading : $exe_i18n["stop_reading"]
 	},
 	storage : {
 		originalFontSize : "",
@@ -42,37 +55,47 @@ $exe.atools = {
 	init : function(){
 		if (!$("body").hasClass("exe-atools")) return;
 		if (typeof(localStorage)=='undefined') return;
+		
+		// Custom strings
+		var strs = $exe.options.atools.i18n;
+		for (i in strs) {
+			if (typeof($exe.atools.i18n[i])=='string') {
+				$exe.atools.i18n[i] = strs[i];
+			}
+		}
+		
 		$exe.loadScript("exe_atools.css","$exe.atools.start()");
 	},
 	start : function(){
+		var i18n = $exe.atools.i18n;
 		var opts = $exe.atools.options;
 		$exe.atools.storage.setOriginalFontSize();
 		var reader = "";
-		if (typeof(SpeechSynthesisUtterance)=="function") reader = '<button id="eXeAtoolsReadBtn">'+$exe_i18n["read"]+'</button>';
+		if (typeof(SpeechSynthesisUtterance)=="function") reader = '<button id="eXeAtoolsReadBtn">'+i18n["read"]+'</button>';
 		var translator = "";
-		if (opts.translator==true) translator = '<button id="eXeAtoolsTranslateBtn">'+$exe_i18n["translate"]+' (Google Translate)</button>';
+		if (opts.translator==true) translator = '<button id="eXeAtoolsTranslateBtn">'+i18n["translate"]+' (Google Translate)</button>';
 		var dragBtn = "";
 		if (opts.draggable==true) {
-			dragBtn = '<button id="eXeAtoolsSetDragHandler" data-drog>'+$exe_i18n["drag_and_drop"]+'</button>';		
+			dragBtn = '<button id="eXeAtoolsSetDragHandler" data-drog>'+i18n["drag_and_drop"]+'</button>';		
 		} else {
 			localStorage.setItem('exeAtoolsToolbarStyles','');
 		}
 		var modeBtn = "";
 		if (opts.modeToggler==true) {
-			modeBtn = '<button id="eXeAtoolsModeToggler">'+$exe_i18n["mode_toggler"]+'</button>';		
+			modeBtn = '<button id="eXeAtoolsModeToggler">'+i18n["mode_toggler"]+'</button>';		
 		}
 		var html = '\
 			<div id="eXeAtools" class="loading">\
-				<div id="eXeAtoolsBtnSet"><button id="eXeAtoolsBtn" title="'+$exe_i18n.accessibility_tools+'"><span class="sr-av">'+$exe_i18n.accessibility_tools+'</span></button></div>\
+				<div id="eXeAtoolsBtnSet"><button id="eXeAtoolsBtn" title="'+i18n['accessibility_tools']+'"><span class="sr-av">'+i18n['accessibility_tools']+'</span></button></div>\
 				<div id="eXeAtoolsSet">\
-                    <h2 class="sr-av">'+$exe_i18n.accessibility_tools+'</h2>\
-					'+dragBtn+'<label for="eXeAtoolsFont" class="sr-av">'+$exe_i18n["default_font"]+'</label>\
+                    <h2 class="sr-av">'+i18n['accessibility_tools']+'</h2>\
+					'+dragBtn+'<label for="eXeAtoolsFont" class="sr-av">'+i18n["default_font"]+'</label>\
 					<select id="eXeAtoolsFont">\
-						<option value="">'+$exe_i18n["default_font"]+'</option>\
+						<option value="">'+i18n["default_font"]+'</option>\
 						<option value="od">OpenDyslexic</option>\
 						<option value="ah">Atkinson Hyperlegible</option>\
 						<option value="mo">Montserrat</option>\
-					</select><button id="eXeAtoolsLgTextBtn">'+$exe_i18n["increase_text_size"]+'</button><button id="eXeAtoolsSmTextBtn">'+$exe_i18n["decrease_text_size"]+'</button><button id="eXeAtoolsResetBtn">'+$exe_i18n["reset"]+'</button>'+modeBtn+reader+translator+'<button id="eXeAtoolsCloseBtn">'+$exe_i18n["close_toolbar"]+'</button>\
+					</select><button id="eXeAtoolsLgTextBtn">'+i18n["increase_text_size"]+'</button><button id="eXeAtoolsSmTextBtn">'+i18n["decrease_text_size"]+'</button><button id="eXeAtoolsResetBtn">'+i18n["reset"]+'</button>'+modeBtn+reader+translator+'<button id="eXeAtoolsCloseBtn">'+i18n["close_toolbar"]+'</button>\
 				</div>\
 			</div>\
 		';
@@ -199,6 +222,7 @@ $exe.atools = {
 	reader : {
 		isReading : false,
 		read : function(){
+			var i18n = $exe.atools.i18n;
 			if (typeof($exe.atools.reader.utterance)=='undefined') $exe.atools.reader.utterance = new SpeechSynthesisUtterance();
 			let selectedText = window.getSelection().toString();
 			let text = '';
@@ -226,16 +250,16 @@ $exe.atools = {
 			$exe.atools.reader.utterance.text = text;
 			if ($exe.atools.reader.isReading==false) {
 				$exe.atools.reader.isReading = true;
-				$("#eXeAtoolsReadBtn").addClass("eXeAtoolsReading").attr("title",$exe_i18n["stop_reading"]);
+				$("#eXeAtoolsReadBtn").addClass("eXeAtoolsReading").attr("title",i18n["stop_reading"]);
 				speechSynthesis.speak($exe.atools.reader.utterance);
 			} else {
 				$exe.atools.reader.isReading = false;
-				$("#eXeAtoolsReadBtn").removeClass("eXeAtoolsReading").attr("title",$exe_i18n["read"]);
+				$("#eXeAtoolsReadBtn").removeClass("eXeAtoolsReading").attr("title",i18n["read"]);
 				speechSynthesis.cancel();
 			}
 			$exe.atools.reader.utterance.addEventListener('end', () => {
 				$exe.atools.reader.isReading = false;
-				$("#eXeAtoolsReadBtn").removeClass("eXeAtoolsReading").attr("title",$exe_i18n["read"]);
+				$("#eXeAtoolsReadBtn").removeClass("eXeAtoolsReading").attr("title",i18n["read"]);
 			});			
 		}
 	},

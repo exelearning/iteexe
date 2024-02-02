@@ -27,6 +27,15 @@ if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",s
 
 var $exe = {
 	
+	options : {
+		// Accessibility toolbar
+		atools : {
+			modeToggler : false,
+			translator : false,
+			i18n : {}
+		}
+	},
+	
 	// Called right after the <body> tag
 	setBodyClass: function(){
 		var c=" js";
