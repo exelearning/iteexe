@@ -303,7 +303,7 @@ Ext.define('eXe.view.ui.eXeToolbar', {
                                         {
                                             cls: 'exe-simplified',
                                             xtype: 'accesskey_menuitem',
-                                            text: _('Web Site') + " / " + _('Self-contained Folder'),
+                                            text: _('Web Site') + " (" + _('Self-contained Folder') + ")",
                                             accesskey: 't',
                                             itemId: 'file_export_website_b'
                                         },
