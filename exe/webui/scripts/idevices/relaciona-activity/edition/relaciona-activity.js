@@ -94,9 +94,9 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create relation games with images, sounds and enriched texts.") + ' <a href="https://youtu.be/ADrG4vz2W0Y" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create matching games with images, sounds and enriched texts.") + ' <a href="https://youtu.be/ADrG4vz2W0Y" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
-            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Link each card with its pair.')) + '\
+            ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_('Match each card with its pair.')) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
                     <legend><a href="#">' + _('Options') + '</a></legend>\
                     <div>\

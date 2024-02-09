@@ -63,11 +63,11 @@ var $exeDevice = {
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgClose": _("Close"),
         "msgAudio": _("Audio"),
-        "msgTimeOver": _("Time has finished. Please try again"),
+        "msgTimeOver": _("Time is up. Please try again"),
         "msgAllAttemps": _("You finished all the attempts! Please try again"),
-        "mgsAllPhrases": _("You ordered all the activities!"),
+        "mgsAllPhrases": _("You have ordered all the activities!"),
         "msgAttempts": _("Attempts"),
-        "msgNumbersAttemps": _("Number of pending activities"),
+        "msgNumbersAttemps": _("Number of activities to be completed"),
         "msgAuthor": _("Authorship"),
         "msgReboot": _("Restart"),
         "msgActivities": _("Activities"),
@@ -96,8 +96,8 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgFewAttempts = _("The number of attempts has to be bigger than or equal to the number of phrases in the game. Use 0 for an infinite number of attempts");
-        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each letter");
+        msgs.msgFewAttempts = _("The number of attempts has to be bigger or equal to the number of phrases in the game. Use 0 for an unlimited number of attempts");
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each card");
         msgs.msgPairsMax = _("Maximum number of phrases: 20");
         msgs.msgCardsColumn = _("With fixed headers, the number of cards must be bigger than the number of columns");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
@@ -198,7 +198,7 @@ var $exeDevice = {
                             <label for="ordenaEPraseI">' + _('Phrase') + ':</label><input type="text" id="ordenaEPraseI">\
                         </p>\
                         <div class="ODNE-ENavigationButtons" id="ordenaButtonsPrhaseDiv" >\
-                            <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Add activity') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add activity') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEAdd" class="ODNE-ENavigationButton" title="' + _('Add an activity') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add an activity') + '" class="ODNE-EButtonImage b-add" /></a>\
                             <a href="#" id="ordenaEFirst" class="ODNE-ENavigationButton"  title="' + _('First activity') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('First activity') + '" class="ODNE-EButtonImage b-first" /></a>\
                             <a href="#" id="ordenaEPrevious" class="ODNE-ENavigationButton" title="' + _('Previous activity') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Previous activity') + '" class="ODNE-EButtonImage b-prev" /></a>\
                             <span class="sr-av">' + _("Activity number:") + '</span><span class="ODNE-NumberPhrase" id="ordenaENumberPhrase">1</span>\
@@ -232,11 +232,11 @@ var $exeDevice = {
                         </p>\
                         <div class="ODNE-EContents ODNE-Hide" id="ordenaButtonCardDiv" >\
                             <div class="ODNE-ENavigationButtons">\
-                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Add letter') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add card') + '" class="ODNE-EButtonImage b-add" /></a>\
-                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Delete letter') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete card') + '" class="ODNE-EButtonImage b-delete" /></a>\
-                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copy letter') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy card') + '" class="ODNE-EButtonImage b-copy" /></a>\
-                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cut letter') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut card') + '" class="ODNE-EButtonImage b-cut" /></a>\
-                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Paste letter') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste card') + '" class="ODNE-EButtonImage b-paste" /></a>\
+                            <a href="#" id="ordenaEAddC" class="ODNE-ENavigationButton" title="' + _('Add a card') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add a card') + '" class="ODNE-EButtonImage b-add" /></a>\
+                            <a href="#" id="ordenaEDeleteC" class="ODNE-ENavigationButton" title="' + _('Delete card') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete card') + '" class="ODNE-EButtonImage b-delete" /></a>\
+                            <a href="#" id="ordenaECopyC" class="ODNE-ENavigationButton" title="' + _('Copy card') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy card') + '" class="ODNE-EButtonImage b-copy" /></a>\
+                            <a href="#" id="ordenaECutC" class="ODNE-ENavigationButton" title="' + _('Cut card') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut card') + '" class="ODNE-EButtonImage b-cut" /></a>\
+                            <a href="#" id="ordenaEPasteC" class="ODNE-ENavigationButton"  title="' + _('Paste card') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste card') + '" class="ODNE-EButtonImage b-paste" /></a>\
                         </div>\
                         </div>\
                         <div class="ODNE-ENumPhrasesDiv" id="ordenaENumPhrasesDiv">\

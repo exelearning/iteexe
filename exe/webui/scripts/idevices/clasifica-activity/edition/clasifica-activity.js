@@ -63,13 +63,13 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgYes": _("Yes"),
         "msgNo": _("No"),
-        "msgTimeOver": _("Time has finished. Please try again"),
+        "msgTimeOver": _("Time is up. Please try again"),
         "mgsGameStart": _("The game has started! Drag each card to your container"),
         "msgSelectCard": _("Choose another card"),
         "msgSelectCardOne": _("Choose a card"),
         "msgReboot": _("Restart"),
-        "msgTestPassed": _("Brilliant! Test passed!"),
-        "msgTestFailed": _("You didn\'t pas the test. Please try again"),
+        "msgTestPassed": _("Brilliant! You've passed yout test!"),
+        "msgTestFailed": _("You didn\'t pass the test. Please try again"),
         "msgRebootGame": _("Do you want to restart this game?"),
         "msgContinue": _("Continue"),
         "msgShowAnswers": _("Check results"),
@@ -77,8 +77,8 @@ var $exeDevice = {
         "msgAllCorrect": _("Brilliant! All perfect!"),
         "msgTooManyTries": _("Great! You have solved this activity in %s attempts. Surely you can do it faster!"),
         "msgQ5": _("You placed %s cards in the wrong place. Please try again!"),
-        "msgQ7": _("Great! You have correctly classified most cards, %s, but you can still improve"),
-        "msgQ9": _("Great! Only %s cards to place correctly. Maybe you could try again"),
+        "msgQ7": _("Great! You have correctly classified most cards, %s, but you can still do better"),
+        "msgQ9": _("Great! Only %s cards left to be placed correctly. Strive for perfection!"),
         "msgSaveGameAuto": _("Your score will be automatically saved at the end of the game."),
         "msgOnlySaveGameAuto": _("Your score will be automatically saved at the end of the game. You can only play once."),
         "msgEndGamerScore": _("You can only save your score after finishing the game."),
@@ -100,9 +100,9 @@ var $exeDevice = {
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
         msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each card");
         msgs.msgPairsMax = _("Maximum cards to classify: 25");
-        msgs.msgCompleteBoth = _("You must indicate an image and text for this card");
+        msgs.msgCompleteBoth = _("You must select an image and text for this card");
         msgs.msgCompleteText = _("You must indicate a text or sound for this card");
-        msgs.msgCompleteImage = _("You must indicate an image or sound for this card");
+        msgs.msgCompleteImage = _("You must link an image or sound for this card to this card");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },
@@ -110,7 +110,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to classify cards with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players have to classify cards with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Drag each card to its container.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\

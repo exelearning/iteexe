@@ -101,7 +101,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                                 inputValue: true,
                                 uncheckedValue: false,
                                 dirtyCls: 'property-form-dirty',
-                                tooltip: _('The accessibility toolbar allow visitors to manipulate some aspects of your site, like font and text size.')
+                                tooltip: _('The accessibility toolbar allows visitors to manipulate some aspects of your site, such as font and text size.')
                             },
                             flex: 0,
                             help: _('The accessibility toolbar allow visitors to manipulate some aspects of your site, like font and text size.')

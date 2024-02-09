@@ -63,9 +63,9 @@ var $exeDevice = {
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgClose": _("Close"),
         "msgAudio": _("Audio"),
-        "msgTimeOver": _("Time has finished"),
+        "msgTimeOver": _("Time is up"),
         "mgsAllPhrases": _("You completed all the activities!"),
-        "msgNumbersAttemps": _("Number of pending activities"),
+        "msgNumbersAttemps": _("Number of activities to be completed"),
         "msgActivities": _("Activities"),
         "msgCheck": _("Check"),
         "msgContinue": _("Continue"),
@@ -91,7 +91,7 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each letter");
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each card");
         msgs.msgPairsMax = _("Maximum number of activities: 30");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
@@ -162,7 +162,7 @@ var $exeDevice = {
                 <legend><a href="#">' + _('Activities') + '</a></legend>\
                     <div class="SLCME-EPanel" id="slcmEPanel">\
                         <div class="SLCME-ENavigationButtons" id="slcmButtonsPrhaseDiv" >\
-                            <a href="#" id="slcmEAdd" class="SLCME-ENavigationButton" title="' + _('Add activity') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add activity') + '" class="SLCME-EButtonImage b-add" /></a>\
+                            <a href="#" id="slcmEAdd" class="SLCME-ENavigationButton" title="' + _('Add an activity') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add an activity') + '" class="SLCME-EButtonImage b-add" /></a>\
                             <a href="#" id="slcmEFirst" class="SLCME-ENavigationButton"  title="' + _('First activity') + '"><img src="' + path + 'quextIEFirst.png"  alt="' + _('First activity') + '" class="SLCME-EButtonImage b-first" /></a>\
                             <a href="#" id="slcmEPrevious" class="SLCME-ENavigationButton" title="' + _('Previous activity') + '"><img src="' + path + 'quextIEPrev.png" alt="' + _('Previous activity') + '" class="SLCME-EButtonImage b-prev" /></a>\
                             <span class="sr-av">' + _("Activity number:") + '</span><span class="SLCME-NumberPhrase" id="slcmENumberPhrase">1</span>\
@@ -198,11 +198,11 @@ var $exeDevice = {
                         </p>\
                         <div class="SLCME-EContents" id="slcmButtonCardDiv" >\
                             <div class="SLCME-ENavigationButtons">\
-                            <a href="#" id="slcmEAddC" class="SLCME-ENavigationButton" title="' + _('Add letter') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add card') + '" class="SLCME-EButtonImage b-add" /></a>\
-                            <a href="#" id="slcmEDeleteC" class="SLCME-ENavigationButton" title="' + _('Delete letter') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete card') + '" class="SLCME-EButtonImage b-delete" /></a>\
-                            <a href="#" id="slcmECopyC" class="SLCME-ENavigationButton" title="' + _('Copy letter') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy card') + '" class="SLCME-EButtonImage b-copy" /></a>\
-                            <a href="#" id="slcmECutC" class="SLCME-ENavigationButton" title="' + _('Cut letter') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut card') + '" class="SLCME-EButtonImage b-cut" /></a>\
-                            <a href="#" id="slcmEPasteC" class="SLCME-ENavigationButton"  title="' + _('Paste letter') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste card') + '" class="SLCME-EButtonImage b-paste" /></a>\
+                            <a href="#" id="slcmEAddC" class="SLCME-ENavigationButton" title="' + _('Add a card') + '"><img src="' + path + 'quextIEAdd.png"  alt="' + _('Add a card') + '" class="SLCME-EButtonImage b-add" /></a>\
+                            <a href="#" id="slcmEDeleteC" class="SLCME-ENavigationButton" title="' + _('Delete card') + '"><img src="' + path + 'quextIEDelete.png" alt="' + _('Delete card') + '" class="SLCME-EButtonImage b-delete" /></a>\
+                            <a href="#" id="slcmECopyC" class="SLCME-ENavigationButton" title="' + _('Copy card') + '"><img src="' + path + 'quextIECopy.png" + alt="' + _('Copy card') + '" class="SLCME-EButtonImage b-copy" /></a>\
+                            <a href="#" id="slcmECutC" class="SLCME-ENavigationButton" title="' + _('Cut card') + '"><img src="' + path + 'quextIECut.png" + alt="' + _('Cut card') + '" class="SLCME-EButtonImage b-cut" /></a>\
+                            <a href="#" id="slcmEPasteC" class="SLCME-ENavigationButton"  title="' + _('Paste card') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste card') + '" class="SLCME-EButtonImage b-paste" /></a>\
                         </div>\
                         </div>\
                         <div class="SLCME-ENumPhrasesDiv" id="slcmENumPhrasesDiv">\

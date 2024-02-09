@@ -63,7 +63,7 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgAuthor": _("Authorship"),
         "msgReboot": _("Restart"),
-        "msgTimeOver": _("Time has finished. Please try again"),
+        "msgTimeOver": _("Time is up. Please try again"),
         "msgAllAttemps": _("You finished all the attempts! Please try again"),
         "mgsAllCards": _("You found all the pairs!"),
         "mgsAllTrios": _("You found all the trios!"),
@@ -79,8 +79,8 @@ var $exeDevice = {
         "msgCompletedPair": _("You completed a pair. Keep going!"),
         "msgCompletedTrio": _("You completed a trio. Keep going!"),
         "msgCompletedQuartet": _("You completed a quartet. Keep going!"),
-        "msgSelectCard": _("Choose another letter"),
-        "msgSelectCardOne": _("Choose a letter"),
+        "msgSelectCard": _("Choose another card"),
+        "msgSelectCardOne": _("Choose a card"),
         "msgRookie": _("Initial"),
         "msgExpert": _("Medium"),
         "msgMaster": _("Advanced"),
@@ -104,8 +104,8 @@ var $exeDevice = {
         msgs.msgTimeFormat = _("Please check the time format: hh:mm:ss");
         msgs.msgProvideFB = _('Message to display when passing the game');
         msgs.msgNoSuportBrowser = _("Your browser is not compatible with this tool.");
-        msgs.msgFewAttempts = _("The number of attempts has to be bigger than or equal to the number of couples in the game. Indicates 0 for an infinite number of attempts");
-        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each letter");
+        msgs.msgFewAttempts = _("The number of attempts has to be bigger or equal to the number of pairs in the game. Please select 0 for infinite an unlimited number of attempts");
+        msgs.msgCompleteData = _("You must indicate an image, a text or/and an audio for each card");
         msgs.msgPairsMax = _("Maximum number of pairs: 20");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 

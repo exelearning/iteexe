@@ -19,7 +19,7 @@ var $exeDevice = {
     msgComplit: _("Completed"),
     msgDone: _("Done"),
     msgInProgress: _("In progress"),
-    msgUnrealized: _("Not achieved"),
+    msgUnrealized: _("Not completed"),
     msgtaskNumber: _("Number of tasks"),
     msgName: _("Name"),
     msgDate: _("Date"),
@@ -35,14 +35,14 @@ var $exeDevice = {
   },
   setMessagesInfo: function () {
     var msgs = this.msgs;
-    msgs.msgEProvideID = _("You have to provide the identifier of this progress report");
+    msgs.msgEProvideID = _("Please provide the ID of this report");
   },
   createForm: function () {
     var html =
       '<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("You can introduce a comparison list to offer a structured and easy way to understand the activities proposed throughout the educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the activities you complete.") +  ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("You can use a checklit as an structured and easy way to understand the suggested activities in this educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the completed activities.") +  ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' +  _("General settings") + '">\
-            ' +   $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete the checklist marking the boxes when finishing the activities.")) + '\
+            ' +   $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete the checklist ticking the boxes for all finished activities.")) + '\
               <fieldset class="exe-fieldset">\
               <legend><a href="#">' + _("Options") + '</a></legend>\
                   <div>\
@@ -101,7 +101,7 @@ var $exeDevice = {
                         </table>\
                       </p>\
                       <p>\
-                        <div><label for="ctjCommunity"><input type="checkbox" id="ctjCommunity" /> ' + _("Logo (left)") +  '. </label> </div>\
+                        <div><label for="ctjCommunity"><input type="checkbox" id="ctjCommunity" /> ' + _("(Left) Logo") +  '. </label> </div>\
                         <div id="ctjcommunitylogo" class="CTJ-Logo">\
                           <div class="CTJ-Images">\
                             <img class="CTJ-EMedia" src="' +   $exeDevice.iDevicePath + 'codejocomunidad.png" id="ctjEImageCommunity" alt="' + _("Image") + '" />\
@@ -115,7 +115,7 @@ var $exeDevice = {
                         </div>\
                       </p>\
                       <p>\
-                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("Logo (right)") + '. </label> </div>\
+                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("(Right) Logo ") + '. </label> </div>\
                         <div id="ctjlogologo"  class="CTJ-Logo">\
                           <div class="CTJ-Images">\
                             <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejologo.png" id="ctjEImageLogo" alt="' +  _("Image") +  '" />\
@@ -348,7 +348,7 @@ var $exeDevice = {
         }).length;
 
       if (filledLevels === 0) {
-        $exeDevice.showMessage(_("You can\'t leave an empty item"));
+        $exeDevice.showMessage(_("No empty items can be left"));
         return false;
       }
       if (filledLevels > 0) {
@@ -402,7 +402,7 @@ var $exeDevice = {
       
     });
     if(scoreError == 1){
-      $exeDevice.showMessage(_("You must indicate the number of points of each evaluable item"));
+      $exeDevice.showMessage(_("You must indicate the number of points for each item to be assesed"));
       return false;
     } else if(scoreError == 2){
       $exeDevice.showMessage(_("You cannot indicate a score for this type of boxes"));

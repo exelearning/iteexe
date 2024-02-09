@@ -164,7 +164,7 @@ var $exeDevice = {
         msgs.msgEOneSlide = _("There must be at least one slide in the presentation.");
         msgs.msgWriteLink = _("Please type or paste a valid URL.");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');;
-        msgs.msgSolutionOrder=_("Indicate, separating them by commas, the correct order in which the points must be clicked")
+        msgs.msgSolutionOrder=_("Indicate, using commas, the correct order in which points must be clicked")
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
@@ -222,7 +222,7 @@ var $exeDevice = {
                             <label for="mapaEAutoShow"><input type="checkbox" id="mapaEAutoShow">' + _("Show when the mouse is over the icon or active area") + '. </label>\
                         </p>\
                         <p id="mapaEAutoAudioDiv" class="MQE-EHide">\
-                            <label for="mapaEAutoAudio"><input type="checkbox" id="mapaEAutoAudio" checked>' + _("Play the sound when hovering the mouse over the points.") + '. </label>\
+                            <label for="mapaEAutoAudio"><input type="checkbox" id="mapaEAutoAudio" checked>' + _("Play the sound when scrolling the mouse over the points.") + '. </label>\
                         </p>\
                         <p>\
                             <strong class="GameModeLabel"><a href="#mapaEEvaluationHelp" id="mapaEEvaluationHelpLnk" class="GameModeHelpLink" title="' + _("Help") + '"><img src="' + path + 'quextIEHelp.gif"  width="16" height="16" alt="' + _("Help") + '"/></a></strong>\
