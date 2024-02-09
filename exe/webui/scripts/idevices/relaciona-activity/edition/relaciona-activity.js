@@ -57,7 +57,7 @@ var $exeDevice = {
         "msgNumQuestions": _("Number of cards"),
         "msgTryAgain": _("You need at least %s&percnt; of correct answers to get the information. Please try again."),
         "msgEndGameM": _("You finished the game. Your score is %s."),
-        "msgUncompletedActivity": _("Not done activity"),
+        "msgUncompletedActivity": _("Incomplete activity"),
         "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
         "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Relate')
@@ -137,7 +137,7 @@ var $exeDevice = {
 							<input type="text" id="rclEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="rclEEvaluationHelp" class="RLC-TypeGameHelp">\
-                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
+                            <p>' +_("You must indicate the ID. It can be a word, a phrase or a number of more than four characters. You will use this ID to mark the activities covered by this progress report. It must be the same in all iDevices of a report and different in each report.") + '</p>\
                         </div>\
                     </div>\
                 </fieldset>\

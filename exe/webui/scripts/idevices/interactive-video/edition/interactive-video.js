@@ -62,7 +62,7 @@ var $exeDevice = {
 		"msgOnlySaveScore": c_("You can only save the score once!"),
 		"msgOnlySave": c_("You can only save once"),
 		"msgOnlySaveAuto": c_("Your score will be saved after each question. You can only play once."),
-		"msgUncompletedActivity": _("Not done activity"),
+		"msgUncompletedActivity": _("Incomplete activity"),
 		"msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
 		"msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
 	},

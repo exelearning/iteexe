@@ -107,7 +107,7 @@ var $exeDevice = {
 							<input type="text" id="geogebraActivityEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="geogebraActivityEvaluationHelp" class="geogebractivityTypeGameHelp">\
-                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
+                            <p>' +_("You must indicate the ID. It can be a word, a phrase or a number of more than four characters. You will use this ID to mark the activities covered by this progress report. It must be the same in all iDevices of a report and different in each report.") + '</p>\
                         </div>\
 					</div>\
 				</fieldset>\
@@ -546,7 +546,7 @@ var $exeDevice = {
 			var show = $('#geogebraActivityShowAuthor').prop('checked') ? "1" : "0";
 			divContent += '<div class="auto-geogebra-author js-hidden">' + escape(author) + ',' + escape(murl) + ',' + escape(title) + ',' + show + ',' + escape(ath) + '</div>';
 		}
-		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Not done activity")) + ',' + escape(_("Activity: Passed. Score: %S")) + ',' + escape(_("Activity: Not passed. Score: %S")) + '</div>';
+		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Incomplete activity")) + ',' + escape(_("Activity: Passed. Score: %S")) + ',' + escape(_("Activity: Not passed. Score: %S")) + '</div>';
 		var textAfter = tinymce.editors[1].getContent();
 		if (textAfter != "") {
 			divContent += '<div class="auto-geogebra-extra-content">' + textAfter + '</div>';

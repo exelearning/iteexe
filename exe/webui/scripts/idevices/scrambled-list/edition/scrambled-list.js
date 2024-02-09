@@ -50,7 +50,7 @@ var $exeDevice = {
 					<input type="text" id="sortableListEvaluationID" disabled style="width:200px"/> </label>\
                 </p>\
 				<div id="sortableListEvaluationHelp" style="display:none">\
-                    <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
+                    <p>' +_("You must indicate the ID. It can be a word, a phrase or a number of more than four characters. You will use this ID to mark the activities covered by this progress report. It must be the same in all iDevices of a report and different in each report.") + '</p>\
                 </div>\
                 ' + $exeAuthoring.iDevice.common.getTextFieldset("after") + '\
 			</div>\
@@ -222,7 +222,7 @@ var $exeDevice = {
 		var evaluation = $('#sortableListEvaluation').is(':checked'),
 			evaluationID = evaluation ? $('#sortableListEvaluationID').val() : '',
 			ideviceID = $exeDevice.ideviceID ? $exeDevice.ideviceID : $exeDevice.generarID(),
-			msgUncompletedActivity = c_("Not done activity"),
+			msgUncompletedActivity = c_("Incomplete activity"),
 			msgUnsuccessfulActivity = c_("Activity: Not passed. Score: %S"),
 			msgSuccessfulActivity = c_("Activity: Passed. Score: %S"),
 			msgTypeIDevice = c_("Scrambled List");

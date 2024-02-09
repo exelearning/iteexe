@@ -63,7 +63,7 @@ var $exeDevice = {
         "msgEndTime": _("Game time is over. Your score is %s."),
         "msgEnd": _("Finish"),
         "msgEndGameM": _("You finished the game. Your score is %s."),
-        "msgUncompletedActivity": _("Not done activity"),
+        "msgUncompletedActivity": _("Incomplete activity"),
         "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
         "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgTypeGame": _('Word Search')
@@ -176,7 +176,7 @@ var $exeDevice = {
 							<input type="text" id="sopaEEvaluationID" disabled/> </label>\
                         </p>\
                         <div id="sopaEEvaluationHelp" class="SPE-TypeGameHelp">\
-                            <p>' +_("You must indicate the identifier. It can be a word, a phrase or a number of more than four characters, which you will use to mark the activities that will be taken into account in this progress report. It must be the same in all iDevices of a report and different in those of each report.") + '</p>\
+                            <p>' +_("You must indicate the ID. It can be a word, a phrase or a number of more than four characters. You will use this ID to mark the activities covered by this progress report. It must be the same in all iDevices of a report and different in each report.") + '</p>\
                         </div>\
                     </div>\
                     </fieldset>\
