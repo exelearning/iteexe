@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-09 12:39+0100\n"
+"POT-Creation-Date: 2024-02-09 13:02+0100\n"
 "PO-Revision-Date: 2023-01-07 13:45+0100\n"
 "Last-Translator: Carles Ferrando Garcia <carles.ferrando@gnuescultura.eu>"
 "\n"
@@ -12529,7 +12529,7 @@ msgstr "Cal que indiqueu un subtítol per a aquest punt."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
 #, fuzzy
-msgid "You must link an image or sound for this card to this card"
+msgid "You must link an image or sound to this card"
 msgstr "Cal que indiqueu un subtítol per a aquest punt."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114

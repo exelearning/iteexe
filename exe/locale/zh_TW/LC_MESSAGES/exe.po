@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: translations@exelearning.net\n"
-"POT-Creation-Date: 2024-02-09 12:39+0100\n"
+"POT-Creation-Date: 2024-02-09 13:02+0100\n"
 "PO-Revision-Date: 2022-11-25 17:28+0100\n"
 "Last-Translator: Franklin Weng <franklin@goodhorse.idv.tw>\n"
 "Language: zh_Hant_TW\n"
@@ -11868,7 +11868,7 @@ msgstr "您必須指出此點的標題。"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
 #, fuzzy
-msgid "You must link an image or sound for this card to this card"
+msgid "You must link an image or sound to this card"
 msgstr "您必須指出此點的標題。"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114

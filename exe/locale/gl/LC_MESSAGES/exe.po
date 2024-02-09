@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-09 12:39+0100\n"
+"POT-Creation-Date: 2024-02-09 13:02+0100\n"
 "PO-Revision-Date: 2023-07-21 11:50+0200\n"
 "Last-Translator: Xunta de Galicia <sipe@edu.xunta.gal>\n"
 "Language: gl\n"
@@ -12551,7 +12551,7 @@ msgstr "Indique un título para este punto."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
 #, fuzzy
-msgid "You must link an image or sound for this card to this card"
+msgid "You must link an image or sound to this card"
 msgstr "Indique un título para este punto."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114

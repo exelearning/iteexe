@@ -102,7 +102,7 @@ var $exeDevice = {
         msgs.msgPairsMax = _("Maximum cards to classify: 25");
         msgs.msgCompleteBoth = _("You must select an image and text for this card");
         msgs.msgCompleteText = _("You must indicate a text or sound for this card");
-        msgs.msgCompleteImage = _("You must link an image or sound for this card to this card");
+        msgs.msgCompleteImage = _("You must link an image or sound to this card");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
 
     },

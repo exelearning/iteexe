@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-02-09 12:39+0100\n"
+"POT-Creation-Date: 2024-02-09 13:02+0100\n"
 "PO-Revision-Date: 2018-12-17 22:42+0000\n"
 "Last-Translator: Kaya Zeren <kayazeren@gmail.com>, 2022\n"
 "Language: tr\n"
@@ -12415,7 +12415,7 @@ msgstr "Bu nokta için bir başlık belirtmeniz gerekir."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
 #, fuzzy
-msgid "You must link an image or sound for this card to this card"
+msgid "You must link an image or sound to this card"
 msgstr "Bu nokta için bir başlık belirtmeniz gerekir."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114

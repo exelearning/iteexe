@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-09 12:39+0100\n"
+"POT-Creation-Date: 2024-02-09 13:02+0100\n"
 "PO-Revision-Date: 2021-04-23 17:23+0200\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh_Hans_CN\n"
@@ -11855,7 +11855,7 @@ msgid "You must indicate a text or sound for this card"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
-msgid "You must link an image or sound for this card to this card"
+msgid "You must link an image or sound to this card"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114
@@ -18970,5 +18970,8 @@ msgstr "您的idevices模块 / generic.data文件或您正在加载的课件包�
 #~ msgstr ""
 
 #~ msgid "(Right) Logo "
+#~ msgstr ""
+
+#~ msgid "You must link an image or sound for this card to this card"
 #~ msgstr ""
 
