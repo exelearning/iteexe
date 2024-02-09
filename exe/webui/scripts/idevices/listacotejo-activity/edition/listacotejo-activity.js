@@ -115,7 +115,7 @@ var $exeDevice = {
                         </div>\
                       </p>\
                       <p>\
-                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("(Right) Logo ") + '. </label> </div>\
+                        <div><label for="ctjLogo"><input type="checkbox" id="ctjLogo" /> ' +  _("(Right) Logo") + '. </label> </div>\
                         <div id="ctjlogologo"  class="CTJ-Logo">\
                           <div class="CTJ-Images">\
                             <img class="CTJ-EMedia" src="' +  $exeDevice.iDevicePath + 'cotejologo.png" id="ctjEImageLogo" alt="' +  _("Image") +  '" />\

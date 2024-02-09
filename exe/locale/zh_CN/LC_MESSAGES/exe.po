@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-02 15:40+0100\n"
+"POT-Creation-Date: 2024-02-09 12:39+0100\n"
 "PO-Revision-Date: 2021-04-23 17:23+0200\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh_Hans_CN\n"
@@ -4936,6 +4936,11 @@ msgid "Add an accessibility toolbar (HTML exports only)"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
+msgid ""
+"The accessibility toolbar allows visitors to manipulate some aspects of "
+"your site, such as font and text size."
+msgstr ""
+
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
 msgid ""
 "The accessibility toolbar allow visitors to manipulate some aspects of "
@@ -9697,8 +9702,8 @@ msgstr "转到工具 - 预览以查看此作品"
 
 #: exe/webui/scripts/authoring.js:1936
 msgid ""
-"Could not upload the file. Please remove any special characters from the "
-"file name or path."
+"The file could not be uploaded. Please remove any special characters from"
+" the file name or route."
 msgstr ""
 
 #: exe/webui/scripts/authoring.js:1958
@@ -10635,8 +10640,8 @@ msgstr "音频"
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:92
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:100
 #, fuzzy
-msgid "Not done activity"
-msgstr "下拉菜单活动"
+msgid "Incomplete activity"
+msgstr "选择活动"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:99
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:86
@@ -11258,10 +11263,10 @@ msgstr ""
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:814
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:694
 msgid ""
-"You must indicate the identifier. It can be a word, a phrase or a number "
-"of more than four characters, which you will use to mark the activities "
-"that will be taken into account in this progress report. It must be the "
-"same in all iDevices of a report and different in those of each report."
+"You must indicate the ID. It can be a word, a phrase or a number of more "
+"than four characters. You will use this ID to mark the activities covered"
+" by this progress report. It must be the same in all iDevices of a report"
+" and different in each report."
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:209
@@ -11736,28 +11741,31 @@ msgstr "组"
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:66
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:66
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:66
-msgid "Time has finished. Please try again"
-msgstr ""
+#, fuzzy
+msgid "Time is up. Please try again"
+msgstr "再来一次！"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:67
 msgid "The game has started! Drag each card to your container"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:68
+#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:82
 msgid "Choose another card"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:69
+#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:83
 #, fuzzy
 msgid "Choose a card"
 msgstr "选择图片"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:71
-msgid "Brilliant! Test passed!"
+msgid "Brilliant! You've passed yout test!"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:72
-msgid "You didn't pas the test. Please try again"
+msgid "You didn't pass the test. Please try again"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:73
@@ -11802,13 +11810,13 @@ msgstr ""
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:80
 #, python-format
 msgid ""
-"Great! You have correctly classified most cards, %s, but you can still "
-"improve"
+"Great! You have correctly classified most cards, %s, but you can still do"
+" better"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:81
 #, python-format
-msgid "Great! Only %s cards to place correctly. Maybe you could try again"
+msgid "Great! Only %s cards left to be placed correctly. Strive for perfection!"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:82
@@ -11828,6 +11836,9 @@ msgid "You can only save your score after finishing the game."
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:102
+#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:109
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:101
+#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:95
 msgid "You must indicate an image, a text or/and an audio for each card"
 msgstr ""
 
@@ -11836,7 +11847,7 @@ msgid "Maximum cards to classify: 25"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:104
-msgid "You must indicate an image and text for this card"
+msgid "You must select an image and text for this card"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:105
@@ -11844,13 +11855,13 @@ msgid "You must indicate a text or sound for this card"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
-msgid "You must indicate an image or sound for this card"
+msgid "You must link an image or sound for this card to this card"
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:114
 msgid ""
-"Create interactive activities in which players will have to classify "
-"cards with images, texts and/or sounds."
+"Create interactive activities in which players have to classify cards "
+"with images, texts and/or sounds."
 msgstr ""
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:116
@@ -12217,16 +12228,6 @@ msgstr ""
 msgid "You completed a quartet. Keep going!"
 msgstr ""
 
-#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:82
-#, fuzzy
-msgid "Choose another letter"
-msgstr "选定的字母"
-
-#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:83
-#, fuzzy
-msgid "Choose a letter"
-msgstr "选择类型："
-
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:84
 #, fuzzy
 msgid "Initial"
@@ -12249,14 +12250,8 @@ msgstr "选择文档"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:108
 msgid ""
-"The number of attempts has to be bigger than or equal to the number of "
-"couples in the game. Indicates 0 for an infinite number of attempts"
-msgstr ""
-
-#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:109
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:101
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:95
-msgid "You must indicate an image, a text or/and an audio for each letter"
+"The number of attempts has to be bigger or equal to the number of pairs "
+"in the game. Please select 0 for infinite an unlimited number of attempts"
 msgstr ""
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:110
@@ -12708,20 +12703,20 @@ msgstr "生命数"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:21
 msgid ""
-"You didn't finish any of the evaluable activities proposed in this "
-"educational resource."
+"You have not completed any of the suggested activities to be assesed in "
+"this educational resource."
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:22
 #, fuzzy, python-format
-msgid "Number of pending activities: %s"
+msgid "Number of activities to be completed: %s"
 msgstr "问题总数："
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:23
 msgid ""
-"The following table collects the results you have obtained in the "
-"evaluable activities proposed in this educational resource that you have "
-"already completed."
+"The following table registers the results you have obtained in the "
+"completed, suggested and assessed activities in this educational "
+"resource."
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:24
@@ -12750,13 +12745,13 @@ msgstr "保存分数"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:30
 #, fuzzy, python-format
-msgid "Average note completed: %s"
+msgid "Average score of completed activities: %s"
 msgstr "竞争"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:31
 msgid ""
-"This will eliminate the stored scores of all activities. Do you want to "
-"continue?"
+"This will eliminate the stored scores of all activities. Are you sure you"
+" want to continue?"
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:32
@@ -12776,8 +12771,9 @@ msgstr "添加另一项活动"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:48
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:38
-msgid "You have to provide the identifier of this progress report"
-msgstr ""
+#, fuzzy
+msgid "Please provide the ID of this report"
+msgstr "请提供一个字词或词组"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:60
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:13
@@ -12846,21 +12842,21 @@ msgstr "互动视频"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:86
 msgid ""
-"It shows the results obtained by students in the activities associated "
-"with it and its average note."
+"It shows the result of the pupils in the activities linked to their "
+"average score."
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:90
 msgid ""
-"The identifier can be a number or word of more than four characters. You "
-"must use the same identifier in all the activities you want to evaluate "
-"in this progress report."
+"The ID can be a number or word of more than four characters. You must use"
+" the same ID in all the activities you will assess in this progress "
+"report."
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:96
 #, fuzzy
-msgid "Number of evaluable activities"
-msgstr "生命数"
+msgid "Number of activities to be assesed"
+msgstr "问题总数："
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:100
 #, fuzzy
@@ -12868,9 +12864,8 @@ msgid "Show date and time"
 msgstr "显示/使用计时器？"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:103
-#, fuzzy
-msgid "Show iDevice type"
-msgstr "显示活动"
+msgid "Show type of iDevice"
+msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:106
 msgid "Link report activities"
@@ -12882,7 +12877,7 @@ msgid "User data"
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:111
-msgid "Report compatible iDevices:"
+msgid "iDevices supported by the report:"
 msgstr ""
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
@@ -13336,8 +13331,10 @@ msgid "In progress"
 msgstr "等待进程......"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:22
-msgid "Not achieved"
-msgstr ""
+#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:94
+#, fuzzy
+msgid "Not completed"
+msgstr "竞争"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:23
 #, fuzzy
@@ -13355,15 +13352,15 @@ msgstr "分数"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:43
 msgid ""
-"You can introduce a comparison list to offer a structured and easy way to"
-" understand the activities proposed throughout the educational resource. "
-"It will be a useful instrument for student self-assessment, allowing you "
-"to monitor the activities you complete."
+"You can use a checklit as an structured and easy way to understand the "
+"suggested activities in this educational resource. It will be a useful "
+"instrument for student self-assessment, allowing you to monitor the "
+"completed activities."
 msgstr ""
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:45
 #, fuzzy
-msgid "Complete the checklist marking the boxes when finishing the activities."
+msgid "Complete the checklist ticking the boxes for all finished activities."
 msgstr "你必须完成所有挑战问题才能完成本活动。"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:54
@@ -13417,8 +13414,9 @@ msgid "Add"
 msgstr "添加"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:104
-msgid "Logo (left)"
-msgstr ""
+#, fuzzy
+msgid "(Left) Logo"
+msgstr "项目标题"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:111
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:139
@@ -13428,8 +13426,8 @@ msgstr "沟通"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:118
 #, fuzzy
-msgid "Logo (right)"
-msgstr "右对齐"
+msgid "(Right) Logo"
+msgstr "项目标题"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:125
 #, fuzzy
@@ -13458,7 +13456,7 @@ msgid "Indicate a title for the checklist"
 msgstr "输入标题为图象画廊。"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:351
-msgid "You can't leave an empty item"
+msgid "No empty items can be left"
 msgstr ""
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:369
@@ -13466,7 +13464,7 @@ msgid "You can only use text at this item's level"
 msgstr ""
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:405
-msgid "You must indicate the number of points of each evaluable item"
+msgid "You must indicate the number of points for each item to be assesed"
 msgstr ""
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:408
@@ -13660,9 +13658,7 @@ msgid "There must be at least one slide in the presentation."
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:167
-msgid ""
-"Indicate, separating them by commas, the correct order in which the "
-"points must be clicked"
+msgid "Indicate, using commas, the correct order in which points must be clicked"
 msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
@@ -13732,7 +13728,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:225
 #, fuzzy
-msgid "Play the sound when hovering the mouse over the points."
+msgid "Play the sound when scrolling the mouse over the points."
 msgstr "将鼠标移出链接时自动关闭工具提示"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:243
@@ -13962,11 +13958,6 @@ msgstr "正确答案"
 #, fuzzy
 msgid "Answered"
 msgstr "回答"
-
-#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:94
-#, fuzzy
-msgid "Not completed"
-msgstr "竞争"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:96
 msgid "You finished all the operations."
@@ -14206,14 +14197,13 @@ msgstr "访问代码不正确"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
 #, fuzzy
-msgid "You ordered all the activities!"
+msgid "You have ordered all the activities!"
 msgstr "请完成活动"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:70
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:68
-#, fuzzy
-msgid "Number of pending activities"
-msgstr "问题总数："
+msgid "Number of activities to be completed"
+msgstr ""
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:73
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:196
@@ -14248,8 +14238,8 @@ msgstr "再来一次！"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:100
 msgid ""
-"The number of attempts has to be bigger than or equal to the number of "
-"phrases in the game. Use 0 for an infinite number of attempts"
+"The number of attempts has to be bigger or equal to the number of phrases"
+" in the game. Use 0 for an unlimited number of attempts"
 msgstr ""
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:102
@@ -14315,7 +14305,7 @@ msgstr "练习"
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:202
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:166
 #, fuzzy
-msgid "Add activity"
+msgid "Add an activity"
 msgstr "重复活动"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:203
@@ -14375,20 +14365,8 @@ msgstr "问题描述"
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:236
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:202
 #, fuzzy
-msgid "Add letter"
-msgstr "选定的字母"
-
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:236
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:202
-#, fuzzy
-msgid "Add card"
+msgid "Add a card"
 msgstr "添加单词"
-
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:237
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:203
-#, fuzzy
-msgid "Delete letter"
-msgstr "选定的字母"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:237
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:203
@@ -14399,31 +14377,13 @@ msgstr "刪除表格"
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:238
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:204
 #, fuzzy
-msgid "Copy letter"
-msgstr "竞争"
-
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:238
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:204
-#, fuzzy
 msgid "Copy card"
 msgstr "比较"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:239
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:205
-#, fuzzy
-msgid "Cut letter"
-msgstr "选定的字母"
-
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:239
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:205
 msgid "Cut card"
 msgstr ""
-
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:240
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:206
-#, fuzzy
-msgid "Paste letter"
-msgstr "选定的字母"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:240
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:206
@@ -14563,11 +14523,11 @@ msgid "Relate"
 msgstr "创建"
 
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:98
-msgid "Create relation games with images, sounds and enriched texts."
+msgid "Create matching games with images, sounds and enriched texts."
 msgstr ""
 
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:100
-msgid "Link each card with its pair."
+msgid "Match each card with its pair."
 msgstr ""
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:17
@@ -14978,7 +14938,7 @@ msgid "Select media files"
 msgstr "选择文档"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:66
-msgid "Time has finished"
+msgid "Time is up"
 msgstr ""
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:67
@@ -18827,5 +18787,188 @@ msgstr "您的idevices模块 / generic.data文件或您正在加载的课件包�
 #~ "number of couples in the game. "
 #~ "Indicates 0 for an infinite number "
 #~ "of attempts"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Could not upload the file. Please "
+#~ "remove any special characters from the"
+#~ " file name or path."
+#~ msgstr ""
+
+#~ msgid "Not done activity"
+#~ msgstr "下拉菜单活动"
+
+#~ msgid ""
+#~ "You must indicate the identifier. It "
+#~ "can be a word, a phrase or a"
+#~ " number of more than four characters,"
+#~ " which you will use to mark the"
+#~ " activities that will be taken into"
+#~ " account in this progress report. It"
+#~ " must be the same in all "
+#~ "iDevices of a report and different "
+#~ "in those of each report."
+#~ msgstr ""
+
+#~ msgid "Time has finished. Please try again"
+#~ msgstr ""
+
+#~ msgid "Brilliant! Test passed!"
+#~ msgstr ""
+
+#~ msgid "You didn't pas the test. Please try again"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Great! You have correctly classified "
+#~ "most cards, %s, but you can still"
+#~ " improve"
+#~ msgstr ""
+
+#~ msgid "Great! Only %s cards to place correctly. Maybe you could try again"
+#~ msgstr ""
+
+#~ msgid "You must indicate an image and text for this card"
+#~ msgstr ""
+
+#~ msgid "You must indicate an image or sound for this card"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Create interactive activities in which "
+#~ "players will have to classify cards "
+#~ "with images, texts and/or sounds."
+#~ msgstr ""
+
+#~ msgid "Choose another letter"
+#~ msgstr "选定的字母"
+
+#~ msgid "Choose a letter"
+#~ msgstr "选择类型："
+
+#~ msgid ""
+#~ "The number of attempts has to be"
+#~ " bigger than or equal to the "
+#~ "number of couples in the game. "
+#~ "Indicates 0 for an infinite number "
+#~ "of attempts"
+#~ msgstr ""
+
+#~ msgid "You must indicate an image, a text or/and an audio for each letter"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You didn't finish any of the "
+#~ "evaluable activities proposed in this "
+#~ "educational resource."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The following table collects the results"
+#~ " you have obtained in the evaluable"
+#~ " activities proposed in this educational"
+#~ " resource that you have already "
+#~ "completed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "This will eliminate the stored scores"
+#~ " of all activities. Do you want "
+#~ "to continue?"
+#~ msgstr ""
+
+#~ msgid "You have to provide the identifier of this progress report"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "It shows the results obtained by "
+#~ "students in the activities associated "
+#~ "with it and its average note."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The identifier can be a number or"
+#~ " word of more than four characters."
+#~ " You must use the same identifier "
+#~ "in all the activities you want to"
+#~ " evaluate in this progress report."
+#~ msgstr ""
+
+#~ msgid "Number of evaluable activities"
+#~ msgstr "生命数"
+
+#~ msgid "Show iDevice type"
+#~ msgstr "显示活动"
+
+#~ msgid "Report compatible iDevices:"
+#~ msgstr ""
+
+#~ msgid "Not achieved"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "You can introduce a comparison list "
+#~ "to offer a structured and easy way"
+#~ " to understand the activities proposed "
+#~ "throughout the educational resource. It "
+#~ "will be a useful instrument for "
+#~ "student self-assessment, allowing you to"
+#~ " monitor the activities you complete."
+#~ msgstr ""
+
+#~ msgid "Logo (left)"
+#~ msgstr ""
+
+#~ msgid "Logo (right)"
+#~ msgstr "右对齐"
+
+#~ msgid "You can't leave an empty item"
+#~ msgstr ""
+
+#~ msgid "You must indicate the number of points of each evaluable item"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Indicate, separating them by commas, the"
+#~ " correct order in which the points"
+#~ " must be clicked"
+#~ msgstr ""
+
+#~ msgid "Number of pending activities"
+#~ msgstr "问题总数："
+
+#~ msgid ""
+#~ "The number of attempts has to be"
+#~ " bigger than or equal to the "
+#~ "number of phrases in the game. Use"
+#~ " 0 for an infinite number of "
+#~ "attempts"
+#~ msgstr ""
+
+#~ msgid "Add letter"
+#~ msgstr "选定的字母"
+
+#~ msgid "Delete letter"
+#~ msgstr "选定的字母"
+
+#~ msgid "Copy letter"
+#~ msgstr "竞争"
+
+#~ msgid "Cut letter"
+#~ msgstr "选定的字母"
+
+#~ msgid "Paste letter"
+#~ msgstr "选定的字母"
+
+#~ msgid "Create relation games with images, sounds and enriched texts."
+#~ msgstr ""
+
+#~ msgid "Link each card with its pair."
+#~ msgstr ""
+
+#~ msgid "Time has finished"
+#~ msgstr ""
+
+#~ msgid "(Right) Logo "
 #~ msgstr ""
 
