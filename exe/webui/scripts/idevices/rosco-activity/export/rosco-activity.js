@@ -655,9 +655,12 @@ var $eXeRosco = {
 		var mTime = mOptions.durationGame,
 			sTime = $eXeRosco.getTimeToString(mTime),
 			altTurn = mOptions.numberTurns === 1 ? mOptions.msgOneRound : mOptions.msgTowRounds;
-		if (mOptions.numberTurns === 1) {
+		if (mOptions.numberTurns === 0) {
+            $('#roscoNumberRounds-' + instance).hide();
+            $('#roscoNumberRoundsSpan-' + instance).hide();
+        } else if (mOptions.numberTurns === 1) {
 			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'One turn');
-		} else {
+		} else if (mOptions.numberTurns === 2) {
 			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-TwoRounds").removeClass("exeQuextIcons-OneRound").attr('alt', 'Two turns');
 		}
 		$('#roscoNumberRoundsSpan-' + instance).text(altTurn);
@@ -862,9 +865,12 @@ var $eXeRosco = {
 		var mTime = mOptions.durationGame,
 			sTime = $eXeRosco.getTimeToString(mTime),
 			altTurn = mOptions.numberTurns === 1 ? mOptions.msgOneRound : mOptions.msgTowRounds;
-		if (mOptions.numberTurns === 1) {
+		if (mOptions.numberTurns === 0) {
+			$('#roscoNumberRounds-' + instance).hide();
+			$('#roscoNumberRoundsSpan-' + instance).hide();
+        } else if (mOptions.numberTurns === 1) {
 			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'One turn');
-		} else {
+		} else if (mOptions.numberTurns === 2) {
 			$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-TwoRounds").removeClass("exeQuextIcons-OneRound").attr('alt', 'Two turns');
 		}
 		$('#roscoNumberRoundsSpan-' + instance).text(altTurn);
@@ -1095,9 +1101,9 @@ var $eXeRosco = {
 	},
 
 	newWord: function (instance) {
-		var mOptions = $eXeRosco.options[instance],
-			mActiveWord = $eXeRosco.updateNumberWord(mOptions.activeWord, instance);
+		var mOptions = $eXeRosco.options[instance];
 		if (mOptions.gameOver) return;
+		var mActiveWord = $eXeRosco.updateNumberWord(mOptions.activeWord, instance);
 		if (mActiveWord == -10) {
 			$eXeRosco.gameOver(0, instance);
 		} else {
@@ -1125,18 +1131,21 @@ var $eXeRosco = {
 		var end = true,
 			numActiveWord = quextion,
 			mOptions = $eXeRosco.options[instance];
+			
 		while (end) {
 			numActiveWord++;
 			if (numActiveWord > mOptions.letters.length - 1) {
-				if (mOptions.activeGameSpin < mOptions.numberTurns) {
+				if (mOptions.numberTurns ==0 || mOptions.activeGameSpin < mOptions.numberTurns) {
 					if (mOptions.answeredWords >= mOptions.validWords) {
 						end = false
 						return -10;
 					}
-					mOptions.activeGameSpin++;
-					$('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'Two turns');
-					$('#roscoNumberRoundsSpan-' + instance).text(mOptions.msgOneRound);
-					numActiveWord = 0;
+					if(mOptions.numberTurns > 0){
+						mOptions.activeGameSpin++;
+                        $('#roscoNumberRounds-' + instance).addClass("exeQuextIcons-OneRound").removeClass("exeQuextIcons-TwoRounds").attr('alt', 'Two turns');
+                        $('#roscoNumberRoundsSpan-' + instance).text(mOptions.msgOneRound);
+                    }
+					 numActiveWord = 0;
 				} else {
 					end = false
 					return -10;

@@ -38,7 +38,7 @@
 }
 
 #roscoIdeviceForm #roscoNumberTurns, #roscoIdeviceForm #roscoTimeShowSolution {
-  width: 30px;
+  width: 60px;
 }
 
 #roscoIdeviceForm #roscoClue {
@@ -175,11 +175,11 @@
 }
 
 #roscoIdeviceForm #roscoTimeShowSolution, #roscoIdeviceForm #roscoNumberTurns {
-  width: 25px;
+  width: 40px;
 }
 
 #roscoIdeviceForm #roscoDuration {
-  width: 45px;
+  width: 60px;
 }
 
 #roscoIdeviceForm .roscoImageBarEdition {
