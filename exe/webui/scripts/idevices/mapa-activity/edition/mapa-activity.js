@@ -265,6 +265,7 @@ var $exeDevice = {
                                     <img id="mapaImage" class="MQE-EImage" src="' + path + 'quextIEImage.png" alt="" />\
                                     <div class="MQE-ECursorPoint" id="mapaCursor"></div>\
                                     <div id="mapaArea" class="MQE-EArea"></div>\
+                                    <div id="mapaTextLink" class="MQE-ETextLink"></div>\
                                     <img id="mapaNoImage" class="MQE-EImageCover" src="' + path + 'quextIEImage.png" alt="" />\
                                      <div id="mapaProtector" class="MQE-EProtector"></div>\
                                 </div>\
@@ -276,7 +277,7 @@ var $exeDevice = {
                             <p class="MQE-EFlex">\
                                 <label for="mapaTitle">' + _('Title') + ':</label><input id="mapaTitle" type="text" />\
                                 <span class="MQE-EFlexN">\
-                                    <span>Tipo:</span>\
+                                    <span>' + _('Type') + ':</span>\
                                     <input class="MQE-Type" id="mapaEMediaNone" checked type="radio" name="mpmediatype" value="4" />\
                                     <label for="mapaEMediaNone">' + _('None') + '</label>\
                                     <input class="MQE-Type" checked="" id="mapaEMediaImage" type="radio"  name="mpmediatype" value="0" />\
@@ -423,7 +424,6 @@ var $exeDevice = {
             return false;
         }
     },
-
 
     updateTimerDisplayLocal: function () {
         if ($exeDevice.videoType > 0) {
@@ -733,6 +733,13 @@ var $exeDevice = {
                 $('#mapaToolTip').val(p.toolTip);
             }
         }
+        $('#mapaColorTitle').val(p.color);
+        $('#mapaFontSizeTitle').val( p.fontSize);
+        $('#mapaTextLink').text(p.title)
+        $('#mapaTextLink').css({
+            'color': p.color,
+            'font-size':p.fontSize + 'px'
+        });
         $exeDevice.changeIcon(p.iconType, p.x, p.y, p.x1, p.y1);
         $exeDevice.stopSound();
         $('#mapaURLAudio').val(p.audio);
@@ -988,6 +995,8 @@ var $exeDevice = {
         p.question_audio = '';
         p.toolTip = '';
         p.link = '';
+        p.color="#000000",
+        p.fontSize="14"
         p.map = {
             id: 'a' + id,
             url: '',
@@ -1069,6 +1078,8 @@ var $exeDevice = {
     setMedias: function (pts, $images, $texts, $audios, $imgmpas, $audiosIdentifyLink, $imagesSlides, $toolTips) {
         for (var i = 0; i < pts.length; i++) {
             var p = pts[i];
+            p.color = typeof p.color == 'undefined' ? '#000000' : p.color;
+            p.fontSize = typeof p.fontSize == 'undefined' ? '14' : p.fontSize;
             p.question_audio = p.question_audio || '';
             if (p.type != 5) {
                 if (p.type == 0 && typeof p.url != "undefined" && !p.url.indexOf('http') == 0 && p.url.length > 4) {
@@ -1338,7 +1349,8 @@ var $exeDevice = {
         p.question = $('#mapaIdentify').val();
         p.question_audio = $('#mapaURLAudioIdentify').val();
         p.link = $('#mapaLink').val();
-
+        p.color=$('#mapaColorTitle').val();
+        p.fontSize=$('#mapaFontSizeTitle').val();
         if (tinyMCE.get('mapaToolTip')) {
             p.toolTip = tinyMCE.get('mapaToolTip').getContent();
         } else {
@@ -1446,7 +1458,6 @@ var $exeDevice = {
     clearSavePoints: function () {
         for (var i = 0; i < $exeDevice.activeMap.pts.length; i++) {
             var p = $exeDevice.activeMap.pts[i];
-
             var id = p.id.substring(1);
             if (p.type == 0) {
                 p.video = "";
@@ -1458,27 +1469,28 @@ var $exeDevice = {
                 p.map.pts = [];
                 p.map.pts.push($exeDevice.getDefaultPoint())
                 p.map.url = "";
-                p.map.alt = '';
-                p.map.author = '';
+                p.map.alt = "";
+                p.map.author = "";
                 p.map.active = 0;
             } else if (p.type == 1) {
                 p.eText = "";
                 p.url = "";
-                p.author = '';
-                p.alt = '';
+                p.audio =""
+                p.author = "";
+                p.alt = "";
                 p.map = {};
                 p.map.id = 'a' + id;
                 p.map.pts = [];
                 p.map.pts.push($exeDevice.getDefaultPoint())
                 p.map.url = "";
-                p.map.alt = '';
-                p.map.author = '';
+                p.map.alt = "";
+                p.map.author = "";
                 p.map.active = 0;
             } else if (p.type == 2) {
                 p.video = ""
                 p.url = "";
-                p.author = '';
-                p.alt = '';
+                p.author = "";
+                p.alt = "";
                 p.iVideo = 0;
                 p.fVideo = 0;
                 p.map = {};
@@ -1486,15 +1498,15 @@ var $exeDevice = {
                 p.map.pts = [];
                 p.map.pts.push($exeDevice.getDefaultPoint())
                 p.map.url = "";
-                p.map.alt = '';
-                p.map.author = '';
+                p.map.alt = "";
+                p.map.author = "";
                 p.map.active = 0;
-            } else if (p.type == 3 || p.type == 4) {
+            } else if (p.type == 3) {
                 p.eText = "";
                 p.video = ""
                 p.url = "";
-                p.author = '';
-                p.alt = '';
+                p.author = "";
+                p.alt = "";
                 p.iVideo = 0;
                 p.fVideo = 0;
                 p.map = {};
@@ -1502,14 +1514,32 @@ var $exeDevice = {
                 p.map.pts = [];
                 p.map.pts.push($exeDevice.getDefaultPoint())
                 p.map.url = "";
-                p.map.alt = '';
-                p.map.author = '';
+                p.map.alt = "";
+                p.map.author = "";
                 p.map.active = 0;
-            } else if (p.type == 5) {
+            }else if ( p.type == 4) {
+                p.audio = "";
                 p.eText = "";
                 p.video = ""
-                p.author = '';
-                p.alt = '';
+                p.url = "";
+                p.author = "";
+                p.alt = "";
+                p.iVideo = 0;
+                p.fVideo = 0;
+                p.map = {};
+                p.map.id = 'a' + id;
+                p.map.pts = [];
+                p.map.pts.push($exeDevice.getDefaultPoint())
+                p.map.url = "";
+                p.map.alt = "";
+                p.map.author = "";
+                p.map.active = 0;
+            }  else if (p.type == 5) {
+                p.audio = ""
+                p.eText = "";
+                p.video = ""
+                p.author = "";
+                p.alt = "";
                 p.iVideo = 0;
                 p.fVideo = 0;
                 p.url = p.map.url;
@@ -1537,6 +1567,54 @@ var $exeDevice = {
 
                 }
 
+            }
+            else if (p.type == 6) {
+                p.video = ""
+                p.url = "";
+                p.author = "";
+                p.audio=""
+                p.alt = "";
+                p.iVideo = 0;
+                p.fVideo = 0;
+                p.map = {};
+                p.map.id = 'a' + id;
+                p.map.pts = [];
+                p.map.pts.push($exeDevice.getDefaultPoint())
+                p.map.url = "";
+                p.map.alt = "";
+                p.map.author = "";
+                p.map.active = 0;
+            } else if (p.type == 7) {
+                p.video = ""
+                p.url = "";
+                p.author = "";
+                p.alt = "";
+                p.iVideo = 0;
+                p.fVideo = 0;
+                p.map = {};
+                p.map.id = 'a' + id;
+                p.map.pts = [];
+                p.map.pts.push($exeDevice.getDefaultPoint())
+                p.map.url = "";
+                p.map.alt = "";
+                p.map.author = "";
+                p.map.active = 0;
+            } else if (p.type == 8) {
+                p.video = ""
+                p.url = "";
+                p.author = "";
+                p.audio=""
+                p.alt = "";
+                p.iVideo = 0;
+                p.fVideo = 0;
+                p.map = {};
+                p.map.id = 'a' + id;
+                p.map.pts = [];
+                p.map.pts.push($exeDevice.getDefaultPoint())
+                p.map.url = "";
+                p.map.alt = "";
+                p.map.author = "";
+                p.map.active = 0;
             }
 
         }
@@ -1690,7 +1768,9 @@ var $exeDevice = {
                     $noImage.hide();
                     if (icontype == 1) {
                         $exeDevice.paintArea(x, y, x1, y1);
-                    } else {
+                    } else if (icontype == 84) {
+                        $exeDevice.paintTextLink(x, y);
+                    }else {
                         $exeDevice.paintMouse(x, y);
                     }
                     $protector.css({
@@ -1706,12 +1786,11 @@ var $exeDevice = {
                 return false;
             });
     },
-
     showImage: function (url, alt) {
         var $image = $('#mapaPImage'),
-            $noImage = $('#mapaPNoImage'),
-            $video = $('#mapaPVideo'),
-            $videoLocal = $('#mapaEVideoLocal'),
+             $noImage = $('#mapaPNoImage'),
+             $video = $('#mapaPVideo'),
+             $videoLocal = $('#mapaEVideoLocal'),
             $noVideo = $('#mapaPNoVideo');
         $video.hide();
         $videoLocal.hide();
@@ -1721,20 +1800,20 @@ var $exeDevice = {
         $noImage.show();
         url = $exeDevice.extractURLGD(url);
         $image.prop('src', url)
-            .on('load', function () {
-                if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+             .on('load', function () {
+                 if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
                     return false;
-                } else {
-                    var mData = $exeDevice.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
-                    $exeDevice.drawImage(this, mData);
-                    $image.show();
-                    $noImage.hide();
-                    return true;
-                }
-            }).on('error', function () {
+                 } else {
+                     var mData = $exeDevice.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
+                     $exeDevice.drawImage(this, mData);
+                     $image.show();
+                     $noImage.hide();
+                     return true;
+                 }
+             }).on('error', function () {
                 return false;
-            });
-    },
+             });
+     }, 
     showImageSlide: function (url, alt) {
         var $image = $('#mapaSImage'),
             $noImage = $('#mapaSNoImage');
@@ -1776,14 +1855,18 @@ var $exeDevice = {
     paintMouse: function (x, y) {
         var $image = $('#mapaImage'),
             $cursor = $('#mapaCursor'),
-            $area = $('#mapaArea');
+            $area = $('#mapaArea'),
+            $textLink = $('#mapaTextLink');
+        $textLink.hide();
         $area.hide();
+        $('#mapaTextLinkDiv').hide();
+         $('#mapaIconPoint').show();
         if (x > 0 || y > 0) {
             var wI = $image.width() > 0 ? $image.width() : 1,
                 hI = $image.height() > 0 ? $image.height() : 1,
                 iw = parseInt($('#mapaCursor').width() * $exeDevice.iconX),
-                ih = parseInt($('#mapaCursor').height() * $exeDevice.iconY);
-            lI = $image.position().left + (wI * x) - iw,
+                ih = parseInt($('#mapaCursor').height() * $exeDevice.iconY),
+                lI = $image.position().left + (wI * x) - iw,
                 tI = $image.position().top + (hI * y) - ih;
             $cursor.css({
                 left: lI + 'px',
@@ -1793,14 +1876,19 @@ var $exeDevice = {
             $cursor.show();
         }
     },
+    
 
 
     paintArea: function (x, y, x1, y1) {
         var $image = $('#mapaImage'),
             $cursor = $('#mapaCursor'),
-            $area = $('#mapaArea');
+            $area = $('#mapaArea'),
+            $textLink = $('#mapaTextLink');
+        $textLink.hide();
         $cursor.hide();
         $area.hide();
+        $('#mapaIconPoint').show()
+        $('#mapaTextLinkDiv').hide();
         var wI = $image.width() > 0 ? $image.width() : 1,
             hI = $image.height() > 0 ? $image.height() : 1,
             px = x >= x1 ? x1 : x,
@@ -1818,7 +1906,31 @@ var $exeDevice = {
         });
         $area.show();
     },
-
+    paintTextLink: function (x, y) {
+        var $image = $('#mapaImage'),
+            $cursor = $('#mapaCursor'),
+            $area = $('#mapaArea');
+            $textLink = $('#mapaTextLink'),
+            text= $('#mapaTitle').val();
+        $area.hide();
+        $cursor.hide();
+        $('#mapaTextLinkDiv').css('display', 'flex');
+        $('#mapaIconPoint').hide()
+        if (x > 0 || y > 0) {
+            var wI = $image.width() > 0 ? $image.width() : 1,
+                hI = $image.height() > 0 ? $image.height() : 1,
+                wm=$('#mapaTextLink').width()/2
+                lI = $image.position().left + (wI * x) - wm,
+                tI = $image.position().top + (hI * y);
+            $textLink.css({
+                left: lI + 'px',
+                top: tI + 'px',
+                'z-index': 100
+            });
+        }
+        $textLink.text(text);
+        $textLink.show();
+    },
     drawImage: function (image, mData) {
         $(image).css({
             'left': mData.x + 'px',
@@ -2183,7 +2295,10 @@ var $exeDevice = {
             if (iconType == 1 && evaluation != 1) {
                 $exeDevice.xA = e.pageX;
                 $exeDevice.yA = e.pageY;
-            } else {
+            }else if ((iconType == 84)  && evaluation != 1) {
+                $exeDevice.clickImageTitle(this, e.pageX, e.pageY);
+
+            }else {
                 $exeDevice.clickImage(this, e.pageX, e.pageY);
             }
         });
@@ -2473,6 +2588,18 @@ var $exeDevice = {
             return false;
 
         });
+        $('#mapaTitle').on('input', function() {
+            $('#mapaTextLink').text($(this).val());
+        });
+    
+        $('#mapaColorTitle').on('change', function() {
+            $('#mapaTextLink').css('color', $(this).val());
+        });
+    
+        $('#mapaFontSizeTitle').on('input', function() {
+            const fontSize = $(this).val() ? $(this).val() + 'px' : '';
+            $('#mapaTextLink').css('font-size', fontSize);
+        });
         $exeDevice.localPlayer = document.getElementById('mapaEVideoLocal');
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
@@ -2605,6 +2732,7 @@ var $exeDevice = {
             <label for="mapaIconType">' + _('Icon') + ': </label>\
             <select name="mapaIconType" id="mapaIconType">\
             <option value="1">' + _('Invisible area') + '</option>\
+            <option value="84">' + _('Title') + '</option>\
             <option value="0" selected>' + _('Magnifying glass') + '</option>\
             <option value="7">' + _('Map marker') + '</option>\
             <option value="2">' + _('Audio') + '</option>\
@@ -2612,6 +2740,7 @@ var $exeDevice = {
             <option value="4">' + _('Text') + '</option>\
             <option value="5">' + _('Video') + '</option>\
             <option value="6">' + _('Presentation') + '</option>\
+            <option value="80">' + _('Information') + '</option>\
             <option value="8">' + _('Pushpin') + ' 1</option>\
             <option value="9">' + _('Pushpin') + ' 2</option>\
             <option value="10">' + _('Pushpin') + ' 3</option>\
@@ -2631,6 +2760,7 @@ var $exeDevice = {
             <option value="24">' + _('Text') + '</option>\
             <option value="25">' + _('Video') + '</option>\
             <option value="26">' + _('Presentation') + '</option>\
+            <option value="81">' + _('Information') + '</option>\
             <option value="28">' + _('Pushpin') + ' 1</option>\
             <option value="29">' + _('Pushpin') + ' 2</option>\
             <option value="30">' + _('Pushpin') + ' 3</option>\
@@ -2649,6 +2779,7 @@ var $exeDevice = {
             <option value="44">' + _('Text') + '</option>\
             <option value="45">' + _('Video') + '</option>\
             <option value="46">' + _('Presentation') + '</option>\
+            <option value="82">' + _('Information') + '</option>\
             <option value="48">' + _('Pushpin') + ' 1</option>\
             <option value="49">' + _('Pushpin') + ' 2</option>\
             <option value="50">' + _('Pushpin') + ' 3</option>\
@@ -2667,6 +2798,7 @@ var $exeDevice = {
             <option value="64">' + _('Text') + '</option>\
             <option value="65">' + _('Video') + '</option>\
             <option value="66">' + _('Presentation') + '</option>\
+            <option value="83">' + _('Information') + '</option>\
             <option value="68">' + _('Pushpin') + ' 1</option>\
             <option value="69">' + _('Pushpin') + ' 2</option>\
             <option value="70">' + _('Pushpin') + ' 3</option>\
@@ -2680,7 +2812,13 @@ var $exeDevice = {
             <option value="78">' + _('Arrow') + ' 8</option>\
             </select>\
             <span class="MQE-EIconPoint" id="mapaIconPoint"></span>\
-        </div>';
+            <div class="MQE-TextLinkDiv" id="mapaTextLinkDiv">\
+                <label for="mapaColorTitle" style="margin-left:0.4em">'+_("Color")+':</label>\
+                <input type="color" id="mapaColorTitle" value="#000000">\
+                <label for="mapaFontSizeTitle" style="margin-left:0.4em">'+ _("Font size") +'(px):</label>\
+                <input type="number" id="mapaFontSizeTitle" placeholder="" value="14" min="10" max="40">\
+            </div>\
+         </div>'
         return html;
     },
 
@@ -2709,8 +2847,8 @@ var $exeDevice = {
         $('#mapaCursor').css({
             'background-image': icon1
         });
-        var c = [0, 1, 2, 3, 4, 5, 6, 10, 19, 20, 21, 22, 23, 24, 25, 26, 30, 39, 40, 41, 42, 43, 44, 45, 46, 50, 59, 60, 61, 62, 63, 64, 65, 66, 70, 79],
-            uc = [18, 38, 58, 78],
+        var c = [0, 1, 2, 3, 4, 5, 6, 10, 19, 20, 21, 22, 23, 24, 25, 26, 30, 39, 40, 41, 42, 43, 44, 45, 46, 50, 59, 60, 61, 62, 63, 64, 65, 66, 70, 79, 80, 81, 82, 83],
+            uc = [18, 38, 58, 78, 84],
             dc = [7, 9, 15, 27, 29, 35, 47, 49, 55, 67, 69, 75],
             lu = [11, 31, 51, 71],
             lc = [16, 36, 56, 76],
@@ -2758,8 +2896,18 @@ var $exeDevice = {
             $exeDevice.iconX = 1;
             $exeDevice.iconY = 1;
         }
-
+        if((icon == 84) && evaluation != 1 ){
+            $('#mapaTextLinkDiv').css('display', 'flex');
+            $('#mapaIconPoint').hide()
+        }else{
+            $('#mapaTextLinkDiv').hide();
+            $('#mapaIconPoint').show()
+        }
         if (x > 0 || y > 0) {
+            if((icon == 84) && evaluation != 1 ){
+                $exeDevice.paintTextLink(x, y);
+                return
+            }
             if (icon == 1 && evaluation != 1) {
                 $exeDevice.paintArea(x, y, x1, y1);
 
@@ -3095,38 +3243,6 @@ var $exeDevice = {
     },
 
 
-    clearPoint1: function (type) {
-        var pre = type == 0 ? '#mapa' : '#pm',
-            pt = type == 0 ? 'mapa' : 'pm';
-        $(pre + 'Title').val('');
-        $(pre + 'Cursor').hide();
-        $(pre + 'Area').hide();
-        $(pre + 'URLImage').val('');
-        $(pre + 'X').val('0');
-        $(pre + 'Y').val('0');
-        $(pre + 'X1').val('0');
-        $(pre + 'Y1').val('0');
-        $(pre + 'URLYoutube').val('');
-        $(pre + 'URLAudio').val('');
-        $(pre + 'Text').text('');
-        $(pre + 'Footer').val('');
-        $(pre + 'Identify').val('');
-        if (tinyMCE.get(pt + 'Text')) {
-            tinyMCE.get(pt + 'ext').setContent('');
-        }
-
-        $(pre + 'PTitle').val('');
-        $(pre + 'PURLImage').val('');
-        $(pre + 'PAuthorImage').val('');
-        $(pre + 'PAltImage').val('');
-        $(pre + 'PURLYoutube').val('');
-        $(pre + 'PInitVideo').val('00:00:00');
-        $(pre + 'PEndVideo').val('00:00:00');
-        $(pre + 'PVideoTime').text('00:00:00');
-        $(pre + 'PFooter').val('');
-
-    },
-
     clearPoint: function () {
         $('#mapaTitle').val('');
         $('#mapaCursor').hide();
@@ -3144,6 +3260,8 @@ var $exeDevice = {
         $('#mapaURLAudioIdentify').val('');
         $('#mapaToolTip').val('');
         $('#mapaLink').val('');
+        $('#mapaTextLink').hide();
+        $('#mapaTextLink').text('');
         if (tinyMCE.get('mapaText')) {
             tinyMCE.get('mapaText').setContent('');
         }
@@ -3571,6 +3689,28 @@ var $exeDevice = {
         });
         $cursor.show();
     },
+    clickImageTitle: function (div, epx, epy) {
+        $('#mapaArea').hide();
+        $('#mapaCursor').hide();
+        var $textLink = $('#mapaTextLink'),
+            $div = $(div),
+            posX = epx - $div.offset().left,
+            posY = epy - $div.offset().top,
+            wI = $div.width() > 0 ? $div.width() : 1,
+            hI = $div.height() > 0 ? $div.height() : 1,
+            wl=$textLink.width()/2
+            lI = $div.position().left,
+            tI = $div.position().top;
+        $('#mapaX').val(posX / wI);
+        $('#mapaY').val(posY / hI);
+        $textLink.css({
+            left: (posX + lI -wl) + 'px',
+            top: (posY + tI) + 'px',
+            'z-index': 100
+        });
+        $textLink.show();
+    },
+
 
     addLevel: function () {
         $exeDevice.saveLevel();

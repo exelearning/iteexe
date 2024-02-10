@@ -667,11 +667,11 @@ var $eXeOrdena = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
         }
         $('#ordenaEvaluationIcon-' + instance).remove();
         var sicon = '<div id="ordenaEvaluationIcon-' + instance + '" class="ODNP-EvaluationDivIcon"><img  src="' +  $eXeOrdena.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
@@ -1639,6 +1639,9 @@ var $eXeOrdena = {
         var attemps = mOptions.attempts > 0 ? mOptions.attempts - mOptions.nattempts : mOptions.nattempts;
         $eXeOrdena.showMessage(messageColor, message, instance, true);
         $ordenaOverNumCards.html(msgs.msgActivities + ': ' + mOptions.phrasesGame.length);
+        if(mOptions.type == 0){
+            $ordenaOverNumCards.html(msgs.msgPhrases + ': ' + mOptions.phrasesGame.length);
+        }
         $ordenaOverHits.html(msgs.msgHits + ': ' + mOptions.hits);
         $ordenaOverAttemps.html(msgs.msgAttempts + ': ' + attemps);
         $ordenaGameOver.show();

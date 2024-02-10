@@ -79,7 +79,8 @@ var $exeDevice = {
         "msgAgain": _("Please try again"),
         "msgUncompletedActivity": _("Incomplete activity"),
         "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgPhrases": _("Phrases"),
 
     },
     init: function () {
@@ -101,13 +102,13 @@ var $exeDevice = {
         msgs.msgPairsMax = _("Maximum number of phrases: 20");
         msgs.msgCardsColumn = _("With fixed headers, the number of cards must be bigger than the number of columns");
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
-
+        msgs.msgEOneWord =_("Please provide at least one word");
     },
     createForm: function () {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to order cards with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to order cards with images, texts and/or sounds.") + ' <a href="https://youtu.be/2neYKyFIBic" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Drag each letter to its correct position")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
@@ -621,11 +622,11 @@ var $exeDevice = {
                 return false;
             }
         }
-        if(type==0){
+        if(type == 0){
             var ph=$('#ordenaEPraseI').val();
             if(ph.trim().length<1){
+                $exeDevice.showMessage($exeDevice.msgs.msgEOneWord);
                 return false
-
             }
         }
         if (!correct) {
