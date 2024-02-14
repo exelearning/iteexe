@@ -262,6 +262,14 @@ function createPanelStyles(styles) {
             title: _("List of styles in your system"),
             margin: 10,
             items: itemsShow
+        },
+        {
+			xtype: 'button',
+			text: _('Close'),
+			style:'float:right;margin-right:10px;margin-bottom:10px;',
+			handler: function () { 
+				this.up('window').close();
+			}
         }
     ];
     return panel;
