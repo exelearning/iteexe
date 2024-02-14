@@ -495,10 +495,9 @@ var $eXeInforme = {
   saveReport: function () {
     if($eXeInforme.options.userData){
       if($('#informeUserName').val().trim() === ""){
-        alert("Antes de guardar este informe, debes indicar tu nombre y apellidos antes de guardar el informe.");
-
+        var msg= $eXeInforme.options.msgs.msgNotCompleted+': '+ $eXeInforme.options.msgs.msgName;
+        alert(msg);
         return;
-
       }
     }
     var divElement = document.getElementById("informeTable");

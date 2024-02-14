@@ -572,24 +572,32 @@
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .RLCP-GameContainer:-ms-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .RLCP-GameContainer:-o-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
-.RLCP-GameContainer:-o-full-screen {
+.RLCP-GameContainer:fullscreen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 
@@ -684,6 +692,7 @@ div:fullscreen .RLCP-Message {
     max-width: 100vw;
     padding: 0.6em 0.6em 1em 0.6em;
     overflow-y:auto;
+    padding-top: 0;
 
 }
 
@@ -694,18 +703,10 @@ div:fullscreen .RLCP-Message {
     max-width: 100vw;
     padding: 0.6em 0.6em 1em 0.6em;
     overflow-y:auto;
+    padding-top: 0;
 
 }
 
-.RLCP-GameContainer:-o-full-screen {
-    background-color: white;
-    height: 100vh;
-    width: 100%;
-    max-width: 100vw;
-    padding: 0.6em 0.6em 1em 0.6em;
-    overflow-y:auto;
-
-}
 
 .RLCP-GameContainer:fullscreen {
     background-color: white;
@@ -714,6 +715,7 @@ div:fullscreen .RLCP-Message {
     max-width: 100vw;
     padding: 0.6em 0.6em 1em 0.6em;
     overflow-y:auto;
+    padding-top: 0;
 
 }
 
@@ -721,7 +723,9 @@ div:fullscreen .RLCP-Word, div:fullscreen .RLCP-Definition {
     height: 100px;
     margin-bottom: 10px;
 }
-
+div:fullscreen .RLCP-LinkMinimize{
+    display: none;
+}
 .RLCP-EvaluationDivIcon {
     display: flex;
     justify-content: flex-start;

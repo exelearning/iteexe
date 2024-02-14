@@ -88,7 +88,8 @@ var $exeDevice = {
         "msgSelectLevel": _("Select a level"),
         "msgUncompletedActivity": _("Incomplete activity"),
         "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgTypeGame": _('Discover')
     },
     init: function () {
         this.ci18n.msgTryAgain = this.ci18n.msgTryAgain.replace("&percnt;", "%"); // Avoid invalid HTML

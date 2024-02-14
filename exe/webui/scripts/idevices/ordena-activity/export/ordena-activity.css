@@ -864,6 +864,8 @@ div:fullscreen .ODNP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .ODNP-GameContainer:-moz-full-screen {
@@ -871,6 +873,8 @@ div:fullscreen .ODNP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .ODNP-GameContainer:-ms-full-screen {
@@ -878,6 +882,8 @@ div:fullscreen .ODNP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .ODNP-GameContainer:-o-full-screen {
@@ -885,6 +891,8 @@ div:fullscreen .ODNP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .ODNP-GameContainer:fullscreen {
@@ -892,15 +900,22 @@ div:fullscreen .ODNP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 div:fullscreen .ODNP-Multimedia {
-    height: 100vh;
     width: 100%;
     max-width: 100vw;
     overflow-y:auto
 }
+div:fullscreen .MTHO-CardDraw {
+    margin-top:0.6em
+}
 
+div:fullscreen .MTHO-LinkMinimize{
+    display: none;
+}
 
 .ODNP-EvaluationDivIcon{
 	display: flex;

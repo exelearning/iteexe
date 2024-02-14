@@ -1291,11 +1291,15 @@ div:fullscreen .trivial-Multimedia {
 	top: 3em;
 	width: 95vmin;
 }
+div:fullscreen .trivial-LinkMinimize{
+    display: none;
+}
 div:fullscreen  .trivial-AuthorLicence p {
 	font-size: 1.1em;
 	height: 1.4em;
 	line-height: 1.4em;
 }
+
 /*testeo */
 .trivial-prueba, .trivial-sorpresa {
 	background-color: salmon;

@@ -1206,11 +1206,11 @@ var $eXeMathOperations = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
         }
         $('#mthoEvaluationIcon-' + instance).remove();
         var sicon = '<div id="mthoEvaluationIcon-' + instance + '" class="MTHO-EvaluationDivIcon"><img  src="' + $eXeMathOperations.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'

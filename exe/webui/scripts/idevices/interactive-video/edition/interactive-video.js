@@ -64,7 +64,9 @@ var $exeDevice = {
 		"msgOnlySaveAuto": c_("Your score will be saved after each question. You can only play once."),
 		"msgUncompletedActivity": _("Incomplete activity"),
 		"msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-		"msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S")
+		"msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgTypeGame": _('Interactive Video')
+
 	},
 	scorm: {
 		'isScorm': 0,

@@ -92,6 +92,7 @@ var $exeDevice = {
         "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
         "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgNext": _('Next'),
+        "msgTypeGame": _('Trivia')
     },
     getId: function () {
         return Math.round(new Date().getTime() + (Math.random() * 100));

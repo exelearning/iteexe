@@ -132,6 +132,7 @@ var $eXeMapa = {
             pts = [];
         $('#mapaMultimedia-' + instance).find('.MQP-Point').remove();
         $('#mapaMultimedia-' + instance).find('.MQP-Area').remove();
+        $('#mapaMultimedia-' + instance).find('.MQP-TextLink').remove();
         $('#mapaOptionsTest-' + instance).find('.MPQ-OptionTest').remove();
         for (var i = 0; i < points.length; i++) {
             var p = points[i],
@@ -143,9 +144,12 @@ var $eXeMapa = {
                 };
 
             pts.push(pt);
-
             if (p.iconType == 1 && mOptions.evaluation != 1) {
                 point = '<a href="#" class="MQP-Area" data-number="' + i + '"  data-id="' + p.id + '" title="' + title + '"><span>' + p.title + '</span></a>';
+            }
+            if (p.iconType == 84 && mOptions.evaluation != 1) {
+                var font=$eXeMapa.adjustFontSize(p.fontSize);
+                point = '<a href="#" class="MQP-TextLink" style="color:'+p.color+';font-size:'+ font.fontsize +';line-height:'+ font.lineheight+';max-width:'+ font.maxwidth+';"  data-number="' + i + '"  data-id="' + p.id + '" title="">' + p.title + '</a>';
             }
             spoints += point;
         }
@@ -180,6 +184,11 @@ var $eXeMapa = {
         $('#mapaMultimedia-' + instance).find('.MQP-Area').each(function () {
             var number = parseInt($(this).data('number'));
             $eXeMapa.paintArea($('#mapaImage-' + instance), $(this), mOptions.activeMap.pts[number].x, mOptions.activeMap.pts[number].y, mOptions.activeMap.pts[number].x1, mOptions.activeMap.pts[number].y1);
+        });
+        $('#mapaMultimedia-' + instance).find('.MQP-TextLink').each(function () {
+            var number = parseInt($(this).data('number')),
+            fonstize =mOptions.activeMap.pts[number].fontSize;
+            $eXeMapa.paintTextLink($('#mapaImage-' + instance), $(this), mOptions.activeMap.pts[number].x, mOptions.activeMap.pts[number].y, fonstize);
         });
     },
     paintPoint: function (image, cursor, x, y, icon, instance) {
@@ -218,8 +227,8 @@ var $eXeMapa = {
     getIconPos: function (icon) {
         var iconX = 0,
             iconY = 0,
-            c = [0, 1, 2, 3, 4, 5, 6, 10, 19, 20, 21, 22, 23, 24, 25, 26, 30, 39, 40, 41, 42, 43, 44, 45, 46, 50, 59, 60, 61, 62, 63, 64, 65, 66, 70, 79],
-            uc = [18, 38, 58, 78],
+            c = [0, 1, 2, 3, 4, 5, 6, 10, 19, 20, 21, 22, 23, 24, 25, 26, 30, 39, 40, 41, 42, 43, 44, 45, 46, 50, 59, 60, 61, 62, 63, 64, 65, 66, 70, 79, 80, 81, 82, 83],
+            uc = [18, 38, 58, 78, 84],
             dc = [7, 9, 15, 27, 29, 35, 47, 49, 55, 67, 69, 75],
             lu = [11, 31, 51, 71],
             lc = [16, 36, 56, 76],
@@ -260,6 +269,30 @@ var $eXeMapa = {
             y: iconY
         };
 
+    },
+    paintTextLink: function (image, textlink,  x, y, fonstize) {
+        var  $textLink = $(textlink),
+             font=$eXeMapa.adjustFontSize(fonstize);
+        $textLink.css({
+            'font-size': font.fontsize,
+            'line-height':font.lineheight,
+            'max-width': font.maxwidth
+        })
+        var wl= $textLink.width()/2;
+        $textLink.show();
+        if (x > 0 || y > 0) {
+            var wI = $(image).width() > 0 ? $(image).width() : 1,
+                hI = $(image).height() > 0 ? $(image).height() : 1,
+                lI = Math.round($(image).position().left + Math.round(wI * x)-wl),
+                tI = Math.round($(image).position().top + Math.round(hI * y));
+            $textLink.css({
+                left: lI + 'px',
+                top: tI + 'px',
+                'font-size':font.fontsize,
+                'z-index': 3000
+            });
+            $textLink.show();
+        }
     },
     paintArea: function (image, area, x, y, x1, y1) {
         var $image = $(image),
@@ -410,6 +443,8 @@ var $eXeMapa = {
         var hasYB = hasYoutube;
         for (var i = 0; i < pts.length; i++) {
             var p = pts[i];
+            p.color = typeof p.color == "undefined" ? "#000000":p.color;
+            p.fontSize = typeof p.fontSize == "undefined" ? "14":p.fontSize;
             if (p.type != 5) {
                 if (p.type == 0 && typeof p.url != "undefined" && p.url.indexOf('http') != 0 && p.url.length > 4) {
                     $eXeMapa.setImage(p, $images);
@@ -864,11 +899,11 @@ var $eXeMapa = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
         }
         $('#mapaEvaluationIcon-' + instance).remove();
         var sicon = '<div id="mapaEvaluationIcon-' + instance + '" class="MPQ-EvaluationDivIcon"><img  src="' + $eXeMapa.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
@@ -1744,7 +1779,7 @@ var $eXeMapa = {
             $eXeMapa.saveEvaluation(instance);
             return true;
         });
-        $('#mapaMultimedia-' + instance).on('click', '.MQP-Point, .MQP-Area ', function (e) {
+        $('#mapaMultimedia-' + instance).on('click', '.MQP-Point, .MQP-Area, .MQP-TextLink', function (e) {
             e.preventDefault();
             if (mOptions.showData || !mOptions.gameStarted) {
                 return;
@@ -1830,7 +1865,6 @@ var $eXeMapa = {
 
         });
 
-        
         $('#mapaLinkSlideLeft-' + instance).on('click', function (e) {
             e.preventDefault();
             mOptions.activeSlide = mOptions.activeSlide > 0 ? mOptions.activeSlide - 1 : 0;
@@ -1864,6 +1898,33 @@ var $eXeMapa = {
             $eXeMapa.hasLATEX = true;
         }
         $eXeMapa.updateEvaluationIcon(instance)
+    },
+     adjustFontSize: function(fsize) {
+        var baseFontSize =parseInt(fsize);
+        if (!baseFontSize) '14px';
+        var screenWidth = $(window).width();
+        var fontSize;
+        var fontSize, lineHeight, maxwidth;
+
+        if (screenWidth <= 480) { 
+            fontSize = baseFontSize * 0.70; 
+            lineHeight = fontSize * 1.1;
+            maxwidth = 126;
+        } else if (screenWidth <= 768) { 
+            fontSize = baseFontSize * 0.80; 
+            lineHeight = fontSize * 1.2;
+            maxwidth = 144;
+        } else {
+            fontSize = baseFontSize; 
+            lineHeight = fontSize * 1.2;
+            maxwidth = 180;
+        }
+        var font={
+            'fontsize' : fontSize + 'px',
+            'lineheight' : lineHeight + 'px',
+            'maxwidth' : maxwidth + 'px'
+        }
+        return font;
     },
     showSlide: function (i, instance) {
         var mOptions = $eXeMapa.options[instance],
@@ -2973,6 +3034,7 @@ var $eXeMapa = {
                 mOptions.levels.pop();
             }
             mOptions.activeMap = $.extend(true, {}, parent);
+            $eXeMapa.stopSound(instance)
             $eXeMapa.addPoints(instance, mOptions.activeMap.pts);
             $eXeMapa.showImage(mOptions.activeMap.url, mOptions.activeMap.alt, instance);
             $eXeMapa.showButtonAreas(mOptions.activeMap.pts, instance);
@@ -3209,6 +3271,7 @@ var $eXeMapa = {
         var $Image = $('#mapaImage-' + instance);
         $('#mapaMultimedia-' + instance).find('.MQP-Point').hide();
         $('#mapaMultimedia-' + instance).find('.MQP-Area').hide();
+        $('#mapaMultimedia-' + instance).find('.MQP-TextLink').hide();
         if ($.trim(url).length == 0) {
             $Image.hide();
             return false;

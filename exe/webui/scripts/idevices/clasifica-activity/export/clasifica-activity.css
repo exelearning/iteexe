@@ -811,6 +811,8 @@ div:fullscreen .CQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CQP-GameContainer:-moz-full-screen {
@@ -818,6 +820,8 @@ div:fullscreen .CQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CQP-GameContainer:-ms-full-screen {
@@ -825,6 +829,8 @@ div:fullscreen .CQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CQP-GameContainer:-o-full-screen {
@@ -832,6 +838,8 @@ div:fullscreen .CQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CQP-GameContainer:fullscreen {
@@ -839,16 +847,14 @@ div:fullscreen .CQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 5px;
+	overflow-y:auto;
 }
 
-div:fullscreen .CQP-Multimedia {
-    height: 100vh;
-    width: 100%;
-    max-width: 100vw;
+div:fullscreen .CQP-LinkMinimize{
+	display: none;
 }
-
 div:fullscreen .CQP-Multimedia {
-    height: 100vh;
     width: 100%;
     max-width: 100vw;
 }

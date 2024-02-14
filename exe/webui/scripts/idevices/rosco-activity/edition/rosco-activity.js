@@ -133,7 +133,7 @@ var $exeDevice = {
 							</p>\
 							<p>\
 								<label for="roscoNumberTurns">' + _("Number of rounds") + ': </label>\
-								<input type="number" value="1" min="1" max="2" id="roscoNumberTurns" required />\
+								<input type="number" value="1" min="0" max="2" id="roscoNumberTurns" required />\
 							</p>\
 							<p>\
 								<label for="roscoShowSolution"><input type="checkbox" checked id="roscoShowSolution"> ' + _("Show solutions") + '. </label> \
@@ -962,7 +962,7 @@ var $exeDevice = {
 		$('#roscoNumberTurns').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 1 : this.value;
 			this.value = this.value > 2 ? 2 : this.value;
-			this.value = this.value < 1 ? 1 : this.value;
+			this.value = this.value < 0 ? 1 : this.value;
 		});
 		$('#roscoDuration').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 240 : this.value;
@@ -970,7 +970,7 @@ var $exeDevice = {
 		$('#roscoTimeShowSolution').on('focusout', function () {
 			this.value = this.value.trim() == '' ? 3 : this.value;
 			this.value = this.value > 9 ? 9 : this.value;
-			this.value = this.value < 1 ? 1 : this.value;
+			this.value = this.value < 0 ? 1 : this.value;
 		});
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
 			$('#eXeGameExportImport').show();

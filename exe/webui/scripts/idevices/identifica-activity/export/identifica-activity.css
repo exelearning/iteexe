@@ -538,29 +538,46 @@ div:fullscreen .IDFP-Multimedia, div:-webkit-full-screen .IDFP-Multimedia, div:-
 	top: 3em;
 	width: 95vmin;
 }
-
+div:fullscreen .IDFP-LinkMinimize{
+    display: none;
+}
 .IDFP-GameContainer:-webkit-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .IDFP-GameContainer:-moz-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .IDFP-GameContainer:-ms-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .IDFP-GameContainer:-o-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
+}
+.IDFP-GameContainer:fullscreen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 .IDFP-EvaluationDivIcon{
 	display: flex;

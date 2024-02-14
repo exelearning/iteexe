@@ -66,8 +66,6 @@
 	display: none;
 }
 
-
-
 .MQE-EMultimedia {
 	background-color: #fff;
 	border-radius: .5em;
@@ -160,6 +158,28 @@
 	background-color: rgba(255, 0, 0, 0.4);
 	display: none;
 }
+.MQE-ETextLink {
+	position: absolute;
+	z-index: 99;
+	background-color: rgba(255, 255, 255, 0.6);
+	top:100px;
+	left:100px;
+	text-align: center;
+	max-width: 180px;
+	min-width: 10px;
+	min-height: 20px;
+	font-size: 14px;
+	padding: 0;
+	display:none;
+	font-weight: bold;
+}
+.MQE-TextLinkDiv{
+	align-items: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	display:none;
+}
 .MQE-CloseDetail{
 	align-items: center;
 	display: flex;
@@ -168,6 +188,7 @@
 	min-width: 100px;
 
 }
+
 .MQE-CloseDetail a {
 	display: block;
 	height: 1.5em;
