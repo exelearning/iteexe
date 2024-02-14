@@ -542,6 +542,57 @@ var $eXeDescubre = {
         }
         return cardsGame;
     },
+
+    setFontSize: function($text, instance){
+        var latex = $text.find('mjx-container').length > 0 ||  /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test($text.text());
+        if(!latex){
+            $text.css({'font-size':'18px'});
+            $eXeDescubre.setFontSizeNormal($text)
+        }else{
+            $eXeDescubre.setFontSizeMath($text, instance)
+        }
+    },
+    setFontSizeNormal: function($text) {
+        var maxHeight = $text.height(); 
+        var fontSize = parseInt($text.css("font-size")); 
+        while ($text[0].scrollHeight > maxHeight && fontSize > 8) {
+            fontSize--;
+            $text.css("font-size", fontSize + "px");
+        }
+    },
+    setFontSizeMath:function($text, instance){
+        var numCardsl=$eXeDescubre.getNumberCards(instance),
+            fontsz = '16px';
+        if($eXeDescubre.isFullScreen()){
+            fontsz = '16px'
+            if(numCardsl > 34){
+                fontsz ='8px'
+            } else if(numCardsl > 24){
+                fontsz ='10px'
+            } else if(numCardsl > 18){
+                fontsz ='12px'
+            } else if(numCardsl > 10){
+                fontsz = '14px'
+            }
+        }else{
+            fontsz='14px'
+            if(numCardsl > 34){
+                fontsz ='6px'
+            } else if(numCardsl > 24){
+                fontsz='8px'
+            } else if(numCardsl > 18){
+                fontsz='10px'
+            } else if(numCardsl > 10){
+                fontsz = '12px'
+            }
+        }
+        $text.css({'font-size':fontsz});
+    },
+    getNumberCards: function(instance){
+        var mOptions = $eXeDescubre.options[instance];
+        return mOptions.wordsGame.length * (mOptions.gameMode +2);
+
+    },
     getQuestions: function (questions, percentaje) {
         var mQuestions = questions;
         if (percentaje < 100) {
@@ -737,11 +788,11 @@ var $eXeDescubre = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
         }
         $('#descubreEvaluationIcon-' + instance).remove();
         var sicon = '<div id="descubreEvaluationIcon-' + instance + '" class="DescubreQP-EvaluationDivIcon"><img  src="' +  $eXeDescubre.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
@@ -908,6 +959,12 @@ var $eXeDescubre = {
         } else if (element.msRequestFullscreen) {
             element.msRequestFullscreen();
         }
+    },
+    isFullScreen: function () {
+        return document.fullscreenElement ||
+               document.webkitFullscreenElement ||
+               document.mozFullScreenElement ||
+               document.msFullscreenElement != null;
     },
     toggleFullscreen: function (element, instance) {
         var mOptions = $eXeDescubre.options[instance],
@@ -1123,6 +1180,8 @@ var $eXeDescubre = {
         if (sound.length > 3) {
             $eXeDescubre.playSound(sound, instance)
         }
+        var $text = $cc.find('.DescubreQP-EText').eq(0);
+        $eXeDescubre.setFontSize($text, instance);
         $card.addClass("DescubreQP-CardActive");
         mOptions.gameActived = true;
         if (mOptions.gameMode == 0) {
@@ -1329,7 +1388,7 @@ var $eXeDescubre = {
             text = $text.html() || "",
             color = $text.data('color'),
             backcolor = $text.data('backcolor');
-
+        $eXeDescubre.setFontSize($text, instance);
         $text.hide();
         $image.hide();
         $cursor.hide();
@@ -1421,10 +1480,13 @@ var $eXeDescubre = {
             var $card= $(this),
                 $imageF = $card.find('.DescubreQP-Image').eq(0),
                 $cursorF = $card.find('.DescubreQP-Cursor').eq(0),
+                $textF= $card.find('.DescubreQP-EText').eq(0),
                 xF = parseFloat($imageF.data('x')) || 0,
                 yF = parseFloat($imageF.data('y')) || 0;
-                $eXeDescubre.positionPointerCard($cursorF, xF, yF)
-        });
+            $eXeDescubre.positionPointerCard($cursorF, xF, yF);
+            $eXeDescubre.setFontSize($textF, instance);
+
+            });
         mOptions.refreshCard = false;
     },
     enterCodeAccess: function (instance) {

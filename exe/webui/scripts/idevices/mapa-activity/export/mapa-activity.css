@@ -1234,6 +1234,10 @@ div:fullscreen .MQP-Multimedia {
 	max-width: 1200px;
 }
 
+div:fullscreen .MQP-LinkMinimize{
+	display: none;
+}
+
 div:-webkit-full-screen .MQP-Multimedia {
 	max-width: 1200px;
 }
@@ -1339,18 +1343,31 @@ div:fullscreen .MQP-LinkCloseDetail{
 
 .MQP-GameContainer:-webkit-full-screen {
 	background-color: white;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MQP-GameContainer:-moz-full-screen {
 	background-color: white;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MQP-GameContainer:-ms-full-screen {
 	background-color: white;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MQP-GameContainer:-o-full-screen {
 	background-color: white;
+	padding-top: 3px;
+    overflow-y: auto;
+}
+.MQP-GameContainer:fullscreen {
+	background-color: white;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MQP-Test {

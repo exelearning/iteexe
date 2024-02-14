@@ -590,30 +590,50 @@ div:fullscreen .CMPT-Multimedia, div:-webkit-full-screen .CMPT-Multimedia, div:-
 	max-width: 95vmin;
 	top: 3em;
 	width: 95vmin;
+	overflow-y: auto;
+}
+
+div:fullscreen .CMPT-LinkMinimize{
+    display: none;
 }
 
 .CMPT-GameContainer:-webkit-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CMPT-GameContainer:-moz-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CMPT-GameContainer:-ms-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+	overflow-y:auto;
 }
 
 .CMPT-GameContainer:-o-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+	overflow-y:auto;
+}
+.CMPT-GameContainer:fullscreen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 .CMPT-EvaluationDivIcon{
 	display: flex;

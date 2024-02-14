@@ -667,28 +667,47 @@ div:fullscreen .MTHO-Multimedia, div:-webkit-full-screen .MTHO-Multimedia, div:-
 	width: 95vmin;
 }
 
+div:fullscreen .MTHO-LinkMinimize{
+    display: none;
+}
+
 .MTHO-GameContainer:-webkit-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHO-GameContainer:-moz-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHO-GameContainer:-ms-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHO-GameContainer:-o-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
+}
+.MTHO-GameContainer:fullscreen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHO-EvaluationDivIcon{

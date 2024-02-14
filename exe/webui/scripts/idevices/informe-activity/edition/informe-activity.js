@@ -37,7 +37,8 @@ var $exeDevice = {
         "msgSeeActivity": _("Go to the activity"),
         "mgsSections": _("Educational resource sections"),
         "msgName": _("Name"),
-        "msgDate": _("Date")
+        "msgDate": _("Date"),
+        "msgNotCompleted": _("Not completed")
     },
     init: function () {
         this.createForm();
@@ -52,44 +53,44 @@ var $exeDevice = {
 		var iDeviceList = "";
 			iDeviceList += _("Word Guessing");
 			iDeviceList += ", ";
+            iDeviceList += _("Classify");
+            iDeviceList += ", ";
 			iDeviceList += _("Complete");
 			iDeviceList += ", ";
+			iDeviceList += _("Discover");
+            iDeviceList += ", ";
+            iDeviceList += _("Geogebra");
+			iDeviceList += ", ";
 			iDeviceList += _("Identify");
+			iDeviceList += ", ";
+			iDeviceList += _("Scrambled List");
 			iDeviceList += ", ";
 			iDeviceList += _("Map");
 			iDeviceList += ", ";
 			iDeviceList += _("Math Operations");
 			iDeviceList += ", ";
+            iDeviceList += _("Order");
+            iDeviceList += ", ";
 			iDeviceList += _("Math Problems");
 			iDeviceList += ", ";
 			iDeviceList += _("QuExt");
 			iDeviceList += ", ";
+            iDeviceList += _("Relate");
+            iDeviceList += ", ";
 			iDeviceList += _("A-Z Quiz Game");
 			iDeviceList += ", ";
 			iDeviceList += _("Multiple Choice Quiz");
 			iDeviceList += ", ";
+            iDeviceList += _("Select media files");
+            iDeviceList += ", ";
 			iDeviceList += _("Word Search");
 			iDeviceList += ", ";
 			iDeviceList += _("Memory Cards");
 			iDeviceList += ", ";
-			iDeviceList += _("VideoQuExt");
-            iDeviceList += ", ";
-            iDeviceList += _("Classify");
-            iDeviceList += ", ";
-			iDeviceList += _("Discover");
-            iDeviceList += ", ";
-			iDeviceList += _("Order");
-            iDeviceList += ", ";
-			iDeviceList += _("Select media files");
-            iDeviceList += ", ";
-            iDeviceList += _("Relate");
-            iDeviceList += ", ";
-			iDeviceList += _("Geogebra");
-			iDeviceList += ", ";
-			iDeviceList += _("Scrambled List");
-			iDeviceList += ", ";
 			iDeviceList += _("Interactive Video");
-			iDeviceList += ".";
+			iDeviceList += ", ";
+			iDeviceList += _("VideoQuExt");
+            iDeviceList += ".";
 		var html = '\
 			<div id="gameQEIdeviceForm">\
                 <div class="exe-idevice-info">' + _("It shows the result of the pupils in the activities linked to their average score.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\

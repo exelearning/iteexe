@@ -81,6 +81,7 @@ var $exeDevice = {
         "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
         "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
         "msgPhrases": _("Phrases"),
+        "msgTypeGame": _("Order")
 
     },
     init: function () {

@@ -1307,11 +1307,11 @@ var $eXeFlipCards = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
         }
         $('#flcdsEvaluationIcon-' + instance).remove();
         var sicon = '<div id="flcdsEvaluationIcon-' + instance + '" class="FLCDSP-EvaluationDivIcon"><img  src="' + $eXeFlipCards.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
@@ -1868,7 +1868,7 @@ var $eXeFlipCards = {
         }
 	},
 
-    showFrontCard: function (card, intance) {
+    showFrontCard: function (card, instance) {
         var $card = card,
             $text = $card.find('.FLCDSP-EText-Front').eq(0),
             $image = $card.find('.FLCDSP-Image-Front').eq(0),
@@ -2020,7 +2020,7 @@ var $eXeFlipCards = {
 
     showCard: function (card, instance) {
         $eXeFlipCards.showFrontCard(card, instance);
-        $eXeFlipCards.showBackCard(card, insance);
+        $eXeFlipCards.showBackCard(card, instance);
     },
 
     alfaBColor: function (bcolor) {

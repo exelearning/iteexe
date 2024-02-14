@@ -979,12 +979,15 @@ div:fullscreen .exeQuextIcons-FullScreen {
 div:fullscreen .FLCDSP-Message {
     font-weight: 1.1em;
 }
-
+div:fullscreen .FLCDSP-LinkMinimize{
+    display: none;
+}
 .FLCDSP-GameContainer:-webkit-full-screen {
     background-color: white;
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 0;
 }
 
 .FLCDSP-GameContainer:-moz-full-screen {
@@ -992,6 +995,8 @@ div:fullscreen .FLCDSP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .FLCDSP-GameContainer:-ms-full-screen {
@@ -999,6 +1004,8 @@ div:fullscreen .FLCDSP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .FLCDSP-GameContainer:-o-full-screen {
@@ -1006,6 +1013,8 @@ div:fullscreen .FLCDSP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .FLCDSP-GameContainer:fullscreen {
@@ -1013,20 +1022,18 @@ div:fullscreen .FLCDSP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 div:fullscreen .FLCDSP-Multimedia {
-    height: 100vh;
     width: 100%;
     max-width: 100vw;
 }
 
-div:fullscreen .FLCDSP-Multimedia {
-    height: 100vh;
-    width: 100%;
-    max-width: 100vw;
+div:fullscreen .FLCDSP-GameContainer{
+    padding-top:0;
 }
-
 .FLCDSP-EvaluationDivIcon{
 	display: flex;
 	justify-content: flex-start;
@@ -1103,9 +1110,6 @@ div:fullscreen .FLCDSP-Multimedia {
     margin-left: 1.5em;
     width: 3em;
     height: 3em;
-
-
-    
 }
 
 

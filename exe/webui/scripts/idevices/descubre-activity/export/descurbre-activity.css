@@ -301,7 +301,6 @@
 
 .DescubreQP-EText {
     border: none;
-    overflow-y: auto;
     position: absolute;
     width: 94%;
     height: 94%;
@@ -831,6 +830,10 @@ div:fullscreen .DescubreQP-Message {
     font-weight: 1.1em;
 }
 
+div:fullscreen .DescubreQP-LinkMinimize{
+    display: none;
+}
+
 .DescubreQP-GameContainer:-webkit-full-screen {
     background-color: white;
     height: 100vh;
@@ -843,6 +846,8 @@ div:fullscreen .DescubreQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 .DescubreQP-GameContainer:-ms-full-screen {
@@ -850,6 +855,9 @@ div:fullscreen .DescubreQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
+
 }
 
 .DescubreQP-GameContainer:-o-full-screen {
@@ -857,6 +865,8 @@ div:fullscreen .DescubreQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 .DescubreQP-GameContainer:fullscreen {
@@ -864,20 +874,14 @@ div:fullscreen .DescubreQP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+	overflow-y:auto;
 }
 
 div:fullscreen .DescubreQP-Multimedia {
-    height: 100vh;
     width: 100%;
     max-width: 100vw;
 }
-
-
-
-
-
-
-
 @-moz-keyframes DescubreQP-parpadeo {
     0% {
         opacity: 1.0;

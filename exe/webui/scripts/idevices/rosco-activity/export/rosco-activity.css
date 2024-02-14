@@ -966,6 +966,12 @@ div:fullscreen .exeQuextIcons-FullScreen {
     width: 100%;
     overflow: hidden;
 }
+.rosco-MainContainer:fullscreen{
+	background-color: white;
+	height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
 
 div:-webkit-full-screen .rosco-Game{
     width: 30vw;
@@ -1256,6 +1262,11 @@ div:fullscreen .rosco-GameContainer .exeQuextIcons-Submit{
     width: 1.9em;
     height: 1.9em;
 }
+
+div:fullscreen .rosco-LinkArrowMinimize{
+    display: none;
+}
+
 
 
 

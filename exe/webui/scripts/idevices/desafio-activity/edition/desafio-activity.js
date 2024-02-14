@@ -88,8 +88,6 @@ var $exeDevice = {
         this.desafioID = this.getId();
         this.setMessagesInfo();
         this.createForm();
-        
-
     },
     setMessagesInfo: function () {
         var msgs = this.msgs;

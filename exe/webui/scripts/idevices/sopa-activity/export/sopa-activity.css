@@ -693,28 +693,47 @@ div:fullscreen .SPP-Multimedia, div:-webkit-full-screen .SPP-Multimedia, div:-mo
 	width: 95vmin;
 }
 
+div:fullscreen .SPP-LinkMinimize{
+    display: none;
+}
+
 .SPP-GameContainer:-webkit-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SPP-GameContainer:-moz-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SPP-GameContainer:-ms-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SPP-GameContainer:-o-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
+}
+.VQXTP-GameContainer:fullscreen {
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SPP-EvaluationDivIcon{

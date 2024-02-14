@@ -206,10 +206,10 @@ var interaction = {
 			alt = interaction.i18n.msgUncompletedActivity;
 		if (state == 1) {
 			icon = 'exequextrerrors.png';
-			alt = interaction.i18n.msgUnsuccessfulActivity.replace('%s', score);
+			alt = interaction.i18n.msgUnsuccessfulActivity.replace('%S', score);
 		} else if (state == 2) {
 			icon = 'exequexthits.png';
-			alt = interaction.i18n.msgSuccessfulActivity.replace('%s', score);
+			alt = interaction.i18n.msgSuccessfulActivity.replace('%S', score);
 		}
 		$('#interactiveEvaluationIcon').remove();
 		var sicon = '<div id="interactiveEvaluationIcon" class="interactive-EvaluationDivIcon"><img  src="' + interaction.idevicePath + icon + '"><span>' + interaction.i18n.msgUncompletedActivity + '</span></div>'
@@ -266,7 +266,7 @@ var interaction = {
 				formattedDate = interaction.getDateString(),
 				scorm = {
 					'id': interaction.ideviceID,
-					'type': 'Vídeo interactivo',
+					'type': interaction.i18n.msgTypeGame,
 					'node': node,
 					'name': name,
 					'score': score,

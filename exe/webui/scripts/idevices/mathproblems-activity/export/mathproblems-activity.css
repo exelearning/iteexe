@@ -590,7 +590,9 @@ div:-moz-full-screen .exeQuextIcons-FullScreen {
 	background-size: 100% 100%;
 }
 
-
+div:fullscreen .MTHP-LinkMinimize{
+	display: none;
+}
 
 div:fullscreen .MTHP-Multimedia, div:-webkit-full-screen .MTHP-Multimedia, div:-moz-full-screen .MTHP-Multimedia {
 	background-color: #fff;
@@ -606,24 +608,39 @@ div:fullscreen .MTHP-Multimedia, div:-webkit-full-screen .MTHP-Multimedia, div:-
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHP-GameContainer:-moz-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHP-GameContainer:-ms-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHP-GameContainer:-o-full-screen {
 	background-color: white;
 	height: 100vh;
 	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
+}
+.MTHP-GameContainer:fullscreen{
+	background-color: white;
+	height: 100vh;
+	width: 100%;
+	padding-top: 3px;
+    overflow-y: auto;
 }
 
 .MTHP-EvaluationDivIcon{
