@@ -31,6 +31,7 @@ background-size:24px 24px}
 .udlContentFormBlockHeader:hover{background:#EFEFEF}
 .udlContentFormBlockHeader h2{font-size:1.1em;margin:0;display:inline;color:#787878;font-weight:bold}
 .udlContentFormBlockHeader h2 strong{text-indent:-999em;display:inline-block;width:28px;height:28px;background:url(icons/num.png) no-repeat 50% 50%;opacity:.8;background-size:20px 20px}
+.udlContentFormBlockButtonTxtViewer{opacity:.8;font-weight:normal;margin-left:.5em;font-size:.9em}
 .udlContentFormBlockHeaderLinks{float:right}
 .udlContentFormBlockHeaderLinks a{text-indent:-999em;display:inline-block;width:28px;height:28px;background:url(icons/num.png) no-repeat 50% 50%;opacity:.6;
 -webkit-transition: opacity 0.5s ease-in-out;

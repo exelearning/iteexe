@@ -296,6 +296,11 @@ var $exeDevice = {
 		e.value = e.value.replace(/~/g,""); // ~ is not allowed, as it's used when saving the content
 		var fid = e.id;
 			fid = fid.replace("udlContentFormBlockButtonTxt-","udlContentFormBlockButtonTxtOptions-");
+		
+		// Preview the button text in the title bar
+		var viewerId = fid.replace("udlContentFormBlockButtonTxtOptions-","udlContentFormBlockButtonTxtViewer-");
+		$("#"+viewerId).html(e.value);
+		
 		var optionsBlock = $("#"+fid);
 		if (e.value=='') optionsBlock.hide();
 		else optionsBlock.show();	
@@ -555,7 +560,7 @@ var $exeDevice = {
 		var html = '\
 			<article class="udlContentFormBlock">\
 				<header class="udlContentFormBlockHeader">\
-					<h2><strong>'+_("Block")+'</strong> <span class="udlContentFormBlockCounter"></span></h2> \
+					<h2><strong>'+_("Block")+'</strong> <span class="udlContentFormBlockCounter"></span> <span class="udlContentFormBlockButtonTxtViewer">'+btnTxt+'</span></h2> \
 					<span class="udlContentFormBlockHeaderLinks">\
 						<a href="#" class="udlContentFormBlockDeleter" title="'+_("Delete")+'">'+_("Delete")+'</a> \
 						<a href="#" class="udlContentFormBlockUp" title="'+_("Up")+'">'+_("Up")+'</a> \
@@ -619,6 +624,7 @@ var $exeDevice = {
 				labels.eq(5).attr("for","udlContentCharacter-"+i+"-4");
 				labels.eq(6).attr("for","udlContentFormTxt-"+i);
 			$("input[type='text']",this).eq(0).attr("id","udlContentFormBlockButtonTxt-"+i);
+			$(".udlContentFormBlockButtonTxtViewer",this).attr("id","udlContentFormBlockButtonTxtViewer-"+i);
 			$(".udlContentFormBlockButtonTxtOptions",this).attr("id","udlContentFormBlockButtonTxtOptions-"+i);
 			$(".udlContentFormBlockButtonTxtExplanation",this).attr("id","udlContentFormBlockButtonTxtExplanation-"+i);
 			var radios = $("input[type='radio']",this);
