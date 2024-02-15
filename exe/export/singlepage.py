@@ -80,7 +80,7 @@ class SinglePage(Page):
         if package.get_loadMathEngine():
             extraCSS = ' exe-auto-math'  
         if package.get_addAccessibilityToolbar():
-            extraCSS = ' exe-atools'            
+            extraCSS += ' exe-atools'            
         if for_print:
             # Include extra onload bit:
             html += u'<body class="exe-single-page'+extraCSS+'" onload="print_page()">'

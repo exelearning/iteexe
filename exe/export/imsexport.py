@@ -443,7 +443,7 @@ class IMSPage(Page):
         if self.node.package.get_loadMathEngine():
             extraCSS = ' exe-auto-math'
         if self.node.package.get_addAccessibilityToolbar():
-            extraCSS = ' exe-atools'
+            extraCSS += ' exe-atools'
         html += u'<body class="exe-ims' + extraCSS + '" id="exe-node-' + self.node.id + '"><script type="text/javascript">document.body.className+=" js"</script>' + lb
         html += u"<div id=\"outer\">" + lb
         html += u"<" + sectionTag + " id=\"main\">" + lb

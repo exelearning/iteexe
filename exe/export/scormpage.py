@@ -134,7 +134,7 @@ class ScormPage(Page):
         if self.node.package.get_loadMathEngine():
             extraCSS = ' exe-auto-math'
         if self.node.package.get_addAccessibilityToolbar():
-            extraCSS = ' exe-atools'
+            extraCSS += ' exe-atools'
         if self.scormType == 'commoncartridge':
             if style.hasValidConfig():
                 html += style.get_extra_head()        
