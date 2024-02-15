@@ -27,7 +27,10 @@ var $exeDevice = {
     msgList: _("checklist"),
     msgScore: _("Score"),
     msgPoints: _("points"),
-    msgPoint: _("point")
+    msgPoint: _("point"),
+    msgReboot: _("Restart"),
+    msgDelete: _("Are you sure you want clear all form fields?"),
+
   },
   init: function () {
     this.createForm();

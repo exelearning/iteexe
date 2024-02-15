@@ -159,7 +159,6 @@ var $eXeListaCotejo = {
     }
   },
   updateItems: function (id, instance) {
-   
     var data = $eXeListaCotejo.getDataStorage(id);
     if (!data) return;
     var  arr = data.items || [];
@@ -258,10 +257,11 @@ var $eXeListaCotejo = {
             <div class="CTJP-Footer" style="display:' + df + '">' + footer +  '</div>\
           </div>\
           <div class="CTJP-Capture">\
-              <a id="ctjCapture-' +  instance + '" href="#">' +  mOptions.msgs.msgSave + "</a>\
+              <a id="ctjReboot-' +  instance + '" href="#">' +  mOptions.msgs.msgReboot + '</a>\
+              <a id="ctjCapture-' +  instance + '" href="#">' +  mOptions.msgs.msgSave + '</a>\
           </div>\
         </div>\
-      </div>";
+      </div>';
     return html;
   },
 
@@ -286,7 +286,6 @@ var $eXeListaCotejo = {
 
     $("#ctjUserName-"+instance).on("change", function () {
       $eXeListaCotejo.saveCotejo(instance);
-
     });
 
     $("#ctjUserDate-"+instance).on("change", function () {
@@ -300,6 +299,19 @@ var $eXeListaCotejo = {
     }
     $eXeListaCotejo.counter(instance);
     $eXeListaCotejo.updateLatex("ctjGameContainer-" + instance);
+    $("#ctjReboot-" + instance).on("click", function (e) {
+      e.preventDefault();
+      if (confirm(mOptions.msgs.msgDelete)) {
+        localStorage.removeItem("dataCotejo-" + mOptions.id);
+        mOptions.points = 0;
+        mOptions.totalPoints = 0;
+        $("#ctjUserName-" + instance).val('');
+        $("#ctjUserDate-" + instance).val('');
+        $('#ctjItems-' +instance ).empty();
+        $('#ctjItems-' +instance ).append($eXeListaCotejo.createItems(instance));
+        $eXeListaCotejo.counter(instance);
+      }
+    });
   },
   counter: function (instance) {
     var mOptions = $eXeListaCotejo.options[instance];
