@@ -174,9 +174,28 @@ var $exeDevice = {
                             <a href="#" id="slcmEPaste" class="SLCME-ENavigationButton"  title="' + _('Paste activity') + '"><img src="' + path + 'quextIEPaste.png" alt="' + _('Paste activity') + '" class="SLCME-EButtonImage b-paste" /></a>\
                         </div>\
                         <p class="SLCME-ENumActivity" id="slcmActivityNumberDiv">' + _('Activity') + ' <span id="slcmActivityNumber">1</span></p>\
+                        <div id="slcmEImageDefinitionDiv" style="display:none">\
+                            <p class="SLCME-EImageDefinition">\
+                                <img class="SLCME-EImageEnu" id="slcmEImageDefinition"  src="' + path + 'quextIEImagex.png" alt="' + _("No image") + '" />\
+                            </p>\
+                        </div>\
                         <p class="SLCME-ECustomMessageDef" id="slcmEDefinitionDiv">\
                             <label for="slcmEDefinition">' + _('Statement') + ':</label><input type="text" id="slcmEDefinition">\
                         </p>\
+                        <div>\
+                            <p class="SLCME-EDefinitioMedia">\
+                                <label>' + _("Image") + ':</label>\
+                                <input type="text" id="slcmEURLImageDefinition" class="exe-file-picker"  />\
+                                <a href="#"id="slcmEPlayImageDefinition" class="SLCME-ENavigationButton SLCME-EPlayVideo" title="' + _("Image") + '"><img src="' + path + 'quextIEPlay.png" alt="Play audio" class="SLCME-EButtonImage b-play" /></a>\
+                                <a href="#" id="slcmEShowMoreDefinition" class="SLCME-ENavigationButton SLCME-EShowMore" title="' + _("More") + '"><img src="' + path + 'quextEIMore.png" alt="' + _("More") + '" class="SLCME-EButtonImage b-play" /></a>\
+                            </p>\
+                            <div style="margin:0;padding:0;display:none" id="slcmEDefinitionAltAuthor">\
+                                <p class="SLCME-EDefinitionAltAuthor" >\
+                                    <label>' + _("Authorship") + ':</label><input id="slcmEAuthorDefinition" type="text" class="SLCME-EAuthor" />\
+                                    <label>' + _("Alternative text") + ':</label><input id="slcmEAltDefinition" type="text" class="SLCME-EAlt" />\
+                                </p>\
+                            </div>\
+                        </div>\
                         <p class="SLCME-ECustomMessageAudio">\
                             <label>' + _("Audio") + ':</label>\
                             <input type="text" id="slcmEURLAudioDefinition" class="exe-file-picker SLCME-EURLAudio"  />\
@@ -369,6 +388,14 @@ var $exeDevice = {
         $('.SLCME-EDatosCarta').removeClass('SLCME-EActive');
         $exeDevice.activeID = $('.SLCME-EDatosCarta').eq(0).data('id');
         $('.SLCME-EDatosCarta').eq(0).addClass('SLCME-EActive');
+        $('#slcmEURLImageDefinition').val(phrase.url);
+        $('#slcmEAltDefinition').val(phrase.alt );
+        $('#slcmEAuthorDefinition').val(phrase.author);
+        $('#slcmEImageDefinition').attr('src',phrase.url );
+        $('#slcmEImageDefinitionDiv').hide();
+        if(phrase.url.trim().length>4){
+            $('#slcmEImageDefinitionDiv').show();
+        }
         $('#slcmEMessageOK').val(phrase.msgHit);
         $('#slcmEMessageKO').val(phrase.msgError);
         $('#slcmEDefinition').val(phrase.definition);
@@ -394,9 +421,9 @@ var $exeDevice = {
             card = '<div class="SLCME-EDatosCarta SLCME-EActive" id="slcmEDatosCarta-' + $exeDevice.activeID + '" data-id="' + $exeDevice.activeID + '">\
            <div class="SLCME-EMultimedia">\
                 <div class="SLCME-ECard">\
-                    <img class=".SLCME-EHideSLCME-EImage" id="slcmEImage-' + $exeDevice.activeID + '"  src="' + path + 'quextIEImage.png" alt="' + _("No image") + '" />\
+                    <img id="slcmEImage-' + $exeDevice.activeID + '"  src="' + path + 'quextIEImage.png" alt="' + _("No image") + '" />\
                     <img class="SLCME-ECursor" id="slcmECursor-' + $exeDevice.activeID + '" src="' + path + 'quextIECursor.gif" alt="" />\
-                    <img class=".SLCME-EHideSLCME-NoImage" id="slcmENoImage-' + $exeDevice.activeID + '" src="' + path + 'quextIEImage.png" alt="' + _("No image") + '" />\
+                    <img id="slcmENoImage-' + $exeDevice.activeID + '" src="' + path + 'quextIEImage.png" alt="' + _("No image") + '" />\
                     <div class="SLCME-ETextDiv" id="slcmETextDiv-' + $exeDevice.activeID + '"></div>\
                 </div>\
             </div>\
@@ -522,7 +549,9 @@ var $exeDevice = {
         if (!correct) {
             return false;
         }
-
+        phrase.url = $('#slcmEURLImageDefinition').val();
+        phrase.alt = $('#slcmEAltDefinition').val();
+        phrase.author = $('#slcmEAuthorDefinition').val();
         phrase.msgHit = $('#slcmEMessageOK').val();
         phrase.msgError = $('#slcmEMessageKO').val();;
         phrase.definition = $('#slcmEDefinition').val();
@@ -556,6 +585,9 @@ var $exeDevice = {
         q.audioDefinition = '';
         q.audioHit = '';
         q.audioError = '';
+        q.url="";
+        q.alt="";
+        q.author="";
         return q;
     },
 
@@ -582,6 +614,7 @@ var $exeDevice = {
             json = $exeDevice.Decrypt(json);
             var dataGame = $exeDevice.isJsonString(json),
                 $audiosDef = $('.seleccionamedias-LinkAudiosDef', wrapper),
+                $imagesDef = $('.seleccionamedias-LinkImagesDef', wrapper),
                 $audiosError = $('.seleccionamedias-LinkAudiosError', wrapper),
                 $audiosHit = $('.seleccionamedias-LinkAudiosHit', wrapper);
             for (var i = 0; i < dataGame.phrasesGame.length; i++) {
@@ -607,8 +640,20 @@ var $exeDevice = {
                     }
                 });
                 dataGame.phrasesGame[i].phrase  = typeof dataGame.phrasesGame[i].phrase =="null"?'':dataGame.phrasesGame[i].phrase;
+                dataGame.phrasesGame[i].url  = typeof dataGame.phrasesGame[i].url =="undefined"?'':dataGame.phrasesGame[i].url;
+                dataGame.phrasesGame[i].alt  = typeof dataGame.phrasesGame[i].alt =="undefined"?'':dataGame.phrasesGame[i].alt;
+                dataGame.phrasesGame[i].author  = typeof dataGame.phrasesGame[i].author =="undefined"?'':dataGame.phrasesGame[i].author;
 
             }
+            $imagesDef.each(function () {
+                var iqb = parseInt($(this).text());
+                if (!isNaN(iqb) && iqb < dataGame.phrasesGame.length) {
+                    dataGame.phrasesGame[iqb].url = $(this).attr('href');
+                    if (dataGame.phrasesGame[iqb].url.length < 4) {
+                        dataGame.phrasesGame[iqb].url = "";
+                    }
+                }
+            });
             $audiosDef.each(function () {
                 var iqa = parseInt($(this).text());
                 if (!isNaN(iqa) && iqa < dataGame.phrasesGame.length) {
@@ -757,6 +802,10 @@ var $exeDevice = {
                 if (typeof p.url != "undefined" && p.url.length > 4 && p.url.indexOf('http') != 0) {
                     linkImage = '<a href="' + p.url + '" class="js-hidden seleccionamedias-LinkImages-' + i + '">' + k + '</a>';
                 }
+                html += linkImage;
+            }
+            if (typeof q.url != "undefined" && q.url.indexOf('http') != 0 && q.url.length > 4) {
+                linkImage = '<a href="' + q.url + '" class="js-hidden seleccionamedias-LinkImagesDef">' + i + '</a>';
                 html += linkImage;
             }
         }
@@ -1107,6 +1156,17 @@ var $exeDevice = {
             return false;
 
         });
+        $('#slcmEShowMoreDefinition').on('click', function (e) {
+            e.preventDefault();
+            $('#slcmEDefinitionAltAuthor').toggle();
+        });
+        $('#slcmEURLImageDefinition').on('change', function () {
+            $exeDevice.loadImageDefinition();
+        });
+        $('#slcmEPlayImageDefinition').on('click', function (e) {
+            e.preventDefault();
+            $exeDevice.loadImageDefinition();
+        });
         $exeAuthoring.iDevice.gamification.itinerary.addEvents();
 
     },
@@ -1119,6 +1179,23 @@ var $exeDevice = {
             return false;
         }
         $exeDevice.showImage(id);
+
+    },
+
+    loadImageDefinition: function () {
+        var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'],
+            url = $('#slcmEURLImageDefinition').val(),
+            ext = url.split('.').pop().toLowerCase();
+        if(url.trim().length <4){
+            $('#slcmEImageDefinitionDiv').hide()
+            return false;
+        }
+        if ((url.indexOf('resources') == 0 || url.indexOf('/previews/') == 0) && validExt.indexOf(ext) == -1) {
+            $exeDevice.showMessage(_("Supported formats") + ": jpg, jpeg, gif, png, svg");
+            return false;
+        }
+        $('#slcmEImageDefinitionDiv').show()
+        $('#slcmEImageDefinition').attr('src', url);
 
     },
     loadAudio: function (url) {
@@ -1145,7 +1222,14 @@ var $exeDevice = {
     },
 
     clearPhrase: function () {
-        $('#slcmEPhrase').empty()
+        $('#slcmEPhrase').empty();
+        $('#slcmEDefinition').val('');
+        $('#slcmEURLImageDefinition').val('');
+        $('#slcmEAltDefinition').val('');
+        $('#slcmEAuthorDefinition').val('');
+        $('#slcmEImageDefinition').attr('src','' );
+        $('#slcmEURLAudioDefinition').attr('src','' );
+        $('#slcmEImageDefinitionDiv').hide();
     },
 
     addPhrase: function () {
@@ -1164,6 +1248,7 @@ var $exeDevice = {
             $('#slcmEPaste').hide();
             $('#slcmENumPhrases').text($exeDevice.phrasesGame.length);
             $('#slcmActivityNumber').text($exeDevice.phrasesGame.length);
+
             $exeDevice.updateQuestionsNumber();
         }
     },

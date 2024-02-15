@@ -154,7 +154,7 @@ var $eXeSeleccionaMedias = {
         mOption = $eXeSeleccionaMedias.loadDataGame(dl, this),
         msg = mOption.msgs.msgPlayStart;
       $eXeSeleccionaMedias.options.push(mOption);
-      var slcmp = $eXeSeleccionaMedias.createInterfaceOrdena(i);
+      var slcmp = $eXeSeleccionaMedias.createInterfaceSelecciona(i);
       dl.before(slcmp).remove();
       $("#slcmpGameMinimize-" + i).hide();
       $("#slcmpGameContainer-" + i).hide();
@@ -227,14 +227,19 @@ var $eXeSeleccionaMedias = {
     json = $eXeSeleccionaMedias.Decrypt(json);
     var mOptions = $eXeSeleccionaMedias.isJsonString(json),
       $audiosDef = $(".seleccionamedias-LinkAudiosDef", sthis),
+      $imagesDef = $('.seleccionamedias-LinkImagesDef', sthis),
       $audiosError = $(".seleccionamedias-LinkAudiosError", sthis),
       $audiosHit = $(".seleccionamedias-LinkAudiosHit", sthis),
       hasLatex = /(?:\$|\\\(|\\\[|\\begin\{.*?})/.test(json);
     if (hasLatex) {
       $eXeSeleccionaMedias.hasLATEX = true;
     }
+
     mOptions.playerAudio = "";
     for (var i = 0; i < mOptions.phrasesGame.length; i++) {
+      mOptions.phrasesGame[i].url = typeof mOptions.phrasesGame[i].url == "undefined" ? "" : mOptions.phrasesGame[i].url;
+      mOptions.phrasesGame[i].alt = typeof mOptions.phrasesGame[i].alt == "undefined" ? "" : mOptions.phrasesGame[i].alt;
+      mOptions.phrasesGame[i].author =typeof mOptions.phrasesGame[i].author == "undefined" ? "" : mOptions.phrasesGame[i].author;
       var $imagesLink = $(".seleccionamedias-LinkImages-" + i, sthis),
         $audiosLink = $(".seleccionamedias-LinkAudios-" + i, sthis),
         cards = mOptions.phrasesGame[i].cards;
@@ -259,7 +264,8 @@ var $eXeSeleccionaMedias = {
       mOptions.phrasesGame[i].phrase =
         typeof mOptions.phrasesGame[i].phrase == "undefined"
           ? ""
-          : mOptions.phrasesGame[i].phrase;
+          : mOptions.phrasesGame[i].phrase;  
+
       for (var j = 0; j < cards.length; j++) {
         cards[j].type = 0;
         if (cards[j].url.length > 4 && cards[j].eText.trim().length > 0) {
@@ -272,6 +278,15 @@ var $eXeSeleccionaMedias = {
         cards[j].order = j;
       }
     }
+    $imagesDef.each(function () {
+      var iqb = parseInt($(this).text());
+      if (!isNaN(iqb) && iqb < mOptions.phrasesGame.length) {
+        mOptions.phrasesGame[iqb].url = $(this).attr('href');
+          if (mOptions.phrasesGame[iqb].url.length < 4) {
+            mOptions.phrasesGame[iqb].url = "";
+          }
+      }
+   });
     $audiosDef.each(function () {
       var iqa = parseInt($(this).text());
       if (!isNaN(iqa) && iqa < mOptions.phrasesGame.length) {
@@ -307,9 +322,8 @@ var $eXeSeleccionaMedias = {
     mOptions.allPhrases = $.extend(true, {}, mOptions.phrasesGame);
     mOptions.phrasesGame = $eXeSeleccionaMedias.getQuestions(mOptions.phrasesGame, mOptions.percentajeQuestions);
     mOptions.phrasesGame = $eXeSeleccionaMedias.shuffleAds(mOptions.phrasesGame);
-    mOptions.numberQuestions = mOptions.phrasesGame.length; 
-    mOptions.fullscreen = false;
     mOptions.numberQuestions = mOptions.phrasesGame.length;
+    mOptions.fullscreen = false;
     mOptions.hits = 0;
     for (var i = 0; i < mOptions.phrasesGame.length; i++){
       mOptions.phrasesGame[i].cards = $eXeSeleccionaMedias.getCardsPart( mOptions.phrasesGame[i].cards, mOptions.numberMaxCards);
@@ -324,19 +338,16 @@ var $eXeSeleccionaMedias = {
     mOptions.phrase = mOptions.phrasesGame[num];
     $eXeSeleccionaMedias.stopSound(instance);
     $eXeSeleccionaMedias.addCards(mOptions.phrase.cards, instance);
-    $eXeSeleccionaMedias.showMessage(1,'',instance)
+    $eXeSeleccionaMedias.showMessage(1,'',instance);
+    $eXeSeleccionaMedias.showImage(num,instance);     $('#slcmpAudioDef-' + instance).hide();
     if (num > 0) {
       $('#slcmpQuestion-' + instance).html(mOptions.phrase.definition);
       $('#slcmpQuestion-' + instance).show();
-      if (
-        typeof mOptions.phrase.audioDefinition != "undefined" &&
-        mOptions.phrase.audioDefinition.length > 4
-      ) {
-        $eXeSeleccionaMedias.playSound(
-          mOptions.phrase.audioDefinition,
-          instance
-        );
+      if (typeof mOptions.phrase.audioDefinition != "undefined" && mOptions.phrase.audioDefinition.length > 4) {
+        $eXeSeleccionaMedias.playSound( mOptions.phrase.audioDefinition, instance );
+        $('#slcmpAudioDef-'+instance).css('display','block');
       }
+
     }
   },
 
@@ -418,7 +429,7 @@ var $eXeSeleccionaMedias = {
     } catch (e) {}
     return false;
   },
-  createInterfaceOrdena: function (instance) {
+  createInterfaceSelecciona: function (instance) {
     var html = "",
       path = $eXeSeleccionaMedias.idevicePath,
       msgs = $eXeSeleccionaMedias.options[instance].msgs,
@@ -446,7 +457,7 @@ var $eXeSeleccionaMedias = {
                       <strong><span class="sr-av">' +  msgs.msgTime + ':</span></strong>\
 					          <div class="exeQuextIcons  exeQuextIcons-Time" id="slcmpImgTime-' + instance + '" title="' +  msgs.msgTime +  '"></div>\
                     <p  id="slcmpPTime-' + instance + '" class="SLCMP-PTime">00:00</p>\
-                    <a href="#" class="SLCMP-LinkMinimize" id="slcViewMode-' +  instance + '" title="' + msgs.msgChangeMode + '">\
+                    <a href="#" class="SLCMP-LinkMansory" id="slcViewMode-' +  instance + '" title="' + msgs.msgChangeMode + '">\
                       <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                       <div class="exeQuextIcons exeQuextIcons-ModeTable SLCMP-Activo"></div>\
                     </a>\
@@ -460,15 +471,24 @@ var $eXeSeleccionaMedias = {
                     </a>\
 				</div>\
             </div>\
+            <div class="SLCMP-ImageDiv" id="slcmpImageDiv-' +  instance +  '">\
+                 <img class="SLCMP-ImageDef" id="slcmpImageDefinition-' +  instance +  '"  src="' + path + 'slcmImage.png" alt="' + _("No image") + '" />\
+            </div>\
+            <div class="SLCMP-Author" id="slcmpAuthor-' +  instance +  '">Probando</div>\
             <div class="SLCMP-Information">\
-                <p class="SLCMP-Message" id="slcmpMessage-' +  instance +  '"></p>\
-                <a href="#" id="slcmpStartGame-' +  instance + '">' +  msgs.msgPlayStart + '</a>\
+              <p class="SLCMP-Message" id="slcmpMessage-' +  instance +  '"></p>\
+              <a href="#" id="slcmpStartGame-' +  instance + '">' +  msgs.msgPlayStart + '</a>\
             </div>\
             <div class="SLCMP-GameButton" id="slcmpGameButtons-' +  instance + '">\
                 <a href="#" id="slcmpCheck-' + instance + '" title="">' + msgs.msgCheck + '</a>\
                 <a href="#" id="slcmpReboot-' + instance + '" title="" style="display:none">' +  msgs.msgAgain + '</a>\
             </div>\
-            <div class="SLCMP-Question" id="slcmpQuestion-' +  instance +  '"></div>\
+            <div class="SLCMP-QuestionDiv" id="slcmpQuestionDiv-' +  instance +  '">\
+              <div class="SLCMP-Question" id="slcmpQuestion-' +  instance +  '"></div>\
+              <a href="#" id="slcmpAudioDef-' + instance + '" class="SLCMP-LinkAudioDef">\
+                <img src="' + $eXeSeleccionaMedias.idevicePath + 'exequextplayaudio.svg">\
+              </a>\
+            </div>\
             <div class="SLCMP-Multimedia" id="slcmpMultimedia-' + instance + '"></div>\
             <div class="SLCMP-Cubierta" id="slcmpCubierta-' + instance + '">\
                 <div class="SLCMP-GameOverExt" id="slcmpGameOver-' + instance +'">\
@@ -552,6 +572,74 @@ var $eXeSeleccionaMedias = {
     fB = +"</div>";
     return butonScore;
   },
+  showImage: function (num,instance) {
+    var mOptions = $eXeSeleccionaMedias.options[instance],
+        q = mOptions.phrasesGame[num];
+
+    if(q.url.length < 4){
+      return false;
+    }
+    var $image = $('#slcmpImageDefinition-' + instance),
+        $imageDiv = $('#slcmpImageDiv-' + instance),
+        $author = $('#slcmpAuthor-' + instance);
+    $imageDiv.hide();
+    $author.hide();
+    $image.attr('alt', q.alt);
+    $image.prop('src', q.url)
+        .on('load', function () {
+            if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+                return false;
+            } else {
+                var mData = $eXeSeleccionaMedias.placeImageWindows(this, this.naturalWidth, this.naturalHeight);
+                $eXeSeleccionaMedias.drawImage(this, mData);
+                $imageDiv.show();
+                if( q.author.length > 0){
+                  $author.show();
+                }
+                if( q.alt.length > 0){
+                  $image.prop('alt', q.alt);
+                }
+                return true;
+            }
+        }).on('error', function () {
+            return false;
+        });
+  },
+  drawImage: function (image, mData) {
+    $(image).css({
+        'position': 'absolute',
+        'left': mData.x + 'px',
+        'top': mData.y + 'px',
+        'width': mData.w + 'px',
+        'height': mData.h + 'px'
+    });
+},
+  placeImageWindows: function (image, naturalWidth, naturalHeight) {
+    var wDiv = $(image).parent().width() > 0 ? $(image).parent().width() : 1,
+        hDiv = $(image).parent().height() > 0 ? $(image).parent().height() : 1,
+        varW = naturalWidth / wDiv,
+        varH = naturalHeight / hDiv,
+        wImage = wDiv,
+        hImage = hDiv,
+        xImagen = 0,
+        yImagen = 0;
+    if (varW > varH) {
+        wImage = parseInt(wDiv);
+        hImage = parseInt(naturalHeight / varW);
+        yImagen = parseInt((hDiv - hImage) / 2);
+    } else {
+        wImage = parseInt(naturalWidth / varH);
+        hImage = parseInt(hDiv);
+        xImagen = parseInt((wDiv - wImage) / 2);
+    }
+    return {
+        w: wImage,
+        h: hImage,
+        x: xImagen,
+        y: yImagen
+    };
+
+},
   updateEvaluationIcon: function (instance) {
     var mOptions = $eXeSeleccionaMedias.options[instance];
     if (mOptions.id && mOptions.evaluation && mOptions.evaluationID.length > 0) {
@@ -587,10 +675,10 @@ var $eXeSeleccionaMedias = {
       alt = mOptions.msgs.msgUncompletedActivity;
     if (state == 1) {
       icon = "exequextrerrors.png";
-      alt = mOptions.msgs.msgUnsuccessfulActivity.replace("%s", score);
+      alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
     } else if (state == 2) {
       icon = "exequexthits.png";
-      alt = mOptions.msgs.msgSuccessfulActivity.replace("%s", score);
+      alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
     }
     $("#slcmpEvaluationIcon-" + instance).remove();
     var sicon ='<div id="slcmpEvaluationIcon-' + instance + '" class="SLCMP-EvaluationDivIcon"><img  src="' + $eXeSeleccionaMedias.idevicePath + icon + '"><span>' +  mOptions.msgs.msgUncompletedActivity +  "</span></div>";
@@ -1037,7 +1125,8 @@ var $eXeSeleccionaMedias = {
         $eXeSeleccionaMedias.showMessage(1,'',instance);
         $eXeSeleccionaMedias.activateHover(instance);
     });
-    $('#slcViewMode-' + instance).click(function() {
+    $('#slcViewMode-' + instance).click(function(e) {
+      e.preventDefault();
       $('#slcViewMode-' + instance).find('div.exeQuextIcons').removeClass('exeQuextIcons-ModeMansory exeQuextIcons-ModeTable');
       var $multimediaContainer = $('#slcmpMultimedia-' + instance);
       if ($multimediaContainer.hasClass('SLCMP-ModeTable')) {
@@ -1052,6 +1141,12 @@ var $eXeSeleccionaMedias = {
           mOptions.modeTable = true;
         }
     });
+    $('#slcmpAudioDef-'+instance).on('click', function(e){
+        e.preventDefault();
+        var sound= mOptions.phrasesGame[mOptions.active].audioDefinition
+        $eXeSeleccionaMedias.playSound(sound, instance);
+    });
+    
   },
   initializeMasonry: function(instance) {
     var $grid = $("#slcmpMainContainer-" + instance).find(".SLCMP-Multimedia");

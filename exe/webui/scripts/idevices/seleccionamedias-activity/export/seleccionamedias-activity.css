@@ -139,6 +139,23 @@
     z-index: 1006;
 }
 
+.gameQP-Multimedia {
+	background-color: transparent;
+	border-radius: 0.6em;
+	margin: 0.3em auto;
+	max-width: 1024px;
+	overflow: hidden;
+	position: relative;
+	width: 65%;
+}
+
+.gameQP-Multimedia:before {
+	content: '';
+	display: block;
+	padding-top: 56%;
+}
+
+
 .SLCMP-Multimedia {
     background-color: transparent;
     margin: 0 auto;
@@ -165,23 +182,28 @@
     display: none;
 }
 
-.SLCMP-LinkAudio {
-    top: -0.5em;
-    position: absolute;
+.SLCMP-LinkAudio  {
+   
     left: -0.5em;
     width: 20%;
     height: 20%;
     max-height: 2.5em;
     max-width: 2.5em;
-    ;
     min-width: 1em;
     min-height: 1em;
     display: block;
     z-index: 1005;
     display: none;
 }
+.SLCMP-LinkAudioDef{
+    width: 2em;
+    height:2em;
+    z-index: 1005;
+    display: block;
+}
 
-.SLCMP-LinkAudio img {
+
+.SLCMP-LinkAudio img, .SLCMP-LinkAudioDef img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -314,13 +336,50 @@
     text-decoration: underline;
 }
 
-
+.SLCMP-QuestionDiv{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap:nowrap;
+    gap:4px;
+}
 .SLCMP-Question {
     margin: 0.5em auto 0.5em auto;
     width: 100%;
     text-align: center;
     display: none;
     font-size: 1.3em;
+    position: relative;
+}
+
+.SLCMP-ImageDiv {
+	background-color: transparent;
+	border-radius: 0.3em;
+	max-width: 560px;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+    margin: 0 auto;
+    display: none;
+}
+
+.SLCMP-ImageDiv:before {
+	content: '';
+	display: block;
+	padding-top: 56%;
+}
+.SLCMP-ImageDef {
+	position: absolute;
+    top:0;
+	display: block;
+}
+
+.SLCMP-Author {
+    margin: 0.3em auto 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    display: none;
 }
 
 /* Message */
@@ -773,6 +832,8 @@ div:fullscreen .SLCMP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SLCMP-GameContainer:-moz-full-screen {
@@ -780,6 +841,8 @@ div:fullscreen .SLCMP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SLCMP-GameContainer:-ms-full-screen {
@@ -787,6 +850,8 @@ div:fullscreen .SLCMP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SLCMP-GameContainer:-o-full-screen {
@@ -794,6 +859,8 @@ div:fullscreen .SLCMP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 .SLCMP-GameContainer:fullscreen {
@@ -801,6 +868,8 @@ div:fullscreen .SLCMP-Message {
     height: 100vh;
     width: 100%;
     max-width: 100vw;
+    padding-top: 3px;
+    overflow-y: auto;
 }
 
 div:fullscreen .SLCMP-Multimedia {
@@ -813,6 +882,9 @@ div:fullscreen .SLCMP-Multimedia {
     height: 100vh;
     width: 100%;
     max-width: 1000px;
+}
+div:fullscreen .SLCMP-LinkMinimize{
+    display: none;
 }
 .SLCMP-EvaluationDivIcon{
 	display: flex;
@@ -899,6 +971,9 @@ div:fullscreen .SLCMP-Multimedia {
 }
 
 @media screen and (max-width:470px) {
+    .SLCMP-ImageDiv {
+        width: 95%;
+    }
     .SLCMP-MainContainer {
         font-size: 0.9rem;
     }
@@ -906,6 +981,9 @@ div:fullscreen .SLCMP-Multimedia {
         display: none;
     }
     .SLCMP-LinkMinimize {
+        display: none;
+    }
+    .SLCMP-LinkMansory {
         display: none;
     }
     .SLCMP-DataCodeAccessE label {
