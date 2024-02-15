@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install brew system libraries
         run: |
@@ -42,7 +42,7 @@ jobs:
           hdiutil create -volname exe -size 500m -layout GPTSPUD -fs 'Journaled HFS+' -type UDIF installs/osx/exe
 
       - name: Build package
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 14
       - run: |
@@ -54,7 +54,7 @@ jobs:
           python make.py -p
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: exe-macos
           path: installs/osx/INTEF-exe-*.dmg
