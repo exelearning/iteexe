@@ -1,3 +1,14 @@
+/* 
+	Accessibility Toolbar for eXeLearning, by:
+		Juan José de Haro - Original code: BatexeGo - Botones de accesibilidad para la web (https://batexego.bilateria.org/)
+		Ignacio Gros (https://www.gros.es/) - eXeLearning (http://exelearning.net/) version
+	License: Creative Commons Attribution-ShareAlike (https://creativecommons.org/licenses/by-sa/4.0/)
+
+	It includes $exe.atools.Drog, derived from:
+		Drog.js v1.2.1 (https://github.com/erovas/Drog.js)
+		Drog.js, by Emanuel Rojas Vásquez is under the BSD 3-Clause License
+		See Help - Legal Notes - Third Libraries for details
+*/
 $exe.atools = {
 	options : {
 		draggable : true,
@@ -129,9 +140,9 @@ $exe.atools = {
 			if (css!="") {
 				handler.style = css;
 			}
-			Drog.on(handler);
+			$exe.atools.Drog.on(handler);
 			// Move so the element does not move to bottom left the first time you drag it
-			$exe.atools.Drog.fixPosition(handler);		
+			$exe.atools.draggable.fixPosition(handler);		
 		}
 	},
 	checkResetBtnStatus : function(){
@@ -198,7 +209,7 @@ $exe.atools = {
 			$("#eXeAtoolsFont").val("").trigger("change");
 			localStorage.setItem('exeAtoolsFontFamily', '');
 			if($exe.atools.storage.getTranslatorStatus()=="on") $exe.atools.toggleGoogleTranslateWidget();
-			// To review (Back to left bottom?)
+			// Back to left bottom position:
 			// $("#eXeAtoolsSet").attr("style","");
 			// localStorage.setItem('exeAtoolsToolbarStyles','');
 		});
@@ -215,7 +226,7 @@ $exe.atools = {
 		});
 		if ($exe.atools.options.draggable==true) {
 			$(window).on("resize",function(){
-				$exe.atools.Drog.checkPosition();
+				$exe.atools.draggable.checkPosition();
 			});			
 		}
 	},
@@ -264,7 +275,6 @@ $exe.atools = {
 		}
 	},
 	setFontSize : function(size) {
-		// var currentFontSize = parseInt(window.getComputedStyle(document.body).getPropertyValue('font-size'));
 		var currentFontSize = document.body.style.fontSize;
 			currentFontSize = currentFontSize.replace("px","");
 			currentFontSize = parseInt(currentFontSize);
@@ -303,7 +313,7 @@ $exe.atools = {
 		}
 		localStorage.setItem('exeAtoolsTranslator',googleTranslateWidgetVisible);
 	},
-	Drog : {
+	draggable : {
 		limit : function(x,y){
 			var e = $("#eXeAtoolsSet");
 			var h = e.height();
@@ -323,11 +333,11 @@ $exe.atools = {
 		checkPosition : function(){
 			if (!$("body").hasClass("exe-atools-on")) return;
 			var e = document.getElementById("eXeAtoolsSet");
-			var translate = $exe.atools.Drog.getTranslation(e);
+			var translate = $exe.atools.draggable.getTranslation(e);
 			var translateX = translate[0];
 			var translateY = translate[1];
 			if (translateX==0&&translateY==0) return;
-			var pos = $exe.atools.Drog.limit(translateX,translateY);
+			var pos = $exe.atools.draggable.limit(translateX,translateY);
 			var x = pos[0];
 			var y = pos[1];
 			
@@ -341,11 +351,11 @@ $exe.atools = {
 			localStorage.setItem('exeAtoolsToolbarStyles', e.style.cssText);
 		},
 		fixPosition : function(e){
-			var translate = $exe.atools.Drog.getTranslation(e);
+			var translate = $exe.atools.draggable.getTranslation(e);
 			var translateX = translate[0];
 			var translateY = translate[1];
 			if (translateX==0&&translateY==0) return;
-			Drog.move(e, translateX, translateY);			
+			$exe.atools.Drog.move(e, translateX, translateY);			
 		},
 		getTranslation : function(e){
 			var style = window.getComputedStyle(e);
@@ -356,17 +366,13 @@ $exe.atools = {
 		}
 	}
 };
-/*!
- * Drog.js v1.2.1
- * [Back-compatibility: IE11+]
- * Copyright (c) 2021, Emanuel Rojas Vásquez
- * BSD 3-Clause License
- * https://github.com/erovas/Drog.js
- */
+/*
+	$exe.atools.Drog for eXeLearning is derived from:
+	Drog.js v1.2.1 (https://github.com/erovas/Drog.js)
+	Drog.js, by Emanuel Rojas Vásquez is under the BSD 3-Clause License
+	See Help - Legal Notes - Third Libraries for details
+*/
 (function(window, document){
-
-    if(window.Drog)
-        return console.error('Drog.js has already been defined');
 
     let Xi = '-Xi', Yi = '-Yi', Xf = '-Xf', Yf = '-Yf', Xt = '-x', Yt = '-y',
         mousedown = 'mousedown', touchstart = 'touchstart',
@@ -390,83 +396,46 @@ $exe.atools = {
 
         let target = element.querySelector(data) || element;
 
-        // save reference original element into target
+        // Save reference original element into target
         target[father] = element;
 
         // Save element position
         element[Xt] = 0;
         element[Yt] = 0;
 
-        //element[Xi] = 0;
-        //element[Yi] = 0;
-        //element[Xf] = 0;
-        //element[Yf] = 0;
-
-        // element.style.zIndex = 100000;
         target.style.touchAction = "none";
 
-        // signing element
+        // Signing element
         element[isDrog] = true;
 
         addEvent(target, mousedown, drogInit);
         addEvent(target, touchstart, drogInit, passive);
     }
 
-    /*
-	function off(element){
-
-        if(!element[isDrog])
-            return;        
-
-        let target = element.querySelector(data) || element;
-
-        element.style.zIndex = '';
-        element.style.transform = '';
-        target.style.touchAction = '';
-
-        // deleting references
-        target[father] = null;
-
-        // unsigning element
-        element[isDrog] = null;
-
-        removeEvent(target, mousedown, drogInit);
-        removeEvent(target, touchstart, drogInit);
-    }
-	*/
-
-    
-
     function move(element, x, y){
-        
         if(!element[isDrog])
             return;
-
         x = parseFloat(x) || 0;
         y = parseFloat(y) || 0
         element[Xt] = x;
         element[Yt] = y;
         element.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-		// To do now localStorage.setItem('exeAtoolsToolbarStyles', element.style.cssText);
-		// To do now console.debug(element.style.cssText)
     }
 
     function drogInit(e){
 
-        //Fire by central or left click, avoid it
+        // Fire by central or left click, avoid it
         if(e.which === 2 || e.which === 3)
             return;
 
         that = this;
         elmnt = that[father];
 
-        //e.preventDefault();
-
-        // get the mouse cursor position at startup:
+        // Get the mouse cursor position at startup:
         elmnt[Xi] = e.clientX || e.targetTouches[0].clientX;
         elmnt[Yi] = e.clientY || e.targetTouches[0].clientY;
 
-        // call a function whenever the cursor moves:
+        // Call a function whenever the cursor moves:
         if(e.type === touchstart){
             addEvent(that, touchmove, drogMove, passive);
             addEvent(that, touchend, drogEnd, passive);
@@ -484,7 +453,7 @@ $exe.atools = {
         if(e.type === touchmove)
             elmnt = this[father];
 
-        // calculate the new cursor position:
+        // Calculate the new cursor position:
         try{
 			elmnt[Xf] = e.clientX || e.targetTouches[0].clientX;
 			elmnt[Yf] = e.clientY || e.targetTouches[0].clientY;
@@ -496,11 +465,8 @@ $exe.atools = {
         elmnt[Xi] = elmnt[Xf];
         elmnt[Yi] = elmnt[Yf];
 		
-		// To do
-		// elmnt[Xi] and elmnt[Yi] 
-		
-		// elmnt should not be dragged out of the window
-		var pos = $exe.atools.Drog.limit(elmnt[Xt],elmnt[Yt]);
+		// Elmnt should not be dragged out of the window
+		var pos = $exe.atools.draggable.limit(elmnt[Xt],elmnt[Yt]);
 			elmnt[Xt] = pos[0];
 			elmnt[Yt] = pos[1];
 			
@@ -515,19 +481,16 @@ $exe.atools = {
     }
 
     function drogEnd(){
-
         that = this;
-        // stop moving when mouse/touch is released:
+        // Stop moving when mouse/touch is released:
         removeEvent(document, mousemove, drogMove);
         removeEvent(document, mouseup, drogEnd);
-
         removeEvent(that, touchmove, drogMove, passive);
         removeEvent(that, touchend, drogEnd, passive);
     }
 
-    window.Drog = {
+    $exe.atools.Drog = {
         on: on,
-        // off: off,
         move: move
     }
 
