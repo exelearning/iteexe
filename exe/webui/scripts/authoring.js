@@ -950,7 +950,6 @@ var $exeAuthoring = {
     iDevice : {
         init : function() {
 
-			var toReview = _("Full Inclusion"); // Just to complete the translations before the new style is in eXe
 			var errorMsg = "";
 
             // Check if the object and the required methods are defined
