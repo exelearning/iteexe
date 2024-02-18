@@ -32,6 +32,7 @@ var $eXeCompleta = {
     previousScore: '',
     initialScore: '',
     hasLATEX: false,
+    isDragging:false,
     init: function () {
         this.activities = $('.completa-IDevice');
         if (this.activities.length == 0) return;
@@ -594,7 +595,46 @@ var $eXeCompleta = {
         });
         $('#cmptLinkMaximize-' + instance).focus()
         $('#cmptPShowClue-' + instance).hide();
-        $eXeCompleta.updateEvaluationIcon(instance)
+        $eXeCompleta.updateEvaluationIcon(instance);
+        $(document).on("mousemove", function (e) {
+            e.preventDefault()
+            if (!mOptions.gameStarted || mOptions.gameOver) return;
+            if(mOptions.type == 1 && $eXeCompleta.isDragging){
+                var buffer = 40;
+                var scrollSpeed = 10;
+                var clientY = e.clientY || (e.touches && e.touches[0].clientY);
+                if (clientY < buffer) {
+                    window.scrollBy(0, -scrollSpeed);
+                } else if (window.innerHeight - clientY < buffer) {
+                    window.scrollBy(0, scrollSpeed);
+                }
+            }
+        });
+        document.querySelector("#cmptGameContainer-" + instance).addEventListener( "touchmove", function (e) {
+              if (!mOptions.gameStarted || mOptions.gameOver) return;
+              if (!e.touches || e.touches.length == 0) {
+                return;
+              }
+              var touch = e.touches[0];
+              if(mOptions.type == 1 && $eXeCompleta.isDragging){
+                var buffer = 40;
+                var scrollSpeed = 10;
+                if (touch.clientY < buffer) {
+                  window.scrollBy(0, -scrollSpeed);
+                } else if (window.innerHeight - touch.clientY < buffer) {
+                  window.scrollBy(0, scrollSpeed);
+                }
+            }
+        },
+        { passive: false }
+        );
+        $(document).on("mouseup", function (e) {
+            $eXeCompleta.isDragging = false;
+        });
+        document.querySelector("#cmptGameContainer-" + instance).addEventListener("touchend", function (e) {
+            $eXeCompleta.isDragging = false;
+        });
+
     },
     enterCodeAccess: function (instance) {
         var mOptions = $eXeCompleta.options[instance];
@@ -1124,6 +1164,7 @@ var $eXeCompleta = {
                 $(this).css({
                     'z-index': '1',
                 });
+                $eXeCompleta.isDragging = false;
                 $eXeCompleta.moveCard($(this), droptarget, instance);
             },
         });
@@ -1137,7 +1178,7 @@ var $eXeCompleta = {
             num = $(destino).data('number'),
             $clone = $item.clone(),
             dword = mOptions.words[num];
-        $clone.find('.CMPT-WordsButtonNumber').remove();  
+        $clone.find('.CMPT-WordsButtonNumber').remove(); 
         var oword = $clone.text();
         $(destino).val(oword);
         number--;
@@ -1151,7 +1192,7 @@ var $eXeCompleta = {
 
         }
         $(destino).attr('disabled', true);
-        $(destino).removeClass('CMPT-Drag')
+        $(destino).removeClass('CMPT-Drag');
 
     },
 
@@ -1449,11 +1490,13 @@ function factory(e) {
                 r.options.placeholder || r.options.revert ? (t = s.clone().removeAttr("id").addClass("draggable_clone").css({
                     position: "absolute"
                 }).appendTo(r.options.container || s.parent()).offset(s.offset()), r.options.placeholder || e(this).invisible()) : t = s, o = new a(t.offset())
+                $eXeCompleta.isDragging = true;
             },
             drag: function (e, r) {
                 n(r), t.offset(o.absolutize(r))
             },
             dragstop: function (a, s) {
+                $eXeCompleta.isDragging = false;
                 var i = e(this),
                     l = n(s);
                 (r.options.revert || r.options.placeholder) && (i.visible(), r.options.revert || i.offset(o.absolutize(s)), t.remove()), t = null, r.options.update && r.options.update.call(i, a, r), i.trigger("update"), l ? (r.options.drop && r.options.drop.call(i, a, l[0]), l.trigger("drop", [i]), l.removeClass("hovering")) : r.options.onrevert && r.options.onrevert.call(i, a)
