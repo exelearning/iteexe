@@ -230,7 +230,9 @@ var $exe = {
 		if (window.DOMParser) this.clientSearch.init(bod); // IE8- do not support the DOMParser object
 		// Accessibility toolbar
 		if ($("body").hasClass("exe-atools")) {
-			$exe.loadScript("exe_atools.js","$exe.atools.init()");
+			var p = "";
+			if (typeof(exe_editor_mode) != "undefined") p = "/scripts/exe_atools/";
+			$exe.loadScript(p + "exe_atools.js", "$exe.atools.init('" + p + "')");
 		}
 		
     },

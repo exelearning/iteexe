@@ -64,7 +64,7 @@ $exe.atools = {
 			return "";
 		}
 	},
-	init : function(){
+	init : function(p){
 		if (!$("body").hasClass("exe-atools")) return;
 		if (typeof(localStorage)=='undefined') return;
 		
@@ -76,7 +76,7 @@ $exe.atools = {
 			}
 		}
 		
-		$exe.loadScript("exe_atools.css","$exe.atools.start()");
+		$exe.loadScript(p+"exe_atools.css","$exe.atools.start()");
 	},
 	start : function(){
 		var i18n = $exe.atools.i18n;
