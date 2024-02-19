@@ -8,6 +8,7 @@
 		Drog.js v1.2.1 (https://github.com/erovas/Drog.js)
 		Drog.js, by Emanuel Rojas Vásquez is under the BSD 3-Clause License
 		See Help - Legal Notes - Third Libraries for details
+		eXeLearning includes and exports a modified version of Drog.js, with written permission of his author
 */
 $exe.atools = {
 	options : {
@@ -371,6 +372,7 @@ $exe.atools = {
 	Drog.js v1.2.1 (https://github.com/erovas/Drog.js)
 	Drog.js, by Emanuel Rojas Vásquez is under the BSD 3-Clause License
 	See Help - Legal Notes - Third Libraries for details
+	eXeLearning includes and exports a modified version of Drog.js, with written permission of his author
 */
 (function(window, document){
 
