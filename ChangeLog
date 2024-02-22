@@ -1,3 +1,62 @@
+intef-exe (3:2.9.0) lucid; urgency=medium
+
+  * Manuel Narváez
+    - New iDevice: Progress report (compatible with all games and some iDevices with score).
+    - New iDevice (game): Relate.
+    - New iDevice (game): Discover.
+    - New iDevice (game): Classify.
+    - New iDevice (game): Order.
+    - New iDevice (game): Select media files.
+    - A-Z Quiz Game iDevice: Unlimited rounds.
+    - A-Z Quiz Game iDevice: See the answers when finishing the activity option.
+    - Complete iDevice: Auto-scroll when dragging element.
+    - Games: Presentation revision.
+    - Games: Image loading method revision.
+    - Lock iDevice: Password encryption.
+    - Map iDevice: New point types (Title and Information).
+    - Map iDevice: Order selection related score mode.
+    - Math Operations iDevice: Operations with fractions.
+    - TriviExt iDevice: Open-answer questions.
+    - Fixed: Math Problems iDevice. JavaScript variables scope problems.
+    - Fixed: A-Z Quiz Game iDevice: Responsive images.
+
+  * Ignacio Gros
+    - Export menu: Show the default Web Site export type.
+    - Help menu: Forums replaced by Telegram. (#693)
+    - New button to close the style manager panel.
+    - File attachments iDevice: No special characters in path are allowed. (#703)
+    - Rubrics iDevice: Improve error handling. (#716)
+    - Rubrics iDevice: Improve error handling. (#716)
+    - Some iDevices from the "Games" category are now in "Other Contents".
+    - Package panel: Learning Resource Type field visible even in the non-advanced mode.
+    - Styles: No menu reset after resizing the window.
+    - TinyMCE. Media plugin: New help placeholder.
+    - TinyMCE: JavaScript Player disabled by default. (#704)
+    - TinyMCE: Embed PDF using the EMBED tag. (#690)
+    - Fixed: TinyMCE. IFRAME fullscreen attribute was being removed. (#706)
+    - Fixed: TinyMCE. Unnecessary data-mce-fragment attributes. (#229)
+    - Fixed: TinyMCE. 404 errors on templates images. (#705)
+    - Fixed: TinyMCE. Allow pasting Mediateca links. (#707)
+    - Fixed: TinyMCE. Content deleted after inserting a TEXTAREA. (#691)
+    - Fixed: TinyMCE. Definition lists. Allow SPAN in DT. (#694)
+    - Fixed: TinyMCE. Linked image deleted when edited. (#700)
+    - Fixed: IFRAME contents resizing problem. (#715)
+    - Fixed: Cloze Activity iDevice. Too wide text fields. (#710)
+    - Fixed: "Please save your iDevice first" message when no iDevice was open. (#699)
+
+  * Pablo Amaya
+    - Fixed: Single page export duplicated JavaScript files. (#713)
+    - Fixed: Appimage deb package postinst content revision. (#698)
+    
+  * Ernesto Serrano
+    - Fixed: macOS and Linux CI pipelines in GitHub actions.
+    
+  * eXeLearning.net Translation Team
+    - New complete Galician translation, by Xunta de Galicia.
+    - New complete Valencian translation, by Ricardo Nutz.
+
+ -- eXeLearning <admin@exelearning.net>  Thu, 22 Feb 2024 11:06:00 +0200
+
 intef-exe (3:2.8.1) lucid; urgency=medium
 
   * Ignacio Gros
