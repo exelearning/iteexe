@@ -20,12 +20,14 @@ intef-exe (3:2.9.0) lucid; urgency=medium
     - Fixed: Math Problems iDevice. JavaScript variables scope problems.
     - Fixed: A-Z Quiz Game iDevice: Responsive images.
 
+  * Ignacio Gros and Juan José de Haro
+    - New Properties / Export option: Accessibility Toolbar (it includes Drog.js, by Emanuel Rojas Vásquez).
+
   * Ignacio Gros
     - Export menu: Show the default Web Site export type.
     - Help menu: Forums replaced by Telegram. (#693)
     - New button to close the style manager panel.
     - File attachments iDevice: No special characters in path are allowed. (#703)
-    - Rubrics iDevice: Improve error handling. (#716)
     - Rubrics iDevice: Improve error handling. (#716)
     - Some iDevices from the "Games" category are now in "Other Contents".
     - Package panel: Learning Resource Type field visible even in the non-advanced mode.
@@ -53,7 +55,6 @@ intef-exe (3:2.9.0) lucid; urgency=medium
     
   * eXeLearning.net Translation Team
     - New complete Galician translation, by Xunta de Galicia.
-    - New complete Valencian translation, by Ricardo Nutz.
 
  -- eXeLearning <admin@exelearning.net>  Thu, 22 Feb 2024 11:06:00 +0200
 
