@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-16 10:34+0100\n"
+"POT-Creation-Date: 2024-02-22 11:31+0100\n"
 "PO-Revision-Date: 2021-05-30 13:15+0200\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language: it\n"
@@ -8810,7 +8810,7 @@ msgstr "Selezionare un file"
 msgid "Label:"
 msgstr "Etichetta:"
 
-#: exe/webui/authoringpage.py:180
+#: exe/webui/authoringpage.py:182
 #, python-format
 msgid "Warning: %s"
 msgstr "Attenzione: %s"
@@ -12372,7 +12372,7 @@ msgstr "Gioco"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:12
 #: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:38
-#: exe/webui/scripts/idevices/completa-activity/export/completa-activity.js:41
+#: exe/webui/scripts/idevices/completa-activity/export/completa-activity.js:42
 msgid "Lock"
 msgstr "Blocca"
 

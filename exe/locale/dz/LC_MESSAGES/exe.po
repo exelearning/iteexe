@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.8.1\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-16 10:34+0100\n"
+"POT-Creation-Date: 2024-02-22 11:31+0100\n"
 "PO-Revision-Date: 2021-05-31 20:32+0200\n"
 "Last-Translator: Tandin Penjor <tpenjor.sce@rub.edu.bt>\n"
 "Language: dz\n"
@@ -8228,7 +8228,7 @@ msgstr "ཡིག་སྣོད་གཅིག་སེལ་འཐུ་འབ
 msgid "Label:"
 msgstr "ཁ་ཡིག:"
 
-#: exe/webui/authoringpage.py:180
+#: exe/webui/authoringpage.py:182
 #, python-format
 msgid "Warning: %s"
 msgstr "ཉེན་བརྡ: %s"
@@ -11717,7 +11717,7 @@ msgstr "རྩེདམོ"
 
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:12
 #: exe/webui/scripts/idevices/candado-activity/export/candado-activity.js:38
-#: exe/webui/scripts/idevices/completa-activity/export/completa-activity.js:41
+#: exe/webui/scripts/idevices/completa-activity/export/completa-activity.js:42
 msgid "Lock"
 msgstr "བསྡམ་བཞག"
 
