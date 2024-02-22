@@ -410,7 +410,7 @@ translations = {
  "Volap\u00fck; Volapuk ": "Volap\u00fck; volapuk ", 
  "Read more": "Ler m\u00e1is", 
  "SAVE FAILED!\n\"%s\" is not a valid name for a template": "ERRO AO GARDAR!\n\"%s\" non \u00e9 un nome v\u00e1lido para un modelo", 
- "Cannot delete the current style.": " Non se pode eliminar un estilo namentres estea a ser usado.", 
+ "Cannot delete the current style.": "Non se pode eliminar un estilo namentres estea a ser usado.", 
  "Effect for showing positive feedback": "Efecto para amosar retroalimentaci\u00f3n positiva", 
  "Template": "Modelo", 
  "Situation": "Caso pr\u00e1ctico", 

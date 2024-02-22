@@ -4583,7 +4583,7 @@ msgstr "Produciuse un erro descoñecido."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:122
 msgid "Cannot delete the current style."
-msgstr " Non se pode eliminar un estilo namentres estea a ser usado."
+msgstr "Non se pode eliminar un estilo namentres estea a ser usado."
 
 #: exe/jsui/scripts/app/controller/StyleManager.js:122
 #: exe/jsui/scripts/app/view/forms/HelpContainer.js:43 exe/webui/block.py:270
