@@ -9,6 +9,21 @@
 		Drog.js, by Emanuel Rojas Vásquez is under the BSD 3-Clause License
 		See Help - Legal Notes - Third Libraries for details
 		eXeLearning includes and exports a modified version of Drog.js, with written permission of his author
+		
+	The accessibility toolbar allows visitors to choose the font family, and it includes and will export these typefaces:
+		
+		OpenDyslexic: A typeface for Dyslexia (https://opendyslexic.org/)
+		OpenDyslexic is free to use: The newest version of OpenDyslexic now uses the SIL-OFL license (https://openfontlicense.org/)
+		
+		Atkinson Hyperlegible: Intended to be optimally legible for readers who are partially visually impaired (https://brailleinstitute.org/freefont)
+		Developed by the Braille Institute of America in collaboration with Applied Design Works.
+		Available under the SIL Open Font License (https://openfontlicense.org/). 
+		
+		Montserrat: A modern san-serif easy to read free font.
+		Designed by Julieta Ulanovsky, Sol Matas, Juan Pablo del Peral, Jacques Le Bailly.
+		The Montserrat project is led by Julieta Ulanovsky. See https://github.com/JulietaUla/Montserrat
+		Available under the SIL Open Font License (https://openfontlicense.org/). 
+	
 */
 $exe.atools = {
 	options : {
