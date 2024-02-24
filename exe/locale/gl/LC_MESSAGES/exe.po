@@ -12948,8 +12948,8 @@ msgid ""
 "The number of attempts has to be bigger or equal to the number of pairs "
 "in the game. Please select 0 for infinite an unlimited number of attempts"
 msgstr ""
-"The number of attempts has to be bigger or equal to the number of pairs "
-"in the game. Please select 0 for infinite an unlimited number of attempts"
+"O número de intentos ten que ser maior ou igual que o número de parellas do "
+"xogo. Indica 0 para un número ilimitado de intentos"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:111
 msgid "Maximum number of pairs: 20"

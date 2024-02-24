@@ -2458,7 +2458,7 @@ translations = {
  "Adding Pages": "Engadir p\u00e1xinas", 
  "Checking this option, pages with LaTeX code will automatically load the MathJax JavaScript file from a content delivery network (CDN). MathJax is a JavaScript display engine for mathematics.": "Marcando esta opci\u00f3n, as p\u00e1xinas con c\u00f3digo LaTeX cargar\u00e1n automaticamente o ficheiro JavaScript de MathJax desde unha direcci\u00f3n de Internet externa (unha \"Content Delivery Network\", CDN). MathJax \u00e9 unha biblioteca JavaScript para a representaci\u00f3ns matem\u00e1ticas no navegador.", 
  "LOM-ES v1.0": "LOM-ES v1.0", 
- "The number of attempts has to be bigger or equal to the number of pairs in the game. Please select 0 for infinite an unlimited number of attempts": "The number of attempts has to be bigger or equal to the number of pairs in the game. Please select 0 for infinite an unlimited number of attempts", 
+ "The number of attempts has to be bigger or equal to the number of pairs in the game. Please select 0 for infinite an unlimited number of attempts": "O n\u00famero de intentos ten que ser maior ou igual que o n\u00famero de parellas do xogo. Indica 0 para un n\u00famero ilimitado de intentos", 
  "Please specify the number of operations": "Indique o n\u00famero de operaci\u00f3ns", 
  "Maximum score:": "Puntuaci\u00f3n m\u00e1xima:", 
  "Include only one activity with a \"Save score\" button in the page.": "Incl\u00faa unha \u00fanica actividade cun bot\u00f3n \u201cGardar a puntuaci\u00f3n\u201d na p\u00e1xina.", 
