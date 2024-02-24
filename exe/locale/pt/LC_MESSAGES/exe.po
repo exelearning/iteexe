@@ -8,9 +8,9 @@
 # de línguas.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8.1\n"
+"Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2024-02-22 11:31+0100\n"
+"POT-Creation-Date: 2024-02-24 18:37+0100\n"
 "PO-Revision-Date: 2019-06-12 22:57+0200\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.gal>\n"
 "Language: pt\n"
@@ -5475,15 +5475,10 @@ msgid "Add an accessibility toolbar (HTML exports only)"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
 msgid ""
 "The accessibility toolbar allows visitors to manipulate some aspects of "
 "your site, such as font and text size."
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
-msgid ""
-"The accessibility toolbar allow visitors to manipulate some aspects of "
-"your site, like font and text size."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:132
@@ -19810,5 +19805,11 @@ msgstr ""
 #~ msgstr ""
 
 #~ msgid "Full Inclusion"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The accessibility toolbar allow visitors "
+#~ "to manipulate some aspects of your "
+#~ "site, like font and text size."
 #~ msgstr ""
 

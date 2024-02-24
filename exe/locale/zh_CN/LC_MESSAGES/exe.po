@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8.1\n"
+"Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-22 11:31+0100\n"
+"POT-Creation-Date: 2024-02-24 18:37+0100\n"
 "PO-Revision-Date: 2021-04-23 17:23+0200\n"
 "Last-Translator: Chenggui Duan <chengguiduan@gmail.com>\n"
 "Language: zh_Hans_CN\n"
@@ -4947,15 +4947,10 @@ msgid "Add an accessibility toolbar (HTML exports only)"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
 msgid ""
 "The accessibility toolbar allows visitors to manipulate some aspects of "
 "your site, such as font and text size."
-msgstr ""
-
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
-msgid ""
-"The accessibility toolbar allow visitors to manipulate some aspects of "
-"your site, like font and text size."
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:132
@@ -19004,5 +18999,11 @@ msgstr "您的idevices模块 / generic.data文件或您正在加载的课件包�
 #~ msgstr ""
 
 #~ msgid "Full Inclusion"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The accessibility toolbar allow visitors "
+#~ "to manipulate some aspects of your "
+#~ "site, like font and text size."
 #~ msgstr ""
 

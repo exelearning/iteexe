@@ -8,9 +8,9 @@
 # Juan Rafael Fernández <jrfern@telefonica.net>, 2011-2022.
 msgid ""
 msgstr ""
-"Project-Id-Version: eXeLearning 2.8.1\n"
+"Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-22 11:31+0100\n"
+"POT-Creation-Date: 2024-02-24 18:37+0100\n"
 "PO-Revision-Date: 2022-11-24 09:19+0100\n"
 "Last-Translator: Juan Rafael Fernández <jrfern@telefonica.net>\n"
 "Language: es\n"
@@ -5558,17 +5558,10 @@ msgid "Add an accessibility toolbar (HTML exports only)"
 msgstr "Añadir una barra de accesibilidad (sólo en las exportaciones HTML)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
+#: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
 msgid ""
 "The accessibility toolbar allows visitors to manipulate some aspects of "
 "your site, such as font and text size."
-msgstr ""
-"La barra de accesibilidad permite a los usuarios personalizar algunos "
-"aspectos de las páginas, como la tipografía o el tamaño de letra."
-
-#: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
-msgid ""
-"The accessibility toolbar allow visitors to manipulate some aspects of "
-"your site, like font and text size."
 msgstr ""
 "La barra de accesibilidad permite a los usuarios personalizar algunos "
 "aspectos de las páginas, como la tipografía o el tamaño de letra."
@@ -13629,7 +13622,7 @@ msgstr "Selecciona"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:85
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:12
 msgid "Select media files"
-msgstr "Selecciona Medias"
+msgstr "Selecciona (multimedia)"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:87
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:13
@@ -14257,7 +14250,7 @@ msgstr "Selecciona"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:299
 msgid "Unsupported browser"
-msgstr "Navegador no soportado"
+msgstr "Navegador incompatible"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:342
 msgid "Indicate a title for the checklist"
@@ -19459,4 +19452,14 @@ msgstr ""
 
 #~ msgid "Full Inclusion"
 #~ msgstr "Plena Inclusión"
+
+#~ msgid ""
+#~ "The accessibility toolbar allow visitors "
+#~ "to manipulate some aspects of your "
+#~ "site, like font and text size."
+#~ msgstr ""
+#~ "La barra de accesibilidad permite a "
+#~ "los usuarios personalizar algunos aspectos "
+#~ "de las páginas, como la tipografía "
+#~ "o el tamaño de letra."
 
