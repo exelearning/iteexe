@@ -2,10 +2,11 @@ intef-exe (3:2.9.0) lucid; urgency=medium
 
   * Manuel Narváez
     - New iDevice: Progress report (compatible with all games and some iDevices with score).
-    - New iDevice (game): Relate.
-    - New iDevice (game): Discover.
+    - New iDevice: Checklist.
     - New iDevice (game): Classify.
+    - New iDevice (game): Discover.
     - New iDevice (game): Order.
+    - New iDevice (game): Relate.
     - New iDevice (game): Select media files.
     - A-Z Quiz Game iDevice: Unlimited rounds.
     - A-Z Quiz Game iDevice: See the answers when finishing the activity option.
