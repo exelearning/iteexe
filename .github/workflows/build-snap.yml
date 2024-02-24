@@ -8,12 +8,18 @@ jobs:
     steps:
       - name: Checkout
         id: snapcraft
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: rename template to snapcraft.yaml
         run: |
           cp ./snap/snapcraft.yaml_template ./snap/snapcraft.yaml
-      - uses: snapcore/action-build@v1
-      - uses: actions/upload-artifact@v3
+
+      - name: Build Snap
+        uses: snapcore/action-build@v1
+        with:
+          build-info: true
+          snapcraft-channel: 7.x
+
+      - uses: actions/upload-artifact@v4
         with:
           name: snap
           path: exelearning*.snap
