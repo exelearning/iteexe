@@ -1,4 +1,4 @@
-intef-exe (3:2.9.0) lucid; urgency=medium
+intef-exe (3:2.9) lucid; urgency=medium
 
   * Manuel Narváez
     - New iDevice: Progress report (compatible with all games and some iDevices with score).
