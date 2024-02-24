@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.8.1\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-02-22 11:31+0100\nPO-Revision-Date: 2024-02-20 15:14+0100\nLast-Translator: Xunta de Galicia <sipe@edu.xunta.gal>\nLanguage: gl\nLanguage-Team: eXeLearning.net <cedec@ite.educacion.es >\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-02-24 18:37+0100\nPO-Revision-Date: 2024-02-20 15:14+0100\nLast-Translator: Xunta de Galicia <sipe@edu.xunta.gal>\nLanguage: gl\nLanguage-Team: eXeLearning.net <cedec@ite.educacion.es >\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "N\u00famero de roldas", 
  "DropDown Activity": "Actividade despregable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crear un caso pr\u00e1ctico. Un bo caso \u00e9 aquel que describe unha controversia ou define a escena describindo os personaxes \nque fan parte da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n no sentido de obter a resoluci\u00f3n da situaci\u00f3n.\nDebe permitir ademais iniciar algunha acci\u00f3n no sentido de obter a resoluci\u00f3n da situaci\u00f3n.", 
@@ -2052,7 +2052,6 @@ translations = {
  "You can only save once": "S\u00f3 se pode gardar unha vez", 
  "This overrides for this Package the \"Default format for the new documents\" set in Tools - Preferences": "Esta instruci\u00f3n modifica para este paquete o \"Formato predeterminado para documentos novos\" definidos en Ferramentas - Preferencias", 
  "eXeLearning is a **free** and open source editor to create **educational** resources in an **simple | easy** way. It's available for different **operating** systems.": "eXeLearning \u00e9 un editor **libre** e de fontes abertas pensado para crear recursos **educativos** dun xeito **doado e sinxelo**. Est\u00e1 dispo\u00f1ible para diferentes sistemas **operativos**.", 
- "Undo changes since last time you saved? This cannot be undone. ": "Desfacer os cambios desde a \u00faltima vez que foi gardado? Isto non se pode desfacer ", 
  "German ": "Alem\u00e1n ", 
  "Select a language.": "Seleccione un idioma.", 
  "isbasedon": "bas\u00e9ase en", 
@@ -2186,7 +2185,7 @@ translations = {
  "Properties": "Propiedades", 
  "MP3 Audio (.mp3)": "Audio MP3 (.mp3)", 
  "Image Magnifier": "Lupa", 
- "The accessibility toolbar allow visitors to manipulate some aspects of your site, like font and text size.": "A barra de accesibilidade permite as persoas usuarias personalizar alg\u00fans aspectos das p\u00e1xinas, como a tipograf\u00eda ou o tama\u00f1o de letra.", 
+ "Undo changes since last time you saved? This cannot be undone. ": "Desfacer os cambios desde a \u00faltima vez que foi gardado? Isto non se pode desfacer ", 
  "Creative Commons Attribution License 2.5": "Licenza Creative Commons Atribuci\u00f3n 2.5", 
  "Digital blackboard mode": "Modo encerado dixital", 
  "Size of magnifying glass: ": "Tama\u00f1o da lupa: ", 
