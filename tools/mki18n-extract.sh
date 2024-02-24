@@ -104,12 +104,15 @@
 # 2023-05-19
 #    * Ready for 2.8.1
 #
+# 2024-02-24
+#    * Ready for 2.9
+#
 #===========================================================================
 
 
 export PYTHONPATH=.
 project="eXeLearning"
-version="2.8.1"
+version="2.9"
 
 # 1.- eXe - Extract content templates' files to a .py dummy file
 echo -e " *** Extracting messages from content templates ***\n"

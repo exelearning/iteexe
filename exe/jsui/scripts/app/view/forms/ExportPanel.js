@@ -104,7 +104,7 @@ Ext.define('eXe.view.forms.ExportPanel', {
                                 tooltip: _('The accessibility toolbar allows visitors to manipulate some aspects of your site, such as font and text size.')
                             },
                             flex: 0,
-                            help: _('The accessibility toolbar allow visitors to manipulate some aspects of your site, like font and text size.')
+                            help: _('The accessibility toolbar allows visitors to manipulate some aspects of your site, such as font and text size.')
                         },
                         {
                             xtype: 'helpcontainer',
