@@ -52,7 +52,8 @@ intef-exe (3:2.9) lucid; urgency=medium
     - Fixed: Appimage deb package postinst content revision. (#698)
     
   * Ernesto Serrano
-    - Fixed: macOS and Linux CI pipelines in GitHub actions.
+    - Fixed: macOS CI pipeline in GitHub actions.
+    - Fixed: Snap Build pipeline for Ubuntu 16.04 Legacy Support.
     
   * eXeLearning.net Translation Team
     - New complete Galician translation, by Xunta de Galicia.
