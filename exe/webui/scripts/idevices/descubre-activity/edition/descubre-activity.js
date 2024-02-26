@@ -115,7 +115,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
             <div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to discover pairs, trios or card quartets with images, texts and/or sounds.") + ' <a href="https://youtu.be/f0cv7ouY2qc" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create interactive activities in which players will have to discover pairs, trios or card quartets with images, texts and/or sounds.") + ' <a href="https://youtu.be/ueYnBkByKr4" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' + _('General settings') + '">\
             ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Birds of a feather flock together.")) + '\
                 <fieldset class="exe-fieldset exe-fieldset-closed">\
