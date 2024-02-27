@@ -40,6 +40,7 @@ var $eXeMapa = {
     initialScore: '',
     hasLATEX: false,
     hasAreas: false,
+    mScorm: null,
     init: function () {
         this.activities = $('.mapa-IDevice');
         if (this.activities.length == 0) return;
@@ -967,7 +968,7 @@ var $eXeMapa = {
         }
         if (mOptions.evaluation == 4 && !mOptions.questionaireStarted) return;
         if (mOptions.gameStarted || mOptions.gameOver) {
-            if (typeof $eXeMapa.mScorm != 'undefined') {
+            if ( $eXeMapa.mScorm  && typeof $eXeMapa.mScorm != 'undefined') {
                 if (!auto) {
                     $('#mapaSendScore-' + instance).show();
                     if (!mOptions.repeatActivity && $eXeMapa.previousScore !== '') {
@@ -1598,7 +1599,7 @@ var $eXeMapa = {
             return true;
         });
         $(window).on('unload', function () {
-            if (typeof ($eXeMapa.mScorm) != "undefined") {
+            if ($eXeMapa.mScorm &&  typeof ($eXeMapa.mScorm) != "undefined") {
                 $eXeMapa.endScorm();
             }
         });
@@ -2484,7 +2485,7 @@ var $eXeMapa = {
         } else {
             mOptions.errors++;
         }
-        mOptions.score = (mOptions.score + obtainedPoints > 0) ? mOptions.score + obtainedPoints : 0;
+        mOptions.score = (mOptions.score + obtainedPoints) > 0 ? mOptions.score + obtainedPoints : 0;
         sscore = mOptions.score;
         sscore = mOptions.score % 1 == 0 ? mOptions.score : mOptions.score.toFixed(2);
         $('#mapaPScore-' + instance).text(sscore);

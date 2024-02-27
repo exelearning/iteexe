@@ -156,7 +156,7 @@ var $exeDevice = {
                             <label for="clasificaEShowMinimize"><input type="checkbox" id="clasificaEShowMinimize">' + _("Show minimized.") + '</label>\
                         </p>\
                         <p>\
-                        <label for="clasificaETime">' + _("Time") + '(m):</label><input type="number" name="clasificaETime" id="clasificaETime" value="0" min="0" max="120" step="1" />\
+                        <label for="clasificaETime">' + _("Time (minutes)") + ':</label><input type="number" name="clasificaETime" id="clasificaETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
                             <label for="clasificaEHasFeedBack"><input type="checkbox"  id="clasificaEHasFeedBack"> ' + _("Feedback") + '. </label> \

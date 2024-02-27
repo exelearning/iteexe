@@ -135,7 +135,7 @@ var $exeDevice = {
                             <label for="ordenaECustomMessages"><input type="checkbox" id="ordenaECustomMessages">' + _("Custom messages") + '.</label>\
                         </p>\
                         <p>\
-                            <label for="ordenaETime">' + _("Time") + '(m):</label><input type="number" name="ordenaETime" id="ordenaETime" value="0" min="0" max="120" step="1" />\
+                            <label for="ordenaETime">' + _("Time (minutes)") + ':</label><input type="number" name="ordenaETime" id="ordenaETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
                             <label for="ordenaEShowSolution"><input type="checkbox" checked id="ordenaEShowSolution"> ' + _("Show solutions") + '. </label> \

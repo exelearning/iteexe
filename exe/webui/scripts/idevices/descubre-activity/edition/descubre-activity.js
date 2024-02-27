@@ -153,7 +153,7 @@ var $exeDevice = {
                             <label for="descubreECustomMessages"><input type="checkbox" id="descubreECustomMessages">' + _("Custom messages") + '.</label>\
                         </p>\
                         <p>\
-                        <label for="descubreETime">' + _("Time") + '(m):</label><input type="number" name="descubreETime" id="descubreETime" value="0" min="0" max="120" step="1" />\
+                        <label for="descubreETime">' + _("Time (minutes)") + ':</label><input type="number" name="descubreETime" id="descubreETime" value="0" min="0" max="120" step="1" />\
                         </p>\
                         <p>\
                             <label for="descubreEAttempts">' + _("Number of attemps") + ':</label><input type="number" name="descubreEAttempts" id="descubreEAttempts" value="0" min="0" max="100" step="1" />\
