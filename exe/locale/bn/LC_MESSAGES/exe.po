@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-24 18:37+0100\n"
+"POT-Creation-Date: 2024-02-27 13:40+0100\n"
 "PO-Revision-Date: 2018-12-02 17:14+0100\n"
 "Last-Translator: eXeLearning.net Translation Team "
 "<translations@exelearning.net>\n"
@@ -5122,12 +5122,9 @@ msgid "Now"
 msgstr "এখন"
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:41
-#: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:160
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:410
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:444
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:478
-#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:157
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:139
 msgid "Time"
 msgstr "সময়"
 
@@ -11752,6 +11749,17 @@ msgstr ""
 msgid "Number of categories"
 msgstr "সারির সংখ্যা"
 
+#: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:160
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:163
+#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:157
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
+#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:211
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:139
+#: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:121
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:151
+msgid "Time (minutes)"
+msgstr ""
+
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:188
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:149
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:167
@@ -11870,14 +11878,6 @@ msgstr "অন্যান্য শব্দগুলি"
 #, fuzzy
 msgid "Number of attempts"
 msgstr "স্তম্ভের সংখ্যা"
-
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:163
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
-#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:211
-#: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:121
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:151
-msgid "Time (minutes)"
-msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:170
 msgid "Allow errors in typed words"
@@ -13821,7 +13821,7 @@ msgstr ""
 msgid "Do you want to save the changes of this map?"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mapa-activity/export/mapa-activity.js:49
+#: exe/webui/scripts/idevices/mapa-activity/export/mapa-activity.js:50
 msgid "Mapa"
 msgstr ""
 

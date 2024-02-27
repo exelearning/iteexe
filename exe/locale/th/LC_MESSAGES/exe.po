@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-24 18:37+0100\n"
+"POT-Creation-Date: 2024-02-27 13:40+0100\n"
 "PO-Revision-Date: 2007-09-12 06:29+1200\n"
 "Last-Translator: Sibsan Suksuchano <mega7studio@hotmail.com>\n"
 "Language: th\n"
@@ -5100,12 +5100,9 @@ msgid "Now"
 msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/LomWidgets.js:41
-#: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:160
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:410
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:444
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:478
-#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:157
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:139
 msgid "Time"
 msgstr ""
 
@@ -11709,6 +11706,17 @@ msgstr ""
 msgid "Number of categories"
 msgstr ""
 
+#: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:160
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:163
+#: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:157
+#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
+#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:211
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:139
+#: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:121
+#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:151
+msgid "Time (minutes)"
+msgstr ""
+
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:188
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:149
 #: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:167
@@ -11821,14 +11829,6 @@ msgstr ""
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:448
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:117
 msgid "Number of attempts"
-msgstr ""
-
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:163
-#: exe/webui/scripts/idevices/flipcards-activity/edition/flipcards-activity.js:139
-#: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:211
-#: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:121
-#: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:151
-msgid "Time (minutes)"
 msgstr ""
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:170
@@ -13749,7 +13749,7 @@ msgstr ""
 msgid "Do you want to save the changes of this map?"
 msgstr ""
 
-#: exe/webui/scripts/idevices/mapa-activity/export/mapa-activity.js:49
+#: exe/webui/scripts/idevices/mapa-activity/export/mapa-activity.js:50
 msgid "Mapa"
 msgstr ""
 
