@@ -206,10 +206,10 @@ var interaction = {
 			alt = interaction.i18n.msgUncompletedActivity;
 		if (state == 1) {
 			icon = 'exequextrerrors.png';
-			alt = interaction.i18n.msgUnsuccessfulActivity.replace('%S', score);
+			alt = interaction.i18n.msgUnsuccessfulActivity.replace('%s', score);
 		} else if (state == 2) {
 			icon = 'exequexthits.png';
-			alt = interaction.i18n.msgSuccessfulActivity.replace('%S', score);
+			alt = interaction.i18n.msgSuccessfulActivity.replace('%s', score);
 		}
 		$('#interactiveEvaluationIcon').remove();
 		var sicon = '<div id="interactiveEvaluationIcon" class="interactive-EvaluationDivIcon"><img  src="' + interaction.idevicePath + icon + '"><span>' + interaction.i18n.msgUncompletedActivity + '</span></div>'

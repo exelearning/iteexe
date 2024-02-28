@@ -85,8 +85,8 @@ var $exeDevice = {
         "msgAudio": _("Audio"),
         "msgEndGameScore": _("Please start playing first..."),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('QuExt')
     },
 

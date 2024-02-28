@@ -76,8 +76,8 @@ var $exeDevice = {
         "msgActityComply": _("You have already done this activity."),
         "msgPlaySeveralTimes": _("You can do this activity as many times as you want"),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('Challenge')
 
     },

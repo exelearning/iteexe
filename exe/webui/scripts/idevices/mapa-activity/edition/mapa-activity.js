@@ -117,8 +117,8 @@ var $exeDevice = {
         "msgReturn": _("Return"),
         "msgCheck": _("Check"),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('Map'),
     },
     init: function () {

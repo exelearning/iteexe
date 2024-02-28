@@ -223,8 +223,8 @@ var $exeDevice = {
 			evaluationID = evaluation ? $('#sortableListEvaluationID').val() : '',
 			ideviceID = $exeDevice.ideviceID ? $exeDevice.ideviceID : $exeDevice.generarID(),
 			msgUncompletedActivity = c_("Incomplete activity"),
-			msgUnsuccessfulActivity = c_("Activity: Not passed. Score: %S"),
-			msgSuccessfulActivity = c_("Activity: Passed. Score: %S"),
+			msgUnsuccessfulActivity = c_("Activity: Not passed. Score: %s"),
+			msgSuccessfulActivity = c_("Activity: Passed. Score: %s"),
 			msgTypeIDevice = c_("Scrambled List");
 		
 		msgUncompletedActivity = msgUncompletedActivity[1];

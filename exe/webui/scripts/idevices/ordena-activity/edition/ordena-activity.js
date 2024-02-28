@@ -78,8 +78,8 @@ var $exeDevice = {
         "msgAllOK": _("Brilliant! All correct!"),
         "msgAgain": _("Please try again"),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgPhrases": _("Phrases"),
         "msgTypeGame": _("Order")
 

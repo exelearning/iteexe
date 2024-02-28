@@ -103,8 +103,8 @@ var $exeDevice = {
         "msgCorrect": _("Correct"),
         "msgIncorrect": _("Incorrect"),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('Multiple Choice Quiz')
     },
 

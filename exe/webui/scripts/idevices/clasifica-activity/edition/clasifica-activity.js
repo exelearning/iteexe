@@ -83,8 +83,8 @@ var $exeDevice = {
         "msgOnlySaveGameAuto": _("Your score will be automatically saved at the end of the game. You can only play once."),
         "msgEndGamerScore": _("You can only save your score after finishing the game."),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('Classify')
     },
     init: function () {

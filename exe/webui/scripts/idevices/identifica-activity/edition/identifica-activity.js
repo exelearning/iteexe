@@ -71,8 +71,8 @@ var $exeDevice = {
         "msgModeWhiteBoard": _("Digital blackboard mode"),
         "msgCheckLetter": _("Check the letter"),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('Identify')
     },
 

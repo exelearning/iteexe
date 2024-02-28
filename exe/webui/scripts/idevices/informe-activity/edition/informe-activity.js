@@ -24,7 +24,7 @@ var $exeDevice = {
         "msgAverageScore": _("Average score"),
         "msgReboot": _("Restart"),
         "msgReload": _("Update"),
-        "mssActivitiesNumber": _("No. of activities: %S"),
+        "mssActivitiesNumber": _("No. of activities: %s"),
         "msgActivitiesCompleted": _("Completed: %s"),
         "msgAverageScore1": _("Average score: %s"),
         "msgAverageScoreCompleted": _("Average score of completed activities: %s"),

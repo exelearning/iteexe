@@ -614,11 +614,11 @@ var $eXeTrivial = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
         }
         $('#trivialEvaluationIcon-' + instance).remove();
         var sicon = '<div id="trivialEvaluationIcon-' + instance + '" class="trivial-EvaluationDivIcon"><img  src="' + $eXeTrivial.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'

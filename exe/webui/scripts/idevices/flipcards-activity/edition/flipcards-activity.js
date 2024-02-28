@@ -74,8 +74,8 @@ var $exeDevice = {
         "msgEnd": _("Finish"),
         "msgEndGameM": _("You finished the game. Your score is %s."),
         "msgUncompletedActivity": _("Incomplete activity"),
-        "msgSuccessfulActivity": _("Activity: Passed. Score: %S"),
-        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %S"),
+        "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
+        "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
         "msgTypeGame": _('Memory Cards')
 
 

@@ -788,11 +788,11 @@ var $eXeDescubre = {
             alt = mOptions.msgs.msgUncompletedActivity;
         if (state == 1) {
             icon = 'exequextrerrors.png';
-            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%S', score);
+            alt = mOptions.msgs.msgUnsuccessfulActivity.replace('%s', score);
 
         } else if (state == 2) {
             icon = 'exequexthits.png';
-            alt = mOptions.msgs.msgSuccessfulActivity.replace('%S', score);
+            alt = mOptions.msgs.msgSuccessfulActivity.replace('%s', score);
         }
         $('#descubreEvaluationIcon-' + instance).remove();
         var sicon = '<div id="descubreEvaluationIcon-' + instance + '" class="DescubreQP-EvaluationDivIcon"><img  src="' +  $eXeDescubre.idevicePath + icon + '"><span>' + mOptions.msgs.msgUncompletedActivity + '</span></div>'
