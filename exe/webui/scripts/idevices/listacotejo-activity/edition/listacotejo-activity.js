@@ -76,7 +76,7 @@ var $exeDevice = {
                               <th class="CTJ-Level1-column" data-nivel="0">'+_("Level") +' 1</th>\
                               <th class="CTJ-Level2-column" data-nivel="1">'+_("Level") +' 2</th>\
                               <th class="CTJ-Level3-column" data-nivel="2">'+_("Level") +' 3</th>\
-                              <th class="CTJ-Level4-column" data-nivel="2">'+_("Level") +' 4</th>\
+                              <th class="CTJ-Level4-column" data-nivel="3">'+_("Level") +' 4</th>\
                               <th class="CTJ-editar-column">'+_("Edit") +'</th>\
                             </tr>\
                           </thead>\
