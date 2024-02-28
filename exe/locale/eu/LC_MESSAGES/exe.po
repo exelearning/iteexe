@@ -1,24 +1,23 @@
 # Basque EXELearning PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2022 EXELearning.net
+# Copyright (C) 2011-2024 EXELearning.net
 # This file is distributed under the same license as the eXeLearning
 # package.
 # eXeLearning.net Project <admin@exelearning.net>
-# Asmoz fundazioa, 2009
-#
-#
-# http://www.asmoz.org/index.php?option=com_content&view=article&id=131&Itemid=101&lang=es
-# Malen <mjareno@asmoz.org>
+# 2009 Asmoz fundazioa - Malen <mjareno@asmoz.org>
 # 2012-2022 Joxemi Andonegi <jm.andonegi@gmail.com>
 # 2022 Eneko Andonegi Ferradas
 # Mila esker Andoni Tolosari bere laguntzagatik
+# 2024 Gobierno de Navarra - Olatz Benages
+# <atdlekaroz2@educacion.navarra.es>
 msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-28 09:41+0100\n"
+"POT-Creation-Date: 2024-02-28 12:14+0100\n"
 "PO-Revision-Date: 2022-12-07 19:46+0100\n"
-"Last-Translator: Joxemi Andonegi <jm.andonegi@gmail.com>\n"
+"Last-Translator: Gobierno de Navarra - Olatz Benages "
+"<atdlekaroz2@educacion.navarra.es>\n"
 "Language: eu\n"
 "Language-Team: eXe <exelearning.euskaraz@gmail.com>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
@@ -1278,6 +1277,8 @@ msgid ""
 "Upload a file. Please avoid names or paths with spaces or special "
 "characters."
 msgstr ""
+"Fitxategi bat igo. Saihestu espazio edo karaktere bereziak dituzten "
+"izenak edo ibilbideak, mesedez."
 
 #: exe/engine/extendedfieldengine.py:304
 #: exe/webui/tools/style-designer/langs/all.js:51
@@ -5420,7 +5421,7 @@ msgstr ""
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:118
 msgid "Add an accessibility toolbar (HTML exports only)"
-msgstr ""
+msgstr "Sarbiderako tresna-barra gehitu (HTML esportazioak soilik)"
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:122
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:125
@@ -5428,6 +5429,8 @@ msgid ""
 "The accessibility toolbar allows visitors to manipulate some aspects of "
 "your site, such as font and text size."
 msgstr ""
+"Sartzeko barrari esker, erabiltzaileek gunearen alderdi batzuk "
+"pertsonalizatu ditzakete, hala nola hizki-mota eta tamaina."
 
 #: exe/jsui/scripts/app/view/forms/ExportPanel.js:132
 msgid "Add page counters in the footer and header of the export?"
@@ -9069,23 +9072,20 @@ msgid "Search"
 msgstr "Bilatu"
 
 #: exe/webui/common.py:659
-#, fuzzy
 msgid "Accessibility tools"
-msgstr "Irisgarritasuna"
+msgstr "Sarbide-tresnak"
 
 #: exe/webui/common.py:661
 msgid "Default typography"
-msgstr ""
+msgstr "Lehenetsitako tipografia"
 
 #: exe/webui/common.py:662
-#, fuzzy
 msgid "Increase text size"
-msgstr "Koska gehitu"
+msgstr "Testuaren tamaina handitzea"
 
 #: exe/webui/common.py:663
-#, fuzzy
 msgid "Decrease text size"
-msgstr "Koska kendu"
+msgstr "Testuaren tamaina murriztea"
 
 #: exe/webui/common.py:664
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:83
@@ -9093,14 +9093,12 @@ msgid "Read"
 msgstr "Irakurri"
 
 #: exe/webui/common.py:665
-#, fuzzy
 msgid "Stop reading"
-msgstr "gidatutako irakurketak"
+msgstr "Irakurtzeari utzi"
 
 #: exe/webui/common.py:666
-#, fuzzy
 msgid "Translate"
-msgstr "Ebatzitako ariketa"
+msgstr "Itzuli"
 
 #: exe/webui/common.py:667
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:147
@@ -9108,9 +9106,8 @@ msgid "Drag and drop"
 msgstr "Arrastatu eta jaregin"
 
 #: exe/webui/common.py:669
-#, fuzzy
 msgid "Dark/Light mode"
-msgstr "Editore-modua"
+msgstr "Iluna/Argia modua"
 
 #: exe/webui/common.py:684
 #: exe/webui/scripts/idevices/candado-activity/edition/candado-activity.js:29
@@ -10273,6 +10270,8 @@ msgid ""
 "The file could not be uploaded. Please remove any special characters from"
 " the file name or route."
 msgstr ""
+"Fitxategia ezin izan da igo. Fitxategiaren izenetik edo ibilbidetik "
+"karaktere berezi guztiak ezabatu, mesedez."
 
 #: exe/webui/scripts/authoring.js:1956
 msgid "Add a Text iDevice"
@@ -11212,9 +11211,8 @@ msgstr "Audioa"
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:66
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:92
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:100
-#, fuzzy
 msgid "Incomplete activity"
-msgstr "Aukeratzeko Jarduera"
+msgstr "Jarduera osatugabea"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:99
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:86
@@ -11240,7 +11238,7 @@ msgstr "Aukeratzeko Jarduera"
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:101
 #, python-format
 msgid "Activity: Passed. Score: %s"
-msgstr ""
+msgstr "Jarduera: Gainditua. Puntuazioa: %s"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:100
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:87
@@ -11266,7 +11264,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:102
 #, python-format
 msgid "Activity: Not passed. Score: %s"
-msgstr ""
+msgstr "Jarduera: Gainditu gabea. Puntuazioa: %s"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:132
@@ -11520,7 +11518,7 @@ msgstr "Zure nabigatzailea ez da bateragarria tresna honekin."
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:138
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:142
 msgid "The report identifier must have at least 5 characters"
-msgstr ""
+msgstr "Txostenaren identifikatzaileak, 5 karaktere izan behar ditu gutxienez"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:136
 msgid ""
@@ -11793,7 +11791,7 @@ msgstr "Arbel digital modua"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:195
 msgid "Activate translator"
-msgstr ""
+msgstr "Itzultzailea aktibatu"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:199
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:178
@@ -11821,7 +11819,7 @@ msgstr ""
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:810
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:689
 msgid "Progress report"
-msgstr ""
+msgstr "Aurrerapen-txostena"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:204
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:183
@@ -11850,6 +11848,11 @@ msgid ""
 " by this progress report. It must be the same in all iDevices of a report"
 " and different in each report."
 msgstr ""
+"Identifikatzailea adierazi behar duzu; hitz bat, esaldi bat edo lau "
+"karaktere baino gehiagoko zenbaki bat izan daiteke, eta aurrerapen-"
+"txosten honetan kontuan hartuko diren jarduerak markatzeko erabiliko "
+"duzu. Berdina izan behar du txosten bateko gailu guztietan, eta "
+"desberdina txosten bakoitzean."
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:209
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:185
@@ -12222,9 +12225,8 @@ msgid "Paste question"
 msgstr "Itsatsi galdera"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:336
-#, fuzzy
 msgid "Translate to"
-msgstr "Ebatzitako ariketa"
+msgstr "Itzuli honera"
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:339
 #: exe/webui/scripts/idevices/desafio-activity/edition/desafio-activity.js:376
@@ -12307,9 +12309,8 @@ msgstr "Sortu pasahitzaz babestutako feedbacka duten jarduerak."
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:88
 #: exe/webui/scripts/idevices/clasifica-activity/export/clasifica-activity.js:40
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:57
-#, fuzzy
 msgid "Classify"
-msgstr "Klasea"
+msgstr "Sailkatu"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:17
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:145
@@ -12321,44 +12322,41 @@ msgstr "Klasea"
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:273
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:274
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:275
-#, fuzzy
 msgid "Group"
-msgstr "taldekoa"
+msgstr "Talde"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:66
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:66
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:66
-#, fuzzy
 msgid "Time is up. Please try again"
-msgstr "Saiatu berriro"
+msgstr "Denbora amaitu da. Mesedez, saiatu berriro"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:67
 msgid "The game has started! Drag each card to your container"
-msgstr ""
+msgstr "Jokoa hasi da! Txartel bakoitza bere edukiontzira eraman"
 
+# "Txartel" o "karta", según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:68
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:82
-#, fuzzy
 msgid "Choose another card"
-msgstr "Erakutsi beste lagungarri bat"
+msgstr "Beste txartel bat aukeratu"
 
+# "Txartel" o "karta", según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:69
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:83
-#, fuzzy
 msgid "Choose a card"
-msgstr "Aukeratu irudia"
+msgstr "Txartel bat aukeratu"
 
+# En inglés quizá sea "your" en vez de "yout"
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:71
 msgid "Brilliant! You've passed yout test!"
-msgstr ""
+msgstr "Primeran! zure proba gainditu duzu!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:72
-#, fuzzy
 msgid "You didn't pass the test. Please try again"
-msgstr "Eragiketa guztiak amaitu dituzu."
+msgstr "Ez duzu testa gainditu. Saiatu berriro,, mesedez"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:73
-#, fuzzy
 msgid "Do you want to restart this game?"
 msgstr "Jokoa berriro hasi nahi duzu?"
 
@@ -12371,18 +12369,19 @@ msgid "Continue"
 msgstr "Jarraitu"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:75
-#, fuzzy
 msgid "Check results"
-msgstr "Erakutsi emaitzak"
+msgstr "Emaitzak egiaztatu"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:76
 #, python-format
 msgid "There were %s cards to be placed correctly. Do you want to try again?"
 msgstr ""
+"%s txartel geratu zaizkizu behar bezala jartzeko. Berriro saiatu nahi "
+"duzu?\n"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:77
 msgid "Brilliant! All perfect!"
-msgstr ""
+msgstr "Primeran! Ezin hobe!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:78
 #, python-format
@@ -12390,97 +12389,103 @@ msgid ""
 "Great! You have solved this activity in %s attempts. Surely you can do it"
 " faster!"
 msgstr ""
+"Ederki! Jarduera hau % s saiakeretan ebatzi duzu.  Ziur azkarrago egin "
+"dezakezula!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:79
 #, python-format
 msgid "You placed %s cards in the wrong place. Please try again!"
-msgstr ""
+msgstr "%s txartelak okerreko lekuan jarri dituzu. Saiatu berriro, mesedez!"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:80
 #, python-format
 msgid ""
 "Great! You have correctly classified most cards, %s, but you can still do"
 " better"
 msgstr ""
+"Ederki! Karta gehienak ondo sailkatu dituzu,%s, baina oraindik hobeto "
+"egin dezakezu."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:81
 #, python-format
 msgid "Great! Only %s cards left to be placed correctly. Strive for perfection!"
 msgstr ""
+"Ederki! Txartelen % s  besterik ez dira falta zuzen jartzeko. Saiatu "
+"hobetzen!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:82
-#, fuzzy
 msgid "Your score will be automatically saved at the end of the game."
-msgstr "Zure tanto-kopurua jaurtaldi bakoitzaren ondoren gordeko da."
+msgstr "Zure puntuazioa automatikoki gordeko da partidaren amaieran."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:83
-#, fuzzy
 msgid ""
 "Your score will be automatically saved at the end of the game. You can "
 "only play once."
 msgstr ""
-"Zure puntuazioa galdera bakoitzaren ondoren gordeko da. Bakarrik behin "
-"saiatu zaitezke."
+"Zure puntuazioa automatikoki gordeko da partidaren amaieran. Behin "
+"bakarrik saiatu zaitezke."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:84
 msgid "You can only save your score after finishing the game."
-msgstr ""
+msgstr "Partida amaitutakoan soilik gorde dezakezu zure puntuazioa"
 
+# "Txartel" se puede cambiar por "Karta" según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:103
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:110
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:103
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:95
-#, fuzzy
 msgid "You must indicate an image, a text or/and an audio for each card"
-msgstr "Eman irudi, testu edo audio bat karta bakoitzaren atzeko aldearentzat"
+msgstr ""
+"Txartel bakoitzeko irudi bat, testu bat edota audio bat adierazi behar "
+"duzu"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:104
 msgid "Maximum cards to classify: 25"
-msgstr ""
+msgstr "Sailkatzeko gehienezko kartak: 25"
 
+# "Txartel" se puede cambiar por "Karta" según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:105
-#, fuzzy
 msgid "You must select an image and text for this card"
-msgstr "Puntu honen titulua zehaztu behar duzu."
+msgstr "Txartel honetarako irudi bat eta testu bat aukeratu behar dituzu ."
 
+# "Txartel" se puede cambiar por "Karta" según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:106
-#, fuzzy
 msgid "You must indicate a text or sound for this card"
-msgstr "Puntu honen titulua zehaztu behar duzu."
+msgstr "Txartel honetarako testu edo soinu bat adierazi behar duzu."
 
+# "Txartel" se puede cambiar por "Karta" según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:107
-#, fuzzy
 msgid "You must link an image or sound to this card"
-msgstr "Puntu honen titulua zehaztu behar duzu."
+msgstr "Txartel honi irudi edo soinu bat lotu behar diozu "
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:115
-#, fuzzy
 msgid ""
 "Create interactive activities in which players have to classify cards "
 "with images, texts and/or sounds."
 msgstr ""
-"Sortu ihes-gela motako jarduerak non jokalariek proba desberdinak bete "
-"beharko dituzte azken erronkaren irtenbidea topatu arte."
+"Jarduera elkarreragileak sortzea,  jokalariek txartelak sailkatu behar "
+"dituzte irudi, testu edota soinuekin."
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:117
 msgid "Drag each card to its container."
-msgstr ""
+msgstr "Eraman txartel bakoitza bere edukiontzira."
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:122
-#, fuzzy
 msgid "Difficulty level"
-msgstr "zaila"
+msgstr "Zailtasun maila"
 
+# "Funtsezkoa" o "Oinarrizkoa" según el contexto.
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:124
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:108
-#, fuzzy
 msgid "Essential"
-msgstr "zuzenekoa"
+msgstr "Funtsezkoa"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:135
-#, fuzzy
 msgid "Number of categories"
-msgstr "Karta kopurua"
+msgstr "Kategoria kopurua"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:160
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:163
@@ -12512,9 +12517,8 @@ msgstr "Eduki gehigarria"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:267
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:284
-#, fuzzy
 msgid "Both"
-msgstr "bestelakoak"
+msgstr "Biak"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:290
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:298
@@ -12757,48 +12761,45 @@ msgstr "Erronkak"
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:12
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:92
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:61
-#, fuzzy
 msgid "Discover"
-msgstr "lokuzioa"
+msgstr "Aurkitu"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:67
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:67
-#, fuzzy
 msgid "You finished all the attempts! Please try again"
-msgstr "Eragiketa guztiak amaitu dituzu."
+msgstr "Saiakera guztiak agortu dituzu! Saiatu berriro"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:68
-#, fuzzy
 msgid "You found all the pairs!"
-msgstr "Eragiketa guztiak amaitu dituzu."
+msgstr "Bikote guztiak aurkitu dituzu!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:69
-#, fuzzy
 msgid "You found all the trios!"
-msgstr "Eragiketa guztiak amaitu dituzu."
+msgstr "Hirukote guztiak aurkitu dituzu!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:70
-#, fuzzy
 msgid "You found all the quartets!"
-msgstr "Eragiketa guztiak amaitu dituzu."
+msgstr "Laukote guztiak aurkitu dituzu!"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:71
 msgid "The game has started! Select two cards"
-msgstr ""
+msgstr "Jokoa hasi da! Aukeratu bi txartel"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:72
 msgid "The game has started! Select three cards"
-msgstr ""
+msgstr "Jokoa hasi da! Aukeratu hiru txartel"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:73
 msgid "The game has started! Select four cards"
-msgstr ""
+msgstr "Jokoa hasi da! Aukeratu lau txartel"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:74
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:160
-#, fuzzy
 msgid "Number of attemps"
-msgstr "Saiakera kopurua"
+msgstr "Saiakera-kopurua"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:75
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:131
@@ -12809,15 +12810,13 @@ msgstr "Bikoteak"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:76
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:133
-#, fuzzy
 msgid "Trios"
-msgstr "Aukerak"
+msgstr "Hirukoteak"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:77
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:135
-#, fuzzy
 msgid "Quartets"
-msgstr "Karratua"
+msgstr "Laukoteak"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:78
 #: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:62
@@ -12827,20 +12826,19 @@ msgstr "Saiakerak"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:79
 msgid "You completed a pair. Keep going!"
-msgstr ""
+msgstr "Bikote bat osatu duzu. Segi hurrengoaren bila!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:80
 msgid "You completed a trio. Keep going!"
-msgstr ""
+msgstr "Hirukote bat osatu duzu. Segi hurrengoaren bila!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:81
 msgid "You completed a quartet. Keep going!"
-msgstr ""
+msgstr "Laukote bat osatu duzu. Segi hurrengoaren bila!"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:84
-#, fuzzy
 msgid "Initial"
-msgstr "abiarazlea"
+msgstr "Hasiera"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:87
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:76
@@ -12853,45 +12851,50 @@ msgid "Level"
 msgstr "Maila"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:88
-#, fuzzy
 msgid "Select a level"
-msgstr "Aukeratu fitxategi bat"
+msgstr "Maila bat aukeratu"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:109
 msgid ""
 "The number of attempts has to be bigger or equal to the number of pairs "
 "in the game. Please select 0 for infinite an unlimited number of attempts"
 msgstr ""
+"Saiakeren kopurua, jolasaren bikote kopurua baino handiagoa edo berdina "
+"izan behar da. Adierazi 0 saiakera-kopuru mugagabe baterako"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:111
 msgid "Maximum number of pairs: 20"
-msgstr ""
+msgstr "Gehienezko bikote kopurua: 20"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:119
 msgid ""
 "Create interactive activities in which players will have to discover "
 "pairs, trios or card quartets with images, texts and/or sounds."
 msgstr ""
+"Jarduera interaktiboak sortu, bertan, jokalariek irudiak, testuak edota "
+"soinuak dituzten karten bikoteak, hirukoteak edo laukoteak aurkitu "
+"beharko dituzte, "
 
+# Dios los cría y ellos se juntan o los pájaros que tienen las mismas plumas
+# se parecen
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:121
 msgid "Birds of a feather flock together."
-msgstr ""
+msgstr "Topatu bikoteak"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:138
-#, fuzzy
 msgid "Difficulty levels"
-msgstr "zaila"
+msgstr "Zailtasun mailak"
 
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:147
-#, fuzzy
 msgid "Visible letters"
-msgstr "Aukeratutako letrak"
+msgstr "Ikusgai dauden kartak"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/descubre-activity/edition/descubre-activity.js:150
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:132
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:124
 msgid "Time while the cards will be shown (seconds)"
-msgstr ""
+msgstr "Kartak erakusteko denbora (segundoak)"
 
 #: exe/webui/scripts/idevices/download-package/edition/download-package.js:14
 msgid "Download source file"
@@ -13314,20 +13317,21 @@ msgid "Number of clues"
 msgstr "Lagungarri kopurua"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:20
-#, fuzzy
 msgid "Summary of activities"
-msgstr "Saiakera kopurua"
+msgstr "Jardueren laburpena"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:21
 msgid ""
 "You have not completed any of the suggested activities to be assesed in "
 "this educational resource."
 msgstr ""
+"Oraindik ez duzu hezkuntza-baliabide honetan proposatutako jarduera "
+"ebaluagarrietako bat bera ere burutu."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:22
-#, fuzzy, python-format
+#, python-format
 msgid "Number of activities to be completed: %s"
-msgstr "Eragiketa kopurua:"
+msgstr "Egin gabe dauden jardueren kopurua: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:23
 msgid ""
@@ -13335,11 +13339,12 @@ msgid ""
 "completed, suggested and assessed activities in this educational "
 "resource."
 msgstr ""
+"Hurrengo taulan, hezkuntza-baliabide honetan egindako jardueretan "
+"lortutako emaitzak jasotzen dira.\n"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:24
-#, fuzzy
 msgid "Average score"
-msgstr "Gorde puntuak"
+msgstr "Batez besteko puntuazioa"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:26
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/codemagic/plugin.min.js:30
@@ -13347,45 +13352,45 @@ msgid "Update"
 msgstr "Eguneratu"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:27
-#, fuzzy, python-format
+#, python-format
 msgid "No. of activities: %s"
-msgstr "Saiakera kopurua"
+msgstr "Jarduera kopurua: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:28
-#, fuzzy, python-format
+#, python-format
 msgid "Completed: %s"
-msgstr "lehiatu"
+msgstr "Amaituta: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:29
-#, fuzzy, python-format
+#, python-format
 msgid "Average score: %s"
-msgstr "Gorde puntuak"
+msgstr "Batez besteko puntuazioa: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:30
-#, fuzzy, python-format
+#, python-format
 msgid "Average score of completed activities: %s"
-msgstr "Osatu gabe"
+msgstr "Egindako jardueren batez besteko puntuazioa: %s"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:31
 msgid ""
 "This will eliminate the stored scores of all activities. Are you sure you"
 " want to continue?"
 msgstr ""
+"Horrek jarduera guztietan gordetako puntuazioak ezabatuko ditu. Ziur "
+"zaude jarraitu nahi duzula?"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:32
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:38
-#, fuzzy
 msgid "Educational resource sections"
-msgstr "hezkuntza-deskribapena"
+msgstr "Hezkuntza-baliabidearen atalak"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:34
 msgid "progress_report"
-msgstr ""
+msgstr "aurrerapen_txostena"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:37
-#, fuzzy
 msgid "Go to the activity"
-msgstr "Gehitu beste jarduera bat"
+msgstr "Joan jarduerara"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:41
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:22
@@ -13395,9 +13400,8 @@ msgstr "Osatu gabe"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:49
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:41
-#, fuzzy
 msgid "Please provide the ID of this report"
-msgstr "Eman hitz edo esaldi bat"
+msgstr "Aurrerapen-txosten honen identifikatzailea sartu behar duzu"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:67
 #: exe/webui/scripts/idevices/scrambled-list/edition/scrambled-list.js:15
@@ -13446,9 +13450,8 @@ msgstr "QuExt"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:79
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:12
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:63
-#, fuzzy
 msgid "Relate"
-msgstr "sortu"
+msgstr "Lotu"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:81
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:11
@@ -13466,9 +13469,8 @@ msgstr "Aukeratu"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:85
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:12
-#, fuzzy
 msgid "Select media files"
-msgstr "Aukeratu fitxategi bat"
+msgstr "Multimedia-fitxategiak aukeratu\n"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:87
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:13
@@ -13484,15 +13486,16 @@ msgstr "Bideo interaktiboa"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:93
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:103
-#, fuzzy
 msgid "VideoQuExt"
-msgstr "bideoa"
+msgstr "VideoQuExt"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:97
 msgid ""
 "It shows the result of the pupils in the activities linked to their "
 "average score."
 msgstr ""
+"Ikasleek jardueretan lortutako emaitza erakusten du, euren batez besteko "
+"puntuazioari lotuta."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:101
 msgid ""
@@ -13500,33 +13503,36 @@ msgid ""
 " the same ID in all the activities you will assess in this progress "
 "report."
 msgstr ""
+"Identifikadorea lau karaktere baino gehiagoko zenbaki edo hitz bat izan "
+"daiteke. Identifikadore bera erabili behar duzu aurrerapen-txosten "
+"honetan ebaluatu nahi dituzun jarduera guztietan."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:107
-#, fuzzy
 msgid "Number of activities to be assesed"
-msgstr "Eragiketa kopurua:"
+msgstr "Ebaluatu daitezkeen jardueren kopurua\n"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:111
-#, fuzzy
 msgid "Show date and time"
-msgstr "Kronometroa erakutsi / erabili?"
+msgstr "Data eta ordua erakutsi"
 
+# No sé qué es iDevice, quizá sea Device.
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:114
 msgid "Show type of iDevice"
-msgstr ""
+msgstr "Gailu mota erakutsi"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:117
 msgid "Link report activities"
-msgstr ""
+msgstr "Txosteneko jarduerak lotu"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:120
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:61
 msgid "User data"
-msgstr ""
+msgstr "Erabiltzailearen datuak"
 
+# En vez de "iDevices", quizá sera "Devices"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:122
 msgid "iDevices supported by the report:"
-msgstr ""
+msgstr "Txostenak eusten dituen gailuak:\n"
 
 #: exe/webui/scripts/idevices/interactive-video/edition/editor/langs/all.js:2
 msgid "Interactive video editor"
@@ -13977,31 +13983,27 @@ msgstr "URL okerra. Espero zen formatua:"
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:13
 #: exe/webui/scripts/idevices/listacotejo-activity/export/listacotejo-activity.js:30
 msgid "Checklist"
-msgstr ""
+msgstr "Kontrol-zerrenda"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:19
-#, fuzzy
 msgid "Completed"
-msgstr "lehiatu"
+msgstr "Amaituta"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:21
-#, fuzzy
 msgid "In progress"
-msgstr "Itxarotearen aurreratzea..."
+msgstr "Prozesuan"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:23
-#, fuzzy
 msgid "Number of tasks"
-msgstr "Karta kopurua"
+msgstr "Zeregin kopurua"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:27
 msgid "checklist"
-msgstr ""
+msgstr "kontrol-zerrenda"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:30
-#, fuzzy
 msgid "point"
-msgstr "puntuak"
+msgstr "puntu"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:46
 msgid ""
@@ -14010,35 +14012,35 @@ msgid ""
 "instrument for student self-assessment, allowing you to monitor the "
 "completed activities."
 msgstr ""
+"Kontrol-zerrenda bat erabil dezake hezkuntza-baliabide honetan "
+"iradokitako jarduerak modu egituratu eta erraz batean ulertzeko. Tresna "
+"baliagarria izango da ikasleen autoerregulaziorako, aukera emango baitio "
+"egindako jardueren jarraipena egiteko.\n"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:48
-#, fuzzy
 msgid "Complete the checklist ticking the boxes for all finished activities."
-msgstr "Bete erronka guztiak jarduera osatzeko."
+msgstr "Kontrol-zerrenda osatu, jarduerak egitean laukitxoak markatuta"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:57
-#, fuzzy
 msgid "Caption"
-msgstr "Lokalizazioa"
+msgstr "Azpititulu"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:64
 msgid "Remember marked options"
-msgstr ""
+msgstr "Jarritako aukerak gogoratu "
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:67
-#, fuzzy
 msgid "Assign scores"
-msgstr "Gorde puntuak"
+msgstr "Puntuazioak esleitu"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:69
 msgid "(*) Cells support formatted text"
-msgstr ""
+msgstr "(*) Gelaxkek testu formateatua onartzen dute"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:75
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:86
-#, fuzzy
 msgid "Points"
-msgstr "puntuak"
+msgstr "Puntuak"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:87
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:222
@@ -14048,14 +14050,13 @@ msgid "Box"
 msgstr "Kaxa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:89
-#, fuzzy
 msgid "Selection"
-msgstr "Hausnarketa"
+msgstr "Hautaketa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:90
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:222
 msgid "Do not mark"
-msgstr ""
+msgstr "Ez markatu"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:99
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:251
@@ -14067,83 +14068,73 @@ msgid "Add"
 msgstr "Erantsi"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:107
-#, fuzzy
 msgid "(Left) Logo"
-msgstr "Proiektuaren izenburua"
+msgstr "(Ezkerra) Logoa"
 
+# "Komunitate", "Elkarte" o "Erkidego" según el contexto.
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:114
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:142
-#, fuzzy
 msgid "Community"
-msgstr "komunikatu"
+msgstr "Komunitate"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:121
-#, fuzzy
 msgid "(Right) Logo"
-msgstr "Proiektuaren izenburua"
+msgstr "(Eskuina) Logoa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:128
-#, fuzzy
 msgid "Logo"
-msgstr "weblog"
+msgstr "Logo"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:135
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:765
-#, fuzzy
 msgid "Decorative image"
-msgstr "Atxikitu ordezko irudia"
+msgstr "Dekorazio-irudia"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:222
-#, fuzzy
 msgid "Choose"
-msgstr "eskola"
+msgstr "Aukeratu"
 
+# Navegador o explorador no soportado
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:299
-#, fuzzy
 msgid "Unsupported browser"
-msgstr "Onartutako formatuak"
+msgstr "Euskarririk gabeko nabigatzailea"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:342
-#, fuzzy
 msgid "Indicate a title for the checklist"
-msgstr "Puntu honen titulua zehaztu behar duzu."
+msgstr "Kontrol-zerrendarako izenburu bat adierazi"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:354
 msgid "No empty items can be left"
-msgstr ""
+msgstr "Itemak ezin dira hutsik utzi"
 
+# Solo puedes usar texto en el nivel de este elemento.
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:372
 msgid "You can only use text at this item's level"
-msgstr ""
+msgstr "Testua maila bakar batean jar dezakezu "
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:408
-#, fuzzy
 msgid "You must indicate the number of points for each item to be assesed"
-msgstr "Gutxienez puntu bat zehaztu behar duzu."
+msgstr "Ebaluatu daitekeen item bakoitzeko puntu-kopurua adierazi behar duzu"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:411
-#, fuzzy
 msgid "You cannot indicate a score for this type of boxes"
-msgstr "Puntu honen titulua zehaztu behar duzu."
+msgstr "Mota honetako laukitxoetarako ezin duzu puntuazio bat adierazi "
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:468
-#, fuzzy
 msgid "There must be at least one row."
-msgstr "Gutxienez maila bat egon behar du."
+msgstr "Gutxienez lerro bat egon behar du."
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:486
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:505
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:753
-#, fuzzy
 msgid "Project logo"
-msgstr "Proiektuaren izenburua"
+msgstr "Proiektuaren logoa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:524
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:541
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:759
-#, fuzzy
 msgid "Community/Company"
-msgstr "komunikatu"
+msgstr "Komunitate/Enpresa"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:558
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:575
@@ -14319,7 +14310,7 @@ msgstr "Aurkezpenak gutxienez diapositiba bat izan behar du."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:167
 msgid "Indicate, using commas, the correct order in which points must be clicked"
-msgstr ""
+msgstr "Adierazi, komak erabiliz, puntuak zein ordenatan sakatu behar diren. "
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:173
 msgid ""
@@ -14381,9 +14372,8 @@ msgid "Show when the mouse is over the icon or active area"
 msgstr "Erakutsi sagua ikono edo gune aktiboaren gainean dagoenean"
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:225
-#, fuzzy
 msgid "Play the sound when scrolling the mouse over the points."
-msgstr "Argibidea itxi xagua estekatik kanpo mugitzerakoan"
+msgstr "Sagua puntuen gainetik pasatzean soinua erreproduzitu."
 
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:243
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:3784
@@ -14618,13 +14608,14 @@ msgid "You finished all the operations."
 msgstr "Eragiketa guztiak amaitu dituzu."
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:97
-#, fuzzy
 msgid "Write a valid fraction."
-msgstr "Idatzi informazio apur bat."
+msgstr "Idatzi baliozko zatiki bat."
 
+# Escribe un operador válido: +-X*/: se refiere a que debes utilizar un
+# símbolo matemático válido
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:98
 msgid "Write a valid operator: +-x*/:"
-msgstr ""
+msgstr "Baliozko operadore bat idatzi: +-x*/:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:120
 msgid "Type the right URL of a Youtube video"
@@ -14645,9 +14636,8 @@ msgid "Solve the following operations."
 msgstr "Ebatzi ondoko eragiketak:"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:142
-#, fuzzy
 msgid "Fractions"
-msgstr "Ekintzak"
+msgstr "Zatikiak"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:145
 msgid "Choose what to guess:"
@@ -14713,16 +14703,15 @@ msgstr "Onartu dezimalak emaitzan"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:186
 msgid "Irreducible fraction."
-msgstr ""
+msgstr "Zatiketa ezin da txikiagoa egin. "
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:189
 msgid "Allow negative results"
 msgstr "Onartu emaitza negatiboak"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:192
-#, fuzzy
 msgid "Allow negative"
-msgstr "Onartu emaitza negatiboak"
+msgstr "Ezezko emaitzak onartu"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:195
 msgid "Allow zero as result"
@@ -14742,7 +14731,7 @@ msgstr "Eman eragingaiaren balio maximoa"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:300
 msgid "The highest number should be bigger than the smallest one"
-msgstr ""
+msgstr "Zenbakirik handienak txikienak baino handiagoa izan behar du"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:320
 msgid "No operations selected"
@@ -14759,7 +14748,7 @@ msgstr "Feedbacka"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:92
 msgid "You can't give repeated solutions"
-msgstr ""
+msgstr "Ezin duzu errepikatutako erantzunik eman"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:119
 msgid "Create random basic math problems."
@@ -14791,7 +14780,7 @@ msgstr ""
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:189
 msgid "Define the domain of each variable"
-msgstr ""
+msgstr "Aldagai bakoitzaren eremua zehaztu. "
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:196
 msgid "Highest number:"
@@ -14830,72 +14819,69 @@ msgid "The question text and the formula should have the same variables"
 msgstr "Galderaren testuak eta formulak aldagai berdinak izan beharko lituzkete"
 
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:617
-#, fuzzy
 msgid "The domain of at least one variable is not correct"
-msgstr "Sarbide kodea ez da zuzuena"
+msgstr "Gutxienez aldagai baten domeinua ez da zuzuena"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
-#, fuzzy
 msgid "You have ordered all the activities!"
-msgstr "Jarduera amaitu duzu"
+msgstr "Jarduera guztiak ordenatu dituzu!"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:70
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:68
 msgid "Number of activities to be completed"
-msgstr ""
+msgstr "Egin gabe dauden jarduera kopurua"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:73
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:198
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:69
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:163
-#, fuzzy
 msgid "Activities"
-msgstr "aktiboa"
+msgstr "Jarduerak"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:75
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:208
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:170
-#, fuzzy
 msgid "Next activity"
-msgstr "Egin berriro jarduera"
+msgstr "Hurrengo jarduera"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:77
-#, fuzzy
 msgid "Correct positions"
-msgstr "Zuzena"
+msgstr "Kokapen zuzenak"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:78
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:72
 msgid "Brilliant! All correct!"
-msgstr ""
+msgstr "Primeran! Dena zuzen dago!"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:79
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:73
-#, fuzzy
 msgid "Please try again"
-msgstr "Saiatu berriro"
+msgstr "Saiatu berriro, mesedez"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:83
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:123
-#, fuzzy
 msgid "Phrases"
-msgstr "praktikatu"
+msgstr "Esaldiak"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:102
 msgid ""
 "The number of attempts has to be bigger or equal to the number of phrases"
 " in the game. Use 0 for an unlimited number of attempts"
 msgstr ""
+"Saiakeren kopurua, jolasaren esaldi kopurua baino handiagoa edo berdina "
+"izan behar da. Adierazi 0 saiakera-kopuru mugagabe baterako"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:104
 msgid "Maximum number of phrases: 20"
-msgstr ""
+msgstr "Gehienezko esaldi kopurua: 20"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:105
 msgid ""
 "With fixed headers, the number of cards must be bigger than the number of"
 " columns"
 msgstr ""
+"Goiburu finkoekin, karten kopurua zutabe-kopurua baino handiagoa izan "
+"behar da"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:107
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:109
@@ -14903,28 +14889,25 @@ msgid "Please provide at least one word"
 msgstr "Eman gutxienez hitz bat"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:113
-#, fuzzy
 msgid ""
 "Create interactive activities in which players will have to order cards "
 "with images, texts and/or sounds."
 msgstr ""
-"Sortu ihes-gela motako jarduerak non jokalariek proba desberdinak bete "
-"beharko dituzte azken erronkaren irtenbidea topatu arte."
+"Jarduera interaktiboak sortu, eta bertan jokalariek irudiak, testuak "
+"edota soinuak dituzten txartelak sailkatu beharko dituzte. "
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:115
 msgid "Drag each letter to its correct position"
-msgstr ""
+msgstr "Eraman gutun bakoitza bere tokira"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:125
-#, fuzzy
 msgid "Multimedia"
-msgstr "Multimedia mota"
+msgstr "Multimedia "
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:152
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:128
-#, fuzzy
 msgid "% Activities"
-msgstr "aktiboa"
+msgstr "Jardueren %a"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:159
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:202
@@ -14932,118 +14915,104 @@ msgid "Columns"
 msgstr "Zutabeak"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:176
-#, fuzzy
 msgid "Maximum width"
-msgstr "Gehienezko zabalera"
+msgstr "Gehieneko zabalera"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:181
-#, fuzzy
 msgid "Fixed headers"
-msgstr "Goiburuak"
+msgstr "Goiburu finkoak"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:184
 msgid "Automatic start"
-msgstr ""
+msgstr "Hasiera automatikoa"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:201
-#, fuzzy
 msgid "Phrase"
-msgstr "praktikatu"
+msgstr "Esaldi"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:204
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:166
-#, fuzzy
 msgid "Add an activity"
-msgstr "Egin berriro jarduera"
+msgstr "Jarduera bat gehitu"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:205
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:167
-#, fuzzy
 msgid "First activity"
-msgstr "Egin berriro jarduera"
+msgstr "Lehen jarduera"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:206
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:168
-#, fuzzy
 msgid "Previous activity"
-msgstr "eztabaidak"
+msgstr "Aurreko jarduera"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:207
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:169
-#, fuzzy
 msgid "Activity number:"
-msgstr "Zenbakirik handiena:"
+msgstr "Jarduera-zenbakia:"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:209
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:171
-#, fuzzy
 msgid "Last activity"
-msgstr "Egin berriro jarduera"
+msgstr "Azken jarduera"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:210
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:172
-#, fuzzy
 msgid "Delete activity"
-msgstr "Aukeratzeko Jarduera"
+msgstr "Jarduera ezabatu"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:211
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:173
-#, fuzzy
 msgid "Copy activity"
-msgstr "Erakutsi jarduera"
+msgstr "Jarduera kopiatu"
 
+# Según el contexto puede ser también "Jarduera eten"
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:212
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:174
-#, fuzzy
 msgid "Cut activity"
-msgstr "QuExt Jarduera"
+msgstr "Jarduera moztu"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:213
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:175
-#, fuzzy
 msgid "Paste activity"
-msgstr "Gehitu beste jarduera bat"
+msgstr "Jarduera Itsatsi"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:217
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:184
-#, fuzzy
 msgid "Statement"
-msgstr "problemaren enuntziatua"
+msgstr "Enuntziatua"
 
+# "Txartel" o "Karta" según el contexto.
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:238
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:221
-#, fuzzy
 msgid "Add a card"
-msgstr "Hitza gehitu"
+msgstr "Txartel bat gehitu"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:239
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:222
-#, fuzzy
 msgid "Delete card"
-msgstr "Ezabatu diapositiba"
+msgstr "Txartela ezabatu"
 
+# "Txartel" o "karta", según el contexto.
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:240
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:223
-#, fuzzy
 msgid "Copy card"
-msgstr "konparatu"
+msgstr "Txartela kopiatu"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:241
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:224
 msgid "Cut card"
-msgstr ""
+msgstr "Txartela moztu"
 
+# "Txartela" o "karta" según el contexto
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:242
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:225
-#, fuzzy
 msgid "Paste card"
-msgstr "ikasgai magistrala"
+msgstr "Txartela itsasi"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:246
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:229
-#, fuzzy
 msgid "Phrases:"
-msgstr "praktikatu"
+msgstr "Esaldiak:"
 
 #: exe/webui/scripts/idevices/pbl-tools/edition/pbl-tools.js:13
 #: exe/webui/scripts/idevices/udl-content/edition/udl-content.js:90
@@ -15167,15 +15136,13 @@ msgid "Youtube URL"
 msgstr "Youtube URLa"
 
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:98
-#, fuzzy
 msgid "Create matching games with images, sounds and enriched texts."
-msgstr ""
-"Sortu karta oroimen motako jokoak irudiekin, soinuekin edo testu "
-"aberatsekin."
+msgstr "Irudi, soinu eta testu aberastuekin jolasak sortu"
 
+# "Txartel" o "karta" se pueden utilizar las dos palabras.
 #: exe/webui/scripts/idevices/relaciona-activity/edition/relaciona-activity.js:100
 msgid "Match each card with its pair."
-msgstr ""
+msgstr "Karta bakoitza bere bikotearekin lotu."
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:17
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:42
@@ -15230,10 +15197,10 @@ msgstr "Ezkutatu hitz-gurpila"
 msgid "Digital blackboard"
 msgstr "Arbel digitala"
 
+# "Dena" o "Guztiak" según el contexto.
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:81
-#, fuzzy
 msgid "All"
-msgstr "txikia"
+msgstr "Dena"
 
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:103
 #: exe/webui/scripts/idevices/rosco-activity/edition/rosco-activity.js:725
@@ -15586,54 +15553,49 @@ msgstr "Hona joan"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:66
 msgid "Time is up"
-msgstr ""
+msgstr "Denbora amaitu da"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:67
-#, fuzzy
 msgid "You completed all the activities!"
-msgstr "Jarduera amaitu duzu"
+msgstr "Jarduera guztiak burutu dituzu!"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:77
 msgid "Change visualization mode"
-msgstr ""
+msgstr "Bistaratzeko modua aldatu"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:96
 msgid "Maximum number of activities: 30"
-msgstr ""
+msgstr "Gehienezko jarduera kopurua: 30"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:104
-#, fuzzy
 msgid ""
 "Create interactive activities in which players will have to select the "
 "correct multimedia cards."
 msgstr ""
-"Sortu ihes-gela motako jarduerak non jokalariek proba desberdinak bete "
-"beharko dituzte azken erronkaren irtenbidea topatu arte."
+"Jarduera interaktiboak sortu, eta bertan, jokalariek multimedia-txartel "
+"zuzenak aukeratu beharko dituzte. "
 
+# "Txartela" o "karta" según el contexto
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:106
-#, fuzzy
 msgid "Select the right cards"
-msgstr "erabili eskuineko gezi tekla"
+msgstr "Txartel egokiak aukeratu"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:114
-#, fuzzy
 msgid "Time to complete the game"
-msgstr "Galdera osatu behar duzu"
+msgstr "Partida amaitzeko ordua da"
 
+# "Txartel" o "karta" según el contexto.
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:132
-#, fuzzy
 msgid "Maximum number of cards"
-msgstr "Karta kopurua"
+msgstr "Gehieneko txartel kopurua"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:139
-#, fuzzy
 msgid "Table mode"
-msgstr "taula"
+msgstr "Taula modua"
 
 #: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:461
-#, fuzzy
 msgid "Correct answer"
-msgstr "eta erantzun zuzena hau da"
+msgstr "Erantzun zuzena"
 
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:59
 #, python-format
@@ -17310,7 +17272,7 @@ msgstr "Automatikoki detektatzea"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:556
 msgid "Choose a file or paste a link (URL)"
-msgstr ""
+msgstr "Fitxategi bat aukeratu edo esteka (URL) bat itsatsi"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:578
 msgid "Play controls"
@@ -17321,11 +17283,12 @@ msgid "JavaScript player"
 msgstr "Javascript erreproduzigailua"
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:579
-#, fuzzy
 msgid ""
 "Old browsers compatibility with some formats. Not needed in modern "
 "browsers."
-msgstr "Hobetu nabigatzailearen eta zenbait formatuen bateragarritasuna"
+msgstr ""
+"Nabigatzaile zaharrak formatu batzuekin bateragarriak dira. Ez da "
+"beharrezkoa gaur egungo nabigatzaileetan. "
 
 #: exe/webui/scripts/tinymce_4/js/tinymce/plugins/exemedia/plugin.min.js:580
 msgid "Autoplay"
@@ -19216,491 +19179,13 @@ msgstr ""
 "bertsio berriago batekin sortuta dago. Mesedez, eguneratu zure eXe-a eta "
 "berriz saiatu."
 
-#~ msgid "Add Previous/Next links within SCOs?"
-#~ msgstr "Aurreko/Hurrengo estekak SCOs-en gehitu?"
-
-#~ msgid ""
-#~ "Checking this box will cause eXe "
-#~ "to add Previous and Next links to"
-#~ " individual pages within your SCO. "
-#~ "The LMS will also still add this"
-#~ " kind of functionality."
-#~ msgstr ""
-#~ "Koadrotxo hau klikatuz gero, eXek "
-#~ "Hurrengoa eta Aurrekoa estekak gehituko "
-#~ "ditu zure SCOaren orri bakoitzean. "
-#~ "LMS-ak ere funtzionalitate mota hau "
-#~ "emango du."
-
-#~ msgid ""
-#~ "Checking this box will cause eXe "
-#~ "to add Previous and Next links to"
-#~ " individual pages within your SCO.  "
-#~ "This requires a non-standard extension"
-#~ " to SCORM 1.2 and is only known"
-#~ " to work with some versions of "
-#~ "Moodle."
-#~ msgstr ""
-#~ "Koadrotxo hau klikatuz gero, eXek "
-#~ "Hurrengoa eta Aurrekoa estekak gehituko "
-#~ "ditu zure SCOaren orri bakoitzean. "
-#~ "Honek, SCORMaren luzapen ez-estandar bat"
-#~ " eskatzen du eta bakarrik funtzionatuko "
-#~ "du Moodle bertsio jakin batzuetan."
-
-#~ msgid "Modo pizarra digital"
-#~ msgstr ""
-
-#~ msgid "Fondo"
-#~ msgstr "Desegin"
-
-#~ msgid "Tarjetas"
-#~ msgstr "Hasi"
-
-#~ msgid "The user will see your name when clicking on the button."
-#~ msgstr "Erabiltzaileak zure izena ikusiko du botoia sakatzerakoan."
-
-#~ msgid ""
-#~ "The text of the button should be"
-#~ " in the right language, that's why"
-#~ " it's a required field."
-#~ msgstr ""
-#~ "Botoiaren testua hizkuntza egokian egon "
-#~ "beharko luke; hori dela eta, "
-#~ "derrigorrezko eremua da."
-
-#~ msgid "Write your name:"
-#~ msgstr "Idatzi zure izena:"
-
-#~ msgid "You should write your name."
-#~ msgstr "Zure izena idatzi beharko zenuke."
-
-#~ msgid "Itinerary activity"
-#~ msgstr "Egin berriro jarduera"
-
-#~ msgid "Itinerary"
-#~ msgstr "Wikiztegia"
-
-#~ msgid "First"
-#~ msgstr "Zerrenda"
-
-#~ msgid "Last"
-#~ msgstr "Itsatsi"
-
-#~ msgid ""
-#~ "Message for the editor: This iDevice "
-#~ "allows you to configure the behavior "
-#~ "of this page's iDevices. It will "
-#~ "not be visible when previewing or "
-#~ "exporting."
-#~ msgstr ""
-
-#~ msgid "You already completed this test. You can't repeat it"
-#~ msgstr "Erronka hau dagoeneko bete duzu."
-
-#~ msgid "You have completed this test. You can repeat it when you want."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You have completed this test. You "
-#~ "will need an access code to repeat"
-#~ " it."
-#~ msgstr ""
-
-#~ msgid "You have finished the activity"
-#~ msgstr "Amaitu jarduera"
-
-#~ msgid "Click here to repeat it"
-#~ msgstr "Klik egin jokoa hasteko"
-
-#~ msgid "You finished the test!"
-#~ msgstr "Eragiketa guztiak amaitu dituzu."
-
-#~ msgid "You must provide the code and access message"
-#~ msgstr "Jokoan hasteko sartu beharreko kodea eman behar duzu"
-
-#~ msgid "You can only add an itinerary iDevice per page"
-#~ msgstr "Bideo interaktibo bakarra erantsi dezakezu orri bakoitzeko."
-
-#~ msgid ""
-#~ "It lets you define different itineraries"
-#~ " within an elp based on an "
-#~ "initial diagnostic test."
-#~ msgstr ""
-
-#~ msgid "Itineraries"
-#~ msgstr ""
-
-#~ msgid "Mode"
-#~ msgstr "Nodoa"
-
-#~ msgid "Diagnostic test"
-#~ msgstr ""
-
-#~ msgid "Collapse"
-#~ msgstr "lagundu"
-
-#~ msgid "Play audio when showing the solution"
-#~ msgstr "Erreproduzitu audioa soluzioa erakusten denean"
-
-#~ msgid "Generate a new identifier"
-#~ msgstr ""
-
-#~ msgid "Number of itineraries"
-#~ msgstr "Eragiketa kopurua:"
-
-#~ msgid "Diagnostic test type"
-#~ msgstr ""
-
-#~ msgid "Most frequent option"
-#~ msgstr "Itxi aurkezpena"
-
-#~ msgid "The selected iDevices will be displayed"
-#~ msgstr ""
-
-#~ msgid "Repeat diagnostic test"
-#~ msgstr ""
-
-#~ msgid "Questions time"
-#~ msgstr "galdetegia"
-
-#~ msgid "Configure the order and visibility of the menus"
-#~ msgstr ""
-
-#~ msgid "Menus"
-#~ msgstr "Menua"
-
-#~ msgid "They will always be shown"
-#~ msgstr ""
-
-#~ msgid "Collapsed"
-#~ msgstr "lagundu"
-
-#~ msgid "Mark the iDevices you want to collapse on this page"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Select and order the iDevices that "
-#~ "will be displayed before performing the"
-#~ " diagnostic test"
-#~ msgstr ""
-
-#~ msgid "Select and order the iDevices to be shown on the itinerary %s"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It shows a multiple response test "
-#~ "which result will define the iDevices"
-#~ " that will be displayed in the "
-#~ "pages with nodes with the same "
-#~ "identifier."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Define the behavior of the iDevices "
-#~ "of this page depending on the "
-#~ "result obtained in the diagnostic test"
-#~ " with the same identifier."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It lets you establish which iDevices "
-#~ "will be minimized when the page is"
-#~ " loaded."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It provides a set of buttons that"
-#~ " allows you to control the visibility"
-#~ " of the iDevices on this page."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You must indicate the same identifier"
-#~ " in the diagnostic test and its "
-#~ "associated nodes"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The itinerary will depend on the "
-#~ "most frequently selected option in the"
-#~ " diagnostic test responses. There is "
-#~ "no score"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The itinerary will be determined by "
-#~ "the score obtained in the test. It"
-#~ " is necessary to define punctuation "
-#~ "intervals"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The diagnostic test can only be "
-#~ "performed once. Once an itinerary is "
-#~ "defined, it cannot be changed."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The diagnostic test can be performed "
-#~ "as many times as you want. The "
-#~ "itinerary will be modified based on "
-#~ "the new results."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The diagnostic test can be repeated "
-#~ "by introducing a code or clue "
-#~ "obtained from a game."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Use the right panel to select the"
-#~ " iDevices that will be displayed in"
-#~ " each case"
-#~ msgstr ""
-
-#~ msgid "Write the message that will be shown to the student on each itinerary"
-#~ msgstr ""
-
-#~ msgid "Score intervals are not correct"
-#~ msgstr "Sarbide kodea ez da zuzuena"
-
-#~ msgid "Multilingual Activity"
-#~ msgstr ""
-
-#~ msgid "Multilingual"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Message for the author: This iDevice "
-#~ "allows you to create multilingual "
-#~ "contents. It will not be visible "
-#~ "when previewing or exporting."
-#~ msgstr ""
-
-#~ msgid "You can only add a Multilingual iDevice per page"
-#~ msgstr "Bideo interaktibo bakarra erantsi dezakezu orri bakoitzeko."
-
-#~ msgid "It lets you create mutilingual elp files."
-#~ msgstr ""
-
-#~ msgid "Number of languages:"
-#~ msgstr "Lagungarri kopurua"
-
-#~ msgid ""
-#~ "Select the language, complete the menu"
-#~ " titles and click on the Assign "
-#~ "button to mark the iDevices to be"
-#~ " shown in the chosen language."
-#~ msgstr ""
-
-#~ msgid "Select language"
-#~ msgstr "Aukeratu hizkuntza"
-
-#~ msgid "Spanish"
-#~ msgstr "Espainiera "
-
-#~ msgid "Select the iDevices to be shown in %s"
-#~ msgstr "Idatzi erakutsi behar den testua"
-
-#~ msgid "Assign iDevices"
-#~ msgstr "Gorde iDeviceak"
-
-#~ msgid ""
-#~ "The number of attempts has to be"
-#~ " greater than or equal to the "
-#~ "number of couples in the game. "
-#~ "Indicates 0 for an infinite number "
-#~ "of attempts"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Could not upload the file. Please "
-#~ "remove any special characters from the"
-#~ " file name or path."
-#~ msgstr ""
-
-#~ msgid "Not done activity"
-#~ msgstr "Jarduera zabalgarria"
-
-#~ msgid ""
-#~ "You must indicate the identifier. It "
-#~ "can be a word, a phrase or a"
-#~ " number of more than four characters,"
-#~ " which you will use to mark the"
-#~ " activities that will be taken into"
-#~ " account in this progress report. It"
-#~ " must be the same in all "
-#~ "iDevices of a report and different "
-#~ "in those of each report."
-#~ msgstr ""
-
-#~ msgid "Time has finished. Please try again"
-#~ msgstr ""
-
-#~ msgid "Brilliant! Test passed!"
-#~ msgstr ""
-
-#~ msgid "You didn't pas the test. Please try again"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Great! You have correctly classified "
-#~ "most cards, %s, but you can still"
-#~ " improve"
-#~ msgstr ""
-
-#~ msgid "Great! Only %s cards to place correctly. Maybe you could try again"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Create interactive activities in which "
-#~ "players will have to classify cards "
-#~ "with images, texts and/or sounds."
-#~ msgstr ""
-
-#~ msgid "Choose another letter"
-#~ msgstr "Aukeratu letra"
-
-#~ msgid "Choose a letter"
-#~ msgstr "Aukeratu mota:"
-
-#~ msgid ""
-#~ "The number of attempts has to be"
-#~ " bigger than or equal to the "
-#~ "number of couples in the game. "
-#~ "Indicates 0 for an infinite number "
-#~ "of attempts"
-#~ msgstr ""
-
-#~ msgid "You must indicate an image, a text or/and an audio for each letter"
-#~ msgstr "Eman irudi, testu edo audio bat karta bakoitzaren atzeko aldearentzat"
-
-#~ msgid ""
-#~ "You didn't finish any of the "
-#~ "evaluable activities proposed in this "
-#~ "educational resource."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The following table collects the results"
-#~ " you have obtained in the evaluable"
-#~ " activities proposed in this educational"
-#~ " resource that you have already "
-#~ "completed."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "This will eliminate the stored scores"
-#~ " of all activities. Do you want "
-#~ "to continue?"
-#~ msgstr ""
-
-#~ msgid "You have to provide the identifier of this progress report"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "It shows the results obtained by "
-#~ "students in the activities associated "
-#~ "with it and its average note."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "The identifier can be a number or"
-#~ " word of more than four characters."
-#~ " You must use the same identifier "
-#~ "in all the activities you want to"
-#~ " evaluate in this progress report."
-#~ msgstr ""
-
-#~ msgid "Number of evaluable activities"
-#~ msgstr "Bizitza kopurua"
-
-#~ msgid "Show iDevice type"
-#~ msgstr "Erakutsi jarduera"
-
-#~ msgid "Report compatible iDevices:"
-#~ msgstr ""
-
-#~ msgid "Not achieved"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "You can introduce a comparison list "
-#~ "to offer a structured and easy way"
-#~ " to understand the activities proposed "
-#~ "throughout the educational resource. It "
-#~ "will be a useful instrument for "
-#~ "student self-assessment, allowing you to"
-#~ " monitor the activities you complete."
-#~ msgstr ""
-
-#~ msgid "Logo (left)"
-#~ msgstr ""
-
-#~ msgid "Logo (right)"
-#~ msgstr "Eskuinean lerrokatu"
-
-#~ msgid "You can't leave an empty item"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Indicate, separating them by commas, the"
-#~ " correct order in which the points"
-#~ " must be clicked"
-#~ msgstr ""
-
-#~ msgid "Number of pending activities"
-#~ msgstr "Puntu kopurua"
-
-#~ msgid ""
-#~ "The number of attempts has to be"
-#~ " bigger than or equal to the "
-#~ "number of phrases in the game. Use"
-#~ " 0 for an infinite number of "
-#~ "attempts"
-#~ msgstr ""
-
-#~ msgid "Add letter"
-#~ msgstr "Aukeratutako letrak"
-
-#~ msgid "Delete letter"
-#~ msgstr "Aukeratutako letrak"
-
-#~ msgid "Copy letter"
-#~ msgstr "lehiatu"
-
-#~ msgid "Cut letter"
-#~ msgstr "Aukeratutako letrak"
-
-#~ msgid "Paste letter"
-#~ msgstr "Aukeratutako letrak"
-
-#~ msgid "Link each card with its pair."
-#~ msgstr ""
-
-#~ msgid "Time has finished"
-#~ msgstr ""
-
-#~ msgid "(Right) Logo "
-#~ msgstr ""
-
-#~ msgid "Full Inclusion"
-#~ msgstr ""
-
 #~ msgid ""
 #~ "The accessibility toolbar allow visitors "
 #~ "to manipulate some aspects of your "
 #~ "site, like font and text size."
 #~ msgstr ""
-
-#~ msgid "Activity: Passed. Score: %S"
-#~ msgstr ""
-
-#~ msgid "Activity: Not passed. Score: %S"
-#~ msgstr ""
-
-#~ msgid "No. of activities: %S"
-#~ msgstr ""
+#~ "Sartzeko barrari esker, erabiltzaileek "
+#~ "gunearen alderdi batzuk pertsonalizatu "
+#~ "ditzakete, hala nola hizki-mota eta "
+#~ "tamaina."
 

@@ -1,6 +1,6 @@
 # EXELearning Galician PO file
 # Copyright (C) 2004-2011 EXELearning.org
-# Copyright (C) 2011-2022 EXELearning.net
+# Copyright (C) 2011-2024 EXELearning.net
 # This file is distributed under the same license as the EXE package.
 # eXe Project <exe@exelearning.org>
 #
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-28 09:41+0100\n"
+"POT-Creation-Date: 2024-02-28 12:14+0100\n"
 "PO-Revision-Date: 2024-02-20 15:14+0100\n"
 "Last-Translator: Xunta de Galicia <sipe@edu.xunta.gal>\n"
 "Language: gl\n"
