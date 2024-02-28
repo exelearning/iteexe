@@ -25,11 +25,21 @@ An RSS Idevice is one built from a RSS feed.
 import re
 import requests
 import feedparser
+import urllib
+import ssl
+from sys import platform
 
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
 
+
+class UrlOpener(urllib.FancyURLopener):
+    """
+    Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
+    """
+    version = "eXe/exe@exelearning.org"
+urllib._urlopener = UrlOpener()
 
 # ===========================================================================
 class RssIdevice(Idevice):
@@ -100,10 +110,15 @@ display them as links in your content. From here you can edit the bookmarks and 
         try:
             rssDic = []
             headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:50.0) Gecko/20100101 Firefox/50.0'}
-            response = requests.get(url, timeout=10, headers=headers)
-            statuscode = response.status_code
-            if statuscode == 200:
-                rssDic = feedparser.parse(response.text)
+            #response = requests.get(url, timeout=10, headers=headers, verify='cacert.pem')
+            if (platform == 'darwin' and hasattr(sys, 'frozen')):
+                response = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+            if platform == 'darwin':
+                response = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+            else:
+                response = urllib.urlopen(url)
+            #rssDic = feedparser.parse(response.text)
+            rssDic = feedparser.parse(response.read())
             length = len(rssDic['entries'])
             if length > 0 :
                 content += "<ul>"
@@ -112,8 +127,10 @@ display them as links in your content. From here you can edit the bookmarks and 
                         rssDic['entries'][i].link, rssDic['entries'][i].title)  
                 content += "</ul>"
         except Exception, error:
-            log.error(unicode(error))
-            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again. ") % url
+            content += _(u"Error: %s") % unicode(error)
+            # import traceback
+            # content += _(u"Traceback: %s") % unicode(traceback.format_exc())
             
         if content == "":
             content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
