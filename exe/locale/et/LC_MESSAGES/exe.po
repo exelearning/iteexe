@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-02-27 13:40+0100\n"
+"POT-Creation-Date: 2024-02-28 09:41+0100\n"
 "PO-Revision-Date: 2008-02-27 23:10+1300\n"
 "Last-Translator: Andres Mellik <andres@jukulab.ee>\n"
 "Language: et\n"
@@ -10908,7 +10908,8 @@ msgstr "Täida lüngad"
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:67
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:93
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:101
-msgid "Activity: Passed. Score: %S"
+#, python-format
+msgid "Activity: Passed. Score: %s"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:100
@@ -10933,7 +10934,8 @@ msgstr ""
 #: exe/webui/scripts/idevices/sopa-activity/edition/sopa-activity.js:68
 #: exe/webui/scripts/idevices/trivial-activity/edition/trivial-activity.js:94
 #: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:102
-msgid "Activity: Not passed. Score: %S"
+#, python-format
+msgid "Activity: Not passed. Score: %s"
 msgstr ""
 
 #: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:112
@@ -12956,8 +12958,9 @@ msgid "Update"
 msgstr ""
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:27
-msgid "No. of activities: %S"
-msgstr ""
+#, fuzzy, python-format
+msgid "No. of activities: %s"
+msgstr "Tegevus"
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:28
 #, python-format
@@ -19198,5 +19201,14 @@ msgstr ""
 #~ "The accessibility toolbar allow visitors "
 #~ "to manipulate some aspects of your "
 #~ "site, like font and text size."
+#~ msgstr ""
+
+#~ msgid "Activity: Passed. Score: %S"
+#~ msgstr ""
+
+#~ msgid "Activity: Not passed. Score: %S"
+#~ msgstr ""
+
+#~ msgid "No. of activities: %S"
 #~ msgstr ""
 
