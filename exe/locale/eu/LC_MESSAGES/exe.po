@@ -12354,7 +12354,7 @@ msgstr "Primeran! zure proba gainditu duzu!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:72
 msgid "You didn't pass the test. Please try again"
-msgstr "Ez duzu testa gainditu. Saiatu berriro,, mesedez"
+msgstr "Ez duzu testa gainditu. Saiatu berriro, mesedez"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:73
 msgid "Do you want to restart this game?"
@@ -12389,7 +12389,7 @@ msgid ""
 "Great! You have solved this activity in %s attempts. Surely you can do it"
 " faster!"
 msgstr ""
-"Ederki! Jarduera hau % s saiakeretan ebatzi duzu.  Ziur azkarrago egin "
+"Ederki! Jarduera hau %s saiakeretan ebatzi duzu.  Ziur azkarrago egin "
 "dezakezula!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:79
@@ -12411,7 +12411,7 @@ msgstr ""
 #, python-format
 msgid "Great! Only %s cards left to be placed correctly. Strive for perfection!"
 msgstr ""
-"Ederki! Txartelen % s  besterik ez dira falta zuzen jartzeko. Saiatu "
+"Ederki! Txartelen %s  besterik ez dira falta zuzen jartzeko. Saiatu "
 "hobetzen!"
 
 #: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:82
@@ -12873,7 +12873,7 @@ msgid ""
 msgstr ""
 "Jarduera interaktiboak sortu, bertan, jokalariek irudiak, testuak edota "
 "soinuak dituzten karten bikoteak, hirukoteak edo laukoteak aurkitu "
-"beharko dituzte, "
+"beharko dituzte."
 
 # Dios los cría y ellos se juntan o los pájaros que tienen las mismas plumas
 # se parecen
