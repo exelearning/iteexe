@@ -1,4 +1,4 @@
-intef-exe (3:2.9) lucid; urgency=medium
+intef-exe (3:2.9~beta1) lucid; urgency=medium
 
   * Manuel Narváez
     - New iDevice: Progress report (compatible with all games and some iDevices with score).
@@ -25,6 +25,7 @@ intef-exe (3:2.9) lucid; urgency=medium
     - New Properties / Export option: Accessibility Toolbar (it includes Drog.js, by Emanuel Rojas Vásquez).
 
   * Ignacio Gros
+    - Development coordination.
     - Export menu: Show the default Web Site export type.
     - Help menu: Forums replaced by Telegram. (#693)
     - New button to close the style manager panel.
@@ -54,6 +55,9 @@ intef-exe (3:2.9) lucid; urgency=medium
   * Ernesto Serrano
     - Fixed: macOS CI pipeline in GitHub actions.
     - Fixed: Snap Build pipeline for Ubuntu 16.04 Legacy Support.
+
+  * APSL
+    - Fixed: RSS iDevice on Windows. (#718)
     
   * eXeLearning.net Translation Team
     - New complete Galician translation, by Xunta de Galicia.
