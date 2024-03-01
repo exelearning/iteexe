@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-02-28 12:14+0100\n"
+"POT-Creation-Date: 2024-03-01 13:16+0100\n"
 "PO-Revision-Date: 2022-12-07 19:46+0100\n"
 "Last-Translator: Gobierno de Navarra - Olatz Benages "
 "<atdlekaroz2@educacion.navarra.es>\n"
@@ -2771,7 +2771,7 @@ msgstr "Aukera anitzak"
 msgid "MP3"
 msgstr "MP3"
 
-#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:42
+#: exe/engine/multimediaidevice.py:41 exe/engine/rssidevice.py:52
 msgid "Auckland University of Technology"
 msgstr "Auckland University of Technology"
 
@@ -3240,11 +3240,11 @@ msgstr ""
 "Applet iDevice baliabide baten izena aldatu da eta ez luke honaino iritxi"
 " behar!"
 
-#: exe/engine/rssidevice.py:41 exe/engine/rssidevice.py:49
+#: exe/engine/rssidevice.py:51 exe/engine/rssidevice.py:59
 msgid "RSS"
 msgstr "RSS"
 
-#: exe/engine/rssidevice.py:43
+#: exe/engine/rssidevice.py:53
 msgid ""
 "The RSS iDevice is used \n"
 "to provide new content to an individual users machine. Using this\n"
@@ -3254,7 +3254,7 @@ msgstr ""
 "emateko erabiltzen da. iDevice honen bidez,\n"
 "feed batetik estekak aukera ditzakezu, ikasleek ikus ditzaten."
 
-#: exe/engine/rssidevice.py:52
+#: exe/engine/rssidevice.py:62
 msgid ""
 "Enter an RSS URL for the RSS feed you \n"
 "want to attach to your content. Feeds are often identified by a small "
@@ -3290,7 +3290,7 @@ msgstr ""
 "ditzakezu, eta argibideak edo \n"
 "informazio osagarria gehitu."
 
-#: exe/engine/rssidevice.py:116 exe/engine/rssidevice.py:119
+#: exe/engine/rssidevice.py:130 exe/engine/rssidevice.py:137
 #, python-format
 msgid ""
 "Unable to load RSS feed from %s <br/>Please check the spelling and "
@@ -3298,6 +3298,57 @@ msgid ""
 msgstr ""
 "Ezin da RSS feed-a %s-tik kargatu <br/> Mesedez, egiaztatu ortografia eta"
 " konexioa, eta berriz saiatu."
+
+#: exe/engine/rssidevice.py:131 exe/jsui/scripts/app/controller/MainTab.js:345
+#: exe/jsui/scripts/app/controller/MainTab.js:395
+#: exe/jsui/scripts/app/controller/MainTab.js:452
+#: exe/jsui/scripts/app/controller/MainTab.js:606
+#: exe/jsui/scripts/app/controller/MainTab.js:668
+#: exe/jsui/scripts/app/controller/StyleManager.js:98
+#: exe/jsui/scripts/app/controller/StyleManager.js:161
+#: exe/jsui/scripts/app/controller/StyleManager.js:189
+#: exe/jsui/scripts/app/controller/StyleManager.js:218
+#: exe/jsui/scripts/app/controller/StyleManager.js:271
+#: exe/jsui/scripts/app/controller/StyleManager.js:316
+#: exe/jsui/scripts/app/controller/StyleManager.js:347
+#: exe/jsui/scripts/app/controller/TemplateManager.js:82
+#: exe/jsui/scripts/app/controller/TemplateManager.js:130
+#: exe/jsui/scripts/app/controller/TemplateManager.js:166
+#: exe/jsui/scripts/app/controller/TemplateManager.js:207
+#: exe/jsui/scripts/app/controller/TemplateManager.js:279
+#: exe/jsui/scripts/app/controller/TemplateManager.js:338
+#: exe/jsui/scripts/app/controller/TemplateManager.js:364
+#: exe/jsui/scripts/app/controller/Toolbar.js:1139
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:152
+#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:375
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:414
+#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:669
+#: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:280
+#: exe/jsui/scripts/app/view/forms/ValidatePanel.js:106
+#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:317
+#: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:198
+#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:34
+#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:497
+#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
+#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:619
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:229
+#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1045
+#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1257
+#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:212
+#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:825
+#: exe/webui/stylemanagerpage.py:159 exe/webui/stylemanagerpage.py:306
+#: exe/webui/stylemanagerpage.py:334 exe/webui/stylemanagerpage.py:358
+#: exe/webui/stylemanagerpage.py:401 exe/webui/stylemanagerpage.py:412
+#: exe/webui/stylemanagerpage.py:423 exe/webui/stylemanagerpage.py:472
+#: exe/webui/stylemanagerpage.py:479 exe/webui/stylemanagerpage.py:522
+#: exe/webui/stylemanagerpage.py:534 exe/webui/templatemanagerpage.py:130
+#: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
+#: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
+#: exe/webui/templatemanagerpage.py:297
+#: exe/webui/tools/mindmaps/src/js/SaveDocument.js:131
+#: exe/webui/tools/style-designer/langs/all.js:141
+msgid "Error"
+msgstr "Errorea"
 
 #: exe/engine/seleccionmultiplefpdidevice.py:46
 msgid "FPD - Multi Select Activity"
@@ -4357,57 +4408,6 @@ msgstr "Itxaron mesedez..."
 #: exe/webui/editorpage.py:146
 msgid "Settings Saved"
 msgstr "Ezarpenak gorde dira"
-
-#: exe/jsui/scripts/app/controller/MainTab.js:345
-#: exe/jsui/scripts/app/controller/MainTab.js:395
-#: exe/jsui/scripts/app/controller/MainTab.js:452
-#: exe/jsui/scripts/app/controller/MainTab.js:606
-#: exe/jsui/scripts/app/controller/MainTab.js:668
-#: exe/jsui/scripts/app/controller/StyleManager.js:98
-#: exe/jsui/scripts/app/controller/StyleManager.js:161
-#: exe/jsui/scripts/app/controller/StyleManager.js:189
-#: exe/jsui/scripts/app/controller/StyleManager.js:218
-#: exe/jsui/scripts/app/controller/StyleManager.js:271
-#: exe/jsui/scripts/app/controller/StyleManager.js:316
-#: exe/jsui/scripts/app/controller/StyleManager.js:347
-#: exe/jsui/scripts/app/controller/TemplateManager.js:82
-#: exe/jsui/scripts/app/controller/TemplateManager.js:130
-#: exe/jsui/scripts/app/controller/TemplateManager.js:166
-#: exe/jsui/scripts/app/controller/TemplateManager.js:207
-#: exe/jsui/scripts/app/controller/TemplateManager.js:279
-#: exe/jsui/scripts/app/controller/TemplateManager.js:338
-#: exe/jsui/scripts/app/controller/TemplateManager.js:364
-#: exe/jsui/scripts/app/controller/Toolbar.js:1139
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:152
-#: exe/jsui/scripts/app/view/forms/PreferencesPanel.js:375
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:414
-#: exe/jsui/scripts/app/view/forms/StyleManagerPanel.js:669
-#: exe/jsui/scripts/app/view/forms/TemplateManagerPanel.js:280
-#: exe/jsui/scripts/app/view/forms/ValidatePanel.js:106
-#: exe/webui/scripts/idevices/adivina-activity/edition/adivina-activity.js:317
-#: exe/webui/scripts/idevices/clasifica-activity/edition/clasifica-activity.js:198
-#: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:34
-#: exe/webui/scripts/idevices/identifica-activity/edition/identifica-activity.js:497
-#: exe/webui/scripts/idevices/interactive-video/edition/interactive-video.js:41
-#: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:619
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:229
-#: exe/webui/scripts/idevices/quext-activity/edition/quext-activity.js:1045
-#: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1257
-#: exe/webui/scripts/idevices/seleccionamedias-activity/edition/seleccionamedias-activity.js:212
-#: exe/webui/scripts/idevices/videoquext-activity/edition/videoquext-activity.js:825
-#: exe/webui/stylemanagerpage.py:159 exe/webui/stylemanagerpage.py:306
-#: exe/webui/stylemanagerpage.py:334 exe/webui/stylemanagerpage.py:358
-#: exe/webui/stylemanagerpage.py:401 exe/webui/stylemanagerpage.py:412
-#: exe/webui/stylemanagerpage.py:423 exe/webui/stylemanagerpage.py:472
-#: exe/webui/stylemanagerpage.py:479 exe/webui/stylemanagerpage.py:522
-#: exe/webui/stylemanagerpage.py:534 exe/webui/templatemanagerpage.py:130
-#: exe/webui/templatemanagerpage.py:229 exe/webui/templatemanagerpage.py:241
-#: exe/webui/templatemanagerpage.py:256 exe/webui/templatemanagerpage.py:263
-#: exe/webui/templatemanagerpage.py:297
-#: exe/webui/tools/mindmaps/src/js/SaveDocument.js:131
-#: exe/webui/tools/style-designer/langs/all.js:141
-msgid "Error"
-msgstr "Errorea"
 
 #: exe/jsui/scripts/app/controller/MainTab.js:353
 #: exe/jsui/scripts/app/controller/MainTab.js:406
