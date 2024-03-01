@@ -127,8 +127,9 @@ display them as links in your content. From here you can edit the bookmarks and 
                         rssDic['entries'][i].link, rssDic['entries'][i].title)  
                 content += "</ul>"
         except Exception, error:
-            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again. ") % url
-            content += _(u"Error: %s") % unicode(error)
+            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+            content += _(u"Error") % unicode(error)
+            content += " (%s)" % unicode(error)
             # import traceback
             # content += _(u"Traceback: %s") % unicode(traceback.format_exc())
             
