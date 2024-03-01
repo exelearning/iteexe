@@ -13649,7 +13649,7 @@ msgid ""
 "It shows the result of the pupils in the activities linked to their "
 "average score."
 msgstr ""
-"Muestra los resultados obtenidos por en alumnos en las actividades "
+"Muestra los resultados obtenidos por el alumnado en las actividades "
 "asociadas al mismo y su nota media."
 
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:101

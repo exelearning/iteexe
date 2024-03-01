@@ -2896,7 +2896,7 @@ translations = {
  "INTEF": "INTEF", 
  "Write field values to ELP": "Escribir los valores de los campos en el ELP", 
  "English Wikipedia Article": "Art\u00edculo de la wikipedia en ingl\u00e9s", 
- "It shows the result of the pupils in the activities linked to their average score.": "Muestra los resultados obtenidos por en alumnos en las actividades asociadas al mismo y su nota media.", 
+ "It shows the result of the pupils in the activities linked to their average score.": "Muestra los resultados obtenidos por el alumnado en las actividades asociadas al mismo y su nota media.", 
  "Select a json file.": "Seleccione un fichero json.", 
  "Click on the Add images button to select an image file. The image will appear below where you will be able to label it. It's always good practice to put the file size in the label.": "Pulse sobre el bot\u00f3n Agregar im\u00e1genes para seleccionar un archivo de imagen. La imagen aparecer\u00e1 en la parte inferior y usted podr\u00e1 etiquetarla. Es una buena pr\u00e1ctica indicar el tama\u00f1o en la etiqueta de la imagen.", 
  "Great! You have visited the required dots.": "\u00a1Genial! Has visitado los puntos necesarios.", 
