@@ -60,6 +60,8 @@ intef-exe (3:2.9~beta1) lucid; urgency=medium
     - Fixed: RSS iDevice on Windows. (#718)
     
   * eXeLearning.net Translation Team
+    - New complete Basque translation, by Gobierno de Navarra.
+    - New complete Catalan translation, by Departament d'Educació de la Generalitat de Catalunya.
     - New complete Galician translation, by Xunta de Galicia.
 
  -- eXeLearning <admin@exelearning.net>  Thu, 22 Feb 2024 11:06:00 +0200
