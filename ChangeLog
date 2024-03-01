@@ -25,7 +25,7 @@ intef-exe (3:2.9~beta1) lucid; urgency=medium
     - New Properties / Export option: Accessibility Toolbar (it includes Drog.js, by Emanuel Rojas Vásquez).
 
   * Ignacio Gros
-    - Development coordination.
+    - Development and translations coordination.
     - Export menu: Show the default Web Site export type.
     - Help menu: Forums replaced by Telegram. (#693)
     - New button to close the style manager panel.
@@ -60,9 +60,11 @@ intef-exe (3:2.9~beta1) lucid; urgency=medium
     - Fixed: RSS iDevice on Windows. (#718)
     
   * eXeLearning.net Translation Team
+    - Spanish-English translation revision, by INTEF.
     - New complete Basque translation, by Gobierno de Navarra.
     - New complete Catalan translation, by Departament d'Educació de la Generalitat de Catalunya.
     - New complete Galician translation, by Xunta de Galicia.
+    - New complete Valencian translation, by Generalitat Valenciana.
 
  -- eXeLearning <admin@exelearning.net>  Thu, 22 Feb 2024 11:06:00 +0200
 

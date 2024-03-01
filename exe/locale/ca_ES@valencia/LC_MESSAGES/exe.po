@@ -14088,7 +14088,7 @@ msgstr "Número de tasques"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:27
 msgid "checklist"
-msgstr "llista de control"
+msgstr "llista_de_control"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:30
 msgid "point"
