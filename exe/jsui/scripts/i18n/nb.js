@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2024-03-01 15:37+0100\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2024-03-01 15:51+0100\nPO-Revision-Date: 2018-10-15 18:40+0200\nLast-Translator: Per-Henrik Kvalnes <per-henrik.kvalnes@nordlandssykehuset.no>\nLanguage: nb\nLanguage-Team: EXE Team <translations@exelearning.net>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Web pages footer.": "Nettsidens undertekst.", 
  "Title": "Tittel", 
  "Save file": "Lagre fil", 

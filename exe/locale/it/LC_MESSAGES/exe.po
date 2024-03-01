@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 15:37+0100\n"
+"POT-Creation-Date: 2024-03-01 15:51+0100\n"
 "PO-Revision-Date: 2021-05-30 13:15+0200\n"
 "Last-Translator: Andrea Primiani <primiani@dag.it>\n"
 "Language: it\n"
@@ -13520,7 +13520,6 @@ msgstr "Opzioni a caso"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:73
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:195
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:551
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:84
 #: exe/webui/scripts/idevices/ordena-activity/export/ordena-activity.js:41
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1089
@@ -14934,6 +14933,11 @@ msgstr ""
 #, fuzzy
 msgid "The domain of at least one variable is not correct"
 msgstr "Codice non corretto"
+
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
+#, fuzzy
+msgid "Sort"
+msgstr "hasformat"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
 #, fuzzy

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: Juan Rafael Fernández <jrfern@gmail.com>\n"
-"POT-Creation-Date: 2024-03-01 15:37+0100\n"
+"POT-Creation-Date: 2024-03-01 15:51+0100\n"
 "PO-Revision-Date: 2019-06-12 22:57+0200\n"
 "Last-Translator: Dionisio Martínez Soler <dmsoler@edu.xunta.gal>\n"
 "Language: pt\n"
@@ -13449,7 +13449,6 @@ msgstr "Correspondência de pares"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:73
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:195
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:551
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:84
 #: exe/webui/scripts/idevices/ordena-activity/export/ordena-activity.js:41
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1089
@@ -14868,6 +14867,11 @@ msgstr ""
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:617
 msgid "The domain of at least one variable is not correct"
 msgstr ""
+
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
+#, fuzzy
+msgid "Sort"
+msgstr "tem como formato"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
 #, fuzzy

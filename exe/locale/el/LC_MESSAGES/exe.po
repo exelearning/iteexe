@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: eXe Translations <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-03-01 15:37+0100\n"
+"POT-Creation-Date: 2024-03-01 15:51+0100\n"
 "PO-Revision-Date: 2023-01-06 13:58+0100\n"
 "Last-Translator: Yannis Kaskamanidis <ttnfy17@yahoo.gr>\n"
 "Language: el\n"
@@ -13654,7 +13654,6 @@ msgstr "Μαθηματικές πράξεις"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:73
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:195
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:551
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:84
 #: exe/webui/scripts/idevices/ordena-activity/export/ordena-activity.js:41
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1089
@@ -15089,6 +15088,11 @@ msgstr "Το κείμενο της ερώτησης και ο τύπος πρέ�
 #, fuzzy
 msgid "The domain of at least one variable is not correct"
 msgstr "Ο κωδικός πρόσβασης δεν είναι σωστός"
+
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
+#, fuzzy
+msgid "Sort"
+msgstr "hasformat"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
 #, fuzzy

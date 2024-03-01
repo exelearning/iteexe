@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-03-01 15:37+0100\nPO-Revision-Date: 2024-02-20 15:14+0100\nLast-Translator: Xunta de Galicia <sipe@edu.xunta.gal>\nLanguage: gl\nLanguage-Team: eXeLearning.net <cedec@ite.educacion.es >\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-03-01 15:51+0100\nPO-Revision-Date: 2024-02-20 15:14+0100\nLast-Translator: Xunta de Galicia <sipe@edu.xunta.gal>\nLanguage: gl\nLanguage-Team: eXeLearning.net <cedec@ite.educacion.es >\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "N\u00famero de roldas", 
  "DropDown Activity": "Actividade despregable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Crear un caso pr\u00e1ctico. Un bo caso \u00e9 aquel que describe unha controversia ou define a escena describindo os personaxes \nque fan parte da situaci\u00f3n. Debe permitir ademais iniciar algunha acci\u00f3n no sentido de obter a resoluci\u00f3n da situaci\u00f3n.\nDebe permitir ademais iniciar algunha acci\u00f3n no sentido de obter a resoluci\u00f3n da situaci\u00f3n.", 
@@ -3054,6 +3054,7 @@ translations = {
  "Topic number": "Tema n\u00famero", 
  "(Right) Logo": "Logo (dereita)", 
  "Cover type": "Tipo de portada", 
+ "Sort": "Ordena", 
  "You can include an alternative image. In that case you'll have to provide a descriptive text for it.": "P\u00f3dese inclu\u00edr unha imaxe alternativa. Neste caso deberase proporcionar un texto descritivo da imaxe.", 
  "Please, make your browser bigger. The Style Designer requires at least a 1024x768 screen resolution": "Maximice o seu navegador. O dese\u00f1ador de estilos require unha resoluci\u00f3n de pantalla m\u00ednima de 1024x768", 
  "Return": "Volver", 

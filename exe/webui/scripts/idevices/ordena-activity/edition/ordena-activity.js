@@ -9,7 +9,7 @@
 var $exeDevice = {
     i18n: {
         category: _('Games'),
-        name: _('Order')
+        name: _('Sort')
     },
     msgs: {},
     active: 0,

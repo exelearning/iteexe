@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-01 15:37+0100\n"
+"POT-Creation-Date: 2024-03-01 15:51+0100\n"
 "PO-Revision-Date: 2008-12-12 16:43+1300\n"
 "Last-Translator: Jun IWATA <j_iwata@med.shimane-u.ac.jp>\n"
 "Language: ja\n"
@@ -12854,7 +12854,6 @@ msgstr "別のオプションを追加"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:73
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:195
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:551
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:84
 #: exe/webui/scripts/idevices/ordena-activity/export/ordena-activity.js:41
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1089
@@ -14223,6 +14222,11 @@ msgstr ""
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:617
 msgid "The domain of at least one variable is not correct"
 msgstr ""
+
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
+#, fuzzy
+msgid "Sort"
+msgstr "エキスポート"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
 #, fuzzy

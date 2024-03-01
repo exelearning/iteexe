@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
-"POT-Creation-Date: 2024-03-01 15:37+0100\n"
+"POT-Creation-Date: 2024-03-01 15:51+0100\n"
 "PO-Revision-Date: 2022-12-07 19:46+0100\n"
 "Last-Translator: Gobierno de Navarra - Olatz Benages "
 "<atdlekaroz2@educacion.navarra.es>\n"
@@ -13426,7 +13426,6 @@ msgstr "Eragiketa matematikoak"
 #: exe/webui/scripts/idevices/informe-activity/edition/informe-activity.js:73
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:195
 #: exe/webui/scripts/idevices/mapa-activity/edition/mapa-activity.js:551
-#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:84
 #: exe/webui/scripts/idevices/ordena-activity/export/ordena-activity.js:41
 #: exe/webui/scripts/idevices/selecciona-activity/edition/selecciona-activity.js:1089
@@ -14821,6 +14820,10 @@ msgstr "Galderaren testuak eta formulak aldagai berdinak izan beharko lituzkete"
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:617
 msgid "The domain of at least one variable is not correct"
 msgstr "Gutxienez aldagai baten domeinua ez da zuzuena"
+
+#: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:12
+msgid "Sort"
+msgstr "Ordenatu"
 
 #: exe/webui/scripts/idevices/ordena-activity/edition/ordena-activity.js:68
 msgid "You have ordered all the activities!"

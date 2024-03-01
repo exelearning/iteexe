@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-03-01 15:37+0100\nPO-Revision-Date: 2024-03-01 15:30+0100\nLast-Translator: Ricardo Nutz <nutz_ric@gva.es>\nLanguage: ca_ES@valencia\nLanguage-Team: Catal\u00e1n, Valenciano\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-03-01 15:51+0100\nPO-Revision-Date: 2024-03-01 15:30+0100\nLast-Translator: Ricardo Nutz <nutz_ric@gva.es>\nLanguage: ca_ES@valencia\nLanguage-Team: Catal\u00e1n, Valenciano\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "N\u00famero de voltes", 
  "DropDown Activity": "Activitat de men\u00fa desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creeu la hist\u00f2ria del cas. Un bon cas \u00e9s aquell \nque descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \ninvolucrats en la situaci\u00f3. Tamb\u00e9 ha de permetre les accions \nencaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -3054,6 +3054,7 @@ translations = {
  "Topic number": "Tema n\u00famero", 
  "(Right) Logo": "Logo (dreta)", 
  "Cover type": "Tipus de portada", 
+ "Sort": "Ordena", 
  "You can include an alternative image. In that case you'll have to provide a descriptive text for it.": "Podeu incloure una imatge alternativa. En aquest cas heu de proporcionar-hi un text descriptiu.", 
  "Please, make your browser bigger. The Style Designer requires at least a 1024x768 screen resolution": "Amplia el navegador. El Dissenyador d'estils requereix una resoluci\u00f3 de pantalla de 1024x768 com a m\u00ednim", 
  "Return": "Tornar", 

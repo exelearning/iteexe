@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2024-03-01 15:37+0100\nPO-Revision-Date: 2014-05-13 17:47+0330\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage: fa\nLanguage-Team: fa <LL@li.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: EMAIL@ADDRESS\nPOT-Creation-Date: 2024-03-01 15:51+0100\nPO-Revision-Date: 2014-05-13 17:47+0330\nLast-Translator: FULL NAME <EMAIL@ADDRESS>\nLanguage: fa\nLanguage-Team: fa <LL@li.org>\nPlural-Forms: nplurals=1; plural=0\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Style of timer (CSS)": "\u0627\u0633\u062a\u0627\u06cc\u0644 \u0632\u0645\u0627\u0646 \u0633\u0646\u062c (CSS)", 
  "Title": "\u0639\u0646\u0648\u0627\u0646", 
  "Select Browser": "\u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0631\u0648\u0631\u06af\u0631", 
