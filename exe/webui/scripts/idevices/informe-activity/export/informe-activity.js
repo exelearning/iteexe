@@ -28,6 +28,8 @@ var $eXeInforme = {
   options: {},
   hasSCORMbutton: false,
   isInExe: false,
+  isInMoodle:false,
+  isInEscho:false,
   data: null,
   menusNav: [],
   objeMenuNav: [],
@@ -51,7 +53,8 @@ var $eXeInforme = {
     this.idevicePath = this.isInExe
       ? "/scripts/idevices/informe-activity/export/"
       : "";
-    this.enable();
+    this.isInMoodle= $("body", window.parent.document).find('#scorm_tree').length > 0;
+    this.enable()
   },
 
   enable: function () {
@@ -67,17 +70,64 @@ var $eXeInforme = {
         var informe = $eXeInforme.createInterfaceinforme();
         dl.before(informe).remove();
         $eXeInforme.addEvents();
-        $eXeInforme.menusNav = $eXeInforme.menusRead();
-        var data = $eXeInforme.getDataStorage(mOption.evaluationID);
-        $eXeInforme.generateTable1(data, mOption.number);
+        if(top.ENTORNO == 'ESCH'){
+          $eXeInforme.generateTableEscho(mOption.number,mOption.evaluationID);
+        }else{
+          $eXeInforme.menusNav = $eXeInforme.menusRead();
+          var data = $eXeInforme.getDataStorage(mOption.evaluationID);
+          $eXeInforme.generateTable1(data, mOption.number);
+        }
       }
     });
   },
 
-  loadDataGame: function (data) {
-    var json = data.text();
-    var mOptions = $eXeInforme.isJsonString(json);
-    mOptions.activeLinks =
+  generateNavArrayMoodle: function () {
+    var items = [],
+        $parent = $("body", window.parent.document),
+        $treeli = $parent.find("#scorm_tree li"),
+        title = $parent.find("#scorm_toc_title").text();
+
+    $treeli.each(function () {
+        var text = $(this).clone()
+            .children()
+            .remove('i')
+            .end()
+            .children()
+            .remove('.yui3-treeview-children')
+            .end()
+            .find('a').first().text().trim()
+            .replace(/\s\s+/g, ' ');
+        var level = $(this).parents('ul').length;
+        level = level < 2 ? 1 : level - 1;
+        items.push({ 'text': text, link:'', 'position': level });
+    });
+    items = $eXeInforme.transformItems(items)
+    return items
+},
+generateNavArrayEscho: function () {
+  var items = [];
+      $li = top.$('#book-index').find('.js-list-activities li');
+      $li.each(function () {
+        var classes = $(this).attr('class'),
+            classList = classes.split(' '),
+            text = $(this).find('a').text().trim(),
+            level = 1;
+        for (var i = 0; i < classList.length; i++) {
+            if (classList[i].startsWith('nivel_')) {
+                level = parseInt(classList[i].split('_')[1], 10);
+                items.push({ text: text, link: '', position: level });
+                break;
+            }
+        }
+    });
+  items = $eXeInforme.transformItems(items)
+  return items
+},
+
+loadDataGame: function (data) {
+  var json = data.text();
+  var mOptions = $eXeInforme.isJsonString(json);
+  mOptions.activeLinks =
       !$("body").hasClass("exe-scorm") &&
       typeof mOptions.activeLinks != "undefined"
         ? mOptions.activeLinks
@@ -127,8 +177,11 @@ var $eXeInforme = {
     return html;
   },
   menusRead: function () {
+    $eXeInforme.isInMoodle = $("body", window.parent.document).find('#scorm_tree').length > 0;
     var menus = [];
-    if ($eXeInforme.isInExe) {
+    if ($eXeInforme.isInMoodle){
+      menus = $eXeInforme.generateNavArrayMoodle();
+    } else if ($eXeInforme.isInExe) {
       menus = $eXeInforme.generateNavArrayExe();
     } else {
       menus = $eXeInforme.generateNavArray();
@@ -146,8 +199,8 @@ var $eXeInforme = {
       index2 = 0,
       index3 = 0,
       index4 = 0,
-      index5 = 0;
-    index6 = 0;
+      index5 = 0,
+      index6 = 0;
     sbody.each(function (i) {
       var text = $(this).find(".x-grid-cell-inner").text().trim();
       var link = "";
@@ -230,10 +283,77 @@ var $eXeInforme = {
     processListItems($("#siteNav > ul > li"), "");
     return arr;
   },
+  transformItems: function(items) {
+    var position = "",
+    index1 = 1,
+    index2 = 0,
+    index3 = 0,
+    index4 = 0,
+    index5 = 0,
+    index6 = 0;
+    items.forEach((item, i) => {
+      var level = item.position;
+      if (i == 0) {
+        position = "1.";
+        item.position = position;
+      } else {
+        if (level == 1) {
+          index1++;
+          index2 = 0;
+          index3 = 0;
+          index4 = 0;
+          index5 = 0;
+          index6 = 0;
+        } else if (level == 2) {
+          index2++;
+          index3 = 0;
+          index4 = 0;
+          index5 = 0;
+          index6 = 0;
+        } else if (level == 3) {
+          index3++;
+          index4 = 0;
+          index5 = 0;
+          index6 = 0;
+        } else if (level == 4) {
+          index4++;
+          index5 = 0;
+          index6 = 0;
+        } else if (level == 5) {
+          index5++;
+          index6 = 0;
+        } else if (level == 6) {
+          index6++;
+        }
+        position =
+          index1 +
+          "." +
+          index2 +
+          "." +
+          index3 +
+          "." +
+          index4 +
+          "." +
+          index5 +
+          "." +
+          index6 +
+          ".";
+        position = position.replace(/\.0\..*/, "");
+        if (position.slice(-1) !== ".") {
+          position += ".";
+        }
+        item.position = position;
+      }
+    }); 
+    return items;
+  },
 
   createLinkNode: function (node) {
-    var link = node.text;
-    if (!$eXeInforme.isInExe && $eXeInforme.options.activeLinks) {
+    var link = node.text,
+        isInEscho = top.ENTORNO =='ESCH',
+        isInMoodle =top.find('#scorm_tree').length > 0;
+
+    if ($eXeInforme.options.activeLinks && !isInEscho && !isInMoodle && !$eXeInforme.isInExe ) {
       link =
         '<a href="' +
         node.link +
@@ -368,7 +488,12 @@ var $eXeInforme = {
         color = "#007F5F";
       if (data) {
         for (var acts = 0; acts < data.length; acts++) {
-          if ($eXeInforme.menusNav[nod].text == data[acts].node) {
+          var lnode =  data[acts].node
+          if( data[acts].node.length > 0){
+            lnode =  data[acts].node.trim().replace(/\s\s+/g, ' ') 
+          }
+          var lnode =  data[acts].node.trim().replace(/\s\s+/g, ' ') || ''
+          if ($eXeInforme.menusNav[nod].text == lnode) {
             var date = $eXeInforme.options.showDate
               ? '<span id="informeDate">(' + data[acts].date + ") </span>"
               : "";
@@ -464,7 +589,19 @@ var $eXeInforme = {
         $("#informeTitleProyect").text(headerContent);
       }
     }
+    if($eXeInforme.isInMoodle){
+      $("#informeTitleProyect").text(top.document.title);
+    }
   },
+  generateTableEscho:function(number, evaluationID){
+      top.$('#btn-book-index').trigger('click');
+      setTimeout(function(){
+          $eXeInforme.menusNav = $eXeInforme.generateNavArrayEscho();
+          var data = $eXeInforme.getDataStorage(evaluationID);
+          $eXeInforme.generateTable1(data, number);
+      }, 1000)
+  },
+
 
   getDataStorage: function (id) {
     var id = "dataEvaluation-" + id,

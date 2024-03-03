@@ -472,7 +472,7 @@ var $eXeSeleccionaMedias = {
 				</div>\
             </div>\
             <div class="SLCMP-ImageDiv" id="slcmpImageDiv-' +  instance +  '">\
-                 <img class="SLCMP-ImageDef" id="slcmpImageDefinition-' +  instance +  '"  src="' + path + 'slcmImage.png" alt="' + _("No image") + '" />\
+                 <img class="SLCMP-ImageDef" id="slcmpImageDefinition-' +  instance +  '"  src="' + path + 'slcmImage.png" alt="' +  msgs.msgNoImage + '" />\
             </div>\
             <div class="SLCMP-Author" id="slcmpAuthor-' +  instance +  '">Probando</div>\
             <div class="SLCMP-Information">\

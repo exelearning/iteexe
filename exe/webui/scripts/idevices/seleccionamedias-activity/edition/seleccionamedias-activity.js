@@ -74,7 +74,8 @@ var $exeDevice = {
         "msgUncompletedActivity": _("Incomplete activity"),
         "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
         "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
-        "msgChangeMode": _("Change visualization mode")
+        "msgChangeMode": _("Change visualization mode"),
+        "msgTypeGame": _('Select media files')
 
     },
     init: function () {
