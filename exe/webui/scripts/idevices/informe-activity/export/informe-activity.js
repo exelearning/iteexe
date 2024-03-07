@@ -53,7 +53,19 @@ var $eXeInforme = {
     this.idevicePath = this.isInExe
       ? "/scripts/idevices/informe-activity/export/"
       : "";
-    this.isInMoodle= $("body", window.parent.document).find('#scorm_tree').length > 0;
+	// Check if isInMoodle
+	var p = window.parent;
+	if (p && typeof(p.M)=='object') {
+		if (typeof(p.location)=="object"&&typeof(p.location.href)=='string') {
+			p = p.location.href;
+			if (
+				p.indexOf("/mod/scorm/player.php")!=-1 || 
+				p.indexOf("/mod/exescorm/player.php")!=-1
+			) {
+				this.isInMoodle = true;
+			}
+		}
+	}
     this.enable()
   },
 
@@ -84,8 +96,11 @@ var $eXeInforme = {
   generateNavArrayMoodle: function () {
     var items = [],
         $parent = $("body", window.parent.document),
-        $treeli = $parent.find("#scorm_tree li"),
+        $treeli = $parent.find("#scorm_tree li");
         title = $parent.find("#scorm_toc_title").text();
+	
+	// exe_scorm module
+	if ($treeli.length==0) $treeli = $parent.find("#exescorm_tree li");
 
     $treeli.each(function () {
         var text = $(this).clone()
@@ -177,7 +192,6 @@ loadDataGame: function (data) {
     return html;
   },
   menusRead: function () {
-    $eXeInforme.isInMoodle = $("body", window.parent.document).find('#scorm_tree').length > 0;
     var menus = [];
     if ($eXeInforme.isInMoodle){
       menus = $eXeInforme.generateNavArrayMoodle();
@@ -351,7 +365,7 @@ loadDataGame: function (data) {
   createLinkNode: function (node) {
     var link = node.text,
         isInEscho = top.ENTORNO =='ESCH',
-        isInMoodle =top.find('#scorm_tree').length > 0;
+        isInMoodle = this.isInMoodle;
 
     if ($eXeInforme.options.activeLinks && !isInEscho && !isInMoodle && !$eXeInforme.isInExe ) {
       link =
