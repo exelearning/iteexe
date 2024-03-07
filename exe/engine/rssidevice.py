@@ -23,6 +23,7 @@ An RSS Idevice is one built from a RSS feed.
 """
 
 import re
+import sys
 import requests
 import feedparser
 import urllib
