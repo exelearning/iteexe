@@ -47,6 +47,7 @@ intef-exe (3:2.9) lucid; urgency=medium
     - Fixed: IFRAME contents resizing problem. (#715)
     - Fixed: Cloze Activity iDevice. Too wide text fields. (#710)
     - Fixed: "Please save your iDevice first" message when no iDevice was open. (#699)
+    - Fixed: Properties - Footer hidden after resizing the TEXTAREA. (#724)
 
   * Pablo Amaya
     - Fixed: Single page export duplicated JavaScript files. (#713)

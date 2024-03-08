@@ -549,7 +549,8 @@ Ext.define('eXe.view.forms.PackagePanel', {
 									tooltip: _('Web pages footer.'),
 									height: 80,
 									anchor: '100%',
-									resizable: true
+									resizable: true,
+									style: "min-height:20px"
 								}
 							]
 						}
