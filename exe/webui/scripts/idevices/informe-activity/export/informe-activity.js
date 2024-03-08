@@ -53,19 +53,25 @@ var $eXeInforme = {
     this.idevicePath = this.isInExe
       ? "/scripts/idevices/informe-activity/export/"
       : "";
-	// Check if isInMoodle
-	var p = window.parent;
-	if (p && typeof(p.M)=='object') {
-		if (typeof(p.location)=="object"&&typeof(p.location.href)=='string') {
-			p = p.location.href;
-			if (
-				p.indexOf("/mod/scorm/player.php")!=-1 || 
-				p.indexOf("/mod/exescorm/player.php")!=-1
-			) {
-				this.isInMoodle = true;
-			}
-		}
-	}
+    // Check if isInMoodle
+    if (this.inIframe()) {
+      var p = window.parent;
+      if (p) {
+        var b = $("body");
+        if (b.hasClass("exe-scorm")||b.hasClass("exe-ims")) {
+          if (typeof(p.location)=="object"&&typeof(p.location.href)=='string') {
+            p = p.location.href;
+            if (
+              p.indexOf("/mod/scorm/player.php")!=-1 || 
+              p.indexOf("/mod/exescorm/player.php")!=-1 || 
+              p.indexOf("/mod/imscp/view.php") !=-1
+            ) {
+              this.isInMoodle = true;
+            }
+          }
+        }
+      }
+    }
     this.enable()
   },
 
@@ -92,6 +98,14 @@ var $eXeInforme = {
       }
     });
   },
+  
+  inIframe: function () {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  },
 
   generateNavArrayMoodle: function () {
     var items = [],
@@ -99,8 +113,10 @@ var $eXeInforme = {
         $treeli = $parent.find("#scorm_tree li");
         title = $parent.find("#scorm_toc_title").text();
 	
-	// exe_scorm module
-	if ($treeli.length==0) $treeli = $parent.find("#exescorm_tree li");
+    // exe_scorm Moodle module
+    if ($treeli.length==0) $treeli = $parent.find("#exescorm_tree li");
+    // ims activity in Moodle
+    if ($treeli.length==0) $treeli = $parent.find("#imscp_tree td");
 
     $treeli.each(function () {
         var text = $(this).clone()
@@ -114,7 +130,7 @@ var $eXeInforme = {
             .replace(/\s\s+/g, ' ');
         var level = $(this).parents('ul').length;
         level = level < 2 ? 1 : level - 1;
-        items.push({ 'text': text, link:'', 'position': level });
+        if (text!="") items.push({ 'text': text, link:'', 'position': level });
     });
     items = $eXeInforme.transformItems(items)
     return items
