@@ -1,4 +1,4 @@
-intef-exe (3:2.9~beta1) lucid; urgency=medium
+intef-exe (3:2.9) lucid; urgency=medium
 
   * Manuel Narváez
     - New iDevice: Progress report (compatible with all games and some iDevices with score).
@@ -35,12 +35,12 @@ intef-exe (3:2.9~beta1) lucid; urgency=medium
     - Package panel: Learning Resource Type field visible even in the non-advanced mode.
     - Styles: No menu reset after resizing the window.
     - TinyMCE. Media plugin: New help placeholder.
-    - TinyMCE: JavaScript Player disabled by default. (#704)
     - TinyMCE: Embed PDF using the EMBED tag. (#690)
+    - TinyMCE: JavaScript Player disabled by default. (#704)
+    - TinyMCE. Allow pasting EducaMadrid's Mediateca links. (#707)
     - Fixed: TinyMCE. IFRAME fullscreen attribute was being removed. (#706)
     - Fixed: TinyMCE. Unnecessary data-mce-fragment attributes. (#229)
     - Fixed: TinyMCE. 404 errors on templates images. (#705)
-    - Fixed: TinyMCE. Allow pasting Mediateca links. (#707)
     - Fixed: TinyMCE. Content deleted after inserting a TEXTAREA. (#691)
     - Fixed: TinyMCE. Definition lists. Allow SPAN in DT. (#694)
     - Fixed: TinyMCE. Linked image deleted when edited. (#700)
