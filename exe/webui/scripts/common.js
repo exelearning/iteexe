@@ -23,8 +23,6 @@
 	2015. Refactored and completed by Ignacio Gros (http://www.gros.es) for http://exelearning.net/
 */
 
-if (typeof($exe_i18n)=='undefined') $exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",download:"Download",yourScoreIs:"Your score is ",dataError:"Error recovering data",epubJSerror:"This might not work in this ePub reader.",solution:"Solution",epubDisabled:"This activity does not work in ePub.",print:"Print"}
-
 var $exe = {
 	
 	options : {
