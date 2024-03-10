@@ -92,8 +92,14 @@ var $eXeInforme = {
           $eXeInforme.generateTableEscho(mOption.number,mOption.evaluationID);
         }else{
           $eXeInforme.menusNav = $eXeInforme.menusRead();
-          var data = $eXeInforme.getDataStorage(mOption.evaluationID);
-          $eXeInforme.generateTable1(data, mOption.number);
+          if ( $eXeInforme.menusNav && $eXeInforme.menusNav.length > 0){
+            var data = $eXeInforme.getDataStorage(mOption.evaluationID);
+            $eXeInforme.generateTable1(data, mOption.number);
+          }else{
+            $("#informeData").empty();
+            $("#informeMessage").html(mOption.msgs.msgNotData);
+            
+          }
         }
       }
     });
@@ -627,11 +633,15 @@ loadDataGame: function (data) {
       top.$('#btn-book-index').trigger('click');
       setTimeout(function(){
           $eXeInforme.menusNav = $eXeInforme.generateNavArrayEscho();
-          var data = $eXeInforme.getDataStorage(evaluationID);
-          $eXeInforme.generateTable1(data, number);
+          if ($eXeInforme.menusNav && $eXeInforme.menusNav.length > 0){
+            var data = $eXeInforme.getDataStorage(evaluationID);
+            $eXeInforme.generateTable1(data, number);
+          }else{
+            $("#informeData").empty();
+            $("#informeMessage").html(mOption.msgs.msgNotData);
+          }
       }, 1000)
   },
-
 
   getDataStorage: function (id) {
     var id = "dataEvaluation-" + id,

@@ -38,7 +38,8 @@ var $exeDevice = {
         "mgsSections": _("Educational resource sections"),
         "msgName": _("Name"),
         "msgDate": _("Date"),
-        "msgNotCompleted": _("Not completed")
+        "msgNotCompleted": _("Not completed"),
+        "msgNotData": _("Error recovering data")
     },
     init: function () {
         this.createForm();
