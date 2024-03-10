@@ -2810,6 +2810,44 @@ var $exeDevice = {
             <option value="76">' + _('Arrow') + ' 6</option>\
             <option value="77">' + _('Arrow') + ' 7</option>\
             <option value="78">' + _('Arrow') + ' 8</option>\
+            <option value="85">' + _('Magnifying glass') + '</option>\
+            <option value="92">' + _('Map marker') + '</option>\
+            <option value="87">' + _('Audio') + '</option>\
+            <option value="88">' + _('Image') + '</option>\
+            <option value="89">' + _('Text') + '</option>\
+            <option value="90">' + _('Video') + '</option>\
+            <option value="91">' + _('Presentation') + '</option>\
+            <option value="124">' + _('Information') + '</option>\
+            <option value="93">' + _('Pushpin') + ' 1</option>\
+            <option value="94">' + _('Pushpin') + ' 2</option>\
+            <option value="95">' + _('Pushpin') + ' 3</option>\
+            <option value="96">' + _('Arrow') + ' 1</option>\
+            <option value="97">' + _('Arrow') + ' 2</option>\
+            <option value="98">' + _('Arrow') + ' 3</option>\
+            <option value="99">' + _('Arrow') + ' 4</option>\
+            <option value="100">' + _('Arrow') + ' 5</option>\
+            <option value="101">' + _('Arrow') + ' 6</option>\
+            <option value="102">' + _('Arrow') + ' 7</option>\
+            <option value="103">' + _('Arrow') + ' 8</option>\
+            <option value="105">' + _('Magnifying glass') + '</option>\
+            <option value="112">' + _('Map marker') + '</option>\
+            <option value="107">' + _('Audio') + '</option>\
+            <option value="108">' + _('Image') + '</option>\
+            <option value="109">' + _('Text') + '</option>\
+            <option value="100">' + _('Video') + '</option>\
+            <option value="101">' + _('Presentation') + '</option>\
+            <option value="125">' + _('Information') + '</option>\
+            <option value="113">' + _('Pushpin') + ' 1</option>\
+            <option value="114">' + _('Pushpin') + ' 2</option>\
+            <option value="115">' + _('Pushpin') + ' 3</option>\
+            <option value="116">' + _('Arrow') + ' 1</option>\
+            <option value="117">' + _('Arrow') + ' 2</option>\
+            <option value="118">' + _('Arrow') + ' 3</option>\
+            <option value="119">' + _('Arrow') + ' 4</option>\
+            <option value="120">' + _('Arrow') + ' 5</option>\
+            <option value="121">' + _('Arrow') + ' 6</option>\
+            <option value="122">' + _('Arrow') + ' 7</option>\
+            <option value="123">' + _('Arrow') + ' 8</option>\
             </select>\
             <span class="MQE-EIconPoint" id="mapaIconPoint"></span>\
             <div class="MQE-TextLinkDiv" id="mapaTextLinkDiv">\
@@ -2847,15 +2885,15 @@ var $exeDevice = {
         $('#mapaCursor').css({
             'background-image': icon1
         });
-        var c = [0, 1, 2, 3, 4, 5, 6, 10, 19, 20, 21, 22, 23, 24, 25, 26, 30, 39, 40, 41, 42, 43, 44, 45, 46, 50, 59, 60, 61, 62, 63, 64, 65, 66, 70, 79, 80, 81, 82, 83],
-            uc = [18, 38, 58, 78, 84],
-            dc = [7, 9, 15, 27, 29, 35, 47, 49, 55, 67, 69, 75],
-            lu = [11, 31, 51, 71],
-            lc = [16, 36, 56, 76],
-            ld = [8, 14, 28, 34, 48, 54, 68, 74],
-            ru = [12, 32, 52, 72],
-            rc = [17, 37, 57, 77],
-            rd = [13, 33, 53, 73];
+        var c = [0, 1, 2, 3, 4, 5, 6, 10, 19, 20, 21, 22, 23, 24, 25, 26, 30, 39, 40, 41, 42, 43, 44, 45, 46, 50, 59, 60, 61, 62, 63, 64, 65, 66, 70, 79, 80, 81, 82, 83, 85, 86, 87, 88, 89, 90, 91, 95,104, 105, 106,107,108,109,100,111,115,105,124],
+            uc = [18, 38, 58, 78, 84, 103,123 ],
+            dc = [7, 9, 15, 27, 29, 35, 47, 49, 55, 67, 69, 75, 92, 94, 100, 112, 114, 120],
+            lu = [11, 31, 51, 71, 96, 116],
+            lc = [16, 36, 56, 76,101, 121],
+            ld = [8, 14, 28, 34, 48, 54, 68, 74, 93, 99, 113, 119],
+            ru = [12, 32, 52, 72, 97, 117],
+            rc = [17, 37, 57, 77, 102, 122],
+            rd = [13, 33, 53, 73, 98, 118];
 
         $exeDevice.iconX = 0.5;
         $exeDevice.iconY = 0.5;
