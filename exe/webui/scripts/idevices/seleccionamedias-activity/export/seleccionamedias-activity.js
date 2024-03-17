@@ -845,8 +845,7 @@ var $eXeSeleccionaMedias = {
         );
         $sonidoEnlace.on("click", function (e) {
           e.preventDefault();
-          var audio = new Audio(card.audio);
-          audio.play();
+          $eXeSeleccionaMedias.playSound(card.audio,instance)
         });
         $divImage.append($sonidoEnlace);
       }
