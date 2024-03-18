@@ -1,5 +1,5 @@
 translations = {
- "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-03-18 12:09+0100\nPO-Revision-Date: 2024-03-18 11:22+0100\nLast-Translator: Ramon Pavia Sala - Departament d'Educaci\u00f3 de la Generalitat de Catalunya <rpavia@xtec.cat>\nLanguage: ca\nLanguage-Team: Catalan <kde-i18n-ca@kde.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
+ "": "Project-Id-Version: eXeLearning 2.9\nReport-Msgid-Bugs-To: <translations@exelearning.net>\nPOT-Creation-Date: 2024-03-18 12:09+0100\nPO-Revision-Date: 2024-03-18 14:52+0100\nLast-Translator: Ramon Pavia Sala - Departament d'Educaci\u00f3 de la Generalitat de Catalunya <rpavia@xtec.cat>\nLanguage: ca\nLanguage-Team: Catalan <kde-i18n-ca@kde.org>\nPlural-Forms: nplurals=2; plural=(n != 1)\nMIME-Version: 1.0\nContent-Type: text\/plain; charset=utf-8\nContent-Transfer-Encoding: 8bit\nGenerated-By: Babel 2.9.1\n", 
  "Number of rounds": "Nombre de rondes", 
  "DropDown Activity": "Activitat desplegable", 
  "Create the case story. A good case is one \nthat describes a controversy or sets the scene by describing the characters \ninvolved and the situation. It should also allow for some action to be taken \nin order to gain resolution of the situation.": "Creat el cas hist\u00f2ria. Un bon cas \u00e9s aquell \n que descriu una controv\u00e8rsia o mostra una escena descrivint els car\u00e0cters \n involucrats en la situaci\u00f3. Hauria de permetre les accions \n encaminades a resoldre el conflicte de la situaci\u00f3.", 
@@ -24,7 +24,7 @@ translations = {
  "collaborate": "col\u00b7labora ", 
  "Delete the row?": "Esborreu la fila?", 
  "Keyword": "Paraula clau", 
- "You can use a checklist as a structured and easy way to understand the suggested activities in this educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the completed activities.": "Pots utilitzar una llista de verificaci\u00f3 com una manera estructurada i f\u00e0cil d'entendre les activitats suggerides en aquest recurs educatiu. Ser\u00e0 un instrument \u00fatil per a l'autoavaluaci\u00f3 de l'alumnat, permetent fer un seguiment de les activitats realitzades.", 
+ "You can use a checklist as a structured and easy way to understand the suggested activities in this educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the completed activities.": "Pots utilitzar una llista de verificaci\u00f3 per tenir sistematitzades les activitats suggerides en el recurs educatiu. Ser\u00e0 un instrument \u00fatil per a l'autoavaluaci\u00f3 de l'alumnat, ja que permetr\u00e0 el seguiment de les activitats que es duguin a terme.", 
  "void": "buit", 
  "Error dialogs active": "Els di\u00e0legs d'error s\u00f3n actius", 
  "voice-over": "veu en off", 
