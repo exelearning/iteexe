@@ -896,7 +896,7 @@ var $exeDevice = {
         }
 
         var data = {
-            'typeGame': 'rcl',
+            'typeGame': 'Relaciona',
             'author': author,
             'randomCards': true,
             'instructions': instructions,
@@ -1332,7 +1332,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Activity") + "-rcl.json";
+        link.download = _("Activity") + "-Relaciona.json";
         document.getElementById('gameIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -1346,7 +1346,7 @@ var $exeDevice = {
         if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
-        } else if (game.typeGame == 'rcl') {
+        } else if (game.typeGame == 'Relaciona') {
             $exeDevice.active = 0;
             game.id = $exeDevice.generarID();
             $exeDevice.updateFieldGame(game);
@@ -1363,18 +1363,15 @@ var $exeDevice = {
                 $("#eXeIdeviceTextAfter").val(unescape(tAfter))
             }
 
-        } else if (game.typeGame == 'rcl') {
-            game.cardsGame = $exeDevice.importrcl(game);
         } else if (game.typeGame == 'Rosco') {
             game.cardsGame = $exeDevice.importRosco(game);
-        } else if (game.typeGame == 'QuExt') {
-            game.cardsGame = $exeDevice.importQuExt(game);
         } else if (game.typeGame == 'Sopa') {
             game.cardsGame = $exeDevice.importSopa(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
+        $exeDevice.id = $exeDevice.generarID();
         $exeDevice.cardsGame = game.cardsGame;
         $exeDevice.active = 0;
         $exeDevice.deleteEmptyQuestion();
@@ -1382,7 +1379,7 @@ var $exeDevice = {
         $('.exe-form-tabs li:first-child a').click();
     },
 
-    importrcl: function (data) {
+    importRelaciona: function (data) {
         for (var i = 0; i < data.wordsGame.length; i++) {
             var p = $exeDevice.getCardDefault(),
                 cuestion = data.wordsGame[i];
@@ -1422,29 +1419,6 @@ var $exeDevice = {
         return $exeDevice.cardsGame;
     },
 
-    importQuExt: function (data) {
-        for (var i = 0; i < data.questionsGame.length; i++) {
-            var p = $exeDevice.getCardDefault(),
-                cuestion = data.questionsGame[i];
-            p.eText = cuestion.quextion;
-            p.url = cuestion.url;
-            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
-            p.x = cuestion.x;
-            p.y = cuestion.y;
-            p.author = cuestion.author;
-            p.alt = cuestion.alt;
-            p.solution = '';
-            p.eTextBk = '';
-            if (typeof cuestion.options != "undefined" && cuestion.options.length > cuestion.solution) {
-                p.eTextBk = cuestion.options[cuestion.solution];
-            }
-            if (p.eText.length > 0) {
-                $exeDevice.cardsGame.push(p);
-            }
-
-        }
-        return $exeDevice.cardsGame;
-    },
     importSopa: function (data) {
         for (var i = 0; i < data.wordsGame.length; i++) {
             var p = $exeDevice.getCardDefault(),

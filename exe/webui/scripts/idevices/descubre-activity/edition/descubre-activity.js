@@ -1652,6 +1652,7 @@ var $exeDevice = {
             eXe.app.alert($exeDevice.msgs.msgESelectFile);
             return;
         }
+        game.id = $exeDevice.generarID();
         $exeDevice.updateFieldGame(game);
         var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
