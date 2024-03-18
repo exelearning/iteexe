@@ -574,16 +574,15 @@ var $eXeSeleccionaMedias = {
   },
   showImage: function (num,instance) {
     var mOptions = $eXeSeleccionaMedias.options[instance],
-        q = mOptions.phrasesGame[num];
-
-    if(q.url.length < 4){
-      return false;
-    }
-    var $image = $('#slcmpImageDefinition-' + instance),
+        q = mOptions.phrasesGame[num],
+        $image = $('#slcmpImageDefinition-' + instance),
         $imageDiv = $('#slcmpImageDiv-' + instance),
         $author = $('#slcmpAuthor-' + instance);
     $imageDiv.hide();
     $author.hide();
+    if(q.url.length < 4){
+      return false;
+    }
     $image.attr('alt', q.alt);
     $image.prop('src', q.url)
         .on('load', function () {
