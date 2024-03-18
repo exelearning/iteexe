@@ -1,5 +1,5 @@
 /**
- * flip rlc activity (Export)
+ * Relaciona activity (Export)
  *
  * Released under Attribution-ShareAlike 4.0 International License.
  * Author: Manuel Narváez Martínez
@@ -555,10 +555,14 @@ var $eXeRelaciona = {
       '" class="RLCP-Buttons">\
                         <a href="#" class="RLCP-ResetButton" id="rlcResetButton-' +
       instance +
-      '">Reiniciar</a>\
+      '">' +
+      msgs.msgRestart +
+      '</a>\
                         <a href="#" class="RLCP-CheckButton" id="rlcCheckButton-' +
       instance +
-      '">Comprobar</a>\
+      '">' +
+      msgs.msgCheck +
+      '</a>\
                     </div>\
                     <div class="RLCP-Multimedia" id="rlcMultimedia' +
       instance +

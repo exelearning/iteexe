@@ -361,8 +361,8 @@ var $eXeTrivial = {
                     <strong><span class="sr-av">' + msgs.msgMinimize + ':</span></strong>\
                     <div class="exeQuextIcons exeQuextIcons-Minimize trivial-Activo"></div>\
                 </a>\
-                <a href="#" class="trivial-LinkReboot" id="trivialLinkReboot-' + instance + '" title="Reiniciar">\
-                    <strong><span class="sr-av">Reiniciar:</span></strong>\
+                <a href="#" class="trivial-LinkReboot" id="trivialLinkReboot-' + instance + '" title="' + msgs.msgRestart + '">\
+                    <strong><span class="sr-av">' + msgs.msgRestart + ':</span></strong>\
                     <div class="exeQuextIcons-Reboot trivial-Activo" id="trivialReboot-' + instance + '">\
                     </div>\
                 </a>\

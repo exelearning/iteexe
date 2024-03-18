@@ -60,9 +60,9 @@ var $exeDevice = {
         "msgUncompletedActivity": _("Incomplete activity"),
         "msgSuccessfulActivity": _("Activity: Passed. Score: %s"),
         "msgUnsuccessfulActivity": _("Activity: Not passed. Score: %s"),
-        "msgTypeGame": _('Relate')
-
-
+        "msgTypeGame": _('Relate'),
+        "msgCheck": _('Check'),
+        "msgRestart": _('Restart')
     },
     init: function () {
         this.setMessagesInfo();

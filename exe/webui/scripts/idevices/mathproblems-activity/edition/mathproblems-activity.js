@@ -117,7 +117,7 @@ var $exeDevice = {
                                 <label for="eCQShowMinimize"><input type="checkbox" id="eCQShowMinimize"> ' + _("Show minimized.") + ' </label>\
                             </p>\
                             <p>\
-                                <label for="eCQOptionsRamdon"><input type="checkbox" id="eCQOptionsRamdon"> ' + _("Random questions") + ' </label>\
+                                <label for="eCQOptionsRamdon"><input type="checkbox" id="eCQOptionsRamdon"> ' + _("Random questions") + '. </label>\
                             </p>\
                             <p>\
                                 <label for="eCQShowSolution"><input type="checkbox" checked id="eCQShowSolution"> ' + _("Show solutions") + '. </label> \
@@ -125,17 +125,17 @@ var $exeDevice = {
                             </p>\
                             <p>\
                                 <input class="MTOE-ErrorType" id="eCQRelative" type="checkbox" name="ecqtype" value="0" />\
-                                <label for="eCQRelative">Error relativo:</label>\
-                                <label for="eCQPercentajeRelative" class="sr-av">Error relativo</label><input type="number" name="eCQPercentajeRelative" id="eCQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
+                                <label for="eCQRelative">' + _('Relative error') + '.</label>\
+                                <label for="eCQPercentajeRelative" class="sr-av">' + _('Relative error') + '</label><input type="number" name="eCQPercentajeRelative" id="eCQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
                             <p>\
                             </p>\
                                 <input class="MTOE-ErrorType" id="eCQAbsolute" type="checkbox" name="ecqtype" value="1" />\
-                                <label for="eCQAbsolute">Error Absoluto:</label>\
-                                <label for="eCQPercentajeAbsolute" class="sr-av">Error Absoluto</label><input type="number" name="eCQPercentajeAbsolute" id="eCQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
+                                <label for="eCQAbsolute">' + _('Absolute error') + '.</label>\
+                                <label for="eCQPercentajeAbsolute" class="sr-av">' + _('Absolute error') + '</label><input type="number" name="eCQPercentajeAbsolute" id="eCQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
                            </p>\
                             <p>\
                                 <label for="eCQHasFeedBack"><input type="checkbox"  id="eCQHasFeedBack"> ' + _("Feedback") + '. </label> \
-                                <label for="eCQPercentajeFB"><input type="number" name="eCQPercentajeFB" id="eCQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + ' </label>\
+                                <label for="eCQPercentajeFB"><input type="number" name="eCQPercentajeFB" id="eCQPercentajeFB" value="100" min="5" max="100" step="5" disabled /> ' + _("&percnt; right to see the feedback") + '. </label>\
                             </p>\
                             <p id="eCQFeedbackP" class="MTOE-EFeedbackP" style="display:none">\
                                 <textarea id="eCQFeedBackEditor" class="exe-html-editor"\></textarea>\

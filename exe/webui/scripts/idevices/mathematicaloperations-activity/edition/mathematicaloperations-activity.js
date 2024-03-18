@@ -187,13 +187,13 @@ var $exeDevice = {
                             </p>\
                             <p id="eRMQErrorRelativeDiv">\
                                 <input class="MTOE-ErrorType" id="eRMQRelative" type="checkbox" name="eRMQtype" value="0" />\
-                                <label for="eRMQRelative">Error relativo</label>\
-                                <label for="eRMQPercentajeRelative" class="sr-av">Error relativo</label><input type="number" name="eRMQPercentajeRelative" id="eRMQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
+                                <label for="eRMQRelative">'+ _('Relative error') +'</label>\
+                                <label for="eRMQPercentajeRelative" class="sr-av">'+ _('Relative error') +'</label><input type="number" name="eRMQPercentajeRelative" id="eRMQPercentajeRelative" value="0" min="0" max="1" step="0.01" style="display:none; width:70px"/>\
                             </p>\
                             <p id="eRMQErrorAsoluteDiv">\
                                 <input class="MTOE-ErrorType" id="eRMQAbsolute" type="checkbox" name="eRMQtype" value="1" />\
-                                <label for="eRMQAbsolute">Error Absoluto</label>\
-                                <label for="eRMQPercentajeAbsolute" class="sr-av">Error Absoluto</label><input type="number" name="eRMQPercentajeAbsolute" id="eRMQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
+                                <label for="eRMQAbsolute">'+ _('Absolute error') +'</label>\
+                                <label for="eRMQPercentajeAbsolute" class="sr-av">'+ _('Absolute error') +'</label><input type="number" name="eRMQPercentajeAbsolute" id="eRMQPercentajeAbsolute" value="0" min="0" max="99.0" step="0.01" style="display:none; width:70px" />\
                             </p>\
                             <p>\
                                 <label for="eRMQShowMinimize"><input type="checkbox" id="eRMQShowMinimize"> ' + _("Show minimized.") + '</label>\
