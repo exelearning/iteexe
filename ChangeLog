@@ -50,6 +50,7 @@ intef-exe (3:2.9) lucid; urgency=medium
     - Fixed: Properties - Footer hidden after resizing the TEXTAREA. (#724)
 
   * Pablo Amaya
+    - Package building: Linux (deb, AppImage deb package).
     - Fixed: Single page export duplicated JavaScript files. (#713)
     - Fixed: Appimage deb package postinst content revision. (#698)
     
@@ -58,7 +59,11 @@ intef-exe (3:2.9) lucid; urgency=medium
     - Fixed: Snap Build pipeline for Ubuntu 16.04 Legacy Support.
 
   * APSL
+    - Package building: Linux (rmp), Windows (ready2run, installer), macOS (dmg).
     - Fixed: RSS iDevice on Windows. (#718)
+
+  * Fran Macías
+    - Package building: Portable versions (Linux, Windows).
     
   * eXeLearning.net Translation Team
     - Spanish-English translation revision, by INTEF.
