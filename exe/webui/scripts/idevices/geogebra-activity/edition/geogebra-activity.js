@@ -483,7 +483,7 @@ var $exeDevice = {
 			return false;
 		}
 		if (evaluation && evaluationID.length < 5) {
-			eXe.app.alert($exeDevice.msgs.msgIDLenght);
+			eXe.app.alert(_('The report identifier must have at least 5 characters'));
 			return false;
 		}
 		evaluationID = evaluation ? evaluationID : '0';

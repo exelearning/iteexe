@@ -218,7 +218,6 @@ var $eXeAutoGeogebra = {
         window['applet' + sfx].inject("auto-geogebra-" + sfx);
 
         // Get score button
-
         if (c.length > 2 && c[2] == 'auto-geogebra-scorm') {
             var buttonText = window['$eXeAutoGeogebraButtonText' + inst];
             if (buttonText != "") {
@@ -231,27 +230,30 @@ var $eXeAutoGeogebra = {
                     fB += '</div>';
                     $(e).after(fB);
                     $("#auto-geogebra-sendScore-" + sfx).click(function () {
-                        var id = this.id.replace("auto-geogebra-sendScore-", "");
-                        $eXeAutoGeogebra.sendScore(id);
+                        var ids = this.id.replace("auto-geogebra-sendScore-", "");
+                        $eXeAutoGeogebra.sendScore(ids);
                         if (ideviceID != "" && evaluationID != "") {
-                            $eXeAutoGeogebra.saveEvaluation(evaluationID, this.id, id, true)
+                            var msg = typeof scorm == "undefined";
+                            $eXeAutoGeogebra.saveEvaluation(evaluationID, sfx, ideviceID, msg)
                         }
                         return false;
                     });
                 }
             }
-        } else if (id != "" && evaluationID != "") {
-            var fB = '<div class="iDevice_buttons feedback-button js-required">';
-            fB += '<p style="display:flex; justify-content:center"><input type="button" id="auto-geogebra-sendEvaluation-' + sfx + '" value="Guardar puntuación" class="feedbackbutton" /></p>';
-            fB += '</div>';
-            $(e).after(fB);
-            $("#auto-geogebra-sendEvaluation-" + sfx).click(function () {
-                $eXeAutoGeogebra.saveEvaluation(evaluationID, this.id, ideviceID, true)
-                return false;
-            });
-
-            $eXeAutoGeogebra.updateEvaluationIcon(sfx, evaluationID, ideviceID)
         }
+        if (id != "" && evaluationID != "") {
+            if($('#auto-geogebra-sendScore-' + sfx).length == 0){
+                var fB = '<div class="iDevice_buttons feedback-button js-required">';
+                fB += '<p style="display:flex; justify-content:center"><input type="button" id="auto-geogebra-sendEvaluation-' + sfx + '" value="Guardar puntuación" class="feedbackbutton" /></p>';
+                fB += '</div>';
+                $(e).after(fB);
+                $("#auto-geogebra-sendEvaluation-" + sfx).click(function () {
+                    $eXeAutoGeogebra.saveEvaluation(evaluationID, sfx, ideviceID, true)
+                    return false;
+                });
+            }
+        }
+        $eXeAutoGeogebra.updateEvaluationIcon(sfx, evaluationID, ideviceID)
 
     },
     computeTimeRange: function (milliseconds) {
@@ -302,7 +304,8 @@ var $eXeAutoGeogebra = {
         }
     },
     showEvaluationIcon: function (id, state, score, ideviceID) {
-        var sid = id.replace('auto-geogebra-sendEvaluation-', ''),
+        var lid = id.replace('auto-geogebra-sendEvaluation-', ''),
+            sid = lid.replace('auto-geogebra-sendScore-', ''),
             $header = $('#auto-geogebra-' + sid).parents('article').find('header.iDevice_header'),
             icon = 'exequextsq.png',
             alt = $eXeAutoGeogebra.messages[0];
@@ -364,9 +367,20 @@ var $eXeAutoGeogebra = {
     },
     saveEvaluation: function (evaluationID, id, ideViceID, message) {
         if (typeof (ggbApplet) != 'undefined' && typeof (ggbApplet.getValue) == 'function') {
-            var sid = id.replace('auto-geogebra-sendEvaluation-', '')
+            var sid = id.replace('auto-geogebra-sendEvaluation-', ''),
+            sid = sid.replace('auto-geogebra-sendScore-','');
             const SCORE_RAW = "SCORMRawScore";
-            var score = ggbApplet.getValue(SCORE_RAW).toFixed(2);
+            const SCORE_MIN = "SCORMMinScore";
+            const SCORE_MAX = "SCORMMaxScore";
+            var score = ggbApplet.getValue(SCORE_RAW);
+            score = score.toFixed(2);
+            if ((ggbApplet.exists(SCORE_RAW) && ggbApplet.exists(SCORE_MIN) && ggbApplet.exists(SCORE_MAX))) {
+                    var score_raw = ggbApplet.getValue(SCORE_RAW),
+                        score_min = ggbApplet.getValue(SCORE_MIN),
+                        score_max = ggbApplet.getValue(SCORE_MAX),
+                        score_scaled = (score_raw - score_min) / (score_max - score_min);
+                        score =(score_scaled * 10).toFixed(2)
+                }
             if (message) alert($exe_i18n.yourScoreIs + score);
             if (ideViceID != "" && evaluationID && evaluationID.length > 0) {
                 var name = $('#auto-geogebra-' + sid).parents('article').find('.iDeviceTitle').eq(0).text(),
