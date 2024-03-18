@@ -17,7 +17,7 @@ var $eXeAutoGeogebra = {
     hasSCORMbutton: false,
     isInExe: false,
     startTime: '',
-    messages: ['', '', ''],
+    messages: ['', '', '', ''],
     idevicePath: '',
 
     getBase: function () {
@@ -244,7 +244,7 @@ var $eXeAutoGeogebra = {
         if (id != "" && evaluationID != "") {
             if($('#auto-geogebra-sendScore-' + sfx).length == 0){
                 var fB = '<div class="iDevice_buttons feedback-button js-required">';
-                fB += '<p style="display:flex; justify-content:center"><input type="button" id="auto-geogebra-sendEvaluation-' + sfx + '" value="Guardar puntuación" class="feedbackbutton" /></p>';
+                fB += '<p style="display:flex; justify-content:center"><input type="button" id="auto-geogebra-sendEvaluation-' + sfx + '" value="' + $eXeAutoGeogebra.messages[3] + '" class="feedbackbutton" /></p>';
                 fB += '</div>';
                 $(e).after(fB);
                 $("#auto-geogebra-sendEvaluation-" + sfx).click(function () {

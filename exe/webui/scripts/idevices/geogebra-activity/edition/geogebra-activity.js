@@ -546,7 +546,7 @@ var $exeDevice = {
 			var show = $('#geogebraActivityShowAuthor').prop('checked') ? "1" : "0";
 			divContent += '<div class="auto-geogebra-author js-hidden">' + escape(author) + ',' + escape(murl) + ',' + escape(title) + ',' + show + ',' + escape(ath) + '</div>';
 		}
-		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Incomplete activity")) + ',' + escape(_("Activity: Passed. Score: %s")) + ',' + escape(_("Activity: Not passed. Score: %s")) + '</div>';
+		divContent += '<div class="auto-geogebra-messages-evaluation">' + escape(_("Incomplete activity")) + ',' + escape(_("Activity: Passed. Score: %s")) + ',' + escape(_("Activity: Not passed. Score: %s")) + ',' + escape(_("Save score")) + '</div>';
 		var textAfter = tinymce.editors[1].getContent();
 		if (textAfter != "") {
 			divContent += '<div class="auto-geogebra-extra-content">' + textAfter + '</div>';
