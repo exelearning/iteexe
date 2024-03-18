@@ -94,7 +94,7 @@ var $exeDevice = {
             iDeviceList += ".";
 		var html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("It shows the result of the pupils in the activities linked to their average score.") + ' <a href="https://youtu.be/2kIJbVEXyvk" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
+                <div class="exe-idevice-info">' + _("It shows the result of the pupils in the activities linked to their average score.") + ' <a href="https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe29/informe_de_progreso.html" hreflang="es" target="_blank">' + _("Use Instructions") + '</a></div>\				<div class="exe-form-tab" title="' + _('General settings') + '">\
 					<fieldset class="exe-fieldset">\
 						<legend><a href="#">' + _("Options") + '</a></legend>\
                         <div>\

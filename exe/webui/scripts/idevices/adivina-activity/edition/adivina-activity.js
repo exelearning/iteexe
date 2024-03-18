@@ -132,7 +132,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-                <div class="exe-idevice-info">' + _("Create activities in which given a definition the student has to complete the word filling in the gaps.") + ' <a href="https://youtu.be/t1tGpTuHN5k" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
+                <div class="exe-idevice-info">' + _("Create activities in which given a definition the student has to complete the word filling in the gaps.") + ' <a href="https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe29/adivina.html" hreflang="es" target="_blank">' + _("Use Instructions") + '</a></div>\
                 <div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\

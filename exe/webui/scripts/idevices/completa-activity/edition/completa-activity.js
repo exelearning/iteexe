@@ -131,7 +131,7 @@ var $exeDevice = {
         var msgs = this.msgs;
         var html = '\
 			    <div id="gameQEIdeviceForm">\
-                    <div class="exe-idevice-info">' + _("Create activities in which the student will have to fill in the blanks of a text writing or choosing an answer.") + ' <a href="https://youtu.be/RSDFWfl32TM" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+                    <div class="exe-idevice-info">' + _("Create activities in which the student will have to fill in the blanks of a text, writing or choosing an answer.") + ' <a href="https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe29/completa.html" hreflang="es" target="_blank">' + _("Use Instructions") + '</a></div>\
                     <div class="exe-form-tab" title="' + _('General settings') + '">\
                     ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Read the text and complete the missing words.")) + '\
                         <fieldset class="exe-fieldset exe-fieldset-closed">\

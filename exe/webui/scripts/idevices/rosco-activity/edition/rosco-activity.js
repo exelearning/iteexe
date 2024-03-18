@@ -118,7 +118,7 @@ var $exeDevice = {
 		wordInstructions = wordInstructions.replace("%s", '<img src="' + path + 'roscoIcoStart.png" alt="' + _("Starts with/Contains") + '" title="' + _("Starts with/Contains") + '" />')
 		var html = '\
 			<div id="roscoIdeviceForm">\
-				<div class="exe-idevice-info">'+_("Create activities in which students are given a definition and they have to guess the word that starts with a letter or contains a letter.")+' <a href="https://youtu.be/es8bjnEuyIE" hreflang="es" rel="lightbox"  target="_blank">'+_("Use Instructions")+'</a></div>\
+				<div class="exe-idevice-info">'+_("Create activities in which students are given a definition and they have to guess the word that starts with a letter or contains a letter.")+' <a href="https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe29/rosco.html" hreflang="es" target="_blank">'+_("Use Instructions")+'</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                     ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Observe the letters, identify and fill in the missing words.")) + '\
 					<fieldset class="exe-fieldset exe-fieldset-closed">\

@@ -773,7 +773,7 @@ var $exeDevice = {
         var path = $exeDevice.iDevicePath,
             html = '\
 			<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.") + ' <a href="https://youtu.be/-NuWeVmebnA" hreflang="es" rel="lightbox"  target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("Create an educational board game with different question types (test, order, definition) of different categories. From 1 to 4 players or teams.") + ' <a href="https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe29/triviext.html" hreflang="es" target="_blank">' + _("Use Instructions") + '</a></div>\
 				<div class="exe-form-tab" title="' + _('General settings') + '">\
                 ' + $exeAuthoring.iDevice.gamification.instructions.getFieldset($exeDevice.msgs.msgGameIntrunctions) + '\
                     <fieldset class="exe-fieldset exe-fieldset-closed">\

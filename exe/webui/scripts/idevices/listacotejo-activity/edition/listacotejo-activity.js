@@ -43,7 +43,7 @@ var $exeDevice = {
   createForm: function () {
     var html =
       '<div id="gameQEIdeviceForm">\
-            <div class="exe-idevice-info">' + _("You can use a checklit as an structured and easy way to understand the suggested activities in this educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the completed activities.") +  ' <a href="https://youtu.be/maop2bmfChw" hreflang="es" rel="lightbox" target="_blank">' + _("Use Instructions") + '</a></div>\
+            <div class="exe-idevice-info">' + _("You can use a checklist as a structured and easy way to understand the suggested activities in this educational resource. It will be a useful instrument for student self-assessment, allowing you to monitor the completed activities.") +  ' <a href="https://descargas.intef.es/cedec/exe_learning/Manuales/manual_exe29/lista_de_cotejo.html" hreflang="es" target="_blank">' + _("Use Instructions") + '</a></div>\
             <div class="exe-form-tab" title="' +  _("General settings") + '">\
             ' +   $exeAuthoring.iDevice.gamification.instructions.getFieldset(_("Complete the checklist ticking the boxes for all finished activities.")) + '\
               <fieldset class="exe-fieldset">\
