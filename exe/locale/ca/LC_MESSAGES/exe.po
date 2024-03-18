@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: eXeLearning 2.9\n"
 "Report-Msgid-Bugs-To: <translations@exelearning.net>\n"
 "POT-Creation-Date: 2024-03-18 12:09+0100\n"
-"PO-Revision-Date: 2024-03-01 13:45+0100\n"
+"PO-Revision-Date: 2024-03-18 11:22+0100\n"
 "Last-Translator: Ramon Pavia Sala - Departament d'Educació de la "
 "Generalitat de Catalunya <rpavia@xtec.cat>\n"
 "Language: ca\n"
@@ -12669,7 +12669,6 @@ msgid "You completed the activity"
 msgstr "Heu completat l'activitat"
 
 #: exe/webui/scripts/idevices/completa-activity/edition/completa-activity.js:135
-#, fuzzy
 msgid ""
 "Create activities in which the student will have to fill in the blanks of"
 " a text, writing or choosing an answer."
@@ -14088,7 +14087,6 @@ msgid "point"
 msgstr "punt"
 
 #: exe/webui/scripts/idevices/listacotejo-activity/edition/listacotejo-activity.js:46
-#, fuzzy
 msgid ""
 "You can use a checklist as a structured and easy way to understand the "
 "suggested activities in this educational resource. It will be a useful "
@@ -14831,16 +14829,15 @@ msgstr "Permetre zero com resultat"
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:200
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:137
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:138
-#, fuzzy
 msgid "Relative error"
-msgstr "Crea carpeta"
+msgstr "Error relatiu"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:204
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:205
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:142
 #: exe/webui/scripts/idevices/mathproblems-activity/edition/mathproblems-activity.js:143
 msgid "Absolute error"
-msgstr ""
+msgstr "Error absolut"
 
 #: exe/webui/scripts/idevices/mathematicaloperations-activity/edition/mathematicaloperations-activity.js:276
 msgid "Please specify the number of operations"
