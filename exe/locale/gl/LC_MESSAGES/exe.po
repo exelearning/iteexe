@@ -5086,7 +5086,7 @@ msgstr "Confirmar?"
 
 #: exe/jsui/scripts/app/controller/filepicker/File.js:391
 msgid "The file already exists. Do you want to replace it?"
-msgstr "O nome de estilo xa existe:  %s Desexa substituílo?"
+msgstr "O ficheiro xa existe. Quere substituílo?"
 
 #: exe/jsui/scripts/app/view/filepicker/FileList.js:48
 #: exe/jsui/scripts/app/view/filepicker/FilePicker.js:72
@@ -5214,7 +5214,7 @@ msgid ""
 "best practice is to select a value from a controlled vocabulary or formal"
 " classification scheme."
 msgstr ""
-"Polo xeral, o TEMA expresarase como palabras clave, frases ou códigos de "
+"Polo xeral, o Tema expresarase como palabras clave, frases ou códigos de "
 "clasificación que describen o tema do recurso. A práctica máis "
 "recomendada é seleccionar un valor dun vocabulario controlado ou dun "
 "esquema de clasificación formal."
@@ -5227,7 +5227,7 @@ msgstr "Un resumo do contido do recurso."
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:78
 msgid "Publisher"
-msgstr "Editor"
+msgstr "Editor/a"
 
 #: exe/jsui/scripts/app/view/forms/DublinCoreDataPanel.js:79
 msgid "An entity responsible for making the resource available."
@@ -6813,11 +6813,11 @@ msgstr "Novo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:138
 msgid "Project"
-msgstr "Project"
+msgstr "Proxecto"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:146
 msgid "Window"
-msgstr "Ventana"
+msgstr "Xanela"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:153
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:212
@@ -6827,7 +6827,7 @@ msgstr "Modelos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:173
 msgid "Recent Projects..."
-msgstr "Proyectos recientes..."
+msgstr "Proxectos recentes..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:186
 msgid "Clear Recent Projects List"
@@ -6841,11 +6841,11 @@ msgstr "Gardar como..."
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:220
 msgid "Save as template"
-msgstr "Guardar como plantilla"
+msgstr "Gardar como modelo"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:226
 msgid "Manage"
-msgstr "Gestionar"
+msgstr "Xestionar"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:245
 msgid "Educational Standard"
@@ -6954,7 +6954,7 @@ msgstr "Informe sobre recursos"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:541
 msgid "Refresh Display"
-msgstr "Actualizar pantalla"
+msgstr "Actualizar interface"
 
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:549
 #: exe/jsui/scripts/app/view/ui/eXeToolbar.js:560
@@ -13317,7 +13317,7 @@ msgstr "Alto"
 #: exe/webui/scripts/tinymce_4/js/tinymce/langs/all.js:170
 #: exe/webui/tools/style-designer/langs/all.js:23
 msgid "Border color"
-msgstr "Cor do borde"
+msgstr "Cor do bordo"
 
 #: exe/webui/scripts/idevices/geogebra-activity/edition/geogebra-activity.js:95
 msgid "Save score button"
