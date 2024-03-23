@@ -224,8 +224,11 @@ Ext.application({
 				// Remove b (Example: 2.6b2)
 				current = current.split("b");
 				current = current[0];                
-                // Remove pp... (launchpad.net ppa version)
+				// Remove pp... (launchpad.net ppa version)
 				current = current.split("pp");
+				current = current[0];	
+				// Remove any spaces (Portable version...)
+				current = current.split(" ");
 				current = current[0];				
                 
                 if (current=="" || latest==current) return; // No release number for dev packages
