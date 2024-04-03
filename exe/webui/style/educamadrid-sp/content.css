@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(open-sans.woff2) format('woff2'), url(open-sans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(open-sans-bold.woff2) format('woff2'), url(open-sans-bold.woff) format('woff');
+}
+html{padding:0}
+body{font:1em/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left;color:#333333;background:#ffffff}
+a{color:#1570a6}
+#header,#emptyHeader{text-align:left;height:100px;padding-left:20px;font-size:1.2em;line-height:100px;color:#fff;background:#0D77D1;text-shadow:1px 1px 1px #333;border-bottom:1px solid #e3e3e3;border-top:1px solid #e3e3e3} /* Header is also in single page */
+#header h1{margin:0;font-size:1em}
+#nodeDecoration{text-align:left;padding:1em 20px;margin-bottom:2em;background:#0D77D1;text-shadow:1px 1px 1px #333;border-bottom:1px solid #e3e3e3;border-top:1px solid #e3e3e3}
+#nodeTitle,.nodeTitle{font-size:1.5em;margin:0;font-weight:bold;color:#fff} /* .nodeTitle when single page */
+.nodeTitle{padding:.1em 0 .6em 0;border-bottom:1px solid #0D77D1;margin-top:1em}
+h2{font-size:1.4em;color:#666}
+#main .iDeviceTitle{display:inline;font-size:1.2em}
+h3{font-size:1.25em;color:#777}
+#main h4{font-size:1.2em}
+#main h5{font-size:1.1em}
+.iDevice{margin:2em 0}
+.iDevice_icon{width:23px;height:auto;margin-right:5px} /* Icons: "Iconic" (Creative Commons by-sa), by P. J. Onori (http://www.somerandomdude.com/work/iconic/) */
+
+/* iDevice icons */
+.iDevice_header{
+	background-image:url(icon_touch_app.svg);
+	background-repeat:no-repeat;
+	packground-position:0 5px;
+	padding-left:45px;
+	margin-bottom:10px;
+	background-size:35px auto
+}
+.activityIdevice .iDevice_header{background-image:url(icon_description.svg)}
+.readingIdevice .iDevice_header{background-image:url(icon_local_library.svg)}
+.CasestudyIdevice .iDevice_header{background-image:url(icon_pageview.svg)}
+.FileAttachIdeviceInc .iDevice_header{background-image:url(icon_attachment.svg)}
+.GalleryIdevice .iDevice_header{background-image:url(icon_collections.svg)}
+.objectivesIdevice .iDevice_header{background-image:url(icon_ads_click.svg)}
+.ReflectionIdevice .iDevice_header{background-image:url(icon_psychology.svg)}
+/* Interactive activities */
+.ListaIdevice .iDevice_header{background-image:url(icon_list_alt.svg)}
+.QuizTestIdevice .iDevice_header{background-image:url(icon_fact_check.svg)}
+.MultichoiceIdevice .iDevice_header{background-image:url(icon_checklist_rtl.svg)}
+.TrueFalseIdevice .iDevice_header{background-image:url(icon_check_circle_outline.svg)}
+.MultiSelectIdevice .iDevice_header{background-image:url(icon_rule.svg)}
+.ClozeIdevice .iDevice_header{background-image:url(icon_segment.svg)}
+
+.iDeviceTitle{font-size:1.2em;vertical-align:top;top:-2px;color:#666;line-height:2em}
+.iDevice_content{overflow:auto}
+.iDevice_inner{padding: 10px 20px;border:1px solid #f0f0f0;background:#f9f9f9;color:#444}
+#packageLicense{font-size:.95em}
+#siteFooter{padding-left:20px;height:50px;line-height:50px;background:#666;color:#fff;font-size:.95em}
+#siteFooter a{color:#FFF;text-decoration:underline}
+input,select,textarea{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+#lbOverlay{background-color:#f3f3f3}
+#lbOuterContainer{border-color:#ddd}
+.ExternalUrlIdevice iframe{border:none}
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#0D77D1}
+/* Lightbox */
+.exeImageGallery{width:100%}
+/* base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:Arial,Verdana,Helvetica,sans-serif;font-size:1em}
+li{list-style-position:outside}
+#wikipedia-content ul li{list-style-image:none;margin-bottom:auto}
+.exe-dl .icon{line-height:16px}
+.js .exe-dl dd{margin-left:34px}
+.styled-qc{margin-top:2.5em;padding-left:3.8em}
+.styled-qc:before{top:10px}
+/* Form buttons */
+.iDevice_inner input[type=submit],.feedbackbutton{background:#888;border:0;padding:3px 5px;color:#fff;border-radius:5px;text-shadow:1px 1px 1px #000;box-shadow:1px 1px 3px 0 #ccc;margin-bottom:1em}
+.iDevice_inner input[type=submit]:hover,.feedbackbutton:hover,.iDevice_inner input[type=submit]:focus,.feedbackbutton:focus{background:#555;color:#f3f3f3;box-shadow:none}
+/* Hide/Show iDevice */
+.toggle-idevice{margin:12px 0 0;text-align:right;display:block}
+.iDevice_header .toggle-idevice{float:right;padding-top:2px;margin:0}
+.toggle-idevice a{display:inline-block;width:16px;height:16px;background:url(_simplepoint_navigation.png) 0 -100px}
+.toggle-idevice .show-idevice{background-position:-50px -100px}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+
+.textIdevice,.FreeTextIdevice{max-width:900px;margin:2em auto;font-size:1.3em;line-height:2em}
+.exe-fx{font-size:.85em}
+.iDevice_content_wrapper{overflow:hidden}
+.FreeTextIdevice .figcaption{font-size:.85em}
+.FreeTextIdevice li{margin:.5em auto;color:#555}
+.FreeTextIdevice .pre-code{font-size:1.1em}
+.FreeTextIdevice iframe,.FreeTextIdevice video,.FreeTextIdevice audio,.FreeTextIdevice object{margin-top:1em;margin-bottom:1em}
+/* Effects */
+.fx-carousel-pagination a,.fx-pagination a{padding:3px 20px;margin:1px 4px}
+.fx-page-content,.fx-carousel-content{padding:1px 25px .5em 25px}
+.fx-timeline-container a.fx-timeline-expand{padding:0 15px}
+.fx-timeline-event{padding-left:21px;color:#777!important;margin-top:1em;margin-bottom:1.5em}
+/* Licenses */
+#packageLicense{text-align:center;margin:0;background:#000;color:#fff;line-height:25px;font-size:.75em;padding:10px 20px}
+#packageLicense p{margin:0}
+#packageLicense a{color:#fff}
+/* Steps (use arrows) */
+#steps-instructions{color:#BBB;font-size:.75em}
+#steps-instructions strong{margin-right:.5em}
+#steps-instructions a{color:#BBB;text-decoration:underline;margin-left:.5em}
+#steps-instructions a:hover,#steps-instructions a:focus{text-decoration:none}
+.exe-web-site.js .presentation-slide{display:none}
+@media print {
+	div.node{page-break-after:auto} /* base.css */
+	html body{background:#fff;color:#000;font-size:11pt}
+	@page{margin:1.5cm}
+	a[href^=http]{font-weight:bold;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}
+	.iDevice{margin-bottom:20px}	
+	#main .iDevice_header{background:none;padding-left:0}
+	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;text-shadow:none;padding-left:0}
+	.toggle-idevice{display:none}
+	.textIdevice,.FreeTextIdevice{max-width:100%;font-size:1em;line-height:1.5em}
+}
+
+/* EducaMadrid */
+/* #1679C3 -> #0D77D1 */
+/* #e81123 -> #D10000 */

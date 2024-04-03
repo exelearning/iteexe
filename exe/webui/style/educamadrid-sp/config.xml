@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<theme>
+    <name>EducaMadrid (presentaciones)</name>
+    <version>20221203</version>
+    <compatibility>2.8</compatibility>
+    <author>Ignacio Gros</author>
+    <author-url>http://www.gros.es/</author-url>
+	<license>Creative Commons by-sa</license>
+	<license-url>http://creativecommons.org/licenses/by-sa/3.0/</license-url>
+	<description>Create presentations with eXe. Easy to use. Responsive design. Design and programming by Ignacio Gros for eXeLearning (http://exelearning.net/). 
+    
+iDevice icons by Google (https://fonts.google.com/icons), under the 2.0 version of the Apache License (https://www.apache.org/licenses/LICENSE-2.0.html). 
+
+Open Sans font family, designed by Steve Matteson. Open Sans License: 2.0 version of the Apache License.</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+]]></extra-head>
+    <extra-body><![CDATA[<script type="text/javascript" src="_simplepoint_js.js"></script>]]></extra-body>
+    <edition-extra-body><![CDATA[<script type="text/javascript" src="/style/simplepoint/_simplepoint_js.js"></script>]]></edition-extra-body>
+</theme>

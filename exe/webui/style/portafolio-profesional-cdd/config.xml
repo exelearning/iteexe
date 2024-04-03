@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<theme>
+    <name>portafolio_profesional_cdd</name>
+    <version>1.142</version>
+    <compatibility>2.8-r2.8</compatibility>
+    <author>Susana Magaña de Larriva-Desiderio Ferrer Delgado-José Augusto Davila Fajardo</author>
+    <author-url/>
+    <license>Creative Commons by-sa</license>
+    <license-url>http://creativecommons.org/licenses/by-sa/4.0/</license-url>
+    <description>Curso Crea tu Portafolio - Nivel B1/B2</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+    ]]></extra-head>
+    <extra-body><![CDATA[<script type="text/javascript" src="_style_js.js"></script>]]></extra-body>
+    <edition-extra-head><![CDATA[<script type="text/javascript">if (typeof(exe_style)!='undefined' && exe_style.indexOf("content.css")!=-1) document.write('<scr'+'ipt type="text/javascript" src="'+exe_style.replace("content.css","_style_js.js")+'"></scr'+'ipt>')</script>]]></edition-extra-head>
+</theme>

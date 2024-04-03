@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="back"
+   preserveAspectRatio="xMinYMid"
+   viewbox="0 0 64 64"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs33283">
+    <style
+       id="style33281">.cls-1{fill:#a25ac4;}</style>
+    <clipPath
+       id="clip-path">
+      <rect
+         class="cls-1"
+         x="0.1"
+         y="-0.18000001"
+         width="63.900002"
+         height="64.18"
+         id="rect33227" />
+    </clipPath>
+  </defs>
+  <title
+     id="title33285">estilos iconos paraeducaand_escolares</title>
+  <path
+     class="cls-1"
+     d="M61.12,2.93A9.74,9.74,0,0,0,54.2.07H9.8A9.78,9.78,0,0,0,0,9.83V54.17A9.76,9.76,0,0,0,9.8,63.93H54.2A9.78,9.78,0,0,0,64,54.17V9.83A9.66,9.66,0,0,0,61.12,2.93Zm-.18,6.9V54.17a6.74,6.74,0,0,1-6.74,6.72H9.8a6.73,6.73,0,0,1-6.73-6.72V9.83A6.75,6.75,0,0,1,9.8,3.11H54.2a6.74,6.74,0,0,1,6.74,6.72Z"
+     id="path33289" />
+  <metadata
+     id="metadata33374">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>estilos iconos paraeducaand_escolares</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g33988"
+     transform="translate(-53.836119,-31.18984)">
+    <path
+       class="cls-4"
+       d="m 90.8463,45.979314 a 2.34,2.34 0 1 0 3.2,0.86 2.34,2.34 0 0 0 -3.2,-0.86 z"
+       id="path33731"
+       style="fill:none;stroke:#a25ac4;stroke-width:1.61px;stroke-miterlimit:10" />
+    <circle
+       class="cls-4"
+       cx="-22.511806"
+       cy="94.551117"
+       r="3.3299999"
+       transform="rotate(-75.08)"
+       id="circle33733"
+       style="fill:none;stroke:#a25ac4;stroke-width:1.61px;stroke-miterlimit:10" />
+    <circle
+       class="cls-4"
+       cx="5.6717629"
+       cy="90.341278"
+       r="4.3600001"
+       transform="rotate(-54.56)"
+       id="circle33735"
+       style="fill:none;stroke:#a25ac4;stroke-width:1.61px;stroke-miterlimit:10" />
+    <circle
+       class="cls-4"
+       cx="57.768902"
+       cy="65.625252"
+       r="5.3499999"
+       transform="rotate(-10.12)"
+       id="circle33737"
+       style="fill:none;stroke:#a25ac4;stroke-width:1.61px;stroke-miterlimit:10" />
+    <path
+       class="cls-4"
+       d="m 82.2663,51.349314 -0.76,0.25 a 10.63,10.63 0 0 0 -3.62,17.62 l 0.76,0.86 a 22.5,22.5 0 0 1 5.41,11.5 6.14,6.14 0 0 0 7.48,5 l 0.29,-0.07 a 6.16,6.16 0 0 0 4.12,-7.86 l -0.21,-0.7 a 22.46,22.46 0 0 1 -0.5,-12.61 l 0.07,-0.27 0.14,-0.44 a 9.34,9.34 0 0 0 -0.1,-6.46 10.63,10.63 0 0 0 -13.08,-6.82 z"
+       id="path33739"
+       style="fill:none;stroke:#a25ac4;stroke-width:1.61px;stroke-miterlimit:10" />
+  </g>
+</svg>

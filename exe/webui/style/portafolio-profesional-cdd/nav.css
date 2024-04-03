@@ -1,0 +1,103 @@
+/* eXeLearning Style Designer Compatible Style */
+body{padding:0;text-align:center}
+#content{width:100%;max-width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0}
+#main-wrapper{padding-bottom:1.5em;width:100%;*width:auto}
+/* * is for IE6 and IE7 */#main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
+.no-nav #main-wrapper{width:100%}
+.no-nav #main{padding:20px 20px 0 20px}
+#header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
+#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-height:1.1em;padding-bottom:.6em}
+#nodeDecoration{background:none;padding:0;border-width:0 0 1px 0;margin:20px 0;height:auto;min-height:0}
+#nodeTitle{font-weight:300}
+/* Menú */#siteNav{width:280px;float:left;margin-right:40px}
+#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
+#siteNav .other-section{display:none}
+#siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
+#siteNav .active{font-weight:bold;text-decoration:underline}
+#siteNav ul ul a{padding-left:35px;font-size:.95em}
+#siteNav ul ul ul a{padding-left:60px}
+#siteNav .daddy span{display:none}
+/* IE6 */* html #siteNav a{display:inline-block;width:250px}
+* html #siteNav ul ul a{width:235px}
+* html #siteNav ul ul ul a{width:190px}
+* html #main{padding:20px 20px 0 0}
+#siteFooter{padding:0 20px 20px 20px;border:0}
+/* Pagination */.pagination{text-align:right;border-top:1px solid;font-size:.95em;padding:20px 0}
+.pagination .sep{display:none}
+.pagination a{display:inline-block;padding:5px 10px;border-radius:5px;margin-left:20px}
+.pagination a:hover,.pagination a:focus{text-decoration:none}
+#topPagination{position:absolute;top:0;right:20px}
+#topPagination .pagination{border:none}
+#bottomPagination{clear:both}
+#bottomPagination a{margin:0 20px 0 0}
+.page-counter{padding:5px 0;display:inline-block;color:#FFF}
+/* Autoclear */#content{overflow:auto}
+/* Hide/Show/Skip navigation */#nav-toggler{margin:0;position:absolute;top:20px;left:20px;font-size:.95em}
+#nav-toggler a,#skipNav a{padding:5px 10px;border-radius:5px}
+#nav-toggler a{display:block}
+#nav-toggler a:hover{text-decoration:none}
+#skipNav{z-index:100px;padding-top:15px;text-align:center}
+/* No opacity */body .pagination a,body #nav-toggler a{filter:alpha(opacity=100);opacity:1;outline:none}
+@media screen and (max-width: 980px) {	.exe-web-site #content{width:100%;border:0;box-shadow:none}
+	#main{padding:20px 30px 0 280px}
+	#siteNav{width:250px;margin-right:30px}
+}
+@media all and (max-width: 700px) {	#headerContent{font-size:.7em;white-space:normal}
+	#siteNav{float:none;width:100%;padding:0}
+	#siteNav{line-height:1.5em;margin-bottom:15px}
+	#main-wrapper{width:100%;float:none}
+    	#main,.no-nav #main{padding:10px 20px 0 20px}
+    	#content .exe-col{float:none;width:100%;padding:0}
+	#bottomPagination{text-align:center;height:35px;position:relative}
+	#bottomPagination .prev{position:absolute;left:20px}
+	#bottomPagination .next{position:absolute;right:0}
+	#siteNav{border-top:1px solid}
+}
+@media print{	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
+	body #main,body.no-nav #main{padding:20px 0}
+	body #content{background:#FFF;box-shadow:none}
+	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold}
+}
+/* eXeLearning Style Designer */#content{border-width:0 /*contentBorderWidth*/5px;border-color:/*contentBorderColor*/#0d2a48;/*pageWidth*/width:1431px;/*wrapperShadowColor*/box-shadow:0 0 15px 0 #0d2a48;/*contentBGColor*/background-color:#ffffff;/*contentBGURL*/background-image:url(insigniab.png);/*contentBGRepeat*/background-repeat:no-repeat;/*contentBGPosition*/background-position:0 bottom;}
+#exe-client-search-text{/*searchBarTextColor*/color:#5a7e0b;border-color:#5a7e0b;}
+#exe-client-search-submit{/*searchBarButtonBGColor*/background:#5a7e0b;border-color:#5a7e0b;/*searchBarButtonTextColor*/color:#ffffff;}
+/*useNavigationIcons*//*blackNavigationIcons*/.pagination a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}
+.pagination a,.pagination a:hover,.pagination a:focus{display:block;position:absolute;right:52px;width:32px;height:32px;padding:0;background:url(_style_icons_black.png) no-repeat 0 0;}
+.pagination .next,.pagination .next:hover,.pagination .next:focus{right:0;background-position:-50px 0;}
+.pagination .print-page,.pagination .print-page:hover,.pagination .print-page:focus{right:104px;background-position:-200px 0;}
+#topPagination{width:50%;min-width:400px;}
+#bottomPagination{height:72px;position:relative;overflow:hidden}
+#bottomPagination a{top:20px;right:72px;margin:0;}
+#bottomPagination .next{right:20px;}
+#nav-toggler a span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0;}
+#nav-toggler a{display:block;width:32px;height:32px;padding:0;background:url(_style_icons_black.png) no-repeat -100px 0;}
+#nav-toggler a:hover{background:url(_style_icons_black.png) no-repeat -100px 0;}
+#nav-toggler .show-nav{background-position:-150px 0;}
+#nav-toggler .show-nav:hover{background-position:-150px 0;}
+.pagination a,#nav-toggler a{filter:alpha(opacity=70);opacity:.7;}
+.pagination a:hover,.pagination a:focus,#nav-toggler a:hover{filter:alpha(opacity=100);opacity:1;}
+.pagination .page-counter{position:absolute;line-height:32px;padding:0;right:156px;}
+#bottomPagination .page-counter{right:104px;}
+@media all and (max-width: 700px){#nav-toggler{height:32px;}
+#nav-toggler a{padding:0;width:32px;position:absolute;left:50%}
+#siteNav{border-top:1px solid #ddd;}
+.pagination .page-counter{width:300px;left:50%;right:auto;margin-left:-150px}
+}
+@media all and (max-width: 400px){.pagination .page-counter{overflow:hidden;clip:rect(0,0,0,0);height:0;}
+}
+body{/*bodyBGColor*/background-color:#ffffff;}
+#siteNav,.pagination a,#skipNav,#nav-toggler{/*navFontSize*/font-size:90%;}
+#siteNav,#siteNav a{/*navBGColor*/background-color:#f2f4f7;/*navAColor*/color:#0d2a48;/*navBorderColor*/border-color:#0d2a48;}
+@media screen and (min-width: 701px) and (max-width: 1015px){#siteNav,#siteNav ul{background-color:#f2f4f7;border-color:#0d2a48;}
+#siteNav li{background-color:#f2f4f7;}
+}
+#siteNav a:hover,#siteNav a:focus,#siteNav a.active{/*navHoverBGColor*/background-color:#0d2a48;/*navAHoverColor*/color:#ffffff;}
+@media screen and (min-width: 701px) and (max-width: 1015px){#siteNav li:hover,#siteNav li.sfhover{background-color:#0d2a48;}
+}
+.pagination{border-color:#0d2a48;}
+#bottomPagination .page-counter{color:#ffffff;}
+#bottomPagination{background-color:#0d2a48;}
+/* eXeLearning Style Designer (custom CSS) */
+.pagination .print-page{
+display:none;
+}

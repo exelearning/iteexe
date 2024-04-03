@@ -1,0 +1,240 @@
+/* eXeLearning Style Designer not Compatible Style */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(open-sans.woff2) format('woff2'), url(open-sans.woff) format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(open-sans-bold.woff2) format('woff2'), url(open-sans-bold.woff) format('woff');
+}
+html{font-size:105%}
+body{font:105%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
+
+h2{font-size:1.4em;font-weight:normal;color:#222;margin:1.7em 0 1.5em 0}
+h3{font-size:1.3em;font-weight:normal;color:#6739b6;margin:1.5em 0 1.2em 0}
+h4{font-size:1.2em;font-weight:normal;color:#3e50b4;margin:1.5em 0 1em 0}
+h5{font-size:1.1em}
+p{margin:1em 0}
+.score.js-feedback{margin-bottom:1em}
+
+#header,#emptyHeader,#nodeDecoration{padding:0 20px;height:auto!important;height:120px;min-height:120px;font-size:1.6em;font-weight:300;border-style:1px;border-width:1px}
+#headerContent{padding-top:70px}
+#header h1,#nodeDecoration h1{margin:-.5em 0 1em 0;font-size:1em;text-align:left;font-weight:bold}
+#nodeDecoration{margin-bottom:15px} /* Single page */
+
+.nodeDecoration h1{font-size:1.5em}
+
+/* iDevices */
+.iDevice{margin:30px 0}
+.iDevice_header{letter-spacing:.5px;padding:.5em 40px .5em 0;height:auto!important;height:1.7em;min-height:1.7em;position:relative}
+.iDevice_header[style]{background-image:none!important}
+.iDeviceTitle{font-size:1.3em;vertical-align:bottom;top:auto;display:inline-block;font-weight:300;
+padding:5px 10px 5px 45px;background-repeat:no-repeat;background-position:0 50%;margin:0;background-size:35px auto}
+.iDevice_header_noIcon .iDeviceTitle{background-image:none;padding-left:20px}
+.iDeviceTitle{*display:inline;*line-height:2em}/* IE6, IE7 */
+.iDevice_inner{padding:10px 20px;border-width:1px;border-style:solid}
+
+/* Clearfix */
+.iDevice_content{overflow:auto;line-height:1.7em}
+.FileAttachIdeviceInc .iDevice_content{margin-bottom:-.5em}
+
+/* Hide/Show iDevice */
+.toggle-idevice{display:block;margin:0;text-align:right;height:16px}
+.toggle-idevice a{display:block;width:16px;height:16px;background:url(_style_icons.png) no-repeat -50px -50px;outline:none;position:absolute;top:0;right:0;z-index:100;border-bottom-left-radius:1px}
+.toggle-idevice .show-idevice{background-position:0 -50px}
+.toggle-idevice span{position:absolute;overflow:hidden;clip:rect(0,0,0,0);height:0}
+.toggle-idevice a:hover,.toggle-idevice a:focus{filter:alpha(opacity=100);opacity:1}
+/* em */
+.iDevice_header .toggle-idevice{position:absolute;top:14px;right:14px}
+/* No em */
+.toggle-em0{position:relative;top:0;right:15px;margin-bottom:-21px}
+.toggle-em0 + .iDevice .iDevice_content p:first-child{padding-right:50px} /* To review */
+.hidden-idevice .toggle-em0{margin-bottom:0}
+
+/* iDevice title with background-color */
+input.feedbackbutton{margin:0}
+.iDevice.emphasis1{box-shadow:rgba(0, 0, 0, 0.25) 3px 3px 4px}
+.iDevice_header{border-width:1px;border-style:solid;padding-left:13px}
+.iDevice_inner{border-top:0}
+
+.ExternalUrlIdevice iframe{border:0}
+
+/* Reset base.css */
+.block,.feedback{padding:0}
+.feedback{font-family:inherit;font-size:1em}
+li{list-style-position:outside}
+.styled-qc{margin-top:2.5em}
+.exe-dl .icon,.exe-dl-toggler a{width:24px;height:24px;border-radius:12px}
+.exe-dl-toggler a{line-height:22px}
+.js .exe-dl dd{margin-left:44px}
+.exe-enlarge-icon b{font-size:1.2em}
+.pre-code{border-radius:0}
+
+/* Forms */
+input,select{font-size:1em;font-family:inherit}
+.iDevice_hint_title a{padding-left:25px}
+.iDevice_buttons input{font-size:1em;margin-right:.5em;padding:.15em .45em}
+.MultichoiceIdevice .feedback p:first-child{margin-top:0}
+.MultichoiceIdevice .activity-form,.MultiSelectIdevice .activity-form{margin-bottom:1em}
+.TrueFalseIdevice .activity-form{margin-top:1.5em}
+.TrueFalseIdevice .activity-form:first-child{margin-top:0}
+.TrueFalseIdevice label{margin:0 1em}
+.MultichoiceIdevice input[type=radio],.MultiSelectIdevice input[type=checkbox],.QuizTestIdevice input[type=radio]{width:16px;height:16px;margin:5px 0 0 12px}
+.custom-inputs .iDevice_answer-field{width:40px}
+.custom-inputs  .iDevice_answer-content,.custom-inputs  .iDevice_answer-feedback{padding-left:55px}
+.custom-inputs  .iDevice_answer-content{padding-top:4px}
+.styledRadio,.styledCheckbox{margin-left:12px}
+.MultichoiceIdevice .feedback{margin-top:1em}
+.right-option,.wrong-option{font-style:italic}
+.readingIdevice .iDevice_content:first-child p:last-child,
+.CasestudyIdevice .iDevice_content:first-child p:last-child{margin-bottom:0}
+.readingIdevice .feedbackbutton,
+.CasestudyIdevice .feedbackbutton,
+.ReflectionIdevice .feedbackbutton{margin:.5em 0 1em 0}
+.TrueFalseIdevice .exe-radio-option.styledRadio{display:inline-block;vertical-align:middle;margin:-2px 5px 0 0}
+
+/* Licenses */
+#packageLicense{margin:2.5em 0 1.5em 0;text-align:left;line-height:1.2em;font-size:.9em}
+#packageLicense.cc{padding-left:95px;background:url(_style_licenses.png) no-repeat 0 0}
+#packageLicense.cc-by-sa{background-position:0 -100px}
+#packageLicense.cc-by-nd{background-position:0 -200px}
+#packageLicense.cc-by-nc{background-position:0 -300px}
+#packageLicense.cc-by-nc-sa{background-position:0 -400px}
+#packageLicense.cc-by-nc-nd{background-position:0 -500px}
+#packageLicense.cc-0{background-position:0 -600px}
+#siteFooter{padding:20px}
+
+/* Download package iDevice */
+.download-packageIdevice .exe-download-package-link a{background:#333}
+
+/* Lightbox */
+.lightboxOverlay{filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=95);opacity:0.95}
+#lightbox .lb-caption{font-size:1em}
+
+/* Effects - iDevices with emphasis */
+.emphasis1 .exe-fx .fx-C2,
+.emphasis1 .exe-fx .fx-C2 a,
+.emphasis1 .fx-pagination a{
+background:#ededed;
+}
+
+@media print {
+    div.node{page-break-after:auto} /* base.css */
+    .iDevice{margin-bottom:20px}
+	html body{background:#fff;color:#000;font-size:11pt}
+	@page{margin:1.5cm}
+	a[href^=http]{font-weight:bold;text-decoration:none!important}
+	a[href^=http]:after{content:" <" attr(href) "> "}
+	#main .iDeviceTitle{background:none;padding-left:0}
+	.iDevice.emphasis1{box-shadow:none}
+	body #header,body #emptyHeader,body #nodeDecoration{height:auto!important;min-height:0;border:none;padding:0}
+	#packageLicense.cc{padding-left:0}
+	.toggle-idevice{display:none}	
+}
+
+/* eXeLearning Style Designer */
+.iDevice_header{
+/*emTitleColor*/
+color:#2B2E35;
+/*emTitleBGColor*/
+background-color:#F9F9F9;border-color:#f5f7f8;
+}
+.iDevice_inner{
+/*emBGColor*/
+background-color:#ffffff;border-color:/*emBorderColor*/
+#f5f7f8;
+}
+.iDeviceTitle{
+background-image:url(icon_touch_app.svg);
+}
+.activityIdevice .iDeviceTitle{background-image:url(icon_description.svg)}
+.readingIdevice .iDeviceTitle{background-image:url(icon_local_library.svg)}
+.CasestudyIdevice .iDeviceTitle{background-image:url(icon_pageview.svg)}
+.FileAttachIdeviceInc .iDeviceTitle{background-image:url(icon_attachment.svg)}
+.GalleryIdevice .iDeviceTitle{background-image:url(icon_collections.svg)}
+.objectivesIdevice .iDeviceTitle{background-image:url(icon_ads_click.svg)}
+.ReflectionIdevice .iDeviceTitle{background-image:url(icon_psychology.svg)}
+/* Interactive activities */
+.ListaIdevice .iDeviceTitle{background-image:url(icon_list_alt.svg)}
+.QuizTestIdevice .iDeviceTitle{background-image:url(icon_fact_check.svg)}
+.MultichoiceIdevice .iDeviceTitle{background-image:url(icon_checklist_rtl.svg)}
+.TrueFalseIdevice .iDeviceTitle{background-image:url(icon_check_circle_outline.svg)}
+.MultiSelectIdevice .iDeviceTitle{background-image:url(icon_rule.svg)}
+.ClozeIdevice .iDeviceTitle{background-image:url(icon_segment.svg)}
+
+body{
+/*bodyColor*/
+color:#444444;
+/*fontSize*/
+font-size:95%;
+/*contentBGColor*/
+background-color:#ffffff;
+}
+a{
+/*aColor*/
+color:#0D77D1;
+}
+#header,#emptyHeader,#nodeDecoration{
+height:auto!important;
+/*headerHeight*/
+height:100px;min-height:100px;
+/*headerBGColor*/
+background-color:#ffffff;border:1px solid /*headerBorderColor*/
+#e3e3e3;
+}
+#headerContent{
+/*headerTitleTopMargin*/
+padding-top:65px;
+/*headerTitleColor*/
+color:#000000;
+}
+#siteFooter{
+border:1px solid /*footerBorderColor*/
+#e3e3e3;
+/*footerColor*/
+color:#000000;
+/*footerTextAlign*/
+text-align:center;
+/*footerBGColor*/
+background-color:#ffffff;
+/*footerFontSize*/
+font-size:95%;
+}
+/* eXeLearning Style Designer (custom CSS) */
+.iDevice.emphasis1{box-shadow:none}
+.iDeviceTitle{filter:grayscale(100%);transition:filter 1s,color 1s}
+.iDevice_header:hover .iDeviceTitle,
+.iDevice_header:focus .iDeviceTitle{filter:none;color:#0D77D1}
+#emHeader{display:none}
+
+.cloze-activity-form p{line-height:2em}
+.exe-udlContent-alt-bottom .iDevice_content{padding-bottom:1em}
+.exe-udlContent-alt-content-title h2{margin-top:0}
+
+/* base.css */
+.styled-qc{margin:3em 2.5em}
+.styled-qc:before{top:0}
+.exe-figure{margin:2.5em 0}
+.position-center{margin:2.5em auto}
+.position-right{margin:2.5em 0 2.5em auto}
+/* Buttons */
+body #start-activity a,
+.feedbackbutton,.feedback-button input,.iDevice_buttons input{text-decoration:none;background-color:#0D77D1;padding:.5em 1em;color:#fff;transition:background-color 0.4s ease-in-out;display:inline-block;border:none;cursor:pointer;border-radius:0;font-weight:normal}
+body #start-activity a:hover,
+.feedbackbutton:hover,.feedback-button input:hover,.iDevice_buttons input:hover{background-color:#3e50b4}
+/* Hint & Feedback */
+.iDevice_hint_content{background:#E1F1F9;color:#2B627D;border:1px solid #C9EDF4}
+.iDevice_inner .feedback{background:#E1F1F9;color:#2B627D;border:1px solid #C9EDF4;padding:0 1em;margin:1em 0}
+.iDevice_inner .feedback-right{background:#E5F3E0;color:#336634;border:1px solid #DEEDD1;padding:0 1em;margin:1em 0}
+.iDevice_inner .feedback-wrong{background:#FEF0EF;color:#973C3B;border:1px solid #F3DADD;padding:0 1em;margin:1em 0}
+.iDevice_inner .iDevice_answer-feedback{background:none;border:none;padding:0;margin:0}
+.TrueFalseIdevice .feedback{margin-top:1.5em}
+
+/* Page title */
+#header h1,#nodeDecoration h1{margin:.5em 0 20px 0;font-weight:normal}
+#header,#emptyHeader,#nodeDecoration{height:auto;min-height:0;border-width:0 0 1px 0;padding-left:0}
+#headerContent{padding-top:0}

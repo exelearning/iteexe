@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<theme>
+    <name>EducaMadrid</name>
+    <version>20221203</version>
+    <compatibility>2.8</compatibility>
+    <author>EducaMadrid, Plataforma Educativa</author>
+    <author-url>http://www.educa.madrid.org/</author-url>
+    <license>Creative Commons by-sa</license>
+    <license-url>http://creativecommons.org/licenses/by-sa/4.0/</license-url>
+    <description>Rich responsive Style for eXe. iDevice icons by Google (https://fonts.google.com/icons), under the 2.0 version of the Apache License (https://www.apache.org/licenses/LICENSE-2.0.html). ScrewDefaultButtons SCRIPT by Matt Solano (http://mattsolano.com), under the MIT license. Style design by Ignacio Gros (http://gros.es/) for EducaMadrid.</description>
+    <extra-head><![CDATA[<meta name="viewport" content="width=device-width, initial-scale=1" />
+    ]]></extra-head>
+    <extra-body><![CDATA[<div id="emHeader"><p><a href="http://www.educa.madrid.org/" target="_blank" rel="noopener"><span>EducaMadrid</span></a></p></div><script type="text/javascript" src="_style_js.js"></script>]]></extra-body>
+    <edition-extra-head><![CDATA[<script type="text/javascript">if (typeof(exe_style)!='undefined' && exe_style.indexOf("content.css")!=-1) document.write('<scr'+'ipt type="text/javascript" src="'+exe_style.replace("content.css","_style_js.js")+'"></scr'+'ipt>')</script>]]></edition-extra-head>
+</theme>
