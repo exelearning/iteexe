@@ -176,7 +176,7 @@ class Config(object):
         # FM: New Styles Directory path
         self.stylesDir   = Path(self.configDir/'style').abspath()
         # FM: Default Style name
-        self.defaultStyle = u"INTEF"
+        self.defaultStyle = u"educamadrid-max"
         # Styles repository XML-RPC endpoint
         # self.stylesRepository = 'http://www.exelearning.es/xmlrpc.php'
         self.stylesRepository = 'http://www.exelearning.net/xmlrpc.php'
