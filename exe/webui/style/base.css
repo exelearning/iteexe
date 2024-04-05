@@ -110,7 +110,7 @@ p.exe-block-success{padding:1em}
 .exe-block-success a{color:#093C0A}
 div.exe-block-warning,div.exe-block-alert,div.exe-block-danger,div.exe-block-info,div.exe-block-success{margin:1em 0}
 /* RTL support */
-[dir='rtl']{text-align:start}
+body [dir='rtl']{text-align:start}
 /* Enlarge icon */
 .js a.exe-enlarge{position:relative;display:block}
 .exe-enlarge-icon{display:none;width:30px;height:30px;position:absolute;top:50%;left:50%;margin:-15px 0 0 -15px;border-radius:15px;background:#333;z-index:10;box-shadow:0 0 7px 0 #DDD}

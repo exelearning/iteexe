@@ -93,4 +93,4 @@ main.mw-body #p-lang-btn{display:none}
 /* #680 */
 td,th{font-family:inherit;font-size:inherit}
 /* RTL support */
-[dir='rtl']{text-align:start}
+body [dir='rtl']{text-align:start}
