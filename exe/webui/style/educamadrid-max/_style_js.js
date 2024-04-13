@@ -89,9 +89,13 @@ var myTheme = {
 				loc = loc.split("#");
 				loc = loc[0];
 			var mainTit = "";
+			var mainLnk = "";
 			$("#siteNav a").each(function(x){
 				var e = $(this);
-				if (x==0) mainTit = e.text().replace("►","");
+				if (x==0) {
+					mainTit = e.text().replace("►","");
+					mainLnk = e.attr("href");
+				}
 				if (e.attr("href")==loc) {
 					var li = e.parent();
 					li.parents('li').each(function() {
@@ -100,7 +104,7 @@ var myTheme = {
 					});
 				}
 			});
-			return '<li><a href="./">'+mainTit+'</a></li>' + extra + res;
+			return '<li><a href="'+mainLnk+'">'+mainTit+'</a></li>' + extra + res;
 		}		
 		var breadcrumb = '<div id="emBreadcrumb"><ul>'+getNodeLinks()+'</ul></div>';
 		$("#main").before(breadcrumb);
@@ -242,7 +246,7 @@ var myTheme = {
 		}
 	},
 	params : function(act){
-		$("A",".pagination").each(function(){
+		$("#topPagination a,#bottomPagination a,#emBreadcrumb a").each(function(){
 			myTheme.param(this,act);
 		});
 	},
