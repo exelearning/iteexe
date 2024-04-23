@@ -1817,7 +1817,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Selecciona.json";
+        link.download = _("Activity") + "-Selecciona.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -1826,40 +1826,6 @@ var $exeDevice = {
         }, 100);
     },
 
-    importGameOld: function (content) {
-        var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
-            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
-            return;
-        } else if (game.typeGame !== 'Selecciona') {
-            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
-            return;
-        }
-        $exeDevice.active = 0;
-        $exeDevice.selectsGame = game.selectsGame;
-        for (var i = 0; i < $exeDevice.selectsGame.length; i++) {
-            if (game.selectsGame[i].type == 3) {
-                game.selectsGame[i].eText = unescape(game.selectsGame[i].eText);
-            }
-            var numOpt = 0,
-                options = $exeDevice.selectsGame[i].options;
-            for (var j = 0; j < options.length; j++) {
-                if (options[j].trim().length == 0) {
-                    $exeDevice.selectsGame[i].numberOptions = numOpt;
-                    break;
-                }
-                numOpt++;
-            }
-        }
-        $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions,
-            tAfter = game.textAfter || "",
-            textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('seleccionaEFeedBackEditor').setContent(unescape(textFeedBack));
-        $('.exe-form-tabs li:first-child a').click();
-    },
     validateData: function () {
         var clear = $exeDevice.removeTags,
             instructions = $('#eXeGameInstructions').text(),
@@ -2168,15 +2134,22 @@ var $exeDevice = {
         });
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt')
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json, .xml');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    $exeDevice.showMessage(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
+                    $exeDevice.showMessage(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    $exeDevice.importGame(e.target.result);
+                    $exeDevice.importGame(e.target.result, file.type);
                 };
                 reader.readAsText(file);
             });
@@ -2547,13 +2520,40 @@ var $exeDevice = {
         var isValid = text.length > 0 && text !== '.' && text !== ',' && /^-?\d*[.,]?\d*$/.test(text);
         return isValid;
     },
-    importGame: function (content) {
+    importMoodle(xmlString) {
+        var xmlDoc = $.parseXML(xmlString),
+            $xml = $(xmlDoc);
+        if ($xml.find("GLOSSARY").length > 0) {
+            return $exeDevice.importGlosary(xmlString);
+        }
+        else if ($xml.find("quiz").length > 0) {
+            return $exeDevice.importCuestionaryXML(xmlString);
+        } else {
+            return false;
+        }
+      },
+    importGame: function (content, filetype) {
         var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
+        if (content && content.includes('\u0000')){
+            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var questions = false;
+            if(filetype.match('text/plain')){
+                questions = $exeDevice.importText(content);
+            }else if(filetype.match('application/xml') || filetype.match('text/xml')){
+                questions =  $exeDevice.importMoodle(content);
+            }
+            if(questions){
+                $exeDevice.selectsGame = questions;
+            }else{
+                $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                return
+            }
+        } else if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         } else if (game.typeGame == 'Selecciona') {
-            game.selectsGame = $exeDevice.importSelecciona(game);
             game.id = $exeDevice.generarID();
             $exeDevice.active = 0;
             $exeDevice.updateFieldGame(game);
@@ -2565,24 +2565,193 @@ var $exeDevice = {
             tinyMCE.get('seleccionaEFeedBackEditor').setContent(unescape(textFeedBack));
         } else if (game.typeGame == 'Oca') {
             $exeDevice.selectsGame = $exeDevice.importSelecciona(game);
-            $exeDevice.updateSelectOrder();
         } else if (game.typeGame == 'QuExt') {
             $exeDevice.selectsGame = $exeDevice.importQuExt(game);
-            $exeDevice.updateSelectOrder();
-        } else if (game.typeGame == 'selecciona') {
-            $exeDevice.selectsGame = $exeDevice.importselecciona(game);
-            $exeDevice.updateSelectOrder();
         } else if (game.typeGame == 'Rosco') {
             $exeDevice.selectsGame = $exeDevice.importRosco(game);
-            $exeDevice.updateSelectOrder();
+        } else if (game.typeGame == 'Adivina') {
+            $exeDevice.selectsGame = $exeDevice.importRosco(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
         $exeDevice.active = 0;
-        $exeDevice.deleteEmptyQuestion();
         $exeDevice.showQuestion($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.updateQuestionsNumber();
+        $exeDevice.updateSelectOrder();
         $('.exe-form-tabs li:first-child a').click();
+    },
+    importCuestionaryXML: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml");
+        if ($(xmlDoc).find("parsererror").length > 0) {
+            return false;
+        }
+        var quiz = $(xmlDoc).find("quiz").first();
+        if (quiz.length === 0) {
+            return false;
+        }
+        var questions = quiz.find("question"),
+           questionsJson = [];
+        for (var i = 0; i < questions.length; i++) {
+            var question = questions[i],
+                type = $(question).attr('type');
+            if (type !== 'multichoice' && type !== 'truefalse' && type !== 'numerical'  && type !== 'shortanswer') {
+                continue;
+            }
+
+            var typeSelect = $(question).attr('type') === 'shortanswer' ? 2 : 0,
+                questionText = $(question).find("questiontext").first().text(),
+                answers = $(question).find("answer"),
+                options = [],
+                solution = '',
+                solutionQuestion ='';
+            if(typeSelect == 0){
+                for (var j = 0; j < answers.length; j++) {
+                    var answer = answers[j],
+                        answerHtml = $exeDevice.removeTags($(answer).find('text').eq(0).text().trim()),
+                        answerTextParts = answerHtml.split("\n"), 
+                        answerText = answerTextParts[0].trim();
+                    options.push(answerText);
+                    if ($(answer).attr('fraction') > 0) {
+                        solution += String.fromCharCode(65 + j);
+                    }
+                }
+            }else if (typeSelect == 2) {
+                var maxFraction = -1; 
+                for (var j = 0; j < answers.length; j++) {
+                    var answer = answers[j],
+                        answerHtml = $(answer).find('text').eq(0).text().trim(), 
+                        answerTextParts = answerHtml.split("\n")
+                        answerText = answerTextParts[0].trim(),
+                        currentFraction = parseInt($(answer).attr('fraction'));  
+                    if (currentFraction > maxFraction) { 
+                        maxFraction = currentFraction;
+                        solutionQuestion = answerText;
+                    }
+                }
+            }
+
+            questionsJson.push({
+                typeSelect :typeSelect,
+                question: $exeDevice.removeTags(questionText.trim()),
+                options: options,
+                solution: solution,
+                solutionQuestion: solutionQuestion
+            });
+        }
+        var valids = 0;
+        for (var i = 0; i < questionsJson.length; i++){
+            var question = questionsJson[i],
+                p = $exeDevice.getCuestionDefault();
+            p.typeSelect = question.typeSelect; 
+            if( p.typeSelect == 0){
+                p.quextion = question.question;
+                p.options[0] = question.options.length > 0 ? question.options[0] : '';
+                p.options[1] = question.options.length > 1 ? question.options[1] : '';
+                p.options[2] = question.options.length > 2 ? question.options[2] : '';
+                p.options[3] = question.options.length > 3 ? question.options[3] : '';
+                p.solution = question.solution;
+                p.numberOptions = question.options.length;
+                if(p.numberOptions == 2){
+                    p.options[0] = p.options[0] === 'true' ? _('True'): p.options[0];
+                    p.options[0] = p.options[0] === 'false' ? _('False'): p.options[0];
+                    p.options[1] = p.options[1] === 'true' ? _('True'): p.options[1];
+                    p.options[1] = p.options[1] === 'false' ? _('False'): p.options[1];
+                }
+                if(question.question && question.options && question.options.length > 1){
+                    $exeDevice.selectsGame.push(p);
+                    valids++;
+                }
+            } else if(p.typeSelect == 2){
+                p.quextion = question.question;
+                p.solutionQuestion = question.solutionQuestion;
+                if(question.question && question.question.length > 0  && question.solutionQuestion && question.solutionQuestion.length > 0){
+                    $exeDevice.selectsGame.push(p);
+                    valids++;
+                }
+            }
+        };
+        return valids > 0 ? $exeDevice.selectsGame : false;
+    },
+    importGlosary: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $entries = $xml.find("ENTRIES").first();
+        if ($entries.length === 0) {
+            return false;
+        }
+        var questionsJson = [];
+        $entries.find("ENTRY").each(function() {
+            var $this = $(this),
+                concept = $this.find("CONCEPT").text(),
+                definition = $this.find("DEFINITION").text().replace(/<[^>]*>/g, '');  // Elimina HTML
+            if (concept && definition) {
+                questionsJson.push({
+                    solution: concept,
+                    question: definition
+                });
+            }
+        });
+        var valids = 0;
+        questionsJson.forEach(function(question) {
+            var p = $exeDevice.getCuestionDefault();
+            p.typeSelect = 2;
+            p.quextion = question.question;
+            p.solutionQuestion = question.solution;
+            if (p.quextion.length > 0 && p.solutionQuestion.length > 0) {
+                $exeDevice.selectsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.selectsGame : false;
+    },
+    importText: function(content){
+        var lines = content.split('\n'),
+            lineFormat = /^([0-3]|[ABCD]{0,4})#([^#]+)#([^#]+)#([^#]*)(#([^#]*))?(#([^#]*))?$/i,
+            lineFormat1 = /^([^#]+)#([^#]+)(#([^#]+))?(#([^#]+))?$/,
+            valids = 0;
+         lines.forEach(function(line) {
+            var p = $exeDevice.getCuestionDefault();
+
+            if (lineFormat.test(line)) {          
+                var linarray = line.trim().split("#");
+                var solution =  linarray[0];
+                if (!isNaN(solution)) {
+                    var index = parseInt(solution);
+                    var letters ='ABCD'
+                    if (index >= 0 && index < letters.length) {
+                         solution = letters.charAt(index);
+                    }
+                }
+                p.solution = solution;
+                p.quextion = linarray[1];
+                p.options[0] = linarray[2] || '';
+                p.options[1] = linarray[3] || '';
+                p.options[2] = linarray.length > 4 ? linarray[4] : '';
+                p.options[3] = linarray.length > 5 ? linarray[5] : '';
+                p.numberOptions = linarray.length - 2;
+                $exeDevice.selectsGame.push(p);
+                valids++;
+            } else if(lineFormat1.test(line)){
+                var linarray1 = line.trim().split("#");
+                p.typeSelect = 2;
+                p.solutionQuestion = linarray1[0];
+                p.quextion = linarray1[1];
+                p.percentageShow = 35;
+                if(p.quextion && p.solutionQuestion){
+                    $exeDevice.selectsGame.push(p);
+                    valids++;
+                }
+            }
+        });
+        return valids > 0 ? $exeDevice.selectsGame : false;
+
     },
     importQuExt: function (data) {
         for (var i = 0; i < data.questionsGame.length; i++) {

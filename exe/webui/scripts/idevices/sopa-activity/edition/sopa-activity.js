@@ -92,6 +92,26 @@ var $exeDevice = {
         msgs.msgIDLenght = _('The report identifier must have at least 5 characters');
     },
 
+    importText: function(content){
+        var lines = content.split('\n'),
+             lineFormat = /^([^#]+)#([^#]+)(#([^#]+))?(#([^#]+))?$/,
+             questions = JSON.parse(JSON.stringify($exeDevice.wordsGame));
+             valids= 0;
+         lines.forEach(function(line) {
+            var p = $exeDevice.getCuestionDefault();
+            if (lineFormat.test(line)) {
+                var linarray = line.trim().split("#");
+                p.word = linarray[0];
+                p.definition = linarray[1];
+                if(p.word.trim().length>0 && p.definition.trim().length>0 ){
+                    questions.push(p);
+                    valids++;
+                }
+            }
+        });
+        return valids > 0 ? questions : false;
+    },
+
     importAdivina: function (data) {
         for (var i = 0; i < data.wordsGame.length; i++) {
             var p = $exeDevice.getCuestionDefault(),
@@ -122,7 +142,9 @@ var $exeDevice = {
             p.author = cuestion.author;
             p.alt = cuestion.alt;
             p.solution = '';
-            $exeDevice.wordsGame.push(p);
+            if(p.word && p.word.length >0 && p.definition && p.definition.length > 0){
+                $exeDevice.wordsGame.push(p);
+            }
         }
         return $exeDevice.wordsGame;
     },
@@ -731,15 +753,22 @@ var $exeDevice = {
         });
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt');
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json, .xml');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    $exeDevice.importGame(e.target.result);
+                    $exeDevice.importGame(e.target.result, file.type);
                 };
                 reader.readAsText(file);
             });
@@ -749,7 +778,6 @@ var $exeDevice = {
         } else {
             $('#eXeGameExportImport').hide();
         }
-
 
         $('#sopaEURLImage').on('change', function () {
             var validExt = ['jpg', 'png', 'gif', 'jpeg', 'svg'],
@@ -1062,7 +1090,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Sopa.json";
+        link.download = _("Activity") + "-Sopa.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -1070,14 +1098,125 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
-
-    importGame: function (content) {
+    importMoodle(xmlString) {
+        var xmlDoc = $.parseXML(xmlString),
+            $xml = $(xmlDoc);
+        if ($xml.find("GLOSSARY").length > 0) {
+            return $exeDevice.importGlosary(xmlString);
+        }
+        else if ($xml.find("quiz").length > 0) {
+            return $exeDevice.importCuestionaryXML(xmlString);
+        } else {
+            return false;
+        }
+      },
+    importCuestionaryXML: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $quiz = $xml.find("quiz").first();
+        if ($quiz.length === 0) {
+            return false;
+        }
+        var wordsJson = [];
+        $quiz.find("question").each(function() {
+            var $question = $(this),
+                type = $question.attr('type');
+            if (type !== 'shortanswer') {
+                return true
+            }
+            var questionText = $question.find("questiontext").first().text().trim(),
+                $answers = $question.find("answer"),
+                word = '',
+                maxFraction = -1;
+            $answers.each(function() {
+                var $answer = $(this),
+                    answerText = $answer.find('text').eq(0).text(),
+                    currentFraction = parseInt($answer.attr('fraction'));
+                if (currentFraction > maxFraction) {
+                    maxFraction = currentFraction;
+                    word = answerText;
+                }
+            });
+            if (word && word.length > 0 && questionText && questionText.length > 0  ) {
+                wordsJson.push({
+                    definition: $exeDevice.removeTags(questionText),
+                    word: $exeDevice.removeTags(word),
+                });
+            }
+        });
+        var validQuestions = [];
+        wordsJson.forEach(function(question) {
+            var p = $exeDevice.getCuestionDefault();
+            p.definition = question.definition;
+            p.word = question.word;
+            if (p.word.length > 0 && p.definition.length > 0) {
+                $exeDevice.wordsGame.push(p);
+                validQuestions.push(p);
+            }
+        });
+        return validQuestions.length > 0 ? $exeDevice.wordsGame : false;
+    },
+    importGlosary: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $entries = $xml.find("ENTRIES").first();
+        if ($entries.length === 0) {
+            return false;
+        }
+        var wordsJson = [];
+        $entries.find("ENTRY").each(function() {
+            var $this = $(this),
+                concept = $this.find("CONCEPT").text(),
+                definition = $this.find("DEFINITION").text().replace(/<[^>]*>/g, '');  // Elimina HTML
+            if (concept && definition) {
+                wordsJson.push({
+                    word: concept,
+                    definition: definition
+                });
+            }
+        });
+        var valids = 0;
+        wordsJson.forEach(function(word) {
+            var p = $exeDevice.getCuestionDefault();
+            p.definition = word.definition;
+            p.word = word.word;
+            if (p.word.length > 0 && p.definition.length > 0) {
+                $exeDevice.wordsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.wordsGame : false;
+    },
+    importGame: function (content, filetype) {
         var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
+        if (content && content.includes('\u0000')){
+            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var words = false;
+            if(filetype.match('text/plain')){
+                words = $exeDevice.importText(content);
+            }else if(filetype.match('application/xml') || filetype.match('text/xml')){
+                words =  $exeDevice.importMoodle(content);
+            }
+            if (words && words.length > 1){
+                $exeDevice.wordsGame = words;
+            }else{
+                $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                return;
+            }
+        } else if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         } else if (game.typeGame == 'Sopa') {
-            game.wordsGame = $exeDevice.importSopa(game);
             $exeDevice.active = 0;
             game.id = $exeDevice.generarID();
             $exeDevice.updateFieldGame(game);
@@ -1100,39 +1239,26 @@ var $exeDevice = {
                 $("#eXeIdeviceTextAfter").val(unescape(tAfter))
             }
         } else if (game.typeGame == 'Adivina') {
-            game.wordsGame = $exeDevice.importAdivina(game);
+            $exeDevice.importAdivina(game);
         } else if (game.typeGame == 'Rosco') {
-            game.wordsGame = $exeDevice.importRosco(game);
+            $exeDevice.importRosco(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
-
         $exeDevice.active = 0;
-        $exeDevice.deleteEmptyQuestion();
         $exeDevice.showQuestion($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.updateQuestionsNumber();
         $('.exe-form-tabs li:first-child a').click();
     },
     deleteEmptyQuestion: function () {
         if ($exeDevice.wordsGame.length > 1) {
             var word = $('#sopaESolutionWord').val().trim();
-            if (word.length == 0) {
-                var definition = $('#sopaEDefinitionWord').val().trim();
-                if (definition.length == 0) {
-                    $exeDevice.removeQuestion();
-                }
+            if (word.trim().length == 0) {
+                $exeDevice.removeQuestion();
             }
         }
-    },
-    importSopa: function (game) {
-        var wordsGame = $exeDevice.wordsGame;
-        for (var i = 0; i < game.wordsGame.length; i++) {
-            var p = game.wordsGame[i];
-            p.percentageShow = typeof game.percentageShow == 'undefined' ? 35 : game.percentageShow;
-            p.audio = typeof p.audio == "undefined" ? "" : p.audio;
-            wordsGame.push(p);
-        }
-        return wordsGame;
     },
 
     isJsonString: function (str) {

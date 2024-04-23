@@ -1595,7 +1595,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "QuExt.json";
+        link.download = _("Activity") + "-QuExt.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -1603,57 +1603,158 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
-    importGame: function (content) {
+    importText: function(content){
+        var lines = content.split('\n'),
+            lineFormat = /^(0|1|2|3)#([^#]+)#([^#]+)#([^#]+)(#([^#]+))?(#([^#]+))?$/,
+            valids = 0;
+         lines.forEach(function(line) {
+            var p = $exeDevice.getCuestionDefault();
+            if (lineFormat.test(line)) {
+                var linarray = line.trim().split("#"),
+                    solution = parseInt(linarray[0], 10);
+                p.quextion = linarray[1];
+                p.options[0] = linarray[2] || '';
+                p.options[1] = linarray[3] || '';
+                p.options[2] = linarray.length > 4 ? linarray[4] : '';
+                p.options[3] = linarray.length > 5 ? linarray[5] : '';
+                p.numberOptions = linarray.length - 2;
+                if(solution > p.numberOptions - 1) {
+                    p.solution = 0;
+                } else {
+                    p.solution = solution;
+                }
+                $exeDevice.questionsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.questionsGame : false;
+    },
+    importCuestionaryXML: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml");
+        if ($(xmlDoc).find("parsererror").length > 0) {
+            return false;
+        }
+        var quiz = $(xmlDoc).find("quiz").first();
+        if (quiz.length === 0) {
+            return false;
+        }
+        var questions = quiz.find("question"),
+           questionsJson = [];
+        for (var i = 0; i < questions.length; i++) {
+            var question = questions[i],
+                type = $(question).attr('type');
+            if (type !== 'multichoice' && type !== 'truefalse' && type !== 'numerical') {
+                continue;
+            }
+            var questionText = $(question).find("questiontext").first().text(),
+                answers = $(question).find("answer"),
+                options = [],
+                solution = 0;
+            for (var j = 0; j < answers.length; j++) {
+                var answer = answers[j];
+                var answerHtml = $exeDevice.removeTags($(answer).text().trim());
+                var answerTextParts = answerHtml.split("\n"); 
+                var answerText = answerTextParts[0].trim();
+                options.push(answerText);
+                if ($(answer).attr('fraction') == 100) {
+                    solution = j;
+                }
+            }
+            questionsJson.push({
+                question: $exeDevice.removeTags(questionText.trim()),
+                options: options,
+                solution: solution
+            });
+        }
+        var valids = 0;
+        for (var i = 0; i < questionsJson.length; i++){
+            var question = questionsJson[i],
+                p = $exeDevice.getCuestionDefault();
+            p.quextion = question.question;
+            p.options[0] = question.options.length > 0 ? question.options[0] : '';
+            p.options[1] = question.options.length > 1 ? question.options[1] : '';
+            p.options[2] = question.options.length > 2 ? question.options[2] : '';
+            p.options[3] = question.options.length > 3 ? question.options[3] : '';
+            p.solution = question.solution;
+            p.numberOptions = question.options.length;
+            if(p.numberOptions == 2){
+                p.options[0] = p.options[0] === 'true' ? _('True'): p.options[0];
+                p.options[0] = p.options[0] === 'false' ? _('False'): p.options[0];
+                p.options[1] = p.options[1] === 'true' ? _('True'): p.options[1];
+                p.options[1] = p.options[1] === 'false' ? _('False'): p.options[1];
+            }
+            if(question.question && question.options && question.options.length > 1){
+                $exeDevice.questionsGame.push(p);
+            }
+            valids++;
+        };
+        return valids > 0 ? $exeDevice.questionsGame : false;
+    },
+
+
+    deleteEmptyQuestion: function () {
+        if ($exeDevice.questionsGame.length > 1) {
+            var quextion = $('#quextEQuestion').val().trim();
+            if (quextion.length == 0) {
+                $exeDevice.removeQuestion();
+            }
+        }
+    },
+    importGame: function (content, filetype) {
         var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
+        if (content && content.includes('\u0000')){
+            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var questions = false;
+            if(filetype.match('text/plain')){
+                questions = $exeDevice.importText(content);
+            }else if(filetype.match('application/xml') || filetype.match('text/xml')){
+                questions =  $exeDevice.importCuestionaryXML(content);
+            }
+            if(questions){
+                $exeDevice.questionsGame = questions;
+            }else{
+                $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                return
+            }
+        } else if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
+        } else if (game.typeGame == 'QuExt') {
+            $exeDevice.questionsGame = game.questionsGame;
+            game.id = $exeDevice.generarID();
+            for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
+                if (game.questionsGame[i].type == 3) {
+                    game.questionsGame[i].eText = unescape(game.questionsGame[i].eText);
+                }
+                var numOpt = 0,
+                    options = $exeDevice.questionsGame[i].options;
+                for (var j = 0; j < options.length; j++) {
+                    if (options[j].trim().length == 0) {
+                        $exeDevice.questionsGame[i].numberOptions = numOpt;
+                        break;
+                    }
+                    numOpt++;
+                }
+            }
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
+                tAfter = game.textAfter || "",
+                textFeedBack = game.textFeedBack || "";
+            tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            tinyMCE.get('quextEFeedBackEditor').setContent(unescape(textFeedBack));
         } else if (game.typeGame !== 'QuExt') {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
-        if ($exeDevice.questionsGame.length > 1) {
-            game.questionsGame = $exeDevice.importQuExt(game)
-        }
         $exeDevice.active = 0;
-        $exeDevice.questionsGame = game.questionsGame;
-        game.id = $exeDevice.generarID();
-        for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
-            if (game.questionsGame[i].type == 3) {
-                game.questionsGame[i].eText = unescape(game.questionsGame[i].eText);
-            }
-            var numOpt = 0,
-                options = $exeDevice.questionsGame[i].options;
-            for (var j = 0; j < options.length; j++) {
-                if (options[j].trim().length == 0) {
-                    $exeDevice.questionsGame[i].numberOptions = numOpt;
-                    break;
-                }
-                numOpt++;
-            }
-        }
-        $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions,
-            tAfter = game.textAfter || "",
-            textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('quextEFeedBackEditor').setContent(unescape(textFeedBack));
+        $exeDevice.showQuestion($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion()
+        $exeDevice.updateQuestionsNumber();
         $('.exe-form-tabs li:first-child a').click();
-    },
-    importQuExt: function (game) {
-        var questionsGame = $exeDevice.questionsGame;
-        for (var i = 0; i < game.questionsGame.length; i++) {
-            var p = game.questionsGame[i];
-            p.time = typeof p.time == 'undefined' ? 1 : p.time;
-            p.audio = typeof p.audio == "undefined" ? "" : p.audio;
-            p.hit = typeof p.hit == "undefined" ? -1 : p.hit;
-            p.error = typeof p.error == "undefined" ? -1 : p.error;
-            p.msgHit = typeof p.msgHit == "undefined" ? "" : p.msgHit;
-            p.msgError = typeof p.msgError == "undefined" ? "" : p.msgError;
-            questionsGame.push(p);
-        }
-        return questionsGame;
     },
     validateData: function () {
         var clear = $exeDevice.removeTags,
@@ -1933,15 +2034,22 @@ var $exeDevice = {
 
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt')
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json, .xml');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    $exeDevice.showMessage(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
+                    $exeDevice.showMessage(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    $exeDevice.importGame(e.target.result);
+                    $exeDevice.importGame(e.target.result, file.type);
                 };
                 reader.readAsText(file);
             });
