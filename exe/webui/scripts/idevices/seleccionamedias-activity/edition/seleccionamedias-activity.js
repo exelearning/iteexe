@@ -431,7 +431,7 @@ var $exeDevice = {
            <span class="SLCME-ETitleText" id="slcmETitleText-' + $exeDevice.activeID + '">' + _("Text") + '</span>\
            <div class="SLCME-EInputText" id="slcmEInputText-' + $exeDevice.activeID + '">\
                 <label class="sr-av">' + _("Text") + '</label><input type="text" id="slcmEText-' + $exeDevice.activeID + '" class="SLCME-EText" />\
-                <label id="slcmELblColor-' + $exeDevice.activeID + '" class="SLCME-LblColor">' + _("Font") + ': </label><input id="slcmEColor-' + $exeDevice.activeID + '"  type="color"  class="SLCME-EColor" value="#000000">\
+                <label id="slcmELblColor-' + $exeDevice.activeID + '" class="SLCME-LblColor">' + _("Color") + ': </label><input id="slcmEColor-' + $exeDevice.activeID + '"  type="color"  class="SLCME-EColor" value="#000000">\
                 <label id="slcmELblBgColor-' + $exeDevice.activeID + '"  class="SLCME-LblBgColor">' + _("Background") + ': </label><input id="slcmEBgColor-' + $exeDevice.activeID + '"  type="color"   class="SLCME-EBackColor" value="#ffffff">\
             </div>\
            <span class="SLCME-ETitleImage"id="slcmETitleImage-' + $exeDevice.activeID + '">' + _("Image") + '</span>\
@@ -1403,7 +1403,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "SeleccionaMedias.json";
+        link.download = _("Activity") + "-SeleccionaMedias.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {

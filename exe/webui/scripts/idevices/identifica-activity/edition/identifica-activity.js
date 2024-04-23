@@ -814,7 +814,7 @@ var $exeDevice = {
         p.clues = [];
         p.msgHit = $('#idfEMessageOK').val();
         p.msgError = $('#idfEMessageKO').val();
-        p.attempts=parseInt($('#idfEAttemptsNumber').val());
+        p.attempts = parseInt($('#idfEAttemptsNumber').val());
         $exeDevice.stopSound();
         var clueEmpy = false;
         $('.IDFE-EAnwersClues').each(function (i) {
@@ -882,7 +882,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Identifica.json";
+        link.download = _("Activity") + "-Identifica.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -890,52 +890,97 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
+
+    deleteEmptyQuestion: function () {
+        if ($exeDevice.questionsGame.length > 1) {
+            var word = $('#idfESolution').val().trim();
+            if (word.length == 0) {
+                $exeDevice.removeQuestion();
+            }
+        }
+    },
+    importText: function(content){
+        var lines = content.split('\n'),
+            lineFormat = /^([^#]+)(#([^#]+)){3,9}$/,
+            questions = JSON.parse(JSON.stringify($exeDevice.questionsGame)),
+            valids = 0;
+        lines.forEach(function(line) {
+            if (lineFormat.test(line)) {
+                var p = $exeDevice.getCuestionDefault();
+                var linarray = line.trim().split("#");
+                p.question = linarray[0];
+                p.solution = linarray[1];
+                p.numberClues = linarray.length - 2;
+                for (var i = 0; i < p.clues.length; i++){
+                    if(i < p.numberClues){
+                        p.clues[i] = linarray[i + 2]
+                    }
+                }
+                valids++;
+                questions.push(p);
+            }
+        });
+       return valids > 0 ? questions: false
+    },
     importGame: function (content) {
         var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
+        if (content && content.includes('\u0000')){
+            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var questions = $exeDevice.importText(content);
+            if (questions && questions .length){
+               $exeDevice.questionsGame = questions;
+            } else {
+                eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+                return;
+            }
+        } else if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
+        } else if (game.typeGame == 'Identifica') {
+            game.id = $exeDevice.generarID();
+            $exeDevice.active = 0;
+            $exeDevice.questionsGame = game.questionsGame;
+            for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
+                var numOpt = 0,
+                    clues = $exeDevice.questionsGame[i].clues;
+                for (var j = 0; j < clues.length; j++) {
+                    if (clues[j].trim().length == 0) {
+                        $exeDevice.questionsGame[i].numberClues = numOpt;
+                        break;
+                    }
+                    numOpt++;
+                }
+            }
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
+                tAfter = game.textAfter || "",
+                textFeedBack = game.textFeedBack || "";
+                if (tinyMCE.get('eXeGameInstructions')) {
+                    tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+                } else {
+                    $("#eXeGameInstructions").val(unescape(instructions));
+                }
+
+                if (tinyMCE.get('idfEFeedBackEditor')) {
+                    tinyMCE.get('idfEFeedBackEditor').setContent(unescape(textFeedBack));
+                } else {
+                    $("#idfEFeedBackEditor").val(unescape(textFeedBack))
+                }
+                if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                    tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+                } else {
+                    $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+                }
         } else if (game.typeGame !== 'Identifica') {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
-        if ($exeDevice.questionsGame.length > 1) {
-            game.questionsGame = $exeDevice.importIdentifica(game)
-        }
-        game.id = $exeDevice.generarID();
-        $exeDevice.active = 0;
-        $exeDevice.questionsGame = game.questionsGame;
-        for (var i = 0; i < $exeDevice.questionsGame.length; i++) {
-            var numOpt = 0,
-                clues = $exeDevice.questionsGame[i].clues;
-            for (var j = 0; j < clues.length; j++) {
-                if (clues[j].trim().length == 0) {
-                    $exeDevice.questionsGame[i].numberClues = numOpt;
-                    break;
-                }
-                numOpt++;
-            }
-        }
-        $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions,
-            tAfter = game.textAfter || "",
-            textFeedBack = game.textFeedBack || "";
-            if (tinyMCE.get('eXeGameInstructions')) {
-                tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-            } else {
-                $("#eXeGameInstructions").val(unescape(instructions));
-            }
+        $exeDevice.showQuestion($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.updateQuestionsNumber();
 
-            if (tinyMCE.get('idfEFeedBackEditor')) {
-                tinyMCE.get('idfEFeedBackEditor').setContent(unescape(textFeedBack));
-            } else {
-                $("#idfEFeedBackEditor").val(unescape(textFeedBack))
-            }
-            if (tinyMCE.get('eXeIdeviceTextAfter')) {
-                tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-            } else {
-                $("#eXeIdeviceTextAfter").val(unescape(tAfter))
-            }
         $('.exe-form-tabs li:first-child a').click();
     },
     importIdentifica: function (game) {
@@ -1145,10 +1190,17 @@ var $exeDevice = {
 
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt')
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json'))) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
