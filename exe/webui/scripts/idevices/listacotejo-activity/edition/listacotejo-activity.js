@@ -286,14 +286,15 @@ var $exeDevice = {
       if (fVal != "") i18n[i] = fVal;
     }
     dataGame.msgs = i18n;
-    var json = JSON.stringify(dataGame),
+    var json = JSON.stringify(dataGame)
       divContent = "",
       json = $exeDevice.Encrypt(json),
       html = '<div class="listacotejo-IDevice">';
     var instructions = tinyMCE.get("eXeGameInstructions").getContent();
     if (instructions != "") {
-      divContent = '<div class="ctj-instructions CTJ-instructions">' + instructions + "</div>";
+      divContent = '<div class="listacotejo-instructions CTJ-instructions">' + instructions + "</div>";
     }
+
     html += divContent;
     html += '<div class="listacotejo-DataGame js-hidden">' + json + "</div>";
     html += '<div class="listacotejo-bns js-hidden">' +  _("Unsupported browser") + "</div>";

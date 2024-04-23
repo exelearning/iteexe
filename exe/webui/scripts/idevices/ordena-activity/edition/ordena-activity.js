@@ -487,7 +487,7 @@ var $exeDevice = {
            <span class="ODNE-ETitleText" id="ordenaETitleText-' + $exeDevice.activeID + '">' + _("Text") + '</span>\
            <div class="ODNE-EInputText" id="ordenaEInputText-' + $exeDevice.activeID + '">\
                 <label class="sr-av">' + _("Text") + '</label><input type="text" id="ordenaEText-' + $exeDevice.activeID + '" class="ODNE-EText" />\
-                <label id="ordenaELblColor-' + $exeDevice.activeID + '" class="ODNE-LblColor">' + _("Font") + ': </label><input id="ordenaEColor-' + $exeDevice.activeID + '"  type="color"  class="ODNE-EColor" value="#000000">\
+                <label id="ordenaELblColor-' + $exeDevice.activeID + '" class="ODNE-LblColor">' + _("Color") + ': </label><input id="ordenaEColor-' + $exeDevice.activeID + '"  type="color"  class="ODNE-EColor" value="#000000">\
                 <label id="ordenaELblBgColor-' + $exeDevice.activeID + '"  class="ODNE-LblBgColor">' + _("Background") + ': </label><input id="ordenaEBgColor-' + $exeDevice.activeID + '"  type="color"   class="ODNE-EBackColor" value="#ffffff">\
             </div>\
            <span class="ODNE-ETitleImage"id="ordenaETitleImage-' + $exeDevice.activeID + '">' + _("Image") + '</span>\
@@ -1561,7 +1561,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Ordena.json";
+        link.download = _("Activity") + "-Ordena.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
