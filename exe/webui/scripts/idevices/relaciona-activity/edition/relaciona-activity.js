@@ -1055,15 +1055,22 @@ var $exeDevice = {
         });
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt');
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json, .xml');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    $exeDevice.importGame(e.target.result);
+                    $exeDevice.importGame(e.target.result, file.type);
                 };
                 reader.readAsText(file);
             });
@@ -1340,10 +1347,122 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
-
-    importGame: function (content) {
+    importMoodle(xmlString) {
+        var xmlDoc = $.parseXML(xmlString),
+            $xml = $(xmlDoc);
+        if ($xml.find("GLOSSARY").length > 0) {
+            return $exeDevice.importGlosary(xmlString);
+        }
+        else if ($xml.find("quiz").length > 0) {
+            return $exeDevice.importCuestionaryXML(xmlString);
+        } else {
+            return false;
+        }
+      },
+    importCuestionaryXML: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $quiz = $xml.find("quiz").first();
+        if ($quiz.length === 0) {
+            return false;
+        }
+        var cardsJson = [];
+        $quiz.find("question").each(function() {
+            var $question = $(this),
+                type = $question.attr('type');
+            if (type !== 'shortanswer') {
+                return true
+            }
+            var questionText = $question.find("questiontext").first().text().trim(),
+                $answers = $question.find("answer"),
+                eText = '',
+                maxFraction = -1;
+            $answers.each(function() {
+                var $answer = $(this),
+                    answerText = $answer.find('text').eq(0).text(),
+                    currentFraction = parseInt($answer.attr('fraction'));
+                if (currentFraction > maxFraction) {
+                    maxFraction = currentFraction;
+                    eText = answerText;
+                }
+            });
+            if (eText && eText.length > 0 && questionText && questionText.length > 0  ) {
+                cardsJson.push({
+                    eTextBk: $exeDevice.removeTags(questionText),
+                    eText: $exeDevice.removeTags(eText),
+                });
+            }
+        });
+        var validQuestions = [];
+        cardsJson.forEach(function(card) {
+            var p = $exeDevice.getCardDefault();
+            p.eTextBk = card.eTextBk;
+            p.eText = card.eText;
+            if (p.eText.length > 0 && p.eTextBk.length > 0) {
+                $exeDevice.cardsGame.push(p);
+                validQuestions.push(p);
+            }
+        });
+        return validQuestions.length > 0 ? $exeDevice.cardsGame : false;
+    },
+    importGlosary: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $entries = $xml.find("ENTRIES").first();
+        if ($entries.length === 0) {
+            return false;
+        }
+        var cardsJson = [];
+        $entries.find("ENTRY").each(function() {
+            var $this = $(this),
+                concept = $this.find("CONCEPT").text(),
+                definition = $this.find("DEFINITION").text().replace(/<[^>]*>/g, '');  // Elimina HTML
+            if (concept && definition) {
+                cardsJson.push({
+                    eText: concept,
+                    eTextBk: definition
+                });
+            }
+        });
+        var valids = 0;
+        cardsJson.forEach(function(card) {
+            var p = $exeDevice.getCardDefault();
+            p.eTextBk = card.eTextBk;
+            p.eText = card.eText;
+            if (p.eText.length > 0 && p.eTextBk.length > 0) {
+                $exeDevice.cardsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.cardsGame : false;
+    },
+    importGame: function (content, filetype) {
         var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
+        if (content && content.includes('\u0000')){
+            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var cards = false;
+            if(filetype.match('text/plain')){
+                cards = $exeDevice.importText(content);
+            }else if(filetype.match('application/xml') || filetype.match('text/xml')){
+                cards =  $exeDevice.importMoodle(content);
+            }
+            if (cards && cards.length>1){
+                $exeDevice.cardsGame = cards;
+           }else{
+                $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                return;
+           }
+        } else  if (!game || typeof game.typeGame == "undefined") {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         } else if (game.typeGame == 'Relaciona') {
@@ -1362,21 +1481,45 @@ var $exeDevice = {
             } else {
                 $("#eXeIdeviceTextAfter").val(unescape(tAfter))
             }
-
+        } else if (game.typeGame == 'QuExt') {
+            $exeDevice.importQuExt(game);
+        }  else if (game.typeGame == 'Adivina') {
+            $exeDevice.importAdivina(game);
         } else if (game.typeGame == 'Rosco') {
-            game.cardsGame = $exeDevice.importRosco(game);
+           $exeDevice.importRosco(game);
         } else if (game.typeGame == 'Sopa') {
-            game.cardsGame = $exeDevice.importSopa(game);
+           $exeDevice.importSopa(game);
         } else {
             $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
             return;
         }
-        $exeDevice.id = $exeDevice.generarID();
-        $exeDevice.cardsGame = game.cardsGame;
         $exeDevice.active = 0;
-        $exeDevice.deleteEmptyQuestion();
         $exeDevice.showCard($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.updateCardsNumber();
         $('.exe-form-tabs li:first-child a').click();
+    },
+    importQuExt: function (data) {
+        for (var i = 0; i < data.questionsGame.length; i++) {
+            var p = $exeDevice.getCardDefault(),
+                cuestion = data.questionsGame[i];
+            p.eText = cuestion.quextion;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            p.eTextBk = '';
+            if (typeof cuestion.options != "undefined" && cuestion.options.length > cuestion.solution) {
+                p.eTextBk = cuestion.options[cuestion.solution];
+            }
+            if (p.eText.length > 0) {
+                $exeDevice.cardsGame.push(p);
+            }
+        }
+        return $exeDevice.cardsGame;
     },
 
     importRelaciona: function (data) {
@@ -1418,6 +1561,42 @@ var $exeDevice = {
         }
         return $exeDevice.cardsGame;
     },
+    importAdivina: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCardDefault(),
+                cuestion = data.wordsGame[i];
+            p.eText = cuestion.word;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.solution = '';
+            p.eTextBk = cuestion.definition;
+            if (p.url.length > 3 || p.audio.length > 3 || p.eText.length > 0) {
+                $exeDevice.cardsGame.push(p);
+            }
+        }
+        return $exeDevice.cardsGame;
+    },
+
+    importText: function(content){
+        var lines = content.split('\n'),
+             lineFormat = /^([^#]+)#([^#]+)(#([^#]+))?(#([^#]+))?$/,
+             valids= 0;
+        lines.forEach(function(line) {
+            if (lineFormat.test(line)) {
+                var p = $exeDevice.getCardDefault();
+                var linarray = line.trim().split("#")
+                p.eText = linarray[0];
+                p.eTextBk = linarray[1];
+                $exeDevice.cardsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.cardsGame : false;
+    },
 
     importSopa: function (data) {
         for (var i = 0; i < data.wordsGame.length; i++) {
@@ -1443,8 +1622,8 @@ var $exeDevice = {
         var url = $('#rclEURLImage').val().trim(),
             audio = $('#rclEURLAudio').val().trim(),
             eText = $('#rclEText').val().trim();
-        if ($exeDevice.cardsGame.length > 1) {
-            if (url.length == 0 && audio.length == 0 && eText.length == 0) {
+        if ($exeDevice.cardsGame && $exeDevice.cardsGame.length > 1) {
+            if (url.length < 3 && audio.length < 3 && eText.trim().length == 0) {
                 $exeDevice.removeCard();
             }
         }
