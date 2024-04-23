@@ -815,12 +815,121 @@ var $exeDevice = {
 		}
 		return caracter;
 	},
-	importGame: function (content) {
+	importMoodle(xmlString) {
+        var xmlDoc = $.parseXML(xmlString),
+            $xml = $(xmlDoc);
+        if ($xml.find("GLOSSARY").length > 0) {
+            return $exeDevice.importGlosary(xmlString);
+        }
+        else if ($xml.find("quiz").length > 0) {
+            return $exeDevice.importCuestionaryXML(xmlString);
+        } else {
+            return false;
+        }
+      },
+    importCuestionaryXML: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $quiz = $xml.find("quiz").first();
+        if ($quiz.length === 0) {
+            return false;
+        }
+        var words = [];
+        $quiz.find("question").each(function() {
+            var $question = $(this),
+                type = $question.attr('type');
+            if (type !== 'shortanswer') {
+                return true
+            }
+            var questionText = $question.find("questiontext").first().text().trim(),
+                $answers = $question.find("answer"),
+                word = '',
+                maxFraction = -1;
+            $answers.each(function() {
+                var $answer = $(this),
+                    answerText = $answer.find('text').eq(0).text(),
+                    currentFraction = parseInt($answer.attr('fraction'));
+                if (currentFraction > maxFraction) {
+                    maxFraction = currentFraction;
+                    word = answerText;
+                }
+            });
+            if (word && questionText && questionText.length > 0  ) {
+                words.push($exeDevice.removeTags(word) + '#' + $exeDevice.removeTags(word));
+            }
+        });
+		if(words.length > 0){
+			var swords = $exeDevice.getImportLetters($exeDevice.letters, words);
+			if(swords.length>0){
+				$exeDevice.updateImportFields(swords);
+				$('.exe-form-tabs li:first-child a').click();
+			}else{
+				eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+
+			}
+        }else{
+            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+        }
+
+    },
+    importGlosary: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $entries = $xml.find("ENTRIES").first();
+        if ($entries.length === 0) {
+            return false;
+        }
+        var words = [];
+        $entries.find("ENTRY").each(function() {
+            var $this = $(this),
+                concept = $this.find("CONCEPT").text(),
+                definition = $this.find("DEFINITION").text().replace(/<[^>]*>/g, ''); 
+            if (concept && definition) {
+                words.push(concept+'#'+definition);
+            }
+        });
+		if(words.length > 0){
+			var swords = $exeDevice.getImportLetters($exeDevice.letters, words);
+			if(swords.length>0){
+				$exeDevice.updateImportFields(swords);
+				$('.exe-form-tabs li:first-child a').click();
+			}else{
+				eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+
+			}
+        }else{
+            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+        }
+    },
+	importGame: function (content, filetype) {
 		var game = $exeDevice.isJsonString(content);
-		if (!game || typeof game.typeGame == "undefined") {
-			eXe.app.alert($exeDevice.msgs.msgSelectFile);
-			return;
-		} else if (game.typeGame !== 'Rosco') {
+		if (content && content.includes('\u0000')){
+            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+			if(filetype.match('text/plain')){
+                $exeDevice.importText(content);
+				return;
+            }else if(filetype.match('application/xml') || filetype.match('text/xml')){
+                $exeDevice.importMoodle(content);
+				return;
+            }else{
+				eXe.app.alert(_('El formato de las preguntas en el archivo no es correcto'));
+                return
+            }
+    			return;
+        } else if (!game || typeof game.typeGame == "undefined") {
+            eXe.app.alert($exeDevice.msgs.msgSelectFile);
+            return;
+        } else if (game.typeGame !== 'Rosco') {
 			eXe.app.alert($exeDevice.msgs.msgSelectFile);
 			return;
 		}
@@ -973,15 +1082,22 @@ var $exeDevice = {
 			this.value = this.value < 0 ? 1 : this.value;
 		});
 		if (window.File && window.FileReader && window.FileList && window.Blob) {
-			$('#eXeGameExportImport').show();
+			$('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt');
+            $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json, .xml');
 			$('#eXeGameImportGame').on('change', function (e) {
 				var file = e.target.files[0];
 				if (!file) {
-					return;
-				}
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
 				var reader = new FileReader();
 				reader.onload = function (e) {
-					$exeDevice.importGame(e.target.result);
+					$exeDevice.importGame(e.target.result, file.type);
 				};
 				reader.readAsText(file);
 			});
@@ -1001,6 +1117,153 @@ var $exeDevice = {
 
         });
 		$exeAuthoring.iDevice.gamification.itinerary.addEvents();
+	},
+	rearrangeAlphabet: function(alphabet) {
+		const vowels = 'AEIOU';
+		let consonants = alphabet.split('').filter(letter => !vowels.includes(letter));
+		const indiceN = consonants.indexOf('Ñ');
+		let nTilde = '';
+		if (indiceN !== -1) {
+			nTilde = consonants.splice(indiceN, 1); 
+		}
+		return nTilde + consonants.join('') + vowels;
+	},
+	normaliceLetter:function(letter) {
+		return letter.toUpperCase() == 'Ñ'? 'Ñ': letter.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
+	},
+	normaliceWord:function(word) {
+		if (word.trim().length == 1){
+			return word.toUpperCase() == 'Ñ'? 'Ñ': word.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
+		}else{
+			return word.includes('Ñ') ? word.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase()+'Ñ' : word.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
+		}
+	},
+	getImportLetters: function(alphabet_letters, stringArray){
+		let usedWords = new Set();
+		let result_letters = [];
+		let abcs = $exeDevice.rearrangeAlphabet(alphabet_letters);
+		for (let j = 0; j < stringArray.length; j++ ){
+			let fStrings = stringArray[j].split('#');
+			let sword = fStrings[0];
+			let sdefinition = fStrings[1];
+			let sletter = '';
+			let sstatus ='-1';
+			if(usedWords.has(sword)|| fStrings.length < 3 ) continue;
+			sstatus = fStrings[2];
+			if(sstatus === "0"){
+				if( abcs.length > 0 &&  abcs.includes(sletter)){
+					sletter = $exeDevice.normaliceLetter(sword[0]).toUpperCase();
+					result_letters.push(`${sletter}#0#${sword}#${sdefinition}`);
+					usedWords.add(sword);
+					abcs = abcs.replace(sletter, '');
+				}
+			}else if(sstatus == "1" && fStrings.length == 4){
+					sletter = fStrings[3];
+					sletter = $exeDevice.normaliceLetter(sletter).toUpperCase();
+					if( abcs.length > 0 && abcs.includes(sletter) && sword.slice(1).toUpperCase().includes(sletter)){
+						result_letters.push(`${sletter}#1#${sword}#${sdefinition}`);
+						usedWords.add(sword);
+						abcs = abcs.replace(sletter, '');
+					}
+			}else if(sstatus == "1"){
+				if(sword.length > 1){
+					for (let i = 1; sword.length; i++){
+						sletter = $exeDevice.normaliceLetter(sword[i]).toUpperCase()
+						if(abcs.length > 0 &&  abcs.includes(sletter)){
+							usedWords.add(sword);
+							result_letters.push(`${sletter}#1#${sword}#${sdefinition}`);
+							abcs = abcs.replace(sletter, '');
+							break;
+						}
+					}
+				}
+			}
+		}
+		if (abcs.trim().length == 0) return result_letters.sort();
+		let abc = abcs.trim();
+		abcs.split('').forEach(sletter => {
+			let swordFind = stringArray.find(cadena => {
+				let [sword,] = cadena.split('#');
+				let primerasletterNormalizada = $exeDevice.normaliceLetter(sword[0]).toUpperCase();
+				return  primerasletterNormalizada === sletter
+						&& !usedWords.has(sword)
+						&& !result_letters.some(c => c.includes(`${sletter}#0#`))
+						&& !result_letters.some(c => c.includes(`${sletter}#1#`));
+			});
+			if (swordFind) {
+				if(abc.length > 0 &&  abc.includes(sletter)){
+					let [sword, sdefinition] = swordFind.split('#');
+					result_letters.push(`${sletter}#0#${sword}#${sdefinition}`);
+					abc = abc.replace(sletter, '');
+					usedWords.add(sword);
+				}
+			}
+		});
+		if (abc.trim().length == 0) return result_letters.sort();
+		abc.split('').forEach(sletter => {
+			let swordFind = stringArray.find(cadena => {
+					let [sword,] = cadena.split('#');
+					if (sword.length < 2) return false;
+					let csword = sword.slice(1).toUpperCase();
+					let swordNormalizada = $exeDevice.normaliceWord(csword);
+					return  swordNormalizada.includes(sletter)
+						&& !usedWords.has(sword)
+						&& !result_letters.some(c => c.includes(`${sletter}#0#`))
+						&& !result_letters.some(c => c.includes(`${sletter}#1#`));
+
+				});
+				if (swordFind) {
+					let [sword, sdefinition] = swordFind.split('#');
+					result_letters.push(`${sletter}#1#${sword}#${sdefinition}`);
+					usedWords.add(sword);
+				}
+		});
+		return result_letters.sort();
+	},
+
+	importText: function(content){
+        var lines = content.split('\n'),
+			lineFormat = /^([^#]+)#([^#]+)(#(0|1)(#[A-Za-zÑñ])?)?$/,
+			words = [];
+        lines.forEach(function(line) {
+            if (lineFormat.test(line)) {
+				words.push(line.trim());
+            }
+        });
+        if(words.length > 0){
+			var swords = $exeDevice.getImportLetters($exeDevice.letters, words);
+			if(swords.length>0){
+				$exeDevice.updateImportFields(swords);
+				$('.exe-form-tabs li:first-child a').click();
+			}else{
+				eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+
+			}
+        }else{
+            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+        }
+    },
+	updateImportFields: function(wordsArray) {
+		$('.roscoDefinitionEdition, .roscoWordEdition, .roscoURLAudioEdition, .roscoURLImageEdition').val('');
+		$('.roscoXImageEdition, .roscoYImageEdition').val('0');
+		$('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + "roscoStart.png").attr("alt", _("The word starts with..."));
+		$('.roscoLetterEdition').css('background-color', $exeDevice.colors.grey)
+		$('.roscoWordMutimediaEdition').each(function() {
+			var $this = $(this);
+			var letter = $this.find('.roscoLetterEdition').eq(0).text().toUpperCase();
+			for (var i = 0; i < wordsArray.length; i++) {
+				var wordParts = wordsArray[i].split('#');
+				if (wordParts.length >= 4 && letter == wordParts[0].toUpperCase()) {
+					$this.find('.roscoDefinitionEdition').eq(0).val(wordParts[3]);
+					$this.find('.roscoWordEdition').eq(0).val(wordParts[2]);
+					$this.find('h3.roscoLetterEdition').eq(0).css('background-color', $exeDevice.colors.blue)
+					if (wordParts[1] == "1") {
+						$this.find('.roscoStartEdition').attr('src', $exeDevice.iDevicePath + "roscoContains.png").attr("alt", _("The word contains..."));
+					}
+					break;
+				}
+			}
+		});
 	},
 	playSound: function (selectedFile) {
 		$exeDevice.stopSound();
@@ -1031,7 +1294,7 @@ var $exeDevice = {
 		const data = window.URL.createObjectURL(newBlob);
 		var link = document.createElement('a');
 		link.href = data;
-		link.download = $exeDevice.msgs.msgGame + "Rosco.json";
+		link.download = _("Activity") + "-Rosco.json";
 		document.getElementById('roscoIdeviceForm').appendChild(link);
 		link.click();
 		setTimeout(function () {

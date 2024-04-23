@@ -102,7 +102,6 @@
 #roscoIdeviceForm .roscoWordMutimediaEdition  a:active   {
   outline: 0;
   border: none;
-  -moz-outline-style: none;
 }
 #roscoIdeviceForm .roscoStartEdition, #roscoIdeviceForm .roscoSelectImageEdition,#roscoIdeviceForm .roscoCloseImage  {
   margin: 0;

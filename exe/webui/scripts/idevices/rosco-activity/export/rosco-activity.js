@@ -1068,7 +1068,6 @@ var $eXeRosco = {
 					$Author.text(mWord.author);
 					$Image.attr('alt', mWord.alt);
 					$eXeRosco.positionPointer(instance);
-					console.log('showImage: imagen cargada', url)
 				}
 			}).on('error', function () {
 				$cursor.hide();
@@ -1277,6 +1276,7 @@ var $eXeRosco = {
 		}
 		var percentageHits = (mOptions.hits / mOptions.validWords) * 100;
 		mOptions.answeredWords++;
+		mOptions.wordsGame[mOptions.activeWord].correct = Hit ? 1 : 2;
 		$('#roscotPHits-' + instance).text(mOptions.hits);
 		$('#roscotPErrors-' + instance).text(mOptions.errors);
 		var timeShowSolution = mOptions.showSolution ? mOptions.timeShowSolution * 1000 : 1000;

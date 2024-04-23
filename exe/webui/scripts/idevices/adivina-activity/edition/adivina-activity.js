@@ -713,6 +713,8 @@ var $exeDevice = {
         p.tSilentVideo = 0;
         p.msgHit = '';
         p.msgError = '';
+        p.percentageShow = 35
+        p.time = 0
         return p;
     },
     loadPreviousValues: function (field) {
@@ -1300,15 +1302,22 @@ var $exeDevice = {
         });
 
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt');
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json, .xml');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
                 reader.onload = function (e) {
-                    $exeDevice.importGame(e.target.result);
+                    $exeDevice.importGame(e.target.result, file.type);
                 };
                 reader.readAsText(file);
             });
@@ -1745,7 +1754,6 @@ var $exeDevice = {
         var IDE = `${a}${m}${d}${h}${min}${s}${o}`;
         return IDE;
     },
-
     updateFieldGame: function (game) {
         $exeDevice.active = 0;
         $exeAuthoring.iDevice.gamification.itinerary.setValues(game.itinerary);
@@ -1791,17 +1799,18 @@ var $exeDevice = {
             var p = game.wordsGame[i];
             if (version < 2) {
                 p.type = p.type == 2 ? 1 : p.type;
-                p.percentageShow = typeof game.percentageShow == 'undefined' ? 35 : game.percentageShow;
-                p.time = typeof game.timeQuestion == 'undefined' ? 1 : $exeDevice.getIndexTime(game.timeQuestion);
-                p.soundVideo = 1;
-                p.imageVideo = 1;
-                p.iVideo = 0;
-                p.fVideo = 0;
-                p.silentVideo = 0;
-                p.fVideo = 0;
-                p.eText = '';
-                p.audio = '';
             }
+            p.soundVideo = typeof p.soundVideo == 'undefined' ? 1 :p.soundVideo;
+            p.imageVideo = typeof p.imageVideo == 'undefined' ? 1 :p.imageVideo;
+            p.iVideo = typeof p.iVideo == 'undefined' ? 0 :p.iVideo;
+            p.fVideo = typeof p.fVideo == 'undefined' ? 0 :p.fVideo;
+            p.silentVideo = typeof p.silentVideo == 'undefined' ? 0 :p.silentVideo;
+            p.eText = typeof p.eText == 'undefined' ? '' :p.eText;
+            p.percentageShow = typeof game.percentageShow == 'undefined' ? 35 : game.percentageShow;
+            p.time = typeof game.timeQuestion == 'undefined' ? 1 : $exeDevice.getIndexTime(game.timeQuestion);
+            p.audio = typeof p.audio == "undefined" ? "" : p.audio;
+            p.hit = typeof p.hit == "undefined" ? -1 : p.hit;
+            p.error = typeof p.error == "undefined" ? -1 : p.error;
             p.msgHit = typeof p.msgHit == "undefined" ? "" : p.msgHit;
             p.msgError = typeof p.msgError == "undefined" ? "" : p.msgError;
             p.time = p.time < 0 ? 0 : p.time;
@@ -1838,7 +1847,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Adivina.json";
+        link.download = _("Activity") + "-Adivina.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -1846,30 +1855,240 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
-
-    importGame: function (content) {
-        var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
-            eXe.app.alert($exeDevice.msgs.msgESelectFile);
-            return;
-        } else if (game.typeGame !== 'Adivina') {
-            eXe.app.alert($exeDevice.msgs.msgESelectFile);
-            return;
-        }
+    importText: function(content){
+        var lines = content.split('\n'),
+            lineFormat = /^([^#]+)#([^#]+)(#([^#]+))?(#([^#]+))?$/,
+            valids = 0;
+        lines.forEach(function(line) {
+            var p = $exeDevice.getCuestionDefault();
+            if (lineFormat.test(line)) {
+                var linarray = line.trim().split("#")
+                p.word = linarray[0];
+                p.definition = linarray[1];
+                $exeDevice.wordsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.wordsGame : false;
+    },
+    deleteEmptyQuestion: function () {
         if ($exeDevice.wordsGame.length > 1) {
-            game.wordsGame = $exeDevice.importAdivina(game)
+            var quextion = $('#adivinaESolutionWord').val().trim();
+            if (quextion.length == 0) {
+                $exeDevice.removeQuestion();
+            }
         }
-        game.id = $exeDevice.generarID();
-        $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions,
-            tAfter = game.textAfter || "",
-            textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('adivinaEFeedBackEditor').setContent(unescape(textFeedBack));
-        $('.exe-form-tabs li:first-child a').click();
+    },
+
+    importRosco: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault(),
+                cuestion = data.wordsGame[i];
+            p.type = 0
+            p.url = cuestion.url;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.word = cuestion.word;
+            p.definition = cuestion.definition;
+            if (p.word.trim().length > 0 && p.definition.trim().length >0) {
+                $exeDevice.wordsGame.push(p);
+            }
+        }
+        return $exeDevice.wordsGame;
+    },
+    importSopa: function (data) {
+        for (var i = 0; i < data.wordsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault(),
+                cuestion = data.wordsGame[i];
+            p.definition = cuestion.definition;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.word = cuestion.word;
+            if (p.word.trim().length > 0 && p.definition.trim().length >0) {
+                $exeDevice.wordsGame.push(p);
+            }
+        }
+        return $exeDevice.wordsGame;
+    },
+    importRelaciona: function (data) {
+        for (var i = 0; i < data.cardsGame.length; i++) {
+            var p = $exeDevice.getCuestionDefault(),
+                cuestion = data.cardsGame[i];
+            p.definition = cuestion.eTextBk;
+            p.url = cuestion.url;
+            p.audio = typeof cuestion.audio == "undefined" ? "" : cuestion.audio;
+            p.x = cuestion.x;
+            p.y = cuestion.y;
+            p.author = cuestion.author;
+            p.alt = cuestion.alt;
+            p.word = cuestion.eText;
+            if (p.word.trim().length > 0 && p.definition.trim().length > 0) {
+                $exeDevice.wordsGame.push(p);
+            }
+        }
+        return $exeDevice.wordsGame;
+    },
+    importMoodle(xmlString) {
+        var xmlDoc = $.parseXML(xmlString),
+            $xml = $(xmlDoc);
+        if ($xml.find("GLOSSARY").length > 0) {
+            return $exeDevice.importGlosary(xmlString);
+        }
+        else if ($xml.find("quiz").length > 0) {
+            return $exeDevice.importCuestionaryXML(xmlString);
+        } else {
+            return false;
+        }
+      },
+    importCuestionaryXML: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $quiz = $xml.find("quiz").first();
+        if ($quiz.length === 0) {
+            return false;
+        }
+        var wordsJson = [];
+        $quiz.find("question").each(function() {
+            var $question = $(this),
+                type = $question.attr('type');
+            if (type !== 'shortanswer') {
+                return true
+            }
+            var questionText = $question.find("questiontext").first().text().trim(),
+                $answers = $question.find("answer"),
+                word = '',
+                maxFraction = -1;
+            $answers.each(function() {
+                var $answer = $(this),
+                    answerText = $answer.find('text').eq(0).text(),
+                    currentFraction = parseInt($answer.attr('fraction'));
+                if (currentFraction > maxFraction) {
+                    maxFraction = currentFraction;
+                    word = answerText;
+                }
+            });
+            if (word && word.length > 0 && questionText && questionText.length > 0  ) {
+                wordsJson.push({
+                    definition: $exeDevice.removeTags(questionText),
+                    word: $exeDevice.removeTags(word),
+                });
+            }
+        });
+        var validQuestions = [];
+        wordsJson.forEach(function(question) {
+            var p = $exeDevice.getCuestionDefault();
+            p.definition = question.definition;
+            p.word = question.word;
+            if (p.word.length > 0 && p.definition.length > 0) {
+                $exeDevice.wordsGame.push(p);
+                validQuestions.push(p);
+            }
+        });
+        return validQuestions.length > 0 ? $exeDevice.wordsGame : false;
+    },
+    importGlosary: function(xmlText) {
+        var parser = new DOMParser(),
+            xmlDoc = parser.parseFromString(xmlText, "text/xml"),
+            $xml = $(xmlDoc);
+        if ($xml.find("parsererror").length > 0) {
+            return false;
+        }
+        var $entries = $xml.find("ENTRIES").first();
+        if ($entries.length === 0) {
+            return false;
+        }
+        var wordsJson = [];
+        $entries.find("ENTRY").each(function() {
+            var $this = $(this),
+                concept = $this.find("CONCEPT").text(),
+                definition = $this.find("DEFINITION").text().replace(/<[^>]*>/g, '');  // Elimina HTML
+            if (concept && definition) {
+                wordsJson.push({
+                    word: concept,
+                    definition: definition
+                });
+            }
+        });
+        var valids = 0;
+        wordsJson.forEach(function(word) {
+            var p = $exeDevice.getCuestionDefault();
+            p.definition = word.definition;
+            p.word = word.word;
+            if (p.word.length > 0 && p.definition.length > 0) {
+                $exeDevice.wordsGame.push(p);
+                valids++;
+            }
+        });
+        return valids > 0 ? $exeDevice.wordsGame : false;
+    },
+    importGame: function (content, filetype) {
+        var game = $exeDevice.isJsonString(content);
+        if (content && content.includes('\u0000')){
+            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var words = false;
+            if(filetype.match('text/plain')){
+                words = $exeDevice.importText(content);
+            }else if(filetype.match('application/xml') || filetype.match('text/xml')){
+                words =  $exeDevice.importMoodle(content);
+            }
+            if(words && words.length > 0){
+                $exeDevice.wordsGame = words;
+            }else{
+                $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                return
+            }
+        } else if (game &&  game.typeGame == "Rosco") {
+            $exeDevice.wordsGame = $exeDevice.importRosco(game);
+        } else if (game &&  game.typeGame == "Sopa") {
+            $exeDevice.wordsGame = $exeDevice.importSopa(game);
+        } else if (game &&  game.typeGame == "Relaciona") {
+            $exeDevice.wordsGame = $exeDevice.importRelaciona(game);
+        } else if (!game || game.typeGame == "undefined") {
+            $exeDevice.showMessage($exeDevice.msgs.msgESelectFile);
+            return;
+        } else if (game && game.typeGame == 'Adivina') {
+            game.id = $exeDevice.generarID();
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
+                tAfter = game.textAfter || "",
+                textFeedBack = game.textFeedBack || "";
+            if (tinyMCE.get('eXeGameInstructions')) {
+                tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            } else {
+                $("#eXeGameInstructions").val(unescape(instructions))
+            }
+            if (tinyMCE.get('eXeIdeviceTextAfter')) {
+                tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            } else {
+                $("#eXeIdeviceTextAfter").val(unescape(tAfter))
+            }
+            if (tinyMCE.get('adivinaEFeedBackEditor')) {
+                tinyMCE.get('adivinaEFeedBackEditor').setContent(unescape(textFeedBack));
+            } else {
+                $("#adivinaEFeedBackEditor").val(unescape(textFeedBack))
+            }
+        } else if (game && game.typeGame !== 'Adivina') {
+            eXe.app.alert($exeDevice.msgs.msgESelectFile);
+            return;
+        }
         $exeDevice.active = 0;
         $exeDevice.showQuestion($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.updateQuestionsNumber();
+        $('.exe-form-tabs li:first-child a').click();
     },
     importAdivina: function (game) {
         var wordsGame = $exeDevice.wordsGame;
