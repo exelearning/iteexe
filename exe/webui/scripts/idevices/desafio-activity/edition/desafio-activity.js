@@ -727,7 +727,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "desafio.json";
+        link.download = _("Activity") + "-Desafio.json";
         document.getElementById('desafioIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {

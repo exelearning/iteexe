@@ -286,7 +286,7 @@ var $exeDevice = {
            <span class="CQE-ETitleText" id="clasificaETitleText">' + _("Text") + '</span>\
            <div class="CQE-EInputImage" id="clasificaEInputText">\
                 <label for="clasificaEText" class="sr-av">' + _("Text") + '</label><input id="clasificaEText" type="text" />\
-                <label for="clasificaEColor">' + _("Font") + ': </label><input type="color" id="clasificaEColor" name="clasificaEColor" value="#000000">\
+                <label for="clasificaEColor">' + _("Color") + ': </label><input type="color" id="clasificaEColor" name="clasificaEColor" value="#000000">\
                 <label for="clasificaEBackColor">' + _("Background") + ': </label><input type="color" id="clasificaEBackColor" name="clasificaEBackColor" value="#ffffff">\
             </div>\
            <span class="CQE-ETitleImage" id="clasificaETitleImage">' + _("Image") + '</span>\
@@ -344,6 +344,8 @@ var $exeDevice = {
         var num = i < 0 ? 0 : i;
         num = num >= $exeDevice.wordsGame.length ? $exeDevice.wordsGame.length - 1 : num;
         var p = $exeDevice.wordsGame[num];
+        $('#clasificaEColor').val(p.color);
+        $('#clasificaEBackColor').val(p.backcolor);
         $exeDevice.changeTypeQuestion(p.type);
         $('#clasificaEURLImage').val(p.url);
         $('#clasificaEXImage').val(p.x);
@@ -352,8 +354,6 @@ var $exeDevice = {
         $('#clasificaEAlt').val(p.alt);
         $('#clasificaEText').val(p.eText)
         $('#clasificaETextDiv').text(p.eText);
-        $('#clasificaEColor').val(p.color);
-        $('#clasificaEBackColor').val(p.backcolor);
         if (p.type == 0 || p.type == 2) {
             $exeDevice.showImage(p.url, p.x, p.y, p.alt);
         }
@@ -364,7 +364,7 @@ var $exeDevice = {
             })
         } else if (p.type == 2) {
             $('#clasificaETextDiv').css({
-                'color': '#000',
+                'color': '#000000',
                 'background-color': 'rgba(255, 255, 255, 0.7)'
             })
         }
@@ -441,7 +441,7 @@ var $exeDevice = {
                 $('label[for=clasificaEBackColor]').hide();
                 $('label[for=clasificaEColor]').hide();
                 $('#clasificaETextDiv').css({
-                    'color': '#000',
+                    'color': '#000000',
                     'background-color': 'rgba(255, 255, 255, 0.7)'
                 });
                 break;
@@ -464,8 +464,8 @@ var $exeDevice = {
         p.msgError = '';
         p.msgHit = '';
         p.group = 0;
-        p.color = '#000';
-        p.backcolor = '#fff';
+        p.color = '#000000';
+        p.backcolor = '#ffffff';
         return p;
     },
     loadPreviousValues: function (field) {
@@ -656,7 +656,7 @@ var $exeDevice = {
         } else if (p.type == 1) {
             p.url = ''
         } else if (p.type == 2) {
-            p.color = '#000'
+            p.color = '#000000'
             p.backcolor = 'rgba(255, 255, 255, 0.7)'
         }
 
@@ -864,10 +864,17 @@ var $exeDevice = {
             }
         });
         if (window.File && window.FileReader && window.FileList && window.Blob) {
+            $('#eXeGameExportImport .exe-field-instructions').eq(0).text( _("Supported formats") + ': json, txt')
             $('#eXeGameExportImport').show();
+            $('#eXeGameImportGame').attr('accept', '.txt, .json');
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    return;
+                }
+                if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json'))) {
+                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
                     return;
                 }
                 var reader = new FileReader();
@@ -1244,7 +1251,7 @@ var $exeDevice = {
         game.feedBack = typeof game.feedBack != "undefined" ? game.feedBack : false;
         game.customMessages = typeof game.customMessages == "undefined" ? false : game.customMessages;
         game.percentajeQuestions = typeof game.percentajeQuestions == "undefined" ? 100 : game.percentajeQuestions;
-         game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
+        game.evaluation = typeof game.evaluation != "undefined" ? game.evaluation : false;
         game.evaluationID = typeof game.evaluationID != "undefined" ? game.evaluationID : '';
         $exeDevice.id = typeof game.id != "undefined" ? game.id : false;
         $('#clasificaEShowMinimize').prop('checked', game.showMinimize);
@@ -1288,7 +1295,7 @@ var $exeDevice = {
         const data = window.URL.createObjectURL(newBlob);
         var link = document.createElement('a');
         link.href = data;
-        link.download = _("Game") + "Clasifica.json";
+        link.download = _("Activity") + "-Clasifica.json";
         document.getElementById('gameQEIdeviceForm').appendChild(link);
         link.click();
         setTimeout(function () {
@@ -1296,26 +1303,101 @@ var $exeDevice = {
             window.URL.revokeObjectURL(data);
         }, 100);
     },
+    importText: function(content){
+        var lines = content.split('\n'),
+            lineFormat = /^(0|1|2|3)#([^#]+)$/,
+            questions = [],
+            valids = [];
+        lines.forEach(function(line) {
+            if (lineFormat.test(line)) {
+                var p = $exeDevice.getCuestionDefault();
+                valids.push(line)
+                var linarray = line.trim().split("#");
+                p.type = 1;
+                p.url = '';
+                p.audio = '';
+                p.eText =  linarray[1];
+                p.group =parseInt(linarray[0],10);
+                p.color = '#000000';
+                p.backcolor = '#ffffff';
+                questions.push(p);
+            }
+        });
+       var numgroups = $exeDevice.validateGroups(valids)
+       if(numgroups){
+            $exeDevice.numberGroups = numgroups;
+            $("input.CQE-Number[name='qxtnumber'][value='" +numgroups + "']").prop("checked", true);
+            $exeDevice.showGroups(numgroups);
+            return questions
+       }else{
+            return false
+       }
+    },
+
+    validateGroups:function(elments) {
+        const groups = {};
+        for (let element of elments) {
+            const [group, nombre] = element.split('#');
+            group == parseInt()
+            if (group >= 0 && group <= 3) {
+                groups[group] = (groups[group] || 0) + 1;
+            } else {
+                return false;
+            }
+        }
+        const numGroups = Object.keys(groups).length;
+        const allGroupsPresent = Object.keys(groups).every((group, index) => groups.hasOwnProperty(index.toString()));
+        const valid = numGroups >= 2 && numGroups <= 4 && allGroupsPresent;
+        if (valid){
+            return numGroups
+        }
+        return false;
+    },
 
     importGame: function (content) {
         var game = $exeDevice.isJsonString(content);
-        if (!game || typeof game.typeGame == "undefined") {
+        if (content && content.includes('\u0000')){
+            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            return;
+        } else if (!game && content){
+            var words = $exeDevice.importText(content);
+            if (words && words .length){
+               $exeDevice.wordsGame = words;
+            } else {
+                eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+                return;
+            }
+        } else if (!game || typeof game.typeGame == "undefined") {
             eXe.app.alert($exeDevice.msgs.msgESelectFile);
             return;
-        } else if (game.typeGame !== 'Clasifica') {
+        }else if (game.typeGame !== 'Clasifica') {
             eXe.app.alert($exeDevice.msgs.msgESelectFile);
             return;
-        }
-        game.id = $exeDevice.generarID();
-        $exeDevice.updateFieldGame(game);
-        var instructions = game.instructionsExe || game.instructions,
+        }else if (game.typeGame == 'Clasifica') {
+            game.id = $exeDevice.generarID();
+            $exeDevice.updateFieldGame(game);
+            var instructions = game.instructionsExe || game.instructions,
             tAfter = game.textAfter || "",
             textFeedBack = game.textFeedBack || "";
-        tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
-        tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
-        tinyMCE.get('clasificaEFeedBackEditor').setContent(unescape(textFeedBack));
+            tinyMCE.get('eXeGameInstructions').setContent(unescape(instructions));
+            tinyMCE.get('eXeIdeviceTextAfter').setContent(unescape(tAfter));
+            tinyMCE.get('clasificaEFeedBackEditor').setContent(unescape(textFeedBack));
+        }
+        $exeDevice.active = 0;
+        $exeDevice.showQuestion($exeDevice.active);
+        $exeDevice.deleteEmptyQuestion();
+        $exeDevice.updateQuestionsNumber();
         $('.exe-form-tabs li:first-child a').click();
-        $exeDevice.showQuestion(0);
+    },
+    deleteEmptyQuestion: function () {
+        if ($exeDevice.wordsGame.length > 1) {
+            var word = $('#clasificaEText').val().trim();
+            var img = $('#clasificaEInputImage').val().trim();
+            var audio = $('#clasificaEInputAudio').val().trim();
+            if (word.length == 0 && img.length < 4 && audio.length < 4) {
+                $exeDevice.removeQuestion();
+            }
+        }
     },
 
     isJsonString: function (str) {
