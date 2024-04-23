@@ -2237,16 +2237,10 @@ var $eXeTrivial = {
         $('#trivialEPhrase-' + instance).show();
         $('#trivialDivResponder-' + instance).show();
         $('#trivialAnswerDiv-' + instance).hide();
-        
+        $('#trivialDivModeBoard-' + instance).hide();
         if (mOptions.modeBoard) {
             $('#trivialDivModeBoard-' + instance).css('display', 'flex');
             $('#trivialDivModeBoard-' + instance).fadeIn();
-        }
-        if (typeof open !="undefined" && open) {
-            $('#trivialDivModeBoard-' + instance).css('display', 'flex');
-            $('#trivialDivModeBoard-' + instance).fadeIn();
-            $('#trivialEPhrase-' + instance).hide();
-            $('#trivialDivResponder-' + instance).hide();
         }
         if (!casesensitive) {
             phrase = phrase.toUpperCase();
@@ -2282,7 +2276,6 @@ var $eXeTrivial = {
         if (!solution) {
             $('#trivialDefinition-' + instance).text(definition);
         }
-
         var html = $('#trivialWordDiv-' + instance).html(),
             latex = /(?:\\\(|\\\[|\\begin\{.*?})/.test(html);
         if (latex) {
