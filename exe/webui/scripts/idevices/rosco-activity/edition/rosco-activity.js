@@ -868,11 +868,11 @@ var $exeDevice = {
 				$exeDevice.updateImportFields(swords);
 				$('.exe-form-tabs li:first-child a').click();
 			}else{
-				eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+				eXe.app.alert(_('Sorry, wrong file format'));
 
 			}
         }else{
-            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            eXe.app.alert(_('Sorry, wrong file format'));
         }
 
     },
@@ -902,17 +902,17 @@ var $exeDevice = {
 				$exeDevice.updateImportFields(swords);
 				$('.exe-form-tabs li:first-child a').click();
 			}else{
-				eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+				eXe.app.alert(_('Sorry, wrong file format'));
 
 			}
         }else{
-            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            eXe.app.alert(_('Sorry, wrong file format'));
         }
     },
 	importGame: function (content, filetype) {
 		var game = $exeDevice.isJsonString(content);
 		if (content && content.includes('\u0000')){
-            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            eXe.app.alert(_('Sorry, wrong file format'));
             return;
         } else if (!game && content){
 			if(filetype.match('text/plain')){
@@ -922,7 +922,7 @@ var $exeDevice = {
                 $exeDevice.importMoodle(content);
 				return;
             }else{
-				eXe.app.alert(_('El formato de las preguntas en el archivo no es correcto'));
+				eXe.app.alert(_('Sorry, wrong file format'));
                 return
             }
     			return;
@@ -1088,11 +1088,11 @@ var $exeDevice = {
 			$('#eXeGameImportGame').on('change', function (e) {
 				var file = e.target.files[0];
 				if (!file) {
-                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
                     return;
                 }
                 if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
-                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
                     return;
                 }
 				var reader = new FileReader();
@@ -1236,11 +1236,11 @@ var $exeDevice = {
 				$exeDevice.updateImportFields(swords);
 				$('.exe-form-tabs li:first-child a').click();
 			}else{
-				eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+				eXe.app.alert(_('Sorry, wrong file format'));
 
 			}
         }else{
-            eXe.app.alert(_('El formato de las preguntas del archivo no es correcto'));
+            eXe.app.alert(_('Sorry, wrong file format'));
         }
     },
 	updateImportFields: function(wordsArray) {

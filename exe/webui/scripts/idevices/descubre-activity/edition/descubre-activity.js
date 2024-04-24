@@ -1121,11 +1121,11 @@ var $exeDevice = {
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
-                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
                     return;
                 }
                 if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
-                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
                     return;
                 }
                 var reader = new FileReader();
@@ -1790,7 +1790,7 @@ var $exeDevice = {
     importGame: function (content, filetype) {
         var game = $exeDevice.isJsonString(content);
         if (content && content.includes('\u0000')){
-            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            $exeDevice.showMessage(_('Sorry, wrong file format'));
             return;
         } else if (!game && content){
             var valids = false;
@@ -1803,7 +1803,7 @@ var $exeDevice = {
                $exeDevice.wordsGame = valids;
                $('#descubreENumQuestions').text(valids.length)
             } else {
-                $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                $exeDevice.showMessage(_('Sorry, wrong file format'));
                 return;
             }
         } else if (!game || typeof game.typeGame == "undefined") {

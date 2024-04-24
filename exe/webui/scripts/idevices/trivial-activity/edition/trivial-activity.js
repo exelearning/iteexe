@@ -2207,11 +2207,11 @@ var $exeDevice = {
                 var file = e.target.files[0];
                 var file = e.target.files[0];
                 if (!file) {
-                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
                     return;
                 }
                 if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
-                    eXe.app.alert(_('Por favor, selecciona un archivo de texto (.txt) o un archivo JSON (.json)'));
+                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
                     return;
                 }
                 var reader = new FileReader();
@@ -2487,6 +2487,7 @@ var $exeDevice = {
             } else if(p.typeSelect == 2){
                 p.quextion = question.question;
                 p.solutionQuestion = question.solutionQuestion;
+                p.percentageShow = 35;
                 if(question.question && question.question.length > 0  && question.solutionQuestion && question.solutionQuestion.length > 0){
                     $exeDevice.selectsGame.push(p);
                     valids++;
@@ -2524,6 +2525,7 @@ var $exeDevice = {
             p.typeSelect = 2;
             p.quextion = question.question;
             p.solutionQuestion = question.solution;
+            p.percentageShow = 35;
             if (p.quextion.length > 0 && p.solutionQuestion.length > 0) {
                 $exeDevice.selectsGame.push(p);
                 valids++;
@@ -2534,7 +2536,7 @@ var $exeDevice = {
     gameAdd: function (content, filetype) {
         var game = $exeDevice.isJsonString(content);
         if (content && content.includes('\u0000')){
-            $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+            $exeDevice.showMessage(_('Sorry, wrong file format'));
             return;
         } else if (!game && content){
                 var questions = false;
@@ -2547,7 +2549,7 @@ var $exeDevice = {
                     $exeDevice.temas[$exeDevice.activeTema] = questions;
                     $exeDevice.selectsGame = $exeDevice.temas[$exeDevice.activeTema]
                 }else{
-                    $exeDevice.showMessage(_('El formato de las preguntas del archivo no es correcto'));
+                    $exeDevice.showMessage(_('Sorry, wrong file format'));
                     return
                 }
         } else if (!game || typeof game.typeGame == "undefined") {
