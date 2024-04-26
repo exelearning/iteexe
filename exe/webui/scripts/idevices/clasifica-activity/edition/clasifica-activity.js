@@ -870,11 +870,11 @@ var $exeDevice = {
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
-                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
+                    eXe.app.alert(_("Select a file")  + " (txt, json)");
                     return;
                 }
                 if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json'))) {
-                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
+                    eXe.app.alert(_("Select a file")  + " (txt, json)");
                     return;
                 }
                 var reader = new FileReader();

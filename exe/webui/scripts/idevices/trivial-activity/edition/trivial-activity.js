@@ -2207,11 +2207,11 @@ var $exeDevice = {
                 var file = e.target.files[0];
                 var file = e.target.files[0];
                 if (!file) {
-                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
+                    eXe.app.alert(_("Select a file")  + " (txt, json)");
                     return;
                 }
                 if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
-                    eXe.app.alert(_("Select a file")  + _( "(txt, json)"));
+                    eXe.app.alert(_("Select a file")  + " (txt, json)");
                     return;
                 }
                 var reader = new FileReader();

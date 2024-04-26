@@ -2040,11 +2040,11 @@ var $exeDevice = {
             $('#eXeGameImportGame').on('change', function (e) {
                 var file = e.target.files[0];
                 if (!file) {
-                    $exeDevice.showMessage(_("Select a file")  + _( "(txt, json)"));
+                    $exeDevice.showMessage(_("Select a file")  + " (txt, json)");
                     return;
                 }
                 if (!file.type || !(file.type.match('text/plain') || file.type.match('application/json') || file.type.match('application/xml') || file.type.match('text/xml'))) {
-                    $exeDevice.showMessage(_("Select a file")  + _( "(txt, json)"));
+                    $exeDevice.showMessage(_("Select a file")  + " (txt, json)");
                     return;
                 }
                 var reader = new FileReader();
