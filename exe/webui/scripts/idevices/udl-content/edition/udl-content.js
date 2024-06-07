@@ -473,7 +473,7 @@ var $exeDevice = {
 	// Get a JSON object and create a form
 	jsonToForm : function(blocks){
 		for (var i=0;i<blocks.length;i++) {
-			this.createBlockForm(blocks[i]);
+			this.createBlockForm(blocks[i],i);
 		}
 		// Renew all the IDs
 		this.addBlockFormIds();
@@ -519,7 +519,7 @@ var $exeDevice = {
 	},
 	
 	// See jsonToForm. This adds a form block (at the end of the form)
-	createBlockForm : function(block){		
+	createBlockForm : function(block,instance){		
 		
 		$(".udlContentFormBlockContent").hide();
 		var btnTxt = block.btnTxt;
@@ -558,7 +558,7 @@ var $exeDevice = {
 		var contAlt2 = block.contAlt2;
 		var contAlt3 = block.contAlt3;
 		var html = '\
-			<article class="udlContentFormBlock">\
+			<article class="udlContentFormBlock" id="udlContentTmpFormBlock'+instance+'">\
 				<header class="udlContentFormBlockHeader">\
 					<h2><strong>'+_("Block")+'</strong> <span class="udlContentFormBlockCounter"></span> <span class="udlContentFormBlockButtonTxtViewer">'+btnTxt+'</span></h2> \
 					<span class="udlContentFormBlockHeaderLinks">\
@@ -596,17 +596,24 @@ var $exeDevice = {
 								<li><a href="#" title="'+_("Alternative content")+'" class="udl-a-3">'+_("Visual aid")+'</a></li>\
 							</ul>\
 						</div>\
-						<textarea cols="30" rows="10" class="udlContentEditor">'+contMain+'</textarea>\
-						<textarea cols="30" rows="1" class="udlContentEditorContent">'+contMain+'</textarea>\
-						<textarea cols="30" rows="1" class="udlContentEditorContent">'+contAlt1+'</textarea>\
-						<textarea cols="30" rows="1" class="udlContentEditorContent">'+contAlt2+'</textarea>\
-						<textarea cols="30" rows="1" class="udlContentEditorContent">'+contAlt3+'</textarea>\
+						<textarea cols="30" rows="10" class="udlContentEditor"></textarea>\
+						<textarea cols="30" rows="1" class="udlContentEditorContent"></textarea>\
+						<textarea cols="30" rows="1" class="udlContentEditorContent"></textarea>\
+						<textarea cols="30" rows="1" class="udlContentEditorContent"></textarea>\
+						<textarea cols="30" rows="1" class="udlContentEditorContent"></textarea>\
 					</div>\
 				</div>\
 			</article>\
 		';
 		$("#udlContentFormBlocks").append(html);
-		
+		// Set the content of the textareas (#747)
+		var inst = $("#udlContentTmpFormBlock"+instance);
+		$("textarea.udlContentEditor",inst).val(contMain);
+		var eds = $("textarea.udlContentEditorContent",inst);
+			eds.eq(0).val(contMain);		
+			eds.eq(1).val(contAlt1);
+			eds.eq(2).val(contAlt2);
+			eds.eq(3).val(contAlt3);
 	},
 	
 	// After creating a form, add IDs to the elements so you can get the data and have no accessibility problems
