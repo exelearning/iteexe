@@ -552,7 +552,7 @@ $exeFX = {
 				prevA.className = "fx-disabled-link";
 				// Next
 				nextLi.removeClass("fx-disabled");
-				nextA.className = "exeFXSlideLink"+gID+"_"+gID+"-"+(n+1)+"_"+(n+1);
+				nextA.className = "exeFXSlideLink"+gID+"_"+gID+"-1_1";
 			} else {
 				// Prev
 				prevLi.removeClass("fx-disabled");
