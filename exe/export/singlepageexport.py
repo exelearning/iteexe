@@ -183,18 +183,18 @@ class SinglePageExport(object):
         hasABCMusic       = False
         listIdevicesFiles = []
 
-    	for idevice in node.idevices:
-    	    if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasElpLink and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
-    	    	break
-    	    if not hasFlowplayer:
-    	    	if 'flowPlayer.swf' in idevice.systemResources:
-    	    		hasFlowplayer = True
-    	    if not hasMagnifier:
-    	    	if 'mojomagnify.js' in idevice.systemResources:
-    	    		hasMagnifier = True
-    	    if not hasXspfplayer:
-    		    if 'xspf_player.swf' in idevice.systemResources:
-    			    hasXspfplayer = True
+        for idevice in node.idevices:
+            if (hasFlowplayer and hasMagnifier and hasXspfplayer and hasGallery and hasFX and hasSH and hasGames and hasElpLink and hasWikipedia and hasInstructions and hasMediaelement and hasTooltips and hasABCMusic):
+                break
+            if not hasFlowplayer:
+                if 'flowPlayer.swf' in idevice.systemResources:
+                    hasFlowplayer = True
+            if not hasMagnifier:
+                if 'mojomagnify.js' in idevice.systemResources:
+                    hasMagnifier = True
+            if not hasXspfplayer:
+                if 'xspf_player.swf' in idevice.systemResources:
+                    hasXspfplayer = True
             if not hasGallery:
                 hasGallery = common.ideviceHasGallery(idevice)
             if not hasFX:
