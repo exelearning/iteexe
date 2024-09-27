@@ -37,6 +37,7 @@ from exe.export.websitepage   import WebsitePage
 from zipfile                  import ZipFile, ZIP_DEFLATED
 from exe.webui                import common
 from exe                      import globals as G
+from html                     import escape
 from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
 from .helper                   import exportMinFileJS
