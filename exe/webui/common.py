@@ -25,7 +25,12 @@ This module is for the common HTML used in all webpages.
 import logging
 import os
 from flask import render_template_string
-from exe                       import globals as G
+from gettext import gettext as _
+from exe import globals as G
+
+def c_(text):
+    """Placeholder function for translation."""
+    return text
 from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
 from exe.engine.error          import Error
