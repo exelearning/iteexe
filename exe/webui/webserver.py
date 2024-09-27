@@ -240,6 +240,7 @@ class WebServer:
 
         # A port for this server was looked for earlier by find_port.
         # Ensure that it is valid (>= 0):
+        log.info("Attempting to start Flask server on port: %d", self.config.port)
         while self.config.port >= 0:
             log.info("run() using eXe port# %d", self.config.port)
             try:
