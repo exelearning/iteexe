@@ -188,6 +188,10 @@ class WebServer:
         def jsui(filename):
             return send_from_directory(jsDir + "/scripts", filename)
 
+        @self.app.route('/')
+        def index():
+            return "<h1>Welcome to the eXe Web Server</h1>"
+
         # A port for this server was looked for earlier by find_port.
         # Ensure that it is valid (>= 0):
         if self.config.port >= 0:
