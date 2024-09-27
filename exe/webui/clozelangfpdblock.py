@@ -27,6 +27,7 @@ must fill in.
 
 import logging
 from exe.webui.block   import Block
+from gettext import gettext as _
 from exe.webui         import common
 from exe.webui.element import ClozelangElement, TextAreaElement
 
@@ -115,7 +116,7 @@ class ClozelangfpdBlock(Block):
         # Quitamos el prefijo "FPD -"
         # (let's remove the "FPD -" prefix)
         if self.idevice.title.find("FPD - ") == 0:
-            self.idevice.title = x_("Now It's Your Turn")
+            self.idevice.title = _("Now It's Your Turn")
         html += common.textInput("title"+self.id, self.idevice.title)
 
         html += "</div>"
@@ -218,7 +219,7 @@ class ClozelangfpdBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % c_("Feedback") 
+            html += '<p>%s:</P>' % _("Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 
