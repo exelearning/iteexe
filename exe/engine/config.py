@@ -738,7 +738,11 @@ class Config(object):
         else:
             logging.warning("Locale directory does not exist: %s", self.localeDir)
         if self.locale not in self.locales:
+            logging.warning("Locale '%s' not found, defaulting to 'en'", self.locale)
             self.locale = 'en'
+            if self.locale not in self.locales:
+                logging.error("Default locale 'en' not found. Locale setup failed.")
+                return
         log.debug("loading locale %s" % self.locale)
         self.locales[self.locale].install(str=True)
         __builtins__['c_'] = lambda s: self.locales[self.locale].ugettext(s) if s else s
