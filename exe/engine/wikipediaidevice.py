@@ -31,7 +31,7 @@ from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
 from exe.engine.path          import Path, TempDirPath
 from exe.engine.resource      import Resource
-from exe.engine.config import x_
+from exe.engine.config import x_, _
 
 import urllib.request, urllib.parse, urllib.error
 import ssl
@@ -243,7 +243,7 @@ within Wikipedia.""")
         Changes links, etc
         """
         content = re.sub(r'href="/', r'href="%s/' % netloc, content)
-        content = re.sub(r'<(span|div)\s+(id|class)="(editsection|jump-to-nav)".*?</\1>', '', content)
+        content = re.sub(r'<(span|div)\\s+(id|class)="(editsection|jump-to-nav)".*?</\\1>', '', content)
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
         content = re.sub(r'<script.*?</script>', '', content)
@@ -352,7 +352,7 @@ within Wikipedia.""")
         """
         Called to upgrade from 0.6 release
         """
-        self.site        = _('http://en.wikipedia.org/')
+        self.site        = x_('http://en.wikipedia.org/')
 
 
     def upgradeToVersion2(self):
