@@ -76,7 +76,6 @@ from exe.engine.locationbuttons  import LocationButtons
 from exe.export.epub3export      import Epub3Export
 from exe.export.xmlexport        import XMLExport
 from requests_oauthlib           import OAuth2Session
-from exe.webui.oauthpage         import ProcomunOauth
 from suds.client                 import Client
 from exe.export.pages            import forbiddenPageNames
 
