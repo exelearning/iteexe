@@ -26,6 +26,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
 from exe.engine.field     import SelectQuestionField
+from exe.engine.config    import x_
 import re
 log = logging.getLogger(__name__)
 
