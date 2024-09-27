@@ -59,14 +59,14 @@ class CitasparapensarfpdBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div class=\"iDevice\"><br/>\n"
-	
-	# JRJ
-   # Quitamos el prefijo "FPD -"
-   # (let's remove the "FPD -" prefix)
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_("Quotation")
+        
+        # JRJ
+        # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_("Quotation")
 
-	html += common.textInput("title"+self.id, self.idevice.title)
+        html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()
         html += "<br/>" + self.renderEditButtons()
         html += "</div>\n"
