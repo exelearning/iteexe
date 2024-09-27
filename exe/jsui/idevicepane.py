@@ -28,7 +28,7 @@ from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
 from exe.engine.jsidevice import JsIdevice;
-from cgi import escape
+from html import escape
 
 log = logging.getLogger(__name__)
 
