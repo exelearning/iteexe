@@ -29,6 +29,7 @@ from exe.engine.field     import QuizQuestionField, QuizOptionField
 from exe.engine.translate import lateTranslate
 from exe                  import globals as G
 import re
+from exe.engine.config import x_
 log = logging.getLogger(__name__)
 
 
