@@ -96,70 +96,6 @@ class WebServer:
             if not os.path.exists(directory):
                 os.makedirs(directory)
                 log.info("Created missing directory: %s", directory)
-        """
-        Previously part of the run() method, this will find the port for this
-        server.  Moved outside such that it could be called prior to run()
-        [via application's serve()], which doesn't get called until the
-        client has already been started [via application's launch()].
-        Instead, we want to determine the server's port first [via
-        application's prelaunch()] such that the client knows it.
-        Note: for safety down the road once run() is called, the port will
-        be set to -1 if none is found.
-        """
-        # check the configured port.  If not available, then
-        # loop through a range of available ports to try and find a free one:
-        port_test_done = 0
-        found_port = 0
-        found_other_eXe = 0
-        test_port_num = self.config.port
-        test_port_count = 0
-
-        # could set a maximum range within the users's config file,
-        # but for now, just hardcode a max:
-        max_port_tests = 5000
-        while not port_test_done:
-            test_port_num = self.config.port + test_port_count
-            try:
-                log.debug("find_port(): trying to listenTCP on port# %d",
-                        test_port_num)
-                from twisted.internet.protocol import Factory, Protocol
-
-                class SimpleProtocol(Protocol):
-                    def dataReceived(self, data):
-                        pass
-
-                class SimpleFactory(Factory):
-                    protocol = SimpleProtocol
-
-                reactor.listenTCP(test_port_num, SimpleFactory(), 
-                                  interface="127.0.0.1")
-                log.debug("find_port(): still here without exception " \
-                           "after listenTCP on port# %d", test_port_num)
-                found_port = 1
-                port_test_done = 1
-            except CannotListenError as exc:
-                log.debug("find_port(): caught exception after listenTCP " \
-                         + "on port# %d, exception = %s", test_port_num, exc)
-                last_exception = exc
-                test_port_count += 1
-                if test_port_count >= max_port_tests:
-                    port_test_done = 1
-
-        if found_port:
-            self.config.port = test_port_num
-            log.info("find_port(): found available eXe port# %d", self.config.port)
-            log.info("Web server will start on port: %d", self.config.port)
-        else:
-            self.config.port = -1
-            if found_other_eXe:
-                log.error("find_port(): found another eXe server running " \
-                            + "on port# %d; only one eXe server allowed " \
-                            + "to run at a time", test_port_num)
-            else:
-                log.error("find_port(): Can't listen on interface 127.0.0.1"\
-                        + ", ports %s-%s, last exception: %s" % \
-                         (self.config.port, test_port_num,  \
-                          str(last_exception)))
 
     def run(self):
         """
@@ -241,18 +177,7 @@ class WebServer:
 
         # Start the Flask server
         log.info("Starting Flask server on port: %d", self.config.port)
-        while True:
-            try:
-                log.info("Attempting to start Flask server on port: %d", self.config.port)
-                self.app.run(host='127.0.0.1', port=self.config.port)
-                break
-            except OSError as e:
-                if "Address already in use" in str(e):
-                    log.error("Port %d is in use, trying to find another port.", self.config.port)
-                    self.config.port += 1  # Increment port number
-                else:
-                    log.exception("An unexpected error occurred while trying to start the server.")
-                    raise
+        self.app.run(host='127.0.0.1', port=self.config.port)
 
     def monitor(self):
         if self.monitoring:
