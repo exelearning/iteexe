@@ -21,34 +21,15 @@
 
 
 import logging
-from exe.webui.renderable import Renderable
-from nevow import rend
+from flask import Flask, render_template
 
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class QuitPage(Renderable, rend.Page):
-    _templateFileName = 'quit.html'
-    name = 'quit'
+app = Flask(__name__)
 
-    def __init__(self, parent):
-        """
-        Initialize
-        """
-        parent.putChild(self.name, self)
-        Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
-
-    def render_title(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("eXe Closed")]
-
-    def render_msg1(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("eXe has finished running in this window.")]
-
-    def render_msg2(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("You can close it safely.")]
+@app.route('/quit')
+def quit_page():
+    return render_template('quit.html', title=_("eXe Closed"), msg1=_("eXe has finished running in this window."), msg2=_("You can close it safely."))
 # ===========================================================================
