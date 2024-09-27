@@ -1106,7 +1106,7 @@ def toUnicode(string, encoding='utf8'):
     """
     Turns everything passed to it to unicode.
     """
-    if isinstance(string, str):
+    if isinstance(string, bytes):
         return str(string, encoding)
     elif isinstance(string, str):
         return string
