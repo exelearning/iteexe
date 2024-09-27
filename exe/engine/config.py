@@ -643,15 +643,6 @@ class Config(object):
                         shutil.copy(bksdirstyle, dstdirstyle)
         else:
             logging.warning("Style directories do not exist: %s, %s", bkstyle, dststyle)
-            for name in os.listdir(bkstyle):
-                bksdirstyle = os.path.join(bkstyle, name)
-                dstdirstyle = os.path.join(dststyle, name)
-                if os.path.isdir(bksdirstyle):
-                    if os.path.exists(dstdirstyle):
-                        shutil.rmtree(dstdirstyle)
-                    shutil.copytree(bksdirstyle, dstdirstyle)
-                else:
-                    shutil.copy(bksdirstyle, dstdirstyle)
 
     def copyTemplates(self):
         template_backup = self.webDir/'content_template'
