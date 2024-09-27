@@ -26,7 +26,7 @@
 WebServer module
 """
 
-# Redirect std err for importing twisted and nevow
+# Redirect std err for importing twisted
 import sys
 from io import StringIO
 sys.stderr, oldStdErr = StringIO(), sys.stderr
@@ -62,8 +62,8 @@ log = logging.getLogger(__name__)
 
 class WebServer:
     """
-    Encapsulates some twisted components to serve
-    all webpages, scripts and Flask functionality
+    Encapsulates Flask components to serve
+    all webpages and scripts
     """
     def __init__(self, application):
         self.application = application

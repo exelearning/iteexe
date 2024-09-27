@@ -28,7 +28,6 @@ from exe.engine.idevice                             import Idevice
 from exe.engine.jsidevice                           import JsIdevice
 from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
 from exe.engine.field                               import TextAreaField, FeedbackField,Feedback2Field
-from nevow.flat                                     import flatten
 
 import imp
 import sys
