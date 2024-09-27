@@ -41,7 +41,7 @@ except ImportError:
     
 
 
-class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
+class Persistable(jelly.Jellyable, jelly.Unjellyable, Versioned, object):
     """
     Base class for persistent classes
     """
