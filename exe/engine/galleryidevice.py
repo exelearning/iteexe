@@ -37,7 +37,7 @@ from exe.engine.path      import Path, TempDirPath, toUnicode
 from exe.engine.persist   import Persistable
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
-from exe.engine.config import x_, _
+from exe.engine.config import x_
 from exe.webui.common     import docType
 
 log = logging.getLogger(__name__)
