@@ -35,6 +35,8 @@ from exe.engine.persist   import Persistable
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 import importlib
+from exe.engine.translate import x_
+from exe.engine.translate import _
 
 log = logging.getLogger(__name__)
 
