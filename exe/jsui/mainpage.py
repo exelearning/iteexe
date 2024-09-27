@@ -83,7 +83,6 @@ from exe.engine.lom import lomsubs
 from exe.engine.lom.lomclassification import Classification
 import zipfile
 log = logging.getLogger(__name__)
-PROCOMUN_WSDL = ProcomunOauth.BASE_URL + '/oauth_services?wsdl'
 
 import ssl
 #ssl._create_default_https_context = ssl._create_unverified_context
@@ -1244,10 +1243,10 @@ class MainPage(RenderableLivePage):
             verify = True
             if hasattr(sys, 'frozen'):
                 verify = 'cacert.pem'
-            oauth2Session = OAuth2Session(ProcomunOauth.CLIENT_ID, redirect_uri=ProcomunOauth.REDIRECT_URI)
+            oauth2Session = OAuth2Session(client_id='your_client_id', redirect_uri='your_redirect_uri')
             oauth2Session.verify = verify
 
-            authorization_url, state = oauth2Session.authorization_url(ProcomunOauth.AUTHORIZATION_BASE_URL)
+            authorization_url, state = oauth2Session.authorization_url('your_authorization_base_url')
             self.webServer.oauth.procomun.saveState(state, oauth2Session, client)
 
             # Call the script to start the Procomún authentication process
@@ -1320,14 +1319,14 @@ class MainPage(RenderableLivePage):
             # Show a message to the user based on the result
             client.call('Ext.MessageBox.hide')
             if parsedResult['status'] == 'true':
-                link_url = ProcomunOauth.BASE_URL + '/ode/view/%s' % parsedResult['data']['documentId']
+                link_url = 'your_base_url' + '/ode/view/%s' % parsedResult['data']['documentId']
                 client.alert(
                     js(
                         '\''
                         + _('Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
                         + '<br />'
                         + '<br />'
-                        + _('<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % ProcomunOauth.BASE_URL
+                        + _('<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % 'your_base_url'
                         + '\''
                     ),
                     title=_('Publishing document to Procomún')
