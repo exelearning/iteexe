@@ -1209,11 +1209,11 @@ class FieldWithResources(Field):
                    exe_flv_parmline = "<param name=\"exe_flv\" " \
                            + "value=\"/previews/" \
                            + pre_input_file_name_str
-#JR: Si contiene flowplayer lo embebemos
-                if new_content.find("flowPlayer") >= 0:
-                    embed_flv_player = True
-                    log.debug('ProcessPreviewedMedia: this is an eXe flv.')
-		       
+                   #JR: Si contiene flowplayer lo embebemos
+                   if new_content.find("flowPlayer") >= 0:
+                       embed_flv_player = True
+                       log.debug('ProcessPreviewedMedia: this is an eXe flv.')
+                   
                    if new_content.find(exe_flv_parmline) >= 0:
                        embed_flv_player = True
                        log.debug('ProcessPreviewedMedia: this is an eXe flv.')
