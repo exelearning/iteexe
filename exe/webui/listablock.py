@@ -27,6 +27,7 @@ from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement, ElementWithResources
 from html import escape
+from exe.engine.translate import _, c_
 import random
 
 
