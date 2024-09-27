@@ -126,7 +126,10 @@ class WebServer:
                 os.makedirs(locale_path)
                 log.info("Created missing directory: %s", locale_path)
         log.info("internalAnchors = %s", self.config.internalAnchors)
-        log.info("License = %s", self.config.license)
+        if hasattr(self.config, 'license'):
+            log.info("License = %s", self.config.license)
+        else:
+            log.warning("License attribute not found in config")
         log.debug("start web server running")
 
         # web resources
