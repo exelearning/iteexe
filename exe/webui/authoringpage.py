@@ -35,6 +35,7 @@ from exe.webui.renderable    import RenderableResource
 from exe.engine.path         import Path
 from exe                     import globals as G
 import re
+from gettext import gettext as _
 
 log = logging.getLogger(__name__)
 
@@ -83,7 +84,7 @@ class AuthoringPage(RenderableResource):
                         try:
                             os.remove(os.path.join(root, name))
                             break
-                        except exceptions.WindowsError:
+                        except OSError:
                             time.sleep(0.3)
                 else:
                     os.remove(os.path.join(root, name))
