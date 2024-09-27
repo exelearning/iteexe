@@ -179,7 +179,7 @@ class ConfigParser(object):
             lines = []
         # the codecs utf_8_sig decoder is only available in Python 2.5+,
         # so process by hand, silently stripping the signature
-        if len(lines) > 0 and lines[0].startswith(codecs.BOM_UTF8):
+        if len(lines) > 0 and lines[0].startswith(codecs.BOM_UTF8.decode('utf-8')):
             lines[0] = lines[0][3:]
         section = None
         sectionName = None
