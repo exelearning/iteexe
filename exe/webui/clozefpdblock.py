@@ -46,15 +46,15 @@ class ClozefpdBlock(Block):
         """
         Block.__init__(self, parent, idevice)
 
-        # to compensate for the strange unpickling timing when objects are 
+        # to compensate for the strange unpickling timing when objects are
         # loaded from an elp, ensure that proper idevices are set:
-        if idevice.instructionsForLearners.idevice is None: 
+        if idevice.instructionsForLearners.idevice is None:
             idevice.instructionsForLearners.idevice = idevice
-        if idevice.content.idevice is None: 
+        if idevice.content.idevice is None:
             idevice.content.idevice = idevice
-        if idevice.feedback.idevice is None: 
+        if idevice.feedback.idevice is None:
             idevice.feedback.idevice = idevice
-            
+
         dT = common.getExportDocType()
         sectionTag = "div"
         if dT == "HTML5":
@@ -62,15 +62,13 @@ class ClozefpdBlock(Block):
 
         idevice.instructionsForLearners.htmlTag = sectionTag
         idevice.instructionsForLearners.class_ = "block instructions"
-        idevice.feedback.htmlTag = sectionTag            
+        idevice.feedback.htmlTag = sectionTag
 
-        self.instructionElement = \
-            TextAreaElement(idevice.instructionsForLearners)
+        self.instructionElement = TextAreaElement(idevice.instructionsForLearners)
         self.clozeElement = ClozeElement(idevice.content)
-        self.feedbackElement = \
-            TextAreaElement(idevice.feedback)
-        self.previewing        = False # In view or preview render
-        if not hasattr(self.idevice,'undo'): 
+        self.feedbackElement = TextAreaElement(idevice.feedback)
+        self.previewing = False  # In view or preview render
+        if not hasattr(self.idevice, 'undo'):
             self.idevice.undo = True
 
     def process(self, request):
