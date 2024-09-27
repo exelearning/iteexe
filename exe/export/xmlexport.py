@@ -38,7 +38,7 @@ from exe.export.websitepage   import *
 from exe.export.xmlpage         import XMLPage
 from exe.export.exportmediaconverter    import ExportMediaConverter
 
-import sys, os, fnmatch, glob, shutil, codecs, md5
+import sys, os, fnmatch, glob, shutil, codecs, hashlib
 
 log = logging.getLogger(__name__)
 
