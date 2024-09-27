@@ -242,16 +242,16 @@ class Path(str):
         def splitunc(self):
             """NT Only: Split a pathname into UNC mount point and relative path
             specifiers.
-            eg. Path(r'\\dbserver\homes\matthew\work\stuff.py').splitunc() == \
-            (Path(r'\\dbserver\homes'), Path(r'\\matthew\work\stuff.py'))"""
+            eg. Path(r'\\dbserver\\homes\\matthew\\work\\stuff.py').splitunc() == \
+            (Path(r'\\dbserver\\homes'), Path(r'\\matthew\\work\\stuff.py'))"""
             unc, rest = os.path.splitunc(self)
             return Path(unc), Path(rest)
 
         def _get_uncshare(self):
             """NT Only: Returns only the server and share name from a unc path
             name.
-            eg. Path(r'\\dbserver\homes\matthew\work\stuff.py').uncshare() == \
-            Path(r'\\dbserver\homes')"""
+            eg. Path(r'\\dbserver\\homes\\matthew\\work\\stuff.py').uncshare() == \
+            Path(r'\\dbserver\\homes')"""
             return Path(os.path.splitunc(self)[0])
 
         uncshare = property(
