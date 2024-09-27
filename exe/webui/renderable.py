@@ -65,8 +65,6 @@ class Renderable(object):
     # Default attribute values
     docFactory = None
 
-    # Translates messages in templates with nevow:render="i18n" attrib
-    render_i18n = render_i18n()
 
     def __init__(self, parent, package=None, webServer=None, name=None):
         """
@@ -109,10 +107,10 @@ class Renderable(object):
         if self._templateFileName:
             if hasattr(self, 'config') and self.config:
                 pth = self.config.webDir/'templates'/self._templateFileName
-                self.docFactory = loaders.xmlfile(pth)
+                self.docFactory = XMLFile(pth)
             else:
                 # Assume directory is included in the filename
-                self.docFactory = loaders.xmlfile(self._templateFileName)
+                self.docFactory = XMLFile(self._templateFileName)
 
     # Properties
     def getRoot(self):
@@ -208,7 +206,7 @@ class RenderableResource(_RenderablePage, Resource):
         request.setHeader("X-XSS-Protection", "0")
         return Resource.render(self, request)
 
-class File(static.File):
+class File(File):
     def render(self, request):
         """
         Disable cache of static files and add missing content MimeTypes
@@ -221,4 +219,4 @@ class File(static.File):
         # otherwise the browser will show nothing
         self.contentTypes['.svg'] = 'image/svg+xml'
         
-        return static.File.render(self, request)
+        return File.render(self, request)
