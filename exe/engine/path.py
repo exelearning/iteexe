@@ -97,7 +97,9 @@ class Path(str):
 
     # Adding a Path and a string yields a Path.
     def __add__(self, more):
-        return Path(toUnicode(self) + toUnicode(more))
+        if isinstance(more, Path):
+            more = str(more)
+        return Path(str(self) + str(more))
 
     def __radd__(self, other):
         return Path(toUnicode(other) + toUnicode(self))
