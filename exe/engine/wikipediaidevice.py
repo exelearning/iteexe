@@ -115,7 +115,7 @@ within Wikipedia.""")
             net.close()
         except IOError as error:
             log.warning(str(error))
-            self.article.content = _("Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+            self.article.content = x_("Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
             self.article.content_w_resourcePaths = self.article.content
             self.article.content_wo_resourcePaths = self.article.content
             return
@@ -155,7 +155,7 @@ within Wikipedia.""")
         # If we still don't have content it means there is a problem with the article
         if not content:
             log.error("No content on Wikipedia article: %s" % url)
-            self.article.content = _("Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+            self.article.content = x_("Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
             # Set the other elements as well
             self.article.content_w_resourcePaths = self.article.content
             self.article.content_wo_resourcePaths = self.article.content
@@ -243,7 +243,7 @@ within Wikipedia.""")
         Changes links, etc
         """
         content = re.sub(r'href="/', r'href="%s/' % netloc, content)
-        content = re.sub(r'<(span|div)\s+(id|class)="(editsection|jump-to-nav)".*?</\1>', '', content)
+        content = re.sub(r'<(span|div)\\s+(id|class)="(editsection|jump-to-nav)".*?</\\1>', '', content)
         #TODO Find a way to remove scripts without removing newlines
         content = content.replace("\n", " ")
         content = re.sub(r'<script.*?</script>', '', content)
