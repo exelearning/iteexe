@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+# ===========================================================================
+# eXe
+# Copyright 2004-2005, University of Auckland
+# Copyright 2006-2008 eXe Project, http://eXeLearning.org/
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# ===========================================================================
+
+"""
+The eXe main script
+"""
+
+import os
+import sys
+
+sys.setrecursionlimit(2000)
+
+if '--portable' in sys.argv:
+    exePath = os.path.abspath(sys.argv[0])
+    exeDir  = os.path.dirname(exePath)
+    pythonPath = os.path.split(exeDir)[0]
+    sys.path.insert(0, pythonPath)
+    from exe.application import Application
+else:
+    # Try to work even with no python path
+    try:
+        from exe.application import Application
+    except ImportError as error:  # Python 3 syntax for exceptions
+        if str(error) == "No module named 'exe.application'":
+            exePath = os.path.abspath(sys.argv[0])
+            exeDir  = os.path.dirname(exePath)
+            pythonPath = os.path.split(exeDir)[0]
+            sys.path.insert(0, pythonPath)
+            from exe.application import Application
+        else:
+            import traceback
+            traceback.print_exc()
+            sys.exit(1)
+
+def main():
+    application = Application()
+    application.main()
+
+if __name__ == "__main__":
+    main()
