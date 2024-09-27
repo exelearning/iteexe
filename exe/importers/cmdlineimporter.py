@@ -41,7 +41,7 @@ class CmdlineImporter(object):
         if hasattr(self, 'import_' + self.options['import']):
             return getattr(self, 'import_' + self.options['import'])(inputf, outputf)
         else:
-            print(_("Import format not implemented"))
+            print((_("Import format not implemented")))
 
     def import_xml(self, inputf, outputf):
         if not outputf:

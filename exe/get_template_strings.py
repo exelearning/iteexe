@@ -294,7 +294,7 @@ if __name__ == "__main__":
             # Node idevices
             file_w.write(put_tabs(4))
             file_w.write('\'idevices\': [\n')
-            for idevice in node['idevices'].values():
+            for idevice in list(node['idevices'].values()):
                 # Idevice title
                 file_w.write(put_tabs(5))
                 file_w.write('{\n')
@@ -304,11 +304,11 @@ if __name__ == "__main__":
                 # Idevice fields
                 file_w.write(put_tabs(6))
                 file_w.write('\'fields\': [\n')
-                for field in idevice['fields'].values():
+                for field in list(idevice['fields'].values()):
                     file_w.write(put_tabs(7))
                     file_w.write('[\n')
 
-                    for prop in field['properties'].values():
+                    for prop in list(field['properties'].values()):
                         file_w.write(put_tabs(8))
                         file_w.write('{\n')
 

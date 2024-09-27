@@ -207,12 +207,12 @@ class lomSub(supermod.lom):
             return True
 
         if 'valueOf_' in list(rootNode.keys()):
-            for key, value in rootNode.items():
+            for key, value in list(rootNode.items()):
                 if key != '__numberid__':
                     getattr(rootObj, 'set_' + key)(value)
             return True
 
-        for key, value in rootNode.items():
+        for key, value in list(rootNode.items()):
             if key == '__numberid__':
                 continue
             childclass = self.getFieldClass(key, rootObj)
@@ -292,7 +292,7 @@ class lomSub(supermod.lom):
             else:
                 form[base] = rootObj.get_valueOf_()
 
-        for key, value  in vars(rootObj).items():
+        for key, value  in list(vars(rootObj).items()):
             if self.isAttrib(key):
                 base2 = base + '_' + key.rstrip('_')
                 #print key + ' -- ' + str(value)

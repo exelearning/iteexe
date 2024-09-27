@@ -1,33 +1,0 @@
-Ä}q(Utwisted_webqctwisted.plugin
-CachedDropin
-q)Åq}q(U
-moduleNameqUtwisted.plugins.twisted_webqUdescriptionqNUpluginsq	]q
-ctwisted.plugin
-CachedPlugin
-q)Åq}q(Uprovidedq]q(ctwisted.plugin
-IPlugin
-qctwisted.scripts.mktap
-IServiceMaker
-qeUdropinqhUnameqU
-TwistedWebqhUà
-    Internal utility class to simplify the definition of "new-style"
-    mktap plugins based on existing, "classic" mktap plugins.
-    qubaubU
-testpluginqh)Åq}q(hUtwisted.plugins.testpluginqhUR
-I'm a test drop-in.  The plugin system's unit tests use me.  No one
-else should.
-qh	]q(h)Åq}q(h]q(ctwisted.plugin
-ITestPlugin2
-qhehhhUAnotherTestPluginq hU5Another plugin used solely for testing purposes.
-    q!ubh)Åq"}q#(h]q$(ctwisted.plugin
-ITestPlugin
-q%hehhhU
-TestPluginq&hU/A plugin used solely for testing purposes.
-    q'ubh)Åq(}q)(h]q*(hhehhhUThirdTestPluginq+hU5Another plugin used solely for testing purposes.
-    q,ubeubUtwisted_ftpq-h)Åq.}q/(hUtwisted.plugins.twisted_ftpq0hNh	]q1h)Åq2}q3(h]q4(hhehh.hU
-TwistedFTPq5hhubaubUtwisted_telnetq6h)Åq7}q8(hUtwisted.plugins.twisted_telnetq9hNh	]q:h)Åq;}q<(h]q=(hhehh7hUTwistedTelnetq>hhubaubUtwisted_socksq?h)Åq@}qA(hUtwisted.plugins.twisted_socksqBhNh	]qCh)ÅqD}qE(h]qF(hhehh@hUTwistedSOCKSqGhhubaubUtwisted_manholeqHh)ÅqI}qJ(hUtwisted.plugins.twisted_manholeqKhNh	]qLh)ÅqM}qN(h]qO(hhehhIhUTwistedManholeqPhhubaubUtwisted_trialqQh)ÅqR}qS(hUtwisted.plugins.twisted_trialqThNh	]qU(h)ÅqV}qW(h]qX(hctwisted.trial.itrial
-IReporter
-qYehhRhUBlackAndWhiteqZhNubh)Åq[}q\(h]q](hhYehhRhUClassicq^hNubh)Åq_}q`(h]qa(hhYehhRhUTreeqbhNubh)Åqc}qd(h]qe(hhYehhRhUTimingqfhNubh)Åqg}qh(h]qi(hhYehhRhUMinimalqjhNubeubUtwisted_portforwardqkh)Åql}qm(hU#twisted.plugins.twisted_portforwardqnhNh	]qoh)Åqp}qq(h]qr(hhehhlhUTwistedPortForwardqshhubaubUtwisted_inetqth)Åqu}qv(hUtwisted.plugins.twisted_inetqwhNh	]qxh)Åqy}qz(h]q{(hhehhuhUTwistedINETDq|hhubaubUnotestpluginq}h)Åq~}q(hUtwisted.plugins.notestpluginqÄhUWPlugin module for use by the plugin system's unit tests.
-
-Nothing to see here, really.
-qÅh	]qÇubu.

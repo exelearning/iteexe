@@ -291,7 +291,7 @@ class Resources:
                 if not tag.attrs:
                     continue
                 matches = []
-                for key, value in tag.attrs.items():
+                for key, value in list(tag.attrs.items()):
                     if value == "":
                         continue
                     for val in value:

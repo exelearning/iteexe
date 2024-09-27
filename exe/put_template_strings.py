@@ -68,7 +68,7 @@ if __name__ == "__main__":
 
         # Load all locale catalogs
         locale_catalogs = {}
-        for name, locale in application.config.locales.items():
+        for name, locale in list(application.config.locales.items()):
             current_locale = {}
             current_locale['locale'] = locale
 
@@ -85,12 +85,12 @@ if __name__ == "__main__":
                 locale_catalogs[os.path.basename(sub_dir)]['path'] = sub_dir / 'LC_MESSAGES' / 'exe.po'
 
         # Go through all the templates, nodes, idevices and fields
-        for path, template in templates.items():
+        for path, template in list(templates.items()):
             for node in template['nodes']:
                 for idevice in node['idevices']:
                     for field in idevice['fields']:
                         # For each locale
-                        for name, locale in locale_catalogs.items():
+                        for name, locale in list(locale_catalogs.items()):
                             # If there is no catalog, just go to the next locale
                             if 'catalog' not in locale:
                                 continue
@@ -106,7 +106,7 @@ if __name__ == "__main__":
                                 locale['catalog'].add(prop['raw_value'], translated_string)
 
         # Write every catalog with the new values
-        for name, locale in locale_catalogs.items():
+        for name, locale in list(locale_catalogs.items()):
             # Again, if there is not catalog, simply go to the next one
             if 'catalog' not in locale:
                 continue

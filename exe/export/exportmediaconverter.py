@@ -127,8 +127,8 @@ class ExportMediaConverter(object):
             maxWidth = int(self.configParser.get("media", "maxwidth"))
             maxHeight = int(self.configParser.get("media", "maxheight"))
         
-        print("Resizing %(imgname)s to %(maxwidth)d %(maxheight)d" % \
-            {"imgname" : imgPath, "maxwidth" : maxWidth, "maxheight" : maxHeight})
+        print(("Resizing %(imgname)s to %(maxwidth)d %(maxheight)d" % \
+            {"imgname" : imgPath, "maxwidth" : maxWidth, "maxheight" : maxHeight}))
         try:
             
             img = Image.open(imgPath)
@@ -422,7 +422,7 @@ class ExportMediaConverter(object):
                 
             conversionCommand = conversionCommandBase  \
                     % {"infile" : mediaName, "outfile" : newFileName}
-            print("Converting: run %s\n" % conversionCommand)
+            print(("Converting: run %s\n" % conversionCommand))
             call(conversionCommand, shell=True, cwd=workingDir, env=cmdEnv)
             htmlContent = htmlContent.replace(mediaName, newFileName)
                     
@@ -439,7 +439,7 @@ class ExportMediaConverter(object):
             mixCommand = ExportMediaConverter.appConfig.ffmpegPath + " -i %(audioin)s -i %(videoin)s -s qcif -vcodec h263 -acodec libvo_aacenc -ac 1 -ar 8000 -r 25 -ab 32 -y -aspect 4:3 %(videoout)s" \
                 % { "audioin" : audioInFileAbs, "videoin" : videoInFileAbs, "videoout" : combinedOutFile}
                 
-            print("Running command %s \n" % mixCommand)   
+            print(("Running command %s \n" % mixCommand))   
             
             call(mixCommand, shell=True)
         

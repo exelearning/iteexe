@@ -66,7 +66,7 @@ class ClickInOrderIdeviceInc(Idevice):
                 'ClickToStartArea' : [x_('Area shown before the game starts'), x_('User will click on this to start the game')]\
                 }
         self.textAreaFields = {}
-        for textAreaFieldName, textAreaDesc in self.textAreaFieldNames.items():
+        for textAreaFieldName, textAreaDesc in list(self.textAreaFieldNames.items()):
             self.textAreaFields[textAreaFieldName] = TextAreaField(textAreaDesc[INDEX_TITLEFIELD], \
                 textAreaDesc[INDEX_INSTRUCTIONFIELD], "")
             self.textAreaFields[textAreaFieldName].idevice = self
@@ -84,7 +84,7 @@ class ClickInOrderIdeviceInc(Idevice):
                 'timerStyle' : [x_('Style of timer Element'), x_('Style of timer (CSS)')]
                 }
         self.textFields = {}
-        for textFieldName, textFieldDesc in self.textFieldNames.items():
+        for textFieldName, textFieldDesc in list(self.textFieldNames.items()):
             if len(textFieldDesc) >= INDEX_DEFAULTVALUEFIELD+1:
                 self.textFields[textFieldName] = TextField(textFieldDesc[INDEX_TITLEFIELD], \
                    textFieldDesc[INDEX_INSTRUCTIONFIELD], textFieldDesc[INDEX_DEFAULTVALUEFIELD])
@@ -157,7 +157,7 @@ class ClickInOrderClickableAreaField(Field):
                 }
         self.textFields = {}
 
-        for textFieldName, textFieldDetails in self.textFieldNames.items():
+        for textFieldName, textFieldDetails in list(self.textFieldNames.items()):
             self.textFields[textFieldName] = TextField(textFieldDetails[INDEX_TITLEFIELD],\
                 textFieldDetails[INDEX_INSTRUCTIONFIELD])
             self.textFields[textFieldName].idevice = self.idevice
@@ -169,7 +169,7 @@ class ClickInOrderClickableAreaField(Field):
 
         self.textAreaFields = {}
 
-        for textAreaFieldName, textAreaFieldDetails in self.textAreaFieldNames.items():
+        for textAreaFieldName, textAreaFieldDetails in list(self.textAreaFieldNames.items()):
             self.textAreaFields[textAreaFieldName] = TextAreaField(textAreaFieldDetails[INDEX_TITLEFIELD],\
                 textAreaFieldDetails[INDEX_INSTRUCTIONFIELD], "")
             self.textAreaFields[textAreaFieldName].idevice = self.idevice

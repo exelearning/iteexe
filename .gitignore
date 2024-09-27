@@ -50,3 +50,4 @@ exe/webui/scripts/tinymce_4/js/tinymce/tinymce.js
 
 # Template translation
 exe/webui/content_template/strings.pyenv/
+.aider*

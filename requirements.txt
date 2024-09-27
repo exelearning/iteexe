@@ -9,3 +9,4 @@ webassets
 zope-interface
 dateutils
 Pillow
+twisted

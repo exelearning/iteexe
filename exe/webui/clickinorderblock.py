@@ -46,10 +46,10 @@ class ClickInOrderBlockInc(Block):
         self.timerChoiceElement = ChoiceElement(idevice.timerChoiceField)
         self.titleElement = TextElement(idevice.titleField)
 
-        for textAreaFieldName, textAreaFieldVals in idevice.textAreaFieldNames.items():
+        for textAreaFieldName, textAreaFieldVals in list(idevice.textAreaFieldNames.items()):
             self.mainTextAreaElements[textAreaFieldName] = TextAreaElement(idevice.textAreaFields[textAreaFieldName])
 
-        for textFieldName, textFieldVals in idevice.textFieldNames.items():
+        for textFieldName, textFieldVals in list(idevice.textFieldNames.items()):
             self.mainTextElements[textFieldName] = TextElement(idevice.textFields[textFieldName])
 
         for clickableAreaField in idevice.clickableAreaFields:
@@ -77,10 +77,10 @@ class ClickInOrderBlockInc(Block):
             self.idevice.edit = True
             self.idevice.undo = False
 
-        for textAreaFieldName, textAreaElement in self.mainTextAreaElements.items():
+        for textAreaFieldName, textAreaElement in list(self.mainTextAreaElements.items()):
             textAreaElement.process(request)
 
-        for textFieldName, textElement in self.mainTextElements.items():
+        for textFieldName, textElement in list(self.mainTextElements.items()):
             textElement.process(request)
 
         for clickableAreaElement in self.clickableAreaElements:
@@ -306,7 +306,7 @@ class ClickInOrderBlockInc(Block):
         """)
         html += self.titleElement.renderEdit()
         
-        for textAreaFieldName, textAreaElement in self.mainTextAreaElements.items():
+        for textAreaFieldName, textAreaElement in list(self.mainTextAreaElements.items()):
             html += textAreaElement.renderEdit()
 
         #for textFieldName, textElement in self.mainTextElements.iteritems():
@@ -370,10 +370,10 @@ class ClickInOrderClickableAreaElement(Element):
         self.textElements = {}
         self.textAreaElements = {}
 
-        for textFieldName, textFieldDetails in field.textFieldNames.items():
+        for textFieldName, textFieldDetails in list(field.textFieldNames.items()):
             self.textElements[textFieldName] = TextElement(field.textFields[textFieldName])
         
-        for textAreaFieldName, textAreaFieldDetails in field.textAreaFieldNames.items():
+        for textAreaFieldName, textAreaFieldDetails in list(field.textAreaFieldNames.items()):
             self.textAreaElements[textAreaFieldName] = TextAreaElement(field.textAreaFields[textAreaFieldName])
 
     def process(self, request):
@@ -383,9 +383,9 @@ class ClickInOrderClickableAreaElement(Element):
         if "action" in request.args and request.args["action"][0] == self.id:
             self.field.idevice.clickableAreaFields.remove(self.field)
             
-        for textElementName, textElement in self.textElements.items():
+        for textElementName, textElement in list(self.textElements.items()):
             textElement.process(request)
-        for textAreaElementName, textAreaElement in self.textAreaElements.items():
+        for textAreaElementName, textAreaElement in list(self.textAreaElements.items()):
             textAreaElement.process(request)
         
         errMsg = field_engine_check_fields_are_ints(self.textElements, \

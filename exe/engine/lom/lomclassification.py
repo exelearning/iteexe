@@ -143,7 +143,7 @@ class Classification(object):
 
     def getDataByIdentifier(self, identifier=False, stype=False):
         data = []
-        for key, value in self.getElementsByIdentifier(identifier, stype).items():
+        for key, value in list(self.getElementsByIdentifier(identifier, stype).items()):
             reg = {'text': value, 'identifier': key}
             data.append(reg)
         return data

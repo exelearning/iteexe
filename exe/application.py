@@ -194,7 +194,7 @@ class Application:
 
         for option in options:
             if option[0] in ("-V", "--version"):
-                print("eXe", version.version)
+                print(("eXe", version.version))
                 sys.exit()
             elif option[0] in ("-h", "--help"):
                 self.usage()
@@ -305,7 +305,7 @@ class Application:
         Print usage info
         """
         self.loadConfiguration()
-        print(_("""eXeLearning, the EXtremely Easy to use eLearning authoring tool
+        print((_("""eXeLearning, the EXtremely Easy to use eLearning authoring tool
    Usage: %s [OPTION] [PACKAGE]
   -V, --version    print version information and exit
   -h, --help       display this help and exit
@@ -313,6 +313,6 @@ class Application:
   --portable       Run in portable mode
 Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or
 in Documents and Settings/<user name>/Application Data/exe on Windows XP or
-Users/<user name>/AppData/Roaming/exe on Windows 7/8/10""") % os.path.basename(sys.argv[0]))
+Users/<user name>/AppData/Roaming/exe on Windows 7/8/10""") % os.path.basename(sys.argv[0])))
 
 # ===========================================================================
