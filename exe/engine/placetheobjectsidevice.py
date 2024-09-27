@@ -32,6 +32,8 @@ from exe.engine.field   import TextField
 from exe.engine.field   import Field
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
+from exe.engine.translate import x_
+
 log = logging.getLogger(__name__)
 
 # ===========================================================================
