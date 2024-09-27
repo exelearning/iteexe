@@ -30,6 +30,7 @@ import time
 import io
 import re
 from html import escape
+str = str
 from gettext import gettext as _, ngettext as c_
 from zipfile import ZipFile, ZIP_DEFLATED
 from exe.webui import common
