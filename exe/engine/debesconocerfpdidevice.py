@@ -12,6 +12,7 @@ from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
 from exe.engine.field     import TextAreaField
 import re
+from exe.engine.config import x_
 log = logging.getLogger(__name__)
 
 # ===========================================================================
