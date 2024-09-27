@@ -260,6 +260,7 @@ class Application:
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
         self.webServer = WebServer(self)
+        self.webServer.app.run(port=self.config.port)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
 

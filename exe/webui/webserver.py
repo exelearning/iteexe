@@ -49,7 +49,7 @@ from exe.webui.styledesigner import StyleDesigner
 from exe.webui.legalpage import LegalPage
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
-from exe.webui.renderable          import File
+from flask import send_from_directory
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
 from exe.webui.session import eXeSite
@@ -72,6 +72,7 @@ class WebServer:
         self.config = application.config
         self.app = Flask(__name__)
         self.about = AboutPage(self.app)
+        self.release_notes = ReleaseNotesPage(self.app)
 
     def find_port(self):
         """
@@ -139,31 +140,45 @@ class WebServer:
 
         # web resources
         webDir = self.config.webDir
-        self.root.putChild("images", File(webDir + "/images"))
-        self.invalidPackageName.append("images")
-        self.root.putChild("css", File(webDir + "/css"))
-        self.invalidPackageName.append("css")
-        self.root.putChild("scripts", File(webDir + "/scripts"))
-        self.invalidPackageName.append("scripts")
-        self.root.putChild("style", File(self.config.stylesDir))
-        self.invalidPackageName.append("style")
-        self.root.putChild("docs", File(webDir + "/docs"))
-        self.invalidPackageName.append("docs")
-        self.root.putChild("temp_print_dirs",
-                              File(self.tempWebDir + "/temp_print_dirs"))
-        self.invalidPackageName.append("temp_print_dirs")
-        self.root.putChild("previews",
-                              File(self.tempWebDir + "/previews"))
-        self.invalidPackageName.append("previews")
-        self.root.putChild("templates", File(webDir + "/templates"))
-        self.invalidPackageName.append("templates")
-        self.root.putChild("tools", File(webDir + "/tools"))
-        self.invalidPackageName.append("tools")
+        @self.app.route('/images/<path:filename>')
+        def images(filename):
+            return send_from_directory(webDir + "/images", filename)
 
-        # new ExtJS 4.0 Interface
-        jsDir = self.config.jsDir
-        self.root.putChild("jsui", File(jsDir + "/scripts"))
-        self.invalidPackageName.append("jsui")
+        @self.app.route('/css/<path:filename>')
+        def css(filename):
+            return send_from_directory(webDir + "/css", filename)
+
+        @self.app.route('/scripts/<path:filename>')
+        def scripts(filename):
+            return send_from_directory(webDir + "/scripts", filename)
+
+        @self.app.route('/style/<path:filename>')
+        def style(filename):
+            return send_from_directory(self.config.stylesDir, filename)
+
+        @self.app.route('/docs/<path:filename>')
+        def docs(filename):
+            return send_from_directory(webDir + "/docs", filename)
+
+        @self.app.route('/temp_print_dirs/<path:filename>')
+        def temp_print_dirs(filename):
+            return send_from_directory(self.tempWebDir + "/temp_print_dirs", filename)
+
+        @self.app.route('/previews/<path:filename>')
+        def previews(filename):
+            return send_from_directory(self.tempWebDir + "/previews", filename)
+
+        @self.app.route('/templates/<path:filename>')
+        def templates(filename):
+            return send_from_directory(webDir + "/templates", filename)
+
+        @self.app.route('/tools/<path:filename>')
+        def tools(filename):
+            return send_from_directory(webDir + "/tools", filename)
+
+        @self.app.route('/jsui/<path:filename>')
+        def jsui(filename):
+            return send_from_directory(jsDir + "/scripts", filename)
 
         # A port for this server was looked for earlier by find_port.
         # Ensure that it is valid (>= 0):

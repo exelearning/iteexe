@@ -25,9 +25,7 @@ The ReleaseNotesPage is responsible for showing Release Notes information
 
 import os
 import codecs
-from twisted.web.resource import Resource
-from exe.webui.renderable import Renderable
-from nevow                import rend, tags
+from flask import Blueprint, render_template_string
 from exe.engine           import version
 
 import logging
@@ -35,20 +33,21 @@ import logging
 log = logging.getLogger(__name__)
 
 
-class ReleaseNotesPage(Renderable, rend.Page):
+class ReleaseNotesPage:
     """
     The ReleaseNotesPage is responsible for showing Release Notes information
     """
     _templateFileName = 'release-notes.html'
     name = 'release-notes'
 
-    def __init__(self, parent):
-        """
-        Initialize
-        """
-        parent.putChild(self.name, self)
-        Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
+    def __init__(self, app):
+        self.app = app
+        self.blueprint = Blueprint(self.name, __name__, template_folder='templates')
+        self.app.register_blueprint(self.blueprint)
+
+    @self.blueprint.route('/release-notes')
+    def show(self):
+        return render_template_string(self.render_changelog())
 
     def render_version(self, ctx, data):
         return ctx.tag()[version.release]
