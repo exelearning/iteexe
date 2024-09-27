@@ -12,7 +12,11 @@ Para Saber mas bloque
 """
 
 import logging
+import gettext
 from exe.webui.block               import Block
+
+# Alias gettext's gettext function as x_
+x_ = gettext.gettext
 from exe.webui                     import common
 from exe.webui.element      import TextAreaElement
 
