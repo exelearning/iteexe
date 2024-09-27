@@ -29,7 +29,7 @@ import copy
 import time
 import io
 import re
-from cgi import escape
+from html import escape
 from zipfile import ZipFile, ZIP_DEFLATED
 from exe.webui import common
 from exe.webui.blockfactory import g_blockFactory
