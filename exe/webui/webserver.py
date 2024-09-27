@@ -210,20 +210,20 @@ class WebServer:
 
         # A port for this server was looked for earlier by find_port.
         # Ensure that it is valid (>= 0):
-        if self.config.port >= 0:
+        while self.config.port >= 0:
             log.info("run() using eXe port# %d", self.config.port)
             try:
                 reactor.run()
+                break
             except OSError as e:
                 if "Address already in use" in str(e):
                     log.error("Port %d is in use, trying to find another port.", self.config.port)
-                    self.ensure_directories_exist()  # Re-run to find a new port
-                    reactor.run()
+                    self.config.port += 1  # Increment port number
                 else:
                     raise
-        else:
+        if self.config.port < 0:
             log.error("ERROR: webserver's run() called, but a valid port " \
-                    + "was not available.")
+                      + "was not available.")
 
     def monitor(self):
         if self.monitoring:
