@@ -24,7 +24,7 @@ from exe.engine.persist       import Persistable
 from exe.engine.resource      import Resource
 from exe                     import     globals
 from twisted.web.microdom import escape
-from exe.engine.translate import x_
+from exe.engine.translate import x_, _
 
 import os,sys
 log = logging.getLogger(__name__)
@@ -566,7 +566,7 @@ def field_engine_is_delete_request(request):
 """
 def field_engine_apply_template_to_element_arr(templateString, elementArr, fieldInfoArr):
     template = Template(templateString)
-    ourDict = make_dictionary_from_element_array("", elementArr, fieldInfoArr)
+    ourDict = make_dictionary_from_element_dict("", elementArr, fieldInfoArr, None, False)
     retVal = template.safe_substitute(ourDict)
     return retVal
 
