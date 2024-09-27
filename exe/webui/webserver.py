@@ -164,6 +164,7 @@ class WebServer:
         """
         Start serving webpages from the local Flask web server
         """
+        log.info("************** eXe logging started **************")
         log.debug("start web server running")
 
         # web resources
