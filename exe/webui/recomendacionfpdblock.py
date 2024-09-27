@@ -14,6 +14,10 @@ Recomendacion bloque
 import logging
 from exe.webui.block               import Block
 from exe.webui                     import common
+def x_(text):
+    # Placeholder for a translation function
+    return text
+
 from exe.webui.element      import TextAreaElement
 
 log = logging.getLogger(__name__)
