@@ -26,7 +26,7 @@ import logging
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import TextAreaElement, ElementWithResources
-from cgi import escape
+from html import escape
 import random
 
 
