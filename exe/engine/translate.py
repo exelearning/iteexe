@@ -24,7 +24,13 @@ def x_(x):
     """Fake/late translate mechanism"""
     return x
 
-from exe.engine.translate import c_, _
+def c_(text):
+    """Placeholder function for c_ translation"""
+    return text
+
+def _(text):
+    """Placeholder function for _ translation"""
+    return text
 
 def lateTranslate(propName, content=False):
     """
