@@ -129,14 +129,14 @@ display them as links in your content. From here you can edit the bookmarks and 
                         rssDic['entries'][i].link, rssDic['entries'][i].title)  
                 content += "</ul>"
         except Exception as error:
-            content += _("Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
-            content += _("Error") % str(error)
+            content += x_("Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+            content += x_("Error") % str(error)
             content += " (%s)" % str(error)
             # import traceback
             # content += _(u"Traceback: %s") % unicode(traceback.format_exc())
             
         if content == "":
-            content += _("Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+            content += x_("Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
         self.rss.content = str(content)
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
