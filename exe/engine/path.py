@@ -1108,6 +1108,8 @@ def toUnicode(string, encoding='utf8'):
     """
     if isinstance(string, bytes):
         return str(string, encoding)
+    elif isinstance(string, Path):
+        return string
     elif isinstance(string, str):
         return string
     elif string is None:
