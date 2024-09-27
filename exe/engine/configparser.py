@@ -265,7 +265,7 @@ class ConfigParser(object):
         # Write the file
         file_.seek(0)
         data = '\n'.join(newLines)
-        file_.write(data.encode('utf8'))
+        file_.write(data)
         file_.truncate()
 
     def has_option(self, sectionName, optionName):
