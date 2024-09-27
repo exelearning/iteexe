@@ -630,7 +630,19 @@ class Config(object):
     def updateStyles(self):
         bkstyle = self.webDir/'style'
         dststyle = self.stylesDir
-        if os.stat(bkstyle).st_mtime - os.stat(dststyle).st_mtime > 1:
+        if os.path.exists(bkstyle) and os.path.exists(dststyle):
+            if os.stat(bkstyle).st_mtime - os.stat(dststyle).st_mtime > 1:
+                for name in os.listdir(bkstyle):
+                    bksdirstyle = os.path.join(bkstyle, name)
+                    dstdirstyle = os.path.join(dststyle, name)
+                    if os.path.isdir(bksdirstyle):
+                        if os.path.exists(dstdirstyle):
+                            shutil.rmtree(dstdirstyle)
+                        shutil.copytree(bksdirstyle, dstdirstyle)
+                    else:
+                        shutil.copy(bksdirstyle, dstdirstyle)
+        else:
+            logging.warning("Style directories do not exist: %s, %s", bkstyle, dststyle)
             for name in os.listdir(bkstyle):
                 bksdirstyle = os.path.join(bkstyle, name)
                 dstdirstyle = os.path.join(dststyle, name)
