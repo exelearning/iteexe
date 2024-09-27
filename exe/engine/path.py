@@ -102,7 +102,7 @@ class Path(str):
         return Path(str.__str__(self) + str(more))
 
     def __radd__(self, other):
-        return Path(str(other) + str(self))
+        return Path(str.__str__(other) + str.__str__(self))
 
     # The / operator joins paths.
     def __truediv__(self, rel):
