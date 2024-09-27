@@ -117,12 +117,12 @@ class ClozefpdBlock(Block):
             self.idevice.title = x_("Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
-	html += "</div>"
-	html += self.instructionElement.renderEdit()
-	html += self.clozeElement.renderEdit()
-	html += self.feedbackElement.renderEdit()
-	html += self.renderEditButtons()
-	html += "</div>"
+        html += "</div>"
+        html += self.instructionElement.renderEdit()
+        html += self.clozeElement.renderEdit()
+        html += self.feedbackElement.renderEdit()
+        html += self.renderEditButtons()
+        html += "</div>"
         return html
     
     def renderPreview(self, style):
@@ -192,7 +192,7 @@ class ClozefpdBlock(Block):
         html += u"</div></noscript>"
         '''
 
-	return html
+        return html
 
     def renderText(self): 
         
