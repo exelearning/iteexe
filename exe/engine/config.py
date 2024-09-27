@@ -728,12 +728,15 @@ class Config(object):
         log = logging.getLogger()
         log.debug("loadLocales")
         gettext.install('exe', self.localeDir)
-        for subDir in self.localeDir.dirs():
-            if (subDir/'LC_MESSAGES'/'exe.mo').exists():
-                self.locales[subDir.basename()] = \
-                    gettext.translation('exe',
-                                        self.localeDir,
-                                        languages=[str(subDir.basename())])
+        if self.localeDir.exists():
+            for subDir in self.localeDir.dirs():
+                if (subDir/'LC_MESSAGES'/'exe.mo').exists():
+                    self.locales[subDir.basename()] = \
+                        gettext.translation('exe',
+                                            self.localeDir,
+                                            languages=[str(subDir.basename())])
+        else:
+            logging.warning("Locale directory does not exist: %s", self.localeDir)
         if self.locale not in self.locales:
             self.locale = 'en'
         log.debug("loading locale %s" % self.locale)
