@@ -171,6 +171,7 @@ class WebServer:
         log.info("libPath     = %s", os.path.dirname(os.__file__))
         log.info("browser     = %s", self.config.browser if hasattr(self.config, 'browser') else 'None')
         log.info("webDir      = %s", self.config.webDir)
+        log.info("jsDir       = %s", self.config.jsDir)
         log.debug("start web server running")
 
         # web resources
