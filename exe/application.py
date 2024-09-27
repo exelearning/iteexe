@@ -37,8 +37,7 @@ if os.name == 'posix' and not ('--standalone' in sys.argv or '--portable' in sys
 from exe.webui.webserver     import WebServer
 
 from getopt                  import getopt, GetoptError
-from twisted.internet        import reactor
-from twisted.web.static      import File
+from flask import Flask
 
 from exe                     import globals as G
 from exe.engine              import version
@@ -258,7 +257,7 @@ class Application:
             self.ideviceStore.load()
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
-        self.webServer = WebServer(self, self.packagePath)
+        self.webServer = WebServer(self)
         # and determine the web server's port before launching the client, so it can use the same port#:
         self.webServer.find_port()
 

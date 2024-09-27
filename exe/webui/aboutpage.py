@@ -24,7 +24,7 @@ The AboutPage is responsible for showing about information
 
 from twisted.web.resource import Resource
 from exe.webui.renderable import Renderable
-from nevow                import rend, tags
+from flask import Flask, render_template
 from exe.engine           import version
 from exe                  import globals as G
 
@@ -34,22 +34,15 @@ log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class AboutPage(Renderable, rend.Page):
+class AboutPage:
     """
     The AboutPage is responsible for showing about information
     """
-    _templateFileName = 'about.html'
-    name = 'about'
+    def __init__(self, app: Flask):
+        self.app = app
+        self.app.add_url_rule('/about', 'about', self.show_about)
 
-    def __init__(self, parent):
-        """
-        Initialize
-        """
-        parent.putChild(self.name, self)
-        Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
-
-    def render_version(self, ctx, data):
+    def show_about(self):
         revstring = ''
         if G.application.snap:
             revstring = ' (SNAP)'
@@ -57,6 +50,6 @@ class AboutPage(Renderable, rend.Page):
             revstring = ' (standalone)'
         elif G.application.portable:
             revstring = ' (portable)'
-        return ctx.tag()[version.release+revstring]
+        return render_template('about.html', version=version.release + revstring)
 
 # ===========================================================================

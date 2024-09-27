@@ -41,7 +41,8 @@ finally:
 from exe.webui.editorpage          import EditorPage
 from exe.webui.stylemanagerpage    import StyleManagerPage
 from exe.webui.preferencespage     import PreferencesPage
-from exe.webui.aboutpage           import AboutPage
+from flask import Flask
+from exe.webui.aboutpage import AboutPage
 from exe.webui.releasenotespage    import ReleaseNotesPage
 from exe.webui.styledesigner import StyleDesigner
 # jrf - legal notes
@@ -66,30 +67,11 @@ class WebServer:
     Encapsulates some twisted components to serve
     all webpages, scripts and nevow functionality
     """
-    def __init__(self, application, packagePath=None):
-        """
-        Initialize
-        """
+    def __init__(self, application):
         self.application = application
         self.config = application.config
-        self.tempWebDir = application.tempWebDir
-        self.root = PackageRedirectPage(self, packagePath)
-        self.editor = EditorPage(self.root)
-        self.stylemanager = StyleManagerPage(self.root)
-        self.preferences = PreferencesPage(self.root)
-        self.xliffimportpreferences = XliffImportPreferencesPage(self.root)
-        self.dirtree = DirTreePage(self.root)
-        self.about = AboutPage(self.root)
-        self.releasenotes = ReleaseNotesPage(self.root)
-        self.styledesigner = StyleDesigner(self.root)
-        # jrf - legal notes
-        self.legal = LegalPage(self.root)
-        self.quit = QuitPage(self.root)
-        self.iecmwaring = IECMWarningPage(self.root)
-        self.oauth = OauthPage(self.root)
-        self.monitoring = False
-        self.invalidPackageName = []
-        self.templatemanager = TemplateManagerPage(self.root)               
+        self.app = Flask(__name__)
+        self.about = AboutPage(self.app)
 
     def find_port(self):
         """
