@@ -24,6 +24,7 @@ Cloze Idevice. Shows a paragraph where the student must fill in the blanks
 """
 
 import logging
+from exe.engine.translate import x_, _
 import re
 
 from PIL import Image
