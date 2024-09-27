@@ -69,6 +69,7 @@ class WebServer:
     def __init__(self, application):
         self.application = application
         self.config = application.config
+        self.config.localeDir = os.path.join(os.path.dirname(__file__), '..', 'locale')
         self.app = Flask(__name__)
         self.ensure_directories_exist()
         self.about = AboutPage(self.app)
