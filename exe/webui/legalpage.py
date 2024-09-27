@@ -25,28 +25,17 @@ copyright, licenses... of eXeLearning and of the third libraries used.
 """
 
 import logging
-from exe.webui.renderable import Renderable
-from nevow import rend
+from flask import Blueprint, render_template
 
 log = logging.getLogger(__name__)
 
 
 # ===========================================================================
-class LegalPage(Renderable, rend.Page):
-    """
-    The legalPage class is responsible for showing legal information:
-    copyright, licenses... of eXeLearning and of the third libraries used.
-    """
+legal_page = Blueprint('legal_page', __name__)
 
-    _templateFileName = 'legal.html'
-    name = 'legal'
-
-    def __init__(self, parent):
-        """
-        Initialize
-        """
-        parent.putChild(self.name, self)
-        Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
+@legal_page.route('/legal')
+def legal():
+    """Show legal information: copyright, licenses, etc."""
+    return render_template('legal.html')
 
 # ===========================================================================
