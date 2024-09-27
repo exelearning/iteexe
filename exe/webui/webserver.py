@@ -81,7 +81,8 @@ class WebServer:
         directories = [
             self.config.webDir + "/content_template",
             self.config.webDir + "/scripts/idevices",
-            self.config.localeDir
+            self.config.localeDir,
+            os.path.join(self.config.localeDir, "en")
         ]
         for directory in directories:
             if not os.path.exists(directory):
