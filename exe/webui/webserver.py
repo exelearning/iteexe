@@ -165,6 +165,7 @@ class WebServer:
         Start serving webpages from the local Flask web server
         """
         log.info("************** eXe logging started **************")
+        log.info("Serving Flask app '%s'", __name__)
         log.info("version     = 2.9")
         log.info("configPath  = %s", self.config.configPath)
         log.info("exePath     = %s", os.path.abspath(__file__))
