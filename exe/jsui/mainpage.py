@@ -1323,8 +1323,6 @@ class MainPage(RenderableLivePage):
             if parsedResult['status'] == 'true':
                 link_url = ProcomunOauth.BASE_URL + '/ode/view/%s' % parsedResult['data']['documentId']
                 client.alert(
-                    self.js(
-                    self.js(
                     js(
                         '\''
                         + _('Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
