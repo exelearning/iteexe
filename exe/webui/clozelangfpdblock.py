@@ -93,7 +93,7 @@ class ClozelangfpdBlock(Block):
         Renders a screen that allows the user to enter paragraph text and choose
         which words are hidden.
         """
-	"""
+        """
         html = [
             u'<div class="iDevice">',
             u'<div class="block">',
@@ -108,22 +108,22 @@ class ClozelangfpdBlock(Block):
             ]
         return u'\n    '.join(html)
 	"""
-	html  = "<div class=\"iDevice\"><br/>\n"
-	html  = "<div class=\"block\">"
+        html  = "<div class=\"iDevice\"><br/>\n"
+        html  = "<div class=\"block\">"
 
-	# JRJ
-	# Quitamos el prefijo "FPD -"
-	# (let's remove the "FPD -" prefix)
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_("Now It's Your Turn")
+        # JRJ
+        # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_("Now It's Your Turn")
         html += common.textInput("title"+self.id, self.idevice.title)
 
-	html += "</div>"
-	html += self.instructionElement.renderEdit()
-	html += self.clozelangElement.renderEdit()
-	html += self.feedbackElement.renderEdit()
-	html += self.renderEditButtons()
-	html += "</div>"
+        html += "</div>"
+        html += self.instructionElement.renderEdit()
+        html += self.clozelangElement.renderEdit()
+        html += self.feedbackElement.renderEdit()
+        html += self.renderEditButtons()
+        html += "</div>"
         return html
     
     def renderPreview(self, style):
@@ -186,25 +186,25 @@ class ClozelangfpdBlock(Block):
                 html += self.feedbackElement.renderView(False, class_="feedback")
         # html += u'</div>\n'
 
-	#JR: Anadimos la etiqueta noscript
-	# 2014 - JavaScript is required
-	'''
-	if self.previewing:
-		cloze = self.clozelangElement.field.content_w_resourcePaths
-		feedback = self.feedbackElement.field.content_w_resourcePaths
-	else:
-		cloze = self.clozelangElement.field.content_wo_resourcePaths
-		feedback = self.feedbackElement.field.content_wo_resourcePaths
-	html += u'<noscript><div class="feedback">\n'
-	html += u"<strong>" + c_("Solution") + u": </strong><br/>\n"
-	html += cloze
-	if self.feedbackElement.field.content:
-		html += u"<br/><br/><strong>" + c_("Feedback") + ": </strong><br/>\n"
-		html += feedback
-	html += u"</div></noscript>"
-	'''
+        #JR: Anadimos la etiqueta noscript
+        # 2014 - JavaScript is required
+        '''
+        if self.previewing:
+            cloze = self.clozelangElement.field.content_w_resourcePaths
+            feedback = self.feedbackElement.field.content_w_resourcePaths
+        else:
+            cloze = self.clozelangElement.field.content_wo_resourcePaths
+            feedback = self.feedbackElement.field.content_wo_resourcePaths
+        html += u'<noscript><div class="feedback">\n'
+        html += u"<strong>" + c_("Solution") + u": </strong><br/>\n"
+        html += cloze
+        if self.feedbackElement.field.content:
+            html += u"<br/><br/><strong>" + c_("Feedback") + ": </strong><br/>\n"
+            html += feedback
+        html += u"</div></noscript>"
+        '''
 
-	return html
+        return html
 
     def renderText(self): 
         
