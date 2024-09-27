@@ -747,7 +747,7 @@ class Config(object):
                 logging.error("Default locale 'en' not found. Locale setup failed.")
                 return
         log.debug("loading locale %s" % self.locale)
-        self.locales[self.locale].install(str=True)
+        self.locales[self.locale].install()
         __builtins__['c_'] = lambda s: self.locales[self.locale].ugettext(s) if s else s
 
 # ===========================================================================
