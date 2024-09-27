@@ -702,21 +702,24 @@ class Config(object):
         jsidevices_backup = self.webDir / 'scripts' / 'idevices'
 
         # Compare the directories' modification time to see if the update is necessary
-        if os.stat(jsidevices_backup).st_mtime - os.stat(self.jsIdevicesDir).st_mtime > 1:
-            # Go through all JsIdevices
-            for name in os.listdir(jsidevices_backup):
-                # Copy the Idevice
-                current_idevice = os.path.join(jsidevices_backup, name)
-                current_dest_idevice = os.path.join(self.jsIdevicesDir, name)
+        if os.path.exists(jsidevices_backup) and os.path.exists(self.jsIdevicesDir):
+            if os.stat(jsidevices_backup).st_mtime - os.stat(self.jsIdevicesDir).st_mtime > 1:
+                # Go through all JsIdevices
+                for name in os.listdir(jsidevices_backup):
+                    # Copy the Idevice
+                    current_idevice = os.path.join(jsidevices_backup, name)
+                    current_dest_idevice = os.path.join(self.jsIdevicesDir, name)
 
-                # This shouldn't really be necessary, but we keep it as
-                # it would copy the exact structure of the 'idevices' folder.
-                if os.path.isdir(current_idevice):
-                    if os.path.exists(current_dest_idevice):
-                        shutil.rmtree(current_dest_idevice)
-                    shutil.copytree(current_idevice, current_dest_idevice)
-                else:
-                    shutil.copy(current_idevice, current_dest_idevice)
+                    # This shouldn't really be necessary, but we keep it as
+                    # it would copy the exact structure of the 'idevices' folder.
+                    if os.path.isdir(current_idevice):
+                        if os.path.exists(current_dest_idevice):
+                            shutil.rmtree(current_dest_idevice)
+                        shutil.copytree(current_idevice, current_dest_idevice)
+                    else:
+                        shutil.copy(current_idevice, current_dest_idevice)
+        else:
+            logging.warning("JS Idevices directories do not exist: %s, %s", jsidevices_backup, self.jsIdevicesDir)
 
     def loadLocales(self):
         """
