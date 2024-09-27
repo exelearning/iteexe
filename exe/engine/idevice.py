@@ -111,7 +111,7 @@ class Idevice(Persistable):
                 if self._title == '':
                     customIdeviceClass += 'untitledIdevice'
                 else:
-                    customIdeviceClass += 'Idevice'+re.sub( '\W+', '', self._title )
+                    customIdeviceClass += 'Idevice'+re.sub(r'\W+', '', self._title )
                 # 3. Icon
                 if self.icon:
                     customIdeviceClass += ' icon' + self.icon
@@ -125,11 +125,11 @@ class Idevice(Persistable):
             return klass[:-2]
     klass = property(get_klass)
 
-    def __cmp__(self, other):
+    def __lt__(self, other):
         """
         Compare this iDevice with other
         """
-        return cmp(self.id, other.id)
+        return self.id < other.id
 
     def __deepcopy__(self, others):
         """
@@ -264,11 +264,11 @@ class Idevice(Persistable):
                         new_node.anchor_fields = []
                     if this_field not in new_node.anchor_fields: 
                         new_node.anchor_fields.append(this_field)
-                    if new_package:
-                        if not hasattr(new_package, 'anchor_nodes'):
-                            new_package.anchor_nodes = []
-                        if new_node not in new_package.anchor_nodes:
-                            new_package.anchor_nodes.append(new_node)
+                    # if new_package:
+                    #     if not hasattr(new_package, 'anchor_nodes'):
+                    #         new_package.anchor_nodes = []
+                    #     if new_node not in new_package.anchor_nodes:
+                    #         new_package.anchor_nodes.append(new_node)
 
             # now, regardless of whether or not that field has any anchors,
             # if this idevice is being deleted (new_node is None), then
