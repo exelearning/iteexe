@@ -33,9 +33,11 @@ template to do your rendering, even if you're part of a bigger block.
 """
 
 from twisted.web.resource import Resource
-from nevow import loaders
-from twisted.web import static
-from nevow.i18n import render as render_i18n
+from twisted.web.template import Element, XMLFile, renderer
+from twisted.web.server import Request
+from twisted.web.static import File
+from twisted.web.util import redirectTo
+from twisted.web import resource
 
 import logging
 log = logging.getLogger(__name__)
