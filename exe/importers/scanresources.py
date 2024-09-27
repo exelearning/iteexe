@@ -25,7 +25,7 @@ from chardet import latin1prober
 import re
 import sys
 from bs4 import BeautifulSoup, UnicodeDammit
-from urllib import quote, unquote
+from urllib.parse import quote, unquote
 from exe.engine.freetextidevice import FreeTextIdevice
 from exe.engine.resource import Resource
 from exe.engine.path import Path
@@ -117,7 +117,7 @@ class Url:
         self.start = start
         self.relpath = relpath(self.path,self.start)
         parent = os.path.split(self.relpath)[0]
-        self.parentpath = u"." if parent == u"" else parent
+        self.parentpath = "." if parent == "" else parent
         self.basename = os.path.basename(self.relpath)
         if os.path.isdir(self.path):
             self.type = 'dir'
@@ -188,10 +188,10 @@ class Resources:
             raise
         i = 1
         for root, dirs, files in self._safewalk(self.baseurl):
-            html = u""
+            html = ""
             idevice = None
             if self.client:
-                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Analizing directory %d of %d: %s') % (i, self.numdirs,root.encode(sys.getfilesystemencoding())))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_('Analizing directory %d of %d: %s') % (i, self.numdirs,root.encode(sys.getfilesystemencoding())))
             for dir in dirs:
                 if self.cancel:
                     return
@@ -214,9 +214,9 @@ class Resources:
                 except:
                     continue
                 url.href = 'resources/%s' % (quote(r.storageName))
-                html += u"<p><a href=%s>%s</p>\n" % (url.href,url.basename)
+                html += "<p><a href=%s>%s</p>\n" % (url.href,url.basename)
                 resources['urls'][url.relpath] = url
-                if url.mime in resources['mimes'].keys():
+                if url.mime in list(resources['mimes'].keys()):
                     resources['mimes'][url.mime].append(url)
                 else:
                     resources['mimes'][url.mime] = [ url ]
@@ -227,7 +227,7 @@ class Resources:
     def _safewalk(self, top):
         try:
             names = os.listdir(top)
-        except error, err:
+        except error as err:
             return
     
         dirs, nondirs = [], []
@@ -249,13 +249,13 @@ class Resources:
                     yield x
     def _computeRelpaths(self):
         i = 1
-        for url in self.resources['urls'].values():
+        for url in list(self.resources['urls'].values()):
             if url.type == 'dir':
                 if self.client:
-                    self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Calculating relative paths to directory %d of %d: %s') % (i, self.numdirs, url.relpath.encode(sys.getfilesystemencoding())))
+                    self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_('Calculating relative paths to directory %d of %d: %s') % (i, self.numdirs, url.relpath.encode(sys.getfilesystemencoding())))
                 url.relpaths = []
                 absd = ''.join([self.baseurl, os.path.sep, url.relpath])
-                for link in self.resources['urls'].values():
+                for link in list(self.resources['urls'].values()):
                     if self.cancel:
                         return
                     if link.relpath.encode(sys.getfilesystemencoding()) == '.':
@@ -272,7 +272,7 @@ class Resources:
             if self.cancel:
                return
             if self.client:
-                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Analyzing HTML file labels %d of %d: %s') % (i, total, str(url)))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_('Analyzing HTML file labels %d of %d: %s') % (i, total, str(url)))
             content = open(url.path).read()
             encoding = detect(content)['encoding']
             #ucontent = unicode(content,encoding)
@@ -291,7 +291,7 @@ class Resources:
                 if not tag.attrs:
                     continue
                 matches = []
-                for key, value in tag.attrs.iteritems():
+                for key, value in tag.attrs.items():
                     if value == "":
                         continue
                     for val in value:
@@ -322,7 +322,7 @@ class Resources:
                         url.addLink( match )
                         url.addRLink( str(match.url) )
             i += 1
-        csss = self.resources['mimes']['text/css'] if 'text/css' in self.resources['mimes'].keys() else None
+        csss = self.resources['mimes']['text/css'] if 'text/css' in list(self.resources['mimes'].keys()) else None
         csss_and_htmls = csss + htmls if csss else htmls
         total = len(csss_and_htmls)
         i = 1
@@ -337,10 +337,10 @@ class Resources:
             if not content:
                 content = open(url.path).read()
                 encoding = detect(content)['encoding']
-                content = unicode(content,encoding)
+                content = str(content,encoding)
                 url.setContent(content,encoding)                
             if self.client:
-                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Exhaustively analyzed file %s %d of %d: %s') % (tipo, i, total, str(url)))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_('Exhaustively analyzed file %s %d of %d: %s') % (tipo, i, total, str(url)))
             matches = []
             for l, rl in self.resources['urls'][url.parentpath].relpaths:
                 low_rl = rl.lower()
@@ -374,7 +374,7 @@ class Resources:
                 return
             links, depth = q.pop()
             for link in links:
-                if link in self.depths.keys():
+                if link in list(self.depths.keys()):
                     self.depths[link] = depth if self.depths[link] > depth else self.depths[link]
                 else:
                     self.depths[link] = depth
@@ -385,7 +385,7 @@ class Resources:
         if self.cancel:
             return
         for url in urls:
-            if url not in self.resources['urls'].keys():
+            if url not in list(self.resources['urls'].keys()):
                 continue
             else:
                 self.depths = {}
@@ -393,7 +393,7 @@ class Resources:
                 if self.cancel:
                     return
                 if self.client:
-                    self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Calculating depth of links'))
+                    self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_('Calculating depth of links'))
                 self._computeDepths(url)
                 if self.cancel:
                     return
@@ -405,14 +405,14 @@ class Resources:
             return str(soup.title.string)
         names = {}
         for link in url.plinks:
-            if link.tag.contents and isinstance(link.tag.contents[0],unicode) and link.tag.contents[0].lstrip() != u"":
-                if link.tag.contents[0] in names.keys():
+            if link.tag.contents and isinstance(link.tag.contents[0],str) and link.tag.contents[0].lstrip() != "":
+                if link.tag.contents[0] in list(names.keys()):
                     names[link.tag.contents[0]] += 1
                 else:
                     names[link.tag.contents[0]] = 1
         max = 0
         max_name_ocurr = str(url)
-        for name in names.keys():
+        for name in list(names.keys()):
             if names[name] > max:
                 max_name_ocurr = name
                 max = names[name]
@@ -429,7 +429,7 @@ class Resources:
 
         if url.mime == 'text/html' and self.depths[str(url)] >= depth:
             if self.client:
-                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_(u'Inserting %s') % (str(url)))
+                self.client.call('eXe.app.getController("Toolbar").updateImportProgressWindow',_('Inserting %s') % (str(url)))
             
             type = link.tag.name if link and link.tag else 'a'
             if type not in ['frame','iframe'] and node:

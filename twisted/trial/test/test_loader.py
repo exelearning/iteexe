@@ -16,37 +16,37 @@ class FinderTest(packages.PackageTest):
     def test_findPackage(self):
         sample1 = self.loader.findByName('twisted')
         import twisted as sample2
-        self.failUnlessEqual(sample1, sample2)
+        self.assertEqual(sample1, sample2)
     
     def test_findModule(self):
         sample1 = self.loader.findByName('twisted.trial.test.sample')
-        import sample as sample2
-        self.failUnlessEqual(sample1, sample2)
+        from . import sample as sample2
+        self.assertEqual(sample1, sample2)
 
     def test_findFile(self):
         path = util.sibpath(__file__, 'sample.py')
         sample1 = self.loader.findByName(path)
-        import sample as sample2
-        self.failUnlessEqual(sample1, sample2)
+        from . import sample as sample2
+        self.assertEqual(sample1, sample2)
 
     def test_findObject(self):
         sample1 = self.loader.findByName('twisted.trial.test.sample.FooTest')
-        import sample
-        self.failUnlessEqual(sample.FooTest, sample1)
+        from . import sample
+        self.assertEqual(sample.FooTest, sample1)
 
     def test_findNonModule(self):
-        self.failUnlessRaises(AttributeError,
+        self.assertRaises(AttributeError,
                               self.loader.findByName,
                               'twisted.trial.test.nonexistent')
 
     def test_findNonPackage(self):
-        self.failUnlessRaises(ValueError,
+        self.assertRaises(ValueError,
                               self.loader.findByName,
                               'nonextant')
 
     def test_findNonFile(self):
         path = util.sibpath(__file__, 'nonexistent.py')
-        self.failUnlessRaises(ValueError, self.loader.findByName, path)
+        self.assertRaises(ValueError, self.loader.findByName, path)
         
         
 class FileTest(packages.PackageTest):
@@ -62,13 +62,13 @@ class FileTest(packages.PackageTest):
         sys.path = self.oldPath
 
     def test_notFile(self):
-        self.failUnlessRaises(ValueError,
+        self.assertRaises(ValueError,
                               runner.filenameToModule, 'doesntexist')
 
     def test_moduleInPath(self):
         sample1 = runner.filenameToModule(util.sibpath(__file__, 'sample.py'))
-        import sample as sample2
-        self.failUnlessEqual(sample2, sample1)
+        from . import sample as sample2
+        self.assertEqual(sample2, sample1)
 
     def test_moduleNotInPath(self):
         sys.path, newPath = self.oldPath, sys.path
@@ -77,14 +77,14 @@ class FileTest(packages.PackageTest):
                                                        'test_sample.py'))
         sys.path = newPath
         from goodpackage import test_sample as sample2
-        self.failUnlessEqual(os.path.splitext(sample2.__file__)[0],
+        self.assertEqual(os.path.splitext(sample2.__file__)[0],
                              os.path.splitext(sample1.__file__)[0])
 
     def test_packageInPath(self):
         package1 = runner.filenameToModule(os.path.join(self.parent,
                                                         'goodpackage'))
         import goodpackage
-        self.failUnlessEqual(goodpackage, package1)
+        self.assertEqual(goodpackage, package1)
 
     def test_packageNotInPath(self):
         sys.path, newPath = self.oldPath, sys.path
@@ -92,15 +92,15 @@ class FileTest(packages.PackageTest):
                                                         'goodpackage'))
         sys.path = newPath
         import goodpackage
-        self.failUnlessEqual(os.path.splitext(goodpackage.__file__)[0],
+        self.assertEqual(os.path.splitext(goodpackage.__file__)[0],
                              os.path.splitext(package1.__file__)[0])
 
     def test_directoryNotPackage(self):
-        self.failUnlessRaises(ValueError, runner.filenameToModule,
+        self.assertRaises(ValueError, runner.filenameToModule,
                               util.sibpath(__file__, 'directory'))
 
     def test_filenameNotPython(self):
-        self.failUnlessRaises(ValueError, runner.filenameToModule,
+        self.assertRaises(ValueError, runner.filenameToModule,
                               util.sibpath(__file__, 'notpython.py'))
 
     def test_filenameMatchesPackage(self):
@@ -110,7 +110,7 @@ class FileTest(packages.PackageTest):
         fd.close()
         try:
             module = runner.filenameToModule(filename)
-            self.failUnlessEqual(filename, module.__file__)
+            self.assertEqual(filename, module.__file__)
         finally:
             os.remove(filename)
 
@@ -129,135 +129,135 @@ class LoaderTest(packages.PackageTest):
         packages.PackageTest.tearDown(self, self.parent)
 
     def test_sortCases(self):
-        import sample
+        from . import sample
         suite = self.loader.loadClass(sample.AlphabetTest)
-        self.failUnlessEqual(['test_a', 'test_b', 'test_c'],
+        self.assertEqual(['test_a', 'test_b', 'test_c'],
                              [test._testMethodName for test in suite._tests])
         newOrder = ['test_b', 'test_c', 'test_a']
-        sortDict = dict(zip(newOrder, range(3)))
+        sortDict = dict(list(zip(newOrder, list(range(3)))))
         self.loader.sorter = lambda x : sortDict.get(x.shortDescription(), -1)
         suite = self.loader.loadClass(sample.AlphabetTest)
-        self.failUnlessEqual(newOrder,
+        self.assertEqual(newOrder,
                              [test._testMethodName for test in suite._tests])
 
     def test_loadMethod(self):
-        import sample
+        from . import sample
         suite = self.loader.loadMethod(sample.FooTest.test_foo)
-        self.failUnlessEqual(1, suite.countTestCases())
-        self.failUnlessEqual('test_foo', suite._testMethodName)
+        self.assertEqual(1, suite.countTestCases())
+        self.assertEqual('test_foo', suite._testMethodName)
 
     def test_loadFailingMethod(self):
         # test added for issue1353
         from twisted.trial import reporter
-        import erroneous
+        from . import erroneous
         suite = self.loader.loadMethod(erroneous.TestRegularFail.test_fail)
         result = reporter.TestResult()
         suite.run(result)
-        self.failUnlessEqual(result.testsRun, 1)
-        self.failUnlessEqual(len(result.failures), 1)
+        self.assertEqual(result.testsRun, 1)
+        self.assertEqual(len(result.failures), 1)
 
     def test_loadNonMethod(self):
-        import sample
-        self.failUnlessRaises(TypeError, self.loader.loadMethod, sample)
-        self.failUnlessRaises(TypeError,
+        from . import sample
+        self.assertRaises(TypeError, self.loader.loadMethod, sample)
+        self.assertRaises(TypeError,
                               self.loader.loadMethod, sample.FooTest)
-        self.failUnlessRaises(TypeError, self.loader.loadMethod, "string")
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError, self.loader.loadMethod, "string")
+        self.assertRaises(TypeError,
                               self.loader.loadMethod, ('foo', 'bar'))
 
     def test_loadClass(self):
-        import sample
+        from . import sample
         suite = self.loader.loadClass(sample.FooTest)
-        self.failUnlessEqual(2, suite.countTestCases())
-        self.failUnlessEqual(['test_bar', 'test_foo'],
+        self.assertEqual(2, suite.countTestCases())
+        self.assertEqual(['test_bar', 'test_foo'],
                              [test._testMethodName for test in suite._tests])
 
     def test_loadNonClass(self):
-        import sample
-        self.failUnlessRaises(TypeError, self.loader.loadClass, sample)
-        self.failUnlessRaises(TypeError,
+        from . import sample
+        self.assertRaises(TypeError, self.loader.loadClass, sample)
+        self.assertRaises(TypeError,
                               self.loader.loadClass, sample.FooTest.test_foo)
-        self.failUnlessRaises(TypeError, self.loader.loadClass, "string")
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError, self.loader.loadClass, "string")
+        self.assertRaises(TypeError,
                               self.loader.loadClass, ('foo', 'bar'))
 
     def test_loadNonTestCase(self):
-        import sample
-        self.failUnlessRaises(ValueError, self.loader.loadClass,
+        from . import sample
+        self.assertRaises(ValueError, self.loader.loadClass,
                               sample.NotATest)
         
     def test_loadModule(self):
-        import sample
+        from . import sample
         suite = self.loader.loadModule(sample)
-        self.failUnlessEqual(7, suite.countTestCases())
+        self.assertEqual(7, suite.countTestCases())
 
     def test_loadNonModule(self):
-        import sample
-        self.failUnlessRaises(TypeError,
+        from . import sample
+        self.assertRaises(TypeError,
                               self.loader.loadModule, sample.FooTest)
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError,
                               self.loader.loadModule, sample.FooTest.test_foo)
-        self.failUnlessRaises(TypeError, self.loader.loadModule, "string")
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError, self.loader.loadModule, "string")
+        self.assertRaises(TypeError,
                               self.loader.loadModule, ('foo', 'bar'))
 
     def test_loadPackage(self):
         import goodpackage
         suite = self.loader.loadPackage(goodpackage)
-        self.failUnlessEqual(7, suite.countTestCases())
+        self.assertEqual(7, suite.countTestCases())
 
     def test_loadNonPackage(self):
-        import sample
-        self.failUnlessRaises(TypeError,
+        from . import sample
+        self.assertRaises(TypeError,
                               self.loader.loadPackage, sample.FooTest)
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError,
                               self.loader.loadPackage, sample.FooTest.test_foo)
-        self.failUnlessRaises(TypeError, self.loader.loadPackage, "string")
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError, self.loader.loadPackage, "string")
+        self.assertRaises(TypeError,
                               self.loader.loadPackage, ('foo', 'bar'))
 
     def test_loadModuleAsPackage(self):
-        import sample
+        from . import sample
         ## XXX -- should this instead raise a ValueError? -- jml
-        self.failUnlessRaises(TypeError, self.loader.loadPackage, sample)
+        self.assertRaises(TypeError, self.loader.loadPackage, sample)
         
     def test_loadPackageRecursive(self):
         import goodpackage
         suite = self.loader.loadPackage(goodpackage, recurse=True)
-        self.failUnlessEqual(14, suite.countTestCases())
+        self.assertEqual(14, suite.countTestCases())
 
     def test_loadAnythingOnModule(self):
-        import sample
+        from . import sample
         suite = self.loader.loadAnything(sample)
-        self.failUnlessEqual(sample.__name__,
+        self.assertEqual(sample.__name__,
                              suite._tests[0]._tests[0].__class__.__module__)
 
     def test_loadAnythingOnClass(self):
-        import sample
+        from . import sample
         suite = self.loader.loadAnything(sample.FooTest)
-        self.failUnlessEqual(2, suite.countTestCases())
+        self.assertEqual(2, suite.countTestCases())
         
     def test_loadAnythingOnMethod(self):
-        import sample
+        from . import sample
         suite = self.loader.loadAnything(sample.FooTest.test_foo)
-        self.failUnlessEqual(1, suite.countTestCases())
+        self.assertEqual(1, suite.countTestCases())
 
     def test_loadAnythingOnPackage(self):
         import goodpackage
         suite = self.loader.loadAnything(goodpackage)
-        self.failUnless(isinstance(suite, self.loader.suiteFactory))
-        self.failUnlessEqual(7, suite.countTestCases())
+        self.assertTrue(isinstance(suite, self.loader.suiteFactory))
+        self.assertEqual(7, suite.countTestCases())
         
     def test_loadAnythingOnPackageRecursive(self):
         import goodpackage
         suite = self.loader.loadAnything(goodpackage, recurse=True)
-        self.failUnless(isinstance(suite, self.loader.suiteFactory))
-        self.failUnlessEqual(14, suite.countTestCases())
+        self.assertTrue(isinstance(suite, self.loader.suiteFactory))
+        self.assertEqual(14, suite.countTestCases())
         
     def test_loadAnythingOnString(self):
         # the important thing about this test is not the string-iness
         # but the non-handledness.
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError,
                               self.loader.loadAnything, "goodpackage")
 
     def test_importErrors(self):
@@ -265,9 +265,9 @@ class LoaderTest(packages.PackageTest):
         suite = self.loader.loadPackage(package, recurse=True)
         result = reporter.Reporter()
         suite.run(result)
-        self.failUnlessEqual(False, result.wasSuccessful())
-        self.failUnlessEqual(2, len(result.errors))
+        self.assertEqual(False, result.wasSuccessful())
+        self.assertEqual(2, len(result.errors))
         errors = [test.id() for test, error in result.errors]
         errors.sort()
-        self.failUnlessEqual(errors, ['package.test_bad_module',
+        self.assertEqual(errors, ['package.test_bad_module',
                                       'package.test_import_module'])

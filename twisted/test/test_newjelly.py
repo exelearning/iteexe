@@ -76,7 +76,7 @@ class JellyTestCase(unittest.TestCase):
         a.bmethod = b.bmethod
         b.a = a
         im_ = self.jc.unjelly(self.jc.jelly(b)).a.bmethod
-        self.assertEquals(im_.im_class, im_.im_self.__class__)
+        self.assertEqual(im_.__self__.__class__, im_.__self__.__class__)
 
     if haveObject:
         def testNewStyle(self):
@@ -87,7 +87,7 @@ class JellyTestCase(unittest.TestCase):
             n.n3 = n2
             c = self.jc.jelly(n)
             m = self.jc.unjelly(c)
-            self.failUnless(isinstance(m, NewStyle))
+            self.assertTrue(isinstance(m, NewStyle))
             self.assertIdentical(m.n2, m.n3)
 
     if haveDatetime:
@@ -97,7 +97,7 @@ class JellyTestCase(unittest.TestCase):
             input = [dtn, dtd]
             c = self.jc.jelly(input)
             output = self.jc.unjelly(c)
-            self.assertEquals(input, output)
+            self.assertEqual(input, output)
             self.assertNotIdentical(input, output)
         testDateTime.todo = 'Newjelly does not support datetime yet.'
 
@@ -105,11 +105,11 @@ class JellyTestCase(unittest.TestCase):
         """
         simplest test case
         """
-        self.failUnless(SimpleJellyTest('a', 'b').isTheSameAs(SimpleJellyTest('a', 'b')))
+        self.assertTrue(SimpleJellyTest('a', 'b').isTheSameAs(SimpleJellyTest('a', 'b')))
         a = SimpleJellyTest(1, 2)
         cereal = self.jc.jelly(a)
         b = self.jc.unjelly(cereal)
-        self.failUnless(a.isTheSameAs(b))
+        self.assertTrue(a.isTheSameAs(b))
 
     def testIdentity(self):
         """
@@ -128,10 +128,10 @@ class JellyTestCase(unittest.TestCase):
 
     def testUnicode(self):
         if hasattr(types, 'UnicodeType'):
-            x = unicode('blah')
+            x = str('blah')
             y = self.jc.unjelly(self.jc.jelly(x))
-            self.assertEquals(x, y)
-            self.assertEquals(type(x), type(y))
+            self.assertEqual(x, y)
+            self.assertEqual(type(x), type(y))
 
     def testStressReferences(self):
         reref = []
@@ -177,7 +177,7 @@ class JellyTestCase(unittest.TestCase):
         self.jc.unjelly(self.jc.jelly(a.amethod))
         items = [afunc, [1, 2, 3], not bool(1), bool(1), 'test', 20.3, (1,2,3), None, A, unittest, {'a':1}, A.amethod]
         for i in items:
-            self.assertEquals(i, self.jc.unjelly(self.jc.jelly(i)))
+            self.assertEqual(i, self.jc.unjelly(self.jc.jelly(i)))
     
     def testSetState(self):
         global TupleState
@@ -216,7 +216,7 @@ class JellyTestCase(unittest.TestCase):
         # first, a friendly insecure serialization
         friendly = self.jc.jelly(a, taster)
         x = self.jc.unjelly(friendly, taster)
-        self.failUnless(isinstance(x.c, self.jc.Unpersistable),
+        self.assertTrue(isinstance(x.c, self.jc.Unpersistable),
                         "C came back: %s" % x.c.__class__)
         # now, a malicious one
         mean = self.jc.jelly(a)
@@ -246,7 +246,7 @@ class CircularReferenceTestCase(unittest.TestCase):
         self.jc.setUnjellyableForClass(ClassA, ClassA)
         self.jc.setUnjellyableForClass(ClassB, ClassB)
         a = self.jc.unjelly(self.jc.jelly(ClassA()))
-        self.failUnless(a.ref.ref is a, "Identity not preserved in circular reference")
+        self.assertTrue(a.ref.ref is a, "Identity not preserved in circular reference")
 
     def testCircleWithInvoker(self):
         class dummyInvokerClass: pass

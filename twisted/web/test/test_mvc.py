@@ -7,7 +7,7 @@
 import random
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -36,9 +36,9 @@ class MyView(view.View):
         self.controller = components.getAdapter(self.model, interfaces.IController, None)
 
     def modelChanged(self, changed):
-        if changed.has_key('foo'):
+        if 'foo' in changed:
             self.foo = changed['foo']
-        if changed.has_key('random'):
+        if 'random' in changed:
             self.random = changed['random']
 
     def twiddleControl(self, newValue):
@@ -63,7 +63,7 @@ class MyController(controller.Controller):
         self.persist()
     
     def doRandom(self):
-        rnd = random.choice(range(100))
+        rnd = random.choice(list(range(100)))
         self.model.random = rnd
         self.model.notify({'random': rnd})
         self.persist()
@@ -90,33 +90,33 @@ class MVCTestCase(unittest.TestCase):
 
     def testViewConstruction(self):
         view = self.getView()
-        self.assert_(isinstance(view, MyView))
+        self.assertTrue(isinstance(view, MyView))
 
     def testControllerConstruction(self):
         view = self.getView()
-        self.assert_(isinstance(view.controller, MyController))
+        self.assertTrue(isinstance(view.controller, MyController))
     
     def testModelManipulation(self):
         view = self.getView()
         view.twiddleControl("bar")
-        self.assertEquals("bar", self.model.foo)
+        self.assertEqual("bar", self.model.foo)
     
     def testMoreModelManipulation(self):
         view = self.getView()
         value = view.pushButton()
-        self.assertEquals(value, self.model.random)
+        self.assertEqual(value, self.model.random)
 
     def testViewManipulation(self):
         """When the model updates the view should too"""
         view = self.getView()
         view.twiddleControl("bar")
-        self.assertEquals("bar", view.foo)
+        self.assertEqual("bar", view.foo)
     
     def testMoreViewManipulation(self):
         """When the model updates the view should too"""
         view = self.getView()
         value = view.pushButton()
-        self.assertEquals(value, view.random)
+        self.assertEqual(value, view.random)
 
 
 testCases = [MVCTestCase]

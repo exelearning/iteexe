@@ -1,7 +1,7 @@
 # Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 from nevow.flat import serialize, precompile
 from nevow.stan import Tag, xml, directive, slot, cdata
@@ -50,7 +50,7 @@ def MicroDomElementSerializer(element, context):
     specials = {}
     attributes = attributeList
     directives = directiveMapping
-    for k, v in attrs.items():
+    for k, v in list(attrs.items()):
         # I know, this is totally not the way to do xml namespaces but who cares right now
         ## I'll fix it later -dp
         ### no you won't *I'll* fix it later -glyph

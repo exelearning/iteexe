@@ -22,7 +22,7 @@ do_upload = False
 try:
     opts, args = getopt.getopt(sys.argv[1:], "p", ["package"])
 except getopt.GetoptError:
-    print "make {-p|--package}"
+    print("make {-p|--package}")
     sys.exit(2)
 do_make_image = False
 for o, a in opts:
@@ -61,7 +61,7 @@ shutil.copy(os.path.join(WDIR, 'NEWS'), 'NEWS.txt')
 shutil.copy(os.path.join(WDIR, 'COPYING'), 'COPYING')
 shutil.rmtree('Changelog.txt', True)
 shutil.copy(os.path.join(WDIR, 'debian/changelog'), 'Changelog.txt')
-os.chmod('eXeLearning.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0755)
+os.chmod('eXeLearning.app/Contents/Resources/exe/templates/mimetex-darwin.cgi', 0o755)
 open('eXeLearning.app/Contents/Resources/exe/version', 'w').write(version.version)
 
 shutil.copy(os.path.join(WDIR, 'installs/osx', 'exedmg.json'), 'exedmg.json')

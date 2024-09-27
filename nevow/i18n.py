@@ -131,7 +131,7 @@ class Translator(object):
                 localedir=localeDir,
                 languages=languages,
                 )
-        except IOError, e:
+        except IOError as e:
             if e.errno == errno.ENOENT:
                 # no locale file found
                 return s
@@ -206,7 +206,7 @@ def render(translator=None):
         children = ctx.tag.children
         ctx.tag.clear()
         for child in children:
-            if isinstance(child, basestring):
+            if isinstance(child, str):
                 child = translator(child)
             ctx.tag[child]
         return ctx.tag

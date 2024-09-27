@@ -28,7 +28,7 @@ from exe.engine.idevice import Idevice
 from exe.engine.field   import TextAreaField
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
-from extendedfieldengine import *
+from .extendedfieldengine import *
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -42,9 +42,9 @@ class SortIdeviceInc(Idevice):
     persistenceVersion = 3
     
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"Sort Items"), 
-                         x_(u"Toughra Technologies FZ LLC."), 
-                         x_(u"""Sortable list of items."""), "", "")
+        Idevice.__init__(self, x_("Sort Items"), 
+                         x_("Toughra Technologies FZ LLC."), 
+                         x_("""Sortable list of items."""), "", "")
         mainFieldOrder = ['title', 'instructions', 'sortorder', 'correctoverlay', 'wrongoverlay', 'correcteffect', 'wrongeffect', 'checkbuttontext', \
                          'itemwidth', 'itemheight', 'checkbuttonstyle', 'sortableitemstyle' ]
         

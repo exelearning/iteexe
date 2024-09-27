@@ -173,7 +173,7 @@ def makeBuildDir(baseDir):
     import random, string
 
     #  make top directory
-    oldMask = os.umask(0077)
+    oldMask = os.umask(0o077)
     while 1:
         tmpDir = os.path.join(baseDir, 'tap2rpm-%s-%s' % ( os.getpid(),
                                         random.randint(0, 999999999) ))
@@ -212,7 +212,7 @@ def run():
     try:
         config = MyOptions()
         config.parseOptions()
-    except usage.error, ue:
+    except usage.error as ue:
          sys.exit("%s: %s" % (sys.argv[0], ue))
 
     #  set up some useful local variables
@@ -254,19 +254,19 @@ def run():
               % vars())
     
     #  build rpm
-    print 'Starting build...'
-    print '=' * 70
+    print('Starting build...')
+    print('=' * 70)
     sys.stdout.flush()
     os.system('rpmbuild -ta --rcfile "%s" %s' % ( rpmrc_file, tarfile_name ))
-    print 'Done with build...'
-    print '=' * 70
+    print('Done with build...')
+    print('=' * 70)
     
     #  copy the RPMs to the local directory
     rpm_path = glob.glob(os.path.join(tmp_dir, 'RPMS', 'noarch', '*'))[0]
     srpm_path = glob.glob(os.path.join(tmp_dir, 'SRPMS', '*'))[0]
-    print 'Writing "%s"...' % os.path.basename(rpm_path)
+    print('Writing "%s"...' % os.path.basename(rpm_path))
     shutil.copy(rpm_path, '.')
-    print 'Writing "%s"...' % os.path.basename(srpm_path)
+    print('Writing "%s"...' % os.path.basename(srpm_path))
     shutil.copy(srpm_path, '.')
     
     #  remove the build directory

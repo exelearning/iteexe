@@ -49,7 +49,7 @@ class IOldApplication(components.Interface):
         @param interface: the hostname to bind to, defaults to '' (all)
         """
 
-    def listenUNIX(self, filename, factory, backlog=50, mode=0666):
+    def listenUNIX(self, filename, factory, backlog=50, mode=0o666):
         """Add a service that listens on a UNIX socket.
 
         @param address: a path to a unix socket on the filesystem.
@@ -251,7 +251,7 @@ class _ServiceNetwork:
         s.privileged = 1
         s.setServiceParent(self.app)
 
-    def listenUNIX(self, filename, factory, backlog=50, mode=0666):
+    def listenUNIX(self, filename, factory, backlog=50, mode=0o666):
         s = internet.UNIXServer(filename, factory, backlog, mode)
         s.privileged = 1
         s.setServiceParent(self.app)
@@ -372,7 +372,7 @@ def convert(oldApp):
     for s in c:
         if hasattr(s, 'privileged'):
             s.privileged = 1
-    for s in oldApp.services.values():
+    for s in list(oldApp.services.values()):
         if not service.IService.providedBy(s):
             s.serviceParent = None
             s = _NewService(s)

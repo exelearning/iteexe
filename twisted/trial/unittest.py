@@ -102,7 +102,7 @@ class _Assertions(pyunit.TestCase, object):
         """
         try:
             result = f(*args, **kwargs)
-        except exception, inst:
+        except exception as inst:
             return inst
         except:
             raise self.failureException('%s raised instead of %s:\n %s'
@@ -437,7 +437,7 @@ class TestCase(_Assertions):
     def _cleanUp(self, result):
         try:
             util._Janitor().postCaseCleanup()
-        except util.FailureError, e:
+        except util.FailureError as e:
             result.addError(self, e.original)
             self._passed = False
         except:
@@ -449,7 +449,7 @@ class TestCase(_Assertions):
     def _classCleanUp(self, result):
         try:
             util._Janitor().postClassCleanup()
-        except util.FailureError, e:
+        except util.FailureError as e:
             result.cleanupErrors(e.original)
         except:
             result.cleanupErrors(failure.Failure())
@@ -544,7 +544,7 @@ class TestCase(_Assertions):
         """
         from twisted.internet import reactor
         if running:
-            raise WaitIsNotReentrantError, REENTRANT_WAIT_ERROR_MSG
+            raise WaitIsNotReentrantError(REENTRANT_WAIT_ERROR_MSG)
     
         results = []
         def append(any):

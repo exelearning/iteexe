@@ -9,16 +9,16 @@ You probably should be using twisted.web.woven.guard instead.
 
 # System Imports
 import string, traceback
-from cStringIO import StringIO
+from io import StringIO
 
 from twisted.python import log
 
 # Sibling Imports
-import error
-import html
-import resource
-import widgets
-from server import NOT_DONE_YET
+from . import error
+from . import html
+from . import resource
+from . import widgets
+from .server import NOT_DONE_YET
 
 import warnings
 warnings.warn("Please use twisted.web.woven.guard", DeprecationWarning, 2)
@@ -185,8 +185,8 @@ class ResourceGuard(resource.Resource):
         self.sessionIdentity = sessionIdentity
 
     def __getattr__(self, k):
-        if not self.__dict__.has_key("res"):
-            raise AttributeError, k
+        if "res" not in self.__dict__:
+            raise AttributeError(k)
         return getattr(self.res, k)
 
     def __getstate__(self):

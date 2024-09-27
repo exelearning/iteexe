@@ -14,7 +14,7 @@ See L{Failure}.
 import sys
 import linecache
 import string
-from cStringIO import StringIO
+from io import StringIO
 import types
 
 count = 0
@@ -37,7 +37,7 @@ def format_frames(frames, write, detail="default"):
     @type detail: string
     """
     if detail not in ('default', 'brief', 'verbose'):
-        raise ValueError, "Detail must be default, brief, or verbose. (not %r)" % (detail,)
+        raise ValueError("Detail must be default, brief, or verbose. (not %r)" % (detail,))
     w = write
     if detail == "brief":
         for method, filename, lineno, localVars, globalVars in frames:
@@ -89,8 +89,8 @@ class Failure:
         self.type = self.value = tb = None
 
         #strings Exceptions/Failures are bad, mmkay?
-        if ((isinstance(exc_value, types.StringType) or
-             isinstance(exc_value, types.UnicodeType))
+        if ((isinstance(exc_value, bytes) or
+             isinstance(exc_value, str))
             and exc_type is None):
             import warnings
             warnings.warn(
@@ -160,14 +160,14 @@ class Failure:
             else:
                 globalz = f.f_globals.copy()
             for d in globalz, localz:
-                if d.has_key("__builtins__"):
+                if "__builtins__" in d:
                     del d["__builtins__"]
             stack.insert(0, [
                 f.f_code.co_name,
                 f.f_code.co_filename,
                 f.f_lineno,
-                localz.items(),
-                globalz.items(),
+                list(localz.items()),
+                list(globalz.items()),
                 ])
             f = f.f_back
 
@@ -179,20 +179,20 @@ class Failure:
             else:
                 globalz = f.f_globals.copy()
             for d in globalz, localz:
-                if d.has_key("__builtins__"):
+                if "__builtins__" in d:
                     del d["__builtins__"]
             
             frames.append([
                 f.f_code.co_name,
                 f.f_code.co_filename,
                 tb.tb_lineno,
-                localz.items(),
-                globalz.items(),
+                list(localz.items()),
+                list(globalz.items()),
                 ])
             tb = tb.tb_next
-        if isinstance(self.type, types.ClassType):
+        if isinstance(self.type, type):
             parentCs = reflect.allYourBase(self.type)
-            self.parents = map(reflect.qual, parentCs)
+            self.parents = list(map(reflect.qual, parentCs))
             self.parents.append(reflect.qual(self.type))
         else:
             self.parents = [self.type]
@@ -233,7 +233,7 @@ class Failure:
         """
         for error in errorTypes:
             err = error
-            if isinstance(error, types.ClassType) and issubclass(error, Exception):
+            if isinstance(error, type) and issubclass(error, Exception):
                 err = reflect.qual(error)
             if err in self.parents:
                 return error
@@ -244,7 +244,7 @@ class Failure:
         raise the original exception, preserving traceback
         information if available.
         """
-        raise self.type, self.value, self.tb
+        raise self.type(self.value).with_traceback(self.tb)
 
 
     def __repr__(self):
@@ -363,14 +363,14 @@ class Failure:
 DO_POST_MORTEM = True
 
 def _debuginit(self, exc_value=None, exc_type=None, exc_tb=None,
-             Failure__init__=Failure.__init__.im_func):
+             Failure__init__=Failure.__init__.__func__):
     if (exc_value, exc_type, exc_tb) == (None, None, None):
         exc = sys.exc_info()
         if exc == (None, None, None):
-            print "Failure created without exception, debugger will debug stack:"
+            print("Failure created without exception, debugger will debug stack:")
             import pdb; pdb.set_trace()
         elif not exc[0] == self.__class__ and DO_POST_MORTEM:
-            print "Jumping into debugger for post-mortem of exception '%s':" % exc[1]
+            print("Jumping into debugger for post-mortem of exception '%s':" % exc[1])
             import pdb
             pdb.post_mortem(exc[2])
     Failure__init__(self, exc_value, exc_type, exc_tb)
@@ -402,20 +402,20 @@ def visualtest():
     def frameworkCode(*a, **kw):
         return _moreFrameworkCode(*a, **kw)
 
-    print 'Failure visual test case:'
+    print('Failure visual test case:')
     for verbosity in ['brief', 'default', 'verbose']:
         for truth in True, False:
-            print
-            print '----- next ----'
-            print 'detail: ',verbosity
-            print 'elideFrameworkCode:', truth
-            print
+            print()
+            print('----- next ----')
+            print('detail: ',verbosity)
+            print('elideFrameworkCode:', truth)
+            print()
             frameworkCode(verbosity, truth)
 
 
 # Sibling imports - at the bottom and unqualified to avoid unresolvable
 # circularity
-import reflect, log
+from . import reflect, log
 
 
 if __name__ == '__main__':

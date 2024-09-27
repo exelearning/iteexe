@@ -37,7 +37,7 @@ def runWithProfiler(reactor, config):
     """Run reactor under standard profiler."""
     try:
         import profile
-    except ImportError, e:
+    except ImportError as e:
         s = "Failed to import module profile: %s" % e
         s += """
 This is most likely caused by your operating system not including
@@ -65,7 +65,7 @@ def runWithHotshot(reactor, config):
     """Run reactor under hotshot profiler."""
     try:
         import hotshot.stats
-    except ImportError, e:
+    except ImportError as e:
         s = "Failed to import module hotshot: %s" % e
         s += """
 This is most likely caused by your operating system not including
@@ -102,7 +102,7 @@ def fixPdb():
         return 1
 
     def help_stop(self):
-        print """stop - Continue execution, then cleanly shutdown the twisted reactor."""
+        print("""stop - Continue execution, then cleanly shutdown the twisted reactor.""")
     
     def set_quit(self):
         os._exit(0)
@@ -158,7 +158,7 @@ def getApplication(config, passphrase):
         log.msg("Loading %s..." % filename)
         application = service.loadApplication(filename, style, passphrase)
         log.msg("Loaded.")
-    except Exception, e:
+    except Exception as e:
         s = "Failed to load application: %s" % e
         if isinstance(e, KeyError) and e.args[0] == "application":
             s += """
@@ -215,7 +215,7 @@ class ServerOptions(usage.Options):
                       'Change to a supplied directory before running'],
                      ['reactor', 'r', None,
                       'Which reactor to use out of: %s.' %
-                      ', '.join(reactorTypes.keys())],
+                      ', '.join(list(reactorTypes.keys()))],
                      ['report-profile', None, None,
                       'E-mail address to use when reporting dynamic execution '
                       'profiler stats.  This should not be combined with '
@@ -231,7 +231,7 @@ class ServerOptions(usage.Options):
                    "xml":'_files -g "*.tax"', 
                    "source":'_files -g "*.tas"',
                    "rundir":"_dirs",
-                   "reactor":"(%s)" % " ".join(reactorTypes.keys()),}
+                   "reactor":"(%s)" % " ".join(list(reactorTypes.keys())),}
     #zsh_actionDescr = {"logfile":"log file name", "random":"random seed"}
 
     def __init__(self, *a, **kw):
@@ -271,9 +271,9 @@ def run(runApp, ServerOptions):
     config = ServerOptions()
     try:
         config.parseOptions()
-    except usage.error, ue:
-        print config
-        print "%s: %s" % (sys.argv[0], ue)
+    except usage.error as ue:
+        print(config)
+        print("%s: %s" % (sys.argv[0], ue))
     else:
         runApp(config)
 

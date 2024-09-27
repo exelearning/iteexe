@@ -1,7 +1,7 @@
 # Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 import types
 import warnings
@@ -63,7 +63,7 @@ def getFlattener(original):
             #    registerFlattener(adapter, fromInter)
             del _lazy_flatteners[interQual]
             return adapter
-    print "***", fromInterfaces
+    print("***", fromInterfaces)
 
     
 def getSerializer(obj):
@@ -104,7 +104,7 @@ def iterflatten(stan, ctx, writer, shouldYieldItem=None):
         for item in gen:
             if isinstance(item, str):
                 straccum.append(item)
-            elif isinstance(item, unicode):
+            elif isinstance(item, str):
                 straccum.append(item.encode('utf8'))
             elif isinstance(item, (list, types.GeneratorType)):
                 # stop iterating this generator and put it back on the stack

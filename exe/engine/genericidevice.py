@@ -72,7 +72,7 @@ class GenericIdevice(Idevice):
         Add a new field to this iDevice.  Fields are indexed by their id.
         """
         if field.idevice:
-            log.error(u"Field already belonging to %s added to %s" %
+            log.error("Field already belonging to %s added to %s" %
                       (field.idevice.title, self.title))
         field.idevice = self
         self.fields.append(field)
@@ -83,9 +83,9 @@ class GenericIdevice(Idevice):
         of the form ii_ff where ii is the idevice and ff the field
         """
         self.calcNextFieldId()
-        result = self.id + '_' + unicode(self.nextFieldId)
+        result = self.id + '_' + str(self.nextFieldId)
         self.nextFieldId += 1
-        log.debug(u"UniqueFieldId: %s" % (result))
+        log.debug("UniqueFieldId: %s" % (result))
         return result
         
     def calcNextFieldId(self):
@@ -95,17 +95,17 @@ class GenericIdevice(Idevice):
         if not hasattr(self, 'nextFieldId'):
             self.nextFieldId = 0
         if self.nextFieldId == 0:
-            log.debug(u"nextFieldId==0 for self.class_ %s" % (self.class_))
+            log.debug("nextFieldId==0 for self.class_ %s" % (self.class_))
             maxId = 0
             for field in self.fields:
-                if isinstance(field.id, unicode):
-                    log.debug(u"** field.id = u: %s" % (field.id))
+                if isinstance(field.id, str):
+                    log.debug("** field.id = u: %s" % (field.id))
                     # only look at the part after the (last) underbar
                     c = field.id.split('_')
                     if int(c[-1]) > maxId:
                         maxId = int(c[-1])
                 else:
-                    log.error(u"** field.id is not unicode= %d" % (field.id))
+                    log.error("** field.id is not unicode= %d" % (field.id))
                     if field.id > maxId:
                         maxId = field.id
             self.nextFieldId = maxId + 1
@@ -244,7 +244,7 @@ class GenericIdevice(Idevice):
                                             oldField.instruction,
                                             oldField.content))
             else:
-                log.error(u"Unknown field type in upgrade "+oldField.fieldType)
+                log.error("Unknown field type in upgrade "+oldField.fieldType)
 
 
     def upgradeToVersion3(self):
@@ -252,7 +252,7 @@ class GenericIdevice(Idevice):
         Upgrades the node from 2 (v0.5) to 3 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
 
 
@@ -291,7 +291,7 @@ class GenericIdevice(Idevice):
             for i, field in enumerate(self.fields):
                 if isinstance(field, TextAreaField) \
                 and hasattr(field, 'name') \
-                and field.name in (_(u'Feedback'), u'Feedback'):
+                and field.name in (_('Feedback'), 'Feedback'):
                     newField = FeedbackField(field.name, field.instruc)
                     Field.nextId -= 1
                     newField._id = field._id
@@ -299,12 +299,12 @@ class GenericIdevice(Idevice):
                     newField.idevice = self
                     self.fields[i] = newField
             # Upgrade the title
-            if self.title == _(u'Reading Activity 0.11'):
+            if self.title == _('Reading Activity 0.11'):
                 # If created in non-english, upgrade in non-english
-                self.title = x_(u'Reading Activity')
-            if self.title == u'Reading Activity 0.11':
+                self.title = x_('Reading Activity')
+            if self.title == 'Reading Activity 0.11':
                 # If created in english, upgrade in english
-                self.title = u'Reading Activity'
+                self.title = 'Reading Activity'
                 
     def upgradeToVersion8(self):
         """

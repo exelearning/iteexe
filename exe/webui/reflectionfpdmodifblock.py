@@ -84,7 +84,7 @@ class ReflectionfpdmodifBlock(Block):
 	# Quitamos el prefijo "FPD -"
 	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Think About It")
+		self.idevice.title = x_("Think About It")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

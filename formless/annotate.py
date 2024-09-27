@@ -24,11 +24,11 @@ from formless import iformless
 class count(object):
     def __init__(self):
         self.id = 0
-    def next(self):
+    def __next__(self):
         self.id += 1
         return self.id
 
-nextId = count().next
+nextId = count().__next__
 
 
 class InputError(Exception):
@@ -104,7 +104,7 @@ class Typed(object):
     required = False
     requiredFailMessage = 'Please enter a value'
     null = None
-    unicode = False
+    str = False
 
     def __init__(
         self,
@@ -114,7 +114,7 @@ class Typed(object):
         required=None,
         requiredFailMessage=None,
         null=None,
-        unicode=None,
+        str=None,
         **attributes):
 
         self.id = nextId()
@@ -130,15 +130,15 @@ class Typed(object):
             self.requiredFailMessage = requiredFailMessage
         if null is not None:
             self.null = null
-        if unicode is not None:
-            self.unicode = unicode
+        if str is not None:
+            self.str = str
         self.attributes = attributes
 
     def getAttribute(self, name, default=None):
         return self.attributes.get(name, default)
 
     def coerce(self, val, configurable):
-        raise NotImplementedError, "Implement in %s" % util.qual(self.__class__)
+        raise NotImplementedError("Implement in %s" % util.qual(self.__class__))
 
 
 
@@ -210,7 +210,7 @@ class Integer(Typed):
         except ValueError:
             if sys.version_info < (2,3): # Long/Int aren't integrated
                 try:
-                    return long(val)
+                    return int(val)
                 except ValueError:
                     raise InputError("'%s' is not an integer." % val)
             
@@ -544,7 +544,7 @@ class Binding(object):
         return self.original.__class__.__name__.lower()
 
     def configure(self, boundTo, results):
-        raise NotImplementedError, "Implement in %s" % util.qual(self.__class__)
+        raise NotImplementedError("Implement in %s" % util.qual(self.__class__))
 
     def coerce(self, val, configurable):
         if hasattr(self.original, 'coerce'):
@@ -626,7 +626,7 @@ class GroupBinding(Binding):
         self.complexType = typedValue.complexType
 
     def configure(self, boundTo, group):
-        print "CONFIGURING GROUP BINDING", boundTo, group
+        print("CONFIGURING GROUP BINDING", boundTo, group)
 
 
 def _sorter(x, y):
@@ -679,7 +679,7 @@ def nameToLabel(mname):
 def labelAndDescriptionFromDocstring(docstring):
     if docstring is None:
         docstring = ''
-    docs = filter(lambda x: x, [x.strip() for x in docstring.split('\n')])
+    docs = [x for x in [x.strip() for x in docstring.split('\n')] if x]
     if len(docs) > 1:
         return docs[0], '\n'.join(docs[1:])
     else:
@@ -734,7 +734,7 @@ class MetaTypedInterface(MetaInterface):
         dct['__properties__'] = properties = []
         possibleActions = []
         actionAttachers = []
-        for key, value in dct.items():
+        for key, value in list(dct.items()):
             if key[0] == '_': continue
 
             if isinstance(value, MetaTypedInterface):
@@ -830,7 +830,7 @@ class MetaTypedInterface(MetaInterface):
         # whose cause I cannot figure out.
         try:
             return MetaInterface.__new__(cls, name, bases, dct)
-        except TypeError, e:
+        except TypeError as e:
             if len(e.args) == 1 and e.args[0] == '_interface_coptimizations.SpecificationBase.__new__(MetaTypedInterface) is not safe, use object.__new__()':
                 return object.__new__(cls, name, bases, dct)
             raise
@@ -841,9 +841,7 @@ class MetaTypedInterface(MetaInterface):
 #######################################
 
 
-class TypedInterface(Interface):
-    __metaclass__ = MetaTypedInterface
-
+class TypedInterface(Interface, metaclass=MetaTypedInterface):
     """Inherit from this to create interfaces which annotate the types of
     properties and types of parameters methods take and types of objects
     methods return. See documentation for MetaTypedInterface for examples of

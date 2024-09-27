@@ -6,17 +6,17 @@
 """I deal with static resources.
 """
 
-from __future__ import nested_scopes
+
 
 # System Imports
 import os, stat, string
-import cStringIO
+import io
 import traceback
 import warnings
 import types
 StringIO = cStringIO
 del cStringIO
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # Sibling Imports
 from twisted.web import server
@@ -142,7 +142,7 @@ def loadMimeTypes(mimetype_locations=['/etc/mime.types']):
 def getTypeAndEncoding(filename, types, encodings, defaultType):
     p, ext = os.path.splitext(filename)
     ext = ext.lower()
-    if encodings.has_key(ext):
+    if ext in encodings:
         enc = encodings[ext]
         ext = os.path.splitext(p)[1].lower()
     else:
@@ -302,7 +302,7 @@ class File(resource.Resource, styles.Versioned, filepath.FilePath):
         kind = kind.strip()
         if kind != 'bytes':
             raise ValueError("Unsupported Bytes-Unit: %r" % (kind,))
-        byteRanges = filter(None, map(str.strip, value.split(',')))
+        byteRanges = [_f for _f in map(str.strip, value.split(',')) if _f]
         if len(byteRanges) > 1:
             # Support for multiple ranges should be added later.  For now, this
             # implementation gives up.
@@ -338,7 +338,7 @@ class File(resource.Resource, styles.Versioned, filepath.FilePath):
 
 
 
-    def _doRangeRequest(self, request, (start, end)):
+    def _doRangeRequest(self, request, xxx_todo_changeme):
         """
         Responds to simple Range-Header requests. Simple means that only the
         first byte range is handled.
@@ -348,6 +348,7 @@ class File(resource.Resource, styles.Versioned, filepath.FilePath):
         @return: A three-tuple of the start, length, and end byte of the
             response.
         """
+        (start, end) = xxx_todo_changeme
         size = self.getFileSize()
         if start is None:
             # Omitted start means that the end value is actually a start value
@@ -404,7 +405,7 @@ class File(resource.Resource, styles.Versioned, filepath.FilePath):
 
         try:
             f = self.openForReading()
-        except IOError, e:
+        except IOError as e:
             import errno
             if e[0] == errno.EACCES:
                 return error.ForbiddenResource().render(request)
@@ -450,7 +451,7 @@ class File(resource.Resource, styles.Versioned, filepath.FilePath):
             try:
                 start, contentLength, stop = self._doRangeRequest(
                     request, self._parseRangeHeader(byteRange))
-            except ValueError, e:
+            except ValueError as e:
                 log.msg("Ignoring malformed Range header %r" % (byteRange,))
                 request.setResponseCode(http.OK)
             else:
@@ -476,7 +477,7 @@ class File(resource.Resource, styles.Versioned, filepath.FilePath):
         return directory
 
     def listEntities(self):
-        return map(lambda fileName, self=self: self.createSimilarFile(os.path.join(self.path, fileName)), self.listNames())
+        return list(map(lambda fileName, self=self: self.createSimilarFile(os.path.join(self.path, fileName)), self.listNames()))
 
     def createPickleChild(self, name, child):
         if not os.path.isdir(self.path):

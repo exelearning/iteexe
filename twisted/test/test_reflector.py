@@ -76,8 +76,7 @@ def randomizeRow(row, nulls_ok=True, trailing_spaces_ok=True):
             if random.randint(0, 9) == 0:
                 value = ''
             else:
-                value = ''.join(map(lambda i:chr(random.randrange(32,127)),
-                                    xrange(random.randint(1, 64))))
+                value = ''.join([chr(random.randrange(32,127)) for i in range(random.randint(1, 64))])
             if not trailing_spaces_ok:
                 value = value.rstrip()
         setattr(row, name, value)
@@ -87,8 +86,8 @@ def randomizeRow(row, nulls_ok=True, trailing_spaces_ok=True):
 def rowMatches(row, values):
     for name, type in row.rowColumns:
         if getattr(row, name) != values[name]:
-            print ("Mismatch on column %s: |%s| (row) |%s| (values)" %
-                   (name, getattr(row, name), values[name]))
+            print(("Mismatch on column %s: |%s| (row) |%s| (values)" %
+                   (name, getattr(row, name), values[name])))
             return False
     return True
 
@@ -131,9 +130,9 @@ class ReflectorTestBase:
         self.wait(d)
 
         # make sure it came back as what we saved
-        self.failUnless(len(self.data) == 1, "no row")
+        self.assertTrue(len(self.data) == 1, "no row")
         parent = self.data[0]
-        self.failUnless(rowMatches(parent, values), "no match")
+        self.assertTrue(rowMatches(parent, values), "no match")
 
         # create some child rows
         inserts = []
@@ -153,12 +152,12 @@ class ReflectorTestBase:
         d.addCallback(self.gotData)
         self.wait(d)
 
-        self.failUnless(len(self.data) == self.num_iterations,
+        self.assertTrue(len(self.data) == self.num_iterations,
                         "no rows on query")
-        self.failUnless(len(parent.childRows) == self.num_iterations,
+        self.assertTrue(len(parent.childRows) == self.num_iterations,
                         "did not load child rows: %d" % len(parent.childRows))
         for child in parent.childRows:
-            self.failUnless(rowMatches(child, child_values[child.childId]),
+            self.assertTrue(rowMatches(child, child_values[child.childId]),
                             "child %d does not match" % child.childId)
 
         # loading these objects a second time should not re-add them
@@ -167,9 +166,9 @@ class ReflectorTestBase:
         d.addCallback(self.gotData)
         self.wait(d)
 
-        self.failUnless(len(self.data) == self.num_iterations,
+        self.assertTrue(len(self.data) == self.num_iterations,
                         "no rows on query")
-        self.failUnless(len(parent.childRows) == self.num_iterations,
+        self.assertTrue(len(parent.childRows) == self.num_iterations,
                         "child rows added twice!: %d" % len(parent.childRows))
 
         # now change the parent
@@ -184,9 +183,9 @@ class ReflectorTestBase:
         self.wait(d)
 
         # make sure it came back as what we saved
-        self.failUnless(len(self.data) == 1, "no row")
+        self.assertTrue(len(self.data) == 1, "no row")
         parent = self.data[0]
-        self.failUnless(rowMatches(parent, values), "no match")
+        self.assertTrue(rowMatches(parent, values), "no match")
 
         # save parent
         test_values = {}
@@ -207,10 +206,10 @@ class ReflectorTestBase:
         self.wait(d, 100.0)
 
         # make sure they are the same
-        self.failUnless(len(self.data) == self.num_iterations + 1,
+        self.assertTrue(len(self.data) == self.num_iterations + 1,
                         "query did not get rows")
         for row in self.data:
-            self.failUnless(rowMatches(row, test_values[row.key_string]),
+            self.assertTrue(rowMatches(row, test_values[row.key_string]),
                             "child %s does not match" % row.key_string)
 
         # now change them all
@@ -225,10 +224,10 @@ class ReflectorTestBase:
         self.wait(d)
 
         # make sure they are the same
-        self.failUnless(len(self.data) == self.num_iterations + 1,
+        self.assertTrue(len(self.data) == self.num_iterations + 1,
                         "query did not get rows")
         for row in self.data:
-            self.failUnless(rowMatches(row, test_values[row.key_string]),
+            self.assertTrue(rowMatches(row, test_values[row.key_string]),
                             "child %s does not match" % row.key_string)
 
         # now delete them
@@ -241,7 +240,7 @@ class ReflectorTestBase:
         d.addCallback(self.gotData)
         self.wait(d)
 
-        self.failUnless(len(self.data) == 0, "rows were not deleted")
+        self.assertTrue(len(self.data) == 0, "rows were not deleted")
 
         # create one row to work with
         row = TestRow()

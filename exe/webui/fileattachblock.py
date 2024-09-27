@@ -75,7 +75,7 @@ class FileAttachBlockInc(Block):
                 #fileElement.field.deleteFile()
                 field_engine_check_delete(fileElement, request, self.idevice.fileAttachmentFields)
             
-        if "addFileAttachment" + unicode(self.id) in request.args:
+        if "addFileAttachment" + str(self.id) in request.args:
             self.idevice.addFileAttachmentField()            
             self.idevice.edit = True
             self.idevice.undo = False
@@ -89,7 +89,7 @@ class FileAttachBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = _(u"<div>\n")
+        html  = _("<div>\n")
         html += _("<h2>File Attachment</h2>")
         html += _("<p>Here you can attach arbitary files to the package that will be included with the export</p>")
         html += _("<p>You can choose to display links or not below</p>")
@@ -106,10 +106,10 @@ class FileAttachBlockInc(Block):
             html += "<hr/>"
         
         html += "<br/>"    
-        html += common.submitButton("addFileAttachment"+unicode(self.id), _("Add Another File Attachment"))
+        html += common.submitButton("addFileAttachment"+str(self.id), _("Add Another File Attachment"))
         html += "<br/>"
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -119,7 +119,7 @@ class FileAttachBlockInc(Block):
         if self.showDescBlock.renderView() == "yes":
             showDesc = True
         
-        html = u""
+        html = ""
         viewMode = "view"
         if previewMode == True:
             viewMode = "preview"

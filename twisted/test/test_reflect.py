@@ -23,8 +23,8 @@ class SettableTest(unittest.TestCase):
 
     def testSet(self):
         self.setter(a=1, b=2)
-        self.failUnlessEqual(self.setter.a, 1)
-        self.failUnlessEqual(self.setter.b, 2)
+        self.assertEqual(self.setter.a, 1)
+        self.assertEqual(self.setter.b, 2)
 
 
 class AccessorTester(reflect.Accessor):
@@ -46,31 +46,31 @@ class AccessorTest(unittest.TestCase):
 
     def testSet(self):
         self.tester.x = 1
-        self.failUnlessEqual(self.tester.x, 1)
-        self.failUnlessEqual(self.tester.y, 1)
+        self.assertEqual(self.tester.x, 1)
+        self.assertEqual(self.tester.y, 1)
 
     def testGet(self):
-        self.failUnlessEqual(self.tester.z, 1)
-        self.failUnlessEqual(self.tester.q, 1)
+        self.assertEqual(self.tester.z, 1)
+        self.assertEqual(self.tester.q, 1)
 
     def testDel(self):
         self.tester.z
-        self.failUnlessEqual(self.tester.q, 1)
+        self.assertEqual(self.tester.q, 1)
         del self.tester.z
-        self.failUnlessEqual(hasattr(self.tester, "q"), 0)
+        self.assertEqual(hasattr(self.tester, "q"), 0)
         self.tester.x = 1
         del self.tester.x
-        self.failUnlessEqual(hasattr(self.tester, "x"), 0)
+        self.assertEqual(hasattr(self.tester, "x"), 0)
 
 
 class LookupsTestCase(unittest.TestCase):
     """Test lookup methods."""
 
     def testClassLookup(self):
-        self.assertEquals(reflect.namedClass("twisted.python.reflect.Summer"), reflect.Summer)
+        self.assertEqual(reflect.namedClass("twisted.python.reflect.Summer"), reflect.Summer)
 
     def testModuleLookup(self):
-        self.assertEquals(reflect.namedModule("twisted.python.reflect"), reflect)
+        self.assertEqual(reflect.namedModule("twisted.python.reflect"), reflect)
 
 class LookupsTestCaseII(unittest.TestCase):
     def testPackageLookup(self):
@@ -91,7 +91,7 @@ class LookupsTestCaseII(unittest.TestCase):
         # Note - not failUnlessIdentical because unbound method lookup
         # creates a new object every time.  This is a foolishness of
         # Python's object implementation, not a bug in Twisted.
-        self.failUnlessEqual(reflect.namedAny("twisted.python."
+        self.assertEqual(reflect.namedAny("twisted.python."
                                               "reflect.Summer.reallySet"),
                              reflect.Summer.reallySet)
 
@@ -178,9 +178,9 @@ class ObjectGrep(unittest.TestCase):
         o = Dummy()
         m = o.dummy
 
-        self.assertIn(".im_self", reflect.objgrep(m, m.im_self, reflect.isSame))
-        self.assertIn(".im_class", reflect.objgrep(m, m.im_class, reflect.isSame))
-        self.assertIn(".im_func", reflect.objgrep(m, m.im_func, reflect.isSame))
+        self.assertIn(".im_self", reflect.objgrep(m, m.__self__, reflect.isSame))
+        self.assertIn(".im_class", reflect.objgrep(m, m.__self__.__class__, reflect.isSame))
+        self.assertIn(".im_func", reflect.objgrep(m, m.__func__, reflect.isSame))
 
     def testEverything(self):
         class Dummy:
@@ -205,9 +205,9 @@ class ObjectGrep(unittest.TestCase):
         c = [a, b]
         d = [a, c]
 
-        self.assertEquals(['[0]'], reflect.objgrep(d, a, reflect.isSame, maxDepth=1))
-        self.assertEquals(['[0]', '[1][0]'], reflect.objgrep(d, a, reflect.isSame, maxDepth=2))
-        self.assertEquals(['[0]', '[1][0]', '[1][1][0]'], reflect.objgrep(d, a, reflect.isSame, maxDepth=3))
+        self.assertEqual(['[0]'], reflect.objgrep(d, a, reflect.isSame, maxDepth=1))
+        self.assertEqual(['[0]', '[1][0]'], reflect.objgrep(d, a, reflect.isSame, maxDepth=2))
+        self.assertEqual(['[0]', '[1][0]', '[1][1][0]'], reflect.objgrep(d, a, reflect.isSame, maxDepth=3))
 
 
 class GetClass(unittest.TestCase):
@@ -216,14 +216,14 @@ class GetClass(unittest.TestCase):
             pass
         old = OldClass()
         self.assertIn(reflect.getClass(OldClass).__name__, ('class', 'classobj'))
-        self.assertEquals(reflect.getClass(old).__name__, 'OldClass')
+        self.assertEqual(reflect.getClass(old).__name__, 'OldClass')
 
     def testNew(self):
         class NewClass(object):
             pass
         new = NewClass()
-        self.assertEquals(reflect.getClass(NewClass).__name__, 'type')
-        self.assertEquals(reflect.getClass(new).__name__, 'NewClass')
+        self.assertEqual(reflect.getClass(NewClass).__name__, 'type')
+        self.assertEqual(reflect.getClass(new).__name__, 'NewClass')
 
 class Breakable(object):
 
@@ -250,8 +250,7 @@ class BrokenType(Breakable, type):
         return 'BrokenType'
     __name__ = property(get___name__)
 
-class BTBase(Breakable):
-    __metaclass__ = BrokenType
+class BTBase(Breakable, metaclass=BrokenType):
     breakRepr = True
     breakStr = True
 
@@ -263,7 +262,7 @@ class SafeRepr(unittest.TestCase):
 
     def testWorkingRepr(self):
         x = [1,2,3]
-        self.assertEquals(reflect.safe_repr(x), repr(x))
+        self.assertEqual(reflect.safe_repr(x), repr(x))
 
     def testBrokenRepr(self):
         b = Breakable()
@@ -299,7 +298,7 @@ class SafeRepr(unittest.TestCase):
 class SafeStr(unittest.TestCase):
     def testWorkingStr(self):
         x = [1,2,3]
-        self.assertEquals(reflect.safe_str(x), str(x))
+        self.assertEqual(reflect.safe_str(x), str(x))
 
     def testBrokenStr(self):
         b = Breakable()

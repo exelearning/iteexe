@@ -16,6 +16,6 @@ class QuotingTestCase(unittest.TestCase):
             ("foo'd", "text", "'foo''d'"),
             ("\x00abc\\s\xFF", "bytea", "'\\\\000abc\\\\\\\\s\\377'"),
             (12, "text", "'12'"),
-            (u"123'456", "text", u"'123''456'")
+            ("123'456", "text", "'123''456'")
             ]:
-            self.assertEquals(util.quote(value, typ), expected)
+            self.assertEqual(util.quote(value, typ), expected)

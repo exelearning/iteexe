@@ -24,12 +24,12 @@ Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
 import re
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from exe.webui       import common
 from exe.engine.path import Path
 from exe             import globals as G
 from exe.engine.jsidevice import JsIdevice
-from urllib import quote
+from urllib.parse import quote
 
 log = logging.getLogger(__name__)
 
@@ -46,7 +46,7 @@ def replaceLinks(matchobj, package_name):
                 anchor)
     elif do \
     and do.group(1).startswith('resources/'):
-        clean_url = urllib.quote(package_name.encode('utf-8'))
+        clean_url = urllib.parse.quote(package_name.encode('utf-8'))
         return re.sub(r'(?i)href\s*=\s*"?([^>"]+)"?',
                 r'''href="\1" onclick="browseURL('%s/%s/\1',this); return false"''' % (G.application.exeAppUri, clean_url),
                 anchor)
@@ -70,7 +70,7 @@ class Element(object):
         """
         Process arguments from the web server.
         """
-        msg = x_(u"ERROR Element.process called directly with %s class")
+        msg = x_("ERROR Element.process called directly with %s class")
         log.error(msg % self.__class__.__name__)
         return _(msg) % self.__class__.__name__
 
@@ -79,7 +79,7 @@ class Element(object):
         """
         Returns an XHTML string for editing this element
         """
-        msg = _(u"ERROR Element.renderEdit called directly with %s class")
+        msg = _("ERROR Element.renderEdit called directly with %s class")
         log.error(msg % self.__class__.__name__)
         return _(msg) % self.__class__.__name__
 
@@ -96,7 +96,7 @@ class Element(object):
         """
         Returns an XHTML string for viewing this element
         """
-        msg = x_(u"ERROR Element.renderView called directly with %s class")
+        msg = x_("ERROR Element.renderView called directly with %s class")
         log.error(msg % self.__class__.__name__)
         return _(msg) % self.__class__.__name__
 
@@ -241,7 +241,7 @@ class TextAreaElement(ElementWithResources):
         self.field.content = self.field.content_w_resourcePaths
 
         log.debug("renderEdit content="+self.field.content+
-                  ", height="+unicode(self.height))
+                  ", height="+str(self.height))
         this_package = None
         if self.field_idevice is not None \
         and self.field_idevice.parentNode is not None:
@@ -387,7 +387,7 @@ class TextAreaElement(ElementWithResources):
         from exe.export.exportmediaconverter import ExportMediaConverter
         from exe.export.xmlpage import XMLPage
         
-        xml = u""
+        xml = ""
         
         if myId == "":
             myId = self.field.idevice.id
@@ -401,7 +401,7 @@ class TextAreaElement(ElementWithResources):
             xmlType = self.MEDIA_ONLY_SLIDE
         
         if xmlType == self.MEDIA_ONLY_SLIDE:
-            xml += u"<%s type='mediaslide' id='%s'>\n" % (elementToMake, myId)
+            xml += "<%s type='mediaslide' id='%s'>\n" % (elementToMake, myId)
             htmlContentInc = self.getMediaAdaptedStrippedHTML(self.renderView(), {"resizemethod" : "stretch"} )
             scriptStart = htmlContentInc.find("<script")
             if scriptStart != -1:
@@ -413,7 +413,7 @@ class TextAreaElement(ElementWithResources):
         else: 
             mediaAdaptedHTML = self.getMediaAdaptedHTML()
             audioStr = ExportMediaConverter.getInstance().makeAudioAttrs(mediaAdaptedHTML)
-            xml += u"<%s type='html' id='%s' %s>\n" % (elementToMake, myId, audioStr)
+            xml += "<%s type='html' id='%s' %s>\n" % (elementToMake, myId, audioStr)
             xml += "<![CDATA["
             if icon != "":
                 xml += "<img src='icon_" + icon + ".gif' /> "
@@ -755,53 +755,53 @@ class ImageElement(Element):
         else:
             function = "addImage"
 
-        html  = u'<div class="block">'
-        html += u'<b>'+self.field.name+':</b>\n'
+        html  = '<div class="block">'
+        html += '<b>'+self.field.name+':</b>\n'
         html += common.elementInstruc(self.field.instruc)
-        html += u"</div>\n"
-        html += u'<div class="block">'
-        html += u'<img alt="%s" ' % _('Add Image')
-        html += u'id="img%s" ' % self.id
-        html += u"onclick=\"%s('%s');\" " % (function, self.id)
+        html += "</div>\n"
+        html += '<div class="block">'
+        html += '<img alt="%s" ' % _('Add Image')
+        html += 'id="img%s" ' % self.id
+        html += "onclick=\"%s('%s');\" " % (function, self.id)
         if self.field.imageResource:
-            html += u'src="./resources/'+self.field.imageResource.storageName+'" '
+            html += 'src="./resources/'+self.field.imageResource.storageName+'" '
         else:
-            html += u'src=""'
+            html += 'src=""'
         if self.field.width:
-            html += u"width=\""+self.field.width+"\" "
+            html += "width=\""+self.field.width+"\" "
         if self.field.height:
-            html += u"height=\""+self.field.height+"\" "
-        html += u"/>\n"
-        html += u"</div>"
+            html += "height=\""+self.field.height+"\" "
+        html += "/>\n"
+        html += "</div>"
 
-        html += u'<script type="text/javascript">\n'
-        html += u"document.getElementById('img"+self.id+"')."
+        html += '<script type="text/javascript">\n'
+        html += "document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', imageChanged, true);\n"
-        html += u'</script>\n'
+        html += '</script>\n'
 
-        html += u'<div class="block">'
+        html += '<div class="block">'
         html += common.textInput("path"+self.id, "", 50)
         
-        html += u'<input type="button" onclick="%s(\'%s\')"' % (function, self.id)
-        html += u' value="%s" />' % _(u"Select an image")
+        html += '<input type="button" onclick="%s(\'%s\')"' % (function, self.id)
+        html += ' value="%s" />' % _("Select an image")
         if self.field.imageResource  and not self.field.isDefaultImage:
             html += '<p style="color: red;">'+ self.field.imageResource.storageName + '</P>'
-        html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
-        html += u"<input type=\"text\" "
-        html += u"id=\"width"+self.id+"\" "
-        html += u"name=\"width"+self.id+"\" "
-        html += u"value=\"%s\" " % self.field.width
-        html += u"onchange=\"changeImageWidth('"+self.id+"');\" "
-        html += u"size=\"4\"/>px "
-        html += u"<b>" + _("by") + "</b> \n"
-        html += u"<input type=\"text\" "
-        html += u"id=\"height"+self.id+"\" "
-        html += u"name=\"height"+self.id+"\" "
-        html += u"value=\"%s\" " % self.field.height
-        html += u"onchange=\"changeImageHeight('"+self.id+"');\" "
-        html += u"size=\"4\"/>px \n"
-        html += u"(%s) \n" % _(u"blank for original size")
-        html += u"</div>"
+        html += '<div class="block"><b>%s</b></div>\n' % _("Display as:")
+        html += "<input type=\"text\" "
+        html += "id=\"width"+self.id+"\" "
+        html += "name=\"width"+self.id+"\" "
+        html += "value=\"%s\" " % self.field.width
+        html += "onchange=\"changeImageWidth('"+self.id+"');\" "
+        html += "size=\"4\"/>px "
+        html += "<b>" + _("by") + "</b> \n"
+        html += "<input type=\"text\" "
+        html += "id=\"height"+self.id+"\" "
+        html += "name=\"height"+self.id+"\" "
+        html += "value=\"%s\" " % self.field.height
+        html += "onchange=\"changeImageHeight('"+self.id+"');\" "
+        html += "size=\"4\"/>px \n"
+        html += "(%s) \n" % _("blank for original size")
+        html += "</div>"
 
         return html
 
@@ -865,18 +865,18 @@ class MultimediaElement(Element):
         log.debug("renderEdit")
 
         html  = ""
-        html += u'<b>'+self.field.name+':</b>\n'
+        html += '<b>'+self.field.name+':</b>\n'
         html += common.elementInstruc(self.field.instruc)+'<br/>'
 
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addMp3(\'%s\')"' % self.id
-        html += u' value="%s" />' % _(u"Select an MP3")
+        html += '<input type="button" onclick="addMp3(\'%s\')"' % self.id
+        html += ' value="%s" />' % _("Select an MP3")
         
         
         if self.field.mediaResource:
             html += '<p style="color: red;">'+ self.field.mediaResource.storageName + '</P>'
             
-        html += '<br/><b>%s</b><br/>' % _(u"Caption:")
+        html += '<br/><b>%s</b><br/>' % _("Caption:")
         html += common.textInput("caption" + self.id, self.field.caption)
         html += common.elementInstruc(self.field.captionInstruc)+ '<br/>'
 
@@ -1072,17 +1072,17 @@ class AttachmentElement(Element):
 
         html  = ""
         
-        label = _(u'Filename:')
+        label = _('Filename:')
         if self.field.attachResource:
-            label += u': '
-            label += u'<span style="text-decoration:underline">'
+            label += ': '
+            label += '<span style="text-decoration:underline">'
             label += self.field.attachResource.storageName
-            label += u'</span>\n'
+            label += '</span>\n'
         html += '<b>%s</b>' % label
         html += common.elementInstruc(self.field.instruc)+'<br/>'
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-        html += u' value="%s" /><br/>\n' % _(u"Select a file")
+        html += '<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += ' value="%s" /><br/>\n' % _("Select a file")
         
         return html
     
@@ -1092,15 +1092,15 @@ class AttachmentElement(Element):
         """
         html = ""    
         if self.field.attachResource:
-            html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
-            html += u" onclick=\"browseURL('"
-            html += u"http://127.0.0.1:%d/" % (G.application.config.port)
+            html += "<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
+            html += " onclick=\"browseURL('"
+            html += "http://127.0.0.1:%d/" % (G.application.config.port)
             html += self.field.idevice.parentNode.package.name 
-            html += u"/resources/"
+            html += "/resources/"
             html += self.field.attachResource.storageName
-            html += u"');\" >"
+            html += "');\" >"
             html += self.field.attachResource.storageName
-            html += u"</a>\n"
+            html += "</a>\n"
         return html
 
     def renderView(self):
@@ -1109,13 +1109,13 @@ class AttachmentElement(Element):
         """
         html = ""
         if self.field.attachResource:
-            html += u"<img src='stock-attach.png'> "
-            html += u"<a style=\"cursor: pointer;\" "
-            html += u" onclick=\"window.open('"
+            html += "<img src='stock-attach.png'> "
+            html += "<a style=\"cursor: pointer;\" "
+            html += " onclick=\"window.open('"
             html += self.field.attachResource.storageName
-            html += u"', '_blank');\" >"
+            html += "', '_blank');\" >"
             html += self.field.attachResource.storageName
-            html += u"</a><br/>\n"
+            html += "</a><br/>\n"
         return html
     
 #================================================================================
@@ -1176,51 +1176,51 @@ class MagnifierElement(Element):
         if not self.field.imageResource:
             self.field.setDefaultImage()
 
-        html  = u'<div class="block">\n'
-        html += u"<b>"+self.field.name+":</b>\n"
+        html  = '<div class="block">\n'
+        html += "<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
-        html += u"</div>\n"
-        html += u'<div class="block" style="padding:5px">\n'
-        html += u'<img alt="%s" ' % _('Add Image')
-        html += u'id="img%s" ' % self.id
-        html += u"onclick=\"addImage('"+self.id+"');\" "
-        html += u'src="resources/%s" '%(self.field.imageResource.storageName)
-        html += u"/>\n"
-        html += u"</div>\n"
+        html += "</div>\n"
+        html += '<div class="block" style="padding:5px">\n'
+        html += '<img alt="%s" ' % _('Add Image')
+        html += 'id="img%s" ' % self.id
+        html += "onclick=\"addImage('"+self.id+"');\" "
+        html += 'src="resources/%s" '%(self.field.imageResource.storageName)
+        html += "/>\n"
+        html += "</div>\n"
 
-        html += u'<script type="text/javascript">\n'
-        html += u"document.getElementById('img"+self.id+"')."
+        html += '<script type="text/javascript">\n'
+        html += "document.getElementById('img"+self.id+"')."
         html += "addEventListener('load', magnifierImageChanged, true);\n"
-        html += u'</script>\n'
+        html += '</script>\n'
 
-        html += u'<div class="block">\n'
+        html += '<div class="block">\n'
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" class="block" '
-        html += u' onclick="addImage(\'%s\')"' % self.id
-        html += u' value="%s" />' % _(u"Select an image")
+        html += '<input type="button" class="block" '
+        html += ' onclick="addImage(\'%s\')"' % self.id
+        html += ' value="%s" />' % _("Select an image")
         if self.field.imageResource and not self.field.isDefaultImage:
             html += '<p style="color: red;">'+ self.field.imageResource.storageName + '</P>'
-        if self.field.message <> "":
+        if self.field.message != "":
             html += '<span style="color:red">' + self.field.message + '</span>'
         
-        html += u'<div class="block"><b>%s</b>' % _(u"Display as:")
+        html += '<div class="block"><b>%s</b>' % _("Display as:")
         html += common.elementInstruc(self.field.idevice.dimensionInstruc)
-        html += u'</div>\n'
-        html += u'<input type="text" '
-        html += u'id="width%s" ' % self.id
-        html += u'name="width%s" ' % self.id
-        html += u'value="%s" ' % self.field.width
-        html += u'onchange="changeMagnifierImageWidth(\'%s\');" ' % self.id
-        html += u'size="4" />&nbsp;pixels&nbsp;<strong>by</strong>&nbsp;'
-        html += u'<input type="text" '
-        html += u'id="height%s" ' % self.id
-        html += u'name="height%s" ' % self.id
-        html += u'value="%s" ' % self.field.height
-        html += u'onchange="changeMagnifierImageHeight(\'%s\');" ' % self.id
-        html += u'size="4" />&nbsp;pixels.\n'
-        html += u'\n'
-        html += u'(%s) \n' % _(u'blank for original size')
-        html += u'</div>\n'
+        html += '</div>\n'
+        html += '<input type="text" '
+        html += 'id="width%s" ' % self.id
+        html += 'name="width%s" ' % self.id
+        html += 'value="%s" ' % self.field.width
+        html += 'onchange="changeMagnifierImageWidth(\'%s\');" ' % self.id
+        html += 'size="4" />&nbsp;pixels&nbsp;<strong>by</strong>&nbsp;'
+        html += '<input type="text" '
+        html += 'id="height%s" ' % self.id
+        html += 'name="height%s" ' % self.id
+        html += 'value="%s" ' % self.field.height
+        html += 'onchange="changeMagnifierImageHeight(\'%s\');" ' % self.id
+        html += 'size="4" />&nbsp;pixels.\n'
+        html += '\n'
+        html += '(%s) \n' % _('blank for original size')
+        html += '</div>\n'
 
         return html
 
@@ -1231,7 +1231,7 @@ class MagnifierElement(Element):
         """
         if not self.field.imageResource:
             self.field.setDefaultImage()
-        html=u'<script type="text/javascript" src="../templates/mojomagnify.js"></script>\n'
+        html='<script type="text/javascript" src="../templates/mojomagnify.js"></script>\n'
         html += self.renderMagnifier(
                         '../%s/resources/%s' % (
                             self.field.idevice.parentNode.package.name,
@@ -1265,12 +1265,12 @@ class MagnifierElement(Element):
             html += '<a href="'+imageFile+'"><img src="'+imageFile+'" alt="" width="'+field.width+'" height="'+field.height+'" class="magnifier-size-'+field.glassSize+' magnifier-zoom-'+field.initialZSize+'" /></a>'+lb
             html += '</span>'+lb
         else: #Preview
-            html =u'<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
+            html ='<img id="magnifier%s" src="%s" data-magnifysrc="%s"' % ( self.id, imageFile,imageFile)
             if field.width!="":
-                html +=u' width="'+field.width+'"'
+                html +=' width="'+field.width+'"'
             if field.height!="":
-                html +=u' height="'+field.height+'"'            
-            html +=u' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
+                html +=' height="'+field.height+'"'            
+            html +=' data-size="%s"  data-zoom="%s" />'% (field.glassSize, field.initialZSize)
             html +=lb
         return html;
         
@@ -1362,31 +1362,31 @@ class ClozeElement(ElementWithResources):
                              self.editorId, self.field.instruc,
                              self.field.encodedContent),
             # Render our toolbar
-            u'<table style="width: 100%;">',
-            u'<tbody>',
-            u'<tr>',
-            u'<td>',
-            u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
-            u' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
-            u'</td><td>',
+            '<table style="width: 100%;">',
+            '<tbody>',
+            '<tr>',
+            '<td>',
+            '  <input type="button" value="%s" ' % _("Hide/Show Word"),
+            ' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
+            '</td><td>',
             common.checkbox('strictMarking%s' % self.id,
                             self.field.strictMarking,
-                            title=_(u'Strict Marking?'),
+                            title=_('Strict Marking?'),
                             instruction=self.field.strictMarkingInstruc),
-            u'</td><td>',
+            '</td><td>',
             common.checkbox('checkCaps%s' % self.id,
                             self.field.checkCaps,
-                            title=_(u'Check Capitalization?'),
+                            title=_('Check Capitalization?'),
                             instruction=self.field.checkCapsInstruc),
-            u'</td><td>',
+            '</td><td>',
             common.checkbox('instantMarking%s' % self.id,
                             self.field.instantMarking,
-                            title=_(u'Instant Marking?'),
+                            title=_('Instant Marking?'),
                             instruction=self.field.instantMarkingInstruc),
-            u'</td>',
-            u'</tr>',
-            u'</tbody>',
-            u'</table>',
+            '</td>',
+            '</tr>',
+            '</tbody>',
+            '</table>',
             ]
         return '\n    '.join(html)
 
@@ -1406,7 +1406,7 @@ class ClozeElement(ElementWithResources):
         #array True if numeric only, false otherwise - hint for phone input
         missingWordNumOnly = []
         
-        xml =u""
+        xml =""
         xml += "<cloze>"
         xml += "<formhtml><![CDATA["
         breakCount = 0
@@ -1424,7 +1424,7 @@ class ClozeElement(ElementWithResources):
                 #    xml += "<br/>"
                 
                 #check and see if we have a numeric only word
-                numbers = u"0123456789\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9"
+                numbers = "0123456789\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9"
                 numOnly = True
                 for i in range(0, len(missingWord)):
                     currentChar = missingWord[i : i + 1]
@@ -1511,7 +1511,7 @@ class ClozeElement(ElementWithResources):
             result = ''
             key = 'X'
             for letter in word:
-                result += unichr(ord(key) ^ ord(letter))
+                result += chr(ord(key) ^ ord(letter))
                 key = letter
             # Encode for javascript
             output = ''
@@ -1541,23 +1541,23 @@ class ClozeElement(ElementWithResources):
         html += ['<div class="block iDevice_buttons">']
         html += ['<p>']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="$exe.cloze.showScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="$exe.cloze.showScore(\'%s\')" />' % ( c_("Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id, c_(u"Show Feedback"), onclick="$exe.cloze.toggleFeedback('%s',this)" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id, c_("Show Feedback"), onclick="$exe.cloze.toggleFeedback('%s',this)" % self.id)]
             # Set the show/hide answers button attributes
             style = ''
-            value = c_(u"Show/Clear Answers")
+            value = c_("Show/Clear Answers")
             onclick = "$exe.cloze.toggleAnswers('%s')" % self.id
         else:
             if preview:
-                html += [common.button('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id,onclick="$exe.cloze.submit('%s')" % self.id)]            
+                html += [common.button('submit%s' % self.id, c_("Submit"),id='submit%s' % self.id,onclick="$exe.cloze.submit('%s')" % self.id)]            
             else:
-                html += [common.submitButton('submit%s' % self.id, c_(u"Submit"),id='submit%s' % self.id)]
-            html += [common.button('restart%s' % self.id, c_(u"Restart"),id='restart%s' % self.id,style="display:none",onclick="$exe.cloze.restart('%s')" % self.id)]
+                html += [common.submitButton('submit%s' % self.id, c_("Submit"),id='submit%s' % self.id)]
+            html += [common.button('restart%s' % self.id, c_("Restart"),id='restart%s' % self.id,style="display:none",onclick="$exe.cloze.restart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
-            value = c_(u"Show Answers")
+            value = c_("Show Answers")
             onclick = "$exe.cloze.fillInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',common.button('%sshowAnswersButton' % self.id, value, id='showAnswersButton%s' % self.id, style=style, onclick=onclick)]
@@ -1593,12 +1593,12 @@ class ClozeElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % c_(u"Answers")
+        html += "<p>%s: </p><p>"  % c_("Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
                 answers += str(i+1) + '.' + missingWord + ' '
-        if answers <> "":        
+        if answers != "":        
             html += answers +'</p>'
         else:
             html = ""
@@ -1694,36 +1694,36 @@ class ClozelangElement(ElementWithResources):
                              self.editorId, self.field.instruc,
                              self.field.encodedContent),
             # Render our toolbar
-            u'<table style="width: 100%;">',
-            u'<tbody>',
-            u'<tr>',
-            u'<td>',
-            u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
-            u' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
-            u'</td><td>',
+            '<table style="width: 100%;">',
+            '<tbody>',
+            '<tr>',
+            '<td>',
+            '  <input type="button" value="%s" ' % _("Hide/Show Word"),
+            ' onclick="tinyMCE.execInstanceCommand(\'%s\',\'Underline\', false);" />' % self.editorId,
+            '</td><td>',
             common.checkbox('strictMarking%s' % self.id,
                             self.field.strictMarking,
-                            title=_(u'Strict Marking?'),
+                            title=_('Strict Marking?'),
                             instruction=self.field.strictMarkingInstruc),
-            u'</td><td>',
+            '</td><td>',
             common.checkbox('checkCaps%s' % self.id,
                             self.field.checkCaps,
-                            title=_(u'Check Caps?'),
+                            title=_('Check Caps?'),
                             instruction=self.field.checkCapsInstruc),
-            u'</td><td>',
+            '</td><td>',
             common.checkbox('instantMarking%s' % self.id,
                             self.field.instantMarking,
-                            title=_(u'Instant Marking?'),
+                            title=_('Instant Marking?'),
                             instruction=self.field.instantMarkingInstruc),
-	    u'</td><td>',
+	    '</td><td>',
             common.checkbox('showScore%s' % self.id,
                             self.field.showScore,
-                            title=_(u'Show Score?'),
+                            title=_('Show Score?'),
                             instruction=self.field.showScoreInstruc),
-            u'</td>',
-            u'</tr>',
-            u'</tbody>',
-            u'</table>',
+            '</td>',
+            '</tr>',
+            '</tbody>',
+            '</table>',
             ]
         return '\n    '.join(html)
 
@@ -1768,7 +1768,7 @@ class ClozelangElement(ElementWithResources):
             result = ''
             key = 'X'
             for letter in word:
-                result += unichr(ord(key) ^ ord(letter))
+                result += chr(ord(key) ^ ord(letter))
                 key = letter
             # Encode for javascript
             output = ''
@@ -1798,20 +1798,20 @@ class ClozelangElement(ElementWithResources):
         html += ['<div class="block iDevice_buttons">']
         html += ['<p>\n']
         if self.field.instantMarking:
-            html += ['<input type="button" value="%s" id="getScore%s" onclick="$exe.cloze.showLangScore(\'%s\')" />' % ( c_(u"Get score"), self.id, self.id)]
+            html += ['<input type="button" value="%s" id="getScore%s" onclick="$exe.cloze.showLangScore(\'%s\')" />' % ( c_("Get score"), self.id, self.id)]
 
             if feedbackId is not None:
-                html += [common.feedbackButton('feedback'+self.id,  c_(u"Show/Hide Feedback"), onclick="$exe.cloze.toggleLangFeedback('%s')" % self.id)]
+                html += [common.feedbackButton('feedback'+self.id,  c_("Show/Hide Feedback"), onclick="$exe.cloze.toggleLangFeedback('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display: inline;'
-            value = c_(u"Show/Clear Answers")
+            value = c_("Show/Clear Answers")
             onclick = "$exe.cloze.toggleLangAnswers('%s')" % self.id
         else:
-            html += [common.button('submit%s' % self.id, c_(u"Submit"), id='submit%s' % self.id, onclick="$exe.cloze.langSubmit('%s')" % self.id),
-                     common.button('restart%s' % self.id, c_(u"Restart"), id='restart%s' % self.id, style="display:none", onclick="$exe.cloze.langRestart('%s')" % self.id)]
+            html += [common.button('submit%s' % self.id, c_("Submit"), id='submit%s' % self.id, onclick="$exe.cloze.langSubmit('%s')" % self.id),
+                     common.button('restart%s' % self.id, c_("Restart"), id='restart%s' % self.id, style="display:none", onclick="$exe.cloze.langRestart('%s')" % self.id)]
             # Set the show/hide answers button attributes
             style = 'display:none'
-            value = c_(u"Show Answers")
+            value = c_("Show Answers")
             onclick = "$exe.cloze.fillLangInputs('%s')" % self.id
         # Show/hide answers button
         html += [' ',
@@ -1843,12 +1843,12 @@ class ClozelangElement(ElementWithResources):
         """
         html = ""
 
-        html += "<p>%s: </p><p>"  % c_(u"Answers")
+        html += "<p>%s: </p><p>"  % c_("Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
                 answers += str(i+1) + '.' + missingWord + ' '
-        if answers <> "":        
+        if answers != "":        
             html += answers +'</p>'
         else:
             html = ""
@@ -1887,28 +1887,28 @@ class FlashElement(Element):
         """
         log.debug("renderEdit")
 
-        html  = u'<div class="block">'
-        html += u"<b>"+self.field.name+":</b>\n"
+        html  = '<div class="block">'
+        html += "<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
-        html += u"</div>\n"
+        html += "</div>\n"
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addFlash(\'%s\')"' % self.id
-        html += u' value="%s" />' % _(u"Select Flash Object")
+        html += '<input type="button" onclick="addFlash(\'%s\')"' % self.id
+        html += ' value="%s" />' % _("Select Flash Object")
         html += common.elementInstruc(self.field.fileInstruc)
         if self.field.flashResource:
             html += '<p style="color: red;">'+ self.field.flashResource.storageName + '</P>'
-        html += u'<div class="block"><b>%s</b></div>\n' % _(u"Display as:")
-        html += u"<input type=\"text\" "
-        html += u"id=\"width"+self.id+"\" "
-        html += u"name=\"width"+self.id+"\" "
-        html += u"value=\"%s\" " % self.field.width
-        html += u"size=\"4\" />px\n"
-        html += u"by \n"
-        html += u"<input type=\"text\" "
-        html += u"id=\"height"+self.id+"\" "
-        html += u"name=\"height"+self.id+"\" "
-        html += u"value=\"%s\" " % self.field.height
-        html += u"size=\"4\" />px\n"
+        html += '<div class="block"><b>%s</b></div>\n' % _("Display as:")
+        html += "<input type=\"text\" "
+        html += "id=\"width"+self.id+"\" "
+        html += "name=\"width"+self.id+"\" "
+        html += "value=\"%s\" " % self.field.width
+        html += "size=\"4\" />px\n"
+        html += "by \n"
+        html += "<input type=\"text\" "
+        html += "id=\"height"+self.id+"\" "
+        html += "name=\"height"+self.id+"\" "
+        html += "value=\"%s\" " % self.field.height
+        html += "size=\"4\" />px\n"
 
 
         return html
@@ -1958,8 +1958,8 @@ class FlashMovieElement(Element):
             path = request.args["path"+self.id][0]
             if path.endswith(".flv"):
                 self.field.setFlash(request.args["path"+self.id][0])
-            elif path <> "":
-                self.field.message = _(u"Please select a .flv file.")
+            elif path != "":
+                self.field.message = _("Please select a .flv file.")
                 self.field.idevice.edit = True
 
 
@@ -1969,16 +1969,16 @@ class FlashMovieElement(Element):
         """
         log.debug("renderEdit")
 
-        html  = u'<div class="block">'
-        html += u"<b>"+self.field.name+":</b>"
+        html  = '<div class="block">'
+        html += "<b>"+self.field.name+":</b>"
         html += common.elementInstruc(self.field.fileInstruc)
-        html += u"</div>"
+        html += "</div>"
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
-        html += u' value="%s" />\n' % _(u"Select a flash video")
+        html += '<input type="button" onclick="addFlashMovie(\'%s\')"' % self.id
+        html += ' value="%s" />\n' % _("Select a flash video")
         if self.field.flashResource:
             html += '<p style="color: red;">'+ self.field.flashResource.storageName + '</P>'
-        if self.field.message <> "":
+        if self.field.message != "":
             html += '<span style="color:red">' + self.field.message + '</span>'
 
 
@@ -2038,8 +2038,8 @@ class MathElement(Element):
         if 'preview'+self.id in request.args:
             self.field.idevice.edit = True
         if 'input'+self.id in request.args and \
-            not(request.args[u"action"][0] == u"delete" and 
-                request.args[u"object"][0]==self.field.idevice.id):
+            not(request.args["action"][0] == "delete" and 
+                request.args["object"][0]==self.field.idevice.id):
             self.field.latex = request.args['input'+self.id][0]         
         
 
@@ -2052,10 +2052,10 @@ class MathElement(Element):
         greekDir = Path(webDir+'/images/maths/greek letters')
         oprationDir = Path(webDir+'/images/maths/binary oprations')
         relationDir = Path(webDir+'/images/maths/relations')
-        html = u'<div class="block">'
-        html += u"<b>"+self.field.name+":</b>\n"
+        html = '<div class="block">'
+        html += "<b>"+self.field.name+":</b>\n"
         html += common.elementInstruc(self.field.instruc)
-        html += u"<br/></div>\n"
+        html += "<br/></div>\n"
         # Latex input
         html += '<div class="maths">\n'
 
@@ -2063,23 +2063,23 @@ class MathElement(Element):
             if file.ext == ".gif" or file.ext == ".png":
                 symbol = file.namebase
                 html += common.insertSymbol("input"+self.id, 
-                        u"/images/maths/greek letters/%s", 
+                        "/images/maths/greek letters/%s", 
                                             "%s", r"\\%s") % (symbol, symbol,
                                                                 file.basename())
-        html += u"<br/>"        
+        html += "<br/>"        
         for file in oprationDir.files():
             if file.ext == ".gif" or file.ext == ".png":
                 symbol = file.namebase
                 html += common.insertSymbol("input"+self.id, 
-                        u"/images/maths/binary oprations/%s", 
+                        "/images/maths/binary oprations/%s", 
                                             "%s", r"\\%s") % (symbol, symbol,
                                                                 file.basename())
-        html += u"<br/>"        
+        html += "<br/>"        
         for file in relationDir.files():
             if file.ext == ".gif" or file.ext == ".png":
                 symbol = file.namebase
                 html += common.insertSymbol("input"+self.id, 
-                        u"/images/maths/relations/%s", 
+                        "/images/maths/relations/%s", 
                                             "%s", r"\\%s") % (symbol, symbol,
                                                                 file.basename())
         html += "<br />" 
@@ -2193,15 +2193,15 @@ class SelectOptionElement(Element):
         Returns an XHTML string for editing this option element
         code is pretty much straight from the Multi-Option aka QuizOption
         """
-        html  = u"<tr><td align=\"left\"><b id='ans%s-editor-label'>%s</b>" % (self.id,_("Option"))
+        html  = "<tr><td align=\"left\"><b id='ans%s-editor-label'>%s</b>" % (self.id,_("Option"))
         html += common.elementInstruc(self.field.question.optionInstruc)
 
         header = ""
         if self.index == 0:
             header = _("Correct Option")
 
-        html += u"</td><td align=\"right\"><b>%s</b>\n" % header
-        html += u"</td><td>\n"
+        html += "</td><td align=\"right\"><b>%s</b>\n" % header
+        html += "</td><td>\n"
         if self.index == 0: 
              html += common.elementInstruc(self.field.question.correctAnswerInstruc)
         html += "</td></tr><tr><td colspan=2>\n" 
@@ -2226,7 +2226,7 @@ class SelectOptionElement(Element):
         html += "<br><br><br><br>\n"
         html += common.submitImage("del"+self.id, self.field.idevice.id, 
                                    "/images/stock-cancel.png",
-                                   _(u"Delete option"))
+                                   _("Delete option"))
         html += "</td></tr>\n"
 
         return html
@@ -2334,7 +2334,7 @@ class SelectquestionElement(Element):
         if self.questionId in request.args:
             self.questionElement.process(request)
             
-        if ("addOption"+unicode(self.id)) in request.args: 
+        if ("addOption"+str(self.id)) in request.args: 
             self.field.addOption()
             self.field.idevice.edit = True
             self.field.idevice.undo = False
@@ -2359,10 +2359,10 @@ class SelectquestionElement(Element):
         """
         Returns an XHTML string with the form element for editing this element
         """
-        html  = u"<div class=\"iDevice\">\n"
-        html += u"<b id='question"+self.id+"-editor-label'>" + _("Question:") + " </b>" 
+        html  = "<div class=\"iDevice\">\n"
+        html += "<b id='question"+self.id+"-editor-label'>" + _("Question:") + " </b>" 
         html += common.elementInstruc(self.field.questionInstruc)
-        html += u" " + common.submitImage("del" + self.id, 
+        html += " " + common.submitImage("del" + self.id, 
                                    self.field.idevice.id, 
                                    "/images/stock-cancel.png",
                                    _("Delete question"))
@@ -2382,31 +2382,31 @@ class SelectquestionElement(Element):
                        package=this_package)
         html += "</div>"
 
-        html += u"<table width =\"100%\">"
-        html += u"<thead>"
-        html += u"<tr>"
-        html += u"<th>%s " % _("Options")
+        html += "<table width =\"100%\">"
+        html += "<thead>"
+        html += "<tr>"
+        html += "<th>%s " % _("Options")
         html += common.elementInstruc(self.field.optionInstruc)
-        html += u"</th>"
-        html += u"</tr>"
-        html += u"</thead>"
-        html += u"<tbody>"
+        html += "</th>"
+        html += "</tr>"
+        html += "</thead>"
+        html += "<tbody>"
 
         
         for element in self.options:
             html += element.renderEdit() 
             
-        html += u"</tbody>"
-        html += u"</table>\n"
+        html += "</tbody>"
+        html += "</table>\n"
 
 
-        value = _(u"Add another Option")    
+        value = _("Add another Option")    
         html += common.submitButton("addOption"+self.id, value)
-        html += u"<br />"
+        html += "<br />"
 
         html += self.feedbackElement.renderEdit()
 
-        html += u"</div>\n"
+        html += "</div>\n"
 
         return html
 
@@ -2580,15 +2580,15 @@ class QuizOptionElement(Element):
         """
         Returns an XHTML string for editing this option element
         """
-        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
+        html  = "<tr><td align=\"left\"><b>%s</b>" % _("Option")
         html += common.elementInstruc(self.field.idevice.answerInstruc)
 
         header = ""
         if self.index == 0:
             header = _("Correct Option")
 
-        html += u"</td><td align=\"right\"><b>%s</b>\n" % header
-        html += u"</td><td>\n"
+        html += "</td><td align=\"right\"><b>%s</b>\n" % header
+        html += "</td><td>\n"
         if self.index == 0: 
             html += common.elementInstruc(self.field.idevice.keyInstruc)
         html += "</td></tr><tr><td colspan=2>\n" 
@@ -2613,7 +2613,7 @@ class QuizOptionElement(Element):
         html += "<br><br><br><br>\n"
         html += common.submitImage("del"+self.id, self.field.idevice.id, 
                                    "/images/stock-cancel.png",
-                                   _(u"Delete option"))
+                                   _("Delete option"))
         html += "</td></tr>\n"
 
         html += "<tr><td align=\"left\"><b>%s</b>" % _("Feedback")
@@ -2793,7 +2793,7 @@ class QuizQuestionElement(Element):
         if self.hintId in request.args: 
             self.hintElement.process(request)
             
-        if ("addOption"+unicode(self.id)) in request.args: 
+        if ("addOption"+str(self.id)) in request.args: 
             self.field.addOption()
             self.field.idevice.edit = True
             # disable Undo once an option has been added:
@@ -2818,7 +2818,7 @@ class QuizQuestionElement(Element):
         """
         Returns an XHTML string with the form element for editing this element
         """
-        html = u" "+common.submitImage("del"+self.id, self.field.idevice.id,  
+        html = " "+common.submitImage("del"+self.id, self.field.idevice.id,  
                 "/images/stock-cancel.png", 
                 _("Delete question")) 
 
@@ -2836,7 +2836,7 @@ class QuizQuestionElement(Element):
         html += "</table>\n"
 
         value = _("Add another option")    
-        html += common.submitButton("addOption"+unicode(self.id), value)
+        html += common.submitButton("addOption"+str(self.id), value)
 
         return html
 
@@ -2872,7 +2872,7 @@ class QuizQuestionElement(Element):
             audioStr = " audio='%s' " % audioURL
         
         
-        xml = u"<question %s>" % audioStr
+        xml = "<question %s>" % audioStr
         xml += "<![CDATA["
         xml += questionMediaAdjusted
         xml += "]]>\n"

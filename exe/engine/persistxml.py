@@ -45,8 +45,8 @@ class PriorizedDOMJellier(DOMJellier):
 
     def jellyToNode(self, obj):
         objType = type(obj)
-        if objType is types.DictionaryType:
-            if self.prepared.has_key(id(obj)):
+        if objType is dict:
+            if id(obj) in self.prepared:
                 oldNode = self.prepared[id(obj)][1]
                 if oldNode.hasAttribute("reference"):
                     # it's been referenced already
@@ -62,7 +62,7 @@ class PriorizedDOMJellier(DOMJellier):
             node = self.document.createElement("UNNAMED")
             self.prepareElement(node, obj)
             node.tagName = "dictionary"
-            for k, v in sorted(obj.items(), key=self.priorize):
+            for k, v in sorted(list(obj.items()), key=self.priorize):
                 n = self.jellyToNode(k)
                 n.setAttribute("role", "key")
                 n2 = self.jellyToNode(v)
@@ -70,7 +70,7 @@ class PriorizedDOMJellier(DOMJellier):
                 node.appendChild(n)
                 node.appendChild(n2)
             return node
-        elif objType is types.UnicodeType:
+        elif objType is str:
             node = self.document.createElement("unicode")
             s = obj.encode('utf-8')
             node.setAttribute("value", s)
@@ -84,7 +84,7 @@ class PriorizedDOMJellier(DOMJellier):
 class UTF8DOMUnjellier(DOMUnjellier):
     def unjellyNode(self, node):
         if node.tagName == "unicode":
-            return unicode(str(node.getAttribute("value")), "utf-8")
+            return str(str(node.getAttribute("value")), "utf-8")
         else:
             return DOMUnjellier.unjellyNode(self, node)
 
@@ -103,7 +103,7 @@ class ContentXMLElement(Element):
         w = stream.write
         if self.nsprefixes:
             newprefixes = self.nsprefixes.copy()
-            for ns in nsprefixes.keys():
+            for ns in list(nsprefixes.keys()):
                 del newprefixes[ns]
         else:
             newprefixes = {}
@@ -113,7 +113,7 @@ class ContentXMLElement(Element):
         bext = begin.extend
         writeattr = lambda _atr, _val: bext((' ', _atr, '="', escape(_val), '"'))
         if namespace != self.namespace and self.namespace:
-            if nsprefixes.has_key(self.namespace):
+            if self.namespace in nsprefixes:
                 prefix = nsprefixes[self.namespace]
                 bext(prefix+':'+self.tagName)
             else:
@@ -122,10 +122,10 @@ class ContentXMLElement(Element):
         else:
             bext(self.tagName)
         j = ''.join
-        for attr, val in self.attributes.iteritems():
+        for attr, val in self.attributes.items():
             if isinstance(attr, tuple):
                 ns, key = attr
-                if nsprefixes.has_key(ns):
+                if ns in nsprefixes:
                     prefix = nsprefixes[ns]
                 else:
                     prefix = genprefix()
@@ -136,7 +136,7 @@ class ContentXMLElement(Element):
                 assert val is not None
                 writeattr(attr, val)
         if newprefixes:
-            for ns, prefix in newprefixes.iteritems():
+            for ns, prefix in newprefixes.items():
                 if prefix:
                     writeattr('xmlns:'+prefix, ns)
             newprefixes.update(nsprefixes)

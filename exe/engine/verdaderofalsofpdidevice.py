@@ -44,14 +44,14 @@ class TrueFalseQuestion(Persistable):
         """
 
         self.idevice = idevice
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(x_('Question:'), 
                                     self.idevice.questionInstruc, question)
         self.questionTextArea.idevice = idevice
         self.isCorrect = isCorrect
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(x_('Feedback'), 
                                     self.idevice.feedbackInstruc, feedback)
         self.feedbackTextArea.idevice = idevice
-        self.hintTextArea = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea = TextAreaField(x_('Hint'), 
                                 self.idevice.hintInstruc, hint)
         self.hintTextArea.idevice = idevice
 
@@ -120,13 +120,13 @@ class TrueFalseQuestion(Persistable):
         """
 
         self.idevice = idevice
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(x_('Question:'), 
                                     self.idevice.questionInstruc, self.question)
         self.questionTextArea.idevice = self.idevice
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(x_('Feedback'), 
                                     self.idevice.feedbackInstruc, self.feedback)
         self.feedbackTextArea.idevice = self.idevice
-        self.hintTextArea = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea = TextAreaField(x_('Hint'), 
                                 self.idevice.hintInstruc, self.hint)
         self.hintTextArea.idevice = self.idevice
 
@@ -142,31 +142,31 @@ class VerdaderofalsofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - True/False Activity"),
-                         x_(u"University of Auckland"),
-                         x_(u"""True/false questions present a statement where 
+                         x_("FPD - True/False Activity"),
+                         x_("University of Auckland"),
+                         x_("""True/false questions present a statement where 
 the learner must decide if the statement is true. This type of question works 
 well for factual information and information that lends itself to either/or 
-responses."""), u"", u"autoevaluacionfpd")
+responses."""), "", "autoevaluacionfpd")
 #        self.emphasis   = Idevice.SomeEmphasis
         self.emphasis   = "_autoevaluacionfpd"
-        self._hintInstruc     = x_(u"""A hint may be provided to assist the 
+        self._hintInstruc     = x_("""A hint may be provided to assist the 
 learner in answering the question.""")
         self.questions        = []
-        self._questionInstruc = x_(u"""Type the question stem. The question 
+        self._questionInstruc = x_("""Type the question stem. The question 
 should be clear and unambiguous. Avoid negative premises as these can tend to 
 be ambiguous.""")
         self._keyInstruc      = ""
-        self._feedbackInstruc = x_(u"""Enter any feedback you wish to provide 
+        self._feedbackInstruc = x_("""Enter any feedback you wish to provide 
 to the learner. This field may be left blank. if this field is left blank 
 default feedback will be provided.""")
         self.questions.append(TrueFalseQuestion(self))
         self.systemResources += ["common.js", "panel-amusements.png", "stock-stop.png"]
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the True/False Question should be 
+            x_('Instructions'),
+            x_("""Provide instruction on how the True/False Question should be 
 completed."""),
-            u'')
+            '')
                 
         self.instructionsForLearners.idevice = self
         
@@ -330,8 +330,8 @@ completed."""),
         Upgrades the node from version 0 to 1.
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon = u"autoevaluacionfpd"
+        log.debug("Upgrading iDevice")
+        self.icon = "autoevaluacionfpd"
 
 
     def upgradeToVersion2(self):
@@ -339,7 +339,7 @@ completed."""),
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis   = Idevice.SomeEmphasis
         self.emphasis   = "_autoevaluacionfpd"
         
@@ -349,7 +349,7 @@ completed."""),
         Upgrades the node from 1 (v0.6) to 2 (v0.7).
         Change icon from 'multichoice' to 'question'
         """
-        log.debug(u"Upgrading iDevice icon")
+        log.debug("Upgrading iDevice icon")
         self.icon = "autoevaluacionfpd"
 
 
@@ -372,7 +372,7 @@ completed."""),
         """
         Upgrades exe to v0.11
         """
-        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
+        self._feedbackInstruc = x_("""Type in the feedback that you want the 
 student to see when selecting the particular question. If you don't complete
 this box, eXe will automatically provide default feedback as follows: 
 "Correct answer" as indicated by the selection for the correct answer; or 
@@ -391,10 +391,10 @@ this box, eXe will automatically provide default feedback as follows:
         Upgrades to v0.15
         """
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the True/False Question should be 
+            x_('Instructions'),
+            x_("""Provide instruction on how the True/False Question should be 
 completed."""),
-            x_(u'Read the paragraph below and '
+            x_('Read the paragraph below and '
                 'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
    
@@ -419,6 +419,6 @@ completed."""),
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion12(self):
-        if self._title == u"FPD - Actividad de Verdadero/Falso":
-            self._title = u"FPD - True/False Activity"
+        if self._title == "FPD - Actividad de Verdadero/Falso":
+            self._title = "FPD - True/False Activity"
 # ===========================================================================

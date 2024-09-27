@@ -76,7 +76,7 @@ class VerdaderofalsofpdBlock(Block):
     
         self.instructionElement.process(request)
             
-        if ("addQuestion"+unicode(self.id)) in request.args: 
+        if ("addQuestion"+str(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
             # disable Undo once a question has been added: 
@@ -101,25 +101,25 @@ class VerdaderofalsofpdBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         
-        html  = u"<div class=\"iDevice\"><br/>\n"
+        html  = "<div class=\"iDevice\"><br/>\n"
 
         # JRJ
         # Quitamos el prefijo "FPD -"
         # (let's remove the "FPD -" prefix)
         if self.idevice.title.find("FPD - ") == 0:
-            self.idevice.title = x_(u"Now it's your turn")
+            self.idevice.title = x_("Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
+        html += "<br/><br/>\n"
         html += self.instructionElement.renderEdit()
 
         for element in self.questionElements:
             html += element.renderEdit() 
             
-        value = _(u"Add another question")    
-        html += common.submitButton("addQuestion"+unicode(self.id), value)
-        html += u"<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
-        html += u"</div>\n"
+        value = _("Add another question")    
+        html += common.submitButton("addQuestion"+str(self.id), value)
+        html += "<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
+        html += "</div>\n"
 
         return html
 

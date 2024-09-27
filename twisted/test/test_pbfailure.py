@@ -96,7 +96,7 @@ class PBConnTestCase(unittest.TestCase):
 
 
 class PBFailureTest(PBConnTestCase):
-    compare = unittest.TestCase.assertEquals
+    compare = unittest.TestCase.assertEqual
 
     def testPBFailures(self):
         d = self.clientFactory.getRootObject()
@@ -115,7 +115,7 @@ class PBFailureTest(PBConnTestCase):
         def exception(failure):
             log.err(failure)
             errs = log.flushErrors(DieError)
-            self.assertEquals(len(errs), 2)
+            self.assertEqual(len(errs), 2)
         d.addErrback(exception)
 
         return d
@@ -133,7 +133,7 @@ class PBFailureTest(PBConnTestCase):
     def cleanupLoggedErrors(self, ignored):
         errors = log.flushErrors(PoopError, FailError, DieError,
                                  AttributeError, JellyError, SecurityError)
-        self.assertEquals(len(errors), 6)
+        self.assertEqual(len(errors), 6)
         return ignored
 
     def connected(self, persp):
@@ -150,7 +150,7 @@ class PBFailureTest(PBConnTestCase):
             for (meth, result, eb) in methods])
 
     def success(self, result, expectedResult):
-        self.assertEquals(result, expectedResult)
+        self.assertEqual(result, expectedResult)
         return result
 
     def failurePoop(self, fail):
@@ -175,26 +175,26 @@ class PBFailureTest(PBConnTestCase):
 
     def failureJelly(self, fail):
         fail.trap(JellyError)
-        self.failIf(isinstance(fail.type, str))
-        self.failUnless(isinstance(fail.value, fail.type))
+        self.assertFalse(isinstance(fail.type, str))
+        self.assertTrue(isinstance(fail.value, fail.type))
         return 43
 
     def failureSecurity(self, fail):
         fail.trap(SecurityError)
-        self.failIf(isinstance(fail.type, str))
-        self.failUnless(isinstance(fail.value, fail.type))
+        self.assertFalse(isinstance(fail.type, str))
+        self.assertTrue(isinstance(fail.value, fail.type))
         return 430
 
     def failureDeferredJelly(self, fail):
         fail.trap(JellyError)
-        self.failIf(isinstance(fail.type, str))
-        self.failUnless(isinstance(fail.value, fail.type))
+        self.assertFalse(isinstance(fail.type, str))
+        self.assertTrue(isinstance(fail.value, fail.type))
         return 4300
 
     def failureDeferredSecurity(self, fail):
         fail.trap(SecurityError)
-        self.failIf(isinstance(fail.type, str))
-        self.failUnless(isinstance(fail.value, fail.type))
+        self.assertFalse(isinstance(fail.type, str))
+        self.assertTrue(isinstance(fail.value, fail.type))
         return 43000
 
 class PBFailureTestUnsafe(PBFailureTest):

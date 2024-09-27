@@ -55,7 +55,7 @@ def getAvailableToolkits():
     except:
         pass
     else:
-        gtkvers = pygtk._get_available_versions().keys()
+        gtkvers = list(pygtk._get_available_versions().keys())
         for v in gtkvers:
             frontend = {'1.2': 'gtk1',
                         '2.0': 'gtk2'}.get(v)
@@ -88,15 +88,15 @@ def run():
     config = MyOptions()
     try:
         config.parseOptions()
-    except usage.UsageError, e:
-        print str(e)
-        print str(config)
+    except usage.UsageError as e:
+        print(str(e))
+        print(str(config))
         sys.exit(1)
 
     try:
         run = getattr(sys.modules[__name__], 'run_' + config.opts['toolkit'])
     except AttributeError:
-        print "Sorry, no support for toolkit %r." % (config.opts['toolkit'],)
+        print("Sorry, no support for toolkit %r." % (config.opts['toolkit'],))
         sys.exit(1)
 
     run(config)

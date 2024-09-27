@@ -72,7 +72,7 @@ class CmdlineExporter(object):
                     outputf = inputf + self.extensions[self.options["export"]]
             outputfp = Path(outputf)
             if outputfp.exists() and not self.options["overwrite"]:
-                error = _(u'"%s" already exists.\nPlease try again \
+                error = _('"%s" already exists.\nPlease try again \
 with a different filename') % outputf
                 raise Exception(error.encode(ENCODING))
             else:
@@ -86,7 +86,7 @@ with a different filename') % outputf
                 pkg = Package.load(inputf)
                 LOG.debug("Package %s loaded" % (inputf))
                 if not pkg:
-                    error = _(u"Invalid input package")
+                    error = _("Invalid input package")
                     raise Exception(error.encode(ENCODING))
                 self.styles_dir = self.config.stylesDir / pkg.style
                 LOG.debug("Styles dir: %s" % (self.styles_dir))
@@ -94,7 +94,7 @@ with a different filename') % outputf
                 getattr(self, 'export_' + self.options["export"])(pkg, outputf)
                 return outputf
         else:
-            raise Exception(_(u"Export format not implemented")\
+            raise Exception(_("Export format not implemented")\
 .encode(ENCODING))
 
 

@@ -29,7 +29,7 @@ from twisted.python import failure, components
 from twisted.internet.interfaces import IProcessTransport
 
 # sibling imports
-import ops
+from . import ops
 
 # System imports
 import os
@@ -65,7 +65,7 @@ class ProcessWaiter(object):
 
     def __init__(self, reactor):
         def stopThreads():
-            for t in self.threadToMsgWindow.keys():
+            for t in list(self.threadToMsgWindow.keys()):
                 # PostMessage blocks for dead threads
                 if t.isAlive() and self.threadToMsgWindowCreated[t]:
                     win32api.PostMessage(
@@ -80,7 +80,7 @@ class ProcessWaiter(object):
         self.reactor = reactor
         # Win32 APIs can't be passed python objects, so we pass a key
         # that maps to the object in a dict that the thread has access to
-        processHandleKey = counter.next()
+        processHandleKey = next(counter)
         self.phandleToPhandleKey[processHandle] = processHandleKey
         self.phandleToTransport[processHandle] = processTransport
         self.needWaiting[processHandleKey] = processHandle

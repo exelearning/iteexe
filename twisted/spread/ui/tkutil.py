@@ -4,9 +4,9 @@
 
 """Utilities for building L{PB<twisted.spread.pb>} clients with L{Tkinter}.
 """
-from Tkinter import *
-from tkSimpleDialog import _QueryString
-from tkFileDialog import _Dialog
+from tkinter import *
+from tkinter.simpledialog import _QueryString
+from tkinter.filedialog import _Dialog
 from twisted.spread import pb
 from twisted.internet import reactor
 from twisted import copyright
@@ -41,7 +41,7 @@ def askpassword(title, prompt, **kw):
 
     @returns: a string
     '''
-    d = apply(_QueryPassword, (title, prompt), kw)
+    d = _QueryPassword(*(title, prompt), **kw)
     return d.result
 
 def grid_setexpand(widget):
@@ -62,7 +62,7 @@ class CList(Frame):
             b=Button(self,text=labels[i],anchor=W,height=1,pady=0)
             b.config(command=lambda s=self,i=i:s.setSort(i))
             b.grid(column=i,row=0,sticky=N+E+W)
-            box=apply(Listbox,(self,),kw)
+            box=Listbox(*(self,), **kw)
             box.grid(column=i,row=1,sticky=N+E+S+W)
             self.lists.append(box)
         grid_setexpand(self)
@@ -77,7 +77,7 @@ class CList(Frame):
         rets=[]
         for l in self.lists:
             func=getattr(l,funcname)
-            ret=apply(func,args,kw)
+            ret=func(*args, **kw)
             if ret!=None: rets.append(ret)
         if rets: return rets
 
@@ -132,10 +132,10 @@ class CList(Frame):
         return self.lists[0].curselection()
 
     def delete(self,*args):
-        apply(self._callall,("delete",)+args)
+        self._callall(*("delete",)+args)
 
     def get(self,*args):
-        bad=apply(self._callall,("get",)+args)
+        bad=self._callall(*("get",)+args)
         if len(args)==1:
             return bad
         ret=[]
@@ -172,7 +172,7 @@ class CList(Frame):
     select_anchor=selection_anchor
 
     def selection_clear(self,*args):
-        apply(self._callall,("selection_clear",)+args)
+        self._callall(*("selection_clear",)+args)
 
     select_clear=selection_clear
 
@@ -182,17 +182,17 @@ class CList(Frame):
     select_includes=selection_includes
 
     def selection_set(self,*args):
-        apply(self._callall,("selection_set",)+args)
+        self._callall(*("selection_set",)+args)
 
     select_set=selection_set
 
     def xview(self,*args):
         if not args: return self.lists[0].xview()
-        apply(self._callall,("xview",)+args)
+        self._callall(*("xview",)+args)
 
     def yview(self,*args):
         if not args: return self.lists[0].yview()
-        apply(self._callall,("yview",)+args)
+        self._callall(*("yview",)+args)
 
 class ProgressBar:
     def __init__(self, master=None, orientation="horizontal",
@@ -292,7 +292,7 @@ class GenericLogin(Toplevel):
                 dict=stuff[2]
             else: dict={}
             Label(self,text=label+": ").grid(column=0,row=row)
-            e=apply(Entry,(self,),dict)
+            e=Entry(*(self,), **dict)
             e.grid(column=1,row=row)
             e.insert(0,value)
             self.entries[label]=e
@@ -307,7 +307,7 @@ class GenericLogin(Toplevel):
 
     def doLogin(self):
         values={}
-        for k in self.entries.keys():
+        for k in list(self.entries.keys()):
             values[string.lower(k)]=self.entries[k].get()
         self.callback(values)
         self.destroy()

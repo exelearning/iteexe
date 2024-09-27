@@ -9,9 +9,9 @@ from twisted.internet.base import BaseConnector
 from twisted.internet import defer, interfaces, error
 from twisted.python import failure
 
-from abstract import ConnectedSocket
-from ops import ConnectExOp
-from util import StateEventMachineType
+from .abstract import ConnectedSocket
+from .ops import ConnectExOp
+from .util import StateEventMachineType
 from zope.interface import implements
 
 
@@ -39,13 +39,13 @@ class _SubConnector:
 
         try:
             skt = socket.socket(*self.sf.sockinfo)
-        except socket.error, se:
+        except socket.error as se:
             raise error.ConnectBindError(se[0], se[1])
         try:
             if self.sf.bindAddress is None:
                 self.sf.bindAddress = ("", 0) # necessary for ConnectEx
             skt.bind(self.sf.bindAddress)
-        except socket.error, se:
+        except socket.error as se:
             raise error.ConnectBindError(se[0], se[1])
         self.socket = skt
         op = ConnectExOp(self)
@@ -69,8 +69,7 @@ class _SubConnector:
 
         self.sf.connectionFailed(err)
 
-class SocketConnector(styles.Ephemeral, object):
-    __metaclass__ = StateEventMachineType
+class SocketConnector(styles.Ephemeral, object, metaclass=StateEventMachineType):
     implements(interfaces.IConnector)
     transport_class = ClientSocket
     events = ["stopConnecting", "disconnect", "connect"]
@@ -104,7 +103,7 @@ class SocketConnector(styles.Ephemeral, object):
         pass
 
     def handle_connecting_connect(self):
-        raise RuntimeError, "can't connect in this state"
+        raise RuntimeError("can't connect in this state")
 
     handle_connected_connect = handle_connecting_connect
 

@@ -24,7 +24,7 @@ from twisted.internet import reactor, protocol
 from twisted.web import resource, server
 
 # system imports
-import urlparse
+import urllib.parse
 
 
 class ProxyClient(http.HTTPClient):
@@ -34,7 +34,7 @@ class ProxyClient(http.HTTPClient):
         self.father = father
         self.command = command
         self.rest = rest
-        if headers.has_key("proxy-connection"):
+        if "proxy-connection" in headers:
             del headers["proxy-connection"]
         headers["connection"] = "close"
         self.headers = headers
@@ -42,7 +42,7 @@ class ProxyClient(http.HTTPClient):
 
     def connectionMade(self):
         self.sendCommand(self.command, self.rest)
-        for header, value in self.headers.items():
+        for header, value in list(self.headers.items()):
             self.sendHeader(header, value)
         self.endHeaders()
         self.transport.write(self.data)
@@ -96,19 +96,19 @@ class ProxyRequest(http.Request):
     ports = {'http': 80}
 
     def process(self):
-        parsed = urlparse.urlparse(self.uri)
+        parsed = urllib.parse.urlparse(self.uri)
         protocol = parsed[0]
         host = parsed[1]
         port = self.ports[protocol]
         if ':' in host:
             host, port = host.split(':')
             port = int(port)
-        rest = urlparse.urlunparse(('','')+parsed[2:])
+        rest = urllib.parse.urlunparse(('','')+parsed[2:])
         if not rest:
             rest = rest+'/'
         class_ = self.protocols[protocol]
         headers = self.getAllHeaders().copy()
-        if not headers.has_key('host'):
+        if 'host' not in headers:
             headers['host'] = host
         self.content.seek(0, 0)
         s = self.content.read()
@@ -173,7 +173,7 @@ class ReverseProxyResource(resource.Resource):
     def render(self, request):
         request.received_headers['host'] = self.host
         request.content.seek(0, 0)
-        qs = urlparse.urlparse(request.uri)[4]
+        qs = urllib.parse.urlparse(request.uri)[4]
         if qs:
             rest = self.path + '?' + qs
         else:

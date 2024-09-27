@@ -49,8 +49,8 @@ class GenericBlock(Block):
         is_cancel = common.requestHasCancel(request)
 
         Block.process(self, request)
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
+        if ("action" not in request.args or
+            request.args["action"][0] != "delete"):
             for element in self.elements:
                 element.process(request)
                 
@@ -62,13 +62,13 @@ class GenericBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u'<div><div class="block">\n'
+        html  = '<div><div class="block">\n'
         html += common.textInput("title"+self.id, self.idevice.title) 
-        html += u"</div>\n"
+        html += "</div>\n"
         for element in self.elements:
             html += element.renderEdit() + "<br />"
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 

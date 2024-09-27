@@ -4,7 +4,7 @@
 # See LICENSE for details.
 
 
-from __future__ import generators
+
 
 import os
 import os.path
@@ -89,23 +89,23 @@ class BaseInputRenderer(compy.Adapter):
         return context.tag
 
     def input(self, context, slot, data, name, value):
-        raise NotImplementedError, "Implement in subclass"
+        raise NotImplementedError("Implement in subclass")
 
 
 class PasswordRenderer(BaseInputRenderer):
     def input(self, context, slot, data, name, value):
         return [
-            input(id=keyToXMLID(context.key), name=name, type="password", _class="freeform-input-password"),
+            eval(input(id=keyToXMLID(context.key), name=name, type="password", _class="freeform-input-password")),
             " Again ",
-            input(name="%s____2" % name, type="password", _class="freeform-input-password"),
+            eval(input(name="%s____2" % name, type="password", _class="freeform-input-password")),
         ]
 
 
 class PasswordEntryRenderer(BaseInputRenderer):
     def input(self, context, slot, data, name, value):
         return slot[
-            input(id=keyToXMLID(context.key), type='password', name=name,
-                  _class='freeform-input-password')]
+            eval(input(id=keyToXMLID(context.key), type='password', name=name,
+                  _class='freeform-input-password'))]
 
 
 class StringRenderer(BaseInputRenderer):
@@ -115,8 +115,8 @@ class StringRenderer(BaseInputRenderer):
         else:
             T="text"
         return slot[
-            input(id=keyToXMLID(context.key), type=T, name=name, value=value,
-                  _class='freeform-input-%s' % T)]
+            eval(input(id=keyToXMLID(context.key), type=T, name=name, value=value,
+                  _class='freeform-input-%s' % T))]
 
 
 class TextRenderer(BaseInputRenderer):
@@ -131,7 +131,7 @@ class BooleanRenderer(BaseInputRenderer):
         ## The only difference here is the "checked" attribute; the value is still the same because
         ## we want true to be passed to the server when the checkbox is checked and the form
         ## is posted.
-        node = input(id=keyToXMLID(context.key), type="checkbox", name=name, value='True', _class="freeform-input-checkbox")
+        node = eval(input(id=keyToXMLID(context.key), type="checkbox", name=name, value='True', _class="freeform-input-checkbox"))
         if value:
             node(checked="checked")
 
@@ -139,13 +139,13 @@ class BooleanRenderer(BaseInputRenderer):
         # in request.args with the name data.name. So let's force the value False to always
         # be in request.args[data.name]. If the checkbox is checked, the value True will
         # be first, and we will find that.
-        return slot[node, input(type="hidden", name=name, value="False")]
+        return slot[node, eval(input(type="hidden", name=name, value="False"))]
 
 
 class FileUploadRenderer(BaseInputRenderer):
     def input(self, context, slot, data, name, value):
-        return slot[input(id=keyToXMLID(context.key), type="file", name=name,
-                          _class='freeform-input-file')]
+        return slot[eval(input(id=keyToXMLID(context.key), type="file", name=name,
+                          _class='freeform-input-file'))]
 
 
 class ICurrentlySelectedValue(compy.Interface):
@@ -246,9 +246,9 @@ class GroupBindingRenderer(compy.Adapter):
             **{'accept-charset':'utf-8'})[
                 fieldset[
                     legend(_class="freeform-form-label")[data.label],
-                    input(type='hidden', name='_charset_'),
+                    eval(input(type='hidden', name='_charset_')),
                     generateBindings(),
-                    input(type="submit")]]
+                    eval(input(type="submit"))]]
 
 
 class BaseBindingRenderer(compy.Adapter):
@@ -270,7 +270,7 @@ class BaseBindingRenderer(compy.Adapter):
                 **{'accept-charset':'utf-8'}
                 )
             butt = slot('form-button')
-            fld = fieldset[input(type='hidden', name='_charset_')]
+            fld = fieldset[eval(input(type='hidden', name='_charset_'))]
 
         ## Provide default skin since no skin was provided for us.
         context.tag.clear()[
@@ -301,7 +301,7 @@ class PropertyBindingRenderer(BaseBindingRenderer):
         if self.isGrouped or data.typedValue.getAttribute('immutable'):
             subm = ''
         else:
-            subm = input(type="submit", name="change", value="Change")
+            subm = eval(input(type="submit", name="change", value="Change"))
 
         self.fillForm(context, data)
         context.fillSlots( 'form-label', '' )
@@ -350,7 +350,7 @@ class MethodBindingRenderer(BaseBindingRenderer):
             except NodeNotFound:
                 button_pattern = invisible[ slot('input') ]
 
-            button_pattern.fillSlots( 'input', input(type='submit', value=data.action or data.label) )
+            button_pattern.fillSlots( 'input', eval(input(type='submit', value=data.action or data.label)) )
 
             context.fillSlots( 'form-button', button_pattern )
 
@@ -384,7 +384,7 @@ class ButtonRenderer(compy.Adapter):
     __implements__ = inevow.IRenderer,
 
     def rend(self, context, data):
-        return input(type='submit', value=data.label)
+        return eval(input(type='submit', value=data.label))
 
 
 freeformDefaultForm = div(_class="freeform-form").freeze()

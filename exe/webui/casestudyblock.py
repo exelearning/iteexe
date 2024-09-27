@@ -77,7 +77,7 @@ class CasestudyBlock(Block):
 
         self.storyElement.process(request)
             
-        if (u"addQuestion"+unicode(self.id)) in request.args: 
+        if ("addQuestion"+str(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
             # disable Undo once another activity has been added:
@@ -88,10 +88,10 @@ class CasestudyBlock(Block):
         and not is_cancel:
             self.idevice.title = request.args["title"+self.id][0]
             
-        if "action" in request.args and request.args[u"action"][0] != u"delete":
+        if "action" in request.args and request.args["action"][0] != "delete":
             for element in self.questionElements:
                 element.process(request)
-            if request.args[u"action"][0] == u'done':
+            if request.args["action"][0] == 'done':
                 # remove the undo flag in order to reenable it next time:
                 if hasattr(self.idevice,'undo'): 
                     del self.idevice.undo
@@ -103,18 +103,18 @@ class CasestudyBlock(Block):
         """
         self.previewing = True
 
-        html  = u'<div class="iDevice"><br/>\n'
+        html  = '<div class="iDevice"><br/>\n'
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.storyElement.renderEdit()
 
         for element in self.questionElements:
             html += element.renderEdit() 
          
-        html += u"</table>\n"
-        value = _(u"Add another activity")    
-        html += common.submitButton(u"addQuestion"+unicode(self.id), value)
-        html += u"<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
-        html += u"</div>\n"
+        html += "</table>\n"
+        value = _("Add another activity")    
+        html += common.submitButton("addQuestion"+str(self.id), value)
+        html += "<br /><br />" + self.renderEditButtons(undo=self.idevice.undo)
+        html += "</div>\n"
         return html
 
     def renderView(self, style):
@@ -139,16 +139,16 @@ class CasestudyBlock(Block):
         """
         log.debug("renderViewContent called with previewing mode = " + str(self.previewing))
 
-        html  = u""
+        html  = ""
 
         if self.previewing:
             html += self.storyElement.renderPreview()
-            html + u"<br/>\n"
+            html + "<br/>\n"
             for element in self.questionElements:
                 html += element.renderPreview()
         else:
             html += self.storyElement.renderView()
-            html + u"<br/>\n"
+            html + "<br/>\n"
             for element in self.questionElements:
                 html += element.renderView()
 

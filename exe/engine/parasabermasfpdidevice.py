@@ -27,15 +27,15 @@ class ParasabermasfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - A Step Ahead"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""A Step Ahead is an iDevice that permits students widen their knowledge with further contents."""), u"", u"parasabermasfpd")
+                         x_("FPD - A Step Ahead"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""A Step Ahead is an iDevice that permits students widen their knowledge with further contents."""), "", "parasabermasfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_parasabermasfpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'A Step Ahead Text'), 
+        self.activityTextArea = TextAreaField(x_('A Step Ahead Text'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -85,8 +85,8 @@ class ParasabermasfpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"activity"
+        log.debug("Upgrading iDevice")
+        self.icon       = "activity"
 
 
     def upgradeToVersion2(self):
@@ -94,7 +94,7 @@ class ParasabermasfpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_parasabermasfpd"
 
@@ -134,7 +134,7 @@ class ParasabermasfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'A Step Ahead Text'), 
+        self.activityTextArea = TextAreaField(x_('A Step Ahead Text'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -145,12 +145,12 @@ class ParasabermasfpdIdevice(Idevice):
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Para Saber Mas":
-            self._title = u"FPD - A Step Ahead"
-        if self._purpose == u"""Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje.""":
-            self._purpose = u"""A Step Ahead is an iDevice that permits students widen their knowledge with further contents."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Para saber m&aacute;s':
-            self.activityTextArea._name = u'A Step Ahead Text'
+        if self._title == "FPD - Para Saber Mas":
+            self._title = "FPD - A Step Ahead"
+        if self._purpose == """Para saber m&aacute;s es un iDevice que permite al alumnado ampliar conocimientos, siendo estos voluntarios para su aprendizaje.""":
+            self._purpose = """A Step Ahead is an iDevice that permits students widen their knowledge with further contents."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Para saber m&aacute;s':
+            self.activityTextArea._name = 'A Step Ahead Text'
 # ===========================================================================

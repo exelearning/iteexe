@@ -1,8 +1,8 @@
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 from twisted.pb import slicer, banana
 
@@ -61,7 +61,7 @@ def serialize(obj):
     """Serialize an object graph into a sequence of bytes. Returns a Deferred
     that fires with the sequence of bytes."""
     b = StorageBanana()
-    b.transport = StringIO.StringIO()
+    b.transport = io.StringIO()
     d = b.send(obj)
     d.addCallback(lambda res: b.transport.getvalue())
     return d

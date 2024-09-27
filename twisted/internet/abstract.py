@@ -18,7 +18,7 @@ from twisted.python import log, reflect, components, failure
 from twisted.persisted import styles
 
 # Sibling Imports
-import interfaces, main
+from . import interfaces, main
 
 class FileDescriptor(log.Logger, styles.Ephemeral, object):
     """An object which can be operated on by select().
@@ -163,7 +163,7 @@ class FileDescriptor(log.Logger, styles.Ephemeral, object):
         otherwise this adds data to be written the next time this file descriptor is
         ready for writing.
         """
-        if isinstance(data, unicode): # no, really, I mean it
+        if isinstance(data, str): # no, really, I mean it
             raise TypeError("Data must not be unicode")
         if not self.connected or self._writeDisconnected:
             return

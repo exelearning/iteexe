@@ -53,7 +53,7 @@ class Connect(unittest.TestCase):
     def tearDown(self):
         outgoing = self.sock.driver_outgoing
         if outgoing is not None:
-            self.assert_(outgoing.transport.stringTCPTransport_closing,
+            self.assertTrue(outgoing.transport.stringTCPTransport_closing,
                          "Outgoing SOCKS connections need to be closed.")
 
     def test_simple(self):
@@ -67,8 +67,8 @@ class Connect(unittest.TestCase):
         self.assertEqual(sent,
                          struct.pack('!BBH', 0, 90, 34)
                          + socket.inet_aton('1.2.3.4'))
-        self.assert_(not self.sock.transport.stringTCPTransport_closing)
-        self.assert_(self.sock.driver_outgoing is not None)
+        self.assertTrue(not self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(self.sock.driver_outgoing is not None)
 
         # pass some data through
         self.sock.dataReceived('hello, world')
@@ -91,7 +91,7 @@ class Connect(unittest.TestCase):
         self.assertEqual(self.sock.transport.value(),
                          struct.pack('!BBH', 0, 91, 0)
                          + socket.inet_aton('0.0.0.0'))
-        self.assert_(self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(self.sock.transport.stringTCPTransport_closing)
         self.assertIdentical(self.sock.driver_outgoing, None)
 
     def test_eof_remote(self):
@@ -153,8 +153,8 @@ class Bind(unittest.TestCase):
         self.assertEqual(sent,
                          struct.pack('!BBH', 0, 90, 1234)
                          + socket.inet_aton('6.7.8.9'))
-        self.assert_(not self.sock.transport.stringTCPTransport_closing)
-        self.assert_(self.sock.driver_listen is not None)
+        self.assertTrue(not self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(self.sock.driver_listen is not None)
 
         # connect
         incoming = self.sock.driver_listen.buildProtocol(('1.2.3.4', 5345))
@@ -168,7 +168,7 @@ class Bind(unittest.TestCase):
         self.assertEqual(sent,
                          struct.pack('!BBH', 0, 90, 0)
                          + socket.inet_aton('0.0.0.0'))
-        self.assert_(not self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(not self.sock.transport.stringTCPTransport_closing)
 
         # pass some data through
         self.sock.dataReceived('hello, world')
@@ -191,7 +191,7 @@ class Bind(unittest.TestCase):
         self.assertEqual(self.sock.transport.value(),
                          struct.pack('!BBH', 0, 91, 0)
                          + socket.inet_aton('0.0.0.0'))
-        self.assert_(self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(self.sock.transport.stringTCPTransport_closing)
         self.assertIdentical(self.sock.driver_listen, None)
 
     def test_eof_remote(self):
@@ -215,7 +215,7 @@ class Bind(unittest.TestCase):
         self.assertEqual(sent,
                          struct.pack('!BBH', 0, 90, 0)
                          + socket.inet_aton('0.0.0.0'))
-        self.assert_(not self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(not self.sock.transport.stringTCPTransport_closing)
 
         # pass some data through
         self.sock.dataReceived('hello, world')
@@ -247,7 +247,7 @@ class Bind(unittest.TestCase):
         self.assertEqual(sent,
                          struct.pack('!BBH', 0, 90, 0)
                          + socket.inet_aton('0.0.0.0'))
-        self.assert_(not self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(not self.sock.transport.stringTCPTransport_closing)
 
         # pass some data through
         self.sock.dataReceived('hello, world')
@@ -277,4 +277,4 @@ class Bind(unittest.TestCase):
         self.assertEqual(sent,
                          struct.pack('!BBH', 0, 91, 0)
                          + socket.inet_aton('0.0.0.0'))
-        self.assert_(self.sock.transport.stringTCPTransport_closing)
+        self.assertTrue(self.sock.transport.stringTCPTransport_closing)

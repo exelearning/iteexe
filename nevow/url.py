@@ -5,7 +5,7 @@
 """URL parsing, construction and rendering.
 """
 
-from __future__ import generators
+
 import weakref
 
 from nevow import inevow
@@ -13,16 +13,16 @@ from nevow.stan import raw
 from nevow.flat import flatten, serialize
 from nevow.context import WovenContext
 
-import urlparse
-import urllib
+import urllib.parse
+import urllib.request, urllib.parse, urllib.error
 from twisted.web.util import redirectTo
 
 def _uqf(query):
     for x in query.split('&'):
         if '=' in x:
-            yield tuple( [raw(urllib.unquote(s)) for s in x.split('=')] )
+            yield tuple( [raw(urllib.parse.unquote(s)) for s in x.split('=')] )
         elif x:
-            yield (raw(urllib.unquote(x)), None)
+            yield (raw(urllib.parse.unquote(x)), None)
 unquerify = lambda query: list(_uqf(query))
 
 
@@ -65,10 +65,10 @@ class URL(object):
     ## class methods used to build URL objects ##
 
     def fromString(klass, st):
-        scheme, netloc, path, query, fragment = urlparse.urlsplit(st)
+        scheme, netloc, path, query, fragment = urllib.parse.urlsplit(st)
         u = klass(
             scheme, netloc,
-            [raw(urllib.unquote(seg)) for seg in path.split('/')[1:]],
+            [raw(urllib.parse.unquote(seg)) for seg in path.split('/')[1:]],
             unquerify(query), fragment)
         return u
     fromString = classmethod(fromString)
@@ -100,7 +100,7 @@ class URL(object):
     def pathList(self, unquote=False, copy=True):
         result = self._qpathlist
         if unquote:
-            result = map(urllib.unquote, result)
+            result = list(map(urllib.parse.unquote, result))
         if copy:
             result = result[:]
         return result
@@ -190,7 +190,7 @@ class URL(object):
         Return a path which is the URL where a browser would presumably
         take you if you clicked on a link with an 'href' as given.
         """
-        scheme, netloc, path, query, fragment = urlparse.urlsplit(href)
+        scheme, netloc, path, query, fragment = urllib.parse.urlsplit(href)
         
         if (scheme, netloc, path, query, fragment) == ('', '', '', '', ''):
             return self
@@ -200,7 +200,7 @@ class URL(object):
         if scheme:
             if path and path[0] == '/':
                 path = path[1:]
-            return URL(scheme, netloc, map(raw, path.split('/')), query, fragment)
+            return URL(scheme, netloc, list(map(raw, path.split('/'))), query, fragment)
         else:
             scheme = self.scheme
             
@@ -221,7 +221,7 @@ class URL(object):
                     path = '/'.join(l)
 
         path = normURLPath(path)
-        return URL(scheme, netloc, map(raw, path.split('/')), query, fragment)
+        return URL(scheme, netloc, list(map(raw, path.split('/'))), query, fragment)
         
     ## query manipulation ##
 
@@ -254,7 +254,7 @@ class URL(object):
             if k == name:
                 break
             i += 1
-        q = filter(lambda x: x[0] != name, ql)
+        q = [x for x in ql if x[0] != name]
         q.insert(i, (name, value))
         return self._pathMod(self.pathList(copy=False), q)
 
@@ -263,8 +263,7 @@ class URL(object):
         """
         return self._pathMod(
             self.pathList(copy=False), 
-            filter(
-                lambda x: x[0] != name, self.queryList(False)))
+            [x for x in self.queryList(False) if x[0] != name])
 
     def clear(self, name=None):
         """Remove all existing query arguments
@@ -272,7 +271,7 @@ class URL(object):
         if name is None:
             q = []
         else:
-            q = filter(lambda x: x[0] != name, self.queryList(False))
+            q = [x for x in self.queryList(False) if x[0] != name]
         return self._pathMod(self.pathList(copy=False), q)
 
     ## scheme manipulation ##

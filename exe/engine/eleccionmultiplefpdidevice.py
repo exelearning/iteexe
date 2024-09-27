@@ -58,9 +58,9 @@ class EleccionmultiplefpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Multi Choice Activity"),
-                         x_(u"University of Auckland"),
-                         x_(u"""Although more often used in formal testing 
+                         x_("FPD - Multi Choice Activity"),
+                         x_("University of Auckland"),
+                         x_("""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  
 discussion on topics students may feel a little reticent in responding to. 
 
@@ -73,7 +73,7 @@ When designing a MCQ test consider the following:
 <li> Avoid grammar language and question structures that might provide 
      clues</li>
 </ul>
- """), x_(u"""When building an MCQ consider the following: <ul>
+ """), x_("""When building an MCQ consider the following: <ul>
 <li> Use phrases that learners are familiar with and have 
 encountered in their study </li>
 <li> Keep responses concise </li>
@@ -84,7 +84,7 @@ encountered in their study </li>
 distractors </li>
 <li> Distractors should be incorrect but plausible </li>
 </ul>
-"""), u"autoevaluacionfpd")
+"""), "autoevaluacionfpd")
 #        self.emphasis   = Idevice.SomeEmphasis
         self.emphasis   = "_autoevaluacionfpd"
         self.questions        = []
@@ -98,17 +98,17 @@ distractors </li>
         self.hint             = ""
         # eventually: somebody should confirm this and remove them, will you?
 
-        self._hintInstruc     = x_(u"""Enter a hint here. If you
+        self._hintInstruc     = x_("""Enter a hint here. If you
 do not want to provide a hint, leave this field blank.""")
-        self._questionInstruc      = x_(u"""Enter the question stem. 
+        self._questionInstruc      = x_("""Enter the question stem. 
 The quest should be clear and unambiguous. Avoid negative premises 
 as these can tend to be ambiguous.""")
-        self._keyInstruc      = x_(u"""Select the correct option by clicking 
+        self._keyInstruc      = x_("""Select the correct option by clicking 
 on the radio button.""")
-        self._answerInstruc   = x_(u"""Enter the available choices here. 
+        self._answerInstruc   = x_("""Enter the available choices here. 
 You can add options by clicking the "Add Another Option" button. Delete options 
 by clicking the red "X" next to the Option.""")
-        self._feedbackInstruc = x_(u"""Type in the feedback that you want the 
+        self._feedbackInstruc = x_("""Type in the feedback that you want the 
 student to see when selecting the particular option. If you don't complete this 
 box, eXe will automatically provide default feedback as follows: "Correct 
 answer" as indicated by the selection for the correct answer; or "Wrong answer"
@@ -130,7 +130,7 @@ for the other options.""")
         """
         Add a new question to this iDevice. 
         """
-        question = QuizQuestionField(self, x_(u'Question'))
+        question = QuizQuestionField(self, x_('Question'))
         question.addOption()
         self.questions.append(question)
 
@@ -284,8 +284,8 @@ for the other options.""")
         self.hint  = ""
         self.icon  = "autoevaluacionfpd"
         self.__dict__['hintInstruc'] = \
-                     x_(u"Enter a hint here. If you do not want to provide a "
-                        u"hint, leave this field blank.")
+                     x_("Enter a hint here. If you do not want to provide a "
+                        "hint, leave this field blank.")
 
 
     def upgradeToVersion2(self):
@@ -293,7 +293,7 @@ for the other options.""")
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis   = Idevice.SomeEmphasis
         self.emphasis   = "_autoevaluacionfpd"
 
@@ -303,7 +303,7 @@ for the other options.""")
         Upgrades the node from 1 (v0.6) to 2 (v0.7).
         Change icon from 'multichoice' to 'question'
         """
-        log.debug(u"Upgrading iDevice icon")
+        log.debug("Upgrading iDevice icon")
         self.icon = "autoevaluacionfpd"
 
         
@@ -371,8 +371,8 @@ for the other options.""")
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion10(self):
-        if self._title == u"FPD - Actividad de Eleccion Multiple":
-            self._title = u"FPD - Multi Choice Activity"
+        if self._title == "FPD - Actividad de Eleccion Multiple":
+            self._title = "FPD - Multi Choice Activity"
 
     def upgradeTo8SafetyCheck(self):
         """

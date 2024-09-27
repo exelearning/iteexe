@@ -57,7 +57,7 @@ A short example::
 import warnings
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -131,7 +131,7 @@ class StringNodeMutator(NodeMutator):
         if self.data:
             try:
                 child = microdom.parseString(self.data)
-            except Exception, e:
+            except Exception as e:
                 log.msg("Error parsing return value, probably invalid xml:", e)
                 child = request.d.createTextNode(self.data)
         else:
@@ -172,7 +172,7 @@ class DOMTemplate(Resource):
             self.d = microdom.parseString(template)
         else:
             if not self.templateFile:
-                raise AttributeError, "%s does not define self.templateFile to operate on" % self.__class__
+                raise AttributeError("%s does not define self.templateFile to operate on" % self.__class__)
             self.d = self.lookupTemplate(request)
         self.handleDocument(request, self.d)
         return NOT_DONE_YET
@@ -298,7 +298,7 @@ class DOMTemplate(Resource):
         if viewName:
             method = getattr(self, "factory_" + viewName, None)
             if not method:
-                raise NotImplementedError, "You specified view name %s on a node, but no factory_%s method was found." % (viewName, viewName)
+                raise NotImplementedError("You specified view name %s on a node, but no factory_%s method was found." % (viewName, viewName))
 
             result = method(request, node)
             node = self.dispatchResult(request, node, result)

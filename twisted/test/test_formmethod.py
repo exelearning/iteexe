@@ -16,7 +16,7 @@ class ArgumentTestCase(unittest.TestCase):
     def argTest(self, argKlass, testPairs, badValues, *args, **kwargs):
         arg = argKlass("name", *args, **kwargs)
         for val, result in testPairs:
-            self.assertEquals(arg.coerce(val), result)
+            self.assertEqual(arg.coerce(val), result)
         for val in badValues:
             self.assertRaises(formmethod.InputError, arg.coerce, val)
     
@@ -54,23 +54,23 @@ class ArgumentTestCase(unittest.TestCase):
         self.argTest(formmethod.Boolean, tests, ())
 
     def testDate(self):
-        goodTests = { 
+        goodTests = list({ 
             ("2002", "12", "21"): (2002, 12, 21),
             ("1996", "2", "29"): (1996, 2, 29),
             ("", "", ""): None,
-            }.items()
+            }.items())
         badTests = [("2002", "2", "29"), ("xx", "2", "3"),
                     ("2002", "13", "1"), ("1999", "12","32"),
                     ("2002", "1"), ("2002", "2", "3", "4")]
         self.argTest(formmethod.Date, goodTests, badTests)
 
     def testRangedInteger(self):
-        goodTests = {"0": 0, "12": 12, "3": 3}.items()
+        goodTests = list({"0": 0, "12": 12, "3": 3}.items())
         badTests = ["-1", "x", "13", "-2000", "3.4"]
         self.argTest(formmethod.IntegerRange, goodTests, badTests, 0, 12)
 
     def testVerifiedPassword(self):
-        goodTests = {("foo", "foo"): "foo", ("ab", "ab"): "ab"}.items()
+        goodTests = list({("foo", "foo"): "foo", ("ab", "ab"): "ab"}.items())
         badTests = [("ab", "a"), ("12345", "12345"), ("", ""), ("a", "a"), ("a",), ("a", "a", "a")]
         self.argTest(formmethod.VerifiedPassword, goodTests, badTests, min=2, max=4)
 

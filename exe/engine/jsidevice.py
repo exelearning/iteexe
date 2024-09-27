@@ -70,7 +70,7 @@ class JsIdevice(Idevice):
                    'icon': ['Icon',0,3]
                    }
 
-            self._attributes= sorted(_attributespre.items(), key=lambda t: t[1][2])
+            self._attributes= sorted(list(_attributespre.items()), key=lambda t: t[1][2])
 
             # Initialize the IDevice instance
             Idevice.__init__(self, xmlValues['title'], xmlValues['author'], xmlValues['purpose'], xmlValues['tip'], xmlValues['icon'])
@@ -176,7 +176,7 @@ class JsIdevice(Idevice):
         Add a new field to this iDevice.  Fields are indexed by their id.
         """
         if field.idevice:
-            log.error(u"Field already belonging to %s added to %s" %
+            log.error("Field already belonging to %s added to %s" %
                       (field.idevice.title, self.title))
         field.idevice = self
         self.fields.append(field)
@@ -187,9 +187,9 @@ class JsIdevice(Idevice):
         of the form ii_ff where ii is the idevice and ff the field
         """
         self.calcNextFieldId()
-        result = self.id + '_' + unicode(self.nextFieldId)
+        result = self.id + '_' + str(self.nextFieldId)
         self.nextFieldId += 1
-        log.debug(u"UniqueFieldId: %s" % (result))
+        log.debug("UniqueFieldId: %s" % (result))
         return result
 
     def calcNextFieldId(self):
@@ -199,17 +199,17 @@ class JsIdevice(Idevice):
         if not hasattr(self, 'nextFieldId'):
             self.nextFieldId = 0
         if self.nextFieldId == 0:
-            log.debug(u"nextFieldId==0 for self.class_ %s" % (self.class_))
+            log.debug("nextFieldId==0 for self.class_ %s" % (self.class_))
             maxId = 0
             for field in self.fields:
-                if isinstance(field.id, unicode):
-                    log.debug(u"** field.id = u: %s" % (field.id))
+                if isinstance(field.id, str):
+                    log.debug("** field.id = u: %s" % (field.id))
                     # only look at the part after the (last) underbar
                     c = field.id.split('_')
                     if int(c[-1]) > maxId:
                         maxId = int(c[-1])
                 else:
-                    log.error(u"** field.id is not unicode= %d" % (field.id))
+                    log.error("** field.id is not unicode= %d" % (field.id))
                     if field.id > maxId:
                         maxId = field.id
             self.nextFieldId = maxId + 1

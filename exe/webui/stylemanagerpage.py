@@ -33,8 +33,8 @@ from sys                       import platform
 from zipfile                   import ZipFile, ZIP_DEFLATED
 import json
 from tempfile                  import gettempdir
-from urllib                    import urlretrieve
-from urlparse                  import urlsplit
+from urllib.request                    import urlretrieve
+from urllib.parse                  import urlsplit
 import locale
 from twisted.internet          import threads
 from twisted.web.resource      import Resource
@@ -152,12 +152,12 @@ class StyleManagerPage(RenderableResource):
             try:
                 self.doImportStyle(request.args['filename'][0])
                 self.alert(
-                           _(u'Success'),
-                           _(u'Successfully imported style'))
-            except Exception, e:
+                           _('Success'),
+                           _('Successfully imported style'))
+            except Exception as e:
                 self.alert(
-                           _(u'Error'),
-                           _(u'Error while installing style: %s') % str(e))
+                           _('Error'),
+                           _('Error while installing style: %s') % str(e))
         elif request.args['action'][0] == 'doProperties':
             self.doPropertiesStyle(request.args['style'][0])
         elif request.args['action'][0] == 'doPreExport':
@@ -303,8 +303,8 @@ class StyleManagerPage(RenderableResource):
             self.rep_styles = []
             self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s)'
                                    % json.dumps(self.rep_styles))
-            self.alert(_(u'Error'),
-                       _(u'Error while getting styles list from the repository'))
+            self.alert(_('Error'),
+                       _('Error while getting styles list from the repository'))
             # Getting styles list from repository failed, get back to
             # installed styles list
             self.action = 'List'
@@ -316,12 +316,12 @@ class StyleManagerPage(RenderableResource):
                       % self.config.stylesRepository.encode('ascii'))
             self.proxy.callRemote('exe_styles.listStyles').addCallbacks(getStylesList, errorStylesList)
 
-        except Exception, e:
+        except Exception as e:
             errorStylesList(str(e))
 
     def overwriteLocalStyle(self, style_dir, filename):
         """ Overwrites an already installed style with a new version from file """
-        log.debug(u"Overwriting style %s with style from %s" % (style_dir, filename))
+        log.debug("Overwriting style %s with style from %s" % (style_dir, filename))
         try:
             # Delete local style
             style_path = Path(style_dir)
@@ -344,18 +344,18 @@ class StyleManagerPage(RenderableResource):
                 self.doImportStyle(filename)
                 self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')'
                                        % (json.dumps(self.rep_styles), style_name))
-                self.alert(_(u'Success'),
-                           _(u'Style successfully downloaded and installed'))
+                self.alert(_('Success'),
+                           _('Style successfully downloaded and installed'))
                 Path(filename).remove()
-            except ImportStyleExistsError, e:
+            except ImportStyleExistsError as e:
                 # This might retry installation from already downloaded file, do not delete
                 warnLocalStyleExists(e.absolute_style_dir, filename)
 
-            except Exception, e:
+            except Exception as e:
                 log.error("Error when installing style %s from %s: %s" % (style_name, filename, str(e)))
                 self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')'
                                        % (json.dumps(self.rep_styles), style_name))
-                self.alert(_(u'Error'), _(u'Error while installing style'))
+                self.alert(_('Error'), _('Error while installing style'))
                 Path(filename).remove()
 
         def warnLocalStyleExists(style_dir, downloaded_file):
@@ -373,11 +373,11 @@ class StyleManagerPage(RenderableResource):
                local style before importing the downloaded one
             """
             # 1. Ext.Msg.confirm title and description
-            title = _(u'Overwrite local version of this style?')
+            title = _('Overwrite local version of this style?')
             message = (
-                _(u'Style already exists. ')
-              + _(u'Importing this style will overwrite local style, this action cannot be undone. ')
-              + _(u'Are you sure you want to install remote style?. ')
+                _('Style already exists. ')
+              + _('Importing this style will overwrite local style, this action cannot be undone. ')
+              + _('Are you sure you want to install remote style?. ')
             )
 
             # 3. Prepare nevow_clientToServerEvent call, with local and remote styles info,
@@ -398,8 +398,8 @@ class StyleManagerPage(RenderableResource):
             self.rep_styles = []
             self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')'
                                    % (json.dumps(self.rep_styles), style_name))
-            self.alert(_(u'Error'),
-                       _(u'Error when downloading style from repository'))
+            self.alert(_('Error'),
+                       _('Error when downloading style from repository'))
 
         try:
             # urlparse() returns a tuple, which elements are:
@@ -409,7 +409,7 @@ class StyleManagerPage(RenderableResource):
             url_parts = urlsplit(url)
             if (not url_parts[0]) or (not url_parts[1]) or (not url_parts[2]):
                 log.error("URL %s not valid. " % url)
-                self.alert(_(u'Error'), _(u'URL not valid. '))
+                self.alert(_('Error'), _('URL not valid. '))
                 self.action = 'StylesRepository'
                 return
 
@@ -420,7 +420,7 @@ class StyleManagerPage(RenderableResource):
                 self.client.sendScript('Ext.getCmp("stylemanagerwin").down("form").refreshStylesList(%s, \'%s\')'
                                        % (json.dumps(self.rep_styles), style_name))
                 log.error('URL %s not valid. ' % url)
-                self.alert(_(u'Error'), _(u'URL not valid. '))
+                self.alert(_('Error'), _('URL not valid. '))
                 self.action = 'StylesRepository'
                 return
 
@@ -452,7 +452,7 @@ class StyleManagerPage(RenderableResource):
             # On success or on error, get back to repository styles list
             self.action = 'StylesRepository'
 
-        except Exception, e:
+        except Exception as e:
             errorDownload(str(e))
             self.action = 'StylesRepository'
 
@@ -469,15 +469,15 @@ class StyleManagerPage(RenderableResource):
 
             if url == '':
                 log.error('Style %s download URL not found' % style_name)
-                self.alert(_(u'Error'), _(u'Style download URL not found'))
+                self.alert(_('Error'), _('Style download URL not found'))
 
             self.action = 'StylesRepository'
 
-        except Exception, e:
+        except Exception as e:
             log.error('Error when getting %s URL from repository styles list: %s'
                       % (style_name, str(e)))
-            self.alert(_(u'Error'),
-                       _(u'Error when getting style URL from repository styles list: %s'
+            self.alert(_('Error'),
+                       _('Error when getting style URL from repository styles list: %s'
                          % str(e)))
             self.action = 'StylesRepository'
 
@@ -487,7 +487,7 @@ class StyleManagerPage(RenderableResource):
             styleDir = self.config.stylesDir
             style = Style(styleDir / stylename)
             log.debug("dir %s" % style.get_style_dir())
-            self.__exportStyle(style.get_style_dir(), unicode(filename), cfgxml)
+            self.__exportStyle(style.get_style_dir(), str(filename), cfgxml)
 
     def __exportStyle(self, dirstylename, filename, cfgxml):
         """ Exports style to a ZIP file """
@@ -502,12 +502,12 @@ class StyleManagerPage(RenderableResource):
                     for contFile in dirstylename.files():
                         if contFile.basename() != 'config.xml':
                             zippedFile.write(
-                                             unicode(contFile.normpath()),
+                                             str(contFile.normpath()),
                                              contFile.basename(),
                                              ZIP_DEFLATED)
                 else:
                     for contFile in dirstylename.files():
-                            zippedFile.write(unicode(
+                            zippedFile.write(str(
                                                      contFile.normpath()),
                                                      contFile.basename(),
                                                      ZIP_DEFLATED)
@@ -515,12 +515,12 @@ class StyleManagerPage(RenderableResource):
                 if cfgxml != '':
                     zippedFile.writestr('config.xml', cfgxml)
                 zippedFile.close()
-                self.alert(_(u'Correct'),
-                           _(u'Style exported correctly: %s') % sfile)
+                self.alert(_('Correct'),
+                           _('Style exported correctly: %s') % sfile)
 
         except IOError:
-            self.alert(_(u'Error'),
-                       _(u'Could not export style : %s') % filename.basename())
+            self.alert(_('Error'),
+                       _('Could not export style : %s') % filename.basename())
         self.action = ""
 
     def doDeleteStyle(self, style):
@@ -528,10 +528,10 @@ class StyleManagerPage(RenderableResource):
             styleDir = self.config.stylesDir
             styleDelete = Style(styleDir / style)
             self.__deleteStyle(styleDelete)
-            self.alert(_(u'Correct'), _(u'Style deleted correctly'))
+            self.alert(_('Correct'), _('Style deleted correctly'))
             self.reloadPanel('doList')
         except:
-            self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
+            self.alert(_('Error'), _('An unexpected error has occurred'))
         self.action = ""
 
     def __deleteStyle(self, style):

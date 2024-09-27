@@ -11,8 +11,8 @@ from twisted.web import resource
 
 import traceback, string
 
-from cStringIO import StringIO
-from microdom import escape
+from io import StringIO
+from .microdom import escape
 
 def PRE(text):
     "Wrap <pre> tags around some text and HTML-escape it."
@@ -41,7 +41,7 @@ def output(func, *args, **kw):
     didn't run.
     """
     try:
-        return apply(func, args, kw)
+        return func(*args, **kw)
     except:
         io = StringIO()
         return PRE(io.getvalue())

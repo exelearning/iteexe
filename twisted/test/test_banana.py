@@ -6,9 +6,9 @@
 from twisted.trial import unittest
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 import sys
 # Twisted Imports
@@ -18,9 +18,9 @@ from twisted.internet import protocol, main
 
 class MathTestCase(unittest.TestCase):
     def testInt2b128(self):
-        funkylist = range(0,100) + range(1000,1100) + range(1000000,1000100) + [1024 **10l]
+        funkylist = list(range(0,100)) + list(range(1000,1100)) + list(range(1000000,1000100)) + [1024 **10]
         for i in funkylist:
-            x = StringIO.StringIO()
+            x = io.StringIO()
             banana.int2b128(i, x.write)
             v = x.getvalue()
             y = banana.b1282int(v)
@@ -31,7 +31,7 @@ class BananaTestCase(unittest.TestCase):
     encClass = banana.Pynana
     
     def setUp(self):
-        self.io = StringIO.StringIO()
+        self.io = io.StringIO()
         self.enc = self.encClass()
         self.enc.makeConnection(protocol.FileWrapper(self.io))
         self.enc._selectDialect("none")
@@ -51,14 +51,14 @@ class BananaTestCase(unittest.TestCase):
         assert self.result == 'hello'
 
     def testLong(self):
-        self.enc.sendEncoded(1015l)
+        self.enc.sendEncoded(1015)
         self.enc.dataReceived(self.io.getvalue())
-        assert self.result == 1015l, "should be 1015l, got %s" % self.result
+        assert self.result == 1015, "should be 1015l, got %s" % self.result
         
     def testNegativeLong(self):
-        self.enc.sendEncoded(-1015l)
+        self.enc.sendEncoded(-1015)
         self.enc.dataReceived(self.io.getvalue())
-        assert self.result == -1015l, "should be -1015l, got %s" % self.result
+        assert self.result == -1015, "should be -1015l, got %s" % self.result
 
     def testInteger(self):
         self.enc.sendEncoded(1015)
@@ -85,7 +85,7 @@ class BananaTestCase(unittest.TestCase):
         foo = [1, 2, [3, 4], [30.5, 40.2], 5,
                ["six", "seven", ["eight", 9]], [10],
                # TODO: currently the C implementation's a bit buggy...
-               sys.maxint * 3l, sys.maxint * 2l, sys.maxint * -2l]
+               sys.maxsize * 3, sys.maxsize * 2, sys.maxsize * -2]
         self.enc.sendEncoded(foo)
         for byte in self.io.getvalue():
             self.enc.dataReceived(byte)
@@ -97,11 +97,11 @@ class BananaTestCase(unittest.TestCase):
     def testOversizedList(self):
         data = '\x02\x01\x01\x01\x01\x80'
         # list(size=0x0101010102, about 4.3e9)
-        self.failUnlessRaises(banana.BananaError, self.feed, data)
+        self.assertRaises(banana.BananaError, self.feed, data)
     def testOversizedString(self):
         data = '\x02\x01\x01\x01\x01\x82'
         # string(size=0x0101010102, about 4.3e9)
-        self.failUnlessRaises(banana.BananaError, self.feed, data)
+        self.assertRaises(banana.BananaError, self.feed, data)
 
     def testCrashString(self):
         crashString = '\x00\x00\x00\x00\x04\x80'

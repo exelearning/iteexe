@@ -19,7 +19,7 @@ Maintainer: U{Itamar Shtull-Trauring<mailto:twisted@itamarst.org>}
 """
 
 # system imports
-from cStringIO import StringIO
+from io import StringIO
 import tempfile
 import base64, binascii
 import cgi
@@ -39,7 +39,7 @@ from twisted.python import log, components
 try: # try importing the fast, C version
     from twisted.protocols._c_urlarg import unquote
 except ImportError:
-    from urllib import unquote
+    from urllib.parse import unquote
 
 
 protocol_version = "HTTP/1.1"
@@ -252,7 +252,7 @@ def stringToDatetime(dateString):
     day = int(parts[1])
     month = int(monthname.index(parts[2]))
     year = int(parts[3])
-    hour, min, sec = map(int, parts[4].split(':'))
+    hour, min, sec = list(map(int, parts[4].split(':')))
     return int(timegm(year, month, day, hour, min, sec))
 
 def toChunk(data):
@@ -269,7 +269,7 @@ def fromChunk(data):
     prefix, rest = data.split('\r\n', 1)
     length = int(prefix, 16)
     if not rest[length:length+2] == '\r\n':
-        raise ValueError, "chunk must end with CRLF"
+        raise ValueError("chunk must end with CRLF")
     return rest[:length], rest[length+2:]
 
 
@@ -280,9 +280,9 @@ def parseContentRange(header):
     """
     kind, other = header.strip().split()
     if kind.lower() != "bytes":
-        raise ValueError, "a range of type %r is not supported"
+        raise ValueError("a range of type %r is not supported")
     startend, realLength = other.split("/")
-    start, end = map(int, startend.split("-"))
+    start, end = list(map(int, startend.split("-")))
     if realLength == "*":
         realLength = None
     else:
@@ -453,7 +453,7 @@ class Request:
         This method is not intended for users.
         """
         if not self.queued:
-            raise RuntimeError, "noLongerQueued() got called unnecessarily."
+            raise RuntimeError("noLongerQueued() got called unnecessarily.")
 
         self.queued = 0
 
@@ -540,7 +540,7 @@ class Request:
             elif key == mfd:
                 try:
                     args.update(cgi.parse_multipart(self.content, pdict))
-                except KeyError, e:
+                except KeyError as e:
                     if e.args[0] == 'content-disposition':
                         # Parse_multipart can't cope with missing
                         # content-dispostion headers in multipart/form-data
@@ -572,7 +572,7 @@ class Request:
     def registerProducer(self, producer, streaming):
         """Register a producer."""
         if self.producer:
-            raise ValueError, "registering producer %s before previous one (%s) was unregistered" % (producer, self.producer)
+            raise ValueError("registering producer %s before previous one (%s) was unregistered" % (producer, self.producer))
         
         self.streamingProducer = streaming
         self.producer = producer
@@ -649,7 +649,7 @@ class Request:
                 l.append("%s: %s\r\n" % ('Transfer-encoding', 'chunked'))
                 self.chunked = 1
             if self.lastModified is not None:
-                if self.headers.has_key('last-modified'):
+                if 'last-modified' in self.headers:
                     log.msg("Warning: last-modified specified both in"
                             " header list and lastModified attribute.")
                 else:
@@ -657,7 +657,7 @@ class Request:
                                    datetimeToString(self.lastModified))
             if self.etag is not None:
                 self.setHeader('ETag', self.etag)
-            for name, value in self.headers.items():
+            for name, value in list(self.headers.items()):
                 l.append("%s: %s\r\n" % (name.capitalize(), value))
             for cookie in self.cookies:
                 l.append('%s: %s\r\n' % ("Set-Cookie", cookie))
@@ -746,7 +746,7 @@ class Request:
         """
         # time.time() may be a float, but the HTTP-date strings are
         # only good for whole seconds.
-        when = long(math.ceil(when))
+        when = int(math.ceil(when))
         if (not self.lastModified) or (self.lastModified < when):
             self.lastModified = when
 
@@ -1021,7 +1021,7 @@ class HTTPChannel(basic.LineReceiver, policies.TimeoutMixin):
         """Check if the channel should close or not."""
         connection = request.getHeader('connection')
         if connection:
-            tokens = map(lambda x: x.lower(), connection.split(' '))
+            tokens = [x.lower() for x in connection.split(' ')]
         else:
             tokens = []
 

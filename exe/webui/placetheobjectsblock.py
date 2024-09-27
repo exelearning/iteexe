@@ -68,12 +68,12 @@ class PlaceTheObjectsBlockInc(Block):
 
         self.idevice.uploadNeededScripts()
 
-        if "addPlacableObject" + unicode(self.id) in request.args:
+        if "addPlacableObject" + str(self.id) in request.args:
             self.idevice.addPlacableObject()
             self.idevice.edit = True
             self.idevice.undo = False
-        if "checktimer" + unicode(self.id) in request.args:
-            if "enabletimer" + unicode(self.id) in request.args:
+        if "checktimer" + str(self.id) in request.args:
+            if "enabletimer" + str(self.id) in request.args:
                 self.idevice.gameTimerShown.content = True
             else:
                 self.idevice.gameTimerShown.content = False
@@ -270,12 +270,12 @@ class PlaceTheObjectsBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += self.titleElement.renderEdit()
         html += self.contentElement.renderEdit()
         html += self.mainAreaElement.renderEdit()
 
-        html +=u"<strong>"+_("Game Options") +"</strong>"
+        html +="<strong>"+_("Game Options") +"</strong>"
         
         html += self.clickToStartElement.renderEdit()
         html += self.positiveResponseElement.renderEdit()
@@ -293,12 +293,12 @@ class PlaceTheObjectsBlockInc(Block):
             html += placableObjectElement.renderEdit()
         
         html += "<br/>"
-        html += common.submitButton("addPlacableObject"+unicode(self.id), _("Add Placable Object"))
+        html += common.submitButton("addPlacableObject"+str(self.id), _("Add Placable Object"))
         html += "<br/>"
         
         
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 

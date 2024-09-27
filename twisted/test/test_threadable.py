@@ -19,7 +19,7 @@ class TestObject:
     y = 1
 
     def aMethod(self):
-        for i in xrange(10):
+        for i in range(10):
             self.x, self.y = self.y, self.x
             self.z = self.x + self.y
             assert self.z == 0, "z == %d, not 0 as expected" % (self.z,)
@@ -52,8 +52,8 @@ class SynchronizationTestCase(unittest.TestCase):
         t = threading.Thread(target=lambda: foreignResult.append(threadable.isInIOThread()))
         t.start()
         t.join()
-        self.failIf(foreignResult[0], "Non-IO thread reported as IO thread")
-        self.failUnless(threadable.isInIOThread(), "IO thread reported as not IO thread")
+        self.assertFalse(foreignResult[0], "Non-IO thread reported as IO thread")
+        self.assertTrue(threadable.isInIOThread(), "IO thread reported as not IO thread")
 
 
     def testThreadedSynchronization(self):
@@ -63,9 +63,9 @@ class SynchronizationTestCase(unittest.TestCase):
 
         def callMethodLots():
             try:
-                for i in xrange(1000):
+                for i in range(1000):
                     o.aMethod()
-            except AssertionError, e:
+            except AssertionError as e:
                 errors.append(str(e))
 
         threads = []
@@ -82,7 +82,7 @@ class SynchronizationTestCase(unittest.TestCase):
 
     def testUnthreadedSynchronization(self):
         o = TestObject()
-        for i in xrange(1000):
+        for i in range(1000):
             o.aMethod()
 
 class SerializationTestCase(unittest.TestCase):
@@ -91,7 +91,7 @@ class SerializationTestCase(unittest.TestCase):
         lockType = type(lock)
         lockPickle = pickle.dumps(lock)
         newLock = pickle.loads(lockPickle)
-        self.failUnless(isinstance(newLock, lockType))
+        self.assertTrue(isinstance(newLock, lockType))
 
     def testUnpickling(self):
         lockPickle = 'ctwisted.python.threadable\nunpickle_lock\np0\n(tp1\nRp2\n.'

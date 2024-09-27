@@ -34,7 +34,7 @@ class ButtonBar:
             bName = string.replace(b, '_', ' ')
             result.append(cbutton(bName, getattr(self,prefix+b)))
         if container:
-            map(container.add, result)
+            list(map(container.add, result))
         return result
 
 def scrollify(widget):
@@ -138,13 +138,13 @@ class Login(gtk.GtkWindow):
         self.signal_connect('destroy',gtk.mainquit,None)
 
     def loginReset(self):
-        print 'doing login reset'
+        print('doing login reset')
         self.logstat.set_text("Idle.")
         self._resetTimeout = None
         return 0
 
     def loginReport(self, txt):
-        print 'setting login report',repr(txt)
+        print('setting login report',repr(txt))
         self.logstat.set_text(txt)
         if not (self._resetTimeout is None):
             gtk.timeout_remove(self._resetTimeout)
@@ -198,7 +198,7 @@ class _TimerOuter:
 
     def doIt(self):
         gtk.timeout_remove(self.tid)
-        apply(self.cmd, self.args)
+        self.cmd(*self.args)
 
 def afterOneTimeout(timeout, cmd, *args):
     _TimerOuter(timeout, cmd, args)

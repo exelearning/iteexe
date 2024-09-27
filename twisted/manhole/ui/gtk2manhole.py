@@ -132,10 +132,10 @@ class ConsoleOutput:
         self.buffer = textView.get_buffer()
 
         # TODO: Make this a singleton tag table.
-        for name, props in tagdefs.iteritems():
+        for name, props in tagdefs.items():
             tag = self.buffer.create_tag(name)
             # This can be done in the constructor in newer pygtk (post 1.99.14)
-            for k, v in props.iteritems():
+            for k, v in props.items():
                 tag.set_property(k, v)
 
         self.buffer.tag_table.lookup("default").set_priority(0)
@@ -236,7 +236,7 @@ class ConsoleInput:
                 self, 'key_%s' % ksym, lambda *a, **kw: None)(entry, event)
 
         if self.__debug:
-            print ksym
+            print(ksym)
         return rvalue
 
     def getText(self):
@@ -253,7 +253,7 @@ class ConsoleInput:
         # Figure out if that Return meant "next line" or "execute."
         try:
             c = code.compile_command(text)
-        except SyntaxError, e:
+        except SyntaxError as e:
             # This could conceivably piss you off if the client's python
             # doesn't accept keywords that are known to the manhole's
             # python.
@@ -261,7 +261,7 @@ class ConsoleInput:
             buffer.place(point)
             # TODO: Componentize!
             self.toplevel.output.append(str(e), "exception")
-        except (OverflowError, ValueError), e:
+        except (OverflowError, ValueError) as e:
             self.toplevel.output.append(str(e), "exception")
         else:
             if c is not None:
@@ -352,7 +352,7 @@ class ManholeClient(components.Adapter, pb.Referenceable):
 
     def remote_console(self, messages):
         for kind, content in messages:
-            if isinstance(content, types.StringTypes):
+            if isinstance(content, (str,)):
                 self.original.output.append(content, kind)
             elif (kind == "exception") and isinstance(content, failure.Failure):
                 content.printTraceback(_Notafile(self.original.output,

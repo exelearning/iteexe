@@ -63,7 +63,7 @@ class PackageRedirectPage(RenderableResource):
         if name == '':
             return self
         else:
-            name = unicode(name, 'utf8')
+            name = str(name, 'utf8')
             result = self.children.get(name)
             if result is not None:
                 return result
@@ -73,8 +73,8 @@ class PackageRedirectPage(RenderableResource):
                     session.packageStore.addPackage(self.package)
                     self.bindNewPackage(self.package, session)
                     self.packagePath = None
-                if session.uid in self.mainpages.keys():
-                    if name in self.mainpages[session.uid].keys():
+                if session.uid in list(self.mainpages.keys()):
+                    if name in list(self.mainpages[session.uid].keys()):
                         return self.mainpages[session.uid][name]
                 # This will just raise an error
                 log.error("child %s not found. uri: %s" % (name, request.uri))

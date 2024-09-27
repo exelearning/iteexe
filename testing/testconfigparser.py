@@ -61,7 +61,7 @@ class TestConfigParser(unittest.TestCase):
                                          'available': 'yes',
                                          'funny-name_mate': 'crusty the clown'}, 
                                     'main': 
-                                        {'running': u'on\t\u0100\u01100',
+                                        {'running': 'on\t\u0100\u01100',
                                          'testing': 'false',
                                          'two words': 'are better than one',
                                          'no_value': '',
@@ -76,7 +76,7 @@ class TestConfigParser(unittest.TestCase):
                           'available': 'yes',
                           'funny-name_mate': 'crusty the clown'}, 
                     'main': 
-                        {'running': u'on\t\u0100\u01100',
+                        {'running': 'on\t\u0100\u01100',
                          'testing': 'false',
                          'two words': 'are better than one',
                          'no_value': '',
@@ -89,7 +89,7 @@ class TestConfigParser(unittest.TestCase):
         assert self.c._sections == goodDict, self.c._sections
         # Can read unicode filenames
         self.c = ConfigParser()
-        self.c.read(u'temp.ini')
+        self.c.read('temp.ini')
         assert self.c._sections == goodDict, self.c._sections
         # Can read funny string object filenames
         class MyStr(str):
@@ -114,12 +114,12 @@ class TestConfigParser(unittest.TestCase):
         self.c.write(file_)
         file_.seek(0)
         result = file_.readlines()
-        result = map(unicode, result, ['utf8']*len(result))
+        result = list(map(str, result, ['utf8']*len(result)))
         goodResult = ['nosection=here\n',
                       '[main]\n',
                       'level=5\n',
                       'power : on\n',
-                      u'running =on\t\u0100\u01100\n',
+                      'running =on\t\u0100\u01100\n',
                       'two words = \tare better than one\n',
                       'no_value = \n',
                       '\n', '\n',
@@ -135,10 +135,10 @@ class TestConfigParser(unittest.TestCase):
                       '[middle]\n',
                       'is here = yes']
         if result != goodResult:
-            print
+            print()
             for good, got in zip(goodResult, result):
                 if good != got:
-                    print 'Different', repr(good), repr(got)
+                    print('Different', repr(good), repr(got))
             self.fail('See above printout')
 
     def testWriteNewFile(self):
@@ -186,7 +186,7 @@ class TestConfigParser(unittest.TestCase):
         self.c.read(file_)
         assert self.c.get('main', 'testing') == 'false'
         assert self.c.get('main', 'not exists', 'default') == 'default'
-        self.failUnlessRaises(ValueError, self.c.get, 'main', 'not exists')
+        self.assertRaises(ValueError, self.c.get, 'main', 'not exists')
 
     def testSet(self):
         """Test the set method"""
@@ -197,7 +197,7 @@ class TestConfigParser(unittest.TestCase):
         assert self.c._sections['main']['testing'] == 'perhaps'
         # A new and numeric option
         self.c.set('main', 'new option', 4.1)
-        self.assertEquals(self.c._sections['main']['new option'], '4.1')
+        self.assertEqual(self.c._sections['main']['new option'], '4.1')
         # A new option in a new section
         self.c.set('new section', 'new option', 4.1)
         assert self.c._sections['new section']['new option'] == '4.1'
@@ -208,9 +208,9 @@ class TestConfigParser(unittest.TestCase):
         self.c.read(file_)
         assert self.c._sections['main']['level'] == '5'
         self.c.delete('main', 'level')
-        assert not self.c._sections['main'].has_key('level')
+        assert 'level' not in self.c._sections['main']
         self.c.delete('main')
-        assert not self.c._sections.has_key('main')
+        assert 'main' not in self.c._sections
 
     def testShortening(self):
         """There was a bug (Issue 66) where when a longer name was read
@@ -241,22 +241,22 @@ class TestConfigParser(unittest.TestCase):
         file_.close()
         self.c.read('temp.ini')
         self.c.set('main', 'power', '\xc4\x80\xc4\x900')
-        self.c.set('main', 'name', unicode('\xc4\x80\xc4\x900', 'utf8'))
-        self.c.set('newSecy', 'unicode', unicode('\xc4\x80\xc4\x900', 'utf8'))
+        self.c.set('main', 'name', str('\xc4\x80\xc4\x900', 'utf8'))
+        self.c.set('newSecy', 'unicode', str('\xc4\x80\xc4\x900', 'utf8'))
         self.c.write('temp.ini')
         c2 = ConfigParser()
         c2.read('temp.ini')
-        val = unicode('\xc4\x80\xc4\x900', 'utf8')
-        self.assertEquals(c2.main.power, val)
-        self.assertEquals(c2.main.name, val)
-        self.assertEquals(c2.newSecy.unicode, val)
+        val = str('\xc4\x80\xc4\x900', 'utf8')
+        self.assertEqual(c2.main.power, val)
+        self.assertEqual(c2.main.name, val)
+        self.assertEqual(c2.newSecy.str, val)
 
     def testUnicodeFileName(self):
         """
         Should be able to write to unicode filenames
         """
         # Invent a unicode filename
-        dirName = unicode('\xc4\x80\xc4\x900', 'utf8')
+        dirName = str('\xc4\x80\xc4\x900', 'utf8')
         fn = os.path.join(dirName, dirName)
         fn += '.ini'
         if not os.path.exists(dirName):
@@ -267,13 +267,13 @@ class TestConfigParser(unittest.TestCase):
         file_.close()
         # See if we can read and write it
         self.c.read(fn)
-        self.assertEquals(self.c.main.power, 'on')
+        self.assertEqual(self.c.main.power, 'on')
         self.c.main.power = 'off'
         self.c.write()
         # Check that it was written ok
         c2 = ConfigParser()
         c2.read(fn)
-        self.assertEquals(c2.main.power, 'off')
+        self.assertEqual(c2.main.power, 'off')
         # Clean up
         os.remove(fn)
         os.rmdir(dirName)
@@ -332,7 +332,7 @@ class TestSections(unittest.TestCase):
         """
         assert isinstance(self.c.main, Section)
         assert isinstance(self.c.second, Section)
-        self.failUnlessRaises(AttributeError, lambda: self.c.notexist)
+        self.assertRaises(AttributeError, lambda: self.c.notexist)
 
     def testFromScratch(self):
         """
@@ -342,7 +342,7 @@ class TestSections(unittest.TestCase):
         testing = x.addSection('testing')
         assert x.testing is testing
         testing.myval = 4
-        self.assertEquals(x.get('testing', 'myval'), '4')
+        self.assertEqual(x.get('testing', 'myval'), '4')
 
     def testAttributeRead(self):
         """
@@ -350,7 +350,7 @@ class TestSections(unittest.TestCase):
         """
         assert self.c.main.level == '5'
         assert self.c.main.power == 'on'
-        self.failUnlessRaises(AttributeError, lambda: self.c.main.notexist)
+        self.assertRaises(AttributeError, lambda: self.c.main.notexist)
 
     def testAttributeWrite(self):
         """
@@ -358,7 +358,7 @@ class TestSections(unittest.TestCase):
         """
         self.c.main.level = 7
         # Should be automatically converted to string also :)
-        self.assertEquals(self.c.get('main', 'level'), '7')
+        self.assertEqual(self.c.get('main', 'level'), '7')
         self.c.main.new = 'hello'
         assert self.c.get('main', 'new') == 'hello'
 
@@ -378,7 +378,7 @@ class TestSections(unittest.TestCase):
         del self.c.main
         assert not self.c.has_section('main')
         def delete(): del self.c.notexist
-        self.failUnlessRaises(AttributeError, delete)
+        self.assertRaises(AttributeError, delete)
 
     def testParserIn(self):
         """
@@ -439,14 +439,14 @@ class TestSections(unittest.TestCase):
         Default default is to raise ValueError or AttributeError
         """
         # Default default behaviour
-        self.failUnlessRaises(ValueError, self.c.get, 'main', 'not exists')
-        self.failUnlessRaises(AttributeError, lambda: self.c.main.notexists)
-        self.failUnlessRaises(AttributeError, lambda: self.c.notexists.notexists)
+        self.assertRaises(ValueError, self.c.get, 'main', 'not exists')
+        self.assertRaises(AttributeError, lambda: self.c.main.notexists)
+        self.assertRaises(AttributeError, lambda: self.c.notexists.notexists)
         # Try with default as None
         self.c.defaultValue = None
         assert self.c.get('main', 'not exists') is None, self.c.get('main', 'not exists')
         assert self.c.main.notexists is None
-        self.failUnlessRaises(AttributeError, lambda: self.c.notexists.notexists) # This cannot be helped
+        self.assertRaises(AttributeError, lambda: self.c.notexists.notexists) # This cannot be helped
         # Try with a string default
         self.c.defaultValue = 'Happy Face'
         assert self.c.get('main', 'not exists') == 'Happy Face'

@@ -18,6 +18,7 @@ import sys
 import warnings
 import operator
 from heapq import heappush, heappop, heapreplace, heapify
+from functools import reduce
 
 try:
     import fcntl
@@ -147,9 +148,9 @@ class DelayedCall(styles.Ephemeral):
             return self._str
         if hasattr(self, 'func'):
             if hasattr(self.func, 'func_name'):
-                func = self.func.func_name
+                func = self.func.__name__
                 if hasattr(self.func, 'im_class'):
-                    func = self.func.im_class.__name__ + '.' + func
+                    func = self.func.__self__.__class__.__name__ + '.' + func
             else:
                 func = reflect.safe_repr(self.func)
         else:
@@ -164,7 +165,7 @@ class DelayedCall(styles.Ephemeral):
                 if self.kw:
                     L.append(", ")
             if self.kw:
-                L.append(", ".join(['%s=%s' % (k, reflect.safe_repr(v)) for (k, v) in self.kw.iteritems()]))
+                L.append(", ".join(['%s=%s' % (k, reflect.safe_repr(v)) for (k, v) in self.kw.items()]))
             L.append(")")
 
         if self.debug:
@@ -325,7 +326,7 @@ class ReactorBase:
         """See twisted.internet.interfaces.IReactorCore.stop.
         """
         if not self.running:
-            raise RuntimeError, "can't stop reactor that isn't running"
+            raise RuntimeError("can't stop reactor that isn't running")
         self.fireSystemEvent("shutdown")
 
     def crash(self):
@@ -408,7 +409,7 @@ class ReactorBase:
         """See twisted.internet.interfaces.IReactorCore.addSystemEventTrigger.
         """
         assert callable(_f), "%s is not callable" % _f
-        if self._eventTriggers.has_key(_eventType):
+        if _eventType in self._eventTriggers:
             triglist = self._eventTriggers[_eventType]
         else:
             triglist = [[], [], []]
@@ -441,7 +442,7 @@ class ReactorBase:
         """See twisted.internet.interfaces.IReactorTime.callLater.
         """
         assert callable(_f), "%s is not callable" % _f
-        assert sys.maxint >= _seconds >= 0, \
+        assert sys.maxsize >= _seconds >= 0, \
                "%s is not greater than or equal to 0 seconds" % (_seconds,)
         tple = DelayedCall(seconds() + _seconds, _f, args, kw,
                            self._cancelCallLater,
@@ -635,7 +636,7 @@ class BaseConnector(styles.Ephemeral):
     def connect(self):
         """Start connection to remote server."""
         if self.state != "disconnected":
-            raise RuntimeError, "can't connect in this state"
+            raise RuntimeError("can't connect in this state")
 
         self.state = "connecting"
         if not self.factoryStarted:
@@ -649,7 +650,7 @@ class BaseConnector(styles.Ephemeral):
     def stopConnecting(self):
         """Stop attempting to connect."""
         if self.state != "connecting":
-            raise error.NotConnectingError, "we're not trying to connect"
+            raise error.NotConnectingError("we're not trying to connect")
 
         self.state = "disconnected"
         self.transport.failIfNotConnected(error.UserError())
@@ -687,7 +688,7 @@ class BaseConnector(styles.Ephemeral):
             self.factoryStarted = 0
 
     def getDestination(self):
-        raise NotImplementedError, "implement in subclasses"
+        raise NotImplementedError("implement in subclasses")
 
 components.backwardsCompatImplements(BaseConnector)
 
@@ -712,7 +713,7 @@ class BasePort(abstract.FileDescriptor):
 
     def doWrite(self):
         """Raises a RuntimeError"""
-        raise RuntimeError, "doWrite called on a %s" % reflect.qual(self.__class__)
+        raise RuntimeError("doWrite called on a %s" % reflect.qual(self.__class__))
 
 
 __all__ = []

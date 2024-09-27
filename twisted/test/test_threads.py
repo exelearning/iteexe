@@ -34,7 +34,7 @@ class ReactorThreadsTestCase(unittest.TestCase):
         if not waiter.isSet():
             self.fail("Timed out waiting for event.")
         else:
-            self.assertEquals(result, [False])
+            self.assertEqual(result, [False])
 
 
     def testCallFromThread(self):
@@ -58,7 +58,7 @@ class ReactorThreadsTestCase(unittest.TestCase):
         def threadedFunction():
             # Hopefully a hundred thousand queued calls is enough to
             # trigger the error condition
-            for i in xrange(100000):
+            for i in range(100000):
                 try:
                     reactor.callFromThread(lambda: None)
                 except:
@@ -111,18 +111,18 @@ class DeferredResultTestCase(unittest.TestCase):
         d = defer.Deferred()
 
         def finished():
-            self.assertEquals(L, range(N))
+            self.assertEqual(L, list(range(N)))
             d.callback(None)
 
         threads.callMultipleInThread([
-            (L.append, (i,), {}) for i in xrange(N)
+            (L.append, (i,), {}) for i in range(N)
             ] + [(reactor.callFromThread, (finished,), {})])
         return d
 
 
     def testDeferredResult(self):
         d = threads.deferToThread(lambda x, y=5: x + y, 3, y=4)
-        d.addCallback(self.assertEquals, 7)
+        d.addCallback(self.assertEqual, 7)
         return d
 
 
@@ -208,13 +208,14 @@ class StartupBehaviorTestCase(unittest.TestCase):
         progfile.write(_callBeforeStartupProgram % {'reactor': reactor.__module__})
         progfile.close()
 
-        def programFinished((out, err, reason)):
+        def programFinished(xxx_todo_changeme):
+            (out, err, reason) = xxx_todo_changeme
             if reason.check(error.ProcessTerminated):
                 self.fail("Process did not exit cleanly (out: %s err: %s)" % (out, err))
 
             if err:
                 log.msg("Unexpected output on standard error: %s" % (err,))
-            self.failIf(out, "Expected no output, instead received:\n%s" % (out,))
+            self.assertFalse(out, "Expected no output, instead received:\n%s" % (out,))
 
         def programTimeout(err):
             err.trap(error.TimeoutError)

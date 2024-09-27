@@ -46,7 +46,7 @@ except ImportError:
 processEnabled = False
 if platformType == 'posix':
     from twisted.internet import fdesc
-    import process
+    from . import process
     processEnabled = True
 
 if platform.isWindows():
@@ -88,7 +88,8 @@ class _Win32Waker(log.Logger, styles.Ephemeral):
         """
         try:
             util.untilConcludes(self.w.send, 'x')
-        except socket.error, (err, msg):
+        except socket.error as xxx_todo_changeme:
+            (err, msg) = xxx_todo_changeme.args
             if err != errno.WSAEWOULDBLOCK:
                 raise
 
@@ -135,7 +136,7 @@ class _UnixWaker(log.Logger, styles.Ephemeral):
         if self.o is not None:
             try:
                 util.untilConcludes(os.write, self.o, 'x')
-            except OSError, e:
+            except OSError as e:
                 if e.errno != errno.EAGAIN:
                     raise
 
@@ -292,9 +293,9 @@ class PosixReactorBase(ReactorBase):
                 from twisted.internet._dumbwin32proc import Process
                 return Process(self, processProtocol, executable, args, env, path)
             else:
-                raise NotImplementedError, "spawnProcess not available since pywin32 is not installed."
+                raise NotImplementedError("spawnProcess not available since pywin32 is not installed.")
         else:
-            raise NotImplementedError, "spawnProcess only available on Windows or POSIX."
+            raise NotImplementedError("spawnProcess only available on Windows or POSIX.")
 
     # IReactorUDP
 
@@ -343,7 +344,7 @@ class PosixReactorBase(ReactorBase):
         c.connect()
         return c
 
-    def listenUNIX(self, address, factory, backlog=50, mode=0666, wantPID=0):
+    def listenUNIX(self, address, factory, backlog=50, mode=0o666, wantPID=0):
         """@see: twisted.internet.interfaces.IReactorUNIX.listenUNIX
         """
         assert unixEnabled, "UNIX support is not present"
@@ -354,7 +355,7 @@ class PosixReactorBase(ReactorBase):
 
     # IReactorUNIXDatagram
 
-    def listenUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0666):
+    def listenUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0o666):
         """Connects a given L{DatagramProtocol} to the given path.
 
         EXPERIMENTAL.
@@ -366,7 +367,7 @@ class PosixReactorBase(ReactorBase):
         p.startListening()
         return p
 
-    def connectUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0666, bindAddress=None):
+    def connectUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0o666, bindAddress=None):
         """Connects a L{ConnectedDatagramProtocol} instance to a path.
 
         EXPERIMENTAL.

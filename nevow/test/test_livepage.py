@@ -44,96 +44,96 @@ class Quoting(unittest.TestCase):
 
     def testCall(self):
         self.livepage.call("concat", "1", "2")
-        self.assertEquals(self.livepage.sent, "concat('1','2');")
+        self.assertEqual(self.livepage.sent, "concat('1','2');")
         self.livepage.call("bloop", r"a\b\c")
-        self.assertEquals(self.livepage.sent, r"bloop('a\\b\\c');")
+        self.assertEqual(self.livepage.sent, r"bloop('a\\b\\c');")
         self.livepage.call("zoop", "a'b'c")
-        self.assertEquals(self.livepage.sent, r"zoop('a\'b\'c');")
+        self.assertEqual(self.livepage.sent, r"zoop('a\'b\'c');")
         self.livepage.call("floop", "a\nb\nc")
-        self.assertEquals(self.livepage.sent, r"floop('a\nb\nc');")
+        self.assertEqual(self.livepage.sent, r"floop('a\nb\nc');")
 
     def test_callWithJS(self):
         self.livepage.call("add", 1, 2)
-        self.assertEquals(self.livepage.sent, "add(1,2);")
+        self.assertEqual(self.livepage.sent, "add(1,2);")
         self.livepage.call("amIEvil", True)
-        self.assertEquals(self.livepage.sent, "amIEvil(true);")
+        self.assertEqual(self.livepage.sent, "amIEvil(true);")
         self.livepage.call("add", 1.4, 2.4)
-        self.assertEquals(self.livepage.sent, "add(1.4,2.4);")
+        self.assertEqual(self.livepage.sent, "add(1.4,2.4);")
         self.livepage.call('alert', livepage.js('document.title'))
-        self.assertEquals(self.livepage.sent, 'alert(document.title);')
+        self.assertEqual(self.livepage.sent, 'alert(document.title);')
         self.livepage.call('alert', livepage.document.title)
-        self.assertEquals(self.livepage.sent, 'alert(document.title);')
+        self.assertEqual(self.livepage.sent, 'alert(document.title);')
 
     def test_callWithStan(self):
         self.livepage.call("replace", tags.span)
-        self.assertEquals(self.livepage.sent, "replace('<span />');")
+        self.assertEqual(self.livepage.sent, "replace('<span />');")
 
         self.livepage.call('fun', tags.span["'"])
-        self.assertEquals(self.livepage.sent, r"fun('<span>\'</span>');")
+        self.assertEqual(self.livepage.sent, r"fun('<span>\'</span>');")
 
         self.livepage.call('fun', tags.span["\""])
-        self.assertEquals(self.livepage.sent, "fun('<span>\"</span>');")
+        self.assertEqual(self.livepage.sent, "fun('<span>\"</span>');")
 
         self.livepage.call('fun', tags.span["\\"])
-        self.assertEquals(self.livepage.sent, r"fun('<span>\\</span>');")
+        self.assertEqual(self.livepage.sent, r"fun('<span>\\</span>');")
 
     def test_js(self):
         foo = livepage.js('foo')
         self.livepage.call('alert', foo('1'))
-        self.assertEquals(self.livepage.sent, "alert(foo('1'));")
+        self.assertEqual(self.livepage.sent, "alert(foo('1'));")
         self.livepage.sendScript(foo(1))
-        self.assertEquals(self.livepage.sent, "foo(1)")
+        self.assertEqual(self.livepage.sent, "foo(1)")
 
         window = livepage.js('window')
         self.livepage.sendScript(window.open('http://google.com'))
-        self.assertEquals(self.livepage.sent, "window.open('http://google.com')")
+        self.assertEqual(self.livepage.sent, "window.open('http://google.com')")
         array = livepage.js('array')
         self.livepage.sendScript(array[5])
-        self.assertEquals(self.livepage.sent, "array[5]")
+        self.assertEqual(self.livepage.sent, "array[5]")
         self.livepage.sendScript(livepage.js[1,2,3])
-        self.assertEquals(self.livepage.sent, "[1,2,3]")
+        self.assertEqual(self.livepage.sent, "[1,2,3]")
 
     def test_setAndAppend(self):
         for apiName in ['set', 'append']:
             api = getattr(self.livepage, apiName)
             funcName = "nevow_%sNode" % (apiName, )
             api('node', 'value')
-            self.assertEquals(self.livepage.sent, funcName + "('node', 'value');")
+            self.assertEqual(self.livepage.sent, funcName + "('node', 'value');")
             api('node', 1)
-            self.assertEquals(self.livepage.sent, funcName + "('node', '1');")
+            self.assertEqual(self.livepage.sent, funcName + "('node', '1');")
             api('node', tags.span["Hello"])
-            self.assertEquals(self.livepage.sent, funcName + "('node', '<span>Hello</span>');")
+            self.assertEqual(self.livepage.sent, funcName + "('node', '<span>Hello</span>');")
             api('node', livepage.document.title)
-            self.assertEquals(self.livepage.sent, funcName + "('node', document.title);")
+            self.assertEqual(self.livepage.sent, funcName + "('node', document.title);")
             api('node', '\\')
-            self.assertEquals(self.livepage.sent, funcName + r"('node', '\\');")
+            self.assertEqual(self.livepage.sent, funcName + r"('node', '\\');")
             api('node', "'")
-            self.assertEquals(self.livepage.sent, funcName + r"('node', '\'');")
+            self.assertEqual(self.livepage.sent, funcName + r"('node', '\'');")
             api('node', '"')
-            self.assertEquals(self.livepage.sent, funcName + "('node', '\"');")
+            self.assertEqual(self.livepage.sent, funcName + "('node', '\"');")
             api('\\', '')
-            self.assertEquals(self.livepage.sent, funcName + "('\\\\', '');")
+            self.assertEqual(self.livepage.sent, funcName + "('\\\\', '');")
 
     def test_alert(self):
         self.livepage.alert('Hello')
-        self.assertEquals(self.livepage.sent, "alert('Hello');")
+        self.assertEqual(self.livepage.sent, "alert('Hello');")
         self.livepage.alert(5)
-        self.assertEquals(self.livepage.sent, "alert('5');")
+        self.assertEqual(self.livepage.sent, "alert('5');")
         self.livepage.alert(livepage.document.title)
-        self.assertEquals(self.livepage.sent, "alert(document.title);")
+        self.assertEqual(self.livepage.sent, "alert(document.title);")
         self.livepage.alert('\\')
-        self.assertEquals(self.livepage.sent, "alert('\\\\');")
+        self.assertEqual(self.livepage.sent, "alert('\\\\');")
         self.livepage.alert("'")
-        self.assertEquals(self.livepage.sent, r"alert('\'');")
+        self.assertEqual(self.livepage.sent, r"alert('\'');")
         self.livepage.alert('"')
-        self.assertEquals(self.livepage.sent, "alert('\"');")
+        self.assertEqual(self.livepage.sent, "alert('\"');")
 
     def test_handler(self):
         result = livepage.handler(onClick)
-        self.assertEquals(self.flt(result),
+        self.assertEqual(self.flt(result),
             livepage.ctsTemplate % (fakeId, '', livepage.handledEventPostlude))
         self.livepage.handleInput(fakeId)
-        self.assertEquals(self.livepage.sent, 'null;')
+        self.assertEqual(self.livepage.sent, 'null;')
 
     def test_closedOverHandler(self):
         closedOver = 'hello'
@@ -144,11 +144,11 @@ class Quoting(unittest.TestCase):
         ## subscribed to at render time.
         result = livepage.handler(closuredHandler)(self.ctx, None)
         ## The closured handler will have been assigned a unique id.
-        self.assertEquals(result.content,
+        self.assertEqual(result.content,
             livepage.ctsTemplate % (fakeId, '', livepage.handledEventPostlude))
 
         self.livepage.handleInput(fakeId)
-        self.assertEquals(self.livepage.sent, 'hello')
+        self.assertEqual(self.livepage.sent, 'hello')
 
     def test_handlerWithArgs(self):
         options = [
@@ -163,42 +163,42 @@ class Quoting(unittest.TestCase):
             else:
                 postlude = livepage.handledEventPostlude
 
-            self.assertEquals(
+            self.assertEqual(
                 self.flt(livepage.handler(argsHandler, 'hello', **opts)),
                 livepage.ctsTemplate % (fakeId, ",'hello'", postlude))
 
-            self.assertEquals(
+            self.assertEqual(
                 self.flt(livepage.handler(argsHandler, "'", **opts)),
                 livepage.ctsTemplate % (fakeId, ",'\\''", postlude))
 
-            self.assertEquals(
+            self.assertEqual(
                 self.flt(livepage.handler(argsHandler, "\\", **opts)),
                 livepage.ctsTemplate % (fakeId, ",'\\\\'", postlude))
 
-            self.assertEquals(
+            self.assertEqual(
                 self.flt(livepage.handler(argsHandler, "\n", **opts)),
                 livepage.ctsTemplate % (fakeId, ",'\\n'", postlude))
 
     def test_handlerWithArgsQuoting(self):
-        self.assertEquals(
+        self.assertEqual(
             self.flt(livepage.handler(argsHandler, '"')),
             livepage.ctsTemplate % (fakeId, ",'&quot;'", livepage.handledEventPostlude))
 
-        self.assertEquals(
+        self.assertEqual(
             self.flt(livepage.handler(argsHandler, '&')),
             livepage.ctsTemplate % (fakeId, ",'&amp;'", livepage.handledEventPostlude))
 
     def test_outsideAttributeArgsQuoting(self):
-        self.assertEquals(
+        self.assertEqual(
            self.flt( livepage.handler(argsHandler, '"', outsideAttribute=True)),
             livepage.ctsTemplate % (fakeId, ",'\"'", livepage.handledEventPostlude))
 
-        self.assertEquals(
+        self.assertEqual(
             self.flt(livepage.handler(argsHandler, '&', outsideAttribute=True)),
             livepage.ctsTemplate % (fakeId, ",'&'", livepage.handledEventPostlude))
 
     def test_bubble(self):
-        self.assertEquals(
+        self.assertEqual(
             self.flt(livepage.handler(onClick, bubble=True)),
             livepage.ctsTemplate % (fakeId, '', ''))
 
@@ -216,11 +216,11 @@ class Quoting(unittest.TestCase):
 
         gatherer.handleInput('same')
 
-        self.assertEquals(gatherer.heard, ['one', 'two'])
+        self.assertEqual(gatherer.heard, ['one', 'two'])
 
     def test_decoratorLike(self):
         decorator = livepage.handler(livepage.document)
-        self.assertEquals(
+        self.assertEqual(
             self.flt(decorator(argsHandler)),
             livepage.ctsTemplate % (fakeId, ',document', livepage.handledEventPostlude))
 

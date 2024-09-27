@@ -49,4 +49,4 @@ exe/webui/scripts/tinymce_4/js/tinymce/tinymce.js
 .metadata/.lock
 
 # Template translation
-exe/webui/content_template/strings.py
+exe/webui/content_template/strings.pyenv/

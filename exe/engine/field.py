@@ -28,9 +28,9 @@ from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
 from exe.engine.translate import lateTranslate
 from exe.engine.mimetex   import compile
-from HTMLParser           import HTMLParser
+from html.parser           import HTMLParser
 from exe.engine.flvreader import FLVReader
-from htmlentitydefs       import name2codepoint
+from html.entities       import name2codepoint
 from exe.engine.htmlToText import HtmlToText
 from twisted.persisted.styles import Versioned
 from exe.webui                import common
@@ -38,7 +38,7 @@ from exe                  import globals as G
 from exe.engine.node      import Node
 import os
 import re
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import shutil
 
 log = logging.getLogger(__name__)
@@ -98,7 +98,7 @@ class Field(Persistable):
             fieldId = self.idevice.id + "_"
         else:
             fieldId = ""
-        fieldId += unicode(self._id)
+        fieldId += str(self._id)
         return fieldId
     id = property(getId)
             
@@ -131,7 +131,7 @@ class Field(Persistable):
             toPersist = self.__dict__
         else: 
             toPersist = dict([(key, value) 
-                    for key, value in self.__dict__.items() 
+                    for key, value in list(self.__dict__.items()) 
                     if key not in self.nonpersistant])
     
         return Versioned.__getstate__(self, toPersist)
@@ -143,7 +143,7 @@ class Field(Persistable):
         self._name = self.__dict__['name']
         del self.__dict__['name']
         # Pre 0.5 packages need special care
-        if self.__dict__.has_key('instruc'):
+        if 'instruc' in self.__dict__:
             self._instruc = self.__dict__['instruc']
         else:
             self._instruc = self.__dict__['instruction']
@@ -312,7 +312,7 @@ class FieldWithResources(Field):
         
         #pedro_pena: Arreglo para bug #1456. En caso de apuntar a un nodo zombie se reestablece parentNode
         if hasattr(self, 'parentNode'):
-            zombie_preface = u"ZOMBIE("
+            zombie_preface = "ZOMBIE("
             if hasattr(self.parentNode, '_title') and self.parentNode._title[0:len(zombie_preface)] == zombie_preface:
                 self.parentNode = None
                 if hasattr(self.idevice, 'parentNode'): 
@@ -483,7 +483,7 @@ class FieldWithResources(Field):
         this will remove references to the anchor from this link source field.
         """ 
         if hasattr(self, 'intlinks_to_anchors'): 
-            if full_anchor_name in self.intlinks_to_anchors.keys(): 
+            if full_anchor_name in list(self.intlinks_to_anchors.keys()): 
                 if dst_field != self.intlinks_to_anchors[full_anchor_name]: 
                     log.warn('RemoveInternalLinkToRemovedAnchor found a '
                         + 'different link-destination field than expected; '
@@ -593,7 +593,7 @@ class FieldWithResources(Field):
         this will remove references to the anchor from this link source field.
         """
         if hasattr(self, 'intlinks_to_anchors'): 
-            if old_full_anchor_name in self.intlinks_to_anchors.keys(): 
+            if old_full_anchor_name in list(self.intlinks_to_anchors.keys()): 
                 if dst_field != self.intlinks_to_anchors[old_full_anchor_name]: 
                     log.warn('RenameInternalLinkToAnchor found a different '
                         + 'link-destination field than expected; '
@@ -675,7 +675,7 @@ class FieldWithResources(Field):
                     link_field = common.findLinkedField(this_package, 
                             link_node_name, link_anchor_name)
                     # to support the automatic "auto_top" anchors:
-                    if link_field is None and link_anchor_name == u"auto_top":
+                    if link_field is None and link_anchor_name == "auto_top":
                         # go ahead and find the corresponding Node instead:
                         link_field = common.findLinkedNode(this_package, 
                             link_node_name, link_anchor_name, 
@@ -779,7 +779,7 @@ class FieldWithResources(Field):
         """ 
         # clear out all of the source links to this anchor:
         if hasattr(self, 'anchors_linked_from_fields') \
-        and this_anchor_name in self.anchors_linked_from_fields.keys(): 
+        and this_anchor_name in list(self.anchors_linked_from_fields.keys()): 
             full_anchor_name = self.GetFullNodePath() \
                 + "#" + this_anchor_name 
             for that_field in self.anchors_linked_from_fields[\
@@ -858,7 +858,7 @@ class FieldWithResources(Field):
         # setup empty source links to this anchor:
         if not hasattr(self, 'anchors_linked_from_fields'):
             self.anchors_linked_from_fields = {}
-        if this_anchor_name not in self.anchors_linked_from_fields.values(): 
+        if this_anchor_name not in list(self.anchors_linked_from_fields.values()): 
             self.anchors_linked_from_fields.setdefault(this_anchor_name, [])
 
         return
@@ -907,7 +907,7 @@ class FieldWithResources(Field):
             self.intlinks_to_anchors = {}
 
         # Remove any links, as they are no longer in use!
-        for this_link_name in self.intlinks_to_anchors.keys():
+        for this_link_name in list(self.intlinks_to_anchors.keys()):
             this_anchor_name = common.getAnchorNameFromLinkName(
                     this_link_name)
             self.RemoveInternalLink(this_link_name, this_anchor_name,
@@ -964,7 +964,7 @@ class FieldWithResources(Field):
 
         # remove this field from the source links of the destination anchor:
         if hasattr(link_field, 'anchors_linked_from_fields') \
-        and link_anchor_name in link_field.anchors_linked_from_fields.keys() \
+        and link_anchor_name in list(link_field.anchors_linked_from_fields.keys()) \
         and self in link_field.anchors_linked_from_fields[link_anchor_name]:
             link_field.anchors_linked_from_fields[link_anchor_name].remove(self)
 
@@ -1017,7 +1017,7 @@ class FieldWithResources(Field):
         if not hasattr(link_field, 'anchors_linked_from_fields'):
             link_field.anchors_linked_from_fields = {}
         if link_anchor_name not in \
-            link_field.anchors_linked_from_fields.values(): 
+            list(link_field.anchors_linked_from_fields.values()): 
             link_field.anchors_linked_from_fields.setdefault(
                     link_anchor_name, [])
         if self not in link_field.anchors_linked_from_fields[link_anchor_name]:
@@ -1039,16 +1039,16 @@ class FieldWithResources(Field):
         new_intlinks_to_anchors = self.ListActiveInternalLinks(html_content)
 
         # Add any new links...
-        for this_link_name in new_intlinks_to_anchors.keys():
-            if this_link_name not in old_intlinks.keys():
+        for this_link_name in list(new_intlinks_to_anchors.keys()):
+            if this_link_name not in list(old_intlinks.keys()):
                 this_anchor_name = common.getAnchorNameFromLinkName(
                         this_link_name)
                 self.AddInternalLink(this_link_name, this_anchor_name,
                         new_intlinks_to_anchors[this_link_name])
 
         # Remove any old links which are no longer in use!
-        for this_link_name in old_intlinks.keys():
-            if this_link_name not in new_intlinks_to_anchors.keys():
+        for this_link_name in list(old_intlinks.keys()):
+            if this_link_name not in list(new_intlinks_to_anchors.keys()):
                 this_anchor_name = common.getAnchorNameFromLinkName(
                         this_link_name)
                 self.RemoveInternalLink(this_link_name, this_anchor_name,
@@ -2669,8 +2669,8 @@ class TextAreaField(FieldWithResources):
         # NOTE: we don't need to actually process any of those contents for 
         # image paths, either, since this is an upgrade from pre-images!
     def upgradeToVersion2(self):
-        if self._instruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._instruc = u"""Enter the text that will appear on this iDevice"""
+        if self._instruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._instruc = """Enter the text that will appear on this iDevice"""
     def upgradeToVersion3(self):            
             self.buttonCaption =''
 
@@ -2816,7 +2816,7 @@ class ImageField(Field):
         Store the image in the package
         Needs to be in a package to work.
         """
-        log.debug(u"setImage "+unicode(imagePath))
+        log.debug("setImage "+str(imagePath))
         resourceFile = Path(imagePath)
 
         assert self.idevice.parentNode, \
@@ -2898,7 +2898,7 @@ class MagnifierField(Field):
         Store the image in the package
         Needs to be in a package to work.
         """
-        log.debug(u"setImage "+unicode(imagePath))
+        log.debug("setImage "+str(imagePath))
         resourceFile = Path(imagePath)
 
         assert self.idevice.parentNode, \
@@ -2952,7 +2952,7 @@ class MultimediaField(Field):
         self.height        = "100"
         self.mediaResource = None
         self.caption       = ""
-        self._captionInstruc = x_(u"""Provide a caption for the 
+        self._captionInstruc = x_("""Provide a caption for the 
 MP3 file. This will appear in the players title bar as well.""")
     # Properties
     captionInstruc    = lateTranslate('captionInstruc')
@@ -2962,7 +2962,7 @@ MP3 file. This will appear in the players title bar as well.""")
         Store the media file in the package
         Needs to be in a package to work.
         """
-        log.debug(u"setMedia "+unicode(mediaPath))
+        log.debug("setMedia "+str(mediaPath))
         
         resourceFile = Path(mediaPath)
 
@@ -2999,7 +2999,7 @@ MP3 file. This will appear in the players title bar as well.""")
         else:
             self.caption   = ""
 
-        self._captionInstruc = x_(u"""Provide a caption for the 
+        self._captionInstruc = x_("""Provide a caption for the 
 MP3 file. This will appear in the players title bar as well.""")
             
             
@@ -3135,7 +3135,7 @@ class ClozeField(FieldWithResources):
         """
         self.strictMarking = False
         self._strictMarkingInstruc = \
-            x_(u"<p>If left unchecked a small number of spelling and "
+            x_("<p>If left unchecked a small number of spelling and "
                 "capitalization errors will be accepted. If checked only "
                 "an exact match in spelling and capitalization will be accepted."
                 "</p>"
@@ -3156,12 +3156,12 @@ class ClozeField(FieldWithResources):
                 "</p>")
         self.checkCaps = False
         self._checkCapsInstruc = \
-            x_(u"<p>If this option is checked, submitted answers with "
+            x_("<p>If this option is checked, submitted answers with "
                 "different capitalization will be marked as incorrect."
                 "</p>")
         self.instantMarking = False
         self._instantMarkingInstruc = \
-            x_(u"""<p>If this option is set, each word will be marked as the 
+            x_("""<p>If this option is set, each word will be marked as the 
 learner types it rather than all the words being marked the end of the 
 exercise.</p>""")
 
@@ -3170,8 +3170,8 @@ exercise.</p>""")
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
-        for key, val in name2codepoint.items():
-            value = value.replace('&%s;' % key, unichr(val))
+        for key, val in list(name2codepoint.items()):
+            value = value.replace('&%s;' % key, chr(val))
         # workaround for Microsoft Word which incorrectly quotes font names
         value = re.sub(r'font-family:\s*"([^"]+)"', r'font-family: \1', value)
         parser = ClozeHTMLParser()
@@ -3199,7 +3199,7 @@ exercise.</p>""")
         Upgrades to exe v0.11
         """
         self.autoCompletion = True
-        self.autoCompletionInstruc = _(u"""Allow auto completion when 
+        self.autoCompletionInstruc = _("""Allow auto completion when 
                                        user filling the gaps.""")
 
     def upgradeToVersion2(self):
@@ -3307,7 +3307,7 @@ class ClozelangHTMLParser(HTMLParser):
         gapSpacers = self.whiteSpaceRe.findall(gapString)
         if len(gapWords) > len(gapSpacers):
             gapSpacers.append(None)
-        gaps = zip(gapWords, gapSpacers)
+        gaps = list(zip(gapWords, gapSpacers))
         lastText = self.lastText
         # Split gaps up on whitespace
         for gap, text in gaps:
@@ -3369,7 +3369,7 @@ class ClozelangField(FieldWithResources):
         """
         self.strictMarking = False
         self._strictMarkingInstruc = \
-            x_(u"<p>If left unchecked a small number of spelling and "
+            x_("<p>If left unchecked a small number of spelling and "
                 "capitalization errors will be accepted. If checked only "
                 "an exact match in spelling and capitalization will be accepted."
                 "</p>"
@@ -3390,25 +3390,25 @@ class ClozelangField(FieldWithResources):
                 "</p>")
         self.checkCaps = False
         self._checkCapsInstruc = \
-            x_(u"<p>If this option is checked, submitted answers with "
+            x_("<p>If this option is checked, submitted answers with "
                 "different capitalization will be marked as incorrect."
                 "</p>")
         self.instantMarking = False
         self._instantMarkingInstruc = \
-            x_(u"""<p>If this option is set, each word will be marked as the 
+            x_("""<p>If this option is set, each word will be marked as the 
 learner types it rather than all the words being marked the end of the 
 exercise.</p>""")
 	self.showScore = False
         self._showScoreInstruc = \
-            x_(u"""<p>If this option is set, the score will be shown.</p>""")
+            x_("""<p>If this option is set, the score will be shown.</p>""")
 
     # Property handlers
     def set_encodedContent(self, value):
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
-        for key, val in name2codepoint.items():
-            value = value.replace('&%s;' % key, unichr(val))
+        for key, val in list(name2codepoint.items()):
+            value = value.replace('&%s;' % key, chr(val))
         # workaround for Microsoft Word which incorrectly quotes font names
         value = re.sub(r'font-family:\s*"([^"]+)"', r'font-family: \1', value)
         parser = ClozelangHTMLParser()
@@ -3437,7 +3437,7 @@ exercise.</p>""")
         Upgrades to exe v0.11
         """
         self.autoCompletion = True
-        self.autoCompletionInstruc = _(u"""Allow auto completion when 
+        self.autoCompletionInstruc = _("""Allow auto completion when 
                                        user filling the gaps.""")
 
     def upgradeToVersion2(self):
@@ -3490,7 +3490,7 @@ this iDevice.""")
         Store the image in the package
         Needs to be in a package to work.
         """
-        log.debug(u"setFlash "+unicode(flashPath))
+        log.debug("setFlash "+str(flashPath))
         resourceFile = Path(flashPath)
 
         assert self.idevice.parentNode, \
@@ -3555,7 +3555,7 @@ this iDevice.""")
         Needs to be in a package to work.
         """
         
-        log.debug(u"setFlash "+unicode(flashPath))
+        log.debug("setFlash "+str(flashPath))
         resourceFile = Path(flashPath)
 
         assert self.idevice.parentNode, \
@@ -3648,7 +3648,7 @@ class MathField(Field):
         self._latex      = latex # The latex entered by the user
         self.gifResource = None
         self.fontsize    = 4
-        self._instruc    = x_(u""
+        self._instruc    = x_(""
             "<p>" 
             "Select symbols from the text editor below or enter LATEX manually"
             " to create mathematical formula."
@@ -3675,7 +3675,7 @@ class MathField(Field):
         if self.gifResource is not None:
             self.gifResource.delete()
             self.gifResource = None
-        if latex <> "":
+        if latex != "":
             tempFileName = compile(latex, self.fontsize)
             self.gifResource = Resource(self.idevice, tempFileName)
             # Delete the temp file made by compile
@@ -3724,12 +3724,12 @@ class QuizOptionField(Field):
         self.question  = question
         self.idevice = idevice
 
-        self.answerTextArea = TextAreaField(x_(u'Option'), 
-                                  idevice._answerInstruc, u'')
+        self.answerTextArea = TextAreaField(x_('Option'), 
+                                  idevice._answerInstruc, '')
         self.answerTextArea.idevice = idevice
 
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
-                                    idevice._feedbackInstruc, u'')
+        self.feedbackTextArea = TextAreaField(x_('Feedback'), 
+                                    idevice._feedbackInstruc, '')
         self.feedbackTextArea.idevice = idevice
 
     def getResourcesField(self, this_resource):
@@ -3773,10 +3773,10 @@ class QuizOptionField(Field):
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.answerTextArea = TextAreaField(x_(u'Option'), 
+        self.answerTextArea = TextAreaField(x_('Option'), 
                                   self.idevice._answerInstruc, self.answer)
         self.answerTextArea.idevice = self.idevice
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback'), 
+        self.feedbackTextArea = TextAreaField(x_('Feedback'), 
                                     self.idevice._feedbackInstruc, 
                                     self.feedback)
         self.feedbackTextArea.idevice = self.idevice
@@ -3799,11 +3799,11 @@ class QuizQuestionField(Field):
 
         self.options              = []
         self.idevice              = idevice
-        self.questionTextArea     = TextAreaField(x_(u'Question'), 
-                                        idevice._questionInstruc, u'')
+        self.questionTextArea     = TextAreaField(x_('Question'), 
+                                        idevice._questionInstruc, '')
         self.questionTextArea.idevice     = idevice
-        self.hintTextArea         = TextAreaField(x_(u'Hint'), 
-                                        idevice._hintInstruc, u'')
+        self.hintTextArea         = TextAreaField(x_('Hint'), 
+                                        idevice._hintInstruc, '')
         self.hintTextArea.idevice         = idevice
 
     def addOption(self):
@@ -3864,11 +3864,11 @@ class QuizQuestionField(Field):
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.questionTextArea     = TextAreaField(x_(u'Question'), 
+        self.questionTextArea     = TextAreaField(x_('Question'), 
                                         self.idevice._questionInstruc, 
                                         self.question)
         self.questionTextArea.idevice = self.idevice
-        self.hintTextArea         = TextAreaField(x_(u'Hint'), 
+        self.hintTextArea         = TextAreaField(x_('Hint'), 
                                         self.idevice._hintInstruc, self.hint)
         self.hintTextArea.idevice  = self.idevice
 
@@ -3890,8 +3890,8 @@ class SelectOptionField(Field):
         self.question  = question
         self.idevice = idevice
 
-        self.answerTextArea    = TextAreaField(x_(u'Options'), 
-                                     question._optionInstruc, u'')
+        self.answerTextArea    = TextAreaField(x_('Options'), 
+                                     question._optionInstruc, '')
         self.answerTextArea.idevice = idevice
 
 
@@ -3927,7 +3927,7 @@ class SelectOptionField(Field):
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.answerTextArea    = TextAreaField(x_(u'Options'), 
+        self.answerTextArea    = TextAreaField(x_('Options'), 
                                      self.question._optionInstruc, 
                                      self.answer)
         self.answerTextArea.idevice = self.idevice
@@ -3950,25 +3950,25 @@ class SelectQuestionField(Field):
 
         self.idevice              = idevice
 
-        self._questionInstruc      = x_(u"""Enter the question stem. 
+        self._questionInstruc      = x_("""Enter the question stem. 
 The question should be clear and unambiguous. Avoid negative premises as these 
 can tend to confuse learners.""")
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
-                                    self.questionInstruc, u'')
+        self.questionTextArea = TextAreaField(x_('Question:'), 
+                                    self.questionInstruc, '')
         self.questionTextArea.idevice = idevice
 
         self.options              = []
-        self._optionInstruc        = x_(u"""Enter the available choices here. 
+        self._optionInstruc        = x_("""Enter the available choices here. 
 You can add options by clicking the "Add another option" button. Delete options by 
 clicking the red X next to the option.""")
 
-        self._correctAnswerInstruc = x_(u"""Select as many correct answer 
+        self._correctAnswerInstruc = x_("""Select as many correct answer 
 options as required by clicking the check box beside the option.""")
 
-        self.feedbackInstruc       = x_(u"""Type in the feedback you want 
+        self.feedbackInstruc       = x_("""Type in the feedback you want 
 to provide the learner with.""")
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
-                                    self.feedbackInstruc, u'')
+        self.feedbackTextArea = TextAreaField(x_('Feedback:'), 
+                                    self.feedbackInstruc, '')
         self.feedbackTextArea.idevice = idevice
     
     
@@ -4034,10 +4034,10 @@ to provide the learner with.""")
         Upgrades to somewhere before version 0.25 (post-v0.24) 
         to reflect the new TextAreaFields now in use for images.
         """ 
-        self.questionTextArea = TextAreaField(x_(u'Question:'), 
+        self.questionTextArea = TextAreaField(x_('Question:'), 
                                     self.questionInstruc, self.question)
         self.questionTextArea.idevice = self.idevice
-        self.feedbackTextArea = TextAreaField(x_(u'Feedback:'), 
+        self.feedbackTextArea = TextAreaField(x_('Feedback:'), 
                                     self.feedbackInstruc, self.feedback)
         self.feedbackTextArea.idevice = self.idevice
 
@@ -4061,7 +4061,7 @@ class AttachmentField(Field):
         Store the attachment file in the package
         Needs to be in a package to work.
         """
-        log.debug(u"setAttachment "+unicode(attachPath))
+        log.debug("setAttachment "+str(attachPath))
         resourceFile = Path(attachPath)
 
         assert self.idevice.parentNode, \

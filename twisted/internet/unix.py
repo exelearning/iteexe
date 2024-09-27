@@ -17,7 +17,7 @@ from errno import *
 from zope.interface import implements, implementsOnly, implementedBy
 
 if not hasattr(socket, 'AF_UNIX'):
-    raise ImportError, "UNIX sockets not supported on this platform"
+    raise ImportError("UNIX sockets not supported on this platform")
 
 # Twisted imports
 from twisted.internet import base, tcp, udp, error, interfaces, protocol, address, defer
@@ -43,7 +43,7 @@ class Port(tcp.Port):
     transport = Server
     lockFile = None
 
-    def __init__(self, fileName, factory, backlog=50, mode=0666, reactor=None, wantPID = 0):
+    def __init__(self, fileName, factory, backlog=50, mode=0o666, reactor=None, wantPID = 0):
         tcp.Port.__init__(self, fileName, factory, backlog, reactor=reactor)
         self.mode = mode
         self.wantPID = wantPID
@@ -68,7 +68,7 @@ class Port(tcp.Port):
         if self.wantPID:
             self.lockFile = lockfile.FilesystemLock(self.port + ".lock")
             if not self.lockFile.lock():
-                raise CannotListenError, (None, self.port, "Cannot acquire lock")
+                raise CannotListenError(None, self.port, "Cannot acquire lock")
             else:
                 if not self.lockFile.clean:
                     try:
@@ -86,8 +86,8 @@ class Port(tcp.Port):
         try:
             skt = self.createInternetSocket()
             skt.bind(self.port)
-        except socket.error, le:
-            raise CannotListenError, (None, self.port, le)
+        except socket.error as le:
+            raise CannotListenError(None, self.port, le)
         else:
             # Make the socket readable and writable to the world.
             try:
@@ -155,7 +155,7 @@ class DatagramPort(udp.Port):
 
     addressFamily = socket.AF_UNIX
 
-    def __init__(self, addr, proto, maxPacketSize=8192, mode=0666, reactor=None):
+    def __init__(self, addr, proto, maxPacketSize=8192, mode=0o666, reactor=None):
         """Initialize with address to listen on.
         """
         udp.Port.__init__(self, addr, proto, maxPacketSize=maxPacketSize, reactor=reactor)
@@ -175,8 +175,8 @@ class DatagramPort(udp.Port):
             skt = self.createInternetSocket() # XXX: haha misnamed method
             if self.port:
                 skt.bind(self.port)
-        except socket.error, le:
-            raise error.CannotListenError, (None, self.port, le)
+        except socket.error as le:
+            raise error.CannotListenError(None, self.port, le)
         if self.port:
             try:
                 os.chmod(self.port, self.mode)
@@ -190,12 +190,12 @@ class DatagramPort(udp.Port):
         """Write a datagram."""
         try:
             return self.socket.sendto(datagram, address)
-        except socket.error, se:
+        except socket.error as se:
             no = se.args[0]
             if no == EINTR:
                 return self.write(datagram, address)
             elif no == EMSGSIZE:
-                raise error.MessageLengthError, "message too long"
+                raise error.MessageLengthError("message too long")
             elif no == EAGAIN:
                 # oh, well, drop the data. The only difference from UDP
                 # is that UDP won't ever notice.
@@ -236,7 +236,7 @@ class ConnectedDatagramPort(DatagramPort):
     implementsOnly(interfaces.IUNIXDatagramConnectedTransport,
                    *(implementedBy(base.BasePort)))
 
-    def __init__(self, addr, proto, maxPacketSize=8192, mode=0666, bindAddress=None, reactor=None):
+    def __init__(self, addr, proto, maxPacketSize=8192, mode=0o666, bindAddress=None, reactor=None):
         assert isinstance(proto, protocol.ConnectedDatagramProtocol)
         DatagramPort.__init__(self, bindAddress, proto, maxPacketSize, mode, reactor)
         self.remoteaddr = addr
@@ -262,7 +262,7 @@ class ConnectedDatagramPort(DatagramPort):
                 data, addr = self.socket.recvfrom(self.maxPacketSize)
                 read += len(data)
                 self.protocol.datagramReceived(data)
-            except socket.error, se:
+            except socket.error as se:
                 no = se.args[0]
                 if no in (EAGAIN, EINTR, EWOULDBLOCK):
                     return
@@ -277,12 +277,12 @@ class ConnectedDatagramPort(DatagramPort):
         """Write a datagram."""
         try:
             return self.socket.send(data)
-        except socket.error, se:
+        except socket.error as se:
             no = se.args[0]
             if no == EINTR:
                 return self.write(data)
             elif no == EMSGSIZE:
-                raise error.MessageLengthError, "message too long"
+                raise error.MessageLengthError("message too long")
             elif no == ECONNREFUSED:
                 self.protocol.connectionRefused()
             elif no == EAGAIN:

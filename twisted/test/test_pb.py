@@ -15,7 +15,7 @@ only specific tests for old API.
 
 import sys, os, time
 
-from cStringIO import StringIO
+from io import StringIO
 from zope.interface import implements
 
 from twisted.trial import unittest
@@ -203,7 +203,7 @@ def createFactoryCopy(state):
     id = state.get("id", None)
     if not id:
         raise "factory copy state has no 'id' member %s" % repr(state)
-    if not SimpleFactoryCopy.allIDs.has_key(id):
+    if id not in SimpleFactoryCopy.allIDs:
         raise "factory class has no ID: %s" % SimpleFactoryCopy.allIDs
     inst = SimpleFactoryCopy.allIDs[id]
     if not inst:
@@ -389,9 +389,9 @@ class NewStyleTestCase(unittest.TestCase):
         d.addCallback(self._testNewStyle_2, orig)
         return d
     def _testNewStyle_2(self, res, orig):
-        self.failUnless(isinstance(res, NewStyleCopy))
-        self.failUnlessEqual(res.s, "value")
-        self.failIf(res is orig) # no cheating :)
+        self.assertTrue(isinstance(res, NewStyleCopy))
+        self.assertEqual(res.s, "value")
+        self.assertFalse(res is orig) # no cheating :)
 
     def testAlloc(self):
         self.server = reactor.listenTCP(0, pb.PBServerFactory(Echoer()))
@@ -403,19 +403,19 @@ class NewStyleTestCase(unittest.TestCase):
     def _testAlloc_1(self, ref):
         self.ref = ref
         orig = NewStyleCopy2()
-        self.failUnlessEqual(NewStyleCopy2.allocated, 1)
-        self.failUnlessEqual(NewStyleCopy2.initialized, 1)
+        self.assertEqual(NewStyleCopy2.allocated, 1)
+        self.assertEqual(NewStyleCopy2.initialized, 1)
         d = ref.callRemote("echo", orig)
         # sending the object creates a second one on the far side
         d.addCallback(self._testAlloc_2, orig)
         return d
     def _testAlloc_2(self, res, orig):
         # receiving the response creates a third one on the way back
-        self.failUnless(isinstance(res, NewStyleCopy2))
-        self.failUnlessEqual(res.value, 2)
-        self.failUnlessEqual(NewStyleCopy2.allocated, 3)
-        self.failUnlessEqual(NewStyleCopy2.initialized, 1)
-        self.failIf(res is orig) # no cheating :)
+        self.assertTrue(isinstance(res, NewStyleCopy2))
+        self.assertEqual(res.value, 2)
+        self.assertEqual(NewStyleCopy2.allocated, 3)
+        self.assertEqual(NewStyleCopy2.initialized, 1)
+        self.assertFalse(res is orig) # no cheating :)
 
 
 class BrokerTestCase(unittest.TestCase):
@@ -462,7 +462,7 @@ class BrokerTestCase(unittest.TestCase):
         assert x.caught is z, "X should have caught Z"
 
         # make sure references to remote methods are equals
-        self.assertEquals(y.remoteMethod('throw'), y.remoteMethod('throw'))
+        self.assertEqual(y.remoteMethod('throw'), y.remoteMethod('throw'))
 
     def testResult(self):
         c, s, pump = connectedServerAndClient()
@@ -491,7 +491,7 @@ class BrokerTestCase(unittest.TestCase):
         foo = NestedRemote()
         s.setNameForLocal("foo", foo)
         x = c.remoteForName("foo")
-        for igno in xrange(pb.MAX_BROKER_REFS + 10):
+        for igno in range(pb.MAX_BROKER_REFS + 10):
             if s.transport.closed or c.transport.closed:
                 break
             x.callRemote("getSimple").addCallbacks(l.append, e.append)
@@ -561,7 +561,7 @@ class BrokerTestCase(unittest.TestCase):
         # delving into internal structures here, because GC is sort of
         # inherently internal.
         rluid = self.nestedRemote.luid
-        assert s.localObjects.has_key(rluid), "Should have key."
+        assert rluid in s.localObjects, "Should have key."
         del self.nestedRemote
         # nudge the gc
         if sys.hexversion >= 0x2000000 and os.name != "java":
@@ -571,7 +571,7 @@ class BrokerTestCase(unittest.TestCase):
         pump.pump()
         pump.pump()
         pump.pump()
-        assert not s.localObjects.has_key(rluid), "Should NOT have key."
+        assert rluid not in s.localObjects, "Should NOT have key."
 
     def testCache(self):
         c, s, pump = connectedServerAndClient()
@@ -596,7 +596,7 @@ class BrokerTestCase(unittest.TestCase):
         assert complex[0].checkFoo4(), "method was not called."
         assert len(coll) == 2
         cp = coll[0][0]
-        assert cp.checkMethod().im_self is cp, "potential refcounting issue"
+        assert cp.checkMethod().__self__ is cp, "potential refcounting issue"
         assert cp.checkSelf() is cp, "other potential refcounting issue"
         col2 = []
         o2.callRemote('putCache',cp).addCallback(col2.append)
@@ -604,12 +604,12 @@ class BrokerTestCase(unittest.TestCase):
         # The objects were the same (testing lcache identity)
         assert col2[0]
         # test equality of references to methods
-        self.assertEquals(o2.remoteMethod("getCache"), o2.remoteMethod("getCache"))
+        self.assertEqual(o2.remoteMethod("getCache"), o2.remoteMethod("getCache"))
 
         # now, refcounting (similiar to testRefCount)
         luid = cp.luid
         baroqueLuid = complex[0].luid
-        assert s.remotelyCachedObjects.has_key(luid), "remote cache doesn't have it"
+        assert luid in s.remotelyCachedObjects, "remote cache doesn't have it"
         del coll
         del cp
         pump.flush()
@@ -625,14 +625,14 @@ class BrokerTestCase(unittest.TestCase):
         # try to nudge the GC even if we can't really
         pump.flush()
         # The GC is done with it.
-        assert not s.remotelyCachedObjects.has_key(luid), "Server still had it after GC"
-        assert not c.locallyCachedObjects.has_key(luid), "Client still had it after GC"
-        assert not s.remotelyCachedObjects.has_key(baroqueLuid), "Server still had complex after GC"
-        assert not c.locallyCachedObjects.has_key(baroqueLuid), "Client still had complex after GC"
+        assert luid not in s.remotelyCachedObjects, "Server still had it after GC"
+        assert luid not in c.locallyCachedObjects, "Client still had it after GC"
+        assert baroqueLuid not in s.remotelyCachedObjects, "Server still had complex after GC"
+        assert baroqueLuid not in c.locallyCachedObjects, "Client still had complex after GC"
         assert vcc.observer is None, "observer was not removed"
 
     def whatTheHell(self, obj):
-        print '!?!?!?!?', repr(obj)
+        print('!?!?!?!?', repr(obj))
 
     def testViewPoint(self):
         c, s, pump = connectedServerAndClient()
@@ -670,17 +670,17 @@ class BrokerTestCase(unittest.TestCase):
         bar.callRemote('getPub').addCallbacks(accum.append, self.thunkErrorBad)
         pump.flush()
         obj = accum.pop()
-        self.assertEquals(obj.activateCalled, 1)
-        self.assertEquals(obj.isActivated, 1)
-        self.assertEquals(obj.yayIGotPublished, 1)
-        self.assertEquals(obj._wasCleanWhenLoaded, 0) # timestamp's dirty, we don't have a cache file
+        self.assertEqual(obj.activateCalled, 1)
+        self.assertEqual(obj.isActivated, 1)
+        self.assertEqual(obj.yayIGotPublished, 1)
+        self.assertEqual(obj._wasCleanWhenLoaded, 0) # timestamp's dirty, we don't have a cache file
         c, s, pump = connectedServerAndClient()
         s.setNameForLocal("foo", foo)
         bar = c.remoteForName("foo")
         bar.callRemote('getPub').addCallbacks(accum.append, self.thunkErrorBad)
         pump.flush()
         obj = accum.pop()
-        self.assertEquals(obj._wasCleanWhenLoaded, 1) # timestamp's clean, our cache file is up-to-date
+        self.assertEqual(obj._wasCleanWhenLoaded, 1) # timestamp's clean, our cache file is up-to-date
 
     def gotCopy(self, val):
         self.thunkResult = val.id
@@ -806,7 +806,7 @@ class DisconnectionTestCase(unittest.TestCase):
     """Test disconnection callbacks."""
     
     def error(self, *args):
-        raise RuntimeError, "I shouldn't have been called: %s" % args
+        raise RuntimeError("I shouldn't have been called: %s" % args)
     
     def gotDisconnected(self):
         """Called on broker disconnect."""
@@ -814,7 +814,7 @@ class DisconnectionTestCase(unittest.TestCase):
     
     def objectDisconnected(self, o):
         """Called on RemoteReference disconnect."""
-        self.assertEquals(o, self.remoteObject)
+        self.assertEqual(o, self.remoteObject)
         self.objectCallback = 1
 
     def testBadSerialization(self):
@@ -825,7 +825,7 @@ class DisconnectionTestCase(unittest.TestCase):
         l = []
         g.callRemote("setBadCopy", BadCopyable()).addErrback(l.append)
         pump.flush()
-        self.assertEquals(len(l), 1)
+        self.assertEqual(len(l), 1)
 
     def testDisconnection(self):
         c, s, pump = connectedServerAndClient()
@@ -841,16 +841,16 @@ class DisconnectionTestCase(unittest.TestCase):
         # register and then unregister disconnect callbacks
         # making sure they get unregistered
         c.notifyOnDisconnect(self.error)
-        self.assert_(self.error in c.disconnects)
+        self.assertTrue(self.error in c.disconnects)
         c.dontNotifyOnDisconnect(self.error)
-        self.assert_(not (self.error in c.disconnects))
+        self.assertTrue(not (self.error in c.disconnects))
         
         r.notifyOnDisconnect(self.error)
-        self.assert_(r._disconnected in c.disconnects)
-        self.assert_(self.error in r.disconnectCallbacks)
+        self.assertTrue(r._disconnected in c.disconnects)
+        self.assertTrue(self.error in r.disconnectCallbacks)
         r.dontNotifyOnDisconnect(self.error)
-        self.assert_(not (r._disconnected in c.disconnects))
-        self.assert_(not (self.error in r.disconnectCallbacks))
+        self.assertTrue(not (r._disconnected in c.disconnects))
+        self.assertTrue(not (self.error in r.disconnectCallbacks))
         
         # register disconnect callbacks
         c.notifyOnDisconnect(self.gotDisconnected)
@@ -859,8 +859,8 @@ class DisconnectionTestCase(unittest.TestCase):
         
         # disconnect
         c.connectionLost(failure.Failure(main.CONNECTION_DONE))
-        self.assert_(self.gotCallback)
-        self.assert_(self.objectCallback)
+        self.assertTrue(self.gotCallback)
+        self.assertTrue(self.objectCallback)
 
 class FreakOut(Exception):
     pass
@@ -891,13 +891,13 @@ class SpreadUtilTestCase(unittest.TestCase):
 
     def testSync(self):
         o = LocalRemoteTest()
-        self.assertEquals(o.callRemote("add1", 2), 3)
+        self.assertEqual(o.callRemote("add1", 2), 3)
 
     def testAsync(self):
         o = LocalRemoteTest()
         d = o.callRemote("add", 2, y=4)
-        self.assert_(isinstance(d, defer.Deferred))
-        d.addCallback(self.assertEquals, 6)
+        self.assertTrue(isinstance(d, defer.Deferred))
+        d.addCallback(self.assertEqual, 6)
         return d
 
     def testAsyncFail(self):
@@ -905,13 +905,13 @@ class SpreadUtilTestCase(unittest.TestCase):
         o = LocalRemoteTest()
         d = o.callRemote("fail")
         d.addCallbacks(lambda res: self.fail("supposed to fail"),
-                       lambda f: self.assert_(isinstance(f, failure.Failure)))
+                       lambda f: self.assertTrue(isinstance(f, failure.Failure)))
         return d
 
     def testRemoteMethod(self):
         o = LocalRemoteTest()
         m = o.remoteMethod("add1")
-        self.assertEquals(m(3), 4)
+        self.assertEqual(m(3), 4)
 
 
 class ReconnectOnce(pb.PBClientFactory):
@@ -967,11 +967,11 @@ class ConnectionTestCase(unittest.TestCase):
         d.addCallback(self._checkRootObject_2)
         return d
     def _checkRootObject_2(self, challenge):
-        self.assertEquals(len(challenge), 2)
-        self.assert_(isinstance(challenge[1], pb.RemoteReference))
+        self.assertEqual(len(challenge), 2)
+        self.assertTrue(isinstance(challenge[1], pb.RemoteReference))
 
     def _checkIsRemoteReference(self, r):
-        self.assert_(isinstance(r, pb.RemoteReference))
+        self.assertTrue(isinstance(r, pb.RemoteReference))
         return r
 
     # tests for *really* deprecated APIs:
@@ -1205,12 +1205,12 @@ class NewCredTestCase(unittest.TestCase):
         d.addCallback(self._testLoginLogout_1, factory)
         return d
     def _testLoginLogout_1(self, p, factory):
-        self.assertEquals(self.realm.p.loggedIn, 1)
-        self.assert_(isinstance(p, pb.RemoteReference))
+        self.assertEqual(self.realm.p.loggedIn, 1)
+        self.assertTrue(isinstance(p, pb.RemoteReference))
         factory.disconnect()
         d = defer.Deferred()
         reactor.callLater(0.1, d.callback, None)
-        d.addCallback(lambda res: self.assertEquals(self.realm.p.loggedOut, 1))
+        d.addCallback(lambda res: self.assertEqual(self.realm.p.loggedOut, 1))
         return d
 
 
@@ -1240,7 +1240,7 @@ class NewCredTestCase(unittest.TestCase):
         reactor.connectTCP("127.0.0.1", self.portno, factory)
         d.addCallback(lambda p: p.callRemote("getViewPoint"))
         d.addCallback(lambda v: v.callRemote("check"))
-        d.addCallback(self.assertEquals, True)
+        d.addCallback(self.assertEqual, True)
         d.addCallback(lambda res: factory.disconnect())
         return d
 
@@ -1278,7 +1278,7 @@ class NSPTestCase(unittest.TestCase):
                           "BRAINS!")
         reactor.connectTCP('127.0.0.1', self.portno, factory)
         d.addCallback(lambda p: p.callRemote('ANYTHING', 'here', bar='baz'))
-        d.addCallback(self.assertEquals, 
+        d.addCallback(self.assertEqual, 
                       ('ANYTHING', ('here',), {'bar': 'baz'}))
         d.addCallback(lambda res: factory.disconnect())
         return d

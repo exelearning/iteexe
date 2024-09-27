@@ -24,7 +24,7 @@ import random
 
 def stringToLong(s):
     """ Convert digest to long """
-    result = 0L
+    result = 0
     for byte in s:
         result = (256 * result) + ord(byte)
     return result
@@ -32,8 +32,8 @@ def stringToLong(s):
 def stringToDWords(s):
     """ Convert digest to a list of four 32-bits words """
     result = []
-    for a in xrange(len(s) / 4):
-        tmp = 0L
+    for a in range(len(s) / 4):
+        tmp = 0
         for byte in s[-4:]:
             tmp = (256 * tmp) + ord(byte)
         result.append(tmp)
@@ -43,9 +43,9 @@ def stringToDWords(s):
 def longToString(l):
     """ Convert long to digest """
     result = ""
-    while l > 0L:
+    while l > 0:
         result = chr(l % 256) + result
-        l = l / 256L
+        l = l / 256
     return result
         
 import md5, sha
@@ -95,10 +95,10 @@ class OTPAuthenticator:
         p0 = regs[0] ^ regs[2]
         p1 = regs[1] ^ regs[3]
         S = ''
-        for a in xrange(4):
+        for a in range(4):
             S = chr(p0 & 0xFF) + S
             p0 = p0 >> 8
-        for a in xrange(4):
+        for a in range(4):
             S = chr(p1 & 0xFF) + S
             p1 = p1 >> 8
         return S
@@ -110,10 +110,10 @@ class OTPAuthenticator:
         p1 = regs[1] ^ regs[3]
         p0 = regs[0] ^ regs[4]
         S = ''
-        for a in xrange(4):
+        for a in range(4):
             S = chr(p0 & 0xFF) + S
             p0 = p0 >> 8
-        for a in xrange(4):
+        for a in range(4):
             S = chr(p1 & 0xFF) + S
             p1 = p1 >> 8
         return S
@@ -128,14 +128,14 @@ class OTPAuthenticator:
         Run through makeReadable to get a 6 word pass-phrase"""
         seed = string.lower(seed)
         otp = self.hashUpdate(seed + passwd)
-        for a in xrange(sequence):
+        for a in range(sequence):
             otp = self.hashUpdate(otp)
         return otp
 
     def calculateParity(self, otp):
         "Calculate the parity from a 64bit OTP"
         parity = 0
-        for i in xrange(0, 64, 2):
+        for i in range(0, 64, 2):
             parity = parity + otp & 0x3
             otp = otp >> 2
         return parity        
@@ -145,7 +145,7 @@ class OTPAuthenticator:
         digest = stringToLong(otp)
         list = []
         parity = self.calculateParity(digest)
-        for i in xrange(4,-1, -1):
+        for i in range(4,-1, -1):
             list.append(dict[(digest >> (i * 11 + 9)) & 0x7FF])
         list.append(dict[(digest << 2) & 0x7FC | (parity & 0x03)])
         return string.join(list)
@@ -159,14 +159,14 @@ class OTPAuthenticator:
         I will raise Unauthorized if the parity is wrong
         TODO: Add support for hex (MUST) and the '2nd scheme'(SHOULD)"""
         words = string.split(phrase)
-        for i in xrange(len(words)):
+        for i in range(len(words)):
             words[i] = string.upper(words[i])
-        b = 0L
-        for i in xrange(0,5):
-            b = b | ((long(dict.index(words[i])) << ((4-i)*11L+9L)))
+        b = 0
+        for i in range(0,5):
+            b = b | ((int(dict.index(words[i])) << ((4-i)*11+9)))
         tmp = dict.index(words[5])
         b = b | (tmp & 0x7FC ) >> 2
-        if (tmp & 3) <> self.calculateParity(b):
+        if (tmp & 3) != self.calculateParity(b):
             raise Unauthorized("Parity error")
         digest = longToString(b)
         return digest
@@ -215,7 +215,7 @@ class OTP(OTPAuthenticator):
                 return "ok"
             else:
                 raise Unauthorized("Failed")
-        except Unauthorized, msg:
+        except Unauthorized as msg:
             raise Unauthorized(msg)
 
 #

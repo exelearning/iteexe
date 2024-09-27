@@ -10,7 +10,7 @@
 import string
 import os
 import sys
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # Twisted Imports
 from twisted.web import http
@@ -19,12 +19,12 @@ from twisted.spread import pb
 from twisted.python import log, filepath
 
 # Sibling Imports
-import server
-import error
-import html
-import resource
-import static
-from server import NOT_DONE_YET
+from . import server
+from . import error
+from . import html
+from . import resource
+from . import static
+from .server import NOT_DONE_YET
 
 class CGIDirectory(resource.Resource, filepath.FilePath):
     def __init__(self, pathname):
@@ -92,20 +92,20 @@ class CGIScript(resource.Resource):
             if '=' in qs:
                 qargs = []
             else:
-                qargs = [urllib.unquote(x) for x in qs.split('+')]
+                qargs = [urllib.parse.unquote(x) for x in qs.split('+')]
         else:
             env['QUERY_STRING'] = ''
             qargs = []
 
         # Propogate HTTP headers
-        for title, header in request.getAllHeaders().items():
+        for title, header in list(request.getAllHeaders().items()):
             envname = string.upper(string.replace(title, '-', '_'))
             if title not in ('content-type', 'content-length'):
                 envname = "HTTP_" + envname
             env[envname] = header
         # Propogate our environment
-        for key, value in os.environ.items():
-            if not env.has_key(key):
+        for key, value in list(os.environ.items()):
+            if key not in env:
                 env[key] = value
         # And they're off!
         self.runProcess(env, request, qargs)

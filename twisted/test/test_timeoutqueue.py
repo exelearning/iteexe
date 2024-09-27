@@ -32,7 +32,7 @@ class TimeoutQueueTest(unittest.TestCase):
         except timeoutqueue.TimedOut:
             pass
         else:
-            raise AssertionError, "didn't time out"
+            raise AssertionError("didn't time out")
 
     def testGet(self):
         q = self.q
@@ -43,7 +43,7 @@ class TimeoutQueueTest(unittest.TestCase):
 
         result = q.get(0)
         if result != 1:
-            raise AssertionError, "didn't get item we put in"
+            raise AssertionError("didn't get item we put in")
 
     if interfaces.IReactorThreads(reactor, None) is None:
         testGet.skip = "No thread support, no way to test putting during a blocked get"

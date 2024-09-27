@@ -30,7 +30,7 @@ if os.name == 'posix':
 # Try to work even with no python path
 try:
     from exe.application import Application
-except ImportError, error:
+except ImportError as error:
     if str(error) == "No module named exe.application":
         exePath = os.path.abspath(sys.argv[0])
         exeDir = os.path.dirname(exePath)
@@ -62,13 +62,13 @@ if __name__ == "__main__":
 
     try:
         # Try to get templates' strings
-        execfile(application.config.templatesDir / 'strings.py')
+        exec(compile(open(application.config.templatesDir / 'strings.py', "rb").read(), application.config.templatesDir / 'strings.py', 'exec'))
 
-        print(u'Re-adding HTML to template translations')
+        print('Re-adding HTML to template translations')
 
         # Load all locale catalogs
         locale_catalogs = {}
-        for name, locale in application.config.locales.iteritems():
+        for name, locale in application.config.locales.items():
             current_locale = {}
             current_locale['locale'] = locale
 
@@ -85,12 +85,12 @@ if __name__ == "__main__":
                 locale_catalogs[os.path.basename(sub_dir)]['path'] = sub_dir / 'LC_MESSAGES' / 'exe.po'
 
         # Go through all the templates, nodes, idevices and fields
-        for path, template in templates.iteritems():
+        for path, template in templates.items():
             for node in template['nodes']:
                 for idevice in node['idevices']:
                     for field in idevice['fields']:
                         # For each locale
-                        for name, locale in locale_catalogs.iteritems():
+                        for name, locale in locale_catalogs.items():
                             # If there is no catalog, just go to the next locale
                             if 'catalog' not in locale:
                                 continue
@@ -106,7 +106,7 @@ if __name__ == "__main__":
                                 locale['catalog'].add(prop['raw_value'], translated_string)
 
         # Write every catalog with the new values
-        for name, locale in locale_catalogs.iteritems():
+        for name, locale in locale_catalogs.items():
             # Again, if there is not catalog, simply go to the next one
             if 'catalog' not in locale:
                 continue
@@ -122,4 +122,4 @@ if __name__ == "__main__":
 
     # If the file doesn't exist just do nothing
     except IOError as e:
-        print(u'Template strings file does not exist, no action is necessary.')
+        print('Template strings file does not exist, no action is necessary.')

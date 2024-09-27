@@ -34,7 +34,7 @@ from exe.engine.version            import release
 from exe.export.pages              import Page, uniquifyNames
 from exe                             import globals as G
 from bs4                 import BeautifulSoup
-from htmlentitydefs                import name2codepoint
+from html.entities                import name2codepoint
 
 log = logging.getLogger(__name__)
 
@@ -47,7 +47,7 @@ entitymap.pop('quot')
 
 def htmlentitydecode(s):
     return re.sub('&(%s);' % '|'.join(entitymap),
-                  lambda m: unichr(entitymap[m.group(1)]), s)
+                  lambda m: chr(entitymap[m.group(1)]), s)
 
 
 # ===========================================================================
@@ -95,76 +95,76 @@ class PublicationEpub3(object):
     def createManifest(self):
         import mimetypes
 
-        xmlStr = u"<manifest>\n"
+        xmlStr = "<manifest>\n"
 
-        xmlStr += u'<item id="nav" href="nav.xhtml" properties="nav" media-type="application/xhtml+xml" />\n'
+        xmlStr += '<item id="nav" href="nav.xhtml" properties="nav" media-type="application/xhtml+xml" />\n'
 
         for epubFile in self.outputDir.walk():
-            if epubFile.basename() == u'package.opf':
+            if epubFile.basename() == 'package.opf':
                 continue
-            if epubFile.basename() == u'nav.xhtml':
+            if epubFile.basename() == 'nav.xhtml':
                 continue
 
             ext = epubFile.ext
-            name = epubFile.basename().translate({ord(u'.'): u'_', ord(u'('): u'', ord(u')'): u''})
-            if name[0] in [unicode(i) for i in range(0, 10)]:
-                name = u'_' + name
+            name = epubFile.basename().translate({ord('.'): '_', ord('('): '', ord(')'): ''})
+            if name[0] in [str(i) for i in range(0, 10)]:
+                name = '_' + name
 
             mimetype, _ = mimetypes.guess_type(epubFile.abspath())
             if not mimetype:
                 if ext and ext == 'webm':
-                    mimetype = u'video/webm'
+                    mimetype = 'video/webm'
                 else:
-                    mimetype = u'application/octet-stream'
+                    mimetype = 'application/octet-stream'
 
             properties = ''
 
             if ext == '.xhtml':
                 if epubFile.namebase != 'cover':
-                    properties = u'properties="scripted"'
+                    properties = 'properties="scripted"'
                 name = epubFile.namebase
 
             if epubFile.basename() == self.cover:
-                properties = u'properties="cover-image"'
-            xmlStr += u'<item id="%s" href="%s" media-type="%s" %s/>\n' % (name,
+                properties = 'properties="cover-image"'
+            xmlStr += '<item id="%s" href="%s" media-type="%s" %s/>\n' % (name,
                                                                        self.outputDir.relpathto(epubFile),
                                                                        mimetype,
                                                                        properties)
 
-        xmlStr += u"</manifest>\n"
+        xmlStr += "</manifest>\n"
 
         return xmlStr
 
     def createMetadata(self):
         lrm = self.package.dublinCore.__dict__.copy()
-        xml = u'<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">\n'
-        for key, value in lrm.items():
+        xml = '<metadata xmlns:dc="http://purl.org/dc/elements/1.1/">\n'
+        for key, value in list(lrm.items()):
             pub_id = ''
             if key == 'identifier':
                 pub_id = ' id="pub-id"'
                 if not value:
                     self.package.dublinCore.identifier = value = str(uuid.uuid4())
             if value:
-                xml += u'<dc:%s%s>%s</dc:%s>\n' % (key, pub_id, escape(value), key)
-        xml += u'<meta property="dcterms:modified">%s</meta>' % datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
-        xml += u'</metadata>\n'
+                xml += '<dc:%s%s>%s</dc:%s>\n' % (key, pub_id, escape(value), key)
+        xml += '<meta property="dcterms:modified">%s</meta>' % datetime.datetime.now().strftime('%Y-%m-%dT%H:%M:%SZ')
+        xml += '</metadata>\n'
         return xml
 
     def createSpine(self):
         """
         Returning xml string for items and resources
         """
-        xmlStr = u'<spine>\n'
-        xmlStr += u'<itemref idref="cover"/>\n'
+        xmlStr = '<spine>\n'
+        xmlStr += '<itemref idref="cover"/>\n'
         for page in self.pages:
             if page.name == 'cover':
                 continue
             xmlStr += self.genItemResStr(page)
-        xmlStr += u'</spine>\n'
+        xmlStr += '</spine>\n'
         return xmlStr
 
     def genItemResStr(self, page):
-        return u'<itemref idref="%s"/>\n' % page.name.replace('.', '-')
+        return '<itemref idref="%s"/>\n' % page.name.replace('.', '-')
 
 # ===========================================================================
 
@@ -196,7 +196,7 @@ class ContainerEpub3(object):
         returning XLM string for META-INF/container.xml file
         """
 
-        xmlStr = u"""<?xml version="1.0"?>
+        xmlStr = """<?xml version="1.0"?>
             <container version="1.0" xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
                 <rootfiles>
                     <rootfile full-path="EPUB/package.opf"
@@ -218,7 +218,7 @@ class NavEpub3(object):
         out.close()
 
     def createXML(self):
-        xmlStr = u"""<?xml version="1.0" encoding="UTF-8"?>
+        xmlStr = """<?xml version="1.0" encoding="UTF-8"?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"
     xmlns:epub="http://www.idpf.org/2007/ops">
     <head>
@@ -230,20 +230,20 @@ class NavEpub3(object):
         currentDepth = 1
         for page in self.pages[1:]:
             if page.depth > currentDepth:
-                xmlStr += u'<ol>\n'
+                xmlStr += '<ol>\n'
                 currentDepth = page.depth
             else:
-                xmlStr += u'</li>\n'
+                xmlStr += '</li>\n'
             while currentDepth > page.depth:
-                xmlStr += u'</ol>\n</li>\n'
+                xmlStr += '</ol>\n</li>\n'
                 currentDepth -= 1
-            xmlStr += u"<li><a href=\"%s\">%s</a>\n" % (page.name + ".xhtml", escape(page.node.title))
+            xmlStr += "<li><a href=\"%s\">%s</a>\n" % (page.name + ".xhtml", escape(page.node.title))
 
         while currentDepth > 1:
-            xmlStr += u'</li>\n</ol>\n'
+            xmlStr += '</li>\n</ol>\n'
             currentDepth -= 1
 
-        xmlStr += u"""      </nav>
+        xmlStr += """      </nav>
     </body>
 </html>"""
 
@@ -288,9 +288,9 @@ class Epub3Page(Page):
         lenguaje = G.application.config.locale
         if self.node.package.lang != "":
             lenguaje = self.node.package.lang
-        html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">" + lb
-        html += u"<head>" + lb
-        html += u"<title>"
+        html += "<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">" + lb
+        html += "<head>" + lb
+        html += "<title>"
         if self.node.id == '0':
             if self.node.package.title != '':
                 html += escape(self.node.package.title)
@@ -301,8 +301,8 @@ class Epub3Page(Page):
                 html += escape(self.node.titleLong) + " | " + escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>" + lb
-        html += u'<meta charset="utf-8" />' + lb
+        html += " </title>" + lb
+        html += '<meta charset="utf-8" />' + lb
         if dT != "HTML5" and self.node.package.lang != "":
             html += '<meta http-equiv="content-language" content="' + lenguaje + '" />' + lb
         if self.node.package.author != "":
@@ -312,66 +312,66 @@ class Epub3Page(Page):
         if self.node.id == '0':
             if self.node.package.description != "":
                 html += '<meta name="description" content="' + escape(self.node.package.description, True) + '" />' + lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />" + lb
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />" + lb
         if common.hasWikipediaIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />" + lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />" + lb
         if common.hasGalleryIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />" + lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />" + lb
         if common.hasFX(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />" + lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />" + lb
         if common.hasSH(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />" + lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />" + lb
         if common.hasGames(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />" + lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />" + lb
         if common.hasABCMusic(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />" + lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />" + lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />" + lb
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />" + lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->' + lb
+            html += '<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->' + lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
 
         # jQuery
         if style.hasValidConfig():
             if style.get_jquery() == True:
-                html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lb
+                html += '<script type="text/javascript" src="exe_jquery.js"></script>' + lb
             else:
-                html += u'<script type="text/javascript" src="' + style.get_jquery() + '"></script>' + lb
+                html += '<script type="text/javascript" src="' + style.get_jquery() + '"></script>' + lb
         else:
-            html += u'<script type="text/javascript" src="exe_jquery.js"></script>' + lb
+            html += '<script type="text/javascript" src="exe_jquery.js"></script>' + lb
 
         if common.hasGalleryIdevice(self.node):
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>' + lb
+            html += '<script type="text/javascript" src="exe_lightbox.js"></script>' + lb
         if common.hasFX(self.node):
-            html += u'<script type="text/javascript" src="exe_effects.js"></script>' + lb
+            html += '<script type="text/javascript" src="exe_effects.js"></script>' + lb
         if common.hasSH(self.node):
-            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>' + lb
-        html += u'<script type="text/javascript" src="common_i18n"></script>' + lb
+            html += '<script type="text/javascript" src="exe_highlighter.js"></script>' + lb
+        html += '<script type="text/javascript" src="common_i18n"></script>' + lb
         if common.hasGames(self.node):
-            html += u'<script type="text/javascript" src="exe_games.js"></script>' + lb
-        html += u'<script type="text/javascript" src="common.js"></script>' + lb
+            html += '<script type="text/javascript" src="exe_games.js"></script>' + lb
+        html += '<script type="text/javascript" src="common.js"></script>' + lb
         if common.hasABCMusic(self.node):
-            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>' + lb
-        html += u'<script type="text/javascript" src="common.js"></script>' + lb
+            html += '<script type="text/javascript" src="exe_abcmusic.js"></script>' + lb
+        html += '<script type="text/javascript" src="common.js"></script>' + lb
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>' + lb
+            html += '<script type="text/javascript" src="mojomagnify.js"></script>' + lb
         # Some styles might have their own JavaScript files (see their config.xml file)
         if style.hasValidConfig():
             html += style.get_extra_head()
         html += common.getExtraHeadContent(self.node.package)
-        html += u"</head>" + lb
+        html += "</head>" + lb
         extraCSS = ''
         if self.node.package.get_loadMathEngine():
             extraCSS = ' exe-auto-math'
-        html += u'<body class="exe-epub3'+extraCSS+'" id="exe-node-'+self.node.id+'">' + lb
-        html += u"<div id=\"outer\">" + lb
-        html += u"<" + sectionTag + " id=\"main\">" + lb
-        html += u"<" + headerTag + " id=\"nodeDecoration\">"
-        html += u"<div id=\"headerContent\">"
-        html += u'<h1 id=\"nodeTitle\">'
+        html += '<body class="exe-epub3'+extraCSS+'" id="exe-node-'+self.node.id+'">' + lb
+        html += "<div id=\"outer\">" + lb
+        html += "<" + sectionTag + " id=\"main\">" + lb
+        html += "<" + headerTag + " id=\"nodeDecoration\">"
+        html += "<div id=\"headerContent\">"
+        html += '<h1 id=\"nodeTitle\">'
         html += escape(self.node.titleLong)
-        html += u'</h1>'
-        html += u'</div>'
-        html += u"</" + headerTag + ">" + lb
+        html += '</h1>'
+        html += '</div>'
+        html += "</" + headerTag + ">" + lb
 
         self.node.exportType = 'epub'
 
@@ -382,9 +382,9 @@ class Epub3Page(Page):
                     _iconNameToClass = re.sub('[^A-Za-z0-9_-]+', '', idevice.icon) # Allowed CSS classNames only
                     if _iconNameToClass!="":        
                         e += ' em_iDevice_'+_iconNameToClass
-                if unicode(idevice.emphasis) == '0':
+                if str(idevice.emphasis) == '0':
                     e = ""
-                html += u'<' + articleTag + ' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
+                html += '<' + articleTag + ' class="iDevice_wrapper %s%s" id="id%s">%s' % (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -394,16 +394,16 @@ class Epub3Page(Page):
                 if idevice.title != "Forum Discussion":
                     html += htmlentitydecode(self.processInternalLinks(
                         block.renderView(self.node.package.style)))
-                html += u'</' + articleTag + '>' + lb  # iDevice div
+                html += '</' + articleTag + '>' + lb  # iDevice div
 
-        html += u"</" + sectionTag + ">" + lb  # /#main
+        html += "</" + sectionTag + ">" + lb  # /#main
         html += self.renderLicense()
-        html += unicode(BeautifulSoup(self.renderFooter()))
-        html += u"</div>" + lb  # /#outer
+        html += str(BeautifulSoup(self.renderFooter()))
+        html += "</div>" + lb  # /#outer
         html += common.renderExeLink(self.node.package)
         if style.hasValidConfig():
             html += style.get_extra_body()
-        html += u'</body></html>'
+        html += '</body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")
@@ -688,7 +688,7 @@ class Epub3SubExport(object):
         container.save("container.xml")
 
         # Zip it up!
-        self.filename.safeSave(self.doZip, _(u'EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
+        self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
         # Clean up the temporary dir
 
         outputDir.rmtree()
@@ -722,13 +722,13 @@ class Epub3SubExport(object):
         'node' is the node that we are making a page for
         'depth' is the number of ancestors that the page has +1 (ie. root is 1)
         """
-        pageName = node.titleShort.lower().replace(" ", u"_")
+        pageName = node.titleShort.lower().replace(" ", "_")
         pageName = re.sub(r"\W", "", pageName)
         if not pageName:
-            pageName = u"__"
+            pageName = "__"
 
-        if pageName[0] in [unicode(i) for i in range(0, 10)]:
-            pageName = u'_' + pageName
+        if pageName[0] in [str(i) for i in range(0, 10)]:
+            pageName = '_' + pageName
 
         page = Epub3Page(pageName, depth, node)
 

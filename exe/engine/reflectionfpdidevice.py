@@ -44,28 +44,28 @@ class ReflectionfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Think About It (with Feedback)"),
-                         x_(u"University of Auckland"), 
-                         x_(u"""Reflection is a teaching method often used to 
+                         x_("FPD - Think About It (with Feedback)"),
+                         x_("University of Auckland"), 
+                         x_("""Reflection is a teaching method often used to 
 connect theory to practice. Reflection tasks often provide learners with an 
 opportunity to observe and reflect on their observations before presenting 
 these as a piece of academic work. Journals, diaries, profiles and portfolios 
 are useful tools for collecting observation data. Rubrics and guides can be 
-effective feedback tools."""), u"", u"reflexionfpd")
+effective feedback tools."""), "", "reflexionfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_reflexionfpd"
-        self._activityInstruc = x_(u"""Enter a question for learners 
+        self._activityInstruc = x_("""Enter a question for learners 
 to reflect upon.""")
-        self._answerInstruc   = x_(u"""Describe how learners will assess how 
+        self._answerInstruc   = x_("""Describe how learners will assess how 
 they have done in the exercise. (Rubrics are useful devices for providing 
 reflective feedback.)""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 
+        self.activityTextArea = TextAreaField(x_('Reflective question:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
-        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
+        self.answerTextArea = TextAreaField(x_('Feedback:'), 
                                    self._answerInstruc, answer)
         self.answerTextArea.idevice = self
 
@@ -146,8 +146,8 @@ reflective feedback.)""")
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"reflexionfpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "reflexionfpd"
 
 
     def upgradeToVersion2(self):
@@ -155,7 +155,7 @@ reflective feedback.)""")
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_reflexionfpd"
 
@@ -197,10 +197,10 @@ reflective feedback.)""")
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Reflective question:'), 
+        self.activityTextArea = TextAreaField(x_('Reflective question:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
-        self.answerTextArea = TextAreaField(x_(u'Feedback:'), 
+        self.answerTextArea = TextAreaField(x_('Feedback:'), 
                                   self._answerInstruc, self.answer)
         self.answerTextArea.idevice = self
 
@@ -211,8 +211,8 @@ reflective feedback.)""")
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Reflexiona (con Retroalimentacion)":
-            self._title = u"FPD - Think About It (with Feedback)"
-        if self._title == u"Reflexiona (con Retroalimentacion)":
-            self._title = u"Think About It"
+        if self._title == "FPD - Reflexiona (con Retroalimentacion)":
+            self._title = "FPD - Think About It (with Feedback)"
+        if self._title == "Reflexiona (con Retroalimentacion)":
+            self._title = "Think About It"
 # ===========================================================================

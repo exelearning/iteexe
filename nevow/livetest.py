@@ -38,7 +38,7 @@ class Driver(object):
             "var targetForm = ", contentDocument[target], ";",
             "var postTarget = ", js.targetForm.action, ";",
             [(js.targetForm[key].value, ' = "', value, '";')
-            for (key, value) in parameter.items()],
+            for (key, value) in list(parameter.items())],
             "addLoadObserver(function () {",
             livepage.handler(
                 observePosting,
@@ -130,7 +130,7 @@ class Driver(object):
 
     def nextTest(self):
         try:
-            test = self.iterator.next()
+            test = next(self.iterator)
         except StopIteration:
             return
         assert self._handle is not None, "nextTest cannot be called before handle is set!"

@@ -22,7 +22,7 @@ class VirtualHostList(rend.Page):
         return self.stylesheet
  
     def data_hostlist(self, context, data):
-        return self.nvh.hosts.keys()
+        return list(self.nvh.hosts.keys())
 
     def render_hostlist(self, context, data):
         host=data
@@ -115,7 +115,7 @@ class NameVirtualHost(rend.Page):
                     found.
                 """
 
-                while not self.hosts.has_key(host) and len(host.split('.')) > 1:
+                while host not in self.hosts and len(host.split('.')) > 1:
                     host = '.'.join(host.split('.')[1:])
 
         return (self.hosts.get(host, self.default) or rend.NotFound[0])

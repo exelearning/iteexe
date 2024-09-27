@@ -11,9 +11,9 @@ from twisted.protocols import basic, wire, portforward
 from twisted.internet import reactor, protocol, defer
 
 import string, struct
-import StringIO
+import io
 
-class StringIOWithoutClosing(StringIO.StringIO):
+class StringIOWithoutClosing(io.StringIO):
     def close(self):
         pass
 
@@ -80,19 +80,19 @@ class WireTestCase(unittest.TestCase):
         a.dataReceived("how")
         a.dataReceived("are")
         a.dataReceived("you")
-        self.failUnlessEqual(t.getvalue(), "helloworldhowareyou")
+        self.assertEqual(t.getvalue(), "helloworldhowareyou")
 
     def testWho(self):
         t = StringIOWithoutClosing()
         a = wire.Who()
         a.makeConnection(protocol.FileWrapper(t))
-        self.failUnlessEqual(t.getvalue(), "root\r\n")
+        self.assertEqual(t.getvalue(), "root\r\n")
 
     def testQOTD(self):
         t = StringIOWithoutClosing()
         a = wire.QOTD()
         a.makeConnection(protocol.FileWrapper(t))
-        self.failUnlessEqual(t.getvalue(),
+        self.assertEqual(t.getvalue(),
                              "An apple a day keeps the doctor away.\r\n")
 
     def testDiscard(self):
@@ -104,7 +104,7 @@ class WireTestCase(unittest.TestCase):
         a.dataReceived("how")
         a.dataReceived("are")
         a.dataReceived("you")
-        self.failUnlessEqual(t.getvalue(), "")
+        self.assertEqual(t.getvalue(), "")
 
 class LineReceiverTestCase(unittest.TestCase):
 
@@ -138,7 +138,7 @@ a'''
             for i in range(len(self.buffer)/packet_size + 1):
                 s = self.buffer[i*packet_size:(i+1)*packet_size]
                 a.dataReceived(s)
-            self.failUnlessEqual(self.output, a.received)
+            self.assertEqual(self.output, a.received)
 
 
     pause_buf = 'twiddle1\ntwiddle2\npause\ntwiddle3\n'
@@ -154,9 +154,9 @@ a'''
             for i in range(len(self.pause_buf)/packet_size + 1):
                 s = self.pause_buf[i*packet_size:(i+1)*packet_size]
                 a.dataReceived(s)
-            self.failUnlessEqual(self.pause_output1, a.received)
+            self.assertEqual(self.pause_output1, a.received)
             reactor.iterate(0)
-            self.failUnlessEqual(self.pause_output2, a.received)
+            self.assertEqual(self.pause_output2, a.received)
 
     rawpause_buf = 'twiddle1\ntwiddle2\nlen 5\nrawpause\n12345twiddle3\n'
 
@@ -171,9 +171,9 @@ a'''
             for i in range(len(self.rawpause_buf)/packet_size + 1):
                 s = self.rawpause_buf[i*packet_size:(i+1)*packet_size]
                 a.dataReceived(s)
-            self.failUnlessEqual(self.rawpause_output1, a.received)
+            self.assertEqual(self.rawpause_output1, a.received)
             reactor.iterate(0)
-            self.failUnlessEqual(self.rawpause_output2, a.received)
+            self.assertEqual(self.rawpause_output2, a.received)
 
     stop_buf = 'twiddle1\ntwiddle2\nstop\nmore\nstuff\n'
 
@@ -186,7 +186,7 @@ a'''
             for i in range(len(self.stop_buf)/packet_size + 1):
                 s = self.stop_buf[i*packet_size:(i+1)*packet_size]
                 a.dataReceived(s)
-            self.failUnlessEqual(self.stop_output, a.received)
+            self.assertEqual(self.stop_output, a.received)
 
 
     def testLineReceiverAsProducer(self):
@@ -194,7 +194,7 @@ a'''
         t = StringIOWithoutClosing()
         a.makeConnection(protocol.FileWrapper(t))
         a.dataReceived('produce\nhello world\nunproduce\ngoodbye\n')
-        self.assertEquals(a.received, ['produce', 'hello world', 'unproduce', 'goodbye'])
+        self.assertEqual(a.received, ['produce', 'hello world', 'unproduce', 'goodbye'])
 
 
 class LineOnlyReceiverTestCase(unittest.TestCase):
@@ -211,14 +211,14 @@ class LineOnlyReceiverTestCase(unittest.TestCase):
         a.makeConnection(protocol.FileWrapper(t))
         for c in self.buffer:
             a.dataReceived(c)
-        self.failUnlessEqual(a.received, self.buffer.split('\n')[:-1])
+        self.assertEqual(a.received, self.buffer.split('\n')[:-1])
 
     def testLineTooLong(self):
         t = StringIOWithoutClosing()
         a = LineOnlyTester()
         a.makeConnection(protocol.FileWrapper(t))
         res = a.dataReceived('x'*200)
-        self.failIfEqual(res, None)
+        self.assertNotEqual(res, None)
             
                 
 class TestMixin:
@@ -256,7 +256,7 @@ class LPTestCaseMixin:
             r = self.getProtocol()
             for c in s:
                 r.dataReceived(c)
-            self.assertEquals(r.transport.closed, 1)
+            self.assertEqual(r.transport.closed, 1)
 
 
 class NetstringReceiverTestCase(unittest.TestCase, LPTestCaseMixin):
@@ -281,7 +281,7 @@ class NetstringReceiverTestCase(unittest.TestCase, LPTestCaseMixin):
                 s = out[i*packet_size:(i+1)*packet_size]
                 if s:
                     a.dataReceived(s)
-            self.assertEquals(a.received, self.strings)
+            self.assertEqual(a.received, self.strings)
 
 
 class TestInt32(TestMixin, basic.Int32StringReceiver):
@@ -301,14 +301,14 @@ class Int32TestCase(unittest.TestCase, LPTestCaseMixin):
             r.MAX_LENGTH = 99999999
             for c in s:
                 r.dataReceived(c)
-            self.assertEquals(r.received, [])
+            self.assertEqual(r.received, [])
 
     def testReceive(self):
         r = self.getProtocol()
         for s in self.strings:
             for c in struct.pack("!i",len(s))+s:
                 r.dataReceived(c)
-        self.assertEquals(r.received, self.strings)
+        self.assertEqual(r.received, self.strings)
 
 
 class OnlyProducerTransport(object):
@@ -346,45 +346,45 @@ class ProducerTestCase(unittest.TestCase):
         p.makeConnection(t)
 
         p.dataReceived('hello, ')
-        self.failIf(t.data)
-        self.failIf(t.paused)
-        self.failIf(p.paused)
+        self.assertFalse(t.data)
+        self.assertFalse(t.paused)
+        self.assertFalse(p.paused)
 
         p.dataReceived('world\r\n')
 
-        self.assertEquals(t.data, ['hello, world'])
-        self.failUnless(t.paused)
-        self.failUnless(p.paused)
+        self.assertEqual(t.data, ['hello, world'])
+        self.assertTrue(t.paused)
+        self.assertTrue(p.paused)
 
         p.resumeProducing()
 
-        self.failIf(t.paused)
-        self.failIf(p.paused)
+        self.assertFalse(t.paused)
+        self.assertFalse(p.paused)
 
         p.dataReceived('hello\r\nworld\r\n')
 
-        self.assertEquals(t.data, ['hello, world', 'hello'])
-        self.failUnless(t.paused)
-        self.failUnless(p.paused)
+        self.assertEqual(t.data, ['hello, world', 'hello'])
+        self.assertTrue(t.paused)
+        self.assertTrue(p.paused)
 
         p.resumeProducing()
         p.dataReceived('goodbye\r\n')
 
-        self.assertEquals(t.data, ['hello, world', 'hello', 'world'])
-        self.failUnless(t.paused)
-        self.failUnless(p.paused)
+        self.assertEqual(t.data, ['hello, world', 'hello', 'world'])
+        self.assertTrue(t.paused)
+        self.assertTrue(p.paused)
 
         p.resumeProducing()
 
-        self.assertEquals(t.data, ['hello, world', 'hello', 'world', 'goodbye'])
-        self.failUnless(t.paused)
-        self.failUnless(p.paused)
+        self.assertEqual(t.data, ['hello, world', 'hello', 'world', 'goodbye'])
+        self.assertTrue(t.paused)
+        self.assertTrue(p.paused)
 
         p.resumeProducing()
 
-        self.assertEquals(t.data, ['hello, world', 'hello', 'world', 'goodbye'])
-        self.failIf(t.paused)
-        self.failIf(p.paused)
+        self.assertEqual(t.data, ['hello, world', 'hello', 'world', 'goodbye'])
+        self.assertFalse(t.paused)
+        self.assertFalse(p.paused)
 
 
 class Portforwarding(unittest.TestCase):
@@ -416,7 +416,7 @@ class Portforwarding(unittest.TestCase):
             reactor.iterate(0.01)
             c += 1
 
-        self.assertEquals(''.join(received), 'x' * nBytes)
+        self.assertEqual(''.join(received), 'x' * nBytes)
         
         clientProtocol.transport.loseConnection()
         serverProtocol.transport.loseConnection()

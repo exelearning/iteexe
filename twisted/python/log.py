@@ -214,7 +214,7 @@ class LogPublisher:
         actualEventDict.update(kw)
         actualEventDict['message'] = message
         actualEventDict['time'] = time.time()
-        for i in xrange(len(self.observers) - 1, -1, -1):
+        for i in range(len(self.observers) - 1, -1, -1):
             try:
                 self.observers[i](actualEventDict)
             except KeyboardInterrupt:
@@ -272,9 +272,9 @@ class FileLogObserver:
     def emit(self, eventDict):
         edm = eventDict['message']
         if not edm:
-            if eventDict['isError'] and eventDict.has_key('failure'):
+            if eventDict['isError'] and 'failure' in eventDict:
                 text = eventDict['failure'].getTraceback()
-            elif eventDict.has_key('format'):
+            elif 'format' in eventDict:
                 text = self._safeFormat(eventDict['format'], eventDict)
             else:
                 # we don't know how to log this
@@ -402,7 +402,7 @@ class DefaultObserver:
 
     def _emit(self, eventDict):
         if eventDict["isError"]:
-            if eventDict.has_key('failure'):
+            if 'failure' in eventDict:
                 text = eventDict['failure'].getTraceback()
             else:
                 text = " ".join([str(m) for m in eventDict["message"]]) + "\n"
@@ -418,7 +418,7 @@ class DefaultObserver:
 
 # Some more sibling imports, at the bottom and unqualified to avoid
 # unresolvable circularity
-import threadable, failure
+from . import threadable, failure
 threadable.synchronize(LogPublisher)
 
 

@@ -23,19 +23,19 @@ class LatencyTestCase(unittest.TestCase):
             reactor.iterate(1.0)
 
     def printResult(self):
-        print
-        print
-        print "callFromThread latency:"
+        print()
+        print()
+        print("callFromThread latency:")
         sum = 0
         for t in self.from_times: sum += t
-        print "%f millisecond" % ((sum / self.numRounds) * 1000)
+        print("%f millisecond" % ((sum / self.numRounds) * 1000))
 
-        print "callInThread latency:"
+        print("callInThread latency:")
         sum = 0
         for t in self.in_times: sum += t
-        print "%f millisecond" % ((sum / self.numRounds) * 1000)
-        print
-        print
+        print("%f millisecond" % ((sum / self.numRounds) * 1000))
+        print()
+        print()
     
     def testCallFromThread(self):
         for i in range(self.numRounds):

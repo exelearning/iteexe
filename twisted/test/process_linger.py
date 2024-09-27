@@ -5,9 +5,9 @@ quitting. This serves to make sure SIGCHLD is actually being noticed.
 
 import os, sys, time
 
-print "here is some text"
+print("here is some text")
 time.sleep(1)
-print "goodbye"
+print("goodbye")
 os.close(1)
 os.close(2)
 

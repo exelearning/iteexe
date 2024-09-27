@@ -37,13 +37,13 @@ def unionlist(*args):
     for x in args: 
         l.extend(x)
     d = dict([(x, 1) for x in l])
-    return d.keys()
+    return list(d.keys())
     
     
 def zipfndict(*args, **kw):
     default = kw.get('default', nop)
     d = {}
-    for key in unionlist(*[fndict.keys() for fndict in args]):
+    for key in unionlist(*[list(fndict.keys()) for fndict in args]):
         d[key] = tuple([x.get(key, default) for x in args])
     return d
 
@@ -106,7 +106,7 @@ class XMLParser(Protocol):
         if self._prepend:
             data = self._prepend + data
         for encoding in self.encodings:
-            data = unicode(data, encoding)
+            data = str(data, encoding)
         return data
 
     def maybeBodyData(self):
@@ -122,7 +122,7 @@ class XMLParser(Protocol):
         # -radix
 
         if (self.tagName == 'script'
-            and not self.tagAttributes.has_key('src')):
+            and 'src' not in self.tagAttributes):
             # we do this ourselves rather than having begin_waitforendscript
             # becuase that can get called multiple times and we don't want
             # bodydata to get reset other than the first time.
@@ -564,19 +564,19 @@ class XMLParser(Protocol):
         '''Encountered an opening tag.
 
         Default behaviour is to print.'''
-        print 'begin', name, attributes
+        print('begin', name, attributes)
 
     def gotText(self, data):
         '''Encountered text
 
         Default behaviour is to print.'''
-        print 'text:', repr(data)
+        print('text:', repr(data))
 
     def gotEntityReference(self, entityRef):
         '''Encountered mnemonic entity reference
 
         Default behaviour is to print.'''
-        print 'entityRef: &%s;' % entityRef
+        print('entityRef: &%s;' % entityRef)
 
     def gotComment(self, comment):
         '''Encountered comment.
@@ -596,16 +596,16 @@ class XMLParser(Protocol):
         This is really grotty: it basically just gives you everything between
         '<!DOCTYPE' and '>' as an argument.
         """
-        print '!DOCTYPE', repr(doctype)
+        print('!DOCTYPE', repr(doctype))
 
     def gotTagEnd(self, name):
         '''Encountered closing tag
 
         Default behaviour is to print.'''
-        print 'end', name
+        print('end', name)
 
 if __name__ == '__main__':
-    from cStringIO import StringIO
+    from io import StringIO
     testDocument = '''
     
     <!DOCTYPE ignore all this shit, hah its malformed!!!!@$>

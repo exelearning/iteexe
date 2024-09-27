@@ -52,10 +52,10 @@ class MathBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -63,9 +63,9 @@ class MathBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderPreview()
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -76,10 +76,10 @@ class MathBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 

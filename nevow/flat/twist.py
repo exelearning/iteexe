@@ -15,7 +15,7 @@ def deferflatten(stan, ctx, writer):
 
     def drive():
         try:
-            deferred, returner = iterable.next()
+            deferred, returner = next(iterable)
             def cb(result):
                 returner(result)
                 drive()

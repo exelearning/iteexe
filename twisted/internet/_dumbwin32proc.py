@@ -33,7 +33,7 @@ from twisted.internet import _pollingfile
 
 def debug(msg):
     import sys
-    print msg
+    print(msg)
     sys.stdout.flush()
 
 class _Reaper(_pollingfile._PollableResource):

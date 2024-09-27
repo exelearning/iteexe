@@ -32,7 +32,7 @@ if __name__ == '__main__':
              'lomesVocab': Path('exe') / 'webui' / 'schemas' / 'scorm2004' / 'vocab' / 'lomesvocab.xsd'}
     response = ''
     vocab = {}
-    for varname, f in files.items():
+    for varname, f in list(files.items()):
         document = parseString(f.bytes(), escapeAttributes=0)
         nodes = findNodesNamed(document, 'xs:simpletype')
         for node in nodes:

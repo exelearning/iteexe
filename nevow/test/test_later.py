@@ -42,29 +42,29 @@ class LaterRenderTest(RenderHelper):
 
     def test_deferredSupport(self):
         req = self.renderIt()
-        self.assertEquals(req.v, '<html>Hello ')
+        self.assertEqual(req.v, '<html>Hello ')
         self.d.callback("world")
-        self.assertEquals(req.v, '<html>Hello world')
+        self.assertEqual(req.v, '<html>Hello world')
         self.d2.callback(".")
-        self.assertEquals(req.v, '<html>Hello world.</html>')
+        self.assertEqual(req.v, '<html>Hello world.</html>')
 
 
     def test_deferredSupport2(self):
         req = self.renderIt()
-        self.assertEquals(req.v, '<html>Hello ')
+        self.assertEqual(req.v, '<html>Hello ')
         self.d2.callback(".")
-        self.assertEquals(req.v, '<html>Hello ')
+        self.assertEqual(req.v, '<html>Hello ')
         self.d.callback("world")
-        self.assertEquals(req.v, '<html>Hello world.</html>')
+        self.assertEqual(req.v, '<html>Hello world.</html>')
 
     def test_deferredSupport3(self):
         self.r.buffered = True
         req = self.renderIt()
-        self.assertEquals(req.v, '')
+        self.assertEqual(req.v, '')
         self.d.callback("world")
-        self.assertEquals(req.v, '')
+        self.assertEqual(req.v, '')
         self.d2.callback(".")
-        self.assertEquals(req.v, '<html>Hello world.</html>')
+        self.assertEqual(req.v, '<html>Hello world.</html>')
 
 
 class LaterDataTest(RenderHelper):
@@ -85,9 +85,9 @@ class LaterDataTest(RenderHelper):
 
     def test_deferredSupport(self):
         req = self.renderIt()
-        self.assertEquals(req.v, '')
+        self.assertEqual(req.v, '')
         self.d.callback("world")
-        self.assertEquals(req.v, '<html>Hello world and goodbye world')
+        self.assertEqual(req.v, '<html>Hello world and goodbye world')
         self.d2.callback(".")
-        self.assertEquals(req.v, '<html>Hello world and goodbye world.</html>')
+        self.assertEqual(req.v, '<html>Hello world and goodbye world.</html>')
 

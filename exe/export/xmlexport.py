@@ -178,7 +178,7 @@ class XMLExport(WebsiteExport):
             if numDevicesByPage[page.name] == 0:
                 continue
             
-            lineStr = u"<page href='%(link)s.xml' title='%(title)s'>\n" \
+            lineStr = "<page href='%(link)s.xml' title='%(title)s'>\n" \
                 % {"link" : page.name, "title" : XMLExport.encodeEntities(page.node.titleShort) }
             xmlDirectoryFile.write(lineStr.encode("UTF-8"))
             xmlDirectoryFile.write("\n")
@@ -188,7 +188,7 @@ class XMLExport(WebsiteExport):
                 if idevice.__class__.__name__ in nonDevices:
                     pass
                 else:
-                    ideviceLine = u"\t<idevice id='%(ideviceid)s' title='%(title)s'/>\n" % \
+                    ideviceLine = "\t<idevice id='%(ideviceid)s' title='%(title)s'/>\n" % \
                     { "ideviceid" : idevice.id, "title" : XMLExport.encodeEntities(idevice.get_title())}
                     xmlDirectoryFile.write(ideviceLine.encode("UTF-8"))
             

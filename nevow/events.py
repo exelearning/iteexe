@@ -21,7 +21,7 @@ class EventNotification:
         Returns a token which should be passed to unsubscribe when done.
         """
         if DEBUG:
-            print "SUBSCRIBE", self, identifier, subscriber
+            print("SUBSCRIBE", self, identifier, subscriber)
         self._subscribers.setdefault(identifier, []).append(subscriber)
         return identifier, subscriber
 
@@ -29,7 +29,7 @@ class EventNotification:
         """Unsubscribe the given token from events.
         """
         if DEBUG:
-            print "UNSUBSCRIBE", token
+            print("UNSUBSCRIBE", token)
         identifier, reference = token
         self._subscribers[identifier].remove(reference)
 
@@ -37,14 +37,14 @@ class EventNotification:
         """Notify the listeners on a given identifier that an event has occurred.
         """
         if DEBUG:
-            print "PUBLISH", self, identifier,
+            print("PUBLISH", self, identifier, end=' ')
         subscribers = self._subscribers.get(identifier, [])
         for sub in subscribers:
             sub(*args)
             if DEBUG:
-                print "NOTIFY SUBSCRIBER", sub
+                print("NOTIFY SUBSCRIBER", sub)
         if DEBUG:
-            print "done"
+            print("done")
 
     def nextId(self):
         self._currentId += 1

@@ -42,9 +42,9 @@ class MultiSelectIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"Multi-select"),
-                         x_(u"University of Auckland"),
-                         x_(u"""Although more often used in formal testing 
+                         x_("Multi-select"),
+                         x_("University of Auckland"),
+                         x_("""Although more often used in formal testing 
 situations MCQs can be used as a testing tool to stimulate thought and  
 discussion on topics students may feel a little reticent in responding to. 
 
@@ -57,7 +57,7 @@ When designing a MCQ test consider the following:
 <li> Avoid grammar language and question structures that might provide 
      clues</li>
 </ul>
- """), x_(u"""When building an MCQ consider the following: <ul>
+ """), x_("""When building an MCQ consider the following: <ul>
 <li> Use phrases that learners are familiar with and have 
 encountered in their study </li>
 <li> Keep responses concise </li>
@@ -68,7 +68,7 @@ encountered in their study </li>
 distractors </li>
 <li> Distractors should be incorrect but plausible </li>
 </ul>
-"""), u"question")
+"""), "question")
         self.emphasis   = Idevice.SomeEmphasis
         self.questions  = []
         self.addQuestion()
@@ -79,7 +79,7 @@ distractors </li>
         """
         Add a new question to this iDevice. 
         """
-        question = SelectQuestionField(self, x_(u'Question'))
+        question = SelectQuestionField(self, x_('Question'))
         question.addOption()
         self.questions.append(question)
 

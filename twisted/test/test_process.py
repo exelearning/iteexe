@@ -6,7 +6,7 @@
 """
 Test running processes.
 """
-from __future__ import nested_scopes, generators
+
 
 from twisted.trial import unittest
 from twisted.trial.util import spinUntil, spinWhile
@@ -21,9 +21,9 @@ import signal
 import shutil
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 # Twisted Imports
 from twisted.internet import reactor, protocol, error, interfaces, defer
@@ -61,7 +61,7 @@ class TestProcessProtocol(protocol.ProcessProtocol):
     def errConnectionLost(self):
         self.stages.append(3)
         if self.err != "1234":
-            print 'err != 1234: ' + repr(self.err)
+            print('err != 1234: ' + repr(self.err))
             raise RuntimeError()
         self.transport.write("abcd")
         self.stages.append(4)
@@ -194,7 +194,7 @@ class ProcessTestCase(SignalMixin, unittest.TestCase):
         p.transport.closeStdin()
 
         def processEnded(ign):
-            self.assertEquals(p.outF.getvalue(), "hello, worldabc123",
+            self.assertEqual(p.outF.getvalue(), "hello, worldabc123",
                               "Output follows:\n"
                               "%s\n"
                               "Error message from process_twisted follows:\n"
@@ -209,13 +209,13 @@ class ProcessTestCase(SignalMixin, unittest.TestCase):
         reactor.spawnProcess(p, exe, [exe, "-u", scriptPath], env=None)
 
         spinUntil(lambda :p.finished, 10)
-        self.failUnless(p.finished)
-        self.assertEquals(p.stages, [1, 2, 3, 4, 5])
+        self.assertTrue(p.finished)
+        self.assertEqual(p.stages, [1, 2, 3, 4, 5])
 
         # test status code
         f = p.reason
         f.trap(error.ProcessTerminated)
-        self.assertEquals(f.value.exitCode, 23)
+        self.assertEqual(f.value.exitCode, 23)
         # would .signal be available on non-posix?
         #self.assertEquals(f.value.signal, None)
 
@@ -230,12 +230,12 @@ class ProcessTestCase(SignalMixin, unittest.TestCase):
 
         def _check(results, protocols):
             for p in protocols:
-                self.failUnless(p.finished)
-                self.assertEquals(p.stages, [1, 2, 3, 4, 5], "[%d] stages = %s" % (id(p.transport), str(p.stages)))
+                self.assertTrue(p.finished)
+                self.assertEqual(p.stages, [1, 2, 3, 4, 5], "[%d] stages = %s" % (id(p.transport), str(p.stages)))
                 # test status code
                 f = p.reason
                 f.trap(error.ProcessTerminated)
-                self.assertEquals(f.value.exitCode, 23)
+                self.assertEqual(f.value.exitCode, 23)
 
         exe = sys.executable
         scriptPath = util.sibpath(__file__, "process_tester.py")
@@ -243,7 +243,7 @@ class ProcessTestCase(SignalMixin, unittest.TestCase):
         protocols = []
         deferreds = []
 
-        for i in xrange(50):
+        for i in range(50):
             p = TestManyProcessProtocol()
             protocols.append(p)
             reactor.spawnProcess(p, exe, args, env=None)
@@ -262,9 +262,9 @@ class ProcessTestCase(SignalMixin, unittest.TestCase):
         reactor.spawnProcess(p, exe, [exe, "-u", scriptPath], env=None)
 
         def asserts(ignored):
-            self.failIf(p.failure, p.failure)
-            self.failUnless(hasattr(p, 'buffer'))
-            self.assertEquals(len(''.join(p.buffer)), len(p.s * p.n))
+            self.assertFalse(p.failure, p.failure)
+            self.assertTrue(hasattr(p, 'buffer'))
+            self.assertEqual(len(''.join(p.buffer)), len(p.s * p.n))
 
         def takedownProcess(err):
             p.transport.closeStdin()
@@ -286,9 +286,9 @@ class ProcessTestCase(SignalMixin, unittest.TestCase):
                              path=None)
 
         def processEnded(ign):
-            self.assertEquals(p.errF.getvalue(), "")
+            self.assertEqual(p.errF.getvalue(), "")
             recvdArgs = p.outF.getvalue().splitlines()
-            self.assertEquals(recvdArgs, args)
+            self.assertEqual(recvdArgs, args)
         return d.addCallback(processEnded)
 
 
@@ -319,12 +319,12 @@ class TestTwoProcessesBase:
             self.processes[num] = p
 
     def close(self, num):
-        if self.verbose: print "closing stdin [%d]" % num
+        if self.verbose: print("closing stdin [%d]" % num)
         p = self.processes[num]
         pp = self.pp[num]
-        self.failIf(pp.finished, "Process finished too early")
+        self.assertFalse(pp.finished, "Process finished too early")
         p.loseConnection()
-        if self.verbose: print self.pp[0].finished, self.pp[1].finished
+        if self.verbose: print(self.pp[0].finished, self.pp[1].finished)
 
     def check(self):
         #print self.pp[0].finished, self.pp[1].finished
@@ -334,7 +334,7 @@ class TestTwoProcessesBase:
         return self.done
 
     def testClose(self):
-        if self.verbose: print "starting processes"
+        if self.verbose: print("starting processes")
         self.createProcesses()
         reactor.callLater(1, self.close, 0)
         reactor.callLater(2, self.close, 1)
@@ -352,33 +352,33 @@ class TestTwoProcessesPosix(TestTwoProcessesBase, SignalMixin, unittest.TestCase
                 try:
                     os.kill(process.pid, signal.SIGTERM)
                 except OSError:
-                    print "OSError"
+                    print("OSError")
         spinUntil(self.check, 5, msg="unable to shutdown child processes")
 
     def kill(self, num):
-        if self.verbose: print "kill [%d] with SIGTERM" % num
+        if self.verbose: print("kill [%d] with SIGTERM" % num)
         p = self.processes[num]
         pp = self.pp[num]
-        self.failIf(pp.finished, "Process finished too early")
+        self.assertFalse(pp.finished, "Process finished too early")
         os.kill(p.pid, signal.SIGTERM)
-        if self.verbose: print self.pp[0].finished, self.pp[1].finished
+        if self.verbose: print(self.pp[0].finished, self.pp[1].finished)
 
     def testKill(self):
-        if self.verbose: print "starting processes"
+        if self.verbose: print("starting processes")
         self.createProcesses(usePTY=0)
         reactor.callLater(1, self.kill, 0)
         reactor.callLater(2, self.kill, 1)
         spinUntil(self.check, 5)
 
     def testClosePty(self):
-        if self.verbose: print "starting processes"
+        if self.verbose: print("starting processes")
         self.createProcesses(usePTY=1)
         reactor.callLater(1, self.close, 0)
         reactor.callLater(2, self.close, 1)
         spinUntil(self.check, 5)
 
     def testKillPty(self):
-        if self.verbose: print "starting processes"
+        if self.verbose: print("starting processes")
         self.createProcesses(usePTY=1)
         reactor.callLater(1, self.kill, 0)
         reactor.callLater(2, self.kill, 1)
@@ -482,7 +482,7 @@ class FDTest(SignalMixin, unittest.TestCase):
                              childFDs={0:"w", 1:"r", 2:2,
                                        3:"w", 4:"r", 5:"w"})
         spinUntil(lambda :p.done, 5)
-        self.failIf(p.failed, p.failed)
+        self.assertFalse(p.failed, p.failed)
 
     def testLinger(self):
         # See what happens when all the pipes close before the process
@@ -497,7 +497,7 @@ class FDTest(SignalMixin, unittest.TestCase):
                              childFDs={1:"r", 2:2},
                              )
         def processEnded(ign):
-            self.failUnlessEqual(p.outF.getvalue(),
+            self.assertEqual(p.outF.getvalue(),
                                  "here is some text\ngoodbye\n")
         return d.addCallback(processEnded)
 
@@ -511,8 +511,8 @@ class Accumulator(protocol.ProcessProtocol):
 
     def connectionMade(self):
         # print "connection made"
-        self.outF = StringIO.StringIO()
-        self.errF = StringIO.StringIO()
+        self.outF = io.StringIO()
+        self.errF = io.StringIO()
 
     def outReceived(self, d):
         # print "data", repr(d)
@@ -552,8 +552,8 @@ class PosixProcessBase:
 
         spinUntil(lambda :p.finished)
         p.reason.trap(error.ProcessDone)
-        self.assertEquals(p.reason.value.exitCode, 0)
-        self.assertEquals(p.reason.value.signal, None)
+        self.assertEqual(p.reason.value.exitCode, 0)
+        self.assertEqual(p.reason.value.signal, None)
 
     def testAbnormalTermination(self):
         if os.path.exists('/bin/false'): cmd = '/bin/false'
@@ -566,8 +566,8 @@ class PosixProcessBase:
 
         spinUntil(lambda :p.finished)
         p.reason.trap(error.ProcessTerminated)
-        self.assertEquals(p.reason.value.exitCode, 1)
-        self.assertEquals(p.reason.value.signal, None)
+        self.assertEqual(p.reason.value.exitCode, 1)
+        self.assertEqual(p.reason.value.signal, None)
 
     def testSignal(self):
         exe = sys.executable
@@ -579,7 +579,7 @@ class PosixProcessBase:
                                  env=None,
                                  usePTY=self.usePTY)
             spinWhile(lambda :p.going)
-            self.failIf(p.failure, p.failure)
+            self.assertFalse(p.failure, p.failure)
 
 class PosixProcessTestCase(SignalMixin, unittest.TestCase, PosixProcessBase):
     # add three non-pty test cases
@@ -598,7 +598,7 @@ class PosixProcessTestCase(SignalMixin, unittest.TestCase, PosixProcessBase):
                              usePTY=self.usePTY)
 
         def processEnded(ign):
-            self.assertEquals(lsOut, p.errF.getvalue())
+            self.assertEqual(lsOut, p.errF.getvalue())
         return d.addCallback(processEnded)
 
     def testProcess(self):
@@ -617,7 +617,7 @@ class PosixProcessTestCase(SignalMixin, unittest.TestCase, PosixProcessBase):
             f = p.outF
             f.seek(0, 0)
             gf = gzip.GzipFile(fileobj=f)
-            self.assertEquals(gf.read(), s)
+            self.assertEqual(gf.read(), s)
         return d.addCallback(processEnded)
 
 
@@ -642,7 +642,7 @@ class PosixProcessTestCasePTY(SignalMixin, unittest.TestCase, PosixProcessBase):
         p.transport.write("hello world!\n")
 
         def processEnded(ign):
-            self.assertEquals(
+            self.assertEqual(
                 p.outF.getvalue(),
                 "hello world!\r\nhello world!\r\n",
                 "Error message from process_tty follows:\n\n%s\n\n" % p.outF.getvalue())
@@ -669,8 +669,8 @@ class Win32ProcessTestCase(SignalMixin, unittest.TestCase):
         p.transport.closeStdin()
 
         def processEnded(ign):
-            self.assertEquals(p.errF.getvalue(), "err\nerr\n")
-            self.assertEquals(p.outF.getvalue(), "out\nhello, world\nout\n")
+            self.assertEqual(p.errF.getvalue(), "err\nerr\n")
+            self.assertEqual(p.outF.getvalue(), "out\nhello, world\nout\n")
         return d.addCallback(processEnded)
 
 
@@ -698,19 +698,19 @@ class UtilTestCase(unittest.TestCase):
 
         f = file(j(foobaz, "executable"), "w")
         f.close()
-        os.chmod(j(foobaz, "executable"), 0700)
+        os.chmod(j(foobaz, "executable"), 0o700)
 
         f = file(j("foo", "executable"), "w")
         f.close()
-        os.chmod(j("foo", "executable"), 0700)
+        os.chmod(j("foo", "executable"), 0o700)
 
         f = file(j(bazfoo, "executable"), "w")
         f.close()
-        os.chmod(j(bazfoo, "executable"), 0700)
+        os.chmod(j(bazfoo, "executable"), 0o700)
 
         f = file(j(bazfoo, "executable.bin"), "w")
         f.close()
-        os.chmod(j(bazfoo, "executable.bin"), 0700)
+        os.chmod(j(bazfoo, "executable.bin"), 0o700)
 
         f = file(j(barfoo, "executable"), "w")
         f.close()
@@ -739,7 +739,7 @@ class UtilTestCase(unittest.TestCase):
     def testWhich(self):
         j = os.path.join
         paths = procutils.which("executable")
-        self.assertEquals(paths, [
+        self.assertEqual(paths, [
             j("foo", "baz", "executable"), j("baz", "foo", "executable")
         ])
 
@@ -754,7 +754,7 @@ class UtilTestCase(unittest.TestCase):
                 del os.environ['PATHEXT']
             else:
                 os.environ['PATHEXT'] = old
-        self.assertEquals(paths, [
+        self.assertEqual(paths, [
             j("foo", "baz", "executable"), j("baz", "foo", "executable"),
             j("baz", "foo", "executable.bin")
         ])
@@ -802,22 +802,22 @@ class ClosingPipes(unittest.TestCase):
         return p.deferred
 
     def _endProcess(self, reason, p):
-        self.failIf(reason.check(error.ProcessDone),
+        self.assertFalse(reason.check(error.ProcessDone),
                     'Child should fail due to EPIPE.')
         reason.trap(error.ProcessTerminated)
         # child must not get past that write without raising
-        self.failIfEqual(reason.value.exitCode, 42,
+        self.assertNotEqual(reason.value.exitCode, 42,
                          'process reason was %r' % reason)
-        self.failUnlessEqual(p.output, '')
+        self.assertEqual(p.output, '')
         return p.errput
 
     def test_stdout(self):
         """ProcessProtocol.transport.closeStdout actually closes the pipe."""
         d = self.doit(1)
         def _check(errput):
-            self.failIfEqual(errput.find('OSError'), -1)
+            self.assertNotEqual(errput.find('OSError'), -1)
             if runtime.platform.getType() != 'win32':
-                self.failIfEqual(errput.find('Broken pipe'), -1)
+                self.assertNotEqual(errput.find('Broken pipe'), -1)
         d.addCallback(_check)
         return d
 
@@ -827,7 +827,7 @@ class ClosingPipes(unittest.TestCase):
         def _check(errput):
             # there should be no stderr open, so nothing for it to
             # write the error to.
-            self.failUnlessEqual(errput, '')
+            self.assertEqual(errput, '')
         d.addCallback(_check)
         return d
 

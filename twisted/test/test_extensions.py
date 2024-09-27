@@ -15,4 +15,4 @@ class CorrectComments(unittest.TestCase):
     def testNoSlashSlashComments(self):
         urlarg = util.sibpath(__file__, opj(os.pardir, 'protocols', '_c_urlarg.c'))
         contents = file(urlarg).read()
-        self.assertEquals(contents.find('//'), -1)
+        self.assertEqual(contents.find('//'), -1)

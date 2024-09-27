@@ -260,7 +260,7 @@ class IReactorUNIX(Interface):
         @returns: an L{IConnector}.
         """
 
-    def listenUNIX(self, address, factory, backlog=50, mode=0666, wantPID=0):
+    def listenUNIX(self, address, factory, backlog=50, mode=0o666, wantPID=0):
         """Listen on a UNIX socket.
 
         @param address: a path to a unix socket on the filesystem.
@@ -278,7 +278,7 @@ class IReactorUNIX(Interface):
 class IReactorUNIXDatagram(Interface):
     """datagram UNIX socket methods."""
 
-    def connectUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0666, bindAddress=None):
+    def connectUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0o666, bindAddress=None):
         """Connect a client protocol to a datagram UNIX socket.
 
         @param address: a path to a unix socket on the filesystem.
@@ -292,7 +292,7 @@ class IReactorUNIXDatagram(Interface):
         @param bindAddress: address to bind to
         """
 
-    def listenUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0666):
+    def listenUNIXDatagram(self, address, protocol, maxPacketSize=8192, mode=0o666):
         """Listen on a datagram UNIX socket.
 
         @param address: a path to a unix socket on the filesystem.

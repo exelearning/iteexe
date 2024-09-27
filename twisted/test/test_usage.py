@@ -48,22 +48,22 @@ class ParseCorrectnessTest(unittest.TestCase):
     def test_checkParameters(self):
         """Checking that parameters have correct values.
         """
-        self.failUnlessEqual(self.nice.opts['long'], "Alpha")
-        self.failUnlessEqual(self.nice.opts['another'], "Beta")
-        self.failUnlessEqual(self.nice.opts['longonly'], "noshort")
-        self.failUnlessEqual(self.nice.opts['shortless'], "Gamma")
+        self.assertEqual(self.nice.opts['long'], "Alpha")
+        self.assertEqual(self.nice.opts['another'], "Beta")
+        self.assertEqual(self.nice.opts['longonly'], "noshort")
+        self.assertEqual(self.nice.opts['shortless'], "Gamma")
 
     def test_checkFlags(self):
         """Checking that flags have correct values.
         """
-        self.failUnlessEqual(self.nice.opts['aflag'], 1)
-        self.failUnlessEqual(self.nice.opts['flout'], 0)
+        self.assertEqual(self.nice.opts['aflag'], 1)
+        self.assertEqual(self.nice.opts['flout'], 0)
 
     def test_checkCustoms(self):
         """Checking that custom flags and parameters have correct values.
         """
-        self.failUnlessEqual(self.nice.opts['myflag'], "PONY!")
-        self.failUnlessEqual(self.nice.opts['myparam'], "Tofu WITH A PONY!")
+        self.assertEqual(self.nice.opts['myflag'], "PONY!")
+        self.assertEqual(self.nice.opts['myparam'], "Tofu WITH A PONY!")
 
 class InquisitionOptions(usage.Options):
     optFlags = [
@@ -95,55 +95,55 @@ class SubCommandTest(unittest.TestCase):
     def test_simpleSubcommand(self):
         o=SubCommandOptions()
         o.parseOptions(['--europian-swallow', 'inquisition'])
-        self.failUnlessEqual(o['europian-swallow'], True)
-        self.failUnlessEqual(o.subCommand, 'inquisition')
-        self.failUnless(isinstance(o.subOptions, InquisitionOptions))
-        self.failUnlessEqual(o.subOptions['expect'], False)
-        self.failUnlessEqual(o.subOptions['torture-device'], 'comfy-chair')
+        self.assertEqual(o['europian-swallow'], True)
+        self.assertEqual(o.subCommand, 'inquisition')
+        self.assertTrue(isinstance(o.subOptions, InquisitionOptions))
+        self.assertEqual(o.subOptions['expect'], False)
+        self.assertEqual(o.subOptions['torture-device'], 'comfy-chair')
 
     def test_subcommandWithFlagsAndOptions(self):
         o=SubCommandOptions()
         o.parseOptions(['inquisition', '--expect', '--torture-device=feather'])
-        self.failUnlessEqual(o['europian-swallow'], False)
-        self.failUnlessEqual(o.subCommand, 'inquisition')
-        self.failUnless(isinstance(o.subOptions, InquisitionOptions))
-        self.failUnlessEqual(o.subOptions['expect'], True)
-        self.failUnlessEqual(o.subOptions['torture-device'], 'feather')
+        self.assertEqual(o['europian-swallow'], False)
+        self.assertEqual(o.subCommand, 'inquisition')
+        self.assertTrue(isinstance(o.subOptions, InquisitionOptions))
+        self.assertEqual(o.subOptions['expect'], True)
+        self.assertEqual(o.subOptions['torture-device'], 'feather')
 
     def test_subcommandAliasWithFlagsAndOptions(self):
         o=SubCommandOptions()
         o.parseOptions(['inquest', '--expect', '--torture-device=feather'])
-        self.failUnlessEqual(o['europian-swallow'], False)
-        self.failUnlessEqual(o.subCommand, 'inquisition')
-        self.failUnless(isinstance(o.subOptions, InquisitionOptions))
-        self.failUnlessEqual(o.subOptions['expect'], True)
-        self.failUnlessEqual(o.subOptions['torture-device'], 'feather')
+        self.assertEqual(o['europian-swallow'], False)
+        self.assertEqual(o.subCommand, 'inquisition')
+        self.assertTrue(isinstance(o.subOptions, InquisitionOptions))
+        self.assertEqual(o.subOptions['expect'], True)
+        self.assertEqual(o.subOptions['torture-device'], 'feather')
 
     def test_anotherSubcommandWithFlagsAndOptions(self):
         o=SubCommandOptions()
         o.parseOptions(['holyquest', '--for-grail'])
-        self.failUnlessEqual(o['europian-swallow'], False)
-        self.failUnlessEqual(o.subCommand, 'holyquest')
-        self.failUnless(isinstance(o.subOptions, HolyQuestOptions))
-        self.failUnlessEqual(o.subOptions['horseback'], False)
-        self.failUnlessEqual(o.subOptions['for-grail'], True)
+        self.assertEqual(o['europian-swallow'], False)
+        self.assertEqual(o.subCommand, 'holyquest')
+        self.assertTrue(isinstance(o.subOptions, HolyQuestOptions))
+        self.assertEqual(o.subOptions['horseback'], False)
+        self.assertEqual(o.subOptions['for-grail'], True)
 
     def test_noSubcommand(self):
         o=SubCommandOptions()
         o.parseOptions(['--europian-swallow'])
-        self.failUnlessEqual(o['europian-swallow'], True)
-        self.failUnlessEqual(o.subCommand, None)
-        self.failIf(hasattr(o, 'subOptions'))
+        self.assertEqual(o['europian-swallow'], True)
+        self.assertEqual(o.subCommand, None)
+        self.assertFalse(hasattr(o, 'subOptions'))
 
     def test_defaultSubcommand(self):
         o=SubCommandOptions()
         o.defaultSubCommand = 'inquest'
         o.parseOptions(['--europian-swallow'])
-        self.failUnlessEqual(o['europian-swallow'], True)
-        self.failUnlessEqual(o.subCommand, 'inquisition')
-        self.failUnless(isinstance(o.subOptions, InquisitionOptions))
-        self.failUnlessEqual(o.subOptions['expect'], False)
-        self.failUnlessEqual(o.subOptions['torture-device'], 'comfy-chair')
+        self.assertEqual(o['europian-swallow'], True)
+        self.assertEqual(o.subCommand, 'inquisition')
+        self.assertTrue(isinstance(o.subOptions, InquisitionOptions))
+        self.assertEqual(o.subOptions['expect'], False)
+        self.assertEqual(o.subOptions['torture-device'], 'comfy-chair')
 
     def test_subCommandParseOptionsHasParent(self):
         class SubOpt(usage.Options):
@@ -156,8 +156,8 @@ class SubCommandTest(unittest.TestCase):
                 ]
         o=Opt()
         o.parseOptions(['foo'])
-        self.failUnless(hasattr(o.subOptions, 'sawParent'))
-        self.failUnlessEqual(o.subOptions.sawParent , o)
+        self.assertTrue(hasattr(o.subOptions, 'sawParent'))
+        self.assertEqual(o.subOptions.sawParent , o)
 
     def test_subCommandInTwoPlaces(self):
         """The .parent pointer is correct even when the same Options class is used twice."""
@@ -175,8 +175,8 @@ class SubCommandTest(unittest.TestCase):
         oFoo.parseOptions(['foo'])
         oBar=OptBar()
         oBar.parseOptions(['bar'])
-        self.failUnless(hasattr(oFoo.subOptions, 'parent'))
-        self.failUnless(hasattr(oBar.subOptions, 'parent'))
+        self.assertTrue(hasattr(oFoo.subOptions, 'parent'))
+        self.assertTrue(hasattr(oBar.subOptions, 'parent'))
         self.failUnlessIdentical(oFoo.subOptions.parent, oFoo)
         self.failUnlessIdentical(oBar.subOptions.parent, oBar)
 
@@ -197,15 +197,15 @@ class HelpStringTest(unittest.TestCase):
 
         try:
             self.nice.__str__()
-        except Exception, e:
+        except Exception as e:
             self.fail(e)
 
     def test_whitespaceStripFlagsAndParameters(self):
         """Extra whitespace in flag and parameters docs is stripped"""
         # We test this by making sure aflag and it's help string are on the same line.
         lines = [s for s in str(self.nice).splitlines() if s.find("aflag")>=0]
-        self.failUnless(len(lines) > 0)
-        self.failUnless(lines[0].find("flagallicious") >= 0)
+        self.assertTrue(len(lines) > 0)
+        self.assertTrue(lines[0].find("flagallicious") >= 0)
 
 if __name__ == '__main__':
     unittest.main()

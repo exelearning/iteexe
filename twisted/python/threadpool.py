@@ -11,9 +11,9 @@ instead of creating a thread pool directly.
 """
 
 # System Imports
-import Queue
+import queue
 import threading
-import threadable
+from . import threadable
 import copy
 import sys
 
@@ -53,7 +53,7 @@ class ThreadPool:
         """
         assert minthreads >= 0, 'minimum is negative'
         assert minthreads <= maxthreads, 'minimum is greater than maximum'
-        self.q = Queue.Queue(0)
+        self.q = queue.Queue(0)
         self.min = minthreads
         self.max = maxthreads
         self.name = name
@@ -79,7 +79,7 @@ class ThreadPool:
         name = "PoolThread-%s-%s" % (self.name or id(self), self.workers)
         try:
             firstJob = self.q.get(0)
-        except Queue.Empty:
+        except queue.Empty:
             firstJob = None
         newThread = threading.Thread(target=self._worker, name=name, args=(firstJob,))
         self.threads.append(newThread)
@@ -122,7 +122,7 @@ class ThreadPool:
 
     def _runWithCallback(self, callback, errback, func, args, kwargs):
         try:
-            result = apply(func, args, kwargs)
+            result = func(*args, **kwargs)
         except:
             errback(sys.exc_info()[1])
         else:

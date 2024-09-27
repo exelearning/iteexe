@@ -27,15 +27,15 @@ class RecomendacionfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - A Piece of Advice"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""A Piece of Advice is an iDevice that permits the teacher give advice on interesting books, films..."""), u"", u"recomendacionfpd")
+                         x_("FPD - A Piece of Advice"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""A Piece of Advice is an iDevice that permits the teacher give advice on interesting books, films..."""), "", "recomendacionfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_recomendacionfpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'A Piece of Advice Text:'), 
+        self.activityTextArea = TextAreaField(x_('A Piece of Advice Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -85,8 +85,8 @@ class RecomendacionfpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"recomendacionfpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "recomendacionfpd"
 
 
     def upgradeToVersion2(self):
@@ -94,7 +94,7 @@ class RecomendacionfpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_recomendacionfpd"
 
@@ -134,7 +134,7 @@ class RecomendacionfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'A Piece of Advice Text:'), 
+        self.activityTextArea = TextAreaField(x_('A Piece of Advice Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -145,13 +145,13 @@ class RecomendacionfpdIdevice(Idevice):
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Recomendacion":
-            self._title = u"FPD - A Piece of Advice"
-        if self._purpose == u"""Para saber m&aacute;s es un iDevice que permite al profesarado recomendar libros, películas, ... útiles para su formación.""":
-            self._purpose = u"""A Piece of Advice is an iDevice that permits the teacher give advice on interesting books, films..."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto de la recomendaci&oacute;n:':
-            self.activityTextArea._name = u'A Piece of Advice Text:'
+        if self._title == "FPD - Recomendacion":
+            self._title = "FPD - A Piece of Advice"
+        if self._purpose == """Para saber m&aacute;s es un iDevice que permite al profesarado recomendar libros, películas, ... útiles para su formación.""":
+            self._purpose = """A Piece of Advice is an iDevice that permits the teacher give advice on interesting books, films..."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto de la recomendaci&oacute;n:':
+            self.activityTextArea._name = 'A Piece of Advice Text:'
 
 # ===========================================================================

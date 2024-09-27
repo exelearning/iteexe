@@ -76,8 +76,8 @@ def safeTranslate(message, encoding='utf-8'):
         return message
     try:
         return __old_translate__(message)
-    except UnicodeDecodeError, e:
+    except UnicodeDecodeError as e:
         try:
-            return __old_translate__(unicode(message, encoding))
+            return __old_translate__(str(message, encoding))
         except Exception:
             raise e

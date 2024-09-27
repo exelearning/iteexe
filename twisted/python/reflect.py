@@ -9,7 +9,7 @@ Standardized versions of various cool and/or strange things that you can do
 with Python's reflection capabilities.
 """
 
-from __future__ import nested_scopes
+
 
 
 # System Imports
@@ -27,9 +27,9 @@ RegexType = type(re.compile(""))
 
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 class Settable:
     """
@@ -43,7 +43,7 @@ class Settable:
         self(**kw)
 
     def __call__(self,**kw):
-        for key,val in kw.items():
+        for key,val in list(kw.items()):
             setattr(self,key,val)
         return self
 
@@ -74,28 +74,28 @@ class AccessorType(type):
         type.__init__(self, name, bases, d)
         accessors = {}
         prefixs = ["get_", "set_", "del_"]
-        for k in d.keys():
+        for k in list(d.keys()):
             v = getattr(self, k)
             for i in range(3):
                 if k.startswith(prefixs[i]):
                     accessors.setdefault(k[4:], [None, None, None])[i] = v
-        for name, (getter, setter, deler) in accessors.items():
+        for name, (getter, setter, deler) in list(accessors.items()):
             # create default behaviours for the property - if we leave
             # the getter as None we won't be able to getattr, etc..
             if getter is None:
                 if hasattr(self, name):
                     value = getattr(self, name)
                     def getter(this, value=value, name=name):
-                        if this.__dict__.has_key(name):
+                        if name in this.__dict__:
                             return this.__dict__[name]
                         else:
                             return value
                 else:
                     def getter(this, name=name):
-                        if this.__dict__.has_key(name):
+                        if name in this.__dict__:
                             return this.__dict__[name]
                         else:
-                            raise AttributeError, "no such attribute %r" % name
+                            raise AttributeError("no such attribute %r" % name)
             if setter is None:
                 def setter(this, value, name=name):
                     this.__dict__[name] = value
@@ -105,7 +105,7 @@ class AccessorType(type):
             setattr(self, name, property(getter, setter, deler, ""))
 
 
-class PropertyAccessor(object):
+class PropertyAccessor(object, metaclass=AccessorType):
     """A mixin class for Python 2.2 that uses AccessorType.
 
     This provides compatability with the pre-2.2 Accessor mixin, up
@@ -128,12 +128,6 @@ class PropertyAccessor(object):
     whereas in original Accessor the class attribute or instance attribute
     would override the getter method.
     """
-    # addendum to above:
-    # The behaviour of Accessor is wrong IMHO, and I've found bugs
-    # caused by it.
-    #  -- itamar
-
-    __metaclass__ = AccessorType
 
     def reallySet(self, k, v):
         self.__dict__[k] = v
@@ -251,11 +245,11 @@ def funcinfo(function):
     """
     this is more documentation for myself than useful code.
     """
-    code=function.func_code
-    name=function.func_name
+    code=function.__code__
+    name=function.__name__
     argc=code.co_argcount
     argv=code.co_varnames[:argc]
-    defaults=function.func_defaults
+    defaults=function.__defaults__
 
     out = []
 
@@ -287,7 +281,7 @@ def qual(clazz):
     return clazz.__module__ + '.' + clazz.__name__
 
 def getcurrent(clazz):
-    assert type(clazz) == types.ClassType, 'must be a class...'
+    assert type(clazz) == type, 'must be a class...'
     module = namedModule(clazz.__module__)
     currclass = getattr(module, clazz.__name__, None)
     if currclass is None:
@@ -306,7 +300,7 @@ def getClass(obj):
 
 # I should really have a better name for this...
 def isinst(inst,clazz):
-    if type(inst) != types.InstanceType or type(clazz)!=types.ClassType:
+    if type(inst) != types.InstanceType or type(clazz)!=type:
         return isinstance(inst,clazz)
     cl = inst.__class__
     cl2 = getcurrent(cl)
@@ -362,7 +356,7 @@ def namedAny(name):
                 except KeyError:
                     # Python 2.4 has fixed this.  Yay!
                     pass
-                raise exc_info[0], exc_info[1], exc_info[2]
+                raise exc_info[0](exc_info[1]).with_traceback(exc_info[2])
             moduleNames.pop()
     
     obj = topLevelPackage
@@ -385,7 +379,7 @@ def macro(name, filename, source, **identifiers):
     This allows you to create macro-like behaviors in python.  See
     twisted.python.hook for an example of its usage.
     """
-    if not identifiers.has_key('name'):
+    if 'name' not in identifiers:
         identifiers['name'] = name
     source = source % identifiers
     codeplace = "<%s (macro)>" % filename
@@ -394,7 +388,7 @@ def macro(name, filename, source, **identifiers):
     # shield your eyes!
     sm = sys.modules
     tprm = "twisted.python.reflect.macros"
-    if not sm.has_key(tprm):
+    if tprm not in sm:
         macros = new.module(tprm)
         sm[tprm] = macros
         macros.count = 0
@@ -414,7 +408,7 @@ def macro(name, filename, source, **identifiers):
     # would be useful if you were foolishly trying to pickle a wrapped function
     # directly from a class that had been hooked.
 
-    exec code in dict, dict
+    exec(code, dict, dict)
     return dict[name]
 
 def _determineClass(x):
@@ -443,7 +437,7 @@ def safe_repr(o):
     try:
         return repr(o)
     except:
-        io = StringIO.StringIO()
+        io = io.StringIO()
         traceback.print_stack(file=io)
         whati = _determineClassName(o)
         swron = io.getvalue()
@@ -493,7 +487,7 @@ def prefixedMethodNames(classObj, prefix):
     """
     dct = {}
     addMethodNamesToDict(classObj, dct, prefix)
-    return dct.keys()
+    return list(dct.keys())
 
 
 def addMethodNamesToDict(classObj, dict, prefix, baseClass=None):
@@ -511,7 +505,7 @@ def addMethodNamesToDict(classObj, dict, prefix, baseClass=None):
         addMethodNamesToDict(base, dict, prefix, baseClass)
 
     if baseClass is None or baseClass in classObj.__bases__:
-        for name, method in classObj.__dict__.items():
+        for name, method in list(classObj.__dict__.items()):
             optName = name[len(prefix):]
             if ((type(method) is types.FunctionType)
                 and (name[:len(prefix)] == prefix)
@@ -523,7 +517,7 @@ def prefixedMethods(obj, prefix=''):
     """
     dct = {}
     accumulateMethods(obj, dct, prefix)
-    return dct.values()
+    return list(dct.values())
 
 def accumulateMethods(obj, dict, prefix='', curClass=None):
     """accumulateMethods(instance, dict, prefix)
@@ -536,7 +530,7 @@ def accumulateMethods(obj, dict, prefix='', curClass=None):
     for base in curClass.__bases__:
         accumulateMethods(obj, dict, prefix, base)
 
-    for name, method in curClass.__dict__.items():
+    for name, method in list(curClass.__dict__.items()):
         optName = name[len(prefix):]
         if ((type(method) is types.FunctionType)
             and (name[:len(prefix)] == prefix)
@@ -617,7 +611,7 @@ def objgrep(start, goal, eq=isLike, path='', paths=None, seen=None, showUnknowns
         seen = {}
     if eq(start, goal):
         paths.append(path)
-    if seen.has_key(id(start)):
+    if id(start) in seen:
         if seen[id(start)] is start:
             return
     if maxDepth is not None:
@@ -625,34 +619,34 @@ def objgrep(start, goal, eq=isLike, path='', paths=None, seen=None, showUnknowns
             return
         maxDepth -= 1
     seen[id(start)] = start
-    if isinstance(start, types.DictionaryType):
+    if isinstance(start, dict):
         r = []
-        for k, v in start.items():
+        for k, v in list(start.items()):
             objgrep(k, goal, eq, path+'{'+repr(v)+'}', paths, seen, showUnknowns, maxDepth)
             objgrep(v, goal, eq, path+'['+repr(k)+']', paths, seen, showUnknowns, maxDepth)
-    elif isinstance(start, types.ListType) or isinstance(start, types.TupleType):
-        for idx in xrange(len(start)):
+    elif isinstance(start, list) or isinstance(start, tuple):
+        for idx in range(len(start)):
             objgrep(start[idx], goal, eq, path+'['+str(idx)+']', paths, seen, showUnknowns, maxDepth)
     elif isinstance(start, types.MethodType):
-        objgrep(start.im_self, goal, eq, path+'.im_self', paths, seen, showUnknowns, maxDepth)
-        objgrep(start.im_func, goal, eq, path+'.im_func', paths, seen, showUnknowns, maxDepth)
-        objgrep(start.im_class, goal, eq, path+'.im_class', paths, seen, showUnknowns, maxDepth)
+        objgrep(start.__self__, goal, eq, path+'.im_self', paths, seen, showUnknowns, maxDepth)
+        objgrep(start.__func__, goal, eq, path+'.im_func', paths, seen, showUnknowns, maxDepth)
+        objgrep(start.__self__.__class__, goal, eq, path+'.im_class', paths, seen, showUnknowns, maxDepth)
     elif hasattr(start, '__dict__'):
-        for k, v in start.__dict__.items():
+        for k, v in list(start.__dict__.items()):
             objgrep(v, goal, eq, path+'.'+k, paths, seen, showUnknowns, maxDepth)
         if isinstance(start, types.InstanceType):
             objgrep(start.__class__, goal, eq, path+'.__class__', paths, seen, showUnknowns, maxDepth)
     elif isinstance(start, weakref.ReferenceType):
         objgrep(start(), goal, eq, path+'()', paths, seen, showUnknowns, maxDepth)
-    elif (isinstance(start, types.StringTypes+
-                    (types.IntType, types.FunctionType,
-                     types.BuiltinMethodType, RegexType, types.FloatType,
-                     types.NoneType, types.FileType)) or
+    elif (isinstance(start, (str,)+
+                    (int, types.FunctionType,
+                     types.BuiltinMethodType, RegexType, float,
+                     type(None), types.FileType)) or
           type(start).__name__ in ('wrapper_descriptor', 'method_descriptor',
                                    'member_descriptor', 'getset_descriptor')):
         pass
     elif showUnknowns:
-        print 'unknown type', type(start), start
+        print('unknown type', type(start), start)
     return paths
 
 def _startswith(s, sub):

@@ -17,9 +17,9 @@ Future Plans: None known.
 from twisted.internet import defer
 
 # sibling imports
-import jelly
-import banana
-import flavors
+from . import jelly
+from . import banana
+from . import flavors
 
 # System Imports
 import time

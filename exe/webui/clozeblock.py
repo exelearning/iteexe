@@ -92,23 +92,23 @@ class ClozeBlock(Block):
         which words are hidden.
         """
         html = [
-            u'<div class="iDevice">',
-            u'<div class="block">',
+            '<div class="iDevice">',
+            '<div class="block">',
             common.textInput("title"+self.id, self.idevice.title),
-            u'</div>',
+            '</div>',
             self.instructionElement.renderEdit(),
             self.clozeElement.renderEdit(),
             self.feedbackElement.renderEdit(),
             self.renderEditButtons(),
-            u'</div>'
+            '</div>'
             ]
-        return u'\n'.join(html)
+        return '\n'.join(html)
     
     def renderXML(self, style):
         """
         Makes an XML representation of this object
         """
-        xml = u"<idevice type='cloze' id='%s'>" % self.idevice.id
+        xml = "<idevice type='cloze' id='%s'>" % self.idevice.id
         xml += "<scoretext>Your score is:</scoretext>"
         xml += "<instructions><![CDATA[ %s ]]></instructions>" \
             % self.instructionElement.renderView()
@@ -165,7 +165,7 @@ class ClozeBlock(Block):
             else:
                 html.append(self.feedbackElement.renderView(False, 
                                                      class_="feedback"))
-        return u'\n    '.join(html)
+        return '\n    '.join(html)
 
     def renderText(self): 
         
@@ -179,7 +179,7 @@ class ClozeBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % c_(u"Feedback") 
+            html += '<p>%s:</P>' % c_("Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 

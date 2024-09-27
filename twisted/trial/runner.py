@@ -7,7 +7,7 @@
 # Author: Jonathan D. Simms <slyphon@twistedmatrix.com>
 # Original Author: Jonathan Lange <jml@twistedmatrix.com>
 
-from __future__ import generators
+
 import pdb, shutil
 import os, glob, types, warnings, sys, inspect, imp
 import fnmatch, random, inspect, doctest, time
@@ -266,7 +266,7 @@ class TestLoader(object):
     loadTestsFromModule = loadModule
 
     def loadClass(self, klass):
-        if not (isinstance(klass, type) or isinstance(klass, types.ClassType)):
+        if not (isinstance(klass, type) or isinstance(klass, type)):
             raise TypeError("%r is not a class" % (klass,))
         if not isTestCase(klass):
             raise ValueError("%r is not a test case" % (klass,))
@@ -281,7 +281,7 @@ class TestLoader(object):
     def loadMethod(self, method):
         if not isinstance(method, types.MethodType):
             raise TypeError("%r not a method" % (method,))
-        return method.im_class(method.__name__)
+        return method.__self__.__class__(method.__name__)
 
     def _findTestModules(self, package):
         modGlob = os.path.join(os.path.dirname(package.__file__),
@@ -330,7 +330,7 @@ class TestLoader(object):
             if isPackage(thing):
                 return self.loadPackage(thing, recurse)
             return self.loadModule(thing)
-        elif isinstance(thing, types.ClassType):
+        elif isinstance(thing, type):
             return self.loadClass(thing)
         elif isinstance(thing, type):
             return self.loadClass(thing)
@@ -381,7 +381,7 @@ class TrialRunner(object):
         try:
             import readline
         except ImportError:
-            print "readline module not available"
+            print("readline module not available")
             hasattr(sys, 'exc_clear') and sys.exc_clear()
         for path in ('.pdbrc', 'pdbrc'):
             if os.path.exists(path):
@@ -399,16 +399,16 @@ class TrialRunner(object):
         if os.path.exists(testdir):
            try:
                shutil.rmtree(testdir)
-           except OSError, e:
-               print ("could not remove %r, caught OSError [Errno %s]: %s"
-                      % (testdir, e.errno,e.strerror))
+           except OSError as e:
+               print(("could not remove %r, caught OSError [Errno %s]: %s"
+                      % (testdir, e.errno,e.strerror)))
                try:
                    os.rename(testdir,
                              os.path.abspath("_trial_temp_old%s"
                                              % random.randint(0, 99999999)))
-               except OSError, e:
-                   print ("could not rename path, caught OSError [Errno %s]: %s"
-                          % (e.errno,e.strerror))
+               except OSError as e:
+                   print(("could not rename path, caught OSError [Errno %s]: %s"
+                          % (e.errno,e.strerror)))
                    raise
         os.mkdir(testdir)
         os.chdir(testdir)
@@ -438,9 +438,9 @@ class TrialRunner(object):
 
     def _setUpLogging(self):
         def seeWarnings(x):
-           if x.has_key('warning'):
-               print
-               print x['format'] % x
+           if 'warning' in x:
+               print()
+               print(x['format'] % x)
         log.addObserver(seeWarnings)
         if self.logfile == '-':
            logFileObj = sys.stdout

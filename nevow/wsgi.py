@@ -5,13 +5,13 @@
 import os, sys, socket, math, time
 import cgi # for FieldStorage
 import types
-from urllib import unquote, quote
+from urllib.parse import unquote, quote
 
 from nevow import context, flat, inevow, util
 from nevow import __version__ as nevowversion
 
 def log(msg):
-    print >>sys.stderr, "WSGI: {%s}" % str(msg)
+    print("WSGI: {%s}" % str(msg), file=sys.stderr)
 
 errorMarker = object()
 
@@ -61,7 +61,7 @@ class NevowWSGISite(object):
             assert  len(newpath) < len(path), "Infinite loop impending..."
 
         ## We found a Resource... update the request.prepath and postpath
-        for x in xrange(len(path) - len(newpath)):
+        for x in range(len(path) - len(newpath)):
             request.prepath.append(request.postpath.pop(0))
 
         ## Create a context object to represent this new resource
@@ -143,7 +143,7 @@ class WSGIRequest(object):
             self.host = (self.environ['REMOTE_ADDR'], int(self.environ['REMOTE_PORT']))
         except KeyError:
             pass # TODO
-        for k,v in environ.items():
+        for k,v in list(environ.items()):
             if k.startswith('HTTP_'):
                 self.received_headers[k[5:].lower()] = v
         self.setResponseCode("200")
@@ -176,7 +176,7 @@ class WSGIRequest(object):
 
         # Resource Identification
         self.prepath = []
-        self.postpath = map(unquote, self.path[1:].split('/'))
+        self.postpath = list(map(unquote, self.path[1:].split('/')))
         self.sitepath = []
 
         requestContext = context.RequestContext(
@@ -216,7 +216,7 @@ class WSGIRequest(object):
                 return self.gotPageContext(pageContext)
             else:              
                 # import traceback; traceback.print_stack()
-                print >>sys.stderr, "html is not a string: %s on %s" % (str(html), pageContext.tag)
+                print("html is not a string: %s on %s" % (str(html), pageContext.tag), file=sys.stderr)
         return html
 
     def _parseQuery(self, qs):
@@ -413,7 +413,7 @@ class WSGIRequest(object):
         """
         # time.time() may be a float, but the HTTP-date strings are
         # only good for whole seconds.
-        when = long(math.ceil(when))
+        when = int(math.ceil(when))
         if (not self.lastModified) or (self.lastModified < when):
             self.lastModified = when
 

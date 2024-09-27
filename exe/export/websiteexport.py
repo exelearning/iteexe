@@ -35,8 +35,8 @@ from exe.webui                import common
 from exe                      import globals as G
 from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
-from helper                   import exportMinFileJS
-from helper                   import exportMinFileCSS
+from .helper                   import exportMinFileJS
+from .helper                   import exportMinFileCSS
 from exe.webui.common         import getFilesCSSToMinify
 from exe.webui.common         import getFilesJSToMinify
 
@@ -117,10 +117,10 @@ class WebsiteExport(object):
         ext = 'html'
         if G.application.config.cutFileName == "1":
             ext = 'htm'
-        if not page.node.idevices:self.report += u'"%s","%s",%d,"%s",,,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext)
+        if not page.node.idevices:self.report += '"%s","%s",%d,"%s",,,,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext)
         for idevice in page.node.idevices:
             ideviceFiles = []
-            if not idevice.userResources:self.report += u'"%s","%s",%d,"%s","%s","%s",,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title)
+            if not idevice.userResources:self.report += '"%s","%s",%d,"%s","%s","%s",,,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title)
             for resource in idevice.userResources:
                 if type(resource) == Resource:
                     try:
@@ -128,10 +128,10 @@ class WebsiteExport(object):
                     except:
                         resourceSize = '?'
                     if not resource.checksum in ideviceFiles:
-                        self.report += u'"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum, resourceSize)
+                        self.report += '"%s","%s",%d,"%s","%s","%s","%s","%s","%s","%s","%s"\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource.storageName, resource.userName, resource.path, resource.checksum, resourceSize)
                     ideviceFiles.append(resource.checksum)
                 else:
-                    self.report += u'"%s",%d,"%s","%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
+                    self.report += '"%s",%d,"%s","%s","%s","%s",,,,\n' % (package.filename,page.node.title, page.depth, page.name + '.' + ext, idevice.klass, idevice.title, resource)
 
     def export(self, package):
         """
@@ -158,7 +158,7 @@ class WebsiteExport(object):
         prevPage = None
         thisPage = self.pages[0]
         if self.report:
-            self.report = u'"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('File','Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum', 'Resource Size')
+            self.report = '"%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s"\n' % ('File','Page Name', 'Level', 'Page File Name', 'Idevice Type', 'Idevice Title', 'Resource File Name', 'Resource User Name', 'Resource Path', 'Resource Checksum', 'Resource Size')
             self.appendPageReport(thisPage,package)
 
         for nextPage in self.pages[1:]:

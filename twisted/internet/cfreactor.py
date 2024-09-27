@@ -32,7 +32,7 @@ import sys
 import Carbon.CF
 import traceback
 
-import cfsupport as cf
+from . import cfsupport as cf
 
 from twisted.python import log, threadable, failure
 from twisted.internet import posixbase, error
@@ -60,7 +60,7 @@ class SelectableSocketWrapper(object):
         
     def __init__(self, reactor, obj):
         if self.cf:
-            raise ValueError, "This socket wrapper is already initialized"
+            raise ValueError("This socket wrapper is already initialized")
         self.reactor = reactor
         self.obj = obj
         obj._orig_ssw_connectionLost = obj.connectionLost
@@ -215,10 +215,10 @@ class CFReactor(posixbase.PosixReactorBase):
             wrapped.stopWriting()
 
     def removeAll(self):
-        r = self.readers.keys()
-        for s in self.readers.itervalues():
+        r = list(self.readers.keys())
+        for s in self.readers.values():
             s.stopReading()
-        for s in self.writers.itervalues():
+        for s in self.writers.values():
             s.stopWriting()
         self.readers.clear()
         self.writers.clear()
@@ -226,7 +226,7 @@ class CFReactor(posixbase.PosixReactorBase):
         
     def run(self, installSignalHandlers=1, withRunLoop=None):
         if self.running:
-            raise ValueError, "Reactor already running"
+            raise ValueError("Reactor already running")
         if installSignalHandlers:
             self.pollInterval = self.shortIntervalOfTime
         runLoop = self.getRunLoop(withRunLoop)
@@ -257,13 +257,13 @@ class CFReactor(posixbase.PosixReactorBase):
         
     def iterate(self, howlong=0.0):
         if self.running:
-            raise ValueError, "Can't iterate a running reactor"
+            raise ValueError("Can't iterate a running reactor")
         self.runUntilCurrent()
         self.doIteration(howlong)
         
     def doIteration(self, howlong):
         if self.running:
-            raise ValueError, "Can't iterate a running reactor"
+            raise ValueError("Can't iterate a running reactor")
         howlong = howlong or 0.01
         pi = self.pollInterval
         self.pollInterval = howlong
@@ -276,7 +276,7 @@ class CFReactor(posixbase.PosixReactorBase):
         if self.crashing:
             return
         if not self.running:
-            raise ValueError, "You can't simulate a stopped reactor"
+            raise ValueError("You can't simulate a stopped reactor")
         if self._doRunUntilCurrent:
             self.runUntilCurrent()
         if self.crashing:
@@ -295,7 +295,7 @@ class CFReactor(posixbase.PosixReactorBase):
         
     def _startup(self):
         if self.running:
-            raise ValueError, "Can't bootstrap a running reactor"
+            raise ValueError("Can't bootstrap a running reactor")
         self.timer = cf.PyCFRunLoopTimer(cf.now(), self.pollInterval, self.simulate)
         self.runLoop.addTimer(self.timer)
 
@@ -307,7 +307,7 @@ class CFReactor(posixbase.PosixReactorBase):
 
     def crash(self):
         if not self.running:
-            raise ValueError, "Can't crash a stopped reactor"
+            raise ValueError("Can't crash a stopped reactor")
         self.running = False
         self.crashing = True
         if self.timer is not None:
@@ -318,7 +318,7 @@ class CFReactor(posixbase.PosixReactorBase):
 
     def stop(self):
         if not self.running:
-            raise ValueError, "Can't stop a stopped reactor"
+            raise ValueError("Can't stop a stopped reactor")
         posixbase.PosixReactorBase.stop(self)
 
 def install(runLoop=None):

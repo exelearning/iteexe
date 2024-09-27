@@ -14,18 +14,18 @@ class UtilTestCase(unittest.TestCase):
 
     def testUniq(self):
         l = ["a", 1, "ab", "a", 3, 4, 1, 2, 2, 4, 6]
-        self.assertEquals(util.uniquify(l), ["a", 1, "ab", 3, 4, 2, 6])
+        self.assertEqual(util.uniquify(l), ["a", 1, "ab", 3, 4, 2, 6])
 
     def testRaises(self):
-        self.failUnless(util.raises(ZeroDivisionError, divmod, 1, 0))
-        self.failIf(util.raises(ZeroDivisionError, divmod, 0, 1))
+        self.assertTrue(util.raises(ZeroDivisionError, divmod, 1, 0))
+        self.assertFalse(util.raises(ZeroDivisionError, divmod, 0, 1))
 
         try:
             util.raises(TypeError, divmod, 1, 0)
         except ZeroDivisionError:
             pass
         else:
-            raise unittest.FailTest, "util.raises didn't raise when it should have"
+            raise unittest.FailTest("util.raises didn't raise when it should have")
    
     def testUninterruptably(self):
         def f(a, b):
@@ -37,22 +37,22 @@ class UtilTestCase(unittest.TestCase):
         
         self.exceptions = [None]
         self.calls = 0
-        self.assertEquals(util.untilConcludes(f, 1, 2), 3)
-        self.assertEquals(self.calls, 1)
+        self.assertEqual(util.untilConcludes(f, 1, 2), 3)
+        self.assertEqual(self.calls, 1)
         
         self.exceptions = [None, OSError, IOError]
         self.calls = 0
-        self.assertEquals(util.untilConcludes(f, 2, 3), 5)
-        self.assertEquals(self.calls, 3)
+        self.assertEqual(util.untilConcludes(f, 2, 3), 5)
+        self.assertEqual(self.calls, 3)
     
     def testUnsignedID(self):
         util.id = lambda x: x
         try:
             for i in range(1, 100):
-                self.assertEquals(util.unsignedID(i), i)
-            top = (sys.maxint + 1L) * 2L
+                self.assertEqual(util.unsignedID(i), i)
+            top = (sys.maxsize + 1) * 2
             for i in range(-100, -1):
-                self.assertEquals(util.unsignedID(i), top + i)
+                self.assertEqual(util.unsignedID(i), top + i)
         finally:
             del util.id
 
@@ -61,7 +61,8 @@ class UtilTestCase(unittest.TestCase):
         p = object()
         def foo():
             return o
-        def bar(x, y, (a, b), c=10, *d, **e):
+        def bar(x, y, xxx_todo_changeme, c=10, *d, **e):
+            (a, b) = xxx_todo_changeme
             return p
         baz = util.mergeFunctionMetadata(foo, bar)
         self.assertIdentical(baz(1, 2, (3, 4), quux=10), p)
@@ -69,7 +70,8 @@ class UtilTestCase(unittest.TestCase):
         # Now one without a closure
         def foo2(o=o):
             return o
-        def bar2(x, y, (a, b), c=10, p=p, *d, **e):
+        def bar2(x, y, xxx_todo_changeme1, c=10, p=p, *d, **e):
+            (a, b) = xxx_todo_changeme1
             return p
         baz2 = util.mergeFunctionMetadata(foo2, bar2)
         self.assertIdentical(baz2(1, 2, (3, 4), quux=10), p)
@@ -82,40 +84,40 @@ class OrderedDictTest(unittest.TestCase):
         d['b'] = 'a'
         d[3] = 12
         d[1234] = 4321
-        self.assertEquals(repr(d), "{'a': 'b', 'b': 'a', 3: 12, 1234: 4321}")
-        self.assertEquals(d.values(), ['b', 'a', 12, 4321])
+        self.assertEqual(repr(d), "{'a': 'b', 'b': 'a', 3: 12, 1234: 4321}")
+        self.assertEqual(list(d.values()), ['b', 'a', 12, 4321])
         del d[3]
-        self.assertEquals(repr(d), "{'a': 'b', 'b': 'a', 1234: 4321}")
-        self.assertEquals(d, {'a': 'b', 'b': 'a', 1234:4321})
-        self.assertEquals(d.keys(), ['a', 'b', 1234])
-        self.assertEquals(list(d.iteritems()),
+        self.assertEqual(repr(d), "{'a': 'b', 'b': 'a', 1234: 4321}")
+        self.assertEqual(d, {'a': 'b', 'b': 'a', 1234:4321})
+        self.assertEqual(list(d.keys()), ['a', 'b', 1234])
+        self.assertEqual(list(d.items()),
                           [('a', 'b'), ('b','a'), (1234, 4321)])
         item = d.popitem()
-        self.assertEquals(item, (1234, 4321))
+        self.assertEqual(item, (1234, 4321))
 
     def testInitialization(self):
         d = util.OrderedDict({'monkey': 'ook',
                               'apple': 'red'})
-        self.failUnless(d._order)
+        self.assertTrue(d._order)
         
         d = util.OrderedDict(((1,1),(3,3),(2,2),(0,0)))
-        self.assertEquals(repr(d), "{1: 1, 3: 3, 2: 2, 0: 0}")
+        self.assertEqual(repr(d), "{1: 1, 3: 3, 2: 2, 0: 0}")
 
 class InsensitiveDictTest(unittest.TestCase):
     def testPreserve(self):
         InsensitiveDict=util.InsensitiveDict
         dct=InsensitiveDict({'Foo':'bar', 1:2, 'fnz':{1:2}}, preserve=1)
-        self.assertEquals(dct['fnz'], {1:2})
-        self.assertEquals(dct['foo'], 'bar')
-        self.assertEquals(dct.copy(), dct)
-        self.assertEquals(dct['foo'], dct.get('Foo'))
+        self.assertEqual(dct['fnz'], {1:2})
+        self.assertEqual(dct['foo'], 'bar')
+        self.assertEqual(dct.copy(), dct)
+        self.assertEqual(dct['foo'], dct.get('Foo'))
         assert 1 in dct and 'foo' in dct
-        self.assertEquals(eval(repr(dct)), dct)
+        self.assertEqual(eval(repr(dct)), dct)
         keys=['Foo', 'fnz', 1]
         for x in keys:
-            assert x in dct.keys()
-            assert (x, dct[x]) in dct.items()
-        self.assertEquals(len(keys), len(dct))
+            assert x in list(dct.keys())
+            assert (x, dct[x]) in list(dct.items())
+        self.assertEqual(len(keys), len(dct))
         del dct[1]
         del dct['foo']
 
@@ -124,9 +126,9 @@ class InsensitiveDictTest(unittest.TestCase):
         dct=InsensitiveDict({'Foo':'bar', 1:2, 'fnz':{1:2}}, preserve=0)
         keys=['foo', 'fnz', 1]
         for x in keys:
-            assert x in dct.keys()
-            assert (x, dct[x]) in dct.items()
-        self.assertEquals(len(keys), len(dct))
+            assert x in list(dct.keys())
+            assert (x, dct[x]) in list(dct.items())
+        self.assertEqual(len(keys), len(dct))
         del dct[1]
         del dct['foo']
 
@@ -166,7 +168,7 @@ print test_util.reversePassword()
         cmd_in.close()
         try:
             errors = cmd_err.read()
-        except IOError, e:
+        except IOError as e:
             # XXX: Improper kludge to appease buildbot!  I'm not really sure
             # why this happens, and without that knowledge, I SHOULDN'T be
             # just catching and discarding this error.
@@ -175,9 +177,9 @@ print test_util.reversePassword()
                 errors = ''
             else:
                 raise
-        self.failIf(errors, errors)
+        self.assertFalse(errors, errors)
         uversion = cmd_out.readline()[:-1]
-        self.failUnlessEqual(uversion, util.__version__,
+        self.assertEqual(uversion, util.__version__,
                              "I want to test module version %r, "
                              "but the subprocess is using version %r." %
                              (util.__version__, uversion))
@@ -185,7 +187,7 @@ print test_util.reversePassword()
         secret = cmd_out.read()[:-1]
         # The reversing trick it so make sure that there's not some weird echo
         # thing just sending back what we type in.
-        self.failUnlessEqual(reverseString(secret), "secret")
+        self.assertEqual(reverseString(secret), "secret")
 
     if platformType != "posix":
         testStdIn.skip = "unix only"
@@ -221,82 +223,82 @@ class DSU(unittest.TestCase):
     def testDSU(self):
         L = [Foo(x) for x in range(20, 9, -1)]
         L2 = util.dsu(L, lambda o: o.x)
-        self.assertEquals(range(10, 21), [o.x for o in L2])
+        self.assertEqual(list(range(10, 21)), [o.x for o in L2])
 
 class IntervalDifferentialTestCase(unittest.TestCase):
     def testDefault(self):
         d = iter(util.IntervalDifferential([], 10))
         for i in range(100):
-            self.assertEquals(d.next(), (10, None))
+            self.assertEqual(next(d), (10, None))
 
     def testSingle(self):
         d = iter(util.IntervalDifferential([5], 10))
         for i in range(100):
-            self.assertEquals(d.next(), (5, 0))
+            self.assertEqual(next(d), (5, 0))
 
     def testPair(self):
         d = iter(util.IntervalDifferential([5, 7], 10))
         for i in range(100):
-            self.assertEquals(d.next(), (5, 0))
-            self.assertEquals(d.next(), (2, 1))
-            self.assertEquals(d.next(), (3, 0))
-            self.assertEquals(d.next(), (4, 1))
-            self.assertEquals(d.next(), (1, 0))
-            self.assertEquals(d.next(), (5, 0))
-            self.assertEquals(d.next(), (1, 1))
-            self.assertEquals(d.next(), (4, 0))
-            self.assertEquals(d.next(), (3, 1))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (5, 0))
-            self.assertEquals(d.next(), (0, 1))
+            self.assertEqual(next(d), (5, 0))
+            self.assertEqual(next(d), (2, 1))
+            self.assertEqual(next(d), (3, 0))
+            self.assertEqual(next(d), (4, 1))
+            self.assertEqual(next(d), (1, 0))
+            self.assertEqual(next(d), (5, 0))
+            self.assertEqual(next(d), (1, 1))
+            self.assertEqual(next(d), (4, 0))
+            self.assertEqual(next(d), (3, 1))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (5, 0))
+            self.assertEqual(next(d), (0, 1))
 
     def testTriple(self):
         d = iter(util.IntervalDifferential([2, 4, 5], 10))
         for i in range(100):
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (0, 1))
-            self.assertEquals(d.next(), (1, 2))
-            self.assertEquals(d.next(), (1, 0))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (0, 1))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (0, 2))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (0, 1))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (1, 2))
-            self.assertEquals(d.next(), (1, 0))
-            self.assertEquals(d.next(), (0, 1))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (2, 0))
-            self.assertEquals(d.next(), (0, 1))
-            self.assertEquals(d.next(), (0, 2))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (0, 1))
+            self.assertEqual(next(d), (1, 2))
+            self.assertEqual(next(d), (1, 0))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (0, 1))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (0, 2))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (0, 1))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (1, 2))
+            self.assertEqual(next(d), (1, 0))
+            self.assertEqual(next(d), (0, 1))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (2, 0))
+            self.assertEqual(next(d), (0, 1))
+            self.assertEqual(next(d), (0, 2))
 
     def testInsert(self):
         d = iter(util.IntervalDifferential([], 10))
-        self.assertEquals(d.next(), (10, None))
+        self.assertEqual(next(d), (10, None))
         d.addInterval(3)
-        self.assertEquals(d.next(), (3, 0))
-        self.assertEquals(d.next(), (3, 0))
+        self.assertEqual(next(d), (3, 0))
+        self.assertEqual(next(d), (3, 0))
         d.addInterval(6)
-        self.assertEquals(d.next(), (3, 0))
-        self.assertEquals(d.next(), (3, 0))
-        self.assertEquals(d.next(), (0, 1))
-        self.assertEquals(d.next(), (3, 0))
-        self.assertEquals(d.next(), (3, 0))
-        self.assertEquals(d.next(), (0, 1))
+        self.assertEqual(next(d), (3, 0))
+        self.assertEqual(next(d), (3, 0))
+        self.assertEqual(next(d), (0, 1))
+        self.assertEqual(next(d), (3, 0))
+        self.assertEqual(next(d), (3, 0))
+        self.assertEqual(next(d), (0, 1))
 
     def testRemove(self):
         d = iter(util.IntervalDifferential([3, 5], 10))
-        self.assertEquals(d.next(), (3, 0))
-        self.assertEquals(d.next(), (2, 1))
-        self.assertEquals(d.next(), (1, 0))
+        self.assertEqual(next(d), (3, 0))
+        self.assertEqual(next(d), (2, 1))
+        self.assertEqual(next(d), (1, 0))
         d.removeInterval(3)
-        self.assertEquals(d.next(), (4, 0))
-        self.assertEquals(d.next(), (5, 0))
+        self.assertEqual(next(d), (4, 0))
+        self.assertEqual(next(d), (5, 0))
         d.removeInterval(5)
-        self.assertEquals(d.next(), (10, None))
+        self.assertEqual(next(d), (10, None))
         self.assertRaises(ValueError, d.removeInterval, 10)
 
 
@@ -313,12 +315,12 @@ class TestFancyEqMixin(unittest.TestCase):
     def testIsInstance(self):
         eq = EQ(8, 9)
         f = Bar()
-        self.failIfEqual(eq, f)
+        self.assertNotEqual(eq, f)
 
     def testEquality(self):
         ea, eb = EQ(1, 2), EQ(1, 2)
 
-        self.failUnlessEqual(ea, eb)
-        self.failUnlessEqual(eb, ea)
-        self.failUnlessEqual((ea != eb), False)
-        self.failUnlessEqual((eb != ea), False)
+        self.assertEqual(ea, eb)
+        self.assertEqual(eb, ea)
+        self.assertEqual((ea != eb), False)
+        self.assertEqual((eb != ea), False)

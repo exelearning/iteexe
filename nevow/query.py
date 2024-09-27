@@ -35,10 +35,10 @@ class QueryContext(compy.Adapter):
             pass
         if self.original.tag.pattern == pattern:
             if found:
-                raise stan.TooManyNodes, ('pattern', pattern)
+                raise stan.TooManyNodes('pattern', pattern)
             return self.original.tag.clone(deep=False, clearPattern=True)
         if not found:
-            raise stan.NodeNotFound, ('pattern', pattern)
+            raise stan.NodeNotFound('pattern', pattern)
         return found
 
 
@@ -59,7 +59,7 @@ class QueryList(compy.Adapter):
                     yield x.clone(deep=False, clearPattern=True)
 
         if default is None:
-            raise stan.NodeNotFound, ("pattern", pattern)
+            raise stan.NodeNotFound("pattern", pattern)
         if hasattr(default, 'clone'):
             while True: yield default.clone(deep=False)
         else:
@@ -96,13 +96,13 @@ class QuerySlot(QueryList):
 
 class QueryNeverFind(compy.Adapter):
     def patternGenerator(self, pattern, default=None):
-        raise stan.NodeNotFound, ('pattern', pattern)
+        raise stan.NodeNotFound('pattern', pattern)
 
     def allPatterns(self, pattern):
         return []
 
     def onePattern(self, pattern):
-        raise stan.NodeNotFound, ('pattern', pattern)
+        raise stan.NodeNotFound('pattern', pattern)
 
     def _locatePatterns(self, pattern, default, loop=True):
         return []

@@ -39,7 +39,7 @@ class Options(usage.Options):
     opt_w = opt_password
 
     def postOptions(self):
-        if not self.has_key('password'):
+        if 'password' not in self:
             self.opt_password('-')
 
 def makeService(config):

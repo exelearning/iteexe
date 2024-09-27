@@ -89,7 +89,7 @@ class ConstantNode(InspectorNode):
 
 class DictionaryNode(InspectorNode):
     def get(self, index):
-        L = self.original.items()
+        L = list(self.original.items())
         L.sort()
         return L[index]
 
@@ -131,7 +131,7 @@ class InstanceNode(InspectorNode):
             return "__class__", v
         else:
             index -= 1
-            L = self.original.__dict__.items()
+            L = list(self.original.__dict__.items())
             L.sort()
             return L[index]
 
@@ -208,7 +208,7 @@ class Inspectro:
                 colnames[i], gtk.CellRendererText(), text=i))
         d = {}
         for m in reflect.prefixedMethods(self, "on_"):
-            d[m.im_func.__name__] = m
+            d[m.__func__.__name__] = m
         self.xml.signal_autoconnect(d)
         if o is not None:
             self.inspect(o)
@@ -233,14 +233,14 @@ class Inspectro:
     def do(self, command):
         filename = '<inspector>'
         try:
-            print repr(command)
+            print(repr(command))
             try:
                 code = compile(command, filename, 'eval')
             except:
                 code = compile(command, filename, 'single')
             val = eval(code, self.ns, self.ns)
             if val is not None:
-                print repr(val)
+                print(repr(val))
             self.ns['_'] = val
         except:
             log.err()
@@ -348,10 +348,12 @@ class LogViewer:
         for i in r:
             self.model.append(i)
     
-    def updateIn(self, (time, data)):
+    def updateIn(self, xxx_todo_changeme):
+        (time, data) = xxx_todo_changeme
         self.model.append((str(time - self.startTime), "R", repr(data)[1:-1]))
 
-    def updateOut(self, (time, data)):
+    def updateOut(self, xxx_todo_changeme1):
+        (time, data) = xxx_todo_changeme1
         self.model.append((str(time - self.startTime), "S", repr(data)[1:-1]))
 
     def on_logview_destroy(self, w):

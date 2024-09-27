@@ -36,15 +36,15 @@ class FreeTextfpdIdevice(Idevice):
     persistenceVersion = 8
 
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"FPD - Free Text"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""The majority of a learning resource will be 
+        Idevice.__init__(self, x_("FPD - Free Text"), 
+                         x_("University of Auckland"), 
+                         x_("""The majority of a learning resource will be 
 establishing context, delivering instructions and providing general information.
 This provides the framework within which the learning activities are built and 
 delivered."""), "", "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = TextAreaField(x_(u"Free Text"), 
-                                      x_(u"""Use this field to enter text. This 
+        self.content  = TextAreaField(x_("Free Text"), 
+                                      x_("""Use this field to enter text. This 
 iDevice has no emphasis applied although limited formatting can be applied to 
 text through the text editing buttons associated with the field."""),
                                       content)
@@ -119,7 +119,7 @@ text through the text editing buttons associated with the field."""),
         Use new Field classes
         """
         self.content = TextAreaField("content", 
-x_(u"This is a free text field general learning content can be entered."),
+x_("This is a free text field general learning content can be entered."),
                                      self.content)
 
 
@@ -128,7 +128,7 @@ x_(u"This is a free text field general learning content can be entered."),
         Upgrades the node from 2 (v0.5) to 3 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
         self.emphasis = Idevice.NoEmphasis
         
 
@@ -159,10 +159,10 @@ x_(u"This is a free text field general learning content can be entered."),
         self.content.idevice = self
    
     def upgradeToVersion8(self):
-        if self._title == u"FPD - Texto Libre":
-            self._title = u"FPD - Free Text"
-        if self._title == u"Texto Libre":
-            self._title = u"Free Text"
+        if self._title == "FPD - Texto Libre":
+            self._title = "FPD - Free Text"
+        if self._title == "Texto Libre":
+            self._title = "Free Text"
    
 # ===========================================================================
 

@@ -58,7 +58,7 @@ class QuizTestBlock(Block):
         
         is_cancel = common.requestHasCancel(request)
             
-        if ("addQuestion"+unicode(self.id)) in request.args: 
+        if ("addQuestion"+str(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
             # disable Undo once a question has been added: 
@@ -103,7 +103,7 @@ class QuizTestBlock(Block):
             html += common.editModeHeading(
                 _("Please select a correct answer for each question."))
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
+        html += "<br/><br/>\n"
         
 
         for element in self.questionElements:
@@ -111,7 +111,7 @@ class QuizTestBlock(Block):
             
         value = _("Add another Question")    
         html += "<br/>" 
-        html += common.submitButton("addQuestion"+unicode(self.id), value)
+        html += common.submitButton("addQuestion"+str(self.id), value)
         html += "<br/><br/>" +  _("Select pass rate: ")
         html += "<select name=\"passrate\">\n"
         template = '  <option value="%s0"%s>%s0%%</option>\n'
@@ -135,7 +135,7 @@ class QuizTestBlock(Block):
         html = common.ideviceHeader(self, style, "view")
         html += '<form name="quizForm%s" id="quizForm%s" action="#" class="quiz-test-form">' % (self.idevice.id, self.idevice.id)
         html += lb
-        html += u'<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'+lb
+        html += '<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'+lb
         for element in self.questionElements:
             if preview: 
                 html += element.renderPreview()
@@ -242,7 +242,7 @@ class QuizTestBlock(Block):
         scriptStr += '<!-- //<![CDATA[\n'
         scriptStr += 'scorm.SetInteractionValue("cmi.score.scaled", "0");\n'
         scriptStr += "var numQuestions = "
-        scriptStr += unicode(len(self.questionElements))+";\n"
+        scriptStr += str(len(self.questionElements))+";\n"
         scriptStr += "var rawScore = 0;\n"
         scriptStr += "var actualScore = 0;\n"
 
@@ -256,25 +256,25 @@ class QuizTestBlock(Block):
        
         for element in self.questionElements:
             i = element.index
-            varStr    = "question" + unicode(i)
-            keyStr    = "key" + unicode(i)
-            quesId    = "key" + unicode(element.index) + "b" + self.id
+            varStr    = "question" + str(i)
+            keyStr    = "key" + str(i)
+            quesId    = "key" + str(element.index) + "b" + self.id
             numOption = element.getNumOption()
-            answers  += "var key"  + unicode(i) + " = "
-            answers  += unicode(element.question.correctAns) + ";\n"
+            answers  += "var key"  + str(i) + " = "
+            answers  += str(element.question.correctAns) + ";\n"
             getEle    = 'document.getElementById("quizForm%s")' % \
                         self.idevice.id
             chk       = '%s.%s[i].checked'% (getEle, quesId)
             value     = '%s.%s[i].value' % (getEle, quesId)
             varStrs += "var " + varStr + ";\n"
-            keyStrs += "var key" + unicode(i)+ " = "
-            keyStrs += unicode(element.question.correctAns) + ";\n"          
+            keyStrs += "var key" + str(i)+ " = "
+            keyStrs += str(element.question.correctAns) + ";\n"          
             answerStr += """
             scorm.SetInteractionValue("cmi.interactions.%s.id","%s");
             scorm.SetInteractionValue("cmi.interactions.%s.type","choice");
             scorm.SetInteractionValue("cmi.interactions.%s.correct_responses.0.pattern",
                           "%s");
-            """ % (unicode(i), quesId, unicode(i), unicode(i),
+            """ % (str(i), quesId, str(i), str(i),
                    element.question.correctAns)
             answerStr += """
             for (var i=0; i < %s; i++)
@@ -286,7 +286,7 @@ class QuizTestBlock(Block):
                   break;
                }
             }
-           """ % (numOption, chk, varStr, value, unicode(i), varStr)           
+           """ % (numOption, chk, varStr, value, str(i), varStr)           
             rawScoreStr += """
             if (%s == %s)
             {
@@ -296,7 +296,7 @@ class QuizTestBlock(Block):
             else
             {
                scorm.SetInteractionValue("cmi.interactions.%s.result","wrong");
-            }""" % (varStr, keyStr, unicode(i), unicode(i))
+            }""" % (varStr, keyStr, str(i), str(i))
            
         scriptStr += varStrs      
         scriptStr += keyStrs
@@ -371,7 +371,7 @@ class QuizTestBlock(Block):
         lb = "\n" #Line breaks
         html = common.ideviceHeader(self, style, "preview")
         
-        html += u'<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'
+        html += '<input type="hidden" name="passrate" id="passrate-'+self.idevice.id+'" value="'+self.idevice.passRate+'" />'
         
         for element in self.questionElements:
             html += element.renderPreview()
@@ -401,8 +401,8 @@ class QuizTestBlock(Block):
 
         for question in self.idevice.questions:
             if (question.userAns == question.correctAns):
-                log.info("userAns " +unicode(question.userAns) + ": " 
-                         + "correctans " +unicode(question.correctAns))
+                log.info("userAns " +str(question.userAns) + ": " 
+                         + "correctans " +str(question.correctAns))
                 rawScore += 1
         
         if numQuestion > 0:

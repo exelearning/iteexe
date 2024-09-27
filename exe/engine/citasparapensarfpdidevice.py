@@ -29,15 +29,15 @@ class CitasparapensarfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Quotation"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Quotation is an iDevice that provides the students with quotations to reflect upon."""), u"", u"citasparapensarfpd")
+                         x_("FPD - Quotation"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""Quotation is an iDevice that provides the students with quotations to reflect upon."""), "", "citasparapensarfpd")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_citasparapensarfpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Quotation Text:'), 
+        self.activityTextArea = TextAreaField(x_('Quotation Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -87,8 +87,8 @@ class CitasparapensarfpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"citasparapensarfpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "citasparapensarfpd"
 
 
     def upgradeToVersion2(self):
@@ -96,7 +96,7 @@ class CitasparapensarfpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_citasparapensarfpd"
 
@@ -136,7 +136,7 @@ class CitasparapensarfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Quotation Text:'), 
+        self.activityTextArea = TextAreaField(x_('Quotation Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -148,16 +148,16 @@ class CitasparapensarfpdIdevice(Idevice):
 
     def upgradeToVersion9(self):
 
-        if self._title == u"FPD - Citas Para Pensar":
-            self._title = u"FPD - Quotation"
-        if self._title == u"Citas Para Pensar":
-            self._title = u"Quotation"
-        if self._purpose == u"""Citas para pensar es un iDevice que permite al alumnado reflexionar sobre algunas citas propuestas.""":
-            self._purpose = u"""Quotation is an iDevice that provides the students with quotations to reflect upon."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Citas para pensar:':
-            self.activityTextArea._name = u'Quotation Text:'
-        if self.activityTextArea._name == u'Texto para pensar:':
-            self.activityTextArea._name = u'Quotation Text:'
+        if self._title == "FPD - Citas Para Pensar":
+            self._title = "FPD - Quotation"
+        if self._title == "Citas Para Pensar":
+            self._title = "Quotation"
+        if self._purpose == """Citas para pensar es un iDevice que permite al alumnado reflexionar sobre algunas citas propuestas.""":
+            self._purpose = """Quotation is an iDevice that provides the students with quotations to reflect upon."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Citas para pensar:':
+            self.activityTextArea._name = 'Quotation Text:'
+        if self.activityTextArea._name == 'Texto para pensar:':
+            self.activityTextArea._name = 'Quotation Text:'
 # ===========================================================================

@@ -109,7 +109,7 @@ class JournalTestCase(unittest.TestCase):
     def testCommandExecution(self):
         svc = self.svc
         svc.add(svc.journal, "foo", "bar")
-        self.assertEquals(svc.get("foo"), "bar")
+        self.assertEqual(svc.get("foo"), "bar")
 
         svc.delete(svc.journal, "foo")
         self.assertRaises(KeyError, svc.get, "foo")
@@ -126,10 +126,10 @@ class JournalTestCase(unittest.TestCase):
                     ServiceWrapperCommand("_add", (1, "hello")),
                     ServiceWrapperCommand("_delete", ("foo",))]
 
-        self.assertEquals(log.getCurrentIndex(), 3)
+        self.assertEqual(log.getCurrentIndex(), 3)
         for i in range(1, 4):
             for a, b in zip(commands[i-1:], [c for t, c in log.getCommandsSince(i)]):
-                self.assertEquals(a, b)
+                self.assertEqual(a, b)
 
     def testRecovery(self):
         svc = self.svc
@@ -145,8 +145,8 @@ class JournalTestCase(unittest.TestCase):
 
         # first, load from snapshot
         svc = Service(self.logpath, self.journalpath)
-        self.assertEquals(svc.values, {1: "hello"})
-        self.assertEquals(svc.counters[1].x, 1)
+        self.assertEqual(svc.values, {1: "hello"})
+        self.assertEqual(svc.counters[1].x, 1)
         del svc
 
         # now, tamper with log, and then try
@@ -154,8 +154,8 @@ class JournalTestCase(unittest.TestCase):
         f.write("sfsdfsdfsd")
         f.close()
         svc = Service(self.logpath, self.journalpath)
-        self.assertEquals(svc.values, {1: "hello"})
-        self.assertEquals(svc.counters[1].x, 1)
+        self.assertEqual(svc.values, {1: "hello"})
+        self.assertEqual(svc.counters[1].x, 1)
         
     def testTime(self):
         svc = self.svc
@@ -164,6 +164,6 @@ class JournalTestCase(unittest.TestCase):
 
         log = self.svc.journal.log
         (t2, c), = log.getCommandsSince(1)
-        self.assertEquals(t, t2)
+        self.assertEqual(t, t2)
 
         

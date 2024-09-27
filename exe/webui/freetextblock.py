@@ -65,8 +65,8 @@ class FreeTextBlock(Block):
 
         Block.process(self, request)
 
-        if (u"action" not in request.args or 
-            request.args[u"action"][0] != u"delete"): 
+        if ("action" not in request.args or 
+            request.args["action"][0] != "delete"): 
             content = self.contentElement.process(request) 
             if content: 
                 self.idevice.content = content
@@ -76,10 +76,10 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -88,7 +88,7 @@ class FreeTextBlock(Block):
         Returns an XHTML string for previewing this block
         """
         if hasattr(self.idevice, 'parent') and self.idevice.parent and not self.idevice.parent.edit:
-            return u""
+            return ""
         html = common.ideviceHeader(self, style, "preview")
         html += self.contentElement.renderPreview()
         html += common.ideviceFooter(self, style, "preview")                
@@ -99,14 +99,14 @@ class FreeTextBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
     def renderXML(self, style):
-        xml = u""
+        xml = ""
         
         """
         If we are effectively just one large image then make just an img tag and sound

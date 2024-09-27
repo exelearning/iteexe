@@ -4,15 +4,15 @@
 
 # 
 
-from __future__ import nested_scopes
+
 
 from twisted.web import microdom
-from microdom import getElementsByTagName, escape, unescape
+from .microdom import getElementsByTagName, escape, unescape
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 class NodeLookupError(Exception): pass
 
@@ -54,7 +54,7 @@ def get(node, nodeId):
     """
     result = _get(node, nodeId)
     if result: return result
-    raise NodeLookupError, nodeId
+    raise NodeLookupError(nodeId)
 
 def getIfExists(node, nodeId):
     """
@@ -242,7 +242,7 @@ def writeNodeData(node, oldio):
 
 
 def getNodeText(node):
-    oldio = StringIO.StringIO()
+    oldio = io.StringIO()
     writeNodeData(node, oldio)
     return oldio.getvalue()
 

@@ -6,7 +6,7 @@ from twisted.scripts import twistd
 from twisted.python import usage
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -43,7 +43,7 @@ class Options(usage.Options):
         """Set the root resource of the web server to the resource created 
         (and put into the `resource' variable) by this script."""
         d = {}
-        execfile(scriptname, d)
+        exec(compile(open(scriptname, "rb").read(), scriptname, 'exec'), d)
         self['root'] = d['resource']
 
     def opt_pickle(self, picklename):
@@ -76,9 +76,9 @@ def run():
     config.parseOptions()
     try:
         main(config)
-    except LookupError, err:
+    except LookupError as err:
         sys.exit(sys.argv[0]+": "+str(err))
-    except IOError, err:
+    except IOError as err:
         sys.exit(sys.argv[0]+": %s: %s" % (err.filename, err.strerror))
 
 if __name__ == '__main__':

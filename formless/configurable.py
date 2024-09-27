@@ -65,7 +65,7 @@ class Configurable(object):
             try:
                 binding = self.bindingDict[name]
             except KeyError:
-                raise RuntimeError, "%s is not an exposed binding on object %s." % (name, self.boundTo)
+                raise RuntimeError("%s is not an exposed binding on object %s." % (name, self.boundTo))
         binding.boundTo = self.boundTo
         return binding
 
@@ -125,7 +125,7 @@ class Configurable(object):
 
 class NotFoundConfigurable(Configurable):
     def getBinding(self, context, name):
-        raise RuntimeError, self.original
+        raise RuntimeError(self.original)
 
 
 class TypedInterfaceConfigurable(Configurable):

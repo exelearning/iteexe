@@ -12,13 +12,13 @@ Maintainer: U{Moshe Zadka<mailto:moshez@twistedmatrix.com>}
 
 import os, md5, sys
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 from twisted.python import components, log, runtime
 from twisted.persisted import styles
 from zope.interface import implements
@@ -92,7 +92,7 @@ class Persistent:
         if passphrase is None:
             dumpFunc(self.original, f)
         else:
-            s = StringIO.StringIO()
+            s = io.StringIO()
             dumpFunc(self.original, s)
             f.write(_encrypt(passphrase, s.getvalue()))
         f.close()
@@ -165,7 +165,7 @@ def load(filename, style, passphrase=None):
     else:
         load, mode = pickle.load, 'rb'
     if passphrase:
-        fp = StringIO.StringIO(_decrypt(passphrase,
+        fp = io.StringIO(_decrypt(passphrase,
                                         open(filename, 'rb').read()))
     else:
         fp = open(filename, mode)
@@ -203,9 +203,9 @@ def loadValueFromFile(filename, variable, passphrase=None):
     if passphrase:
         data = fileObj.read()
         data = _decrypt(passphrase, data)
-        exec data in d, d
+        exec(data, d, d)
     else:
-        exec fileObj in d, d
+        exec(fileObj, d, d)
     value = d[variable]
     return value
 

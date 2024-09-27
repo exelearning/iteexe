@@ -25,7 +25,7 @@ __all__ = ['install']
 try:
     import pygtk
     pygtk.require('1.2')
-except ImportError, AttributeError:
+except ImportError as AttributeError:
     pass # maybe we're using pygtk before this hack existed.
 import gtk
 import sys, time

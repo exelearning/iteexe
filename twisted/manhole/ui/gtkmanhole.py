@@ -23,7 +23,7 @@ True = gtk.TRUE
 False = gtk.FALSE
 
 try:
-    import spelunk_gnome
+    from . import spelunk_gnome
 except ImportError:
     _GNOME_POWER = False
 else:
@@ -39,7 +39,7 @@ else:
 ##             return pos+1
 ##     return 0
 
-import pywidgets
+from . import pywidgets
 
 class Interaction(pywidgets.Interaction, pb.Referenceable):
     loginWindow = None
@@ -138,24 +138,24 @@ class LineOrientedBrowserDisplay:
         # select referenced objects to browse them with
         # browse(selectedLink.identifier)
 
-        if obj.type in map(explorer.typeString, [types.FunctionType,
-                                                 types.MethodType]):
+        if obj.type in list(map(explorer.typeString, [types.FunctionType,
+                                                 types.MethodType])):
             arglist = []
             for arg in obj.value['signature']:
-                if arg.has_key('default'):
+                if 'default' in arg:
                     a = "%s=%s" % (arg['name'], arg['default'])
-                elif arg.has_key('list'):
+                elif 'list' in arg:
                     a = "*%s" % (arg['name'],)
-                elif arg.has_key('keywords'):
+                elif 'keywords' in arg:
                     a = "**%s" % (arg['name'],)
                 else:
                     a = arg['name']
                 arglist.append(a)
 
             things = ''
-            if obj.value.has_key('class'):
+            if 'class' in obj.value:
                 things = "Class: %s\n" % (obj.value['class'],)
-            if obj.value.has_key('self'):
+            if 'self' in obj.value:
                 things = things + "Self: %s\n" % (obj.value['self'],)
 
             s = "%(name)s(%(arglist)s)\n%(things)s\n%(doc)s\n" % {

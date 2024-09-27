@@ -6,7 +6,7 @@
 """I am the Twisted.Web error resources and exceptions."""
 
 #t.w imports
-import resource
+from . import resource
 
 from twisted.web import http
 

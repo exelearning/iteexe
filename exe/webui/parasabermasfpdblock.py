@@ -65,7 +65,7 @@ class ParasabermasfpdBlock(Block):
 	# Quitamos el prefijo "FPD -"
 	# (let's remove the "FPD -" prefix))
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"A Step Ahead")
+		self.idevice.title = x_("A Step Ahead")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

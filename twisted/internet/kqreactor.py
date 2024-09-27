@@ -72,8 +72,8 @@ from kqsyscall import *
 from twisted.python import log, failure
 
 # Sibling imports
-import main
-import posixbase
+from . import main
+from . import posixbase
 
 # globals
 reads = {}
@@ -92,7 +92,7 @@ class KQueueReactor(posixbase.PosixReactorBase):
         """Add a FileDescriptor for notification of data available to read.
         """
         fd = reader.fileno()
-        if not reads.has_key(fd):
+        if fd not in reads:
             selectables[fd] = reader
             reads[fd] = 1
             self._updateRegistration(fd, EVFILT_READ, EV_ADD)
@@ -101,7 +101,7 @@ class KQueueReactor(posixbase.PosixReactorBase):
         """Add a FileDescriptor for notification of data available to write.
         """
         fd = writer.fileno()
-        if not writes.has_key(fd):
+        if fd not in writes:
             selectables[fd] = writer
             writes[fd] = 1
             self._updateRegistration(fd, EVFILT_WRITE, EV_ADD)
@@ -110,28 +110,28 @@ class KQueueReactor(posixbase.PosixReactorBase):
         """Remove a Selectable for notification of data available to read.
         """
         fd = reader.fileno()
-        if reads.has_key(fd):
+        if fd in reads:
             del reads[fd]
-            if not writes.has_key(fd): del selectables[fd]
+            if fd not in writes: del selectables[fd]
             self._updateRegistration(fd, EVFILT_READ, EV_DELETE)
 
     def removeWriter(self, writer, writes=writes):
         """Remove a Selectable for notification of data available to write.
         """
         fd = writer.fileno()
-        if writes.has_key(fd):
+        if fd in writes:
             del writes[fd]
-            if not reads.has_key(fd): del selectables[fd]
+            if fd not in reads: del selectables[fd]
             self._updateRegistration(fd, EVFILT_WRITE, EV_DELETE)
 
     def removeAll(self):
         """Remove all selectables, and return a list of them."""
         if self.waker is not None:
             self.removeReader(self.waker)
-        result = selectables.values()
-        for fd in reads.keys():
+        result = list(selectables.values())
+        for fd in list(reads.keys()):
             self._updateRegistration(fd, EVFILT_READ, EV_DELETE)
-        for fd in writes.keys():
+        for fd in list(writes.keys()):
             self._updateRegistration(fd, EVFILT_WRITE, EV_DELETE)
         reads.clear()
         writes.clear()
@@ -157,7 +157,7 @@ class KQueueReactor(posixbase.PosixReactorBase):
 
         try:
             l = kq.kevent([], len(selectables), timeout)
-        except OSError, e:
+        except OSError as e:
             if e[0] == errno.EINTR:
                 return
             else:

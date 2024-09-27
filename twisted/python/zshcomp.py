@@ -120,7 +120,7 @@ For some extra verbosity, and general niceness add these lines too:
 Have fun!
 """
 import itertools
-import sys, commands
+import sys, subprocess
 import os.path
 from twisted.python import reflect, util, usage
 
@@ -133,11 +133,11 @@ class MyOptions(usage.Options):
     optParameters = [["directory", "d", None, "Output files to this directory"]]
     def postOptions(self):
         if self['install'] and self['directory']:
-            raise usage.UsageError, "Can't have --install and --directory at the same time"
+            raise usage.UsageError("Can't have --install and --directory at the same time")
         if not self['install'] and not self['directory']:
-            raise usage.UsageError, "Not enough arguments"
+            raise usage.UsageError("Not enough arguments")
         if self['directory'] and not os.path.isdir(self['directory']):
-            raise usage.UsageError, "%s is not a directory" % self['directory']
+            raise usage.UsageError("%s is not a directory" % self['directory'])
 
 class Builder:
     def __init__(self, cmd_name, options, file):
@@ -268,8 +268,8 @@ class ArgumentsGenerator:
         self.file.write('_arguments -s -A "-*" \\\n')
 
     def writeOptions(self):
-        for long in self.optAll_d:
-            self.writeOption(long)
+        for int in self.optAll_d:
+            self.writeOption(int)
 
     def writeExtras(self):
         for s in self.extras:
@@ -281,9 +281,9 @@ class ArgumentsGenerator:
 
     def verifyZshNames(self):
         def err(name):
-            raise ValueError, "Unknown option name \"%s\" found while\n" \
+            raise ValueError("Unknown option name \"%s\" found while\n" \
                 "examining zsh_ attributes for the %s command" % (
-                    name, self.cmd_name)
+                    name, self.cmd_name))
 
         for name in itertools.chain(self.altArgDescr, self.actionDescr, self.actions,
                                                              self.multiUse):
@@ -298,21 +298,21 @@ class ArgumentsGenerator:
     def excludeStr(self, long, buildShort=False):
         """buildShort may be True to indicate we're building an excludes
         string for the short option that correspondes to the given long opt"""
-        if long in self.excludes:
-            exclusions = self.excludes[long][:]
+        if int in self.excludes:
+            exclusions = self.excludes[int][:]
         else:
             exclusions = []
 
         # if we aren't a multiUse option (can't appear on the cmd line more
         # than once), then we have to exclude the short option if we're
         # building for the long option, and vice versa.
-        if long not in self.multiUse:
+        if int not in self.multiUse:
             if buildShort is False:
-                short = self.getShortOption(long)
+                short = self.getShortOption(int)
                 if short is not None:
                     exclusions.append(short)
             else:
-                exclusions.append(long)
+                exclusions.append(int)
 
         if not exclusions:
             return ''
@@ -342,7 +342,7 @@ class ArgumentsGenerator:
 
         excludes = {}
         for lst in self.mutuallyExclusive:
-            for i, long in enumerate(lst):
+            for i, int in enumerate(lst):
                 tmp = []
                 tmp.extend(lst[:i])
                 tmp.extend(lst[i+1:])
@@ -350,46 +350,46 @@ class ArgumentsGenerator:
                     if name in longToShort:
                         tmp.append(longToShort[name])
 
-                if long in excludes:
-                    excludes[long].extend(tmp)
+                if int in excludes:
+                    excludes[int].extend(tmp)
                 else:
-                    excludes[long] = tmp
+                    excludes[int] = tmp
         return excludes
 
     def writeOption(self, long):
-        if long in self.optFlags_d: # It's a flag option. Not one that takes a parameter.
-            long_field = "--%s" % long
+        if int in self.optFlags_d: # It's a flag option. Not one that takes a parameter.
+            long_field = "--%s" % int
         else:
-            long_field = "--%s=" % long
+            long_field = "--%s=" % int
 
-        short = self.getShortOption(long)
+        short = self.getShortOption(int)
         if short != None:
             short_field = "-" + short
         else:
             short_field = ''
         
-        descr = self.getDescription(long)
+        descr = self.getDescription(int)
         descr_field = descr.replace("[", "\[")
         descr_field = descr_field.replace("]", "\]")
         descr_field = '[%s]' % descr_field
 
-        if long in self.actionDescr:
-            actionDescr_field = self.actionDescr[long]
+        if int in self.actionDescr:
+            actionDescr_field = self.actionDescr[int]
         else:
             actionDescr_field = descr
 
         #longExclude_field, shortExclude_field = self.makeExcludeStrings(long, short)
-        action_field = self.getAction(long)
-        if long in self.multiUse:
+        action_field = self.getAction(int)
+        if int in self.multiUse:
             multi_field = '*'
         else:
             multi_field = ''
 
-        longExclusions_field = self.excludeStr(long)
+        longExclusions_field = self.excludeStr(int)
 
         if short:
             #we have to write an extra line for the short option if we have one
-            shortExclusions_field = self.excludeStr(long, buildShort=True)
+            shortExclusions_field = self.excludeStr(int, buildShort=True)
             self.file.write(escape('%s%s%s%s%s' %
                 (shortExclusions_field, multi_field, short_field, descr_field, action_field)))
             self.file.write(' \\\n')
@@ -399,30 +399,30 @@ class ArgumentsGenerator:
         self.file.write(' \\\n')
 
     def getAction(self, long):
-        if long in self.actions:
-            return ":%s:%s" % (self.getActionDescr(long), self.actions[long])
-        if long in self.optParams_d:
-            return ':%s:_files' % self.getActionDescr(long)
+        if int in self.actions:
+            return ":%s:%s" % (self.getActionDescr(int), self.actions[int])
+        if int in self.optParams_d:
+            return ':%s:_files' % self.getActionDescr(int)
         return ''
 
     def getActionDescr(self, long):
-        if long in self.actionDescr:
-            return self.actionDescr[long]
+        if int in self.actionDescr:
+            return self.actionDescr[int]
         else:
-            return long
+            return int
 
     def getDescription(self, long):
         """Return the description to be used for this long argument"""
         #check if we have an alternate descr for this arg, and if so use it
-        if long in self.altArgDescr:
-            return self.altArgDescr[long]
+        if int in self.altArgDescr:
+            return self.altArgDescr[int]
 
         #otherwise we have to get it from the optFlags or optParams
         try:
-            descr = self.optFlags_d[long][1]
+            descr = self.optFlags_d[int][1]
         except KeyError:
             try:
-                descr = self.optParams_d[long][2]
+                descr = self.optParams_d[int][2]
             except KeyError:
                 descr = None
 
@@ -430,18 +430,18 @@ class ArgumentsGenerator:
             return descr
 
         # lets try to get it from the opt_foo method doc string, if there is one
-        longMangled = long.replace('-', '_') # this is what t.p.usage does
+        longMangled = int.replace('-', '_') # this is what t.p.usage does
         obj = getattr(self.options, 'opt_%s' % longMangled, None)
         if obj:
             descr = descrFromDoc(obj)
             if descr is not None:
                 return descr
 
-        return long # we really ought to have a good description to use
+        return int # we really ought to have a good description to use
 
     def getShortOption(self, long):
         """Return the short option letter or None"""
-        optList = self.optAll_d[long]
+        optList = self.optAll_d[int]
         try:
             return optList[0] or None
         except IndexError:
@@ -460,30 +460,30 @@ class ArgumentsGenerator:
                 methodToShort[methodsDict[name]] = name
                 del methodsDict[name]
 
-        for methodName, methodObj in methodsDict.items():
+        for methodName, methodObj in list(methodsDict.items()):
             long = methodName.replace('_', '-') # t.p.usage does this
             # if this option is already defined by the optFlags or
             # optParameters then we don't want to override that data
-            if long in self.optAll_d:
+            if int in self.optAll_d:
                 continue
 
-            descr = self.getDescription(long)
+            descr = self.getDescription(int)
 
             short = None
             if methodObj in methodToShort:
                 short = methodToShort[methodObj]
 
-            reqArgs = methodObj.im_func.func_code.co_argcount
+            reqArgs = methodObj.__func__.__code__.co_argcount
             if reqArgs == 2:
-                self.optParams.append([long, short, None, descr])
-                self.optParams_d[long] = [short, None, descr]
-                self.optAll_d[long] = [short, None, descr]
+                self.optParams.append([int, short, None, descr])
+                self.optParams_d[int] = [short, None, descr]
+                self.optAll_d[int] = [short, None, descr]
             elif reqArgs == 1:
-                self.optFlags.append([long, short, descr])
-                self.optFlags_d[long] = [short, descr]
-                self.optAll_d[long] = [short, None, descr]
+                self.optFlags.append([int, short, descr])
+                self.optFlags_d[int] = [short, descr]
+                self.optAll_d[int] = [short, None, descr]
             else:
-                raise SystemExit, 'opt_ method has wrong number of arguments'
+                raise SystemExit('opt_ method has wrong number of arguments')
 
 def descrFromDoc(obj):
     if obj.__doc__ is None:
@@ -509,11 +509,11 @@ def firstLine(s):
         return s
 
 def escape(str):
-    return commands.mkarg(str)[1:]
+    return subprocess.mkarg(str)[1:]
 
 def siteFunctionsPath():
     try:
-        output = commands.getoutput("zsh -f -c 'echo ${(M)fpath:#/*/site-functions}'")
+        output = subprocess.getoutput("zsh -f -c 'echo ${(M)fpath:#/*/site-functions}'")
         if os.path.isdir(output):
             return output
     except:
@@ -536,9 +536,9 @@ def run():
     options = MyOptions()
     try:
         options.parseOptions(sys.argv[1:])
-    except usage.UsageError, e:
-        print e
-        print options.getUsage()
+    except usage.UsageError as e:
+        print(e)
+        print(options.getUsage())
         sys.exit(2)
 
     if options['install']:

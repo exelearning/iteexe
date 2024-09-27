@@ -5,7 +5,7 @@ from exe.engine.path import Path
 from exe.engine.version import release
 
 def upFile(sftp, filename):
-    print 'Uploading', filename
+    print('Uploading', filename)
     rFilename = str(filename.basename())
     if rFilename in sftp.listdir():
         sftp.remove(rFilename)
@@ -25,20 +25,20 @@ def main():
     try:
         from paramiko import Transport
     except ImportError:
-        print
-        print 'To upload you need to install paramiko python library from:'
-        print 'http://www.lag.net/paramiko',
-        print 'or on ubuntu go: apt-get install python2.4-paramiko'
-        print
+        print()
+        print('To upload you need to install paramiko python library from:')
+        print('http://www.lag.net/paramiko', end=' ')
+        print('or on ubuntu go: apt-get install python2.4-paramiko')
+        print()
         sys.exit(2)
     # Setup for eduforge
     server = 'shell.eduforge.org'
     basedir = '/home/pub/exe/'
-    print 'Please enter password for %s@%s:' % (sys.argv[-1], server)
+    print('Please enter password for %s@%s:' % (sys.argv[-1], server))
     password = getpass()
     # Get the version
     # Rename the files
-    print 'Renaming files'
+    print('Renaming files')
     install = Path('eXe_install_windows.exe')
     newName = Path('eXe-install-%s.exe' % release)
     install = renameFile(install, newName)
@@ -46,8 +46,8 @@ def main():
     newName = Path('eXe-ready2run-%s.exe' % release)
     ready2run = renameFile(ready2run, newName)
     # Upload
-    print 'Uploading'
-    print 'connecting to %s...' % server
+    print('Uploading')
+    print('connecting to %s...' % server)
     from socket import socket, gethostbyname
     s = socket()
     s.connect((gethostbyname(server), 22))
@@ -60,7 +60,7 @@ def main():
     upFile(sftp, ready2run)
 
 if len(sys.argv) != 2:
-    print 'Please call passing your eduforge username'
+    print('Please call passing your eduforge username')
 else:
     main()
 from getpass import getpass
@@ -70,7 +70,7 @@ from exe.engine.path import Path
 from exe.engine.version import release
 
 def upFile(sftp, filename):
-    print 'Uploading', filename
+    print('Uploading', filename)
     rFilename = str(filename.basename())
     if rFilename in sftp.listdir():
         sftp.remove(rFilename)
@@ -90,20 +90,20 @@ def main():
     try:
         from paramiko import Transport
     except ImportError:
-        print
-        print 'To upload you need to install paramiko python library from:'
-        print 'http://www.lag.net/paramiko',
-        print 'or on ubuntu go: apt-get install python2.4-paramiko'
-        print
+        print()
+        print('To upload you need to install paramiko python library from:')
+        print('http://www.lag.net/paramiko', end=' ')
+        print('or on ubuntu go: apt-get install python2.4-paramiko')
+        print()
         sys.exit(2)
     # Setup for eduforge
     server = 'shell.eduforge.org'
     basedir = '/home/pub/exe/'
-    print 'Please enter password for %s@%s:' % (sys.argv[-1], server)
+    print('Please enter password for %s@%s:' % (sys.argv[-1], server))
     password = getpass()
     # Get the version
     # Rename the files
-    print 'Renaming files'
+    print('Renaming files')
     install = Path('eXe_install_windows.exe')
     newName = Path('eXe-install-%s.exe' % release)
     install = renameFile(install, newName)
@@ -111,8 +111,8 @@ def main():
     newName = Path('eXe-ready2run-%s.exe' % release)
     ready2run = renameFile(ready2run, newName)
     # Upload
-    print 'Uploading'
-    print 'connecting to %s...' % server
+    print('Uploading')
+    print('connecting to %s...' % server)
     from socket import socket, gethostbyname
     s = socket()
     s.connect((gethostbyname(server), 22))
@@ -125,6 +125,6 @@ def main():
     upFile(sftp, ready2run)
 
 if len(sys.argv) != 2:
-    print 'Please call passing your eduforge username'
+    print('Please call passing your eduforge username')
 else:
     main()

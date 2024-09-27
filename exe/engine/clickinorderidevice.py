@@ -29,7 +29,7 @@ from exe.engine.field   import TextField
 from exe.engine.field   import Field
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
-from extendedfieldengine import ChoiceField
+from .extendedfieldengine import ChoiceField
 
 log = logging.getLogger(__name__)
 
@@ -46,9 +46,9 @@ class ClickInOrderIdeviceInc(Idevice):
     Click in order according to the hint game...
     """
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"Click In Order Game"), 
-                         x_(u"PAIWASTOON Networking Services Ltd."), 
-                         x_(u"""Click in Order according to the hint on the map."""), "", "")
+        Idevice.__init__(self, x_("Click In Order Game"), 
+                         x_("PAIWASTOON Networking Services Ltd."), 
+                         x_("""Click in Order according to the hint on the map."""), "", "")
         self.emphasis = Idevice.SomeEmphasis
         self.message = ""
         
@@ -66,7 +66,7 @@ class ClickInOrderIdeviceInc(Idevice):
                 'ClickToStartArea' : [x_('Area shown before the game starts'), x_('User will click on this to start the game')]\
                 }
         self.textAreaFields = {}
-        for textAreaFieldName, textAreaDesc in self.textAreaFieldNames.iteritems():
+        for textAreaFieldName, textAreaDesc in self.textAreaFieldNames.items():
             self.textAreaFields[textAreaFieldName] = TextAreaField(textAreaDesc[INDEX_TITLEFIELD], \
                 textAreaDesc[INDEX_INSTRUCTIONFIELD], "")
             self.textAreaFields[textAreaFieldName].idevice = self
@@ -84,7 +84,7 @@ class ClickInOrderIdeviceInc(Idevice):
                 'timerStyle' : [x_('Style of timer Element'), x_('Style of timer (CSS)')]
                 }
         self.textFields = {}
-        for textFieldName, textFieldDesc in self.textFieldNames.iteritems():
+        for textFieldName, textFieldDesc in self.textFieldNames.items():
             if len(textFieldDesc) >= INDEX_DEFAULTVALUEFIELD+1:
                 self.textFields[textFieldName] = TextField(textFieldDesc[INDEX_TITLEFIELD], \
                    textFieldDesc[INDEX_INSTRUCTIONFIELD], textFieldDesc[INDEX_DEFAULTVALUEFIELD])
@@ -157,7 +157,7 @@ class ClickInOrderClickableAreaField(Field):
                 }
         self.textFields = {}
 
-        for textFieldName, textFieldDetails in self.textFieldNames.iteritems():
+        for textFieldName, textFieldDetails in self.textFieldNames.items():
             self.textFields[textFieldName] = TextField(textFieldDetails[INDEX_TITLEFIELD],\
                 textFieldDetails[INDEX_INSTRUCTIONFIELD])
             self.textFields[textFieldName].idevice = self.idevice
@@ -169,7 +169,7 @@ class ClickInOrderClickableAreaField(Field):
 
         self.textAreaFields = {}
 
-        for textAreaFieldName, textAreaFieldDetails in self.textAreaFieldNames.iteritems():
+        for textAreaFieldName, textAreaFieldDetails in self.textAreaFieldNames.items():
             self.textAreaFields[textAreaFieldName] = TextAreaField(textAreaFieldDetails[INDEX_TITLEFIELD],\
                 textAreaFieldDetails[INDEX_INSTRUCTIONFIELD], "")
             self.textAreaFields[textAreaFieldName].idevice = self.idevice

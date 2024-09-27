@@ -14,7 +14,7 @@ class IterableCounter:
     def __iter__(self):
         return self
 
-    def next(self):
+    def __next__(self):
         self.i += 1
         if self.i >= self.lim:
             raise StopIteration
@@ -24,11 +24,11 @@ class CompatTestCase(unittest.TestCase):
     def testDict(self):
         d1 = {'a': 'b'}
         d2 = dict(d1)
-        self.assertEquals(d1, d2)
+        self.assertEqual(d1, d2)
         d1['a'] = 'c'
-        self.assertNotEquals(d1, d2)
-        d2 = dict(d1.items())
-        self.assertEquals(d1, d2)
+        self.assertNotEqual(d1, d2)
+        d2 = dict(list(d1.items()))
+        self.assertEqual(d1, d2)
 
 #        d2 = dict(a='c')
 #        self.assertEquals(d1, d2)
@@ -39,68 +39,68 @@ class CompatTestCase(unittest.TestCase):
 #        self.assertEquals(d1, d3)
 
     def testBool(self):
-        self.assertEquals(bool('hi'), True)
-        self.assertEquals(bool(True), True)
-        self.assertEquals(bool(''), False)
-        self.assertEquals(bool(False), False)
+        self.assertEqual(bool('hi'), True)
+        self.assertEqual(bool(True), True)
+        self.assertEqual(bool(''), False)
+        self.assertEqual(bool(False), False)
 
     def testIteration(self):
-        lst1, lst2 = range(10), []
+        lst1, lst2 = list(range(10)), []
 
         for i in iter(lst1):
             lst2.append(i)
-        self.assertEquals(lst1, lst2)
+        self.assertEqual(lst1, lst2)
         del lst2[:]
 
         try:
             iterable = iter(lst1)
             while 1:
-                lst2.append(iterable.next())
+                lst2.append(next(iterable))
         except StopIteration:
             pass
-        self.assertEquals(lst1, lst2)
+        self.assertEqual(lst1, lst2)
         del lst2[:]
 
         for i in iter(IterableCounter(10)):
             lst2.append(i)
-        self.assertEquals(lst1, lst2)
+        self.assertEqual(lst1, lst2)
         del lst2[:]
 
         try:
             iterable = iter(IterableCounter(10))
             while 1:
-                lst2.append(iterable.next())
+                lst2.append(next(iterable))
         except StopIteration:
             pass
-        self.assertEquals(lst1, lst2)
+        self.assertEqual(lst1, lst2)
         del lst2[:]
 
-        for i in iter(IterableCounter(20).next, 10):
+        for i in iter(IterableCounter(20).__next__, 10):
             lst2.append(i)
-        self.assertEquals(lst1, lst2)
+        self.assertEqual(lst1, lst2)
 
     def testIsinstance(self):
-        self.assert_(isinstance(u'hi', types.StringTypes))
-        self.assert_(isinstance(self, unittest.TestCase))
+        self.assertTrue(isinstance('hi', (str,)))
+        self.assertTrue(isinstance(self, unittest.TestCase))
         # I'm pretty sure it's impossible to implement this
         # without replacing isinstance on 2.2 as well :(
         # self.assert_(isinstance({}, dict))
 
     def testStrip(self):
-        self.assertEquals(' x '.lstrip(' '), 'x ')
-        self.assertEquals(' x x'.lstrip(' '), 'x x')
-        self.assertEquals(' x '.rstrip(' '), ' x')
-        self.assertEquals('x x '.rstrip(' '), 'x x')
+        self.assertEqual(' x '.lstrip(' '), 'x ')
+        self.assertEqual(' x x'.lstrip(' '), 'x x')
+        self.assertEqual(' x '.rstrip(' '), ' x')
+        self.assertEqual('x x '.rstrip(' '), 'x x')
 
-        self.assertEquals('\t x '.lstrip('\t '), 'x ')
-        self.assertEquals(' \tx x'.lstrip('\t '), 'x x')
-        self.assertEquals(' x\t '.rstrip(' \t'), ' x')
-        self.assertEquals('x x \t'.rstrip(' \t'), 'x x')
+        self.assertEqual('\t x '.lstrip('\t '), 'x ')
+        self.assertEqual(' \tx x'.lstrip('\t '), 'x x')
+        self.assertEqual(' x\t '.rstrip(' \t'), ' x')
+        self.assertEqual('x x \t'.rstrip(' \t'), 'x x')
 
-        self.assertEquals('\t x '.strip('\t '), 'x')
-        self.assertEquals(' \tx x'.strip('\t '), 'x x')
-        self.assertEquals(' x\t '.strip(' \t'), 'x')
-        self.assertEquals('x x \t'.strip(' \t'), 'x x')
+        self.assertEqual('\t x '.strip('\t '), 'x')
+        self.assertEqual(' \tx x'.strip('\t '), 'x x')
+        self.assertEqual(' x\t '.strip(' \t'), 'x')
+        self.assertEqual('x x \t'.strip(' \t'), 'x x')
 
     def testNToP(self):
         from twisted.python.compat import inet_ntop
@@ -108,18 +108,18 @@ class CompatTestCase(unittest.TestCase):
         f = lambda a: inet_ntop(socket.AF_INET6, a)
         g = lambda a: inet_ntop(socket.AF_INET, a)
 
-        self.assertEquals('::', f('\x00' * 16))
-        self.assertEquals('::1', f('\x00' * 15 + '\x01'))
-        self.assertEquals(
+        self.assertEqual('::', f('\x00' * 16))
+        self.assertEqual('::1', f('\x00' * 15 + '\x01'))
+        self.assertEqual(
             'aef:b01:506:1001:ffff:9997:55:170',
             f('\x0a\xef\x0b\x01\x05\x06\x10\x01\xff\xff\x99\x97\x00\x55\x01\x70'))
 
-        self.assertEquals('1.0.1.0', g('\x01\x00\x01\x00'))
-        self.assertEquals('170.85.170.85', g('\xaa\x55\xaa\x55'))
-        self.assertEquals('255.255.255.255', g('\xff\xff\xff\xff'))
+        self.assertEqual('1.0.1.0', g('\x01\x00\x01\x00'))
+        self.assertEqual('170.85.170.85', g('\xaa\x55\xaa\x55'))
+        self.assertEqual('255.255.255.255', g('\xff\xff\xff\xff'))
 
-        self.assertEquals('100::', f('\x01' + '\x00' * 15))
-        self.assertEquals('100::1', f('\x01' + '\x00' * 14 + '\x01'))
+        self.assertEqual('100::', f('\x01' + '\x00' * 15))
+        self.assertEqual('100::1', f('\x01' + '\x00' * 14 + '\x01'))
 
     def testPToN(self):
         from twisted.python.compat import inet_pton
@@ -127,20 +127,20 @@ class CompatTestCase(unittest.TestCase):
         f = lambda a: inet_pton(socket.AF_INET6, a)
         g = lambda a: inet_pton(socket.AF_INET, a)
 
-        self.assertEquals('\x00\x00\x00\x00', g('0.0.0.0'))
-        self.assertEquals('\xff\x00\xff\x00', g('255.0.255.0'))
-        self.assertEquals('\xaa\xaa\xaa\xaa', g('170.170.170.170'))
+        self.assertEqual('\x00\x00\x00\x00', g('0.0.0.0'))
+        self.assertEqual('\xff\x00\xff\x00', g('255.0.255.0'))
+        self.assertEqual('\xaa\xaa\xaa\xaa', g('170.170.170.170'))
 
-        self.assertEquals('\x00' * 16, f('::'))
-        self.assertEquals('\x00' * 16, f('0::0'))
-        self.assertEquals('\x00\x01' + '\x00' * 14, f('1::'))
-        self.assertEquals(
+        self.assertEqual('\x00' * 16, f('::'))
+        self.assertEqual('\x00' * 16, f('0::0'))
+        self.assertEqual('\x00\x01' + '\x00' * 14, f('1::'))
+        self.assertEqual(
             '\x45\xef\x76\xcb\x00\x1a\x56\xef\xaf\xeb\x0b\xac\x19\x24\xae\xae',
             f('45ef:76cb:1a:56ef:afeb:bac:1924:aeae'))
 
-        self.assertEquals('\x00' * 14 + '\x00\x01', f('::1'))
-        self.assertEquals('\x00' * 12 + '\x01\x02\x03\x04', f('::1.2.3.4'))
-        self.assertEquals(
+        self.assertEqual('\x00' * 14 + '\x00\x01', f('::1'))
+        self.assertEqual('\x00' * 12 + '\x01\x02\x03\x04', f('::1.2.3.4'))
+        self.assertEqual(
             '\x00\x01\x00\x02\x00\x03\x00\x04\x00\x05\x00\x06\x01\x02\x03\xff',
             f('1:2:3:4:5:6:1.2.3.255'))
 

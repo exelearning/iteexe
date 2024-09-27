@@ -6,7 +6,7 @@
 from twisted.trial import unittest
 from twisted.python import text
 import string
-from cStringIO import StringIO
+from io import StringIO
 
 sampleText = \
 """Every attempt to employ mathematical methods in the study of chemical
@@ -38,7 +38,7 @@ class WrapTest(unittest.TestCase):
         wordCount = len(words)
         sampleTextWordCount = len(self.sampleSplitText)
 
-        self.failUnlessEqual(wordCount, sampleTextWordCount)
+        self.assertEqual(wordCount, sampleTextWordCount)
 
     def test_wordMatch(self):
         """Compare the lists of words."""
@@ -49,7 +49,7 @@ class WrapTest(unittest.TestCase):
 
         # Using failUnlessEqual here prints out some
         # rather too long lists.
-        self.failUnless(self.sampleSplitText == words)
+        self.assertTrue(self.sampleSplitText == words)
 
     def test_lineLength(self):
         """Check the length of the lines."""
@@ -71,12 +71,12 @@ class SplitTest(unittest.TestCase):
         """Splitting strings with one-word phrases."""
         s = 'This code "works."'
         r = text.splitQuoted(s)
-        self.failUnlessEqual(['This', 'code', 'works.'], r)
+        self.assertEqual(['This', 'code', 'works.'], r)
 
     def test_multiWord(self):
         s = 'The "hairy monkey" likes pie.'
         r = text.splitQuoted(s)
-        self.failUnlessEqual(['The', 'hairy monkey', 'likes', 'pie.'], r)
+        self.assertEqual(['The', 'hairy monkey', 'likes', 'pie.'], r)
 
     # Some of the many tests that would fail:
 
@@ -99,58 +99,58 @@ class StrFileTest(unittest.TestCase):
         pass
 
     def test_1_f(self):
-        self.assertEquals(False, text.strFile("x", self.io))
+        self.assertEqual(False, text.strFile("x", self.io))
 
     def test_1_1(self):
-        self.assertEquals(True, text.strFile("t", self.io))
+        self.assertEqual(True, text.strFile("t", self.io))
 
     def test_1_2(self):
-        self.assertEquals(True, text.strFile("h", self.io))
+        self.assertEqual(True, text.strFile("h", self.io))
 
     def test_1_3(self):
-        self.assertEquals(True, text.strFile("i", self.io))
+        self.assertEqual(True, text.strFile("i", self.io))
 
     def test_1_4(self):
-        self.assertEquals(True, text.strFile("s", self.io))
+        self.assertEqual(True, text.strFile("s", self.io))
 
     def test_1_5(self):
-        self.assertEquals(True, text.strFile("n", self.io))
+        self.assertEqual(True, text.strFile("n", self.io))
 
     def test_1_6(self):
-        self.assertEquals(True, text.strFile("g", self.io))
+        self.assertEqual(True, text.strFile("g", self.io))
 
     def test_3_1(self):
-        self.assertEquals(True, text.strFile("thi", self.io))
+        self.assertEqual(True, text.strFile("thi", self.io))
 
     def test_3_2(self):
-        self.assertEquals(True, text.strFile("his", self.io))
+        self.assertEqual(True, text.strFile("his", self.io))
 
     def test_3_3(self):
-        self.assertEquals(True, text.strFile("is ", self.io))
+        self.assertEqual(True, text.strFile("is ", self.io))
 
     def test_3_4(self):
-        self.assertEquals(True, text.strFile("ing", self.io))
+        self.assertEqual(True, text.strFile("ing", self.io))
 
     def test_3_f(self):
-        self.assertEquals(False, text.strFile("bla", self.io))
+        self.assertEqual(False, text.strFile("bla", self.io))
 
     def test_large_1(self):
-        self.assertEquals(True, text.strFile("this is a test", self.io))
+        self.assertEqual(True, text.strFile("this is a test", self.io))
 
     def test_large_2(self):
-        self.assertEquals(True, text.strFile("is a test string", self.io))
+        self.assertEqual(True, text.strFile("is a test string", self.io))
 
     def test_large_f(self):
-        self.assertEquals(False, text.strFile("ds jhfsa k fdas", self.io))
+        self.assertEqual(False, text.strFile("ds jhfsa k fdas", self.io))
 
     def test_overlarge_f(self):
-        self.assertEquals(False, text.strFile("djhsakj dhsa fkhsa s,mdbnfsauiw bndasdf hreew", self.io))
+        self.assertEqual(False, text.strFile("djhsakj dhsa fkhsa s,mdbnfsauiw bndasdf hreew", self.io))
 
     def test_self(self):
-        self.assertEquals(True, text.strFile("this is a test string", self.io))
+        self.assertEqual(True, text.strFile("this is a test string", self.io))
     
     def test_insensitive(self):
-        self.assertEquals(True, text.strFile("ThIs is A test STRING", self.io, False))
+        self.assertEqual(True, text.strFile("ThIs is A test STRING", self.io, False))
 
 testCases = [WrapTest, SplitTest, StrFileTest]
 

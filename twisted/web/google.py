@@ -4,7 +4,7 @@
 #
 """\"I'm Feeling Lucky\" with U{Google<http://google.com>}.
 """
-import urllib
+import urllib.request, urllib.parse, urllib.error
 from twisted.internet import protocol, reactor, defer
 from twisted.web import http
 
@@ -44,8 +44,8 @@ class GoogleCheckerFactory(protocol.ClientFactory):
 
     def __init__(self, words):
         self.url = ('/search?q=%s&btnI=%s' %
-                    (urllib.quote_plus(' '.join(words)),
-                     urllib.quote_plus("I'm Feeling Lucky")))
+                    (urllib.parse.quote_plus(' '.join(words)),
+                     urllib.parse.quote_plus("I'm Feeling Lucky")))
         self.agent="Twisted/GoogleChecker"
         self.host = "www.google.com"
         self.deferred = defer.Deferred()

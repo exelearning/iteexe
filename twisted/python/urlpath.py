@@ -4,8 +4,8 @@
 
 #
 
-import urlparse
-import urllib
+import urllib.parse
+import urllib.request, urllib.parse, urllib.error
 
 class URLPath:
     def __init__(self, scheme='', netloc='localhost', path='',
@@ -22,7 +22,7 @@ class URLPath:
     def pathList(self, unquote=0, copy=1):
         if self._qpathlist is None:
             self._qpathlist = self.path.split('/')
-            self._uqpathlist = map(urllib.unquote, self._qpathlist)
+            self._uqpathlist = list(map(urllib.parse.unquote, self._qpathlist))
         if unquote:
             result = self._uqpathlist
         else:
@@ -33,7 +33,7 @@ class URLPath:
             return result
 
     def fromString(klass, st):
-        t = urlparse.urlsplit(st)
+        t = urllib.parse.urlsplit(st)
         u = klass(*t)
         return u
 
@@ -88,7 +88,7 @@ class URLPath:
         """Return a path which is the URL where a browser would presumably take
         you if you clicked on a link with an HREF as given.
         """
-        scheme, netloc, path, query, fragment = urlparse.urlsplit(st)
+        scheme, netloc, path, query, fragment = urllib.parse.urlsplit(st)
         if not scheme:
             scheme = self.scheme
         if not netloc:
@@ -111,7 +111,7 @@ class URLPath:
 
     
     def __str__(self):
-        x = urlparse.urlunsplit((
+        x = urllib.parse.urlunsplit((
             self.scheme, self.netloc, self.path,
             self.query, self.fragment))
         return x

@@ -5,14 +5,14 @@
 
 """Test HTTP support."""
 
-from __future__ import nested_scopes
+
 
 from twisted.trial import unittest
 from twisted.web import http
 from twisted.protocols import loopback
 from twisted.internet import protocol
 from twisted.test.test_protocols import StringIOWithoutClosing
-import string, random, urllib, cgi
+import string, random, urllib.request, urllib.parse, urllib.error, cgi
 
 
 class DateTimeTest(unittest.TestCase):
@@ -23,14 +23,14 @@ class DateTimeTest(unittest.TestCase):
             time = random.randint(0, 2000000000)
             timestr = http.datetimeToString(time)
             time2 = http.stringToDatetime(timestr)
-            self.assertEquals(time, time2)
+            self.assertEqual(time, time2)
 
 
 class OrderedDict:
 
     def __init__(self, dict):
         self.dict = dict
-        self.l = dict.keys()
+        self.l = list(dict.keys())
 
     def __setitem__(self, k, v):
         self.l.append(k)
@@ -101,14 +101,14 @@ Accept: text/html
         if value != self.expected_response:
             for i in range(len(value)):
                 if len(self.expected_response) <= i:
-                    print `value[i-5:i+10]`, `self.expected_response[i-5:i+10]`
+                    print(repr(value[i-5:i+10]), repr(self.expected_response[i-5:i+10]))
                 elif value[i] != self.expected_response[i]:
-                    print `value[i-5:i+10]`, `self.expected_response[i-5:i+10]`
+                    print(repr(value[i-5:i+10]), repr(self.expected_response[i-5:i+10]))
                     break
-            print '---VALUE---'
-            print repr(value)
-            print '---EXPECTED---'
-            print repr(self.expected_response)
+            print('---VALUE---')
+            print(repr(value))
+            print('---EXPECTED---')
+            print(repr(self.expected_response))
             raise AssertionError
 
 
@@ -170,20 +170,20 @@ class HTTPLoopbackTestCase(unittest.TestCase):
 
     def _handleStatus(self, version, status, message):
         self.gotStatus = 1
-        self.assertEquals(version, "HTTP/1.0")
-        self.assertEquals(status, "200")
+        self.assertEqual(version, "HTTP/1.0")
+        self.assertEqual(status, "200")
 
     def _handleResponse(self, data):
         self.gotResponse = 1
-        self.assertEquals(data, "'''\n10\n0123456789'''\n")
+        self.assertEqual(data, "'''\n10\n0123456789'''\n")
 
     def _handleHeader(self, key, value):
         self.numHeaders = self.numHeaders + 1
-        self.assertEquals(self.expectedHeaders[string.lower(key)], value)
+        self.assertEqual(self.expectedHeaders[string.lower(key)], value)
 
     def _handleEndHeaders(self):
         self.gotEndHeaders = 1
-        self.assertEquals(self.numHeaders, 4)
+        self.assertEqual(self.numHeaders, 4)
 
     def testLoopback(self):
         server = http.HTTPChannel()
@@ -195,7 +195,7 @@ class HTTPLoopbackTestCase(unittest.TestCase):
         client.handleStatus = self._handleStatus
         loopback.loopback(server, client)
         if not (self.gotStatus and self.gotResponse and self.gotEndHeaders):
-            raise RuntimeError, "didn't got all callbacks %s" % [self.gotStatus, self.gotResponse, self.gotEndHeaders]
+            raise RuntimeError("didn't got all callbacks %s" % [self.gotStatus, self.gotResponse, self.gotEndHeaders])
         del self.gotEndHeaders
         del self.gotResponse
         del self.gotStatus
@@ -231,9 +231,9 @@ class PersistenceTestCase(unittest.TestCase):
         c = http.HTTPChannel()
         for req, version, correctResult, resultHeaders in self.ptests:
             result = c.checkPersistence(req, version)
-            self.assertEquals(result, correctResult)
-            for header in resultHeaders.keys():
-                self.assertEquals(req.headers.get(header, None), resultHeaders[header])
+            self.assertEqual(result, correctResult)
+            for header in list(resultHeaders.keys()):
+                self.assertEqual(req.headers.get(header, None), resultHeaders[header])
 
 
 class ChunkingTestCase(unittest.TestCase):
@@ -243,7 +243,7 @@ class ChunkingTestCase(unittest.TestCase):
 
     def testChunks(self):
         for s in self.strings:
-            self.assertEquals((s, ''), http.fromChunk(''.join(http.toChunk(s))))
+            self.assertEqual((s, ''), http.fromChunk(''.join(http.toChunk(s))))
 
     def testConcatenatedChunks(self):
         chunked = ''.join([''.join(http.toChunk(t)) for t in self.strings])
@@ -256,7 +256,7 @@ class ChunkingTestCase(unittest.TestCase):
                 result.append(data)
             except ValueError:
                 pass
-        self.assertEquals(result, self.strings)
+        self.assertEqual(result, self.strings)
 
 
 
@@ -275,18 +275,18 @@ class ParsingTestCase(unittest.TestCase):
             a.dataReceived(byte)
         a.connectionLost(IOError("all done"))
         if success:
-            self.assertEquals(self.didRequest, 1)
+            self.assertEqual(self.didRequest, 1)
             del self.didRequest
         else:
-            self.assert_(not hasattr(self, "didRequest"))
+            self.assertTrue(not hasattr(self, "didRequest"))
 
     def testBasicAuth(self):
         testcase = self
         class Request(http.Request):
             l = []
             def process(self):
-                testcase.assertEquals(self.getUser(), self.l[0])
-                testcase.assertEquals(self.getPassword(), self.l[1])
+                testcase.assertEqual(self.getUser(), self.l[0])
+                testcase.assertEqual(self.getPassword(), self.l[1])
         for u, p in [("foo", "bar"), ("hello", "there:z")]:
             Request.l[:] = [u, p]
             s = "%s:%s" % (u, p)
@@ -300,7 +300,7 @@ class ParsingTestCase(unittest.TestCase):
         httpRequest += "\n"
         class MyRequest(http.Request):
             def process(self):
-                raise RuntimeError, "should not get called"
+                raise RuntimeError("should not get called")
         self.runRequest(httpRequest, MyRequest, 0)
         
     def testHeaders(self):
@@ -314,9 +314,9 @@ baz: 1 2 3
 
         class MyRequest(http.Request):
             def process(self):
-                testcase.assertEquals(self.getHeader('foo'), 'bar')
-                testcase.assertEquals(self.getHeader('Foo'), 'bar')
-                testcase.assertEquals(self.getHeader('bAz'), '1 2 3')
+                testcase.assertEqual(self.getHeader('foo'), 'bar')
+                testcase.assertEqual(self.getHeader('Foo'), 'bar')
+                testcase.assertEqual(self.getHeader('bAz'), '1 2 3')
                 testcase.didRequest = 1
                 self.finish()
 
@@ -332,8 +332,8 @@ Cookie: rabbit="eat carrot"; ninja=secret
 
         class MyRequest(http.Request):
             def process(self):
-                testcase.assertEquals(self.getCookie('rabbit'), '"eat carrot"')
-                testcase.assertEquals(self.getCookie('ninja'), 'secret')
+                testcase.assertEqual(self.getCookie('rabbit'), '"eat carrot"')
+                testcase.assertEqual(self.getCookie('ninja'), 'secret')
                 testcase.didRequest = 1
                 self.finish()
 
@@ -347,10 +347,10 @@ GET /?key=value&multiple=two+words&multiple=more%20words&empty= HTTP/1.0
         testcase = self
         class MyRequest(http.Request):
             def process(self):
-                testcase.assertEquals(self.method, "GET")
-                testcase.assertEquals(self.args["key"], ["value"])
-                testcase.assertEquals(self.args["empty"], [""])
-                testcase.assertEquals(self.args["multiple"], ["two words", "more words"])
+                testcase.assertEqual(self.method, "GET")
+                testcase.assertEqual(self.args["key"], ["value"])
+                testcase.assertEqual(self.args["empty"], [""])
+                testcase.assertEqual(self.args["multiple"], ["two words", "more words"])
                 testcase.didRequest = 1
                 self.finish()
 
@@ -368,10 +368,10 @@ Content-Type: application/x-www-form-urlencoded
         testcase = self
         class MyRequest(http.Request):
             def process(self):
-                testcase.assertEquals(self.method, "POST")
-                testcase.assertEquals(self.args["key"], ["value"])
-                testcase.assertEquals(self.args["empty"], [""])
-                testcase.assertEquals(self.args["multiple"], ["two words", "more words"])
+                testcase.assertEqual(self.method, "POST")
+                testcase.assertEqual(self.args["key"], ["value"])
+                testcase.assertEqual(self.args["empty"], [""])
+                testcase.assertEqual(self.args["multiple"], ["two words", "more words"])
                 testcase.didRequest = 1
                 self.finish()
 
@@ -400,25 +400,25 @@ class QueryArgumentsTestCase(unittest.TestCase):
             raise unittest.SkipTest
         # work exactly like urllib.unquote, including stupid things
         # % followed by a non-hexdigit in the middle and in the end
-        self.failUnlessEqual(urllib.unquote("%notreally%n"),
+        self.assertEqual(urllib.parse.unquote("%notreally%n"),
             _c_urlarg.unquote("%notreally%n"))
         # % followed by hexdigit, followed by non-hexdigit
-        self.failUnlessEqual(urllib.unquote("%1quite%1"),
+        self.assertEqual(urllib.parse.unquote("%1quite%1"),
             _c_urlarg.unquote("%1quite%1"))
         # unquoted text, followed by some quoted chars, ends in a trailing %
-        self.failUnlessEqual(urllib.unquote("blah%21%40%23blah%"), 
+        self.assertEqual(urllib.parse.unquote("blah%21%40%23blah%"), 
             _c_urlarg.unquote("blah%21%40%23blah%"))
         # Empty string
-        self.failUnlessEqual(urllib.unquote(""), _c_urlarg.unquote(""))
+        self.assertEqual(urllib.parse.unquote(""), _c_urlarg.unquote(""))
 
     def testParseqs(self):
-        self.failUnlessEqual(cgi.parse_qs("a=b&d=c;+=f"),
+        self.assertEqual(cgi.parse_qs("a=b&d=c;+=f"),
             http.parse_qs("a=b&d=c;+=f"))
-        self.failUnlessRaises(ValueError, http.parse_qs, "blah",
+        self.assertRaises(ValueError, http.parse_qs, "blah",
             strict_parsing = 1)
-        self.failUnlessEqual(cgi.parse_qs("a=&b=c", keep_blank_values = 1),
+        self.assertEqual(cgi.parse_qs("a=&b=c", keep_blank_values = 1),
             http.parse_qs("a=&b=c", keep_blank_values = 1))
-        self.failUnlessEqual(cgi.parse_qs("a=&b=c"),
+        self.assertEqual(cgi.parse_qs("a=&b=c"),
             http.parse_qs("a=&b=c"))
 
     def testEscchar(self):
@@ -426,7 +426,7 @@ class QueryArgumentsTestCase(unittest.TestCase):
             from twisted.protocols import _c_urlarg
         except ImportError:
             raise unittest.SkipTest
-        self.failUnlessEqual("!@#+b",
+        self.assertEqual("!@#+b",
             _c_urlarg.unquote("+21+40+23+b", "+"))
 
 class ClientDriver(http.HTTPClient):
@@ -439,20 +439,20 @@ class ClientStatusParsing(unittest.TestCase):
     def testBaseline(self):
         c = ClientDriver()
         c.lineReceived('HTTP/1.0 201 foo')
-        self.failUnlessEqual(c.version, 'HTTP/1.0')
-        self.failUnlessEqual(c.status, '201')
-        self.failUnlessEqual(c.message, 'foo')
+        self.assertEqual(c.version, 'HTTP/1.0')
+        self.assertEqual(c.status, '201')
+        self.assertEqual(c.message, 'foo')
 
     def testNoMessage(self):
         c = ClientDriver()
         c.lineReceived('HTTP/1.0 201')
-        self.failUnlessEqual(c.version, 'HTTP/1.0')
-        self.failUnlessEqual(c.status, '201')
-        self.failUnlessEqual(c.message, '')
+        self.assertEqual(c.version, 'HTTP/1.0')
+        self.assertEqual(c.status, '201')
+        self.assertEqual(c.message, '')
 
     def testNoMessage_trailingSpace(self):
         c = ClientDriver()
         c.lineReceived('HTTP/1.0 201 ')
-        self.failUnlessEqual(c.version, 'HTTP/1.0')
-        self.failUnlessEqual(c.status, '201')
-        self.failUnlessEqual(c.message, '')
+        self.assertEqual(c.version, 'HTTP/1.0')
+        self.assertEqual(c.status, '201')
+        self.assertEqual(c.message, '')

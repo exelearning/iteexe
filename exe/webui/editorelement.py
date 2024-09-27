@@ -42,21 +42,21 @@ class EditorElement(Element):
         Process arguments from the webserver.  Return any which apply to this 
         element.
         """
-        log.debug(u'process ' + repr(request.args))
+        log.debug('process ' + repr(request.args))
         
         if "name"+self.id in request.args:
-            self.field.name = unicode(request.args["name"+self.id][0], 'utf8')
+            self.field.name = str(request.args["name"+self.id][0], 'utf8')
 
         if "instruc"+self.id in request.args:
-            self.field.instruc = unicode(request.args["instruc"+self.id][0], 
+            self.field.instruc = str(request.args["instruc"+self.id][0], 
                                          'utf8')
                         
-        if "object" in request.args and unicode(request.args["object"][0], 'utf8') == self.id:
+        if "object" in request.args and str(request.args["object"][0], 'utf8') == self.id:
             if request.args["action"][0] == "deleteField":
                 self.field.idevice.fields.remove(self.field)
                 
         if "btnCaption"+self.id in request.args:
-            self.field.buttonCaption = unicode(request.args["btnCaption"+self.id][0],
+            self.field.buttonCaption = str(request.args["btnCaption"+self.id][0],
                                          'utf8')
             
 
@@ -220,9 +220,9 @@ class ImageEditorElement(EditorElement):
                              "/images/"+ImageEditorElement.DefaultImage,
                              self.field.width,
                              self.field.height)
-        floatArr    = [[_(u'Left'), 'left'],
-                      [_(u'Right'), 'right'],
-                      [_(u'None'),  'none']]
+        floatArr    = [[_('Left'), 'left'],
+                      [_('Right'), 'right'],
+                      [_('None'),  'none']]
 
         this_package = None
         html += common.formField('select', this_package, _("Align:"),
@@ -264,8 +264,8 @@ class FlashEditorElement(EditorElement):
         
         html += "<br/>" 
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" '
-        html += u' value="%s" />' % _(u"Select Flash Object")
+        html += '<input type="button" '
+        html += ' value="%s" />' % _("Select Flash Object")
         if self.field.instruc != "":
             html += common.elementInstruc(self.field.instruc)
         html += "<br/>\n"
@@ -304,11 +304,11 @@ class MultimediaEditorElement(EditorElement):
         
         html += "<br/>" 
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" ' 
-        html += u' value="%s" />' % _(u"Select MP3 file")
+        html += '<input type="button" ' 
+        html += ' value="%s" />' % _("Select MP3 file")
         if self.field.instruc != "":
             html += common.elementInstruc(self.field.instruc)
-        html += '<br/><b>%s</b><br/>' % _(u"Caption:")
+        html += '<br/><b>%s</b><br/>' % _("Caption:")
         html += common.textInput("", "")
         html += common.elementInstruc(self.field.captionInstruc)
         html += "<br/>\n"
@@ -347,8 +347,8 @@ class AttachmentEditorElement(EditorElement):
         
         html += "<br/>" 
         html += common.textInput("path"+self.id, "", 50)
-        html += u'<input type="button" ' 
-        html += u' value="%s" />' % _(u"Select a file")
+        html += '<input type="button" ' 
+        html += ' value="%s" />' % _("Select a file")
         if self.field.instruc != "":
             html += common.elementInstruc(self.field.instruc)
         html += "<br/>\n"

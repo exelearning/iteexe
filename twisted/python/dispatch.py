@@ -33,7 +33,7 @@ class EventDispatcher:
         from twisted.python import reflect
         d = {}
         reflect.accumulateMethods(obj, d, self.prefix)
-        for k,v in d.items():
+        for k,v in list(d.items()):
             self.registerHandler(k, v)
 
 

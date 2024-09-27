@@ -78,14 +78,14 @@ class InputText(gtk.GtkText):
                     else:
                         # This will tell us it's a complete expression.
                         c = code.compile_command(text)
-                except SyntaxError, e:
+                except SyntaxError as e:
                     # Ding!
                     self.set_positionLineOffset(e.lineno, e.offset)
-                    print "offset", e.offset
+                    print("offset", e.offset)
                     errmsg = {'traceback': [],
                               'exception': [str(e) + '\n']}
                     self.toplevel.output.console([('exception', errmsg)])
-                except OverflowError, e:
+                except OverflowError as e:
                     e = traceback.format_exception_only(OverflowError, e)
                     errmsg = {'traceback': [],
                               'exception': e}
@@ -118,7 +118,7 @@ class InputText(gtk.GtkText):
     def set_positionLineOffset(self, line, offset):
         text = self.get_chars(0, -1)
         pos = 0
-        for l in xrange(line - 1):
+        for l in range(line - 1):
             pos = string.index(text, '\n', pos) + 1
         pos = pos + offset - 1
         self.set_position(pos)

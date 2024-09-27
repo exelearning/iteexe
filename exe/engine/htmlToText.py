@@ -18,7 +18,7 @@
 # ===========================================================================
 import os
 import re
-from htmlentitydefs import name2codepoint
+from html.entities import name2codepoint
 
 class HtmlToText(object):
   
@@ -62,11 +62,11 @@ class HtmlToText(object):
       chunks = re.split("&(#?\w+);", data)
       for i in range(1, len(chunks), 2):
           if chunks[i] in name2codepoint:
-              chunks[i] = unichr(name2codepoint[chunks[i]])
+              chunks[i] = chr(name2codepoint[chunks[i]])
           elif re.match("#\d+$", chunks[i]):
-              chunks[i] = unichr(int(chunks[i][1:]))
+              chunks[i] = chr(int(chunks[i][1:]))
           elif re.match("#x[0-9a-fA-F]+$", chunks[i]):
-              chunks[i] = unichr(int(chunks[i][2:], 16))
+              chunks[i] = chr(int(chunks[i][2:], 16))
       return "".join(chunks)
     
     

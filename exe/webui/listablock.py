@@ -69,7 +69,7 @@ class ListaElement(ElementWithResources):
     def dcrypt(self,word):
             #             Simple XOR encryptions
           
-            answer = u""
+            answer = ""
             code_key = 'X'            
             codeu=str(word)
             codeu=codeu.replace("\r", "")
@@ -82,7 +82,7 @@ class ListaElement(ElementWithResources):
                         # next 4 = the encoded unichr
                         this_code_char = "0x" + code[char_pos+2 : char_pos+6]
                         this_code_ord = int(this_code_char, 16)
-                        letter = unichr(ord(code_key)^this_code_ord)
+                        letter = chr(ord(code_key)^this_code_ord)
                         answer += letter
                         # key SHOULD be ^'d by letter, but seems to be:
                         code_key = letter
@@ -95,7 +95,7 @@ class ListaElement(ElementWithResources):
             result = ''
             key = 'X'
             for letter in word:
-                result += unichr(ord(key) ^ ord(letter))
+                result += chr(ord(key) ^ ord(letter))
                 key = letter
             # Encode for javascript
             output = ''
@@ -171,9 +171,9 @@ class ListaElement(ElementWithResources):
                              self.field.encodedContent),
             # Render our toolbar
             
-            u'  <input type="button" value="%s" ' % _("Hide/Show Word"),
-            u' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
-            u'<br /><br />',
+            '  <input type="button" value="%s" ' % _("Hide/Show Word"),
+            ' onclick="$exeAuthoring.toggleWordInEditor(\'%s\');" />' % self.editorId,
+            '<br /><br />',
           
             common.formField('textInput',
                             '',
@@ -184,7 +184,7 @@ class ListaElement(ElementWithResources):
                             size=80),
            
    
-            u'</br></br>',
+            '</br></br>',
             ]
         
         return '\n    '.join(html)
@@ -267,11 +267,11 @@ class ListaElement(ElementWithResources):
         html += ['<p>']
         
         if preview:
-            html += [common.button('getScore%s' % self.id, c_(u"Check"), id='getScore%s' % self.id, class_ = "cloze-score-toggler")]
+            html += [common.button('getScore%s' % self.id, c_("Check"), id='getScore%s' % self.id, class_ = "cloze-score-toggler")]
         else:
-            html += [common.submitButton('getScore%s' % self.id, c_(u"Check"), id='getScore%s' % self.id)]
+            html += [common.submitButton('getScore%s' % self.id, c_("Check"), id='getScore%s' % self.id)]
         if feedbackId:
-            html += [common.button('feedback%s' % self.id, c_(u"Show Feedback"), class_ = "feedbackbutton cloze-feedback-toggler")]
+            html += [common.button('feedback%s' % self.id, c_("Show Feedback"), class_ = "feedbackbutton cloze-feedback-toggler")]
          
         codotras=self.ecrypt(self.field.otras)
         html += [common.hiddenField('clozeOtras%s' % self.id,codotras)]   
@@ -309,12 +309,12 @@ class ListaElement(ElementWithResources):
        
         html = ""
 
-        html += "<p>%s: </p><p>"  % c_(u"Answers")
+        html += "<p>%s: </p><p>"  % c_("Answers")
         answers = ""
         for i, (text, missingWord) in enumerate(self.field.parts):
             if missingWord:
                 answers += str(i+1) + '.' + missingWord + ' '
-        if answers <> "":        
+        if answers != "":        
             html += answers +'</p>'
         else:
             html = ""
@@ -384,17 +384,17 @@ class ListaBlock(Block):
         which words are hidden.
         """
         html = [
-            u'<div class="iDevice">',
-            u'<div class="block">',
+            '<div class="iDevice">',
+            '<div class="block">',
             common.textInput("title"+self.id, self.idevice.title),
-            u'</div>',
+            '</div>',
             self.instructionElement.renderEdit(),
             self.listaElement.renderEdit(),
             self.feedbackElement.renderEdit(),
             self.renderEditButtons(),
-            u'</div>'
+            '</div>'
             ]
-        return u'\n    '.join(html)
+        return '\n    '.join(html)
     
     def renderPreview(self, style):
         """ 
@@ -444,7 +444,7 @@ class ListaBlock(Block):
             else:
                 html.append(self.feedbackElement.renderView(False, 
                                                      class_="feedback"))
-        return u'\n'.join(html)
+        return '\n'.join(html)
 
     def renderText(self): 
         
@@ -458,7 +458,7 @@ class ListaBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.listaElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % c_(u"Feedback") 
+            html += '<p>%s:</P>' % c_("Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 

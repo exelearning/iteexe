@@ -45,8 +45,8 @@ class _Tuple(NotKnown):
     def __init__(self, l):
         NotKnown.__init__(self)
         self.l = l
-        self.locs = range(len(l))
-        for idx in xrange(len(l)):
+        self.locs = list(range(len(l)))
+        for idx in range(len(l)):
             if not isinstance(l[idx], NotKnown):
                 self.locs.remove(idx)
             else:

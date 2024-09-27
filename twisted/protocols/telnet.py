@@ -16,9 +16,9 @@ warnings.warn(
 
 # System Imports
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 # Twisted Imports
 from twisted import copyright
@@ -139,7 +139,7 @@ iacBytes = {
     }
 
 def multireplace(st, dct):
-    for k, v in dct.items():
+    for k, v in list(dct.items()):
         st = st.replace(k, v)
     return st
 

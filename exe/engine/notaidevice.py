@@ -41,16 +41,16 @@ class NotaIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"Note"),
-                         x_(u"exelearning.net"), 
-                         u"", u"Note", "")
+                         x_("Note"),
+                         x_("exelearning.net"), 
+                         "", "Note", "")
         self.emphasis         = Idevice.SomeEmphasis
-        self._commentInstruc   = u""
+        self._commentInstruc   = ""
         self.systemResources += ["common.js"]
         
 
 
-        self.commentTextArea = TextAreaField(x_(u'Comment:'), 
+        self.commentTextArea = TextAreaField(x_('Comment:'), 
                                    self._commentInstruc, answer)
         self.commentTextArea.idevice = self
 
@@ -92,7 +92,7 @@ class NotaIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 
 
 
@@ -101,7 +101,7 @@ class NotaIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
         self.emphasis = Idevice.SomeEmphasis
 
         
@@ -141,7 +141,7 @@ class NotaIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.commentTextArea = TextAreaField(x_(u'Feedback:'), 
+        self.commentTextArea = TextAreaField(x_('Feedback:'), 
                                   self._commentInstruc, self.answer)
         self.commentTextArea.idevice = self
         

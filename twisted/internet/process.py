@@ -12,7 +12,7 @@ Maintainer: U{Itamar Shtull-Trauring<mailto:twisted@itamarst.org>}
 """
 
 # System Imports
-import os, sys, traceback, select, errno, struct, cStringIO, types, signal
+import os, sys, traceback, select, errno, struct, io, types, signal
 
 try:
     import pty
@@ -31,8 +31,8 @@ from twisted.internet import protocol
 from twisted.internet.error import ProcessExitedAlready
 
 # Sibling Imports
-import abstract, fdesc, error
-from main import CONNECTION_LOST, CONNECTION_DONE
+from . import abstract, fdesc, error
+from .main import CONNECTION_LOST, CONNECTION_DONE
 
 
 reapProcessHandlers = {}
@@ -40,12 +40,12 @@ reapProcessHandlers = {}
 def reapAllProcesses():
     """Reap all registered processes.
     """
-    for process in reapProcessHandlers.values():
+    for process in list(reapProcessHandlers.values()):
         process.reapProcess()
 
 
 def registerReapProcessHandler(pid, process):
-    if reapProcessHandlers.has_key(pid):
+    if pid in reapProcessHandlers:
         raise RuntimeError
     try:
         aux_pid, status = os.waitpid(pid, os.WNOHANG)
@@ -60,7 +60,7 @@ def registerReapProcessHandler(pid, process):
 
 
 def unregisterReapProcessHandler(pid, process):
-    if not (reapProcessHandlers.has_key(pid)
+    if not (pid in reapProcessHandlers
             and reapProcessHandlers[pid] == process):
         raise RuntimeError
     del reapProcessHandlers[pid]
@@ -131,11 +131,11 @@ class ProcessWriter(abstract.FileDescriptor):
             if rv == len(data) and self.enableReadHack:
                 self.startReading()
             return rv
-        except IOError, io:
+        except IOError as io:
             if io.args[0] == errno.EAGAIN:
                 return 0
             return CONNECTION_LOST
-        except OSError, ose:
+        except OSError as ose:
             if ose.errno == errno.EPIPE:
                 return CONNECTION_LOST
             if ose.errno == errno.EAGAIN: # MacOS-X does this
@@ -285,8 +285,8 @@ class Process(styles.Ephemeral):
             mapping that opens the usual stdin/stdout/stderr pipes.
         """
         if not proto:
-            assert 'r' not in childFDs.values()
-            assert 'w' not in childFDs.values()
+            assert 'r' not in list(childFDs.values())
+            assert 'w' not in list(childFDs.values())
         if not signal.getsignal(signal.SIGCHLD):
             log.msg("spawnProcess called, but the SIGCHLD handler is not " +
                     "installed. This probably means you have not yet " +
@@ -329,29 +329,29 @@ class Process(styles.Ephemeral):
                         }
 
         debug = self.debug
-        if debug: print "childFDs", childFDs
+        if debug: print("childFDs", childFDs)
 
         # fdmap.keys() are filenos of pipes that are used by the child.
         fdmap = {} # maps childFD to parentFD
-        for childFD, target in childFDs.items():
-            if debug: print "[%d]" % childFD, target
+        for childFD, target in list(childFDs.items()):
+            if debug: print("[%d]" % childFD, target)
             if target == "r":
                 # we need a pipe that the parent can read from
                 readFD, writeFD = os.pipe()
-                if debug: print "readFD=%d, writeFD%d" % (readFD, writeFD)
+                if debug: print("readFD=%d, writeFD%d" % (readFD, writeFD))
                 fdmap[childFD] = writeFD     # child writes to this
                 helpers[childFD] = readFD    # parent reads from this
             elif target == "w":
                 # we need a pipe that the parent can write to
                 readFD, writeFD = os.pipe()
-                if debug: print "readFD=%d, writeFD=%d" % (readFD, writeFD)
+                if debug: print("readFD=%d, writeFD=%d" % (readFD, writeFD))
                 fdmap[childFD] = readFD      # child reads from this
                 helpers[childFD] = writeFD   # parent writes to this
             else:
                 assert type(target) == int, '%r should be an int' % (target,)
                 fdmap[childFD] = target      # parent ignores this
-        if debug: print "fdmap", fdmap
-        if debug: print "helpers", helpers
+        if debug: print("fdmap", fdmap)
+        if debug: print("helpers", helpers)
         # the child only cares about fdmap.values()
 
         self.pid = os.fork()
@@ -404,7 +404,7 @@ class Process(styles.Ephemeral):
         self.proto = proto
         
         # arrange for the parent-side pipes to be read and written
-        for childFD, parentFD in helpers.items():
+        for childFD, parentFD in list(helpers.items()):
             os.close(fdmap[childFD])
 
             if childFDs[childFD] == "r":
@@ -454,9 +454,9 @@ class Process(styles.Ephemeral):
         if debug:
             #errfd = open("/tmp/p.err", "a", 0)
             errfd = sys.stderr
-            print >>errfd, "starting _setupChild"
+            print("starting _setupChild", file=errfd)
 
-        destList = fdmap.values()
+        destList = list(fdmap.values())
         try:
             import resource
             maxfds = resource.getrlimit(resource.RLIMIT_NOFILE)[1] + 1
@@ -478,33 +478,33 @@ class Process(styles.Ephemeral):
         # be moved to their appropriate positions in the child (the targets
         # of fdmap, i.e. fdmap.values() )
 
-        if debug: print >>errfd, "fdmap", fdmap
-        childlist = fdmap.keys()
+        if debug: print("fdmap", fdmap, file=errfd)
+        childlist = list(fdmap.keys())
         childlist.sort()
 
         for child in childlist:
             target = fdmap[child]
             if target == child:
                 # fd is already in place
-                if debug: print >>errfd, "%d already in place" % target
+                if debug: print("%d already in place" % target, file=errfd)
                 if fcntl and hasattr(fcntl, 'FD_CLOEXEC'):
                     old = fcntl.fcntl(child, fcntl.F_GETFD)
                     fcntl.fcntl(child,
                                 fcntl.F_SETFD, old & ~fcntl.FD_CLOEXEC)
             else:
-                if child in fdmap.values():
+                if child in list(fdmap.values()):
                     # we can't replace child-fd yet, as some other mapping
                     # still needs the fd it wants to target. We must preserve
                     # that old fd by duping it to a new home.
                     newtarget = os.dup(child) # give it a safe home
-                    if debug: print >>errfd, "os.dup(%d) -> %d" % (child,
-                                                                   newtarget)
+                    if debug: print("os.dup(%d) -> %d" % (child,
+                                                                   newtarget), file=errfd)
                     os.close(child) # close the original
-                    for c,p in fdmap.items():
+                    for c,p in list(fdmap.items()):
                         if p == child:
                             fdmap[c] = newtarget # update all pointers
                 # now it should be available
-                if debug: print >>errfd, "os.dup2(%d,%d)" % (target, child)
+                if debug: print("os.dup2(%d,%d)" % (target, child), file=errfd)
                 os.dup2(target, child)
 
         # At this point, the child has everything it needs. We want to close
@@ -516,11 +516,11 @@ class Process(styles.Ephemeral):
         # need to remove duplicates first.
 
         old = []
-        for fd in fdmap.values():
+        for fd in list(fdmap.values()):
             if not fd in old:
-                if not fd in fdmap.keys():
+                if not fd in list(fdmap.keys()):
                     old.append(fd)
-        if debug: print >>errfd, "old", old
+        if debug: print("old", old, file=errfd)
         for fd in old:
             os.close(fd)
 
@@ -563,16 +563,16 @@ class Process(styles.Ephemeral):
         # out to the pipe before closing it
         # if childFD is not in the list of pipes, assume that it is already
         # closed
-        if self.pipes.has_key(childFD):
+        if childFD in self.pipes:
             self.pipes[childFD].loseConnection()
 
     def pauseProducing(self):
-        for p in self.pipes.itervalues():
+        for p in self.pipes.values():
             if isinstance(p, ProcessReader):
                 p.stopReading()
  
     def resumeProducing(self):
-        for p in self.pipes.itervalues():
+        for p in self.pipes.values():
             if isinstance(p, ProcessReader):
                 p.startReading()
 
@@ -595,7 +595,7 @@ class Process(styles.Ephemeral):
         
         NOTE: This will silently lose data if there is no standard input.
         """
-        if self.pipes.has_key(0):
+        if 0 in self.pipes:
             self.pipes[0].write(data)
 
     def registerProducer(self, producer, streaming):
@@ -604,14 +604,14 @@ class Process(styles.Ephemeral):
         If there is no standard input producer.stopProducing() will
         be called immediately.
         """
-        if self.pipes.has_key(0):
+        if 0 in self.pipes:
             self.pipes[0].registerProducer(producer, streaming)
         else:
             producer.stopProducing()
 
     def unregisterProducer(self):
         """Call this to unregister producer for standard input."""
-        if self.pipes.has_key(0):
+        if 0 in self.pipes:
             self.pipes[0].unregisterProducer()
     
     def writeSequence(self, seq):
@@ -619,7 +619,7 @@ class Process(styles.Ephemeral):
 
         NOTE: This will silently lose data if there is no standard input.
         """
-        if self.pipes.has_key(0):
+        if 0 in self.pipes:
             self.pipes[0].writeSequence(seq)
 
     def childDataReceived(self, name, data):
@@ -707,9 +707,9 @@ class PTYProcess(abstract.FileDescriptor, styles.Ephemeral):
         nuances of setXXuid on UNIX: it will assume that either your effective
         or real UID is 0.)
         """
-        if not pty and type(usePTY) not in (types.ListType, types.TupleType):
+        if not pty and type(usePTY) not in (list, tuple):
             # no pty module and we didn't get a pty to use
-            raise NotImplementedError, "cannot use PTYProcess on platforms without the pty module."
+            raise NotImplementedError("cannot use PTYProcess on platforms without the pty module.")
         abstract.FileDescriptor.__init__(self, reactor)
         settingUID = (uid is not None) or (gid is not None)
         if settingUID:
@@ -724,7 +724,7 @@ class PTYProcess(abstract.FileDescriptor, styles.Ephemeral):
             # prepare to change UID in subprocess
             os.setuid(0)
             os.setgid(0)
-        if type(usePTY) in (types.TupleType, types.ListType):
+        if type(usePTY) in (tuple, list):
             masterfd, slavefd, ttyname = usePTY
         else:
             masterfd, slavefd = pty.openpty()
@@ -807,7 +807,7 @@ class PTYProcess(abstract.FileDescriptor, styles.Ephemeral):
         """
         try:
             pid, status = os.waitpid(self.pid, os.WNOHANG)
-        except OSError, e:
+        except OSError as e:
             if e.errno == errno.ECHILD: # no child process
                 pid = None
             else:
@@ -892,7 +892,7 @@ class PTYProcess(abstract.FileDescriptor, styles.Ephemeral):
         """
         try:
             return os.write(self.fd, data)
-        except IOError,io:
+        except IOError as io:
             if io.args[0] == errno.EAGAIN:
                 return 0
             return CONNECTION_LOST

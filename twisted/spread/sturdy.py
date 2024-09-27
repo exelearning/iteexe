@@ -74,7 +74,7 @@ class PerspectiveConnector:
     def callRemote(self, method, *args, **kw):
         if self.reference:
             try:
-                return apply(self.reference.callRemote, (method,)+args, kw)
+                return self.reference.callRemote(*(method,)+args, **kw)
             except pb.DeadReferenceError:
                 log.msg("Calling dead reference; trying to reconnect.")
                 self.reference = None

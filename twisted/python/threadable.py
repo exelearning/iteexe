@@ -108,7 +108,7 @@ def whenThreaded(cb):
     cb()
 
 try:
-    import thread as threadmodule
+    import _thread as threadmodule
     import threading as threadingmodule
 except ImportError:
     threadmodule = None

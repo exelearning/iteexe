@@ -60,8 +60,8 @@ class MultimediaBlock(Block):
         log.debug("process " + repr(request.args))
         Block.process(self, request)
 
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
+        if ("action" not in request.args or
+            request.args["action"][0] != "delete"):
             self.mediaElement.process(request)
             self.textElement.process(request)
 
@@ -79,12 +79,12 @@ class MultimediaBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        html  = u"<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += common.textInput("title"+self.id, self.idevice.title) + '<br/><br/>'
         html += self.mediaElement.renderEdit()       
-        floatArr    = [[_(u'Left'), 'left'],
-                      [_(u'Right'), 'right'],
-                      [_(u'None'),  'none']]
+        floatArr    = [[_('Left'), 'left'],
+                      [_('Right'), 'right'],
+                      [_('None'),  'none']]
 
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
@@ -97,8 +97,8 @@ class MultimediaBlock(Block):
         #html += common.textInput("caption" + self.id, self.idevice.media.caption)
         #html += common.elementInstruc(self.idevice.media.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
-        emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
-                          (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
+        emphasisValues = [(_("No emphasis"),     Idevice.NoEmphasis),
+                          (_("Some emphasis"),   Idevice.SomeEmphasis)]
 
         html += common.formField('select', this_package, _('Emphasis'),
                                  'emphasis', self.id, 
@@ -106,7 +106,7 @@ class MultimediaBlock(Block):
                                  emphasisValues,
                                  self.idevice.emphasis)
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -116,7 +116,7 @@ class MultimediaBlock(Block):
         """
         log.debug("renderPreview")
         html = common.ideviceHeader(self, style, "preview")
-        html += u"<div class=\"media\">"
+        html += "<div class=\"media\">"
         html += self.mediaElement.renderPreview()
         html += "</div>"
         html += self.textElement.renderPreview()
@@ -130,7 +130,7 @@ class MultimediaBlock(Block):
         """        
         log.debug("renderView")
         html = common.ideviceHeader(self, style, "view")
-        html += u"<div class=\"media\">"
+        html += "<div class=\"media\">"
         html += self.mediaElement.renderView()
         html += "</div>"
         html += self.textElement.renderView()

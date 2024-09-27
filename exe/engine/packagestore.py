@@ -41,12 +41,12 @@ class PackageStore:
         """
         Creates a package
         """
-        log.debug(u"createPackage")
+        log.debug("createPackage")
         # Make up an initial unique name
         i = 1
-        name = u"newPackage"
+        name = "newPackage"
         while name in self.loaded:
-            name = u"newPackage" + unicode(i)
+            name = "newPackage" + str(i)
             i += 1                    
         package = Package(name)
         self.loaded[package.name] = package
@@ -72,7 +72,7 @@ class PackageStore:
         """
         Save all the packages in the package store out to disk
         """
-        for package in self.loaded.values():
+        for package in list(self.loaded.values()):
             package.save()
 
 
@@ -89,14 +89,14 @@ class PackageStore:
         """
         Creates a new package from Template
         """
-        log.debug(u"createPackageFromTemplate")
+        log.debug("createPackageFromTemplate")
         package = Package.load(templateBase, isTemplate=True, is_new_package=is_new_package)
         package.set_templateFile(str(templateBase.basename().splitext()[0]))
         # Make up an initial unique name
         i = 1
-        name = u"newPackage"
+        name = "newPackage"
         while name in self.loaded:
-            name = u"newPackage" + unicode(i)
+            name = "newPackage" + str(i)
             i += 1
         
         # Prevent the package from opening on the last node edited

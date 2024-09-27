@@ -34,37 +34,37 @@ class TestService(unittest.TestCase):
     def testName(self):
         s = service.Service()
         s.setName("hello")
-        self.failUnlessEqual(s.name, "hello")
+        self.assertEqual(s.name, "hello")
 
     def testParent(self):
         s = service.Service()
         p = service.MultiService()
         s.setServiceParent(p)
-        self.failUnlessEqual(list(p), [s])
-        self.failUnlessEqual(s.parent, p)
+        self.assertEqual(list(p), [s])
+        self.assertEqual(s.parent, p)
 
     def testApplicationAsParent(self):
         s = service.Service()
         p = service.Application("")
         s.setServiceParent(p)
-        self.failUnlessEqual(list(service.IServiceCollection(p)), [s])
-        self.failUnlessEqual(s.parent, service.IServiceCollection(p))
+        self.assertEqual(list(service.IServiceCollection(p)), [s])
+        self.assertEqual(s.parent, service.IServiceCollection(p))
 
     def testNamedChild(self):
         s = service.Service()
         p = service.MultiService()
         s.setName("hello")
         s.setServiceParent(p)
-        self.failUnlessEqual(list(p), [s])
-        self.failUnlessEqual(s.parent, p)
-        self.failUnlessEqual(p.getServiceNamed("hello"), s)
+        self.assertEqual(list(p), [s])
+        self.assertEqual(s.parent, p)
+        self.assertEqual(p.getServiceNamed("hello"), s)
 
     def testDoublyNamedChild(self):
         s = service.Service()
         p = service.MultiService()
         s.setName("hello")
         s.setServiceParent(p)
-        self.failUnlessRaises(RuntimeError, s.setName, "lala")
+        self.assertRaises(RuntimeError, s.setName, "lala")
 
     def testDuplicateNamedChild(self):
         s = service.Service()
@@ -73,43 +73,43 @@ class TestService(unittest.TestCase):
         s.setServiceParent(p)
         s = service.Service()
         s.setName("hello")
-        self.failUnlessRaises(RuntimeError, s.setServiceParent, p)
+        self.assertRaises(RuntimeError, s.setServiceParent, p)
 
     def testDisowning(self):
         s = service.Service()
         p = service.MultiService()
         s.setServiceParent(p)
-        self.failUnlessEqual(list(p), [s])
-        self.failUnlessEqual(s.parent, p)
+        self.assertEqual(list(p), [s])
+        self.assertEqual(s.parent, p)
         s.disownServiceParent()
-        self.failUnlessEqual(list(p), [])
-        self.failUnlessEqual(s.parent, None)
+        self.assertEqual(list(p), [])
+        self.assertEqual(s.parent, None)
 
     def testRunning(self):
         s = service.Service()
-        self.assert_(not s.running)
+        self.assertTrue(not s.running)
         s.startService()
-        self.assert_(s.running)
+        self.assertTrue(s.running)
         s.stopService()
-        self.assert_(not s.running)
+        self.assertTrue(not s.running)
 
     def testRunningChildren(self):
         s = service.Service()
         p = service.MultiService()
         s.setServiceParent(p)
-        self.assert_(not s.running)
-        self.assert_(not p.running)
+        self.assertTrue(not s.running)
+        self.assertTrue(not p.running)
         p.startService()
-        self.assert_(s.running)
-        self.assert_(p.running)
+        self.assertTrue(s.running)
+        self.assertTrue(p.running)
         p.stopService()
-        self.assert_(not s.running)
-        self.assert_(not p.running)
+        self.assertTrue(not s.running)
+        self.assertTrue(not p.running)
 
     def testRunningChildren(self):
         s = service.Service()
         def checkRunning():
-            self.assert_(s.running)
+            self.assertTrue(s.running)
         t = service.Service()
         t.stopService = checkRunning
         t.startService = checkRunning
@@ -123,11 +123,11 @@ class TestService(unittest.TestCase):
         p = service.MultiService()
         p.startService()
         s = service.Service()
-        self.assert_(not s.running)
+        self.assertTrue(not s.running)
         s.setServiceParent(p)
-        self.assert_(s.running)
+        self.assertTrue(s.running)
         s.disownServiceParent()
-        self.assert_(not s.running)
+        self.assertTrue(not s.running)
 
     def testPrivileged(self):
         s = service.Service()
@@ -139,14 +139,14 @@ class TestService(unittest.TestCase):
         s.setServiceParent(p)
         s1.setServiceParent(p)
         p.privilegedStartService()
-        self.assert_(s.privilegedStarted)
+        self.assertTrue(s.privilegedStarted)
 
     def testCopying(self):
         s = service.Service()
         s.startService()
         s1 = copy.copy(s)
-        self.assert_(not s1.running)
-        self.assert_(s.running)
+        self.assertTrue(not s1.running)
+        self.assertTrue(s.running)
 
 
 if hasattr(os, "getuid"):
@@ -184,14 +184,14 @@ class TestProcess(unittest.TestCase):
 class TestInterfaces(unittest.TestCase):
 
     def testService(self):
-        self.assert_(service.IService.providedBy(service.Service()))
+        self.assertTrue(service.IService.providedBy(service.Service()))
 
     def testMultiService(self):
-        self.assert_(service.IService.providedBy(service.MultiService()))
-        self.assert_(service.IServiceCollection.providedBy(service.MultiService()))
+        self.assertTrue(service.IService.providedBy(service.MultiService()))
+        self.assertTrue(service.IServiceCollection.providedBy(service.MultiService()))
 
     def testProcess(self):
-        self.assert_(service.IProcess.providedBy(service.Process()))
+        self.assertTrue(service.IProcess.providedBy(service.Process()))
 
 
 class TestApplication(unittest.TestCase):
@@ -214,7 +214,7 @@ class TestApplication(unittest.TestCase):
 
     def testServiceComponent(self):
         a = service.Application("hello")
-        self.assert_(service.IService(a) is service.IServiceCollection(a))
+        self.assertTrue(service.IService(a) is service.IServiceCollection(a))
         self.assertEqual(service.IService(a).name, "hello")
         self.assertEqual(service.IService(a).parent, None)
 
@@ -223,7 +223,7 @@ class TestApplication(unittest.TestCase):
         p = sob.IPersistable(a)
         self.assertEqual(p.style, 'pickle')
         self.assertEqual(p.name, 'hello')
-        self.assert_(p.original is a)
+        self.assertTrue(p.original is a)
 
 class TestLoading(unittest.TestCase):
 
@@ -311,13 +311,13 @@ class TestAppSupport(unittest.TestCase):
     def test_startApplication(self):
         appl = service.Application("lala")
         app.startApplication(appl, 0)
-        self.assert_(service.IService(appl).running)
+        self.assertTrue(service.IService(appl).running)
 
 class TestInternet(unittest.TestCase):
 
     def testUNIX(self):
         if not interfaces.IReactorUNIX(reactor, None):
-            raise unittest.SkipTest, "This reactor does not support UNIX domain sockets"
+            raise unittest.SkipTest("This reactor does not support UNIX domain sockets")
         s = service.MultiService()
         c = compat.IOldApplication(s)
         factory = protocol.ServerFactory()
@@ -388,7 +388,7 @@ class TestInternet(unittest.TestCase):
         c.listenUNIX(None, None)
         self.assertEqual(list(s)[4].args[:2], (None,)*2)
         for ch in s:
-            self.assert_(ch.privileged)
+            self.assertTrue(ch.privileged)
         c.connectWith(None)
         self.assertEqual(list(s)[5].args[0], None)
         c.connectTCP(None, None, None)
@@ -401,17 +401,17 @@ class TestInternet(unittest.TestCase):
         self.assertEqual(list(s)[9].args[:2], (None,)*2)
         self.assertEqual(len(list(s)), 10)
         for ch in s:
-            self.failIf(ch.kwargs)
+            self.assertFalse(ch.kwargs)
             self.assertEqual(ch.name, None)
     testCalling.suppress = oldAppSuppressions
 
     def testUnlistenersCallable(self):
         s = service.MultiService()
         c = compat.IOldApplication(s)
-        self.assert_(callable(c.unlistenTCP))
-        self.assert_(callable(c.unlistenUNIX))
-        self.assert_(callable(c.unlistenUDP))
-        self.assert_(callable(c.unlistenSSL))
+        self.assertTrue(callable(c.unlistenTCP))
+        self.assertTrue(callable(c.unlistenUNIX))
+        self.assertTrue(callable(c.unlistenUDP))
+        self.assertTrue(callable(c.unlistenSSL))
     testUnlistenersCallable.suppress = oldAppSuppressions
 
     def testServices(self):
@@ -428,9 +428,9 @@ class TestInternet(unittest.TestCase):
     def testInterface(self):
         s = service.MultiService()
         c = compat.IOldApplication(s)
-        for key in compat.IOldApplication.__dict__.keys():
+        for key in list(compat.IOldApplication.__dict__.keys()):
             if callable(getattr(compat.IOldApplication, key)):
-                self.assert_(callable(getattr(c, key)))
+                self.assertTrue(callable(getattr(c, key)))
     testInterface.suppress = oldAppSuppressions
 
 class DummyApp:
@@ -460,8 +460,8 @@ class TestConvert(unittest.TestCase):
         self.assertEqual(len(services), 1)
         s = services[0]
         self.assertEqual(s.parent, service.IServiceCollection(appl))
-        self.assert_(s.privileged)
-        self.assert_(isinstance(s, internet.TCPServer))
+        self.assertTrue(s.privileged)
+        self.assertTrue(isinstance(s, internet.TCPServer))
         args = s.args
         self.assertEqual(args[0], 8080)
         self.assertEqual(args[3], '')
@@ -470,7 +470,7 @@ class TestConvert(unittest.TestCase):
         # XXX - replace this test with one that does the same thing, but
         # with no web dependencies.
         if not interfaces.IReactorUNIX(reactor, None):
-            raise unittest.SkipTest, "This reactor does not support UNIX domain sockets"
+            raise unittest.SkipTest("This reactor does not support UNIX domain sockets")
         if not gotMicrodom:
             raise unittest.SkipTest("Need twisted.web to run this test.")
         s = "(dp0\nS'udpConnectors'\np1\n(lp2\nsS'unixConnectors'\np3\n(lp4\nsS'twisted.internet.app.Application.persistenceVersion'\np5\nI12\nsS'name'\np6\nS'web'\np7\nsS'sslConnectors'\np8\n(lp9\nsS'sslPorts'\np10\n(lp11\nsS'tcpPorts'\np12\n(lp13\nsS'unixPorts'\np14\n(lp15\n(S'/home/moshez/.twistd-web-pb'\np16\n(itwisted.spread.pb\nBrokerFactory\np17\n(dp19\nS'objectToBroker'\np20\n(itwisted.web.distrib\nResourcePublisher\np21\n(dp22\nS'twisted.web.distrib.ResourcePublisher.persistenceVersion'\np23\nI2\nsS'site'\np24\n(itwisted.web.server\nSite\np25\n(dp26\nS'resource'\np27\n(itwisted.web.static\nFile\np28\n(dp29\nS'ignoredExts'\np30\n(lp31\nsS'defaultType'\np32\nS'text/html'\np33\nsS'registry'\np34\n(itwisted.web.static\nRegistry\np35\n(dp36\nS'twisted.web.static.Registry.persistenceVersion'\np37\nI1\nsS'twisted.python.components.Componentized.persistenceVersion'\np38\nI1\nsS'_pathCache'\np39\n(dp40\nsS'_adapterCache'\np41\n(dp42\nS'twisted.internet.interfaces.IServiceCollection'\np43\n(itwisted.internet.app\nApplication\np44\n(dp45\ng1\ng2\nsg3\ng4\nsg5\nI12\nsg6\ng7\nsg8\ng9\nsg10\ng11\nsg12\ng13\nsg14\ng15\nsS'extraPorts'\np46\n(lp47\nsS'gid'\np48\nI1053\nsS'tcpConnectors'\np49\n(lp50\nsS'extraConnectors'\np51\n(lp52\nsS'udpPorts'\np53\n(lp54\nsS'services'\np55\n(dp56\nsS'persistStyle'\np57\nS'pickle'\np58\nsS'delayeds'\np59\n(lp60\nsS'uid'\np61\nI1053\nsbssbsS'encoding'\np62\nNsS'twisted.web.static.File.persistenceVersion'\np63\nI6\nsS'path'\np64\nS'/home/moshez/public_html.twistd'\np65\nsS'type'\np66\ng33\nsS'children'\np67\n(dp68\nsS'processors'\np69\n(dp70\nS'.php3'\np71\nctwisted.web.twcgi\nPHP3Script\np72\nsS'.rpy'\np73\nctwisted.web.script\nResourceScript\np74\nsS'.php'\np75\nctwisted.web.twcgi\nPHPScript\np76\nsS'.cgi'\np77\nctwisted.web.twcgi\nCGIScript\np78\nsS'.epy'\np79\nctwisted.web.script\nPythonScript\np80\nsS'.trp'\np81\nctwisted.web.trp\nResourceUnpickler\np82\nssbsS'logPath'\np83\nNsS'sessions'\np84\n(dp85\nsbsbsS'twisted.spread.pb.BrokerFactory.persistenceVersion'\np86\nI3\nsbI5\nI438\ntp87\nasg55\ng56\nsg48\nI1053\nsg49\ng50\nsg51\ng52\nsg53\ng54\nsg46\ng47\nsg57\ng58\nsg61\nI1053\nsg59\ng60\ns."
@@ -485,8 +485,8 @@ class TestConvert(unittest.TestCase):
         self.assertEqual(len(services), 1)
         s = services[0]
         self.assertEqual(s.parent, service.IServiceCollection(appl))
-        self.assert_(s.privileged)
-        self.assert_(isinstance(s, internet.UNIXServer))
+        self.assertTrue(s.privileged)
+        self.assertTrue(isinstance(s, internet.UNIXServer))
         args = s.args
         self.assertEqual(args[0], '/home/moshez/.twistd-web-pb')
 
@@ -548,7 +548,7 @@ class TestInternet2(unittest.TestCase):
 
     def testUDP(self):
         if not interfaces.IReactorUDP(reactor, None):
-            raise unittest.SkipTest, "This reactor does not support UDP sockets"
+            raise unittest.SkipTest("This reactor does not support UDP sockets")
         p = protocol.DatagramProtocol()
         t = internet.TCPServer(0, p)
         t.startService()
@@ -608,7 +608,7 @@ class TestInternet2(unittest.TestCase):
         # FIXME: This test is far too dense.  It needs comments.
         #  -- spiv, 2004-11-07
         if not interfaces.IReactorUNIX(reactor, None):
-            raise unittest.SkipTest, "This reactor does not support UNIX domain sockets"
+            raise unittest.SkipTest("This reactor does not support UNIX domain sockets")
         s = service.MultiService()
         s.startService()
         factory = protocol.ServerFactory()
@@ -643,7 +643,7 @@ class TestInternet2(unittest.TestCase):
 
     def testVolatile(self):
         if not interfaces.IReactorUNIX(reactor, None):
-            raise unittest.SkipTest, "This reactor does not support UNIX domain sockets"
+            raise unittest.SkipTest("This reactor does not support UNIX domain sockets")
         factory = protocol.ServerFactory()
         factory.protocol = wire.Echo
         t = internet.UNIXServer('echo.skt', factory)
@@ -653,7 +653,7 @@ class TestInternet2(unittest.TestCase):
         self.assertIdentical(t1._port, None)
         t.stopService()
         self.assertIdentical(t._port, None)
-        self.failIf(t.running)
+        self.assertFalse(t.running)
 
         factory = protocol.ClientFactory()
         factory.protocol = wire.Echo
@@ -664,17 +664,17 @@ class TestInternet2(unittest.TestCase):
         self.assertIdentical(t1._connection, None)
         t.stopService()
         self.assertIdentical(t._connection, None)
-        self.failIf(t.running)
+        self.assertFalse(t.running)
 
     def testStoppingServer(self):
         if not interfaces.IReactorUNIX(reactor, None):
-            raise unittest.SkipTest, "This reactor does not support UNIX domain sockets"
+            raise unittest.SkipTest("This reactor does not support UNIX domain sockets")
         factory = protocol.ServerFactory()
         factory.protocol = wire.Echo
         t = internet.UNIXServer('echo.skt', factory)
         t.startService()
         t.stopService()
-        self.failIf(t.running)
+        self.assertFalse(t.running)
         factory = protocol.ClientFactory()
         l = []
         factory.clientConnectionFailed = lambda *args: l.append(None)
@@ -688,7 +688,7 @@ class TestInternet2(unittest.TestCase):
         t.startService()
         util.spinWhile(lambda :not l, timeout=30)
         t.stopService()
-        self.failIf(t.running)
+        self.assertFalse(t.running)
         self.assertEqual(l, ["hello"])
         l.pop()
 
@@ -697,7 +697,7 @@ class TestInternet2(unittest.TestCase):
         util.spinWhile(lambda :not l, timeout=30)
 
         t.stopService()
-        self.failIf(t.running)
+        self.assertFalse(t.running)
         self.assertEqual(l, ["hello"])
         l.pop()
         t = internet.TimerService(0.01, l.append, "hello")
@@ -714,14 +714,14 @@ class TestInternet2(unittest.TestCase):
         t0.stopService()
 
         t = pickle.loads(s)
-        self.failIf(t.running)
+        self.assertFalse(t.running)
 
     def testBrokenTimer(self):
         t = internet.TimerService(1, lambda: 1 / 0)
         t.startService()
         util.spinWhile(lambda :t._loop.running, timeout=30)
         t.stopService()
-        self.assertEquals([ZeroDivisionError],
+        self.assertEqual([ZeroDivisionError],
                           [o.value.__class__ for o in log.flushErrors(ZeroDivisionError)])
 
     def testEverythingThere(self):
@@ -735,10 +735,10 @@ class TestInternet2(unittest.TestCase):
             for side in 'Server Client'.split():
                 if tran == "Multicast" and side == "Client":
                     continue
-                self.assert_(hasattr(internet, tran+side))
+                self.assertTrue(hasattr(internet, tran+side))
                 method = getattr(internet, tran+side).method
                 prefix = {'Server': 'listen', 'Client': 'connect'}[side]
-                self.assert_(hasattr(reactor, prefix+method) or
+                self.assertTrue(hasattr(reactor, prefix+method) or
                         (prefix == "connect" and method == "UDP"))
                 o = getattr(internet, tran+side)()
                 self.assertEqual(service.IService(o), o)
@@ -752,8 +752,8 @@ class TestCompat(unittest.TestCase):
         c = compat.IOldApplication(s)
         from twisted.internet.app import ApplicationService
         svc = ApplicationService("foo", serviceParent=c)
-        self.assertEquals(c.getServiceNamed("foo"), svc)
-        self.assertEquals(s.getServiceNamed("foo").name, "foo")
+        self.assertEqual(c.getServiceNamed("foo"), svc)
+        self.assertEqual(s.getServiceNamed("foo").name, "foo")
         c.removeService(svc)
     testService.suppress = oldAppSuppressions
 

@@ -11,7 +11,7 @@ by each subprocess and not by the main web server (i.e. GET, POST etc.).
 """
 
 # System Imports
-import types, os, copy, string, cStringIO
+import types, os, copy, string, io
 if (os.sys.platform != 'win32') and (os.name != 'java'):
     import pwd
 
@@ -24,12 +24,12 @@ from twisted.web.woven import page
 from twisted.internet import address
 
 # Sibling Imports
-import resource
-import server
-import error
-import html
-import static
-from server import NOT_DONE_YET
+from . import resource
+from . import server
+from . import error
+from . import html
+from . import static
+from .server import NOT_DONE_YET
 
 class _ReferenceableProducerWrapper(pb.Referenceable):
     def __init__(self, producer):
@@ -55,7 +55,7 @@ class Request(pb.RemoteCopy, server.Request):
             state[k] = addr
         pb.RemoteCopy.setCopyableState(self, state)
         # Emulate the local request interface --
-        self.content = cStringIO.StringIO(self.content_data)
+        self.content = io.StringIO(self.content_data)
         self.write            = self.remote.remoteMethod('write')
         self.finish           = self.remote.remoteMethod('finish')
         self.setHeader        = self.remote.remoteMethod('setHeader')
@@ -84,7 +84,7 @@ class Issue:
 
     def finished(self, result):
         if result != NOT_DONE_YET:
-            assert isinstance(result, types.StringType),\
+            assert isinstance(result, bytes),\
                    "return value not a string"
             self.request.write(result)
             self.request.finish()

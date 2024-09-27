@@ -3,7 +3,7 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes
+
 
 """Generic TCP tests."""
 
@@ -107,7 +107,7 @@ class ListeningTestCase(PortCleanerUpper):
     def testListen(self):
         f = MyServerFactory()
         p1 = reactor.listenTCP(0, f, interface="127.0.0.1")
-        self.failUnless(interfaces.IListeningPort.providedBy(p1))
+        self.assertTrue(interfaces.IListeningPort.providedBy(p1))
         p1.stopListening()
 
     def testStopListening(self):
@@ -135,9 +135,9 @@ class ListeningTestCase(PortCleanerUpper):
         f = MyServerFactory()
         p = reactor.listenTCP(0, f)
         portNo = str(p.getHost().port)
-        self.failIf(repr(p).find(portNo) == -1)
+        self.assertFalse(repr(p).find(portNo) == -1)
         def stoppedListening(ign):
-            self.failIf(repr(p).find(portNo) != -1)
+            self.assertFalse(repr(p).find(portNo) != -1)
         return defer.maybeDeferred(p.stopListening).addCallback(stoppedListening)
 
 
@@ -168,8 +168,8 @@ class LoopbackTestCase(PortCleanerUpper):
         spinWhile(lambda :(not clientF.protocol or
                            not clientF.protocol.closed))
 
-        self.assert_(clientF.protocol.made)
-        self.assert_(port.disconnected)
+        self.assertTrue(clientF.protocol.made)
+        self.assertTrue(port.disconnected)
         clientF.lostReason.trap(error.ConnectionDone)
 
     def _trapCnxDone(self, obj):
@@ -189,12 +189,12 @@ class LoopbackTestCase(PortCleanerUpper):
 
         for p in clientF.protocol, f.protocol:
             transport = p.transport
-            self.assertEquals(transport.getTcpNoDelay(), 0)
+            self.assertEqual(transport.getTcpNoDelay(), 0)
             transport.setTcpNoDelay(1)
-            self.assertEquals(transport.getTcpNoDelay(), 1)
+            self.assertEqual(transport.getTcpNoDelay(), 1)
             transport.setTcpNoDelay(0)
             reactor.iterate()
-            self.assertEquals(transport.getTcpNoDelay(), 0)
+            self.assertEqual(transport.getTcpNoDelay(), 0)
 
         return self.cleanPorts(clientF.protocol.transport, port)
 
@@ -211,9 +211,9 @@ class LoopbackTestCase(PortCleanerUpper):
 
         for p in clientF.protocol, f.protocol:
             transport = p.transport
-            self.assertEquals(transport.getTcpKeepAlive(), 0)
+            self.assertEqual(transport.getTcpKeepAlive(), 0)
             transport.setTcpKeepAlive(1)
-            self.assertEquals(transport.getTcpKeepAlive(), 1)
+            self.assertEqual(transport.getTcpKeepAlive(), 1)
             transport.setTcpKeepAlive(0)
 
             spinUntil(lambda :transport.getTcpKeepAlive() == 0, timeout=1.0)
@@ -237,7 +237,7 @@ class LoopbackTestCase(PortCleanerUpper):
                                MyClientFactory())
         except error.ServiceNameUnknownError:
             return
-        self.assert_(False, "connectTCP didn't raise ServiceNameUnknownError")
+        self.assertTrue(False, "connectTCP didn't raise ServiceNameUnknownError")
     
     def testConnectByService(self):
         serv = socket.getservbyname
@@ -260,7 +260,7 @@ class LoopbackTestCase(PortCleanerUpper):
             d = self.cleanPorts(port, c.transport, cf.protocol.transport)
         finally:
             socket.getservbyname = serv
-        d.addCallback(lambda x : self.assert_(s.called,
+        d.addCallback(lambda x : self.assertTrue(s.called,
                                               '%s was not called' % (s,)))
         return d
 
@@ -311,7 +311,7 @@ class FactoryTestCase(PortCleanerUpper):
 
         spinUntil(lambda :(p1.connected == 1))
 
-        self.assertEquals((f.started, f.stopped), (1,0))
+        self.assertEqual((f.started, f.stopped), (1,0))
 
         # listen on two more ports
         p2 = reactor.listenTCP(0, f, interface='127.0.0.1')
@@ -323,7 +323,7 @@ class FactoryTestCase(PortCleanerUpper):
 
         spinUntil(lambda :(p2.connected == 1 and p3.connected == 1))
 
-        self.assertEquals((f.started, f.stopped), (1, 0))
+        self.assertEqual((f.started, f.stopped), (1, 0))
 
         # close two ports
         p1.stopListening()
@@ -331,14 +331,14 @@ class FactoryTestCase(PortCleanerUpper):
 
         spinWhile(lambda :(p1.connected == 1 or p2.connected == 1))
 
-        self.assertEquals((f.started, f.stopped), (1, 0))
+        self.assertEqual((f.started, f.stopped), (1, 0))
 
         # close last port
         p3.stopListening()
 
         spinWhile(lambda :(p3.connected == 1))
 
-        self.assertEquals((f.started, f.stopped), (1, 1))
+        self.assertEqual((f.started, f.stopped), (1, 1))
         return self.cleanPorts(*self.ports)
 
 
@@ -353,7 +353,7 @@ class FactoryTestCase(PortCleanerUpper):
 
         factory = ClientStartStopFactory()
         reactor.connectTCP("127.0.0.1", self.n, factory)
-        self.assert_(factory.started)
+        self.assertTrue(factory.started)
         reactor.iterate()
         reactor.iterate()
 
@@ -378,18 +378,18 @@ class ConnectorTestCase(PortCleanerUpper):
         factory.clientConnectionLost = lambda c, r: (l.append(c), m.append(r))
         factory.startedConnecting = lambda c: l.append(c)
         connector = reactor.connectTCP("127.0.0.1", n, factory)
-        self.failUnless(interfaces.IConnector.providedBy(connector))
+        self.assertTrue(interfaces.IConnector.providedBy(connector))
         dest = connector.getDestination()
-        self.assertEquals(dest.type, "TCP")
-        self.assertEquals(dest.host, "127.0.0.1")
-        self.assertEquals(dest.port, n)
+        self.assertEqual(dest.type, "TCP")
+        self.assertEqual(dest.host, "127.0.0.1")
+        self.assertEqual(dest.port, n)
 
         spinUntil(lambda :factory.stopped)
 
         d = self.cleanPorts(*self.ports)
 
         m[0].trap(error.ConnectionDone)
-        self.assertEquals(l, [connector, connector])
+        self.assertEqual(l, [connector, connector])
         return d
 
     def testUserFail(self):
@@ -407,7 +407,7 @@ class ConnectorTestCase(PortCleanerUpper):
 
         spinUntil(lambda :factory.stopped)
 
-        self.assertEquals(factory.failed, 1)
+        self.assertEqual(factory.failed, 1)
         factory.reason.trap(error.UserError)
 
         return self.cleanPorts(*self.ports)
@@ -431,9 +431,9 @@ class ConnectorTestCase(PortCleanerUpper):
         spinUntil(lambda :factory.failed)
 
         p = factory.protocol
-        self.assertEquals((p.made, p.closed), (1, 1))
+        self.assertEqual((p.made, p.closed), (1, 1))
         factory.reason.trap(error.ConnectionRefusedError)
-        self.assertEquals(factory.stopped, 1)
+        self.assertEqual(factory.stopped, 1)
 
         return self.cleanPorts(*self.ports)
 
@@ -449,9 +449,9 @@ class CannotBindTestCase(PortCleanerUpper):
         n = p1.getHost().port
         self.ports.append(p1)
         dest = p1.getHost()
-        self.assertEquals(dest.type, "TCP")
-        self.assertEquals(dest.host, "127.0.0.1")
-        self.assertEquals(dest.port, n)
+        self.assertEqual(dest.type, "TCP")
+        self.assertEqual(dest.host, "127.0.0.1")
+        self.assertEqual(dest.port, n)
         
         # make sure new listen raises error
         self.assertRaises(error.CannotListenError,
@@ -482,7 +482,7 @@ class CannotBindTestCase(PortCleanerUpper):
             return d
         
         def _check1connect2(results, cf1):
-            self.assertEquals(cf1.protocol.made, 1)
+            self.assertEqual(cf1.protocol.made, 1)
     
             d1 = defer.Deferred()
             d2 = defer.Deferred()
@@ -499,13 +499,13 @@ class CannotBindTestCase(PortCleanerUpper):
             return dl
 
         def _check2failed(results, cf1, cf2):
-            self.assertEquals(cf2.failed, 1)
+            self.assertEqual(cf2.failed, 1)
             cf2.reason.trap(error.ConnectBindError)
-            self.assert_(cf2.reason.check(error.ConnectBindError))
+            self.assertTrue(cf2.reason.check(error.ConnectBindError))
             return results
 
         def _check2stopped(results, cf1, cf2):
-            self.assertEquals(cf2.stopped, 1)
+            self.assertEqual(cf2.stopped, 1)
             return results
 
         def _stop(results, cf1, cf2):
@@ -516,7 +516,7 @@ class CannotBindTestCase(PortCleanerUpper):
             return d
 
         def _check1cleanup(results, cf1):
-            self.assertEquals(cf1.stopped, 1)
+            self.assertEqual(cf1.stopped, 1)
             return self.cleanPorts(*self.ports)
         
         theDeferred.addCallback(_connect1)
@@ -545,8 +545,8 @@ class LocalRemoteAddressTestCase(PortCleanerUpper):
 
         spinUntil(lambda :p2.state == "connected")
 
-        self.assertEquals(p1.getHost(), f2.address)
-        self.assertEquals(p1.getHost(), f2.protocol.transport.getPeer())
+        self.assertEqual(p1.getHost(), f2.address)
+        self.assertEqual(p1.getHost(), f2.protocol.transport.getPeer())
 
         util.wait(defer.maybeDeferred(p1.stopListening))
         self.ports.append(p2.transport)
@@ -565,11 +565,11 @@ class WriterProtocol(protocol.Protocol):
         self.transport.writeSequence(seq)
         peer = self.transport.getPeer()
         if peer.type != "TCP":
-            print "getPeer returned non-TCP socket:", peer
+            print("getPeer returned non-TCP socket:", peer)
             self.factory.problem = 1
         us = self.transport.getHost()
         if us.type != "TCP":
-            print "getHost returned non-TCP socket:", us
+            print("getHost returned non-TCP socket:", us)
             self.factory.problem = 1
         self.factory.done = 1
         
@@ -609,12 +609,12 @@ class WriteDataTestCase(PortCleanerUpper):
 
         spinUntil(lambda :(f.done and clientF.done))
 
-        self.failUnless(f.done, "writer didn't finish, it probably died")
-        self.failUnless(f.problem == 0, "writer indicated an error")
-        self.failUnless(clientF.done, "client didn't see connection dropped")
+        self.assertTrue(f.done, "writer didn't finish, it probably died")
+        self.assertTrue(f.problem == 0, "writer indicated an error")
+        self.assertTrue(clientF.done, "client didn't see connection dropped")
         expected = "".join(["Hello Cleveland!\n",
                             "Goodbye", " cruel", " world", "\n"])
-        self.failUnless(clientF.data == expected,
+        self.assertTrue(clientF.data == expected,
                         "client didn't receive all the data it expected")
 
 
@@ -672,7 +672,7 @@ class ProperlyCloseFilesTestCase(PortCleanerUpper):
         f = lambda :(self.totalConnections < self.numberRounds)
         spinWhile(f, timeout=self.timeLimit)
 
-        self.failUnlessEqual(self.totalConnections, self.numberRounds)
+        self.assertEqual(self.totalConnections, self.numberRounds)
 
     def _connectionMade(self):
         self.totalConnections += 1
@@ -688,13 +688,13 @@ class AProtocol(protocol.Protocol):
 
     def connectionMade(self):
         reactor.callLater(0.1, self.transport.loseConnection)
-        self.factory.testcase.assertEquals(self.transport.getHost(),
+        self.factory.testcase.assertEqual(self.transport.getHost(),
                           IPv4Address("TCP", self.transport.getHost().host,
                                       self.transport.getHost().port))
-        self.factory.testcase.assertEquals(self.transport.getPeer(),
+        self.factory.testcase.assertEqual(self.transport.getPeer(),
                           IPv4Address("TCP", self.transport.getPeer().host,
                                       self.transport.getPeer().port))
-        self.factory.testcase.assertEquals(self.transport.getPeer(),
+        self.factory.testcase.assertEqual(self.transport.getPeer(),
                                            self.factory.ipv4addr)
         self.factory.testcase.ran = 1
 
@@ -706,10 +706,10 @@ class AClientFactory(protocol.ClientFactory):
         self.ipv4addr = ipv4addr
 
     def buildProtocol(self, addr):
-        self.testcase.assertEquals(addr, self.ipv4addr)
-        self.testcase.assertEquals(addr.type, "TCP")
-        self.testcase.assertEquals(addr.host, self.ipv4addr.host)
-        self.testcase.assertEquals(addr.port, self.ipv4addr.port)
+        self.testcase.assertEqual(addr, self.ipv4addr)
+        self.testcase.assertEqual(addr.type, "TCP")
+        self.testcase.assertEqual(addr.host, self.ipv4addr.host)
+        self.testcase.assertEqual(addr.port, self.ipv4addr.port)
         self.protocol = p = AProtocol()
         p.factory = self
         return p
@@ -722,10 +722,10 @@ class AServerFactory(protocol.ServerFactory):
         self.ipv4addr = ipv4addr
     
     def buildProtocol(self, addr):
-        self.testcase.assertEquals(addr, self.ipv4addr)
-        self.testcase.assertEquals(addr.type, "TCP")
-        self.testcase.assertEquals(addr.host, self.ipv4addr.host)
-        self.testcase.assertEquals(addr.port, self.ipv4addr.port)
+        self.testcase.assertEqual(addr, self.ipv4addr)
+        self.testcase.assertEqual(addr.type, "TCP")
+        self.testcase.assertEqual(addr.host, self.ipv4addr.host)
+        self.testcase.assertEqual(addr.port, self.ipv4addr.port)
         self.protocol = p = AProtocol()
         p.factory = self
         return p
@@ -758,7 +758,7 @@ class AddressTestCase(PortCleanerUpper):
         spinUntil(lambda :acf.protocol is not None)
         self.ports.append(acf.protocol.transport)
 
-        self.assert_(hasattr(self, "ran"))
+        self.assertTrue(hasattr(self, "ran"))
         spinUntil(lambda :acf.protocol.lostCnx)
         del self.ran
 
@@ -818,11 +818,11 @@ class LargeBufferTestCase(PortCleanerUpper):
                 continue
             break
 
-        self.failUnless(f.done, "writer didn't finish, it probably died")
-        self.failUnless(clientF.len == self.datalen,
+        self.assertTrue(f.done, "writer didn't finish, it probably died")
+        self.assertTrue(clientF.len == self.datalen,
                         "client didn't receive all the data it expected "
                         "(%d != %d)" % (clientF.len, self.datalen))
-        self.failUnless(clientF.done, "client didn't see connection dropped")
+        self.assertTrue(clientF.done, "client didn't see connection dropped")
 
 
 class MyHCProtocol(MyProtocol):
@@ -865,22 +865,22 @@ class HalfCloseTestCase(PortCleanerUpper):
         d = protocol.ClientCreator(reactor, MyHCProtocol).connectTCP(
             p.getHost().host, p.getHost().port)
         self.client = util.wait(d)
-        self.assertEquals(self.client.transport.connected, 1)
+        self.assertEqual(self.client.transport.connected, 1)
 
     def tearDown(self):
-        self.assertEquals(self.client.closed, 0)
+        self.assertEqual(self.client.closed, 0)
         self.client.transport.loseConnection()
         self.p.stopListening()
         spinWhile(lambda :self.p.connected)
 
-        self.assertEquals(self.client.closed, 1)
+        self.assertEqual(self.client.closed, 1)
         # because we did half-close, the server also needs to
         # closed explicitly.
-        self.assertEquals(self.f.protocol.closed, 0)
+        self.assertEqual(self.f.protocol.closed, 0)
         self.f.protocol.transport.loseConnection()
 
         spinWhile(lambda :self.f.protocol.transport.connected)
-        self.assertEquals(self.f.protocol.closed, 1)
+        self.assertEqual(self.f.protocol.closed, 1)
     
     def testCloseWriteCloser(self):
         client = self.client
@@ -893,9 +893,9 @@ class HalfCloseTestCase(PortCleanerUpper):
         t.loseWriteConnection()
         spinUntil(lambda :t._writeDisconnected)
 
-        self.assertEquals(client.closed, False)
-        self.assertEquals(client.writeHalfClosed, True)
-        self.assertEquals(client.readHalfClosed, False)
+        self.assertEqual(client.closed, False)
+        self.assertEqual(client.writeHalfClosed, True)
+        self.assertEqual(client.readHalfClosed, False)
 
         spinUntil(lambda :f.protocol.readHalfClosed, timeout=1.0)
 
@@ -905,9 +905,9 @@ class HalfCloseTestCase(PortCleanerUpper):
 
         spinWhile(lambda :len(client.transport._tempDataBuffer) > 0)
 
-        self.assertEquals(f.protocol.data, "hello")
-        self.assertEquals(f.protocol.closed, False)
-        self.assertEquals(f.protocol.readHalfClosed, True)
+        self.assertEqual(f.protocol.data, "hello")
+        self.assertEqual(f.protocol.closed, False)
+        self.assertEqual(f.protocol.readHalfClosed, True)
 
     def testWriteCloseNotification(self):
         f = self.f
@@ -916,7 +916,7 @@ class HalfCloseTestCase(PortCleanerUpper):
         spinUntil(lambda :f.protocol.writeHalfClosed)
         spinUntil(lambda :self.client.readHalfClosed)
 
-        self.assertEquals(f.protocol.readHalfClosed, False)
+        self.assertEqual(f.protocol.readHalfClosed, False)
         
 
 class HalfClose2TestCase(unittest.TestCase):
@@ -967,7 +967,7 @@ class HalfClose2TestCase(unittest.TestCase):
         client.transport.write("X")
         client.transport.loseWriteConnection()
         d = self._delayDeferred(0.2, f.protocol)
-        d.addCallback(lambda x : self.failUnlessEqual(x.closed, True))
+        d.addCallback(lambda x : self.assertEqual(x.closed, True))
         return d
 
 class HalfClose3TestCase(PortCleanerUpper):
@@ -983,10 +983,10 @@ class HalfClose3TestCase(PortCleanerUpper):
         d = protocol.ClientCreator(reactor, MyHCProtocol).connectTCP(
             p.getHost().host, p.getHost().port)
         self.client = util.wait(d)
-        self.assertEquals(self.client.transport.connected, 1)
+        self.assertEqual(self.client.transport.connected, 1)
 
     def aBug(self, *args):
-        raise RuntimeError, "ONO I AM BUGGY CODE"
+        raise RuntimeError("ONO I AM BUGGY CODE")
     
     def testReadNotificationRaises(self):
         self.f.protocol.readConnectionLost = self.aBug

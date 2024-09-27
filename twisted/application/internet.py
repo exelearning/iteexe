@@ -46,7 +46,7 @@ class _VolatileDataService(service.Service):
     def __getstate__(self):
         d = service.Service.__getstate__(self)
         for attr in self.volatile:
-            if d.has_key(attr):
+            if attr in d:
                 del d[attr]
         return d
 

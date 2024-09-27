@@ -55,7 +55,7 @@ class DistribTest(unittest.TestCase):
         d = client.getPage("http://127.0.0.1:%d/here/there" % \
                            self.port2.getHost().port)
         res = util.wait(d, timeout=1.0)
-        self.failUnlessEqual(res, "root")
+        self.assertEqual(res, "root")
 
         # A bit of a hack: force the pb client to disconnect, for cleanup
         # purposes.

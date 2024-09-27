@@ -63,9 +63,9 @@ class ThreadPoolTestCase(unittest.TestCase):
         # started up.
         time.sleep(0.1)
 
-        self.assertEquals(len(tp.threads), 7)
-        self.assertEquals(tp.min, 7)
-        self.assertEquals(tp.max, 20)
+        self.assertEqual(len(tp.threads), 7)
+        self.assertEqual(tp.min, 7)
+        self.assertEqual(tp.max, 20)
 
         # check that unpickled threadpool has same number of threads
         s = pickle.dumps(tp)
@@ -75,16 +75,16 @@ class ThreadPoolTestCase(unittest.TestCase):
         # XXX As above
         time.sleep(0.1)
 
-        self.assertEquals(len(tp2.threads), 7)
-        self.assertEquals(tp2.min, 7)
-        self.assertEquals(tp2.max, 20)
+        self.assertEqual(len(tp2.threads), 7)
+        self.assertEqual(tp2.min, 7)
+        self.assertEqual(tp2.max, 20)
 
         tp.stop()
         tp2.stop()
 
 
     def _waitForLock(self, lock):
-        for i in xrange(1000000):
+        for i in range(1000000):
             if lock.acquire(False):
                 break
             time.sleep(1e-5)
@@ -106,12 +106,12 @@ class ThreadPoolTestCase(unittest.TestCase):
             waiting.acquire()
             actor = Synchronization(N, waiting)
 
-            for i in xrange(N):
+            for i in range(N):
                 tp.dispatch(actor, actor.run)
 
             self._waitForLock(waiting)
 
-            self.failIf(actor.failures, "run() re-entered %d times" % (actor.failures,))
+            self.assertFalse(actor.failures, "run() re-entered %d times" % (actor.failures,))
         finally:
             tp.stop()
 
@@ -162,12 +162,12 @@ class RaceConditionTestCase(unittest.TestCase):
         self.event.wait(timeout=2)
         if not self.event.isSet():
             self.event.set()
-            raise RuntimeError, "test failed"
+            raise RuntimeError("test failed")
 
 
     def testSingleThread(self):
         # Ensure no threads running
-        self.assertEquals(self.threadpool.workers, 0)
+        self.assertEqual(self.threadpool.workers, 0)
 
         for i in range(10):
             self.threadpool.callInThread(self.event.set)
@@ -175,7 +175,7 @@ class RaceConditionTestCase(unittest.TestCase):
             self.event.clear()
 
             # Ensure there are very few threads running
-            self.failUnless(self.threadpool.workers <= 2)
+            self.assertTrue(self.threadpool.workers <= 2)
 
 
 

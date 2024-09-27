@@ -8,7 +8,7 @@
 """
 
 # System imports
-import Tkinter, tkMessageBox, tkFileDialog, StringIO, os
+import tkinter, tkinter.messagebox, tkinter.filedialog, io, os
 import traceback
 
 # Twisted imports
@@ -19,7 +19,7 @@ from twisted.python import usage, reflect
 from twisted.copyright import version
 
 
-class TkMkAppFrame(Tkinter.Frame):
+class TkMkAppFrame(tkinter.Frame):
     """
     A frame with all the necessary widgets to configure a Twisted Application.
     """
@@ -34,7 +34,7 @@ class TkMkAppFrame(Tkinter.Frame):
     optFrame = None
 
     def __init__(self, master, coil):
-        Tkinter.Frame.__init__(self, master)
+        tkinter.Frame.__init__(self, master)
 
         self.setupMkTap()
         self.reset(coil)
@@ -42,83 +42,83 @@ class TkMkAppFrame(Tkinter.Frame):
 
     def setupMkTap(self):
         # Create all of the "mktap" option widgets
-        appFrame = Tkinter.Frame(self)
+        appFrame = tkinter.Frame(self)
 
-        f = Tkinter.Frame(appFrame)
-        listLabel = Tkinter.Label(f, text='TAp Format')
-        self.typeList = Tkinter.Listbox(f, background='white')
+        f = tkinter.Frame(appFrame)
+        listLabel = tkinter.Label(f, text='TAp Format')
+        self.typeList = tkinter.Listbox(f, background='white')
         self.typeList['height'] = 3
         for t in ('pickle', 'xml', 'source'):
-            self.typeList.insert(Tkinter.END, t)
+            self.typeList.insert(tkinter.END, t)
         self.typeList.selection_set(0)
 
-        listLabel.pack(side=Tkinter.TOP)
-        self.typeList.pack(side=Tkinter.TOP)
-        f.pack(side=Tkinter.LEFT, anchor=Tkinter.N)
+        listLabel.pack(side=tkinter.TOP)
+        self.typeList.pack(side=tkinter.TOP)
+        f.pack(side=tkinter.LEFT, anchor=tkinter.N)
 
-        f = Tkinter.Frame(appFrame)
-        tapLabel = Tkinter.Label(f, text='TAp Filename')
-        tapButton = Tkinter.Button(f, text="Choose", command=self.pickTapFile)
-        self.tapfile = Tkinter.Entry(f, background='white')
+        f = tkinter.Frame(appFrame)
+        tapLabel = tkinter.Label(f, text='TAp Filename')
+        tapButton = tkinter.Button(f, text="Choose", command=self.pickTapFile)
+        self.tapfile = tkinter.Entry(f, background='white')
 
-        tapLabel.pack(side=Tkinter.LEFT)
-        self.tapfile.pack(side=Tkinter.LEFT)
-        tapButton.pack(side=Tkinter.LEFT)
-        f.pack(side=Tkinter.TOP, anchor=Tkinter.E)
+        tapLabel.pack(side=tkinter.LEFT)
+        self.tapfile.pack(side=tkinter.LEFT)
+        tapButton.pack(side=tkinter.LEFT)
+        f.pack(side=tkinter.TOP, anchor=tkinter.E)
 
-        f = Tkinter.Frame(appFrame)
-        nameLabel = Tkinter.Label(f, text='Application Process Name')
-        self.appname = Tkinter.Entry(f, background='white')
+        f = tkinter.Frame(appFrame)
+        nameLabel = tkinter.Label(f, text='Application Process Name')
+        self.appname = tkinter.Entry(f, background='white')
 
-        nameLabel.pack(side=Tkinter.LEFT)
-        self.appname.pack(side=Tkinter.LEFT)
-        f.pack(side=Tkinter.TOP, anchor=Tkinter.E)
+        nameLabel.pack(side=tkinter.LEFT)
+        self.appname.pack(side=tkinter.LEFT)
+        f.pack(side=tkinter.TOP, anchor=tkinter.E)
 
-        f = Tkinter.Frame(appFrame)
-        encLabel = Tkinter.Label(f, text='Passphrase')
-        self.passphrase = Tkinter.Entry(f, background='white')
+        f = tkinter.Frame(appFrame)
+        encLabel = tkinter.Label(f, text='Passphrase')
+        self.passphrase = tkinter.Entry(f, background='white')
 
-        encLabel.pack(side=Tkinter.LEFT)
-        self.passphrase.pack(side=Tkinter.LEFT)
-        f.pack(side=Tkinter.TOP, anchor=Tkinter.E)
+        encLabel.pack(side=tkinter.LEFT)
+        self.passphrase.pack(side=tkinter.LEFT)
+        f.pack(side=tkinter.TOP, anchor=tkinter.E)
 
-        f = Tkinter.Frame(appFrame)
-        self.append = Tkinter.BooleanVar()
-        appLabel = Tkinter.Label(f, text='Append')
-        appButton = Tkinter.Checkbutton(f, variable=self.append)
+        f = tkinter.Frame(appFrame)
+        self.append = tkinter.BooleanVar()
+        appLabel = tkinter.Label(f, text='Append')
+        appButton = tkinter.Checkbutton(f, variable=self.append)
 
-        appLabel.pack(side=Tkinter.LEFT)
-        appButton.pack(side=Tkinter.LEFT)
-        f.pack(side=Tkinter.LEFT, anchor=Tkinter.E)
+        appLabel.pack(side=tkinter.LEFT)
+        appButton.pack(side=tkinter.LEFT)
+        f.pack(side=tkinter.LEFT, anchor=tkinter.E)
 
-        f = Tkinter.Frame(appFrame)
-        s = Tkinter.StringVar()
+        f = tkinter.Frame(appFrame)
+        s = tkinter.StringVar()
         s.set(not hasattr(os, 'getuid') and '0' or str(os.getuid()))
-        uidLabel = Tkinter.Label(f, text='UID')
-        self.uid = Tkinter.Entry(f, text=s, background='white')
+        uidLabel = tkinter.Label(f, text='UID')
+        self.uid = tkinter.Entry(f, text=s, background='white')
 
-        uidLabel.pack(side=Tkinter.LEFT)
-        self.uid.pack(side=Tkinter.LEFT)
-        f.pack(side=Tkinter.BOTTOM)
+        uidLabel.pack(side=tkinter.LEFT)
+        self.uid.pack(side=tkinter.LEFT)
+        f.pack(side=tkinter.BOTTOM)
 
-        f = Tkinter.Frame(appFrame)
-        s = Tkinter.StringVar()
+        f = tkinter.Frame(appFrame)
+        s = tkinter.StringVar()
         s.set(not hasattr(os, 'getgid') and '0' or str(os.getgid()))
-        gidLabel = Tkinter.Label(f, text='GID')
-        self.gid = Tkinter.Entry(f, text=s, background='white')
+        gidLabel = tkinter.Label(f, text='GID')
+        self.gid = tkinter.Entry(f, text=s, background='white')
 
-        gidLabel.pack(side=Tkinter.LEFT)
-        self.gid.pack(side=Tkinter.LEFT)
-        f.pack(side=Tkinter.BOTTOM)
+        gidLabel.pack(side=tkinter.LEFT)
+        self.gid.pack(side=tkinter.LEFT)
+        f.pack(side=tkinter.BOTTOM)
 
-        appFrame.grid(row=0, column=0, columnspan=3, sticky=Tkinter.N + Tkinter.S)
+        appFrame.grid(row=0, column=0, columnspan=3, sticky=tkinter.N + tkinter.S)
 
 
     def pickTapFile(self):
-        r = tkFileDialog.askopenfilename()
+        r = tkinter.filedialog.askopenfilename()
         if r:
-            self.tapfile.delete(0, Tkinter.END)
-            self.tapfile.insert(Tkinter.END, r)
+            self.tapfile.delete(0, tkinter.END)
+            self.tapfile.insert(tkinter.END, r)
 
 
     def reset(self, coil):
@@ -132,10 +132,10 @@ class TkMkAppFrame(Tkinter.Frame):
         try:
             opt = coil.load().Options()
         except:
-            f = StringIO.StringIO()
+            f = io.StringIO()
             traceback.print_exc(file=f)
             # XXX - Why is this so narrow?
-            tkMessageBox.showerror(title="Options Error", message=f.getvalue(), parent=self)
+            tkinter.messagebox.showerror(title="Options Error", message=f.getvalue(), parent=self)
             return
 
         if self.optFrame:
@@ -187,13 +187,13 @@ class TkMkAppFrame(Tkinter.Frame):
 
     def createApplication(self):
         if not self.options:
-            tkMessageBox.showerror(message="Select an Application first")
+            tkinter.messagebox.showerror(message="Select an Application first")
             return
 
         try:
             self.copyOptions()
-        except usage.UsageError, e:
-            tkMessageBox.showerror(message=str(e))
+        except usage.UsageError as e:
+            tkinter.messagebox.showerror(message=str(e))
             return
 
         exists = os.path.exists(self.options['filename'])
@@ -205,7 +205,7 @@ class TkMkAppFrame(Tkinter.Frame):
             )
         else:
             if exists:
-                overwrite = tkMessageBox.askyesno(title='File Exists', message='Overwrite?')
+                overwrite = tkinter.messagebox.askyesno(title='File Exists', message='Overwrite?')
                 if not overwrite:
                     return
             a = service.Application(self.coil.name, self.options['uid'], self.options['gid'])
@@ -217,9 +217,9 @@ class TkMkAppFrame(Tkinter.Frame):
                 self.options
             )
         except usage.UsageError:
-            f = StringIO.StringIO()
+            f = io.StringIO()
             traceback.print_stack(file=f)
-            tkMessageBox.showerror(title="Usage Error", message=f.getvalue(), parent=self)
+            tkinter.messagebox.showerror(title="Usage Error", message=f.getvalue(), parent=self)
         else:
             try:
                 mktap.addToApplication(
@@ -229,20 +229,20 @@ class TkMkAppFrame(Tkinter.Frame):
                     self.options['gid'],
                 )
             except:
-                f = StringIO.StringIO()
+                f = io.StringIO()
                 traceback.print_exc(file=f)
-                print f.getvalue()
-                tkMessageBox.showerror(title="Usage Error", message=f.getvalue(), parent=self)
+                print(f.getvalue())
+                tkinter.messagebox.showerror(title="Usage Error", message=f.getvalue(), parent=self)
             else:
                 filename = self.options['filename']
                 if not filename:
                     filename = self.coil.name
-                tkMessageBox.showinfo(message="Wrote " + filename)
+                tkinter.messagebox.showinfo(message="Wrote " + filename)
 
 
     def destroy(self):
         reactor.crash()
-        Tkinter.Frame.destroy(self)
+        tkinter.Frame.destroy(self)
 
 
 #
@@ -250,31 +250,31 @@ class TkMkAppFrame(Tkinter.Frame):
 # (<drewp (at) bigasterisk (dot) com>) - without his help, tkmktap
 # would be an ugly POS.
 #
-class ParameterLine(Tkinter.Frame):
+class ParameterLine(tkinter.Frame):
     def __init__(self, master, lines, label, desc, default, cmd, **kw):
-        Tkinter.Frame.__init__(self, master, relief='raised', bd=1, **kw)
+        tkinter.Frame.__init__(self, master, relief='raised', bd=1, **kw)
         
         self.lines = lines
 
-        l = Tkinter.Label(
+        l = tkinter.Label(
             self, text=label, wraplen=200,
             width=30, anchor='w', justify='left'
         )
 
-        s = Tkinter.StringVar()
+        s = tkinter.StringVar()
         if default:
             s.set(default)
-        self.entry = Tkinter.Entry(self, text=s, background='white')
+        self.entry = tkinter.Entry(self, text=s, background='white')
         self.flag = label
 
-        more = Tkinter.Button(
+        more = tkinter.Button(
             self, text='+',
             command=lambda f = cmd, a = label, b = default, c = desc: f(a, b, c)
         )
 
-        l.pack(side=Tkinter.LEFT, fill='y')
-        self.entry.pack(side=Tkinter.LEFT)
-        more.pack(side=Tkinter.LEFT)
+        l.pack(side=tkinter.LEFT, fill='y')
+        self.entry.pack(side=tkinter.LEFT)
+        more.pack(side=tkinter.LEFT)
 
         l.bind("<Enter>", self.highlight)
         l.bind("<Leave>", self.unhighlight)
@@ -311,7 +311,7 @@ class ParameterLine(Tkinter.Frame):
         this = self.lines.index(self)
         framey = ev.y + self.winfo_y()   # get mouse y coord in parent frame
         replace = this   # replace will be the index of the row to swap with
-        for i, l in zip(range(len(self.lines)), self.lines):
+        for i, l in zip(list(range(len(self.lines))), self.lines):
             y1 = l.winfo_y()
             y2 = y1 + l.winfo_height()
             if y1 < framey < y2:
@@ -321,7 +321,7 @@ class ParameterLine(Tkinter.Frame):
             self.lines[replace], self.lines[this] = self.lines[this], self.lines[replace]
 
             # and re-assign all rows in the new order
-            for i, l in zip(range(len(self.lines)), self.lines):
+            for i, l in zip(list(range(len(self.lines))), self.lines):
                 l.grid(row=i, column=0)
 
 
@@ -335,7 +335,7 @@ class ParameterLine(Tkinter.Frame):
             pass
 
 
-class TkConfigFrame(Tkinter.Frame):
+class TkConfigFrame(tkinter.Frame):
     optFrame = None
     paramFrame = None
     commandFrame = None
@@ -347,7 +347,7 @@ class TkConfigFrame(Tkinter.Frame):
     paramLines = None
     
     def __init__(self, master, options):
-        Tkinter.Frame.__init__(self, master)
+        tkinter.Frame.__init__(self, master)
         self.options = options
         
         self.setupOptFlags()
@@ -408,7 +408,7 @@ class TkConfigFrame(Tkinter.Frame):
             if not usage.flagFunction(func) or meth in ('help', 'version'):
                 continue
             
-            if soFar.has_key(func):
+            if func in soFar:
                 continue
             soFar[func] = 1
             
@@ -417,15 +417,15 @@ class TkConfigFrame(Tkinter.Frame):
                 if len(existing) < len(meth):
                     d[func] = meth
             
-            for (func, name) in d.items():
+            for (func, name) in list(d.items()):
                 flags.append((name, None, func.__doc__))
             
             if len(flags):
-                self.optFrame = f = Tkinter.Frame(self)
+                self.optFrame = f = tkinter.Frame(self)
                 for (flag, _, desc) in flags:
-                    b = Tkinter.BooleanVar()
-                    c = Tkinter.Checkbutton(f, text=desc, variable=b, wraplen=200)
-                    c.pack(anchor=Tkinter.W)
+                    b = tkinter.BooleanVar()
+                    c = tkinter.Checkbutton(f, text=desc, variable=b, wraplen=200)
+                    c.pack(anchor=tkinter.W)
                     self.optFlags.append((flag, b))
                 f.grid(row=1, column=1)
 
@@ -441,7 +441,7 @@ class TkConfigFrame(Tkinter.Frame):
             full = 'opt_' + meth
             func = getattr(self.options, full)
 
-            if usage.flagFunction(func) or soFar.has_key(func):
+            if usage.flagFunction(func) or func in soFar:
                 continue
             
             soFar[func] = 1
@@ -450,11 +450,11 @@ class TkConfigFrame(Tkinter.Frame):
             if existing != meth:
                 if len(existing) < len(meth):
                     d[func] = meth
-        for (func, name) in d.items():
+        for (func, name) in list(d.items()):
             params.append((name, None, None, func.__doc__))
 
         if len(params):
-            self.paramFrame = Tkinter.Frame(self)
+            self.paramFrame = tkinter.Frame(self)
             self.paramLines = []
             for (flag, _, default, desc) in params:
                 try:
@@ -478,10 +478,10 @@ class TkConfigFrame(Tkinter.Frame):
     def setupSubCommands(self):
         self.optMap = {}
         if hasattr(self.options, 'subCommands'):
-            self.commandFrame = f = Tkinter.Frame(self)
-            self.cmdList = Tkinter.Listbox(f)
+            self.commandFrame = f = tkinter.Frame(self)
+            self.cmdList = tkinter.Listbox(f)
             for (cmd, _, opt, desc) in self.options.subCommands:
-                self.cmdList.insert(Tkinter.END, cmd)
+                self.cmdList.insert(tkinter.END, cmd)
                 self.optMap[cmd] = opt()
             self.cmdList.pack()
             self.subCmdPoll = reactor.callLater(0.1, self.pollSubCommands)
@@ -489,9 +489,9 @@ class TkConfigFrame(Tkinter.Frame):
 
 
     def setupExtra(self):
-        f = Tkinter.Frame(self)
-        l = Tkinter.Label(f, text='Extra Options')
-        self.extra = Tkinter.Entry(f, background='white')
+        f = tkinter.Frame(self)
+        l = tkinter.Label(f, text='Extra Options')
+        self.extra = tkinter.Entry(f, background='white')
         l.pack()
         self.extra.pack(fill='y')
         f.grid(row=2, column=1, columnspan=2)
@@ -510,18 +510,18 @@ class TkConfigFrame(Tkinter.Frame):
         self.subCmdPoll = reactor.callLater(0.1, self.pollSubCommands)
     
     
-class TkAppMenu(Tkinter.Menu):
+class TkAppMenu(tkinter.Menu):
     def __init__(self, master, create, callback, items):
-        Tkinter.Menu.__init__(self, master)
+        tkinter.Menu.__init__(self, master)
 
-        cmdMenu = Tkinter.Menu(self)
+        cmdMenu = tkinter.Menu(self)
         self.add_cascade(label="Actions", menu=cmdMenu)
         
         cmdMenu.add_command(label='Create', command=create)
         cmdMenu.add_separator()
         cmdMenu.add_command(label='Quit', command=reactor.crash)
 
-        tapMenu = Tkinter.Menu(self)
+        tapMenu = tkinter.Menu(self)
         self.add_cascade(label="Applications", menu=tapMenu)
 
         for item in items:
@@ -532,10 +532,10 @@ class TkAppMenu(Tkinter.Menu):
 
 def run():
     taps = mktap.loadPlugins()
-    r = Tkinter.Tk()
+    r = tkinter.Tk()
     r.withdraw()
     
-    keyList = taps.keys()
+    keyList = list(taps.keys())
     keyList.sort()
 
     config = TkMkAppFrame(r, None)

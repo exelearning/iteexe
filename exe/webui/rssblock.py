@@ -86,8 +86,8 @@ class RssBlock(Block):
             self.idevice.loadRss(request.args['url'+ self.id][0])
         else:
             Block.process(self, request)
-            if (u"action" not in request.args or
-                request.args[u"action"][0] != u"delete"):
+            if ("action" not in request.args or
+                request.args["action"][0] != "delete"):
                 # If the text has been changed
                 self.rssElement.process(request)
             if "action" in request.args \
@@ -102,17 +102,17 @@ class RssBlock(Block):
         """
         log.debug("renderEdit")
 
-        html  = u"<div class=\"iDevice\"><br/>\n"
+        html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title" + self.id, self.idevice.title)
 
         html += '<br/><br/>RSS URL ' + common.textInput("url" + self.id,
                                                         self.idevice.url)
-        html += common.submitButton(u"loadRss"+self.id, _(u"Load"))
+        html += common.submitButton("loadRss"+self.id, _("Load"))
         html += common.elementInstruc(self.idevice.urlInstruc)
-        html += u"<br/>\n"
+        html += "<br/>\n"
         html += self.rssElement.renderEdit()
-        emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
-                          (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
+        emphasisValues = [(_("No emphasis"),     Idevice.NoEmphasis),
+                          (_("Some emphasis"),   Idevice.SomeEmphasis)]
         
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
@@ -124,7 +124,7 @@ class RssBlock(Block):
                                  self.idevice.emphasis)
 
         html += self.renderEditButtons(undo=self.idevice.undo)
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 

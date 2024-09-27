@@ -9,9 +9,9 @@ from twisted.internet import interfaces, address, error
 from twisted.persisted import styles
 from twisted.python import log, reflect
 
-from ops import AcceptExOp
-from abstract import ConnectedSocket
-from util import StateEventMachineType
+from .ops import AcceptExOp
+from .abstract import ConnectedSocket
+from .util import StateEventMachineType
 from zope.interface import implements
 
 class ServerSocket(ConnectedSocket):
@@ -21,8 +21,7 @@ class ServerSocket(ConnectedSocket):
         self.repstr = "<%s #%s on %s>" % (self.protocol.__class__.__name__, sessionno, self.getPeerPort())
         self.startReading()
 
-class ListeningPort(log.Logger, styles.Ephemeral, object):
-    __metaclass__ = StateEventMachineType
+class ListeningPort(log.Logger, styles.Ephemeral, object, metaclass=StateEventMachineType):
     implements(interfaces.IListeningPort)
     events = ["startListening", "stopListening", "loseConnection", "acceptDone", "acceptErr"]
     sockinfo = None
@@ -51,8 +50,8 @@ class ListeningPort(log.Logger, styles.Ephemeral, object):
         try:
             skt = socket.socket(*self.sockinfo)
             skt.bind(self.addr)
-        except socket.error, le:
-            raise error.CannotListenError, (None, None, le)
+        except socket.error as le:
+            raise error.CannotListenError(None, None, le)
         
         # Make sure that if we listened on port 0, we update that to
         # reflect what the OS actually assigned us.

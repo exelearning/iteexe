@@ -8,7 +8,7 @@
 
 import cgi
 from copy import copy
-from urllib import unquote
+from urllib.parse import unquote
 from types import StringType
 import warnings
 
@@ -82,7 +82,7 @@ def processingFailed(reason, request, ctx):
     try:
         handler = inevow.ICanHandleException(ctx)
         handler.renderHTTP_exception(ctx, reason)
-    except Exception, e:
+    except Exception as e:
         request.setResponseCode(http.INTERNAL_SERVER_ERROR)
         log.msg("Exception rendering error page:", isErr=1)
         log.err(e)
@@ -136,7 +136,7 @@ class NevowRequest(compy.Componentized, server.Request):
 
         # Resource Identification
         self.prepath = []
-        self.postpath = map(unquote, self.path[1:].split('/'))
+        self.postpath = list(map(unquote, self.path[1:].split('/')))
         self.sitepath = []
 
         self.deferred = defer.Deferred()
@@ -179,7 +179,7 @@ class NevowRequest(compy.Componentized, server.Request):
                 pageContext = context.PageContext(tag=res, parent=ctx)
                 return self.gotPageContext(pageContext)
             else:
-                print "html is not a string: %s on %s" % (str(html), ctx.tag)
+                print("html is not a string: %s on %s" % (str(html), ctx.tag))
                 server.Request.finish(self)
         return html
 
@@ -275,7 +275,7 @@ class NevowSite(server.Site):
             assert  len(newpath) < len(path), "Infinite loop impending..."
 
         ## We found a Resource... update the request.prepath and postpath
-        for x in xrange(len(path) - len(newpath)):
+        for x in range(len(path) - len(newpath)):
             request.prepath.append(request.postpath.pop(0))
 
         ## Create a context object to represent this new resource

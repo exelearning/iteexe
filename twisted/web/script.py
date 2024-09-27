@@ -6,15 +6,15 @@
 """I contain PythonScript, which is a very simple python script resource.
 """
 
-import server
-import resource
-import html
-import error
+from . import server
+from . import resource
+from . import html
+from . import error
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 from twisted.web import http
 from twisted import copyright
@@ -67,8 +67,8 @@ def ResourceScript(path, registry):
             'cache': cs.cache,
             'recache': cs.recache}
     try:
-        execfile(path, glob, glob)
-    except AlreadyCached, ac:
+        exec(compile(open(path, "rb").read(), path, 'exec'), glob, glob)
+    except AlreadyCached as ac:
         return ac.args[0]
     rsrc = glob['resource']
     if cs.doCache and rsrc is not noRsrc:
@@ -84,7 +84,7 @@ def ResourceTemplate(path, registry):
             'registry': registry}
 
     e = ptl_compile.compile_template(open(path), path)
-    exec e in glob
+    exec(e, glob)
     return glob['resource']
 
 
@@ -150,13 +150,13 @@ class PythonScript(resource.Resource):
                      '__file__': self.filename,
                      'registry': self.registry}
         try:
-            execfile(self.filename, namespace, namespace)
-        except IOError, e:
+            exec(compile(open(self.filename, "rb").read(), self.filename, 'exec'), namespace, namespace)
+        except IOError as e:
             if e.errno == 2: #file not found
                 request.setResponseCode(http.NOT_FOUND)
                 request.write(error.NoResource("File not found.").render(request))
         except:
-            io = StringIO.StringIO()
+            io = io.StringIO()
             traceback.print_exc(file=io)
             request.write(html.PRE(io.getvalue()))
         request.finish()

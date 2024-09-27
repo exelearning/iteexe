@@ -4,12 +4,12 @@
 # See LICENSE for details.
 
 
-from cStringIO import StringIO
+from io import StringIO
 
 from twisted.python import failure
 
-import html
-import resource
+from . import html
+from . import resource
 
 
 import linecache
@@ -253,7 +253,7 @@ def htmlDict(d):
     w = io.write
     w('<div class="dict"><span class="heading">Dictionary instance @ %s</span>' % hex(id(d)))
     w('<table class="dict">')
-    for k, v in d.items():
+    for k, v in list(d.items()):
 
         if k == '__builtins__':
             v = 'builtin dictionary'
@@ -285,14 +285,14 @@ def htmlString(s):
 def htmlFunc(f):
     return ('<div class="function">' +
             html.escape("function %s in file %s at line %s" %
-                        (f.__name__, f.func_code.co_filename,
-                         f.func_code.co_firstlineno))+
+                        (f.__name__, f.__code__.co_filename,
+                         f.__code__.co_firstlineno))+
             '</div>')
 
-htmlReprTypes = {types.DictType: htmlDict,
-                 types.ListType: htmlList,
+htmlReprTypes = {dict: htmlDict,
+                 list: htmlList,
                  types.InstanceType: htmlInst,
-                 types.StringType: htmlString,
+                 bytes: htmlString,
                  types.FunctionType: htmlFunc}
 
 
@@ -361,7 +361,7 @@ def formatFailure(myFailure):
         # Instance variables
         for name, var in localVars:
             if name == 'self' and hasattr(var, '__dict__'):
-                usedVars = [ (key, value) for (key, value) in var.__dict__.items()
+                usedVars = [ (key, value) for (key, value) in list(var.__dict__.items())
                              if re.search(r'\W'+'self.'+key+r'\W', textSnippet) ]
                 if usedVars:
                     w('<div class="variables"><b>Self</b>')

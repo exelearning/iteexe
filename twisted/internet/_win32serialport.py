@@ -23,7 +23,7 @@ from twisted.internet import abstract
 from twisted.python import log
 
 # sibling imports
-from serialport import BaseSerialPort
+from .serialport import BaseSerialPort
 
 
 class SerialPort(BaseSerialPort, abstract.FileDescriptor):

@@ -8,7 +8,7 @@
 """Test XML-RPC support."""
 
 try:
-    import xmlrpclib
+    import xmlrpc.client
 except ImportError:
     xmlrpclib = None
     class XMLRPC: pass
@@ -110,7 +110,7 @@ class XMLRPCTestCase(unittest.TestCase):
         dl = []
         for meth, args, outp in inputOutput:
             d = self.proxy().callRemote(meth, *args)
-            d.addCallback(self.assertEquals, outp)
+            d.addCallback(self.assertEqual, outp)
             dl.append(d)
         return defer.DeferredList(dl, fireOnOneErrback=True)
 
@@ -121,7 +121,7 @@ class XMLRPCTestCase(unittest.TestCase):
                                  (17, "deferFault"), (42, "SESSION_TEST")]:
             d = self.proxy().callRemote(methodName)
             d = self.assertFailure(d, xmlrpc.Fault)
-            d.addCallback(lambda exc, code=code: self.assertEquals(exc.faultCode, code))
+            d.addCallback(lambda exc, code=code: self.assertEqual(exc.faultCode, code))
             dl.append(d)
         d = defer.DeferredList(dl, fireOnOneErrback=True)
         d.addCallback(lambda ign: log.flushErrors(TestRuntimeError, TestValueError))
@@ -147,7 +147,7 @@ class XMLRPCTestIntrospection(XMLRPCTestCase):
 
         def cbMethods(meths):
             meths.sort()
-            self.failUnlessEqual(
+            self.assertEqual(
                 meths,
                 ['add', 'complex', 'defer', 'deferFail',
                  'deferFault', 'dict', 'fail', 'fault',
@@ -168,7 +168,7 @@ class XMLRPCTestIntrospection(XMLRPCTestCase):
         dl = []
         for meth, expected in inputOutputs:
             d = self.proxy().callRemote("system.methodHelp", meth)
-            d.addCallback(self.assertEquals, expected)
+            d.addCallback(self.assertEqual, expected)
             dl.append(d)
         return defer.DeferredList(dl, fireOnOneErrback=True)
 
@@ -182,6 +182,6 @@ class XMLRPCTestIntrospection(XMLRPCTestCase):
         dl = []
         for meth, expected in inputOutputs:
             d = self.proxy().callRemote("system.methodSignature", meth)
-            d.addCallback(self.assertEquals, expected)
+            d.addCallback(self.assertEqual, expected)
             dl.append(d)
         return defer.DeferredList(dl, fireOnOneErrback=True)

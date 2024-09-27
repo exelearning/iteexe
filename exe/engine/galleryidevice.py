@@ -130,19 +130,19 @@ class GalleryImage(_ShowsResources):
             return
         try:
             image = Image.open(toUnicode(self._imageResource.path))
-        except Exception, e:
+        except Exception as e:
             # If we can't load the image, apologize to the user...
             log.error("Couldn't load image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _(u"No Thumbnail Available. Could not load original image."))
+            self._msgImage(image, _("No Thumbnail Available. Could not load original image."))
         self.size = image.size
         try:
             image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
-        except Exception, e:
+        except Exception as e:
             # If we can't load the image, apologize to the user...
             log.error("Couldn't shrink image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _(u"No Thumbnail Available. Could not shrink original image."))
+            self._msgImage(image, _("No Thumbnail Available. Could not shrink original image."))
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
         width1, height1 = image.size
         width2, height2 = image2.size
@@ -182,17 +182,17 @@ class GalleryImage(_ShowsResources):
         #Creamos la miniatura
         try:
             image = Image.open(toUnicode(self._imageResource.path))
-        except Exception, e:
+        except Exception as e:
             log.error("Couldn't load image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _(u"No Thumbnail Available. Could not load original image."))
+            self._msgImage(image, _("No Thumbnail Available. Could not load original image."))
         self.size = image.size
         try:
             image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
-        except Exception, e:
+        except Exception as e:
             log.error("Couldn't shrink image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _(u"No Thumbnail Available. Could not shrink original image."))
+            self._msgImage(image, _("No Thumbnail Available. Could not shrink original image."))
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
         width1, height1 = image.size
         width2, height2 = image2.size
@@ -215,7 +215,7 @@ class GalleryImage(_ShowsResources):
         Draws a nice default thumbnail on 'image'
         """
         self._msgImage(image,
-            _(u"No Thumbnail Available. Could not shrink image."))
+            _("No Thumbnail Available. Could not shrink image."))
 
     def _msgImage(self, image, msg):
         """
@@ -452,12 +452,12 @@ class GalleryIdevice(_ShowsResources, Idevice):
         Sets up the idevice title and instructions etc
         """
         Idevice.__init__(self, 
-                         x_(u"Image Gallery"), 
-                         x_(u"eXe Project"), 
-                         x_(u"""<p>Where you have a number of images that relate 
+                         x_("Image Gallery"), 
+                         x_("eXe Project"), 
+                         x_("""<p>Where you have a number of images that relate 
 to each other or to a particular learning exercise you may wish to display 
 these in a gallery context rather then individually.</p>"""),
-                         x_(u"Use this Idevice if you have a lot of images to "
+                         x_("Use this Idevice if you have a lot of images to "
                              "show."),
                              "gallery",
                              parentNode)
@@ -466,12 +466,12 @@ these in a gallery context rather then individually.</p>"""),
         self.images            = GalleryImages(self)
         self.currentImageIndex = 0
         self.userResources     = []
-        self._titleInstruc     = x_(u'Enter a title for the gallery')
-        self._addImageInstr    = x_(u"Click on the Add images button to select "
-                                    u"an image file. The image will appear "
-                                    u"below where you will be able to label "
-                                    u"it. It's always good practice to put "
-                                    u"the file size in the label.")
+        self._titleInstruc     = x_('Enter a title for the gallery')
+        self._addImageInstr    = x_("Click on the Add images button to select "
+                                    "an image file. The image will appear "
+                                    "below where you will be able to label "
+                                    "it. It's always good practice to put "
+                                    "the file size in the label.")
         '''
         self.systemResources += ['exe_lightbox.css']
             etc.
@@ -564,7 +564,7 @@ these in a gallery context rather then individually.</p>"""),
         Recreates all the thumbnails and html pages from the original image
         resources.
         """
-        log.debug(u'recreateResources for %d images' % (len(self.images)))
+        log.debug('recreateResources for %d images' % (len(self.images)))
         for image in self.images:
             image._saveFiles()
 

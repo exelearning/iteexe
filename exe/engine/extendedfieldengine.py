@@ -295,19 +295,19 @@ class FileElement(Element):
                 
     
     def renderEdit(self):
-        html  = u"<div>\n"
+        html  = "<div>\n"
         
         
         html += common.textInput("path"+self.id, "", 50, \
                     onclick="addFile('%s')" % self.id, readonly="readonly" )
-        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-        html += u'value="%s" />\n' % _(u"Browse")
+        html += '<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += 'value="%s" />\n' % _("Browse")
         
-        buttonName = _(u"Replace")
+        buttonName = _("Replace")
         if self.field.fileResource is None:
-            buttonName = _(u"Upload") 
+            buttonName = _("Upload") 
         
-        html += u'<input type="submit" name="%s" value="%s" />' % ("upload"+self.id,
+        html += '<input type="submit" name="%s" value="%s" />' % ("upload"+self.id,
                                                                 buttonName)
         html += common.elementInstruc(self.field.fileInstruc)
         
@@ -369,7 +369,7 @@ fieldDict is a dictionary of those ids -> an array of information about
 """
 def field_engine_build_fields_on_idevice(fieldInfoDict, fieldDict, idevice):
     
-    for fieldInfoKey, fieldInfoArr in fieldInfoDict.items():
+    for fieldInfoKey, fieldInfoArr in list(fieldInfoDict.items()):
         field_engine_check_field(fieldInfoKey, fieldInfoDict, fieldDict, idevice)
 
     
@@ -381,7 +381,7 @@ must remain in the same order.
 def field_engine_build_elements_on_block(fieldInfoDict, fieldDict, idevice):
     fieldCounter = 0
     elementDict = {}
-    for fieldInfoKey, fieldInfoArr in fieldInfoDict.items():
+    for fieldInfoKey, fieldInfoArr in list(fieldInfoDict.items()):
         elementTypeName = fieldInfoArr[EXEFIELDINFO_TYPE]
         
         #check the field - if this is a new one or src code edit etc. then add this field...
@@ -406,7 +406,7 @@ def field_engine_build_elements_on_block(fieldInfoDict, fieldDict, idevice):
 This method will take a given http request and process all elements in the array
 """
 def field_engine_process_all_elements(elementDict, request):
-    for elementId, element in elementDict.items():
+    for elementId, element in list(elementDict.items()):
         element.process(request)
 
 def getFieldDefaultVal(fieldId, fieldInfoDict):
@@ -421,7 +421,7 @@ def getFieldDefaultVal(fieldId, fieldInfoDict):
 # idevice - if not then create the field and set the parent idevice
 #
 def field_engine_check_field(fieldId, fieldInfoDict, fieldDict, idevice):
-    if fieldId in fieldDict.keys():
+    if fieldId in list(fieldDict.keys()):
         return
 
     fieldTypeName = fieldInfoDict[fieldId][EXEFIELDINFO_TYPE]
@@ -466,7 +466,7 @@ def make_dictionary_from_element_dict(dictkeyPrefix, elementDict, fieldInfoDict,
     else:
         ourDict['RESPATH'] = ''
 
-    for fieldId, element in elementDict.items():
+    for fieldId, element in list(elementDict.items()):
         dictKeyName = ""
         if dictkeyPrefix != "":
             dictKeyName = dictkeyPrefix + "_"

@@ -18,6 +18,7 @@ from twisted.internet.interfaces import ITransport
 from twisted.internet import reactor, error
 from twisted.python import log, components
 from zope.interface import implements, providedBy, directlyProvides
+from functools import reduce
 
 class ProtocolWrapper(Protocol):
     """Wraps protocol instances and acts as their transport as well."""
@@ -126,7 +127,7 @@ class ThrottlingProtocol(ProtocolWrapper):
         ProtocolWrapper.write(self, data)
 
     def writeSequence(self, seq):
-        self.factory.registerWritten(reduce(operator.add, map(len, seq)))
+        self.factory.registerWritten(reduce(operator.add, list(map(len, seq))))
         ProtocolWrapper.writeSequence(self, seq)
 
     def dataReceived(self, data):
@@ -166,7 +167,7 @@ class ThrottlingFactory(WrappingFactory):
 
     protocol = ThrottlingProtocol
 
-    def __init__(self, wrappedFactory, maxConnectionCount=sys.maxint, readLimit=None, writeLimit=None):
+    def __init__(self, wrappedFactory, maxConnectionCount=sys.maxsize, readLimit=None, writeLimit=None):
         WrappingFactory.__init__(self, wrappedFactory)
         self.connectionCount = 0
         self.maxConnectionCount = maxConnectionCount
@@ -210,27 +211,27 @@ class ThrottlingFactory(WrappingFactory):
     def throttleReads(self):
         """Throttle reads on all protocols."""
         log.msg("Throttling reads on %s" % self)
-        for p in self.protocols.keys():
+        for p in list(self.protocols.keys()):
             p.throttleReads()
 
     def unthrottleReads(self):
         """Stop throttling reads on all protocols."""
         self.unthrottleReadsID = None
         log.msg("Stopped throttling reads on %s" % self)
-        for p in self.protocols.keys():
+        for p in list(self.protocols.keys()):
             p.unthrottleReads()
 
     def throttleWrites(self):
         """Throttle writes on all protocols."""
         log.msg("Throttling writes on %s" % self)
-        for p in self.protocols.keys():
+        for p in list(self.protocols.keys()):
             p.throttleWrites()
 
     def unthrottleWrites(self):
         """Stop throttling writes on all protocols."""
         self.unthrottleWritesID = None
         log.msg("Stopped throttling writes on %s" % self)
-        for p in self.protocols.keys():
+        for p in list(self.protocols.keys()):
             p.unthrottleWrites()
 
     def buildProtocol(self, addr):

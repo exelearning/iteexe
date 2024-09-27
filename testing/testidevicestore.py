@@ -31,16 +31,16 @@ class TestIdeviceStore(utils.SuperTestCase):
         """
         Tests that idevices can be loaded
         """
-        self.assert_(isinstance(self.app.ideviceStore, IdeviceStore))
-        self.assert_(os.path.exists("tmp/idevices/allgeneric.data"))
-        self.assert_(os.path.exists("tmp/idevices/extended.data"))
-        self.assert_(os.path.exists("tmp/idevices/showgeneric.data"))
+        self.assertTrue(isinstance(self.app.ideviceStore, IdeviceStore))
+        self.assertTrue(os.path.exists("tmp/idevices/allgeneric.data"))
+        self.assertTrue(os.path.exists("tmp/idevices/extended.data"))
+        self.assertTrue(os.path.exists("tmp/idevices/showgeneric.data"))
 
     def testLangsWithoutDuplicateIdeviceTitles(self):
         langsWithDuplicateIdeviceTitles = {}
-        for lang, locale in self.app.config.locales.items():
+        for lang, locale in list(self.app.config.locales.items()):
             lang = str(lang)
-            locale.install(unicode=True)
+            locale.install(str=True)
             titles = set()
             for idevice in self.app.ideviceStore.getIdevices():
                 if idevice.title in titles:

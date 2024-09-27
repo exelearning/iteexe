@@ -34,9 +34,9 @@ from zope.interface import implements
 from twisted.python import log, reflect, components
 
 # sibling imports
-from jelly import setUnjellyableForClass, setUnjellyableForClassTree, setUnjellyableFactoryForClass, unjellyableRegistry
-from jelly import Jellyable, Unjellyable, _Dummy
-from jelly import setInstanceState, getInstanceState
+from .jelly import setUnjellyableForClass, setUnjellyableForClassTree, setUnjellyableFactoryForClass, unjellyableRegistry
+from .jelly import Jellyable, Unjellyable, _Dummy
+from .jelly import setInstanceState, getInstanceState
 
 # compatibility
 setCopierForClass = setUnjellyableForClass
@@ -219,7 +219,7 @@ class ViewPoint(Referenceable):
         kw = broker.unserialize(kw, self.perspective)
         method = getattr(self.object, "view_%s" % message)
         try:
-            state = apply(method, (self.perspective,)+args, kw)
+            state = method(*(self.perspective,)+args, **kw)
         except TypeError:
             log.msg("%s didn't accept %s and %s" % (method, args, kw))
             raise
@@ -426,7 +426,7 @@ class RemoteCache(RemoteCopy, Serializable):
         kw = broker.unserialize(kw)
         method = getattr(self, "observe_%s" % message)
         try:
-            state = apply(method, args, kw)
+            state = method(*args, **kw)
         except TypeError:
             log.msg("%s didn't accept %s and %s" % (method, args, kw))
             raise
@@ -541,7 +541,7 @@ class RemoteCacheMethod:
         """
         cacheID = self.broker.cachedRemotelyAs(self.cached)
         if cacheID is None:
-            from pb import ProtocolError
+            from .pb import ProtocolError
             raise ProtocolError("You can't call a cached method when the object hasn't been given to the peer yet.")
         return self.broker._sendMessage('cache', self.perspective, cacheID, self.name, args, kw)
 
@@ -592,7 +592,7 @@ class RemoteCacheObserver:
         """
         cacheID = self.broker.cachedRemotelyAs(self.cached)
         if cacheID is None:
-            from pb import ProtocolError
+            from .pb import ProtocolError
             raise ProtocolError("You can't call a cached method when the "
                                 "object hasn't been given to the peer yet.")
         return self.broker._sendMessage('cache', self.perspective, cacheID,

@@ -18,7 +18,7 @@ class DomHelpersTest(TestCase):
         doc1=microdom.parseString('<foo/>')
         actual=domhelpers.getElementsByTagName(doc1, 'foo')[0].nodeName
         expected='foo'
-        self.assertEquals(actual, expected)
+        self.assertEqual(actual, expected)
         el1=doc1.documentElement
         actual=domhelpers.getElementsByTagName(el1, 'foo')[0].nodeName
         self.assertEqual(actual, expected)
@@ -28,7 +28,7 @@ class DomHelpersTest(TestCase):
         tag_list=domhelpers.getElementsByTagName(doc2, 'foo')
         actual=''.join([node.getAttribute('in') for node in tag_list])
         expected='abcdefgh'
-        self.assertEquals(actual, expected)
+        self.assertEqual(actual, expected)
         el2=doc2.documentElement
         tag_list=domhelpers.getElementsByTagName(el2, 'foo')
         actual=''.join([node.getAttribute('in') for node in tag_list])
@@ -55,7 +55,7 @@ class DomHelpersTest(TestCase):
         tag_list=domhelpers.getElementsByTagName(doc3, 'foo')
         actual=''.join([node.getAttribute('in') for node in tag_list])
         expected='abdgheicfj'
-        self.assertEquals(actual, expected)
+        self.assertEqual(actual, expected)
         el3=doc3.documentElement
         tag_list=domhelpers.getElementsByTagName(el3, 'foo')
         actual=''.join([node.getAttribute('in') for node in tag_list])
@@ -66,7 +66,7 @@ class DomHelpersTest(TestCase):
         actual=domhelpers.getElementsByTagName(doc4, 'foo')
         root=doc4.documentElement
         expected=[root, root.lastChild().firstChild()]
-        self.assertEquals(actual, expected)
+        self.assertEqual(actual, expected)
         actual=domhelpers.getElementsByTagName(root, 'foo')
         self.assertEqual(actual, expected)
 

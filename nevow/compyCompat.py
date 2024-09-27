@@ -49,12 +49,11 @@ def registerAdapter(adapterFactory, origInterface, *interfaceClasses):
             adapterFactory = namedAny(adapterFactory)
             origInterface = namedAny(origInterface)
             interfaceClasses = [namedAny(x) for x in interfaceClasses]
-        except _NamedAnyError, nae:
-            print 'NamedAnyError:', nae
+        except _NamedAnyError as nae:
+            print('NamedAnyError:', nae)
             return
         # print "_registerAdapter:",adapterFactory, origInterface, interfaceClasses
-    if 'nevow.inevow.ISerializable' in interfaceClasses or filter(
-            lambda o: getattr(o, '__name__', None) == 'ISerializable', interfaceClasses):
+    if 'nevow.inevow.ISerializable' in interfaceClasses or [o for o in interfaceClasses if getattr(o, '__name__', None) == 'ISerializable']:
         warnings.warn("ISerializable is deprecated. Please use nevow.flat.registerFlattener instead.", stacklevel=2)
         from nevow import flat
         flat.registerFlattener(adapterFactory, origInterface)
@@ -71,7 +70,7 @@ class Componentized(_Componentized):
     def __init__(self, adapterCache=None):
         _Componentized.__init__(self)
         if adapterCache:
-            for k, v in adapterCache.items():
+            for k, v in list(adapterCache.items()):
                 self.setComponent(k, v)
 
 from zope.interface import implements as newImplements

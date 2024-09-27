@@ -42,12 +42,12 @@ class PollReactor(posixbase.PosixReactorBase):
             pass
 
         mask = 0
-        if reads.has_key(fd): mask = mask | select.POLLIN
-        if writes.has_key(fd): mask = mask | select.POLLOUT
+        if fd in reads: mask = mask | select.POLLIN
+        if fd in writes: mask = mask | select.POLLOUT
         if mask != 0:
             poller.register(fd, mask)
         else:
-            if selectables.has_key(fd): del selectables[fd]
+            if fd in selectables: del selectables[fd]
 
     def _dictRemove(self, selectable, mdict):
         try:
@@ -59,14 +59,14 @@ class PollReactor(posixbase.PosixReactorBase):
         except:
             # the hard way: necessary because fileno() may disappear at any
             # moment, thanks to python's underlying sockets impl
-            for fd, fdes in selectables.items():
+            for fd, fdes in list(selectables.items()):
                 if selectable is fdes:
                     break
             else:
                 # Hmm, maybe not the right course of action?  This method can't
                 # fail, because it happens inside error detection...
                 return
-        if mdict.has_key(fd):
+        if fd in mdict:
             del mdict[fd]
             self._updateRegistration(fd)
 
@@ -74,7 +74,7 @@ class PollReactor(posixbase.PosixReactorBase):
         """Add a FileDescriptor for notification of data available to read.
         """
         fd = reader.fileno()
-        if not reads.has_key(fd):
+        if fd not in reads:
             selectables[fd] = reader
             reads[fd] =  1
             self._updateRegistration(fd)
@@ -83,7 +83,7 @@ class PollReactor(posixbase.PosixReactorBase):
         """Add a FileDescriptor for notification of data available to write.
         """
         fd = writer.fileno()
-        if not writes.has_key(fd):
+        if fd not in writes:
             selectables[fd] = writer
             writes[fd] =  1
             self._updateRegistration(fd)
@@ -102,8 +102,8 @@ class PollReactor(posixbase.PosixReactorBase):
         """Remove all selectables, and return a list of them."""
         if self.waker is not None:
             self.removeReader(self.waker)
-        result = selectables.values()
-        fds = selectables.keys()
+        result = list(selectables.values())
+        fds = list(selectables.keys())
         reads.clear()
         writes.clear()
         selectables.clear()
@@ -128,7 +128,7 @@ class PollReactor(posixbase.PosixReactorBase):
 
         try:
             l = poller.poll(timeout)
-        except select.error, e:
+        except select.error as e:
             if e[0] == errno.EINTR:
                 return
             else:
@@ -175,7 +175,7 @@ class PollReactor(posixbase.PosixReactorBase):
 def install():
     """Install the poll() reactor."""
     p = PollReactor()
-    import main
+    from . import main
     main.installReactor(p)
 
 

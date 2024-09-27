@@ -65,7 +65,7 @@ class ObjectTester:
         ]
 
     def someMethod(self, one, two):
-        print "ONE TWO", `one`, `two`
+        print("ONE TWO", repr(one), repr(two))
 
     def frobber(self, frobber, frobee):
         return frobber.frobazz(frobee)
@@ -193,7 +193,7 @@ class AnotherTest:
                 return "Breakpoint in file %s at line %s" % (self.fn, self.ln)
 
         breakpoints = BreakpointRemover()
-        for fn in debugInstance.breaks.keys():
+        for fn in list(debugInstance.breaks.keys()):
             for lineno in debugInstance.breaks[fn]:
                 breakpoints.append(BP(fn, lineno))
         return breakpoints

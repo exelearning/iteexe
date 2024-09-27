@@ -34,8 +34,8 @@ from twisted.python.win32 import cmdLineQuote
 from twisted.internet.interfaces import IProcessTransport, IConsumer
 
 # sibling imports
-import ops
-import process_waiter
+from . import ops
+from . import process_waiter
 
 # System imports
 import os
@@ -128,7 +128,7 @@ class Process(object):
         self.pid = os.getpid() # unique pid for pipe naming
         
         # Create a pipe for the child process's STDOUT. 
-        self.stdoutPipeName = r"\\.\pipe\twisted-iocp-stdout-%d-%d-%d" % (self.pid, counter.next(), time.time())
+        self.stdoutPipeName = r"\\.\pipe\twisted-iocp-stdout-%d-%d-%d" % (self.pid, next(counter), time.time())
         self.hChildStdoutRd = win32pipe.CreateNamedPipe(
                 self.stdoutPipeName,
                 win32con.PIPE_ACCESS_INBOUND | win32con.FILE_FLAG_OVERLAPPED, # open mode
@@ -159,7 +159,7 @@ class Process(object):
         self.hChildStdoutRd = self.hChildStdoutRdDup
         
         # Create a pipe for the child process's STDERR.
-        self.stderrPipeName = r"\\.\pipe\twisted-iocp-stderr-%d-%d-%d" % (self.pid, counter.next(), time.time())
+        self.stderrPipeName = r"\\.\pipe\twisted-iocp-stderr-%d-%d-%d" % (self.pid, next(counter), time.time())
         self.hChildStderrRd = win32pipe.CreateNamedPipe(
                 self.stderrPipeName,
                 win32con.PIPE_ACCESS_INBOUND | win32con.FILE_FLAG_OVERLAPPED, # open mode
@@ -191,7 +191,7 @@ class Process(object):
         # Create a pipe for the child process's STDIN. This one is opened
         # in duplex mode so we can read from it too in order to detect when
         # the child closes their end of the pipe.
-        self.stdinPipeName = r"\\.\pipe\twisted-iocp-stdin-%d-%d-%d" % (self.pid, counter.next(), time.time())
+        self.stdinPipeName = r"\\.\pipe\twisted-iocp-stdin-%d-%d-%d" % (self.pid, next(counter), time.time())
         self.hChildStdinWr = win32pipe.CreateNamedPipe(
                 self.stdinPipeName,
                 win32con.PIPE_ACCESS_DUPLEX | win32con.FILE_FLAG_OVERLAPPED, # open mode

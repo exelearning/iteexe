@@ -9,7 +9,7 @@ class FoolishError(Exception):
 
 class TestFailureInSetUp(unittest.TestCase):
     def setUp(self):
-        raise FoolishError, "I am a broken setUp method"
+        raise FoolishError("I am a broken setUp method")
 
     def test_noop(self):
         pass
@@ -17,7 +17,7 @@ class TestFailureInSetUp(unittest.TestCase):
 
 class TestFailureInTearDown(unittest.TestCase):
     def tearDown(self):
-        raise FoolishError, "I am a broken tearDown method"
+        raise FoolishError("I am a broken tearDown method")
 
     def test_noop(self):
         pass
@@ -25,7 +25,7 @@ class TestFailureInTearDown(unittest.TestCase):
 
 class TestFailureInSetUpClass(unittest.TestCase):
     def setUpClass(self):
-        raise FoolishError, "I am a broken setUpClass method"
+        raise FoolishError("I am a broken setUpClass method")
 
     def test_noop(self):
         pass
@@ -33,7 +33,7 @@ class TestFailureInSetUpClass(unittest.TestCase):
 
 class TestFailureInTearDownClass(unittest.TestCase):
     def tearDownClass(self):
-        raise FoolishError, "I am a broken setUp method"
+        raise FoolishError("I am a broken setUp method")
 
     def test_noop(self):
         pass
@@ -53,7 +53,7 @@ TestSkipTestCase.skip = "skipping this test"
 class TestSkipTestCase2(unittest.TestCase):
     
     def setUpClass(self):
-        raise unittest.SkipTest, "thi stest is fukct"
+        raise unittest.SkipTest("thi stest is fukct")
 
     def test_thisTestWillBeSkipped(self):
         pass
@@ -67,7 +67,7 @@ class DemoTest(unittest.TestCase):
 
     def go(self):
         if True:
-            raise RuntimeError, HIDDEN_EXCEPTION_MSG
+            raise RuntimeError(HIDDEN_EXCEPTION_MSG)
         self.finished = True
 
     def testHiddenException(self):
@@ -76,12 +76,12 @@ class DemoTest(unittest.TestCase):
         timeout = time.time() + 2
         while not (self.finished or time.time() > timeout):
             reactor.iterate(0.1)
-        self.failUnless(self.finished)
+        self.assertTrue(self.finished)
 
 class ReactorCleanupTests(unittest.TestCase):
     def test_leftoverPendingCalls(self):
         def _():
-            print 'foo!'
+            print('foo!')
         reactor.callLater(10000.0, _)
 
 class SocketOpenTest(unittest.TestCase):

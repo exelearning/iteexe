@@ -4,7 +4,7 @@
 # Copyright (c) 2001-2004 Twisted Matrix Laboratories.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 """Threaded select reactor
 
@@ -59,7 +59,7 @@ with wxPython, or the PyObjCTools.AppHelper.stopEventLoop function.
 """
 
 from threading import Thread
-from Queue import Queue, Empty
+from queue import Queue, Empty
 from time import sleep
 import sys
 
@@ -128,8 +128,8 @@ class ThreadedSelectReactor(posixbase.PosixReactorBase):
     
     def _preenDescriptorsInThread(self):
         log.msg("Malformed file descriptor found.  Preening lists.")
-        readers = self.reads.keys()
-        writers = self.writes.keys()
+        readers = list(self.reads.keys())
+        writers = list(self.writes.keys())
         self.reads.clear()
         self.writes.clear()
         for selDict, selList in ((self.reads, readers), (self.writes, writers)):
@@ -164,20 +164,20 @@ class ThreadedSelectReactor(posixbase.PosixReactorBase):
         writes = self.writes
         while 1:
             try:
-                r, w, ignored = _select(reads.keys(),
-                                        writes.keys(),
+                r, w, ignored = _select(list(reads.keys()),
+                                        list(writes.keys()),
                                         [], timeout)
                 break
-            except ValueError, ve:
+            except ValueError as ve:
                 # Possibly a file descriptor has gone negative?
                 log.err()
                 self._preenDescriptorsInThread()
-            except TypeError, te:
+            except TypeError as te:
                 # Something *totally* invalid (object w/o fileno, non-integral
                 # result) was passed
                 log.err()
                 self._preenDescriptorsInThread()
-            except (select.error, IOError), se:
+            except (select.error, IOError) as se:
                 # select(2) encountered an error
                 if se.args[0] in (0, 2):
                     # windows does this if it got an empty list
@@ -263,9 +263,9 @@ class ThreadedSelectReactor(posixbase.PosixReactorBase):
         loop = self._interleave()
         def mainWaker(waker=waker, loop=loop):
             #print >>sys.stderr, "mainWaker()"
-            waker(loop.next)
+            waker(loop.__next__)
         self.mainWaker = mainWaker
-        loop.next()
+        next(loop)
         self.ensureWorkerThread()
     
     def _mainLoopShutdown(self):

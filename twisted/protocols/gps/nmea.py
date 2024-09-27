@@ -21,6 +21,7 @@ Other desired features::
 
 import operator
 from twisted.protocols import basic
+from functools import reduce
 
 POSFIX_INVALID, POSFIX_SPS, POSFIX_DGPS, POSFIX_PPS = 0, 1, 2, 3
 MODE_AUTO, MODE_FORCED = 'A', 'M'
@@ -71,7 +72,7 @@ class NMEAReceiver(basic.LineReceiver):
         if (not dispatch) and (not self.ignore_unknown_sentencetypes):
             raise InvalidSentence("sentencetype %r" % (sentencetype,))
         if not self.ignore_checksum_mismatch:
-            checksum, calculated_checksum = int(checksum, 16), reduce(operator.xor, map(ord, strmessage))
+            checksum, calculated_checksum = int(checksum, 16), reduce(operator.xor, list(map(ord, strmessage)))
             if checksum != calculated_checksum:
                 raise InvalidChecksum("Given 0x%02X != 0x%02X" % (checksum, calculated_checksum))
         handler = getattr(self, "handle_%s" % dispatch, None)
@@ -82,7 +83,7 @@ class NMEAReceiver(basic.LineReceiver):
         # return handler(*decoder(*message))
         try:
             decoded = decoder(*message)
-        except Exception, e:
+        except Exception as e:
             raise InvalidSentence("%r is not a valid %s (%s) sentence" % (line, sentencetype, dispatch))
         return handler(*decoded)
 
@@ -137,7 +138,7 @@ class NMEAReceiver(basic.LineReceiver):
         )
 
     def _decode_utc(self, utc):
-        utc_hh, utc_mm, utc_ss = map(float, (utc[:2], utc[2:4], utc[4:]))
+        utc_hh, utc_mm, utc_ss = list(map(float, (utc[:2], utc[2:4], utc[4:])))
         return utc_hh * 3600.0 + utc_mm * 60.0 + utc_ss
 
     def _decode_latlon(self, latitude, ns, longitude, ew):
@@ -150,7 +151,7 @@ class NMEAReceiver(basic.LineReceiver):
         return (latitude, longitude)
 
     def decode_activesatellites(self, mode1, mode2, *args):
-        satellites, (pdop, hdop, vdop) = args[:12], map(float, args[12:])
+        satellites, (pdop, hdop, vdop) = args[:12], list(map(float, args[12:]))
         satlist = []
         for n in satellites:
             if n:

@@ -11,7 +11,7 @@ from twisted.python import log, failure
 
 # system imports
 import string, copy, sys
-from cStringIO import StringIO
+from io import StringIO
 
 
 class Shell(telnet.Telnet):
@@ -62,8 +62,8 @@ class Shell(telnet.Telnet):
             except:
                 try:
                     code = compile(cmd, fn, 'exec')
-                    exec code in self.factory.namespace
-                except SyntaxError, e:
+                    exec(code, self.factory.namespace)
+                except SyntaxError as e:
                     if not self.lineBuffer and str(e)[:14] == "unexpected EOF":
                         self.lineBuffer.append(cmd)
                         self.transport.write("... ")
@@ -112,6 +112,6 @@ class ShellFactory(protocol.Factory):
         dict = self.__dict__
         ns = copy.copy(dict['namespace'])
         dict['namespace'] = ns
-        if ns.has_key('__builtins__'):
+        if '__builtins__' in ns:
             del ns['__builtins__']
         return dict

@@ -35,7 +35,7 @@ class DocCoverage(unittest.TestCase):
                 continue
             try:
                 package = reflect.namedModule(packageName)
-            except ImportError, e:
+            except ImportError as e:
                 # This is testing doc coverage, not importability.
                 # (Really, I don't want to deal with the fact that I don't
                 #  have pyserial installed.)
@@ -43,7 +43,7 @@ class DocCoverage(unittest.TestCase):
                 pass
             else:
                 docless.extend(self.modulesInPackage(packageName, package))
-        self.failIf(docless, "No docstrings in module files:\n"
+        self.assertFalse(docless, "No docstrings in module files:\n"
                     "%s" % ('\n'.join(map(errorInFile, docless)),))
 
     def modulesInPackage(self, packageName, package):
@@ -61,7 +61,7 @@ class DocCoverage(unittest.TestCase):
             try:
                 module = reflect.namedModule('.'.join([packageName,
                                                        moduleName]))
-            except Exception, e:
+            except Exception as e:
                 # print moduleName, "misbehaved:", e
                 pass
             else:
@@ -75,7 +75,7 @@ class DocCoverage(unittest.TestCase):
         for packageName in self.packageNames:
             try:
                 package = reflect.namedModule(packageName)
-            except Exception, e:
+            except Exception as e:
                 # This is testing doc coverage, not importability.
                 # (Really, I don't want to deal with the fact that I don't
                 #  have pyserial installed.)
@@ -84,8 +84,8 @@ class DocCoverage(unittest.TestCase):
             else:
                 if not inspect.getdoc(package):
                     docless.append(package.__file__.replace('.pyc','.py'))
-        self.failIf(docless, "No docstrings for package files\n"
-                    "%s" % ('\n'.join(map(errorInFile, docless),)))
+        self.assertFalse(docless, "No docstrings for package files\n"
+                    "%s" % ('\n'.join(list(map(errorInFile, docless)),)))
 
 
     # This test takes a while and doesn't come close to passing.  :(

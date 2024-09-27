@@ -4,16 +4,16 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes
+
 
 __version__ = "$Revision: 1.91 $"[11:-2]
 
 # Sibling imports
-import interfaces
-import utils
-import controller
-from utils import doSendPage
-import model
+from . import interfaces
+from . import utils
+from . import controller
+from .utils import doSendPage
+from . import model
 
 # Twisted imports
 from twisted.internet import defer
@@ -24,7 +24,7 @@ from twisted.web.server import NOT_DONE_YET
 from zope.interface import implements
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -113,7 +113,7 @@ class View:
             if doneCallback is None and self.doneCallback is None:
                 self.doneCallback = doSendPage
             else:
-                print "DoneCallback", doneCallback
+                print("DoneCallback", doneCallback)
                 self.doneCallback = doneCallback
         if template is not None:
             self.template = template
@@ -165,7 +165,7 @@ class View:
             self.d = microdom.parseString(template, caseInsensitive=0, preserveCase=0)
         else:
             if not self.templateFile:
-                raise AttributeError, "%s does not define self.templateFile to operate on" % self.__class__
+                raise AttributeError("%s does not define self.templateFile to operate on" % self.__class__)
             self.d = self.lookupTemplate(request)
         request.d = self.d
         self.handleDocument(request, self.d)
@@ -194,7 +194,7 @@ class View:
         # First see if templateDirectory + templateFile is a file
         templatePath = os.path.join(self.templateDirectory, self.templateFile)
         if not os.path.exists(templatePath):
-            raise RuntimeError, "The template %r was not found." % templatePath
+            raise RuntimeError("The template %r was not found." % templatePath)
         # Check to see if there is an already parsed copy of it
         mtime = os.path.getmtime(templatePath)
         cachedTemplate = templateCache.get(templatePath, None)
@@ -271,7 +271,7 @@ class View:
             if node.parentNode is not None:
                 node.parentNode.replaceChild(result, node)
             else:
-                raise RuntimeError, "We're dying here, please report this immediately"
+                raise RuntimeError("We're dying here, please report this immediately")
         else:
             self.outstandingCallbacks += 1
             result.addCallback(self.dispatchResultCallback, request, node)
@@ -410,7 +410,7 @@ class View:
                 warnings.warn("factory_ methods are deprecated; please use "
                               "wvfactory_ instead", DeprecationWarning)
         if vm:
-            if vm.func_code.co_argcount == 3 and not type(vm) == types.LambdaType:
+            if vm.__code__.co_argcount == 3 and not type(vm) == types.LambdaType:
                  warnings.warn("wvfactory_ methods take (request, node, "
                                "model) instead of (request, node) now. \n"
                                "Please instantiate your widgets with a "
@@ -610,7 +610,7 @@ class View:
     def unlinkViews(self):
         #print "unlinking views"
         self.model.removeView(self)
-        for key, value in self.subviews.items():
+        for key, value in list(self.subviews.items()):
             value.unlinkViews()
 #            value.model.removeView(value)
 
@@ -662,7 +662,7 @@ class LiveView(View):
         #print "updating flash thingie"
         uid = request.getSession().uid
         n = wid.templateNode
-        if n.attributes.has_key('src'):
+        if 'src' in n.attributes:
             n.attributes['src'] = n.attributes.get('src') + '?twisted_session=' + str(uid)
         else:
             n.attributes['value'] = n.attributes.get('value') + '?twisted_session=' + str(uid)
@@ -690,6 +690,6 @@ def registerViewForModel(view, model):
 # If no widget/handler was found in the container controller or view, these
 # modules will be searched.
 
-import input
-import widgets
+from . import input
+from . import widgets
 

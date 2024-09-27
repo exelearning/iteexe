@@ -7,10 +7,10 @@
 Maintainer: U{Andrew Bennetts<mailto:spiv@twistedmatrix.com>}
 """
 
-from __future__ import nested_scopes
+
 
 import sys, types, os.path, re
-from StringIO import StringIO
+from io import StringIO
 import shutil
 
 from zope.interface import implements
@@ -103,7 +103,7 @@ class FTPServerTestCase(unittest.TestCase):
     def _waitForCommandFailure(self, deferred):
         try:
             responseLines = wait(deferred)
-        except ftp.CommandFailed, e:
+        except ftp.CommandFailed as e:
             return e.args[0]
         else:
             self.fail('ftp.CommandFailed not raised for command, got %r'
@@ -111,7 +111,7 @@ class FTPServerTestCase(unittest.TestCase):
 
     def _anonymousLogin(self):
         responseLines = wait(self.client.queueStringCommand('USER anonymous'))
-        self.assertEquals(
+        self.assertEqual(
             ['331 Guest login ok, type your email address as password.'],
             responseLines
         )
@@ -119,7 +119,7 @@ class FTPServerTestCase(unittest.TestCase):
         responseLines = wait(self.client.queueStringCommand(
             'PASS test@twistedmatrix.com')
         )
-        self.assertEquals(
+        self.assertEqual(
             ['230 Anonymous login ok, access restrictions apply.'],
             responseLines
         )
@@ -137,14 +137,14 @@ class BasicFTPServerTestCase(FTPServerTestCase):
         for command in commandList:
             deferred = self.client.queueStringCommand(command)
             failureResponseLines = self._waitForCommandFailure(deferred)
-            self.failUnless(failureResponseLines[-1].startswith("530"),
+            self.assertTrue(failureResponseLines[-1].startswith("530"),
                             "Response didn't start with 530: %r"
                             % (failureResponseLines[-1],))
 
     def testPASSBeforeUSER(self):
         """Issuing PASS before USER should give an error."""
         d = self.client.queueStringCommand('PASS foo')
-        self.failUnlessEqual(
+        self.assertEqual(
             ["503 Incorrect sequence of commands: "
              "USER required before PASS"],
             self._waitForCommandFailure(d))
@@ -152,7 +152,7 @@ class BasicFTPServerTestCase(FTPServerTestCase):
     def testNoParamsForUSER(self):
         """Issuing USER without a username is a syntax error."""
         d = self.client.queueStringCommand('USER')
-        self.failUnlessEqual(
+        self.assertEqual(
             ['500 Syntax error: USER requires an argument.'],
             self._waitForCommandFailure(d))
 
@@ -160,7 +160,7 @@ class BasicFTPServerTestCase(FTPServerTestCase):
         """Issuing PASS without a password is a syntax error."""
         wait(self.client.queueStringCommand('USER foo'))
         d = self.client.queueStringCommand('PASS')
-        self.failUnlessEqual(
+        self.assertEqual(
             ['500 Syntax error: PASS requires an argument.'],
             self._waitForCommandFailure(d))
 
@@ -170,7 +170,7 @@ class BasicFTPServerTestCase(FTPServerTestCase):
     def testQuit(self):
         """Issuing QUIT should return a 221 message."""
         self._anonymousLogin()
-        return self.client.queueStringCommand('QUIT').addCallback(self.assertEquals, ['221 Goodbye.'])
+        return self.client.queueStringCommand('QUIT').addCallback(self.assertEqual, ['221 Goodbye.'])
 
     def testAnonymousLoginDenied(self):
         # Reconfigure the server to disallow anonymous access, and to have an
@@ -182,19 +182,19 @@ class BasicFTPServerTestCase(FTPServerTestCase):
 
         # Same response code as allowAnonymous=True, but different text.
         responseLines = wait(self.client.queueStringCommand('USER anonymous'))
-        self.assertEquals(
+        self.assertEqual(
             ['331 Password required for anonymous.'], responseLines
         )
 
         # It will be denied.  No-one can login.
         d = self.client.queueStringCommand('PASS test@twistedmatrix.com')
-        self.failUnlessEqual(
+        self.assertEqual(
             ['530 Sorry, Authentication failed.'],
             self._waitForCommandFailure(d))
 
         # It's not just saying that.  You aren't logged in.
         d = self.client.queueStringCommand('PWD')
-        self.failUnlessEqual(
+        self.assertEqual(
             ['530 Please login with USER and PASS.'],
             self._waitForCommandFailure(d))
 
@@ -202,7 +202,7 @@ class BasicFTPServerTestCase(FTPServerTestCase):
         self._anonymousLogin()
 
         d = self.client.queueStringCommand('GIBBERISH')
-        self.failUnlessEqual(
+        self.assertEqual(
             ["502 Command 'GIBBERISH' not implemented"],
             self._waitForCommandFailure(d))
 
@@ -210,7 +210,7 @@ class BasicFTPServerTestCase(FTPServerTestCase):
     def testRETRBeforePORT(self):
         self._anonymousLogin()
         d = self.client.queueStringCommand('RETR foo')
-        self.failUnlessEqual(
+        self.assertEqual(
             ["503 Incorrect sequence of commands: "
              "PORT or PASV required before RETR"],
             self._waitForCommandFailure(d))
@@ -218,7 +218,7 @@ class BasicFTPServerTestCase(FTPServerTestCase):
     def testSTORBeforePORT(self):
         self._anonymousLogin()
         d = self.client.queueStringCommand('STOR foo')
-        self.failUnlessEqual(
+        self.assertEqual(
             ["503 Incorrect sequence of commands: "
              "PORT or PASV required before STOR"],
             self._waitForCommandFailure(d))
@@ -226,17 +226,17 @@ class BasicFTPServerTestCase(FTPServerTestCase):
     def testBadCommandArgs(self):
         self._anonymousLogin()
         d = self.client.queueStringCommand('MODE z')
-        self.failUnlessEqual(
+        self.assertEqual(
             ["504 Not implemented for parameter 'z'."],
             self._waitForCommandFailure(d))
 
         d = self.client.queueStringCommand('STRU I')
-        self.failUnlessEqual(
+        self.assertEqual(
             ["504 Not implemented for parameter 'I'."],
             self._waitForCommandFailure(d))
 
     def testDecodeHostPort(self):
-        self.assertEquals(ftp.decodeHostPort('25,234,129,22,100,23'),
+        self.assertEqual(ftp.decodeHostPort('25,234,129,22,100,23'),
                 ('25.234.129.22', 25623))
 
     def testPASV(self):
@@ -381,7 +381,7 @@ class FTPServerPortDataConnectionTestCase(FTPServerPasvDataConnectionTestCase):
         # verify that it fails with the right error.
         cmd = 'PORT ' + ftp.encodeHostPort('127.0.0.1', portNum)
         d = self.client.queueStringCommand(cmd)
-        self.failUnlessEqual(
+        self.assertEqual(
             ["425 Can't open data connection."],
             self._waitForCommandFailure(d)
         )
@@ -420,48 +420,48 @@ class FTPFileListingTests(unittest.TestCase):
         # This example line taken from the docstring for FTPFileListProtocol
         line = '-rw-r--r--   1 root     other        531 Jan 29 03:26 README'
         (file,), other = self.getFilesForLines([line])
-        self.failIf(other, 'unexpect unparsable lines: %s' % repr(other))
-        self.failUnless(file['filetype'] == '-', 'misparsed fileitem')
-        self.failUnless(file['perms'] == 'rw-r--r--', 'misparsed perms')
-        self.failUnless(file['owner'] == 'root', 'misparsed fileitem')
-        self.failUnless(file['group'] == 'other', 'misparsed fileitem')
-        self.failUnless(file['size'] == 531, 'misparsed fileitem')
-        self.failUnless(file['date'] == 'Jan 29 03:26', 'misparsed fileitem')
-        self.failUnless(file['filename'] == 'README', 'misparsed fileitem')
-        self.failUnless(file['nlinks'] == 1, 'misparsed nlinks')
-        self.failIf(file['linktarget'], 'misparsed linktarget')
+        self.assertFalse(other, 'unexpect unparsable lines: %s' % repr(other))
+        self.assertTrue(file['filetype'] == '-', 'misparsed fileitem')
+        self.assertTrue(file['perms'] == 'rw-r--r--', 'misparsed perms')
+        self.assertTrue(file['owner'] == 'root', 'misparsed fileitem')
+        self.assertTrue(file['group'] == 'other', 'misparsed fileitem')
+        self.assertTrue(file['size'] == 531, 'misparsed fileitem')
+        self.assertTrue(file['date'] == 'Jan 29 03:26', 'misparsed fileitem')
+        self.assertTrue(file['filename'] == 'README', 'misparsed fileitem')
+        self.assertTrue(file['nlinks'] == 1, 'misparsed nlinks')
+        self.assertFalse(file['linktarget'], 'misparsed linktarget')
 
     def testVariantLines(self):
         line1 = 'drw-r--r--   2 root     other        531 Jan  9  2003 A'
         line2 = 'lrw-r--r--   1 root     other          1 Jan 29 03:26 B -> A'
         line3 = 'woohoo! '
         (file1, file2), (other,) = self.getFilesForLines([line1, line2, line3])
-        self.failUnless(other == 'woohoo! \r', 'incorrect other line')
+        self.assertTrue(other == 'woohoo! \r', 'incorrect other line')
         # file 1
-        self.failUnless(file1['filetype'] == 'd', 'misparsed fileitem')
-        self.failUnless(file1['perms'] == 'rw-r--r--', 'misparsed perms')
-        self.failUnless(file1['owner'] == 'root', 'misparsed owner')
-        self.failUnless(file1['group'] == 'other', 'misparsed group')
-        self.failUnless(file1['size'] == 531, 'misparsed size')
-        self.failUnless(file1['date'] == 'Jan  9  2003', 'misparsed date')
-        self.failUnless(file1['filename'] == 'A', 'misparsed filename')
-        self.failUnless(file1['nlinks'] == 2, 'misparsed nlinks')
-        self.failIf(file1['linktarget'], 'misparsed linktarget')
+        self.assertTrue(file1['filetype'] == 'd', 'misparsed fileitem')
+        self.assertTrue(file1['perms'] == 'rw-r--r--', 'misparsed perms')
+        self.assertTrue(file1['owner'] == 'root', 'misparsed owner')
+        self.assertTrue(file1['group'] == 'other', 'misparsed group')
+        self.assertTrue(file1['size'] == 531, 'misparsed size')
+        self.assertTrue(file1['date'] == 'Jan  9  2003', 'misparsed date')
+        self.assertTrue(file1['filename'] == 'A', 'misparsed filename')
+        self.assertTrue(file1['nlinks'] == 2, 'misparsed nlinks')
+        self.assertFalse(file1['linktarget'], 'misparsed linktarget')
         # file 2
-        self.failUnless(file2['filetype'] == 'l', 'misparsed fileitem')
-        self.failUnless(file2['perms'] == 'rw-r--r--', 'misparsed perms')
-        self.failUnless(file2['owner'] == 'root', 'misparsed owner')
-        self.failUnless(file2['group'] == 'other', 'misparsed group')
-        self.failUnless(file2['size'] == 1, 'misparsed size')
-        self.failUnless(file2['date'] == 'Jan 29 03:26', 'misparsed date')
-        self.failUnless(file2['filename'] == 'B', 'misparsed filename')
-        self.failUnless(file2['nlinks'] == 1, 'misparsed nlinks')
-        self.failUnless(file2['linktarget'] == 'A', 'misparsed linktarget')
+        self.assertTrue(file2['filetype'] == 'l', 'misparsed fileitem')
+        self.assertTrue(file2['perms'] == 'rw-r--r--', 'misparsed perms')
+        self.assertTrue(file2['owner'] == 'root', 'misparsed owner')
+        self.assertTrue(file2['group'] == 'other', 'misparsed group')
+        self.assertTrue(file2['size'] == 1, 'misparsed size')
+        self.assertTrue(file2['date'] == 'Jan 29 03:26', 'misparsed date')
+        self.assertTrue(file2['filename'] == 'B', 'misparsed filename')
+        self.assertTrue(file2['nlinks'] == 1, 'misparsed nlinks')
+        self.assertTrue(file2['linktarget'] == 'A', 'misparsed linktarget')
 
     def testUnknownLine(self):
         files, others = self.getFilesForLines(['ABC', 'not a file'])
-        self.failIf(files, 'unexpected file entries')
-        self.failUnless(others == ['ABC\r', 'not a file\r'],
+        self.assertFalse(files, 'unexpected file entries')
+        self.assertTrue(others == ['ABC\r', 'not a file\r'],
                         'incorrect unparsable lines: %s' % repr(others))
 
     def testYear(self):
@@ -473,9 +473,9 @@ class FTPFileListingTests(unittest.TestCase):
                 self.transport.loseConnection()
         loopback.loopback(PrintLine(), fileList)
         file = fileList.files[0]
-        self.failUnless(file['size'] == 531, 'misparsed fileitem')
-        self.failUnless(file['date'] == 'Jan 29 2003', 'misparsed fileitem')
-        self.failUnless(file['filename'] == 'README', 'misparsed fileitem')
+        self.assertTrue(file['size'] == 531, 'misparsed fileitem')
+        self.assertTrue(file['date'] == 'Jan 29 2003', 'misparsed fileitem')
+        self.assertTrue(file['filename'] == 'README', 'misparsed fileitem')
 
 
 class FTPClientTests(unittest.TestCase):
@@ -532,7 +532,7 @@ class FTPClientTests(unittest.TestCase):
         d.addErrback(_eb)
         from twisted.internet.main import CONNECTION_LOST
         ftpClient.connectionLost(failure.Failure(CONNECTION_LOST))
-        self.failUnless(m, m)
+        self.assertTrue(m, m)
 
 
 class DummyTransport:
@@ -551,14 +551,14 @@ class FTPClientBasicTests(unittest.TestCase):
         # The first response is captured as a greeting.
         ftpClient = ftp.FTPClientBasic()
         ftpClient.lineReceived('220 Imaginary FTP.')
-        self.failUnlessEqual(['220 Imaginary FTP.'], ftpClient.greeting)
+        self.assertEqual(['220 Imaginary FTP.'], ftpClient.greeting)
 
     def testResponseWithNoMessage(self):
         # Responses with no message are still valid, i.e. three digits followed
         # by a space is complete response.
         ftpClient = ftp.FTPClientBasic()
         ftpClient.lineReceived('220 ')
-        self.failUnlessEqual(['220 '], ftpClient.greeting)
+        self.assertEqual(['220 '], ftpClient.greeting)
 
     def testMultilineResponse(self):
         ftpClient = ftp.FTPClientBasic()
@@ -574,31 +574,31 @@ class FTPClientBasicTests(unittest.TestCase):
 
         # Send the first line of a multiline response.
         ftpClient.lineReceived('210-First line.')
-        self.failUnlessEqual([], result)
+        self.assertEqual([], result)
 
         # Send a second line, again prefixed with "nnn-".
         ftpClient.lineReceived('123-Second line.')
-        self.failUnlessEqual([], result)
+        self.assertEqual([], result)
 
         # Send a plain line of text, no prefix.
         ftpClient.lineReceived('Just some text.')
-        self.failUnlessEqual([], result)
+        self.assertEqual([], result)
 
         # Now send a short (less than 4 chars) line.
         ftpClient.lineReceived('Hi')
-        self.failUnlessEqual([], result)
+        self.assertEqual([], result)
 
         # Now send an empty line.
         ftpClient.lineReceived('')
-        self.failUnlessEqual([], result)
+        self.assertEqual([], result)
 
         # And a line with 3 digits in it, and nothing else.
         ftpClient.lineReceived('321')
-        self.failUnlessEqual([], result)
+        self.assertEqual([], result)
 
         # Now finish it.
         ftpClient.lineReceived('210 Done.')
-        self.failUnlessEqual(
+        self.assertEqual(
             ['210-First line.',
              '123-Second line.',
              'Just some text.',
@@ -616,7 +616,7 @@ class FTPClientBasicTests(unittest.TestCase):
 
         # Queue a login with no password
         ftpClient.queueLogin('bob', None)
-        self.failUnlessEqual('USER bob\r\n', ftpClient.transport.buffer)
+        self.assertEqual('USER bob\r\n', ftpClient.transport.buffer)
 
         # Clear the test buffer, acknowledge the USER command.
         ftpClient.transport.buffer = ''
@@ -624,7 +624,7 @@ class FTPClientBasicTests(unittest.TestCase):
 
         # The client shouldn't have sent anything more (i.e. it shouldn't have
         # sent a PASS command).
-        self.failUnlessEqual('', ftpClient.transport.buffer)
+        self.assertEqual('', ftpClient.transport.buffer)
 
     def testNoPasswordNeeded(self):
         """Receiving a 230 response to USER prevents PASS from being sent."""
@@ -635,7 +635,7 @@ class FTPClientBasicTests(unittest.TestCase):
 
         # Queue a login with no password
         ftpClient.queueLogin('bob', 'secret')
-        self.failUnlessEqual('USER bob\r\n', ftpClient.transport.buffer)
+        self.assertEqual('USER bob\r\n', ftpClient.transport.buffer)
 
         # Clear the test buffer, acknowledge the USER command with a 230
         # response code.
@@ -644,7 +644,7 @@ class FTPClientBasicTests(unittest.TestCase):
 
         # The client shouldn't have sent anything more (i.e. it shouldn't have
         # sent a PASS command).
-        self.failUnlessEqual('', ftpClient.transport.buffer)
+        self.assertEqual('', ftpClient.transport.buffer)
 
 
 class PathHandling(unittest.TestCase):
@@ -656,7 +656,7 @@ class PathHandling(unittest.TestCase):
                           ('/a/b/c', ['a', 'b', 'c']),
                           ('/a/', ['a']),
                           ('a/', ['a'])]:
-            self.assertEquals(ftp.toSegments([], inp), outp)
+            self.assertEqual(ftp.toSegments([], inp), outp)
 
         for inp, outp in [('b', ['a', 'b']),
                           ('b/', ['a', 'b']),
@@ -666,18 +666,18 @@ class PathHandling(unittest.TestCase):
                           ('b/c/', ['a', 'b', 'c']),
                           ('/b/c', ['b', 'c']),
                           ('/b/c/', ['b', 'c'])]:
-            self.assertEquals(ftp.toSegments(['a'], inp), outp)
+            self.assertEqual(ftp.toSegments(['a'], inp), outp)
 
         for inp, outp in [('//', []),
                           ('//a', ['a']),
                           ('a//', ['a']),
                           ('a//b', ['a', 'b'])]:
-            self.assertEquals(ftp.toSegments([], inp), outp)
+            self.assertEqual(ftp.toSegments([], inp), outp)
 
         for inp, outp in [('//', []),
                           ('//b', ['b']),
                           ('b//c', ['a', 'b', 'c'])]:
-            self.assertEquals(ftp.toSegments(['a'], inp), outp)
+            self.assertEqual(ftp.toSegments(['a'], inp), outp)
 
         for inp, outp in [('..', []),
                           ('../', []),
@@ -691,7 +691,7 @@ class PathHandling(unittest.TestCase):
                           ('/a/b/../../c/', ['c']),
                           ('/a/b/../../c/..', []),
                           ('/a/b/../../c/../', [])]:
-            self.assertEquals(ftp.toSegments(['x'], inp), outp)
+            self.assertEqual(ftp.toSegments(['x'], inp), outp)
 
         for inp in ['..', '../', 'a/../..', 'a/../../',
                     '/..', '/../', '/a/../..', '/a/../../',

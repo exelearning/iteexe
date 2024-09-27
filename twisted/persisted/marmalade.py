@@ -29,22 +29,22 @@ except:
     instancemethod = PyMethod
 
 import types
-import copy_reg
+import copyreg
 
 #for some reason, __builtins__ == __builtin__.__dict__ in the context where this is used.
 #Can someone tell me why?
-import __builtin__ 
+import builtins 
 
 
 def instance(klass, d):
-    if isinstance(klass, types.ClassType):
+    if isinstance(klass, type):
         return new.instance(klass, d)
     elif isinstance(klass, type):
         o = object.__new__(klass)
         o.__dict__ = d
         return o
     else:
-        raise TypeError, "%s is not a class" % klass
+        raise TypeError("%s is not a class" % klass)
 
 
 def getValueElement(node):
@@ -137,7 +137,7 @@ class DOMUnjellier:
         elif node.tagName == "float":
             retval = float(node.getAttribute("value"))
         elif node.tagName == "longint":
-            retval = long(node.getAttribute("value"))
+            retval = int(node.getAttribute("value"))
         elif node.tagName == "bool":
             retval = int(node.getAttribute("value"))
             if retval:
@@ -149,14 +149,14 @@ class DOMUnjellier:
         elif node.tagName == "class":
             retval = namedClass(str(node.getAttribute("name")))
         elif node.tagName == "unicode":
-            retval = unicode(str(node.getAttribute("value")).replace("\\n", "\n").replace("\\t", "\t"), "raw_unicode_escape")
+            retval = str(str(node.getAttribute("value")).replace("\\n", "\n").replace("\\t", "\t"), "raw_unicode_escape")
         elif node.tagName == "function":
             retval = namedObject(str(node.getAttribute("name")))
         elif node.tagName == "method":
             im_name = node.getAttribute("name")
             im_class = namedClass(node.getAttribute("class"))
             im_self = self.unjellyNode(getValueElement(node))
-            if im_class.__dict__.has_key(im_name):
+            if im_name in im_class.__dict__:
                 if im_self is None:
                     retval = getattr(im_class, im_name)
                 elif isinstance(im_self, NotKnown):
@@ -222,7 +222,7 @@ class DOMUnjellier:
         elif node.tagName == "copyreg":
             nodefunc = namedObject(node.getAttribute("loadfunc"))
             loaddef = self.unjellyLater(getValueElement(node)).addCallback(
-                lambda result, _l: apply(_l, result), nodefunc)
+                lambda result, _l: _l(*result), nodefunc)
             retval = loaddef
         else:
             raise "Unsupported Node Type: %s" % str(node.tagName)
@@ -261,9 +261,9 @@ class DOMJellier:
         """
         objType = type(obj)
         #immutable (We don't care if these have multiple refs)
-        if objType is types.NoneType:
+        if objType is type(None):
             node = self.document.createElement("None")
-        elif objType is types.StringType:
+        elif objType is bytes:
             node = self.document.createElement("string")
             r = repr(obj)
             if r[0] == '"':
@@ -272,36 +272,36 @@ class DOMJellier:
                 r = r.replace('"', '\\"')
             node.setAttribute("value", r[1:-1])
             # node.appendChild(CDATASection(obj))
-        elif objType is types.IntType:
+        elif objType is int:
             node = self.document.createElement("int")
             node.setAttribute("value", str(obj))
-        elif objType is types.LongType:
+        elif objType is int:
             node = self.document.createElement("longint")
             s = str(obj)
             if s[-1] == 'L':
                 s = s[:-1]
             node.setAttribute("value", s)
-        elif objType is types.FloatType:
+        elif objType is float:
             node = self.document.createElement("float")
             node.setAttribute("value", repr(obj))
         elif objType is types.MethodType:
             node = self.document.createElement("method")
-            node.setAttribute("name", obj.im_func.__name__)
-            node.setAttribute("class", qual(obj.im_class))
+            node.setAttribute("name", obj.__func__.__name__)
+            node.setAttribute("class", qual(obj.__self__.__class__))
             # TODO: make methods 'prefer' not to jelly the object internally,
             # so that the object will show up where it's referenced first NOT
             # by a method.
-            node.appendChild(self.jellyToNode(obj.im_self))
-        elif hasattr(types, 'BooleanType') and objType is types.BooleanType:
+            node.appendChild(self.jellyToNode(obj.__self__))
+        elif hasattr(types, 'BooleanType') and objType is bool:
             node = self.document.createElement("bool")
             node.setAttribute("value", str(int(obj)))
         elif objType is types.ModuleType:
             node = self.document.createElement("module")
             node.setAttribute("name", obj.__name__)
-        elif objType==types.ClassType or issubclass(objType, type):
+        elif objType==type or issubclass(objType, type):
             node = self.document.createElement("class")
             node.setAttribute("name", qual(obj))
-        elif objType is types.UnicodeType:
+        elif objType is str:
             node = self.document.createElement("unicode")
             obj = obj.encode('raw_unicode_escape')
             s = obj.replace("\n", "\\n").replace("\t", "\\t")
@@ -314,7 +314,7 @@ class DOMJellier:
             node.setAttribute("name", fullFuncName(obj))
         else:
             #mutable!
-            if self.prepared.has_key(id(obj)):
+            if id(obj) in self.prepared:
                 oldNode = self.prepared[id(obj)][1]
                 if oldNode.hasAttribute("reference"):
                     # it's been referenced already
@@ -329,24 +329,24 @@ class DOMJellier:
                 return node
             node = self.document.createElement("UNNAMED")
             self.prepareElement(node, obj)
-            if objType is types.ListType:
+            if objType is list:
                 node.tagName = "list"
                 for subobj in obj:
                     node.appendChild(self.jellyToNode(subobj))
-            elif objType is types.TupleType:
+            elif objType is tuple:
                 node.tagName = "tuple"
                 for subobj in obj:
                     node.appendChild(self.jellyToNode(subobj))
-            elif objType is types.DictionaryType:
+            elif objType is dict:
                 node.tagName = "dictionary"
-                for k, v in obj.items():
+                for k, v in list(obj.items()):
                     n = self.jellyToNode(k)
                     n.setAttribute("role", "key")
                     n2 = self.jellyToNode(v)
                     node.appendChild(n)
                     node.appendChild(n2)
-            elif copy_reg.dispatch_table.has_key(objType):
-                unpickleFunc, state = copy_reg.dispatch_table[objType](obj)
+            elif objType in copyreg.dispatch_table:
+                unpickleFunc, state = copyreg.dispatch_table[objType](obj)
                 node = self.document.createElement("copyreg")
                 # node.setAttribute("type", objType.__name__)
                 node.setAttribute("loadfunc", fullFuncName(unpickleFunc))

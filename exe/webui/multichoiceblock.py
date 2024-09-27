@@ -65,7 +65,7 @@ class MultichoiceBlock(Block):
 
         is_cancel = common.requestHasCancel(request)
     
-        if ("addQuestion"+unicode(self.id)) in request.args: 
+        if ("addQuestion"+str(self.id)) in request.args: 
             self.idevice.addQuestion()
             self.idevice.edit = True
             # disable Undo once a question has been added:
@@ -101,7 +101,7 @@ class MultichoiceBlock(Block):
         Returns an XHTML string with the form element for editing this block
         """
         html  = "<div class=\"iDevice\"><br/>\n"
-        if self.idevice.message<>"":
+        if self.idevice.message!="":
             html += common.editModeHeading(self.idevice.message)
         html += common.textInput("title"+self.id, self.idevice.title) + '<br/>'
             
@@ -111,7 +111,7 @@ class MultichoiceBlock(Block):
             
         html += "<br/>"
         value = _("Add another question")    
-        html += common.submitButton("addQuestion"+unicode(self.id), value)
+        html += common.submitButton("addQuestion"+str(self.id), value)
         html += "<br /><br />" 
         html += self.renderEditButtons(undo=self.idevice.undo)
         html += "</div>\n"
@@ -137,7 +137,7 @@ class MultichoiceBlock(Block):
         """
         Returns XML for the XML Export method to provide further compatibility...
         """
-        xml = u"<idevice type='multichoice' id='%s'>\n" % self.id
+        xml = "<idevice type='multichoice' id='%s'>\n" % self.id
         for element in self.questionElements:
             xml += element.renderXML()
             

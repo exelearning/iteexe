@@ -26,15 +26,15 @@ class DebesconocerfpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - You Should Know"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""You Should Know is an iDevice that helps the student widen her knowledge with core contents."""), u"", u"debesconocerfpd")
+                         x_("FPD - You Should Know"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""You Should Know is an iDevice that helps the student widen her knowledge with core contents."""), "", "debesconocerfpd")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_debesconocerfpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'You Should Know Text:'), 
+        self.activityTextArea = TextAreaField(x_('You Should Know Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -84,8 +84,8 @@ class DebesconocerfpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"debesconocerfpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "debesconocerfpd"
 
 
     def upgradeToVersion2(self):
@@ -93,7 +93,7 @@ class DebesconocerfpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_debesconocerfpd"
 
@@ -133,7 +133,7 @@ class DebesconocerfpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'You Should Know Text:'), 
+        self.activityTextArea = TextAreaField(x_('You Should Know Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
         
@@ -141,15 +141,15 @@ class DebesconocerfpdIdevice(Idevice):
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Debes Conocer":
-            self._title = u"FPD - You Should Know"
-        if self._title == u"Debes Conocer":
-            self._title = u"You Should Know"
-        if self._purpose == u"""Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje.""":
-            self._purpose = u"""You Should Know is an iDevice that helps the student widen her knowledge with core contents."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Debes conocer:':
-            self.activityTextArea._name = u'You Should Know Text:'
+        if self._title == "FPD - Debes Conocer":
+            self._title = "FPD - You Should Know"
+        if self._title == "Debes Conocer":
+            self._title = "You Should Know"
+        if self._purpose == """Debes conocer es un iDevice que permite al alumnado ampliar conocimientos, siendo estos obligatorios para su aprendizaje.""":
+            self._purpose = """You Should Know is an iDevice that helps the student widen her knowledge with core contents."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Debes conocer:':
+            self.activityTextArea._name = 'You Should Know Text:'
 
 # ===========================================================================

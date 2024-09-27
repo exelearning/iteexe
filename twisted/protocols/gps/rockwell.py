@@ -24,6 +24,7 @@ Other desired features::
 import struct, operator, math
 from twisted.internet import protocol
 from twisted.python import log
+from functools import reduce
 
 DEBUG = 1
 
@@ -189,7 +190,7 @@ class Zodiac(protocol.Protocol):
   def decode_id(self, message):
     assert len(message) == 106, "Receiver ID Message should be 59 words total (106 byte message)"
     ticks, msgseq, channels, software_version, software_date, options_list, reserved = struct.unpack('<Lh20s20s20s20s20s', message)
-    channels, software_version, software_date, options_list = map(lambda s: s.split('\0')[0], (channels, software_version, software_date, options_list))
+    channels, software_version, software_date, options_list = [s.split('\0')[0] for s in (channels, software_version, software_date, options_list)]
     software_version = float(software_version)
     channels = int(channels) # 0-12 .. but ALWAYS 12, so we ignore.
     options_list = int(options_list[:4], 16) # only two bitflags, others are reserved
@@ -216,12 +217,12 @@ class Zodiac(protocol.Protocol):
   def decode_satellites(self, message):
     assert len(message) == 90, "Visible Satellites Message should be 51 words total (90 byte message)"
     ticks, msgseq, gdop, pdop, hdop, vdop, tdop, numsatellites = struct.unpack('<LhhhhhhH', message[:18])
-    gdop, pdop, hdop, vdop, tdop = map(lambda n: float(n) * 0.01, (gdop, pdop, hdop, vdop, tdop))
+    gdop, pdop, hdop, vdop, tdop = [float(n) * 0.01 for n in (gdop, pdop, hdop, vdop, tdop)]
     satellites = []
     message = message[18:]
     for i in range(numsatellites):
       prn, azi, elev = struct.unpack('<Hhh', message[6 * i:6 * (i + 1)])
-      azi, elev = map(lambda n: (float(n) * 0.0180 / math.pi), (azi, elev))
+      azi, elev = [(float(n) * 0.0180 / math.pi) for n in (azi, elev)]
       satellites.push((prn, azi, elev))
     # ((PRN [0, 32], azimuth +=[0.0, 180.0] deg, elevation +-[0.0, 90.0] deg)) satellite info (0-12)
     # (geometric, position, horizontal, vertical, time) dilution of precision 

@@ -27,15 +27,15 @@ class CasopracticofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Situation"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Situation is an iDevice that provides the student with a story that will guide her along the learning process."""), u"", u"casopracticofpd")
+                         x_("FPD - Situation"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""Situation is an iDevice that provides the student with a story that will guide her along the learning process."""), "", "casopracticofpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_casopracticofpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
 #        self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Situation Text:'), 
+        self.activityTextArea = TextAreaField(x_('Situation Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -85,8 +85,8 @@ class CasopracticofpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"casopracticofpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "casopracticofpd"
 
 
     def upgradeToVersion2(self):
@@ -94,7 +94,7 @@ class CasopracticofpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_casopracticofpd"
         
@@ -133,7 +133,7 @@ class CasopracticofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Situation Text:'), 
+        self.activityTextArea = TextAreaField(x_('Situation Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -145,16 +145,16 @@ class CasopracticofpdIdevice(Idevice):
 
     def upgradeToVersion9(self):
 
-        if self._title == u"FPD - Caso Practico":
-            self._title = u"FPD - Situation"
-        if self._title == u"Caso Practico":
-            self._title = u"Situation"
-        if self._purpose == u"""Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje.""":
-            self._purpose = u"""Situation is an iDevice that provides the student with a story that will guide her along the learning process."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Caso pr&aacute;ctico:':
-            self.activityTextArea._name = u'Situation Text:'
+        if self._title == "FPD - Caso Practico":
+            self._title = "FPD - Situation"
+        if self._title == "Caso Practico":
+            self._title = "Situation"
+        if self._purpose == """Caso pr&aacute;ctico es un iDevice que permite al alumnado introducirse en una historia que le guiar&aacute; a trav&eacute;s de su aprendizaje.""":
+            self._purpose = """Situation is an iDevice that provides the student with a story that will guide her along the learning process."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Caso pr&aacute;ctico:':
+            self.activityTextArea._name = 'Situation Text:'
 
 
 

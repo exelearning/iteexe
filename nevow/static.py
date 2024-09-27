@@ -5,17 +5,17 @@
 """I deal with static resources.
 """
 
-from __future__ import nested_scopes
+
 
 # System Imports
 import os, stat, string
-import cStringIO
+import io
 import traceback
 import warnings
 import types
 StringIO = cStringIO
 del cStringIO
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # Sibling Imports
 from twisted.web import error
@@ -127,7 +127,7 @@ def loadMimeTypes(mimetype_locations=['/etc/mime.types']):
 def getTypeAndEncoding(filename, types, encodings, defaultType):
     p, ext = os.path.splitext(filename)
     ext = ext.lower()
-    if encodings.has_key(ext):
+    if ext in encodings:
         enc = encodings[ext]
         ext = os.path.splitext(p)[1].lower()
     else:
@@ -283,7 +283,7 @@ class File:
 
         try:
             f = self.openForReading()
-        except IOError, e:
+        except IOError as e:
             import errno
             if e[0] == errno.EACCES:
                 return error.ForbiddenResource().render(request)

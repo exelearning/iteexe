@@ -28,13 +28,13 @@ class TestBasics(Base):
     def test_dict_directive(self):
         d = directive('one')
         ctx = self.makeContext({'one': 1, 'two': 2})
-        self.assertEquals(1, convertToData(d, ctx))
+        self.assertEqual(1, convertToData(d, ctx))
         self.assertRaises(KeyError, convertToData, directive('asdfasdf'), ctx)
 
     def test_list_directive(self):
         d= directive('2')
         ctx = self.makeContext([0, 1, 42, 3, 4])
-        self.assertEquals(42, convertToData(d, ctx))
+        self.assertEqual(42, convertToData(d, ctx))
         self.assertRaises(IndexError, convertToData, directive('9999'), ctx)
         self.assertRaises(ValueError, convertToData, directive('HAHAHAHA'), ctx)
 
@@ -42,7 +42,7 @@ class TestBasics(Base):
         def foo(context, data):
             return 42
         ctx = self.makeContext()
-        self.assertEquals(42, convertToData(foo, ctx))
+        self.assertEqual(42, convertToData(foo, ctx))
         d = directive('this wont work')
         ctx2 = self.makeContext(foo)
         self.assertRaises(NoAccessor, convertToData, d, ctx2)
@@ -73,23 +73,23 @@ class TestThroughDirective(Base):
     def test_simple(self):
         d = directive('foo')
         ctx = self.makeContext()
-        self.assertEquals(thefoo, convertToData(d, ctx))
+        self.assertEqual(thefoo, convertToData(d, ctx))
 
     def test_dict_through_directive(self):
         d1, d2 = directive('dict'), directive('one')
         ctx = self.makeContext(d1)
-        self.assertEquals(1, convertToData(d2, ctx))
+        self.assertEqual(1, convertToData(d2, ctx))
 
     def test_list_through_directive(self):
         d1, d2 = directive('list'), directive('1')
         ctx = self.makeContext(d1)
-        self.assertEquals(99, convertToData(d2, ctx))
+        self.assertEqual(99, convertToData(d2, ctx))
 
     def test_roundAndRound(self):
         ctx = self.makeContext(
             directive('factory'), directive('0'), directive('factory')
         )
-        self.assertEquals(f, convertToData(directive('0'), ctx))
+        self.assertEqual(f, convertToData(directive('0'), ctx))
 
 
 class APage(rend.Page):
@@ -102,17 +102,17 @@ class TestPageData(Base):
         data = None
         ctx = context.WovenContext()
         ctx.remember(APage(data), inevow.IData)
-        self.assertEquals(data, convertToData(ctx.locate(inevow.IData), ctx))
-        self.assertEquals('foo', convertToData(directive('foo'), ctx))
+        self.assertEqual(data, convertToData(ctx.locate(inevow.IData), ctx))
+        self.assertEqual('foo', convertToData(directive('foo'), ctx))
 
     def test_2_dictOriginal(self):
         data = {'hello': 'world'}
         ctx = context.WovenContext()
         ctx.remember(APage(data), inevow.IData)
         # IGettable should return our dictionary
-        self.assertEquals(data, convertToData(ctx.locate(inevow.IData), ctx))
+        self.assertEqual(data, convertToData(ctx.locate(inevow.IData), ctx))
         # IContainer on the *Page*, not the dictionary, should work
-        self.assertEquals('foo', convertToData(directive('foo'), ctx))
+        self.assertEqual('foo', convertToData(directive('foo'), ctx))
         # IContainer on the Page should delegate to IContainer(self.original) if no data_ method
-        self.assertEquals('world', convertToData(directive('hello'), ctx))
+        self.assertEqual('world', convertToData(directive('hello'), ctx))
 

@@ -63,8 +63,8 @@ class DOMTemplateTest(WovenTC):
         titleNode = self.d.getElementById("title")
         helloNode = self.d.getElementById("hello")
         
-        self.assert_(domhelpers.gatherTextNodes(titleNode) == 'Title')
-        self.assert_(domhelpers.gatherTextNodes(helloNode) == 'Hello')
+        self.assertTrue(domhelpers.gatherTextNodes(titleNode) == 'Title')
+        self.assertTrue(domhelpers.gatherTextNodes(helloNode) == 'Hello')
 
 
 # Test 2
@@ -242,7 +242,7 @@ class NestedListTest(WovenTC):
     def testOutput(self):
         listNode = self.d.getElementById("first")
         assert listNode, "Test %s failed" % outputNum
-        liNodes = filter(lambda x: hasattr(x, 'tagName') and x.tagName == 'li', listNode.childNodes)
+        liNodes = [x for x in listNode.childNodes if hasattr(x, 'tagName') and x.tagName == 'li']
 #        print len(liNodes), len(self.m.data), liNodes, self.m.data
         assert len(liNodes) == len(self.m.data), "Test %s failed" % outputNum
         for i in range(len(liNodes)):
@@ -303,12 +303,12 @@ class NotifyTest(WovenTC):
 
     def testComplexNotification(self):
         listNode = self.d.getElementById("theList")
-        self.assert_(listNode, "Test %s failed" % outputNum)
+        self.assertTrue(listNode, "Test %s failed" % outputNum)
         liNodes = domhelpers.getElementsByTagName(listNode, 'li')
-        self.assert_(liNodes,
+        self.assertTrue(liNodes,
          "DOM was not updated by notifying Widgets. Test %s" % outputNum)
         text = domhelpers.gatherTextNodes(liNodes[0])
-        self.assert_(text.strip() == "test",
+        self.assertTrue(text.strip() == "test",
                "Wrong output: %s. Test %s" % (text, outputNum))
 
 view.registerViewForModel(LLView, LLModel)
@@ -383,11 +383,11 @@ class ListOfDeferredsTest(WovenTC):
 
     def testResult(self):
         n = self.d.firstChild()
-        self.assertEquals(len(n.childNodes), 2)
+        self.assertEqual(len(n.childNodes), 2)
         for c in n.childNodes:
-            self.assertEquals(c.nodeName, "b")
-        self.assertEquals(n.firstChild().firstChild().toxml().strip(), "hello")
-        self.assertEquals(n.lastChild().firstChild().toxml().strip(), "world")
+            self.assertEqual(c.nodeName, "b")
+        self.assertEqual(n.firstChild().firstChild().toxml().strip(), "hello")
+        self.assertEqual(n.lastChild().firstChild().toxml().strip(), "world")
 
 
 class FakeHTTPChannel:
@@ -431,7 +431,7 @@ class FakeHTTPRequest(server.Request):
     def __init__(self, *args, **kw):
         server.Request.__init__(self, *args, **kw)
         self._cookieCache = {}
-        from cStringIO import StringIO
+        from io import StringIO
         self.content = StringIO()
         self.received_headers['host'] = 'fake.com'
         self.written = StringIO()
@@ -442,7 +442,7 @@ class FakeHTTPRequest(server.Request):
     
     def addCookie(self, k, v, *args,**kw):
         server.Request.addCookie(self,k,v,*args,**kw)
-        assert not self._cookieCache.has_key(k), "Should not be setting duplicate cookies!"
+        assert k not in self._cookieCache, "Should not be setting duplicate cookies!"
         self._cookieCache[k] = v
         self.channel.received_cookies[k] = v
 
@@ -474,30 +474,30 @@ class GuardTest(unittest.TestCase):
         # session
         req = FakeHTTPRequest(chan, queued=0)
         req.requestReceived("GET", "/xxx/yyy", "1.0")
-        assert len(req._cookieCache.values()) == 0, req._cookieCache.values()
-        self.assertEquals(req.getSession(),None)
+        assert len(list(req._cookieCache.values())) == 0, list(req._cookieCache.values())
+        self.assertEqual(req.getSession(),None)
 
         # now we're going to make sure that the redirect and cookie are properly set
         req = FakeHTTPRequest(chan, queued=0)
         req.requestReceived("GET", "/xxx/"+guard.INIT_SESSION, "1.0")
-        ccv = req._cookieCache.values()
-        self.assertEquals(len(ccv),1)
+        ccv = list(req._cookieCache.values())
+        self.assertEqual(len(ccv),1)
         cookie = ccv[0]
         # redirect set?
-        self.failUnless(req.headers.has_key('location'))
+        self.assertTrue('location' in req.headers)
         # redirect matches cookie?
-        self.assertEquals(req.headers['location'].split('/')[-1], guard.SESSION_KEY+cookie)
+        self.assertEqual(req.headers['location'].split('/')[-1], guard.SESSION_KEY+cookie)
         # URL is correct?
-        self.assertEquals(req.headers['location'],
+        self.assertEqual(req.headers['location'],
                           'http://fake.com/xxx/'+guard.SESSION_KEY+cookie)
         oldreq = req
         
         # now let's try with a request for the session-cookie URL that has a cookie set
         url = "/"+(oldreq.headers['location'].split('http://fake.com/',1))[1]
         req = chan.makeFakeRequest(url)
-        self.assertEquals(req.headers['location'].split('?')[0],
+        self.assertEqual(req.headers['location'].split('?')[0],
                           'http://fake.com/xxx/')
-        for sz in swrap.sessions.values():
+        for sz in list(swrap.sessions.values()):
             sz.expire()
 
     def testPerspectiveInit(self):
@@ -528,18 +528,18 @@ class GuardTest(unittest.TestCase):
 
         req = chan.makeFakeRequest("/xxx/"+guard.INIT_SESSION+"/yyy")
         req = chan.makeFakeRequest("/xxx/yyy")
-        self.assertEquals(req.written.getvalue(),"NO")
+        self.assertEqual(req.written.getvalue(),"NO")
         req = chan.makeFakeRequest("/xxx/"+guard.INIT_PERSPECTIVE+
                                    "?identity=test&password=tenxt")
-        assert not req.session.services.values()
+        assert not list(req.session.services.values())
         req = chan.makeFakeRequest("/xxx/"+guard.INIT_PERSPECTIVE+
                                    "?identity=test&password=test")
-        self.assertEquals(req.session.services.values()[0][0], myp)
+        self.assertEqual(list(req.session.services.values())[0][0], myp)
         # print req.written.getvalue()
         req = chan.makeFakeRequest("/xxx/yyy")
-        self.assertEquals(req.written.getvalue(), "YES")
+        self.assertEqual(req.written.getvalue(), "YES")
         # print req.session.services
-        for sz in swrap.sessions.values():
+        for sz in list(swrap.sessions.values()):
             sz.expire()
 
 
@@ -572,7 +572,7 @@ class DeferredModelTestCase(unittest.TestCase):
         dom = microdom.parseXMLString(request.written.getvalue())
         spanElems = domhelpers.findNodesNamed(dom, 'span')
         for spanElem in spanElems:
-            self.failUnlessEqual('The Result', spanElem.childNodes[0].data)
+            self.assertEqual('The Result', spanElem.childNodes[0].data)
         
 
 class MyMacroPage(page.Page):
@@ -604,7 +604,7 @@ class ExpandMacroTestCase(WovenTC):
         file('cdatatester.html', 'wb').write(thepage)
         WovenTC.setUp(self, *args, **kwargs)
     def testCDATANotQuoted(self):
-        self.failUnless(self.output.find('<>\'"&')>=0)
+        self.assertTrue(self.output.find('<>\'"&')>=0)
 
 
 

@@ -125,14 +125,14 @@ class AppletBlock(Block):
 
         html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
+        html += "<br/><br/>\n"
        
-        types = [(_(u"Descartes"), "descartes"),
-                 (_(u"Geogebra"), "geogebra"),
-                 (_(u"JClic"), "jclic"),
-                 (_(u"Scratch"), "scratch"),
-                 (_(u"Other"), "other")]
-        html += u"<b>%s</b>" % _("Applet Type")
+        types = [(_("Descartes"), "descartes"),
+                 (_("Geogebra"), "geogebra"),
+                 (_("JClic"), "jclic"),
+                 (_("Scratch"), "scratch"),
+                 (_("Other"), "other")]
+        html += "<b>%s</b>" % _("Applet Type")
         
         html += '<select onchange="submitChange(\'changeType%s\', \'type%s\')";' % (self.id, self.id)
         html += 'name="type%s" id="type%s">\n' % (self.id, self.id)
@@ -145,33 +145,33 @@ class AppletBlock(Block):
         html += "</select> \n"
         html += common.elementInstruc(self.idevice.typeInstruc) + "<br/><br/>"
         
-        if self.idevice.message <> "":
+        if self.idevice.message != "":
             html += '<p style="color:red"><b>' + self.idevice.message + '</b></p>'
         
         html += common.textInput("path"+self.id, "", 50)
                
         # Descartes requires an specific button more near the textInput:
         if self.idevice.type != "descartes":
-            html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-            html += u'value="%s" />\n' % _(u"Add files")
-            html += u'<input type="submit" name="%s" value="%s" />\n' % ("upload"+self.id, 
-                                                                _(u"Upload"))
+            html += '<input type="button" onclick="addFile(\'%s\')"' % self.id
+            html += 'value="%s" />\n' % _("Add files")
+            html += '<input type="submit" name="%s" value="%s" />\n' % ("upload"+self.id, 
+                                                                _("Upload"))
         else:
             # Read URL user indicated:
-            html += u'<input type="submit" name="%s" value="%s" />\n' % ("upload"+self.id,
-                                                                _(u"Accept URL"))   
-            html += u'<br/>\n'
+            html += '<input type="submit" name="%s" value="%s" />\n' % ("upload"+self.id,
+                                                                _("Accept URL"))   
+            html += '<br/>\n'
             # Upload some kind of file, like the rest of applets: 
-            html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-            html += u'value="%s" />\n' % _(u"Add files")
-            html += u'<input type="submit" name="%s" value="%s" />\n' % ("uploadother"+self.id,
-                                                               _(u"Upload"))
+            html += '<input type="button" onclick="addFile(\'%s\')"' % self.id
+            html += 'value="%s" />\n' % _("Add files")
+            html += '<input type="submit" name="%s" value="%s" />\n' % ("uploadother"+self.id,
+                                                               _("Upload"))
         html += common.elementInstruc(self.idevice.fileInstruc)
-        html += u'<br/>\n'
+        html += '<br/>\n'
 
-        html += u'<b>%s</b>\n' % _(u'Applet Code:')
+        html += '<b>%s</b>\n' % _('Applet Code:')
         html += common.elementInstruc(self.idevice.codeInstruc)
-        html += u'<br/>\n'
+        html += '<br/>\n'
 
         html += common.textArea('code'+self.id,
                                     self.idevice.appletCode,rows="12")
@@ -186,9 +186,9 @@ class AppletBlock(Block):
                 html += '</td></tr>\n'
             html += '</table>'
            
-        html += u'<br/>\n'
+        html += '<br/>\n'
         html += self.renderEditButtons(undo=self.idevice.undo)
-        html += u'\n</div>\n'
+        html += '\n</div>\n'
 
         return html
 

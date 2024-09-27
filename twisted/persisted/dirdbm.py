@@ -29,7 +29,7 @@ import base64
 import glob
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -121,8 +121,8 @@ class DirDBM:
         @type v: str
         @param v: value to associate with C{k}
         """
-        assert type(k) == types.StringType, AssertionError("DirDBM key must be a string")
-        assert type(v) == types.StringType, AssertionError("DirDBM value must be a string")
+        assert type(k) == bytes, AssertionError("DirDBM key must be a string")
+        assert type(v) == bytes, AssertionError("DirDBM value must be a string")
         k = self._encode(k)
         
         # we create a new file with extension .new, write the data to it, and
@@ -152,12 +152,12 @@ class DirDBM:
         @return: The value associated with C{k}
         @raise KeyError: Raised when there is no such key
         """
-        assert type(k) == types.StringType, AssertionError("DirDBM key must be a string")
+        assert type(k) == bytes, AssertionError("DirDBM key must be a string")
         path = os.path.join(self.dname, self._encode(k))
         try:
             return self._readFile(path)
         except:
-            raise KeyError, k
+            raise KeyError(k)
 
     def __delitem__(self, k):
         """
@@ -169,7 +169,7 @@ class DirDBM:
         
         @raise KeyError: Raised when there is no such key
         """
-        assert type(k) == types.StringType, AssertionError("DirDBM key must be a string")
+        assert type(k) == bytes, AssertionError("DirDBM key must be a string")
         k = self._encode(k)
         try:    os.remove(os.path.join(self.dname, k))
         except (OSError, IOError): raise KeyError(self._decode(k))
@@ -178,14 +178,14 @@ class DirDBM:
         """
         @return: a C{list} of filenames (keys).
         """
-        return map(self._decode, os.listdir(self.dname))
+        return list(map(self._decode, os.listdir(self.dname)))
 
     def values(self):
         """
         @return: a C{list} of file-contents (values).
         """
         vals = []
-        keys = self.keys()
+        keys = list(self.keys())
         for key in keys:
             vals.append(self[key])
         return vals
@@ -195,7 +195,7 @@ class DirDBM:
         @return: a C{list} of 2-tuples containing key/value pairs.
         """
         items = []
-        keys = self.keys()
+        keys = list(self.keys())
         for key in keys:
             items.append((key, self[key]))
         return items
@@ -208,7 +208,7 @@ class DirDBM:
         @return: A true value if this dirdbm has the specified key, a faluse
         value otherwise.
         """
-        assert type(key) == types.StringType, AssertionError("DirDBM key must be a string")
+        assert type(key) == bytes, AssertionError("DirDBM key must be a string")
         key = self._encode(key)
         return os.path.isfile(os.path.join(self.dname, key))
 
@@ -220,7 +220,7 @@ class DirDBM:
         @param value: The value to associate with key if key is not already
         associated with a value.
         """
-        if not self.has_key(key):
+        if key not in self:
             self[key] = value
             return value
         return self[key]
@@ -235,7 +235,7 @@ class DirDBM:
         @return: The value associated with C{key} or C{default} if not
         C{self.has_key(key)}
         """
-        if self.has_key(key):
+        if key in self:
             return self[key]
         else:
             return default
@@ -249,7 +249,7 @@ class DirDBM:
                 
         @return: A true value if C{self.has_key(key)}, a false value otherwise.
         """
-        assert type(key) == types.StringType, AssertionError("DirDBM key must be a string")
+        assert type(key) == bytes, AssertionError("DirDBM key must be a string")
         key = self._encode(key)
         return os.path.isfile(os.path.join(self.dname, key))
 
@@ -261,7 +261,7 @@ class DirDBM:
         @type dict: mapping
         @param dict: A mapping of key/value pairs to add to this dirdbm.
         """
-        for key, val in dict.items():
+        for key, val in list(dict.items()):
             self[key]=val
             
     def copyTo(self, path):
@@ -280,7 +280,7 @@ class DirDBM:
         
         d = self.__class__(path)
         d.clear()
-        for k in self.keys():
+        for k in list(self.keys()):
             d[k] = self[k]
         return d
 
@@ -288,7 +288,7 @@ class DirDBM:
         """
         Delete all key/value pairs in this dirdbm.
         """
-        for k in self.keys():
+        for k in list(self.keys()):
             del self[k]
 
     def close(self):
@@ -303,12 +303,12 @@ class DirDBM:
         @return: Last modification date (seconds since epoch) of entry C{key}
         @raise KeyError: Raised when there is no such key
         """
-        assert type(key) == types.StringType, AssertionError("DirDBM key must be a string")
+        assert type(key) == bytes, AssertionError("DirDBM key must be a string")
         path = os.path.join(self.dname, self._encode(key))
         if os.path.isfile(path):
             return os.path.getmtime(path)
         else:
-            raise KeyError, key
+            raise KeyError(key)
 
 
 class Shelf(DirDBM):

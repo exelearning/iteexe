@@ -14,6 +14,7 @@ from zope.interface import implements
 
 from twisted.python import components
 from twisted.internet import interfaces
+from functools import reduce
 
 
 class BasicProducerConsumerProxy:

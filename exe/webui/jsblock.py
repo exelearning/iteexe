@@ -54,8 +54,8 @@ class JsBlock(Block):
         is_cancel = common.requestHasCancel(request)
 
         Block.process(self, request)
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
+        if ("action" not in request.args or
+            request.args["action"][0] != "delete"):
             for element in self.elements:
                 element.process(request)
                 
@@ -77,13 +77,13 @@ class JsBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html = u'<div>'
+        html = '<div>'
         html += '<span class="js-idevice-title-label">'
         html += '<label for="title'+self.id+'">'+_('Title')+':</label> '
         html += common.elementInstruc(_('The title and the icon are not required. If you leave them empty the iDevice will have no emphasis.'))
         html += '</span>'
         html += common.hiddenField("iconiDevice" + self.id, self.idevice.icon)
-        html += u'<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');" title="%s"><img src="/images/stock-insert-image.png" alt="%s" width="16" height="16" /></a>' % (_('Select an icon'),_('Choose an Image'))        
+        html += '<a class="js-show-icon-panel-button" href="javascript:showMessageBox(\'iconpanel\');" title="%s"><img src="/images/stock-insert-image.png" alt="%s" width="16" height="16" /></a>' % (_('Select an icon'),_('Choose an Image'))        
         
         # Get icon source (if it exists)
         icon = self.idevice.icon
@@ -102,37 +102,37 @@ class JsBlock(Block):
                         icon_exists = True
 
         # Icon HTML element
-        html += u'<img class="js-idevide-icon-preview" name="iconiDevice%s" id="iconiDevice"' % (self.id)
+        html += '<img class="js-idevide-icon-preview" name="iconiDevice%s" id="iconiDevice"' % (self.id)
         if icon_exists:
-            html += u' src="/style/%s/icon_%s%s"' % (style, icon, idevice_icon.ext)
+            html += ' src="/style/%s/icon_%s%s"' % (style, icon, idevice_icon.ext)
         else:
-            html += u' src="/images/empty.gif"'
-        html += u'/>'
+            html += ' src="/images/empty.gif"'
+        html += '/>'
 
         # Delete button
-        html += u'<a href="javascript:deleteIcon(%s);" id="deleteIcon%s" class="deleteIcon" title="%s"' % (self.id, self.id, _('Delete'))
+        html += '<a href="javascript:deleteIcon(%s);" id="deleteIcon%s" class="deleteIcon" title="%s"' % (self.id, self.id, _('Delete'))
         # If the icon doesn't exists
         if not icon_exists:
-            html += u' style="display: none;"'
-        html += u'>'
-        html += u'<img class="js-delete-icon" alt="%s" src="%s"/>' % (_('Delete'), '/images/stock-delete.png')
-        html += u'</a>'
+            html += ' style="display: none;"'
+        html += '>'
+        html += '<img class="js-delete-icon" alt="%s" src="%s"/>' % (_('Delete'), '/images/stock-delete.png')
+        html += '</a>'
         
         html += common.textInput("title" + self.id, self.idevice.title)
 
-        html += u'<div class="js-icon-panel-container">'
-        html += u'<div id="iconpaneltitle">%s</div>' % _("Icons")
-        html += u'<div id="iconpanelcontent">'
+        html += '<div class="js-icon-panel-container">'
+        html += '<div id="iconpaneltitle">%s</div>' % _("Icons")
+        html += '<div id="iconpanelcontent">'
         html += self.__renderIcons(style)
-        html += u'</div>'
+        html += '</div>'
         
-        html += u"</div>"
+        html += "</div>"
 
         for element in self.elements:
             html += element.renderEdit()
 
         html += self.renderEditButtons()
-        html += u"</div>"
+        html += "</div>"
 
         return html
 
@@ -172,11 +172,11 @@ class JsBlock(Block):
             
             if iconExists:
                 filename = "/style/%s/%s.%s" % (style, iconname, iconExtension)
-                html += u'<div style="float:left; text-align:center; width:105px;\n'
-                html += u'margin-right:10px; margin-bottom:15px" > '
-                html += u'<img src="%s" \n' % filename
-                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;max-height:60px;height:auto\" onclick=\"window[0].selectStyleIcon('%s',this, '%s', '%s')\" title=\"%s.%s\">\n" % (icon, iconSrc, self.id, icon ,iconExtension)
-                html += u'<br /><span style="display:inline-block;width:100px;overflow:hidden;text-overflow:ellipsis">%s.%s</span></div>\n' % (icon, iconExtension)
+                html += '<div style="float:left; text-align:center; width:105px;\n'
+                html += 'margin-right:10px; margin-bottom:15px" > '
+                html += '<img src="%s" \n' % filename
+                html += "style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;max-height:60px;height:auto\" onclick=\"window[0].selectStyleIcon('%s',this, '%s', '%s')\" title=\"%s.%s\">\n" % (icon, iconSrc, self.id, icon ,iconExtension)
+                html += '<br /><span style="display:inline-block;width:100px;overflow:hidden;text-overflow:ellipsis">%s.%s</span></div>\n' % (icon, iconExtension)
         
         html += '</div></div>'
         

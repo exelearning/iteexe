@@ -29,7 +29,7 @@ import shutil
 import json
 import unicodedata
 import cgi
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 try:
     import xml.etree.cElementTree as ET
@@ -129,7 +129,7 @@ class StyleDesigner(Renderable, Resource):
                 style_dirname = request.args['style_dirname'][0]
                 try:
                     # Replace %xx escapes by their single-character equivalent.
-                    style_dirname = urllib.unquote(style_dirname).decode('utf8')
+                    style_dirname = urllib.parse.unquote(style_dirname).decode('utf8')
                 except:
                     pass
                 style = self.saveStyle(style_dirname, request.args)
@@ -137,7 +137,7 @@ class StyleDesigner(Renderable, Resource):
                 response['success'] = True
                 response['message'] = _('Style %s successfully saved!') % (style.get_name())
 
-        except Exception, e:
+        except Exception as e:
             # Operation has failed, but we can inform the user about the error
             response['success'] = False
             response['message'] = e.message
@@ -207,7 +207,7 @@ class StyleDesigner(Renderable, Resource):
 
         styleDir = self.config.stylesDir / style_dirname
         if os.path.isdir(styleDir):
-            raise CreateStyleExistsError(styleDir, _(u'Style directory %s already exists') % (style_dirname))
+            raise CreateStyleExistsError(styleDir, _('Style directory %s already exists') % (style_dirname))
         else:
             try:
                 os.mkdir(styleDir)
@@ -273,7 +273,7 @@ class StyleDesigner(Renderable, Resource):
 
                 return style
 
-            except Exception, e:
+            except Exception as e:
                 if os.path.isdir(styleDir):
                     styleDir.rmtree()
                 raise CreateStyleError(e.message)
@@ -371,7 +371,7 @@ class StyleDesigner(Renderable, Resource):
                 
                 return newStyle
 
-            except Exception, e:
+            except Exception as e:
                 raise StyleDesignerError(e.message)
 
     def saveUploadedFiles(self, targetDir, uploaded):

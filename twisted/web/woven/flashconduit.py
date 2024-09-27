@@ -8,11 +8,11 @@ class FlashConduit(LineReceiver):
     delimiter = '\0'
     keepalive = 1
     def connectionMade(self):
-        print "connection with flash movie opened"
+        print("connection with flash movie opened")
         #self.transport.write("alert('helllllllo')\0")
 
     def connectionLost(self, reason):
-        print "connection lost"
+        print("connection lost")
         #self.lp.unhookOutputConduit()
 
     def lineReceived(self, line):

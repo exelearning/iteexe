@@ -32,18 +32,18 @@ from exe.engine.translate     import lateTranslate
 from exe.engine.path          import Path, TempDirPath
 from exe.engine.resource      import Resource
 
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import ssl
 import sys
 from sys                      import platform
 import certifi
 
-class UrlOpener(urllib.FancyURLopener):
+class UrlOpener(urllib.request.FancyURLopener):
     """
     Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
     """
     version = "eXe/exe@exelearning.org"
-urllib._urlopener = UrlOpener()
+urllib.request._urlopener = UrlOpener()
 
 import logging
 log = logging.getLogger(__name__)
@@ -56,9 +56,9 @@ class WikipediaIdevice(Idevice):
     persistenceVersion = 9
 
     def __init__(self, defaultSite):
-        Idevice.__init__(self, x_(u"Wiki Article"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""<p>The Wikipedia iDevice allows you to locate 
+        Idevice.__init__(self, x_("Wiki Article"), 
+                         x_("University of Auckland"), 
+                         x_("""<p>The Wikipedia iDevice allows you to locate 
 existing content from within Wikipedia and download this content into your eXe 
 resource. The Wikipedia Article iDevice takes a snapshot copy of the article 
 content. Changes in Wikipedia will not automatically update individual snapshot 
@@ -66,15 +66,15 @@ copies in eXe, a fresh copy of the article will need to be taken. Likewise,
 changes made in eXe will not be updated in Wikipedia. </p> <p>Wikipedia content 
 is covered by the GNU Free Documentation 1.2 License, and since 2009 additionally
 by the Creative Commons Attribution-ShareAlike 3.0 Unported License.</p>"""), 
-                         u"", u"")
+                         "", "")
         self.emphasis         = Idevice.NoEmphasis
-        self.articleName      = u""
-        self.article          = TextAreaField(x_(u"Article"))
+        self.articleName      = ""
+        self.article          = TextAreaField(x_("Article"))
         self.article.idevice  = self
         self.images           = {}
         self.site             = defaultSite
-        self.icon             = u"inter"
-        self._langInstruc      = x_(u"""Select the appropriate language version 
+        self.icon             = "inter"
+        self._langInstruc      = x_("""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
         self._searchInstruc    = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")
@@ -91,7 +91,7 @@ within Wikipedia.""")
         """
         self.articleName = name
         url = ''
-        name = urllib.quote(name.replace(" ", "_").encode('utf-8'))
+        name = urllib.parse.quote(name.replace(" ", "_").encode('utf-8'))
         
         # Get the full URL of the site
         url = self.site or self.ownUrl
@@ -104,24 +104,24 @@ within Wikipedia.""")
         # Get the site content
         try:
             if (platform == 'darwin' and hasattr(sys, 'frozen')):
-                net = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+                net = urllib.request.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
             if platform == 'darwin':
-                net = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+                net = urllib.request.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
                 #net = urllib.urlopen(url, context=ssl.create_default_context(cafile=certifi.where()))
             else:
-                net = urllib.urlopen(url)
+                net = urllib.request.urlopen(url)
             page = net.read()
             net.close()
-        except IOError, error:
-            log.warning(unicode(error))
-            self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+        except IOError as error:
+            log.warning(str(error))
+            self.article.content = _("Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
             self.article.content_w_resourcePaths = self.article.content
             self.article.content_wo_resourcePaths = self.article.content
             return
 
-        page = unicode(page, "utf8")
+        page = str(page, "utf8")
         # FIXME avoid problems with numeric entities in attributes
-        page = page.replace(u'&#160;', u'&nbsp;')
+        page = page.replace('&#160;', '&nbsp;')
         # avoidParserProblems is set to False because BeautifulSoup's
         # cleanup was causing a "concatenating Null+Str" error,
         # and Wikipedia's HTML doesn't need cleaning up.
@@ -153,8 +153,8 @@ within Wikipedia.""")
 
         # If we still don't have content it means there is a problem with the article
         if not content:
-            log.error(u"No content on Wikipedia article: %s" % url)
-            self.article.content = _(u"Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
+            log.error("No content on Wikipedia article: %s" % url)
+            self.article.content = _("Unable to download from %s <br/>Please check the spelling and connection and try again.") % url
             # Set the other elements as well
             self.article.content_w_resourcePaths = self.article.content
             self.article.content_wo_resourcePaths = self.article.content
@@ -174,7 +174,7 @@ within Wikipedia.""")
         # Fetch all images from content
         for imageTag in content.find_all('img'):
             # Get src and image filename
-            imageSrc  = unicode(imageTag['src'])
+            imageSrc  = str(imageTag['src'])
             imageName = imageSrc.split('/')[-1]
             imageName = imageName.replace('&gt;', '>')
             imageName = imageName.replace('&lt;', '<')
@@ -186,7 +186,7 @@ within Wikipedia.""")
             imageName = imageName.replace('%29', ')')
             imageName = imageName.replace('%C3%A5', 'å')
             # Decode image name
-            imageName = urllib.unquote(imageName)
+            imageName = urllib.parse.unquote(imageName)
             # Search if we've already got this image
             if imageName not in self.images:
                 if not re.match("^http(s)?:\/\/", imageSrc):
@@ -202,7 +202,7 @@ within Wikipedia.""")
                     # If the image file doesn't have an extension try to guess it
                     if not re.match('^.*\.(.){1,}', imageName):
                         # Open a conecction with the image and get the headers
-                        online_resource = urllib.urlopen(imageSrc)
+                        online_resource = urllib.request.urlopen(imageSrc)
                         image_info = online_resource.info()
                         online_resource.close()
                         
@@ -214,11 +214,11 @@ within Wikipedia.""")
                         imageName = imageName + extension
                     
                     # Download image
-                    urllib.urlretrieve(imageSrc, tmpDir/imageName)
+                    urllib.request.urlretrieve(imageSrc, tmpDir/imageName)
                     # Add the new resource
                     new_resource = Resource(self, tmpDir/imageName)
                 except:
-                    log.error(u'Unable to download file: %s' % imageSrc)
+                    log.error('Unable to download file: %s' % imageSrc)
                     # If there is an exception try to get the next one
                     continue
                 if new_resource._storageName != imageName:
@@ -226,8 +226,8 @@ within Wikipedia.""")
                     # so reset the imageName accordingly for the content:
                     imageName = new_resource._storageName
                 self.images[imageName] = True
-            imageTag.src = u"resources/" + imageName
-        self.article.content = self.reformatArticle(netloc, unicode(content))
+            imageTag.src = "resources/" + imageName
+        self.article.content = self.reformatArticle(netloc, str(content))
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
         # into the other corresponding fields of TextAreaField:
@@ -329,8 +329,8 @@ within Wikipedia.""")
         # deepcopy as well as Jelly.
         if self.parentNode:
             self.article.content = re.sub(r'/[^/]*?/', 
-                                          u"/" + self.parentNode.package.name + 
-                                          u"/", 
+                                          "/" + self.parentNode.package.name + 
+                                          "/", 
                                           self.article.content)
             #self.article.content = re.sub(r'/[^/]*?/resources/',     
              #                              u"/" + self.parentNode.package.name +     
@@ -380,7 +380,7 @@ within Wikipedia.""")
         """
         Upgrades exe to v0.11... forgot to change the icon
         """
-        self.icon = u"inter"
+        self.icon = "inter"
 
 
     def upgradeToVersion6(self):
@@ -397,7 +397,7 @@ within Wikipedia.""")
         """
         Upgrades to v0.12
         """
-        self._langInstruc   = x_(u"""Select the appropriate language version 
+        self._langInstruc   = x_("""Select the appropriate language version 
 of Wikipedia to search and enter search term.""")
         self._searchInstruc = x_("""Enter a phrase or term you wish to search 
 within Wikipedia.""")

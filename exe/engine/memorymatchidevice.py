@@ -27,7 +27,7 @@ from exe.engine.field   import TextAreaField
 from exe.engine.field   import Field
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
-from extendedfieldengine import *
+from .extendedfieldengine import *
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -41,9 +41,9 @@ class MemoryMatchIdeviceInc(Idevice):
     persistenceVersion = 4
     
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"Memory Match Game"), 
-                         x_(u"Toughra Technologies FZ LLC."),
-                         x_(u"""Memory Match Game Maker."""), "", "")
+        Idevice.__init__(self, x_("Memory Match Game"), 
+                         x_("Toughra Technologies FZ LLC."),
+                         x_("""Memory Match Game Maker."""), "", "")
         self.message = ""
         
         mainFieldOrder = ['title', 'instructions', 'rows', 'cols', 'splitPairs', 'feedbackpositive', 'feedbacknegative', 'feedbackstyle',  \

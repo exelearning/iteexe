@@ -8,7 +8,7 @@ import new
 from twisted.trial import unittest
 from twisted.python import rebuild
 
-import crash_test_dummy
+from . import crash_test_dummy
 f = crash_test_dummy.foo
 
 class Foo: pass
@@ -50,7 +50,7 @@ class RebuildTestCase(unittest.TestCase):
             test_rebuild.C = C
             c = C()
         i = myrebuilder.Inherit()
-        self.assertEquals(a.a(), 'a')
+        self.assertEqual(a.a(), 'a')
         # necessary because the file has not "changed" if a second has not gone
         # by in unix.  This sucks, but it's not often that you'll be doing more
         # than one reload per second.
@@ -64,10 +64,10 @@ class RebuildTestCase(unittest.TestCase):
             pass
         else:
             b2 = myrebuilder.B()
-            self.assertEquals(b2.b(), 'c')
-            self.assertEquals(b.b(), 'c')
-        self.assertEquals(i.a(), 'd')
-        self.assertEquals(a.a(), 'b')
+            self.assertEqual(b2.b(), 'c')
+            self.assertEqual(b.b(), 'c')
+        self.assertEqual(i.a(), 'd')
+        self.assertEqual(a.a(), 'b')
         # more work to be done on new-style classes
         # self.assertEquals(c.b(), 'c')
 
@@ -95,11 +95,11 @@ class RebuildTestCase(unittest.TestCase):
 
         newComponent.method()
 
-        self.assertEquals(newComponent.__class__, crash_test_dummy.XA)
+        self.assertEqual(newComponent.__class__, crash_test_dummy.XA)
 
         # Test that a duplicate registerAdapter is not allowed
         from twisted.python import components
-        self.failUnlessRaises(ValueError, components.registerAdapter,
+        self.assertRaises(ValueError, components.registerAdapter,
                               crash_test_dummy.XA, crash_test_dummy.X,
                               crash_test_dummy.IX)
 
@@ -135,9 +135,9 @@ class NewStyleTestCase(unittest.TestCase):
         del self.m
     
     def testSlots(self):
-        exec "class SlottedClass(object): __slots__ = 'a'," in self.m.__dict__
+        exec("class SlottedClass(object): __slots__ = 'a',", self.m.__dict__)
         rebuild.updateInstance(self.m.SlottedClass())
 
     def testTypeSubclass(self):
-        exec "class ListSubclass(list): pass" in self.m.__dict__
+        exec("class ListSubclass(list): pass", self.m.__dict__)
         rebuild.updateInstance(self.m.ListSubclass())

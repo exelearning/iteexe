@@ -1,4 +1,4 @@
-import StringIO, sys
+import io, sys
 
 from twisted.trial import unittest, runner, reporter, util
 from twisted.trial.test import erroneous, suppression
@@ -11,15 +11,15 @@ class ResultsTestMixin:
         self.reporter = reporter.TestResult()
 
     def test_setUp(self):
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(self.reporter.skips, [])
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(self.reporter.skips, [])
         
     def assertCount(self, numTests):
-        self.failUnlessEqual(self.suite.countTestCases(), numTests)
+        self.assertEqual(self.suite.countTestCases(), numTests)
         self.suite(self.reporter)
-        self.failUnlessEqual(self.reporter.testsRun, numTests)
+        self.assertEqual(self.reporter.testsRun, numTests)
 
 
 class TestSkipMethods(unittest.TestCase, ResultsTestMixin):
@@ -53,25 +53,25 @@ class TestSkipMethods(unittest.TestCase, ResultsTestMixin):
 
     def test_results(self):
         self.suite(self.reporter)
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(len(self.reporter.skips), 3)
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(len(self.reporter.skips), 3)
 
     def test_setUp(self):
         self.loadSuite(TestSkipMethods.SkippingSetUp)
         self.suite(self.reporter)
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(len(self.reporter.skips), 2)
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(len(self.reporter.skips), 2)
 
     def test_reasons(self):
         self.suite(self.reporter)
         prefix = 'test_'
         # whiteboxing reporter 
         for test, reason in self.reporter.skips:
-            self.failUnlessEqual(test.shortDescription()[len(prefix):],
+            self.assertEqual(test.shortDescription()[len(prefix):],
                                  str(reason))
 
 
@@ -105,25 +105,25 @@ class TestSkipClasses(unittest.TestCase, ResultsTestMixin):
 
     def test_setUpRan(self):
         self.suite(self.reporter)
-        self.failUnlessEqual(TestSkipClasses.SkippedClass._setUpRan, False)
-        self.failUnlessEqual(TestSkipClasses.SkippedClass._setUpClassRan,
+        self.assertEqual(TestSkipClasses.SkippedClass._setUpRan, False)
+        self.assertEqual(TestSkipClasses.SkippedClass._setUpClassRan,
                              False)
-        self.failUnlessEqual(TestSkipClasses.SkippedClass._tearDownClassRan,
+        self.assertEqual(TestSkipClasses.SkippedClass._tearDownClassRan,
                              False)
 
     def test_results(self):
         self.suite(self.reporter)
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(len(self.reporter.skips), 4)
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(len(self.reporter.skips), 4)
 
     def test_reasons(self):
         self.suite(self.reporter)
         expectedReasons = ['class', 'skip2', 'class', 'class']
         # whitebox reporter
         reasonsGiven = [ reason for test, reason in self.reporter.skips ]
-        self.failUnlessEqual(expectedReasons, reasonsGiven)
+        self.assertEqual(expectedReasons, reasonsGiven)
 
 
 class TestSkipClassesRaised(unittest.TestCase, ResultsTestMixin):
@@ -156,27 +156,27 @@ class TestSkipClassesRaised(unittest.TestCase, ResultsTestMixin):
 
     def test_setUpRan(self):
         self.suite(self.reporter)
-        self.failUnlessEqual(
+        self.assertEqual(
             TestSkipClassesRaised.SkippedClass._setUpRan, False)
 
     def test_tearDownClassRan(self):
         self.suite(self.reporter)
-        self.failUnlessEqual(
+        self.assertEqual(
             TestSkipClassesRaised.SkippedClass._tearDownClassRan, False)
 
     def test_results(self):
         self.suite(self.reporter)
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(len(self.reporter.skips), 4)
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(len(self.reporter.skips), 4)
 
     def test_reasons(self):
         self.suite(self.reporter)
         expectedReasons = ['class', 'skip2', 'class', 'class']
         # whitebox reporter
         reasonsGiven = [ reason for test, reason in self.reporter.skips ]
-        self.failUnlessEqual(expectedReasons, reasonsGiven)
+        self.assertEqual(expectedReasons, reasonsGiven)
 
 
 class TestTodo(unittest.TestCase, ResultsTestMixin):
@@ -201,26 +201,26 @@ class TestTodo(unittest.TestCase, ResultsTestMixin):
 
     def test_results(self):
         self.suite(self.reporter)
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(self.reporter.skips, [])
-        self.failUnlessEqual(len(self.reporter.expectedFailures), 2)
-        self.failUnlessEqual(len(self.reporter.unexpectedSuccesses), 1)
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(self.reporter.skips, [])
+        self.assertEqual(len(self.reporter.expectedFailures), 2)
+        self.assertEqual(len(self.reporter.unexpectedSuccesses), 1)
     
     def test_expectedFailures(self):
         self.suite(self.reporter)
         expectedReasons = ['todo1', 'todo2']
         reasonsGiven = [ r.reason
                          for t, e, r in self.reporter.expectedFailures ]
-        self.failUnlessEqual(expectedReasons, reasonsGiven)
+        self.assertEqual(expectedReasons, reasonsGiven)
             
     def test_unexpectedSuccesses(self):
         self.suite(self.reporter)
         expectedReasons = ['todo3']
         reasonsGiven = [ r.reason
                          for t, r in self.reporter.unexpectedSuccesses ]
-        self.failUnlessEqual(expectedReasons, reasonsGiven)
+        self.assertEqual(expectedReasons, reasonsGiven)
 
 
 class TestTodoClass(unittest.TestCase, ResultsTestMixin):
@@ -245,44 +245,44 @@ class TestTodoClass(unittest.TestCase, ResultsTestMixin):
 
     def test_results(self):
         self.suite(self.reporter)
-        self.failUnless(self.reporter.wasSuccessful())
-        self.failUnlessEqual(self.reporter.errors, [])
-        self.failUnlessEqual(self.reporter.failures, [])
-        self.failUnlessEqual(self.reporter.skips, [])
-        self.failUnlessEqual(len(self.reporter.expectedFailures), 2)
-        self.failUnlessEqual(len(self.reporter.unexpectedSuccesses), 2)
+        self.assertTrue(self.reporter.wasSuccessful())
+        self.assertEqual(self.reporter.errors, [])
+        self.assertEqual(self.reporter.failures, [])
+        self.assertEqual(self.reporter.skips, [])
+        self.assertEqual(len(self.reporter.expectedFailures), 2)
+        self.assertEqual(len(self.reporter.unexpectedSuccesses), 2)
     
     def test_expectedFailures(self):
         self.suite(self.reporter)
         expectedReasons = ['method', 'class']
         reasonsGiven = [ r.reason
                          for t, e, r in self.reporter.expectedFailures ]
-        self.failUnlessEqual(expectedReasons, reasonsGiven)
+        self.assertEqual(expectedReasons, reasonsGiven)
             
     def test_unexpectedSuccesses(self):
         self.suite(self.reporter)
         expectedReasons = ['method', 'class']
         reasonsGiven = [ r.reason
                          for t, r in self.reporter.unexpectedSuccesses ]
-        self.failUnlessEqual(expectedReasons, reasonsGiven)
+        self.assertEqual(expectedReasons, reasonsGiven)
 
 
 class TestStrictTodo(unittest.TestCase, ResultsTestMixin):
     class Todos(unittest.TestCase):
         def test_todo1(self):
-            raise RuntimeError, "expected failure"
+            raise RuntimeError("expected failure")
         test_todo1.todo = (RuntimeError, "todo1")
         
         def test_todo2(self):
-            raise RuntimeError, "expected failure"
+            raise RuntimeError("expected failure")
         test_todo2.todo = ((RuntimeError, OSError), "todo2")
         
         def test_todo3(self):
-            raise RuntimeError, "we had no idea!"
+            raise RuntimeError("we had no idea!")
         test_todo3.todo = (OSError, "todo3")
         
         def test_todo4(self):
-            raise RuntimeError, "we had no idea!"
+            raise RuntimeError("we had no idea!")
         test_todo4.todo = ((OSError, SyntaxError), "todo4")
         
         def test_todo5(self):
@@ -305,31 +305,31 @@ class TestStrictTodo(unittest.TestCase, ResultsTestMixin):
 
     def test_results(self):
         self.suite(self.reporter)
-        self.failIf(self.reporter.wasSuccessful())
-        self.failUnlessEqual(len(self.reporter.errors), 2)
-        self.failUnlessEqual(len(self.reporter.failures), 1)
-        self.failUnlessEqual(len(self.reporter.expectedFailures), 3)
-        self.failUnlessEqual(len(self.reporter.unexpectedSuccesses), 1)
-        self.failUnlessEqual(self.reporter.skips, [])
+        self.assertFalse(self.reporter.wasSuccessful())
+        self.assertEqual(len(self.reporter.errors), 2)
+        self.assertEqual(len(self.reporter.failures), 1)
+        self.assertEqual(len(self.reporter.expectedFailures), 3)
+        self.assertEqual(len(self.reporter.unexpectedSuccesses), 1)
+        self.assertEqual(self.reporter.skips, [])
 
     def test_expectedFailures(self):
         self.suite(self.reporter)
         expectedReasons = ['todo1', 'todo2', 'todo5']
         reasonsGotten = [ r.reason
                           for t, e, r in self.reporter.expectedFailures ]
-        self.failUnlessEqual(expectedReasons, reasonsGotten)
+        self.assertEqual(expectedReasons, reasonsGotten)
 
     def test_unexpectedSuccesses(self):
         self.suite(self.reporter)
         expectedReasons = [([RuntimeError], 'todo7')]
         reasonsGotten = [ (r.errors, r.reason)
                           for t, r in self.reporter.unexpectedSuccesses ]
-        self.failUnlessEqual(expectedReasons, reasonsGotten)
+        self.assertEqual(expectedReasons, reasonsGotten)
 
 
 class _CleanUpReporter(reporter.Reporter):
     def __init__(self):
-        super(_CleanUpReporter, self).__init__(StringIO.StringIO(), 'default',
+        super(_CleanUpReporter, self).__init__(io.StringIO(), 'default',
                                                False)
 
     def cleanupErrors(self, errs):
@@ -345,21 +345,21 @@ class TestCleanup(unittest.TestCase):
         suite = self.loader.loadMethod(
             erroneous.SocketOpenTest.test_socketsLeftOpen)
         suite.run(self.result)
-        self.assert_(self.result.cleanerrs)
-        self.assert_(isinstance(self.result.cleanerrs.value,
+        self.assertTrue(self.result.cleanerrs)
+        self.assertTrue(isinstance(self.result.cleanerrs.value,
                                 util.DirtyReactorError))
 
     def testLeftoverPendingCalls(self):
         suite = erroneous.ReactorCleanupTests('test_leftoverPendingCalls')
         suite.run(self.result)
-        self.assert_(self.result.cleanerrs)
-        self.assert_(isinstance(self.result.cleanerrs.value,
+        self.assertTrue(self.result.cleanerrs)
+        self.assertTrue(isinstance(self.result.cleanerrs.value,
                                 util.PendingTimedCallsError))
 
 
 class BogusReporter(reporter.Reporter):
     def __init__(self):
-        super(BogusReporter, self).__init__(StringIO.StringIO(), 'default',
+        super(BogusReporter, self).__init__(io.StringIO(), 'default',
                                             False)
 
     def upDownError(self, method, error, warn, printStatus):
@@ -377,8 +377,8 @@ class FixtureTest(unittest.TestCase):
         self.loader.loadClass(erroneous.TestFailureInSetUp).run(self.reporter)
         imi = self.reporter.udeMethod
         self.assertEqual(imi, 'setUp')
-        self.assert_(len(self.reporter.errors) > 0)
-        self.assert_(isinstance(self.reporter.errors[0][1].value,
+        self.assertTrue(len(self.reporter.errors) > 0)
+        self.assertTrue(isinstance(self.reporter.errors[0][1].value,
                                 erroneous.FoolishError))
 
     def testBrokenTearDown(self):
@@ -387,15 +387,15 @@ class FixtureTest(unittest.TestCase):
         imi = self.reporter.udeMethod
         self.assertEqual(imi, 'tearDown')
         errors = self.reporter.errors
-        self.assert_(len(errors) > 0)
-        self.assert_(isinstance(errors[0][1].value, erroneous.FoolishError))
+        self.assertTrue(len(errors) > 0)
+        self.assertTrue(isinstance(errors[0][1].value, erroneous.FoolishError))
 
     def testBrokenSetUpClass(self):
         suite = self.loader.loadClass(erroneous.TestFailureInSetUpClass)
         suite.run(self.reporter)
         imi = self.reporter.udeMethod
         self.assertEqual(imi, 'setUpClass')
-        self.assert_(self.reporter.errors)
+        self.assertTrue(self.reporter.errors)
 
     def testBrokenTearDownClass(self):
         suite = self.loader.loadClass(erroneous.TestFailureInTearDownClass)
@@ -411,10 +411,10 @@ class FixtureMetaTest(unittest.TestCase):
         test = FixtureTest('testBrokenTearDownClass')
         result = reporter.TestResult()
         test(result)
-        self.failUnless(result.wasSuccessful())
+        self.assertTrue(result.wasSuccessful())
         result2 = reporter.TestResult()
         test(result2)
-        self.failUnless(result2.wasSuccessful())
+        self.assertTrue(result2.wasSuccessful())
         
 
 class SuppressionTest(unittest.TestCase):
@@ -422,7 +422,7 @@ class SuppressionTest(unittest.TestCase):
         suite.run(reporter.TestResult())
     
     def setUp(self):
-        self.stream = StringIO.StringIO()
+        self.stream = io.StringIO()
         self._stdout, sys.stdout = sys.stdout, self.stream
         self.loader = runner.TestLoader()
 

@@ -10,7 +10,7 @@
 API Stability: stable
 """
 
-import urlparse, os, types
+import urllib.parse, os, types
 
 from twisted.web import http
 from twisted.internet import defer, protocol, reactor
@@ -39,13 +39,13 @@ class HTTPPageGetter(http.HTTPClient):
         self.sendHeader('User-Agent', self.factory.agent)
         if self.factory.cookies:
             l=[]
-            for cookie, cookval in self.factory.cookies.items():  
+            for cookie, cookval in list(self.factory.cookies.items()):  
                 l.append('%s=%s' % (cookie, cookval))
             self.sendHeader('Cookie', '; '.join(l))
         data = getattr(self.factory, 'postdata', None)
         if data is not None:
             self.sendHeader("Content-Length", str(len(data)))
-        for (key, value) in self.factory.headers.items():
+        for (key, value) in list(self.factory.headers.items()):
             if key.lower() != "content-length":
                 # we calculated it on our own
                 self.sendHeader(key, value)
@@ -251,7 +251,7 @@ class HTTPClientFactory(protocol.ClientFactory):
 
     def gotHeaders(self, headers):
         self.response_headers = headers
-        if headers.has_key('set-cookie'):
+        if 'set-cookie' in headers:
             for cookie in headers['set-cookie']:
                 cookparts = cookie.split(';')
                 cook = cookparts[0]
@@ -288,7 +288,7 @@ class HTTPDownloader(HTTPClientFactory):
                  method='GET', postdata=None, headers=None,
                  agent="Twisted client", supportPartial=0):
         self.requestedPartial = 0
-        if isinstance(fileOrName, types.StringTypes):
+        if isinstance(fileOrName, (str,)):
             self.fileName = fileOrName
             self.file = None
             if supportPartial and os.path.exists(self.fileName):
@@ -330,7 +330,7 @@ class HTTPDownloader(HTTPClientFactory):
         @param partialContent: tells us if the download is partial download we requested.
         """
         if partialContent and not self.requestedPartial:
-            raise ValueError, "we shouldn't get partial content response if we didn't want it!"
+            raise ValueError("we shouldn't get partial content response if we didn't want it!")
         if self.waiting:
             self.waiting = 0
             try:
@@ -362,9 +362,9 @@ class HTTPDownloader(HTTPClientFactory):
 
 
 def _parse(url, defaultPort=None):
-    parsed = urlparse.urlparse(url)
+    parsed = urllib.parse.urlparse(url)
     scheme = parsed[0]
-    path = urlparse.urlunparse(('','')+parsed[2:])
+    path = urllib.parse.urlunparse(('','')+parsed[2:])
     if defaultPort is None:
         if scheme == 'https':
             defaultPort = 443

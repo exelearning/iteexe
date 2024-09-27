@@ -23,16 +23,16 @@ from types import UnicodeType, StringType
 
 from bs4 import BeautifulSoup
 
-CDATA_BEGIN = u"<![CDATA["
-CDATA_END = u"]]>"
+CDATA_BEGIN = "<![CDATA["
+CDATA_END = "]]>"
 
-TRANS_UNIT = u'''<trans-unit id="%(id)s">
+TRANS_UNIT = '''<trans-unit id="%(id)s">
        <source xml:lang="%(source_lang)s">%(cdata_begin)s%(content)s%(cdata_end)s</source>
        <target xml:lang="%(target_lang)s">%(cdata_begin)s%(target)s%(cdata_end)s</target>
 </trans-unit>
 '''
 
-XLF_TEMPLATE = u'''<?xml version="1.0" encoding="UTF-8"?>
+XLF_TEMPLATE = '''<?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.2"
        xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file original="%(original)s"
@@ -50,14 +50,14 @@ def safe_unicode(text):
         return text
     elif type(text) is StringType:
         try:
-            return unicode(text, 'utf-8')
+            return str(text, 'utf-8')
         except:
-            return unicode(text, 'iso-8859-15')
+            return str(text, 'iso-8859-15')
     else:
         try:
-            return unicode(text)
+            return str(text)
         except:
-            return u'ERROR'
+            return 'ERROR'
 
 
 class ContentEscaper(BeautifulSoup):
@@ -100,13 +100,13 @@ class XliffExport(object):
         outfile.close()
 
     def getContentForNode(self, node, id):
-        content = u''
+        content = ''
         content += '<group>'
         content += TRANS_UNIT % {'content': safe_unicode(node.getTitle()),
                                  'id': '%s-nodename' % id,
-                                 'target': self.source_copied_in_target and safe_unicode(node.getTitle()) or escape_content(u''),
-                                 'cdata_begin': escape_content(u''),
-                                 'cdata_end': escape_content(u''),
+                                 'target': self.source_copied_in_target and safe_unicode(node.getTitle()) or escape_content(''),
+                                 'cdata_begin': escape_content(''),
+                                 'cdata_end': escape_content(''),
                                  'source_lang': self.source_lang,
                                  'target_lang': self.target_lang
                                  }
@@ -117,9 +117,9 @@ class XliffExport(object):
             
             content += TRANS_UNIT % {'content': safe_unicode(idevice.title),
                                      'id': '%s-idev%s-title' % (id, idevice.id),
-                                     'target': self.source_copied_in_target and safe_unicode(idevice.title) or escape_content(u''),
-                                     'cdata_begin': escape_content(u''),
-                                     'cdata_end': escape_content(u''),
+                                     'target': self.source_copied_in_target and safe_unicode(idevice.title) or escape_content(''),
+                                     'cdata_begin': escape_content(''),
+                                     'cdata_end': escape_content(''),
                                      'source_lang': self.source_lang,
                                      'target_lang': self.target_lang
                                      }
@@ -128,9 +128,9 @@ class XliffExport(object):
             for field in idevice.getRichTextFields():
                 content += TRANS_UNIT % {'content': safe_unicode(escape_content(field.content_w_resourcePaths)),
                                          'id': '%s-idev%s-field%s' % (id, idevice.id, field.id),
-                                         'target': self.source_copied_in_target and safe_unicode(escape_content(field.content_w_resourcePaths)) or escape_content(u''),
-                                         'cdata_begin': self.wrap_cdata and CDATA_BEGIN or escape_content(u''),
-                                         'cdata_end': self.wrap_cdata and CDATA_END or escape_content(u''),
+                                         'target': self.source_copied_in_target and safe_unicode(escape_content(field.content_w_resourcePaths)) or escape_content(''),
+                                         'cdata_begin': self.wrap_cdata and CDATA_BEGIN or escape_content(''),
+                                         'cdata_end': self.wrap_cdata and CDATA_END or escape_content(''),
                                          'source_lang': self.source_lang,
                                          'target_lang': self.target_lang
                                          }

@@ -86,13 +86,13 @@ class IdevicePane(Renderable, Resource):
         Hidden Experimental iDevices:
         add iDevices with the category 'Experimental' to 'hiddeniDevices'
         """
-        prototypes = self.prototypes.values()
+        prototypes = list(self.prototypes.values())
         for prototype in prototypes:
             lower_title =  prototype._title.lower()
             if (hasattr(prototype, 'ideviceCategory')
             and prototype.ideviceCategory == 'Experimental'
             and lower_title not in self.config.hiddeniDevices):
-                idevices_conf = self.config.configParser.idevices.items()
+                idevices_conf = list(self.config.configParser.idevices.items())
                 idevice_conf = [idv[1] for idv in idevices_conf if idv[0] == lower_title]
                 if not idevice_conf:
                     self.config.hiddeniDevices.append(lower_title)
@@ -142,11 +142,11 @@ class IdevicePane(Renderable, Resource):
         log.debug("Render")
 
         request.setHeader('content-type', 'application/xml')
-        xml = u'<?xml version="1.0" encoding="UTF-8"?>'
-        xml += u"<!-- IDevice Pane Start -->\n"
-        xml += u"<idevices>\n"
+        xml = '<?xml version="1.0" encoding="UTF-8"?>'
+        xml += "<!-- IDevice Pane Start -->\n"
+        xml += "<idevices>\n"
 
-        prototypes = self.prototypes.values()
+        prototypes = list(self.prototypes.values())
 
         prototypesToRender = []
         for prototype in prototypes:
@@ -204,8 +204,8 @@ class IdevicePane(Renderable, Resource):
         for prototype, category, visible in prototypesToRender:
             if (category!='Text and Tasks' and category!='Hidden' and category!='Interactive Activities'):
                 xml += self.__renderPrototype(prototype, category, visible)
-        xml += u"</idevices>\n"
-        xml += u"<!-- IDevice Pane End -->\n"
+        xml += "</idevices>\n"
+        xml += "<!-- IDevice Pane End -->\n"
         return xml.encode('utf8')
 
     def render_POST(self, request=None):
@@ -216,7 +216,7 @@ class IdevicePane(Renderable, Resource):
             prototype = self.prototypes[idevice['id']]
             visible = idevice['visible']
             lower_title = prototype._title.lower()
-            if 'category' in idevice.keys():
+            if 'category' in list(idevice.keys()):
                 category = idevice['category']
             else:
                 category = None
@@ -242,12 +242,12 @@ class IdevicePane(Renderable, Resource):
         log.debug("_title "+prototype._title)
         log.debug("of type "+repr(type(prototype.title)))
         log.debug(prototype._title.lower())
-        xml  = u"  <idevice>\n"
-        xml += u"   <label>" + escape(prototype.rawTitle) + "</label>\n"
-        xml += u"   <id>" + prototype.id + "</id>\n"
-        xml += u"   <category>" + escape(_(category)) + "</category>\n"
-        xml += u"   <visible>" + str(visible).lower() + "</visible>\n"
-        xml += u"  </idevice>\n"
+        xml  = "  <idevice>\n"
+        xml += "   <label>" + escape(prototype.rawTitle) + "</label>\n"
+        xml += "   <id>" + prototype.id + "</id>\n"
+        xml += "   <category>" + escape(_(category)) + "</category>\n"
+        xml += "   <visible>" + str(visible).lower() + "</visible>\n"
+        xml += "  </idevice>\n"
         return xml
 
 

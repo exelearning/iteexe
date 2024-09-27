@@ -41,11 +41,11 @@ class TestoptionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = unicode(index) + "q" + questionId       
+        self.id         = str(index) + "q" + questionId       
         self.question   = question
         self.questionId = questionId
         self.option     = option
-        self.answerId   = "optionAnswer"+ unicode(index) + "q" + questionId
+        self.answerId   = "optionAnswer"+ str(index) + "q" + questionId
         self.keyId      = "key" + questionId   
         self.idevice    = idevice
         self.checked    = False
@@ -86,7 +86,7 @@ class TestoptionElement(object):
                 
         if self.keyId in request.args \
         and not is_cancel:
-            if request.args[self.keyId][0] == unicode(self.index):
+            if request.args[self.keyId][0] == str(self.index):
                 self.question.userAns = self.index
             
         if "action" in request.args and request.args["action"][0] == self.id:
@@ -103,15 +103,15 @@ class TestoptionElement(object):
         """
         Returns an XHTML string for editing this option element
         """
-        html  = u"<tr><td align=\"left\"><b>%s</b>" % _("Option")
+        html  = "<tr><td align=\"left\"><b>%s</b>" % _("Option")
         html += common.elementInstruc(self.question.optionInstruc)
 
         header = ""
         if self.index == 0: 
             header = _("Correct Option")
 
-        html += u"</td><td align=\"right\"><b>%s</b>\n" % header
-        html += u"</td><td>\n"
+        html += "</td><td align=\"right\"><b>%s</b>\n" % header
+        html += "</td><td>\n"
         if self.index == 0: 
              html += common.elementInstruc(self.question.correctAnswerInstruc)
         html += "</td></tr><tr><td colspan=2>\n"
@@ -136,7 +136,7 @@ class TestoptionElement(object):
         html += "<br><br><br><br>\n"
         html += common.submitImage(self.id, self.idevice.id, 
                                    "/images/stock-cancel.png",
-                                   _(u"Delete option"))
+                                   _("Delete option"))
         html += "</td></tr>\n"
 
         return html
@@ -163,10 +163,10 @@ class TestoptionElement(object):
         html = '<'+sectionTag+' class="iDevice_answer">'+lb
         
         # Checkbox
-        fieldId = self.keyId+unicode((self.index+1));
+        fieldId = self.keyId+str((self.index+1));
         html += '<p class="iDevice_answer-field js-required">'+lb
-        html += '<label for="'+fieldId+'" class="sr-av"><a href="#answer-'+fieldId+'">' + c_("Option")+' '+unicode((self.index+1))+'</a></label>'
-        html += '<input type="radio" name="'+self.keyId+'" id="'+fieldId+'" value="'+unicode(self.index)+'" />'
+        html += '<label for="'+fieldId+'" class="sr-av"><a href="#answer-'+fieldId+'">' + c_("Option")+' '+str((self.index+1))+'</a></label>'
+        html += '<input type="radio" name="'+self.keyId+'" id="'+fieldId+'" value="'+str(self.index)+'" />'
         html += lb
         html += '</p>'+lb       
         

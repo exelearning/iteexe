@@ -26,8 +26,8 @@ log = logging.getLogger(__name__)
 
 # XML namespace, currently not used, see "Just in case we need XML parser..." below
 #NS = 'urn:oasis:names:tc:xliff:document:1.2'
-CDATA_BEGIN = u"<![CDATA["
-CDATA_END = u"]]>"
+CDATA_BEGIN = "<![CDATA["
+CDATA_END = "]]>"
 
 class XliffImport(object):
     """
@@ -78,19 +78,19 @@ class XliffImport(object):
             # Check the unit type
             if item_id.endswith('title'):
                 # It's a idevice, set the title
-                field.set_title(u' '.join([unicode(u) for u in unit_content.contents]))
+                field.set_title(' '.join([str(u) for u in unit_content.contents]))
                 log.debug('Title set for: %s' % item_id)
             elif item_id.endswith('nodename'):
                 # It's a node, set the title
-                field.setTitle(u' '.join([unicode(u) for u in unit_content.contents]))
+                field.setTitle(' '.join([str(u) for u in unit_content.contents]))
                 log.debug('Title set for: %s' % item_id)
             else:
                 # It's a field
-                field.content_w_resourcePaths = u' '.join([unicode(u) for u in unit_content.contents])
+                field.content_w_resourcePaths = ' '.join([str(u) for u in unit_content.contents])
                 # We need to re-replace everything back to normal
                 # It's important to do it in opposite order than when exporting as otherwise we could replace
                 # things put there by the user
-                field.content_w_resourcePaths = field.content_w_resourcePaths.replace(u'&quot;', u'"').replace(u'&gt;', u'>').replace(u'&lt;', u'<').replace(u'&amp;', u'&')
+                field.content_w_resourcePaths = field.content_w_resourcePaths.replace('&quot;', '"').replace('&gt;', '>').replace('&lt;', '<').replace('&amp;', '&')
                 field.TwistedRePersist()
                 log.debug('Content set for: %s' % item_id)
 

@@ -41,7 +41,7 @@ class CmdlineImporter(object):
         if hasattr(self, 'import_' + self.options['import']):
             return getattr(self, 'import_' + self.options['import'])(inputf, outputf)
         else:
-            print _(u"Import format not implemented")
+            print(_("Import format not implemented"))
 
     def import_xml(self, inputf, outputf):
         if not outputf:
@@ -49,7 +49,7 @@ class CmdlineImporter(object):
         xml = open(inputf).read()
         pkg = Package.load(outputf, fromxml=xml)
         if not pkg:
-            raise Exception(_(u"Invalid output package '%s'") % outputf)
+            raise Exception(_("Invalid output package '%s'") % outputf)
         pkg.save()
         return outputf
 
@@ -58,7 +58,7 @@ class CmdlineImporter(object):
             outputf = inputf.rsplit(".xlf")[0]
         pkg = Package.load(outputf)
         if not pkg:
-            raise Exception(_(u"Invalid output package '%s'") % outputf)
+            raise Exception(_("Invalid output package '%s'") % outputf)
         importer = XliffImport(pkg, inputf)
         importer.parseAndImport(self.options["from-source"])
         pkg.save()

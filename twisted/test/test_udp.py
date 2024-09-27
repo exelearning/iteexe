@@ -90,7 +90,7 @@ class PortCleanerUpper(unittest.TestCase):
     def cleanPorts(self, *ports):
         for p in ports:
             if not hasattr(p, 'disconnected'):
-                raise RuntimeError, ("You handed something to cleanPorts that"
+                raise RuntimeError("You handed something to cleanPorts that"
                                      " doesn't have a disconnected attribute, dummy!")
             if not p.disconnected:
                 d = getattr(p, self.callToLoseCnx)()
@@ -110,11 +110,11 @@ class OldConnectedUDPTestCase(PortCleanerUpper):
         port2 = reactor.connectUDP("127.0.0.1", 8888, client)
 
         def assertName():
-            self.failUnless(repr(port2).find('test_udp.Client') >= 0)
+            self.assertTrue(repr(port2).find('test_udp.Client') >= 0)
 
         def cbStarted(ignored):
-            self.assertEquals(client.started, 1)
-            self.assertEquals(client.stopped, 0)
+            self.assertEqual(client.started, 1)
+            self.assertEqual(client.stopped, 0)
             assertName()
             return defer.maybeDeferred(port2.stopListening).addCallback(lambda ign: assertName())
 
@@ -131,8 +131,8 @@ class OldConnectedUDPTestCase(PortCleanerUpper):
         reactor.connectUDP("xxxxxxxxx.zzzzzzzzz.yyyyy.", 8888, client)
 
         def didNotConnect(ign):
-            self.assertEquals(client.stopped, 0)
-            self.assertEquals(client.started, 0)
+            self.assertEqual(client.stopped, 0)
+            self.assertEqual(client.started, 0)
         
         d = self.assertFailure(d, error.DNSLookupError)
         d.addCallback(didNotConnect)
@@ -172,8 +172,8 @@ class OldConnectedUDPTestCase(PortCleanerUpper):
         d.addCallback(cbClientStarted)
 
         def cbPackets(ignored):
-            self.assertEquals(client.packets, ["hello"])
-            self.assertEquals(server.packets, [("world", ("127.0.0.1", client.transport.getHost().port))])
+            self.assertEqual(client.packets, ["hello"])
+            self.assertEqual(server.packets, [("world", ("127.0.0.1", client.transport.getHost().port))])
             
             return defer.DeferredList([
                 defer.maybeDeferred(port1.stopListening),
@@ -206,7 +206,7 @@ class OldConnectedUDPTestCase(PortCleanerUpper):
         server.transport.write("toclient", (port.getHost().host,
                                             port.getHost().port))
         reactor.iterate(); reactor.iterate()
-        self.assertEquals(client.refused, 1)
+        self.assertEqual(client.refused, 1)
         port.stopListening()
         port2.stopListening()
         reactor.iterate(); reactor.iterate()
@@ -224,7 +224,7 @@ class UDPTestCase(unittest.TestCase):
         p = reactor.listenUDP(0, server, interface="127.0.0.1")
         def cbStarted(ignored):
             addr = p.getHost()
-            self.assertEquals(addr, ('INET_UDP', addr.host, addr.port))
+            self.assertEqual(addr, ('INET_UDP', addr.host, addr.port))
             return p.stopListening()
         return d.addCallback(cbStarted)
     testOldAddress.suppress = [
@@ -237,11 +237,11 @@ class UDPTestCase(unittest.TestCase):
         d = server.startedDeferred = defer.Deferred()
         port1 = reactor.listenUDP(0, server, interface="127.0.0.1")
         def cbStarted(ignored):
-            self.assertEquals(server.started, 1)
-            self.assertEquals(server.stopped, 0)
+            self.assertEqual(server.started, 1)
+            self.assertEqual(server.stopped, 0)
             return port1.stopListening()
         def cbStopped(ignored):
-            self.assertEquals(server.stopped, 1)
+            self.assertEqual(server.stopped, 1)
         return d.addCallback(cbStarted).addCallback(cbStopped)
 
     def testRebind(self):
@@ -268,7 +268,7 @@ class UDPTestCase(unittest.TestCase):
         port = reactor.listenUDP(0, server, interface='127.0.0.1')
 
         def cbStarted(ignored):
-            self.assertEquals(port.getHost(), server.transport.getHost())
+            self.assertEqual(port.getHost(), server.transport.getHost())
 
             server2 = Server()
             self.assertRaises(
@@ -328,11 +328,11 @@ class UDPTestCase(unittest.TestCase):
         def cbSendsFinished(ignored):
             cAddr = client.transport.getHost()
             sAddr = server.transport.getHost()
-            self.assertEquals(
+            self.assertEqual(
                 client.packets,
                 [("hello", (sAddr.host, sAddr.port))])
             clientAddr = (cAddr.host, cAddr.port)
-            self.assertEquals(
+            self.assertEqual(
                 server.packets,
                 [("a", clientAddr),
                  ("b", clientAddr),
@@ -400,9 +400,9 @@ class UDPTestCase(unittest.TestCase):
         client = GoodClient()
         p = reactor.listenUDP(0, client)
         portNo = str(p.getHost().port)
-        self.failIf(repr(p).find(portNo) == -1)
+        self.assertFalse(repr(p).find(portNo) == -1)
         def stoppedListening(ign):
-            self.failIf(repr(p).find(portNo) != -1)
+            self.assertFalse(repr(p).find(portNo) != -1)
         return defer.maybeDeferred(p.stopListening).addCallback(stoppedListening)
 
 
@@ -481,27 +481,27 @@ class MulticastTestCase(unittest.TestCase):
     
     def testTTL(self):
         for o in self.client, self.server:
-            self.assertEquals(o.transport.getTTL(), 1)
+            self.assertEqual(o.transport.getTTL(), 1)
             o.transport.setTTL(2)
-            self.assertEquals(o.transport.getTTL(), 2)
+            self.assertEqual(o.transport.getTTL(), 2)
 
     def testLoopback(self):
-        self.assertEquals(self.server.transport.getLoopbackMode(), 1)
+        self.assertEqual(self.server.transport.getLoopbackMode(), 1)
         self.runUntilSuccess(self.server.transport.joinGroup, "225.0.0.250")
         self.server.transport.write("hello", ("225.0.0.250", self.server.transport.getHost().port))
         reactor.iterate()
-        self.assertEquals(len(self.server.packets), 1)
+        self.assertEqual(len(self.server.packets), 1)
         self.server.transport.setLoopbackMode(0)
-        self.assertEquals(self.server.transport.getLoopbackMode(), 0)
+        self.assertEqual(self.server.transport.getLoopbackMode(), 0)
         self.server.transport.write("hello", ("225.0.0.250", self.server.transport.getHost().port))
         reactor.iterate()
-        self.assertEquals(len(self.server.packets), 1)
+        self.assertEqual(len(self.server.packets), 1)
     
     def testInterface(self):
         for o in self.client, self.server:
-            self.assertEquals(o.transport.getOutgoingInterface(), "0.0.0.0")
+            self.assertEqual(o.transport.getOutgoingInterface(), "0.0.0.0")
             self.runUntilSuccess(o.transport.setOutgoingInterface, "127.0.0.1")
-            self.assertEquals(o.transport.getOutgoingInterface(), "127.0.0.1")
+            self.assertEqual(o.transport.getOutgoingInterface(), "127.0.0.1")
     
     def testJoinLeave(self):
         for o in self.client, self.server:
@@ -518,7 +518,7 @@ class MulticastTestCase(unittest.TestCase):
         while iters < 100 and len(self.server.packets) == 0:
             reactor.iterate(0.05);
             iters += 1
-        self.assertEquals(self.server.packets[0][0], "hello world")
+        self.assertEqual(self.server.packets[0][0], "hello world")
         p.stopListening()
 
     def testMultiListen(self):
@@ -535,8 +535,8 @@ class MulticastTestCase(unittest.TestCase):
         return d
 
     def _cbTestMultiListen(self, ignored, c, c2, p, p2):
-        self.assertEquals(c.packets[0][0], "hello world")
-        self.assertEquals(c2.packets[0][0], "hello world")
+        self.assertEqual(c.packets[0][0], "hello world")
+        self.assertEqual(c2.packets[0][0], "hello world")
         p.stopListening()
         p2.stopListening()
 
@@ -556,5 +556,5 @@ def checkForLinux22():
         if s.startswith("Linux version"):
             s = s.split()[2]
             if s.split(".")[:2] == ["2", "2"]:
-                MulticastTestCase.testInterface.im_func.todo = "figure out why this fails in linux 2.2"
+                MulticastTestCase.testInterface.__func__.todo = "figure out why this fails in linux 2.2"
 checkForLinux22()

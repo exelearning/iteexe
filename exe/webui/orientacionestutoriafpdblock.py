@@ -65,7 +65,7 @@ class OrientacionestutoriafpdBlock(Block):
 	# Quitamos el prefijo "FPD -"
 	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Guidelines for the Teacher")
+		self.idevice.title = x_("Guidelines for the Teacher")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

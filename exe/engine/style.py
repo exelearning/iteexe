@@ -15,7 +15,7 @@ import chardet
 if hasattr(collections, 'OrderedDict'):
     OrderedDict = collections.OrderedDict
 else:
-    import ordereddict
+    from . import ordereddict
     OrderedDict = ordereddict.OrderedDict
 
 log = logging.getLogger(__name__)
@@ -47,7 +47,7 @@ class Style(Persistable):
                    }
     
     _attributesCode = ['extra-head', 'edition-extra-head', 'extra-body', 'edition-extra-body']
-    _attributes= OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+    _attributes= OrderedDict(sorted(list(_attributespre.items()), key=lambda t: t[1][2]))
 
     
 
@@ -89,7 +89,7 @@ class Style(Persistable):
                     xmldoc = minidom.parseString(newconfigdata)
                     theme = xmldoc.getElementsByTagName('theme')                    
                     if (len(theme) > 0):
-                        for attribute in self._attributes.keys():
+                        for attribute in list(self._attributes.keys()):
                             rpattribute='_'+attribute.replace('-', '_')
                             attr = theme[0].getElementsByTagName(attribute)
                             if (len(attr) > 0):
@@ -190,7 +190,7 @@ class Style(Persistable):
     
     def renderPropertiesHTML(self):
         html = ''
-        for attribute in self._attributes.keys():
+        for attribute in list(self._attributes.keys()):
             if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
                 html += '<p><strong>' + _(self._attributes[attribute]) + ': </strong>'
                 if attribute in self._attributesCode:
@@ -201,7 +201,7 @@ class Style(Persistable):
 
     def renderPropertiesJSON(self):
         properties = []     
-        for attribute in self._attributes.keys():
+        for attribute in list(self._attributes.keys()):
                 if attribute in self._attributesCode:
                     value = getattr(self, '_'+attribute.replace('-', '_')).replace('"',"'")
                 else:
@@ -211,7 +211,7 @@ class Style(Persistable):
     
     def __str__(self):
         string = ''
-        for attribute in self._attributes.keys():
+        for attribute in list(self._attributes.keys()):
             if hasattr(self, '_'+attribute.replace('-', '_')) and getattr(self, '_'+attribute.replace('-', '_')) != '':
                 string += _(self._attributes[attribute]) + ': ' + getattr(self, '_'+attribute.replace('-', '_')) + '\n'
         return string

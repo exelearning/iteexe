@@ -30,7 +30,7 @@ def _quoteJSArguments(args):
     for a in args:
         if isinstance(a, bool):
             argstr.append(str(a).lower())
-        elif isinstance(a, (int, float, long, _js)):
+        elif isinstance(a, (int, float, _js)):
             argstr.append(str(a))
         else:
             argstr.append("'%s'" % (flt(a),))
@@ -332,13 +332,13 @@ class ClientHandle(object):
             log.err(RuntimeError(err))
             return
         if self.outputConduit:
-            if DEBUG: print "SENDING SCRIPT", script
+            if DEBUG: print("SENDING SCRIPT", script)
             output = str(script)
             self.outputConduit.callback(output)
             self.outputConduit = None
         else:
             self.outputBuffer.append(script)
-            if DEBUG: print "Output buffered!", script
+            if DEBUG: print("Output buffered!", script)
 
     def handleInput(self, identifier, *args):
         if self.closed:
@@ -350,11 +350,11 @@ class ClientHandle(object):
             # the output-side xmlhttp request, so .outputConduit will be
             # None and stay that way. This means we don't need to worry
             # about self.outputGone firing later on.
-            if DEBUG: print "CLIENT ACKED CLOSE"
+            if DEBUG: print("CLIENT ACKED CLOSE")
             ## This happens in a callLater(0) from the original request
             self._closeComplete(None)
             return
-        if DEBUG: print "Dispatching event to observer", identifier, args
+        if DEBUG: print("Dispatching event to observer", identifier, args)
         try:
             self.events.publish(identifier, *(self, ) + args)
         except:
@@ -372,7 +372,7 @@ class ClientHandle(object):
         return d
 
     def close(self, executeScriptBeforeClose=""):
-        if DEBUG: print "CLOSE WAS CALLED"
+        if DEBUG: print("CLOSE WAS CALLED")
         d = self.notifyOnClose()
         self.call('nevow_closeLive', self.flt(executeScriptBeforeClose))
         return d
@@ -416,7 +416,7 @@ class DefaultClientHandleFactory(object):
 
     def __init__(self):
         self.clientHandles = {}
-        self.handleCounter = itertools.count().next
+        self.handleCounter = itertools.count().__next__
 
     def newClientHandle(self, ctx, refreshInterval, targetTimeoutCount):
         handleid = inevow.ISession(ctx).uid + '-' + str(self.handleCounter())
@@ -431,7 +431,7 @@ class DefaultClientHandleFactory(object):
 
     def getHandleForId(self, handleId):
         """Override this to restore old handles on demand."""
-        if not self.clientHandles.has_key(handleId):
+        if handleId not in self.clientHandles:
             log.msg("No handle for ID %s" % handleId)
         return self.clientHandles[handleId]
 
@@ -451,7 +451,7 @@ class Output(object):
             request.setHeader("Pragma", "no-cache")
             request.setHeader("Connection", "close")
             request.write('')
-            if DEBUG: print "OUTPUT RENDER", request.uri, request
+            if DEBUG: print("OUTPUT RENDER", request.uri, request)
     
             handleId = ctx.arg('client-handle-id')
     
@@ -459,7 +459,7 @@ class Output(object):
             clientHandle = clientHandleFactory.getHandleForId(handleId)
             request.notifyFinish().addErrback(clientHandle.outputGone, d)
             clientHandle.setOutput(d)
-        except Exception, e:
+        except Exception as e:
             traceback.print_stack()
             return "alert('Exception on server: %s')" % e.replace("'", '"')
         return d

@@ -10,25 +10,25 @@ from nevow.testutil import TestCase
 
 class TestSerialization(TestCase):
     def test_someTypes(self):
-        self.assertEquals(ten.flatten(1), '1')
-        self.assertEquals(ten.flatten([1,2,3]), '123')
+        self.assertEqual(ten.flatten(1), '1')
+        self.assertEqual(ten.flatten([1,2,3]), '123')
 
     def test_nestedTags(self):
-        self.assertEquals(
+        self.assertEqual(
             ten.flatten(
                 tags.html(hi='there')[
                     tags.body[ 42 ]]),
             '<html hi="there"><body>42</body></html>')
 
     def test_dynamic(self):
-        self.assertEquals(
+        self.assertEqual(
             ten.flatten(
                 tags.html[
                     tags.body(render=lambda c, d: 'body!')]),
             '<html>body!</html>')
 
     def test_reallyDynamic(self):
-        self.assertEquals(
+        self.assertEqual(
             ten.flatten(
                 tags.html[
                     lambda c, d: tags.body[
@@ -36,24 +36,24 @@ class TestSerialization(TestCase):
             '<html><body>stuff</body></html>')
 
     def test_serializeString(self):
-        self.assertEquals(ten.flatten('one'), 'one')
-        self.assertEquals(type(ten.flatten('<>')), tags.raw)
-        self.assertEquals(ten.flatten('<abc&&>123'), '&lt;abc&amp;&amp;&gt;123')
-        self.assertEquals(ten.flatten(tags.xml('<>&')), '<>&')
-        self.assertEquals(ten.flatten(tags.xml(u'\xc2\xa3')), '\xc3\x82\xc2\xa3')
+        self.assertEqual(ten.flatten('one'), 'one')
+        self.assertEqual(type(ten.flatten('<>')), tags.raw)
+        self.assertEqual(ten.flatten('<abc&&>123'), '&lt;abc&amp;&amp;&gt;123')
+        self.assertEqual(ten.flatten(tags.xml('<>&')), '<>&')
+        self.assertEqual(ten.flatten(tags.xml('\xc2\xa3')), '\xc3\x82\xc2\xa3')
         
     def test_flattenTwice(self):
         """Test that flattening a string twice does not encode it twice.
         """
-        self.assertEquals(ten.flatten(ten.flatten('&')), '&amp;')
+        self.assertEqual(ten.flatten(ten.flatten('&')), '&amp;')
 
 
 class TestPrecompile(TestCase):
     def test_simple(self):
-        self.assertEquals(ten.precompile(1), ['1'])
+        self.assertEqual(ten.precompile(1), ['1'])
 
     def test_complex(self):
-        self.assertEquals(ten.precompile(
+        self.assertEqual(ten.precompile(
             tags.html[
                 tags.head[
                     tags.title["Hi"]],
@@ -67,10 +67,10 @@ class TestPrecompile(TestCase):
             tags.html[
                 render])
         prelude, dynamic, postlude = result
-        self.assertEquals(prelude, '<html>')
-        self.assertEquals(dynamic.tag.render, render)
-        self.assertEquals(postlude, '</html>')
-        self.assertEquals(ten.flatten(result), '<html>one</html>')
+        self.assertEqual(prelude, '<html>')
+        self.assertEqual(dynamic.tag.render, render)
+        self.assertEqual(postlude, '</html>')
+        self.assertEqual(ten.flatten(result), '<html>one</html>')
 
     def test_tagWithRender(self):
         render = lambda c, d: 'body'
@@ -78,10 +78,10 @@ class TestPrecompile(TestCase):
             tags.html[
                 tags.body(render=render)])
         prelude, dynamic, postlude = result
-        self.assertEquals(prelude, '<html>')
-        self.assertEquals(dynamic.tag.render, render)
-        self.assertEquals(postlude, '</html>')
-        self.assertEquals(ten.flatten(result), '<html>body</html>')
+        self.assertEqual(prelude, '<html>')
+        self.assertEqual(dynamic.tag.render, render)
+        self.assertEqual(postlude, '</html>')
+        self.assertEqual(ten.flatten(result), '<html>body</html>')
 
 
 import unicodedata
@@ -91,8 +91,8 @@ u = unicodedata.lookup('QUARTER NOTE')
 class TestUnicode(TestCase):
     
     def test_it(self):
-        self.assertEquals(ten.flatten(u), u.encode('utf8'))
+        self.assertEqual(ten.flatten(u), u.encode('utf8'))
 
     def test_unescaped(self):
-        self.assertEquals(ten.flatten(tags.xml(u'<<<%s>>>' % u)), (u'<<<%s>>>' % u).encode('utf8'))
+        self.assertEqual(ten.flatten(tags.xml('<<<%s>>>' % u)), ('<<<%s>>>' % u).encode('utf8'))
     

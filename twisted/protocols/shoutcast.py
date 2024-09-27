@@ -102,16 +102,16 @@ class ShoutcastClient(http.HTTPClient):
 
         Will only be called on non-empty metadata.
         """
-        raise NotImplementedError, "implement in subclass"
+        raise NotImplementedError("implement in subclass")
     
     def gotMP3Data(self, data):
         """Called with chunk of MP3 data."""
-        raise NotImplementedError, "implement in subclass"
+        raise NotImplementedError("implement in subclass")
 
 
 if __name__ == '__main__':
     class Test(ShoutcastClient):
-        def gotMetaData(self, data): print "meta:", data
+        def gotMetaData(self, data): print("meta:", data)
         def gotMP3Data(self, data): pass
     
     from twisted.internet import protocol, reactor

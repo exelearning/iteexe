@@ -82,7 +82,7 @@ def _pass_field(fields, field, val):
             cnt = False
             for r in ['name', 'email', 'organization']:
                 a = re.sub('[name,organization,email]+$', r, field2)
-                if a in fields.keys() and fields[a][0].strip() != '':
+                if a in list(fields.keys()) and fields[a][0].strip() != '':
                     cnt = True
             if not cnt:
                 ret = True
@@ -93,7 +93,7 @@ def _pass_field(fields, field, val):
                 cnt = False
                 for r in ['years', 'months', 'days', 'hours', 'minutes', 'seconds']:
                     a = re.sub('[years,months,days,hours,minutes,seconds]+$', r, field2)
-                    if a in fields.keys() and fields[a][0].strip() != '':
+                    if a in list(fields.keys()) and fields[a][0].strip() != '':
                         cnt = True
                 if not cnt:
                     ret = True
@@ -105,7 +105,7 @@ def _pass_field(fields, field, val):
 
 def processForm2Lom(fields, label, source):
     lomdict = {}
-    for field in sorted(fields.iterkeys()):
+    for field in sorted(fields.keys()):
         #print field
         val = fields[field]
         if not field.startswith('%s_' % label):
@@ -309,12 +309,12 @@ class PropertiesPage(Renderable, Resource):
         log.debug("render_GET")
         data = {}
         try:
-            if 'lom_general_title_string1' in request.args.keys():
+            if 'lom_general_title_string1' in list(request.args.keys()):
                 self.package.lom.genForm('lom', self.package.lom, data)
-            elif 'lomes_general_title_string1' in request.args.keys():
+            elif 'lomes_general_title_string1' in list(request.args.keys()):
                 self.package.lom.genForm('lomes', self.package.lomEs, data)
             else:
-                for key in request.args.keys():
+                for key in list(request.args.keys()):
                     if key != "_dc":
                         obj, name = self.fieldId2obj(key)
                         if key in self.imgFieldNames:
@@ -364,7 +364,7 @@ class PropertiesPage(Renderable, Resource):
                 else:
                     self.setLomes(request.args)
             else:
-                items = request.args.items()
+                items = list(request.args.items())
                 if 'pp_lang' in request.args:
                     value = request.args['pp_lang']
                     item = ('pp_lang', value)

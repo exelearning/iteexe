@@ -33,7 +33,7 @@ class TestClientFactory(protocol.ClientFactory):
 
 
     def buildProtocol(self, addr):
-        self.testcase.assertEquals(address.UNIXAddress(self.name), addr)
+        self.testcase.assertEqual(address.UNIXAddress(self.name), addr)
         self.protocol = MyProtocol()
         return self.protocol
 
@@ -48,7 +48,7 @@ class Factory(protocol.Factory):
         self.stopped = True
 
     def buildProtocol(self, addr):
-        self.testcase.assertEquals(None, addr)
+        self.testcase.assertEqual(None, addr)
         self.protocol = p = MyProtocol()
         return p
 
@@ -76,7 +76,7 @@ class PortCleanerUpper(unittest.TestCase):
     def cleanPorts(self, *ports):
         for p in ports:
             if not hasattr(p, 'disconnected'):
-                raise RuntimeError, ("You handed something to cleanPorts that"
+                raise RuntimeError("You handed something to cleanPorts that"
                                      " doesn't have a disconnected attribute, dummy!")
             if not p.disconnected:
                 d = getattr(p, self.callToLoseCnx)()
@@ -108,8 +108,8 @@ class UnixSocketTestCase(PortCleanerUpper):
     def testMode(self):
         filename = self.mktemp()
         f = Factory(self, filename)
-        l = reactor.listenUNIX(filename, f, mode = 0600)
-        self.assertEquals(stat.S_IMODE(os.stat(filename)[0]), 0600)
+        l = reactor.listenUNIX(filename, f, mode = 0o600)
+        self.assertEqual(stat.S_IMODE(os.stat(filename)[0]), 0o600)
         tcf = TestClientFactory(self, filename)
         c = reactor.connectUNIX(filename, tcf)
         self._addPorts(l, c.transport)
@@ -118,8 +118,8 @@ class UnixSocketTestCase(PortCleanerUpper):
     def testPIDFile(self):
         filename = self.mktemp()
         f = Factory(self, filename)
-        l = reactor.listenUNIX(filename, f, mode = 0600, wantPID=1)
-        self.failUnless(lockfile.isLocked(filename + ".lock"))
+        l = reactor.listenUNIX(filename, f, mode = 0o600, wantPID=1)
+        self.assertTrue(lockfile.isLocked(filename + ".lock"))
         tcf = TestClientFactory(self, filename)
         c = reactor.connectUNIX(filename, tcf, checkPID=1)
 
@@ -129,7 +129,7 @@ class UnixSocketTestCase(PortCleanerUpper):
         self._addPorts(l, c.transport, tcf.protocol.transport, f.protocol.transport)
         self.cleanPorts(*self.ports)
 
-        self.failIf(lockfile.isLocked(filename + ".lock"))
+        self.assertFalse(lockfile.isLocked(filename + ".lock"))
 
 
     def testSocketLocking(self):
@@ -180,10 +180,10 @@ class UnixSocketTestCase(PortCleanerUpper):
         filename = self.mktemp()
         f = Factory(self, filename)
         p = reactor.listenUNIX(filename, f)
-        self.failIf(str(p).find(filename) == -1)
+        self.assertFalse(str(p).find(filename) == -1)
 
         def stoppedListening(ign):
-            self.failIf(str(p).find(filename) != -1)
+            self.assertFalse(str(p).find(filename) != -1)
 
         return defer.maybeDeferred(p.stopListening).addCallback(stoppedListening)
 
@@ -237,15 +237,15 @@ class DatagramUnixSocketTestCase(PortCleanerUpper):
         os.unlink(clientaddr)
         os.unlink(serveraddr)
         spinWhile(lambda:s.connected and c.connected)
-        self.failUnlessEqual("hi", sp.gotwhat)
-        self.failUnlessEqual(clientaddr, sp.gotfrom)
-        self.failUnlessEqual("hi back", cp.gotback)
+        self.assertEqual("hi", sp.gotwhat)
+        self.assertEqual(clientaddr, sp.gotfrom)
+        self.assertEqual("hi back", cp.gotback)
 
     def testCannotListen(self):
         addr = self.mktemp()
         p = ServerProto()
         s = reactor.listenUNIXDatagram(addr, p)
-        self.failUnlessRaises(error.CannotListenError, reactor.listenUNIXDatagram, addr, p)
+        self.assertRaises(error.CannotListenError, reactor.listenUNIXDatagram, addr, p)
         s.stopListening()
         os.unlink(addr)
     # test connecting to bound and connected (somewhere else) address
@@ -254,10 +254,10 @@ class DatagramUnixSocketTestCase(PortCleanerUpper):
         filename = self.mktemp()
         f = ServerProto()
         p = reactor.listenUNIXDatagram(filename, f)
-        self.failIf(str(p).find(filename) == -1)
+        self.assertFalse(str(p).find(filename) == -1)
 
         def stoppedListening(ign):
-            self.failIf(str(p).find(filename) != -1)
+            self.assertFalse(str(p).find(filename) != -1)
 
         return defer.maybeDeferred(p.stopListening).addCallback(stoppedListening)
 

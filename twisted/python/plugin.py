@@ -2,7 +2,7 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes
+
 
 # System Imports
 import sys
@@ -15,7 +15,7 @@ import warnings
 from twisted.python import util
 
 # Sibling Imports
-from reflect import namedModule
+from .reflect import namedModule
 
 try:
     from os.path import realpath as cacheTransform
@@ -28,7 +28,7 @@ class PlugIn:
     def __init__(self, name, module, **kw):
         self.name = name
         self.module = module
-        for key, value in kw.items():
+        for key, value in list(kw.items()):
             setattr(self, key, value)
 
     def isLoaded(self):
@@ -38,7 +38,7 @@ class PlugIn:
         @return: A true value if the module for this plugin has been loaded,
         false otherwise.
         """
-        return sys.modules.has_key(self.module)
+        return self.module in sys.modules
 
     def load(self):
         """Load the module for this plugin.
@@ -111,13 +111,13 @@ def getPluginFileList(debugInspection=None, showProgress=None):
     @rtype: C{list} of C{str}
     @return: A list of the plugin.tml files found.
     """
-    if isinstance(debugInspection, types.IntType):
+    if isinstance(debugInspection, int):
         warnings.warn(
             "int parameter for debugInspection is deprecated, pass None or "
             "a function that takes a single argument instead.",
             DeprecationWarning, 2
         )
-    if isinstance(showProgress, types.IntType):
+    if isinstance(showProgress, int):
         warnings.warn(
             "int parameter for showProgress is deprecated, pass None or "
             "a function that takes a single argument instead.",
@@ -148,16 +148,18 @@ def getPluginFileList(debugInspection=None, showProgress=None):
     progress = 0.0
     increments = 1.0 / len(paths)
 
-    for (index, d) in zip(range(len(paths)), paths):
+    for (index, d) in zip(list(range(len(paths))), paths):
         showProgress(progress)
-        if loaded.has_key(d):
+        if d in loaded:
             debugInspection('Already saw ' + d)
             continue
         else:
             debugInspection('Recursing through ' + d)
         try:
             subDirs = os.listdir(d)
-        except OSError, (err, s):
+        except OSError as xxx_todo_changeme:
+            # Permission denied, carry on
+            (err, s) = xxx_todo_changeme.args
             # Permission denied, carry on
             if err == errno.EACCES:
                 debugInspection('Permission denied on ' + d)
@@ -170,7 +172,7 @@ def getPluginFileList(debugInspection=None, showProgress=None):
                 continue
             incr = increments * (1.0 / len(subDirs))
             for plugindir in subDirs:
-                if seenNames.has_key(plugindir):
+                if plugindir in seenNames:
                     debugInspection('Seen %s already' % plugindir)
                     continue
                 tmlname = join((d, plugindir, "plugins.tml"))
@@ -216,13 +218,13 @@ def loadPlugins(plugInType, fileList, debugInspection=None, showProgress=None):
     @rtype: C{list}
     @return: A list of the C{PlugIn} objects found.
     """
-    if isinstance(debugInspection, types.IntType):
+    if isinstance(debugInspection, int):
         warnings.warn(
             "int parameter for debugInspection is deprecated, pass None or "
             "a function that takes a single argument instead.",
             DeprecationWarning, 4
         )
-    if isinstance(showProgress, types.IntType):
+    if isinstance(showProgress, int):
         warnings.warn(
             "int parameter for showProgress is deprecated, pass None or "
             "a function that takes a single argument instead.",
@@ -237,15 +239,15 @@ def loadPlugins(plugInType, fileList, debugInspection=None, showProgress=None):
     increments = 1.0 / len(fileList)
     progress = 0.0
 
-    for (index, tmlFile) in zip(range(len(fileList)), fileList):
+    for (index, tmlFile) in zip(list(range(len(fileList))), fileList):
         showProgress(progress)
         debugInspection("Loading from " + tmlFile)
         pname = os.path.split(os.path.abspath(tmlFile))[-2]
         dropin = DropIn(pname)
         ns = {'register': dropin.register, '__file__': tmlFile}
         try:
-            execfile(tmlFile, ns)
-        except (IOError, OSError), e:
+            exec(compile(open(tmlFile, "rb").read(), tmlFile, 'exec'), ns)
+        except (IOError, OSError) as e:
             # guess we don't have permissions for that
             debugInspection("Error loading: %s" % e)
             continue
@@ -294,13 +296,13 @@ def getPlugIns(plugInType, debugInspection=None, showProgress=None):
     return _getPlugIns(plugInType, debugInspection, showProgress)
 
 def _getPlugIns(plugInType, debugInspection=None, showProgress=None):
-    if isinstance(debugInspection, types.IntType):
+    if isinstance(debugInspection, int):
         warnings.warn(
             "int parameter for debugInspection is deprecated, pass None or "
             "a function that takes a single argument instead.",
             DeprecationWarning, 3
         )
-    if isinstance(showProgress, types.IntType):
+    if isinstance(showProgress, int):
         warnings.warn(
             "int parameter for showProgress is deprecated, pass None or "
             "a function that takes a single argument instead.",

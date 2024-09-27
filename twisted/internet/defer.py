@@ -11,7 +11,7 @@ API Stability: stable
 Maintainer: U{Glyph Lefkowitz<mailto:glyph@twistedmatrix.com>}
 """
 
-from __future__ import nested_scopes, generators
+
 import traceback
 import warnings
 
@@ -603,7 +603,7 @@ def _deferGenerator(g, deferred=None, result=None):
         if deferred is None:
             deferred = Deferred()
         try:
-            result = g.next()
+            result = next(g)
         except StopIteration:
             deferred.callback(result)
             return deferred

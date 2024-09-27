@@ -62,7 +62,7 @@ class IdeviceStore:
         """
         Returns an iDevice Id which is unique
         """
-        id_ = unicode(self._nextIdeviceId)
+        id_ = str(self._nextIdeviceId)
         self._nextIdeviceId += 1
         return id_
 
@@ -414,11 +414,11 @@ class IdeviceStore:
         factoryExtendedIdevices.append(ReflectionIdevice())
         factoryExtendedIdevices.append(CasestudyIdevice())
         factoryExtendedIdevices.append(TrueFalseIdevice())
-        defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
+        defaultImage = str(self.config.webDir / "images" / "sunflowers.jpg")
         # converting ImageWithTextIdevice -> FreeTextIdevice:
         #factoryExtendedIdevices.append(ImageWithTextIdevice(defaultImage))
         factoryExtendedIdevices.append(ImageMagnifierIdevice(defaultImage))
-        defaultImage = unicode(self.config.webDir / "images" / "sunflowers.jpg")
+        defaultImage = str(self.config.webDir / "images" / "sunflowers.jpg")
         defaultSite = 'http://%s.wikipedia.org/' % self.config.locale
         factoryExtendedIdevices.append(WikipediaIdevice(defaultSite))
         #JRJ: Eliminamos este iDevice de los extendidos
@@ -594,7 +594,7 @@ class IdeviceStore:
             if idevice.class_ == 'reading':
                 if readingActivitiesFound == 0:
                     # Rename the first one we find
-                    idevice.title = x_(u"Reading Activity")
+                    idevice.title = x_("Reading Activity")
                     # and also upgrade its feedback field from using a simple
                     # string, to a subclass of TextAreaField.
                     # While this will have been initially handled by the
@@ -638,15 +638,15 @@ class IdeviceStore:
 
         from exe.engine.genericidevice import GenericIdevice
 
-        readingAct = GenericIdevice(x_(u"Reading Activity"),
-                                    u"reading",
-                                    x_(u"University of Auckland"),
-                                    x_(u"""<p>The Reading Activity will primarily
+        readingAct = GenericIdevice(x_("Reading Activity"),
+                                    "reading",
+                                    x_("University of Auckland"),
+                                    x_("""<p>The Reading Activity will primarily
 be used to check a learner's comprehension of a given text. This can be done
 by asking the learner to reflect on the reading and respond to questions about
 the reading, or by having them complete some other possibly more physical task
 based on the reading.</p>"""),
-                                    x_(u"<p>Teachers should keep the following "
+                                    x_("<p>Teachers should keep the following "
                                         "in mind when using this iDevice: </p>"
                                         "<ol>"
                                         "<li>"
@@ -681,59 +681,59 @@ based on the reading.</p>"""),
                                         "</li>"
                                         "</ol>"))
         readingAct.emphasis = Idevice.SomeEmphasis
-        readingAct.addField(TextAreaField(x_(u"What to read"),
-x_(u"""Enter the details of the reading including reference details. The
+        readingAct.addField(TextAreaField(x_("What to read"),
+x_("""Enter the details of the reading including reference details. The
 referencing style used will depend on the preference of your faculty or
 department.""")))
-        readingAct.addField(TextAreaField(x_(u"Activity"),
-x_(u"""Describe the tasks related to the reading learners should undertake.
+        readingAct.addField(TextAreaField(x_("Activity"),
+x_("""Describe the tasks related to the reading learners should undertake.
 This helps demonstrate relevance for learners.""")))
 
-        readingAct.addField(FeedbackField(x_(u"Feedback"),
-x_(u"""Use feedback to provide a summary of the points covered in the reading,
+        readingAct.addField(FeedbackField(x_("Feedback"),
+x_("""Use feedback to provide a summary of the points covered in the reading,
 or as a starting point for further analysis of the reading by posing a question
 or providing a statement to begin a debate.""")))
 
         idevices.append(readingAct)
 
-        objectives = GenericIdevice(x_(u"Objectives"),
-                                    u"objectives",
-                                    x_(u"University of Auckland"),
-x_(u"""Objectives describe the expected outcomes of the learning and should
+        objectives = GenericIdevice(x_("Objectives"),
+                                    "objectives",
+                                    x_("University of Auckland"),
+x_("""Objectives describe the expected outcomes of the learning and should
 define what the learners will be able to do when they have completed the
 learning tasks."""),
-                                    u"")
+                                    "")
         objectives.emphasis = Idevice.SomeEmphasis
 
-        objectives.addField(TextAreaField(x_(u"Objectives"),
-x_(u"""Type the learning objectives for this resource.""")))
+        objectives.addField(TextAreaField(x_("Objectives"),
+x_("""Type the learning objectives for this resource.""")))
         idevices.append(objectives)
 
-        preknowledge = GenericIdevice(x_(u"Preknowledge"),
-                                      u"preknowledge",
+        preknowledge = GenericIdevice(x_("Preknowledge"),
+                                      "preknowledge",
                                       "",
-x_(u"""Prerequisite knowledge refers to the knowledge learners should already
+x_("""Prerequisite knowledge refers to the knowledge learners should already
 have in order to be able to effectively complete the learning. Examples of
 pre-knowledge can be: <ul>
 <li>        Learners must have level 4 English </li>
 <li>        Learners must be able to assemble standard power tools </li></ul>
-"""), u"")
+"""), "")
         preknowledge.emphasis = Idevice.SomeEmphasis
-        preknowledge.addField(TextAreaField(x_(u"Preknowledge"),
-x_(u"""Describe the prerequisite knowledge learners should have to effectively
+        preknowledge.addField(TextAreaField(x_("Preknowledge"),
+x_("""Describe the prerequisite knowledge learners should have to effectively
 complete this learning.""")))
         idevices.append(preknowledge)
 
-        activity = GenericIdevice(x_(u"Activity"),
-                                  u"activity",
-                                  x_(u"University of Auckland"),
-x_(u"""An activity can be defined as a task or set of tasks a learner must
+        activity = GenericIdevice(x_("Activity"),
+                                  "activity",
+                                  x_("University of Auckland"),
+x_("""An activity can be defined as a task or set of tasks a learner must
 complete. Provide a clear statement of the task and consider any conditions
 that may help or hinder the learner in the performance of the task."""),
-u"")
+"")
         activity.emphasis = Idevice.SomeEmphasis
-        activity.addField(TextAreaField(x_(u"Activity"),
-x_(u"""Describe the tasks the learners should complete.""")))
+        activity.addField(TextAreaField(x_("Activity"),
+x_("""Describe the tasks the learners should complete.""")))
         idevices.append(activity)
 
         #self.save()
@@ -747,15 +747,15 @@ x_(u"""Describe the tasks the learners should complete.""")))
         """
         from exe.engine.genericidevice import GenericIdevice
 
-        readingAct = GenericIdevice(_(u"Reading Activity 0.11"),
-                                    u"reading",
-                                    _(u"University of Auckland"),
-                                    x_(u"""<p>The reading activity, as the name
+        readingAct = GenericIdevice(_("Reading Activity 0.11"),
+                                    "reading",
+                                    _("University of Auckland"),
+                                    x_("""<p>The reading activity, as the name
 suggests, should ask the learner to perform some form of activity. This activity
 should be directly related to the text the learner has been asked to read.
 Feedback to the activity where appropriate, can provide the learner with some
 reflective guidance.</p>"""),
-                                    x_(u"Teachers should keep the following "
+                                    x_("Teachers should keep the following "
                                         "in mind when using this iDevice: "
                                         "<ol>"
                                         "<li>"
@@ -790,57 +790,57 @@ reflective guidance.</p>"""),
                                         "</li>"
                                         "</ol>"))
         readingAct.emphasis = Idevice.SomeEmphasis
-        readingAct.addField(TextAreaField(_(u"What to read"),
-_(u"""Enter the details of the reading including reference details. The
+        readingAct.addField(TextAreaField(_("What to read"),
+_("""Enter the details of the reading including reference details. The
 referencing style used will depend on the preference of your faculty or
 department.""")))
-        readingAct.addField(TextAreaField(_(u"Activity"),
-_(u"""Describe the tasks related to the reading learners should undertake.
+        readingAct.addField(TextAreaField(_("Activity"),
+_("""Describe the tasks related to the reading learners should undertake.
 This helps demonstrate relevance for learners.""")))
 
-        readingAct.addField(FeedbackField(_(u"Feedback"),
-_(u"""Use feedback to provide a summary of the points covered in the reading,
+        readingAct.addField(FeedbackField(_("Feedback"),
+_("""Use feedback to provide a summary of the points covered in the reading,
 or as a starting point for further analysis of the reading by posing a question
 or providing a statement to begin a debate.""")))
 
-        objectives = GenericIdevice(_(u"Objectives"),
-                                    u"objectives",
-                                    _(u"University of Auckland"),
-_(u"""Objectives describe the expected outcomes of the learning and should
+        objectives = GenericIdevice(_("Objectives"),
+                                    "objectives",
+                                    _("University of Auckland"),
+_("""Objectives describe the expected outcomes of the learning and should
 define what the learners will be able to do when they have completed the
 learning tasks."""),
-                                    u"")
+                                    "")
         objectives.emphasis = Idevice.SomeEmphasis
 
-        objectives.addField(TextAreaField(_(u"Objectives"),
-_(u"""Type the learning objectives for this resource.""")))
+        objectives.addField(TextAreaField(_("Objectives"),
+_("""Type the learning objectives for this resource.""")))
         self.generic.append(objectives)
 
-        preknowledge = GenericIdevice(_(u"Preknowledge"),
-                                      u"preknowledge",
+        preknowledge = GenericIdevice(_("Preknowledge"),
+                                      "preknowledge",
                                       "",
-_(u"""Prerequisite knowledge refers to the knowledge learners should already
+_("""Prerequisite knowledge refers to the knowledge learners should already
 have in order to be able to effectively complete the learning. Examples of
 pre-knowledge can be: <ul>
 <li>        Learners must have level 4 English </li>
 <li>        Learners must be able to assemble standard power tools </li></ul>
-"""), u"")
+"""), "")
         preknowledge.emphasis = Idevice.SomeEmphasis
-        preknowledge.addField(TextAreaField(_(u"Preknowledge"),
-_(u"""Describe the prerequisite knowledge learners should have to effectively
+        preknowledge.addField(TextAreaField(_("Preknowledge"),
+_("""Describe the prerequisite knowledge learners should have to effectively
 complete this learning.""")))
         self.generic.append(preknowledge)
 
-        activity = GenericIdevice(_(u"Activity"),
-                                  u"activity",
-                                  _(u"University of Auckland"),
-_(u"""An activity can be defined as a task or set of tasks a learner must
+        activity = GenericIdevice(_("Activity"),
+                                  "activity",
+                                  _("University of Auckland"),
+_("""An activity can be defined as a task or set of tasks a learner must
 complete. Provide a clear statement of the task and consider any conditions
 that may help or hinder the learner in the performance of the task."""),
-u"")
+"")
         activity.emphasis = Idevice.SomeEmphasis
-        activity.addField(TextAreaField(_(u"Activity"),
-_(u"""Describe the tasks the learners should complete.""")))
+        activity.addField(TextAreaField(_("Activity"),
+_("""Describe the tasks the learners should complete.""")))
         self.generic.append(activity)
 
         #self.save()

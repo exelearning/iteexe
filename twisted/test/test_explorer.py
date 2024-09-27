@@ -46,11 +46,11 @@ class TestBrowser(unittest.TestCase):
     def test_chain(self):
         "Following a chain of Explorers."
         xplorer = self.pool.getExplorer(self.testThing, 'testThing')
-        self.failUnlessEqual(xplorer.id, id(self.testThing))
-        self.failUnlessEqual(xplorer.identifier, 'testThing')
+        self.assertEqual(xplorer.id, id(self.testThing))
+        self.assertEqual(xplorer.identifier, 'testThing')
 
         dxplorer = xplorer.get_elements()[1]
-        self.failUnlessEqual(dxplorer.id, id(self.testThing[1]))
+        self.assertEqual(dxplorer.id, id(self.testThing[1]))
 
 class Watcher:
     zero = 0
@@ -94,10 +94,10 @@ class FIXME_Watch:
 
         testThing.someAttr = 'someValue'
 
-        self.failUnlessEqual(testThing.someAttr, 'someValue')
-        self.failUnless(self.watcher.len())
+        self.assertEqual(testThing.someAttr, 'someValue')
+        self.assertTrue(self.watcher.len())
         olink = self.watcher.links[-1]
-        self.failUnlessEqual(olink.id, id(testThing))
+        self.assertEqual(olink.id, id(testThing))
 
     def test_setAttrChain(self):
         "Setting an attribute on a watched object that has __setattr__"
@@ -109,10 +109,10 @@ class FIXME_Watch:
 
         testThing.someAttr = 'ZORT'
 
-        self.failUnlessEqual(testThing.someAttr, 'TROZ')
-        self.failUnless(self.watcher.len())
+        self.assertEqual(testThing.someAttr, 'TROZ')
+        self.assertTrue(self.watcher.len())
         olink = self.watcher.links[-1]
-        self.failUnlessEqual(olink.id, id(testThing))
+        self.assertEqual(olink.id, id(testThing))
 
 
     def test_method(self):
@@ -124,11 +124,11 @@ class FIXME_Watch:
             self.watcher.setZero()
 
             rval = testThing.bip()
-            self.failUnlessEqual(rval, ('pencil',))
+            self.assertEqual(rval, ('pencil',))
 
-            self.failUnless(self.watcher.len())
+            self.assertTrue(self.watcher.len())
             olink = self.watcher.links[-1]
-            self.failUnlessEqual(olink.id, id(testThing))
+            self.assertEqual(olink.id, id(testThing))
 
 
 def function_noArgs():
@@ -143,8 +143,9 @@ def function_variable(*a, **kw):
     "A function which accepts a variable number of args and keywords."
     return a, kw
 
-def function_crazy((alpha, beta), c, d=range(4), **kw):
+def function_crazy(xxx_todo_changeme, c, d=list(range(4)), **kw):
     "A function with a mad crazy signature."
+    (alpha, beta) = xxx_todo_changeme
     return alpha, beta, c, d, kw
 
 class TestBrowseFunction(unittest.TestCase):
@@ -164,11 +165,11 @@ class TestBrowseFunction(unittest.TestCase):
 
             xplorer = self.pool.getExplorer(f, f_name)
 
-            self.failUnlessEqual(xplorer.id, id(f))
+            self.assertEqual(xplorer.id, id(f))
 
-            self.failUnless(isinstance(xplorer, explorer.ExplorerFunction))
+            self.assertTrue(isinstance(xplorer, explorer.ExplorerFunction))
 
-            self.failUnlessEqual(xplorer.name, f_name)
+            self.assertEqual(xplorer.name, f_name)
 
     def test_signature_noArgs(self):
         """Testing zero-argument function signature.
@@ -176,7 +177,7 @@ class TestBrowseFunction(unittest.TestCase):
 
         xplorer = self.pool.getExplorer(function_noArgs, 'function_noArgs')
 
-        self.failUnlessEqual(len(xplorer.signature), 0)
+        self.assertEqual(len(xplorer.signature), 0)
 
     def test_signature_simple(self):
         """Testing simple function signature.
@@ -186,7 +187,7 @@ class TestBrowseFunction(unittest.TestCase):
 
         expected_signature = ('a','b','c')
 
-        self.failUnlessEqual(xplorer.signature.name, expected_signature)
+        self.assertEqual(xplorer.signature.name, expected_signature)
 
     def test_signature_variable(self):
         """Testing variable-argument function signature.
@@ -198,9 +199,9 @@ class TestBrowseFunction(unittest.TestCase):
         expected_names = ('a','kw')
         signature = xplorer.signature
 
-        self.failUnlessEqual(signature.name, expected_names)
-        self.failUnless(signature.is_varlist(0))
-        self.failUnless(signature.is_keyword(1))
+        self.assertEqual(signature.name, expected_names)
+        self.assertTrue(signature.is_varlist(0))
+        self.assertTrue(signature.is_keyword(1))
 
     def test_signature_crazy(self):
         """Testing function with crazy signature.
@@ -211,26 +212,25 @@ class TestBrowseFunction(unittest.TestCase):
 
         expected_signature = [{'name': 'c'},
                               {'name': 'd',
-                               'default': range(4)},
+                               'default': list(range(4))},
                               {'name': 'kw',
                                'keywords': 1}]
 
         # The name of the first argument seems to be indecipherable,
         # but make sure it has one (and no default).
-        self.failUnless(signature.get_name(0))
-        self.failUnless(not signature.get_default(0)[0])
+        self.assertTrue(signature.get_name(0))
+        self.assertTrue(not signature.get_default(0)[0])
 
-        self.failUnlessEqual(signature.get_name(1), 'c')
+        self.assertEqual(signature.get_name(1), 'c')
 
         # Get a list of values from a list of ExplorerImmutables.
-        arg_2_default = map(lambda l: l.value,
-                            signature.get_default(2)[1].get_elements())
+        arg_2_default = [l.value for l in signature.get_default(2)[1].get_elements()]
 
-        self.failUnlessEqual(signature.get_name(2), 'd')
-        self.failUnlessEqual(arg_2_default, range(4))
+        self.assertEqual(signature.get_name(2), 'd')
+        self.assertEqual(arg_2_default, list(range(4)))
 
-        self.failUnlessEqual(signature.get_name(3), 'kw')
-        self.failUnless(signature.is_keyword(3))
+        self.assertEqual(signature.get_name(3), 'kw')
+        self.assertTrue(signature.is_keyword(3))
 
 if __name__ == '__main__':
     unittest.main()

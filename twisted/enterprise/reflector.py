@@ -122,7 +122,7 @@ class Reflector:
     def removeFromCache(self, rowObject):
         """NOTE: should this be recursive!??"""
         key = rowObject.getKeyTuple()
-        if self.rowCache.has_key(key):
+        if key in self.rowCache:
             del self.rowCache[key]
 
     ####### Row Operations ########

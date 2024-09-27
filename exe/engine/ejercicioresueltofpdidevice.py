@@ -49,10 +49,10 @@ class Question(Persistable):
         """
         Initialize 
         """
-        self.questionTextArea = TextAreaField(u'', u'', u'')
+        self.questionTextArea = TextAreaField('', '', '')
         self.questionTextArea.idevice = idevice 
 
-        self.feedbackTextArea = TextAreaField(u'', u'', u'')
+        self.feedbackTextArea = TextAreaField('', '', '')
         self.feedbackTextArea.idevice = idevice
 
     def setupImage(self, idevice):
@@ -61,8 +61,8 @@ class Question(Persistable):
         images are now embedded straight into the feedbackTextArea,
         but this routine is kept around for upgrade paths from old elps.
         """
-        self.image = ImageField(x_(u"Image"),
-                                x_(u"Choose an optional image to be shown to the student "
+        self.image = ImageField(x_("Image"),
+                                x_("Choose an optional image to be shown to the student "
                                     "on completion of this question")) 
         self.image.idevice = idevice
         self.image.defaultImage = idevice.defaultImage
@@ -110,7 +110,7 @@ class Question(Persistable):
         """
         Upgrades to version 0.24
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
         self.image.isFeedback   = True
     
 
@@ -195,9 +195,9 @@ class EjercicioresueltofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self,
-                         x_(u"FPD - Translation"),
-                         x_(u"University of Auckland"), 
-                         x_(u"""A case study is a device that provides learners 
+                         x_("FPD - Translation"),
+                         x_("University of Auckland"), 
+                         x_("""A case study is a device that provides learners 
 with a simulation that has an educational basis. It takes a situation, generally 
 based in reality, and asks learners to demonstrate or describe what action they 
 would take to complete a task or resolve a situation. The case study allows 
@@ -211,24 +211,24 @@ case study</li>
 if run in a classroom situation can teams be setup to work on different aspects
 of the case and if so how are ideas feed back to the class</li></ul>"""), 
                          "",
-                         u"ejercicioresueltofpd")
+                         "ejercicioresueltofpd")
 #        self.emphasis     = Idevice.SomeEmphasis
         self.emphasis     = "_ejercicioresueltofpd"
         
-        self._storyInstruc = x_(u"""Create the case story. A good case is one 
+        self._storyInstruc = x_("""Create the case story. A good case is one 
 that describes a controversy or sets the scene by describing the characters 
 involved and the situation. It should also allow for some action to be taken 
 in order to gain resolution of the situation.""")
-        self.storyTextArea = TextAreaField(x_(u'Story:'), self._storyInstruc, story)
+        self.storyTextArea = TextAreaField(x_('Story:'), self._storyInstruc, story)
         self.storyTextArea.idevice = self
 
 
         self.questions    = []
-        self._questionInstruc = x_(u"""Describe the activity tasks relevant 
+        self._questionInstruc = x_("""Describe the activity tasks relevant 
 to the case story provided. These could be in the form of questions or 
 instructions for activity which may lead the learner to resolving a dilemma 
 presented. """)
-        self._feedbackInstruc = x_(u"""Provide relevant feedback on the 
+        self._feedbackInstruc = x_("""Provide relevant feedback on the 
 situation.""")
         if defaultImage is None:
             defaultImage = G.application.config.webDir/'images'/DEFAULT_IMAGE
@@ -358,7 +358,7 @@ situation.""")
         Upgrades the node from version 0 to 1.
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
         self.icon = "ejercicioresuelto"
    
 
@@ -367,7 +367,7 @@ situation.""")
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis     = Idevice.SomeEmphasis
         self.emphasis     = "_ejercicioresueltofpd"
         
@@ -406,15 +406,15 @@ situation.""")
         Taking the old unicode string fields, 
         and converting them into a image-enabled TextAreaFields:
         """
-        self.storyTextArea = TextAreaField(x_(u'Story:'), 
+        self.storyTextArea = TextAreaField(x_('Story:'), 
                                  self._storyInstruc, self.story)
         self.storyTextArea.idevice = self
         for question in self.questions:
-            question.questionTextArea = TextAreaField(u'', 
-                                            u'', question.question)
+            question.questionTextArea = TextAreaField('', 
+                                            '', question.question)
             question.questionTextArea.idevice = self
-            question.feedbackTextArea = TextAreaField(u'', 
-                                            u'', question.feedback)
+            question.feedbackTextArea = TextAreaField('', 
+                                            '', question.feedback)
             question.feedbackTextArea.idevice = self
 
     def upgradeToVersion8(self):
@@ -439,10 +439,10 @@ situation.""")
 
     def upgradeToVersion10(self):
 
-        if self._title == u"FPD - Ejercicio Resuelto":
-            self._title = u"FPD - Translation"
-        if self._title == u"Ejercicio Resuelto":
-            self._title = u"Translation"
+        if self._title == "FPD - Ejercicio Resuelto":
+            self._title = "FPD - Translation"
+        if self._title == "Ejercicio Resuelto":
+            self._title = "Translation"
 
     def embedImagesInFeedback(self):
         """

@@ -9,14 +9,14 @@ Plugin system for Twisted.
 @author: U{Glyph Lefkowitz<mailto:glyph@twistedmatrix.com>}
 """
 
-from __future__ import generators
+
 
 import os, errno
 
 from zope.interface import Interface, providedBy
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
@@ -91,7 +91,7 @@ class CachedDropin(object):
 def _generateCacheEntry(provider):
     dropin = CachedDropin(provider.__name__,
                           provider.__doc__)
-    for k, v in provider.__dict__.iteritems():
+    for k, v in provider.__dict__.items():
         plugin = IPlugin(v, None)
         if plugin is not None:
             cachedPlugin = CachedPlugin(dropin, k, v.__doc__, list(providedBy(plugin)))
@@ -135,7 +135,7 @@ def getCache(module):
             dirtyCache = True
         try:
             dropinNames = os.listdir(p)
-        except WindowsError, e:
+        except WindowsError as e:
             if e.errno == ERROR_PATH_NOT_FOUND:
                 continue
             elif e.errno == ERROR_INVALID_NAME:
@@ -143,7 +143,7 @@ def getCache(module):
                 continue
             else:
                 raise
-        except OSError, ose:
+        except OSError as ose:
             if ose.errno not in (errno.ENOENT, errno.ENOTDIR):
                 raise
             else:
@@ -159,7 +159,7 @@ def getCache(module):
                     except:
                         log.err()
 
-        for moduleName, lastChanged in pys.iteritems():
+        for moduleName, lastChanged in pys.items():
             if lastChanged >= lastCached or moduleName not in cache:
                 dirtyCache = True
                 try:
@@ -184,7 +184,7 @@ def getCache(module):
                 f.close()
                 stage = 'renaming'
                 os.rename(tmpCacheFile, dropcache)
-            except (OSError, IOError), e:
+            except (OSError, IOError) as e:
                 # A large number of errors can occur here.  There's nothing we
                 # can really do about any of them, but they are also non-fatal
                 # (they only slow us down by preventing results from being
@@ -208,7 +208,7 @@ def getPlugins(interface, package=twisted.plugins):
     @return: An iterator of plugins.
     """
     allDropins = getCache(package)
-    for dropin in allDropins.itervalues():
+    for dropin in allDropins.values():
         for plugin in dropin.plugins:
             try:
                 adapted = interface(plugin, None)

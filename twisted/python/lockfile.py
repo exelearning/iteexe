@@ -15,7 +15,7 @@ import errno, os
 from time import time as _uniquefloat
 
 def unique():
-    return str(long(_uniquefloat() * 1000))
+    return str(int(_uniquefloat() * 1000))
 
 try:
     from os import symlink
@@ -85,7 +85,7 @@ class FilesystemLock:
         """
         try:
             pid = readlink(self.name)
-        except (OSError, IOError), e:
+        except (OSError, IOError) as e:
             if e.errno != errno.ENOENT:
                 raise
             self.clean = True
@@ -94,7 +94,7 @@ class FilesystemLock:
                 return False
             try:
                 os.kill(int(pid), 0)
-            except (OSError, IOError), e:
+            except (OSError, IOError) as e:
                 if e.errno != errno.ESRCH:
                     raise
                 rmlink(self.name)

@@ -44,7 +44,7 @@ def _literalize(args):
     for a in args:
         if isinstance(a, bool):
             argstr.append(str(a).lower())
-        elif isinstance(a, (int, float, long, _literal)):
+        elif isinstance(a, (int, float, _literal)):
             argstr.append(str(a))
         else:
             argstr.append("'%s'" % (flt(a),))
@@ -180,21 +180,21 @@ class LiveEvil(object):
         """
         if self.outputConduit:
             self.cancelNoops()
-            if DEBUG: print "SENDING SCRIPT", script
+            if DEBUG: print("SENDING SCRIPT", script)
             self.outputConduit.callback(str(script))
             self.outputConduit = None
         else:
             self.outputBuffer.append(script)
-            if DEBUG: print "Output buffered!", script
+            if DEBUG: print("Output buffered!", script)
 
     def handleInput(self, identifier, *args):
         if identifier == 'close':
-            if DEBUG: print "CLIENT ACKED CLOSE"
+            if DEBUG: print("CLIENT ACKED CLOSE")
             ## This happens in a callLater(0) from the original request
             self.onClosed.callback(None)
             self.closed = True
             self.onClosed = defer.Deferred()
-        if DEBUG: print "Dispatching event to observer", identifier, args
+        if DEBUG: print("Dispatching event to observer", identifier, args)
         try:
             ## If the identifier provided is the fully-qualified name of a callable,
             ## The function was registered with no closure and we can get to it
@@ -206,14 +206,14 @@ class LiveEvil(object):
             except:
                 log.err()
         except (AttributeError, ValueError):
-            if DEBUG: print "Observers", self.events._subscribers
+            if DEBUG: print("Observers", self.events._subscribers)
             try:
                 self.events.publish(identifier, *(self, ) + args)
             except:
                 log.err()
 
     def close(self):
-        if DEBUG: print "CLOSE WAS CALLED"
+        if DEBUG: print("CLOSE WAS CALLED")
         self.call('nevow_closeLive')
 
     ## Here is some api your handlers can use to more easily manipulate the live page
@@ -264,7 +264,7 @@ class Output(object):
         request.channel._savedTimeOut = None
         request.setHeader("Cache-Control", "no-cache")
         request.setHeader("Pragma", "no-cache")
-        if DEBUG: print "OUTPUT RENDER", request.uri, request
+        if DEBUG: print("OUTPUT RENDER", request.uri, request)
 
         session = request.getSession()
         mind = session.getComponent(ILiveEvil)
@@ -392,7 +392,7 @@ def handler(*args, **kw):
     if 'identifier' in kw:
         identifier = kw['identifier']
     else:
-        if callit.func_closure or (hasattr(callit, 'im_self') and callit.im_self is not None):
+        if callit.__closure__ or (hasattr(callit, 'im_self') and callit.__self__ is not None):
             identifier = None
         else:
             identifier = reflect.qual(callit)

@@ -13,7 +13,7 @@ warnings.warn("This module is deprecated, please use Woven instead.", Deprecatio
 import string, time, types, traceback, pprint, sys, os
 import linecache
 import re
-from cStringIO import StringIO
+from io import StringIO
 
 # Twisted Imports
 from twisted.python import failure, log, rebuild, reflect, util
@@ -21,16 +21,16 @@ from twisted.internet import defer
 from twisted.protocols import http
 
 # Sibling Imports
-import html, resource, error
-import util as webutil
+from . import html, resource, error
+from . import util as webutil
 
 #backwards compatibility
-from util import formatFailure, htmlrepr, htmlUnknown, htmlDict, htmlList,\
+from .util import formatFailure, htmlrepr, htmlUnknown, htmlDict, htmlList,\
                  htmlInst, htmlString, htmlReprTypes
 
 
 
-from server import NOT_DONE_YET
+from .server import NOT_DONE_YET
 
 True = (1==1)
 False = not True
@@ -134,7 +134,7 @@ class Presentation(Widget):
             if issubclass(base, Presentation) and base is not Presentation:
                 self.addClassVars(namespace, base)
         # 'lower' classes in the class heirarchy take precedence.
-        for k in Class.__dict__.keys():
+        for k in list(Class.__dict__.keys()):
             namespace[k] = getattr(self, k)
 
     def addVariables(self, namespace, request):
@@ -151,7 +151,7 @@ class Presentation(Widget):
         """Utility: Call a method like StreamWidget's 'stream'.
         """
         io = StringIO()
-        apply(call, (io.write,) + args, kw)
+        call(*(io.write,) + args, **kw)
         return io.getvalue()
 
     def display(self, request):
@@ -175,11 +175,11 @@ class Presentation(Widget):
                     log.deferr()
                     tm.append(webutil.formatFailure(failure.Failure()))
                 else:
-                    if isinstance(x, types.ListType):
+                    if isinstance(x, list):
                         tm.extend(x)
                     elif isinstance(x, Widget):
                         val = x.display(request)
-                        if not isinstance(val, types.ListType):
+                        if not isinstance(val, list):
                             raise Exception("%s.display did not return a list, it returned %s!" % (x.__class__, repr(val)))
                         tm.extend(val)
                     else:
@@ -376,7 +376,7 @@ class Form(Widget):
                 description = ""
 
             if inputType == 'checkbox':
-                if request.args.has_key('__checkboxes__'):
+                if '__checkboxes__' in request.args:
                     if inputName in request.args['__checkboxes__']:
                         inputValue = 1
                     else:
@@ -384,7 +384,7 @@ class Form(Widget):
                 else:
                     inputValue = 0
             elif inputType in ('checkgroup', 'radio'):
-                if request.args.has_key(inputName):
+                if inputName in request.args:
                     keys = request.args[inputName]
                 else:
                     keys = []
@@ -393,7 +393,7 @@ class Form(Widget):
                 for optionName, optionDisplayName, checked in iv:
                     checked = optionName in keys
                     inputValue.append([optionName, optionDisplayName, checked])
-            elif request.args.has_key(inputName):
+            elif inputName in request.args:
                 iv = request.args[inputName][0]
                 if inputType in ['menu', 'multimenu']:
                     if iv in inputValue:
@@ -478,7 +478,7 @@ class Form(Widget):
         for field in form:
             inputType, displayName, inputName, inputValue = field[:4]
             if inputType == 'checkbox':
-                if request.args.has_key('__checkboxes__'):
+                if '__checkboxes__' in request.args:
                     if inputName in request.args['__checkboxes__']:
                         formData = 1
                     else:
@@ -486,13 +486,13 @@ class Form(Widget):
                 else:
                     formData = 0
             elif inputType in ['checkgroup', 'radio', 'multimenu']:
-                if args.has_key(inputName):
+                if inputName in args:
                     formData = args[inputName]
                     del args[inputName]
                 else:
                     formData = []
             else:
-                if not args.has_key(inputName):
+                if inputName not in args:
                     raise FormInputError("missing field %s." % repr(inputName))
                 formData = args[inputName]
                 del args[inputName]
@@ -510,11 +510,11 @@ class Form(Widget):
         if submitAction:
             submitAction = submitAction[0]
         for field in ['submit', '__formtype__', '__checkboxes__']:
-            if args.has_key(field):
+            if field in args:
                 del args[field]
         if args and not self.formAcceptExtraArgs:
             raise FormInputError("unknown fields: %s" % repr(args))
-        return apply(self.process, (write, request, submitAction), kw)
+        return self.process(*(write, request, submitAction), **kw)
 
     def formatError(self,error):
         """Format an error message.
@@ -527,10 +527,10 @@ class Form(Widget):
         args = request.args
         fid = self.getFormID()
         return (args and # there are arguments to the request
-                args.has_key('__formtype__') and # this is a widgets.Form request
+                '__formtype__' in args and # this is a widgets.Form request
                 args['__formtype__'][0] == reflect.qual(self.__class__) and # it is for a form of my type
                 ((not fid) or # I am only allowed one form per page
-                 (args.has_key('__formid__') and # if I distinguish myself from others, the request must too
+                 ('__formid__' in args and # if I distinguish myself from others, the request must too
                   args['__formid__'][0] == fid))) # I am in fact the same
 
     def tryAgain(self, err, req):
@@ -568,7 +568,7 @@ class Form(Widget):
             val = self._doProcess(form, write, request)
             if val:
                 l.extend(val)
-        except FormInputError, fie:
+        except FormInputError as fie:
             write(self.formatError(str(fie)))
         return l
 
@@ -671,7 +671,7 @@ class RenderSession:
             result = [FORGET_IT]
 
         # Make sure result is a sequence,
-        if not type(result) in (types.ListType, types.TupleType):
+        if not type(result) in (list, tuple):
             result = [result]
 
         # If the deferred does not wish to produce its result all at
@@ -682,19 +682,19 @@ class RenderSession:
         if result[0] is NOT_DONE_YET:
             done = 0
             result = result[1]
-            if not type(result) in (types.ListType, types.TupleType):
+            if not type(result) in (list, tuple):
                 result = [result]
         else:
             done = 1
 
-        for i in xrange(len(result)):
+        for i in range(len(result)):
             item = result[i]
             if isinstance(item, defer.Deferred):
                 self._addDeferred(item, result, i)
 
         for position in range(len(self.lst)):
             item = self.lst[position]
-            if type(item) is types.TupleType and len(item) > 0:
+            if type(item) is tuple and len(item) > 0:
                 if item[0] is sentinel:
                     break
         else:
@@ -730,10 +730,10 @@ class RenderSession:
                 self.forgotten = 1
                 return
 
-            if isinstance(item, types.StringType):
+            if isinstance(item, bytes):
                 self.beforeBody = 0
                 self.request.write(item)
-            elif type(item) is types.TupleType and len(item) > 0:
+            elif type(item) is tuple and len(item) > 0:
                 if isinstance(item[0], self.Sentinel):
                     return
             elif isinstance(item, failure.Failure):
@@ -904,9 +904,9 @@ class Gadget(resource.Resource):
         #XXX: delete this after a while.
         if hasattr(self, "page"):
             log.msg("Gadget.page is deprecated, use Gadget.pageFactory instead")
-            return apply(self.page, args, kwargs)
+            return self.page(*args, **kwargs)
         else:
-            return apply(WidgetPage, args, kwargs)
+            return WidgetPage(*args, **kwargs)
 
     def getChild(self, path, request):
         if path == '':
@@ -921,14 +921,14 @@ class Gadget(resource.Resource):
                 p = self.pageFactory(widget)
                 p.isLeaf = getattr(widget,'isLeaf',0)
                 return p
-        elif self.paths.has_key(path):
+        elif path in self.paths:
             prefix = getattr(sys.modules[self.__module__], '__file__', '')
             if prefix:
                 prefix = os.path.abspath(os.path.dirname(prefix))
             return static.File(os.path.join(prefix, self.paths[path]))
 
         elif path == '__reload__':
-            return self.pageFactory(Reloader(map(reflect.namedModule, [self.__module__] + self.modules)))
+            return self.pageFactory(Reloader(list(map(reflect.namedModule, [self.__module__] + self.modules))))
         else:
             return error.NoResource("No such child resource in gadget.")
 
@@ -1054,4 +1054,4 @@ class WebWidgetNodeMutator(template.NodeMutator):
 
 components.registerAdapter(WebWidgetNodeMutator, Widget, template.INodeMutator)
 
-import static
+from . import static

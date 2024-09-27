@@ -28,7 +28,7 @@ WebServer module
 
 # Redirect std err for importing twisted and nevow
 import sys
-from cStringIO import StringIO
+from io import StringIO
 sys.stderr, oldStdErr = StringIO(), sys.stderr
 sys.stdout, oldStdOut = StringIO(), sys.stdout
 try:
@@ -125,7 +125,7 @@ class WebServer:
                            "after listenTCP on port# %d", test_port_num)
                 found_port = 1
                 port_test_done = 1
-            except CannotListenError, exc:
+            except CannotListenError as exc:
                 log.debug("find_port(): caught exception after listenTCP " \
                          + "on port# %d, exception = %s", test_port_num, exc)
                 last_exception = exc
@@ -147,7 +147,7 @@ class WebServer:
                 log.error("find_port(): Can't listen on interface 127.0.0.1"\
                         + ", ports %s-%s, last exception: %s" % \
                          (self.config.port, test_port_num,  \
-                          unicode(last_exception)))
+                          str(last_exception)))
 
     def run(self):
         """
@@ -194,8 +194,8 @@ class WebServer:
 
     def monitor(self):
         if self.monitoring:
-            for mainpage in self.root.mainpages.values():
-                for mainpage in mainpage.values():
+            for mainpage in list(self.root.mainpages.values()):
+                for mainpage in list(mainpage.values()):
                     if mainpage.clientHandleFactory.clientHandles:
                         reactor.callLater(10, self.monitor)
                         return

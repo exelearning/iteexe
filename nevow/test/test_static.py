@@ -55,43 +55,43 @@ class Range(unittest.TestCase):
     def testBodyLength(self):
         self.request._headers['range'] = 'bytes=0-1999'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(len(r.v), 2000)
+        self.assertEqual(len(r.v), 2000)
 
     def testBodyContent(self):
         self.request._headers['range'] = 'bytes=0-1999'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(r.v, 200 * '0123456789')
+        self.assertEqual(r.v, 200 * '0123456789')
 
     def testContentLength(self):
         """Content-Length of a request is correct."""
         self.request._headers['range'] = 'bytes=0-1999'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(r.headers['content-length'], '2000')
+        self.assertEqual(r.headers['content-length'], '2000')
 
     def testContentRange(self):
         """Content-Range of a request is correct."""
         self.request._headers['range'] = 'bytes=0-1999'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(r.headers.get('content-range'), 'bytes 0-1999/8000')
+        self.assertEqual(r.headers.get('content-range'), 'bytes 0-1999/8000')
 
     def testBodyLength_offset(self):
         self.request._headers['range'] = 'bytes=3-10'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(len(r.v), 8)
+        self.assertEqual(len(r.v), 8)
 
     def testBodyContent_offset(self):
         self.request._headers['range'] = 'bytes=3-10'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(r.v, '34567890')
+        self.assertEqual(r.v, '34567890')
 
     def testContentLength_offset(self):
         """Content-Length of a request is correct."""
         self.request._headers['range'] = 'bytes=3-10'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(r.headers['content-length'], '8')
+        self.assertEqual(r.headers['content-length'], '8')
 
     def testContentRange_offset(self):
         """Content-Range of a request is correct."""
         self.request._headers['range'] = 'bytes=3-10'
         r = deferredRender(self.file, self.request)
-        self.assertEquals(r.headers.get('content-range'), 'bytes 3-10/8000')
+        self.assertEqual(r.headers.get('content-range'), 'bytes 3-10/8000')

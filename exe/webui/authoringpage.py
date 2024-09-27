@@ -45,7 +45,7 @@ class AuthoringPage(RenderableResource):
     AuthoringPage is responsible for creating the XHTML for the authoring
     area of the eXe web user interface.  
     """
-    name = u'authoring'
+    name = 'authoring'
 
     def __init__(self, parent):
         RenderableResource.__init__(self, parent)
@@ -90,14 +90,14 @@ class AuthoringPage(RenderableResource):
                     os.remove(os.path.join(root, name))
         topNode = self.package.currentNode
         if "action" in request.args:
-            if request.args["action"][0] == u"changeNode":
+            if request.args["action"][0] == "changeNode":
                 topNode = self.package.findNode(request.args["object"][0])
             elif "currentNode" in request.args:
                 topNode = self.package.findNode(request.args["currentNode"][0])
         elif "currentNode" in request.args:
             topNode = self.package.findNode(request.args["currentNode"][0])
 
-        log.debug(u"After authoringPage process" + repr(request.args))
+        log.debug("After authoringPage process" + repr(request.args))
         return topNode
 
     def render_GET(self, request=None):
@@ -105,21 +105,21 @@ class AuthoringPage(RenderableResource):
         Returns an XHTML string for viewing this page
         if 'request' is not passed, will generate psedo/debug html
         """
-        log.debug(u"render_GET "+repr(request))
+        log.debug("render_GET "+repr(request))
 
         topNode = self.package.root
         if request is not None:
             # Process args
-            for key, value in request.args.items():
-                request.args[key] = [unicode(value[0], 'utf8')]
+            for key, value in list(request.args.items()):
+                request.args[key] = [str(value[0], 'utf8')]
             topNode = self._process(request)
 
         #Update other authoring pages that observes the current package
         activeClient = None
         if "action" in request.args:
             if request.args['clientHandleId'][0] == "":
-                raise(Exception("Not clientHandleId defined"))
-            for client in self.parent.clientHandleFactory.clientHandles.values():
+                raise Exception
+            for client in list(self.parent.clientHandleFactory.clientHandles.values()):
                 if request.args['clientHandleId'][0] != client.handleId:
                     if client.handleId in self.parent.authoringPages:
                         destNode = None
@@ -144,40 +144,40 @@ class AuthoringPage(RenderableResource):
             extraCSS = ' exe-auto-math'
         if self.package.get_addAccessibilityToolbar():
             extraCSS += ' exe-atools'
-        html += u'<body onload="onLoadHandler();" class="exe-authoring-page'+extraCSS+' js">\n'
-        html += u"<form method=\"post\" "
+        html += '<body onload="onLoadHandler();" class="exe-authoring-page'+extraCSS+' js">\n'
+        html += "<form method=\"post\" "
 
         if request is None:
-            html += u'action="NO_ACTION"'
+            html += 'action="NO_ACTION"'
         else:
-            html += u"action=\""+request.path+"#currentBlock\""
-        html += u" id=\"contentForm\">"
-        html += u'<div id="main">\n'
-        html += common.hiddenField(u"action")
-        html += common.hiddenField(u"object")
-        html += common.hiddenField(u"isChanged", u"0")
-        html += common.hiddenField(u"currentNode", unicode(topNode.id))
-        html += common.hiddenField(u'clientHandleId', request.args['clientHandleId'][0])
-        html += u'<!-- start authoring page -->\n'
-        html += u'<div id="nodeDecoration">\n'
-        html += u'<div id="headerContent">\n'
-        html += u'<h1 id="nodeTitle">'
+            html += "action=\""+request.path+"#currentBlock\""
+        html += " id=\"contentForm\">"
+        html += '<div id="main">\n'
+        html += common.hiddenField("action")
+        html += common.hiddenField("object")
+        html += common.hiddenField("isChanged", "0")
+        html += common.hiddenField("currentNode", str(topNode.id))
+        html += common.hiddenField('clientHandleId', request.args['clientHandleId'][0])
+        html += '<!-- start authoring page -->\n'
+        html += '<div id="nodeDecoration">\n'
+        html += '<div id="headerContent">\n'
+        html += '<h1 id="nodeTitle">'
         html += escape(topNode.titleLong)
-        html += u'</h1>\n'
-        html += u'</div>\n'
-        html += u'</div>\n'
+        html += '</h1>\n'
+        html += '</div>\n'
+        html += '</div>\n'
         counter = 0
         msg = ''
         for block in self.blocks:
             # If we don't have a client, try to get it from request
             if activeClient is None:
-                for client in self.parent.clientHandleFactory.clientHandles.values():
+                for client in list(self.parent.clientHandleFactory.clientHandles.values()):
                     if request.args['clientHandleId'][0] == client.handleId:
                         activeClient = client
                         
             if not activeClient is None:
                 for resources in block.idevice.userResources:
-                    if resources.warningMsg != u'':
+                    if resources.warningMsg != '':
                         counter +=1
                         msg += (_('Warning: %s') % resources.warningMsg)
                         # Remove warning message
@@ -186,7 +186,7 @@ class AuthoringPage(RenderableResource):
                 activeClient.alert(msg)
             html += block.render(self.package.style)
 
-        html += u'</div>'
+        html += '</div>'
         style = G.application.config.styleStore.getStyle(self.package.style)
         
         html += common.renderLicense(self.package.license,"authoring")
@@ -212,69 +212,69 @@ class AuthoringPage(RenderableResource):
         #################################################################################
         #################################################################################
         
-        html += u'<html xmlns="http://www.w3.org/1999/xhtml" lang="'+myPreferencesPage.getSelectedLanguage()+'">\n'
-        html += u'<head>\n'
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe.css\" />"
+        html += '<html xmlns="http://www.w3.org/1999/xhtml" lang="'+myPreferencesPage.getSelectedLanguage()+'">\n'
+        html += '<head>\n'
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe.css\" />"
         
         # Use the Style's base.css file if it exists
         themePath = Path(G.application.config.stylesDir/self.package.style)
         themeBaseCSS = themePath.joinpath("base.css")
         if themeBaseCSS.exists():
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/base.css\" />" % self.package.style
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/base.css\" />" % self.package.style
         else:
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/base.css\" />"
             
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe_wikipedia.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_effects/exe_effects.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_highlighter/exe_highlighter.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_games/exe_games.css\" />"
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.css\" />" #93 (to do)
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/css/exe_wikipedia.css\" />"
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_effects/exe_effects.css\" />"
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_highlighter/exe_highlighter.css\" />"
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/exe_games/exe_games.css\" />"
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.css\" />" #93 (to do)
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"/style/%s/content.css\" />" % self.package.style
         if G.application.config.assumeMediaPlugins: 
-            html += u"<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
+            html += "<script type=\"text/javascript\">var exe_assume_media_plugins = true;</script>\n"
         #JR: anado una variable con el estilo
-        estilo = u'/style/%s/content.css' % self.package.style
+        estilo = '/style/%s/content.css' % self.package.style
         html += common.getJavaScriptStrings()
         # The games require additional strings
         html += common.getGamesJavaScriptStrings()
-        html += u"<script type=\"text/javascript\">"
-        html += u"var exe_style = '%s';top.exe_style = exe_style;" % estilo
+        html += "<script type=\"text/javascript\">"
+        html += "var exe_style = '%s';top.exe_style = exe_style;" % estilo
         # editorpane.py uses exe_style_dirname to auto-select the current style (just a provisional solution)
-        html += u"var exe_style_dirname = '%s'; top.exe_style_dirname = exe_style_dirname;" % self.package.style
-        html += u"var exe_package_name='"+self.package.name+"';"
+        html += "var exe_style_dirname = '%s'; top.exe_style_dirname = exe_style_dirname;" % self.package.style
+        html += "var exe_package_name='"+self.package.name+"';"
         html += 'var exe_export_format="'+common.getExportDocType()+'".toLowerCase();'
         html += 'var exe_editor_mode="'+myPreferencesPage.getEditorMode()+'";'
         html += 'var exe_editor_version="'+myPreferencesPage.getEditorVersion()+'";'
         html += '</script>\n'        
-        html += u'<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
+        html += '<script type="text/javascript" src="../jsui/native.history.js"></script>\n'
         htmlLang = G.application.config.locale
         if self.package.dublinCore.language!="":
             htmlLang = self.package.dublinCore.language
         for subDir in G.application.config.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
                 if  str(subDir.basename())==htmlLang and htmlLang!=myPreferencesPage.getSelectedLanguage():
-                    html += u'<script type="text/javascript" src="../jsui/i18n/'+htmlLang+'.js"></script>\n'
-                    html += u'<script type="text/javascript">var exe_elp_lang="'+htmlLang+'";</script>\n'
-        html += u'<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_lightbox/exe_lightbox.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_effects/exe_effects.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_highlighter/exe_highlighter.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/exe_games/exe_games.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/fix_webm_duration/fix_webm_duration.js"></script>\n'
-        html += u'<script type="text/javascript" src="/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js"></script>\n' #93 (to do)
-        html += u'<script type="text/javascript" src="/scripts/common.js"></script>\n'
+                    html += '<script type="text/javascript" src="../jsui/i18n/'+htmlLang+'.js"></script>\n'
+                    html += '<script type="text/javascript">var exe_elp_lang="'+htmlLang+'";</script>\n'
+        html += '<script type="text/javascript" src="/scripts/authoring.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/exe_jquery.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/exe_lightbox/exe_lightbox.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/exe_effects/exe_effects.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/exe_highlighter/exe_highlighter.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/exe_games/exe_games.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/fix_webm_duration/fix_webm_duration.js"></script>\n'
+        html += '<script type="text/javascript" src="/scripts/tinymce_4/js/tinymce/plugins/abcmusic/export/exe_abcmusic.js"></script>\n' #93 (to do)
+        html += '<script type="text/javascript" src="/scripts/common.js"></script>\n'
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += '<script type="text/javascript">document.write(unescape("%3Cscript src=\'" + eXeLearning_settings.wysiwyg_settings_path + "\' type=\'text/javascript\'%3E%3C/script%3E"));</script>';
         html += common.printJavaScriptIdevicesScripts('edition',self)
-        html += u'<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
-        html += u'<meta http-equiv="content-type" content="text/html; '
-        html += u' charset=UTF-8" />\n'
+        html += '<title>"+_("eXe : elearning XHTML editor")+"</title>\n'
+        html += '<meta http-equiv="content-type" content="text/html; '
+        html += ' charset=UTF-8" />\n'
         style = G.application.config.styleStore.getStyle(self.package.style)
         if style.hasValidConfig():
             html += style.get_edition_extra_head()        
         html += common.getExtraHeadContent(self.package)
-        html += u'</head>\n'
+        html += '</head>\n'
         return html
 
 
@@ -285,8 +285,8 @@ class AuthoringPage(RenderableResource):
         for idevice in node.idevices:
             block = g_blockFactory.createBlock(self, idevice)
             if not block:
-                log.critical(u"Unable to render iDevice.")
-                raise Error(u"Unable to render iDevice.")
+                log.critical("Unable to render iDevice.")
+                raise Error("Unable to render iDevice.")
             self.blocks.append(block)
 
 # ===========================================================================

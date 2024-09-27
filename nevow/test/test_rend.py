@@ -63,7 +63,7 @@ class TestPage(unittest.TestCase):
         xhtml = '<ul id="nav"><li>one</li><li>two</li><li>three</li></ul>'
         r = rend.Page(docFactory=loaders.htmlstr(xhtml))
         result = deferredRender(r)
-        self.assertEquals(result, xhtml)
+        self.assertEqual(result, xhtml)
 
     def test_extend(self):
         xhtml = '<ul id="nav"><li>one</li><li>two</li><li>three</li></ul>'
@@ -71,7 +71,7 @@ class TestPage(unittest.TestCase):
             docFactory = loaders.htmlstr(xhtml)
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, xhtml)
+        self.assertEqual(result, xhtml)
             
     def test_data(self):
 
@@ -83,7 +83,7 @@ class TestPage(unittest.TestCase):
                 return ['one', 'two', 'three']
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<ul id="nav"><li>one</li><li>two</li><li>three</li></ul>')
+        self.assertEqual(result, '<ul id="nav"><li>one</li><li>two</li><li>three</li></ul>')
 
     def test_noData(self):
         """Test when data is missing, i.e. self.original is None and no data
@@ -107,7 +107,7 @@ class TestPage(unittest.TestCase):
 
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<span>abc</span>')
+        self.assertEqual(result, '<span>abc</span>')
         
     def test_dataAndRender(self):
 
@@ -133,7 +133,7 @@ class TestPage(unittest.TestCase):
 
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<table><tr><th>English</th><th>French</th></tr><tr><td>one</td><td>un/une</td></tr><tr><td>two</td><td>deux</td></tr><tr><td>three</td><td>trois</td></tr></table>')
+        self.assertEqual(result, '<table><tr><th>English</th><th>French</th></tr><tr><td>one</td><td>un/une</td></tr><tr><td>two</td><td>deux</td></tr><tr><td>three</td><td>trois</td></tr></table>')
 
     def test_stanData(self):
 
@@ -147,7 +147,7 @@ class TestPage(unittest.TestCase):
         
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<ul><li>one</li><li>two</li><li>three</li></ul>')
+        self.assertEqual(result, '<ul><li>one</li><li>two</li><li>three</li></ul>')
         
     def test_stanRender(self):
 
@@ -160,7 +160,7 @@ class TestPage(unittest.TestCase):
 
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<span>abc</span>')
+        self.assertEqual(result, '<span>abc</span>')
         
     def test_stanDataAndRender(self):
 
@@ -187,7 +187,7 @@ class TestPage(unittest.TestCase):
             
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<table><tr><th>English</th><th>French</th></tr><tr><td>one</td><td>un/une</td></tr><tr><td>two</td><td>deux</td></tr><tr><td>three</td><td>trois</td></tr></table>')
+        self.assertEqual(result, '<table><tr><th>English</th><th>French</th></tr><tr><td>one</td><td>un/une</td></tr><tr><td>two</td><td>deux</td></tr><tr><td>three</td><td>trois</td></tr></table>')
 
     def test_composite(self):
 
@@ -203,7 +203,7 @@ class TestPage(unittest.TestCase):
                 )
         r = R()
         result = deferredRender(r)
-        self.assertEquals(result, '<div id="outer"><div id="inner"></div></div>')
+        self.assertEqual(result, '<div id="outer"><div id="inner"></div></div>')
 
     def test_docFactoryInStanTree(self):
 
@@ -225,15 +225,15 @@ class TestPage(unittest.TestCase):
         f.close()
 
         result = deferredRender(Page(loaders.stan(p['fee'])))
-        self.assertEquals(result, '<div><p>fee</p></div>')
+        self.assertEqual(result, '<div><p>fee</p></div>')
         result = deferredRender(Page(loaders.htmlstr('<p>fi</p>')))
-        self.assertEquals(result, '<div><p>fi</p></div>')
+        self.assertEqual(result, '<div><p>fi</p></div>')
         result = deferredRender(Page(loaders.xmlstr('<p>fo</p>')))
-        self.assertEquals(result, '<div><p>fo</p></div>')
+        self.assertEqual(result, '<div><p>fo</p></div>')
         result = deferredRender(Page(loaders.htmlfile(temp)))
-        self.assertEquals(result, '<div><p>fum</p></div>')
+        self.assertEqual(result, '<div><p>fum</p></div>')
         result = deferredRender(Page(loaders.xmlfile(temp)))
-        self.assertEquals(result, '<div><p>fum</p></div>')
+        self.assertEqual(result, '<div><p>fum</p></div>')
         
 
     def test_buffered(self):
@@ -244,7 +244,7 @@ class TestPage(unittest.TestCase):
 
         p = Page()
         result = deferredRender(p)
-        self.assertEquals(result, '<html><head><title>test</title></head></html>')
+        self.assertEqual(result, '<html><head><title>test</title></head></html>')
         
     def test_component(self):
         """
@@ -271,7 +271,7 @@ class TestPage(unittest.TestCase):
 
         page = Page()
         result = deferredRender(page)
-        self.assertEquals(result, '<div><p>foo bar</p></div>')
+        self.assertEqual(result, '<div><p>foo bar</p></div>')
         
 
 class TestRenderFactory(unittest.TestCase):
@@ -279,7 +279,7 @@ class TestRenderFactory(unittest.TestCase):
     def test_dataRenderer(self):
         ctx = context.WovenContext()
         ctx.remember(rend.RenderFactory(), inevow.IRendererFactory)
-        self.assertEquals(flat.flatten(p(data='foo', render=directive('data')), ctx), '<p>foo</p>')
+        self.assertEqual(flat.flatten(p(data='foo', render=directive('data')), ctx), '<p>foo</p>')
 
         
 class IThing(formless.TypedInterface):
@@ -349,7 +349,7 @@ class TestRenderString(unittest.TestCase):
         result = unittest.deferredResult(
             rend.Page(docFactory=loaders.stan(doc)).renderString()
             )
-        self.assertEquals(result, '<div><p>foo</p><p>bar</p></div>')
+        self.assertEqual(result, '<div><p>foo</p><p>bar</p></div>')
 
     def test_remembers(self):
 
@@ -367,7 +367,7 @@ class TestRenderString(unittest.TestCase):
                 return ctx.tag.clear()[data+'bar']
 
         result = unittest.deferredResult(Page().renderString())
-        self.assertEquals(result, '<html><body><p>foobar</p></body></html>')
+        self.assertEqual(result, '<html><body><p>foobar</p></body></html>')
 
 
 def getResource(root, path):
@@ -388,7 +388,7 @@ class TestLocateChild(unittest.TestCase):
         p = Parent()
         p.putChild('child', Child())
         r = getResource(p, '/child')
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
     def test_resourceAttr(self):
         class Child(rend.Page):
@@ -397,7 +397,7 @@ class TestLocateChild(unittest.TestCase):
             child_child = Child()
         p = Parent()
         r = getResource(p, '/child')
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
     def test_methodAttr(self):
         class Child(rend.Page):
@@ -410,11 +410,11 @@ class TestLocateChild(unittest.TestCase):
         p = Parent()
         r = getResource(p, '/now')
 
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
         r = getResource(p, '/defer')
 
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
     def test_getDynamicChild(self):
         class Child(rend.Page):
@@ -427,10 +427,10 @@ class TestLocateChild(unittest.TestCase):
                     return defer.succeed(None).addCallback(lambda x: Child())
         p = Parent()
         r = getResource(p, '/now')
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
         r = getResource(p, '/defer')
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
     def test_oldResource(self):
         from twisted.web import twcgi
@@ -438,7 +438,7 @@ class TestLocateChild(unittest.TestCase):
             child_child = twcgi.CGIScript('abc.cgi')
         p = Parent()
         r = getResource(p, '/child')
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
     def test_noneChild(self):
         class Parent(rend.Page):
@@ -448,10 +448,10 @@ class TestLocateChild(unittest.TestCase):
                 return None
         p = Parent()
         r = getResource(p, '/child')
-        self.failUnless(isinstance(r.tag, rend.FourOhFour))
+        self.assertTrue(isinstance(r.tag, rend.FourOhFour))
 
         r = getResource(p, '/other')
-        self.failUnless(isinstance(r.tag, rend.FourOhFour))
+        self.assertTrue(isinstance(r.tag, rend.FourOhFour))
 
     def test_missingRemembrances(self):
 
@@ -471,7 +471,7 @@ class TestLocateChild(unittest.TestCase):
             
         page = Page()
         r = getResource(page, '/child')
-        self.failUnless(compy.implements(r.tag, inevow.IResource))
+        self.assertTrue(compy.implements(r.tag, inevow.IResource))
 
     def test_redirectToURL(self):
         redirectTarget = "http://example.com/bar"
@@ -484,7 +484,7 @@ class TestLocateChild(unittest.TestCase):
         ## Render the redirect.
         r.tag.renderHTTP(r)
         req = inevow.IRequest(r)
-        self.assertEquals(req.redirected_to, redirectTarget)
+        self.assertEqual(req.redirected_to, redirectTarget)
 
     def test_redirectQuoting(self):
         class RedirectingPage(rend.Page):
@@ -498,12 +498,12 @@ class TestLocateChild(unittest.TestCase):
             return inevow.IRequest(r).redirected_to
 
         funkyCharacters = 'http://example.com/foo!!bar'
-        self.assertEquals(
+        self.assertEqual(
             doRedirect(funkyCharacters),
             funkyCharacters)
 
         queryParam = 'http://example.com/foo!@$bar?b!@z=123'
-        self.assertEquals(
+        self.assertEqual(
             doRedirect(queryParam),
             queryParam)
 
@@ -514,7 +514,7 @@ class TestLocateChild(unittest.TestCase):
                 return theString
         page = StringChildPage()
         c = getResource(page, '/foo')
-        self.assertEquals(deferredRender(c.tag), theString)
+        self.assertEqual(deferredRender(c.tag), theString)
 
     def test_freeformChildMixin_nonTrue(self):
         """Configurables that have c.__nonzero__()==False are accepted."""
@@ -530,17 +530,17 @@ class TestLocateChild(unittest.TestCase):
         page = FormPage()
 
         r = getResource(page, 'foo')
-        self.failUnless(isinstance(r.tag, rend.FourOhFour))
+        self.assertTrue(isinstance(r.tag, rend.FourOhFour))
 
         r = getResource(page, 'freeform_post!!foo')
-        self.failIf(isinstance(r.tag, rend.FourOhFour))
-        self.assertEquals(deferredRender(r.tag), 'You posted a form to foo')
+        self.assertFalse(isinstance(r.tag, rend.FourOhFour))
+        self.assertEqual(deferredRender(r.tag), 'You posted a form to foo')
 
         SimpleConf.__nonzero__ = lambda x: False
 
         r = getResource(page, 'freeform_post!!foo')
-        self.failIf(isinstance(r.tag, rend.FourOhFour))
-        self.assertEquals(deferredRender(r.tag), 'You posted a form to foo')
+        self.assertFalse(isinstance(r.tag, rend.FourOhFour))
+        self.assertEqual(deferredRender(r.tag), 'You posted a form to foo')
 
         
 class TestStandardRenderers(unittest.TestCase):
@@ -550,17 +550,17 @@ class TestStandardRenderers(unittest.TestCase):
 
         ctx.remember('foo', inevow.IData)
         tag = p(render=rend.data)
-        self.assertEquals(flat.flatten(tag, ctx), '<p>foo</p>')
+        self.assertEqual(flat.flatten(tag, ctx), '<p>foo</p>')
 
         ctx.remember('\xc2\xa3'.decode('utf-8'), inevow.IData)
         tag = p(render=rend.data)
-        self.assertEquals(flat.flatten(tag, ctx), '<p>\xc2\xa3</p>')
+        self.assertEqual(flat.flatten(tag, ctx), '<p>\xc2\xa3</p>')
         
         ctx.remember([1,2,3,4,5], inevow.IData)
         tag = p(render=rend.data)
-        self.assertEquals(flat.flatten(tag, ctx), '<p>12345</p>')
+        self.assertEqual(flat.flatten(tag, ctx), '<p>12345</p>')
         
         ctx.remember({'foo':'bar'}, inevow.IData)
         tag = p(data=directive('foo'), render=rend.data)
-        self.assertEquals(flat.flatten(tag, ctx), '<p>bar</p>')
+        self.assertEqual(flat.flatten(tag, ctx), '<p>bar</p>')
         

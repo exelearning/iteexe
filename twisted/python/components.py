@@ -67,7 +67,7 @@ try:
     from zope.interface import interface, declarations
     from zope.interface.adapter import AdapterRegistry
 except ImportError:
-    raise ImportError, "you need zope.interface installed (http://zope.org/Products/ZopeInterface/)"
+    raise ImportError("you need zope.interface installed (http://zope.org/Products/ZopeInterface/)")
 
 class ComponentsDeprecationWarning(DeprecationWarning):
     """So you can filter new-components related deprecations easier."""
@@ -175,7 +175,7 @@ def fixClassImplements(klass):
     than using this yourself, it's better to port your code to the new
     API.
     """
-    if _fixedClasses.has_key(klass):
+    if klass in _fixedClasses:
         return
     if not hasattr(klass, "__implements__"):
         return
@@ -218,7 +218,7 @@ def getAdapter(obj, interfaceClass, default=_Nothing,
 
     if persist != False:
         pkey = (id(obj), interfaceClass)
-        if _adapterPersistence.has_key(pkey):
+        if pkey in _adapterPersistence:
             return _adapterPersistence[pkey]
 
     factory = self.lookup1(declarations.providedBy(obj), interfaceClass)
@@ -265,17 +265,17 @@ class MetaInterface(interface.InterfaceClass):
                  __module__=None):
         self.__attrs = {}
         if attrs is not None:
-            if __module__ == None and attrs.has_key('__module__'):
+            if __module__ == None and '__module__' in attrs:
                 __module__ = attrs['__module__']
                 del attrs['__module__']
-            if __doc__ == None and attrs.has_key('__doc__'):
+            if __doc__ == None and '__doc__' in attrs:
                 __doc__ = attrs['__doc__']
                 del attrs['__doc__']
-            if attrs.has_key("__adapt__"):
+            if "__adapt__" in attrs:
                 warnings.warn("Please don't use __adapt__ on Interface subclasses", ComponentsDeprecationWarning, stacklevel=2)
                 self.__instadapt__ = attrs["__adapt__"]
                 del attrs["__adapt__"]
-            for k, v in attrs.items():
+            for k, v in list(attrs.items()):
                 if isinstance(v, types.FunctionType):
                     attrs[k] = interface.fromFunction(v, name, name=k, imlevel=1)
                 elif not isinstance(v, interface.Attribute):
@@ -292,7 +292,7 @@ class MetaInterface(interface.InterfaceClass):
         if hasattr(adaptable, "__class__"):
             fixClassImplements(adaptable.__class__)
         if registry != None:
-            raise RuntimeError, "registry argument will be ignored"
+            raise RuntimeError("registry argument will be ignored")
         # getComponents backwards compat
         if hasattr(adaptable, "getComponent") and not hasattr(adaptable, "__conform__") and persist != False:
             warnings.warn("please use __conform__ instead of getComponent in %s" % type(adaptable), ComponentsDeprecationWarning)
@@ -306,7 +306,7 @@ class MetaInterface(interface.InterfaceClass):
         # check for weakref persisted adapters
         if persist != False:
             pkey = (id(adaptable), self)
-            if _adapterPersistence.has_key(pkey):
+            if pkey in _adapterPersistence:
                 return _adapterPersistence[pkey]
 
         if persist:
@@ -347,7 +347,7 @@ class MetaInterface(interface.InterfaceClass):
     
     def adaptWith(self, using, to, registry=None):
         if registry != None:
-            raise RuntimeError, "registry argument will be ignored"
+            raise RuntimeError("registry argument will be ignored")
         warnings.warn("adaptWith is only supported for backwards compatability", ComponentsDeprecationWarning)
         registry = globalRegistry
         registry.register([self], to, '', using)
@@ -359,12 +359,12 @@ class MetaInterface(interface.InterfaceClass):
             warnings.warn("Don't get attributes (in this case, %r) off Interface, use "
                           ".queryDescriptionFor() etc. instead" % (attr,),
                           ComponentsDeprecationWarning, stacklevel=3)
-        if self.__attrs.has_key(attr):
+        if attr in self.__attrs:
             return self.__attrs[attr]
         result = self.queryDescriptionFor(attr)
         if result != None:
             return result
-        raise AttributeError, attr
+        raise AttributeError(attr)
 
 
 Interface = MetaInterface("Interface", __module__="twisted.python.components")
@@ -372,7 +372,7 @@ Interface = MetaInterface("Interface", __module__="twisted.python.components")
 def tupleTreeToList(t, l=None):
     """Convert an instance, or tree of tuples, into list."""
     if l is None: l = []
-    if isinstance(t, types.TupleType):
+    if isinstance(t, tuple):
         for o in t:
             tupleTreeToList(o, l)
     else:
@@ -388,7 +388,7 @@ def implements(obj, interfaceClass):
     """
     warnings.warn("Please use providedBy() or implementedBy()", ComponentsDeprecationWarning, stacklevel=2)
     # try to support both classes and instances, which is HORRIBLE
-    if isinstance(obj, (type, types.ClassType)):
+    if isinstance(obj, type):
         fixClassImplements(obj)
         return interfaceClass.implementedBy(obj)
     else:
@@ -404,7 +404,7 @@ def getInterfaces(klass):
     warnings.warn("getInterfaces should not be used, use providedBy() or implementedBy()", ComponentsDeprecationWarning, stacklevel=2)
     # try to support both classes and instances, giving different behaviour
     # which is HORRIBLE :(
-    if isinstance(klass, (type, types.ClassType)):
+    if isinstance(klass, type):
         fixClassImplements(klass)
         l = list(declarations.implementedBy(klass))
     else:
@@ -566,13 +566,13 @@ class Componentized(styles.Versioned):
 
         @return: a list of the interfaces that were removed.
         """
-        if (isinstance(component, types.ClassType) or
-            isinstance(component, types.TypeType)):
+        if (isinstance(component, type) or
+            isinstance(component, type)):
             warnings.warn("passing interface to removeComponent, you probably want unsetComponent", DeprecationWarning, 1)
             self.unsetComponent(component)
             return [component]
         l = []
-        for k, v in self._adapterCache.items():
+        for k, v in list(self._adapterCache.items()):
             if v is component:
                 del self._adapterCache[k]
                 l.append(reflect.namedObject(k))
@@ -596,7 +596,7 @@ class Componentized(styles.Versioned):
         """
         registry = getRegistry(registry)
         k = reflect.qual(interface)
-        if self._adapterCache.has_key(k):
+        if k in self._adapterCache:
             return self._adapterCache[k]
         else:
             adapter = interface.__adapt__(self)
@@ -617,7 +617,7 @@ class Componentized(styles.Versioned):
     def upgradeToVersion1(self):
         # To let Componentized instances interact correctly with
         # rebuild(), we cannot use class objects as dictionary keys.
-        for (k, v) in self._adapterCache.items():
+        for (k, v) in list(self._adapterCache.items()):
             self._adapterCache[reflect.qual(k)] = v
 
 
@@ -626,7 +626,7 @@ class ReprableComponentized(Componentized):
         Componentized.__init__(self)
 
     def __repr__(self):
-        from cStringIO import StringIO
+        from io import StringIO
         from pprint import pprint
         sio = StringIO()
         pprint(self._adapterCache, sio)

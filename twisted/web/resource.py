@@ -75,10 +75,10 @@ class Resource:
     ### Abstract Collection Interface
 
     def listStaticNames(self):
-        return self.children.keys()
+        return list(self.children.keys())
 
     def listStaticEntities(self):
-        return self.children.items()
+        return list(self.children.items())
 
     def listNames(self):
         return self.listStaticNames() + self.listDynamicNames()
@@ -96,7 +96,7 @@ class Resource:
         return self.children.get(name)
 
     def getDynamicEntity(self, name, request):
-        if not self.children.has_key(name):
+        if name not in self.children:
             return self.getChild(name, request)
         else:
             return None
@@ -144,7 +144,7 @@ class Resource:
         This will check to see if I have a pre-registered child resource of the
         given name, and call getChild if I do not.
         """
-        if self.children.has_key(path):
+        if path in self.children:
             return self.children[path]
 
         return self.getChild(path, request)
@@ -203,4 +203,4 @@ components.backwardsCompatImplements(Resource)
 #This is ugly, I know, but since error.py directly access resource.Resource
 #during import-time (it subclasses it), the Resource class must be defined
 #by the time error is imported.
-import error
+from . import error

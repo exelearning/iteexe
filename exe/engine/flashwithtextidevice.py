@@ -40,24 +40,24 @@ class FlashWithTextIdevice(Idevice):
 
 
     def __init__(self):
-        Idevice.__init__(self, x_(u"Flash with Text"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""The flash with text idevice allows you to 
+        Idevice.__init__(self, x_("Flash with Text"), 
+                         x_("University of Auckland"), 
+                         x_("""The flash with text idevice allows you to 
 associate additional textual information to a flash file. This may be useful 
 where you wish to provide educational instruction regarding the flash file 
-the learners will view."""), u"", u"")
+the learners will view."""), "", "")
         self.emphasis          = Idevice.NoEmphasis
-        self.flash             = FlashField(x_(u"Flash with Text"), u"")
+        self.flash             = FlashField(x_("Flash with Text"), "")
         self.flash.idevice     = self
-        self.text              = TextAreaField(x_(u"Description"),
+        self.text              = TextAreaField(x_("Description"),
                                  x_("""Enter the text you wish to 
                                  associate with the image."""))
         self.text.idevice      = self
-        self.float             = u"left"
-        self.caption           = u""
-        self._captionInstruc   = x_(u"""Provide a caption for the flash you 
+        self.float             = "left"
+        self.caption           = ""
+        self._captionInstruc   = x_("""Provide a caption for the flash you 
                                   have just inserted.""")
-        self._dimensionInstruc = x_(u"""Enter the flash display 
+        self._dimensionInstruc = x_("""Enter the flash display 
 dimensions (in pixels) and determine the alignment of the image on screen. 
 The width and height dimensions will alter proportionally.""")
 
@@ -115,9 +115,9 @@ The width and height dimensions will alter proportionally.""")
         """
         Upgrades to v0.13
         """
-        self._captionInstruc   = x_(u"""Provide a caption for the flash you 
+        self._captionInstruc   = x_("""Provide a caption for the flash you 
                                   have just inserted.""")
-        self._dimensionInstruc = x_(u"""Enter the flash display 
+        self._dimensionInstruc = x_("""Enter the flash display 
 dimensions (in pixels) and determine the alignment of the image on screen. 
 The width and height dimensions will alter proportionally.""")
         self.flash._upgradeFieldToVersion3()

@@ -2,7 +2,7 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes
+
 from twisted.trial import unittest
 from twisted.internet import protocol, reactor, interfaces, defer
 from twisted.protocols import basic
@@ -14,7 +14,7 @@ import os
 try:
     from OpenSSL import SSL, crypto
     from twisted.internet import ssl
-    from ssl_helpers import ClientTLSContext
+    from .ssl_helpers import ClientTLSContext
 except ImportError:
     SSL = ssl = None
 
@@ -266,14 +266,14 @@ class TLSTestCase(unittest.TestCase):
         while i < 1000 and not inCharge.done:
             reactor.iterate(0.01)
             i += 1
-        self.failUnless(
+        self.assertTrue(
             inCharge.done,
             "Never finished reading all lines: %s" % (inCharge.lines,))
 
 
     def testTLS(self):
         self._runTest(UnintelligentProtocol(), LineCollector(1, self.fillBuffer))
-        self.assertEquals(
+        self.assertEqual(
             self.serverFactory.lines,
             UnintelligentProtocol.pretext + UnintelligentProtocol.posttext
         )
@@ -281,16 +281,16 @@ class TLSTestCase(unittest.TestCase):
 
     def testUnTLS(self):
         self._runTest(UnintelligentProtocol(), LineCollector(0, self.fillBuffer))
-        self.assertEquals(
+        self.assertEqual(
             self.serverFactory.lines,
             UnintelligentProtocol.pretext
         )
-        self.failUnless(self.serverFactory.rawdata, "No encrypted bytes received")
+        self.assertTrue(self.serverFactory.rawdata, "No encrypted bytes received")
 
 
     def testBackwardsTLS(self):
         self._runTest(LineCollector(1, self.fillBuffer), UnintelligentProtocol(), True)
-        self.assertEquals(
+        self.assertEqual(
             self.clientFactory.lines,
             UnintelligentProtocol.pretext + UnintelligentProtocol.posttext
         )
@@ -343,7 +343,7 @@ class BufferingTestCase(unittest.TestCase):
             i += 1
             reactor.iterate()
 
-        self.assertEquals(client.buffer, ["+OK <some crap>\r\n"])
+        self.assertEqual(client.buffer, ["+OK <some crap>\r\n"])
 
 
 class ConnectionLostTestCase(unittest.TestCase, ContextGeneratingMixin):
@@ -402,8 +402,8 @@ class ConnectionLostTestCase(unittest.TestCase, ContextGeneratingMixin):
     def _cbLostConns(self, results):
         (sSuccess, sResult), (cSuccess, cResult) = results
 
-        self.failIf(sSuccess)
-        self.failIf(cSuccess)
+        self.assertFalse(sSuccess)
+        self.assertFalse(cSuccess)
 
         sResult.trap(SSL.Error)
         cResult.trap(SSL.Error)

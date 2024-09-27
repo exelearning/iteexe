@@ -24,19 +24,19 @@ class Echo(protocol.Protocol):
     implements(interfaces.IHalfCloseableProtocol)
     
     def connectionMade(self):
-        print "connection made"
+        print("connection made")
     
     def dataReceived(self, data):
         self.transport.write(data)
 
     def readConnectionLost(self):
-        print "readConnectionLost"
+        print("readConnectionLost")
         self.transport.loseConnection()
     def writeConnectionLost(self):
-        print "writeConnectionLost"
+        print("writeConnectionLost")
     
     def connectionLost(self, reason):
-        print "connectionLost", reason
+        print("connectionLost", reason)
         reactor.stop()
 
 stdio.StandardIO(Echo())

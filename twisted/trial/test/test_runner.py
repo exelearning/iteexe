@@ -206,7 +206,7 @@ class TestRunner(unittest.TestCase):
     def test_runner_working_directory(self):
         self.parseOptions(['--temp-directory', 'some_path'])
         runner = self.getRunner()
-        self.assertEquals(runner.workingDirectory, 'some_path')
+        self.assertEqual(runner.workingDirectory, 'some_path')
 
     def test_runner_dry_run(self):
         self.parseOptions(['--dry-run', '--reporter', 'capturing',

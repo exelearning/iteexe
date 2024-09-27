@@ -36,7 +36,7 @@ class Block(Renderable):
     rendering and processing Idevices in XHTML
     """
     nextId = 0
-    Edit, Preview, View, Hidden = range(4)
+    Edit, Preview, View, Hidden = list(range(4))
 
     def __init__(self, parent, idevice):
         """
@@ -59,42 +59,42 @@ class Block(Renderable):
         Process the request arguments from the web server to see if any
         apply to this block
         """
-        log.debug(u"process id="+self.id)
+        log.debug("process id="+self.id)
         
-        if u"object" in request.args and request.args[u"object"][0] == self.id:
+        if "object" in request.args and request.args["object"][0] == self.id:
             # changing to a different node does not dirty package
-            if request.args[u"action"][0] != u"changeNode":
+            if request.args["action"][0] != "changeNode":
                 self.package.isChanged = True
-                log.debug(u"package.isChanged action="+request.args[u"action"][0])
+                log.debug("package.isChanged action="+request.args["action"][0])
 
-            if request.args[u"action"][0] == u"done":               
+            if request.args["action"][0] == "done":               
                 self.processDone(request)
                 
-            elif request.args[u"action"][0] == u"edit":
+            elif request.args["action"][0] == "edit":
                 self.processEdit(request)
               
-            elif request.args[u"action"][0] == u"delete":
+            elif request.args["action"][0] == "delete":
                 self.processDelete(request)
                 
-            elif request.args[u"action"][0] == u"move":
+            elif request.args["action"][0] == "move":
                 self.processMove(request)
                 
-            elif request.args[u"action"][0] == u"movePrev":
+            elif request.args["action"][0] == "movePrev":
                 self.processMovePrev(request)
                 
-            elif request.args[u"action"][0] == u"moveNext":
+            elif request.args["action"][0] == "moveNext":
                 self.processMoveNext(request)
                 
-            elif request.args[u"action"][0] == u"promote":
+            elif request.args["action"][0] == "promote":
                 self.processPromote(request)
                 
-            elif request.args[u"action"][0] == u"demote":
+            elif request.args["action"][0] == "demote":
                 self.processDemote(request)
 
-            elif request.args[u"action"][0] == u"cancel":
+            elif request.args["action"][0] == "cancel":
                 self.idevice.edit = False
                 
-            elif request.args[u"action"][0] == u"deleteallnotes":
+            elif request.args["action"][0] == "deleteallnotes":
                 self.processDeleteallNotes(request)
         
         else:
@@ -106,7 +106,7 @@ class Block(Renderable):
         """
         User has finished editing this block
         """
-        log.debug(u"processDone id="+self.id)
+        log.debug("processDone id="+self.id)
         self.idevice.edit = False
 
 
@@ -114,7 +114,7 @@ class Block(Renderable):
         """
         User has started editing this block
         """
-        log.debug(u"processEdit id="+self.id)
+        log.debug("processEdit id="+self.id)
         self.idevice.lastIdevice = True
         self.idevice.edit = True
 
@@ -123,48 +123,48 @@ class Block(Renderable):
         """
         Delete this block and the associated iDevice
         """
-        log.debug(u"processDelete id="+self.id)
+        log.debug("processDelete id="+self.id)
         self.idevice.delete()
         
     def processDeleteallNotes(self, request):
         """
         Delete all notes 
         """
-        log.debug(u"processDeleteallNotes")
+        log.debug("processDeleteallNotes")
         self.package.delNotes(self.package.root)
 
     def processMove(self, request):
         """
         Move this iDevice to a different node
         """
-        log.debug(u"processMove id="+self.id)
-        nodeId = request.args[u"move"+self.id][0]
+        log.debug("processMove id="+self.id)
+        nodeId = request.args["move"+self.id][0]
         node   = self.package.findNode(nodeId)
         if node is not None:
             self.idevice.setParentNode(node)
         else:
-            log.error(u"addChildNode cannot locate "+nodeId)
+            log.error("addChildNode cannot locate "+nodeId)
 
 
     def processPromote(self, request):
         """
         Promote this node up the hierarchy tree
         """
-        log.debug(u"processPromote id="+self.id)
+        log.debug("processPromote id="+self.id)
 
 
     def processDemote(self, request):
         """
         Demote this node down the hierarchy tree
         """
-        log.debug(u"processDemote id="+self.id)
+        log.debug("processDemote id="+self.id)
 
 
     def processMovePrev(self, request):
         """
         Move this block back to the previous position
         """
-        log.debug(u"processMovePrev id="+self.id)
+        log.debug("processMovePrev id="+self.id)
         self.idevice.movePrev()
 
 
@@ -172,7 +172,7 @@ class Block(Renderable):
         """
         Move this block forward to the next position
         """
-        log.debug(u"processMoveNext id="+self.id)
+        log.debug("processMoveNext id="+self.id)
         self.idevice.moveNext()
 
 
@@ -180,24 +180,24 @@ class Block(Renderable):
         """
         Returns the appropriate XHTML string for whatever mode this block is in
         """
-        html = u''
+        html = ''
         broken = '<p><span style="font-weight: bold">%s:</span> %%s</p>' % _('IDevice broken')
         try:
             if self.mode == Block.Edit:
                 self.idevice.lastIdevice = True
                 html += '<div class="'+self.idevice.klass+'" id="activeIdevice">'
-                html += u'<a name="currentBlock"></a>\n'
+                html += '<a name="currentBlock"></a>\n'
                 html += self.renderEdit(style)
                 html += '</div>'
             elif self.mode == Block.View:
                 html += self.renderView(style)
             elif self.mode == Block.Preview:
                 if self.idevice.lastIdevice:
-                    html += u'<a name="currentBlock"></a>\n'
+                    html += '<a name="currentBlock"></a>\n'
                 html += self.renderPreview(style)
-        except Exception, e:
+        except Exception as e:
             from traceback import format_tb
-            log.error('%s:\n%s' % (str(e), '\n'.join(format_tb(sys.exc_traceback))))
+            log.error('%s:\n%s' % (str(e), '\n'.join(format_tb(sys.exc_info()[2]))))
             html += broken % str(e)
             if self.mode == Block.Edit:
                 html += self.renderEditButtons()
@@ -210,8 +210,8 @@ class Block(Renderable):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        log.error(u"renderEdit called directly")
-        return u"ERROR Block.renderEdit called directly"
+        log.error("renderEdit called directly")
+        return "ERROR Block.renderEdit called directly"
 
 
     def renderEditButtons(self, undo=True):
@@ -222,64 +222,64 @@ class Block(Renderable):
         html = '<p class="exe-editButtons">'
         
         html += '<span id="exe-submitButton">'
-        html += common.submitImage(u"done", self.id, 
-                                   u"/images/stock-apply.png", 
-                                   _(u"Done"),1)
+        html += common.submitImage("done", self.id, 
+                                   "/images/stock-apply.png", 
+                                   _("Done"),1)
         html += '</span>'
 
         if undo:
             html += common.confirmThenSubmitImage(
-                _(u"Exit without saving?"),
-                u"cancel",
-                self.id, u"/images/stock-undo.png", 
-                _(u"Undo Edits"), 1)
+                _("Exit without saving?"),
+                "cancel",
+                self.id, "/images/stock-undo.png", 
+                _("Undo Edits"), 1)
         else:
-            html  += common.submitImage(u"no_cancel", self.id, 
-                                   u"/images/stock-undoNOT.png", 
-                                   _(u"Can NOT Undo Edits"),1)
+            html  += common.submitImage("no_cancel", self.id, 
+                                   "/images/stock-undoNOT.png", 
+                                   _("Can NOT Undo Edits"),1)
 
         html += common.confirmThenSubmitImage(
-            _(u"This will delete this iDevice. Do you really want to do this?"),
-            u"delete",
-            self.id, u"/images/stock-cancel.png", 
-            _(u"Delete"), 1)
+            _("This will delete this iDevice. Do you really want to do this?"),
+            "delete",
+            self.id, "/images/stock-cancel.png", 
+            _("Delete"), 1)
 
         if self.idevice.isFirst():
-            html += common.image(u"movePrev", u"/images/stock-go-up-off.png", 16, 16, None, u"submit")
+            html += common.image("movePrev", "/images/stock-go-up-off.png", 16, 16, None, "submit")
         else:
-            html += common.submitImage(u"movePrev", self.id, 
-                                       u"/images/stock-go-up.png", 
-                                       _(u"Move Up"),1)
+            html += common.submitImage("movePrev", self.id, 
+                                       "/images/stock-go-up.png", 
+                                       _("Move Up"),1)
 
         if self.idevice.isLast():
-            html += common.image(u"moveNext", u"/images/stock-go-down-off.png", 16, 16, None, u"submit")
+            html += common.image("moveNext", "/images/stock-go-down-off.png", 16, 16, None, "submit")
         else:
-            html += common.submitImage(u"moveNext", self.id, 
-                                       u"/images/stock-go-down.png", 
-                                       _(u"Move Down"),1)
+            html += common.submitImage("moveNext", self.id, 
+                                       "/images/stock-go-down.png", 
+                                       _("Move Down"),1)
 
-        options  = [(_(u"---Move To---"), "")]
+        options  = [(_("---Move To---"), "")]
         options += self.__getNodeOptions(self.package.root, 0)
-        html += common.select(u"move", self.id, options)
+        html += common.select("move", self.id, options)
 
         if self.purpose.strip() or self.tip.strip():
-            html += u'<a title="%s" ' % _(u'Pedagogical Help')
-            html += u"onclick=\"showMessageBox('"+self.id+"');\" "
-            html += u'href="javascript:void(0)" style="cursor:help;margin-left:.2em;">' 
-            html += u'<img alt="%s" class="info" src="/images/info.png" ' \
+            html += '<a title="%s" ' % _('Pedagogical Help')
+            html += "onclick=\"showMessageBox('"+self.id+"');\" "
+            html += 'href="javascript:void(0)" style="cursor:help;margin-left:.2em;">' 
+            html += '<img alt="%s" class="info" src="/images/info.png" ' \
                     % _('Information')
-            html += u'style="align:middle;" /></a>\n'
-            html += u'<div style="display:none;">'
+            html += 'style="align:middle;" /></a>\n'
+            html += '<div style="display:none;">'
 
             if self.purpose != "":
-                html += u'<div id="'+self.id+'title">'+_(u"Purpose")+'</div>'
-                html += u'<div id="'+self.id+'content">'+self.purpose+'</div>'
+                html += '<div id="'+self.id+'title">'+_("Purpose")+'</div>'
+                html += '<div id="'+self.id+'content">'+self.purpose+'</div>'
                 
             if self.tip != "":
-                html += u'<div id="'+self.id+'title">'+_(u"Tip:")+'</div>'
-                html += u'<div id="'+self.id+'content">'+self.tip+'</div>'
+                html += '<div id="'+self.id+'title">'+_("Tip:")+'</div>'
+                html += '<div id="'+self.id+'content">'+self.tip+'</div>'
                 
-            html += u'</div>\n'    
+            html += '</div>\n'    
         
         html += '</p>' # /exe-editButtons
         
@@ -291,7 +291,7 @@ class Block(Renderable):
         TODO We should probably get this list from elsewhere rather than
         building it up for every block
         """
-        options = [(u'&nbsp;&nbsp;&nbsp;'*depth + node.titleLong, node.id)]
+        options = [('&nbsp;&nbsp;&nbsp;'*depth + node.titleLong, node.id)]
         for child in node.children:
             options += self.__getNodeOptions(child, depth+1)
         return options
@@ -322,26 +322,26 @@ class Block(Renderable):
         """
         overriden by derived classes
         """
-        log.error(u"renderViewContent called directly")
-        return _(u"ERROR: Block.renderViewContent called directly")
+        log.error("renderViewContent called directly")
+        return _("ERROR: Block.renderViewContent called directly")
 
 
     def renderViewButtons(self):
         """
         Returns an XHTML string for the view buttons
         """
-        editTitle = _(u"Edit")
+        editTitle = _("Edit")
         if hasattr(self.idevice, '_typeName'):
-            editTitle += u" (%s)" % _(self.idevice._typeName)
+            editTitle += " (%s)" % _(self.idevice._typeName)
         html = '<p class="exe-controls idevice-edition-buttons">'
-        html  += common.submitImage(u"edit", self.id, 
-                                   u"/images/stock-edit.png", 
+        html  += common.submitImage("edit", self.id, 
+                                   "/images/stock-edit.png", 
                                    editTitle, self.package.isChanged, True)
         html += common.confirmThenSubmitImage(
-            _(u"This will delete this iDevice. Do you really want to do this?"),
-            u"deletePreviousCheck",
-            self.id, u"/images/stock-cancel.png", 
-            _(u"Delete"), 1)
+            _("This will delete this iDevice. Do you really want to do this?"),
+            "deletePreviousCheck",
+            self.id, "/images/stock-cancel.png", 
+            _("Delete"), 1)
         html += '</p>'
         return html
 # ===========================================================================

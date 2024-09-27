@@ -19,7 +19,7 @@ try:
     from zope.interface import Interface
     del Interface
 except ImportError:
-    raise ImportError, "you need zope.interface installed (http://zope.org/Products/ZopeInterface/)"
+    raise ImportError("you need zope.interface installed (http://zope.org/Products/ZopeInterface/)")
 
 # Ensure compat gets imported
 from twisted.python import compat

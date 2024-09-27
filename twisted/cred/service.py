@@ -22,7 +22,7 @@ from twisted.python import log, components, reflect
 from twisted.internet import defer, app
 
 # Sibling Imports
-from perspective import IPerspective, Perspective
+from .perspective import IPerspective, Perspective
 
 # Zope interface Imports
 from zope import interface
@@ -84,7 +84,7 @@ class Service(app.ApplicationService):
 
         Perspectives that were 'loaded' from memory will not be uncached.
         """
-        if self.perspectives.has_key(perspective.perspectiveName):
+        if perspective.perspectiveName in self.perspectives:
             return
         self.perspectives[perspective.perspectiveName] = perspective
         perspective.setCached()
@@ -94,7 +94,7 @@ class Service(app.ApplicationService):
 
         Perspectives that were 'loaded' from memory will not be uncached.
         """
-        if self.perspectives.has_key(perspective.perspectiveName):
+        if perspective.perspectiveName in self.perspectives:
             if perspective.isCached():
                 del self.perspectives[perspective.perspectiveName]
 

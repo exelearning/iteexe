@@ -34,7 +34,8 @@ class OverlappedOp:
         raise NotImplementedError
 
 class ReadFileOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme):
+        (handle, buffer) = xxx_todo_changeme
         if ret or not bytes:
             self.transport.readErr(ret, bytes)
         else:
@@ -44,8 +45,9 @@ class ReadFileOp(OverlappedOp):
         self.reactor.issueReadFile(handle, buffer, self.ovDone, (handle, buffer))
 
 class WriteFileOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme1):
 #        log.msg("WriteFileOp.ovDone", time.time())
+        (handle, buffer) = xxx_todo_changeme1
         if ret or not bytes:
             self.transport.writeErr(ret, bytes)
         else:
@@ -56,7 +58,8 @@ class WriteFileOp(OverlappedOp):
         self.reactor.issueWriteFile(handle, buffer, self.ovDone, (handle, buffer))
 
 class WSASendToOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme2):
+        (handle, buffer) = xxx_todo_changeme2
         if ret or not bytes:
             self.transport.writeErr(ret, bytes)
         else:
@@ -67,7 +70,8 @@ class WSASendToOp(OverlappedOp):
         self.reactor.issueWSASendTo(handle, buffer, family, addr, self.ovDone, (handle, buffer))
 
 class WSARecvFromOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer, ab)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme3):
+        (handle, buffer, ab) = xxx_todo_changeme3
         if ret or not bytes:
             self.transport.readErr(ret, bytes)
         else:
@@ -78,7 +82,8 @@ class WSARecvFromOp(OverlappedOp):
         self.reactor.issueWSARecvFrom(handle, buffer, ab, self.ovDone, (handle, buffer, ab))
 
 class AcceptExOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer, acc_sock)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme4):
+        (handle, buffer, acc_sock) = xxx_todo_changeme4
         if ret in (ERROR_NETNAME_DELETED, ERROR_SEM_TIMEOUT):
             # yay, recursion
             self.initiateOp(handle)
@@ -87,7 +92,7 @@ class AcceptExOp(OverlappedOp):
         else:
             try:
                 acc_sock.setsockopt(socket.SOL_SOCKET, SO_UPDATE_ACCEPT_CONTEXT, struct.pack("I", handle))
-            except socket.error, se:
+            except socket.error as se:
                 self.transport.acceptErr(ret, bytes)
             else:
                 self.transport.acceptDone(acc_sock, acc_sock.getpeername())
@@ -99,7 +104,8 @@ class AcceptExOp(OverlappedOp):
         self.reactor.issueAcceptEx(handle, acc_sock.fileno(), self.ovDone, (handle, buffer, acc_sock), buffer)
 
 class ConnectExOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, sock)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme5):
+        (handle, sock) = xxx_todo_changeme5
         if ret:
 #            print "ConnectExOp err", ret
             self.transport.connectErr(failure.Failure(error.errnoMapping.get(winerrcodeMapping.get(ret), error.ConnectError)())) # finish the mapping in error.py
@@ -107,7 +113,7 @@ class ConnectExOp(OverlappedOp):
             if have_connectex:
                 try:
                     sock.setsockopt(socket.SOL_SOCKET, SO_UPDATE_CONNECT_CONTEXT, "")
-                except socket.error, se:
+                except socket.error as se:
                     self.transport.connectErr(failure.Failure(error.ConnectError()))
             self.transport.connectDone()
 
@@ -136,11 +142,12 @@ class ConnectExOp(OverlappedOp):
 ## Define custom xxxOp classes to handle IO operations related
 ## to stdout/err/in for the process transport.
 class ReadOutOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme6):
+        (handle, buffer) = xxx_todo_changeme6
         if ret or not bytes:
             try:
                 self.transport.outConnectionLost()
-            except Exception, e:
+            except Exception as e:
                 log.err(e)
                 # Close all handles and proceed as normal,
                 # waiting for process to exit.
@@ -150,7 +157,7 @@ class ReadOutOp(OverlappedOp):
         else:
             try:
                 self.transport.protocol.outReceived(buffer[:bytes])
-            except Exception, e:
+            except Exception as e:
                 log.err(e)
                 # Close all handles and proceed as normal,
                 # waiting for process to exit.
@@ -160,7 +167,7 @@ class ReadOutOp(OverlappedOp):
             # Keep reading
             try:
                 self.initiateOp(handle, buffer)
-            except WindowsError, e:
+            except WindowsError as e:
                 if e.errno in (ERROR_INVALID_HANDLE, ERROR_PIPE_ENDED):
                     self.transport.outConnectionLost()
                 else:
@@ -170,11 +177,12 @@ class ReadOutOp(OverlappedOp):
         self.reactor.issueReadFile(handle, buffer, self.ovDone, (handle, buffer))
 
 class ReadErrOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme7):
+        (handle, buffer) = xxx_todo_changeme7
         if ret or not bytes:
             try:
                 self.transport.errConnectionLost()
-            except Exception, e:
+            except Exception as e:
                 log.err(e)
                 # Close all handles and proceed as normal,
                 # waiting for process to exit.
@@ -184,7 +192,7 @@ class ReadErrOp(OverlappedOp):
         else:
             try:
                 self.transport.protocol.errReceived(buffer[:bytes])
-            except Exception, e:
+            except Exception as e:
                 log.err(e)
                 # Close all handles and proceed as normal,
                 # waiting for process to exit.
@@ -194,7 +202,7 @@ class ReadErrOp(OverlappedOp):
             # Keep reading
             try:
                 self.initiateOp(handle, buffer)
-            except WindowsError, e:
+            except WindowsError as e:
                 if e.errno in (ERROR_INVALID_HANDLE, ERROR_PIPE_ENDED):
                     self.transport.errConnectionLost()
                 else:
@@ -204,11 +212,12 @@ class ReadErrOp(OverlappedOp):
         self.reactor.issueReadFile(handle, buffer, self.ovDone, (handle, buffer))
 
 class WriteInOp(OverlappedOp):
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme8):
+        (handle, buffer) = xxx_todo_changeme8
         if ret or not bytes:
             try:
                 self.transport.inConnectionLost()
-            except Exception, e:
+            except Exception as e:
                 log.err(e)
                 # Close all handles and proceed as normal,
                 # waiting for process to exit.
@@ -218,7 +227,7 @@ class WriteInOp(OverlappedOp):
         else:
             try:
                 self.transport.writeDone(bytes)
-            except Exception, e:
+            except Exception as e:
                 log.err(e)
                 # Close all handles and proceed as normal,
                 # waiting for process to exit.
@@ -233,14 +242,15 @@ class ReadInOp(OverlappedOp):
     """Stdin pipe will be opened in duplex mode.  The parent will read
     stdin to detect when the child closes it so we can close our end.
     """
-    def ovDone(self, ret, bytes, (handle, buffer)):
+    def ovDone(self, ret, bytes, xxx_todo_changeme9):
+        (handle, buffer) = xxx_todo_changeme9
         if ret or not bytes:
             self.transport.inConnectionLost()
         else:
             # Keep reading
             try:
                 self.initiateOp(handle, buffer)
-            except WindowsError, e:
+            except WindowsError as e:
                 if e.errno in (ERROR_INVALID_HANDLE, ERROR_PIPE_ENDED):
                     self.transport.inConnectionLost()
                 else:

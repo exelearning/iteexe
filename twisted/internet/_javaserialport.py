@@ -15,7 +15,7 @@ import serial
 from serial import PARITY_NONE, PARITY_EVEN, PARITY_ODD
 from serial import STOPBITS_ONE, STOPBITS_TWO
 from serial import FIVEBITS, SIXBITS, SEVENBITS, EIGHTBITS
-from serialport import BaseSerialPort
+from .serialport import BaseSerialPort
 
 # twisted imports
 from twisted.internet import abstract, javareactor, main
@@ -47,14 +47,14 @@ class SerialPort(BaseSerialPort, javareactor.JConnection):
           self._serial.write(data)
           return len(data)
         # should have something better here
-        except Exception, e:
+        except Exception as e:
           return main.CONNECTION_LOST
 
     def doRead(self):
         readBytes = ''
         try:
           readBytes = self._serial.read(min(8192, self.inWaiting()))
-        except Exception, e:
+        except Exception as e:
           return main.CONNECTION_LOST
         if not readBytes:
           return main.CONNECTION_LOST

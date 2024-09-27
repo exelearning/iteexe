@@ -6,10 +6,10 @@
 
 # system imports
 from os.path import join as joinpath
-import urllib, os
+import urllib.request, urllib.parse, urllib.error, os
 
 # sibling imports
-import page, model, widgets, view
+from . import page, model, widgets, view
 
 # twisted imports
 from twisted.web.microdom import lmx
@@ -89,7 +89,7 @@ class DirectoryLister(page.Page):
         files = []; dirs = []
 
         for path in directory:
-            url = urllib.quote(path, "/")
+            url = urllib.parse.quote(path, "/")
             if os.path.isdir(os.path.join(self.path, path)):
                 url = url + '/'
                 dirs.append({'link':{"text": path + "/", "href":url},
@@ -106,7 +106,7 @@ class DirectoryLister(page.Page):
         return files + dirs
 
     def wmfactory_header(self, request):
-        return "Directory listing for %s" % urllib.unquote(request.uri)
+        return "Directory listing for %s" % urllib.parse.unquote(request.uri)
 
     def __repr__(self):  
         return '<DirectoryLister of %r>' % self.path

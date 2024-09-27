@@ -25,7 +25,7 @@ class TestCompatibility(unittest.TestCase):
             try:
                 old = reflect.namedModule(oldName)
                 new = reflect.namedModule(newName)
-            except ImportError, e:
+            except ImportError as e:
                 continue
             for someName in vars(new):
                 if someName == '__doc__':

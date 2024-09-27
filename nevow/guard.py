@@ -60,7 +60,7 @@ class GuardSession(components.Componentized):
         # XXX TODO: need to actually sort avatars by login order!
         if len(self.portals) != 1:
             raise RuntimeError("Ambiguous request for current avatar.")
-        return self.portals.values()[0][0]
+        return list(self.portals.values())[0][0]
 
     def resourceForPortal(self, port):
         return self.portals.get(port)
@@ -124,7 +124,7 @@ class GuardSession(components.Componentized):
         del self.guard.sessions[self.uid]
 
         # Logout of all portals
-        for portal in self.portals.keys():
+        for portal in list(self.portals.keys()):
             self.portalLogout(portal)
 
         for c in self.expireCallbacks:
@@ -144,7 +144,7 @@ class GuardSession(components.Componentized):
         self.checkExpiredID = None
         # If I haven't been touched in 15 minutes:
         if time.time() - self.lastModified > self.lifetime / 2:
-            if self.guard.sessions.has_key(self.uid):
+            if self.uid in self.guard.sessions:
                 self.expire()
             else:
                 log.msg("no session to expire: %s" % str(self.uid))
@@ -154,7 +154,7 @@ class GuardSession(components.Componentized):
                                                     self.checkExpired)
     def __getstate__(self):
         d = self.__dict__.copy()
-        if d.has_key('checkExpiredID'):
+        if 'checkExpiredID' in d:
             del d['checkExpiredID']
         return d
 
@@ -170,7 +170,7 @@ def urlToChild(request, *ar, **kw):
         u = u.child(stan.xml(segment))
     if request.method == 'POST':
         u = u.clear()
-    for k,v in kw.items():
+    for k,v in list(kw.items()):
         u = u.replace(k, v)
     
     return u
@@ -239,7 +239,8 @@ class SessionWrapper:
         # ctx.remember(self, ILoginManager)
 
         d = defer.maybeDeferred(self._delegate, ctx, [])
-        def _cb((resource, segments), ctx):
+        def _cb(xxx_todo_changeme1, ctx):
+            (resource, segments) = xxx_todo_changeme1
             assert not segments
             res = inevow.IResource(resource)
             return res.renderHTTP(ctx)
@@ -401,9 +402,10 @@ class SessionWrapper:
 
         if authCommand == LOGIN_AVATAR:
             subSegments = segments[1:]
-            def unmangleURL((res,segs)):
+            def unmangleURL(xxx_todo_changeme):
                 # Tell the session that we just logged in so that it will
                 # remember form values for us.
+                (res,segs) = xxx_todo_changeme
                 session.justLoggedIn = True
                 # Then, generate a redirect back to where we're supposed to be
                 # by looking at the root of the site and calculating the path
@@ -483,7 +485,8 @@ class SessionWrapper:
             self._cbLoginSuccess, session, segments
         )
 
-    def _cbLoginSuccess(self, (iface, res, logout), session, segments):
+    def _cbLoginSuccess(self, xxx_todo_changeme2, session, segments):
+        (iface, res, logout) = xxx_todo_changeme2
         session.setResourceForPortal(res, self.portal, logout)
         return res, segments
 

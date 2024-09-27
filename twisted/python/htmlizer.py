@@ -3,7 +3,7 @@
 
 #
 import tokenize, cgi, keyword
-import reflect
+from . import reflect
 
 class TokenPrinter:
 
@@ -13,10 +13,12 @@ class TokenPrinter:
     def __init__(self, writer):
         self.writer = writer
 
-    def printtoken(self, type, token, (srow, scol), (erow, ecol), line):
+    def printtoken(self, type, token, xxx_todo_changeme, xxx_todo_changeme1, line):
         #print "printtoken(%r,%r,%r,(%r,%r),(%r,%r),%r), row=%r,col=%r" % (
         #    self, type, token, srow,scol, erow,ecol, line,
         #    self.currentLine, self.currentCol)
+        (srow, scol) = xxx_todo_changeme
+        (erow, ecol) = xxx_todo_changeme1
         if self.currentLine < srow:
             self.writer('\n'*(srow-self.currentLine))
             self.currentLine, self.currentCol = srow, 0
@@ -81,7 +83,7 @@ def filter(inp, out, writer=HTMLWriter):
 
 def main():
     import sys
-    filter(open(sys.argv[1]), sys.stdout)
+    list(filter(open(sys.argv[1]), sys.stdout))
 
 if __name__ == '__main__':
    main()

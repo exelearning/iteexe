@@ -21,7 +21,7 @@ from twisted.internet import protocol
 from twisted.persisted import styles
 from twisted.python import log
 
-import types, copy, cStringIO, struct
+import types, copy, io, struct
 
 class BananaError(Exception):
     pass
@@ -36,7 +36,7 @@ def int2b128(integer, stream):
         integer = integer >> 7
 
 def b1282int(st):
-    oneHundredAndTwentyEight = 128l
+    oneHundredAndTwentyEight = 128
     i = 0
     place = 0
     for char in st:
@@ -158,11 +158,11 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
             elif typebyte == LONGINT:
                 buffer = rest
                 num = b1282int(num)
-                gotItem(long(num))
+                gotItem(int(num))
             elif typebyte == LONGNEG:
                 buffer = rest
                 num = b1282int(num)
-                gotItem(-long(num))
+                gotItem(-int(num))
             elif typebyte == NEG:
                 buffer = rest
                 num = -b1282int(num)
@@ -231,7 +231,7 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
         }
 
     incomingVocabulary = {}
-    for k, v in outgoingVocabulary.items():
+    for k, v in list(outgoingVocabulary.items()):
         incomingVocabulary[v] = k
 
     def __init__(self, isClient=1):
@@ -241,52 +241,50 @@ class Pynana(protocol.Protocol, styles.Ephemeral):
         self.isClient = isClient
 
     def sendEncoded(self, obj):
-        io = cStringIO.StringIO()
+        io = io.StringIO()
         self._encode(obj, io.write)
         value = io.getvalue()
         self.transport.write(value)
 
     def _encode(self, obj, write):
-        if isinstance(obj, types.ListType) or isinstance(obj, types.TupleType):
+        if isinstance(obj, list) or isinstance(obj, tuple):
             if len(obj) > SIZE_LIMIT:
-                raise BananaError, \
-                      "list/tuple is too long to send (%d)" % len(obj)
+                raise BananaError("list/tuple is too long to send (%d)" % len(obj))
             int2b128(len(obj), write)
             write(LIST)
             for elem in obj:
                 self._encode(elem, write)
-        elif isinstance(obj, types.IntType):
+        elif isinstance(obj, int):
             if obj >= 0:
                 int2b128(obj, write)
                 write(INT)
             else:
                 int2b128(-obj, write)
                 write(NEG)
-        elif isinstance(obj, types.LongType):
-            if obj >= 0l:
+        elif isinstance(obj, int):
+            if obj >= 0:
                 int2b128(obj, write)
                 write(LONGINT)
             else:
                 int2b128(-obj, write)
                 write(LONGNEG)
-        elif isinstance(obj, types.FloatType):
+        elif isinstance(obj, float):
             write(FLOAT)
             write(struct.pack("!d", obj))
-        elif isinstance(obj, types.StringType):
+        elif isinstance(obj, bytes):
             # TODO: an API for extending banana...
-            if (self.currentDialect == "pb") and self.outgoingSymbols.has_key(obj):
+            if (self.currentDialect == "pb") and obj in self.outgoingSymbols:
                 symbolID = self.outgoingSymbols[obj]
                 int2b128(symbolID, write)
                 write(VOCAB)
             else:
                 if len(obj) > SIZE_LIMIT:
-                    raise BananaError, \
-                          "string is too long to send (%d)" % len(obj)
+                    raise BananaError("string is too long to send (%d)" % len(obj))
                 int2b128(len(obj), write)
                 write(STRING)
                 write(obj)
         else:
-            raise BananaError, "could not send object: %s" % repr(obj)
+            raise BananaError("could not send object: %s" % repr(obj))
 Banana = Pynana
 
 
@@ -326,7 +324,7 @@ _i._selectDialect("none")
 
 def encode(lst):
     """Encode a list s-expression."""
-    io = cStringIO.StringIO()
+    io = io.StringIO()
     _i.transport = io
     _i.sendEncoded(lst)
     return io.getvalue()

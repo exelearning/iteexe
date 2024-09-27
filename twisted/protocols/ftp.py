@@ -20,6 +20,7 @@ import operator
 import stat
 import errno
 import fnmatch
+from functools import reduce
 
 try:
     import pwd, grp
@@ -569,7 +570,7 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
     disconnected = False
 
     # States an FTP can be in
-    UNAUTH, INAUTH, AUTHED, RENAMING = range(4)
+    UNAUTH, INAUTH, AUTHED, RENAMING = list(range(4))
 
     # how long the DTP waits for a connection
     dtpTimeout = 10
@@ -713,7 +714,8 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
             reply = USR_LOGGED_IN_PROCEED
         del self._user
 
-        def _cbLogin((interface, avatar, logout)):
+        def _cbLogin(xxx_todo_changeme):
+            (interface, avatar, logout) = xxx_todo_changeme
             assert interface is IFTPShell, "The realm is busted, jerk."
             self.shell = avatar
             self.logout = logout
@@ -757,7 +759,7 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
 
 
     def ftp_PORT(self, address):
-        addr = map(int, address.split(','))
+        addr = list(map(int, address.split(',')))
         ip = '%d.%d.%d.%d' % tuple(addr[:4])
         port = addr[4] << 8 | addr[5]
 
@@ -812,7 +814,7 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
 
         try:
             segments = toSegments(self.workingDirectory, path)
-        except InvalidPath, e:
+        except InvalidPath as e:
             return defer.fail(FileNotFoundError(path))
 
         d = self.shell.list(
@@ -830,7 +832,7 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
 
         try:
             segments = toSegments(self.workingDirectory, path)
-        except InvalidPath, e:
+        except InvalidPath as e:
             return defer.fail(FileNotFoundError(path))
 
         def cbList(results):
@@ -864,7 +866,7 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
     def ftp_CWD(self, path):
         try:
             segments = toSegments(self.workingDirectory, path)
-        except InvalidPath, e:
+        except InvalidPath as e:
             # XXX Eh, what to fail with here?
             return defer.fail(FileNotFoundError(path))
 
@@ -1008,7 +1010,8 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
         except InvalidPath:
             return defer.fail(FileNotFoundError(path))
 
-        def cbStat((size,)):
+        def cbStat(xxx_todo_changeme1):
+            (size,) = xxx_todo_changeme1
             return (FILE_STATUS, str(size))
 
         return self.shell.stat(newsegs, ('size',)).addCallback(cbStat)
@@ -1020,7 +1023,8 @@ class FTP(object, basic.LineReceiver, policies.TimeoutMixin):
         except InvalidPath:
             return defer.fail(FileNotFoundError(path))
 
-        def cbStat((modified,)):
+        def cbStat(xxx_todo_changeme2):
+            (modified,) = xxx_todo_changeme2
             return (FILE_STATUS, time.strftime('%Y%m%d%H%M%S', time.gmtime(modified)))
 
         return self.shell.stat(newsegs, ('modified',)).addCallback(cbStat)
@@ -1444,7 +1448,7 @@ class FTPAnonymousShell(object):
         p = self._path(path)
         try:
             f = p.open('rb')
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             return errnoToFailure(e.errno, path)
         except:
             return defer.fail()
@@ -1456,7 +1460,7 @@ class FTPAnonymousShell(object):
         # For now, just see if we can os.listdir() it
         try:
             p.listdir()
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             return errnoToFailure(e.errno, path)
         except:
             return defer.fail()
@@ -1488,7 +1492,7 @@ class FTPAnonymousShell(object):
                     p = path.path
                 try:
                     statResult = os.stat(p)
-                except (IOError, OSError), e:
+                except (IOError, OSError) as e:
                     return errnoToFailure(e.errno, path)
                 except:
                     return defer.fail()
@@ -1738,7 +1742,7 @@ def decodeHostPort(line):
     @returns: a 2-tuple of (host, port).
     """
     abcdef = re.sub('[^0-9, ]', '', line)
-    a, b, c, d, e, f = map(str.strip, abcdef.split(','))
+    a, b, c, d, e, f = list(map(str.strip, abcdef.split(',')))
     host = "%s.%s.%s.%s" % (a, b, c, d)
     port = (int(e)<<8) + int(f)
     return host, port

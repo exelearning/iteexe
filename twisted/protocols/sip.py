@@ -45,7 +45,7 @@ shortHeaders = {"call-id": "i",
                 }
 
 longHeaders = {}
-for k, v in shortHeaders.items():
+for k, v in list(shortHeaders.items()):
     longHeaders[v] = k
 del k, v
 
@@ -222,7 +222,7 @@ def parseViaHeader(value):
     result = {}
     pname, pversion, transport = protocolinfo.split("/")
     if pname != "SIP" or pversion != "2.0":
-        raise ValueError, "wrong protocol or version: %r" % value
+        raise ValueError("wrong protocol or version: %r" % value)
     result["transport"] = transport
     if ":" in by:
         host, port = by.split(":")
@@ -297,7 +297,7 @@ class URL:
             w(";%s" % v)
         if self.headers:
             w("?")
-            w("&".join([("%s=%s" % (specialCases.get(h) or dashCapitalize(h), v)) for (h, v) in self.headers.items()]))
+            w("&".join([("%s=%s" % (specialCases.get(h) or dashCapitalize(h), v)) for (h, v) in list(self.headers.items())]))
         return "".join(l)
 
     def __str__(self):
@@ -438,12 +438,12 @@ class Message:
     
     def creationFinished(self):
         if (self.length != None) and (self.length != len(self.body)):
-            raise ValueError, "wrong body length"
+            raise ValueError("wrong body length")
         self.finished = 1
 
     def toString(self):
         s = "%s\r\n" % self._getHeaderLine()
-        for n, vs in self.headers.items():
+        for n, vs in list(self.headers.items()):
             for v in vs:
                 s += "%s: %s\r\n" % (specialCases.get(n) or dashCapitalize(n), v)
         s += "\r\n"
@@ -536,7 +536,7 @@ class MessagesParser(basic.LineReceiver):
             self.reset()
         else:
             # we have enough data and message wasn't finished? something is wrong
-            raise RuntimeError, "this should never happen"
+            raise RuntimeError("this should never happen")
     
     def dataReceived(self, data):
         try:
@@ -656,8 +656,9 @@ class Base(protocol.DatagramProtocol):
                 self.handle_response(m, addr)
         self.messages[:] = []
 
-    def _fixupNAT(self, message, (srcHost, srcPort)):
+    def _fixupNAT(self, message, xxx_todo_changeme):
         # RFC 2543 6.40.2,
+        (srcHost, srcPort) = xxx_todo_changeme
         senderVia = parseViaHeader(message.headers["via"][0])
         if senderVia.host != srcHost:            
             senderVia.received = srcHost
@@ -695,7 +696,7 @@ class Base(protocol.DatagramProtocol):
         @param message: The message to send.
         """
         if destURL.transport not in ("udp", None):
-            raise RuntimeError, "only UDP currently supported"
+            raise RuntimeError("only UDP currently supported")
         if self.debug:
             log.msg("Sending %r to %r" % (message.toString(), destURL))
         self.transport.write(message.toString(), (destURL.host, destURL.port or self.PORT))
@@ -788,7 +789,7 @@ class Proxy(Base):
             f = self.handle_request_default
         try:
             d = f(message, addr)
-        except SIPError, e:
+        except SIPError as e:
             self.deliverResponse(self.responseFromRequest(e.code, message))
         except:
             log.err()
@@ -799,7 +800,7 @@ class Proxy(Base):
                     self.deliverResponse(self.responseFromRequest(e.code, message))
                 )
         
-    def handle_request_default(self, message, (srcHost, srcPort)):
+    def handle_request_default(self, message, xxx_todo_changeme1):
         """Default request handler.
         
         Default behaviour for OPTIONS and unknown methods for proxies
@@ -808,6 +809,7 @@ class Proxy(Base):
         Since at the moment we are stateless proxy, thats basically
         everything.
         """
+        (srcHost, srcPort) = xxx_todo_changeme1
         def _mungContactHeader(uri, message):
             message.headers['contact'][0] = uri.toString()            
             return self.sendMessage(uri, message)
@@ -961,12 +963,12 @@ class DigestAuthorizer:
         self.outstanding = {}
     
     def generateNonce(self):
-        c = tuple([random.randrange(sys.maxint) for _ in range(3)])
+        c = tuple([random.randrange(sys.maxsize) for _ in range(3)])
         c = '%d%d%d' % c
         return c
 
     def generateOpaque(self):
-        return str(random.randrange(sys.maxint))
+        return str(random.randrange(sys.maxsize))
 
     def getChallenge(self, peer):
         c = self.generateNonce()
@@ -1013,32 +1015,34 @@ class RegisterProxy(Proxy):
         Proxy.__init__(self, *args, **kw)
         self.liveChallenges = {}
         
-    def handle_ACK_request(self, message, (host, port)):
+    def handle_ACK_request(self, message, xxx_todo_changeme2):
         # XXX
         # ACKs are a client's way of indicating they got the last message
         # Responding to them is not a good idea.
         # However, we should keep track of terminal messages and re-transmit
         # if no ACK is received.
+        (host, port) = xxx_todo_changeme2
         pass
 
-    def handle_REGISTER_request(self, message, (host, port)):
+    def handle_REGISTER_request(self, message, xxx_todo_changeme3):
         """Handle a registration request.
 
         Currently registration is not proxied.
         """
+        (host, port) = xxx_todo_changeme3
         if self.portal is None:
             # There is no portal.  Let anyone in.
             self.register(message, host, port)
         else:
             # There is a portal.  Check for credentials.
-            if not message.headers.has_key("authorization"):
+            if "authorization" not in message.headers:
                 return self.unauthorized(message, host, port)
             else:
                 return self.login(message, host, port)
 
     def unauthorized(self, message, host, port):
         m = self.responseFromRequest(401, message)
-        for (scheme, auth) in self.authorizers.iteritems():
+        for (scheme, auth) in self.authorizers.items():
             chal = auth.getChallenge((host, port))
             if chal is None:
                 value = '%s realm="%s"' % (scheme.title(), self.host)
@@ -1069,8 +1073,9 @@ class RegisterProxy(Proxy):
         else:
             self.deliverResponse(self.responseFromRequest(501, message))
 
-    def _cbLogin(self, (i, a, l), message, host, port):
+    def _cbLogin(self, xxx_todo_changeme4, message, host, port):
         # It's stateless, matey.  What a joke.
+        (i, a, l) = xxx_todo_changeme4
         self.register(message, host, port)
     
     def _ebLogin(self, failure, message, host, port):
@@ -1081,7 +1086,7 @@ class RegisterProxy(Proxy):
         """Allow all users to register"""
         name, toURL, params = parseAddress(message.headers["to"][0], clean=1)
         contact = None
-        if message.headers.has_key("contact"):
+        if "contact" in message.headers:
             contact = message.headers["contact"][0]
 
         if message.headers.get("expires", [None])[0] == "0":
@@ -1150,7 +1155,7 @@ class InMemoryRegistry:
     def getAddress(self, userURI):
         if userURI.host != self.domain:
             return defer.fail(LookupError("unknown domain"))
-        if self.users.has_key(userURI.username):
+        if userURI.username in self.users:
             dc, url = self.users[userURI.username]
             return defer.succeed(url)
         else:
@@ -1159,7 +1164,7 @@ class InMemoryRegistry:
     def getRegistrationInfo(self, userURI):
         if userURI.host != self.domain:
             return defer.fail(LookupError("unknown domain"))
-        if self.users.has_key(userURI.username):
+        if userURI.username in self.users:
             dc, url = self.users[userURI.username]
             return defer.succeed(Registration(int(dc.getTime() - time.time()), url))
         else:
@@ -1182,7 +1187,7 @@ class InMemoryRegistry:
         if logicalURL.host != self.domain:
             log.msg("Registration for domain we don't handle.")
             return defer.fail(RegistrationError(404))
-        if self.users.has_key(logicalURL.username):
+        if logicalURL.username in self.users:
             dc, old = self.users[logicalURL.username]
             dc.reset(3600)
         else:

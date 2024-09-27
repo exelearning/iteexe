@@ -6,7 +6,7 @@
 Test case for twisted.protocols.loopback
 """
 
-from __future__ import nested_scopes
+
 
 from twisted.trial import unittest
 from twisted.protocols import basic, loopback
@@ -52,10 +52,10 @@ class LoopbackTestCase(unittest.TestCase):
             s.transport.loseConnection()
         s.conn.addCallback(sendALine)
 
-        self.loopbackFunc.im_func(s, c)
-        self.assertEquals(c.lines, ["THIS IS LINE ONE!"])
-        self.assertEquals(s.connLost, 1)
-        self.assertEquals(c.connLost, 1)
+        self.loopbackFunc.__func__(s, c)
+        self.assertEqual(c.lines, ["THIS IS LINE ONE!"])
+        self.assertEqual(s.connLost, 1)
+        self.assertEqual(c.connLost, 1)
     
     def testSneakyHiddenDoom(self):
         s = DoomProtocol()
@@ -65,11 +65,11 @@ class LoopbackTestCase(unittest.TestCase):
             s.sendLine("DOOM LINE")
         s.conn.addCallback(sendALine)
         
-        self.loopbackFunc.im_func(s, c)
-        self.assertEquals(s.lines, ['Hello 1', 'Hello 2', 'Hello 3'])
-        self.assertEquals(c.lines, ['DOOM LINE', 'Hello 1', 'Hello 2', 'Hello 3'])
-        self.assertEquals(s.connLost, 1)
-        self.assertEquals(c.connLost, 1)
+        self.loopbackFunc.__func__(s, c)
+        self.assertEqual(s.lines, ['Hello 1', 'Hello 2', 'Hello 3'])
+        self.assertEqual(c.lines, ['DOOM LINE', 'Hello 1', 'Hello 2', 'Hello 3'])
+        self.assertEqual(s.connLost, 1)
+        self.assertEqual(c.connLost, 1)
 
 class LoopbackTCPTestCase(LoopbackTestCase):
     loopbackFunc = loopback.loopbackTCP

@@ -92,7 +92,7 @@ class TestSiteAndRequest(testutil.TestCase):
                 return util.succeed("hello")
 
         result = self.renderResource(Deferreder(), 'foo')
-        self.assertEquals(result, "hello")
+        self.assertEqual(result, "hello")
 
     def test_regularRender(self):
         class Regular(Render):
@@ -100,7 +100,7 @@ class TestSiteAndRequest(testutil.TestCase):
                 return "world"
 
         result = self.renderResource(Regular(), 'bar')
-        self.assertEquals(result, 'world')
+        self.assertEqual(result, 'world')
 
     def test_returnsResource(self):
         class Res2(Render):
@@ -112,5 +112,5 @@ class TestSiteAndRequest(testutil.TestCase):
                 return Res2()
 
         result = self.renderResource(Res1(), 'bar')
-        self.assertEquals(result, 'world')
+        self.assertEqual(result, 'world')
 

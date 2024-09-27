@@ -13,6 +13,7 @@ from twisted.pb import schema, banana, tokens, ipb
 from twisted.pb import call, slicer, referenceable, copyable, remoteinterface
 from twisted.pb.tokens import Violation, BananaError
 from twisted.pb.ipb import DeadReferenceError
+from functools import reduce
 
 try:
     from twisted.pb import crypto
@@ -58,7 +59,7 @@ class PBRootUnslicer(slicer.RootUnslicer):
                 # TODO: this is silly, of course (should pre-compute maxlen)
                 maxlen = reduce(max,
                                 [len(cname) \
-                                 for cname in copyable.CopyableRegistry.keys()]
+                                 for cname in list(copyable.CopyableRegistry.keys())]
                                 )
                 if size > maxlen:
                     why = "copyable-classname token is too long, %d>%d" % \
@@ -107,7 +108,7 @@ class PBRootUnslicer(slicer.RootUnslicer):
 
     def reportViolation(self, f):
         if self.logViolations:
-            print "hey, something failed:", f
+            print("hey, something failed:", f)
         return None # absorb the failure
 
     def receiveChild(self, token, ready_deferred=None):
@@ -185,7 +186,7 @@ class Broker(banana.Banana, referenceable.Referenceable):
 
         # tracking Referenceables
         # sending side uses these
-        self.nextCLID = count(1).next # 0 is for the broker
+        self.nextCLID = count(1).__next__ # 0 is for the broker
         self.myReferenceByPUID = {} # maps ref.processUniqueID to a tracker
         self.myReferenceByCLID = {} # maps CLID to a tracker
         # receiving side uses these
@@ -193,13 +194,13 @@ class Broker(banana.Banana, referenceable.Referenceable):
         self.yourReferenceByURL = {}
 
         # tracking Gifts
-        self.nextGiftID = count().next
+        self.nextGiftID = count().__next__
         self.myGifts = {} # maps (broker,clid) to (rref, giftID, count)
         self.myGiftsByGiftID = {} # maps giftID to (broker,clid)
 
         # remote calls
         # sending side uses these
-        self.nextReqID = count().next
+        self.nextReqID = count().__next__
         self.waitingForAnswers = {} # we wait for the other side to answer
         self.disconnectWatchers = []
         # receiving side uses these
@@ -325,9 +326,9 @@ class Broker(banana.Banana, referenceable.Referenceable):
     def freeYourReferenceTracker(self, res, tracker):
         if tracker.received_count != 0:
             return
-        if self.yourReferenceByCLID.has_key(tracker.clid):
+        if tracker.clid in self.yourReferenceByCLID:
             del self.yourReferenceByCLID[tracker.clid]
-        if tracker.url and self.yourReferenceByURL.has_key(tracker.url):
+        if tracker.url and tracker.url in self.yourReferenceByURL:
             del self.yourReferenceByURL[tracker.url]
 
 
@@ -418,7 +419,7 @@ class Broker(banana.Banana, referenceable.Referenceable):
             raise Violation("non-existent reqID '%d'" % reqID)
 
     def abandonAllRequests(self, why):
-        for req in self.waitingForAnswers.values():
+        for req in list(self.waitingForAnswers.values()):
             req.fail(why)
         self.waitingForAnswers = {}
 
@@ -477,7 +478,7 @@ class Broker(banana.Banana, referenceable.Referenceable):
         del self.activeLocalCalls[reqID]
         
 
-import debug
+from . import debug
 class LoggingBroker(debug.LoggingBananaMixin, Broker):
     pass
 

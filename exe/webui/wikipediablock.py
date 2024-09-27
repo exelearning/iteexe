@@ -91,8 +91,8 @@ class WikipediaBlock(Block):
         else:
             # If they hit "the tick" instead of "load"
             Block.process(self, request)
-            if (u"action" not in request.args \
-            or request.args[u"action"][0] != u"delete"):
+            if ("action" not in request.args \
+            or request.args["action"][0] != "delete"):
                 # If the text has been changed
                 self.articleElement.process(request)
             if "action" in request.args \
@@ -109,31 +109,31 @@ class WikipediaBlock(Block):
         log.debug("renderEdit")
         
 
-        html  = u"<div class=\"iDevice\"><br/>\n"
+        html  = "<div class=\"iDevice\"><br/>\n"
         html += common.textInput("title" + self.id, self.idevice.title) + "<br/><br/>"
 
-        sites = [(_(u"English Wikipedia Article"), "http://en.wikipedia.org/wiki/"),
-                 (_(u"Basque Wikipedia Article"), "http://eu.wikipedia.org/wiki/"),
-                 (_(u"Catalan Wikipedia Article"), "http://ca.wikipedia.org/wiki/"),
-                 (_(u"Chinese Wikipedia Article"), "http://zh.wikipedia.org/wiki/"),
-                 (_(u"Dutch Wikipedia Article"),   "http://nl.wikipedia.org/wiki/"),
-                 (_(u"French Wikipedia Article"),  "http://fr.wikipedia.org/wiki/"),
-                 (_(u"German Wikipedia Article"),  "http://de.wikipedia.org/wiki/"),
-                 (_(u"Galician Wikipedia Article"),  "http://gl.wikipedia.org/wiki/"),    
-                 (_(u"Greek Wikipedia Article"), "http://el.wikipedia.org/wiki/"),
-                 (_(u"Italian Wikipedia Article"), "http://it.wikipedia.org/wiki/"),
-                 (_(u"Japanese Wikipedia Article"),"http://ja.wikipedia.org/wiki/"),
-                 (_(u"Magyar Wikipedia Article"),"http://hu.wikipedia.org/wiki/"),
-                 (_(u"Polish Wikipedia Article"),  "http://pl.wikipedia.org/wiki/"),
-                 (_(u"Portugese Wikipedia Article"), "http://pt.wikipedia.org/wiki/"),
-                 (_(u"Slovenian Wikipedia Article"), "http://sl.wikipedia.org/wiki/"),
-                 (_(u"Spanish Wikipedia Article"), "http://es.wikipedia.org/wiki/"),
-                 (_(u"Swedish Wikipedia Article"), "http://sv.wikipedia.org/wiki/"),
-                 (_(u"Wikibooks Article"),         "http://en.wikibooks.org/wiki/"),
-                 (_(u"Wikiversity"),         "http://en.wikiversity.org/wiki/"),
-                 (_(u"Wiktionary"),         "http://en.wiktionary.org/wiki/"),
-                 (_(u"Wikieducator Content"),      "http://wikieducator.org/"),
-                 (_(u"Other"),                     "")]          
+        sites = [(_("English Wikipedia Article"), "http://en.wikipedia.org/wiki/"),
+                 (_("Basque Wikipedia Article"), "http://eu.wikipedia.org/wiki/"),
+                 (_("Catalan Wikipedia Article"), "http://ca.wikipedia.org/wiki/"),
+                 (_("Chinese Wikipedia Article"), "http://zh.wikipedia.org/wiki/"),
+                 (_("Dutch Wikipedia Article"),   "http://nl.wikipedia.org/wiki/"),
+                 (_("French Wikipedia Article"),  "http://fr.wikipedia.org/wiki/"),
+                 (_("German Wikipedia Article"),  "http://de.wikipedia.org/wiki/"),
+                 (_("Galician Wikipedia Article"),  "http://gl.wikipedia.org/wiki/"),    
+                 (_("Greek Wikipedia Article"), "http://el.wikipedia.org/wiki/"),
+                 (_("Italian Wikipedia Article"), "http://it.wikipedia.org/wiki/"),
+                 (_("Japanese Wikipedia Article"),"http://ja.wikipedia.org/wiki/"),
+                 (_("Magyar Wikipedia Article"),"http://hu.wikipedia.org/wiki/"),
+                 (_("Polish Wikipedia Article"),  "http://pl.wikipedia.org/wiki/"),
+                 (_("Portugese Wikipedia Article"), "http://pt.wikipedia.org/wiki/"),
+                 (_("Slovenian Wikipedia Article"), "http://sl.wikipedia.org/wiki/"),
+                 (_("Spanish Wikipedia Article"), "http://es.wikipedia.org/wiki/"),
+                 (_("Swedish Wikipedia Article"), "http://sv.wikipedia.org/wiki/"),
+                 (_("Wikibooks Article"),         "http://en.wikibooks.org/wiki/"),
+                 (_("Wikiversity"),         "http://en.wikiversity.org/wiki/"),
+                 (_("Wiktionary"),         "http://en.wiktionary.org/wiki/"),
+                 (_("Wikieducator Content"),      "http://wikieducator.org/"),
+                 (_("Other"),                     "")]          
 
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
@@ -175,12 +175,12 @@ class WikipediaBlock(Block):
         html += "<br/>"
         html += common.textInput("article", self.idevice.articleName)
         html += common.elementInstruc(self.idevice.searchInstruc)
-        html += common.submitButton(u"loadWikipedia"+self.id, _(u"Load"))
+        html += common.submitButton("loadWikipedia"+self.id, _("Load"))
         
-        html += u"<br/>\n"
+        html += "<br/>\n"
         html += self.articleElement.renderEdit()
-        emphasisValues = [(_(u"No emphasis"),     Idevice.NoEmphasis),
-                          (_(u"Some emphasis"),   Idevice.SomeEmphasis)]
+        emphasisValues = [(_("No emphasis"),     Idevice.NoEmphasis),
+                          (_("Some emphasis"),   Idevice.SomeEmphasis)]
 
         html += common.formField('select', this_package, _('Emphasis'),
                                  'emphasis', self.id, 
@@ -189,7 +189,7 @@ class WikipediaBlock(Block):
                                  self.idevice.emphasis)
 
         html += self.renderEditButtons(undo=self.idevice.undo)
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 

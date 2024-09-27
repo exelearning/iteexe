@@ -20,7 +20,7 @@ from twisted.internet import protocol, defer, interfaces, error
 from twisted.python import log, components
 from zope.interface import implements
 
-LENGTH, DATA, COMMA = range(3)
+LENGTH, DATA, COMMA = list(range(3))
 NUMBER = re.compile('(\d*)(:?)')
 DEBUG = 0
 
@@ -82,11 +82,11 @@ class NetstringReceiver(protocol.Protocol):
         self.__data = self.__data[m.end():]
         if m.group(1):
             try:
-                self._readerLength = self._readerLength * (10**len(m.group(1))) + long(m.group(1))
+                self._readerLength = self._readerLength * (10**len(m.group(1))) + int(m.group(1))
             except OverflowError:
-                raise NetstringParseError, "netstring too long"
+                raise NetstringParseError("netstring too long")
             if self._readerLength > self.MAX_LENGTH:
-                raise NetstringParseError, "netstring too long"
+                raise NetstringParseError("netstring too long")
         if m.group(2):
             self.__buffer = ''
             self._readerState = DATA
@@ -102,7 +102,7 @@ class NetstringReceiver(protocol.Protocol):
                 elif self._readerState == LENGTH:
                     self.doLength()
                 else:
-                    raise RuntimeError, "mode is not DATA, COMMA or LENGTH"
+                    raise RuntimeError("mode is not DATA, COMMA or LENGTH")
         except NetstringParseError:
             self.transport.loseConnection()
             self.brokenPeer = 1

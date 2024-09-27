@@ -20,7 +20,7 @@ pass.
 
 from twisted.python import log
 
-from flavors import Referenceable, Viewable
+from .flavors import Referenceable, Viewable
 from copy import copy
 import os
 
@@ -59,7 +59,7 @@ class PathReferenceDirectory(Referenceable):
     def remote_callPath(self, path, name, *args, **kw):
         ctx = PathReferenceContext(path, self)
         obj = ctx.getObject()
-        return apply(getattr(obj, "%s_%s" % (self.prefix, name)), args, kw)
+        return getattr(obj, "%s_%s" % (self.prefix, name))(*args, **kw)
 
 class PathReferenceContextDirectory(Referenceable):
     def __init__(self, root, prefix="remote"):
@@ -68,8 +68,7 @@ class PathReferenceContextDirectory(Referenceable):
     def remote_callPath(self, path, name, *args, **kw):
         ctx = PathReferenceContext(path, self)
         obj = ctx.getObject()
-        return apply(getattr(obj, "%s_%s" % (self.prefix, name)),
-                     (ctx,)+args, kw)
+        return getattr(obj, "%s_%s" % (self.prefix, name))(*(ctx,)+args, **kw)
 
 class PathViewDirectory(Viewable):
     def __init__(self, root, prefix="view"):
@@ -78,8 +77,7 @@ class PathViewDirectory(Viewable):
     def view_callPath(self, perspective, path, name, *args, **kw):
         ctx = PathReferenceContext(path, self)
         obj = ctx.getObject()
-        return apply(getattr(obj, "%s_%s" % (self.prefix, name)),
-                     (perspective,)+args, kw)
+        return getattr(obj, "%s_%s" % (self.prefix, name))(*(perspective,)+args, **kw)
 
 class PathViewContextDirectory(Viewable):
     def __init__(self, root, prefix="view"):
@@ -88,8 +86,7 @@ class PathViewContextDirectory(Viewable):
     def view_callPath(self, perspective, path, name, *args, **kw):
         ctx = PathReferenceContext(path, self)
         obj = ctx.getObject()
-        return apply(getattr(obj, "%s_%s" % (self.prefix, name)),
-                     (perspective,ctx)+args, kw)
+        return getattr(obj, "%s_%s" % (self.prefix, name))(*(perspective,ctx)+args, **kw)
 
 ### "Client"-side objects
 
@@ -99,5 +96,4 @@ class RemotePathReference:
         self.path = path
 
     def callRemote(self, name, *args, **kw):
-        apply(self.ref.callRemote,
-              ("callPath", self.path, name)+args, kw)
+        self.ref.callRemote(*("callPath", self.path, name)+args, **kw)

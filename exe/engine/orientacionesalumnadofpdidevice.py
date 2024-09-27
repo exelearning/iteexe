@@ -27,15 +27,15 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Guidelines Students"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Guidelines Students is an iDevice that permits students know the objectives of their learning."""), u"", u"orientacionesfpd")
+                         x_("FPD - Guidelines Students"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""Guidelines Students is an iDevice that permits students know the objectives of their learning."""), "", "orientacionesfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_orientacionesfpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Guidelines Students Text'), 
+        self.activityTextArea = TextAreaField(x_('Guidelines Students Text'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -85,8 +85,8 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"orientacionesfpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "orientacionesfpd"
 
 
     def upgradeToVersion2(self):
@@ -94,7 +94,7 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_orientacionesfpd"
         
@@ -133,7 +133,7 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Guidelines Students Text:'), 
+        self.activityTextArea = TextAreaField(x_('Guidelines Students Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -144,14 +144,14 @@ class OrientacionesalumnadofpdIdevice(Idevice):
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Orientaciones Alumnado":
-            self._title = u"FPD - Guidelines Students"
-        if self._purpose == u"""Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje.""":
-            self._purpose = u"""Guidelines Students is an iDevice that permits students know the objectives of their learning."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Orientaciones alumnado':
-            self.activityTextArea._name = u'Guidelines Students Text'
-        if self.activityTextArea._name == u'Texto Orientaciones alumnado:':
-            self.activityTextArea._name = u'Guidelines Students Text:'
+        if self._title == "FPD - Orientaciones Alumnado":
+            self._title = "FPD - Guidelines Students"
+        if self._purpose == """Orientciones alumnado es un iDevice que permite al alumnado conocer los objetivos de su aprendizaje.""":
+            self._purpose = """Guidelines Students is an iDevice that permits students know the objectives of their learning."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Orientaciones alumnado':
+            self.activityTextArea._name = 'Guidelines Students Text'
+        if self.activityTextArea._name == 'Texto Orientaciones alumnado:':
+            self.activityTextArea._name = 'Guidelines Students Text:'
 # ===========================================================================

@@ -32,12 +32,12 @@ from exe.engine.translate import lateTranslate
 from exe                  import globals as G
 from exe.engine.node      import Node
 import os
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import shutil
 from exe.engine.translate import lateTranslate
 from exe.engine.mimetex   import compile
-from HTMLParser           import HTMLParser
-from htmlentitydefs       import name2codepoint
+from html.parser           import HTMLParser
+from html.entities       import name2codepoint
 from exe.engine.htmlToText import HtmlToText
 from twisted.persisted.styles import Versioned
 from exe.webui                import common
@@ -63,9 +63,9 @@ class ListaIdevice(Idevice):
         """
        
         
-        Idevice.__init__(self, x_(u"DropDown Activity"),
-                         x_(u"INTEF"), 
-                         x_(u"<p>DropDown exercises are texts or "
+        Idevice.__init__(self, x_("DropDown Activity"),
+                         x_("INTEF"), 
+                         x_("<p>DropDown exercises are texts or "
                              "sentences where students must select the "
                              "correct words. They are often used for the "
                              "following purposes:</p>"
@@ -77,7 +77,7 @@ class ListaIdevice(Idevice):
                              "<li>To check vocabulary knowledge.</li>"
                              "<li>To check word formation and/or grammatical "
                              "competence. </li></ol>"),
-                         x_(u"<dl>"
+                         x_("<dl>"
                              "  <dt>If your goal is to test understanding "
                              "of core concepts or reading comprehension"
                              "  </dt>"
@@ -123,22 +123,22 @@ class ListaIdevice(Idevice):
                              "  </p>"
                              "  </dd>"
                              "</dl>"),
-                            u"question",
+                            "question",
                              parentNode)
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the dropdown activity should be completed."""),
-            x_(u'Read and complete'))
+            x_('Instructions'),
+            x_("""Provide instruction on how the dropdown activity should be completed."""),
+            x_('Read and complete'))
         self.instructionsForLearners.idevice = self
-        self._content = ListaField(x_(u'Dropdown'), 
-            x_(u"""<p>Enter the text for the dropdown activity in to the dropdown field 
+        self._content = ListaField(x_('Dropdown'), 
+            x_("""<p>Enter the text for the dropdown activity in to the dropdown field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to choose, double click on the word to select it and 
 click on the 'Hide/Show' button below.</p>"""))
         self._content.idevice = self
         self._content.otras=''
-        self.feedback = TextAreaField(x_(u'Feedback'),
-            x_(u'Enter any feedback you wish to provide the learner '
+        self.feedback = TextAreaField(x_('Feedback'),
+            x_('Enter any feedback you wish to provide the learner '
                 'with-in the feedback field. This field can be left blank.'))
         self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
@@ -287,12 +287,12 @@ click on the 'Hide/Show' button below.</p>"""))
         """
         self._upgradeIdeviceToVersion1()
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions For Learners'),
-            x_(u'Put instructions for learners here'),
-            x_(u'Read the paragraph below and '
+            x_('Instructions For Learners'),
+            x_('Put instructions for learners here'),
+            x_('Read the paragraph below and '
                 'choose the correct words'))
         self.instructionsForLearners.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'))
+        self.feedback = TextAreaField(x_('Feedback'))
         self.feedback.idevice = self
 
 
@@ -302,7 +302,7 @@ click on the 'Hide/Show' button below.</p>"""))
         Upgrades exe to v0.11
         """
         self.content.autoCompletion = True
-        self.content.autoCompletionInstruc =  u""
+        self.content.autoCompletionInstruc =  ""
 
     def upgradeToVersion3(self):
         """
@@ -349,7 +349,7 @@ class ListaField(FieldWithResources):
         self.otras = ''
         # self.otrasInstruc should have no HTML tags (#574)
         otrasInstruc = \
-            _(u"<p>Optional: Write other words to complete the Dropdown activity.<br/> Use | (the vertical bar) to separate words.<br/> This field can be left blank. </p>")
+            _("<p>Optional: Write other words to complete the Dropdown activity.<br/> Use | (the vertical bar) to separate words.<br/> This field can be left blank. </p>")
         cleanr = re.compile('<.*?>')
         self.otrasInstruc = re.sub(cleanr, '', otrasInstruc)
      
@@ -369,8 +369,8 @@ class ListaField(FieldWithResources):
         """
         Cleans out the encoded content as it is passed in. Makes clean XHTML.
         """
-        for key, val in name2codepoint.items():
-            value = value.replace('&%s;' % key, unichr(val))
+        for key, val in list(name2codepoint.items()):
+            value = value.replace('&%s;' % key, chr(val))
         # workaround for Microsoft Word which incorrectly quotes font names
         value = re.sub(r'font-family:\s*"([^"]+)"', r'font-family: \1', value)
         parser = ListaHTMLParser()
@@ -398,7 +398,7 @@ class ListaField(FieldWithResources):
         Upgrades to exe v0.11
         """
         self.autoCompletion = True
-        self.autoCompletionInstruc = _(u"""Allow auto completion when 
+        self.autoCompletionInstruc = _("""Allow auto completion when 
                                        user filling the gaps.""")
 
 

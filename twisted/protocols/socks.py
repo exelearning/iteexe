@@ -74,7 +74,7 @@ class SOCKSv4(protocol.Protocol):
             try:
                 version,code,port=struct.unpack("!BBH",head[:4])
             except struct.error:
-                raise RuntimeError, "struct error with head='%s' and buf='%s'"%(repr(head),repr(self.buf))
+                raise RuntimeError("struct error with head='%s' and buf='%s'"%(repr(head),repr(self.buf)))
             user,self.buf=string.split(self.buf,"\000",1)
             if head[4:7]=="\000\000\000": # domain is after
                 server,self.buf=string.split(self.buf,'\000',1)
@@ -93,7 +93,7 @@ class SOCKSv4(protocol.Protocol):
                 d = self.listenClass(0, SOCKSv4IncomingFactory, self, ip)
                 d.addCallback(lambda (h, p), self=self: self.makeReply(90, 0, p, h))
             else:
-                raise RuntimeError, "Bad Connect Code: %s" % code
+                raise RuntimeError("Bad Connect Code: %s" % code)
             assert self.buf=="","hmm, still stuff in buffer... %s" % repr(self.buf)
 
     def connectionLost(self, reason):
@@ -130,7 +130,7 @@ class SOCKSv4(protocol.Protocol):
                                         theirhost,theirport))
         while data:
             p,data=data[:16],data[16:]
-            f.write(string.join(map(lambda x:'%02X'%ord(x),p),' ')+' ')
+            f.write(string.join(['%02X'%ord(x) for x in p],' ')+' ')
             f.write((16-len(p))*3*' ')
             for c in p:
                 if len(repr(c))>3: f.write('.')

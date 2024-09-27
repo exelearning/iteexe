@@ -29,7 +29,7 @@ import logging
 import json
 from twisted.web.resource import Resource
 from exe.webui.renderable import RenderableResource
-import mywebbrowser
+from . import mywebbrowser
 from exe.engine.path import Path
 import os.path
 from exe.webui import common
@@ -146,7 +146,7 @@ class PreferencesPage(RenderableResource):
         self.browsers = []
         self.licensesNames=[]
 
-        for locale in self.config.locales.keys():
+        for locale in list(self.config.locales.keys()):
             localeName = locale + ": "
             langName = langNames.get(locale)
             localeName += langName
@@ -157,7 +157,7 @@ class PreferencesPage(RenderableResource):
                 if browser in browserNames:
                     self.browsersAvalaibles.append((browserNames[browser], browser))
         self.browsersAvalaibles.sort()
-        self.browsersAvalaibles.append((_(u"Default browser in your system"), "None"))
+        self.browsersAvalaibles.append((_("Default browser in your system"), "None"))
         for browser in self.browsersAvalaibles:
             self.browsers.append({'browser': browser[1], 'text': browser[0]})
         for licenses in common.getPackageLicenses():
@@ -186,7 +186,7 @@ class PreferencesPage(RenderableResource):
             data['internalAnchors'] = self.config.internalAnchors
             data['defaultLicense'] = self.config.defaultLicense
             browserSelected = "None"
-            for bname, item in mywebbrowser._browsers.items():
+            for bname, item in list(mywebbrowser._browsers.items()):
                 if bname not in browsersHidden:
                     klass, instance = item
                     if instance == self.config.browser:
@@ -221,7 +221,7 @@ class PreferencesPage(RenderableResource):
             #     if name == packagename:
             #         package.set_lang(locale)
             #
-            self.config.locales[locale].install(unicode=True)
+            self.config.locales[locale].install(str=True)
             self.config.configParser.set('user', 'locale', locale)
 
             internalAnchors = request.args['internalAnchors'][0]

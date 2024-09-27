@@ -4,7 +4,7 @@
 #
 syslog = __import__('syslog')
 
-import log
+from . import log
 
 class SyslogObserver:
     def __init__(self, prefix):
@@ -13,9 +13,9 @@ class SyslogObserver:
     def emit(self, eventDict):
         edm = eventDict['message']
         if not edm:
-            if eventDict['isError'] and eventDict.has_key('failure'):
+            if eventDict['isError'] and 'failure' in eventDict:
                 text = eventDict['failure'].getTraceback()
-            elif eventDict.has_key('format'):
+            elif 'format' in eventDict:
                 text = eventDict['format'] % eventDict
             else:
                 # we don't know how to log this

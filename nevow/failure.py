@@ -164,7 +164,7 @@ def htmlDict(d):
                 td(_class="dictKey")[ k == '__builtins__' and 'builtin dictionary' or k ],
                 td(_class="dictValue")[ htmlrepr(v) ]
             ]
-            for k, v in d.items()
+            for k, v in list(d.items())
         ]]
     ]
                 
@@ -199,13 +199,13 @@ def htmlString(s):
 
 def htmlFunc(f):
     return div(_class="function")[
-        "Function %s in file %s at line %s" % (f.__name__, f.func_code.co_filename, f.func_code.co_firstlineno)
+        "Function %s in file %s at line %s" % (f.__name__, f.__code__.co_filename, f.__code__.co_firstlineno)
     ]
 
 
 def htmlMeth(m):
     return div(_class="method")[
-        "Method %s in file %s at line %s" % (m.im_func.__name__, m.im_func.func_code.co_filename, m.im_func.func_code.co_firstlineno)
+        "Method %s in file %s at line %s" % (m.__func__.__name__, m.__func__.__code__.co_filename, m.__func__.__code__.co_firstlineno)
     ]
 
 def htmlUnknown(u):
@@ -215,10 +215,10 @@ def htmlUnknown(u):
 
 
 htmlReprTypes = {
-    types.DictType: htmlDict,
-    types.ListType: htmlList,
+    dict: htmlDict,
+    list: htmlList,
     types.InstanceType: htmlInst,
-    types.StringType: htmlString,
+    bytes: htmlString,
     types.FunctionType: htmlFunc,
     types.MethodType: htmlMeth,
 }
@@ -292,7 +292,7 @@ def formatFailure(myFailure):
         # Instance variables
         for name, var in localVars:
             if name == 'self' and hasattr(var, '__dict__'):
-                usedVars = [ (key, value) for (key, value) in var.__dict__.items()
+                usedVars = [ (key, value) for (key, value) in list(var.__dict__.items())
                              if re.search(r'\W'+'self.'+key+r'\W', textSnippet) ]
                 if usedVars:
                     frame[

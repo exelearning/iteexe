@@ -14,7 +14,7 @@ class UtilityTest(unittest.TestCase):
             1/0
         self.assertRaises(ZeroDivisionError,
                           release.runChdirSafe, chAndBreak)
-        self.assertEquals(cwd, os.getcwd())
+        self.assertEqual(cwd, os.getcwd())
 
     def testReplaceInFile(self):
         in_ = 'foo\nhey hey $VER\nbar\n'
@@ -24,10 +24,10 @@ class UtilityTest(unittest.TestCase):
 
         expected = in_.replace('$VER', '2.0.0')
         release.replaceInFile('release.replace', {'$VER': '2.0.0'})
-        self.assertEquals(open('release.replace').read(), expected)
+        self.assertEqual(open('release.replace').read(), expected)
 
 
         expected = expected.replace('2.0.0', '3.0.0')
         release.replaceInFile('release.replace', {'2.0.0': '3.0.0'})
-        self.assertEquals(open('release.replace').read(), expected)
+        self.assertEqual(open('release.replace').read(), expected)
 

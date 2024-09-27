@@ -16,7 +16,7 @@ from twisted.python.components import backwardsCompatImplements
 from zope.interface import implements
 
 # sibling imports
-import base
+from . import base
 
 
 class DirDBMLog:
@@ -26,7 +26,7 @@ class DirDBMLog:
 
     def __init__(self, logPath):
         self.db = dirdbm.Shelf(logPath)
-        indexs = map(int, self.db.keys())
+        indexs = list(map(int, list(self.db.keys())))
         if indexs:
             self.currentIndex = max(indexs)
         else:

@@ -79,7 +79,7 @@ class Classification(object):
 
     def removeElements(self, data, removeData):
         for key in removeData:
-            if key in data.keys():
+            if key in list(data.keys()):
                 del data[key]
         return True
 
@@ -143,7 +143,7 @@ class Classification(object):
 
     def getDataByIdentifier(self, identifier=False, stype=False):
         data = []
-        for key, value in self.getElementsByIdentifier(identifier, stype).iteritems():
+        for key, value in self.getElementsByIdentifier(identifier, stype).items():
             reg = {'text': value, 'identifier': key}
             data.append(reg)
         return data

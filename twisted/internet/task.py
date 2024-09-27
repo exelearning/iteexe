@@ -59,7 +59,7 @@ class LoopingCall:
         assert not self.running, ("Tried to start an already running "
                                   "LoopingCall.")
         if interval < 0:
-            raise ValueError, "interval must be >= 0"
+            raise ValueError("interval must be >= 0")
         self.running = True
         d = self.deferred = defer.Deferred()
         self.starttime = self._seconds()
@@ -115,9 +115,9 @@ class LoopingCall:
 
     def __repr__(self):
         if hasattr(self.f, 'func_name'):
-            func = self.f.func_name
+            func = self.f.__name__
             if hasattr(self.f, 'im_class'):
-                func = self.f.im_class.__name__ + '.' + func
+                func = self.f.__self__.__class__.__name__ + '.' + func
         else:
             func = reflect.safe_repr(self.f)
 

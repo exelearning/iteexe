@@ -16,7 +16,7 @@ shaper for the Linux kernel<http://luxik.cdi.cz/~devik/qos/htb/>}.
 @author: U{Kevin Turner<mailto:acapnotic@twistedmatrix.com>}
 """
 
-from __future__ import nested_scopes
+
 
 __version__ = '$Revision: 1.5 $'[11:-2]
 
@@ -92,7 +92,7 @@ class Bucket:
         else:
             now = time()
             deltaT = now - self.lastDrip
-            self.content = long(max(0, self.content - deltaT * self.rate))
+            self.content = int(max(0, self.content - deltaT * self.rate))
             self.lastDrip = now
             return False
 
@@ -158,7 +158,7 @@ class HierarchicalBucketFilter:
 
     def sweep(self):
         """I throw away references to empty buckets."""
-        for key, bucket in self.buckets.items():
+        for key, bucket in list(self.buckets.items()):
             if (bucket._refcount == 0) and bucket.drip():
                 del self.buckets[key]
 

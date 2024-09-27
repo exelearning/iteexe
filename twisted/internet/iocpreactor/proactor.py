@@ -7,7 +7,7 @@ from twisted.internet.interfaces import IReactorTCP, IReactorUDP, IReactorArbitr
 from twisted.python import threadable, log, reflect
 from zope.interface import implements, implementsOnly
 
-import tcp, udp, process, process_waiter
+from . import tcp, udp, process, process_waiter
 from _iocp import iocpcore
 
 class Proactor(iocpcore, base.ReactorBase, log.Logger):

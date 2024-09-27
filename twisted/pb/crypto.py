@@ -3,8 +3,8 @@
 available = False # hack to deal with half-broken imports in python <2.4
 
 from OpenSSL import SSL
-import sslverify
-from sslverify import DistinguishedName, KeyPair
+from . import sslverify
+from .sslverify import DistinguishedName, KeyPair
 peerFromTransport = sslverify.Certificate.peerFromTransport
 from twisted.pb import base32
 

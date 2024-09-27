@@ -38,7 +38,7 @@ class XMLReflector(reflector.Reflector):
         self.baseDir = baseDir
         try:
             os.mkdir(baseDir)
-        except OSError, e:
+        except OSError as e:
             #print "Base Directory %s already exists" % baseDir
             pass
         self.tableDirs = {}
@@ -52,7 +52,7 @@ class XMLReflector(reflector.Reflector):
             self.tableDirs[rc.rowTableName] = newDir
             try:
                 os.mkdir(newDir)
-            except OSError, e:
+            except OSError as e:
                 #print "Directory %s already exists." % newDir
                 pass
 

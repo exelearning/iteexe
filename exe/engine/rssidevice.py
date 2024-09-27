@@ -26,7 +26,7 @@ import re
 import sys
 import requests
 import feedparser
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import ssl
 from sys import platform
 
@@ -35,12 +35,12 @@ from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
 
 
-class UrlOpener(urllib.FancyURLopener):
+class UrlOpener(urllib.request.FancyURLopener):
     """
     Set a distinctive User-Agent, so Wikipedia.org knows we're not spammers
     """
     version = "eXe/exe@exelearning.org"
-urllib._urlopener = UrlOpener()
+urllib.request._urlopener = UrlOpener()
 
 # ===========================================================================
 class RssIdevice(Idevice):
@@ -49,18 +49,18 @@ class RssIdevice(Idevice):
     """
     def __init__(self):
         Idevice.__init__(self,
-                         x_(u"RSS"), 
-                         x_(u"Auckland University of Technology"), 
-                         x_(u"""The RSS iDevice is used 
+                         x_("RSS"), 
+                         x_("Auckland University of Technology"), 
+                         x_("""The RSS iDevice is used 
 to provide new content to an individual users machine. Using this
 iDevice you can provide links from a feed you select for learners to view."""), 
-                         u"",
-                         u"")
+                         "",
+                         "")
         self.emphasis         = Idevice.NoEmphasis
-        self.rss              = TextAreaField(x_(u"RSS"))
+        self.rss              = TextAreaField(x_("RSS"))
         self.rss.idevice      = self
-        self.icon             = u"inter"
-        self._urlInstruc      = x_(u"""Enter an RSS URL for the RSS feed you 
+        self.icon             = "inter"
+        self._urlInstruc      = x_("""Enter an RSS URL for the RSS feed you 
 want to attach to your content. Feeds are often identified by a small graphic
  icon (often like this <img src="/images/feed-icon.png" />) or the text "RSS". Clicking on the 
  icon or text label will display an RSS feed right in your browser. You can copy and paste the
@@ -113,11 +113,11 @@ display them as links in your content. From here you can edit the bookmarks and 
             headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:50.0) Gecko/20100101 Firefox/50.0'}
             #response = requests.get(url, timeout=10, headers=headers, verify='cacert.pem')
             if (platform == 'darwin' and hasattr(sys, 'frozen')):
-                response = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+                response = urllib.request.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
             if platform == 'darwin':
-                response = urllib.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
+                response = urllib.request.urlopen(url, context=ssl.create_default_context(cafile='cacert.pem'))
             else:
-                response = urllib.urlopen(url)
+                response = urllib.request.urlopen(url)
             #rssDic = feedparser.parse(response.text)
             rssDic = feedparser.parse(response.read())
             length = len(rssDic['entries'])
@@ -127,16 +127,16 @@ display them as links in your content. From here you can edit the bookmarks and 
                     content += '<li><a href="%s">%s</a></li>' %(
                         rssDic['entries'][i].link, rssDic['entries'][i].title)  
                 content += "</ul>"
-        except Exception, error:
-            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
-            content += _(u"Error") % unicode(error)
-            content += " (%s)" % unicode(error)
+        except Exception as error:
+            content += _("Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+            content += _("Error") % str(error)
+            content += " (%s)" % str(error)
             # import traceback
             # content += _(u"Traceback: %s") % unicode(traceback.format_exc())
             
         if content == "":
-            content += _(u"Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
-        self.rss.content = unicode(content)
+            content += _("Unable to load RSS feed from %s <br/>Please check the spelling and connection and try again.") % url
+        self.rss.content = str(content)
         # now that these are supporting images, any direct manipulation
         # of the content field must also store this updated information
         # into the other corresponding fields of TextAreaField:

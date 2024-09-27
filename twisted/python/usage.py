@@ -20,9 +20,9 @@ import getopt
 from os import path
 
 # Sibling Imports
-import reflect
-import text
-import util
+from . import reflect
+from . import text
+from . import util
 
 class UsageError(Exception):
     pass
@@ -135,12 +135,12 @@ class Options(dict):
 
     def opt_help(self):
         """Display this help and exit."""
-        print self.__str__()
+        print(self.__str__())
         sys.exit(0)
 
     def opt_version(self):
         from twisted import copyright
-        print "Twisted version:", copyright.version
+        print("Twisted version:", copyright.version)
         sys.exit(0)
 
     #opt_h = opt_help # this conflicted with existing 'host' options.
@@ -154,8 +154,8 @@ class Options(dict):
         try:
             opts, args = getopt.getopt(options,
                                        self.shortOpt, self.longOpt)
-        except getopt.error, e:
-            raise UsageError, str(e).capitalize()
+        except getopt.error as e:
+            raise UsageError(str(e).capitalize())
 
 
         for opt, arg in opts:
@@ -165,10 +165,10 @@ class Options(dict):
                 opt = opt[1:]
 
             optMangled = opt
-            if not self.synonyms.has_key(optMangled):
+            if optMangled not in self.synonyms:
                 optMangled = string.replace(opt, "-", "_")
-                if not self.synonyms.has_key(optMangled):
-                    raise UsageError, "No such option '%s'" % (opt,)
+                if optMangled not in self.synonyms:
+                    raise UsageError("No such option '%s'" % (opt,))
 
             optMangled = self.synonyms[optMangled]
             self.__dispatch[optMangled](optMangled, arg)
@@ -222,14 +222,14 @@ class Options(dict):
 
     def _generic_flag(self, flagName, value=None):
         if value not in ('', None):
-            raise UsageError, ("Flag '%s' takes no argument."
+            raise UsageError("Flag '%s' takes no argument."
                                " Not even \"%s\"." % (flagName, value))
 
         self.opts[flagName] = 1
 
     def _generic_parameter(self, parameterName, value):
         if value is None:
-            raise UsageError, ("Parameter '%s' requires an argument."
+            raise UsageError("Parameter '%s' requires an argument."
                                % (parameterName,))
 
         self.opts[parameterName] = value
@@ -245,18 +245,18 @@ class Options(dict):
         reflect.accumulateClassList(self.__class__, 'optFlags', flags)
 
         for flag in flags:
-            long, short, doc = util.padTo(3, flag)
-            if not long:
-                raise ValueError, "A flag cannot be without a name."
+            int, short, doc = util.padTo(3, flag)
+            if not int:
+                raise ValueError("A flag cannot be without a name.")
 
-            docs[long] = doc
-            settings[long] = 0
+            docs[int] = doc
+            settings[int] = 0
             if short:
                 shortOpt = shortOpt + short
-                synonyms[short] = long
-            longOpt.append(long)
-            synonyms[long] = long
-            dispatch[long] = self._generic_flag
+                synonyms[short] = int
+            longOpt.append(int)
+            synonyms[int] = int
+            dispatch[int] = self._generic_flag
 
         return longOpt, shortOpt, docs, settings, synonyms, dispatch
 
@@ -281,18 +281,18 @@ class Options(dict):
         synonyms = {}
 
         for parameter in parameters:
-            long, short, default, doc = util.padTo(4, parameter)
-            if not long:
-                raise ValueError, "A parameter cannot be without a name."
+            int, short, default, doc = util.padTo(4, parameter)
+            if not int:
+                raise ValueError("A parameter cannot be without a name.")
 
-            docs[long] = doc
-            settings[long] = default
+            docs[int] = doc
+            settings[int] = default
             if short:
                 shortOpt = shortOpt + short + ':'
-                synonyms[short] = long
-            longOpt.append(long + '=')
-            synonyms[long] = long
-            dispatch[long] = self._generic_parameter
+                synonyms[short] = int
+            longOpt.append(int + '=')
+            synonyms[int] = int
+            dispatch[int] = self._generic_parameter
 
         return longOpt, shortOpt, docs, settings, synonyms, dispatch
 
@@ -307,7 +307,7 @@ class Options(dict):
         dct = {}
         reflect.addMethodNamesToDict(self.__class__, dct, "opt_")
 
-        for name in dct.keys():
+        for name in list(dct.keys()):
             method = getattr(self, 'opt_'+name)
 
             takesArg = not flagFunction(method, name)
@@ -346,15 +346,15 @@ class Options(dict):
 
         reverse_dct = {}
         # Map synonyms
-        for name in dct.keys():
+        for name in list(dct.keys()):
             method = getattr(self, 'opt_'+name)
-            if not reverse_dct.has_key(method):
+            if method not in reverse_dct:
                 reverse_dct[method] = []
             reverse_dct[method].append(name)
 
         cmpLength = lambda a, b: cmp(len(a), len(b))
 
-        for method, names in reverse_dct.items():
+        for method, names in list(reverse_dct.items()):
             if len(names) < 2:
                 continue
             names_ = names[:]
@@ -415,12 +415,12 @@ class Options(dict):
             commands = ''
 
         longToShort = {}
-        for key, value in self.synonyms.items():
+        for key, value in list(self.synonyms.items()):
             longname = value
             if (key != longname) and (len(key) == 1):
                 longToShort[longname] = key
             else:
-                if not longToShort.has_key(longname):
+                if longname not in longToShort:
                     longToShort[longname] = None
                 else:
                     pass
@@ -501,8 +501,8 @@ def docMakeChunks(optList, width=80):
     optChunks = []
     seen = {}
     for opt in optList:
-        if seen.has_key(opt.get('short', None)) \
-           or seen.has_key(opt.get('long', None)):
+        if opt.get('short', None) in seen \
+           or opt.get('long', None) in seen:
             continue
         for x in opt.get('short', None), opt.get('long', None):
             if x is not None:
@@ -518,18 +518,18 @@ def docMakeChunks(optList, width=80):
         if opt.get('long', None):
             long = opt['long']
             if opt.get("optType", None) == "parameter":
-                long = long + '='
+                long = int + '='
 
-            long = "%-*s" % (maxOptLen, long)
+            long = "%-*s" % (maxOptLen, int)
             if short:
                 comma = ","
         else:
             long = " " * (maxOptLen + len('--'))
 
         if opt.get('optType', None) == 'command':
-            column1 = '    %s      ' % long
+            column1 = '    %s      ' % int
         else:
-            column1 = "  %2s%c --%s  " % (short, comma, long)
+            column1 = "  %2s%c --%s  " % (short, comma, int)
 
         if opt.get('doc', ''):
             doc = opt['doc'].strip()
@@ -555,9 +555,9 @@ def docMakeChunks(optList, width=80):
     return optChunks
 
 def flagFunction(method, name = None):
-    reqArgs = method.im_func.func_code.co_argcount
+    reqArgs = method.__func__.__code__.co_argcount
     if reqArgs > 2:
-        raise UsageError('Invalid Option function for %s' % (name or method.func_name))
+        raise UsageError('Invalid Option function for %s' % (name or method.__name__))
     if reqArgs == 2:
         # argName = method.im_func.func_code.co_varnames[1]
         return 0

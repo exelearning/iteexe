@@ -7,9 +7,9 @@
 from twisted.internet import protocol
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 class StatefulProtocol(protocol.Protocol):
     """A Protocol that stores state for you.

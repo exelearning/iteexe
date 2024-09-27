@@ -42,7 +42,7 @@ class LocationButtons(object):
 
     def compute(self):
         self.buttons = []
-        for key, value in self.names_map.items():
+        for key, value in list(self.names_map.items()):
             try:
                 button = {'xtype': 'button', 'text': _(value),
                           'location': self.MapDir(key)}
@@ -52,7 +52,7 @@ class LocationButtons(object):
 
     def updateText(self):
         i = 0
-        for value in self.names_map.values():
+        for value in list(self.names_map.values()):
             button = self.buttons[i]
             button['text'] = _(value)
             i = i + 1

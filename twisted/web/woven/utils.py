@@ -1,4 +1,4 @@
-from __future__ import nested_scopes
+
 
 from types import ClassType
 
@@ -58,14 +58,14 @@ class WovenLivePage:
         """
         if self.output is None:
             self.cached.append(text)
-            print "CACHING", `self.cached`
+            print("CACHING", repr(self.cached))
         else:
             if isinstance(text, Script):
                 if hasattr(self.output, 'writeScript'):
                     self.output.writeScript(text.script)
                     return
                 text = '<script language="%s">%s</script>\r\n' % (text.type, text.script)
-            print "WRITING", text
+            print("WRITING", text)
             if text[-1] != '\n':
                 text += '\n'
             self.output.write(text)
@@ -73,7 +73,7 @@ class WovenLivePage:
     def sendScript(self, js):
         self.write(Script(js))
         if self.output is not None and not getattr(self.output, 'keepalive', None):
-            print "## woot, teh connection was open"
+            print("## woot, teh connection was open")
             ## Close the connection; the javascript will have to open it again to get the next event.
             self.output.finish()
             self.output = None
@@ -82,7 +82,7 @@ class WovenLivePage:
         """Hook up the given request as the output conduit for this
         session.
         """
-        print "TOOT! WE HOOKED UP OUTPUT!", `self.cached`
+        print("TOOT! WE HOOKED UP OUTPUT!", repr(self.cached))
         self.output = request
         for text in self.cached:
             self.write(text)
@@ -100,17 +100,17 @@ class WovenLivePage:
         """Hook up the given object as the input conduit for this
         session.
         """
-        print "HOOKING UP", self.inputCache
+        print("HOOKING UP", self.inputCache)
         self.input = obj
         for text in self.inputCache:
             self.pushThroughInputConduit(text)
         self.inputCache = []
-        print "DONE HOOKING", self.inputCache
+        print("DONE HOOKING", self.inputCache)
 
     def pushThroughInputConduit(self, inp):
         """Push some text through the input conduit.
         """
-        print "PUSHING INPUT", inp
+        print("PUSHING INPUT", inp)
         if self.input is None:
             self.inputCache.append(inp)
         else:
@@ -182,10 +182,10 @@ class SetId:
             top = wid
             while getattr(top, 'parent', None) is not None:
                 top = top.parent
-            if top.subviews.has_key(self.theId):
+            if self.theId in top.subviews:
                 del top.subviews[self.theId]
             top.subviews[id] = wid
-            if wid.parent.subviews.has_key(self.theId):
+            if self.theId in wid.parent.subviews:
                 del wid.parent.subviews[self.theId]
             wid.parent.subviews[id] = wid
 

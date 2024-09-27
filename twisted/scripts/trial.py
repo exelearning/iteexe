@@ -109,14 +109,14 @@ class Options(usage.Options):
 
     optParameters = [["reactor", "r", None,
                       "Which reactor to use out of: " + \
-                      ", ".join(app.reactorTypes.keys()) + "."],
+                      ", ".join(list(app.reactorTypes.keys())) + "."],
                      ["logfile", "l", "test.log", "log file name"],
                      ["random", "z", None,
                       "Run tests in random order using the specified seed"],
                      ['temp-directory', None, '_trial_temp',
                       'Path to use as working directory for tests.']]
 
-    zsh_actions = {"reactor":"(%s)" % " ".join(app.reactorTypes.keys()),
+    zsh_actions = {"reactor":"(%s)" % " ".join(list(app.reactorTypes.keys())),
                    "tbformat":"(plain emacs cgitb)"}
     zsh_actionDescr = {"logfile":"log file name",
                        "random":"random seed"}
@@ -131,7 +131,7 @@ class Options(usage.Options):
         self._loadReporters()
 
         # Yes, I know I'm mutating a class variable.
-        self.zsh_actions["reporter"] = "(%s)" % " ".join(self.optToQual.keys())
+        self.zsh_actions["reporter"] = "(%s)" % " ".join(list(self.optToQual.keys()))
         usage.Options.__init__(self)
 
     def _loadReporters(self):
@@ -148,14 +148,14 @@ class Options(usage.Options):
 
     def _supportsColor(self):
         supportedTerms = ['xterm', 'xterm-color', 'linux', 'screen']
-        if not os.environ.has_key('TERM'):
+        if 'TERM' not in os.environ:
             return False
         return os.environ['TERM'] in supportedTerms
 
     def opt_reactor(self, reactorName):
         # this must happen before parseArgs does lots of imports
         app.installReactor(reactorName)
-        print "Using %s reactor" % app.reactorTypes[reactorName]
+        print("Using %s reactor" % app.reactorTypes[reactorName])
 
     def opt_coverage(self):
         """
@@ -163,7 +163,7 @@ class Options(usage.Options):
         trial temporary working directory). Requires Python 2.3.3.
         """
         coverdir = 'coverage'
-        print "Setting coverage directory to %s." % (coverdir,)
+        print("Setting coverage directory to %s." % (coverdir,))
         import trace
 
         # begin monkey patch ---------------------------
@@ -181,7 +181,7 @@ class Options(usage.Options):
             try:
                 prog = open(filename).read()
                 prog = '\n'.join(prog.splitlines()) + '\n'
-            except IOError, err:
+            except IOError as err:
                 sys.stderr.write("Not printing coverage data for %r: %s\n"
                                  % (filename, err))
                 sys.stderr.flush()
@@ -242,10 +242,10 @@ class Options(usage.Options):
         synopsis = ("Trial's output can be customized using plugins called "
                     "Reporters. You can\nselect any of the following "
                     "reporters using --reporter=<foo>\n")
-        print synopsis
+        print(synopsis)
         for p in plugin.getPlugins(itrial.IReporter):
-            print '   ', p.longOpt, '\t', p.description
-        print
+            print('   ', p.longOpt, '\t', p.description)
+        print()
         sys.exit(0)
         
     def opt_disablegc(self):
@@ -282,7 +282,7 @@ class Options(usage.Options):
 
     def opt_random(self, option):
         try:
-            self['random'] = long(option)
+            self['random'] = int(option)
         except ValueError:
             raise usage.UsageError(
                 "Argument to --random must be a positive integer")
@@ -291,7 +291,7 @@ class Options(usage.Options):
                 raise usage.UsageError(
                     "Argument to --random must be a positive integer")
             elif self['random'] == 0:
-                self['random'] = long(time.time() * 100)
+                self['random'] = int(time.time() * 100)
 
     def parseArgs(self, *args):
         self['tests'].extend(args)
@@ -302,7 +302,7 @@ class Options(usage.Options):
         if self['suppresswarnings']:
             warnings.warn('--suppresswarnings deprecated. Is a no-op',
                           category=DeprecationWarning)
-        if not self.has_key('tbformat'):
+        if 'tbformat' not in self:
             self['tbformat'] = 'default'
         if self['nopm']:
             if not self['debug']:
@@ -337,7 +337,7 @@ def _getLoader(config):
         randomer = random.Random()
         randomer.seed(config['random'])
         loader.sorter = lambda x : randomer.random()
-        print 'Running tests shuffled with seed %d\n' % config['random']
+        print('Running tests shuffled with seed %d\n' % config['random'])
     return loader
 
 
@@ -362,8 +362,8 @@ def run():
     config = Options()
     try:
         config.parseOptions()
-    except usage.error, ue:
-        raise SystemExit, "%s: %s" % (sys.argv[0], ue)
+    except usage.error as ue:
+        raise SystemExit("%s: %s" % (sys.argv[0], ue))
     _initialDebugSetup(config)
     trialRunner = _makeRunner(config)
     suite = _getSuite(config)

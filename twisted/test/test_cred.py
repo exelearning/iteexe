@@ -22,19 +22,18 @@ class ForeignObject:
         self.__setattr__ = self.x__setattr__
 
     def x__setattr__(self, key, value):
-        raise TypeError, "I am read-only."
+        raise TypeError("I am read-only.")
 
     def __repr__(self):
         s = "<ForeignObject at %s: %s>" % (id(self), self.desc)
         return s
 
     def __str__(self):
-        raise TypeError,\
-              'I do not have a meaningful string representation'\
-              'like "%s".' % (self.desc,)
+        raise TypeError('I do not have a meaningful string representation'\
+              'like "%s".' % (self.desc,))
 
     def __hash__(self):
-        raise TypeError, "unhashable type"
+        raise TypeError("unhashable type")
 
 
 # Service
@@ -84,7 +83,7 @@ class ServiceTestCase(OldCredTestCase):
     def testsetServiceParent(self):
         parent = app.MultiService("test")
         self.service.setServiceParent(parent)
-        self.assert_(self.service.serviceParent is parent)
+        self.assertTrue(self.service.serviceParent is parent)
 
 ##    def testsetApplication_invalid(self):
 ##        "setApplication should not accept bogus argument."
@@ -109,8 +108,8 @@ class ServiceTestCase(OldCredTestCase):
         d.addCallback(self._checkPerspective)
 
     def _checkPerspective(self, q):
-        self.assertEquals(self.p, q)
-        self.assertEquals(self.pname, q.getPerspectiveName())
+        self.assertEqual(self.p, q)
+        self.assertEqual(self.pname, q.getPerspectiveName())
         del self.p
         del self.pname
 
@@ -133,14 +132,14 @@ class ServiceTestCase(OldCredTestCase):
                           "NoSuchPerspectiveNameAsThis")
 
     def testgetServiceName(self):
-        self.assert_(self.service.getServiceName())
+        self.assertTrue(self.service.getServiceName())
 
     def testgetServiceName_hashable(self):
         d = {}
         d[self.service.getServiceName()] = "value keyed to serviceName"
 
     def testgetServiceType(self):
-        self.assert_(isinstance(self.service.getServiceType(),
+        self.assertTrue(isinstance(self.service.getServiceType(),
                                 StringType),
                      "ServiceType claimed to be a string, but isn't now.")
 
@@ -233,7 +232,7 @@ class PerspectiveTestCase(OldCredTestCase):
     def _testmakeIdentity_1fail(self, msg):
         try:
             self.fail("Identity did not verify with plain password: %s" % msg)
-        except self.failureException, e:
+        except self.failureException as e:
             self.error = sys.exc_info()
             raise
 
@@ -249,7 +248,7 @@ class PerspectiveTestCase(OldCredTestCase):
     def _testmakeIdentity_2fail(self, msg):
         try:
             self.fail("Identity did not verify with hashed password: %s" % msg)
-        except self.failureException, e:
+        except self.failureException as e:
             self.error = sys.exc_info()
             raise
 
@@ -258,7 +257,7 @@ class PerspectiveTestCase(OldCredTestCase):
         d.addCallback(self._gotIdentity)
 
     def _gotIdentity(self, ident):
-        self.assertEquals(self.ident, ident)
+        self.assertEqual(self.ident, ident)
         del self.ident
 
     def testmakeIdentity_invalid(self):
@@ -267,11 +266,11 @@ class PerspectiveTestCase(OldCredTestCase):
 
     def testgetService(self):
         s = self.perspective.getService()
-        self.assert_(s is self.service)
+        self.assertTrue(s is self.service)
 
 class FunctionsTestCase(OldCredTestCase):
     def test_challenge(self):
-        self.assert_(identity.challenge())
+        self.assertTrue(identity.challenge())
 
 AppForIdentityTest = AppForPerspectiveTest
 
@@ -296,17 +295,17 @@ class IdentityTestCase(OldCredTestCase):
 
     def test_addKeyByString(self):
         self.ident.addKeyByString("one", "two")
-        self.assert_(("one", "two") in self.ident.getAllKeys())
+        self.assertTrue(("one", "two") in self.ident.getAllKeys())
 
     def test_addKeyForPerspective(self):
         service = self.Service("one", authorizer=self.auth)
         perspective = self.Perspective("two", service)
 
         self.ident.addKeyForPerspective(perspective)
-        self.assert_(("one", "two") in self.ident.getAllKeys())
+        self.assertTrue(("one", "two") in self.ident.getAllKeys())
 
     def test_getAllKeys(self):
-        self.assert_(len(self.ident.getAllKeys()) == 0)
+        self.assertTrue(len(self.ident.getAllKeys()) == 0)
 
         service = self.Service("one", authorizer=self.auth)
 
@@ -319,12 +318,12 @@ class IdentityTestCase(OldCredTestCase):
         self.assertEqual(len(keys), 3)
 
         for n in ("p1","p2","p3"):
-            self.assert_(("one", n) in keys)
+            self.assertTrue(("one", n) in keys)
 
     def test_removeKey(self):
         self.ident.addKeyByString("one", "two")
         self.ident.removeKey("one", "two")
-        self.assert_(len(self.ident.getAllKeys()) == 0)
+        self.assertTrue(len(self.ident.getAllKeys()) == 0)
 
     def test_removeKey_invalid(self):
         self.assertRaises(KeyError, self.ident.removeKey,
@@ -343,13 +342,13 @@ class IdentityTestCase(OldCredTestCase):
         pwrq.addErrback(self._test_verifyPassword_correct_neg)
         # the following test actually needs the identity in testing
         # to have sync password checking..
-        self.assert_(self._test_verifyPassword_worked)
+        self.assertTrue(self._test_verifyPassword_worked)
 
     def _test_verifyPassword_false_pos(self, msg):
         self.fail("Identity accepted invalid hashed password")
 
     def _test_verifyPassword_correct_neg(self, msg):
-        self.assert_(self._test_verifyPassword_worked==0)
+        self.assertTrue(self._test_verifyPassword_worked==0)
         self._test_verifyPassword_worked = 1
 
     def test_verifyPlainPassword(self):
@@ -360,25 +359,25 @@ class IdentityTestCase(OldCredTestCase):
         pwrq1 = self.ident.verifyPlainPassword("passphrase")
         pwrq1.addErrback(self._test_verifyPlainPassword_fail)
         pwrq1.addCallback(self._test_verifyPlainPassword_ok)
-        self.assert_(self._test_verifyPlainPassword_worked==1)
+        self.assertTrue(self._test_verifyPlainPassword_worked==1)
 
         pwrq2 = self.ident.verifyPlainPassword("wrongphrase")
         pwrq2.addCallback(self._test_verifyPlainPassword_false_pos)
         pwrq2.addErrback(self._test_verifyPlainPassword_correct_neg)
-        self.assert_(self._test_verifyPlainPassword_worked==2)
+        self.assertTrue(self._test_verifyPlainPassword_worked==2)
 
     def _test_verifyPlainPassword_fail(self, msg):
         self.fail("Identity did not verify with plain password")
 
     def _test_verifyPlainPassword_ok(self, msg):
-        self.assert_(self._test_verifyPlainPassword_worked==0)
+        self.assertTrue(self._test_verifyPlainPassword_worked==0)
         self._test_verifyPlainPassword_worked = 1
 
     def _test_verifyPlainPassword_false_pos(self, msg):
         self.fail("Identity accepted invalid plain password")
 
     def _test_verifyPlainPassword_correct_neg(self, msg):
-        self.assert_(self._test_verifyPlainPassword_worked==1)
+        self.assertTrue(self._test_verifyPlainPassword_worked==1)
         self._test_verifyPlainPassword_worked = 2
 
 
@@ -390,10 +389,10 @@ class AuthorizerTestCase(OldCredTestCase):
         self.auth = authorizer.DefaultAuthorizer()
 
     def _error(self, e):
-        raise RuntimeError, e
+        raise RuntimeError(e)
 
     def _gotIdentity(self, i):
-        self.assertEquals(self.ident, i)
+        self.assertEqual(self.ident, i)
         del self.ident
 
     def test_addIdent(self):
@@ -402,7 +401,7 @@ class AuthorizerTestCase(OldCredTestCase):
         # add the identity
         self.auth.addIdentity(i)
         self.assertRaises(KeyError, self.auth.addIdentity, i)
-        self.assert_(self.auth.identities.has_key("user"))
+        self.assertTrue("user" in self.auth.identities)
 
         # get request for identity
         self.ident = i
@@ -411,7 +410,7 @@ class AuthorizerTestCase(OldCredTestCase):
 
         # remove identity
         self.auth.removeIdentity("user")
-        self.assert_(not self.auth.identities.has_key("user"))
+        self.assertTrue("user" not in self.auth.identities)
         self.assertRaises(KeyError, self.auth.removeIdentity, "user")
         self.assertRaises(KeyError, self.auth.removeIdentity, "otheruser")
 

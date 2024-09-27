@@ -3,7 +3,7 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes
+
 
 import gtk
 
@@ -91,12 +91,12 @@ class LoginDialog(GladeKeeper):
 
 
     def setDefaults(self, defaults):
-        if not defaults.has_key('port'):
+        if 'port' not in defaults:
             defaults['port'] = str(pb.portno)
-        elif isinstance(defaults['port'], (int, long)):
+        elif isinstance(defaults['port'], int):
             defaults['port'] = str(defaults['port'])
 
-        for k, v in defaults.iteritems():
+        for k, v in defaults.items():
             if k in self.fields:
                 widget = getattr(self, "_%sEntry" % (k,))
                 widget.set_text(v)
@@ -179,10 +179,10 @@ class LoginDialog(GladeKeeper):
         if isinstance(reason, failure.Failure):
             reason = reason.value
         self.statusMsg(reason)
-        if isinstance(reason, (unicode, str)):
+        if isinstance(reason, str):
             text = reason
         else:
-            text = unicode(reason)
+            text = str(reason)
         msg = gtk.MessageDialog(self._loginDialog,
                                 gtk.DIALOG_DESTROY_WITH_PARENT,
                                 gtk.MESSAGE_ERROR,
@@ -210,6 +210,6 @@ class LoginDialog(GladeKeeper):
             getattr(widget, op)()
 
     def statusMsg(self, text):
-        if not isinstance(text, (unicode, str)):
-            text = unicode(text)
+        if not isinstance(text, str):
+            text = str(text)
         return self._statusBar.push(self._statusContext, text)

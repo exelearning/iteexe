@@ -135,7 +135,7 @@ class Application:
                 stored_version = 0
 
         # Execute upgrade_to_version_x (if they exist) until we reach current version
-        for v in xrange(stored_version + 1, self.version + 1):
+        for v in range(stored_version + 1, self.version + 1):
             method = getattr(Application, 'upgrade_to_version_%d' % v, None)
             if method:
                 method(self)
@@ -194,7 +194,7 @@ class Application:
 
         for option in options:
             if option[0] in ("-V", "--version"):
-                print "eXe", version.version
+                print("eXe", version.version)
                 sys.exit()
             elif option[0] in ("-h", "--help"):
                 self.usage()
@@ -236,7 +236,7 @@ class Application:
             configPath.move(backup)
             self.config = configKlass()
             self.loadErrors.append(
-               _(u'An error has occurred when loading your config. A backup is saved at %s') % backup)
+               _('An error has occurred when loading your config. A backup is saved at %s') % backup)
         log.debug("logging set up")
 
     def preLaunch(self):
@@ -254,7 +254,7 @@ class Application:
                 backup.rmtree()
             (self.config.configDir / 'idevices').move(backup)
             self.loadErrors.append(
-               _(u'An error has occurred when loading your Idevice Store. A backup is saved at %s') % backup)
+               _('An error has occurred when loading your Idevice Store. A backup is saved at %s') % backup)
             self.ideviceStore.load()
         # Make it so jelly can load objects from ~/.exe/idevices
         sys.path.append(self.config.configDir/'idevices')
@@ -280,7 +280,7 @@ class Application:
         Starts the web server,
         this func doesn't return until after the app has finished
         """
-        print "Welcome to eXe: the EXtremely Easy to use eLearning authoring tool"
+        print("Welcome to eXe: the EXtremely Easy to use eLearning authoring tool")
         log.info("eXe running...")
         self.webServer.run()
 
@@ -305,7 +305,7 @@ class Application:
         Print usage info
         """
         self.loadConfiguration()
-        print _("""eXeLearning, the EXtremely Easy to use eLearning authoring tool
+        print(_("""eXeLearning, the EXtremely Easy to use eLearning authoring tool
    Usage: %s [OPTION] [PACKAGE]
   -V, --version    print version information and exit
   -h, --help       display this help and exit
@@ -313,6 +313,6 @@ class Application:
   --portable       Run in portable mode
 Settings are read from exe.conf in $HOME/.exe on Linux/Unix/Mac OS or
 in Documents and Settings/<user name>/Application Data/exe on Windows XP or
-Users/<user name>/AppData/Roaming/exe on Windows 7/8/10""") % os.path.basename(sys.argv[0])
+Users/<user name>/AppData/Roaming/exe on Windows 7/8/10""") % os.path.basename(sys.argv[0]))
 
 # ===========================================================================

@@ -4,7 +4,7 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes
+
 
 __version__ = "$Revision: 1.67 $"[11:-2]
 
@@ -60,7 +60,7 @@ class Controller(resource.Resource):
         if inputhandlers is None and controllers is None:
             self._inputhandlers = []
         elif inputhandlers:
-            print "The inputhandlers arg is deprecated, please use controllers instead"
+            print("The inputhandlers arg is deprecated, please use controllers instead")
             self._inputhandlers = inputhandlers
         else:
             self._inputhandlers = controllers
@@ -96,7 +96,7 @@ class Controller(resource.Resource):
                 warnings.warn("factory_ methods are deprecated; please use "
                               "wcfactory_ instead", DeprecationWarning)
         if cm:
-            if cm.func_code.co_argcount == 1 and not type(cm) == types.LambdaType:
+            if cm.__code__.co_argcount == 1 and not type(cm) == types.LambdaType:
                 warnings.warn("A Controller Factory takes "
                               "(request, node, model) "
                               "now instead of (model)", DeprecationWarning)
@@ -186,7 +186,7 @@ class Controller(resource.Resource):
             ih._parent = self
             ih.handle(request)
         self._inputhandlers = []
-        for key, value in self._valid.items():
+        for key, value in list(self._valid.items()):
             key.commit(request, None, value)
         self._valid = {}
         return self.renderView(request)
@@ -212,7 +212,7 @@ class Controller(resource.Resource):
     def gatheredControllers(self, v, d, request):
         process = {}
         request.args = {}
-        for key, value in self._valid.items():
+        for key, value in list(self._valid.items()):
             key.commit(request, None, value)
             process[key.submodel] = value
         self.process(request, **process)
@@ -278,10 +278,10 @@ class LiveController(Controller):
         # Check to see if we're hooking up an output conduit
         sess = request.getSession(interfaces.IWovenLivePage)
         #print "REQUEST.ARGS", request.args
-        if request.args.has_key('woven_hookupOutputConduitToThisFrame'):
+        if 'woven_hookupOutputConduitToThisFrame' in request.args:
             sess.hookupOutputConduit(request)
             return server.NOT_DONE_YET
-        if request.args.has_key('woven_clientSideEventName'):
+        if 'woven_clientSideEventName' in request.args:
             try:
                 request.d = microdom.parseString('<xml/>', caseInsensitive=0, preserveCase=0)
                 eventName = request.args['woven_clientSideEventName'][0]
@@ -312,9 +312,9 @@ class LiveController(Controller):
         sess = request.getSession(interfaces.IWovenLivePage)
         self.view = sess.getCurrentPage().view
         #request.d = self.view.d
-        print "clientToServerEvent", eventTarget
+        print("clientToServerEvent", eventTarget)
         target = self.view.subviews[eventTarget]
-        print "target, parent", target, target.parent
+        print("target, parent", target, target.parent)
         #target.parent = self.view
         #target.controller._parent = self
 
@@ -350,7 +350,7 @@ class LiveController(Controller):
 
     def domChanged(self, request, widget, node):
         sess = request.getSession(interfaces.IWovenLivePage)
-        print "domchanged"
+        print("domchanged")
         if sess is not None:
             if not hasattr(node, 'getAttribute'):
                 return
@@ -375,7 +375,7 @@ class LiveController(Controller):
             #for key in widget.subviews.keys():
             #    view.subviews[key].unlinkViews()
             oldNode = page.view.subviews[nodeId]
-            for id, subview in oldNode.subviews.items():
+            for id, subview in list(oldNode.subviews.items()):
                 subview.unlinkViews()
             topSubviews = page.view.subviews
             #print "Widgetid, subviews", id(widget), widget.subviews
@@ -383,7 +383,7 @@ class LiveController(Controller):
                 def recurseSubviews(w):
                     #print "w.subviews", w.subviews
                     topSubviews.update(w.subviews)
-                    for id, sv in w.subviews.items():
+                    for id, sv in list(w.subviews.items()):
                         recurseSubviews(sv)
                 #print "recursing"
                 recurseSubviews(widget)

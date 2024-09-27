@@ -57,11 +57,11 @@ class ElementFactory(object):
 
         if elementType:
             # Create an instance of the appropriate element class
-            log.debug(u"createElement "+elementType.__class__.__name__+
-                      u" for "+field.__class__.__name__)
+            log.debug("createElement "+elementType.__class__.__name__+
+                      " for "+field.__class__.__name__)
             return elementType(field)
         else:
-            log.error(u"No element type registered for " +
+            log.error("No element type registered for " +
                       field.__class__.__name__)
             return None
 

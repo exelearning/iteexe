@@ -17,7 +17,7 @@ Maintainer: U{Jonathan Lange<mailto:jml@twistedmatrix.com>}
 """
 
 
-from __future__ import generators
+
 
 import traceback, warnings, time, signal, gc, sys
 from twisted.python import failure, util, log, threadpool
@@ -61,7 +61,7 @@ def deferredError(d, timeout=None):
     if isinstance(result, failure.Failure):
         return result
     else:
-        raise unittest.FailTest, "Deferred did not fail: %r" % (result,)
+        raise unittest.FailTest("Deferred did not fail: %r" % (result,))
 
 
 class FailureError(Exception):
@@ -124,7 +124,7 @@ class _Janitor(object):
                 if p.active():
                     p.cancel() # delete the rest
                 else:
-                    print "WEIRNESS! pending timed call not active+!"
+                    print("WEIRNESS! pending timed call not active+!")
             raise PendingTimedCallsError(s)
     do_cleanPending = classmethod(do_cleanPending)
 
@@ -183,7 +183,7 @@ def spinUntil(f, timeout=DEFAULT_TIMEOUT_DURATION,
     stop = now + timeout
     while not f():
         if time.time() >= stop:
-            raise defer.TimeoutError, msg
+            raise defer.TimeoutError(msg)
         reactor.iterate(0.1)
 
 def spinWhile(f, timeout=DEFAULT_TIMEOUT_DURATION,
@@ -199,7 +199,7 @@ def spinWhile(f, timeout=DEFAULT_TIMEOUT_DURATION,
     stop = now + timeout
     while f():
         if time.time() >= stop:
-            raise defer.TimeoutError, msg
+            raise defer.TimeoutError(msg)
         reactor.iterate(0.1)
 
 REENTRANT_WAIT_ERROR_MSG = ("already waiting on a deferred, do not call wait() "
@@ -214,7 +214,7 @@ _wait_is_running = []
 def _wait(d, timeout=None, running=_wait_is_running):
     from twisted.internet import reactor
     if running:
-        raise WaitIsNotReentrantError, REENTRANT_WAIT_ERROR_MSG
+        raise WaitIsNotReentrantError(REENTRANT_WAIT_ERROR_MSG)
 
     results = []
     def append(any):
@@ -338,7 +338,7 @@ def suppressWarnings(f, *warningz):
     warnings.warn("Don't use this.  Use the .suppress attribute instead",
                   category=DeprecationWarning, stacklevel=2)
     def enclosingScope(warnings, warningz):
-        exec """def %s(*args, **kwargs):
+        exec("""def %s(*args, **kwargs):
     for warning in warningz:
         warnings.filterwarnings('ignore', *warning)
     try:
@@ -346,8 +346,8 @@ def suppressWarnings(f, *warningz):
     finally:
         for warning in warningz:
             warnings.filterwarnings('default', *warning)
-""" % (f.func_name,) in locals()
-        return locals()[f.func_name]
+""" % (f.__name__,), locals())
+        return locals()[f.__name__]
     return enclosingScope(warnings, warningz)
 
 
@@ -416,8 +416,8 @@ def getPythonContainers(meth):
     """Walk up the Python tree from method 'meth', finding its class, its module
     and all containing packages."""
     containers = []
-    containers.append(meth.im_class)
-    moduleName = meth.im_class.__module__
+    containers.append(meth.__self__.__class__)
+    moduleName = meth.__self__.__class__.__module__
     while moduleName is not None:
         module = sys.modules.get(moduleName, None)
         if module is None:
@@ -469,7 +469,7 @@ def findObject(name):
                 except KeyError:
                     # Python 2.4 has fixed this.  Yay!
                     pass
-                raise exc_info[0], exc_info[1], exc_info[2]
+                raise exc_info[0](exc_info[1]).with_traceback(exc_info[2])
             moduleNames.pop()
     obj = topLevelPackage
     for n in names[1:]:

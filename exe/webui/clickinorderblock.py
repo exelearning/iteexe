@@ -46,10 +46,10 @@ class ClickInOrderBlockInc(Block):
         self.timerChoiceElement = ChoiceElement(idevice.timerChoiceField)
         self.titleElement = TextElement(idevice.titleField)
 
-        for textAreaFieldName, textAreaFieldVals in idevice.textAreaFieldNames.iteritems():
+        for textAreaFieldName, textAreaFieldVals in idevice.textAreaFieldNames.items():
             self.mainTextAreaElements[textAreaFieldName] = TextAreaElement(idevice.textAreaFields[textAreaFieldName])
 
-        for textFieldName, textFieldVals in idevice.textFieldNames.iteritems():
+        for textFieldName, textFieldVals in idevice.textFieldNames.items():
             self.mainTextElements[textFieldName] = TextElement(idevice.textFields[textFieldName])
 
         for clickableAreaField in idevice.clickableAreaFields:
@@ -72,15 +72,15 @@ class ClickInOrderBlockInc(Block):
 
         self.idevice.uploadNeededScripts()
 
-        if "addClickableArea" + unicode(self.id) in request.args:
+        if "addClickableArea" + str(self.id) in request.args:
             self.idevice.addClickableField()
             self.idevice.edit = True
             self.idevice.undo = False
 
-        for textAreaFieldName, textAreaElement in self.mainTextAreaElements.iteritems():
+        for textAreaFieldName, textAreaElement in self.mainTextAreaElements.items():
             textAreaElement.process(request)
 
-        for textFieldName, textElement in self.mainTextElements.iteritems():
+        for textFieldName, textElement in self.mainTextElements.items():
             textElement.process(request)
 
         for clickableAreaElement in self.clickableAreaElements:
@@ -290,7 +290,7 @@ class ClickInOrderBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += common.ideviceShowEditMessage(self)
             
         html += \
@@ -306,7 +306,7 @@ class ClickInOrderBlockInc(Block):
         """)
         html += self.titleElement.renderEdit()
         
-        for textAreaFieldName, textAreaElement in self.mainTextAreaElements.iteritems():
+        for textAreaFieldName, textAreaElement in self.mainTextAreaElements.items():
             html += textAreaElement.renderEdit()
 
         #for textFieldName, textElement in self.mainTextElements.iteritems():
@@ -336,11 +336,11 @@ class ClickInOrderBlockInc(Block):
             html += clickableAreaElement.renderEdit()
 
         html += "<br/>"
-        html += common.submitButton("addClickableArea"+unicode(self.id), _("Add Clickable Area"))
+        html += common.submitButton("addClickableArea"+str(self.id), _("Add Clickable Area"))
         html += "<br/>"
 
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -370,10 +370,10 @@ class ClickInOrderClickableAreaElement(Element):
         self.textElements = {}
         self.textAreaElements = {}
 
-        for textFieldName, textFieldDetails in field.textFieldNames.iteritems():
+        for textFieldName, textFieldDetails in field.textFieldNames.items():
             self.textElements[textFieldName] = TextElement(field.textFields[textFieldName])
         
-        for textAreaFieldName, textAreaFieldDetails in field.textAreaFieldNames.iteritems():
+        for textAreaFieldName, textAreaFieldDetails in field.textAreaFieldNames.items():
             self.textAreaElements[textAreaFieldName] = TextAreaElement(field.textAreaFields[textAreaFieldName])
 
     def process(self, request):
@@ -383,9 +383,9 @@ class ClickInOrderClickableAreaElement(Element):
         if "action" in request.args and request.args["action"][0] == self.id:
             self.field.idevice.clickableAreaFields.remove(self.field)
             
-        for textElementName, textElement in self.textElements.iteritems():
+        for textElementName, textElement in self.textElements.items():
             textElement.process(request)
-        for textAreaElementName, textAreaElement in self.textAreaElements.iteritems():
+        for textAreaElementName, textAreaElement in self.textAreaElements.items():
             textAreaElement.process(request)
         
         errMsg = field_engine_check_fields_are_ints(self.textElements, \

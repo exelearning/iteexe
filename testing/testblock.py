@@ -85,8 +85,8 @@ class TestBlock(SuperTestCase):
         idevice = self.package.currentNode.idevices[0]
         ln = len(self.mainpage.authoringPage.blocks)
         assert ln >= 1, 'Should be at least one block, only %s' % ln
-        chunks = zip(self.mainpage.authoringPage.blocks,
-                     self.package.currentNode.idevices)
+        chunks = list(zip(self.mainpage.authoringPage.blocks,
+                     self.package.currentNode.idevices))
         for i, (block, idevice) in enumerate(chunks):
             assert block.idevice is idevice
             viewHTML = block.renderView('default')

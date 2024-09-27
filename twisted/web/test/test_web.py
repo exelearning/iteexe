@@ -3,7 +3,7 @@
 
 from twisted.trial import unittest
 import string, random, copy
-from cStringIO import StringIO
+from io import StringIO
 
 from twisted.web import server, resource, util
 from twisted.internet import defer, interfaces
@@ -66,7 +66,7 @@ class DummyRequest:
 class ResourceTestCase(unittest.TestCase):
     def testListEntities(self):
         r = resource.Resource()
-        self.failUnlessEqual([], r.listEntities())
+        self.assertEqual([], r.listEntities())
         
 
 class SimpleResource(resource.Resource):
@@ -143,8 +143,8 @@ class ConditionalTest(unittest.TestCase):
                                   % http.datetimeToString(1))
         self.channel.lineReceived('')
         result = self.transport.getvalue()
-        self.failUnlessEqual(httpCode(result), http.OK)
-        self.failUnlessEqual(httpBody(result), "correct")
+        self.assertEqual(httpCode(result), http.OK)
+        self.assertEqual(httpBody(result), "correct")
 
     def test_unmodified(self):
         """If-Modified-Since cache validator (negative)"""
@@ -152,25 +152,25 @@ class ConditionalTest(unittest.TestCase):
                                   % http.datetimeToString(100))
         self.channel.lineReceived('')
         result = self.transport.getvalue()
-        self.failUnlessEqual(httpCode(result), http.NOT_MODIFIED)
-        self.failUnlessEqual(httpBody(result), "")
+        self.assertEqual(httpCode(result), http.NOT_MODIFIED)
+        self.assertEqual(httpBody(result), "")
 
     def test_etagMatchedNot(self):
         """If-None-Match ETag cache validator (positive)"""
         self.channel.lineReceived("If-None-Match: unmatchedTag")
         self.channel.lineReceived('')
         result = self.transport.getvalue()
-        self.failUnlessEqual(httpCode(result), http.OK)
-        self.failUnlessEqual(httpBody(result), "correct")
+        self.assertEqual(httpCode(result), http.OK)
+        self.assertEqual(httpBody(result), "correct")
 
     def test_etagMatched(self):
         """If-None-Match ETag cache validator (negative)"""
         self.channel.lineReceived("If-None-Match: MatchingTag")
         self.channel.lineReceived('')
         result = self.transport.getvalue()
-        self.failUnlessEqual(httpHeader(result, "ETag"), "MatchingTag")
-        self.failUnlessEqual(httpCode(result), http.NOT_MODIFIED)
-        self.failUnlessEqual(httpBody(result), "")
+        self.assertEqual(httpHeader(result, "ETag"), "MatchingTag")
+        self.assertEqual(httpCode(result), http.NOT_MODIFIED)
+        self.assertEqual(httpBody(result), "")
 
 from twisted.web import google
 class GoogleTestCase(unittest.TestCase):
@@ -178,7 +178,7 @@ class GoogleTestCase(unittest.TestCase):
         raise unittest.SkipTest("no violation of google ToS")
         d = google.checkGoogle('site:www.twistedmatrix.com twisted')
         r = unittest.deferredResult(d)
-        self.assertEquals(r, 'http://twistedmatrix.com/')
+        self.assertEqual(r, 'http://twistedmatrix.com/')
 
 from twisted.web import static
 from twisted.web import script
@@ -205,29 +205,29 @@ resource = Data('dynamic world','text/plain')
             }
 
         f.indexNames = f.indexNames + ['world.txt']
-        self.assertEquals(f.getChild('', DummyRequest([''])).path,
+        self.assertEqual(f.getChild('', DummyRequest([''])).path,
                           tp)
-        self.assertEquals(f.getChild('wyrld.rpy', DummyRequest(['wyrld.rpy'])
+        self.assertEqual(f.getChild('wyrld.rpy', DummyRequest(['wyrld.rpy'])
                                      ).__class__,
                           static.Data)
         f = static.File(dp)
         wtextr = DummyRequest(['world.txt'])
         wtext = f.getChild('world.txt', wtextr)
-        self.assertEquals(wtext.path, tp)
+        self.assertEqual(wtext.path, tp)
         wtext.render(wtextr)
-        self.assertEquals(wtextr.outgoingHeaders.get('content-length'),
+        self.assertEqual(wtextr.outgoingHeaders.get('content-length'),
                           str(len('hello world')))
-        self.assertNotEquals(f.getChild('', DummyRequest([''])).__class__,
+        self.assertNotEqual(f.getChild('', DummyRequest([''])).__class__,
                              static.File)
 
     def testIgnoreExt(self):
         f = static.File(".")
         f.ignoreExt(".foo")
-        self.assertEquals(f.ignoredExts, [".foo"])
+        self.assertEqual(f.ignoredExts, [".foo"])
         f = static.File(".")
-        self.assertEquals(f.ignoredExts, [])
+        self.assertEqual(f.ignoredExts, [])
         f = static.File(".", ignoredExts=(".bar", ".baz"))
-        self.assertEquals(f.ignoredExts, [".bar", ".baz"])
+        self.assertEqual(f.ignoredExts, [".bar", ".baz"])
 
     def testIgnoredExts(self):
         import os
@@ -239,7 +239,7 @@ resource = Data('dynamic world','text/plain')
         f.ignoreExt('.ToUs')
         dreq = DummyRequest([''])
         child_without_ext = f.getChild('AreBelong', dreq)
-        self.assertNotEquals(child_without_ext, f.childNotFound)
+        self.assertNotEqual(child_without_ext, f.childNotFound)
 
 class DummyChannel:
     class Baz:
@@ -397,26 +397,26 @@ class NewRenderTestCase(unittest.TestCase):
     def testGoodMethods(self):
         req = self._getReq()
         req.requestReceived('GET', '/newrender', 'HTTP/1.0')
-        self.assertEquals(req.transport.getvalue().splitlines()[-1], 'hi hi')
+        self.assertEqual(req.transport.getvalue().splitlines()[-1], 'hi hi')
 
         req = self._getReq()
         req.requestReceived('HEH', '/newrender', 'HTTP/1.0')
-        self.assertEquals(req.transport.getvalue().splitlines()[-1], 'ho ho')
+        self.assertEqual(req.transport.getvalue().splitlines()[-1], 'ho ho')
 
     def testBadMethods(self):
         req = self._getReq()
         req.requestReceived('CONNECT', '/newrender', 'HTTP/1.0')
-        self.assertEquals(req.code, 501)
+        self.assertEqual(req.code, 501)
 
         req = self._getReq()
         req.requestReceived('hlalauguG', '/newrender', 'HTTP/1.0')
-        self.assertEquals(req.code, 501)
+        self.assertEqual(req.code, 501)
 
     def testImplicitHead(self):
         req = self._getReq()
         req.requestReceived('HEAD', '/newrender', 'HTTP/1.0')
-        self.assertEquals(req.code, 200)
-        self.assertEquals(-1, req.transport.getvalue().find('hi hi'))
+        self.assertEqual(req.code, 200)
+        self.assertEqual(-1, req.transport.getvalue().find('hi hi'))
 
 
 class SDResource(resource.Resource):

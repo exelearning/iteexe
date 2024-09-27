@@ -40,7 +40,7 @@ class Counter(object):
              True
         """
         if self.maxval is not None and ((self._count + other) > self.maxval):
-            raise ValueError, "sorry, counter got too big"
+            raise ValueError("sorry, counter got too big")
         else:
             self._count += other
         return self

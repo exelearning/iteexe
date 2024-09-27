@@ -4,9 +4,9 @@
 
 
 try:
-    from cStringIO import StringIO
+    from io import StringIO
 except ImportError:
-    from StringIO import StringIO
+    from io import StringIO
 
 from twisted.protocols import basic
 from twisted.internet import error
@@ -21,11 +21,11 @@ class LineSendingProtocol(basic.LineReceiver):
     
     def connectionMade(self):
         if self.start:
-            map(self.sendLine, self.lines)
+            list(map(self.sendLine, self.lines))
     
     def lineReceived(self, line):
         if not self.start:
-            map(self.sendLine, self.lines)
+            list(map(self.sendLine, self.lines))
             self.lines = []
         self.response.append(line)
     

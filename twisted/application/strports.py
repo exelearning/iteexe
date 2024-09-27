@@ -34,7 +34,7 @@ API Stability: unstable
 
 Maintainer: U{Moshe Zadka<mailto:moshez@twistedmatrix.com>}
 """
-from __future__ import generators
+
 
 def _parseTCP(factory, port, interface="", backlog=50):
     return (int(port), factory), {'interface': interface,
@@ -59,7 +59,7 @@ _funcs = {"tcp": _parseTCP,
           "unix": _parseUNIX,
           "ssl": _parseSSL}
 
-_OP, _STRING = range(2)
+_OP, _STRING = list(range(2))
 def _tokenize(description):
     current = ''
     ops = ':='
@@ -72,7 +72,7 @@ def _tokenize(description):
             current = ''
             ops = nextOps[n]
         elif n=='\\':
-            current += description.next()
+            current += next(description)
         else:
             current += n
     yield _STRING, current

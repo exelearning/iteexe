@@ -27,7 +27,7 @@ class MyOptions(usage.Options):
 
     def postOptions(self):
         if not self["maintainer"]:
-            raise usage.UsageError, "maintainer must be specified."
+            raise usage.UsageError("maintainer must be specified.")
 
 
 type_dict = {
@@ -46,7 +46,7 @@ def run():
     try:
         config = MyOptions()
         config.parseOptions()
-    except usage.error, ue:
+    except usage.error as ue:
         sys.exit("%s: %s" % (sys.argv[0], ue))
 
     tap_file = config['tapfile']
@@ -141,7 +141,7 @@ esac
 exit 0
 ''' % vars())
 
-    os.chmod(os.path.join('.build', directory, 'debian', 'init.d'), 0755)
+    os.chmod(os.path.join('.build', directory, 'debian', 'init.d'), 0o755)
 
     save_to_file(os.path.join('.build', directory, 'debian', 'postinst'),
     '''\
@@ -269,7 +269,7 @@ binary: binary-indep binary-arch
 .PHONY: build clean binary-indep binary-arch binary install
 ''' % vars())
 
-    os.chmod(os.path.join('.build', directory, 'debian', 'rules'), 0755)
+    os.chmod(os.path.join('.build', directory, 'debian', 'rules'), 0o755)
 
     os.chdir('.build/%(directory)s' % vars())
     os.system('dpkg-buildpackage -rfakeroot'+ ['', ' -uc -us'][config['unsigned']])

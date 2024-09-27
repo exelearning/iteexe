@@ -26,10 +26,10 @@ def sh(command, null=True, prompt=False):
     ask before running it.  If the command returns something other
     than 0, I'll raise CommandFailed(command).
     """
-    print "--$", command
+    print("--$", command)
 
     if prompt:
-        if raw_input("run ?? ").startswith('n'):
+        if input("run ?? ").startswith('n'):
             return
     if null:
         command = "%s > /dev/null" % command
@@ -46,7 +46,7 @@ def replaceInFile(filename, oldToNew):
     f = open(filename+'.bak')
     d = f.read()
     f.close()
-    for k,v in oldToNew.items():
+    for k,v in list(oldToNew.items()):
         d = d.replace(k, v)
     f = open(filename + '.new', 'w')
     f.write(d)

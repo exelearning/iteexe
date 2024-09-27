@@ -186,7 +186,7 @@ def loadNodesIdevices(node, s):
 
 def test_for_node(html_content):
     # to see if this html really is an exe-generated node
-    exe_string = u"<!-- Created using eXe: http://exelearning.org -->"
+    exe_string = "<!-- Created using eXe: http://exelearning.org -->"
     if html_content.decode('utf-8').find(exe_string) >= 0:
         return True
     else:
@@ -327,7 +327,7 @@ class Package(Persistable):
     _backgroundImg     = ''
     #styledefault=u"INTEF"
     # This is like a constant
-    defaultLevelNames  = [x_(u"Topic"), x_(u"Section"), x_(u"Unit")]
+    defaultLevelNames  = [x_("Topic"), x_("Section"), x_("Unit")]
     lomESPlatformMark  = 'editor: eXe Learning'
 
     _fieldValidationInfo = None
@@ -336,7 +336,7 @@ class Package(Persistable):
         """
         Initialize
         """
-        log.debug(u"init " + repr(name))
+        log.debug("init " + repr(name))
         self._nextIdeviceId = 0
         self._nextNodeId    = 0
         # For looking up nodes by ids
@@ -344,14 +344,14 @@ class Package(Persistable):
 
         self._levelNames    = self.defaultLevelNames[:]
         self.name           = name
-        self._title         = u''
-        self._backgroundImg = u''
+        self._title         = ''
+        self._backgroundImg = ''
         self.backgroundImgTile = False
 
         # Empty if never saved/loaded
-        self.filename      = u''
+        self.filename      = ''
 
-        self.root          = Node(self, None, _(u"Home"))
+        self.root          = Node(self, None, _("Home"))
         self.currentNode   = self.root
 #        self.style         = u"default"
         #self.styledefault=u"INTEF"
@@ -375,15 +375,15 @@ class Package(Persistable):
         self.exportMetadataType = "LOMES"
         self.license       = G.application.config.defaultLicense
         self.footer        = ""
-        self._objectives = u''
-        self._preknowledge = u''
-        self._learningResourceType = u''
-        self._intendedEndUserRoleType = u''
+        self._objectives = ''
+        self._preknowledge = ''
+        self._learningResourceType = ''
+        self._intendedEndUserRoleType = ''
         self._intendedEndUserRoleGroup = False
         self._intendedEndUserRoleTutor = False
-        self._contextPlace = u''
-        self._contextMode = u''
-        self._extraHeadContent = u''
+        self._contextPlace = ''
+        self._contextMode = ''
+        self._extraHeadContent = ''
 
         #for export to Sugar (e.g. OLPC)
         self.sugaractivityname = ""
@@ -572,7 +572,7 @@ class Package(Persistable):
             dateTime.set_valueOf_(now)
             dateTime.set_uniqueElementName('dateTime')
             lang_str = self.lang.encode('utf-8')
-            value_meta_str = c_(u'Metadata creation date').encode('utf-8')
+            value_meta_str = c_('Metadata creation date').encode('utf-8')
             dateDescription = lomsubs.LanguageStringSub([lomsubs.LangStringSub(lang_str, value_meta_str)])
             date = lomsubs.dateSub(dateTime, dateDescription)
 
@@ -691,7 +691,7 @@ class Package(Persistable):
             imgFile = Path(value)
             self._backgroundImg = Resource(self, Path(imgFile))
         else:
-            self._backgroundImg = u''
+            self._backgroundImg = ''
 
     def get_level1(self):
         return self.levelName(0)
@@ -1192,7 +1192,7 @@ class Package(Persistable):
         if value:
             self._extraHeadContent = value
         else:
-            self._extraHeadContent = u''
+            self._extraHeadContent = ''
 
     def set_changed(self, changed):
         self._isChanged = changed
@@ -1242,7 +1242,7 @@ class Package(Persistable):
         Finds a node from its nodeId
         (nodeId can be a string or a list/tuple)
         """
-        log.debug(u"findNode" + repr(nodeId))
+        log.debug("findNode" + repr(nodeId))
         node = self._nodeIdDict.get(nodeId)
         if node and node.package is self:
             return node
@@ -1257,7 +1257,7 @@ class Package(Persistable):
         if level < len(self._levelNames):
             return _(self._levelNames[level])
         else:
-            return _(u"?????")
+            return _("?????")
 
 
     def save(self, filename=None, tempFile=False, isTemplate=False, configxml=None, preventUpdateRecent=False):
@@ -1287,7 +1287,7 @@ class Package(Persistable):
             # If we don't have a last saved/loaded from filename,
             # raise an exception because, we need to have a new
             # file passed when a brand new package is saved
-            raise AssertionError(u'No name passed when saving a new package')
+            raise AssertionError('No name passed when saving a new package')
         #JR: Convertimos el nombre del paquete para evitar nombres problematicos
         import string
         validPackagenameChars = "-_. %s%s" % (string.ascii_letters, string.digits)
@@ -1296,10 +1296,10 @@ class Package(Persistable):
         if self.name == "":
             self.name = "invalidpackagename"
         # Store our new filename for next file|save, and save the package
-        log.debug(u"Will save %s to: %s" % (self.name, filename))
+        log.debug("Will save %s to: %s" % (self.name, filename))
         if tempFile:
             self.nonpersistant.remove('filename')
-            oldFilename, self.filename = self.filename, unicode(self.filename)
+            oldFilename, self.filename = self.filename, str(self.filename)
             try:
                 filename.safeSave(self.doSave, _('SAVE FAILED!\nLast succesful save is %s.'), configxml)
             finally:
@@ -1343,25 +1343,25 @@ class Package(Persistable):
         zippedFile = zipfile.ZipFile(fileObj, "w", zipfile.ZIP_DEFLATED)
         try:
             for resourceFile in self.resourceDir.walkfiles():
-                zippedFile.write(unicode(resourceFile.normpath()),
+                zippedFile.write(str(resourceFile.normpath()),
                         self.resourceDir.relpathto(resourceFile), zipfile.ZIP_DEFLATED)
 
             zinfo = zipfile.ZipInfo(filename='content.data',
                     date_time=time.localtime()[0:6])
-            zinfo.external_attr = 0100644<<16L
+            zinfo.external_attr = 0o100644<<16
             zinfo.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo, encodeObject(self))
 
             zinfo2 = zipfile.ZipInfo(filename='contentv3.xml',
                     date_time=time.localtime()[0:6])
-            zinfo2.external_attr = 0100644<<16L
+            zinfo2.external_attr = 0o100644<<16
             zinfo2.compress_type = zipfile.ZIP_DEFLATED
             zippedFile.writestr(zinfo2, encodeObjectToXML(self))
 
             if configxml is not None:
                 zinfo3 = zipfile.ZipInfo(filename='config.xml',
                         date_time=time.localtime()[0:6])
-                zinfo3.external_attr = 0100644<<16L
+                zinfo3.external_attr = 0o100644<<16
                 zinfo3.compress_type = zipfile.ZIP_DEFLATED
                 zippedFile.writestr(zinfo3, configxml)
 
@@ -1400,17 +1400,17 @@ class Package(Persistable):
         xml = None
 
         try:
-            xml = zippedFile.read(u"contentv3.xml")
+            xml = zippedFile.read("contentv3.xml")
         except:
             try:
-                xml = zippedFile.read(u"contentv2.xml")
+                xml = zippedFile.read("contentv2.xml")
             except:
                 pass
 
         if not xml:
             try:
                 # Get the jellied package data
-                toDecode   = zippedFile.read(u"content.data")
+                toDecode   = zippedFile.read("content.data")
             except KeyError:
                 log.info("no content.data, trying Common Cartridge/Content Package")
                 newPackage = loadCC(zippedFile, filename)
@@ -1427,17 +1427,17 @@ class Package(Persistable):
 
         # These files are not resources, so we shouldn't copy them
         excluded_files = [
-            u'content.data',
-            u'content.xml',
-            u'contentv2.xml',
-            u'contentv3.xml',
-            u'content.xsd',
-            u'config.xml'
+            'content.data',
+            'content.xml',
+            'contentv2.xml',
+            'contentv3.xml',
+            'content.xsd',
+            'config.xml'
         ]
         load_message = ""
         # Extract resource files from package to temporary directory
         for fn in zippedFile.namelist():
-            if unicode(fn, 'utf8') not in excluded_files:
+            if str(fn, 'utf8') not in excluded_files:
                 #JR: Hacemos las comprobaciones necesarias por si hay directorios
                 if ("/" in fn):
                     dir = fn[:fn.rindex("/")]
@@ -1459,25 +1459,25 @@ class Package(Persistable):
                 newPackage, validxml = decodeObjectFromXML(fromxml)
             elif xml:
                 try:
-                    xmlinfo = zippedFile.getinfo(u"contentv3.xml")
+                    xmlinfo = zippedFile.getinfo("contentv3.xml")
                 except:
-                    xmlinfo = zippedFile.getinfo(u"contentv2.xml")
-                if u"content.data" not in zippedFile.NameToInfo:
+                    xmlinfo = zippedFile.getinfo("contentv2.xml")
+                if "content.data" not in zippedFile.NameToInfo:
                     newPackage, validxml = decodeObjectFromXML(xml)
                 else:
-                    datainfo = zippedFile.getinfo(u"content.data")
+                    datainfo = zippedFile.getinfo("content.data")
                     if xmlinfo.date_time >= datainfo.date_time:
                         try:
                             newPackage, validxml = decodeObjectFromXML(xml)
                         except:
-                            load_message = _(u"Can't read the .xml file. eXe will try to recover the content from the .data file instead.")
+                            load_message = _("Can't read the .xml file. eXe will try to recover the content from the .data file instead.")
 
                             log.warn("Error decode xml. Incorrect contentv3.xml")
             if not validxml:
-                toDecode   = zippedFile.read(u"content.data")
+                toDecode   = zippedFile.read("content.data")
                 newPackage = decodeObjectRaw(toDecode)
             try:
-                lomdata = zippedFile.read(u'imslrm.xml')
+                lomdata = zippedFile.read('imslrm.xml')
                 if 'LOM-ES' in lomdata:
                     importType = 'lomEs'
                 else:
@@ -1495,7 +1495,7 @@ class Package(Persistable):
             newPackage.resourceDir = resourceDir
             G.application.afterUpgradeZombies2Delete = []
             if not validxml and (xml or fromxml or "content.xml" in zippedFile.namelist()):
-                for key, res in newPackage.resources.items():
+                for key, res in list(newPackage.resources.items()):
                     if len(res) < 1:
                         newPackage.resources.pop(key)
                     else:
@@ -1599,14 +1599,14 @@ class Package(Persistable):
           for handler in G.application.afterUpgradeHandlers:
 
             if handler_priority == 0 and \
-            repr(handler.im_class)=="<class 'exe.engine.resource.Resource'>":
+            repr(handler.__self__.__class__)=="<class 'exe.engine.resource.Resource'>":
                 # level-0 handlers: Resource
                 handler()
 
             elif handler_priority == 1 and \
-            repr(handler.im_class)=="<class 'exe.engine.package.Package'>":
+            repr(handler.__self__.__class__)=="<class 'exe.engine.package.Package'>":
                 # level-1 handlers: Package (requires resources first)
-                if handler.im_self == newPackage:
+                if handler.__self__ == newPackage:
                     handler()
                 else:
                     log.warn("Extra package object found, " \
@@ -1614,9 +1614,9 @@ class Package(Persistable):
                        + repr(handler))
 
             elif handler_priority == 2 and \
-            repr(handler.im_class)!="<class 'exe.engine.resource.Resource'>" \
+            repr(handler.__self__.__class__)!="<class 'exe.engine.resource.Resource'>" \
             and \
-            repr(handler.im_class)!="<class 'exe.engine.package.Package'>":
+            repr(handler.__self__.__class__)!="<class 'exe.engine.package.Package'>":
                 # level-2 handlers: all others
                 handler()
 
@@ -1712,7 +1712,7 @@ class Package(Persistable):
         existingFiles = set([fn.basename() for fn in self.resourceDir.files()])
         #JR
         usedFiles = set([])
-        for reses in self.resources.values():
+        for reses in list(self.resources.values()):
             if hasattr(reses[0], 'storageName'):
                 usedFiles.add(reses[0].storageName)
         #usedFiles = set([reses[0].storageName for reses in self.resources.values()])
@@ -1749,7 +1749,7 @@ class Package(Persistable):
         draft = getattr(self, 'draft')
         draft._id = self._regNewNode(draft)
         draft._package = self
-        setattr(self, 'editor', Node(self, None, _(u"iDevice Editor")))
+        setattr(self, 'editor', Node(self, None, _("iDevice Editor")))
 
         # Add a default idevice to the editor
         idevice = GenericIdevice("", "", "", "", "")
@@ -1773,7 +1773,7 @@ class Package(Persistable):
         stores the node in our id lookup dict
         returns a new unique id
         """
-        id_ = unicode(self._nextNodeId)
+        id_ = str(self._nextNodeId)
         self._nextNodeId += 1
         self._nodeIdDict[id_] = node
         return id_
@@ -1783,7 +1783,7 @@ class Package(Persistable):
         """
         Returns an iDevice Id which is unique for this package.
         """
-        id_ = unicode(self._nextIdeviceId)
+        id_ = str(self._nextIdeviceId)
         self._nextIdeviceId += 1
         return id_
 
@@ -1828,7 +1828,7 @@ class Package(Persistable):
             'exportElp': False,
             'docType': G.application.config.docType
         }
-        for field, value in _metadata_fields_package.iteritems():
+        for field, value in _metadata_fields_package.items():
             if getattr(self, field) != value:
                 return True
 
@@ -1848,7 +1848,7 @@ class Package(Persistable):
             'coverage': '',
             'rights': ''
         }
-        for field, value in _metadata_field_dublin.iteritems():
+        for field, value in _metadata_field_dublin.items():
             if getattr(self.dublinCore, field) != value:
                 return True
 
@@ -1954,20 +1954,20 @@ class Package(Persistable):
         return defaults
 
     oldLicenseMap = {"None": "None",
-                  "GNU Free Documentation License": u"license GFDL",
-                  "Creative Commons Attribution 3.0 License": u"creative commons: attribution 3.0",
-                  "Creative Commons Attribution Share Alike 3.0 License": u"creative commons: attribution - share alike 3.0",
-                  "Creative Commons Attribution No Derivatives 3.0 License": u"creative commons: attribution - non derived work 3.0",
-                  "Creative Commons Attribution Non-commercial 3.0 License": u"creative commons: attribution - non commercial 3.0",
-                  "Creative Commons Attribution Non-commercial Share Alike 3.0 License": u"creative commons: attribution - non commercial - share alike 3.0",
-                  "Creative Commons Attribution Non-commercial No Derivatives 3.0 License": u"creative commons: attribution - non derived work - non commercial 3.0",
-                  "Creative Commons Attribution 2.5 License": u"creative commons: attribution 2.5",
-                  "Creative Commons Attribution-ShareAlike 2.5 License": u"creative commons: attribution - share alike 2.5",
-                  "Creative Commons Attribution-NoDerivs 2.5 License": u"creative commons: attribution - non derived work 2.5",
-                  "Creative Commons Attribution-NonCommercial 2.5 License": u"creative commons: attribution - non commercial 2.5",
-                  "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License": u"creative commons: attribution - non commercial - share alike 2.5",
-                  "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License": u"creative commons: attribution - non derived work - non commercial 2.5",
-                  "Developing Nations 2.0": u""
+                  "GNU Free Documentation License": "license GFDL",
+                  "Creative Commons Attribution 3.0 License": "creative commons: attribution 3.0",
+                  "Creative Commons Attribution Share Alike 3.0 License": "creative commons: attribution - share alike 3.0",
+                  "Creative Commons Attribution No Derivatives 3.0 License": "creative commons: attribution - non derived work 3.0",
+                  "Creative Commons Attribution Non-commercial 3.0 License": "creative commons: attribution - non commercial 3.0",
+                  "Creative Commons Attribution Non-commercial Share Alike 3.0 License": "creative commons: attribution - non commercial - share alike 3.0",
+                  "Creative Commons Attribution Non-commercial No Derivatives 3.0 License": "creative commons: attribution - non derived work - non commercial 3.0",
+                  "Creative Commons Attribution 2.5 License": "creative commons: attribution 2.5",
+                  "Creative Commons Attribution-ShareAlike 2.5 License": "creative commons: attribution - share alike 2.5",
+                  "Creative Commons Attribution-NoDerivs 2.5 License": "creative commons: attribution - non derived work 2.5",
+                  "Creative Commons Attribution-NonCommercial 2.5 License": "creative commons: attribution - non commercial 2.5",
+                  "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License": "creative commons: attribution - non commercial - share alike 2.5",
+                  "Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License": "creative commons: attribution - non derived work - non commercial 2.5",
+                  "Developing Nations 2.0": ""
                  }
 
     def upgradeToVersion10(self):
@@ -1998,30 +1998,30 @@ class Package(Persistable):
         if not hasattr(self, 'exportMetadataType'):
             self.exportMetadataType = "LOMES"
         if not hasattr(self, 'objectives'):
-            self._objectives = u''
+            self._objectives = ''
         if not hasattr(self, 'preknowledge'):
-            self._preknowledge = u''
+            self._preknowledge = ''
         if not hasattr(self, 'learningResourceType'):
-            self._learningResourceType = u''
+            self._learningResourceType = ''
         if not hasattr(self, 'intendedEndUserRoleType'):
-            self._intendedEndUserRoleType = u''
+            self._intendedEndUserRoleType = ''
         if not hasattr(self, 'intendedEndUserRoleGroup'):
             self._intendedEndUserRoleGroup = False
         if not hasattr(self, 'intendedEndUserRoleTutor'):
             self._intendedEndUserRoleTutor = False
         if not hasattr(self, 'contextPlace'):
-            self._contextPlace = u''
+            self._contextPlace = ''
         if not hasattr(self, 'contextMode'):
-            self._contextMode = u''
+            self._contextMode = ''
         if not hasattr(self, 'extraHeadContent'):
-            self._extraHeadContent = u''
+            self._extraHeadContent = ''
         if hasattr(self, 'scowsource'):
             del self.scowsource
         try:
-            if not self.license in self.oldLicenseMap.values():
+            if not self.license in list(self.oldLicenseMap.values()):
                 self.newlicense = self.oldLicenseMap[self.license]
         except:
-            self.license = u''
+            self.license = ''
         if not hasattr(self, 'mxmlprofilelist'):
             self.mxmlprofilelist = ""
         if not hasattr(self, 'mxmlforcemediaonly'):
@@ -2057,7 +2057,7 @@ class Package(Persistable):
                      'mxmlforcemediaonly', 'mxmlheight', 'mxmlwidth', '_addSearchBox', '_addAccessibilityToolbar', '_exportElp']:
             if hasattr(self, attr):
                     delattr(self, attr)
-        self.license = u''
+        self.license = ''
         CasestudyIdevice.persistenceVersion = 8
         CasopracticofpdIdevice.persistenceVersion = 7
         CitasparapensarfpdIdevice.persistenceVersion = 7
@@ -2111,19 +2111,19 @@ class Package(Persistable):
         from_list_checks = {}
 
         # Check for the constraints that every export should follow
-        if u'all' in self._fieldValidationInfo:
+        if 'all' in self._fieldValidationInfo:
             # Mandatory fields
-            if u'mandatory_fields' in self._fieldValidationInfo[u'all']:
-                mandatory_checks = mandatory_checks + self._fieldValidationInfo[u'all'][u'mandatory_fields']
+            if 'mandatory_fields' in self._fieldValidationInfo['all']:
+                mandatory_checks = mandatory_checks + self._fieldValidationInfo['all']['mandatory_fields']
 
         # Check the constraints that the current export should follow
         if export_type in self._fieldValidationInfo:
             # Mandatory fields
-            if u'mandatory_fields' in self._fieldValidationInfo[export_type]:
-                mandatory_checks = mandatory_checks + self._fieldValidationInfo[export_type][u'mandatory_fields']
+            if 'mandatory_fields' in self._fieldValidationInfo[export_type]:
+                mandatory_checks = mandatory_checks + self._fieldValidationInfo[export_type]['mandatory_fields']
 
-            if u'values_from_list' in self._fieldValidationInfo[export_type]:
-                from_list_checks.update(self._fieldValidationInfo[export_type][u'values_from_list'])
+            if 'values_from_list' in self._fieldValidationInfo[export_type]:
+                from_list_checks.update(self._fieldValidationInfo[export_type]['values_from_list'])
 
         invalid_fields = []
 
@@ -2144,7 +2144,7 @@ class Package(Persistable):
 
                 invalid_fields.append(invalid_field)
 
-        for field, values in from_list_checks.iteritems():
+        for field, values in from_list_checks.items():
             part, name = field.split('_', 1)
 
             # Check the attribute
@@ -2188,7 +2188,7 @@ class Package(Persistable):
 
     def upgradeToVersion16(self):
         if not hasattr(self, '_extraHeadContent'):
-            self._extraHeadContent = u''
+            self._extraHeadContent = ''
         if not hasattr(self, '_addSearchBox'):
             self._addSearchBox = False
         if not hasattr(self, '_addAccessibilityToolbar'):

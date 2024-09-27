@@ -37,17 +37,17 @@ class MultimediaIdevice(Idevice):
     
     def __init__(self, defaultMedia = None):
         Idevice.__init__(self, 
-                         x_(u"MP3"), 
-                         x_(u"Auckland University of Technology"), 
-                         x_(u"The MP3 iDevice allows you to attach an MP3 " 
+                         x_("MP3"), 
+                         x_("Auckland University of Technology"), 
+                         x_("The MP3 iDevice allows you to attach an MP3 " 
                             "media file to your content along with relevant textual"
                             "learning instructions."),
-                         u"", 
-                         u"")
+                         "", 
+                         "")
         self.emphasis                    = Idevice.NoEmphasis
         self.media                       = MultimediaField(
-                                           x_(u"Choose an MP3 file"),
-                                           x_(u""
+                                           x_("Choose an MP3 file"),
+                                           x_(""
             "<ol>"
             "  <li>Click &lt;Select an MP3&gt; and browse to the MP3 "
             "      file you wish to insert</li>"
@@ -61,17 +61,17 @@ class MultimediaIdevice(Idevice):
             "</ol>"
             ))
         self.media.idevice               = self
-        self.text                        = TextAreaField(x_(u"Text"),
+        self.text                        = TextAreaField(x_("Text"),
                                            x_("""Enter the text you wish to 
 associate with the file."""))
         self.text.idevice                = self
-        self.float                       = u"left"
-        self.caption                     = u""
-        self.icon                        = u"multimedia"
-        self._captionInstruc             = x_(u"""Provide a caption for the 
+        self.float                       = "left"
+        self.caption                     = ""
+        self.icon                        = "multimedia"
+        self._captionInstruc             = x_("""Provide a caption for the 
 MP3 file. This will appear in the players title bar as well.""")
        
-        self._alignInstruc               = x_(u"""Alignment allows you to 
+        self._alignInstruc               = x_("""Alignment allows you to 
 choose where on the screen the media player will be positioned.""")
         self.systemResources += ['xspf_player.swf']
        

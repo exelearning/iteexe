@@ -69,10 +69,10 @@ from twisted.python.util import unsignedID
 from twisted.internet.error import CannotListenError
 
 # Sibling Imports
-import abstract
-import main
-import interfaces
-import error
+from . import abstract
+from . import main
+from . import interfaces
+from . import error
 
 class _SocketCloser:
     _socketShutdownMethod = 'shutdown'
@@ -118,13 +118,14 @@ class _TLSMixin:
             Connection.startWriting(self)
             Connection.stopReading(self)
             return
-        except SSL.SysCallError, (retval, desc):
+        except SSL.SysCallError as xxx_todo_changeme1:
+            (retval, desc) = xxx_todo_changeme1.args
             if ((retval == -1 and desc == 'Unexpected EOF')
                 or retval > 0):
                 return main.CONNECTION_LOST
             log.err()
             return main.CONNECTION_LOST
-        except SSL.Error, e:
+        except SSL.Error as e:
             return e
 
     def doWrite(self):
@@ -151,14 +152,14 @@ class _TLSMixin:
             return 0
         except SSL.ZeroReturnError:
             return main.CONNECTION_LOST
-        except SSL.SysCallError, e:
+        except SSL.SysCallError as e:
             if e[0] == -1 and data == "":
                 # errors when writing empty strings are expected
                 # and can be ignored
                 return 0
             else:
                 return main.CONNECTION_LOST
-        except SSL.Error, e:
+        except SSL.Error as e:
             return e
 
     def _postLoseConnection(self):
@@ -196,7 +197,7 @@ class _TLSMixin:
         # shutdown)
         try:
             os.write(self.socket.fileno(), '')
-        except OSError, se:
+        except OSError as se:
             if se.args[0] in (EINTR, EWOULDBLOCK, ENOBUFS):
                 return 0
             # Write error, socket gone
@@ -214,7 +215,7 @@ class _TLSMixin:
                 #              "please upgrade to ver 0.XX", category=UserWarning)
                 self.socket.shutdown()
                 done = True
-        except SSL.Error, e:
+        except SSL.Error as e:
             return e
 
         if done:
@@ -339,7 +340,7 @@ class Connection(abstract.FileDescriptor, _SocketCloser):
         """
         try:
             data = self.socket.recv(self.bufferSize)
-        except socket.error, se:
+        except socket.error as se:
             if se.args[0] == EWOULDBLOCK:
                 return
             else:
@@ -358,7 +359,7 @@ class Connection(abstract.FileDescriptor, _SocketCloser):
             # Limit length of buffer to try to send, because some OSes are too
             # stupid to do so themselves (ahem windows)
             return self.socket.send(buffer(data, 0, self.SEND_LIMIT))
-        except socket.error, se:
+        except socket.error as se:
             if se.args[0] == EINTR:
                 return self.writeSomeData(data)
             elif se.args[0] in (EWOULDBLOCK, ENOBUFS):
@@ -518,7 +519,7 @@ class BaseClient(Connection):
 
         try:
             connectResult = self.socket.connect_ex(self.realAddress)
-        except socket.error, se:
+        except socket.error as se:
             connectResult = se.args[0]
         if connectResult:
             if connectResult == EISCONN:
@@ -572,13 +573,13 @@ class Client(BaseClient):
 
         try:
             skt = self.createInternetSocket()
-        except socket.error, se:
+        except socket.error as se:
             err = error.ConnectBindError(se[0], se[1])
             whenDone = None
         if whenDone and bindAddress is not None:
             try:
                 skt.bind(bindAddress)
-            except socket.error, se:
+            except socket.error as se:
                 err = error.ConnectBindError(se[0], se[1])
                 whenDone = None
         self._finishInit(whenDone, skt, err, reactor)
@@ -710,8 +711,8 @@ class Port(base.BasePort, _SocketCloser):
         try:
             skt = self.createInternetSocket()
             skt.bind((self.interface, self.port))
-        except socket.error, le:
-            raise CannotListenError, (self.interface, self.port, le)
+        except socket.error as le:
+            raise CannotListenError(self.interface, self.port, le)
 
         # Make sure that if we listened on port 0, we update that to
         # reflect what the OS actually assigned us.
@@ -730,7 +731,8 @@ class Port(base.BasePort, _SocketCloser):
 
         self.startReading()
 
-    def _buildAddr(self, (host, port)):
+    def _buildAddr(self, xxx_todo_changeme):
+        (host, port) = xxx_todo_changeme
         return address._ServerFactoryIPv4Address('TCP', host, port)
 
     def doRead(self):
@@ -753,7 +755,7 @@ class Port(base.BasePort, _SocketCloser):
                     return
                 try:
                     skt, addr = self.socket.accept()
-                except socket.error, e:
+                except socket.error as e:
                     if e.args[0] in (EWOULDBLOCK, EAGAIN):
                         self.numberAccepts = i
                         break
@@ -833,10 +835,10 @@ components.backwardsCompatImplements(Port)
 class Connector(base.BaseConnector):
     def __init__(self, host, port, factory, timeout, bindAddress, reactor=None):
         self.host = host
-        if isinstance(port, types.StringTypes):
+        if isinstance(port, (str,)):
             try:
                 port = socket.getservbyname(port, 'tcp')
-            except socket.error, e:
+            except socket.error as e:
                 raise error.ServiceNameUnknownError(string="%s (%r)" % (e, port))
         self.port = port
         self.bindAddress = bindAddress

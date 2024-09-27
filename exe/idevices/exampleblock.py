@@ -54,10 +54,10 @@ class ExampleBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -65,9 +65,9 @@ class ExampleBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderView()
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -78,17 +78,17 @@ class ExampleBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 
 # ===========================================================================
 def register():
     """Register this block with the BlockFactory"""
-    from exampleidevice import ExampleIdevice
+    from .exampleidevice import ExampleIdevice
     from exe.webui.blockfactory     import g_blockFactory
     g_blockFactory.registerBlockType(ExampleBlock, ExampleIdevice)    
 

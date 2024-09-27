@@ -15,16 +15,16 @@ from twisted.protocols import policies
 from twisted.internet import protocol, defer
 from twisted.python import log
 import UserDict
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # urllib's quote functions just happen to match
 # the postfix semantics.
 
 def quote(s):
-    return urllib.quote(s)
+    return urllib.parse.quote(s)
 
 def unquote(s):
-    return urllib.unquote(s)
+    return urllib.parse.unquote(s)
 
 class PostfixTCPMapServer(basic.LineReceiver, policies.TimeoutMixin):
     """Postfix mail transport agent TCP map protocol implementation.

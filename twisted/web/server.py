@@ -11,9 +11,9 @@ infrastructure.
 # System Imports
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 import base64
 import string
@@ -24,11 +24,12 @@ import cgi
 import copy
 import time
 import os
-from urllib import quote
+from urllib.parse import quote
+import collections.abc
 try:
     from twisted.protocols._c_urlarg import unquote
 except ImportError:
-    from urllib import unquote
+    from urllib.parse import unquote
 
 #some useful constants
 NOT_DONE_YET = 1
@@ -43,7 +44,7 @@ from twisted.cred import util
 from twisted.persisted import styles
 
 # Sibling Imports
-import error, resource
+from . import error, resource
 from twisted.web import util as webutil
 
 
@@ -76,11 +77,11 @@ class UnsupportedMethod(Exception):
         Exception.__init__(self, allowedMethods, *args)
         self.allowedMethods = allowedMethods
         
-        if not operator.isSequenceType(allowedMethods):
+        if not isinstance(allowedMethods, collections.abc.Sequence):
             why = "but my first argument is not a sequence."
             s = ("First argument must be a sequence of"
                  " supported methods, %s" % (why,))
-            raise TypeError, s
+            raise TypeError(s)
 
 
 class Request(pb.Copyable, http.Request, components.Componentized):
@@ -147,7 +148,7 @@ class Request(pb.Copyable, http.Request, components.Componentized):
 
         # Resource Identification
         self.prepath = []
-        self.postpath = map(unquote, string.split(self.path[1:], '/'))
+        self.postpath = list(map(unquote, string.split(self.path[1:], '/')))
         try:
             resrc = self.site.getResourceFor(self)
             self.render(resrc)
@@ -158,7 +159,7 @@ class Request(pb.Copyable, http.Request, components.Componentized):
     def render(self, resrc):
         try:
             body = resrc.render(self)
-        except UnsupportedMethod, e:
+        except UnsupportedMethod as e:
             allowedMethods = e.allowedMethods
             if (self.method == "HEAD") and ("GET" in allowedMethods):
                 # We must support HEAD (RFC 2616, 5.1.1).  If the
@@ -206,7 +207,7 @@ class Request(pb.Copyable, http.Request, components.Componentized):
 
         if body == NOT_DONE_YET:
             return
-        if type(body) is not types.StringType:
+        if type(body) is not bytes:
             body = error.ErrorPage(http.INTERNAL_SERVER_ERROR,
                 "Request did not return a string",
                 "Request: "+html.PRE(reflect.safe_repr(self))+"<br />"+
@@ -415,7 +416,7 @@ class Session(components.Componentized):
     def checkExpired(self):
         # If I haven't been touched in 15 minutes:
         if time.time() - self.lastModified > 900:
-            if self.site.sessions.has_key(self.uid):
+            if self.uid in self.site.sessions:
                 self.expire()
             else:
                 pass
@@ -509,4 +510,4 @@ class Site(http.HTTPFactory):
         return resource.getChildForRequest(self.resource, request)
 
 
-import html
+from . import html

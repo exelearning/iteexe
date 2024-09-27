@@ -15,17 +15,17 @@ You're going to need the following table in your database::
 
 """
 
-from __future__ import nested_scopes
+
 
 # twisted imports
 from twisted.internet import defer
 
 # sibling imports
-import base
+from . import base
 
 
 # constants for command list
-INSERT, DELETE, UPDATE = range(3)
+INSERT, DELETE, UPDATE = list(range(3))
 
 
 class RowJournal(base.Journal):
@@ -65,7 +65,7 @@ class RowJournal(base.Journal):
     def sync(self):
         """Commit changes to database."""
         if self.syncing:
-            raise ValueError, "sync already in progress"
+            raise ValueError("sync already in progress")
         comandMap = {INSERT : self.reflector.insertRowSQL,
                      UPDATE : self.reflector.updateRowSQL,
                      DELETE : self.reflector.deleteRowSQL}

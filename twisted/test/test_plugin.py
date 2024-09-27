@@ -62,16 +62,16 @@ class PluginTestCase(unittest.TestCase):
         for ext in ['c', 'o'] + (deleteSource and [''] or []):
             try:
                 os.remove(module.__file__ + ext)
-            except OSError, ose:
+            except OSError as ose:
                 if ose.errno != errno.ENOENT:
                     raise
 
     def _clearCache(self):
         try:
             os.remove(sibpath(plugins.__file__, 'dropin.cache'))
-        except OSError, ose:
+        except OSError as ose:
             if ose.errno in (errno.EACCES, errno.ENOENT):
-                print 'Testing in deployed mode.'
+                print('Testing in deployed mode.')
             else:
                 raise
 
@@ -86,17 +86,17 @@ class PluginTestCase(unittest.TestCase):
         cache = plugin.getCache(plugins)
 
         dropin = cache['testplugin']
-        self.assertEquals(dropin.moduleName, 'twisted.plugins.testplugin')
-        self.assertNotEquals(dropin.description.find("I'm a test drop-in."), -1)
+        self.assertEqual(dropin.moduleName, 'twisted.plugins.testplugin')
+        self.assertNotEqual(dropin.description.find("I'm a test drop-in."), -1)
 
         # Note, not the preferred way to get a plugin by its interface.
         p1 = [p for p in dropin.plugins if plugin.ITestPlugin in p.provided][0]
         self.assertIdentical(p1.dropin, dropin)
-        self.assertEquals(p1.name, "TestPlugin")
-        self.assertEquals(
+        self.assertEqual(p1.name, "TestPlugin")
+        self.assertEqual(
             p1.description.strip(),
             "A plugin used solely for testing purposes.")
-        self.assertEquals(p1.provided, [plugin.ITestPlugin, plugin.IPlugin])
+        self.assertEqual(p1.provided, [plugin.ITestPlugin, plugin.IPlugin])
         realPlugin = p1.load()
         self.assertIdentical(realPlugin,
                              sys.modules['twisted.plugins.testplugin'].TestPlugin)
@@ -110,7 +110,7 @@ class PluginTestCase(unittest.TestCase):
     def _testPlugins(self):
         plugins = list(plugin.getPlugins(plugin.ITestPlugin2))
 
-        self.assertEquals(len(plugins), 2)
+        self.assertEqual(len(plugins), 2)
 
         names = ['AnotherTestPlugin', 'ThirdTestPlugin']
         for p in plugins:
@@ -124,7 +124,7 @@ class PluginTestCase(unittest.TestCase):
         writeFileName = sibpath(plugins.__file__, 'pluginextra.py')
         try:
             wf = file(writeFileName, 'w')
-        except IOError, ioe:
+        except IOError as ioe:
             if ioe.errno == errno.EACCES:
                 raise unittest.SkipTest(
                     "No permission to add things to twisted.plugins")
@@ -136,12 +136,12 @@ class PluginTestCase(unittest.TestCase):
                 wf.flush()
 
                 self.failIfIn('twisted.plugins.pluginextra', sys.modules)
-                self.failIf(hasattr(sys.modules['twisted.plugins'], 'pluginextra'),
+                self.assertFalse(hasattr(sys.modules['twisted.plugins'], 'pluginextra'),
                             "plugins package still has pluginextra module")
 
                 plgs = list(plugin.getPlugins(plugin.ITestPlugin))
 
-                self.assertEquals(
+                self.assertEqual(
                     len(plgs), 2,
                     "Unexpected plugins found: %r" % (
                         [p.__name__ for p in plgs]))
@@ -163,7 +163,7 @@ class PluginTestCase(unittest.TestCase):
         writeFileName = sibpath(plugins.__file__, 'pluginextra.py')
         try:
             writeFile = file(writeFileName, 'w')
-        except IOError, ioe:
+        except IOError as ioe:
             if ioe.errno == errno.EACCES:
                 raise unittest.SkipTest(
                     "No permission to add things to twisted.plugins")
@@ -174,7 +174,7 @@ class PluginTestCase(unittest.TestCase):
             writeFile.flush()
             plgs = list(plugin.getPlugins(plugin.ITestPlugin))
             # Sanity check
-            self.assertEquals(
+            self.assertEqual(
                 len(plgs), 2,
                 "Unexpected plugins found: %r" % (
                     [p.__name__ for p in plgs]))
@@ -188,7 +188,7 @@ class PluginTestCase(unittest.TestCase):
             # Make sure additions are noticed
             plgs = list(plugin.getPlugins(plugin.ITestPlugin))
 
-            self.assertEquals(len(plgs), 3, "Unexpected plugins found: %r" % (
+            self.assertEqual(len(plgs), 3, "Unexpected plugins found: %r" % (
                     [p.__name__ for p in plgs]))
 
             names = ['TestPlugin', 'FourthTestPlugin', 'FifthTestPlugin']

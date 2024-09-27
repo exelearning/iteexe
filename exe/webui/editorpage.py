@@ -262,15 +262,15 @@ class EditorPage(RenderableResource):
             title = self.editorPane.idevice.title
             title = title.replace(" ", "+")
         html += 'onclick=saveIdevice("%s") value="%s"/>' % (escape(title), _("Save"))
-        html += u'<br/><input class="button" type="button" name="import" ' 
-        html += u' onclick="importPackage(\'package\')" value="%s" />'  % _("Import iDevice")
-        html += u'<br/><input class="button" type="button" name="export" '
-        html += u'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
-        html += u' value="%s" />'  % _("Export iDevice")
-        html += u'<br/><input class="button" type="button" name="quit" '
+        html += '<br/><input class="button" type="button" name="import" ' 
+        html += ' onclick="importPackage(\'package\')" value="%s" />'  % _("Import iDevice")
+        html += '<br/><input class="button" type="button" name="export" '
+        html += 'onclick="exportPackage(\'package\',\'%d\')"' % self.isNewIdevice
+        html += ' value="%s" />'  % _("Export iDevice")
+        html += '<br/><input class="button" type="button" name="quit" '
         #html += u'onclick="parent.Ext.getCmp(\'ideviceeditorwin\').close()"'        
-        html += u'onclick="quitDialog()"'  
-        html += u' value="%s" />\n'  % _("Quit")
+        html += 'onclick="quitDialog()"'  
+        html += ' value="%s" />\n'  % _("Quit")
         html += common.hiddenField("pathpackage")
         html += "</fieldset>"
         html += "</div>\n"

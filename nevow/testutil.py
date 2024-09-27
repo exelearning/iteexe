@@ -102,11 +102,11 @@ class TestCase(unittest.TestCase):
     def failUnlessSubstring(self, containee, container, msg=None):
         self._assertions += 1
         if container.find(containee) == -1:
-            raise unittest.FailTest, (msg or "%r not in %r" % (containee, container))
+            raise unittest.FailTest(msg or "%r not in %r" % (containee, container))
     def failIfSubstring(self, containee, container, msg=None):
         self._assertions += 1
         if container.find(containee) != -1:
-            raise unittest.FailTest, (msg or "%r in %r" % (containee, container))
+            raise unittest.FailTest(msg or "%r in %r" % (containee, container))
     
     assertSubstring = failUnlessSubstring
     assertNotSubstring = failIfSubstring
@@ -114,17 +114,17 @@ class TestCase(unittest.TestCase):
     def assertNotIdentical(self, first, second, msg=None):
         self._assertions += 1
         if first is second:
-            raise FailTest, (msg or '%r is %r' % (first, second))
+            raise FailTest(msg or '%r is %r' % (first, second))
 
     def failIfIn(self, containee, container, msg=None):
         self._assertions += 1
         if containee in container:
-            raise FailTest, (msg or "%r in %r" % (containee, container))
+            raise FailTest(msg or "%r in %r" % (containee, container))
 
     def assertApproximates(self, first, second, tolerance, msg=None):
         self._assertions += 1
         if abs(first - second) > tolerance:
-            raise FailTest, (msg or "%s ~== %s" % (first, second))
+            raise FailTest(msg or "%s ~== %s" % (first, second))
 
 
 if not hasattr(TestCase, 'mktemp'):

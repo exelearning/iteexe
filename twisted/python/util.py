@@ -4,7 +4,7 @@
 # See LICENSE for details.
 
 
-from __future__ import nested_scopes, generators
+
 
 __version__ = '$Revision: 1.51 $'[11:-2]
 
@@ -37,7 +37,7 @@ class InsensitiveDict:
         del self.data[k]
 
     def _lowerOrReturn(self, key):
-        if isinstance(key, str) or isinstance(key, unicode):
+        if isinstance(key, str) or isinstance(key, str):
             return key.lower()
         else:
             return key
@@ -56,27 +56,27 @@ class InsensitiveDict:
     def has_key(self, key):
         """Case insensitive test whether 'key' exists."""
         k = self._lowerOrReturn(key)
-        return self.data.has_key(k)
+        return k in self.data
     __contains__=has_key
 
     def _doPreserve(self, key):
         if not self.preserve and (isinstance(key, str)
-                                  or isinstance(key, unicode)):
+                                  or isinstance(key, str)):
             return key.lower()
         else:
             return key
 
     def keys(self):
         """List of keys in their original case."""
-        return list(self.iterkeys())
+        return list(self.keys())
 
     def values(self):
         """List of values."""
-        return list(self.itervalues())
+        return list(self.values())
 
     def items(self):
         """List of (key,value) pairs."""
-        return list(self.iteritems())
+        return list(self.items())
 
     def get(self, key, default=None):
         """Retrieve value associated with 'key' or return default value
@@ -89,39 +89,39 @@ class InsensitiveDict:
     def setdefault(self, key, default):
         """If 'key' doesn't exists, associate it with the 'default' value.
         Return value associated with 'key'."""
-        if not self.has_key(key):
+        if key not in self:
             self[key] = default
         return self[key]
 
     def update(self, dict):
         """Copy (key,value) pairs from 'dict'."""
-        for k,v in dict.items():
+        for k,v in list(dict.items()):
             self[k] = v
 
     def __repr__(self):
         """String representation of the dictionary."""
-        items = ", ".join([("%r: %r" % (k,v)) for k,v in self.items()])
+        items = ", ".join([("%r: %r" % (k,v)) for k,v in list(self.items())])
         return "InsensitiveDict({%s})" % items
 
     def iterkeys(self):
-        for v in self.data.itervalues():
+        for v in self.data.values():
             yield self._doPreserve(v[0])
 
     def itervalues(self):
-        for v in self.data.itervalues():
+        for v in self.data.values():
             yield v[1]
 
     def iteritems(self):
-        for (k, v) in self.data.itervalues():
+        for (k, v) in self.data.values():
             yield self._doPreserve(k), v
 
     def popitem(self):
-        i=self.items()[0]
+        i=list(self.items())[0]
         del self[i[0]]
         return i
 
     def clear(self):
-        for k in self.keys():
+        for k in list(self.keys()):
             del self[k]
 
     def copy(self):
@@ -131,7 +131,7 @@ class InsensitiveDict:
         return len(self.data)
 
     def __eq__(self, other):
-        for k,v in self.items():
+        for k,v in list(self.items()):
             if not (k in other) or not (other[k]==v):
                 return 0
         return len(self)==len(other)
@@ -150,10 +150,10 @@ class OrderedDict(UserDict):
         if len(kwargs):
             self.update(kwargs)
     def __repr__(self):
-        return '{'+', '.join([('%r: %r' % item) for item in self.items()])+'}'
+        return '{'+', '.join([('%r: %r' % item) for item in list(self.items())])+'}'
 
     def __setitem__(self, key, value):
-        if not self.has_key(key):
+        if key not in self:
             self._order.append(key)
         UserDict.__setitem__(self, key, value)
 
@@ -169,14 +169,14 @@ class OrderedDict(UserDict):
             yield (item, self[item])
 
     def items(self):
-        return list(self.iteritems())
+        return list(self.items())
 
     def itervalues(self):
         for item in self._order:
             yield self[item]
 
     def values(self):
-        return list(self.itervalues())
+        return list(self.values())
 
     def iterkeys(self):
         return iter(self._order)
@@ -191,13 +191,13 @@ class OrderedDict(UserDict):
         return (key, value)
 
     def setdefault(self, item, default):
-        if self.has_key(item):
+        if item in self:
             return self[item]
         self[item] = default
         return default
 
     def update(self, d):
-        for k, v in d.items():
+        for k, v in list(d.items()):
             self[k] = v
 
 def uniquify(lst):
@@ -207,7 +207,7 @@ def uniquify(lst):
     dct = {}
     result = []
     for k in lst:
-        if not dct.has_key(k): result.append(k)
+        if k not in dct: result.append(k)
         dct[k] = 1
     return result
 
@@ -224,7 +224,7 @@ def padTo(n, seq, default=None):
     """
 
     if len(seq) > n:
-        raise ValueError, "%d elements is more than %d." % (len(seq), n)
+        raise ValueError("%d elements is more than %d." % (len(seq), n))
 
     blank = [default] * n
 
@@ -238,7 +238,7 @@ def getPluginDirs():
                             os.path.abspath(twisted.__file__))), 'plugins')
     userPlugins = os.path.expanduser("~/TwistedPlugins")
     confPlugins = os.path.expanduser("~/.twisted")
-    allPlugins = filter(os.path.isdir, [systemPlugins, userPlugins, confPlugins])
+    allPlugins = list(filter(os.path.isdir, [systemPlugins, userPlugins, confPlugins]))
     return allPlugins
 
 def addPluginDir():
@@ -259,7 +259,7 @@ def _getpass(prompt):
     import getpass
     try:
         return getpass.getpass(prompt)
-    except IOError, e:
+    except IOError as e:
         if e.errno == errno.EINTR:
             raise KeyboardInterrupt
         raise
@@ -316,9 +316,9 @@ def getPassword(prompt = 'Password: ', confirm = 0, forceTTY = 0,
 
 def dict(*a, **k):
     import warnings
-    import __builtin__
+    import builtins
     warnings.warn('twisted.python.util.dict is deprecated.  Use __builtin__.dict instead')
-    return __builtin__.dict(*a, **k)
+    return builtins.dict(*a, **k)
 
 def println(*a):
     sys.stdout.write(' '.join(map(str, a))+'\n')
@@ -368,20 +368,20 @@ def makeStatBar(width, maxPosition, doneChar = '=', undoneChar = '-', currentCha
 def spewer(frame, s, ignored):
     """A trace function for sys.settrace that prints every function or method call."""
     from twisted.python import reflect
-    if frame.f_locals.has_key('self'):
+    if 'self' in frame.f_locals:
         se = frame.f_locals['self']
         if hasattr(se, '__class__'):
             k = reflect.qual(se.__class__)
         else:
             k = reflect.qual(type(se))
-        print 'method %s of %s at %s' % (
+        print('method %s of %s at %s' % (
             frame.f_code.co_name, k, id(se)
-        )
+        ))
     else:
-        print 'function %s in %s, line %s' % (
+        print('function %s in %s, line %s' % (
             frame.f_code.co_name,
             frame.f_code.co_filename,
-            frame.f_lineno)
+            frame.f_lineno))
 
 def searchupwards(start, files=[], dirs=[]):
     """Walk upwards from start, looking for a directory containing
@@ -435,10 +435,10 @@ class LineLog:
             self.log.append(line)
 
     def str(self):
-        return '\n'.join(filter(None,self.log))
+        return '\n'.join([_f for _f in self.log if _f])
 
     def __getitem__(self, item):
-        return filter(None,self.log)[item]
+        return [_f for _f in self.log if _f][item]
 
     def clear(self):
         """Empty the log"""
@@ -489,11 +489,11 @@ class IntervalDifferential:
 class _IntervalDifferentialIterator:
     def __init__(self, i, d):
 
-        self.intervals = [[e, e, n] for (e, n) in zip(i, range(len(i)))]
+        self.intervals = [[e, e, n] for (e, n) in zip(i, list(range(len(i))))]
         self.default = d
         self.last = 0
 
-    def next(self):
+    def __next__(self):
         if not self.intervals:
             return (self.default, None)
         last, index = self.intervals[0][0], self.intervals[0][2]
@@ -520,7 +520,7 @@ class _IntervalDifferentialIterator:
                     if i[2] > index:
                         i[2] -= 1
                 return
-        raise ValueError, "Specified interval not in IntervalDifferential"
+        raise ValueError("Specified interval not in IntervalDifferential")
 
 
 class FancyStrMixin:
@@ -557,7 +557,7 @@ class FancyEqMixin:
         return not self.__eq__(other)
 
 def dsu(list, key):
-    L2 = [(key(e), i, e) for (i, e) in zip(range(len(list)), list)]
+    L2 = [(key(e), i, e) for (i, e) in zip(list(range(len(list))), list)]
     L2.sort()
     return [e[2] for e in L2]
 
@@ -580,7 +580,7 @@ try:
                     del l[-1]
                 else:
                     raise
-            except OSError, e:
+            except OSError as e:
                 if e.errno == errno.EINVAL and len(l) > 1:
                     # This comes from the OS saying too many groups
                     del l[-1]
@@ -619,7 +619,7 @@ try:
                     break # No more groups, ignore any more
         try:
             _setgroups_until_success(l)
-        except OSError, e:
+        except OSError as e:
             # We might be able to remove this code now that we
             # don't try to setgid/setuid even when not asked to.
             if e.errno == errno.EPERM:
@@ -657,14 +657,14 @@ class SubclassableCStringIO(object):
     __csio = None
 
     def __init__(self, *a, **kw):
-        from cStringIO import StringIO
+        from io import StringIO
         self.__csio = StringIO(*a, **kw)
 
     def __iter__(self):
         return self.__csio.__iter__()
 
-    def next(self):
-        return self.__csio.next()
+    def __next__(self):
+        return next(self.__csio)
 
     def close(self):
         return self.__csio.close()
@@ -728,7 +728,7 @@ that package.
                           % (projectName, origModuleName, projectURL))
 
     # Populate the old module with the new module's contents
-    for k,v in vars(newModule).items():
+    for k,v in list(vars(newModule).items()):
         globDict[k] = v
     globDict['__doc__'] = modoc
     import warnings
@@ -742,7 +742,7 @@ def untilConcludes(f, *a, **kw):
     while True:
         try:
             return f(*a, **kw)
-        except (IOError, OSError), e:
+        except (IOError, OSError) as e:
             if e.args[0] == errno.EINTR:
                 continue
             raise
@@ -750,7 +750,7 @@ def untilConcludes(f, *a, **kw):
 # A value about twice as large as any Python int, to which negative values
 # from id() will be added, moving them into a range which should begin just
 # above where positive values from id() leave off.
-_HUGEINT = (sys.maxint + 1L) * 2L
+_HUGEINT = (sys.maxsize + 1) * 2
 def unsignedID(obj):
     """
     Return the id of an object as an unsigned number so that its hex
@@ -779,9 +779,9 @@ def mergeFunctionMetadata(f, g):
     except TypeError:
         try:
             g = new.function(
-                g.func_code, g.func_globals,
+                g.__code__, g.__globals__,
                 f.__name__, inspect.getargspec(g)[-1],
-                g.func_closure)
+                g.__closure__)
         except TypeError:
             pass
     return g

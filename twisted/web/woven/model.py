@@ -115,8 +115,8 @@ class Model:
                 retVal.append((ref, ref.modelChanged(changed)))
             else:
                 self.views.remove(view)
-        for key, value in self.subviews.items():
-            if value.wantsAllNotifications or changed.has_key(key):
+        for key, value in list(self.subviews.items()):
+            if value.wantsAllNotifications or key in changed:
                 for item in list(value):
                     ref = item()
                     if ref is not None:
@@ -192,7 +192,7 @@ class Model:
         Deferred, then I ought to check for cached values (created by
         L{setSubmodel}) before doing a regular Deferred lookup.
         """
-        if self.submodels.has_key(name):
+        if name in self.submodels:
             return self.submodels[name]
         if not self.submodelCheck(request, name):
             return None
@@ -211,7 +211,7 @@ class Model:
         cache.
         """
         if self.submodelCheck(request, name):
-            if self.submodels.has_key(name):
+            if name in self.submodels:
                 del self.submodels[name]
             setattr(self, name, value)
 
@@ -257,7 +257,7 @@ class MethodModel(Model):
             name = request
             request = None
 
-        cached = self.submodels.has_key(name)
+        cached = name in self.submodels
         sm = Model.getSubmodel(self, request, name)
         if sm is not None:
             if not cached:
@@ -313,7 +313,7 @@ class ListModel(Wrapper):
             warnings.warn("Warning!")
             name = request
             request = None
-        if self.submodels.has_key(name):
+        if name in self.submodels:
             return self.submodels[name]
         orig = self.original
         try:
@@ -379,7 +379,7 @@ class DictionaryModel(Wrapper):
             warnings.warn("getSubmodel must get a request argument now")
             name = request
             request = None
-        if self.submodels.has_key(name):
+        if name in self.submodels:
             return self.submodels[name]
         orig = self.original
         if name not in orig:
@@ -419,7 +419,7 @@ class ObjectWrapper(Wrapper):
             warnings.warn("Warning!")
             name = request
             request = None
-        if self.submodels.has_key(name):
+        if name in self.submodels:
             return self.submodels[name]
         sm = adaptToIModel(getattr(self.original, name), self, name)
         self.submodels[name] = sm
@@ -445,7 +445,7 @@ class UnsafeObjectWrapper(ObjectWrapper):
             warnings.warn("Warning!")
             name = request
             request = None
-        if self.submodels.has_key(name):
+        if name in self.submodels:
             return self.submodels[name]
         value = getattr(self.original, name)
         if callable(value):
@@ -477,10 +477,10 @@ class Link(AttributeModel):
         self.text = text
 
 try:
-    components.registerAdapter(StringModel, types.StringType, interfaces.IModel)
-    components.registerAdapter(ListModel, types.ListType, interfaces.IModel)
-    components.registerAdapter(ListModel, types.TupleType, interfaces.IModel)
-    components.registerAdapter(DictionaryModel, types.DictionaryType, interfaces.IModel)
+    components.registerAdapter(StringModel, bytes, interfaces.IModel)
+    components.registerAdapter(ListModel, list, interfaces.IModel)
+    components.registerAdapter(ListModel, tuple, interfaces.IModel)
+    components.registerAdapter(DictionaryModel, dict, interfaces.IModel)
     components.registerAdapter(DeferredWrapper, defer.Deferred, interfaces.IModel)
     components.registerAdapter(DeferredWrapper, defer.DeferredList, interfaces.IModel)
 except ValueError:

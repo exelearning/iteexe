@@ -26,9 +26,9 @@ class TestPromise(unittest.TestCase):
         d = when(p)
         results = []
         d.addCallback(results.append)
-        self.failUnlessEqual(results, [])
+        self.assertEqual(results, [])
         d0.callback(42)
-        self.failUnlessEqual(results, [42])
+        self.assertEqual(results, [42])
 
     def test1(self):
         t = Target()
@@ -36,9 +36,9 @@ class TestPromise(unittest.TestCase):
         p = Promise(d)
 
         p.one(12)
-        self.failUnlessEqual(t.calls, [])
+        self.assertEqual(t.calls, [])
         d.callback(t)
-        self.failUnlessEqual(t.calls, [("one", 12)])
+        self.assertEqual(t.calls, [("one", 12)])
 
     def test2(self):
         t = Target()
@@ -49,27 +49,27 @@ class TestPromise(unittest.TestCase):
         p1 = p.one(12)
         p.two(b=4, a=7, c=92)
         p3 = p.three(4, 5, 6)
-        self.failUnlessEqual(t.calls, [])
+        self.assertEqual(t.calls, [])
 
         results0a = []
         d0a = when(p)
         d0a.addCallback(self._test2_0a, results0a)
         # the promise is not yet resolved, so this should not fire yet
-        self.failUnlessEqual(results0a, [])
+        self.assertEqual(results0a, [])
 
         d.callback(t)
-        self.failUnlessEqual(t.calls, [("one", 12),
+        self.assertEqual(t.calls, [("one", 12),
                                        ("two", 7, 4, {'c':92}),
                                        ("three", 4, (5,6)),
                                        ])
-        self.failUnlessEqual(results0a, [t])
+        self.assertEqual(results0a, [t])
 
         results0b = []
         d0b = when(p)
         d0b.addCallback(self._test2_0b, t, results0b)
         # because the promise has already been fulfilled, this should fire
         # right away
-        self.failUnlessEqual(results0b, [t])
+        self.assertEqual(results0b, [t])
 
         d1 = when(p1)
         d1.addCallback(self._test2_1)
@@ -88,10 +88,10 @@ class TestPromise(unittest.TestCase):
         results.append(res)
 
     def _test2_1(self, res):
-        self.failUnlessEqual(res, 13)
+        self.assertEqual(res, 13)
     
     def _test2_3(self, res):
-        self.failUnlessEqual(res, 35)
+        self.assertEqual(res, 35)
 
     def testFailure(self):
         d0 = defer.Deferred()
@@ -109,5 +109,5 @@ class TestPromise(unittest.TestCase):
         f = failure.Failure(IndexError())
         d0.errback(f)
 
-        self.failUnlessEqual(wresults, ([],[f]))
-        self.failUnlessEqual(cresults, ([],[f])) # TODO: really?
+        self.assertEqual(wresults, ([],[f]))
+        self.assertEqual(cresults, ([],[f])) # TODO: really?

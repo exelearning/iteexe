@@ -64,7 +64,7 @@ class CitasparapensarfpdBlock(Block):
    # Quitamos el prefijo "FPD -"
    # (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Quotation")
+		self.idevice.title = x_("Quotation")
 
 	html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()

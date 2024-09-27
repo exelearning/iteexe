@@ -23,7 +23,7 @@ import re
 import sys
 
 from datetime   import datetime
-from HTMLParser import HTMLParser
+from html.parser import HTMLParser
 
 # Make it so we can import our own nevow and twisted etc.
 if os.name == 'posix':
@@ -32,7 +32,7 @@ if os.name == 'posix':
 # Try to work even with no python path
 try:
     from exe.application import Application
-except ImportError, error:
+except ImportError as error:
     if str(error) == "No module named exe.application":
         exePath = os.path.abspath(sys.argv[0])
         exeDir = os.path.dirname(exePath)
@@ -58,7 +58,7 @@ def normalize_text(text):
     :rtype: string
     :return: The normalized text.
     """
-    return text.replace(u'\'', u'\\\'')
+    return text.replace('\'', '\\\'')
 
 def put_tabs(amount=1):
     """
@@ -70,7 +70,7 @@ def put_tabs(amount=1):
     :rtype: string
     :return: A string containing the defined number of tabs.
     """
-    return u'\t' * amount
+    return '\t' * amount
 
 def get_node_strings(node):
     """
@@ -172,11 +172,11 @@ class FieldHtmlParser(HTMLParser):
         # This list contains every property of any tag that can be translated
         translatable_attributes = [
             # Input form elements' value
-            u'value',
+            'value',
             # Alternative text for images
-            u'alt',
+            'alt',
             # Title for links
-            u'title'
+            'title'
         ]
 
         for attr_name in translatable_attributes:
@@ -208,22 +208,22 @@ if __name__ == "__main__":
 
     # List of strings that shouldn't make it to the .po files
     excluded_strings = [
-        u'',
-        u'.',
-        u'...',
-        u'\n'
+        '',
+        '.',
+        '...',
+        '\n'
     ]
 
     # Open output file and write generation date
-    file_w = open(application.config.templatesDir / u'strings.py', 'w');
-    file_w.write(u'# Generated on %s\n' % str(datetime.now()))
+    file_w = open(application.config.templatesDir / 'strings.py', 'w');
+    file_w.write('# Generated on %s\n' % str(datetime.now()))
 
-    file_w.write(u'\ntemplates = {\n')
+    file_w.write('\ntemplates = {\n')
 
     # Go through all templates (only take into account .elt files)
     package_index = 0
     for file_name in [f for f in os.listdir(application.config.templatesDir) if os.path.splitext(f)[1] == '.elt']:
-        print(u'Extracting messages from %s...' % (application.config.templatesDir / file_name))
+        print(('Extracting messages from %s...' % (application.config.templatesDir / file_name)))
 
         # Load the template as a package
         template = Template(application.config.templatesDir / file_name)
@@ -231,90 +231,90 @@ if __name__ == "__main__":
 
         # Write template header comment and definition start
         file_w.write(put_tabs(1))
-        file_w.write(u'# Template: %s\n' % file_name)
+        file_w.write('# Template: %s\n' % file_name)
         file_w.write(put_tabs(1))
-        file_w.write(u'\'template_%i\': {\n' % package_index)
+        file_w.write('\'template_%i\': {\n' % package_index)
 
         # Template name
         file_w.write(put_tabs(2))
-        file_w.write(u'\'template_name\': _(u\'%s\'),\n' % normalize_text(template.name))
+        file_w.write('\'template_name\': _(u\'%s\'),\n' % normalize_text(template.name))
         # Template author
-        if template.author != u'':
+        if template.author != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'template_author\': _(u\'%s\'),\n' % normalize_text(template.author))
+            file_w.write('\'template_author\': _(u\'%s\'),\n' % normalize_text(template.author))
 
         # Level names
-        if package.get_level1() != u'':
+        if package.get_level1() != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'level1\': _(u\'%s\'),\n' % normalize_text(package.get_level1()))
-        if package.get_level2() != u'':
+            file_w.write('\'level1\': _(u\'%s\'),\n' % normalize_text(package.get_level1()))
+        if package.get_level2() != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'level2\': _(u\'%s\'),\n' % normalize_text(package.get_level2()))
-        if package.get_level3() != u'':
+            file_w.write('\'level2\': _(u\'%s\'),\n' % normalize_text(package.get_level2()))
+        if package.get_level3() != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'level3\': _(u\'%s\'),\n' % normalize_text(package.get_level3()))
+            file_w.write('\'level3\': _(u\'%s\'),\n' % normalize_text(package.get_level3()))
 
         # Title
-        if package.title != u'':
+        if package.title != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'title\': _(u\'%s\'),\n' % normalize_text(package.title))
+            file_w.write('\'title\': _(u\'%s\'),\n' % normalize_text(package.title))
 
         # Description
-        if package.description != u'':
+        if package.description != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'description\': _(u\'%s\'),\n' % normalize_text(package.description))
+            file_w.write('\'description\': _(u\'%s\'),\n' % normalize_text(package.description))
 
         # Objectives
-        if package.objectives != u'':
+        if package.objectives != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'objectives\': _(u\'%s\'),\n' % normalize_text(package.objectives))
+            file_w.write('\'objectives\': _(u\'%s\'),\n' % normalize_text(package.objectives))
 
         # Preknowledge
-        if package.preknowledge != u'':
+        if package.preknowledge != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'preknowledge\': _(u\'%s\'),\n' % normalize_text(package.preknowledge))
+            file_w.write('\'preknowledge\': _(u\'%s\'),\n' % normalize_text(package.preknowledge))
 
-        if package.author != u'':
+        if package.author != '':
             file_w.write(put_tabs(2))
-            file_w.write(u'\'author\': _(u\'%s\'),\n' % normalize_text(package.author))
+            file_w.write('\'author\': _(u\'%s\'),\n' % normalize_text(package.author))
 
         # Get node strings
         node_strings = get_node_strings(package.root)
 
         # Go through all nodes
         file_w.write(put_tabs(2))
-        file_w.write(u'\'nodes\': [\n')
+        file_w.write('\'nodes\': [\n')
         for node in node_strings:
             # Node title
             file_w.write(put_tabs(3))
-            file_w.write(u'{\n')
+            file_w.write('{\n')
             file_w.write(put_tabs(4))
-            file_w.write(u'\'title\': _(u\'%s\'),\n' % normalize_text(node['title']))
+            file_w.write('\'title\': _(u\'%s\'),\n' % normalize_text(node['title']))
 
             # Node idevices
             file_w.write(put_tabs(4))
-            file_w.write(u'\'idevices\': [\n')
-            for idevice in node['idevices'].itervalues():
+            file_w.write('\'idevices\': [\n')
+            for idevice in node['idevices'].values():
                 # Idevice title
                 file_w.write(put_tabs(5))
-                file_w.write(u'{\n')
+                file_w.write('{\n')
                 file_w.write(put_tabs(6))
-                file_w.write(u'\'title\': _(u\'%s\'),\n' % normalize_text(idevice['title']))
+                file_w.write('\'title\': _(u\'%s\'),\n' % normalize_text(idevice['title']))
 
                 # Idevice fields
                 file_w.write(put_tabs(6))
-                file_w.write(u'\'fields\': [\n')
-                for field in idevice['fields'].itervalues():
+                file_w.write('\'fields\': [\n')
+                for field in idevice['fields'].values():
                     file_w.write(put_tabs(7))
-                    file_w.write(u'[\n')
+                    file_w.write('[\n')
 
-                    for prop in field['properties'].itervalues():
+                    for prop in field['properties'].values():
                         file_w.write(put_tabs(8))
-                        file_w.write(u'{\n')
+                        file_w.write('{\n')
 
                         # Write the raw value (just as a reference)
                         file_w.write(put_tabs(9))
-                        file_w.write(u'\'raw_value\': u\'\'\'%s\'\'\',\n' % normalize_text(prop['translatable_content']))
+                        file_w.write('\'raw_value\': u\'\'\'%s\'\'\',\n' % normalize_text(prop['translatable_content']))
 
                         # Parse the HTML inside the field
                         parser = FieldHtmlParser()
@@ -322,11 +322,11 @@ if __name__ == "__main__":
 
                         # Get the HTML translatable text
                         translatablehtml = parser.HTMLDATA
-                        translatabletext = u''
+                        translatabletext = ''
 
                         # Get the template (we need to replace % ocurrences to prevent Python from replacing them
                         # when we get the HTML back in the translations)
-                        template = prop['translatable_content'].replace(u'%', u'%%')
+                        template = prop['translatable_content'].replace('%', '%%')
 
                         # Init the dict that will hold the diferrences in the offset for each line
                         offset_diff = {}
@@ -343,7 +343,7 @@ if __name__ == "__main__":
                             # For any line different from the first one, we have to take into account
                             # the length of all the other lines that came before (including the line breaks)
                             if translatablestring['line'] > 1:
-                                lines = template.split(u'\n')
+                                lines = template.split('\n')
 
                                 for i in range(0, translatablestring['line'] - 1):
                                     offset += len(lines[i])
@@ -362,57 +362,57 @@ if __name__ == "__main__":
                             offset_diff[translatablestring['line']] += len(translatablestring['data']) - 2
 
                             # Replace the text in the template with %s
-                            template = template[:offset] + u'%s' + template[offset + len(translatablestring['data']):]
+                            template = template[:offset] + '%s' + template[offset + len(translatablestring['data']):]
                             # And add the text to the list
                             file_w.write(put_tabs(10))
-                            translatabletext += u'_(u\'%s\'),\n' % normalize_text(translatablestring['data'])
+                            translatabletext += '_(u\'%s\'),\n' % normalize_text(translatablestring['data'])
 
                         # Write the template to the strings file
                         file_w.write(put_tabs(9))
-                        file_w.write(u'\'template\': u\'\'\'%s\'\'\',\n' % normalize_text(template))
+                        file_w.write('\'template\': u\'\'\'%s\'\'\',\n' % normalize_text(template))
 
                         # And also the translatable strings found in it
                         file_w.write(put_tabs(9))
-                        file_w.write(u'\'translatable_text\': [\n')
+                        file_w.write('\'translatable_text\': [\n')
                         file_w.write(translatabletext)
                         file_w.write(put_tabs(9))
-                        file_w.write(u']\n')
+                        file_w.write(']\n')
 
                         file_w.write(put_tabs(8))
-                        file_w.write(u'},\n')
+                        file_w.write('},\n')
 
                     # Close field definition
                     file_w.write(put_tabs(7))
-                    file_w.write(u'],\n')
+                    file_w.write('],\n')
 
                 # Close field list
                 file_w.write(put_tabs(6))
-                file_w.write(u']\n')
+                file_w.write(']\n')
 
                 # Close idevice definition
                 file_w.write(put_tabs(5))
-                file_w.write(u'},\n')
+                file_w.write('},\n')
 
             # Close idevice list
             file_w.write(put_tabs(4))
-            file_w.write(u']\n')
+            file_w.write(']\n')
             # Close node definition
             file_w.write(put_tabs(3))
-            file_w.write(u'},\n')
+            file_w.write('},\n')
 
         # Close node list
         file_w.write(put_tabs(2))
-        file_w.write(u']\n')
+        file_w.write(']\n')
 
         # Close template definition
         file_w.write(put_tabs(1))
-        file_w.write(u'},\n')
+        file_w.write('},\n')
 
         # Remove the package so the temp folder doesn't stay
         del package
         package_index += 1
     # Close file definition
-    file_w.write(u'}\n')
+    file_w.write('}\n')
 
     # Close the file
     file_w.close()

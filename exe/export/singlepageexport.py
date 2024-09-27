@@ -29,8 +29,8 @@ from exe                      import globals as G
 from exe.engine.persist       import encodeObject
 from exe.engine.persistxml    import encodeObjectToXML
 from exe.engine.resource      import Resource
-from helper                   import exportMinFileJS
-from helper                   import exportMinFileCSS
+from .helper                   import exportMinFileJS
+from .helper                   import exportMinFileCSS
 from exe.webui.common         import getFilesCSSToMinify
 from exe.webui.common         import getFilesJSToMinify
 

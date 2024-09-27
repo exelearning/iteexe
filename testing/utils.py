@@ -80,7 +80,7 @@ class FakeRequest(object):
         myrequest.args['action'][0] == 'AddIdevice'
         """
         self.args = {}
-        for key, value in kwargs.items():
+        for key, value in list(kwargs.items()):
             self.args[key] = [value]
         self.method = method
         self.path = path
@@ -300,7 +300,7 @@ class HTMLChecker(object):
             else:
                 # String in filter
                 check = lambda k: reg in k
-            for key in errors.keys():
+            for key in list(errors.keys()):
                 if check(key):
                     del errors[key]
         # Now if there are any left print them out and fail the test
@@ -308,9 +308,9 @@ class HTMLChecker(object):
             errorFile = open('tmp.html.errors', 'w')
 
             def output(line=''):
-                print line
+                print(line)
                 errorFile.write(line + '\n')
-            keys = errors.keys()
+            keys = list(errors.keys())
             keys.sort()
             if returnCode == 1:
                 output("Invalid XML:")

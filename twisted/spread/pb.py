@@ -60,9 +60,9 @@ __version__ = "$Revision: 1.157 $"[11:-2]
 
 # System Imports
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 import sys
 import types
@@ -81,25 +81,25 @@ from zope.interface import implements
 
 # Sibling Imports
 from twisted.spread.interfaces import IJellyable, IUnjellyable
-from jelly import jelly, unjelly, globalSecurity
-import banana
+from .jelly import jelly, unjelly, globalSecurity
+from . import banana
 
 # Tightly coupled sibling import
-from flavors import Serializable
-from flavors import Referenceable, NoSuchMethod
-from flavors import Root, IPBRoot
-from flavors import ViewPoint
-from flavors import Viewable
-from flavors import Copyable
-from flavors import Jellyable
-from flavors import Cacheable
-from flavors import RemoteCopy
-from flavors import RemoteCache
-from flavors import RemoteCacheObserver
-from flavors import copyTags
-from flavors import setCopierForClass, setUnjellyableForClass
-from flavors import setFactoryForClass
-from flavors import setCopierForClassTree
+from .flavors import Serializable
+from .flavors import Referenceable, NoSuchMethod
+from .flavors import Root, IPBRoot
+from .flavors import ViewPoint
+from .flavors import Viewable
+from .flavors import Copyable
+from .flavors import Jellyable
+from .flavors import Cacheable
+from .flavors import RemoteCopy
+from .flavors import RemoteCache
+from .flavors import RemoteCacheObserver
+from .flavors import copyTags
+from .flavors import setCopierForClass, setUnjellyableForClass
+from .flavors import setFactoryForClass
+from .flavors import setCopierForClassTree
 
 MAX_BROKER_REFS = 1024
 
@@ -463,7 +463,7 @@ class CopyableFailure(failure.Failure, Copyable):
             state['value'] = str(self.value) # Exception instance
         state['type'] = str(self.type) # Exception class
         if self.unsafeTracebacks:
-            io = StringIO.StringIO()
+            io = io.StringIO()
             self.printTraceback(io)
             state['traceback'] = io.getvalue()
         else:
@@ -532,7 +532,7 @@ class Broker(banana.Banana):
         """Called when the consumer attached to me runs out of buffer.
         """
         # Go backwards over the list so we can remove indexes from it as we go
-        for pageridx in xrange(len(self.pageProducers)-1, -1, -1):
+        for pageridx in range(len(self.pageProducers)-1, -1, -1):
             pager = self.pageProducers[pageridx]
             pager.sendNextPage()
             if not pager.stillPaging():
@@ -555,7 +555,7 @@ class Broker(banana.Banana):
     def expressionReceived(self, sexp):
         """Evaluate an expression as it's received.
         """
-        if isinstance(sexp, types.ListType):
+        if isinstance(sexp, list):
             command = sexp[0]
             methodName = "proto_%s" % command
             method = getattr(self, methodName, None)
@@ -623,13 +623,13 @@ class Broker(banana.Banana):
         # nuke potential circular references.
         self.luids = None
         if self.waitingForAnswers:
-            for d in self.waitingForAnswers.values():
+            for d in list(self.waitingForAnswers.values()):
                 try:
                     d.errback(failure.Failure(PBConnectionLost(reason)))
                 except:
                     log.deferr()
         # Assure all Cacheable.stoppedObserving are called
-        for lobj in self.remotelyCachedObjects.values():
+        for lobj in list(self.remotelyCachedObjects.values()):
             cacheable = lobj.object
             perspective = lobj.perspective
             try:
@@ -841,13 +841,13 @@ class Broker(banana.Banana):
         pbc = None
         pbe = None
         answerRequired = 1
-        if kw.has_key('pbcallback'):
+        if 'pbcallback' in kw:
             pbc = kw['pbcallback']
             del kw['pbcallback']
-        if kw.has_key('pberrback'):
+        if 'pberrback' in kw:
             pbe = kw['pberrback']
             del kw['pberrback']
-        if kw.has_key('pbanswer'):
+        if 'pbanswer' in kw:
             assert (not pbe) and (not pbc), "You can't specify a no-answer requirement."
             answerRequired = kw['pbanswer']
             del kw['pbanswer']
@@ -886,7 +886,7 @@ class Broker(banana.Banana):
             if object is None:
                 raise Error("Invalid Object ID")
             netResult = object.remoteMessageReceived(self, message, netArgs, netKw)
-        except Error, e:
+        except Error as e:
             if answerRequired:
                 # If the error is Jellyable or explicitly allowed via our
                 # security options, send it back and let the code on the
@@ -1169,7 +1169,7 @@ class AuthServ(Referenceable):
         return defr
 
     def mkchallenge(self, ident):
-        if type(ident) == types.StringType:
+        if type(ident) == bytes:
             # it's an error, so we must fail.
             challenge = identity.challenge()
             return challenge, AuthChallenger(None, self, challenge)
@@ -1226,7 +1226,7 @@ class BrokerClientFactory(protocol.ClientFactory):
 
     def __init__(self, protocol):
         warnings.warn("This is deprecated. Use PBClientFactory.", DeprecationWarning, 2)
-        if not isinstance(protocol,Broker): raise TypeError, "protocol is not an instance of Broker"
+        if not isinstance(protocol,Broker): raise TypeError("protocol is not an instance of Broker")
         self.protocol = protocol
 
     def buildProtocol(self, addr):
@@ -1350,7 +1350,8 @@ def authIdentity(authServRef, username, password):
         callbackArgs=(password,d))
     return d
 
-def _cbRespondToChallenge((challenge, challenger), password, d):
+def _cbRespondToChallenge(xxx_todo_changeme3, password, d):
+    (challenge, challenger) = xxx_todo_changeme3
     warnings.warn("This is deprecated. Use PBClientFactory.", DeprecationWarning, 2)
     challenger.callRemote("respond", identity.respond(challenge, password)).addCallbacks(
         d.callback, d.errback)
@@ -1366,7 +1367,8 @@ def logIn(authServRef, client, service, username, password, perspectiveName=None
                       perspectiveName or username))
     return d
 
-def _cbLogInRespond((challenge, challenger), d, client, service, password, perspectiveName):
+def _cbLogInRespond(xxx_todo_changeme4, d, client, service, password, perspectiveName):
+    (challenge, challenger) = xxx_todo_changeme4
     warnings.warn("This is deprecated. Use PBClientFactory.", DeprecationWarning, 2)
     challenger.callRemote('respond',
         identity.respond(challenge, password)).addCallbacks(
@@ -1598,7 +1600,8 @@ class PBClientFactory(protocol.ClientFactory):
         return authServRef.callRemote('username', username).addCallback(
             self._cbRespondToChallenge, password)
 
-    def _cbRespondToChallenge(self, (challenge, challenger), password):
+    def _cbRespondToChallenge(self, xxx_todo_changeme, password):
+        (challenge, challenger) = xxx_todo_changeme
         return challenger.callRemote("respond", respond(challenge, password))
 
     def _cbGetPerspective(self, identityWrapper, serviceName, perspectiveName, client):
@@ -1619,7 +1622,8 @@ class PBClientFactory(protocol.ClientFactory):
         return root.callRemote("login", username).addCallback(
             self._cbResponse, password, client)
 
-    def _cbResponse(self, (challenge, challenger), password, client):
+    def _cbResponse(self, xxx_todo_changeme1, password, client):
+        (challenge, challenger) = xxx_todo_changeme1
         return challenger.callRemote("respond", respond(challenge, password), client)
 
     def login(self, credentials, client=None):
@@ -1746,7 +1750,8 @@ class _PortalAuthChallenger(Referenceable):
         d.addCallback(self._loggedIn)
         return d
 
-    def _loggedIn(self, (interface, perspective, logout)):
+    def _loggedIn(self, xxx_todo_changeme2):
+        (interface, perspective, logout) = xxx_todo_changeme2
         if not IJellyable.providedBy(perspective):
             perspective = AsReferenceable(perspective, "perspective")
         self.portalWrapper.broker.notifyOnDisconnect(logout)

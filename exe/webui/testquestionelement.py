@@ -43,7 +43,7 @@ class TestquestionElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = unicode(index) + "b" + idevice.id        
+        self.id         = str(index) + "b" + idevice.id        
         self.idevice    = idevice
 
         # to compensate for the strange unpickling timing when objects are 
@@ -75,7 +75,7 @@ class TestquestionElement(object):
         if self.questionId in request.args: 
             self.questionElement.process(request)
             
-        if ("addOption"+unicode(self.id)) in request.args: 
+        if ("addOption"+str(self.id)) in request.args: 
             self.question.addOption()
             self.idevice.edit = True
             # disable Undo once an option has been added: 
@@ -98,31 +98,31 @@ class TestquestionElement(object):
         """
         Returns an XHTML string with the form element for editing this element
         """
-        html  = u"<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += common.submitImage(self.id, self.idevice.id,  
                 "/images/stock-cancel.png", 
                 _("Delete question")) 
         html += self.questionElement.renderEdit()
 
-        html += u"<table width =\"100%%\">"
-        html += u"<thead>"
-        html += u"<tr>"
-        html += u"<th>%s " % _("Options")
+        html += "<table width =\"100%%\">"
+        html += "<thead>"
+        html += "<tr>"
+        html += "<th>%s " % _("Options")
         html += common.elementInstruc(self.question.optionInstruc)
-        html += u"</th>"
-        html += u"</tr>"
-        html += u"</thead>"
-        html += u"<tbody>"
+        html += "</th>"
+        html += "</tr>"
+        html += "</thead>"
+        html += "<tbody>"
 
         for element in self.options:
             html += element.renderEdit() 
             
-        html += u"</tbody>"
-        html += u"</table>\n"
-        value = _(u"Add another Option")    
-        html += common.submitButton("addOption"+unicode(self.id), value)
-        html += u"<br />"
-        html += u"</div>\n"
+        html += "</tbody>"
+        html += "</table>\n"
+        value = _("Add another Option")    
+        html += common.submitButton("addOption"+str(self.id), value)
+        html += "<br />"
+        html += "</div>\n"
 
         return html
 

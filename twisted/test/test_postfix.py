@@ -33,9 +33,9 @@ class PostfixTCPMapQuoteTestCase(unittest.TestCase):
             raw = entry[0]
             quoted = entry[1:]
 
-            self.assertEquals(postfix.quote(raw), quoted[0])
+            self.assertEqual(postfix.quote(raw), quoted[0])
             for q in quoted:
-                self.assertEquals(postfix.unquote(q), raw)
+                self.assertEqual(postfix.unquote(q), raw)
 
 class PostfixTCPMapServerTestCase:
     data = {
@@ -59,7 +59,7 @@ class PostfixTCPMapServerTestCase:
         for input, expected_output in self.chat:
             protocol.lineReceived(input)
             # self.runReactor(1)
-            self.assertEquals(output.getvalue(), expected_output,
+            self.assertEqual(output.getvalue(), expected_output,
                               'For %r, expected %r but got %r' % (
                 input, expected_output, output.getvalue()
                 ))
@@ -79,7 +79,7 @@ class PostfixTCPMapServerTestCase:
         for input, expected_output in self.chat:
             protocol.lineReceived(input)
             # self.runReactor(1)
-            self.assertEquals(output.getvalue(), expected_output,
+            self.assertEqual(output.getvalue(), expected_output,
                               'For %r, expected %r but got %r' % (
                 input, expected_output, output.getvalue()
                 ))

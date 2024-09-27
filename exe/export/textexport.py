@@ -50,10 +50,10 @@ class TextExport(object):
         
         self.html  = "***" + escape(package.title) + "***"
         self.renderNode(package.root)
-        if package.license <> "None":
+        if package.license != "None":
             self.html += "<br/>***" + c_("Licensed under the")
             self.html += " " + package.license + "***<br/>"
-        if package.footer <> "":
+        if package.footer != "":
             self.html += "<p>" + package.footer + "</p>"
         self.save(self.filename)
 

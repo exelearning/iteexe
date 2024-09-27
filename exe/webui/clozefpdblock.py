@@ -114,7 +114,7 @@ class ClozefpdBlock(Block):
 	# Quitamos el prefijo "FPD -"
 	# (let's remove the "FPD -" prefix)
 	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_(u"Now it's your turn")
+		self.idevice.title = x_("Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
 	html += "</div>"
@@ -206,7 +206,7 @@ class ClozefpdBlock(Block):
             html = '<p>' +  self.instructionElement.renderView() +'</p>'
         html += '<p>' + self.clozeElement.renderText() + '</p>'
         if self.feedbackElement.field.content:
-            html += '<p>%s:</P>' % c_(u"Feedback") 
+            html += '<p>%s:</P>' % c_("Feedback") 
             if self.previewing: 
                 html += '<p>' +self.feedbackElement.renderPreview(False, 
                                                         class_="feedback") 

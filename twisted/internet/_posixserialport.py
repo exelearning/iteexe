@@ -16,7 +16,7 @@ from serial import PARITY_NONE, PARITY_EVEN, PARITY_ODD
 from serial import STOPBITS_ONE, STOPBITS_TWO
 from serial import FIVEBITS, SIXBITS, SEVENBITS, EIGHTBITS
 
-from serialport import BaseSerialPort
+from .serialport import BaseSerialPort
 
 # twisted imports
 from twisted.internet import abstract, fdesc, main
@@ -45,11 +45,11 @@ class SerialPort(BaseSerialPort, abstract.FileDescriptor):
         """
         try:
             return os.write(self.fileno(), data)
-        except IOError, io:
+        except IOError as io:
             if io.args[0] == errno.EAGAIN:
                 return 0
             return main.CONNECTION_LOST
-        except OSError, ose:
+        except OSError as ose:
             if ose.errno == errno.EAGAIN:
                 # I think most systems use this one
                 return 0

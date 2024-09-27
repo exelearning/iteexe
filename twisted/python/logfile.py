@@ -13,7 +13,7 @@ import os, glob, string, time
 
 # sibling imports
 
-import threadable
+from . import threadable
 
 class BaseLogFile:
     """The base class for a log file that can be rotated.
@@ -107,7 +107,7 @@ class LogFile(BaseLogFile):
         """Given an integer, return a LogReader for an old log file."""
         filename = "%s.%d" % (self.path, identifier)
         if not os.path.exists(filename):
-            raise ValueError, "no such logfile exists"
+            raise ValueError("no such logfile exists")
         return LogReader(filename)
 
     def write(self, data):
@@ -187,7 +187,7 @@ class DailyLogFile(BaseLogFile):
             return self.getCurrentLog()
         filename = "%s.%s" % (self.path, self.suffix(identifier))
         if not os.path.exists(filename):
-            raise ValueError, "no such logfile exists"
+            raise ValueError("no such logfile exists")
         return LogReader(filename)
 
     def write(self, data):

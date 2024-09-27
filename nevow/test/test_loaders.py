@@ -16,12 +16,12 @@ class TestDocFactories(unittest.TestCase):
     def test_stan(self):
         doc = ul(id='nav')[li['one'], li['two'], li['three']]
         df = loaders.stan(doc)
-        self.assertEquals(df.load()[0], '<ul id="nav"><li>one</li><li>two</li><li>three</li></ul>')
+        self.assertEqual(df.load()[0], '<ul id="nav"><li>one</li><li>two</li><li>three</li></ul>')
 
     def test_htmlstr(self):
         doc = '<ul id="nav"><li>a</li><li>b</li><li>c</li></ul>'
         df = loaders.htmlstr(doc)
-        self.assertEquals(df.load()[0], doc)
+        self.assertEqual(df.load()[0], doc)
 
     def test_htmlfile(self):
         doc = '<ul id="nav"><li>a</li><li>b</li><li>c</li></ul>'
@@ -30,7 +30,7 @@ class TestDocFactories(unittest.TestCase):
         f.write(doc)
         f.close()
         df = loaders.htmlfile(temp)
-        self.assertEquals(df.load()[0], doc)
+        self.assertEqual(df.load()[0], doc)
 
     def test_htmlfile_slots(self):
         doc = '<nevow:slot name="foo">Hi there</nevow:slot>'
@@ -39,12 +39,12 @@ class TestDocFactories(unittest.TestCase):
         f.write(doc)
         f.close()
         df = loaders.htmlfile(temp)
-        self.assertEquals(df.load()[0].children, ['Hi there'])
+        self.assertEqual(df.load()[0].children, ['Hi there'])
 
     def test_xmlstr(self):
         doc = '<ul id="nav"><li>a</li><li>b</li><li>c</li></ul>'
         df = loaders.xmlstr(doc)
-        self.assertEquals(df.load()[0], doc)
+        self.assertEqual(df.load()[0], doc)
 
     def test_xmlfile(self):
         doc = '<ul id="nav"><li>a</li><li>b</li><li>c</li></ul>'
@@ -53,25 +53,25 @@ class TestDocFactories(unittest.TestCase):
         f.write(doc)
         f.close()
         df = loaders.xmlfile(temp)
-        self.assertEquals(df.load()[0], doc)
+        self.assertEqual(df.load()[0], doc)
 
     def test_patterned(self):
         """Test fetching a specific part (a pattern) of the document.
         """
         doc = div[p[span(pattern='inner')['something']]]
         df = loaders.stan(doc, pattern='inner')
-        self.assertEquals(df.load()[0].tagName, 'span')
-        self.assertEquals(df.load()[0].children[0], 'something')
+        self.assertEqual(df.load()[0].tagName, 'span')
+        self.assertEqual(df.load()[0].children[0], 'something')
 
     def test_ignoreDocType(self):
         doc = '''<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">\n<html><body><p>Hello.</p></body></html>'''
         df = loaders.xmlstr(doc, ignoreDocType=True)
-        self.assertEquals(flat.flatten(df), '<html><body><p>Hello.</p></body></html>')
+        self.assertEqual(flat.flatten(df), '<html><body><p>Hello.</p></body></html>')
 
     def test_ignoreComment(self):
         doc = '<!-- skip this --><p>Hello.</p>'
         df = loaders.xmlstr(doc, ignoreComment=True)
-        self.assertEquals(flat.flatten(df), '<p>Hello.</p>')
+        self.assertEqual(flat.flatten(df), '<p>Hello.</p>')
 
 
 class TestDocFactoriesCache(unittest.TestCase):
@@ -95,10 +95,10 @@ class TestDocFactoriesCache(unittest.TestCase):
     def test_stan(self):
 
         loader = loaders.stan(self.stan)
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
 
         loader = loaders.stan(self.stan, pattern='1')
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
 
         l1 = loaders.stan(self.stan, pattern='1')
         l2 = loaders.stan(self.stan, pattern='1')
@@ -111,10 +111,10 @@ class TestDocFactoriesCache(unittest.TestCase):
     def test_htmlstr(self):
         
         loader = loaders.htmlstr(self.doc)
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         loader = loaders.htmlstr(self.doc, pattern='1')
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         l1 = loaders.htmlstr(self.doc, pattern='1')
         l2 = loaders.htmlstr(self.doc, pattern='1')
@@ -132,7 +132,7 @@ class TestDocFactoriesCache(unittest.TestCase):
         f.close()
         
         loader = loaders.htmlfile(temp)
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         l1 = loaders.htmlfile(temp, pattern='1')
         l2 = loaders.htmlfile(temp, pattern='1')
@@ -151,17 +151,17 @@ class TestDocFactoriesCache(unittest.TestCase):
         
         loader = loaders.htmlfile(temp)
         r = loader.load()
-        self.assertEquals(id(r), id(loader.load()))
+        self.assertEqual(id(r), id(loader.load()))
         os.utime(temp, (os.path.getatime(temp), os.path.getmtime(temp)+5))
         self.assertNotEqual(id(r), id(loader.load()))
 
     def test_xmlstr(self):
         
         loader = loaders.xmlstr(self.nsdoc)
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         loader = loaders.xmlstr(self.nsdoc, pattern='1')
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         l1 = loaders.xmlstr(self.nsdoc, pattern='1')
         l2 = loaders.xmlstr(self.nsdoc, pattern='1')
@@ -179,10 +179,10 @@ class TestDocFactoriesCache(unittest.TestCase):
         f.close()
         
         loader = loaders.xmlfile(temp)
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         loader = loaders.xmlfile(temp, pattern='1')
-        self.assertEquals( id(loader.load()), id(loader.load()) )
+        self.assertEqual( id(loader.load()), id(loader.load()) )
         
         l1 = loaders.xmlfile(temp, pattern='1')
         l2 = loaders.xmlfile(temp, pattern='1')
@@ -201,7 +201,7 @@ class TestDocFactoriesCache(unittest.TestCase):
         
         loader = loaders.xmlfile(temp)
         r = loader.load()
-        self.assertEquals(id(r), id(loader.load()))
+        self.assertEqual(id(r), id(loader.load()))
         os.utime(temp, (os.path.getatime(temp), os.path.getmtime(temp)+5))
         self.assertNotEqual(id(r), id(loader.load()))
 
@@ -236,7 +236,7 @@ class TestDocFactoriesCache(unittest.TestCase):
 
         self.assertIn('foo', before)
         self.assertIn('bar', after)
-        self.failIfEqual(before, after)
+        self.assertNotEqual(before, after)
 
     test_reloadAfterPrecompile.skip = \
         'Fix so that disk templates are reloaded even after a precompile. ' \
@@ -276,8 +276,8 @@ class TestContext(unittest.TestCase):
         
     def _withAndWithout(self, loader):
         ctx = context.WovenContext()
-        self.assertEquals(loader.load(), ['<p>hello</p>'])
-        self.assertEquals(loader.load(ctx), ['<p>hello</p>'])
+        self.assertEqual(loader.load(), ['<p>hello</p>'])
+        self.assertEqual(loader.load(ctx), ['<p>hello</p>'])
         
 
 class TestParsing(unittest.TestCase):
@@ -289,4 +289,4 @@ class TestParsing(unittest.TestCase):
         ## hard to fix. If you need this, switch to xmlstr.
         result = loaders.xmlstr(doc).load()
         # There should be a space between the two slots
-        self.assertEquals(result[2], ' ')
+        self.assertEqual(result[2], ' ')

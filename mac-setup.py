@@ -33,7 +33,7 @@ def dataFiles(baseSourceDir, baseDestDir, sourceDirs, excludes=[]):
     """Recursively get all the files in these directories"""
     baseSourceDir = Path(baseSourceDir)
     baseDestDir = Path(baseDestDir)
-    sourceDirs = map(Path, sourceDirs)
+    sourceDirs = list(map(Path, sourceDirs))
     for sourceDir in sourceDirs:
         sourceDir = baseSourceDir / sourceDir
         for subDir in list(sourceDir.walkdirs()) + [sourceDir]:
@@ -65,7 +65,7 @@ dataFiles('exe/jsui', '../Resources/exe', ['scripts', 'templates'])
 
 import sys
 
-print sys.path
+print(sys.path)
 
 plist = dict(
     CFBundleDocumentTypes=[
@@ -105,7 +105,7 @@ Content generated using eXe can be used by any Learning Management System.
       license="GPL",
       packages=["exe", "exe.webui", "exe.jsui",
                 "exe.engine", "exe.export", "exe.importers", "exe.engine.lom", "exe.engine.exceptions"],
-      data_files=files.items(),
+      data_files=list(files.items()),
       app=["exe/main.py"],
       options={'py2app': py2appParams},
       setup_requires=["py2app"],

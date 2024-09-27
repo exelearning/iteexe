@@ -67,7 +67,7 @@ class WinConfig(Config):
         location of the config file under windows
         """
         # Find out where our nice config file is
-        folders = map(self.__getWinFolder, [APPDATA, COMMON_APPDATA])
+        folders = list(map(self.__getWinFolder, [APPDATA, COMMON_APPDATA]))
         # Add unique dir names
         folders = [folder/'exe' for folder in folders] 
         folders.append(self.__getInstallDir())
@@ -98,7 +98,7 @@ class WinConfig(Config):
         """
         Returns the path to where we were installed
         """
-        from _winreg import OpenKey, QueryValue, HKEY_LOCAL_MACHINE
+        from winreg import OpenKey, QueryValue, HKEY_LOCAL_MACHINE
         try:
             exeKey = None
             softwareKey = None
@@ -120,7 +120,7 @@ class WinConfig(Config):
         """
         from ctypes import windll, create_unicode_buffer
         buf = create_unicode_buffer(260)
-        r = windll.kernel32.GetLongPathNameW(unicode(path), buf, 260)
+        r = windll.kernel32.GetLongPathNameW(str(path), buf, 260)
         if r == 0 or r > 260:
             return path
         else:

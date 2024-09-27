@@ -27,15 +27,15 @@ class OrientacionestutoriafpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Guidelines Teacher"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."""), u"", u"orientacionesfpd")
+                         x_("FPD - Guidelines Teacher"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."""), "", "orientacionesfpd")
 #        self.emphasis         = Idevice.SomeEmphasis
         self.emphasis         = "_orientacionesfpd"
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Guidelines Teacher Text'), 
+        self.activityTextArea = TextAreaField(x_('Guidelines Teacher Text'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -85,8 +85,8 @@ class OrientacionestutoriafpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"orientacionesfpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "orientacionesfpd"
 
 
     def upgradeToVersion2(self):
@@ -94,7 +94,7 @@ class OrientacionestutoriafpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
 #        self.emphasis = Idevice.SomeEmphasis
         self.emphasis = "_orientacionesfpd"
 
@@ -134,7 +134,7 @@ class OrientacionestutoriafpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Guidelines Teacher Text:'), 
+        self.activityTextArea = TextAreaField(x_('Guidelines Teacher Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -145,14 +145,14 @@ class OrientacionestutoriafpdIdevice(Idevice):
         self._upgradeIdeviceToVersion3()
 
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Orientaciones Tutoria":
-            self._title = u"FPD - Guidelines Teacher"
-        if self._purpose == u"""Orientaciones alumnado es un iDevice que permite al profesorado conocer los objetivos del aprendizje del alumnado.""":
-            self._purpose = u"""Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Orientaciones tutor&iacute;a':
-            self.activityTextArea._name = u'Guidelines Teacher Text'
-        if self.activityTextArea._name == u'Texto Orientaciones tutor&iacute;a:':
-            self.activityTextArea._name = u'Guidelines Teacher Text:'
+        if self._title == "FPD - Orientaciones Tutoria":
+            self._title = "FPD - Guidelines Teacher"
+        if self._purpose == """Orientaciones alumnado es un iDevice que permite al profesorado conocer los objetivos del aprendizje del alumnado.""":
+            self._purpose = """Guidelines Teacher is an iDevice that lets the teacher know the learning objectives of the students."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Orientaciones tutor&iacute;a':
+            self.activityTextArea._name = 'Guidelines Teacher Text'
+        if self.activityTextArea._name == 'Texto Orientaciones tutor&iacute;a:':
+            self.activityTextArea._name = 'Guidelines Teacher Text:'
 # ===========================================================================

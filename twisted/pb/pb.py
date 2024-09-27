@@ -7,8 +7,8 @@ from twisted.python.components import registerAdapter
 from twisted.internet import defer, protocol
 from twisted.application import service, strports
 
-import urlparse
-urlparse.uses_netloc.append("pb")
+import urllib.parse
+urllib.parse.uses_netloc.append("pb")
 
 from twisted.pb import ipb, broker, base32, negotiate, tokens, referenceable
 from twisted.pb.tokens import PBError
@@ -20,7 +20,7 @@ if crypto and not crypto.available:
     crypto = None
 try:
     # we want to use the random-number generation code from PyCrypto
-    from Crypto.Util import randpool
+    from .Crypto.Util import randpool
 except ImportError:
     randpool = None
     # fall back to the stdlib 'random' module if we can't get something that
@@ -87,7 +87,7 @@ class Listener(protocol.ServerFactory):
             return "<Listener at 0x%x on %s with tubs %s>" % (
                 abs(id(self)),
                 self.port,
-                ",".join([str(k) for k in self.tubs.keys()]))
+                ",".join([str(k) for k in list(self.tubs.keys())]))
         return "<Listener at 0x%x on %s with no tubs>" % (abs(id(self)),
                                                           self.port)
 
@@ -109,7 +109,7 @@ class Listener(protocol.ServerFactory):
         del self.tubs[tub.tubID]
         if self.parentTub is tub:
             # we need to switch to a new one
-            tubs = self.tubs.values()
+            tubs = list(self.tubs.values())
             if tubs:
                 self.parentTub = tubs[0]
                 # TODO: I want to do this without first doing
@@ -315,7 +315,7 @@ class PBService(service.MultiService):
             # to do it.
             dl.append(l.removeTub(self))
         dl.append(service.MultiService.stopService(self))
-        for b in self.brokers.values():
+        for b in list(self.brokers.values()):
             d = defer.maybeDeferred(b.transport.loseConnection)
             dl.append(d)
         for b in self.unencryptedBrokers:
@@ -357,7 +357,7 @@ class PBService(service.MultiService):
         if not self.locationHints:
             raise RuntimeError("you must setLocation() before "
                                "you can registerReference()")
-        if self.referenceToName.has_key(ref):
+        if ref in self.referenceToName:
             return self.buildURL(self.referenceToName[ref])
         if name is None:
             name = self.generateSwissnumber(self.NAMEBITS)
@@ -498,7 +498,7 @@ class PBService(service.MultiService):
 
     def brokerDetached(self, broker, why):
         # the Broker will have already severed all active references
-        for tubref in self.brokers.keys():
+        for tubref in list(self.brokers.keys()):
             if self.brokers[tubref] is broker:
                 del self.brokers[tubref]
         if broker in self.unencryptedBrokers:

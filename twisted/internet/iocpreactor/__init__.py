@@ -1,2 +1,2 @@
-from proactor import install
+from .proactor import install
 

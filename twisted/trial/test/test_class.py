@@ -11,19 +11,19 @@ class NumberOfRuns(unittest.TestCase):
     
     def test_1(self):
         global _setUpClassRuns
-        self.failUnlessEqual(_setUpClassRuns, 1)
+        self.assertEqual(_setUpClassRuns, 1)
 
     def test_2(self):
         global _setUpClassRuns
-        self.failUnlessEqual(_setUpClassRuns, 1)
+        self.assertEqual(_setUpClassRuns, 1)
 
     def test_3(self):
         global _setUpClassRuns
-        self.failUnlessEqual(_setUpClassRuns, 1)
+        self.assertEqual(_setUpClassRuns, 1)
 
     def tearDownClass(self):
         global _tearDownClassRuns
-        self.failUnlessEqual(_tearDownClassRuns, 0)
+        self.assertEqual(_tearDownClassRuns, 0)
         _tearDownClassRuns += 1
 
 
@@ -32,17 +32,17 @@ class AttributeSetUp(unittest.TestCase):
         self.x = 42
 
     def setUp(self):
-        self.failUnless(hasattr(self, 'x'), "Attribute 'x' not set")
-        self.failUnlessEqual(self.x, 42)
+        self.assertTrue(hasattr(self, 'x'), "Attribute 'x' not set")
+        self.assertEqual(self.x, 42)
 
     def test_1(self):
-        self.failUnlessEqual(self.x, 42) # still the same
+        self.assertEqual(self.x, 42) # still the same
 
     def test_2(self):
-        self.failUnlessEqual(self.x, 42) # still the same
+        self.assertEqual(self.x, 42) # still the same
 
     def tearDown(self):
-        self.failUnlessEqual(self.x, 42) # still the same
+        self.assertEqual(self.x, 42) # still the same
 
     def tearDownClass(self):
         self.x = None
@@ -62,10 +62,10 @@ class AttributeManipulation(unittest.TestCase):
         self.testsRun += 1
 
     def tearDown(self):
-        self.failUnless(self.testsRun > 0)
+        self.assertTrue(self.testsRun > 0)
 
     def tearDownClass(self):
-        self.failUnlessEqual(self.testsRun, 3)
+        self.assertEqual(self.testsRun, 3)
 
 
 class AttributeSharing(unittest.TestCase):
@@ -74,14 +74,14 @@ class AttributeSharing(unittest.TestCase):
             self.first = 'test1Run'
 
         def test_2(self):
-            self.failIf(hasattr(self, 'first'))
+            self.assertFalse(hasattr(self, 'first'))
 
     class ClassAttributeSharer(AttributeSharer):
         def setUpClass(self):
             pass
 
         def test_3(self):
-            self.failUnlessEqual('test1Run', self.first)
+            self.assertEqual('test1Run', self.first)
 
     def setUp(self):
         self.loader = runner.TestLoader()
@@ -90,16 +90,16 @@ class AttributeSharing(unittest.TestCase):
         result = reporter.TestResult()
         suite = self.loader.loadClass(AttributeSharing.AttributeSharer)
         suite.run(result)
-        self.failUnlessEqual(result.errors, [])
-        self.failUnlessEqual(result.failures, [])
+        self.assertEqual(result.errors, [])
+        self.assertEqual(result.failures, [])
 
     def test_shared(self):
         result = reporter.TestResult()
         suite = self.loader.loadClass(AttributeSharing.ClassAttributeSharer)
         suite.run(result)
-        self.failUnlessEqual(result.errors, [])
-        self.failUnlessEqual(len(result.failures), 1) # from test_2
-        self.failUnlessEqual(result.failures[0][0].shortDescription(),
+        self.assertEqual(result.errors, [])
+        self.assertEqual(len(result.failures), 1) # from test_2
+        self.assertEqual(result.failures[0][0].shortDescription(),
                              'test_2')
         
 
@@ -149,51 +149,51 @@ class FactoryCounting(unittest.TestCase):
 
     def test_createAndRun(self):
         test = self.factory('test_1')
-        self.failUnlessEqual(test._isFirst(), True)
+        self.assertEqual(test._isFirst(), True)
         result = reporter.TestResult()
         test(result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 1)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 1)
+        self.assertEqual(self.factory._setUpClassRun, 1)
+        self.assertEqual(self.factory._tearDownClassRun, 1)
 
     def test_createTwoAndRun(self):
-        tests = map(self.factory, ['test_1', 'test_2'])
-        self.failUnlessEqual(tests[0]._isFirst(), True)
-        self.failUnlessEqual(tests[1]._isFirst(), True)
+        tests = list(map(self.factory, ['test_1', 'test_2']))
+        self.assertEqual(tests[0]._isFirst(), True)
+        self.assertEqual(tests[1]._isFirst(), True)
         result = reporter.TestResult()
         tests[0](result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 1)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 0)
+        self.assertEqual(self.factory._setUpClassRun, 1)
+        self.assertEqual(self.factory._tearDownClassRun, 0)
         tests[1](result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 1)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 1)
+        self.assertEqual(self.factory._setUpClassRun, 1)
+        self.assertEqual(self.factory._tearDownClassRun, 1)
         
     def test_runTwice(self):
         test = self.factory('test_1')
         result = reporter.TestResult()
         test(result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 1)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 1)
+        self.assertEqual(self.factory._setUpClassRun, 1)
+        self.assertEqual(self.factory._tearDownClassRun, 1)
         test(result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 2)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 2)
+        self.assertEqual(self.factory._setUpClassRun, 2)
+        self.assertEqual(self.factory._tearDownClassRun, 2)
         
     def test_runMultipleCopies(self):
-        tests = map(self.factory, ['test_1', 'test_1'])
+        tests = list(map(self.factory, ['test_1', 'test_1']))
         result = reporter.TestResult()
         tests[0](result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 1)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 0)
+        self.assertEqual(self.factory._setUpClassRun, 1)
+        self.assertEqual(self.factory._tearDownClassRun, 0)
         tests[1](result)
-        self.failUnlessEqual(self.factory._setUpClassRun, 1)
-        self.failUnlessEqual(self.factory._tearDownClassRun, 1)
+        self.assertEqual(self.factory._setUpClassRun, 1)
+        self.assertEqual(self.factory._tearDownClassRun, 1)
         
     def test_skippingSetUpClass(self):
-        tests = map(self.subFactory, ['test_1', 'test_2'])
+        tests = list(map(self.subFactory, ['test_1', 'test_2']))
         result = reporter.TestResult()
         tests[0](result)
-        self.failUnlessEqual(self.subFactory._setUpClassRun, 1)
-        self.failUnlessEqual(self.subFactory._tearDownClassRun, 0)
+        self.assertEqual(self.subFactory._setUpClassRun, 1)
+        self.assertEqual(self.subFactory._tearDownClassRun, 0)
         tests[1](result)
-        self.failUnlessEqual(self.subFactory._setUpClassRun, 2)
-        self.failUnlessEqual(self.subFactory._tearDownClassRun, 0)
+        self.assertEqual(self.subFactory._setUpClassRun, 2)
+        self.assertEqual(self.subFactory._tearDownClassRun, 0)
         

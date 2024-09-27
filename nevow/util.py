@@ -103,7 +103,7 @@ def uniquify(lst):
     dct = {}
     result = []
     for k in lst:
-        if not dct.has_key(k): result.append(k)
+        if k not in dct: result.append(k)
         dct[k] = 1
     return result
 
@@ -154,9 +154,9 @@ except ImportError:
     class Logger(object):
         def msg(self, *args, **kw):
             for arg in args:
-                print >> sys.stderr, arg
-            for k, v in kw.items():
-                print >> sys.stderr, "%s: %s" % (k, v)
+                print(arg, file=sys.stderr)
+            for k, v in list(kw.items()):
+                print("%s: %s" % (k, v), file=sys.stderr)
 
     log = Logger()
 

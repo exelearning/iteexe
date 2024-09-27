@@ -10,7 +10,7 @@ if not hasattr(cssmin, 'cssmin'):
     from cssmin import cssmin
 
 # Line breaks
-lineBreak = u'\n'
+lineBreak = '\n'
 
 def removeEcuationAttr(html):
     """

@@ -59,8 +59,8 @@ class FlashWithTextBlock(Block):
         log.debug("process " + repr(request.args))
         Block.process(self, request)
 
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
+        if ("action" not in request.args or
+            request.args["action"][0] != "delete"):
             self.flashElement.process(request)
             self.textElement.process(request)
             
@@ -76,11 +76,11 @@ class FlashWithTextBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        html  = u"<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += self.flashElement.renderEdit()  
-        floatArr    = [[_(u'Left'), 'left'],
-                      [_(u'Right'), 'right'],
-                      [_(u'None'),  'none']]
+        floatArr    = [[_('Left'), 'left'],
+                      [_('Right'), 'right'],
+                      [_('None'),  'none']]
 
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
@@ -89,13 +89,13 @@ class FlashWithTextBlock(Block):
                                  "float" + self.id,
                                  options = floatArr,
                                  selection = self.idevice.float)
-        html += u"\n"
-        html += u"<b>%s </b>" % _(u"Caption:")
+        html += "\n"
+        html += "<b>%s </b>" % _("Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc(self.idevice.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -104,23 +104,23 @@ class FlashWithTextBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"\n<!-- flash with text iDevice -->\n"
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html  = "\n<!-- flash with text iDevice -->\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<div class=\"flash_text\" style=\""
-        html += u"width:" + str(self.idevice.flash.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"<div class=\"flash\">\n"
+        html += "<div class=\"flash_text\" style=\""
+        html += "width:" + str(self.idevice.flash.width) + "px; "
+        html += "float:%s;\">\n" % self.idevice.float
+        html += "<div class=\"flash\">\n"
         html += self.flashElement.renderPreview()
-        html += u"" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
+        html += "" + self.idevice.caption + "</div>"
+        html += "</div>\n"
         html += self.textElement.renderPreview()
-        html += u"<br/>\n"        
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += "<br/>\n"        
+        html += "<div style=\"clear:both;\">"
+        html += "</div>\n"
         html += self.renderViewButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 
@@ -129,20 +129,20 @@ class FlashWithTextBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"\n<!-- Flash with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<div class=\"flash_text\" style=\""
-        html += u"width:" + str(self.idevice.flash.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"<div class=\"flash\">\n"
+        html  = "\n<!-- Flash with text iDevice -->\n"
+        html += "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
+        html += "<div class=\"flash_text\" style=\""
+        html += "width:" + str(self.idevice.flash.width) + "px; "
+        html += "float:%s;\">\n" % self.idevice.float
+        html += "<div class=\"flash\">\n"
         html += self.flashElement.renderView()
-        html += u"<br/>" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
+        html += "<br/>" + self.idevice.caption + "</div>"
+        html += "</div>\n"
         html += self.textElement.renderView()
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
-        html += u"</div><br/>\n"
+        html += "<div style=\"clear:both;\">"
+        html += "</div>\n"
+        html += "</div><br/>\n"
         return html
     
 

@@ -26,8 +26,8 @@ Browser module
 """
 
 import logging
-from urllib import quote
-import mywebbrowser
+from urllib.parse import quote
+from . import mywebbrowser
 from exe.engine.path import Path
 from exe             import globals as G
 
@@ -38,8 +38,8 @@ def launchBrowser(config, packageName):
     """
     Launch the configured webbrowser for this platform
     """
-    url = u'%s/%s' % (G.application.exeAppUri, quote(packageName))
-    log.info(u"url " + url)
+    url = '%s/%s' % (G.application.exeAppUri, quote(packageName))
+    log.info("url " + url)
     dfbrw=mywebbrowser.get()
     withdefaultbrowser=True
     if config.browser!=None:
@@ -53,7 +53,7 @@ def launchBrowser(config, packageName):
         except:
             browser_path = Path(config.browser)
             if browser_path.exists():
-                log.info(u"path browser " + browser_path.abspath())
+                log.info("path browser " + browser_path.abspath())
                 mywebbrowser.register("custom-browser" , None, mywebbrowser.BackgroundBrowser(browser_path.abspath()), -1)
                 config.browser = mywebbrowser.get("custom-browser")
                 if not config.browser.open(url):
@@ -65,7 +65,7 @@ def launchBrowser(config, packageName):
         config.browser = dfbrw
         config.browser.open(url, new=0, autoraise=True)
     if hasattr(config.browser, "name"):
-        log.info(u"Defined Browser: " + config.browser.name)
+        log.info("Defined Browser: " + config.browser.name)
     
 
 

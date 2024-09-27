@@ -15,7 +15,7 @@ notEnough = tags.html[tags.div[tags.span["Hello"]]]
 class TestOne(testutil.TestCase):
     def test_tagQuery(self):
         new = IQ(simple).onePattern('foo')
-        self.assertEquals(new.tagName, 'div')
+        self.assertEqual(new.tagName, 'div')
 
     def test_tagTooMany(self):
         self.assertRaises(stan.TooManyNodes, IQ(tooMany).onePattern, 'foo')
@@ -26,7 +26,7 @@ class TestOne(testutil.TestCase):
     def test_contextQuery(self):
         C = context.WovenContext(tag=simple)
         new = IQ(C).onePattern('foo')
-        self.assertEquals(new.tagName, 'div')
+        self.assertEqual(new.tagName, 'div')
 
     def test_contextTooMany(self):
         C = context.WovenContext(tag=tooMany)
@@ -42,7 +42,7 @@ class TestOne(testutil.TestCase):
         T.pattern = "outer"
         C = context.WovenContext(tag=T)
         new = IQ(C).onePattern('outer')
-        self.assertEquals(new.tagName, 'html')
+        self.assertEqual(new.tagName, 'html')
 
     def test_contextTagTooMany(self):
         tooMany = tags.html(pattern="foo")[ tags.div(pattern="foo") ]
@@ -51,7 +51,7 @@ class TestOne(testutil.TestCase):
     def test_listQuery(self):
         P = flat.precompile(simple)
         new = IQ(P).onePattern('foo')
-        self.assertEquals(new.tagName, 'div')
+        self.assertEqual(new.tagName, 'div')
 
     def test_listTooMany(self):
         P = flat.precompile(tooMany)
@@ -64,7 +64,7 @@ class TestOne(testutil.TestCase):
     def test_loaderQuery(self):
         L = loaders.stan(simple)
         new = IQ(L).onePattern('foo')
-        self.assertEquals(new.tagName, 'div')
+        self.assertEqual(new.tagName, 'div')
 
     def test_loaderTooMany(self):
         L = loaders.stan(tooMany)
@@ -81,11 +81,11 @@ multiple = tags.html[tags.div(pattern="foo", bar="one"), tags.span(pattern="foo"
 class TestAll(testutil.TestCase):
     def verify(self, them):
         them = list(them)
-        self.assertEquals(len(them), 2)
-        self.assertEquals(them[0].tagName, 'div')
-        self.assertEquals(them[1].tagName, 'span')
-        self.assertEquals(them[0].attributes['bar'], 'one')
-        self.assertEquals(them[1].attributes['bar'], 'two')
+        self.assertEqual(len(them), 2)
+        self.assertEqual(them[0].tagName, 'div')
+        self.assertEqual(them[1].tagName, 'span')
+        self.assertEqual(them[0].attributes['bar'], 'one')
+        self.assertEqual(them[1].attributes['bar'], 'two')
 
     def testTagPatterns(self):
         self.verify(
@@ -110,14 +110,14 @@ class TestGenerator(testutil.TestCase):
         two = it(color="blue")
         three = it(color="green")
         four = it(color="orange")
-        self.assertEquals(one.attributes['color'], 'red')
-        self.assertEquals(one.attributes['bar'], 'one')
-        self.assertEquals(two.attributes['color'], 'blue')
-        self.assertEquals(two.attributes['bar'], 'two')
-        self.assertEquals(three.attributes['color'], 'green')
-        self.assertEquals(three.attributes['bar'], 'one')
-        self.assertEquals(four.attributes['color'], 'orange')
-        self.assertEquals(four.attributes['bar'], 'two')
+        self.assertEqual(one.attributes['color'], 'red')
+        self.assertEqual(one.attributes['bar'], 'one')
+        self.assertEqual(two.attributes['color'], 'blue')
+        self.assertEqual(two.attributes['bar'], 'two')
+        self.assertEqual(three.attributes['color'], 'green')
+        self.assertEqual(three.attributes['bar'], 'one')
+        self.assertEqual(four.attributes['color'], 'orange')
+        self.assertEqual(four.attributes['bar'], 'two')
 
     def testTagGenerators(self):
         self.verify(
@@ -150,14 +150,14 @@ class TestGenerator(testutil.TestCase):
     def testClonableDefault(self):
         orig = tags.p["Hello"]
         gen = IQ(flat.precompile(notEnough)).patternGenerator('foo', orig)
-        new = gen.next()
-        self.assertEquals(new.tagName, 'p')
+        new = next(gen)
+        self.assertEqual(new.tagName, 'p')
         self.assertNotIdentical(orig, new)
 
     def testNonClonableDefault(self):
         gen = IQ(flat.precompile(notEnough)).patternGenerator('foo', 'bar')
-        new = gen.next()
-        self.assertEquals(new, 'bar')
+        new = next(gen)
+        self.assertEqual(new, 'bar')
 
     def testXmlMissing(self):
         self.assertRaises(stan.NodeNotFound, IQ(stan.xml('<html>hello</html>')).patternGenerator, 'foo')

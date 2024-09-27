@@ -33,7 +33,7 @@ def setLocaleFromRequest(request):
     acceptedLocales = languagesFactory(request)
     for locale in acceptedLocales:
         try:
-            G.application.config.locales[locale].install(unicode=True)
+            G.application.config.locales[locale].install(str=True)
             break
         except KeyError:
             pass
@@ -89,7 +89,7 @@ class eXeRequest(appserver.NevowRequest):
 
     def getPackageName(self):
         try:
-            return u''+self.getHeader('referer').split('/')[-1]
+            return ''+self.getHeader('referer').split('/')[-1]
         except:
             return None
 

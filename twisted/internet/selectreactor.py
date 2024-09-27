@@ -65,8 +65,8 @@ class SelectReactor(posixbase.PosixReactorBase):
 
     def _preenDescriptors(self):
         log.msg("Malformed file descriptor found.  Preening lists.")
-        readers = reads.keys()
-        writers = writes.keys()
+        readers = list(reads.keys())
+        writers = list(writes.keys())
         reads.clear()
         writes.clear()
         for selDict, selList in ((reads, readers), (writes, writers)):
@@ -92,20 +92,20 @@ class SelectReactor(posixbase.PosixReactorBase):
         """
         while 1:
             try:
-                r, w, ignored = _select(reads.keys(),
-                                        writes.keys(),
+                r, w, ignored = _select(list(reads.keys()),
+                                        list(writes.keys()),
                                         [], timeout)
                 break
-            except ValueError, ve:
+            except ValueError as ve:
                 # Possibly a file descriptor has gone negative?
                 log.err()
                 self._preenDescriptors()
-            except TypeError, te:
+            except TypeError as te:
                 # Something *totally* invalid (object w/o fileno, non-integral
                 # result) was passed
                 log.err()
                 self._preenDescriptors()
-            except (select.error, IOError), se:
+            except (select.error, IOError) as se:
                 # select(2) encountered an error
                 if se.args[0] in (0, 2):
                     # windows does this if it got an empty list
@@ -161,13 +161,13 @@ class SelectReactor(posixbase.PosixReactorBase):
     def removeReader(self, reader):
         """Remove a Selectable for notification of data available to read.
         """
-        if reads.has_key(reader):
+        if reader in reads:
             del reads[reader]
 
     def removeWriter(self, writer):
         """Remove a Selectable for notification of data available to write.
         """
-        if writes.has_key(writer):
+        if writer in writes:
             del writes[writer]
 
     def removeAll(self):

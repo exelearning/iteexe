@@ -59,8 +59,8 @@ class ImageWithTextBlock(Block):
         log.debug("process " + repr(request.args))
         Block.process(self, request)
 
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
+        if ("action" not in request.args or
+            request.args["action"][0] != "delete"):
             self.imageElement.process(request)
             self.textElement.process(request)
             
@@ -76,11 +76,11 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        html  = u"<div class=\"iDevice\">\n"
+        html  = "<div class=\"iDevice\">\n"
         html += self.imageElement.renderEdit()       
-        floatArr    = [[_(u'Left'), 'left'],
-                      [_(u'Right'), 'right'],
-                      [_(u'None'),  'none']]
+        floatArr    = [[_('Left'), 'left'],
+                      [_('Right'), 'right'],
+                      [_('None'),  'none']]
 
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
@@ -90,12 +90,12 @@ class ImageWithTextBlock(Block):
                                  '',
                                  floatArr, self.idevice.float)
 
-        html += u'<div class="block"><b>%s</b></div>' % _(u"Caption:")
+        html += '<div class="block"><b>%s</b></div>' % _("Caption:")
         html += common.textInput("caption" + self.id, self.idevice.caption)
         html += common.elementInstruc(self.idevice.captionInstruc)
         html += "<br/>" + self.textElement.renderEdit()
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -104,23 +104,23 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"\n<!-- image with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
+        html  = "\n<!-- image with text iDevice -->\n"
+        html += "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
         html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
-        html += u"<div class=\"image_text\" style=\""
-        html += u"width:" + str(self.idevice.image.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"<div class=\"image\">\n"
+        html += "<div class=\"image_text\" style=\""
+        html += "width:" + str(self.idevice.image.width) + "px; "
+        html += "float:%s;\">\n" % self.idevice.float
+        html += "<div class=\"image\">\n"
         html += self.imageElement.renderPreview()
-        html += u"" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
+        html += "" + self.idevice.caption + "</div>"
+        html += "</div>\n"
         html += self.textElement.renderPreview()
-        html += u"<br/>\n"        
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
+        html += "<br/>\n"        
+        html += "<div style=\"clear:both;\">"
+        html += "</div>\n"
         html += self.renderViewButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 
@@ -129,20 +129,20 @@ class ImageWithTextBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"\n<!-- image with text iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
-        html += u"<div class=\"image_text\" style=\""
-        html += u"width:" + str(self.idevice.image.width) + "px; "
-        html += u"float:%s;\">\n" % self.idevice.float
-        html += u"<div class=\"image\">\n"
+        html  = "\n<!-- image with text iDevice -->\n"
+        html += "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
+        html += "<div class=\"image_text\" style=\""
+        html += "width:" + str(self.idevice.image.width) + "px; "
+        html += "float:%s;\">\n" % self.idevice.float
+        html += "<div class=\"image\">\n"
         html += self.imageElement.renderView()
-        html += u"<br/>" + self.idevice.caption + "</div>"
-        html += u"</div>\n"
+        html += "<br/>" + self.idevice.caption + "</div>"
+        html += "</div>\n"
         html += self.textElement.renderView()
-        html += u"<div style=\"clear:both;\">"
-        html += u"</div>\n"
-        html += u"</div>\n"
+        html += "<div style=\"clear:both;\">"
+        html += "</div>\n"
+        html += "</div>\n"
         return html
     
 

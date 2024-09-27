@@ -25,7 +25,7 @@ files
 import logging
 from exe.engine.idevice import Idevice
 from exe.engine.field   import TextAreaField
-from extendedfieldengine    import *
+from .extendedfieldengine    import *
 log = logging.getLogger(__name__)
 
 # ===========================================================================
@@ -34,9 +34,9 @@ class FileAttachIdeviceInc(Idevice):
     persistenceVersion = 2
     
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"File Attachments"), 
-                         x_(u"Toughra Technologies FZ LLC."), 
-                         x_(u"""File Attachments Idevice."""), "", "")
+        Idevice.__init__(self, x_("File Attachments"), 
+                         x_("Toughra Technologies FZ LLC."), 
+                         x_("""File Attachments Idevice."""), "", "")
         self.emphasis = Idevice.SomeEmphasis
         
         self.fileAttachmentFields = []

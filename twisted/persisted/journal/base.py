@@ -8,13 +8,13 @@
 
 """Basic classes and interfaces for journal."""
 
-from __future__ import nested_scopes
+
 
 # system imports
 import os, time
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 

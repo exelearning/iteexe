@@ -16,20 +16,20 @@ class FingerTestCase(unittest.TestCase):
 
     def testSimple(self):
         self.p.dataReceived("moshez\r\n")
-        self.failUnlessEqual(self.t.getvalue(),
+        self.assertEqual(self.t.getvalue(),
                              "Login: moshez\nNo such user\n")
 
     def testSimpleW(self):
         self.p.dataReceived("/w moshez\r\n")
-        self.failUnlessEqual(self.t.getvalue(),
+        self.assertEqual(self.t.getvalue(),
                              "Login: moshez\nNo such user\n")
 
     def testForwarding(self):
         self.p.dataReceived("moshez@example.com\r\n")
-        self.failUnlessEqual(self.t.getvalue(),
+        self.assertEqual(self.t.getvalue(),
                              "Finger forwarding service denied\n")
 
     def testList(self):
         self.p.dataReceived("\r\n")
-        self.failUnlessEqual(self.t.getvalue(),
+        self.assertEqual(self.t.getvalue(),
                              "Finger online list denied\n")

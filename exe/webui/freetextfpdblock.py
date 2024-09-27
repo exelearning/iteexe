@@ -68,8 +68,8 @@ class FreeTextfpdBlock(Block):
 
         Block.process(self, request)
 
-        if (u"action" not in request.args or 
-            request.args[u"action"][0] != u"delete"): 
+        if ("action" not in request.args or 
+            request.args["action"][0] != "delete"): 
             content = self.contentElement.process(request) 
             if content: 
                 self.idevice.content = content
@@ -79,10 +79,10 @@ class FreeTextfpdBlock(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += self.contentElement.renderEdit()
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -90,9 +90,9 @@ class FreeTextfpdBlock(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderPreview()
         html += self.renderViewButtons()
         html += "</div>\n"
@@ -103,10 +103,10 @@ class FreeTextfpdBlock(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 from exe.engine.freetextfpdidevice import FreeTextfpdIdevice

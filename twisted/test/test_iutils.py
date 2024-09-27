@@ -34,7 +34,7 @@ class UtilsTestCase(SignalMixin, unittest.TestCase):
             'print "hello world"'
             ])
         d = utils.getProcessOutput(sys.executable, ['-u', scriptFile])
-        return d.addCallback(self.assertEquals, "hello world\n")
+        return d.addCallback(self.assertEqual, "hello world\n")
 
     def testOutputWithErrorIgnored(self):
         # make sure stderr raises an error normally
@@ -56,7 +56,7 @@ class UtilsTestCase(SignalMixin, unittest.TestCase):
             ])
 
         d = utils.getProcessOutput(exe, ['-u', scriptFile], errortoo=1)
-        return d.addCallback(self.assertEquals, "hello world" + os.linesep)
+        return d.addCallback(self.assertEqual, "hello world" + os.linesep)
 
     def testValue(self):
         exe = sys.executable
@@ -66,7 +66,7 @@ class UtilsTestCase(SignalMixin, unittest.TestCase):
             ])
 
         d = utils.getProcessValue(exe, ['-u', scriptFile])
-        return d.addCallback(self.assertEquals, 1)
+        return d.addCallback(self.assertEqual, 1)
 
     def testOutputAndValue(self):
         exe = sys.executable
@@ -77,10 +77,11 @@ class UtilsTestCase(SignalMixin, unittest.TestCase):
             "sys.exit(1)"
             ])
 
-        def gotOutputAndValue((out, err, code)):
-            self.assertEquals(out, "hello world!" + os.linesep)
-            self.assertEquals(err, "goodbye world!" + os.linesep)
-            self.assertEquals(code, 1)
+        def gotOutputAndValue(xxx_todo_changeme):
+            (out, err, code) = xxx_todo_changeme
+            self.assertEqual(out, "hello world!" + os.linesep)
+            self.assertEqual(err, "goodbye world!" + os.linesep)
+            self.assertEqual(code, 1)
         d = utils.getProcessOutputAndValue(exe, [scriptFile])
         return d.addCallback(gotOutputAndValue)
 
@@ -100,9 +101,9 @@ class UtilsTestCase(SignalMixin, unittest.TestCase):
 
         def gotOutputAndValue(err):
             (out, err, sig) = err.value # XXX Sigh wtf
-            self.assertEquals(out, "stdout bytes" + os.linesep)
-            self.assertEquals(err, "stderr bytes" + os.linesep)
-            self.assertEquals(sig, signal.SIGKILL)
+            self.assertEqual(out, "stdout bytes" + os.linesep)
+            self.assertEqual(err, "stderr bytes" + os.linesep)
+            self.assertEqual(sig, signal.SIGKILL)
 
         d = utils.getProcessOutputAndValue(exe, ['-u', scriptFile])
         return d.addErrback(gotOutputAndValue)
@@ -132,17 +133,17 @@ class WarningSuppression(unittest.TestCase):
         # Start off with a sanity check - calling the original function
         # should emit the warning.
         f("Sanity check message")
-        self.assertEquals(len(self.warnings), 1)
+        self.assertEqual(len(self.warnings), 1)
 
         # Now that that's out of the way, call the wrapped function, and
         # make sure no new warnings show up.
         g("This is message")
-        self.assertEquals(len(self.warnings), 1)
+        self.assertEqual(len(self.warnings), 1)
 
         # Finally, emit another warning which should not be ignored, and
         # make sure it is not.
         g("Unignored message")
-        self.assertEquals(len(self.warnings), 2)
+        self.assertEqual(len(self.warnings), 2)
 
 
 

@@ -10,9 +10,10 @@ from zope.interface import implements
 from twisted.internet.defer import Deferred
 from twisted.python import log, reflect
 
-import tokens
-from tokens import Violation, BananaError, BananaFailure, tokenNames
-import schema
+from . import tokens
+from .tokens import Violation, BananaError, BananaFailure, tokenNames
+from . import schema
+from functools import reduce
 
 def getInstanceState(inst):
     """Utility function to default to 'normal' state rules in serialization.
@@ -33,8 +34,7 @@ class SlicerClass(type):
             registerAdapter(self, typ, tokens.ISlicer)
 
 
-class BaseSlicer:
-    __metaclass__ = SlicerClass
+class BaseSlicer(metaclass=SlicerClass):
     implements(tokens.ISlicer)
 
     slices = None
@@ -136,7 +136,7 @@ class ScopedSlicer(BaseSlicer):
 
 class UnicodeSlicer(BaseSlicer):
     opentype = ("unicode",)
-    slices = unicode
+    slices = str
     def sliceBody(self, streamable, banana):
         yield self.obj.encode("UTF-8")
 
@@ -162,7 +162,7 @@ class SetSlicer(ListSlicer):
         for i in self.obj:
             yield i
 
-if __builtins__.has_key("set"):
+if "set" in __builtins__:
     # python2.4 has a builtin 'set' type, which is mutable
     class BuiltinSetSlicer(SetSlicer):
         slices = set
@@ -177,7 +177,7 @@ class DictSlicer(BaseSlicer):
     trackReferences = True
     slices = None
     def sliceBody(self, streamable, banana):
-        for key,value in self.obj.items():
+        for key,value in list(self.obj.items()):
             yield key
             yield value
 
@@ -185,7 +185,7 @@ class DictSlicer(BaseSlicer):
 class OrderedDictSlicer(DictSlicer):
     slices = dict
     def sliceBody(self, streamable, banana):
-        keys = self.obj.keys()
+        keys = list(self.obj.keys())
         keys.sort()
         for key in keys:
             value = self.obj[key]
@@ -261,9 +261,9 @@ class MethodSlicer(BaseSlicer):
     trackReferences = True
 
     def sliceBody(self, streamable, banana):
-        yield self.obj.im_func.__name__
-        yield self.obj.im_self
-        yield self.obj.im_class
+        yield self.obj.__func__.__name__
+        yield self.obj.__self__
+        yield self.obj.__self__.__class__
 
 class FunctionSlicer(BaseSlicer):
     opentype = ('function',)
@@ -278,7 +278,7 @@ UnsafeSlicerTable = {}
 UnsafeSlicerTable.update({
     types.InstanceType: InstanceSlicer,
     types.ModuleType: ModuleSlicer,
-    types.ClassType: ClassSlicer,
+    type: ClassSlicer,
     types.MethodType: MethodSlicer,
     types.FunctionType: FunctionSlicer,
     #types.TypeType: NewstyleClassSlicer,
@@ -309,29 +309,29 @@ class RootSlicer:
     def slicerForObject(self, obj):
         # could use a table here if you think it'd be faster than an
         # adapter lookup
-        if self.debug: print "slicerForObject(%s)" % type(obj)
+        if self.debug: print("slicerForObject(%s)" % type(obj))
         # do the adapter lookup first, so that registered adapters override
         # UnsafeSlicerTable's InstanceSlicer
         slicer = tokens.ISlicer(obj, None)
         if slicer:
-            if self.debug: print "got ISlicer", slicer
+            if self.debug: print("got ISlicer", slicer)
             return slicer
         slicerFactory = self.slicerTable.get(type(obj))
         if slicerFactory:
-            if self.debug: print " got slicerFactory", slicerFactory
+            if self.debug: print(" got slicerFactory", slicerFactory)
             return slicerFactory(obj)
         if issubclass(type(obj), types.InstanceType):
             name = str(obj.__class__)
         else:
             name = str(type(obj))
-        if self.debug: print "cannot serialize %s (%s)" % (obj, name)
+        if self.debug: print("cannot serialize %s (%s)" % (obj, name))
         raise Violation("cannot serialize %s (%s)" % (obj, name))
 
     def slice(self):
         return self
     def __iter__(self):
         return self # we are our own iterator
-    def next(self):
+    def __next__(self):
         if self.objectSentDeferred:
             self.objectSentDeferred.callback(None)
             self.objectSentDeferred = None
@@ -340,7 +340,7 @@ class RootSlicer:
             self.streamable = self.streamableInGeneral
             return obj
         if self.protocol.debugSend:
-            print "LAST BAG"
+            print("LAST BAG")
         self.producingDeferred = Deferred()
         self.streamable = True
         return self.producingDeferred
@@ -360,7 +360,7 @@ class RootSlicer:
         if idle:
             # wake up
             if self.protocol.debugSend:
-                print " waking up to send"
+                print(" waking up to send")
             if self.producingDeferred:
                 d = self.producingDeferred
                 self.producingDeferred = None
@@ -390,7 +390,7 @@ UnsafeUnslicerRegistry = {}
 def registerUnslicer(opentype, factory, registry=None):
     if registry is None:
         registry = UnslicerRegistry
-    assert not registry.has_key(opentype)
+    assert opentype not in registry
     registry[opentype] = factory
 
 def setInstanceState(inst, state):
@@ -411,8 +411,7 @@ class UnslicerClass(type):
         if opentype:
             registerUnslicer(opentype, self, reg)
 
-class BaseUnslicer:
-    __metaclass__ = UnslicerClass
+class BaseUnslicer(metaclass=UnslicerClass):
     opentype = None
     implements(tokens.IUnslicer)
 
@@ -505,8 +504,8 @@ class BaseUnslicer:
         (probably a Deferred) will be left in the unserialized object about
         to be handed to the RootUnslicer.
         """
-        print "KABOOM"
-        print failure
+        print("KABOOM")
+        print(failure)
         self.protocol.exploded = failure
 
 class ScopedUnslicer(BaseUnslicer):
@@ -519,13 +518,13 @@ class ScopedUnslicer(BaseUnslicer):
 
     def setObject(self, counter, obj):
         if self.protocol.debugReceive:
-            print "setObject(%s): %s{%s}" % (counter, obj, id(obj))
+            print("setObject(%s): %s{%s}" % (counter, obj, id(obj)))
         self.references[counter] = obj
 
     def getObject(self, counter):
         obj = self.references.get(counter)
         if self.protocol.debugReceive:
-            print "getObject(%s) -> %s{%s}" % (counter, obj, id(obj))
+            print("getObject(%s) -> %s{%s}" % (counter, obj, id(obj)))
         return obj
 
 
@@ -560,7 +559,7 @@ class UnicodeUnslicer(LeafUnslicer):
         assert ready_deferred is None
         if self.string != None:
             raise BananaError("already received a string")
-        self.string = unicode(obj, "UTF-8")
+        self.string = str(obj, "UTF-8")
 
     def receiveClose(self):
         return self.string, None
@@ -586,7 +585,7 @@ class ListUnslicer(BaseUnslicer):
         self.list = []
         self.count = count
         if self.debug:
-            print "%s[%d].start with %s" % (self, self.count, self.list)
+            print("%s[%d].start with %s" % (self, self.count, self.list))
         self.protocol.setObject(count, self.list)
 
     def checkToken(self, typebyte, size):
@@ -616,15 +615,15 @@ class ListUnslicer(BaseUnslicer):
     def update(self, obj, index):
         # obj has already passed typechecking
         if self.debug:
-            print "%s[%d].update: [%d]=%s" % (self, self.count, index, obj)
-        assert(type(index) == types.IntType)
+            print("%s[%d].update: [%d]=%s" % (self, self.count, index, obj))
+        assert(type(index) == int)
         self.list[index] = obj
         return obj
 
     def receiveChild(self, obj, ready_deferred=None):
         assert ready_deferred is None
         if self.debug:
-            print "%s[%d].receiveChild(%s)" % (self, self.count, obj)
+            print("%s[%d].receiveChild(%s)" % (self, self.count, obj))
         # obj could be a primitive type, a Deferred, or a complex type like
         # those returned from an InstanceUnslicer. However, the individual
         # object has already been through the schema validation process. The
@@ -637,7 +636,7 @@ class ListUnslicer(BaseUnslicer):
             raise Violation("the list is full")
         if isinstance(obj, Deferred):
             if self.debug:
-                print " adding my update[%d] to %s" % (len(self.list), obj)
+                print(" adding my update[%d] to %s" % (len(self.list), obj))
             obj.addCallback(self.update, len(self.list))
             obj.addErrback(self.printErr)
             self.list.append("placeholder")
@@ -645,8 +644,8 @@ class ListUnslicer(BaseUnslicer):
             self.list.append(obj)
 
     def printErr(self, why):
-        print "ERR!"
-        print why.getBriefTraceback()
+        print("ERR!")
+        print(why.getBriefTraceback())
         log.err(why)
 
     def receiveClose(self):
@@ -674,7 +673,7 @@ class TupleUnslicer(BaseUnslicer):
         self.num_unreferenceable_children = 0
         self.count = count
         if self.debug:
-            print "%s[%d].start with %s" % (self, self.count, self.list)
+            print("%s[%d].start with %s" % (self, self.count, self.list))
         self.finished = False
         self.deferred = Deferred()
         self.protocol.setObject(count, self.deferred)
@@ -700,7 +699,7 @@ class TupleUnslicer(BaseUnslicer):
 
     def update(self, obj, index):
         if self.debug:
-            print "%s[%d].update: [%d]=%s" % (self, self.count, index, obj)
+            print("%s[%d].update: [%d]=%s" % (self, self.count, index, obj))
         self.list[index] = obj
         self.num_unreferenceable_children -= 1
         if self.finished:
@@ -719,24 +718,24 @@ class TupleUnslicer(BaseUnslicer):
 
     def checkComplete(self):
         if self.debug:
-            print "%s[%d].checkComplete: %d pending" % \
-                  (self, self.count, self.num_unreferenceable_children)
+            print("%s[%d].checkComplete: %d pending" % \
+                  (self, self.count, self.num_unreferenceable_children))
         if self.num_unreferenceable_children:
             # not finished yet, we'll fire our Deferred when we are
             if self.debug:
-                print " not finished yet"
+                print(" not finished yet")
             return self.deferred, None
         # list is now complete. We can finish.
         t = tuple(self.list)
         if self.debug:
-            print " finished! tuple:%s{%s}" % (t, id(t))
+            print(" finished! tuple:%s{%s}" % (t, id(t)))
         self.protocol.setObject(self.count, t)
         self.deferred.callback(t)
         return t, None
 
     def receiveClose(self):
         if self.debug:
-            print "%s[%d].receiveClose" % (self, self.count)
+            print("%s[%d].receiveClose" % (self, self.count))
         self.finished = 1
         return self.checkComplete()
 
@@ -828,7 +827,7 @@ class DictUnslicer(BaseUnslicer):
         if isinstance(key, Deferred):
             raise BananaError("incomplete object as dictionary key")
         try:
-            if self.d.has_key(key):
+            if key in self.d:
                 raise BananaError("duplicate key '%s'" % key)
         except TypeError:
             raise BananaError("unhashable key '%s'" % key)
@@ -873,7 +872,7 @@ class VocabUnslicer(LeafUnslicer):
         assert not isinstance(token, Deferred)
         assert ready_deferred is None
         if self.key is None:
-            if self.d.has_key(token):
+            if token in self.d:
                 raise BananaError("duplicate key '%s'" % token)
             self.key = token
         else:
@@ -944,7 +943,7 @@ class InstanceUnslicer(BaseUnslicer):
                 # be possible to remove it, but I need to think through
                 # it carefully first
                 raise BananaError("unreferenceable object in attribute")
-            if self.d.has_key(self.attrname):
+            if self.attrname in self.d:
                 raise BananaError("duplicate attribute name '%s'" % name)
             self.setAttribute(self.attrname, obj)
             self.attrname = None
@@ -958,7 +957,7 @@ class InstanceUnslicer(BaseUnslicer):
 
         #obj = Dummy()
         klass = reflect.namedObject(self.classname)
-        assert type(klass) == types.ClassType # TODO: new-style classes
+        assert type(klass) == type # TODO: new-style classes
         obj = instance(klass, {})
 
         setInstanceState(obj, self.d)
@@ -1097,15 +1096,15 @@ class MethodUnslicer(BaseUnslicer):
         assert not isinstance(obj, Deferred)
         assert ready_deferred is None
         if self.state == 0:
-            self.im_func = obj
+            self.__func__ = obj
             self.state = 1
         elif self.state == 1:
-            assert type(obj) in (types.InstanceType, types.NoneType)
-            self.im_self = obj
+            assert type(obj) in (types.InstanceType, type(None))
+            self.__self__ = obj
             self.state = 2
         elif self.state == 2:
-            assert type(obj) == types.ClassType # TODO: new-style classes?
-            self.im_class = obj
+            assert type(obj) == type # TODO: new-style classes?
+            self.__self__.__class__ = obj
             self.state = 3
         else:
             raise BananaError("MethodUnslicer only accepts three objects")
@@ -1113,17 +1112,17 @@ class MethodUnslicer(BaseUnslicer):
     def receiveClose(self):
         if self.state != 3:
             raise BananaError("MethodUnslicer requires three objects")
-        if self.im_self is None:
-            meth = getattr(self.im_class, self.im_func)
+        if self.__self__ is None:
+            meth = getattr(self.__self__.__class__, self.__func__)
             # getattr gives us an unbound method
             return meth, None
         # TODO: late-available instances
         #if isinstance(self.im_self, NotKnown):
         #    im = _InstanceMethod(self.im_name, self.im_self, self.im_class)
         #    return im
-        meth = self.im_class.__dict__[self.im_func]
+        meth = self.__self__.__class__.__dict__[self.__func__]
         # whereas __dict__ gives us a function
-        im = instancemethod(meth, self.im_self, self.im_class)
+        im = instancemethod(meth, self.__self__, self.__self__.__class__)
         return im, None
         
 
@@ -1207,7 +1206,7 @@ class RootUnslicer(BaseUnslicer):
         self.objects = {}
         keys = []
         for r in self.topRegistry + self.openRegistry:
-            for k in r.keys():
+            for k in list(r.keys()):
                 keys.append(len(k[0]))
         self.maxIndexLength = reduce(max, keys)
 
@@ -1275,14 +1274,14 @@ class RootUnslicer(BaseUnslicer):
         assert not isinstance(obj, Deferred)
         assert ready_deferred is None
         if self.protocol.debugReceive:
-            print "RootUnslicer.receiveChild(%s)" % (obj,)
+            print("RootUnslicer.receiveChild(%s)" % (obj,))
         self.objects = {}
         if isinstance(obj, NewVocabulary):
             self.protocol.setIncomingVocabulary(obj.nv)
             return
         if self.protocol.exploded:
-            print "protocol exploded, can't deliver object"
-            print self.protocol.exploded
+            print("protocol exploded, can't deliver object")
+            print(self.protocol.exploded)
             self.protocol.receivedObject(self.protocol.exploded)
             return
         self.protocol.receivedObject(obj) # give finished object to Banana

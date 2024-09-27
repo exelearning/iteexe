@@ -27,9 +27,9 @@ from twisted.python import failure
 from twisted.internet import defer
 
 # Sibling Imports
-from util import respond
-from util import challenge
-from error import Unauthorized, KeyNotFound
+from .util import respond
+from .util import challenge
+from .error import Unauthorized, KeyNotFound
 
 
 class Identity:
@@ -50,7 +50,7 @@ class Identity:
         """
         warnings.warn("Identities are deprecated, switch to credentialcheckers etc.",
                       category=DeprecationWarning, stacklevel=2)
-        if not isinstance(name, types.StringType):
+        if not isinstance(name, bytes):
             raise TypeError
         from twisted.internet import app
         if isinstance(authorizer, app.Application):
@@ -81,7 +81,7 @@ class Identity:
     def requestPerspectiveForService(self, serviceName):
         """Get the first available perspective for a given service.
         """
-        keys = self.keyring.keys()
+        keys = list(self.keyring.keys())
         keys.sort()
         for serviceN, perspectiveN in keys:
             if serviceN == serviceName:
@@ -107,7 +107,7 @@ class Identity:
 
         This returns a sequence of keys.
         """
-        return self.keyring.keys()
+        return list(self.keyring.keys())
 
     def removeKey(self, serviceName, perspectiveName):
         """Remove a key from my keyring.

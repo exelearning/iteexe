@@ -127,13 +127,13 @@ class HangmanBlockInc(Block):
         
         
         #see if we need to add another chance
-        if ("addChance"+unicode(self.id)) in request.args: 
+        if ("addChance"+str(self.id)) in request.args: 
             self.idevice.addChance()
             self.idevice.edit = True
             # disable Undo once a question has been added:
             self.idevice.undo = False
         
-        if("addWord"+unicode(self.id)) in request.args:
+        if("addWord"+str(self.id)) in request.args:
             self.idevice.addWord()
             self.idevice.edit = True
             self.idevice.undo = False
@@ -188,7 +188,7 @@ class HangmanBlockInc(Block):
         if mode ==  "preview":
             resPath = "/templates/"       
         
-        html = u"<script src='" + resPath + "hangman.js' type='text/javascript'></script>\n"
+        html = "<script src='" + resPath + "hangman.js' type='text/javascript'></script>\n"
         html += common.ideviceHeader(self, style, mode)
         html += "<div id='hangman%(gameId)smessageStore' style='display: none'>" % {"gameId" : hangmanGameId}
         html += self._renderHTMLElement(mode, self.wrongGuessTextElement, "hmwrong" + hangmanGameId)
@@ -197,7 +197,7 @@ class HangmanBlockInc(Block):
         html += self._renderHTMLElement(mode, self.gameWonTextElement, "hmwon" + hangmanGameId)
         
         html += "</div>"
-        html += u"<script type='text/javascript'>\n"
+        html += "<script type='text/javascript'>\n"
 
         #Go through the images and find out the max height and maxwidth
         imgMaxHeight = 0
@@ -216,7 +216,7 @@ class HangmanBlockInc(Block):
         html += "hangman_words['%s'] = new Array();\n" % hangmanGameId
         html += "hangman_buttonStyles['%s'] = new Array();\n" % hangmanGameId
         for wordIndex, word in enumerate(self.wordElements):
-            html += u"hangman_words['%(gameId)s'][%(index)d] = new Array('%(word)s', '%(hint)s');\n" % \
+            html += "hangman_words['%(gameId)s'][%(index)d] = new Array('%(word)s', '%(hint)s');\n" % \
                 {"index" : wordIndex, "word" : word.renderView(), \
                 "hint" : self.hintElements[wordIndex].renderView(), \
                 "gameId" : hangmanGameId }
@@ -230,19 +230,19 @@ class HangmanBlockInc(Block):
                 % {"gameId" : hangmanGameId, "style" : self.wrongLetterButtonStyleElement.renderView()}
 
         #Makes a javscript string of the alphabet that the user can guess from
-        html += u"hangman_alphabet['%(gameId)s'] = '%(alphabet)s';\n" % \
+        html += "hangman_alphabet['%(gameId)s'] = '%(alphabet)s';\n" % \
         {"alphabet" : self.alphabetElement.renderView(), \
         "gameId" : hangmanGameId }
 
         #Makes an array of the ids of the divs that hold the chance images
-        html += u"hangman_chanceimgids['%s'] = new Array();\n" % hangmanGameId
+        html += "hangman_chanceimgids['%s'] = new Array();\n" % hangmanGameId
         for imgIndex, imgElement in enumerate(self.chanceImageElements):
             html += "hangman_chanceimgids['%(gameId)s'][%(index)d] = '%(imgdivid)s';\n" % \
                 {"index" : imgIndex, "imgdivid" : "hangman" + self.id + "img" + imgElement.id, \
                 "gameId" : hangmanGameId }
 
         #Make the messages for this game
-        html += u"playerMessages['%s'] = new Array();\n" % hangmanGameId
+        html += "playerMessages['%s'] = new Array();\n" % hangmanGameId
         
         
         
@@ -308,7 +308,7 @@ class HangmanBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += common.ideviceShowEditMessage(self)
         
         
@@ -350,7 +350,7 @@ class HangmanBlockInc(Block):
                                    _("Remove This Life")) + "<br/>"
 
         addChanceButtonLabel = _("Add Chance")
-        html += common.submitButton("addChance"+unicode(self.id), addChanceButtonLabel)
+        html += common.submitButton("addChance"+str(self.id), addChanceButtonLabel)
         html += "<br/>"
 
         #show words to be guessed
@@ -365,10 +365,10 @@ class HangmanBlockInc(Block):
                                    "/images/stock-cancel.png",
                                    _("Remove This Word")) + "<br/>"
         
-        html += common.submitButton("addWord"+unicode(self.id), _("Add Word"))        
+        html += common.submitButton("addWord"+str(self.id), _("Add Word"))        
         html += "<br/>"
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -376,9 +376,9 @@ class HangmanBlockInc(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self.contentElement.renderView()
         html += self._renderGame(style, mode = "preview")
 
@@ -387,7 +387,7 @@ class HangmanBlockInc(Block):
         return html
 
     def renderXML(self, style):
-        xml = u""
+        xml = ""
         
         mediaConverter = ExportMediaConverter.getInstance()
         width = mediaConverter.getProfileWidth()
@@ -430,11 +430,11 @@ class HangmanBlockInc(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
         html += self.contentElement.renderView()
         html += self._renderGame(style, mode = "view")
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 

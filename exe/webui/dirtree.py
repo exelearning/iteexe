@@ -24,7 +24,7 @@ from exe.webui.renderable import RenderableResource
 from twisted.web.resource import Resource
 from exe.engine.path import Path
 from exe import globals as G
-from urllib import unquote
+from urllib.parse import unquote
 import json
 import mimetypes
 import os

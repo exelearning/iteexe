@@ -51,7 +51,7 @@ class eXeClientHandle(ClientHandle):
 
     def sendScript(self, script, filter_func=None):
         if filter_func:
-            for client in nevow.livepage.clientHandleFactory.clientHandles.values():
+            for client in list(nevow.livepage.clientHandleFactory.clientHandles.values()):
                 if filter_func(client, self):
                     ClientHandle.sendScript(client, script)
         else:
@@ -67,7 +67,7 @@ class eXeClientHandle(ClientHandle):
         else:
             script = "Ext.Msg.alert('%s',%s);" % (title, what)
         if filter_func and onDone:
-            for client in nevow.livepage.clientHandleFactory.clientHandles.values():
+            for client in list(nevow.livepage.clientHandleFactory.clientHandles.values()):
                 if filter_func(client, self):
                     client.sendScript(onDone)
         self.sendScript(script)

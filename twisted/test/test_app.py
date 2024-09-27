@@ -21,38 +21,38 @@ class AppTestCase(unittest.TestCase):
         f = protocol.ServerFactory()
         a.listenTCP(9999, f)
         a.listenTCP(9998, f)
-        self.assertEquals(len(a.tcpPorts), 2)
+        self.assertEqual(len(a.tcpPorts), 2)
         a.unlistenTCP(9999)
-        self.assertEquals(len(a.tcpPorts), 1)
+        self.assertEqual(len(a.tcpPorts), 1)
         a.listenTCP(9999, f, interface='127.0.0.1')
-        self.assertEquals(len(a.tcpPorts), 2)
+        self.assertEqual(len(a.tcpPorts), 2)
         a.unlistenTCP(9999, '127.0.0.1')
-        self.assertEquals(len(a.tcpPorts), 1)
+        self.assertEqual(len(a.tcpPorts), 1)
         a.unlistenTCP(9998)
-        self.assertEquals(len(a.tcpPorts), 0)
+        self.assertEqual(len(a.tcpPorts), 0)
 
     def testListenUnlistenUDP(self):
         a = app.Application("foo")
         f = protocol.DatagramProtocol()
         a.listenUDP(9999, f)
         a.listenUDP(9998, f)
-        self.assertEquals(len(a.udpPorts), 2)
+        self.assertEqual(len(a.udpPorts), 2)
         a.unlistenUDP(9999)
-        self.assertEquals(len(a.udpPorts), 1)
+        self.assertEqual(len(a.udpPorts), 1)
         a.listenUDP(9999, f, interface='127.0.0.1')
-        self.assertEquals(len(a.udpPorts), 2)
+        self.assertEqual(len(a.udpPorts), 2)
         a.unlistenUDP(9999, '127.0.0.1')
-        self.assertEquals(len(a.udpPorts), 1)
+        self.assertEqual(len(a.udpPorts), 1)
         a.unlistenUDP(9998)
-        self.assertEquals(len(a.udpPorts), 0)
+        self.assertEqual(len(a.udpPorts), 0)
 
     def testListenUnlistenUNIX(self):
         a = app.Application("foo")
         f = protocol.ServerFactory()
         a.listenUNIX("xxx", f)
-        self.assertEquals(len(a.unixPorts), 1)
+        self.assertEqual(len(a.unixPorts), 1)
         a.unlistenUNIX("xxx")
-        self.assertEquals(len(a.unixPorts), 0)
+        self.assertEqual(len(a.unixPorts), 0)
 
     def testIllegalUnlistens(self):
         a = app.Application("foo")
@@ -67,8 +67,8 @@ class ServiceTestCase(unittest.TestCase):
     def testRegisterService(self):
         a = app.Application("foo")
         svc = app.ApplicationService("service", a)
-        self.assertEquals(a.getServiceNamed("service"), svc)
-        self.assertEquals(a, svc.serviceParent)
+        self.assertEqual(a.getServiceNamed("service"), svc)
+        self.assertEqual(a, svc.serviceParent)
     testRegisterService.suppress = [util.suppress(message='twisted.internet.app is deprecated',
                                                   category=DeprecationWarning)]
 
@@ -135,4 +135,4 @@ class MultiServiceTestCase(unittest.TestCase):
 
     def tearDown(self):
         log.flushErrors (StopError)
-        self.failUnless(self.callbackRan, "Callback was never run.")
+        self.assertTrue(self.callbackRan, "Callback was never run.")

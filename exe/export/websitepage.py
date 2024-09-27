@@ -24,7 +24,7 @@ This class transforms an eXe node into a page on a self-contained website
 import logging
 import re
 from cgi                      import escape
-from urllib                   import quote
+from urllib.parse                   import quote
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
@@ -78,27 +78,27 @@ class WebsitePage(Page):
             headerTag = "header"
             navTag = "nav"
         else:
-            html = u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
-            html += u"<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
-        html += u"<head>"+lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
+            html = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb
+            html += "<html lang=\"" + lenguaje + "\" xml:lang=\"" + lenguaje + "\" xmlns=\"http://www.w3.org/1999/xhtml\">"+lb
+        html += "<head>"+lb
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"base.css\" />"+lb
         if common.hasWikipediaIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_wikipedia.css\" />"+lb
         if common.hasGalleryIdevice(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_lightbox.css\" />"+lb
         if common.hasFX(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_effects.css\" />"+lb
         if common.hasSH(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_highlighter.css\" />"+lb
         if common.hasGames(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_games.css\" />"+lb
         if common.hasABCMusic(self.node):
-            html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />"+lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
-        html += u"<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=utf-8\" />"+lb
-        html += u"<title>"
+            html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"exe_abcmusic.css\" />"+lb
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"content.css\" />"+lb
+        html += "<link rel=\"stylesheet\" type=\"text/css\" href=\"nav.css\" />"+lb
+        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += " charset=utf-8\" />"+lb
+        html += "<title>"
         if self.node.id=='0':
             if self.node.package.title!='':
                 html += escape(self.node.package.title)
@@ -109,8 +109,8 @@ class WebsitePage(Page):
                 html += escape(self.node.titleLong)+" | "+escape(self.node.package.title)
             else:
                 html += escape(self.node.titleLong)
-        html += u" </title>"+lb
-        html += u"<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
+        html += " </title>"+lb
+        html += "<link rel=\"shortcut icon\" href=\"favicon.ico\" type=\"image/x-icon\" />"+lb
         if dT != "HTML5" and self.node.package.dublinCore.language!="":
             html += '<meta http-equiv="content-language" content="'+lenguaje+'" />'+lb
         if self.node.package.author!="":
@@ -123,38 +123,38 @@ class WebsitePage(Page):
                 desc = desc.replace('"', '&quot;')
                 html += '<meta name="description" content="'+desc+'" />'+lb
         if dT == "HTML5" or common.nodeHasMediaelement(self.node):
-            html += u'<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
+            html += '<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->'+lb
         style = G.application.config.styleStore.getStyle(self.node.package.style)
 
         # jQuery
         if style.hasValidConfig():
             if style.get_jquery()==True:
-                html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+                html += '<script type="text/javascript" src="exe_jquery.js"></script>'+lb
             else:
-                html += u'<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
+                html += '<script type="text/javascript" src="'+style.get_jquery()+'"></script>'+lb
         else:
-            html += u'<script type="text/javascript" src="exe_jquery.js"></script>'+lb
+            html += '<script type="text/javascript" src="exe_jquery.js"></script>'+lb
 
         if common.hasGalleryIdevice(self.node):
-            html += u'<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
+            html += '<script type="text/javascript" src="exe_lightbox.js"></script>'+lb
         if common.hasFX(self.node):
-            html += u'<script type="text/javascript" src="exe_effects.js"></script>'+lb
+            html += '<script type="text/javascript" src="exe_effects.js"></script>'+lb
         if common.hasSH(self.node):
-            html += u'<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
-        html += u'<script type="text/javascript" src="common_i18n.js"></script>' + lb
+            html += '<script type="text/javascript" src="exe_highlighter.js"></script>'+lb
+        html += '<script type="text/javascript" src="common_i18n.js"></script>' + lb
         if common.hasGames(self.node):
-            html += u'<script type="text/javascript" src="exe_games.js"></script>'+lb
+            html += '<script type="text/javascript" src="exe_games.js"></script>'+lb
         if common.hasABCMusic(self.node):
-            html += u'<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb
-        html += u'<script type="text/javascript" src="common.js"></script>'+lb
+            html += '<script type="text/javascript" src="exe_abcmusic.js"></script>'+lb
+        html += '<script type="text/javascript" src="common.js"></script>'+lb
         html += common.printJavaScriptIdevicesScripts('export', self)
         if common.hasMagnifier(self.node):
-            html += u'<script type="text/javascript" src="mojomagnify.js"></script>'+lb
+            html += '<script type="text/javascript" src="mojomagnify.js"></script>'+lb
         # Some styles might have their own JavaScript files (see their config.xml file)
         if style.hasValidConfig():
             html += style.get_extra_head()
         html += common.getExtraHeadContent(self.node.package)
-        html += u"</head>"+lb
+        html += "</head>"+lb
         extraCSS = ''
         if self.node.package.get_addSearchBox() and self.node.package.exportSource:
             extraCSS = ' exe-search-bar'
@@ -162,41 +162,41 @@ class WebsitePage(Page):
             extraCSS += ' exe-auto-math'
         if self.node.package.get_addAccessibilityToolbar():
             extraCSS += ' exe-atools'
-        html += u'<body class="exe-web-site'+extraCSS+'" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
-        html += u"<div id=\"content\">"+lb
+        html += '<body class="exe-web-site'+extraCSS+'" id="exe-node-'+self.node.id+'"><script type="text/javascript">document.body.className+=" js"</script>'+lb
+        html += "<div id=\"content\">"+lb
         html += '<p id="skipNav"><a href="#main" class="sr-av">' + c_('Skip navigation')+'</a></p>'+lb
 
         if self.node.package.backgroundImg or self.node.package.title:
-            html += u"<"+headerTag+" id=\"header\" "
+            html += "<"+headerTag+" id=\"header\" "
 
             if self.node.package.backgroundImg:
-                html += u" style=\"background-image: url("
+                html += " style=\"background-image: url("
                 html += quote(str(self.node.package.backgroundImg.basename()))
-                html += u"); "
+                html += "); "
 
                 if self.node.package.backgroundImgTile:
                     html += "background-repeat: repeat-x;"
                 else:
                     html += "background-repeat: no-repeat;"
 
-                html += u"\""
-            html += u">"
+                html += "\""
+            html += ">"
             html += '<div id="headerContent">'
             html += escape(self.node.package.title)
             html += '</div>'
-            html += u"</"+headerTag+">"+lb
+            html += "</"+headerTag+">"+lb
         else:
             html += "<"+sectionTag+" id=\"emptyHeader\"></"+sectionTag+">"+lb
 
         # add left navigation html
-        html += u"<"+navTag+" id=\"siteNav\">"+lb
+        html += "<"+navTag+" id=\"siteNav\">"+lb
         html += self.leftNavigationBar(pages)
-        html += u"</"+navTag+">"+lb
+        html += "</"+navTag+">"+lb
         html += "<div id='topPagination'>"+lb
         html += self.getNavigationLink(prevPage, nextPage, pages)
         html += "</div>"+lb
-        html += u"<div id=\"main-wrapper\">"+lb
-        html += u"<"+sectionTag+" id=\"main\">"
+        html += "<div id=\"main-wrapper\">"+lb
+        html += "<"+sectionTag+" id=\"main\">"
         if dT != "HTML5":
             html += "<a name=\"main\"></a>"
         html += lb
@@ -216,9 +216,9 @@ class WebsitePage(Page):
                     _iconNameToClass = re.sub('[^A-Za-z0-9_-]+', '', idevice.icon) # Allowed CSS classNames only
                     if _iconNameToClass!="":        
                         e += ' em_iDevice_'+_iconNameToClass
-                if unicode(idevice.emphasis)=='0':
+                if str(idevice.emphasis)=='0':
                     e=""
-                html += u'<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' %  (idevice.klass, e, idevice.id, lb)
+                html += '<'+articleTag+' class="iDevice_wrapper %s%s" id="id%s">%s' %  (idevice.klass, e, idevice.id, lb)
                 block = g_blockFactory.createBlock(None, idevice)
                 if not block:
                     log.critical("Unable to render iDevice.")
@@ -228,7 +228,7 @@ class WebsitePage(Page):
                 if idevice.title != "Forum Discussion":
                     html += self.processInternalLinks(self.node.package,
                         block.renderView(self.node.package.style))
-                html += u'</'+articleTag+'>'+lb # iDevice div
+                html += '</'+articleTag+'>'+lb # iDevice div
 
         if not themeHasXML:
             html += "<div id='bottomPagination'>"+lb
@@ -239,20 +239,20 @@ class WebsitePage(Page):
         if not themeHasXML:
         #if not style.hasValidConfig():
             html += self.renderFooter()
-        html += u"</"+sectionTag+">"+lb # /main
-        html += u"</div>"+lb # /main-wrapper
+        html += "</"+sectionTag+">"+lb # /main
+        html += "</div>"+lb # /main-wrapper
         if themeHasXML:
         #if style.hasValidConfig():
             html += "<div id='bottomPagination'>"+lb
             html += self.getNavigationLink(prevPage, nextPage, pages)
             html += "</div>"+lb
             html += self.renderFooter()
-        html += u"</div>"+lb # /content
+        html += "</div>"+lb # /content
         html += common.renderExeLink(self.node.package)
         if themeHasXML:
         #if style.hasValidConfig():
             html += style.get_extra_body()
-        html += u'</body></html>'
+        html += '</body></html>'
         html = html.encode('utf8')
         # JR: Eliminamos los atributos de las ecuaciones
         aux = re.compile("exe_math_latex=\"[^\"]*\"")

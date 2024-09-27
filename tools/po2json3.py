@@ -188,7 +188,7 @@ def compile_dir(dir, domain, out_dir, variable_name=None, use_fuzzy=None,
             out_path = os.path.join(out_dir, locale + '.js')
             jobs.append((locale, po_path, out_path))
     for locale, po_path, out_path in jobs:
-        print('    Creating {0}'.format(out_path))
+        print(('    Creating {0}'.format(out_path)))
         s = po2json(
             po_path, locale, variable_name=variable_name, use_fuzzy=use_fuzzy)
         with codecs.open(out_path, 'w', encoding=encoding) as writer:

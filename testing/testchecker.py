@@ -19,7 +19,7 @@
 # ===========================================================================
 import unittest
 import logging
-import __builtin__
+import builtins
 from exe.engine.packagestore import PackageStore
 from exe.engine.checker import Checker
 from exe.engine.freetextidevice import FreeTextIdevice
@@ -27,7 +27,7 @@ from exe.engine.resource import Resource
 from exe.engine.path import Path
 from utils import SuperTestCase
 
-__builtin__._ = lambda t: t
+builtins._ = lambda t: t
 
 #Logging - was talking rather a lot and this test should be able to run
 #independently - Mike Dawson 8/Feb/14

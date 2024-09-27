@@ -43,7 +43,7 @@ class Idevice(Persistable):
     # Class attributes
     # see derieved classes for persistenceVersion 
     nextId = 1
-    NoEmphasis, SomeEmphasis, StrongEmphasis = range(3)
+    NoEmphasis, SomeEmphasis, StrongEmphasis = list(range(3))
 
     def __init__(self, title, author, purpose, tip, icon, parentNode = None):
         """Initialize a new iDevice, setting a unique id"""
@@ -52,7 +52,7 @@ class Idevice(Persistable):
         self.edit        = True
         self.lastIdevice = True
         self.emphasis    = Idevice.NoEmphasis
-        self.id          = unicode(Idevice.nextId)
+        self.id          = str(Idevice.nextId)
         Idevice.nextId  += 1
         self.version      = 0
         self.parentNode   = parentNode
@@ -83,7 +83,7 @@ class Idevice(Persistable):
             title = title.replace('"', '&quot;')
             return title
         else:
-            return u''
+            return ''
 
 
     def set_title(self, value):
@@ -118,7 +118,7 @@ class Idevice(Persistable):
                     customIdeviceClass += ' noIcon'
                 return customIdeviceClass
             else:
-                return self.class_ + u'Idevice'
+                return self.class_ + 'Idevice'
         else:
             klass = str(self.__class__).split('.')[-1]
             return klass[:-2]
@@ -142,10 +142,10 @@ class Idevice(Persistable):
         for resource in self.userResources:
             miniMe.userResources.append(deepcopy(resource, others))
         # Copy the rest of our attributes
-        for key, val in self.__dict__.items():
+        for key, val in list(self.__dict__.items()):
             if key != 'userResources':
                 setattr(miniMe, key, deepcopy(val, others))
-        miniMe.id = unicode(Idevice.nextId)
+        miniMe.id = str(Idevice.nextId)
         Idevice.nextId += 1
         return miniMe
 

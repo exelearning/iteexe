@@ -41,12 +41,12 @@ class TestForumsCache(unittest.TestCase):
         self.forumsCache.addForum(forum3)
         self.forumsCache.addForum(forum1)
         forums = self.forumsCache.forums
-        self.assertEquals(len(forums), 3)
+        self.assertEqual(len(forums), 3)
         for forum in forums:
             if forum.forumName == "My first forum":
-                self.assertEquals(forum.refCount, 2)
+                self.assertEqual(forum.refCount, 2)
             if forum.forumName == "My second forum":
-                self.assertEquals(forum.refCount, 1)
+                self.assertEqual(forum.refCount, 1)
                 
             
         
@@ -70,9 +70,9 @@ class TestForumsCache(unittest.TestCase):
         self.forumsCache.addForum(forum4)
         self.forumsCache.addForum(forum1)
         forums = self.forumsCache.getForums()
-        self.assertEquals(len(forums), 4)
+        self.assertEqual(len(forums), 4)
         forums = forum1.forumsCache.getForums()
-        self.assertEquals(len(forums), 4)
+        self.assertEqual(len(forums), 4)
         
 
     def testDeleteForum(self):
@@ -99,18 +99,18 @@ class TestForumsCache(unittest.TestCase):
             if forum.forumName == "My first forum":
                 self.forumsCache.deleteForum(forum)
                 break                
-        self.assertEquals(len(forums), 3)
+        self.assertEqual(len(forums), 3)
         
         for forum in forums:
             if forum.forumName == "My first forum":
-                self.assertEquals(forum.refCount, 1)
+                self.assertEqual(forum.refCount, 1)
                 break
             
         for forum in forums:
             if forum.forumName == "My third forum":
                 self.forumsCache.deleteForum(forum)
                 break        
-        self.assertEquals(len(forums), 2)
+        self.assertEqual(len(forums), 2)
 
         
         

@@ -9,7 +9,7 @@ Test cases for failure module.
 """
 
 import sys
-import StringIO
+import io
 
 from twisted.trial import unittest, util
 
@@ -30,8 +30,8 @@ class FailureTestCase(unittest.TestCase):
         except:
             f = failure.Failure()
         error = f.trap(SystemExit, RuntimeError)
-        self.assertEquals(error, RuntimeError)
-        self.assertEquals(f.type, NotImplementedError)
+        self.assertEqual(error, RuntimeError)
+        self.assertEqual(f.type, NotImplementedError)
     
     def test_notTrapped(self):
         """Making sure trap doesn't trap what it shouldn't."""
@@ -42,7 +42,7 @@ class FailureTestCase(unittest.TestCase):
         self.assertRaises(failure.Failure,f.trap,OverflowError)
 
     def testPrinting(self):
-        out = StringIO.StringIO()
+        out = io.StringIO()
         try:
             1/0
         except:
@@ -55,7 +55,7 @@ class FailureTestCase(unittest.TestCase):
         e = RuntimeError()
         f = failure.Failure(e)
         f.trap(RuntimeError)
-        self.assertEquals(f.value, e)
+        self.assertEqual(f.value, e)
 
 
     def _getDivisionFailure(self):
@@ -78,13 +78,13 @@ class FailureTestCase(unittest.TestCase):
     def testRaiseExceptionWithTB(self):
         f = self._getDivisionFailure()
         innerline = self._getInnermostFrameLine(f)
-        self.assertEquals(innerline, '1/0')
+        self.assertEqual(innerline, '1/0')
 
     def testLackOfTB(self):
         f = self._getDivisionFailure()
         f.cleanFailure()
         innerline = self._getInnermostFrameLine(f)
-        self.assertEquals(innerline, '1/0')
+        self.assertEqual(innerline, '1/0')
 
     testLackOfTB.todo = "the traceback is not preserved, exarkun said he'll try to fix this! god knows how"
 
@@ -101,7 +101,7 @@ class FailureTestCase(unittest.TestCase):
         try:
             f.raiseException()
         except:
-            self.assertEquals(sys.exc_info()[0], "bugger off")
+            self.assertEqual(sys.exc_info()[0], "bugger off")
         else:
             raise AssertionError("Should have raised")
 
@@ -111,7 +111,7 @@ class FailureTestCase(unittest.TestCase):
             str(x)
         except:
             f = failure.Failure()
-        self.assertEquals(f.value, x)
+        self.assertEqual(f.value, x)
         try:
             f.getTraceback()
         except:

@@ -119,7 +119,7 @@ class ConfigParser(object):
         """Reads in a config file. 'file_' can be a file object
         or a string"""
         self._originalFile = file_
-        if isinstance(file_, basestring):
+        if isinstance(file_, str):
             file_ = open(file_)
         # Apparently in files encoded with utf8, readlines works fine because \n
         # is still the new line character in utf8.
@@ -132,8 +132,8 @@ class ConfigParser(object):
             lines[0] = lines[0][3:]
         # Store each line as a unicode string internally
         for i, line in enumerate(lines):
-            if not isinstance(line, unicode):
-                lines[i] = unicode(line, 'utf8')
+            if not isinstance(line, str):
+                lines[i] = str(line, 'utf8')
         # Init state
         self._sections = {}
         # Parse each line
@@ -167,7 +167,7 @@ class ConfigParser(object):
             # Store the file for later writes
             self._originalFile = file_
         # If 'file_' is a string, it's a file_ name
-        if isinstance(file_, basestring):
+        if isinstance(file_, str):
             if os.path.exists(file_):
                 file_ = open(file_, 'r+')
             else:
@@ -213,7 +213,7 @@ class ConfigParser(object):
         linesToAdd = {}
         lastSectionLines = []
         linesToAdd[len(lines)] = lastSectionLines
-        existingSections = sectionOffsets.keys()
+        existingSections = list(sectionOffsets.keys())
         for section in self._sections:
             if section not in existingSections:
                 # Just append the section on the end
@@ -223,14 +223,14 @@ class ConfigParser(object):
                 linesToInsert.append('[%s]' % section)
                 newOpts = [(name, val)
                            for name, (val) 
-                           in self._sections[section].items()]
+                           in list(self._sections[section].items())]
             else:
                 # Get a list of the "not already updated" options
                 offsets = sectionOffsets[section][1]
-                existingOptions = offsets.keys()
+                existingOptions = list(offsets.keys())
                 newOpts = [(name, val) 
                            for name, val 
-                           in self._sections[section].items() 
+                           in list(self._sections[section].items()) 
                            if name not in existingOptions]
                 # Append new options on the end of the section,
                 # in the order they were added to 'self'
@@ -271,12 +271,12 @@ class ConfigParser(object):
     def has_option(self, sectionName, optionName):
         """Returns 1 if we know about this setting"""
         if self.has_section(sectionName):
-            return optionName in self._sections[sectionName].keys()
+            return optionName in list(self._sections[sectionName].keys())
         else: return 0
 
     def has_section(self, sectionName):
         """Returns 1 if this section has been defined"""
-        return sectionName in self._sections.keys()
+        return sectionName in list(self._sections.keys())
 
     def get(self, sectionName, optionName, default=UseDefault):
         """Returns the option or 'default' if it doesn't exist"""
@@ -296,11 +296,11 @@ class ConfigParser(object):
         """Set's an option in a section to value,
         can be used for new options, new sections and pre-existing ones"""
         sec = Section(sectionName, self) # This creates or gets a section
-        if not isinstance(value, unicode):
+        if not isinstance(value, str):
             # Convert ints and floats to str before encoding to unicode
             if not isinstance(value, str):
                 value = str(value)
-            value = unicode(value, 'utf8')
+            value = str(value, 'utf8')
         if sec.get(optionName, None) != value:
             sec[optionName] = value
             if self.autoWrite and self._originalFile is not None:
@@ -332,7 +332,7 @@ class ConfigParser(object):
     def delete(self, sectionName, optionName=None):
         """Remove a section or optionName. Set optionName to None
         to remove the whole section"""
-        if self._sections.has_key(sectionName):
+        if sectionName in self._sections:
             if optionName is None:
                 del self._sections[sectionName]
                 delattr(self, sectionName)
@@ -340,7 +340,7 @@ class ConfigParser(object):
                     self.write()
             else:
                 sec = self._sections[sectionName]
-                if sec.has_key(optionName):
+                if optionName in sec:
                     del sec[optionName]
                     if self.autoWrite:
                         self.write()

@@ -51,9 +51,9 @@ class TestNode(unittest.TestCase):
 
     def testCreate(self):
         self.assertEqual(n1.id, '1')
-        self.assert_(n1.parent is n0)
-        self.assert_(n0.children[0] is n1)
-        self.assert_(package.findNode('1') is n1)
+        self.assertTrue(n1.parent is n0)
+        self.assertTrue(n0.children[0] is n1)
+        self.assertTrue(package.findNode('1') is n1)
 
     def testMove(self):
         # Test Moving nodes up down left and right etc.
@@ -61,11 +61,11 @@ class TestNode(unittest.TestCase):
         assert n4.parent is n0
         assert n0.children[0] is n4
         assert n0.children[1] is n1
-        assert unicode(n4.title) == 'Topic', unicode(n4.title)
+        assert str(n4.title) == 'Topic', str(n4.title)
         # Send it down a layer at the end
         n4.move(n1, None) # At the end of the list
         assert n4.parent is n1
-        assert unicode(n4.title) == 'Section'
+        assert str(n4.title) == 'Section'
         assert n4 not in n0.children
         assert n1.children[-1] is n4
         assert n1.children[-2] is n8
@@ -76,7 +76,7 @@ class TestNode(unittest.TestCase):
         assert n2.children[1] is n5, [n.id for n in n2.children]
         assert n2.children[2] is n4, [n.id for n in n2.children]
         assert n2.children[3] is n6, [n.id for n in n2.children]
-        assert unicode(n4.title) == 'Unit'
+        assert str(n4.title) == 'Unit'
         # Just move it up one (vertically, not in the tree)
         n4.move(n2, n5)
         assert n2.children == [n3,n4,n5,n6]
@@ -85,7 +85,7 @@ class TestNode(unittest.TestCase):
         assert n4.parent is n3
         assert n4 not in n2.children
         assert n3.children == [n4]
-        assert unicode(n4.title) == '?????'
+        assert str(n4.title) == '?????'
 
     def testTitle(self):
         """Tests that we can set the title. 
@@ -94,9 +94,9 @@ class TestNode(unittest.TestCase):
         """
         # Change its title
         n4.title = 'n4'
-        assert unicode(n4.title) == 'n4'
+        assert str(n4.title) == 'n4'
         n4.move(n1, None)
-        assert unicode(n4.title) == 'n4'
+        assert str(n4.title) == 'n4'
         n4.move(n3, None)
         # Go back to auto title mode
         n4.title = ''

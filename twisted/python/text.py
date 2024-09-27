@@ -22,9 +22,9 @@ def stringyString(object, indentation=''):
     braces = ''
     sl = []
 
-    if type(object) is types.DictType:
+    if type(object) is dict:
         braces = '{}'
-        for key, value in object.items():
+        for key, value in list(object.items()):
             value = stringyString(value, indentation + '   ')
             if isMultiline(value):
                 if endsInNewline(value):
@@ -35,8 +35,8 @@ def stringyString(object, indentation=''):
                 sl.append("%s %s: %s" % (indentation, key,
                                          value[len(indentation) + 3:]))
 
-    elif type(object) in (types.TupleType, types.ListType):
-        if type(object) is types.TupleType:
+    elif type(object) in (tuple, list):
+        if type(object) is tuple:
             braces = '()'
         else:
             braces = '[]'
@@ -45,8 +45,8 @@ def stringyString(object, indentation=''):
             element = stringyString(element, indentation + ' ')
             sl.append(string.rstrip(element) + ',')
     else:
-        sl[:] = map(lambda s, i=indentation: i+s,
-                    string.split(str(object),'\n'))
+        sl[:] = list(map(lambda s, i=indentation: i+s,
+                    string.split(str(object),'\n')))
 
     if not sl:
         sl.append(indentation)
@@ -87,7 +87,7 @@ def docstringLStrip(docstring):
     lines = string.split(docstring,'\n')
 
     leading = 0
-    for l in xrange(1,len(lines)):
+    for l in range(1,len(lines)):
         line = lines[l]
         if string.strip(line):
             while 1:
@@ -99,7 +99,7 @@ def docstringLStrip(docstring):
             break
 
     outlines = lines[0:1]
-    for l in xrange(1,len(lines)):
+    for l in range(1,len(lines)):
         outlines.append(lines[l][leading:])
 
     return string.join(outlines, '\n')

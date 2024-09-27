@@ -1,15 +1,15 @@
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 from twisted.python import failure, log
 from twisted.python.components import registerAdapter
 from twisted.internet import defer
 
 from twisted.pb import remoteinterface, copyable, slicer, schema, tokens
-from tokens import BananaError, Violation, ISlicer
+from .tokens import BananaError, Violation, ISlicer
 
 
 class PendingRequest(object):
@@ -67,7 +67,7 @@ class CallSlicer(slicer.ScopedSlicer):
         yield self.reqID
         yield self.clid
         yield self.methodname
-        keys = self.args.keys()
+        keys = list(self.args.keys())
         keys.sort()
         for argname in keys:
             yield argname
@@ -220,7 +220,7 @@ class CallUnslicer(slicer.ScopedUnslicer):
                 assert not isinstance(token, defer.Deferred)
                 assert ready_deferred is None
                 argname = token
-                if self.args.has_key(argname):
+                if argname in self.args:
                     raise BananaError("duplicate argument '%s'" % argname)
                 ms = self.methodSchema
                 if ms:
@@ -325,7 +325,7 @@ class AnswerUnslicer(slicer.ScopedUnslicer):
             if self.resultConstraint:
                 try:
                     self.resultConstraint.checkToken(typebyte, size)
-                except Violation, v:
+                except Violation as v:
                     # improve the error message
                     if v.args:
                         # this += gives me a TypeError "object doesn't
@@ -453,7 +453,7 @@ class FailureSlicer(slicer.BaseSlicer):
         yield 'copyable'
         yield self.classname
         state = self.getStateToCopy(self.obj, banana)
-        for k,v in state.iteritems():
+        for k,v in state.items():
             yield k
             yield v
     def describe(self):
@@ -475,7 +475,7 @@ class FailureSlicer(slicer.BaseSlicer):
             state['value'] = str(obj.value) # Exception instance
         state['type'] = str(obj.type) # Exception class
         if broker.unsafeTracebacks:
-            io = StringIO.StringIO()
+            io = io.StringIO()
             obj.printTraceback(io)
             state['traceback'] = io.getvalue()
             # TODO: provide something with globals and locals and HTML and

@@ -73,7 +73,7 @@ class TwistedSocketNotifier(QSocketNotifier):
         try:
             why = w.doWrite()
         except:
-            why = sys.exc_value
+            why = sys.exc_info()[1]
             log.msg('Error in %s.doWrite()' % w)
             log.deferr()
         if why:

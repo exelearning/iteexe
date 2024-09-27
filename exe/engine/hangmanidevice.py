@@ -48,17 +48,17 @@ class HangmanIdeviceInc(Idevice):
     persistenceVersion = 3
     
     def __init__(self, content=""):
-        Idevice.__init__(self, x_(u"Hangman Game"), 
-                         x_(u"Mike Dawson, Toughra Technologies FZ LLC"), 
-                         x_(u"""Hangman style word game with customizable images."""), "", "")
+        Idevice.__init__(self, x_("Hangman Game"), 
+                         x_("Mike Dawson, Toughra Technologies FZ LLC"), 
+                         x_("""Hangman style word game with customizable images."""), "", "")
         self.emphasis = Idevice.SomeEmphasis
         self.message = ""
         
         self.titleField = TextField(x_("Title"), x_("Title"))
 
         self.chanceImageFields = []
-        self.content  = TextAreaField(x_(u"Instructions"), 
-                                      x_(u"Instructions for Game."), 
+        self.content  = TextAreaField(x_("Instructions"), 
+                                      x_("Instructions for Game."), 
                                       content)
         self.content.idevice = self
 
@@ -73,7 +73,7 @@ class HangmanIdeviceInc(Idevice):
         self.addWord()
 
         #the alphabet (available letters)
-        self.alphabet = TextField(x_(u"Alphabet to Select From"), x_(u"Alphabet to show players"), \
+        self.alphabet = TextField(x_("Alphabet to Select From"), x_("Alphabet to show players"), \
                                   x_("abcdefghijklmnopqrstuvwxyz"))
         self.alphabet.idevice = self
 
@@ -105,17 +105,17 @@ class HangmanIdeviceInc(Idevice):
         self.resetButtonStyle.idevice = self
 
     def _initNewAlerts(self):
-        self.wrongGuessMessageField = TextAreaField(x_(u"Wrong Guess Message"), \
-                x_(u"Player will see this message when they guess a letter wrong"), "")
+        self.wrongGuessMessageField = TextAreaField(x_("Wrong Guess Message"), \
+                x_("Player will see this message when they guess a letter wrong"), "")
         self.wrongGuessMessageField.idevice = self
-        self.lostLevelMessageField = TextAreaField(x_(u"Lost Level Message"), \
-                x_(u"Player will see this message when they loose the level"), "")
+        self.lostLevelMessageField = TextAreaField(x_("Lost Level Message"), \
+                x_("Player will see this message when they loose the level"), "")
         self.lostLevelMessageField.idevice = self
-        self.levelPasssedMessageField = TextAreaField(x_(u"Level Passed Message"), \
-                x_(u"Player will see this message when they guess the word correctly"), "")
+        self.levelPasssedMessageField = TextAreaField(x_("Level Passed Message"), \
+                x_("Player will see this message when they guess the word correctly"), "")
         self.levelPasssedMessageField.idevice = self
-        self.gameWonMessageField = TextAreaField(x_(u"Game Won Message"), \
-                x_(u"Player will see this message when they guess all words correctly"), "")
+        self.gameWonMessageField = TextAreaField(x_("Game Won Message"), \
+                x_("Player will see this message when they guess all words correctly"), "")
         self.gameWonMessageField.idevice = self
 
 
@@ -139,15 +139,15 @@ class HangmanIdeviceInc(Idevice):
 
     #Adds a chance and image for the player
     def addChance(self):
-        newLevelImageField = ImageField(x_(u"chance"), u"")
+        newLevelImageField = ImageField(x_("chance"), "")
         newLevelImageField.idevice = self
         self.chanceImageFields.append(newLevelImageField)
 
     #adds a word to the list of those to guess
     def addWord(self):
-        newWordTextField = TextField(x_(u"Word to Guess"), x_(u"Word To Guess"), "")
+        newWordTextField = TextField(x_("Word to Guess"), x_("Word To Guess"), "")
         newWordTextField.idevice = self
-        newWordHintField = TextField(x_(u"Hint to Show User"), x_(u"Hint for Word"), "")
+        newWordHintField = TextField(x_("Hint to Show User"), x_("Hint for Word"), "")
         newWordHintField.idevice = self
         self.wordTextFields.append(newWordTextField)
         self.hintTextFields.append(newWordHintField)
@@ -155,20 +155,20 @@ class HangmanIdeviceInc(Idevice):
     #some nasty hard coded backward compatibility to archive files
     #used for Afghan literacy project.  Will not effect anyone else    
     def upgradeToVersion2(self):
-        self.lostLevelMessageField = TextAreaField(x_(u"Lost Level Message"), \
+        self.lostLevelMessageField = TextAreaField(x_("Lost Level Message"), \
                 x_("Player will see this message when they loose the level"), "<img src='smallcross.png'/>")
         self.lostLevelMessageField.idevice = self
         
-        self.levelPasssedMessageField = TextAreaField(x_(u"Level Passed Message"), \
-                x_(u"Player will see this message when they guess the word correctly"), "<img src='smallcheck.png'/>")
+        self.levelPasssedMessageField = TextAreaField(x_("Level Passed Message"), \
+                x_("Player will see this message when they guess the word correctly"), "<img src='smallcheck.png'/>")
         self.levelPasssedMessageField.idevice = self
         
-        self.gameWonMessageField = TextAreaField(x_(u"Game Won Message"), \
-            x_(u"Player will see this message when they guess all words correctly"), "<img src='smallcheck.png'/>")
+        self.gameWonMessageField = TextAreaField(x_("Game Won Message"), \
+            x_("Player will see this message when they guess all words correctly"), "<img src='smallcheck.png'/>")
         self.gameWonMessageField.idevice = self
         
-        self.wrongGuessMessageField = TextAreaField(x_(u"Wrong Guess Message"), \
-                x_(u"Player will see this message when they guess a letter wrong"),  "<img src='smallcross.png'/>")
+        self.wrongGuessMessageField = TextAreaField(x_("Wrong Guess Message"), \
+                x_("Player will see this message when they guess a letter wrong"),  "<img src='smallcross.png'/>")
         self.wrongGuessMessageField.idevice = self
 
     def upgradeToVersion3(self):

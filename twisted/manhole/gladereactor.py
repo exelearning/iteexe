@@ -28,32 +28,32 @@ class GladeReactor(sup):
     """
 
     def listenTCP(self, port, factory, backlog=50, interface=''):
-        from _inspectro import LoggingFactory
+        from ._inspectro import LoggingFactory
         factory = LoggingFactory(factory)
         return sup.listenTCP(self, port, factory, backlog, interface)
     
     def connectTCP(self, host, port, factory, timeout=30, bindAddress=None):
-        from _inspectro import LoggingFactory
+        from ._inspectro import LoggingFactory
         factory = LoggingFactory(factory)
         return sup.connectTCP(self, host, port, factory, timeout, bindAddress)
 
     def listenSSL(self, port, factory, contextFactory, backlog=50, interface=''):
-        from _inspectro import LoggingFactory
+        from ._inspectro import LoggingFactory
         factory = LoggingFactory(factory)
         return sup.listenSSL(self, port, factory, contextFactory, backlog, interface)
 
     def connectSSL(self, host, port, factory, contextFactory, timeout=30, bindAddress=None):
-        from _inspectro import LoggingFactory
+        from ._inspectro import LoggingFactory
         factory = LoggingFactory(factory)
         return sup.connectSSL(self, host, port, factory, contextFactory, timeout, bindAddress)
 
     def connectUNIX(self, address, factory, timeout=30):
-        from _inspectro import LoggingFactory
+        from ._inspectro import LoggingFactory
         factory = LoggingFactory(factory)
         return sup.connectUNIX(self, address, factory, timeout)
 
-    def listenUNIX(self, address, factory, backlog=50, mode=0666):
-        from _inspectro import LoggingFactory
+    def listenUNIX(self, address, factory, backlog=50, mode=0o666):
+        from ._inspectro import LoggingFactory
         factory = LoggingFactory(factory)
         return sup.listenUNIX(self, address, factory, backlog, mode)
 
@@ -64,14 +64,14 @@ class GladeReactor(sup):
     def on_viewlog_clicked(self, w):
         store, iter = self.servers.get_selection().get_selected()
         data = store[iter][1]
-        from _inspectro import LogViewer
+        from ._inspectro import LogViewer
         if hasattr(data, "protocol") and not data.protocol.logViewer:
             LogViewer(data.protocol)
     
     def on_inspect_clicked(self, w):
         store, iter = self.servers.get_selection().get_selected()
         data = store[iter]
-        from _inspectro import Inspectro
+        from ._inspectro import Inspectro
         Inspectro(data[1])
 
     def on_suspend_clicked(self, w):
@@ -117,7 +117,7 @@ class GladeReactor(sup):
         self.xml = gtk.glade.XML(util.sibpath(__file__,"gladereactor.glade"))
         d = {}
         for m in reflect.prefixedMethods(self, "on_"):
-            d[m.im_func.__name__] = m
+            d[m.__func__.__name__] = m
         self.xml.signal_autoconnect(d)
         self.xml.get_widget('window1').connect('destroy',
                                                lambda w: self.stop())

@@ -64,33 +64,33 @@ class EditorPane(object):
         self.message          = ""
         self.parent           = parent
         self._nameInstruc     = \
-           x_(u"Your new iDevice will appear in the iDevice "
-              u"pane with this title. This is a compulsory field "
-              u"and you will be prompted to enter a label if you try "
-              u"to submit your iDevice without one.")
-        self._authorInstruc   = x_(u"This is an optional field.")
-        self._purposeInstruc  = x_(u"The purpose dialogue allows you to describe"
-                                 u" your intended purpose of the iDevice to other"
-                                 u" potential users.")
-        self._emphasisInstruc = x_(u"Use this pulldown to select whether or not "
-                                 u" the iDevice should have any formatting "
-                                 u" applied to it to distinguish "
-                                 u"it; ie. a border and an icon.")
-        self._tipInstruc      = x_(u"Use this field to describe "
-                                 u"your intended use and the pedagogy behind "
-                                 u"the device's development. This can be useful "
-                                 u"if your iDevice is to be exported for others "
-                                 u"to use.")
-        self._lineInstruc     = x_(u"Add a single text line to an iDevice. "
-                                 u"Useful if you want the ability to place a "
-                                 u"label within the iDevice.")
-        self._textBoxInstruc  = x_(u"Add a text entry box to an iDevice. "
-                                 u"Used for entering larger amounts of textual "
-                                 u"content.")
-        self._feedbackInstruc = x_(u"Add an interactive feedback field to your iDevice.")
-        self._flashInstruc    = x_(u"Add a flash video to your iDevice.")
-        self._mp3Instruc      = x_(u"Add an mp3 file to your iDevice.")
-        self._attachInstruc   = x_(u"Add an attachment file to your iDevice.")
+           x_("Your new iDevice will appear in the iDevice "
+              "pane with this title. This is a compulsory field "
+              "and you will be prompted to enter a label if you try "
+              "to submit your iDevice without one.")
+        self._authorInstruc   = x_("This is an optional field.")
+        self._purposeInstruc  = x_("The purpose dialogue allows you to describe"
+                                 " your intended purpose of the iDevice to other"
+                                 " potential users.")
+        self._emphasisInstruc = x_("Use this pulldown to select whether or not "
+                                 " the iDevice should have any formatting "
+                                 " applied to it to distinguish "
+                                 "it; ie. a border and an icon.")
+        self._tipInstruc      = x_("Use this field to describe "
+                                 "your intended use and the pedagogy behind "
+                                 "the device's development. This can be useful "
+                                 "if your iDevice is to be exported for others "
+                                 "to use.")
+        self._lineInstruc     = x_("Add a single text line to an iDevice. "
+                                 "Useful if you want the ability to place a "
+                                 "label within the iDevice.")
+        self._textBoxInstruc  = x_("Add a text entry box to an iDevice. "
+                                 "Used for entering larger amounts of textual "
+                                 "content.")
+        self._feedbackInstruc = x_("Add an interactive feedback field to your iDevice.")
+        self._flashInstruc    = x_("Add a flash video to your iDevice.")
+        self._mp3Instruc      = x_("Add an mp3 file to your iDevice.")
+        self._attachInstruc   = x_("Add an attachment file to your iDevice.")
 
         self.style            = self.styles[0]
    
@@ -129,11 +129,11 @@ class EditorPane(object):
                 element.process(request)
                            
             if "title" in request.args:
-                self.idevice.title = unicode(request.args["title"][0], 'utf8')
+                self.idevice.title = str(request.args["title"][0], 'utf8')
     
     
             if "tip" in request.args:
-                self.idevice.tip = unicode(request.args["tip"][0], 'utf8')
+                self.idevice.tip = str(request.args["tip"][0], 'utf8')
                 
             if "emphasis" in request.args:
                 self.idevice.emphasis = int(request.args["emphasis"][0])
@@ -142,23 +142,23 @@ class EditorPane(object):
         
         
         if "addText" in request.args:
-            field = TextField(_(u"Enter the label here"),
-                 _(u"Enter instructions for completion here"))
+            field = TextField(_("Enter the label here"),
+                 _("Enter instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
             self.idevice.edit = True
         
         if "addTextArea" in request.args:
-            field = TextAreaField(_(u"Enter the label here"), 
-                 _(u"Enter the instructions for completion here"))
+            field = TextAreaField(_("Enter the label here"), 
+                 _("Enter the instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
             self.idevice.edit = True
             
             
         if "addFeedback" in request.args:
-            field = FeedbackField(_(u"Enter the label here"), 
-                 _(u"""Feedback button will not appear if no 
+            field = FeedbackField(_("Enter the label here"), 
+                 _("""Feedback button will not appear if no 
 data is entered into this field."""))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
@@ -173,8 +173,8 @@ data is entered into this field."""))
             
         if "addMP3" in request.args:
 
-            field = MultimediaField(_(u"Enter the label here"), 
-                 _(u"Enter the instructions for completion here"))
+            field = MultimediaField(_("Enter the label here"), 
+                 _("Enter the instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
             if not 'xspf_player.swf' in self.idevice.systemResources:
@@ -183,8 +183,8 @@ data is entered into this field."""))
             
         if "addAttachment" in request.args:
 
-            field = AttachmentField(_(u"Enter the label here"), 
-                 _(u"Enter the instructions for completion here"))
+            field = AttachmentField(_("Enter the label here"), 
+                 _("Enter the instructions for completion here"))
             field.setIDevice(self.idevice)
             self.idevice.addField(field)
             self.idevice.edit = True
@@ -233,11 +233,11 @@ data is entered into this field."""))
 
             if elementType:
                 # Create an instance of the appropriate element class
-                log.debug(u"createElement "+elementType.__class__.__name__+
-                          u" for "+field.__class__.__name__)
+                log.debug("createElement "+elementType.__class__.__name__+
+                          " for "+field.__class__.__name__)
                 self.elements.append(elementType(field))
             else:
-                log.error(u"No element type registered for " +
+                log.error("No element type registered for " +
                           field.__class__.__name__)
         
             
@@ -338,16 +338,16 @@ data is entered into this field."""))
    
             this_package = None
             html += common.formField('richTextArea', this_package,
-                                     _(u"Pedagogical Tip"),'tip',
+                                     _("Pedagogical Tip"),'tip',
                                      '', self.tipInstruc, self.tip)
      
             html += "<b>" + _("Emphasis") + ":</b> "
             html += "<select onchange=\"submit();\" name=\"emphasis\">\n"
 
-            emphasisValues = {Idevice.NoEmphasis:     _(u"No emphasis"),
-                              Idevice.SomeEmphasis:   _(u"Some emphasis")}
-            for value, description in emphasisValues.items():
-                html += "<option value=\""+unicode(value)+"\" "
+            emphasisValues = {Idevice.NoEmphasis:     _("No emphasis"),
+                              Idevice.SomeEmphasis:   _("Some emphasis")}
+            for value, description in list(emphasisValues.items()):
+                html += "<option value=\""+str(value)+"\" "
                 if self.idevice.emphasis == value:
                     html += "selected "
                 html += ">" + description + "</option>\n"
@@ -358,9 +358,9 @@ data is entered into this field."""))
             
             if self.idevice.emphasis > 0:
                 html += self.__renderStyles() + " "
-                html += u'<a style="margin-right:.5em" href="javascript:void(0)" '
-                html += u'onclick="showMessageBox(\'iconpanel\');">'
-                html += u'%s</a>' % _('Select an icon')
+                html += '<a style="margin-right:.5em" href="javascript:void(0)" '
+                html += 'onclick="showMessageBox(\'iconpanel\');">'
+                html += '%s</a>' % _('Select an icon')
                 icon = self.idevice.icon
                 if icon != "":
                 
@@ -381,13 +381,13 @@ data is entered into this field."""))
                         html += 'src="/style/%s/icon_%s' % (self.style.get_dirname(), icon)
                         html += '%s"/><br />' % myIcon.ext
                         
-                html += u'<div style="display:none;z-index:99;">'
-                html += u'<div id="iconpaneltitle">'+_("Icons")+'</div>'
-                html += u'<div id="iconpanelcontent">'
+                html += '<div style="display:none;z-index:99;">'
+                html += '<div id="iconpaneltitle">'+_("Icons")+'</div>'
+                html += '<div id="iconpanelcontent">'
                 html += self.__renderIcons()
-                html += u'</div>'
-                html += u'</div>\n'
-                html += u'<br style="clear:both;margin-bottom:10px" />'
+                html += '</div>'
+                html += '</div>\n'
+                html += '<br style="clear:both;margin-bottom:10px" />'
             for element in self.elements:
                 html += element.renderEdit()       
         else:
@@ -483,14 +483,14 @@ data is entered into this field."""))
             
             if iconExists:
                 filename = "/style/%s/%s.%s" % (self.style.get_dirname(), iconname, iconExtension)
-                html += u'<div style="float:left; text-align:center; width:105px;\n'
-                html += u'margin-right:10px; margin-bottom:15px" > '
-                html += u'<img src="%s" \n' % filename
+                html += '<div style="float:left; text-align:center; width:105px;\n'
+                html += 'margin-right:10px; margin-bottom:15px" > '
+                html += '<img src="%s" \n' % filename
                 # html += u' alt="%s" ' % _("Submit")
                 # window[1] because we use Ext.MessageBox instead of libot_drag.js
-                html += u"style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;max-height:60px;height:auto\" onclick=\"window[1].selectStyleIcon('%s',this)\" title=\"%s.%s\">\n" % (icon, icon, iconExtension)
+                html += "style=\"border:1px solid #E8E8E8;padding:5px;cursor:pointer;max-width:60px;max-height:60px;height:auto\" onclick=\"window[1].selectStyleIcon('%s',this)\" title=\"%s.%s\">\n" % (icon, icon, iconExtension)
                 # html += u"style=\"cursor:pointer\" onclick=\"window[1].submitLink('selectIcon','%s',1)\">\n" % icon
-                html += u'<br /><span style="display:inline-block;width:100px;overflow:hidden;text-overflow:ellipsis">%s.%s</span></div>\n' % (icon, iconExtension)
+                html += '<br /><span style="display:inline-block;width:100px;overflow:hidden;text-overflow:ellipsis">%s.%s</span></div>\n' % (icon, iconExtension)
         
         html += '</div></div>'
         

@@ -176,7 +176,7 @@ class Config(object):
         # FM: New Styles Directory path
         self.stylesDir   = Path(self.configDir/'style').abspath()
         # FM: Default Style name
-        self.defaultStyle = u"INTEF"
+        self.defaultStyle = "INTEF"
         # Styles repository XML-RPC endpoint
         # self.stylesRepository = 'http://www.exelearning.es/xmlrpc.php'
         self.stylesRepository = 'http://www.exelearning.net/xmlrpc.php'
@@ -296,7 +296,7 @@ class Config(object):
         (auto write is on so we don't need to write the file at the end)
         """
         if not G.application.portable:
-            for sectionName, optionNames in self.optionNames.items():
+            for sectionName, optionNames in list(self.optionNames.items()):
                 for optionName in optionNames:
                     defaultVal = getattr(self, optionName)
                     self.configParser.setdefault(sectionName,
@@ -316,7 +316,7 @@ class Config(object):
         """ 
         # If there's an EXECONF environment variable, use it
         self.configPath = None
-        configFileOptions = map(Path, self._getConfigPathOptions())
+        configFileOptions = list(map(Path, self._getConfigPathOptions()))
         if "EXECONF" in os.environ:
             envconf = Path(os.environ["EXECONF"])
             if envconf.isfile():
@@ -397,7 +397,7 @@ class Config(object):
             system = self.configParser.system
 
             self.port           = int(system.port)
-            self.browser        = None if system.browser == u"None" else system.browser
+            self.browser        = None if system.browser == "None" else system.browser
             self.stylesRepository = system.stylesRepository
 
             if not G.application.portable:
@@ -479,7 +479,7 @@ class Config(object):
             # recentProjectsSection.items() is in the wrong order, keys are alright.
             # Sorting list by key before adding to self.recentProjects, to avoid wrong ordering
             # in Recent Projects menu list
-            recentProjectsItems = recentProjectsSection.items()
+            recentProjectsItems = list(recentProjectsSection.items())
             recentProjectsItems.sort()
             for key, path in recentProjectsItems:
                 self.recentProjects.append(path)
@@ -488,7 +488,7 @@ class Config(object):
         self.hiddeniDevices = []
         if self.configParser.has_section('idevices'):
             idevicesSection = self.configParser.idevices
-            for key, value in idevicesSection.items():
+            for key, value in list(idevicesSection.items()):
                 # emulate standard library's getboolean()
                 value = value.strip().lower()
                 if value == "0" or value == "no" or value == "false" or \
@@ -499,7 +499,7 @@ class Config(object):
         # and UN-Load from the list of "deprecated" iDevices
         if self.configParser.has_section('deprecated'):
             deprecatedSection = self.configParser.deprecated
-            for key, value in deprecatedSection.items():
+            for key, value in list(deprecatedSection.items()):
                 # emulate standard library's getboolean()
                 value = value.strip().lower()
                 if value == "1" or value == "yes" or value == "true" or \
@@ -580,7 +580,7 @@ class Config(object):
                          "CRITICAL" : logging.CRITICAL}
 
         if self.configParser.has_section('logging'):
-            for logger, level in self.configParser._sections["logging"].items():
+            for logger, level in list(self.configParser._sections["logging"].items()):
                 if logger == "root":
                     logging.getLogger().setLevel(loggingLevels[level])
                 else:
@@ -728,7 +728,7 @@ class Config(object):
         if self.locale not in self.locales:
             self.locale = 'en'
         log.debug("loading locale %s" % self.locale)
-        self.locales[self.locale].install(unicode=True)
+        self.locales[self.locale].install(str=True)
         __builtins__['c_'] = lambda s: self.locales[self.locale].ugettext(s) if s else s
 
 # ===========================================================================

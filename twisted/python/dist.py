@@ -223,7 +223,7 @@ class build_scripts_twisted(build_scripts.build_scripts):
             if not fpath.endswith(".py"):
                 try:
                     os.unlink(fpath + ".py")
-                except EnvironmentError, e:
+                except EnvironmentError as e:
                     if e.args[1]=='No such file or directory':
                         pass
                 os.rename(fpath, fpath + ".py")

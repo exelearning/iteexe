@@ -75,7 +75,7 @@ class SOAPPublisher(resource.Resource):
         else:
             if hasattr(function, "useKeywords"):
                 keywords = {}
-                for k, v in kwargs.items():
+                for k, v in list(kwargs.items()):
                     keywords[str(k)] = v
                 d = defer.maybeDeferred(function, **keywords)
             else:

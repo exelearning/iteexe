@@ -24,7 +24,7 @@ def which(name, flags=os.X_OK):
     order in which they were found.
     """
     result = []
-    exts = filter(None, os.environ.get('PATHEXT', '').split(os.pathsep))
+    exts = [_f for _f in os.environ.get('PATHEXT', '').split(os.pathsep) if _f]
     for p in os.environ['PATH'].split(os.pathsep):
         p = os.path.join(p, name)
         if os.access(p, flags):

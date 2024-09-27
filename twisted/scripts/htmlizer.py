@@ -42,8 +42,8 @@ def run():
     options = Options()
     try:
         options.parseOptions()
-    except usage.UsageError, e:
-        print str(e)
+    except usage.UsageError as e:
+        print(str(e))
         sys.exit(1)
     filename = options['filename']
     if options.get('stylesheet') is not None:

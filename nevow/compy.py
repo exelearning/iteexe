@@ -75,7 +75,7 @@ class MetaInterface(type):
                 adaptable, self, _NoImplementor, persist=persist)
         if adapter is _NoImplementor:
             if getattr(self, '__adapt__', None):
-                adapter = self.__adapt__.im_func(adaptable, default)
+                adapter = self.__adapt__.__func__(adaptable, default)
             else:
                 adapter = default
 
@@ -89,7 +89,7 @@ class MetaInterface(type):
         return adapter
 
 
-class Interface:
+class Interface(metaclass=MetaInterface):
     """Base class for interfaces.
 
     Interfaces define and document an interface for a class. An interface
@@ -123,8 +123,6 @@ class Interface:
     be adapted to the Interface in some way, the adapter will be returned.
     """
 
-    __metaclass__ = MetaInterface
-
     def adaptWith(self, using, to, registry=None):
         registry = getRegistry(registry)
         registry.registerAdapter(using, self, to)
@@ -139,7 +137,7 @@ class Flat(tuple):
 def tupleTreeToList(t, l=None):
     """Convert an instance, or tree of tuples, into list."""
     if l is None: l = []
-    if isinstance(t, types.TupleType):
+    if isinstance(t, tuple):
         for o in t:
             tupleTreeToList(o, l)
     else:
@@ -241,7 +239,7 @@ class AdapterRegistry:
             if (type(interfaceClass) is str) != isStr:
                 raise ValueError("Either all arguments must be strings or all must be objects.")
             
-            if (not ALLOW_DUPLICATES and self.adapterRegistry.has_key((origInterface, interfaceClass))):
+            if (not ALLOW_DUPLICATES and (origInterface, interfaceClass) in self.adapterRegistry):
                 raise ValueError(
                     "an adapter (%s) was already registered." % (
                         self.adapterRegistry[(origInterface, interfaceClass)]))
@@ -276,7 +274,7 @@ class AdapterRegistry:
 
         if persist != False:
             pkey = (id(obj), interfaceClass)
-            if self.adapterPersistence.has_key(pkey):
+            if pkey in self.adapterPersistence:
                 return self.adapterPersistence[pkey]
 
         if getattr(obj, '__class__', None):
@@ -383,7 +381,7 @@ class Componentized(object):
     def __init__(self, adapterCache=None):
         self._adapterCache = A = {}
         if adapterCache:
-            for k, v in adapterCache.items():
+            for k, v in list(adapterCache.items()):
                 A[qual(k)] = v
 
     def __repr__(self):
@@ -443,13 +441,13 @@ class Componentized(object):
 
         @return: a list of the interfaces that were removed.
         """
-        if (isinstance(component, types.ClassType) or
-            isinstance(component, types.TypeType)):
+        if (isinstance(component, type) or
+            isinstance(component, type)):
             warnings.warn("passing interface to removeComponent, you probably want unsetComponent", DeprecationWarning, 1)
             self.unsetComponent(component)
             return [component]
         l = []
-        for k, v in self._adapterCache.items():
+        for k, v in list(self._adapterCache.items()):
             if v is component:
                 del self._adapterCache[k]
                 l.append(namedAny(k))
@@ -473,7 +471,7 @@ class Componentized(object):
         """
         registry = getRegistry(registry)
         k = qual(interface)
-        if self._adapterCache.has_key(k):
+        if k in self._adapterCache:
             return self._adapterCache[k]
         elif implements(self, interface):
             return self
@@ -494,7 +492,7 @@ class Componentized(object):
     def upgradeToVersion1(self):
         # To let Componentized instances interact correctly with
         # rebuild(), we cannot use class objects as dictionary keys.
-        for (k, v) in self._adapterCache.items():
+        for (k, v) in list(self._adapterCache.items()):
             self._adapterCache[qual(k)] = v
 
 

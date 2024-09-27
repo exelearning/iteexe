@@ -32,7 +32,7 @@ class TestUniqueId(unittest.TestCase):
         values  = {}
         for x in range(howMany):
             id = self.generator.generate()
-            self.assert_(id.isalnum())
+            self.assertTrue(id.isalnum())
             values[id] = 1
         self.assertEqual(howMany, len(values))
         

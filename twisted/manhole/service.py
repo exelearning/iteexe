@@ -15,10 +15,10 @@ from twisted.application import service
 from zope.interface import implements
 
 # sibling imports
-import explorer
+from . import explorer
 
 # system imports
-from cStringIO import StringIO
+from io import StringIO
 
 import string
 import sys
@@ -51,7 +51,7 @@ class FakeStdIO:
         outlist = []
         last_type = inlist[0]
         block_begin = 0
-        for i in xrange(1, len(self.list)):
+        for i in range(1, len(self.list)):
             (mtype, message) = inlist[i]
             if mtype == last_type:
                 continue
@@ -59,8 +59,7 @@ class FakeStdIO:
                 if (i - block_begin) == 1:
                     outlist.append(inlist[block_begin])
                 else:
-                    messages = map(lambda l: l[1],
-                                   inlist[block_begin:i])
+                    messages = [l[1] for l in inlist[block_begin:i]]
                     message = string.join(messages, '')
                     outlist.append((last_type, message))
                 last_type = mtype
@@ -129,7 +128,7 @@ def runInConsole(command, console, globalNS=None, localNS=None,
         sys.stderr = fakeerr
         try:
             if callable(command):
-                val = apply(command, args, kw)
+                val = command(*args, **kw)
             else:
                 try:
                     code = compile(command, filename, 'eval')
@@ -202,7 +201,7 @@ class Perspective(pb.Avatar):
     def __getstate__(self):
         state = self.__dict__.copy()
         state['clients'] = {}
-        if state['localNamespace'].has_key("__builtins__"):
+        if "__builtins__" in state['localNamespace']:
             del state['localNamespace']['__builtins__']
         return state
 
@@ -250,15 +249,15 @@ class Perspective(pb.Avatar):
     def console(self, message):
         """Pass a message to my clients' console.
         """
-        clients = self.clients.keys()
+        clients = list(self.clients.keys())
         origMessage = message
         compatMessage = None
         for client in clients:
             try:
-                if not client.capabilities.has_key("Failure"):
+                if "Failure" not in client.capabilities:
                     if compatMessage is None:
                         compatMessage = origMessage[:]
-                        for i in xrange(len(message)):
+                        for i in range(len(message)):
                             if ((message[i][0] == "exception") and
                                 isinstance(message[i][1], failure.Failure)):
                                 compatMessage[i] = (
@@ -274,7 +273,7 @@ class Perspective(pb.Avatar):
     def receiveExplorer(self, objectLink):
         """Pass an Explorer on to my clients.
         """
-        clients = self.clients.keys()
+        clients = list(self.clients.keys())
         for client in clients:
             try:
                 client.callRemote('receiveExplorer', objectLink)
@@ -396,6 +395,6 @@ class Service(service.Service):
         dict = self.__dict__.copy()
         ns = dict['namespace'].copy()
         dict['namespace'] = ns
-        if ns.has_key('__builtins__'):
+        if '__builtins__' in ns:
             del ns['__builtins__']
         return dict

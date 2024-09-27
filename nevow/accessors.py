@@ -48,7 +48,7 @@ class DirectiveAccessor(compy.Adapter):
         data = context.locate(IData)
         container = IContainer(data, None, persist=False)
         if container is None:
-            raise NoAccessor, "%s does not implement IContainer, and there is no registered adapter." % data
+            raise NoAccessor("%s does not implement IContainer, and there is no registered adapter." % data)
         child = container.child(context, self.original.name)
         return child
 

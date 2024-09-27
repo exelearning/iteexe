@@ -59,10 +59,10 @@ class AttachmentBlock(Block):
         log.debug("process " + repr(request.args))
         Block.process(self, request)
 
-        if (u"action" not in request.args or
-            request.args[u"action"][0] != u"delete"):
-            if u"label" + self.id in request.args:
-                self.idevice.label = request.args[u"label" + self.id][0]
+        if ("action" not in request.args or
+            request.args["action"][0] != "delete"):
+            if "label" + self.id in request.args:
+                self.idevice.label = request.args["label" + self.id][0]
                 
             self.descriptionElement.process(request)
 
@@ -81,16 +81,16 @@ class AttachmentBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        html  = u'<div class="iDevice">\n'
-        html += u'<div class="block">\n'
+        html  = '<div class="iDevice">\n'
+        html += '<div class="block">\n'
 
-        label = _(u'Filename:')
+        label = _('Filename:')
         if self.idevice.userResources:
-            label += u': '
-            label += u'<span style="text-decoration:underline">'
+            label += ': '
+            label += '<span style="text-decoration:underline">'
             label += self.idevice.userResources[0].storageName
-            label += u'</span>\n'
-        html += u'<div>' 
+            label += '</span>\n'
+        html += '<div>' 
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
             this_package = self.idevice.parentNode.package
@@ -100,20 +100,20 @@ class AttachmentBlock(Block):
                                  'path'+self.id, '',
                                  self.idevice.filenameInstruc,
                                  size=40)
-        html += u'<input type="button" onclick="addFile(\'%s\')"' % self.id
-        html += u' value="%s" />\n' % _(u"Select a file")
-        html += u'</div><br style="clear:both;" />' 
-        html += u'</div>\n'
-        html += u'<div class="block">\n'
-        html += u'\n<b>%s</b>\n' % _(u'Label:')
+        html += '<input type="button" onclick="addFile(\'%s\')"' % self.id
+        html += ' value="%s" />\n' % _("Select a file")
+        html += '</div><br style="clear:both;" />' 
+        html += '</div>\n'
+        html += '<div class="block">\n'
+        html += '\n<b>%s</b>\n' % _('Label:')
         html += common.elementInstruc(self.idevice.labelInstruc)
-        html += u'</div>\n'
-        html += common.textInput(u'label'+self.id, self.idevice.label)
+        html += '</div>\n'
+        html += common.textInput('label'+self.id, self.idevice.label)
         html += self.descriptionElement.renderEdit()
-        html += u'<div class="block">\n'
+        html += '<div class="block">\n'
         html += self.renderEditButtons()
-        html += u'</div>\n'
-        html += u'\n</div>\n'
+        html += '</div>\n'
+        html += '\n</div>\n'
 
         return html
 
@@ -123,26 +123,26 @@ class AttachmentBlock(Block):
         Returns an XHTML string for previewing this block
         """
         log.debug("renderPreview")
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
 
         if self.idevice.userResources:
-            html += u"<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
-            html += u" onclick=\"browseURL('"
-            html += u"%s/" % (G.application.exeAppUri)
+            html += "<img src='/images/stock-attach.png'> <a style=\"cursor: pointer;\" "
+            html += " onclick=\"browseURL('"
+            html += "%s/" % (G.application.exeAppUri)
             html += self.package.name
-            html += u"/resources/"
+            html += "/resources/"
             html += self.idevice.userResources[0].storageName
-            html += u"');\" >"
+            html += "');\" >"
             html += self.idevice.label
-            html += u"</a>\n"
+            html += "</a>\n"
 
-        html += u'<div class="block">\n'
+        html += '<div class="block">\n'
         html += self.descriptionElement.renderPreview()
-        html += u"</div>\n"
+        html += "</div>\n"
         html += self.renderViewButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
 
         return html
     
@@ -152,22 +152,22 @@ class AttachmentBlock(Block):
         Returns an XHTML string for viewing this block
         """        
         log.debug("renderView")
-        html  = u"<!-- attachment iDevice -->\n"
-        html += u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<!-- attachment iDevice -->\n"
+        html += "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
 
         if self.idevice.userResources:
-            html += u"<img src='stock-attach.png'> "
-            html += u"<a href=\"#\" onclick=\"window.open('"
+            html += "<img src='stock-attach.png'> "
+            html += "<a href=\"#\" onclick=\"window.open('"
             html += self.idevice.userResources[0].storageName
-            html += u"', '_blank');\" >"
+            html += "', '_blank');\" >"
             html += self.idevice.label
-            html += u"</a> \n"
+            html += "</a> \n"
 
-        html += u'<div class="block">\n'
+        html += '<div class="block">\n'
         html += self.descriptionElement.renderView()
-        html += u"</div>"
-        html += u"</div>\n"
+        html += "</div>"
+        html += "</div>\n"
 
         return html
     

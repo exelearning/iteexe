@@ -19,7 +19,7 @@ def isSubstring(small, big):
     return small in big
 
 # negotiation phases
-PLAINTEXT, ENCRYPTED, DECIDING, BANANA, ABANDONED = range(5)
+PLAINTEXT, ENCRYPTED, DECIDING, BANANA, ABANDONED = list(range(5))
 
 class _SimpleCallQueue:
     # XXX TODO: merge epsilon.cooperator in, and make this more complete.
@@ -234,15 +234,15 @@ class Negotiation(protocol.Protocol):
         return block
 
     def sendBlock(self, block):
-        keys = block.keys()
+        keys = list(block.keys())
         keys.sort()
         for k in keys:
             self.transport.write("%s: %s\r\n" % (k.lower(), block[k]))
         self.transport.write("\r\n") # end block
 
     def debug_doTimer(self, name, timeout, call, *args):
-        if (self.options.has_key("debug_slow_%s" % name) and
-            not self.debugTimers.has_key(name)):
+        if ("debug_slow_%s" % name in self.options and
+            name not in self.debugTimers):
             log.msg("debug_doTimer(%s)" % name)
             t = reactor.callLater(timeout, self.debug_fireTimer, name)
             self.debugTimers[name] = (t, [(call, args)])
@@ -390,7 +390,7 @@ class Negotiation(protocol.Protocol):
             # there might be some leftover data for the next phase
             self.dataReceived("")
 
-        except Exception, e:
+        except Exception as e:
             why = Failure()
             if self.debugNegotiation:
                 log.msg("negotation had exception: %s" % why)
@@ -426,7 +426,7 @@ class Negotiation(protocol.Protocol):
         # cancel the other slowdown timers, since they all involve sending
         # data, and the connection is no longer available
         self.debug_cancelAllTimers()
-        for k,t in self.debugTimers.items():
+        for k,t in list(self.debugTimers.items()):
             if t:
                 t[0].cancel()
                 self.debugTimers[k] = None
@@ -592,7 +592,7 @@ class Negotiation(protocol.Protocol):
                 self.theirCertificate = them
 
         hello = self.parseLines(header)
-        if hello.has_key("error"):
+        if "error" in hello:
             raise RemoteNegotiationError(hello["error"])
         self.evaluateHello(hello)
 
@@ -724,10 +724,10 @@ class Negotiation(protocol.Protocol):
             ignoredKeys = ["my-tub-id"]
 
             us = dict([(k, self.negotiationOffer[k])
-                       for k in self.negotiationOffer.keys()
+                       for k in list(self.negotiationOffer.keys())
                        if k not in ignoredKeys])
             them = dict([(k, offer[k])
-                         for k in offer.keys()
+                         for k in list(offer.keys())
                          if k not in ignoredKeys])
 
             if them != us:
@@ -792,7 +792,7 @@ class Negotiation(protocol.Protocol):
                                    "'%s' not '1', in %s"
                                    % (version, decision))
 
-        if decision.has_key("error"):
+        if "error" in decision:
             error = decision["error"]
             raise RemoteNegotiationError("Banana negotiation failed: %s"
                                          % error)
@@ -958,7 +958,7 @@ class TubConnector:
     def shutdown(self):
         self.active = False
         self.stopConnectionTimer()
-        for c in self.pendingConnections.values():
+        for c in list(self.pendingConnections.values()):
             c.disconnect()
 
     def connectToAll(self):
@@ -1023,7 +1023,7 @@ class TubConnector:
             self.timer.cancel()
             self.timer = None
         del self.pendingConnections[factory] # this one succeeded
-        for f in self.pendingConnections.keys(): # abandon the others
+        for f in list(self.pendingConnections.keys()): # abandon the others
             # this will trigger clientConnectionFailed and/or
             # negotiationFailed calls
             f.disconnect()

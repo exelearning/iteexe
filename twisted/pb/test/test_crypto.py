@@ -57,7 +57,7 @@ class UsefulMixin:
         d.addCallback(self._tearDown_1)
         return d
     def _tearDown_1(self, res):
-        self.failIf(pb.Listeners)
+        self.assertFalse(pb.Listeners)
 
 class TestPersist(UsefulMixin, unittest.TestCase):
     num_services = 2
@@ -70,7 +70,7 @@ class TestPersist(UsefulMixin, unittest.TestCase):
         port = l1.getPortnum()
         s1.setLocation("localhost:%d" % port)
         public_url = s1.registerReference(t1, "name")
-        self.failUnless(public_url.startswith("pb:"))
+        self.assertTrue(public_url.startswith("pb:"))
         d = defer.maybeDeferred(s1.stopService)
         d.addCallback(self._testPersist_1, s1, s2, t1, public_url, port)
         return d
@@ -89,12 +89,12 @@ class TestPersist(UsefulMixin, unittest.TestCase):
         newurl = re.sub(":%d/" % port, ":%d/" % newport, public_url)
         d = s2.getReference(newurl)
         d.addCallback(lambda rr: rr.callRemote("add", a=1, b=2))
-        d.addCallback(self.failUnlessEqual, 3)
+        d.addCallback(self.assertEqual, 3)
         d.addCallback(self._testPersist_2, t1, t2)
         return d
     def _testPersist_2(self, res, t1, t2):
-        self.failUnlessEqual(t1.calls, [])
-        self.failUnlessEqual(t2.calls, [(1,2)])
+        self.assertEqual(t1.calls, [])
+        self.assertEqual(t2.calls, [(1,2)])
 
 
 class TestListeners(UsefulMixin, unittest.TestCase):
@@ -103,21 +103,21 @@ class TestListeners(UsefulMixin, unittest.TestCase):
     def testListenOn(self):
         s1 = self.services[0]
         l = s1.listenOn("0")
-        self.failUnless(isinstance(l, pb.Listener))
-        self.failUnlessEqual(len(s1.getListeners()), 1)
-        self.failUnlessEqual(len(pb.Listeners), 1)
+        self.assertTrue(isinstance(l, pb.Listener))
+        self.assertEqual(len(s1.getListeners()), 1)
+        self.assertEqual(len(pb.Listeners), 1)
         s1.stopListeningOn(l)
-        self.failUnlessEqual(len(s1.getListeners()), 0)
-        self.failUnlessEqual(len(pb.Listeners), 0)
+        self.assertEqual(len(s1.getListeners()), 0)
+        self.assertEqual(len(pb.Listeners), 0)
 
 
     def testGetPort1(self):
         s1,s2,s3 = self.services
         s1.listenOn("0")
         listeners = s1.getListeners()
-        self.failUnlessEqual(len(listeners), 1)
+        self.assertEqual(len(listeners), 1)
         portnum = listeners[0].getPortnum()
-        self.failUnless(portnum) # not 0, not None, must be *something*
+        self.assertTrue(portnum) # not 0, not None, must be *something*
 
     def testGetPort2(self):
         if not crypto:
@@ -126,18 +126,18 @@ class TestListeners(UsefulMixin, unittest.TestCase):
         s1,s2,s3 = self.services
         s1.listenOn("0")
         listeners = s1.getListeners()
-        self.failUnlessEqual(len(listeners), 1)
+        self.assertEqual(len(listeners), 1)
         portnum = listeners[0].getPortnum()
-        self.failUnless(portnum) # not 0, not None, must be *something*
+        self.assertTrue(portnum) # not 0, not None, must be *something*
         s1.listenOn("0") # listen on a second port too
         l2 = s1.getListeners()
-        self.failUnlessEqual(len(l2), 2)
-        self.failIfEqual(l2[0].getPortnum(), l2[1].getPortnum())
+        self.assertEqual(len(l2), 2)
+        self.assertNotEqual(l2[0].getPortnum(), l2[1].getPortnum())
 
         s2.listenOn(l2[0])
         l3 = s2.getListeners()
         self.failUnlessIdentical(l2[0], l3[0])
-        self.failUnlessEqual(l2[0].getPortnum(), l3[0].getPortnum())
+        self.assertEqual(l2[0].getPortnum(), l3[0].getPortnum())
 
     def testShared(self):
         if not crypto:
@@ -166,8 +166,8 @@ class TestListeners(UsefulMixin, unittest.TestCase):
     testShared.timeout = 5
     def _testShared_1(self, res):
         t1,t2 = self.targets
-        self.failUnlessEqual(t1.calls, [(1,1)])
-        self.failUnlessEqual(t2.calls, [(2,2)])
+        self.assertEqual(t1.calls, [(1,1)])
+        self.assertEqual(t2.calls, [(2,2)])
 
     def testSharedTransfer(self):
         if not crypto:
@@ -179,18 +179,18 @@ class TestListeners(UsefulMixin, unittest.TestCase):
         s1.setLocation("localhost:%d" % l1.getPortnum())
         s2.listenOn(l1)
         s2.setLocation("localhost:%d" % l1.getPortnum())
-        self.failUnless(l1.parentTub is s1)
+        self.assertTrue(l1.parentTub is s1)
         s1.stopListeningOn(l1)
-        self.failUnless(l1.parentTub is s2)
+        self.assertTrue(l1.parentTub is s2)
         s3.listenOn(l1)
-        self.failUnless(l1.parentTub is s2)
+        self.assertTrue(l1.parentTub is s2)
         d = s2.stopService()
         d.addCallback(self._testSharedTransfer_1, l1, s2, s3)
         return d
     testSharedTransfer.timeout = 5
     def _testSharedTransfer_1(self, res, l1, s2, s3):
         self.services.remove(s2)
-        self.failUnless(l1.parentTub is s3)
+        self.assertTrue(l1.parentTub is s3)
 
     def testClone(self):
         if not crypto:
@@ -202,4 +202,4 @@ class TestListeners(UsefulMixin, unittest.TestCase):
         s4 = s1.clone()
         s4.startService()
         self.services.append(s4)
-        self.failUnlessEqual(s1.getListeners(), s4.getListeners())
+        self.assertEqual(s1.getListeners(), s4.getListeners())

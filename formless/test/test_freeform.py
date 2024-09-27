@@ -285,7 +285,7 @@ class TestPostAForm(Base):
 
         D = self.postForm(ctx, theObj, "password", {"pword": ["these passwords"], "pword____2": ["don't match"], 'integer': ['Not integer']})
         def after(result):
-            self.assertEquals(theObj.matched, False)
+            self.assertEqual(theObj.matched, False)
             def later(val):
                 self.assertSubstring("Passwords do not match. Please reenter.", val)
                 self.assertSubstring('value="Not integer"', val)
@@ -344,10 +344,10 @@ class TestRenderPropertyGroup(Base):
 
             def after(result):
 
-                self.assertEquals(impl.one, 1)
-                self.assertEquals(impl.two, 2)
-                self.assertEquals(impl.buckled, False)
-                self.assertEquals(impl.buried, False)
+                self.assertEqual(impl.one, 1)
+                self.assertEqual(impl.two, 2)
+                self.assertEqual(impl.buckled, False)
+                self.assertEqual(impl.buried, False)
 
                 def evenlater(moreval):
                     self.assertSubstring("is not an integer", moreval)
@@ -355,10 +355,10 @@ class TestRenderPropertyGroup(Base):
                     #self.assertSubstring('value="Not an integer"', moreval)
                     DD = self.postForm(ctx, impl, "Inner", {'one': ['11'], 'two': ['22']})
                     def afterafter(ign):
-                        self.assertEquals(impl.one, 11)
-                        self.assertEquals(impl.two, 22)
-                        self.assertEquals(impl.buckled, True)
-                        self.assertEquals(impl.buried, True)
+                        self.assertEqual(impl.one, 11)
+                        self.assertEqual(impl.two, 22)
+                        self.assertEqual(impl.buckled, True)
+                        self.assertEqual(impl.buried, True)
                     return DD.addCallback(afterafter)
                 return self.renderForms(impl, ctx).addCallback(evenlater)
             return D.addCallback(after)
@@ -444,9 +444,9 @@ class TestCustomTyped(Base):
         ctx = self.setupContext()
         D = self.postForm(ctx, inst, 'theFunc', {'test': ['a test value']})
         def after(result):
-            self.assertEquals(typedinst.passed, True)
-            self.assertEquals(typedinst.wasBoundTo, inst)
-            self.assertEquals(inst.called, True)
+            self.assertEqual(typedinst.passed, True)
+            self.assertEqual(typedinst.wasBoundTo, inst)
+            self.assertEqual(inst.called, True)
         return D.addCallback(after)
 
 
@@ -513,8 +513,8 @@ class TestHandAndStatus(Base):
         ctx = self.setupContext()
         D = self.postForm(ctx, inst, 'foo', {})
         def after(result):
-            self.assertEquals(ctx.locate(inevow.IHand), returnResult)
-            self.assertEquals(ctx.locate(inevow.IStatusMessage), "'foo' success.")
+            self.assertEqual(ctx.locate(inevow.IHand), returnResult)
+            self.assertEqual(ctx.locate(inevow.IStatusMessage), "'foo' success.")
         return D.addCallback(after)
 
     def test_handFactory(self):
@@ -532,8 +532,8 @@ class TestHandAndStatus(Base):
             return r
         ctx = self.setupContext(setupRequest=setupRequest)
 
-        self.assertEquals(ctx.locate(inevow.IHand), returnResult)
-        self.assertEquals(ctx.locate(inevow.IStatusMessage), status)
+        self.assertEqual(ctx.locate(inevow.IHand), returnResult)
+        self.assertEqual(ctx.locate(inevow.IStatusMessage), status)
 
 
 class TestCharsetDetectionSupport(Base):
@@ -594,7 +594,7 @@ class TestUnicode(Base):
     def test_property(self):
 
         class IThing(formless.TypedInterface):
-            aString = formless.String(unicode=True)
+            aString = formless.String(str=True)
 
         class Impl(object):
             implements(IThing)
@@ -603,7 +603,7 @@ class TestUnicode(Base):
         inst = Impl()
         ctx = self.setupContext()
         D = self.postForm(ctx, inst, 'aString', {'aString':['\xc2\xa3']})
-        return D.addCallback(lambda result: self.assertEquals(inst.aString, u'\xa3'))
+        return D.addCallback(lambda result: self.assertEqual(inst.aString, '\xa3'))
 
 class TestChoice(Base):
     """Test various behaviors of submitting values to a Choice Typed.
@@ -628,7 +628,7 @@ class TestChoice(Base):
         inst = Impl()
         ctx = self.setupContext()
         D = self.postForm(ctx, inst, 'choiceyFunc', {})
-        return D.addCallback(lambda result: self.assertEquals(self.called, []))
+        return D.addCallback(lambda result: self.assertEqual(self.called, []))
 
 
 class mg(Base):
@@ -652,7 +652,7 @@ class mg(Base):
         impl = Impl()
         ctx = self.setupContext()
         def later(val):
-            self.assertEquals(val.count('fooFOOfoo'), 1)
+            self.assertEqual(val.count('fooFOOfoo'), 1)
         return self.renderForms(impl, ctx)
 
 

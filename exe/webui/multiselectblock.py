@@ -82,7 +82,7 @@ class MultiSelectBlock(Block):
         """
         html  = "<div class=\"iDevice\">\n"
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
+        html += "<br/><br/>\n"
         
 
         for element in self.questionElements:

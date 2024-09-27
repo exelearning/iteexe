@@ -22,7 +22,7 @@ Export Pages functions
 """
 
 import logging
-from urllib import quote
+from urllib.parse import quote
 from exe.webui import common
 from exe import globals as G
 
@@ -100,16 +100,16 @@ def uniquifyNames(pages):
                 # Add number at the end or replace the last char if ISO9660 compatibility
                 # is enabled and the name is 8 chars long
                 if G.application.config.cutFileName == '1' and len(page_name) == 8:
-                    page_name = page_name[:-1] + unicode(duplicates)
+                    page_name = page_name[:-1] + str(duplicates)
                 else:
-                    page_name += unicode(duplicates)
+                    page_name += str(duplicates)
             else:
                 # Replace previous number (if ISO9660 is enabled and we already
                 # filled the 8 chars, ensure we keep it in 8 chars)
                 if G.application.config.cutFileName == '1' and len(page_name) == 8:
-                    page_name = page_name[:-len(str(duplicates))] + unicode(duplicates)
+                    page_name = page_name[:-len(str(duplicates))] + str(duplicates)
                 else:
-                    page_name = page_name[:-len(str(duplicates - 1))] + unicode(duplicates)
+                    page_name = page_name[:-len(str(duplicates - 1))] + str(duplicates)
 
             duplicates += 1
 

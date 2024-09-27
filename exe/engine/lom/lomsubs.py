@@ -11,14 +11,14 @@ import dateutil.parser
 from datetime import datetime
 
 
-import lom as supermod
+from . import lom as supermod
 import inspect
 
 etree_ = None
 Verbose_import_ = False
 (   XMLParser_import_none, XMLParser_import_lxml,
     XMLParser_import_elementtree
-    ) = range(3)
+    ) = list(range(3))
 XMLParser_import_library = None
 try:
     # lxml
@@ -206,13 +206,13 @@ class lomSub(supermod.lom):
             rootObj.set_valueOf_(rootNode)
             return True
 
-        if 'valueOf_' in rootNode.keys():
-            for key, value in rootNode.iteritems():
+        if 'valueOf_' in list(rootNode.keys()):
+            for key, value in rootNode.items():
                 if key != '__numberid__':
                     getattr(rootObj, 'set_' + key)(value)
             return True
 
-        for key, value in rootNode.iteritems():
+        for key, value in rootNode.items():
             if key == '__numberid__':
                 continue
             childclass = self.getFieldClass(key, rootObj)
@@ -270,7 +270,7 @@ class lomSub(supermod.lom):
                         form[base + '_email'] = v[sep[1] + 21:sep[2]]
                         form[base + '_organization'] = v[sep[2] + 5:sep[3]]
                 else:
-                    print 'Entity VCARD structure error'
+                    print('Entity VCARD structure error')
             elif base.endswith('_duration'):
                 base2 = base[:-9]
                 v = rootObj.get_valueOf_()
@@ -283,7 +283,7 @@ class lomSub(supermod.lom):
                     form[base2 + '_minutes'] = d[0][5].rstrip('M')
                     form[base2 + '_seconds'] = d[0][6].rstrip('S')
                 else:
-                    print 'Duration structure error'
+                    print('Duration structure error')
             elif re.findall("taxonPath[0-9]+_source", base):
                 try:
                     form[base] = self.sourceMap[rootObj.get_valueOf_().encode('utf-8')] + '_%s' % rootObj.language
@@ -292,7 +292,7 @@ class lomSub(supermod.lom):
             else:
                 form[base] = rootObj.get_valueOf_()
 
-        for key, value  in vars(rootObj).iteritems():
+        for key, value  in vars(rootObj).items():
             if self.isAttrib(key):
                 base2 = base + '_' + key.rstrip('_')
                 #print key + ' -- ' + str(value)
@@ -322,10 +322,10 @@ class lomSub(supermod.lom):
         if num:
             num = num[0]
             name = field[: -len(num)]
-            if not name in self.__index__.keys():
+            if not name in list(self.__index__.keys()):
                 self.__index__[name] = {}
             if not num in self.__index__[name]:
-                self.__index__[name][num] = len(self.__index__[name].keys())
+                self.__index__[name][num] = len(list(self.__index__[name].keys()))
             ret = self.__index__[name][num]
         return ret
 
@@ -1141,7 +1141,7 @@ def parseEtree(inFilename):
 
 
 def parseString(inString):
-    from StringIO import StringIO
+    from io import StringIO
     doc = parsexml_(StringIO(inString))
     rootNode = doc.getroot()
     rootTag, rootClass = get_root_tag(rootNode)
@@ -1182,7 +1182,7 @@ Usage: python ???.py <infilename>
 """
 
 def usage():
-    print USAGE_TEXT
+    print(USAGE_TEXT)
     sys.exit(1)
 
 

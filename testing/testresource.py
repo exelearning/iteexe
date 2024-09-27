@@ -42,9 +42,9 @@ class TestResource(SuperTestCase):
         """
         myIdevice = Idevice("My Idevice", "UoA", "Testing", "Help tip", "icon", self.package.root)
         oliver = Resource(myIdevice, Path("oliver.jpg"))
-        self.assert_((self.package.resourceDir/"oliver.jpg").exists())
+        self.assertTrue((self.package.resourceDir/"oliver.jpg").exists())
         oliver.delete()
-        self.assert_(not (self.package.resourceDir/"oliver.jpg").exists())
+        self.assertTrue(not (self.package.resourceDir/"oliver.jpg").exists())
 
     def testReferenceCounting(self):
         """
@@ -61,7 +61,7 @@ class TestResource(SuperTestCase):
             res4.dirname().makedirs()
         res4.write_bytes('SOME *DIFFERENT* DATA')
         res4md5 = res4.md5
-        res1, res2, res3, res4 = map(lambda f: Resource(self.package, f), (res1, res2, res3, res4))
+        res1, res2, res3, res4 = [Resource(self.package, f) for f in (res1, res2, res3, res4)]
         assert res1.storageName == 'my.resource1.bin', res1.storageName
         assert res2.storageName == 'my.resource1.bin', res2.storageName
         assert res3.storageName == 'my.resource1.bin', res3.storageName
@@ -100,7 +100,7 @@ class TestResource(SuperTestCase):
         package = self.package.__class__.load(fn)
         assert hasattr(package, 'resources')
         assert len(package.resources) == 8, len(package.resources)
-        for checksum, resources in package.resources.items():
+        for checksum, resources in list(package.resources.items()):
             storageNames = []
             userNames = []
             for res in resources:
@@ -108,7 +108,7 @@ class TestResource(SuperTestCase):
                 userNames.append(res.userName)
             assert len(set(storageNames)) == 1, 'Two identical resources have different storage names:\n%s' % storageNames
         allResourceNames = []
-        for reses in package.resources.values():
+        for reses in list(package.resources.values()):
             allResourceNames.append(reses[0].storageName)
         filenames = [path.basename() for path in package.resourceDir.files()]
         withoutDups = set(filenames) - set(allResourceNames)

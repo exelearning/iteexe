@@ -11,7 +11,7 @@ import sys
 import stat
 import subprocess
 import time
-import __builtin__
+import builtins
 
 __all__ = ["Error", "open", "open_new", "open_new_tab", "get", "register"]
 
@@ -163,7 +163,7 @@ class GenericBrowser(BaseBrowser):
        and without remote functionality."""
 
     def __init__(self, name):
-        if isinstance(name, basestring):
+        if isinstance(name, str):
             self.name = name
             self.args = ["%s"]
         else:
@@ -569,7 +569,7 @@ if sys.platform[:3] == "win":
     register("windows-default", WindowsDefault)
 
     # Detect some common Windows browsers
-    from _winreg import OpenKey, QueryValue, QueryValueEx, EnumKey, HKEY_LOCAL_MACHINE
+    from winreg import OpenKey, QueryValue, QueryValueEx, EnumKey, HKEY_LOCAL_MACHINE
     key = None
     try:
         
@@ -701,7 +701,7 @@ if sys.platform == 'darwin':
                ''' % browser_id
 
         # Open a stream to NULL
-        null_stream = __builtin__.open(os.devnull, 'w')
+        null_stream = builtins.open(os.devnull, 'w')
         # Execute the AppleScript
         # Any output produced by the script will be send to null_stream
         is_installed = not subprocess.call("osascript -e '%s'" % script, shell=True,
@@ -760,22 +760,22 @@ def main():
     -t: open new tab""" % sys.argv[0]
     try:
         opts, args = getopt.getopt(sys.argv[1:], 'ntd')
-    except getopt.error, msg:
-        print >>sys.stderr, msg
-        print >>sys.stderr, usage
+    except getopt.error as msg:
+        print(msg, file=sys.stderr)
+        print(usage, file=sys.stderr)
         sys.exit(1)
     new_win = 0
     for o, a in opts:
         if o == '-n': new_win = 1
         elif o == '-t': new_win = 2
     if len(args) != 1:
-        print >>sys.stderr, usage
+        print(usage, file=sys.stderr)
         sys.exit(1)
 
     url = args[0]
     open(url, new_win)
 
-    print "\a"
+    print("\a")
 
 if __name__ == "__main__":
     main()

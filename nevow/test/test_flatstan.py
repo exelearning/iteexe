@@ -1,7 +1,7 @@
 # Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 from twisted.internet import defer
 
@@ -50,21 +50,21 @@ class Base(TestCase):
 
 class TestSimpleSerialization(Base):
     def test_serializeProto(self):
-        self.assertEquals(self.render(proto), '<hello />')
+        self.assertEqual(self.render(proto), '<hello />')
 
     def test_serializeTag(self):
         tag = proto(someAttribute="someValue")
-        self.assertEquals(self.render(tag), '<hello someAttribute="someValue"></hello>')
+        self.assertEqual(self.render(tag), '<hello someAttribute="someValue"></hello>')
 
     def test_serializeChildren(self):
         tag = proto(someAttribute="someValue")[
             proto
         ]
-        self.assertEquals(self.render(tag), '<hello someAttribute="someValue"><hello /></hello>')
+        self.assertEqual(self.render(tag), '<hello someAttribute="someValue"><hello /></hello>')
 
     def test_serializeWithData(self):
         tag = proto(data=5)
-        self.assertEquals(self.render(tag), '<hello></hello>')
+        self.assertEqual(self.render(tag), '<hello></hello>')
 
     def test_adaptRenderer(self):
         ## This is an implementation of the "adapt" renderer
@@ -73,19 +73,19 @@ class TestSimpleSerialization(Base):
                 data
             ]
         tag = proto(data=5, render=_)
-        self.assertEquals(self.render(tag), '<hello>5</hello>')
+        self.assertEqual(self.render(tag), '<hello>5</hello>')
 
     def test_serializeDataWithRenderer(self):
         tag = proto(data=5, render=str)
-        self.assertEquals(self.render(tag), '5')
+        self.assertEqual(self.render(tag), '5')
 
     def test_noContextRenderer(self):
         def _(data):
             return data
         tag = proto(data=5, render=_)
-        self.assertEquals(self.render(tag), '5')
+        self.assertEqual(self.render(tag), '5')
         tag = proto(data=5, render=lambda data: data)
-        self.assertEquals(self.render(tag), '5')
+        self.assertEqual(self.render(tag), '5')
 
     def test_aBunchOfChildren(self):
         tag = proto[
@@ -93,28 +93,28 @@ class TestSimpleSerialization(Base):
             5,
             "A friend in need is a friend indeed"
         ]
-        self.assertEquals(self.render(tag), '<hello>A Child5A friend in need is a friend indeed</hello>')
+        self.assertEqual(self.render(tag), '<hello>A Child5A friend in need is a friend indeed</hello>')
 
     def test_basicPythonTypes(self):
         tag = proto(data=5)[
             "A string; ",
-            u"A unicode string; ",
+            "A unicode string; ",
             5, " (An integer) ",
             1.0, " (A float) ",
-            1L, " (A long) ",
+            1, " (A long) ",
             True, " (A bool) ",
             ["A ", "List; "],
             stan.xml("<xml /> Some xml; "),
             lambda data: "A function"
         ]
         if self.hasBools:
-            self.assertEquals(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) True (A bool) A List; <xml /> Some xml; A function</hello>")
+            self.assertEqual(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) True (A bool) A List; <xml /> Some xml; A function</hello>")
         else:
-            self.assertEquals(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) 1 (A bool) A List; <xml /> Some xml; A function</hello>")
+            self.assertEqual(self.render(tag), "<hello>A string; A unicode string; 5 (An integer) 1.0 (A float) 1 (A long) 1 (A bool) A List; <xml /> Some xml; A function</hello>")
 
     def test_escaping(self):
         tag = proto(foo="<>&\"'")["<>&\"'"]
-        self.assertEquals(self.render(tag), '<hello foo="&lt;&gt;&amp;&quot;\'">&lt;&gt;&amp;"\'</hello>')
+        self.assertEqual(self.render(tag), '<hello foo="&lt;&gt;&amp;&quot;\'">&lt;&gt;&amp;"\'</hello>')
 
 
 class TestComplexSerialization(Base):
@@ -128,11 +128,11 @@ class TestComplexSerialization(Base):
             ]
         ]
         prelude, context, postlude = self.render(tag, precompile=True)
-        self.assertEquals(prelude, "<html><body><div><p>Here's a string</p>")
-        self.assertEquals(context.tag.tagName, "p")
-        self.assertEquals(context.tag.data, 5)
-        self.assertEquals(context.tag.render, str)
-        self.assertEquals(postlude, '</div></body></html>')
+        self.assertEqual(prelude, "<html><body><div><p>Here's a string</p>")
+        self.assertEqual(context.tag.tagName, "p")
+        self.assertEqual(context.tag.data, 5)
+        self.assertEqual(context.tag.render, str)
+        self.assertEqual(postlude, '</div></body></html>')
 
     def test_precompileSlotData(self):
         """Test that tags with slotData are not precompiled out of the
@@ -141,7 +141,7 @@ class TestComplexSerialization(Base):
         tag = tags.p[tags.slot('foo')]
         tag.fillSlots('foo', 'bar')
         precompiled = self.render(tag, precompile=True)
-        self.assertEquals(self.render(precompiled), '<p>bar</p>')
+        self.assertEqual(self.render(precompiled), '<p>bar</p>')
 
     def makeComplex(self):
         return tags.html[
@@ -171,7 +171,7 @@ class TestComplexSerialization(Base):
         result1 = self.render(doc, precompile=True)
         result2 = self.render(doc, precompile=True)
         rendered = self.render(result2)
-        self.assertEquals(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
+        self.assertEqual(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
 
     def test_precompilePrecompiled(self):
         def render_same(context, data):
@@ -188,7 +188,7 @@ class TestComplexSerialization(Base):
         result1 = self.render(doc, precompile=True)
         result2 = self.render(result1, precompile=True)
         rendered = self.render(result2)
-        self.assertEquals(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
+        self.assertEqual(rendered, "<html><body><p>Hello</p><p>5</p></body></html>")
 
     def test_precompileDoesntChangeOriginal(self):
         doc = tags.html(data="foo")[tags.p['foo'], tags.p['foo']]
@@ -196,37 +196,37 @@ class TestComplexSerialization(Base):
         result = self.render(doc, precompile=True)
         rendered = self.render(result)
         
-        self.assertEquals(len(doc.children), 2)
-        self.assertEquals(rendered, "<html><p>foo</p><p>foo</p></html>")
+        self.assertEqual(len(doc.children), 2)
+        self.assertEqual(rendered, "<html><p>foo</p><p>foo</p></html>")
 
     def test_precompileNestedDynamics(self):
         tag = self.makeComplex()
         prelude, dynamic, postlude = self.render(tag, precompile=True)
-        self.assertEquals(prelude, '<html><body>')
+        self.assertEqual(prelude, '<html><body>')
         
-        self.assertEquals(dynamic.tag.tagName, 'table')
-        self.failUnless(dynamic.tag.children)
-        self.assertEquals(dynamic.tag.data, 5)
+        self.assertEqual(dynamic.tag.tagName, 'table')
+        self.assertTrue(dynamic.tag.children)
+        self.assertEqual(dynamic.tag.data, 5)
         
         childPrelude, childDynamic, childPostlude = dynamic.tag.children
         
-        self.assertEquals(childPrelude, '<tr><td>')
-        self.assertEquals(childDynamic.tag.tagName, 'span')
-        self.assertEquals(childDynamic.tag.render, str)
-        self.assertEquals(childPostlude, '</td></tr>')
+        self.assertEqual(childPrelude, '<tr><td>')
+        self.assertEqual(childDynamic.tag.tagName, 'span')
+        self.assertEqual(childDynamic.tag.render, str)
+        self.assertEqual(childPostlude, '</td></tr>')
         
-        self.assertEquals(postlude, '</body></html>')
+        self.assertEqual(postlude, '</body></html>')
 
     def test_precompileThenRender(self):
         tag = self.makeComplex()
         prerendered = self.render(tag, precompile=True)
-        self.assertEquals(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
+        self.assertEqual(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
 
     def test_precompileThenMultipleRenders(self):
         tag = self.makeComplex()
         prerendered = self.render(tag, precompile=True)
-        self.assertEquals(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
-        self.assertEquals(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
+        self.assertEqual(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
+        self.assertEqual(self.render(prerendered), '<html><body><table><tr><td>5</td></tr></table></body></html>')
 
     def test_patterns(self):
         tag = tags.html[
@@ -238,12 +238,12 @@ class TestComplexSerialization(Base):
                 ]
             ]
         ]
-        self.assertEquals(self.render(tag), "<html><body><ol><li>one</li><li>two</li><li>three</li></ol></body></html>")
+        self.assertEqual(self.render(tag), "<html><body><ol><li>one</li><li>two</li><li>three</li></ol></body></html>")
 
     def test_precompilePatternWithNoChildren(self):
         tag = tags.img(pattern='item')
         pc = flat.precompile(tag)
-        self.assertEquals(pc[0].tag.children, [])
+        self.assertEqual(pc[0].tag.children, [])
 
     def test_slots(self):
         tag = tags.html[
@@ -257,7 +257,7 @@ class TestComplexSerialization(Base):
                 ]
             ]
         ]
-        self.assertEquals(self.render(tag), "<html><body><table><tr><td>Header one.</td><td>Header two.</td></tr><tr><td>One: 1</td><td>Two: 2</td></tr></table></body></html>")
+        self.assertEqual(self.render(tag), "<html><body><table><tr><td>Header one.</td><td>Header two.</td></tr><tr><td>One: 1</td><td>Two: 2</td></tr></table></body></html>")
 
     def test_slotAttributeEscapingWhenPrecompiled(self):
 
@@ -272,7 +272,7 @@ class TestComplexSerialization(Base):
         # this test passes if the precompile test is skipped.
         precompiled = self.render(tag, precompile=True)
 
-        self.assertEquals(self.render(precompiled), '<input value="&quot;meow&quot;" />')
+        self.assertEqual(self.render(precompiled), '<input value="&quot;meow&quot;" />')
 
     test_slotAttributeEscapingWhenPrecompiled.todo = 'this is a bug and should be fixed.'
 
@@ -291,7 +291,7 @@ class TestComplexSerialization(Base):
                 ]
             ]
         ]
-        self.assertEquals(self.render(tag), "<html><body><table><tr><td>col1</td><td>col2</td><td>col3</td></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table></body></html>")
+        self.assertEqual(self.render(tag), "<html><body><table><tr><td>col1</td><td>col2</td><td>col3</td></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr><td>4</td><td>5</td><td>6</td></tr></table></body></html>")
 
     def test_cloning(self):
         def data_foo(context, data):  return [{'foo':'one'}, {'foo':'two'}]
@@ -316,24 +316,24 @@ class TestComplexSerialization(Base):
             ]
         ]
         document=self.render(document, precompile=True)
-        self.assertEquals(self.render(document), '<html><body><ul><li><a href="test/one">link</a></li><li><a href="test/two">link</a></li></ul><ul><li>fooone</li><li>footwo</li></ul></body></html>')
+        self.assertEqual(self.render(document), '<html><body><ul><li><a href="test/one">link</a></li><li><a href="test/two">link</a></li></ul><ul><li>fooone</li><li>footwo</li></ul></body></html>')
 
     def test_singletons(self):
         for x in ('img', 'br', 'hr', 'base', 'meta', 'link', 'param', 'area',
             'input', 'col', 'basefont', 'isindex', 'frame'):
-            self.assertEquals(self.render(tags.Proto(x)()), '<%s />' % x)
+            self.assertEqual(self.render(tags.Proto(x)()), '<%s />' % x)
 
     def test_nosingleton(self):
         for x in ('div', 'span', 'script', 'iframe'):
-            self.assertEquals(self.render(tags.Proto(x)()), '<%(tag)s></%(tag)s>' % {'tag': x})
+            self.assertEqual(self.render(tags.Proto(x)()), '<%(tag)s></%(tag)s>' % {'tag': x})
 
     def test_nested_data(self):
         def checkContext(ctx, data):
-            self.assertEquals(data, "inner")
-            self.assertEquals(ctx.locate(inevow.IData, depth=2), "outer")
+            self.assertEqual(data, "inner")
+            self.assertEqual(ctx.locate(inevow.IData, depth=2), "outer")
             return 'Hi'
         tag = tags.html(data="outer")[tags.span(render=lambda ctx,data: ctx.tag, data="inner")[checkContext]]
-        self.assertEquals(self.render(tag), "<html><span>Hi</span></html>")
+        self.assertEqual(self.render(tag), "<html><span>Hi</span></html>")
 
     def test_nested_remember(self):
         class IFoo(compy.Interface):
@@ -342,11 +342,11 @@ class TestComplexSerialization(Base):
             __implements__ = IFoo
             
         def checkContext(ctx, data):
-            self.assertEquals(ctx.locate(IFoo), Foo("inner"))
-            self.assertEquals(ctx.locate(IFoo, depth=2), Foo("outer"))
+            self.assertEqual(ctx.locate(IFoo), Foo("inner"))
+            self.assertEqual(ctx.locate(IFoo, depth=2), Foo("outer"))
             return 'Hi'
         tag = tags.html(remember=Foo("outer"))[tags.span(render=lambda ctx,data: ctx.tag, remember=Foo("inner"))[checkContext]]
-        self.assertEquals(self.render(tag), "<html><span>Hi</span></html>")
+        self.assertEqual(self.render(tag), "<html><span>Hi</span></html>")
         
     def test_deferredRememberInRenderer(self):
         class IFoo(compy.Interface):
@@ -357,14 +357,14 @@ class TestComplexSerialization(Base):
         def locateIt(ctx, data):
             return IFoo(ctx)
         tag = tags.invisible(render=rememberIt)[tags.invisible(render=locateIt)]
-        self.assertEquals(self.render(tag), "bar")
+        self.assertEqual(self.render(tag), "bar")
 
     def test_dataContextCreation(self):
         data = {'foo':'oof', 'bar':'rab'}
         doc = tags.p(data=data)[tags.slot('foo'), tags.slot('bar')]
         doc.fillSlots('foo', tags.invisible(data=tags.directive('foo'), render=str))
         doc.fillSlots('bar', lambda ctx,data: data['bar'])
-        self.assertEquals(flat.flatten(doc), '<p>oofrab</p>')
+        self.assertEqual(flat.flatten(doc), '<p>oofrab</p>')
 
     def test_leaky(self):
         def foo(ctx, data):
@@ -376,7 +376,7 @@ class TestComplexSerialization(Base):
                 tags.slot("bar"),
                 tags.invisible(render=str)])
 
-        self.assertEquals(result, '<div>one</div>')
+        self.assertEqual(result, '<div>one</div>')
 
         
 class TestMultipleRenderWithDirective(Base):
@@ -406,25 +406,25 @@ class TestMultipleRenderWithDirective(Base):
 class TestEntity(Base):
     def test_it(self):
         val = self.render(entities.nbsp)
-        self.assertEquals(val, '&#160;')
+        self.assertEqual(val, '&#160;')
 
     def test_nested(self):
         val = self.render(tags.html(src=entities.quot)[entities.amp])
-        self.assertEquals(val, '<html src="&quot;">&amp;</html>')
+        self.assertEqual(val, '<html src="&quot;">&amp;</html>')
 
     def test_xml(self):
         val = self.render([entities.lt, entities.amp, entities.gt])
-        self.assertEquals(val, '&lt;&amp;&gt;')
+        self.assertEqual(val, '&lt;&amp;&gt;')
 
 
 class TestNoneAttribute(Base):
     def test_simple(self):
         val = self.render(tags.html(foo=None)["Bar"])
-        self.assertEquals(val, "<html>Bar</html>")
+        self.assertEqual(val, "<html>Bar</html>")
 
     def test_slot(self):
         val = self.render(tags.html().fillSlots('bar', None)(foo=tags.slot('bar'))["Bar"])
-        self.assertEquals(val, "<html>Bar</html>")
+        self.assertEqual(val, "<html>Bar</html>")
     test_slot.todo = "We need to be able to roll back time in order to not output the attribute name"
 
 
@@ -439,5 +439,5 @@ class TestKey(Base):
                 tags.div(key="two", render=appendKey)[
                     tags.div(render=appendKey)[
                         tags.div(key="four", render=appendKey)]]])
-        self.assertEquals(val, ["one", "one.two", "one.two", "one.two.four"])
+        self.assertEqual(val, ["one", "one.two", "one.two", "one.two.four"])
 

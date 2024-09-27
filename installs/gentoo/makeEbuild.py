@@ -4,10 +4,10 @@ import os, sys
 
 def main():
     if len(sys.argv) < 2:
-        print 'Usage: %s [version] [--install] [--local|username password]' % sys.argv[0]
-        print 'Where [version] is the branch you want to checkout'
-        print 'and username and password are for your eduforge account'
-        print 'Eg. %s 0.7 --local' % sys.argv[0]
+        print('Usage: %s [version] [--install] [--local|username password]' % sys.argv[0])
+        print('Where [version] is the branch you want to checkout')
+        print('and username and password are for your eduforge account')
+        print('Eg. %s 0.7 --local' % sys.argv[0])
     else:
         version = sys.argv[1]
         # Calc the svn branch name
@@ -32,8 +32,8 @@ def main():
             try:
                 from paramiko import Transport
             except ImportError:
-                print 'To upload you need to install paramiko python library from:'
-                print 'http://www.lag.net/paramiko'
+                print('To upload you need to install paramiko python library from:')
+                print('http://www.lag.net/paramiko')
                 sys.exit(2)
             from socket import socket, gethostbyname
             s = socket()

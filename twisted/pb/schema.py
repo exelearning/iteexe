@@ -44,8 +44,9 @@ import types, inspect
 from zope.interface import implements, Interface
 from twisted.python import failure
 
-from tokens import Violation, SIZE_LIMIT, STRING, LIST, INT, NEG, \
+from .tokens import Violation, SIZE_LIMIT, STRING, LIST, INT, NEG, \
      LONGINT, LONGNEG, VOCAB, FLOAT, OPEN, tokenNames, UnknownSchemaType
+from functools import reduce
 
 everythingTaster = {
     # he likes everything
@@ -138,8 +139,8 @@ class Constraint:
                 # we might have a partial match: they haven't flunked yet
                 if opentype == o[:len(opentype)]:
                     return # still in the running
-        print "opentype %s, self.opentypes %s" % (opentype, self.opentypes)
-        raise Violation, "unacceptable OPEN type '%s'" % (opentype,)
+        print("opentype %s, self.opentypes %s" % (opentype, self.opentypes))
+        raise Violation("unacceptable OPEN type '%s'" % (opentype,))
 
     def checkObject(self, obj):
         """Validate an existing object. Usually objects are validated as
@@ -224,7 +225,7 @@ class StringConstraint(Constraint):
         self.taster = {STRING: self.maxLength,
                        VOCAB: None}
     def checkObject(self, obj):
-        if not isinstance(obj, types.StringTypes):
+        if not isinstance(obj, (str,)):
             raise Violation("not a String")
         if self.maxLength != None and len(obj) > self.maxLength:
             raise Violation("string too long")
@@ -251,7 +252,7 @@ class IntegerConstraint(Constraint):
             self.taster[LONGNEG] = maxBytes
 
     def checkObject(self, obj):
-        if not isinstance(obj, (types.IntType, types.LongType)):
+        if not isinstance(obj, int):
             raise Violation("not a number")
         if self.maxBytes == -1:
             if obj >= 2**31 or obj < -2**31:
@@ -278,7 +279,7 @@ class NumberConstraint(IntegerConstraint):
         self.taster[FLOAT] = None
 
     def checkObject(self, obj):
-        if isinstance(obj, types.FloatType):
+        if isinstance(obj, float):
             return
         IntegerConstraint.checkObject(self, obj)
 
@@ -324,7 +325,7 @@ class BooleanConstraint(Constraint):
         self.value = value
 
     def checkObject(self, obj):
-        if type(obj) != types.BooleanType:
+        if type(obj) != bool:
             raise Violation("not a bool")
         if self.value != None:
             if obj != self.value:
@@ -416,7 +417,7 @@ class TupleConstraint(Constraint):
     def __init__(self, *elemConstraints):
         self.constraints = [makeConstraint(e) for e in elemConstraints]
     def checkObject(self, obj):
-        if type(obj) != types.TupleType:
+        if type(obj) != tuple:
             raise Violation("not a tuple")
         if len(obj) != len(self.constraints):
             raise Violation("wrong size tuple")
@@ -456,7 +457,7 @@ class ListConstraint(Constraint):
         self.constraint = makeConstraint(constraint)
         self.maxLength = maxLength
     def checkObject(self, obj):
-        if type(obj) != types.ListType:
+        if type(obj) != list:
             raise Violation("not a list")
         if len(obj) > self.maxLength:
             raise Violation("list too long")
@@ -490,13 +491,13 @@ class DictConstraint(Constraint):
         self.valueConstraint = makeConstraint(valueConstraint)
         self.maxKeys = maxKeys
     def checkObject(self, obj):
-        if type(obj) != types.DictType:
-            raise Violation, "'%s' (%s) is not a Dictionary" % (obj,
-                                                                type(obj))
+        if type(obj) != dict:
+            raise Violation("'%s' (%s) is not a Dictionary" % (obj,
+                                                                type(obj)))
         if self.maxKeys != None and len(obj) > self.maxKeys:
-            raise Violation, "Dict keys=%d > maxKeys=%d" % (len(obj),
-                                                            self.maxKeys)
-        for key, value in obj.iteritems():
+            raise Violation("Dict keys=%d > maxKeys=%d" % (len(obj),
+                                                            self.maxKeys))
+        for key, value in obj.items():
             self.keyConstraint.checkObject(key)
             self.valueConstraint.checkObject(value)
     def maxSize(self, seen=None):
@@ -538,8 +539,8 @@ class AttributeDictConstraint(Constraint):
         self.acceptUnknown = kwargs.get('acceptUnknown', False)
         self.keys = {}
         for name, constraint in (list(attrTuples) +
-                                 kwargs.get('attributes', {}).items()):
-            assert name not in self.keys.keys()
+                                 list(kwargs.get('attributes', {}).items())):
+            assert name not in list(self.keys.keys())
             self.keys[name] = makeConstraint(constraint)
 
     def maxSize(self, seen=None):
@@ -548,7 +549,7 @@ class AttributeDictConstraint(Constraint):
             raise UnboundedSchema # recursion
         seen.append(self)
         total = OPENBYTES("attributedict")
-        for name, constraint in self.keys.iteritems():
+        for name, constraint in self.keys.items():
             total += StringConstraint(len(name)).maxSize(seen)
             total += constraint.maxSize(seen[:])
         return total
@@ -561,7 +562,7 @@ class AttributeDictConstraint(Constraint):
         # all the attribute names are 1-deep, so the min depth of the dict
         # items is 1. The other "1" is for the AttributeDict container itself
         return 1 + reduce(max, [c.maxDepth(seen[:])
-                                for c in self.itervalues()], 1)
+                                for c in self.values()], 1)
 
     def getAttrConstraint(self, attrname):
         c = self.keys.get(attrname)
@@ -578,16 +579,16 @@ class AttributeDictConstraint(Constraint):
 
     def checkObject(self, obj):
         if type(obj) != type({}):
-            raise Violation, "'%s' (%s) is not a Dictionary" % (obj,
-                                                                type(obj))
-        allkeys = self.keys.keys()
-        for k in obj.keys():
+            raise Violation("'%s' (%s) is not a Dictionary" % (obj,
+                                                                type(obj)))
+        allkeys = list(self.keys.keys())
+        for k in list(obj.keys()):
             try:
                 constraint = self.keys[k]
                 allkeys.remove(k)
             except KeyError:
                 if not self.ignoreUnknown:
-                    raise Violation, "key '%s' not in schema" % k
+                    raise Violation("key '%s' not in schema" % k)
                 else:
                     # hmm. kind of a soft violation. allow it for now.
                     pass
@@ -647,14 +648,14 @@ class RemoteMethodSchema:
             self.responseConstraint = makeConstraint(_response)
         self.options = {} # return, wait, reliable, etc
 
-        if kwargs.has_key("__ignoreUnknown__"):
+        if "__ignoreUnknown__" in kwargs:
             self.ignoreUnknown = kwargs["__ignoreUnknown__"]
             del kwargs["__ignoreUnknown__"]
-        if kwargs.has_key("__acceptUnknown__"):
+        if "__acceptUnknown__" in kwargs:
             self.acceptUnknown = kwargs["__acceptUnknown__"]
             del kwargs["__acceptUnknown__"]
 
-        for argname, constraint in kwargs.items():
+        for argname, constraint in list(kwargs.items()):
             self.argumentNames.append(argname)
             constraint = makeConstraint(constraint)
             self.argConstraints[argname] = constraint
@@ -703,7 +704,7 @@ class RemoteMethodSchema:
         # schema-driven Copyable vs Referenceable decisions
         for i in range(len(args)):
             name = self.argumentNames[i]
-            if kwargs.has_key(name):
+            if name in kwargs:
                 raise TypeError(
                     "got multiple values for keyword argument '%s'" % name)
             kwargs[name] = args[i]
@@ -730,13 +731,13 @@ class RemoteMethodSchema:
         # checked individually, so all we have to do is verify global things
         # like all required arguments have been provided.
         for argname in self.required:
-            if not argdict.has_key(argname):
+            if argname not in argdict:
                 raise Violation("missing required argument '%s'" % argname)
 
     # outbound side
 
     def checkAllArgs(self, argdict):
-        for argname, argvalue in argdict.items():
+        for argname, argvalue in list(argdict.items()):
             accept, constraint = self.getArgConstraint(argname)
             if not accept:
                 # this argument will be ignored by the far end. TODO: emit a
@@ -749,7 +750,7 @@ class RemoteMethodSchema:
         if self.responseConstraint:
             try:
                 self.responseConstraint.checkObject(results)
-            except Violation, v:
+            except Violation as v:
                 if v.args:
                     args = list(v.args)
                     args[0] += " in outbound method results"
@@ -838,11 +839,11 @@ def makeConstraint(t):
     if IConstraint.providedBy(t):
         return t
     map = {
-        types.StringType: StringConstraint(),
-        types.BooleanType: BooleanConstraint(),
-        types.IntType: IntegerConstraint(),
-        types.LongType: IntegerConstraint(maxBytes=1024),
-        types.FloatType: NumberConstraint(),
+        bytes: StringConstraint(),
+        bool: BooleanConstraint(),
+        int: IntegerConstraint(),
+        int: IntegerConstraint(maxBytes=1024),
+        float: NumberConstraint(),
         }
     c = map.get(t, None)
     if c:
@@ -852,11 +853,11 @@ def makeConstraint(t):
             return InterfaceConstraint(t)
     except NameError:
         pass # if t is not a class, issubclass raises an exception
-    if isinstance(t, types.ClassType):
+    if isinstance(t, type):
         return ClassConstraint(t)
 
     # alternatives
-    if type(t) == types.TupleType:
+    if type(t) == tuple:
         return PolyConstraint(*t)
 
     raise UnknownSchemaType("can't make constraint from '%s'" % t)

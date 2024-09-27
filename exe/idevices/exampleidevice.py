@@ -36,13 +36,13 @@ class ExampleIdevice(Idevice):
     the system idevices.
     """
     def __init__(self, content=""):
-        Idevice.__init__(self, _(u"Example Example"), 
-                         _(u"University of Auckland"), 
-                         _(u"""This is an example of a user created
+        Idevice.__init__(self, _("Example Example"), 
+                         _("University of Auckland"), 
+                         _("""This is an example of a user created
 iDevice plugin."""), "", "")
         self.emphasis = Idevice.NoEmphasis
-        self.content  = TextAreaField(_(u"Example"), 
-                                      _(u"This is a free text field."), 
+        self.content  = TextAreaField(_("Example"), 
+                                      _("This is a free text field."), 
                                       content)
         self.content.idevice = self
 

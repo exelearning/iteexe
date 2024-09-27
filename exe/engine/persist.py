@@ -22,7 +22,7 @@ Functions for handling persistance in eXe
 
 import logging
 
-import cStringIO
+import io
 from twisted.persisted.styles import Versioned, doUpgrade
 from twisted.spread  import jelly
 from twisted.spread  import banana
@@ -60,7 +60,7 @@ class Persistable(object, jelly.Jellyable, jelly.Unjellyable, Versioned):
         """
         Return which variables we should persist
         """
-        toPersist = dict([(key, value) for key, value in self.__dict__.items()
+        toPersist = dict([(key, value) for key, value in list(self.__dict__.items())
                           if key not in self.nonpersistant])
 
         return Versioned.__getstate__(self, toPersist)
@@ -77,12 +77,12 @@ def encodeObject(toEncode):
     """
     Take a object and turn it into an string
     """
-    log.debug(u"encodeObject")
+    log.debug("encodeObject")
 
     encoder = Banana()
     encoder.connectionMade()
-    encoder._selectDialect(u"none")
-    strBuffer = cStringIO.StringIO()
+    encoder._selectDialect("none")
+    strBuffer = io.StringIO()
     encoder.transport = strBuffer
     encoder.sendEncoded(jelly.jelly(toEncode))
 
@@ -92,14 +92,14 @@ def decodeToList(toDecode):
     """
     Decodes an object to a list of jelly strings, but doesn't unjelly them
     """
-    log.debug(u"decodeObjectRaw starting decodeToList")
+    log.debug("decodeObjectRaw starting decodeToList")
     decoder = Banana()
     decoder.connectionMade()
-    decoder._selectDialect(u"none")
+    decoder._selectDialect("none")
     jellyData = []
     decoder.expressionReceived = jellyData.append
     decoder.dataReceived(toDecode)
-    log.debug(u"decodeObjectRaw ending decodeToList")
+    log.debug("decodeObjectRaw ending decodeToList")
     return jellyData
 
 def fixDataForMovedObjects(jellyData):

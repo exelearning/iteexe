@@ -26,14 +26,14 @@ class DestacadofpdIdevice(Idevice):
         Initialize 
         """
         Idevice.__init__(self, 
-                         x_(u"FPD - Highlighted"),
-                         x_(u"Jose Ramon Jimenez Reyes"), 
-                         x_(u"""Highlighted is an iDevice that emphasizes text to catch the student's attention."""), u"", u"destacadofpd")
+                         x_("FPD - Highlighted"),
+                         x_("Jose Ramon Jimenez Reyes"), 
+                         x_("""Highlighted is an iDevice that emphasizes text to catch the student's attention."""), "", "destacadofpd")
         self.emphasis         = Idevice.NoEmphasis
-        self._activityInstruc = x_(u"""Enter the text that will appear on this iDevice""")
+        self._activityInstruc = x_("""Enter the text that will appear on this iDevice""")
         self.systemResources += ["common.js"]
         
-        self.activityTextArea = TextAreaField(x_(u'Highlighted Text:'), 
+        self.activityTextArea = TextAreaField(x_('Highlighted Text:'), 
                                     self._activityInstruc, activity)
         self.activityTextArea.idevice = self
 
@@ -83,8 +83,8 @@ class DestacadofpdIdevice(Idevice):
         """
         Upgrades the node from version 0 to 1.
         """
-        log.debug(u"Upgrading iDevice")
-        self.icon       = u"destacadofpd"
+        log.debug("Upgrading iDevice")
+        self.icon       = "destacadofpd"
 
 
     def upgradeToVersion2(self):
@@ -92,7 +92,7 @@ class DestacadofpdIdevice(Idevice):
         Upgrades the node from 1 (v0.5) to 2 (v0.6).
         Old packages will loose their icons, but they will load.
         """
-        log.debug(u"Upgrading iDevice")
+        log.debug("Upgrading iDevice")
         self.emphasis = Idevice.NoEmphasis
 
         
@@ -131,7 +131,7 @@ class DestacadofpdIdevice(Idevice):
         Taking the old unicode string fields, and converting them 
         into image-enabled TextAreaFields:
         """
-        self.activityTextArea = TextAreaField(x_(u'Highlighted Text:'), 
+        self.activityTextArea = TextAreaField(x_('Highlighted Text:'), 
                                     self._activityInstruc, self.activity)
         self.activityTextArea.idevice = self
 
@@ -142,13 +142,13 @@ class DestacadofpdIdevice(Idevice):
         self._upgradeIdeviceToVersion3()
         
     def upgradeToVersion9(self):
-        if self._title == u"FPD - Destacado":
-            self._title = u"FPD - Highlighted"
-        if self._purpose == u"""Destacado es un iDevice que permite resaltar texto para llamar la atención del alumnado.""":
-            self._purpose = u"""Highlighted is an iDevice that emphasizes text to catch the student's attention."""
-        if self._activityInstruc == u"""Introduce el texto que aparecer&aacute; en este iDevice""":
-            self._activityInstruc = u"""Enter the text that will appear on this iDevice"""
-        if self.activityTextArea._name == u'Texto Destacado:':
-            self.activityTextArea._name = u'Highlighted Text:'
+        if self._title == "FPD - Destacado":
+            self._title = "FPD - Highlighted"
+        if self._purpose == """Destacado es un iDevice que permite resaltar texto para llamar la atención del alumnado.""":
+            self._purpose = """Highlighted is an iDevice that emphasizes text to catch the student's attention."""
+        if self._activityInstruc == """Introduce el texto que aparecer&aacute; en este iDevice""":
+            self._activityInstruc = """Enter the text that will appear on this iDevice"""
+        if self.activityTextArea._name == 'Texto Destacado:':
+            self.activityTextArea._name = 'Highlighted Text:'
 
 # ===========================================================================

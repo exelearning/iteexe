@@ -47,12 +47,12 @@ class QuestionElement(object):
         'question' is a exe.engine.casestudyidevice.Question instance
         """
         self.index        = index
-        self.id           = "q" + unicode(index) + "b" + idevice.id        
+        self.id           = "q" + str(index) + "b" + idevice.id        
         self.idevice      = idevice
 
 
-        self.quesId       = "quesQuestion" + unicode(index) + "b" + idevice.id
-        self.feedbackId   = "quesFeedback" + unicode(index) + "b" + idevice.id
+        self.quesId       = "quesQuestion" + str(index) + "b" + idevice.id
+        self.feedbackId   = "quesFeedback" + str(index) + "b" + idevice.id
 
         self.question     = question
         # also split out each part for a separate TextAreaElement:

@@ -11,7 +11,7 @@ See also twisted.python.shortcut.
 import win32api, win32con, re
 
 # sibling import
-from runtime import platform
+from .runtime import platform
 
 
 # XXX fix this to use python's builtin _winreg?

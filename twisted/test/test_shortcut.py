@@ -15,6 +15,6 @@ if os.name == 'nt':
             s1=shortcut.Shortcut("test_shortcut.py")
             tempname=self.mktemp() + '.lnk'
             s1.save(tempname)
-            self.assert_(os.path.exists(tempname))
+            self.assertTrue(os.path.exists(tempname))
             sc=shortcut.open(tempname)
-            self.assert_(sc.GetPath(0)[0].endswith('test_shortcut.py'))
+            self.assertTrue(sc.GetPath(0)[0].endswith('test_shortcut.py'))

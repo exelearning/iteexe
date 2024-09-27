@@ -1,7 +1,7 @@
 # Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 from nevow import context
 from nevow import flat
@@ -43,14 +43,14 @@ class TestHTMLRenderer(testutil.TestCase):
     def test_stringTemplate(self):
         r = rend.Page(docFactory=loaders.htmlstr(self.xhtml))
         result = deferredRender(r)
-        self.assertEquals(result, self.xhtml)
+        self.assertEqual(result, self.xhtml)
 
     def test_diskTemplate(self):
         temp = self.mktemp()
         open(temp, 'w').write(self.xhtml)
         r = rend.Page(docFactory=loaders.htmlfile(temp))
         result = deferredRender(r)
-        self.assertEquals(result, self.xhtml)
+        self.assertEqual(result, self.xhtml)
 
 
 class TestStandardRenderers(testutil.TestCase):
@@ -98,7 +98,7 @@ class TestStandardRenderers(testutil.TestCase):
         tr = TemplateRenderer(docFactory=loaders.htmlfile(temp))
 
         result = deferredRender(tr)
-        self.assertEquals(
+        self.assertEqual(
             result, 
             '<html><head><title>THE TITLE</title></head><body><h3>THE HEADER</h3>SOME DUMMY TEXT</body></html>'
         )
@@ -116,7 +116,7 @@ class TestStandardRenderers(testutil.TestCase):
         tr = TemplateRenderer(docFactory=loaders.htmlfile(temp))
 
         result = deferredRender(tr)
-        self.assertEquals(
+        self.assertEqual(
             result, '<ol><li>one</li><li>two</li><li>three</li></ol>',
             "Whoops. We didn't get what we expected!"
         )
@@ -134,7 +134,7 @@ class TestStandardRenderers(testutil.TestCase):
         tr = TemplateRenderer(docFactory=loaders.htmlfile(temp))
 
         result = deferredRender(tr)
-        self.assertEquals(
+        self.assertEqual(
             result, '<ol><li><span>one</span></li><li><span>two</span></li><li><span>three</span></li></ol>',
             "Whoops. We didn't get what we expected!"
         )
@@ -154,12 +154,12 @@ class TestStandardRenderers(testutil.TestCase):
             def data_aDict(self,context,data):
                 return {'1':'one','2':'two','3':'three','4':'four'}
             def render_slots(self,context,data):
-                for name,value in data.items():
+                for name,value in list(data.items()):
                     context.fillSlots(name, value)
                 return context.tag
 
         result = deferredRender(Renderer(docFactory=loaders.htmlfile(temp)))
-        self.assertEquals(
+        self.assertEqual(
             result,
             "<table><tr><td>one</td><td>two</td></tr><tr><td>three</td><td>four</td></tr></table>",
             "Whoops. We didn't get what we expected!")
@@ -177,11 +177,11 @@ class TestStandardRenderers(testutil.TestCase):
                 return context.tag.allPatterns(data)
 
         result = deferredRender(Mine("one", docFactory=loaders.htmlfile(temp)))
-        self.assertEquals(result, '<span>ONE</span>')
+        self.assertEqual(result, '<span>ONE</span>')
         result = deferredRender(Mine("two", docFactory=loaders.htmlfile(temp)))
-        self.assertEquals(result, '<span>TWO</span>')
+        self.assertEqual(result, '<span>TWO</span>')
         result = deferredRender(Mine("three", docFactory=loaders.htmlfile(temp)))
-        self.assertEquals(result, '<span>THREE</span>')
+        self.assertEqual(result, '<span>THREE</span>')
         
 
 
@@ -206,7 +206,7 @@ class TestSubclassAsRenderAndDataFactory(testutil.TestCase):
         result = deferredRender(sr)
         self.assertSubstring('hello', result)
         self.assertSubstring('world', result)
-        self.assertEquals(result,
+        self.assertEqual(result,
             "<html><div>hello</div>world</html>"
         )
 

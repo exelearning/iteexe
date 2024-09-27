@@ -11,7 +11,8 @@ from nevow.stan import Entity
 
 __by_number = {}
 
-def makeEntity((name, num, description)):
+def makeEntity(xxx_todo_changeme):
+    (name, num, description) = xxx_todo_changeme
     e = Entity(name, num, description)
     __by_number[types.IntType(num)] = e
     globals()[name] = e

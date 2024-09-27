@@ -1,6 +1,6 @@
 """Post-install GUI to compile to pyc and unpack twisted doco"""
 
-from __future__ import generators
+
 
 import sys
 import zipfile
@@ -16,8 +16,8 @@ from twisted.python.procutils import which
 tkdll='tk84.dll'
 if which(tkdll) or which('DLLs/%s' % tkdll):
     try:
-        import Tkinter
-        from Tkinter import *
+        import tkinter
+        from tkinter import *
         from twisted.internet import tksupport
     except ImportError:
         pass
@@ -152,7 +152,7 @@ class Progressor:
             return
         
         try:
-            self.remaining=self.iterator.next()
+            self.remaining=next(self.iterator)
         except StopIteration:
             self.stopping=1            
         except:
@@ -174,7 +174,7 @@ def compiler(path):
     os.path.walk(path, justlist, all)
 
     remaining=len(all)
-    i=zip(all, range(remaining-1, -1, -1))
+    i=list(zip(all, list(range(remaining-1, -1, -1))))
     for f, remaining in i:
         py_compile.compile(f)
         yield remaining
@@ -205,9 +205,9 @@ def run(argv=sys.argv):
     opt=TkunzipOptions()
     try:
         opt.parseOptions(argv[1:])
-    except usage.UsageError, e:
-        print str(opt)
-        print str(e)
+    except usage.UsageError as e:
+        print(str(opt))
+        print(str(e))
         sys.exit(1)
 
     if opt['use-console']:
@@ -227,22 +227,22 @@ def doItConsolicious(opt):
     sys.stdout = sys.__stdout__
     sys.stderr = sys.__stderr__
     if opt['zipfile']:
-        print 'Unpacking documentation...'
+        print('Unpacking documentation...')
         for n in zipstream.unzipIter(opt['zipfile'], opt['ziptargetdir']):
             if n % 100 == 0:
-                print n,
+                print(n, end=' ')
             if n % 1000 == 0:
-                print
-        print 'Done unpacking.'
+                print()
+        print('Done unpacking.')
         
     if opt['compiledir']:
-        print 'Compiling to pyc...'
+        print('Compiling to pyc...')
         import compileall
         compileall.compile_dir(opt["compiledir"])
-        print 'Done compiling.'
+        print('Done compiling.')
 
 def doItTkinterly(opt):
-    root=Tkinter.Tk()
+    root=tkinter.Tk()
     root.withdraw()
     root.title('One Moment.')
     root.protocol('WM_DELETE_WINDOW', reactor.stop)

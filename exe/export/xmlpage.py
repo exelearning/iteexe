@@ -24,7 +24,7 @@ This class transforms an eXe node into an XML page
 import logging
 import re
 from cgi                      import escape
-from urllib                   import quote
+from urllib.parse                   import quote
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path
@@ -69,8 +69,8 @@ class XMLPage(Page):
         
         XMLPage.currentOutputDir = outputDir
         
-        xml = u'<?xml version="1.0" encoding="UTF-8"?>\n'
-        xml += u"<exepage title='%s' " % escape(self.node.titleLong)
+        xml = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        xml += "<exepage title='%s' " % escape(self.node.titleLong)
         
         numRealDevices = 0
         
@@ -83,7 +83,7 @@ class XMLPage(Page):
         if prevPage is not None:
             xml += u"prevpage='%s' " % prevPage.name
         """
-        xml += u">"
+        xml += ">"
         
         style = self.node.package.style
         
@@ -111,7 +111,7 @@ class XMLPage(Page):
                     xml += "</idevice>"
                     
                 
-        xml += u"</exepage>"
+        xml += "</exepage>"
             
         outfile = open(outputDir / self.name+".xml", "w")
         outfile.write(xml.encode("UTF-8"))

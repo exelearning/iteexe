@@ -40,9 +40,9 @@ class ImageWithTextIdevice(Idevice):
 
     def __init__(self, defaultImage = None):
         Idevice.__init__(self, 
-                         x_(u"Image with Text"), 
-                         x_(u"University of Auckland"), 
-                         x_(u"""<p>
+                         x_("Image with Text"), 
+                         x_("University of Auckland"), 
+                         x_("""<p>
 The image with text iDevice can be used in a number of ways to support both
 the emotional (affective) and learning task (cognitive) dimensions of eXe
 content. 
@@ -57,18 +57,18 @@ graphic) with a brief verbal summary covering the main points relating to
 the image. For example, if you were teaching the functions of a four-stroke
 combustion engine, you could have a visual for each of the four positions of
 the piston with a brief textual summary of the key aspects of each visual.
-</p>"""), u"", u"")
+</p>"""), "", "")
         self.emphasis           = Idevice.NoEmphasis
-        self.image              = ImageField(x_(u"Image"), u"")
+        self.image              = ImageField(x_("Image"), "")
         self.image.idevice      = self
         self.image.defaultImage = defaultImage
-        self.text               = TextAreaField(x_(u"Text"),
+        self.text               = TextAreaField(x_("Text"),
                                                 x_("""Enter the text you wish to 
                                                 associate with the image."""))
         self.text.idevice       = self
-        self.float              = u"left"
-        self.caption            = u""
-        self._captionInstruc    = x_(u"""Provide a caption for the image 
+        self.float              = "left"
+        self.caption            = ""
+        self._captionInstruc    = x_("""Provide a caption for the image 
 you have just inserted.""")
 
     # Properties
@@ -78,14 +78,14 @@ you have just inserted.""")
         """
         Called to upgrade from 0.5 release
         """
-        self.float = u"left"
+        self.float = "left"
        
 
     def upgradeToVersion2(self):
         """
         Called to upgrade from 0.6 release
         """
-        self.caption  = u""
+        self.caption  = ""
         self.emphasis = Idevice.NoEmphasis
         
 
@@ -115,7 +115,7 @@ you have just inserted.""")
         """
         Called to upgrade from 0.13 release
         """
-        self._captionInstruc  = x_(u"""Provide a caption for the image 
+        self._captionInstruc  = x_("""Provide a caption for the image 
 you have just inserted.""")
 
     def upgradeToVersion7(self):

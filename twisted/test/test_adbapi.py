@@ -44,9 +44,9 @@ class ADBAPITestBase:
 
     def checkOpenfunCalled(self, conn=None):
         if not conn:
-            self.failUnless(self.openfun_called)
+            self.assertTrue(self.openfun_called)
         else:
-            self.failUnless(self.openfun_called.has_key(conn))
+            self.assertTrue(conn in self.openfun_called)
 
     def testPool(self):
         self.wait(self.dbpool.runOperation(simple_table_schema))
@@ -81,7 +81,7 @@ class ADBAPITestBase:
         # verify simple table is empty
         sql = "select count(1) from simple"
         row = self.wait(self.dbpool.runQuery(sql))
-        self.failUnless(int(row[0][0]) == 0, "Interaction not rolled back")
+        self.assertTrue(int(row[0][0]) == 0, "Interaction not rolled back")
 
         self.checkOpenfunCalled()
 
@@ -96,19 +96,19 @@ class ADBAPITestBase:
         # make sure they were added (runQuery)
         sql = "select x from simple order by x";
         rows = self.wait(self.dbpool.runQuery(sql))
-        self.failUnless(len(rows) == self.num_iterations,
+        self.assertTrue(len(rows) == self.num_iterations,
                         "Wrong number of rows")
         for i in range(self.num_iterations):
-            self.failUnless(len(rows[i]) == 1, "Wrong size row")
-            self.failUnless(rows[i][0] == i, "Values not returned.")
+            self.assertTrue(len(rows[i]) == 1, "Wrong size row")
+            self.assertTrue(rows[i][0] == i, "Values not returned.")
 
         # runInteraction
         res = self.wait(self.dbpool.runInteraction(self.interaction))
-        self.assertEquals(res, "done")
+        self.assertEqual(res, "done")
 
         # withConnection
         res = self.wait(self.dbpool.runWithConnection(self.withConnection))
-        self.assertEquals(res, "done")
+        self.assertEqual(res, "done")
 
         # Test a withConnection cannot be closed
         res = self.wait(self.dbpool.runWithConnection(self.close_withConnection))
@@ -121,7 +121,7 @@ class ADBAPITestBase:
         dlist = defer.DeferredList(ds, fireOnOneErrback=True)
         result = self.wait(dlist, timeout=self.num_iterations / 5.0)
         for i in range(self.num_iterations):
-            self.failUnless(result[i][1][0][0] == i, "Value not returned")
+            self.assertTrue(result[i][1][0][0] == i, "Value not returned")
 
         # now delete everything
         ds = []
@@ -134,7 +134,7 @@ class ADBAPITestBase:
         # verify simple table is empty
         sql = "select count(1) from simple"
         row = self.wait(self.dbpool.runQuery(sql))
-        self.failUnless(int(row[0][0]) == 0,
+        self.assertTrue(int(row[0][0]) == 0,
                         "Didn't successfully delete table contents")
 
         self.checkConnect()
@@ -147,12 +147,12 @@ class ADBAPITestBase:
         curs.execute("insert into simple(x) values(1)")
         curs.execute("select x from simple")
         res = curs.fetchall()
-        self.failUnlessEqual(len(res), 1)
-        self.failUnlessEqual(len(res[0]), 1)
-        self.failUnlessEqual(res[0][0], 1)
+        self.assertEqual(len(res), 1)
+        self.assertEqual(len(res[0]), 1)
+        self.assertEqual(res[0][0], 1)
         curs.execute("delete from simple")
         curs.execute("select x from simple")
-        self.failUnlessEqual(len(curs.fetchall()), 0)
+        self.assertEqual(len(curs.fetchall()), 0)
         curs.close()
         self.dbpool.disconnect(conn)
 
@@ -160,8 +160,8 @@ class ADBAPITestBase:
         transaction.execute("select x from simple order by x")
         for i in range(self.num_iterations):
             row = transaction.fetchone()
-            self.failUnless(len(row) == 1, "Wrong size row")
-            self.failUnless(row[0] == i, "Value not returned.")
+            self.assertTrue(len(row) == 1, "Wrong size row")
+            self.assertTrue(row[0] == i, "Value not returned.")
         # should test this, but gadfly throws an exception instead
         #self.failUnless(transaction.fetchone() is None, "Too many rows")
         return "done"
@@ -178,8 +178,8 @@ class ADBAPITestBase:
             curs.execute("select x from simple order by x")
             for i in range(self.num_iterations):
                 row = curs.fetchone()
-                self.failUnless(len(row) == 1, "Wrong size row")
-                self.failUnless(row[0] == i, "Value not returned.")
+                self.assertTrue(len(row) == 1, "Wrong size row")
+                self.assertTrue(row[0] == i, "Value not returned.")
             # should test this, but gadfly throws an exception instead
             #self.failUnless(transaction.fetchone() is None, "Too many rows")
         finally:
@@ -225,10 +225,10 @@ class ReconnectTestBase:
     def testPool(self):
         sql = "select count(1) from simple"
         row = self.wait(self.dbpool.runQuery(sql))
-        self.failUnless(int(row[0][0]) == 0, "Table not empty")
+        self.assertTrue(int(row[0][0]) == 0, "Table not empty")
 
         # reach in and close the connection manually
-        self.dbpool.connections.values()[0].close()
+        list(self.dbpool.connections.values())[0].close()
 
         if not self.early_reconnect:
             try:
@@ -240,7 +240,7 @@ class ReconnectTestBase:
                 self.fail('not connection lost')
 
         row = self.wait(self.dbpool.runQuery(sql))
-        self.failUnless(int(row[0][0]) == 0, "Table not empty")
+        self.assertTrue(int(row[0][0]) == 0, "Table not empty")
 
         sql = "select * from NOTABLE" # bad sql
         try:
@@ -287,7 +287,7 @@ class DBTestConnector:
             os.mkdir(self.DB_DIR)
 
         if not self.can_connect():
-            raise unittest.SkipTest, '%s: Cannot access db' % self.TEST_PREFIX
+            raise unittest.SkipTest('%s: Cannot access db' % self.TEST_PREFIX)
 
     def can_connect(self):
         """Return true if this database is present on the system

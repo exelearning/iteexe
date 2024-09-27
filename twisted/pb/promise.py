@@ -5,7 +5,7 @@ from twisted.internet import defer
 
 id = util.unsignedID
 
-EVENTUAL, FULFILLED, BROKEN = range(3)
+EVENTUAL, FULFILLED, BROKEN = list(range(3))
 
 class Promise:
     """I am a promise of a future result. I am a lot like a Deferred, except

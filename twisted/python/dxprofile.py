@@ -10,7 +10,7 @@ This module requires a version of Python build with DYNAMIC_EXCUTION_PROFILE,
 and optionally DXPAIRS, defined to be useful.
 """
 
-import sys, types, xmlrpclib
+import sys, types, xmlrpc.client
 
 def rle(iterable):
     """Run length encode a list"""
@@ -18,7 +18,7 @@ def rle(iterable):
     runlen = 1
     result = []
     try:
-        previous = iterable.next()
+        previous = next(iterable)
     except StopIteration:
         return []
     for element in iterable:
@@ -26,12 +26,12 @@ def rle(iterable):
             runlen = runlen + 1
             continue
         else:
-            if isinstance(previous, (types.ListType, types.TupleType)):
+            if isinstance(previous, (list, tuple)):
                 previous = rle(previous)
             result.append([previous, runlen])
         previous = element
         runlen = 1
-    if isinstance(previous, (types.ListType, types.TupleType)):
+    if isinstance(previous, (list, tuple)):
         previous = rle(previous)
     result.append([previous, runlen])
     return result
@@ -43,5 +43,5 @@ def report(email, appname):
     for analysis.
     """
     if hasattr(sys, 'getdxp') and appname:
-        dxp = xmlrpclib.ServerProxy("http://manatee.mojam.com:7304")
+        dxp = xmlrpc.client.ServerProxy("http://manatee.mojam.com:7304")
         dxp.add_dx_info(appname, email, sys.version_info[:3], rle(sys.getdxp()))

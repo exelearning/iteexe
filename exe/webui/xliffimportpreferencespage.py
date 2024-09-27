@@ -26,7 +26,7 @@ import logging
 from twisted.web.resource      import Resource
 from exe.webui                 import common
 from exe.webui.renderable      import RenderableResource
-from urllib                    import quote
+from urllib.parse                    import quote
 
 log = logging.getLogger(__name__)
 
@@ -50,54 +50,54 @@ class XliffImportPreferencesPage(RenderableResource):
         
         # Rendering
         html  = common.docType()
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head>\n"
-        html += u"<style type=\"text/css\">\n"
-        html += u"@import url(/css/exe.css);\n"
-        html += u'@import url(/style/base.css);\n'
-        html += u"@import url(/style/standardwhite/content.css);</style>\n"
-        html += u'<script type="text/javascript" src="/scripts/common.js">'
-        html += u'</script>\n'
-        html += u'''<script language="javascript" type="text/javascript">
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head>\n"
+        html += "<style type=\"text/css\">\n"
+        html += "@import url(/css/exe.css);\n"
+        html += '@import url(/style/base.css);\n'
+        html += "@import url(/style/standardwhite/content.css);</style>\n"
+        html += '<script type="text/javascript" src="/scripts/common.js">'
+        html += '</script>\n'
+        html += '''<script language="javascript" type="text/javascript">
             function importXliff(from_source) {
                 parent.nevow_clientToServerEvent('mergeXliffPackage', this, '', '%s', from_source);
                 parent.Ext.getCmp("xliffimportwin").close();
             }
         </script>''' % quote(request.args['path'][0])
-        html += u"<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
-        html += u"<meta http-equiv=\"content-type\" content=\"text/html; "
-        html += u" charset=UTF-8\"></meta>\n";
-        html += u"</head>\n"
-        html += u"<body>\n"
-        html += u"<div id=\"main\"> \n"
-        html += u"<p>&nbsp;</p>\n"
-        html += u"<form method=\"post\" action=\"\" "
-        html += u"id=\"contentForm\" >"
+        html += "<title>"+_("eXe : elearning XHTML editor")+"</title>\n"
+        html += "<meta http-equiv=\"content-type\" content=\"text/html; "
+        html += " charset=UTF-8\"></meta>\n";
+        html += "</head>\n"
+        html += "<body>\n"
+        html += "<div id=\"main\"> \n"
+        html += "<p>&nbsp;</p>\n"
+        html += "<form method=\"post\" action=\"\" "
+        html += "id=\"contentForm\" >"
 
         # package not needed for the preferences, only for rich-text fields:
         this_package = None
-        html += common.formField('checkbox', this_package, _(u"Import from source language"),
+        html += common.formField('checkbox', this_package, _("Import from source language"),
                                  'from_source',
                                  name = 'from_source',
                                  checked = False,
                                  title = None,
-                                 instruction = _(u"If you choose this option, \
+                                 instruction = _("If you choose this option, \
 the import process will take the texts from source language instead of target \
 language."))
 
-        html += u"<div id=\"editorButtons\"> \n"
-        html += u"<br/>" 
+        html += "<div id=\"editorButtons\"> \n"
+        html += "<br/>" 
         html += common.button("ok", _("OK"), enabled=True,
                 _class="button",
                 onClick="importXliff(document.forms.contentForm.from_source.checked \
                 )")
         html += common.button("cancel", _("Cancel"), enabled=True,
                 _class="button", onClick="parent.Ext.getCmp('xliffimportwin').close()")
-        html += u"</div>\n"
-        html += u"</div>\n"
-        html += u"<br/></form>\n"
-        html += u"</body>\n"
-        html += u"</html>\n"
+        html += "</div>\n"
+        html += "</div>\n"
+        html += "<br/></form>\n"
+        html += "</body>\n"
+        html += "</html>\n"
         return html.encode('utf8')
 
 
@@ -109,9 +109,9 @@ language."))
         
         # should not be invoked, but if it is... refresh
         html  = common.docType()
-        html += u"<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        html += u"<head></head>\n"
-        html += u"<body onload=\"opener.location.reload(); "
-        html += u"self.close();\"></body>\n"
-        html += u"</html>\n"
+        html += "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
+        html += "<head></head>\n"
+        html += "<body onload=\"opener.location.reload(); "
+        html += "self.close();\"></body>\n"
+        html += "</html>\n"
         return html.encode('utf8')

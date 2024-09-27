@@ -205,7 +205,7 @@ any Learning Management System.
         "exe.engine.exceptions"
     ],
     # Files list
-    data_files=g_files.items(),
+    data_files=list(g_files.items()),
     # Custom options
     options=opts
 )

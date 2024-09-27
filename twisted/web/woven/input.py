@@ -149,7 +149,7 @@ class InputHandler(controller.Controller):
         else:
             func = self._commit
             if hasattr(func, 'im_func'):
-                func = func.im_func
+                func = func.__func__
             args, varargs, varkw, defaults = inspect.getargspec(func)
             if args[1] == 'request':
                 self._commit(request, data)
@@ -263,7 +263,7 @@ class DictAggregator(Anything):
             # keyword arguments it takes
             func = self._commit
             if hasattr(func, 'im_func'):
-                func = func.im_func
+                func = func.__func__
             args, varargs, varkw, defaults = inspect.getargspec(
                 func)
             wantsRequest = len(args) > 1 and args[1] == 'request'
@@ -310,7 +310,7 @@ class ListAggregator(Anything):
             #arguments it takes
             func = self._commit
             if hasattr(func, 'im_func'):
-                func = func.im_func
+                func = func.__func__
             args, varargs, varkw, defaults = inspect.getargspec(func)
             self.numArgs = len(args)
             wantsRequest = args[1] == 'request'

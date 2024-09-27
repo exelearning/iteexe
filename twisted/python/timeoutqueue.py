@@ -6,7 +6,7 @@
 """A Queue subclass that supports timeouts."""
 
 # System Imports
-import Queue, time
+import queue, time
 
 
 _time = time.time
@@ -17,11 +17,11 @@ class TimedOut(Exception):
     pass
 
 
-class TimeoutQueue(Queue.Queue):
+class TimeoutQueue(queue.Queue):
     """A thread-safe queue that supports timeouts"""
     
     def __init__(self, max=0):
-        Queue.Queue.__init__(self, max)
+        queue.Queue.__init__(self, max)
     
     def wait(self, timeout):
         """Wait until the queue isn't empty. Raises TimedOut if still empty."""
@@ -33,7 +33,7 @@ class TimeoutQueue(Queue.Queue):
                 break
             remaining = endtime - _time()
             if remaining <= 0:
-                raise TimedOut, "timed out."
+                raise TimedOut("timed out.")
             delay = min(delay * 2, remaining, .05)
             _sleep(delay)
 

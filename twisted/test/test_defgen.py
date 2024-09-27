@@ -1,4 +1,4 @@
-from __future__ import generators, nested_scopes
+
 
 from twisted.internet import reactor
 
@@ -26,21 +26,21 @@ class DefGenTests(unittest.TestCase):
         yield x
         x = x.getResult()
 
-        self.assertEquals(x, "hi")
+        self.assertEqual(x, "hi")
 
         ow = waitForDeferred(getOwie())
         yield ow
         try:
             ow.getResult()
-        except ZeroDivisionError, e:
-            self.assertEquals(str(e), 'OMG')
+        except ZeroDivisionError as e:
+            self.assertEqual(str(e), 'OMG')
         yield "WOOSH"
         return
     _genWoosh = deferredGenerator(_genWoosh)
 
 
     def testBasics(self):
-        self.assertEquals(util.wait(self._genWoosh()), "WOOSH")
+        self.assertEqual(util.wait(self._genWoosh()), "WOOSH")
 
 
     def testBuggyGen(self):
@@ -57,7 +57,7 @@ class DefGenTests(unittest.TestCase):
             if 0: yield 1
         _genNothing = deferredGenerator(_genNothing)
 
-        self.assertEquals(util.wait(_genNothing()), None)
+        self.assertEqual(util.wait(_genNothing()), None)
 
     def testDeferredYielding(self):
         # See the comment _deferGenerator about d.callback(Deferred).
@@ -79,7 +79,7 @@ class DefGenTests(unittest.TestCase):
             yield 0
 
         _loop = deferredGenerator(_loop)
-        self.assertEquals(util.wait(_loop()), 0)
+        self.assertEqual(util.wait(_loop()), 0)
 
     def testStackUsage2(self):
         def _loop():
@@ -89,5 +89,5 @@ class DefGenTests(unittest.TestCase):
             yield 0
 
         _loop = deferredGenerator(_loop)
-        self.assertEquals(util.wait(_loop()), 0)
+        self.assertEqual(util.wait(_loop()), 0)
 

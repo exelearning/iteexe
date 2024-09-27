@@ -1,7 +1,7 @@
 # Copyright (c) 2004 Divmod.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 from nevow import compy
 from nevow import inevow
@@ -20,7 +20,7 @@ except:
         i = 0
         it = iter(collection)
         while 1:
-            yield (i, it.next())
+            yield (i, next(it))
             i += 1
 
 
@@ -48,7 +48,7 @@ class PrefixerDict(dict):
         return self.errors[pfxkey]
 
     def update(self, other):
-        for key, value in other.items():
+        for key, value in list(other.items()):
             self[key] = value
 
 
@@ -107,7 +107,7 @@ class FormErrors(compy.Adapter):
         PrefixerDict(formName, self.errors).update(errors)
 
     def clearErrors(self, formName):
-        for key in self.errors.keys():
+        for key in list(self.errors.keys()):
             if key.startswith(formName):
                 del self.errors[key]
 

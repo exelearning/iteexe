@@ -25,7 +25,7 @@ from copy               import deepcopy
 from exe.engine.persist import Persistable
 from exe.engine.path    import toUnicode
 from exe                import globals as G
-from urllib             import quote
+from urllib.parse             import quote
 from exe.webui                import common
 
 import re
@@ -51,7 +51,7 @@ class Node(Persistable):
         """
         Initialize a new node
         """
-        log.debug(u"init " + title)
+        log.debug("init " + title)
 
         if parent:
             parent.children.append(self)
@@ -112,7 +112,7 @@ class Node(Persistable):
         elif hasattr(self, '_package') and self.package is not None:
             return _(toUnicode(self.package.levelName(self.level - 1)))
         else:
-            return u'Unknown Node [no title or package]'
+            return 'Unknown Node [no title or package]'
 
     def TwistedRePersist(self):
         """
@@ -240,12 +240,12 @@ class Node(Persistable):
                                         this_anchor_name].remove(that_field)
                         if that_field_is_valid: 
                             that_field.RenameInternalLinkToAnchor(\
-                                this_field, unicode(old_full_link_name), 
-                                unicode(new_full_link_name))
+                                this_field, str(old_full_link_name), 
+                                str(new_full_link_name))
 
         # And a variation of the above, for all source-links to #auto_top,
         # which is directly to this node, and not to any of its fields:
-        this_anchor_name = u"auto_top"
+        this_anchor_name = "auto_top"
         old_full_link_name = old_node_path + "#" + this_anchor_name
         new_full_link_name = new_node_path + "#" + this_anchor_name
         if not hasattr(self, 'top_anchors_linked_from_fields'):
@@ -290,8 +290,8 @@ class Node(Persistable):
                 # for auto_top, uses the actual Node as the anchor_field:
                 anchor_field = self
                 that_field.RenameInternalLinkToAnchor(\
-                    anchor_field, unicode(old_full_link_name), 
-                    unicode(new_full_link_name))
+                    anchor_field, str(old_full_link_name), 
+                    str(new_full_link_name))
         # and determine if any links to this node remain
         num_links = len(self.top_anchors_linked_from_fields)
         if num_top_links > 0 and num_links <= 0:
@@ -314,7 +314,7 @@ class Node(Persistable):
 
                         # Remove any linked fields that no longer apply, 
                         # using reverse for loop to delete: 
-                        these_link_names = this_field.intlinks_to_anchors.keys()
+                        these_link_names = list(this_field.intlinks_to_anchors.keys())
                         num_links = len(these_link_names)
                         for i in range(num_links-1, -1, -1):
                             this_link_name = these_link_names[i]
@@ -334,7 +334,7 @@ class Node(Persistable):
                                     this_link_name)
                             if this_anchor_field \
                             and isinstance(this_anchor_field, Field) \
-                            and this_anchor_name != u"auto_top": 
+                            and this_anchor_name != "auto_top": 
                                 if this_anchor_field.idevice is not None \
                                 and this_anchor_field.idevice.parentNode:
                                     this_link_node = \
@@ -353,7 +353,7 @@ class Node(Persistable):
                                 # which is NO LONGER a VALID part of this
                                 # newly extracted sub-package.  Remove it:
                                 this_field.RemoveInternalLinkToRemovedAnchor( \
-                                    this_anchor_field, unicode(this_link_name))
+                                    this_anchor_field, str(this_link_name))
 
         # Then do the same for all of this node's children nodes:
         for child_node in self.children:
@@ -383,7 +383,7 @@ class Node(Persistable):
 
         The newly inserted node is automatically selected.
         """
-        log.debug(u"clone " + self.title)
+        log.debug("clone " + self.title)
 
         # copy any nonpersistables of interest as well:
         G.application.persistNonPersistants = True
@@ -394,7 +394,7 @@ class Node(Persistable):
             newNode = deepcopy(self, {id(self._package): newPackage,
                                   id(self.parent): None}) 
             newNode._id = newPackage._regNewNode(newNode)
-        except Exception, e:
+        except Exception as e:
             # and be sure to return nonpersistables to normal status: 
             G.application.persistNonPersistants = False
             # before continuing with the exception:
@@ -438,20 +438,20 @@ class Node(Persistable):
         """
         Return the resource files used by this node
         """
-        log.debug(u"getResources ")
+        log.debug("getResources ")
         resources = {}
         for idevice in self.idevices:
             reses = [toUnicode(res.storageName, 'utf8') for res in idevice.userResources]
             for resource in (idevice.systemResources + reses):
                 resources[resource] = True
-        return resources.keys()
+        return list(resources.keys())
 
 
     def createChild(self):
         """
         Create a child node
         """
-        log.debug(u"createChild ")
+        log.debug("createChild ")
         self.package.isChanged = True
         return Node(self.package, self)
 
@@ -479,7 +479,7 @@ class Node(Persistable):
             log.debug(delete_msg)
 
         this_node_path = self.GetFullNodePath()
-        this_anchor_name = u"auto_top"
+        this_anchor_name = "auto_top"
         full_link_name = this_node_path + "#" + this_anchor_name
         if not hasattr(self, 'top_anchors_linked_from_fields'):
             self.top_anchors_linked_from_fields = []
@@ -590,7 +590,7 @@ class Node(Persistable):
         """
         Add the idevice to this node, sets idevice's parentNode 
         """
-        log.debug(u"addIdevice ")
+        log.debug("addIdevice ")
         idevice.id = self.package.getNewIdeviceId()
         idevice.parentNode = self
         for oldIdevice in self.idevices:
@@ -603,7 +603,7 @@ class Node(Persistable):
         Moves the node around in the tree.
         nextSibling can be a node object or an integer index
         """
-        log.debug(u"move ")
+        log.debug("move ")
         if newParent:
             assert newParent.package is self.package, \
                    "Can't change a node into a different package"
@@ -632,7 +632,7 @@ class Node(Persistable):
         Moves the node one step closer to the tree root.
         Returns True is successful
         """
-        log.debug(u"promote ")
+        log.debug("promote ")
         if self.parent and self.parent.parent:
             self.move(self.parent.parent, self.parent.nextSibling())
             return True
@@ -647,7 +647,7 @@ class Node(Persistable):
         tries to keep the same position in the tree.
         Returns True is successful
         """
-        log.debug(u"demote ")
+        log.debug("demote ")
         if self.parent:
             idx = self.parent.children.index(self)
             if idx > 0:
@@ -664,7 +664,7 @@ class Node(Persistable):
         the tree.
         Returns True is successful.
         """
-        log.debug(u"up ")
+        log.debug("up ")
         if self.parent:
             children = self.parent.children
             i = children.index(self)
@@ -683,7 +683,7 @@ class Node(Persistable):
         Moves the node down one vertically, keeping its level the same.
         Returns True is successful.
         """
-        log.debug(u"down ")
+        log.debug("down ")
         if self.parent:
             children = self.parent.children
             i = children.index(self)
@@ -698,7 +698,7 @@ class Node(Persistable):
 
     def nextSibling(self):
         """Returns our next sibling or None"""
-        log.debug(u"nextSibling ")
+        log.debug("nextSibling ")
         sibling = None
 
         if self.parent:
@@ -712,7 +712,7 @@ class Node(Persistable):
 
     def previousSibling(self):
         """Returns our previous sibling or None"""
-        log.debug(u"previousSibling ")
+        log.debug("previousSibling ")
         sibling = None
 
         if self.parent:
@@ -737,8 +737,8 @@ class Node(Persistable):
         Return a node as a string
         """
         nodeStr = ""
-        nodeStr += self.id + u" "
-        nodeStr += self.title + u"\n"
+        nodeStr += self.id + " "
+        nodeStr += self.title + "\n"
 
         for child in self.children:
             nodeStr += child.__str__()
@@ -748,13 +748,13 @@ class Node(Persistable):
 
     def upgradeToVersion1(self):
         """Upgrades the node from version 0 to 1."""
-        log.debug(u"upgradeToVersion1 ")
-        self._title = self.__dict__[u'title']
+        log.debug("upgradeToVersion1 ")
+        self._title = self.__dict__['title']
 
 
     def upgradeToVersion2(self):
         """Upgrades the node from eXe version 0.5."""
-        log.debug(u"upgradeToVersion2 ")
+        log.debug("upgradeToVersion2 ")
         self._title = self._title.title
         
     def launch_testForZombies(self):
@@ -793,7 +793,7 @@ class Node(Persistable):
                 self._title = self.getTitle()
             # disconnect it from any package, parent, and idevice links,
             # and go through and delete any and all children nodes:
-            zombie_preface = u"ZOMBIE("
+            zombie_preface = "ZOMBIE("
             if self._title[0:len(zombie_preface)] != zombie_preface: 
                 self._title = zombie_preface + self._title + ")"
             G.application.afterUpgradeZombies2Delete.append(self)

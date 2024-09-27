@@ -28,8 +28,8 @@ class TestResources(utils.SuperTestCase):
             return
         self.visited.append(url)
         if url.links:
-            print
-            print "%s%s %s" % (''.join(['   ' for n in range(0, depth)]), url, url.links)
+            print()
+            print("%s%s %s" % (''.join(['   ' for n in range(0, depth)]), url, url.links))
         for link in url.links:
             self.printLinks(link.url, depth + 1)
 

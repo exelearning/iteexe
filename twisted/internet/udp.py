@@ -38,7 +38,7 @@ from twisted.persisted import styles
 from twisted.python import log, reflect, components
 
 # Sibling Imports
-import abstract, error, interfaces
+from . import abstract, error, interfaces
 
 
 class Port(base.BasePort):
@@ -88,8 +88,8 @@ class Port(base.BasePort):
         try:
             skt = self.createInternetSocket()
             skt.bind((self.interface, self.port))
-        except socket.error, le:
-            raise error.CannotListenError, (self.interface, self.port, le)
+        except socket.error as le:
+            raise error.CannotListenError(self.interface, self.port, le)
 
         # Make sure that if we listened on port 0, we update that to
         # reflect what the OS actually assigned us.
@@ -112,7 +112,7 @@ class Port(base.BasePort):
         while read < self.maxThroughput:
             try:
                 data, addr = self.socket.recvfrom(self.maxPacketSize)
-            except socket.error, se:
+            except socket.error as se:
                 no = se.args[0]
                 if no in (EAGAIN, EINTR, EWOULDBLOCK):
                     return
@@ -135,12 +135,12 @@ class Port(base.BasePort):
             assert addr in (None, self._connectedAddr)
             try:
                 return self.socket.send(datagram)
-            except socket.error, se:
+            except socket.error as se:
                 no = se.args[0]
                 if no == EINTR:
                     return self.write(datagram)
                 elif no == EMSGSIZE:
-                    raise error.MessageLengthError, "message too long"
+                    raise error.MessageLengthError("message too long")
                 elif no == ECONNREFUSED:
                     self.protocol.connectionRefused()
                 else:
@@ -151,12 +151,12 @@ class Port(base.BasePort):
                 warnings.warn("Please only pass IPs to write(), not hostnames", DeprecationWarning, stacklevel=2)
             try:
                 return self.socket.sendto(datagram, addr)
-            except socket.error, se:
+            except socket.error as se:
                 no = se.args[0]
                 if no == EINTR:
                     return self.write(datagram, addr)
                 elif no == EMSGSIZE:
-                    raise error.MessageLengthError, "message too long"
+                    raise error.MessageLengthError("message too long")
                 elif no == ECONNREFUSED:
                     # in non-connected UDP ECONNREFUSED is platform dependent, I think
                     # and the info is not necessarily useful. Nevertheless maybe we
@@ -171,9 +171,9 @@ class Port(base.BasePort):
     def connect(self, host, port):
         """'Connect' to remote server."""
         if self._connectedAddr:
-            raise RuntimeError, "already connected, reconnecting is not currently supported (talk to itamar if you want this)"
+            raise RuntimeError("already connected, reconnecting is not currently supported (talk to itamar if you want this)")
         if not abstract.isIPAddress(host):
-            raise ValueError, "please pass only IP addresses, not domain names"
+            raise ValueError("please pass only IP addresses, not domain names")
         self._connectedAddr = (host, port)
         self.socket.connect((host, port))
 
@@ -239,7 +239,8 @@ class ConnectedPort(Port):
 
     implements(interfaces.IUDPConnectedTransport)
 
-    def __init__(self, (remotehost, remoteport), port, proto, interface='', maxPacketSize=8192, reactor=None):
+    def __init__(self, xxx_todo_changeme, port, proto, interface='', maxPacketSize=8192, reactor=None):
+        (remotehost, remoteport) = xxx_todo_changeme
         Port.__init__(self, port, proto, interface, maxPacketSize, reactor)
         self.remotehost = remotehost
         self.remoteport = remoteport
@@ -271,7 +272,7 @@ class ConnectedPort(Port):
                 data, addr = self.socket.recvfrom(self.maxPacketSize)
                 read += len(data)
                 self.protocol.datagramReceived(data)
-            except socket.error, se:
+            except socket.error as se:
                 no = se.args[0]
                 if no in (EAGAIN, EINTR, EWOULDBLOCK):
                     return
@@ -286,12 +287,12 @@ class ConnectedPort(Port):
         """Write a datagram."""
         try:
             return self.socket.send(data)
-        except socket.error, se:
+        except socket.error as se:
             no = se.args[0]
             if no == EINTR:
                 return self.write(data)
             elif no == EMSGSIZE:
-                raise error.MessageLengthError, "message too long"
+                raise error.MessageLengthError("message too long")
             elif no == ECONNREFUSED:
                 self.protocol.connectionRefused()
             else:

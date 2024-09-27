@@ -94,20 +94,20 @@ class LoopTestCase(unittest.TestCase):
 
         clock.pump(timings)
 
-        self.assertEquals(len(L), 3,
+        self.assertEqual(len(L), 3,
                           "got %d iterations, not 3" % (len(L),))
 
         for (a, b, c, d) in L:
-            self.assertEquals(a, "a")
-            self.assertEquals(b, "b")
-            self.assertEquals(c, None)
-            self.assertEquals(d, "d")
+            self.assertEqual(a, "a")
+            self.assertEqual(b, "b")
+            self.assertEqual(c, None)
+            self.assertEqual(d, "d")
 
         lc.stop()
         self.assertIdentical(theResult[0], lc)
 
         # Make sure it isn't planning to do anything further.
-        self.failIf(clock.calls)
+        self.assertFalse(clock.calls)
 
 
     def testDelayedStart(self):
@@ -126,12 +126,12 @@ class LoopTestCase(unittest.TestCase):
 
         clock.pump(timings)
 
-        self.assertEquals(len(L), 2,
+        self.assertEqual(len(L), 2,
                           "got %d iterations, not 2" % (len(L),))
         lc.stop()
         self.assertIdentical(theResult[0], lc)
 
-        self.failIf(clock.calls)
+        self.assertFalse(clock.calls)
 
 
     def testBadDelay(self):
@@ -149,8 +149,8 @@ class LoopTestCase(unittest.TestCase):
         lc = TestableLoopingCall(clock, foo)
         d = lc.start(delay, now=False)
         lc.stop()
-        self.failIf(ran)
-        self.failIf(clock.calls)
+        self.assertFalse(ran)
+        self.assertFalse(clock.calls)
 
 
     def testStopAtOnce(self):
@@ -193,7 +193,7 @@ class ReactorLoopTestCase(unittest.TestCase):
         lc = task.LoopingCall(foo)
         d = lc.start(0)
         def stopped(ign):
-            self.assertEquals(len(ran), 6)
+            self.assertEqual(len(ran), 6)
         return d.addCallback(stopped)
 
 

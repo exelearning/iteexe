@@ -212,7 +212,7 @@ def setUnjellyableForClassTree(module, baseClass, prefix=None):
 
     for i in dir(module):
         i_ = getattr(module, i)
-        if type(i_) == types.ClassType:
+        if type(i_) == type:
             if issubclass(i_, baseClass):
                 setUnjellyableForClass('%s%s' % (prefix, i), i_)
 
@@ -287,8 +287,8 @@ class _Jellier:
         #self.persistentStore = persistentStore  # ignored
         self.invoker = invoker
 
-    constantTypes = {types.StringType : 1, types.IntType : 1,
-                     types.FloatType : 1, types.LongType : 1}
+    constantTypes = {bytes : 1, int : 1,
+                     float : 1, int : 1}
 
     # XXX ancient horrible backwards-compatibility
     
@@ -300,7 +300,7 @@ class _Jellier:
 
     def _checkMutable(self, obj, refId):
         objId = id(obj)
-        if self.seen.has_key(objId):
+        if objId in self.seen:
             objCheck, derefKey = self.seen[objId]
             return [dereference_atom, derefKey]
         self.seen[objId] = obj, refId
@@ -328,9 +328,9 @@ class _Jellier:
             
             if objType is MethodType:
                 return ["method",
-                        obj.im_func.__name__,
-                        self.jelly(obj.im_self),
-                        self.jelly(obj.im_class)]
+                        obj.__func__.__name__,
+                        self.jelly(obj.__self__),
+                        self.jelly(obj.__self__.__class__)]
 
             elif UnicodeType and objType is UnicodeType:
                 return ['unicode', obj.encode('UTF-8')]
@@ -363,7 +363,7 @@ class _Jellier:
                         sxp.append(self.jelly(item))
                 elif objType in DictTypes:
                     sxp.append(dictionary_atom)
-                    for key, val in obj.items():
+                    for key, val in list(obj.items()):
                         self._ref_id += 1
                         sxp.append([self.jelly(key), self.jelly(val)])
                 elif objType is InstanceType:
@@ -427,7 +427,7 @@ class _Unjellier:
         return o
 
     def unjelly(self, obj):
-        if type(obj) is not types.ListType:
+        if type(obj) is not list:
             return obj
         self.references.append(_theNullRef)
         jelType = obj[0]
@@ -494,7 +494,7 @@ class _Unjellier:
 
     def _unjelly_unicode(self, exp):
         if UnicodeType:
-            return self.resolveReference(unicode(exp[0], "UTF-8"))
+            return self.resolveReference(str(exp[0], "UTF-8"))
         else:
             return self.resolveReference(Unpersistable(exp[0]))
 
@@ -525,7 +525,7 @@ class _Unjellier:
         preTuple = _Tuple(l)
         refid = self.getRefId()
         self.resolveReference(preTuple)
-        for elem in xrange(len(l)):
+        for elem in range(len(l)):
             self.unjellyInto(preTuple, elem, lst[elem])
         # zero-length tuples are false!!
         # return preTuple.resolvedObject or preTuple
@@ -535,7 +535,7 @@ class _Unjellier:
             return preTuple.resolvedObject
     
     def _unjelly_list(self, lst):
-        l = range(len(lst))
+        l = list(range(len(lst)))
         self.resolveReference(l)
         for elem in l:
             self.unjellyInto(l, elem, lst[elem])
@@ -555,7 +555,7 @@ class _Unjellier:
     def _unjelly_module(self, rest):
         moduleName = rest[0]
         # if len(rest) > 0: warn("reference numbers will be out of sync")
-        if type(moduleName) != types.StringType:
+        if type(moduleName) != bytes:
             raise InsecureJelly("Attempted to unjelly a module with a non-string name.")
         if not self.taster.isModuleAllowed(moduleName):
             raise InsecureJelly("Attempted to unjelly module named %s" % repr(moduleName))
@@ -570,7 +570,7 @@ class _Unjellier:
         if not self.taster.isModuleAllowed(modName):
             raise InsecureJelly("module %s not allowed" % modName)
         klaus = namedObject(rest[0])
-        if type(klaus) is not types.ClassType:
+        if type(klaus) is not type:
             raise InsecureJelly("class %s unjellied to something that isn't a class: %s" % (repr(name), repr(klaus)))
         if not self.taster.isClassAllowed(klaus):
             raise InsecureJelly("class not allowed: %s" % qual(klaus))
@@ -601,9 +601,9 @@ class _Unjellier:
         im_self = self.unjelly(rest[1])
         im_class = self.unjelly(rest[2])
         assert not isinstance(im_self, NotKnown)
-        if type(im_class) is not types.ClassType:
+        if type(im_class) is not type:
             raise InsecureJelly("Method found with non-class class.")
-        if im_class.__dict__.has_key(im_name):
+        if im_name in im_class.__dict__:
             if im_self is None:
                 im = getattr(im_class, im_name)
             else:
@@ -726,20 +726,20 @@ class SecurityOptions:
         """SecurityOptions.isModuleAllowed(moduleName) -> boolean
         returns 1 if a module by that name is allowed, 0 otherwise
         """
-        return self.allowedModules.has_key(moduleName)
+        return moduleName in self.allowedModules
 
     def isClassAllowed(self, klass):
         """SecurityOptions.isClassAllowed(class) -> boolean
         Assumes the module has already been allowed.  Returns 1 if the given
         class is allowed, 0 otherwise.
         """
-        return self.allowedClasses.has_key(klass)
+        return klass in self.allowedClasses
 
     def isTypeAllowed(self, typeName):
         """SecurityOptions.isTypeAllowed(typeName) -> boolean
         Returns 1 if the given type is allowed, 0 otherwise.
         """
-        return (self.allowedTypes.has_key(typeName) or
+        return (typeName in self.allowedTypes or
                 '.' in typeName)
 
 

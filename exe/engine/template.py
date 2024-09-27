@@ -27,7 +27,7 @@ import collections
 if hasattr(collections, 'OrderedDict'):
     OrderedDict = collections.OrderedDict
 else:
-    import ordereddict
+    from . import ordereddict
     OrderedDict = ordereddict.OrderedDict
 
 log = logging.getLogger(__name__)
@@ -42,7 +42,7 @@ class Template():
         """
         Initialize
         """
-        log.debug(u'Template init: ' + repr(template_path.basename()))
+        log.debug('Template init: ' + repr(template_path.basename()))
 
         # Initialize base properties
         self.file = template_path.basename()
@@ -73,7 +73,7 @@ class Template():
                 '_author_url': ['Author URL', 0, 2]
             }
 
-            for attr in xml_values.keys():
+            for attr in list(xml_values.keys()):
                 internal_attribute = '_' + attr.replace('-', '_')
                 setattr(self, internal_attribute, xml_values[attr])
 
@@ -81,7 +81,7 @@ class Template():
             if not type(self._is_base_template) is bool:
                 self._is_base_template = bool(self._is_base_template)
 
-            self._attributes = OrderedDict(sorted(_attributespre.items(), key=lambda t: t[1][2]))
+            self._attributes = OrderedDict(sorted(list(_attributespre.items()), key=lambda t: t[1][2]))
 
     def get_name(self):
         """
@@ -186,7 +186,7 @@ class Template():
         Returns a list of all the template properties
         """
         properties = []
-        for attribute in self._attributes.keys():
+        for attribute in list(self._attributes.keys()):
             value = getattr(self, attribute)
             properties.append({'name': _(self._attributes[attribute][0]), 'value': value})
 

@@ -88,10 +88,10 @@ class SeleccionmultiplefpdBlock(Block):
         # Quitamos el prefijo "FPD -"
         # (let's remove the "FPD -" prefix)
         if self.idevice.title.find("FPD - ") == 0:
-            self.idevice.title = x_(u"Now it's your turn")
+            self.idevice.title = x_("Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
-        html += u"<br/><br/>\n"
+        html += "<br/><br/>\n"
         
 
         for element in self.questionElements:

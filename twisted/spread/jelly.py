@@ -133,7 +133,7 @@ def _newInstance(cls, state):
     'state' will be used to update inst.__dict__ . Supports both new- and
     old-style classes.
     """
-    if not isinstance(cls, types.ClassType):
+    if not isinstance(cls, type):
         # new-style
         inst = cls.__new__(cls)
         inst.__dict__.update(state) # Copy 'instance' behaviour
@@ -228,7 +228,7 @@ def setUnjellyableForClassTree(module, baseClass, prefix=None):
 
     for i in dir(module):
         i_ = getattr(module, i)
-        if type(i_) == types.ClassType:
+        if type(i_) == type:
             if issubclass(i_, baseClass):
                 setUnjellyableForClass('%s%s' % (prefix, i), i_)
 
@@ -384,7 +384,7 @@ class _Jellier:
         mark an object's persistent list for later referral
         """
         #if I've been cooked in the meanwhile,
-        if self.cooked.has_key(id(object)):
+        if id(object) in self.cooked:
             # replace the placeholder empty list with the real one
             self.preserved[id(object)][2] = sexp
             # but give this one back.
@@ -393,14 +393,14 @@ class _Jellier:
             self.preserved[id(object)] = sexp
         return sexp
 
-    constantTypes = {types.StringType : 1, types.IntType : 1,
-                     types.FloatType : 1, types.LongType : 1}
+    constantTypes = {bytes : 1, int : 1,
+                     float : 1, int : 1}
 
     def _checkMutable(self,obj):
         objId = id(obj)
-        if self.cooked.has_key(objId):
+        if objId in self.cooked:
             return self.cooked[objId]
-        if self.preserved.has_key(objId):
+        if objId in self.preserved:
             self._cook(obj)
             return self.cooked[objId]
 
@@ -421,9 +421,9 @@ class _Jellier:
                 return obj
             elif objType is MethodType:
                 return ["method",
-                        obj.im_func.__name__,
-                        self.jelly(obj.im_self),
-                        self.jelly(obj.im_class)]
+                        obj.__func__.__name__,
+                        self.jelly(obj.__self__),
+                        self.jelly(obj.__self__.__class__)]
 
             elif UnicodeType and objType is UnicodeType:
                 return ['unicode', obj.encode('UTF-8')]
@@ -440,11 +440,11 @@ class _Jellier:
                 return ['boolean', obj and 'true' or 'false']
             elif objType is datetime.datetime:
                 if obj.tzinfo:
-                    raise NotImplementedError, "Currently can't jelly datetime objects with tzinfo"
+                    raise NotImplementedError("Currently can't jelly datetime objects with tzinfo")
                 return ['datetime', '%s %s %s %s %s %s %s' % (obj.year, obj.month, obj.day, obj.hour, obj.minute, obj.second, obj.microsecond)]
             elif objType is datetime.time:
                 if obj.tzinfo:
-                    raise NotImplementedError, "Currently can't jelly datetime objects with tzinfo"
+                    raise NotImplementedError("Currently can't jelly datetime objects with tzinfo")
                 return ['time', '%s %s %s %s' % (obj.hour, obj.minute, obj.second, obj.microsecond)]
             elif objType is datetime.date:
                 return ['date', '%s %s %s' % (obj.year, obj.month, obj.day)]
@@ -468,7 +468,7 @@ class _Jellier:
                         sxp.append(self.jelly(item))
                 elif objType in DictTypes:
                     sxp.append(dictionary_atom)
-                    for key, val in obj.items():
+                    for key, val in list(obj.items()):
                         sxp.append([self.jelly(key), self.jelly(val)])
                 elif objType is InstanceType:
                     className = qual(obj.__class__)
@@ -526,7 +526,7 @@ class _Unjellier:
         return o
 
     def unjelly(self, obj):
-        if type(obj) is not types.ListType:
+        if type(obj) is not list:
             return obj
         jelType = obj[0]
         if not self.taster.isTypeAllowed(jelType):
@@ -581,7 +581,7 @@ class _Unjellier:
 
     def _unjelly_unicode(self, exp):
         if UnicodeType:
-            return unicode(exp[0], "UTF-8")
+            return str(exp[0], "UTF-8")
         else:
             return Unpersistable(exp[0])
 
@@ -593,16 +593,16 @@ class _Unjellier:
             return Unpersistable(exp[0])
 
     def _unjelly_datetime(self, exp):
-        return datetime.datetime(*map(int, exp[0].split()))
+        return datetime.datetime(*list(map(int, exp[0].split())))
 
     def _unjelly_date(self, exp):
-        return datetime.date(*map(int, exp[0].split()))
+        return datetime.date(*list(map(int, exp[0].split())))
 
     def _unjelly_time(self, exp):
-        return datetime.time(*map(int, exp[0].split()))
+        return datetime.time(*list(map(int, exp[0].split())))
 
     def _unjelly_timedelta(self, exp):
-        days, seconds, microseconds = map(int, exp[0].split())
+        days, seconds, microseconds = list(map(int, exp[0].split()))
         return datetime.timedelta(days=days, seconds=seconds, microseconds=microseconds)
 
     def unjellyInto(self, obj, loc, jel):
@@ -636,7 +636,7 @@ class _Unjellier:
         return o
 
     def _unjelly_tuple(self, lst):
-        l = range(len(lst))
+        l = list(range(len(lst)))
         finished = 1
         for elem in l:
             if isinstance(self.unjellyInto(l, elem, lst[elem]), NotKnown):
@@ -647,7 +647,7 @@ class _Unjellier:
             return _Tuple(l)
 
     def _unjelly_list(self, lst):
-        l = range(len(lst))
+        l = list(range(len(lst)))
         for elem in l:
             self.unjellyInto(l, elem, lst[elem])
         return l
@@ -663,7 +663,7 @@ class _Unjellier:
 
     def _unjelly_module(self, rest):
         moduleName = rest[0]
-        if type(moduleName) != types.StringType:
+        if type(moduleName) != bytes:
             raise InsecureJelly("Attempted to unjelly a module with a non-string name.")
         if not self.taster.isModuleAllowed(moduleName):
             raise InsecureJelly("Attempted to unjelly module named %s" % repr(moduleName))
@@ -676,7 +676,7 @@ class _Unjellier:
         if not self.taster.isModuleAllowed(modName):
             raise InsecureJelly("module %s not allowed" % modName)
         klaus = namedObject(rest[0])
-        if type(klaus) is not types.ClassType:
+        if type(klaus) is not type:
             raise InsecureJelly("class %s unjellied to something that isn't a class: %s" % (repr(name), repr(klaus)))
         if not self.taster.isClassAllowed(klaus):
             raise InsecureJelly("class not allowed: %s" % qual(klaus))
@@ -700,7 +700,7 @@ class _Unjellier:
 
     def _unjelly_instance(self, rest):
         clz = self.unjelly(rest[0])
-        if type(clz) is not types.ClassType:
+        if type(clz) is not type:
             raise InsecureJelly("Instance found with non-class class.")
         if hasattr(clz, "__setstate__"):
             inst = _newInstance(clz, {})
@@ -722,9 +722,9 @@ class _Unjellier:
         im_name = rest[0]
         im_self = self.unjelly(rest[1])
         im_class = self.unjelly(rest[2])
-        if type(im_class) is not types.ClassType:
+        if type(im_class) is not type:
             raise InsecureJelly("Method found with non-class class.")
-        if im_class.__dict__.has_key(im_name):
+        if im_name in im_class.__dict__:
             if im_self is None:
                 im = getattr(im_class, im_name)
             elif isinstance(im_self, NotKnown):
@@ -853,20 +853,20 @@ class SecurityOptions:
         """SecurityOptions.isModuleAllowed(moduleName) -> boolean
         returns 1 if a module by that name is allowed, 0 otherwise
         """
-        return self.allowedModules.has_key(moduleName)
+        return moduleName in self.allowedModules
 
     def isClassAllowed(self, klass):
         """SecurityOptions.isClassAllowed(class) -> boolean
         Assumes the module has already been allowed.  Returns 1 if the given
         class is allowed, 0 otherwise.
         """
-        return self.allowedClasses.has_key(klass)
+        return klass in self.allowedClasses
 
     def isTypeAllowed(self, typeName):
         """SecurityOptions.isTypeAllowed(typeName) -> boolean
         Returns 1 if the given type is allowed, 0 otherwise.
         """
-        return (self.allowedTypes.has_key(typeName) or
+        return (typeName in self.allowedTypes or
                 '.' in typeName)
 
 

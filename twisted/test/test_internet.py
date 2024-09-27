@@ -61,10 +61,10 @@ class SystemEventTestCase(unittest.TestCase):
         self.addTrigger("before", "test", _appendToList)
         self.addTrigger("during", "test", _appendToList)
         self.addTrigger("after", "test", _appendToList)
-        self.assertEquals(len(l), 0, "Nothing happened yet.")
+        self.assertEqual(len(l), 0, "Nothing happened yet.")
         r.fireSystemEvent("test")
         r.iterate()
-        self.assertEquals(len(l), 3, "Should have filled the list.")
+        self.assertEqual(len(l), 3, "Should have filled the list.")
 
         l[:]=[]
         self.addTrigger("before", "defer", _returnDeferred)
@@ -72,19 +72,19 @@ class SystemEventTestCase(unittest.TestCase):
         self.addTrigger("during", "defer", _appendToList)
         self.addTrigger("after", "defer", _appendToList)
         r.fireSystemEvent("defer")
-        self.assertEquals(len(l), 0, "Event should not have fired yet.")
+        self.assertEqual(len(l), 0, "Event should not have fired yet.")
         d.callback(None)
-        self.assertEquals(len(l), 0, "Event still should not have fired yet.")
+        self.assertEqual(len(l), 0, "Event still should not have fired yet.")
         d2.callback(None)
-        self.assertEquals(len(l), 2)
+        self.assertEqual(len(l), 2)
 
         l[:]=[]
         a = self.addTrigger("before", "remove", _appendToList)
         b = self.addTrigger("before", "remove", _appendToList2)
         self.removeTrigger(b)
         r.fireSystemEvent("remove")
-        self.assertEquals(len(l), 1)
-        self.assertEquals(len(l2), 0)
+        self.assertEqual(len(l), 1)
+        self.assertEqual(len(l2), 0)
 
     def testTriggerSystemEvent2(self):
         # one of the "before" trigger functions returns a deferred. A later
@@ -113,9 +113,9 @@ class SystemEventTestCase(unittest.TestCase):
         self.addTrigger("during", "defer2", _appendToList)
         self.addTrigger("after", "defer2", _appendToList)
         r.fireSystemEvent("defer2")
-        self.assertEquals(len(l), 0, "Event should not have fired yet.")
+        self.assertEqual(len(l), 0, "Event should not have fired yet.")
         d2.callback(None)
-        self.assertEquals(len(l), 2)
+        self.assertEqual(len(l), 2)
 
     def testTriggerSystemEvent3(self):
         # make sure reactor can survive the loss of an event type while
@@ -133,14 +133,14 @@ class SystemEventTestCase(unittest.TestCase):
         b1 = self.addTrigger("before", "defer3", _returnDeferred)
         b2 = self.addTrigger("after", "defer3", _appendToList)
         r.fireSystemEvent("defer3")
-        self.assertEquals(len(l), 0, "Event should not have fired yet.")
+        self.assertEqual(len(l), 0, "Event should not have fired yet.")
         self.removeTrigger(b1)
         self.removeTrigger(b2)
         try:
             d.callback(None) # cReactor gives errback to deferred
         except ValueError:
             pass
-        self.assertEquals(len(l), 0)
+        self.assertEqual(len(l), 0)
         d.addErrback(_ignore)
 
     def testTriggerSystemEvent4(self):
@@ -167,17 +167,17 @@ class SystemEventTestCase(unittest.TestCase):
         # event1 should be waiting on deferred 'd'
         r.fireSystemEvent("event2")
         # event2 should be waiting on deferred 'd2'
-        self.assertEquals(len(l), 0, "Event should not have fired yet.")
-        self.assertEquals(len(l2), 0, "Event should not have fired yet.")
+        self.assertEqual(len(l), 0, "Event should not have fired yet.")
+        self.assertEqual(len(l2), 0, "Event should not have fired yet.")
         d.callback(None)
         # event1 should run "during" and "after" stages
         # event2 should still be waiting on d2
-        self.assertEquals(len(l), 1)
-        self.assertEquals(len(l2), 0)
+        self.assertEqual(len(l), 1)
+        self.assertEqual(len(l2), 0)
         d2.callback(None)
         # event2 should run "during" and "after" stages
-        self.assertEquals(len(l), 1)
-        self.assertEquals(len(l2), 1)
+        self.assertEqual(len(l), 1)
+        self.assertEqual(len(l2), 1)
 
     def testTriggerSystemEvent5(self):
         # make sure the reactor can handle attempts to remove bogus triggers
@@ -187,11 +187,11 @@ class SystemEventTestCase(unittest.TestCase):
         r = reactor
         b = self.addTrigger("after", "event1", _appendToList)
         self.removeTrigger(b)
-        if type(b) == types.IntType:
+        if type(b) == int:
             bogus = b + 40
-            self.failUnlessRaises(ValueError,
+            self.assertRaises(ValueError,
                                   r.removeSystemEventTrigger, bogus)
-        self.failUnlessRaises(TypeError,
+        self.assertRaises(TypeError,
                               r.removeSystemEventTrigger, None)
 
 
@@ -201,15 +201,15 @@ class InterfaceTestCase(unittest.TestCase):
 
     def _callback(self, x, **d):
         """Callback for testCallLater"""
-        self.assertEquals(x, 1)
-        self.assertEquals(d, {'a': 1})
+        self.assertEqual(x, 1)
+        self.assertEqual(d, {'a': 1})
         self._called = 1
         self._calledTime = time.time()
 
     def testCallLater(self):
         # add and remove a callback
         def bad():
-            raise RuntimeError, "this shouldn't have been called"
+            raise RuntimeError("this shouldn't have been called")
         i = reactor.callLater(0.1, bad)
         i.cancel()
 
@@ -254,11 +254,11 @@ class InterfaceTestCase(unittest.TestCase):
 
             clock.pump(reactor, [0, 1])
 
-            self.assertEquals(callbackTimes[0], 3)
-            self.assertEquals(callbackTimes[1], None)
+            self.assertEqual(callbackTimes[0], 3)
+            self.assertEqual(callbackTimes[1], None)
 
             clock.pump(reactor, [0, 3])
-            self.assertEquals(callbackTimes[1], 6)
+            self.assertEqual(callbackTimes[1], 6)
         finally:
             clock.uninstall()
 
@@ -266,7 +266,7 @@ class InterfaceTestCase(unittest.TestCase):
     def testCallLaterTime(self):
         d = reactor.callLater(10, lambda: None)
         try:
-            self.failUnless(d.getTime() - (time.time() + 10) < 1)
+            self.assertTrue(d.getTime() - (time.time() + 10) < 1)
         finally:
             d.cancel()
     
@@ -282,13 +282,13 @@ class InterfaceTestCase(unittest.TestCase):
             calls.append('f3')
         
         reactor.callLater(0, f1)
-        self.assertEquals(calls, [])
+        self.assertEqual(calls, [])
         reactor.iterate()
-        self.assertEquals(calls, ['f1'])
+        self.assertEqual(calls, ['f1'])
         reactor.iterate()
-        self.assertEquals(calls, ['f1', 'f2'])
+        self.assertEqual(calls, ['f1', 'f2'])
         reactor.iterate()
-        self.assertEquals(calls, ['f1', 'f2', 'f3'])
+        self.assertEqual(calls, ['f1', 'f2', 'f3'])
 
     def testCallLaterOrder(self):
         l = []
@@ -298,9 +298,9 @@ class InterfaceTestCase(unittest.TestCase):
         def f2(x):
             l2.append(x)
         def done():
-            self.assertEquals(l, range(20))
+            self.assertEqual(l, list(range(20)))
         def done2():
-            self.assertEquals(l2, range(10))
+            self.assertEqual(l2, list(range(10)))
 
         for n in range(10):
             reactor.callLater(0, f, n)
@@ -349,7 +349,7 @@ class InterfaceTestCase(unittest.TestCase):
         dc.cancel()
         str(dc)
 
-        dc = reactor.callLater(0, lambda: None, x=[({'hello': u'world'}, 10j), reactor], *range(10))
+        dc = reactor.callLater(0, lambda: None, x=[({'hello': 'world'}, 10j), reactor], *list(range(10)))
         str(dc)
         dc.cancel()
         str(dc)
@@ -426,11 +426,11 @@ class ReactorCoreTestCase(unittest.TestCase):
         stop = time.time()
         elapsed = stop - start
         #print "elapsed", elapsed
-        self.failUnless(elapsed < 8)
+        self.assertTrue(elapsed < 8)
         t.cancel()
 
     def timeout(self):
-        print "test timed out"
+        print("test timed out")
         self.problem = 1
         self.fail("test timed out")
     def count(self):
@@ -465,10 +465,10 @@ class ReactorCoreTestCase(unittest.TestCase):
         reactor.run()
         # this will fire reactor.crash, which ought to exit .run without
         # running the event triggers
-        self.failUnless(self.counter == 0,
+        self.assertTrue(self.counter == 0,
                         "reactor.crash invoked shutdown triggers, "
                         "but it isn't supposed to")
-        self.failIf(self.problem, "the test timed out")
+        self.assertFalse(self.problem, "the test timed out")
         self.removeTimer(t)
 
 
@@ -489,11 +489,11 @@ class DelayedTestCase(unittest.TestCase):
         reactor.iterate() # flush timers
 
     def tearDown(self):
-        for t in self.timers.values():
+        for t in list(self.timers.values()):
             t.cancel()
 
     def checkTimers(self):
-        l1 = self.timers.values()
+        l1 = list(self.timers.values())
         l2 = list(reactor.getDelayedCalls())
 
         # There should be at least the calls we put in.  There may be other
@@ -506,7 +506,7 @@ class DelayedTestCase(unittest.TestCase):
                 missing.append(dc)
         if missing:
             self.finished = 1
-        self.failIf(missing, "Should have been missing no calls, instead was missing " + repr(missing))
+        self.assertFalse(missing, "Should have been missing no calls, instead was missing " + repr(missing))
 
     def callback(self, tag):
         del self.timers[tag]
@@ -550,9 +550,9 @@ class DelayedTestCase(unittest.TestCase):
 
     def testActive(self):
         dcall = reactor.callLater(0, lambda: None)
-        self.assertEquals(dcall.active(), 1)
+        self.assertEqual(dcall.active(), 1)
         reactor.iterate()
-        self.assertEquals(dcall.active(), 0)
+        self.assertEqual(dcall.active(), 0)
 
 resolve_helper = """
 import %(reactor)s
@@ -617,9 +617,10 @@ class Resolve(unittest.TestCase):
 
         reactor.spawnProcess(helperProto, sys.executable, ("python", "-u", helperPath), env)
 
-        def cbFinished((reason, output, error)):
+        def cbFinished(xxx_todo_changeme):
             # If the output is "done 127.0.0.1\n" we don't really care what
             # else happened.
+            (reason, output, error) = xxx_todo_changeme
             output = ''.join(output)
             if output != 'done 127.0.0.1\n':
                 self.fail((
@@ -674,7 +675,7 @@ class callFromThreadTestCase(unittest.TestCase):
             self.schedule(c.add)
         for i in range(100):
             reactor.iterate()
-        self.assertEquals(c.index, 100)
+        self.assertEqual(c.index, 100)
 
     def testCorrectOrder(self):
         o = Order()
@@ -684,15 +685,15 @@ class callFromThreadTestCase(unittest.TestCase):
         reactor.iterate()
         reactor.iterate()
         reactor.iterate()
-        self.assertEquals(o.stage, 3)
+        self.assertEqual(o.stage, 3)
 
     def testNotRunAtOnce(self):
         c = Counter()
         self.schedule(c.add)
         # scheduled tasks should not be run at once:
-        self.assertEquals(c.index, 0)
+        self.assertEqual(c.index, 0)
         reactor.iterate()
-        self.assertEquals(c.index, 1)
+        self.assertEqual(c.index, 1)
 
 
 class MyProtocol(protocol.Protocol):
@@ -709,8 +710,8 @@ class ProtocolTestCase(unittest.TestCase):
     def testFactory(self):
         factory = MyFactory()
         protocol = factory.buildProtocol(None)
-        self.assertEquals(protocol.factory, factory)
-        self.assert_( isinstance(protocol, factory.protocol) )
+        self.assertEqual(protocol.factory, factory)
+        self.assertTrue( isinstance(protocol, factory.protocol) )
 
 
 class DummyProducer:
@@ -729,7 +730,7 @@ class TestProducer(unittest.TestCase):
         fd.connected = 1
         dp = DummyProducer()
         fd.registerProducer(dp, 0)
-        self.assertEquals(dp.resumed, 1)
+        self.assertEqual(dp.resumed, 1)
         self.assertRaises(RuntimeError, fd.registerProducer, DummyProducer(), 0)
 
     def testUnconnectedFileDescriptor(self):
@@ -737,7 +738,7 @@ class TestProducer(unittest.TestCase):
         fd.disconnected = 1
         dp = DummyProducer()
         fd.registerProducer(dp, 0)
-        self.assertEquals(dp.stopped, 1)
+        self.assertEqual(dp.stopped, 1)
 
 class PortStringification(unittest.TestCase):
     if interfaces.IReactorTCP(reactor, None) is not None:

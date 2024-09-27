@@ -60,7 +60,7 @@ class SortBlockInc(Block):
         
         errorMsg = ""
         
-        if "addSortableItem" + unicode(self.id) in request.args: 
+        if "addSortableItem" + str(self.id) in request.args: 
             self.idevice.addItemToSort()
             self.idevice.edit = True
             self.idevice.undo = False
@@ -80,7 +80,7 @@ class SortBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += common.ideviceShowEditMessage(self)
         
         html += self.idevice.mainFieldSet.renderEditInOrder(self.mainElements)
@@ -89,10 +89,10 @@ class SortBlockInc(Block):
             html += field_engine_make_delete_button(sortableElement)
             html += "<br/>"
             
-        html += common.submitButton("addSortableItem"+unicode(self.id), _("Add Another Item to be Sorted"))
+        html += common.submitButton("addSortableItem"+str(self.id), _("Add Another Item to be Sorted"))
         html += "<br/>"
         html += self.renderEditButtons()
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 

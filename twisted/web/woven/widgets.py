@@ -5,20 +5,20 @@
 
 # DOMWidgets
 
-from __future__ import nested_scopes
 
-import urllib
+
+import urllib.request, urllib.parse, urllib.error
 import warnings
 from twisted.web.microdom import parseString, Element, Node
 from twisted.web import domhelpers
 
 
 #sibling imports
-import model
-import template
-import view
-import utils
-import interfaces
+from . import model
+from . import template
+from . import view
+from . import utils
+from . import interfaces
 
 from twisted.python import components, failure
 from twisted.python import reflect
@@ -180,11 +180,11 @@ class Widget(view.View):
         Do your part, prevent infinite recursion!
         """
         if not DEBUG:
-            if node.attributes.has_key('model'):
+            if 'model' in node.attributes:
                 del node.attributes['model']
-            if node.attributes.has_key('view'):
+            if 'view' in node.attributes:
                 del node.attributes['view']
-            if node.attributes.has_key('controller'):
+            if 'controller' in node.attributes:
                 del node.attributes['controller']
         return node
 
@@ -269,7 +269,7 @@ class Widget(view.View):
             old = node.cloneNode(1)
             node.parentNode = parent
             gen = become.generateDOM(request, node)
-            if old.attributes.has_key('model'):
+            if 'model' in old.attributes:
                 del old.attributes['model']
             del old.attributes['controller']
             gen.appendChild(old)
@@ -312,7 +312,7 @@ class Widget(view.View):
             request = Dummy()
             request.d = document
         oldNode = self.node
-        if payload.has_key(self.submodel):
+        if self.submodel in payload:
             data = payload[self.submodel]
         else:
             data = self.getData(request)
@@ -371,7 +371,7 @@ class Widget(view.View):
     def getAllPatterns(self, name, default=missingPattern, clone=1, deep=1):
         """Get all nodes below this one which have a matching pattern attribute.
         """
-        if self.slots.has_key(name):
+        if name in self.slots:
             slots = self.slots[name]
         else:
             sm = self.submodel.split('/')[-1]
@@ -379,14 +379,14 @@ class Widget(view.View):
             if not slots:
 #                slots = domhelpers.locateNodes(self.templateNode, "pattern", name, noNesting=1)
                 matcher = lambda n, name=name: isinstance(n, Element) and \
-                            n.attributes.has_key("pattern") and n.attributes["pattern"] == name
-                recurseMatcher = lambda n: isinstance(n, Element) and not n.attributes.has_key("view") and not n.attributes.has_key('model')
+                            "pattern" in n.attributes and n.attributes["pattern"] == name
+                recurseMatcher = lambda n: isinstance(n, Element) and "view" not in n.attributes and 'model' not in n.attributes
                 slots = domhelpers.findNodesShallowOnMatch(self.templateNode, matcher, recurseMatcher)
                 if not slots:
                     msg = 'WARNING: No template nodes were found '\
                               '(tagged %s="%s"'\
                               ' or pattern="%s") for node %s (full submodel path %s)' % (name + "Of",
-                                            sm, name, self.templateNode, `self.submodel`)
+                                            sm, name, self.templateNode, repr(self.submodel))
                     if default is _RAISE:
                         raise Exception(msg)
                     if DEBUG:
@@ -417,9 +417,9 @@ class Widget(view.View):
             parentNode = slot.parentNode
             slot.parentNode = None
             clone = slot.cloneNode(deep)
-            if clone.attributes.has_key('pattern'):
+            if 'pattern' in clone.attributes:
                 del clone.attributes['pattern']
-            elif clone.attributes.has_key(name + 'Of'):
+            elif name + 'Of' in clone.attributes:
                 del clone.attributes[name + 'Of']
             slot.parentNode = parentNode
             if DEBUG:
@@ -498,7 +498,7 @@ class Attributes(Widget):
     """
 
     def setUp(self, request, node, data):
-        for k, v in data.items():
+        for k, v in list(data.items()):
             self[k] = v
 
 
@@ -588,7 +588,7 @@ class Input(Widget):
         self['name'] = submodel
 
     def setUp(self, request, node, data):
-        if not self.attributes.has_key('name') and not node.attributes.get('name'):
+        if 'name' not in self.attributes and not node.attributes.get('name'):
             if self.submodel:
                 id = self.submodel
             else:
@@ -596,7 +596,7 @@ class Input(Widget):
             self['name'] = id
         if data is None:
             data = ''
-        if not self.attributes.has_key('value'):
+        if 'value' not in self.attributes:
             self['value'] = str(data)
 
 
@@ -667,7 +667,7 @@ class Option(Widget):
         self.add(Text(self.text or data))
         if data is None:
             data = ''
-        if not self.attributes.has_key('value'):
+        if 'value' not in self.attributes:
             self['value'] = str(data)
 
 class Anchor(Widget):
@@ -693,7 +693,7 @@ class Anchor(Widget):
 
     def setUp(self, request, node, data):
         href = self.baseHREF
-        params = urllib.urlencode(self.parameters)
+        params = urllib.parse.urlencode(self.parameters)
         if params:
             href = href + '?' + params
         self['href'] = href or str(data) + self.trailingSlash
@@ -817,7 +817,7 @@ class KeyedList(List):
         """
         """
         currentListItem = 0
-        keys = data.keys()
+        keys = list(data.keys())
         # Keys may be a tuple, if this is not a true dictionary but a dictionary-like object
         if hasattr(keys, 'sort'):
             keys.sort()

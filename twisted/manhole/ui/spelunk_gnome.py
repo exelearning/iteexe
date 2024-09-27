@@ -45,12 +45,12 @@ from twisted.spread import pb
 from twisted.manhole import explorer
 
 import string, sys, types
-import UserList
+import collections
 _PIXELS_PER_UNIT=10
 
 #### Support class.
 
-class PairList(UserList.UserList):
+class PairList(collections.UserList):
     """An ordered list of key, value pairs.
 
     Kinda like an ordered dictionary.  Made with small data sets
@@ -66,7 +66,7 @@ class PairList(UserList.UserList):
             return (None, None)
 
     def keys(self):
-        return map(lambda x: x[0], self.data)
+        return [x[0] for x in self.data]
 
 
 #### Public
@@ -91,7 +91,7 @@ class SpelunkDisplay(gnome.Canvas):
         Explorer.canvas = self
 
     def receiveExplorer(self, xplorer):
-        if self.visages.has_key(xplorer.id):
+        if xplorer.id in self.visages:
             log.msg("Using cached visage for %d" % (xplorer.id, ))
             # Ikk.  Just because we just received this explorer, that
             # doesn't necessarily mean its attributes are fresh.  Fix
@@ -135,7 +135,7 @@ class Explorer(pb.RemoteCache):
             klass = klass[0]
         spelunker = klass(self, group, canvas)
         if hasattr(canvas, "visages") \
-           and not canvas.visages.has_key(self.id):
+           and self.id not in canvas.visages:
             canvas.visages[self.id] = spelunker
 
         self.give_properties(spelunker)
@@ -162,13 +162,13 @@ class Explorer(pb.RemoteCache):
         """Give a spelunker my properties in an ordered list.
         """
         valuelist = PairList()
-        for p in spelunker.propertyLabels.keys():
+        for p in list(spelunker.propertyLabels.keys()):
             value = getattr(self, p, None)
             valuelist.append((p,value))
         spelunker.fill_properties(valuelist)
 
     def give_attributes(self, spelunker):
-        for a in spelunker.groupLabels.keys():
+        for a in list(spelunker.groupLabels.keys()):
             things = getattr(self, a)
             spelunker.fill_attributeGroup(a, things)
 
@@ -354,12 +354,12 @@ class Visage(gnome.CanvasGroup):
 
         row = 1 # 0 is title
 
-        for name, value in attributes.items():
+        for name, value in list(attributes.items()):
             label = gtk.Label(name)
             label.set_name("AttributeName")
             label.set_alignment(0, 0)
 
-            if type(value) is types.StringType:
+            if type(value) is bytes:
                 widget = gtk.Label(value)
                 widget.set_alignment(0, 0)
             else:
@@ -471,7 +471,7 @@ class AttributeWidget(gtk.Widget):
 
     def signal_buttonPressEvent(self, widget, eventButton, unused_data):
         if eventButton.type == GDK._2BUTTON_PRESS:
-            if self.parent.canvas.visages.has_key(self.explorer.id):
+            if self.explorer.id in self.parent.canvas.visages:
                 visage = self.parent.canvas.visages[self.explorer.id]
             else:
                 visage = self.explorer.newVisage(self.parent.rootGroup,
@@ -557,7 +557,7 @@ class FunctionAttributeWidget(AttributeWidget):
     def getTextForLabel(self):
         signature = self.explorer.signature
         arglist = []
-        for arg in xrange(len(signature)):
+        for arg in range(len(signature)):
             name = signature.name[arg]
             hasDefault, default = signature.get_default(arg)
             if hasDefault:

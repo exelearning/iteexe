@@ -10,7 +10,7 @@ from twisted.internet.defer import Deferred
 
 # Private - shared between all ServerContextFactories, counts up to
 # provide a unique session id for each context
-_sessionCounter = count().next
+_sessionCounter = count().__next__
 
 class _SSLApplicationData(object):
     def __init__(self):
@@ -134,9 +134,9 @@ class OpenSSLVerifyError(VerifyError):
     def __repr__(self):
         x = self._errorCodes.get(self.errno)
         if x is not None:
-            name, short, long = x
+            name, short, int = x
             return 'Peer Certificate Verification Failed: %s (error code: %d)' % (
-                long, self.errno
+                int, self.errno
                 )
 
     __str__ = __repr__
@@ -160,7 +160,7 @@ for abbrevs in _x509namecrap:
 class DistinguishedName(dict):
     __slots__ = ()
     def __init__(self, **kw):
-        for k, v in kw.iteritems():
+        for k, v in kw.items():
             setattr(self, k, v)
 
     def _copyFrom(self, x509name):
@@ -171,7 +171,7 @@ class DistinguishedName(dict):
                 setattr(self, name, value)
 
     def _copyInto(self, x509name):
-        for k, v in self.iteritems():
+        for k, v in self.items():
             setattr(x509name, k, v)
 
     def __repr__(self):

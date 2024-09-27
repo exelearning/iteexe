@@ -3,7 +3,7 @@
 # WORK IN PROGRESS: HARD HAT REQUIRED
 # 
 
-from __future__ import nested_scopes
+
 
 # Twisted Imports
 
@@ -96,7 +96,7 @@ class FormFillerWidget(widgets.Widget):
         return content.input(**arguments)
 
     def input_string(self, request, content, model, templateAttributes={}):
-        if not templateAttributes.has_key("size"):
+        if "size" not in templateAttributes:
             templateAttributes["size"] = '60'
         return self.input_single(request, content, model, templateAttributes)
 
@@ -263,7 +263,7 @@ class FormFillerWidget(widgets.Widget):
     def input_verifiedpassword(self, request, content, model, templateAttributes={}):
         breakLines = model.getHint('breaklines', 1)
         values = self.getValues(request, model)
-        if isinstance(values, (str, unicode)):
+        if isinstance(values, str):
             values = (values, values)
         if not values:
             p1, p2 = "", ""
@@ -285,7 +285,7 @@ class FormFillerWidget(widgets.Widget):
 
     def convergeInput(self, request, content, model, templateNode):
         name = model.__class__.__name__.lower()
-        if _renderers.has_key(model.__class__):
+        if model.__class__ in _renderers:
             imeth = _renderers[model.__class__]
         else:
             imeth = getattr(self,"input_"+name)
@@ -294,7 +294,7 @@ class FormFillerWidget(widgets.Widget):
     
     def createInput(self, request, shell, model, templateAttributes={}):
         name = model.__class__.__name__.lower()
-        if _renderers.has_key(model.__class__):
+        if model.__class__ in _renderers:
             imeth = _renderers[model.__class__]
         else:
             imeth = getattr(self,"input_"+name)
@@ -344,7 +344,7 @@ class FormFillerWidget(widgets.Widget):
             if not inNode.hasAttribute("name"):
                 continue
             nName = inNode.getAttribute("name")
-            if argz.has_key(nName):
+            if nName in argz:
                 #send an empty content shell - we just want the node
                 inputNodes[nName] = self.convergeInput(request, lmx(),
                                                        argz[nName], inNode)
@@ -358,7 +358,7 @@ class FormFillerWidget(widgets.Widget):
         if argz:
             shell = self.createShell(request, node, data)
             # create inputs, in the same order they were passed to us:
-            for remArg in [arg for arg in argList if argz.has_key(arg.name)]:
+            for remArg in [arg for arg in argList if arg.name in argz]:
                 inputNode, errorNode = self.createInput(request, shell, remArg)
                 errorNodes[remArg.name] = errorNode
                 inputNodes[remArg.name] = inputNode
@@ -370,7 +370,7 @@ class FormFillerWidget(widgets.Widget):
 class FormErrorWidget(FormFillerWidget):
     def setUp(self, request, node, data):
         FormFillerWidget.setUp(self, request, node, data)
-        for k, f in self.model.err.items():
+        for k, f in list(self.model.err.items()):
             en = self.errorNodes[k]
             tn = self.inputNodes[k]
             en.setAttribute('class', 'formError')
@@ -405,7 +405,7 @@ class FormErrorModel(FormDisplayModel):
 class _RequestHack(model.MethodModel):
     def wmfactory_hack(self, request):
         rv = [[str(a), repr(b)] for (a, b)
-              in request._outDict.items()]
+              in list(request._outDict.items())]
         #print 'hack', rv
         return rv
 
@@ -454,7 +454,7 @@ class FormProcessor(resource.Resource):
                     outObj = self.formMethod.call(request=request, **outDict)
                 else:
                     outObj = self.formMethod.call(**outDict)
-            except formmethod.FormException, e:
+            except formmethod.FormException as e:
                 err = request.errorInfo = self.errorModelFactory(
                     request.args, outDict, e)
                 return self.errback(err).render(request)

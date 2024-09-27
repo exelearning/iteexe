@@ -38,7 +38,7 @@ class PersistTestCase(unittest.TestCase):
                 p.setStyle(style)
                 p.save(filename='persisttest.'+style)
                 o1 = sob.load('persisttest.'+style, style)
-                self.failUnlessEqual(o, o1)
+                self.assertEqual(o, o1)
 
     def testStylesBeingSet(self):
         o = Dummy()
@@ -50,8 +50,8 @@ class PersistTestCase(unittest.TestCase):
             sob.IPersistable(o).setStyle(style)
             sob.IPersistable(o).save(filename='lala.'+style)
             o1 = sob.load('lala.'+style, style)
-            self.failUnlessEqual(o.foo, o1.foo)
-            self.failUnlessEqual(sob.IPersistable(o1).style, style)
+            self.assertEqual(o.foo, o1.foo)
+            self.assertEqual(sob.IPersistable(o1).style, style)
 
 
     def testNames(self):
@@ -63,11 +63,11 @@ class PersistTestCase(unittest.TestCase):
             p.setStyle(style)
             p.save()
             o1 = sob.load('object.ta'+style[0], style)
-            self.failUnlessEqual(o, o1)
+            self.assertEqual(o, o1)
             for tag in 'lala lolo'.split():
                 p.save(tag)
                 o1 = sob.load('object-'+tag+'.ta'+style[0], style)
-                self.failUnlessEqual(o, o1)
+                self.assertEqual(o, o1)
       
     def testEncryptedStyles(self):
         try:
@@ -83,12 +83,12 @@ class PersistTestCase(unittest.TestCase):
                 p.setStyle(style)
                 p.save(filename='epersisttest.'+style, passphrase=phrase)
                 o1 = sob.load('epersisttest.'+style, style, phrase)
-                self.failUnlessEqual(o, o1)
+                self.assertEqual(o, o1)
 
     def testPython(self):
         open("persisttest.python", 'w').write('foo=[1,2,3] ')
         o = sob.loadValueFromFile('persisttest.python', 'foo')
-        self.failUnlessEqual(o, [1,2,3])
+        self.assertEqual(o, [1,2,3])
 
     def testEncryptedPython(self):
         try:
@@ -99,7 +99,7 @@ class PersistTestCase(unittest.TestCase):
         open("epersisttest.python", 'w').write(
                           sob._encrypt(phrase, 'foo=[1,2,3]'))
         o = sob.loadValueFromFile('epersisttest.python', 'foo', phrase)
-        self.failUnlessEqual(o, [1,2,3])
+        self.assertEqual(o, [1,2,3])
 
     def testTypeGuesser(self):
         self.assertRaises(KeyError, sob.guessType, "file.blah")

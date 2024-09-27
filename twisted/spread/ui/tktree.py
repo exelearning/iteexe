@@ -16,7 +16,7 @@ What I want it to look like:
 """
 
 import os
-from Tkinter import *
+from tkinter import *
 
 class Node:
     def __init__(self):
@@ -61,8 +61,8 @@ class FileNode(Node):
     def isExpandable(self):
         return os.path.isdir(self.name)
     def getSubNodes(self):
-        names=map(lambda x,n=self.name:os.path.join(n,x),os.listdir(self.name))
-        return map(FileNode,names)
+        names=list(map(lambda x,n=self.name:os.path.join(n,x),os.listdir(self.name)))
+        return list(map(FileNode,names))
 
 class TreeItem:
     def __init__(self,widget,parent,node):
@@ -112,7 +112,7 @@ class ListboxTreeItem(TreeItem):
 
 class ListboxTree:
     def __init__(self,parent=None,**options):
-        self.box=apply(Listbox,[parent],options)
+        self.box=Listbox(*[parent], **options)
         self.box.bind("<Double-1>",self.flip)
         self.roots=[]
         self.items=[]
@@ -120,17 +120,17 @@ class ListboxTree:
         """
         for packing.
         """
-        apply(self.box.pack,args,kw)
+        self.box.pack(*args, **kw)
     def grid(self,*args,**kw):
         """
         for gridding.
         """
-        apply(self.box.grid,args,kw)
+        self.box.grid(*args, **kw)
     def yview(self,*args,**kw):
         """
         for scrolling.
         """
-        apply(self.box.yview,args,kw)
+        self.box.yview(*args, **kw)
     def addRoot(self,node):
         r=ListboxTreeItem(self,None,node)
         self.roots.append(r)
@@ -153,7 +153,7 @@ class ListboxTree:
     def expand(self,item):
         if item.expand or item.expand==None: return
         item.expand=1
-        item.subitems=map(lambda x,i=item,s=self:ListboxTreeItem(s,i,x),item.node.getSubNodes())
+        item.subitems=list(map(lambda x,i=item,s=self:ListboxTreeItem(s,i,x),item.node.getSubNodes()))
         if item.subitems:
             item.subitems[0].first=1
         i=self.items.index(item)

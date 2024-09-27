@@ -10,9 +10,9 @@ from twisted.internet import protocol, defer
 from twisted.python import failure, util as tputil
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 def _callProtocolWithDeferred(protocol, executable, args, env, path, reactor=None):
     if reactor is None:
@@ -28,7 +28,7 @@ class _BackRelay(protocol.ProcessProtocol):
 
     def __init__(self, deferred, errortoo=0):
         self.deferred = deferred
-        self.s = StringIO.StringIO()
+        self.s = io.StringIO()
         if errortoo:
             self.errReceived = self.errReceivedIsGood
         else:
@@ -96,8 +96,8 @@ class _EverythingGetter(protocol.ProcessProtocol):
 
     def __init__(self, deferred):
         self.deferred = deferred
-        self.outBuf = StringIO.StringIO()
-        self.errBuf = StringIO.StringIO()
+        self.outBuf = io.StringIO()
+        self.errBuf = io.StringIO()
         self.outReceived = self.outBuf.write
         self.errReceived = self.errBuf.write
     
@@ -145,7 +145,7 @@ def runWithWarningsSuppressed(suppressedWarnings, f, *a, **kw):
     except:
         exc_info = sys.exc_info()
         _resetWarningFilters(None, addedFilters)
-        raise exc_info[0], exc_info[1], exc_info[2]
+        raise exc_info[0](exc_info[1]).with_traceback(exc_info[2])
     else:
         if isinstance(result, defer.Deferred):
             result.addBoth(_resetWarningFilters, addedFilters)

@@ -68,7 +68,7 @@ from twisted.internet._dumbwin32proc import Process
 # System imports
 import os
 import threading
-import Queue
+import queue
 import string
 import time
 import sys
@@ -106,26 +106,26 @@ class Win32Reactor(posixbase.PosixReactorBase):
     def addReader(self, reader, reads=reads):
         """Add a socket FileDescriptor for notification of data available to read.
         """
-        if not reads.has_key(reader):
+        if reader not in reads:
             reads[reader] = self._makeSocketEvent(reader, 'doRead', FD_READ|FD_ACCEPT|FD_CONNECT|FD_CLOSE)
 
     def addWriter(self, writer, writes=writes):
         """Add a socket FileDescriptor for notification of data available to write.
         """
-        if not writes.has_key(writer):
+        if writer not in writes:
             writes[writer] = 1
 
     def removeReader(self, reader):
         """Remove a Selectable for notification of data available to read.
         """
-        if reads.has_key(reader):
+        if reader in reads:
             del events[reads[reader]]
             del reads[reader]
 
     def removeWriter(self, writer, writes=writes):
         """Remove a Selectable for notification of data available to write.
         """
-        if writes.has_key(writer):
+        if writer in writes:
             del writes[writer]
 
     def removeAll(self):
@@ -148,14 +148,14 @@ class Win32Reactor(posixbase.PosixReactorBase):
             return
 
         canDoMoreWrites = 0
-        for fd in writes.keys():
+        for fd in list(writes.keys()):
             if log.callWithLogger(fd, self._runWrite, fd):
                 canDoMoreWrites = 1
 
         if canDoMoreWrites:
             timeout = 0
 
-        handles = events.keys() or [self.dummyEvent]
+        handles = list(events.keys()) or [self.dummyEvent]
         val = MsgWaitForMultipleObjects(handles, 0, timeout, QS_ALLINPUT | QS_ALLEVENTS)
         if val == WAIT_TIMEOUT:
             return
@@ -214,7 +214,7 @@ components.backwardsCompatImplements(Win32Reactor)
 def install():
     threadable.init(1)
     r = Win32Reactor()
-    import main
+    from . import main
     main.installReactor(r)
 
 

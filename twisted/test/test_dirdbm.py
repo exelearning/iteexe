@@ -25,7 +25,7 @@ class DirDbmTestCase(unittest.TestCase):
         k = "//==".decode("base64")
         self.dbm[k] = "a"
         self.dbm[k] = "a"
-        self.assertEquals(self.dbm[k], "a")
+        self.assertEqual(self.dbm[k], "a")
         
     def testRebuildInteraction(self):
         from twisted.persisted import dirdbm
@@ -51,7 +51,7 @@ class DirDbmTestCase(unittest.TestCase):
         
         # check they exist
         for k, v in self.items:
-            assert d.has_key(k), "has_key() failed"
+            assert k in d, "has_key() failed"
             assert d[k] == v, "database has wrong value"
         
         # check non existent key
@@ -90,16 +90,16 @@ class DirDbmTestCase(unittest.TestCase):
         assert dbitems == copyitems, ".copyTo().items() didn't match: %s != %s" % (repr(dbkeys), repr(copyitems))
         
         d2.clear()
-        assert len(d2.keys()) == len(d2.values()) == len(d2.items()) == 0, ".clear() failed"
+        assert len(list(d2.keys())) == len(list(d2.values())) == len(list(d2.items())) == 0, ".clear() failed"
         shutil.rmtree(copyPath)
         
         # delete items
         for k, v in self.items:
             del d[k]
-            assert not d.has_key(k), "has_key() even though we deleted it"
-        assert len(d.keys()) == 0, "database has keys"
-        assert len(d.values()) == 0, "database has values"
-        assert len(d.items()) == 0, "database has items"
+            assert k not in d, "has_key() even though we deleted it"
+        assert len(list(d.keys())) == 0, "database has keys"
+        assert len(list(d.values())) == 0, "database has values"
+        assert len(list(d.items())) == 0, "database has items"
         
 
     def testModificationTime(self):
@@ -114,7 +114,7 @@ class DirDbmTestCase(unittest.TestCase):
         # of this test. Thus we keep the range of acceptability to 3 seconds time.
         # -warner
         self.dbm["k"] = "v"
-        self.assert_(abs(time.time() - self.dbm.getModificationTime("k")) <= 3)
+        self.assertTrue(abs(time.time() - self.dbm.getModificationTime("k")) <= 3)
     
     def testRecovery(self):
         """DirDBM: test recovery from directory after a faked crash""" 

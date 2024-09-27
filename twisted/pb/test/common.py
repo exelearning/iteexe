@@ -33,7 +33,7 @@ class Loopback:
         except:
             f = failure.Failure()
             log.err(f)
-            print "Loopback.write exception:", f
+            print("Loopback.write exception:", f)
             self.loseConnection(f)
 
     def loseConnection(self, why=failure.Failure(CONNECTION_DONE)):

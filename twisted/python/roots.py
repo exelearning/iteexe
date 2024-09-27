@@ -142,7 +142,7 @@ class Collection:
 
         See getStaticEntity.
         """
-        return self.entities.items()
+        return list(self.entities.items())
 
     def listDynamicEntities(self, request):
         """A list of all name, entity that I can generate on demand.
@@ -163,7 +163,7 @@ class Collection:
 
         See getStaticEntity.
         """
-        return self.entities.keys()
+        return list(self.entities.keys())
 
 
     def listDynamicNames(self):

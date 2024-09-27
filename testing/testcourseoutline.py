@@ -53,7 +53,7 @@ class TestCourseOutLine(unittest.TestCase):
         outlinePane = OutlinePaneForTest(root)
       #  print root.children
       #  print child2.id
-        print outlinePane.render()
+        print(outlinePane.render())
 
    
 if __name__ == "__main__":

@@ -56,7 +56,7 @@ class _Resource(Persistable):
         'owner' is either an IDevice or a Package
         'resourceFile' is the path to the file
         """
-        log.debug(u"init resourceFile=%s" % resourceFile)
+        log.debug("init resourceFile=%s" % resourceFile)
         # Warnign that will be shown to the user if they try
         # to cut an unknown extension
         self.warningMsg = ''
@@ -150,7 +150,7 @@ class _Resource(Persistable):
                 # (as might in corrupt files)
                 while self in siblings: 
                     siblings.remove(self) 
-            except Exception, e:
+            except Exception as e:
                 # this can occur with old corrupt files, wherein the resource 
                 # was not actually properly connected to the package.  
                 # Proceed anyhow, as if it just removed...
@@ -260,7 +260,7 @@ class _Resource(Persistable):
                 self._storageName = newName
         else:
             if Path(oldPath).dirname() == self._package.resourceDir:
-                log.debug(u"StorageName=%s was already in self._package resources" % self._storageName)
+                log.debug("StorageName=%s was already in self._package resources" % self._storageName)
             else:
                 filename = (self._package.resourceDir/oldPath.basename())
                 storageName = self._fn2ascii(filename)
@@ -334,7 +334,7 @@ class _Resource(Persistable):
         miniMe = self.__class__.__new__(self.__class__)
         others[id(self)] = miniMe
         # Do normal deep copy
-        for key, val in self.__dict__.items():
+        for key, val in list(self.__dict__.items()):
             if id(val) in others:
                 setattr(miniMe, key, others[id(val)])
             else:
@@ -364,9 +364,9 @@ class _Resource(Persistable):
                 ext = self.cutExtension(ext, nameBase)
         validFilenameChars = "~,()[]-_. %s%s" % (string.ascii_letters, string.digits)
         if type(nameBase) == str:
-            nameBase = unicode(nameBase)
+            nameBase = str(nameBase)
         if type(ext) == str:
-            ext = unicode(ext)
+            ext = str(ext)
         cleanedBasename = unicodedata.normalize('NFKD', nameBase).encode('ASCII', 'ignore')
         nameBase = ''.join(c for c in cleanedBasename if c in validFilenameChars)
         cleanedExt = unicodedata.normalize('NFKD', ext).encode('ASCII', 'ignore')
@@ -411,7 +411,7 @@ class _Resource(Persistable):
             elif ext == '.svgz':
                 return '.svg'
             else:
-                self.warningMsg = (_(u'Unknown extension %s of file %s%s can\'t be transformed to ISO 9660.') % (ext, nameBase, ext))
+                self.warningMsg = (_('Unknown extension %s of file %s%s can\'t be transformed to ISO 9660.') % (ext, nameBase, ext))
                 return ext
         else:
             return ext
@@ -467,7 +467,7 @@ class Resource(_Resource):
                 new_md5 = self.path.md5 
             else: 
                 new_md5 = None
-        except Exception, e:
+        except Exception as e:
             bogus_condition = 1
             # But see if we can recover anyhow.  
             # See if this was caused bcause no self._package,
@@ -683,7 +683,7 @@ class Resource(_Resource):
                     # note that it COULD make it this far IF an AppletIdevice
                     # has the same resource, but by a different storageName, as
                     # another iDevice in the destination package:
-                    raise Exception(_(u"renamed a Resource for an Applet Idevice, and it should not have even made it this far!"))
+                    raise Exception(_("renamed a Resource for an Applet Idevice, and it should not have even made it this far!"))
 
                 elif isinstance(self._idevice, GalleryIdevice):
                     # Re-generate the GalleryIdevice popupHTML,

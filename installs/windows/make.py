@@ -4,7 +4,7 @@ import sys
 import os
 import shutil
 import subprocess
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 from PIL import Image, ImageFont, ImageDraw
 
@@ -13,7 +13,7 @@ PROGRAM_FILES = os.environ['ProgramFiles']
 # In 32 bit systems this variable doesn't exist
 # so it should be like the previous one
 PROGRAM_FILES_32 = PROGRAM_FILES
-if os.environ.has_key('ProgramFiles(x86)'):
+if 'ProgramFiles(x86)' in os.environ:
     PROGRAM_FILES_32 = os.environ['ProgramFiles(x86)']
 
 # Name used for temporary file that contains branded splash screen
@@ -67,7 +67,7 @@ try:
     (font_width, font_height) = font.getsize("Version:")
     candrawfont = True
 except ImportError:
-    print "Could not add version number to image", sys.exc_info()[0]
+    print("Could not add version number to image", sys.exc_info()[0])
 
 # Open the image
 im = Image.open(os.path.join(CUR_DIR, "splash1.jpg"))
@@ -84,7 +84,7 @@ del draw
 im.save(os.path.join(CUR_DIR, BRANDED_JPG))
 
 # Download the Visual C++ Redistibutable installer
-urllib.urlretrieve(VCREDIST, os.path.join(CUR_DIR, 'vcredist2008_x86.exe'))
+urllib.request.urlretrieve(VCREDIST, os.path.join(CUR_DIR, 'vcredist2008_x86.exe'))
 
 # Make the installers
 for installer in ('exe.nsi', 'exe.standalone.nsi'):
@@ -95,8 +95,8 @@ for installer in ('exe.nsi', 'exe.standalone.nsi'):
         try:
             pnsis = subprocess.Popen('%s %s %s %s' % (nsis, nsis_options, versions, os.path.join(CUR_DIR, installer)))
         except OSError:
-            print '*** unable to run makensis, check PATH or explicit pathname'
-            print '    in make.py'
+            print('*** unable to run makensis, check PATH or explicit pathname')
+            print('    in make.py')
     pnsis.wait()
 
 # Remove branded splash screen

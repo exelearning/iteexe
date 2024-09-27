@@ -155,12 +155,12 @@ def _enhook(klass, name):
             for postMethod in getattr(klass, POST(klass, name)):
                 postMethod(*args, **kw)
     try:
-        newfunc.func_name = name
+        newfunc.__name__ = name
     except TypeError:
         # Older python's don't let you do this
         pass
 
-    oldfunc = getattr(klass, name).im_func
+    oldfunc = getattr(klass, name).__func__
     setattr(klass, ORIG(klass, name), oldfunc)
     setattr(klass, PRE(klass, name), [])
     setattr(klass, POST(klass, name), [])

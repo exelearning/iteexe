@@ -120,7 +120,7 @@ class tsafe(object):
 
         def __init__(self, *args):
             from OpenSSL import SSL as _ssl
-            self._ssl_conn = apply(_ssl.Connection, args)
+            self._ssl_conn = _ssl.Connection(*args)
             from threading import _RLock
             self._lock = _RLock()
 
@@ -135,12 +135,12 @@ class tsafe(object):
                   'set_connect_state', 'set_accept_state',
                   'connect_ex', 'sendall'):
 
-            exec """def %s(self, *args):
+            exec("""def %s(self, *args):
                 self._lock.acquire()
                 try:
                     return apply(self._ssl_conn.%s, args)
                 finally:
-                    self._lock.release()\n""" % (f, f)
+                    self._lock.release()\n""" % (f, f))
 sys.modules['OpenSSL.tsafe'] = tsafe
 
 import operator

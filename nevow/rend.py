@@ -17,9 +17,9 @@ Mostly, you'll use the renderers:
  - B{mapping} - publish a dictionary by filling slots
 """
 
-from cStringIO import StringIO
+from io import StringIO
 import os.path
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import warnings
 import traceback
 
@@ -228,7 +228,7 @@ def defaultsFactory(ctx):
     defaults = webform.FormDefaults()
     if co is not None:
         e = iformless.IFormErrors(co, {})
-        for k, v in e.items():
+        for k, v in list(e.items()):
             defaults.getAllDefaults(k).update(v.partialForm)
     return defaults
 
@@ -240,7 +240,7 @@ def errorsFactory(ctx):
     errs = webform.FormErrors()
     if co is not None:
         e = iformless.IFormErrors(co, {})
-        for k, v in e.items():
+        for k, v in list(e.items()):
             errs.updateErrors(k, v.errors)
             errs.setError(k, v.formErrorMessage)
     return errs
@@ -439,7 +439,7 @@ class Page(Fragment, ConfigurableFactory, ChildLookupMixin):
 
         def finishRequest():
             carryover = request.args.get('_nevow_carryover_', [None])[0]
-            if carryover is not None and _CARRYOVER.has_key(carryover):
+            if carryover is not None and carryover in _CARRYOVER:
                 del _CARRYOVER[carryover]
             if self.afterRender is not None:
                 return util.maybeDeferred(self.afterRender,ctx)
@@ -632,7 +632,7 @@ def mapping(context, data):
        <td><nevow:slot name="email"/></td>
      </tr>
     """
-    for k, v in data.items():
+    for k, v in list(data.items()):
         context.fillSlots(k, v)
     return context.tag
 
@@ -664,13 +664,13 @@ class FourOhFour:
         try:
             notFoundHandler = ctx.locate(inevow.ICanHandleNotFound)
             return notFoundHandler.renderHTTP_notFound(PageContext(parent=ctx, tag=notFoundHandler))
-        except KeyError, e:
+        except KeyError as e:
             return self.notFound
         except:
             log.err()
             return self.notFound
 
-    def __nonzero__(self):
+    def __bool__(self):
         return False
 
 

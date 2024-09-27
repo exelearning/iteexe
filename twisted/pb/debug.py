@@ -3,9 +3,9 @@
 # normal use
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 from twisted.pb import banana, slicer, tokens, storage
 Banana = banana.Banana
@@ -19,22 +19,22 @@ class LoggingBananaMixin:
     ### send logging
 
     def sendOpen(self):
-        if self.doLog: print "[%s] OPEN(%d)" % (self.doLog, self.openCount)
+        if self.doLog: print("[%s] OPEN(%d)" % (self.doLog, self.openCount))
         return Banana.sendOpen(self)
     def sendToken(self, obj):
         if self.doLog:
             if type(obj) == str:
-                print "[%s] \"%s\"" % (self.doLog, obj)
+                print("[%s] \"%s\"" % (self.doLog, obj))
             elif type(obj) == int:
-                print "[%s] %s" % (self.doLog, obj)
+                print("[%s] %s" % (self.doLog, obj))
             else:
-                print "[%s] ?%s?" % (self.doLog, obj)
+                print("[%s] ?%s?" % (self.doLog, obj))
         return Banana.sendToken(self, obj)
     def sendClose(self, openID):
-        if self.doLog: print "[%s] CLOSE(%d)" % (self.doLog, openID)
+        if self.doLog: print("[%s] CLOSE(%d)" % (self.doLog, openID))
         return Banana.sendClose(self, openID)
     def sendAbort(self, count):
-        if self.doLog: print "[%s] ABORT(%d)" % (self.doLog, count)
+        if self.doLog: print("[%s] ABORT(%d)" % (self.doLog, count))
         return Banana.sendAbort(self, count)
 
 
@@ -46,8 +46,8 @@ class LoggingBananaMixin:
     def handleOpen(self, openCount, indexToken):
         if self.doLog:
             stack = self.rxStackSummary()
-            print "[%s] got OPEN(%d,%s) %s" % \
-                  (self.doLog, openCount, indexToken, stack)
+            print("[%s] got OPEN(%d,%s) %s" % \
+                  (self.doLog, openCount, indexToken, stack))
         return Banana.handleOpen(self, openCount, indexToken)
     def handleToken(self, token, ready_deferred=None):
         if self.doLog:
@@ -59,12 +59,12 @@ class LoggingBananaMixin:
                 s = 'UF:%s' % (token,)
             else:
                 s = '?%s?' % (token,)
-            print "[%s] got %s %s" % (self.doLog, s, self.rxStackSummary())
+            print("[%s] got %s %s" % (self.doLog, s, self.rxStackSummary()))
         return Banana.handleToken(self, token, ready_deferred)
     def handleClose(self, closeCount):
         if self.doLog:
             stack = self.rxStackSummary()
-            print "[%s] got CLOSE(%d): %s" % (self.doLog, closeCount, stack)
+            print("[%s] got CLOSE(%d): %s" % (self.doLog, closeCount, stack))
         return Banana.handleClose(self, closeCount)
 
 class LoggingBanana(LoggingBananaMixin, Banana):
@@ -159,7 +159,7 @@ class TokenBananaMixin:
             b = chr(len(token)) + tokens.STRING + token
             self.injectData(b)
         else:
-            raise NotImplementedError, "hey, this is just a quick hack"
+            raise NotImplementedError("hey, this is just a quick hack")
 
     def injectData(self, data):
         if not self.transport.disconnectReason:
@@ -204,7 +204,7 @@ def decodeTokens(tokens, debug=0):
 
 def encode(obj):
     b = LoggingStorageBanana()
-    b.transport = StringIO.StringIO()
+    b.transport = io.StringIO()
     b.send(obj)
     return b.transport.getvalue()
 def decode(string):

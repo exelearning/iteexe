@@ -9,14 +9,13 @@ from twisted.internet import interfaces, defer, main
 from twisted.persisted import styles
 from twisted.python import log, failure
 
-from ops import ReadFileOp, WriteFileOp
-from util import StateEventMachineType
+from .ops import ReadFileOp, WriteFileOp
+from .util import StateEventMachineType
 from zope.interface import implements
 
 from socket import error as socket_error
 
-class ConnectedSocket(log.Logger, styles.Ephemeral, object):
-    __metaclass__ = StateEventMachineType
+class ConnectedSocket(log.Logger, styles.Ephemeral, object, metaclass=StateEventMachineType):
     implements(interfaces.ITransport, interfaces.IProducer, interfaces.IConsumer)
     events = ["write", "loseConnection", "writeDone", "writeErr", "readDone", "readErr", "shutdown"]
     bufferSize = 2**2**2**2
@@ -125,7 +124,7 @@ class ConnectedSocket(log.Logger, styles.Ephemeral, object):
         self.sf.connectionLost(reason)
         try:
             protocol.connectionLost(reason)
-        except TypeError, e:
+        except TypeError as e:
             # while this may break, it will only break on deprecated code
             # as opposed to other approaches that might've broken on
             # code that uses the new API (e.g. inspect).
@@ -147,7 +146,7 @@ class ConnectedSocket(log.Logger, styles.Ephemeral, object):
                 return
         try:
             self.read_op.initiateOp(self.socket.fileno(), self.readbuf)
-        except WindowsError, we:
+        except WindowsError as we:
 #            log.msg("initiating read failed with args %s" % (we,))
             self.reactor.callLater(0, self.connectionLost, failure.Failure(main.CONNECTION_DONE))
 
@@ -183,7 +182,7 @@ class ConnectedSocket(log.Logger, styles.Ephemeral, object):
 #        log.msg("buffer lengths are", ll, "total", sum(ll))
         try:
             self.write_op.initiateOp(self.socket.fileno(), b)
-        except WindowsError, we:
+        except WindowsError as we:
 #            log.msg("initiating write failed with args %s" % (we,))
             self.reactor.callLater(0, self.connectionLost, failure.Failure(main.CONNECTION_DONE))
 

@@ -10,13 +10,13 @@ Different styles of persisted objects.
 
 # System Imports
 import types
-import copy_reg
+import copyreg
 import copy
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 from exe                import globals as G
 from exe.engine.path    import Path
@@ -39,9 +39,9 @@ oldModules = {}
 
 def pickleMethod(method):
     'support function for copy_reg to pickle method refs'
-    return unpickleMethod, (method.im_func.__name__,
-                             method.im_self,
-                             method.im_class)
+    return unpickleMethod, (method.__func__.__name__,
+                             method.__self__,
+                             method.__self__.__class__)
 
 def unpickleMethod(im_name,
                     im_self,
@@ -51,7 +51,7 @@ def unpickleMethod(im_name,
         unbound = getattr(im_class,im_name)
         if im_self is None:
             return unbound
-        bound=instancemethod(unbound.im_func,
+        bound=instancemethod(unbound.__func__,
                                  im_self,
                                  im_class)
         return bound
@@ -65,12 +65,12 @@ def unpickleMethod(im_name,
         log.error("Attempting fixup with" + unbound)
         if im_self is None:
             return unbound
-        bound=instancemethod(unbound.im_func,
+        bound=instancemethod(unbound.__func__,
                                  im_self,
                                  im_self.__class__)
         return bound
 
-copy_reg.pickle(types.MethodType,
+copyreg.pickle(types.MethodType,
                 pickleMethod,
                 unpickleMethod)
 
@@ -80,14 +80,14 @@ def pickleModule(module):
 
 def unpickleModule(name):
     'support function for copy_reg to unpickle module refs'
-    if oldModules.has_key(name):
+    if name in oldModules:
         log.info("Module has moved: " + name)
         name = oldModules[name]
         log.info(name)
     return __import__(name,{},{},'x')
 
 
-copy_reg.pickle(types.ModuleType,
+copyreg.pickle(types.ModuleType,
                 pickleModule,
                 unpickleModule)
 
@@ -96,13 +96,13 @@ def pickleStringO(stringo):
     return unpickleStringO, (stringo.getvalue(), stringo.tell())
 
 def unpickleStringO(val, sek):
-    x = StringIO.StringIO()
+    x = io.StringIO()
     x.write(val)
     x.seek(sek)
     return x
 
 if hasattr(StringIO, 'OutputType'):
-    copy_reg.pickle(StringIO.OutputType,
+    copyreg.pickle(io.OutputType,
                     pickleStringO,
                     unpickleStringO)
 
@@ -110,13 +110,13 @@ def pickleStringI(stringi):
     return unpickleStringI, (stringi.getvalue(), stringi.tell())
 
 def unpickleStringI(val, sek):
-    x = StringIO.StringIO(val)
+    x = io.StringIO(val)
     x.seek(sek)
     return x
 
 
 if hasattr(StringIO, 'InputType'):
-    copy_reg.pickle(StringIO.InputType,
+    copyreg.pickle(io.InputType,
                 pickleStringI,
                 unpickleStringI)
 
@@ -155,14 +155,14 @@ def doUpgrade(newPackage=None, isMerge=False, preMergePackage=None):
             # just check all the objects, but don't actually change any, 
             # letting any exception stop this before the real requireUpgrade()
             log.debug("doUpgrade performing a pre-Merge safety check.")
-            for versioned in versionedsToUpgrade.values(): 
+            for versioned in list(versionedsToUpgrade.values()): 
                 requireUpgrade(versioned, newPackage, 
                     isMerge, preMergePackage, mergeCheck=True)
             log.debug("doUpgrade completed the pre-Merge safety check.")
-        for versioned in versionedsToUpgrade.values(): 
+        for versioned in list(versionedsToUpgrade.values()): 
             requireUpgrade(versioned, newPackage, 
                     isMerge, preMergePackage, mergeCheck=False)
-    except Exception, exc:
+    except Exception as exc:
         # clear out any remaining upgrades before continuing:
         versionedsToUpgrade = {}
         upgraded = {}
@@ -231,11 +231,11 @@ class Versioned:
         bases.reverse()
         bases.append(self.__class__) # don't forget me!!
         for base in bases:
-            if base.__dict__.has_key('persistenceForgets'):
+            if 'persistenceForgets' in base.__dict__:
                 for slot in base.persistenceForgets:
-                    if dct.has_key(slot):
+                    if slot in dct:
                         del dct[slot]
-            if base.__dict__.has_key('persistenceVersion'):
+            if 'persistenceVersion' in base.__dict__:
                 dct['%s.persistenceVersion' % reflect.qual(base)] = base.persistenceVersion
         return dct
 
@@ -250,7 +250,7 @@ class Versioned:
         bases.append(self.__class__) # don't forget me!!
 
         # first let's look for old-skool versioned's
-        if self.__dict__.has_key("persistenceVersion"):
+        if "persistenceVersion" in self.__dict__:
             
             # Hacky heuristic: if more than one class subclasses Versioned,
             # we'll assume that the higher version number wins for the older
@@ -265,7 +265,7 @@ class Versioned:
             highestVersion = 0
             highestBase = None
             for base in bases:
-                if not base.__dict__.has_key('persistenceVersion'):
+                if 'persistenceVersion' not in base.__dict__:
                     continue
                 if base.persistenceVersion > highestVersion:
                     highestBase = base
@@ -316,7 +316,7 @@ class Versioned:
                                         + " to new merge package. "
                                         + " Please upgrade package first!")
                                 #  May want to include the package name here:
-                                raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
+                                raise Exception(_("Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
                         elif isMerge:
                             # this is a merge with a resource that is
                             # pointing to an old package, not even the
@@ -329,7 +329,7 @@ class Versioned:
                                     + " to new merge package. "
                                     + " Please upgrade package first!")
                             #  May want to include the package name here:
-                            raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
+                            raise Exception(_("Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
                         else:
                             # This appears to be a corrupt resource, pointing 
                             # to an invalid package.  For non-merge loads, we
@@ -434,7 +434,7 @@ class Versioned:
                         #
                         # @ least for now, include the specific Java Applet info
                         # since it is the ONLY iDevice unable to handle this.
-                        raise Exception(_(u"Unable to merge: duplicate Java Applet resource names exist (including: \"" + self.storageName + "\"). Please see the log file for the names of ALL such problem resources."))
+                        raise Exception(_("Unable to merge: duplicate Java Applet resource names exist (including: \"" + self.storageName + "\"). Please see the log file for the names of ALL such problem resources."))
 
 
 
@@ -447,7 +447,7 @@ class Versioned:
                     # but call it a second time after going through all other
                     # resources....
                     # (for random timing issues in loading resources, etc.)
-                    if base.__dict__.has_key("launch_testForZombies"): 
+                    if "launch_testForZombies" in base.__dict__: 
                         method = base.__dict__.get("launch_testForZombies") 
                         method(self)
 
@@ -475,7 +475,7 @@ class Versioned:
                                 + " to new merge package. "
                                 + " Please upgrade package first!")
                         #  May want to include the package name here:
-                        raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
+                        raise Exception(_("Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
                     elif not isMerge:
                         # swap to a proper package on Nodes, IF the current
                         # package is NOT the one that we're really using:
@@ -489,7 +489,7 @@ class Versioned:
                 # to be done AFTER the all objects have been updated....
                 #
                 if not mergeCheck: 
-                    if base.__dict__.has_key("launch_testForZombies"): 
+                    if "launch_testForZombies" in base.__dict__: 
                         method = base.__dict__.get("launch_testForZombies") 
                         method(self)
 
@@ -530,7 +530,7 @@ class Versioned:
 
             # ugly hack, but it's what the user expects, really
             if (Versioned not in base.__bases__ and
-                not base.__dict__.has_key('persistenceVersion')):
+                'persistenceVersion' not in base.__dict__):
                 continue
             currentVers = base.persistenceVersion
             pverName = '%s.persistenceVersion' % reflect.qual(base)
@@ -548,7 +548,7 @@ class Versioned:
                                 + " unable to insert.  " 
                                 + " Please upgrade package first!") 
                         #  May want to include the package name here: 
-                        raise Exception(_(u"Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
+                        raise Exception(_("Package is old. Please upgrade it (using File..Open followed by File..Save As) before attempting to insert it into another package!"))
 
                     log.debug( "Upgrading " + reflect.qual(base) + " (of " \
                             +  reflect.qual(self.__class__) + " @ " \
@@ -567,7 +567,7 @@ class Versioned:
             # afterUpgradeHandlers, which occur after ALL the object upgrades.
             # (Note: persistenceVersion must be defined to even make it here)
             if not mergeCheck: 
-                if base.__dict__.has_key("TwistedRePersist"): 
+                if "TwistedRePersist" in base.__dict__: 
                     method = base.__dict__.get("TwistedRePersist") 
                     method(self)
 

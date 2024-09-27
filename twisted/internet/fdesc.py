@@ -19,7 +19,7 @@ else:
     import FCNTL
 
 # twisted imports
-from main import CONNECTION_LOST, CONNECTION_DONE
+from .main import CONNECTION_LOST, CONNECTION_DONE
 
 
 def setNonBlocking(fd):
@@ -43,7 +43,7 @@ def readFromFD(fd, callback):
     """
     try:
         output = os.read(fd, 8192)
-    except (OSError, IOError), ioe:
+    except (OSError, IOError) as ioe:
         if ioe.args[0] == errno.EAGAIN:
             return
         else:

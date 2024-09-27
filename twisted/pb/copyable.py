@@ -7,8 +7,8 @@ from twisted.python import reflect
 from twisted.python.components import registerAdapter
 from twisted.internet import defer
 
-import slicer, tokens
-from tokens import BananaError
+from . import slicer, tokens
+from .tokens import BananaError
 
 Interface = interface.Interface
 
@@ -41,7 +41,7 @@ class CopyableSlicer(slicer.BaseSlicer):
         yield 'copyable'
         yield self.obj.getTypeToCopy()
         state = self.obj.getStateToCopy()
-        for k,v in state.iteritems():
+        for k,v in state.items():
             yield k
             yield v
     def describe(self):
@@ -126,7 +126,7 @@ class RemoteCopyUnslicer(slicer.BaseUnslicer):
         assert ready_deferred is None
         if self.attrname == None:
             attrname = obj
-            if self.d.has_key(attrname):
+            if attrname in self.d:
                 raise BananaError("duplicate attribute name '%s'" % attrname)
             s = self.schema
             if s:
@@ -237,7 +237,7 @@ def registerRemoteCopyUnslicerFactory(typename, unslicerfactory,
 
     if registry == None:
         registry = CopyableRegistry
-    assert not registry.has_key(typename)
+    assert typename not in registry
     registry[typename] = unslicerfactory
 
 # this keeps track of everything submitted to registerRemoteCopyFactory
@@ -329,7 +329,7 @@ class RemoteCopyOldStyle(_RemoteCopyBase):
     # classes do not do metaclass magic
     copytype = None
 
-class RemoteCopy(_RemoteCopyBase, object):
+class RemoteCopy(_RemoteCopyBase, object, metaclass=RemoteCopyClass):
     # leave copytype at the default to auto-register with the fully-qualified
     # class name, which is the same behavior as Copyable. Set copytype to a
     # string to override this name. Set it to None to disable
@@ -340,5 +340,4 @@ class RemoteCopy(_RemoteCopyBase, object):
     # inherits from both pb.Copyable and pb.RemoteCopy). Otherwise the
     # default name for the receiver's pb.RemoteCopy class will be different
     # than the sender's pb.Copyable class.
-    __metaclass__ = RemoteCopyClass
     pass

@@ -34,7 +34,7 @@ Date:    7 Mar 2004
 #     it doesn't play nice with other types that implement
 #     __radd__().  Test this.
 
-from __future__ import generators
+
 
 import sys, os, fnmatch, glob, shutil, codecs
 try:
@@ -65,7 +65,7 @@ def getFileSystemEncoding():
         return encoding
 
 
-class Path(unicode):
+class Path(str):
     """ Represents a filesystem Path.
 
     For documentation on individual methods, consult their
@@ -76,7 +76,7 @@ class Path(unicode):
 
     fileSystemEncoding = getFileSystemEncoding()
 
-    def __new__(cls, filename=u'', encoding=None):
+    def __new__(cls, filename='', encoding=None):
         """
         Gently converts the filename to unicode
         """
@@ -88,10 +88,10 @@ class Path(unicode):
             if filename[:4] != device_namespace_prefix:
                 filename = device_namespace_prefix+filename
         
-        return unicode.__new__(cls, toUnicode(filename, encoding))
+        return str.__new__(cls, toUnicode(filename, encoding))
 
     def __repr__(self):
-        return 'Path(%s)' % unicode.__repr__(self)
+        return 'Path(%s)' % str.__repr__(self)
 
     def __str__(self):
         return self.encode(Path.fileSystemEncoding)
@@ -441,7 +441,7 @@ class Path(unicode):
         For example, Path('/users').glob('*/bin/*') returns a list
         of all the files users have in their bin directories.
         """
-        return map(Path, glob.glob(toUnicode(self / pattern)))
+        return list(map(Path, glob.glob(toUnicode(self / pattern))))
 
 
     # --- Reading or writing an entire file at once.
@@ -505,11 +505,11 @@ class Path(unicode):
                 data = file_.read()
             finally:
                 file_.close()
-            return (data.replace(u'\r\n', u'\n')
-                        .replace(u'\r\x85', u'\n')
-                        .replace(u'\r', u'\n')
-                        .replace(u'\x85', u'\n')
-                        .replace(u'\u2028', u'\n'))
+            return (data.replace('\r\n', '\n')
+                        .replace('\r\x85', '\n')
+                        .replace('\r', '\n')
+                        .replace('\x85', '\n')
+                        .replace('\u2028', '\n'))
 
     def write_text(self, text, encoding=None,
                    errors='strict', linesep=os.linesep,
@@ -558,7 +558,7 @@ class Path(unicode):
 
         This applies to Unicode text the same as to 8-bit text, except
         there are three additional standard Unicode end-of-line sequences:
-        u'\x85', u'\r\x85', and u'\u2028'.
+        u'\x85', u'\r\x85', and u'\\u2028'.
 
         (This is slightly different from when you open a file for
         writing with fopen(filename, "w") in C or file(filename, 'w')
@@ -576,16 +576,16 @@ class Path(unicode):
         isn't specified).  The 'errors' argument applies only to this
         conversion.
         """
-        if isinstance(text, unicode):
+        if isinstance(text, str):
             if linesep is not None:
                 # Convert all standard end-of-line sequences to
                 # ordinary newline characters.
-                text = (text.replace(u'\r\n', u'\n')
-                            .replace(u'\r\x85', u'\n')
-                            .replace(u'\r', u'\n')
-                            .replace(u'\x85', u'\n')
-                            .replace(u'\u2028', u'\n'))
-                text = text.replace(u'\n', linesep)
+                text = (text.replace('\r\n', '\n')
+                            .replace('\r\x85', '\n')
+                            .replace('\r', '\n')
+                            .replace('\x85', '\n')
+                            .replace('\u2028', '\n'))
+                text = text.replace('\n', linesep)
             if encoding is None:
                 encoding = sys.getdefaultencoding()
             bytes = text.encode(encoding, errors)
@@ -621,13 +621,13 @@ class Path(unicode):
                     i += 1
                     backupName = self.dirname() / self.namebase + '.old' + str(i) + self.ext
                 self.rename(backupName)
-            except Exception, e:
+            except Exception as e:
                 log.warn('Failed to rename file on saving: %s -> %s -- %s' % (repr(self), repr(backupName), str(e)))
                 backupName = None
             try:
                 # Begin saving
                 saveFunc(self, *args)
-            except Exception, e:
+            except Exception as e:
                 # Restore the backup if available
                 if backupName is not None and backupName.exists():
                     if self.exists():
@@ -638,11 +638,11 @@ class Path(unicode):
                                 i += 1
                                 crashedFilename = self.dirname() / self.namebase + '.crashed' + str(i) + self.ext
                             self.rename(crashedFilename)
-                        except Exception, e:
+                        except Exception as e:
                             log.warn('Failed to rename crashed file on saving: %s -> %s -- %s' % (self, crashedFilename, str(e)))
                             try:
                                 self.remove()
-                            except Exception, e:
+                            except Exception as e:
                                 raise Exception(endOfWorld % backupName)
                     backupName.rename(self)
                 raise Exception(_("%s\n%s unchanged" % (e, self)))
@@ -650,7 +650,7 @@ class Path(unicode):
             if backupName and backupName.exists():
                 try:
                     backupName.remove()
-                except Exception, e:
+                except Exception as e:
                     log.warn('Save completed but unable to delete backup "%s"' % backupName)
 
     def unique(self):
@@ -714,7 +714,7 @@ class Path(unicode):
         linesep - The desired line-ending.  This line-ending is
             applied to every line.  If a line already has any
             standard line ending ('\r', '\n', '\r\n', u'\x85',
-            u'\r\x85', u'\u2028'), that will be stripped off and
+            u'\r\x85', u'\\u2028'), that will be stripped off and
             this will be used instead.  The default is os.linesep,
             which is platform-dependent ('\r\n' on Windows, '\n' on
             Unix, etc.)  Specify None to write the lines as-is,
@@ -735,15 +735,15 @@ class Path(unicode):
         file_ = self.open(mode)
         try:
             for line in lines:
-                isUnicode = isinstance(line, unicode)
+                isUnicode = isinstance(line, str)
                 if linesep is not None:
                     # Strip off any existing line-end and add the
                     # specified linesep string.
                     if isUnicode:
-                        if line[-2:] in (u'\r\n', u'\x0d\x85'):
+                        if line[-2:] in ('\r\n', '\x0d\x85'):
                             line = line[:-2]
-                        elif line[-1:] in (u'\r', u'\n',
-                                           u'\x85', u'\u2028'):
+                        elif line[-1:] in ('\r', '\n',
+                                           '\x85', '\u2028'):
                             line = line[:-1]
                     else:
                         if line[-2:] == '\r\n':
@@ -862,12 +862,12 @@ class Path(unicode):
 
     # --- Create/delete operations on directories
 
-    def mkdir(self, mode=0777):
+    def mkdir(self, mode=0o777):
         """Make a new directory with
         this pathname"""
         os.mkdir(self, mode)
 
-    def makedirs(self, mode=0777):
+    def makedirs(self, mode=0o777):
         """Make directories with this pathname
         will create multiple dirs as necessary"""
         os.makedirs(self, mode)
@@ -886,7 +886,7 @@ class Path(unicode):
         """ Set the access/modified times of this file to the current time.
         Create the file if it does not exist.
         """
-        fd = os.open(self, os.O_WRONLY | os.O_CREAT, 0666)
+        fd = os.open(self, os.O_WRONLY | os.O_CREAT, 0o666)
         os.close(fd)
         os.utime(self, None)
 
@@ -989,20 +989,20 @@ class Path(unicode):
                             continue
                     srcname.copy2(dstname)
                 # XXX What about devices, sockets etc.?
-            except (IOError, os.error), why:
+            except (IOError, os.error) as why:
                 import pdb
                 pdb.set_trace()
                 errors.append((srcname, dstname, why))
             # catch the Error from the recursive copytree so that we can
             # continue with other files
-            except shutil.Error, err:
+            except shutil.Error as err:
                 import pdb
                 pdb.set_trace()
                 errors.extend(err.args[0])
         if errors:
             import pdb
             pdb.set_trace()
-            raise shutil.Error, errors
+            raise shutil.Error(errors)
 
     if hasattr(shutil, 'move'):
         def move(self, dst):
@@ -1108,10 +1108,10 @@ def toUnicode(string, encoding='utf8'):
     Turns everything passed to it to unicode.
     """
     if isinstance(string, str):
-        return unicode(string, encoding)
-    elif isinstance(string, unicode):
-        return unicode(string)
+        return str(string, encoding)
+    elif isinstance(string, str):
+        return str(string)
     elif string is None:
-        return u''
+        return ''
     else:
-        return unicode(str(string), encoding)
+        return str(str(string), encoding)

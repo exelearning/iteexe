@@ -35,23 +35,23 @@ class FLVReader(dict):
         self.filename = filename
         self.file = open(filename, 'rb')
         self.signature = self.file.read(3)
-        print  " Signature:", self.signature
+        print(" Signature:", self.signature)
         #assert self.signature == 'FLV', 'Not an flv file'
         self.version = self.readbyte()
-        print "Version:", self.version
+        print("Version:", self.version)
         flags = self.readbyte()
         self.typeFlagsReserved = flags >> 3
         self.typeFlagsAudio = (flags & 0x07) >> 2
         self.typeFlagsReserved2 = (flags & 0x03) >> 1
         self.typeFlagsVideo = (flags & 0x01)
-        print "TypeFlagsReserved:",self.typeFlagsReserved
+        print("TypeFlagsReserved:",self.typeFlagsReserved)
      
-        print "TypeFlagsAudio:",self.typeFlagsAudio
-        print "TypeFlagsReserved2:",self.typeFlagsReserved2  
-        print "TypeFlagsVideo:",self.typeFlagsVideo
+        print("TypeFlagsAudio:",self.typeFlagsAudio)
+        print("TypeFlagsReserved2:",self.typeFlagsReserved2)  
+        print("TypeFlagsVideo:",self.typeFlagsVideo)
  
         self.dataOffset = self.readint()
-        print "dataOffset:",self.dataOffset
+        print("dataOffset:",self.dataOffset)
         extraDataLen = self.dataOffset - self.file.tell()
         self.extraData = self.file.read(extraDataLen)
         self.readtag()
@@ -61,13 +61,13 @@ class FLVReader(dict):
         tagType = self.readbyte()
         dataSize = self.read24bit()
         timeStamp = self.read24bit()
-        print timeStamp
+        print(timeStamp)
         timeStampExtended = self.readbyte()
         streamID = self.read24bit()
         if tagType == self.AUDIO:
-            print "Can't handle audio tags yet"
+            print("Can't handle audio tags yet")
         elif tagType == self.VIDEO:
-            print "Can't handle video tags yet"
+            print("Can't handle video tags yet")
         elif tagType == self.META:
             endpos = self.file.tell() + dataSize
             event = self.readAMFData()
@@ -77,7 +77,7 @@ class FLVReader(dict):
             # We are complete
             self.update(metaData)
         elif tagType == self.UNDEFINED:
-            print "Can't handle undefined tags yet"
+            print("Can't handle undefined tags yet")
 
     def readint(self):
         data = self.file.read(4)
@@ -98,7 +98,7 @@ class FLVReader(dict):
     def readAMFData(self, dataType=None):
         if dataType is None:
             dataType = self.readbyte()
-        print ('type(%s)' % dataType),
+        print(('type(%s)' % dataType), end=' ')
         funcs = {
             0: self.readAMFDouble,
             1: self.readAMFBoolean,
@@ -116,7 +116,7 @@ class FLVReader(dict):
         else:
             if callable(func):
                 val = func()
-                print val
+                print(val)
                 return val
 
     def readAMFDouble(self):
@@ -142,7 +142,7 @@ class FLVReader(dict):
             dataType = self.readbyte()
             if not key and dataType == 9:
                 break
-            print key, '=',
+            print(key, '=', end=' ')
             result[key] = self.readAMFData(dataType)
         return result
 
@@ -178,9 +178,9 @@ if __name__ == '__main__':
     import sys
     from pprint import pprint
     if len(sys.argv) == 1:
-        print 'Usage: %s filename [filename]...' % sys.argv[0]
-        print 'Where filename is a .flv file'
-        print 'eg. %s myfile.flv' % sys.argv[0]
+        print('Usage: %s filename [filename]...' % sys.argv[0])
+        print('Where filename is a .flv file')
+        print('eg. %s myfile.flv' % sys.argv[0])
     for fn in sys.argv[1:]:
         x = FLVReader(fn)
         pprint(x)

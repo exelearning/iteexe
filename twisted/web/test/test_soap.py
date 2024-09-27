@@ -72,22 +72,22 @@ class SOAPTestCase(unittest.TestCase):
 
     def testResults(self):
         x = self.proxy().callRemote("add", 2, 3)
-        self.assertEquals(unittest.deferredResult(x), 5)
+        self.assertEqual(unittest.deferredResult(x), 5)
         x = self.proxy().callRemote("kwargs", b=2, a=3)
-        self.assertEquals(unittest.deferredResult(x), 5)
+        self.assertEqual(unittest.deferredResult(x), 5)
         x = self.proxy().callRemote("kwargs", b=3)
-        self.assertEquals(unittest.deferredResult(x), 4)
+        self.assertEqual(unittest.deferredResult(x), 4)
         x = self.proxy().callRemote("defer", "a")
-        self.assertEquals(unittest.deferredResult(x), "a")
+        self.assertEqual(unittest.deferredResult(x), "a")
         x = self.proxy().callRemote("dict", {"a" : 1}, "a")
-        self.assertEquals(unittest.deferredResult(x), 1)
+        self.assertEqual(unittest.deferredResult(x), 1)
         x = self.proxy().callRemote("pair", 'a', 1)
-        self.assertEquals(unittest.deferredResult(x), ['a', 1, None])
+        self.assertEqual(unittest.deferredResult(x), ['a', 1, None])
         x = self.proxy().callRemote("struct")
-        self.assertEquals(unittest.deferredResult(x)._asdict,
+        self.assertEqual(unittest.deferredResult(x)._asdict,
                           {"a": "c"})
         x = self.proxy().callRemote("complex")
-        self.assertEquals(unittest.deferredResult(x)._asdict,
+        self.assertEqual(unittest.deferredResult(x)._asdict,
                           {"a": ["b", "c", 12, []], "D": "foo"})
 
     testResults.todo = "this test breaks using retrial, don't know why"

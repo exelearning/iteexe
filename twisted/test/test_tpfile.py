@@ -8,7 +8,7 @@ from twisted.protocols import loopback
 from twisted.protocols import basic
 from twisted.internet import protocol, abstract
 
-import StringIO
+import io
 
 class BufferingServer(protocol.Protocol):
     buffer = ''
@@ -28,16 +28,16 @@ class FileSenderTestCase(unittest.TestCase):
     def testSendingFile(self):
         testStr = 'xyz' * 100 + 'abc' * 100 + '123' * 100
         s = BufferingServer()
-        c = FileSendingClient(StringIO.StringIO(testStr))
+        c = FileSendingClient(io.StringIO(testStr))
         
         loopback.loopbackTCP(s, c)
-        self.assertEquals(s.buffer, testStr)
+        self.assertEqual(s.buffer, testStr)
 
     def testSendingEmptyFile(self):
         fileSender = basic.FileSender()
         consumer = abstract.FileDescriptor()
         consumer.connected = 1
-        emptyFile = StringIO.StringIO('')
+        emptyFile = io.StringIO('')
 
         d = fileSender.beginFileTransfer(emptyFile, consumer, lambda x: x)
 
@@ -46,6 +46,6 @@ class FileSenderTestCase(unittest.TestCase):
         self.assertEqual(consumer.producer, None)
 
         # Which means the Deferred from FileSender should have been called
-        self.failUnless(d.called, 
+        self.assertTrue(d.called, 
                         'producer unregistered with deferred being called')
 

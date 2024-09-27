@@ -50,7 +50,7 @@ class Inconsistency:
                 package.resources.pop(checksum)
 
     def fix_packageResourceZombie(self, package, resource):
-        for resources in package.resources.values():
+        for resources in list(package.resources.values()):
             for r in resources:
                 if r.path == resource.path:
                     package.resources[r.checksum].remove(r)
@@ -160,10 +160,10 @@ class Checker:
         for idevice, node in duplicated_idevice_ids:
             log.error('Duplicated idevice id %s in node %s of type %s. Fixing...' % (idevice.id, node.title, idevice.klass))
             while idevice.id in idevice_ids:
-                idevice.id = unicode(int(idevice.id) + 1)
+                idevice.id = str(int(idevice.id) + 1)
             idevice_ids.append(idevice.id)
 
-        max_idevice_id = 0 if not idevice_ids else max(map(lambda x: int(x), idevice_ids))
+        max_idevice_id = 0 if not idevice_ids else max([int(x) for x in idevice_ids])
         if Idevice.nextId <= max_idevice_id:
             log.error('Wrong idevice next id. Fixing...')
             Idevice.nextId = max_idevice_id + 1
@@ -248,7 +248,7 @@ class Checker:
 
     def check_packageResourcesChecksums(self):
         itype = 'packageResourceChecksum'
-        for checksum, resources in self.package.resources.items():
+        for checksum, resources in list(self.package.resources.items()):
             if resources:
                 for resource in resources:
                     try:
@@ -286,7 +286,7 @@ class Checker:
                         msg = '%s not exists in elp' % resource.storageName
                         self.appendInconsistency(msg, 'nodeResourceNonExistant', idevice, resource)
                         continue
-                    if nresource.checksum in self.package.resources.keys():
+                    if nresource.checksum in list(self.package.resources.keys()):
                         if nresource.checksum == resource.checksum:
                             continue
                         else:
@@ -297,7 +297,7 @@ class Checker:
                         self.appendInconsistency(msg, 'nodeResourceNotInResources', self.package, idevice, nresource.checksum, resource)
 
     def check_packageResourcesZombies(self):
-        for resources in self.package.resources.values():
+        for resources in list(self.package.resources.values()):
             for resource in resources:
                 if resource._idevice:
                     if not isinstance(resource._idevice.parentNode, Node):

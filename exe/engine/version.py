@@ -24,7 +24,7 @@ Version Information
 """
 
 import os
-from path import Path
+from .path import Path
 
 # Result initialization
 project = "eXeLearning"
@@ -80,4 +80,4 @@ if snap_environ:
 
 # If this file is executed directly, we print the project and version info
 if __name__ == '__main__':
-    print project, version
+    print(project, version)

@@ -1,4 +1,4 @@
-from cStringIO import StringIO
+from io import StringIO
 from twisted.internet.protocol import FileWrapper
 
 class IOPump:

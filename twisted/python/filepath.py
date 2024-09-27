@@ -2,7 +2,7 @@
 # Copyright (c) 2001-2004 Twisted Matrix Laboratories.
 # See LICENSE for details.
 
-from __future__ import generators
+
 
 from twisted.python.runtime import platform
 
@@ -33,7 +33,7 @@ try:
     from os import urandom as randomBytes
 except ImportError:
     def randomBytes(n):
-        randomData = [random.randrange(256) for n in xrange(n)]
+        randomData = [random.randrange(256) for n in range(n)]
         return ''.join(map(chr, randomData))
 
 try:
@@ -82,7 +82,7 @@ class FilePath:
 
     def __getstate__(self):
         d = self.__dict__.copy()
-        if d.has_key('statinfo'):
+        if 'statinfo' in d:
             del d['statinfo']
         return d
 
@@ -271,7 +271,7 @@ class FilePath:
         """
         import glob
         path = self.path[-1] == '/' and self.path + pattern or slash.join([self.path, pattern])
-        return map(self.clonePath, glob.glob(path))
+        return list(map(self.clonePath, glob.glob(path)))
 
     def basename(self):
         return basename(self.path)
@@ -328,7 +328,7 @@ class FilePath:
         return sib
 
     def children(self):
-        return map(self.child, self.listdir())
+        return list(map(self.child, self.listdir()))
 
     def walk(self):
         yield self
@@ -377,7 +377,7 @@ class FilePath:
         try:
             os.rename(self.path, destination.path)
             self.restat(False)
-        except OSError, ose:
+        except OSError as ose:
             if ose.errno == errno.EXDEV:
                 # man 2 rename, ubuntu linux 5.10 "breezy":
 

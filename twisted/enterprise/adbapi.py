@@ -180,7 +180,7 @@ class ConnectionPool:
 
         for arg in self.CP_ARGS:
             cp_arg = 'cp_%s' % arg
-            if connkw.has_key(cp_arg):
+            if cp_arg in connkw:
                 setattr(self, arg, connkw[cp_arg])
                 del connkw[cp_arg]
 
@@ -191,9 +191,9 @@ class ConnectionPool:
 
         # these are optional so import them here
         from twisted.python import threadpool
-        import thread
+        import _thread
 
-        self.threadID = thread.get_ident
+        self.threadID = _thread.get_ident
         self.threadpool = threadpool.ThreadPool(self.min, self.max)
 
         from twisted.internet import reactor
@@ -317,7 +317,7 @@ class ConnectionPool:
         self.shutdownID = None
         self.threadpool.stop()
         self.running = False
-        for conn in self.connections.values():
+        for conn in list(self.connections.values()):
             self._close(conn)
         self.connections.clear()
 

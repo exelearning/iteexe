@@ -27,7 +27,7 @@ class Authenticated:
     def __init__(self, name=None):
         self.name = name
 
-    def __nonzero__(self):
+    def __bool__(self):
         return bool(self.name)
 
 

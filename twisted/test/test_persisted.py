@@ -9,14 +9,14 @@ import sys
 from twisted.trial import unittest
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 # Twisted Imports
 from twisted.persisted import styles, aot
@@ -85,10 +85,10 @@ class VersionTestCase(unittest.TestCase):
         ClassWithCustomHash.upgradeToVersion1 = lambda self: setattr(self, 'upgraded', True)
         v1, v2 = pickle.loads(pkl)
         styles.doUpgrade()
-        self.assertEquals(v1.unique, 'v1')
-        self.assertEquals(v2.unique, 'v2')
-        self.failUnless(v1.upgraded)
-        self.failUnless(v2.upgraded)
+        self.assertEqual(v1.unique, 'v1')
+        self.assertEqual(v2.unique, 'v2')
+        self.assertTrue(v1.upgraded)
+        self.assertTrue(v2.upgraded)
     
     def testUpgradeDeserializesObjectsRequiringUpgrade(self):
         global ToyClassA, ToyClassB
@@ -110,7 +110,7 @@ class VersionTestCase(unittest.TestCase):
 
         x = pickle.loads(pklA)
         styles.doUpgrade()
-        self.failUnless(x.y.upgraded)
+        self.assertTrue(x.y.upgraded)
 
 class MyEphemeral(styles.Ephemeral):
 
@@ -122,14 +122,14 @@ class EphemeralTestCase(unittest.TestCase):
 
     def testEphemeral(self):
         o = MyEphemeral(3)
-        self.assertEquals(o.__class__, MyEphemeral)
-        self.assertEquals(o.x, 3)
+        self.assertEqual(o.__class__, MyEphemeral)
+        self.assertEqual(o.x, 3)
         
         pickl = pickle.dumps(o)
         o = pickle.loads(pickl)
         
-        self.assertEquals(o.__class__, styles.Ephemeral)
-        self.assert_(not hasattr(o, 'x'))
+        self.assertEqual(o.__class__, styles.Ephemeral)
+        self.assertTrue(not hasattr(o, 'x'))
 
 
 class Pickleable:
@@ -239,11 +239,11 @@ else:
             u.jellyDOMVersion = 2
             s2 = marmalade.jellyToXML(u)
             u2 = marmalade.unjellyFromXML(s2)
-            self.assertEquals( u2.sequence,  [u2.instance, u2.instance, u2.instance])
+            self.assertEqual( u2.sequence,  [u2.instance, u2.instance, u2.instance])
 
         def testCopyReg(self):
             s = "foo_bar"
-            sio = StringIO.StringIO()
+            sio = io.StringIO()
             sio.write(s)
             assert marmalade.unjellyFromXML(marmalade.jellyToXML({1:sio}))[1].getvalue() == s
 
@@ -253,7 +253,7 @@ else:
             a.bmethod = b.bmethod
             b.a = a
             im_ = marmalade.unjellyFromXML(marmalade.jellyToXML(b)).a.bmethod
-            self.assertEquals(im_.im_class, im_.im_self.__class__)
+            self.assertEqual(im_.__self__.__class__, im_.__self__.__class__)
 
         def testBasicIdentity(self):
             # Anyone wanting to make this datastructure more complex, and thus this
@@ -262,8 +262,8 @@ else:
             d = {'hello': 'world', "method": dj}
             l = [1, 2, 3,
                  "he\tllo\n\n\"x world!",
-                 u"goodbye \n\t\u1010 world!",
-                 1, 1.0, 100 ** 100l, unittest, marmalade.DOMJellier, d,
+                 "goodbye \n\t\u1010 world!",
+                 1, 1.0, 100 ** 100, unittest, marmalade.DOMJellier, d,
                  funktion,
                  True, False,
                  (2, 4, [2]),
@@ -282,27 +282,27 @@ class PicklingTestCase(unittest.TestCase):
     def testModule(self):
         pickl = pickle.dumps(styles)
         o = pickle.loads(pickl)
-        self.assertEquals(o, styles)
+        self.assertEqual(o, styles)
     
     def testClassMethod(self):
         pickl = pickle.dumps(Pickleable.getX)
         o = pickle.loads(pickl)
-        self.assertEquals(o, Pickleable.getX)
+        self.assertEqual(o, Pickleable.getX)
     
     def testInstanceMethod(self):
         obj = Pickleable(4)
         pickl = pickle.dumps(obj.getX)
         o = pickle.loads(pickl)
-        self.assertEquals(o(), 4)
-        self.assertEquals(type(o), type(obj.getX))
+        self.assertEqual(o(), 4)
+        self.assertEqual(type(o), type(obj.getX))
     
     def testStringIO(self):
-        f = StringIO.StringIO()
+        f = io.StringIO()
         f.write("abc")
         pickl = pickle.dumps(f)
         o = pickle.loads(pickl)
-        self.assertEquals(type(o), type(f))
-        self.assertEquals(f.getvalue(), "abc")
+        self.assertEqual(type(o), type(f))
+        self.assertEqual(f.getvalue(), "abc")
 
 
 class EvilSourceror:
@@ -319,9 +319,9 @@ class NonDictState:
 
 class AOTTestCase(unittest.TestCase):
     def testSimpleTypes(self):
-        obj = (1, 2.0, 3j, True, slice(1, 2, 3), 'hello', u'world', sys.maxint + 1, None, Ellipsis)
+        obj = (1, 2.0, 3j, True, slice(1, 2, 3), 'hello', 'world', sys.maxsize + 1, None, Ellipsis)
         rtObj = aot.unjellyFromSource(aot.jellyToSource(obj))
-        self.assertEquals(obj, rtObj)
+        self.assertEqual(obj, rtObj)
 
     def testMethodSelfIdentity(self):
         a = A()
@@ -329,7 +329,7 @@ class AOTTestCase(unittest.TestCase):
         a.bmethod = b.bmethod
         b.a = a
         im_ = aot.unjellyFromSource(aot.jellyToSource(b)).a.bmethod
-        self.assertEquals(im_.im_class, im_.im_self.__class__)
+        self.assertEqual(im_.__self__.__class__, im_.__self__.__class__)
 
     def testBasicIdentity(self):
         # Anyone wanting to make this datastructure more complex, and thus this
@@ -338,8 +338,8 @@ class AOTTestCase(unittest.TestCase):
         d = {'hello': 'world', "method": aj}
         l = [1, 2, 3,
              "he\tllo\n\n\"x world!",
-             u"goodbye \n\t\u1010 world!",
-             1, 1.0, 100 ** 100l, unittest, aot.AOTJellier, d,
+             "goodbye \n\t\u1010 world!",
+             1, 1.0, 100 ** 100, unittest, aot.AOTJellier, d,
              funktion
              ]
         t = tuple(l)
@@ -358,7 +358,7 @@ class AOTTestCase(unittest.TestCase):
 
     def testCopyReg(self):
         s = "foo_bar"
-        sio = StringIO.StringIO()
+        sio = io.StringIO()
         sio.write(s)
         uj = aot.unjellyFromSource(aot.jellyToSource(sio))
         # print repr(uj.__dict__)

@@ -47,8 +47,8 @@ class ServerOptions(app.ServerOptions):
     def opt_version(self):
         """Print version information and exit.
         """
-        print 'twistd (the Twisted daemon) %s' % copyright.version
-        print copyright.copyright
+        print('twistd (the Twisted daemon) %s' % copyright.version)
+        print(copyright.copyright)
         sys.exit()
 
     def postOptions(self):
@@ -67,7 +67,7 @@ def checkPID(pidfile):
             sys.exit('Pidfile %s contains non-numeric value' % pidfile)
         try:
             os.kill(pid, 0)
-        except OSError, why:
+        except OSError as why:
             if why[0] == errno.ESRCH:
                 # The pid doesnt exists.
                 log.msg('Removing stale pidfile %s' % pidfile, isError=True)
@@ -88,7 +88,7 @@ def removePID(pidfile):
         return
     try:
         os.unlink(pidfile)
-    except OSError, e:
+    except OSError as e:
         if e.errno == errno.EACCES or e.errno == errno.EPERM:
             log.msg("Warning: No permission to delete pid file")
         else:
@@ -101,7 +101,7 @@ def removePID(pidfile):
 def startLogging(logfilename, sysLog, prefix, nodaemon):
     if logfilename == '-':
         if not nodaemon:
-            print 'daemons cannot log to stdout'
+            print('daemons cannot log to stdout')
             os._exit(1)
         logFile = sys.stdout
     elif sysLog:
@@ -132,12 +132,12 @@ def daemonize():
     os.setsid()
     if os.fork():   # launch child and...
         os._exit(0) # kill off parent again.
-    os.umask(077)
+    os.umask(0o77)
     null=os.open('/dev/null', os.O_RDWR)
     for i in range(3):
         try:
             os.dup2(null, i)
-        except OSError, e:
+        except OSError as e:
             if e.errno != errno.EBADF:
                 raise
     os.close(null)

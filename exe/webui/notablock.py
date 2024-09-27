@@ -100,9 +100,9 @@ class NotaBlock(Block):
         """
         Returns an XHTML string for this block
         """
-        html = u'<div class="iDevice_wrapper classnote">\n'
+        html = '<div class="iDevice_wrapper classnote">\n'
         if  self.commentElement.field.content:
-            html += '<div class="notetitleex" onclick="jQuery(\'#fb%s\').toggle()" title="%s">' % (self.id , _(u"Show/Hide"))
+            html += '<div class="notetitleex" onclick="jQuery(\'#fb%s\').toggle()" title="%s">' % (self.id , _("Show/Hide"))
         else:
             html += '<div class="notetitle">'
         html +='%s</div>' % self.idevice.title
@@ -117,7 +117,7 @@ class NotaBlock(Block):
             html += "</div>\n"
         if self.previewing:
             html +=Block.renderViewButtons(self)
-            html +="<a title=\""+_(u"Delete all notes")+"\" href=\"#\" onclick=\"confirmThenSubmitLink('"+_(u"Would you delete all notes?")+"', '"+u'deleteallnotes'+"', '"+self.id+"', 1);\" style=\"float:right;margin-top:-20px;\"><img alt=\""+_(u"Delete all notes")+"\" width=\"16\" height=\"16\" class=\"submit\" src=\"/images/stock-delete.png\"></a>"
+            html +="<a title=\""+_("Delete all notes")+"\" href=\"#\" onclick=\"confirmThenSubmitLink('"+_("Would you delete all notes?")+"', '"+'deleteallnotes'+"', '"+self.id+"', 1);\" style=\"float:right;margin-top:-20px;\"><img alt=\""+_("Delete all notes")+"\" width=\"16\" height=\"16\" class=\"submit\" src=\"/images/stock-delete.png\"></a>"
         html += "</div>\n"
 
         

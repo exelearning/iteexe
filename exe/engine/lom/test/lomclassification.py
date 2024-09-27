@@ -10,46 +10,46 @@ class TestLOM(unittest.TestCase):
         pass
 
     def test_lomClassificationAccesibilidad(self):
-        results = [{u'10': u'TIPO DE CONTADOR DE EJECUCI\xd3N', u'1': u'DECLARACI\xd3N DEL MODO DE ACCESO AL SIGUIENTE NIVEL', u'3': u'TRABAJA A PANTALLA COMPLETA', u'2': u'DECLARACI\xd3N DEL MODO DE INTERACCI\xd3N EN LA ACTIVIDAD DE APRENDIZAJE', u'5': u'PERMITE CAMBIO DE RESOLUCI\xd3N CON AJUSTE DE CONTENIDO', u'4': u'RESOLUCI\xd3N DE PANTALLA NATIVA', u'7': u'VISUALIZACI\xd3N ADAPTABLE', u'6': u'PERMITE ADAPTAR LA VISUALIZACI\xd3N', u'9': u'TIENE CONTROL DEL TIEMPO DE EJECUCI\xd3N', u'8': u'DECLARACI\xd3N DE ADAPTABILIDAD'},
-                  {u'1.1': u'Modo de presentaci\xf3n de la informaci\xf3n en el acceso', u'1.2': u'Modo de interacci\xf3n para el acceso '},
-                  {u'1.1.1': u'Auditivo', u'1.1.3': u'Textual', u'1.1.2': u'T\xe1ctil', u'1.1.4': u'Visual'},
-                  {u'1.1.1.1': u'Informativo', u'1.1.1.2': u'Decorativo', u'1.1.1.3': u'Motivacional'},
-                  {u'10': u'TIPO DE CONTADOR DE EJECUCI\xd3N', u'1': u'DECLARACI\xd3N DEL MODO DE ACCESO AL SIGUIENTE NIVEL', u'3': u'TRABAJA A PANTALLA COMPLETA', u'2': u'DECLARACI\xd3N DEL MODO DE INTERACCI\xd3N EN LA ACTIVIDAD DE APRENDIZAJE', u'5': u'PERMITE CAMBIO DE RESOLUCI\xd3N CON AJUSTE DE CONTENIDO', u'4': u'RESOLUCI\xd3N DE PANTALLA NATIVA', u'7': u'VISUALIZACI\xd3N ADAPTABLE', u'6': u'PERMITE ADAPTAR LA VISUALIZACI\xd3N', u'9': u'TIENE CONTROL DEL TIEMPO DE EJECUCI\xd3N', u'8': u'DECLARACI\xd3N DE ADAPTABILIDAD'},
-                  {u'10': u'TIPO DE CONTADOR DE EJECUCI\xd3N', u'1': u'DECLARACI\xd3N DEL MODO DE ACCESO AL SIGUIENTE NIVEL', u'3': u'TRABAJA A PANTALLA COMPLETA', u'2': u'DECLARACI\xd3N DEL MODO DE INTERACCI\xd3N EN LA ACTIVIDAD DE APRENDIZAJE', u'5': u'PERMITE CAMBIO DE RESOLUCI\xd3N CON AJUSTE DE CONTENIDO', u'4': u'RESOLUCI\xd3N DE PANTALLA NATIVA', u'7': u'VISUALIZACI\xd3N ADAPTABLE', u'6': u'PERMITE ADAPTAR LA VISUALIZACI\xd3N', u'9': u'TIENE CONTROL DEL TIEMPO DE EJECUCI\xd3N', u'8': u'DECLARACI\xd3N DE ADAPTABILIDAD'},
+        results = [{'10': 'TIPO DE CONTADOR DE EJECUCI\xd3N', '1': 'DECLARACI\xd3N DEL MODO DE ACCESO AL SIGUIENTE NIVEL', '3': 'TRABAJA A PANTALLA COMPLETA', '2': 'DECLARACI\xd3N DEL MODO DE INTERACCI\xd3N EN LA ACTIVIDAD DE APRENDIZAJE', '5': 'PERMITE CAMBIO DE RESOLUCI\xd3N CON AJUSTE DE CONTENIDO', '4': 'RESOLUCI\xd3N DE PANTALLA NATIVA', '7': 'VISUALIZACI\xd3N ADAPTABLE', '6': 'PERMITE ADAPTAR LA VISUALIZACI\xd3N', '9': 'TIENE CONTROL DEL TIEMPO DE EJECUCI\xd3N', '8': 'DECLARACI\xd3N DE ADAPTABILIDAD'},
+                  {'1.1': 'Modo de presentaci\xf3n de la informaci\xf3n en el acceso', '1.2': 'Modo de interacci\xf3n para el acceso '},
+                  {'1.1.1': 'Auditivo', '1.1.3': 'Textual', '1.1.2': 'T\xe1ctil', '1.1.4': 'Visual'},
+                  {'1.1.1.1': 'Informativo', '1.1.1.2': 'Decorativo', '1.1.1.3': 'Motivacional'},
+                  {'10': 'TIPO DE CONTADOR DE EJECUCI\xd3N', '1': 'DECLARACI\xd3N DEL MODO DE ACCESO AL SIGUIENTE NIVEL', '3': 'TRABAJA A PANTALLA COMPLETA', '2': 'DECLARACI\xd3N DEL MODO DE INTERACCI\xd3N EN LA ACTIVIDAD DE APRENDIZAJE', '5': 'PERMITE CAMBIO DE RESOLUCI\xd3N CON AJUSTE DE CONTENIDO', '4': 'RESOLUCI\xd3N DE PANTALLA NATIVA', '7': 'VISUALIZACI\xd3N ADAPTABLE', '6': 'PERMITE ADAPTAR LA VISUALIZACI\xd3N', '9': 'TIENE CONTROL DEL TIEMPO DE EJECUCI\xd3N', '8': 'DECLARACI\xd3N DE ADAPTABILIDAD'},
+                  {'10': 'TIPO DE CONTADOR DE EJECUCI\xd3N', '1': 'DECLARACI\xd3N DEL MODO DE ACCESO AL SIGUIENTE NIVEL', '3': 'TRABAJA A PANTALLA COMPLETA', '2': 'DECLARACI\xd3N DEL MODO DE INTERACCI\xd3N EN LA ACTIVIDAD DE APRENDIZAJE', '5': 'PERMITE CAMBIO DE RESOLUCI\xd3N CON AJUSTE DE CONTENIDO', '4': 'RESOLUCI\xd3N DE PANTALLA NATIVA', '7': 'VISUALIZACI\xd3N ADAPTABLE', '6': 'PERMITE ADAPTAR LA VISUALIZACI\xd3N', '9': 'TIENE CONTROL DEL TIEMPO DE EJECUCI\xd3N', '8': 'DECLARACI\xd3N DE ADAPTABILIDAD'},
                   {},
                   {},
                   {}]
         cl = Classification('exe/engine/lom/test/sources/PODPL_02_accesibilidad_LOM-ES_es.xml')
         rootLevel = cl.getElementsByIdentifier()
         self.assertEqual(rootLevel, results[0])
-        print rootLevel
+        print(rootLevel)
         i = 1
         for v in ['1', '1.1', '1.1.1', False, 0, 1, '1.6', '1.x.y.z']:
             data = cl.getElementsByIdentifier(v)
             self.assertEqual(data, results[i])
             i += 1
-            print data
+            print(data)
 
     def test_lomClassificationCompetencia(self):
-        results = [{u'1': u'Competencias Generales y Personales', u'3': u'Competencias Sociales y de Trabajo en Equipo', u'2': u'Competencias Acad\xe9micas'},
-                   {u'1.4': u'Autoestima', u'1.5': u'Autorreflexi\xf3n y autoevaluaci\xf3n', u'1.6': u'B\xfasqueda de empleo', u'1.7': u'B\xfasqueda de informaci\xf3n relevante', u'1.1': u'Actitud positiva al cambio', u'1.2': u'Afectividad', u'1.3': u'Autoaprendizaje a lo largo de la vida', u'1.8': u'Comunicaci\xf3n en lengua materna (escuchar, hablar, leer y escribir).', u'1.9': u'Conocimiento de los principios b\xe1sicos de la naturaleza', u'1.16': u'Iniciativa personal', u'1.17': u'Inter\xe9s por la expresi\xf3n cultural (literatura, m\xfasica, artes esc\xe9nicas y pl\xe1sticas)', u'1.14': u'Formulaci\xf3n de preguntas pertinentes', u'1.15': u'Honestidad y \xe9tica personal', u'1.12': u'Esp\xedritu de empresa', u'1.13': u'Expresi\xf3n y compresi\xf3n b\xe1sica de lengua extranjera', u'1.10': u'Conocimiento y aprecio por la cultura y lengua de las Comunidades Aut\xf3nomas', u'1.11': u'Conocimiento y pr\xe1ctica deportiva', u'1.18': u'Invenci\xf3n y creaci\xf3n', u'1.19': u'Motivaci\xf3n intr\xednseca', u'1.30': u'Uso b\xe1sico de las TIC', u'1.29': u'Uso eficiente de la informaci\xf3n', u'1.28': u'Soluci\xf3n de problemas', u'1.23': u'Realizaci\xf3n de juicios informados', u'1.22': u'Planificaci\xf3n y gesti\xf3n de recursos propios (tiempo, dinero,...)', u'1.21': u'Perseverancia', u'1.20': u'Pensamiento cr\xedtico', u'1.27': u'Responsabilidad', u'1.26': u'Resistencia al fracaso', u'1.25': u'Resistencia a la ambig\xfcedad', u'1.24': u'Reconocimiento y respeto a las diferencias individuales'},
+        results = [{'1': 'Competencias Generales y Personales', '3': 'Competencias Sociales y de Trabajo en Equipo', '2': 'Competencias Acad\xe9micas'},
+                   {'1.4': 'Autoestima', '1.5': 'Autorreflexi\xf3n y autoevaluaci\xf3n', '1.6': 'B\xfasqueda de empleo', '1.7': 'B\xfasqueda de informaci\xf3n relevante', '1.1': 'Actitud positiva al cambio', '1.2': 'Afectividad', '1.3': 'Autoaprendizaje a lo largo de la vida', '1.8': 'Comunicaci\xf3n en lengua materna (escuchar, hablar, leer y escribir).', '1.9': 'Conocimiento de los principios b\xe1sicos de la naturaleza', '1.16': 'Iniciativa personal', '1.17': 'Inter\xe9s por la expresi\xf3n cultural (literatura, m\xfasica, artes esc\xe9nicas y pl\xe1sticas)', '1.14': 'Formulaci\xf3n de preguntas pertinentes', '1.15': 'Honestidad y \xe9tica personal', '1.12': 'Esp\xedritu de empresa', '1.13': 'Expresi\xf3n y compresi\xf3n b\xe1sica de lengua extranjera', '1.10': 'Conocimiento y aprecio por la cultura y lengua de las Comunidades Aut\xf3nomas', '1.11': 'Conocimiento y pr\xe1ctica deportiva', '1.18': 'Invenci\xf3n y creaci\xf3n', '1.19': 'Motivaci\xf3n intr\xednseca', '1.30': 'Uso b\xe1sico de las TIC', '1.29': 'Uso eficiente de la informaci\xf3n', '1.28': 'Soluci\xf3n de problemas', '1.23': 'Realizaci\xf3n de juicios informados', '1.22': 'Planificaci\xf3n y gesti\xf3n de recursos propios (tiempo, dinero,...)', '1.21': 'Perseverancia', '1.20': 'Pensamiento cr\xedtico', '1.27': 'Responsabilidad', '1.26': 'Resistencia al fracaso', '1.25': 'Resistencia a la ambig\xfcedad', '1.24': 'Reconocimiento y respeto a las diferencias individuales'},
                    {},
                    {},
-                   {u'1': u'Competencias Generales y Personales', u'3': u'Competencias Sociales y de Trabajo en Equipo', u'2': u'Competencias Acad\xe9micas'},
-                   {u'1': u'Competencias Generales y Personales', u'3': u'Competencias Sociales y de Trabajo en Equipo', u'2': u'Competencias Acad\xe9micas'},
+                   {'1': 'Competencias Generales y Personales', '3': 'Competencias Sociales y de Trabajo en Equipo', '2': 'Competencias Acad\xe9micas'},
+                   {'1': 'Competencias Generales y Personales', '3': 'Competencias Sociales y de Trabajo en Equipo', '2': 'Competencias Acad\xe9micas'},
                    {},
                    {},
                    {}]
         cl = Classification('exe/engine/lom/test/sources/PODPL_01_competencia_LOM-ES_es.xml')
         rootLevel = cl.getElementsByIdentifier()
         self.assertEqual(rootLevel, results[0])
-        print rootLevel
+        print(rootLevel)
         i = 1
         for v in ['1', '1.1', '1.1.1', False, 0, 1, '1.6', '1.x.y.z']:
             data = cl.getElementsByIdentifier(v)
             self.assertEqual(data, results[i])
             i += 1
-            print data
+            print(data)
 
 # Para que funciones los siguientes test de deben incluir los ficheros de fuentes en el directorio 
 #'exe/engine/lom/test/sources/ y descomentarlos

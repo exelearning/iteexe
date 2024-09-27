@@ -23,7 +23,7 @@ a single image
 """
 
 import logging
-import urllib
+import urllib.request, urllib.parse, urllib.error
 import re
 from exe.webui.block            import Block
 from exe.webui                  import common
@@ -65,7 +65,7 @@ class GalleryBlock(Block):
         """
         lb = "\n" #Line breaks
         width = self.idevice.images[0].thumbnailSize[0]
-        html = [u'<ul class="exeImageGallery" id="exeImageGallery%s">' % self.idevice.id]
+        html = ['<ul class="exeImageGallery" id="exeImageGallery%s">' % self.idevice.id]
         html += [lb]
         i = 0
         for image in self.idevice.images:
@@ -141,7 +141,7 @@ class GalleryBlock(Block):
                         numStart = start + 2 # '%u'
                     else:
                         numStart = start + 1 # '%'
-                    code = unichr(int(filename[numStart:end], 16))
+                    code = chr(int(filename[numStart:end], 16))
                     filename = filename[:start] + code + filename[end:]
                     match = self.unicodeRe.search(filename)
                 self.idevice.addImage(filename)
@@ -212,23 +212,23 @@ class GalleryBlock(Block):
         this_package = None
         if self.idevice is not None and self.idevice.parentNode is not None:
             this_package = self.idevice.parentNode.package
-        html = [u'<div class="iDevice">',
+        html = ['<div class="iDevice">',
                 common.formField('textInput', this_package, _('Title'),
                                  "title"+self.id, '',
                                  self.idevice.titleInstruc,
                                  self.idevice.title),
-                u'<div class="block">',
-                u'<input type="button" ',
-                u'onclick="addGalleryImage(\'%s\')"' % self.id,
-                u'value="%s" />\n' % _(u"Add images"),
+                '<div class="block">',
+                '<input type="button" ',
+                'onclick="addGalleryImage(\'%s\')"' % self.id,
+                'value="%s" />\n' % _("Add images"),
                 common.elementInstruc(self.idevice.addImageInstr),
-                u'</div>',
+                '</div>',
                 ]
 
         if len(self.idevice.images) == 0:
-            html += [u'<p class="exeImageGallery no-images">',
-                    _(u'No Images Loaded'),
-                    u'</p>']
+            html += ['<p class="exeImageGallery no-images">',
+                    _('No Images Loaded'),
+                    '</p>']
         else:
             def genCell(image, i, id):
                 """Generates a single cell of our table"""
@@ -243,70 +243,70 @@ class GalleryBlock(Block):
                     params = "'%s', '%s', %s, true" % (re.escape(msg), method, self.id)
                     return "javascript:confirmThenSubmitLink(%s)" % params
                 changeGalleryImage = '\n'.join([
-                        u'<a title="%s"' % _(u'Change Image'),
-                        u' href="#" ',
-                        u' onclick="changeGalleryImage(' +
-                        u"'%s', '%s')" % (self.id, image.id) +
-                        u'">'])
+                        '<a title="%s"' % _('Change Image'),
+                        ' href="#" ',
+                        ' onclick="changeGalleryImage(' +
+                        "'%s', '%s')" % (self.id, image.id) +
+                        '">'])
                 result = [changeGalleryImage,
-                          u'<img class="exeImageGallery-thumbnail"',
-                          u' alt="%s"' % image.caption,
-                          u' src="%s"/></a>' % image.thumbnailSrc,
-                          u'<span>',
-                          u'<input id="caption%s" ' % image.id,
-                          u' name="caption%s" ' % image.id,
-                          u' value="%s" ' % image.caption,
-                          u' />',
+                          '<img class="exeImageGallery-thumbnail"',
+                          ' alt="%s"' % image.caption,
+                          ' src="%s"/></a>' % image.thumbnailSrc,
+                          '<span>',
+                          '<input id="caption%s" ' % image.id,
+                          ' name="caption%s" ' % image.id,
+                          ' value="%s" ' % image.caption,
+                          ' />',
                           # Edit button
                           changeGalleryImage,
-                          u'<img alt="%s"' % _(u'Change Image'),
-                          u' class="submit" width="16" height="16"'
-                          u' src="/images/stock-edit.png"/>'
-                          u'</a> ']
+                          '<img alt="%s"' % _('Change Image'),
+                          ' class="submit" width="16" height="16"'
+                          ' src="/images/stock-edit.png"/>'
+                          '</a> ']
                 # Move left button
                 if image.index > 0:
                     result += [
-                          u'<a title="%s"' % _(u'Move Image Left'),
-                          u' href="%s">' % submitLink('moveLeft'),
-                          u'<img alt="%s"' % _(u'Go Back'),
-                          u' class="submit" width="16" height="16"'
-                          u' src="/images/stock-go-back.png"/>'
-                          u'</a> ',
+                          '<a title="%s"' % _('Move Image Left'),
+                          ' href="%s">' % submitLink('moveLeft'),
+                          '<img alt="%s"' % _('Go Back'),
+                          ' class="submit" width="16" height="16"'
+                          ' src="/images/stock-go-back.png"/>'
+                          '</a> ',
                           ]
                 else:
                     result += [
-                          u'<img class="submit" width="16" height="16"'
-                          u' src="/images/stock-go-back-off.png"/>']
+                          '<img class="submit" width="16" height="16"'
+                          ' src="/images/stock-go-back-off.png"/>']
                 # Move right button
                 if image.index < len(image.parent.images)-1:
                     result += [
-                          u' <a title="%s"' % _(u'Move Image Right'),
-                          u' href="%s">' % submitLink('moveRight'),
-                          u'<img alt="%s"' % _(u'Go Forward'),
-                          u' class="submit" width="16" height="16"'
-                          u' src="/images/stock-go-forward.png" /></a>',
+                          ' <a title="%s"' % _('Move Image Right'),
+                          ' href="%s">' % submitLink('moveRight'),
+                          '<img alt="%s"' % _('Go Forward'),
+                          ' class="submit" width="16" height="16"'
+                          ' src="/images/stock-go-forward.png" /></a>',
                           ]
                 else:
                     result += [
-                          u'<img alt="%s" ' % _(u'Go Forward (Not Available)'),
-                          u' class="submit" width="16" height="16"'
-                          u' src="/images/stock-go-forward-off.png"/>']
+                          '<img alt="%s" ' % _('Go Forward (Not Available)'),
+                          ' class="submit" width="16" height="16"'
+                          ' src="/images/stock-go-forward-off.png"/>']
                 result += [
                           # Delete button
-                          u' <a title="%s"' % _(u'Delete Image'),
-                          u' href="%s">' % (confirmThenSubmitLink(_('Delete this image?'), 'delete')),
-                          u'<img class="submit" width="16" height="16" alt="%s" ' \
-                                                        % _(u'Delete'),
-                          u' src="/images/stock-delete.png" /></a>',
-                          u' <a href="javascript:addGalleryImage(%s)"' % id,
-                          u' title="%s"><img src="/images/stock-add.png"' % _(u"Add images"),
-                          u' class="submit" width="16" height="16" alt="%s" /></a>' % _(u"Add images"),
-                          u'      </span>']
+                          ' <a title="%s"' % _('Delete Image'),
+                          ' href="%s">' % (confirmThenSubmitLink(_('Delete this image?'), 'delete')),
+                          '<img class="submit" width="16" height="16" alt="%s" ' \
+                                                        % _('Delete'),
+                          ' src="/images/stock-delete.png" /></a>',
+                          ' <a href="javascript:addGalleryImage(%s)"' % id,
+                          ' title="%s"><img src="/images/stock-add.png"' % _("Add images"),
+                          ' class="submit" width="16" height="16" alt="%s" /></a>' % _("Add images"),
+                          '      </span>']
                 return result
             html += self._generateTable(genCell)
         html += [self.renderEditButtons(undo=self.idevice.undo),
-                 u'</div>']
-        return u'\n    '.join(html)
+                 '</div>']
+        return '\n    '.join(html)
 
     def processDelete(self, request):
         """
@@ -323,9 +323,9 @@ class GalleryBlock(Block):
         """
         cls = self.idevice.__class__
         if len(self.idevice.images) == 0:
-            html = [u'<p class="exeImageGallery no-images">',
-                    _(u'No Images Loaded'),
-                    u'</p>']
+            html = ['<p class="exeImageGallery no-images">',
+                    _('No Images Loaded'),
+                    '</p>']
         else:
             def genCell(image, i, id):
                 """
@@ -334,15 +334,15 @@ class GalleryBlock(Block):
                 width, height = image.size
                 title = image.caption
                 return ['<a title="%s"' % title,
-                        ' href="%s">' % urllib.quote(image.imageSrc),
+                        ' href="%s">' % urllib.parse.quote(image.imageSrc),
                         '<img alt="%s"' % title,
                         ' width="128"'
                         ' height="128"'
-                        ' src="%s" />' % urllib.quote(image.thumbnailSrc),
+                        ' src="%s" />' % urllib.parse.quote(image.thumbnailSrc),
 						'<span class="tit">%s</span>' % title,
                         '</a>']			
             html = self._generateTable(genCell)
-        return u''.join(html)
+        return ''.join(html)
 
     def renderPreview(self, style):
         """
@@ -361,7 +361,7 @@ class GalleryBlock(Block):
         cls.export()
         try:
             html  = [Block.renderView(self, style)]
-            return u'\n    '.join(html)
+            return '\n    '.join(html)
         finally:
             # Put everything back into the default preview mode
             cls.preview()

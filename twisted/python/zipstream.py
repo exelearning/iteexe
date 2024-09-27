@@ -4,7 +4,7 @@ integrate nicely with a reactor.
 
 """
 
-from __future__ import generators
+
 
 import zipfile
 import os.path
@@ -18,23 +18,20 @@ class ChunkingZipFile(zipfile.ZipFile):
     def readfile(self, name):
         """Return file-like object for name."""
         if self.mode not in ("r", "a"):
-            raise RuntimeError, 'read() requires mode "r" or "a"'
+            raise RuntimeError('read() requires mode "r" or "a"')
         if not self.fp:
-            raise RuntimeError, \
-                  "Attempt to read ZIP archive that was already closed"
+            raise RuntimeError("Attempt to read ZIP archive that was already closed")
         zinfo = self.getinfo(name)
         self.fp.seek(zinfo.file_offset, 0)
         if zinfo.compress_type == zipfile.ZIP_STORED:
             return ZipFileEntry(self.fp, zinfo.compress_size)
         elif zinfo.compress_type == zipfile.ZIP_DEFLATED:
             if not zlib:
-                raise RuntimeError, \
-                      "De-compression requires the (missing) zlib module"
+                raise RuntimeError("De-compression requires the (missing) zlib module")
             return DeflatedZipFileEntry(self.fp, zinfo.compress_size)
         else:
-            raise zipfile.BadZipfile, \
-                  "Unsupported compression method %d for file %s" % \
-            (zinfo.compress_type, name)
+            raise zipfile.BadZipfile("Unsupported compression method %d for file %s" % \
+            (zinfo.compress_type, name))
     
     def read(self, name):
         """Return file bytes (as a string) for name."""
@@ -43,7 +40,7 @@ class ChunkingZipFile(zipfile.ZipFile):
         bytes = f.read()
         crc = binascii.crc32(bytes)
         if crc != zinfo.CRC:
-            raise zipfile.BadZipfile, "Bad CRC-32 for file %s" % name
+            raise zipfile.BadZipfile("Bad CRC-32 for file %s" % name)
         return bytes        
 
 

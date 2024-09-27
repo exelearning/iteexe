@@ -106,7 +106,7 @@ class DefaultAuthorizer(Authorizer):
     def addIdentity(self, identity):
         """Add an identity to me.
         """
-        if self.identities.has_key(identity.name):
+        if identity.name in self.identities:
             #? return defer.fail(error.DuplicateIdentity(identity.name))
             raise error.DuplicateIdentity(identity.name)
         self.identities[identity.name] = identity
@@ -124,7 +124,7 @@ class DefaultAuthorizer(Authorizer):
         """
 
         req = defer.Deferred()
-        if self.identities.has_key(name):
+        if name in self.identities:
             req.callback(self.identities[name])
         else:
             req.errback(error.Unauthorized("unauthorized"))

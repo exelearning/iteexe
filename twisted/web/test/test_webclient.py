@@ -30,7 +30,7 @@ class LongTimeTakingResource(resource.Resource):
 class CookieMirrorResource(resource.Resource):
     def render(self, request):
         l = []
-        for k,v in request.received_cookies.items():
+        for k,v in list(request.received_cookies.items()):
             l.append((k, v))
         l.sort()
         return repr(l)
@@ -107,30 +107,30 @@ class WebClientTestCase(unittest.TestCase):
     def testPayload(self):
         s = "0123456789" * 10
         return client.getPage(self.getURL("payload"), postdata=s
-            ).addCallback(self.assertEquals, s
+            ).addCallback(self.assertEqual, s
             )
 
     def testBrokenDownload(self):
         # test what happens when download gets disconnected in the middle
         d = client.getPage(self.getURL("broken"))
         d = unittest.assertFailure(d, client.PartialDownloadError)
-        d.addCallback(lambda exc: self.assertEquals(exc.response, "abc"))
+        d.addCallback(lambda exc: self.assertEqual(exc.response, "abc"))
         return d
     
     def testHostHeader(self):
         # if we pass Host header explicitly, it should be used, otherwise
         # it should extract from url
         return defer.gatherResults([
-            client.getPage(self.getURL("host")).addCallback(self.assertEquals, "127.0.0.1"),
-            client.getPage(self.getURL("host"), headers={"Host": "www.example.com"}).addCallback(self.assertEquals, "www.example.com")])
+            client.getPage(self.getURL("host")).addCallback(self.assertEqual, "127.0.0.1"),
+            client.getPage(self.getURL("host"), headers={"Host": "www.example.com"}).addCallback(self.assertEqual, "www.example.com")])
     
     def testGetPage(self):
-        return client.getPage(self.getURL("file")).addCallback(self.assertEquals, "0123456789")
+        return client.getPage(self.getURL("file")).addCallback(self.assertEqual, "0123456789")
 
     def testTimeoutNotTriggering(self):
         # Test that when the timeout doesn't trigger, things work as expected.
         d = client.getPage(self.getURL("wait"), timeout=100)
-        d.addCallback(self.assertEquals, "hello!!!")
+        d.addCallback(self.assertEqual, "hello!!!")
         return d
 
     def testTimeoutTriggering(self):
@@ -152,12 +152,12 @@ class WebClientTestCase(unittest.TestCase):
     
     def _cbDownloadPageTest(self, ignored, data, name):
         bytes = file(name, "rb").read()
-        self.assertEquals(bytes, data)
+        self.assertEqual(bytes, data)
  
     def testDownloadPageError1(self):
         class errorfile:
             def write(self, data):
-                raise IOError, "badness happened during write"
+                raise IOError("badness happened during write")
             def close(self):
                 pass
         ef = errorfile()
@@ -170,7 +170,7 @@ class WebClientTestCase(unittest.TestCase):
             def write(self, data):
                 pass
             def close(self):
-                raise IOError, "badness happened during close"
+                raise IOError("badness happened during close")
         ef = errorfile()
         return unittest.assertFailure(
             client.downloadPage(self.getURL("file"), ef),
@@ -191,7 +191,7 @@ class WebClientTestCase(unittest.TestCase):
         return d
 
     def _cleanupDownloadPageError3(self, ignored):
-        os.chmod("unwritable", 0700)
+        os.chmod("unwritable", 0o700)
         os.unlink("unwritable")
         return ignored
 
@@ -201,7 +201,7 @@ class WebClientTestCase(unittest.TestCase):
                             ("error?showlength=1", "401")]:
             d = method(url)
             d = unittest.assertFailure(d, error.Error)
-            d.addCallback(lambda exc, code=code: self.assertEquals(exc.args[0], code))
+            d.addCallback(lambda exc, code=code: self.assertEqual(exc.args[0], code))
             dl.append(d)
         return defer.DeferredList(dl, fireOnOneErrback=True)
 
@@ -219,17 +219,17 @@ class WebClientTestCase(unittest.TestCase):
         return factory.deferred.addCallback(self._cbFactoryInfo, factory)
     
     def _cbFactoryInfo(self, ignoredResult, factory):
-        self.assertEquals(factory.status, '200')
-        self.assert_(factory.version.startswith('HTTP/'))
-        self.assertEquals(factory.message, 'OK')
-        self.assertEquals(factory.response_headers['content-length'][0], '10')
+        self.assertEqual(factory.status, '200')
+        self.assertTrue(factory.version.startswith('HTTP/'))
+        self.assertEqual(factory.message, 'OK')
+        self.assertEqual(factory.response_headers['content-length'][0], '10')
         
 
     def testRedirect(self):
         return client.getPage(self.getURL("redirect")).addCallback(self._cbRedirect)
     
     def _cbRedirect(self, pageData):
-        self.assertEquals(pageData, "0123456789")
+        self.assertEqual(pageData, "0123456789")
         d = unittest.assertFailure(
             client.getPage(self.getURL("redirect"), followRedirect=0),
             error.PageRedirect)
@@ -237,7 +237,7 @@ class WebClientTestCase(unittest.TestCase):
         return d
     
     def _cbCheckLocation(self, exc):
-        self.assertEquals(exc.location, "/file")
+        self.assertEqual(exc.location, "/file")
 
     def testPartial(self):
         name = self.mktemp()
@@ -264,7 +264,7 @@ class WebClientTestCase(unittest.TestCase):
 
     def _cbPartialTest(self, ignored, expectedData, filename):
         bytes = file(filename, "rb").read()
-        self.assertEquals(bytes, expectedData)
+        self.assertEqual(bytes, expectedData)
 
 class WebClientSSLTestCase(WebClientTestCase):
     def _listen(self, site):
@@ -319,13 +319,13 @@ class WebClientRedirectBetweenSSLandPlainText(unittest.TestCase):
         tlsRoot.putChild('four', static.Data('FOUND IT!', 'text/plain'))
 
     def tearDown(self):
-        ds = map(defer.maybeDeferred,
-                 [self.plainPort.stopListening, self.tlsPort.stopListening])
+        ds = list(map(defer.maybeDeferred,
+                 [self.plainPort.stopListening, self.tlsPort.stopListening]))
         return defer.gatherResults(ds)
 
     def testHoppingAround(self):
         return client.getPage(self.getHTTP("one")
-            ).addCallback(self.assertEquals, "FOUND IT!"
+            ).addCallback(self.assertEqual, "FOUND IT!"
             )
 
 class FakeTransport:
@@ -355,24 +355,24 @@ class CookieTestCase(unittest.TestCase):
 
     def testNoCookies(self):
         return client.getPage(self.getHTTP("cookiemirror")
-            ).addCallback(self.assertEquals, "[]"
+            ).addCallback(self.assertEqual, "[]"
             )
 
     def testSomeCookies(self):
         cookies = {'foo': 'bar', 'baz': 'quux'}
         return client.getPage(self.getHTTP("cookiemirror"), cookies=cookies
-            ).addCallback(self.assertEquals, "[('baz', 'quux'), ('foo', 'bar')]"
+            ).addCallback(self.assertEqual, "[('baz', 'quux'), ('foo', 'bar')]"
             )
 
     def testRawNoCookies(self):
         return client.getPage(self.getHTTP("rawcookiemirror")
-            ).addCallback(self.assertEquals, "None"
+            ).addCallback(self.assertEqual, "None"
             )
 
     def testRawSomeCookies(self):
         cookies = {'foo': 'bar', 'baz': 'quux'}
         return client.getPage(self.getHTTP("rawcookiemirror"), cookies=cookies
-            ).addCallback(self.assertEquals, "'foo=bar; baz=quux'"
+            ).addCallback(self.assertEqual, "'foo=bar; baz=quux'"
             )
 
     def testCookieHeaderParsing(self):
@@ -393,12 +393,12 @@ class CookieTestCase(unittest.TestCase):
             'more body',
             ]:
             proto.dataReceived(line + '\r\n')
-        self.assertEquals(proto.transport.data,
+        self.assertEqual(proto.transport.data,
                           ['GET / HTTP/1.0\r\n',
                            'Host: foo.example.com\r\n',
                            'User-Agent: Twisted PageGetter\r\n',
                            '\r\n'])
-        self.assertEquals(factory.cookies,
+        self.assertEqual(factory.cookies,
                           {
             'CUSTOMER': 'WILE_E_COYOTE',
             'PART_NUMBER': 'ROCKET_LAUNCHER_0001',

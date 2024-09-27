@@ -13,13 +13,13 @@ API Stability: semi-stable
 
 Maintainer: U{Itamar Shtull-Trauring<mailto:twisted@itamarst.org>}
 """
-from __future__ import nested_scopes
+
 
 __version__ = "$Revision: 1.32 $"[11:-2]
 
 # System Imports
-import xmlrpclib
-import urlparse
+import xmlrpc.client
+import urllib.parse
 
 # Sibling Imports
 from twisted.web import resource, server
@@ -33,10 +33,10 @@ FAILURE = 8002
 
 
 # Useful so people don't need to import xmlrpclib directly
-Fault = xmlrpclib.Fault
-Binary = xmlrpclib.Binary
-Boolean = xmlrpclib.Boolean
-DateTime = xmlrpclib.DateTime
+Fault = xmlrpc.client.Fault
+Binary = xmlrpc.client.Binary
+Boolean = xmlrpc.client.Boolean
+DateTime = xmlrpc.client.DateTime
 
 
 class NoSuchFunction(Fault):
@@ -104,14 +104,14 @@ class XMLRPC(resource.Resource):
         return self.subHandlers.get(prefix, None)
 
     def getSubHandlerPrefixes(self):
-        return self.subHandlers.keys()
+        return list(self.subHandlers.keys())
 
     def render(self, request):
         request.content.seek(0, 0)
-        args, functionPath = xmlrpclib.loads(request.content.read())
+        args, functionPath = xmlrpc.client.loads(request.content.read())
         try:
             function = self._getFunction(functionPath)
-        except Fault, f:
+        except Fault as f:
             self._cbRender(f, request)
         else:
             request.setHeader("content-type", "text/xml")
@@ -128,10 +128,10 @@ class XMLRPC(resource.Resource):
         if not isinstance(result, Fault):
             result = (result,)
         try:
-            s = xmlrpclib.dumps(result, methodresponse=1)
+            s = xmlrpc.client.dumps(result, methodresponse=1)
         except:
             f = Fault(self.FAILURE, "can't serialize output")
-            s = xmlrpclib.dumps(f, methodresponse=1)
+            s = xmlrpc.client.dumps(f, methodresponse=1)
         request.setHeader("content-length", str(len(s)))
         request.write(s)
         request.finish()
@@ -274,15 +274,15 @@ class QueryFactory(protocol.ClientFactory):
 
     def __init__(self, url, host, method, *args):
         self.url, self.host = url, host
-        self.payload = payloadTemplate % (method, xmlrpclib.dumps(args))
+        self.payload = payloadTemplate % (method, xmlrpc.client.dumps(args))
         self.deferred = defer.Deferred()
 
     def parseResponse(self, contents):
         if not self.deferred:
             return
         try:
-            response = xmlrpclib.loads(contents)
-        except xmlrpclib.Fault, error:
+            response = xmlrpc.client.loads(contents)
+        except xmlrpc.client.Fault as error:
             self.deferred.errback(error)
             self.deferred = None
         else:
@@ -311,8 +311,8 @@ class Proxy:
     """
 
     def __init__(self, url):
-        parts = urlparse.urlparse(url)
-        self.url = urlparse.urlunparse(('', '')+parts[2:])
+        parts = urllib.parse.urlparse(url)
+        self.url = urllib.parse.urlunparse(('', '')+parts[2:])
         if self.url == "":
             self.url = "/"
         if ':' in parts[1]:

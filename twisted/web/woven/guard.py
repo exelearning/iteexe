@@ -10,7 +10,7 @@ your Woven application, you are probably most interested in
 L{UsernamePasswordWrapper}.
 """
 
-from __future__ import nested_scopes
+
 
 __version__ = "$Revision: 1.34 $"[11:-2]
 
@@ -18,7 +18,7 @@ import random
 import time
 import md5
 import warnings
-import urllib
+import urllib.request, urllib.parse, urllib.error
 
 # Twisted Imports
 
@@ -68,7 +68,7 @@ class GuardSession(components.Componentized):
             return x
 
     def setClientForService(self, ident, perspective, client, service):
-        if self.services.has_key(service):
+        if service in self.services:
             p, c, i = self.services[service]
             p.detached(c, ident)
             del self.services[service]
@@ -136,7 +136,7 @@ class GuardSession(components.Componentized):
         self.checkExpiredID = None
         # If I haven't been touched in 15 minutes:
         if time.time() - self.lastModified > self.lifetime / 2:
-            if self.guard.sessions.has_key(self.uid):
+            if self.uid in self.guard.sessions:
                 self.expire()
             else:
                 log.msg("no session to expire: %s" % self.uid)
@@ -146,7 +146,7 @@ class GuardSession(components.Componentized):
                                                     self.checkExpired)
     def __getstate__(self):
         d = self.__dict__.copy()
-        if d.has_key('checkExpiredID'):
+        if 'checkExpiredID' in d:
             del d['checkExpiredID']
         return d
 
@@ -174,7 +174,7 @@ def urlToChild(request, *ar, **kw):
     args = request.args.copy()
     args.update(kw)
     if args:
-        ret += '?'+urllib.urlencode(args)
+        ret += '?'+urllib.parse.urlencode(args)
     return ret
 
 def redirectToSession(request, garbage):
@@ -450,9 +450,9 @@ class UsernamePasswordWrapper(Resource):
                 return DeferredResource(
                     self.portal.login(Anonymous(), None, IResource
                                       ).addCallback(
-                    lambda (interface, avatarAspect, logout):
-                    getResource(s.setResourceForPortal(avatarAspect,
-                                           self.portal, logout),
+                    lambda interface_avatarAspect_logout:
+                    getResource(s.setResourceForPortal(interface_avatarAspect_logout[1],
+                                           self.portal, interface_avatarAspect_logout[2]),
                                 path, request)))
 
 

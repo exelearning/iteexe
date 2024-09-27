@@ -45,8 +45,8 @@ def run():
     options = ConvertOptions()
     try:
         options.parseOptions(sys.argv[1:])
-    except usage.UsageError, e:
-        print e
+    except usage.UsageError as e:
+        print(e)
     else:
         app.convertStyle(options["in"], options["typein"],
                      options.opts['decrypt'] or getpass.getpass('Passphrase: '),

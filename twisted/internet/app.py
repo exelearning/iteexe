@@ -19,14 +19,14 @@ import warnings
 from zope.interface import implements
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except ImportError:
     import pickle
 
 try:
-    import cStringIO as StringIO
+    import io as StringIO
 except ImportError:
-    import StringIO
+    import io
 
 # Twisted Imports
 from twisted.internet import interfaces
@@ -40,7 +40,7 @@ from twisted.python.util import OrderedDict
 from twisted.python import context
 
 # Sibling Imports
-import defer, error
+from . import defer, error
 
 def encrypt(passphrase, data):
     import md5
@@ -78,7 +78,7 @@ class _AbstractServiceCollection:
     def addService(self, service):
         """Add a service to this collection.
         """
-        if self.services.has_key(service.serviceName):
+        if service.serviceName in self.services:
             self.removeService(service)
         self.services[service.serviceName] = service
 
@@ -117,7 +117,7 @@ class ApplicationService(Accessor, styles.Versioned):
         Arguments: application, a twisted.internet.app.Application instance.
         """
         quieterWarning()
-        if not isinstance(serviceName, types.StringTypes):
+        if not isinstance(serviceName, (str,)):
             raise TypeError("%s is not a string." % serviceName)
         self.serviceName = serviceName
         if application:
@@ -196,7 +196,7 @@ class MultiService(_AbstractServiceCollection, ApplicationService):
         Start all of my Services.
         """
         ApplicationService.startService(self)
-        for svc in self.services.values():
+        for svc in list(self.services.values()):
             svc.startService()
 
     def stopService(self):
@@ -209,7 +209,7 @@ class MultiService(_AbstractServiceCollection, ApplicationService):
         Deferred returned by serviceObject.stopService.
         """
         ApplicationService.stopService(self)
-        v = self.services.values()
+        v = list(self.services.values())
         # The default stopService returns None, but you can't make that part
         # of a DeferredList.
         l = [svc.stopService() or defer.succeed(None) for svc in v]
@@ -260,7 +260,7 @@ class DependentMultiService(MultiService):
         return ApplicationService.startService(self) or defer.succeed(None)
         
     def _rollbackStartedServices(self, failure, service):
-        v = self.services.values()
+        v = list(self.services.values())
         startedServices = v[:v.index(service)]
         startedServices.reverse()
         # Warning:  On failure, service stops are not
@@ -282,13 +282,13 @@ class DependentMultiService(MultiService):
             return service.startService() or defer.succeed(None)
 
         d = defer.succeed(None)
-        for svc in self.services.values():
+        for svc in list(self.services.values()):
             d.addCallbacks(startServiceDeferred, callbackArgs=(svc,),
                 errback=self._rollbackStartedServices, errbackArgs=(svc,))
         return d.addCallback(self._finishStartService)
 
     def _emergencyStopService(self, failure, service):
-        v = self.services.values()
+        v = list(self.services.values())
         runningServices = v[v.index(service):]
         runningServices.reverse()
         for svc in runningServices:
@@ -313,7 +313,7 @@ class DependentMultiService(MultiService):
         def stopServiceDeferred(res, service):
             return service.stopService() or defer.succeed(None)
 
-        v = self.services.values()
+        v = list(self.services.values())
         v.reverse()
         d = defer.succeed(None)
         for svc in v:
@@ -403,7 +403,7 @@ class Application(log.Logger, styles.Versioned,
     def upgradeToVersion12(self):
         up = []
         for port, factory, backlog in self.unixPorts:
-            up.append((port, factory, backlog, 0666))
+            up.append((port, factory, backlog, 0o666))
         self.unixPorts = up
 
     def upgradeToVersion11(self):
@@ -416,7 +416,7 @@ class Application(log.Logger, styles.Versioned,
         toRemove = []
         for t in self.tcpPorts:
             port, factory, backlog, interface = t
-            if isinstance(port, types.StringTypes):
+            if isinstance(port, (str,)):
                 self.unixPorts.append((port, factory, backlog))
                 toRemove.append(t)
         for t in toRemove:
@@ -496,13 +496,13 @@ class Application(log.Logger, styles.Versioned,
 
     def __getstate__(self):
         dict = styles.Versioned.__getstate__(self)
-        if dict.has_key("running"):
+        if "running" in dict:
             del dict['running']
-        if dict.has_key("_boundPorts"):
+        if "_boundPorts" in dict:
             del dict['_boundPorts']
-        if dict.has_key("_listenerDict"):
+        if "_listenerDict" in dict:
             del dict['_listenerDict']
-        if dict.has_key("_extraListeners"):
+        if "_extraListeners" in dict:
             del dict["_extraListeners"]
         return dict
 
@@ -528,19 +528,19 @@ class Application(log.Logger, styles.Versioned,
             _portType, _args, _kw = t
             if portType == _portType:
                 if args == _args[:len(args)]:
-                    for (k, v) in kw.items():
-                        if _kw.has_key(k) and _kw[k] != v:
+                    for (k, v) in list(kw.items()):
+                        if k in _kw and _kw[k] != v:
                             break
                     else:
                         toRemove.append(t)
         if toRemove:
             for t in toRemove:
                 self.extraPorts.remove(t)
-                if self._extraListeners.has_key(t):
+                if t in self._extraListeners:
                     self._extraListeners[t].stopListening()
                     del self._extraListeners[t]
         else:
-            raise error.NotListeningError, (portType, args, kw)
+            raise error.NotListeningError(portType, args, kw)
 
     def listenTCP(self, port, factory, backlog=50, interface=''):
         """
@@ -563,12 +563,12 @@ class Application(log.Logger, styles.Versioned,
         if toRemove:
             for t in toRemove:
                 self.tcpPorts.remove(t)
-            if self._listenerDict.has_key((port, interface)):
+            if (port, interface) in self._listenerDict:
                 self._listenerDict[(port, interface)].stopListening()
         else:
-            raise error.NotListeningError, (interface, port)
+            raise error.NotListeningError(interface, port)
 
-    def listenUNIX(self, filename, factory, backlog=50, mode=0666):
+    def listenUNIX(self, filename, factory, backlog=50, mode=0o666):
         """
         Connects a given protocol factory to the UNIX socket with the given filename.
         """
@@ -589,10 +589,10 @@ class Application(log.Logger, styles.Versioned,
         if toRemove:
             for t in toRemove:
                 self.unixPorts.remove(t)
-            if self._listenerDict.has_key(filename):
+            if filename in self._listenerDict:
                 self._listenerDict[filename].stopListening()
         else:
-            raise error.NotListeningError, filename
+            raise error.NotListeningError(filename)
 
     def listenUDP(self, port, proto, interface='', maxPacketSize=8192):
         """
@@ -617,7 +617,7 @@ class Application(log.Logger, styles.Versioned,
             for t in toRemove:
                 self.udpPorts.remove(t)
         else:
-            raise error.NotListeningError, (interface, port)
+            raise error.NotListeningError(interface, port)
 
     def listenSSL(self, port, factory, ctxFactory, backlog=50, interface=''):
         """
@@ -643,7 +643,7 @@ class Application(log.Logger, styles.Versioned,
             for t in toRemove:
                 self.sslPorts.remove(t)
         else:
-            raise error.NotListeningError, (interface, port)
+            raise error.NotListeningError(interface, port)
 
     def connectWith(self, connectorType, *args, **kw):
         """
@@ -753,7 +753,7 @@ class Application(log.Logger, styles.Versioned,
             f.flush()
             f.close()
         else:
-            f = StringIO.StringIO()
+            f = io.StringIO()
             dumpFunc(self, f)
             s = encrypt(passphrase, f.getvalue())
             f = open(filename, 'wb')
@@ -774,7 +774,7 @@ class Application(log.Logger, styles.Versioned,
 
     def _beforeShutDown(self):
         l = []
-        services = self.services.values()
+        services = list(self.services.values())
         for service in services:
             try:
                 d = service.stopService()
@@ -803,25 +803,25 @@ class Application(log.Logger, styles.Versioned,
             for filename, factory, backlog, mode in self.unixPorts:
                 try:
                     self._listenerDict[filename] = reactor.listenUNIX(filename, factory, backlog, mode)
-                except error.CannotListenError, msg:
+                except error.CannotListenError as msg:
                     log.msg('error on UNIX socket %s: %s' % (filename, msg))
                     return
             for port, factory, backlog, interface in self.tcpPorts:
                 try:
                     self._listenerDict[port, interface] = reactor.listenTCP(port, factory, backlog, interface)
-                except error.CannotListenError, msg:
+                except error.CannotListenError as msg:
                     log.msg('error on TCP port %s: %s' % (port, msg))
                     return
             for port, factory, interface, maxPacketSize in self.udpPorts:
                 try:
                     reactor.listenUDP(port, factory, interface, maxPacketSize)
-                except error.CannotListenError, msg:
+                except error.CannotListenError as msg:
                     log.msg('error on UDP port %s: %s' % (port, msg))
                     return
             for port, factory, ctxFactory, backlog, interface in self.sslPorts:
                 try:
                     reactor.listenSSL(port, factory, ctxFactory, backlog, interface)
-                except error.CannotListenError, msg:
+                except error.CannotListenError as msg:
                     log.msg('error on SSL port %s: %s' % (port, msg))
                     return
             for portType, args, kw in self.extraPorts:
@@ -841,7 +841,7 @@ class Application(log.Logger, styles.Versioned,
             for connectorType, args, kw in self.extraConnectors:
                 reactor.connectWith(connectorType, *args, **kw)
 
-            for service in self.services.values():
+            for service in list(self.services.values()):
                 service.startService()
             self.running = 1
 

@@ -34,7 +34,7 @@ class LogFileTestCase(unittest.TestCase):
         log.close()
         
         f = open(self.path, "r")
-        self.assertEquals(f.read(), "1234567890")
+        self.assertEqual(f.read(), "1234567890")
         f.close()
     
     def testRotation(self):
@@ -45,22 +45,22 @@ class LogFileTestCase(unittest.TestCase):
         log.write("123")
         log.write("4567890")
         log.write("1" * 11)
-        self.assert_(os.path.exists("%s.1" % self.path))
-        self.assert_(not os.path.exists("%s.2" % self.path))
+        self.assertTrue(os.path.exists("%s.1" % self.path))
+        self.assertTrue(not os.path.exists("%s.2" % self.path))
         log.write('')
-        self.assert_(os.path.exists("%s.1" % self.path))
-        self.assert_(os.path.exists("%s.2" % self.path))
-        self.assert_(not os.path.exists("%s.3" % self.path))
+        self.assertTrue(os.path.exists("%s.1" % self.path))
+        self.assertTrue(os.path.exists("%s.2" % self.path))
+        self.assertTrue(not os.path.exists("%s.3" % self.path))
         log.write("3")
-        self.assert_(not os.path.exists("%s.3" % self.path))
+        self.assertTrue(not os.path.exists("%s.3" % self.path))
         
         # test manual rotation
         log.rotate()
-        self.assert_(os.path.exists("%s.3" % self.path))
-        self.assert_(not os.path.exists("%s.4" % self.path))
+        self.assertTrue(os.path.exists("%s.3" % self.path))
+        self.assertTrue(not os.path.exists("%s.4" % self.path))
         log.close()
 
-        self.assertEquals(log.listLogs(), [1, 2, 3])
+        self.assertEqual(log.listLogs(), [1, 2, 3])
     
     def testAppend(self):
         log = logfile.LogFile(self.name, self.dir)
@@ -68,14 +68,14 @@ class LogFileTestCase(unittest.TestCase):
         log.close()
         
         log = logfile.LogFile(self.name, self.dir)
-        self.assertEquals(log.size, 10)
-        self.assertEquals(log._file.tell(), log.size)
+        self.assertEqual(log.size, 10)
+        self.assertEqual(log._file.tell(), log.size)
         log.write("abc")
-        self.assertEquals(log.size, 13)
-        self.assertEquals(log._file.tell(), log.size)
+        self.assertEqual(log.size, 13)
+        self.assertEqual(log._file.tell(), log.size)
         f = log._file
         f.seek(0, 0)
-        self.assertEquals(f.read(), "0123456789abc")
+        self.assertEqual(f.read(), "0123456789abc")
         log.close()
 
     def testLogReader(self):
@@ -87,15 +87,15 @@ class LogFileTestCase(unittest.TestCase):
         log.flush()
         
         # check reading logs
-        self.assertEquals(log.listLogs(), [1])
+        self.assertEqual(log.listLogs(), [1])
         reader = log.getCurrentLog()
         reader._file.seek(0)
-        self.assertEquals(reader.readLines(), ["ghi\n"])
-        self.assertEquals(reader.readLines(), [])
+        self.assertEqual(reader.readLines(), ["ghi\n"])
+        self.assertEqual(reader.readLines(), [])
         reader.close()
         reader = log.getLog(1)
-        self.assertEquals(reader.readLines(), ["abc\n", "def\n"])
-        self.assertEquals(reader.readLines(), [])
+        self.assertEqual(reader.readLines(), ["abc\n", "def\n"])
+        self.assertEqual(reader.readLines(), [])
         reader.close()
         
         # check getting illegal log readers
@@ -104,27 +104,27 @@ class LogFileTestCase(unittest.TestCase):
 
         # check that log numbers are higher for older logs
         log.rotate()
-        self.assertEquals(log.listLogs(), [1, 2])
+        self.assertEqual(log.listLogs(), [1, 2])
         reader = log.getLog(1)
         reader._file.seek(0)
-        self.assertEquals(reader.readLines(), ["ghi\n"])
-        self.assertEquals(reader.readLines(), [])
+        self.assertEqual(reader.readLines(), ["ghi\n"])
+        self.assertEqual(reader.readLines(), [])
         reader.close()
         reader = log.getLog(2)
-        self.assertEquals(reader.readLines(), ["abc\n", "def\n"])
-        self.assertEquals(reader.readLines(), [])
+        self.assertEqual(reader.readLines(), ["abc\n", "def\n"])
+        self.assertEqual(reader.readLines(), [])
         reader.close()
 
     def testModePreservation(self):
         "logfile: check rotated files have same permissions as original."
         if not hasattr(os, "chmod"): return
         f = open(self.path, "w").close()
-        os.chmod(self.path, 0707)
+        os.chmod(self.path, 0o707)
         mode = os.stat(self.path)[0]
         log = logfile.LogFile(self.name, self.dir)
         log.write("abc")
         log.rotate()
-        self.assertEquals(mode, os.stat(self.path)[0])
+        self.assertEqual(mode, os.stat(self.path)[0])
 
     def testNoPermission(self):
         "logfile: check it keeps working when permission on dir changes."
@@ -150,13 +150,13 @@ class LogFileTestCase(unittest.TestCase):
         log.flush()
 
         f = log._file
-        self.assertEquals(f.tell(), 6)
+        self.assertEqual(f.tell(), 6)
         f.seek(0, 0)
-        self.assertEquals(f.read(), "abcdef")
+        self.assertEqual(f.read(), "abcdef")
         log.close()
 
         # reset permission so tearDown won't fail
-        os.chmod(self.dir, 0777)
+        os.chmod(self.dir, 0o777)
 
         
 class RiggedDailyLogFile(logfile.DailyLogFile):
@@ -194,7 +194,7 @@ class DailyLogFileTestCase(unittest.TestCase):
         log.close()
         
         f = open(self.path, "r")
-        self.assertEquals(f.read(), "1234567890")
+        self.assertEqual(f.read(), "1234567890")
         f.close()
     
     def testRotation(self):
@@ -209,13 +209,13 @@ class DailyLogFileTestCase(unittest.TestCase):
         log.write("4567890")
         log._clock = 86400  # 1970/01/02 00:00.00
         log.write("1" * 11)
-        self.assert_(os.path.exists(days[0]))
-        self.assert_(not os.path.exists(days[1]))
+        self.assertTrue(os.path.exists(days[0]))
+        self.assertTrue(not os.path.exists(days[1]))
         log._clock = 172800 # 1970/01/03 00:00.00
         log.write('')
-        self.assert_(os.path.exists(days[0]))
-        self.assert_(os.path.exists(days[1]))
-        self.assert_(not os.path.exists(days[2]))
+        self.assertTrue(os.path.exists(days[0]))
+        self.assertTrue(os.path.exists(days[1]))
+        self.assertTrue(not os.path.exists(days[2]))
         log._clock = 259199 # 1970/01/03 23:59.59
         log.write("3")
-        self.assert_(not os.path.exists(days[2]))
+        self.assertTrue(not os.path.exists(days[2]))

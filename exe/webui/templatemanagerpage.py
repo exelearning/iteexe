@@ -49,7 +49,7 @@ class ImportTemplateExistsError(ImportTemplateError):
         self.local_template = local_template
         self.absolute_template_dir = absolute_template_dir
         if message == '':
-            self.message = u'Error importing template, local template already exists. '
+            self.message = 'Error importing template, local template already exists. '
         else:
             self.message = message
 
@@ -123,12 +123,12 @@ class TemplateManagerPage(RenderableResource):
             try:
                 self.doImportTemplate(request.args['filename'][0])
                 self.alert(
-                           _(u'Success'),
-                           _(u'Successfully imported template'))
-            except Exception, e:
+                           _('Success'),
+                           _('Successfully imported template'))
+            except Exception as e:
                 self.alert(
-                           _(u'Error'),
-                           _(u'Error while installing template: %s') % str(e))
+                           _('Error'),
+                           _('Error while installing template: %s') % str(e))
         elif request.args['action'][0] == 'doProperties':
             self.doPropertiesTemplate(request.args['template'][0])
         elif request.args['action'][0] == 'doPreExport':
@@ -194,7 +194,7 @@ class TemplateManagerPage(RenderableResource):
         if os.path.exists(absoluteTargetDir):
 
             template = Template(absoluteTargetDir)
-            raise ImportTemplateExistsError(template, absoluteTargetDir, u'Template already exists')
+            raise ImportTemplateExistsError(template, absoluteTargetDir, 'Template already exists')
         else:
 
             filename.copyfile(absoluteTargetDir)
@@ -205,11 +205,11 @@ class TemplateManagerPage(RenderableResource):
                     if not self.config.templateStore.addTemplate(template):
 
                         absoluteTargetDir.remove()
-                        raise ImportTemplateExistsError(template, absoluteTargetDir, u'The template name already exists')
+                        raise ImportTemplateExistsError(template, absoluteTargetDir, 'The template name already exists')
             else:
 
                 absoluteTargetDir.remove()
-                raise ImportTemplateExistsError(template, absoluteTargetDir, u'Incorrect template format')
+                raise ImportTemplateExistsError(template, absoluteTargetDir, 'Incorrect template format')
 
         self.action = ""
 
@@ -217,7 +217,7 @@ class TemplateManagerPage(RenderableResource):
 
         if filename != '':
             templateExport = Template(self.config.templatesDir / template)
-            self.__exportTemplate(templateExport, unicode(filename))
+            self.__exportTemplate(templateExport, str(filename))
 
     def __exportTemplate(self, dirTemplateName, filename):
         """ Exports template """
@@ -235,32 +235,32 @@ class TemplateManagerPage(RenderableResource):
         try:
             dirTemplateName.path.copyfile(filename)
 
-            self.alert(_(u'Correct'),
-                       _(u'Template exported correctly: %s') % sfile)
+            self.alert(_('Correct'),
+                       _('Template exported correctly: %s') % sfile)
         except IOError:
-            self.alert(_(u'Error'),
-                       _(u'Could not export template : %s') % filename.basename())
+            self.alert(_('Error'),
+                       _('Could not export template : %s') % filename.basename())
         self.action = ""
 
     def doDeleteTemplate(self, template):
 
         # Get the current authoring page
 
-        for mainpages in self.parent.mainpages.values():
-            for mainpage in mainpages.values():
+        for mainpages in list(self.parent.mainpages.values()):
+            for mainpage in list(mainpages.values()):
                 if self.client.handleId in mainpage.authoringPages:
                     authoringPage = mainpage.authoringPages[self.client.handleId]
 
         try:
             if authoringPage.package.filename == (self.config.templatesDir / template):
-                self.alert(_('Error'), _(u'It is not possible to delete an opened template.'))
+                self.alert(_('Error'), _('It is not possible to delete an opened template.'))
                 return
             templateDelete = Template(self.config.templatesDir / template)
             self.__deleteTemplate(templateDelete)
-            self.alert(_(u'Correct'), _(u'Template deleted correctly'))
+            self.alert(_('Correct'), _('Template deleted correctly'))
             self.reloadPanel('doList')
         except:
-            self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
+            self.alert(_('Error'), _('An unexpected error has occurred'))
         self.action = ""
 
     def __deleteTemplate(self, template):
@@ -291,8 +291,8 @@ class TemplateManagerPage(RenderableResource):
         try:
             templateEdit = Package.load(Template(self.config.templatesDir / template).path, isTemplate=True)
             self.webServer.root.bindNewPackage(templateEdit, self.client.session)
-            self.client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+            self.client.sendScript(('eXe.app.gotoUrl("/%s")' % \
                           templateEdit.name).encode('utf8'))
         except:
-            self.alert(_(u'Error'), _(u'An unexpected error has occurred'))
+            self.alert(_('Error'), _('An unexpected error has occurred'))
 

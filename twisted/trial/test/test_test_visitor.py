@@ -48,7 +48,7 @@ class TestTestVisitor(unittest.TestCase):
         test_visitor = self.mock_visitor()
         testCase = self.loader.loadModule(sys.modules[__name__])
         testCase.visit(test_visitor)
-        self.failIf(len(test_visitor.calls) < 5, str(test_visitor.calls))
+        self.assertFalse(len(test_visitor.calls) < 5, str(test_visitor.calls))
         self.assertEqual(test_visitor.calls[1][0], "case")
 
     def test_visit_class_default(self):

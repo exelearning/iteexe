@@ -102,54 +102,54 @@ class InterfacesTestCase(unittest.TestCase):
               )
 
     def testModules(self):
-        self.assertEquals(components.Interface.__module__, "twisted.python.components")
-        self.assertEquals(IAdder.__module__, "twisted.test.test_components")
-        self.assertEquals(IFoo.__module__, "twisted.test.test_components")
+        self.assertEqual(components.Interface.__module__, "twisted.python.components")
+        self.assertEqual(IAdder.__module__, "twisted.test.test_components")
+        self.assertEqual(IFoo.__module__, "twisted.test.test_components")
     
     def testTupleTrees(self):
         for tree, result in self.tuples:
-            self.assertEquals(components.tupleTreeToList(tree), result)
+            self.assertEqual(components.tupleTreeToList(tree), result)
 
     def testClasses(self):
         components.fixClassImplements(Sub)
         components.fixClassImplements(MultiplyAndAdd)
-        self.assert_( IMultiply.implementedBy(MultiplyAndAdd) )
-        self.assert_( IAdder.implementedBy(MultiplyAndAdd) )
-        self.assert_( IAdder.implementedBy(Sub) )
-        self.assert_( ISub.implementedBy(Sub) )
+        self.assertTrue( IMultiply.implementedBy(MultiplyAndAdd) )
+        self.assertTrue( IAdder.implementedBy(MultiplyAndAdd) )
+        self.assertTrue( IAdder.implementedBy(Sub) )
+        self.assertTrue( ISub.implementedBy(Sub) )
 
     def testInstances(self):
         o = MultiplyAndAdd()
-        self.assert_( components.implements(o, IMultiply) )
-        self.assert_( components.implements(o, IMultiply) )
+        self.assertTrue( components.implements(o, IMultiply) )
+        self.assertTrue( components.implements(o, IMultiply) )
 
         o = Sub()
-        self.assert_( components.implements(o, IAdder) )
-        self.assert_( components.implements(o, ISub) )
+        self.assertTrue( components.implements(o, IAdder) )
+        self.assertTrue( components.implements(o, ISub) )
 
     def testOther(self):
-        self.assert_( not components.implements(3, ISub) )
-        self.assert_( not components.implements("foo", ISub) )
+        self.assertTrue( not components.implements(3, ISub) )
+        self.assertTrue( not components.implements("foo", ISub) )
 
     def testGetInterfaces(self):
         l = components.getInterfaces(Sub)
         l.sort()
         l2 = [IAdder, ISub]
         l2.sort()
-        self.assertEquals(l, l2)
+        self.assertEqual(l, l2)
 
         l = components.getInterfaces(MultiplyAndAdd)
         l.sort()
         l2 = [IAdder, IMultiply]
         l2.sort()
-        self.assertEquals(l, l2)
+        self.assertEqual(l, l2)
 
     def testSuperInterfaces(self):
         l = components.superInterfaces(ISub)
         l.sort()
         l2 = [ISub, IAdder]
         l2.sort()
-        self.assertEquals(l, l2)
+        self.assertEqual(l, l2)
 
 
 class Compo(components.Componentized):
@@ -255,32 +255,32 @@ class AdapterTestCase(unittest.TestCase):
     def testNoAdapter(self):
         o = Sub()
         multiplier = components.getAdapter(o, IMultiply, None)
-        self.assertEquals(multiplier, None)
+        self.assertEqual(multiplier, None)
 
     def testSelfIsAdapter(self):
         o = IntAdder()
         adder = components.getAdapter(o, IAdder, None)
-        self.assert_( o is adder )
+        self.assertTrue( o is adder )
 
     def testGetAdapter(self):
         o = IntAdder()
-        self.assertEquals(o.add(3, 4), 7)
+        self.assertEqual(o.add(3, 4), 7)
 
         # get an object implementing IMultiply
         multiplier = components.getAdapter(o, IMultiply, None)
 
         # check that it complies with the IMultiply interface
-        self.assertEquals(multiplier.multiply(3, 4), 12)
+        self.assertEqual(multiplier.multiply(3, 4), 12)
 
     def testGetAdapterClass(self):
         mklass = components.getAdapterClass(IntAdder, IMultiply, None)
-        self.assertEquals(mklass, IntMultiplyWithAdder)
+        self.assertEqual(mklass, IntMultiplyWithAdder)
 
     def testGetSubAdapter(self):
         o = MultiplyAndAdd()
-        self.assert_( not components.implements(o, IFoo) )
+        self.assertTrue( not components.implements(o, IFoo) )
         foo = components.getAdapter(o, IFoo, None)
-        self.assert_( isinstance(foo, FooAdapterForMAA) )
+        self.assertTrue( isinstance(foo, FooAdapterForMAA) )
 
     def testParentInterface(self):
         o = Sub()
@@ -309,7 +309,7 @@ class AdapterTestCase(unittest.TestCase):
         o = object()
         a = Adept(o)
         self.assertRaises(components.CannotAdapt, IAdder, a)
-        self.assertEquals(IAdder(a, default=None), None)
+        self.assertEqual(IAdder(a, default=None), None)
 
     def testMultipleInterfaceRegistration(self):
         class IMIFoo(components.Interface):
@@ -321,8 +321,8 @@ class AdapterTestCase(unittest.TestCase):
         class Blegh:
             pass
         components.registerAdapter(MIFooer, Blegh, IMIFoo, IMIBar)
-        self.assert_(isinstance(IMIFoo(Blegh()), MIFooer))
-        self.assert_(isinstance(IMIBar(Blegh()), MIFooer))
+        self.assertTrue(isinstance(IMIFoo(Blegh()), MIFooer))
+        self.assertTrue(isinstance(IMIBar(Blegh()), MIFooer))
 
 class IMeta(components.Interface):
     def __adapt__(o, dflt):
@@ -405,19 +405,19 @@ class TestMetaInterface(unittest.TestCase):
     
     def testBasic(self):
         n = MetaNumber(1)
-        self.assertEquals(IMeta(n).add(1), 2)
+        self.assertEqual(IMeta(n).add(1), 2)
 
     def testInterfaceAdaptMethod(self):
         a = FakeAdder()
         self.assertIdentical(IMeta(a), a)
         n2 = FakeNumber()
-        self.assertEquals(IMeta(n2).add(3), 6)
+        self.assertEqual(IMeta(n2).add(3), 6)
 
     def testComponentizedInteraction(self):
         c = ComponentNumber()
         IMeta(c).add(1)
         IMeta(c).add(1)
-        self.assertEquals(IMeta(c).add(1), 3)
+        self.assertEqual(IMeta(c).add(1), 3)
 
     def testRegistryPersistence(self):
         n = MetaNumber(1)
@@ -464,17 +464,17 @@ class TestInterfaceInterface(unittest.TestCase):
     def testBasic(self):
         s12 = Source12()
         d = IIDest1(s12)
-        self.failUnless(isinstance(d, Dest1Impl), str(s12))
+        self.assertTrue(isinstance(d, Dest1Impl), str(s12))
         s21 = Source21()
         d = IIDest1(s21)
-        self.failUnless(isinstance(d, Dest1Impl2), str(s21))
+        self.assertTrue(isinstance(d, Dest1Impl2), str(s21))
 
 
 class TestZIBC(unittest.TestCase):
     def testAttributes(self):
         class IFoo(components.Interface):
             a = 3
-        self.assertEquals(IFoo.a, 3)
+        self.assertEqual(IFoo.a, 3)
 
 
 from zope import interface as zinterface
@@ -506,7 +506,7 @@ class TestZope(unittest.TestCase):
 
     def testAdapter(self):
         x = Zopeable()
-        self.assertEquals(id(x), IZope(x))
+        self.assertEqual(id(x), IZope(x))
 
     def testOldSubclass(self):
         # someone has third party class that subclasses Zoper,
@@ -516,24 +516,24 @@ class TestZope(unittest.TestCase):
             pass
         class ThirdParty(Zoper):
             __implements__ = Zoper.__implements__, IFoo
-        self.assert_(components.implements(ThirdParty(), IAdder))
-        self.assert_(components.implements(ThirdParty(), IFoo))
-        self.assert_(components.implements(ThirdParty(), IZope))
+        self.assertTrue(components.implements(ThirdParty(), IAdder))
+        self.assertTrue(components.implements(ThirdParty(), IFoo))
+        self.assertTrue(components.implements(ThirdParty(), IZope))
 
     def testNewSubclass(self):
         # new-style implementing class subclasses backwardsCompatImplements class
         o = SubZoper()
-        self.assert_(components.implements(o, IZope))
-        self.assert_(components.implements(o, ISub))
+        self.assertTrue(components.implements(o, IZope))
+        self.assertTrue(components.implements(o, ISub))
 
     def testNewSubclassOfOld(self):
         o = NewSubOfOldStyle()
-        self.assert_(components.implements(o, IZope))
-        self.assert_(components.implements(o, IAdder))
+        self.assertTrue(components.implements(o, IZope))
+        self.assertTrue(components.implements(o, IAdder))
         
     def testSignatureString(self):
         # Make sure it cuts off the self from old t.p.c signatures.
-        self.assertEquals(IAdder['add'].getSignatureString(), "(a, b)")
-        self.assertEquals(IZope['amethod'].getSignatureString(), "(a, b)")
+        self.assertEqual(IAdder['add'].getSignatureString(), "(a, b)")
+        self.assertEqual(IZope['amethod'].getSignatureString(), "(a, b)")
         
 warnings.filterwarnings('default', **compWarn)

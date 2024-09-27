@@ -37,7 +37,7 @@ class TrueFalseElement(object):
         Initialize
         """
         self.index      = index
-        self.id         = unicode(index) + "b" + idevice.id        
+        self.id         = str(index) + "b" + idevice.id        
         self.idevice    = idevice
 
         self.question   = question
@@ -60,13 +60,13 @@ class TrueFalseElement(object):
         # because there are low-level mechanisms in place somewhere 
         # with the radio buttons or ??? expecting that as such.
         
-        self.questionId = "question"+ unicode(index) + "b" + idevice.id
+        self.questionId = "question"+ str(index) + "b" + idevice.id
         self.question_question.id = self.questionId
-        self.feedbackId = "feedback" + unicode(index) + "b" + idevice.id 
+        self.feedbackId = "feedback" + str(index) + "b" + idevice.id 
         self.question_feedback.id = self.feedbackId
-        self.hintId     = "hint" + unicode(index) + "b" + idevice.id 
+        self.hintId     = "hint" + str(index) + "b" + idevice.id 
         self.question_hint.id = self.hintId
-        self.keyId      = "Key" + unicode(index) + "b" + idevice.id       
+        self.keyId      = "Key" + str(index) + "b" + idevice.id       
 
     def process(self, request):
         """
@@ -146,7 +146,7 @@ class TrueFalseElement(object):
     def renderQuestionXML(self):
         questionFormatted = self.question_question.renderView()
         questionFormatted = questionFormatted.replace("align=\"right\"", "")
-        xml = u"<question><![CDATA["
+        xml = "<question><![CDATA["
         xml += questionFormatted
         xml += "]]>"
         

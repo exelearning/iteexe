@@ -81,7 +81,7 @@ class PackageTest(unittest.TestCase):
         return '.'.join(segs)
 
     def getModules(self):
-        return map(self._toModuleName, zip(*self.files)[0])
+        return list(map(self._toModuleName, list(zip(*self.files))[0]))
 
     def cleanUpModules(self):
         modules = self.getModules()
@@ -114,7 +114,7 @@ class PackageTest(unittest.TestCase):
         for filename, _ in self.files:
             dirName = os.path.dirname(os.path.join(parentDir, filename))
             directories[dirName] = True
-        dirs = directories.keys()
+        dirs = list(directories.keys())
         dirs.sort()
         dirs.reverse()
         for directory in dirs:

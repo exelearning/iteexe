@@ -41,7 +41,7 @@ class TestBlockFactory(unittest.TestCase):
     def testBlockFactory(self):
         myidevice = DummyIdevice()
         myblock   = g_blockFactory.createBlock(None, myidevice)
-        self.assertEquals(type(myblock), DummyBlock)
+        self.assertEqual(type(myblock), DummyBlock)
         
     def runTest(self):
         self.testBlockFactory()

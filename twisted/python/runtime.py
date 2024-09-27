@@ -11,9 +11,9 @@ import imp
 
 def shortPythonVersion():
     hv = sys.hexversion
-    major = (hv & 0xff000000L) >> 24
-    minor = (hv & 0x00ff0000L) >> 16
-    teeny = (hv & 0x0000ff00L) >> 8
+    major = (hv & 0xff000000) >> 24
+    minor = (hv & 0x00ff0000) >> 16
+    teeny = (hv & 0x0000ff00) >> 8
     return "%s.%s.%s" % (major,minor,teeny)
 
 knownPlatforms = {
@@ -55,11 +55,11 @@ class Platform:
     def isWinNT(self):
         """Are we running in Windows NT?"""
         if self.getType() == 'win32':
-            import _winreg
+            import winreg
             try:
-                k=_winreg.OpenKeyEx(_winreg.HKEY_LOCAL_MACHINE,
+                k=winreg.OpenKeyEx(winreg.HKEY_LOCAL_MACHINE,
                                     r'Software\Microsoft\Windows NT\CurrentVersion')
-                _winreg.QueryValueEx(k, 'SystemRoot')
+                winreg.QueryValueEx(k, 'SystemRoot')
                 return 1
             except WindowsError:
                 return 0

@@ -66,7 +66,7 @@ class MemoryMatchBlockInc(Block):
         for memoryMatchElement in self.memoryMatchElements:
             memoryMatchElement.process(request)
         
-        if "calcPairs" + unicode(self.id) in request.args:
+        if "calcPairs" + str(self.id) in request.args:
             self.idevice.setNumMatchingPairs()
             self.idevice.edit = True
             self.idevice.undo = False
@@ -178,7 +178,7 @@ class MemoryMatchBlockInc(Block):
         """
         Returns an XHTML string with the form element for editing this block
         """
-        html  = u"<div>\n"
+        html  = "<div>\n"
         html += common.ideviceShowEditMessage(self)
         html += self.idevice.mainFieldSet.renderEditInOrder(self.mainElements)
         for memoryMatchElement in self.memoryMatchElements:
@@ -186,13 +186,13 @@ class MemoryMatchBlockInc(Block):
         
         html += _("""<p>Click the button below to create the matching pairs or 
                 trim in case you reduced the number of rows / columns</p>\n""")
-        html += common.submitButton("calcPairs"+unicode(self.id), _("Create / Trim Pairs"))
+        html += common.submitButton("calcPairs"+str(self.id), _("Create / Trim Pairs"))
         html += "<br/>"
         html += self.renderEditButtons()
         
         
         
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
 
@@ -200,9 +200,9 @@ class MemoryMatchBlockInc(Block):
         """
         Returns an XHTML string for previewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\" "
-        html += u"ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\" "
+        html += "ondblclick=\"submitLink('edit',"+self.id+", 0);\">\n"
         html += self._renderGame(style, True)
         html += "</div>\n"
         return html
@@ -212,10 +212,10 @@ class MemoryMatchBlockInc(Block):
         """
         Returns an XHTML string for viewing this block
         """
-        html  = u"<div class=\"iDevice "
-        html += u"emphasis"+unicode(self.idevice.emphasis)+"\">\n"
+        html  = "<div class=\"iDevice "
+        html += "emphasis"+str(self.idevice.emphasis)+"\">\n"
         html += self._renderGame(style, False)
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
     
 class MemoryMatchPairElement(Element): 

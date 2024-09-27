@@ -166,7 +166,7 @@ class Renderable(object):
         """
         # Pass the request on to each rendering component
         # child that is not a separate page in itself
-        for rc in self.renderChildren.values():
+        for rc in list(self.renderChildren.values()):
             if not isinstance(rc, _RenderablePage):
                 # Only sub pages need to have process passed to them
                 rc.process(request)

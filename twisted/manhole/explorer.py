@@ -29,7 +29,7 @@ False=not True
 class Pool(UserDict.UserDict):
     def getExplorer(self, object, identifier):
         oid = id(object)
-        if self.data.has_key(oid):
+        if oid in self.data:
             # XXX: This potentially returns something with
             # 'identifier' set to a different value.
             return self.data[oid]
@@ -117,7 +117,7 @@ class ExplorerSequence(Explorer):
     def get_elements(self):
         self.len = len(self.seq)
         l = []
-        for i in xrange(self.len):
+        for i in range(self.len):
             identifier = "%s[%s]" % (self.identifier, i)
 
             # GLOBAL: using global explorerPool
@@ -145,10 +145,10 @@ class ExplorerMapping(Explorer):
         self.keys = []
 
     def get_keys(self):
-        keys = self.dct.keys()
+        keys = list(self.dct.keys())
         self.len = len(keys)
         l = []
-        for i in xrange(self.len):
+        for i in range(self.len):
             identifier = "%s.keys()[%s]" % (self.identifier, i)
 
             # GLOBAL: using global explorerPool
@@ -278,7 +278,7 @@ class ExplorerFunction(Explorer):
     """
     def __init__(self, function, identifier):
         Explorer.__init__(self, function, identifier)
-        code = function.func_code
+        code = function.__code__
         argcount = code.co_argcount
         takesList = (code.co_flags & 0x04) and 1
         takesKeywords = (code.co_flags & 0x08) and 1
@@ -286,11 +286,11 @@ class ExplorerFunction(Explorer):
         n = (argcount + takesList + takesKeywords)
         signature = Signature(code.co_varnames[:n])
 
-        if function.func_defaults:
+        if function.__defaults__:
             i_d = 0
-            for i in xrange(argcount - len(function.func_defaults),
+            for i in range(argcount - len(function.__defaults__),
                             argcount):
-                default = function.func_defaults[i_d]
+                default = function.__defaults__[i_d]
                 default = explorerPool.getExplorer(
                     default, '%s.func_defaults[%d]' % (identifier, i_d))
                 signature.set_default(i, default)
@@ -323,18 +323,18 @@ class ExplorerMethod(ExplorerFunction):
     """
     def __init__(self, method, identifier):
 
-        function = method.im_func
+        function = method.__func__
         if type(function) is types.InstanceType:
-            function = function.__call__.im_func
+            function = function.__call__.__func__
 
         ExplorerFunction.__init__(self, function, identifier)
         self.id = id(method)
-        self.klass = explorerPool.getExplorer(method.im_class,
+        self.klass = explorerPool.getExplorer(method.__self__.__class__,
                                               identifier + '.im_class')
-        self.self = explorerPool.getExplorer(method.im_self,
+        self.self = explorerPool.getExplorer(method.__self__,
                                              identifier + '.im_self')
 
-        if method.im_self:
+        if method.__self__:
             # I'm a bound method -- eat the 'self' arg.
             self.signature.discardSelf()
 
@@ -360,13 +360,13 @@ class ExplorerModule(Explorer):
         functions = {}
         classes = {}
         data = {}
-        for key, value in module.__dict__.items():
+        for key, value in list(module.__dict__.items()):
             if key[0] == '_':
                 continue
 
             mIdentifier = "%s.%s" % (identifier, key)
 
-            if type(value) is types.ClassType:
+            if type(value) is type:
                 classes[key] = explorerPool.getExplorer(value,
                                                         mIdentifier)
             elif type(value) is types.FunctionType:
@@ -385,20 +385,20 @@ class ExplorerModule(Explorer):
         self.data = data
 
 typeTable = {types.InstanceType: ExplorerInstance,
-             types.ClassType: ExplorerClass,
+             type: ExplorerClass,
              types.MethodType: ExplorerMethod,
              types.FunctionType: ExplorerFunction,
              types.ModuleType: ExplorerModule,
              types.BuiltinFunctionType: ExplorerBuiltin,
-             types.ListType: ExplorerSequence,
-             types.TupleType: ExplorerSequence,
-             types.DictType: ExplorerMapping,
-             types.StringType: ExplorerImmutable,
-             types.NoneType: ExplorerImmutable,
-             types.IntType: ExplorerImmutable,
-             types.FloatType: ExplorerImmutable,
-             types.LongType: ExplorerImmutable,
-             types.ComplexType: ExplorerImmutable,
+             list: ExplorerSequence,
+             tuple: ExplorerSequence,
+             dict: ExplorerMapping,
+             bytes: ExplorerImmutable,
+             type(None): ExplorerImmutable,
+             int: ExplorerImmutable,
+             float: ExplorerImmutable,
+             int: ExplorerImmutable,
+             complex: ExplorerImmutable,
              }
 
 class Signature(pb.Copyable):
@@ -421,7 +421,7 @@ class Signature(pb.Copyable):
         return self.name[arg]
 
     def get_default(self, arg):
-        if arg is types.StringType:
+        if arg is bytes:
             arg = self.name.index(arg)
 
         # Wouldn't it be nice if we just returned "None" when there
@@ -433,32 +433,32 @@ class Signature(pb.Copyable):
             return (False, None)
 
     def set_default(self, arg, value):
-        if arg is types.StringType:
+        if arg is bytes:
             arg = self.name.index(arg)
 
         self.flavour[arg] = self._HAS_DEFAULT
         self.default[arg] = value
 
     def set_varlist(self, arg):
-        if arg is types.StringType:
+        if arg is bytes:
             arg = self.name.index(arg)
 
         self.flavour[arg] = self._VAR_LIST
 
     def set_keyword(self, arg):
-        if arg is types.StringType:
+        if arg is bytes:
             arg = self.name.index(arg)
 
         self.flavour[arg] = self._KEYWORD_DICT
 
     def is_varlist(self, arg):
-        if arg is types.StringType:
+        if arg is bytes:
             arg = self.name.index(arg)
 
         return (self.flavour[arg] == self._VAR_LIST)
 
     def is_keyword(self, arg):
-        if arg is types.StringType:
+        if arg is bytes:
             arg = self.name.index(arg)
 
         return (self.flavour[arg] == self._KEYWORD_DICT)
@@ -483,7 +483,7 @@ class Signature(pb.Copyable):
 
     def __str__(self):
         arglist = []
-        for arg in xrange(len(self)):
+        for arg in range(len(self)):
             name = self.get_name(arg)
             hasDefault, default = self.get_default(arg)
             if hasDefault:
@@ -537,16 +537,16 @@ class CRUFT_WatchyThingie:
         objects which are members of this one.
         """
         if type(object) is not types.InstanceType:
-            raise TypeError, "Sorry, can only place a watch on Instances."
+            raise TypeError("Sorry, can only place a watch on Instances.")
 
         # uninstallers = []
 
         dct = {}
         reflect.addMethodNamesToDict(object.__class__, dct, '')
-        for k in object.__dict__.keys():
+        for k in list(object.__dict__.keys()):
             dct[k] = 1
 
-        members = dct.keys()
+        members = list(dct.keys())
 
         clazzNS = {}
         clazz = new.classobj('Watching%s%X' %
@@ -566,7 +566,7 @@ class CRUFT_WatchyThingie:
             m = getattr(object, name)
             # Only hook bound methods.
             if ((type(m) is types.MethodType)
-                and (m.im_self is not None)):
+                and (m.__self__ is not None)):
                 # What's the use of putting watch monkeys on methods
                 # in addition to __setattr__?  Well, um, uh, if the
                 # methods modify their attributes (i.e. add a key to
@@ -628,7 +628,7 @@ class _WatchMonkey:
         """Pretend to be the method I replaced, and ring the bell.
         """
         if self.oldMethod[1]:
-            rval = apply(self.oldMethod[1], a, kw)
+            rval = self.oldMethod[1](*a, **kw)
         else:
             rval = None
 

@@ -64,8 +64,8 @@ class ImageMagnifierBlock(Block):
 
         is_cancel = common.requestHasCancel(request)
 
-        if (u"action" not in request.args 
-            or (request.args[u"action"][0] != u"delete"
+        if ("action" not in request.args 
+            or (request.args["action"][0] != "delete"
                 and not is_cancel)):
             self.imageMagnifierElement.process(request)
             self.textElement.process(request)
@@ -104,14 +104,14 @@ class ImageMagnifierBlock(Block):
         Returns an XHTML string with the form elements for editing this block
         """
         log.debug("renderEdit")
-        floatArr        = [[_(u'Left'), 'left'],
-                          [_(u'Right'), 'right'],
-                          [_(u'None'),  'none']]
-        html  = u"<div class=\"iDevice\">\n"
+        floatArr        = [[_('Left'), 'left'],
+                          [_('Right'), 'right'],
+                          [_('None'),  'none']]
+        html  = "<div class=\"iDevice\">\n"
         
         # Caption
         html += '<div class="block">'
-        html += u"<strong>%s</strong>" % _(u"Caption:")
+        html += "<strong>%s</strong>" % _("Caption:")
         html += common.elementInstruc(self.idevice.captionInstruc)
         html += '</div>'
         html += '<div class="block">'
@@ -143,32 +143,32 @@ class ImageMagnifierBlock(Block):
 
         # Initial Zoom Size
         selection = self.idevice.imageMagnifier.initialZSize
-        html += common.formField('select', this_package, _(u"Initial Zoom"),
+        html += common.formField('select', this_package, _("Initial Zoom"),
                                  "initial" + self.id, '',
                                  self.idevice.initialZoomInstruc,
                                  zoomOpts, selection)
             
         # Maximum Zoom
         selection = self.idevice.imageMagnifier.maxZSize
-        html += common.formField('select', this_package, _(u"Maximum zoom"),
+        html += common.formField('select', this_package, _("Maximum zoom"),
                                  "maxZoom" + self.id, '',
                                  self.idevice.maxZoomInstruc,
                                  zoomOpts, selection)
             
         # Size of Magnifying Glass
-        glassSizeArr    = [[_(u'Small'), '1'],
-                          [_(u'Medium'),'2'],
-                          [_(u'Large'),'3'],
-                          [_(u'Extra large'),'4'],]
+        glassSizeArr    = [[_('Small'), '1'],
+                          [_('Medium'),'2'],
+                          [_('Large'),'3'],
+                          [_('Extra large'),'4'],]
         html += common.formField('select', this_package, 
-                                 _(u"Size of magnifying glass: "),
+                                 _("Size of magnifying glass: "),
                                  "glass" + self.id, '',
                                  self.idevice.glassSizeInstruc,
                                  glassSizeArr, 
                                  self.idevice.imageMagnifier.glassSize)
  
         html += self.renderEditButtons(undo=self.idevice.undo)
-        html += u"</div>\n"
+        html += "</div>\n"
         return html
 
     def renderPreview(self, style):

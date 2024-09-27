@@ -5,7 +5,7 @@
 Now with 30% more starch.
 """
 
-from __future__ import generators
+
 
 import hmac
 from zope import interface
@@ -58,7 +58,7 @@ class TestRealm:
         self.avatars = {}
 
     def requestAvatar(self, avatarId, mind, *interfaces):
-        if self.avatars.has_key(avatarId):
+        if avatarId in self.avatars:
             avatar = self.avatars[avatarId]
         else:
             avatar = TestAvatar(avatarId)
@@ -80,7 +80,7 @@ class NewCredTest(unittest.TestCase):
         got = self.portal.listCredentialsInterfaces()
         expected.sort()
         got.sort()
-        self.assertEquals(got, expected)
+        self.assertEqual(got, expected)
 
     def testBasicLogin(self):
         l = []; f = []
@@ -92,47 +92,47 @@ class NewCredTest(unittest.TestCase):
         # print l[0].getBriefTraceback()
         iface, impl, logout = l[0]
         # whitebox
-        self.assertEquals(iface, ITestable)
-        self.failUnless(iface.providedBy(impl),
+        self.assertEqual(iface, ITestable)
+        self.assertTrue(iface.providedBy(impl),
                         "%s does not implement %s" % (impl, iface))
         # greybox
-        self.failUnless(impl.original.loggedIn)
-        self.failUnless(not impl.original.loggedOut)
+        self.assertTrue(impl.original.loggedIn)
+        self.assertTrue(not impl.original.loggedOut)
         logout()
-        self.failUnless(impl.original.loggedOut)
+        self.assertTrue(impl.original.loggedOut)
 
     def testFailedLogin(self):
         l = []
         self.portal.login(credentials.UsernamePassword("bob", "h3llo"),
                           self, ITestable).addErrback(
             lambda x: x.trap(error.UnauthorizedLogin)).addCallback(l.append)
-        self.failUnless(l)
-        self.failUnlessEqual(error.UnauthorizedLogin, l[0])
+        self.assertTrue(l)
+        self.assertEqual(error.UnauthorizedLogin, l[0])
 
     def testFailedLoginName(self):
         l = []
         self.portal.login(credentials.UsernamePassword("jay", "hello"),
                           self, ITestable).addErrback(
             lambda x: x.trap(error.UnauthorizedLogin)).addCallback(l.append)
-        self.failUnless(l)
-        self.failUnlessEqual(error.UnauthorizedLogin, l[0])
+        self.assertTrue(l)
+        self.assertEqual(error.UnauthorizedLogin, l[0])
 
 
 class CramMD5CredentialsTestCase(unittest.TestCase):
     def testIdempotentChallenge(self):
         c = credentials.CramMD5Credentials()
         chal = c.getChallenge()
-        self.assertEquals(chal, c.getChallenge())
+        self.assertEqual(chal, c.getChallenge())
 
     def testCheckPassword(self):
         c = credentials.CramMD5Credentials()
         chal = c.getChallenge()
         c.response = hmac.HMAC('secret', chal).hexdigest()
-        self.failUnless(c.checkPassword('secret'))
+        self.assertTrue(c.checkPassword('secret'))
 
     def testWrongPassword(self):
         c = credentials.CramMD5Credentials()
-        self.failIf(c.checkPassword('secret'))
+        self.assertFalse(c.checkPassword('secret'))
 
 class OnDiskDatabaseTestCase(unittest.TestCase):
     users = [
@@ -151,8 +151,8 @@ class OnDiskDatabaseTestCase(unittest.TestCase):
         f.close()
 
         for (u, p) in self.users:
-            self.failUnlessRaises(KeyError, db.getUser, u.upper())
-            self.assertEquals(db.getUser(u), (u, p))
+            self.assertRaises(KeyError, db.getUser, u.upper())
+            self.assertEqual(db.getUser(u), (u, p))
 
     def testCaseInSensitivity(self):
         dbfile = self.mktemp()
@@ -163,7 +163,7 @@ class OnDiskDatabaseTestCase(unittest.TestCase):
         f.close()
 
         for (u, p) in self.users:
-            self.assertEquals(db.getUser(u.upper()), (u, p))
+            self.assertEqual(db.getUser(u.upper()), (u, p))
 
     def testRequestAvatarId(self):
         dbfile = self.mktemp()
@@ -175,7 +175,7 @@ class OnDiskDatabaseTestCase(unittest.TestCase):
         creds = [credentials.UsernamePassword(u, p) for u, p in self.users]
         d = defer.gatherResults(
             [defer.maybeDeferred(db.requestAvatarId, c) for c in creds])
-        d.addCallback(self.assertEquals, [u for u, p in self.users])
+        d.addCallback(self.assertEqual, [u for u, p in self.users])
         return d
     
     def testRequestAvatarId_hashed(self):
@@ -188,7 +188,7 @@ class OnDiskDatabaseTestCase(unittest.TestCase):
         creds = [credentials.UsernameHashedPassword(u, p) for u, p in self.users]
         d = defer.gatherResults(
             [defer.maybeDeferred(db.requestAvatarId, c) for c in creds])
-        d.addCallback(self.assertEquals, [u for u, p in self.users])
+        d.addCallback(self.assertEqual, [u for u, p in self.users])
         return d
 
 
@@ -218,7 +218,7 @@ class HashedPasswordOnDiskDatabaseTestCase(unittest.TestCase):
     def testGoodCredentials(self):
         goodCreds = [credentials.UsernamePassword(u, p) for u, p in self.users]
         d = defer.gatherResults([self.db.requestAvatarId(c) for c in goodCreds])
-        d.addCallback(self.assertEquals, [u for u, p in self.users])
+        d.addCallback(self.assertEqual, [u for u, p in self.users])
         return d
 
     def testGoodCredentials_login(self):
@@ -226,7 +226,7 @@ class HashedPasswordOnDiskDatabaseTestCase(unittest.TestCase):
         d = defer.gatherResults([self.port.login(c, None, ITestable)
                                  for c in goodCreds])
         d.addCallback(lambda x: [a.original.name for i, a, l in x])
-        d.addCallback(self.assertEquals, [u for u, p in self.users])
+        d.addCallback(self.assertEqual, [u for u, p in self.users])
         return d
 
     def testBadCredentials(self):
@@ -247,7 +247,7 @@ class HashedPasswordOnDiskDatabaseTestCase(unittest.TestCase):
 
     def _assertFailures(self, failures, *expectedFailures):
         for flag, failure in failures:
-            self.failUnlessEqual(flag, defer.FAILURE)
+            self.assertEqual(flag, defer.FAILURE)
             failure.trap(*expectedFailures)
         return None
 
@@ -293,7 +293,7 @@ class PluggableAuthenticationModulesTest(unittest.TestCase):
         creds = credentials.PluggableAuthenticationModules('testuser',
                 conv)
         d = db.requestAvatarId(creds)
-        d.addCallback(self.assertEquals, 'testuser')
+        d.addCallback(self.assertEqual, 'testuser')
         return d
 
     def testBadCredentials(self):
@@ -323,7 +323,7 @@ class CheckersMixin:
             for (cred, avatarId) in self.getGoodCredentials():
                 r = wFD(chk.requestAvatarId(cred))
                 yield r
-                self.assertEquals(r.getResult(), avatarId)
+                self.assertEqual(r.getResult(), avatarId)
     testPositive = dG(testPositive)
 
     def testNegative(self):

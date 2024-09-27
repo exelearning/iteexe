@@ -42,7 +42,7 @@ def compile(latex, fontsize=4, latex_is_file=False):
                 cmd = Path('/snap/exelearning/x1/usr/lib/cgi-bin/mimetex.cgi')
             if not cmd.exists():
                 cmd = Path('/usr/bin/mimetex')
-    log.debug(u"mimetex command=%s" % cmd)
+    log.debug("mimetex command=%s" % cmd)
     # Twisted uses SIGCHLD in a way that conflicts with the Popen() family
     # (see Twisted FAQ)  So save their handler and temporarily restore default.
     if hasattr(signal, 'SIGCHLD'):
@@ -55,13 +55,13 @@ def compile(latex, fontsize=4, latex_is_file=False):
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
         else:
             startupinfo = None
-        log.debug(u"about to call mimetex command with latex=\""+latex+"\".")
+        log.debug("about to call mimetex command with latex=\""+latex+"\".")
         if not latex_is_file: 
             process = subprocess.Popen([cmd, '-d', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo) 
         else: 
             process = subprocess.Popen([cmd, '-d', '-f', latex, '-s', str(int(fontsize)-1)], bufsize=8192, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, startupinfo=startupinfo)
         returnCode = process.wait()
-        log.debug(u"mimetex returnCode=%d", returnCode)
+        log.debug("mimetex returnCode=%d", returnCode)
         if returnCode != 0:
             raise Exception("Couldn't parse latex:\n%s" % process.stderr)
     finally:

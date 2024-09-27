@@ -2,14 +2,14 @@ from twisted.scripts import trial
 from twisted.trial import unittest, runner
 from twisted.trial.test import packages
 from twisted.python import util
-import os, re, sys, StringIO
+import os, re, sys, io
 
 
 def runTrial(*args):
     from twisted.trial import reporter
     config = trial.Options()
     config.parseOptions(args)
-    output = StringIO.StringIO()
+    output = io.StringIO()
     myRunner = runner.TrialRunner(
         reporter.VerboseTextReporter,
         stream=output,
@@ -45,7 +45,7 @@ class TestImportErrors(packages.PackageTest):
         return runTrial('--temp-directory', self.mktemp(), *args)
  
     def _print(self, stuff):
-        print stuff
+        print(stuff)
         return stuff
 
     def failUnlessIn(self, container, containee, *args, **kwargs):

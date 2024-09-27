@@ -101,7 +101,7 @@ class OutlinePane(Renderable, Resource):
             return
         node = self.package.findNode(nodeId)
 
-        node.title = unicode(newName, 'utf8')
+        node.title = str(newName, 'utf8')
         # and send a signal to the node that it needs to change its anchors,
         # and those of ALL of its children nodes, as well:
         node.RenamedNodePath()
@@ -156,26 +156,26 @@ class OutlinePane(Renderable, Resource):
         log.debug("Render")
         request.setHeader('content-type', 'application/xml')
         node_id = request.args['node'][0]
-        xml = u'<?xml version="1.0" encoding="UTF-8"?>'
-        xml += u'<!-- start outline pane -->'
-        xml += u'<nodes>'
+        xml = '<?xml version="1.0" encoding="UTF-8"?>'
+        xml += '<!-- start outline pane -->'
+        xml += '<nodes>'
         if node_id == 'root':
             childs = [self.package.root]
         else:
             childs = self.package.findNode(node_id).children
         for node in childs:
-            xml += u'<node>'
-            xml += u'<text>%s</text>' % self.encode2nicexml(node.title)
-            xml += u'<id>%s</id>' % self.encode2nicexml(node.id)
-            xml += u'<expanded>true</expanded>'
+            xml += '<node>'
+            xml += '<text>%s</text>' % self.encode2nicexml(node.title)
+            xml += '<id>%s</id>' % self.encode2nicexml(node.id)
+            xml += '<expanded>true</expanded>'
             if node.children:
-                xml += u'<leaf>false</leaf>'
+                xml += '<leaf>false</leaf>'
             else:
-                xml += u'<leaf>true</leaf>'
-            xml += u'<icon>data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==</icon>'
-            xml += u'</node>'
-        xml += u'</nodes>'
-        xml += u'<!-- end outline pane -->'
+                xml += '<leaf>true</leaf>'
+            xml += '<icon>data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==</icon>'
+            xml += '</node>'
+        xml += '</nodes>'
+        xml += '<!-- end outline pane -->'
         return xml.encode('utf8')
 
     def encode2nicexml(self, string):

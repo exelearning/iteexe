@@ -8,8 +8,8 @@ from twisted.internet.abstract import isIPAddress # would rather not import "abs
 from twisted.internet import defer, interfaces, address, error
 from twisted.python import log
 
-import server, client
-import iocpdebug
+from . import server, client
+from . import iocpdebug
 from zope.interface import implements
 
 
@@ -44,13 +44,14 @@ class ServerSocket(server.ListeningPort.transport_class, TcpMixin):
 class Port(server.ListeningPort):
     sockinfo = (socket.AF_INET, socket.SOCK_STREAM, 0)
     transport_class = ServerSocket
-    def __init__(self, (host, port), factory, backlog):
+    def __init__(self, xxx_todo_changeme, factory, backlog):
+        (host, port) = xxx_todo_changeme
         if iocpdebug.debug:
-            print "listening on (%s, %s)" % (host, port)
-        if isinstance(port, types.StringTypes):
+            print("listening on (%s, %s)" % (host, port))
+        if isinstance(port, (str,)):
             try:
                 port = socket.getservbyname(port, 'tcp')
-            except socket.error, e:
+            except socket.error as e:
                 raise error.ServiceNameUnknownError(string=str(e))
         server.ListeningPort.__init__(self, (host, port), factory, backlog)
 
@@ -76,11 +77,11 @@ class Connector(client.SocketConnector):
     def prepareAddress(self):
         host, port = self.addr
         if iocpdebug.debug:
-            print "connecting to (%s, %s)" % (host, port)
-        if isinstance(port, types.StringTypes):
+            print("connecting to (%s, %s)" % (host, port))
+        if isinstance(port, (str,)):
             try:
                 port = socket.getservbyname(port, 'tcp')
-            except socket.error, e:
+            except socket.error as e:
                 raise error.ServiceNameUnknownError(string=str(e))
         self.addr= (host, port)
     

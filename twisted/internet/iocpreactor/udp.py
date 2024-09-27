@@ -9,14 +9,13 @@ from twisted.internet.abstract import isIPAddress
 from twisted.persisted import styles
 from twisted.python import log, failure, reflect
 
-from ops import ReadFileOp, WriteFileOp, WSARecvFromOp, WSASendToOp
-from util import StateEventMachineType
+from .ops import ReadFileOp, WriteFileOp, WSARecvFromOp, WSASendToOp
+from .util import StateEventMachineType
 from zope.interface import implements
 
 ERROR_PORT_UNREACHABLE = 1234
 
-class Port(log.Logger, styles.Ephemeral, object):
-    __metaclass__ = StateEventMachineType
+class Port(log.Logger, styles.Ephemeral, object, metaclass=StateEventMachineType):
     implements(interfaces.IUDPTransport)
     events = ["startListening", "stopListening", "write", "readDone", "readErr", "writeDone", "writeErr", "connect"]
     sockinfo = (socket.AF_INET, socket.SOCK_DGRAM, 0)
@@ -49,12 +48,12 @@ class Port(log.Logger, styles.Ephemeral, object):
 
     def handle_listening_connect(self, host, port):
         if not isIPAddress(host):
-            raise ValueError, "please pass only IP addresses, not domain names"
+            raise ValueError("please pass only IP addresses, not domain names")
         self.state = "connecting"
         return defer.maybeDeferred(self._connectDone, host, port)      
 
     def handle_connecting_connect(self, host, port):
-        raise RuntimeError, "already connected, reconnecting is not currently supported (talk to itamar if you want this)"
+        raise RuntimeError("already connected, reconnecting is not currently supported (talk to itamar if you want this)")
     handle_connected_connect = handle_connecting_connect
         
     def _connectDone(self, host, port):
@@ -78,8 +77,8 @@ class Port(log.Logger, styles.Ephemeral, object):
             skt = socket.socket(*self.sockinfo)
             skt.bind(self.bindAddress)
 #            print "bound %s to %s" % (skt.fileno(), self.bindAddress)
-        except socket.error, le:
-            raise error.CannotListenError, (None, None, le)
+        except socket.error as le:
+            raise error.CannotListenError(None, None, le)
         
         # Make sure that if we listened on port 0, we update that to
         # reflect what the OS actually assigned us.
@@ -99,7 +98,7 @@ class Port(log.Logger, styles.Ephemeral, object):
         self.reading = True
         try:
             self.read_op.initiateOp(self.socket.fileno(), self.readbuf)
-        except WindowsError, we:
+        except WindowsError as we:
             log.msg("initiating read failed with args %s" % (we,))
 
     def stopReading(self):
@@ -147,7 +146,7 @@ class Port(log.Logger, styles.Ephemeral, object):
                 addr = self._connectedAddr
             write_op.initiateOp(self.socket.fileno(), data, addr)
 #            print "initiating write_op to", addr
-        except WindowsError, we:
+        except WindowsError as we:
             log.msg("initiating write failed with args %s" % (we,))
 
     def handle_listening_writeDone(self, bytes):

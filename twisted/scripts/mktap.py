@@ -137,7 +137,7 @@ class FirstPassOptions(usage.Options):
 
     def init(self, tapLookup):
         sc = []
-        for (name, module) in tapLookup.iteritems():
+        for (name, module) in tapLookup.items():
             if IServiceMaker.providedBy(module):
                 sc.append((
                     name, None, lambda m=module: m.options(), module.description))
@@ -153,14 +153,14 @@ class FirstPassOptions(usage.Options):
         self.params += rest
 
     def _reportDebug(self, info):
-        print 'Debug: ', info
+        print('Debug: ', info)
 
     def _reportProgress(self, info):
         s = self.pb(info)
         if s:
-            print '\rProgress: ', s,
+            print('\rProgress: ', s, end=' ')
         if info == 1.0:
-            print '\r' + (' ' * 79) + '\r',
+            print('\r' + (' ' * 79) + '\r', end=' ')
 
     def postOptions(self):
         if self.recursing:
@@ -182,7 +182,7 @@ class FirstPassOptions(usage.Options):
             raise usage.UsageError(str(self))
         if hasattr(self, 'subOptions') and self.subOptions.get('help'):
             raise usage.UsageError(str(self.subOptions))
-        if not self.tapLookup.has_key(self.subCommand):
+        if self.subCommand not in self.tapLookup:
             raise usage.UsageError("Please select one of: "+
                                    ' '.join(self.tapLookup))
 
@@ -191,8 +191,8 @@ def run():
     options = FirstPassOptions()
     try:
         options.parseOptions(sys.argv[1:])
-    except usage.UsageError, e:
-        print e
+    except usage.UsageError as e:
+        print(e)
         sys.exit(2)
     except KeyboardInterrupt:
         sys.exit(1)

@@ -63,7 +63,8 @@ from exe.engine.template         import Template
 from exe                         import globals as G
 from tempfile                    import mkdtemp, mkstemp
 from exe.engine.mimetex          import compile
-from urllib                      import unquote, urlretrieve
+from urllib.parse import unquote
+from urllib.request import urlretrieve
 from exe.engine.locationbuttons  import LocationButtons
 from exe.export.epub3export      import Epub3Export
 from exe.export.xmlexport        import XMLExport
@@ -151,7 +152,7 @@ class MainPage(RenderableLivePage):
             # Copy the nodes and update the root and current ones
             # Be carefull not to use copy.copy when assigning root and currentNode as this will create entirely new nodes
             self.package._nodeIdDict = copy.copy(template._nodeIdDict)
-            rootkey = [k for k,v in self.package._nodeIdDict.items() if not v.parent][0]
+            rootkey = [k for k,v in list(self.package._nodeIdDict.items()) if not v.parent][0]
             self.package.root = self.package._nodeIdDict[rootkey]
             self.package.currentNode = self.package._nodeIdDict[rootkey]
 
@@ -160,7 +161,7 @@ class MainPage(RenderableLivePage):
 
             # We have to go through all nodes to add the correct reference
             # to the current package
-            for node in self.package._nodeIdDict.itervalues():
+            for node in self.package._nodeIdDict.values():
                 node._package = self.package
 
             self.package.translatePackage()
@@ -185,7 +186,7 @@ class MainPage(RenderableLivePage):
             return self.authoringPages[clientid]
         else:
             try:
-                self.idevicePane.client.sendScript(u'top.window.location.reload()')
+                self.idevicePane.client.sendScript('top.window.location.reload()')
             except:
                 raise Exception('No clientHandleId in request')
 
@@ -331,14 +332,14 @@ class MainPage(RenderableLivePage):
         return tags.script(type="text/javascript")["var config = %s" % json.dumps(config)]
 
     def render_jsuilang(self, ctx, data):
-        return ctx.tag(src="../jsui/i18n/" + unicode(G.application.config.locale) + ".js")
+        return ctx.tag(src="../jsui/i18n/" + str(G.application.config.locale) + ".js")
 
     def render_extjslang(self, ctx, data):
-        return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + unicode(G.application.config.locale) + ".js")
+        return ctx.tag(src="../jsui/extjs/locale/ext-lang-" + str(G.application.config.locale) + ".js")
 
     def render_htmllang(self, ctx, data):
         lang = G.application.config.locale.replace('_', '-').split('@')[0]
-        attribs = {'lang': unicode(lang), 'xml:lang': unicode(lang), 'xmlns': 'http://www.w3.org/1999/xhtml'}
+        attribs = {'lang': str(lang), 'xml:lang': str(lang), 'xmlns': 'http://www.w3.org/1999/xhtml'}
         return ctx.tag(**attribs)
 
     def render_version(self, ctx, data):
@@ -355,7 +356,7 @@ class MainPage(RenderableLivePage):
         """
         Prints a test message, and yup, that's all!
         """
-        print "Test Message: ", message, " [eol, eh!]"
+        print("Test Message: ", message, " [eol, eh!]")
 
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
@@ -388,7 +389,7 @@ class MainPage(RenderableLivePage):
         'onDoneParam' will be passed to onDone as a param after the
         filename
         """
-        client.call(onDone, unicode(self.package.filename), onDoneParam,export_type_name)
+        client.call(onDone, str(self.package.filename), onDoneParam,export_type_name)
 
     def b4save(self, client, inputFilename, ext, msg):
         """
@@ -403,8 +404,8 @@ class MainPage(RenderableLivePage):
             # If after adding the extension there is a file
             # with the same name, fail and show an error
             if Path(inputFilename).exists():
-                explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
-                msg = u'%s\n%s' % (msg, explanation)
+                explanation = _('"%s" already exists.\nPlease try again with a different filename') % inputFilename
+                msg = '%s\n%s' % (msg, explanation)
                 client.alert(msg)
                 raise Exception(msg)
 
@@ -412,8 +413,8 @@ class MainPage(RenderableLivePage):
         # before this state, so we have to check for duplicates
         # here
         if ext.lower() == '.elt' and Path(inputFilename).exists():
-            explanation = _(u'"%s" already exists.\nPlease try again with a different filename') % inputFilename
-            msg = u'%s\n%s' % (msg, explanation)
+            explanation = _('"%s" already exists.\nPlease try again with a different filename') % inputFilename
+            msg = '%s\n%s' % (msg, explanation)
             client.alert(msg)
             raise Exception(msg)
 
@@ -442,7 +443,7 @@ class MainPage(RenderableLivePage):
 
         saveDir = filename.dirname()
         if saveDir and not saveDir.isdir():
-            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
+            client.alert(_('Cannot access directory named ') + str(saveDir) + _('. Please use ASCII names.'))
             return
         oldName = self.package.name
 
@@ -450,7 +451,7 @@ class MainPage(RenderableLivePage):
         if extension == '.elt':
             return self.handleSaveTemplate(client, filename.basename(), onDone, edit=True)
         # Add the extension if its not already there and give message if not saved
-        filename = self.b4save(client, filename, '.elp', _(u'SAVE FAILED!'))
+        filename = self.b4save(client, filename, '.elp', _('SAVE FAILED!'))
 
         name = str(filename.basename().splitext()[0])
         if name.upper() in forbiddenPageNames:
@@ -459,7 +460,7 @@ class MainPage(RenderableLivePage):
 
         try:
             self.package.save(filename)  # This can change the package name
-        except Exception, e:
+        except Exception as e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
 
@@ -471,18 +472,18 @@ class MainPage(RenderableLivePage):
         if not export_type_name:
             # Tell the user and continue
             if onDone:
-                client.alert(_(u'Package saved to: %s') % filename, onDone)
+                client.alert(_('Package saved to: %s') % filename, onDone)
             elif self.package.name != oldName:
                 # Redirect the client if the package name has changed
                 self.webServer.root.putChild(self.package.name, self)
                 log.info('Package saved, redirecting client to /%s' % self.package.name)
-                client.alert(_(u'Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
+                client.alert(_('Package saved to: %s') % filename, 'eXe.app.gotoUrl("/%s")' % self.package.name.encode('utf8'), \
                             filter_func=otherSessionPackageClients)
             else:
                 # client.alert(_(u'Package saved to: %s') % filename, filter_func=otherSessionPackageClients)
                 # A nice notification instead of an alert
                 filename = _('Package saved to: %s') % filename.replace("\\","\\/")
-                client.sendScript(u'eXe.app.notifications.savedPackage("%s")' % filename)
+                client.sendScript('eXe.app.notifications.savedPackage("%s")' % filename)
 
     def handleSaveTemplate(self, client, templatename=None, onDone=None, edit=False):
         '''Save template'''
@@ -493,7 +494,7 @@ class MainPage(RenderableLivePage):
             templatename = str(filename.basename().splitext()[0])
 
         if edit == False:
-            filename = self.b4save(client, filename, '.elt', _(u'SAVE FAILED!'))
+            filename = self.b4save(client, filename, '.elt', _('SAVE FAILED!'))
 
         name = str(filename.basename().splitext()[0])
         if name.upper() in forbiddenPageNames:
@@ -511,14 +512,14 @@ class MainPage(RenderableLivePage):
 
             # Save the template
             self.package.save(filename, isTemplate=True, configxml=configxmlData)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
 
         template = Template(filename)
         self.config.templateStore.addTemplate(template)
 
-        client.alert(_(u'Template saved: %s') % templatename, onDone)
+        client.alert(_('Template saved: %s') % templatename, onDone)
 
     def handleLoadPackage(self, client, filename, filter_func=None):
         """Load the package named 'filename'"""
@@ -527,17 +528,17 @@ class MainPage(RenderableLivePage):
         self.webServer.root.bindNewPackage(package, self.session)
         if package.load_message:
             client.alert(package.load_message,
-                         onDone=(u'eXe.app.gotoUrl("/%s")' % package.name).encode('utf8'),
+                         onDone=('eXe.app.gotoUrl("/%s")' % package.name).encode('utf8'),
                          filter_func=filter_func)
         else:
-            client.sendScript((u'eXe.app.gotoUrl("/%s")' % package.name).encode('utf8'), filter_func=filter_func)
+            client.sendScript(('eXe.app.gotoUrl("/%s")' % package.name).encode('utf8'), filter_func=filter_func)
 
     def handleLoadTemplate(self, client, filename):
         """Load the template named 'filename'"""
         # By transforming it into a Path, we ensure that it is using the correct directory separator
         template = self._loadPackage(client, Path(filename), newLoad=True, isTemplate=True)
         self.webServer.root.bindNewPackage(template, self.session)
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % template.name).encode('utf8'), filter_func=allSessionPackageClients)
+        client.sendScript(('eXe.app.gotoUrl("/%s")' % template.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     def handleMetadataWarning(self, client, export_type):
         """
@@ -545,9 +546,9 @@ class MainPage(RenderableLivePage):
         a warning to the user.
         """
         if self.config.metadataWarning == "1" and self.package.has_custom_metadata():
-            client.call(u'eXe.app.getController("Toolbar").showMetadataWarning', export_type, '')
+            client.call('eXe.app.getController("Toolbar").showMetadataWarning', export_type, '')
         else:
-            client.call(u'eXe.app.getController("Toolbar").processExportEventValidationStep', export_type, '')
+            client.call('eXe.app.getController("Toolbar").processExportEventValidationStep', export_type, '')
 
     def hideMetadataWarningForever(self, client):
         """
@@ -559,9 +560,9 @@ class MainPage(RenderableLivePage):
     def handlePackagePropertiesValidation(self, client, export_type):
         invalid_properties = self.package.valid_properties(export_type)
         if len(invalid_properties) == 0:
-            client.call(u'eXe.app.getController("Toolbar").exportPackage', export_type, '')
+            client.call('eXe.app.getController("Toolbar").exportPackage', export_type, '')
         else:
-            invalid_properties_str = u''
+            invalid_properties_str = ''
             for prop in invalid_properties:
                 invalid_properties_str += prop.get('name') + '|' + prop.get('reason')
 
@@ -577,7 +578,7 @@ class MainPage(RenderableLivePage):
                 encoding = 'utf-8'
 
             # Turns package filename passed it to unicode when call javascript function
-            client.call(u'eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, unicode(str(self.package.filename), encoding), invalid_properties_str)
+            client.call('eXe.app.getController("Toolbar").packagePropertiesCompletion', export_type, str(str(self.package.filename), encoding), invalid_properties_str)
 
     # No longer used - Task 1080, jrf
     # def handleLoadTutorial(self, client):
@@ -612,7 +613,7 @@ class MainPage(RenderableLivePage):
                 urlretrieve(hostname)
             log.debug('eXe can reach host %s without problems'%(hostname))
             return True
-        except Exception, e:
+        except Exception as e:
             log.error('Error checking host %s is %s'%(hostname, e.strerror))
         return False
 
@@ -641,7 +642,7 @@ class MainPage(RenderableLivePage):
                 zipFile.extractall(G.application.config.configDir)
                 log.debug("Extracted in %s"%(G.application.config.configDir))    
                 client.sendScript('Ext.MessageBox.hide()')
-            except Exception, e:
+            except Exception as e:
                 log.error('Error extracting file %s in %s is: %s'%(filename, G.application.config.configDir, e.strerror))
             finally:
                 Path(filename).remove()
@@ -652,7 +653,7 @@ class MainPage(RenderableLivePage):
             try:
                 d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip", lambda n, b, f: self.progressDownload(n, b, f, client), context=ssl.create_default_context(cafile='cacert.pem')) #, context=ssl._create_unverified_context())
                 d.addCallback(successDownload)
-            except Exception, e:
+            except Exception as e:
                 log.error('Error downloading url %s is %s'%(url, e.strerror))
         elif (platform=='darwin'):
             d = threads.deferToThread(urlretrieve, url, "/tmp/classification_sources.zip",
@@ -839,7 +840,7 @@ class MainPage(RenderableLivePage):
             previewDir.makedirs()
         elif not previewDir.isdir():
             client.alert( \
-                _(u'Preview directory %s is a file, cannot replace it') \
+                _('Preview directory %s is a file, cannot replace it') \
                 % previewDir)
             log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
@@ -849,7 +850,7 @@ class MainPage(RenderableLivePage):
         if errors == 0:
             log.debug('handleTinyMCEimageChoice: originally, local_filename='
                     + local_filename)
-            local_filename = unicode(local_filename, 'utf-8')
+            local_filename = str(local_filename, 'utf-8')
             log.debug('handleTinyMCEimageChoice: in unicode, local_filename='
                     + local_filename)
 
@@ -858,7 +859,7 @@ class MainPage(RenderableLivePage):
                     + localImagePath)
             if not localImagePath.exists() or not localImagePath.isfile():
                 client.alert( \
-                     _(u'Local file %s is not found, cannot preview it') \
+                     _('Local file %s is not found, cannot preview it') \
                      % localImagePath)
                 log.error("Couldn't find tinyMCE-chosen image: %s" \
                         % localImagePath)
@@ -909,13 +910,13 @@ class MainPage(RenderableLivePage):
                     + unamped_local_filename)
             my_basename = os.path.basename(unamped_local_filename)
 
-            descrip_file.write((u"basename=" + my_basename).encode('utf-8'))
+            descrip_file.write(("basename=" + my_basename).encode('utf-8'))
             descrip_file.flush()
             descrip_file.close()
 
             client.sendScript('eXe.app.fireEvent("previewTinyMCEImageDone")')
 
-        except Exception, e:
+        except Exception as e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             log.error("handleTinyMCEimageChoice unable to copy local image "
                     + "file to server prevew, error = " + str(e))
@@ -935,7 +936,7 @@ class MainPage(RenderableLivePage):
             previewDir.makedirs()
         elif not previewDir.isdir():
             client.alert(\
-                _(u'Preview directory %s is a file, cannot replace it') \
+                _('Preview directory %s is a file, cannot replace it') \
                 % previewDir)
             log.error("Couldn't preview file: " +
                       "Preview dir %s is a file, cannot replace it" \
@@ -977,7 +978,7 @@ class MainPage(RenderableLivePage):
 
             client.sendScript('eXe.app.fireEvent("uploadFileToResourcesDone")')
 
-        except Exception, e:
+        except Exception as e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             log.error("Unable to save file "
                     + "file to server prevew, error = " + str(e))
@@ -1000,7 +1001,7 @@ class MainPage(RenderableLivePage):
             previewDir.makedirs()
         elif not previewDir.isdir():
             client.alert(\
-                _(u'Preview directory %s is a file, cannot replace it') \
+                _('Preview directory %s is a file, cannot replace it') \
                 % previewDir)
             log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
@@ -1035,7 +1036,7 @@ class MainPage(RenderableLivePage):
 
             client.sendScript('eXe.app.fireEvent("previewTinyMCEDragDropImageDone","'+preview_filename+'")')
 
-        except Exception, e:
+        except Exception as e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             log.error("handleTinyMCEimageDragDrop unable to copy local image "
                     + "file to server prevew, error = " + str(e))
@@ -1063,7 +1064,7 @@ class MainPage(RenderableLivePage):
             previewDir.makedirs()
         elif not previewDir.isdir():
             client.alert( \
-                _(u'Preview directory %s is a file, cannot replace it') \
+                _('Preview directory %s is a file, cannot replace it') \
                 % previewDir)
             log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
@@ -1102,7 +1103,7 @@ class MainPage(RenderableLivePage):
                 use_latex_sourcefile = math_filename_str
                 tempFileName = compile(use_latex_sourcefile, math_fontsize, \
                         latex_is_file=True)
-            except Exception, e:
+            except Exception as e:
                 client.alert(_('Could not create the image') + " (LaTeX)","$exeAuthoring.errorHandler('handleTinyMCEmath')")
                 log.error("handleTinyMCEmath unable to compile LaTeX using "
                         + "mimetex, error = " + str(e))
@@ -1144,7 +1145,7 @@ class MainPage(RenderableLivePage):
             previewDir.makedirs()
         elif not previewDir.isdir():
             client.alert( \
-                _(u'Preview directory %s is a file, cannot replace it') \
+                _('Preview directory %s is a file, cannot replace it') \
                 % previewDir)
             log.error("Couldn't preview tinyMCE-chosen image: " +
                       "Preview dir %s is a file, cannot replace it" \
@@ -1171,7 +1172,7 @@ class MainPage(RenderableLivePage):
                 use_mathml_sourcefile = math_filename_str
                 tempFileName = compile(use_mathml_sourcefile, math_fontsize, \
                         latex_is_file=True)
-            except Exception, e:
+            except Exception as e:
                 client.alert(_('Could not create the image') + " (MathML)","$exeAuthoring.errorHandler('handleTinyMCEmathML')")
                 log.error("handleTinyMCEmathML unable to compile MathML using "
                         + "mimetex, error = " + str(e))
@@ -1210,21 +1211,21 @@ class MainPage(RenderableLivePage):
                 d = threads.deferToThread(self.getResources, path, html, client)
                 d.addCallback(self.handleImportCallback, client)
                 d.addErrback(self.handleImportErrback, client)
-                client.call('eXe.app.getController("Toolbar").initImportProgressWindow', _(u'Importing HTML...'))
+                client.call('eXe.app.getController("Toolbar").initImportProgressWindow', _('Importing HTML...'))
         if importType.startswith('lom'):
             try:
                 setattr(self.package, importType, lomsubs.parse(path))
                 client.call('eXe.app.getController("MainTab").lomImportSuccess', importType)
-            except Exception, e:
+            except Exception as e:
                 client.alert(_('LOM Metadata import FAILED!\n%s') % str(e))
 
     def handleImportErrback(self, failure, client):
-        client.alert(_(u'Error importing HTML:\n') + unicode(failure.getBriefTraceback()), \
-                     (u'eXe.app.gotoUrl("/%s")' % self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
+        client.alert(_('Error importing HTML:\n') + str(failure.getBriefTraceback()), \
+                     ('eXe.app.gotoUrl("/%s")' % self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
 
     def handleImportCallback(self, resources, client):
         client.call('eXe.app.getController("Toolbar").closeImportProgressWindow')
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+        client.sendScript(('eXe.app.gotoUrl("/%s")' % \
                       self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     def handleCancelImport(self, client):
@@ -1255,7 +1256,7 @@ class MainPage(RenderableLivePage):
             :returns: Full path to the exported ZIP.
             """
             # Update progress for the user
-            client.call('Ext.MessageBox.updateProgress', 0.3, '30%', _(u'Exporting package as SCORM 1.2...'))
+            client.call('Ext.MessageBox.updateProgress', 0.3, '30%', _('Exporting package as SCORM 1.2...'))
 
             stylesDir = self.config.stylesDir / self.package.style
 
@@ -1274,7 +1275,7 @@ class MainPage(RenderableLivePage):
             :param filename: Full path to the exported ZIP.
             """
             # Update progress for the user
-            client.call('Ext.MessageBox.updateProgress', 0.7, '70%', _(u'Uploading package to Procomún...'))
+            client.call('Ext.MessageBox.updateProgress', 0.7, '70%', _('Uploading package to Procomún...'))
 
             # Get OAuth Acess Token and add it to the request headers
             token = client.session.oauthToken['procomun']
@@ -1298,7 +1299,7 @@ class MainPage(RenderableLivePage):
                 # If there is an exception, log it and show a generic error message to the user
                 log.error('An error has ocurred while trying to publish a package to Procomún. The error message is: %s', str(e))
                 client.call('Ext.MessageBox.hide')
-                client.alert(_(u'Unknown error when trying to upload package to Procomún.'), title=_(u'Publishing document to Procomún'))
+                client.alert(_('Unknown error when trying to upload package to Procomún.'), title=_('Publishing document to Procomún'))
                 return
 
             # Parse the result received from Procomún
@@ -1317,32 +1318,32 @@ class MainPage(RenderableLivePage):
                 client.alert(
                     js(
                         '\''
-                        + _(u'Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
-                        + u'<br />'
-                        + u'<br />'
-                        + _(u'<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % ProcomunOauth.BASE_URL
+                        + _('Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
+                        + '<br />'
+                        + '<br />'
+                        + _('<small>You can view and manage the uploaded package using <a href="%s" target="_blank" title="Procomún Home">Procomún</a>\\\'s web page.</small>').replace('>',' style="font-size:1em">') % ProcomunOauth.BASE_URL
                         + '\''
                     ),
-                    title=_(u'Publishing document to Procomún')
+                    title=_('Publishing document to Procomún')
                 )
             else:
                 client.alert(
                     js(
                         '\'<h3>'
-                        + _(u'Error exporting package "%s" to Procomún.') % self.package.name
-                        + u'</h3><br />'
-                        + _(u'The most common reasons for this are:')
-                        + u'<br />'
-                        + _(u'1. Package metadata is not properly filled.')
-                        + u'<br />'
-                        + _(u'2. There is a problem with you connection (or with Procomún servers), so you should just try again later.')
-                        + u'<br /><br />'
-                        + _(u'If you have problems publishing you can close this dialogue, export as SCORM 2004 and upload the generated zip file manually to Procomún.')
-                        + u'<br /><br />'
-                        + _(u'The reported error we got from Procomún was: <pre>%s</pre>') % parsedResult['message']
+                        + _('Error exporting package "%s" to Procomún.') % self.package.name
+                        + '</h3><br />'
+                        + _('The most common reasons for this are:')
+                        + '<br />'
+                        + _('1. Package metadata is not properly filled.')
+                        + '<br />'
+                        + _('2. There is a problem with you connection (or with Procomún servers), so you should just try again later.')
+                        + '<br /><br />'
+                        + _('If you have problems publishing you can close this dialogue, export as SCORM 2004 and upload the generated zip file manually to Procomún.')
+                        + '<br /><br />'
+                        + _('The reported error we got from Procomún was: <pre>%s</pre>') % parsedResult['message']
                         + '\''
                     ),
-                    title=_(u'Publishing document to Procomún')
+                    title=_('Publishing document to Procomún')
                 )
 
         d = threads.deferToThread(exportScorm)
@@ -1362,9 +1363,9 @@ class MainPage(RenderableLivePage):
         filename = Path(filename, 'utf-8')
         exportDir = Path(filename).dirname()
         if exportDir and not exportDir.exists():
-            client.alert(_(u'Cannot access directory named ') +
-                         unicode(exportDir) +
-                         _(u'. Please use ASCII names.'))
+            client.alert(_('Cannot access directory named ') +
+                         str(exportDir) +
+                         _('. Please use ASCII names.'))
             return
 
         name = str(filename.basename().splitext()[0])
@@ -1390,29 +1391,29 @@ class MainPage(RenderableLivePage):
         elif exportType == 'csvReport':
             self.exportReport(client, filename, stylesDir)
         elif exportType == 'zipFile':
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             self.exportWebZip(client, filename, stylesDir)
         elif exportType == 'textFile':
             self.exportText(client, filename)
         elif exportType == 'scorm1.2':
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm1.2")
         elif exportType == "scorm2004":
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "scorm2004")
         elif exportType == "agrega":
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "agrega")
         elif exportType == 'epub3':
-            filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.epub', _('EXPORT FAILED!'))
             self.exportEpub3(client, filename, stylesDir)
         elif exportType == "commoncartridge":
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             self.exportScorm(client, filename, stylesDir, "commoncartridge")
         elif exportType == 'mxml':
             self.exportXML(client, filename, stylesDir)
         else:
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             self.exportIMS(client, filename, stylesDir)
 
     def handleQuit(self, client):
@@ -1444,13 +1445,13 @@ class MainPage(RenderableLivePage):
     def handleSaveEXeUIversion(self,client,status):
         initial=G.application.config.configParser.get('user', 'eXeUIversion')
         if initial == '2':
-            client.call(u'eXe.app.getController("Toolbar").exeUIalert')
+            client.call('eXe.app.getController("Toolbar").exeUIalert')
         G.application.config.configParser.set('user', 'eXeUIversion', status)
-        client.call(u'eXe.app.getController("Toolbar").eXeUIversionSetStatus', status)
+        client.call('eXe.app.getController("Toolbar").eXeUIversionSetStatus', status)
 
     def handleIsExeUIAdvanced(self,client):
         status=G.application.config.configParser.get('user', 'eXeUIversion')
-        client.call(u'eXe.app.getController("Toolbar").exeUIsetInitialStatus', status)
+        client.call('eXe.app.getController("Toolbar").exeUIsetInitialStatus', status)
 
     def handleBrowseURL(self, client, url):
         """
@@ -1458,7 +1459,7 @@ class MainPage(RenderableLivePage):
         if the URL contains %s, substitute the local webDir
         """
         url = url.replace('%s', self.config.webDir)
-        log.debug(u'browseURL: ' + url)
+        log.debug('browseURL: ' + url)
         if hasattr(os, 'startfile'):
             os.startfile(url)
         else:
@@ -1478,10 +1479,10 @@ class MainPage(RenderableLivePage):
         try:
             importer = XliffImport(self.package, unquote(filename).encode(encoding))
             importer.parseAndImport(from_source)
-            client.alert(_(u'Correct XLIFF import'), (u'eXe.app.gotoUrl("/%s")' % \
+            client.alert(_('Correct XLIFF import'), ('eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
-        except Exception, e:
-            client.alert(_(u'Error importing XLIFF: %s') % e, (u'eXe.app.gotoUrl("/%s")' % \
+        except Exception as e:
+            client.alert(_('Error importing XLIFF: %s') % e, ('eXe.app.gotoUrl("/%s")' % \
                            self.package.name).encode('utf8'), filter_func=otherSessionPackageClients)
 
     def handleInsertPackage(self, client, filename):
@@ -1506,7 +1507,7 @@ class MainPage(RenderableLivePage):
             tmpfile.remove()
         except:
             pass
-        client.sendScript((u'eXe.app.gotoUrl("/%s")' % \
+        client.sendScript(('eXe.app.gotoUrl("/%s")' % \
                           self.package.name).encode('utf8'), filter_func=allSessionPackageClients)
 
     def handleExtractPackage(self, client, filename, existOk):
@@ -1517,7 +1518,7 @@ class MainPage(RenderableLivePage):
         filename = Path(filename, 'utf-8')
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
-            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
+            client.alert(_('Cannot access directory named ') + str(saveDir) + _('. Please use ASCII names.'))
             return
 
         # Add the extension if its not already there
@@ -1525,8 +1526,8 @@ class MainPage(RenderableLivePage):
             filename += '.elp'
 
         if Path(filename).exists() and existOk != 'true':
-            msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-            client.alert(_(u'EXTRACT FAILED!\n%s') % msg)
+            msg = _('"%s" already exists.\nPlease try again with a different filename') % filename
+            client.alert(_('EXTRACT FAILED!\n%s') % msg)
             return
 
         try:
@@ -1542,10 +1543,10 @@ class MainPage(RenderableLivePage):
 
             # Save the new package
             newPackage.save(filename)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Package extracted to: %s') % filename)
+        client.alert(_('Package extracted to: %s') % filename)
 
     def handleExtractSCORM(self, client, filename, existOk):
         """
@@ -1558,7 +1559,7 @@ class MainPage(RenderableLivePage):
         filename = Path(filename, 'utf-8')
         saveDir = filename.dirname()
         if saveDir and not saveDir.exists():
-            client.alert(_(u'Cannot access directory named ') + unicode(saveDir) + _(u'. Please use ASCII names.'))
+            client.alert(_('Cannot access directory named ') + str(saveDir) + _('. Please use ASCII names.'))
             return
 
         # Add the extension if its not already there
@@ -1566,8 +1567,8 @@ class MainPage(RenderableLivePage):
             filename += '.zip'
 
         if Path(filename).exists() and existOk != 'true':
-            msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-            client.alert(_(u'EXTRACT FAILED!\n%s') % msg)
+            msg = _('"%s" already exists.\nPlease try again with a different filename') % filename
+            client.alert(_('EXTRACT FAILED!\n%s') % msg)
             return
 
         try:
@@ -1584,22 +1585,22 @@ class MainPage(RenderableLivePage):
             scorm = ScormExport(self.config, stylesDir, filename, 'scorm1.2')
             scorm.export(newPackage)
 
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXTRACT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Package extracted to: %s') % filename)
+        client.alert(_('Package extracted to: %s') % filename)
 
     def handleCreateDir(self, client, currentDir, newDir):
         try:
             d = Path(currentDir, 'utf-8') / newDir
             d.makedirs()
-            client.sendScript(u"""eXe.app.getStore('filepicker.DirectoryTree').load({
+            client.sendScript("""eXe.app.getStore('filepicker.DirectoryTree').load({
                 callback: function() {
                     eXe.app.fireEvent( "dirchange", %s );
                 }
             })""" % json.dumps(d))
         except OSError:
-            client.alert(_(u"Directory exists"))
+            client.alert(_("Directory exists"))
         except:
             log.exception("")
 
@@ -1612,7 +1613,7 @@ class MainPage(RenderableLivePage):
         try:
             xmlExport = XMLExport(self.config, stylesDir, filename)
             xmlExport.export(self.package)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
 
@@ -1641,13 +1642,13 @@ class MainPage(RenderableLivePage):
             if not filename.exists():
                 filename.makedirs()
             elif not filename.isdir():
-                client.alert(_(u'Filename %s is a file, cannot replace it') %
+                client.alert(_('Filename %s is a file, cannot replace it') %
                              filename)
                 log.error("Couldn't export web page: " +
                           "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
-                client.alert(_(u'Folder name %s already exists. '
+                client.alert(_('Folder name %s already exists. '
                                 'Please choose another one or delete existing one then try again.') % filename)
                 return
             # Now do the export
@@ -1658,7 +1659,7 @@ class MainPage(RenderableLivePage):
             has_uncut_resources = False
             if G.application.config.cutFileName == "1":
                 has_uncut_resources = singlePageExport.hasUncutResources()
-        except Exception, e:
+        except Exception as e:
             client.alert(_('SAVE FAILED!\n%s') % str(e))
             raise
         # Show the newly exported web site in a new window
@@ -1666,9 +1667,9 @@ class MainPage(RenderableLivePage):
             self._startFile(filename)
             if client:
                 if not has_uncut_resources:
-                    client.alert(_(u'Exported to %s') % filename)
+                    client.alert(_('Exported to %s') % filename)
                 else:
-                    client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
+                    client.alert(_('Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
         # and return a string of the actual directory name,
         # in case the package name was added, etc.:
@@ -1695,14 +1696,14 @@ class MainPage(RenderableLivePage):
                 filename.makedirs()
             elif not filename.isdir():
                 if client:
-                    client.alert(_(u'Filename %s is a file, cannot replace it') %
+                    client.alert(_('Filename %s is a file, cannot replace it') %
                              filename)
                 log.error("Couldn't export web page: " +
                           "Filename %s is a file, cannot replace it" % filename)
                 return
             else:
                 if client:
-                    client.alert(_(u'Folder name %s already exists. '
+                    client.alert(_('Folder name %s already exists. '
                                 'Please choose another one or delete existing one then try again.') % filename)
                 return
             # Now do the export
@@ -1712,58 +1713,58 @@ class MainPage(RenderableLivePage):
             has_uncut_resources = False
             if G.application.config.cutFileName == "1":
                 has_uncut_resources = websiteExport.hasUncutResources()
-        except Exception, e:
+        except Exception as e:
             if client:
                 client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         if client:
             if not has_uncut_resources:
-                client.alert(_(u'Exported to %s') % filename)
+                client.alert(_('Exported to %s') % filename)
             else:
-                client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
+                client.alert(_('Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
             # Show the newly exported web site in a new window
             self._startFile(filename)
 
     def exportWebZip(self, client, filename, stylesDir):
         try:
-            log.debug(u"exportWebsite, filename=%s" % filename)
+            log.debug("exportWebsite, filename=%s" % filename)
             filename = Path(filename)
             # Do the export
-            filename = self.b4save(client, filename, '.zip', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.zip', _('EXPORT FAILED!'))
             websiteExport = WebsiteExport(self.config, stylesDir, filename)
             websiteExport.exportZip(self.package)
 
             has_uncut_resources = False
             if G.application.config.cutFileName == "1":
                 has_uncut_resources = websiteExport.hasUncutResources()
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
 
         if not has_uncut_resources:
-            client.alert(_(u'Exported to %s') % filename)
+            client.alert(_('Exported to %s') % filename)
         else:
-            client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
+            client.alert(_('Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
 
     def exportText(self, client, filename):
         try:
             filename = Path(filename)
-            log.debug(u"exportWebsite, filename=%s" % filename)
+            log.debug("exportWebsite, filename=%s" % filename)
             # Append an extension if required
             if not filename.lower().endswith('.txt'):
                 filename += '.txt'
                 if Path(filename).exists():
-                    msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s') % msg)
+                    msg = _('"%s" already exists.\nPlease try again with a different filename') % filename
+                    client.alert(_('EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
             textExport = TextExport(filename)
             textExport.export(self.package)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.alert(_('Exported to %s') % filename)
 
     def handleXliffExport(self, client, filename, source, target, copy, cdata):
         """
@@ -1773,7 +1774,7 @@ class MainPage(RenderableLivePage):
         cdata = True if cdata == "true" else False
         try:
             filename = Path(filename, 'utf-8')
-            log.debug(u"exportXliff, filename=%s" % filename)
+            log.debug("exportXliff, filename=%s" % filename)
             if not filename.lower().endswith('.xlf'):
                 filename += '.xlf'
 
@@ -1784,10 +1785,10 @@ class MainPage(RenderableLivePage):
 
             xliffExport = XliffExport(self.config, filename, source, target, copy, cdata)
             xliffExport.export(self.package)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.alert(_('Exported to %s') % filename)
 
     def exportScorm(self, client, filename, stylesDir, scormType):
         """
@@ -1795,13 +1796,13 @@ class MainPage(RenderableLivePage):
         """
         try:
             filename = Path(filename)
-            log.debug(u"exportScorm, filename=%s" % filename)
+            log.debug("exportScorm, filename=%s" % filename)
             # Append an extension if required
             if not filename.lower().endswith('.zip'):
                 filename += '.zip'
                 if Path(filename).exists():
-                    msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s') % msg)
+                    msg = _('"%s" already exists.\nPlease try again with a different filename') % filename
+                    client.alert(_('EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
             scormExport = ScormExport(self.config, stylesDir, filename, scormType)
@@ -1810,64 +1811,64 @@ class MainPage(RenderableLivePage):
             has_uncut_resources = False
             if G.application.config.cutFileName == "1":
                 has_uncut_resources = scormExport.hasUncutResources()
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
         if modifiedMetaData != False and modifiedMetaData['modifiedMetaData']:
-            client.alert(_(u'The following fields have been cut to meet the SCORM 1.2 standard: %s') % ', '.join(modifiedMetaData['fieldsModified']))
+            client.alert(_('The following fields have been cut to meet the SCORM 1.2 standard: %s') % ', '.join(modifiedMetaData['fieldsModified']))
         else:
             if not has_uncut_resources:
-                client.alert(_(u'Exported to %s') % filename)
+                client.alert(_('Exported to %s') % filename)
             else:
-                client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
+                client.alert(_('Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
     def exportEpub3(self, client, filename, stylesDir):
         try:
-            log.debug(u"exportEpub3, filename=%s" % filename)
+            log.debug("exportEpub3, filename=%s" % filename)
             filename = Path(filename)
             # Do the export
-            filename = self.b4save(client, filename, '.epub', _(u'EXPORT FAILED!'))
+            filename = self.b4save(client, filename, '.epub', _('EXPORT FAILED!'))
             epub3Export = Epub3Export(self.config, stylesDir, filename)
             epub3Export.export(self.package)
             # epub3Export.exportZip(self.package)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
-        client.alert(_(u'Exported to %s') % filename)
+        client.alert(_('Exported to %s') % filename)
 
     def exportReport(self, client, filename, stylesDir):
         """
         Generates this package report to a file
         """
         try:
-            log.debug(u"exportReport")
+            log.debug("exportReport")
             # Append an extension if required
             if not filename.lower().endswith('.csv'):
                 filename += '.csv'
                 if Path(filename).exists():
-                    msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s' % msg))
+                    msg = _('"%s" already exists.\nPlease try again with a different filename') % filename
+                    client.alert(_('EXPORT FAILED!\n%s' % msg))
                     return
             # Do the export
             websiteExport = WebsiteExport(self.config, stylesDir, filename, report=True)
             websiteExport.export(self.package)
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s' % str(e)))
             raise
-        client.alert(_(u'Exported to %s' % filename))
+        client.alert(_('Exported to %s' % filename))
 
     def exportIMS(self, client, filename, stylesDir):
         """
         Exports this package to a ims package file
         """
         try:
-            log.debug(u"exportIMS")
+            log.debug("exportIMS")
             # Append an extension if required
             if not filename.lower().endswith('.zip'):
                 filename += '.zip'
                 if Path(filename).exists():
-                    msg = _(u'"%s" already exists.\nPlease try again with a different filename') % filename
-                    client.alert(_(u'EXPORT FAILED!\n%s') % msg)
+                    msg = _('"%s" already exists.\nPlease try again with a different filename') % filename
+                    client.alert(_('EXPORT FAILED!\n%s') % msg)
                     return
             # Do the export
             imsExport = IMSExport(self.config, stylesDir, filename)
@@ -1876,14 +1877,14 @@ class MainPage(RenderableLivePage):
             has_uncut_resources = False
             if G.application.config.cutFileName == "1":
                 has_uncut_resources = imsExport.hasUncutResources()
-        except Exception, e:
+        except Exception as e:
             client.alert(_('EXPORT FAILED!\n%s') % str(e))
             raise
 
         if not has_uncut_resources:
-            client.alert(_(u'Exported to %s') % filename)
+            client.alert(_('Exported to %s') % filename)
         else:
-            client.alert(_(u'Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
+            client.alert(_('Exported to %s.\nThere were some resources that couldn\'t be renamed to be compatible with ISO9660.') % filename)
 
     # Utility methods
     def _startFile(self, filename):
@@ -1919,7 +1920,7 @@ class MainPage(RenderableLivePage):
                 try:
                     open(filename2, 'rb').close()
                 except IOError:
-                    client.alert(_(u'File %s does not exist or is not readable.') % filename2)
+                    client.alert(_('File %s does not exist or is not readable.') % filename2)
                     return None
             if isTemplate == False:
                 package = Package.load(filename2, newLoad, destinationPackage, preventUpdateRecent=preventUpdateRecent)
@@ -1927,12 +1928,12 @@ class MainPage(RenderableLivePage):
                 package = self.session.packageStore.createPackageFromTemplate(filename)
             if package is None:
                 raise Exception(_("Couldn't load file, please email file to bugs@exelearning.org"))
-        except Exception, exc:
+        except Exception as exc:
             if log.getEffectiveLevel() == logging.DEBUG:
-                client.alert(_(u'Sorry, wrong file format:\n%s') % unicode(exc))
+                client.alert(_('Sorry, wrong file format:\n%s') % str(exc))
             else:
-                client.alert(_(u'Sorry, wrong file format'))
-            log.error(u'Error loading package "%s": %s' % (filename2, unicode(exc)))
-            log.error(u'Traceback:\n%s' % traceback.format_exc())
+                client.alert(_('Sorry, wrong file format'))
+            log.error('Error loading package "%s": %s' % (filename2, str(exc)))
+            log.error('Traceback:\n%s' % traceback.format_exc())
             raise
         return package

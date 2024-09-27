@@ -46,9 +46,9 @@ class ClozeIdevice(Idevice):
         """
         Sets up the idevice title and instructions etc
         """
-        Idevice.__init__(self, x_(u"Cloze Activity"),
-                         x_(u"University of Auckland"), 
-                         x_(u"<p>Cloze exercises are texts or "
+        Idevice.__init__(self, x_("Cloze Activity"),
+                         x_("University of Auckland"), 
+                         x_("<p>Cloze exercises are texts or "
                              "sentences where students must fill in "
                              "missing words. They are often used for the "
                              "following purposes:</p>"
@@ -60,7 +60,7 @@ class ClozeIdevice(Idevice):
                              "<li>To check vocabulary knowledge.</li>"
                              "<li>To check word formation and/or grammatical "
                              "competence. </li></ol>"),
-                         x_(u"<dl>"
+                         x_("<dl>"
                              "  <dt>If your goal is to test understanding "
                              "of core concepts or reading comprehension"
                              "  </dt>"
@@ -113,24 +113,24 @@ class ClozeIdevice(Idevice):
                              "  </p>"
                              "  </dd>"
                              "</dl>"),
-                            u"question",
+                            "question",
                              parentNode)
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions'),
-            x_(u"""Provide instruction on how the cloze activity should be 
+            x_('Instructions'),
+            x_("""Provide instruction on how the cloze activity should be 
 completed. Default text will be entered if there are no changes to this field.
 """),
-            x_(u'Read the paragraph below and '
+            x_('Read the paragraph below and '
                 'fill in the missing words.'))
         self.instructionsForLearners.idevice = self
-        self._content = ClozeField(x_(u'Cloze'), 
-            x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+        self._content = ClozeField(x_('Cloze'), 
+            x_("""<p>Enter the text for the cloze activity in to the cloze field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to hide, double click on the word to select it and 
 click on the Hide/Show Word button below.</p><p>More than one possible answer can be defined enclosing them with pipes (|). I.e.: |dog|cat|bird|</p>"""))
         self._content.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'),
-            x_(u'Enter any feedback you wish to provide the learner '
+        self.feedback = TextAreaField(x_('Feedback'),
+            x_('Enter any feedback you wish to provide the learner '
                 'with-in the feedback field. This field can be left blank.'))
         self.feedback.idevice = self
         self.emphasis = Idevice.SomeEmphasis
@@ -274,12 +274,12 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
         """
         self._upgradeIdeviceToVersion1()
         self.instructionsForLearners = TextAreaField(
-            x_(u'Instructions For Learners'),
-            x_(u'Put instructions for learners here'),
-            x_(u'Read the paragraph below and '
+            x_('Instructions For Learners'),
+            x_('Put instructions for learners here'),
+            x_('Read the paragraph below and '
                 'fill in the missing words'))
         self.instructionsForLearners.idevice = self
-        self.feedback = TextAreaField(x_(u'Feedback'))
+        self.feedback = TextAreaField(x_('Feedback'))
         self.feedback.idevice = self
 
 
@@ -288,8 +288,8 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
         Upgrades exe to v0.11
         """
         self.content.autoCompletion = True
-        self.content.autoCompletionInstruc =  _(u"Allow auto completion when "
-                                                u"user filling the gaps.")
+        self.content.autoCompletionInstruc =  _("Allow auto completion when "
+                                                "user filling the gaps.")
 
     def upgradeToVersion3(self):
         """
@@ -312,7 +312,7 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
         pass
 
     def upgradeToVersion6(self):
-        self._content._instruc = x_(u"""<p>Enter the text for the cloze activity in to the cloze field 
+        self._content._instruc = x_("""<p>Enter the text for the cloze activity in to the cloze field 
 by either pasting text from another source or by typing text directly into the 
 field.</p><p> To select words to hide, double click on the word to select it and 
 click on the Hide/Show Word button below.</p><p>More than one possible answer can be defined enclosing them with pipes (|). I.e.: |dog|cat|bird|</p>""")

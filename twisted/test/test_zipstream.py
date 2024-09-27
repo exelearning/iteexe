@@ -8,7 +8,7 @@ from twisted.python import zipstream
 from twisted.trial import unittest
 
 # create some stuff that can be compressed
-junk=' '.join([str(random.random()) for n in xrange(1000)])
+junk=' '.join([str(random.random()) for n in range(1000)])
 junkmd5=md5.new(junk).hexdigest()
 
 class ZipstreamTest(unittest.TestCase):
@@ -17,11 +17,11 @@ class ZipstreamTest(unittest.TestCase):
         self.makeZipFiles()
 
         zipstream.unzip('littlefiles.zip')
-        self.failUnless(os.path.isfile('zipstreamdir/937'))
+        self.assertTrue(os.path.isfile('zipstreamdir/937'))
         self.cleanupUnzippedJunk()
 
         uziter=zipstream.unzipIter('littlefiles.zip')
-        r=uziter.next()
+        r=next(uziter)
         self.assertEqual(r, 999)
         for r in uziter: pass
         self.assertEqual(r, 0)
@@ -41,12 +41,12 @@ class ZipstreamTest(unittest.TestCase):
         self.cleanupUnzippedJunk()
 
         uziter=zipstream.unzipIterChunky('bigfile.zip', chunksize=500)
-        r=uziter.next()
+        r=next(uziter)
         # test that the number of chunks is in the right ballpark;
         # this could theoretically be any number but statistically it
         # should always be in this range
         approx = 35<r<45
-        self.failUnless(approx)
+        self.assertTrue(approx)
         for r in uziter: pass
         self.assertEqual(r, 0)
         newmd5=newsum('zipstreamjunk')
@@ -56,9 +56,9 @@ class ZipstreamTest(unittest.TestCase):
 
         uziter=zipstream.unzipIterChunky('bigfile_deflated.zip',
                                          chunksize=972)
-        r=uziter.next()
+        r=next(uziter)
         approx = 23<r<27
-        self.failUnless(approx)
+        self.assertTrue(approx)
         for r in uziter: pass
         self.assertEqual(r, 0)
         newmd5=newsum('zipstreamjunk')

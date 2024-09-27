@@ -21,31 +21,31 @@ class TestRememberLocate(TestCase):
         middle = context.WovenContext(top, tags.invisible())
         bottom = context.WovenContext(middle, tags.invisible())
         top.remember(0, IStuff)
-        self.assertEquals(bottom.locate(IStuff), 0)
+        self.assertEqual(bottom.locate(IStuff), 0)
         middle.remember(1, IStuff)
-        self.assertEquals(bottom.locate(IStuff), 1)
-        self.assertEquals(bottom.locate(IStuff, depth=2), 0)
+        self.assertEqual(bottom.locate(IStuff), 1)
+        self.assertEqual(bottom.locate(IStuff, depth=2), 0)
 
     def test_reverse(self):
         top = context.WovenContext().remember(0, IStuff)
         bottom = context.WovenContext(top, tags.invisible()).remember(1, IStuff)
-        self.assertEquals(bottom.locate(IStuff, depth=-1), 0)
+        self.assertEqual(bottom.locate(IStuff, depth=-1), 0)
 
     def test_page(self):
         page = context.PageContext(tag=1)
         page.remember(1, inevow.IData)
         ctx = context.WovenContext(page, tags.invisible())
-        self.assertEquals(ctx.locate(inevow.IData), 1)
-        self.assertEquals(ctx.locate(inevow.IData, depth=-1), 1)
+        self.assertEqual(ctx.locate(inevow.IData), 1)
+        self.assertEqual(ctx.locate(inevow.IData, depth=-1), 1)
 
     def test_factoryContext(self):
         ctx = TestContext()
-        self.assertEquals(IFoo(ctx), True)
+        self.assertEqual(IFoo(ctx), True)
 
     def test_factoryContextFromLocate(self):
         factory = TestContext()
         ctx = context.WovenContext(parent=factory)
-        self.assertEquals(IFoo(ctx), True)
+        self.assertEqual(IFoo(ctx), True)
 
     def test_negativeLocate(self):
         ctx = context.WovenContext()
@@ -61,7 +61,7 @@ class TestRememberLocate(TestCase):
         ctx = context.WovenContext()
         ctx.fillSlots('foo', 'bar')
         ctx = context.WovenContext(parent=ctx)
-        self.assertEquals(
+        self.assertEqual(
             ctx.locateSlotData('foo'),
             'bar')
 
@@ -83,7 +83,7 @@ class TestRememberLocate(TestCase):
 
         loops = 1e4
         before = time.clock()
-        for x in xrange(loops):
+        for x in range(loops):
             ignored = ctx.arg('foo')
             ignored = ctx.arg('bar')
         after = time.clock()

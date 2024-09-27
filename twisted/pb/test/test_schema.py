@@ -21,9 +21,9 @@ class ConformTest(unittest.TestCase):
         self.assertRaises(schema.Violation, c.checkObject, obj)
     def assertSize(self, c, maxsize):
         return
-        self.assertEquals(c.maxSize(), maxsize)
+        self.assertEqual(c.maxSize(), maxsize)
     def assertDepth(self, c, maxdepth):
-        self.assertEquals(c.maxDepth(), maxdepth)
+        self.assertEqual(c.maxDepth(), maxdepth)
     def assertUnboundedSize(self, c):
         self.assertRaises(schema.UnboundedSchema, c.maxSize)
     def assertUnboundedDepth(self, c):
@@ -229,17 +229,17 @@ class ConformTest(unittest.TestCase):
 
 class CreateTest(unittest.TestCase):
     def check(self, obj, expected):
-        self.failUnless(isinstance(obj, expected))
+        self.assertTrue(isinstance(obj, expected))
 
     def testMakeConstraint(self):
         make = schema.makeConstraint
         c = make(int)
         self.check(c, schema.IntegerConstraint)
-        self.failUnlessEqual(c.maxBytes, -1)
+        self.assertEqual(c.maxBytes, -1)
 
         c = make(str)
         self.check(c, schema.StringConstraint)
-        self.failUnlessEqual(c.maxLength, 1000)
+        self.assertEqual(c.maxLength, 1000)
 
         self.check(make(bool), schema.BooleanConstraint)
         self.check(make(float), schema.NumberConstraint)
@@ -247,7 +247,7 @@ class CreateTest(unittest.TestCase):
         self.check(make(schema.NumberConstraint()), schema.NumberConstraint)
         c = make((int, str))
         self.check(c, schema.PolyConstraint)
-        self.failUnlessEqual(len(c.alternatives), 2)
+        self.assertEqual(len(c.alternatives), 2)
         self.check(c.alternatives[0], schema.IntegerConstraint)
         self.check(c.alternatives[1], schema.StringConstraint)
 

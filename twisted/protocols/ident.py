@@ -11,7 +11,7 @@ API Stability: Unstable
 @author: U{Jp Calderone<mailto:exarkun@twistedmatrix.com>}
 """
 
-from __future__ import generators
+
 
 import struct
 
@@ -75,7 +75,7 @@ class IdentServer(basic.LineOnlyReceiver):
             self.invalidQuery()
         else:
             try:
-                portOnServer, portOnClient = map(int, parts)
+                portOnServer, portOnClient = list(map(int, parts))
             except ValueError:
                 self.invalidQuery()
             else:
@@ -92,7 +92,8 @@ class IdentServer(basic.LineOnlyReceiver):
             ).addErrback(self._ebLookup, portOnServer, portOnClient
             )
     
-    def _cbLookup(self, (sysName, userId), sport, cport):
+    def _cbLookup(self, xxx_todo_changeme, sport, cport):
+        (sysName, userId) = xxx_todo_changeme
         self.sendLine('%d, %d : USERID : %s : %s' % (sport, cport, sysName, userId))
 
     def _ebLookup(self, failure, sport, cport):
@@ -208,7 +209,7 @@ class IdentClient(basic.LineOnlyReceiver):
         if len(parts) != 3:
             deferred.errback(IdentError(line))
         else:
-            ports, type, addInfo = map(str.strip, parts)
+            ports, type, addInfo = list(map(str.strip, parts))
             if type == 'ERROR':
                 for et in self.errorTypes:
                     if et.identDescription == addInfo:

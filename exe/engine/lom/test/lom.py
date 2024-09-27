@@ -208,7 +208,7 @@ class TestLOM(unittest.TestCase):
 #        val.append(self.root.getval('lom_general_title_string1_language'))
 #        print val
         value = pp.processLom2Form2(form, self.root)
-        print value
+        print(value)
 
 
     def test_proccessLom2Form2(self):
@@ -254,7 +254,7 @@ class TestLOM(unittest.TestCase):
 #        rootLom.addChilds(lom)
         a = {}
         self.root.genForm('lom', self.root, a)
-        print a
+        print(a)
         
                 
     def test_encode_decode(self):

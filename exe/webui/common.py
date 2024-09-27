@@ -69,7 +69,7 @@ def docType():
     if dT == "HTML5":
         return '<!DOCTYPE html>'+lb
     else:
-        return (u'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
+        return ('<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">'+lb)
 
 def getExtraHeadContent(package):
     # Custom HEAD (see PackagePanel.js)
@@ -502,9 +502,9 @@ def ideviceHeader(e, style, mode):
         else:
             w += '<'+articleTag+' class="'+e.idevice.klass+'">'+lb
 
-    w += u"<div class=\"iDevice emphasis"+unicode(e.idevice.emphasis)+"\" "
+    w += "<div class=\"iDevice emphasis"+str(e.idevice.emphasis)+"\" "
     if mode=="preview":
-        w += u"ondblclick=\"submitLink('edit', "+e.id+", 0);\""
+        w += "ondblclick=\"submitLink('edit', "+e.id+", 0);\""
     w += ">"+lb
 
     if e.idevice.emphasis > 0:
@@ -545,7 +545,7 @@ def ideviceHeader(e, style, mode):
                         if mode=="view":
                             iconPath = 'icon_'+e.idevice.icon+'.svg'
             if iconExists:
-                o += u'<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
+                o += '<img alt="" class="iDevice_icon" src="'+iconPath+'" />'
             if (e.idevice.icon+"Idevice") != e.idevice.klass:
                 if iconExists and displayIcon:
                     h += ' style="background-image:url('+iconPath+')"'
@@ -554,10 +554,10 @@ def ideviceHeader(e, style, mode):
 #             h += ' style="background-image:none"'
             log.debug("Idevice %s at node %s has no icon" % (e.idevice._title, e.idevice.parentNode._title))
         t = e.idevice.title
-        fullT = u'<'+titleTag+' class="iDeviceTitle">'+t+'</'+titleTag+'>'
+        fullT = '<'+titleTag+' class="iDeviceTitle">'+t+'</'+titleTag+'>'
         if (t == ""):
-            fullT = u'<span class="iDeviceTitle">&nbsp;</span>'
-        o += u"<"+titleTag+" class=\"iDeviceTitle\">"+t+"</"+titleTag+">"
+            fullT = '<span class="iDeviceTitle">&nbsp;</span>'
+        o += "<"+titleTag+" class=\"iDeviceTitle\">"+t+"</"+titleTag+">"
         h += '>'
         h += fullT
         h += '</'+headerTag+'>'+lb
@@ -615,12 +615,12 @@ def ideviceHint(content, mode, level='h3'):
         return html
 
 def ideviceShowEditMessage(block):
-    if block.idevice.message<>"":
+    if block.idevice.message!="":
        return editModeHeading(block.idevice.message)
     else:
         return ""
 def fieldShowEditMessageEle(element):
-    if element.field.message<> "":
+    if element.field.message!= "":
         return editModeHeading(element.field.message)
     else:
         return ""
@@ -708,61 +708,61 @@ def getGamesJavaScriptStrings(addTag = True):
         s += '\n'
     return s
 
-def header(style=u'default'):
+def header(style='default'):
     """Generates the common header XHTML"""
     # NB: Authoring Page has its own header
     return (docType() +
-            u'<html xmlns="http://www.w3.org/1999/xhtml">\n'
-            u'<head>\n'
-            u'<style type="text/css">\n'
-            u'  @import url(/css/exe.css);\n'
-            u'  @import url(/style/base.css);\n'
-            u'  @import url(/style/%s/content.css);</style>\n'
-            u'<script type="text/javascript" src="/scripts/common.js">'
-            u'</script>\n'
-            u'<title>%s</title>\n'
-            u'<meta http-equiv="content-type" '
-            u' content="text/html; charset=UTF-8"></meta>\n'
-            u'</head>\n'
+            '<html xmlns="http://www.w3.org/1999/xhtml">\n'
+            '<head>\n'
+            '<style type="text/css">\n'
+            '  @import url(/css/exe.css);\n'
+            '  @import url(/style/base.css);\n'
+            '  @import url(/style/%s/content.css);</style>\n'
+            '<script type="text/javascript" src="/scripts/common.js">'
+            '</script>\n'
+            '<title>%s</title>\n'
+            '<meta http-equiv="content-type" '
+            ' content="text/html; charset=UTF-8"></meta>\n'
+            '</head>\n'
             % (style, c_('eXe : elearning XHTML editor')))
 
 
 def footer():
     """Generates the common page footer XHTML"""
-    return u'</form></body></html>\n'
+    return '</form></body></html>\n'
 
 
-def hiddenField(name, value=u""):
+def hiddenField(name, value=""):
     """Adds a hidden field to a form"""
-    html  = u"<input type=\"hidden\" "
-    html += u"name=\"%s\" " % name
-    html += u"id=\"%s\" " % name
-    html += u"value=\"%s\"/>\n" % value
+    html  = "<input type=\"hidden\" "
+    html += "name=\"%s\" " % name
+    html += "id=\"%s\" " % name
+    html += "value=\"%s\"/>\n" % value
     return html
 
 
-def textInput(name, value=u"", size=40, disabled=u"", **kwargs):
+def textInput(name, value="", size=40, disabled="", **kwargs):
     """Adds a text input to a form"""
-    html  = u"<input type=\"text\" "
-    html += u"name=\"%s\" " % name
-    html += u"id=\"%s\" " % name
-    html += u"value=\"%s\" " % value
-    html += u"size=\"%s\" " % size
-    for key, val in kwargs.items():
-        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
-    html += disabled+u" />\n"
+    html  = "<input type=\"text\" "
+    html += "name=\"%s\" " % name
+    html += "id=\"%s\" " % name
+    html += "value=\"%s\" " % value
+    html += "size=\"%s\" " % size
+    for key, val in list(kwargs.items()):
+        html += ' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
+    html += disabled+" />\n"
     return html
 
 
 def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", package=None):
     """Adds a text area to a form"""
-    log.debug(u"textArea %s" % value)
-    html  = u'<textarea name="%s" ' % name
+    log.debug("textArea %s" % value)
+    html  = '<textarea name="%s" ' % name
     html += 'id = "%s"' % name
     if disabled:
-        html += u'disabled="disabled" '
-    html += u'style=\"width:100%"'
-    html += u'cols="%s" rows="%s" class="%s">' %(cols, rows, cssClass)
+        html += 'disabled="disabled" '
+    html += 'style=\"width:100%"'
+    html += 'cols="%s" rows="%s" class="%s">' %(cols, rows, cssClass)
     # to counter TinyMCE's ampersand-processing:
     safe_value = value.replace('&','&amp;')
     #691 Allow textareas (see TinyMCE settings)
@@ -772,9 +772,9 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
     if (cssClass=="jsContentEditor"):
         if safe_value != value:
             value = safe_value
-            log.debug(u"jsContentEditor pre-processed value to: %s" % value)
+            log.debug("jsContentEditor pre-processed value to: %s" % value)
     html += value
-    html += u'</textarea>'
+    html += '</textarea>'
 
     html_js = ''
     # There's probably an editor in the JavaScript iDevice, so we add the nodes list (tinymce_anchors)
@@ -789,13 +789,13 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
         and G.application.config.internalAnchors!="disable_all" :
             # only add internal anchors for
             # config.internalAnchors = "enable_all" or "disable_autotop"
-            log.debug(u"textArea adding exe_tmp_anchor tags for user anchors.")
+            log.debug("textArea adding exe_tmp_anchor tags for user anchors.")
             for anchor_field in package.anchor_fields:
                 anchor_field_path = anchor_field.GetFullNodePath()
                 for anchor_name in anchor_field.anchor_names:
                     full_anchor_name = anchor_field_path + "#" + anchor_name
-                    html_js += u'tinymce_anchors'
-                    html_js += u'.push("%s");' % full_anchor_name
+                    html_js += 'tinymce_anchors'
+                    html_js += '.push("%s");' % full_anchor_name
         # and below the user-defined anchors, also show "auto_top" anchors for ALL:
         if package is not None and package.root is not None \
         and G.application.config.internalAnchors=="enable_all" :
@@ -806,12 +806,12 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
             if node_anchors:
                 root_node = package.root
                 anchor_node_path = root_node.GetFullNodePath() + "#auto_top"
-                html_js += u'tinymce_anchors'
-                html_js += u'.push("%s");' % anchor_node_path
+                html_js += 'tinymce_anchors'
+                html_js += '.push("%s");' % anchor_node_path
                 for this_node in root_node.walkDescendants():
                     anchor_node_path = this_node.GetFullNodePath() + "#auto_top"
-                    html_js += u'tinymce_anchors'
-                    html_js += u'.push("%s");' % anchor_node_path
+                    html_js += 'tinymce_anchors'
+                    html_js += '.push("%s");' % anchor_node_path
         # these exe_tmp_anchor tags will be removed when processed by
         # FieldWithResources' ProcessPreviewed()
         ########
@@ -822,7 +822,7 @@ def textArea(name, value="", disabled="", cols="80", rows="8", cssClass="", pack
 
 def richTextArea(name, value="", width="100%", height=100, cssClass='mceEditor', package=None):
     """Adds a editor to a form"""
-    log.debug(u"richTextArea %s, height=%s" % (value, height))
+    log.debug("richTextArea %s, height=%s" % (value, height))
     # to counter TinyMCE's ampersand-processing:
     safe_value = value.replace('&','&amp;')
     #691 Allow textareas (see TinyMCE settings)
@@ -831,12 +831,12 @@ def richTextArea(name, value="", width="100%", height=100, cssClass='mceEditor',
     safe_value = safe_value.replace('</textarea>','<!--exe-editor-textarea--></span>')
     if safe_value != value:
         value = safe_value
-        log.debug(u"richTextArea pre-processed value to: %s" % value)
-    html  = u'<textarea name="%s" ' % name
+        log.debug("richTextArea pre-processed value to: %s" % value)
+    html  = '<textarea name="%s" ' % name
     html_js  = '<script type="text/javascript">if (typeof(tinymce_anchors)=="undefined") var tinymce_anchors = [];'
-    html += u'style=\"width:' + width + '; height:' + str(height) + 'px;" '
-    html += u'class=\"%s\" ' % cssClass
-    html += u'cols="52" rows="8">'
+    html += 'style=\"width:' + width + '; height:' + str(height) + 'px;" '
+    html += 'class=\"%s\" ' % cssClass
+    html += 'cols="52" rows="8">'
     ########
     # add exe_tmp_anchor tags
     # for ALL anchors available in the entire doc!
@@ -846,13 +846,13 @@ def richTextArea(name, value="", width="100%", height=100, cssClass='mceEditor',
     and G.application.config.internalAnchors!="disable_all" :
         # only add internal anchors for
         # config.internalAnchors = "enable_all" or "disable_autotop"
-        log.debug(u"richTextArea adding exe_tmp_anchor tags for user anchors.")
+        log.debug("richTextArea adding exe_tmp_anchor tags for user anchors.")
         for anchor_field in package.anchor_fields:
             anchor_field_path = anchor_field.GetFullNodePath()
             for anchor_name in anchor_field.anchor_names:
                 full_anchor_name = anchor_field_path + "#" + anchor_name
-                html_js += u'tinymce_anchors'
-                html_js += u'.push("%s");' % full_anchor_name
+                html_js += 'tinymce_anchors'
+                html_js += '.push("%s");' % full_anchor_name
     # and below the user-defined anchors, also show "auto_top" anchors for ALL:
     if package is not None and package.root is not None \
     and G.application.config.internalAnchors=="enable_all" :
@@ -863,17 +863,17 @@ def richTextArea(name, value="", width="100%", height=100, cssClass='mceEditor',
         if node_anchors:
             root_node = package.root
             anchor_node_path = root_node.GetFullNodePath() + "#auto_top"
-            html_js += u'tinymce_anchors'
-            html_js += u'.push("%s");' % anchor_node_path
+            html_js += 'tinymce_anchors'
+            html_js += '.push("%s");' % anchor_node_path
             for this_node in root_node.walkDescendants():
                 anchor_node_path = this_node.GetFullNodePath() + "#auto_top"
-                html_js += u'tinymce_anchors'
-                html_js += u'.push("%s");' % anchor_node_path
+                html_js += 'tinymce_anchors'
+                html_js += '.push("%s");' % anchor_node_path
     # these exe_tmp_anchor tags will be removed when processed by
     # FieldWithResources' ProcessPreviewed()
     ########
     html += value
-    html += u'</textarea>'
+    html += '</textarea>'
     html_js  += '</script>'
     new_html = html+html_js
     return new_html
@@ -883,24 +883,24 @@ def image(name, value, width="", height="", alt=None, cssClass=None):
     """Returns the XHTML for an image"""
     if alt is None:
         alt = name
-    log.debug(u"image %s" % value)
-    html  = u"<img id=\"%s\" " % name
-    html += u'alt="%s" ' % alt
+    log.debug("image %s" % value)
+    html  = "<img id=\"%s\" " % name
+    html += 'alt="%s" ' % alt
     if width:
-        html += u"width=\"%s\" " % width
+        html += "width=\"%s\" " % width
     if height:
-        html += u"height=\"%s\" " % height
+        html += "height=\"%s\" " % height
     if cssClass:
-        html += u"class=\"%s\" " % cssClass
-    html += u"src=\"%s\" " % value
-    html += u"/>\n"
+        html += "class=\"%s\" " % cssClass
+    html += "src=\"%s\" " % value
+    html += "/>\n"
     return html
 
 def flash(src, width, height, id_=None, params=None, **kwparams):
     """Returns the XHTML for flash.
     'params' is a dictionary of name, value pairs that will be turned into a
     bunch of <param> tags"""
-    log.debug(u"flash %s" % src)
+    log.debug("flash %s" % src)
     stan = \
         T._object(type='application/x-shockwave-flash',
                  width=width,
@@ -912,13 +912,13 @@ def flash(src, width, height, id_=None, params=None, **kwparams):
     if params is None:
         params = {}
     params.setdefault('movie', src)
-    for name, value in params.items():
+    for name, value in list(params.items()):
         stan = stan[T.param(name=name, value=value)]
-    return unicode(flatten(stan).replace('&amp;', '&'), 'utf8')
+    return str(flatten(stan).replace('&amp;', '&'), 'utf8')
 
 def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
     """Returns the XHTML for a flash movie"""
-    log.debug(u"flash %s" % movie)
+    log.debug("flash %s" % movie)
     src = resourcesDir + 'flowPlayer.swf'
     params={'movie': src,
             'allowScriptAccess' :'sameDomain',
@@ -945,7 +945,7 @@ def submitButton(name, value, enabled=True, **kwargs):
     html += 'value="%s" ' % value
     if not enabled:
         html += ' disabled="disabled"'
-    for key, val in kwargs.items():
+    for key, val in list(kwargs.items()):
         html += ' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
     html += ' />'+lb
     return html
@@ -958,8 +958,8 @@ def button(name, value, enabled=True, **kwargs):
     html += ' value="%s"' % value
     if not enabled:
         html += ' disabled="disabled"'
-    for key, val in kwargs.items():
-        html += u' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
+    for key, val in list(kwargs.items()):
+        html += ' %s="%s"' % (key.replace('_', ''), val.replace('"', '\\"'))
     html += ' />'+lb
     return html
 
@@ -999,27 +999,27 @@ def feedbackBlock(id,feedback,buttonCaption=""):
 def feedbackButton(name, value=None, enabled=True, **kwparams):
     """Adds a feedback button"""
     if value is None:
-        value = c_(u'Feedback')
+        value = c_('Feedback')
     kwparams.setdefault('class', 'feedbackbutton')
     return button(name, value, enabled, **kwparams)
 
 
-def submitImage(action, object_, imageFile, title=u"", isChanged=1, relative=False):
+def submitImage(action, object_, imageFile, title="", isChanged=1, relative=False):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
     onclick = "submitLink('%s', '%s', %d);" % (action, object_, isChanged)
-    titleText = u''
+    titleText = ''
     if title:
-        titleText = u'title="%s" ' % title
-    relativeText = u''
+        titleText = 'title="%s" ' % title
+    relativeText = ''
     if relative:
-        relativeText = u'style="position:relative;z-index:100000"'
-    html  = u'<a %s' % titleText
-    html += u' href="#" onclick="%s" %s>' % (onclick, relativeText)
-    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
-    html += u'</a>\n'
+        relativeText = 'style="position:relative;z-index:100000"'
+    html  = '<a %s' % titleText
+    html += ' href="#" onclick="%s" %s>' % (onclick, relativeText)
+    html += '<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
+    html += '</a>\n'
     return html
 
 def insertSymbol(name, image, title, string, text ='', num=0):
@@ -1028,51 +1028,51 @@ def insertSymbol(name, image, title, string, text ='', num=0):
     post a form with the action and object passed in the args
     """
     onclick = "$exe.insertSymbol('%s', '%s', %d);" % (name, string, num)
-    html = u'<a onclick="%s" ' % onclick
-    html += u'title="%s">' % title
+    html = '<a onclick="%s" ' % onclick
+    html += 'title="%s">' % title
     html += text
-    if image <> "":
-        html += u'<img alt="%s" src="%s"/>' % ('symbol', image)
-    html += u'</a>\n'
+    if image != "":
+        html += '<img alt="%s" src="%s"/>' % ('symbol', image)
+    html += '</a>\n'
     return html
 
 def confirmThenSubmitImage(message, action, object_, imageFile,
-                           title=u"", isChanged=1):
+                           title="", isChanged=1):
     """
     Adds an image link which will trigger the javascript needed to
     post a form with the action and object passed in the args
     """
-    html  = u"<a "
+    html  = "<a "
     if title:
-        html += u"title=\""+title+"\" "
+        html += "title=\""+title+"\" "
     html += " href=\"#\" "
     html += "onclick=\"confirmThenSubmitLink('"+re.escape(message)+"', '"+action+"', "
-    html += "'"+object_+"', "+unicode(isChanged)+");\" >"
-    html += u'<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
-    html += u'</a>\n'
+    html += "'"+object_+"', "+str(isChanged)+");\" >"
+    html += '<img alt="%s" class="submit" width="16" height="16" src="%s" />' % (title, imageFile)
+    html += '</a>\n'
     return html
 
 def option(name, checked, value):
     """Add a option input"""
-    chkStr = u''
+    chkStr = ''
     if checked:
-        chkStr = u'checked="checked"'
-    html  = (u'<input type="radio" name="%s"'
-             u' value="%s" %s/>\n' %
+        chkStr = 'checked="checked"'
+    html  = ('<input type="radio" name="%s"'
+             ' value="%s" %s/>\n' %
               (name, value, chkStr))
     return html
 
 
 def checkbox(name, checked, value="", title="", instruction=""):
     """Add a checkbox"""
-    chkStr = u''
+    chkStr = ''
     if checked:
-        chkStr = u'checked'
+        chkStr = 'checked'
     html = ''
     if title:
-        html += u'<b>%s</b>' % title
-    html += (u'<input type="checkbox" name="%s"'
-             u' value="%s" %s/>\n' %
+        html += '<b>%s</b>' % title
+    html += ('<input type="checkbox" name="%s"'
+             ' value="%s" %s/>\n' %
               (name, value, chkStr))
     if instruction:
         html += elementInstruc(instruction)
@@ -1082,22 +1082,22 @@ def checkbox(name, checked, value="", title="", instruction=""):
 def elementInstruc(instruc, imageFile="help.gif", label=None):
     """Add a help instruction for a element"""
     if label is None:
-        label = _(u"Instructions")
+        label = _("Instructions")
     if not instruc.strip():
-        html = u''
+        html = ''
     else:
         id_ = newId()
-        html  = u'<a href="javascript:void(0)" '
-        html += u' title="%s" ' % _(u'Click for completion instructions')
-        html += u'onclick="showMessageBox(\'%s\');" ' % id_
-        html += u'style="cursor:help;margin-left:5px">'
-        html += u'<img class="help" alt="%s" ' % _(u'Click for completion instructions')
-        html += u'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
-        html += u'</a>\n'
-        html += u'<span style="display:none;">'
-        html += u'<span id="%stitle">%s</span> ' % (id_, label)
-        html += u'<span id="%scontent">%s</span>' % (id_, instruc)
-        html += u'</span>\n'
+        html  = '<a href="javascript:void(0)" '
+        html += ' title="%s" ' % _('Click for completion instructions')
+        html += 'onclick="showMessageBox(\'%s\');" ' % id_
+        html += 'style="cursor:help;margin-left:5px">'
+        html += '<img class="help" alt="%s" ' % _('Click for completion instructions')
+        html += 'src="/images/%s" style="vertical-align:middle;"/>' % imageFile
+        html += '</a>\n'
+        html += '<span style="display:none;">'
+        html += '<span id="%stitle">%s</span> ' % (id_, label)
+        html += '<span id="%scontent">%s</span>' % (id_, instruc)
+        html += '</span>\n'
     return html
 
 def formField(type_, package, caption, action, object_='', instruction='', \
@@ -1149,23 +1149,23 @@ def formField(type_, package, caption, action, object_='', instruction='', \
 
 def select(action, object_='', options=[], selection=None):
     """Adds a dropdown selection to a form"""
-    html  = u'<select '
-    html += u'name="'+action+object_+'" '
+    html  = '<select '
+    html += 'name="'+action+object_+'" '
 
     if action and object_:
         # If the user gives an object_ create an onchange handler
-        html += u'onchange="submitLink(\''+action+'\', \''+object_+'\');"'
+        html += 'onchange="submitLink(\''+action+'\', \''+object_+'\');"'
 
-    html += u'>\n'
+    html += '>\n'
 
     for option, value in options:
-        html += u' <option value="'+unicode(value)+'" '
+        html += ' <option value="'+str(value)+'" '
         if value == selection:
-            html += u'selected="selected" '
-        html += u'>'
+            html += 'selected="selected" '
+        html += '>'
         html += option
-        html += u'</option>\n'
-    html += u'</select>\n'
+        html += '</option>\n'
+    html += '</select>\n'
 
     return html
 
@@ -1173,7 +1173,7 @@ def editModeHeading(text):
     """
     Provides a styled editSectionHeading
     """
-    return u'<p class="editModeHeading">%s</p>' % text
+    return '<p class="editModeHeading">%s</p>' % text
 
 
 
@@ -1321,7 +1321,7 @@ def findLinkedNode(package, exe_node_path, anchor_name, check_fields=True):
         linked_field = findLinkedField(package, exe_node_path, anchor_name)
     if linked_field and linked_field.idevice is not None:
         linked_node = linked_field.idevice.parentNode
-    elif anchor_name == u"auto_top" and package is not None and package.root:
+    elif anchor_name == "auto_top" and package is not None and package.root:
         # allow the node "auto_top" to be found,
         # even if no anchors are explicitly specified.
         # IF this node has already been linked to:
@@ -1420,7 +1420,7 @@ def renderInternalLinkNodeFilenames(package, html):
                     new_node_name = intlink_pre + found_node.tmp_export_filename
                     if link_anchor_name:
                         old_node_name = old_node_name + "#" + link_anchor_name
-                        if link_anchor_name != u"auto_top":
+                        if link_anchor_name != "auto_top":
                             new_node_name = new_node_name + "#" + link_anchor_name
                     html = html.replace(old_node_name, new_node_name, 1)
 
@@ -1503,8 +1503,8 @@ def requestHasCancel(request):
     simply detect if the current request contains an action of type cancel.
     """
     is_cancel = False
-    if u"action" in request.args \
-    and request.args[u"action"][0]==u"cancel":
+    if "action" in request.args \
+    and request.args["action"][0]=="cancel":
         is_cancel = True
     return is_cancel
 

@@ -55,7 +55,7 @@ class JellyTestCase(test_newjelly.JellyTestCase):
 
         self.assertIdentical(x.b, x.c.b)
         # assert len(perst) == 3, "persistentStore should only be called 3 times."
-        self.failUnless(perst[0], "persistentStore was not called.")
+        self.assertTrue(perst[0], "persistentStore was not called.")
         self.assertIdentical(x.b, a.b, "Persistent storage identity failure.")
 
     def testNewStyleClasses(self):
