@@ -24,6 +24,8 @@ This is the main Javascript page.
 """
 
 import copy
+import gettext
+_ = gettext.gettext
 import os
 import json
 import sys
@@ -38,7 +40,7 @@ from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor, defer
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
-from twisted.web.template        import XMLFile, Element, renderer, tags
+from twisted.web.template        import XMLFile, Element, renderer, tags, TagLoader
 from twisted.web.server          import Request
 from twisted.web.resource        import Resource
 from twisted.web.static          import File
@@ -105,7 +107,7 @@ class MainPage(RenderableLivePage):
         # self.putChild("stylecss", File(self.config.stylesDir)
 
         mainjs = Path(self.config.jsDir).joinpath('templates', 'mainpage.html')
-        self.docFactory = loaders.htmlfile(mainjs)
+        self.docFactory = XMLFile(mainjs)
 
         # Create all the children on the left
         self.outlinePane = OutlinePane(self)
@@ -178,7 +180,7 @@ class MainPage(RenderableLivePage):
         Returns the authoring page that corresponds to
         the url http://127.0.0.1:port/package_name/authoring
         """
-        request = inevow.IRequest(ctx)
+        request = Request(ctx)
         if 'clientHandleId' in request.args:
             clientid = request.args['clientHandleId'][0]
             if clientid not in self.authoringPages:
@@ -204,7 +206,7 @@ class MainPage(RenderableLivePage):
         """
         Doc
         """
-        request = inevow.IRequest(ctx)
+        request = Request(ctx)
         data = []
         if 'source' in request.args:
             if 'identifier' in request.args:
@@ -241,7 +243,7 @@ class MainPage(RenderableLivePage):
             and store them
             """
             kwargs['identifier'] = name
-            hndlr = handler(func, *args, **kwargs)
+            hndlr = func
             hndlr(ctx, client)     # Stores it
 
         setUpHandler(self.handleSaveEXeUIversion,'saveEXeUIversion')
@@ -317,7 +319,7 @@ class MainPage(RenderableLivePage):
             'release' : release,
             'loadErrors': G.application.loadErrors,
             'showIdevicesGrouped': G.application.config.showIdevicesGrouped == '1',
-            'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, IClientHandle(ctx).handleId),
+            'authoringIFrameSrc': '%s/authoring?clientHandleId=%s' % (self.package.name, ctx.client),
             'pathSep': os.path.sep,
             'autosaveTime': float(G.application.config.autosaveTime),
             'snap': G.application.snap
