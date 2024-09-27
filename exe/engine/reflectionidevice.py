@@ -27,6 +27,7 @@ import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.translate import lateTranslate
 from exe.engine.field     import TextAreaField, Feedback2Field
+from exe.engine.config import x_
 import re
 log = logging.getLogger(__name__)
 
