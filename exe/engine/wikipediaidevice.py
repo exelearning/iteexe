@@ -142,7 +142,7 @@ within Wikipedia.""")
             [infobox.extract() for infobox in infoboxes]
             catboxes = content.find_all('div', {'id' : 'catlinks'})
             [catbox.extract() for catbox in catboxes]
-            amboxes = content.find_all('table', {'class' : re.compile(r'.*\bambox\b.*')})
+            amboxes = content.find_all('table', {'class' : re.compile(r'.*\\bambox\\b.*')})
             [ambox.extract() for ambox in amboxes]
             protecteds = content.find_all('div', {'id' : 'protected-icon'})
             [protected.extract() for protected in protecteds]
