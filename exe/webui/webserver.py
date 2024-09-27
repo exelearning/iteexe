@@ -174,6 +174,7 @@ class WebServer:
         log.info("jsDir       = %s", self.config.jsDir)
         log.info("localeDir   = %s", self.config.localeDir)
         log.info("port        = %d", self.config.port)
+        log.info("dataDir     = %s", self.config.dataDir)
         log.debug("start web server running")
 
         # web resources
