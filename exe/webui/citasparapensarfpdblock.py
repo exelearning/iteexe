@@ -12,6 +12,10 @@ FPD - Quotation
 
 import logging
 from exe.webui.block               import Block
+
+def x_(text):
+    # Placeholder for a translation function
+    return text
 from exe.webui                     import common
 from exe.webui.element      import TextAreaElement
 
