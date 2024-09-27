@@ -30,7 +30,7 @@ from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevic
 from exe.engine.field                               import TextAreaField, FeedbackField,Feedback2Field
 
 import gettext
-import imp
+import importlib
 
 x_ = gettext.gettext
 _ = gettext.gettext
