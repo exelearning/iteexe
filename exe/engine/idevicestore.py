@@ -29,7 +29,11 @@ from exe.engine.jsidevice                           import JsIdevice
 from exe.engine.exceptions.invalidconfigjsidevice   import InvalidConfigJsIdevice
 from exe.engine.field                               import TextAreaField, FeedbackField,Feedback2Field
 
+import gettext
 import imp
+
+x_ = gettext.gettext
+_ = gettext.gettext
 import sys
 import logging
 import copy
