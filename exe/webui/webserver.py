@@ -146,8 +146,8 @@ class WebServer:
 
         if found_port:
             self.config.port = test_port_num
-            log.info("find_port(): found available eXe port# %d", 
-                      self.config.port)
+            log.info("find_port(): found available eXe port# %d", self.config.port)
+            log.info("Web server will start on port: %d", self.config.port)
         else:
             self.config.port = -1
             if found_other_eXe:
