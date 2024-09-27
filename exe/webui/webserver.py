@@ -56,6 +56,7 @@ from exe import globals as G
 
 from exe.webui.templatemanagerpage import TemplateManagerPage
 
+import os
 import logging
 log = logging.getLogger(__name__)
 
@@ -69,10 +70,24 @@ class WebServer:
         self.application = application
         self.config = application.config
         self.app = Flask(__name__)
+        self.ensure_directories_exist()
         self.about = AboutPage(self.app)
         self.release_notes = ReleaseNotesPage(self.app)
 
-    def find_port(self):
+    def ensure_directories_exist(self):
+        """
+        Ensure that necessary directories exist.
+        """
+        directories = [
+            self.config.stylesDir,
+            self.config.webDir + "/content_template",
+            self.config.webDir + "/scripts/idevices",
+            self.config.localeDir
+        ]
+        for directory in directories:
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+                log.info("Created missing directory: %s", directory)
         """
         Previously part of the run() method, this will find the port for this
         server.  Moved outside such that it could be called prior to run()
