@@ -48,7 +48,6 @@ from exe.webui.styledesigner import StyleDesigner
 # jrf - legal notes
 from exe.webui.legalpage import legal_page
 from exe.webui.quitpage            import QuitPage
-from exe.webui.iecmwarning         import IECMWarningPage
 from flask import send_from_directory
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
