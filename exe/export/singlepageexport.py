@@ -58,7 +58,7 @@ class SinglePageExport(object):
         self.scriptsDir   = Path(scriptsDir)
         self.cssDir       = Path(cssDir)
         self.templatesDir = Path(templatesDir)
-	self.page         = None
+        self.page         = None
 
         # Create the output dir if it doesn't already exist
         if not self.outputDir.exists():
