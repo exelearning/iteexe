@@ -1755,7 +1755,7 @@ class ClozelangElement(ElementWithResources):
         html.append(storeValue('strictMarking'))
         html.append(storeValue('checkCaps'))
         html.append(storeValue('instantMarking'))
-	html.append(storeValue('showScore'))
+        html.append(storeValue('showScore'))
         if feedbackId:
             html.append(common.hiddenField('clozelangVar%s.feedbackId' % self.id,
                                            'ta'+feedbackId))
