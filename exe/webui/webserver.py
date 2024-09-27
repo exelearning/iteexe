@@ -211,7 +211,15 @@ class WebServer:
         # Ensure that it is valid (>= 0):
         if self.config.port >= 0:
             log.info("run() using eXe port# %d", self.config.port)
-            reactor.run()
+            try:
+                reactor.run()
+            except OSError as e:
+                if "Address already in use" in str(e):
+                    log.error("Port %d is in use, trying to find another port.", self.config.port)
+                    self.ensure_directories_exist()  # Re-run to find a new port
+                    reactor.run()
+                else:
+                    raise
         else:
             log.error("ERROR: webserver's run() called, but a valid port " \
                     + "was not available.")
