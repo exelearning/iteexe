@@ -161,7 +161,7 @@ class MainPage(RenderableLivePage):
 
             # We have to go through all nodes to add the correct reference
             # to the current package
-            for node in self.package._nodeIdDict.values():
+            for node in list(self.package._nodeIdDict.values()):
                 node._package = self.package
 
             self.package.translatePackage()
@@ -356,7 +356,7 @@ class MainPage(RenderableLivePage):
         """
         Prints a test message, and yup, that's all!
         """
-        print("Test Message: ", message, " [eol, eh!]")
+        print(("Test Message: ", message, " [eol, eh!]"))
 
     def handleIsPackageDirty(self, client, ifClean, ifDirty):
         """
