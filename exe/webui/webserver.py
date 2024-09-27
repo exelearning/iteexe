@@ -55,6 +55,7 @@ from exe.webui.oauthpage import OauthPage
 from exe import globals as G
 
 from exe.webui.templatemanagerpage import TemplateManagerPage
+from exe.engine import version
 
 import os
 import logging
