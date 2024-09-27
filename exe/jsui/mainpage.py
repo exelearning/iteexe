@@ -27,6 +27,9 @@ import copy
 import gettext
 _ = gettext.gettext
 import os
+
+def js(script):
+    return script
 import json
 import sys
 import logging
@@ -742,7 +745,7 @@ class MainPage(RenderableLivePage):
 
         # but first need to ensure that under_dirname itself is available;
         # if not, create it:
-        if cmp(under_dirname, "") != 0:
+        if under_dirname != "":
             if os.path.exists(under_dirname):
                 if os.path.isdir(under_dirname):
                     # Yes, this directory already exists.
@@ -1320,6 +1323,8 @@ class MainPage(RenderableLivePage):
             if parsedResult['status'] == 'true':
                 link_url = ProcomunOauth.BASE_URL + '/ode/view/%s' % parsedResult['data']['documentId']
                 client.alert(
+                    self.js(
+                    self.js(
                     js(
                         '\''
                         + _('Package exported to <a href="%s" target="_blank" title="Click to view the exported package">%s</a>.') % (link_url, self.package.title)
