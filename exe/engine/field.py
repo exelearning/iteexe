@@ -26,7 +26,7 @@ import logging
 from exe.engine.persist   import Persistable
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
-from exe.engine.translate import lateTranslate
+from exe.engine.translate import lateTranslate, x_
 from exe.engine.mimetex   import compile
 from html.parser           import HTMLParser
 from exe.engine.flvreader import FLVReader
