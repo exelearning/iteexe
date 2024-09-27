@@ -16,6 +16,10 @@ from exe.webui.block               import Block
 from exe.webui                     import common
 from exe.webui.element      import TextAreaElement
 
+def x_(text):
+    """Identity function for marking strings for translation."""
+    return text
+
 log = logging.getLogger(__name__)
 
 
