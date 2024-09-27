@@ -34,6 +34,7 @@ from exe.export.helper        import lineBreak
 from exe.export.pages         import Page, uniquifyNames
 from exe.webui                import common
 from exe                      import globals as G
+from gettext                  import gettext as _
 
 log = logging.getLogger(__name__)
 
