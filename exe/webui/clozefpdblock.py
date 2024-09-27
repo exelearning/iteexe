@@ -92,7 +92,7 @@ class ClozefpdBlock(Block):
         Renders a screen that allows the user to enter paragraph text and choose
         which words are hidden.
         """
-        """        
+        """
         html = [
             u'<div class="iDevice">',
             u'<div class="block">',
