@@ -1828,7 +1828,7 @@ class Package(Persistable):
             'exportElp': False,
             'docType': G.application.config.docType
         }
-        for field, value in _metadata_fields_package.items():
+        for field, value in list(_metadata_fields_package.items()):
             if getattr(self, field) != value:
                 return True
 
@@ -1848,7 +1848,7 @@ class Package(Persistable):
             'coverage': '',
             'rights': ''
         }
-        for field, value in _metadata_field_dublin.items():
+        for field, value in list(_metadata_field_dublin.items()):
             if getattr(self.dublinCore, field) != value:
                 return True
 
@@ -2144,7 +2144,7 @@ class Package(Persistable):
 
                 invalid_fields.append(invalid_field)
 
-        for field, values in from_list_checks.items():
+        for field, values in list(from_list_checks.items()):
             part, name = field.split('_', 1)
 
             # Check the attribute
