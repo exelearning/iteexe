@@ -107,11 +107,7 @@ class JsIdevice(Idevice):
                 if configFile.exists():
                     # Get config data
                     configData = open(configFile).read()
-                    try:
-                        newConfigData = configData.decode()
-                    except UnicodeDecodeError:
-                        configCharset = chardet.detect(configData)
-                        newConfigData = configData.decode(configCharset['encoding'], 'replace')
+                    newConfigData = configData
 
                     # Parse the XML file
                     xmlConfig = minidom.parseString(newConfigData)
