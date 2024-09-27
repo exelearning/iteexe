@@ -25,7 +25,7 @@ import re
 import datetime
 import uuid
 import platform
-from cgi                           import escape
+from html                          import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED, ZIP_STORED
 from exe.webui                     import common
 from exe.webui.blockfactory        import g_blockFactory
