@@ -24,7 +24,6 @@ area of the eXe web user interface.
 import os
 import logging
 import time
-import exceptions
 import sys
 from twisted.web.resource    import Resource
 from exe.webui               import common
