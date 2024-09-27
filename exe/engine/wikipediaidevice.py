@@ -31,7 +31,7 @@ from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
 from exe.engine.path          import Path, TempDirPath
 from exe.engine.resource      import Resource
-from exe.engine.config import x_, _
+from exe.engine.config import x_
 
 import urllib.request, urllib.parse, urllib.error
 import ssl
