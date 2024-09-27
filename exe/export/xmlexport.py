@@ -25,7 +25,7 @@ Extends WebsiteExport for convenience
 
 import logging
 import re
-import imp
+import importlib
 from cgi                      import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
