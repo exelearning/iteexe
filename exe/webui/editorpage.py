@@ -32,6 +32,10 @@ from exe.engine.package        import Package
 from exe.engine.path           import Path
 from exe.engine.field          import MultimediaField
 from html                      import escape
+import gettext
+
+# Set up message catalog access
+_ = gettext.gettext
 
 log = logging.getLogger(__name__)
 
