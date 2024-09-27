@@ -15,7 +15,7 @@ Maintainer: U{Itamar Shtull-Trauring<mailto:twisted@itamarst.org>}
 from time import sleep
 import sys
 
-from zope.interface import implements
+from zope.interface import implementer
 
 from twisted.internet.interfaces import IReactorFDSet
 from twisted.internet import error
@@ -58,6 +58,7 @@ else:
 _NO_FILENO = error.ConnectionFdescWentAway('Handler has no fileno method')
 _NO_FILEDESC = error.ConnectionFdescWentAway('Filedescriptor went away')
 
+@implementer(IReactorFDSet)
 class SelectReactor(posixbase.PosixReactorBase):
     """A select() based reactor - runs on all POSIX platforms and on Win32.
     """
