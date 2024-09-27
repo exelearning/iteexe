@@ -78,7 +78,11 @@ class WebServer:
         """
         Ensure that necessary directories exist.
         """
-        directories = [
+        style_directories = [
+            self.config.stylesDir,
+            os.path.join(self.config.configDir, "style")
+        ]
+        directories = style_directories + [
             self.config.stylesDir,
             self.config.webDir + "/content_template",
             self.config.webDir + "/scripts/idevices",
