@@ -45,7 +45,11 @@ class ReleaseNotesPage:
         self.blueprint = Blueprint(self.name, __name__, template_folder='templates')
         self.app.register_blueprint(self.blueprint)
 
-    @self.blueprint.route('/release-notes')
+    @staticmethod
+    def route(blueprint):
+        @blueprint.route('/release-notes')
+        def show():
+            return render_template_string(ReleaseNotesPage.render_changelog())
     def show(self):
         return render_template_string(self.render_changelog())
 

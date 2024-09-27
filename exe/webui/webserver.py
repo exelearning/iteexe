@@ -176,6 +176,8 @@ class WebServer:
         def tools(filename):
             return send_from_directory(webDir + "/tools", filename)
 
+        jsDir = self.config.jsDir
+
         @self.app.route('/jsui/<path:filename>')
         def jsui(filename):
             return send_from_directory(jsDir + "/scripts", filename)
