@@ -26,6 +26,7 @@ from exe.engine.persist   import Persistable
 from exe.engine.idevice   import Idevice
 from exe.engine.field     import ImageField
 from exe.engine.translate import lateTranslate
+from exe.engine.config import x_
 from exe.engine.path      import toUnicode
 from exe                  import globals as G
 from exe.engine.field     import TextAreaField, Feedback2Field
