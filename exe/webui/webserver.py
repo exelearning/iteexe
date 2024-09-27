@@ -172,6 +172,7 @@ class WebServer:
         log.info("browser     = %s", self.config.browser if hasattr(self.config, 'browser') else 'None')
         log.info("webDir      = %s", self.config.webDir)
         log.info("jsDir       = %s", self.config.jsDir)
+        log.info("localeDir   = %s", self.config.localeDir)
         log.debug("start web server running")
 
         # web resources
