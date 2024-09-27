@@ -46,7 +46,7 @@ from exe.webui.aboutpage import AboutPage
 from exe.webui.releasenotespage    import ReleaseNotesPage
 from exe.webui.styledesigner import StyleDesigner
 # jrf - legal notes
-from exe.webui.legalpage import LegalPage
+from exe.webui.legalpage import legal_page
 from exe.webui.quitpage            import QuitPage
 from exe.webui.iecmwarning         import IECMWarningPage
 from flask import send_from_directory
