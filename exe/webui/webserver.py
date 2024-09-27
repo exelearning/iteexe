@@ -239,23 +239,9 @@ class WebServer:
         def index():
             return "<h1>Welcome to the eXe Web Server</h1>"
 
-        # A port for this server was looked for earlier by find_port.
-        # Ensure that it is valid (>= 0):
-        log.info("Attempting to start Flask server on port: %d", self.config.port)
-        while self.config.port >= 0:
-            log.info("run() using eXe port# %d", self.config.port)
-            try:
-                reactor.run()
-                break
-            except OSError as e:
-                if "Address already in use" in str(e):
-                    log.error("Port %d is in use, trying to find another port.", self.config.port)
-                    self.config.port += 1  # Increment port number
-                else:
-                    raise
-        if self.config.port < 0:
-            log.error("ERROR: webserver's run() called, but a valid port " \
-                      + "was not available.")
+        # Start the Flask server
+        log.info("Starting Flask server on port: %d", self.config.port)
+        self.app.run(host='127.0.0.1', port=self.config.port)
 
     def monitor(self):
         if self.monitoring:
