@@ -289,8 +289,8 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
         Upgrades exe to v0.11
         """
         self.content.autoCompletion = True
-        self.content.autoCompletionInstruc =  _("Allow auto completion when "
-                                                "user filling the gaps.")
+        self.content.autoCompletionInstruc =  x_("Allow auto completion when "
+                                                 "user filling the gaps.")
 
     def upgradeToVersion3(self):
         """
