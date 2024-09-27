@@ -30,7 +30,7 @@ import logging
 
 log = logging.getLogger(__name__)
 
-class PriorizedDOMJellier(DOMJellier):
+class PriorizedDOMJellier:
     def __init__(self):
         self.prepared = {}
         self.document = XMLDocument()
@@ -87,7 +87,7 @@ class PriorizedDOMJellier(DOMJellier):
         if nk.getAttribute('value') == "content_w_resourcePaths":
             nv.setAttribute("content", "true")
 
-class UTF8DOMUnjellier(DOMUnjellier):
+class UTF8DOMUnjellier:
     def unjellyNode(self, node):
         if node.tagName == "unicode":
             return str(str(node.getAttribute("value")), "utf-8")
