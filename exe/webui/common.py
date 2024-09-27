@@ -24,8 +24,7 @@ This module is for the common HTML used in all webpages.
 
 import logging
 import os
-from nevow                     import tags as T
-from nevow.flat                import flatten
+from flask import render_template_string
 from exe                       import globals as G
 from exe.engine.path           import Path
 from exe.webui.blockfactory    import g_blockFactory
@@ -901,20 +900,15 @@ def flash(src, width, height, id_=None, params=None, **kwparams):
     'params' is a dictionary of name, value pairs that will be turned into a
     bunch of <param> tags"""
     log.debug("flash %s" % src)
-    stan = \
-        T._object(type='application/x-shockwave-flash',
-                 width=width,
-                 height=height,
-                 **kwparams)
-    if id_:
-        stan.attributes['id'] = id_
-    stan.attributes['data'] = src
-    if params is None:
-        params = {}
+    params = params or {}
     params.setdefault('movie', src)
-    for name, value in list(params.items()):
-        stan = stan[T.param(name=name, value=value)]
-    return str(flatten(stan).replace('&amp;', '&'), 'utf8')
+    param_tags = ''.join(f'<param name="{name}" value="{value}">' for name, value in params.items())
+    object_tag = f'''
+    <object type="application/x-shockwave-flash" width="{width}" height="{height}" data="{src}" id="{id_ or ''}">
+        {param_tags}
+    </object>
+    '''
+    return render_template_string(object_tag)
 
 def flashMovie(movie, width, height, resourcesDir='', autoplay='false'):
     """Returns the XHTML for a flash movie"""
