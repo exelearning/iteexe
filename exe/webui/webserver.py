@@ -99,7 +99,8 @@ class WebServer:
             try:
                 log.debug("find_port(): trying to listenTCP on port# %d",
                         test_port_num)
-                reactor.listenTCP(test_port_num, 
+                from twisted.internet.protocol import Factory
+                reactor.listenTCP(test_port_num, Factory(), 
                                   interface="127.0.0.1")
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)
