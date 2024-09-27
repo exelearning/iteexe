@@ -29,6 +29,7 @@ from copy                 import deepcopy
 from exe.engine.persist   import Persistable
 from exe.engine.translate import lateTranslate
 from exe.engine.resource  import Resource
+from exe.engine.config    import c_
 
 log = logging.getLogger(__name__)
 
