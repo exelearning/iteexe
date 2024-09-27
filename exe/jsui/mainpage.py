@@ -38,8 +38,10 @@ from exe.engine.version          import release, revision
 from twisted.internet            import threads, reactor, defer
 from exe.webui.livepage          import RenderableLivePage,\
     otherSessionPackageClients, allSessionClients, allSessionPackageClients
-from nevow                       import loaders, inevow, tags
-from nevow.livepage              import handler, IClientHandle, js
+from twisted.web.template        import XMLFile, Element, renderer, tags
+from twisted.web.server          import Request
+from twisted.web.resource        import Resource
+from twisted.web.static          import File
 from exe.jsui.idevicepane        import IdevicePane
 from exe.jsui.outlinepane        import OutlinePane
 from exe.jsui.recentmenu         import RecentMenu
