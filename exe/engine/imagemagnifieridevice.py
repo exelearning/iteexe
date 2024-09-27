@@ -26,6 +26,7 @@ import logging
 from exe.engine.idevice   import Idevice
 from exe.engine.field     import TextAreaField, MagnifierField
 from exe.engine.translate import lateTranslate
+from exe.engine.config import x_
 log = logging.getLogger(__name__)
 
 # ===========================================================================
