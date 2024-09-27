@@ -18,10 +18,7 @@
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
 
-from twisted.web import server, resource
-from twisted.internet import reactor, defer
-from nevow import compy, appserver, inevow
-from nevow.i18n import languagesFactory
+from flask import session
 from exe.engine.packagestore import PackageStore
 from exe import globals as G
 import logging
@@ -29,67 +26,17 @@ import logging
 log = logging.getLogger(__name__)
 
 
-def setLocaleFromRequest(request):
-    acceptedLocales = languagesFactory(request)
-    for locale in acceptedLocales:
-        try:
-            G.application.config.locales[locale].install(str=True)
-            break
-        except KeyError:
-            pass
+class eXeSession:
+    def __init__(self):
+        self.packageStore = PackageStore()
+        self.oauthToken = {}
 
-    G.application.config.locale = locale
-    return locale
-
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        if self.real_prepath_len is not None:
-            path = request.postpath = request.prepath[self.real_prepath_len:]
-            del request.prepath[self.real_prepath_len:]
-        result = defer.maybeDeferred(self.renderLocalized, request).addCallback(
-            self._handle_NOT_DONE_YET, request)
-        return result
-
-class eXeResourceAdapter(appserver.OldResourceAdapter):
-    def renderLocalized(self, request):
-#        setLocaleFromRequest(request)
-        return self.original.render(request)
-
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
-        if self.real_prepath_len is not None:
-            path = request.postpath = request.prepath[self.real_prepath_len:]
-            del request.prepath[self.real_prepath_len:]
-        result = defer.maybeDeferred(self.renderLocalized, request).addCallback(
-            self._handle_NOT_DONE_YET, request)
-        return result
-
-compy.registerAdapter(eXeResourceAdapter, resource.IResource, inevow.IResource)
-
-
-compy.registerAdapter(eXeResourceAdapter, resource.IResource, inevow.IResource)
-
-
-class eXeRequest(appserver.NevowRequest):
-    def __init__(self, *args, **kw):
-        appserver.NevowRequest.__init__(self, *args, **kw)
-        self.locale = None
-
-    def gotPageContext(self, pageContext):
-#         request = inevow.IRequest(pageContext)
-#        self.locale = setLocaleFromRequest(request)
-        appserver.NevowRequest.gotPageContext(self, pageContext)
-
-    def getSession(self, sessionInterface = None):
-        self.sitepath = [str(self.host.port)]
-        log.debug("In Cookie's: %s" % self.received_cookies)
-        session = appserver.NevowRequest.getSession(self, sessionInterface)
-        log.debug("Out Cookie's: %s" % self.cookies)
+    def getSession(self):
         return session
 
-    def getPackageName(self):
+    def getPackageName(self, request):
         try:
-            return ''+self.getHeader('referer').split('/')[-1]
+            return request.headers.get('Referer').split('/')[-1]
         except:
             return None
 
