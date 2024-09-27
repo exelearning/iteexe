@@ -80,11 +80,11 @@ class ReflectionfpdmodifBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-   # JR
-	# Quitamos el prefijo "FPD -"
-	# (let's remove the "FPD -" prefix)
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_("Think About It")
+        # JR
+        # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_("Think About It")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()
