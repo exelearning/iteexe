@@ -332,7 +332,7 @@ class ListaField(FieldWithResources):
     And can now support multiple images (and any other resources) via tinyMCE
     """
 
-    regex = re.compile('(%u)((\d|[A-F]){4})', re.UNICODE)
+    regex = re.compile(r'(%u)((\d|[A-F]){4})', re.UNICODE)
     persistenceVersion = 3
 
     # these will be recreated in FieldWithResources' TwistedRePersist:
@@ -350,7 +350,7 @@ class ListaField(FieldWithResources):
         self.otras = ''
         # self.otrasInstruc should have no HTML tags (#574)
         otrasInstruc = \
-            _("<p>Optional: Write other words to complete the Dropdown activity.<br/> Use | (the vertical bar) to separate words.<br/> This field can be left blank. </p>")
+            x_("<p>Optional: Write other words to complete the Dropdown activity.<br/> Use | (the vertical bar) to separate words.<br/> This field can be left blank. </p>")
         cleanr = re.compile('<.*?>')
         self.otrasInstruc = re.sub(cleanr, '', otrasInstruc)
      
@@ -399,7 +399,7 @@ class ListaField(FieldWithResources):
         Upgrades to exe v0.11
         """
         self.autoCompletion = True
-        self.autoCompletionInstruc = _("""Allow auto completion when 
+        self.autoCompletionInstruc = x_("""Allow auto completion when 
                                        user filling the gaps.""")
 
 
