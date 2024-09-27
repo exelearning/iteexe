@@ -26,7 +26,7 @@ Extends WebsiteExport for convenience
 import logging
 import re
 import importlib
-from cgi                      import escape
+from html                     import escape
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
 from exe.engine.path          import Path, TempDirPath
