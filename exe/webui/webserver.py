@@ -100,7 +100,6 @@ class WebServer:
                 log.debug("find_port(): trying to listenTCP on port# %d",
                         test_port_num)
                 reactor.listenTCP(test_port_num, 
-                                  eXeSite(self.root),
                                   interface="127.0.0.1")
                 log.debug("find_port(): still here without exception " \
                            "after listenTCP on port# %d", test_port_num)
