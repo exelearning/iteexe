@@ -19,7 +19,9 @@
 
 
 import codecs
-from types import UnicodeType, StringType
+# UnicodeType and StringType are no longer available in Python 3.12
+# Use str for both Unicode and string types
+str = str
 
 from bs4 import BeautifulSoup
 
