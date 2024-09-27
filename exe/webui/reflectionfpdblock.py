@@ -27,6 +27,7 @@ import logging
 from exe.webui.block               import Block
 from exe.webui                     import common
 from exe.webui.element      import TextAreaElement
+from gettext import gettext as x_
 
 log = logging.getLogger(__name__)
 
