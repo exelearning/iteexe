@@ -468,12 +468,12 @@ class Epub3Page(Page):
                         block.renderView(self.node.package.style)))
                 html += '</' + articleTag + '>' + lb  # iDevice div
 
-            html = re.sub("(<iframe[^>]*)(src=\"//)", "\g<1>src=\"https://", html)
+            html = re.sub(r"(<iframe[^>]*)(src=\"//)", r"\g<1>src=\"https://", html)
 
         html += "</" + sectionTag + ">" + lb  # /#main
 
         if self.node.package.get_addPagination():
-            html += "<p class='pagination page-counter'>" + c_('Page %s of %s') % ('<strong>'+str(pages.index(self))+'</strong>','<strong>'+str((len(pages) -1))+'</strong>')+ "</p>"+lb
+            html += "<p class='pagination page-counter'>" + 'Page %s of %s' % ('<strong>'+str(pages.index(self))+'</strong>','<strong>'+str((len(pages) -1))+'</strong>')+ "</p>"+lb
 
         printPageFooter = False
         if pages.index(self)==1 or len(pages)-1==pages.index(self):
@@ -770,7 +770,7 @@ class Epub3Export(object):
         container.save("container.xml")
 
         # Zip it up!
-        self.filename.safeSave(self.doZip, _('EXPORT FAILED!\nLast succesful export is %s.'), outputDir)
+        self.filename.safeSave(self.doZip, 'EXPORT FAILED!\nLast succesful export is %s.' % outputDir)
         # Clean up the temporary dir
 
         outputDir.rmtree()
