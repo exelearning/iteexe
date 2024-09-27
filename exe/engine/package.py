@@ -78,7 +78,7 @@ from exe.engine.lom import lomsubs
 from exe.engine.checker import Checker
 from exe.webui import common
 from exe.engine.version        import release, revision
-from exe.engine.translate      import x_
+from exe.engine.translate      import x_, c_, _
 
 log = logging.getLogger(__name__)
 
