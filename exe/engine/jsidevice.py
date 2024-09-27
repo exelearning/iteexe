@@ -23,6 +23,7 @@ An JavaScript iDevice definition
 """
 
 from exe.engine.idevice import Idevice
+from exe.engine.config import _
 # For backward compatibility Jelly expects to find a Field class
 from exe.engine.field                               import Field, TextField, TextAreaField, FeedbackField
 from exe.engine.field                               import ImageField, AttachmentField
