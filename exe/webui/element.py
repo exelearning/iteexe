@@ -23,6 +23,7 @@
 Classes to XHTML elements.  Used by GenericBlock
 """
 import logging
+from gettext import gettext as _, gettext as x_, gettext as c_
 import re
 import urllib.request, urllib.parse, urllib.error
 from exe.webui       import common
