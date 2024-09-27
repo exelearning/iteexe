@@ -22,57 +22,14 @@ from oauthlib.oauth2 import InvalidClientError
 
 from exe.webui.renderable import Renderable
 
-class ProcomunOauth(Renderable, rend.Page):
-    CLIENT_ID = '1Zl5ATaKchp8hecNGGhpfvQnUZaRTxkS'
-    CLIENT_SECRET = '5ESrTI1QXb971YdZk22t5XOWCRWOuzHRV1L1Ho8aOl7NuTFN'
-    BASE_URL = 'https://procomun.educalab.es'
-    REDIRECT_URI = 'http://localhost:51235/oauth/procomun/callback'
-    AUTHORIZATION_BASE_URL = BASE_URL + '/oauth2/authorize'
-    TOKEN_URL = BASE_URL + '/oauth2/token'
-    name = 'procomun'
-    _templateFileName = 'oauth.html'
+app = Flask(__name__)
 
-    def __init__(self, parent):
-        Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
-        self.states = {}
+@app.route('/procomun_oauth')
+def procomun_oauth():
+    return "Procomun Oauth Page"
 
-    def child_callback(self, ctx):
-        return self
-
-    def saveState(self, state, oauth2Session, client):
-        self.states[state] = (oauth2Session, client)
-
-    def render_start(self, ctx, data):
-        request = inevow.IRequest(ctx)
-        state = self.states.get(request.args.get('state', [None])[0])
-        script = (
-          '''top.Ext.getCmp('oauthprocomun').close()'''
-        )
-        if state:
-            code = request.args.get('code', [None])[0]
-            oauth2Session, client = state
-            script = ''
-            try:
-                client.session.oauthToken['procomun'] = oauth2Session.fetch_token(self.TOKEN_URL, client_secret=self.CLIENT_SECRET, code=code)
-                script = ('''
-                    top.Ext.getCmp('oauthprocomun').hide();
-                    top.eXe.app.getController("Toolbar").exportProcomun();
-                    top.Ext.getCmp('oauthprocomun').close();
-                ''')
-            except InvalidClientError:
-                script = '''
-                    top.Ext.getCmp('oauthprocomun').hide();
-                    top.eXe.app.getController("Toolbar").showOAuthError("%s");
-                    top.Ext.getCmp('oauthprocomun').close();
-                ''' % client.packageName
-            # This exception is raised when the user clicks the Cancel button
-            except ValueError:
-                script = '''
-                    top.Ext.getCmp('oauthprocomun').close();
-                '''
-
-        return ctx.tag()[script]
+if __name__ == "__main__":
+    app.run(debug=True)
 
 
 class GDriveOauth(Renderable, rend.Page):
