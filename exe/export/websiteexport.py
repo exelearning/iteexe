@@ -23,7 +23,7 @@ WebsiteExport will export a package as a website of HTML pages
 
 import logging
 import re
-import imp
+import importlib.util
 import os
 from shutil                   import rmtree
 from exe.engine.path          import Path, TempDirPath
@@ -80,8 +80,9 @@ class WebsiteExport(object):
         if self.styleSecureMode=="0":
             if (self.stylesDir/"websitepage.py").exists():
                 global WebsitePage
-                module = imp.load_source("websitepage",
-                                         self.stylesDir/"websitepage.py")
+                spec = importlib.util.spec_from_file_location("websitepage", self.stylesDir/"websitepage.py")
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
                 WebsitePage = module.WebsitePage
 
         self.pages = [ WebsitePage("index", 0, package.root) ]
