@@ -59,6 +59,8 @@ from exe.engine import version
 
 import os
 import logging
+import signal
+import sys
 
 # Configurar el nivel de registro para mostrar mensajes de información
 logging.basicConfig(level=logging.INFO)
@@ -177,6 +179,13 @@ class WebServer:
 
         # Start the Flask server
         log.info("Starting Flask server on port: %d", self.config.port)
+        # Handle SIGINT to gracefully shutdown the server
+        def signal_handler(sig, frame):
+            log.info("Shutting down the server...")
+            sys.exit(0)
+
+        signal.signal(signal.SIGINT, signal_handler)
+
         self.app.run(host='127.0.0.1', port=self.config.port)
 
     def monitor(self):
