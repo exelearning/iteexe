@@ -24,6 +24,8 @@ def x_(x):
     """Fake/late translate mechanism"""
     return x
 
+from exe.engine.translate import c_, _
+
 def lateTranslate(propName, content=False):
     """
     Given a property name, returns a read/write property that is translated
@@ -50,6 +52,8 @@ def lateTranslate(propName, content=False):
         else:
             return value
     return property(get_prop, set_prop)
+
+__old_translate__ = None
 
 def installSafeTranslate():
     """
