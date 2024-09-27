@@ -27,6 +27,7 @@ import json
 from exe.webui.renderable import Renderable
 from twisted.web.resource import Resource
 from exe.webui.livepage import allSessionClients
+from gettext import gettext as _
 from exe.engine.jsidevice import JsIdevice;
 from html import escape
 
