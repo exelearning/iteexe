@@ -1847,7 +1847,7 @@ class FieldWithResources(Field):
         # an IMG tag, etc.
         # For now, though, this easy parsing is working well:
 #JR        search_str = "src=\"../previews/" 
-	search_str = "src=\"/previews/"
+        search_str = "src=\"/previews/"
         # BEWARE OF THE ABOVE in regards to ProcessPreviewedMedia(),
         # which takes advantage of the fact that the embedded media
         # actually gets stored as src="previews/".
