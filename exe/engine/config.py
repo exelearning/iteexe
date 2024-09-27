@@ -571,7 +571,7 @@ class Config(object):
 
 
         format = "%(asctime)s %(name)s %(levelname)s %(message)s"
-        log    = logging.getLogger()
+        log    = logging.getLogger(__name__)
         hdlr.setFormatter(logging.Formatter(format))
         log.addHandler(hdlr)
 
