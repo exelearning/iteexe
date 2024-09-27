@@ -508,7 +508,8 @@ class Path(str):
                         .replace('\r\x85', '\n')
                         .replace('\r', '\n')
                         .replace('\x85', '\n')
-                        .replace('\\u2028', '\n'))
+                        .replace('\\u2028', '\n')
+                        .replace('\\h', 'h'))
 
     def write_text(self, text, encoding=None,
                    errors='strict', linesep=os.linesep,
