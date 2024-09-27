@@ -40,20 +40,3 @@ class eXeSession:
         except:
             return None
 
-class eXeSession(server.Session):
-    def __init__(self, *args, **kwargs):
-        server.Session.__init__(self, *args, **kwargs)
-        self.packageStore = PackageStore()
-        self.oauthToken = {}
-
-
-class eXeSite(appserver.NevowSite):
-    requestFactory = eXeRequest
-
-    def makeSession(self):
-        """Generate a new Session instance, and store it for future reference.
-        """
-        uid = self._mkuid()
-        s = eXeSession(self, uid)
-        session = self.sessions[uid] = s
-        return session
