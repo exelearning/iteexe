@@ -28,6 +28,10 @@ from exe.engine.error         import Error
 from exe.engine.path          import Path
 from exe.engine.htmlToText    import HtmlToText
 
+def c_(text):
+    # Placeholder function for translation/localization
+    return text
+
 import logging
 log = logging.getLogger(__name__)
 
