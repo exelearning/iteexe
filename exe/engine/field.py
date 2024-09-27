@@ -2302,10 +2302,10 @@ class FieldWithResources(Field):
         export_content = content.replace(resources_url_src,exported_src)
 
 #JR: Se lo quitamos tambien a los flv
-	export_content = export_content.replace("'playlist': [ { 'url': 'resources/", "'playlist': [ { 'url': '")
+        export_content = export_content.replace("'playlist': [ { 'url': 'resources/", "'playlist': [ { 'url': '")
 #JR: Y a los SWF 
-	export_content = export_content.replace("name=\"movie\" value=\"resources/", "name=\"movie\" value=\"")
-	export_content = export_content.replace("application/x-shockwave-flash\" data=\"resources/", "application/x-shockwave-flash\" data=\"")
+        export_content = export_content.replace("name=\"movie\" value=\"resources/", "name=\"movie\" value=\"")
+        export_content = export_content.replace("application/x-shockwave-flash\" data=\"resources/", "application/x-shockwave-flash\" data=\"")
 #JR: Y a los MP3
 	export_content = export_content.replace("application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=resources/", "application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=")
 #JR: Quito los & en las llamadas a xspf_player
