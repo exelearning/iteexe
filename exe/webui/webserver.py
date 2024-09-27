@@ -177,11 +177,14 @@ class WebServer:
         log.info("dataDir     = %s", self.config.dataDir)
         log.info("configDir   = %s", self.config.configDir)
         log.info("locale      = %s", self.config.locale)
-        if not os.path.exists(os.path.join(self.config.localeDir, self.config.locale)):
+        locale_path = os.path.join(self.config.localeDir, self.config.locale)
+        if not os.path.exists(locale_path):
             log.warning("Locale '%s' not found, defaulting to 'en'", self.config.locale)
             self.config.locale = 'en'
-            if not os.path.exists(os.path.join(self.config.localeDir, self.config.locale)):
-                log.error("Default locale '%s' not found. Locale setup failed.", self.config.locale)
+            locale_path = os.path.join(self.config.localeDir, self.config.locale)
+            if not os.path.exists(locale_path):
+                os.makedirs(locale_path)
+                log.info("Created missing directory: %s", locale_path)
         log.info("internalAnchors = %s", self.config.internalAnchors)
         log.info("License = %s", self.config.license)
         log.debug("start web server running")
