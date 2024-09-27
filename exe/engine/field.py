@@ -2307,9 +2307,9 @@ class FieldWithResources(Field):
         export_content = export_content.replace("name=\"movie\" value=\"resources/", "name=\"movie\" value=\"")
         export_content = export_content.replace("application/x-shockwave-flash\" data=\"resources/", "application/x-shockwave-flash\" data=\"")
 #JR: Y a los MP3
-	export_content = export_content.replace("application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=resources/", "application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=")
+        export_content = export_content.replace("application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=resources/", "application/x-shockwave-flash\" data=\"../templates/xspf_player.swf?song_url=")
 #JR: Quito los & en las llamadas a xspf_player
-	export_content = export_content.replace("&song_title=", "&amp;song_title=")
+        export_content = export_content.replace("&song_title=", "&amp;song_title=")
 
         # for embedded media, that takes care of the <embed> tag part,
         # but there's another media occurrence that contains the src param:
