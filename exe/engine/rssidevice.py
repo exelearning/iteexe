@@ -33,6 +33,7 @@ from sys import platform
 from exe.engine.idevice       import Idevice
 from exe.engine.field         import TextAreaField
 from exe.engine.translate     import lateTranslate
+from exe.engine.config        import x_
 
 
 class UrlOpener(urllib.request.FancyURLopener):
