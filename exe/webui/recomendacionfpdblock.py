@@ -61,11 +61,11 @@ class RecomendacionfpdBlock(Block):
         """
         html  = "<div class=\"iDevice\"><br/>\n"
 
-   # JRJ
-	# Quitamos el prefijo "FPD -"
-	# (let's remove the "FPD -" prefix)
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_("A Piece of Advice")
+        # JRJ
+        # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_("A Piece of Advice")
 
         html += common.textInput("title"+self.id, self.idevice.title)
         html += self.activityElement.renderEdit()
