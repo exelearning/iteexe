@@ -29,10 +29,13 @@ _ = gettext.gettext
 log = logging.getLogger(__name__)
 
 
-# ===========================================================================
-app = Flask(__name__)
+class QuitPage:
+    def __init__(self):
+        self.app = Flask(__name__)
+        self.app.add_url_rule('/quit', 'quit_page', self.quit_page)
 
-@app.route('/quit')
-def quit_page():
-    return render_template('quit.html', title=_("eXe Closed"), msg1=_("eXe has finished running in this window."), msg2=_("You can close it safely."))
-# ===========================================================================
+    def quit_page(self):
+        return render_template('quit.html', title=_("eXe Closed"), msg1=_("eXe has finished running in this window."), msg2=_("You can close it safely."))
+
+    def run(self, *args, **kwargs):
+        self.app.run(*args, **kwargs)
