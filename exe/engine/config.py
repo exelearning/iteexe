@@ -649,6 +649,7 @@ class Config(object):
     def copyTemplates(self):
         template_backup = self.webDir/'content_template'
         dest_template = self.templatesDir
+        self.dest_template = self.templatesDir
         if os.path.exists(template_backup):
             if os.path.exists(dest_template) and not os.listdir(self.dest_template):
                 shutil.rmtree(dest_template)

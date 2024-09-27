@@ -83,6 +83,8 @@ class StyleStore:
         styleDir    = self._config.stylesDir
 
         log.debug("loadStyles from %s" % styleDir)
+        if not styleDir.exists():
+            styleDir.makedirs()
         for subDir in styleDir.dirs():
             style = Style(subDir)
             if style.isValid():
