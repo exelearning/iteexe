@@ -3398,7 +3398,7 @@ class ClozelangField(FieldWithResources):
             x_("""<p>If this option is set, each word will be marked as the 
 learner types it rather than all the words being marked the end of the 
 exercise.</p>""")
-	self.showScore = False
+        self.showScore = False
         self._showScoreInstruc = \
             x_("""<p>If this option is set, the score will be shown.</p>""")
 
