@@ -29,6 +29,7 @@ from exe.engine.field   import TextField
 from exe.engine.field   import Field
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
+from exe.engine.config import x_
 from .extendedfieldengine import ChoiceField
 
 log = logging.getLogger(__name__)
