@@ -58,6 +58,10 @@ from exe.webui.templatemanagerpage import TemplateManagerPage
 
 import os
 import logging
+
+# Configurar el nivel de registro para mostrar mensajes de información
+logging.basicConfig(level=logging.INFO)
+
 log = logging.getLogger(__name__)
 
 
