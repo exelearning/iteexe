@@ -42,6 +42,7 @@ from exe.engine.stylestore  import StyleStore
 from exe.engine.templatestore  import TemplateStore
 from exe.webui import common
 
+_ = lambda s: s
 x_ = lambda s: s
 c_ = lambda s: s
 
