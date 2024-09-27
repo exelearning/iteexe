@@ -727,7 +727,7 @@ class Config(object):
         """
         log = logging.getLogger()
         log.debug("loadLocales")
-        gettext.install('exe', self.localeDir, True)
+        gettext.install('exe', self.localeDir)
         for subDir in self.localeDir.dirs():
             if (subDir/'LC_MESSAGES'/'exe.mo').exists():
                 self.locales[subDir.basename()] = \
