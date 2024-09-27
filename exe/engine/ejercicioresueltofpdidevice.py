@@ -31,6 +31,7 @@ from exe.engine.path      import toUnicode
 from exe                  import globals as G
 from exe.engine.field     import TextAreaField
 import os
+from exe.engine.config import x_
 import re
 
 log = logging.getLogger(__name__)
