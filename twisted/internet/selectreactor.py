@@ -62,7 +62,6 @@ _NO_FILEDESC = error.ConnectionFdescWentAway('Filedescriptor went away')
 class SelectReactor(posixbase.PosixReactorBase):
     """A select() based reactor - runs on all POSIX platforms and on Win32.
     """
-    implements(IReactorFDSet)
 
     def _preenDescriptors(self):
         log.msg("Malformed file descriptor found.  Preening lists.")
