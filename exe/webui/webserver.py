@@ -241,7 +241,16 @@ class WebServer:
 
         # Start the Flask server
         log.info("Starting Flask server on port: %d", self.config.port)
-        self.app.run(host='127.0.0.1', port=self.config.port)
+        while True:
+            try:
+                self.app.run(host='127.0.0.1', port=self.config.port)
+                break
+            except OSError as e:
+                if "Address already in use" in str(e):
+                    log.error("Port %d is in use, trying to find another port.", self.config.port)
+                    self.config.port += 1  # Increment port number
+                else:
+                    raise
 
     def monitor(self):
         if self.monitoring:
