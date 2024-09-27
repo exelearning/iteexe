@@ -50,8 +50,7 @@ __all__ = ['Path', 'TempDirPath']
 
 # Universal newline support
 _textmode = 'r'
-if hasattr(file, 'newlines'):
-    _textmode = 'U'
+_textmode = 'r'
 
 def getFileSystemEncoding():
     """
