@@ -51,7 +51,6 @@ from exe.webui.quitpage            import QuitPage
 from flask import send_from_directory
 from exe.webui.xliffimportpreferencespage import XliffImportPreferencesPage
 from exe.webui.dirtree import DirTreePage
-from exe.webui.session import eXeSite
 from exe.webui.oauthpage import OauthPage
 from exe import globals as G
 
