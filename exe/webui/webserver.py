@@ -166,6 +166,7 @@ class WebServer:
         """
         log.info("************** eXe logging started **************")
         log.info("version     = 2.9")
+        log.info("configPath  = %s", self.config.configPath)
         log.debug("start web server running")
 
         # web resources
