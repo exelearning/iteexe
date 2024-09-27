@@ -177,6 +177,9 @@ class WebServer:
         log.info("dataDir     = %s", self.config.dataDir)
         log.info("configDir   = %s", self.config.configDir)
         log.info("locale      = %s", self.config.locale)
+        if not os.path.exists(os.path.join(self.config.localeDir, self.config.locale)):
+            log.warning("Locale '%s' not found, defaulting to 'en'", self.config.locale)
+            self.config.locale = 'en'
         log.info("internalAnchors = %s", self.config.internalAnchors)
         log.info("License = %s", self.config.license)
         log.debug("start web server running")
