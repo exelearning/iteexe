@@ -19,36 +19,17 @@
 # ===========================================================================
 
 import logging
-from exe.webui.renderable import Renderable
-from nevow import rend
+from flask import Flask, render_template
 
 log = logging.getLogger(__name__)
 
 
-class IECMWarningPage(Renderable, rend.Page):
-    _templateFileName = 'ie-cm-warning.html'
-    name = 'ie-cm-warning'
+app = Flask(__name__)
 
-    def __init__(self, parent):
-        """
-        Initialize
-        """
-        parent.putChild(self.name, self)
-        Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
-
-    def render_title(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("eXe problem")]
-
-    def render_msg1cm(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("The Compatibility View of your browser (Internet Explorer) is turned on.")]
-
-    def render_msg2cm(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("Please click on the Compatibility View button to turn it off:")]
-
-    def render_msg3cm(self, ctx, data):
-        ctx.tag.clear()
-        return ctx.tag()[_("Then restart eXe..")]
+@app.route('/iecmwarning')
+def iecm_warning_page():
+    return render_template('ie-cm-warning.html', 
+                           title=_("eXe problem"),
+                           msg1=_("The Compatibility View of your browser (Internet Explorer) is turned on."),
+                           msg2=_("Please click on the Compatibility View button to turn it off:"),
+                           msg3=_("Then restart eXe.."))
