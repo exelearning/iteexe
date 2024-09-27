@@ -21,7 +21,11 @@
 WebsiteExport will export a package as a website of HTML pages
 """
 
+import gettext
 import logging
+
+# Set up translation
+_ = gettext.gettext
 import re
 import importlib.util
 import os
@@ -148,8 +152,9 @@ class WebsiteExport(object):
         # use that, else use the default one.
         if (self.stylesDir/"websitepage.py").exists():
             global WebsitePage
-            module = imp.load_source("websitepage",
-                                     self.stylesDir/"websitepage.py")
+            spec = importlib.util.spec_from_file_location("websitepage", self.stylesDir/"websitepage.py")
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
             WebsitePage = module.WebsitePage
 
         self.pages = [ WebsitePage(self.prefix + "index", 0, package.root) ]
