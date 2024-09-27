@@ -93,8 +93,8 @@ class ClozefpdBlock(Block):
         Renders a screen that allows the user to enter paragraph text and choose
         which words are hidden.
         """
-	"""        
-	html = [
+        """        
+        html = [
             u'<div class="iDevice">',
             u'<div class="block">',
 #            common.textInput("title"+self.id, self.idevice.title),
@@ -107,14 +107,14 @@ class ClozefpdBlock(Block):
             u'</div>'
             ]
         return u'\n    '.join(html)"""
-	html  = "<div class=\"iDevice\"><br/>\n"
-	html  = "<div class=\"block\">"
-	
-	# JRJ
-	# Quitamos el prefijo "FPD -"
-	# (let's remove the "FPD -" prefix)
-	if self.idevice.title.find("FPD - ") == 0:
-		self.idevice.title = x_("Now it's your turn")
+        html  = "<div class=\"iDevice\"><br/>\n"
+        html  = "<div class=\"block\">"
+        
+        # JRJ
+        # Quitamos el prefijo "FPD -"
+        # (let's remove the "FPD -" prefix)
+        if self.idevice.title.find("FPD - ") == 0:
+            self.idevice.title = x_("Now it's your turn")
 
         html += common.textInput("title"+self.id, self.idevice.title)
 	html += "</div>"
@@ -173,24 +173,24 @@ class ClozefpdBlock(Block):
                 html += self.feedbackElement.renderView(False, class_="feedback")
         # html += u'</div>\n'
 
-	# JRJ: Anadimos la etiqueta noscript
-	# (let's add the noscript tag)
-	# 2014 - JavaScript is required
-	'''
-	if self.previewing:
-		cloze = self.clozeElement.field.content_w_resourcePaths
-		feedback = self.feedbackElement.field.content_w_resourcePaths
-	else:
-		cloze = self.clozeElement.field.content_wo_resourcePaths
-		feedback = self.feedbackElement.field.content_wo_resourcePaths
-	html += u'<noscript><div class="feedback">\n'
-	html += u"<strong>" + c_("Solution") + u": </strong><br/>\n"
-	html += cloze
-	if self.feedbackElement.field.content:
-		html += u"<br/><br/><strong>" + c_("Feedback") + ": </strong><br/>\n"
-		html += feedback
-	html += u"</div></noscript>"
-	'''
+        # JRJ: Anadimos la etiqueta noscript
+        # (let's add the noscript tag)
+        # 2014 - JavaScript is required
+        '''
+        if self.previewing:
+            cloze = self.clozeElement.field.content_w_resourcePaths
+            feedback = self.feedbackElement.field.content_w_resourcePaths
+        else:
+            cloze = self.clozeElement.field.content_wo_resourcePaths
+            feedback = self.feedbackElement.field.content_wo_resourcePaths
+        html += u'<noscript><div class="feedback">\n'
+        html += u"<strong>" + c_("Solution") + u": </strong><br/>\n"
+        html += cloze
+        if self.feedbackElement.field.content:
+            html += u"<br/><br/><strong>" + c_("Feedback") + ": </strong><br/>\n"
+            html += feedback
+        html += u"</div></noscript>"
+        '''
 
 	return html
 
