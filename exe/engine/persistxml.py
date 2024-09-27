@@ -122,7 +122,7 @@ class ContentXMLElement(Element):
         else:
             bext(self.tagName)
         j = ''.join
-        for attr, val in self.attributes.items():
+        for attr, val in list(self.attributes.items()):
             if isinstance(attr, tuple):
                 ns, key = attr
                 if ns in nsprefixes:
@@ -136,7 +136,7 @@ class ContentXMLElement(Element):
                 assert val is not None
                 writeattr(attr, val)
         if newprefixes:
-            for ns, prefix in newprefixes.items():
+            for ns, prefix in list(newprefixes.items()):
                 if prefix:
                     writeattr('xmlns:'+prefix, ns)
             newprefixes.update(nsprefixes)
