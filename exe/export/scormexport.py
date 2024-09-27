@@ -30,7 +30,7 @@ import time
 import os
 import importlib
 import io
-from cgi                           import escape
+from html                          import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
 from exe.webui                     import common
 from exe.engine.path               import Path, TempDirPath
