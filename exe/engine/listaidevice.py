@@ -28,6 +28,7 @@ from exe.engine.path    import Path, toUnicode
 from exe.engine.field   import Field,FieldWithResources,FeedbackField,TextAreaField
 from exe.engine.resource  import Resource
 from exe.engine.persist import Persistable
+from exe.engine.config    import x_
 from exe.engine.translate import lateTranslate
 from exe                  import globals as G
 from exe.engine.node      import Node
