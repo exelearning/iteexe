@@ -135,7 +135,7 @@ class GalleryImage(_ShowsResources):
             # If we can't load the image, apologize to the user...
             log.error("Couldn't load image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _("No Thumbnail Available. Could not load original image."))
+            self._msgImage(image, x_("No Thumbnail Available. Could not load original image."))
         self.size = image.size
         try:
             image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
@@ -143,7 +143,7 @@ class GalleryImage(_ShowsResources):
             # If we can't load the image, apologize to the user...
             log.error("Couldn't shrink image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _("No Thumbnail Available. Could not shrink original image."))
+            self._msgImage(image, x_("No Thumbnail Available. Could not shrink original image."))
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
         width1, height1 = image.size
         width2, height2 = image2.size
@@ -186,14 +186,14 @@ class GalleryImage(_ShowsResources):
         except Exception as e:
             log.error("Couldn't load image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _("No Thumbnail Available. Could not load original image."))
+            self._msgImage(image, x_("No Thumbnail Available. Could not load original image."))
         self.size = image.size
         try:
             image.thumbnail(self.thumbnailSize, Image.ANTIALIAS)
         except Exception as e:
             log.error("Couldn't shrink image: %s\nBecause: %s" % (self._imageResource.path, str(e)))
             image = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
-            self._msgImage(image, _("No Thumbnail Available. Could not shrink original image."))
+            self._msgImage(image, x_("No Thumbnail Available. Could not shrink original image."))
         image2 = Image.new('RGBA', self.thumbnailSize, (0xFF, 0, 0, 0))
         width1, height1 = image.size
         width2, height2 = image2.size
@@ -216,7 +216,7 @@ class GalleryImage(_ShowsResources):
         Draws a nice default thumbnail on 'image'
         """
         self._msgImage(image,
-            _("No Thumbnail Available. Could not shrink image."))
+            x_("No Thumbnail Available. Could not shrink image."))
 
     def _msgImage(self, image, msg):
         """
