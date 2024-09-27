@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 """
 path.py - An object representing a path to a file or directory.
@@ -93,7 +93,7 @@ class Path(str):
         return 'Path(%s)' % str.__repr__(self)
 
     def __str__(self):
-        return self.encode(Path.fileSystemEncoding)
+        return self
 
     # Adding a Path and a string yields a Path.
     def __add__(self, more):
@@ -103,7 +103,7 @@ class Path(str):
         return Path(toUnicode(other) + toUnicode(self))
 
     # The / operator joins paths.
-    def __div__(self, rel):
+    def __truediv__(self, rel):
         """ fp.__div__(rel) == fp / rel == fp.joinpath(rel)
 
         Join two Path components, adding a separator character if
@@ -112,7 +112,6 @@ class Path(str):
         return Path(os.path.join(toUnicode(self), toUnicode(rel)))
 
     # Make the / operator work even when true division is enabled.
-    __truediv__ = __div__
 
     @staticmethod
     def getcwd():
@@ -511,7 +510,7 @@ class Path(str):
                         .replace('\\u2028', '\n')
                         .replace('\\h', '\\h'))
 
-    def write_text(self, text, encoding=None,
+    def write_text(self, text, encoding='utf-8',
                    errors='strict', linesep=os.linesep,
                    append=False):
         """ Write the given text to this file.
