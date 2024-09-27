@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 # setup.py
 from distutils.core import setup
@@ -65,7 +65,7 @@ dataFiles('exe/jsui', '../Resources/exe', ['scripts', 'templates'])
 
 import sys
 
-print((sys.path))
+print(sys.path)
 
 plist = dict(
     CFBundleDocumentTypes=[
