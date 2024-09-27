@@ -24,6 +24,7 @@ from exe.engine.persist       import Persistable
 from exe.engine.resource      import Resource
 from exe                     import     globals
 from twisted.web.microdom import escape
+from exe.engine.translate import x_
 
 import os,sys
 log = logging.getLogger(__name__)
