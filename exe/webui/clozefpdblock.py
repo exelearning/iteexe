@@ -26,6 +26,7 @@ must fill in.
 """
 
 import logging
+from exe.engine.translate import x_, c_
 from exe.webui.block   import Block
 from exe.webui         import common
 from exe.webui.element import ClozeElement, TextAreaElement
