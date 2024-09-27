@@ -655,16 +655,19 @@ class Config(object):
     def updateTemplates(self):
         template_backup = self.webDir/'content_template'
         dest_template = self.templatesDir
-        if os.stat(template_backup).st_mtime - os.stat(dest_template).st_mtime > 1:
-            for name in os.listdir(template_backup):
-                current_template = os.path.join(template_backup, name)
-                current_dest_template = os.path.join(dest_template, name)
-                if os.path.isdir(current_template):
-                    if os.path.exists(current_dest_template):
-                        shutil.rmtree(current_dest_template)
-                    shutil.copytree(current_template, current_dest_template)
-                else:
-                    shutil.copy(current_template, current_dest_template)
+        if os.path.exists(template_backup) and os.path.exists(dest_template):
+            if os.stat(template_backup).st_mtime - os.stat(dest_template).st_mtime > 1:
+                for name in os.listdir(template_backup):
+                    current_template = os.path.join(template_backup, name)
+                    current_dest_template = os.path.join(dest_template, name)
+                    if os.path.isdir(current_template):
+                        if os.path.exists(current_dest_template):
+                            shutil.rmtree(current_dest_template)
+                        shutil.copytree(current_template, current_dest_template)
+                    else:
+                        shutil.copy(current_template, current_dest_template)
+        else:
+            logging.warning("Template directories do not exist: %s, %s", template_backup, dest_template)
 
     def copy_js_idevices(self):
         """
