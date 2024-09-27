@@ -177,6 +177,7 @@ class WebServer:
         log.info("dataDir     = %s", self.config.dataDir)
         log.info("configDir   = %s", self.config.configDir)
         log.info("locale      = %s", self.config.locale)
+        log.info("internalAnchors = %s", self.config.internalAnchors)
         log.debug("start web server running")
 
         # web resources
