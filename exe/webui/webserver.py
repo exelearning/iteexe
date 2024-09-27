@@ -63,7 +63,7 @@ log = logging.getLogger(__name__)
 class WebServer:
     """
     Encapsulates some twisted components to serve
-    all webpages, scripts and nevow functionality
+    all webpages, scripts and Flask functionality
     """
     def __init__(self, application):
         self.application = application
@@ -131,7 +131,7 @@ class WebServer:
 
     def run(self):
         """
-        Start serving webpages from the local web server
+        Start serving webpages from the local Flask web server
         """
         log.debug("start web server running")
 
