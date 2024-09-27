@@ -54,7 +54,7 @@ class ClozefpdBlock(Block):
             idevice.content.idevice = idevice
         if idevice.feedback.idevice is None: 
             idevice.feedback.idevice = idevice
-			
+            
         dT = common.getExportDocType()
         sectionTag = "div"
         if dT == "HTML5":
@@ -62,7 +62,7 @@ class ClozefpdBlock(Block):
 
         idevice.instructionsForLearners.htmlTag = sectionTag
         idevice.instructionsForLearners.class_ = "block instructions"
-        idevice.feedback.htmlTag = sectionTag			
+        idevice.feedback.htmlTag = sectionTag            
 
         self.instructionElement = \
             TextAreaElement(idevice.instructionsForLearners)
