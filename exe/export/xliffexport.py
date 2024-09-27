@@ -48,18 +48,13 @@ XLF_TEMPLATE = '''<?xml version="1.0" encoding="UTF-8"?>
 '''
 
 def safe_unicode(text):
-    if type(text) is UnicodeType:
+    if isinstance(text, str):
         return text
-    elif type(text) is StringType:
+    else:
         try:
             return str(text, 'utf-8')
         except:
             return str(text, 'iso-8859-15')
-    else:
-        try:
-            return str(text)
-        except:
-            return 'ERROR'
 
 
 class ContentEscaper(BeautifulSoup):
