@@ -50,8 +50,6 @@ SCENE_NUM = 1
 DESC_PLUGIN = 0
 # For Descartes and so:
 url = ''
-importlib.reload(sys)
-sys.setdefaultencoding("UTF-8")
 # ===========================================================================
 
 class AppletIdevice(Idevice):
