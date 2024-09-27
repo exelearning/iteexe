@@ -77,7 +77,7 @@ try:
 except ImportError as exp:
     from twisted.spread.jelly import Jellyable, Unjellyable
 
-    class GeneratedsSuper(object, Jellyable, Unjellyable):
+    class GeneratedsSuper(Jellyable, Unjellyable, object):
         tzoff_pattern = re_.compile(r'(\+|-)((0\d|1[0-3]):[0-5]\d|14:00)$')
         class _FixedOffsetTZ(tzinfo):
             def __init__(self, offset, name):
