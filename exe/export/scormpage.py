@@ -4,7 +4,7 @@ Render HTML SCORM pages
 '''
 import logging
 import re
-from cgi                      import escape
+from html                     import escape
 from urllib.parse                   import quote
 from exe.webui.blockfactory   import g_blockFactory
 from exe.engine.error         import Error
