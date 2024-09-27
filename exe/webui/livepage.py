@@ -20,10 +20,11 @@
 
 import logging
 from exe.webui.renderable import _RenderablePage
-import nevow
-from nevow.livepage import LivePage, DefaultClientHandleFactory, _js,\
-    ClientHandle, IClientHandle, jquote
-from nevow import inevow, tags
+from twisted.web.template import Element, XMLFile, renderer, tags
+from twisted.web.server import Request
+from twisted.web.resource import Resource
+from twisted.web.static import File
+from twisted.web.util import redirectTo
 
 log = logging.getLogger(__name__)
 
@@ -46,74 +47,23 @@ def otherSessionPackageClients(client1, client2):
     return otherClients(client1, client2) and allSessionPackageClients(client1, client2)
 
 
-class eXeClientHandle(ClientHandle):
-    __implements__ = IClientHandle
-
-    def sendScript(self, script, filter_func=None):
-        if filter_func:
-            for client in list(nevow.livepage.clientHandleFactory.clientHandles.values()):
-                if filter_func(client, self):
-                    ClientHandle.sendScript(client, script)
-        else:
-            ClientHandle.sendScript(self, script)
-
-    def alert(self, what, onDone=None, filter_func=False, title=''):
-        """Show the user an alert 'what'
-        """
-        if not isinstance(what, _js):
-            what = "'%s'" % (self.flt(what), )
-        if onDone:
-            script = "Ext.Msg.alert('%s',%s, function() { %s });" % (title, what, onDone)
-        else:
-            script = "Ext.Msg.alert('%s',%s);" % (title, what)
-        if filter_func and onDone:
-            for client in list(nevow.livepage.clientHandleFactory.clientHandles.values()):
-                if filter_func(client, self):
-                    client.sendScript(onDone)
-        self.sendScript(script)
-
-    def notifyStatus(self, title, msg):
-        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationStatus('%s', '%s');" % (jquote(title), jquote(msg)), filter_func=allSessionClients)
-
-    def hideStatus(self):
-        self.sendScript('Ext.ComponentQuery.query("#eXeNotification")[0].hide();', filter_func=allSessionClients)
-
-    def notifyNotice(self, title, msg, type):
-        self.sendScript("eXe.controller.eXeViewport.prototype.eXeNotificationNotice('%s','%s', '%s');" % (jquote(title), jquote(msg), jquote(type)), filter_func=allSessionClients)
-
-
-class eXeClientHandleFactory(DefaultClientHandleFactory):
-    clientHandleClass = eXeClientHandle
-
-    def newClientHandle(self, ctx, refreshInterval, targetTimeoutCount):
-        handle = DefaultClientHandleFactory.newClientHandle(self, ctx, refreshInterval, targetTimeoutCount)
-        handle.currentNodeId = ctx.tag.package.currentNode.id
-        handle.packageName = ctx.tag.package.name
-        handle.session = inevow.ISession(ctx)
-        log.debug('New client handle %s. Handles %s' % (handle.handleId, self.clientHandles))
-        return handle
-
-nevow.livepage.clientHandleFactory = eXeClientHandleFactory()
-
-class RenderableLivePage(_RenderablePage, LivePage):
+class RenderableLivePage(_RenderablePage, Resource):
     """
-    This class is both a renderable and a LivePage/Resource
+    This class is both a renderable and a Resource
     """
 
     def __init__(self, parent, package=None, config=None):
         """
         Same as Renderable.__init__ but
         """
-        LivePage.__init__(self)
+        Resource.__init__(self)
         _RenderablePage.__init__(self, parent, package, config)
-        self.clientHandleFactory = nevow.livepage.clientHandleFactory
 
-    def renderHTTP(self, ctx):
-        request = inevow.IRequest(ctx)
+    def render(self, request):
         request.setHeader('Expires', 'Fri, 25 Nov 1966 08:22:00 EST')
         request.setHeader("Cache-Control", "no-store, no-cache, must-revalidate")
         request.setHeader("Pragma", "no-cache")
-        return LivePage.renderHTTP(self, ctx)
+        return Resource.render(self, request)
 
-    def render_liveglue(self, ctx, data):
+    def render_liveglue(self, request):
         return tags.script(src='/jsui/nevow_glue.js')
