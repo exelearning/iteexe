@@ -509,7 +509,7 @@ class Path(str):
                         .replace('\r', '\n')
                         .replace('\x85', '\n')
                         .replace('\\u2028', '\n')
-                        .replace('\\h', 'h'))
+                        .replace('\\h', '\\h'))
 
     def write_text(self, text, encoding=None,
                    errors='strict', linesep=os.linesep,
@@ -743,7 +743,7 @@ class Path(str):
                         if line[-2:] in ('\r\n', '\x0d\x85'):
                             line = line[:-2]
                         elif line[-1:] in ('\r', '\n',
-                                           '\x85', '\\u2028'):
+                                           '\x85', '\\u2028', '\\h'):
                             line = line[:-1]
                     else:
                         if line[-2:] == '\r\n':
