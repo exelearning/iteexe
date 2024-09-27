@@ -1444,10 +1444,10 @@ class FieldWithResources(Field):
             found_pos = new_content.find(search_str, found_pos+1)
 	# JR - Quitamos lo que va entre <embed>...</embed>
 	#aux = re.compile("<embed.*id=\"flowplayer\".*></embed>")
-	#new_content = aux.sub("", new_content)
-	#log.debug(new_content)
+        #new_content = aux.sub("", new_content)
+        #log.debug(new_content)
 
-	return new_content
+        return new_content
         # end ProcessPreviewedMedia()
 
 
