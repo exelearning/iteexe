@@ -509,7 +509,7 @@ class Path(str):
                         .replace('\r\x85', '\n')
                         .replace('\r', '\n')
                         .replace('\x85', '\n')
-                        .replace('\u2028', '\n'))
+                        .replace('\\u2028', '\n'))
 
     def write_text(self, text, encoding=None,
                    errors='strict', linesep=os.linesep,
@@ -584,7 +584,7 @@ class Path(str):
                             .replace('\r\x85', '\n')
                             .replace('\r', '\n')
                             .replace('\x85', '\n')
-                            .replace('\u2028', '\n'))
+                            .replace('\\u2028', '\n'))
                 text = text.replace('\n', linesep)
             if encoding is None:
                 encoding = sys.getdefaultencoding()
@@ -743,7 +743,7 @@ class Path(str):
                         if line[-2:] in ('\r\n', '\x0d\x85'):
                             line = line[:-2]
                         elif line[-1:] in ('\r', '\n',
-                                           '\x85', '\u2028'):
+                                           '\x85', '\\u2028'):
                             line = line[:-1]
                     else:
                         if line[-2:] == '\r\n':
