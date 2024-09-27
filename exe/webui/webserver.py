@@ -87,7 +87,9 @@ class WebServer:
             self.config.webDir + "/content_template",
             self.config.webDir + "/scripts/idevices",
             self.config.localeDir,
-            os.path.join(self.config.localeDir, "en")
+            os.path.join(self.config.localeDir, "en"),
+            "/Users/ernesto/Downloads/Resources/exe/style",
+            "/Users/ernesto/.exe/style"
         ]
         for directory in directories:
             if not os.path.exists(directory):
