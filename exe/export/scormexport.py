@@ -28,7 +28,7 @@ import copy
 import re
 import time
 import os
-import imp
+import importlib
 import io
 from cgi                           import escape
 from zipfile                       import ZipFile, ZIP_DEFLATED
