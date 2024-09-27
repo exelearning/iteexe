@@ -33,6 +33,14 @@ from exe.webui.element             import TextAreaElement
 
 log = logging.getLogger(__name__)
 
+def x_(text):
+    """
+    Placeholder function for translation.
+    """
+    return text
+
+from exe.webui.common import _
+
 
 # ===========================================================================
 class EjercicioresueltofpdBlock(Block):
