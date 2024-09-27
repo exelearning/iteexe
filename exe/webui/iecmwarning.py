@@ -20,6 +20,9 @@
 
 import logging
 from flask import Flask, render_template
+import gettext
+
+_ = gettext.gettext
 
 log = logging.getLogger(__name__)
 
