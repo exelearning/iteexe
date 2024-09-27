@@ -88,7 +88,7 @@ class DestacadofpdBlock(Block):
         """
 #        html  = u'<script type="text/javascript" src="common.js"></script>\n'
 #        html += u'<div class="iDevice_destacadofpd">\n'
-	html = '<div class="iDevice_destacadofpd">\n'
+        html = '<div class="iDevice_destacadofpd">\n'
     
         if self.previewing: 
             html += self.activityElement.renderPreview()
