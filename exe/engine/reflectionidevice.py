@@ -118,6 +118,7 @@ reflective feedback).""")
         title = i.find(name='h2', attrs={'class' : 'iDeviceTitle' })
         self.title = title.renderContents().decode('utf-8')
 
+        inner = i.find(name='div', attrs={'class' : 'iDevice_inner' })
         reflections = i.findAll(name='div', attrs={'id' : re.compile('^ta') })
         # should be exactly two of these:
         # 1st = field[0] == Activity
