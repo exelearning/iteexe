@@ -243,6 +243,7 @@ class WebServer:
         log.info("Starting Flask server on port: %d", self.config.port)
         while True:
             try:
+                log.info("Attempting to start Flask server on port: %d", self.config.port)
                 self.app.run(host='127.0.0.1', port=self.config.port)
                 break
             except OSError as e:
@@ -250,6 +251,7 @@ class WebServer:
                     log.error("Port %d is in use, trying to find another port.", self.config.port)
                     self.config.port += 1  # Increment port number
                 else:
+                    log.exception("An unexpected error occurred while trying to start the server.")
                     raise
 
     def monitor(self):
