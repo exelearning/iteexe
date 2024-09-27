@@ -101,7 +101,7 @@ class StyleDesigner(Renderable, Resource):
         style_id = unicodedata.normalize('NFKD', style_id)
         style_id = style_id.encode('ascii', 'ignore')
 
-        clean_non_alphanum = re.compile('\W+')
+        clean_non_alphanum = re.compile(r'\W+')
         style_id = clean_non_alphanum.sub(' ', style_id).strip()
         style_id = style_id.replace(' ', '_')
 
