@@ -27,7 +27,7 @@ import time
 import sys
 from twisted.web.resource    import Resource
 from exe.webui               import common
-from cgi                     import escape
+from html                    import escape
 import exe.webui.builtinblocks
 from exe.webui.blockfactory  import g_blockFactory
 from exe.engine.error        import Error
