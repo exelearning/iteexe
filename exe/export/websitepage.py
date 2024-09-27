@@ -34,6 +34,10 @@ from exe.webui                import common
 from exe                      import globals as G
 log = logging.getLogger(__name__)
 
+def c_(text):
+    # Placeholder function for translation/localization
+    return text
+
 
 # ===========================================================================
 class WebsitePage(Page):
