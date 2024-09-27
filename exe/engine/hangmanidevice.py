@@ -39,6 +39,7 @@ from exe.engine.field   import ImageField
 from exe.engine.field   import TextField
 from exe.engine.path      import Path, toUnicode
 from exe.engine.resource  import Resource
+from exe.engine.config import x_
 
 log = logging.getLogger(__name__)
 
