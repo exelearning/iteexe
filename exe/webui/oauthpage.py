@@ -32,13 +32,12 @@ if __name__ == "__main__":
     app.run(debug=True)
 
 
-class GDriveOauth(Renderable, rend.Page):
+class GDriveOauth(Renderable):
     name = 'gdrive'
     _templateFileName = 'oauth.html'
 
     def __init__(self, parent):
         Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
 
     def render_start(self, ctx, data):
         script = ('''
@@ -78,15 +77,13 @@ class GDriveOauth(Renderable, rend.Page):
         return ctx.tag()[script]
 
 
-class OauthPage(Renderable, rend.Page):
+class OauthPage(Renderable):
     name = 'oauth'
     _templateFileName = 'oauth.html'
 
     def __init__(self, parent):
         parent.putChild(self.name, self)
         Renderable.__init__(self, parent)
-        rend.Page.__init__(self)
-        self.procomun = ProcomunOauth(self)
 
     def child_procomun(self, ctx):
         return self.procomun
