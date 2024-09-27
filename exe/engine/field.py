@@ -2654,7 +2654,7 @@ class TextAreaField(FieldWithResources):
     def translate(self):
         # If the template was created on Windows, the new line separator
         # would be \r\n instead of \n (used by Babel on Ubuntu)
-        self.content_w_resourcePaths = c_("\n".join(self.content_w_resourcePaths.splitlines()))
+        self.content_w_resourcePaths = c_(r"\n".join(self.content_w_resourcePaths.splitlines()))
         self.content = self.content_w_resourcePaths
         self.content_wo_resourcePaths = self.MassageContentForRenderView(self.content_w_resourcePaths)
 
@@ -3199,7 +3199,7 @@ exercise.</p>""")
         Upgrades to exe v0.11
         """
         self.autoCompletion = True
-        self.autoCompletionInstruc = _("""Allow auto completion when 
+        self.autoCompletionInstruc = _(r"""Allow auto completion when 
                                        user filling the gaps.""")
 
     def upgradeToVersion2(self):
@@ -3437,7 +3437,7 @@ exercise.</p>""")
         Upgrades to exe v0.11
         """
         self.autoCompletion = True
-        self.autoCompletionInstruc = _("""Allow auto completion when 
+        self.autoCompletionInstruc = _(r"""Allow auto completion when 
                                        user filling the gaps.""")
 
     def upgradeToVersion2(self):
