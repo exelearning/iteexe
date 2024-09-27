@@ -18,8 +18,14 @@
 # ===========================================================================
 
 import types
-from twisted.persisted.marmalade import DOMJellier, DOMUnjellier
-from twisted.web.microdom import Document, Element, escape, genprefix, parseString
+from xml.dom.minidom import Document, Element, parseString
+import xml.sax.saxutils as saxutils
+
+def escape(data):
+    return saxutils.escape(data)
+
+def genprefix():
+    return "ns"
 import logging
 
 log = logging.getLogger(__name__)
@@ -76,7 +82,7 @@ class PriorizedDOMJellier(DOMJellier):
             node.setAttribute("value", s)
             return node
         else:
-            return DOMJellier.jellyToNode(self, obj)
+            raise NotImplementedError("Custom serialization for this type is not implemented.")
     def setExtendedAttributes(self, nk, nv):
         if nk.getAttribute('value') == "content_w_resourcePaths":
             nv.setAttribute("content", "true")
@@ -86,7 +92,7 @@ class UTF8DOMUnjellier(DOMUnjellier):
         if node.tagName == "unicode":
             return str(str(node.getAttribute("value")), "utf-8")
         else:
-            return DOMUnjellier.unjellyNode(self, node)
+            raise NotImplementedError("Custom deserialization for this type is not implemented.")
 
 class ContentXMLElement(Element):
     version = "0.3"
