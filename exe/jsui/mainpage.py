@@ -1290,7 +1290,7 @@ class MainPage(RenderableLivePage):
             }
 
             # Create the WSDL client
-            procomun = Client(PROCOMUN_WSDL, headers=headers)
+            procomun = Client('your_wsdl_url', headers=headers)
 
             # Create and configure the ODE object
             ode = procomun.factory.create('xsd:anyType')
