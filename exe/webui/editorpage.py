@@ -31,7 +31,7 @@ from exe.webui.renderable      import RenderableResource
 from exe.engine.package        import Package
 from exe.engine.path           import Path
 from exe.engine.field          import MultimediaField
-from cgi                       import escape
+from html                      import escape
 
 log = logging.getLogger(__name__)
 
