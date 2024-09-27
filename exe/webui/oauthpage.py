@@ -17,7 +17,7 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 # ===========================================================================
-from nevow import rend, inevow
+from flask import Flask, render_template_string
 from oauthlib.oauth2 import InvalidClientError
 
 from exe.webui.renderable import Renderable
