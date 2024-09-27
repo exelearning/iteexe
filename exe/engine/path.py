@@ -644,7 +644,7 @@ class Path(str):
                             except Exception as e:
                                 raise Exception(endOfWorld % backupName)
                     backupName.rename(self)
-                raise Exception(_("%s\n%s unchanged" % (e, self)))
+                raise Exception("%s\n%s unchanged" % (e, self))
             # If save completed ok, delete backup
             if backupName and backupName.exists():
                 try:
@@ -1068,7 +1068,7 @@ class Path(str):
     def getMd5(self):
         """Returns an md5 hash for an object with read() method."""
         try:
-            file_ = file(self, 'rb')
+            file_ = open(self, 'rb')
         except:
             raise Exception("Could not open %s" % self)
         hasher = hashlib.md5()
