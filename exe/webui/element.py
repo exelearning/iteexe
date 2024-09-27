@@ -1424,7 +1424,7 @@ class ClozeElement(ElementWithResources):
                 #    xml += "<br/>"
                 
                 #check and see if we have a numeric only word
-                numbers = "0123456789\u06F0\u06F1\u06F2\u06F3\u06F4\u06F5\u06F6\u06F7\u06F8\u06F9"
+                numbers = "0123456789\\u06F0\\u06F1\\u06F2\\u06F3\\u06F4\\u06F5\\u06F6\\u06F7\\u06F8\\u06F9"
                 numOnly = True
                 for i in range(0, len(missingWord)):
                     currentChar = missingWord[i : i + 1]
