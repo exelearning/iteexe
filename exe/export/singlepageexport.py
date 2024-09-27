@@ -206,11 +206,11 @@ class SinglePageExport(object):
             if not hasElpLink:
                 hasElpLink = common.ideviceHasElpLink(idevice,self.page.node.package)
             if not hasWikipedia:
-    			if 'WikipediaIdevice' == idevice.klass:
-    				hasWikipedia = True
+                if 'WikipediaIdevice' == idevice.klass:
+                    hasWikipedia = True
             if not hasInstructions:
-    			if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
-    				hasInstructions = True
+                if 'TrueFalseIdevice' == idevice.klass or 'MultichoiceIdevice' == idevice.klass or 'VerdaderofalsofpdIdevice' == idevice.klass or 'EleccionmultiplefpdIdevice' == idevice.klass:
+                    hasInstructions = True
             if not hasMediaelement:
                     hasMediaelement = common.ideviceHasMediaelement(idevice)
             if not hasTooltips:
