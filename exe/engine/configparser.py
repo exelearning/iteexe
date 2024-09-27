@@ -297,10 +297,8 @@ class ConfigParser(object):
         can be used for new options, new sections and pre-existing ones"""
         sec = Section(sectionName, self) # This creates or gets a section
         if not isinstance(value, str):
-            # Convert ints and floats to str before encoding to unicode
-            if not isinstance(value, str):
-                value = str(value)
-            value = str(value, 'utf8')
+            # Convert ints and floats to str
+            value = str(value)
         if sec.get(optionName, None) != value:
             sec[optionName] = value
             if self.autoWrite and self._originalFile is not None:
