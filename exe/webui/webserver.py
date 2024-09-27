@@ -166,7 +166,7 @@ class WebServer:
         """
         log.info("************** eXe logging started **************")
         log.info("Serving Flask app '%s'", __name__)
-        log.info("version     = 2.9")
+        log.info("version     = %s", version.version)
         log.info("configPath  = %s", self.config.configPath)
         log.info("exePath     = %s", os.path.abspath(__file__))
         log.info("libPath     = %s", os.path.dirname(os.__file__))
