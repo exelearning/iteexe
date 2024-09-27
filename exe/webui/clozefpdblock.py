@@ -106,9 +106,9 @@ class ClozefpdBlock(Block):
             u'</div>'
             ]
         return u'\n    '.join(html)"""
-        html  = "<div class=\"iDevice\"><br/>\n"
-        html  = "<div class=\"block\">"
-        
+        html = "<div class=\"iDevice\"><br/>\n"
+        html = "<div class=\"block\">"
+
         # JRJ
         # Quitamos el prefijo "FPD -"
         # (let's remove the "FPD -" prefix)
