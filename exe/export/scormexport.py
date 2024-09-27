@@ -43,6 +43,7 @@ from exe.engine.persist            import encodeObject
 from exe.engine.persistxml         import encodeObjectToXML
 from exe                           import globals as G
 from exe.export.scormpage          import ScormPage
+from gettext                       import gettext as _
 from exe.engine.lom                import lomsubs
 from .helper                        import exportMinFileJS
 from .helper                        import exportMinFileCSS
@@ -592,7 +593,9 @@ class ScormExport(object):
         if self.styleSecureMode=="0":
             if (self.styleDir/"scormpage.py").exists():
                 global ScormPage
-                module = imp.load_source("ScormPage",self.styleDir/"scormpage.py")
+                spec = importlib.util.spec_from_file_location("ScormPage", self.styleDir/"scormpage.py")
+                module = importlib.util.module_from_spec(spec)
+                spec.loader.exec_module(module)
                 ScormPage = module.ScormPage
 
 
