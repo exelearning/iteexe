@@ -10,8 +10,8 @@ http://www.fsf.org/licensing/licenses/gpl.txt
 import re, os
 import codecs
 
-exSection = re.compile('\[(?P<sectionname>(\w|\s)+)\]\s*')
-exOption = re.compile("""\s*                # Ignore white space at the beginning
+exSection = re.compile(r'\[(?P<sectionname>(\w|\s)+)\]\s*')
+exOption = re.compile(r"""\s*                # Ignore white space at the beginning
                          (?P<optionname>
                           (\s*(\w|[\_\-\(\)/])+)+) # This matches multiple words
                          #(\s*\w+)+)        # This matches multiple words
