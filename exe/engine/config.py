@@ -43,6 +43,7 @@ from exe.engine.templatestore  import TemplateStore
 from exe.webui import common
 
 x_ = lambda s: s
+c_ = lambda s: s
 
 
 class Config(object):
