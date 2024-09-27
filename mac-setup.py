@@ -65,7 +65,7 @@ dataFiles('exe/jsui', '../Resources/exe', ['scripts', 'templates'])
 
 import sys
 
-print(sys.path)
+print((sys.path))
 
 plist = dict(
     CFBundleDocumentTypes=[
