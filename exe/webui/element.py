@@ -1673,8 +1673,8 @@ class ClozelangElement(ElementWithResources):
                 'checkCaps%s' % self.id in request.args
             self.field.instantMarking = \
                 'instantMarking%s' % self.id in request.args
-	    self.field.showScore = \
-                'showScore%s' % self.id in request.args
+        self.field.showScore = \
+            'showScore%s' % self.id in request.args
 
     def renderEdit(self):
         """
