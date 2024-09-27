@@ -34,12 +34,14 @@ if os.name == 'posix' and not ('--standalone' in sys.argv or '--portable' in sys
     sys.path.insert(0, '/usr/share/exe')
 
 # This *must* always be the first import to prevent a warning on Windows
-from exe.webui.webserver     import WebServer
+from twisted.internet import reactor
+from exe.webui.webserver import WebServer
 
 from getopt                  import getopt, GetoptError
 from flask import Flask
 
-from exe                     import globals as G
+from exe import globals as G
+from gettext import gettext as _
 from exe.engine              import version
 from exe.engine.idevicestore import IdeviceStore
 from exe.engine.package      import Package
@@ -263,16 +265,6 @@ class Application:
 
 
         # Add missing mime types to Twisted for Windows
-        File.contentTypes.update({
-            '.odt': 'application/vnd.oasis.opendocument.text',
-            '.odp': 'application/vnd.oasis.opendocument.presentation',
-            '.ods': 'application/vnd.oasis.opendocument.spreadsheet',
-            '.docx': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-            '.pptx': 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-            '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-            '.elp': 'application/zip',
-            '.webm': 'video/webm'
-        })
 
     def serve(self):
         """
