@@ -20,9 +20,9 @@
 Functions that help with translation
 """
 
-# Install x_ as the fake/late translate mechanism before doing any serious
-# importing
-__builtins__['x_'] = lambda x:x
+def x_(x):
+    """Fake/late translate mechanism"""
+    return x
 
 def lateTranslate(propName, content=False):
     """
