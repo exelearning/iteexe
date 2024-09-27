@@ -268,7 +268,7 @@ click on the Hide/Show Word button below.</p><p>More than one possible answer ca
                 attrs={'id' : re.compile('^clozelangFlag.*instantMarking$') })
         if flag_instant.attrMap['value']=="true":
             self._content.instantMarking = True
-	flag_score = inner.find(name='input', 
+        flag_score = inner.find(name='input', 
                 attrs={'id' : re.compile('^clozelangFlag.*showScore$') })
         if flag_score.attrMap['value']=="true":
             self._content.showScore = True
