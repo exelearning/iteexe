@@ -483,6 +483,7 @@ var $exe = {
 
 	// See #774 (prettyPhoto contents in mod_exescorm)
 	moodleScormWieverGalleryFix : function(){
+		const pTop = 20;
 		if (!$exe.inIframe) return;
 		if (!top||!top.document.documentElement||typeof(top.document.documentElement.scrollTop)!='number') return;
 		if (!$("body").hasClass("exe-scorm")) return; // Is it a SCORM package?
@@ -492,7 +493,11 @@ var $exe = {
 			return;
 		}
 		if ($("#exescorm_object",top.document).length!=1) return;
-		$(".pp_pic_holder.pp_default").css("top",(top.document.documentElement.scrollTop+20)+"px");
+		var wrapper = $("#exescormpage",top.document);
+		if (wrapper.length!=1) return;
+		var elm = top.document.documentElement;
+		if (wrapper.hasClass("fullscreen")) elm = wrapper[0];
+		$(".pp_pic_holder.pp_default").css("top",(elm.scrollTop+pTop)+"px");
 	},
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
