@@ -472,6 +472,28 @@ var $exe = {
 			);
 		}
 	},
+
+	inIframe : function() {
+		try {
+			return window.self !== window.top;
+		} catch(e) {
+			return true;
+		}
+	},
+
+	// See #774 (prettyPhoto contents in mod_exescorm)
+	moodleScormWieverGalleryFix : function(){
+		if (!$exe.inIframe) return;
+		if (!top||!top.document.documentElement||typeof(top.document.documentElement.scrollTop)!='number') return;
+		if (!$("body").hasClass("exe-scorm")) return; // Is it a SCORM package?
+		try{
+			if (typeof(top.M)!='object') return; // Check if it's Moodle
+		}catch{
+			return;
+		}
+		if ($("#exescorm_object",top.document).length!=1) return;
+		$(".pp_pic_holder.pp_default").css("top",(top.document.documentElement.scrollTop+20)+"px");
+	},
 	
     // Transform links to audios or videos (with rel^='lightbox') in links to inline content (see prettyPhoto documentation)
     setMultimediaGalleries : function(){
@@ -500,6 +522,7 @@ var $exe = {
 				deeplinking: false,
 				opacity: 0.85,
                 changepicturecallback: function() {
+					$exe.moodleScormWieverGalleryFix();
 					var block = $("#pp_full_res")
 					var media = $(".exe-media-box-element",block);
 					if ($exe.loadMediaPlayer.isReady) {
