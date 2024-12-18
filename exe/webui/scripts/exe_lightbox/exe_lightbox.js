@@ -16,7 +16,7 @@ return e(this).hasClass("pp_expand")?(e(this).removeClass("pp_expand").addClass(
 if(imgPreloader.width==0||imgPreloader.height==0){imgPreloader.width=450;imgPreloader.height=450}
 // / The New eXeLearning
 f=l(imgPreloader.width,imgPreloader.height),s()},imgPreloader.onerror=function(){alert("Image cannot be loaded. Make sure the path is correct and image exist."),e.prettyPhoto.close()},imgPreloader.src=pp_images[set_position];break;case"youtube":
-// The New eXeLearning (issue #439)
+// The New eXeLearning (issues #439 and #781)
 var startTime = "";
 var _url = pp_images[set_position];
 	_url = _url.split("?");
@@ -26,6 +26,7 @@ if (_url.length==2) {
 	for (var _i=0;_i<_url.length;_i++) {
 		if (_url[_i].indexOf("t=")==0) {
 			startTime = "&"+_url[_i].replace("t","start");
+			if (startTime.slice(-1)=="s") startTime = startTime.substring(0, startTime.length-1);
 		}
 	}
 }
