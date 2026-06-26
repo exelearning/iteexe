@@ -3,8 +3,6 @@
 > [!WARNING]
 > This repository is **deprecated** and is no longer maintained.
 >
-> **No maintenance is intended.**
->
 > Please use [https://github.com/exelearning/exelearning](https://github.com/exelearning/exelearning) instead.
 >
 > This repository is kept for historical reference only.
